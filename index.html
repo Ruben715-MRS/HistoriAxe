@@ -44,9 +44,7 @@
         .event-year { background: var(--primary-blue); color: white; text-align: center; font-weight: bold; border-top-left-radius: 7px; border-top-right-radius: 7px; font-size: calc(24px * var(--zoom-level)) !important; padding: calc(15px * var(--zoom-level)) 5px !important; }
         .event-title { text-align: center; color: var(--primary-blue); flex: 1; display: flex; align-items: center; justify-content: center; font-size: calc(16px * var(--zoom-level)) !important; padding: calc(15px * var(--zoom-level)) 10px !important; font-weight: 500; }
         
-        /* CORRECTION ICI : La hauteur s'adapte au zoom pour ne pas écraser le rond */
         .insert-point { height: calc(100px * var(--zoom-level)) !important; display: inline-flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; z-index: 2; min-width: calc(60px * var(--zoom-level)) !important; }
-        /* CORRECTION ICI : flex-shrink: 0 empêche le rond de devenir ovale */
         .insert-circle { border: 2px solid var(--primary-blue); border-radius: 50%; background: var(--bg-color); transition: all 0.2s; width: calc(24px * var(--zoom-level)) !important; height: calc(24px * var(--zoom-level)) !important; flex-shrink: 0; }
         .insert-line { background: var(--primary-blue); width: 2px; height: calc(40px * var(--zoom-level)) !important; flex-shrink: 0; }
         
@@ -68,6 +66,14 @@
         .zoom-controls { position: absolute; bottom: 30px; right: 30px; display: flex; gap: 15px; z-index: 50; }
         .zoom-btn { width: 50px; height: 50px; background-color: var(--primary-blue); color: white; border: none; border-radius: 50%; font-size: 28px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; cursor: pointer; -webkit-user-select: none; user-select: none; }
         .zoom-btn:active { transform: scale(0.9); }
+        
+        /* CARTES RATÉES ET ANIMATION */
+        .event-card.missed { border-color: var(--danger-red) !important; }
+        .event-card.missed .event-year { background: var(--danger-red) !important; }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body>
@@ -294,6 +300,7 @@
         let lives = 3;
         let score = 0;
         let totalEvents = 0;
+        let isAnimating = false; // Empêche de cliquer partout pendant l'animation
 
         function showScreen(screenId) {
             document.querySelectorAll('body > div').forEach(div => {
@@ -335,7 +342,7 @@
                 return;
             }
             eventToPlace = currentPool.pop();
-            document.getElementById('current-event-banner').innerText = eventToPlace.titre;
+            document.getElementById('current-event-banner').innerHTML = `<div>${eventToPlace.titre}</div>`;
             renderTimeline();
         }
 
@@ -358,7 +365,7 @@
                 if (i < placedEvents.length) {
                     const evt = placedEvents[i];
                     const card = document.createElement('div');
-                    card.className = 'event-card';
+                    card.className = evt.missed ? 'event-card missed' : 'event-card';
                     card.innerHTML = `<div class="event-year">${evt.date}</div><div class="event-title">${evt.titre}</div>`;
                     card.onclick = () => openModal(evt);
                     timeline.appendChild(card);
@@ -367,8 +374,11 @@
         }
 
         function checkPlacement(index, insertPointHtmlElement) {
+            if (isAnimating) return; 
+
             const dateToPlace = eventToPlace.date;
             let isCorrect = true;
+
             if (index > 0) {
                 const prevEvent = placedEvents[index - 1];
                 if (dateToPlace < prevEvent.date) isCorrect = false;
@@ -377,6 +387,7 @@
                 const nextEvent = placedEvents[index];
                 if (dateToPlace > nextEvent.date) isCorrect = false;
             }
+
             if (isCorrect) {
                 score += 10;
                 placedEvents.splice(index, 0, eventToPlace);
@@ -384,11 +395,38 @@
                 pickNextEvent();
                 document.getElementById('timeline').scrollBy({ left: 100, behavior: 'smooth' });
             } else {
+                isAnimating = true; 
                 lives -= 1;
                 updateHUD();
+                
                 insertPointHtmlElement.classList.add('error-shake');
-                setTimeout(() => insertPointHtmlElement.classList.remove('error-shake'), 300);
-                if (lives <= 0) setTimeout(() => endGame(false), 500);
+                
+                const banner = document.getElementById('current-event-banner');
+                banner.innerHTML = `<div style="font-size: 1.2em; color: var(--text-dark); margin-bottom: 5px; animation: fadeInDown 0.3s ease-out;">${eventToPlace.date}</div><div>${eventToPlace.titre}</div>`;
+                
+                let correctIndex = placedEvents.length;
+                for(let j = 0; j < placedEvents.length; j++) {
+                    if (eventToPlace.date <= placedEvents[j].date) {
+                        correctIndex = j;
+                        break;
+                    }
+                }
+                
+                eventToPlace.missed = true;
+
+                setTimeout(() => {
+                    placedEvents.splice(correctIndex, 0, eventToPlace); 
+                    insertPointHtmlElement.classList.remove('error-shake');
+                    
+                    if (lives <= 0) {
+                        renderTimeline(); 
+                        setTimeout(() => endGame(false), 500);
+                    } else {
+                        pickNextEvent(); 
+                    }
+                    
+                    isAnimating = false; 
+                }, 2000);
             }
         }
 
