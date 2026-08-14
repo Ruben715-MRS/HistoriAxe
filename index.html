@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>HistoriAxe - Le Quiz Chronologique</title>
+    <style>
+        /* === 1. VARIABLES & RESET === */
+        :root {
+            --bg-color: #F7F7F9;
+            --primary-blue: #6B8EAD;
+            --text-dark: #333333;
+            --text-light: #FFFFFF;
+            --danger-red: #D9534F;
+            --card-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: var(--font-main); }
+        
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden; /* Empêche le scroll de la page entière */
+        }
+
+        /* === 2. UTILITAIRES === */
+        .hidden { display: none !important; }
+        .btn {
+            background-color: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: opacity 0.2s;
+        }
+        .btn:hover { opacity: 0.8; }
+
+        /* === 3. ÉCRAN D'ACCUEIL === */
+        #screen-home {
+            flex: 1; display: flex; flex-direction: column;
+            align-items: center; justify-content: center; text-align: center;
+        }
+        .logo { font-size: 48px; font-weight: bold; color: var(--primary-blue); margin-bottom: 10px; }
+        .subtitle { font-size: 18px; color: #666; margin-bottom: 40px; }
+
+        /* === 4. ÉCRAN CATÉGORIES === */
+        #screen-categories {
+            flex: 1; padding: 20px; overflow-y: auto;
+        }
+        .header-title { font-size: 24px; margin-bottom: 20px; text-align: center; margin-top: 20px;}
+        .grid-categories { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .cat-card {
+            background: white; border-radius: 12px; overflow: hidden;
+            box-shadow: var(--card-shadow); cursor: pointer; transition: transform 0.2s;
+        }
+        .cat-card:hover { transform: translateY(-5px); }
+        .cat-top { background: var(--primary-blue); color: white; padding: 20px; font-size: 20px; font-weight: bold; }
+        .cat-bottom { padding: 20px; font-size: 14px; color: #666; display: flex; justify-content: space-between; align-items: center;}
+        
+        /* === 5. ÉCRAN DE JEU === */
+        #screen-game { flex: 1; display: flex; flex-direction: column; }
+        
+        /* Barre supérieure (HUD) */
+        .top-bar {
+            background: white; padding: 10px 15px; display: flex; justify-content: space-between;
+            align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05); z-index: 10;
+        }
+        .back-btn { color: var(--primary-blue); font-weight: bold; cursor: pointer; }
+        .score-display { font-size: 18px; color: #666; }
+        .stats { display: flex; align-items: center; gap: 15px; }
+        .lives { color: var(--danger-red); font-size: 18px; letter-spacing: 2px;}
+        .progress { background: var(--primary-blue); color: white; padding: 4px 10px; border-radius: 15px; font-size: 12px; font-weight: bold;}
+
+        /* Bandeau de l'événement à placer */
+        .event-to-place {
+            background: white; border: 1px solid var(--primary-blue); margin: 20px auto;
+            padding: 15px 30px; border-radius: 8px; text-align: center;
+            font-size: 18px; font-weight: bold; color: var(--primary-blue); max-width: 90%;
+            box-shadow: var(--card-shadow);
+        }
+
+        /* La Frise Chronologique */
+        .timeline-container {
+            flex: 1; display: flex; align-items: center; overflow-x: auto;
+            padding: 0 50px; scroll-behavior: smooth; white-space: nowrap;
+            /* Ligne de fond horizontale */
+            background-image: linear-gradient(transparent calc(50% - 1px), #d1d5db calc(50% - 1px), #d1d5db calc(50% + 1px), transparent calc(50% + 1px));
+        }
+
+        /* Cartes événement (déjà placées) */
+        .event-card {
+            min-width: 150px; width: 150px; background: white; border-radius: 8px;
+            box-shadow: var(--card-shadow); border: 1px solid #e5e7eb;
+            display: inline-flex; flex-direction: column; cursor: pointer;
+            transition: transform 0.2s; position: relative; z-index: 2; white-space: normal;
+        }
+        .event-card:hover { transform: scale(1.05); }
+        .event-year { background: var(--primary-blue); color: white; padding: 15px 5px; text-align: center; font-size: 24px; font-weight: bold; border-top-left-radius: 7px; border-top-right-radius: 7px;}
+        .event-title { padding: 15px 10px; text-align: center; font-size: 13px; color: var(--primary-blue); flex: 1; display: flex; align-items: center; justify-content: center;}
+
+        /* Points d'insertion (Les "loupes") */
+        .insert-point {
+            min-width: 60px; height: 100px; display: inline-flex; flex-direction: column;
+            align-items: center; justify-content: center; cursor: pointer; z-index: 2;
+        }
+        .insert-circle {
+            width: 24px; height: 24px; border: 2px solid var(--primary-blue); border-radius: 50%;
+            background: var(--bg-color); transition: all 0.2s;
+        }
+        .insert-line { width: 2px; height: 40px; background: var(--primary-blue); }
+        .insert-point:hover .insert-circle { background: var(--primary-blue); transform: scale(1.2); }
+        
+        /* Animation d'erreur */
+        @keyframes shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }
+        .error-shake .insert-circle { border-color: var(--danger-red); background: var(--danger-red); }
+        .error-shake { animation: shake 0.3s ease-in-out; }
+
+        /* === 6. MODAL DÉTAILS ÉVÉNEMENT === */
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; z-index: 100;
+        }
+        .modal-content {
+            background: white; width: 90%; max-width: 600px; border-radius: 12px;
+            padding: 30px; position: relative; box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        .close-btn { position: absolute; top: 15px; right: 20px; font-size: 24px; cursor: pointer; color: #666; }
+        .modal-title { font-size: 22px; color: var(--text-dark); margin-bottom: 10px; padding-right: 20px; }
+        .modal-date { font-size: 18px; color: var(--primary-blue); font-weight: bold; margin-bottom: 20px; }
+        .modal-desc { line-height: 1.5; color: #555; margin-bottom: 20px; }
+        .modal-link { color: var(--primary-blue); text-decoration: none; font-weight: bold; }
+        .modal-link:hover { text-decoration: underline; }
+
+        /* === 7. FIN DE PARTIE === */
+        #screen-end {
+            flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
+        }
+        .end-title { font-size: 32px; margin-bottom: 20px; color: var(--primary-blue); }
+        .end-score { font-size: 24px; margin-bottom: 40px; }
+/* === 8. CONTRÔLES DE ZOOM === */
+        .zoom-controls {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            gap: 15px;
+            z-index: 50;
+        }
+        .zoom-btn {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-blue);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 28px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            -webkit-user-select: none; /* Empêche de sélectionner le texte en tapotant vite */
+            user-select: none;
+        }
+        .zoom-btn:active {
+            transform: scale(0.9);
+        }
+/* === 9. CORRECTION TEXTE IPAD === */
+        :root {
+            --zoom-level: 1; /* Valeur de zoom par défaut */
+        }
+        
+        #timeline {
+            zoom: 1 !important; /* Désactive l'ancien zoom buggé sur iPad */
+        }
+        
+        .event-card {
+            min-width: calc(150px * var(--zoom-level)) !important;
+            width: calc(150px * var(--zoom-level)) !important;
+        }
+        
+        .event-year {
+            font-size: calc(24px * var(--zoom-level)) !important;
+            padding: calc(15px * var(--zoom-level)) 5px !important;
+        }
+        
+        .event-title {
+            /* On augmente la base de 13px à 16px, et on la multiplie par le zoom */
+            font-size: calc(16px * var(--zoom-level)) !important; 
+            padding: calc(15px * var(--zoom-level)) 10px !important;
+            font-weight: 500; /* Rend le texte un tout petit peu plus gras */
+        }
+        
+        .insert-point {
+            min-width: calc(60px * var(--zoom-level)) !important;
+        }
+        
+        .insert-circle {
+            width: calc(24px * var(--zoom-level)) !important;
+            height: calc(24px * var(--zoom-level)) !important;
+        }
+        
+        .insert-line {
+            height: calc(40px * var(--zoom-level)) !important;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ÉCRAN 1 : ACCUEIL -->
+    <div id="screen-home">
+        <div class="logo">HistoriAxe</div>
+        <div class="subtitle">Le Quiz Chronologique</div>
+        <button class="btn" onclick="showScreen('screen-categories')">Jouer maintenant</button>
+    </div>
+
+    <!-- ÉCRAN 2 : CATÉGORIES -->
+    <div id="screen-categories" class="hidden">
+        <h2 class="header-title">Choisissez une catégorie</h2>
+        <div class="grid-categories" id="categories-container">
+            <!-- Les catégories seront générées ici par JavaScript -->
+        </div>
+        <div style="text-align: center; margin-top: 30px;">
+            <button class="btn" style="background:#ccc; color:#333;" onclick="showScreen('screen-home')">Retour</button>
+        </div>
+    </div>
+
+    <!-- ÉCRAN 3 : JEU -->
+    <div id="screen-game" class="hidden">
+        <div class="top-bar">
+            <div class="back-btn" onclick="quitGame()">‹ Retour</div>
+            <div class="score-display"><span id="hud-score">0</span> pts</div>
+            <div class="stats">
+                <div class="lives" id="hud-lives">❤️❤️❤️</div>
+                <div class="progress"><span id="hud-progress">1</span>/<span id="hud-total">15</span></div>
+            </div>
+        </div>
+        
+        <div class="event-to-place" id="current-event-banner">
+            Chargement...
+        </div>
+
+        <div class="timeline-container" id="timeline">
+            <!-- La frise et les cartes seront injectées ici -->
+        </div>
+<!-- Contrôles de zoom -->
+        <div class="zoom-controls">
+            <button class="zoom-btn" onclick="changeZoom(-0.2)">-</button>
+            <button class="zoom-btn" onclick="changeZoom(0.2)">+</button>
+        </div>
+    </div>
+
+    <!-- ÉCRAN 4 : FIN DE PARTIE -->
+    <div id="screen-end" class="hidden">
+        <div class="end-title" id="end-title">Partie Terminée</div>
+        <div class="end-score">Votre score : <strong id="end-score-val">0</strong> points</div>
+        <button class="btn" onclick="showScreen('screen-categories')">Rejouer</button>
+    </div>
+
+    <!-- MODAL DÉTAILS -->
+    <div id="modal-details" class="modal-overlay hidden">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">×</span>
+            <div class="modal-title" id="modal-titre">Titre de l'événement</div>
+            <div class="modal-date" id="modal-date">Date</div>
+            <div class="modal-desc" id="modal-desc">Description explicative.</div>
+            <a href="#" target="_blank" class="modal-link" id="modal-wiki">Voir sur Wikipédia</a>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- LOGIQUE JAVASCRIPT                         -->
+    <!-- ========================================== -->
+    <script>
+        // --- 1. LES DONNÉES (Base de données locale) ---
+        const bdd = [
+            {
+                id: "cat1",
+                nom: "Histoire de France (Révolution à nos jours)",
+                difficulte: "Tous niveaux",
+                events: [
+                    { id: "hf1", titre: "Prise de la Bastille", date: 1789, description: "Événement inaugural et emblématique de la Révolution française.", wikipedia: "https://fr.wikipedia.org/wiki/Prise_de_la_Bastille" },
+                    { id: "hf2", titre: "Sacre de Napoléon Ier", date: 1804, description: "Napoléon Bonaparte est sacré empereur des Français à Notre-Dame de Paris.", wikipedia: "https://fr.wikipedia.org/wiki/Sacre_de_Napol%C3%A9on_Ier" },
+                    { id: "hf3", titre: "Abolition définitive de l'esclavage", date: 1848, description: "Sous l'impulsion de Victor Schœlcher, la IIe République abolit l'esclavage dans les colonies.", wikipedia: "https://fr.wikipedia.org/wiki/Abolition_de_l%27esclavage" },
+                    { id: "hf4", titre: "Séparation de l'Église et de l'État", date: 1905, description: "Loi fondant la laïcité en France, mettant fin au Concordat de 1801.", wikipedia: "https://fr.wikipedia.org/wiki/Loi_de_s%C3%A9paration_des_%C3%89glises_et_de_l%27%C3%89tat" },
+                    { id: "hf5", titre: "Début de la Première Guerre mondiale", date: 1914, description: "L'assassinat de l'archiduc François-Ferdinand déclenche le jeu des alliances.", wikipedia: "https://fr.wikipedia.org/wiki/Premi%C3%A8re_Guerre_mondiale" },
+                    { id: "hf6", titre: "Congés payés (Front Populaire)", date: 1936, description: "Accords de Matignon accordant notamment 2 semaines de congés payés aux travailleurs.", wikipedia: "https://fr.wikipedia.org/wiki/Front_populaire_(France)" },
+                    { id: "hf7", titre: "Appel du 18 Juin", date: 1940, description: "Le Général de Gaulle appelle à la résistance depuis Londres sur les ondes de la BBC.", wikipedia: "https://fr.wikipedia.org/wiki/Appel_du_18_Juin" },
+                    { id: "hf8", titre: "Proclamation de la Ve République", date: 1958, description: "Nouvelle constitution adoptée par référendum, donnant plus de pouvoir au président.", wikipedia: "https://fr.wikipedia.org/wiki/Cinqui%C3%A8me_R%C3%A9publique_(France)" },
+                    { id: "hf9", titre: "Mai 68", date: 1968, description: "Vaste mouvement de révolte étudiante et grève générale ouvrière.", wikipedia: "https://fr.wikipedia.org/wiki/Mai_68" },
+                    { id: "hf10", titre: "Abolition de la peine de mort", date: 1981, description: "Loi portée par le ministre de la Justice Robert Badinter, sous François Mitterrand.", wikipedia: "https://fr.wikipedia.org/wiki/Abolition_de_la_peine_de_mort_en_France" },
+                    { id: "hf11", titre: "La France gagne la Coupe du Monde", date: 1998, description: "L'équipe de France de Zinédine Zidane remporte son premier titre mondial (3-0 contre le Brésil).", wikipedia: "https://fr.wikipedia.org/wiki/Coupe_du_monde_de_football_1998" },
+                    { id: "hf12", titre: "Mise en circulation de l'Euro", date: 2002, description: "Les pièces et billets en euros remplacent officiellement le franc français.", wikipedia: "https://fr.wikipedia.org/wiki/Euro" }
+                ]
+            },
+            {
+                id: "cat2",
+                nom: "Dates clefs du Sport",
+                difficulte: "Expert",
+                events: [
+                    { id: "sp1", titre: "Premiers JO modernes", date: 1896, description: "Organisés à Athènes sous l'impulsion de Pierre de Coubertin.", wikipedia: "https://fr.wikipedia.org/wiki/Jeux_olympiques_de_1896" },
+                    { id: "sp2", titre: "Création du Tour de France", date: 1903, description: "Course cycliste créée par Henri Desgrange et le journal L'Auto.", wikipedia: "https://fr.wikipedia.org/wiki/Tour_de_France_1903" },
+                    { id: "sp3", titre: "Première Coupe du Monde de Football", date: 1930, description: "Organisée et remportée par l'Uruguay.", wikipedia: "https://fr.wikipedia.org/wiki/Coupe_du_monde_de_football_1930" },
+                    { id: "sp4", titre: "Miracle de Berne", date: 1954, description: "L'Allemagne de l'Ouest bat la Hongrie (invaincue depuis 4 ans) en finale de Coupe du monde.", wikipedia: "https://fr.wikipedia.org/wiki/Miracle_de_Berne" },
+                    { id: "sp5", titre: "Poing levé des Black Panthers aux JO", date: 1968, description: "Tommie Smith et John Carlos protestent contre la ségrégation aux JO de Mexico.", wikipedia: "https://fr.wikipedia.org/wiki/Poing_lev%C3%A9_du_Black_Power_lors_des_Jeux_olympiques_de_1968" },
+                    { id: "sp6", titre: "Le combat dans la jungle (Ali vs Foreman)", date: 1974, description: "Mohamed Ali récupère son titre de champion du monde des lourds à Kinshasa.", wikipedia: "https://fr.wikipedia.org/wiki/The_Rumble_in_the_Jungle" },
+                    { id: "sp7", titre: "La Main de Dieu (Maradona)", date: 1986, description: "Diego Maradona marque de la main contre l'Angleterre en quart de finale du Mondial.", wikipedia: "https://fr.wikipedia.org/wiki/Main_de_Dieu" },
+                    { id: "sp8", titre: "Le Grand Chelem doré de Steffi Graf", date: 1988, description: "Elle remporte les 4 tournois du Grand Chelem et l'or olympique la même année.", wikipedia: "https://fr.wikipedia.org/wiki/Steffi_Graf" },
+                    { id: "sp9", titre: "Usain Bolt pulvérise le record du 100m", date: 2009, description: "Il court en 9.58 secondes lors des championnats du monde de Berlin.", wikipedia: "https://fr.wikipedia.org/wiki/Record_du_monde_du_100_m%C3%A8tres" },
+                    { id: "sp10", titre: "Saut depuis la stratosphère", date: 2012, description: "Felix Baumgartner franchit le mur du son en chute libre depuis 38,9 km d'altitude.", wikipedia: "https://fr.wikipedia.org/wiki/Red_Bull_Stratos" },
+                    { id: "sp11", titre: "Kipchoge court le marathon sous les 2h", date: 2019, description: "Eliud Kipchoge brise la barre mythique des 2 heures à Vienne (non homologué).", wikipedia: "https://fr.wikipedia.org/wiki/Ineos_1%3A59_Challenge" },
+                    { id: "sp12", titre: "Lionel Messi soulève enfin la Coupe du Monde", date: 2022, description: "L'Argentine bat la France aux tirs au but lors d'une finale légendaire au Qatar.", wikipedia: "https://fr.wikipedia.org/wiki/Coupe_du_monde_de_football_2022" }
+                ]
+            },
+            {
+                id: "cat3",
+                nom: "Histoire des Jeux Vidéo",
+                difficulte: "Amateur",
+                events: [
+                    { id: "jv1", titre: "Tennis for Two", date: 1958, description: "Considéré comme l'un des tout premiers jeux vidéo de l'histoire, joué sur un oscilloscope.", wikipedia: "https://fr.wikipedia.org/wiki/Tennis_for_Two" },
+                    { id: "jv2", titre: "Sortie de Pong (Arcade)", date: 1972, description: "Le premier jeu vidéo d'arcade à succès mondial, créé par Atari.", wikipedia: "https://fr.wikipedia.org/wiki/Pong" },
+                    { id: "jv3", titre: "Invasion de Pac-Man", date: 1980, description: "Le célèbre camembert jaune dévoreur de pac-gommes arrive dans les salles d'arcade.", wikipedia: "https://fr.wikipedia.org/wiki/Pac-Man" },
+                    { id: "jv4", titre: "Crash du jeu vidéo", date: 1983, description: "Grave crise industrielle causée par la surproduction et des jeux de mauvaise qualité (ex: E.T.).", wikipedia: "https://fr.wikipedia.org/wiki/Krach_du_jeu_vid%C3%A9o_de_1983" },
+                    { id: "jv5", titre: "Sortie de la NES et Super Mario Bros", date: 1985, description: "Nintendo relance le marché des consoles de salon avec sa machine 8-bits.", wikipedia: "https://fr.wikipedia.org/wiki/Nintendo_Entertainment_System" },
+                    { id: "jv6", titre: "Lancement de la Game Boy et Tetris", date: 1989, description: "La console portable de Nintendo révolutionne le marché, vendue avec le jeu Tetris.", wikipedia: "https://fr.wikipedia.org/wiki/Game_Boy" },
+                    { id: "jv7", titre: "Sortie de la PlayStation (Sony)", date: 1994, description: "Sony entre sur le marché et popularise l'utilisation du CD-ROM pour les jeux.", wikipedia: "https://fr.wikipedia.org/wiki/PlayStation" },
+                    { id: "jv8", titre: "Phénomène Pokémon Rouge et Bleu", date: 1996, description: "Sortie au Japon des premiers jeux de la franchise la plus lucrative au monde.", wikipedia: "https://fr.wikipedia.org/wiki/Pok%C3%A9mon_Rouge_et_Bleu" },
+                    { id: "jv9", titre: "World of Warcraft", date: 2004, description: "Le MMORPG de Blizzard redéfinit le genre et attire des dizaines de millions de joueurs.", wikipedia: "https://fr.wikipedia.org/wiki/World_of_Warcraft" },
+                    { id: "jv10", titre: "Sortie de la Nintendo Wii", date: 2006, description: "La console démocratise le jeu vidéo auprès du grand public grâce à la détection de mouvement.", wikipedia: "https://fr.wikipedia.org/wiki/Wii" },
+                    { id: "jv11", titre: "Minecraft (Version Alpha)", date: 2009, description: "Le jeu bac à sable de Markus Persson (Notch) devient le jeu le plus vendu de tous les temps.", wikipedia: "https://fr.wikipedia.org/wiki/Minecraft" },
+                    { id: "jv12", titre: "Lancement de la Nintendo Switch", date: 2017, description: "Console hybride portable/salon lancée avec le jeu chef-d'œuvre Zelda: Breath of the Wild.", wikipedia: "https://fr.wikipedia.org/wiki/Nintendo_Switch" }
+                ]
+            }
+        ];
+
+        // --- 2. VARIABLES D'ÉTAT DU JEU ---
+        let currentPool = [];       // Événements restant à placer
+        let placedEvents = [];      // Événements déjà placés sur la frise
+        let eventToPlace = null;    // L'événement qu'on a en main
+        let lives = 3;
+        let score = 0;
+        let totalEvents = 0;
+
+        // --- 3. FONCTIONS D'INTERFACE DE BASE ---
+        function showScreen(screenId) {
+            document.querySelectorAll('body > div').forEach(div => {
+                if(div.id !== 'modal-details') div.classList.add('hidden');
+            });
+            document.getElementById(screenId).classList.remove('hidden');
+
+            if (screenId === 'screen-categories') initCategories();
+        }
+
+        // --- 4. INITIALISATION DES CATÉGORIES ---
+        function initCategories() {
+            const container = document.getElementById('categories-container');
+            container.innerHTML = ''; // On vide au cas où
+            
+            bdd.forEach((cat, index) => {
+                const card = document.createElement('div');
+                card.className = 'cat-card';
+                card.innerHTML = `
+                    <div class="cat-top">${cat.nom}</div>
+                    <div class="cat-bottom">
+                        <span>${cat.difficulte}</span>
+                        <span style="color:var(--primary-blue); font-weight:bold;">Jouer ›</span>
+                    </div>
+                `;
+                card.onclick = () => startGame(index);
+                container.appendChild(card);
+            });
+        }
+
+        // --- 5. LOGIQUE DU JEU ---
+        function startGame(catIndex) {
+            const category = bdd[catIndex];
+            
+            // On copie le tableau pour ne pas modifier l'original
+            let eventsCopy = [...category.events];
+            
+            // On mélange aléatoirement les événements
+            eventsCopy.sort(() => Math.random() - 0.5);
+
+            totalEvents = eventsCopy.length;
+            
+            // Le premier événement est placé d'office
+            placedEvents = [eventsCopy.pop()];
+            
+            // Le reste constitue la pioche
+            currentPool = eventsCopy;
+            
+            // On initialise le joueur
+            lives = 3;
+            score = 0;
+            
+            updateHUD();
+            pickNextEvent();
+            showScreen('screen-game');
+        }
+
+        function pickNextEvent() {
+            if (currentPool.length === 0) {
+                endGame(true); // Gagné !
+                return;
+            }
+            eventToPlace = currentPool.pop();
+            document.getElementById('current-event-banner').innerText = "Placer : " + eventToPlace.titre;
+            renderTimeline();
+        }
+
+        function updateHUD() {
+            document.getElementById('hud-score').innerText = score;
+            document.getElementById('hud-lives').innerText = '❤️'.repeat(lives);
+            document.getElementById('hud-progress').innerText = placedEvents.length;
+            document.getElementById('hud-total').innerText = totalEvents;
+        }
+
+        // --- 6. GESTION DE LA FRISE (L'affichage dynamique) ---
+        function renderTimeline() {
+            const timeline = document.getElementById('timeline');
+            timeline.innerHTML = ''; // On efface la frise actuelle
+
+            // Pour chaque événement placé, on crée un point d'insertion AVANT, puis la carte
+            for (let i = 0; i <= placedEvents.length; i++) {
+                
+                // 1. Ajouter le point d'insertion (la loupe)
+                const insertPoint = document.createElement('div');
+                insertPoint.className = 'insert-point';
+                insertPoint.innerHTML = `
+                    <div class="insert-circle"></div>
+                    <div class="insert-line"></div>
+                `;
+                // Quand on clique sur ce point, on vérifie si la réponse est juste
+                insertPoint.onclick = () => checkPlacement(i, insertPoint);
+                timeline.appendChild(insertPoint);
+
+                // 2. Ajouter la carte de l'événement (si on n'est pas à la fin du tableau)
+                if (i < placedEvents.length) {
+                    const evt = placedEvents[i];
+                    const card = document.createElement('div');
+                    card.className = 'event-card';
+                    card.innerHTML = `
+                        <div class="event-year">${evt.date}</div>
+                        <div class="event-title">${evt.titre}</div>
+                    `;
+                    // Clic sur la carte = afficher les détails
+                    card.onclick = () => openModal(evt);
+                    timeline.appendChild(card);
+                }
+            }
+        }
+
+        // --- 7. VÉRIFICATION DE LA RÉPONSE ---
+        function checkPlacement(index, insertPointHtmlElement) {
+            const dateToPlace = eventToPlace.date;
+            let isCorrect = true;
+
+            // On vérifie la date par rapport à la carte précédente
+            if (index > 0) {
+                const prevEvent = placedEvents[index - 1];
+                if (dateToPlace < prevEvent.date) isCorrect = false;
+            }
+
+            // On vérifie la date par rapport à la carte suivante
+            if (index < placedEvents.length) {
+                const nextEvent = placedEvents[index];
+                if (dateToPlace > nextEvent.date) isCorrect = false;
+            }
+
+            if (isCorrect) {
+                // BONNE RÉPONSE
+                score += 10;
+                // On insère l'événement au bon endroit dans notre tableau
+                placedEvents.splice(index, 0, eventToPlace);
+                updateHUD();
+                pickNextEvent();
+                // Fait scroller la frise vers la droite automatiquement
+                document.getElementById('timeline').scrollBy({ left: 100, behavior: 'smooth' });
+            } else {
+                // MAUVAISE RÉPONSE
+                lives -= 1;
+                updateHUD();
+                
+                // Animation d'erreur sur le bouton cliqué
+                insertPointHtmlElement.classList.add('error-shake');
+                setTimeout(() => insertPointHtmlElement.classList.remove('error-shake'), 300);
+
+                if (lives <= 0) {
+                    setTimeout(() => endGame(false), 500);
+                }
+            }
+        }
+
+        // --- 8. FIN DE PARTIE ---
+        function endGame(isWin) {
+            showScreen('screen-end');
+            document.getElementById('end-score-val').innerText = score;
+            const titleElement = document.getElementById('end-title');
+            
+            if (isWin) {
+                titleElement.innerText = "Bravo ! Frise complétée !";
+                titleElement.style.color = "#27ae60"; // Vert
+            } else {
+                titleElement.innerText = "Game Over !";
+                titleElement.style.color = "var(--danger-red)"; // Rouge
+            }
+        }
+
+        function quitGame() {
+            if(confirm("Voulez-vous vraiment quitter cette partie ?")) {
+                showScreen('screen-categories');
+            }
+        }
+
+        // --- 9. FENÊTRE MODAL (Détails Wikipédia) ---
+        function openModal(evt) {
+            document.getElementById('modal-titre').innerText = evt.titre;
+            document.getElementById('modal-date').innerText = evt.date;
+            document.getElementById('modal-desc').innerText = evt.description;
+            document.getElementById('modal-wiki').href = evt.wikipedia;
+            document.getElementById('modal-details').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('modal-details').classList.add('hidden');
+        }
+
+        // Au chargement de la page, on affiche l'écran d'accueil
+// --- 10. GESTION DU ZOOM ---
+        let currentZoom = 1;
+        
+        function changeZoom(delta) {
+            currentZoom += delta;
+            if (currentZoom < 0.6) currentZoom = 0.6;
+            if (currentZoom > 2.2) currentZoom = 2.2;
+            
+            // On annule l'ancienne méthode de zoom qui bloquait le texte
+            document.getElementById('timeline').style.zoom = '1';
+            
+            // NOUVELLE MÉTHODE : On met à jour une variable CSS globale
+            document.documentElement.style.setProperty('--zoom-level', currentZoom);
+        }dow.onload = () => {
+            showScreen('screen-home');
+        };
+    </script>
+</body>
+</html>
