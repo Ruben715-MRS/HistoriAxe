@@ -20,9 +20,11 @@
         .hidden { display: none !important; }
         .btn { background-color: var(--primary-blue); color: white; border: none; padding: 12px 24px; border-radius: 8px; font-size: 16px; cursor: pointer; font-weight: bold; transition: opacity 0.2s; }
         .btn:hover { opacity: 0.8; }
+        
         #screen-home { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
         .logo { font-size: 48px; font-weight: bold; color: var(--primary-blue); margin-bottom: 10px; }
         .subtitle { font-size: 18px; color: #666; margin-bottom: 40px; }
+        
         #screen-categories { flex: 1; padding: 20px; overflow-y: auto; }
         .header-title { font-size: 24px; margin-bottom: 20px; text-align: center; margin-top: 20px;}
         .grid-categories { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
@@ -30,6 +32,16 @@
         .cat-card:hover { transform: translateY(-5px); }
         .cat-top { background: var(--primary-blue); color: white; padding: 20px; font-size: 20px; font-weight: bold; }
         .cat-bottom { padding: 20px; font-size: 14px; color: #666; display: flex; justify-content: space-between; align-items: center;}
+        
+        /* === NOUVEAU : ÉCRAN DES MODES DE JEU === */
+        #screen-modes { flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; align-items: center;}
+        .grid-modes { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; width: 100%; max-width: 800px; margin-bottom: 30px; }
+        .mode-card { background-color: var(--primary-blue); color: white; padding: 25px 20px; border-radius: 12px; text-align: center; cursor: pointer; transition: transform 0.2s; box-shadow: var(--card-shadow); display: flex; flex-direction: column; justify-content: center; }
+        .mode-card:hover { transform: translateY(-5px); }
+        .mode-card h3 { font-size: 22px; margin-bottom: 10px; }
+        .mode-card p { font-size: 14px; opacity: 0.9; }
+
+        /* === ÉCRAN DE JEU === */
         #screen-game { flex: 1; display: flex; flex-direction: column; }
         .top-bar { background: white; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05); z-index: 10; }
         .back-btn { color: var(--primary-blue); font-weight: bold; cursor: pointer; }
@@ -37,8 +49,13 @@
         .stats { display: flex; align-items: center; gap: 15px; }
         .lives { color: var(--danger-red); font-size: 18px; letter-spacing: 2px;}
         .progress { background: var(--primary-blue); color: white; padding: 4px 10px; border-radius: 15px; font-size: 12px; font-weight: bold;}
+        
+        /* === NOUVEAU : ENCADRÉ DU CHRONOMÈTRE === */
+        .timer-box { background-color: #333; color: white; padding: 5px 12px; border-radius: 8px; font-size: 16px; font-weight: bold; font-family: monospace; letter-spacing: 1px; }
+
         .event-to-place { background: white; border: 1px solid var(--primary-blue); margin: 20px auto; padding: 15px 30px; border-radius: 8px; text-align: center; font-size: 18px; font-weight: bold; color: var(--primary-blue); max-width: 90%; box-shadow: var(--card-shadow); }
         .timeline-container { flex: 1; display: flex; align-items: center; overflow-x: auto; padding: 0 50px; scroll-behavior: smooth; white-space: nowrap; background-image: linear-gradient(transparent calc(50% - 1px), #d1d5db calc(50% - 1px), #d1d5db calc(50% + 1px), transparent calc(50% + 1px)); zoom: 1 !important; }
+        
         .event-card { min-width: calc(150px * var(--zoom-level)) !important; width: calc(150px * var(--zoom-level)) !important; background: white; border-radius: 8px; box-shadow: var(--card-shadow); border: 1px solid #e5e7eb; display: inline-flex; flex-direction: column; cursor: pointer; transition: transform 0.2s; position: relative; z-index: 2; white-space: normal; }
         .event-card:hover { transform: scale(1.05); }
         .event-year { background: var(--primary-blue); color: white; text-align: center; font-weight: bold; border-top-left-radius: 7px; border-top-right-radius: 7px; font-size: calc(24px * var(--zoom-level)) !important; padding: calc(15px * var(--zoom-level)) 5px !important; }
@@ -52,6 +69,7 @@
         @keyframes shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }
         .error-shake .insert-circle { border-color: var(--danger-red); background: var(--danger-red); }
         .error-shake { animation: shake 0.3s ease-in-out; }
+        
         .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; z-index: 100; }
         .modal-content { background: white; width: 90%; max-width: 600px; max-height: 80vh; overflow-y: auto; border-radius: 12px; padding: 30px; position: relative; box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
         .close-btn { position: absolute; top: 15px; right: 20px; font-size: 24px; cursor: pointer; color: #666; }
@@ -60,9 +78,12 @@
         .modal-desc { line-height: 1.6; color: #555; margin-bottom: 20px; text-align: justify; }
         .modal-link { color: var(--primary-blue); text-decoration: none; font-weight: bold; }
         .modal-link:hover { text-decoration: underline; }
+        
         #screen-end { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; }
         .end-title { font-size: 32px; margin-bottom: 20px; color: var(--primary-blue); }
-        .end-score { font-size: 24px; margin-bottom: 40px; }
+        .end-score { font-size: 24px; margin-bottom: 20px; }
+        .end-time { font-size: 20px; margin-bottom: 40px; color: #666; font-weight: bold; }
+        
         .zoom-controls { position: absolute; bottom: 30px; right: 30px; display: flex; gap: 15px; z-index: 50; }
         .zoom-btn { width: 50px; height: 50px; background-color: var(--primary-blue); color: white; border: none; border-radius: 50%; font-size: 28px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; cursor: pointer; -webkit-user-select: none; user-select: none; }
         .zoom-btn:active { transform: scale(0.9); }
@@ -93,12 +114,37 @@
         </div>
     </div>
 
+    <!-- ÉCRAN 2.5 : MODES DE JEU (NOUVEAU) -->
+    <div id="screen-modes" class="hidden">
+        <h2 class="header-title">Choisissez un mode de jeu</h2>
+        <div class="grid-modes">
+            <div class="mode-card" onclick="startActualGame('training')">
+                <h3>Entraînement</h3>
+                <p>Aucune vie perdue. Jouez à votre rythme pour tout découvrir.</p>
+            </div>
+            <div class="mode-card" onclick="startActualGame('classic')">
+                <h3>Classique</h3>
+                <p>3 vies. Le mode de jeu standard et équilibré.</p>
+            </div>
+            <div class="mode-card" onclick="startActualGame('chrono')">
+                <h3>Chrono</h3>
+                <p>3 vies. Placez les événements le plus vite possible.</p>
+            </div>
+            <div class="mode-card" onclick="startActualGame('expert')">
+                <h3>Expert</h3>
+                <p>1 vie, chronométré. La moindre erreur est fatale.</p>
+            </div>
+        </div>
+        <button class="btn" style="background:#ccc; color:#333;" onclick="showScreen('screen-categories')">Retour aux catégories</button>
+    </div>
+
     <!-- ÉCRAN 3 : JEU -->
     <div id="screen-game" class="hidden">
         <div class="top-bar">
             <div class="back-btn" onclick="quitGame()">‹ Retour</div>
             <div class="score-display"><span id="hud-score">0</span> pts</div>
             <div class="stats">
+                <div id="hud-timer-container" class="timer-box hidden"><span id="hud-timer">0,0</span> s</div>
                 <div class="lives" id="hud-lives">❤️❤️❤️</div>
                 <div class="progress"><span id="hud-progress">1</span>/<span id="hud-total">15</span></div>
             </div>
@@ -115,6 +161,7 @@
     <div id="screen-end" class="hidden">
         <div class="end-title" id="end-title">Partie Terminée</div>
         <div class="end-score">Votre score : <strong id="end-score-val">0</strong> points</div>
+        <div id="end-time-display" class="end-time hidden">Temps : 0,0 s</div>
         <button class="btn" onclick="showScreen('screen-categories')">Rejouer</button>
     </div>
 
@@ -209,7 +256,7 @@
                     { id: "c22", date: 1905, titre: "Loi de séparation des Églises et de l’État", description: "En 1905, la loi de séparation des Églises et de l’État met fin au régime concordataire napoléonien, transférant la propriété des biens du culte à des associations cultuelles sous contrôle laïc ; cette loi compte car elle bouleverse, dans de nombreux villages, l’équilibre séculaire entre pouvoir municipal, curé et communauté paroissiale, provoquant des résistances locales particulièrement vives dans les régions de forte pratique religieuse.", wikipedia: "https://fr.wikipedia.org/w/index.php?search=Loi+de+separation+des+Eglises+et+de+l'Etat" },
                     { id: "c23", date: 1906, titre: "La querelle des inventaires", description: "En février 1906, l’application de la loi de séparation provoque, dans de nombreuses paroisses rurales de l’Ouest, du Massif central ou du Nord, des affrontements parfois violents entre agents de l’État chargés d’inventorier les biens des églises et paroissiens mobilisés pour les en empêcher ; cette querelle compte car elle illustre concrètement, à hauteur de village, les tensions entre laïcisation étatique et attachement populaire aux pratiques et aux édifices religieux locaux.", wikipedia: "https://fr.wikipedia.org/w/index.php?search=Querelle+des+inventaires" },
                     { id: "c24", date: 1910, titre: "Loi sur les retraites ouvrières et paysannes", description: "En 1910, une loi instaure les premières retraites ouvrières et paysannes, obligatoires pour les salariés modestes et facultatives pour de nombreux exploitants indépendants ; cette loi compte car elle marque une première reconnaissance, encore imparfaite, de la protection sociale des populations rurales âgées, dans une société où les personnes âgées demeuraient jusque-là très majoritairement à la charge de la solidarité familiale et communautaire.", wikipedia: "https://fr.wikipedia.org/w/index.php?search=Retraites+ouvrieres+et+paysannes" },
-                    { id: "c25", date: 1914, titre: "Mobilisation générale", description: "En août 1914, le décret de mobilisation générale arrache aux campagnes françaises plusieurs millions d’hommes en âge de combattre, laissant femmes, enfants et personnes âgées assumer seuls, pendant plus de quatre ans, l’essentiel des travaux agricoles ; cette mobilisation compte car elle bouleverse durablement la répartition sexuée du travail rural et prélude à des pertes démographiques massives qui frappent particulièrement les classes d’âge des jeunes paysans.", wikipedia: "https://fr.wikipedia.org/w/index.php?search=Mobilisation+francaise+de+1914" },
+                    { id: "c25", date: 1914, titre: "Mobilisation générale", description: "En août 1914, le décret de mobilization générale arrache aux campagnes françaises plusieurs millions d’hommes en âge de combattre, laissant femmes, enfants et personnes âgées assumer seuls, pendant plus de quatre ans, l’essentiel des travaux agricoles ; cette mobilisation compte car elle bouleverse durablement la répartition sexuée du travail rural et prélude à des pertes démographiques massives qui frappent particulièrement les classes d’âge des jeunes paysans.", wikipedia: "https://fr.wikipedia.org/w/index.php?search=Mobilisation+francaise+de+1914" },
                     { id: "c26", date: 1918, titre: "L’Armistice et le retour au pays", description: "En novembre 1918, l’Armistice met fin aux combats et ouvre un long processus de démobilisation et de retour des survivants dans leurs villages, souvent marqués dans leur corps ou leur psychisme par quatre années de guerre ; cet événement compte car il ouvre une période de deuil collectif intense dans des campagnes qui ont payé un tribut humain disproportionné à la guerre, rapporté à leur poids démographique.", wikipedia: "https://fr.wikipedia.org/w/index.php?search=Armistice+de+1918" },
                     { id: "c27", date: 1920, titre: "Monuments aux morts et Office national du crédit agricole", description: "En 1920 se superposent, sans lien direct entre eux, deux faits marquants de la vie rurale : d’une part, la quasi-totalité des communes achèvent l’édification de leur monument aux morts, souvent financé par souscription villageoise ; d’autre part, l’État crée l’Office national du crédit agricole, chargé de centraliser et de développer le financement public de l’agriculture. Cette coïncidence compte car elle illustre deux logiques distinctes de l’immédiat après-guerre rural — l’une mémorielle et communautaire, l’autre financière et étatique — qu’il conviendra de traiter séparément si l’on souhaite les faire apparaître comme deux repères propres sur la frise.", wikipedia: "https://fr.wikipedia.org/w/index.php?search=Monument+aux+morts" },
                     { id: "c28", date: 1923, titre: "Loi sur l’électrification rurale", description: "En 1923, une loi instaure un cadre juridique et financier destiné à subventionner l’extension du réseau électrique aux communes rurales, jusque-là très largement dépourvues de courant ; cette loi compte car elle amorce une transformation matérielle profonde de la vie quotidienne à la campagne (éclairage, moteurs électriques, futurs équipements domestiques), transformation qui ne s’achève réellement que dans les décennies suivantes.", wikipedia: "https://fr.wikipedia.org/w/index.php?search=Electrification+rurale+en+France" },
@@ -300,7 +347,13 @@
         let lives = 3;
         let score = 0;
         let totalEvents = 0;
-        let isAnimating = false; // Empêche de cliquer partout pendant l'animation
+        let isAnimating = false; 
+        
+        let currentMode = 'classic';
+        let selectedCatIndex = 0;
+        let timerInterval = null;
+        let startTime = 0;
+        let totalTimePlayed = 0; 
 
         function showScreen(screenId) {
             document.querySelectorAll('body > div').forEach(div => {
@@ -316,24 +369,66 @@
             bdd.forEach((cat, index) => {
                 const card = document.createElement('div');
                 card.className = 'cat-card';
-                card.innerHTML = `<div class="cat-top">${cat.nom}</div><div class="cat-bottom"><span>${cat.difficulte}</span><span style="color:var(--primary-blue); font-weight:bold;">Jouer ›</span></div>`;
-                card.onclick = () => startGame(index);
+                card.innerHTML = `<div class="cat-top">${cat.nom}</div><div class="cat-bottom"><span>${cat.difficulte}</span><span style="color:var(--primary-blue); font-weight:bold;">Choisir ›</span></div>`;
+                // NOUVEAU : Ouvre l'écran des modes au lieu de lancer le jeu
+                card.onclick = () => {
+                    selectedCatIndex = index;
+                    showScreen('screen-modes');
+                };
                 container.appendChild(card);
             });
         }
 
-        function startGame(catIndex) {
-            const category = bdd[catIndex];
+        function startActualGame(mode) {
+            currentMode = mode;
+            const category = bdd[selectedCatIndex];
             let eventsCopy = [...category.events];
             eventsCopy.sort(() => Math.random() - 0.5);
             totalEvents = eventsCopy.length;
             placedEvents = [eventsCopy.pop()];
             currentPool = eventsCopy;
-            lives = 3;
+            
+            // Paramétrage des vies selon le mode
+            if (mode === 'training') lives = Infinity;
+            else if (mode === 'expert') lives = 1;
+            else lives = 3; 
+            
             score = 0;
+            totalTimePlayed = 0;
+            
+            // Affichage conditionnel des vies et du chronomètre
+            const hudLives = document.getElementById('hud-lives');
+            const hudTimer = document.getElementById('hud-timer-container');
+            
+            hudLives.classList.remove('hidden');
+            hudTimer.classList.add('hidden');
+            
+            if (mode === 'training') {
+                hudLives.classList.add('hidden');
+            }
+            if (mode === 'chrono' || mode === 'expert') {
+                hudTimer.classList.remove('hidden');
+                document.getElementById('hud-timer').innerText = "0,0";
+                startTimer();
+            }
+
             updateHUD();
             pickNextEvent();
             showScreen('screen-game');
+        }
+        
+        function startTimer() {
+            startTime = Date.now();
+            if (timerInterval) clearInterval(timerInterval);
+            timerInterval = setInterval(() => {
+                let elapsed = (Date.now() - startTime) / 1000;
+                document.getElementById('hud-timer').innerText = elapsed.toFixed(1).replace('.', ',');
+            }, 100);
+        }
+
+        function stopTimer() {
+            if (timerInterval) clearInterval(timerInterval);
+            totalTimePlayed = (Date.now() - startTime) / 1000;
         }
 
         function pickNextEvent() {
@@ -348,7 +443,9 @@
 
         function updateHUD() {
             document.getElementById('hud-score').innerText = score;
-            document.getElementById('hud-lives').innerText = '❤️'.repeat(lives);
+            if (currentMode !== 'training') {
+                document.getElementById('hud-lives').innerText = '❤️'.repeat(lives);
+            }
             document.getElementById('hud-progress').innerText = placedEvents.length;
             document.getElementById('hud-total').innerText = totalEvents;
         }
@@ -396,7 +493,12 @@
                 document.getElementById('timeline').scrollBy({ left: 100, behavior: 'smooth' });
             } else {
                 isAnimating = true; 
-                lives -= 1;
+                
+                // Si on n'est pas en entraînement, on perd une vie
+                if (currentMode !== 'training') {
+                    lives -= 1;
+                }
+                
                 updateHUD();
                 
                 insertPointHtmlElement.classList.add('error-shake');
@@ -418,7 +520,8 @@
                     placedEvents.splice(correctIndex, 0, eventToPlace); 
                     insertPointHtmlElement.classList.remove('error-shake');
                     
-                    if (lives <= 0) {
+                    // Fin du jeu seulement si les vies tombent à 0 et qu'on n'est pas en Entraînement
+                    if (lives <= 0 && currentMode !== 'training') {
                         renderTimeline(); 
                         setTimeout(() => endGame(false), 500);
                     } else {
@@ -431,9 +534,12 @@
         }
 
         function endGame(isWin) {
+            stopTimer(); // On arrête le chrono
             showScreen('screen-end');
             document.getElementById('end-score-val').innerText = score;
             const titleElement = document.getElementById('end-title');
+            const timeDisplay = document.getElementById('end-time-display');
+            
             if (isWin) {
                 titleElement.innerText = "Bravo ! Frise complétée !";
                 titleElement.style.color = "#27ae60"; 
@@ -441,10 +547,21 @@
                 titleElement.innerText = "Game Over !";
                 titleElement.style.color = "var(--danger-red)"; 
             }
+            
+            // Affichage du temps final si le mode l'exige
+            if ((currentMode === 'chrono' || currentMode === 'expert') && isWin) {
+                timeDisplay.innerText = "Temps : " + totalTimePlayed.toFixed(1).replace('.', ',') + " s";
+                timeDisplay.classList.remove('hidden');
+            } else {
+                timeDisplay.classList.add('hidden');
+            }
         }
 
         function quitGame() {
-            if(confirm("Voulez-vous vraiment quitter cette partie ?")) showScreen('screen-categories');
+            if(confirm("Voulez-vous vraiment quitter cette partie ?")) {
+                stopTimer(); // On arrête le chrono si on quitte en cours de route
+                showScreen('screen-categories');
+            }
         }
 
         function openModal(evt) {
