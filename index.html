@@ -33,7 +33,7 @@
         .cat-top { background: var(--primary-blue); color: white; padding: 20px; font-size: 20px; font-weight: bold; }
         .cat-bottom { padding: 20px; font-size: 14px; color: #666; display: flex; justify-content: space-between; align-items: center;}
         
-        /* === NOUVEAU : ÉCRAN DES MODES DE JEU === */
+        /* ÉCRAN DES MODES DE JEU */
         #screen-modes { flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; align-items: center;}
         .grid-modes { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; width: 100%; max-width: 800px; margin-bottom: 30px; }
         .mode-card { background-color: var(--primary-blue); color: white; padding: 25px 20px; border-radius: 12px; text-align: center; cursor: pointer; transition: transform 0.2s; box-shadow: var(--card-shadow); display: flex; flex-direction: column; justify-content: center; }
@@ -41,7 +41,7 @@
         .mode-card h3 { font-size: 22px; margin-bottom: 10px; }
         .mode-card p { font-size: 14px; opacity: 0.9; }
 
-        /* === ÉCRAN DE JEU === */
+        /* ÉCRAN DE JEU */
         #screen-game { flex: 1; display: flex; flex-direction: column; }
         .top-bar { background: white; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05); z-index: 10; }
         .back-btn { color: var(--primary-blue); font-weight: bold; cursor: pointer; }
@@ -50,7 +50,7 @@
         .lives { color: var(--danger-red); font-size: 18px; letter-spacing: 2px;}
         .progress { background: var(--primary-blue); color: white; padding: 4px 10px; border-radius: 15px; font-size: 12px; font-weight: bold;}
         
-        /* === NOUVEAU : ENCADRÉ DU CHRONOMÈTRE === */
+        /* ENCADRÉ DU CHRONOMÈTRE */
         .timer-box { background-color: #333; color: white; padding: 5px 12px; border-radius: 8px; font-size: 16px; font-weight: bold; font-family: monospace; letter-spacing: 1px; }
 
         .event-to-place { background: white; border: 1px solid var(--primary-blue); margin: 20px auto; padding: 15px 30px; border-radius: 8px; text-align: center; font-size: 18px; font-weight: bold; color: var(--primary-blue); max-width: 90%; box-shadow: var(--card-shadow); }
@@ -114,13 +114,17 @@
         </div>
     </div>
 
-    <!-- ÉCRAN 2.5 : MODES DE JEU (NOUVEAU) -->
+    <!-- ÉCRAN 2.5 : MODES DE JEU -->
     <div id="screen-modes" class="hidden">
         <h2 class="header-title">Choisissez un mode de jeu</h2>
         <div class="grid-modes">
+            <div class="mode-card" style="background-color: #2c3e50;" onclick="startActualGame('discovery')">
+                <h3>Découverte</h3>
+                <p>Consultez la frise complète chronologiquement pour apprendre, sans jouer.</p>
+            </div>
             <div class="mode-card" onclick="startActualGame('training')">
                 <h3>Entraînement</h3>
-                <p>Aucune vie perdue. Jouez à votre rythme pour tout découvrir.</p>
+                <p>Aucune vie perdue. Jouez à votre rythme pour tout mémoriser.</p>
             </div>
             <div class="mode-card" onclick="startActualGame('classic')">
                 <h3>Classique</h3>
@@ -142,11 +146,11 @@
     <div id="screen-game" class="hidden">
         <div class="top-bar">
             <div class="back-btn" onclick="quitGame()">‹ Retour</div>
-            <div class="score-display"><span id="hud-score">0</span> pts</div>
+            <div class="score-display" id="hud-score-container"><span id="hud-score">0</span> pts</div>
             <div class="stats">
                 <div id="hud-timer-container" class="timer-box hidden"><span id="hud-timer">0,0</span> s</div>
                 <div class="lives" id="hud-lives">❤️❤️❤️</div>
-                <div class="progress"><span id="hud-progress">1</span>/<span id="hud-total">15</span></div>
+                <div class="progress" id="hud-progress-container"><span id="hud-progress">1</span>/<span id="hud-total">15</span></div>
             </div>
         </div>
         <div class="event-to-place" id="current-event-banner">Chargement...</div>
@@ -256,7 +260,7 @@
                     { id: "c22", date: 1905, titre: "Loi de séparation des Églises et de l’État", description: "En 1905, la loi de séparation des Églises et de l’État met fin au régime concordataire napoléonien, transférant la propriété des biens du culte à des associations cultuelles sous contrôle laïc ; cette loi compte car elle bouleverse, dans de nombreux villages, l’équilibre séculaire entre pouvoir municipal, curé et communauté paroissiale, provoquant des résistances locales particulièrement vives dans les régions de forte pratique religieuse.", wikipedia: "https://fr.wikipedia.org/w/index.php?search=Loi+de+separation+des+Eglises+et+de+l'Etat" },
                     { id: "c23", date: 1906, titre: "La querelle des inventaires", description: "En février 1906, l’application de la loi de séparation provoque, dans de nombreuses paroisses rurales de l’Ouest, du Massif central ou du Nord, des affrontements parfois violents entre agents de l’État chargés d’inventorier les biens des églises et paroissiens mobilisés pour les en empêcher ; cette querelle compte car elle illustre concrètement, à hauteur de village, les tensions entre laïcisation étatique et attachement populaire aux pratiques et aux édifices religieux locaux.", wikipedia: "https://fr.wikipedia.org/w/index.php?search=Querelle+des+inventaires" },
                     { id: "c24", date: 1910, titre: "Loi sur les retraites ouvrières et paysannes", description: "En 1910, une loi instaure les premières retraites ouvrières et paysannes, obligatoires pour les salariés modestes et facultatives pour de nombreux exploitants indépendants ; cette loi compte car elle marque une première reconnaissance, encore imparfaite, de la protection sociale des populations rurales âgées, dans une société où les personnes âgées demeuraient jusque-là très majoritairement à la charge de la solidarité familiale et communautaire.", wikipedia: "https://fr.wikipedia.org/w/index.php?search=Retraites+ouvrieres+et+paysannes" },
-                    { id: "c25", date: 1914, titre: "Mobilisation générale", description: "En août 1914, le décret de mobilization générale arrache aux campagnes françaises plusieurs millions d’hommes en âge de combattre, laissant femmes, enfants et personnes âgées assumer seuls, pendant plus de quatre ans, l’essentiel des travaux agricoles ; cette mobilisation compte car elle bouleverse durablement la répartition sexuée du travail rural et prélude à des pertes démographiques massives qui frappent particulièrement les classes d’âge des jeunes paysans.", wikipedia: "https://fr.wikipedia.org/w/index.php?search=Mobilisation+francaise+de+1914" },
+                    { id: "c25", date: 1914, titre: "Mobilisation générale", description: "En août 1914, le décret de mobilisation générale arrache aux campagnes françaises plusieurs millions d’hommes en âge de combattre, laissant femmes, enfants et personnes âgées assumer seuls, pendant plus de quatre ans, l’essentiel des travaux agricoles ; cette mobilisation compte car elle bouleverse durablement la répartition sexuée du travail rural et prélude à des pertes démographiques massives qui frappent particulièrement les classes d’âge des jeunes paysans.", wikipedia: "https://fr.wikipedia.org/w/index.php?search=Mobilisation+francaise+de+1914" },
                     { id: "c26", date: 1918, titre: "L’Armistice et le retour au pays", description: "En novembre 1918, l’Armistice met fin aux combats et ouvre un long processus de démobilisation et de retour des survivants dans leurs villages, souvent marqués dans leur corps ou leur psychisme par quatre années de guerre ; cet événement compte car il ouvre une période de deuil collectif intense dans des campagnes qui ont payé un tribut humain disproportionné à la guerre, rapporté à leur poids démographique.", wikipedia: "https://fr.wikipedia.org/w/index.php?search=Armistice+de+1918" },
                     { id: "c27", date: 1920, titre: "Monuments aux morts et Office national du crédit agricole", description: "En 1920 se superposent, sans lien direct entre eux, deux faits marquants de la vie rurale : d’une part, la quasi-totalité des communes achèvent l’édification de leur monument aux morts, souvent financé par souscription villageoise ; d’autre part, l’État crée l’Office national du crédit agricole, chargé de centraliser et de développer le financement public de l’agriculture. Cette coïncidence compte car elle illustre deux logiques distinctes de l’immédiat après-guerre rural — l’une mémorielle et communautaire, l’autre financière et étatique — qu’il conviendra de traiter séparément si l’on souhaite les faire apparaître comme deux repères propres sur la frise.", wikipedia: "https://fr.wikipedia.org/w/index.php?search=Monument+aux+morts" },
                     { id: "c28", date: 1923, titre: "Loi sur l’électrification rurale", description: "En 1923, une loi instaure un cadre juridique et financier destiné à subventionner l’extension du réseau électrique aux communes rurales, jusque-là très largement dépourvues de courant ; cette loi compte car elle amorce une transformation matérielle profonde de la vie quotidienne à la campagne (éclairage, moteurs électriques, futurs équipements domestiques), transformation qui ne s’achève réellement que dans les décennies suivantes.", wikipedia: "https://fr.wikipedia.org/w/index.php?search=Electrification+rurale+en+France" },
@@ -344,32 +348,32 @@
                 events: [
                     { id: "is1", date: 1897, titre: "Premier Congrès sioniste à Bâle", description: "Organisé à l'initiative de Theodor Herzl, le congrès réunit les délégués du mouvement sioniste et adopte le programme de Bâle, visant à créer un foyer national pour le peuple juif garanti par le droit public.", wikipedia: "https://fr.wikipedia.org/wiki/Premier_Congr%C3%A8s_sioniste" },
                     { id: "is2", date: 1917, titre: "Déclaration Balfour", description: "Le gouvernement britannique, via son ministre des Affaires étrangères Arthur Balfour, se déclare favorable à l'établissement en Palestine d'un « foyer national pour le peuple juif ».", wikipedia: "https://fr.wikipedia.org/wiki/D%C3%A9claration_Balfour_de_1917" },
-                    { id: "is3", date: 1947, titre: "Plan de partage de la Palestine (Résolution 181)", description: "L'Assemblée générale de l'ONU adopte le plan recommandant la fin du mandat britannique et la création de deux États indépendant (un juif, un arabe) avec un statut international pour Jérusalem.", wikipedia: "https://fr.wikipedia.org/wiki/Plan_de_partage_de_la_Palestine" },
+                    { id: "is3", date: 1947, titre: "Plan de partage de la Palestine", description: "L'Assemblée générale de l'ONU adopte la Résolution 181 recommandant la fin du mandat britannique et la création de deux États indépendants (un juif, un arabe) avec un statut international pour Jérusalem.", wikipedia: "https://fr.wikipedia.org/wiki/Plan_de_partage_de_la_Palestine" },
                     { id: "is4", date: 1948, titre: "Proclamation de l'État d'Israël", description: "David Ben Gourion lit la Déclaration d'indépendance à Tel Aviv. Dès le lendemain, les armées de cinq pays arabes voisins envahissent le territoire, déclenchant la première guerre israélo-arabe.", wikipedia: "https://fr.wikipedia.org/wiki/D%C3%A9claration_d%27ind%C3%A9pendance_de_l%27%C3%89tat_d%27Isra%C3%ABl" },
                     { id: "is5", date: 1949, titre: "Accords d'armistice et admission à l'ONU", description: "Israël signe des accords d'armistice séparés avec l'Égypte, le Liban, la Transjordanie et la Syrie, définissant les lignes d'armistice (ligne verte). En mai, Israël devient le 59e État membre de l'ONU.", wikipedia: "https://fr.wikipedia.org/wiki/Accords_d%27armistice_isra%C3%ABlo-arabes_de_1949" },
                     { id: "is6", date: 1950, titre: "Adoption de la Loi du Retour", description: "La Knesset vote la Loi du Retour, accordant à tout Juif à travers le monde le droit d'immigrer en Israël (Aliyah) et d'en obtenir la nationalité.", wikipedia: "https://fr.wikipedia.org/wiki/Loi_du_Retour" },
-                    { id: "is7", date: 1956, titre: "Crise du canal de Suez (Opération Kadesh)", description: "En réponse à la nationalisation du canal par Nasser et aux attaques des fedayins, Israël envahit la péninsule du Sinaï en coordination secrète avec la France et le Royaume-Uni.", wikipedia: "https://fr.wikipedia.org/wiki/Crise_du_canal_de_Suez" },
+                    { id: "is7", date: 1956, titre: "Crise du canal de Suez", description: "En réponse à la nationalisation du canal par Nasser et aux attaques des fedayins, Israël envahit la péninsule du Sinaï en coordination secrète avec la France et le Royaume-Uni (Opération Kadesh).", wikipedia: "https://fr.wikipedia.org/wiki/Crise_du_canal_de_Suez" },
                     { id: "is8", date: 1960, titre: "Capture d'Adolf Eichmann", description: "Les agents du Mossad capturent le criminel nazi Adolf Eichmann en Argentine. Transféré en Israël, son procès public à Jérusalem en 1961 constitue un tournant majeur dans la mémoire de la Shoah.", wikipedia: "https://fr.wikipedia.org/wiki/Adolf_Eichmann" },
                     { id: "is9", date: 1967, titre: "Guerre des Six Jours", description: "Après le blocus du détroit de Tiran par l'Égypte, Israël lance une attaque préventive. En six jours, Tsahal prend le contrôle de la bande de Gaza, du Sinaï, de la Cisjordanie, de Jérusalem-Est et du Golan.", wikipedia: "https://fr.wikipedia.org/wiki/Guerre_des_Six_Jours" },
                     { id: "is10", date: 1973, titre: "Guerre du Kippour", description: "Une coalition menée par l'Égypte et la Syrie attaque par surprise Israël le jour du Yom Kippour. Après des débuts très difficiles, l'armée israélienne parvient à rétablir la situation sur les deux fronts.", wikipedia: "https://fr.wikipedia.org/wiki/Guerre_du_Kippour" },
-                    { id: "is11", date: 1976, titre: "Raid d'Entebbe (Opération Thunderbolt)", description: "Un commando des forces spéciales israéliennes mène un raid audacieux en Ouganda pour libérer les passagers d'un vol Air France détourné par des terroristes palestiniens et allemands.", wikipedia: "https://fr.wikipedia.org/wiki/Raid_d%27Entebbe" },
+                    { id: "is11", date: 1976, titre: "Raid d'Entebbe", description: "Un commando des forces spéciales israéliennes mène l'opération Thunderbolt en Ouganda pour libérer les passagers d'un vol Air France détourné par des terroristes palestiniens et allemands.", wikipedia: "https://fr.wikipedia.org/wiki/Raid_d%27Entebbe" },
                     { id: "is12", date: 1977, titre: "Visite d'Anouar el-Sadate à Jérusalem", description: "Le président égyptien Anouar el-Sadate accomplit une visite historique en Israël et s'adresse directement à la Knesset, brisant un tabou diplomatique majeur dans le monde arabe.", wikipedia: "https://fr.wikipedia.org/wiki/Visite_d%27Anouar_el-Sadate_en_Isra%C3%ABl" },
                     { id: "is13", date: 1979, titre: "Traité de paix israélo-égyptien", description: "Menahem Begin et Anouar el-Sadate signent à Washington le premier traité de paix entre Israël et un pays arabe, prévoyant le retrait total israélien du Sinaï.", wikipedia: "https://fr.wikipedia.org/wiki/Trait%C3%A9_de_paix_isra%C3%ABlo-%C3%A9gyptien" },
                     { id: "is14", date: 1981, titre: "Loi sur le plateau du Golan", description: "La Knesset vote l'application de la loi, de la juridiction et de l'administration israéliennes sur le plateau du Golan, officialisant son annexion du point de vue du droit interne israélien.", wikipedia: "https://fr.wikipedia.org/wiki/Loi_sur_le_plateau_du_Golan" },
-                    { id: "is15", date: 1982, titre: "Opération Paix en Galilée (Première guerre du Liban)", description: "Israël lance une offensive militaire d'envergure au Liban visant à déloger l'OLP de Yasser Arafat implantée au Sud-Liban et à Beyrouth.", wikipedia: "https://fr.wikipedia.org/wiki/Intervention_militaire_isra%C3%ABlienne_au_Liban_de_1982" },
+                    { id: "is15", date: 1982, titre: "Première guerre du Liban", description: "Israël lance l'opération « Paix en Galilée », une offensive militaire d'envergure au Liban visant à déloger l'OLP de Yasser Arafat implantée au Sud-Liban et à Beyrouth.", wikipedia: "https://fr.wikipedia.org/wiki/Intervention_militaire_isra%C3%ABlienne_au_Liban_de_1982" },
                     { id: "is16", date: 1984, titre: "Opération Moïse", description: "Opération aéroportée clandestine organisée par Tsahal et le Mossad permettant l'évacuation vers Israël de plus de 8 000 Juifs éthiopiens (Béta Israël) réfugiés au Soudan.", wikipedia: "https://fr.wikipedia.org/wiki/Op%C3%A9ration_Mo%C3%AFse" },
                     { id: "is17", date: 1987, titre: "Début de la Première Intifada", description: "Soulèvement populaire palestinien (« guerre des pierres ») débutant dans la bande de Gaza et s'étendant à la Cisjordanie contre la présence militaire israélienne.", wikipedia: "https://fr.wikipedia.org/wiki/Premi%C3%A8re_Intifada" },
                     { id: "is18", date: 1991, titre: "Opération Salomon", description: "Pont aérien israélien mené en 36 heures à peine, permettant le transport de plus de 14 000 Juifs d'Éthiopie depuis Addis-Abeba vers Israël.", wikipedia: "https://fr.wikipedia.org/wiki/Op%C3%A9ration_Salomon" },
                     { id: "is19", date: 1993, titre: "Signature des Accords d'Oslo I", description: "Israël et l'OLP signent à Washington une Déclaration de principes prévoyant l'établissement d'une Autorité palestinienne intérimaire et le retrait progressif de zones occupées.", wikipedia: "https://fr.wikipedia.org/wiki/Accords_d%27Oslo" },
                     { id: "is20", date: 1994, titre: "Traité de paix israélo-jordanien", description: "Le Premier ministre Yitzhak Rabin et le roi Hussein de Jordanie signent le traité de paix officialisant la normalisation des relations et la fixation des frontières entre les deux pays.", wikipedia: "https://fr.wikipedia.org/wiki/Trait%C3%A9_de_paix_isra%C3%ABlo-jordanien" },
                     { id: "is21", date: 1995, titre: "Assassinat d'Yitzhak Rabin", description: "À l'issue d'un rassemblement pour la paix à Tel Aviv, le Premier ministre israélien Yitzhak Rabin est assassiné par un extrémiste juif opposé aux accords d'Oslo.", wikipedia: "https://fr.wikipedia.org/wiki/Assassinat_d%27Yitzhak_Rabin" },
-                    { id: "is22", date: 2000, titre: "Retrait du Sud-Liban et Seconde Intifada", description: "Tsahal se retire unilatéralement du Sud-Liban. À l'automne, après l'échec du sommet de Camp David, éclate la Seconde Intifada, caractérisée par une vague d'attentats-suicides.", wikipedia: "https://fr.wikipedia.org/wiki/Seconde_Intifada" },
-                    { id: "is23", date: 2005, titre: "Plan de désengagement de la bande de Gaza", description: "Sous le gouvernement d'Ariel Sharon, Israël évacue unilatéralement l'ensemble des 21 colonies civiles israéliennes et ses forces militaires de la bande de Gaza.", wikipedia: "https://fr.wikipedia.org/wiki/Plan_de_d%C3%A9sengagement_de_la_bande_de_Gaza" },
+                    { id: "is22", date: 2000, titre: "Retrait du Liban et Seconde Intifada", description: "Tsahal se retire unilatéralement du Sud-Liban. À l'automne, après l'échec du sommet de Camp David, éclate la Seconde Intifada, caractérisée par une vague d'attentats-suicides.", wikipedia: "https://fr.wikipedia.org/wiki/Seconde_Intifada" },
+                    { id: "is23", date: 2005, titre: "Désengagement de la bande de Gaza", description: "Sous le gouvernement d'Ariel Sharon, Israël évacue unilatéralement l'ensemble des 21 colonies civiles israéliennes et ses forces militaires de la bande de Gaza.", wikipedia: "https://fr.wikipedia.org/wiki/Plan_de_d%C3%A9sengagement_de_la_bande_de_Gaza" },
                     { id: "is24", date: 2006, titre: "Seconde guerre du Liban", description: "Conflit armé de 34 jours opposant l'armée israélienne au Hezbollah libanais à la suite de l'attaque frontalière et de l'enlèvement de deux soldats israéliens.", wikipedia: "https://fr.wikipedia.org/wiki/Seconde_guerre_du_Liban" },
                     { id: "is25", date: 2011, titre: "Mise en service du Dôme de Fer", description: "Le système mobile de défense antimissile développé par Rafael réalise sa première interception opérationnelle réussie contre une roquette tirée depuis Gaza.", wikipedia: "https://fr.wikipedia.org/wiki/D%C3%B4me_de_fer" },
                     { id: "is26", date: 2020, titre: "Accords d'Abraham", description: "Signature sous le parrainage américain d'accords de normalisation diplomatique historique entre Israël, les Émirats arabes unis et Bahreïn, rapidement suivis par le Maroc et le Soudan.", wikipedia: "https://fr.wikipedia.org/wiki/Accords_d%27Abraham" },
-                    { id: "is27", date: 2023, titre: "Attaques du 7 octobre et début de la guerre Israël-Hamas", description: "Infiltration massive et attaques terroristes sans précédent menées par le Hamas sur le sol israélien, causant environ 1 200 morts et la capture de plus de 240 otages, déclenchant une offensive militaire d'envergure à Gaza.", wikipedia: "https://fr.wikipedia.org/wiki/Attaque_du_Hamas_contre_Isra%C3%ABl" },
-                    { id: "is28", date: 2024, titre: "Attaques directes iraniennes contre Israël", description: "L'Iran lance pour la première fois de son histoire des attaques directes massives de drones et de missiles balistiques depuis son propre territoire contre Israël (avril et octobre), marquant un tournant régional.", wikipedia: "https://fr.wikipedia.org/wiki/Attaques_iraniennes_contre_Isra%C3%ABl" }
+                    { id: "is27", date: 2023, titre: "Attaques du 7 octobre et guerre à Gaza", description: "Infiltration massive et attaques terroristes sans précédent menées par le Hamas sur le sol israélien, causant environ 1 200 morts et la capture de plus de 240 otages, déclenchant une offensive militaire d'envergure à Gaza.", wikipedia: "https://fr.wikipedia.org/wiki/Attaque_du_Hamas_contre_Isra%C3%ABl" },
+                    { id: "is28", date: 2024, titre: "Attaques directes iraniennes contre Israël", description: "L'Iran lance pour la première fois de son histoire des attaques directes massives de drones et de missiles balistiques depuis son propre territoire contre Israël (en avril et octobre), marquant un tournant régional majeur.", wikipedia: "https://fr.wikipedia.org/wiki/Attaques_iraniennes_contre_Isra%C3%ABl" }
                 ]
             }
 
@@ -404,7 +408,6 @@
                 const card = document.createElement('div');
                 card.className = 'cat-card';
                 card.innerHTML = `<div class="cat-top">${cat.nom}</div><div class="cat-bottom"><span>${cat.difficulte}</span><span style="color:var(--primary-blue); font-weight:bold;">Choisir ›</span></div>`;
-                // NOUVEAU : Ouvre l'écran des modes au lieu de lancer le jeu
                 card.onclick = () => {
                     selectedCatIndex = index;
                     showScreen('screen-modes');
@@ -417,29 +420,53 @@
             currentMode = mode;
             const category = bdd[selectedCatIndex];
             let eventsCopy = [...category.events];
-            eventsCopy.sort(() => Math.random() - 0.5);
-            totalEvents = eventsCopy.length;
-            placedEvents = [eventsCopy.pop()];
-            currentPool = eventsCopy;
             
-            // Paramétrage des vies selon le mode
-            if (mode === 'training') lives = Infinity;
+            // GESTION DU MODE DÉCOUVERTE (Tri chrono direct, pas de pioche)
+            if (mode === 'discovery') {
+                eventsCopy.sort((a, b) => a.date - b.date);
+                placedEvents = eventsCopy;
+                currentPool = [];
+                totalEvents = placedEvents.length;
+            } else {
+                eventsCopy.sort(() => Math.random() - 0.5);
+                totalEvents = eventsCopy.length;
+                placedEvents = [eventsCopy.pop()];
+                currentPool = eventsCopy;
+            }
+            
+            // Paramétrage des vies
+            if (mode === 'training' || mode === 'discovery') lives = Infinity;
             else if (mode === 'expert') lives = 1;
             else lives = 3; 
             
             score = 0;
             totalTimePlayed = 0;
             
-            // Affichage conditionnel des vies et du chronomètre
+            // Éléments d'interface
             const hudLives = document.getElementById('hud-lives');
             const hudTimer = document.getElementById('hud-timer-container');
+            const eventBanner = document.getElementById('current-event-banner');
+            const scoreContainer = document.getElementById('hud-score-container');
+            const progressContainer = document.getElementById('hud-progress-container');
             
+            // Réinitialisation de l'affichage
             hudLives.classList.remove('hidden');
             hudTimer.classList.add('hidden');
+            eventBanner.classList.remove('hidden');
+            scoreContainer.classList.remove('hidden');
             
-            if (mode === 'training') {
+            if (mode === 'training' || mode === 'discovery') {
                 hudLives.classList.add('hidden');
             }
+            
+            if (mode === 'discovery') {
+                eventBanner.classList.add('hidden');
+                scoreContainer.classList.add('hidden');
+                progressContainer.innerHTML = `Frise complète (${totalEvents})`;
+            } else {
+                progressContainer.innerHTML = `<span id="hud-progress">1</span>/<span id="hud-total">${totalEvents}</span>`;
+            }
+
             if (mode === 'chrono' || mode === 'expert') {
                 hudTimer.classList.remove('hidden');
                 document.getElementById('hud-timer').innerText = "0,0";
@@ -447,7 +474,13 @@
             }
 
             updateHUD();
-            pickNextEvent();
+            
+            if (mode === 'discovery') {
+                renderTimeline();
+            } else {
+                pickNextEvent();
+            }
+            
             showScreen('screen-game');
         }
         
@@ -477,22 +510,44 @@
 
         function updateHUD() {
             document.getElementById('hud-score').innerText = score;
-            if (currentMode !== 'training') {
+            if (currentMode !== 'training' && currentMode !== 'discovery') {
                 document.getElementById('hud-lives').innerText = '❤️'.repeat(lives);
             }
-            document.getElementById('hud-progress').innerText = placedEvents.length;
-            document.getElementById('hud-total').innerText = totalEvents;
+            
+            if (currentMode !== 'discovery') {
+                document.getElementById('hud-progress').innerText = placedEvents.length;
+                document.getElementById('hud-total').innerText = totalEvents;
+            }
         }
 
         function renderTimeline() {
             const timeline = document.getElementById('timeline');
             timeline.innerHTML = ''; 
+            
             for (let i = 0; i <= placedEvents.length; i++) {
+                
+                // On crée l'espace entre les cartes (la loupe)
                 const insertPoint = document.createElement('div');
                 insertPoint.className = 'insert-point';
-                insertPoint.innerHTML = `<div class="insert-circle"></div><div class="insert-line"></div>`;
-                insertPoint.onclick = () => checkPlacement(i, insertPoint);
-                timeline.appendChild(insertPoint);
+                
+                if (currentMode !== 'discovery') {
+                    insertPoint.innerHTML = `<div class="insert-circle"></div><div class="insert-line"></div>`;
+                    insertPoint.onclick = () => checkPlacement(i, insertPoint);
+                } else {
+                    insertPoint.style.cursor = 'default';
+                }
+                
+                // Esthétique : en mode découverte on cache le grand espace vide au début et à la fin
+                if (currentMode === 'discovery' && (i === 0 || i === placedEvents.length)) {
+                    insertPoint.style.minWidth = '20px';
+                    insertPoint.style.width = '20px';
+                }
+
+                if (!(currentMode === 'discovery' && i === placedEvents.length)) {
+                    timeline.appendChild(insertPoint);
+                }
+
+                // On crée la carte
                 if (i < placedEvents.length) {
                     const evt = placedEvents[i];
                     const card = document.createElement('div');
@@ -505,7 +560,7 @@
         }
 
         function checkPlacement(index, insertPointHtmlElement) {
-            if (isAnimating) return; 
+            if (isAnimating || currentMode === 'discovery') return; 
 
             const dateToPlace = eventToPlace.date;
             let isCorrect = true;
@@ -528,7 +583,6 @@
             } else {
                 isAnimating = true; 
                 
-                // Si on n'est pas en entraînement, on perd une vie
                 if (currentMode !== 'training') {
                     lives -= 1;
                 }
@@ -554,7 +608,6 @@
                     placedEvents.splice(correctIndex, 0, eventToPlace); 
                     insertPointHtmlElement.classList.remove('error-shake');
                     
-                    // Fin du jeu seulement si les vies tombent à 0 et qu'on n'est pas en Entraînement
                     if (lives <= 0 && currentMode !== 'training') {
                         renderTimeline(); 
                         setTimeout(() => endGame(false), 500);
@@ -568,7 +621,7 @@
         }
 
         function endGame(isWin) {
-            stopTimer(); // On arrête le chrono
+            stopTimer();
             showScreen('screen-end');
             document.getElementById('end-score-val').innerText = score;
             const titleElement = document.getElementById('end-title');
@@ -582,7 +635,6 @@
                 titleElement.style.color = "var(--danger-red)"; 
             }
             
-            // Affichage du temps final si le mode l'exige
             if ((currentMode === 'chrono' || currentMode === 'expert') && isWin) {
                 timeDisplay.innerText = "Temps : " + totalTimePlayed.toFixed(1).replace('.', ',') + " s";
                 timeDisplay.classList.remove('hidden');
@@ -593,7 +645,7 @@
 
         function quitGame() {
             if(confirm("Voulez-vous vraiment quitter cette partie ?")) {
-                stopTimer(); // On arrête le chrono si on quitte en cours de route
+                stopTimer();
                 showScreen('screen-categories');
             }
         }
