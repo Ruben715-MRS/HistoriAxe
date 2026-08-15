@@ -95,7 +95,7 @@
             from { opacity: 0; transform: translateY(-15px); }
             to { opacity: 1; transform: translateY(0); }
         }
-/* === NOUVEAU STYLE POUR LES CATÉGORIES (BANNIÈRES) === */
+        /* NOUVEAU STYLE POUR LES CATÉGORIES (BANNIÈRES) */
         .list-categories {
             display: flex;
             flex-direction: column;
@@ -152,7 +152,7 @@
     <!-- ÉCRAN 2 : CATÉGORIES (Grandes sections) -->
     <div id="screen-categories" class="list-screen hidden">
         <h2 class="header-title">Choisissez une Catégorie</h2>
-			<div class="list-categories" id="categories-container"></div>
+        <div class="list-categories" id="categories-container"></div>
         <div style="margin-top: 30px; margin-bottom: 50px;">
             <button class="btn" style="background:#ccc; color:#333;" onclick="showScreen('screen-home')">Retour à l'accueil</button>
         </div>
@@ -219,8 +219,8 @@
     <!-- ÉCRAN 6 : FIN DE PARTIE -->
     <div id="screen-end" class="hidden">
         <div class="end-title" id="end-title">Partie Terminée</div>
-        <div class="end-score">Votre score : <strong id="end-score-val">0</strong> points</div>
-        <div id="end-time-display" class="end-time hidden">Temps : 0,0 s</div>
+        <div class="end-score">Score : <strong id="end-score-val">0</strong> points</div>
+        <div id="end-time-display" class="end-time hidden">Durée : 0,0 s</div>
         <div style="display:flex; gap:15px; margin-top: 20px;">
             <button class="btn" style="background:#ccc; color:#333;" onclick="showScreen('screen-themes')">Retour aux thèmes</button>
             <button class="btn" onclick="startActualGame(currentMode)">Rejouer</button>
@@ -449,7 +449,7 @@
                             { id: "c40", date: 1952, titre: "Loi sur l’assurance vieillesse agricole", description: "En 1952, une loi crée un régime obligatoire d’assurance vieillesse pour les exploitants agricoles non-salariés, financé par une cotisation professionnelle spécifique ; cette loi compte car elle étend enfin aux chefs d’exploitation eux-mêmes, et non plus seulement aux salariés agricoles, une protection sociale vieillesse jusque-là très inégalement assurée par la seule solidarité familiale.", wikipedia: "https://fr.wikipedia.org/w/index.php?search=Mutualite+sociale+agricole" },
                             { id: "c41", date: 1957, titre: "Le traité de Rome", description: "En 1957, la signature du traité de Rome fonde la Communauté économique européenne entre six États, dont la France, et prévoit explicitement la mise en place future d’une politique agricole commune ; ce traité compte car il inscrit d’emblée l’avenir de l’agriculture française dans un cadre européen, préparant le basculement, dans les années 1960, vers un système de soutien des prix et des marchés géré à l’échelle communautaire plutôt que strictement nationale.", wikipedia: "https://fr.wikipedia.org/w/index.php?search=Traite+de+Rome" },
                             { id: "c42", date: 1960, titre: "Loi d’orientation agricole (loi Pisani)", description: "En 1960, le ministre Edgard Pisani fait adopter la loi d’orientation agricole, qui crée notamment les Sociétés d’aménagement foncier et d’établissement rural (SAFER), chargées de restructurer le foncier agricole au profit d’exploitations jugées viables ; cette loi compte car elle formalise, sous l’impulsion conjointe de l’État et des syndicats agricoles (FNSEA, CNJA), le grand programme de modernisation des structures agraires françaises des années 1960.", wikipedia: "https://fr.wikipedia.org/w/index.php?search=Loi+d'orientation+agricole" },
-                            { id: "c43", date: 1961, titre: "Les événements de Morlaix", description: "En juin 1961, plusieurs centaines de jeunes agriculteurs bretons, mécontents de la stagnation des prix agricoles et de la lenteur des réformes de structures, occupent la sous-préfecture de Morlaix et bloquent des axes routiers, dans un mouvement de contestation qui essaime dans plusieurs départements de l’Ouest ; cet épisode compte car il illustre les tensions sociales concrètes suscitées par la modernisation agricole voulue par la loi d’orientation de 1960, et pèse directement sur l’adoption, dès 1962, de la loi complémentaire créant l’indemnité viagère de départ destinée à accompagner la sortie des plus âgés.", wikipedia: "https://fr.wikipedia.org/w/index.php?search=Evenements+de+Morlaix" },
+                            { id: "c43", date: 1961, titre: "Les événements de Morlaix", description: "En juin 1961, plusieurs centaines de jeunes agriculteurs bretons, mécontents de la stagnation des prix agricoles et de la lenteur des réformes de structures, occupent la sous-préfecture de Morlaix et bloquent des axes routiers, dans un mouvement de contestation qui essaime dans plusieurs départements de l’Ouest ; cet épisode compte car il illustre les tensions sociales concrètes suscitées par la modernization agricole voulue par la loi d’orientation de 1960, et pèse directement sur l’adoption, dès 1962, de la loi complémentaire créant l’indemnité viagère de départ destinée à accompagner la sortie des plus âgés.", wikipedia: "https://fr.wikipedia.org/w/index.php?search=Evenements+de+Morlaix" },
                             { id: "c44", date: 1962, titre: "Lancement de la Politique agricole commune", description: "En 1962, les six États membres de la Communauté économique européenne mettent en application les premiers règlements de la Politique agricole commune (PAC), fondée sur la garantie de prix communs et la préférence communautaire ; ce lancement compte car il transfère à l’échelle européenne l’essentiel des mécanismes de soutien à l’agriculture française, accélérant une spécialisation productiviste des exploitations, en particulier dans les grandes plaines céréalières du Bassin parisien.", wikipedia: "https://fr.wikipedia.org/w/index.php?search=Politique+agricole+commune" },
                             { id: "c45", date: 1963, titre: "Création de la DATAR", description: "En 1963, l’État crée la Délégation à l’aménagement du territoire et à l’action régionale (DATAR), chargée de coordonner les politiques d’équilibre entre régions dynamiques et régions en déclin démographique, notamment rurales ; cette création compte car elle traduit une prise de conscience étatique des déséquilibres croissants entre métropoles en expansion et campagnes touchées par l’exode rural et le vieillissement de leur population.", wikipedia: "https://fr.wikipedia.org/w/index.php?search=DATAR" },
                             { id: "c46", date: 1963, titre: "Ouverture du premier hypermarché Carrefour", description: "En juin 1963, l’enseigne Carrefour ouvre à Sainte-Geneviève-des-Bois, en région parisienne, ce qui est considéré comme le premier hypermarché français, modèle de vente en libre-service à grande échelle qui se diffuse rapidement dans les décennies suivantes ; cette ouverture compte car elle amorce, à terme, le déclin du petit commerce de proximité rural (épiceries, foires, marchés hebdomadaires) au profit de nouvelles formes de consommation de masse, y compris pour les habitants des campagnes.", wikipedia: "https://fr.wikipedia.org/w/index.php?search=Hypermarché" },
@@ -758,8 +758,9 @@
                 titleElement.style.color = "var(--danger-red)"; 
             }
             
-            if ((currentMode === 'chrono' || currentMode === 'expert') && isWin) {
-                timeDisplay.innerText = "Temps : " + totalTimePlayed.toFixed(1).replace('.', ',') + " s";
+            // NOUVEAU : On affiche le temps pour Chrono et Expert (gagné OU perdu)
+            if (currentMode === 'chrono' || currentMode === 'expert') {
+                timeDisplay.innerText = "Durée : " + totalTimePlayed.toFixed(1).replace('.', ',') + " s";
                 timeDisplay.classList.remove('hidden');
             } else {
                 timeDisplay.classList.add('hidden');
