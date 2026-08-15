@@ -95,6 +95,50 @@
             from { opacity: 0; transform: translateY(-15px); }
             to { opacity: 1; transform: translateY(0); }
         }
+/* === NOUVEAU STYLE POUR LES CATÉGORIES (BANNIÈRES) === */
+        .list-categories {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .category-banner {
+            background: linear-gradient(135deg, #2C3E50, #4CA1AF);
+            color: white;
+            border-radius: 12px;
+            padding: 20px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: var(--card-shadow);
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .category-banner:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        .category-banner-title {
+            font-size: 22px;
+            font-weight: bold;
+        }
+        .category-banner-subtitle {
+            font-size: 14px;
+            opacity: 0.8;
+            margin-top: 5px;
+        }
+        .category-banner-icon {
+            font-size: 24px;
+            background: rgba(255,255,255,0.2);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
     </style>
 </head>
 <body>
@@ -108,7 +152,7 @@
     <!-- ÉCRAN 2 : CATÉGORIES (Grandes sections) -->
     <div id="screen-categories" class="list-screen hidden">
         <h2 class="header-title">Choisissez une Catégorie</h2>
-        <div class="grid-cards" id="categories-container"></div>
+			<div class="list-categories" id="categories-container"></div>
         <div style="margin-top: 30px; margin-bottom: 50px;">
             <button class="btn" style="background:#ccc; color:#333;" onclick="showScreen('screen-home')">Retour à l'accueil</button>
         </div>
@@ -451,20 +495,29 @@
             const container = document.getElementById('categories-container');
             container.innerHTML = ''; 
             bdd.forEach((cat, index) => {
-                const card = document.createElement('div');
-                card.className = 'data-card';
+                const banner = document.createElement('div');
+                banner.className = 'category-banner';
                 
                 // On compte le nombre total de thèmes dans ce dossier
                 const nbThemes = cat.themes.length;
                 let textThemes = nbThemes === 0 ? "Bientôt disponible" : (nbThemes === 1 ? "1 thème" : `${nbThemes} thèmes`);
                 
-                card.innerHTML = `<div class="card-top">${cat.nom}</div><div class="card-bottom"><span>${textThemes}</span><span style="color:var(--primary-blue); font-weight:bold;">Ouvrir ›</span></div>`;
+                banner.innerHTML = `
+                    <div>
+                        <div class="category-banner-title">${cat.nom}</div>
+                        <div class="category-banner-subtitle">${textThemes}</div>
+                    </div>
+                    <div class="category-banner-icon">›</div>
+                `;
                 
-                card.onclick = () => {
-                    selectedCategoryIndex = index;
-                    showScreen('screen-themes');
+                // On empêche le clic si la catégorie est vide
+                banner.onclick = () => {
+                    if(nbThemes > 0) {
+                        selectedCategoryIndex = index;
+                        showScreen('screen-themes');
+                    }
                 };
-                container.appendChild(card);
+                container.appendChild(banner);
             });
         }
 
@@ -475,11 +528,6 @@
             
             const category = bdd[selectedCategoryIndex];
             document.getElementById('theme-screen-title').innerText = category.nom;
-            
-            if (category.themes.length === 0) {
-                container.innerHTML = '<div class="empty-msg">Aucun thème disponible pour le moment.</div>';
-                return;
-            }
             
             category.themes.forEach((theme, index) => {
                 const card = document.createElement('div');
