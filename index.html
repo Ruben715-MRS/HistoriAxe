@@ -95,50 +95,13 @@
             from { opacity: 0; transform: translateY(-15px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        /* NOUVEAU STYLE POUR LES CATÉGORIES (BANNIÈRES) */
-        .list-categories {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .category-banner {
-            background: linear-gradient(135deg, #2C3E50, #4CA1AF);
-            color: white;
-            border-radius: 12px;
-            padding: 20px 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: var(--card-shadow);
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .category-banner:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-        }
-        .category-banner-title {
-            font-size: 22px;
-            font-weight: bold;
-        }
-        .category-banner-subtitle {
-            font-size: 14px;
-            opacity: 0.8;
-            margin-top: 5px;
-        }
-        .category-banner-icon {
-            font-size: 24px;
-            background: rgba(255,255,255,0.2);
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-        }
+        /* STYLE POUR LES CATÉGORIES (BANNIÈRES) */
+        .list-categories { display: flex; flex-direction: column; gap: 15px; width: 100%; max-width: 800px; margin: 0 auto; }
+        .category-banner { background: linear-gradient(135deg, #2C3E50, #4CA1AF); color: white; border-radius: 12px; padding: 20px 25px; display: flex; justify-content: space-between; align-items: center; box-shadow: var(--card-shadow); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
+        .category-banner:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .category-banner-title { font-size: 22px; font-weight: bold; }
+        .category-banner-subtitle { font-size: 14px; opacity: 0.8; margin-top: 5px; }
+        .category-banner-icon { font-size: 24px; background: rgba(255,255,255,0.2); width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
     </style>
 </head>
 <body>
@@ -201,7 +164,7 @@
     <div id="screen-game" class="hidden">
         <div class="top-bar">
             <div class="back-btn" onclick="quitGame()">‹ Retour</div>
-            <div class="score-display" id="hud-score-container"><span id="hud-score">0</span> pts</div>
+            <div class="score-display" id="hud-score-container">Score : <span id="hud-score">0</span> pts</div>
             <div class="stats">
                 <div id="hud-timer-container" class="timer-box hidden"><span id="hud-timer">0,0</span> s</div>
                 <div class="lives" id="hud-lives">❤️❤️❤️</div>
@@ -239,7 +202,13 @@
     </div>
 
     <script>
-        // === BASE DE DONNÉES STRUCTURÉE (Catégories > Thèmes > Événements) ===
+        // === FONCTION UTILITAIRE POUR LES DATES ===
+        function formatYear(year) {
+            if (year < 0) return Math.abs(year) + " av. J.-C.";
+            return year;
+        }
+
+        // === BASE DE DONNÉES STRUCTURÉE ===
         const bdd = [
             {
                 nom: "Culture générale",
@@ -330,9 +299,127 @@
                     }
                 ]
             },
-            {
-                nom: "Programmes du collège",
-                themes: []
+            { 
+                nom: "Programmes du collège", 
+                themes: [
+                    {
+                        id: "col_6e", nom: "Classe de 6ᵉ", difficulte: "Collège",
+                        events: [
+                            { id: "6e_1", date: -2500000, titre: "Apparition des premiers hominidés", description: "Le genre Homo apparaît en Afrique avec Homo habilis. C'est le début du Paléolithique, marqué par l'utilisation des premiers outils en pierre taillée et les débuts de l'évolution humaine.", wikipedia: "https://fr.wikipedia.org/wiki/Homo" },
+                            { id: "6e_2", date: -10000, titre: "Début de la révolution néolithique", description: "L'humanité connaît un bouleversement majeur au Proche-Orient (Croissant fertile). Les populations se sédentarisent, inventent l'agriculture, domestiquent les animaux et fondent les premiers villages.", wikipedia: "https://fr.wikipedia.org/wiki/R%C3%A9volution_n%C3%A9olithique" },
+                            { id: "6e_3", date: -3500, titre: "Invention de l’écriture en Mésopotamie", description: "Pour répondre aux besoins d'administration et de commerce, les Sumériens inventent l'écriture cunéiforme. Cet événement fondamental marque la fin de la Préhistoire et le début de l'Antiquité.", wikipedia: "https://fr.wikipedia.org/wiki/D%C3%A9buts_de_l%27%C3%A9criture_en_M%C3%A9sopotamie" },
+                            { id: "6e_4", date: -3000, titre: "Apparition des premiers États en Égypte", description: "Le roi Narmer (Ménès) unifie la Haute et la Basse-Égypte. C'est la naissance du premier grand État territorial centralisé de l'Histoire, dirigé par un pharaon de droit divin.", wikipedia: "https://fr.wikipedia.org/wiki/P%C3%A9riode_pr%C3%A9dynastique_%C3%A9gyptienne" },
+                            { id: "6e_5", date: -753, titre: "Fondation légendaire de Rome", description: "Selon la légende, Rome est fondée sur le mont Palatin par Romulus, après qu'il a tué son frère jumeau Rémus. Des découvertes archéologiques confirment des traces de peuplement à cette époque.", wikipedia: "https://fr.wikipedia.org/wiki/Fondation_de_Rome" },
+                            { id: "6e_6", date: -508, titre: "Début de la démocratie athénienne", description: "L'homme politique Clisthène mène des réformes majeures à Athènes. Il instaure l'isonomie (égalité des citoyens devant la loi) et donne le pouvoir à l'Ecclésia, l'assemblée des citoyens.", wikipedia: "https://fr.wikipedia.org/wiki/D%C3%A9mocratie_ath%C3%A9nienne" },
+                            { id: "6e_7", date: -334, titre: "Début des conquêtes d’Alexandre le Grand", description: "Le jeune roi de Macédoine traverse l'Hellespont pour attaquer l'immense Empire perse. En quelques années, il bâtit un empire s'étendant jusqu'à l'Inde et diffuse la culture hellénistique.", wikipedia: "https://fr.wikipedia.org/wiki/Alexandre_le_Grand" },
+                            { id: "6e_8", date: -52, titre: "Bataille d’Alésia", description: "Jules César et ses légions romaines assiègent et battent le chef gaulois Vercingétorix. Cette défaite décisive marque la fin de l'indépendance de la Gaule, qui devient romaine.", wikipedia: "https://fr.wikipedia.org/wiki/Si%C3%A8ge_d%27Al%C3%A9sia" },
+                            { id: "6e_9", date: -27, titre: "Début de l’Empire romain (Auguste)", description: "Après des années de guerres civiles, Octave reçoit le titre d'Auguste de la part du Sénat. Il met fin à la République romaine et instaure un nouveau régime monarchique : le Principat.", wikipedia: "https://fr.wikipedia.org/wiki/Auguste" },
+                            { id: "6e_10", date: 30, titre: "Crucifixion de Jésus", description: "Jésus de Nazareth est condamné à mort et crucifié à Jérusalem par le préfet romain Ponce Pilate. Cet événement est le point de départ de la diffusion de la religion chrétienne dans l'Empire.", wikipedia: "https://fr.wikipedia.org/wiki/Crucifiement_de_J%C3%A9sus" },
+                            { id: "6e_11", date: 212, titre: "Édit de Caracalla", description: "L'empereur Caracalla accorde la citoyenneté romaine à presque tous les hommes libres de l'Empire. C'est un puissant facteur d'unification et de romanisation des populations.", wikipedia: "https://fr.wikipedia.org/wiki/%C3%89dit_de_Caracalla" },
+                            { id: "6e_12", date: 117, titre: "Apogée de l’Empire romain", description: "À la mort de l'empereur Trajan, l'Empire romain atteint son extension territoriale maximale. Il s'étend de la Bretagne (Angleterre actuelle) jusqu'en Mésopotamie, englobant tout le bassin méditerranéen.", wikipedia: "https://fr.wikipedia.org/wiki/Trajan" },
+                            { id: "6e_13", date: 313, titre: "Édit de Milan", description: "L'empereur Constantin accorde la liberté de culte à toutes les religions, mettant fin aux persécutions contre les chrétiens. Le christianisme commence à s'imposer comme la religion dominante.", wikipedia: "https://fr.wikipedia.org/wiki/%C3%89dit_de_Milan" },
+                            { id: "6e_14", date: 395, titre: "Division de l’Empire romain", description: "À la mort de Théodose Ier, l'Empire, devenu trop vaste à défendre face aux pressions barbares, est définitivement partagé entre ses deux fils : l'Empire d'Occident et l'Empire d'Orient.", wikipedia: "https://fr.wikipedia.org/wiki/D%C3%A9clin_de_l%27Empire_romain_d%27Occident" },
+                            { id: "6e_15", date: 476, titre: "Chute de l’Empire romain d’Occident", description: "Le dernier empereur romain d'Occident, le jeune Romulus Augustule, est déposé par le chef barbare Odoacre. Cet événement symbolise la fin de l'Antiquité et le basculement de l'Europe dans le Moyen Âge.", wikipedia: "https://fr.wikipedia.org/wiki/Chute_de_l%27Empire_romain_d%27Occident" }
+                        ]
+                    },
+                    {
+                        id: "thm_5e", nom: "Classe de 5ᵉ", difficulte: "Collège",
+                        events: [
+                            { id: "5e_1", date: 476, titre: "Chute de l’Empire romain d’Occident", description: "Le dernier empereur romain d'Occident, Romulus Augustule, est déposé par le chef germain Odoacre. L'Europe occidentale se morcelle en royaumes barbares, marquant le début du Moyen Âge.", wikipedia: "https://fr.wikipedia.org/wiki/Chute_de_l%27Empire_romain_d%27Occident" },
+                            { id: "5e_2", date: 496, titre: "Baptême de Clovis", description: "Le roi des Francs, Clovis, se convertit au christianisme catholique à Reims. Il obtient ainsi le soutien puissant de l'Église et des élites gallo-romaines pour asseoir son royaume.", wikipedia: "https://fr.wikipedia.org/wiki/Bapt%C3%AAme_de_Clovis" },
+                            { id: "5e_3", date: 622, titre: "Hégire", description: "Mahomet, prophète de l'islam, fuit La Mecque pour se réfugier à Médine à cause de l'hostilité des marchands polythéistes. Cet exil marque l'an 1 du calendrier musulman.", wikipedia: "https://fr.wikipedia.org/wiki/H%C3%A9gire" },
+                            { id: "5e_4", date: 732, titre: "Bataille de Poitiers", description: "Charles Martel, maire du palais franc, arrête une expédition omeyyade venue d'Espagne. Cette victoire renforce l'immense prestige de sa famille, ouvrant la voie à la dynastie carolingienne.", wikipedia: "https://fr.wikipedia.org/wiki/Bataille_de_Poitiers_(732)" },
+                            { id: "5e_5", date: 800, titre: "Couronnement de Charlemagne", description: "Le roi des Francs, Charlemagne, est couronné empereur par le pape Léon III à la basilique Saint-Pierre de Rome. Il se veut le restaurateur de l'Empire romain chrétien en Occident.", wikipedia: "https://fr.wikipedia.org/wiki/Charlemagne" },
+                            { id: "5e_6", date: 843, titre: "Traité de Verdun", description: "Les trois petits-fils de Charlemagne se partagent l'immense empire carolingien. Ce traité met fin aux luttes fratricides et donne naissance aux frontières préfigurant la France et l'Allemagne actuelles.", wikipedia: "https://fr.wikipedia.org/wiki/Trait%C3%A9_de_Verdun" },
+                            { id: "5e_7", date: 987, titre: "Avènement d’Hugues Capet", description: "Hugues Capet est élu roi des Francs par les grands seigneurs. Bien que son pouvoir soit faible, il fonde la dynastie capétienne qui régnera sur la France de façon continue jusqu'à la Révolution.", wikipedia: "https://fr.wikipedia.org/wiki/Hugues_Capet" },
+                            { id: "5e_8", date: 1054, titre: "Schisme d’Orient", description: "À la suite de désaccords théologiques et politiques, le pape de Rome et le patriarche de Constantinople s'excommunient mutuellement. C'est la séparation définitive entre catholiques et orthodoxes.", wikipedia: "https://fr.wikipedia.org/wiki/S%C3%A9paration_des_%C3%89glises_d%27Orient_et_d%27Occident" },
+                            { id: "5e_9", date: 1095, titre: "Début de la première croisade", description: "Lors du concile de Clermont, le pape Urbain II appelle les chrétiens d'Occident à prendre les armes pour délivrer le tombeau du Christ à Jérusalem, alors sous contrôle musulman.", wikipedia: "https://fr.wikipedia.org/wiki/Premi%C3%A8re_croisade" },
+                            { id: "5e_10", date: 1204, titre: "Sac de Constantinople", description: "Détournée de son but initial (Jérusalem), la quatrième croisade aboutit au pillage brutal de la capitale byzantine par les croisés catholiques, creusant un fossé irrémédiable avec l'Orient chrétien.", wikipedia: "https://fr.wikipedia.org/wiki/Sac_de_Constantinople_(1204)" },
+                            { id: "5e_11", date: 1214, titre: "Bataille de Bouvines", description: "Le roi de France Philippe Auguste remporte une victoire éclatante contre une immense coalition européenne (Angleterre, Flandre, Saint-Empire). Le domaine et l'autorité royaux s'en trouvent renforcés.", wikipedia: "https://fr.wikipedia.org/wiki/Bataille_de_Bouvines" },
+                            { id: "5e_12", date: 1226, titre: "Début du règne de Saint Louis", description: "Louis IX devient roi. Souverain profondément pieux, il participe à deux croisades et développe considérablement la justice royale, imposant son autorité arbitrale à travers le royaume.", wikipedia: "https://fr.wikipedia.org/wiki/Louis_IX" },
+                            { id: "5e_13", date: 1337, titre: "Début de la guerre de Cent Ans", description: "Un conflit dynastique et territorial éclate entre le roi de France (Valois) et le roi d'Angleterre (Plantagenêt) qui revendique la couronne française. Le pays va sombrer dans une longue période de crises.", wikipedia: "https://fr.wikipedia.org/wiki/Guerre_de_Cent_Ans" },
+                            { id: "5e_14", date: 1453, titre: "Chute de Constantinople", description: "L'armée ottomane du sultan Mehmed II s'empare de la capitale byzantine après un long siège. Cet événement marque la fin définitive de l'Empire romain d'Orient.", wikipedia: "https://fr.wikipedia.org/wiki/Chute_de_Constantinople" },
+                            { id: "5e_15", date: 1492, titre: "Christophe Colomb atteint l’Amérique", description: "Cherchant une nouvelle route maritime vers les Indes par l'Ouest, le navigateur génois au service de l'Espagne découvre un continent inconnu des Européens. C'est l'ouverture des Temps modernes.", wikipedia: "https://fr.wikipedia.org/wiki/D%C3%A9couverte_de_l%27Am%C3%A9rique" },
+                            { id: "5e_16", date: 1517, titre: "95 thèses de Luther", description: "Le moine allemand Martin Luther affiche ses 95 thèses dénonçant le commerce des indulgences par l'Église de Rome. Il initie ainsi la Réforme protestante qui fracturera l'Europe.", wikipedia: "https://fr.wikipedia.org/wiki/95_th%C3%A8ses" },
+                            { id: "5e_17", date: 1534, titre: "Acte de Suprématie (Henri VIII)", description: "Le roi d'Angleterre Henri VIII, refusant l'autorité du pape qui s'oppose à son divorce, se fait proclamer chef suprême de l'Église d'Angleterre, instaurant l'anglicanisme.", wikipedia: "https://fr.wikipedia.org/wiki/Acte_de_supr%C3%A9matie" },
+                            { id: "5e_18", date: 1598, titre: "Édit de Nantes", description: "Le roi Henri IV promulgue un édit de tolérance accordant la liberté de culte aux protestants français. Il met ainsi un terme à plus de trente ans de guerres de Religion sanglantes.", wikipedia: "https://fr.wikipedia.org/wiki/%C3%89dit_de_Nantes" },
+                            { id: "5e_19", date: 1661, titre: "Début du règne personnel de Louis XIV", description: "À la mort du cardinal Mazarin, Louis XIV décide de gouverner seul, sans Premier ministre. C'est l'apogée de la monarchie absolue de droit divin en France.", wikipedia: "https://fr.wikipedia.org/wiki/Louis_XIV" },
+                            { id: "5e_20", date: 1715, titre: "Mort de Louis XIV", description: "Le Roi-Soleil meurt après un règne de 72 ans. Il laisse une France très puissante en Europe, magnifiée par Versailles, mais exsangue financièrement à cause des guerres continuelles.", wikipedia: "https://fr.wikipedia.org/wiki/Louis_XIV" }
+                        ]
+                    },
+                    {
+                        id: "thm_4e", nom: "Classe de 4ᵉ", difficulte: "Collège",
+                        events: [
+                            { id: "4e_1", date: 1751, titre: "Publication de l’Encyclopédie", description: "Dirigée par Diderot et d'Alembert, l'Encyclopédie a pour but de compiler les savoirs et diffuser les idées des Lumières. Elle remet en question la religion et l'absolutisme monarchique.", wikipedia: "https://fr.wikipedia.org/wiki/Encyclop%C3%A9die_ou_Dictionnaire_raisonn%C3%A9_des_sciences,_des_arts_et_des_m%C3%A9tiers" },
+                            { id: "4e_2", date: 1776, titre: "Déclaration d’indépendance des États-Unis", description: "Rédigée principalement par Thomas Jefferson, cette déclaration marque la sécession des treize colonies américaines vis-à-vis de la Grande-Bretagne et proclame les droits inaliénables des hommes.", wikipedia: "https://fr.wikipedia.org/wiki/D%C3%A9claration_d%27ind%C3%A9pendance_des_%C3%89tats-Unis" },
+                            { id: "4e_3", date: 1789, titre: "Début de la Révolution française", description: "Ouverture des États généraux qui se transforment en Assemblée nationale, Serment du Jeu de paume, prise de la Bastille : c'est l'effondrement politique et social de l'Ancien Régime.", wikipedia: "https://fr.wikipedia.org/wiki/R%C3%A9volution_fran%C3%A7aise" },
+                            { id: "4e_4", date: 1792, titre: "Proclamation de la Première République", description: "Après la prise des Tuileries et la suspension du roi Louis XVI, la Convention nationale abolit la royauté. La France devient une République en guerre contre l'Europe des rois.", wikipedia: "https://fr.wikipedia.org/wiki/Premi%C3%A8re_R%C3%A9publique_(France)" },
+                            { id: "4e_5", date: 1799, titre: "Coup d’État du 18 Brumaire", description: "Soutenu par l'armée, le général Napoléon Bonaparte renverse le Directoire par la force. Il instaure le Consulat, mettant fin à la Révolution française tout en conservant certains de ses acquis.", wikipedia: "https://fr.wikipedia.org/wiki/Coup_d%27%C3%89tat_du_18_Brumaire" },
+                            { id: "4e_6", date: 1804, titre: "Napoléon devient empereur", description: "Napoléon Bonaparte s'auto-couronne Empereur des Français sous le nom de Napoléon Ier. Il fonde un empire autoritaire, crée le Code civil, et lance la France dans la conquête de l'Europe.", wikipedia: "https://fr.wikipedia.org/wiki/Sacre_de_Napol%C3%A9on_Ier" },
+                            { id: "4e_7", date: 1815, titre: "Bataille de Waterloo", description: "Après son retour d'exil (les Cent-Jours), Napoléon est définitivement vaincu en Belgique par une coalition anglo-prussienne. Cet événement signe la chute du Premier Empire et le retour de la monarchie.", wikipedia: "https://fr.wikipedia.org/wiki/Bataille_de_Waterloo" },
+                            { id: "4e_8", date: 1830, titre: "Révolution de Juillet (Les Trois Glorieuses)", description: "Le peuple de Paris se soulève contre le roi Charles X qui tentait de restaurer l'absolutisme. Son cousin Louis-Philippe Ier lui succède : c'est le début de la Monarchie de Juillet.", wikipedia: "https://fr.wikipedia.org/wiki/Trois_Glorieuses" },
+                            { id: "4e_9", date: 1848, titre: "Révolution de Février (Printemps des peuples)", description: "Une révolution à Paris renverse Louis-Philippe et instaure la Deuxième République (suffrage universel masculin, abolition de l'esclavage). La révolte s'étend rapidement dans toute l'Europe.", wikipedia: "https://fr.wikipedia.org/wiki/R%C3%A9volution_fran%C3%A7aise_de_1848" },
+                            { id: "4e_10", date: 1851, titre: "Coup d’État de Louis-Napoléon Bonaparte", description: "Le président de la République organise un coup d'État pour conserver le pouvoir, face à une constitution qui lui interdisait de se représenter. Il instaurera le Second Empire un an plus tard.", wikipedia: "https://fr.wikipedia.org/wiki/Coup_d%27%C3%89tat_du_2_d%C3%A9cembre_1851" },
+                            { id: "4e_11", date: 1870, titre: "Proclamation de la IIIᵉ République", description: "Suite à la défaite militaire de Sedan face à la Prusse et la capture de Napoléon III, les républicains (dont Léon Gambetta) proclament la déchéance de l'Empire et fondent la IIIe République.", wikipedia: "https://fr.wikipedia.org/wiki/Gouvernement_de_la_D%C3%A9fense_nationale" },
+                            { id: "4e_12", date: 1871, titre: "Commune de Paris", description: "Le peuple parisien, refusant l'armistice avec la Prusse, forme un gouvernement révolutionnaire et ouvrier. L'insurrection est écrasée dans le sang par le gouvernement d'Adolphe Thiers (Semaine sanglante).", wikipedia: "https://fr.wikipedia.org/wiki/Commune_de_Paris" },
+                            { id: "4e_13", date: 1881, titre: "Première loi Jules Ferry", description: "Le ministre de l'Instruction publique fait voter une loi rendant l'enseignement primaire public gratuit. L'année suivante, l'école deviendra laïque et obligatoire pour tous.", wikipedia: "https://fr.wikipedia.org/wiki/Lois_Jules_Ferry" },
+                            { id: "4e_14", date: 1894, titre: "Début de l’affaire Dreyfus", description: "Le capitaine Alfred Dreyfus, d'origine juive, est accusé à tort de trahison au profit de l'Allemagne. L'affaire divise profondément la société française entre dreyfusards et antidreyfusards.", wikipedia: "https://fr.wikipedia.org/wiki/Affaire_Dreyfus" },
+                            { id: "4e_15", date: 1905, titre: "Loi de séparation des Églises et de l’État", description: "La République française garantit le libre exercice des cultes mais ne salarie ni ne subventionne aucune religion. C'est la fondation du principe de laïcité de l'État.", wikipedia: "https://fr.wikipedia.org/wiki/Loi_de_s%C3%A9paration_des_%C3%89glises_et_de_l%27%C3%89tat" },
+                            { id: "4e_16", date: 1769, titre: "Machine à vapeur de Watt", description: "L'ingénieur écossais James Watt perfectionne la machine à vapeur. Cette innovation capitale permet de fournir une force motrice puissante, marquant le véritable démarrage de la révolution industrielle.", wikipedia: "https://fr.wikipedia.org/wiki/Machine_de_Watt" },
+                            { id: "4e_17", date: 1848, titre: "Printemps des peuples", description: "Une vague révolutionnaire secoue l'Europe, touchant la France, l'Allemagne, l'Italie et l'empire d'Autriche. Les peuples réclament des libertés, des constitutions et parfois leur unité nationale.", wikipedia: "https://fr.wikipedia.org/wiki/Printemps_des_peuples" },
+                            { id: "4e_18", date: 1870, titre: "Début de la « seconde mondialisation » et relance coloniale", description: "Soutenus par l'industrialisation, les bateaux à vapeur et les besoins en matières premières, les États européens se lancent dans une vaste politique impérialiste en Afrique et en Asie.", wikipedia: "https://fr.wikipedia.org/wiki/Partage_de_l%27Afrique" },
+                            { id: "4e_19", date: 1884, titre: "Conférence de Berlin", description: "Les grandes puissances européennes, réunies par Bismarck, établissent les règles du partage colonial de l'Afrique pour éviter les guerres entre elles, sans consulter les populations locales.", wikipedia: "https://fr.wikipedia.org/wiki/Conf%C3%A9rence_de_Berlin" },
+                            { id: "4e_20", date: 1830, titre: "Début de la conquête de l’Algérie", description: "Le roi Charles X envoie un corps expéditionnaire qui s'empare d'Alger. C'est le point de départ de la conquête longue et très brutale du territoire algérien par la France.", wikipedia: "https://fr.wikipedia.org/wiki/Conqu%C3%AAte_de_l%27Alg%C3%A9rie_par_la_France" },
+                            { id: "4e_21", date: 1898, titre: "Crise de Fachoda", description: "Un grave incident diplomatique oppose une mission militaire française et une armée britannique pour le contrôle du Soudan et du Haut-Nil. La France finit par céder, frôlant la guerre.", wikipedia: "https://fr.wikipedia.org/wiki/Crise_de_Fachoda" },
+                            { id: "4e_22", date: 1881, titre: "Protectorat français sur la Tunisie", description: "Par le traité du Bardo imposé sous la menace militaire, la France instaure un protectorat sur la Tunisie, s'assurant le contrôle de la politique étrangère et financière du bey de Tunis.", wikipedia: "https://fr.wikipedia.org/wiki/Trait%C3%A9_du_Bardo" },
+                            { id: "4e_23", date: 1900, titre: "Exposition universelle de Paris", description: "Événement grandiose célébrant les réalisations techniques et le triomphe de la révolution industrielle, avec notamment le métro, l'électricité triomphante et de nouveaux palais parisiens.", wikipedia: "https://fr.wikipedia.org/wiki/Exposition_universelle_de_1900" },
+                            { id: "4e_24", date: 1914, titre: "Début de la Première Guerre mondiale", description: "Après l'attentat de Sarajevo, l'engrenage fatal des alliances (Triple Entente contre Triple Alliance) précipite l'Europe, puis le monde, dans une guerre totale industrielle et dévastatrice.", wikipedia: "https://fr.wikipedia.org/wiki/Premi%C3%A8re_Guerre_mondiale" }
+                        ]
+                    },
+                    {
+                        id: "thm_3e", nom: "Classe de 3ᵉ (Brevet)", difficulte: "Brevet",
+                        events: [
+                            { id: "3e_1", date: 1914, titre: "Début de la Première Guerre mondiale", description: "L'assassinat de l'archiduc François-Ferdinand à Sarajevo par un nationaliste serbe provoque, par le jeu des alliances diplomatiques, l'embrasement de l'Europe. En août, l'Allemagne, la Russie et la France entrent en guerre.", wikipedia: "https://fr.wikipedia.org/wiki/Premi%C3%A8re_Guerre_mondiale" },
+                            { id: "3e_2", date: 1914, titre: "Bataille de la Marne", description: "Après une retraite précipitée, l'armée française (aidée par les Britanniques) lance une vaste contre-offensive sur la Marne. Grâce notamment aux taxis parisiens réquisitionnés, l'avancée allemande vers Paris est stoppée.", wikipedia: "https://fr.wikipedia.org/wiki/Premi%C3%A8re_bataille_de_la_Marne" },
+                            { id: "3e_3", date: 1916, titre: "Bataille de Verdun", description: "Bataille d'usure monumentale opposant les armées française et allemande. D'une extrême violence, elle devient le symbole tragique de la guerre de tranchées et de la destruction industrielle (plus de 700 000 victimes).", wikipedia: "https://fr.wikipedia.org/wiki/Bataille_de_Verdun" },
+                            { id: "3e_4", date: 1917, titre: "Révolution russe", description: "En pleine guerre mondiale, la Russie s'effondre. Le Tsar est renversé en février. En octobre, les bolcheviks de Lénine s'emparent du pouvoir, fondent le premier État communiste et signent la paix avec l'Allemagne.", wikipedia: "https://fr.wikipedia.org/wiki/R%C3%A9volution_russe" },
+                            { id: "3e_5", date: 1917, titre: "Entrée en guerre des États-Unis", description: "Suite à la guerre sous-marine à outrance menée par l'Allemagne (qui coule des navires neutres), le président Woodrow Wilson déclare la guerre à l'Empire allemand, apportant un poids économique et militaire décisif à l'Entente.", wikipedia: "https://fr.wikipedia.org/wiki/Guerre_sous-marine_%C3%A0_outrance" },
+                            { id: "3e_6", date: 1918, titre: "Armistice de la Première Guerre mondiale", description: "Signé le 11 novembre dans la clairière de Rethondes, il marque la cessation des combats sur le front occidental. L'Allemagne, épuisée militairement et confrontée à des émeutes, s'avoue vaincue.", wikipedia: "https://fr.wikipedia.org/wiki/Armistice_de_1918" },
+                            { id: "3e_7", date: 1919, titre: "Traité de Versailles", description: "Traité de paix dicté par les vainqueurs. L'Allemagne est désignée comme seule responsable, amputée d'une partie de son territoire (la France récupère l'Alsace-Lorraine), privée de son armée et soumise à de lourdes réparations.", wikipedia: "https://fr.wikipedia.org/wiki/Trait%C3%A9_de_Versailles" },
+                            { id: "3e_8", date: 1929, titre: "Krach de Wall Street", description: "Le 24 octobre (« Jeudi noir »), la bourse de New York s'effondre. Cette crise boursière se transforme en la plus grave crise économique, sociale et financière de l'histoire du capitalisme, contaminant l'Europe entière.", wikipedia: "https://fr.wikipedia.org/wiki/Krach_de_1929" },
+                            { id: "3e_9", date: 1933, titre: "Hitler devient chancelier", description: "Profitant de la grave crise économique et du chômage de masse, le parti nazi (NSDAP) remporte les élections. Adolf Hitler est nommé chancelier légalement, mettant fin à la République de Weimar.", wikipedia: "https://fr.wikipedia.org/wiki/Adolf_Hitler" },
+                            { id: "3e_10", date: 1936, titre: "Front populaire", description: "Face à la montée de l'extrême droite, les partis de gauche français s'unissent et remportent les élections. Le gouvernement de Léon Blum fait voter des avancées sociales historiques (congés payés, semaine de 40 heures).", wikipedia: "https://fr.wikipedia.org/wiki/Front_populaire_(France)" },
+                            { id: "3e_11", date: 1938, titre: "Accords de Munich", description: "Pour éviter une nouvelle guerre, la France et le Royaume-Uni cèdent aux chantages d'Hitler en acceptant l'annexion de la région tchécoslovaque des Sudètes par l'Allemagne nazie. La paix est « sauvée » au prix d'une capitulation.", wikipedia: "https://fr.wikipedia.org/wiki/Accords_de_Munich" },
+                            { id: "3e_12", date: 1939, titre: "Début de la Seconde Guerre mondiale", description: "Le 1er septembre, l'Allemagne nazie envahit la Pologne sans déclaration de guerre. En réponse, la France et le Royaume-Uni, alliés de la Pologne, déclarent la guerre à l'Allemagne le 3 septembre.", wikipedia: "https://fr.wikipedia.org/wiki/Seconde_Guerre_mondiale" },
+                            { id: "3e_13", date: 1940, titre: "Appel du 18 juin", description: "Face à la débâcle militaire de la France et la demande d'armistice par le maréchal Pétain, le général de Gaulle lance depuis les studios de la BBC à Londres un appel historique à la poursuite du combat.", wikipedia: "https://fr.wikipedia.org/wiki/Appel_du_18_Juin" },
+                            { id: "3e_14", date: 1942, titre: "Conférence de Wannsee", description: "Quinze hauts responsables du Troisième Reich se réunissent secrètement dans la banlieue de Berlin pour organiser administrativement, logistiquement et industriellement la « Solution finale de la question juive ».", wikipedia: "https://fr.wikipedia.org/wiki/Conf%C3%A9rence_de_Wannsee" },
+                            { id: "3e_15", date: 1944, titre: "Débarquement de Normandie", description: "Le 6 juin (Jour J), les forces alliées (américaines, britanniques et canadiennes) débarquent sur les plages normandes lors de l'opération Overlord, ouvrant un second front décisif pour libérer l'Europe de l'Ouest.", wikipedia: "https://fr.wikipedia.org/wiki/D%C3%A9barquement_de_Normandie" },
+                            { id: "3e_16", date: 1944, titre: "Droit de vote des femmes", description: "Par une ordonnance du Comité français de la Libération nationale siégeant à Alger, le général de Gaulle accorde enfin le droit de vote et d'éligibilité aux femmes françaises, reconnaissant leur rôle dans la Résistance.", wikipedia: "https://fr.wikipedia.org/wiki/Droit_de_vote_des_femmes_en_France" },
+                            { id: "3e_17", date: 1945, titre: "Capitulation allemande", description: "Après le suicide d'Hitler et la prise de Berlin par l'Armée rouge, l'état-major allemand signe la capitulation sans condition (le 8 mai à Berlin). La guerre en Europe est terminée.", wikipedia: "https://fr.wikipedia.org/wiki/Actes_de_capitulation_du_Troisi%C3%A8me_Reich" },
+                            { id: "3e_18", date: 1945, titre: "Création de l’ONU", description: "Afin d'empêcher un nouveau conflit mondial, 51 pays signent la Charte des Nations Unies à San Francisco. L'ONU remplace l'impuissante SDN avec la mission de préserver la paix et la sécurité dans le monde.", wikipedia: "https://fr.wikipedia.org/wiki/Organisation_des_Nations_unies" },
+                            { id: "3e_19", date: 1945, titre: "Bombardements d’Hiroshima et Nagasaki", description: "En août, pour forcer le Japon fanatisé à se rendre et mettre fin à la guerre du Pacifique, les États-Unis larguent deux bombes atomiques. Ces actes d'une destruction totale inédite forcent la capitulation japonaise.", wikipedia: "https://fr.wikipedia.org/wiki/Bombardements_atomiques_d%27Hiroshima_et_de_Nagasaki" },
+                            { id: "3e_20", date: 1947, titre: "Début de la guerre froide (doctrine Truman)", description: "Le président américain Truman expose sa politique d'« endiguement » pour stopper l'expansion du communisme soviétique. C'est la rupture définitive entre les anciens alliés et la division du monde en deux blocs ennemis.", wikipedia: "https://fr.wikipedia.org/wiki/Doctrine_Truman" },
+                            { id: "3e_21", date: 1948, titre: "Blocus de Berlin", description: "Pour chasser les Occidentaux de Berlin, Staline bloque tous les accès routiers et ferroviaires à la ville. Les Américains ripostent par un immense pont aérien pendant près d'un an, sauvant la ville de l'asphyxie.", wikipedia: "https://fr.wikipedia.org/wiki/Blocus_de_Berlin" },
+                            { id: "3e_22", date: 1951, titre: "Création de la CECA", description: "Sous l'impulsion de Robert Schuman et Jean Monnet, six pays, dont la France et l'Allemagne de l'Ouest, décident de mettre en commun leur production de charbon et d'acier, jetant les bases concrètes de l'Union européenne.", wikipedia: "https://fr.wikipedia.org/wiki/Communaut%C3%A9_europ%C3%A9enne_du_charbon_et_de_l%27acier" },
+                            { id: "3e_23", date: 1954, titre: "Début de la guerre d’Algérie", description: "Les attentats perpétrés par le FLN le jour de la « Toussaint rouge » marquent le début de l'insurrection algérienne. Ce conflit de décolonisation, extrêmement violent, traumatisera profondément la France.", wikipedia: "https://fr.wikipedia.org/wiki/Guerre_d%27Alg%C3%A9rie" },
+                            { id: "3e_24", date: 1957, titre: "Traité de Rome", description: "Les six pays fondateurs de la CECA signent à Rome le traité instituant la Communauté Économique Européenne (CEE), créant un marché commun basé sur la libre circulation des personnes et des marchandises.", wikipedia: "https://fr.wikipedia.org/wiki/Trait%C3%A9_de_Rome" },
+                            { id: "3e_25", date: 1958, titre: "Naissance de la Vᵉ République", description: "Rappelé au pouvoir en pleine crise institutionnelle liée à la guerre d'Algérie, le général de Gaulle fait adopter une nouvelle Constitution par référendum, renforçant considérablement le pouvoir de l'exécutif présidentiel.", wikipedia: "https://fr.wikipedia.org/wiki/Cinqui%C3%A8me_R%C3%A9publique_(France)" },
+                            { id: "3e_26", date: 1962, titre: "Accords d’Évian", description: "Signés entre le gouvernement français et les indépendantistes algériens, ils proclament un cessez-le-feu immédiat. Quelques mois plus tard, la population algérienne vote massivement pour l'indépendance de son pays.", wikipedia: "https://fr.wikipedia.org/wiki/Accords_d%27%C3%89vian" },
+                            { id: "3e_27", date: 1962, titre: "Élection du président au suffrage universel direct", description: "Volonté farouche du général de Gaulle, cette révision de la Constitution (adoptée par référendum) permet dorénavant aux citoyens français d'élire directement leur président de la République.", wikipedia: "https://fr.wikipedia.org/wiki/R%C3%A9f%C3%A9rendum_sur_l%27%C3%A9lection_au_suffrage_universel_du_pr%C3%A9sident_de_la_R%C3%A9publique" },
+                            { id: "3e_28", date: 1968, titre: "Mai 68", description: "Mouvement étudiant né de la contestation de l'autorité traditionnelle, suivi d'une grève générale de millions de travailleurs. C'est une crise sociale, culturelle et politique majeure pour la présidence de De Gaulle.", wikipedia: "https://fr.wikipedia.org/wiki/Mai_68" },
+                            { id: "3e_29", date: 1975, titre: "Loi Veil", description: "Portée avec courage par la ministre de la Santé Simone Veil face à une Assemblée conservatrice, cette loi dépénalise et encadre l'Interruption Volontaire de Grossesse (IVG) pour les femmes en France.", wikipedia: "https://fr.wikipedia.org/wiki/Loi_Veil" },
+                            { id: "3e_30", date: 1981, titre: "Élection de François Mitterrand", description: "C'est la première grande alternance politique sous la Ve République. Le candidat socialiste accède à la présidence et engage de grandes réformes (abolition de la peine de mort, nationalisations, 5e semaine de congés payés).", wikipedia: "https://fr.wikipedia.org/wiki/Fran%C3%A7ois_Mitterrand" },
+                            { id: "3e_31", date: 1989, titre: "Chute du mur de Berlin", description: "Le soir du 9 novembre, suite à un vent de liberté à l'Est et à l'ouverture des frontières, la population berlinoise fait s'effondrer le « mur de la honte », marquant la réunification imminente de l'Allemagne.", wikipedia: "https://fr.wikipedia.org/wiki/Chute_du_mur_de_Berlin" },
+                            { id: "3e_32", date: 1991, titre: "Dislocation de l’URSS", description: "Après la démission du dirigeant réformateur Gorbatchev, l'Union soviétique est officiellement dissoute, éclatant en quinze républiques indépendantes. C'est la fin officielle de la guerre froide et du bloc de l'Est.", wikipedia: "https://fr.wikipedia.org/wiki/Dislocation_de_l%27URSS" },
+                            { id: "3e_33", date: 1992, titre: "Traité de Maastricht", description: "Ce traité fondamental transforme la CEE en une véritable Union européenne (UE), dotée d'une dimension politique, instaurant la citoyenneté européenne et préparant la création d'une monnaie unique (l'euro).", wikipedia: "https://fr.wikipedia.org/wiki/Trait%C3%A9_de_Maastricht" },
+                            { id: "3e_34", date: 1995, titre: "Élection de Jacques Chirac", description: "Après quatorze années de pouvoir socialiste, le candidat du RPR (droite), ancien maire de Paris, est élu président de la République, promettant de réduire la fracture sociale en France.", wikipedia: "https://fr.wikipedia.org/wiki/Jacques_Chirac" },
+                            { id: "3e_35", date: 2001, titre: "Attentats du 11 septembre", description: "Des terroristes islamistes d'Al-Qaïda détournent quatre avions de ligne et détruisent les tours jumelles du World Trade Center (New York) ainsi qu'une partie du Pentagone, provoquant l'intervention américaine en Afghanistan.", wikipedia: "https://fr.wikipedia.org/wiki/Attentats_du_11_septembre_2001" },
+                            { id: "3e_36", date: 2002, titre: "Mise en circulation de l’euro", description: "Le passage physique à la monnaie unique s'effectue dans douze pays européens (la zone euro). Pour des millions de citoyens, c'est l'abandon de leur monnaie nationale historique (comme le franc français).", wikipedia: "https://fr.wikipedia.org/wiki/Euro" },
+                            { id: "3e_37", date: 2005, titre: "Référendum sur le traité constitutionnel européen", description: "Consultés par référendum, les Français rejettent à près de 55 % le projet visant à donner une véritable Constitution à l'Union européenne, marquant un sévère coup d'arrêt à la construction politique de l'Europe.", wikipedia: "https://fr.wikipedia.org/wiki/R%C3%A9f%C3%A9rendum_fran%C3%A7ais_sur_le_trait%C3%A9_%C3%A9tablissant_une_Constitution_pour_l%27Europe" },
+                            { id: "3e_38", date: 2007, titre: "Traité de Lisbonne", description: "Pour sortir l'Europe du blocage causé par le non français et néerlandais, ce traité « simplifié » modifie le fonctionnement des institutions de l'UE pour l'adapter à une Europe élargie à 27 membres.", wikipedia: "https://fr.wikipedia.org/wiki/Trait%C3%A9_de_Lisbonne" }
+                        ]
+                    }
+                ]
             },
             {
                 nom: "Programme de Seconde",
