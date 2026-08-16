@@ -21,9 +21,9 @@
         .btn { background-color: var(--primary-blue); color: white; border: none; padding: 12px 24px; border-radius: 8px; font-size: 16px; cursor: pointer; font-weight: bold; transition: opacity 0.2s; }
         .btn:hover { opacity: 0.8; }
         
-        #screen-home { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
-        .logo { font-size: 48px; font-weight: bold; color: var(--primary-blue); margin-bottom: 10px; }
-        .subtitle { font-size: 18px; color: #666; margin-bottom: 40px; }
+/* ÉCRAN D'ACCUEIL AVEC IMAGE */
+        #screen-home { flex: 1; display: flex; background-color: #E6D5B8; cursor: pointer; justify-content: center; align-items: center; overflow: hidden; }
+        .home-image { width: 100%; height: 100%; object-fit: contain; }
         
         /* LISTES : CATÉGORIES & THÈMES */
         .list-screen { flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; }
@@ -106,10 +106,8 @@
 </head>
 <body>
     <!-- ÉCRAN 1 : ACCUEIL -->
-    <div id="screen-home">
-        <div class="logo">HistoriAxe</div>
-        <div class="subtitle">Le Quiz Chronologique</div>
-        <button class="btn" onclick="showScreen('screen-categories')">Jouer maintenant</button>
+    <div id="screen-home" onclick="showScreen('screen-categories')">
+        <img src="accueil.jpg" alt="HistoriAxe" class="home-image">
     </div>
 
     <!-- ÉCRAN 2 : CATÉGORIES (Grandes sections) -->
