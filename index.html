@@ -130,7 +130,7 @@
 
     <!-- ÉCRAN 4 : MODES DE JEU -->
     <div id="screen-modes" class="list-screen hidden">
-        <h2 class="header-title">Choisissez un mode de jeu</h2>
+        <h2 class="header-title" id="modes-header-title">Choisissez un mode de jeu</h2>
         <div class="grid-modes">
             <div class="mode-card" style="background-color: #2c3e50;" onclick="startActualGame('discovery')">
                 <h3>Découverte</h3>
@@ -154,7 +154,7 @@
             </div>
         </div>
         <div style="margin-top: 10px; margin-bottom: 50px;">
-            <button class="btn" style="background:#ccc; color:#333;" onclick="showScreen('screen-themes')">Retour aux thèmes</button>
+            <button class="btn" style="background:#ccc; color:#333;" onclick="showScreen(screenAfterGame())">Retour</button>
         </div>
     </div>
 
@@ -183,8 +183,8 @@
         <div class="end-score">Score : <strong id="end-score-val">0</strong> points</div>
         <div id="end-time-display" class="end-time hidden">Durée : 0,0 s</div>
         <div style="display:flex; gap:15px; margin-top: 20px;">
-            <button class="btn" style="background:#ccc; color:#333;" onclick="showScreen('screen-themes')">Retour aux thèmes</button>
-            <button class="btn" onclick="startActualGame(currentMode)">Rejouer</button>
+            <button class="btn" style="background:#ccc; color:#333;" onclick="showScreen(screenAfterGame())">Retour</button>
+            <button class="btn" onclick="replayCurrentGame()">Rejouer</button>
         </div>
     </div>
 
@@ -912,10 +912,82 @@
             }
         ];
 
+        // === RÉVISION ESPACÉE (SRS) ===
+        // Système de type Leitner à 5 boîtes, stocké dans le navigateur (localStorage).
+        // Boîte 1 = à revoir tout de suite, boîte 5 = bien maîtrisé (intervalle 14 jours).
+        const SRS_KEY = 'historiaxe_srs_v1';
+        const SRS_INTERVALS_DAYS = [0, 1, 3, 7, 14]; // index = boîte - 1
+
+        function srsLoad() {
+            try { return JSON.parse(localStorage.getItem(SRS_KEY)) || {}; }
+            catch (e) { return {}; }
+        }
+        function srsSave(data) {
+            try { localStorage.setItem(SRS_KEY, JSON.stringify(data)); } catch (e) {}
+        }
+        function srsRecord(eventId, isCorrect) {
+            const data = srsLoad();
+            const entry = data[eventId] || { box: 1, lastSeen: null, correct: 0, incorrect: 0 };
+            if (isCorrect) {
+                entry.box = Math.min(entry.box + 1, 5);
+                entry.correct += 1;
+            } else {
+                entry.box = 1;
+                entry.incorrect += 1;
+            }
+            entry.lastSeen = Date.now();
+            data[eventId] = entry;
+            srsSave(data);
+        }
+        function srsIsDue(entry) {
+            if (!entry || !entry.lastSeen) return true;
+            const days = SRS_INTERVALS_DAYS[Math.min(entry.box, 5) - 1];
+            return Date.now() >= entry.lastSeen + days * 86400000;
+        }
+
+        // Aplatit toute la base (toutes catégories/thèmes confondus) pour la révision transversale
+        function getAllEvents() {
+            const all = [];
+            bdd.forEach(cat => {
+                cat.themes.forEach(thm => {
+                    thm.events.forEach(evt => all.push(evt));
+                });
+            });
+            return all;
+        }
+
+        // Construit le lot du jour : priorité aux événements dus (jamais vus, puis boîte la
+        // plus basse, puis vus le plus anciennement), avec un complément si peu d'événements
+        // sont dus, pour ne jamais renvoyer une session vide.
+        function getRevisionPool() {
+            const all = getAllEvents();
+            const data = srsLoad();
+            const scored = all.map(evt => {
+                const entry = data[evt.id];
+                return {
+                    evt,
+                    due: srsIsDue(entry),
+                    box: entry ? entry.box : 1,
+                    lastSeen: entry ? (entry.lastSeen || 0) : 0
+                };
+            });
+            scored.sort((a, b) => {
+                if (a.due !== b.due) return a.due ? -1 : 1;
+                if (a.box !== b.box) return a.box - b.box;
+                return a.lastSeen - b.lastSeen;
+            });
+            const dueCount = scored.filter(s => s.due).length;
+            const sessionSize = dueCount > 0 ? Math.min(Math.max(dueCount, 15), 50) : 20;
+            const pool = scored.slice(0, sessionSize).map(s => s.evt);
+            return { pool, dueCount };
+        }
+
         // VARIABLES GLOBALES
         let selectedCategoryIndex = null;
         let selectedThemeIndex = null;
         let currentMode = 'classic';
+        let revisionMode = false;
+        let revisionEvents = [];
         
         let currentPool = [];       
         let placedEvents = [];      
@@ -937,12 +1009,63 @@
             
             if (screenId === 'screen-categories') initCategories();
             if (screenId === 'screen-themes') initThemes();
+            if (screenId === 'screen-modes') {
+                const titleEl = document.getElementById('modes-header-title');
+                titleEl.innerText = revisionMode
+                    ? `Révision ciblée (${revisionEvents.length} événements)`
+                    : 'Choisissez un mode de jeu';
+            }
+        }
+
+        // Renvoie l'écran de destination après une partie/un retour, et quitte le mode révision
+        function screenAfterGame() {
+            const target = revisionMode ? 'screen-categories' : 'screen-themes';
+            revisionMode = false;
+            return target;
+        }
+
+        // Lance une session de révision ciblée à partir des points faibles détectés
+        function startRevision() {
+            const { pool } = getRevisionPool();
+            if (pool.length === 0) {
+                alert("Pas encore de données à réviser : jouez une première partie !");
+                return;
+            }
+            revisionMode = true;
+            revisionEvents = pool;
+            showScreen('screen-modes');
+        }
+
+        // Relance la partie en cours ; en mode révision, recalcule le lot pour tenir compte
+        // des résultats qui viennent d'être enregistrés
+        function replayCurrentGame() {
+            if (revisionMode) {
+                const { pool } = getRevisionPool();
+                revisionEvents = pool;
+            }
+            startActualGame(currentMode);
         }
 
         // INIT CATÉGORIES (Dossiers)
         function initCategories() {
             const container = document.getElementById('categories-container');
             container.innerHTML = ''; 
+
+            // Bannière de révision espacée, toujours en tête de liste
+            const { dueCount } = getRevisionPool();
+            const revisionBanner = document.createElement('div');
+            revisionBanner.className = 'category-banner';
+            revisionBanner.style.background = 'linear-gradient(135deg, #B23A32, #D9534F)';
+            revisionBanner.innerHTML = `
+                <div>
+                    <div class="category-banner-title">🔁 Réviser mes points faibles</div>
+                    <div class="category-banner-subtitle">${dueCount > 0 ? dueCount + ' événement(s) à réviser aujourd\'hui' : 'Entraînement libre sur vos points les moins solides'}</div>
+                </div>
+                <div class="category-banner-icon">›</div>
+            `;
+            revisionBanner.onclick = startRevision;
+            container.appendChild(revisionBanner);
+
             bdd.forEach((cat, index) => {
                 const banner = document.createElement('div');
                 banner.className = 'category-banner';
@@ -977,14 +1100,18 @@
             
             const category = bdd[selectedCategoryIndex];
             document.getElementById('theme-screen-title').innerText = category.nom;
+            const srsData = srsLoad();
             
             category.themes.forEach((theme, index) => {
                 const card = document.createElement('div');
                 card.className = 'data-card';
-                card.innerHTML = `<div class="card-top">${theme.nom}</div><div class="card-bottom"><span>${theme.difficulte}</span><span style="color:var(--primary-blue); font-weight:bold;">Jouer ›</span></div>`;
+                const masteredCount = theme.events.filter(e => srsData[e.id] && srsData[e.id].box >= 4).length;
+                const masteryText = masteredCount > 0 ? ` · ${masteredCount}/${theme.events.length} maîtrisés` : '';
+                card.innerHTML = `<div class="card-top">${theme.nom}</div><div class="card-bottom"><span>${theme.difficulte}${masteryText}</span><span style="color:var(--primary-blue); font-weight:bold;">Jouer ›</span></div>`;
                 
                 card.onclick = () => {
                     selectedThemeIndex = index;
+                    revisionMode = false;
                     showScreen('screen-modes');
                 };
                 container.appendChild(card);
@@ -994,8 +1121,8 @@
         // LANCEMENT DU JEU
         function startActualGame(mode) {
             currentMode = mode;
-            const theme = bdd[selectedCategoryIndex].themes[selectedThemeIndex];
-            let eventsCopy = [...theme.events];
+            const sourceEvents = revisionMode ? revisionEvents : bdd[selectedCategoryIndex].themes[selectedThemeIndex].events;
+            let eventsCopy = [...sourceEvents];
             
             if (mode === 'discovery') {
                 eventsCopy.sort((a, b) => a.date - b.date);
@@ -1147,12 +1274,14 @@
 
             if (isCorrect) {
                 score += 10;
+                srsRecord(eventToPlace.id, true);
                 placedEvents.splice(index, 0, eventToPlace);
                 updateHUD();
                 pickNextEvent();
                 document.getElementById('timeline').scrollBy({ left: 100, behavior: 'smooth' });
             } else {
                 isAnimating = true; 
+                srsRecord(eventToPlace.id, false);
                 
                 if (currentMode !== 'training') {
                     lives -= 1;
@@ -1218,12 +1347,12 @@
 
         function quitGame() {
             if(currentMode === 'discovery') {
-                showScreen('screen-themes');
+                showScreen(screenAfterGame());
                 return;
             }
             if(confirm("Voulez-vous vraiment quitter cette partie ?")) {
                 stopTimer();
-                showScreen('screen-themes');
+                showScreen(screenAfterGame());
             }
         }
 
