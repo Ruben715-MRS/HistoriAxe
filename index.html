@@ -101,6 +101,8 @@
         .category-banner-title { font-size: 22px; font-weight: bold; }
         .category-banner-subtitle { font-size: 14px; opacity: 0.8; margin-top: 5px; }
         .category-banner-icon { font-size: 24px; background: rgba(255,255,255,0.2); width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
+        .reset-srs-btn { font-size: 20px; opacity: 0.85; padding: 4px 9px; border-radius: 50%; transition: background 0.15s, opacity 0.15s; }
+        .reset-srs-btn:hover { opacity: 1; background: rgba(255,255,255,0.2); }
         /* STYLE POUR LA SÉLECTION D'AXE THÉMATIQUE */
         .axis-card { background: white; border: 2px solid #e5e7eb; border-radius: 12px; padding: 18px 20px; cursor: pointer; transition: all 0.15s; box-shadow: var(--card-shadow); text-align: left; }
         .axis-card h3 { font-size: 17px; margin-bottom: 4px; color: var(--text-dark); }
@@ -1010,6 +1012,14 @@
             return { pool, dueCount };
         }
 
+        // Réinitialise entièrement le suivi de révision espacée (boîtes, historique)
+        function resetRevisionTracking() {
+            showConfirm("Réinitialiser tout le suivi de révision (boîtes de mémorisation, historique) ? Cette action est irréversible.", () => {
+                srsSave({});
+                initCategories();
+            });
+        }
+
         // VARIABLES GLOBALES
         let selectedCategoryIndex = null;
         let selectedThemeIndex = null;
@@ -1148,10 +1158,17 @@
                     <div class="category-banner-title">🔁 Réviser mes points faibles</div>
                     <div class="category-banner-subtitle">${dueCount > 0 ? dueCount + ' événement(s) à réviser aujourd\'hui' : 'Entraînement libre sur vos points les moins solides'}</div>
                 </div>
-                <div class="category-banner-icon">›</div>
+                <div style="display:flex; align-items:center; gap:8px;">
+                    <span class="reset-srs-btn" id="reset-srs-btn" title="Réinitialiser le suivi de révision">⟲</span>
+                    <div class="category-banner-icon">›</div>
+                </div>
             `;
             revisionBanner.onclick = startRevision;
             container.appendChild(revisionBanner);
+            document.getElementById('reset-srs-btn').onclick = (e) => {
+                e.stopPropagation();
+                resetRevisionTracking();
+            };
 
             bdd.forEach((cat, index) => {
                 const banner = document.createElement('div');
