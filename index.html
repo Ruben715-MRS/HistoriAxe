@@ -16,7 +16,7 @@
             --zoom-level: 1; 
         }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: var(--font-main); }
-        body { background-color: var(--bg-color); color: var(--text-dark); height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
+        body { background-color: var(--bg-color); color: var(--text-dark); height: 100vh; height: 100dvh; display: flex; flex-direction: column; overflow: hidden; }
         .hidden { display: none !important; }
         .btn { background-color: var(--primary-blue); color: white; border: none; padding: 12px 24px; border-radius: 8px; font-size: 16px; cursor: pointer; font-weight: bold; transition: opacity 0.2s; }
         .btn:hover { opacity: 0.8; }
@@ -42,32 +42,101 @@
         .mode-card h3 { font-size: 22px; margin-bottom: 10px; }
         .mode-card p { font-size: 14px; opacity: 0.9; }
 
-        /* ÉCRAN DE JEU */
-        #screen-game { flex: 1; display: flex; flex-direction: column; }
-        .top-bar { background: white; padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05); z-index: 10; }
-        .back-btn { color: var(--primary-blue); font-weight: bold; cursor: pointer; }
-        .score-display { font-size: 18px; color: #666; }
-        .stats { display: flex; align-items: center; gap: 15px; }
-        .lives { color: var(--danger-red); font-size: 18px; letter-spacing: 2px;}
-        .progress { background: var(--primary-blue); color: white; padding: 4px 10px; border-radius: 15px; font-size: 12px; font-weight: bold;}
-        
-        .timer-box { background-color: #333; color: white; padding: 5px 12px; border-radius: 8px; font-size: 16px; font-weight: bold; font-family: monospace; letter-spacing: 1px; }
 
-        .event-to-place { background: white; border: 1px solid var(--primary-blue); margin: 20px auto; padding: 15px 30px; border-radius: 8px; text-align: center; font-size: 18px; font-weight: bold; color: var(--primary-blue); max-width: 90%; box-shadow: var(--card-shadow); }
-        .timeline-container { flex: 1; display: flex; align-items: center; overflow-x: auto; padding: 0 50px; scroll-behavior: smooth; white-space: nowrap; background-image: linear-gradient(transparent calc(50% - 1px), #d1d5db calc(50% - 1px), #d1d5db calc(50% + 1px), transparent calc(50% + 1px)); zoom: 1 !important; }
-        
-        .event-card { min-width: calc(150px * var(--zoom-level)) !important; width: calc(150px * var(--zoom-level)) !important; background: white; border-radius: 8px; box-shadow: var(--card-shadow); border: 1px solid #e5e7eb; display: inline-flex; flex-direction: column; cursor: pointer; transition: transform 0.2s; position: relative; z-index: 2; white-space: normal; }
-        .event-card:hover { transform: scale(1.05); }
-        .event-year { background: var(--primary-blue); color: white; text-align: center; font-weight: bold; border-top-left-radius: 7px; border-top-right-radius: 7px; font-size: calc(24px * var(--zoom-level)) !important; padding: calc(15px * var(--zoom-level)) 5px !important; }
-        .event-title { text-align: center; color: var(--primary-blue); flex: 1; display: flex; align-items: center; justify-content: center; font-size: calc(16px * var(--zoom-level)) !important; padding: calc(15px * var(--zoom-level)) 10px !important; font-weight: 500; }
-        
-        .insert-point { height: calc(100px * var(--zoom-level)) !important; display: inline-flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; z-index: 2; min-width: calc(60px * var(--zoom-level)) !important; }
-        .insert-circle { border: 2px solid var(--primary-blue); border-radius: 50%; background: var(--bg-color); transition: all 0.2s; width: calc(24px * var(--zoom-level)) !important; height: calc(24px * var(--zoom-level)) !important; flex-shrink: 0; }
-        
-        .insert-point:hover .insert-circle { background: var(--primary-blue); transform: scale(1.2); }
-        @keyframes shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }
-        .error-shake .insert-circle { border-color: var(--danger-red); background: var(--danger-red); }
-        .error-shake { animation: shake 0.3s ease-in-out; }
+        /* =====================================================================
+           PLATEAU DE JEU — « La colonne du temps »
+           Interface propre à HistoriAxe : la frise se lit verticalement, du plus
+           ancien (en haut) au plus récent (en bas). Les millésimes sont alignés
+           dans une gouttière à gauche, le long de l'axe. L'insertion se fait
+           dans des intervalles nommés (« Entre 1789 et 1848 »), et l'événement
+           en jeu reste en main, épinglé en bas de l'écran.
+           ===================================================================== */
+        :root {
+            --paper: #FBFAF7;
+            --rule: #E6E3DC;
+            --ink: #1F2933;
+            --ink-soft: #7A848F;
+            --axis: #CBD2D9;
+            --hand-bg: #263445;
+            --amber: #B07520;
+            --gutter: calc(74px * var(--zoom-level));
+            --font-year: Georgia, "Iowan Old Style", "Times New Roman", serif;
+        }
+
+        #screen-game { flex: 1; display: flex; flex-direction: column; min-height: 0; background: var(--paper); }
+
+        /* --- Barre de partie --- */
+        .game-bar { background: #fff; border-bottom: 1px solid var(--rule); padding: 9px 16px 11px; display: flex; flex-direction: column; gap: 9px; flex-shrink: 0; }
+        .bar-row { display: flex; align-items: center; gap: 10px; }
+        .quit-btn { background: none; border: none; font: inherit; font-size: 15px; font-weight: 600; color: var(--primary-blue); cursor: pointer; padding: 2px 4px 2px 0; }
+        .bar-fill { flex: 1; }
+        .timer-chip { font-family: var(--font-year); font-variant-numeric: tabular-nums; font-size: 15px; font-weight: 700; color: var(--ink); background: #F1EFE9; padding: 3px 9px; border-radius: 4px; }
+        .lives-row { display: inline-flex; gap: 6px; align-items: center; }
+        .pip { width: 9px; height: 9px; border-radius: 50%; background: var(--danger-red); }
+        .pip.spent { background: none; border: 1.5px solid #DAD6CE; }
+        .type-size { display: inline-flex; border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; }
+        .type-size button { background: #fff; border: none; color: var(--ink-soft); font-family: var(--font-main); font-weight: 700; cursor: pointer; padding: 3px 9px; }
+        .type-size button:first-child { font-size: 12px; }
+        .type-size button:last-child { font-size: 16px; border-left: 1px solid var(--rule); }
+        .type-size button:active { background: #F1EFE9; }
+        .progress-rail { flex: 1; height: 3px; background: #EDEAE3; border-radius: 2px; overflow: hidden; }
+        .progress-fill { display: block; height: 100%; width: 0%; background: var(--primary-blue); transition: width 0.35s ease; }
+        .bar-meta { font-size: 12px; font-weight: 600; color: var(--ink-soft); letter-spacing: 0.02em; white-space: nowrap; font-variant-numeric: tabular-nums; }
+
+        /* --- Colonne chronologique --- */
+        .board { flex: 1; min-height: 0; overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 10px 16px 32px; scroll-padding: 90px 0; }
+        .chrono { position: relative; max-width: 720px; margin: 0 auto; }
+        .chrono::before { content: ""; position: absolute; top: 4px; bottom: 4px; left: calc(var(--gutter) + 11px); width: 1px; background: var(--axis); }
+
+        .entry { display: grid; grid-template-columns: var(--gutter) 23px 1fr; align-items: center; padding: calc(10px * var(--zoom-level)) 0; cursor: pointer; scroll-margin: 100px 0; }
+        .entry-year { font-family: var(--font-year); font-size: calc(19px * var(--zoom-level)); font-weight: 700; color: var(--ink); text-align: right; padding-right: 13px; line-height: 1.15; font-variant-numeric: tabular-nums; }
+        .entry-tick { justify-self: center; width: 7px; height: 7px; background: var(--ink); transform: rotate(45deg); }
+        .entry-body { display: flex; align-items: center; gap: 10px; padding: calc(6px * var(--zoom-level)) 0 calc(6px * var(--zoom-level)) 14px; }
+        .entry-title { flex: 1; font-size: calc(15px * var(--zoom-level)); line-height: 1.35; color: var(--ink); }
+        .entry-chevron { color: #C6CBD1; font-size: 17px; line-height: 1; }
+        .entry-flag { font-size: 10px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--danger-red); border: 1px solid currentColor; border-radius: 3px; padding: 1px 5px; }
+        .entry:hover .entry-title { color: var(--primary-blue); }
+        .entry-missed .entry-tick { background: var(--danger-red); }
+        .entry-missed .entry-year { color: var(--danger-red); }
+        /* En mode Découverte, aucun intervalle ne sépare les repères : on rétablit un filet */
+        .chrono:not(.playing) .entry + .entry .entry-body { border-top: 1px solid var(--rule); }
+
+        /* --- Intervalles d'insertion (élément signature) --- */
+        .slot { display: block; width: 100%; background: none; border: none; -webkit-appearance: none; appearance: none; font: inherit; text-align: left; cursor: pointer; padding: calc(7px * var(--zoom-level)) 0; -webkit-tap-highlight-color: transparent; }
+        .slot-grid { display: grid; grid-template-columns: var(--gutter) 23px 1fr; align-items: center; }
+        .slot-caret { justify-self: center; position: relative; left: 3px; width: 0; height: 0; border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left: 8px solid var(--axis); transition: border-left-color 0.15s ease, transform 0.15s ease; }
+        .slot-body { display: flex; align-items: center; gap: 10px; padding-left: 14px; }
+        .slot-label { font-size: calc(12.5px * var(--zoom-level)); letter-spacing: 0.02em; color: var(--ink-soft); transition: color 0.15s ease; }
+        .slot-dash { flex: 1; border-top: 1px dashed #D9D4CA; transition: border-color 0.15s ease; }
+        .slot:hover .slot-label, .slot:focus-visible .slot-label { color: var(--amber); font-weight: 600; }
+        .slot:hover .slot-caret, .slot:focus-visible .slot-caret { border-left-color: var(--amber); transform: translateX(3px); }
+        .slot:hover .slot-dash, .slot:focus-visible .slot-dash { border-color: var(--amber); }
+        .slot:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; border-radius: 4px; }
+        .slot:active .slot-label { color: var(--amber); font-weight: 600; }
+        .slot-wrong { animation: nudge 0.35s ease-in-out; }
+        .slot-wrong .slot-label { color: var(--danger-red); font-weight: 700; }
+        .slot-wrong .slot-dash { border-top-style: solid; border-color: var(--danger-red); }
+        .slot-wrong .slot-caret { border-left-color: var(--danger-red); }
+
+        /* --- Événement en main --- */
+        .hand { flex-shrink: 0; background: #fff; border-top: 1px solid var(--rule); box-shadow: 0 -2px 14px rgba(16,24,32,0.05); padding: 12px 16px calc(12px + env(safe-area-inset-bottom, 0px)); }
+        .hand-card { max-width: 720px; margin: 0 auto; display: flex; align-items: center; gap: 14px; background: var(--hand-bg); border-radius: 10px; padding: 13px 16px; }
+        .hand-year { flex-shrink: 0; min-width: calc(58px * var(--zoom-level)); text-align: center; font-family: var(--font-year); font-size: calc(20px * var(--zoom-level)); font-weight: 700; color: var(--amber); border: 1px dashed rgba(255,255,255,0.3); border-radius: 6px; padding: 7px 6px; font-variant-numeric: tabular-nums; }
+        .hand-text { display: flex; flex-direction: column; min-width: 0; }
+        .hand-kicker { font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 4px; }
+        .hand-title { font-size: calc(16px * var(--zoom-level)); font-weight: 600; line-height: 1.3; color: #fff; }
+        .hand-revealed .hand-year { border-style: solid; border-color: var(--amber); background: rgba(176,117,32,0.16); }
+
+        @keyframes nudge { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-4px); } 75% { transform: translateX(4px); } }
+        @keyframes settle { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes flag { 0%, 100% { background: transparent; } 30% { background: rgba(217,83,79,0.10); } }
+        .entry-new { animation: settle 0.4s ease-out; }
+        .entry-reveal { animation: flag 1.4s ease-out; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .entry-new, .entry-reveal, .slot-wrong { animation: none; }
+            .slot-caret, .progress-fill { transition: none; }
+        }
         
         .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; z-index: 100; }
         .modal-content { background: white; width: 90%; max-width: 600px; max-height: 80vh; overflow-y: auto; border-radius: 12px; padding: 30px; position: relative; box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
@@ -83,17 +152,6 @@
         .end-score { font-size: 24px; margin-bottom: 20px; }
         .end-time { font-size: 20px; margin-bottom: 40px; color: #666; font-weight: bold; }
         
-        .zoom-controls { position: absolute; bottom: 30px; right: 30px; display: flex; gap: 15px; z-index: 50; }
-        .zoom-btn { width: 50px; height: 50px; background-color: var(--primary-blue); color: white; border: none; border-radius: 50%; font-size: 28px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; cursor: pointer; -webkit-user-select: none; user-select: none; }
-        .zoom-btn:active { transform: scale(0.9); }
-        
-        /* CARTES RATÉES ET ANIMATION */
-        .event-card.missed { border-color: var(--danger-red) !important; }
-        .event-card.missed .event-year { background: var(--danger-red) !important; }
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-15px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
         /* STYLE POUR LES CATÉGORIES (BANNIÈRES) */
         .list-categories { display: flex; flex-direction: column; gap: 15px; width: 100%; max-width: 800px; margin: 0 auto; }
         .category-banner { background: linear-gradient(135deg, #2C3E50, #4CA1AF); color: white; border-radius: 12px; padding: 20px 25px; display: flex; justify-content: space-between; align-items: center; box-shadow: var(--card-shadow); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
@@ -178,21 +236,38 @@
     </div>
 
     <!-- ÉCRAN 5 : JEU -->
+    <!-- ÉCRAN 5 : JEU — colonne chronologique verticale -->
     <div id="screen-game" class="hidden">
-        <div class="top-bar">
-            <div class="back-btn" onclick="quitGame()">‹ Retour</div>
-            <div class="score-display" id="hud-score-container">Score : <span id="hud-score">0</span> pts</div>
-            <div class="stats">
-                <div id="hud-timer-container" class="timer-box hidden"><span id="hud-timer">0,0</span> s</div>
-                <div class="lives" id="hud-lives">❤️❤️❤️</div>
-                <div class="progress" id="hud-progress-container"><span id="hud-progress">1</span>/<span id="hud-total">15</span></div>
+        <div class="game-bar">
+            <div class="bar-row">
+                <button class="quit-btn" onclick="quitGame()">‹ Quitter</button>
+                <span class="bar-fill"></span>
+                <span id="hud-timer-container" class="timer-chip hidden"><span id="hud-timer">0,0</span> s</span>
+                <span class="lives-row" id="hud-lives"></span>
+                <span class="type-size">
+                    <button type="button" onclick="changeZoom(-0.15)" aria-label="Réduire le texte">A−</button>
+                    <button type="button" onclick="changeZoom(0.15)" aria-label="Agrandir le texte">A+</button>
+                </span>
+            </div>
+            <div class="bar-row">
+                <span class="progress-rail" id="hud-progress-rail"><span class="progress-fill" id="hud-progress-fill"></span></span>
+                <span class="bar-meta" id="hud-count">1 / 15</span>
+                <span class="bar-meta" id="hud-score-container"><span id="hud-score">0</span> pts</span>
             </div>
         </div>
-        <div class="event-to-place" id="current-event-banner">Chargement...</div>
-        <div class="timeline-container" id="timeline"></div>
-        <div class="zoom-controls">
-            <button class="zoom-btn" onclick="changeZoom(-0.2)">-</button>
-            <button class="zoom-btn" onclick="changeZoom(0.2)">+</button>
+
+        <div class="board" id="board">
+            <div class="chrono playing" id="timeline"></div>
+        </div>
+
+        <div class="hand" id="hand">
+            <div class="hand-card">
+                <span class="hand-year" id="hand-year">?</span>
+                <span class="hand-text">
+                    <span class="hand-kicker" id="hand-kicker">À placer</span>
+                    <span class="hand-title" id="hand-title">Chargement…</span>
+                </span>
+            </div>
         </div>
     </div>
 
@@ -203,7 +278,6 @@
         <div id="end-time-display" class="end-time hidden">Durée : 0,0 s</div>
         <div style="display:flex; gap:15px; margin-top: 20px;">
             <button class="btn" style="background:#ccc; color:#333;" onclick="showScreen(screenAfterGame())">Retour</button>
-            <button class="btn" style="background:#2C3E50;" onclick="reviewTimeline()">Revoir la frise</button>
             <button class="btn" onclick="replayCurrentGame()">Rejouer</button>
         </div>
     </div>
@@ -1038,7 +1112,6 @@
         let score = 0;
         let totalEvents = 0;
         let isAnimating = false; 
-            let isReviewing = false;
         
         let timerInterval = null;
         let startTime = 0;
@@ -1258,29 +1331,30 @@
             
             score = 0;
             totalTimePlayed = 0;
-            isReviewing = false;
             
             const hudLives = document.getElementById('hud-lives');
             const hudTimer = document.getElementById('hud-timer-container');
-            const eventBanner = document.getElementById('current-event-banner');
+            const hand = document.getElementById('hand');
             const scoreContainer = document.getElementById('hud-score-container');
-            const progressContainer = document.getElementById('hud-progress-container');
-            
+            const progressRail = document.getElementById('hud-progress-rail');
+
             hudLives.classList.remove('hidden');
             hudTimer.classList.add('hidden');
-            eventBanner.classList.remove('hidden');
+            hand.classList.remove('hidden');
             scoreContainer.classList.remove('hidden');
-            
+            progressRail.classList.remove('hidden');
+            document.getElementById('hud-progress-fill').style.width = '0%';
+
             if (mode === 'training' || mode === 'discovery') {
                 hudLives.classList.add('hidden');
             }
-            
+
             if (mode === 'discovery') {
-                eventBanner.classList.add('hidden');
+                // Lecture seule : ni carte en main, ni score, ni progression
+                hand.classList.add('hidden');
                 scoreContainer.classList.add('hidden');
-                progressContainer.innerHTML = `Frise complète (${totalEvents})`;
-            } else {
-                progressContainer.innerHTML = `<span id="hud-progress">1</span>/<span id="hud-total">${totalEvents}</span>`;
+                progressRail.classList.add('hidden');
+                document.getElementById('hud-count').innerText = `Frise complète · ${totalEvents} repères`;
             }
 
             if (mode === 'chrono' || mode === 'expert') {
@@ -1322,60 +1396,94 @@
                 return;
             }
             eventToPlace = currentPool.pop();
-            document.getElementById('current-event-banner').innerHTML = `<div>${eventToPlace.titre}</div>`;
+            // L'événement en jeu reste « en main », épinglé en bas de l'écran, date masquée
+            const hand = document.getElementById('hand');
+            hand.classList.remove('hand-revealed');
+            document.getElementById('hand-kicker').innerText =
+                (placedEvents.length === 1) ? 'Touchez un intervalle' : 'À placer';
+            document.getElementById('hand-year').innerText = '?';
+            document.getElementById('hand-title').innerText = eventToPlace.titre;
             renderTimeline();
         }
 
         function updateHUD() {
             document.getElementById('hud-score').innerText = score;
+
             if (currentMode !== 'training' && currentMode !== 'discovery') {
-                document.getElementById('hud-lives').innerText = '❤️'.repeat(lives);
+                const maxLives = (currentMode === 'expert') ? 1 : 3;
+                let pips = '';
+                for (let i = 0; i < maxLives; i++) {
+                    pips += `<span class="pip${i < lives ? '' : ' spent'}"></span>`;
+                }
+                document.getElementById('hud-lives').innerHTML = pips;
             }
-            
+
             if (currentMode !== 'discovery') {
-                document.getElementById('hud-progress').innerText = placedEvents.length;
-                document.getElementById('hud-total').innerText = totalEvents;
+                document.getElementById('hud-count').innerText = `${placedEvents.length} / ${totalEvents}`;
+                const pct = totalEvents ? Math.round(placedEvents.length / totalEvents * 100) : 0;
+                document.getElementById('hud-progress-fill').style.width = pct + '%';
             }
         }
 
+        // RENDU DE LA COLONNE CHRONOLOGIQUE
+        // Un intervalle d'insertion nommé est intercalé entre chaque repère :
+        // le joueur choisit explicitement la fourchette où il pense placer l'événement.
         function renderTimeline() {
             const timeline = document.getElementById('timeline');
-            timeline.innerHTML = ''; 
-            
+            const isPlaying = currentMode !== 'discovery';
+            timeline.className = isPlaying ? 'chrono playing' : 'chrono';
+            timeline.innerHTML = '';
+
             for (let i = 0; i <= placedEvents.length; i++) {
-                
-                const insertPoint = document.createElement('div');
-                insertPoint.className = 'insert-point';
-                
-                if (currentMode !== 'discovery') {
-                    insertPoint.innerHTML = `<div class="insert-circle"></div>`;
-                    insertPoint.onclick = () => checkPlacement(i, insertPoint);
-                } else {
-                    insertPoint.style.cursor = 'default';
-                }
-                
-                if (currentMode === 'discovery' && (i === 0 || i === placedEvents.length)) {
-                    insertPoint.style.minWidth = '20px';
-                    insertPoint.style.width = '20px';
-                }
-
-                if (!(currentMode === 'discovery' && i === placedEvents.length)) {
-                    timeline.appendChild(insertPoint);
-                }
-
-                if (i < placedEvents.length) {
-                    const evt = placedEvents[i];
-                    const card = document.createElement('div');
-                    card.className = evt.missed ? 'event-card missed' : 'event-card';
-                    card.innerHTML = `<div class="event-year">${evt.date}</div><div class="event-title">${evt.titre}</div>`;
-                    card.onclick = () => openModal(evt);
-                    timeline.appendChild(card);
-                }
+                if (isPlaying) timeline.appendChild(buildSlot(i));
+                if (i < placedEvents.length) timeline.appendChild(buildEntry(placedEvents[i]));
             }
         }
 
-        function checkPlacement(index, insertPointHtmlElement) {
-            if (isAnimating || currentMode === 'discovery') return; 
+        // Libellé de l'intervalle : « Avant 1789 », « Entre 1789 et 1848 », « Après 1981 »
+        function slotLabel(index) {
+            const before = placedEvents[index - 1];
+            const after = placedEvents[index];
+            if (!before) return `Avant ${formatYear(after.date)}`;
+            if (!after) return `Après ${formatYear(before.date)}`;
+            return `Entre ${formatYear(before.date)} et ${formatYear(after.date)}`;
+        }
+
+        function buildSlot(index) {
+            const label = slotLabel(index);
+            const slot = document.createElement('button');
+            slot.type = 'button';
+            slot.className = 'slot';
+            slot.setAttribute('aria-label', `Placer ici : ${label}`);
+            slot.innerHTML = `<span class="slot-grid"><span></span><span class="slot-caret"></span>` +
+                `<span class="slot-body"><span class="slot-label">${label}</span><span class="slot-dash"></span></span></span>`;
+            slot.onclick = () => checkPlacement(index, slot);
+            return slot;
+        }
+
+        function buildEntry(evt) {
+            const row = document.createElement('div');
+            row.className = evt.missed ? 'entry entry-missed' : 'entry';
+            row.dataset.eventId = evt.id;
+            row.innerHTML = `<span class="entry-year">${formatYear(evt.date)}</span>` +
+                `<span class="entry-tick"></span>` +
+                `<span class="entry-body"><span class="entry-title">${evt.titre}</span>` +
+                (evt.missed ? `<span class="entry-flag">manqué</span>` : '') +
+                `<span class="entry-chevron" aria-hidden="true">›</span></span>`;
+            row.onclick = () => openModal(evt);
+            return row;
+        }
+
+        // Amène un repère au centre de la colonne et le signale visuellement
+        function focusEntry(eventId, extraClass) {
+            const row = document.querySelector(`#timeline .entry[data-event-id="${eventId}"]`);
+            if (!row) return;
+            if (extraClass) row.classList.add(extraClass);
+            row.scrollIntoView({ block: 'center', behavior: 'smooth' });
+        }
+
+        function checkPlacement(index, slotElement) {
+            if (isAnimating || currentMode === 'discovery') return;
 
             const dateToPlace = eventToPlace.date;
             let isCorrect = true;
@@ -1392,48 +1500,58 @@
             if (isCorrect) {
                 score += 10;
                 srsRecord(eventToPlace.id, true);
+                const placedId = eventToPlace.id;
                 placedEvents.splice(index, 0, eventToPlace);
                 updateHUD();
                 pickNextEvent();
-                document.getElementById('timeline').scrollBy({ left: 100, behavior: 'smooth' });
+                focusEntry(placedId, 'entry-new');
             } else {
-                isAnimating = true; 
+                isAnimating = true;
                 srsRecord(eventToPlace.id, false);
-                
+
                 if (currentMode !== 'training') {
                     lives -= 1;
                 }
-                
                 updateHUD();
-                
-                insertPointHtmlElement.classList.add('error-shake');
-                
-                const banner = document.getElementById('current-event-banner');
-                banner.innerHTML = `<div style="font-size: 1.2em; color: var(--text-dark); margin-bottom: 5px; animation: fadeInDown 0.3s ease-out;">${eventToPlace.date}</div><div>${eventToPlace.titre}</div>`;
-                
+
+                // Position réelle de l'événement dans la colonne
                 let correctIndex = placedEvents.length;
-                for(let j = 0; j < placedEvents.length; j++) {
+                for (let j = 0; j < placedEvents.length; j++) {
                     if (eventToPlace.date <= placedEvents[j].date) {
                         correctIndex = j;
                         break;
                     }
                 }
-                
+
+                // L'intervalle choisi indique la direction de l'erreur
+                const direction = (correctIndex < index) ? 'plus haut' : 'plus bas';
+                slotElement.classList.add('slot-wrong');
+                const labelEl = slotElement.querySelector('.slot-label');
+                if (labelEl) labelEl.innerText = `Non — ${formatYear(dateToPlace)} se place ${direction}`;
+
+                // La date se dévoile sur la carte en main avant que le repère rejoigne sa place
+                const hand = document.getElementById('hand');
+                hand.classList.add('hand-revealed');
+                document.getElementById('hand-year').innerText = formatYear(dateToPlace);
+                document.getElementById('hand-kicker').innerText = 'Date révélée';
+
                 eventToPlace.missed = true;
+                const missedId = eventToPlace.id;
 
                 setTimeout(() => {
-                    placedEvents.splice(correctIndex, 0, eventToPlace); 
-                    insertPointHtmlElement.classList.remove('error-shake');
-                    
+                    placedEvents.splice(correctIndex, 0, eventToPlace);
+
                     if (lives <= 0 && currentMode !== 'training') {
-                        renderTimeline(); 
-                        setTimeout(() => endGame(false), 500);
+                        renderTimeline();
+                        focusEntry(missedId, 'entry-reveal');
+                        setTimeout(() => endGame(false), 900);
                     } else {
-                        pickNextEvent(); 
+                        pickNextEvent();
+                        focusEntry(missedId, 'entry-reveal');
                     }
-                    
-                    isAnimating = false; 
-                }, 2000);
+
+                    isAnimating = false;
+                }, 2200);
             }
         }
 
@@ -1480,11 +1598,6 @@
         }
 
         function quitGame() {
-            if (isReviewing) {
-                // Si on était en train de revoir ses erreurs, "Retour" ramène à l'écran de score
-                showScreen('screen-end');
-                return;
-            }
             if(currentMode === 'discovery') {
                 showScreen(screenAfterGame());
                 return;
@@ -1495,26 +1608,10 @@
             });
         }
 
-        function reviewTimeline() {
-            isReviewing = true;
-            
-            // On cache le bandeau "Chargement..." en haut
-            document.getElementById('current-event-banner').classList.add('hidden');
-            
-            // Astuce : on fait croire au jeu qu'on est en mode découverte 
-            // pour effacer tes ronds et empêcher de cliquer, puis on remet le vrai mode
-            let tempMode = currentMode;
-            currentMode = 'discovery';
-            renderTimeline();
-            currentMode = tempMode;
-            
-            showScreen('screen-game');
-        }
-
         // MODAL
         function openModal(evt) {
             document.getElementById('modal-titre').innerText = evt.titre;
-            document.getElementById('modal-date').innerText = evt.date;
+            document.getElementById('modal-date').innerText = formatYear(evt.date);
             document.getElementById('modal-desc').innerText = evt.description;
             document.getElementById('modal-wiki').href = evt.wikipedia;
             document.getElementById('modal-details').classList.remove('hidden');
@@ -1526,11 +1623,9 @@
 
         // ZOOM
         let currentZoom = 1;
+        // Réglage de la taille du texte de la colonne (A− / A+)
         function changeZoom(delta) {
-            currentZoom += delta;
-            if (currentZoom < 0.6) currentZoom = 0.6;
-            if (currentZoom > 2.2) currentZoom = 2.2;
-            document.getElementById('timeline').style.zoom = '1';
+            currentZoom = Math.min(1.6, Math.max(0.85, currentZoom + delta));
             document.documentElement.style.setProperty('--zoom-level', currentZoom);
         }
 
