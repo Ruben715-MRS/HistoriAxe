@@ -203,6 +203,7 @@
         <div id="end-time-display" class="end-time hidden">Durée : 0,0 s</div>
         <div style="display:flex; gap:15px; margin-top: 20px;">
             <button class="btn" style="background:#ccc; color:#333;" onclick="showScreen(screenAfterGame())">Retour</button>
+            <button class="btn" style="background:#2C3E50;" onclick="reviewTimeline()">Revoir la frise</button>
             <button class="btn" onclick="replayCurrentGame()">Rejouer</button>
         </div>
     </div>
@@ -1037,6 +1038,7 @@
         let score = 0;
         let totalEvents = 0;
         let isAnimating = false; 
+            let isReviewing = false;
         
         let timerInterval = null;
         let startTime = 0;
@@ -1256,6 +1258,7 @@
             
             score = 0;
             totalTimePlayed = 0;
+            isReviewing = false;
             
             const hudLives = document.getElementById('hud-lives');
             const hudTimer = document.getElementById('hud-timer-container');
@@ -1477,6 +1480,11 @@
         }
 
         function quitGame() {
+            if (isReviewing) {
+                // Si on était en train de revoir ses erreurs, "Retour" ramène à l'écran de score
+                showScreen('screen-end');
+                return;
+            }
             if(currentMode === 'discovery') {
                 showScreen(screenAfterGame());
                 return;
@@ -1485,6 +1493,22 @@
                 stopTimer();
                 showScreen(screenAfterGame());
             });
+        }
+
+        function reviewTimeline() {
+            isReviewing = true;
+            
+            // On cache le bandeau "Chargement..." en haut
+            document.getElementById('current-event-banner').classList.add('hidden');
+            
+            // Astuce : on fait croire au jeu qu'on est en mode découverte 
+            // pour effacer tes ronds et empêcher de cliquer, puis on remet le vrai mode
+            let tempMode = currentMode;
+            currentMode = 'discovery';
+            renderTimeline();
+            currentMode = tempMode;
+            
+            showScreen('screen-game');
         }
 
         // MODAL
