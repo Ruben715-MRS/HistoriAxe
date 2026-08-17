@@ -63,7 +63,6 @@
         
         .insert-point { height: calc(100px * var(--zoom-level)) !important; display: inline-flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; z-index: 2; min-width: calc(60px * var(--zoom-level)) !important; }
         .insert-circle { border: 2px solid var(--primary-blue); border-radius: 50%; background: var(--bg-color); transition: all 0.2s; width: calc(24px * var(--zoom-level)) !important; height: calc(24px * var(--zoom-level)) !important; flex-shrink: 0; }
-        .insert-line { background: var(--primary-blue); width: 2px; height: calc(40px * var(--zoom-level)) !important; flex-shrink: 0; }
         
         .insert-point:hover .insert-circle { background: var(--primary-blue); transform: scale(1.2); }
         @keyframes shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }
@@ -1329,7 +1328,7 @@
                 insertPoint.className = 'insert-point';
                 
                 if (currentMode !== 'discovery') {
-                    insertPoint.innerHTML = `<div class="insert-circle"></div><div class="insert-line"></div>`;
+                    insertPoint.innerHTML = `<div class="insert-circle"></div>`;
                     insertPoint.onclick = () => checkPlacement(i, insertPoint);
                 } else {
                     insertPoint.style.cursor = 'default';
