@@ -66,6 +66,17 @@
         .special-card.favorites { background: linear-gradient(135deg, #B8892E, #E3B24F); }
         .special-card.discover { background: linear-gradient(135deg, #5B4B8A, #8672B8); }
         .special-card.revision { background: linear-gradient(135deg, #B23A32, #D9534F); }
+
+        /* Écran « Réviser mes points faibles » : sous-titre, blocs d'options,
+           rangée de boutons de quantité, et badge de compte sur les cartes-thème. */
+        .revision-hub-subtitle { font-size: 14px; color: var(--muted-text); margin-bottom: 24px; text-align: center; }
+        .revision-hub-content { width: 100%; max-width: 800px; margin: 0 auto; }
+        .revision-option-block { margin-bottom: 38px; }
+        .revision-option-title { font-size: 19px; margin-bottom: 6px; }
+        .revision-option-desc { font-size: 14px; color: var(--muted-text); margin-bottom: 16px; line-height: 1.5; }
+        .revision-quantity-row { display: flex; gap: 12px; flex-wrap: wrap; }
+        .quantity-btn { min-width: 64px; }
+        .data-card-badge { flex-shrink: 0; background: rgba(255,255,255,0.25); color: white; font-size: 13px; font-weight: 700; padding: 3px 11px; border-radius: 999px; }
         
         /* ÉCRAN DES MODES DE JEU */
         .grid-modes { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; width: 100%; max-width: 800px; margin-bottom: 30px; }
@@ -203,6 +214,8 @@
         .category-banner-icon { font-size: 24px; background: rgba(255,255,255,0.2); width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
         .reset-srs-btn { font-size: 20px; opacity: 0.85; padding: 4px 9px; border-radius: 50%; transition: background 0.15s, opacity 0.15s; }
         .reset-srs-btn:hover { opacity: 1; background: rgba(255,255,255,0.2); }
+        .reset-srs-btn.reset-srs-link { font-size: 14px; font-weight: 600; color: var(--muted-text); background: var(--surface-2); border-radius: 8px; padding: 10px 16px; cursor: pointer; opacity: 1; }
+        .reset-srs-btn.reset-srs-link:hover { background: var(--border-soft); }
         /* STYLE POUR LA SÉLECTION D'AXE THÉMATIQUE */
         .axis-card { background: var(--surface); border: 2px solid var(--border-soft); border-radius: 12px; padding: 18px 20px; cursor: pointer; transition: all 0.15s; box-shadow: var(--card-shadow); text-align: left; }
         .axis-card h3 { font-size: 17px; margin-bottom: 4px; color: var(--text-dark); }
@@ -306,6 +319,41 @@
         <div class="list-categories" id="categories-container"></div>
         <div style="margin-top: 30px; margin-bottom: 50px;">
             <button class="btn btn-secondary" onclick="showScreen('screen-home')">Retour à l'accueil</button>
+        </div>
+    </div>
+
+    <!-- ÉCRAN 2ter : RÉVISION DES POINTS FAIBLES (choix session mélangée / reprise d'un thème) -->
+    <div id="screen-revision-hub" class="list-screen hidden">
+        <h2 class="header-title">Réviser mes points faibles</h2>
+        <p id="revision-hub-subtitle" class="revision-hub-subtitle"></p>
+
+        <div id="revision-hub-empty" class="empty-msg hidden">
+            Aucun point faible détecté pour l'instant. Les événements que vous répondez de travers lors d'une partie apparaîtront ici pour être retravaillés.
+        </div>
+
+        <div id="revision-hub-content" class="revision-hub-content hidden">
+            <div class="revision-option-block">
+                <h3 class="revision-option-title">🎲 Session aléatoire</h3>
+                <p class="revision-option-desc">Un mélange de vos points faibles, toutes catégories confondues. Si vous en avez moins que le nombre choisi, on vous montre tout ce qu'il y a.</p>
+                <div class="revision-quantity-row">
+                    <button class="btn quantity-btn" onclick="launchRandomRevision(10)">10</button>
+                    <button class="btn quantity-btn" onclick="launchRandomRevision(20)">20</button>
+                    <button class="btn quantity-btn" onclick="launchRandomRevision(30)">30</button>
+                    <button class="btn quantity-btn" onclick="launchRandomRevision(40)">40</button>
+                    <button class="btn quantity-btn" onclick="launchRandomRevision(50)">50</button>
+                </div>
+            </div>
+
+            <div class="revision-option-block">
+                <h3 class="revision-option-title">📚 Reprendre un thème entier</h3>
+                <p class="revision-option-desc">Retournez vous entraîner sur l'intégralité d'un thème où des dates vous ont posé difficulté.</p>
+                <div class="grid-cards" id="revision-themes-container"></div>
+            </div>
+        </div>
+
+        <div style="margin-top: 30px; margin-bottom: 50px; display:flex; align-items:center; gap:15px;">
+            <button class="btn btn-secondary" onclick="showScreen('screen-categories')">Retour aux catégories</button>
+            <span class="reset-srs-btn reset-srs-link" id="reset-srs-btn-hub" title="Réinitialiser le suivi de révision">⟲ Réinitialiser</span>
         </div>
     </div>
 
@@ -3051,9 +3099,8 @@
 
         // === RÉVISION ESPACÉE (SRS) ===
         // Système de type Leitner à 5 boîtes, stocké dans le navigateur (localStorage).
-        // Boîte 1 = à revoir tout de suite, boîte 5 = bien maîtrisé (intervalle 14 jours).
+        // Boîte 1 = tout juste manqué, boîte 5 = remaîtrisé (sort du lot des points faibles).
         const SRS_KEY = 'historiaxe_srs_v1';
-        const SRS_INTERVALS_DAYS = [0, 1, 3, 7, 14]; // index = boîte - 1
 
         function srsLoad() {
             try { return JSON.parse(localStorage.getItem(SRS_KEY)) || {}; }
@@ -3075,11 +3122,6 @@
             entry.lastSeen = Date.now();
             data[eventId] = entry;
             srsSave(data);
-        }
-        function srsIsDue(entry) {
-            if (!entry || !entry.lastSeen) return true;
-            const days = SRS_INTERVALS_DAYS[Math.min(entry.box, 5) - 1];
-            return Date.now() >= entry.lastSeen + days * 86400000;
         }
 
         // === PROGRESSION PAR THÈME (déverrouillage de Chrono / Expert) ===
@@ -3172,37 +3214,45 @@
             favoritesSave(list);
         }
 
-        // Construit le lot du jour : priorité aux événements dus (jamais vus, puis boîte la
-        // plus basse, puis vus le plus anciennement), avec un complément si peu d'événements
-        // sont dus, pour ne jamais renvoyer une session vide.
-        function getRevisionPool() {
-            const all = getAllEvents();
+        // Un événement est un « point faible » s'il a déjà été manqué au moins une fois
+        // et n'est pas encore pleinement remaîtrisé (boîte 5 = plusieurs bonnes réponses
+        // d'affilée depuis). Les événements jamais vus ne sont volontairement PAS inclus :
+        // ce ne sont pas des points faibles, juste du contenu pas encore rencontré.
+        function getWeakEvents() {
             const data = srsLoad();
-            const scored = all.map(evt => {
-                const entry = data[evt.id];
-                return {
-                    evt,
-                    due: srsIsDue(entry),
-                    box: entry ? entry.box : 1,
-                    lastSeen: entry ? (entry.lastSeen || 0) : 0
-                };
+            return getAllEventsWithLocation().filter(item => {
+                const entry = data[item.event.id];
+                return entry && entry.incorrect > 0 && entry.box < 5;
             });
-            scored.sort((a, b) => {
-                if (a.due !== b.due) return a.due ? -1 : 1;
-                if (a.box !== b.box) return a.box - b.box;
-                return a.lastSeen - b.lastSeen;
+        }
+
+        // Regroupe les événements « points faibles » par thème d'origine, pour proposer
+        // au joueur de reprendre l'entraînement sur un thème entier plutôt qu'un mélange.
+        function getWeakThemes() {
+            const map = new Map();
+            getWeakEvents().forEach(item => {
+                if (!map.has(item.theme.id)) {
+                    map.set(item.theme.id, { theme: item.theme, ci: item.categoryIndex, si: item.subcategoryIndex, ti: item.themeIndex, count: 0 });
+                }
+                map.get(item.theme.id).count += 1;
             });
-            const dueCount = scored.filter(s => s.due).length;
-            const sessionSize = dueCount > 0 ? Math.min(Math.max(dueCount, 15), 50) : 20;
-            const pool = scored.slice(0, sessionSize).map(s => s.evt);
-            return { pool, dueCount };
+            return [...map.values()].sort((a, b) => b.count - a.count);
+        }
+
+        // Mélange simple, cohérent avec le reste du code (voir startActualGame)
+        function shuffleArray(arr) {
+            return [...arr].sort(() => Math.random() - 0.5);
         }
 
         // Réinitialise entièrement le suivi de révision espacée (boîtes, historique)
         function resetRevisionTracking() {
             showConfirm("Réinitialiser tout le suivi de révision (boîtes de mémorisation, historique) ? Cette action est irréversible.", () => {
                 srsSave({});
-                initCategories();
+                if (!document.getElementById('screen-revision-hub').classList.contains('hidden')) {
+                    initRevisionHub();
+                } else {
+                    initCategories();
+                }
             });
         }
 
@@ -3213,6 +3263,7 @@
         let currentMode = 'classic';
         let revisionMode = false;
         let revisionEvents = [];
+        let revisionRequestedSize = 0;
         let favoritesMode = false;
         let axisFilterActive = false;
         let currentThemeAxes = [];
@@ -3264,6 +3315,7 @@
             if (screenId === 'screen-subcategories') initSubcategories();
             if (screenId === 'screen-themes') initThemes();
             if (screenId === 'screen-axes') initAxes();
+            if (screenId === 'screen-revision-hub') initRevisionHub();
             if (screenId === 'screen-modes') {
                 const titleEl = document.getElementById('modes-header-title');
                 if (revisionMode) {
@@ -3283,7 +3335,7 @@
         function screenAfterGame() {
             let target;
             if (revisionMode) {
-                target = 'screen-categories';
+                target = 'screen-revision-hub';
             } else if (axisFilterActive) {
                 target = 'screen-axes';
             } else {
@@ -3293,15 +3345,19 @@
             return target;
         }
 
-        // Lance une session de révision ciblée à partir des points faibles détectés
+        // Ouvre l'écran de choix de révision (session aléatoire ou reprise d'un thème entier)
         function startRevision() {
-            const { pool } = getRevisionPool();
-            if (pool.length === 0) {
-                alert("Pas encore de données à réviser : jouez une première partie !");
-                return;
-            }
+            showScreen('screen-revision-hub');
+        }
+
+        // Lance une session mélangée d'au plus n événements piochés parmi les points
+        // faibles actuels. Si le stock est plus petit que n, on affiche simplement tout.
+        function launchRandomRevision(n) {
+            const weak = getWeakEvents().map(item => item.event);
+            if (weak.length === 0) return;
+            revisionRequestedSize = n;
             revisionMode = true;
-            revisionEvents = pool;
+            revisionEvents = shuffleArray(weak).slice(0, n);
             showScreen('screen-modes');
         }
 
@@ -3321,12 +3377,13 @@
             openModal(pick.event, pick);
         }
 
-        // Relance la partie en cours ; en mode révision, recalcule le lot pour tenir compte
-        // des résultats qui viennent d'être enregistrés
+        // Relance la partie en cours ; en mode révision, repioche parmi les points faibles
+        // actuels (en tenant compte des résultats qui viennent d'être enregistrés), en
+        // conservant la taille de session initialement choisie par le joueur.
         function replayCurrentGame() {
             if (revisionMode) {
-                const { pool } = getRevisionPool();
-                revisionEvents = pool;
+                const weak = getWeakEvents().map(item => item.event);
+                revisionEvents = shuffleArray(weak).slice(0, revisionRequestedSize || weak.length);
             }
             startActualGame(currentMode);
         }
@@ -3385,7 +3442,7 @@
 
             // Rangée des 3 cartes spéciales, toujours en tête de liste : Favoris,
             // Découvrir un événement au hasard, et Réviser mes points faibles.
-            const { dueCount } = getRevisionPool();
+            const weakCount = getWeakEvents().length;
             const favCount = favoritesLoad().length;
             const totalEventsCount = getAllEvents().length;
 
@@ -3414,7 +3471,7 @@
             revisionCard.className = 'special-card revision';
             revisionCard.innerHTML = `
                 <div class="special-card-title">🔁 Réviser mes points faibles <span class="reset-srs-btn" id="reset-srs-btn" title="Réinitialiser le suivi de révision">⟲</span></div>
-                <div class="special-card-subtitle">${dueCount > 0 ? dueCount + ' événement(s) à réviser aujourd\'hui' : 'Entraînement libre sur vos points les moins solides'}</div>
+                <div class="special-card-subtitle">${weakCount > 0 ? weakCount + ' événement(s) à retravailler' : 'Aucun point faible pour l\'instant'}</div>
             `;
             revisionCard.onclick = startRevision;
             specialRow.appendChild(revisionCard);
@@ -3496,8 +3553,10 @@
             const card = document.createElement('div');
             card.className = 'data-card';
             const fav = isFavorite(theme.id);
+            const badgeHtml = opts.badge != null ? `<span class="data-card-badge">${opts.badge}</span>` : '';
             card.innerHTML = `
                 <span class="data-card-title">${theme.nom}</span>
+                ${badgeHtml}
                 <span class="data-card-fav ${fav ? 'is-fav' : ''}" title="${fav ? 'Retirer des favoris' : 'Ajouter aux favoris'}">${fav ? '★' : '☆'}</span>
                 <span class="data-card-icon">›</span>
             `;
@@ -3591,6 +3650,38 @@
                     openThemeAt(ci, si, ti);
                 }, { onFavoriteToggle: () => renderFavoritesThemes(container) });
                 container.appendChild(card);
+            });
+        }
+
+        // Écran de choix affiché après avoir sélectionné « Réviser mes points faibles » :
+        // soit une session mélangée de taille choisie, soit la reprise d'un thème entier.
+        function initRevisionHub() {
+            const weak = getWeakEvents();
+            const weakThemes = getWeakThemes();
+
+            document.getElementById('reset-srs-btn-hub').onclick = resetRevisionTracking;
+
+            const subtitle = document.getElementById('revision-hub-subtitle');
+            const emptyState = document.getElementById('revision-hub-empty');
+            const content = document.getElementById('revision-hub-content');
+
+            if (weak.length === 0) {
+                subtitle.innerText = '';
+                emptyState.classList.remove('hidden');
+                content.classList.add('hidden');
+                return;
+            }
+            emptyState.classList.add('hidden');
+            content.classList.remove('hidden');
+            subtitle.innerText = `${weak.length} événement${weak.length > 1 ? 's' : ''} à retravailler, dans ${weakThemes.length} thème${weakThemes.length > 1 ? 's' : ''}`;
+
+            const themesContainer = document.getElementById('revision-themes-container');
+            themesContainer.innerHTML = '';
+            weakThemes.forEach(({ theme, ci, si, ti, count }) => {
+                const card = createThemeCard(theme, () => {
+                    openThemeAt(ci, si, ti);
+                }, { badge: count });
+                themesContainer.appendChild(card);
             });
         }
 
