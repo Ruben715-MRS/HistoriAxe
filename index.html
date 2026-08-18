@@ -239,14 +239,21 @@
            verticale (année / puce / titre empilés), le défilement passe en
            horizontal. Aucune structure JS n'est dupliquée : ce sont les mêmes
            éléments .entry / .slot, seulement réagencés en CSS.
-           ===================================================================== */
-        [data-layout="horizontal"] .board { overflow-x: auto; overflow-y: hidden; padding: 20px 16px 28px; scroll-padding: 0 90px; }
-        [data-layout="horizontal"] .chrono { display: flex; flex-direction: row; align-items: stretch; max-width: none; width: max-content; min-width: 100%; margin: 0; padding: 0 6px; }
-        [data-layout="horizontal"] .chrono::before { top: calc(50% - 0.5px); bottom: auto; left: 6px; right: 6px; width: auto; height: 1px; }
 
-        [data-layout="horizontal"] .entry { display: flex; flex-direction: column; align-items: center; justify-content: center; grid-template-columns: none; width: 168px; flex-shrink: 0; padding: 0 12px; text-align: center; }
-        [data-layout="horizontal"] .entry-year { text-align: center; padding: 0 0 8px; }
-        [data-layout="horizontal"] .entry-body { flex-direction: column; padding: 8px 0 0; gap: 4px; }
+           Alignement de l'axe : plutôt que de centrer chaque repère sur sa
+           propre hauteur (ce qui déplace le repère dès que son contenu diffère
+           — ex. le badge « manqué »), on réserve une zone d'en-tête de hauteur
+           fixe (--h-head) avant la puce/le curseur, identique pour tous les
+           repères ET les intervalles. La puce tombe donc toujours à la même
+           hauteur, et l'axe vient se caler dessus — jamais sur le texte.
+           ===================================================================== */
+        [data-layout="horizontal"] .board { overflow-x: auto; overflow-y: hidden; display: flex; align-items: center; padding: 18px 16px 22px; scroll-padding: 0 90px; }
+        [data-layout="horizontal"] .chrono { display: flex; flex-direction: row; align-items: flex-start; max-width: none; width: max-content; min-width: 100%; margin: 0 auto; padding: 0 6px; --h-head: calc(28px * var(--zoom-level)); }
+        [data-layout="horizontal"] .chrono::before { top: calc(var(--h-head) + 4px); bottom: auto; left: 6px; right: 6px; width: auto; height: 1px; }
+
+        [data-layout="horizontal"] .entry { display: flex; flex-direction: column; align-items: center; grid-template-columns: none; width: 168px; flex-shrink: 0; padding: 0 12px; text-align: center; }
+        [data-layout="horizontal"] .entry-year { height: var(--h-head); display: flex; align-items: flex-end; justify-content: center; text-align: center; padding: 0; }
+        [data-layout="horizontal"] .entry-body { flex-direction: column; align-items: center; padding: 8px 0 0; gap: 4px; }
         [data-layout="horizontal"] .entry-title { text-align: center; }
         [data-layout="horizontal"] .entry-chevron { display: none; }
         [data-layout="horizontal"] .chrono:not(.playing) .entry + .entry .entry-body { border-top: none; }
@@ -254,9 +261,10 @@
 
         [data-layout="horizontal"] .slot { width: auto; flex-shrink: 0; padding: 0 10px; }
         [data-layout="horizontal"] .slot-grid { display: flex; flex-direction: column; align-items: center; grid-template-columns: none; }
-        [data-layout="horizontal"] .slot-caret { left: 0; top: 3px; transform: rotate(90deg); }
+        [data-layout="horizontal"] .slot-grid > span:first-child { height: var(--h-head); display: block; }
+        [data-layout="horizontal"] .slot-caret { left: 0; top: 0; transform: rotate(90deg); }
         [data-layout="horizontal"] .slot:hover .slot-caret, [data-layout="horizontal"] .slot:focus-visible .slot-caret { transform: rotate(90deg) translateX(3px); }
-        [data-layout="horizontal"] .slot-body { flex-direction: column; padding-left: 0; padding-top: 8px; gap: 5px; min-width: 90px; }
+        [data-layout="horizontal"] .slot-body { flex-direction: column; align-items: center; padding-left: 0; padding-top: 8px; gap: 5px; min-width: 90px; }
         [data-layout="horizontal"] .slot-label { text-align: center; }
         [data-layout="horizontal"] .slot-dash { width: 100%; border-top: none; border-left: 1px dashed var(--rule); height: 14px; flex: none; }
         [data-layout="horizontal"] .slot:hover .slot-dash, [data-layout="horizontal"] .slot:focus-visible .slot-dash { border-left-color: var(--amber); border-top-color: transparent; }
