@@ -45,9 +45,27 @@
            dossier parent tout en s'accordant esthétiquement avec lui. */
         .data-card { background: linear-gradient(135deg, var(--primary-blue), #9CB8CE); color: white; border-radius: 12px; padding: 20px 25px; display: flex; justify-content: space-between; align-items: center; gap: 14px; box-shadow: var(--card-shadow); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
         .data-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
-        .data-card-title { font-size: 19px; font-weight: bold; line-height: 1.3; }
+        .data-card-title { flex: 1; font-size: 19px; font-weight: bold; line-height: 1.3; }
         .data-card-icon { flex-shrink: 0; font-size: 22px; background: rgba(255,255,255,0.2); width: 38px; height: 38px; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
+        /* Étoile de favori sur une carte-thème : cliquable indépendamment de la carte
+           (stopPropagation en JS), dorée et pleine une fois activée. */
+        .data-card-fav { flex-shrink: 0; font-size: 21px; line-height: 1; cursor: pointer; opacity: 0.75; padding: 2px; transition: transform 0.15s ease, opacity 0.15s ease; }
+        .data-card-fav:hover { opacity: 1; transform: scale(1.18); }
+        .data-card-fav.is-fav { color: #FFD54A; opacity: 1; }
         .empty-msg { font-size: 18px; color: var(--muted-text); font-style: italic; margin-top: 30px; text-align: center; width: 100%; }
+        
+        /* Rangée des 3 cartes spéciales (Favoris / Découvrir / Révision), en tête de
+           l'écran des catégories. Format compact façon carte-thème, mais chacune dans
+           sa propre teinte pour bien les distinguer des catégories ordinaires. */
+        .special-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; width: 100%; max-width: 800px; margin: 0 auto 20px; }
+        @media (max-width: 640px) { .special-row { grid-template-columns: 1fr; } }
+        .special-card { border-radius: 12px; padding: 18px 20px; color: white; display: flex; flex-direction: column; justify-content: center; gap: 5px; cursor: pointer; box-shadow: var(--card-shadow); transition: transform 0.2s, box-shadow 0.2s; min-height: 88px; }
+        .special-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .special-card-title { font-size: 16px; font-weight: bold; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+        .special-card-subtitle { font-size: 13px; opacity: 0.85; }
+        .special-card.favorites { background: linear-gradient(135deg, #B8892E, #E3B24F); }
+        .special-card.discover { background: linear-gradient(135deg, #5B4B8A, #8672B8); }
+        .special-card.revision { background: linear-gradient(135deg, #B23A32, #D9534F); }
         
         /* ÉCRAN DES MODES DE JEU */
         .grid-modes { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; width: 100%; max-width: 800px; margin-bottom: 30px; }
@@ -166,6 +184,10 @@
         .modal-desc { line-height: 1.6; color: var(--ink-soft); margin-bottom: 20px; text-align: justify; }
         .modal-link { color: var(--primary-blue); text-decoration: none; font-weight: bold; }
         .modal-link:hover { text-decoration: underline; }
+        /* Ligne d'actions additionnelle affichée uniquement quand la fiche est ouverte
+           depuis « Découvrir un événement » : reroll et accès direct au thème d'origine. */
+        .modal-theme-row { display: flex; gap: 10px; margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--border-soft); }
+        .modal-theme-row .btn { flex: 1; padding: 10px 14px; font-size: 14px; }
         
         #screen-end { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; }
         .end-title { font-size: 32px; margin-bottom: 20px; color: var(--primary-blue); }
@@ -401,6 +423,10 @@
             <div class="modal-date" id="modal-date">Date</div>
             <div class="modal-desc" id="modal-desc">Description explicative.</div>
             <a href="#" target="_blank" class="modal-link" id="modal-wiki">Voir sur Wikipédia</a>
+            <div id="modal-theme-row" class="modal-theme-row hidden">
+                <button class="btn btn-secondary" id="modal-redraw-btn">🔀 Un autre événement</button>
+                <button class="btn" id="modal-theme-btn">Jouer sur ce thème</button>
+            </div>
         </div>
     </div>
 
@@ -3095,6 +3121,52 @@
             return all;
         }
 
+        // Même parcours que getAllEvents, mais en conservant pour chaque événement le
+        // chemin complet vers son thème d'origine (indices catégorie/sous-catégorie/thème).
+        // Utile partout où l'on pioche un événement hors de son contexte normal de jeu
+        // (Découvrir un événement au hasard) et où l'on doit pouvoir « sauter » vers son thème.
+        function getAllEventsWithLocation() {
+            const all = [];
+            bdd.forEach((cat, ci) => {
+                if (cat.subcategories) {
+                    cat.subcategories.forEach((sub, si) => {
+                        sub.themes.forEach((theme, ti) => {
+                            theme.events.forEach(evt => {
+                                all.push({ event: evt, theme, categoryIndex: ci, subcategoryIndex: si, themeIndex: ti });
+                            });
+                        });
+                    });
+                } else {
+                    cat.themes.forEach((theme, ti) => {
+                        theme.events.forEach(evt => {
+                            all.push({ event: evt, theme, categoryIndex: ci, subcategoryIndex: null, themeIndex: ti });
+                        });
+                    });
+                }
+            });
+            return all;
+        }
+
+        // Favoris : simple liste d'identifiants de thèmes, stockée dans le navigateur.
+        // Les id de thème étant uniques dans tout le fichier, aucune ambiguïté possible.
+        const FAVORITES_KEY = 'historiaxe_favorites_v1';
+        function favoritesLoad() {
+            try { return JSON.parse(localStorage.getItem(FAVORITES_KEY)) || []; }
+            catch (e) { return []; }
+        }
+        function favoritesSave(list) {
+            try { localStorage.setItem(FAVORITES_KEY, JSON.stringify(list)); } catch (e) {}
+        }
+        function isFavorite(themeId) {
+            return favoritesLoad().includes(themeId);
+        }
+        function toggleFavorite(themeId) {
+            const list = favoritesLoad();
+            const idx = list.indexOf(themeId);
+            if (idx >= 0) { list.splice(idx, 1); } else { list.push(themeId); }
+            favoritesSave(list);
+        }
+
         // Construit le lot du jour : priorité aux événements dus (jamais vus, puis boîte la
         // plus basse, puis vus le plus anciennement), avec un complément si peu d'événements
         // sont dus, pour ne jamais renvoyer une session vide.
@@ -3136,6 +3208,7 @@
         let currentMode = 'classic';
         let revisionMode = false;
         let revisionEvents = [];
+        let favoritesMode = false;
         let axisFilterActive = false;
         let currentThemeAxes = [];
         let selectedAxes = new Set();
@@ -3167,6 +3240,11 @@
         }
 
         function backFromThemes() {
+            if (favoritesMode) {
+                favoritesMode = false;
+                showScreen('screen-categories');
+                return;
+            }
             const category = bdd[selectedCategoryIndex];
             showScreen(category.subcategories ? 'screen-subcategories' : 'screen-categories');
         }
@@ -3220,6 +3298,22 @@
             revisionMode = true;
             revisionEvents = pool;
             showScreen('screen-modes');
+        }
+
+        // Ouvre la liste des thèmes marqués en favoris (indépendamment de leur catégorie
+        // ou sous-catégorie d'origine). La liste peut être vide : un message le signale alors.
+        function openFavorites() {
+            favoritesMode = true;
+            showScreen('screen-themes');
+        }
+
+        // Pioche un événement au hasard parmi tout HistoriAxe et ouvre sa fiche, avec un
+        // accès direct pour rejouer sur son thème d'origine (et une option pour repiocher).
+        function discoverRandomEvent() {
+            const all = getAllEventsWithLocation();
+            if (all.length === 0) return;
+            const pick = all[Math.floor(Math.random() * all.length)];
+            openModal(pick.event, pick);
         }
 
         // Relance la partie en cours ; en mode révision, recalcule le lot pour tenir compte
@@ -3284,23 +3378,43 @@
             const container = document.getElementById('categories-container');
             container.innerHTML = ''; 
 
-            // Bannière de révision espacée, toujours en tête de liste
+            // Rangée des 3 cartes spéciales, toujours en tête de liste : Favoris,
+            // Découvrir un événement au hasard, et Réviser mes points faibles.
             const { dueCount } = getRevisionPool();
-            const revisionBanner = document.createElement('div');
-            revisionBanner.className = 'category-banner';
-            revisionBanner.style.background = 'linear-gradient(135deg, #B23A32, #D9534F)';
-            revisionBanner.innerHTML = `
-                <div>
-                    <div class="category-banner-title">🔁 Réviser mes points faibles</div>
-                    <div class="category-banner-subtitle">${dueCount > 0 ? dueCount + ' événement(s) à réviser aujourd\'hui' : 'Entraînement libre sur vos points les moins solides'}</div>
-                </div>
-                <div style="display:flex; align-items:center; gap:8px;">
-                    <span class="reset-srs-btn" id="reset-srs-btn" title="Réinitialiser le suivi de révision">⟲</span>
-                    <div class="category-banner-icon">›</div>
-                </div>
+            const favCount = favoritesLoad().length;
+            const totalEventsCount = getAllEvents().length;
+
+            const specialRow = document.createElement('div');
+            specialRow.className = 'special-row';
+
+            const favCard = document.createElement('div');
+            favCard.className = 'special-card favorites';
+            favCard.innerHTML = `
+                <div class="special-card-title">⭐ Favoris</div>
+                <div class="special-card-subtitle">${favCount === 0 ? 'Aucun thème enregistré' : (favCount === 1 ? '1 thème enregistré' : favCount + ' thèmes enregistrés')}</div>
             `;
-            revisionBanner.onclick = startRevision;
-            container.appendChild(revisionBanner);
+            favCard.onclick = openFavorites;
+            specialRow.appendChild(favCard);
+
+            const discoverCard = document.createElement('div');
+            discoverCard.className = 'special-card discover';
+            discoverCard.innerHTML = `
+                <div class="special-card-title">🎲 Découvrir un événement au hasard</div>
+                <div class="special-card-subtitle">${totalEventsCount} événements à explorer</div>
+            `;
+            discoverCard.onclick = discoverRandomEvent;
+            specialRow.appendChild(discoverCard);
+
+            const revisionCard = document.createElement('div');
+            revisionCard.className = 'special-card revision';
+            revisionCard.innerHTML = `
+                <div class="special-card-title">🔁 Réviser mes points faibles <span class="reset-srs-btn" id="reset-srs-btn" title="Réinitialiser le suivi de révision">⟲</span></div>
+                <div class="special-card-subtitle">${dueCount > 0 ? dueCount + ' événement(s) à réviser aujourd\'hui' : 'Entraînement libre sur vos points les moins solides'}</div>
+            `;
+            revisionCard.onclick = startRevision;
+            specialRow.appendChild(revisionCard);
+
+            container.appendChild(specialRow);
             document.getElementById('reset-srs-btn').onclick = (e) => {
                 e.stopPropagation();
                 resetRevisionTracking();
@@ -3370,10 +3484,58 @@
             });
         }
 
+        // Construit une carte-thème standard (titre, étoile de favori, chevron). Partagée
+        // entre la liste de thèmes normale et la liste des favoris, qui ne diffèrent que
+        // par la provenance des thèmes affichés et par ce qui se passe au clic.
+        function createThemeCard(theme, onOpen, opts = {}) {
+            const card = document.createElement('div');
+            card.className = 'data-card';
+            const fav = isFavorite(theme.id);
+            card.innerHTML = `
+                <span class="data-card-title">${theme.nom}</span>
+                <span class="data-card-fav ${fav ? 'is-fav' : ''}" title="${fav ? 'Retirer des favoris' : 'Ajouter aux favoris'}">${fav ? '★' : '☆'}</span>
+                <span class="data-card-icon">›</span>
+            `;
+            card.onclick = onOpen;
+            const favBtn = card.querySelector('.data-card-fav');
+            favBtn.onclick = (e) => {
+                e.stopPropagation();
+                toggleFavorite(theme.id);
+                if (opts.onFavoriteToggle) {
+                    opts.onFavoriteToggle();
+                } else {
+                    const nowFav = isFavorite(theme.id);
+                    favBtn.classList.toggle('is-fav', nowFav);
+                    favBtn.innerText = nowFav ? '★' : '☆';
+                    favBtn.title = nowFav ? 'Retirer des favoris' : 'Ajouter aux favoris';
+                }
+            };
+            return card;
+        }
+
+        // Ouvre le thème indiqué par ses indices exacts dans bdd (utilisé aussi bien
+        // depuis la liste de thèmes normale que depuis les favoris ou la fiche de
+        // découverte, qui ont besoin de retrouver un thème hors de son contexte courant).
+        function openThemeAt(ci, si, ti) {
+            selectedCategoryIndex = ci;
+            selectedSubcategoryIndex = si;
+            selectedThemeIndex = ti;
+            revisionMode = false;
+            axisFilterActive = false;
+            const theme = getCurrentThemeList()[ti];
+            const hasAxes = theme.events.some(e => e.axe);
+            showScreen(hasAxes ? 'screen-axes' : 'screen-modes');
+        }
+
         // INIT THÈMES (Sous-dossiers / quiz)
         function initThemes() {
             const container = document.getElementById('themes-container');
             container.innerHTML = ''; 
+
+            if (favoritesMode) {
+                renderFavoritesThemes(container);
+                return;
+            }
             
             const category = bdd[selectedCategoryIndex];
             const themeList = getCurrentThemeList();
@@ -3382,17 +3544,47 @@
                 : category.nom;
             
             themeList.forEach((theme, index) => {
-                const card = document.createElement('div');
-                card.className = 'data-card';
-                card.innerHTML = `<span class="data-card-title">${theme.nom}</span><span class="data-card-icon">›</span>`;
-                
-                card.onclick = () => {
-                    selectedThemeIndex = index;
-                    revisionMode = false;
-                    axisFilterActive = false;
-                    const hasAxes = theme.events.some(e => e.axe);
-                    showScreen(hasAxes ? 'screen-axes' : 'screen-modes');
-                };
+                const card = createThemeCard(theme, () => {
+                    openThemeAt(selectedCategoryIndex, selectedSubcategoryIndex, index);
+                });
+                container.appendChild(card);
+            });
+        }
+
+        // Liste des thèmes marqués en favoris, retrouvés à travers tout l'arbre bdd
+        // (catégories plates ou à sous-catégories), avec leur chemin d'accès exact.
+        function renderFavoritesThemes(container) {
+            container.innerHTML = '';
+            document.getElementById('theme-screen-title').innerText = 'Thèmes favoris';
+
+            const favIds = favoritesLoad();
+            const matches = [];
+            bdd.forEach((cat, ci) => {
+                if (cat.subcategories) {
+                    cat.subcategories.forEach((sub, si) => {
+                        sub.themes.forEach((theme, ti) => {
+                            if (favIds.includes(theme.id)) matches.push({ theme, ci, si, ti });
+                        });
+                    });
+                } else {
+                    cat.themes.forEach((theme, ti) => {
+                        if (favIds.includes(theme.id)) matches.push({ theme, ci, si: null, ti });
+                    });
+                }
+            });
+
+            if (matches.length === 0) {
+                const msg = document.createElement('div');
+                msg.className = 'empty-msg';
+                msg.innerText = "Aucun thème favori pour l'instant. Depuis la liste des thèmes, touchez l'étoile ☆ pour en ajouter ici.";
+                container.appendChild(msg);
+                return;
+            }
+
+            matches.forEach(({ theme, ci, si, ti }) => {
+                const card = createThemeCard(theme, () => {
+                    openThemeAt(ci, si, ti);
+                }, { onFavoriteToggle: () => renderFavoritesThemes(container) });
                 container.appendChild(card);
             });
         }
@@ -3750,11 +3942,29 @@
         }
 
         // MODAL
-        function openModal(evt) {
+        // Le second paramètre (facultatif) n'est fourni que depuis « Découvrir un
+        // événement au hasard » : il permet d'afficher un accès direct vers le thème
+        // d'origine de l'événement, ainsi qu'un bouton pour repiocher.
+        function openModal(evt, context = null) {
             document.getElementById('modal-titre').innerText = evt.titre;
             document.getElementById('modal-date').innerText = formatYear(evt.date);
             document.getElementById('modal-desc').innerText = evt.description;
             document.getElementById('modal-wiki').href = evt.wikipedia;
+
+            const themeRow = document.getElementById('modal-theme-row');
+            if (context && context.theme) {
+                themeRow.classList.remove('hidden');
+                document.getElementById('modal-theme-btn').innerText = `Jouer sur « ${context.theme.nom} »`;
+                document.getElementById('modal-theme-btn').onclick = () => {
+                    closeModal();
+                    favoritesMode = false;
+                    openThemeAt(context.categoryIndex, context.subcategoryIndex, context.themeIndex);
+                };
+                document.getElementById('modal-redraw-btn').onclick = () => discoverRandomEvent();
+            } else {
+                themeRow.classList.add('hidden');
+            }
+
             document.getElementById('modal-details').classList.remove('hidden');
         }
 
