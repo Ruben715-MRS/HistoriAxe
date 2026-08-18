@@ -45,6 +45,12 @@
         .mode-card:hover { transform: translateY(-5px); }
         .mode-card h3 { font-size: 22px; margin-bottom: 10px; }
         .mode-card p { font-size: 14px; opacity: 0.9; }
+        /* Mode verrouillé : progression requise sur ce thème avant d'y accéder */
+        .mode-card.locked { background-color: #9AA4AD; cursor: not-allowed; }
+        .mode-card.locked:hover { transform: none; }
+        .mode-card.locked h3 { display: flex; align-items: center; justify-content: center; gap: 7px; }
+        .mode-lock-icon { font-size: 18px; }
+        .mode-unlock-hint { font-size: 13px; font-style: italic; opacity: 0.95; }
 
 
         /* =====================================================================
@@ -225,11 +231,11 @@
                 <h3>Classique</h3>
                 <p>3 vies. Le mode de jeu standard et équilibré.</p>
             </div>
-            <div class="mode-card" onclick="startActualGame('chrono')">
+            <div class="mode-card" id="mode-card-chrono">
                 <h3>Chrono</h3>
                 <p>3 vies. Placez les événements le plus vite possible.</p>
             </div>
-            <div class="mode-card" onclick="startActualGame('expert')">
+            <div class="mode-card" id="mode-card-expert">
                 <h3>Expert</h3>
                 <p>1 vie, chronométré. La moindre erreur est fatale.</p>
             </div>
@@ -1054,6 +1060,36 @@
             return Date.now() >= entry.lastSeen + days * 86400000;
         }
 
+        // === PROGRESSION PAR THÈME (déverrouillage de Chrono / Expert) ===
+        // Découverte, Entraînement et Classique sont toujours libres d'accès.
+        // Réussir Classique sur un thème déverrouille Chrono sur ce même thème ;
+        // réussir Chrono déverrouille ensuite Expert, toujours sur ce thème.
+        const PROGRESS_KEY = 'historiaxe_progress_v1';
+        function progressLoad() {
+            try { return JSON.parse(localStorage.getItem(PROGRESS_KEY)) || {}; }
+            catch (e) { return {}; }
+        }
+        function progressSave(data) {
+            try { localStorage.setItem(PROGRESS_KEY, JSON.stringify(data)); } catch (e) {}
+        }
+        function progressRecordWin(themeId, mode) {
+            if (!themeId || (mode !== 'classic' && mode !== 'chrono')) return;
+            const data = progressLoad();
+            const entry = data[themeId] || { classicWon: false, chronoWon: false };
+            if (mode === 'classic') entry.classicWon = true;
+            if (mode === 'chrono') entry.chronoWon = true;
+            data[themeId] = entry;
+            progressSave(data);
+        }
+        function isChronoUnlocked(themeId) {
+            const data = progressLoad();
+            return !!(data[themeId] && data[themeId].classicWon);
+        }
+        function isExpertUnlocked(themeId) {
+            const data = progressLoad();
+            return !!(data[themeId] && data[themeId].chronoWon);
+        }
+
         // Aplatit toute la base (toutes catégories/thèmes confondus) pour la révision transversale
         function getAllEvents() {
             const all = [];
@@ -1141,6 +1177,7 @@
                 } else {
                     titleEl.innerText = 'Choisissez un mode de jeu';
                 }
+                updateModeLocks();
             }
         }
 
@@ -1298,6 +1335,40 @@
                 };
                 container.appendChild(card);
             });
+        }
+
+        // VERROUS DE MODE (Chrono / Expert) — recalculés à chaque ouverture de l'écran des modes
+        function updateModeLocks() {
+            // La session de révision traverse plusieurs thèmes : la notion de progression
+            // « par thème » ne s'y applique pas, tous les modes y restent donc accessibles.
+            let chronoUnlocked = true;
+            let expertUnlocked = true;
+
+            if (!revisionMode) {
+                const theme = bdd[selectedCategoryIndex].themes[selectedThemeIndex];
+                chronoUnlocked = isChronoUnlocked(theme.id);
+                expertUnlocked = chronoUnlocked && isExpertUnlocked(theme.id);
+            }
+
+            renderModeCard('mode-card-chrono', 'chrono', chronoUnlocked,
+                'Chrono', '3 vies. Placez les événements le plus vite possible.',
+                'Réussissez d’abord le mode Classique sur ce thème pour débloquer Chrono.');
+
+            renderModeCard('mode-card-expert', 'expert', expertUnlocked,
+                'Expert', '1 vie, chronométré. La moindre erreur est fatale.',
+                'Réussissez d’abord le mode Chrono sur ce thème pour débloquer Expert.');
+        }
+
+        function renderModeCard(cardId, mode, unlocked, title, description, lockMessage) {
+            const card = document.getElementById(cardId);
+            card.classList.toggle('locked', !unlocked);
+            if (unlocked) {
+                card.innerHTML = `<h3>${title}</h3><p>${description}</p>`;
+                card.onclick = () => startActualGame(mode);
+            } else {
+                card.innerHTML = `<h3><span class="mode-lock-icon" aria-hidden="true">🔒</span>${title}</h3><p class="mode-unlock-hint">${lockMessage}</p>`;
+                card.onclick = () => showConfirm(lockMessage, null, { alertOnly: true });
+            }
         }
 
         // LANCEMENT DU JEU
@@ -1559,6 +1630,12 @@
         // FIN ET NAVIGATION
         function endGame(isWin) {
             stopTimer();
+
+            if (isWin && !revisionMode && (currentMode === 'classic' || currentMode === 'chrono')) {
+                const theme = bdd[selectedCategoryIndex].themes[selectedThemeIndex];
+                progressRecordWin(theme.id, currentMode);
+            }
+
             showScreen('screen-end');
             document.getElementById('end-score-val').innerText = score;
             const titleElement = document.getElementById('end-title');
@@ -1583,18 +1660,21 @@
 
         // Confirmation intégrée à l'interface (remplace window.confirm, qui peut être
         // bloqué ou silencieusement ignoré dans certains environnements d'affichage)
-        function showConfirm(message, onConfirm) {
+        function showConfirm(message, onConfirm, options = {}) {
             const modal = document.getElementById('modal-confirm');
             document.getElementById('confirm-message').innerText = message;
             modal.classList.remove('hidden');
             const okBtn = document.getElementById('confirm-ok-btn');
             const cancelBtn = document.getElementById('confirm-cancel-btn');
+            const alertOnly = !!options.alertOnly;
+            cancelBtn.classList.toggle('hidden', alertOnly);
+            okBtn.innerText = options.okLabel || (alertOnly ? 'Compris' : 'Quitter');
             const cleanup = () => {
                 modal.classList.add('hidden');
                 okBtn.onclick = null;
                 cancelBtn.onclick = null;
             };
-            okBtn.onclick = () => { cleanup(); onConfirm(); };
+            okBtn.onclick = () => { cleanup(); if (onConfirm) onConfirm(); };
             cancelBtn.onclick = () => { cleanup(); };
         }
 
