@@ -29,10 +29,14 @@
         .list-screen { flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; }
         .header-title { font-size: 24px; margin-bottom: 20px; text-align: center; margin-top: 20px;}
         .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; width: 100%; max-width: 1000px; }
-        .data-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: var(--card-shadow); cursor: pointer; transition: transform 0.2s; }
-        .data-card:hover { transform: translateY(-5px); }
-        .card-top { background: var(--primary-blue); color: white; padding: 20px; font-size: 20px; font-weight: bold; }
-        .card-bottom { padding: 20px; font-size: 14px; color: #666; display: flex; justify-content: space-between; align-items: center;}
+        /* Carte thème : même langage visuel que les bannières de catégorie
+           (plein fond coloré, chevron circulaire, effet de survol), mais dans
+           la teinte bleue propre aux thèmes, pour rester distinguable du
+           dossier parent tout en s'accordant esthétiquement avec lui. */
+        .data-card { background: linear-gradient(135deg, var(--primary-blue), #9CB8CE); color: white; border-radius: 12px; padding: 20px 25px; display: flex; justify-content: space-between; align-items: center; gap: 14px; box-shadow: var(--card-shadow); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
+        .data-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .data-card-title { font-size: 19px; font-weight: bold; line-height: 1.3; }
+        .data-card-icon { flex-shrink: 0; font-size: 22px; background: rgba(255,255,255,0.2); width: 38px; height: 38px; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
         .empty-msg { font-size: 18px; color: #888; font-style: italic; margin-top: 30px; text-align: center; width: 100%; }
         
         /* ÉCRAN DES MODES DE JEU */
@@ -1279,14 +1283,11 @@
             
             const category = bdd[selectedCategoryIndex];
             document.getElementById('theme-screen-title').innerText = category.nom;
-            const srsData = srsLoad();
             
             category.themes.forEach((theme, index) => {
                 const card = document.createElement('div');
                 card.className = 'data-card';
-                const masteredCount = theme.events.filter(e => srsData[e.id] && srsData[e.id].box >= 4).length;
-                const masteryText = masteredCount > 0 ? ` · ${masteredCount}/${theme.events.length} maîtrisés` : '';
-                card.innerHTML = `<div class="card-top">${theme.nom}</div><div class="card-bottom"><span>${theme.difficulte}${masteryText}</span><span style="color:var(--primary-blue); font-weight:bold;">Jouer ›</span></div>`;
+                card.innerHTML = `<span class="data-card-title">${theme.nom}</span><span class="data-card-icon">›</span>`;
                 
                 card.onclick = () => {
                     selectedThemeIndex = index;
