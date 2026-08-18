@@ -1546,6 +1546,7 @@
                     },
                     {
                         id: "thm_3e", nom: "Classe de 3ᵉ (Brevet)", difficulte: "Brevet",
+                        axeOrder: ["L'Europe, un théâtre majeur des guerres totales", "Le monde depuis 1945", "Françaises et Français dans une République repensée"],
                         events: [
                             { id: "3e_1", axe: "L'Europe, un théâtre majeur des guerres totales", date: 1914, titre: "Début de la Première Guerre mondiale", description: "L'assassinat de l'archiduc François-Ferdinand à Sarajevo par un nationaliste serbe provoque, par le jeu des alliances diplomatiques, l'embrasement de l'Europe. En août, l'Allemagne, la Russie et la France entrent en guerre.", wikipedia: "https://fr.wikipedia.org/wiki/Premi%C3%A8re_Guerre_mondiale" },
                             { id: "3e_2", axe: "L'Europe, un théâtre majeur des guerres totales", date: 1914, titre: "Bataille de la Marne", description: "Après une retraite précipitée, l'armée française (aidée par les Britanniques) lance une vaste contre-offensive sur la Marne. Grâce notamment aux taxis parisiens réquisitionnés, l'avancée allemande vers Paris est stoppée.", wikipedia: "https://fr.wikipedia.org/wiki/Premi%C3%A8re_bataille_de_la_Marne" },
@@ -1572,7 +1573,6 @@
                             { id: "3e_23", axe: "Le monde depuis 1945", date: 1954, titre: "Début de la guerre d’Algérie", description: "Les attentats perpétrés par le FLN le jour de la « Toussaint rouge » marquent le début de l'insurrection algérienne. Ce conflit de décolonisation, extrêmement violent, traumatisera profondément la France.", wikipedia: "https://fr.wikipedia.org/wiki/Guerre_d%27Alg%C3%A9rie" },
                             { id: "3e_24", axe: "Le monde depuis 1945", date: 1957, titre: "Traité de Rome", description: "Les six pays fondateurs de la CECA signent à Rome le traité instituant la Communauté Économique Européenne (CEE), créant un marché commun basé sur la libre circulation des personnes et des marchandises.", wikipedia: "https://fr.wikipedia.org/wiki/Trait%C3%A9_de_Rome" },
                             { id: "3e_25", axe: "Françaises et Français dans une République repensée", date: 1958, titre: "Naissance de la Vᵉ République", description: "Rappelé au pouvoir en pleine crise institutionnelle liée à la guerre d'Algérie, le général de Gaulle fait adopter une nouvelle Constitution par référendum, renforçant considérablement le pouvoir de l'exécutif présidentiel.", wikipedia: "https://fr.wikipedia.org/wiki/Cinqui%C3%A8me_R%C3%A9publique_(France)" },
-                            { id: "3e_26", axe: "Le monde depuis 1945", date: 1962, titre: "Accords d’Évian", description: "Signés entre le gouvernement français et les indépendantistes algériens, ils proclament un cessez-le-feu immédiat. Quelques mois plus tard, la population algérienne vote massivement pour l'indépendance de son pays.", wikipedia: "https://fr.wikipedia.org/wiki/Accords_d%27%C3%89vian" },
                             { id: "3e_27", axe: "Françaises et Français dans une République repensée", date: 1962, titre: "Élection du président au suffrage universel direct", description: "Volonté farouche du général de Gaulle, cette révision de la Constitution (adoptée par référendum) permet dorénavant aux citoyens français d'élire directement leur président de la République.", wikipedia: "https://fr.wikipedia.org/wiki/R%C3%A9f%C3%A9rendum_sur_l%27%C3%A9lection_au_suffrage_universel_du_pr%C3%A9sident_de_la_R%C3%A9publique" },
                             { id: "3e_28", axe: "Françaises et Français dans une République repensée", date: 1968, titre: "Mai 68", description: "Mouvement étudiant né de la contestation de l'autorité traditionnelle, suivi d'une grève générale de millions de travailleurs. C'est une crise sociale, culturelle et politique majeure pour la présidence de De Gaulle.", wikipedia: "https://fr.wikipedia.org/wiki/Mai_68" },
                             { id: "3e_29", axe: "Françaises et Français dans une République repensée", date: 1975, titre: "Loi Veil", description: "Portée avec courage par la ministre de la Santé Simone Veil face à une Assemblée conservatrice, cette loi dépénalise et encadre l'Interruption Volontaire de Grossesse (IVG) pour les femmes en France.", wikipedia: "https://fr.wikipedia.org/wiki/Loi_Veil" },
@@ -2245,7 +2245,12 @@
         // INIT ÉCRAN DES AXES THÉMATIQUES (Amériques, Campagne, ou tout thème taggé)
         function initAxes() {
             const theme = getCurrentTheme();
-            const axes = [...new Set(theme.events.map(e => e.axe).filter(Boolean))];
+            let axes = [...new Set(theme.events.map(e => e.axe).filter(Boolean))];
+            if (theme.axeOrder) {
+                // Ordre d'affichage explicite défini par le thème, prioritaire sur l'ordre
+                // d'apparition dans le tableau d'événements (qui reste, lui, chronologique).
+                axes = theme.axeOrder.filter(a => axes.includes(a));
+            }
             const sameTheme = currentThemeAxes.length === axes.length && currentThemeAxes.every(a => axes.includes(a));
             currentThemeAxes = axes;
             if (!sameTheme || selectedAxes.size === 0) {
