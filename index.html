@@ -924,7 +924,7 @@
                 <div class="settings-label">Données de jeu</div>
                 <button class="btn btn-secondary" style="width:100%; margin-bottom:12px;" onclick="openScoringInfo()">📖 Explications du calcul des points</button>
                 <button class="btn" style="width:100%; background:var(--danger-red);" onclick="resetGameData()">⚠️ Réinitialiser le jeu</button>
-                <p class="settings-hint">Supprime définitivement vos favoris, votre historique de révision (points faibles) et la progression de déverrouillage des modes Chrono/Expert. Vos réglages d'affichage (orientation, apparence) sont conservés.</p>
+                <p class="settings-hint">Supprime définitivement vos favoris, tous vos thèmes et événements personnalisés créés, votre historique de révision (points faibles) et la progression de déverrouillage des modes Chrono/Expert. Vos réglages d'affichage (orientation, apparence) sont conservés.</p>
             </div>
         </div>
     </div>
@@ -5931,16 +5931,20 @@ events: [
             document.getElementById('modal-scoring-info').classList.add('hidden');
         }
 
-        // Efface les favoris, l'historique de révision (SRS) et la progression de
-        // déverrouillage des modes Chrono/Expert. Les réglages d'affichage sont conservés :
-        // ce ne sont pas des données de progression, mais des préférences d'interface.
+        // Efface les favoris, les thèmes/événements personnalisés, l'historique de révision (SRS)
+        // et la progression de déverrouillage des modes Chrono/Expert. Les réglages d'affichage
+        // sont conservés (ce ne sont pas des données de progression, mais des préférences d'interface).
         function resetGameData() {
             showConfirm(
-                "Cette action supprime définitivement vos thèmes favoris, tout l'historique de révision (points faibles, boîtes de mémorisation) et la progression de déverrouillage des modes Chrono/Expert sur tous les thèmes. Cette action est irréversible. Voulez-vous continuer ?",
+                "Cette action supprime définitivement vos thèmes favoris, l'intégralité de vos thèmes et événements personnalisés créés, tout l'historique de révision (points faibles, boîtes de mémorisation) et la progression de déverrouillage des modes Chrono/Expert. Cette action est irréversible. Voulez-vous continuer ?",
                 () => {
                     try { localStorage.removeItem(FAVORITES_KEY); } catch (e) {}
                     try { localStorage.removeItem(SRS_KEY); } catch (e) {}
                     try { localStorage.removeItem(PROGRESS_KEY); } catch (e) {}
+                    try { localStorage.removeItem(CUSTOM_THEMES_KEY); } catch (e) {}
+                    try { localStorage.removeItem(CUSTOM_EVENTS_KEY); } catch (e) {}
+                    try { localStorage.removeItem(LEADERBOARD_KEY); } catch (e) {}
+                    customCategory.themes = [];
                     closeSettings();
                     showScreen('screen-categories');
                 },
