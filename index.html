@@ -4,14 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>HistoriAxe - Le Quiz Chronologique</title>
-
-    <!-- Icône pour l'écran d'accueil iPhone / iPad -->
-    <link rel="apple-touch-icon" href="apple_icon.jpg">
-
-    <!-- Mode application (plein écran) -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="HistoriAxe">
     <style>
         :root {
             --bg-color: #F7F7F9;
@@ -97,6 +89,7 @@
         .mode-card.locked:hover { transform: none; }
         .mode-card.locked h3 { display: flex; align-items: center; justify-content: center; gap: 7px; }
         .mode-card.quiz-card { background: linear-gradient(135deg, #1F8A70, #4FC3A1); }
+        .mode-card.fil-card { background: linear-gradient(135deg, #7A4B2E, #C98A4B); }
         .combo-chip { font-size: 11px; font-weight: 700; color: var(--primary-blue); background: rgba(107,142,173,0.14); border-radius: 999px; padding: 2px 8px; margin-left: 6px; }
         .mode-lock-icon { font-size: 18px; }
         .mode-unlock-hint { font-size: 13px; font-style: italic; opacity: 0.95; }
@@ -232,6 +225,26 @@
         .quiz-fifty-row { text-align: center; }
         .quiz-fifty-btn { padding: 10px 22px; border-radius: 999px; border: none; background: var(--surface-2); color: var(--text-dark); font: inherit; font-weight: 700; font-size: 14px; cursor: pointer; }
         .quiz-fifty-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+        /* Mode « Le fil du temps » */
+        .fil-body { max-width: 480px; margin: 0 auto; padding: 20px 16px 40px; }
+        .fil-question-card { background: var(--surface); border-radius: 14px; padding: 28px 24px; text-align: center; box-shadow: var(--card-shadow); margin-bottom: 22px; }
+        .fil-kicker { font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted-text); margin-bottom: 10px; }
+        .fil-prompt { font-size: 21px; font-weight: 700; color: var(--text-dark); line-height: 1.35; }
+        .fil-display { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 22px; }
+        .fil-display-value { min-width: 140px; background: var(--surface); border: 2px solid var(--border-soft); border-radius: 12px; padding: 14px 10px; font-size: 28px; font-weight: 700; letter-spacing: 1px; color: var(--text-dark); text-align: center; }
+        .fil-display-value.fil-feedback-correct { border-color: #2CA85A; background: rgba(44,168,90,0.14); color: #1D7A41; }
+        .fil-display-value.fil-feedback-wrong { border-color: var(--danger-red); background: rgba(217,83,79,0.12); color: var(--danger-red); }
+        .fil-era-btn { flex-shrink: 0; padding: 12px 16px; border-radius: 12px; border: 2px solid var(--border-soft); background: var(--surface-2); color: var(--text-dark); font: inherit; font-weight: 700; font-size: 14px; cursor: pointer; white-space: nowrap; }
+        .fil-era-btn.era-bc { border-color: var(--primary-blue); color: var(--primary-blue); }
+        .fil-keypad { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 16px; }
+        .fil-key { background: var(--surface); border: 2px solid var(--border-soft); border-radius: 12px; padding: 16px 0; font: inherit; font-size: 20px; font-weight: 700; color: var(--text-dark); cursor: pointer; transition: transform 0.1s, background 0.1s; }
+        .fil-key:hover { background: var(--surface-2); }
+        .fil-key:active { transform: scale(0.94); }
+        .fil-key-erase { font-size: 17px; }
+        .fil-validate-btn { display: block; width: 100%; padding: 16px 0; border-radius: 12px; border: none; background: var(--primary-blue); color: white; font: inherit; font-weight: 700; font-size: 17px; cursor: pointer; }
+        .fil-validate-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+        .fil-correct-hint { font-size: 14px; color: var(--muted-text); margin-top: 10px; min-height: 20px; }
         
         #screen-end { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; }
         .end-title { font-size: 32px; margin-bottom: 20px; color: var(--primary-blue); }
@@ -242,6 +255,9 @@
         .list-categories { display: flex; flex-direction: column; gap: 15px; width: 100%; max-width: 800px; margin: 0 auto; }
         .category-banner { background: linear-gradient(135deg, #2C3E50, #4CA1AF); color: white; border-radius: 12px; padding: 20px 25px; display: flex; justify-content: space-between; align-items: center; box-shadow: var(--card-shadow); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
         .category-banner.empires-banner { background: linear-gradient(135deg, #4A235A, #9B59B6); }
+        .subcategory-note { background: var(--surface-2); border-left: 4px solid var(--primary-blue); border-radius: 8px; padding: 14px 18px; margin: 0 auto 22px; max-width: 800px; }
+        .subcategory-note-title { font-weight: 700; font-size: 14px; color: var(--text-dark); margin-bottom: 4px; }
+        .subcategory-note p { font-size: 13px; line-height: 1.5; color: var(--ink-soft); margin: 0; }
         .category-banner:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
         .category-banner-title { font-size: 22px; font-weight: bold; }
         .category-banner-subtitle { font-size: 14px; opacity: 0.8; margin-top: 5px; }
@@ -394,6 +410,10 @@
     <!-- ÉCRAN 2bis : SOUS-CATÉGORIES (régions, uniquement pour les catégories qui en définissent) -->
     <div id="screen-subcategories" class="list-screen hidden">
         <h2 class="header-title" id="subcategory-screen-title">Choisissez une région</h2>
+        <div id="subcategory-note" class="subcategory-note hidden">
+            <div class="subcategory-note-title">Note importante</div>
+            <p id="subcategory-note-text"></p>
+        </div>
         <div class="list-categories" id="subcategories-container"></div>
         <div style="margin-top: 30px; margin-bottom: 50px;">
             <button class="btn btn-secondary" onclick="backFromSubcategories()">Retour</button>
@@ -447,6 +467,10 @@
             <div class="mode-card quiz-card" onclick="startQuizGame()">
                 <h3>Quiz</h3>
                 <p>3 vies. Devinez la bonne réponse parmi 4 choix.</p>
+            </div>
+            <div class="mode-card fil-card" onclick="startFilGame()">
+                <h3>Le fil du temps</h3>
+                <p>3 vies. Tapez l'année exacte de chaque événement, dans l'ordre chronologique.</p>
             </div>
         </div>
         <div style="margin-top: 10px; margin-bottom: 50px;">
@@ -521,6 +545,56 @@
         </div>
     </div>
 
+    <!-- ÉCRAN 5bis : MODE LE FIL DU TEMPS (saisie de l'année exacte, dans l'ordre chronologique) -->
+    <div id="screen-fil" class="hidden">
+        <div class="game-bar">
+            <div class="bar-row">
+                <button class="quit-btn" onclick="quitGame()">‹ Quitter</button>
+                <span class="bar-fill"></span>
+                <span class="lives-row" id="fil-hud-lives"></span>
+                <span class="type-size">
+                    <button type="button" onclick="changeZoom(-0.15)" aria-label="Réduire le texte">A−</button>
+                    <button type="button" onclick="changeZoom(0.15)" aria-label="Agrandir le texte">A+</button>
+                </span>
+            </div>
+            <div class="bar-row">
+                <span class="progress-rail" id="fil-progress-rail"><span class="progress-fill" id="fil-progress-fill"></span></span>
+                <span class="bar-meta" id="fil-hud-count">1 / 15</span>
+                <span class="bar-meta"><span id="fil-hud-score">0</span> pts<span id="fil-hud-combo" class="combo-chip hidden"></span></span>
+            </div>
+        </div>
+
+        <div class="fil-body">
+            <div class="fil-question-card">
+                <div class="fil-kicker">Quelle est l'année exacte de cet événement ?</div>
+                <div class="fil-prompt" id="fil-prompt">Chargement…</div>
+            </div>
+
+            <div class="fil-display">
+                <span class="fil-display-value" id="fil-display-value">—</span>
+                <button class="fil-era-btn" id="fil-era-btn" onclick="filToggleEra()">apr. J.-C.</button>
+            </div>
+
+            <div class="fil-keypad">
+                <button class="fil-key" onclick="filKeyPress('1')">1</button>
+                <button class="fil-key" onclick="filKeyPress('2')">2</button>
+                <button class="fil-key" onclick="filKeyPress('3')">3</button>
+                <button class="fil-key" onclick="filKeyPress('4')">4</button>
+                <button class="fil-key" onclick="filKeyPress('5')">5</button>
+                <button class="fil-key" onclick="filKeyPress('6')">6</button>
+                <button class="fil-key" onclick="filKeyPress('7')">7</button>
+                <button class="fil-key" onclick="filKeyPress('8')">8</button>
+                <button class="fil-key" onclick="filKeyPress('9')">9</button>
+                <button class="fil-key fil-key-erase" onclick="filClear()">Effacer</button>
+                <button class="fil-key" onclick="filKeyPress('0')">0</button>
+                <button class="fil-key fil-key-erase" onclick="filBackspace()">⌫</button>
+            </div>
+
+            <button class="fil-validate-btn" id="fil-validate-btn" onclick="filSubmit()" disabled>Valider</button>
+            <div class="fil-correct-hint" id="fil-correct-hint"></div>
+        </div>
+    </div>
+
     <!-- ÉCRAN 6 : FIN DE PARTIE -->
     <div id="screen-end" class="hidden">
         <div class="end-title" id="end-title">Partie Terminée</div>
@@ -570,6 +644,9 @@
 
                 <h3>Mode Quiz</h3>
                 <p>Le même principe de proximité s'applique aux 4 choix proposés : une mauvaise réponse proche de la bonne rapporte plus qu'une réponse très éloignée. Utiliser le bonus 50:50 divise par deux les points gagnables sur la question en cours.</p>
+
+                <h3>Le fil du temps</h3>
+                <p>Les événements du thème sont présentés un par un, du plus ancien au plus récent, et il faut en saisir l'année exacte au clavier. Le même principe de proximité s'applique : plus votre réponse est proche de l'année réelle, plus elle rapporte de points, même imparfaite. Une vie est perdue à chaque année inexacte.</p>
 
                 <h3>Découverte et Entraînement</h3>
                 <p>Ces deux modes restent sans score : ils sont pensés pour apprendre sans pression, à vies illimitées.</p>
@@ -1056,6 +1133,24 @@
                             }
                         ]
                     }
+                ]
+            },
+            {
+                nom: "Biographies",
+                note: "Chaque personnalité a été classée dans la catégorie principale correspondant à ce pour quoi elle est le plus largement reconnue dans l'histoire. Même si de nombreuses figures ont exercé plusieurs rôles au cours de leur vie, seule la dimension dominante de leur destin a été retenue.",
+                subcategories: [
+                    { nom: "Rois, reines et chefs d'État", themes: [] },
+                    { nom: "Chefs militaires et stratèges", themes: [] },
+                    { nom: "Militants, résistants et figures de la liberté", themes: [] },
+                    { nom: "Figures religieuses et spirituelles", themes: [] },
+                    { nom: "Philosophes et penseurs", themes: [] },
+                    { nom: "Savants, scientifiques et inventeurs", themes: [] },
+                    { nom: "Écrivains et poètes", themes: [] },
+                    { nom: "Acteurs, chanteurs et musiciens", themes: [] },
+                    { nom: "Architectes, designers et ingénieurs", themes: [] },
+                    { nom: "Explorateurs et grands voyageurs", themes: [] },
+                    { nom: "Entrepreneurs et magnats", themes: [] },
+                    { nom: "Sportifs et athlètes", themes: [] }
                 ]
             },
             {
@@ -3905,6 +4000,13 @@
         let quizFiftyLeft = 2;
         let quizFiftyActive = false;
 
+        // Mode Le fil du temps : les événements du pool sont présentés triés du plus
+        // ancien au plus récent, et il faut en saisir l'année exacte au clavier numérique.
+        let filEvents = [];
+        let filIndex = 0;
+        let filInput = '';
+        let filEra = 1; // 1 = apr. J.-C., -1 = av. J.-C.
+
         // Certaines catégories (ex. « Histoires nationales », « Programmes scolaires »)
         // insèrent un ou plusieurs niveaux de sous-catégories entre la catégorie et les
         // thèmes (parfois imbriqués : Programmes scolaires > Lycée > Terminale). On
@@ -4037,6 +4139,10 @@
                 startQuizGame();
                 return;
             }
+            if (currentMode === 'fil') {
+                startFilGame();
+                return;
+            }
             if (revisionMode) {
                 const weak = getWeakEvents().map(item => item.event);
                 revisionEvents = shuffleArray(weak).slice(0, revisionRequestedSize || weak.length);
@@ -4155,9 +4261,12 @@
                     <div class="category-banner-icon">›</div>
                 `;
                 
-                // On empêche le clic si la catégorie est vide
+                // On empêche le clic seulement si c'est un « feuille » (thèmes directs) vide ;
+                // une catégorie à sous-catégories reste consultable même si toutes sont
+                // encore vides (ex. squelette de sous-catégories à remplir plus tard).
+                const canEnter = nbThemes > 0 || !!cat.subcategories;
                 banner.onclick = () => {
-                    if(nbThemes > 0) {
+                    if (canEnter) {
                         selectedCategoryIndex = index;
                         selectedSubcategoryIndex = cat.subcategories ? [] : null;
                         showScreen(cat.subcategories ? 'screen-subcategories' : 'screen-themes');
@@ -4176,6 +4285,14 @@
             const node = resolveSubcategory(category, selectedSubcategoryIndex);
             document.getElementById('subcategory-screen-title').innerText = node.nom;
 
+            const noteBox = document.getElementById('subcategory-note');
+            if (category.note && selectedSubcategoryIndex.length === 0) {
+                document.getElementById('subcategory-note-text').innerText = category.note;
+                noteBox.classList.remove('hidden');
+            } else {
+                noteBox.classList.add('hidden');
+            }
+
             node.subcategories.forEach((sub, index) => {
                 const banner = document.createElement('div');
                 banner.className = 'category-banner' + (sub.variant ? ' ' + sub.variant + '-banner' : '');
@@ -4191,8 +4308,9 @@
                     <div class="category-banner-icon">›</div>
                 `;
 
+                const canEnter = nbThemes > 0 || !!sub.subcategories;
                 banner.onclick = () => {
-                    if (nbThemes > 0) {
+                    if (canEnter) {
                         selectedSubcategoryIndex = [...selectedSubcategoryIndex, index];
                         showScreen(sub.subcategories ? 'screen-subcategories' : 'screen-themes');
                     }
@@ -4601,6 +4719,141 @@
             document.getElementById('quiz-hud-lives').innerHTML = pips;
         }
 
+        // === MODE LE FIL DU TEMPS ===
+        // Les événements du pool sont triés chronologiquement (du plus ancien au plus
+        // récent) et présentés un par un ; il faut en saisir l'année exacte au clavier
+        // numérique. Le principe de score par écart d'années et de combo est identique
+        // aux autres modes (voir awardPoints).
+        function startFilGame() {
+            currentMode = 'fil';
+            let sourceEvents;
+            if (revisionMode) {
+                sourceEvents = revisionEvents;
+            } else {
+                const themeEvents = getCurrentTheme().events;
+                sourceEvents = (axisFilterActive && selectedAxes.size > 0)
+                    ? themeEvents.filter(e => selectedAxes.has(e.axe))
+                    : themeEvents;
+            }
+
+            filEvents = [...sourceEvents].sort((a, b) => a.date - b.date);
+            filIndex = 0;
+            lives = 3;
+            score = 0;
+            comboMultiplier = 1.0;
+
+            const gameDates = sourceEvents.map(e => e.date);
+            currentGameSpan = Math.max(1, Math.max(...gameDates) - Math.min(...gameDates));
+
+            showScreen('screen-fil');
+            renderFilQuestion();
+        }
+
+        function renderFilQuestion() {
+            if (filIndex >= filEvents.length) {
+                endGame(true);
+                return;
+            }
+            isAnimating = false;
+            filInput = '';
+            filEra = 1;
+
+            const evt = filEvents[filIndex];
+            document.getElementById('fil-prompt').innerText = evt.titre;
+            document.getElementById('fil-correct-hint').innerText = '';
+            updateFilDisplay();
+
+            document.getElementById('fil-hud-count').innerText = `${filIndex + 1} / ${filEvents.length}`;
+            const pct = Math.round(filIndex / filEvents.length * 100);
+            document.getElementById('fil-progress-fill').style.width = pct + '%';
+            updateFilHUD();
+        }
+
+        function filToggleEra() {
+            if (isAnimating) return;
+            filEra = filEra === 1 ? -1 : 1;
+            updateFilDisplay();
+        }
+
+        function filKeyPress(digit) {
+            if (isAnimating) return;
+            if (filInput.length >= 7) return; // borne large, pour les dates préhistoriques
+            filInput += digit;
+            updateFilDisplay();
+        }
+
+        function filBackspace() {
+            if (isAnimating) return;
+            filInput = filInput.slice(0, -1);
+            updateFilDisplay();
+        }
+
+        function filClear() {
+            if (isAnimating) return;
+            filInput = '';
+            updateFilDisplay();
+        }
+
+        function updateFilDisplay() {
+            const eraBtn = document.getElementById('fil-era-btn');
+            eraBtn.innerText = filEra === 1 ? 'apr. J.-C.' : 'av. J.-C.';
+            eraBtn.classList.toggle('era-bc', filEra === -1);
+
+            const display = document.getElementById('fil-display-value');
+            display.innerText = filInput ? filInput : '—';
+            display.classList.remove('fil-feedback-correct', 'fil-feedback-wrong');
+
+            document.getElementById('fil-validate-btn').disabled = filInput.length === 0;
+        }
+
+        function filSubmit() {
+            if (isAnimating || filInput.length === 0) return;
+            isAnimating = true;
+
+            const evt = filEvents[filIndex];
+            const guessedYear = filEra * parseInt(filInput, 10);
+            const gap = Math.abs(guessedYear - evt.date);
+            const isPerfect = gap === 0;
+
+            awardPoints(gap, isPerfect);
+            srsRecord(evt.id, isPerfect);
+            if (!isPerfect) lives -= 1;
+            updateFilHUD();
+
+            const display = document.getElementById('fil-display-value');
+            display.classList.add(isPerfect ? 'fil-feedback-correct' : 'fil-feedback-wrong');
+            document.getElementById('fil-validate-btn').disabled = true;
+
+            if (!isPerfect) {
+                document.getElementById('fil-correct-hint').innerText = `Bonne réponse : ${formatYear(evt.date)}`;
+            }
+
+            setTimeout(() => {
+                filIndex++;
+                if (lives <= 0) {
+                    endGame(false);
+                } else {
+                    renderFilQuestion();
+                }
+            }, 1800);
+        }
+
+        function updateFilHUD() {
+            document.getElementById('fil-hud-score').innerText = score;
+            const comboChip = document.getElementById('fil-hud-combo');
+            if (comboMultiplier > 1) {
+                comboChip.innerText = `×${comboMultiplier.toFixed(1)}`;
+                comboChip.classList.remove('hidden');
+            } else {
+                comboChip.classList.add('hidden');
+            }
+            let pips = '';
+            for (let i = 0; i < 3; i++) {
+                pips += `<span class="pip${i < lives ? '' : ' spent'}"></span>`;
+            }
+            document.getElementById('fil-hud-lives').innerHTML = pips;
+        }
+
         // CHRONOMÈTRE
         function startTimer() {
             startTime = Date.now();
@@ -4827,7 +5080,10 @@
             const timeDisplay = document.getElementById('end-time-display');
             
             if (isWin) {
-                titleElement.innerText = (currentMode === 'quiz') ? "Bravo ! Quiz terminé !" : "Bravo ! Frise complétée !";
+                let winTitle = "Bravo ! Frise complétée !";
+                if (currentMode === 'quiz') winTitle = "Bravo ! Quiz terminé !";
+                if (currentMode === 'fil') winTitle = "Bravo ! Fil du temps parcouru !";
+                titleElement.innerText = winTitle;
                 titleElement.style.color = "#27ae60"; 
             } else {
                 titleElement.innerText = "Game Over !";
