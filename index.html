@@ -102,6 +102,7 @@
         .mode-card.locked h3 { display: flex; align-items: center; justify-content: center; gap: 7px; }
         .mode-card.quiz-card { background: linear-gradient(135deg, #1F8A70, #4FC3A1); }
         .mode-card.fil-card { background: linear-gradient(135deg, #7A4B2E, #C98A4B); }
+        .mode-card.periodes-card { background: linear-gradient(135deg, #6C3483, #B03A2E); }
 
         .mode-separator { border: none; border-top: 2px solid var(--border-soft); margin: 30px auto; width: 60%; max-width: 200px; border-radius: 2px; }
 
@@ -288,6 +289,23 @@
         .fil-key-erase { font-size: 17px; }
         .fil-validate-btn { display: block; width: 100%; padding: 16px 0; border-radius: 12px; border: none; background: var(--primary-blue); color: white; font: inherit; font-weight: 700; font-size: 17px; cursor: pointer; }
         .fil-validate-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+        /* Mode « Périodes & Ères » */
+        .periodes-body { max-width: 700px; margin: 0 auto; padding: 20px 16px 40px; }
+        .periodes-question-card { background: var(--surface); border-radius: 14px; padding: 28px 24px; text-align: center; box-shadow: var(--card-shadow); margin-bottom: 24px; }
+        .periodes-kicker { font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted-text); margin-bottom: 10px; font-weight: 700; }
+        .periodes-prompt { font-size: 21px; font-weight: 700; color: var(--text-dark); line-height: 1.35; }
+        .periodes-tag { display: inline-block; padding: 4px 12px; border-radius: 999px; font-size: 12.5px; font-weight: 600; margin-top: 12px; background: var(--surface-2); color: var(--muted-text); }
+        .periodes-options { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 22px; }
+        @media (max-width: 640px) { .periodes-options { grid-template-columns: 1fr; } }
+        .periodes-option { background: var(--surface); border: 2px solid var(--border-soft); border-radius: 12px; padding: 18px 20px; font: inherit; font-size: 16px; font-weight: 600; color: var(--text-dark); text-align: center; cursor: pointer; transition: transform 0.15s, border-color 0.15s, background 0.15s; display: flex; flex-direction: column; justify-content: center; gap: 4px; min-height: 72px; }
+        .periodes-option:hover { transform: translateY(-2px); border-color: #8E44AD; }
+        .periodes-option-main { font-size: 17px; font-weight: 700; color: var(--text-dark); }
+        .periodes-option-sub { font-size: 13px; color: var(--muted-text); }
+        .periodes-option.correct { background: rgba(44,168,90,0.14); border-color: #2CA85A; color: #1D7A41; }
+        .periodes-option.correct .periodes-option-main { color: #1D7A41; }
+        .periodes-option.wrong { background: rgba(217,83,79,0.12); border-color: var(--danger-red); color: var(--danger-red); }
+        .periodes-option.wrong .periodes-option-main { color: var(--danger-red); }
         
         #screen-end { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; }
         .end-title { font-size: 32px; margin-bottom: 20px; color: var(--primary-blue); }
@@ -1496,7 +1514,8 @@
                               "id": "hjc_42",
                               "axe": "Mouvements spirituels, mystiques et intellectuels",
                               "date": 589,
-                              "titre": "Période des Geonim et apogée des académies de Soura et Poumbedita",
+                              "dateFin": 1038,
+                                        "titre": "Période des Geonim et apogée des académies de Soura et Poumbedita",
                               "description": "Les directeurs académiques babyloniens (Géonim, dont Saadia Gaon) diffusent l'autorité du Talmud auprès de l'ensemble de la diaspora juive (589-1038 EC).",
                               "wikipedia": "https://fr.wikipedia.org/wiki/Geonim"
                     },
@@ -1664,7 +1683,8 @@
                               "id": "hjc_57",
                               "axe": "Exils, Persécutions et Émancipation",
                               "date": 1939,
-                              "titre": "La Shoah et l’extermination de six millions de Juifs d’Europe",
+                              "dateFin": 1945,
+                                        "titre": "La Shoah et l’extermination de six millions de Juifs d’Europe",
                               "description": "Génocide systématique et industriel perpétré par l'Allemagne nazie et ses collaborateurs entre 1939 et 1945, anéantissant les deux tiers du judaïsme européen.",
                               "wikipedia": "https://fr.wikipedia.org/wiki/Shoah"
                     },
@@ -1680,7 +1700,8 @@
                               "id": "hjc_58",
                               "axe": "Exils, Persécutions et Émancipation",
                               "date": 1948,
-                              "titre": "Exode et expulsion des Juifs des pays arabes et musulmans",
+                              "dateFin": 1970,
+                                        "titre": "Exode et expulsion des Juifs des pays arabes et musulmans",
                               "description": "Près de 850 000 Juifs d'Afrique du Nord et du Moyen-Orient quittent ou sont chassés de leurs terres ancestrales entre 1948 et 1970 pour trouver refuge en Israël et en Occident.",
                               "wikipedia": "https://fr.wikipedia.org/wiki/Exode_des_Juifs_des_pays_arabes_et_musulmans"
                     },
@@ -8464,6 +8485,278 @@ events: [
             document.getElementById('quiz-hud-lives').innerHTML = pips;
         }
 
+
+        // === MODE PÉRIODES & ÈRES ===
+        let periodesQuestions = [];
+        let periodesIndex = 0;
+
+        function startPeriodesGame() {
+            currentMode = 'periodes';
+            let sourceEvents;
+            if (revisionMode) {
+                sourceEvents = revisionEvents;
+            } else {
+                const themeEvents = getCurrentTheme().events;
+                sourceEvents = (axisFilterActive && selectedAxes.size > 0)
+                    ? themeEvents.filter(e => selectedAxes.has(e.axe))
+                    : themeEvents;
+            }
+            if (isSelectionActive && !revisionMode) {
+                sourceEvents = sourceEvents.filter(e => selectedEventsIds.has(e.id));
+            }
+            if (sourceEvents.length < 4) {
+                alert("Le mode Périodes & Ères nécessite au moins 4 événements. Veuillez ajouter d'autres événements à ce thème !");
+                return;
+            }
+
+            periodesQuestions = buildPeriodesQuestions(sourceEvents);
+            if (periodesQuestions.length === 0) {
+                alert("Impossible de générer des questions pour ce thème.");
+                return;
+            }
+
+            periodesIndex = 0;
+            lives = 3;
+            score = 0;
+            comboMultiplier = 1.0;
+
+            const gameDates = sourceEvents.map(e => e.date);
+            currentGameSpan = Math.max(1, Math.max(...gameDates) - Math.min(...gameDates));
+
+            showScreen('screen-periodes');
+            renderPeriodesQuestion();
+        }
+
+        function buildPeriodesQuestions(events) {
+            const pool = events.filter(e => typeof e.date === 'number');
+            if (pool.length < 4) return [];
+
+            const gameDates = pool.map(e => e.date);
+            const span = Math.max(1, Math.max(...gameDates) - Math.min(...gameDates));
+            const distinctAxes = [...new Set(pool.map(e => e.axe).filter(Boolean))];
+
+            const questions = [];
+
+            pool.forEach(evt => {
+                let qType = 'century';
+                const hasAxe = evt.axe && distinctAxes.length >= 3;
+                const hasSpan = evt.dateFin != null && evt.dateFin !== evt.date;
+
+                const choices = ['century'];
+                if (hasAxe) choices.push('axe');
+                if (hasSpan) choices.push('span');
+                if (pool.length >= 6) choices.push('contemporary');
+
+                qType = choices[Math.floor(Math.random() * choices.length)];
+
+                if (qType === 'axe') {
+                    // Question : Quel est l'axe / l'époque thématique ?
+                    const correctAxe = evt.axe;
+                    const otherAxes = distinctAxes.filter(a => a !== correctAxe);
+                    const distractorAxes = shuffleArray(otherAxes).slice(0, 3);
+                    const options = shuffleArray([
+                        { main: correctAxe, sub: "Ère / Axe thématique", isCorrect: true, evt: evt },
+                        ...distractorAxes.map(a => ({ main: a, sub: "Ère / Axe thématique", isCorrect: false, evt: null }))
+                    ]);
+                    questions.push({
+                        kicker: "Rattachement d'époque",
+                        prompt: evt.titre,
+                        tag: formatYear(evt.date),
+                        options: options,
+                        correctEvt: evt
+                    });
+                } else if (qType === 'span') {
+                    // Question : Quelle est la durée / l'intervalle exact ?
+                    const correctText = formatEventDate(evt);
+                    const durationText = formatEventDuration(evt);
+                    const diff = Math.abs(evt.dateFin - evt.date);
+                    
+                    // Générer 3 faux intervalles décalés
+                    const offsets = [-30, -15, 15, 30, -50, 50, -100, 100];
+                    const shuffledOffsets = shuffleArray(offsets);
+                    const distractorSpans = [];
+                    for (let off of shuffledOffsets) {
+                        const fakeStart = evt.date + off;
+                        const fakeEnd = fakeStart + diff;
+                        const label = `${formatYear(fakeStart)} – ${formatYear(fakeEnd)}`;
+                        if (label !== correctText && !distractorSpans.includes(label)) {
+                            distractorSpans.push(label);
+                            if (distractorSpans.length === 3) break;
+                        }
+                    }
+
+                    const options = shuffleArray([
+                        { main: correctText, sub: durationText ? `Durée : ${durationText}` : '', isCorrect: true, evt: evt },
+                        ...distractorSpans.map(s => ({ main: s, sub: durationText ? `Durée : ${durationText}` : '', isCorrect: false, evt: null }))
+                    ]);
+
+                    questions.push({
+                        kicker: "Durée & Période exacte",
+                        prompt: evt.titre,
+                        tag: "Événement de longue durée",
+                        options: options,
+                        correctEvt: evt
+                    });
+                } else if (qType === 'contemporary') {
+                    // Question : Quel événement s'est déroulé dans la même tranche chronologique ?
+                    const halfSpan = Math.max(20, Math.round(span * 0.15));
+                    const contemporaries = pool.filter(e => e.id !== evt.id && Math.abs(e.date - evt.date) <= halfSpan);
+                    const distantEvents = pool.filter(e => e.id !== evt.id && Math.abs(e.date - evt.date) > halfSpan);
+
+                    if (contemporaries.length > 0 && distantEvents.length >= 3) {
+                        const correctOther = contemporaries[Math.floor(Math.random() * contemporaries.length)];
+                        const distractors = shuffleArray(distantEvents).slice(0, 3);
+
+                        const options = shuffleArray([
+                            { main: correctOther.titre, sub: formatYear(correctOther.date), isCorrect: true, evt: correctOther },
+                            ...distractors.map(d => ({ main: d.titre, sub: formatYear(d.date), isCorrect: false, evt: d }))
+                        ]);
+
+                        questions.push({
+                            kicker: "Contemporains & Même époque",
+                            prompt: `Lequel de ces événements est contemporain de :`,
+                            tag: `« ${evt.titre} » (${formatYear(evt.date)})`,
+                            options: options,
+                            correctEvt: evt
+                        });
+                    } else {
+                        // Fallback vers century
+                        qType = 'century';
+                    }
+                }
+
+                if (qType === 'century') {
+                    // Question : Dans quel siècle ou grande tranche se situe l'événement ?
+                    let correctLabel = (span > 300) ? getCenturyLabel(evt.date) : getPeriodSliceLabel(evt.date, span);
+                    let step = (span > 300) ? 100 : ((span <= 60) ? 10 : ((span <= 150) ? 25 : 50));
+
+                    const distractorLabels = [];
+                    const offsets = [-3, -2, -1, 1, 2, 3, 4, -4];
+                    for (let off of offsets) {
+                        const fakeYear = evt.date + (off * step);
+                        const fakeLabel = (span > 300) ? getCenturyLabel(fakeYear) : getPeriodSliceLabel(fakeYear, span);
+                        if (fakeLabel !== correctLabel && !distractorLabels.includes(fakeLabel)) {
+                            distractorLabels.push(fakeLabel);
+                            if (distractorLabels.length === 3) break;
+                        }
+                    }
+
+                    const options = shuffleArray([
+                        { main: correctLabel, sub: "Tranche chronologique", isCorrect: true, evt: evt },
+                        ...distractorLabels.map(l => ({ main: l, sub: "Tranche chronologique", isCorrect: false, evt: null }))
+                    ]);
+
+                    questions.push({
+                        kicker: "Tranche chronologique & Siècle",
+                        prompt: evt.titre,
+                        tag: evt.axe ? `Axe : ${evt.axe}` : '',
+                        options: options,
+                        correctEvt: evt
+                    });
+                }
+            });
+
+            return shuffleArray(questions);
+        }
+
+        function renderPeriodesQuestion() {
+            if (periodesIndex >= periodesQuestions.length) {
+                endGame(true);
+                return;
+            }
+
+            isAnimating = false;
+            const q = periodesQuestions[periodesIndex];
+
+            document.getElementById('periodes-kicker').innerText = q.kicker;
+            document.getElementById('periodes-prompt').innerText = q.prompt;
+
+            const tagEl = document.getElementById('periodes-tag');
+            if (q.tag) {
+                tagEl.innerText = q.tag;
+                tagEl.classList.remove('hidden');
+            } else {
+                tagEl.classList.add('hidden');
+            }
+
+            const optionsContainer = document.getElementById('periodes-options');
+            optionsContainer.innerHTML = '';
+
+            q.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'periodes-option';
+                btn.innerHTML = `<span class="periodes-option-main">${opt.main}</span>` +
+                               (opt.sub ? `<span class="periodes-option-sub">${opt.sub}</span>` : '');
+                btn.onclick = () => answerPeriodes(opt, idx);
+                optionsContainer.appendChild(btn);
+            });
+
+            document.getElementById('periodes-hud-count').innerText = `${periodesIndex + 1} / ${periodesQuestions.length}`;
+            const pct = Math.round(periodesIndex / periodesQuestions.length * 100);
+            document.getElementById('periodes-progress-fill').style.width = pct + '%';
+            updatePeriodesHUD();
+        }
+
+        function answerPeriodes(chosenOption, optionIndex) {
+            if (isAnimating) return;
+            isAnimating = true;
+
+            const q = periodesQuestions[periodesIndex];
+            const isPerfect = chosenOption.isCorrect;
+
+            let points = 0;
+            if (isPerfect) {
+                points = Math.round(100 * comboMultiplier);
+                comboMultiplier = Math.min(5.0, comboMultiplier + 0.1);
+                score += points;
+            } else {
+                lives -= 1;
+                comboMultiplier = 1.0;
+            }
+
+            if (q.correctEvt) {
+                srsRecord(q.correctEvt.id, isPerfect);
+            }
+
+            const allButtons = document.querySelectorAll('#periodes-options .periodes-option');
+            allButtons.forEach((btn, idx) => {
+                btn.style.pointerEvents = 'none';
+                if (q.options[idx].isCorrect) {
+                    btn.classList.add('correct');
+                } else if (idx === optionIndex) {
+                    btn.classList.add('wrong');
+                }
+            });
+
+            updatePeriodesHUD();
+
+            setTimeout(() => {
+                periodesIndex++;
+                if (lives <= 0) {
+                    endGame(false);
+                } else {
+                    renderPeriodesQuestion();
+                }
+            }, 1250);
+        }
+
+        function updatePeriodesHUD() {
+            document.getElementById('periodes-hud-score').innerText = score;
+            const comboChip = document.getElementById('periodes-hud-combo');
+            if (comboMultiplier > 1) {
+                comboChip.innerText = `×${comboMultiplier.toFixed(1)}`;
+                comboChip.classList.remove('hidden');
+            } else {
+                comboChip.classList.add('hidden');
+            }
+            let pips = '';
+            for (let i = 0; i < 3; i++) {
+                pips += `<span class="pip${i < lives ? '' : ' spent'}"></span>`;
+            }
+            document.getElementById('periodes-hud-lives').innerHTML = pips;
+        }
+
         // === MODE LE FIL DU TEMPS ===
         // Les événements du pool sont triés chronologiquement (du plus ancien au plus
         // récent) et présentés un par un ; il faut en saisir l'année exacte au clavier
@@ -8820,7 +9113,8 @@ events: [
                 }
             }
 
-            row.innerHTML = `<span class="entry-year">${formatYear(evt.date)}</span>` +
+            const dateText = currentMode === 'discovery' ? formatEventDate(evt) : formatYear(evt.date);
+            row.innerHTML = `<span class="entry-year">${dateText}</span>` +
                 `<span class="entry-tick"></span>` +
                 `<span class="entry-body"><span class="entry-title">${evt.titre}</span>` +
                 axeHtml +
@@ -8956,6 +9250,7 @@ events: [
                 let winTitle = "Bravo ! Frise complétée !";
                 if (currentMode === 'quiz') winTitle = "Bravo ! Quiz terminé !";
                 if (currentMode === 'fil') winTitle = "Bravo ! Fil du temps parcouru !";
+                if (currentMode === 'periodes') winTitle = "Bravo ! Périodes & Ères maîtrisées !";
                 titleElement.innerText = winTitle;
                 titleElement.style.color = "#27ae60"; 
             } else {
@@ -9022,7 +9317,9 @@ events: [
                 }
             }
 
-            document.getElementById('modal-date').innerText = formatYear(evt.date);
+            const duration = formatEventDuration(evt);
+            const dateStr = formatEventDate(evt);
+            document.getElementById('modal-date').innerText = duration ? `${dateStr} (Durée : ${duration})` : dateStr;
             document.getElementById('modal-desc').innerText = evt.description;
             document.getElementById('modal-wiki').href = evt.wikipedia;
 
