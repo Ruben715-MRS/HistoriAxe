@@ -64,18 +64,16 @@
         .data-card-delete:hover { opacity: 1; transform: scale(1.15); background: rgba(231,76,60,0.25); }
         .empty-msg { font-size: 18px; color: var(--muted-text); font-style: italic; margin-top: 30px; text-align: center; width: 100%; }
         
-        /* Rangée des cartes spéciales (Favoris / Mes thèmes / Découvrir / Révision), en tête de
+        /* Rangée des 3 cartes spéciales (Favoris / Découvrir / Révision), en tête de
            l'écran des catégories. Format compact façon carte-thème, mais chacune dans
            sa propre teinte pour bien les distinguer des catégories ordinaires. */
-        .special-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; width: 100%; max-width: 950px; margin: 0 auto 20px; }
-        @media (max-width: 860px) { .special-row { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 480px) { .special-row { grid-template-columns: 1fr; } }
-        .special-card { border-radius: 12px; padding: 16px 18px; color: white; display: flex; flex-direction: column; justify-content: center; gap: 5px; cursor: pointer; box-shadow: var(--card-shadow); transition: transform 0.2s, box-shadow 0.2s; min-height: 84px; }
+        .special-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; width: 100%; max-width: 800px; margin: 0 auto 20px; }
+        @media (max-width: 640px) { .special-row { grid-template-columns: 1fr; } }
+        .special-card { border-radius: 12px; padding: 18px 20px; color: white; display: flex; flex-direction: column; justify-content: center; gap: 5px; cursor: pointer; box-shadow: var(--card-shadow); transition: transform 0.2s, box-shadow 0.2s; min-height: 88px; }
         .special-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
-        .special-card-title { font-size: 15px; font-weight: bold; display: flex; align-items: center; justify-content: space-between; gap: 6px; }
-        .special-card-subtitle { font-size: 12.5px; opacity: 0.85; }
+        .special-card-title { font-size: 16px; font-weight: bold; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+        .special-card-subtitle { font-size: 13px; opacity: 0.85; }
         .special-card.favorites { background: linear-gradient(135deg, #B8892E, #E3B24F); }
-        .special-card.custom-themes { background: linear-gradient(135deg, #1E8449, #2ECC71); }
         .special-card.discover { background: linear-gradient(135deg, #5B4B8A, #8672B8); }
         .special-card.revision { background: linear-gradient(135deg, #B23A32, #D9534F); }
 
@@ -6671,11 +6669,11 @@ events: [
             const container = document.getElementById('categories-container');
             container.innerHTML = ''; 
 
-            // Rangée des 4 cartes spéciales en tête de liste : Favoris, Mes thèmes, Découvrir, Réviser.
+            // Rangée des 3 cartes spéciales, toujours en tête de liste : Favoris,
+            // Découvrir un événement au hasard, et Réviser mes points faibles.
             const weakCount = getWeakEvents().length;
             const favCount = favoritesLoad().length;
             const totalEventsCount = getAllEvents().length;
-            const customThemesCount = customCategory.themes ? customCategory.themes.length : 0;
 
             const specialRow = document.createElement('div');
             specialRow.className = 'special-row';
@@ -6684,25 +6682,16 @@ events: [
             favCard.className = 'special-card favorites';
             favCard.innerHTML = `
                 <div class="special-card-title">⭐ Favoris</div>
-                <div class="special-card-subtitle">${favCount === 0 ? 'Aucun thème' : (favCount === 1 ? '1 thème enregistré' : favCount + ' thèmes enregistrés')}</div>
+                <div class="special-card-subtitle">${favCount === 0 ? 'Aucun thème enregistré' : (favCount === 1 ? '1 thème enregistré' : favCount + ' thèmes enregistrés')}</div>
             `;
             favCard.onclick = openFavorites;
             specialRow.appendChild(favCard);
 
-            const customThemesCard = document.createElement('div');
-            customThemesCard.className = 'special-card custom-themes';
-            customThemesCard.innerHTML = `
-                <div class="special-card-title">🎨 Mes thèmes</div>
-                <div class="special-card-subtitle">${customThemesCount === 0 ? '➕ Créer un thème' : (customThemesCount === 1 ? '1 thème créé' : customThemesCount + ' thèmes créés')}</div>
-            `;
-            customThemesCard.onclick = openCustomThemes;
-            specialRow.appendChild(customThemesCard);
-
             const discoverCard = document.createElement('div');
             discoverCard.className = 'special-card discover';
             discoverCard.innerHTML = `
-                <div class="special-card-title">🎲 Découvrir</div>
-                <div class="special-card-subtitle">${totalEventsCount} événements</div>
+                <div class="special-card-title">🎲 Découvrir un événement au hasard</div>
+                <div class="special-card-subtitle">${totalEventsCount} événements à explorer</div>
             `;
             discoverCard.onclick = discoverRandomEvent;
             specialRow.appendChild(discoverCard);
@@ -6710,8 +6699,8 @@ events: [
             const revisionCard = document.createElement('div');
             revisionCard.className = 'special-card revision';
             revisionCard.innerHTML = `
-                <div class="special-card-title">🔁 Points faibles <span class="reset-srs-btn" id="reset-srs-btn" title="Réinitialiser le suivi de révision">⟲</span></div>
-                <div class="special-card-subtitle">${weakCount > 0 ? weakCount + ' à retravailler' : 'Aucun point faible'}</div>
+                <div class="special-card-title">🔁 Réviser mes points faibles <span class="reset-srs-btn" id="reset-srs-btn" title="Réinitialiser le suivi de révision">⟲</span></div>
+                <div class="special-card-subtitle">${weakCount > 0 ? weakCount + ' événement(s) à retravailler' : 'Aucun point faible pour l\'instant'}</div>
             `;
             revisionCard.onclick = startRevision;
             specialRow.appendChild(revisionCard);
