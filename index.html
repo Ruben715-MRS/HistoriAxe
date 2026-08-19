@@ -498,6 +498,78 @@
         [data-layout="horizontal"] .slot-dash { width: 100%; border-top: none; border-left: 1px dashed var(--rule); height: 14px; flex: none; }
         [data-layout="horizontal"] .slot:hover .slot-dash, [data-layout="horizontal"] .slot:focus-visible .slot-dash { border-left-color: var(--amber); border-top-color: transparent; }
         [data-layout="horizontal"] .slot-wrong .slot-dash { border-left-style: solid; border-top: none; }
+
+/* Mode Multijoueurs */
+.multi-card {
+    background-color: #8e44ad !important;
+}
+.multiplayer-setup-container {
+    max-width: 500px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    color: #333;
+    text-align: center;
+}
+.multiplayer-setup-container h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+.multiplayer-setup-container select, .multiplayer-setup-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+.multi-turn-banner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #2c3e50;
+    color: white;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    z-index: 1000;
+    width: 90%;
+    max-width: 400px;
+}
+.multi-turn-banner h2 { margin-bottom: 20px; font-size: 24px; }
+.multi-end-podium {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 30px 0;
+}
+.podium-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    align-items: center;
+    font-weight: bold;
+    border-left: 5px solid #ccc;
+}
+.podium-row.gold { border-left-color: #FFD700; background: #fff9e6; }
+.podium-row.silver { border-left-color: #C0C0C0; background: #f2f2f2; }
+.podium-row.bronze { border-left-color: #CD7F32; background: #faf0e6; }
+.multi-player-hud {
+    font-weight: bold;
+    color: white;
+    background: #8e44ad;
+    padding: 2px 8px;
+    border-radius: 12px;
+    margin-right: 10px;
+    font-size: 0.9em;
+}
+
     </style>
 </head>
 <body>
@@ -637,11 +709,58 @@
                 <h3>Le fil du temps</h3>
                 <p>Saisissez l'année exacte au clavier.</p>
             </div>
+            <div class="mode-card multi-card" onclick="showMultiplayerSetup()">
+                <h3>Multijoueurs</h3>
+                <p>À tour de rôle, élimination au bout de 2 erreurs.</p>
+            </div>
         </div>
 
         <div style="margin-top: 30px; margin-bottom: 50px; display:flex; gap:15px; justify-content:center;">
             <button class="btn btn-secondary" onclick="backFromModes()">Retour</button>
             <button class="btn" style="background-color:#E67E22;" onclick="openLeaderboard()">🏆 Historique des scores</button>
+        </div>
+    </div>
+
+
+    <!-- ÉCRAN MULTIJOUEURS SETUP -->
+    <div id="screen-multiplayer-setup" class="hidden">
+        <div class="header">
+            <h2>Mode Multijoueurs</h2>
+        </div>
+        <div class="multiplayer-setup-container">
+            <label for="multi-player-count">Nombre de joueurs :</label>
+            <select id="multi-player-count" onchange="renderMultiplayerNameInputs()">
+                <option value="2">2 Joueurs</option>
+                <option value="3">3 Joueurs</option>
+                <option value="4">4 Joueurs</option>
+            </select>
+            <div id="multi-player-names">
+                <!-- Inputs générés dynamiquement -->
+            </div>
+            <button class="btn" style="width:100%; margin-top:20px; background-color:#8e44ad;" onclick="startMultiplayerGame()">Commencer la partie</button>
+            <button class="btn btn-secondary" style="width:100%; margin-top:10px;" onclick="showScreen('screen-modes')">Annuler</button>
+        </div>
+    </div>
+
+    <!-- ÉCRAN MULTIJOUEURS TURN -->
+    <div id="screen-multi-turn" class="hidden" style="position: fixed; inset: 0; background: #ecf0f1; z-index: 9999;">
+        <div class="multi-turn-banner">
+            <h2 id="multi-turn-text">À Joueur 1 de jouer !</h2>
+            <button class="btn" style="background-color:#E67E22; font-size:20px; padding:15px 30px;" onclick="resumeMultiplayerTurn()">Prêt ?</button>
+        </div>
+    </div>
+
+    <!-- ÉCRAN MULTIJOUEURS FIN -->
+    <div id="screen-multiplayer-end" class="hidden">
+        <div class="header">
+            <h2>Résultats Multijoueurs</h2>
+        </div>
+        <div class="multiplayer-setup-container" style="max-width:600px;">
+            <div id="multi-podium" class="multi-end-podium">
+                <!-- Classement généré dynamiquement -->
+            </div>
+            <button class="btn" style="background-color:#8e44ad; margin-bottom:15px; width:100%;" onclick="showMultiplayerSetup()">Rejouer</button>
+            <button class="btn btn-secondary" style="width:100%;" onclick="showScreen('screen-modes')">Retour aux modes</button>
         </div>
     </div>
 
@@ -7675,7 +7794,14 @@ events: [
         // Système de points : combo (série de bonnes réponses) et étendue chronologique
         // de la partie en cours (sert à normaliser l'écart d'années des erreurs).
         // Partagés entre le mode frise et le mode Quiz, qui suivent le même principe.
+
         let comboMultiplier = 1.0;
+
+        // --- MULTIPLAYER STATE ---
+        let multiPlayers = [];
+        let currentMultiPlayerIndex = 0;
+        let multiGameActive = false;
+
         let currentGameSpan = 1;
         let questionStartTime = 0;
 
@@ -8275,6 +8401,98 @@ events: [
             }
         }
 
+
+        // --- MULTIPLAYER LOGIC ---
+        function showMultiplayerSetup() {
+            showScreen('screen-multiplayer-setup');
+            renderMultiplayerNameInputs();
+        }
+
+        function renderMultiplayerNameInputs() {
+            const count = parseInt(document.getElementById('multi-player-count').value);
+            const container = document.getElementById('multi-player-names');
+            container.innerHTML = '';
+            for (let i = 1; i <= count; i++) {
+                const existingInput = document.getElementById(`multi-name-${i}`);
+                const defaultVal = existingInput ? existingInput.value : (multiPlayers && multiPlayers[i-1] ? multiPlayers[i-1].name : `Joueur ${i}`);
+                container.innerHTML += `<input type="text" id="multi-name-${i}" placeholder="Nom du joueur ${i}" value="${defaultVal}">`;
+            }
+        }
+
+        function startMultiplayerGame() {
+            const count = parseInt(document.getElementById('multi-player-count').value);
+            multiPlayers = [];
+            for (let i = 1; i <= count; i++) {
+                let name = document.getElementById(`multi-name-${i}`).value.trim();
+                if (!name) name = `Joueur ${i}`;
+                multiPlayers.push({ name: name, score: 0, lives: 2, comboMultiplier: 1.0, eliminated: false });
+            }
+            multiGameActive = true;
+            currentMultiPlayerIndex = 0;
+            
+            startActualGame('multi');
+            
+            document.getElementById('screen-game').classList.add('hidden');
+            document.getElementById('screen-multi-turn').classList.remove('hidden');
+            document.getElementById('multi-turn-text').innerText = `À ${multiPlayers[currentMultiPlayerIndex].name} de jouer !`;
+        }
+
+        function resumeMultiplayerTurn() {
+            document.getElementById('screen-multi-turn').classList.add('hidden');
+            document.getElementById('screen-game').classList.remove('hidden');
+            pickNextEvent();
+            updateHUD();
+        }
+
+        function nextMultiPlayerTurn() {
+            if (!multiGameActive) return;
+            
+            let alivePlayers = multiPlayers.filter(p => !p.eliminated);
+            if (alivePlayers.length === 0) {
+                setTimeout(() => endMultiplayerGame(), 1000);
+                return;
+            }
+            if (currentPool.length === 0) {
+                setTimeout(() => endMultiplayerGame(), 1000);
+                return;
+            }
+
+            // Next player
+            let attempts = 0;
+            do {
+                currentMultiPlayerIndex = (currentMultiPlayerIndex + 1) % multiPlayers.length;
+                attempts++;
+            } while (multiPlayers[currentMultiPlayerIndex].eliminated && attempts <= multiPlayers.length);
+
+            document.getElementById('screen-game').classList.add('hidden');
+            document.getElementById('screen-multi-turn').classList.remove('hidden');
+            document.getElementById('multi-turn-text').innerText = `À ${multiPlayers[currentMultiPlayerIndex].name} de jouer !`;
+        }
+
+        function endMultiplayerGame() {
+            multiGameActive = false;
+            showScreen('screen-multiplayer-end');
+            
+            const sorted = [...multiPlayers].sort((a, b) => b.score - a.score);
+            const container = document.getElementById('multi-podium');
+            container.innerHTML = '';
+            
+            const medals = ['🥇', '🥈', '🥉', ''];
+            const classes = ['gold', 'silver', 'bronze', ''];
+            
+            sorted.forEach((p, index) => {
+                const medal = index < 3 ? medals[index] : `${index+1}.`;
+                const cls = index < 3 ? classes[index] : '';
+                const eliminatedText = p.eliminated ? ' <em>(Éliminé)</em>' : '';
+                container.innerHTML += `
+                    <div class="podium-row ${cls}">
+                        <span>${medal} ${p.name} ${eliminatedText}</span>
+                        <span>${p.score} pts</span>
+                    </div>
+                `;
+            });
+        }
+        
         // LANCEMENT DU JEU
         function startActualGame(mode) {
             currentMode = mode;
@@ -8310,6 +8528,7 @@ events: [
             
             if (mode === 'training' || mode === 'discovery') lives = Infinity;
             else if (mode === 'expert') lives = 1;
+            else if (mode === 'multi') lives = 2; // unused directly, but for safety
             else lives = 3; 
             
             score = 0;
@@ -8352,7 +8571,7 @@ events: [
 
             updateHUD();
             
-            if (mode === 'discovery') {
+            if (mode === 'discovery' || mode === 'multi') {
                 renderTimeline();
             } else {
                 pickNextEvent();
@@ -9061,7 +9280,11 @@ events: [
         // LOGIQUE DE JEU
         function pickNextEvent() {
             if (currentPool.length === 0) {
-                endGame(true); 
+                if (currentMode === 'multi') {
+                    endMultiplayerGame();
+                } else {
+                    endGame(true); 
+                }
                 return;
             }
             eventToPlace = currentPool.pop();
@@ -9077,22 +9300,40 @@ events: [
         }
 
         function updateHUD() {
-            document.getElementById('hud-score').innerText = score;
-            const comboChip = document.getElementById('hud-combo');
-            if (comboMultiplier > 1) {
-                comboChip.innerText = `×${comboMultiplier.toFixed(1)}`;
-                comboChip.classList.remove('hidden');
-            } else {
-                comboChip.classList.add('hidden');
-            }
-
-            if (currentMode !== 'training' && currentMode !== 'discovery') {
-                const maxLives = (currentMode === 'expert') ? 1 : 3;
-                let pips = '';
-                for (let i = 0; i < maxLives; i++) {
-                    pips += `<span class="pip${i < lives ? '' : ' spent'}"></span>`;
+            if (currentMode === 'multi') {
+                const cp = multiPlayers[currentMultiPlayerIndex];
+                document.getElementById('hud-score').innerText = cp.score;
+                const comboChip = document.getElementById('hud-combo');
+                if (cp.comboMultiplier > 1) {
+                    comboChip.innerText = `×${cp.comboMultiplier.toFixed(1)}`;
+                    comboChip.classList.remove('hidden');
+                } else {
+                    comboChip.classList.add('hidden');
+                }
+                
+                let pips = `<span class="multi-player-hud">${cp.name}</span> `;
+                for (let i = 0; i < 2; i++) {
+                    pips += `<span class="pip${i < cp.lives ? '' : ' spent'}"></span>`;
                 }
                 document.getElementById('hud-lives').innerHTML = pips;
+            } else {
+                document.getElementById('hud-score').innerText = score;
+                const comboChip = document.getElementById('hud-combo');
+                if (comboMultiplier > 1) {
+                    comboChip.innerText = `×${comboMultiplier.toFixed(1)}`;
+                    comboChip.classList.remove('hidden');
+                } else {
+                    comboChip.classList.add('hidden');
+                }
+
+                if (currentMode !== 'training' && currentMode !== 'discovery') {
+                    const maxLives = (currentMode === 'expert') ? 1 : 3;
+                    let pips = '';
+                    for (let i = 0; i < maxLives; i++) {
+                        pips += `<span class="pip${i < lives ? '' : ' spent'}"></span>`;
+                    }
+                    document.getElementById('hud-lives').innerHTML = pips;
+                }
             }
 
             if (currentMode !== 'discovery') {
@@ -9196,7 +9437,12 @@ events: [
             let pts = Math.round(100 * ratio * (isPerfect ? comboMultiplier : 1));
             if (opts.speedBonus) pts += opts.speedBonus;
             if (opts.halved) pts = Math.round(pts / 2);
-            score += pts;
+            if (currentMode === 'multi') {
+                multiPlayers[currentMultiPlayerIndex].score += pts;
+                multiPlayers[currentMultiPlayerIndex].comboMultiplier = isPerfect ? Math.round((multiPlayers[currentMultiPlayerIndex].comboMultiplier + 0.1) * 10) / 10 : 1.0;
+            } else {
+                score += pts;
+            }
             comboMultiplier = isPerfect ? Math.round((comboMultiplier + 0.1) * 10) / 10 : 1.0;
             return pts;
         }
@@ -9228,14 +9474,22 @@ events: [
                 const placedId = eventToPlace.id;
                 placedEvents.splice(index, 0, eventToPlace);
                 updateHUD();
-                pickNextEvent();
                 focusEntry(placedId, 'entry-new');
+                if (currentMode === 'multi') {
+                    setTimeout(() => nextMultiPlayerTurn(), 1000);
+                } else {
+                    pickNextEvent();
+                }
             } else {
                 isAnimating = true;
                 awardPoints(gap, false);
                 srsRecord(eventToPlace.id, false);
 
-                if (currentMode !== 'training') {
+                if (currentMode === 'multi') {
+                    let cp = multiPlayers[currentMultiPlayerIndex];
+                    cp.lives -= 1;
+                    if (cp.lives <= 0) cp.eliminated = true;
+                } else if (currentMode !== 'training') {
                     lives -= 1;
                 }
                 updateHUD();
@@ -9267,7 +9521,10 @@ events: [
                 setTimeout(() => {
                     placedEvents.splice(correctIndex, 0, eventToPlace);
 
-                    if (lives <= 0 && currentMode !== 'training') {
+                    if (currentMode === 'multi') {
+                        focusEntry(missedId, 'entry-reveal');
+                        setTimeout(() => nextMultiPlayerTurn(), 900);
+                    } else if (lives <= 0 && currentMode !== 'training') {
                         renderTimeline();
                         focusEntry(missedId, 'entry-reveal');
                         setTimeout(() => endGame(false), 900);
@@ -9348,6 +9605,7 @@ events: [
             }
             showConfirm("Voulez-vous vraiment quitter cette partie ?", () => {
                 stopTimer();
+                multiGameActive = false;
                 showScreen(screenAfterGame());
             });
         }
