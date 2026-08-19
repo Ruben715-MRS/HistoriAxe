@@ -932,7 +932,6 @@
                 </div>
                 <p class="settings-hint">« Auto » suit la rotation de l'appareil : portrait affiche la frise verticale, paysage l'affiche horizontale.</p>
             </div>
-
             <div class="settings-group">
                 <div class="settings-label">Apparence</div>
                 <div class="segmented" id="settings-appearance">
@@ -942,6 +941,7 @@
                 </div>
                 <p class="settings-hint">« Auto » suit le réglage clair/sombre programmé sur votre appareil.</p>
             </div>
+
             <div class="settings-group">
                 <div class="settings-label">Données de jeu</div>
                 <button class="btn btn-secondary" style="width:100%; margin-bottom:12px;" onclick="openScoringInfo()">📖 Explications du calcul des points</button>
@@ -956,6 +956,60 @@
         function formatYear(year) {
             if (year < 0) return Math.abs(year) + " av. J.-C.";
             return year;
+        }
+
+        function formatEventDate(evt) {
+            if (!evt || evt.date == null) return "";
+            if (evt.dateFin != null && evt.dateFin !== evt.date) {
+                return `${formatYear(evt.date)} – ${formatYear(evt.dateFin)}`;
+            }
+            return `${formatYear(evt.date)}`;
+        }
+
+        function formatEventDuration(evt) {
+            if (!evt || evt.dateFin == null || evt.dateFin === evt.date) return null;
+            const diff = Math.abs(evt.dateFin - evt.date);
+            if (diff === 1) return "1 an";
+            if (diff > 1) return `${diff} ans`;
+            return null;
+        }
+
+        function toRoman(num) {
+            if (!num || num <= 0) return '';
+            const lookup = [
+                [1000, 'M'], [900, 'CM'], [500, 'D'], [400, 'CD'],
+                [100, 'C'], [90, 'XC'], [50, 'L'], [40, 'XL'],
+                [10, 'X'], [9, 'IX'], [5, 'V'], [4, 'IV'], [1, 'I']
+            ];
+            let roman = '';
+            for (const [val, str] of lookup) {
+                while (num >= val) {
+                    roman += str;
+                    num -= val;
+                }
+            }
+            return roman;
+        }
+
+        function getCenturyLabel(year) {
+            if (year == null) return '';
+            if (year < 0) {
+                const c = Math.ceil(Math.abs(year) / 100);
+                return c === 1 ? 'Ier siècle av. J.-C.' : `${toRoman(c)}e siècle av. J.-C.`;
+            } else {
+                const c = Math.ceil((year === 0 ? 1 : year) / 100);
+                return c === 1 ? 'Ier siècle' : `${toRoman(c)}e siècle`;
+            }
+        }
+
+        function getPeriodSliceLabel(year, span) {
+            const step = (span > 300) ? 100 : ((span <= 60) ? 10 : ((span <= 150) ? 25 : 50));
+            const start = Math.floor(year / step) * step;
+            if (step === 10 && start >= 1000) {
+                return `Années ${start}`;
+            }
+            const end = start + step;
+            return `${formatYear(start)} – ${formatYear(end)}`;
         }
 
         // === BASE DE DONNÉES STRUCTURÉE ===
