@@ -39,9 +39,9 @@
         .btn { background-color: var(--primary-blue); color: white; border: none; padding: 12px 24px; border-radius: 8px; font-size: 16px; cursor: pointer; font-weight: bold; transition: opacity 0.2s; }
         .btn:hover { opacity: 0.8; }
         
-/* ÉCRAN D'ACCUEIL AVEC IMAGE */
-        #screen-home { flex: 1; display: flex; background-color: #E6D5B8; cursor: pointer; justify-content: center; align-items: center; overflow: hidden; }
-        .home-image { width: 100%; height: 100%; object-fit: contain; }
+        /* ÉCRAN D'ACCUEIL AVEC IMAGE */
+        #screen-home { width: 100%; height: 100%; flex: 1; display: flex; background-color: #E6D5B8; cursor: pointer; justify-content: center; align-items: center; overflow: hidden; }
+        .home-image { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
         
         /* LISTES : CATÉGORIES & THÈMES */
         .list-screen { flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; }
@@ -60,18 +60,22 @@
         .data-card-fav { flex-shrink: 0; font-size: 21px; line-height: 1; cursor: pointer; opacity: 0.75; padding: 2px; transition: transform 0.15s ease, opacity 0.15s ease; }
         .data-card-fav:hover { opacity: 1; transform: scale(1.18); }
         .data-card-fav.is-fav { color: #FFD54A; opacity: 1; }
+        .data-card-delete { flex-shrink: 0; font-size: 18px; line-height: 1; cursor: pointer; opacity: 0.75; padding: 4px 6px; border-radius: 6px; transition: transform 0.15s ease, opacity 0.15s ease, background 0.15s; }
+        .data-card-delete:hover { opacity: 1; transform: scale(1.15); background: rgba(231,76,60,0.25); }
         .empty-msg { font-size: 18px; color: var(--muted-text); font-style: italic; margin-top: 30px; text-align: center; width: 100%; }
         
-        /* Rangée des 3 cartes spéciales (Favoris / Découvrir / Révision), en tête de
+        /* Rangée des cartes spéciales (Favoris / Mes thèmes / Découvrir / Révision), en tête de
            l'écran des catégories. Format compact façon carte-thème, mais chacune dans
            sa propre teinte pour bien les distinguer des catégories ordinaires. */
-        .special-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; width: 100%; max-width: 800px; margin: 0 auto 20px; }
-        @media (max-width: 640px) { .special-row { grid-template-columns: 1fr; } }
-        .special-card { border-radius: 12px; padding: 18px 20px; color: white; display: flex; flex-direction: column; justify-content: center; gap: 5px; cursor: pointer; box-shadow: var(--card-shadow); transition: transform 0.2s, box-shadow 0.2s; min-height: 88px; }
+        .special-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; width: 100%; max-width: 950px; margin: 0 auto 20px; }
+        @media (max-width: 860px) { .special-row { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 480px) { .special-row { grid-template-columns: 1fr; } }
+        .special-card { border-radius: 12px; padding: 16px 18px; color: white; display: flex; flex-direction: column; justify-content: center; gap: 5px; cursor: pointer; box-shadow: var(--card-shadow); transition: transform 0.2s, box-shadow 0.2s; min-height: 84px; }
         .special-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
-        .special-card-title { font-size: 16px; font-weight: bold; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
-        .special-card-subtitle { font-size: 13px; opacity: 0.85; }
+        .special-card-title { font-size: 15px; font-weight: bold; display: flex; align-items: center; justify-content: space-between; gap: 6px; }
+        .special-card-subtitle { font-size: 12.5px; opacity: 0.85; }
         .special-card.favorites { background: linear-gradient(135deg, #B8892E, #E3B24F); }
+        .special-card.custom-themes { background: linear-gradient(135deg, #1E8449, #2ECC71); }
         .special-card.discover { background: linear-gradient(135deg, #5B4B8A, #8672B8); }
         .special-card.revision { background: linear-gradient(135deg, #B23A32, #D9534F); }
 
@@ -98,6 +102,29 @@
         .mode-card.locked h3 { display: flex; align-items: center; justify-content: center; gap: 7px; }
         .mode-card.quiz-card { background: linear-gradient(135deg, #1F8A70, #4FC3A1); }
         .mode-card.fil-card { background: linear-gradient(135deg, #7A4B2E, #C98A4B); }
+
+        .mode-separator { border: none; border-top: 2px solid var(--border-soft); margin: 30px auto; width: 60%; max-width: 200px; border-radius: 2px; }
+
+        .selection-list { text-align: left; background: var(--surface); border: 1px solid var(--rule); border-radius: 12px; max-height: 50vh; overflow-y: auto; padding: 10px; margin-bottom: 20px; }
+        .selection-item { display: flex; align-items: center; gap: 12px; padding: 10px; border-bottom: 1px solid var(--rule); cursor: pointer; }
+        .selection-item:last-child { border-bottom: none; }
+        .selection-item:hover { background: var(--surface-2); border-radius: 6px; }
+        .selection-item input[type="checkbox"] { width: 18px; height: 18px; cursor: pointer; }
+        .selection-item-title { flex: 1; font-weight: 600; color: var(--text-dark); font-size: 15px; }
+        .selection-item-date { font-family: var(--font-year); font-size: 14px; font-weight: 700; color: var(--primary-blue); }
+
+        .form-group { text-align: left; margin-bottom: 15px; }
+        .form-label { display: block; font-weight: 600; font-size: 14px; margin-bottom: 6px; color: var(--text-dark); }
+        .form-input { width: 100%; padding: 10px 12px; border: 1px solid var(--border-soft); border-radius: 8px; font: inherit; font-size: 15px; background: var(--paper); color: var(--ink); }
+        .form-input:focus { outline: none; border-color: var(--primary-blue); }
+        .form-row { display: flex; gap: 10px; }
+
+        .leaderboard-table { width: 100%; border-collapse: collapse; text-align: left; font-size: 14px; margin-bottom: 15px; }
+        .leaderboard-table th { padding: 10px 8px; border-bottom: 2px solid var(--rule); font-weight: 600; color: var(--muted-text); }
+        .leaderboard-table td { padding: 12px 8px; border-bottom: 1px solid var(--rule); color: var(--text-dark); }
+        .leaderboard-table tr:last-child td { border-bottom: none; }
+        .leaderboard-score { font-weight: 700; color: var(--primary-blue); }
+        .leaderboard-empty { text-align: center; padding: 30px 10px; color: var(--muted-text); font-style: italic; }
         .combo-chip { font-size: 11px; font-weight: 700; color: var(--primary-blue); background: rgba(107,142,173,0.14); border-radius: 999px; padding: 2px 8px; margin-left: 6px; }
         .mode-lock-icon { font-size: 18px; }
         .mode-unlock-hint { font-size: 13px; font-style: italic; opacity: 0.95; }
@@ -239,12 +266,17 @@
         .fil-question-card { background: var(--surface); border-radius: 14px; padding: 28px 24px; text-align: center; box-shadow: var(--card-shadow); margin-bottom: 22px; }
         .fil-kicker { font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted-text); margin-bottom: 10px; }
         .fil-prompt { font-size: 21px; font-weight: 700; color: var(--text-dark); line-height: 1.35; }
-        .fil-display { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 22px; }
+        .fil-display { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 12px; margin-bottom: 15px; }
         .fil-display-value { min-width: 140px; background: var(--surface); border: 2px solid var(--border-soft); border-radius: 12px; padding: 14px 10px; font-size: 28px; font-weight: 700; letter-spacing: 1px; color: var(--text-dark); text-align: center; }
         .fil-display-value.fil-feedback-correct { border-color: #2CA85A; background: rgba(44,168,90,0.14); color: #1D7A41; }
         .fil-display-value.fil-feedback-wrong { border-color: var(--danger-red); background: rgba(217,83,79,0.12); color: var(--danger-red); }
-        .fil-era-btn { flex-shrink: 0; padding: 12px 16px; border-radius: 12px; border: 2px solid var(--border-soft); background: var(--surface-2); color: var(--text-dark); font: inherit; font-weight: 700; font-size: 14px; cursor: pointer; white-space: nowrap; }
+        .fil-hint-btn { padding: 12px 16px; border-radius: 12px; border: 2px solid var(--border-soft); background: var(--surface-2); color: var(--text-dark); font: inherit; font-weight: 700; font-size: 14px; cursor: pointer; white-space: nowrap; transition: opacity 0.2s; justify-self: end; }
+        .fil-hint-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+        .fil-era-btn { padding: 12px 16px; border-radius: 12px; border: 2px solid var(--border-soft); background: var(--surface-2); color: var(--text-dark); font: inherit; font-weight: 700; font-size: 14px; cursor: pointer; white-space: nowrap; justify-self: start; }
         .fil-era-btn.era-bc { border-color: var(--primary-blue); color: var(--primary-blue); }
+        .fil-answer-badge { text-align: center; font-weight: 700; padding: 10px 16px; border-radius: 8px; margin: 0 auto 22px; max-width: 300px; font-size: 16px; }
+        .fil-answer-badge.badge-wrong { background: rgba(217,83,79,0.12); color: var(--danger-red); border: 1px solid var(--danger-red); }
+        .fil-answer-badge.badge-correct { background: rgba(44,168,90,0.14); color: #1D7A41; border: 1px solid #2CA85A; }
         .fil-keypad { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 16px; }
         .fil-key { background: var(--surface); border: 2px solid var(--border-soft); border-radius: 12px; padding: 16px 0; font: inherit; font-size: 20px; font-weight: 700; color: var(--text-dark); cursor: pointer; transition: transform 0.1s, background 0.1s; }
         .fil-key:hover { background: var(--surface-2); }
@@ -252,7 +284,6 @@
         .fil-key-erase { font-size: 17px; }
         .fil-validate-btn { display: block; width: 100%; padding: 16px 0; border-radius: 12px; border: none; background: var(--primary-blue); color: white; font: inherit; font-weight: 700; font-size: 17px; cursor: pointer; }
         .fil-validate-btn:disabled { opacity: 0.4; cursor: not-allowed; }
-        .fil-correct-hint { font-size: 14px; color: var(--muted-text); margin-top: 10px; min-height: 20px; }
         
         #screen-end { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; }
         .end-title { font-size: 32px; margin-bottom: 20px; color: var(--primary-blue); }
@@ -263,6 +294,7 @@
         .list-categories { display: flex; flex-direction: column; gap: 15px; width: 100%; max-width: 800px; margin: 0 auto; }
         .category-banner { background: linear-gradient(135deg, #2C3E50, #4CA1AF); color: white; border-radius: 12px; padding: 20px 25px; display: flex; justify-content: space-between; align-items: center; box-shadow: var(--card-shadow); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
         .category-banner.empires-banner { background: linear-gradient(135deg, #4A235A, #9B59B6); }
+        .category-banner.custom-theme-banner { background: linear-gradient(135deg, #1E8449, #2ECC71); }
         .subcategory-note { background: var(--surface-2); border-left: 4px solid var(--primary-blue); border-radius: 8px; padding: 14px 18px; margin: 0 auto 22px; max-width: 800px; }
         .subcategory-note-title { font-weight: 700; font-size: 14px; color: var(--text-dark); margin-bottom: 4px; }
         .subcategory-note p { font-size: 13px; line-height: 1.5; color: var(--ink-soft); margin: 0; }
@@ -280,6 +312,88 @@
         .axis-card p { font-size: 13px; color: var(--muted-text); }
         .axis-card.selected { border-color: var(--primary-blue); background: var(--selected-tint); }
         .axis-card.selected h3::before { content: "✓ "; color: var(--primary-blue); }
+        .axis-card.selected[data-axis="blue"]   { border-color: #2980b9; }
+        .axis-card.selected[data-axis="green"]  { border-color: #27ae60; }
+        .axis-card.selected[data-axis="orange"] { border-color: #e67e22; }
+        .axis-card.selected[data-axis="purple"] { border-color: #8e44ad; }
+        .axis-card.selected[data-axis="red"]    { border-color: #c0392b; }
+        .axis-card.selected[data-axis="teal"]   { border-color: #16a085; }
+        .axis-card.selected[data-axis="gold"]   { border-color: #b8892e; }
+        .axis-card.selected[data-axis="pink"]   { border-color: #d81b60; }
+
+        /* ENCADRÉ COLORÉ POUR LES AXES THÉMATIQUES */
+        .entry-axe-badge {
+            display: inline-flex;
+            align-items: center;
+            font-size: calc(11px * var(--zoom-level));
+            font-weight: 600;
+            line-height: 1.25;
+            padding: 3px 8px;
+            border-radius: 6px;
+            border: 1.5px solid transparent;
+            flex-shrink: 0;
+            max-width: 260px;
+            white-space: normal;
+            text-align: left;
+            margin-left: 6px;
+        }
+
+        .entry-axe-badge[data-axis="blue"]   { background: rgba(41, 128, 185, 0.12); border-color: #2980b9; color: #1a5276; }
+        .entry-axe-badge[data-axis="green"]  { background: rgba(39, 174, 96, 0.12); border-color: #27ae60; color: #196f3d; }
+        .entry-axe-badge[data-axis="orange"] { background: rgba(230, 126, 34, 0.12); border-color: #e67e22; color: #a04000; }
+        .entry-axe-badge[data-axis="purple"] { background: rgba(142, 68, 173, 0.12); border-color: #8e44ad; color: #5b2c6f; }
+        .entry-axe-badge[data-axis="red"]    { background: rgba(192, 57, 43, 0.12); border-color: #c0392b; color: #78281f; }
+        .entry-axe-badge[data-axis="teal"]   { background: rgba(22, 160, 133, 0.12); border-color: #16a085; color: #0e6655; }
+        .entry-axe-badge[data-axis="gold"]   { background: rgba(184, 137, 46, 0.14); border-color: #b8892e; color: #7d5d18; }
+        .entry-axe-badge[data-axis="pink"]   { background: rgba(216, 27, 96, 0.12); border-color: #d81b60; color: #880e4f; }
+
+        [data-theme="dark"] .entry-axe-badge[data-axis="blue"]   { background: rgba(41, 128, 185, 0.28); border-color: #5dade2; color: #aed6f1; }
+        [data-theme="dark"] .entry-axe-badge[data-axis="green"]  { background: rgba(39, 174, 96, 0.28); border-color: #58d68d; color: #a9dfbf; }
+        [data-theme="dark"] .entry-axe-badge[data-axis="orange"] { background: rgba(230, 126, 34, 0.28); border-color: #f5b041; color: #fad7a0; }
+        [data-theme="dark"] .entry-axe-badge[data-axis="purple"] { background: rgba(142, 68, 173, 0.28); border-color: #af7ac5; color: #d7bde2; }
+        [data-theme="dark"] .entry-axe-badge[data-axis="red"]    { background: rgba(192, 57, 43, 0.28); border-color: #ec7063; color: #f5b7b1; }
+        [data-theme="dark"] .entry-axe-badge[data-axis="teal"]   { background: rgba(22, 160, 133, 0.28); border-color: #48c9b0; color: #a3e4d7; }
+        [data-theme="dark"] .entry-axe-badge[data-axis="gold"]   { background: rgba(184, 137, 46, 0.28); border-color: #f4d03f; color: #f9e79f; }
+        [data-theme="dark"] .entry-axe-badge[data-axis="pink"]   { background: rgba(216, 27, 96, 0.28); border-color: #f06292; color: #f8bbd0; }
+
+        .timeline-axes-legend {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 16px;
+            background: var(--surface-2);
+            border-radius: 10px;
+            margin: 0 auto 16px;
+            max-width: 800px;
+            width: 95%;
+        }
+        .axes-legend-title {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--muted-text);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-right: 4px;
+        }
+
+        @media (max-width: 600px) {
+            .entry-axe-badge {
+                font-size: 10px;
+                padding: 2px 6px;
+                max-width: 170px;
+            }
+        }
+
+        [data-layout="horizontal"] .entry-axe-badge {
+            margin: 4px 0 0 0;
+            max-width: 100%;
+            font-size: 10px;
+            padding: 2px 5px;
+            text-align: center;
+        }
+
         .btn:disabled { opacity: 0.4; cursor: not-allowed; }
         .btn-secondary { background: var(--btn-secondary-bg); color: var(--btn-secondary-text); }
 
@@ -341,11 +455,11 @@
            hauteur, et l'axe vient se caler dessus — jamais sur le texte.
            ===================================================================== */
         [data-layout="horizontal"] .board { overflow-x: auto; overflow-y: hidden; display: flex; align-items: center; padding: 18px 16px 22px; scroll-padding: 0 90px; }
-        [data-layout="horizontal"] .chrono { display: flex; flex-direction: row; align-items: flex-start; max-width: none; width: max-content; min-width: 100%; margin: 0 auto; padding: 0 6px; --h-head: calc(28px * var(--zoom-level)); }
-        [data-layout="horizontal"] .chrono::before { top: calc(var(--h-head) + 4px); bottom: auto; left: 6px; right: 6px; width: auto; height: 1px; }
+        [data-layout="horizontal"] .chrono { display: flex; flex-direction: row; align-items: flex-start; max-width: none; width: max-content; min-width: 100%; flex-shrink: 0; margin: 0 auto; padding: 0 6px; --h-head: calc(38px * var(--zoom-level)); }
+        [data-layout="horizontal"] .chrono::before { top: calc(var(--h-head) + 4px); bottom: auto; left: 0; right: 0; width: auto; height: 1px; }
 
         [data-layout="horizontal"] .entry { display: flex; flex-direction: column; align-items: center; grid-template-columns: none; width: 168px; flex-shrink: 0; padding: 0 12px; text-align: center; }
-        [data-layout="horizontal"] .entry-year { height: var(--h-head); display: flex; align-items: flex-end; justify-content: center; text-align: center; padding: 0; }
+        [data-layout="horizontal"] .entry-year { height: var(--h-head); display: flex; align-items: flex-end; justify-content: center; text-align: center; padding: 0 0 10px 0; }
         [data-layout="horizontal"] .entry-body { flex-direction: column; align-items: center; padding: 8px 0 0; gap: 4px; }
         [data-layout="horizontal"] .entry-title { text-align: center; }
         [data-layout="horizontal"] .entry-chevron { display: none; }
@@ -451,38 +565,59 @@
     <!-- ÉCRAN 4 : MODES DE JEU -->
     <div id="screen-modes" class="list-screen hidden">
         <h2 class="header-title" id="modes-header-title">Choisissez un mode de jeu</h2>
+        
         <div class="grid-modes">
             <div class="mode-card" style="background-color: #2c3e50;" onclick="startActualGame('discovery')">
                 <h3>Découverte</h3>
-                <p>Consultez la frise complète chronologiquement pour apprendre, sans jouer.</p>
+                <p>Consultez la frise chronologique sans jouer.</p>
             </div>
+            <div class="mode-card" style="background-color: #34495e;" onclick="openSelectionMode()">
+                <h3>Sélection</h3>
+                <p>Choisissez les événements à conserver dans la partie.</p>
+            </div>
+            <div class="mode-card" style="background-color: #34495e;" onclick="openAddEventModal()">
+                <h3>Ajouter un événement</h3>
+                <p>Créez vos événements pour ce thème.</p>
+            </div>
+        </div>
+
+        <hr class="mode-separator">
+
+        <div class="grid-modes">
             <div class="mode-card" onclick="startActualGame('training')">
                 <h3>Entraînement</h3>
-                <p>Aucune vie perdue. Jouez à votre rythme pour tout mémoriser.</p>
+                <p>Aucune vie perdue. Jouez à votre rythme.</p>
             </div>
             <div class="mode-card" onclick="startActualGame('classic')">
                 <h3>Classique</h3>
-                <p>3 vies. Le mode de jeu standard et équilibré.</p>
+                <p>3 vies. Le mode de jeu standard.</p>
             </div>
             <div class="mode-card" id="mode-card-chrono">
                 <h3>Chrono</h3>
-                <p>3 vies. Placez les événements le plus vite possible.</p>
+                <p>3 vies. Placez-les vite.</p>
             </div>
             <div class="mode-card" id="mode-card-expert">
                 <h3>Expert</h3>
-                <p>1 vie, chronométré. La moindre erreur est fatale.</p>
+                <p>1 vie, chronométré.</p>
             </div>
+        </div>
+
+        <hr class="mode-separator">
+
+        <div class="grid-modes">
             <div class="mode-card quiz-card" onclick="startQuizGame()">
                 <h3>Quiz</h3>
-                <p>3 vies. Devinez la bonne réponse parmi 4 choix.</p>
+                <p>Questions à choix multiples (QCM).</p>
             </div>
             <div class="mode-card fil-card" onclick="startFilGame()">
                 <h3>Le fil du temps</h3>
-                <p>3 vies. Tapez l'année exacte de chaque événement, dans l'ordre chronologique.</p>
+                <p>Saisissez l'année exacte au clavier.</p>
             </div>
         </div>
-        <div style="margin-top: 10px; margin-bottom: 50px;">
-            <button class="btn btn-secondary" onclick="showScreen(screenAfterGame())">Retour</button>
+
+        <div style="margin-top: 30px; margin-bottom: 50px; display:flex; gap:15px; justify-content:center;">
+            <button class="btn btn-secondary" onclick="backFromModes()">Retour</button>
+            <button class="btn" style="background-color:#E67E22;" onclick="openLeaderboard()">🏆 Historique des scores</button>
         </div>
     </div>
 
@@ -508,6 +643,7 @@
         </div>
 
         <div class="board" id="board">
+            <div id="timeline-axes-legend" class="timeline-axes-legend hidden"></div>
             <div class="chrono playing" id="timeline"></div>
         </div>
 
@@ -519,6 +655,21 @@
                     <span class="hand-title" id="hand-title">Chargement…</span>
                 </span>
             </div>
+        </div>
+    </div>
+
+    <!-- ÉCRAN : SÉLECTION -->
+    <div id="screen-selection" class="list-screen hidden">
+        <h2 class="header-title">Sélection des événements</h2>
+        <p style="font-size:14px; color:var(--muted-text); margin-bottom:15px;">Décochez les événements que vous ne souhaitez pas faire apparaître.</p>
+        <div style="display:flex; gap:10px; justify-content:center; margin-bottom:15px;">
+            <button class="btn btn-secondary" style="padding:6px 12px; font-size:13px;" onclick="selectAllEvents(true)">Tout cocher</button>
+            <button class="btn btn-secondary" style="padding:6px 12px; font-size:13px;" onclick="selectAllEvents(false)">Tout décocher</button>
+        </div>
+        <div class="selection-list" id="selection-list-container"></div>
+        <div style="margin-top: 20px; margin-bottom: 50px; display:flex; gap:15px; justify-content:center;">
+            <button class="btn btn-secondary" onclick="showScreen('screen-modes')">Retour</button>
+            <button class="btn" onclick="saveSelectionAndReturn()">Valider la sélection</button>
         </div>
     </div>
 
@@ -579,9 +730,12 @@
             </div>
 
             <div class="fil-display">
+                <button class="fil-hint-btn" id="fil-hint-btn" onclick="filUseHint()">💡 Indice</button>
                 <span class="fil-display-value" id="fil-display-value">—</span>
                 <button class="fil-era-btn" id="fil-era-btn" onclick="filToggleEra()">apr. J.-C.</button>
             </div>
+            
+            <div class="fil-answer-badge hidden" id="fil-answer-badge"></div>
 
             <div class="fil-keypad">
                 <button class="fil-key" onclick="filKeyPress('1')">1</button>
@@ -599,7 +753,6 @@
             </div>
 
             <button class="fil-validate-btn" id="fil-validate-btn" onclick="filSubmit()" disabled>Valider</button>
-            <div class="fil-correct-hint" id="fil-correct-hint"></div>
         </div>
     </div>
 
@@ -619,6 +772,7 @@
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal()">×</span>
             <div class="modal-title" id="modal-titre">Titre de l'événement</div>
+            <div id="modal-axe-badge-container" style="margin-top: 4px; margin-bottom: 8px;"></div>
             <div class="modal-date" id="modal-date">Date</div>
             <div class="modal-desc" id="modal-desc">Description explicative.</div>
             <a href="#" target="_blank" class="modal-link" id="modal-wiki">Voir sur Wikipédia</a>
@@ -626,6 +780,65 @@
                 <button class="btn btn-secondary" id="modal-redraw-btn">🔀 Un autre événement</button>
                 <button class="btn" id="modal-theme-btn">Jouer sur ce thème</button>
             </div>
+        </div>
+    </div>
+
+    <!-- MODAL CRÉER UN THÈME PERSONNALISÉ -->
+    <div id="modal-add-theme" class="modal-overlay hidden" onclick="if(event.target===this)closeAddThemeModal()">
+        <div class="modal-content" style="max-width:420px;">
+            <span class="close-btn" onclick="closeAddThemeModal()">×</span>
+            <h2 style="font-size:20px; margin-bottom:20px; color:var(--text-dark);">Créer un thème personnalisé</h2>
+            
+            <div class="form-group">
+                <label class="form-label">Nom du thème *</label>
+                <input type="text" id="custom-theme-name" class="form-input" placeholder="Ex: Histoire de l'Aviation" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Difficulté / Niveau (facultatif)</label>
+                <input type="text" id="custom-theme-diff" class="form-input" placeholder="Ex: Tous niveaux, Expert...">
+            </div>
+            
+            <button class="btn" style="width:100%; margin-top:10px;" onclick="saveCustomTheme()">Créer le thème</button>
+        </div>
+    </div>
+
+    <!-- MODAL AJOUTER UN ÉVÉNEMENT -->
+    <div id="modal-add-event" class="modal-overlay hidden" onclick="if(event.target===this)closeAddEventModal()">
+        <div class="modal-content" style="max-width:400px;">
+            <span class="close-btn" onclick="closeAddEventModal()">×</span>
+            <h2 style="font-size:20px; margin-bottom:20px; color:var(--text-dark);">Ajouter un événement</h2>
+            
+            <div class="form-group">
+                <label class="form-label">Année *</label>
+                <div class="form-row">
+                    <input type="number" id="custom-event-year" class="form-input" placeholder="Ex: 1789" style="flex:1;" required>
+                    <select id="custom-event-era" class="form-input" style="width:110px;">
+                        <option value="1">apr. J.-C.</option>
+                        <option value="-1">av. J.-C.</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Titre de l'événement *</label>
+                <input type="text" id="custom-event-title" class="form-input" placeholder="Ex: Prise de la Bastille" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Description (facultatif)</label>
+                <textarea id="custom-event-desc" class="form-input" rows="3" placeholder="Quelques détails..."></textarea>
+            </div>
+            
+            <button class="btn" style="width:100%; margin-top:10px;" onclick="saveCustomEvent()">Créer l'événement</button>
+        </div>
+    </div>
+
+    <!-- MODAL LEADERBOARD / SCORES -->
+    <div id="modal-leaderboard" class="modal-overlay hidden">
+        <div class="modal-content" style="max-width:500px;">
+            <span class="close-btn" onclick="closeLeaderboard()">×</span>
+            <h2 style="font-size:20px; margin-bottom:5px; color:var(--text-dark);">🏆 Historique des scores</h2>
+            <p id="leaderboard-subtitle" style="font-size:14px; color:var(--muted-text); margin-bottom:20px;">Thème : ...</p>
+            
+            <div id="leaderboard-content"></div>
         </div>
     </div>
 
@@ -5018,7 +5231,7 @@ events: [
                                     { id: "3e_2", axe: "L'Europe, un théâtre majeur des guerres totales", date: 1914, titre: "Bataille de la Marne", description: "Après une retraite précipitée, l'armée française (aidée par les Britanniques) lance une vaste contre-offensive sur la Marne. Grâce notamment aux taxis parisiens réquisitionnés, l'avancée allemande vers Paris est stoppée.", wikipedia: "https://fr.wikipedia.org/wiki/Premi%C3%A8re_bataille_de_la_Marne" },
                                     { id: "3e_3", axe: "L'Europe, un théâtre majeur des guerres totales", date: 1916, titre: "Bataille de Verdun", description: "Bataille d'usure monumentale opposant les armées française et allemande. D'une extrême violence, elle devient le symbole tragique de la guerre de tranchées et de la destruction industrielle (plus de 700 000 victimes).", wikipedia: "https://fr.wikipedia.org/wiki/Bataille_de_Verdun" },
                                     { id: "3e_4", axe: "L'Europe, un théâtre majeur des guerres totales", date: 1917, titre: "Révolution russe", description: "En pleine guerre mondiale, la Russie s'effondre. Le Tsar est renversé en février. En octobre, les bolcheviks de Lénine s'emparent du pouvoir, fondent le premier État communiste et signent la paix avec l'Allemagne.", wikipedia: "https://fr.wikipedia.org/wiki/R%C3%A9volution_russe" },
-                                    { id: "3e_5", axe: "L'Europe, un théâtre majeur des guerres totales", date: 1917, titre: "Entrée en guerre des États-Unis", description: "Suite à la guerre sous-marine à outrance menée par l'Allemagne (qui coule des navires neutres), le président Woodrow Wilson déclare la guerre à l'Empire allemand, apportant un poids économique et militaire décisif à l'Entente.", wikipedia: "https://fr.wikipedia.org/wiki/Guerre_sous-marine_%C3%A0_outrance" },
+                                    { id: "3e_5", axe: "L'Europe, un théâtre majeur des guerres totales", date: 1917, titre: "Entrée en guerre des États-Unis (1GM)", description: "Suite à la guerre sous-marine à outrance menée par l'Allemagne (qui coule des navires neutres), le président Woodrow Wilson déclare la guerre à l'Empire allemand, apportant un poids économique et militaire décisif à l'Entente.", wikipedia: "https://fr.wikipedia.org/wiki/Guerre_sous-marine_%C3%A0_outrance" },
                                     { id: "3e_6", axe: "L'Europe, un théâtre majeur des guerres totales", date: 1918, titre: "Armistice de la Première Guerre mondiale", description: "Signé le 11 novembre dans la clairière de Rethondes, il marque la cessation des combats sur le front occidental. L'Allemagne, épuisée militairement et confrontée à des émeutes, s'avoue vaincue.", wikipedia: "https://fr.wikipedia.org/wiki/Armistice_de_1918" },
                                     { id: "3e_7", axe: "L'Europe, un théâtre majeur des guerres totales", date: 1919, titre: "Traité de Versailles", description: "Traité de paix dicté par les vainqueurs. L'Allemagne est désignée comme seule responsable, amputée d'une partie de son territoire (la France récupère l'Alsace-Lorraine), privée de son armée et soumise à de lourdes réparations.", wikipedia: "https://fr.wikipedia.org/wiki/Trait%C3%A9_de_Versailles" },
                                     { id: "3e_8", axe: "L'Europe, un théâtre majeur des guerres totales", date: 1929, titre: "Krach de Wall Street", description: "Le 24 octobre (« Jeudi noir »), la bourse de New York s'effondre. Cette crise boursière se transforme en la plus grave crise économique, sociale et financière de l'histoire du capitalisme, contaminant l'Europe entière.", wikipedia: "https://fr.wikipedia.org/wiki/Krach_de_1929" },
@@ -5752,6 +5965,263 @@ events: [
             });
         }
 
+        // === THÈMES ET ÉVÉNEMENTS PERSONNALISÉS ===
+        const CUSTOM_THEMES_KEY = 'historiaxe_custom_themes_v1';
+        const CUSTOM_EVENTS_KEY = 'historiaxe_custom_events_v1';
+
+        const customCategory = {
+            nom: "🎨 Mes thèmes personnalisés",
+            isCustomCategory: true,
+            themes: []
+        };
+        bdd.push(customCategory);
+
+        function loadCustomThemesIntoBdd() {
+            try {
+                const stored = JSON.parse(localStorage.getItem(CUSTOM_THEMES_KEY)) || [];
+                customCategory.themes = stored;
+            } catch (e) {
+                customCategory.themes = [];
+            }
+        }
+
+        function saveCustomThemesToStorage() {
+            try {
+                localStorage.setItem(CUSTOM_THEMES_KEY, JSON.stringify(customCategory.themes));
+            } catch (e) {}
+        }
+
+        function openAddThemeModal() {
+            document.getElementById('custom-theme-name').value = '';
+            document.getElementById('custom-theme-diff').value = '';
+            document.getElementById('modal-add-theme').classList.remove('hidden');
+        }
+
+        function closeAddThemeModal() {
+            document.getElementById('modal-add-theme').classList.add('hidden');
+        }
+
+        function saveCustomTheme() {
+            const name = document.getElementById('custom-theme-name').value.trim();
+            const diff = document.getElementById('custom-theme-diff').value.trim() || 'Tous niveaux';
+
+            if (!name) {
+                alert("Veuillez saisir un nom pour votre thème.");
+                return;
+            }
+
+            const newTheme = {
+                id: 'custom_thm_' + Date.now() + '_' + Math.floor(Math.random() * 1000),
+                nom: name,
+                difficulte: diff,
+                events: [],
+                isCustom: true
+            };
+
+            customCategory.themes.push(newTheme);
+            saveCustomThemesToStorage();
+            closeAddThemeModal();
+            initThemes();
+        }
+
+        function deleteCustomTheme(themeId) {
+            showConfirm("Voulez-vous vraiment supprimer ce thème personnalisé et tous ses événements ?", () => {
+                customCategory.themes = customCategory.themes.filter(t => t.id !== themeId);
+                saveCustomThemesToStorage();
+                initThemes();
+            });
+        }
+
+        function loadCustomEventsIntoBdd() {
+            try {
+                const custom = JSON.parse(localStorage.getItem(CUSTOM_EVENTS_KEY)) || {};
+                function traverse(categories) {
+                    for (let cat of categories) {
+                        if (cat.isCustomCategory) continue; // Les thèmes personnalisés gèrent déjà leurs événements
+                        if (cat.themes) {
+                            for (let theme of cat.themes) {
+                                if (custom[theme.id]) {
+                                    theme.events.push(...custom[theme.id]);
+                                    theme.events.sort((a, b) => a.date - b.date);
+                                }
+                            }
+                        }
+                        if (cat.subcategories) traverse(cat.subcategories);
+                    }
+                }
+                traverse(bdd);
+            } catch (e) {}
+        }
+
+        // Chargement initial
+        loadCustomThemesIntoBdd();
+        loadCustomEventsIntoBdd();
+
+        function openAddEventModal() {
+            document.getElementById('custom-event-year').value = '';
+            document.getElementById('custom-event-era').value = '1';
+            document.getElementById('custom-event-title').value = '';
+            document.getElementById('custom-event-desc').value = '';
+            document.getElementById('modal-add-event').classList.remove('hidden');
+        }
+
+        function closeAddEventModal() {
+            document.getElementById('modal-add-event').classList.add('hidden');
+        }
+
+        function saveCustomEvent() {
+            const yearInput = document.getElementById('custom-event-year').value;
+            const era = parseInt(document.getElementById('custom-event-era').value, 10);
+            const title = document.getElementById('custom-event-title').value.trim();
+            const desc = document.getElementById('custom-event-desc').value.trim();
+
+            if (!yearInput || !title) {
+                alert("Veuillez remplir l'année et le titre.");
+                return;
+            }
+
+            const date = parseInt(yearInput, 10) * era;
+            const theme = getCurrentTheme();
+            const newEvent = {
+                id: 'custom_evt_' + Date.now() + '_' + Math.floor(Math.random() * 1000),
+                axe: "Événements personnalisés",
+                date: date,
+                titre: title,
+                description: desc,
+                isCustom: true
+            };
+
+            if (theme.isCustom) {
+                theme.events.push(newEvent);
+                theme.events.sort((a, b) => a.date - b.date);
+                saveCustomThemesToStorage();
+            } else {
+                try {
+                    const custom = JSON.parse(localStorage.getItem(CUSTOM_EVENTS_KEY)) || {};
+                    if (!custom[theme.id]) custom[theme.id] = [];
+                    custom[theme.id].push(newEvent);
+                    localStorage.setItem(CUSTOM_EVENTS_KEY, JSON.stringify(custom));
+                } catch (e) {}
+
+                theme.events.push(newEvent);
+                theme.events.sort((a, b) => a.date - b.date);
+            }
+
+            closeAddEventModal();
+            alert("Événement ajouté avec succès !");
+        }
+
+        // === TABLEAU DES SCORES (LEADERBOARD) ===
+        const LEADERBOARD_KEY = 'historiaxe_leaderboard_v1';
+        
+        function saveScoreToLeaderboard(themeId, mode, score) {
+            try {
+                const data = JSON.parse(localStorage.getItem(LEADERBOARD_KEY)) || {};
+                if (!data[themeId]) data[themeId] = [];
+                
+                const now = new Date();
+                const pad = (n) => n.toString().padStart(2, '0');
+                const dateStr = `${pad(now.getDate())}/${pad(now.getMonth()+1)}/${now.getFullYear()} à ${pad(now.getHours())}:${pad(now.getMinutes())}`;
+                
+                data[themeId].push({ mode, score, date: dateStr, timestamp: now.getTime() });
+                // Garder les 50 meilleurs/derniers scores par thème pour éviter la surcharge
+                data[themeId].sort((a, b) => b.score - a.score);
+                if (data[themeId].length > 50) data[themeId] = data[themeId].slice(0, 50);
+                
+                localStorage.setItem(LEADERBOARD_KEY, JSON.stringify(data));
+            } catch(e) {}
+        }
+        
+        function openLeaderboard() {
+            const theme = getCurrentTheme();
+            document.getElementById('leaderboard-subtitle').innerText = "Thème : " + theme.nom;
+            
+            const container = document.getElementById('leaderboard-content');
+            let data = {};
+            try { data = JSON.parse(localStorage.getItem(LEADERBOARD_KEY)) || {}; } catch(e) {}
+            
+            const scores = data[theme.id] || [];
+            if (scores.length === 0) {
+                container.innerHTML = '<div class="leaderboard-empty">Aucun score enregistré sur ce thème pour le moment.</div>';
+            } else {
+                const modesFr = { 'classic': 'Classique', 'chrono': 'Chrono', 'expert': 'Expert', 'quiz': 'Quiz', 'fil': 'Le fil du temps' };
+                let html = '<table class="leaderboard-table"><thead><tr><th>Mode</th><th>Score</th><th>Date</th></tr></thead><tbody>';
+                scores.forEach(s => {
+                    html += `<tr><td>${modesFr[s.mode] || s.mode}</td><td class="leaderboard-score">${s.score}</td><td>${s.date}</td></tr>`;
+                });
+                html += '</tbody></table>';
+                container.innerHTML = html;
+            }
+            
+            document.getElementById('modal-leaderboard').classList.remove('hidden');
+        }
+
+        function closeLeaderboard() {
+            document.getElementById('modal-leaderboard').classList.add('hidden');
+        }
+
+        // === SÉLECTION D'ÉVÉNEMENTS ===
+        let isSelectionActive = false;
+        let selectedEventsIds = new Set();
+        
+        function openSelectionMode() {
+            const theme = getCurrentTheme();
+            const container = document.getElementById('selection-list-container');
+            container.innerHTML = '';
+            
+            if (!isSelectionActive) {
+                // Par défaut tout est sélectionné
+                selectedEventsIds = new Set(theme.events.map(e => e.id));
+            }
+            
+            theme.events.forEach(e => {
+                const label = document.createElement('label');
+                label.className = 'selection-item';
+                
+                const cb = document.createElement('input');
+                cb.type = 'checkbox';
+                cb.value = e.id;
+                cb.checked = selectedEventsIds.has(e.id);
+                cb.onchange = () => {
+                    if (cb.checked) selectedEventsIds.add(e.id);
+                    else selectedEventsIds.delete(e.id);
+                };
+                
+                const title = document.createElement('span');
+                title.className = 'selection-item-title';
+                title.innerText = e.titre;
+                
+                const date = document.createElement('span');
+                date.className = 'selection-item-date';
+                date.innerText = formatYear(e.date);
+                
+                label.appendChild(cb);
+                label.appendChild(title);
+                label.appendChild(date);
+                container.appendChild(label);
+            });
+            
+            showScreen('screen-selection');
+        }
+        
+        function selectAllEvents(checked) {
+            const cbs = document.querySelectorAll('#selection-list-container input[type="checkbox"]');
+            cbs.forEach(cb => {
+                cb.checked = checked;
+                if (checked) selectedEventsIds.add(cb.value);
+                else selectedEventsIds.delete(cb.value);
+            });
+        }
+        
+        function saveSelectionAndReturn() {
+            if (selectedEventsIds.size === 0) {
+                alert("Vous devez sélectionner au moins un événement pour jouer.");
+                return;
+            }
+            isSelectionActive = true;
+            showScreen('screen-modes');
+        }
+
         // === RÉVISION ESPACÉE (SRS) ===
         // Système de type Leitner à 5 boîtes, stocké dans le navigateur (localStorage).
         // Boîte 1 = tout juste manqué, boîte 5 = remaîtrisé (sort du lot des points faibles).
@@ -5956,6 +6426,8 @@ events: [
         let filIndex = 0;
         let filInput = '';
         let filEra = 1; // 1 = apr. J.-C., -1 = av. J.-C.
+        let filHintsRevealed = 0;
+        let filCorrectYearString = '';
 
         // Certaines catégories (ex. « Histoires nationales », « Programmes scolaires »)
         // insèrent un ou plusieurs niveaux de sous-catégories entre la catégorie et les
@@ -6100,6 +6572,35 @@ events: [
             startActualGame(currentMode);
         }
 
+        // PALETTE DE COULEURS POUR LES AXES THÉMATIQUES
+        const AXIS_PALETTE = [
+            { name: 'blue', border: '#2980b9' },
+            { name: 'green', border: '#27ae60' },
+            { name: 'orange', border: '#e67e22' },
+            { name: 'purple', border: '#8e44ad' },
+            { name: 'red', border: '#c0392b' },
+            { name: 'teal', border: '#16a085' },
+            { name: 'gold', border: '#b8892e' },
+            { name: 'pink', border: '#d81b60' }
+        ];
+
+        function getAxisColor(axeName) {
+            if (!axeName) return null;
+            let axesList = currentThemeAxes;
+            if (!axesList || axesList.length === 0) {
+                const theme = getCurrentTheme();
+                if (theme && theme.events) {
+                    axesList = [...new Set(theme.events.map(e => e.axe).filter(Boolean))];
+                    if (theme.axeOrder) {
+                        axesList = theme.axeOrder.filter(a => axesList.includes(a));
+                    }
+                }
+            }
+            const idx = axesList ? axesList.indexOf(axeName) : -1;
+            const paletteIndex = idx >= 0 ? (idx % AXIS_PALETTE.length) : 0;
+            return AXIS_PALETTE[paletteIndex];
+        }
+
         // INIT ÉCRAN DES AXES THÉMATIQUES (Amériques, Campagne, ou tout thème taggé)
         function initAxes() {
             const theme = getCurrentTheme();
@@ -6124,7 +6625,12 @@ events: [
             currentThemeAxes.forEach(axe => {
                 const count = theme.events.filter(e => e.axe === axe).length;
                 const card = document.createElement('div');
-                card.className = 'axis-card' + (selectedAxes.has(axe) ? ' selected' : '');
+                const isSelected = selectedAxes.has(axe);
+                const color = getAxisColor(axe);
+                card.className = 'axis-card' + (isSelected ? ' selected' : '');
+                if (color) {
+                    card.dataset.axis = color.name;
+                }
                 card.innerHTML = `<h3>${axe}</h3><p>${count} événement${count > 1 ? 's' : ''}</p>`;
                 card.onclick = () => {
                     if (selectedAxes.has(axe)) { selectedAxes.delete(axe); }
@@ -6147,16 +6653,29 @@ events: [
             showScreen('screen-modes');
         }
 
+        // Ouvre l'écran des thèmes personnalisés
+        function openCustomThemes() {
+            favoritesMode = false;
+            let customCatIndex = bdd.findIndex(c => c.isCustomCategory);
+            if (customCatIndex === -1) {
+                bdd.push(customCategory);
+                customCatIndex = bdd.length - 1;
+            }
+            selectedCategoryIndex = customCatIndex;
+            selectedSubcategoryIndex = null;
+            showScreen('screen-themes');
+        }
+
         // INIT CATÉGORIES (Dossiers)
         function initCategories() {
             const container = document.getElementById('categories-container');
             container.innerHTML = ''; 
 
-            // Rangée des 3 cartes spéciales, toujours en tête de liste : Favoris,
-            // Découvrir un événement au hasard, et Réviser mes points faibles.
+            // Rangée des 4 cartes spéciales en tête de liste : Favoris, Mes thèmes, Découvrir, Réviser.
             const weakCount = getWeakEvents().length;
             const favCount = favoritesLoad().length;
             const totalEventsCount = getAllEvents().length;
+            const customThemesCount = customCategory.themes ? customCategory.themes.length : 0;
 
             const specialRow = document.createElement('div');
             specialRow.className = 'special-row';
@@ -6165,16 +6684,25 @@ events: [
             favCard.className = 'special-card favorites';
             favCard.innerHTML = `
                 <div class="special-card-title">⭐ Favoris</div>
-                <div class="special-card-subtitle">${favCount === 0 ? 'Aucun thème enregistré' : (favCount === 1 ? '1 thème enregistré' : favCount + ' thèmes enregistrés')}</div>
+                <div class="special-card-subtitle">${favCount === 0 ? 'Aucun thème' : (favCount === 1 ? '1 thème enregistré' : favCount + ' thèmes enregistrés')}</div>
             `;
             favCard.onclick = openFavorites;
             specialRow.appendChild(favCard);
 
+            const customThemesCard = document.createElement('div');
+            customThemesCard.className = 'special-card custom-themes';
+            customThemesCard.innerHTML = `
+                <div class="special-card-title">🎨 Mes thèmes</div>
+                <div class="special-card-subtitle">${customThemesCount === 0 ? '➕ Créer un thème' : (customThemesCount === 1 ? '1 thème créé' : customThemesCount + ' thèmes créés')}</div>
+            `;
+            customThemesCard.onclick = openCustomThemes;
+            specialRow.appendChild(customThemesCard);
+
             const discoverCard = document.createElement('div');
             discoverCard.className = 'special-card discover';
             discoverCard.innerHTML = `
-                <div class="special-card-title">🎲 Découvrir un événement au hasard</div>
-                <div class="special-card-subtitle">${totalEventsCount} événements à explorer</div>
+                <div class="special-card-title">🎲 Découvrir</div>
+                <div class="special-card-subtitle">${totalEventsCount} événements</div>
             `;
             discoverCard.onclick = discoverRandomEvent;
             specialRow.appendChild(discoverCard);
@@ -6182,8 +6710,8 @@ events: [
             const revisionCard = document.createElement('div');
             revisionCard.className = 'special-card revision';
             revisionCard.innerHTML = `
-                <div class="special-card-title">🔁 Réviser mes points faibles <span class="reset-srs-btn" id="reset-srs-btn" title="Réinitialiser le suivi de révision">⟲</span></div>
-                <div class="special-card-subtitle">${weakCount > 0 ? weakCount + ' événement(s) à retravailler' : 'Aucun point faible pour l\'instant'}</div>
+                <div class="special-card-title">🔁 Points faibles <span class="reset-srs-btn" id="reset-srs-btn" title="Réinitialiser le suivi de révision">⟲</span></div>
+                <div class="special-card-subtitle">${weakCount > 0 ? weakCount + ' à retravailler' : 'Aucun point faible'}</div>
             `;
             revisionCard.onclick = startRevision;
             specialRow.appendChild(revisionCard);
@@ -6196,12 +6724,17 @@ events: [
 
             bdd.forEach((cat, index) => {
                 const banner = document.createElement('div');
-                banner.className = 'category-banner';
+                banner.className = 'category-banner' + (cat.isCustomCategory ? ' custom-theme-banner' : '');
                 
                 // On compte le nombre total de thèmes dans ce dossier (y compris à travers
                 // les sous-catégories, potentiellement imbriquées sur plusieurs niveaux)
                 const nbThemes = countThemesRecursive(cat);
-                let textThemes = nbThemes === 0 ? "Bientôt disponible" : (nbThemes === 1 ? "1 thème" : `${nbThemes} thèmes`);
+                let textThemes;
+                if (cat.isCustomCategory) {
+                    textThemes = nbThemes === 0 ? "Aucun thème créé" : (nbThemes === 1 ? "1 thème créé" : `${nbThemes} thèmes créés`);
+                } else {
+                    textThemes = nbThemes === 0 ? "Bientôt disponible" : (nbThemes === 1 ? "1 thème" : `${nbThemes} thèmes`);
+                }
                 
                 banner.innerHTML = `
                     <div>
@@ -6214,7 +6747,7 @@ events: [
                 // On empêche le clic seulement si c'est un « feuille » (thèmes directs) vide ;
                 // une catégorie à sous-catégories reste consultable même si toutes sont
                 // encore vides (ex. squelette de sous-catégories à remplir plus tard).
-                const canEnter = nbThemes > 0 || !!cat.subcategories;
+                const canEnter = nbThemes > 0 || !!cat.subcategories || cat.isCustomCategory;
                 banner.onclick = () => {
                     if (canEnter) {
                         selectedCategoryIndex = index;
@@ -6277,13 +6810,24 @@ events: [
             card.className = 'data-card';
             const fav = isFavorite(theme.id);
             const badgeHtml = opts.badge != null ? `<span class="data-card-badge">${opts.badge}</span>` : '';
+            const deleteHtml = theme.isCustom ? `<span class="data-card-delete" title="Supprimer ce thème">🗑️</span>` : '';
             card.innerHTML = `
                 <span class="data-card-title">${theme.nom}</span>
                 ${badgeHtml}
+                ${deleteHtml}
                 <span class="data-card-fav ${fav ? 'is-fav' : ''}" title="${fav ? 'Retirer des favoris' : 'Ajouter aux favoris'}">${fav ? '★' : '☆'}</span>
                 <span class="data-card-icon">›</span>
             `;
             card.onclick = onOpen;
+            if (theme.isCustom) {
+                const delBtn = card.querySelector('.data-card-delete');
+                if (delBtn) {
+                    delBtn.onclick = (e) => {
+                        e.stopPropagation();
+                        deleteCustomTheme(theme.id);
+                    };
+                }
+            }
             const favBtn = card.querySelector('.data-card-fav');
             favBtn.onclick = (e) => {
                 e.stopPropagation();
@@ -6309,9 +6853,19 @@ events: [
             selectedThemeIndex = ti;
             revisionMode = false;
             axisFilterActive = false;
+            isSelectionActive = false;
             const theme = getCurrentThemeList()[ti];
+            currentThemeAxes = [...new Set(theme.events.map(e => e.axe).filter(Boolean))];
+            if (theme.axeOrder) {
+                currentThemeAxes = theme.axeOrder.filter(a => currentThemeAxes.includes(a));
+            }
             const hasAxes = theme.events.some(e => e.axe);
             showScreen(hasAxes ? 'screen-axes' : 'screen-modes');
+        }
+
+        function backFromModes() {
+            isSelectionActive = false;
+            showScreen(screenAfterGame());
         }
 
         // INIT THÈMES (Sous-dossiers / quiz)
@@ -6328,6 +6882,31 @@ events: [
             const themeList = getCurrentThemeList();
             const node = category.subcategories ? resolveSubcategory(category, selectedSubcategoryIndex) : category;
             document.getElementById('theme-screen-title').innerText = node.nom;
+            
+            if (category.isCustomCategory) {
+                const addCard = document.createElement('div');
+                addCard.className = 'special-card';
+                addCard.style.background = 'linear-gradient(135deg, #1E8449, #2ECC71)';
+                addCard.style.gridColumn = '1 / -1';
+                addCard.style.maxWidth = '450px';
+                addCard.style.margin = '0 auto 10px auto';
+                addCard.style.width = '100%';
+                addCard.innerHTML = `
+                    <div class="special-card-title">➕ Créer un nouveau thème</div>
+                    <div class="special-card-subtitle">Ajoutez un thème personnalisé avec vos propres dates</div>
+                `;
+                addCard.onclick = openAddThemeModal;
+                container.appendChild(addCard);
+
+                if (themeList.length === 0) {
+                    const emptyMsg = document.createElement('div');
+                    emptyMsg.className = 'empty-msg';
+                    emptyMsg.innerText = "Vous n'avez pas encore créé de thème personnalisé. Cliquez sur « Créer un nouveau thème » pour commencer !";
+                    emptyMsg.style.gridColumn = '1 / -1';
+                    container.appendChild(emptyMsg);
+                    return;
+                }
+            }
             
             themeList.forEach((theme, index) => {
                 const card = createThemeCard(theme, () => {
@@ -6451,6 +7030,13 @@ events: [
                     ? themeEvents.filter(e => selectedAxes.has(e.axe))
                     : themeEvents;
             }
+            if (isSelectionActive && !revisionMode) {
+                sourceEvents = sourceEvents.filter(e => selectedEventsIds.has(e.id));
+            }
+            if (sourceEvents.length === 0) {
+                alert("Ce thème ne contient aucun événement. Veuillez d'abord ajouter des événements via « Ajouter un événement » !");
+                return;
+            }
             let eventsCopy = [...sourceEvents];
             
             if (mode === 'discovery') {
@@ -6532,6 +7118,13 @@ events: [
                     ? themeEvents.filter(e => selectedAxes.has(e.axe))
                     : themeEvents;
             }
+            if (isSelectionActive && !revisionMode) {
+                sourceEvents = sourceEvents.filter(e => selectedEventsIds.has(e.id));
+            }
+            if (sourceEvents.length < 4) {
+                alert("Le mode Quiz nécessite au moins 4 événements. Veuillez ajouter d'autres événements à ce thème !");
+                return;
+            }
 
             quizQuestions = buildQuizQuestions(sourceEvents);
             quizIndex = 0;
@@ -6557,7 +7150,21 @@ events: [
             if (pool.length < 4) return [];
             const questions = pool.map(evt => {
                 const type = Math.random() < 0.5 ? 'event-to-year' : 'year-to-event';
-                const distractorEvents = shuffleArray(pool.filter(e => e.id !== evt.id)).slice(0, 3);
+                // Find 3 distractors with unique dates, distinct from evt.date
+                let availableDistractors = shuffleArray(pool.filter(e => e.date !== evt.date));
+                let distractorEvents = [];
+                let usedDates = new Set();
+                for (let e of availableDistractors) {
+                    if (!usedDates.has(e.date)) {
+                        usedDates.add(e.date);
+                        distractorEvents.push(e);
+                        if (distractorEvents.length === 3) break;
+                    }
+                }
+                // Fallback if not enough unique dates (rare but possible in very small specific themes)
+                if (distractorEvents.length < 3) {
+                    distractorEvents = shuffleArray(pool.filter(e => e.id !== evt.id)).slice(0, 3);
+                }
                 return { type, correct: evt, distractorEvents };
             });
             return shuffleArray(questions);
@@ -6577,6 +7184,12 @@ events: [
             const prompt = document.getElementById('quiz-prompt');
             const optionsContainer = document.getElementById('quiz-options');
             optionsContainer.innerHTML = '';
+            
+            if (document.activeElement) document.activeElement.blur();
+            optionsContainer.style.pointerEvents = 'none';
+            requestAnimationFrame(() => {
+                optionsContainer.style.pointerEvents = 'auto';
+            });
 
             let options;
             if (q.type === 'event-to-year') {
@@ -6613,14 +7226,14 @@ events: [
             isAnimating = true;
 
             const q = quizQuestions[quizIndex];
-            const isPerfect = chosenEvent.id === q.correct.id;
+            const isPerfect = chosenEvent.date === q.correct.date;
             const gap = Math.abs(chosenEvent.date - q.correct.date);
             awardPoints(gap, isPerfect, { halved: quizFiftyActive });
             srsRecord(q.correct.id, isPerfect);
 
             document.querySelectorAll('#quiz-options .quiz-option').forEach(b => {
                 b.style.pointerEvents = 'none';
-                if (b.dataset.eventId === q.correct.id) b.classList.add('correct');
+                if (b.dataset.eventId === q.correct.id || (isPerfect && b.dataset.eventId === chosenEvent.id)) b.classList.add('correct');
                 else if (b.dataset.eventId === chosenEvent.id) b.classList.add('wrong');
             });
 
@@ -6685,6 +7298,13 @@ events: [
                     ? themeEvents.filter(e => selectedAxes.has(e.axe))
                     : themeEvents;
             }
+            if (isSelectionActive && !revisionMode) {
+                sourceEvents = sourceEvents.filter(e => selectedEventsIds.has(e.id));
+            }
+            if (sourceEvents.length === 0) {
+                alert("Ce thème ne contient aucun événement. Veuillez d'abord ajouter des événements via « Ajouter un événement » !");
+                return;
+            }
 
             filEvents = [...sourceEvents].sort((a, b) => a.date - b.date);
             filIndex = 0;
@@ -6707,10 +7327,18 @@ events: [
             isAnimating = false;
             filInput = '';
             filEra = 1;
+            filHintsRevealed = 0;
+            document.getElementById('fil-hint-btn').disabled = false;
 
             const evt = filEvents[filIndex];
+            filCorrectYearString = Math.abs(evt.date).toString();
+
             document.getElementById('fil-prompt').innerText = evt.titre;
-            document.getElementById('fil-correct-hint').innerText = '';
+            
+            const badge = document.getElementById('fil-answer-badge');
+            badge.className = 'fil-answer-badge hidden';
+            badge.innerText = '';
+            
             updateFilDisplay();
 
             document.getElementById('fil-hud-count').innerText = `${filIndex + 1} / ${filEvents.length}`;
@@ -6719,28 +7347,59 @@ events: [
             updateFilHUD();
         }
 
-        function filToggleEra() {
+        function filUseHint() {
             if (isAnimating) return;
+            const evt = filEvents[filIndex];
+            const targetStr = filCorrectYearString;
+            
+            if (filHintsRevealed === 0) {
+                filEra = evt.date < 0 ? -1 : 1;
+            }
+
+            if (filHintsRevealed < targetStr.length) {
+                filHintsRevealed++;
+                let currentInput = filInput;
+                let newStr = '';
+                for (let i = 0; i < targetStr.length; i++) {
+                    if (i < filHintsRevealed) {
+                        newStr += targetStr[i];
+                    } else if (i < currentInput.length) {
+                        newStr += currentInput[i];
+                    }
+                }
+                filInput = newStr;
+                updateFilDisplay();
+
+                if (filHintsRevealed === targetStr.length) {
+                    filSubmit(true);
+                }
+            }
+        }
+
+        function filToggleEra() {
+            if (isAnimating || filHintsRevealed > 0) return;
             filEra = filEra === 1 ? -1 : 1;
             updateFilDisplay();
         }
 
         function filKeyPress(digit) {
             if (isAnimating) return;
-            if (filInput.length >= 7) return; // borne large, pour les dates préhistoriques
+            if (filInput.length >= 7) return;
             filInput += digit;
             updateFilDisplay();
         }
 
         function filBackspace() {
             if (isAnimating) return;
-            filInput = filInput.slice(0, -1);
-            updateFilDisplay();
+            if (filInput.length > filHintsRevealed) {
+                filInput = filInput.slice(0, -1);
+                updateFilDisplay();
+            }
         }
 
         function filClear() {
             if (isAnimating) return;
-            filInput = '';
+            filInput = filInput.slice(0, filHintsRevealed);
             updateFilDisplay();
         }
 
@@ -6750,32 +7409,83 @@ events: [
             eraBtn.classList.toggle('era-bc', filEra === -1);
 
             const display = document.getElementById('fil-display-value');
-            display.innerText = filInput ? filInput : '—';
+            if (!filInput) {
+                display.innerHTML = '—';
+            } else {
+                let html = '';
+                for (let i = 0; i < filInput.length; i++) {
+                    if (i < filHintsRevealed) {
+                        html += `<span style="color: #2CA85A;">${filInput[i]}</span>`;
+                    } else {
+                        html += filInput[i];
+                    }
+                }
+                display.innerHTML = html;
+            }
             display.classList.remove('fil-feedback-correct', 'fil-feedback-wrong');
 
-            document.getElementById('fil-validate-btn').disabled = filInput.length === 0;
+            document.getElementById('fil-validate-btn').disabled = filInput.length === 0 && filHintsRevealed === 0;
+            document.getElementById('fil-hint-btn').disabled = (filHintsRevealed >= filCorrectYearString.length);
         }
 
-        function filSubmit() {
-            if (isAnimating || filInput.length === 0) return;
+        function filSubmit(autoFailByHint = false) {
+            // handle event signature difference since onclick passes no args
+            if (typeof autoFailByHint !== 'boolean') autoFailByHint = false;
+            if (isAnimating) return;
+            if (!autoFailByHint && filInput.length === 0) return;
             isAnimating = true;
 
             const evt = filEvents[filIndex];
             const guessedYear = filEra * parseInt(filInput, 10);
-            const gap = Math.abs(guessedYear - evt.date);
+            const gap = autoFailByHint ? Infinity : Math.abs(guessedYear - evt.date);
             const isPerfect = gap === 0;
 
-            awardPoints(gap, isPerfect);
+            if (autoFailByHint) {
+                lives -= 1;
+                comboMultiplier = 1.0;
+            } else {
+                let deduction = filHintsRevealed * 25;
+                if (deduction > 100) deduction = 100;
+                
+                let points = 0;
+                if (isPerfect) {
+                    points = Math.max(0, 100 - deduction);
+                    if (filHintsRevealed === 0) {
+                        points = Math.round(points * comboMultiplier);
+                        comboMultiplier = Math.min(5.0, comboMultiplier + 0.1);
+                    } else {
+                        comboMultiplier = 1.0; 
+                    }
+                    score += points;
+                } else {
+                    lives -= 1;
+                    const maxGap = Math.max(currentGameSpan, 10);
+                    let basePts = 100 * (1 - (gap / maxGap));
+                    if (basePts < 0) basePts = 0;
+                    points = Math.max(0, Math.round(basePts) - deduction);
+                    score += points;
+                    comboMultiplier = 1.0;
+                }
+            }
+
             srsRecord(evt.id, isPerfect);
-            if (!isPerfect) lives -= 1;
             updateFilHUD();
 
             const display = document.getElementById('fil-display-value');
             display.classList.add(isPerfect ? 'fil-feedback-correct' : 'fil-feedback-wrong');
             document.getElementById('fil-validate-btn').disabled = true;
+            document.getElementById('fil-hint-btn').disabled = true;
 
+            const badge = document.getElementById('fil-answer-badge');
             if (!isPerfect) {
-                document.getElementById('fil-correct-hint').innerText = `Bonne réponse : ${formatYear(evt.date)}`;
+                badge.innerText = `Bonne réponse : ${formatYear(evt.date)}`;
+                badge.className = 'fil-answer-badge badge-wrong';
+            } else if (isPerfect && filHintsRevealed > 0) {
+                 badge.innerText = `Exact (avec indice)`;
+                 badge.className = 'fil-answer-badge badge-correct';
+            } else {
+                 badge.innerText = `Exact !`;
+                 badge.className = 'fil-answer-badge badge-correct';
             }
 
             setTimeout(() => {
@@ -6863,6 +7573,20 @@ events: [
             }
         }
 
+        function renderAxesLegend() {
+            const legendEl = document.getElementById('timeline-axes-legend');
+            if (!legendEl) return;
+            if (currentMode === 'discovery' && currentThemeAxes && currentThemeAxes.length > 1) {
+                legendEl.innerHTML = '<span class="axes-legend-title">Axes :</span>' + currentThemeAxes.map(axe => {
+                    const color = getAxisColor(axe);
+                    return `<span class="entry-axe-badge" data-axis="${color ? color.name : 'blue'}">${axe}</span>`;
+                }).join('');
+                legendEl.classList.remove('hidden');
+            } else {
+                legendEl.classList.add('hidden');
+            }
+        }
+
         // RENDU DE LA COLONNE CHRONOLOGIQUE
         // Un intervalle d'insertion nommé est intercalé entre chaque repère :
         // le joueur choisit explicitement la fourchette où il pense placer l'événement.
@@ -6871,6 +7595,8 @@ events: [
             const isPlaying = currentMode !== 'discovery';
             timeline.className = isPlaying ? 'chrono playing' : 'chrono';
             timeline.innerHTML = '';
+
+            renderAxesLegend();
 
             for (let i = 0; i <= placedEvents.length; i++) {
                 if (isPlaying) timeline.appendChild(buildSlot(i));
@@ -6903,9 +7629,19 @@ events: [
             const row = document.createElement('div');
             row.className = evt.missed ? 'entry entry-missed' : 'entry';
             row.dataset.eventId = evt.id;
+
+            let axeHtml = '';
+            if (evt.axe) {
+                const color = getAxisColor(evt.axe);
+                if (color) {
+                    axeHtml = `<span class="entry-axe-badge" data-axis="${color.name}" title="${evt.axe}">${evt.axe}</span>`;
+                }
+            }
+
             row.innerHTML = `<span class="entry-year">${formatYear(evt.date)}</span>` +
                 `<span class="entry-tick"></span>` +
                 `<span class="entry-body"><span class="entry-title">${evt.titre}</span>` +
+                axeHtml +
                 (evt.missed ? `<span class="entry-flag">manqué</span>` : '') +
                 `<span class="entry-chevron" aria-hidden="true">›</span></span>`;
             row.onclick = () => openModal(evt);
@@ -7024,6 +7760,11 @@ events: [
                 progressRecordWin(theme.id, currentMode);
             }
 
+            if (!revisionMode && currentMode !== 'discovery' && currentMode !== 'training') {
+                const theme = getCurrentTheme();
+                saveScoreToLeaderboard(theme.id, currentMode, score);
+            }
+
             showScreen('screen-end');
             document.getElementById('end-score-val').innerText = score;
             const titleElement = document.getElementById('end-title');
@@ -7086,6 +7827,19 @@ events: [
         // d'origine de l'événement, ainsi qu'un bouton pour repiocher.
         function openModal(evt, context = null) {
             document.getElementById('modal-titre').innerText = evt.titre;
+
+            const badgeContainer = document.getElementById('modal-axe-badge-container');
+            if (badgeContainer) {
+                if (evt.axe) {
+                    const color = getAxisColor(evt.axe);
+                    badgeContainer.innerHTML = `<span class="entry-axe-badge" data-axis="${color ? color.name : 'blue'}">${evt.axe}</span>`;
+                    badgeContainer.classList.remove('hidden');
+                } else {
+                    badgeContainer.innerHTML = '';
+                    badgeContainer.classList.add('hidden');
+                }
+            }
+
             document.getElementById('modal-date').innerText = formatYear(evt.date);
             document.getElementById('modal-desc').innerText = evt.description;
             document.getElementById('modal-wiki').href = evt.wikipedia;
