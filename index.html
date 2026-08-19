@@ -244,6 +244,8 @@
         .scoring-info-body h3 { font-size: 15px; color: var(--primary-blue); margin: 18px 0 6px; }
         .scoring-info-body h3:first-child { margin-top: 0; }
         .scoring-info-body p { font-size: 14px; line-height: 1.55; color: var(--ink-soft); margin-bottom: 8px; }
+        .scoring-info-body ul { margin: 6px 0 10px 20px; padding: 0; font-size: 13.5px; color: var(--ink-soft); line-height: 1.55; }
+        .scoring-info-body li { margin-bottom: 6px; }
         .scoring-info-body em { color: var(--muted-text); }
 
         /* Mode Quiz */
@@ -844,33 +846,40 @@
 
     <!-- MODAL EXPLICATIONS DU CALCUL DES POINTS -->
     <div id="modal-scoring-info" class="modal-overlay hidden">
-        <div class="modal-content" style="max-width:560px;">
+        <div class="modal-content" style="max-width:580px;">
             <span class="close-btn" onclick="closeScoringInfo()">×</span>
             <h2 style="font-size:20px; margin-bottom:20px; color:var(--text-dark);">Comment sont calculés les points ?</h2>
             <div class="scoring-info-body">
-                <h3>Réponse exacte</h3>
-                <p>Chaque bonne réponse (bon créneau en frise, bonne réponse en Quiz) rapporte <strong>100 points de base</strong>, multipliés par votre série de bonnes réponses en cours.</p>
+                <h3>🎯 Réponse exacte</h3>
+                <p>Chaque bon créneau en frise, bonne réponse en Quiz ou année exacte trouvée en Fil du temps rapporte <strong>100 points de base</strong>, multipliés par votre série de victoires en cours.</p>
 
-                <h3>Série (combo)</h3>
-                <p>Chaque bonne réponse enchaînée augmente le multiplicateur de <strong>+0,1</strong> : ×1,0 → ×1,1 → ×1,2… La moindre erreur, même partiellement récompensée (voir ci-dessous), remet le multiplicateur à ×1,0.</p>
-                <p><em>Exemple : 3 bonnes réponses d'affilée rapportent 100, puis 110, puis 120 points.</em></p>
+                <h3>🔥 Série (combo multiplicateur)</h3>
+                <p>Chaque bonne réponse d'affilée (sans indice) augmente le multiplicateur de <strong>+0,1</strong> : ×1,0 → ×1,1 → ×1,2… jusqu'à ×5,0. La moindre erreur ou recours à un indice remet le multiplicateur à ×1,0.</p>
+                <p><em>Exemple : 3 bonnes réponses d'affilée sans faute rapportent 100, puis 110, puis 120 points.</em></p>
 
-                <h3>Réponse incorrecte : le principe de proximité</h3>
-                <p>Une erreur n'est plus sanctionnée par 0 point. On calcule l'écart, en années, entre la date réelle et l'endroit choisi (en frise : les deux repères encadrant le créneau ; en Quiz : la date de la réponse choisie), puis on le compare à l'étendue chronologique de la partie (du repère le plus ancien au plus récent parmi ceux en jeu).</p>
-                <p><em>Exemple : sur une partie qui s'étend sur 100 ans, une erreur de 10 ans rapporte encore 90 points (100 × (1 − 10/100)) ; une erreur de 80 ans n'en rapporte que 20.</em></p>
-                <p>Une vie est perdue à chaque erreur (sauf en Entraînement), quels que soient les points obtenus.</p>
+                <h3>📐 Réponse inexacte : principe de proximité</h3>
+                <p>Une erreur n'est pas sanctionnée par 0 point : l'écart en années avec la date réelle est comparé à l'étendue chronologique du thème pour récompenser la pertinence historique.</p>
+                <p><em>Exemple : sur un thème de 100 ans, une erreur de 10 ans rapporte encore 90 points (100 × (1 − 10/100)) ; une erreur de 80 ans rapporte 20 points.</em></p>
+                <p>Une vie est retirée à chaque erreur (sauf en Entraînement), quel que soit le nombre de points accordés.</p>
 
-                <h3>Bonus de rapidité (Chrono et Expert)</h3>
-                <p>Sur ces deux modes chronométrés, une bonne réponse donnée en moins de 3 secondes rapporte jusqu'à <strong>+50 points</strong> supplémentaires, ce bonus diminuant progressivement jusqu'à 0 au-delà de 15 secondes.</p>
+                <h3>⚡ Bonus de rapidité (Chrono et Expert)</h3>
+                <p>Sur les modes chronométrés <strong>Chrono</strong> et <strong>Expert</strong>, une bonne réponse donnée en moins de 3 secondes confère jusqu'à <strong>+50 points</strong> supplémentaires (dégressif jusqu'à 0 au-delà de 15 secondes).</p>
 
-                <h3>Mode Quiz</h3>
-                <p>Le même principe de proximité s'applique aux 4 choix proposés : une mauvaise réponse proche de la bonne rapporte plus qu'une réponse très éloignée. Utiliser le bonus 50:50 divise par deux les points gagnables sur la question en cours.</p>
+                <h3>❓ Mode Quiz (QCM)</h3>
+                <p>Le principe de proximité s'applique aux 4 dates proposées. Utiliser le joker <strong>50:50</strong> (2 par partie) retire 2 mauvaises réponses et divise par 2 les points gagnables sur la question.</p>
 
-                <h3>Le fil du temps</h3>
-                <p>Les événements du thème sont présentés un par un, du plus ancien au plus récent, et il faut en saisir l'année exacte au clavier. Le même principe de proximité s'applique : plus votre réponse est proche de l'année réelle, plus elle rapporte de points, même imparfaite. Une vie est perdue à chaque année inexacte.</p>
+                <h3>⏳ Mode « Le fil du temps »</h3>
+                <p>Les événements défilent dans l'ordre chronologique et l'année exacte doit être tapée au clavier :</p>
+                <ul>
+                    <li><strong>Saisie directe exacte</strong> : 100 points × multiplicateur de combo.</li>
+                    <li><strong>Bouton 💡 Indice</strong> : Révèle l'ère (<em>av.</em> / <em>apr. J.-C.</em>) au premier clic, puis dévoile les chiffres de l'année un par un depuis la gauche.</li>
+                    <li><strong>Pénalité par chiffre</strong> : Chaque chiffre dévoilé par l'indice déduit <strong>25 points</strong> sur la question et réinitialise le multiplicateur à ×1,0.</li>
+                    <li><strong>Révélation complète</strong> : Dévoiler tous les chiffres par l'indice équivaut à un échec (0 point, perte d'une vie).</li>
+                    <li><strong>Erreur de saisie</strong> : Si l'année soumise est fausse, les points partiels de proximité sont attribués (moins les pénalités d'indices éventuelles) et une vie est perdue.</li>
+                </ul>
 
-                <h3>Découverte et Entraînement</h3>
-                <p>Ces deux modes restent sans score : ils sont pensés pour apprendre sans pression, à vies illimitées.</p>
+                <h3>🌱 Modes Découverte et Entraînement</h3>
+                <p>Ces modes n'ont pas de système de score : ils sont pensés pour réviser et mémoriser sans stress à vies illimitées.</p>
             </div>
         </div>
     </div>
