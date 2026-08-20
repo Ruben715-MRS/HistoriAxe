@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HistoriAxe - Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#e9c349",
+                        "on-surface-variant": "#44464f",
+                        "outline": "#757780",
+                        "on-primary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#dbe4ed",
+                        "primary-fixed": "#dae2ff",
+                        "on-primary-fixed": "#001847",
+                        "inverse-surface": "#293138",
+                        "on-tertiary-fixed-variant": "#454748",
+                        "on-background": "#141d23",
+                        "surface": "#f6faff",
+                        "tertiary-container": "#1b1e1f",
+                        "tertiary-fixed-dim": "#c5c7c8",
+                        "on-primary-container": "#7084ba",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#574500",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#495d90",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#191c1d",
+                        "on-primary-fixed-variant": "#314577",
+                        "on-secondary-container": "#745c00",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#735c00",
+                        "surface-variant": "#dbe4ed",
+                        "primary-container": "#001a4b",
+                        "tertiary": "#020404",
+                        "on-surface": "#141d23",
+                        "secondary-fixed": "#ffe088",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#fed65b",
+                        "surface-container-low": "#ecf5fe",
+                        "on-tertiary-container": "#848687",
+                        "surface-bright": "#f6faff",
+                        "error-container": "#ffdad6",
+                        "background": "#f6faff",
+                        "inverse-on-surface": "#e9f2fb",
+                        "surface-container-high": "#e0e9f2",
+                        "primary-fixed-dim": "#b2c5ff",
+                        "inverse-primary": "#b2c5ff",
+                        "surface-container": "#e6eff8",
+                        "surface-dim": "#d2dbe4",
+                        "on-secondary-fixed": "#241a00",
+                        "outline-variant": "#c5c6d0",
+                        "primary": "#000311",
+                        "tertiary-fixed": "#e1e3e4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "24px",
+                        "gutter": "16px",
+                        "xl": "48px",
+                        "lg": "32px",
+                        "margin-desktop": "64px",
+                        "base": "8px",
+                        "sm": "12px",
+                        "xs": "4px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "display": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["22px", { "lineHeight": "28px", "fontWeight": "700" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "display": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" }]
+                    },
+                    boxShadow: {
+                        'executive': '0px 10px 30px rgba(0, 26, 75, 0.05)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-[#F2F4F7] text-on-background min-h-screen pb-[90px] md:pb-0 md:pt-16">
+<!-- Top App Bar (Web) / Hidden on Mobile -->
+<header class="hidden md:flex fixed top-0 left-0 w-full z-50 justify-between items-center px-margin-desktop h-16 bg-surface/80 backdrop-blur-xl bg-transparent flat no shadows border-none">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of an executive with a warm smile, well-lit against a neutral background, in a modern, sophisticated style reflecting authority and competence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjJCIt7UUx3fhuS-EDz2fr-Fk6bsd_m4N2ef7N1JNYDhrZAV0NZyh0xpS_R9vxdsnE5P93SqbV4wdn7eiQsPI87Fwx0_ycPaByQyd46FPDDy1CHoeDPWJjOM3IzGs9QM3KmkmCVCHMXZCJJrSXs-hA4st6C9IF6yGOdaWXsQTNeZBH2e-KIPNU9AdFHc869Xfv0-WwTlPM9tNICIRrKEUuKJp71BR6WAGnxT7L9Fy2oQMQSlAU7tKx"/>
+</div>
+<span class="font-headline-md text-headline-md text-primary">HistoriAxe</span>
+</div>
+<nav class="flex gap-8">
+<a class="text-primary font-bold font-label-lg text-label-lg flex flex-col items-center justify-center relative after:content-[''] after:absolute after:-bottom-1 after:w-1 after:h-1 after:bg-primary after:rounded-full" href="#">Home</a>
+<a class="text-on-surface-variant hover:opacity-80 transition-opacity font-label-lg text-label-lg" href="#">Library</a>
+<a class="text-on-surface-variant hover:opacity-80 transition-opacity font-label-lg text-label-lg" href="#">Stats</a>
+</nav>
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[24px]">settings</span>
+</button>
+</header>
+<!-- Top App Bar (Mobile Profile Header) -->
+<header class="md:hidden flex justify-between items-center px-margin-mobile pt-12 pb-sm bg-transparent">
+<div class="flex items-center gap-sm">
+<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-surface-container-lowest shadow-executive">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of an executive with a warm smile, well-lit against a neutral background, in a modern, sophisticated style reflecting authority and competence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8-mb6wkOl3dE8fg50imXII5dLC4_7zo9AiASmg2gfj_TXoYuBVOGm1kEKpajhdd68EH0hkdXIRBYHJKsuUrs3frWmbMd1lFlZPGzNV3AYvPPOylqSx8CKOFDCAY5iXfirpNLmxo4E10o72UB0YLTxJu7GPSLSEhTfjSL19UPFoW1TKkF-lz3OT25S_7vzRCnZHgpxWVdp0r2rt53G6HTn6Cmqc91VcFQg0o_TkH8ZER_QTSQN5yrk"/>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface-variant">Good morning,</span>
+<span class="font-headline-md text-headline-md text-primary">Alexander</span>
+</div>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-lowest shadow-executive text-primary">
+<span class="material-symbols-outlined text-[24px]">notifications</span>
+</button>
+</header>
+<main class="w-full max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop space-y-lg md:space-y-xl mt-sm md:mt-xl">
+<!-- Search Bar -->
+<div class="w-full relative">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-12 pr-4 py-3 rounded-full bg-surface-container-lowest shadow-executive border-none focus:ring-1 focus:ring-primary outline-none font-body-md text-body-md text-on-surface placeholder:text-outline-variant" placeholder="Search historical eras..." type="text"/>
+</div>
+<!-- Featured / Hero Card -->
+<section class="w-full">
+<div class="flex justify-between items-end mb-sm">
+<h2 class="font-headline-md text-headline-md text-primary">Featured Exploration</h2>
+<button class="text-secondary-fixed-dim font-label-lg text-label-lg hover:opacity-80">See All</button>
+</div>
+<div class="relative w-full h-[240px] md:h-[320px] rounded-[24px] overflow-hidden bg-primary-container flex items-center shadow-executive">
+<!-- Background Image Container with Gradient Overlay -->
+<div class="absolute inset-0 w-full h-full" data-alt="A high-quality, atmospheric, slightly blurred background image showing an ancient library with towering bookshelves, warm amber lighting cutting through dust motes, creating a scholarly and majestic mood suitable for a historical learning app." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDtJfkBO2VenLSsRaDPxRbgg_HTDJwp6p3Yu8ryO7D9y-3ERGtRhxfBWfPB27-HnqBXHwdiIUlNoPeEXdatZkcTXcu8GcHDUiq0hXR2w3BtQ4Q5JtRhzbwA4M0IMX3MC__d8uN69ScFhV_g-IA990WTUCHj9mF4uOyB8y02lsQHyns7o1MHcjZHhdQRCEEWvmd305YMNag2oEadwWrVCdQY_ZrAX5cZyLHCFGe5MOlhjJA8lFm2tHuR')"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-primary-container via-primary-container/80 to-transparent"></div>
+<!-- Content -->
+<div class="relative z-10 p-md md:p-lg max-w-[70%]">
+<h3 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-primary mb-xs">Master the Past</h3>
+<p class="font-body-md text-body-md text-primary-fixed-dim mb-md">Tailor-made historical journeys curated for the modern executive.</p>
+<button class="bg-on-primary text-primary-container px-6 py-2 rounded-full font-label-lg text-label-lg font-bold hover:opacity-90 transition-opacity">
+                        Get Started
+                    </button>
+</div>
+</div>
+</section>
+<!-- Quick Action Grid -->
+<section class="w-full">
+<div class="grid grid-cols-4 gap-sm md:gap-md">
+<div class="flex flex-col items-center gap-2">
+<div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-surface-container-lowest shadow-executive flex items-center justify-center text-primary-container hover:bg-primary-container hover:text-on-primary transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-[32px] group-hover:scale-110 transition-transform">favorite</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Favorites</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-surface-container-lowest shadow-executive flex items-center justify-center text-primary-container hover:bg-primary-container hover:text-on-primary transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-[32px] group-hover:scale-110 transition-transform">explore</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Discover</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-surface-container-lowest shadow-executive flex items-center justify-center text-primary-container hover:bg-primary-container hover:text-on-primary transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-[32px] group-hover:scale-110 transition-transform">rate_review</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Review</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-surface-container-lowest shadow-executive flex items-center justify-center text-primary-container hover:bg-primary-container hover:text-on-primary transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-[32px] group-hover:scale-110 transition-transform">trending_up</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Progress</span>
+</div>
+</div>
+</section>
+<!-- Browse Categories -->
+<section class="w-full pb-xl">
+<div class="flex justify-between items-end mb-sm">
+<h2 class="font-headline-md text-headline-md text-primary">Browse Archives</h2>
+<button class="text-secondary-fixed-dim font-label-lg text-label-lg hover:opacity-80">See All</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-sm md:gap-md">
+<!-- Card 1 -->
+<div class="relative h-32 md:h-40 rounded-[24px] overflow-hidden group cursor-pointer shadow-executive">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="A striking visual representation of ancient culture, perhaps a beautifully lit Greek column or Roman statue, set against a dark, moody background to evoke a sense of timeless elegance and history." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCJn8cQHzB25lP1IJnbll7bVHbEkLDMSECUE5PfbJ0Cw0UBgW81tp2o602P1PPWoP9sRocRAduTbf8hL1Fcb2QNbbZy1e94MOGk6hr3wx3il8BhD_tpdrJPlI_z_5PuWCLbQRJrgmIb55_EV9ZC54OsdKKbeBWwI9X-jgjqDSIIXTD7PymUv1nEaeMs-rJdfaBqULkKLo6HwUbGyfYQ8eDnNI9pVCZEwTgAvdfgvnjysVGZTWkEq4vY')"></div>
+<div class="absolute inset-0 bg-primary/40 group-hover:bg-primary/30 transition-colors"></div>
+<div class="absolute bottom-0 left-0 p-md w-full">
+<h4 class="font-headline-md text-headline-md text-on-primary">Culture</h4>
+<p class="font-label-sm text-label-sm text-primary-fixed-dim mt-xs">240+ Articles</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="relative h-32 md:h-40 rounded-[24px] overflow-hidden group cursor-pointer shadow-executive">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="An elegant, antique leather-bound journal sitting on a dark oak mahogany desk, illuminated by a soft, warm spotlight, conveying a sense of personal history and deep biographical narrative in a sophisticated setting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCwm7asxh7ckUn6x2RndQXGPuJJWDrUtnzihWJ36Vb7B2ugQ7hJTIvKXKYFzWWA8CaUgcVwLNhUwOpE3PcIyyyondGc2s1kRv7NZyctfTI5CwL13xBjZz0j4u_xXdwXUpS5Xt8bFRJYOe09d5pBcC7JFjBH8DB6sCJJtlHfIuRZ1GhjiZQWN58crd6gHm4YZ9LeNS5-u2J736UQ0_NcnmVHjkE8lJwuZLtHsHMjPlwrC4jcYRubDHzb')"></div>
+<div class="absolute inset-0 bg-primary/40 group-hover:bg-primary/30 transition-colors"></div>
+<div class="absolute bottom-0 left-0 p-md w-full">
+<h4 class="font-headline-md text-headline-md text-on-primary">Biographies</h4>
+<p class="font-label-sm text-label-sm text-primary-fixed-dim mt-xs">150+ Profiles</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="relative h-32 md:h-40 rounded-[24px] overflow-hidden group cursor-pointer shadow-executive">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="A majestic, abstract representation of a waving historical flag or map, bathed in dramatic, cinematic lighting with a deep navy and muted gold color palette, symbolizing national histories and grand narratives." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDXT78bkx8mX821lvK_TBdXTaInqkAjo5WarSLuVOzBl4hG_5avyoXhO1wzQnWhvy97tafFpKL9gGYfHYidmk7OYKt-9hXQpoS5Ph2-MXqQljvdua6fL8RHapodYg2kfrs_eWq2qy_xpIDeJkg6oDHO8OfaxTCPh8HIVWzI_xNVXpxqqWS0HJbJHg0yYKadJuuB9svv_QgbaPFtA2JPgmMGiAELxA9gwxRjyUsbsf56XDGtgDhP4drK')"></div>
+<div class="absolute inset-0 bg-primary/40 group-hover:bg-primary/30 transition-colors"></div>
+<div class="absolute bottom-0 left-0 p-md w-full">
+<h4 class="font-headline-md text-headline-md text-on-primary">National Histories</h4>
+<p class="font-label-sm text-label-sm text-primary-fixed-dim mt-xs">80+ Regions</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-margin-mobile py-sm pb-safe bg-surface/80 backdrop-blur-xl border-none shadow-[0_-10px_30px_rgba(0,26,75,0.05)] rounded-t-lg">
+<a class="flex flex-col items-center justify-center text-primary relative after:content-[''] after:absolute after:-bottom-1 after:w-1 after:h-1 after:bg-primary after:rounded-full scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-sm text-label-sm mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-label-sm text-label-sm mt-1">Library</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="font-label-sm text-label-sm mt-1">Stats</span>
+</a>
+</nav>
+</body></html>

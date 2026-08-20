@@ -12,19 +12,115 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="HistoriAxe">
+    
+    <!-- Tailwind CSS & Fonts (Tailored Executive) -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#e9c349",
+                        "on-surface-variant": "#44464f",
+                        "outline": "#757780",
+                        "on-primary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#dbe4ed",
+                        "primary-fixed": "#dae2ff",
+                        "on-primary-fixed": "#001847",
+                        "inverse-surface": "#293138",
+                        "on-tertiary-fixed-variant": "#454748",
+                        "on-background": "#141d23",
+                        "surface": "#f6faff",
+                        "tertiary-container": "#1b1e1f",
+                        "tertiary-fixed-dim": "#c5c7c8",
+                        "on-primary-container": "#7084ba",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#574500",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#495d90",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#191c1d",
+                        "on-primary-fixed-variant": "#314577",
+                        "on-secondary-container": "#745c00",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#735c00",
+                        "surface-variant": "#dbe4ed",
+                        "primary-container": "#001a4b",
+                        "tertiary": "#020404",
+                        "on-surface": "#141d23",
+                        "secondary-fixed": "#ffe088",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#fed65b",
+                        "surface-container-low": "#ecf5fe",
+                        "on-tertiary-container": "#848687",
+                        "surface-bright": "#f6faff",
+                        "error-container": "#ffdad6",
+                        "background": "#f6faff",
+                        "inverse-on-surface": "#e9f2fb",
+                        "surface-container-high": "#e0e9f2",
+                        "primary-fixed-dim": "#b2c5ff",
+                        "inverse-primary": "#b2c5ff",
+                        "surface-container": "#e6eff8",
+                        "surface-dim": "#d2dbe4",
+                        "on-secondary-fixed": "#241a00",
+                        "outline-variant": "#c5c6d0",
+                        "primary": "#000311",
+                        "tertiary-fixed": "#e1e3e4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "24px",
+                        "gutter": "16px",
+                        "xl": "48px",
+                        "lg": "32px",
+                        "margin-desktop": "64px",
+                        "base": "8px",
+                        "sm": "12px",
+                        "xs": "4px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "display": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    boxShadow: {
+                        'executive': '0px 10px 30px rgba(0, 26, 75, 0.05)',
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
         :root {
-            --bg-color: #F7F7F9;
-            --primary-blue: #6B8EAD;
-            --text-dark: #333333;
-            --text-light: #FFFFFF;
-            --danger-red: #D9534F;
-            --card-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --bg-color: #F2F4F7;
+            --primary-blue: #001a4b;
+            --text-dark: #141d23;
+            --text-light: #ffffff;
+            --danger-red: #ba1a1a;
+            --card-shadow: 0px 10px 30px rgba(0, 26, 75, 0.05);
+            --font-main: 'Inter', sans-serif;
             --zoom-level: 1;
             /* Jetons additionnels pour le thème sombre */
             --surface: #FFFFFF;
-            --surface-2: #F1EFE9;
+            --surface-2: #ecf5fe;
             --muted-text: #888888;
             --border-soft: #E5E7EB;
             --btn-secondary-bg: #CCCCCC;
@@ -36,7 +132,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: var(--font-main); }
         body { background-color: var(--bg-color); color: var(--text-dark); height: 100vh; height: 100dvh; display: flex; flex-direction: column; overflow: hidden; }
         .hidden { display: none !important; }
-        .btn { background-color: var(--primary-blue); color: white; border: none; padding: 12px 24px; border-radius: 8px; font-size: 16px; cursor: pointer; font-weight: bold; transition: opacity 0.2s; }
+        .btn { background-color: var(--primary-blue); color: white; border: none; padding: 12px 24px; border-radius: 9999px; font-size: 16px; cursor: pointer; font-weight: bold; transition: opacity 0.2s; }
         .btn:hover { opacity: 0.8; }
         
         /* ÉCRAN D'ACCUEIL AVEC IMAGE & FOND BEIGE FLOUTÉ */
@@ -179,7 +275,7 @@
 
         .form-group { text-align: left; margin-bottom: 15px; }
         .form-label { display: block; font-weight: 600; font-size: 14px; margin-bottom: 6px; color: var(--text-dark); }
-        .form-input { width: 100%; padding: 10px 12px; border: 1px solid var(--border-soft); border-radius: 8px; font: inherit; font-size: 15px; background: var(--paper); color: var(--ink); }
+        .form-input { width: 100%; padding: 10px 12px; border: 1px solid var(--border-soft); border-radius: 9999px; font: inherit; font-size: 15px; background: var(--paper); color: var(--ink); }
         .form-input:focus { outline: none; border-color: var(--primary-blue); }
         .form-row { display: flex; gap: 10px; }
 
@@ -340,7 +436,7 @@
         .fil-hint-btn:disabled { opacity: 0.4; cursor: not-allowed; }
         .fil-era-btn { padding: 12px 16px; border-radius: 12px; border: 2px solid var(--border-soft); background: var(--surface-2); color: var(--text-dark); font: inherit; font-weight: 700; font-size: 14px; cursor: pointer; white-space: nowrap; justify-self: start; }
         .fil-era-btn.era-bc { border-color: var(--primary-blue); color: var(--primary-blue); }
-        .fil-answer-badge { text-align: center; font-weight: 700; padding: 10px 16px; border-radius: 8px; margin: 0 auto 22px; max-width: 300px; font-size: 16px; }
+        .fil-answer-badge { text-align: center; font-weight: 700; padding: 10px 16px; border-radius: 9999px; margin: 0 auto 22px; max-width: 300px; font-size: 16px; }
         .fil-answer-badge.badge-wrong { background: rgba(217,83,79,0.12); color: var(--danger-red); border: 1px solid var(--danger-red); }
         .fil-answer-badge.badge-correct { background: rgba(44,168,90,0.14); color: #1D7A41; border: 1px solid #2CA85A; }
         .fil-keypad { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 16px; }
@@ -378,7 +474,7 @@
         .category-banner { background: linear-gradient(135deg, #2C3E50, #4CA1AF); color: white; border-radius: 12px; padding: 20px 25px; display: flex; justify-content: space-between; align-items: center; box-shadow: var(--card-shadow); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
         .category-banner.empires-banner { background: linear-gradient(135deg, #4A235A, #9B59B6); }
         .category-banner.custom-theme-banner { background: linear-gradient(135deg, #1E8449, #2ECC71); }
-        .subcategory-note { background: var(--surface-2); border-left: 4px solid var(--primary-blue); border-radius: 8px; padding: 14px 18px; margin: 0 auto 22px; max-width: 800px; }
+        .subcategory-note { background: var(--surface-2); border-left: 4px solid var(--primary-blue); border-radius: 9999px; padding: 14px 18px; margin: 0 auto 22px; max-width: 800px; }
         .subcategory-note-title { font-weight: 700; font-size: 14px; color: var(--text-dark); margin-bottom: 4px; }
         .subcategory-note p { font-size: 13px; line-height: 1.5; color: var(--ink-soft); margin: 0; }
         .category-banner:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
@@ -387,7 +483,7 @@
         .category-banner-icon { font-size: 24px; background: rgba(255,255,255,0.2); width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
         .reset-srs-btn { font-size: 20px; opacity: 0.85; padding: 4px 9px; border-radius: 50%; transition: background 0.15s, opacity 0.15s; }
         .reset-srs-btn:hover { opacity: 1; background: rgba(255,255,255,0.2); }
-        .reset-srs-btn.reset-srs-link { font-size: 14px; font-weight: 600; color: var(--muted-text); background: var(--surface-2); border-radius: 8px; padding: 10px 16px; cursor: pointer; opacity: 1; }
+        .reset-srs-btn.reset-srs-link { font-size: 14px; font-weight: 600; color: var(--muted-text); background: var(--surface-2); border-radius: 9999px; padding: 10px 16px; cursor: pointer; opacity: 1; }
         .reset-srs-btn.reset-srs-link:hover { background: var(--border-soft); }
         /* STYLE POUR LA SÉLECTION D'AXE THÉMATIQUE */
         .axis-card { background: var(--surface); border: 2px solid var(--border-soft); border-radius: 12px; padding: 18px 20px; cursor: pointer; transition: all 0.15s; box-shadow: var(--card-shadow); text-align: left; }
@@ -489,7 +585,7 @@
         .settings-group { margin-bottom: 26px; }
         .settings-group:last-child { margin-bottom: 4px; }
         .settings-label { font-size: 14px; font-weight: 700; color: var(--text-dark); margin-bottom: 9px; }
-        .segmented { display: flex; border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; }
+        .segmented { display: flex; border: 1px solid var(--rule); border-radius: 9999px; overflow: hidden; }
         .segmented button { flex: 1; background: var(--surface); border: none; border-right: 1px solid var(--rule); padding: 10px 6px; font-size: 13px; font-weight: 600; color: var(--ink-soft); cursor: pointer; transition: background 0.15s, color 0.15s; }
         .segmented button:last-child { border-right: none; }
         .segmented button.active { background: var(--primary-blue); color: #fff; }
@@ -613,7 +709,7 @@
     justify-content: space-between;
     padding: 15px;
     background: #f8f9fa;
-    border-radius: 8px;
+    border-radius: 9999px;
     align-items: center;
     font-weight: bold;
     border-left: 5px solid #ccc;
@@ -630,6 +726,92 @@
     margin-right: 10px;
     font-size: 0.9em;
 }
+
+    
+        /* --- Overrides for Tailored Executive UI --- */
+        .game-bar {
+            background: rgba(255, 255, 255, 0.8) !important;
+            backdrop-filter: blur(20px) !important;
+            border-bottom: none !important;
+        }
+        .timer-chip { background: #ecf5fe !important; color: #001a4b !important; }
+        .board { background: var(--bg-color) !important; }
+        .chrono::before { background: #c5c6d0 !important; left: calc(var(--gutter) + 12.5px) !important; }
+        
+        /* Entries */
+        .entry { padding: 16px 0 !important; }
+        .entry-body { padding: 0 0 0 16px !important; }
+        .entry-title { 
+            background: #ffffff !important; 
+            padding: 16px !important; 
+            border-radius: 16px !important; 
+            box-shadow: 0px 10px 30px rgba(0, 26, 75, 0.05) !important; 
+            border: 1px solid rgba(0, 0, 0, 0.05) !important; 
+            font-weight: 600 !important; 
+            color: #001a4b !important;
+            display: inline-block;
+            width: 100%;
+        }
+        .entry-tick {
+            width: 16px !important; 
+            height: 16px !important; 
+            background: #001a4b !important; 
+            border: 4px solid #ffffff !important; 
+            border-radius: 50% !important; 
+            transform: none !important; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+            position: relative;
+            left: -1px;
+        }
+        
+        /* Slots */
+        .slot { margin: 8px 0 !important; }
+        .slot-dash { border-top: 2px dashed rgba(0,26,75,0.2) !important; }
+        .slot-caret {
+            width: 12px !important; 
+            height: 12px !important; 
+            border-radius: 50% !important; 
+            background: #dbe4ed !important; 
+            border: 2px solid #ffffff !important; 
+            transform: none !important; 
+            left: 1px !important;
+            transition: all 0.2s ease !important;
+        }
+        .slot:hover .slot-caret { background: #001a4b !important; }
+        .slot-label { 
+            background: rgba(0,26,75,0.05) !important; 
+            padding: 6px 16px !important; 
+            border-radius: 9999px !important; 
+            color: #44464f !important;
+            border: 1px dashed rgba(0,26,75,0.2);
+            transition: all 0.2s ease !important;
+        }
+        .slot:hover .slot-label { background: rgba(0,26,75,0.1) !important; border-color: #001a4b !important; color: #001a4b !important; }
+        .slot:hover .slot-dash { border-color: rgba(0,26,75,0.5) !important; }
+        
+        /* Hand / Mystery Card */
+        .hand {
+            background: linear-gradient(to top, var(--bg-color) 70%, transparent) !important;
+            border-top: none !important;
+            box-shadow: none !important;
+            padding-bottom: 24px !important;
+        }
+        .hand-card {
+            background: #001a4b !important;
+            border-radius: 24px !important;
+            box-shadow: 0px 20px 40px rgba(0,26,75,0.2) !important;
+            padding: 20px 24px !important;
+            position: relative;
+            transform: translateY(0);
+            transition: transform 0.2s ease;
+        }
+        .hand-card:hover { transform: translateY(-4px); }
+        .hand-year { background: rgba(255,255,255,0.1) !important; color: #ffffff !important; }
+        .hand-kicker { color: #b2c5ff !important; font-size: 11px !important; letter-spacing: 0.05em !important; text-transform: uppercase !important; margin-bottom: 4px; display: block; }
+        .hand-title { color: #ffffff !important; font-weight: 700 !important; font-size: 18px !important; }
+        
+        /* Quick tweaks for headers */
+        .header-title { font-weight: 700; color: #001a4b; }
 
     </style>
 </head>
@@ -9207,137 +9389,215 @@ events: [
         function initCategories() {
             const container = document.getElementById('categories-container');
             container.innerHTML = ''; 
+            container.className = 'w-full max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop space-y-lg md:space-y-xl mt-sm md:mt-xl pb-32';
 
-            // Rangée des 3 cartes spéciales, toujours en tête de liste : Favoris,
-            // Découvrir un événement au hasard, et Réviser mes points faibles.
             const weakCount = getWeakEvents().length;
             const favCount = favoritesLoad().length;
             const totalEventsCount = getAllEvents().length;
 
-            const specialRow = document.createElement('div');
-            specialRow.className = 'special-row';
-
-            const favCard = document.createElement('div');
-            favCard.className = 'special-card favorites';
-            favCard.innerHTML = `
-                <div class="special-card-title">⭐ Favoris</div>
-                <div class="special-card-subtitle">${favCount === 0 ? 'Aucun thème enregistré' : (favCount === 1 ? '1 thème enregistré' : favCount + ' thèmes enregistrés')}</div>
-            `;
-            favCard.onclick = openFavorites;
-            specialRow.appendChild(favCard);
-
-            const discoverCard = document.createElement('div');
-            discoverCard.className = 'special-card discover';
-            discoverCard.innerHTML = `
-                <div class="special-card-title">🎲 Découvrir un événement au hasard</div>
-                <div class="special-card-subtitle">${totalEventsCount} événements à explorer</div>
-            `;
-            discoverCard.onclick = discoverRandomEvent;
-            specialRow.appendChild(discoverCard);
-
-            const revisionCard = document.createElement('div');
-            revisionCard.className = 'special-card revision';
-            revisionCard.innerHTML = `
-                <div class="special-card-title">🔁 Réviser mes points faibles <span class="reset-srs-btn" id="reset-srs-btn" title="Réinitialiser le suivi de révision">⟲</span></div>
-                <div class="special-card-subtitle">${weakCount > 0 ? weakCount + ' événement(s) à retravailler' : 'Aucun point faible pour l\'instant'}</div>
-            `;
-            revisionCard.onclick = startRevision;
-            specialRow.appendChild(revisionCard);
-
-            const progressCard = document.createElement('div');
-            progressCard.className = 'special-card progress';
-            progressCard.innerHTML = `
-                <div class="special-card-title">📊 Ma progression</div>
-                <div class="special-card-subtitle">Maîtrise par thème et catégorie</div>
-            `;
-            progressCard.onclick = () => showScreen('screen-progress');
-            specialRow.appendChild(progressCard);
-
-            container.appendChild(specialRow);
-            document.getElementById('reset-srs-btn').onclick = (e) => {
-                e.stopPropagation();
-                resetRevisionTracking();
-            };
-
-            bdd.forEach((cat, index) => {
-                const banner = document.createElement('div');
-                banner.className = 'category-banner' + (cat.isCustomCategory ? ' custom-theme-banner' : '');
-                
-                // On compte le nombre total de thèmes dans ce dossier (y compris à travers
-                // les sous-catégories, potentiellement imbriquées sur plusieurs niveaux)
-                const nbThemes = countThemesRecursive(cat);
-                let textThemes;
-                if (cat.isCustomCategory) {
-                    textThemes = nbThemes === 0 ? "Aucun thème créé" : (nbThemes === 1 ? "1 thème créé" : `${nbThemes} thèmes créés`);
-                } else {
-                    textThemes = nbThemes === 0 ? "Bientôt disponible" : (nbThemes === 1 ? "1 thème" : `${nbThemes} thèmes`);
-                }
-                
-                banner.innerHTML = `
-                    <div>
-                        <div class="category-banner-title">${cat.nom}</div>
-                        <div class="category-banner-subtitle">${textThemes}</div>
+            // --- QUICK ACTION GRID ---
+            const gridSection = document.createElement('section');
+            gridSection.className = 'w-full';
+            gridSection.style.marginTop = '24px';
+            gridSection.innerHTML = `
+                <div class="grid grid-cols-4 gap-sm md:gap-md" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; text-align: center;">
+                    <div class="flex flex-col items-center gap-2" id="btn-favoris">
+                        <div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-surface-container-lowest shadow-executive flex items-center justify-center text-primary-container hover:bg-primary-container hover:text-on-primary transition-colors cursor-pointer group mx-auto" style="background: white; border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; box-shadow: 0px 10px 30px rgba(0, 26, 75, 0.05);">
+                            <span class="material-symbols-outlined text-[32px] group-hover:scale-110 transition-transform" style="font-size: 32px; color: #001a4b;">favorite</span>
+                        </div>
+                        <span class="font-label-sm text-on-surface-variant" style="font-size: 12px; font-weight: 500; display: block; margin-top: 8px; color: #44464f;">Favoris</span>
                     </div>
-                    <div class="category-banner-icon">›</div>
-                `;
-                
-                // On empêche le clic seulement si c'est un « feuille » (thèmes directs) vide ;
-                // une catégorie à sous-catégories reste consultable même si toutes sont
-                // encore vides (ex. squelette de sous-catégories à remplir plus tard).
-                const canEnter = nbThemes > 0 || !!cat.subcategories || cat.isCustomCategory;
-                banner.onclick = () => {
-                    if (canEnter) {
+                    <div class="flex flex-col items-center gap-2" id="btn-discover">
+                        <div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-surface-container-lowest shadow-executive flex items-center justify-center text-primary-container hover:bg-primary-container hover:text-on-primary transition-colors cursor-pointer group mx-auto" style="background: white; border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; box-shadow: 0px 10px 30px rgba(0, 26, 75, 0.05);">
+                            <span class="material-symbols-outlined text-[32px] group-hover:scale-110 transition-transform" style="font-size: 32px; color: #001a4b;">explore</span>
+                        </div>
+                        <span class="font-label-sm text-on-surface-variant" style="font-size: 12px; font-weight: 500; display: block; margin-top: 8px; color: #44464f;">Découvrir</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-2" id="btn-revision">
+                        <div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-surface-container-lowest shadow-executive flex items-center justify-center text-primary-container hover:bg-primary-container hover:text-on-primary transition-colors cursor-pointer group mx-auto" style="background: white; border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; box-shadow: 0px 10px 30px rgba(0, 26, 75, 0.05);">
+                            <span class="material-symbols-outlined text-[32px] group-hover:scale-110 transition-transform" style="font-size: 32px; color: #ba1a1a;">rate_review</span>
+                        </div>
+                        <span class="font-label-sm text-on-surface-variant" style="font-size: 12px; font-weight: 500; display: block; margin-top: 8px; color: #44464f;">Réviser (${weakCount})</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-2" id="btn-progress">
+                        <div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-surface-container-lowest shadow-executive flex items-center justify-center text-primary-container hover:bg-primary-container hover:text-on-primary transition-colors cursor-pointer group mx-auto" style="background: white; border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; box-shadow: 0px 10px 30px rgba(0, 26, 75, 0.05);">
+                            <span class="material-symbols-outlined text-[32px] group-hover:scale-110 transition-transform" style="font-size: 32px; color: #001a4b;">trending_up</span>
+                        </div>
+                        <span class="font-label-sm text-on-surface-variant" style="font-size: 12px; font-weight: 500; display: block; margin-top: 8px; color: #44464f;">Progression</span>
+                    </div>
+                </div>
+            `;
+            container.appendChild(gridSection);
+            
+            setTimeout(() => {
+                if(document.getElementById('btn-favoris')) document.getElementById('btn-favoris').onclick = openFavorites;
+                if(document.getElementById('btn-discover')) document.getElementById('btn-discover').onclick = discoverRandomEvent;
+                if(document.getElementById('btn-revision')) document.getElementById('btn-revision').onclick = startRevision;
+                if(document.getElementById('btn-progress')) document.getElementById('btn-progress').onclick = () => showScreen('screen-progress');
+            }, 0);
+
+            // --- BROWSE ARCHIVES (Categories) ---
+            const catSection = document.createElement('section');
+            catSection.className = 'w-full pb-xl';
+            catSection.style.paddingBottom = '80px';
+            catSection.innerHTML = `
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-sm md:gap-md" id="cat-grid" style="display: grid; grid-template-columns: repeat(1, minmax(0, 1fr)); gap: 16px; margin-top: 32px;">
+                </div>
+            `;
+            container.appendChild(catSection);
+            
+            setTimeout(() => {
+                const catGrid = document.getElementById('cat-grid');
+                if (window.innerWidth >= 768) {
+                    catGrid.style.gridTemplateColumns = 'repeat(3, minmax(0, 1fr))';
+                }
+                bdd.forEach((cat, index) => {
+                    let bgImg = 'assets/images/cat_culture_generale.jpg';
+                    if(cat.nom.toLowerCase().includes('culture')) bgImg = 'assets/images/cat_culture_generale.jpg';
+                    if(cat.nom.toLowerCase().includes('bio')) bgImg = 'assets/images/cat_biographies.jpg';
+                    if(cat.nom.toLowerCase().includes('nationale')) bgImg = 'assets/images/cat_histoires_nationales.jpg';
+                    if(cat.nom.toLowerCase().includes('programmes')) bgImg = 'assets/images/cat_programmes_scolaires.jpg';
+                    if(cat.nom.toLowerCase().includes('agreg')) bgImg = 'assets/images/cat_agregation.jpg';
+
+                    const card = document.createElement('div');
+                    card.className = 'relative h-32 md:h-40 rounded-[24px] overflow-hidden group cursor-pointer shadow-executive';
+                    card.style.height = '140px';
+                    card.style.borderRadius = '24px';
+                    card.style.overflow = 'hidden';
+                    card.style.position = 'relative';
+                    card.style.boxShadow = '0px 10px 30px rgba(0, 26, 75, 0.05)';
+                    card.style.marginBottom = '12px';
+
+                    card.innerHTML = `
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('${bgImg}'); background-color: var(--primary-blue); position: absolute; inset: 0;"></div>
+                        <div class="absolute inset-0 bg-primary/40 group-hover:bg-primary/30 transition-colors" style="background: rgba(0, 26, 75, 0.5); position: absolute; inset: 0;"></div>
+                        <div class="absolute bottom-0 left-0 p-md w-full" style="position: absolute; bottom: 0; left: 0; padding: 16px;">
+                            <h4 class="font-headline-md text-on-primary" style="color: white; font-weight: 700; font-size: 20px; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">${cat.nom}</h4>
+                            <p class="font-label-sm text-primary-fixed-dim mt-xs" style="color: #b2c5ff; font-size: 12px; margin-top: 4px;">${cat.subcategories ? cat.subcategories.length + ' Sous-catégories' : (cat.isCustomCategory ? 'Vos thèmes' : 'Sélectionner')}</p>
+                        </div>
+                    `;
+                    card.onclick = () => {
                         selectedCategoryIndex = index;
                         selectedSubcategoryIndex = cat.subcategories ? [] : null;
-                        showScreen(cat.subcategories ? 'screen-subcategories' : 'screen-themes');
-                    }
-                };
-                container.appendChild(banner);
-            });
+                        
+                        if (cat.nom === "Agrégation" || cat.isCustomCategory) {
+                            showScreen('screen-themes');
+                        } else {
+                            showScreen('screen-subcategories');
+                        }
+                    };
+                    catGrid.appendChild(card);
+                });
+            }, 0);
         }
+
 
         // INIT SOUS-CATÉGORIES (régions, niveaux scolaires, etc. — potentiellement imbriquées)
         function initSubcategories() {
             const container = document.getElementById('subcategories-container');
             container.innerHTML = '';
+            
+            // Appliquer le style conteneur Tailwind (similaire à l'accueil)
+            container.className = 'w-full max-w-7xl mx-auto space-y-lg md:space-y-xl mt-sm md:mt-xl pb-32';
 
             const category = bdd[selectedCategoryIndex];
             const node = resolveSubcategory(category, selectedSubcategoryIndex);
-            document.getElementById('subcategory-screen-title').innerText = node.nom;
+            
+            // Update Header title style
+            const titleEl = document.getElementById('subcategory-screen-title');
+            titleEl.innerText = node.nom;
+            titleEl.style.fontWeight = '700';
+            titleEl.style.fontSize = '24px';
+            titleEl.style.color = '#001a4b';
+            titleEl.style.textAlign = 'center';
+            titleEl.style.marginBottom = '24px';
 
             const noteBox = document.getElementById('subcategory-note');
             if (category.note && selectedSubcategoryIndex.length === 0) {
                 document.getElementById('subcategory-note-text').innerText = category.note;
                 noteBox.classList.remove('hidden');
+                noteBox.style.backgroundColor = '#ecf5fe';
+                noteBox.style.color = '#001a4b';
+                noteBox.style.border = '1px solid rgba(0, 26, 75, 0.1)';
+                noteBox.style.borderRadius = '16px';
+                noteBox.style.padding = '16px';
+                noteBox.style.marginBottom = '24px';
+                noteBox.style.boxShadow = '0px 10px 30px rgba(0, 26, 75, 0.05)';
             } else {
                 noteBox.classList.add('hidden');
             }
+            
+            // Grille pour les sous-catégories
+            const gridSection = document.createElement('div');
+            gridSection.className = 'grid grid-cols-1 md:grid-cols-3 gap-sm md:gap-md';
+            gridSection.style.display = 'grid';
+            gridSection.style.gap = '16px';
+            if (window.innerWidth >= 768) {
+                gridSection.style.gridTemplateColumns = 'repeat(3, minmax(0, 1fr))';
+            }
+            container.appendChild(gridSection);
 
             node.subcategories.forEach((sub, index) => {
-                const banner = document.createElement('div');
-                banner.className = 'category-banner' + (sub.variant ? ' ' + sub.variant + '-banner' : '');
-
                 const nbThemes = countThemesRecursive(sub);
                 let textThemes = nbThemes === 0 ? "Bientôt disponible" : (nbThemes === 1 ? "1 thème" : `${nbThemes} thèmes`);
 
-                banner.innerHTML = `
-                    <div>
-                        <div class="category-banner-title">${sub.nom}</div>
-                        <div class="category-banner-subtitle">${textThemes}</div>
+                let bgImg = 'assets/images/cat_culture_generale.jpg'; // default fallback
+                const nomLower = sub.nom.toLowerCase();
+                
+                // Mappings for available images
+                if(nomLower.includes('europe')) bgImg = 'assets/images/sub_europe.jpg';
+                else if(nomLower.includes('amérique')) bgImg = 'assets/images/sub_ameriques.jpg';
+                else if(nomLower.includes('asie')) bgImg = 'assets/images/sub_asie.jpg';
+                else if(nomLower.includes('moyen-orient')) bgImg = 'assets/images/sub_moyen_orient.jpg';
+                else if(nomLower.includes('afrique')) bgImg = 'assets/images/sub_afrique.jpg';
+                else if(nomLower.includes('océanie')) bgImg = 'assets/images/sub_oceanie.jpg';
+                else if(nomLower.includes('empires')) bgImg = 'assets/images/sub_empires.jpg';
+                else if (category.nom.toLowerCase().includes('scolaire')) bgImg = 'assets/images/cat_programmes_scolaires.jpg';
+                else if (category.nom.toLowerCase().includes('bio')) bgImg = 'assets/images/cat_biographies.jpg';
+                else if (category.nom.toLowerCase().includes('agreg')) bgImg = 'assets/images/cat_agregation.jpg';
+                else if (category.nom.toLowerCase().includes('nationale')) bgImg = 'assets/images/cat_histoires_nationales.jpg';
+
+                const card = document.createElement('div');
+                card.className = 'relative h-32 md:h-40 rounded-[24px] overflow-hidden group cursor-pointer shadow-executive';
+                card.style.height = '140px';
+                card.style.borderRadius = '24px';
+                card.style.overflow = 'hidden';
+                card.style.position = 'relative';
+                card.style.boxShadow = '0px 10px 30px rgba(0, 26, 75, 0.05)';
+                card.style.marginBottom = '12px';
+
+                // Handle missing image loading fallback
+                card.innerHTML = `
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('${bgImg}'); background-color: var(--primary-blue); position: absolute; inset: 0;"></div>
+                    <div class="absolute inset-0 bg-primary/40 group-hover:bg-primary/30 transition-colors" style="background: rgba(0, 26, 75, 0.5); position: absolute; inset: 0;"></div>
+                    <div class="absolute bottom-0 left-0 p-md w-full" style="position: absolute; bottom: 0; left: 0; padding: 16px;">
+                        <h4 class="font-headline-md text-on-primary" style="color: white; font-weight: 700; font-size: 20px; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">${sub.nom}</h4>
+                        <p class="font-label-sm text-primary-fixed-dim mt-xs" style="color: #b2c5ff; font-size: 12px; margin-top: 4px;">${textThemes}</p>
                     </div>
-                    <div class="category-banner-icon">›</div>
                 `;
 
                 const canEnter = nbThemes > 0 || !!sub.subcategories;
-                banner.onclick = () => {
+                card.onclick = () => {
                     if (canEnter) {
                         selectedSubcategoryIndex = [...selectedSubcategoryIndex, index];
                         showScreen(sub.subcategories ? 'screen-subcategories' : 'screen-themes');
                     }
                 };
-                container.appendChild(banner);
+                gridSection.appendChild(card);
             });
+            
+            // Adjust back button styling (if needed, it's outside the container but we can reach it)
+            const backBtn = document.querySelector('#screen-subcategories .btn-secondary');
+            if(backBtn) {
+                backBtn.style.backgroundColor = '#dbe4ed';
+                backBtn.style.color = '#001a4b';
+                backBtn.style.borderRadius = '9999px';
+                backBtn.style.padding = '12px 24px';
+                backBtn.style.border = 'none';
+                backBtn.style.fontWeight = '700';
+            }
         }
+
 
         // Construit une carte-thème standard (titre, étoile de favori, chevron). Partagée
         // entre la liste de thèmes normale et la liste des favoris, qui ne diffèrent que

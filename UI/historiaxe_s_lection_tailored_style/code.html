@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>HistoriAxe - Game Modes</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#e9c349",
+                        "on-surface-variant": "#44464f",
+                        "outline": "#757780",
+                        "on-primary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#dbe4ed",
+                        "primary-fixed": "#dae2ff",
+                        "on-primary-fixed": "#001847",
+                        "inverse-surface": "#293138",
+                        "on-tertiary-fixed-variant": "#454748",
+                        "on-background": "#141d23",
+                        "surface": "#f6faff",
+                        "tertiary-container": "#1b1e1f",
+                        "tertiary-fixed-dim": "#c5c7c8",
+                        "on-primary-container": "#7084ba",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#574500",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#495d90",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#191c1d",
+                        "on-primary-fixed-variant": "#314577",
+                        "on-secondary-container": "#745c00",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#735c00",
+                        "surface-variant": "#dbe4ed",
+                        "primary-container": "#001a4b",
+                        "tertiary": "#020404",
+                        "on-surface": "#141d23",
+                        "secondary-fixed": "#ffe088",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#fed65b",
+                        "surface-container-low": "#ecf5fe",
+                        "on-tertiary-container": "#848687",
+                        "surface-bright": "#f6faff",
+                        "error-container": "#ffdad6",
+                        "background": "#f6faff",
+                        "inverse-on-surface": "#e9f2fb",
+                        "surface-container-high": "#e0e9f2",
+                        "primary-fixed-dim": "#b2c5ff",
+                        "inverse-primary": "#b2c5ff",
+                        "surface-container": "#e6eff8",
+                        "surface-dim": "#d2dbe4",
+                        "on-secondary-fixed": "#241a00",
+                        "outline-variant": "#c5c6d0",
+                        "primary": "#000311",
+                        "tertiary-fixed": "#e1e3e4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "24px",
+                        "gutter": "16px",
+                        "xl": "48px",
+                        "lg": "32px",
+                        "margin-desktop": "64px",
+                        "base": "8px",
+                        "sm": "12px",
+                        "xs": "4px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "display": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["22px", { "lineHeight": "28px", "fontWeight": "700" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "display": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { -webkit-tap-highlight-color: transparent; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-[#F2F4F7] text-on-surface font-body-lg min-h-screen flex flex-col pb-safe">
+<!-- Nav shell suppressed as this is a task-focused screen with a back button -->
+<!-- Header Section -->
+<header class="fixed top-0 left-0 w-full z-50 bg-[#F2F4F7]/90 backdrop-blur-xl px-margin-mobile pt-sm pb-base flex items-center gap-4">
+<button aria-label="Go back" class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-lowest shadow-[0px_4px_12px_rgba(0,26,75,0.05)] hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 0;">arrow_back_ios_new</span>
+</button>
+<div class="flex-1 flex flex-col">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight">Révolution Française</h1>
+<div class="flex items-center gap-2 mt-xs">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">Intermediate</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">4 Modes Available</span>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 px-margin-mobile pt-24 pb-xl">
+<!-- Axis Filters -->
+<section class="mb-lg">
+<div class="flex gap-sm overflow-x-auto hide-scrollbar pb-2 -mx-margin-mobile px-margin-mobile">
+<button class="shrink-0 px-5 py-2.5 rounded-full bg-primary-container text-on-primary font-label-lg text-label-lg shadow-[0px_10px_30px_rgba(0,26,75,0.15)] transition-transform hover:scale-95">All</button>
+<button class="shrink-0 px-5 py-2.5 rounded-full bg-surface-container-lowest text-on-surface-variant border border-outline-variant font-label-lg text-label-lg hover:bg-surface-container-low transition-colors">Politics</button>
+<button class="shrink-0 px-5 py-2.5 rounded-full bg-surface-container-lowest text-on-surface-variant border border-outline-variant font-label-lg text-label-lg hover:bg-surface-container-low transition-colors">Wars</button>
+<button class="shrink-0 px-5 py-2.5 rounded-full bg-surface-container-lowest text-on-surface-variant border border-outline-variant font-label-lg text-label-lg hover:bg-surface-container-low transition-colors">Arts</button>
+</div>
+</section>
+<!-- Game Modes Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Discovery Card -->
+<article class="bg-primary-container text-on-primary rounded-lg p-md shadow-[0px_10px_30px_rgba(0,26,75,0.15)] relative overflow-hidden group cursor-pointer">
+<div class="absolute top-0 right-0 p-4 opacity-10 transform translate-x-4 -translate-y-4 group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-[120px]" style="font-variation-settings: 'FILL' 1;">explore</span>
+</div>
+<div class="relative z-10 flex flex-col h-full">
+<div class="flex justify-between items-start mb-lg">
+<div class="w-12 h-12 rounded-full bg-surface-container-lowest/20 backdrop-blur-md flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary" style="font-variation-settings: 'FILL' 1;">explore</span>
+</div>
+<span class="material-symbols-outlined text-on-primary/70">chevron_right</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md mb-xs">Discovery</h2>
+<p class="font-body-md text-body-md text-on-primary/80 mb-sm line-clamp-2">Learn the key figures and events at your own pace without time pressure.</p>
+<div class="mt-auto">
+<div class="flex justify-between font-label-sm text-label-sm text-on-primary/80 mb-1">
+<span>Progress</span>
+<span>45%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-lowest/20 rounded-full overflow-hidden">
+<div class="h-full bg-secondary-fixed-dim rounded-full" style="width: 45%;"></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- Training Card -->
+<article class="bg-surface-container-lowest text-on-surface rounded-lg p-md shadow-[0px_4px_12px_rgba(0,26,75,0.03)] border border-[#E9ECEF] relative overflow-hidden group cursor-pointer hover:shadow-[0px_10px_30px_rgba(0,26,75,0.08)] transition-shadow">
+<div class="relative z-10 flex flex-col h-full">
+<div class="flex justify-between items-start mb-lg">
+<div class="w-12 h-12 rounded-full bg-surface-container-low flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">fitness_center</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-primary mb-xs">Training</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-sm line-clamp-2">Practice specific eras with focused mini-quizzes to hone your knowledge.</p>
+<div class="mt-auto">
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant mb-1">
+<span>Progress</span>
+<span>12%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 12%;"></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- Chrono Card -->
+<article class="bg-surface-container-lowest text-on-surface rounded-lg p-md shadow-[0px_4px_12px_rgba(0,26,75,0.03)] border border-[#E9ECEF] relative overflow-hidden group cursor-pointer hover:shadow-[0px_10px_30px_rgba(0,26,75,0.08)] transition-shadow">
+<div class="relative z-10 flex flex-col h-full">
+<div class="flex justify-between items-start mb-lg">
+<div class="w-12 h-12 rounded-full bg-surface-container-low flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">timer</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-primary mb-xs">Chrono</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-sm line-clamp-2">Beat the clock. Answer as many questions as possible in 60 seconds.</p>
+<div class="mt-auto flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">lock</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Unlock at 50% Discovery</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Timeline Card -->
+<article class="bg-surface-container-lowest text-on-surface rounded-lg p-md shadow-[0px_4px_12px_rgba(0,26,75,0.03)] border border-[#E9ECEF] relative overflow-hidden group cursor-pointer hover:shadow-[0px_10px_30px_rgba(0,26,75,0.08)] transition-shadow">
+<div class="relative z-10 flex flex-col h-full">
+<div class="flex justify-between items-start mb-lg">
+<div class="w-12 h-12 rounded-full bg-surface-container-low flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">view_timeline</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-primary mb-xs">Timeline Builder</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-sm line-clamp-2">Drag and drop historical events into the correct chronological order.</p>
+<div class="mt-auto flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">lock</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Unlock at Level 5</span>
+</div>
+</div>
+</div>
+</article>
+</div>
+</main>
+</body></html>

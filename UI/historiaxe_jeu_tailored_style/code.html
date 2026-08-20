@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>In-game Timeline - HistoriAxe</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#e9c349",
+                        "on-surface-variant": "#44464f",
+                        "outline": "#757780",
+                        "on-primary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#dbe4ed",
+                        "primary-fixed": "#dae2ff",
+                        "on-primary-fixed": "#001847",
+                        "inverse-surface": "#293138",
+                        "on-tertiary-fixed-variant": "#454748",
+                        "on-background": "#141d23",
+                        "surface": "#f6faff",
+                        "tertiary-container": "#1b1e1f",
+                        "tertiary-fixed-dim": "#c5c7c8",
+                        "on-primary-container": "#7084ba",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#574500",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#495d90",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#191c1d",
+                        "on-primary-fixed-variant": "#314577",
+                        "on-secondary-container": "#745c00",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#735c00",
+                        "surface-variant": "#dbe4ed",
+                        "primary-container": "#001a4b",
+                        "tertiary": "#020404",
+                        "on-surface": "#141d23",
+                        "secondary-fixed": "#ffe088",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#fed65b",
+                        "surface-container-low": "#ecf5fe",
+                        "on-tertiary-container": "#848687",
+                        "surface-bright": "#f6faff",
+                        "error-container": "#ffdad6",
+                        "background": "#f6faff",
+                        "inverse-on-surface": "#e9f2fb",
+                        "surface-container-high": "#e0e9f2",
+                        "primary-fixed-dim": "#b2c5ff",
+                        "inverse-primary": "#b2c5ff",
+                        "surface-container": "#e6eff8",
+                        "surface-dim": "#d2dbe4",
+                        "on-secondary-fixed": "#241a00",
+                        "outline-variant": "#c5c6d0",
+                        "primary": "#000311",
+                        "tertiary-fixed": "#e1e3e4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "24px",
+                        "gutter": "16px",
+                        "xl": "48px",
+                        "lg": "32px",
+                        "margin-desktop": "64px",
+                        "base": "8px",
+                        "sm": "12px",
+                        "xs": "4px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "display": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["22px", { "lineHeight": "28px", "fontWeight": "700" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "display": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #f6faff; -webkit-tap-highlight-color: transparent; }
+        .glass-panel { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.4); }
+        .timeline-line { width: 2px; background: linear-gradient(to bottom, transparent, #c5c6d0 10%, #c5c6d0 90%, transparent); }
+        
+        .slot-target.active {
+            border: 2px dashed #001a4b;
+            background-color: rgba(0, 26, 75, 0.05);
+            transform: scale(1.02);
+            transition: all 0.2s ease;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col relative overflow-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile h-16 bg-surface/80 backdrop-blur-xl bg-transparent flat no shadows">
+<div class="flex items-center gap-sm">
+<button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-on-surface-variant">arrow_back</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tighter">HistoriAxe</h1>
+</div>
+<div class="flex items-center gap-md">
+<div class="flex items-center gap-xs bg-surface-container px-sm py-xs rounded-full">
+<span class="material-symbols-outlined text-secondary text-[18px]">timer</span>
+<span class="font-label-lg text-label-lg text-on-surface font-mono">02:45</span>
+</div>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-secondary text-[18px]">star</span>
+<span class="font-label-lg text-label-lg text-primary font-bold">1,250</span>
+</div>
+</div>
+</header>
+<!-- Main Content: Timeline -->
+<main class="flex-1 mt-16 px-margin-mobile pt-md pb-[200px] overflow-y-auto relative scroll-smooth">
+<div class="max-w-2xl mx-auto relative pl-12 h-full flex flex-col">
+<!-- Continuous Timeline Line -->
+<div class="absolute left-6 top-0 bottom-0 timeline-line z-0"></div>
+<!-- Timeline Events & Slots -->
+<div class="flex flex-col gap-lg relative z-10 w-full pt-lg">
+<!-- Event 1 (Fixed) -->
+<div class="relative flex items-center w-full">
+<div class="absolute -left-12 w-10 text-right">
+<span class="font-headline-md text-headline-md text-primary font-serif">1789</span>
+</div>
+<div class="absolute -left-[30px] w-4 h-4 rounded-full bg-primary border-4 border-surface z-20 shadow-sm"></div>
+<div class="ml-4 w-full bg-surface-container-lowest rounded-DEFAULT p-md border border-outline-variant/30 shadow-[0px_10px_30px_rgba(0,26,75,0.02)]">
+<h3 class="font-label-lg text-label-lg text-primary mb-xs">French Revolution Begins</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Storming of the Bastille.</p>
+</div>
+</div>
+<!-- Drop Slot 1 -->
+<div class="relative flex items-center w-full h-20 group">
+<div class="absolute -left-[28px] w-3 h-3 rounded-full bg-surface-variant border-2 border-surface z-20 group-hover:bg-primary-container transition-colors"></div>
+<div class="ml-4 w-full h-full border-2 border-dashed border-outline-variant/50 rounded-DEFAULT flex items-center justify-center text-outline-variant font-label-lg text-label-lg slot-target cursor-pointer hover:border-primary-container/50 hover:bg-surface-container/30 transition-all">
+<span class="material-symbols-outlined mr-xs text-[18px]">add</span> Drop Event Here
+                    </div>
+</div>
+<!-- Event 2 (Fixed) -->
+<div class="relative flex items-center w-full">
+<div class="absolute -left-12 w-10 text-right">
+<span class="font-headline-md text-headline-md text-primary font-serif">1804</span>
+</div>
+<div class="absolute -left-[30px] w-4 h-4 rounded-full bg-primary border-4 border-surface z-20 shadow-sm"></div>
+<div class="ml-4 w-full bg-surface-container-lowest rounded-DEFAULT p-md border border-outline-variant/30 shadow-[0px_10px_30px_rgba(0,26,75,0.02)]">
+<h3 class="font-label-lg text-label-lg text-primary mb-xs">Napoleon Crowned Emperor</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Notre-Dame Cathedral, Paris.</p>
+</div>
+</div>
+<!-- Drop Slot 2 -->
+<div class="relative flex items-center w-full h-20 group">
+<div class="absolute -left-[28px] w-3 h-3 rounded-full bg-surface-variant border-2 border-surface z-20 group-hover:bg-primary-container transition-colors"></div>
+<div class="ml-4 w-full h-full border-2 border-dashed border-outline-variant/50 rounded-DEFAULT flex items-center justify-center text-outline-variant font-label-lg text-label-lg slot-target cursor-pointer hover:border-primary-container/50 hover:bg-surface-container/30 transition-all">
+<span class="material-symbols-outlined mr-xs text-[18px]">add</span> Drop Event Here
+                    </div>
+</div>
+<!-- Event 3 (Fixed) -->
+<div class="relative flex items-center w-full">
+<div class="absolute -left-12 w-10 text-right">
+<span class="font-headline-md text-headline-md text-primary font-serif">1815</span>
+</div>
+<div class="absolute -left-[30px] w-4 h-4 rounded-full bg-primary border-4 border-surface z-20 shadow-sm"></div>
+<div class="ml-4 w-full bg-surface-container-lowest rounded-DEFAULT p-md border border-outline-variant/30 shadow-[0px_10px_30px_rgba(0,26,75,0.02)] opacity-60">
+<h3 class="font-label-lg text-label-lg text-primary mb-xs">Battle of Waterloo</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Final defeat of Napoleon.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Area: Current Mystery Card -->
+<div class="fixed bottom-0 left-0 w-full z-40 p-margin-mobile pb-8 bg-gradient-to-t from-background via-background/90 to-transparent">
+<div class="max-w-md mx-auto">
+<div class="bg-primary-container rounded-xl p-md shadow-[0px_20px_40px_rgba(0,26,75,0.15)] flex flex-col items-center text-center cursor-grab active:cursor-grabbing transform transition-transform hover:-translate-y-1">
+<div class="w-12 h-1 bg-white/20 rounded-full mb-sm"></div>
+<div class="w-full flex justify-between items-start mb-sm">
+<span class="font-label-sm text-label-sm text-primary-fixed-dim uppercase tracking-wider">Place Event</span>
+<span class="material-symbols-outlined text-white/50">drag_indicator</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-white mb-xs w-full text-left">Invention of the Telegraph</h2>
+<p class="font-body-md text-body-md text-primary-fixed-dim w-full text-left line-clamp-2">Samuel Morse successfully sends the first telegram message.</p>
+<div class="w-full h-32 mt-md rounded-lg overflow-hidden relative" data-alt="A vintage, detailed close-up illustration of an early 19th-century telegraph machine sitting on a worn wooden desk, illuminated by warm, soft ambient light creating a historical mood, styled with rich sepia and muted brass tones." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBjBh4E6FkRnU2x7-8cIeOY5PPAjocTgPUMF0JgDKoq521LaxaA2MDxcPpRXuKEmiZMKGborsUlQ_mg9eWXMguEfBUA9zdUCqtClJ52-wW8Q4bSFk8fdAsZJpiZqeBsjyOXp1lc7YgwK-SQY5VJluuiDQ86OnQ-rBfIxKnnW0s06mg3PeiUzGXp6aiHC7UIAJS2d5adA9kagHtSnB_Mo2qIwxw96PljrdzG9qpvvEwggNOhJSb0r72W')">
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Script for interactive feel -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slots = document.querySelectorAll('.slot-target');
+            slots.forEach(slot => {
+                slot.addEventListener('click', function() {
+                    // Simple interaction feedback
+                    slots.forEach(s => s.classList.remove('active', 'border-primary', 'text-primary'));
+                    this.classList.add('active', 'border-primary', 'text-primary');
+                    
+                    // Reset after short delay
+                    setTimeout(() => {
+                        this.classList.remove('active', 'border-primary', 'text-primary');
+                    }, 300);
+                });
+            });
+        });
+    </script>
+</body></html>
