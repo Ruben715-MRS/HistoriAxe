@@ -689,7 +689,7 @@
     <!-- ÉCRAN 2quater : PROGRESSION PAR THÈME (radar de synthèse + barres de maîtrise) -->
     <div id="screen-progress" class="list-screen hidden">
         <h2 class="header-title">📊 Progression par thème</h2>
-        <p class="progress-subtitle">Maîtrise calculée à partir de votre historique de jeu (boîtes de mémorisation), tous modes et toutes parties confondus. Les thèmes et catégories les moins maîtrisés apparaissent en premier : c'est par là qu'il est le plus utile de commencer à réviser.</p>
+        <p class="progress-subtitle">Maîtrise calculée à partir de votre historique de jeu (boîtes de mémorisation), tous modes et toutes parties confondus : elle tient compte à la fois de la qualité de vos réponses et de la part du thème déjà couverte (un thème à peine entamé ne peut donc pas afficher un score élevé, même si le peu que vous avez tenté est réussi). Les thèmes et catégories les moins maîtrisés apparaissent en premier : c'est par là qu'il est le plus utile de commencer à réviser.</p>
 
         <div class="progress-legend">
             <span class="progress-legend-item"><span class="progress-legend-dot" style="background:#2ECC71;"></span>Bien maîtrisé (≥ 75%)</span>
@@ -7873,11 +7873,22 @@ events: [
             }, { total: 0, tested: 0, weak: 0, sumPct: 0, themeCount: 0 });
         }
 
-        // Maîtrise moyenne en % sur les seuls événements déjà rencontrés ; les
-        // événements jamais joués ne comptent pas comme des échecs (voir getWeakEvents
-        // plus haut pour le même principe), ils rendent simplement le thème « non testé ».
+        // Maîtrise en % : la somme des scores (boîte / 5) obtenus sur les événements
+        // déjà rencontrés, rapportée à la TOTALITÉ des événements du thème/de la
+        // catégorie (testés ou non) — et non aux seuls événements testés. Un événement
+        // jamais rencontré ne compte donc pas comme un échec (il ne fait pas baisser le
+        // score comme le ferait une mauvaise réponse), mais il ne fait pas non plus
+        // gonfler artificiellement le pourcentage : un thème vérifié sur seulement 2 de
+        // ses 20 événements, même si les 2 sont parfaitement sus, affiche une maîtrise
+        // encore faible, puisqu'il reste 18 événements non couverts. C'est ce qui
+        // permet à une catégorie et à une sous-catégorie de ne PAS afficher le même
+        // pourcentage alors qu'elles n'ont pas la même quantité totale d'événements,
+        // même quand elles partagent exactement les mêmes événements testés.
+        // Un nœud jamais testé du tout (tested === 0) reste à part : on affiche « — »
+        // plutôt que 0%, pour le distinguer visuellement d'un thème réellement fragile
+        // (voir getWeakEvents plus haut pour le même principe de distinction).
         function masteryPctOf(stats) {
-            return stats.tested > 0 ? Math.round(stats.sumPct / stats.tested) : null;
+            return stats.tested > 0 ? Math.round(stats.sumPct / stats.total) : null;
         }
 
         function masteryBand(pct) {
