@@ -7931,12 +7931,18 @@ events: [
             return { nom: node.nom, isTheme: false, stats: combineProgressStats(children), children };
         }
 
+        // Les grandes catégories restent dans leur ordre naturel (celui de bdd, identique
+        // à l'écran des catégories) plutôt que triées par maîtrise : c'est un petit
+        // ensemble stable que le joueur connaît déjà par sa position habituelle, et le
+        // reclasser à chaque partie jouée serait plus perturbant qu'utile. Le tri du
+        // moins maîtrisé au mieux maîtrisé s'applique en revanche à l'intérieur de
+        // chaque catégorie, entre ses sous-catégories/thèmes (voir sortProgressChildren),
+        // là où il aide vraiment à repérer sur quoi se concentrer.
         function getProgressTree() {
             const srs = srsLoad();
             return bdd
                 .map((cat, ci) => buildProgressNode(cat, ci, [], srs))
-                .filter(node => node.stats.total > 0)
-                .sort(progressCompare);
+                .filter(node => node.stats.total > 0);
         }
 
         function polarPoint(cx, cy, r, angleRad) {
