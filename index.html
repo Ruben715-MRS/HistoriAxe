@@ -10355,7 +10355,7 @@ events: [
                         selectedSubcategoryIndex = cat.subcategories ? [] : null;
                         
                         if (cat.nom === "Agrégation" || cat.isCustomCategory) {
-                            showScreen('screen-themes', 'fade');
+                            showScreen('screen-themes', 'forward');
                         } else {
                             showScreen('screen-subcategories', 'forward');
                         }
@@ -10465,7 +10465,7 @@ events: [
                 card.onclick = () => {
                     if (canEnter) {
                         selectedSubcategoryIndex = [...basePath, index];
-                        showScreen(sub.subcategories ? 'screen-subcategories' : 'screen-themes', sub.subcategories ? 'forward' : 'fade');
+                        showScreen(sub.subcategories ? 'screen-subcategories' : 'screen-themes', 'forward');
                     }
                 };
                 gridSection.appendChild(card);
