@@ -398,7 +398,8 @@
         .entry-new { animation: settle 0.4s ease-out; }
         .entry-reveal { animation: flag 1.4s ease-out; }
 
-        /* Navigation catégories → sous-catégories → thèmes : glissement directionnel */
+        /* Navigation catégories → sous-catégories → thèmes → axes thématiques → modes de jeu :
+           glissement directionnel (avant/arrière) */
         @keyframes screenSlideInRight { from { opacity: 0; transform: translateX(48px); } to { opacity: 1; transform: translateX(0); } }
         @keyframes screenSlideInLeft { from { opacity: 0; transform: translateX(-48px); } to { opacity: 1; transform: translateX(0); } }
         .screen-slide-forward { animation: screenSlideInRight 0.32s cubic-bezier(0.22, 0.61, 0.36, 1); }
@@ -965,7 +966,7 @@
 
     <!-- ÉCRAN 3bis : AXES THÉMATIQUES (filtre optionnel, si le thème en propose) -->
     <div id="screen-axes" class="list-screen hidden">
-        <button class="back-btn" onclick="axisFilterActive=false; showScreen('screen-themes')" aria-label="Retour aux thèmes">‹</button>
+        <button class="back-btn" onclick="axisFilterActive=false; showScreen('screen-themes', 'back')" aria-label="Retour aux thèmes">‹</button>
         <h2 class="header-title">Filtrer par axe thématique</h2>
         <p id="axes-subtitle" style="font-size:14px; color:var(--muted-text); margin-bottom:20px;"></p>
         <div class="grid-cards" id="axes-container"></div>
@@ -10241,7 +10242,7 @@ events: [
         function confirmAxesSelection() {
             if (selectedAxes.size === 0) return;
             axisFilterActive = true;
-            showScreen('screen-modes');
+            showScreen('screen-modes', 'forward');
         }
 
         // Ouvre l'écran des thèmes personnalisés
@@ -10616,12 +10617,12 @@ events: [
                 currentThemeAxes = theme.axeOrder.filter(a => currentThemeAxes.includes(a));
             }
             const hasAxes = theme.events.some(e => e.axe);
-            showScreen(hasAxes ? 'screen-axes' : 'screen-modes');
+            showScreen(hasAxes ? 'screen-axes' : 'screen-modes', 'forward');
         }
 
         function backFromModes() {
             isSelectionActive = false;
-            showScreen(screenAfterGame());
+            showScreen(screenAfterGame(), 'back');
         }
 
         // INIT THÈMES (Sous-dossiers / quiz)
