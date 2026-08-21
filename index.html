@@ -161,7 +161,25 @@
         .data-card-delete { flex-shrink: 0; font-size: 18px; line-height: 1; cursor: pointer; opacity: 0.75; padding: 4px 6px; border-radius: 6px; transition: transform 0.15s ease, opacity 0.15s ease, background 0.15s; }
         .data-card-delete:hover { opacity: 1; transform: scale(1.15); background: rgba(231,76,60,0.25); }
         .empty-msg { font-size: 18px; color: var(--muted-text); font-style: italic; margin-top: 30px; text-align: center; width: 100%; }
-        
+
+        /* Barre de recherche de thèmes, en tête de l'écran des catégories : filtre
+           instantané (dès la première lettre) sur tous les thèmes de la base, quelle
+           que soit leur profondeur dans l'arbre de catégories/sous-catégories. */
+        .search-bar-wrap { width: 100%; max-width: 640px; margin: 40px auto 20px; position: relative; z-index: 20; }
+        .search-bar { display: flex; align-items: center; gap: 10px; background: var(--surface); border: 1px solid var(--border-soft); border-radius: 9999px; padding: 12px 18px; box-shadow: var(--card-shadow); }
+        .search-bar-icon { font-size: 17px; flex-shrink: 0; opacity: 0.7; }
+        .search-bar-input { flex: 1; border: none; outline: none; background: transparent; font: inherit; font-size: 16px; color: var(--text-dark); min-width: 0; }
+        .search-bar-input::placeholder { color: var(--muted-text); }
+        .search-bar-clear { flex-shrink: 0; cursor: pointer; color: var(--muted-text); font-size: 15px; line-height: 1; padding: 4px; border-radius: 50%; transition: background 0.15s, color 0.15s; }
+        .search-bar-clear:hover { background: var(--border-soft); color: var(--text-dark); }
+        .search-results { margin-top: 8px; background: var(--surface); border: 1px solid var(--border-soft); border-radius: 16px; box-shadow: var(--card-shadow); max-height: 360px; overflow-y: auto; }
+        .search-result-item { display: flex; flex-direction: column; gap: 2px; padding: 12px 18px; cursor: pointer; border-bottom: 1px solid var(--border-soft); transition: background 0.15s; }
+        .search-result-item:last-child { border-bottom: none; }
+        .search-result-item:hover { background: var(--surface-2); }
+        .search-result-title { font-size: 15.5px; font-weight: 700; color: var(--text-dark); }
+        .search-result-path { font-size: 12.5px; color: var(--muted-text); }
+        .search-empty { padding: 16px 18px; font-size: 14px; color: var(--muted-text); font-style: italic; text-align: center; }
+
         /* Rangée des 4 cartes spéciales (Favoris / Découvrir / Révision / Progression),
            en tête de l'écran des catégories. Format compact façon carte-thème, mais
            chacune dans sa propre teinte pour bien les distinguer des catégories
@@ -826,6 +844,14 @@
     <!-- ÉCRAN 2 : CATÉGORIES (Grandes sections) -->
     <div id="screen-categories" class="list-screen hidden">
         <button class="settings-btn" onclick="openSettings()" aria-label="Réglages">⚙</button>
+        <div class="search-bar-wrap">
+            <div class="search-bar">
+                <span class="search-bar-icon" aria-hidden="true">🔍</span>
+                <input type="text" id="theme-search-input" class="search-bar-input" placeholder="Rechercher un thème…" autocomplete="off" oninput="onThemeSearchInput(this.value)" aria-label="Rechercher un thème">
+                <span class="search-bar-clear hidden" id="theme-search-clear" onclick="clearThemeSearch()" title="Effacer" aria-label="Effacer la recherche">✕</span>
+            </div>
+            <div id="theme-search-results" class="search-results hidden"></div>
+        </div>
         <h2 class="header-title">Choisissez une Catégorie</h2>
         <div class="list-categories" id="categories-container"></div>
         <div style="margin-top: 30px; margin-bottom: 50px;">
@@ -10158,8 +10184,9 @@ events: [
 
         // INIT CATÉGORIES (Dossiers)
         function initCategories() {
+            clearThemeSearch();
             const container = document.getElementById('categories-container');
-            container.innerHTML = ''; 
+            container.innerHTML = '';
             container.className = 'w-full max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop space-y-lg md:space-y-xl mt-sm md:mt-xl pb-32';
 
             const weakCount = getWeakEvents().length;
@@ -10410,6 +10437,91 @@ events: [
                 }
             };
             return card;
+        }
+
+        // === RECHERCHE DE THÈMES (barre en tête de l'écran des catégories) ===
+        // Aplatit tout l'arbre bdd en une liste de thèmes, chacun avec ses indices
+        // exacts (ci/si/ti, au format attendu par openThemeAt) et le chemin de noms
+        // de catégories/sous-catégories qui mène jusqu'à lui, pour affichage et pour
+        // élargir la recherche au-delà du seul nom du thème.
+        function getAllThemesWithPath() {
+            const all = [];
+            bdd.forEach((cat, ci) => {
+                (function walk(node, path, pathNames) {
+                    if (node.subcategories) {
+                        node.subcategories.forEach((sub, idx) => walk(sub, [...path, idx], [...pathNames, sub.nom]));
+                    } else {
+                        node.themes.forEach((theme, ti) => {
+                            all.push({ theme, ci, si: path.length ? path : null, ti, pathNames });
+                        });
+                    }
+                })(cat, [], [cat.nom]);
+            });
+            return all;
+        }
+
+        // Normalise pour une comparaison insensible aux accents et à la casse
+        // (« général » doit matcher « general », dès la première lettre tapée).
+        function normalizeSearchText(str) {
+            return (str || '').toString().normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+        }
+
+        function onThemeSearchInput(rawValue) {
+            const clearBtn = document.getElementById('theme-search-clear');
+            const resultsBox = document.getElementById('theme-search-results');
+            if (clearBtn) clearBtn.classList.toggle('hidden', !rawValue);
+
+            const query = normalizeSearchText(rawValue);
+            if (!query) {
+                resultsBox.classList.add('hidden');
+                resultsBox.innerHTML = '';
+                return;
+            }
+
+            const matches = getAllThemesWithPath().filter(item =>
+                normalizeSearchText(item.theme.nom).includes(query) ||
+                normalizeSearchText(item.pathNames.join(' ')).includes(query)
+            );
+            renderThemeSearchResults(matches);
+        }
+
+        function renderThemeSearchResults(matches) {
+            const resultsBox = document.getElementById('theme-search-results');
+            resultsBox.innerHTML = '';
+            resultsBox.classList.remove('hidden');
+
+            if (matches.length === 0) {
+                const empty = document.createElement('div');
+                empty.className = 'search-empty';
+                empty.innerText = 'Aucun thème ne correspond à votre recherche.';
+                resultsBox.appendChild(empty);
+                return;
+            }
+
+            // Limite d'affichage pour garder la liste lisible, même sur une recherche
+            // très large (ex. une seule lettre fréquente).
+            matches.slice(0, 40).forEach(({ theme, ci, si, ti, pathNames }) => {
+                const item = document.createElement('div');
+                item.className = 'search-result-item';
+                item.innerHTML = `
+                    <span class="search-result-title">${theme.nom}</span>
+                    <span class="search-result-path">${pathNames.join(' › ')}</span>
+                `;
+                item.onclick = () => {
+                    clearThemeSearch();
+                    openThemeAt(ci, si, ti);
+                };
+                resultsBox.appendChild(item);
+            });
+        }
+
+        function clearThemeSearch() {
+            const input = document.getElementById('theme-search-input');
+            const clearBtn = document.getElementById('theme-search-clear');
+            const resultsBox = document.getElementById('theme-search-results');
+            if (input) input.value = '';
+            if (clearBtn) clearBtn.classList.add('hidden');
+            if (resultsBox) { resultsBox.classList.add('hidden'); resultsBox.innerHTML = ''; }
         }
 
         // Ouvre le thème indiqué par ses indices exacts dans bdd (utilisé aussi bien
