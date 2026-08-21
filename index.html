@@ -407,15 +407,11 @@
             .screen-slide-forward, .screen-slide-back { animation: none; }
         }
 
-        /* Dernier degré de catégorie (sous-catégorie feuille, ou catégorie sans
-           sous-catégories) → thèmes : au lieu du glissement, un effacement rapide
-           de l'écran quitté suivi d'une réapparition en fondu sur les thèmes. */
-        @keyframes screenFadeOutQuick { from { opacity: 1; } to { opacity: 0; } }
-        @keyframes screenFadeIn { from { opacity: 0; } to { opacity: 1; } }
-        .screen-fade-out { animation: screenFadeOutQuick 0.15s ease-in forwards; }
-        .screen-fade-in { animation: screenFadeIn 0.26s ease-out; }
+        /* Thème → modes, puis mode → ouverture de la partie : effet de zoom avant. */
+        @keyframes screenZoomIn { from { opacity: 0; transform: scale(0.92); } to { opacity: 1; transform: scale(1); } }
+        .screen-zoom-in { animation: screenZoomIn 0.28s cubic-bezier(0.22, 0.61, 0.36, 1); }
         @media (prefers-reduced-motion: reduce) {
-            .screen-fade-out, .screen-fade-in { animation: none; }
+            .screen-zoom-in { animation: none; }
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -10017,25 +10013,6 @@ events: [
         }
 
         function showScreen(screenId, direction) {
-            // Dernier degré de catégorie → thèmes : on efface rapidement l'écran quitté
-            // avant de basculer, plutôt que de le faire glisser hors champ. On reporte le
-            // changement d'écran à la fin de ce court fondu de sortie (relancé avec la
-            // marque interne 'fade-in' pour que le bloc ci-dessous applique le fondu d'entrée).
-            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            if (direction === 'fade' && !reduceMotion) {
-                const current = Array.from(document.querySelectorAll('body > div')).find(div =>
-                    !div.classList.contains('hidden') &&
-                    div.id !== 'modal-details' && div.id !== 'modal-confirm' && div.id !== 'modal-settings' && div.id !== 'modal-scoring-info'
-                );
-                if (current && current.id !== screenId) {
-                    current.classList.remove('screen-fade-out');
-                    void current.offsetWidth;
-                    current.classList.add('screen-fade-out');
-                    setTimeout(() => showScreen(screenId, 'fade-in'), 150);
-                    return;
-                }
-            }
-
             document.querySelectorAll('body > div').forEach(div => {
                 if(div.id !== 'modal-details' && div.id !== 'modal-confirm' && div.id !== 'modal-settings' && div.id !== 'modal-scoring-info') div.classList.add('hidden');
             });
@@ -10043,16 +10020,17 @@ events: [
             targetScreen.classList.remove('hidden');
 
             // Glissement vers la droite quand on ouvre (catégorie → sous-catégories/thèmes),
-            // vers la gauche quand on revient en arrière. On retire d'abord les classes pour
-            // pouvoir rejouer l'animation même si l'écran ciblé est déjà celui affiché juste
-            // avant (ex. sous-catégories imbriquées).
-            targetScreen.classList.remove('screen-slide-forward', 'screen-slide-back', 'screen-fade-in');
+            // vers la gauche quand on revient en arrière ; zoom avant quand on choisit un thème
+            // (→ modes) ou un mode (→ ouverture de la partie). On retire d'abord les classes
+            // pour pouvoir rejouer l'animation même si l'écran ciblé est déjà celui affiché
+            // juste avant (ex. sous-catégories imbriquées).
+            targetScreen.classList.remove('screen-slide-forward', 'screen-slide-back', 'screen-zoom-in');
             if (direction === 'forward' || direction === 'back') {
                 void targetScreen.offsetWidth; // force le reflow pour relancer l'animation
                 targetScreen.classList.add(direction === 'forward' ? 'screen-slide-forward' : 'screen-slide-back');
-            } else if ((direction === 'fade' || direction === 'fade-in') && !reduceMotion) {
+            } else if (direction === 'zoom') {
                 void targetScreen.offsetWidth;
-                targetScreen.classList.add('screen-fade-in');
+                targetScreen.classList.add('screen-zoom-in');
             }
 
             if (screenId === 'screen-categories') initCategories();
@@ -10219,7 +10197,7 @@ events: [
         function confirmAxesSelection() {
             if (selectedAxes.size === 0) return;
             axisFilterActive = true;
-            showScreen('screen-modes');
+            showScreen('screen-modes', 'zoom');
         }
 
         // Ouvre l'écran des thèmes personnalisés
@@ -10332,7 +10310,7 @@ events: [
                         selectedSubcategoryIndex = cat.subcategories ? [] : null;
                         
                         if (cat.nom === "Agrégation" || cat.isCustomCategory) {
-                            showScreen('screen-themes', 'fade');
+                            showScreen('screen-themes', 'forward');
                         } else {
                             showScreen('screen-subcategories', 'forward');
                         }
@@ -10431,7 +10409,7 @@ events: [
                 card.onclick = () => {
                     if (canEnter) {
                         selectedSubcategoryIndex = [...selectedSubcategoryIndex, index];
-                        showScreen(sub.subcategories ? 'screen-subcategories' : 'screen-themes', sub.subcategories ? 'forward' : 'fade');
+                        showScreen(sub.subcategories ? 'screen-subcategories' : 'screen-themes', 'forward');
                     }
                 };
                 gridSection.appendChild(card);
@@ -10593,7 +10571,7 @@ events: [
                 currentThemeAxes = theme.axeOrder.filter(a => currentThemeAxes.includes(a));
             }
             const hasAxes = theme.events.some(e => e.axe);
-            showScreen(hasAxes ? 'screen-axes' : 'screen-modes');
+            showScreen(hasAxes ? 'screen-axes' : 'screen-modes', 'zoom');
         }
 
         function backFromModes() {
@@ -10927,7 +10905,7 @@ events: [
                 pickNextEvent();
             }
             
-            showScreen('screen-game');
+            showScreen('screen-game', 'zoom');
         }
 
         // === MODE QUIZ ===
@@ -10965,7 +10943,7 @@ events: [
             document.getElementById('quiz-fifty-count').innerText = `(${quizFiftyLeft})`;
             document.getElementById('quiz-fifty-btn').disabled = false;
 
-            showScreen('screen-quiz');
+            showScreen('screen-quiz', 'zoom');
             renderQuizQuestion();
         }
 
@@ -11146,7 +11124,7 @@ events: [
             const gameDates = sourceEvents.map(e => e.date);
             currentGameSpan = Math.max(1, Math.max(...gameDates) - Math.min(...gameDates));
 
-            showScreen('screen-periodes');
+            showScreen('screen-periodes', 'zoom');
             renderPeriodesQuestion();
         }
 
@@ -11413,7 +11391,7 @@ events: [
             const gameDates = sourceEvents.map(e => e.date);
             currentGameSpan = Math.max(1, Math.max(...gameDates) - Math.min(...gameDates));
 
-            showScreen('screen-fil');
+            showScreen('screen-fil', 'zoom');
             renderFilQuestion();
         }
 
