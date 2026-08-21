@@ -398,6 +398,15 @@
         .entry-new { animation: settle 0.4s ease-out; }
         .entry-reveal { animation: flag 1.4s ease-out; }
 
+        /* Navigation catégories → sous-catégories → thèmes : glissement directionnel */
+        @keyframes screenSlideInRight { from { opacity: 0; transform: translateX(48px); } to { opacity: 1; transform: translateX(0); } }
+        @keyframes screenSlideInLeft { from { opacity: 0; transform: translateX(-48px); } to { opacity: 1; transform: translateX(0); } }
+        .screen-slide-forward { animation: screenSlideInRight 0.32s cubic-bezier(0.22, 0.61, 0.36, 1); }
+        .screen-slide-back { animation: screenSlideInLeft 0.32s cubic-bezier(0.22, 0.61, 0.36, 1); }
+        @media (prefers-reduced-motion: reduce) {
+            .screen-slide-forward, .screen-slide-back { animation: none; }
+        }
+
         @media (prefers-reduced-motion: reduce) {
             .entry-new, .entry-reveal, .slot-wrong { animation: none; }
             .slot-caret, .progress-fill { transition: none; }
@@ -9973,15 +9982,15 @@ events: [
         function backFromThemes() {
             if (favoritesMode) {
                 favoritesMode = false;
-                showScreen('screen-categories');
+                showScreen('screen-categories', 'back');
                 return;
             }
             const category = bdd[selectedCategoryIndex];
             if (category.subcategories && selectedSubcategoryIndex && selectedSubcategoryIndex.length > 0) {
                 selectedSubcategoryIndex = selectedSubcategoryIndex.slice(0, -1);
-                showScreen('screen-subcategories');
+                showScreen('screen-subcategories', 'back');
             } else {
-                showScreen('screen-categories');
+                showScreen('screen-categories', 'back');
             }
         }
 
@@ -9990,18 +9999,29 @@ events: [
         function backFromSubcategories() {
             if (selectedSubcategoryIndex && selectedSubcategoryIndex.length > 0) {
                 selectedSubcategoryIndex = selectedSubcategoryIndex.slice(0, -1);
-                showScreen('screen-subcategories');
+                showScreen('screen-subcategories', 'back');
             } else {
-                showScreen('screen-categories');
+                showScreen('screen-categories', 'back');
             }
         }
 
-        function showScreen(screenId) {
+        function showScreen(screenId, direction) {
             document.querySelectorAll('body > div').forEach(div => {
                 if(div.id !== 'modal-details' && div.id !== 'modal-confirm' && div.id !== 'modal-settings' && div.id !== 'modal-scoring-info') div.classList.add('hidden');
             });
-            document.getElementById(screenId).classList.remove('hidden');
-            
+            const targetScreen = document.getElementById(screenId);
+            targetScreen.classList.remove('hidden');
+
+            // Glissement vers la droite quand on ouvre (catégorie → sous-catégories/thèmes),
+            // vers la gauche quand on revient en arrière. On retire d'abord les classes pour
+            // pouvoir rejouer l'animation même si l'écran ciblé est déjà celui affiché juste
+            // avant (ex. sous-catégories imbriquées).
+            targetScreen.classList.remove('screen-slide-forward', 'screen-slide-back');
+            if (direction === 'forward' || direction === 'back') {
+                void targetScreen.offsetWidth; // force le reflow pour relancer l'animation
+                targetScreen.classList.add(direction === 'forward' ? 'screen-slide-forward' : 'screen-slide-back');
+            }
+
             if (screenId === 'screen-categories') initCategories();
             if (screenId === 'screen-subcategories') initSubcategories();
             if (screenId === 'screen-themes') initThemes();
@@ -10279,9 +10299,9 @@ events: [
                         selectedSubcategoryIndex = cat.subcategories ? [] : null;
                         
                         if (cat.nom === "Agrégation" || cat.isCustomCategory) {
-                            showScreen('screen-themes');
+                            showScreen('screen-themes', 'forward');
                         } else {
-                            showScreen('screen-subcategories');
+                            showScreen('screen-subcategories', 'forward');
                         }
                     };
                     catGrid.appendChild(card);
@@ -10378,7 +10398,7 @@ events: [
                 card.onclick = () => {
                     if (canEnter) {
                         selectedSubcategoryIndex = [...selectedSubcategoryIndex, index];
-                        showScreen(sub.subcategories ? 'screen-subcategories' : 'screen-themes');
+                        showScreen(sub.subcategories ? 'screen-subcategories' : 'screen-themes', 'forward');
                     }
                 };
                 gridSection.appendChild(card);
