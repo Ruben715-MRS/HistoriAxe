@@ -10069,7 +10069,7 @@ events: [
             // vers la gauche quand on revient en arrière. On retire d'abord les classes pour
             // pouvoir rejouer l'animation même si l'écran ciblé est déjà celui affiché juste
             // avant (ex. sous-catégories imbriquées).
-            targetScreen.classList.remove('screen-slide-forward', 'screen-slide-back', 'screen-fade-in');
+            targetScreen.classList.remove('screen-slide-forward', 'screen-slide-back', 'screen-fade-in', 'screen-fade-out');
             if (direction === 'forward' || direction === 'back') {
                 void targetScreen.offsetWidth; // force le reflow pour relancer l'animation
                 targetScreen.classList.add(direction === 'forward' ? 'screen-slide-forward' : 'screen-slide-back');
