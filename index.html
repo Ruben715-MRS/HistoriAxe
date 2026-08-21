@@ -9973,7 +9973,14 @@ events: [
         // nœud courant et de la liste de thèmes qui en découle, à profondeur quelconque.
         function resolveSubcategory(category, path) {
             let node = category;
-            (path || []).forEach(idx => { node = node.subcategories[idx]; });
+            // Chemin défensif : si un segment est invalide (ex. index hors bornes suite à
+            // une navigation corrompue), on ignore simplement la suite plutôt que de planter
+            // sur `undefined.subcategories` — on reste sur le dernier nœud valide rencontré.
+            (path || []).forEach(idx => {
+                if (node && node.subcategories && node.subcategories[idx]) {
+                    node = node.subcategories[idx];
+                }
+            });
             return node;
         }
         function countThemesRecursive(node) {
@@ -9984,7 +9991,9 @@ events: [
         function getCurrentThemeList() {
             const category = bdd[selectedCategoryIndex];
             const node = category.subcategories ? resolveSubcategory(category, selectedSubcategoryIndex) : category;
-            return node.themes;
+            // `node` peut être un nœud intermédiaire (pas encore un thème-parent) si le
+            // chemin de sous-catégories s'est arrêté tôt sur un segment invalide.
+            return node.themes || [];
         }
         function getCurrentTheme() {
             return getCurrentThemeList()[selectedThemeIndex];
@@ -10016,7 +10025,18 @@ events: [
             }
         }
 
+        // Bascule d'écran différée par le fondu ci-dessous : si une nouvelle navigation
+        // arrive avant qu'elle ne se déclenche (double-tap, ou une deuxième carte touchée
+        // pendant que l'écran quitté est encore visible le temps du fondu), on l'annule —
+        // sinon elle finirait par s'exécuter en retard et écraser la navigation plus récente,
+        // parfois vers un écran resté vide (voir showScreen ci-dessous).
+        let pendingFadeSwitch = null;
+
         function showScreen(screenId, direction) {
+            if (pendingFadeSwitch) {
+                clearTimeout(pendingFadeSwitch);
+                pendingFadeSwitch = null;
+            }
             // Dernier degré de catégorie → thèmes : on efface rapidement l'écran quitté
             // avant de basculer, plutôt que de le faire glisser hors champ. On reporte le
             // changement d'écran à la fin de ce court fondu de sortie (relancé avec la
@@ -10031,7 +10051,10 @@ events: [
                     current.classList.remove('screen-fade-out');
                     void current.offsetWidth;
                     current.classList.add('screen-fade-out');
-                    setTimeout(() => showScreen(screenId, 'fade-in'), 150);
+                    pendingFadeSwitch = setTimeout(() => {
+                        pendingFadeSwitch = null;
+                        showScreen(screenId, 'fade-in');
+                    }, 150);
                     return;
                 }
             }
@@ -10352,8 +10375,19 @@ events: [
             container.className = 'w-full max-w-7xl mx-auto space-y-lg md:space-y-xl mt-sm md:mt-xl pb-32';
 
             const category = bdd[selectedCategoryIndex];
-            const node = resolveSubcategory(category, selectedSubcategoryIndex);
-            
+            let node = resolveSubcategory(category, selectedSubcategoryIndex);
+            if (!node || !node.subcategories) {
+                // Chemin invalide (ex. navigation corrompue par un double-tap) : on revient
+                // à la racine des sous-catégories plutôt que de planter sur cet écran.
+                selectedSubcategoryIndex = [];
+                node = category;
+            }
+            // Figé au moment du rendu : les cartes ci-dessous appendent toujours à CE chemin,
+            // jamais à `selectedSubcategoryIndex` (qui peut déjà avoir changé si une autre
+            // carte de cet écran a été touchée avant que la navigation précédente n'ait eu le
+            // temps de basculer d'écran — double-tap, ou deux cartes cliquées coup sur coup).
+            const basePath = selectedSubcategoryIndex;
+
             // Update Header title style
             const titleEl = document.getElementById('subcategory-screen-title');
             titleEl.innerText = node.nom;
@@ -10430,7 +10464,7 @@ events: [
                 const canEnter = nbThemes > 0 || !!sub.subcategories;
                 card.onclick = () => {
                     if (canEnter) {
-                        selectedSubcategoryIndex = [...selectedSubcategoryIndex, index];
+                        selectedSubcategoryIndex = [...basePath, index];
                         showScreen(sub.subcategories ? 'screen-subcategories' : 'screen-themes', sub.subcategories ? 'forward' : 'fade');
                     }
                 };
