@@ -619,6 +619,11 @@
         .settings-btn:hover { transform: rotate(35deg); }
         .settings-btn:active { transform: rotate(70deg); }
 
+        /* --- Bouton retour (chevron), fixé en haut à gauche de l'écran --- */
+        .back-btn { position: fixed; top: calc(env(safe-area-inset-top, 0px) + 14px); left: 16px; z-index: 60; width: 42px; height: 42px; border-radius: 50%; border: none; background: var(--surface); box-shadow: var(--card-shadow); font-size: 24px; font-weight: bold; line-height: 1; color: var(--text-dark); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: transform 0.2s ease, background 0.2s; }
+        .back-btn:hover { opacity: 0.85; }
+        .back-btn:active { transform: scale(0.9); }
+
         /* --- Réglages : contrôles segmentés Auto / option A / option B --- */
         .settings-group { margin-bottom: 26px; }
         .settings-group:last-child { margin-bottom: 4px; }
@@ -863,6 +868,7 @@
 
     <!-- ÉCRAN 2 : CATÉGORIES (Grandes sections) -->
     <div id="screen-categories" class="list-screen hidden">
+        <button class="back-btn" onclick="showScreen('screen-home')" aria-label="Retour à l'accueil">‹</button>
         <button class="settings-btn" onclick="openSettings()" aria-label="Réglages">⚙</button>
         <div class="search-bar-wrap">
             <div class="search-bar">
@@ -874,13 +880,11 @@
         </div>
         <h2 class="header-title">Choisissez une Catégorie</h2>
         <div class="list-categories" id="categories-container"></div>
-        <div style="margin-top: 30px; margin-bottom: 50px;">
-            <button class="btn btn-secondary" onclick="showScreen('screen-home')">Retour à l'accueil</button>
-        </div>
     </div>
 
     <!-- ÉCRAN 2ter : RÉVISION DES POINTS FAIBLES (choix session mélangée / reprise d'un thème) -->
     <div id="screen-revision-hub" class="list-screen hidden">
+        <button class="back-btn" onclick="showScreen('screen-categories')" aria-label="Retour aux catégories">‹</button>
         <h2 class="header-title">Réviser mes points faibles</h2>
         <p id="revision-hub-subtitle" class="revision-hub-subtitle"></p>
 
@@ -908,14 +912,14 @@
             </div>
         </div>
 
-        <div style="margin-top: 30px; margin-bottom: 50px; display:flex; align-items:center; gap:15px;">
-            <button class="btn btn-secondary" onclick="showScreen('screen-categories')">Retour aux catégories</button>
+        <div style="margin-top: 30px; margin-bottom: 50px; display:flex; align-items:center; justify-content:center; gap:15px;">
             <span class="reset-srs-btn reset-srs-link" id="reset-srs-btn-hub" title="Réinitialiser le suivi de révision">⟲ Réinitialiser</span>
         </div>
     </div>
 
     <!-- ÉCRAN 2quater : PROGRESSION PAR THÈME (radar de synthèse + barres de maîtrise) -->
     <div id="screen-progress" class="list-screen hidden">
+        <button class="back-btn" onclick="showScreen('screen-categories')" aria-label="Retour aux catégories">‹</button>
         <h2 class="header-title">📊 Progression par thème</h2>
         <p class="progress-subtitle">Maîtrise calculée à partir de votre historique de jeu (boîtes de mémorisation), tous modes et toutes parties confondus : elle tient compte à la fois de la qualité de vos réponses et de la part du thème déjà couverte (un thème à peine entamé ne peut donc pas afficher un score élevé, même si le peu que vous avez tenté est réussi). Les thèmes et catégories les moins maîtrisés apparaissent en premier : c'est par là qu'il est le plus utile de commencer à réviser.</p>
 
@@ -937,46 +941,42 @@
         <div id="progress-groups-container" class="progress-groups-container"></div>
 
         <div style="margin-top: 30px; margin-bottom: 50px; display:flex; align-items:center; gap:15px; flex-wrap:wrap; justify-content:center;">
-            <button class="btn btn-secondary" onclick="showScreen('screen-categories')">Retour aux catégories</button>
             <button class="btn" onclick="startRevision()">🔁 Réviser mes points faibles</button>
         </div>
     </div>
 
     <!-- ÉCRAN 2bis : SOUS-CATÉGORIES (régions, uniquement pour les catégories qui en définissent) -->
     <div id="screen-subcategories" class="list-screen hidden">
+        <button class="back-btn" onclick="backFromSubcategories()" aria-label="Retour">‹</button>
         <h2 class="header-title" id="subcategory-screen-title">Choisissez une région</h2>
         <div id="subcategory-note" class="subcategory-note hidden">
             <div class="subcategory-note-title">Note importante</div>
             <p id="subcategory-note-text"></p>
         </div>
         <div class="list-categories" id="subcategories-container"></div>
-        <div style="margin-top: 30px; margin-bottom: 50px;">
-            <button class="btn btn-secondary" onclick="backFromSubcategories()">Retour</button>
-        </div>
     </div>
 
     <!-- ÉCRAN 3 : THÈMES (Sous-sections) -->
     <div id="screen-themes" class="list-screen hidden">
+        <button class="back-btn" onclick="backFromThemes()" aria-label="Retour">‹</button>
         <h2 class="header-title" id="theme-screen-title">Thèmes</h2>
         <div class="grid-cards" id="themes-container"></div>
-        <div style="margin-top: 30px; margin-bottom: 50px;">
-            <button class="btn btn-secondary" onclick="backFromThemes()">Retour</button>
-        </div>
     </div>
 
     <!-- ÉCRAN 3bis : AXES THÉMATIQUES (filtre optionnel, si le thème en propose) -->
     <div id="screen-axes" class="list-screen hidden">
+        <button class="back-btn" onclick="axisFilterActive=false; showScreen('screen-themes')" aria-label="Retour aux thèmes">‹</button>
         <h2 class="header-title">Filtrer par axe thématique</h2>
         <p id="axes-subtitle" style="font-size:14px; color:var(--muted-text); margin-bottom:20px;"></p>
         <div class="grid-cards" id="axes-container"></div>
         <div style="margin-top: 30px; margin-bottom: 50px; display:flex; gap:15px; justify-content:center;">
-            <button class="btn btn-secondary" onclick="axisFilterActive=false; showScreen('screen-themes')">Retour aux thèmes</button>
             <button class="btn" id="axes-continue-btn" onclick="confirmAxesSelection()">Continuer ›</button>
         </div>
     </div>
 
     <!-- ÉCRAN 4 : MODES DE JEU -->
     <div id="screen-modes" class="list-screen hidden">
+        <button class="back-btn" onclick="backFromModes()" aria-label="Retour">‹</button>
         <h2 class="header-title" id="modes-header-title">Choisissez un mode de jeu</h2>
         
         <div class="grid-modes">
@@ -1033,7 +1033,6 @@
         </div>
 
         <div style="margin-top: 30px; margin-bottom: 50px; display:flex; gap:15px; justify-content:center;">
-            <button class="btn btn-secondary" onclick="backFromModes()">Retour</button>
             <button class="btn" style="background-color:#E67E22;" onclick="openLeaderboard()">🏆 Historique des scores</button>
         </div>
     </div>
@@ -1069,6 +1068,7 @@
 
     <!-- ÉCRAN MULTIJOUEURS FIN -->
     <div id="screen-multiplayer-end" class="hidden">
+        <button class="back-btn" onclick="showScreen('screen-modes')" aria-label="Retour aux modes">‹</button>
         <div class="header">
             <h2>Résultats Multijoueurs</h2>
         </div>
@@ -1077,7 +1077,6 @@
                 <!-- Classement généré dynamiquement -->
             </div>
             <button class="btn" style="background-color:#8e44ad; margin-bottom:15px; width:100%;" onclick="showMultiplayerSetup()">Rejouer</button>
-            <button class="btn btn-secondary" style="width:100%;" onclick="showScreen('screen-modes')">Retour aux modes</button>
         </div>
     </div>
 
@@ -1120,6 +1119,7 @@
 
     <!-- ÉCRAN : SÉLECTION -->
     <div id="screen-selection" class="list-screen hidden">
+        <button class="back-btn" onclick="showScreen('screen-modes')" aria-label="Retour">‹</button>
         <h2 class="header-title">Sélection des événements</h2>
         <p style="font-size:14px; color:var(--muted-text); margin-bottom:15px;">Décochez les événements que vous ne souhaitez pas faire apparaître.</p>
         <div style="display:flex; gap:10px; justify-content:center; margin-bottom:15px;">
@@ -1128,7 +1128,6 @@
         </div>
         <div class="selection-list" id="selection-list-container"></div>
         <div style="margin-top: 20px; margin-bottom: 50px; display:flex; gap:15px; justify-content:center;">
-            <button class="btn btn-secondary" onclick="showScreen('screen-modes')">Retour</button>
             <button class="btn" onclick="saveSelectionAndReturn()">Valider la sélection</button>
         </div>
     </div>
@@ -1218,11 +1217,11 @@
 
     <!-- ÉCRAN 6 : FIN DE PARTIE -->
     <div id="screen-end" class="hidden">
+        <button class="back-btn" onclick="showScreen(screenAfterGame())" aria-label="Retour">‹</button>
         <div class="end-title" id="end-title">Partie Terminée</div>
         <div class="end-score">Score : <strong id="end-score-val">0</strong> points</div>
         <div id="end-time-display" class="end-time hidden">Durée : 0,0 s</div>
         <div style="display:flex; gap:15px; margin-top: 20px;">
-            <button class="btn btn-secondary" onclick="showScreen(screenAfterGame())">Retour</button>
             <button class="btn" onclick="replayCurrentGame()">Rejouer</button>
         </div>
     </div>
@@ -10471,16 +10470,6 @@ events: [
                 gridSection.appendChild(card);
             });
             
-            // Adjust back button styling (if needed, it's outside the container but we can reach it)
-            const backBtn = document.querySelector('#screen-subcategories .btn-secondary');
-            if(backBtn) {
-                backBtn.style.backgroundColor = '#dbe4ed';
-                backBtn.style.color = '#001a4b';
-                backBtn.style.borderRadius = '9999px';
-                backBtn.style.padding = '12px 24px';
-                backBtn.style.border = 'none';
-                backBtn.style.fontWeight = '700';
-            }
         }
 
 
