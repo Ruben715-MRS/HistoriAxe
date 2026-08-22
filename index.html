@@ -196,6 +196,17 @@
         .special-card.revision { background: linear-gradient(135deg, #B23A32, #D9534F); }
         .special-card.progress { background: linear-gradient(135deg, #1B6E8C, #3FA7C9); }
 
+        /* Icônes rondes des 4 actions rapides (Favoris / Découvrir / Réviser / Progression),
+           en tête de l'écran des catégories. Couleurs pilotées par les tokens de thème :
+           auparavant fond blanc et icônes bleu marine/rouge codés en dur, ce qui restait
+           blanc même en mode sombre et tranchait violemment avec le reste de l'écran. */
+        .quick-action-circle { background: var(--surface); box-shadow: var(--card-shadow); transition: background 0.2s, box-shadow 0.2s; }
+        .quick-action-icon { color: var(--primary-blue); }
+        .quick-action-icon.danger { color: var(--danger-red); }
+        .quick-action-label { font-size: 12px; font-weight: 500; display: block; margin-top: 8px; color: var(--muted-text); }
+        :root[data-theme="dark"] .quick-action-icon { color: #5dade2; }
+        :root[data-theme="dark"] .quick-action-icon.danger { color: #ec7063; }
+
         /* ÉCRAN « PROGRESSION PAR THÈME » : radar de synthèse par catégorie et liste
            de barres de maîtrise détaillées (thème par thème), triées du moins
            maîtrisé au mieux maîtrisé pour indiquer d'un coup d'œil où concentrer sa
@@ -856,6 +867,7 @@
         
         /* Quick tweaks for headers */
         .header-title { font-weight: 700; color: #001a4b; }
+        :root[data-theme="dark"] .header-title { color: var(--text-dark); }
 
     </style>
 </head>
@@ -11097,28 +11109,28 @@ events: [
             gridSection.innerHTML = `
                 <div class="grid grid-cols-4 gap-sm md:gap-md" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; text-align: center;">
                     <div class="flex flex-col items-center gap-2" id="btn-favoris">
-                        <div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-surface-container-lowest shadow-executive flex items-center justify-center text-primary-container hover:bg-primary-container hover:text-on-primary transition-colors cursor-pointer group mx-auto" style="background: white; border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; box-shadow: 0px 10px 30px rgba(0, 26, 75, 0.05);">
-                            <span class="material-symbols-outlined text-[32px] group-hover:scale-110 transition-transform" style="font-size: 32px; color: #001a4b;">favorite</span>
+                        <div class="quick-action-circle w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center transition-colors cursor-pointer group mx-auto" style="border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center;">
+                            <span class="material-symbols-outlined quick-action-icon text-[32px] group-hover:scale-110 transition-transform" style="font-size: 32px;">favorite</span>
                         </div>
-                        <span class="font-label-sm text-on-surface-variant" style="font-size: 12px; font-weight: 500; display: block; margin-top: 8px; color: #44464f;">Favoris</span>
+                        <span class="quick-action-label font-label-sm">Favoris</span>
                     </div>
                     <div class="flex flex-col items-center gap-2" id="btn-discover">
-                        <div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-surface-container-lowest shadow-executive flex items-center justify-center text-primary-container hover:bg-primary-container hover:text-on-primary transition-colors cursor-pointer group mx-auto" style="background: white; border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; box-shadow: 0px 10px 30px rgba(0, 26, 75, 0.05);">
-                            <span class="material-symbols-outlined text-[32px] group-hover:scale-110 transition-transform" style="font-size: 32px; color: #001a4b;">explore</span>
+                        <div class="quick-action-circle w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center transition-colors cursor-pointer group mx-auto" style="border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center;">
+                            <span class="material-symbols-outlined quick-action-icon text-[32px] group-hover:scale-110 transition-transform" style="font-size: 32px;">explore</span>
                         </div>
-                        <span class="font-label-sm text-on-surface-variant" style="font-size: 12px; font-weight: 500; display: block; margin-top: 8px; color: #44464f;">Découvrir</span>
+                        <span class="quick-action-label font-label-sm">Découvrir</span>
                     </div>
                     <div class="flex flex-col items-center gap-2" id="btn-revision">
-                        <div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-surface-container-lowest shadow-executive flex items-center justify-center text-primary-container hover:bg-primary-container hover:text-on-primary transition-colors cursor-pointer group mx-auto" style="background: white; border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; box-shadow: 0px 10px 30px rgba(0, 26, 75, 0.05);">
-                            <span class="material-symbols-outlined text-[32px] group-hover:scale-110 transition-transform" style="font-size: 32px; color: #ba1a1a;">rate_review</span>
+                        <div class="quick-action-circle w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center transition-colors cursor-pointer group mx-auto" style="border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center;">
+                            <span class="material-symbols-outlined quick-action-icon danger text-[32px] group-hover:scale-110 transition-transform" style="font-size: 32px;">rate_review</span>
                         </div>
-                        <span class="font-label-sm text-on-surface-variant" style="font-size: 12px; font-weight: 500; display: block; margin-top: 8px; color: #44464f;">Réviser (${weakCount})</span>
+                        <span class="quick-action-label font-label-sm">Réviser (${weakCount})</span>
                     </div>
                     <div class="flex flex-col items-center gap-2" id="btn-progress">
-                        <div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-surface-container-lowest shadow-executive flex items-center justify-center text-primary-container hover:bg-primary-container hover:text-on-primary transition-colors cursor-pointer group mx-auto" style="background: white; border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; box-shadow: 0px 10px 30px rgba(0, 26, 75, 0.05);">
-                            <span class="material-symbols-outlined text-[32px] group-hover:scale-110 transition-transform" style="font-size: 32px; color: #001a4b;">trending_up</span>
+                        <div class="quick-action-circle w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center transition-colors cursor-pointer group mx-auto" style="border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center;">
+                            <span class="material-symbols-outlined quick-action-icon text-[32px] group-hover:scale-110 transition-transform" style="font-size: 32px;">trending_up</span>
                         </div>
-                        <span class="font-label-sm text-on-surface-variant" style="font-size: 12px; font-weight: 500; display: block; margin-top: 8px; color: #44464f;">Progression</span>
+                        <span class="quick-action-label font-label-sm">Progression</span>
                     </div>
                 </div>
             `;
