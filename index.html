@@ -168,7 +168,7 @@
         .search-bar-wrap { width: 100%; max-width: 640px; margin: 40px auto 20px; position: relative; z-index: 20; }
         .search-bar { display: flex; align-items: center; gap: 10px; background: var(--surface); border: 1px solid var(--border-soft); border-radius: 9999px; padding: 12px 18px; box-shadow: var(--card-shadow); }
         .search-bar-icon { font-size: 17px; flex-shrink: 0; opacity: 0.7; }
-        .search-bar-input { flex: 1; border: none; outline: none; background: transparent; font: inherit; font-size: 16px; color: var(--text-dark); min-width: 0; }
+        .search-bar-input { flex: 1; border: none; outline: none; background: transparent; -webkit-appearance: none; appearance: none; font: inherit; font-size: 16px; color: var(--text-dark); min-width: 0; }
         .search-bar-input::placeholder { color: var(--muted-text); }
         .search-bar-clear { flex-shrink: 0; cursor: pointer; color: var(--muted-text); font-size: 15px; line-height: 1; padding: 4px; border-radius: 50%; transition: background 0.15s, color 0.15s; }
         .search-bar-clear:hover { background: var(--border-soft); color: var(--text-dark); }
@@ -11237,7 +11237,7 @@ events: [
             titleEl.innerText = node.nom;
             titleEl.style.fontWeight = '700';
             titleEl.style.fontSize = '24px';
-            titleEl.style.color = '#001a4b';
+            titleEl.style.color = 'var(--text-dark)';
             titleEl.style.textAlign = 'center';
             titleEl.style.marginBottom = '24px';
 
@@ -11245,13 +11245,13 @@ events: [
             if (category.note && selectedSubcategoryIndex.length === 0) {
                 document.getElementById('subcategory-note-text').innerText = category.note;
                 noteBox.classList.remove('hidden');
-                noteBox.style.backgroundColor = '#ecf5fe';
-                noteBox.style.color = '#001a4b';
-                noteBox.style.border = '1px solid rgba(0, 26, 75, 0.1)';
+                noteBox.style.backgroundColor = 'var(--surface-2)';
+                noteBox.style.color = 'var(--text-dark)';
+                noteBox.style.border = '1px solid var(--border-soft)';
                 noteBox.style.borderRadius = '16px';
                 noteBox.style.padding = '16px';
                 noteBox.style.marginBottom = '24px';
-                noteBox.style.boxShadow = '0px 10px 30px rgba(0, 26, 75, 0.05)';
+                noteBox.style.boxShadow = 'var(--card-shadow)';
             } else {
                 noteBox.classList.add('hidden');
             }
