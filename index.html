@@ -867,17 +867,22 @@
         
         /* Quick tweaks for headers */
         .header-title { font-weight: 700; color: #001a4b; }
-        :root[data-theme="dark"] .header-title { color: var(--text-dark); }
+        :root[data-theme="dark"] .header-title { color: var(--text-dark) !important; }
 
         /* Barre de recherche du menu principal : en mode sombre, un fond gris neutre
            tranchait trop peu, et sans cette règle certains navigateurs appliquaient
            encore le blanc par défaut des champs de formulaire. On lui donne un bleu
            marine sombre dérivé de --primary-blue pour rester en harmonie avec le
-           reste du thème. */
+           reste du thème. !important pour rester prioritaire sur tout style de
+           formulaire natif que certains navigateurs mobiles pourraient réappliquer. */
         :root[data-theme="dark"] .search-bar,
         :root[data-theme="dark"] .search-results {
-            background: #17233A;
-            border-color: #2A3B5C;
+            background: #17233A !important;
+            border-color: #2A3B5C !important;
+        }
+        :root[data-theme="dark"] .search-bar-input {
+            background: transparent !important;
+            color: var(--text-dark) !important;
         }
 
     </style>
