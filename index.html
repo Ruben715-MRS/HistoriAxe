@@ -115,6 +115,8 @@
             --text-dark: #141d23;
             --text-light: #ffffff;
             --danger-red: #ba1a1a;
+            --favorite-yellow: #d4a017;
+            --progress-green: #1e8e3e;
             --card-shadow: 0px 10px 30px rgba(0, 26, 75, 0.05);
             --font-main: 'Inter', sans-serif;
             --zoom-level: 1;
@@ -203,9 +205,13 @@
         .quick-action-circle { background: var(--surface); box-shadow: var(--card-shadow); transition: background 0.2s, box-shadow 0.2s; }
         .quick-action-icon { color: var(--primary-blue); }
         .quick-action-icon.danger { color: var(--danger-red); }
+        .quick-action-icon.favoris { color: var(--favorite-yellow); }
+        .quick-action-icon.progress { color: var(--progress-green); }
         .quick-action-label { font-size: 12px; font-weight: 500; display: block; margin-top: 8px; color: var(--muted-text); }
         :root[data-theme="dark"] .quick-action-icon { color: #5dade2; }
         :root[data-theme="dark"] .quick-action-icon.danger { color: #ec7063; }
+        :root[data-theme="dark"] .quick-action-icon.favoris { color: #f0c419; }
+        :root[data-theme="dark"] .quick-action-icon.progress { color: #4caf6f; }
 
         /* ÉCRAN « PROGRESSION PAR THÈME » : radar de synthèse par catégorie et liste
            de barres de maîtrise détaillées (thème par thème), triées du moins
@@ -11126,7 +11132,7 @@ events: [
                 <div class="grid grid-cols-4 gap-sm md:gap-md" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; text-align: center;">
                     <div class="flex flex-col items-center gap-2" id="btn-favoris">
                         <div class="quick-action-circle w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center transition-colors cursor-pointer group mx-auto" style="border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center;">
-                            <span class="material-symbols-outlined quick-action-icon text-[32px] group-hover:scale-110 transition-transform" style="font-size: 32px;">star</span>
+                            <span class="material-symbols-outlined quick-action-icon favoris text-[32px] group-hover:scale-110 transition-transform" style="font-size: 32px;">star</span>
                         </div>
                         <span class="quick-action-label font-label-sm">Favoris</span>
                     </div>
@@ -11138,7 +11144,7 @@ events: [
                     </div>
                     <div class="flex flex-col items-center gap-2" id="btn-progress">
                         <div class="quick-action-circle w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center transition-colors cursor-pointer group mx-auto" style="border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center;">
-                            <span class="material-symbols-outlined quick-action-icon text-[32px] group-hover:scale-110 transition-transform" style="font-size: 32px;">trending_up</span>
+                            <span class="material-symbols-outlined quick-action-icon progress text-[32px] group-hover:scale-110 transition-transform" style="font-size: 32px;">trending_up</span>
                         </div>
                         <span class="quick-action-label font-label-sm">Progression</span>
                     </div>
