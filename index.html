@@ -679,6 +679,20 @@
             --locked-bg: #3B4350;
         }
 
+        /* Cartes d'événements (.entry-title) : la version « Tailored Executive »
+           plus bas force un fond blanc pur, harmonieux en thème clair mais
+           criard sur fond sombre. On lui substitue les tons de surface du
+           thème sombre pour rester cohérent avec le reste de l'interface. */
+        :root[data-theme="dark"] .entry-title {
+            background: var(--surface) !important;
+            color: var(--ink) !important;
+            border-color: rgba(255,255,255,0.08) !important;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.45) !important;
+        }
+        :root[data-theme="dark"] .entry-tick {
+            border-color: var(--paper) !important;
+        }
+
         /* =====================================================================
            ORIENTATION HORIZONTALE — activée via [data-layout="horizontal"]
            La même colonne du temps pivote en frise déroulante de gauche à
@@ -699,7 +713,7 @@
         [data-layout="horizontal"] .chrono::before { top: calc(var(--h-head) + 4px); bottom: auto; left: 0; right: 0; width: auto; height: 1px; }
 
         [data-layout="horizontal"] .entry { display: flex; flex-direction: column; align-items: center; grid-template-columns: none; width: 168px; flex-shrink: 0; padding: 0 12px; text-align: center; }
-        [data-layout="horizontal"] .entry-year { height: var(--h-head); display: flex; align-items: flex-end; justify-content: center; text-align: center; padding: 0 0 10px 0; }
+        [data-layout="horizontal"] .entry-year { height: var(--h-head); display: flex; align-items: flex-end; justify-content: center; text-align: center; padding: 0 0 20px 0; }
         [data-layout="horizontal"] .entry-body { flex-direction: column; align-items: center; padding: 8px 0 0; gap: 4px; }
         [data-layout="horizontal"] .entry-title { text-align: center; }
         [data-layout="horizontal"] .entry-chevron { display: none; }
@@ -795,14 +809,28 @@
             backdrop-filter: blur(20px) !important;
             border-bottom: none !important;
         }
+        /* En thème sombre, ce fond blanc translucide retombe en gris terne sur
+           l'arrière-plan sombre : on lui substitue une variante sombre de la
+           même surface pour rester harmonieux avec le reste de l'interface. */
+        :root[data-theme="dark"] .game-bar {
+            background: rgba(27, 33, 43, 0.85) !important;
+        }
         .timer-chip { background: #ecf5fe !important; color: #001a4b !important; }
         .board { background: var(--bg-color) !important; }
         .chrono::before { background: #c5c6d0 !important; left: calc(var(--gutter) + 12.5px) !important; }
-        
+        /* En orientation horizontale, l'axe traverse toute la largeur : le
+           décalage à gauche ci-dessus (pensé pour la colonne verticale) donne
+           l'impression d'un début d'alinéa. On le remet à 0 dans ce mode. */
+        [data-layout="horizontal"] .chrono::before { left: 0 !important; }
+
         /* Entries */
         .entry { padding: 16px 0 !important; }
         .entry-body { padding: 0 0 0 16px !important; }
-        .entry-title { 
+        /* En horizontal, chaque carte est censée être centrée sous sa puce ;
+           le padding-gauche ci-dessus (pensé pour la liste verticale) la
+           poussait contre le séparateur de droite. */
+        [data-layout="horizontal"] .entry-body { padding: 10px 0 0 !important; }
+        .entry-title {
             background: #ffffff !important; 
             padding: 16px !important; 
             border-radius: 16px !important; 
