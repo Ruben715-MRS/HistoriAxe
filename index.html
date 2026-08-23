@@ -376,6 +376,17 @@
         .chrono { position: relative; width: 100%; max-width: 720px; margin: auto 0; }
         .chrono::before { content: ""; position: absolute; top: 4px; bottom: 4px; left: calc(var(--gutter) + 11px); width: 1px; background: var(--axis); }
 
+        /* En orientation paysage du téléphone, la hauteur visible du board est très
+           réduite : même une frise qui déborde (donc sans le bénéfice de la marge
+           automatique ci-dessus, qui ne joue que si tout le contenu tient) affichait
+           son premier repère collé contre la barre de jeu, faute de tout espace de
+           respiration garanti. On réserve ici un minimum incompressible en haut et
+           en bas du board — proportionnel à la hauteur de l'écran plutôt que fixe,
+           pour rester cohérent sur les petits comme les grands appareils. */
+        @media (orientation: landscape) {
+            [data-layout="vertical"] .board { padding-top: 18vh; padding-bottom: 18vh; }
+        }
+
         .entry { display: grid; grid-template-columns: var(--gutter) 23px 1fr; align-items: center; padding: calc(10px * var(--zoom-level)) 0; cursor: pointer; scroll-margin: 100px 0; }
         .entry-year { font-family: var(--font-year); font-size: calc(19px * var(--zoom-level)); font-weight: 700; color: var(--ink); text-align: right; padding-right: 13px; line-height: 1.15; font-variant-numeric: tabular-nums; }
         .entry-tick { justify-self: center; width: 7px; height: 7px; background: var(--ink); transform: rotate(45deg); }
@@ -827,7 +838,7 @@
         }
         .timer-chip { background: #ecf5fe !important; color: #001a4b !important; }
         .board { background: var(--bg-color) !important; }
-        .chrono::before { background: #c5c6d0 !important; left: calc(var(--gutter) + 12.5px) !important; }
+        .chrono::before { background: #c5c6d0 !important; left: calc(var(--gutter) + 11px) !important; }
         /* En orientation horizontale, l'axe traverse toute la largeur : le
            décalage à gauche ci-dessus (pensé pour la colonne verticale) donne
            l'impression d'un début d'alinéa. On le remet à 0 dans ce mode. */
@@ -859,8 +870,6 @@
             border-radius: 50% !important; 
             transform: none !important; 
             box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
-            position: relative;
-            left: -1px;
         }
         
         /* Slots */
