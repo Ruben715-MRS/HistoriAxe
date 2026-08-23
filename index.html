@@ -624,13 +624,35 @@
             margin: 0 auto 16px;
             max-width: 800px;
             width: 95%;
-            /* Reste ancrée en haut du board pendant le défilement de la frise
-               (mode Découverte), pour garder les axes visibles en permanence. */
+            position: relative;
+        }
+        /* Épinglée (œil ouvert, réglage par défaut) : reste ancrée en haut du
+           board pendant le défilement de la frise, pour garder les axes
+           visibles en permanence. Non épinglée (œil fermé) : défile
+           normalement avec la frise, donc visible seulement au tout début. */
+        .timeline-axes-legend.pinned {
             position: sticky;
             top: 0;
             z-index: 5;
             box-shadow: var(--card-shadow);
         }
+        .axes-legend-toggle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 26px;
+            height: 26px;
+            margin-left: auto;
+            padding: 0;
+            border: none;
+            border-radius: 50%;
+            background: none;
+            color: var(--muted-text);
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+        .axes-legend-toggle:hover { color: var(--ink); background: rgba(0, 0, 0, 0.06); }
+        [data-theme="dark"] .axes-legend-toggle:hover { background: rgba(255, 255, 255, 0.1); }
         .axes-legend-title {
             font-size: 12px;
             font-weight: 700;
@@ -986,7 +1008,7 @@
            la légende des axes au milieu de la largeur visible plutôt qu'en
            haut (left: 50% + translation, pour rester centrée pendant le
            scroll au lieu de se coller au bord gauche). */
-        [data-layout="horizontal"] .timeline-axes-legend {
+        [data-layout="horizontal"] .timeline-axes-legend.pinned {
             left: 50% !important;
             transform: translateX(-50%) !important;
         }
@@ -13222,7 +13244,10 @@ events: [
         // « auto » suit respectivement la rotation physique de l'appareil et le
         // réglage clair/sombre du système ; un choix explicite verrouille l'un ou l'autre.
         const SETTINGS_KEY = 'historiaxe_settings_v1';
-        const DEFAULT_SETTINGS = { orientation: 'auto', appearance: 'auto' };
+        // axesLegendPinned : true = la légende des axes (mode Découverte) reste
+        // épinglée en permanence pendant le défilement ; false = elle défile
+        // normalement avec la frise et n'est visible qu'au tout début.
+        const DEFAULT_SETTINGS = { orientation: 'auto', appearance: 'auto', axesLegendPinned: true };
 
         function settingsLoad() {
             try { return Object.assign({}, DEFAULT_SETTINGS, JSON.parse(localStorage.getItem(SETTINGS_KEY)) || {}); }
@@ -15842,18 +15867,37 @@ events: [
             }
         }
 
+        // Icônes œil ouvert / œil barré du bouton d'épinglage de la légende des axes.
+        const AXES_EYE_OPEN_SVG = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8Z"/><circle cx="12" cy="12" r="3"/></svg>';
+        const AXES_EYE_CLOSED_SVG = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.94 10.94 0 0 1 12 20c-7 0-11-8-11-8a20.32 20.32 0 0 1 5.06-6.06M9.9 4.24A10.4 10.4 0 0 1 12 4c7 0 11 8 11 8a20.32 20.32 0 0 1-3.22 4.36M14.12 14.12a3 3 0 1 1-4.24-4.24"/><path d="M1 1l22 22"/></svg>';
+
         function renderAxesLegend() {
             const legendEl = document.getElementById('timeline-axes-legend');
             if (!legendEl) return;
             if (currentMode === 'discovery' && currentThemeAxes && currentThemeAxes.length > 1) {
-                legendEl.innerHTML = '<span class="axes-legend-title">Axes :</span>' + currentThemeAxes.map(axe => {
+                const pinned = appSettings.axesLegendPinned !== false;
+                const badges = currentThemeAxes.map(axe => {
                     const color = getAxisColor(axe);
                     return `<span class="entry-axe-badge" data-axis="${color ? color.name : 'blue'}">${axe}</span>`;
                 }).join('');
+                const toggleLabel = pinned
+                    ? "Masquer les axes pendant le défilement"
+                    : "Garder les axes visibles pendant le défilement";
+                legendEl.innerHTML = '<span class="axes-legend-title">Axes :</span>' + badges +
+                    `<button type="button" class="axes-legend-toggle" onclick="toggleAxesLegendPin()" aria-label="${toggleLabel}" aria-pressed="${pinned}" title="${toggleLabel}">${pinned ? AXES_EYE_OPEN_SVG : AXES_EYE_CLOSED_SVG}</button>`;
                 legendEl.classList.remove('hidden');
+                legendEl.classList.toggle('pinned', pinned);
             } else {
                 legendEl.classList.add('hidden');
             }
+        }
+
+        // Bascule entre légende des axes toujours épinglée (œil ouvert) et
+        // légende visible seulement au début de la frise (œil fermé).
+        function toggleAxesLegendPin() {
+            appSettings.axesLegendPinned = appSettings.axesLegendPinned === false;
+            settingsSave(appSettings);
+            renderAxesLegend();
         }
 
         // RENDU DE LA COLONNE CHRONOLOGIQUE
