@@ -395,15 +395,19 @@
         .slot-caret { justify-self: center; position: relative; left: 3px; width: 0; height: 0; border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left: 8px solid var(--axis); transition: border-left-color 0.15s ease, transform 0.15s ease; }
         .slot-body { display: flex; align-items: center; gap: 10px; padding-left: 14px; }
         .slot-label { font-size: calc(12.5px * var(--zoom-level)); letter-spacing: 0.02em; color: var(--ink-soft); transition: color 0.15s ease; }
-        .slot-dash { flex: 1; border-top: 1px dashed var(--rule); transition: border-color 0.15s ease; }
-        .slot:hover .slot-label, .slot:focus-visible .slot-label { color: var(--amber); font-weight: 600; }
-        .slot:hover .slot-caret, .slot:focus-visible .slot-caret { border-left-color: var(--amber); transform: translateX(3px); }
-        .slot:hover .slot-dash, .slot:focus-visible .slot-dash { border-color: var(--amber); }
+        .slot:focus-visible .slot-label { color: var(--amber); font-weight: 600; }
+        .slot:focus-visible .slot-caret { border-left-color: var(--amber); transform: translateX(3px); }
         .slot:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; border-radius: 4px; }
         .slot:active .slot-label { color: var(--amber); font-weight: 600; }
+        /* (hover: hover) évite qu'un tap sur mobile/tactile ne laisse l'intervalle
+           « collé » dans son état survolé une fois le doigt relevé (aucun mouseleave
+           n'est jamais émis sur ces appareils). */
+        @media (hover: hover) {
+            .slot:hover .slot-label { color: var(--amber); font-weight: 600; }
+            .slot:hover .slot-caret { border-left-color: var(--amber); transform: translateX(3px); }
+        }
         .slot-wrong { animation: nudge 0.35s ease-in-out; }
         .slot-wrong .slot-label { color: var(--danger-red); font-weight: 700; }
-        .slot-wrong .slot-dash { border-top-style: solid; border-color: var(--danger-red); }
         .slot-wrong .slot-caret { border-left-color: var(--danger-red); }
 
         /* --- Événement en main --- */
@@ -730,12 +734,12 @@
         [data-layout="horizontal"] .slot-grid { display: flex; flex-direction: column; align-items: center; grid-template-columns: none; }
         [data-layout="horizontal"] .slot-grid > span:first-child { height: var(--h-head); display: block; }
         [data-layout="horizontal"] .slot-caret { left: 0; top: 0; transform: rotate(90deg); }
-        [data-layout="horizontal"] .slot:hover .slot-caret, [data-layout="horizontal"] .slot:focus-visible .slot-caret { transform: rotate(90deg) translateX(3px); }
+        [data-layout="horizontal"] .slot:focus-visible .slot-caret { transform: rotate(90deg) translateX(3px); }
+        @media (hover: hover) {
+            [data-layout="horizontal"] .slot:hover .slot-caret { transform: rotate(90deg) translateX(3px); }
+        }
         [data-layout="horizontal"] .slot-body { flex-direction: column; align-items: center; padding-left: 0; padding-top: 8px; gap: 5px; min-width: 90px; }
         [data-layout="horizontal"] .slot-label { text-align: center; }
-        [data-layout="horizontal"] .slot-dash { width: 100%; border-top: none; border-left: 1px dashed var(--rule); height: 14px; flex: none; }
-        [data-layout="horizontal"] .slot:hover .slot-dash, [data-layout="horizontal"] .slot:focus-visible .slot-dash { border-left-color: var(--amber); border-top-color: transparent; }
-        [data-layout="horizontal"] .slot-wrong .slot-dash { border-left-style: solid; border-top: none; }
 
 /* Mode Multijoueurs */
 .multi-card {
@@ -861,28 +865,30 @@
         
         /* Slots */
         .slot { margin: 8px 0 !important; }
-        .slot-dash { border-top: 2px dashed rgba(0,26,75,0.2) !important; }
         .slot-caret {
-            width: 12px !important; 
-            height: 12px !important; 
-            border-radius: 50% !important; 
-            background: #dbe4ed !important; 
-            border: 2px solid #ffffff !important; 
-            transform: none !important; 
+            width: 12px !important;
+            height: 12px !important;
+            border-radius: 50% !important;
+            background: #dbe4ed !important;
+            border: 2px solid #ffffff !important;
+            transform: none !important;
             left: 1px !important;
             transition: all 0.2s ease !important;
         }
-        .slot:hover .slot-caret { background: #001a4b !important; }
-        .slot-label { 
-            background: rgba(0,26,75,0.05) !important; 
-            padding: 6px 16px !important; 
-            border-radius: 9999px !important; 
+        .slot-label {
+            background: rgba(0,26,75,0.05) !important;
+            padding: 6px 16px !important;
+            border-radius: 9999px !important;
             color: #44464f !important;
             border: 1px dashed rgba(0,26,75,0.2);
             transition: all 0.2s ease !important;
         }
-        .slot:hover .slot-label { background: rgba(0,26,75,0.1) !important; border-color: #001a4b !important; color: #001a4b !important; }
-        .slot:hover .slot-dash { border-color: rgba(0,26,75,0.5) !important; }
+        /* (hover: hover) évite qu'un tap tactile ne laisse l'intervalle choisi
+           plus foncé que les autres une fois le doigt relevé. */
+        @media (hover: hover) {
+            .slot:hover .slot-caret { background: #001a4b !important; }
+            .slot:hover .slot-label { background: rgba(0,26,75,0.1) !important; border-color: #001a4b !important; color: #001a4b !important; }
+        }
         
         /* Hand / Mystery Card */
         .hand {
@@ -15788,7 +15794,7 @@ events: [
             slot.className = 'slot';
             slot.setAttribute('aria-label', `Placer ici : ${label}`);
             slot.innerHTML = `<span class="slot-grid"><span></span><span class="slot-caret"></span>` +
-                `<span class="slot-body"><span class="slot-label">${label}</span><span class="slot-dash"></span></span></span>`;
+                `<span class="slot-body"><span class="slot-label">${label}</span></span></span>`;
             slot.onclick = () => checkPlacement(index, slot);
             return slot;
         }
