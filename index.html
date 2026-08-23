@@ -983,8 +983,13 @@
             flex: 1 !important; min-height: 0 !important;
         }
         /* Ici le défilement de la frise est horizontal (overflow-x) : on ancre
-           la légende des axes sur le bord gauche plutôt qu'en haut. */
-        [data-layout="horizontal"] .timeline-axes-legend { left: 0 !important; }
+           la légende des axes au milieu de la largeur visible plutôt qu'en
+           haut (left: 50% + translation, pour rester centrée pendant le
+           scroll au lieu de se coller au bord gauche). */
+        [data-layout="horizontal"] .timeline-axes-legend {
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+        }
         [data-layout="horizontal"] .chrono {
             display: flex !important; flex-direction: row !important; align-items: flex-start !important;
             max-width: none !important; width: max-content !important; min-width: 100% !important;
