@@ -919,6 +919,18 @@
             color: var(--text-dark) !important;
         }
 
+        /* Alignement des puces sur l'axe en orientation horizontale : le padding/
+           marge vertical ajouté ci-dessus par le skin (pensé pour la liste de
+           cartes verticale) décale .entry et .slot sous la zone d'en-tête fixe
+           (--h-head) sur laquelle l'axe est calé, désynchronisant la puce du
+           trait. On neutralise ce décalage en haut, puis on recentre chaque
+           puce (tailles fixées plus haut) exactement sur le trait de 1px.
+           Cf. lignes ~704-709 : la puce doit tomber sur l'axe, jamais sur le texte. */
+        [data-layout="horizontal"] .entry { padding-top: 0 !important; padding-bottom: 16px !important; }
+        [data-layout="horizontal"] .slot { margin-top: 0 !important; padding-top: 0 !important; margin-bottom: 8px !important; }
+        [data-layout="horizontal"] .entry-tick { margin-top: -3.5px !important; }
+        [data-layout="horizontal"] .slot-caret { margin-top: -1.5px !important; }
+
     </style>
 </head>
 <body>
