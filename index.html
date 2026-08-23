@@ -624,6 +624,12 @@
             margin: 0 auto 16px;
             max-width: 800px;
             width: 95%;
+            /* Reste ancrée en haut du board pendant le défilement de la frise
+               (mode Découverte), pour garder les axes visibles en permanence. */
+            position: sticky;
+            top: 0;
+            z-index: 5;
+            box-shadow: var(--card-shadow);
         }
         .axes-legend-title {
             font-size: 12px;
@@ -954,16 +960,16 @@
 
     
         /* =======================================
-           CORRECTIF D�FINITIF : Z-INDEX & PAYSAGE
+           CORRECTIF DÉFINITIF : Z-INDEX & PAYSAGE
            ======================================= */
-        /* Placement en arri�re-plan de la ligne et premier plan des puces (tous modes) */
+        /* Placement en arrière-plan de la ligne et premier plan des puces (tous modes) */
         .chrono { z-index: 0; }
         .chrono::before { z-index: 1 !important; }
         .entry, .slot { z-index: 2 !important; position: relative !important; }
         .entry-tick, .slot-caret { z-index: 3 !important; position: relative !important; }
         .entry-tick { left: 0 !important; margin: 0 auto !important; transform: none !important; }
 
-        /* Ajustement du d�calage des puces pour le layout vertical natif */
+        /* Ajustement du décalage des puces pour le layout vertical natif */
         [data-layout="vertical"] .entry-tick, :root:not([data-layout="horizontal"]) .entry-tick { left: -1px !important; }
         [data-layout="vertical"] .slot-caret, :root:not([data-layout="horizontal"]) .slot-caret { left: 1px !important; }
 
@@ -976,6 +982,9 @@
             padding: 8px 20px !important; scroll-padding: 0 90px !important;
             flex: 1 !important; min-height: 0 !important;
         }
+        /* Ici le défilement de la frise est horizontal (overflow-x) : on ancre
+           la légende des axes sur le bord gauche plutôt qu'en haut. */
+        [data-layout="horizontal"] .timeline-axes-legend { left: 0 !important; }
         [data-layout="horizontal"] .chrono {
             display: flex !important; flex-direction: row !important; align-items: flex-start !important;
             max-width: none !important; width: max-content !important; min-width: 100% !important;
