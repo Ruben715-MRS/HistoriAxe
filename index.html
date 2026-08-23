@@ -366,8 +366,14 @@
         .bar-meta { font-size: 12px; font-weight: 600; color: var(--ink-soft); letter-spacing: 0.02em; white-space: nowrap; font-variant-numeric: tabular-nums; }
 
         /* --- Colonne chronologique --- */
-        .board { flex: 1; min-height: 0; overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 10px 16px 32px; scroll-padding: 90px 0; }
-        .chrono { position: relative; max-width: 720px; margin: 0 auto; }
+        /* En orientation verticale (portrait), .board devient une colonne flex :
+           quand la frise tient entièrement dans la hauteur visible (peu de
+           repères), la marge automatique verticale de .chrono la centre au
+           lieu de la coller contre la barre de jeu ; dès que le contenu
+           déborde, ces marges auto s'annulent d'elles-mêmes et on retrouve
+           le défilement classique ancré en haut. */
+        .board { flex: 1; min-height: 0; overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 10px 16px 32px; scroll-padding: 90px 0; display: flex; flex-direction: column; align-items: center; }
+        .chrono { position: relative; width: 100%; max-width: 720px; margin: auto 0; }
         .chrono::before { content: ""; position: absolute; top: 4px; bottom: 4px; left: calc(var(--gutter) + 11px); width: 1px; background: var(--axis); }
 
         .entry { display: grid; grid-template-columns: var(--gutter) 23px 1fr; align-items: center; padding: calc(10px * var(--zoom-level)) 0; cursor: pointer; scroll-margin: 100px 0; }
@@ -708,7 +714,7 @@
            repères ET les intervalles. La puce tombe donc toujours à la même
            hauteur, et l'axe vient se caler dessus — jamais sur le texte.
            ===================================================================== */
-        [data-layout="horizontal"] .board { overflow-x: auto; overflow-y: hidden; display: flex; align-items: center; padding: 18px 16px 22px; scroll-padding: 0 90px; }
+        [data-layout="horizontal"] .board { overflow-x: auto; overflow-y: hidden; display: flex; flex-direction: row; align-items: center; padding: 18px 16px 22px; scroll-padding: 0 90px; }
         [data-layout="horizontal"] .chrono { display: flex; flex-direction: row; align-items: flex-start; max-width: none; width: max-content; min-width: 100%; flex-shrink: 0; margin: 0 auto; padding: 0 6px; --h-head: calc(38px * var(--zoom-level)); }
         [data-layout="horizontal"] .chrono::before { top: calc(var(--h-head) + 4px); bottom: auto; left: 0; right: 0; width: auto; height: 1px; }
 
