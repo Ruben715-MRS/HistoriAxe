@@ -549,6 +549,11 @@
         .avap-options { display: flex; flex-direction: column; gap: 4px; }
         .avap-option { background: var(--surface); border: 2px solid var(--border-soft); border-radius: 14px; padding: 22px 20px; font: inherit; text-align: center; cursor: pointer; transition: transform 0.15s, border-color 0.15s, background 0.15s; display: flex; flex-direction: column; gap: 6px; align-items: center; width: 100%; }
         .avap-option:hover { transform: translateY(-2px); border-color: var(--primary-blue); }
+        /* Le focus persiste sur le même bouton d'une question à l'autre (les boutons ne
+           sont pas recréés) : on masque l'anneau natif pour éviter qu'il ne soit confondu
+           avec le résultat de la question précédente, en gardant un repère clavier. */
+        .avap-option:focus { outline: none; }
+        .avap-option:focus-visible { outline: 2px solid var(--primary-blue); outline-offset: 2px; }
         .avap-option-title { font-size: 18px; font-weight: 700; color: var(--text-dark); line-height: 1.35; }
         .avap-option-year { font-size: 14px; font-weight: 600; color: var(--muted-text); }
         .avap-option.correct { background: rgba(44,168,90,0.14); border-color: #2CA85A; }
@@ -16975,6 +16980,8 @@ events: [
             const btnB = document.getElementById('avap-option-b');
             btnA.classList.remove('correct', 'wrong');
             btnB.classList.remove('correct', 'wrong');
+            btnA.blur();
+            btnB.blur();
             btnA.style.pointerEvents = 'auto';
             btnB.style.pointerEvents = 'auto';
             btnA.onclick = () => answerAvap(q.left, btnA);
@@ -17169,9 +17176,11 @@ events: [
                         const correctOther = contemporaries[Math.floor(Math.random() * contemporaries.length)];
                         const distractors = shuffleArray(distantEvents).slice(0, 3);
 
+                        // Pas d'année affichée sur les options : sinon la comparaison avec
+                        // la date indiquée dans l'énoncé rend la réponse trop évidente.
                         const options = shuffleArray([
-                            { main: correctOther.titre, sub: formatYear(correctOther.date), isCorrect: true, evt: correctOther },
-                            ...distractors.map(d => ({ main: d.titre, sub: formatYear(d.date), isCorrect: false, evt: d }))
+                            { main: correctOther.titre, sub: '', isCorrect: true, evt: correctOther },
+                            ...distractors.map(d => ({ main: d.titre, sub: '', isCorrect: false, evt: d }))
                         ]);
 
                         questions.push({
@@ -17192,21 +17201,23 @@ events: [
                     let correctLabel = (span > 300) ? getCenturyLabel(evt.date) : getPeriodSliceLabel(evt.date, span);
                     let step = (span > 300) ? 100 : ((span <= 60) ? 10 : ((span <= 150) ? 25 : 50));
 
-                    const distractorLabels = [];
+                    const distractorEntries = [];
                     const offsets = [-3, -2, -1, 1, 2, 3, 4, -4];
                     for (let off of offsets) {
                         const fakeYear = evt.date + (off * step);
                         const fakeLabel = (span > 300) ? getCenturyLabel(fakeYear) : getPeriodSliceLabel(fakeYear, span);
-                        if (fakeLabel !== correctLabel && !distractorLabels.includes(fakeLabel)) {
-                            distractorLabels.push(fakeLabel);
-                            if (distractorLabels.length === 3) break;
+                        if (fakeLabel !== correctLabel && !distractorEntries.some(d => d.label === fakeLabel)) {
+                            distractorEntries.push({ label: fakeLabel, year: fakeYear });
+                            if (distractorEntries.length === 3) break;
                         }
                     }
 
-                    const options = shuffleArray([
-                        { main: correctLabel, sub: "Tranche chronologique", isCorrect: true, evt: evt },
-                        ...distractorLabels.map(l => ({ main: l, sub: "Tranche chronologique", isCorrect: false, evt: null }))
-                    ]);
+                    // Réponses triées chronologiquement (et non mélangées) pour que les
+                    // siècles / tranches se lisent dans l'ordre.
+                    const options = [
+                        { main: correctLabel, sub: "Tranche chronologique", isCorrect: true, evt: evt, sortYear: evt.date },
+                        ...distractorEntries.map(d => ({ main: d.label, sub: "Tranche chronologique", isCorrect: false, evt: null, sortYear: d.year }))
+                    ].sort((a, b) => a.sortYear - b.sortYear);
 
                     questions.push({
                         kicker: "Tranche chronologique & Siècle",
