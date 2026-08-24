@@ -1281,6 +1281,10 @@
                 <h3>Le fil du temps</h3>
                 <p>Du tout premier événement du thème jusqu'au dernier, dans l'ordre chronologique : saisissez l'année exacte au clavier.</p>
             </div>
+            <div class="mode-card periodes-card" onclick="startPeriodesGame()">
+                <h3>Périodes & Ères</h3>
+                <p>3 vies. Situez chaque événement dans son siècle, son époque ou ses contemporains.</p>
+            </div>
             <div class="mode-card multi-card" onclick="showMultiplayerSetup()">
                 <h3>Multijoueurs</h3>
                 <p>À tour de rôle, élimination au bout de 2 erreurs.</p>
@@ -1467,6 +1471,35 @@
             </div>
 
             <button class="fil-validate-btn" id="fil-validate-btn" onclick="filSubmit()" disabled>Valider</button>
+        </div>
+    </div>
+
+    <!-- ÉCRAN 5ter : MODE PÉRIODES & ÈRES (situer un événement dans le temps : siècle, axe, durée ou contemporains) -->
+    <div id="screen-periodes" class="hidden">
+        <div class="game-bar">
+            <div class="bar-row">
+                <button class="quit-btn" onclick="quitGame()">‹ Quitter</button>
+                <span class="bar-fill"></span>
+                <span class="lives-row" id="periodes-hud-lives"></span>
+                <span class="type-size">
+                    <button type="button" onclick="changeZoom(-0.15)" aria-label="Réduire le texte">A−</button>
+                    <button type="button" onclick="changeZoom(0.15)" aria-label="Agrandir le texte">A+</button>
+                </span>
+            </div>
+            <div class="bar-row">
+                <span class="progress-rail" id="periodes-progress-rail"><span class="progress-fill" id="periodes-progress-fill"></span></span>
+                <span class="bar-meta" id="periodes-hud-count">1 / 15</span>
+                <span class="bar-meta"><span id="periodes-hud-score">0</span> pts<span id="periodes-hud-combo" class="combo-chip hidden"></span></span>
+            </div>
+        </div>
+
+        <div class="periodes-body">
+            <div class="periodes-question-card">
+                <div class="periodes-kicker" id="periodes-kicker">Tranche chronologique & Siècle</div>
+                <div class="periodes-prompt" id="periodes-prompt">Chargement…</div>
+                <div class="periodes-tag hidden" id="periodes-tag"></div>
+            </div>
+            <div class="periodes-options" id="periodes-options"></div>
         </div>
     </div>
 
@@ -14008,7 +14041,7 @@ events: [
             if (scores.length === 0) {
                 container.innerHTML = '<div class="leaderboard-empty">Aucun score enregistré sur ce thème pour le moment.</div>';
             } else {
-                const modesFr = { 'classic': 'Classique', 'chrono': 'Chrono', 'expert': 'Expert', 'quiz': 'Quiz', 'fil': 'Le fil du temps' };
+                const modesFr = { 'classic': 'Classique', 'chrono': 'Chrono', 'expert': 'Expert', 'quiz': 'Quiz', 'fil': 'Le fil du temps', 'periodes': 'Périodes & Ères' };
                 let html = '<table class="leaderboard-table"><thead><tr><th>Mode</th><th>Score</th><th>Date</th></tr></thead><tbody>';
                 scores.forEach(s => {
                     html += `<tr><td>${modesFr[s.mode] || s.mode}</td><td class="leaderboard-score">${s.score}</td><td>${s.date}</td></tr>`;
@@ -14783,6 +14816,10 @@ events: [
             }
             if (currentMode === 'fil') {
                 startFilGame();
+                return;
+            }
+            if (currentMode === 'periodes') {
+                startPeriodesGame();
                 return;
             }
             if (revisionMode) {
