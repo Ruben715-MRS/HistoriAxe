@@ -1,6 +1,6 @@
 # Spécification — Série de régularité (« streak » quotidien)
 
-Statut : proposition de spécification (pas encore implémentée)
+Statut : **implémentée** dans `index.html` (badge, panneau détail, toast, palier, réglage d'opt-out — voir §12)
 Périmètre technique concerné : `index.html` (application front-end unique, sans backend, stockage `localStorage` par appareil/navigateur — pas de compte, pas de synchronisation multi-appareils)
 
 ## 0. Cadrage
@@ -267,3 +267,9 @@ Une entrée « Régularité » listant l'état des gels et un **opt-out explicit
 - Plafond de gel proposé à **2** — à valider avec le produit (un plafond plus haut dilue le sentiment de rareté qui rend le geste « rassurant » plutôt qu'anecdotique).
 - Multijoueur local passe-et-joue : la proposition (§7, cas 13) est que toute réponse notée alimente le streak de l'appareil, indépendamment du joueur actif, tant qu'il n'existe pas de profils séparés.
 - Faut-il des badges de palier visuellement marqués (7/14/30/100 jours) au-delà du modal de félicitations décrit en §9.B ? Non bloquant pour une v1.
+
+## 12. Écart entre ce document et le code livré
+
+L'implémentation dans `index.html` (fonctions `streak*`, préfixées pour ne pas collisionner avec `SRS_KEY`/`PROGRESS_KEY`) suit fidèlement les règles ci-dessus, avec un seul raffinement du modèle de données par rapport au pseudocode du §8 : le champ `freezeLog` (compteurs agrégés) a été remplacé par un journal `history: [{date, type: 'active'|'frozen'}, …]`, plafonné aux 60 dernières entrées. Motif : `freezeLog` ne permettait pas de reconstruire de façon certaine *quelles* dates précises avaient été gelées quand plusieurs coupures s'étaient produites, ce qui est nécessaire pour dessiner honnêtement la bande des 14 derniers jours du panneau détail (§9.A). `history` résout ça directement, sans ambiguïté, au prix d'un stockage local trivialement plus grand (quelques dizaines de petits objets JSON).
+
+Points d'ancrage réels dans le code : le module de données suit directement `srsRecord()` (auparavant ligne 13763, désormais suivi de l'appel à `streakCommit()`) ; le badge vit dans `screen-categories` à côté de `.settings-btn` (et non `screen-home`, qui n'est qu'un splash cliquable sans aucun chrome) ; le réglage d'opt-out (`streakBadgeHidden`) rejoint `DEFAULT_SETTINGS` aux côtés de `orientation`/`appearance` ; le bouton « ⚠️ Réinitialiser le jeu » des réglages a été étendu pour effacer aussi `STREAK_KEY`, cohérent avec son rôle de purge totale des données de progression.
