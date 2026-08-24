@@ -742,6 +742,57 @@
             border-color: var(--paper) !important;
         }
 
+        /* Textes utilisant le bleu de marque comme couleur de premier plan
+           (et non comme fond) : #001a4b est un bleu marine quasiment noir,
+           illisible posé directement sur le fond sombre. On les passe en
+           blanc/texte clair, comme demandé pour « Quitter », l'année et le
+           lien Wikipédia de la modale d'événement. */
+        :root[data-theme="dark"] .quit-btn,
+        :root[data-theme="dark"] .modal-date,
+        :root[data-theme="dark"] .modal-link,
+        :root[data-theme="dark"] .selection-item-date,
+        :root[data-theme="dark"] .leaderboard-score,
+        :root[data-theme="dark"] .scoring-info-body h3,
+        :root[data-theme="dark"] .end-title {
+            color: var(--text-dark);
+        }
+
+        /* Éléments où le bleu de marque sert d'indicateur d'état (bascule
+           « avant J.-C. », axe sélectionné) : on garde une teinte bleue
+           pour conserver le sens visuel, mais la variante claire déjà
+           utilisée ailleurs en thème sombre (cf. .quick-action-icon plus
+           haut), bien plus lisible sur fond sombre que le bleu marine. */
+        :root[data-theme="dark"] .fil-era-btn.era-bc {
+            border-color: #5dade2;
+            color: #5dade2;
+        }
+        :root[data-theme="dark"] .axis-card.selected {
+            border-color: #5dade2;
+        }
+        :root[data-theme="dark"] .axis-card.selected h3::before {
+            color: #5dade2;
+        }
+
+        /* Repère de placement en pointillés (.slot-label), qui indique où
+           poser la date sur la frise : en thème clair, son fond et sa
+           bordure pointillée sont dérivés du bleu de marque très foncé
+           (rgba(0,26,75,…)), ce qui le rend quasi invisible sur fond
+           sombre. On le remplace par des variantes claires cohérentes
+           avec le reste du thème sombre. */
+        :root[data-theme="dark"] .slot-label {
+            background: rgba(255, 255, 255, 0.06) !important;
+            border-color: rgba(255, 255, 255, 0.3) !important;
+            color: var(--ink-soft) !important;
+        }
+        @media (hover: hover) {
+            :root[data-theme="dark"] .slot:hover .slot-caret { background: #5dade2 !important; }
+            :root[data-theme="dark"] .slot:hover .slot-label {
+                background: rgba(93, 173, 226, 0.15) !important;
+                border-color: #5dade2 !important;
+                color: #5dade2 !important;
+            }
+        }
+
         /* =====================================================================
            ORIENTATION HORIZONTALE — activée via [data-layout="horizontal"]
            La même colonne du temps pivote en frise déroulante de gauche à
