@@ -282,8 +282,10 @@
         .mode-card.locked:hover { transform: none; }
         .mode-card.locked h3 { display: flex; align-items: center; justify-content: center; gap: 7px; }
         .mode-card.quiz-card { background: linear-gradient(135deg, #1F8A70, #4FC3A1); }
+        .mode-card.avap-card { background: linear-gradient(135deg, #1A5276, #5DADE2); }
         .mode-card.fil-card { background: linear-gradient(135deg, #7A4B2E, #C98A4B); }
         .mode-card.periodes-card { background: linear-gradient(135deg, #6C3483, #B03A2E); }
+        .mode-card.ecart-card { background: linear-gradient(135deg, #9A7D0A, #F4D03F); }
 
         /* --- Grille carrée 2x2 pour Entraînement / Classique / Chrono / Expert --- */
         .grid-modes-square { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; width: 100%; max-width: 460px; margin: 0 auto 30px; }
@@ -540,6 +542,28 @@
         .periodes-option.correct .periodes-option-main { color: #1D7A41; }
         .periodes-option.wrong { background: rgba(217,83,79,0.12); border-color: var(--danger-red); color: var(--danger-red); }
         .periodes-option.wrong .periodes-option-main { color: var(--danger-red); }
+
+        /* MODE AVANT / APRÈS (deux événements sans date, deviner l'antériorité) */
+        .avap-body { max-width: 700px; margin: 0 auto; padding: 20px 16px 40px; }
+        .avap-kicker-card { background: var(--surface); border-radius: 14px; padding: 20px 24px; text-align: center; box-shadow: var(--card-shadow); margin-bottom: 22px; font-size: 15px; font-weight: 700; color: var(--text-dark); }
+        .avap-options { display: flex; flex-direction: column; gap: 4px; }
+        .avap-option { background: var(--surface); border: 2px solid var(--border-soft); border-radius: 14px; padding: 22px 20px; font: inherit; text-align: center; cursor: pointer; transition: transform 0.15s, border-color 0.15s, background 0.15s; display: flex; flex-direction: column; gap: 6px; align-items: center; width: 100%; }
+        .avap-option:hover { transform: translateY(-2px); border-color: var(--primary-blue); }
+        .avap-option-title { font-size: 18px; font-weight: 700; color: var(--text-dark); line-height: 1.35; }
+        .avap-option-year { font-size: 14px; font-weight: 600; color: var(--muted-text); }
+        .avap-option.correct { background: rgba(44,168,90,0.14); border-color: #2CA85A; }
+        .avap-option.correct .avap-option-title { color: #1D7A41; }
+        .avap-option.wrong { background: rgba(217,83,79,0.12); border-color: var(--danger-red); }
+        .avap-option.wrong .avap-option-title { color: var(--danger-red); }
+        .avap-vs { text-align: center; font-size: 12.5px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--muted-text); margin: 4px 0; }
+
+        /* MODE TROUVE L'ÉCART (deux événements sans date, estimer le nombre d'années qui les séparent) */
+        .ecart-pair { display: flex; flex-direction: column; align-items: center; gap: 6px; margin-top: 14px; }
+        .ecart-pair-event { font-size: 17px; font-weight: 700; color: var(--text-dark); line-height: 1.3; }
+        .ecart-pair-sep { font-size: 13px; color: var(--muted-text); }
+        .ecart-pair-years { display: flex; justify-content: center; gap: 14px; margin-top: 8px; min-height: 18px; }
+        .ecart-pair-year { font-size: 13px; font-weight: 600; color: var(--primary-blue); }
+        .ecart-unit-label { display: inline-flex; align-items: center; justify-content: center; cursor: default; }
         
         #screen-end { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; }
         .end-title { font-size: 32px; margin-bottom: 20px; color: var(--primary-blue); }
@@ -1277,13 +1301,21 @@
                 <h3>Quiz</h3>
                 <p>Questions à choix multiples (QCM).</p>
             </div>
-            <div class="mode-card fil-card" onclick="startFilGame()">
-                <h3>Le fil du temps</h3>
-                <p>Du tout premier événement du thème jusqu'au dernier, dans l'ordre chronologique : saisissez l'année exacte au clavier.</p>
+            <div class="mode-card avap-card" onclick="startAvapGame()">
+                <h3>Avant / Après</h3>
+                <p>3 vies. Entre deux événements sans dates, devinez lequel s'est produit en premier.</p>
             </div>
             <div class="mode-card periodes-card" onclick="startPeriodesGame()">
                 <h3>Périodes & Ères</h3>
                 <p>3 vies. Situez chaque événement dans son siècle, son époque ou ses contemporains.</p>
+            </div>
+            <div class="mode-card fil-card" onclick="startFilGame()">
+                <h3>Le fil du temps</h3>
+                <p>Du tout premier événement du thème jusqu'au dernier, dans l'ordre chronologique : saisissez l'année exacte au clavier.</p>
+            </div>
+            <div class="mode-card ecart-card" onclick="startEcartGame()">
+                <h3>Trouve l'écart</h3>
+                <p>3 vies. Estimez le nombre d'années qui séparent deux événements.</p>
             </div>
             <div class="mode-card multi-card" onclick="showMultiplayerSetup()">
                 <h3>Multijoueurs</h3>
@@ -1503,6 +1535,101 @@
         </div>
     </div>
 
+    <!-- ÉCRAN 5quater : MODE AVANT / APRÈS (deux événements sans dates, deviner lequel est antérieur) -->
+    <div id="screen-avant-apres" class="hidden">
+        <div class="game-bar">
+            <div class="bar-row">
+                <button class="quit-btn" onclick="quitGame()">‹ Quitter</button>
+                <span class="bar-fill"></span>
+                <span class="lives-row" id="avap-hud-lives"></span>
+                <span class="type-size">
+                    <button type="button" onclick="changeZoom(-0.15)" aria-label="Réduire le texte">A−</button>
+                    <button type="button" onclick="changeZoom(0.15)" aria-label="Agrandir le texte">A+</button>
+                </span>
+            </div>
+            <div class="bar-row">
+                <span class="progress-rail" id="avap-progress-rail"><span class="progress-fill" id="avap-progress-fill"></span></span>
+                <span class="bar-meta" id="avap-hud-count">1 / 15</span>
+                <span class="bar-meta"><span id="avap-hud-score">0</span> pts<span id="avap-hud-combo" class="combo-chip hidden"></span></span>
+            </div>
+        </div>
+
+        <div class="avap-body">
+            <div class="avap-kicker-card">Lequel de ces deux événements s'est produit en premier ?</div>
+            <div class="avap-options">
+                <button class="avap-option" id="avap-option-a" type="button">
+                    <span class="avap-option-title" id="avap-option-a-title">Chargement…</span>
+                    <span class="avap-option-year hidden" id="avap-option-a-year"></span>
+                </button>
+                <div class="avap-vs">avant · après</div>
+                <button class="avap-option" id="avap-option-b" type="button">
+                    <span class="avap-option-title" id="avap-option-b-title">Chargement…</span>
+                    <span class="avap-option-year hidden" id="avap-option-b-year"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ÉCRAN 5quinquies : MODE TROUVE L'ÉCART (deux événements sans dates, estimer le nombre d'années qui les séparent) -->
+    <div id="screen-ecart" class="hidden">
+        <div class="game-bar">
+            <div class="bar-row">
+                <button class="quit-btn" onclick="quitGame()">‹ Quitter</button>
+                <span class="bar-fill"></span>
+                <span class="lives-row" id="ecart-hud-lives"></span>
+                <span class="type-size">
+                    <button type="button" onclick="changeZoom(-0.15)" aria-label="Réduire le texte">A−</button>
+                    <button type="button" onclick="changeZoom(0.15)" aria-label="Agrandir le texte">A+</button>
+                </span>
+            </div>
+            <div class="bar-row">
+                <span class="progress-rail" id="ecart-progress-rail"><span class="progress-fill" id="ecart-progress-fill"></span></span>
+                <span class="bar-meta" id="ecart-hud-count">1 / 15</span>
+                <span class="bar-meta"><span id="ecart-hud-score">0</span> pts<span id="ecart-hud-combo" class="combo-chip hidden"></span></span>
+            </div>
+        </div>
+
+        <div class="fil-body">
+            <div class="fil-question-card">
+                <div class="fil-kicker">Combien d'années séparent ces deux événements ?</div>
+                <div class="ecart-pair">
+                    <div class="ecart-pair-event" id="ecart-event-a">Chargement…</div>
+                    <div class="ecart-pair-sep">↕</div>
+                    <div class="ecart-pair-event" id="ecart-event-b">Chargement…</div>
+                </div>
+                <div class="ecart-pair-years">
+                    <span class="ecart-pair-year hidden" id="ecart-event-a-year"></span>
+                    <span class="ecart-pair-year hidden" id="ecart-event-b-year"></span>
+                </div>
+            </div>
+
+            <div class="fil-display">
+                <button class="fil-hint-btn" id="ecart-hint-btn" onclick="ecartUseHint()">💡 Indice</button>
+                <span class="fil-display-value" id="ecart-display-value">—</span>
+                <span class="fil-era-btn ecart-unit-label" aria-hidden="true">ans</span>
+            </div>
+
+            <div class="fil-answer-badge hidden" id="ecart-answer-badge"></div>
+
+            <div class="fil-keypad">
+                <button class="fil-key" onclick="ecartKeyPress('1')">1</button>
+                <button class="fil-key" onclick="ecartKeyPress('2')">2</button>
+                <button class="fil-key" onclick="ecartKeyPress('3')">3</button>
+                <button class="fil-key" onclick="ecartKeyPress('4')">4</button>
+                <button class="fil-key" onclick="ecartKeyPress('5')">5</button>
+                <button class="fil-key" onclick="ecartKeyPress('6')">6</button>
+                <button class="fil-key" onclick="ecartKeyPress('7')">7</button>
+                <button class="fil-key" onclick="ecartKeyPress('8')">8</button>
+                <button class="fil-key" onclick="ecartKeyPress('9')">9</button>
+                <button class="fil-key fil-key-erase" onclick="ecartClear()">Effacer</button>
+                <button class="fil-key" onclick="ecartKeyPress('0')">0</button>
+                <button class="fil-key fil-key-erase" onclick="ecartBackspace()">⌫</button>
+            </div>
+
+            <button class="fil-validate-btn" id="ecart-validate-btn" onclick="ecartSubmit()" disabled>Valider</button>
+        </div>
+    </div>
+
     <!-- ÉCRAN 6 : FIN DE PARTIE -->
     <div id="screen-end" class="hidden">
         <button class="back-btn" onclick="showScreen(screenAfterGame())" aria-label="Retour">‹</button>
@@ -1613,6 +1740,13 @@
                 <h3>❓ Mode Quiz (QCM)</h3>
                 <p>Le principe de proximité s'applique aux 4 dates proposées. Utiliser le joker <strong>50:50</strong> (2 par partie) retire 2 mauvaises réponses et divise par 2 les points gagnables sur la question.</p>
 
+                <h3>🥇 Mode « Avant / Après »</h3>
+                <p>Deux événements sont présentés sans leurs dates : il faut deviner lequel s'est produit en premier.</p>
+                <ul>
+                    <li><strong>Bonne réponse</strong> : 100 points × multiplicateur de combo — comme pour Périodes & Ères, il n'y a pas de points partiels, c'est tout ou rien.</li>
+                    <li><strong>Mauvaise réponse</strong> : aucun point, une vie est perdue et le multiplicateur retombe à ×1,0. Les deux dates réelles s'affichent aussitôt pour corriger.</li>
+                </ul>
+
                 <h3>⏳ Mode « Le fil du temps »</h3>
                 <p>Les événements défilent dans l'ordre chronologique et l'année exacte doit être tapée au clavier :</p>
                 <ul>
@@ -1621,6 +1755,14 @@
                     <li><strong>Pénalité par chiffre</strong> : Chaque chiffre dévoilé par l'indice déduit <strong>25 points</strong> sur la question et réinitialise le multiplicateur à ×1,0.</li>
                     <li><strong>Révélation complète</strong> : Dévoiler tous les chiffres par l'indice équivaut à un échec (0 point, perte d'une vie).</li>
                     <li><strong>Erreur de saisie</strong> : Si l'année soumise est fausse, les points partiels de proximité sont attribués (moins les pénalités d'indices éventuelles) et une vie est perdue.</li>
+                </ul>
+
+                <h3>📏 Mode « Trouve l'écart »</h3>
+                <p>Deux événements sont présentés sans leurs dates : il faut saisir au clavier le nombre d'années qui les séparent.</p>
+                <ul>
+                    <li><strong>Écart exact</strong> : 100 points × multiplicateur de combo.</li>
+                    <li><strong>Bouton 💡 Indice</strong> : Dévoile les chiffres de l'écart un par un depuis la gauche, avec la même <strong>pénalité de 25 points</strong> par chiffre et réinitialisation du combo qu'en Fil du temps ; tout dévoiler équivaut à un échec (0 point, perte d'une vie).</li>
+                    <li><strong>Estimation erronée</strong> : le principe de proximité s'applique — l'écart entre votre estimation et le nombre d'années réel est comparé à l'étendue chronologique du thème pour accorder des points partiels (moins les pénalités d'indices éventuelles), et une vie est perdue.</li>
                 </ul>
 
                 <h3>🌱 Modes Découverte et Entraînement</h3>
@@ -14041,7 +14183,7 @@ events: [
             if (scores.length === 0) {
                 container.innerHTML = '<div class="leaderboard-empty">Aucun score enregistré sur ce thème pour le moment.</div>';
             } else {
-                const modesFr = { 'classic': 'Classique', 'chrono': 'Chrono', 'expert': 'Expert', 'quiz': 'Quiz', 'fil': 'Le fil du temps', 'periodes': 'Périodes & Ères' };
+                const modesFr = { 'classic': 'Classique', 'chrono': 'Chrono', 'expert': 'Expert', 'quiz': 'Quiz', 'avantapres': 'Avant / Après', 'fil': 'Le fil du temps', 'periodes': 'Périodes & Ères', 'ecart': "Trouve l'écart" };
                 let html = '<table class="leaderboard-table"><thead><tr><th>Mode</th><th>Score</th><th>Date</th></tr></thead><tbody>';
                 scores.forEach(s => {
                     html += `<tr><td>${modesFr[s.mode] || s.mode}</td><td class="leaderboard-score">${s.score}</td><td>${s.date}</td></tr>`;
@@ -14625,6 +14767,21 @@ events: [
         let filHintsRevealed = 0;
         let filCorrectYearString = '';
 
+        // Mode Avant / Après : chaque question oppose un événement du pool à un autre
+        // événement (dates distinctes), sans révéler leurs dates ; il faut désigner
+        // le plus ancien des deux. Pas de points partiels (voir answerAvap).
+        let avapQuestions = [];
+        let avapIndex = 0;
+
+        // Mode Trouve l'écart : même principe d'appariement qu'Avant / Après, mais il
+        // faut cette fois saisir au clavier le nombre d'années séparant les deux
+        // événements. Reprend le mécanisme d'indice chiffre par chiffre du Fil du temps.
+        let ecartQuestions = [];
+        let ecartIndex = 0;
+        let ecartInput = '';
+        let ecartHintsRevealed = 0;
+        let ecartCorrectGapString = '';
+
         // Certaines catégories (ex. « Histoires nationales », « Programmes scolaires »)
         // insèrent un ou plusieurs niveaux de sous-catégories entre la catégorie et les
         // thèmes (parfois imbriqués : Programmes scolaires > Lycée > Terminale). On
@@ -14814,12 +14971,20 @@ events: [
                 startQuizGame();
                 return;
             }
+            if (currentMode === 'avantapres') {
+                startAvapGame();
+                return;
+            }
             if (currentMode === 'fil') {
                 startFilGame();
                 return;
             }
             if (currentMode === 'periodes') {
                 startPeriodesGame();
+                return;
+            }
+            if (currentMode === 'ecart') {
+                startEcartGame();
                 return;
             }
             if (revisionMode) {
@@ -15799,6 +15964,155 @@ events: [
         }
 
 
+        // === MODE AVANT / APRÈS ===
+        // Chaque question pioche un événement du pool et lui oppose un autre événement
+        // à date distincte ; les deux sont affichés sans leur date et il faut désigner
+        // le plus ancien. Score « tout ou rien » (comme Périodes & Ères), pas de points
+        // partiels puisqu'il ne s'agit pas d'estimer une valeur mais de choisir entre deux.
+        function startAvapGame() {
+            currentMode = 'avantapres';
+            let sourceEvents;
+            if (revisionMode) {
+                sourceEvents = revisionEvents;
+            } else {
+                const themeEvents = getCurrentTheme().events;
+                sourceEvents = (axisFilterActive && selectedAxes.size > 0)
+                    ? themeEvents.filter(e => selectedAxes.has(e.axe))
+                    : themeEvents;
+            }
+            if (isSelectionActive && !revisionMode) {
+                sourceEvents = sourceEvents.filter(e => selectedEventsIds.has(e.id));
+            }
+            if (sourceEvents.length < 4) {
+                alert("Le mode Avant / Après nécessite au moins 4 événements. Veuillez ajouter d'autres événements à ce thème !");
+                return;
+            }
+
+            avapQuestions = buildAvapQuestions(sourceEvents);
+            if (avapQuestions.length === 0) {
+                alert("Impossible de générer des questions pour ce thème (dates toutes identiques).");
+                return;
+            }
+
+            avapIndex = 0;
+            lives = 3;
+            score = 0;
+            comboMultiplier = 1.0;
+
+            const gameDates = sourceEvents.map(e => e.date);
+            currentGameSpan = Math.max(1, Math.max(...gameDates) - Math.min(...gameDates));
+
+            showScreen('screen-avant-apres');
+            renderAvapQuestion();
+        }
+
+        // Construit une question par événement du pool, opposé à un adversaire tiré au
+        // sort parmi les événements à date différente (pour toujours avoir un antérieur
+        // net). Position gauche/droite mélangée pour ne pas biaiser vers un côté.
+        function buildAvapQuestions(events) {
+            const pool = events.filter(e => typeof e.date === 'number');
+            if (pool.length < 4) return [];
+            const questions = pool.map(evt => {
+                const others = pool.filter(e => e.id !== evt.id && e.date !== evt.date);
+                if (others.length === 0) return null;
+                const opponent = others[Math.floor(Math.random() * others.length)];
+                const [left, right] = shuffleArray([evt, opponent]);
+                const correctEvt = evt.date < opponent.date ? evt : opponent;
+                return { left, right, correctEvt };
+            }).filter(Boolean);
+            return shuffleArray(questions);
+        }
+
+        function renderAvapQuestion() {
+            if (avapIndex >= avapQuestions.length) {
+                endGame(true);
+                return;
+            }
+            isAnimating = false;
+
+            const q = avapQuestions[avapIndex];
+            document.getElementById('avap-option-a-title').innerText = q.left.titre;
+            document.getElementById('avap-option-b-title').innerText = q.right.titre;
+            document.getElementById('avap-option-a-year').classList.add('hidden');
+            document.getElementById('avap-option-b-year').classList.add('hidden');
+
+            const btnA = document.getElementById('avap-option-a');
+            const btnB = document.getElementById('avap-option-b');
+            btnA.classList.remove('correct', 'wrong');
+            btnB.classList.remove('correct', 'wrong');
+            btnA.style.pointerEvents = 'auto';
+            btnB.style.pointerEvents = 'auto';
+            btnA.onclick = () => answerAvap(q.left, btnA);
+            btnB.onclick = () => answerAvap(q.right, btnB);
+
+            document.getElementById('avap-hud-count').innerText = `${avapIndex + 1} / ${avapQuestions.length}`;
+            const pct = Math.round(avapIndex / avapQuestions.length * 100);
+            document.getElementById('avap-progress-fill').style.width = pct + '%';
+            updateAvapHUD();
+        }
+
+        function answerAvap(chosenEvent, chosenBtn) {
+            if (isAnimating) return;
+            isAnimating = true;
+
+            const q = avapQuestions[avapIndex];
+            const isPerfect = chosenEvent.id === q.correctEvt.id;
+
+            if (isPerfect) {
+                const points = Math.round(100 * comboMultiplier);
+                score += points;
+                comboMultiplier = Math.min(5.0, comboMultiplier + 0.1);
+                playCorrectSound(comboMultiplier);
+            } else {
+                lives -= 1;
+                comboMultiplier = 1.0;
+                playWrongSound();
+            }
+
+            srsRecord(q.correctEvt.id, isPerfect);
+
+            const btnA = document.getElementById('avap-option-a');
+            const btnB = document.getElementById('avap-option-b');
+            btnA.style.pointerEvents = 'none';
+            btnB.style.pointerEvents = 'none';
+            [[btnA, q.left], [btnB, q.right]].forEach(([btn, evt]) => {
+                if (evt.id === q.correctEvt.id) btn.classList.add('correct');
+                else if (btn === chosenBtn) btn.classList.add('wrong');
+            });
+            document.getElementById('avap-option-a-year').innerText = formatYear(q.left.date);
+            document.getElementById('avap-option-b-year').innerText = formatYear(q.right.date);
+            document.getElementById('avap-option-a-year').classList.remove('hidden');
+            document.getElementById('avap-option-b-year').classList.remove('hidden');
+
+            updateAvapHUD();
+
+            setTimeout(() => {
+                avapIndex++;
+                if (lives <= 0) {
+                    endGame(false);
+                } else {
+                    renderAvapQuestion();
+                }
+            }, 1300);
+        }
+
+        function updateAvapHUD() {
+            document.getElementById('avap-hud-score').innerText = score;
+            const comboChip = document.getElementById('avap-hud-combo');
+            if (comboMultiplier > 1) {
+                comboChip.innerText = `×${comboMultiplier.toFixed(1)}`;
+                comboChip.classList.remove('hidden');
+            } else {
+                comboChip.classList.add('hidden');
+            }
+            let pips = '';
+            for (let i = 0; i < 3; i++) {
+                pips += `<span class="pip${i < lives ? '' : ' spent'}"></span>`;
+            }
+            document.getElementById('avap-hud-lives').innerHTML = pips;
+        }
+
+
         // === MODE PÉRIODES & ÈRES ===
         let periodesQuestions = [];
         let periodesIndex = 0;
@@ -16307,6 +16621,251 @@ events: [
             document.getElementById('fil-hud-lives').innerHTML = pips;
         }
 
+        // === MODE TROUVE L'ÉCART ===
+        // Chaque question oppose deux événements (même appariement que Avant / Après)
+        // affichés sans leurs dates ; il faut saisir au clavier le nombre d'années qui
+        // les séparent. Reprend le mécanisme d'indice chiffre par chiffre et le principe
+        // de proximité du Fil du temps, appliqués ici à l'écart plutôt qu'à une année.
+        function startEcartGame() {
+            currentMode = 'ecart';
+            let sourceEvents;
+            if (revisionMode) {
+                sourceEvents = revisionEvents;
+            } else {
+                const themeEvents = getCurrentTheme().events;
+                sourceEvents = (axisFilterActive && selectedAxes.size > 0)
+                    ? themeEvents.filter(e => selectedAxes.has(e.axe))
+                    : themeEvents;
+            }
+            if (isSelectionActive && !revisionMode) {
+                sourceEvents = sourceEvents.filter(e => selectedEventsIds.has(e.id));
+            }
+            if (sourceEvents.length < 4) {
+                alert("Le mode Trouve l'écart nécessite au moins 4 événements. Veuillez ajouter d'autres événements à ce thème !");
+                return;
+            }
+
+            ecartQuestions = buildEcartQuestions(sourceEvents);
+            if (ecartQuestions.length === 0) {
+                alert("Impossible de générer des questions pour ce thème (dates toutes identiques).");
+                return;
+            }
+
+            ecartIndex = 0;
+            lives = 3;
+            score = 0;
+            comboMultiplier = 1.0;
+
+            const gameDates = sourceEvents.map(e => e.date);
+            currentGameSpan = Math.max(1, Math.max(...gameDates) - Math.min(...gameDates));
+
+            showScreen('screen-ecart');
+            renderEcartQuestion();
+        }
+
+        function buildEcartQuestions(events) {
+            const pool = events.filter(e => typeof e.date === 'number');
+            if (pool.length < 4) return [];
+            const questions = pool.map(evt => {
+                const others = pool.filter(e => e.id !== evt.id && e.date !== evt.date);
+                if (others.length === 0) return null;
+                const opponent = others[Math.floor(Math.random() * others.length)];
+                return { eventA: evt, eventB: opponent, gap: Math.abs(evt.date - opponent.date) };
+            }).filter(Boolean);
+            return shuffleArray(questions);
+        }
+
+        function renderEcartQuestion() {
+            if (ecartIndex >= ecartQuestions.length) {
+                endGame(true);
+                return;
+            }
+            isAnimating = false;
+            ecartInput = '';
+            ecartHintsRevealed = 0;
+            document.getElementById('ecart-hint-btn').disabled = false;
+
+            const q = ecartQuestions[ecartIndex];
+            ecartCorrectGapString = q.gap.toString();
+
+            document.getElementById('ecart-event-a').innerText = q.eventA.titre;
+            document.getElementById('ecart-event-b').innerText = q.eventB.titre;
+            document.getElementById('ecart-event-a-year').classList.add('hidden');
+            document.getElementById('ecart-event-b-year').classList.add('hidden');
+
+            const badge = document.getElementById('ecart-answer-badge');
+            badge.className = 'fil-answer-badge hidden';
+            badge.innerText = '';
+
+            updateEcartDisplay();
+
+            document.getElementById('ecart-hud-count').innerText = `${ecartIndex + 1} / ${ecartQuestions.length}`;
+            const pct = Math.round(ecartIndex / ecartQuestions.length * 100);
+            document.getElementById('ecart-progress-fill').style.width = pct + '%';
+            updateEcartHUD();
+        }
+
+        function ecartUseHint() {
+            if (isAnimating) return;
+            const targetStr = ecartCorrectGapString;
+
+            if (ecartHintsRevealed < targetStr.length) {
+                ecartHintsRevealed++;
+                let currentInput = ecartInput;
+                let newStr = '';
+                for (let i = 0; i < targetStr.length; i++) {
+                    if (i < ecartHintsRevealed) {
+                        newStr += targetStr[i];
+                    } else if (i < currentInput.length) {
+                        newStr += currentInput[i];
+                    }
+                }
+                ecartInput = newStr;
+                updateEcartDisplay();
+
+                if (ecartHintsRevealed === targetStr.length) {
+                    ecartSubmit(true);
+                }
+            }
+        }
+
+        function ecartKeyPress(digit) {
+            if (isAnimating) return;
+            if (ecartInput.length >= 6) return;
+            ecartInput += digit;
+            updateEcartDisplay();
+        }
+
+        function ecartBackspace() {
+            if (isAnimating) return;
+            if (ecartInput.length > ecartHintsRevealed) {
+                ecartInput = ecartInput.slice(0, -1);
+                updateEcartDisplay();
+            }
+        }
+
+        function ecartClear() {
+            if (isAnimating) return;
+            ecartInput = ecartInput.slice(0, ecartHintsRevealed);
+            updateEcartDisplay();
+        }
+
+        function updateEcartDisplay() {
+            const display = document.getElementById('ecart-display-value');
+            if (!ecartInput) {
+                display.innerHTML = '—';
+            } else {
+                let html = '';
+                for (let i = 0; i < ecartInput.length; i++) {
+                    if (i < ecartHintsRevealed) {
+                        html += `<span style="color: #2CA85A;">${ecartInput[i]}</span>`;
+                    } else {
+                        html += ecartInput[i];
+                    }
+                }
+                display.innerHTML = html;
+            }
+            display.classList.remove('fil-feedback-correct', 'fil-feedback-wrong');
+
+            document.getElementById('ecart-validate-btn').disabled = ecartInput.length === 0 && ecartHintsRevealed === 0;
+            document.getElementById('ecart-hint-btn').disabled = (ecartHintsRevealed >= ecartCorrectGapString.length);
+        }
+
+        function ecartSubmit(autoFailByHint = false) {
+            // gère la différence de signature puisque onclick n'y passe aucun argument
+            if (typeof autoFailByHint !== 'boolean') autoFailByHint = false;
+            if (isAnimating) return;
+            if (!autoFailByHint && ecartInput.length === 0) return;
+            isAnimating = true;
+
+            const q = ecartQuestions[ecartIndex];
+            const guessedGap = parseInt(ecartInput, 10);
+            const gapError = autoFailByHint ? Infinity : Math.abs(guessedGap - q.gap);
+            const isPerfect = gapError === 0;
+
+            if (autoFailByHint) {
+                lives -= 1;
+                comboMultiplier = 1.0;
+                playWrongSound();
+            } else {
+                let deduction = ecartHintsRevealed * 25;
+                if (deduction > 100) deduction = 100;
+
+                let points = 0;
+                if (isPerfect) {
+                    points = Math.max(0, 100 - deduction);
+                    if (ecartHintsRevealed === 0) {
+                        points = Math.round(points * comboMultiplier);
+                        comboMultiplier = Math.min(5.0, comboMultiplier + 0.1);
+                    } else {
+                        comboMultiplier = 1.0;
+                    }
+                    score += points;
+                    playCorrectSound(comboMultiplier);
+                } else {
+                    lives -= 1;
+                    const maxGap = Math.max(currentGameSpan, 10);
+                    let basePts = 100 * (1 - (gapError / maxGap));
+                    if (basePts < 0) basePts = 0;
+                    points = Math.max(0, Math.round(basePts) - deduction);
+                    score += points;
+                    comboMultiplier = 1.0;
+                    playWrongSound();
+                }
+            }
+
+            srsRecord(q.eventA.id, isPerfect);
+            srsRecord(q.eventB.id, isPerfect);
+            updateEcartHUD();
+
+            const display = document.getElementById('ecart-display-value');
+            display.classList.add(isPerfect ? 'fil-feedback-correct' : 'fil-feedback-wrong');
+            document.getElementById('ecart-validate-btn').disabled = true;
+            document.getElementById('ecart-hint-btn').disabled = true;
+
+            const badge = document.getElementById('ecart-answer-badge');
+            if (!isPerfect) {
+                badge.innerText = `Écart réel : ${q.gap} an${q.gap > 1 ? 's' : ''}`;
+                badge.className = 'fil-answer-badge badge-wrong';
+            } else if (ecartHintsRevealed > 0) {
+                badge.innerText = `Exact (avec indice)`;
+                badge.className = 'fil-answer-badge badge-correct';
+            } else {
+                badge.innerText = `Exact !`;
+                badge.className = 'fil-answer-badge badge-correct';
+            }
+
+            document.getElementById('ecart-event-a-year').innerText = formatYear(q.eventA.date);
+            document.getElementById('ecart-event-b-year').innerText = formatYear(q.eventB.date);
+            document.getElementById('ecart-event-a-year').classList.remove('hidden');
+            document.getElementById('ecart-event-b-year').classList.remove('hidden');
+
+            setTimeout(() => {
+                ecartIndex++;
+                if (lives <= 0) {
+                    endGame(false);
+                } else {
+                    renderEcartQuestion();
+                }
+            }, 1800);
+        }
+
+        function updateEcartHUD() {
+            document.getElementById('ecart-hud-score').innerText = score;
+            const comboChip = document.getElementById('ecart-hud-combo');
+            if (comboMultiplier > 1) {
+                comboChip.innerText = `×${comboMultiplier.toFixed(1)}`;
+                comboChip.classList.remove('hidden');
+            } else {
+                comboChip.classList.add('hidden');
+            }
+            let pips = '';
+            for (let i = 0; i < 3; i++) {
+                pips += `<span class="pip${i < lives ? '' : ' spent'}"></span>`;
+            }
+            document.getElementById('ecart-hud-lives').innerHTML = pips;
+        }
+
         // CHRONOMÈTRE
         function startTimer() {
             startTime = Date.now();
@@ -16628,8 +17187,10 @@ events: [
             if (isWin) {
                 let winTitle = "Bravo ! Frise complétée !";
                 if (currentMode === 'quiz') winTitle = "Bravo ! Quiz terminé !";
+                if (currentMode === 'avantapres') winTitle = "Bravo ! Avant / Après maîtrisé !";
                 if (currentMode === 'fil') winTitle = "Bravo ! Fil du temps parcouru !";
                 if (currentMode === 'periodes') winTitle = "Bravo ! Périodes & Ères maîtrisées !";
+                if (currentMode === 'ecart') winTitle = "Bravo ! Tous les écarts trouvés !";
                 titleElement.innerText = winTitle;
                 titleElement.style.color = "#27ae60"; 
             } else {
