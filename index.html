@@ -17657,6 +17657,7 @@ events: [
                     if(cat.nom.toLowerCase().includes('nationale')) bgImg = 'assets/images/cat_histoires_nationales.jpg';
                     if(cat.nom.toLowerCase().includes('programmes')) bgImg = 'assets/images/cat_programmes_scolaires.jpg';
                     if(cat.nom.toLowerCase().includes('capes') || cat.nom.toLowerCase().includes('agrég')) bgImg = 'assets/images/cat_agregation.jpg';
+                    if(cat.isCustomCategory || cat.nom.toLowerCase().includes('personnalisé')) bgImg = 'assets/images/cat_themes_personnalises.jpg';
 
                     const card = document.createElement('div');
                     card.className = 'relative h-32 md:h-40 rounded-[24px] overflow-hidden group cursor-pointer shadow-executive';
