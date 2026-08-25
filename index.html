@@ -216,6 +216,14 @@
         :root[data-theme="dark"] .quick-action-icon.favoris { color: #f0c419; }
         :root[data-theme="dark"] .quick-action-icon.progress { color: #4caf6f; }
 
+        /* Puce du « Défi du jour » : contrairement aux autres actions rapides, le
+           fond reste volontairement blanc dans les deux thèmes (identité propre au
+           mode, façon badge), seule la teinte de l'icône « globe » varie légèrement
+           entre thème clair et sombre pour rester lisible sur ce fond blanc. */
+        .quick-action-circle.daily-white { background: #ffffff; }
+        .quick-action-icon.daily-challenge { color: #1E8449; }
+        :root[data-theme="dark"] .quick-action-icon.daily-challenge { color: #2ECC71; }
+
         /* ÉCRAN « PROGRESSION PAR THÈME » : radar de synthèse par catégorie et liste
            de barres de maîtrise détaillées (thème par thème), triées du moins
            maîtrisé au mieux maîtrisé pour indiquer d'un coup d'œil où concentrer sa
@@ -328,6 +336,20 @@
         .combo-chip { font-size: 11px; font-weight: 700; color: var(--primary-blue); background: rgba(107,142,173,0.14); border-radius: 999px; padding: 2px 8px; margin-left: 6px; }
         .mode-lock-icon { font-size: 18px; }
         .mode-unlock-hint { font-size: 13px; font-style: italic; opacity: 0.95; }
+
+        /* MODALE DE RÉSULTATS — DÉFI DU JOUR */
+        .daily-results-summary { display: flex; justify-content: center; gap: 24px; margin: 4px 0 20px; }
+        .daily-results-stat { text-align: center; }
+        .daily-results-stat-val { font-size: 24px; font-weight: 800; color: var(--primary-blue); display: block; }
+        .daily-results-stat-label { font-size: 12px; color: var(--muted-text); text-transform: uppercase; letter-spacing: 0.04em; }
+        .daily-countdown-box { text-align: center; font-size: 13px; color: var(--muted-text); background: rgba(46, 204, 113, 0.1); border-radius: 12px; padding: 10px 14px; margin-bottom: 18px; }
+        .daily-countdown-val { font-weight: 700; color: #1E8449; font-family: var(--font-year); }
+        :root[data-theme="dark"] .daily-countdown-val { color: #2ECC71; }
+        #daily-pseudo-input { text-align: center; }
+        .daily-submit-feedback { margin-top: 10px; font-size: 13px; text-align: center; min-height: 18px; }
+        .daily-submit-feedback.success { color: var(--progress-green); }
+        .daily-submit-feedback.error { color: var(--danger-red); }
+        .daily-leaderboard-title { font-size: 14px; font-weight: 700; color: var(--text-dark); margin: 18px 0 8px; }
 
 
         /* =====================================================================
@@ -1666,6 +1688,39 @@
                 <button class="btn btn-secondary" id="modal-redraw-btn">🔀 Un autre événement</button>
                 <button class="btn" id="modal-theme-btn">Jouer sur ce thème</button>
             </div>
+        </div>
+    </div>
+
+    <!-- MODAL RÉSULTATS — DÉFI DU JOUR : pseudo (15 caractères max) + classement mondial -->
+    <div id="modal-daily-results" class="modal-overlay hidden">
+        <div class="modal-content" style="max-width:420px; text-align:center;">
+            <span class="close-btn" onclick="closeDailyResultsModal()">×</span>
+            <div class="modal-title" id="daily-results-title">🌍 Défi du jour terminé !</div>
+
+            <div class="daily-results-summary">
+                <div class="daily-results-stat">
+                    <span class="daily-results-stat-val" id="daily-results-score">0</span>
+                    <span class="daily-results-stat-label">Score</span>
+                </div>
+                <div class="daily-results-stat">
+                    <span class="daily-results-stat-val" id="daily-results-time">0,0 s</span>
+                    <span class="daily-results-stat-label">Temps</span>
+                </div>
+            </div>
+
+            <div class="daily-countdown-box">
+                Prochain défi dans <span class="daily-countdown-val" id="daily-countdown-val">--:--:--</span>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="daily-pseudo-input">Votre pseudo (classement mondial)</label>
+                <input type="text" id="daily-pseudo-input" class="form-input" placeholder="Ex : ChronoMaster" maxlength="15">
+            </div>
+            <button class="btn" style="width:100%;" onclick="handleDailyScoreSubmit()">Envoyer mon score</button>
+            <p class="daily-submit-feedback" id="daily-submit-feedback"></p>
+
+            <div class="daily-leaderboard-title">🏆 Classement du jour</div>
+            <div id="daily-leaderboard-preview"></div>
         </div>
     </div>
 
@@ -16607,6 +16662,207 @@ events: [
             return all;
         }
 
+        // === DÉFI DU JOUR ===
+        // Tirage quotidien de 10 événements, identique pour tous les joueurs du monde
+        // entier (même graine = même date UTC), avec un lissage temporel qui interdit
+        // plus de deux événements d'un même siècle dans la même frise du jour.
+
+        // Graine du jour au format YYYY-MM-DD, calculée en UTC : deux joueurs sur des
+        // fuseaux horaires différents doivent obtenir exactement le même tirage tant
+        // que l'horloge UTC n'a pas franchi le prochain basculement (05:00:00 UTC, cf.
+        // getTimeUntilNextDaily plus bas).
+        function getDailySeedString() {
+            const now = new Date();
+            let refDate = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds()));
+            // Le « jour » du défi bascule à 05:00:00 UTC et non à minuit UTC : avant
+            // cette heure, on est donc toujours sur le défi de la veille.
+            if (refDate.getUTCHours() < 5) {
+                refDate = new Date(refDate.getTime() - 24 * 60 * 60 * 1000);
+            }
+            const y = refDate.getUTCFullYear();
+            const m = String(refDate.getUTCMonth() + 1).padStart(2, '0');
+            const d = String(refDate.getUTCDate()).padStart(2, '0');
+            return `${y}-${m}-${d}`;
+        }
+
+        // Transforme une chaîne quelconque en entier 32 bits déterministe (xfnv1a),
+        // utilisé comme graine du générateur pseudo-aléatoire ci-dessous.
+        function hashSeedToInt(str) {
+            let h = 2166136261;
+            for (let i = 0; i < str.length; i++) {
+                h ^= str.charCodeAt(i);
+                h = Math.imul(h, 16777619);
+            }
+            return h >>> 0;
+        }
+
+        // Générateur pseudo-aléatoire déterministe (mulberry32) : à graine égale, la
+        // séquence de nombres produite est toujours identique, quel que soit
+        // l'appareil ou le fuseau horaire du joueur.
+        function mulberry32(seed) {
+            let a = seed >>> 0;
+            return function() {
+                a |= 0; a = (a + 0x6D2B79F5) | 0;
+                let t = Math.imul(a ^ (a >>> 15), 1 | a);
+                t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+                return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+            };
+        }
+
+        // Mélange de Fisher-Yates piloté par un générateur fourni (déterministe si le
+        // générateur l'est), contrairement à shuffleArray qui s'appuie sur Math.random.
+        function shuffleWithRng(arr, rng) {
+            const copy = [...arr];
+            for (let i = copy.length - 1; i > 0; i--) {
+                const j = Math.floor(rng() * (i + 1));
+                [copy[i], copy[j]] = [copy[j], copy[i]];
+            }
+            return copy;
+        }
+
+        // Siècle numérique signé (ex : 1789 → 18, -450 → -5), pour regrouper les
+        // événements du tirage quotidien. Même convention (arrondi supérieur) que
+        // getCenturyLabel, utilisée pour l'affichage du mode « Périodes & Ères ».
+        function getCenturyKey(year) {
+            if (year == null) return 0;
+            if (year < 0) return -Math.ceil(Math.abs(year) / 100);
+            return Math.ceil((year === 0 ? 1 : year) / 100);
+        }
+
+        // Tire les 10 événements du défi du jour : mélange déterministe de toute la
+        // base (graine = date du jour), puis sélection gloutonne qui refuse tout
+        // événement dépassant 2 représentants du même siècle, pour éviter une frise
+        // artificiellement concentrée sur une seule période.
+        function generateDailyEvents(seedString) {
+            seedString = seedString || getDailySeedString();
+            const rng = mulberry32(hashSeedToInt('historiaxe-daily-' + seedString));
+            const shuffled = shuffleWithRng(getAllEventsWithLocation(), rng);
+
+            const MAX_PER_CENTURY = 2;
+            const picked = [];
+            const centuryCounts = {};
+
+            shuffled.forEach(item => {
+                if (picked.length >= 10) return;
+                const century = getCenturyKey(item.event.date);
+                const count = centuryCounts[century] || 0;
+                if (count >= MAX_PER_CENTURY) return;
+                picked.push(item);
+                centuryCounts[century] = count + 1;
+            });
+
+            // Filet de sécurité : si le lissage strict laisse moins de 10 événements
+            // (peu probable vu la taille de la base), on complète avec le reste du
+            // tirage mélangé plutôt que de renvoyer un défi incomplet.
+            if (picked.length < 10) {
+                for (const item of shuffled) {
+                    if (picked.length >= 10) break;
+                    if (picked.indexOf(item) === -1) picked.push(item);
+                }
+            }
+
+            return picked;
+        }
+
+        // Temps restant (en ms) avant le prochain défi, calculé en UTC pur
+        // (getUTCHours/getUTCMinutes/getUTCSeconds) pour ne jamais dépendre du fuseau
+        // horaire ou de l'horloge locale de l'appareil du joueur : le basculement a
+        // lieu chaque jour à 05:00:00 UTC (06h00 à Paris en heure d'hiver).
+        function getTimeUntilNextDaily() {
+            const now = new Date();
+            let next = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), 5, 0, 0, 0));
+            if (now.getTime() >= next.getTime()) {
+                next = new Date(next.getTime() + 24 * 60 * 60 * 1000);
+            }
+            return Math.max(0, next.getTime() - now.getTime());
+        }
+
+        function formatCountdown(ms) {
+            const totalSeconds = Math.floor(ms / 1000);
+            const h = String(Math.floor(totalSeconds / 3600)).padStart(2, '0');
+            const m = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, '0');
+            const s = String(totalSeconds % 60).padStart(2, '0');
+            return `${h}:${m}:${s}`;
+        }
+
+        // --- Sauvegarde locale du défi du jour (résultat du joueur + classement) ---
+        // En l'absence de backend distant, ces clés servent de stockage local
+        // provisoire : elles sont scopées par graine du jour (voir DAILY_KEY /
+        // DAILY_LEADERBOARD_KEY) et remplacées automatiquement le lendemain.
+        const DAILY_KEY = 'historiaxe_daily_v1';
+        const DAILY_LEADERBOARD_KEY = 'historiaxe_daily_leaderboard_v1';
+
+        function dailyStateLoad() {
+            try { return JSON.parse(localStorage.getItem(DAILY_KEY)) || {}; }
+            catch (e) { return {}; }
+        }
+        function dailyStateSave(state) {
+            try { localStorage.setItem(DAILY_KEY, JSON.stringify(state)); } catch (e) {}
+        }
+
+        // Nettoie un pseudonyme avant envoi/affichage : espaces superflus retirés,
+        // ponctuation et caractères spéciaux supprimés, longueur bornée à 15
+        // caractères (lettres, chiffres, espaces internes et tirets autorisés).
+        function sanitizePseudo(raw) {
+            return (raw || '')
+                .trim()
+                .replace(/[^\p{L}\p{N} \-]/gu, '')
+                .replace(/\s+/g, ' ')
+                .trim()
+                .slice(0, 15);
+        }
+
+        // Fonction asynchrone prête pour l'intégration d'un service distant (Firebase
+        // Firestore, Supabase...). En attendant ce branchement, elle retombe sur un
+        // classement local scopé à la graine du jour, pour que la modale de résultats
+        // reste fonctionnelle dès aujourd'hui.
+        //
+        // Intégration future (exemple Supabase) :
+        //   const { error } = await supabaseClient.from('daily_scores').insert({
+        //       seed: getDailySeedString(), pseudo, score, time_seconds: time
+        //   });
+        //   if (error) throw error;
+        async function submitDailyScore(pseudo, score, time) {
+            const cleanPseudo = sanitizePseudo(pseudo);
+            if (!cleanPseudo) {
+                return { success: false, error: 'pseudo_invalide' };
+            }
+
+            const seedString = getDailySeedString();
+            const entry = {
+                pseudo: cleanPseudo,
+                score: Math.max(0, Math.round(score) || 0),
+                time: Math.max(0, Number(time) || 0),
+                timestamp: Date.now()
+            };
+
+            try {
+                // TODO(backend) : remplacer ce bloc par un appel réseau réel (Firebase /
+                // Supabase) vers une collection/table « daily_scores » indexée par
+                // `seedString`, puis relire le classement mondial depuis le serveur.
+                await Promise.resolve();
+
+                const data = JSON.parse(localStorage.getItem(DAILY_LEADERBOARD_KEY) || '{}');
+                if (!data[seedString]) data[seedString] = [];
+                data[seedString].push(entry);
+                data[seedString].sort((a, b) => b.score - a.score || a.time - b.time);
+                data[seedString] = data[seedString].slice(0, 100);
+                localStorage.setItem(DAILY_LEADERBOARD_KEY, JSON.stringify(data));
+
+                const rank = data[seedString].findIndex(e => e.timestamp === entry.timestamp) + 1;
+                return { success: true, rank, total: data[seedString].length };
+            } catch (e) {
+                return { success: false, error: 'stockage_indisponible' };
+            }
+        }
+
+        function dailyLeaderboardLoad(seedString) {
+            try {
+                const data = JSON.parse(localStorage.getItem(DAILY_LEADERBOARD_KEY) || '{}');
+                return data[seedString || getDailySeedString()] || [];
+            } catch (e) { return []; }
+        }
+
         // Favoris : simple liste d'identifiants de thèmes, stockée dans le navigateur.
         // Les id de thème étant uniques dans tout le fichier, aucune ambiguïté possible.
         const FAVORITES_KEY = 'historiaxe_favorites_v1';
@@ -16916,6 +17172,9 @@ events: [
         let revisionMode = false;
         let revisionEvents = [];
         let revisionRequestedSize = 0;
+        let dailyChallengeMode = false;
+        let dailyChallengeEventsWithLocation = [];
+        let dailyCountdownInterval = null;
         let favoritesMode = false;
         let axisFilterActive = false;
         let currentThemeAxes = [];
@@ -17059,7 +17318,7 @@ events: [
             if (direction === 'fade' && !reduceMotion) {
                 const current = Array.from(document.querySelectorAll('body > div')).find(div =>
                     !div.classList.contains('hidden') &&
-                    div.id !== 'modal-details' && div.id !== 'modal-confirm' && div.id !== 'modal-settings' && div.id !== 'modal-scoring-info'
+                    div.id !== 'modal-details' && div.id !== 'modal-confirm' && div.id !== 'modal-settings' && div.id !== 'modal-scoring-info' && div.id !== 'modal-daily-results'
                 );
                 if (current && current.id !== screenId) {
                     current.classList.remove('screen-fade-out');
@@ -17074,7 +17333,7 @@ events: [
             }
 
             document.querySelectorAll('body > div').forEach(div => {
-                if(div.id !== 'modal-details' && div.id !== 'modal-confirm' && div.id !== 'modal-settings' && div.id !== 'modal-scoring-info') div.classList.add('hidden');
+                if(div.id !== 'modal-details' && div.id !== 'modal-confirm' && div.id !== 'modal-settings' && div.id !== 'modal-scoring-info' && div.id !== 'modal-daily-results') div.classList.add('hidden');
             });
             const targetScreen = document.getElementById(screenId);
             targetScreen.classList.remove('hidden');
@@ -17112,17 +17371,21 @@ events: [
             }
         }
 
-        // Renvoie l'écran de destination après une partie/un retour, et quitte le mode révision
+        // Renvoie l'écran de destination après une partie/un retour, et quitte le mode
+        // révision ou le Défi du jour
         function screenAfterGame() {
             let target;
             if (revisionMode) {
                 target = 'screen-revision-hub';
+            } else if (dailyChallengeMode) {
+                target = 'screen-categories';
             } else if (axisFilterActive) {
                 target = 'screen-axes';
             } else {
                 target = 'screen-themes';
             }
             revisionMode = false;
+            dailyChallengeMode = false;
             return target;
         }
 
@@ -17158,10 +17421,41 @@ events: [
             openModal(pick.event, pick);
         }
 
+        // Lance le Défi du jour : 10 événements tirés de façon identique pour tous les
+        // joueurs du monde entier (voir generateDailyEvents), joués en mode Classique
+        // chronométré (3 vies, temps affiché) pour alimenter le score du classement
+        // mondial de la modale de résultats.
+        function startDailyChallenge() {
+            const picks = generateDailyEvents();
+            if (picks.length === 0) {
+                alert("Aucun événement disponible pour le défi du jour.");
+                return;
+            }
+            dailyChallengeEventsWithLocation = picks;
+            dailyChallengeMode = true;
+            revisionMode = false;
+            favoritesMode = false;
+            axisFilterActive = false;
+            isSelectionActive = false;
+            // Les événements du jour viennent de thèmes divers : on renseigne
+            // directement la liste d'axes à partir du tirage (plutôt que du thème
+            // sélectionné, potentiellement inexistant), pour que les badges d'axe et
+            // getAxisColor() n'aillent pas chercher un thème courant qui n'existe pas.
+            currentThemeAxes = [...new Set(picks.map(item => item.event.axe).filter(Boolean))];
+            startActualGame('daily');
+        }
+
         // Relance la partie en cours ; en mode révision, repioche parmi les points faibles
         // actuels (en tenant compte des résultats qui viennent d'être enregistrés), en
         // conservant la taille de session initialement choisie par le joueur.
         function replayCurrentGame() {
+            if (currentMode === 'daily') {
+                // Rejoue le même tirage que le jour en cours (graine inchangée tant que
+                // la date UTC de basculement n'est pas franchie), pour s'entraîner sans
+                // fausser l'équité du classement mondial.
+                startDailyChallenge();
+                return;
+            }
             if (currentMode === 'quiz') {
                 startQuizGame();
                 return;
@@ -17299,7 +17593,7 @@ events: [
             gridSection.className = 'w-full';
             gridSection.style.marginTop = '24px';
             gridSection.innerHTML = `
-                <div class="grid grid-cols-3 gap-sm md:gap-md" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; text-align: center;">
+                <div class="grid grid-cols-4 gap-sm md:gap-md" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; text-align: center;">
                     <div class="flex flex-col items-center gap-2" id="btn-favoris">
                         <div class="quick-action-circle w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center transition-colors cursor-pointer group mx-auto" style="border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center;">
                             <span class="material-symbols-outlined quick-action-icon favoris text-[32px] group-hover:scale-110 transition-transform" style="font-size: 32px;">star</span>
@@ -17311,6 +17605,12 @@ events: [
                             <span class="material-symbols-outlined quick-action-icon text-[32px] group-hover:scale-110 transition-transform" style="font-size: 32px;">explore</span>
                         </div>
                         <span class="quick-action-label font-label-sm">Découvrir</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-2" id="btn-daily-challenge">
+                        <div class="quick-action-circle daily-white w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center transition-colors cursor-pointer group mx-auto" style="border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center;">
+                            <span class="material-symbols-outlined quick-action-icon daily-challenge text-[32px] group-hover:scale-110 transition-transform" style="font-size: 32px;">public</span>
+                        </div>
+                        <span class="quick-action-label font-label-sm">Défi du jour</span>
                     </div>
                     <div class="flex flex-col items-center gap-2" id="btn-revision">
                         <div class="quick-action-circle w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center transition-colors cursor-pointer group mx-auto" style="border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center;">
@@ -17325,6 +17625,7 @@ events: [
             setTimeout(() => {
                 if(document.getElementById('btn-favoris')) document.getElementById('btn-favoris').onclick = openFavorites;
                 if(document.getElementById('btn-discover')) document.getElementById('btn-discover').onclick = discoverRandomEvent;
+                if(document.getElementById('btn-daily-challenge')) document.getElementById('btn-daily-challenge').onclick = startDailyChallenge;
                 if(document.getElementById('btn-revision')) document.getElementById('btn-revision').onclick = startRevision;
             }, 0);
 
@@ -17906,7 +18207,12 @@ events: [
         function startActualGame(mode) {
             currentMode = mode;
             let sourceEvents;
-            if (revisionMode) {
+            if (mode === 'daily') {
+                // Défi du jour : 10 événements déjà tirés (et mélangés) de façon
+                // déterministe par generateDailyEvents, indépendamment du thème
+                // actuellement sélectionné dans le menu.
+                sourceEvents = dailyChallengeEventsWithLocation.map(item => item.event);
+            } else if (revisionMode) {
                 sourceEvents = revisionEvents;
             } else {
                 const themeEvents = getCurrentTheme().events;
@@ -17922,23 +18228,30 @@ events: [
                 return;
             }
             let eventsCopy = [...sourceEvents];
-            
+
             if (mode === 'discovery') {
                 eventsCopy.sort((a, b) => a.date - b.date);
                 placedEvents = eventsCopy;
                 currentPool = [];
                 totalEvents = placedEvents.length;
+            } else if (mode === 'daily') {
+                // Ordre de pioche déjà mélangé de façon déterministe (même graine du
+                // jour pour tous les joueurs) : surtout ne pas re-mélanger avec
+                // Math.random ici, sous peine de casser l'équité du classement mondial.
+                totalEvents = eventsCopy.length;
+                placedEvents = [eventsCopy.pop()];
+                currentPool = eventsCopy;
             } else {
                 eventsCopy.sort(() => Math.random() - 0.5);
                 totalEvents = eventsCopy.length;
                 placedEvents = [eventsCopy.pop()];
                 currentPool = eventsCopy;
             }
-            
+
             if (mode === 'training' || mode === 'discovery') lives = Infinity;
             else if (mode === 'expert') lives = 1;
             else if (mode === 'multi') lives = 2; // unused directly, but for safety
-            else lives = 3; 
+            else lives = 3; // classic, chrono, daily
             
             score = 0;
             totalTimePlayed = 0;
@@ -17972,7 +18285,7 @@ events: [
                 document.getElementById('hud-count').innerText = `Frise complète · ${totalEvents} repères`;
             }
 
-            if (mode === 'chrono' || mode === 'expert') {
+            if (mode === 'chrono' || mode === 'expert' || mode === 'daily') {
                 hudTimer.classList.remove('hidden');
                 document.getElementById('hud-timer').innerText = "0,0";
                 startTimer();
@@ -19249,7 +19562,18 @@ events: [
                 axeHtml +
                 (evt.missed ? `<span class="entry-flag">manqué</span>` : '') +
                 `<span class="entry-chevron" aria-hidden="true">›</span></span>`;
-            row.onclick = () => openModal(evt);
+            row.onclick = () => {
+                // Défi du jour : les événements viennent de thèmes divers, donc on
+                // affiche la ligne « Jouer sur ce thème » (.modal-theme-row) pour
+                // pouvoir rejoindre le thème d'origine — sans proposer de repiochage,
+                // qui n'a pas de sens pour un tirage quotidien commun à tous.
+                if (dailyChallengeMode) {
+                    const ctx = dailyChallengeEventsWithLocation.find(item => item.event.id === evt.id);
+                    openModal(evt, ctx ? { ...ctx, hideRedraw: true } : null);
+                } else {
+                    openModal(evt);
+                }
+            };
             return row;
         }
 
@@ -19299,7 +19623,7 @@ events: [
 
             if (isCorrect) {
                 let speedBonus = 0;
-                if (currentMode === 'chrono' || currentMode === 'expert') {
+                if (currentMode === 'chrono' || currentMode === 'expert' || currentMode === 'daily') {
                     const elapsed = (Date.now() - questionStartTime) / 1000;
                     speedBonus = Math.round(50 * Math.max(0, 1 - elapsed / 15));
                 }
@@ -19380,12 +19704,12 @@ events: [
 
             if (isWin) playVictorySound();
 
-            if (isWin && !revisionMode && (currentMode === 'classic' || currentMode === 'chrono')) {
+            if (isWin && !revisionMode && !dailyChallengeMode && (currentMode === 'classic' || currentMode === 'chrono')) {
                 const theme = getCurrentTheme();
                 progressRecordWin(theme.id, currentMode);
             }
 
-            if (!revisionMode && currentMode !== 'discovery' && currentMode !== 'training') {
+            if (!revisionMode && !dailyChallengeMode && currentMode !== 'discovery' && currentMode !== 'training') {
                 const theme = getCurrentTheme();
                 saveScoreToLeaderboard(theme.id, currentMode, score);
             }
@@ -19394,7 +19718,7 @@ events: [
             document.getElementById('end-score-val').innerText = score;
             const titleElement = document.getElementById('end-title');
             const timeDisplay = document.getElementById('end-time-display');
-            
+
             if (isWin) {
                 let winTitle = "Bravo ! Frise complétée !";
                 if (currentMode === 'quiz') winTitle = "Bravo ! Quiz terminé !";
@@ -19402,20 +19726,122 @@ events: [
                 if (currentMode === 'fil') winTitle = "Bravo ! Fil du temps parcouru !";
                 if (currentMode === 'periodes') winTitle = "Bravo ! Périodes & Ères maîtrisées !";
                 if (currentMode === 'ecart') winTitle = "Bravo ! Tous les écarts trouvés !";
+                if (currentMode === 'daily') winTitle = "Bravo ! Défi du jour relevé !";
                 titleElement.innerText = winTitle;
-                titleElement.style.color = "#27ae60"; 
+                titleElement.style.color = "#27ae60";
             } else {
                 titleElement.innerText = "Game Over !";
-                titleElement.style.color = "var(--danger-red)"; 
+                titleElement.style.color = "var(--danger-red)";
             }
-            
-            // NOUVEAU : On affiche le temps pour Chrono et Expert (gagné OU perdu)
-            if (currentMode === 'chrono' || currentMode === 'expert') {
+
+            // NOUVEAU : On affiche le temps pour Chrono, Expert et le Défi du jour (gagné OU perdu)
+            if (currentMode === 'chrono' || currentMode === 'expert' || currentMode === 'daily') {
                 timeDisplay.innerText = "Durée : " + totalTimePlayed.toFixed(1).replace('.', ',') + " s";
                 timeDisplay.classList.remove('hidden');
             } else {
                 timeDisplay.classList.add('hidden');
             }
+
+            if (currentMode === 'daily') {
+                openDailyResultsModal(isWin);
+            }
+        }
+
+        // === MODALE DE RÉSULTATS — DÉFI DU JOUR ===
+        // Écran de fin dédié à ce mode (superposé à #screen-end) : récapitule score et
+        // temps, affiche le compte à rebours absolu avant le prochain défi et permet
+        // d'envoyer son score au classement mondial via un pseudonyme.
+        function openDailyResultsModal(isWin) {
+            document.getElementById('daily-results-title').innerText = isWin
+                ? "🌍 Défi du jour relevé !"
+                : "🌍 Défi du jour terminé";
+            document.getElementById('daily-results-score').innerText = score;
+            document.getElementById('daily-results-time').innerText = totalTimePlayed.toFixed(1).replace('.', ',') + ' s';
+            document.getElementById('daily-pseudo-input').value = '';
+            const feedback = document.getElementById('daily-submit-feedback');
+            feedback.innerText = '';
+            feedback.className = 'daily-submit-feedback';
+
+            renderDailyLeaderboardPreview();
+            startDailyCountdown();
+
+            document.getElementById('modal-daily-results').classList.remove('hidden');
+        }
+
+        function closeDailyResultsModal() {
+            document.getElementById('modal-daily-results').classList.add('hidden');
+            if (dailyCountdownInterval) {
+                clearInterval(dailyCountdownInterval);
+                dailyCountdownInterval = null;
+            }
+        }
+
+        // Met à jour le minuteur absolu (05:00:00 UTC) chaque seconde tant que la
+        // modale de résultats reste ouverte.
+        function startDailyCountdown() {
+            if (dailyCountdownInterval) clearInterval(dailyCountdownInterval);
+            const update = () => {
+                const el = document.getElementById('daily-countdown-val');
+                if (el) el.innerText = formatCountdown(getTimeUntilNextDaily());
+            };
+            update();
+            dailyCountdownInterval = setInterval(update, 1000);
+        }
+
+        async function handleDailyScoreSubmit() {
+            const input = document.getElementById('daily-pseudo-input');
+            const feedback = document.getElementById('daily-submit-feedback');
+            const cleanPseudo = sanitizePseudo(input.value);
+
+            if (!cleanPseudo) {
+                feedback.innerText = "Entrez un pseudo valide (lettres/chiffres, 15 caractères max).";
+                feedback.className = 'daily-submit-feedback error';
+                return;
+            }
+
+            feedback.innerText = "Envoi en cours…";
+            feedback.className = 'daily-submit-feedback';
+
+            const result = await submitDailyScore(cleanPseudo, score, totalTimePlayed);
+
+            if (result.success) {
+                input.value = cleanPseudo;
+                feedback.innerText = `Score envoyé ! Classement local : #${result.rank} sur ${result.total}.`;
+                feedback.className = 'daily-submit-feedback success';
+                const today = dailyStateLoad();
+                today[getDailySeedString()] = { pseudo: cleanPseudo, score, time: totalTimePlayed };
+                dailyStateSave(today);
+                renderDailyLeaderboardPreview();
+            } else {
+                feedback.innerText = "Impossible d'envoyer le score pour le moment. Réessayez.";
+                feedback.className = 'daily-submit-feedback error';
+            }
+        }
+
+        // Aperçu du classement (émulation locale en attendant le branchement au
+        // service distant — voir submitDailyScore) : les 5 meilleurs scores soumis
+        // aujourd'hui depuis cet appareil.
+        function renderDailyLeaderboardPreview() {
+            const container = document.getElementById('daily-leaderboard-preview');
+            const scores = dailyLeaderboardLoad();
+            if (scores.length === 0) {
+                container.innerHTML = '<p class="leaderboard-empty">Aucun score envoyé pour l\'instant. Soyez le premier !</p>';
+                return;
+            }
+            const rows = scores.slice(0, 5).map((entry, i) => `
+                <tr>
+                    <td>${i + 1}</td>
+                    <td>${entry.pseudo}</td>
+                    <td class="leaderboard-score">${entry.score}</td>
+                    <td>${entry.time.toFixed(1).replace('.', ',')} s</td>
+                </tr>
+            `).join('');
+            container.innerHTML = `
+                <table class="leaderboard-table">
+                    <thead><tr><th>#</th><th>Pseudo</th><th>Score</th><th>Temps</th></tr></thead>
+                    <tbody>${rows}</tbody>
+                </table>
+            `;
         }
 
         // Confirmation intégrée à l'interface (remplace window.confirm, qui peut être
@@ -19476,15 +19902,25 @@ events: [
             document.getElementById('modal-wiki').href = evt.wikipedia;
 
             const themeRow = document.getElementById('modal-theme-row');
+            const redrawBtn = document.getElementById('modal-redraw-btn');
             if (context && context.theme) {
                 themeRow.classList.remove('hidden');
                 document.getElementById('modal-theme-btn').innerText = `Jouer sur « ${context.theme.nom} »`;
                 document.getElementById('modal-theme-btn').onclick = () => {
                     closeModal();
+                    if (dailyChallengeMode) stopTimer();
                     favoritesMode = false;
+                    dailyChallengeMode = false;
                     openThemeAt(context.categoryIndex, context.subcategoryIndex, context.themeIndex);
                 };
-                document.getElementById('modal-redraw-btn').onclick = () => discoverRandomEvent();
+                // Repiocher un événement au hasard n'a de sens que depuis « Découvrir »
+                // (context.hideRedraw le masque depuis le Défi du jour, cf. buildEntry).
+                if (context.hideRedraw) {
+                    redrawBtn.classList.add('hidden');
+                } else {
+                    redrawBtn.classList.remove('hidden');
+                    redrawBtn.onclick = () => discoverRandomEvent();
+                }
             } else {
                 themeRow.classList.add('hidden');
             }
