@@ -1166,66 +1166,66 @@
         <div class="list-categories" id="categories-container"></div>
     </div>
 
-    <!-- ÉCRAN 2ter : RÉVISION DES POINTS FAIBLES (choix session mélangée / reprise d'un thème) -->
+    <!-- ÉCRAN 2ter : RÉVISION DES POINTS FAIBLES (choix session mélangée / reprise d'un thème) + PROGRESSION PAR THÈME -->
     <div id="screen-revision-hub" class="list-screen hidden">
         <button class="back-btn" onclick="showScreen('screen-categories')" aria-label="Retour aux catégories">‹</button>
         <h2 class="header-title">Réviser mes points faibles</h2>
-        <p id="revision-hub-subtitle" class="revision-hub-subtitle"></p>
-
-        <div id="revision-hub-empty" class="empty-msg hidden">
-            Aucun point faible détecté pour l'instant. Les événements que vous répondez de travers lors d'une partie apparaîtront ici pour être retravaillés.
+        <div class="segmented" id="revision-hub-tabs">
+            <button type="button" data-value="weak">Points faibles</button>
+            <button type="button" data-value="progress">Progression</button>
         </div>
 
-        <div id="revision-hub-content" class="revision-hub-content hidden">
-            <div class="revision-option-block">
-                <h3 class="revision-option-title">🎲 Session aléatoire</h3>
-                <p class="revision-option-desc">Un mélange de vos points faibles, toutes catégories confondues. Si vous en avez moins que le nombre choisi, on vous montre tout ce qu'il y a.</p>
-                <div class="revision-quantity-row">
-                    <button class="btn quantity-btn" onclick="launchRandomRevision(10)">10</button>
-                    <button class="btn quantity-btn" onclick="launchRandomRevision(20)">20</button>
-                    <button class="btn quantity-btn" onclick="launchRandomRevision(30)">30</button>
-                    <button class="btn quantity-btn" onclick="launchRandomRevision(40)">40</button>
-                    <button class="btn quantity-btn" onclick="launchRandomRevision(50)">50</button>
+        <div id="revision-hub-weak-container">
+            <p id="revision-hub-subtitle" class="revision-hub-subtitle"></p>
+
+            <div id="revision-hub-empty" class="empty-msg hidden">
+                Aucun point faible détecté pour l'instant. Les événements que vous répondez de travers lors d'une partie apparaîtront ici pour être retravaillés.
+            </div>
+
+            <div id="revision-hub-content" class="revision-hub-content hidden">
+                <div class="revision-option-block">
+                    <h3 class="revision-option-title">🎲 Session aléatoire</h3>
+                    <p class="revision-option-desc">Un mélange de vos points faibles, toutes catégories confondues. Si vous en avez moins que le nombre choisi, on vous montre tout ce qu'il y a.</p>
+                    <div class="revision-quantity-row">
+                        <button class="btn quantity-btn" onclick="launchRandomRevision(10)">10</button>
+                        <button class="btn quantity-btn" onclick="launchRandomRevision(20)">20</button>
+                        <button class="btn quantity-btn" onclick="launchRandomRevision(30)">30</button>
+                        <button class="btn quantity-btn" onclick="launchRandomRevision(40)">40</button>
+                        <button class="btn quantity-btn" onclick="launchRandomRevision(50)">50</button>
+                    </div>
+                </div>
+
+                <div class="revision-option-block">
+                    <h3 class="revision-option-title">📚 Reprendre un thème entier</h3>
+                    <p class="revision-option-desc">Retournez vous entraîner sur l'intégralité d'un thème où des dates vous ont posé difficulté.</p>
+                    <div class="grid-cards" id="revision-themes-container"></div>
                 </div>
             </div>
 
-            <div class="revision-option-block">
-                <h3 class="revision-option-title">📚 Reprendre un thème entier</h3>
-                <p class="revision-option-desc">Retournez vous entraîner sur l'intégralité d'un thème où des dates vous ont posé difficulté.</p>
-                <div class="grid-cards" id="revision-themes-container"></div>
+            <div style="margin-top: 30px; margin-bottom: 50px; display:flex; align-items:center; justify-content:center; gap:15px;">
+                <span class="reset-srs-btn reset-srs-link" id="reset-srs-btn-hub" title="Réinitialiser le suivi de révision">⟲ Réinitialiser</span>
             </div>
         </div>
 
-        <div style="margin-top: 30px; margin-bottom: 50px; display:flex; align-items:center; justify-content:center; gap:15px;">
-            <span class="reset-srs-btn reset-srs-link" id="reset-srs-btn-hub" title="Réinitialiser le suivi de révision">⟲ Réinitialiser</span>
-        </div>
-    </div>
+        <div id="revision-hub-progress-container" class="hidden">
+            <p class="progress-subtitle">Maîtrise calculée à partir de votre historique de jeu (boîtes de mémorisation), tous modes et toutes parties confondus : elle tient compte à la fois de la qualité de vos réponses et de la part du thème déjà couverte (un thème à peine entamé ne peut donc pas afficher un score élevé, même si le peu que vous avez tenté est réussi). Les thèmes et catégories les moins maîtrisés apparaissent en premier : c'est par là qu'il est le plus utile de commencer à réviser.</p>
 
-    <!-- ÉCRAN 2quater : PROGRESSION PAR THÈME (radar de synthèse + barres de maîtrise) -->
-    <div id="screen-progress" class="list-screen hidden">
-        <button class="back-btn" onclick="showScreen('screen-categories')" aria-label="Retour aux catégories">‹</button>
-        <h2 class="header-title">📊 Progression par thème</h2>
-        <p class="progress-subtitle">Maîtrise calculée à partir de votre historique de jeu (boîtes de mémorisation), tous modes et toutes parties confondus : elle tient compte à la fois de la qualité de vos réponses et de la part du thème déjà couverte (un thème à peine entamé ne peut donc pas afficher un score élevé, même si le peu que vous avez tenté est réussi). Les thèmes et catégories les moins maîtrisés apparaissent en premier : c'est par là qu'il est le plus utile de commencer à réviser.</p>
+            <div class="progress-legend">
+                <span class="progress-legend-item"><span class="progress-legend-dot" style="background:#2ECC71;"></span>Bien maîtrisé (≥ 75%)</span>
+                <span class="progress-legend-item"><span class="progress-legend-dot" style="background:#E0A639;"></span>À consolider (40-74%)</span>
+                <span class="progress-legend-item"><span class="progress-legend-dot" style="background:var(--danger-red);"></span>Fragile (&lt; 40%)</span>
+                <span class="progress-legend-item"><span class="progress-legend-dot" style="background:var(--border-soft);"></span>Pas encore testé</span>
+            </div>
 
-        <div class="progress-legend">
-            <span class="progress-legend-item"><span class="progress-legend-dot" style="background:#2ECC71;"></span>Bien maîtrisé (≥ 75%)</span>
-            <span class="progress-legend-item"><span class="progress-legend-dot" style="background:#E0A639;"></span>À consolider (40-74%)</span>
-            <span class="progress-legend-item"><span class="progress-legend-dot" style="background:var(--danger-red);"></span>Fragile (&lt; 40%)</span>
-            <span class="progress-legend-item"><span class="progress-legend-dot" style="background:var(--border-soft);"></span>Pas encore testé</span>
-        </div>
+            <div id="progress-radar-wrap" class="progress-radar-wrap">
+                <div id="progress-radar-container"></div>
+            </div>
 
-        <div id="progress-radar-wrap" class="progress-radar-wrap">
-            <div id="progress-radar-container"></div>
-        </div>
+            <div id="progress-empty" class="empty-msg hidden">
+                Aucune donnée pour l'instant. Jouez quelques parties pour voir apparaître ici votre progression par thème et par catégorie.
+            </div>
 
-        <div id="progress-empty" class="empty-msg hidden">
-            Aucune donnée pour l'instant. Jouez quelques parties pour voir apparaître ici votre progression par thème et par catégorie.
-        </div>
-
-        <div id="progress-groups-container" class="progress-groups-container"></div>
-
-        <div style="margin-top: 30px; margin-bottom: 50px; display:flex; align-items:center; gap:15px; flex-wrap:wrap; justify-content:center;">
-            <button class="btn" onclick="startRevision()">🔁 Réviser mes points faibles</button>
+            <div id="progress-groups-container" class="progress-groups-container"></div>
         </div>
     </div>
 
@@ -16894,7 +16894,6 @@ events: [
                 srsSave({});
                 if (!document.getElementById('screen-revision-hub').classList.contains('hidden')) {
                     initRevisionHub();
-                } else if (!document.getElementById('screen-progress').classList.contains('hidden')) {
                     initProgress();
                 } else {
                     initCategories();
@@ -17091,7 +17090,6 @@ events: [
             if (screenId === 'screen-themes') initThemes();
             if (screenId === 'screen-axes') initAxes();
             if (screenId === 'screen-revision-hub') initRevisionHub();
-            if (screenId === 'screen-progress') initProgress();
             if (screenId === 'screen-modes') {
                 const titleEl = document.getElementById('modes-header-title');
                 if (revisionMode) {
@@ -17327,7 +17325,10 @@ events: [
                 if(document.getElementById('btn-favoris')) document.getElementById('btn-favoris').onclick = openFavorites;
                 if(document.getElementById('btn-discover')) document.getElementById('btn-discover').onclick = discoverRandomEvent;
                 if(document.getElementById('btn-revision')) document.getElementById('btn-revision').onclick = startRevision;
-                if(document.getElementById('btn-progress')) document.getElementById('btn-progress').onclick = () => showScreen('screen-progress');
+                if(document.getElementById('btn-progress')) document.getElementById('btn-progress').onclick = () => {
+                    showScreen('screen-revision-hub');
+                    switchRevisionHubTab('progress');
+                };
             }, 0);
 
             // --- BROWSE ARCHIVES (Categories) ---
@@ -17729,9 +17730,26 @@ events: [
             });
         }
 
+        // Bascule entre les deux onglets de l'écran « Réviser » : Points faibles (par
+        // défaut) et Progression, en affichant/masquant leurs conteneurs respectifs.
+        function switchRevisionHubTab(tab) {
+            document.querySelectorAll('#revision-hub-tabs button').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.value === tab);
+            });
+            document.getElementById('revision-hub-weak-container').classList.toggle('hidden', tab !== 'weak');
+            document.getElementById('revision-hub-progress-container').classList.toggle('hidden', tab !== 'progress');
+            if (tab === 'progress') initProgress();
+        }
+
         // Écran de choix affiché après avoir sélectionné « Réviser mes points faibles » :
         // soit une session mélangée de taille choisie, soit la reprise d'un thème entier.
+        // Comporte aussi l'onglet Progression (radar + barres de maîtrise par thème).
         function initRevisionHub() {
+            document.querySelectorAll('#revision-hub-tabs button').forEach(btn => {
+                btn.onclick = () => switchRevisionHubTab(btn.dataset.value);
+            });
+            switchRevisionHubTab('weak');
+
             const weak = getWeakEvents();
             const weakThemes = getWeakThemes();
 
