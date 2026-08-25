@@ -327,8 +327,10 @@
 
         .form-group { text-align: left; margin-bottom: 15px; }
         .form-label { display: block; font-weight: 600; font-size: 14px; margin-bottom: 6px; color: var(--text-dark); }
-        .form-input { width: 100%; padding: 10px 12px; border: 1px solid var(--border-soft); border-radius: 9999px; font: inherit; font-size: 15px; background: var(--paper); color: var(--ink); }
-        .form-input:focus { outline: none; border-color: var(--primary-blue); }
+        .form-input { width: 100%; padding: 10px 12px; border: 1px solid var(--border-soft); border-radius: 9999px; font: inherit; font-size: 15px; background: #ffffff !important; color: #141d23 !important; }
+        .form-input::placeholder { color: #8B93A0 !important; opacity: 1; }
+        .form-input:focus { outline: none; border-color: var(--primary-blue); box-shadow: 0 0 0 2px rgba(0, 26, 75, 0.15); }
+        textarea.form-input { border-radius: 12px; }
         .form-row { display: flex; gap: 10px; }
 
         .leaderboard-table { width: 100%; border-collapse: collapse; text-align: left; font-size: 14px; margin-bottom: 15px; }
@@ -349,7 +351,7 @@
         .daily-countdown-box { text-align: center; font-size: 13px; color: var(--muted-text); background: rgba(46, 204, 113, 0.1); border-radius: 12px; padding: 10px 14px; margin-bottom: 18px; }
         .daily-countdown-val { font-weight: 700; color: #1E8449; font-family: var(--font-year); }
         :root[data-theme="dark"] .daily-countdown-val { color: #2ECC71; }
-        #daily-pseudo-input { text-align: center; }
+        #daily-pseudo-input { text-align: center; background: #ffffff !important; color: #141d23 !important; }
         .daily-submit-feedback { margin-top: 10px; font-size: 13px; text-align: center; min-height: 18px; }
         .daily-submit-feedback.success { color: var(--progress-green); }
         .daily-submit-feedback.error { color: var(--danger-red); }
@@ -924,6 +926,12 @@
     border: 1px solid #ccc;
     border-radius: 6px;
     font-size: 16px;
+    background: #ffffff !important;
+    color: #141d23 !important;
+}
+.multiplayer-setup-container input::placeholder {
+    color: #8B93A0 !important;
+    opacity: 1;
 }
 .multi-turn-banner {
     position: absolute;
@@ -1085,6 +1093,20 @@
         :root[data-theme="dark"] .search-bar-input {
             background: transparent !important;
             color: var(--text-dark) !important;
+        }
+
+        /* Champs de formulaire dans les modales et écrans de configuration (pseudo défi du jour, etc.) :
+           Gardent un fond blanc et un texte noir bien contrasté et lisible en mode sombre comme en mode clair */
+        :root[data-theme="dark"] .form-input,
+        :root[data-theme="dark"] #daily-pseudo-input,
+        :root[data-theme="dark"] .multiplayer-setup-container input,
+        :root[data-theme="dark"] .multiplayer-setup-container select {
+            background: #ffffff !important;
+            color: #141d23 !important;
+        }
+        :root[data-theme="dark"] .form-input::placeholder,
+        :root[data-theme="dark"] .multiplayer-setup-container input::placeholder {
+            color: #8B93A0 !important;
         }
 
         /* Alignement des puces sur l'axe en orientation horizontale : le padding/
