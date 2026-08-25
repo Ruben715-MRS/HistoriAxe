@@ -145,7 +145,10 @@
         
         /* LISTES : CATÉGORIES & THÈMES */
         .list-screen { flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; }
-        .header-title { font-size: 24px; margin-bottom: 20px; text-align: center; margin-top: 20px;}
+        /* padding horizontal pour ne jamais passer sous le bouton retour (fixed, 42px de large
+           à 16px du bord) sur les écrans étroits, même avec un titre long comme « Réviser mes
+           points faibles » */
+        .header-title { font-size: 24px; margin-bottom: 20px; text-align: center; margin-top: 20px; padding: 0 60px; box-sizing: border-box; }
         .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; width: 100%; max-width: 1000px; }
         /* Carte thème : même langage visuel que les bannières de catégorie
            (plein fond coloré, chevron circulaire, effet de survol), mais dans
@@ -724,7 +727,11 @@
         .settings-group { margin-bottom: 26px; }
         .settings-group:last-child { margin-bottom: 4px; }
         .settings-label { font-size: 14px; font-weight: 700; color: var(--text-dark); margin-bottom: 9px; }
-        .segmented { display: flex; border: 1px solid var(--rule); border-radius: 9999px; overflow: hidden; }
+        /* flex-shrink:0 — sans ça, overflow:hidden désactive la taille minimale automatique
+           d'un enfant flex : utilisé à même une colonne flex qui manque de hauteur (comme
+           #screen-revision-hub sur mobile, avec beaucoup de points faibles), le contrôle se
+           retrouverait écrasé à quelques pixels de haut au lieu de garder sa taille propre. */
+        .segmented { display: flex; flex-shrink: 0; border: 1px solid var(--rule); border-radius: 9999px; overflow: hidden; }
         .segmented button { flex: 1; background: var(--surface); border: none; border-right: 1px solid var(--rule); padding: 10px 6px; font-size: 13px; font-weight: 600; color: var(--ink-soft); cursor: pointer; transition: background 0.15s, color 0.15s; }
         .segmented button:last-child { border-right: none; }
         .segmented button.active { background: var(--primary-blue); color: #fff; }
