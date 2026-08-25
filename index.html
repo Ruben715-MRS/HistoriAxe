@@ -17292,7 +17292,7 @@ events: [
             gridSection.className = 'w-full';
             gridSection.style.marginTop = '24px';
             gridSection.innerHTML = `
-                <div class="grid grid-cols-4 gap-sm md:gap-md" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; text-align: center;">
+                <div class="grid grid-cols-3 gap-sm md:gap-md" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; text-align: center;">
                     <div class="flex flex-col items-center gap-2" id="btn-favoris">
                         <div class="quick-action-circle w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center transition-colors cursor-pointer group mx-auto" style="border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center;">
                             <span class="material-symbols-outlined quick-action-icon favoris text-[32px] group-hover:scale-110 transition-transform" style="font-size: 32px;">star</span>
@@ -17305,12 +17305,6 @@ events: [
                         </div>
                         <span class="quick-action-label font-label-sm">Découvrir</span>
                     </div>
-                    <div class="flex flex-col items-center gap-2" id="btn-progress">
-                        <div class="quick-action-circle w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center transition-colors cursor-pointer group mx-auto" style="border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center;">
-                            <span class="material-symbols-outlined quick-action-icon progress text-[32px] group-hover:scale-110 transition-transform" style="font-size: 32px;">trending_up</span>
-                        </div>
-                        <span class="quick-action-label font-label-sm">Progression</span>
-                    </div>
                     <div class="flex flex-col items-center gap-2" id="btn-revision">
                         <div class="quick-action-circle w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center transition-colors cursor-pointer group mx-auto" style="border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center;">
                             <span class="material-symbols-outlined quick-action-icon danger text-[32px] group-hover:scale-110 transition-transform" style="font-size: 32px;">rate_review</span>
@@ -17320,15 +17314,11 @@ events: [
                 </div>
             `;
             container.appendChild(gridSection);
-            
+
             setTimeout(() => {
                 if(document.getElementById('btn-favoris')) document.getElementById('btn-favoris').onclick = openFavorites;
                 if(document.getElementById('btn-discover')) document.getElementById('btn-discover').onclick = discoverRandomEvent;
                 if(document.getElementById('btn-revision')) document.getElementById('btn-revision').onclick = startRevision;
-                if(document.getElementById('btn-progress')) document.getElementById('btn-progress').onclick = () => {
-                    showScreen('screen-revision-hub');
-                    switchRevisionHubTab('progress');
-                };
             }, 0);
 
             // --- BROWSE ARCHIVES (Categories) ---
