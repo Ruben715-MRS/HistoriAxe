@@ -216,17 +216,17 @@
         :root[data-theme="dark"] .quick-action-icon.favoris { color: #f0c419; }
         :root[data-theme="dark"] .quick-action-icon.progress { color: #4caf6f; }
 
-        /* Puce du « Défi du jour » : contrairement aux autres actions rapides, le
-           fond reste volontairement blanc dans les deux thèmes (identité propre au
-           mode, façon badge), seule la teinte de l'icône « globe » varie légèrement
-           entre thème clair et sombre pour rester lisible sur ce fond blanc.
-           Le vert clair #2ECC71 utilisé ailleurs en thème sombre (fond sombre) n'offre
-           pas assez de contraste sur ce fond resté blanc : l'icône y paraît quasi
-           blanche/délavée. On garde donc en thème sombre une teinte tout aussi foncée
-           et saturée que celle du thème clair (juste une nuance différente). */
+        /* Puce du « Défi du jour » : en thème clair, le fond reste volontairement
+           blanc (identité propre au mode, façon badge) et l'icône « globe » prend un
+           vert foncé pour rester lisible dessus. En thème sombre, ce fond blanc fixe
+           tranchait avec les trois autres puces de la même ligne (qui suivent
+           var(--surface)) et rendait en plus l'icône verte quasi invisible dessus :
+           on aligne donc le fond sur var(--surface) comme les autres puces, avec
+           l'icône dans le même vert clair que celui utilisé ailleurs en thème sombre. */
         .quick-action-circle.daily-white { background: #ffffff; }
+        :root[data-theme="dark"] .quick-action-circle.daily-white { background: var(--surface); }
         .quick-action-icon.daily-challenge { color: #1E8449; }
-        :root[data-theme="dark"] .quick-action-icon.daily-challenge { color: #198754; }
+        :root[data-theme="dark"] .quick-action-icon.daily-challenge { color: #2ECC71; }
 
         /* ÉCRAN « PROGRESSION PAR THÈME » : radar de synthèse par catégorie et liste
            de barres de maîtrise détaillées (thème par thème), triées du moins
