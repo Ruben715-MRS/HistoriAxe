@@ -616,7 +616,9 @@
         .ecart-pair-years { display: flex; justify-content: center; gap: 14px; margin-top: 8px; min-height: 18px; }
         .ecart-pair-year { font-size: 13px; font-weight: 600; color: var(--primary-blue); }
         .ecart-unit-label { display: inline-flex; align-items: center; justify-content: center; cursor: default; }
-        
+        .ecart-chances-badge { display: inline-flex; align-items: center; justify-content: center; cursor: default; white-space: nowrap; }
+        .fil-answer-badge.badge-hint { background: rgba(154,125,10,0.14); color: #9A7D0A; border: 1px solid #9A7D0A; }
+
         #screen-end { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; }
         .end-title { font-size: 32px; margin-bottom: 20px; color: var(--primary-blue); }
         .end-score { font-size: 24px; margin-bottom: 20px; }
@@ -1390,7 +1392,7 @@
             </div>
             <div class="mode-card ecart-card" onclick="startEcartGame()">
                 <h3>Trouve l'écart</h3>
-                <p>3 vies. Estimez le nombre d'années qui séparent deux événements.</p>
+                <p>3 vies. Devinez le nombre d'années entre deux événements : 5 essais, le jeu vous dit si c'est plus ou moins.</p>
             </div>
             <div class="mode-card multi-card" onclick="showMultiplayerSetup()">
                 <h3>Multijoueurs</h3>
@@ -1666,7 +1668,7 @@
 
         <div class="fil-body">
             <div class="fil-question-card">
-                <div class="fil-kicker">Combien d'années séparent ces deux événements ?</div>
+                <div class="fil-kicker">Combien d'années séparent ces deux événements ? Proposez un nombre, le jeu vous dira si c'est plus ou moins.</div>
                 <div class="ecart-pair">
                     <div class="ecart-pair-event" id="ecart-event-a">Chargement…</div>
                     <div class="ecart-pair-sep">↕</div>
@@ -1679,7 +1681,7 @@
             </div>
 
             <div class="fil-display">
-                <button class="fil-hint-btn" id="ecart-hint-btn" onclick="ecartUseHint()">💡 Indice</button>
+                <span class="fil-hint-btn ecart-chances-badge" id="ecart-chances-badge" aria-live="polite">🎯 5 essais</span>
                 <span class="fil-display-value" id="ecart-display-value">—</span>
                 <span class="fil-era-btn ecart-unit-label" aria-hidden="true">ans</span>
             </div>
@@ -1866,11 +1868,12 @@
                 </ul>
 
                 <h3>📏 Mode « Trouve l'écart »</h3>
-                <p>Deux événements sont présentés sans leurs dates : il faut saisir au clavier le nombre d'années qui les séparent.</p>
+                <p>Deux événements sont présentés sans leurs dates : il faut deviner le nombre d'années qui les séparent, comme au « Juste Prix ». Vous proposez un nombre, le jeu vous répond <strong>« plus »</strong> ou <strong>« moins »</strong>, et vous retentez votre chance.</p>
                 <ul>
-                    <li><strong>Écart exact</strong> : 100 points × multiplicateur de combo.</li>
-                    <li><strong>Bouton 💡 Indice</strong> : Dévoile les chiffres de l'écart un par un depuis la gauche, avec la même <strong>pénalité de 25 points</strong> par chiffre et réinitialisation du combo qu'en Fil du temps ; tout dévoiler équivaut à un échec (0 point, perte d'une vie).</li>
-                    <li><strong>Estimation erronée</strong> : le principe de proximité s'applique — l'écart entre votre estimation et le nombre d'années réel est comparé à l'étendue chronologique du thème pour accorder des points partiels (moins les pénalités d'indices éventuelles), et une vie est perdue.</li>
+                    <li><strong>5 essais par question</strong> : chaque question démarre à <strong>100 points</strong>, et chaque proposition fausse coûte <strong>20 points</strong> (80, puis 60, 40, 20…).</li>
+                    <li><strong>Trouvé du premier coup</strong> : les 100 points sont multipliés par le combo en cours, comme pour une réponse exacte dans les autres modes.</li>
+                    <li><strong>Trouvé après un ou plusieurs essais</strong> : vous gagnez les points restants sur la question (sans bonus de combo), et le multiplicateur retombe à ×1,0.</li>
+                    <li><strong>5 essais épuisés sans trouver l'écart</strong> : 0 point sur la question, la bonne réponse s'affiche et une vie est perdue.</li>
                 </ul>
 
                 <h3>🌱 Modes Découverte et Entraînement</h3>
@@ -140687,13 +140690,14 @@
         let avapIndex = 0;
 
         // Mode Trouve l'écart : même principe d'appariement qu'Avant / Après, mais il
-        // faut cette fois saisir au clavier le nombre d'années séparant les deux
-        // événements. Reprend le mécanisme d'indice chiffre par chiffre du Fil du temps.
+        // faut cette fois deviner le nombre d'années séparant les deux événements, à la
+        // manière du « Juste Prix » : chaque proposition reçoit une réponse « plus » ou
+        // « moins », jusqu'à 5 essais (voir ecartSubmit).
         let ecartQuestions = [];
         let ecartIndex = 0;
         let ecartInput = '';
-        let ecartHintsRevealed = 0;
-        let ecartCorrectGapString = '';
+        let ecartAttempts = 0;
+        const ECART_MAX_ATTEMPTS = 5;
 
         // Certaines catégories (ex. « Histoires nationales », « Programmes scolaires »)
         // insèrent un ou plusieurs niveaux de sous-catégories entre la catégorie et les
@@ -142625,9 +142629,9 @@
 
         // === MODE TROUVE L'ÉCART ===
         // Chaque question oppose deux événements (même appariement que Avant / Après)
-        // affichés sans leurs dates ; il faut saisir au clavier le nombre d'années qui
-        // les séparent. Reprend le mécanisme d'indice chiffre par chiffre et le principe
-        // de proximité du Fil du temps, appliqués ici à l'écart plutôt qu'à une année.
+        // affichés sans leurs dates ; il faut deviner le nombre d'années qui les séparent
+        // à la manière du « Juste Prix » : le joueur propose un nombre, le jeu répond
+        // « plus » ou « moins », jusqu'à 5 essais par question (voir ecartSubmit).
         function startEcartGame() {
             currentMode = 'ecart';
             let sourceEvents;
@@ -142684,16 +142688,16 @@
             }
             isAnimating = false;
             ecartInput = '';
-            ecartHintsRevealed = 0;
-            document.getElementById('ecart-hint-btn').disabled = false;
+            ecartAttempts = 0;
 
             const q = ecartQuestions[ecartIndex];
-            ecartCorrectGapString = q.gap.toString();
 
             document.getElementById('ecart-event-a').innerText = q.eventA.titre;
             document.getElementById('ecart-event-b').innerText = q.eventB.titre;
             document.getElementById('ecart-event-a-year').classList.add('hidden');
             document.getElementById('ecart-event-b-year').classList.add('hidden');
+
+            updateEcartChancesBadge();
 
             const badge = document.getElementById('ecart-answer-badge');
             badge.className = 'fil-answer-badge hidden';
@@ -142707,28 +142711,12 @@
             updateEcartHUD();
         }
 
-        function ecartUseHint() {
-            if (isAnimating) return;
-            const targetStr = ecartCorrectGapString;
-
-            if (ecartHintsRevealed < targetStr.length) {
-                ecartHintsRevealed++;
-                let currentInput = ecartInput;
-                let newStr = '';
-                for (let i = 0; i < targetStr.length; i++) {
-                    if (i < ecartHintsRevealed) {
-                        newStr += targetStr[i];
-                    } else if (i < currentInput.length) {
-                        newStr += currentInput[i];
-                    }
-                }
-                ecartInput = newStr;
-                updateEcartDisplay();
-
-                if (ecartHintsRevealed === targetStr.length) {
-                    ecartSubmit(true);
-                }
-            }
+        // Met à jour le badge passif indiquant le nombre d'essais restants sur la
+        // question en cours (remplace l'ancien bouton indice, sans intérêt ici puisque
+        // chaque proposition renvoie déjà un indice « plus »/« moins »).
+        function updateEcartChancesBadge() {
+            const remaining = ECART_MAX_ATTEMPTS - ecartAttempts;
+            document.getElementById('ecart-chances-badge').innerText = `🎯 ${remaining} essai${remaining > 1 ? 's' : ''}`;
         }
 
         function ecartKeyPress(digit) {
@@ -142740,116 +142728,126 @@
 
         function ecartBackspace() {
             if (isAnimating) return;
-            if (ecartInput.length > ecartHintsRevealed) {
-                ecartInput = ecartInput.slice(0, -1);
-                updateEcartDisplay();
-            }
+            ecartInput = ecartInput.slice(0, -1);
+            updateEcartDisplay();
         }
 
         function ecartClear() {
             if (isAnimating) return;
-            ecartInput = ecartInput.slice(0, ecartHintsRevealed);
+            ecartInput = '';
             updateEcartDisplay();
         }
 
         function updateEcartDisplay() {
             const display = document.getElementById('ecart-display-value');
-            if (!ecartInput) {
-                display.innerHTML = '—';
-            } else {
-                let html = '';
-                for (let i = 0; i < ecartInput.length; i++) {
-                    if (i < ecartHintsRevealed) {
-                        html += `<span style="color: #2CA85A;">${ecartInput[i]}</span>`;
-                    } else {
-                        html += ecartInput[i];
-                    }
-                }
-                display.innerHTML = html;
-            }
+            display.innerText = ecartInput || '—';
             display.classList.remove('fil-feedback-correct', 'fil-feedback-wrong');
 
-            document.getElementById('ecart-validate-btn').disabled = ecartInput.length === 0 && ecartHintsRevealed === 0;
-            document.getElementById('ecart-hint-btn').disabled = (ecartHintsRevealed >= ecartCorrectGapString.length);
+            document.getElementById('ecart-validate-btn').disabled = ecartInput.length === 0;
         }
 
-        function ecartSubmit(autoFailByHint = false) {
-            // gère la différence de signature puisque onclick n'y passe aucun argument
-            if (typeof autoFailByHint !== 'boolean') autoFailByHint = false;
+        // Chaque appel correspond à UNE proposition (comme au « Juste Prix ») : si elle
+        // est fausse, le jeu répond « plus » ou « moins » et le joueur retente sa chance
+        // (jusqu'à ECART_MAX_ATTEMPTS essais) au lieu de passer directement à la question
+        // suivante. 100 points de base, -20 points par proposition fausse ; une vie n'est
+        // perdue que si les 5 essais sont épuisés sans trouver l'écart exact.
+        function ecartSubmit() {
             if (isAnimating) return;
-            if (!autoFailByHint && ecartInput.length === 0) return;
+            if (ecartInput.length === 0) return;
             isAnimating = true;
 
             const q = ecartQuestions[ecartIndex];
             const guessedGap = parseInt(ecartInput, 10);
-            const gapError = autoFailByHint ? Infinity : Math.abs(guessedGap - q.gap);
-            const isPerfect = gapError === 0;
-
-            if (autoFailByHint) {
-                lives -= 1;
-                comboMultiplier = 1.0;
-                playWrongSound();
-            } else {
-                let deduction = ecartHintsRevealed * 25;
-                if (deduction > 100) deduction = 100;
-
-                let points = 0;
-                if (isPerfect) {
-                    points = Math.max(0, 100 - deduction);
-                    if (ecartHintsRevealed === 0) {
-                        points = Math.round(points * comboMultiplier);
-                        comboMultiplier = Math.min(5.0, comboMultiplier + 0.1);
-                    } else {
-                        comboMultiplier = 1.0;
-                    }
-                    score += points;
-                    playCorrectSound(comboMultiplier);
-                } else {
-                    lives -= 1;
-                    const maxGap = Math.max(currentGameSpan, 10);
-                    let basePts = 100 * (1 - (gapError / maxGap));
-                    if (basePts < 0) basePts = 0;
-                    points = Math.max(0, Math.round(basePts) - deduction);
-                    score += points;
-                    comboMultiplier = 1.0;
-                    playWrongSound();
-                }
-            }
-
-            srsRecord(q.eventA.id, isPerfect);
-            srsRecord(q.eventB.id, isPerfect);
-            updateEcartHUD();
+            const isPerfect = guessedGap === q.gap;
+            ecartAttempts++;
 
             const display = document.getElementById('ecart-display-value');
-            display.classList.add(isPerfect ? 'fil-feedback-correct' : 'fil-feedback-wrong');
-            document.getElementById('ecart-validate-btn').disabled = true;
-            document.getElementById('ecart-hint-btn').disabled = true;
-
             const badge = document.getElementById('ecart-answer-badge');
-            if (!isPerfect) {
-                badge.innerText = `Écart réel : ${q.gap} an${q.gap > 1 ? 's' : ''}`;
-                badge.className = 'fil-answer-badge badge-wrong';
-            } else if (ecartHintsRevealed > 0) {
-                badge.innerText = `Exact (avec indice)`;
+
+            if (isPerfect) {
+                let points = Math.max(0, 100 - (ecartAttempts - 1) * 20);
+                if (ecartAttempts === 1) {
+                    points = Math.round(points * comboMultiplier);
+                    comboMultiplier = Math.min(5.0, comboMultiplier + 0.1);
+                } else {
+                    comboMultiplier = 1.0;
+                }
+                score += points;
+                playCorrectSound(comboMultiplier);
+
+                srsRecord(q.eventA.id, true);
+                srsRecord(q.eventB.id, true);
+                updateEcartHUD();
+
+                display.classList.add('fil-feedback-correct');
+                document.getElementById('ecart-validate-btn').disabled = true;
+
+                badge.innerText = ecartAttempts === 1 ? `Exact du premier coup !` : `Exact ! (essai n°${ecartAttempts})`;
                 badge.className = 'fil-answer-badge badge-correct';
-            } else {
-                badge.innerText = `Exact !`;
-                badge.className = 'fil-answer-badge badge-correct';
+
+                document.getElementById('ecart-event-a-year').innerText = formatYear(q.eventA.date);
+                document.getElementById('ecart-event-b-year').innerText = formatYear(q.eventB.date);
+                document.getElementById('ecart-event-a-year').classList.remove('hidden');
+                document.getElementById('ecart-event-b-year').classList.remove('hidden');
+
+                setTimeout(() => {
+                    ecartIndex++;
+                    if (lives <= 0) {
+                        endGame(false);
+                    } else {
+                        renderEcartQuestion();
+                    }
+                }, 1800);
+                return;
             }
 
-            document.getElementById('ecart-event-a-year').innerText = formatYear(q.eventA.date);
-            document.getElementById('ecart-event-b-year').innerText = formatYear(q.eventB.date);
-            document.getElementById('ecart-event-a-year').classList.remove('hidden');
-            document.getElementById('ecart-event-b-year').classList.remove('hidden');
+            playWrongSound();
+
+            if (ecartAttempts >= ECART_MAX_ATTEMPTS) {
+                // Les 5 essais sont épuisés sans succès : échec de la question.
+                lives -= 1;
+                comboMultiplier = 1.0;
+
+                srsRecord(q.eventA.id, false);
+                srsRecord(q.eventB.id, false);
+                updateEcartHUD();
+
+                display.classList.add('fil-feedback-wrong');
+                document.getElementById('ecart-validate-btn').disabled = true;
+
+                badge.innerText = `Écart réel : ${q.gap} an${q.gap > 1 ? 's' : ''}`;
+                badge.className = 'fil-answer-badge badge-wrong';
+
+                document.getElementById('ecart-event-a-year').innerText = formatYear(q.eventA.date);
+                document.getElementById('ecart-event-b-year').innerText = formatYear(q.eventB.date);
+                document.getElementById('ecart-event-a-year').classList.remove('hidden');
+                document.getElementById('ecart-event-b-year').classList.remove('hidden');
+
+                setTimeout(() => {
+                    ecartIndex++;
+                    if (lives <= 0) {
+                        endGame(false);
+                    } else {
+                        renderEcartQuestion();
+                    }
+                }, 1800);
+                return;
+            }
+
+            // Il reste des essais : on indique juste si l'écart réel est plus grand ou
+            // plus petit que la proposition, puis on laisse le joueur retenter sa chance.
+            display.classList.add('fil-feedback-wrong');
+            badge.innerText = guessedGap < q.gap ? `C'est plus ! ▲` : `C'est moins ! ▼`;
+            badge.className = 'fil-answer-badge badge-hint';
+            updateEcartChancesBadge();
 
             setTimeout(() => {
-                ecartIndex++;
-                if (lives <= 0) {
-                    endGame(false);
-                } else {
-                    renderEcartQuestion();
-                }
-            }, 1800);
+                ecartInput = '';
+                updateEcartDisplay();
+                badge.className = 'fil-answer-badge hidden';
+                badge.innerText = '';
+                isAnimating = false;
+            }, 1100);
         }
 
         function updateEcartHUD() {
