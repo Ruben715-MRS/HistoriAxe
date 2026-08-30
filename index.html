@@ -390,6 +390,19 @@
 
         #screen-game { flex: 1; display: flex; flex-direction: column; min-height: 0; background: var(--paper); }
 
+        /* Écrans de jeu Quiz / Fil du temps / Périodes & Ères / Avant-Après / Trouve
+           l'écart : même charpente que #screen-game ci-dessus (barre fixe en haut, zone
+           de contenu qui prend le reste et défile) pour que le bouton de validation reste
+           toujours atteignable même quand le contenu dépasse la hauteur de l'écran (petit
+           iPhone, texte agrandi, titre d'événement long…), la barre du navigateur mobile
+           réduisant d'autant la hauteur disponible. */
+        #screen-quiz, #screen-fil, #screen-periodes, #screen-avant-apres, #screen-ecart {
+            flex: 1; display: flex; flex-direction: column; min-height: 0;
+        }
+        .quiz-body, .fil-body, .periodes-body, .avap-body {
+            flex: 1; min-height: 0; overflow-y: auto; -webkit-overflow-scrolling: touch;
+        }
+
         /* --- Barre de partie --- */
         .game-bar { background: var(--surface); border-bottom: 1px solid var(--rule); padding: 9px 16px 11px; display: flex; flex-direction: column; gap: 9px; flex-shrink: 0; }
         .bar-row { display: flex; align-items: center; gap: 10px; }
