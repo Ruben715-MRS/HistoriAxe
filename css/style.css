@@ -12,6 +12,7 @@
             /* Jetons additionnels pour le thème sombre */
             --surface: #FFFFFF;
             --surface-2: #ecf5fe;
+            --card-bg: #FFFFFF;
             --muted-text: #888888;
             --border-soft: #E5E7EB;
             --btn-secondary-bg: #CCCCCC;
@@ -93,27 +94,25 @@
         /* Icônes rondes des 4 actions rapides (Favoris / Découvrir / Réviser / Progression),
            en tête de l'écran des catégories. Couleurs pilotées par les tokens de thème :
            auparavant fond blanc et icônes bleu marine/rouge codés en dur, ce qui restait
-           blanc même en mode sombre et tranchait violemment avec le reste de l'écran. */
-        .quick-action-circle { background: var(--surface); box-shadow: var(--card-shadow); transition: background 0.2s, box-shadow 0.2s; }
+           blanc même en mode sombre et tranchait violemment avec le reste de l'écran.
+           En mode sombre, elles utilisent var(--surface) (bleu nuit élégant). */
+        .quick-action-circle { background: var(--surface); border: 1px solid var(--border-soft); box-shadow: var(--card-shadow); transition: background 0.2s, box-shadow 0.2s, transform 0.2s; }
+        .quick-action-circle:hover { background: var(--surface-2); transform: translateY(-2px); }
         .quick-action-icon { color: var(--primary-blue); }
         .quick-action-icon.danger { color: var(--danger-red); }
         .quick-action-icon.favoris { color: var(--favorite-yellow); }
         .quick-action-icon.progress { color: var(--progress-green); }
         .quick-action-label { font-size: 12px; font-weight: 500; display: block; margin-top: 8px; color: var(--muted-text); }
+        :root[data-theme="dark"] .quick-action-circle { background: var(--surface); border-color: var(--border-soft); }
         :root[data-theme="dark"] .quick-action-icon { color: #5dade2; }
         :root[data-theme="dark"] .quick-action-icon.danger { color: #ec7063; }
         :root[data-theme="dark"] .quick-action-icon.favoris { color: #f0c419; }
         :root[data-theme="dark"] .quick-action-icon.progress { color: #4caf6f; }
 
-        /* Puce du « Défi du jour » : en thème clair, le fond reste volontairement
-           blanc (identité propre au mode, façon badge) et l'icône « globe » prend un
-           vert foncé pour rester lisible dessus. En thème sombre, ce fond blanc fixe
-           tranchait avec les trois autres puces de la même ligne (qui suivent
-           var(--surface)) et rendait en plus l'icône verte quasi invisible dessus :
-           on aligne donc le fond sur var(--surface) comme les autres puces, avec
-           l'icône dans le même vert clair que celui utilisé ailleurs en thème sombre. */
-        .quick-action-circle.daily-white { background: #ffffff; }
-        :root[data-theme="dark"] .quick-action-circle.daily-white { background: var(--surface); }
+        /* Puce du « Défi du jour » : en thème clair, le fond reste blanc et l'icône verte.
+           En thème sombre, fond bleu nuit var(--surface) avec bordure douce et icône verte claire. */
+        .quick-action-circle.daily-white { background: var(--surface); border: 1px solid var(--border-soft); }
+        :root[data-theme="dark"] .quick-action-circle.daily-white { background: var(--surface); border-color: var(--border-soft); }
         .quick-action-icon.daily-challenge { color: #1E8449; }
         :root[data-theme="dark"] .quick-action-icon.daily-challenge { color: #2ECC71; }
 
@@ -1438,6 +1437,7 @@
             --hand-bg: #2C374A;
             --surface: #1B212B;
             --surface-2: #232A35;
+            --card-bg: #1B212B;
             --muted-text: #8B93A0;
             --border-soft: #2E3644;
             --btn-secondary-bg: #2B323D;

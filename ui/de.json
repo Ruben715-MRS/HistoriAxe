@@ -1,0 +1,233 @@
+{
+  "version": "1.0.0",
+  "lang": "de",
+  "app": {
+    "title": "HistoriAxe",
+    "subtitle": "Das Chronologische Quiz",
+    "tagline": "Entdecken und meistern Sie die Zeitleiste der Weltgeschichte"
+  },
+  "nav": {
+    "back": "Zurück",
+    "menu": "Menü",
+    "cancel": "Abbrechen",
+    "continue": "Weiter",
+    "close": "Schließen",
+    "validate": "Bestätigen",
+    "delete": "Löschen",
+    "reset": "Zurücksetzen"
+  },
+  "categories": {
+    "search_placeholder": "Thema suchen…",
+    "search_empty": "Kein Thema entspricht Ihrer Suche.",
+    "special_favorites": "Favoriten",
+    "special_discover": "Entdecken",
+    "special_daily": "Tages-Herausforderung",
+    "special_revision": "Wiederholen",
+    "themes_count": "{count} Thema/Themen",
+    "events_count": "{count} Ereignis(se)",
+    "choose_category": "Wählen Sie eine Kategorie"
+  },
+  "subcategories": {
+    "choose_region": "Wählen Sie eine Region / Unterkategorie"
+  },
+  "themes": {
+    "choose_theme": "Wählen Sie ein Thema",
+    "empty_themes": "Zurzeit sind keine Themen verfügbar.",
+    "custom_badge": "Benutzerdefiniert"
+  },
+  "axes": {
+    "title": "Thematische Schwerpunkte",
+    "subtitle_selected": "{theme} — {count} Ereignis(se) ausgewählt",
+    "subtitle_select_one": "{theme} — wählen Sie mindestens einen Schwerpunkt",
+    "continue_btn": "Mit diesen Schwerpunkten fortfahren"
+  },
+  "modes": {
+    "choose_mode": "Wählen Sie einen Spielmodus",
+    "discovery": {
+      "title": "Entdeckung",
+      "desc": "Durchstöbern Sie die Zeitleiste ohne Lebensverlust."
+    },
+    "selection": {
+      "title": "Auswahl",
+      "desc": "Wählen Sie bestimmte Ereignisse für das Spiel aus."
+    },
+    "add_event": {
+      "title": "Ereignis hinzufügen",
+      "desc": "Erstellen Sie eigene Meilensteine für dieses Thema."
+    },
+    "training": {
+      "title": "Training",
+      "desc": "Kein Lebensverlust. Spielen Sie in Ihrem eigenen Tempo."
+    },
+    "classic": {
+      "title": "Klassisch",
+      "desc": "3 Leben. Die standardmäßige chronologische Herausforderung."
+    },
+    "chrono": {
+      "title": "Chrono",
+      "desc": "3 Leben. Platzieren Sie Ereignisse schnell für Zeitboni."
+    },
+    "expert": {
+      "title": "Experte",
+      "desc": "Nur 1 Leben, strenger Timer. Für echte Historiker."
+    },
+    "quiz": {
+      "title": "Quiz",
+      "desc": "Schnelle Multiple-Choice-Fragen (MCQ)."
+    },
+    "avantapres": {
+      "title": "Vorher / Nachher",
+      "desc": "3 Leben. Erraten Sie, welches von zwei undatierten Ereignissen zuerst geschah."
+    },
+    "periodes": {
+      "title": "Epochen & Jahrhunderte",
+      "desc": "3 Leben. Ordnen Sie jedes Ereignis seinem Jahrhundert oder seiner Epoche zu."
+    },
+    "fil": {
+      "title": "Der Faden der Zeit",
+      "desc": "Geben Sie die genaue Jahreszahl in chronologischer Reihenfolge ein."
+    },
+    "ecart": {
+      "title": "Finde den Abstand",
+      "desc": "3 Leben. Schätzen Sie die Jahresdifferenz zwischen zwei Ereignissen."
+    },
+    "multi": {
+      "title": "Mehrspieler",
+      "desc": "Abwechselnd auf demselben Bildschirm, Ausscheiden nach 2 Fehlern."
+    },
+    "score_history": "🏆 Punkteverlauf"
+  },
+  "game": {
+    "score": "Punktzahl: {val}",
+    "combo": "×{val}",
+    "lives": "Leben",
+    "era_bc": "v. Chr.",
+    "era_ad": "n. Chr.",
+    "hint_btn": "Hinweis",
+    "fifty_fifty_btn": "50:50 ({count})",
+    "validate_btn": "Bestätigen",
+    "date_revealed": "Datum enthüllt",
+    "slot_higher": "Nein — {date} gehört weiter nach oben",
+    "slot_lower": "Nein — {date} gehört weiter nach unten",
+    "place_here": "Hier platzieren",
+    "quiz_event_to_year": "In welchem Jahr fand dieses Ereignis statt?",
+    "quiz_year_to_event": "Welches Ereignis entspricht diesem Jahr?",
+    "avap_which_first": "Welches Ereignis geschah zuerst?",
+    "fil_enter_year": "Geben Sie das genaue Jahr ein:",
+    "ecart_estimate_gap": "Wie viele Jahre liegen zwischen diesen beiden Ereignissen?"
+  },
+  "end": {
+    "game_over": "Game Over!",
+    "victory_default": "Bravo! Zeitleiste erfolgreich abgeschlossen!",
+    "victory_quiz": "Bravo! Quiz abgeschlossen!",
+    "victory_avap": "Bravo! Vorher / Nachher gemeistert!",
+    "victory_fil": "Bravo! Faden der Zeit erfolgreich gemeistert!",
+    "victory_periodes": "Bravo! Epochen & Jahrhunderte gemeistert!",
+    "victory_ecart": "Bravo! Alle Abstände erraten!",
+    "victory_daily": "Bravo! Tages-Herausforderung bestanden!",
+    "final_score": "Punktzahl: {val} Punkte",
+    "final_time": "Dauer: {val} s",
+    "streak_banner": "🔥 Aktuelle Serie: {count} Tag(e)",
+    "replay_btn": "Nochmal spielen",
+    "menu_btn": "Menü",
+    "share_title": "Ihr Ergebnis",
+    "share_daily_title": "Ihre Tages-Herausforderung",
+    "share_btn": "Punktzahl teilen",
+    "share_daily_btn": "Ergebnis teilen",
+    "share_toast_copied": "✨ Ergebnis in die Zwischenablage kopiert!",
+    "share_toast_error": "📋 Automatisches Kopieren fehlgeschlagen",
+    "share_cta": "Mach mit bei HistoriAxe!"
+  },
+  "daily": {
+    "title_win": "🌍 Tages-Herausforderung bestanden!",
+    "title_over": "🌍 Tages-Herausforderung beendet",
+    "score_stat": "Punktzahl",
+    "time_stat": "Zeit",
+    "streak_stat": "Serie",
+    "countdown_label": "Nächste Herausforderung in",
+    "pseudo_label": "Ihr Nickname (Globale Rangliste)",
+    "pseudo_placeholder": "Z. B.: ChronoMaster",
+    "submit_btn": "Punktzahl senden",
+    "submit_loading": "Wird gesendet…",
+    "submit_success": "Punktzahl übermittelt! Lokaler Rang: #{rank} von {total}.",
+    "submit_error": "Punktzahl konnte nicht gesendet werden. Bitte erneut versuchen.",
+    "leaderboard_title": "🏆 Heutige Rangliste",
+    "leaderboard_empty": "Heute noch keine Punkte eingereicht. Seien Sie der Erste!"
+  },
+  "revision": {
+    "hub_title": "Schwachstellen wiederholen",
+    "tab_weak": "Schwachstellen",
+    "tab_progress": "Fortschritt",
+    "weak_empty": "Aktuell keine Schwachstellen erkannt. Bei Fehlern in Partien erscheinen Ereignisse hier zur Wiederholung.",
+    "random_session_title": "🎲 Zufällige Einheit",
+    "random_session_desc": "Eine Mischung Ihrer Schwachstellen aus allen Kategorien.",
+    "theme_session_title": "📚 Ganzes Thema wiederholen",
+    "theme_session_desc": "Üben Sie ein vollständiges Thema mit unsicheren Jahreszahlen.",
+    "reset_srs": "⟲ Zurücksetzen",
+    "reset_srs_confirm": "Möchten Sie den gesamten Wiederholungsverlauf (SRS-Boxen, Historie) zurücksetzen? Dies kann nicht rückgängig gemacht werden.",
+    "progress_legend_high": "Gut beherrscht (≥ 75%)",
+    "progress_legend_mid": "Zu festigen (40-74%)",
+    "progress_legend_low": "Unsicher (< 40%)",
+    "progress_legend_none": "Noch nicht getestet",
+    "progress_empty": "Noch keine Daten vorhanden. Spielen Sie einige Runden, um Ihren Fortschritt zu sehen."
+  },
+  "gamification": {
+    "rank_badge": "Stufe {level}",
+    "max_rank": "Höchster Rang erreicht!",
+    "xp_needed": "Noch {needed} XP bis {next}",
+    "stats_total_xp": "Gesamt-XP",
+    "stats_streak": "Rekordserie",
+    "stats_centurion": "Max Fehlerfrei",
+    "stats_badges": "Trophäen",
+    "trophies_title": "🏆 Trophäen & Erfolge",
+    "status_unlocked": "Freigeschaltet ✓",
+    "new_rank_toast": "👑 NEUER RANG: {title} (Stufe {level})!",
+    "new_badge_toast": "🏆 NEUE TROPHÄE: « {name} » freigeschaltet (+250 XP)!"
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "orientation_label": "Ausrichtung der Zeitleiste",
+    "orientation_auto": "Auto",
+    "orientation_vertical": "Vertikal",
+    "orientation_horizontal": "Horizontal",
+    "orientation_hint": "« Auto » folgt der physischen Drehung Ihres Geräts.",
+    "appearance_label": "Erscheinungsbild",
+    "appearance_auto": "Auto",
+    "appearance_light": "Hell",
+    "appearance_dark": "Dunkel",
+    "appearance_hint": "« Auto » folgt den Systemeinstellungen für Hell-/Dunkelmodus.",
+    "sound_label": "Immersiver Sound",
+    "sound_on": "Aktiviert",
+    "sound_off": "Deaktiviert",
+    "sound_hint": "Harmonische Glockenklänge, Kartengeräusche und Audiofeedback.",
+    "haptics_label": "Vibration & Haptik",
+    "haptics_on": "Aktiviert",
+    "haptics_off": "Deaktiviert",
+    "haptics_hint": "Taktiles Feedback bei Interaktionen, richtigen Antworten und Fehlern.",
+    "language_label": "Sprache & Inhaltspakete",
+    "installed_badge": "Installiert",
+    "active_badge": "Aktiv",
+    "download_btn": "Herunterladen",
+    "downloading_btn": "Wird heruntergeladen…",
+    "delete_btn": "Löschen",
+    "offline_ready_hint": "Heruntergeladene Pakete sind zu 100% offline verfügbar.",
+    "data_section": "Spieldaten",
+    "scoring_info_btn": "📖 Erklärung der Punkteberechnung",
+    "reset_game_btn": "⚠️ Alle Daten zurücksetzen",
+    "reset_confirm_msg": "Dadurch werden Favoriten, benutzerdefinierte Themen, SRS-Verlauf, Punkte und Fortschritt unwiderruflich gelöscht. Fortfahren?"
+  },
+  "anecdote": {
+    "did_you_know": "💡 Wussten Sie schon?",
+    "read_more_wiki": "Mehr auf Wikipedia erfahren ↗"
+  },
+  "custom": {
+    "create_theme_title": "Benutzerdefiniertes Thema erstellen",
+    "theme_name_label": "Name des Themas *",
+    "theme_diff_label": "Schwierigkeitsgrad (optional)",
+    "create_event_title": "Ereignis hinzufügen",
+    "event_year_label": "Jahr *",
+    "event_title_label": "Titel des Ereignisses *",
+    "event_desc_label": "Beschreibung (optional)",
+    "save_btn": "Erstellen"
+  }
+}

@@ -7,7 +7,10 @@ const I18N_DATA_CACHE = 'historiaxe-data-v1.0.0';
 const AVAILABLE_LANGUAGES = [
     { code: 'fr', name: 'Français', flag: '🇫🇷', version: '1.0.0', size: '11.7 Mo (Intégral)', isDefault: true },
     { code: 'en', name: 'English', flag: '🇬🇧', version: '1.0.0', size: '150 Ko (Démo)', isDefault: false },
-    { code: 'es', name: 'Español', flag: '🇪🇸', version: '1.0.0', size: '150 Ko (Démo)', isDefault: false }
+    { code: 'es', name: 'Español', flag: '🇪🇸', version: '1.0.0', size: '150 Ko (Démo)', isDefault: false },
+    { code: 'de', name: 'Deutsch', flag: '🇩🇪', version: '1.0.0', size: '150 Ko (Démo)', isDefault: false },
+    { code: 'it', name: 'Italiano', flag: '🇮🇹', version: '1.0.0', size: '150 Ko (Démo)', isDefault: false },
+    { code: 'ja', name: '日本語', flag: '🇯🇵', version: '1.0.0', size: '150 Ko (Démo)', isDefault: false }
 ];
 
 // Dictionnaire de secours intégré pour garantir un affichage parfait même hors-ligne

@@ -1,0 +1,155 @@
+{
+  "version": "1.0.0",
+  "lang": "de",
+  "name": "Deutsch (Demo-Paket)",
+  "totalThemes": 2,
+  "totalEvents": 20,
+  "categories": [
+    {
+      "nom": "Allgemeinwissen",
+      "subcategories": [
+        {
+          "nom": "Wissenschaft & Raumfahrt",
+          "themes": [
+            {
+              "id": "thm_space_de",
+              "nom": "Die Eroberung des Weltraums",
+              "difficulte": "Alle Stufen",
+              "events": [
+                {
+                  "id": "esp_de_01",
+                  "axe": "Wegbereiter & Theorie",
+                  "date": 1543,
+                  "titre": "Kopernikus veröffentlicht De revolutionibus",
+                  "description": "Nikolaus Kopernikus begründet das heliozentrische Weltbild, in dem die Erde die Sonne umkreist.",
+                  "wikipedia": "https://de.wikipedia.org/wiki/De_revolutionibus_orbium_coelestium"
+                },
+                {
+                  "id": "esp_de_02",
+                  "axe": "Wegbereiter & Theorie",
+                  "date": 1609,
+                  "titre": "Kepler formuliert die Planetengesetze",
+                  "description": "Johannes Kepler veröffentlicht die Astronomia Nova und beschreibt die elliptischen Planetenbahnen.",
+                  "wikipedia": "https://de.wikipedia.org/wiki/Keplersche_Gesetze"
+                },
+                {
+                  "id": "esp_de_03",
+                  "axe": "Raumfahrtzeitalter",
+                  "date": 1957,
+                  "titre": "Start von Sputnik 1",
+                  "description": "Die Sowjetunion bringt den ersten künstlichen Satelliten ins All und eröffnet das Raumfahrtzeitalter.",
+                  "wikipedia": "https://de.wikipedia.org/wiki/Sputnik_1"
+                },
+                {
+                  "id": "esp_de_04",
+                  "axe": "Bemannte Raumfahrt",
+                  "date": 1961,
+                  "titre": "Juri Gagarin fliegt ins All",
+                  "description": "Der sowjetische Kosmonaut Juri Gagarin umrundet als erster Mensch an Bord von Wostok 1 die Erde.",
+                  "wikipedia": "https://de.wikipedia.org/wiki/Juri_Alexejewitsch_Gagarin"
+                },
+                {
+                  "id": "esp_de_05",
+                  "axe": "Mondlandung",
+                  "date": 1969,
+                  "titre": "Mondlandung von Apollo 11",
+                  "description": "Neil Armstrong betritt als erster Mensch die Mondoberfläche.",
+                  "wikipedia": "https://de.wikipedia.org/wiki/Apollo_11"
+                },
+                {
+                  "id": "esp_de_06",
+                  "axe": "Weltraumteleskope",
+                  "date": 1990,
+                  "titre": "Start des Hubble-Weltraumteleskops",
+                  "description": "Die NASA und die ESA bringen das Hubble-Teleskop in den Orbit und revolutionieren die Astronomie.",
+                  "wikipedia": "https://de.wikipedia.org/wiki/Hubble-Weltraumteleskop"
+                },
+                {
+                  "id": "esp_de_07",
+                  "axe": "Weltraumteleskope",
+                  "date": 2021,
+                  "titre": "Start des James-Webb-Weltraumteleskops",
+                  "description": "Das leistungsstärkste Infrarot-Weltraumteleskop wird zum Lagrange-Punkt L2 gestartet.",
+                  "wikipedia": "https://de.wikipedia.org/wiki/James-Webb-Weltraumteleskop"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "nom": "Weltgeschichte",
+      "subcategories": [
+        {
+          "nom": "Große Wendepunkte",
+          "themes": [
+            {
+              "id": "thm_turning_points_de",
+              "nom": "Meilensteine der Weltgeschichte",
+              "difficulte": "Alle Stufen",
+              "events": [
+                {
+                  "id": "wh_de_01",
+                  "axe": "Antike",
+                  "date": -753,
+                  "titre": "Gründung Roms",
+                  "description": "Nach römischer Sage wird die Stadt Rom von Romulus auf dem Palatin gegründet.",
+                  "wikipedia": "https://de.wikipedia.org/wiki/R%C3%B6misches_Reich"
+                },
+                {
+                  "id": "wh_de_02",
+                  "axe": "Antike",
+                  "date": -44,
+                  "titre": "Ermordung von Julius Cäsar",
+                  "description": "Julius Cäsar wird an den Iden des März im römischen Senat ermordet.",
+                  "wikipedia": "https://de.wikipedia.org/wiki/Gaius_Iulius_Caesar"
+                },
+                {
+                  "id": "wh_de_03",
+                  "axe": "Mittelalter",
+                  "date": 800,
+                  "titre": "Kaiserkrönung Karls des Großen",
+                  "description": "Papst Leo III. krönt Karl den Großen in Rom zum römischen Kaiser.",
+                  "wikipedia": "https://de.wikipedia.org/wiki/Karl_der_Gro%C3%9Fe"
+                },
+                {
+                  "id": "wh_de_04",
+                  "axe": "Frühe Neuzeit",
+                  "date": 1450,
+                  "titre": "Gutenberg erfindet den modernen Buchdruck",
+                  "description": "Johannes Gutenberg revolutioniert die Verbreitung von Wissen durch bewegliche Metall-Lettern.",
+                  "wikipedia": "https://de.wikipedia.org/wiki/Johannes_Gutenberg"
+                },
+                {
+                  "id": "wh_de_05",
+                  "axe": "Frühe Neuzeit",
+                  "date": 1517,
+                  "titre": "Martin Luther schlägt die 95 Thesen an",
+                  "description": "Der Thesenanschlag an der Schlosskirche zu Wittenberg leitet die Reformation ein.",
+                  "wikipedia": "https://de.wikipedia.org/wiki/95_Thesen"
+                },
+                {
+                  "id": "wh_de_06",
+                  "axe": "Neuzeit",
+                  "date": 1789,
+                  "titre": "Sturm auf die Bastille",
+                  "description": "Der Sturm auf das Pariser Staatsgefängnis markiert den Beginn der Französischen Revolution.",
+                  "wikipedia": "https://de.wikipedia.org/wiki/Sturm_auf_die_Bastille"
+                },
+                {
+                  "id": "wh_de_07",
+                  "axe": "Zeitgeschichte",
+                  "date": 1989,
+                  "titre": "Fall der Berliner Mauer",
+                  "description": "Die Öffnung der innerdeutschen Grenze besiegelt das Ende des Kalten Krieges in Europa.",
+                  "wikipedia": "https://de.wikipedia.org/wiki/Fall_der_Berliner_Mauer"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
