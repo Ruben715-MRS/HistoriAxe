@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+
+# Backups & Temporary files
+*.bak
+*.tmp
+.DS_Store
+Thumbs.db
+
+# iOS build & CocoaPods artifacts
+ios/App/Pods/
+ios/App/Podfile.lock
+ios/App/build/
+ios/App/DerivedData/
+
+# Generated web build folder
+www/

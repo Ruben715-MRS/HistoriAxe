@@ -1,0 +1,23 @@
+{
+  "name": "historiaxe",
+  "version": "1.0.0",
+  "description": "HistoriAxe — Le Quiz Chronologique (PWA & iOS Native App)",
+  "private": true,
+  "scripts": {
+    "cap:sync": "node scripts/build.js && npx cap sync",
+    "cap:open:ios": "cap open ios",
+    "cap:build:ios": "node scripts/build.js && npx cap sync ios",
+    "build": "node scripts/build.js"
+  },
+  "dependencies": {
+    "@capacitor/app": "^6.0.0",
+    "@capacitor/core": "^6.0.0",
+    "@capacitor/haptics": "^6.0.0",
+    "@capacitor/ios": "^6.0.0",
+    "@capacitor/splash-screen": "^6.0.0",
+    "@capacitor/status-bar": "^6.0.0"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^6.0.0"
+  }
+}

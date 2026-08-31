@@ -1,0 +1,37 @@
+{
+  "appId": "com.historiaxe.app",
+  "appName": "HistoriAxe",
+  "webDir": "www",
+  "server": {
+    "iosScheme": "https",
+    "androidScheme": "https"
+  },
+  "ios": {
+    "contentInset": "always",
+    "allowsLinkPreview": false,
+    "handleApplicationURL": true
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 1800,
+      "launchAutoHide": true,
+      "backgroundColor": "#001a4b",
+      "androidSplashResourceName": "splash",
+      "androidScaleType": "CENTER_CROP",
+      "showSpinner": true,
+      "androidSpinnerStyle": "small",
+      "iosSpinnerStyle": "small",
+      "spinnerColor": "#d4a017",
+      "splashFullScreen": true,
+      "splashImmersive": true
+    },
+    "StatusBar": {
+      "style": "DARK",
+      "backgroundColor": "#001a4b",
+      "overlaysWebView": false
+    },
+    "Haptics": {
+      "enabled": true
+    }
+  }
+}
