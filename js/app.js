@@ -1,97 +1,27 @@
-// =========================================================================
-// === HISTORIAXE — CONTRÔLEUR PRINCIPAL & MOTEURS DE JEU (APP.JS) ===
-// =========================================================================
+let appSettings = settingsLoad();
 
-// La variable globale bdd est initialisée et alimentée dynamiquement par js/i18n.js
-if (typeof window.bdd === 'undefined') {
-    window.bdd = [];
-}
-
-// === RÉGLAGES (orientation de la frise, apparence claire/sombre) ===
-        // « auto » suit respectivement la rotation physique de l'appareil et le
-        // réglage clair/sombre du système ; un choix explicite verrouille l'un ou l'autre.
-        const SETTINGS_KEY = 'historiaxe_settings_v1';
-        // axesLegendPinned : true = la légende des axes (mode Découverte) reste
-        // épinglée en permanence pendant le défilement ; false = elle défile
-        // normalement avec la frise et n'est visible qu'au tout début.
-        const DEFAULT_SETTINGS = { orientation: 'auto', appearance: 'auto', axesLegendPinned: true, sound: true, haptics: true };
-
-        function settingsLoad() {
-            try { return Object.assign({}, DEFAULT_SETTINGS, JSON.parse(localStorage.getItem(SETTINGS_KEY)) || {}); }
-            catch (e) { return Object.assign({}, DEFAULT_SETTINGS); }
-        }
-        function settingsSave(data) {
-            try { localStorage.setItem(SETTINGS_KEY, JSON.stringify(data)); } catch (e) {}
-        }
-
-        let appSettings = settingsLoad();
         const systemDarkQuery = window.matchMedia('(prefers-color-scheme: dark)');
         const systemLandscapeQuery = window.matchMedia('(orientation: landscape)');
 
-        // Applique le thème clair/sombre au document selon le réglage courant
         function applyAppearance() {
             let isDark;
             if (appSettings.appearance === 'dark') isDark = true;
             else if (appSettings.appearance === 'light') isDark = false;
-            else isDark = systemDarkQuery.matches; // auto : suit le système
+            else isDark = systemDarkQuery.matches;
             document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
         }
 
-        // Applique l'orientation de la frise (verticale/horizontale) selon le réglage courant
         function applyOrientationLayout() {
-            let horizontal;
-            if (appSettings.orientation === 'horizontal') horizontal = true;
-            else if (appSettings.orientation === 'vertical') horizontal = false;
-            else horizontal = systemLandscapeQuery.matches; // auto : suit la rotation de l'appareil
-            document.documentElement.setAttribute('data-layout', horizontal ? 'horizontal' : 'vertical');
+            let isLandscape;
+            if (appSettings.orientation === 'horizontal') isLandscape = true;
+            else if (appSettings.orientation === 'vertical') isLandscape = false;
+            else isLandscape = systemLandscapeQuery.matches;
+            document.documentElement.setAttribute('data-timeline-layout', isLandscape ? 'horizontal' : 'vertical');
+            if (typeof repositionEvents === 'function' && placedEvents && placedEvents.length > 0) {
+                repositionEvents();
+            }
         }
 
-        // Le système peut changer d'avis sans que l'utilisateur touche à l'app
-        // (bascule automatique jour/nuit, rotation physique) : on réagit en direct,
-        // mais seulement tant que le réglage correspondant est resté sur « auto ».
-        systemDarkQuery.addEventListener('change', () => {
-            if (appSettings.appearance === 'auto') applyAppearance();
-        });
-        systemLandscapeQuery.addEventListener('change', () => {
-            if (appSettings.orientation === 'auto') applyOrientationLayout();
-        });
-
-        function openSettings() {
-            renderSettingsUI();
-            document.getElementById('modal-settings').classList.remove('hidden');
-        }
-        function closeSettings() {
-            document.getElementById('modal-settings').classList.add('hidden');
-        }
-
-        function openScoringInfo() {
-            document.getElementById('modal-scoring-info').classList.remove('hidden');
-        }
-        function closeScoringInfo() {
-            document.getElementById('modal-scoring-info').classList.add('hidden');
-        }
-
-        // Efface les favoris, les thèmes/événements personnalisés, l'historique de révision (SRS)
-        // et la progression de déverrouillage des modes Chrono/Expert. Les réglages d'affichage
-        // sont conservés (ce ne sont pas des données de progression, mais des préférences d'interface).
-        function resetGameData() {
-            showConfirm(
-                "Cette action supprime définitivement vos thèmes favoris, l'intégralité de vos thèmes et événements personnalisés créés, tout l'historique de révision (points faibles, boîtes de mémorisation) et la progression de déverrouillage des modes Chrono/Expert. Cette action est irréversible. Voulez-vous continuer ?",
-                () => {
-                    try { localStorage.removeItem(FAVORITES_KEY); } catch (e) {}
-                    try { localStorage.removeItem(SRS_KEY); } catch (e) {}
-                    try { localStorage.removeItem(PROGRESS_KEY); } catch (e) {}
-                    try { localStorage.removeItem(CUSTOM_THEMES_KEY); } catch (e) {}
-                    try { localStorage.removeItem(CUSTOM_EVENTS_KEY); } catch (e) {}
-                    try { localStorage.removeItem(LEADERBOARD_KEY); } catch (e) {}
-                    try { localStorage.removeItem(GAMIFICATION_KEY); } catch (e) {}
-                    customCategory.themes = [];
-                    closeSettings();
-                    showScreen('screen-categories');
-                },
-                { okLabel: 'Tout réinitialiser' }
-            );
-        }
         function renderSettingsUI() {
             document.querySelectorAll('#settings-orientation button').forEach(btn => {
                 btn.classList.toggle('active', btn.dataset.value === appSettings.orientation);
@@ -108,14 +38,8 @@ if (typeof window.bdd === 'undefined') {
             if (typeof i18n !== 'undefined' && typeof i18n.renderLanguagePacksSettingsUI === 'function') {
                 i18n.renderLanguagePacksSettingsUI();
             }
-        });
-            document.querySelectorAll('#settings-appearance button').forEach(btn => {
-                btn.classList.toggle('active', btn.dataset.value === appSettings.appearance);
-            });
-            document.querySelectorAll('#settings-sound button').forEach(btn => {
-                btn.classList.toggle('active', (btn.dataset.value === 'on') === appSettings.sound);
-            });
         }
+
         function initSettingsControls() {
             document.querySelectorAll('#settings-orientation button').forEach(btn => {
                 btn.onclick = () => {
@@ -137,21 +61,104 @@ if (typeof window.bdd === 'undefined') {
                 btn.onclick = () => {
                     appSettings.sound = (btn.dataset.value === 'on');
                     settingsSave(appSettings);
-                    if (appSettings.sound) playCorrectSound(1.0); // petit aperçu immédiat quand on réactive le son
+                    if (appSettings.sound) playCorrectSound(1.0);
+                    renderSettingsUI();
+                };
+            });
+            document.querySelectorAll('#settings-haptics button').forEach(btn => {
+                btn.onclick = () => {
+                    appSettings.haptics = (btn.dataset.value === 'on');
+                    settingsSave(appSettings);
+                    if (appSettings.haptics) triggerHaptic('success');
                     renderSettingsUI();
                 };
             });
         }
+    
+// =========================================================================
+// === HISTORIAXE — CONTRÔLEUR PRINCIPAL & MOTEURS DE JEU (APP.JS) ===
+// =========================================================================
 
-        // === THÈMES ET ÉVÉNEMENTS PERSONNALISÉS ===
-        const CUSTOM_THEMES_KEY = 'historiaxe_custom_themes_v1';
-        const CUSTOM_EVENTS_KEY = 'historiaxe_custom_events_v1';
+// =========================================================================
+// =========================================================================
+// === HISTORIAXE — GESTION DE LA BDD ET CATÉGORIE PERSONNALISÉE ===
+// =========================================================================
 
-        const customCategory = {
-            nom: "🎨 Mes thèmes personnalisés",
-            isCustomCategory: true,
-            themes: []
-        };
+if (typeof window.bdd === 'undefined') {
+    window.bdd = [];
+}
+var bdd = window.bdd;
+
+const customCategory = {
+    nom: "🎨 Mes thèmes personnalisés",
+    isCustomCategory: true,
+    themes: []
+};
+
+function getAllEvents() {
+    const all = [];
+    const currentBdd = window.bdd || bdd || [];
+    currentBdd.forEach(cat => {
+        (function walk(node) {
+            if (node.subcategories) {
+                node.subcategories.forEach(walk);
+            } else if (node.themes) {
+                node.themes.forEach(thm => {
+                    if (thm.events) thm.events.forEach(evt => all.push(evt));
+                });
+            } else if (node.events) {
+                node.events.forEach(evt => all.push(evt));
+            }
+        })(cat);
+    });
+    return all;
+}
+
+function getAllEventsWithLocation() {
+    const all = [];
+    const currentBdd = window.bdd || bdd || [];
+    currentBdd.forEach((cat, ci) => {
+        (function walk(node, subcatPath) {
+            if (node.subcategories) {
+                node.subcategories.forEach((sub, si) => walk(sub, subcatPath.concat(si)));
+            } else if (node.themes) {
+                node.themes.forEach((thm, ti) => {
+                    if (thm.events) {
+                        thm.events.forEach((evt, ei) => {
+                            all.push({
+                                event: evt,
+                                category: cat,
+                                categoryIndex: ci,
+                                subcategoryIndex: subcatPath,
+                                theme: thm,
+                                themeIndex: ti,
+                                eventIndex: ei
+                            });
+                        });
+                    }
+                });
+            }
+        })(cat, []);
+    });
+    return all;
+}
+
+function ensureCustomCategoryInBdd() {
+    bdd = window.bdd || [];
+    if (!bdd.some(c => c && c.isCustomCategory)) {
+        bdd.push(customCategory);
+    }
+    window.bdd = bdd;
+    loadCustomThemesIntoBdd();
+}
+
+
+
+// === THÈMES ET ÉVÉNEMENTS PERSONNALISÉS ===
+        
+        
+
+        
         bdd.push(customCategory);
 
         function loadCustomThemesIntoBdd() {
@@ -290,7 +297,7 @@ if (typeof window.bdd === 'undefined') {
         }
 
         // === TABLEAU DES SCORES (LEADERBOARD) ===
-        const LEADERBOARD_KEY = 'historiaxe_leaderboard_v1';
+        
         
         function saveScoreToLeaderboard(themeId, mode, score) {
             try {
@@ -455,332 +462,12 @@ if (typeof window.bdd === 'undefined') {
         // === RÉVISION ESPACÉE (SRS) ===
         // Système de type Leitner à 5 boîtes, stocké dans le navigateur (localStorage).
         // Boîte 1 = tout juste manqué, boîte 5 = remaîtrisé (sort du lot des points faibles).
-        const SRS_KEY = 'historiaxe_srs_v1';
-
-        function srsLoad() {
-            try { return JSON.parse(localStorage.getItem(SRS_KEY)) || {}; }
-            catch (e) { return {}; }
-        }
-        function srsSave(data) {
-            try { localStorage.setItem(SRS_KEY, JSON.stringify(data)); } catch (e) {}
-        }
-        function srsRecord(eventId, isCorrect) {
-            const data = srsLoad();
-            const entry = data[eventId] || { box: 1, lastSeen: null, correct: 0, incorrect: 0 };
-            if (isCorrect) {
-                entry.box = Math.min(entry.box + 1, 5);
-                entry.correct += 1;
-            } else {
-                entry.box = 1;
-                entry.incorrect += 1;
-            }
-            entry.lastSeen = Date.now();
-            data[eventId] = entry;
-            srsSave(data);
-        }
-
-        // === PROGRESSION PAR THÈME (déverrouillage de Chrono / Expert) ===
-        // Découverte, Entraînement et Classique sont toujours libres d'accès.
-        // Réussir Classique sur un thème déverrouille Chrono sur ce même thème ;
-        // réussir Chrono déverrouille ensuite Expert, toujours sur ce thème.
-        const PROGRESS_KEY = 'historiaxe_progress_v1';
-        function progressLoad() {
-            try { return JSON.parse(localStorage.getItem(PROGRESS_KEY)) || {}; }
-            catch (e) { return {}; }
-        }
-        function progressSave(data) {
-            try { localStorage.setItem(PROGRESS_KEY, JSON.stringify(data)); } catch (e) {}
-        }
-        function progressRecordWin(themeId, mode) {
-            if (!themeId || (mode !== 'classic' && mode !== 'chrono')) return;
-            const data = progressLoad();
-            const entry = data[themeId] || { classicWon: false, chronoWon: false };
-            if (mode === 'classic') entry.classicWon = true;
-            if (mode === 'chrono') entry.chronoWon = true;
-            data[themeId] = entry;
-            progressSave(data);
-        }
-        function isChronoUnlocked(themeId) {
-            const data = progressLoad();
-            return !!(data[themeId] && data[themeId].classicWon);
-        }
-        function isExpertUnlocked(themeId) {
-            const data = progressLoad();
-            return !!(data[themeId] && data[themeId].chronoWon);
-        }
-
-        // Aplatit toute la base (toutes catégories/thèmes confondus) pour la révision transversale
-        function getAllEvents() {
-            const all = [];
-            bdd.forEach(cat => {
-                (function walk(node) {
-                    if (node.subcategories) {
-                        node.subcategories.forEach(walk);
-                    } else {
-                        node.themes.forEach(thm => {
-                            thm.events.forEach(evt => all.push(evt));
-                        });
-                    }
-                })(cat);
-            });
-            return all;
-        }
-
-        // Même parcours que getAllEvents, mais en conservant pour chaque événement le
-        // chemin complet vers son thème d'origine (catégorie / chemin de sous-catégories
-        // à profondeur quelconque / thème). Utile partout où l'on pioche un événement hors
-        // de son contexte normal de jeu (Découvrir un événement au hasard) et où l'on doit
-        // pouvoir « sauter » vers son thème.
-        function getAllEventsWithLocation() {
-            const all = [];
-            bdd.forEach((cat, ci) => {
-                (function walk(node, path) {
-                    if (node.subcategories) {
-                        node.subcategories.forEach((sub, idx) => walk(sub, [...path, idx]));
-                    } else {
-                        node.themes.forEach((theme, ti) => {
-                            theme.events.forEach(evt => {
-                                all.push({ event: evt, theme, categoryIndex: ci, subcategoryIndex: path.length ? path : null, themeIndex: ti });
-                            });
-                        });
-                    }
-                })(cat, []);
-            });
-            return all;
-        }
-
-        // === DÉFI DU JOUR ===
-        // Tirage quotidien de 10 événements, identique pour tous les joueurs du monde
-        // entier (même graine = même date UTC), avec un lissage temporel qui interdit
-        // plus de deux événements d'un même siècle dans la même frise du jour.
-
-        // Graine du jour au format YYYY-MM-DD, calculée en UTC : deux joueurs sur des
-        // fuseaux horaires différents doivent obtenir exactement le même tirage tant
-        // que l'horloge UTC n'a pas franchi le prochain basculement (05:00:00 UTC, cf.
-        // getTimeUntilNextDaily plus bas).
-        function getDailySeedString() {
-            const now = new Date();
-            let refDate = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds()));
-            // Le « jour » du défi bascule à 05:00:00 UTC et non à minuit UTC : avant
-            // cette heure, on est donc toujours sur le défi de la veille.
-            if (refDate.getUTCHours() < 5) {
-                refDate = new Date(refDate.getTime() - 24 * 60 * 60 * 1000);
-            }
-            const y = refDate.getUTCFullYear();
-            const m = String(refDate.getUTCMonth() + 1).padStart(2, '0');
-            const d = String(refDate.getUTCDate()).padStart(2, '0');
-            return `${y}-${m}-${d}`;
-        }
-
-        // Transforme une chaîne quelconque en entier 32 bits déterministe (xfnv1a),
-        // utilisé comme graine du générateur pseudo-aléatoire ci-dessous.
-        function hashSeedToInt(str) {
-            let h = 2166136261;
-            for (let i = 0; i < str.length; i++) {
-                h ^= str.charCodeAt(i);
-                h = Math.imul(h, 16777619);
-            }
-            return h >>> 0;
-        }
-
-        // Générateur pseudo-aléatoire déterministe (mulberry32) : à graine égale, la
-        // séquence de nombres produite est toujours identique, quel que soit
-        // l'appareil ou le fuseau horaire du joueur.
-        function mulberry32(seed) {
-            let a = seed >>> 0;
-            return function() {
-                a |= 0; a = (a + 0x6D2B79F5) | 0;
-                let t = Math.imul(a ^ (a >>> 15), 1 | a);
-                t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
-                return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-            };
-        }
-
-        // Mélange de Fisher-Yates piloté par un générateur fourni (déterministe si le
-        // générateur l'est), contrairement à shuffleArray qui s'appuie sur Math.random.
-        function shuffleWithRng(arr, rng) {
-            const copy = [...arr];
-            for (let i = copy.length - 1; i > 0; i--) {
-                const j = Math.floor(rng() * (i + 1));
-                [copy[i], copy[j]] = [copy[j], copy[i]];
-            }
-            return copy;
-        }
-
-        // Siècle numérique signé (ex : 1789 → 18, -450 → -5), pour regrouper les
-        // événements du tirage quotidien. Même convention (arrondi supérieur) que
-        // getCenturyLabel, utilisée pour l'affichage du mode « Périodes & Ères ».
-        function getCenturyKey(year) {
-            if (year == null) return 0;
-            if (year < 0) return -Math.ceil(Math.abs(year) / 100);
-            return Math.ceil((year === 0 ? 1 : year) / 100);
-        }
-
-        // Tire les 10 événements du défi du jour : mélange déterministe de toute la
-        // base (graine = date du jour), puis sélection gloutonne qui refuse tout
-        // événement dépassant 2 représentants du même siècle, pour éviter une frise
-        // artificiellement concentrée sur une seule période.
-        function generateDailyEvents(seedString) {
-            seedString = seedString || getDailySeedString();
-            const rng = mulberry32(hashSeedToInt('historiaxe-daily-' + seedString));
-            const shuffled = shuffleWithRng(getAllEventsWithLocation(), rng);
-
-            const MAX_PER_CENTURY = 2;
-            const picked = [];
-            const centuryCounts = {};
-
-            shuffled.forEach(item => {
-                if (picked.length >= 10) return;
-                const century = getCenturyKey(item.event.date);
-                const count = centuryCounts[century] || 0;
-                if (count >= MAX_PER_CENTURY) return;
-                picked.push(item);
-                centuryCounts[century] = count + 1;
-            });
-
-            // Filet de sécurité : si le lissage strict laisse moins de 10 événements
-            // (peu probable vu la taille de la base), on complète avec le reste du
-            // tirage mélangé plutôt que de renvoyer un défi incomplet.
-            if (picked.length < 10) {
-                for (const item of shuffled) {
-                    if (picked.length >= 10) break;
-                    if (picked.indexOf(item) === -1) picked.push(item);
-                }
-            }
-
-            return picked;
-        }
-
-        // Temps restant (en ms) avant le prochain défi, calculé en UTC pur
-        // (getUTCHours/getUTCMinutes/getUTCSeconds) pour ne jamais dépendre du fuseau
-        // horaire ou de l'horloge locale de l'appareil du joueur : le basculement a
-        // lieu chaque jour à 05:00:00 UTC (06h00 à Paris en heure d'hiver).
-        function getTimeUntilNextDaily() {
-            const now = new Date();
-            let next = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), 5, 0, 0, 0));
-            if (now.getTime() >= next.getTime()) {
-                next = new Date(next.getTime() + 24 * 60 * 60 * 1000);
-            }
-            return Math.max(0, next.getTime() - now.getTime());
-        }
-
-        function formatCountdown(ms) {
-            const totalSeconds = Math.floor(ms / 1000);
-            const h = String(Math.floor(totalSeconds / 3600)).padStart(2, '0');
-            const m = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, '0');
-            const s = String(totalSeconds % 60).padStart(2, '0');
-            return `${h}:${m}:${s}`;
-        }
-
-        // --- Sauvegarde locale du défi du jour (résultat du joueur + classement) ---
-        // En l'absence de backend distant, ces clés servent de stockage local
-        // provisoire : elles sont scopées par graine du jour (voir DAILY_KEY /
-        // DAILY_LEADERBOARD_KEY) et remplacées automatiquement le lendemain.
-        const DAILY_KEY = 'historiaxe_daily_v1';
-        const DAILY_LEADERBOARD_KEY = 'historiaxe_daily_leaderboard_v1';
-
-        function dailyStateLoad() {
-            try { return JSON.parse(localStorage.getItem(DAILY_KEY)) || {}; }
-            catch (e) { return {}; }
-        }
-        function dailyStateSave(state) {
-            try { localStorage.setItem(DAILY_KEY, JSON.stringify(state)); } catch (e) {}
-        }
-
-        // Nettoie un pseudonyme avant envoi/affichage : espaces superflus retirés,
-        // ponctuation et caractères spéciaux supprimés, longueur bornée à 15
-        // caractères (lettres, chiffres, espaces internes et tirets autorisés).
-        function sanitizePseudo(raw) {
-            return (raw || '')
-                .trim()
-                .replace(/[^\p{L}\p{N} \-]/gu, '')
-                .replace(/\s+/g, ' ')
-                .trim()
-                .slice(0, 15);
-        }
-
-        // Fonction asynchrone prête pour l'intégration d'un service distant (Firebase
-        // Firestore, Supabase...). En attendant ce branchement, elle retombe sur un
-        // classement local scopé à la graine du jour, pour que la modale de résultats
-        // reste fonctionnelle dès aujourd'hui.
-        //
-        // Intégration future (exemple Supabase) :
-        //   const { error } = await supabaseClient.from('daily_scores').insert({
-        //       seed: getDailySeedString(), pseudo, score, time_seconds: time
-        //   });
-        //   if (error) throw error;
-        async function submitDailyScore(pseudo, score, time) {
-            const cleanPseudo = sanitizePseudo(pseudo);
-            if (!cleanPseudo) {
-                return { success: false, error: 'pseudo_invalide' };
-            }
-
-            const seedString = getDailySeedString();
-            const entry = {
-                pseudo: cleanPseudo,
-                score: Math.max(0, Math.round(score) || 0),
-                time: Math.max(0, Number(time) || 0),
-                timestamp: Date.now()
-            };
-
-            try {
-                // TODO(backend) : remplacer ce bloc par un appel réseau réel (Firebase /
-                // Supabase) vers une collection/table « daily_scores » indexée par
-                // `seedString`, puis relire le classement mondial depuis le serveur.
-                await Promise.resolve();
-
-                const data = JSON.parse(localStorage.getItem(DAILY_LEADERBOARD_KEY) || '{}');
-                if (!data[seedString]) data[seedString] = [];
-                data[seedString].push(entry);
-                data[seedString].sort((a, b) => b.score - a.score || a.time - b.time);
-                data[seedString] = data[seedString].slice(0, 100);
-                localStorage.setItem(DAILY_LEADERBOARD_KEY, JSON.stringify(data));
-
-                const rank = data[seedString].findIndex(e => e.timestamp === entry.timestamp) + 1;
-                return { success: true, rank, total: data[seedString].length };
-            } catch (e) {
-                return { success: false, error: 'stockage_indisponible' };
-            }
-        }
-
-        function dailyLeaderboardLoad(seedString) {
-            try {
-                const data = JSON.parse(localStorage.getItem(DAILY_LEADERBOARD_KEY) || '{}');
-                return data[seedString || getDailySeedString()] || [];
-            } catch (e) { return []; }
-        }
-
-        // Favoris : simple liste d'identifiants de thèmes, stockée dans le navigateur.
-        // Les id de thème étant uniques dans tout le fichier, aucune ambiguïté possible.
-        const FAVORITES_KEY = 'historiaxe_favorites_v1';
-        function favoritesLoad() {
-            try { return JSON.parse(localStorage.getItem(FAVORITES_KEY)) || []; }
-            catch (e) { return []; }
-        }
-        function favoritesSave(list) {
-            try { localStorage.setItem(FAVORITES_KEY, JSON.stringify(list)); } catch (e) {}
-        }
-        function isFavorite(themeId) {
-            return favoritesLoad().includes(themeId);
-        }
-        function toggleFavorite(themeId) {
-            triggerHaptic('light');
-            playTapSound();
-            const list = favoritesLoad();
-            const idx = list.indexOf(themeId);
-            if (idx >= 0) { list.splice(idx, 1); } else { list.push(themeId); }
-            favoritesSave(list);
-        }
-
-        // Un événement est un « point faible » s'il a déjà été manqué au moins une fois
-        // et n'est pas encore pleinement remaîtrisé (boîte 5 = plusieurs bonnes réponses
-        // d'affilée depuis). Les événements jamais vus ne sont volontairement PAS inclus :
-        // ce ne sont pas des points faibles, juste du contenu pas encore rencontré.
+        
         function getWeakEvents() {
             const data = srsLoad();
             return getAllEventsWithLocation().filter(item => {
                 const entry = data[item.event.id];
-                return entry && entry.incorrect > 0 && entry.box < 5;
+                return entry && ((entry.failCount || 0) > 0 || (entry.incorrect || 0) > 0) && entry.box < 5;
             });
         }
 
@@ -1471,12 +1158,12 @@ if (typeof window.bdd === 'undefined') {
             updateHeaderProfileBar();
             clearThemeSearch();
             const container = document.getElementById('categories-container');
+            if (!container) return;
             container.innerHTML = '';
             container.className = 'w-full max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop space-y-lg md:space-y-xl mt-sm md:mt-xl pb-32';
 
-            const weakCount = getWeakEvents().length;
-            const favCount = favoritesLoad().length;
-            const totalEventsCount = getAllEvents().length;
+            const weakCount = (typeof getWeakEvents === 'function') ? getWeakEvents().length : 0;
+            const favCount = (typeof favoritesLoad === 'function') ? favoritesLoad().length : 0;
 
             // --- QUICK ACTION GRID ---
             const gridSection = document.createElement('section');
@@ -1484,99 +1171,98 @@ if (typeof window.bdd === 'undefined') {
             gridSection.style.marginTop = '24px';
             gridSection.innerHTML = `
                 <div class="grid grid-cols-4 gap-sm md:gap-md" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; text-align: center;">
-                    <div class="flex flex-col items-center gap-2" id="btn-favoris">
-                        <div class="quick-action-circle w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center transition-colors cursor-pointer group mx-auto" style="border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center;">
-                            <span class="material-symbols-outlined quick-action-icon favoris text-[32px] group-hover:scale-110 transition-transform" style="font-size: 32px;">star</span>
+                    <div class="flex flex-col items-center gap-2" id="btn-favoris" style="cursor: pointer;">
+                        <div class="quick-action-circle rounded-full flex items-center justify-center transition-colors cursor-pointer group mx-auto" style="border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; background: var(--card-bg, #f3f4f6);">
+                            <span style="font-size: 28px;">⭐</span>
                         </div>
-                        <span class="quick-action-label font-label-sm">Favoris</span>
+                        <span class="quick-action-label" style="font-size: 13px; font-weight: 600;">Favoris (${favCount})</span>
                     </div>
-                    <div class="flex flex-col items-center gap-2" id="btn-discover">
-                        <div class="quick-action-circle w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center transition-colors cursor-pointer group mx-auto" style="border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center;">
-                            <span class="material-symbols-outlined quick-action-icon text-[32px] group-hover:scale-110 transition-transform" style="font-size: 32px;">explore</span>
+                    <div class="flex flex-col items-center gap-2" id="btn-discover" style="cursor: pointer;">
+                        <div class="quick-action-circle rounded-full flex items-center justify-center transition-colors cursor-pointer group mx-auto" style="border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; background: var(--card-bg, #f3f4f6);">
+                            <span style="font-size: 28px;">🎲</span>
                         </div>
-                        <span class="quick-action-label font-label-sm">Découvrir</span>
+                        <span class="quick-action-label" style="font-size: 13px; font-weight: 600;">Hasard</span>
                     </div>
-                    <div class="flex flex-col items-center gap-2 relative" id="btn-daily-challenge">
-                        <div class="quick-action-circle daily-white w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center transition-colors cursor-pointer group mx-auto relative" style="border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; position: relative;">
-                            <span class="material-symbols-outlined quick-action-icon daily-challenge text-[32px] group-hover:scale-110 transition-transform" style="font-size: 32px;">public</span>
-                            ${getStreakCount() > 0 ? `<span class="streak-pill-badge" title="Série de ${getStreakCount()} jour(s)">🔥 ${getStreakCount()}j</span>` : ''}
+                    <div class="flex flex-col items-center gap-2" id="btn-daily" style="cursor: pointer;">
+                        <div class="quick-action-circle rounded-full flex items-center justify-center transition-colors cursor-pointer group mx-auto" style="border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; background: var(--card-bg, #f3f4f6);">
+                            <span style="font-size: 28px;">🎯</span>
                         </div>
-                        <span class="quick-action-label font-label-sm">Défi du jour</span>
+                        <span class="quick-action-label" style="font-size: 13px; font-weight: 600;">Défi</span>
                     </div>
-                    <div class="flex flex-col items-center gap-2" id="btn-revision">
-                        <div class="quick-action-circle w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center transition-colors cursor-pointer group mx-auto" style="border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center;">
-                            <span class="material-symbols-outlined quick-action-icon danger text-[32px] group-hover:scale-110 transition-transform" style="font-size: 32px;">rate_review</span>
+                    <div class="flex flex-col items-center gap-2" id="btn-reviser" style="cursor: pointer;">
+                        <div class="quick-action-circle rounded-full flex items-center justify-center transition-colors cursor-pointer group mx-auto" style="border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; background: var(--card-bg, #f3f4f6);">
+                            <span style="font-size: 28px;">🧠</span>
                         </div>
-                        <span class="quick-action-label font-label-sm">Réviser (${weakCount})</span>
+                        <span class="quick-action-label" style="font-size: 13px; font-weight: 600;">Réviser (${weakCount})</span>
                     </div>
                 </div>
             `;
             container.appendChild(gridSection);
 
-            setTimeout(() => {
-                if(document.getElementById('btn-favoris')) document.getElementById('btn-favoris').onclick = openFavorites;
-                if(document.getElementById('btn-discover')) document.getElementById('btn-discover').onclick = discoverRandomEvent;
-                if(document.getElementById('btn-daily-challenge')) document.getElementById('btn-daily-challenge').onclick = startDailyChallenge;
-                if(document.getElementById('btn-revision')) document.getElementById('btn-revision').onclick = startRevision;
-            }, 0);
+            const btnFav = gridSection.querySelector('#btn-favoris');
+            if (btnFav) btnFav.onclick = () => openFavorites();
+            const btnDisc = gridSection.querySelector('#btn-discover');
+            if (btnDisc) btnDisc.onclick = () => openDiscover();
+            const btnDay = gridSection.querySelector('#btn-daily');
+            if (btnDay) btnDay.onclick = () => openDailyChallenge();
+            const btnRev = gridSection.querySelector('#btn-reviser');
+            if (btnRev) btnRev.onclick = () => openRevisionHub();
 
             // --- BROWSE ARCHIVES (Categories) ---
             const catSection = document.createElement('section');
             catSection.className = 'w-full pb-xl';
             catSection.style.paddingBottom = '80px';
-            catSection.innerHTML = `
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-sm md:gap-md" id="cat-grid" style="display: grid; grid-template-columns: repeat(1, minmax(0, 1fr)); gap: 16px; margin-top: 32px;">
-                </div>
-            `;
+            const catGrid = document.createElement('div');
+            catGrid.id = 'cat-grid';
+            catGrid.style.display = 'grid';
+            catGrid.style.gridTemplateColumns = (typeof window !== 'undefined' && window.innerWidth >= 768) ? 'repeat(3, minmax(0, 1fr))' : 'repeat(1, minmax(0, 1fr))';
+            catGrid.style.gap = '16px';
+            catGrid.style.marginTop = '32px';
+            catSection.appendChild(catGrid);
             container.appendChild(catSection);
-            
-            setTimeout(() => {
-                const catGrid = document.getElementById('cat-grid');
-                if (window.innerWidth >= 768) {
-                    catGrid.style.gridTemplateColumns = 'repeat(3, minmax(0, 1fr))';
-                }
-                bdd.forEach((cat, index) => {
-                    let bgImg = 'assets/images/cat_culture_generale.jpg';
-                    if(cat.nom.toLowerCase().includes('culture')) bgImg = 'assets/images/cat_culture_generale.jpg';
-                    if(cat.nom.toLowerCase().includes('bio')) bgImg = 'assets/images/cat_biographies.jpg';
-                    if(cat.nom.toLowerCase().includes('nationale')) bgImg = 'assets/images/cat_histoires_nationales.jpg';
-                    if(cat.nom.toLowerCase().includes('programmes')) bgImg = 'assets/images/cat_programmes_scolaires.jpg';
-                    if(cat.nom.toLowerCase().includes('capes') || cat.nom.toLowerCase().includes('agrég')) bgImg = 'assets/images/cat_agregation.jpg';
-                    if(cat.isCustomCategory || cat.nom.toLowerCase().includes('personnalisé')) bgImg = 'assets/images/cat_themes_personnalises.jpg';
 
-                    const card = document.createElement('div');
-                    card.className = 'relative h-32 md:h-40 rounded-[24px] overflow-hidden group cursor-pointer shadow-executive';
-                    card.style.height = '140px';
-                    card.style.borderRadius = '24px';
-                    card.style.overflow = 'hidden';
-                    card.style.position = 'relative';
-                    card.style.boxShadow = '0px 10px 30px rgba(0, 26, 75, 0.05)';
-                    card.style.marginBottom = '12px';
+            const currentBdd = window.bdd || bdd || [];
+            currentBdd.forEach((cat, index) => {
+                let bgImg = 'assets/images/cat_culture_generale.jpg';
+                if(cat.nom.toLowerCase().includes('culture')) bgImg = 'assets/images/cat_culture_generale.jpg';
+                if(cat.nom.toLowerCase().includes('bio')) bgImg = 'assets/images/cat_biographies.jpg';
+                if(cat.nom.toLowerCase().includes('nationale')) bgImg = 'assets/images/cat_histoires_nationales.jpg';
+                if(cat.nom.toLowerCase().includes('programmes')) bgImg = 'assets/images/cat_programmes_scolaires.jpg';
+                if(cat.nom.toLowerCase().includes('capes') || cat.nom.toLowerCase().includes('agrég')) bgImg = 'assets/images/cat_agregation.jpg';
+                if(cat.isCustomCategory || cat.nom.toLowerCase().includes('personnalisé')) bgImg = 'assets/images/cat_themes_personnalises.jpg';
 
-                    card.innerHTML = `
-                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('${bgImg}'); background-color: var(--primary-blue); position: absolute; inset: 0;"></div>
-                        <div class="absolute inset-0 bg-primary/40 group-hover:bg-primary/30 transition-colors" style="background: rgba(0, 26, 75, 0.5); position: absolute; inset: 0;"></div>
-                        <div class="absolute bottom-0 left-0 p-md w-full" style="position: absolute; bottom: 0; left: 0; padding: 16px;">
-                            <h4 class="font-headline-md text-on-primary" style="color: white; font-weight: 700; font-size: 20px; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">${cat.nom}</h4>
-                            <p class="font-label-sm text-primary-fixed-dim mt-xs" style="color: #b2c5ff; font-size: 12px; margin-top: 4px;">${cat.subcategories ? cat.subcategories.length + ' Sous-catégories' : (cat.isCustomCategory ? 'Vos thèmes' : 'Sélectionner')}</p>
-                        </div>
-                    `;
-                    card.onclick = () => {
-                        selectedCategoryIndex = index;
-                        selectedSubcategoryIndex = cat.subcategories ? [] : null;
-                        
-                        if (cat.nom === "CAPES & Agrégation" || cat.isCustomCategory) {
-                            showScreen('screen-themes', 'forward');
-                        } else {
-                            showScreen('screen-subcategories', 'forward');
-                        }
-                    };
-                    catGrid.appendChild(card);
-                });
-            }, 0);
+                const card = document.createElement('div');
+                card.className = 'relative h-32 md:h-40 rounded-[24px] overflow-hidden group cursor-pointer shadow-executive';
+                card.style.height = '140px';
+                card.style.borderRadius = '24px';
+                card.style.overflow = 'hidden';
+                card.style.position = 'relative';
+                card.style.boxShadow = '0px 10px 30px rgba(0, 26, 75, 0.05)';
+                card.style.marginBottom = '12px';
+                card.style.cursor = 'pointer';
+
+                card.innerHTML = `
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('${bgImg}'); background-color: var(--primary-blue, #001a4b); position: absolute; inset: 0;"></div>
+                    <div class="absolute inset-0 bg-primary/40 group-hover:bg-primary/30 transition-colors" style="background: rgba(0, 26, 75, 0.5); position: absolute; inset: 0;"></div>
+                    <div class="absolute bottom-0 left-0 p-md w-full" style="position: absolute; bottom: 0; left: 0; padding: 16px;">
+                        <h4 class="font-headline-md text-on-primary" style="color: white; font-weight: 700; font-size: 20px; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">${cat.nom}</h4>
+                        <p class="font-label-sm text-primary-fixed-dim mt-xs" style="color: #b2c5ff; font-size: 12px; margin-top: 4px;">${cat.subcategories ? cat.subcategories.length + ' Sous-catégories' : (cat.isCustomCategory ? 'Vos thèmes' : 'Sélectionner')}</p>
+                    </div>
+                `;
+                card.onclick = () => {
+                    selectedCategoryIndex = index;
+                    selectedSubcategoryIndex = cat.subcategories ? [] : null;
+                    
+                    if (cat.nom === "CAPES & Agrégation" || cat.isCustomCategory) {
+                        showScreen('screen-themes', 'forward');
+                    } else {
+                        showScreen('screen-subcategories', 'forward');
+                    }
+                };
+                catGrid.appendChild(card);
+            });
         }
-
-
+        
         // INIT SOUS-CATÉGORIES (régions, niveaux scolaires, etc. — potentiellement imbriquées)
         function initSubcategories() {
             const container = document.getElementById('subcategories-container');
@@ -3660,56 +3346,7 @@ if (typeof window.bdd === 'undefined') {
         // =========================================================================
 
         // --- GESTIONNAIRE DE SÉRIES (STREAKS) ---
-        const STREAK_KEY = 'historiaxe_streak_v1';
-
-        function streakLoad() {
-            try {
-                return JSON.parse(localStorage.getItem(STREAK_KEY)) || { currentStreak: 0, maxStreak: 0, lastPlayedDate: null };
-            } catch (e) {
-                return { currentStreak: 0, maxStreak: 0, lastPlayedDate: null };
-            }
-        }
-
-        function streakSave(data) {
-            try {
-                localStorage.setItem(STREAK_KEY, JSON.stringify(data));
-            } catch (e) {}
-        }
-
-        function getDaysDifference(dateStr1, dateStr2) {
-            if (!dateStr1 || !dateStr2) return 999;
-            const d1 = new Date(dateStr1 + 'T00:00:00Z');
-            const d2 = new Date(dateStr2 + 'T00:00:00Z');
-            return Math.round((d2.getTime() - d1.getTime()) / (24 * 60 * 60 * 1000));
-        }
-
-        function getStreakCount() {
-            const data = streakLoad();
-            if (!data.lastPlayedDate || data.currentStreak === 0) return 0;
-            const today = getDailySeedString();
-            const diff = getDaysDifference(data.lastPlayedDate, today);
-            // Si joué aujourd'hui (diff 0) ou hier (diff 1), la série est active
-            if (diff <= 1) return data.currentStreak;
-            return 0; // Série interrompue
-        }
-
-        function streakRecordToday() {
-            const data = streakLoad();
-            const today = getDailySeedString();
-            if (data.lastPlayedDate === today) {
-                return data; // Déjà validé aujourd'hui
-            }
-            const diff = getDaysDifference(data.lastPlayedDate, today);
-            if (diff === 1) {
-                data.currentStreak = (data.currentStreak || 0) + 1;
-            } else {
-                data.currentStreak = 1;
-            }
-            data.maxStreak = Math.max(data.maxStreak || 0, data.currentStreak);
-            data.lastPlayedDate = today;
-            streakSave(data);
-            return data;
-        }
+        
 
         // --- NOTIFICATIONS TOAST ---
         let toastTimeout = null;
@@ -3953,128 +3590,6 @@ if (typeof window.bdd === 'undefined') {
             if (currentMode === 'daily') {
                 openDailyResultsModal(isWin);
             }
-        }
-
-        // === MODALE DE RÉSULTATS — DÉFI DU JOUR ===
-        // Écran de fin dédié à ce mode (superposé à #screen-end) : récapitule score et
-        // temps, affiche le compte à rebours absolu avant le prochain défi et permet
-        // d'envoyer son score au classement mondial via un pseudonyme.
-        function openDailyResultsModal(isWin) {
-            document.getElementById('daily-results-title').innerText = isWin
-                ? "🌍 Défi du jour relevé !"
-                : "🌍 Défi du jour terminé";
-            document.getElementById('daily-results-score').innerText = score;
-            document.getElementById('daily-results-time').innerText = totalTimePlayed.toFixed(1).replace('.', ',') + ' s';
-            
-            const streakCount = getStreakCount();
-            const streakEl = document.getElementById('daily-results-streak');
-            if (streakEl) streakEl.innerText = `${streakCount} 🔥`;
-
-            // Rendu de la grille Wordle et bouton de partage
-            const shareContainer = document.getElementById('daily-share-container');
-            if (shareContainer) {
-                const grid = generateShareGrid(sessionHistory);
-                shareContainer.innerHTML = `
-                    <div class="share-card-header">Votre parcours du jour</div>
-                    <div class="share-emojis-grid">${grid}</div>
-                    <button class="btn-share" onclick="shareGameResults(true)">
-                        <span>Partager mon résultat</span> <span>📤</span>
-                    </button>
-                `;
-            }
-
-            // Rendu de l'anecdote historique
-            const anecdoteContainer = document.getElementById('daily-anecdote-container');
-            if (anecdoteContainer) {
-                const anecdote = pickSessionAnecdote(sessionHistory);
-                renderAnecdoteCard(anecdoteContainer, anecdote);
-            }
-
-            document.getElementById('daily-pseudo-input').value = '';
-            const feedback = document.getElementById('daily-submit-feedback');
-            feedback.innerText = '';
-            feedback.className = 'daily-submit-feedback';
-
-            renderDailyLeaderboardPreview();
-            startDailyCountdown();
-
-            document.getElementById('modal-daily-results').classList.remove('hidden');
-        }
-
-        function closeDailyResultsModal() {
-            document.getElementById('modal-daily-results').classList.add('hidden');
-            if (dailyCountdownInterval) {
-                clearInterval(dailyCountdownInterval);
-                dailyCountdownInterval = null;
-            }
-        }
-
-        // Met à jour le minuteur absolu (05:00:00 UTC) chaque seconde tant que la
-        // modale de résultats reste ouverte.
-        function startDailyCountdown() {
-            if (dailyCountdownInterval) clearInterval(dailyCountdownInterval);
-            const update = () => {
-                const el = document.getElementById('daily-countdown-val');
-                if (el) el.innerText = formatCountdown(getTimeUntilNextDaily());
-            };
-            update();
-            dailyCountdownInterval = setInterval(update, 1000);
-        }
-
-        async function handleDailyScoreSubmit() {
-            const input = document.getElementById('daily-pseudo-input');
-            const feedback = document.getElementById('daily-submit-feedback');
-            const cleanPseudo = sanitizePseudo(input.value);
-
-            if (!cleanPseudo) {
-                feedback.innerText = "Entrez un pseudo valide (lettres/chiffres, 15 caractères max).";
-                feedback.className = 'daily-submit-feedback error';
-                return;
-            }
-
-            feedback.innerText = "Envoi en cours…";
-            feedback.className = 'daily-submit-feedback';
-
-            const result = await submitDailyScore(cleanPseudo, score, totalTimePlayed);
-
-            if (result.success) {
-                input.value = cleanPseudo;
-                feedback.innerText = `Score envoyé ! Classement local : #${result.rank} sur ${result.total}.`;
-                feedback.className = 'daily-submit-feedback success';
-                const today = dailyStateLoad();
-                today[getDailySeedString()] = { pseudo: cleanPseudo, score, time: totalTimePlayed };
-                dailyStateSave(today);
-                renderDailyLeaderboardPreview();
-            } else {
-                feedback.innerText = "Impossible d'envoyer le score pour le moment. Réessayez.";
-                feedback.className = 'daily-submit-feedback error';
-            }
-        }
-
-        // Aperçu du classement (émulation locale en attendant le branchement au
-        // service distant — voir submitDailyScore) : les 5 meilleurs scores soumis
-        // aujourd'hui depuis cet appareil.
-        function renderDailyLeaderboardPreview() {
-            const container = document.getElementById('daily-leaderboard-preview');
-            const scores = dailyLeaderboardLoad();
-            if (scores.length === 0) {
-                container.innerHTML = '<p class="leaderboard-empty">Aucun score envoyé pour l\'instant. Soyez le premier !</p>';
-                return;
-            }
-            const rows = scores.slice(0, 5).map((entry, i) => `
-                <tr>
-                    <td>${i + 1}</td>
-                    <td>${entry.pseudo}</td>
-                    <td class="leaderboard-score">${entry.score}</td>
-                    <td>${entry.time.toFixed(1).replace('.', ',')} s</td>
-                </tr>
-            `).join('');
-            container.innerHTML = `
-                <table class="leaderboard-table">
-                    <thead><tr><th>#</th><th>Pseudo</th><th>Score</th><th>Temps</th></tr></thead>
-                    <tbody>${rows}</tbody>
-                </table>
-            `;
         }
 
         // Confirmation intégrée à l'interface (remplace window.confirm, qui peut être
