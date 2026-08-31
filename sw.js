@@ -2,9 +2,9 @@
 // === HISTORIAXE — SERVICE WORKER OFF-LINE & PACKS DE DONNÉES (SW.JS) ===
 // =========================================================================
 
-const CACHE_VERSION = '1.0.3';
+const CACHE_VERSION = '1.0.4';
 const APP_SHELL_CACHE = `historiaxe-shell-v${CACHE_VERSION}`;
-const DATA_CACHE = 'historiaxe-data-v1.0.2';
+const DATA_CACHE = 'historiaxe-data-v1.0.3';
 
 const APP_SHELL_FILES = [
     './',

@@ -1,0 +1,131 @@
+{
+  "version": "1.0.0",
+  "lang": "ja",
+  "name": "日本語 (デモパック)",
+  "totalThemes": 2,
+  "totalEvents": 20,
+  "categories": [
+    {
+      "nom": "一般教養",
+      "subcategories": [
+        {
+          "nom": "科学と宇宙開発",
+          "themes": [
+            {
+              "id": "thm_space_ja",
+              "nom": "宇宙への挑戦",
+              "difficulte": "全レベル",
+              "events": [
+                {
+                  "id": "esp_ja_01",
+                  "axe": "先駆者と理論",
+                  "date": 1543,
+                  "titre": "コペルニクスが地動説を発表",
+                  "description": "ニコラウス・コペルニクスが『天球の回転について』を著し、太陽中心説を提唱。",
+                  "wikipedia": "https://ja.wikipedia.org/wiki/%E5%A4%A9%E7%90%83%E3%81%AE%E5%9B%9E%E8%BB%A2%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"
+                },
+                {
+                  "id": "esp_ja_02",
+                  "axe": "宇宙時代",
+                  "date": 1957,
+                  "titre": "スプートニク1号打ち上げ",
+                  "description": "ソビエト連邦が人類初の人工衛星を打ち上げ、宇宙開発競争が幕を開ける。",
+                  "wikipedia": "https://ja.wikipedia.org/wiki/%E3%82%B9%E3%83%97%E3%83%BC%E3%83%88%E3%83%8B%E3%82%AF1%E5%8F%B7"
+                },
+                {
+                  "id": "esp_ja_03",
+                  "axe": "有人宇宙飛行",
+                  "date": 1961,
+                  "titre": "ガガーリンが世界初の有人宇宙飛行に成功",
+                  "description": "ユーリ・ガガーリンがボストーク1号で地球周回軌道を一周し、「地球は青かった」の言葉を残す。",
+                  "wikipedia": "https://ja.wikipedia.org/wiki/%E3%83%A6%E3%83%BC%E3%83%AA%E3%82%A2%E3%83%BB%E3%82%AC%E3%82%AC%E3%83%BC%E3%83%AA%E3%83%B3"
+                },
+                {
+                  "id": "esp_ja_04",
+                  "axe": "月面着陸",
+                  "date": 1969,
+                  "titre": "アポロ11号が月面着陸",
+                  "description": "ニール・アームストロングが人類として初めて月面に第一歩を記す。",
+                  "wikipedia": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%9D%E3%83%AD11%E5%8F%B7"
+                },
+                {
+                  "id": "esp_ja_05",
+                  "axe": "宇宙望遠鏡",
+                  "date": 2021,
+                  "titre": "ジェイムズ・ウェッブ宇宙望遠鏡の打ち上げ",
+                  "description": "ハッブル望遠鏡の後継として、史上最も高感度な赤外線宇宙望遠鏡が打ち上げられる。",
+                  "wikipedia": "https://ja.wikipedia.org/wiki/%E3%82% officials%E3%82%A7%E3%82%A4%E3%83%A0%E3%82%BA%E3%83%BB%E3%82%A6%E3%82%A7%E3%83%83%E3%83%96%E5%AE%87%E5%AE%99%E6%9C%9B%E9%81%A0%E9%8F%A1"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "nom": "世界史と日本史",
+      "subcategories": [
+        {
+          "nom": "歴史の転換点",
+          "themes": [
+            {
+              "id": "thm_turning_points_ja",
+              "nom": "歴史の重要マイルストーン",
+              "difficulte": "全レベル",
+              "events": [
+                {
+                  "id": "wh_ja_01",
+                  "axe": "古代",
+                  "date": -753,
+                  "titre": "ローマ建国",
+                  "description": "伝承によれば、ロムルスがパラティヌスの丘に古代ローマを建国。",
+                  "wikipedia": "https://ja.wikipedia.org/wiki/%E5%8F%A4%E4%BB%A3%E3%83%AD%E3%83%BC%E3%83%9E"
+                },
+                {
+                  "id": "wh_ja_02",
+                  "axe": "古代・中世",
+                  "date": 604,
+                  "titre": "聖徳太子が十七条憲法を制定",
+                  "description": "推古天皇の摂政である聖徳太子が官僚の道徳規範として十七条憲法を定める。",
+                  "wikipedia": "https://ja.wikipedia.org/wiki/%E5%8D%81%E4%B8%83%E6%9D%A1%E6%86%B2%E6%B3%95"
+                },
+                {
+                  "id": "wh_ja_03",
+                  "axe": "中世・近世",
+                  "date": 1603,
+                  "titre": "徳川家康が江戸幕府を開く",
+                  "description": "徳川家康が征夷大将軍に任ぜられ、260年余り続く江戸時代が始まる。",
+                  "wikipedia": "https://ja.wikipedia.org/wiki/%E6%B1%9F%E6%88%B8%E5%B9%95%E5%BA%9C"
+                },
+                {
+                  "id": "wh_ja_04",
+                  "axe": "近代",
+                  "date": 1789,
+                  "titre": "バスティーユ襲撃（フランス革命）",
+                  "description": "パリ市民がバスティーユ牢獄を襲撃し、フランス革命が勃発する。",
+                  "wikipedia": "https://ja.wikipedia.org/wiki/%E3%83%90%E3%82%B9%E3%83%86%E3%82%A3%E3%83%BC%E3%83%A6%E8%A5%B2%E6%92%83"
+                },
+                {
+                  "id": "wh_ja_05",
+                  "axe": "近代",
+                  "date": 1868,
+                  "titre": "明治維新の始まり",
+                  "description": "五箇条の御誓文の発布や東京への遷都により、日本の近代化と中央集権化が進む。",
+                  "wikipedia": "https://ja.wikipedia.org/wiki/%E6%98%8E%E6%B2%BB%E7%B6%AD%E6%96%B0"
+                },
+                {
+                  "id": "wh_ja_06",
+                  "axe": "現代",
+                  "date": 1969,
+                  "titre": "インターネットの起源（ARPANET）誕生",
+                  "description": "UCLAとスタンフォード大学の間で世界初のパケット通信が行われる。",
+                  "wikipedia": "https://ja.wikipedia.org/wiki/ARPANET"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

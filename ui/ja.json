@@ -1,0 +1,233 @@
+{
+  "version": "1.0.0",
+  "lang": "ja",
+  "app": {
+    "title": "HistoriAxe",
+    "subtitle": "年代順クイズ",
+    "tagline": "歴史のタイムラインを学び、マスターしよう"
+  },
+  "nav": {
+    "back": "戻る",
+    "menu": "メニュー",
+    "cancel": "キャンセル",
+    "continue": "続ける",
+    "close": "閉じる",
+    "validate": "決定",
+    "delete": "削除",
+    "reset": "リセット"
+  },
+  "categories": {
+    "search_placeholder": "テーマを検索…",
+    "search_empty": "該当するテーマが見つかりません。",
+    "special_favorites": "お気に入り",
+    "special_discover": "発見",
+    "special_daily": "デイリーチャレンジ",
+    "special_revision": "復習",
+    "themes_count": "{count} テーマ",
+    "events_count": "{count} 件の出来事",
+    "choose_category": "カテゴリーを選択"
+  },
+  "subcategories": {
+    "choose_region": "地域・サブカテゴリーを選択"
+  },
+  "themes": {
+    "choose_theme": "テーマを選択",
+    "empty_themes": "現在利用可能なテーマはありません。",
+    "custom_badge": "カスタム"
+  },
+  "axes": {
+    "title": "テーマ軸",
+    "subtitle_selected": "{theme} — {count} 件の出来事を選択中",
+    "subtitle_select_one": "{theme} — 少なくとも1つの軸を選択してください",
+    "continue_btn": "この軸で続ける"
+  },
+  "modes": {
+    "choose_mode": "ゲームモードを選択",
+    "discovery": {
+      "title": "発見",
+      "desc": "ライフの制限なく年表を自由に閲覧できます。"
+    },
+    "selection": {
+      "title": "選択",
+      "desc": "ゲームに含める特定の出来事を選択します。"
+    },
+    "add_event": {
+      "title": "出来事を追加",
+      "desc": "このテーマにオリジナルの歴史的出来事を作成します。"
+    },
+    "training": {
+      "title": "練習",
+      "desc": "ライフの減少なし。自分のペースで学習できます。"
+    },
+    "classic": {
+      "title": "クラシック",
+      "desc": "ライフ3。標準的な年代順チャレンジ。"
+    },
+    "chrono": {
+      "title": "タイムアタック",
+      "desc": "ライフ3。素早く配置してスピードボーナスを獲得。"
+    },
+    "expert": {
+      "title": "エキスパート",
+      "desc": "ライフ1、厳しい制限時間。本格派向け。"
+    },
+    "quiz": {
+      "title": "クイズ",
+      "desc": "テンポよく解く4択問題。"
+    },
+    "avantapres": {
+      "title": "先か後か",
+      "desc": "ライフ3。年代の伏せられた2つの出来事のうち、先の方を当てます。"
+    },
+    "periodes": {
+      "title": "時代・世紀",
+      "desc": "ライフ3。各出来事を正しい世紀や時代に配置します。"
+    },
+    "fil": {
+      "title": "時の糸",
+      "desc": "年代順にキーボードで正確な年を入力します。"
+    },
+    "ecart": {
+      "title": "年の差当て",
+      "desc": "ライフ3。2つの出来事の間の年数を推定します。"
+    },
+    "multi": {
+      "title": "マルチプレイ",
+      "desc": "同じ端末で交代プレイ。2回ミスで脱落。"
+    },
+    "score_history": "🏆 スコア履歴"
+  },
+  "game": {
+    "score": "スコア: {val}",
+    "combo": "×{val}",
+    "lives": "ライフ",
+    "era_bc": "紀元前",
+    "era_ad": "西暦",
+    "hint_btn": "ヒント",
+    "fifty_fifty_btn": "50:50 ({count})",
+    "validate_btn": "決定",
+    "date_revealed": "年代公開",
+    "slot_higher": "不正解 — {date} はもっと前（上）です",
+    "slot_lower": "不正解 — {date} はもっと後（下）です",
+    "place_here": "ここに配置",
+    "quiz_event_to_year": "この出来事は西暦何年に起きましたか？",
+    "quiz_year_to_event": "この年に起きた出来事はどれですか？",
+    "avap_which_first": "どちらの出来事が先に起きましたか？",
+    "fil_enter_year": "正確な年を入力してください:",
+    "ecart_estimate_gap": "この2つの出来事の差は何年ですか？"
+  },
+  "end": {
+    "game_over": "ゲームオーバー！",
+    "victory_default": "お見事！年表を完成させました！",
+    "victory_quiz": "お見事！クイズクリア！",
+    "victory_avap": "お見事！先か後かマスター！",
+    "victory_fil": "お見事！時の糸クリア！",
+    "victory_periodes": "お見事！時代・世紀マスター！",
+    "victory_ecart": "お見事！すべての年の差を正解！",
+    "victory_daily": "お見事！デイリーチャレンジ達成！",
+    "final_score": "スコア: {val} ポイント",
+    "final_time": "所要時間: {val} 秒",
+    "streak_banner": "🔥 連続達成記録: {count} 日",
+    "replay_btn": "もう一度プレイ",
+    "menu_btn": "メニュー",
+    "share_title": "あなたのプレイ結果",
+    "share_daily_title": "今日のデイリー結果",
+    "share_btn": "スコアをシェア",
+    "share_daily_btn": "結果をシェア",
+    "share_toast_copied": "✨ 結果をクリップボードにコピーしました！",
+    "share_toast_error": "📋 自動コピーに失敗しました",
+    "share_cta": "HistoriAxeで歴史に挑戦しよう！"
+  },
+  "daily": {
+    "title_win": "🌍 デイリーチャレンジ達成！",
+    "title_over": "🌍 デイリーチャレンジ終了",
+    "score_stat": "スコア",
+    "time_stat": "タイム",
+    "streak_stat": "連続日数",
+    "countdown_label": "次のチャレンジまで",
+    "pseudo_label": "ニックネーム（世界ランキング用）",
+    "pseudo_placeholder": "例: ChronoMaster",
+    "submit_btn": "スコアを送信",
+    "submit_loading": "送信中…",
+    "submit_success": "スコア送信完了！ローカル順位: {total}人中 #{rank}位。",
+    "submit_error": "スコアの送信に失敗しました。再試行してください。",
+    "leaderboard_title": "🏆 今日のランキング",
+    "leaderboard_empty": "本日のスコアはまだありません。最初の挑戦者になりましょう！"
+  },
+  "revision": {
+    "hub_title": "苦手な出来事を復習",
+    "tab_weak": "苦手ポイント",
+    "tab_progress": "進捗状況",
+    "weak_empty": "現在、苦手な出来事はありません。ゲームで間違えた出来事がここに表示されます。",
+    "random_session_title": "🎲 ランダムセッション",
+    "random_session_desc": "全カテゴリーの苦手ポイントをミックスして出題。",
+    "theme_session_title": "📚 テーマ全体を復習",
+    "theme_session_desc": "苦手な出来事を含むテーマ全体を集中的に学習。",
+    "reset_srs": "⟲ リセット",
+    "reset_srs_confirm": "すべての復習履歴（間隔反復ボックス、記録）をリセットしますか？この操作は取り消せません。",
+    "progress_legend_high": "習得済み (≥ 75%)",
+    "progress_legend_mid": "要復習 (40-74%)",
+    "progress_legend_low": "未定着 (< 40%)",
+    "progress_legend_none": "未挑戦",
+    "progress_empty": "データがまだありません。ゲームをプレイして進捗を確認しましょう。"
+  },
+  "gamification": {
+    "rank_badge": "Lv. {level}",
+    "max_rank": "最高ランク達成！",
+    "xp_needed": "次まで あと {needed} XP",
+    "stats_total_xp": "合計 XP",
+    "stats_streak": "最高連続日数",
+    "stats_centurion": "最多ノーミス",
+    "stats_badges": "トロフィー",
+    "trophies_title": "🏆 トロフィー＆実績",
+    "status_unlocked": "獲得済み ✓",
+    "new_rank_toast": "👑 ランクアップ: {title} (Lv. {level})！",
+    "new_badge_toast": "🏆 トロフィー獲得: 「{name}」 (+250 XP)！"
+  },
+  "settings": {
+    "title": "設定",
+    "orientation_label": "年表の向き",
+    "orientation_auto": "自動",
+    "orientation_vertical": "縦向き",
+    "orientation_horizontal": "横向き",
+    "orientation_hint": "「自動」は端末の回転に合わせて縦・横を切り替えます。",
+    "appearance_label": "外観モード",
+    "appearance_auto": "自動",
+    "appearance_light": "ライト",
+    "appearance_dark": "ダーク",
+    "appearance_hint": "「自動」は端末のダークモード設定に連動します。",
+    "sound_label": "効果音・BGM",
+    "sound_on": "ON",
+    "sound_off": "OFF",
+    "sound_hint": "カード操作音や正解・不正解時のオーディオフィードバック。",
+    "haptics_label": "バイブレーション＆触覚",
+    "haptics_on": "ON",
+    "haptics_off": "OFF",
+    "haptics_hint": "操作時や正解・不正解時の触覚フィードバック。",
+    "language_label": "言語＆コンテンツパック",
+    "installed_badge": "インストール済み",
+    "active_badge": "選択中",
+    "download_btn": "ダウンロード",
+    "downloading_btn": "ダウンロード中…",
+    "delete_btn": "削除",
+    "offline_ready_hint": "ダウンロードしたパックは完全オフラインで利用可能です。",
+    "data_section": "ゲームデータ",
+    "scoring_info_btn": "📖 スコア計算の仕組み",
+    "reset_game_btn": "⚠️ すべてのデータをリセット",
+    "reset_confirm_msg": "お気に入り、カスタムテーマ、復習履歴、スコア、進捗が完全に消去されます。続行しますか？"
+  },
+  "anecdote": {
+    "did_you_know": "💡 ご存知でしたか？",
+    "read_more_wiki": "Wikipediaで詳しく見る ↗"
+  },
+  "custom": {
+    "create_theme_title": "カスタムテーマを作成",
+    "theme_name_label": "テーマ名 *",
+    "theme_diff_label": "難易度（任意）",
+    "create_event_title": "出来事を追加",
+    "event_year_label": "年 *",
+    "event_title_label": "出来事のタイトル *",
+    "event_desc_label": "説明（任意）",
+    "save_btn": "作成"
+  }
+}

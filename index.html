@@ -891,19 +891,20 @@
             </div>
             
             <div class="settings-group">
+                <div class="settings-label" data-i18n="settings.haptics_label">Vibrations & Haptique</div>
+                <div class="segmented" id="settings-haptics">
+                    <button type="button" data-value="on" data-i18n="settings.haptics_on">Activé</button>
+                    <button type="button" data-value="off" data-i18n="settings.haptics_off">Désactivé</button>
+                </div>
+                <p class="settings-hint" data-i18n="settings.haptics_hint">Retours tactiles lors des interactions, bonnes réponses et erreurs.</p>
+            </div>
+
+            <div class="settings-group">
                 <div class="settings-label" data-i18n="settings.language_label">Langue & Packs de contenu</div>
                 <div id="settings-lang-packs-container" class="lang-packs-list">
                     <!-- Généré dynamiquement par i18n.renderLanguagePacksSettingsUI() -->
                 </div>
                 <p class="settings-hint" data-i18n="settings.offline_ready_hint">Les packs téléchargés sont 100% accessibles hors-ligne.</p>
-            </div>
-            <div class="settings-group">
-                <div class="settings-label">Vibrations & Haptique</div>
-                <div class="segmented" id="settings-haptics">
-                    <button type="button" data-value="on">Activé</button>
-                    <button type="button" data-value="off">Désactivé</button>
-                </div>
-                <p class="settings-hint">Retours tactiles lors des interactions, bonnes réponses et erreurs.</p>
             </div>
     
     

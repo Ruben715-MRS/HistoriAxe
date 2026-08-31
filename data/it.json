@@ -1,0 +1,131 @@
+{
+  "version": "1.0.0",
+  "lang": "it",
+  "name": "Italiano (Pacchetto dimostrativo)",
+  "totalThemes": 2,
+  "totalEvents": 20,
+  "categories": [
+    {
+      "nom": "Cultura Generale",
+      "subcategories": [
+        {
+          "nom": "Scienza ed Esplorazione Spaziale",
+          "themes": [
+            {
+              "id": "thm_space_it",
+              "nom": "La Conquista dello Spazio",
+              "difficulte": "Tutti i livelli",
+              "events": [
+                {
+                  "id": "esp_it_01",
+                  "axe": "Precursori e Teoria",
+                  "date": 1609,
+                  "titre": "Galileo osserva il cielo con il cannocchiale",
+                  "description": "Galileo Galilei perfeziona il telescopio e scopre le lune di Giove, rivoluzionando l'astronomia.",
+                  "wikipedia": "https://it.wikipedia.org/wiki/Galileo_Galilei"
+                },
+                {
+                  "id": "esp_it_02",
+                  "axe": "Era Spaziale",
+                  "date": 1957,
+                  "titre": "Lancio dello Sputnik 1",
+                  "description": "L'Unione Sovietica lancia il primo satellite artificiale della storia in orbita terrestre.",
+                  "wikipedia": "https://it.wikipedia.org/wiki/Sputnik_1"
+                },
+                {
+                  "id": "esp_it_03",
+                  "axe": "Volo Umano",
+                  "date": 1961,
+                  "titre": "Yuri Gagarin nello spazio",
+                  "description": "Il cosmonauta sovietico Yuri Gagarin diventa il primo essere umano nello spazio a bordo della Vostok 1.",
+                  "wikipedia": "https://it.wikipedia.org/wiki/Jurij_Gagarin"
+                },
+                {
+                  "id": "esp_it_04",
+                  "axe": "Esplorazione Lunare",
+                  "date": 1969,
+                  "titre": "Allunaggio dell'Apollo 11",
+                  "description": "Neil Armstrong e Buzz Aldrin sbarcano sulla Luna con il modulo Eagle.",
+                  "wikipedia": "https://it.wikipedia.org/wiki/Apollo_11"
+                },
+                {
+                  "id": "esp_it_05",
+                  "axe": "Telescopi Spaziali",
+                  "date": 2021,
+                  "titre": "Lancio del Telescopio James Webb",
+                  "description": "Viene lanciato il telescopio a infrarossi più potente mai costruito verso il punto lagrangiano L2.",
+                  "wikipedia": "https://it.wikipedia.org/wiki/Telescopio_spaziale_James_Webb"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "nom": "Storia Universale",
+      "subcategories": [
+        {
+          "nom": "Grandi Momenti della Storia",
+          "themes": [
+            {
+              "id": "thm_turning_points_it",
+              "nom": "Pietre Miliari della Storia",
+              "difficulte": "Tutti i livelli",
+              "events": [
+                {
+                  "id": "wh_it_01",
+                  "axe": "Età Antica",
+                  "date": -753,
+                  "titre": "Fondazione di Roma",
+                  "description": "Secondo la tradizione, Romolo fonda la città di Roma sul colle Palatino.",
+                  "wikipedia": "https://it.wikipedia.org/wiki/Fondazione_di_Roma"
+                },
+                {
+                  "id": "wh_it_02",
+                  "axe": "Età Antica",
+                  "date": -44,
+                  "titre": "Assassinio di Giulio Cesare",
+                  "description": "Giulio Cesare viene assassinato alle Idi di marzo nella Curia di Pompeo a Roma.",
+                  "wikipedia": "https://it.wikipedia.org/wiki/Giulio_Cesare"
+                },
+                {
+                  "id": "wh_it_03",
+                  "axe": "Medioevo",
+                  "date": 476,
+                  "titre": "Caduta dell'Impero Romano d'Occidente",
+                  "description": "Romolo Augusto viene deposto da Odoacre, segnando tradizionalmente la fine dell'Antichità.",
+                  "wikipedia": "https://it.wikipedia.org/wiki/Caduta_dell%27Impero_romano_d%27Occidente"
+                },
+                {
+                  "id": "wh_it_04",
+                  "axe": "Rinascimento",
+                  "date": 1492,
+                  "titre": "Scoperta dell'America da parte di Colombo",
+                  "description": "La spedizione di Cristoforo Colombo sbarca alle Bahamas, inaugurando i contatti transatlantici.",
+                  "wikipedia": "https://it.wikipedia.org/wiki/Scoperta_delle_Americhe"
+                },
+                {
+                  "id": "wh_it_05",
+                  "axe": "Età Contemporanea",
+                  "date": 1861,
+                  "titre": "Proclamazione del Regno d'Italia",
+                  "description": "Il Parlamento di Torino proclama Vittorio Emanuele II re d'Italia, unificando gran parte della penisola.",
+                  "wikipedia": "https://it.wikipedia.org/wiki/Regno_d%27Italia_(1861-1946)"
+                },
+                {
+                  "id": "wh_it_06",
+                  "axe": "Età Contemporanea",
+                  "date": 1946,
+                  "titre": "Nascita della Repubblica Italiana",
+                  "description": "Il referendum istituzionale sancisce la nascita della Repubblica Italiana e l'abbandono della monarchia.",
+                  "wikipedia": "https://it.wikipedia.org/wiki/Nascita_della_Repubblica_Italiana"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

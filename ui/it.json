@@ -1,0 +1,233 @@
+{
+  "version": "1.0.0",
+  "lang": "it",
+  "app": {
+    "title": "HistoriAxe",
+    "subtitle": "Il Quiz Cronologico",
+    "tagline": "Esplora e padroneggia la linea del tempo della Storia"
+  },
+  "nav": {
+    "back": "Indietro",
+    "menu": "Menu",
+    "cancel": "Annulla",
+    "continue": "Continua",
+    "close": "Chiudi",
+    "validate": "Conferma",
+    "delete": "Elimina",
+    "reset": "Ripristina"
+  },
+  "categories": {
+    "search_placeholder": "Cerca un tema…",
+    "search_empty": "Nessun tema corrisponde alla tua ricerca.",
+    "special_favorites": "Preferiti",
+    "special_discover": "Scopri",
+    "special_daily": "Sfida del Giorno",
+    "special_revision": "Ripasso",
+    "themes_count": "{count} tema/i",
+    "events_count": "{count} evento/i",
+    "choose_category": "Scegli una Categoria"
+  },
+  "subcategories": {
+    "choose_region": "Scegli una Regione / Sottocategoria"
+  },
+  "themes": {
+    "choose_theme": "Scegli un Tema",
+    "empty_themes": "Nessun tema disponibile al momento.",
+    "custom_badge": "Personalizzato"
+  },
+  "axes": {
+    "title": "Assi Tematici",
+    "subtitle_selected": "{theme} — {count} evento/i selezionato/i",
+    "subtitle_select_one": "{theme} — seleziona almeno un asse",
+    "continue_btn": "Continua con questi assi"
+  },
+  "modes": {
+    "choose_mode": "Scegli una Modalità di Gioco",
+    "discovery": {
+      "title": "Scoperta",
+      "desc": "Consulta la linea cronologica senza limiti di vite."
+    },
+    "selection": {
+      "title": "Selezione",
+      "desc": "Scegli gli eventi specifici da includere nella partita."
+    },
+    "add_event": {
+      "title": "Aggiungi Evento",
+      "desc": "Crea i tuoi eventi storici per questo tema."
+    },
+    "training": {
+      "title": "Allenamento",
+      "desc": "Nessuna vita persa. Gioca e impara al tuo ritmo."
+    },
+    "classic": {
+      "title": "Classico",
+      "desc": "3 vite. La classica sfida cronologica."
+    },
+    "chrono": {
+      "title": "Chrono",
+      "desc": "3 vite. Posiziona gli eventi rapidamente per bonus di velocità."
+    },
+    "expert": {
+      "title": "Esperto",
+      "desc": "1 sola vita, timer rigoroso. Per veri storici."
+    },
+    "quiz": {
+      "title": "Quiz",
+      "desc": "Domande a risposta multipla (scelta multipla)."
+    },
+    "avantapres": {
+      "title": "Prima / Dopo",
+      "desc": "3 vite. Tra due eventi senza date, indovina quale è avvenuto prima."
+    },
+    "periodes": {
+      "title": "Epoche e Secoli",
+      "desc": "3 vite. Colloca ogni evento nel suo secolo o epoca esatta."
+    },
+    "fil": {
+      "title": "Il Filo del Tempo",
+      "desc": "Digita l'anno esatto sulla tastiera in ordine cronologico."
+    },
+    "ecart": {
+      "title": "Trova la Differenza",
+      "desc": "3 vite. Stima il numero di anni che separano due eventi."
+    },
+    "multi": {
+      "title": "Multigiocatore",
+      "desc": "A turno sullo stesso schermo, eliminazione dopo 2 errori."
+    },
+    "score_history": "🏆 Storico Punteggi"
+  },
+  "game": {
+    "score": "Punteggio: {val}",
+    "combo": "×{val}",
+    "lives": "Vite",
+    "era_bc": "a.C.",
+    "era_ad": "d.C.",
+    "hint_btn": "Indizio",
+    "fifty_fifty_btn": "50:50 ({count})",
+    "validate_btn": "Conferma",
+    "date_revealed": "Data rivelata",
+    "slot_higher": "No — {date} è avvenuto prima (più in alto)",
+    "slot_lower": "No — {date} è avvenuto dopo (più in basso)",
+    "place_here": "Posiziona qui",
+    "quiz_event_to_year": "In che anno si è verificato questo evento?",
+    "quiz_year_to_event": "Quale evento corrisponde a quest'anno?",
+    "avap_which_first": "Quale evento si è verificato per primo?",
+    "fil_enter_year": "Inserisci l'anno esatto:",
+    "ecart_estimate_gap": "Quanti anni separano questi due eventi?"
+  },
+  "end": {
+    "game_over": "Game Over!",
+    "victory_default": "Bravo! Linea del tempo completata!",
+    "victory_quiz": "Bravo! Quiz completato!",
+    "victory_avap": "Bravo! Prima / Dopo superato!",
+    "victory_fil": "Bravo! Filo del tempo percorso!",
+    "victory_periodes": "Bravo! Epoche e Secoli dominati!",
+    "victory_ecart": "Bravo! Tutte le differenze trovate!",
+    "victory_daily": "Bravo! Sfida del giorno superata!",
+    "final_score": "Punteggio: {val} punti",
+    "final_time": "Durata: {val} s",
+    "streak_banner": "🔥 Serie attuale: {count} giorno/i",
+    "replay_btn": "Gioca di Nuovo",
+    "menu_btn": "Menu",
+    "share_title": "La tua Partita",
+    "share_daily_title": "La tua Sfida del Giorno",
+    "share_btn": "Condividi Punteggio",
+    "share_daily_btn": "Condividi Risultato",
+    "share_toast_copied": "✨ Risultato copiato negli appunti!",
+    "share_toast_error": "📋 Impossibile copiare automaticamente",
+    "share_cta": "Unisciti alla sfida su HistoriAxe!"
+  },
+  "daily": {
+    "title_win": "🌍 Sfida del Giorno Superata!",
+    "title_over": "🌍 Sfida del Giorno Conclusa",
+    "score_stat": "Punteggio",
+    "time_stat": "Tempo",
+    "streak_stat": "Serie",
+    "countdown_label": "Prossima sfida tra",
+    "pseudo_label": "Il tuo nickname (classifica mondiale)",
+    "pseudo_placeholder": "Es: ChronoMaster",
+    "submit_btn": "Invia il mio punteggio",
+    "submit_loading": "Invio in corso…",
+    "submit_success": "Punteggio inviato! Posizione locale: #{rank} su {total}.",
+    "submit_error": "Impossibile inviare il punteggio in questo momento. Riprova.",
+    "leaderboard_title": "🏆 Classifica di Oggi",
+    "leaderboard_empty": "Nessun punteggio registrato oggi. Sii il primo!"
+  },
+  "revision": {
+    "hub_title": "Ripassa Punti Deboli",
+    "tab_weak": "Punti Deboli",
+    "tab_progress": "Progresso",
+    "weak_empty": "Nessun punto debole rilevato per ora. Gli eventi sbagliati appariranno qui per essere ripassati.",
+    "random_session_title": "🎲 Sessione Casuale",
+    "random_session_desc": "Un mix dei tuoi punti deboli da tutte le categorie.",
+    "theme_session_title": "📚 Ripassa un Intero Tema",
+    "theme_session_desc": "Esercitati su un intero tema contenente date incerte.",
+    "reset_srs": "⟲ Ripristina",
+    "reset_srs_confirm": "Ripristinare tutto lo storico di ripasso spaziato (SRS)? Questa azione è irreversibile.",
+    "progress_legend_high": "Ben padroneggiato (≥ 75%)",
+    "progress_legend_mid": "Da consolidare (40-74%)",
+    "progress_legend_low": "Fragile (< 40%)",
+    "progress_legend_none": "Non ancora testato",
+    "progress_empty": "Nessun dato al momento. Gioca qualche partita per vedere i tuoi progressi."
+  },
+  "gamification": {
+    "rank_badge": "Liv. {level}",
+    "max_rank": "Grado supremo raggiunto!",
+    "xp_needed": "Mancano {needed} XP per {next}",
+    "stats_total_xp": "Totale XP",
+    "stats_streak": "Serie Record",
+    "stats_centurion": "Max Senza Errori",
+    "stats_badges": "Trofei",
+    "trophies_title": "🏆 Trofei & Imprese",
+    "status_unlocked": "Sbloccato ✓",
+    "new_rank_toast": "👑 NUOVO GRADO: {title} (Liv. {level})!",
+    "new_badge_toast": "🏆 NUOVO TROFEO: « {name} » sbloccato (+250 XP)!"
+  },
+  "settings": {
+    "title": "Impostazioni",
+    "orientation_label": "Orientamento della Linea Temporale",
+    "orientation_auto": "Auto",
+    "orientation_vertical": "Verticale",
+    "orientation_horizontal": "Orizzontale",
+    "orientation_hint": "« Auto » segue la rotazione fisica del dispositivo.",
+    "appearance_label": "Aspetto",
+    "appearance_auto": "Auto",
+    "appearance_light": "Chiaro",
+    "appearance_dark": "Scuro",
+    "appearance_hint": "« Auto » segue le impostazioni di tema chiaro/scuro del sistema.",
+    "sound_label": "Audio Immersivo",
+    "sound_on": "Attivato",
+    "sound_off": "Disattivato",
+    "sound_hint": "Campanelle armoniche, scorrimento carte ed effetti sonori.",
+    "haptics_label": "Vibrazione & Feedback Aptico",
+    "haptics_on": "Attivato",
+    "haptics_off": "Disattivato",
+    "haptics_hint": "Feedback tattile su interazioni, risposte corrette ed errori.",
+    "language_label": "Lingua & Pacchetti di Contenuto",
+    "installed_badge": "Installato",
+    "active_badge": "Attivo",
+    "download_btn": "Scarica",
+    "downloading_btn": "Download in corso…",
+    "delete_btn": "Elimina",
+    "offline_ready_hint": "I pacchetti scaricati sono accessibili al 100% offline.",
+    "data_section": "Dati di Gioco",
+    "scoring_info_btn": "📖 Spiegazione del calcolo dei punti",
+    "reset_game_btn": "⚠️ Ripristina tutti i dati",
+    "reset_confirm_msg": "Questa azione cancellerà definitivamente preferiti, temi personalizzati, cronologia SRS, punteggi e progressi. Continuare?"
+  },
+  "anecdote": {
+    "did_you_know": "💡 Lo sapevi che…?",
+    "read_more_wiki": "Scopri di più su Wikipedia ↗"
+  },
+  "custom": {
+    "create_theme_title": "Crea Tema Personalizzato",
+    "theme_name_label": "Nome del Tema *",
+    "theme_diff_label": "Difficoltà / Livello (facoltativo)",
+    "create_event_title": "Aggiungi Evento",
+    "event_year_label": "Anno *",
+    "event_title_label": "Titolo dell'Evento *",
+    "event_desc_label": "Descrizione (facoltativo)",
+    "save_btn": "Crea"
+  }
+}

@@ -1298,28 +1298,28 @@ function ensureCustomCategoryInBdd() {
             gridSection.innerHTML = `
                 <div class="grid grid-cols-4 gap-sm md:gap-md" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; text-align: center;">
                     <div class="flex flex-col items-center gap-2" id="btn-favoris" style="cursor: pointer;">
-                        <div class="quick-action-circle rounded-full flex items-center justify-center transition-colors cursor-pointer group mx-auto" style="border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; background: var(--card-bg, #f3f4f6);">
+                        <div class="quick-action-circle rounded-full flex items-center justify-center transition-colors cursor-pointer group mx-auto" style="border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; background: var(--surface); border: 1px solid var(--border-soft); box-shadow: var(--card-shadow);">
                             <span style="font-size: 28px;">⭐</span>
                         </div>
-                        <span class="quick-action-label" style="font-size: 13px; font-weight: 600;">Favoris (${favCount})</span>
+                        <span class="quick-action-label" style="font-size: 13px; font-weight: 600;">${(typeof t === 'function' ? t('categories.special_favorites') : 'Favoris')} (${favCount})</span>
                     </div>
                     <div class="flex flex-col items-center gap-2" id="btn-discover" style="cursor: pointer;">
-                        <div class="quick-action-circle rounded-full flex items-center justify-center transition-colors cursor-pointer group mx-auto" style="border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; background: var(--card-bg, #f3f4f6);">
+                        <div class="quick-action-circle rounded-full flex items-center justify-center transition-colors cursor-pointer group mx-auto" style="border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; background: var(--surface); border: 1px solid var(--border-soft); box-shadow: var(--card-shadow);">
                             <span style="font-size: 28px;">🎲</span>
                         </div>
-                        <span class="quick-action-label" style="font-size: 13px; font-weight: 600;">Hasard</span>
+                        <span class="quick-action-label" style="font-size: 13px; font-weight: 600;">${(typeof t === 'function' ? t('categories.special_discover') : 'Hasard')}</span>
                     </div>
                     <div class="flex flex-col items-center gap-2" id="btn-daily" style="cursor: pointer;">
-                        <div class="quick-action-circle rounded-full flex items-center justify-center transition-colors cursor-pointer group mx-auto" style="border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; background: var(--card-bg, #f3f4f6);">
+                        <div class="quick-action-circle rounded-full flex items-center justify-center transition-colors cursor-pointer group mx-auto" style="border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; background: var(--surface); border: 1px solid var(--border-soft); box-shadow: var(--card-shadow);">
                             <span style="font-size: 28px;">🎯</span>
                         </div>
-                        <span class="quick-action-label" style="font-size: 13px; font-weight: 600;">Défi</span>
+                        <span class="quick-action-label" style="font-size: 13px; font-weight: 600;">${(typeof t === 'function' ? t('categories.special_daily') : 'Défi')}</span>
                     </div>
                     <div class="flex flex-col items-center gap-2" id="btn-reviser" style="cursor: pointer;">
-                        <div class="quick-action-circle rounded-full flex items-center justify-center transition-colors cursor-pointer group mx-auto" style="border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; background: var(--card-bg, #f3f4f6);">
+                        <div class="quick-action-circle rounded-full flex items-center justify-center transition-colors cursor-pointer group mx-auto" style="border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; background: var(--surface); border: 1px solid var(--border-soft); box-shadow: var(--card-shadow);">
                             <span style="font-size: 28px;">🧠</span>
                         </div>
-                        <span class="quick-action-label" style="font-size: 13px; font-weight: 600;">Réviser (${weakCount})</span>
+                        <span class="quick-action-label" style="font-size: 13px; font-weight: 600;">${(typeof t === 'function' ? t('categories.special_revision') : 'Réviser')} (${weakCount})</span>
                     </div>
                 </div>
             `;
