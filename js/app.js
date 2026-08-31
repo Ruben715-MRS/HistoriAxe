@@ -1,4 +1,68 @@
 
+function formatEventDuration(evt) {
+    if (!evt || evt.dateFin == null || evt.dateFin === evt.date) return null;
+    const diff = Math.abs(evt.dateFin - evt.date);
+    if (diff === 1) return "1 an";
+    if (diff > 1) return `${diff} ans`;
+    return null;
+}
+
+
+function toRoman(num) {
+    if (!num || num <= 0) return '';
+    const lookup = [
+        [1000, 'M'], [900, 'CM'], [500, 'D'], [400, 'CD'],
+        [100, 'C'], [90, 'XC'], [50, 'L'], [40, 'XL'],
+        [10, 'X'], [9, 'IX'], [5, 'V'], [4, 'IV'], [1, 'I']
+    ];
+    let roman = '';
+    for (const [val, str] of lookup) {
+        while (num >= val) {
+            roman += str;
+            num -= val;
+        }
+    }
+    return roman;
+}
+
+function getCenturyLabel(year) {
+    if (year == null) return '';
+    if (year < 0) {
+        const c = Math.ceil(Math.abs(year) / 100);
+        return c === 1 ? 'Ier siècle av. J.-C.' : `${toRoman(c)}e siècle av. J.-C.`;
+    } else {
+        const c = Math.ceil((year === 0 ? 1 : year) / 100);
+        return c === 1 ? 'Ier siècle' : `${toRoman(c)}e siècle`;
+    }
+}
+
+function getPeriodSliceLabel(year, span) {
+    const step = (span > 300) ? 100 : ((span <= 60) ? 10 : ((span <= 150) ? 25 : 50));
+    const start = Math.floor(year / step) * step;
+    if (step === 10 && start >= 1000) {
+        return `Années ${start}`;
+    }
+    const end = start + step;
+    return `${formatYear(start)} – ${formatYear(end)}`;
+}
+
+
+function formatYear(year) {
+    if (year === null || year === undefined || isNaN(year)) return '';
+    const num = Number(year);
+    if (num < 0) {
+        return `${Math.abs(num)} av. J.-C.`;
+    }
+    return `${num}`;
+}
+
+function formatEventDate(evt) {
+    if (!evt) return '';
+    if (evt.datePrecise) return evt.datePrecise;
+    return formatYear(evt.date);
+}
+
+
         function openSettings() {
             if (typeof triggerHaptic === 'function') triggerHaptic('light');
             renderSettingsUI();
@@ -94,6 +158,7 @@ let appSettings = settingsLoad();
 
 // =========================================================================
 // =========================================================================
+// =========================================================================
 // === HISTORIAXE — GESTION DE LA BDD ET CATÉGORIE PERSONNALISÉE ===
 // =========================================================================
 
@@ -101,6 +166,10 @@ if (typeof window.bdd === 'undefined') {
     window.bdd = [];
 }
 var bdd = window.bdd;
+
+function getBdd() {
+    return (window.bdd && window.bdd.length > 0) ? window.bdd : (bdd || []);
+}
 
 const customCategory = {
     nom: "🎨 Mes thèmes personnalisés",
@@ -157,11 +226,12 @@ function getAllEventsWithLocation() {
 }
 
 function ensureCustomCategoryInBdd() {
-    bdd = window.bdd || [];
-    if (!bdd.some(c => c && c.isCustomCategory)) {
-        bdd.push(customCategory);
+    const list = window.bdd || bdd || [];
+    if (!list.some(c => c && c.isCustomCategory)) {
+        list.push(customCategory);
     }
-    window.bdd = bdd;
+    window.bdd = list;
+    bdd = list;
     loadCustomThemesIntoBdd();
 }
 
@@ -247,7 +317,7 @@ function ensureCustomCategoryInBdd() {
                         if (cat.subcategories) traverse(cat.subcategories);
                     }
                 }
-                traverse(bdd);
+                traverse(getBdd());
             } catch (e) {}
         }
 
@@ -599,7 +669,7 @@ function ensureCustomCategoryInBdd() {
         // là où il aide vraiment à repérer sur quoi se concentrer.
         function getProgressTree() {
             const srs = srsLoad();
-            return bdd
+            return getBdd()
                 .map((cat, ci) => buildProgressNode(cat, ci, [], srs))
                 .filter(node => node.stats.total > 0);
         }
@@ -851,7 +921,7 @@ function ensureCustomCategoryInBdd() {
                 : node.themes.length;
         }
         function getCurrentThemeList() {
-            const category = bdd[selectedCategoryIndex];
+            const category = getBdd()[selectedCategoryIndex];
             const node = category.subcategories ? resolveSubcategory(category, selectedSubcategoryIndex) : category;
             // `node` peut être un nœud intermédiaire (pas encore un thème-parent) si le
             // chemin de sous-catégories s'est arrêté tôt sur un segment invalide.
@@ -867,7 +937,7 @@ function ensureCustomCategoryInBdd() {
                 showScreen('screen-categories', 'back');
                 return;
             }
-            const category = bdd[selectedCategoryIndex];
+            const category = getBdd()[selectedCategoryIndex];
             if (category.subcategories && selectedSubcategoryIndex && selectedSubcategoryIndex.length > 0) {
                 selectedSubcategoryIndex = selectedSubcategoryIndex.slice(0, -1);
                 showScreen('screen-subcategories', 'back');
@@ -1129,7 +1199,7 @@ function ensureCustomCategoryInBdd() {
                 const color = getAxisColor(axe);
                 card.className = 'axis-card' + (isSelected ? ' selected' : '');
                 if (color) {
-                    card.dataset.axis = color.name;
+                    card.setAttribute("data-axis", color.name);
                 }
                 card.innerHTML = `<h3>${axe}</h3><p>${count} événement${count > 1 ? 's' : ''}</p>`;
                 card.onclick = () => {
@@ -1156,7 +1226,7 @@ function ensureCustomCategoryInBdd() {
         // Ouvre l'écran des thèmes personnalisés
         function openCustomThemes() {
             favoritesMode = false;
-            let customCatIndex = bdd.findIndex(c => c.isCustomCategory);
+            let customCatIndex = getBdd().findIndex(c => c.isCustomCategory);
             if (customCatIndex === -1) {
                 bdd.push(customCategory);
                 customCatIndex = bdd.length - 1;
@@ -1233,11 +1303,11 @@ function ensureCustomCategoryInBdd() {
             const btnFav = gridSection.querySelector('#btn-favoris');
             if (btnFav) btnFav.onclick = () => openFavorites();
             const btnDisc = gridSection.querySelector('#btn-discover');
-            if (btnDisc) btnDisc.onclick = () => openDiscover();
+            if (btnDisc) btnDisc.onclick = () => discoverRandomEvent();
             const btnDay = gridSection.querySelector('#btn-daily');
-            if (btnDay) btnDay.onclick = () => openDailyChallenge();
+            if (btnDay) btnDay.onclick = () => startDailyChallenge();
             const btnRev = gridSection.querySelector('#btn-reviser');
-            if (btnRev) btnRev.onclick = () => openRevisionHub();
+            if (btnRev) btnRev.onclick = () => startRevision();
 
             // --- BROWSE ARCHIVES (Categories) ---
             const catSection = document.createElement('section');
@@ -1301,7 +1371,7 @@ function ensureCustomCategoryInBdd() {
             // Appliquer le style conteneur Tailwind (similaire à l'accueil)
             container.className = 'w-full max-w-7xl mx-auto space-y-lg md:space-y-xl mt-sm md:mt-xl pb-32';
 
-            const category = bdd[selectedCategoryIndex];
+            const category = getBdd()[selectedCategoryIndex];
             let node = resolveSubcategory(category, selectedSubcategoryIndex);
             if (!node || !node.subcategories) {
                 // Chemin invalide (ex. navigation corrompue par un double-tap) : on revient
@@ -1469,7 +1539,7 @@ function ensureCustomCategoryInBdd() {
         // élargir la recherche au-delà du seul nom du thème.
         function getAllThemesWithPath() {
             const all = [];
-            bdd.forEach((cat, ci) => {
+            getBdd().forEach((cat, ci) => {
                 (function walk(node, path, pathNames) {
                     if (node.subcategories) {
                         node.subcategories.forEach((sub, idx) => walk(sub, [...path, idx], [...pathNames, sub.nom]));
@@ -1581,7 +1651,7 @@ function ensureCustomCategoryInBdd() {
                 return;
             }
             
-            const category = bdd[selectedCategoryIndex];
+            const category = getBdd()[selectedCategoryIndex];
             const themeList = getCurrentThemeList();
             const node = category.subcategories ? resolveSubcategory(category, selectedSubcategoryIndex) : category;
             document.getElementById('theme-screen-title').innerText = node.nom;
@@ -1627,7 +1697,7 @@ function ensureCustomCategoryInBdd() {
 
             const favIds = favoritesLoad();
             const matches = [];
-            bdd.forEach((cat, ci) => {
+            getBdd().forEach((cat, ci) => {
                 (function walk(node, path) {
                     if (node.subcategories) {
                         node.subcategories.forEach((sub, idx) => walk(sub, [...path, idx]));

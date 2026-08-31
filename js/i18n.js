@@ -99,6 +99,7 @@ class I18nManager {
                 if (dataRes.ok) {
                     const dataJson = await dataRes.json();
                     window.bdd = dataJson.categories || [];
+                    if (typeof bdd !== 'undefined') bdd = window.bdd;
                 }
             } catch (err) {
                 console.error('Could not fetch data/' + lang + '.json:', err);

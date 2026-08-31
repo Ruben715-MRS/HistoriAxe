@@ -1,3 +1,38 @@
+
+function generateDailyEvents(seedString) {
+    const all = (typeof getAllEventsWithLocation === 'function') ? getAllEventsWithLocation() : [];
+    if (all.length === 0) return [];
+    const seed = hashStringToSeed('historiaxe-daily-' + (seedString || getDailySeedString()));
+    const rng = mulberry32(seed);
+    
+    const copy = [...all];
+    for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(rng() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+
+    const MAX_PER_CENTURY = 2;
+    const picked = [];
+    const centuryCounts = {};
+
+    copy.forEach(item => {
+        if (picked.length >= 10) return;
+        const century = Math.floor(item.event.date / 100);
+        const count = centuryCounts[century] || 0;
+        if (count >= MAX_PER_CENTURY) return;
+        picked.push(item);
+        centuryCounts[century] = count + 1;
+    });
+
+    if (picked.length < 10) {
+        for (const item of copy) {
+            if (picked.length >= 10) break;
+            if (!picked.includes(item)) picked.push(item);
+        }
+    }
+    return picked;
+}
+
 // =========================================================================
 // === HISTORIAXE — MODULE DÉFI DU JOUR (DAILY CHALLENGE & LEADERBOARD) ===
 // =========================================================================
