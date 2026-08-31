@@ -930,7 +930,24 @@
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('./sw.js')
-                    .then(reg => console.log('[SW] Enregistré avec succès :', reg.scope))
+                    .then(reg => {
+                        console.log('[SW] Enregistré avec succès :', reg.scope);
+                        // sw.js utilise skipWaiting()/clients.claim() : le nouveau Service
+                        // Worker prend donc le contrôle sans attendre la fermeture des
+                        // onglets ouverts. Mais un onglet déjà chargé continue d'exécuter le
+                        // JS déjà en mémoire tant qu'il n'est pas rechargé : sans ce
+                        // rechargement automatique, un correctif déployé pouvait rester
+                        // invisible indéfiniment pour un joueur ayant déjà l'app ouverte.
+                        let refreshing = false;
+                        navigator.serviceWorker.addEventListener('controllerchange', () => {
+                            if (refreshing) return;
+                            refreshing = true;
+                            window.location.reload();
+                        });
+                        // Vérifie tout de suite s'il existe une version plus récente,
+                        // plutôt que d'attendre le prochain rechargement spontané.
+                        reg.update().catch(() => {});
+                    })
                     .catch(err => console.warn('[SW] Échec enregistrement :', err));
             });
         }
