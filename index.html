@@ -857,7 +857,7 @@
     </div>
 
     <!-- MODAL RÉGLAGES -->
-    <div id="modal-settings" class="modal-overlay hidden">
+    <div id="modal-settings" class="modal-overlay hidden" onclick="if(event.target===this)closeSettings()">
         <div class="modal-content" style="max-width:420px;">
             <span class="close-btn" onclick="closeSettings()">×</span>
             <h2 style="font-size:20px; margin-bottom:24px; color:var(--text-dark);">Réglages</h2>

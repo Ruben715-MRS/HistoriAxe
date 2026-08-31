@@ -1,3 +1,16 @@
+
+        function openSettings() {
+            if (typeof triggerHaptic === 'function') triggerHaptic('light');
+            renderSettingsUI();
+            const modal = document.getElementById('modal-settings');
+            if (modal) modal.classList.remove('hidden');
+        }
+
+        function closeSettings() {
+            const modal = document.getElementById('modal-settings');
+            if (modal) modal.classList.add('hidden');
+        }
+    
 let appSettings = settingsLoad();
 
         const systemDarkQuery = window.matchMedia('(prefers-color-scheme: dark)');
@@ -1162,6 +1175,24 @@ function ensureCustomCategoryInBdd() {
             container.innerHTML = '';
             container.className = 'w-full max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop space-y-lg md:space-y-xl mt-sm md:mt-xl pb-32';
 
+            const currentBdd = window.bdd || bdd || [];
+            const nonCustomCategories = currentBdd.filter(c => c && !c.isCustomCategory);
+
+            // Si la base de données est en cours de téléchargement, afficher un indicateur de chargement propre
+            if (nonCustomCategories.length === 0 && typeof i18n !== 'undefined' && i18n.isLoading) {
+                const loadingBox = document.createElement('div');
+                loadingBox.className = 'flex flex-col items-center justify-center p-8 text-center';
+                loadingBox.style.padding = '60px 20px';
+                loadingBox.style.textAlign = 'center';
+                loadingBox.innerHTML = `
+                    <div style="font-size: 40px; margin-bottom: 16px; animation: spin 2s linear infinite;">⏳</div>
+                    <h3 style="font-size: 20px; font-weight: 700; color: var(--primary-blue, #001a4b); margin-bottom: 8px;">Chargement de la bibliothèque historique…</h3>
+                    <p style="color: var(--text-muted, #64748b); font-size: 14px; max-width: 400px; margin: 0 auto;">Initialisation des 16 664 événements et 646 thèmes.</p>
+                `;
+                container.appendChild(loadingBox);
+                return;
+            }
+
             const weakCount = (typeof getWeakEvents === 'function') ? getWeakEvents().length : 0;
             const favCount = (typeof favoritesLoad === 'function') ? favoritesLoad().length : 0;
 
@@ -1221,7 +1252,6 @@ function ensureCustomCategoryInBdd() {
             catSection.appendChild(catGrid);
             container.appendChild(catSection);
 
-            const currentBdd = window.bdd || bdd || [];
             currentBdd.forEach((cat, index) => {
                 let bgImg = 'assets/images/cat_culture_generale.jpg';
                 if(cat.nom.toLowerCase().includes('culture')) bgImg = 'assets/images/cat_culture_generale.jpg';

@@ -57,32 +57,34 @@ class I18nManager {
             if (lang === 'fr' && Object.keys(this.fallbackStrings).length > 0) {
                 uiData = this.fallbackStrings;
             } else {
-                const uiRes = await fetch(`ui/${lang}.json`);
+                const uiRes = await fetch('ui/' + lang + '.json');
                 uiData = await uiRes.json();
             }
             this.uiStrings = uiData;
 
-            const dataRes = await fetch(`data/${lang}.json`);
+            const dataRes = await fetch('data/' + lang + '.json');
             const dataJson = await dataRes.json();
             
             window.bdd = dataJson.categories || [];
             if (typeof ensureCustomCategoryInBdd === 'function') ensureCustomCategoryInBdd();
             else if (typeof bdd !== 'undefined') bdd = window.bdd;
+            
             this.currentLang = lang;
             localStorage.setItem(LANG_KEY, lang);
-
             document.documentElement.lang = lang;
 
+            this.applyTranslations();
+            if (typeof initCategories === 'function') initCategories();
+            if (typeof updateHeaderProfileBar === 'function') updateHeaderProfileBar();
+            if (typeof renderSettingsUI === 'function') renderSettingsUI();
+
             if (reloadUI) {
-                this.applyTranslations();
-                if (typeof initCategories === 'function') initCategories();
-                if (typeof renderSettingsUI === 'function') renderSettingsUI();
-                showToast(`🌐 Langue active : ${this.getLanguageName(lang)}`, 3000);
+                showToast('🌐 Langue active : ' + this.getLanguageName(lang), 3000);
             }
         } catch (err) {
-            console.error(`Failed to load language pack [${lang}]:`, err);
+            console.error('Failed to load language pack [' + lang + ']:', err);
             if (lang !== 'fr') {
-                showToast(`⚠️ Erreur de chargement du pack ${lang}. Repli sur Français.`, 4000);
+                showToast('⚠️ Erreur de chargement du pack ' + lang + '. Repli sur Français.', 4000);
                 await this.loadLanguage('fr', reloadUI);
             }
         } finally {
@@ -90,7 +92,7 @@ class I18nManager {
         }
     }
 
-    t(key, params = {}) {
+    t(key, params) {
         if (!key) return '';
         const keys = key.split('.');
         let val = this.resolveKey(this.uiStrings, keys);
@@ -103,7 +105,7 @@ class I18nManager {
 
         if (typeof val === 'string' && params && typeof params === 'object') {
             for (const [k, v] of Object.entries(params)) {
-                val = val.replaceAll(`{${k}}`, v);
+                val = val.replaceAll('{' + k + '}', v);
             }
         }
         return val;
@@ -120,10 +122,10 @@ class I18nManager {
 
     getLanguageName(code) {
         const item = AVAILABLE_LANGUAGES.find(l => l.code === code);
-        return item ? `${item.flag} ${item.name}` : code;
+        return item ? (item.flag + ' ' + item.name) : code;
     }
 
-    async downloadLanguagePack(lang, onProgress = null) {
+    async downloadLanguagePack(lang, onProgress) {
         if (!navigator.onLine) {
             showToast('⚠️ Connexion Internet requise pour télécharger un pack.', 4000);
             return false;
@@ -132,8 +134,8 @@ class I18nManager {
         try {
             if (typeof onProgress === 'function') onProgress(10);
 
-            const uiUrl = `ui/${lang}.json`;
-            const dataUrl = `data/${lang}.json`;
+            const uiUrl = 'ui/' + lang + '.json';
+            const dataUrl = 'data/' + lang + '.json';
 
             const [uiRes, dataRes] = await Promise.all([
                 fetch(uiUrl),
@@ -161,12 +163,12 @@ class I18nManager {
                 localStorage.setItem(INSTALLED_LANGS_KEY, JSON.stringify(this.installedLanguages));
             }
 
-            showToast(`✨ Pack ${this.getLanguageName(lang)} installé et prêt hors-ligne !`, 3500);
+            showToast('✨ Pack ' + this.getLanguageName(lang) + ' installé et prêt hors-ligne !', 3500);
             this.renderLanguagePacksSettingsUI();
             return true;
         } catch (err) {
-            console.error(`Error downloading pack ${lang}:`, err);
-            showToast(`⚠️ Échec du téléchargement du pack ${lang}.`, 4000);
+            console.error('Error downloading pack ' + lang + ':', err);
+            showToast('⚠️ Échec du téléchargement du pack ' + lang + '.', 4000);
             return false;
         }
     }
@@ -181,8 +183,8 @@ class I18nManager {
             if ('caches' in window) {
                 const cache = await caches.open(I18N_DATA_CACHE);
                 await Promise.all([
-                    cache.delete(`ui/${lang}.json`),
-                    cache.delete(`data/${lang}.json`)
+                    cache.delete('ui/' + lang + '.json'),
+                    cache.delete('data/' + lang + '.json')
                 ]);
             }
 
@@ -193,10 +195,10 @@ class I18nManager {
                 await this.loadLanguage('fr', true);
             }
 
-            showToast(`🗑️ Pack ${this.getLanguageName(lang)} supprimé.`, 3000);
+            showToast('🗑️ Pack ' + this.getLanguageName(lang) + ' supprimé.', 3000);
             this.renderLanguagePacksSettingsUI();
         } catch (e) {
-            console.error(`Error deleting pack ${lang}:`, e);
+            console.error('Error deleting pack ' + lang + ':', e);
         }
     }
 
@@ -237,42 +239,30 @@ class I18nManager {
 
             let statusBadge = '';
             if (isActive) {
-                statusBadge = `<span class="lang-pack-status-badge active">${this.t('settings.active_badge') || 'Actif'}</span>`;
+                statusBadge = '<span class="lang-pack-status-badge active">' + (this.t('settings.active_badge') || 'Actif') + '</span>';
             } else if (isInstalled) {
-                statusBadge = `<span class="lang-pack-status-badge installed">${this.t('settings.installed_badge') || 'Installé'}</span>`;
+                statusBadge = '<span class="lang-pack-status-badge installed">' + (this.t('settings.installed_badge') || 'Installé') + '</span>';
             }
 
             let actionBtns = '';
             if (isActive) {
-                actionBtns = `<span style="font-size:13px; font-weight:700; color:var(--primary-blue);">✓</span>`;
+                actionBtns = '<span style="font-size:13px; font-weight:700; color:var(--primary-blue);">✓</span>';
             } else if (isInstalled) {
-                actionBtns = `
-                    <button class="btn-pack-action btn-primary" onclick="i18n.loadLanguage('${langItem.code}', true)">${this.t('nav.validate') || 'Activer'}</button>
-                    ${!langItem.isDefault ? `<button class="btn-pack-action btn-danger" onclick="i18n.deleteLanguagePack('${langItem.code}')" title="${this.t('settings.delete_btn') || 'Supprimer'}">🗑️</button>` : ''}
-                `;
+                actionBtns = '<button class="btn-pack-action btn-primary" onclick="i18n.loadLanguage(\'' + langItem.code + '\', true)">' + (this.t('nav.validate') || 'Activer') + '</button>' +
+                    (!langItem.isDefault ? '<button class="btn-pack-action btn-danger" onclick="i18n.deleteLanguagePack(\'' + langItem.code + '\')" title="' + (this.t('settings.delete_btn') || 'Supprimer') + '">🗑️</button>' : '');
             } else {
-                actionBtns = `
-                    <button class="btn-pack-action btn-primary" id="btn-dl-${langItem.code}" onclick="i18n.downloadLanguagePack('${langItem.code}')">
-                        📥 ${this.t('settings.download_btn') || 'Télécharger'}
-                    </button>
-                `;
+                actionBtns = '<button class="btn-pack-action btn-primary" id="btn-dl-' + langItem.code + '" onclick="i18n.downloadLanguagePack(\'' + langItem.code + '\')">📥 ' + (this.t('settings.download_btn') || 'Télécharger') + '</button>';
             }
 
-            card.innerHTML = `
-                <div class="lang-pack-left">
-                    <span class="lang-pack-flag">${langItem.flag}</span>
-                    <div class="lang-pack-info">
-                        <div class="lang-pack-name">
-                            ${langItem.name}
-                            ${statusBadge}
-                        </div>
-                        <div class="lang-pack-details">${langItem.size} • v${langItem.version}</div>
-                    </div>
-                </div>
-                <div class="lang-pack-actions">
-                    ${actionBtns}
-                </div>
-            `;
+            card.innerHTML = '<div class="lang-pack-left">' +
+                '<span class="lang-pack-flag">' + langItem.flag + '</span>' +
+                '<div class="lang-pack-info">' +
+                    '<div class="lang-pack-name">' + langItem.name + ' ' + statusBadge + '</div>' +
+                    '<div class="lang-pack-details">' + langItem.size + ' • v' + langItem.version + '</div>' +
+                '</div>' +
+            '</div>' +
+            '<div class="lang-pack-actions">' + actionBtns + '</div>';
+
             container.appendChild(card);
         });
     }
