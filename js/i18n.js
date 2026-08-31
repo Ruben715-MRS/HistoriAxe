@@ -66,6 +66,8 @@ class I18nManager {
             const dataJson = await dataRes.json();
             
             window.bdd = dataJson.categories || [];
+            if (typeof ensureCustomCategoryInBdd === 'function') ensureCustomCategoryInBdd();
+            else if (typeof bdd !== 'undefined') bdd = window.bdd;
             this.currentLang = lang;
             localStorage.setItem(LANG_KEY, lang);
 
