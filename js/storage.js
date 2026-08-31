@@ -66,7 +66,7 @@ function srsRecord(eventId, isSuccess) {
 
 function getWeakEvents(customPool = null) {
     const data = srsLoad();
-    const pool = customPool || (typeof getAllEventsFlat === 'function' ? getAllEventsFlat() : []);
+    const pool = customPool || (typeof getAllEvents === 'function' ? getAllEvents() : []);
     return pool.filter(e => {
         const info = data[e.id];
         return info && info.box < 5 && (info.failCount || 0) > 0;
@@ -93,6 +93,30 @@ function recordThemeCompletion(themeId, score, isWin) {
     prev.lastPlayed = Date.now();
     p[themeId] = prev;
     progressSave(p);
+}
+
+// --- DÉVERROUILLAGE DES MODES CHRONO / EXPERT (par thème) ---
+// Découverte, Entraînement et Classique sont toujours libres d'accès.
+// Réussir Classique sur un thème déverrouille Chrono sur ce même thème ;
+// réussir Chrono déverrouille ensuite Expert, toujours sur ce thème.
+function progressRecordWin(themeId, mode) {
+    if (!themeId || (mode !== 'classic' && mode !== 'chrono')) return;
+    const data = progressLoad();
+    const entry = data[themeId] || { classicWon: false, chronoWon: false };
+    if (mode === 'classic') entry.classicWon = true;
+    if (mode === 'chrono') entry.chronoWon = true;
+    data[themeId] = entry;
+    progressSave(data);
+}
+
+function isChronoUnlocked(themeId) {
+    const data = progressLoad();
+    return !!(data[themeId] && data[themeId].classicWon);
+}
+
+function isExpertUnlocked(themeId) {
+    const data = progressLoad();
+    return !!(data[themeId] && data[themeId].chronoWon);
 }
 
 // --- FAVORIS ---

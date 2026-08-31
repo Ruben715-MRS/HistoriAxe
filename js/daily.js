@@ -30,6 +30,60 @@ function hashStringToSeed(str) {
     return Math.abs(hash) || 123456789;
 }
 
+// Siècle numérique signé (ex : 1789 → 18, -450 → -5), pour regrouper les
+// événements du tirage quotidien et éviter une frise concentrée sur une
+// seule période (voir generateDailyEvents ci-dessous).
+function getCenturyKey(year) {
+    if (year == null) return 0;
+    if (year < 0) return -Math.ceil(Math.abs(year) / 100);
+    return Math.ceil((year === 0 ? 1 : year) / 100);
+}
+
+// Tire les 10 événements du Défi du jour : mélange déterministe de toute la
+// base (graine = date du jour, identique pour tous les joueurs), avec leur
+// emplacement complet dans l'arbre bdd (attendu par startDailyChallenge),
+// puis sélection gloutonne qui refuse tout événement dépassant 2
+// représentants du même siècle, pour éviter un tirage trop concentré.
+function generateDailyEvents() {
+    const allWithLocation = (typeof getAllEventsWithLocation === 'function') ? getAllEventsWithLocation() : [];
+    if (allWithLocation.length === 0) return [];
+
+    const seedStr = getDailySeedString();
+    const seed = hashStringToSeed('historiaxe_daily_' + seedStr);
+    const rng = mulberry32(seed);
+
+    const shuffled = [...allWithLocation];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(rng() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+
+    const MAX_PER_CENTURY = 2;
+    const picked = [];
+    const centuryCounts = {};
+
+    shuffled.forEach(item => {
+        if (picked.length >= 10) return;
+        const century = getCenturyKey(item.event.date);
+        const count = centuryCounts[century] || 0;
+        if (count >= MAX_PER_CENTURY) return;
+        picked.push(item);
+        centuryCounts[century] = count + 1;
+    });
+
+    // Filet de sécurité : si le lissage strict laisse moins de 10 événements,
+    // on complète avec le reste du tirage mélangé plutôt que de renvoyer un
+    // défi incomplet.
+    if (picked.length < 10) {
+        for (const item of shuffled) {
+            if (picked.length >= 10) break;
+            if (picked.indexOf(item) === -1) picked.push(item);
+        }
+    }
+
+    return picked;
+}
+
 function getDeterministicDailyEvents(allEvents, count = 10) {
     if (!allEvents || allEvents.length === 0) return [];
     const seedStr = getDailySeedString();

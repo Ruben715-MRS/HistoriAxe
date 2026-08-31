@@ -10,7 +10,32 @@
             const modal = document.getElementById('modal-settings');
             if (modal) modal.classList.add('hidden');
         }
-    
+
+        function openScoringInfo() {
+            const modal = document.getElementById('modal-scoring-info');
+            if (modal) modal.classList.remove('hidden');
+        }
+        function closeScoringInfo() {
+            const modal = document.getElementById('modal-scoring-info');
+            if (modal) modal.classList.add('hidden');
+        }
+
+        // Efface les favoris, les thèmes/événements personnalisés, l'historique de révision (SRS)
+        // et la progression de déverrouillage des modes Chrono/Expert. Les réglages d'affichage
+        // sont conservés (ce ne sont pas des données de progression, mais des préférences d'interface).
+        function resetGameData() {
+            showConfirm(
+                "Cette action supprime définitivement vos thèmes favoris, l'intégralité de vos thèmes et événements personnalisés créés, tout l'historique de révision (points faibles, boîtes de mémorisation) et la progression de déverrouillage des modes Chrono/Expert. Cette action est irréversible. Voulez-vous continuer ?",
+                () => {
+                    resetAllGameData();
+                    if (typeof customCategory !== 'undefined') customCategory.themes = [];
+                    closeSettings();
+                    showScreen('screen-categories');
+                },
+                { okLabel: 'Tout réinitialiser' }
+            );
+        }
+
 let appSettings = settingsLoad();
 
         const systemDarkQuery = window.matchMedia('(prefers-color-scheme: dark)');
@@ -91,6 +116,72 @@ let appSettings = settingsLoad();
 // =========================================================================
 // === HISTORIAXE — CONTRÔLEUR PRINCIPAL & MOTEURS DE JEU (APP.JS) ===
 // =========================================================================
+
+// =========================================================================
+// === FONCTIONS UTILITAIRES POUR LES DATES ===
+// Perdues lors de l'extraction de l'ancien <script> monolithique vers ce
+// fichier (refactor PWA/i18n/gamification) : elles n'étaient référencées que
+// depuis le HTML d'origine et n'ont jamais été reportées ici, ce qui cassait
+// silencieusement (ReferenceError) le lancement de toute partie ou frise.
+// =========================================================================
+function formatYear(year) {
+    if (year < 0) return Math.abs(year) + " av. J.-C.";
+    return year;
+}
+
+function formatEventDate(evt) {
+    if (!evt || evt.date == null) return "";
+    if (evt.dateFin != null && evt.dateFin !== evt.date) {
+        return `${formatYear(evt.date)} – ${formatYear(evt.dateFin)}`;
+    }
+    return `${formatYear(evt.date)}`;
+}
+
+function formatEventDuration(evt) {
+    if (!evt || evt.dateFin == null || evt.dateFin === evt.date) return null;
+    const diff = Math.abs(evt.dateFin - evt.date);
+    if (diff === 1) return "1 an";
+    if (diff > 1) return `${diff} ans`;
+    return null;
+}
+
+function toRoman(num) {
+    if (!num || num <= 0) return '';
+    const lookup = [
+        [1000, 'M'], [900, 'CM'], [500, 'D'], [400, 'CD'],
+        [100, 'C'], [90, 'XC'], [50, 'L'], [40, 'XL'],
+        [10, 'X'], [9, 'IX'], [5, 'V'], [4, 'IV'], [1, 'I']
+    ];
+    let roman = '';
+    for (const [val, str] of lookup) {
+        while (num >= val) {
+            roman += str;
+            num -= val;
+        }
+    }
+    return roman;
+}
+
+function getCenturyLabel(year) {
+    if (year == null) return '';
+    if (year < 0) {
+        const c = Math.ceil(Math.abs(year) / 100);
+        return c === 1 ? 'Ier siècle av. J.-C.' : `${toRoman(c)}e siècle av. J.-C.`;
+    } else {
+        const c = Math.ceil((year === 0 ? 1 : year) / 100);
+        return c === 1 ? 'Ier siècle' : `${toRoman(c)}e siècle`;
+    }
+}
+
+function getPeriodSliceLabel(year, span) {
+    const step = (span > 300) ? 100 : ((span <= 60) ? 10 : ((span <= 150) ? 25 : 50));
+    const start = Math.floor(year / step) * step;
+    if (step === 10 && start >= 1000) {
+        return `Années ${start}`;
+    }
+    const end = start + step;
+    return `${formatYear(start)} – ${formatYear(end)}`;
+}
 
 // =========================================================================
 // =========================================================================
@@ -852,6 +943,10 @@ function ensureCustomCategoryInBdd() {
         }
         function getCurrentThemeList() {
             const category = bdd[selectedCategoryIndex];
+            // Aucune catégorie/thème encore sélectionné (ex. « Hasard » depuis l'accueil,
+            // avant toute navigation) : pas de thème courant, ce que getCurrentTheme()
+            // gère déjà (undefined) chez ses appelants.
+            if (!category) return [];
             const node = category.subcategories ? resolveSubcategory(category, selectedSubcategoryIndex) : category;
             // `node` peut être un nœud intermédiaire (pas encore un thème-parent) si le
             // chemin de sous-catégories s'est arrêté tôt sur un segment invalide.
@@ -1233,11 +1328,11 @@ function ensureCustomCategoryInBdd() {
             const btnFav = gridSection.querySelector('#btn-favoris');
             if (btnFav) btnFav.onclick = () => openFavorites();
             const btnDisc = gridSection.querySelector('#btn-discover');
-            if (btnDisc) btnDisc.onclick = () => openDiscover();
+            if (btnDisc) btnDisc.onclick = () => discoverRandomEvent();
             const btnDay = gridSection.querySelector('#btn-daily');
-            if (btnDay) btnDay.onclick = () => openDailyChallenge();
+            if (btnDay) btnDay.onclick = () => startDailyChallenge();
             const btnRev = gridSection.querySelector('#btn-reviser');
-            if (btnRev) btnRev.onclick = () => openRevisionHub();
+            if (btnRev) btnRev.onclick = () => showScreen('screen-revision-hub');
 
             // --- BROWSE ARCHIVES (Categories) ---
             const catSection = document.createElement('section');
@@ -1449,7 +1544,7 @@ function ensureCustomCategoryInBdd() {
             const favBtn = card.querySelector('.data-card-fav');
             favBtn.onclick = (e) => {
                 e.stopPropagation();
-                toggleFavorite(theme.id);
+                toggleFavoriteStorage(theme.id);
                 if (opts.onFavoriteToggle) {
                     opts.onFavoriteToggle();
                 } else {
