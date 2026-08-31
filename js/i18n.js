@@ -5,17 +5,39 @@
 const I18N_DATA_CACHE = 'historiaxe-data-v1.0.0';
 
 const AVAILABLE_LANGUAGES = [
-    { code: 'fr', name: 'Français', flag: '🇫🇷', version: '1.0.0', size: '10.5 Mo (Intégral)', isDefault: true },
+    { code: 'fr', name: 'Français', flag: '🇫🇷', version: '1.0.0', size: '11.7 Mo (Intégral)', isDefault: true },
     { code: 'en', name: 'English', flag: '🇬🇧', version: '1.0.0', size: '150 Ko (Démo)', isDefault: false },
     { code: 'es', name: 'Español', flag: '🇪🇸', version: '1.0.0', size: '150 Ko (Démo)', isDefault: false }
 ];
+
+// Dictionnaire de secours intégré pour garantir un affichage parfait même hors-ligne
+const DEFAULT_FR_FALLBACK_UI = {
+    settings: {
+        active_badge: "Actif",
+        installed_badge: "Installé",
+        download_btn: "Télécharger",
+        delete_btn: "Supprimer",
+        offline_ready_hint: "Les packs téléchargés sont 100% accessibles hors-ligne.",
+        language_label: "Langue & Packs de contenu"
+    },
+    gamification: {
+        rank_badge: "Niv. {level}",
+        max_rank: "Grade suprême atteint !",
+        xp_needed: "Encore {needed} XP avant {next}"
+    },
+    nav: {
+        validate: "Activer",
+        back: "Retour",
+        quit: "Quitter"
+    }
+};
 
 class I18nManager {
     constructor() {
         this.currentLang = 'fr';
         this.installedLanguages = ['fr'];
-        this.uiStrings = {};
-        this.fallbackStrings = {};
+        this.uiStrings = DEFAULT_FR_FALLBACK_UI;
+        this.fallbackStrings = DEFAULT_FR_FALLBACK_UI;
         this.isLoading = false;
     }
 
@@ -41,10 +63,13 @@ class I18nManager {
         }
 
         try {
-            const frUiRes = await fetch('ui/fr.json');
-            this.fallbackStrings = await frUiRes.json();
+            let frUiRes = await fetch('ui/fr.json');
+            if (!frUiRes.ok) frUiRes = await fetch('UI/fr.json');
+            if (frUiRes.ok) {
+                this.fallbackStrings = await frUiRes.json();
+            }
         } catch (e) {
-            console.warn('Could not load fallback ui/fr.json:', e);
+            console.warn('Could not load fallback ui/fr.json, using built-in strings:', e);
         }
 
         await this.loadLanguage(this.currentLang, false);
@@ -53,24 +78,37 @@ class I18nManager {
     async loadLanguage(lang, reloadUI = true) {
         this.isLoading = true;
         try {
+            // 1. Charger UI strings
             let uiData = null;
-            if (lang === 'fr' && Object.keys(this.fallbackStrings).length > 0) {
-                uiData = this.fallbackStrings;
-            } else {
-                const uiRes = await fetch('ui/' + lang + '.json');
-                uiData = await uiRes.json();
+            try {
+                let uiRes = await fetch('ui/' + lang + '.json');
+                if (!uiRes.ok) uiRes = await fetch('UI/' + lang + '.json');
+                if (uiRes.ok) {
+                    uiData = await uiRes.json();
+                }
+            } catch (err) {
+                console.warn('Could not fetch ui/' + lang + '.json:', err);
             }
-            this.uiStrings = uiData;
 
-            const dataRes = await fetch('data/' + lang + '.json');
-            const dataJson = await dataRes.json();
+            this.uiStrings = uiData || this.fallbackStrings || DEFAULT_FR_FALLBACK_UI;
+
+            // 2. Charger Data Content (BDD)
+            try {
+                let dataRes = await fetch('data/' + lang + '.json');
+                if (!dataRes.ok) dataRes = await fetch('Data/' + lang + '.json');
+                if (dataRes.ok) {
+                    const dataJson = await dataRes.json();
+                    window.bdd = dataJson.categories || [];
+                }
+            } catch (err) {
+                console.error('Could not fetch data/' + lang + '.json:', err);
+            }
             
-            window.bdd = dataJson.categories || [];
             if (typeof ensureCustomCategoryInBdd === 'function') ensureCustomCategoryInBdd();
             else if (typeof bdd !== 'undefined') bdd = window.bdd;
             
             this.currentLang = lang;
-            localStorage.setItem(LANG_KEY, lang);
+            try { localStorage.setItem(LANG_KEY, lang); } catch(e) {}
             document.documentElement.lang = lang;
 
             this.applyTranslations();
@@ -98,6 +136,9 @@ class I18nManager {
         let val = this.resolveKey(this.uiStrings, keys);
         if (val === undefined || val === null) {
             val = this.resolveKey(this.fallbackStrings, keys);
+        }
+        if (val === undefined || val === null) {
+            val = this.resolveKey(DEFAULT_FR_FALLBACK_UI, keys);
         }
         if (val === undefined || val === null) {
             return key;
