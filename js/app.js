@@ -1461,7 +1461,14 @@ function ensureCustomCategoryInBdd() {
                 else if(nomLower.includes('empires')) bgImg = 'assets/images/sub_empires.jpg';
                 else if(nomLower.includes('sciences')) bgImg = 'assets/images/sub_sciences_techniques.jpg';
                 else if(nomLower.includes('arts') || nomLower.includes('spectacle')) bgImg = 'assets/images/sub_arts_litterature.jpg';
-                else if(nomLower.includes('religions') || nomLower.includes('croyances') || nomLower.includes('mytholog') || nomLower.includes('judaïsme') || nomLower.includes('islam') || nomLower.includes('christianisme') || nomLower.includes('hindouisme') || nomLower.includes('bouddhisme')) bgImg = 'assets/images/sub_religions_croyances.jpg';
+                else if(nomLower.includes('juda')) bgImg = 'assets/images/sub_judaisme.jpg';
+                else if(nomLower.includes('islam')) bgImg = 'assets/images/sub_islam.jpg';
+                else if(nomLower.includes('christianisme')) bgImg = 'assets/images/sub_christianisme.jpg';
+                else if(nomLower.includes('hindouisme')) bgImg = 'assets/images/sub_hindouisme.jpg';
+                else if(nomLower.includes('bouddhisme')) bgImg = 'assets/images/sub_bouddhisme.jpg';
+                else if(nomLower.includes('mytholog')) bgImg = 'assets/images/sub_mythologies.jpg';
+                else if(nomLower.includes('grandes religions')) bgImg = 'assets/images/sub_grandes_religions.jpg';
+                else if(nomLower.includes('religions') || nomLower.includes('croyances')) bgImg = 'assets/images/sub_religions_croyances.jpg';
                 else if(nomLower.includes('société') || nomLower.includes('societe') || nomLower.includes('géopolitique') || nomLower.includes('geopolitique') || nomLower.includes('généraux')) bgImg = 'assets/images/sub_themes_generaux.jpg';
                 else if(nomLower.includes('rois, reines')) bgImg = 'assets/images/sub_rois_reines.jpg';
                 else if(nomLower.includes('chefs militaires')) bgImg = 'assets/images/sub_chefs_militaires.jpg';
