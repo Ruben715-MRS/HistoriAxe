@@ -117,6 +117,9 @@
             }
         }
     </script>
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="stylesheet" href="css/style.css">
+</head>
 <body>
     <!-- ÉCRAN 1 : ACCUEIL -->
     <div id="screen-home" onclick="showScreen('screen-categories')">
@@ -128,6 +131,7 @@
     <!-- ÉCRAN 2 : CATÉGORIES (Grandes sections) -->
     <div id="screen-categories" class="list-screen hidden">
         <button class="back-btn" onclick="showScreen('screen-home')" aria-label="Retour à l'accueil">‹</button>
+        <button class="profile-btn" onclick="openProfileModal()" aria-label="Profil et Trophées">🏅</button>
         <button class="settings-btn" onclick="openSettings()" aria-label="Réglages">⚙</button>
         <div class="search-bar-wrap">
             <div class="search-bar">
@@ -136,6 +140,21 @@
                 <span class="search-bar-clear hidden" id="theme-search-clear" onclick="clearThemeSearch()" title="Effacer" aria-label="Effacer la recherche">✕</span>
             </div>
             <div id="theme-search-results" class="search-results hidden"></div>
+            
+            <!-- Bannière de Grade & Progression XP -->
+            <div class="player-rank-bar" onclick="openProfileModal()" title="Voir mon profil et mes trophées">
+                <div class="player-rank-avatar" id="header-rank-avatar">📜</div>
+                <div class="player-rank-details">
+                    <div class="player-rank-row">
+                        <span class="player-rank-title" id="header-rank-title">Novice des Annales</span>
+                        <span class="player-rank-level-badge" id="header-rank-level">Niv. 1</span>
+                    </div>
+                    <div class="player-rank-track">
+                        <div class="player-rank-fill" id="header-rank-fill" style="width: 0%;"></div>
+                    </div>
+                </div>
+                <div class="player-rank-xp-text" id="header-rank-xp">0 / 500 XP</div>
+            </div>
         </div>
         <div class="list-categories" id="categories-container"></div>
     </div>
@@ -294,7 +313,7 @@
             </div>
             <div class="mode-card ecart-card" onclick="startEcartGame()">
                 <h3>Trouve l'écart</h3>
-                <p>3 vies. Estimez le nombre d'années qui séparent deux événements.</p>
+                <p>3 vies. Devinez le nombre d'années entre deux événements : 5 essais, le jeu vous dit si c'est plus ou moins.</p>
             </div>
             <div class="mode-card multi-card" onclick="showMultiplayerSetup()">
                 <h3>Multijoueurs</h3>
@@ -570,7 +589,7 @@
 
         <div class="fil-body">
             <div class="fil-question-card">
-                <div class="fil-kicker">Combien d'années séparent ces deux événements ?</div>
+                <div class="fil-kicker">Combien d'années séparent ces deux événements ? Proposez un nombre, le jeu vous dira si c'est plus ou moins.</div>
                 <div class="ecart-pair">
                     <div class="ecart-pair-event" id="ecart-event-a">Chargement…</div>
                     <div class="ecart-pair-sep">↕</div>
@@ -583,7 +602,7 @@
             </div>
 
             <div class="fil-display">
-                <button class="fil-hint-btn" id="ecart-hint-btn" onclick="ecartUseHint()">💡 Indice</button>
+                <span class="fil-hint-btn ecart-chances-badge" id="ecart-chances-badge" aria-live="polite">🎯 5 essais</span>
                 <span class="fil-display-value" id="ecart-display-value">—</span>
                 <span class="fil-era-btn ecart-unit-label" aria-hidden="true">ans</span>
             </div>
@@ -612,26 +631,15 @@
     <!-- ÉCRAN 6 : FIN DE PARTIE -->
     <div id="screen-end" class="hidden">
         <button class="back-btn" onclick="showScreen(screenAfterGame())" aria-label="Retour">‹</button>
-        <div class="end-content-wrapper">
-            <div class="end-title" id="end-title">Partie Terminée</div>
-            <div class="end-score">Score : <strong id="end-score-val">0</strong> points</div>
-            <div id="end-time-display" class="end-time hidden">Durée : 0,0 s</div>
-            <div id="end-streak-display" class="end-streak-banner hidden"></div>
-            
-            <!-- Résumé Wordle & Partage -->
-            <div id="end-share-container" class="share-card hidden"></div>
-
-            <div style="display:flex; gap:15px; margin-top: 15px; justify-content: center; flex-wrap: wrap;">
-                <button class="btn btn-secondary" onclick="showScreen(screenAfterGame())">Menu</button>
-                <button class="btn" onclick="replayCurrentGame()">Rejouer</button>
-            </div>
-
-            <!-- Anecdote Historique « Le Saviez-vous ? » -->
-            <div id="end-anecdote-container" class="anecdote-card-wrapper hidden"></div>
+        <div class="end-title" id="end-title">Partie Terminée</div>
+        <div class="end-score">Score : <strong id="end-score-val">0</strong> points</div>
+        <div id="end-time-display" class="end-time hidden">Durée : 0,0 s</div>
+        <div style="display:flex; gap:15px; margin-top: 20px;">
+            <button class="btn" onclick="replayCurrentGame()">Rejouer</button>
         </div>
     </div>
 
-<!-- MODAL DÉTAILS -->
+    <!-- MODAL DÉTAILS -->
     <div id="modal-details" class="modal-overlay hidden">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal()">×</span>
@@ -662,17 +670,7 @@
                     <span class="daily-results-stat-val" id="daily-results-time">0,0 s</span>
                     <span class="daily-results-stat-label">Temps</span>
                 </div>
-                <div class="daily-results-stat">
-                    <span class="daily-results-stat-val" id="daily-results-streak">0 🔥</span>
-                    <span class="daily-results-stat-label">Série</span>
-                </div>
             </div>
-
-            <!-- Résumé Wordle & Partage Défi du Jour -->
-            <div id="daily-share-container" class="share-card" style="margin: 12px 0;"></div>
-
-            <!-- Anecdote Historique Défi du Jour -->
-            <div id="daily-anecdote-container" class="anecdote-card-wrapper" style="margin: 12px 0;"></div>
 
             <div class="daily-countdown-box">
                 Prochain défi dans <span class="daily-countdown-val" id="daily-countdown-val">--:--:--</span>
@@ -779,7 +777,7 @@
             </div>
         </div>
     </div>
-
+    
     <!-- MODAL LEADERBOARD / SCORES -->
     <div id="modal-leaderboard" class="modal-overlay hidden">
         <div class="modal-content" style="max-width:500px;">
@@ -833,11 +831,12 @@
                 </ul>
 
                 <h3>📏 Mode « Trouve l'écart »</h3>
-                <p>Deux événements sont présentés sans leurs dates : il faut saisir au clavier le nombre d'années qui les séparent.</p>
+                <p>Deux événements sont présentés sans leurs dates : il faut deviner le nombre d'années qui les séparent, comme au « Juste Prix ». Vous proposez un nombre, le jeu vous répond <strong>« plus »</strong> ou <strong>« moins »</strong>, et vous retentez votre chance.</p>
                 <ul>
-                    <li><strong>Écart exact</strong> : 100 points × multiplicateur de combo.</li>
-                    <li><strong>Bouton 💡 Indice</strong> : Dévoile les chiffres de l'écart un par un depuis la gauche, avec la même <strong>pénalité de 25 points</strong> par chiffre et réinitialisation du combo qu'en Fil du temps ; tout dévoiler équivaut à un échec (0 point, perte d'une vie).</li>
-                    <li><strong>Estimation erronée</strong> : le principe de proximité s'applique — l'écart entre votre estimation et le nombre d'années réel est comparé à l'étendue chronologique du thème pour accorder des points partiels (moins les pénalités d'indices éventuelles), et une vie est perdue.</li>
+                    <li><strong>5 essais par question</strong> : chaque question démarre à <strong>100 points</strong>, et chaque proposition fausse coûte <strong>20 points</strong> (80, puis 60, 40, 20…).</li>
+                    <li><strong>Trouvé du premier coup</strong> : les 100 points sont multipliés par le combo en cours, comme pour une réponse exacte dans les autres modes.</li>
+                    <li><strong>Trouvé après un ou plusieurs essais</strong> : vous gagnez les points restants sur la question (sans bonus de combo), et le multiplicateur retombe à ×1,0.</li>
+                    <li><strong>5 essais épuisés sans trouver l'écart</strong> : 0 point sur la question, la bonne réponse s'affiche et une vie est perdue.</li>
                 </ul>
 
                 <h3>🌱 Modes Découverte et Entraînement</h3>
@@ -881,6 +880,7 @@
                 </div>
                 <p class="settings-hint">« Auto » suit le réglage clair/sombre programmé sur votre appareil.</p>
             </div>
+            
             <div class="settings-group">
                 <div class="settings-label">Son immersif</div>
                 <div class="segmented" id="settings-sound">
@@ -888,6 +888,14 @@
                     <button type="button" data-value="off">Désactivé</button>
                 </div>
                 <p class="settings-hint">Carillons harmoniques, bruits de cartes et retour audio sur les réponses.</p>
+            </div>
+            
+            <div class="settings-group">
+                <div class="settings-label" data-i18n="settings.language_label">Langue & Packs de contenu</div>
+                <div id="settings-lang-packs-container" class="lang-packs-list">
+                    <!-- Généré dynamiquement par i18n.renderLanguagePacksSettingsUI() -->
+                </div>
+                <p class="settings-hint" data-i18n="settings.offline_ready_hint">Les packs téléchargés sont 100% accessibles hors-ligne.</p>
             </div>
             <div class="settings-group">
                 <div class="settings-label">Vibrations & Haptique</div>
@@ -897,6 +905,8 @@
                 </div>
                 <p class="settings-hint">Retours tactiles lors des interactions, bonnes réponses et erreurs.</p>
             </div>
+    
+    
 
             <div class="settings-group">
                 <div class="settings-label">Données de jeu</div>
