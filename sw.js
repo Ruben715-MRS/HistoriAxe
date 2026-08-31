@@ -2,7 +2,7 @@
 // === HISTORIAXE — SERVICE WORKER OFF-LINE & PACKS DE DONNÉES (SW.JS) ===
 // =========================================================================
 
-const CACHE_VERSION = '1.0.0';
+const CACHE_VERSION = '1.0.1';
 const APP_SHELL_CACHE = `historiaxe-shell-v${CACHE_VERSION}`;
 const DATA_CACHE = 'historiaxe-data-v1.0.0';
 
@@ -86,26 +86,31 @@ self.addEventListener('fetch', (event) => {
         return;
     }
 
-    // Requêtes standards App Shell (HTML, CSS, JS, Images locales)
+    // Requêtes standards App Shell (HTML, CSS, JS, Images locales) : réseau
+    // d'abord, avec repli sur le cache si hors-ligne (ou requête échouée).
+    // Un vrai correctif de bug ne doit jamais rester invisible pour un joueur
+    // qui a déjà l'app en cache : contrairement aux packs de données/langue
+    // (cache-first ci-dessus, téléchargés explicitement pour rester dispo
+    // hors-ligne), le code de l'app doit toujours être la version la plus
+    // fraîche disponible dès qu'il y a du réseau.
     event.respondWith(
-        caches.match(event.request).then((cachedResponse) => {
-            if (cachedResponse) {
-                return cachedResponse;
+        fetch(event.request).then((networkResponse) => {
+            if (networkResponse && networkResponse.status === 200) {
+                const responseClone = networkResponse.clone();
+                caches.open(APP_SHELL_CACHE).then((cache) => {
+                    cache.put(event.request, responseClone);
+                });
             }
-            return fetch(event.request).then((networkResponse) => {
-                if (networkResponse && networkResponse.status === 200) {
-                    const responseClone = networkResponse.clone();
-                    caches.open(APP_SHELL_CACHE).then((cache) => {
-                        cache.put(event.request, responseClone);
-                    });
-                }
-                return networkResponse;
-            });
+            return networkResponse;
         }).catch(() => {
-            // Mode hors-ligne : retour à la racine si navigation
-            if (event.request.mode === 'navigate') {
-                return caches.match('./index.html');
-            }
+            return caches.match(event.request).then((cachedResponse) => {
+                if (cachedResponse) return cachedResponse;
+                // Mode hors-ligne, rien en cache pour cette requête précise :
+                // retour à la racine si c'est une navigation.
+                if (event.request.mode === 'navigate') {
+                    return caches.match('./index.html');
+                }
+            });
         })
     );
 });
