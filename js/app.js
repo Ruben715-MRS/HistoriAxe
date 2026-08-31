@@ -54,11 +54,28 @@ let appSettings = settingsLoad();
             if (appSettings.orientation === 'horizontal') isLandscape = true;
             else if (appSettings.orientation === 'vertical') isLandscape = false;
             else isLandscape = systemLandscapeQuery.matches;
-            document.documentElement.setAttribute('data-timeline-layout', isLandscape ? 'horizontal' : 'vertical');
+            const layoutVal = isLandscape ? 'horizontal' : 'vertical';
+            document.documentElement.setAttribute('data-layout', layoutVal);
+            document.documentElement.setAttribute('data-timeline-layout', layoutVal);
             if (typeof repositionEvents === 'function' && placedEvents && placedEvents.length > 0) {
                 repositionEvents();
             }
         }
+
+        try {
+            systemDarkQuery.addEventListener('change', () => {
+                if (appSettings.appearance === 'auto') applyAppearance();
+            });
+            systemLandscapeQuery.addEventListener('change', () => {
+                if (appSettings.orientation === 'auto') applyOrientationLayout();
+            });
+            window.addEventListener('resize', () => {
+                if (appSettings.orientation === 'auto') applyOrientationLayout();
+            });
+            window.addEventListener('orientationchange', () => {
+                if (appSettings.orientation === 'auto') applyOrientationLayout();
+            });
+        } catch (e) {}
 
         function renderSettingsUI() {
             document.querySelectorAll('#settings-orientation button').forEach(btn => {
