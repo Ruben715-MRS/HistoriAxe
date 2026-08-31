@@ -1466,7 +1466,7 @@ function ensureCustomCategoryInBdd() {
                 else if(nomLower.includes('christianisme')) bgImg = 'assets/images/sub_christianisme.jpg';
                 else if(nomLower.includes('hindouisme')) bgImg = 'assets/images/sub_hindouisme.jpg';
                 else if(nomLower.includes('bouddhisme')) bgImg = 'assets/images/sub_bouddhisme.jpg';
-                else if(nomLower.includes('mytholog')) bgImg = 'assets/images/sub_mythologies.jpg';
+                else if(nomLower.includes('panth')) bgImg = 'assets/images/sub_mythologies.jpg';
                 else if(nomLower.includes('grandes religions')) bgImg = 'assets/images/sub_grandes_religions.jpg';
                 else if(nomLower.includes('religions') || nomLower.includes('croyances')) bgImg = 'assets/images/sub_religions_croyances.jpg';
                 else if(nomLower.includes('société') || nomLower.includes('societe') || nomLower.includes('géopolitique') || nomLower.includes('geopolitique') || nomLower.includes('généraux')) bgImg = 'assets/images/sub_themes_generaux.jpg';

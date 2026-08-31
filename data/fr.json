@@ -23794,826 +23794,6 @@
               ]
             },
             {
-              "nom": "Islam",
-              "themes": [
-                {
-                  "id": "thm_histoire_islam",
-                  "nom": "Histoire de l'Islam et des mondes musulmans",
-                  "difficulte": "Tous niveaux",
-                  "events": [
-                    {
-                      "id": "isl_1",
-                      "axe": "Naissance de l'islam (570–632)",
-                      "date": 570,
-                      "titre": "Naissance de Muhammad à La Mecque",
-                      "description": "Selon la tradition musulmane, Muhammad naît à La Mecque au sein du clan des Hachémites, tribu des Quraysh.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Mahomet"
-                    },
-                    {
-                      "id": "isl_2",
-                      "axe": "Naissance de l'islam (570–632)",
-                      "date": 610,
-                      "titre": "Première révélation coranique",
-                      "description": "Selon la tradition musulmane, l'ange Gabriel révèle à Muhammad, retiré dans la grotte de Hira, les premiers versets du Coran.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9v%C3%A9lation_coranique"
-                    },
-                    {
-                      "id": "isl_3",
-                      "axe": "Naissance de l'islam (570–632)",
-                      "date": 613,
-                      "titre": "Début de la prédication publique à La Mecque",
-                      "description": "Après une phase de prédication discrète, Muhammad proclame publiquement son message monothéiste aux habitants de La Mecque.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Mahomet"
-                    },
-                    {
-                      "id": "isl_4",
-                      "axe": "Naissance de l'islam (570–632)",
-                      "date": 615,
-                      "titre": "Première émigration vers l'Abyssinie",
-                      "description": "Un groupe de premiers musulmans persécutés par les Mecquois trouve refuge auprès du Négus, roi chrétien d'Abyssinie.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Royaume_d%27Aksoum"
-                    },
-                    {
-                      "id": "isl_5",
-                      "axe": "Naissance de l'islam (570–632)",
-                      "date": 619,
-                      "titre": "Année de la tristesse",
-                      "description": "La mort de Khadija, épouse de Muhammad, puis d'Abu Talib, son oncle protecteur, prive le Prophète de ses deux soutiens les plus proches.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Khadija_bint_Khuwaylid"
-                    },
-                    {
-                      "id": "isl_6",
-                      "axe": "Naissance de l'islam (570–632)",
-                      "date": 620,
-                      "titre": "Voyage nocturne et Ascension (Isra et Mi'raj)",
-                      "description": "Selon la tradition, Muhammad est transporté en une nuit de La Mecque à Jérusalem, puis élevé à travers les cieux jusqu'à la présence divine.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Isra_et_Miraj"
-                    },
-                    {
-                      "id": "isl_7",
-                      "axe": "Naissance de l'islam (570–632)",
-                      "date": 621,
-                      "titre": "Premier serment d'al-'Aqaba",
-                      "description": "Des habitants de Yathrib rencontrent Muhammad et s'engagent envers lui, préparant l'installation future de la communauté musulmane dans la ville.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Serments_d%27Aqaba"
-                    },
-                    {
-                      "id": "isl_8",
-                      "axe": "Naissance de l'islam (570–632)",
-                      "date": 622,
-                      "titre": "Hégire",
-                      "description": "Muhammad et ses compagnons émigrent de La Mecque vers Yathrib, rebaptisée Médine, marquant le point de départ du calendrier musulman.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/H%C3%A9gire"
-                    },
-                    {
-                      "id": "isl_9",
-                      "axe": "Naissance de l'islam (570–632)",
-                      "date": 622,
-                      "titre": "Fondation de la communauté médinoise",
-                      "description": "À Médine, Muhammad établit une communauté politique et religieuse unifiée, scellée par la Constitution de Médine régissant musulmans, juifs et autres tribus de la ville.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Constitution_de_M%C3%A9dine"
-                    },
-                    {
-                      "id": "isl_10",
-                      "axe": "Naissance de l'islam (570–632)",
-                      "date": 624,
-                      "titre": "Bataille de Badr",
-                      "description": "Première grande victoire militaire des musulmans de Médine sur les Mecquois, considérée comme fondatrice dans la tradition islamique.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Badr"
-                    },
-                    {
-                      "id": "isl_11",
-                      "axe": "Naissance de l'islam (570–632)",
-                      "date": 625,
-                      "titre": "Bataille d'Uhud",
-                      "description": "Les Mecquois prennent leur revanche sur les musulmans lors d'un affrontement au cours duquel Muhammad est blessé.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_d%27Uhud"
-                    },
-                    {
-                      "id": "isl_12",
-                      "axe": "Naissance de l'islam (570–632)",
-                      "date": 627,
-                      "titre": "Bataille du Fossé",
-                      "description": "Médine résiste à un siège mené par une coalition de tribus mecquoises et alliées, grâce notamment au creusement d'un fossé défensif.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_du_Foss%C3%A9"
-                    },
-                    {
-                      "id": "isl_13",
-                      "axe": "Naissance de l'islam (570–632)",
-                      "date": 628,
-                      "titre": "Traité de Hudaybiyya",
-                      "description": "Muhammad et les Mecquois concluent une trêve de dix ans qui reconnaît de fait la communauté musulmane et facilite sa diffusion.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Trait%C3%A9_de_Houdaybiya"
-                    },
-                    {
-                      "id": "isl_14",
-                      "axe": "Naissance de l'islam (570–632)",
-                      "date": 630,
-                      "titre": "Conquête de La Mecque",
-                      "description": "Muhammad entre à La Mecque sans combat majeur, fait détruire les idoles de la Kaaba et pardonne à ses anciens adversaires.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Conqu%C3%AAte_de_la_Mecque"
-                    },
-                    {
-                      "id": "isl_15",
-                      "axe": "Naissance de l'islam (570–632)",
-                      "date": 630,
-                      "titre": "Bataille de Hunayn",
-                      "description": "Les musulmans repoussent une coalition de tribus arabes, consolidant la soumission progressive de l'Arabie occidentale.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Hunayn"
-                    },
-                    {
-                      "id": "isl_16",
-                      "axe": "Naissance de l'islam (570–632)",
-                      "date": 632,
-                      "titre": "Pèlerinage d'adieu",
-                      "description": "Muhammad accomplit son unique et dernier pèlerinage à La Mecque, où il prononce un sermon resté célèbre dans la tradition musulmane.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/P%C3%A8lerinage_d%27adieu"
-                    },
-                    {
-                      "id": "isl_17",
-                      "axe": "Naissance de l'islam (570–632)",
-                      "date": 632,
-                      "titre": "Mort de Muhammad",
-                      "description": "La mort du Prophète à Médine, sans succession clairement désignée, ouvre la question cruciale du gouvernement de la communauté musulmane.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Mahomet"
-                    },
-                    {
-                      "id": "isl_18",
-                      "axe": "Naissance de l'islam (570–632)",
-                      "date": 632,
-                      "titre": "Proclamation d'Abu Bakr comme premier calife",
-                      "description": "Réunis à la Saqifa de Médine, les compagnons de Muhammad choisissent Abu Bakr comme premier calife, successeur politique du Prophète.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Abou_Bakr"
-                    },
-                    {
-                      "id": "isl_19",
-                      "axe": "Premiers califats et divisions (632–750)",
-                      "date": 632,
-                      "titre": "Guerres de la Ridda",
-                      "description": "Abu Bakr mène une série de campagnes militaires pour ramener sous l'autorité de Médine les tribus arabes qui avaient fait sécession après la mort de Muhammad.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Guerres_de_Ridda"
-                    },
-                    {
-                      "id": "isl_20",
-                      "axe": "Premiers califats et divisions (632–750)",
-                      "date": 634,
-                      "titre": "Conquête musulmane de la Syrie byzantine",
-                      "description": "Les armées arabo-musulmanes entament la conquête de la Syrie byzantine, achevée en quelques années.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Conqu%C3%AAte_musulmane_du_Levant"
-                    },
-                    {
-                      "id": "isl_21",
-                      "axe": "Premiers califats et divisions (632–750)",
-                      "date": 634,
-                      "titre": "Conquête de l'Égypte",
-                      "description": "Sous la conduite d'Amr ibn al-As, les troupes musulmanes entreprennent la conquête de l'Égypte byzantine, achevée en 642.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Conqu%C3%AAte_musulmane_de_l%27%C3%89gypte"
-                    },
-                    {
-                      "id": "isl_22",
-                      "axe": "Premiers califats et divisions (632–750)",
-                      "date": 636,
-                      "titre": "Bataille de Yarmouk",
-                      "description": "Une victoire arabo-musulmane décisive sur l'armée byzantine ouvre la voie à la conquête définitive de la Syrie.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_du_Yarmouk"
-                    },
-                    {
-                      "id": "isl_23",
-                      "axe": "Premiers califats et divisions (632–750)",
-                      "date": 637,
-                      "titre": "Bataille de al-Qadisiyya",
-                      "description": "Les forces musulmanes l'emportent sur l'armée sassanide, ouvrant la voie à la conquête de la Mésopotamie et de l'Empire perse.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Qadisiyya"
-                    },
-                    {
-                      "id": "isl_24",
-                      "axe": "Premiers califats et divisions (632–750)",
-                      "date": 638,
-                      "titre": "Prise de Jérusalem",
-                      "description": "Le calife Umar reçoit personnellement la reddition de Jérusalem et garantit aux habitants la sécurité de leurs biens et de leurs lieux de culte.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Si%C3%A8ge_de_J%C3%A9rusalem_(637)"
-                    },
-                    {
-                      "id": "isl_25",
-                      "axe": "Premiers califats et divisions (632–750)",
-                      "date": 642,
-                      "titre": "Chute de l'Empire sassanide",
-                      "description": "La victoire musulmane à la bataille de Nahavand porte un coup décisif à l'Empire sassanide, qui s'effondre dans les années suivantes.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Nahavand"
-                    },
-                    {
-                      "id": "isl_26",
-                      "axe": "Premiers califats et divisions (632–750)",
-                      "date": 644,
-                      "titre": "Assassinat du calife Umar",
-                      "description": "Le deuxième calife est poignardé par un esclave persan à Médine, ouvrant une nouvelle transition à la tête de la communauté musulmane.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Omar_ibn_al-Khattab"
-                    },
-                    {
-                      "id": "isl_27",
-                      "axe": "Premiers califats et divisions (632–750)",
-                      "date": 650,
-                      "titre": "Codification du Coran sous Uthman",
-                      "description": "Selon la tradition musulmane, le calife Uthman fait établir une version écrite de référence du Coran, diffusée dans les principales villes de l'empire musulman naissant.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Codification_du_Coran"
-                    },
-                    {
-                      "id": "isl_28",
-                      "axe": "Premiers califats et divisions (632–750)",
-                      "date": 656,
-                      "titre": "Assassinat du calife Uthman",
-                      "description": "Uthman est tué par des insurgés à Médine, déclenchant une grave crise politique au sein de la communauté musulmane, la Grande discorde.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Uthman_ibn_Affan"
-                    },
-                    {
-                      "id": "isl_29",
-                      "axe": "Premiers califats et divisions (632–750)",
-                      "date": 656,
-                      "titre": "Bataille du Chameau",
-                      "description": "Ali, quatrième calife, affronte et défait près de Bassora une coalition menée par Aïcha, veuve de Muhammad.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_du_Chameau"
-                    },
-                    {
-                      "id": "isl_30",
-                      "axe": "Premiers califats et divisions (632–750)",
-                      "date": 657,
-                      "titre": "Bataille de Siffin",
-                      "description": "Ali et Mu'awiya, gouverneur de Syrie, s'affrontent pour le pouvoir califal dans une bataille indécise réglée par un arbitrage contesté.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Siffin"
-                    },
-                    {
-                      "id": "isl_31",
-                      "axe": "Premiers califats et divisions (632–750)",
-                      "date": 657,
-                      "titre": "Apparition du mouvement kharijite",
-                      "description": "Des partisans d'Ali rejettent l'arbitrage de Siffin et font sécession, donnant naissance au courant kharijite.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Kharidjisme"
-                    },
-                    {
-                      "id": "isl_32",
-                      "axe": "Premiers califats et divisions (632–750)",
-                      "date": 661,
-                      "titre": "Assassinat d'Ali",
-                      "description": "Ali est assassiné par un kharijite à Kufa ; Mu'awiya s'impose alors comme calife et fonde la dynastie omeyyade.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Ali_ibn_Abi_Talib"
-                    },
-                    {
-                      "id": "isl_33",
-                      "axe": "Premiers califats et divisions (632–750)",
-                      "date": 661,
-                      "titre": "Damas, centre du pouvoir omeyyade",
-                      "description": "Mu'awiya établit Damas comme capitale du califat, déplaçant durablement le centre de gravité politique du monde musulman.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Calife_omeyyade"
-                    },
-                    {
-                      "id": "isl_34",
-                      "axe": "Premiers califats et divisions (632–750)",
-                      "date": 680,
-                      "titre": "Bataille de Karbala",
-                      "description": "Husayn, petit-fils de Muhammad, est tué avec ses compagnons par les troupes omeyyades à Karbala, événement fondateur de la mémoire chiite.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Kerbala"
-                    },
-                    {
-                      "id": "isl_35",
-                      "axe": "Premiers califats et divisions (632–750)",
-                      "date": 685,
-                      "titre": "Seconde fitna",
-                      "description": "Une nouvelle guerre civile oppose plusieurs prétendants au califat, jusqu'à la restauration de l'autorité omeyyade par Abd al-Malik en 692.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Deuxi%C3%A8me_fitna"
-                    },
-                    {
-                      "id": "isl_36",
-                      "axe": "Premiers califats et divisions (632–750)",
-                      "date": 711,
-                      "titre": "Conquête musulmane de la péninsule Ibérique",
-                      "description": "Une armée commandée par Tariq ibn Ziyad franchit le détroit de Gibraltar et entame la conquête du royaume wisigoth d'Hispanie.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Conqu%C3%AAte_musulmane_de_l%27Hispanie"
-                    },
-                    {
-                      "id": "isl_37",
-                      "axe": "Premiers califats et divisions (632–750)",
-                      "date": 711,
-                      "titre": "Conquête musulmane du Sind",
-                      "description": "Muhammad ibn al-Qasim mène la conquête omeyyade de la région du Sind, dans le nord-ouest du sous-continent indien.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Muhammad_ibn_al-Qasim"
-                    },
-                    {
-                      "id": "isl_38",
-                      "axe": "Premiers califats et divisions (632–750)",
-                      "date": 717,
-                      "titre": "Second siège omeyyade de Constantinople",
-                      "description": "Les troupes omeyyades échouent devant les murailles de Constantinople, défendue notamment grâce au feu grégeois byzantin.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Si%C3%A8ge_de_Constantinople_(717-718)"
-                    },
-                    {
-                      "id": "isl_39",
-                      "axe": "Premiers califats et divisions (632–750)",
-                      "date": 732,
-                      "titre": "Bataille de Poitiers",
-                      "description": "Une armée musulmane menée par Abd al-Rahman al-Ghafiqi est vaincue par les Francs de Charles Martel, marquant une limite à l'expansion musulmane en Gaule.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Poitiers_(732)"
-                    },
-                    {
-                      "id": "isl_40",
-                      "axe": "Premiers califats et divisions (632–750)",
-                      "date": 750,
-                      "titre": "Révolution abbasside",
-                      "description": "Les Abbassides renversent la dynastie omeyyade lors de la bataille du Grand Zab et prennent le contrôle du califat.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9volution_abbasside"
-                    },
-                    {
-                      "id": "isl_41",
-                      "axe": "Premiers califats et divisions (632–750)",
-                      "date": 756,
-                      "titre": "Fondation de l'émirat omeyyade de Cordoue",
-                      "description": "Abd al-Rahman Ier, rescapé de la dynastie omeyyade déchue, fonde à Cordoue un émirat indépendant du califat abbasside.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89mirat_de_Cordoue"
-                    },
-                    {
-                      "id": "isl_42",
-                      "axe": "Califat abbasside et diversification (750–1258)",
-                      "date": 762,
-                      "titre": "Fondation de Bagdad",
-                      "description": "Le calife abbasside al-Mansur fonde Bagdad, qui devient la nouvelle capitale du califat et un immense centre politique et intellectuel.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Bagdad"
-                    },
-                    {
-                      "id": "isl_43",
-                      "axe": "Califat abbasside et diversification (750–1258)",
-                      "date": 800,
-                      "titre": "Apogée abbasside sous Hârûn al-Rashîd",
-                      "description": "Le califat abbasside connaît son apogée politique et culturelle sous le règne de Hârûn al-Rashîd, resté célèbre grâce aux Mille et Une Nuits.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Har%C5%ABn_ar-Rach%C3%AEd"
-                    },
-                    {
-                      "id": "isl_44",
-                      "axe": "Califat abbasside et diversification (750–1258)",
-                      "date": 830,
-                      "titre": "Essor de la Maison de la Sagesse",
-                      "description": "À Bagdad, la Maison de la Sagesse devient un centre majeur de traduction et de recherche scientifique et philosophique du monde abbasside.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Maison_de_la_sagesse"
-                    },
-                    {
-                      "id": "isl_45",
-                      "axe": "Califat abbasside et diversification (750–1258)",
-                      "date": 822,
-                      "titre": "Arrivée d'Andalous à Fès",
-                      "description": "L'arrivée de réfugiés andalous à Fès contribue à l'essor de la ville comme centre politique, religieux et intellectuel du Maghreb.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/F%C3%A8s"
-                    },
-                    {
-                      "id": "isl_46",
-                      "axe": "Califat abbasside et diversification (750–1258)",
-                      "date": 861,
-                      "titre": "Révolte des Zanj",
-                      "description": "Une révolte d'esclaves africains employés dans les marais du sud de l'Irak ébranle durablement l'autorité abbasside jusqu'en 870.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9volte_des_Zanj"
-                    },
-                    {
-                      "id": "isl_47",
-                      "axe": "Califat abbasside et diversification (750–1258)",
-                      "date": 909,
-                      "titre": "Fondation du califat fatimide",
-                      "description": "Une dynastie chiite ismaélienne fonde en Ifriqiya un califat rival, contestant la légitimité religieuse et politique des Abbassides.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Fatimides"
-                    },
-                    {
-                      "id": "isl_48",
-                      "axe": "Califat abbasside et diversification (750–1258)",
-                      "date": 969,
-                      "titre": "Conquête de l'Égypte par les Fatimides",
-                      "description": "Les Fatimides conquièrent l'Égypte et y fondent la ville du Caire, qui devient leur nouvelle capitale.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Fatimides"
-                    },
-                    {
-                      "id": "isl_49",
-                      "axe": "Califat abbasside et diversification (750–1258)",
-                      "date": 969,
-                      "titre": "Fondation d'al-Azhar",
-                      "description": "La mosquée d'al-Azhar est fondée au Caire par les Fatimides ; elle deviendra l'un des plus prestigieux centres d'enseignement du monde musulman sunnite.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Al-Azhar"
-                    },
-                    {
-                      "id": "isl_50",
-                      "axe": "Califat abbasside et diversification (750–1258)",
-                      "date": 985,
-                      "titre": "Fondation de la Qarawiyyin",
-                      "description": "Selon la tradition institutionnelle, l'université-mosquée Qarawiyyin de Fès, fondée dès le IXe siècle par Fatima al-Fihriya, s'impose comme un grand centre d'enseignement.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Universit%C3%A9_Al_Quaraouiyine"
-                    },
-                    {
-                      "id": "isl_51",
-                      "axe": "Califat abbasside et diversification (750–1258)",
-                      "date": 1000,
-                      "titre": "Royaumes musulmans en Afrique de l'Ouest",
-                      "description": "L'islam se consolide dans plusieurs royaumes ouest-africains, porté par les réseaux marchands transsahariens reliant le Maghreb au Sahel.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Commerce_transsaharien"
-                    },
-                    {
-                      "id": "isl_52",
-                      "axe": "Califat abbasside et diversification (750–1258)",
-                      "date": 1037,
-                      "titre": "Fondation de l'Empire seldjoukide",
-                      "description": "Tughril Beg fonde l'Empire seldjoukide, qui devient une puissance turque majeure au Moyen-Orient sunnite.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Grands_Seldjoukides"
-                    },
-                    {
-                      "id": "isl_53",
-                      "axe": "Califat abbasside et diversification (750–1258)",
-                      "date": 1055,
-                      "titre": "Entrée des Seldjoukides à Bagdad",
-                      "description": "Tughril Beg entre à Bagdad et reçoit du calife abbasside le titre de sultan, exerçant désormais le pouvoir effectif au nom du califat.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Tughril_Beg"
-                    },
-                    {
-                      "id": "isl_54",
-                      "axe": "Califat abbasside et diversification (750–1258)",
-                      "date": 1063,
-                      "titre": "Nizam al-Mulk et les madrasas nizamiyya",
-                      "description": "Vizir des sultans seldjoukides, Nizam al-Mulk institutionnalise un réseau de madrasas, les nizamiyya, qui structurent durablement l'enseignement sunnite.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Nizam_al-Mulk"
-                    },
-                    {
-                      "id": "isl_55",
-                      "axe": "Califat abbasside et diversification (750–1258)",
-                      "date": 1071,
-                      "titre": "Bataille de Manzikert",
-                      "description": "Les Seldjoukides infligent une défaite décisive à l'armée byzantine, ouvrant l'Anatolie à l'installation durable des populations turques.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Manzikert"
-                    },
-                    {
-                      "id": "isl_56",
-                      "axe": "Califat abbasside et diversification (750–1258)",
-                      "date": 1085,
-                      "titre": "Prise de Tolède",
-                      "description": "Alphonse VI de Castille prend la ville de Tolède, étape majeure de la Reconquista chrétienne dans la péninsule Ibérique.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Prise_de_Tol%C3%A8de_(1085)"
-                    },
-                    {
-                      "id": "isl_57",
-                      "axe": "Califat abbasside et diversification (750–1258)",
-                      "date": 1094,
-                      "titre": "Scission nizârite au sein de l'ismaélisme",
-                      "description": "Une scission au sein de l'ismaélisme donne naissance au courant nizârite, qui s'illustrera notamment autour de la forteresse d'Alamût.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Nizarisme"
-                    },
-                    {
-                      "id": "isl_58",
-                      "axe": "Califat abbasside et diversification (750–1258)",
-                      "date": 1099,
-                      "titre": "Prise de Jérusalem par les croisés",
-                      "description": "Les armées de la première croisade s'emparent de Jérusalem après un siège meurtrier et y fondent un royaume latin.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Si%C3%A8ge_de_J%C3%A9rusalem_(1099)"
-                    },
-                    {
-                      "id": "isl_59",
-                      "axe": "Califat abbasside et diversification (750–1258)",
-                      "date": 1128,
-                      "titre": "Fondation de la dynastie zengide",
-                      "description": "Imad al-Din Zengi fonde une dynastie qui unifie progressivement la Syrie musulmane face aux États croisés.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Zengides"
-                    },
-                    {
-                      "id": "isl_60",
-                      "axe": "Califat abbasside et diversification (750–1258)",
-                      "date": 1187,
-                      "titre": "Saladin reprend Jérusalem",
-                      "description": "Après sa victoire à la bataille de Hattin, Saladin reprend Jérusalem aux croisés, mettant fin à près d'un siècle de domination latine sur la ville.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Hattin"
-                    },
-                    {
-                      "id": "isl_61",
-                      "axe": "Califat abbasside et diversification (750–1258)",
-                      "date": 1206,
-                      "titre": "Fondation du sultanat de Delhi",
-                      "description": "Qutb ud-Din Aibak fonde le sultanat de Delhi, premier grand État musulman durable du nord de l'Inde.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Sultanat_de_Delhi"
-                    },
-                    {
-                      "id": "isl_62",
-                      "axe": "Califat abbasside et diversification (750–1258)",
-                      "date": 1236,
-                      "titre": "Prise de Cordoue",
-                      "description": "Ferdinand III de Castille prend Cordoue, ancienne capitale du califat omeyyade d'al-Andalus, dans le cadre de la Reconquista.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Cordoue"
-                    },
-                    {
-                      "id": "isl_63",
-                      "axe": "Califat abbasside et diversification (750–1258)",
-                      "date": 1250,
-                      "titre": "Prise du pouvoir par les Mamelouks en Égypte",
-                      "description": "D'anciens esclaves-soldats mamelouks prennent le pouvoir en Égypte et fondent un sultanat qui dominera la région pendant plus de deux siècles.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Sultanat_mamelouk"
-                    },
-                    {
-                      "id": "isl_64",
-                      "axe": "Califat abbasside et diversification (750–1258)",
-                      "date": 1258,
-                      "titre": "Prise et destruction de Bagdad par les Mongols",
-                      "description": "Les Mongols de Hülegü prennent et détruisent Bagdad, mettant fin au califat abbasside et provoquant un choc profond dans le monde musulman.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Si%C3%A8ge_de_Bagdad_(1258)"
-                    },
-                    {
-                      "id": "isl_65",
-                      "axe": "Califat abbasside et diversification (750–1258)",
-                      "date": 1260,
-                      "titre": "Bataille d'Ayn Jalut",
-                      "description": "Les Mamelouks d'Égypte infligent aux Mongols leur première défaite majeure, stoppant leur expansion vers le Proche-Orient.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_d%27Ayn_Jalout"
-                    },
-                    {
-                      "id": "isl_66",
-                      "axe": "Califat abbasside et diversification (750–1258)",
-                      "date": 1291,
-                      "titre": "Chute d'Acre",
-                      "description": "La prise d'Acre par les Mamelouks met fin aux principaux États latins d'Orient issus des croisades.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Si%C3%A8ge_d%27Acre_(1291)"
-                    },
-                    {
-                      "id": "isl_67",
-                      "axe": "Afrique, al-Andalus et Asie",
-                      "date": 929,
-                      "titre": "Proclamation du califat omeyyade de Cordoue",
-                      "description": "Abd al-Rahman III se proclame calife à Cordoue, affirmant l'indépendance religieuse et politique d'al-Andalus face aux Abbassides et aux Fatimides.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Califat_de_Cordoue"
-                    },
-                    {
-                      "id": "isl_68",
-                      "axe": "Afrique, al-Andalus et Asie",
-                      "date": 929,
-                      "titre": "Apogée politique et culturelle de Cordoue",
-                      "description": "Cordoue devient l'une des plus grandes villes du monde, réputée pour sa prospérité économique et son rayonnement culturel et scientifique jusqu'en 1031.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Cordoue"
-                    },
-                    {
-                      "id": "isl_69",
-                      "axe": "Afrique, al-Andalus et Asie",
-                      "date": 1040,
-                      "titre": "Expansion de l'Empire almoravide",
-                      "description": "Le mouvement almoravide, né dans le Sahara occidental, conquiert un vaste empire couvrant le Maghreb et une grande partie d'al-Andalus jusqu'en 1147.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Almoravides"
-                    },
-                    {
-                      "id": "isl_70",
-                      "axe": "Afrique, al-Andalus et Asie",
-                      "date": 1147,
-                      "titre": "Domination almohade au Maghreb et en al-Andalus",
-                      "description": "Les Almohades, issus d'un mouvement religieux réformateur berbère, dominent le Maghreb et al-Andalus après avoir renversé les Almoravides.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Almohades"
-                    },
-                    {
-                      "id": "isl_71",
-                      "axe": "Afrique, al-Andalus et Asie",
-                      "date": 1238,
-                      "titre": "Fondation de l'émirat nasride de Grenade",
-                      "description": "Muhammad Ier fonde l'émirat nasride de Grenade, dernier État musulman indépendant de la péninsule Ibérique.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Royaume_de_Grenade"
-                    },
-                    {
-                      "id": "isl_72",
-                      "axe": "Afrique, al-Andalus et Asie",
-                      "date": 1324,
-                      "titre": "Pèlerinage de Mansa Musa",
-                      "description": "L'empereur du Mali Mansa Musa effectue un pèlerinage fastueux à La Mecque, révélant au monde méditerranéen la richesse et la puissance de son empire.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Kankou_Moussa"
-                    },
-                    {
-                      "id": "isl_73",
-                      "axe": "Afrique, al-Andalus et Asie",
-                      "date": 1350,
-                      "titre": "Expansion de l'islam en Afrique orientale",
-                      "description": "L'islam se diffuse et se consolide le long des côtes de l'Afrique orientale, porté par les réseaux commerciaux swahilis de l'océan Indien.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Civilisation_swahilie"
-                    },
-                    {
-                      "id": "isl_74",
-                      "axe": "Afrique, al-Andalus et Asie",
-                      "date": 1370,
-                      "titre": "Empire de Tamerlan",
-                      "description": "Tamerlan bâtit un vaste empire en Asie centrale et au Moyen-Orient, centré sur Samarcande, par une série de campagnes militaires fulgurantes.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Tamerlan"
-                    },
-                    {
-                      "id": "isl_75",
-                      "axe": "Afrique, al-Andalus et Asie",
-                      "date": 1400,
-                      "titre": "Diffusion de l'islam en Asie du Sud-Est",
-                      "description": "L'islam se répand plus largement dans l'archipel malais et en Indonésie, porté notamment par les réseaux marchands et le sultanat de Malacca.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Sultanat_de_Malacca"
-                    },
-                    {
-                      "id": "isl_76",
-                      "axe": "Afrique, al-Andalus et Asie",
-                      "date": 1492,
-                      "titre": "Prise de Grenade",
-                      "description": "Les Rois Catholiques prennent Grenade, mettant fin à près de huit siècles de présence politique musulmane dans la péninsule Ibérique.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Prise_de_Grenade"
-                    },
-                    {
-                      "id": "isl_77",
-                      "axe": "Afrique, al-Andalus et Asie",
-                      "date": 1492,
-                      "titre": "Expulsion progressive des musulmans d'Espagne",
-                      "description": "Les musulmans d'Espagne subissent conversions forcées et persécutions, jusqu'au décret d'expulsion des Morisques en 1609.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Expulsion_des_Morisques"
-                    },
-                    {
-                      "id": "isl_78",
-                      "axe": "Afrique, al-Andalus et Asie",
-                      "date": 1526,
-                      "titre": "Bataille de Panipat et fondation de l'Empire moghol",
-                      "description": "Babur remporte la première bataille de Panipat et fonde l'Empire moghol, qui dominera une grande partie du sous-continent indien.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Premi%C3%A8re_bataille_de_Panipat"
-                    },
-                    {
-                      "id": "isl_79",
-                      "axe": "Afrique, al-Andalus et Asie",
-                      "date": 1600,
-                      "titre": "Renforcement des sultanats musulmans d'Asie du Sud-Est",
-                      "description": "Plusieurs sultanats musulmans, notamment à Aceh et dans les régions malaises, renforcent leur puissance commerciale et politique jusqu'au XVIIIe siècle.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Sultanat_d%27Aceh"
-                    },
-                    {
-                      "id": "isl_80",
-                      "axe": "Afrique, al-Andalus et Asie",
-                      "date": 1757,
-                      "titre": "Bataille de Plassey",
-                      "description": "La victoire de la Compagnie britannique des Indes orientales à Plassey ouvre la voie à la domination coloniale britannique sur le Bengale musulman.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Plassey"
-                    },
-                    {
-                      "id": "isl_81",
-                      "axe": "Les grands empires (1299–1800)",
-                      "date": 1299,
-                      "titre": "Fondation de la principauté ottomane",
-                      "description": "Osman Ier fonde en Anatolie une principauté turque qui deviendra, au fil des siècles, l'Empire ottoman.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Osman_Ier"
-                    },
-                    {
-                      "id": "isl_82",
-                      "axe": "Les grands empires (1299–1800)",
-                      "date": 1453,
-                      "titre": "Prise de Constantinople",
-                      "description": "Le sultan ottoman Mehmed II s'empare de Constantinople, mettant fin à l'Empire byzantin et faisant de la ville la nouvelle capitale ottomane.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Chute_de_Constantinople"
-                    },
-                    {
-                      "id": "isl_83",
-                      "axe": "Les grands empires (1299–1800)",
-                      "date": 1514,
-                      "titre": "Bataille de Tchaldiran",
-                      "description": "Les Ottomans battent les Safavides à Tchaldiran, fixant durablement la frontière et la rivalité religieuse sunnite-chiite entre les deux empires.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Tchaldiran"
-                    },
-                    {
-                      "id": "isl_84",
-                      "axe": "Les grands empires (1299–1800)",
-                      "date": 1517,
-                      "titre": "Conquête de l'Égypte par les Ottomans",
-                      "description": "Sélim Ier conquiert l'Égypte mamelouke, intégrant les Lieux saints de l'islam et le titre de calife à la souveraineté ottomane.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Conqu%C3%AAte_ottomane_de_l%27%C3%89gypte"
-                    },
-                    {
-                      "id": "isl_85",
-                      "axe": "Les grands empires (1299–1800)",
-                      "date": 1520,
-                      "titre": "Règne de Soliman le Magnifique",
-                      "description": "Sous Soliman le Magnifique, l'Empire ottoman atteint son apogée territoriale, administrative et culturelle jusqu'en 1566.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Soliman_le_Magnifique"
-                    },
-                    {
-                      "id": "isl_86",
-                      "axe": "Les grands empires (1299–1800)",
-                      "date": 1526,
-                      "titre": "Fondation de l'Empire moghol",
-                      "description": "Descendant de Tamerlan, Babur fonde en Inde du Nord l'Empire moghol, dynastie qui régnera pendant plus de trois siècles.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Empire_moghol"
-                    },
-                    {
-                      "id": "isl_87",
-                      "axe": "Les grands empires (1299–1800)",
-                      "date": 1576,
-                      "titre": "Mort de Tahmasp Ier, transformations de l'État safavide",
-                      "description": "La mort du shah Tahmasp Ier, après un très long règne, ouvre une période d'instabilité et de recompositions politiques au sein de l'Empire safavide.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Tahmasp_Ier"
-                    },
-                    {
-                      "id": "isl_88",
-                      "axe": "Les grands empires (1299–1800)",
-                      "date": 1571,
-                      "titre": "Bataille de Lépante",
-                      "description": "Une flotte de la Sainte Ligue chrétienne inflige une lourde défaite navale à la flotte ottomane dans le golfe de Lépante.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_L%C3%A9pante_(1571)"
-                    },
-                    {
-                      "id": "isl_89",
-                      "axe": "Les grands empires (1299–1800)",
-                      "date": 1683,
-                      "titre": "Échec ottoman devant Vienne",
-                      "description": "Le second siège ottoman de Vienne échoue face à une armée de secours européenne, marquant un tournant dans le recul territorial ottoman en Europe.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Si%C3%A8ge_de_Vienne_(1683)"
-                    },
-                    {
-                      "id": "isl_90",
-                      "axe": "Les grands empires (1299–1800)",
-                      "date": 1722,
-                      "titre": "Chute d'Ispahan",
-                      "description": "La prise d'Ispahan par des tribus afghanes provoque l'effondrement de l'Empire safavide, déjà affaibli par des décennies de crises internes.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Si%C3%A8ge_d%27Ispahan"
-                    },
-                    {
-                      "id": "isl_91",
-                      "axe": "Les grands empires (1299–1800)",
-                      "date": 1798,
-                      "titre": "Expédition de Bonaparte en Égypte",
-                      "description": "Napoléon Bonaparte mène une expédition militaire et scientifique en Égypte, marquant le début d'une ère d'ingérence européenne croissante dans le monde musulman.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Exp%C3%A9dition_d%27%C3%89gypte"
-                    },
-                    {
-                      "id": "isl_92",
-                      "axe": "Réformes, colonisations et mondes contemporains",
-                      "date": 1839,
-                      "titre": "Tanzimat",
-                      "description": "L'Empire ottoman engage une vaste série de réformes administratives, juridiques et militaires destinées à moderniser l'État et la société, jusqu'en 1876.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Tanzimat"
-                    },
-                    {
-                      "id": "isl_93",
-                      "axe": "Réformes, colonisations et mondes contemporains",
-                      "date": 1857,
-                      "titre": "Révolte des Cipayes",
-                      "description": "Le soulèvement des cipayes contre la Compagnie des Indes orientales entraîne la déposition du dernier empereur moghol et le renforcement de la tutelle britannique.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9volte_des_cipayes"
-                    },
-                    {
-                      "id": "isl_94",
-                      "axe": "Réformes, colonisations et mondes contemporains",
-                      "date": 1869,
-                      "titre": "Ouverture du canal de Suez",
-                      "description": "L'ouverture du canal de Suez bouleverse les routes commerciales mondiales et accroît l'intérêt stratégique des puissances européennes pour l'Égypte.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Canal_de_Suez"
-                    },
-                    {
-                      "id": "isl_95",
-                      "axe": "Réformes, colonisations et mondes contemporains",
-                      "date": 1881,
-                      "titre": "Protectorat français en Tunisie, occupation britannique de l'Égypte",
-                      "description": "La France impose son protectorat sur la Tunisie, tandis que le Royaume-Uni occupe l'Égypte l'année suivante, accentuant la domination coloniale européenne sur le monde musulman.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Protectorat_fran%C3%A7ais_de_Tunisie"
-                    },
-                    {
-                      "id": "isl_96",
-                      "axe": "Réformes, colonisations et mondes contemporains",
-                      "date": 1916,
-                      "titre": "Accords Sykes-Picot",
-                      "description": "La France et le Royaume-Uni s'entendent secrètement pour se partager les zones d'influence au Moyen-Orient après la chute annoncée de l'Empire ottoman.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Accords_Sykes-Picot"
-                    },
-                    {
-                      "id": "isl_97",
-                      "axe": "Réformes, colonisations et mondes contemporains",
-                      "date": 1917,
-                      "titre": "Déclaration Balfour",
-                      "description": "Le gouvernement britannique se déclare favorable à l'établissement d'un foyer national juif en Palestine, ouvrant une source durable de tensions régionales.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/D%C3%A9claration_Balfour"
-                    },
-                    {
-                      "id": "isl_98",
-                      "axe": "Réformes, colonisations et mondes contemporains",
-                      "date": 1924,
-                      "titre": "Abolition du califat ottoman",
-                      "description": "La toute jeune République turque de Mustafa Kemal Atatürk abolit le califat, mettant fin à une institution multiséculaire du monde musulman sunnite.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Abolition_du_califat_ottoman"
-                    },
-                    {
-                      "id": "isl_99",
-                      "axe": "Réformes, colonisations et mondes contemporains",
-                      "date": 1947,
-                      "titre": "Partition des Indes",
-                      "description": "La partition des Indes britanniques donne naissance à l'Inde et au Pakistan dans un contexte de violences massives, tandis qu'éclate en 1948 la première guerre israélo-arabe.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Partition_des_Indes"
-                    },
-                    {
-                      "id": "isl_100",
-                      "axe": "Réformes, colonisations et mondes contemporains",
-                      "date": 1979,
-                      "titre": "Révolution iranienne",
-                      "description": "La révolution iranienne renverse le Chah et installe une République islamique, tandis que l'invasion soviétique de l'Afghanistan en 1979-1980 ouvre une nouvelle phase des mobilisations islamistes.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9volution_iranienne"
-                    }
-                  ],
-                  "axeOrder": [
-                    "Naissance de l'islam (570–632)",
-                    "Premiers califats et divisions (632–750)",
-                    "Califat abbasside et diversification (750–1258)",
-                    "Afrique, al-Andalus et Asie",
-                    "Les grands empires (1299–1800)",
-                    "Réformes, colonisations et mondes contemporains"
-                  ]
-                }
-              ]
-            },
-            {
               "nom": "Christianisme",
               "themes": [
                 {
@@ -28931,6 +28111,1172 @@
                     "Éclosion et explosion du Pentecôtisme (1900-1960)",
                     "Le Renouveau charismatique et les grandes croisades (1960-1990)",
                     "Les Megachurches et l'essor du Sud global (depuis 1990)"
+                  ]
+                }
+              ]
+            },
+            {
+              "nom": "Islam",
+              "themes": [
+                {
+                  "id": "thm_histoire_islam",
+                  "nom": "Histoire de l'Islam et des mondes musulmans",
+                  "difficulte": "Tous niveaux",
+                  "events": [
+                    {
+                      "id": "isl_1",
+                      "axe": "Naissance de l'islam (570–632)",
+                      "date": 570,
+                      "titre": "Naissance de Muhammad à La Mecque",
+                      "description": "Selon la tradition musulmane, Muhammad naît à La Mecque au sein du clan des Hachémites, tribu des Quraysh.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Mahomet"
+                    },
+                    {
+                      "id": "isl_2",
+                      "axe": "Naissance de l'islam (570–632)",
+                      "date": 610,
+                      "titre": "Première révélation coranique",
+                      "description": "Selon la tradition musulmane, l'ange Gabriel révèle à Muhammad, retiré dans la grotte de Hira, les premiers versets du Coran.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9v%C3%A9lation_coranique"
+                    },
+                    {
+                      "id": "isl_3",
+                      "axe": "Naissance de l'islam (570–632)",
+                      "date": 613,
+                      "titre": "Début de la prédication publique à La Mecque",
+                      "description": "Après une phase de prédication discrète, Muhammad proclame publiquement son message monothéiste aux habitants de La Mecque.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Mahomet"
+                    },
+                    {
+                      "id": "isl_4",
+                      "axe": "Naissance de l'islam (570–632)",
+                      "date": 615,
+                      "titre": "Première émigration vers l'Abyssinie",
+                      "description": "Un groupe de premiers musulmans persécutés par les Mecquois trouve refuge auprès du Négus, roi chrétien d'Abyssinie.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Royaume_d%27Aksoum"
+                    },
+                    {
+                      "id": "isl_5",
+                      "axe": "Naissance de l'islam (570–632)",
+                      "date": 619,
+                      "titre": "Année de la tristesse",
+                      "description": "La mort de Khadija, épouse de Muhammad, puis d'Abu Talib, son oncle protecteur, prive le Prophète de ses deux soutiens les plus proches.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Khadija_bint_Khuwaylid"
+                    },
+                    {
+                      "id": "isl_6",
+                      "axe": "Naissance de l'islam (570–632)",
+                      "date": 620,
+                      "titre": "Voyage nocturne et Ascension (Isra et Mi'raj)",
+                      "description": "Selon la tradition, Muhammad est transporté en une nuit de La Mecque à Jérusalem, puis élevé à travers les cieux jusqu'à la présence divine.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Isra_et_Miraj"
+                    },
+                    {
+                      "id": "isl_7",
+                      "axe": "Naissance de l'islam (570–632)",
+                      "date": 621,
+                      "titre": "Premier serment d'al-'Aqaba",
+                      "description": "Des habitants de Yathrib rencontrent Muhammad et s'engagent envers lui, préparant l'installation future de la communauté musulmane dans la ville.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Serments_d%27Aqaba"
+                    },
+                    {
+                      "id": "isl_8",
+                      "axe": "Naissance de l'islam (570–632)",
+                      "date": 622,
+                      "titre": "Hégire",
+                      "description": "Muhammad et ses compagnons émigrent de La Mecque vers Yathrib, rebaptisée Médine, marquant le point de départ du calendrier musulman.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/H%C3%A9gire"
+                    },
+                    {
+                      "id": "isl_9",
+                      "axe": "Naissance de l'islam (570–632)",
+                      "date": 622,
+                      "titre": "Fondation de la communauté médinoise",
+                      "description": "À Médine, Muhammad établit une communauté politique et religieuse unifiée, scellée par la Constitution de Médine régissant musulmans, juifs et autres tribus de la ville.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Constitution_de_M%C3%A9dine"
+                    },
+                    {
+                      "id": "isl_10",
+                      "axe": "Naissance de l'islam (570–632)",
+                      "date": 624,
+                      "titre": "Bataille de Badr",
+                      "description": "Première grande victoire militaire des musulmans de Médine sur les Mecquois, considérée comme fondatrice dans la tradition islamique.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Badr"
+                    },
+                    {
+                      "id": "isl_11",
+                      "axe": "Naissance de l'islam (570–632)",
+                      "date": 625,
+                      "titre": "Bataille d'Uhud",
+                      "description": "Les Mecquois prennent leur revanche sur les musulmans lors d'un affrontement au cours duquel Muhammad est blessé.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_d%27Uhud"
+                    },
+                    {
+                      "id": "isl_12",
+                      "axe": "Naissance de l'islam (570–632)",
+                      "date": 627,
+                      "titre": "Bataille du Fossé",
+                      "description": "Médine résiste à un siège mené par une coalition de tribus mecquoises et alliées, grâce notamment au creusement d'un fossé défensif.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_du_Foss%C3%A9"
+                    },
+                    {
+                      "id": "isl_13",
+                      "axe": "Naissance de l'islam (570–632)",
+                      "date": 628,
+                      "titre": "Traité de Hudaybiyya",
+                      "description": "Muhammad et les Mecquois concluent une trêve de dix ans qui reconnaît de fait la communauté musulmane et facilite sa diffusion.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Trait%C3%A9_de_Houdaybiya"
+                    },
+                    {
+                      "id": "isl_14",
+                      "axe": "Naissance de l'islam (570–632)",
+                      "date": 630,
+                      "titre": "Conquête de La Mecque",
+                      "description": "Muhammad entre à La Mecque sans combat majeur, fait détruire les idoles de la Kaaba et pardonne à ses anciens adversaires.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Conqu%C3%AAte_de_la_Mecque"
+                    },
+                    {
+                      "id": "isl_15",
+                      "axe": "Naissance de l'islam (570–632)",
+                      "date": 630,
+                      "titre": "Bataille de Hunayn",
+                      "description": "Les musulmans repoussent une coalition de tribus arabes, consolidant la soumission progressive de l'Arabie occidentale.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Hunayn"
+                    },
+                    {
+                      "id": "isl_16",
+                      "axe": "Naissance de l'islam (570–632)",
+                      "date": 632,
+                      "titre": "Pèlerinage d'adieu",
+                      "description": "Muhammad accomplit son unique et dernier pèlerinage à La Mecque, où il prononce un sermon resté célèbre dans la tradition musulmane.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/P%C3%A8lerinage_d%27adieu"
+                    },
+                    {
+                      "id": "isl_17",
+                      "axe": "Naissance de l'islam (570–632)",
+                      "date": 632,
+                      "titre": "Mort de Muhammad",
+                      "description": "La mort du Prophète à Médine, sans succession clairement désignée, ouvre la question cruciale du gouvernement de la communauté musulmane.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Mahomet"
+                    },
+                    {
+                      "id": "isl_18",
+                      "axe": "Naissance de l'islam (570–632)",
+                      "date": 632,
+                      "titre": "Proclamation d'Abu Bakr comme premier calife",
+                      "description": "Réunis à la Saqifa de Médine, les compagnons de Muhammad choisissent Abu Bakr comme premier calife, successeur politique du Prophète.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Abou_Bakr"
+                    },
+                    {
+                      "id": "isl_19",
+                      "axe": "Premiers califats et divisions (632–750)",
+                      "date": 632,
+                      "titre": "Guerres de la Ridda",
+                      "description": "Abu Bakr mène une série de campagnes militaires pour ramener sous l'autorité de Médine les tribus arabes qui avaient fait sécession après la mort de Muhammad.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Guerres_de_Ridda"
+                    },
+                    {
+                      "id": "isl_20",
+                      "axe": "Premiers califats et divisions (632–750)",
+                      "date": 634,
+                      "titre": "Conquête musulmane de la Syrie byzantine",
+                      "description": "Les armées arabo-musulmanes entament la conquête de la Syrie byzantine, achevée en quelques années.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Conqu%C3%AAte_musulmane_du_Levant"
+                    },
+                    {
+                      "id": "isl_21",
+                      "axe": "Premiers califats et divisions (632–750)",
+                      "date": 634,
+                      "titre": "Conquête de l'Égypte",
+                      "description": "Sous la conduite d'Amr ibn al-As, les troupes musulmanes entreprennent la conquête de l'Égypte byzantine, achevée en 642.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Conqu%C3%AAte_musulmane_de_l%27%C3%89gypte"
+                    },
+                    {
+                      "id": "isl_22",
+                      "axe": "Premiers califats et divisions (632–750)",
+                      "date": 636,
+                      "titre": "Bataille de Yarmouk",
+                      "description": "Une victoire arabo-musulmane décisive sur l'armée byzantine ouvre la voie à la conquête définitive de la Syrie.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_du_Yarmouk"
+                    },
+                    {
+                      "id": "isl_23",
+                      "axe": "Premiers califats et divisions (632–750)",
+                      "date": 637,
+                      "titre": "Bataille de al-Qadisiyya",
+                      "description": "Les forces musulmanes l'emportent sur l'armée sassanide, ouvrant la voie à la conquête de la Mésopotamie et de l'Empire perse.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Qadisiyya"
+                    },
+                    {
+                      "id": "isl_24",
+                      "axe": "Premiers califats et divisions (632–750)",
+                      "date": 638,
+                      "titre": "Prise de Jérusalem",
+                      "description": "Le calife Umar reçoit personnellement la reddition de Jérusalem et garantit aux habitants la sécurité de leurs biens et de leurs lieux de culte.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Si%C3%A8ge_de_J%C3%A9rusalem_(637)"
+                    },
+                    {
+                      "id": "isl_25",
+                      "axe": "Premiers califats et divisions (632–750)",
+                      "date": 642,
+                      "titre": "Chute de l'Empire sassanide",
+                      "description": "La victoire musulmane à la bataille de Nahavand porte un coup décisif à l'Empire sassanide, qui s'effondre dans les années suivantes.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Nahavand"
+                    },
+                    {
+                      "id": "isl_26",
+                      "axe": "Premiers califats et divisions (632–750)",
+                      "date": 644,
+                      "titre": "Assassinat du calife Umar",
+                      "description": "Le deuxième calife est poignardé par un esclave persan à Médine, ouvrant une nouvelle transition à la tête de la communauté musulmane.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Omar_ibn_al-Khattab"
+                    },
+                    {
+                      "id": "isl_27",
+                      "axe": "Premiers califats et divisions (632–750)",
+                      "date": 650,
+                      "titre": "Codification du Coran sous Uthman",
+                      "description": "Selon la tradition musulmane, le calife Uthman fait établir une version écrite de référence du Coran, diffusée dans les principales villes de l'empire musulman naissant.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Codification_du_Coran"
+                    },
+                    {
+                      "id": "isl_28",
+                      "axe": "Premiers califats et divisions (632–750)",
+                      "date": 656,
+                      "titre": "Assassinat du calife Uthman",
+                      "description": "Uthman est tué par des insurgés à Médine, déclenchant une grave crise politique au sein de la communauté musulmane, la Grande discorde.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Uthman_ibn_Affan"
+                    },
+                    {
+                      "id": "isl_29",
+                      "axe": "Premiers califats et divisions (632–750)",
+                      "date": 656,
+                      "titre": "Bataille du Chameau",
+                      "description": "Ali, quatrième calife, affronte et défait près de Bassora une coalition menée par Aïcha, veuve de Muhammad.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_du_Chameau"
+                    },
+                    {
+                      "id": "isl_30",
+                      "axe": "Premiers califats et divisions (632–750)",
+                      "date": 657,
+                      "titre": "Bataille de Siffin",
+                      "description": "Ali et Mu'awiya, gouverneur de Syrie, s'affrontent pour le pouvoir califal dans une bataille indécise réglée par un arbitrage contesté.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Siffin"
+                    },
+                    {
+                      "id": "isl_31",
+                      "axe": "Premiers califats et divisions (632–750)",
+                      "date": 657,
+                      "titre": "Apparition du mouvement kharijite",
+                      "description": "Des partisans d'Ali rejettent l'arbitrage de Siffin et font sécession, donnant naissance au courant kharijite.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Kharidjisme"
+                    },
+                    {
+                      "id": "isl_32",
+                      "axe": "Premiers califats et divisions (632–750)",
+                      "date": 661,
+                      "titre": "Assassinat d'Ali",
+                      "description": "Ali est assassiné par un kharijite à Kufa ; Mu'awiya s'impose alors comme calife et fonde la dynastie omeyyade.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Ali_ibn_Abi_Talib"
+                    },
+                    {
+                      "id": "isl_33",
+                      "axe": "Premiers califats et divisions (632–750)",
+                      "date": 661,
+                      "titre": "Damas, centre du pouvoir omeyyade",
+                      "description": "Mu'awiya établit Damas comme capitale du califat, déplaçant durablement le centre de gravité politique du monde musulman.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Calife_omeyyade"
+                    },
+                    {
+                      "id": "isl_34",
+                      "axe": "Premiers califats et divisions (632–750)",
+                      "date": 680,
+                      "titre": "Bataille de Karbala",
+                      "description": "Husayn, petit-fils de Muhammad, est tué avec ses compagnons par les troupes omeyyades à Karbala, événement fondateur de la mémoire chiite.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Kerbala"
+                    },
+                    {
+                      "id": "isl_35",
+                      "axe": "Premiers califats et divisions (632–750)",
+                      "date": 685,
+                      "titre": "Seconde fitna",
+                      "description": "Une nouvelle guerre civile oppose plusieurs prétendants au califat, jusqu'à la restauration de l'autorité omeyyade par Abd al-Malik en 692.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Deuxi%C3%A8me_fitna"
+                    },
+                    {
+                      "id": "isl_36",
+                      "axe": "Premiers califats et divisions (632–750)",
+                      "date": 711,
+                      "titre": "Conquête musulmane de la péninsule Ibérique",
+                      "description": "Une armée commandée par Tariq ibn Ziyad franchit le détroit de Gibraltar et entame la conquête du royaume wisigoth d'Hispanie.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Conqu%C3%AAte_musulmane_de_l%27Hispanie"
+                    },
+                    {
+                      "id": "isl_37",
+                      "axe": "Premiers califats et divisions (632–750)",
+                      "date": 711,
+                      "titre": "Conquête musulmane du Sind",
+                      "description": "Muhammad ibn al-Qasim mène la conquête omeyyade de la région du Sind, dans le nord-ouest du sous-continent indien.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Muhammad_ibn_al-Qasim"
+                    },
+                    {
+                      "id": "isl_38",
+                      "axe": "Premiers califats et divisions (632–750)",
+                      "date": 717,
+                      "titre": "Second siège omeyyade de Constantinople",
+                      "description": "Les troupes omeyyades échouent devant les murailles de Constantinople, défendue notamment grâce au feu grégeois byzantin.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Si%C3%A8ge_de_Constantinople_(717-718)"
+                    },
+                    {
+                      "id": "isl_39",
+                      "axe": "Premiers califats et divisions (632–750)",
+                      "date": 732,
+                      "titre": "Bataille de Poitiers",
+                      "description": "Une armée musulmane menée par Abd al-Rahman al-Ghafiqi est vaincue par les Francs de Charles Martel, marquant une limite à l'expansion musulmane en Gaule.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Poitiers_(732)"
+                    },
+                    {
+                      "id": "isl_40",
+                      "axe": "Premiers califats et divisions (632–750)",
+                      "date": 750,
+                      "titre": "Révolution abbasside",
+                      "description": "Les Abbassides renversent la dynastie omeyyade lors de la bataille du Grand Zab et prennent le contrôle du califat.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9volution_abbasside"
+                    },
+                    {
+                      "id": "isl_41",
+                      "axe": "Premiers califats et divisions (632–750)",
+                      "date": 756,
+                      "titre": "Fondation de l'émirat omeyyade de Cordoue",
+                      "description": "Abd al-Rahman Ier, rescapé de la dynastie omeyyade déchue, fonde à Cordoue un émirat indépendant du califat abbasside.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89mirat_de_Cordoue"
+                    },
+                    {
+                      "id": "isl_42",
+                      "axe": "Califat abbasside et diversification (750–1258)",
+                      "date": 762,
+                      "titre": "Fondation de Bagdad",
+                      "description": "Le calife abbasside al-Mansur fonde Bagdad, qui devient la nouvelle capitale du califat et un immense centre politique et intellectuel.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Bagdad"
+                    },
+                    {
+                      "id": "isl_43",
+                      "axe": "Califat abbasside et diversification (750–1258)",
+                      "date": 800,
+                      "titre": "Apogée abbasside sous Hârûn al-Rashîd",
+                      "description": "Le califat abbasside connaît son apogée politique et culturelle sous le règne de Hârûn al-Rashîd, resté célèbre grâce aux Mille et Une Nuits.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Har%C5%ABn_ar-Rach%C3%AEd"
+                    },
+                    {
+                      "id": "isl_44",
+                      "axe": "Califat abbasside et diversification (750–1258)",
+                      "date": 830,
+                      "titre": "Essor de la Maison de la Sagesse",
+                      "description": "À Bagdad, la Maison de la Sagesse devient un centre majeur de traduction et de recherche scientifique et philosophique du monde abbasside.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Maison_de_la_sagesse"
+                    },
+                    {
+                      "id": "isl_45",
+                      "axe": "Califat abbasside et diversification (750–1258)",
+                      "date": 822,
+                      "titre": "Arrivée d'Andalous à Fès",
+                      "description": "L'arrivée de réfugiés andalous à Fès contribue à l'essor de la ville comme centre politique, religieux et intellectuel du Maghreb.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/F%C3%A8s"
+                    },
+                    {
+                      "id": "isl_46",
+                      "axe": "Califat abbasside et diversification (750–1258)",
+                      "date": 861,
+                      "titre": "Révolte des Zanj",
+                      "description": "Une révolte d'esclaves africains employés dans les marais du sud de l'Irak ébranle durablement l'autorité abbasside jusqu'en 870.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9volte_des_Zanj"
+                    },
+                    {
+                      "id": "isl_47",
+                      "axe": "Califat abbasside et diversification (750–1258)",
+                      "date": 909,
+                      "titre": "Fondation du califat fatimide",
+                      "description": "Une dynastie chiite ismaélienne fonde en Ifriqiya un califat rival, contestant la légitimité religieuse et politique des Abbassides.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Fatimides"
+                    },
+                    {
+                      "id": "isl_48",
+                      "axe": "Califat abbasside et diversification (750–1258)",
+                      "date": 969,
+                      "titre": "Conquête de l'Égypte par les Fatimides",
+                      "description": "Les Fatimides conquièrent l'Égypte et y fondent la ville du Caire, qui devient leur nouvelle capitale.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Fatimides"
+                    },
+                    {
+                      "id": "isl_49",
+                      "axe": "Califat abbasside et diversification (750–1258)",
+                      "date": 969,
+                      "titre": "Fondation d'al-Azhar",
+                      "description": "La mosquée d'al-Azhar est fondée au Caire par les Fatimides ; elle deviendra l'un des plus prestigieux centres d'enseignement du monde musulman sunnite.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Al-Azhar"
+                    },
+                    {
+                      "id": "isl_50",
+                      "axe": "Califat abbasside et diversification (750–1258)",
+                      "date": 985,
+                      "titre": "Fondation de la Qarawiyyin",
+                      "description": "Selon la tradition institutionnelle, l'université-mosquée Qarawiyyin de Fès, fondée dès le IXe siècle par Fatima al-Fihriya, s'impose comme un grand centre d'enseignement.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Universit%C3%A9_Al_Quaraouiyine"
+                    },
+                    {
+                      "id": "isl_51",
+                      "axe": "Califat abbasside et diversification (750–1258)",
+                      "date": 1000,
+                      "titre": "Royaumes musulmans en Afrique de l'Ouest",
+                      "description": "L'islam se consolide dans plusieurs royaumes ouest-africains, porté par les réseaux marchands transsahariens reliant le Maghreb au Sahel.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Commerce_transsaharien"
+                    },
+                    {
+                      "id": "isl_52",
+                      "axe": "Califat abbasside et diversification (750–1258)",
+                      "date": 1037,
+                      "titre": "Fondation de l'Empire seldjoukide",
+                      "description": "Tughril Beg fonde l'Empire seldjoukide, qui devient une puissance turque majeure au Moyen-Orient sunnite.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Grands_Seldjoukides"
+                    },
+                    {
+                      "id": "isl_53",
+                      "axe": "Califat abbasside et diversification (750–1258)",
+                      "date": 1055,
+                      "titre": "Entrée des Seldjoukides à Bagdad",
+                      "description": "Tughril Beg entre à Bagdad et reçoit du calife abbasside le titre de sultan, exerçant désormais le pouvoir effectif au nom du califat.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Tughril_Beg"
+                    },
+                    {
+                      "id": "isl_54",
+                      "axe": "Califat abbasside et diversification (750–1258)",
+                      "date": 1063,
+                      "titre": "Nizam al-Mulk et les madrasas nizamiyya",
+                      "description": "Vizir des sultans seldjoukides, Nizam al-Mulk institutionnalise un réseau de madrasas, les nizamiyya, qui structurent durablement l'enseignement sunnite.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Nizam_al-Mulk"
+                    },
+                    {
+                      "id": "isl_55",
+                      "axe": "Califat abbasside et diversification (750–1258)",
+                      "date": 1071,
+                      "titre": "Bataille de Manzikert",
+                      "description": "Les Seldjoukides infligent une défaite décisive à l'armée byzantine, ouvrant l'Anatolie à l'installation durable des populations turques.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Manzikert"
+                    },
+                    {
+                      "id": "isl_56",
+                      "axe": "Califat abbasside et diversification (750–1258)",
+                      "date": 1085,
+                      "titre": "Prise de Tolède",
+                      "description": "Alphonse VI de Castille prend la ville de Tolède, étape majeure de la Reconquista chrétienne dans la péninsule Ibérique.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Prise_de_Tol%C3%A8de_(1085)"
+                    },
+                    {
+                      "id": "isl_57",
+                      "axe": "Califat abbasside et diversification (750–1258)",
+                      "date": 1094,
+                      "titre": "Scission nizârite au sein de l'ismaélisme",
+                      "description": "Une scission au sein de l'ismaélisme donne naissance au courant nizârite, qui s'illustrera notamment autour de la forteresse d'Alamût.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Nizarisme"
+                    },
+                    {
+                      "id": "isl_58",
+                      "axe": "Califat abbasside et diversification (750–1258)",
+                      "date": 1099,
+                      "titre": "Prise de Jérusalem par les croisés",
+                      "description": "Les armées de la première croisade s'emparent de Jérusalem après un siège meurtrier et y fondent un royaume latin.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Si%C3%A8ge_de_J%C3%A9rusalem_(1099)"
+                    },
+                    {
+                      "id": "isl_59",
+                      "axe": "Califat abbasside et diversification (750–1258)",
+                      "date": 1128,
+                      "titre": "Fondation de la dynastie zengide",
+                      "description": "Imad al-Din Zengi fonde une dynastie qui unifie progressivement la Syrie musulmane face aux États croisés.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Zengides"
+                    },
+                    {
+                      "id": "isl_60",
+                      "axe": "Califat abbasside et diversification (750–1258)",
+                      "date": 1187,
+                      "titre": "Saladin reprend Jérusalem",
+                      "description": "Après sa victoire à la bataille de Hattin, Saladin reprend Jérusalem aux croisés, mettant fin à près d'un siècle de domination latine sur la ville.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Hattin"
+                    },
+                    {
+                      "id": "isl_61",
+                      "axe": "Califat abbasside et diversification (750–1258)",
+                      "date": 1206,
+                      "titre": "Fondation du sultanat de Delhi",
+                      "description": "Qutb ud-Din Aibak fonde le sultanat de Delhi, premier grand État musulman durable du nord de l'Inde.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Sultanat_de_Delhi"
+                    },
+                    {
+                      "id": "isl_62",
+                      "axe": "Califat abbasside et diversification (750–1258)",
+                      "date": 1236,
+                      "titre": "Prise de Cordoue",
+                      "description": "Ferdinand III de Castille prend Cordoue, ancienne capitale du califat omeyyade d'al-Andalus, dans le cadre de la Reconquista.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Cordoue"
+                    },
+                    {
+                      "id": "isl_63",
+                      "axe": "Califat abbasside et diversification (750–1258)",
+                      "date": 1250,
+                      "titre": "Prise du pouvoir par les Mamelouks en Égypte",
+                      "description": "D'anciens esclaves-soldats mamelouks prennent le pouvoir en Égypte et fondent un sultanat qui dominera la région pendant plus de deux siècles.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Sultanat_mamelouk"
+                    },
+                    {
+                      "id": "isl_64",
+                      "axe": "Califat abbasside et diversification (750–1258)",
+                      "date": 1258,
+                      "titre": "Prise et destruction de Bagdad par les Mongols",
+                      "description": "Les Mongols de Hülegü prennent et détruisent Bagdad, mettant fin au califat abbasside et provoquant un choc profond dans le monde musulman.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Si%C3%A8ge_de_Bagdad_(1258)"
+                    },
+                    {
+                      "id": "isl_65",
+                      "axe": "Califat abbasside et diversification (750–1258)",
+                      "date": 1260,
+                      "titre": "Bataille d'Ayn Jalut",
+                      "description": "Les Mamelouks d'Égypte infligent aux Mongols leur première défaite majeure, stoppant leur expansion vers le Proche-Orient.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_d%27Ayn_Jalout"
+                    },
+                    {
+                      "id": "isl_66",
+                      "axe": "Califat abbasside et diversification (750–1258)",
+                      "date": 1291,
+                      "titre": "Chute d'Acre",
+                      "description": "La prise d'Acre par les Mamelouks met fin aux principaux États latins d'Orient issus des croisades.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Si%C3%A8ge_d%27Acre_(1291)"
+                    },
+                    {
+                      "id": "isl_67",
+                      "axe": "Afrique, al-Andalus et Asie",
+                      "date": 929,
+                      "titre": "Proclamation du califat omeyyade de Cordoue",
+                      "description": "Abd al-Rahman III se proclame calife à Cordoue, affirmant l'indépendance religieuse et politique d'al-Andalus face aux Abbassides et aux Fatimides.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Califat_de_Cordoue"
+                    },
+                    {
+                      "id": "isl_68",
+                      "axe": "Afrique, al-Andalus et Asie",
+                      "date": 929,
+                      "titre": "Apogée politique et culturelle de Cordoue",
+                      "description": "Cordoue devient l'une des plus grandes villes du monde, réputée pour sa prospérité économique et son rayonnement culturel et scientifique jusqu'en 1031.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Cordoue"
+                    },
+                    {
+                      "id": "isl_69",
+                      "axe": "Afrique, al-Andalus et Asie",
+                      "date": 1040,
+                      "titre": "Expansion de l'Empire almoravide",
+                      "description": "Le mouvement almoravide, né dans le Sahara occidental, conquiert un vaste empire couvrant le Maghreb et une grande partie d'al-Andalus jusqu'en 1147.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Almoravides"
+                    },
+                    {
+                      "id": "isl_70",
+                      "axe": "Afrique, al-Andalus et Asie",
+                      "date": 1147,
+                      "titre": "Domination almohade au Maghreb et en al-Andalus",
+                      "description": "Les Almohades, issus d'un mouvement religieux réformateur berbère, dominent le Maghreb et al-Andalus après avoir renversé les Almoravides.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Almohades"
+                    },
+                    {
+                      "id": "isl_71",
+                      "axe": "Afrique, al-Andalus et Asie",
+                      "date": 1238,
+                      "titre": "Fondation de l'émirat nasride de Grenade",
+                      "description": "Muhammad Ier fonde l'émirat nasride de Grenade, dernier État musulman indépendant de la péninsule Ibérique.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Royaume_de_Grenade"
+                    },
+                    {
+                      "id": "isl_72",
+                      "axe": "Afrique, al-Andalus et Asie",
+                      "date": 1324,
+                      "titre": "Pèlerinage de Mansa Musa",
+                      "description": "L'empereur du Mali Mansa Musa effectue un pèlerinage fastueux à La Mecque, révélant au monde méditerranéen la richesse et la puissance de son empire.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Kankou_Moussa"
+                    },
+                    {
+                      "id": "isl_73",
+                      "axe": "Afrique, al-Andalus et Asie",
+                      "date": 1350,
+                      "titre": "Expansion de l'islam en Afrique orientale",
+                      "description": "L'islam se diffuse et se consolide le long des côtes de l'Afrique orientale, porté par les réseaux commerciaux swahilis de l'océan Indien.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Civilisation_swahilie"
+                    },
+                    {
+                      "id": "isl_74",
+                      "axe": "Afrique, al-Andalus et Asie",
+                      "date": 1370,
+                      "titre": "Empire de Tamerlan",
+                      "description": "Tamerlan bâtit un vaste empire en Asie centrale et au Moyen-Orient, centré sur Samarcande, par une série de campagnes militaires fulgurantes.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Tamerlan"
+                    },
+                    {
+                      "id": "isl_75",
+                      "axe": "Afrique, al-Andalus et Asie",
+                      "date": 1400,
+                      "titre": "Diffusion de l'islam en Asie du Sud-Est",
+                      "description": "L'islam se répand plus largement dans l'archipel malais et en Indonésie, porté notamment par les réseaux marchands et le sultanat de Malacca.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Sultanat_de_Malacca"
+                    },
+                    {
+                      "id": "isl_76",
+                      "axe": "Afrique, al-Andalus et Asie",
+                      "date": 1492,
+                      "titre": "Prise de Grenade",
+                      "description": "Les Rois Catholiques prennent Grenade, mettant fin à près de huit siècles de présence politique musulmane dans la péninsule Ibérique.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Prise_de_Grenade"
+                    },
+                    {
+                      "id": "isl_77",
+                      "axe": "Afrique, al-Andalus et Asie",
+                      "date": 1492,
+                      "titre": "Expulsion progressive des musulmans d'Espagne",
+                      "description": "Les musulmans d'Espagne subissent conversions forcées et persécutions, jusqu'au décret d'expulsion des Morisques en 1609.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Expulsion_des_Morisques"
+                    },
+                    {
+                      "id": "isl_78",
+                      "axe": "Afrique, al-Andalus et Asie",
+                      "date": 1526,
+                      "titre": "Bataille de Panipat et fondation de l'Empire moghol",
+                      "description": "Babur remporte la première bataille de Panipat et fonde l'Empire moghol, qui dominera une grande partie du sous-continent indien.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Premi%C3%A8re_bataille_de_Panipat"
+                    },
+                    {
+                      "id": "isl_79",
+                      "axe": "Afrique, al-Andalus et Asie",
+                      "date": 1600,
+                      "titre": "Renforcement des sultanats musulmans d'Asie du Sud-Est",
+                      "description": "Plusieurs sultanats musulmans, notamment à Aceh et dans les régions malaises, renforcent leur puissance commerciale et politique jusqu'au XVIIIe siècle.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Sultanat_d%27Aceh"
+                    },
+                    {
+                      "id": "isl_80",
+                      "axe": "Afrique, al-Andalus et Asie",
+                      "date": 1757,
+                      "titre": "Bataille de Plassey",
+                      "description": "La victoire de la Compagnie britannique des Indes orientales à Plassey ouvre la voie à la domination coloniale britannique sur le Bengale musulman.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Plassey"
+                    },
+                    {
+                      "id": "isl_81",
+                      "axe": "Les grands empires (1299–1800)",
+                      "date": 1299,
+                      "titre": "Fondation de la principauté ottomane",
+                      "description": "Osman Ier fonde en Anatolie une principauté turque qui deviendra, au fil des siècles, l'Empire ottoman.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Osman_Ier"
+                    },
+                    {
+                      "id": "isl_82",
+                      "axe": "Les grands empires (1299–1800)",
+                      "date": 1453,
+                      "titre": "Prise de Constantinople",
+                      "description": "Le sultan ottoman Mehmed II s'empare de Constantinople, mettant fin à l'Empire byzantin et faisant de la ville la nouvelle capitale ottomane.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Chute_de_Constantinople"
+                    },
+                    {
+                      "id": "isl_83",
+                      "axe": "Les grands empires (1299–1800)",
+                      "date": 1514,
+                      "titre": "Bataille de Tchaldiran",
+                      "description": "Les Ottomans battent les Safavides à Tchaldiran, fixant durablement la frontière et la rivalité religieuse sunnite-chiite entre les deux empires.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Tchaldiran"
+                    },
+                    {
+                      "id": "isl_84",
+                      "axe": "Les grands empires (1299–1800)",
+                      "date": 1517,
+                      "titre": "Conquête de l'Égypte par les Ottomans",
+                      "description": "Sélim Ier conquiert l'Égypte mamelouke, intégrant les Lieux saints de l'islam et le titre de calife à la souveraineté ottomane.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Conqu%C3%AAte_ottomane_de_l%27%C3%89gypte"
+                    },
+                    {
+                      "id": "isl_85",
+                      "axe": "Les grands empires (1299–1800)",
+                      "date": 1520,
+                      "titre": "Règne de Soliman le Magnifique",
+                      "description": "Sous Soliman le Magnifique, l'Empire ottoman atteint son apogée territoriale, administrative et culturelle jusqu'en 1566.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Soliman_le_Magnifique"
+                    },
+                    {
+                      "id": "isl_86",
+                      "axe": "Les grands empires (1299–1800)",
+                      "date": 1526,
+                      "titre": "Fondation de l'Empire moghol",
+                      "description": "Descendant de Tamerlan, Babur fonde en Inde du Nord l'Empire moghol, dynastie qui régnera pendant plus de trois siècles.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Empire_moghol"
+                    },
+                    {
+                      "id": "isl_87",
+                      "axe": "Les grands empires (1299–1800)",
+                      "date": 1576,
+                      "titre": "Mort de Tahmasp Ier, transformations de l'État safavide",
+                      "description": "La mort du shah Tahmasp Ier, après un très long règne, ouvre une période d'instabilité et de recompositions politiques au sein de l'Empire safavide.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Tahmasp_Ier"
+                    },
+                    {
+                      "id": "isl_88",
+                      "axe": "Les grands empires (1299–1800)",
+                      "date": 1571,
+                      "titre": "Bataille de Lépante",
+                      "description": "Une flotte de la Sainte Ligue chrétienne inflige une lourde défaite navale à la flotte ottomane dans le golfe de Lépante.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_L%C3%A9pante_(1571)"
+                    },
+                    {
+                      "id": "isl_89",
+                      "axe": "Les grands empires (1299–1800)",
+                      "date": 1683,
+                      "titre": "Échec ottoman devant Vienne",
+                      "description": "Le second siège ottoman de Vienne échoue face à une armée de secours européenne, marquant un tournant dans le recul territorial ottoman en Europe.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Si%C3%A8ge_de_Vienne_(1683)"
+                    },
+                    {
+                      "id": "isl_90",
+                      "axe": "Les grands empires (1299–1800)",
+                      "date": 1722,
+                      "titre": "Chute d'Ispahan",
+                      "description": "La prise d'Ispahan par des tribus afghanes provoque l'effondrement de l'Empire safavide, déjà affaibli par des décennies de crises internes.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Si%C3%A8ge_d%27Ispahan"
+                    },
+                    {
+                      "id": "isl_91",
+                      "axe": "Les grands empires (1299–1800)",
+                      "date": 1798,
+                      "titre": "Expédition de Bonaparte en Égypte",
+                      "description": "Napoléon Bonaparte mène une expédition militaire et scientifique en Égypte, marquant le début d'une ère d'ingérence européenne croissante dans le monde musulman.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Exp%C3%A9dition_d%27%C3%89gypte"
+                    },
+                    {
+                      "id": "isl_92",
+                      "axe": "Réformes, colonisations et mondes contemporains",
+                      "date": 1839,
+                      "titre": "Tanzimat",
+                      "description": "L'Empire ottoman engage une vaste série de réformes administratives, juridiques et militaires destinées à moderniser l'État et la société, jusqu'en 1876.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Tanzimat"
+                    },
+                    {
+                      "id": "isl_93",
+                      "axe": "Réformes, colonisations et mondes contemporains",
+                      "date": 1857,
+                      "titre": "Révolte des Cipayes",
+                      "description": "Le soulèvement des cipayes contre la Compagnie des Indes orientales entraîne la déposition du dernier empereur moghol et le renforcement de la tutelle britannique.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9volte_des_cipayes"
+                    },
+                    {
+                      "id": "isl_94",
+                      "axe": "Réformes, colonisations et mondes contemporains",
+                      "date": 1869,
+                      "titre": "Ouverture du canal de Suez",
+                      "description": "L'ouverture du canal de Suez bouleverse les routes commerciales mondiales et accroît l'intérêt stratégique des puissances européennes pour l'Égypte.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Canal_de_Suez"
+                    },
+                    {
+                      "id": "isl_95",
+                      "axe": "Réformes, colonisations et mondes contemporains",
+                      "date": 1881,
+                      "titre": "Protectorat français en Tunisie, occupation britannique de l'Égypte",
+                      "description": "La France impose son protectorat sur la Tunisie, tandis que le Royaume-Uni occupe l'Égypte l'année suivante, accentuant la domination coloniale européenne sur le monde musulman.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Protectorat_fran%C3%A7ais_de_Tunisie"
+                    },
+                    {
+                      "id": "isl_96",
+                      "axe": "Réformes, colonisations et mondes contemporains",
+                      "date": 1916,
+                      "titre": "Accords Sykes-Picot",
+                      "description": "La France et le Royaume-Uni s'entendent secrètement pour se partager les zones d'influence au Moyen-Orient après la chute annoncée de l'Empire ottoman.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Accords_Sykes-Picot"
+                    },
+                    {
+                      "id": "isl_97",
+                      "axe": "Réformes, colonisations et mondes contemporains",
+                      "date": 1917,
+                      "titre": "Déclaration Balfour",
+                      "description": "Le gouvernement britannique se déclare favorable à l'établissement d'un foyer national juif en Palestine, ouvrant une source durable de tensions régionales.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/D%C3%A9claration_Balfour"
+                    },
+                    {
+                      "id": "isl_98",
+                      "axe": "Réformes, colonisations et mondes contemporains",
+                      "date": 1924,
+                      "titre": "Abolition du califat ottoman",
+                      "description": "La toute jeune République turque de Mustafa Kemal Atatürk abolit le califat, mettant fin à une institution multiséculaire du monde musulman sunnite.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Abolition_du_califat_ottoman"
+                    },
+                    {
+                      "id": "isl_99",
+                      "axe": "Réformes, colonisations et mondes contemporains",
+                      "date": 1947,
+                      "titre": "Partition des Indes",
+                      "description": "La partition des Indes britanniques donne naissance à l'Inde et au Pakistan dans un contexte de violences massives, tandis qu'éclate en 1948 la première guerre israélo-arabe.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Partition_des_Indes"
+                    },
+                    {
+                      "id": "isl_100",
+                      "axe": "Réformes, colonisations et mondes contemporains",
+                      "date": 1979,
+                      "titre": "Révolution iranienne",
+                      "description": "La révolution iranienne renverse le Chah et installe une République islamique, tandis que l'invasion soviétique de l'Afghanistan en 1979-1980 ouvre une nouvelle phase des mobilisations islamistes.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9volution_iranienne"
+                    }
+                  ],
+                  "axeOrder": [
+                    "Naissance de l'islam (570–632)",
+                    "Premiers califats et divisions (632–750)",
+                    "Califat abbasside et diversification (750–1258)",
+                    "Afrique, al-Andalus et Asie",
+                    "Les grands empires (1299–1800)",
+                    "Réformes, colonisations et mondes contemporains"
+                  ]
+                },
+                {
+                  "id": "thm_islam_sunnisme",
+                  "nom": "Histoire du sunnisme",
+                  "difficulte": "Intermédiaire",
+                  "events": [
+                    {
+                      "id": "sunni_1",
+                      "axe": "Fondations et Califat (VIIe - XIe siècle)",
+                      "date": 632,
+                      "titre": "Élection d'Abou Bakr",
+                      "description": "À la mort de Muhammad, Abou Bakr est élu premier calife par consensus (ijma).",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Abou_Bakr_As-Siddiq"
+                    },
+                    {
+                      "id": "sunni_2",
+                      "axe": "Fondations et Califat (VIIe - XIe siècle)",
+                      "date": 634,
+                      "titre": "Califat d'Omar",
+                      "description": "Omar ibn al-Khattab succède à Abou Bakr et lance les grandes conquêtes islamiques.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Omar_ibn_al-Khattab"
+                    },
+                    {
+                      "id": "sunni_3",
+                      "axe": "Fondations et Califat (VIIe - XIe siècle)",
+                      "date": 644,
+                      "titre": "Compilation canonique du Coran",
+                      "description": "Sous le troisième calife, Othman, la Vulgate du Coran est compilée pour unifier le texte sacré.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Othman_ibn_Affan"
+                    },
+                    {
+                      "id": "sunni_4",
+                      "axe": "Fondations et Califat (VIIe - XIe siècle)",
+                      "date": 661,
+                      "titre": "Fondation du califat Omeyyade",
+                      "description": "Muawiya Ier établit le califat omeyyade à Damas, instaurant un principe dynastique.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Califat_omeyyade"
+                    },
+                    {
+                      "id": "sunni_5",
+                      "axe": "Fondations et Califat (VIIe - XIe siècle)",
+                      "date": 750,
+                      "titre": "Révolution abbasside",
+                      "description": "Les Abbassides renversent les Omeyyades et fondent Bagdad, marquant l'âge d'or du califat sunnite.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Califat_abbasside"
+                    },
+                    {
+                      "id": "sunni_6",
+                      "axe": "Théologie, Droit et Spiritualité",
+                      "date": 767,
+                      "titre": "Mort d'Abou Hanifa",
+                      "description": "Décès du fondateur de l'école (madhhab) hanafite, qui privilégie le raisonnement juridique.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Abou_Hanifa"
+                    },
+                    {
+                      "id": "sunni_7",
+                      "axe": "Théologie, Droit et Spiritualité",
+                      "date": 795,
+                      "titre": "Mort de Malik ibn Anas",
+                      "description": "Décès du fondateur de l'école malikite, basée sur la pratique des habitants de Médine.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Malik_ibn_Anas"
+                    },
+                    {
+                      "id": "sunni_8",
+                      "axe": "Théologie, Droit et Spiritualité",
+                      "date": 820,
+                      "titre": "Mort de l'Imam Al-Chafii",
+                      "description": "L'Imam Al-Chafii structure les fondements du droit musulman (Usul al-fiqh).",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Al-Chafii"
+                    },
+                    {
+                      "id": "sunni_9",
+                      "axe": "Théologie, Droit et Spiritualité",
+                      "date": 855,
+                      "titre": "Mort d'Ahmad Ibn Hanbal",
+                      "description": "Figure de proue de l'orthodoxie traditionaliste et fondateur de l'école hanbalite.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Ahmad_Ibn_Hanbal"
+                    },
+                    {
+                      "id": "sunni_10",
+                      "axe": "Théologie, Droit et Spiritualité",
+                      "date": 870,
+                      "titre": "Compilation du Sahih al-Bukhari",
+                      "description": "L'un des deux grands recueils authentiques (Sahih) de hadiths est achevé.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Sahih_al-Bukhari"
+                    },
+                    {
+                      "id": "sunni_11",
+                      "axe": "Théologie, Droit et Spiritualité",
+                      "date": 935,
+                      "titre": "Naissance de l'Ach'arisme",
+                      "description": "Al-Ach'ari meurt après avoir fondé une école théologique conciliant rationalisme et textes.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Acharisme"
+                    },
+                    {
+                      "id": "sunni_12",
+                      "axe": "Théologie, Droit et Spiritualité",
+                      "date": 1111,
+                      "titre": "Mort d'Al-Ghazali",
+                      "description": "Surnommé la 'Preuve de l'Islam', Al-Ghazali réconcilie la théologie sunnite et le soufisme.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Al-Ghazali"
+                    },
+                    {
+                      "id": "sunni_13",
+                      "axe": "Empires sunnites et âge d'or (XIe - XVIIIe siècle)",
+                      "date": 1055,
+                      "titre": "Les Seldjoukides à Bagdad",
+                      "description": "La dynastie turque seldjoukide prend Bagdad et se pose en protectrice du califat abbasside sunnite.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Empire_seldjoukide"
+                    },
+                    {
+                      "id": "sunni_14",
+                      "axe": "Empires sunnites et âge d'or (XIe - XVIIIe siècle)",
+                      "date": 1187,
+                      "titre": "Saladin reprend Jérusalem",
+                      "description": "Saladin, héros du monde sunnite, met fin aux Croisades et rétablit l'orthodoxie sunnite en Égypte.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Saladin"
+                    },
+                    {
+                      "id": "sunni_15",
+                      "axe": "Empires sunnites et âge d'or (XIe - XVIIIe siècle)",
+                      "date": 1258,
+                      "titre": "Chute de Bagdad",
+                      "description": "Les Mongols détruisent Bagdad et mettent fin à la lignée califale abbasside irakienne.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Bagdad_(1258)"
+                    },
+                    {
+                      "id": "sunni_16",
+                      "axe": "Empires sunnites et âge d'or (XIe - XVIIIe siècle)",
+                      "date": 1517,
+                      "titre": "L'Empire Ottoman prend le Califat",
+                      "description": "Selim Ier vainc les Mamelouks et transfère le titre califal sunnite à Istanbul.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Empire_ottoman"
+                    },
+                    {
+                      "id": "sunni_17",
+                      "axe": "Réformisme et période contemporaine (XIXe - XXIe siècle)",
+                      "date": 1744,
+                      "titre": "Pacte de Dariya",
+                      "description": "Alliance entre Ibn Abd al-Wahhab et les Saoud, marquant la naissance du wahhabisme.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Wahhabisme"
+                    },
+                    {
+                      "id": "sunni_18",
+                      "axe": "Réformisme et période contemporaine (XIXe - XXIe siècle)",
+                      "date": 1924,
+                      "titre": "Abolition du califat ottoman",
+                      "description": "Mustafa Kemal abolit le califat, provoquant une crise politique majeure dans le monde sunnite.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Abolition_du_califat"
+                    },
+                    {
+                      "id": "sunni_19",
+                      "axe": "Réformisme et période contemporaine (XIXe - XXIe siècle)",
+                      "date": 1928,
+                      "titre": "Fondation des Frères musulmans",
+                      "description": "Hassan el-Banna fonde en Égypte cette confrérie réformiste qui marque l'islam politique contemporain.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Fr%C3%A8res_musulmans"
+                    },
+                    {
+                      "id": "sunni_20",
+                      "axe": "Réformisme et période contemporaine (XIXe - XXIe siècle)",
+                      "date": 2011,
+                      "titre": "Rôle d'Al-Azhar dans les Printemps Arabes",
+                      "description": "L'institution sunnite d'Al-Azhar au Caire publie des documents sur l'avenir démocratique de l'Égypte.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Universit%C3%A9_al-Azhar"
+                    }
+                  ],
+                  "axeOrder": [
+                    "Fondations et Califat (VIIe - XIe siècle)",
+                    "Théologie, Droit et Spiritualité",
+                    "Empires sunnites et âge d'or (XIe - XVIIIe siècle)",
+                    "Réformisme et période contemporaine (XIXe - XXIe siècle)"
+                  ]
+                },
+                {
+                  "id": "thm_islam_chiisme",
+                  "nom": "Histoire du chiisme",
+                  "difficulte": "Intermédiaire",
+                  "events": [
+                    {
+                      "id": "shia_1",
+                      "axe": "Les Origines et les Imams (VIIe - IXe siècle)",
+                      "date": 632,
+                      "titre": "Événement de Ghadir Khumm",
+                      "description": "Selon la tradition chiite, Muhammad désigne publiquement Ali ibn Abi Talib comme son successeur spirituel et temporel.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Ghadir_Khumm"
+                    },
+                    {
+                      "id": "shia_2",
+                      "axe": "Les Origines et les Imams (VIIe - IXe siècle)",
+                      "date": 656,
+                      "titre": "Bataille du Chameau",
+                      "description": "L'Imam Ali affronte et défait Aïcha, veuve du prophète, consolidant temporairement son pouvoir.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_du_Chameau"
+                    },
+                    {
+                      "id": "shia_3",
+                      "axe": "Les Origines et les Imams (VIIe - IXe siècle)",
+                      "date": 661,
+                      "titre": "Assassinat de l'Imam Ali",
+                      "description": "L'Imam Ali est assassiné à Koufa par un kharidjite. Muawiya prend le contrôle total du califat.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Ali_ibn_Abi_Talib"
+                    },
+                    {
+                      "id": "shia_4",
+                      "axe": "Les Origines et les Imams (VIIe - IXe siècle)",
+                      "date": 680,
+                      "titre": "Martyre de l'Imam Hussein",
+                      "description": "Bataille de Karbala où Hussein, troisième imam, est massacré par les Omeyyades. C'est l'événement central du chiisme.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Karbala"
+                    },
+                    {
+                      "id": "shia_5",
+                      "axe": "Scissions et fondations des dynasties (VIIIe - XIIe siècle)",
+                      "date": 765,
+                      "titre": "Mort de l'Imam Ja'far al-Sadiq",
+                      "description": "Sa succession provoque la principale scission entre chiites duodécimains et ismaéliens.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Ja%27far_al-S%C3%A2diq"
+                    },
+                    {
+                      "id": "shia_6",
+                      "axe": "Scissions et fondations des dynasties (VIIIe - XIIe siècle)",
+                      "date": 874,
+                      "titre": "La Petite Occultation",
+                      "description": "Le 12ème Imam, Muhammad al-Mahdi, entre en occultation et communique via des représentants.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Occultation_mineure"
+                    },
+                    {
+                      "id": "shia_7",
+                      "axe": "Scissions et fondations des dynasties (VIIIe - XIIe siècle)",
+                      "date": 909,
+                      "titre": "Fondation du Califat Fatimide",
+                      "description": "Les ismaéliens fondent la dynastie fatimide en Ifriqiya (actuelle Tunisie), un grand empire chiite.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Califat_fatimide"
+                    },
+                    {
+                      "id": "shia_8",
+                      "axe": "Scissions et fondations des dynasties (VIIIe - XIIe siècle)",
+                      "date": 941,
+                      "titre": "La Grande Occultation",
+                      "description": "Mort du dernier représentant du Mahdi. Le chiisme duodécimain entre dans l'attente messianique de son retour.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Occultation_majeure"
+                    },
+                    {
+                      "id": "shia_9",
+                      "axe": "Scissions et fondations des dynasties (VIIIe - XIIe siècle)",
+                      "date": 945,
+                      "titre": "La dynastie bouyide à Bagdad",
+                      "description": "La dynastie chiite zaydite des Bouyides prend le contrôle de Bagdad et impose sa tutelle aux califes abbassides.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Bouyides"
+                    },
+                    {
+                      "id": "shia_10",
+                      "axe": "Scissions et fondations des dynasties (VIIIe - XIIe siècle)",
+                      "date": 1090,
+                      "titre": "Prise d'Alamut par les Nizarites",
+                      "description": "Hassan al-Sabbah fonde l'État ismaélien nizarite, célèbre pour la secte des 'Assassins'.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/État_niz%C3%A2rite"
+                    },
+                    {
+                      "id": "shia_11",
+                      "axe": "Scissions et fondations des dynasties (VIIIe - XIIe siècle)",
+                      "date": 1171,
+                      "titre": "Fin du califat fatimide",
+                      "description": "Saladin met un terme au règne de la dynastie fatimide en Égypte, restaurant le sunnisme au Caire.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Fatimides"
+                    },
+                    {
+                      "id": "shia_12",
+                      "axe": "Le triomphe du duodécimain (XVIe - XVIIIe siècle)",
+                      "date": 1501,
+                      "titre": "Fondation de l'Empire séfévide",
+                      "description": "Ismaïl Ier prend le pouvoir en Iran et proclame le chiisme duodécimain religion d'État.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Empire_s%C3%A9f%C3%A9vide"
+                    },
+                    {
+                      "id": "shia_13",
+                      "axe": "Le triomphe du duodécimain (XVIe - XVIIIe siècle)",
+                      "date": 1514,
+                      "titre": "Bataille de Tchaldiran",
+                      "description": "Défaite des Séfévides face aux Ottomans, fixant durablement les frontières confessionnelles du Moyen-Orient.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Tchaldiran"
+                    },
+                    {
+                      "id": "shia_14",
+                      "axe": "Le triomphe du duodécimain (XVIe - XVIIIe siècle)",
+                      "date": 1588,
+                      "titre": "Apogée sous Abbas Ier le Grand",
+                      "description": "L'Empire séfévide atteint son zénith culturel et politique, et Ispahan devient une magnifique capitale.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Abbas_Ier_le_Grand"
+                    },
+                    {
+                      "id": "shia_15",
+                      "axe": "Le triomphe du duodécimain (XVIe - XVIIIe siècle)",
+                      "date": 1722,
+                      "titre": "Chute d'Ispahan",
+                      "description": "La prise de la capitale par les Afghans marque la fin de la puissance séfévide.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Dynastie_s%C3%A9f%C3%A9vide"
+                    },
+                    {
+                      "id": "shia_16",
+                      "axe": "Époque contemporaine et pensée politique (XIXe - XXIe siècle)",
+                      "date": 1905,
+                      "titre": "Révolution constitutionnelle persane",
+                      "description": "Le clergé chiite iranien joue un rôle central dans l'instauration du premier parlement.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9volution_constitutionnelle_persane"
+                    },
+                    {
+                      "id": "shia_17",
+                      "axe": "Époque contemporaine et pensée politique (XIXe - XXIe siècle)",
+                      "date": 1970,
+                      "titre": "Velayat-e faqih",
+                      "description": "L'ayatollah Khomeini théorise à Nadjaf la doctrine du gouvernement du jurisconsulte islamique.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Velayat-e_faqih"
+                    },
+                    {
+                      "id": "shia_18",
+                      "axe": "Époque contemporaine et pensée politique (XIXe - XXIe siècle)",
+                      "date": 1979,
+                      "titre": "Révolution islamique en Iran",
+                      "description": "Renversement du Shah et instauration de la République islamique par Khomeini.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9volution_iranienne"
+                    },
+                    {
+                      "id": "shia_19",
+                      "axe": "Époque contemporaine et pensée politique (XIXe - XXIe siècle)",
+                      "date": 1982,
+                      "titre": "Création du Hezbollah",
+                      "description": "Émergence au Liban du Hezbollah, soutenu par l'Iran, acteur militaire et politique chiite majeur.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Hezbollah"
+                    },
+                    {
+                      "id": "shia_20",
+                      "axe": "Époque contemporaine et pensée politique (XIXe - XXIe siècle)",
+                      "date": 2003,
+                      "titre": "Fin du régime irakien baasiste",
+                      "description": "La chute de Saddam Hussein permet l'essor politique de la majorité chiite en Irak.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Guerre_d%27Irak"
+                    }
+                  ],
+                  "axeOrder": [
+                    "Les Origines et les Imams (VIIe - IXe siècle)",
+                    "Scissions et fondations des dynasties (VIIIe - XIIe siècle)",
+                    "Le triomphe du duodécimain (XVIe - XVIIIe siècle)",
+                    "Époque contemporaine et pensée politique (XIXe - XXIe siècle)"
                   ]
                 }
               ]
