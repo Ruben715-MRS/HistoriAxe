@@ -289,7 +289,13 @@ function updateHeaderProfileBar() {
 
     if (avatarEl) avatarEl.innerText = rankInfo.currentRank.icon;
     if (titleEl) titleEl.innerText = rankInfo.currentRank.title;
-    if (levelEl) levelEl.innerText = (typeof t === 'function') ? t('gamification.rank_badge', { level: rankInfo.currentRank.level }) : `Niv. ${rankInfo.currentRank.level}`;
+    if (levelEl) {
+        let badgeStr = (typeof t === 'function') ? t('gamification.rank_badge', { level: rankInfo.currentRank.level }) : null;
+        if (!badgeStr || badgeStr === 'gamification.rank_badge' || badgeStr.includes('{level}')) {
+            badgeStr = `Niv. ${rankInfo.currentRank.level}`;
+        }
+        levelEl.innerText = badgeStr;
+    }
     if (fillEl) fillEl.style.width = `${rankInfo.progressPct}%`;
     if (xpTextEl) {
         if (rankInfo.nextRank) {
