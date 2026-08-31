@@ -1,0 +1,123 @@
+{
+  "version": "1.0.0",
+  "lang": "es",
+  "name": "Español (Paquete de demostración)",
+  "totalThemes": 2,
+  "totalEvents": 20,
+  "categories": [
+    {
+      "nom": "Cultura General",
+      "subcategories": [
+        {
+          "nom": "Ciencia y Exploración",
+          "themes": [
+            {
+              "id": "thm_space_es",
+              "nom": "La Conquista Espacial",
+              "difficulte": "Todos los niveles",
+              "events": [
+                {
+                  "id": "esp_es_01",
+                  "axe": "Precursores y Teoría",
+                  "date": 1543,
+                  "titre": "Copérnico publica De revolutionibus",
+                  "description": "Nicolás Copérnico publica su tratado que sitúa al Sol en el centro del sistema solar.",
+                  "wikipedia": "https://es.wikipedia.org/wiki/De_revolutionibus_orbium_coelestium"
+                },
+                {
+                  "id": "esp_es_02",
+                  "axe": "Era Espacial",
+                  "date": 1957,
+                  "titre": "Lanzamiento del Sputnik 1",
+                  "description": "La Unión Soviética pone en órbita el primer satélite artificial, inaugurando la Era Espacial.",
+                  "wikipedia": "https://es.wikipedia.org/wiki/Sputnik_1"
+                },
+                {
+                  "id": "esp_es_03",
+                  "axe": "Vuelo Humano",
+                  "date": 1961,
+                  "titre": "Yuri Gagarin viaja al espacio",
+                  "description": "El cosmonauta soviético Yuri Gagarin se convierte en el primer ser humano en el espacio a bordo del Vostok 1.",
+                  "wikipedia": "https://es.wikipedia.org/wiki/Yuri_Gagarin"
+                },
+                {
+                  "id": "esp_es_04",
+                  "axe": "Exploración Lunar",
+                  "date": 1969,
+                  "titre": "Apolo 11 llega a la Luna",
+                  "description": "Neil Armstrong y Buzz Aldrin aterrizan en la Luna, convirtiéndose en los primeros humanos en caminar sobre su superficie.",
+                  "wikipedia": "https://es.wikipedia.org/wiki/Apolo_11"
+                },
+                {
+                  "id": "esp_es_05",
+                  "axe": "Telescopios Espaciales",
+                  "date": 2021,
+                  "titre": "Lanzamiento del Telescopio James Webb",
+                  "description": "Se lanza el telescopio infrarrojo más potente jamás construido para observar los confines del universo.",
+                  "wikipedia": "https://es.wikipedia.org/wiki/Telescopio_espacial_James_Webb"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "nom": "Historia Universal",
+      "subcategories": [
+        {
+          "nom": "Grandes Acontecimientos",
+          "themes": [
+            {
+              "id": "thm_turning_points_es",
+              "nom": "Hitos de la Historia Universal",
+              "difficulte": "Todos los niveles",
+              "events": [
+                {
+                  "id": "wh_es_01",
+                  "axe": "Historia Antigua",
+                  "date": -753,
+                  "titre": "Fundación de Roma",
+                  "description": "Según la tradición romana, Rómulo y Remo fundan la ciudad de Roma.",
+                  "wikipedia": "https://es.wikipedia.org/wiki/Fundaci%C3%B3n_de_Roma"
+                },
+                {
+                  "id": "wh_es_02",
+                  "axe": "Edad Media",
+                  "date": 476,
+                  "titre": "Caída del Imperio Romano de Occidente",
+                  "description": "Rómulo Augústulo es depuesto por Odoacro, marcando tradicionalmente el fin de la Antigüedad.",
+                  "wikipedia": "https://es.wikipedia.org/wiki/Ca%C3%ADda_del_Imperio_romano_de_Occidente"
+                },
+                {
+                  "id": "wh_es_03",
+                  "axe": "Edad Moderna",
+                  "date": 1492,
+                  "titre": "Llegada de Colón a América",
+                  "description": "La expedición de Cristóbal Colón llega a las islas Bahamas, iniciando el contacto transatlántico.",
+                  "wikipedia": "https://es.wikipedia.org/wiki/Descubrimiento_de_Am%C3%A9rica"
+                },
+                {
+                  "id": "wh_es_04",
+                  "axe": "Edad Contemporánea",
+                  "date": 1789,
+                  "titre": "Toma de la Bastilla",
+                  "description": "Los revolucionarios parisinos toman la fortaleza de la Bastilla, marcando el inicio de la Revolución Francesa.",
+                  "wikipedia": "https://es.wikipedia.org/wiki/Toma_de_la_Bastilla"
+                },
+                {
+                  "id": "wh_es_05",
+                  "axe": "Edad Contemporánea",
+                  "date": 1969,
+                  "titre": "Creación de ARPANET (Internet)",
+                  "description": "Se establece la primera conexión entre computadoras remotas, origen de la red Internet.",
+                  "wikipedia": "https://es.wikipedia.org/wiki/ARPANET"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+{
+  "version": "1.0.0",
+  "lang": "en",
+  "name": "English (Demo Pack)",
+  "totalThemes": 2,
+  "totalEvents": 30,
+  "categories": [
+    {
+      "nom": "General Knowledge",
+      "subcategories": [
+        {
+          "nom": "Science, Technology & Exploration",
+          "themes": [
+            {
+              "id": "thm_space_en",
+              "nom": "Space Exploration",
+              "difficulte": "All levels",
+              "events": [
+                {
+                  "id": "esp_en_01",
+                  "axe": "Precursors & Theory",
+                  "date": 1543,
+                  "titre": "Copernicus publishes De revolutionibus",
+                  "description": "Nicolaus Copernicus publishes De revolutionibus orbium coelestium, proposing a heliocentric model of the universe.",
+                  "wikipedia": "https://en.wikipedia.org/wiki/De_revolutionibus_orbium_coelestium"
+                },
+                {
+                  "id": "esp_en_02",
+                  "axe": "Precursors & Theory",
+                  "date": 1609,
+                  "titre": "Kepler publishes Astronomia Nova",
+                  "description": "Johannes Kepler announces his laws of planetary motion, demonstrating elliptical orbits.",
+                  "wikipedia": "https://en.wikipedia.org/wiki/Astronomia_nova"
+                },
+                {
+                  "id": "esp_en_03",
+                  "axe": "Precursors & Theory",
+                  "date": 1610,
+                  "titre": "Galileo discovers Jupiter's Moons",
+                  "description": "Galileo Galilei observes four moons orbiting Jupiter using his telescope, confirming the Copernican view.",
+                  "wikipedia": "https://en.wikipedia.org/wiki/Galilean_moons"
+                },
+                {
+                  "id": "esp_en_04",
+                  "axe": "Precursors & Theory",
+                  "date": 1687,
+                  "titre": "Newton publishes Principia Mathematica",
+                  "description": "Isaac Newton formulates the laws of universal gravitation and motion, founding modern astrophysics.",
+                  "wikipedia": "https://en.wikipedia.org/wiki/Philosophi%C3%A6_Naturalis_Principia_Mathematica"
+                },
+                {
+                  "id": "esp_en_05",
+                  "axe": "Space Age & Satellites",
+                  "date": 1957,
+                  "titre": "Launch of Sputnik 1",
+                  "description": "The Soviet Union places the first artificial satellite into Earth orbit, inaugurating the Space Age.",
+                  "wikipedia": "https://en.wikipedia.org/wiki/Sputnik_1"
+                },
+                {
+                  "id": "esp_en_06",
+                  "axe": "Human Spaceflight",
+                  "date": 1961,
+                  "titre": "Yuri Gagarin orbits the Earth",
+                  "description": "Soviet cosmonaut Yuri Gagarin becomes the first human in space aboard Vostok 1.",
+                  "wikipedia": "https://en.wikipedia.org/wiki/Yuri_Gagarin"
+                },
+                {
+                  "id": "esp_en_07",
+                  "axe": "Lunar Exploration",
+                  "date": 1969,
+                  "titre": "Apollo 11 Moon Landing",
+                  "description": "Neil Armstrong and Buzz Aldrin land the Lunar Module Eagle on the Moon, Armstrong taking humanity's first step.",
+                  "wikipedia": "https://en.wikipedia.org/wiki/Apollo_11"
+                },
+                {
+                  "id": "esp_en_08",
+                  "axe": "Space Telescopes & Stations",
+                  "date": 1990,
+                  "titre": "Hubble Space Telescope Deployment",
+                  "description": "NASA and ESA deploy the Hubble Space Telescope into orbit, revolutionizing observational astronomy.",
+                  "wikipedia": "https://en.wikipedia.org/wiki/Hubble_Space_Telescope"
+                },
+                {
+                  "id": "esp_en_09",
+                  "axe": "Space Telescopes & Stations",
+                  "date": 1998,
+                  "titre": "Construction of the ISS begins",
+                  "description": "The Zarya module is launched, marking the start of continuous human presence in low Earth orbit.",
+                  "wikipedia": "https://en.wikipedia.org/wiki/International_Space_Station"
+                },
+                {
+                  "id": "esp_en_10",
+                  "axe": "Deep Space Exploration",
+                  "date": 2021,
+                  "titre": "James Webb Space Telescope Launch",
+                  "description": "The most powerful infrared space telescope ever built is launched to Lagrange point L2.",
+                  "wikipedia": "https://en.wikipedia.org/wiki/James_Webb_Space_Telescope"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "nom": "World History",
+      "subcategories": [
+        {
+          "nom": "Major Turning Points",
+          "themes": [
+            {
+              "id": "thm_turning_points_en",
+              "nom": "Milestones in World History",
+              "difficulte": "All levels",
+              "events": [
+                {
+                  "id": "wh_en_01",
+                  "axe": "Ancient History",
+                  "date": -3100,
+                  "titre": "Unification of Upper and Lower Egypt",
+                  "description": "Pharaoh Narmer (Menes) unifies Egypt, establishing the First Dynasty and ancient Egyptian civilization.",
+                  "wikipedia": "https://en.wikipedia.org/wiki/Early_Dynastic_Period_(Egypt)"
+                },
+                {
+                  "id": "wh_en_02",
+                  "axe": "Ancient History",
+                  "date": -753,
+                  "titre": "Founding of Rome",
+                  "description": "According to Roman myth, Romulus founds the city of Rome on the Palatine Hill.",
+                  "wikipedia": "https://en.wikipedia.org/wiki/Founding_of_Rome"
+                },
+                {
+                  "id": "wh_en_03",
+                  "axe": "Ancient History",
+                  "date": -44,
+                  "titre": "Assassination of Julius Caesar",
+                  "description": "Julius Caesar is assassinated on the Ides of March in the Roman Senate, precipitating the Roman Empire.",
+                  "wikipedia": "https://en.wikipedia.org/wiki/Assassination_of_Julius_Caesar"
+                },
+                {
+                  "id": "wh_en_04",
+                  "axe": "Middle Ages",
+                  "date": 476,
+                  "titre": "Fall of the Western Roman Empire",
+                  "description": "Romulus Augustulus is deposed by Odoacer, traditionally marking the end of Classical Antiquity.",
+                  "wikipedia": "https://en.wikipedia.org/wiki/Fall_of_the_Western_Roman_Empire"
+                },
+                {
+                  "id": "wh_en_05",
+                  "axe": "Middle Ages",
+                  "date": 800,
+                  "titre": "Coronation of Charlemagne",
+                  "description": "Pope Leo III crowns Charlemagne Emperor of the Romans in Rome.",
+                  "wikipedia": "https://en.wikipedia.org/wiki/Charlemagne"
+                },
+                {
+                  "id": "wh_en_06",
+                  "axe": "Renaissance & Modern Era",
+                  "date": 1453,
+                  "titre": "Fall of Constantinople",
+                  "description": "Ottoman forces under Sultan Mehmed II capture Constantinople, ending the Byzantine Empire.",
+                  "wikipedia": "https://en.wikipedia.org/wiki/Fall_of_Constantinople"
+                },
+                {
+                  "id": "wh_en_07",
+                  "axe": "Renaissance & Modern Era",
+                  "date": 1492,
+                  "titre": "Columbus reaches the Americas",
+                  "description": "Christopher Columbus's expedition lands in the Bahamas, inaugurating permanent transatlantic contact.",
+                  "wikipedia": "https://en.wikipedia.org/wiki/Voyages_of_Christopher_Columbus"
+                },
+                {
+                  "id": "wh_en_08",
+                  "axe": "Modern Era",
+                  "date": 1789,
+                  "titre": "Storming of the Bastille",
+                  "description": "Parisian revolutionaries storm the royal medieval fortress and prison, signaling the French Revolution.",
+                  "wikipedia": "https://en.wikipedia.org/wiki/Storming_of_the_Bastille"
+                },
+                {
+                  "id": "wh_en_09",
+                  "axe": "Contemporary Era",
+                  "date": 1914,
+                  "titre": "Outbreak of World War I",
+                  "description": "Archduke Franz Ferdinand of Austria is assassinated in Sarajevo, sparking the Great War.",
+                  "wikipedia": "https://en.wikipedia.org/wiki/World_War_I"
+                },
+                {
+                  "id": "wh_en_10",
+                  "axe": "Contemporary Era",
+                  "date": 1969,
+                  "titre": "Invention of the Internet (ARPANET)",
+                  "description": "The first message is transmitted over the ARPANET between UCLA and Stanford University.",
+                  "wikipedia": "https://en.wikipedia.org/wiki/ARPANET"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

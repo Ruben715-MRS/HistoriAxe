@@ -1,0 +1,233 @@
+{
+  "version": "1.0.0",
+  "lang": "en",
+  "app": {
+    "title": "HistoriAxe",
+    "subtitle": "The Chronological Quiz",
+    "tagline": "Explore and master the timeline of World History"
+  },
+  "nav": {
+    "back": "Back",
+    "menu": "Menu",
+    "cancel": "Cancel",
+    "continue": "Continue",
+    "close": "Close",
+    "validate": "Validate",
+    "delete": "Delete",
+    "reset": "Reset"
+  },
+  "categories": {
+    "search_placeholder": "Search a theme…",
+    "search_empty": "No theme matches your search.",
+    "special_favorites": "Favorites",
+    "special_discover": "Discover",
+    "special_daily": "Daily Challenge",
+    "special_revision": "Review",
+    "themes_count": "{count} theme(s)",
+    "events_count": "{count} event(s)",
+    "choose_category": "Choose a Category"
+  },
+  "subcategories": {
+    "choose_region": "Choose a Region / Subcategory"
+  },
+  "themes": {
+    "choose_theme": "Choose a Theme",
+    "empty_themes": "No theme available yet.",
+    "custom_badge": "Custom"
+  },
+  "axes": {
+    "title": "Thematic Threads",
+    "subtitle_selected": "{theme} — {count} event(s) selected",
+    "subtitle_select_one": "{theme} — select at least one thread",
+    "continue_btn": "Continue with these threads"
+  },
+  "modes": {
+    "choose_mode": "Choose a Game Mode",
+    "discovery": {
+      "title": "Discovery",
+      "desc": "Browse the full timeline without time pressure or lives."
+    },
+    "selection": {
+      "title": "Selection",
+      "desc": "Filter specific events to play with."
+    },
+    "add_event": {
+      "title": "Add Event",
+      "desc": "Create your own historical milestones for this theme."
+    },
+    "training": {
+      "title": "Practice",
+      "desc": "No lives lost. Learn and play at your own pace."
+    },
+    "classic": {
+      "title": "Classic",
+      "desc": "3 lives. The standard chronological challenge."
+    },
+    "chrono": {
+      "title": "Chrono",
+      "desc": "3 lives. Place milestones quickly to earn speed bonuses."
+    },
+    "expert": {
+      "title": "Expert",
+      "desc": "1 single life, strict timer. For true historians."
+    },
+    "quiz": {
+      "title": "Quiz",
+      "desc": "Fast-paced Multiple Choice Questions (MCQ)."
+    },
+    "avantapres": {
+      "title": "Before / After",
+      "desc": "3 lives. Between two undated events, guess which happened first."
+    },
+    "periodes": {
+      "title": "Eras & Centuries",
+      "desc": "3 lives. Place each event in its exact century or epoch."
+    },
+    "fil": {
+      "title": "Thread of Time",
+      "desc": "Type the exact year on the keypad in chronological order."
+    },
+    "ecart": {
+      "title": "Find the Gap",
+      "desc": "3 lives. Estimate the number of years between two events."
+    },
+    "multi": {
+      "title": "Multiplayer",
+      "desc": "Pass and play on the same screen, elimination after 2 misses."
+    },
+    "score_history": "🏆 Score History"
+  },
+  "game": {
+    "score": "Score: {val}",
+    "combo": "×{val}",
+    "lives": "Lives",
+    "era_bc": "BC",
+    "era_ad": "AD",
+    "hint_btn": "Hint",
+    "fifty_fifty_btn": "50:50 ({count})",
+    "validate_btn": "Validate",
+    "date_revealed": "Date revealed",
+    "slot_higher": "No — {date} is placed higher (earlier)",
+    "slot_lower": "No — {date} is placed lower (later)",
+    "place_here": "Place here",
+    "quiz_event_to_year": "In which year did this event take place?",
+    "quiz_year_to_event": "Which event corresponds to this year?",
+    "avap_which_first": "Which event occurred first?",
+    "fil_enter_year": "Enter the exact year:",
+    "ecart_estimate_gap": "How many years separate these two milestones?"
+  },
+  "end": {
+    "game_over": "Game Over!",
+    "victory_default": "Congratulations! Timeline completed!",
+    "victory_quiz": "Congratulations! Quiz completed!",
+    "victory_avap": "Congratulations! Before / After mastered!",
+    "victory_fil": "Congratulations! Thread of Time conquered!",
+    "victory_periodes": "Congratulations! Eras & Centuries mastered!",
+    "victory_ecart": "Congratulations! All gaps solved!",
+    "victory_daily": "Congratulations! Daily Challenge solved!",
+    "final_score": "Score: {val} points",
+    "final_time": "Time: {val} s",
+    "streak_banner": "🔥 Active Streak: {count} day(s)",
+    "replay_btn": "Play Again",
+    "menu_btn": "Menu",
+    "share_title": "Your Run",
+    "share_daily_title": "Your Daily Run",
+    "share_btn": "Share Score",
+    "share_daily_btn": "Share Result",
+    "share_toast_copied": "✨ Result copied to clipboard!",
+    "share_toast_error": "📋 Could not copy automatically",
+    "share_cta": "Join the challenge on HistoriAxe!"
+  },
+  "daily": {
+    "title_win": "🌍 Daily Challenge Mastered!",
+    "title_over": "🌍 Daily Challenge Finished",
+    "score_stat": "Score",
+    "time_stat": "Time",
+    "streak_stat": "Streak",
+    "countdown_label": "Next challenge in",
+    "pseudo_label": "Your nickname (global leaderboard)",
+    "pseudo_placeholder": "e.g. ChronoMaster",
+    "submit_btn": "Submit my score",
+    "submit_loading": "Sending…",
+    "submit_success": "Score submitted! Local rank: #{rank} out of {total}.",
+    "submit_error": "Unable to submit score right now. Try again.",
+    "leaderboard_title": "🏆 Today's Leaderboard",
+    "leaderboard_empty": "No score submitted yet today. Be the first!"
+  },
+  "revision": {
+    "hub_title": "Review Weak Milestones",
+    "tab_weak": "Weak Points",
+    "tab_progress": "Mastery",
+    "weak_empty": "No weak points detected yet. Events missed during games will appear here for targeted practice.",
+    "random_session_title": "🎲 Mixed Session",
+    "random_session_desc": "A mix of your current weak milestones across all themes.",
+    "theme_session_title": "📚 Replay Full Theme",
+    "theme_session_desc": "Practice on a complete theme containing difficult milestones.",
+    "reset_srs": "⟲ Reset",
+    "reset_srs_confirm": "Reset all Spaced Repetition (SRS) review data? This action cannot be undone.",
+    "progress_legend_high": "Mastered (≥ 75%)",
+    "progress_legend_mid": "In Progress (40-74%)",
+    "progress_legend_low": "Fragile (< 40%)",
+    "progress_legend_none": "Not yet tested",
+    "progress_empty": "No data yet. Play a few games to see your mastery tree."
+  },
+  "gamification": {
+    "rank_badge": "Lvl. {level}",
+    "max_rank": "Supreme Rank Reached!",
+    "xp_needed": "{needed} XP left until {next}",
+    "stats_total_xp": "Total XP",
+    "stats_streak": "Best Streak",
+    "stats_centurion": "Max Flawless",
+    "stats_badges": "Trophies",
+    "trophies_title": "🏆 Trophies & Achievements",
+    "status_unlocked": "Unlocked ✓",
+    "new_rank_toast": "👑 NEW RANK: {title} (Lvl. {level})!",
+    "new_badge_toast": "🏆 NEW TROPHY: « {name} » unlocked (+250 XP)!"
+  },
+  "settings": {
+    "title": "Settings",
+    "orientation_label": "Timeline Orientation",
+    "orientation_auto": "Auto",
+    "orientation_vertical": "Vertical",
+    "orientation_horizontal": "Horizontal",
+    "orientation_hint": "« Auto » follows device physical rotation.",
+    "appearance_label": "Appearance",
+    "appearance_auto": "Auto",
+    "appearance_light": "Light",
+    "appearance_dark": "Dark",
+    "appearance_hint": "« Auto » follows your device system theme.",
+    "sound_label": "Immersive Audio",
+    "sound_on": "On",
+    "sound_off": "Off",
+    "sound_hint": "Harmonic chimes, card slides, and tactile sound effects.",
+    "haptics_label": "Haptic Feedback",
+    "haptics_on": "On",
+    "haptics_off": "Off",
+    "haptics_hint": "Tactile vibrations on answers, touches and errors.",
+    "language_label": "Language & Content Packs",
+    "installed_badge": "Installed",
+    "active_badge": "Active",
+    "download_btn": "Download",
+    "downloading_btn": "Downloading…",
+    "delete_btn": "Delete",
+    "offline_ready_hint": "Downloaded packs are 100% usable offline.",
+    "data_section": "Game Data",
+    "scoring_info_btn": "📖 How Points are Calculated",
+    "reset_game_btn": "⚠️ Reset All Game Data",
+    "reset_confirm_msg": "This action permanently deletes all favorites, custom themes, SRS boxes, scores, and progress. Continue?"
+  },
+  "anecdote": {
+    "did_you_know": "💡 Did You Know?",
+    "read_more_wiki": "Read more on Wikipedia ↗"
+  },
+  "custom": {
+    "create_theme_title": "Create a Custom Theme",
+    "theme_name_label": "Theme Name *",
+    "theme_diff_label": "Difficulty / Level (optional)",
+    "create_event_title": "Add an Event",
+    "event_year_label": "Year *",
+    "event_title_label": "Event Title *",
+    "event_desc_label": "Description (optional)",
+    "save_btn": "Create"
+  }
+}
