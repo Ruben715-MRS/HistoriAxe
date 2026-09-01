@@ -149,10 +149,13 @@
     "pseudo_placeholder": "Es: ChronoMaster",
     "submit_btn": "Invia il mio punteggio",
     "submit_loading": "Invio in corso…",
-    "submit_success": "Punteggio inviato! Posizione locale: #{rank} su {total}.",
+    "submit_success": "Punteggio inviato! #{rank}° su {total} nel mondo.",
     "submit_error": "Impossibile inviare il punteggio in questo momento. Riprova.",
+    "submit_offline": "Classifica mondiale non disponibile offline.",
     "leaderboard_title": "🏆 Classifica di Oggi",
-    "leaderboard_empty": "Nessun punteggio registrato oggi. Sii il primo!"
+    "leaderboard_empty": "Nessun punteggio registrato oggi. Sii il primo!",
+    "leaderboard_loading": "Caricamento classifica…",
+    "leaderboard_error": "Classifica temporaneamente non disponibile."
   },
   "revision": {
     "hub_title": "Ripassa Punti Deboli",

@@ -149,10 +149,13 @@
     "pseudo_placeholder": "Ex : ChronoMaster",
     "submit_btn": "Envoyer mon score",
     "submit_loading": "Envoi en cours…",
-    "submit_success": "Score envoyé ! Classement local : #{rank} sur {total}.",
+    "submit_success": "Score envoyé ! #{rank} sur {total} dans le monde.",
     "submit_error": "Impossible d'envoyer le score pour le moment. Réessayez.",
+    "submit_offline": "Classement mondial indisponible hors connexion.",
     "leaderboard_title": "🏆 Classement du jour",
-    "leaderboard_empty": "Aucun score envoyé pour l'instant. Soyez le premier !"
+    "leaderboard_empty": "Aucun score envoyé pour l'instant. Soyez le premier !",
+    "leaderboard_loading": "Chargement du classement…",
+    "leaderboard_error": "Classement momentanément indisponible."
   },
   "revision": {
     "hub_title": "Réviser mes points faibles",

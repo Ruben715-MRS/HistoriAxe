@@ -13,6 +13,13 @@ const STREAK_KEY = 'historiaxe_streak_v1';
 const GAMIFICATION_KEY = 'historiaxe_gamification_v1';
 const LANG_KEY = 'historiaxe_language_v1';
 const INSTALLED_LANGS_KEY = 'historiaxe_installed_languages_v1';
+const DEVICE_ID_KEY = 'historiaxe_device_id_v1';
+const PSEUDO_KEY = 'historiaxe_pseudo_v1';
+
+// Clés dont le contenu est envoyé/reçu par la synchronisation cloud
+// (api/sync.js) — progression de jeu uniquement, jamais les préférences
+// d'affichage (SETTINGS_KEY), qui restent propres à chaque appareil.
+const SYNC_KEYS = [SRS_KEY, PROGRESS_KEY, FAVORITES_KEY, CUSTOM_THEMES_KEY, CUSTOM_EVENTS_KEY, STREAK_KEY, GAMIFICATION_KEY];
 
 const DEFAULT_SETTINGS = {
     orientation: 'auto',
@@ -226,6 +233,64 @@ function getStreakCount() {
         return data.currentStreak;
     }
     return 0;
+}
+
+// --- IDENTITÉ JOUEUR (classement mondial & sync cloud) ---
+// Identifiant d'appareil généré une seule fois, au tout premier lancement :
+// c'est l'identité utilisée par le backend (voir api/_lib/players.js) pour
+// retrouver/mettre à jour un joueur, sans compte ni mot de passe.
+function getOrCreateDeviceId() {
+    try {
+        var existing = localStorage.getItem(DEVICE_ID_KEY);
+        if (existing) return existing;
+        var id = (typeof crypto !== 'undefined' && crypto.randomUUID)
+            ? crypto.randomUUID()
+            : 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+                var r = Math.random() * 16 | 0;
+                var v = c === 'x' ? r : (r & 0x3 | 0x8);
+                return v.toString(16);
+            });
+        localStorage.setItem(DEVICE_ID_KEY, id);
+        return id;
+    } catch (e) {
+        // localStorage indisponible (navigation privée stricte...) : on
+        // retombe sur un identifiant de session, non persistant.
+        return 'anon-' + Date.now() + '-' + Math.floor(Math.random() * 1e6);
+    }
+}
+
+function pseudoLoad() {
+    try { return localStorage.getItem(PSEUDO_KEY) || ''; } catch (e) { return ''; }
+}
+
+function pseudoSave(pseudo) {
+    try { localStorage.setItem(PSEUDO_KEY, (pseudo || '').trim().slice(0, 20)); } catch (e) {}
+}
+
+// --- SYNCHRONISATION CLOUD DE LA PROGRESSION ---
+// Sérialise/restaure le sous-ensemble "progression de jeu" du localStorage
+// (voir SYNC_KEYS) pour l'envoyer à / recevoir de api/sync.js. Best-effort :
+// la progression locale reste toujours la source de vérité immédiate, le
+// cloud n'est qu'une sauvegarde de secours (changement d'appareil,
+// réinstallation) — voir syncPushProgress/syncPullProgress dans daily.js.
+function exportSyncableState() {
+    var out = {};
+    SYNC_KEYS.forEach(function (key) {
+        try {
+            var raw = localStorage.getItem(key);
+            if (raw != null) out[key] = JSON.parse(raw);
+        } catch (e) {}
+    });
+    return out;
+}
+
+function importSyncableState(data) {
+    if (!data || typeof data !== 'object') return;
+    SYNC_KEYS.forEach(function (key) {
+        if (Object.prototype.hasOwnProperty.call(data, key)) {
+            try { localStorage.setItem(key, JSON.stringify(data[key])); } catch (e) {}
+        }
+    });
 }
 
 // --- RÉINITIALISATION GLOBALE ---

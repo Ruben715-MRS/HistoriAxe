@@ -149,10 +149,13 @@
     "pseudo_placeholder": "Z. B.: ChronoMaster",
     "submit_btn": "Punktzahl senden",
     "submit_loading": "Wird gesendet…",
-    "submit_success": "Punktzahl übermittelt! Lokaler Rang: #{rank} von {total}.",
+    "submit_success": "Punktzahl übermittelt! Platz #{rank} von {total} weltweit.",
     "submit_error": "Punktzahl konnte nicht gesendet werden. Bitte erneut versuchen.",
+    "submit_offline": "Weltrangliste ist offline nicht verfügbar.",
     "leaderboard_title": "🏆 Heutige Rangliste",
-    "leaderboard_empty": "Heute noch keine Punkte eingereicht. Seien Sie der Erste!"
+    "leaderboard_empty": "Heute noch keine Punkte eingereicht. Seien Sie der Erste!",
+    "leaderboard_loading": "Rangliste wird geladen…",
+    "leaderboard_error": "Rangliste vorübergehend nicht verfügbar."
   },
   "revision": {
     "hub_title": "Schwachstellen wiederholen",

@@ -149,10 +149,13 @@
     "pseudo_placeholder": "Ej: ChronoMaster",
     "submit_btn": "Enviar mi puntuación",
     "submit_loading": "Enviando…",
-    "submit_success": "¡Puntuación enviada! Puesto local: #{rank} de {total}.",
+    "submit_success": "¡Puntuación enviada! #{rank} de {total} en el mundo.",
     "submit_error": "No se pudo enviar la puntuación en este momento. Inténtalo de nuevo.",
+    "submit_offline": "Clasificación mundial no disponible sin conexión.",
     "leaderboard_title": "🏆 Clasificación de Hoy",
-    "leaderboard_empty": "Aún no hay puntuaciones registradas hoy. ¡Sé el primero!"
+    "leaderboard_empty": "Aún no hay puntuaciones registradas hoy. ¡Sé el primero!",
+    "leaderboard_loading": "Cargando clasificación…",
+    "leaderboard_error": "Clasificación no disponible por el momento."
   },
   "revision": {
     "hub_title": "Repasar Puntos Débiles",

@@ -244,6 +244,23 @@
         .daily-submit-feedback.success { color: var(--progress-green); }
         .daily-submit-feedback.error { color: var(--danger-red); }
         .daily-leaderboard-title { font-size: 14px; font-weight: 700; color: var(--text-dark); margin: 18px 0 8px; }
+        .daily-leaderboard-empty { text-align: center; padding: 16px 10px; color: var(--muted-text); font-size: 13px; }
+        #daily-leaderboard-preview .leaderboard-row {
+            display: grid;
+            grid-template-columns: 28px 1fr auto auto;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 4px;
+            border-bottom: 1px solid var(--rule);
+            font-size: 13px;
+            text-align: left;
+        }
+        #daily-leaderboard-preview .leaderboard-row:last-child { border-bottom: none; }
+        #daily-leaderboard-preview .leaderboard-row-me { background: rgba(107,142,173,0.10); border-radius: 8px; }
+        #daily-leaderboard-preview .leaderboard-rank { font-weight: 700; text-align: center; }
+        #daily-leaderboard-preview .leaderboard-pseudo { color: var(--text-dark); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        #daily-leaderboard-preview .leaderboard-pseudo em { color: var(--muted-text); font-style: italic; font-weight: 400; }
+        #daily-leaderboard-preview .leaderboard-time { color: var(--muted-text); font-size: 12px; }
 
 
         /* =====================================================================
