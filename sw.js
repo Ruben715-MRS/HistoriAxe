@@ -2,7 +2,7 @@
 // === HISTORIAXE — SERVICE WORKER OFF-LINE & PACKS DE DONNÉES (SW.JS) ===
 // =========================================================================
 
-const CACHE_VERSION = '1.1.0';
+const CACHE_VERSION = '1.2.0';
 const APP_SHELL_CACHE = `historiaxe-shell-v${CACHE_VERSION}`;
 const DATA_CACHE = 'historiaxe-data-v1.0.3';
 
@@ -29,11 +29,15 @@ const APP_SHELL_FILES = [
     './js/gamification.js',
     './js/daily.js',
     './js/i18n.js',
+    './js/geoMap.js',
     './js/app.js',
     './ui/fr.json',
     './data/fr.json',
     './apple_icon.jpg',
-    './accueil.jpg'
+    './accueil.jpg',
+    './assets/geo/world-basemap.svg',
+    './assets/geo/country-pins.json',
+    './assets/geo/theme-country-map.json'
 ];
 
 // --- INSTALLATION : Mise en cache de l'App Shell & Pack Français ---

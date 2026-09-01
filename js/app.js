@@ -481,7 +481,7 @@ function ensureCustomCategoryInBdd() {
             if (scores.length === 0) {
                 container.innerHTML = '<div class="leaderboard-empty">Aucun score enregistré sur ce thème pour le moment.</div>';
             } else {
-                const modesFr = { 'classic': 'Classique', 'chrono': 'Chrono', 'expert': 'Expert', 'quiz': 'Quiz', 'avantapres': 'Avant / Après', 'fil': 'Le fil du temps', 'periodes': 'Périodes & Ères', 'ecart': "Trouve l'écart" };
+                const modesFr = { 'classic': 'Classique', 'chrono': 'Chrono', 'expert': 'Expert', 'quiz': 'Quiz', 'avantapres': 'Avant / Après', 'fil': 'Le fil du temps', 'periodes': 'Périodes & Ères', 'ecart': "Trouve l'écart", 'carte': 'Carte' };
                 let html = '<table class="leaderboard-table"><thead><tr><th>Mode</th><th>Score</th><th>Date</th></tr></thead><tbody>';
                 scores.forEach(s => {
                     html += `<tr><td>${modesFr[s.mode] || s.mode}</td><td class="leaderboard-score">${s.score}</td><td>${s.date}</td></tr>`;
@@ -1124,7 +1124,14 @@ function ensureCustomCategoryInBdd() {
         // révision ou le Défi du jour
         function screenAfterGame() {
             let target;
-            if (revisionMode) {
+            if (currentMode === 'carte') {
+                // Le Mode Carte se lance depuis n'importe quel niveau de la
+                // hiérarchie régionale (Histoires nationales, une région, ou une
+                // sous-région) et non depuis un thème unique : on revient donc à
+                // l'écran de navigation exact d'où il a été lancé (voir
+                // js/geoMap.js: startGeoModeFromNode) plutôt qu'à screen-themes.
+                target = geoReturnScreen || 'screen-themes';
+            } else if (revisionMode) {
                 target = 'screen-revision-hub';
             } else if (dailyChallengeMode) {
                 target = 'screen-categories';
@@ -1510,6 +1517,14 @@ function ensureCustomCategoryInBdd() {
             }
             container.appendChild(gridSection);
 
+            // Mode Carte (voir js/geoMap.js) : accessible dès que cette zone contient
+            // assez d'événements géolocalisables, quel que soit le niveau de la
+            // hiérarchie régionale où l'on se trouve (monde entier, un continent, ou
+            // une sous-région) — c'est ce nœud qui devient le périmètre de la partie.
+            if (typeof isGeoEligible === 'function' && isGeoEligible(node)) {
+                gridSection.appendChild(buildGeoModeCard(node, node.nom));
+            }
+
             node.subcategories.forEach((sub, index) => {
                 const nbThemes = countThemesRecursive(sub);
                 let textThemes = nbThemes === 0 ? "Bientôt disponible" : (nbThemes === 1 ? "1 thème" : `${nbThemes} thèmes`);
@@ -1779,6 +1794,13 @@ function ensureCustomCategoryInBdd() {
                 }
             }
             
+            // Mode Carte (voir js/geoMap.js), même logique qu'à l'écran des
+            // sous-catégories : disponible dès que ce nœud — ici le dernier niveau
+            // avant la liste de thèmes — contient assez d'événements géolocalisables.
+            if (!category.isCustomCategory && typeof isGeoEligible === 'function' && isGeoEligible(node)) {
+                container.appendChild(buildGeoModeCard(node, node.nom));
+            }
+
             themeList.forEach((theme, index) => {
                 const card = createThemeCard(theme, () => {
                     openThemeAt(selectedCategoryIndex, selectedSubcategoryIndex, index);
@@ -3705,9 +3727,16 @@ function ensureCustomCategoryInBdd() {
                 progressRecordWin(theme.id, currentMode);
             }
 
-            if (!revisionMode && !dailyChallengeMode && currentMode !== 'discovery' && currentMode !== 'training') {
+            if (!revisionMode && !dailyChallengeMode && currentMode !== 'discovery' && currentMode !== 'training' && currentMode !== 'carte') {
                 const theme = getCurrentTheme();
                 saveScoreToLeaderboard(theme.id, currentMode, score);
+            }
+            // Le Mode Carte pioche dans plusieurs thèmes à la fois (toute une
+            // région) : il n'y a pas de theme.id unique à qui rattacher le score,
+            // on utilise donc un identifiant synthétique dérivé de la zone jouée.
+            if (currentMode === 'carte') {
+                const scopeSlug = normalizeSearchText(geoScopeLabel || 'monde').replace(/[^a-z0-9]+/g, '-');
+                saveScoreToLeaderboard('geo:' + scopeSlug, 'carte', score);
             }
 
             // Enregistrement de la série quotidienne
@@ -3759,6 +3788,7 @@ function ensureCustomCategoryInBdd() {
                 if (currentMode === 'fil') winTitle = "Bravo ! Fil du temps parcouru !";
                 if (currentMode === 'periodes') winTitle = "Bravo ! Périodes & Ères maîtrisées !";
                 if (currentMode === 'ecart') winTitle = "Bravo ! Tous les écarts trouvés !";
+                if (currentMode === 'carte') winTitle = "Bravo ! Carte du monde explorée !";
                 if (currentMode === 'daily') winTitle = "Bravo ! Défi du jour relevé !";
                 titleElement.innerText = winTitle;
                 titleElement.style.color = "#27ae60";

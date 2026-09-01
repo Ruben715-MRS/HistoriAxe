@@ -371,6 +371,49 @@
         </div>
     </div>
 
+    <!-- ÉCRAN : MODE CARTE (localisation géographique puis temporelle — voir js/geoMap.js) -->
+    <div id="screen-carte" class="hidden">
+        <div class="game-bar">
+            <div class="bar-row">
+                <button class="quit-btn" onclick="quitGame()">‹ Quitter</button>
+                <span class="bar-fill"></span>
+                <span class="lives-row" id="geo-hud-lives"></span>
+                <span class="type-size">
+                    <button type="button" onclick="changeZoom(-0.15)" aria-label="Réduire le texte">A−</button>
+                    <button type="button" onclick="changeZoom(0.15)" aria-label="Agrandir le texte">A+</button>
+                </span>
+            </div>
+            <div class="bar-row">
+                <span class="progress-rail"><span class="progress-fill" id="geo-progress-fill"></span></span>
+                <span class="bar-meta" id="geo-hud-count">1 / 12</span>
+                <span class="bar-meta"><span id="geo-hud-score">0</span> pts<span id="geo-hud-combo" class="combo-chip hidden"></span></span>
+            </div>
+        </div>
+
+        <div class="geo-body">
+            <div class="geo-scope-chip" id="geo-scope-label">Monde</div>
+            <div class="quiz-question-card">
+                <div class="geo-phase-kicker" id="geo-phase-kicker">Où cet événement s'est-il déroulé ?</div>
+                <div class="geo-event-title" id="geo-event-title">Chargement…</div>
+                <div class="geo-event-desc" id="geo-event-desc"></div>
+            </div>
+
+            <div class="geo-reveal-label hidden" id="geo-reveal-label"></div>
+
+            <div class="geo-map-phase" id="geo-map-phase">
+                <div class="geo-map-frame">
+                    <div class="geo-map-svg-holder" id="geo-map-svg-holder"></div>
+                    <div class="geo-pins-layer" id="geo-pins-layer"></div>
+                </div>
+            </div>
+
+            <div class="geo-time-phase hidden" id="geo-time-phase">
+                <div class="quiz-kicker" id="geo-time-kicker">En quelle année cet événement a-t-il eu lieu ?</div>
+                <div class="quiz-options" id="geo-time-options"></div>
+            </div>
+        </div>
+    </div>
+
     <!-- ÉCRAN 5bis : MODE LE FIL DU TEMPS (saisie de l'année exacte, dans l'ordre chronologique) -->
     <div id="screen-fil" class="hidden">
         <div class="game-bar">
@@ -918,6 +961,7 @@
     <script src="js/apiClient.js"></script>
     <script src="js/daily.js"></script>
     <script src="js/i18n.js"></script>
+    <script src="js/geoMap.js"></script>
     <script src="js/app.js"></script>
 
     <!-- ENREGISTREMENT DU SERVICE WORKER PWA -->
