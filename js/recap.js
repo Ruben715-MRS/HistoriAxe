@@ -90,7 +90,7 @@ function renderRecapModal() {
     const isMonth = currentRecapPeriod === 'month';
 
     const titleEl = document.getElementById('recap-title');
-    if (titleEl) titleEl.innerText = isMonth ? '📊 Ton récap du mois' : '📊 Ton récap de la semaine';
+    if (titleEl) titleEl.innerText = isMonth ? t('recap.title_month') : t('recap.title_week');
 
     const xpEl = document.getElementById('recap-stat-xp');
     const themesEl = document.getElementById('recap-stat-themes');
@@ -104,17 +104,15 @@ function renderRecapModal() {
     if (streakEl) streakEl.innerText = `${recap.streak} 🔥`;
 
     if (deltaEl) {
-        const prevLabel = isMonth ? 'le mois dernier' : 'la semaine dernière';
+        const prevLabel = isMonth ? t('recap.prev_month') : t('recap.prev_week');
         if (recap.daysPlayed === 0) {
-            deltaEl.innerText = isMonth
-                ? 'Aucune activité ce mois-ci pour l’instant — le Défi du jour t’attend !'
-                : 'Aucune activité cette semaine pour l’instant — le Défi du jour t’attend !';
+            deltaEl.innerText = isMonth ? t('recap.no_activity_month') : t('recap.no_activity_week');
         } else if (recap.xpDeltaPct === null) {
-            deltaEl.innerText = `Premi${isMonth ? 'er mois' : 'ère semaine'} suivi${isMonth ? '' : 'e'} — reviens la prochaine fois pour voir ta progression !`;
+            deltaEl.innerText = isMonth ? t('recap.first_period_month') : t('recap.first_period_week');
         } else if (recap.xpDeltaPct >= 0) {
-            deltaEl.innerText = `📈 +${recap.xpDeltaPct}% d'XP par rapport à ${prevLabel} !`;
+            deltaEl.innerText = t('recap.delta_up', { pct: recap.xpDeltaPct, prev: prevLabel });
         } else {
-            deltaEl.innerText = `📉 ${recap.xpDeltaPct}% d'XP par rapport à ${prevLabel}.`;
+            deltaEl.innerText = t('recap.delta_down', { pct: recap.xpDeltaPct, prev: prevLabel });
         }
     }
 }
@@ -133,14 +131,14 @@ function initRecapControls() {
 // copie presse-papiers.
 function shareRecapResults() {
     const recap = computeRecap(currentRecapPeriod);
-    const periodLabel = currentRecapPeriod === 'month' ? 'Ce mois-ci' : 'Cette semaine';
-    const text = `📊 HistoriAxe — ${periodLabel} : ${recap.xp} XP, ${recap.themesWon} partie(s) gagnée(s), ${recap.daysPlayed} jour(s) actif(s) !`;
+    const periodLabel = currentRecapPeriod === 'month' ? t('recap.period_month') : t('recap.period_week');
+    const text = t('recap.share_text', { period: periodLabel, xp: recap.xp, games: recap.themesWon, days: recap.daysPlayed });
 
     if (navigator.share) {
         navigator.share({ text: text }).catch(() => {});
     } else if (navigator.clipboard) {
         navigator.clipboard.writeText(text).then(() => {
-            if (typeof showToast === 'function') showToast('Récap copié dans le presse-papiers !', 2500);
+            if (typeof showToast === 'function') showToast(t('recap.share_copied'), 2500);
         }).catch(() => {});
     }
 }

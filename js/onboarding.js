@@ -103,8 +103,8 @@ var Onboarding = (function () {
                 '<div class="onboarding-bubble-title">' + escapeHtmlOb(opts.title || '') + '</div>' +
                 '<div class="onboarding-bubble-text">' + escapeHtmlOb(opts.text || '') + '</div>' +
                 '<div class="onboarding-bubble-actions">' +
-                    '<button type="button" class="onboarding-skip">' + escapeHtmlOb(opts.skipLabel || 'Passer le tutoriel') + '</button>' +
-                    '<button type="button" class="onboarding-next">' + escapeHtmlOb(opts.nextLabel || 'Suivant') + '</button>' +
+                    '<button type="button" class="onboarding-skip">' + escapeHtmlOb(opts.skipLabel || (typeof t === 'function' ? t('onboarding.skip_label') : 'Passer le tutoriel')) + '</button>' +
+                    '<button type="button" class="onboarding-next">' + escapeHtmlOb(opts.nextLabel || (typeof t === 'function' ? t('onboarding.next_label') : 'Suivant')) + '</button>' +
                 '</div>' +
             '</div>';
 
@@ -120,12 +120,21 @@ var Onboarding = (function () {
 
     // --- Points d'entrée, appelés depuis js/app.js ---
 
+    // Repli sur le texte français figé si i18n.js n'est pas encore chargé (ne
+    // devrait pas arriver, l'ordre des <script> le charge avant celui-ci, mais
+    // ce module est appelé depuis plusieurs points d'entrée de js/app.js).
+    function ob(key, fallback) {
+        if (typeof t !== 'function') return fallback;
+        var val = t(key);
+        return (val && val !== key) ? val : fallback;
+    }
+
     function onHomeScreen() {
         if (isDone() || hasShown('welcome')) return;
         showCoachMark('welcome', {
-            title: '👋 Bienvenue dans HistoriAxe !',
-            text: "Découvre comment progresser en 3 minutes : une ou deux bulles d'aide vont s'afficher pendant que tu explores. Touche l'écran pour commencer.",
-            nextLabel: "C'est parti"
+            title: ob('onboarding.welcome_title', '👋 Bienvenue dans HistoriAxe !'),
+            text: ob('onboarding.welcome_text', "Découvre comment progresser en 3 minutes : une ou deux bulles d'aide vont s'afficher pendant que tu explores. Touche l'écran pour commencer."),
+            nextLabel: ob('onboarding.lets_go_btn', "C'est parti")
         });
     }
 
@@ -134,8 +143,8 @@ var Onboarding = (function () {
         setTimeout(function () {
             showCoachMark('daily_or_categories', {
                 targetSelector: '#btn-daily',
-                title: '🎯 Le Défi du jour',
-                text: "10 événements à remettre dans l'ordre, en 2 minutes chrono : la façon la plus simple de commencer, et le point de départ de ta série quotidienne 🔥. Tu peux aussi explorer une catégorie ci-dessous."
+                title: ob('onboarding.daily_title', '🎯 Le Défi du jour'),
+                text: ob('onboarding.daily_text', "10 événements à remettre dans l'ordre, en 2 minutes chrono : la façon la plus simple de commencer, et le point de départ de ta série quotidienne 🔥. Tu peux aussi explorer une catégorie ci-dessous.")
             });
         }, 300);
     }
@@ -145,8 +154,8 @@ var Onboarding = (function () {
         setTimeout(function () {
             showCoachMark('modes', {
                 targetSelector: '#mode-card-discovery',
-                title: '🧭 Le mode Découverte',
-                text: "Parfait pour débuter : consulte la frise chronologique sans aucune pression, aucune vie en jeu. Une fois à l'aise, essaie le mode Classique !"
+                title: ob('onboarding.modes_title', '🧭 Le mode Découverte'),
+                text: ob('onboarding.modes_text', "Parfait pour débuter : consulte la frise chronologique sans aucune pression, aucune vie en jeu. Une fois à l'aise, essaie le mode Classique !")
             });
         }, 300);
     }
@@ -157,9 +166,9 @@ var Onboarding = (function () {
             var hasXpChip = !!document.getElementById('end-xp-display') && !document.getElementById('end-xp-display').classList.contains('hidden');
             showCoachMark('first_xp', {
                 targetSelector: hasXpChip ? '#end-xp-display' : undefined,
-                title: "🔥 Bravo, tu as gagné de l'XP !",
-                text: "Reviens chaque jour jouer le Défi du jour pour garder ta série : plus elle dure longtemps, plus l'XP que tu gagnes est multiplié (visible en haut de l'écran d'accueil). Un seul jour manqué, et tout repart à zéro.",
-                nextLabel: 'Compris !'
+                title: ob('onboarding.first_xp_title', "🔥 Bravo, tu as gagné de l'XP !"),
+                text: ob('onboarding.first_xp_text', "Reviens chaque jour jouer le Défi du jour pour garder ta série : plus elle dure longtemps, plus l'XP que tu gagnes est multiplié (visible en haut de l'écran d'accueil). Un seul jour manqué, et tout repart à zéro."),
+                nextLabel: ob('onboarding.got_it_label', 'Compris !')
             });
         }, 500);
     }

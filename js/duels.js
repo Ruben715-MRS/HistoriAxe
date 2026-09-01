@@ -21,30 +21,30 @@ function buildDuelShareUrl(duelId) {
 // après avoir terminé le Défi du jour.
 function challengeFriendToDuel() {
     if (typeof HistoriAxeAPI === 'undefined' || !HistoriAxeAPI.isConfigured()) {
-        if (typeof showToast === 'function') showToast('Les duels nécessitent une connexion.', 2500);
+        if (typeof showToast === 'function') showToast(t('duels.requires_connection'), 2500);
         return;
     }
     const btn = document.getElementById('btn-daily-challenge-friend');
-    if (btn) { btn.disabled = true; btn.innerText = 'Création du duel…'; }
+    if (btn) { btn.disabled = true; btn.innerText = t('duels.creating'); }
 
     const deviceId = getOrCreateDeviceId();
     const pseudo = (typeof pseudoLoad === 'function' ? pseudoLoad() : '') || 'Anonyme';
 
     HistoriAxeAPI.createDuel(deviceId, pseudo, currentDailyLang(), getDailySeedString()).then(res => {
-        if (btn) { btn.disabled = false; btn.innerText = '⚔️ Défier un ami'; }
+        if (btn) { btn.disabled = false; btn.innerText = t('duels.title_btn'); }
         if (!res.ok || !res.data) {
-            if (typeof showToast === 'function') showToast("Impossible de créer le duel pour l'instant.", 2500);
+            if (typeof showToast === 'function') showToast(t('duels.create_error'), 2500);
             return;
         }
 
         const url = buildDuelShareUrl(res.data.id);
-        const text = `⚔️ Je te défie sur le Défi du jour HistoriAxe ! À toi de me battre : ${url}`;
+        const text = t('duels.share_text', { url });
 
         if (navigator.share) {
             navigator.share({ text: text, url: url }).catch(() => {});
         } else if (navigator.clipboard) {
             navigator.clipboard.writeText(text).then(() => {
-                if (typeof showToast === 'function') showToast('Lien de duel copié dans le presse-papiers !', 2500);
+                if (typeof showToast === 'function') showToast(t('duels.link_copied'), 2500);
             }).catch(() => {});
         }
 
@@ -76,8 +76,8 @@ function checkIncomingDuelLink() {
                 creatorScore: res.data.creatorScore
             };
             if (typeof showToast === 'function') {
-                const scoreTxt = res.data.creatorScore ? ` (${res.data.creatorScore.score} pts à battre)` : '';
-                showToast(`⚔️ ${escapeHtml(res.data.creatorPseudo)} te défie sur le Défi du jour${scoreTxt} !`, 4500);
+                const scoreTxt = res.data.creatorScore ? t('duels.incoming_score_suffix', { score: res.data.creatorScore.score }) : '';
+                showToast(t('duels.incoming_toast', { name: escapeHtml(res.data.creatorPseudo), scoreTxt }), 4500);
             }
         });
     } catch (e) {}
@@ -99,9 +99,9 @@ function renderDuelComparisonIfPending() {
     const theirScore = pendingDuelContext.creatorScore.score;
     const name = escapeHtml(pendingDuelContext.creatorPseudo);
     let verdict;
-    if (myScore > theirScore) verdict = `🏆 Tu bats ${name} (${theirScore} pts) !`;
-    else if (myScore < theirScore) verdict = `😅 ${name} l'emporte avec ${theirScore} pts.`;
-    else verdict = `🤝 Match nul avec ${name} !`;
+    if (myScore > theirScore) verdict = t('duels.win', { name, score: theirScore });
+    else if (myScore < theirScore) verdict = t('duels.lose', { name, score: theirScore });
+    else verdict = t('duels.draw', { name });
 
     container.innerText = verdict;
     container.classList.remove('hidden');
@@ -121,7 +121,7 @@ function checkMyDuels() {
             if (!res.ok || !res.data || !Array.isArray(res.data.duels)) return;
             res.data.duels.forEach(d => {
                 if (typeof showToast === 'function') {
-                    showToast(`⚔️ ${escapeHtml(d.opponentPseudo)} t'a dépassé sur votre duel du ${d.challengeDate} avec ${d.opponentScore} pts !`, 5000);
+                    showToast(t('duels.overtaken_toast', { name: escapeHtml(d.opponentPseudo), date: d.challengeDate, score: d.opponentScore }), 5000);
                 }
                 HistoriAxeAPI.ackDuel(d.id, deviceId);
             });

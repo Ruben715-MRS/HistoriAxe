@@ -27,25 +27,26 @@ function renderLeagueRow(entry, isMe) {
     return `
         <div class="leaderboard-row${isMe ? ' leaderboard-row-me' : ''}">
             <span class="leaderboard-rank">${medal}</span>
-            <span class="leaderboard-pseudo">${escapeHtml(entry.pseudo)}${isMe ? ' <em>(vous)</em>' : ''}</span>
+            <span class="leaderboard-pseudo">${escapeHtml(entry.pseudo)}${isMe ? ' <em>' + t('league.you_suffix') + '</em>' : ''}</span>
             <span class="leaderboard-score">${entry.xp} XP</span>
         </div>
     `;
 }
 
 function renderLeagueModal() {
-    const myXpEl = document.getElementById('league-my-xp');
-    if (myXpEl) myXpEl.innerText = weeklyXpLoad().xp;
+    const weeklyXp = weeklyXpLoad().xp;
+    const hintEl = document.getElementById('league-week-hint');
+    if (hintEl) hintEl.innerHTML = t('league.week_hint', { xp: `<strong id="league-my-xp">${weeklyXp}</strong>` });
 
     const container = document.getElementById('league-list-container');
     if (!container) return;
 
     if (typeof HistoriAxeAPI === 'undefined' || !HistoriAxeAPI.isConfigured()) {
-        container.innerHTML = `<div class="daily-leaderboard-empty">Ligue indisponible hors connexion.</div>`;
+        container.innerHTML = `<div class="daily-leaderboard-empty">${t('league.offline')}</div>`;
         return;
     }
 
-    container.innerHTML = `<div class="daily-leaderboard-empty">Chargement…</div>`;
+    container.innerHTML = `<div class="daily-leaderboard-empty">${t('league.loading')}</div>`;
 
     const deviceId = getOrCreateDeviceId();
     HistoriAxeAPI.getWeeklyLeague({
@@ -54,12 +55,12 @@ function renderLeagueModal() {
         limit: 30
     }).then(res => {
         if (!res.ok) {
-            container.innerHTML = `<div class="daily-leaderboard-empty">Ligue momentanément indisponible.</div>`;
+            container.innerHTML = `<div class="daily-leaderboard-empty">${t('league.error')}</div>`;
             return;
         }
         const entries = res.data.entries || [];
         if (entries.length === 0) {
-            container.innerHTML = `<div class="daily-leaderboard-empty">Personne dans ta ligue pour l’instant cette semaine — sois le premier à marquer des points !</div>`;
+            container.innerHTML = `<div class="daily-leaderboard-empty">${t('league.empty')}</div>`;
             return;
         }
         let html = entries.map(entry => renderLeagueRow(entry, false)).join('');

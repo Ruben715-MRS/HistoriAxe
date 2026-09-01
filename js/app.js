@@ -34,7 +34,7 @@
         // sont conservés (ce ne sont pas des données de progression, mais des préférences d'interface).
         function resetGameData() {
             showConfirm(
-                "Cette action supprime définitivement vos thèmes favoris, l'intégralité de vos thèmes et événements personnalisés créés, tout l'historique de révision (points faibles, boîtes de mémorisation) et la progression de déverrouillage des modes Chrono/Expert. Cette action est irréversible. Voulez-vous continuer ?",
+                t('settings.reset_confirm_full'),
                 () => {
                     resetAllGameData();
                     if (typeof customCategory !== 'undefined') customCategory.themes = [];
@@ -42,7 +42,7 @@
                     closeSettings();
                     showScreen('screen-categories');
                 },
-                { okLabel: 'Tout réinitialiser' }
+                { okLabel: t('settings.reset_confirm_ok') }
             );
         }
 
@@ -172,8 +172,18 @@ let appSettings = settingsLoad();
 // depuis le HTML d'origine et n'ont jamais été reportées ici, ce qui cassait
 // silencieusement (ReferenceError) le lancement de toute partie ou frise.
 // =========================================================================
+// Séparateur décimal localisé pour les temps chronométrés affichés au joueur
+// (« 12,3 s » en français/allemand, « 12.3 s » ailleurs) — évite d'imposer la
+// virgule française à toutes les langues.
+function formatDecimal(n) {
+    const str = n.toFixed(1);
+    const commaLangs = ['fr', 'de'];
+    const lang = (typeof i18n !== 'undefined' && i18n.currentLang) || 'fr';
+    return commaLangs.includes(lang) ? str.replace('.', ',') : str;
+}
+
 function formatYear(year) {
-    if (year < 0) return Math.abs(year) + " av. J.-C.";
+    if (year < 0) return Math.abs(year) + " " + t('game.era_bc');
     return year;
 }
 
@@ -188,8 +198,7 @@ function formatEventDate(evt) {
 function formatEventDuration(evt) {
     if (!evt || evt.dateFin == null || evt.dateFin === evt.date) return null;
     const diff = Math.abs(evt.dateFin - evt.date);
-    if (diff === 1) return "1 an";
-    if (diff > 1) return `${diff} ans`;
+    if (diff >= 1) return t('game.duration_years', { n: diff });
     return null;
 }
 
@@ -210,22 +219,27 @@ function toRoman(num) {
     return roman;
 }
 
+// Le numéral utilisé dans « game.century_label » est en chiffres romains pour
+// le français (« IIe siècle »), en chiffres arabes pour les autres langues
+// (« 2nd century », « 2. Jahrhundert »…) — voir ui/<lang>.json.
 function getCenturyLabel(year) {
     if (year == null) return '';
-    if (year < 0) {
-        const c = Math.ceil(Math.abs(year) / 100);
-        return c === 1 ? 'Ier siècle av. J.-C.' : `${toRoman(c)}e siècle av. J.-C.`;
-    } else {
-        const c = Math.ceil((year === 0 ? 1 : year) / 100);
-        return c === 1 ? 'Ier siècle' : `${toRoman(c)}e siècle`;
-    }
+    const isBC = year < 0;
+    const c = isBC ? Math.ceil(Math.abs(year) / 100) : Math.ceil((year === 0 ? 1 : year) / 100);
+    const useRoman = (typeof i18n !== 'undefined' && i18n.currentLang === 'fr');
+    const label = (c === 1) ? t('game.century_label_1') : t('game.century_label', { n: useRoman ? toRoman(c) : c });
+    if (!isBC) return label;
+    // L'ordre « ère puis siècle » (japonais) diffère de « siècle puis ère »
+    // (français, anglais, espagnol, allemand, italien).
+    const era = t('game.era_bc');
+    return (typeof i18n !== 'undefined' && i18n.currentLang === 'ja') ? `${era}${label}` : `${label} ${era}`;
 }
 
 function getPeriodSliceLabel(year, span) {
     const step = (span > 300) ? 100 : ((span <= 60) ? 10 : ((span <= 150) ? 25 : 50));
     const start = Math.floor(year / step) * step;
     if (step === 10 && start >= 1000) {
-        return `Années ${start}`;
+        return t('game.decade_label', { start });
     }
     const end = start + step;
     return `${formatYear(start)} – ${formatYear(end)}`;
@@ -343,7 +357,7 @@ function ensureCustomCategoryInBdd() {
             const diff = document.getElementById('custom-theme-diff').value.trim() || 'Tous niveaux';
 
             if (!name) {
-                alert("Veuillez saisir un nom pour votre thème.");
+                alert(t('custom.theme_name_required'));
                 return;
             }
 
@@ -362,7 +376,7 @@ function ensureCustomCategoryInBdd() {
         }
 
         function deleteCustomTheme(themeId) {
-            showConfirm("Voulez-vous vraiment supprimer ce thème personnalisé et tous ses événements ?", () => {
+            showConfirm(t('custom.confirm_delete_theme'), () => {
                 customCategory.themes = customCategory.themes.filter(t => t.id !== themeId);
                 saveCustomThemesToStorage();
                 initThemes();
@@ -413,7 +427,7 @@ function ensureCustomCategoryInBdd() {
             const desc = document.getElementById('custom-event-desc').value.trim();
 
             if (!yearInput || !title) {
-                alert("Veuillez remplir l'année et le titre.");
+                alert(t('custom.event_fields_required'));
                 return;
             }
 
@@ -445,7 +459,7 @@ function ensureCustomCategoryInBdd() {
             }
 
             closeAddEventModal();
-            alert("Événement ajouté avec succès !");
+            alert(t('custom.event_added_success'));
         }
 
         // === TABLEAU DES SCORES (LEADERBOARD) ===
@@ -471,25 +485,31 @@ function ensureCustomCategoryInBdd() {
         
         function openLeaderboard() {
             const theme = getCurrentTheme();
-            document.getElementById('leaderboard-subtitle').innerText = "Thème : " + theme.nom;
-            
+            document.getElementById('leaderboard-subtitle').innerText = t('leaderboard.theme_label', { name: theme.nom });
+
             const container = document.getElementById('leaderboard-content');
             let data = {};
             try { data = JSON.parse(localStorage.getItem(LEADERBOARD_KEY)) || {}; } catch(e) {}
-            
+
             const scores = data[theme.id] || [];
             if (scores.length === 0) {
-                container.innerHTML = '<div class="leaderboard-empty">Aucun score enregistré sur ce thème pour le moment.</div>';
+                container.innerHTML = `<div class="leaderboard-empty">${t('leaderboard.empty')}</div>`;
             } else {
-                const modesFr = { 'classic': 'Classique', 'chrono': 'Chrono', 'expert': 'Expert', 'quiz': 'Quiz', 'avantapres': 'Avant / Après', 'fil': 'Le fil du temps', 'periodes': 'Périodes & Ères', 'ecart': "Trouve l'écart", 'carte': 'Carte' };
-                let html = '<table class="leaderboard-table"><thead><tr><th>Mode</th><th>Score</th><th>Date</th></tr></thead><tbody>';
+                const modeNames = {
+                    'classic': t('modes.classic.title'), 'chrono': t('modes.chrono.title'),
+                    'expert': t('modes.expert.title'), 'quiz': t('modes.quiz.title'),
+                    'avantapres': t('modes.avantapres.title'), 'fil': t('modes.fil.title'),
+                    'periodes': t('modes.periodes.title'), 'ecart': t('modes.ecart.title'),
+                    'carte': t('carte.mode_title')
+                };
+                let html = `<table class="leaderboard-table"><thead><tr><th>${t('leaderboard.col_mode')}</th><th>${t('leaderboard.col_score')}</th><th>${t('leaderboard.col_date')}</th></tr></thead><tbody>`;
                 scores.forEach(s => {
-                    html += `<tr><td>${modesFr[s.mode] || s.mode}</td><td class="leaderboard-score">${s.score}</td><td>${s.date}</td></tr>`;
+                    html += `<tr><td>${modeNames[s.mode] || s.mode}</td><td class="leaderboard-score">${s.score}</td><td>${s.date}</td></tr>`;
                 });
                 html += '</tbody></table>';
                 container.innerHTML = html;
             }
-            
+
             document.getElementById('modal-leaderboard').classList.remove('hidden');
         }
 
@@ -502,7 +522,7 @@ function ensureCustomCategoryInBdd() {
         let selectedEventsIds = new Set();
         
         function deleteCustomEvent(eventId) {
-            showConfirm("Voulez-vous vraiment supprimer cet événement ?", () => {
+            showConfirm(t('selection.confirm_delete_event'), () => {
                 const theme = getCurrentTheme();
                 if (!theme) return;
                 
@@ -536,7 +556,7 @@ function ensureCustomCategoryInBdd() {
             }
             
             if (!theme.events || theme.events.length === 0) {
-                container.innerHTML = '<div style="text-align:center; padding:30px 10px; color:var(--muted-text); font-style:italic;">Aucun événement dans ce thème.</div>';
+                container.innerHTML = `<div style="text-align:center; padding:30px 10px; color:var(--muted-text); font-style:italic;">${t('selection.empty')}</div>`;
                 showScreen('screen-selection');
                 return;
             }
@@ -571,7 +591,7 @@ function ensureCustomCategoryInBdd() {
                     const delBtn = document.createElement('button');
                     delBtn.type = 'button';
                     delBtn.className = 'selection-item-delete';
-                    delBtn.title = "Supprimer cet événement";
+                    delBtn.title = t('selection.delete_event_title');
                     delBtn.innerHTML = '🗑️';
                     delBtn.onclick = (event) => {
                         event.stopPropagation();
@@ -604,7 +624,7 @@ function ensureCustomCategoryInBdd() {
         
         function saveSelectionAndReturn() {
             if (selectedEventsIds.size === 0) {
-                alert("Vous devez sélectionner au moins un événement pour jouer.");
+                alert(t('modes.select_at_least_one'));
                 return;
             }
             isSelectionActive = true;
@@ -796,11 +816,11 @@ function ensureCustomCategoryInBdd() {
                 else if (angleDeg > 195 && angleDeg < 345) anchor = 'end';
                 const shortNom = node.nom.length > 16 ? node.nom.slice(0, 15) + '…' : node.nom;
                 labelsHtml += `<text x="${lx.toFixed(1)}" y="${(ly - 6).toFixed(1)}" text-anchor="${anchor}" class="radar-label">${shortNom}</text>`;
-                labelsHtml += `<text x="${lx.toFixed(1)}" y="${(ly + 8).toFixed(1)}" text-anchor="${anchor}" class="radar-label-pct">${pct === null ? 'non testé' : pct + '%'}</text>`;
+                labelsHtml += `<text x="${lx.toFixed(1)}" y="${(ly + 8).toFixed(1)}" text-anchor="${anchor}" class="radar-label-pct">${pct === null ? t('mastery.radar_untested') : pct + '%'}</text>`;
             });
 
             container.innerHTML = `
-                <svg viewBox="0 0 ${size} ${size}" class="radar-svg" role="img" aria-label="Radar de maîtrise par catégorie">
+                <svg viewBox="0 0 ${size} ${size}" class="radar-svg" role="img" aria-label="${t('mastery.radar_aria')}">
                     ${gridHtml}
                     ${axesHtml}
                     <polygon points="${dataPolyPts}" class="radar-data-poly" />
@@ -881,7 +901,7 @@ function ensureCustomCategoryInBdd() {
 
         // Réinitialise entièrement le suivi de révision espacée (boîtes, historique)
         function resetRevisionTracking() {
-            showConfirm("Réinitialiser tout le suivi de révision (boîtes de mémorisation, historique) ? Cette action est irréversible.", () => {
+            showConfirm(t('revision.reset_srs_confirm'), () => {
                 srsSave({});
                 if (!document.getElementById('screen-revision-hub').classList.contains('hidden')) {
                     initRevisionHub();
@@ -920,7 +940,15 @@ function ensureCustomCategoryInBdd() {
         let lives = 3;
         let score = 0;
         let totalEvents = 0;
-        let isAnimating = false; 
+        let isAnimating = false;
+        // Identifiant du setTimeout de révélation d'une mauvaise réponse (voir
+        // checkPlacement) : si la partie est quittée ou relancée avant que ce délai
+        // ne s'écoule, il faut l'annuler explicitement. Sans cela, `isAnimating`
+        // pouvait rester bloqué à `true` pour le reste de la session (aucune
+        // fonction de lancement de partie ne le réinitialisait), rendant tout
+        // placement ultérieur silencieusement sans effet — le seul symptôme visible
+        // étant que plus aucun créneau ne réagissait au clic.
+        let wrongAnswerTimeoutId = null;
         
         let timerInterval = null;
         let startTime = 0;
@@ -1108,13 +1136,13 @@ function ensureCustomCategoryInBdd() {
             if (screenId === 'screen-modes') {
                 const titleEl = document.getElementById('modes-header-title');
                 if (revisionMode) {
-                    titleEl.innerText = `Révision ciblée (${revisionEvents.length} événements)`;
+                    titleEl.innerText = t('revision.targeted_title', { count: revisionEvents.length });
                 } else if (axisFilterActive) {
                     const theme = getCurrentTheme();
                     const count = theme.events.filter(e => selectedAxes.has(e.axe)).length;
-                    titleEl.innerText = `${theme.nom} — ${selectedAxes.size} axe(s), ${count} événements`;
+                    titleEl.innerText = t('modes.axis_summary', { theme: theme.nom, axesCount: selectedAxes.size, eventsCount: count });
                 } else {
-                    titleEl.innerText = 'Choisissez un mode de jeu';
+                    titleEl.innerText = t('modes.choose_mode');
                 }
                 updateModeLocks();
             }
@@ -1184,7 +1212,7 @@ function ensureCustomCategoryInBdd() {
         function startDailyChallenge() {
             const picks = generateDailyEvents();
             if (picks.length === 0) {
-                alert("Aucun événement disponible pour le défi du jour.");
+                alert(t('modes.no_events_daily'));
                 return;
             }
             dailyChallengeEventsWithLocation = picks;
@@ -1299,7 +1327,7 @@ function ensureCustomCategoryInBdd() {
                 if (color) {
                     card.dataset.axis = color.name;
                 }
-                card.innerHTML = `<h3>${axe}</h3><p>${count} événement${count > 1 ? 's' : ''}</p>`;
+                card.innerHTML = `<h3>${axe}</h3><p>${t('categories.events_count', { count })}</p>`;
                 card.onclick = () => {
                     if (selectedAxes.has(axe)) { selectedAxes.delete(axe); }
                     else { selectedAxes.add(axe); }
@@ -1310,8 +1338,8 @@ function ensureCustomCategoryInBdd() {
             const totalCount = theme.events.filter(e => selectedAxes.has(e.axe)).length;
             const subtitle = document.getElementById('axes-subtitle');
             subtitle.innerText = selectedAxes.size > 0
-                ? `${theme.nom} — ${totalCount} événement${totalCount > 1 ? 's' : ''} sélectionné${totalCount > 1 ? 's' : ''}`
-                : `${theme.nom} — sélectionnez au moins un axe`;
+                ? t('axes.subtitle_selected', { theme: theme.nom, count: totalCount })
+                : t('axes.subtitle_select_one', { theme: theme.nom });
             document.getElementById('axes-continue-btn').disabled = selectedAxes.size === 0;
         }
 
@@ -1354,8 +1382,8 @@ function ensureCustomCategoryInBdd() {
                 loadingBox.style.textAlign = 'center';
                 loadingBox.innerHTML = `
                     <div style="font-size: 40px; margin-bottom: 16px; animation: spin 2s linear infinite;">⏳</div>
-                    <h3 style="font-size: 20px; font-weight: 700; color: var(--primary-blue, #001a4b); margin-bottom: 8px;">Chargement de la bibliothèque historique…</h3>
-                    <p style="color: var(--text-muted, #64748b); font-size: 14px; max-width: 400px; margin: 0 auto;">Initialisation des 16 664 événements et 646 thèmes.</p>
+                    <h3 style="font-size: 20px; font-weight: 700; color: var(--primary-blue, #001a4b); margin-bottom: 8px;">${t('themes.loading_title')}</h3>
+                    <p style="color: var(--text-muted, #64748b); font-size: 14px; max-width: 400px; margin: 0 auto;">${t('themes.loading_subtitle', { events: '16 664', themes: '646' })}</p>
                 `;
                 container.appendChild(loadingBox);
                 return;
@@ -1444,7 +1472,7 @@ function ensureCustomCategoryInBdd() {
                     <div class="absolute inset-0 bg-primary/40 group-hover:bg-primary/30 transition-colors" style="background: rgba(0, 26, 75, 0.5); position: absolute; inset: 0;"></div>
                     <div class="absolute bottom-0 left-0 p-md w-full" style="position: absolute; bottom: 0; left: 0; padding: 16px;">
                         <h4 class="font-headline-md text-on-primary" style="color: white; font-weight: 700; font-size: 20px; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">${cat.nom}</h4>
-                        <p class="font-label-sm text-primary-fixed-dim mt-xs" style="color: #b2c5ff; font-size: 12px; margin-top: 4px;">${cat.subcategories ? cat.subcategories.length + ' Sous-catégories' : (cat.isCustomCategory ? 'Vos thèmes' : 'Sélectionner')}</p>
+                        <p class="font-label-sm text-primary-fixed-dim mt-xs" style="color: #b2c5ff; font-size: 12px; margin-top: 4px;">${cat.subcategories ? t('themes.subcategories_count', { count: cat.subcategories.length }) : (cat.isCustomCategory ? t('themes.your_themes') : t('themes.select_cta'))}</p>
                     </div>
                 `;
                 card.onclick = () => {
@@ -1527,7 +1555,7 @@ function ensureCustomCategoryInBdd() {
 
             node.subcategories.forEach((sub, index) => {
                 const nbThemes = countThemesRecursive(sub);
-                let textThemes = nbThemes === 0 ? "Bientôt disponible" : (nbThemes === 1 ? "1 thème" : `${nbThemes} thèmes`);
+                let textThemes = nbThemes === 0 ? t('themes.soon_available') : t('categories.themes_count', { count: nbThemes });
 
                 let bgImg = 'assets/images/cat_culture_generale.jpg'; // default fallback
                 const nomLower = sub.nom.toLowerCase();
@@ -1611,12 +1639,12 @@ function ensureCustomCategoryInBdd() {
             card.className = 'data-card';
             const fav = isFavorite(theme.id);
             const badgeHtml = opts.badge != null ? `<span class="data-card-badge">${opts.badge}</span>` : '';
-            const deleteHtml = theme.isCustom ? `<span class="data-card-delete" title="Supprimer ce thème">🗑️</span>` : '';
+            const deleteHtml = theme.isCustom ? `<span class="data-card-delete" title="${t('themes.delete_theme_title')}">🗑️</span>` : '';
             card.innerHTML = `
                 <span class="data-card-title">${theme.nom}</span>
                 ${badgeHtml}
                 ${deleteHtml}
-                <span class="data-card-fav ${fav ? 'is-fav' : ''}" title="${fav ? 'Retirer des favoris' : 'Ajouter aux favoris'}">${fav ? '★' : '☆'}</span>
+                <span class="data-card-fav ${fav ? 'is-fav' : ''}" title="${fav ? t('themes.remove_favorite') : t('themes.add_favorite')}">${fav ? '★' : '☆'}</span>
                 <span class="data-card-icon">›</span>
             `;
             card.onclick = onOpen;
@@ -1639,7 +1667,7 @@ function ensureCustomCategoryInBdd() {
                     const nowFav = isFavorite(theme.id);
                     favBtn.classList.toggle('is-fav', nowFav);
                     favBtn.innerText = nowFav ? '★' : '☆';
-                    favBtn.title = nowFav ? 'Retirer des favoris' : 'Ajouter aux favoris';
+                    favBtn.title = nowFav ? t('themes.remove_favorite') : t('themes.add_favorite');
                 }
             };
             return card;
@@ -1699,7 +1727,7 @@ function ensureCustomCategoryInBdd() {
             if (matches.length === 0) {
                 const empty = document.createElement('div');
                 empty.className = 'search-empty';
-                empty.innerText = 'Aucun thème ne correspond à votre recherche.';
+                empty.innerText = t('categories.search_empty');
                 resultsBox.appendChild(empty);
                 return;
             }
@@ -1778,8 +1806,8 @@ function ensureCustomCategoryInBdd() {
                 addCard.style.margin = '0 auto 10px auto';
                 addCard.style.width = '100%';
                 addCard.innerHTML = `
-                    <div class="special-card-title">➕ Créer un nouveau thème</div>
-                    <div class="special-card-subtitle">Ajoutez un thème personnalisé avec vos propres dates</div>
+                    <div class="special-card-title">${t('custom.new_theme_btn')}</div>
+                    <div class="special-card-subtitle">${t('custom.new_theme_subtitle')}</div>
                 `;
                 addCard.onclick = openAddThemeModal;
                 container.appendChild(addCard);
@@ -1787,7 +1815,7 @@ function ensureCustomCategoryInBdd() {
                 if (themeList.length === 0) {
                     const emptyMsg = document.createElement('div');
                     emptyMsg.className = 'empty-msg';
-                    emptyMsg.innerText = "Vous n'avez pas encore créé de thème personnalisé. Cliquez sur « Créer un nouveau thème » pour commencer !";
+                    emptyMsg.innerText = t('custom.empty_custom_themes');
                     emptyMsg.style.gridColumn = '1 / -1';
                     container.appendChild(emptyMsg);
                     return;
@@ -1813,7 +1841,7 @@ function ensureCustomCategoryInBdd() {
         // (catégories plates ou à sous-catégories), avec leur chemin d'accès exact.
         function renderFavoritesThemes(container) {
             container.innerHTML = '';
-            document.getElementById('theme-screen-title').innerText = 'Thèmes favoris';
+            document.getElementById('theme-screen-title').innerText = t('themes.favorites_title');
 
             const favIds = favoritesLoad();
             const matches = [];
@@ -1832,7 +1860,7 @@ function ensureCustomCategoryInBdd() {
             if (matches.length === 0) {
                 const msg = document.createElement('div');
                 msg.className = 'empty-msg';
-                msg.innerText = "Aucun thème favori pour l'instant. Depuis la liste des thèmes, touchez l'étoile ☆ pour en ajouter ici.";
+                msg.innerText = t('themes.favorites_empty');
                 container.appendChild(msg);
                 return;
             }
@@ -1882,7 +1910,7 @@ function ensureCustomCategoryInBdd() {
             }
             emptyState.classList.add('hidden');
             content.classList.remove('hidden');
-            subtitle.innerText = `${weak.length} événement${weak.length > 1 ? 's' : ''} à retravailler, dans ${weakThemes.length} thème${weakThemes.length > 1 ? 's' : ''}`;
+            subtitle.innerText = t('revision.weak_count_subtitle', { count: weak.length, themeCount: weakThemes.length });
 
             const themesContainer = document.getElementById('revision-themes-container');
             themesContainer.innerHTML = '';
@@ -1908,12 +1936,12 @@ function ensureCustomCategoryInBdd() {
             }
 
             renderModeCard('mode-card-chrono', 'chrono', chronoUnlocked,
-                'Chrono', '3 vies. Placez les événements le plus vite possible.',
-                'Réussissez d’abord le mode Classique sur ce thème pour débloquer Chrono.');
+                t('modes.chrono.title'), t('modes.chrono.desc'),
+                t('modes.chrono_lock'));
 
             renderModeCard('mode-card-expert', 'expert', expertUnlocked,
-                'Expert', '1 vie, chronométré. La moindre erreur est fatale.',
-                'Réussissez d’abord le mode Chrono sur ce thème pour débloquer Expert.');
+                t('modes.expert.title'), t('modes.expert.desc'),
+                t('modes.expert_lock'));
         }
 
         function renderModeCard(cardId, mode, unlocked, title, description, lockMessage) {
@@ -1941,8 +1969,8 @@ function ensureCustomCategoryInBdd() {
             container.innerHTML = '';
             for (let i = 1; i <= count; i++) {
                 const existingInput = document.getElementById(`multi-name-${i}`);
-                const defaultVal = existingInput ? existingInput.value : (multiPlayers && multiPlayers[i-1] ? multiPlayers[i-1].name : `Joueur ${i}`);
-                container.innerHTML += `<input type="text" id="multi-name-${i}" placeholder="Nom du joueur ${i}" value="${defaultVal}">`;
+                const defaultVal = existingInput ? existingInput.value : (multiPlayers && multiPlayers[i-1] ? multiPlayers[i-1].name : t('multiplayer.player_default_name', { n: i }));
+                container.innerHTML += `<input type="text" id="multi-name-${i}" placeholder="${t('multiplayer.player_name_placeholder', { n: i })}" value="${defaultVal}">`;
             }
         }
 
@@ -1951,7 +1979,7 @@ function ensureCustomCategoryInBdd() {
             multiPlayers = [];
             for (let i = 1; i <= count; i++) {
                 let name = document.getElementById(`multi-name-${i}`).value.trim();
-                if (!name) name = `Joueur ${i}`;
+                if (!name) name = t('multiplayer.player_default_name', { n: i });
                 multiPlayers.push({ name: name, score: 0, lives: 2, comboMultiplier: 1.0, eliminated: false });
             }
             multiGameActive = true;
@@ -1961,7 +1989,7 @@ function ensureCustomCategoryInBdd() {
             
             document.getElementById('screen-game').classList.add('hidden');
             document.getElementById('screen-multi-turn').classList.remove('hidden');
-            document.getElementById('multi-turn-text').innerText = `À ${multiPlayers[currentMultiPlayerIndex].name} de jouer !`;
+            document.getElementById('multi-turn-text').innerText = t('multiplayer.turn_banner', { name: multiPlayers[currentMultiPlayerIndex].name });
         }
 
         function resumeMultiplayerTurn() {
@@ -1993,7 +2021,7 @@ function ensureCustomCategoryInBdd() {
 
             document.getElementById('screen-game').classList.add('hidden');
             document.getElementById('screen-multi-turn').classList.remove('hidden');
-            document.getElementById('multi-turn-text').innerText = `À ${multiPlayers[currentMultiPlayerIndex].name} de jouer !`;
+            document.getElementById('multi-turn-text').innerText = t('multiplayer.turn_banner', { name: multiPlayers[currentMultiPlayerIndex].name });
         }
 
         function endMultiplayerGame() {
@@ -2021,7 +2049,20 @@ function ensureCustomCategoryInBdd() {
         }
         
         // LANCEMENT DU JEU
+        // Annule un éventuel délai de révélation de mauvaise réponse encore en
+        // attente (voir checkPlacement) et réarme `isAnimating` à `false` : à
+        // appeler chaque fois qu'on (re)lance une partie ou qu'on la quitte, pour
+        // ne jamais laisser une partie suivante hériter d'un verrou de clic bloqué.
+        function resetPlacementAnimationState() {
+            if (wrongAnswerTimeoutId) {
+                clearTimeout(wrongAnswerTimeoutId);
+                wrongAnswerTimeoutId = null;
+            }
+            isAnimating = false;
+        }
+
         function startActualGame(mode) {
+            resetPlacementAnimationState();
             resetSessionHistory();
             currentMode = mode;
             let sourceEvents;
@@ -2042,7 +2083,7 @@ function ensureCustomCategoryInBdd() {
                 sourceEvents = sourceEvents.filter(e => selectedEventsIds.has(e.id));
             }
             if (sourceEvents.length === 0) {
-                alert("Ce thème ne contient aucun événement. Veuillez d'abord ajouter des événements via « Ajouter un événement » !");
+                alert(t('modes.no_events_theme'));
                 return;
             }
             let eventsCopy = [...sourceEvents];
@@ -2100,7 +2141,7 @@ function ensureCustomCategoryInBdd() {
                 // Lecture seule : ni carte en main, ni score, ni progression
                 hand.classList.add('hidden');
                 progressRail.classList.add('hidden');
-                document.getElementById('hud-count').innerText = `Frise complète · ${totalEvents} repères`;
+                document.getElementById('hud-count').innerText = t('game.frise_complete', { n: totalEvents });
             }
 
             if (mode === 'chrono' || mode === 'expert' || mode === 'daily') {
@@ -2139,7 +2180,7 @@ function ensureCustomCategoryInBdd() {
                 sourceEvents = sourceEvents.filter(e => selectedEventsIds.has(e.id));
             }
             if (sourceEvents.length < 4) {
-                alert("Le mode Quiz nécessite au moins 4 événements. Veuillez ajouter d'autres événements à ce thème !");
+                alert(t('modes.min_events_quiz'));
                 return;
             }
 
@@ -2210,11 +2251,11 @@ function ensureCustomCategoryInBdd() {
 
             let options;
             if (q.type === 'event-to-year') {
-                kicker.innerText = 'En quelle année cet événement a-t-il eu lieu ?';
+                kicker.innerText = t('game.quiz_event_to_year');
                 prompt.innerText = q.correct.titre;
                 options = [q.correct, ...q.distractorEvents].map(e => ({ label: formatYear(e.date), event: e }));
             } else {
-                kicker.innerText = 'Quel événement correspond à cette année ?';
+                kicker.innerText = t('game.quiz_year_to_event');
                 prompt.innerText = formatYear(q.correct.date);
                 options = [q.correct, ...q.distractorEvents].map(e => ({ label: e.titre, event: e }));
             }
@@ -2324,13 +2365,13 @@ function ensureCustomCategoryInBdd() {
                 sourceEvents = sourceEvents.filter(e => selectedEventsIds.has(e.id));
             }
             if (sourceEvents.length < 4) {
-                alert("Le mode Avant / Après nécessite au moins 4 événements. Veuillez ajouter d'autres événements à ce thème !");
+                alert(t('modes.min_events_avap'));
                 return;
             }
 
             avapQuestions = buildAvapQuestions(sourceEvents);
             if (avapQuestions.length === 0) {
-                alert("Impossible de générer des questions pour ce thème (dates toutes identiques).");
+                alert(t('modes.cannot_generate_dates'));
                 return;
             }
 
@@ -2479,13 +2520,13 @@ function ensureCustomCategoryInBdd() {
                 sourceEvents = sourceEvents.filter(e => selectedEventsIds.has(e.id));
             }
             if (sourceEvents.length < 4) {
-                alert("Le mode Périodes & Ères nécessite au moins 4 événements. Veuillez ajouter d'autres événements à ce thème !");
+                alert(t('modes.min_events_periodes'));
                 return;
             }
 
             periodesQuestions = buildPeriodesQuestions(sourceEvents);
             if (periodesQuestions.length === 0) {
-                alert("Impossible de générer des questions pour ce thème.");
+                alert(t('modes.cannot_generate'));
                 return;
             }
 
@@ -2528,12 +2569,13 @@ function ensureCustomCategoryInBdd() {
                     const correctAxe = evt.axe;
                     const otherAxes = distinctAxes.filter(a => a !== correctAxe);
                     const distractorAxes = shuffleArray(otherAxes).slice(0, 3);
+                    const axeSub = t('periodes.era_axis_label');
                     const options = shuffleArray([
-                        { main: correctAxe, sub: "Ère / Axe thématique", isCorrect: true, evt: evt },
-                        ...distractorAxes.map(a => ({ main: a, sub: "Ère / Axe thématique", isCorrect: false, evt: null }))
+                        { main: correctAxe, sub: axeSub, isCorrect: true, evt: evt },
+                        ...distractorAxes.map(a => ({ main: a, sub: axeSub, isCorrect: false, evt: null }))
                     ]);
                     questions.push({
-                        kicker: "Rattachement d'époque",
+                        kicker: t('periodes.epoch_kicker'),
                         prompt: evt.titre,
                         tag: formatYear(evt.date),
                         options: options,
@@ -2559,15 +2601,16 @@ function ensureCustomCategoryInBdd() {
                         }
                     }
 
+                    const durationSub = durationText ? t('periodes.duration_label', { val: durationText }) : '';
                     const options = shuffleArray([
-                        { main: correctText, sub: durationText ? `Durée : ${durationText}` : '', isCorrect: true, evt: evt },
-                        ...distractorSpans.map(s => ({ main: s, sub: durationText ? `Durée : ${durationText}` : '', isCorrect: false, evt: null }))
+                        { main: correctText, sub: durationSub, isCorrect: true, evt: evt },
+                        ...distractorSpans.map(s => ({ main: s, sub: durationSub, isCorrect: false, evt: null }))
                     ]);
 
                     questions.push({
-                        kicker: "Durée & Période exacte",
+                        kicker: t('periodes.duration_period_kicker'),
                         prompt: evt.titre,
-                        tag: "Événement de longue durée",
+                        tag: t('periodes.long_event_tag'),
                         options: options,
                         correctEvt: evt
                     });
@@ -2589,8 +2632,8 @@ function ensureCustomCategoryInBdd() {
                         ]);
 
                         questions.push({
-                            kicker: "Contemporains & Même époque",
-                            prompt: `Lequel de ces événements est contemporain de :`,
+                            kicker: t('periodes.contemporary_kicker'),
+                            prompt: t('periodes.which_contemporary'),
                             tag: `« ${evt.titre} » (${formatYear(evt.date)})`,
                             options: options,
                             correctEvt: evt
@@ -2619,15 +2662,16 @@ function ensureCustomCategoryInBdd() {
 
                     // Réponses triées chronologiquement (et non mélangées) pour que les
                     // siècles / tranches se lisent dans l'ordre.
+                    const sliceSub = t('periodes.century_kicker');
                     const options = [
-                        { main: correctLabel, sub: "Tranche chronologique", isCorrect: true, evt: evt, sortYear: evt.date },
-                        ...distractorEntries.map(d => ({ main: d.label, sub: "Tranche chronologique", isCorrect: false, evt: null, sortYear: d.year }))
+                        { main: correctLabel, sub: sliceSub, isCorrect: true, evt: evt, sortYear: evt.date },
+                        ...distractorEntries.map(d => ({ main: d.label, sub: sliceSub, isCorrect: false, evt: null, sortYear: d.year }))
                     ].sort((a, b) => a.sortYear - b.sortYear);
 
                     questions.push({
-                        kicker: "Tranche chronologique & Siècle",
+                        kicker: t('periodes.century_kicker'),
                         prompt: evt.titre,
-                        tag: evt.axe ? `Axe : ${evt.axe}` : '',
+                        tag: evt.axe ? t('periodes.axe_tag', { axe: evt.axe }) : '',
                         options: options,
                         correctEvt: evt
                     });
@@ -2759,7 +2803,7 @@ function ensureCustomCategoryInBdd() {
                 sourceEvents = sourceEvents.filter(e => selectedEventsIds.has(e.id));
             }
             if (sourceEvents.length === 0) {
-                alert("Ce thème ne contient aucun événement. Veuillez d'abord ajouter des événements via « Ajouter un événement » !");
+                alert(t('modes.no_events_theme'));
                 return;
             }
 
@@ -2944,13 +2988,13 @@ function ensureCustomCategoryInBdd() {
 
             const badge = document.getElementById('fil-answer-badge');
             if (!isPerfect) {
-                badge.innerText = `Bonne réponse : ${formatYear(evt.date)}`;
+                badge.innerText = t('game.correct_answer', { year: formatYear(evt.date) });
                 badge.className = 'fil-answer-badge badge-wrong';
             } else if (isPerfect && filHintsRevealed > 0) {
-                 badge.innerText = `Exact (avec indice)`;
+                 badge.innerText = t('game.exact_with_hint');
                  badge.className = 'fil-answer-badge badge-correct';
             } else {
-                 badge.innerText = `Exact !`;
+                 badge.innerText = t('game.exact');
                  badge.className = 'fil-answer-badge badge-correct';
             }
 
@@ -3001,13 +3045,13 @@ function ensureCustomCategoryInBdd() {
                 sourceEvents = sourceEvents.filter(e => selectedEventsIds.has(e.id));
             }
             if (sourceEvents.length < 4) {
-                alert("Le mode Trouve l'écart nécessite au moins 4 événements. Veuillez ajouter d'autres événements à ce thème !");
+                alert(t('modes.min_events_ecart'));
                 return;
             }
 
             ecartQuestions = buildEcartQuestions(sourceEvents);
             if (ecartQuestions.length === 0) {
-                alert("Impossible de générer des questions pour ce thème (dates toutes identiques).");
+                alert(t('modes.cannot_generate_dates'));
                 return;
             }
 
@@ -3187,13 +3231,13 @@ function ensureCustomCategoryInBdd() {
 
             const badge = document.getElementById('ecart-answer-badge');
             if (!isPerfect) {
-                badge.innerText = `Écart réel : ${q.gap} an${q.gap > 1 ? 's' : ''}`;
+                badge.innerText = t('game.real_gap', { gap: q.gap });
                 badge.className = 'fil-answer-badge badge-wrong';
             } else if (ecartHintsRevealed > 0) {
-                badge.innerText = `Exact (avec indice)`;
+                badge.innerText = t('game.exact_with_hint');
                 badge.className = 'fil-answer-badge badge-correct';
             } else {
-                badge.innerText = `Exact !`;
+                badge.innerText = t('game.exact');
                 badge.className = 'fil-answer-badge badge-correct';
             }
 
@@ -3234,7 +3278,7 @@ function ensureCustomCategoryInBdd() {
             if (timerInterval) clearInterval(timerInterval);
             timerInterval = setInterval(() => {
                 let elapsed = (Date.now() - startTime) / 1000;
-                document.getElementById('hud-timer').innerText = elapsed.toFixed(1).replace('.', ',');
+                document.getElementById('hud-timer').innerText = formatDecimal(elapsed);
             }, 100);
         }
 
@@ -3260,7 +3304,7 @@ function ensureCustomCategoryInBdd() {
             const hand = document.getElementById('hand');
             hand.classList.remove('hand-revealed');
             document.getElementById('hand-kicker').innerText =
-                (placedEvents.length === 1) ? 'Touchez un intervalle' : 'À placer';
+                (placedEvents.length === 1) ? t('game.hand_kicker_first') : t('game.hand_kicker_default');
             document.getElementById('hand-year').innerText = '?';
             // Défi du jour : les 10 événements viennent de thèmes très divers, et un
             // titre seul manque parfois de contexte (« Fondation légendaire par saint
@@ -3335,9 +3379,9 @@ function ensureCustomCategoryInBdd() {
                     return `<span class="entry-axe-badge" data-axis="${color ? color.name : 'blue'}">${axe}</span>`;
                 }).join('');
                 const toggleLabel = pinned
-                    ? "Masquer les axes pendant le défilement"
-                    : "Garder les axes visibles pendant le défilement";
-                legendEl.innerHTML = '<span class="axes-legend-title">Axes :</span>' + badges +
+                    ? t('game.axes_legend_hide')
+                    : t('game.axes_legend_show');
+                legendEl.innerHTML = `<span class="axes-legend-title">${t('game.axes_legend_label')}</span>` + badges +
                     `<button type="button" class="axes-legend-toggle" onclick="toggleAxesLegendPin()" aria-label="${toggleLabel}" aria-pressed="${pinned}" title="${toggleLabel}">${pinned ? AXES_EYE_OPEN_SVG : AXES_EYE_CLOSED_SVG}</button>`;
                 legendEl.classList.remove('hidden');
                 legendEl.classList.toggle('pinned', pinned);
@@ -3375,9 +3419,9 @@ function ensureCustomCategoryInBdd() {
         function slotLabel(index) {
             const before = placedEvents[index - 1];
             const after = placedEvents[index];
-            if (!before) return `Avant ${formatYear(after.date)}`;
-            if (!after) return `Après ${formatYear(before.date)}`;
-            return `Entre ${formatYear(before.date)} et ${formatYear(after.date)}`;
+            if (!before) return t('game.slot_before', { year: formatYear(after.date) });
+            if (!after) return t('game.slot_after', { year: formatYear(before.date) });
+            return t('game.slot_between', { year1: formatYear(before.date), year2: formatYear(after.date) });
         }
 
         function buildSlot(index) {
@@ -3385,7 +3429,7 @@ function ensureCustomCategoryInBdd() {
             const slot = document.createElement('button');
             slot.type = 'button';
             slot.className = 'slot';
-            slot.setAttribute('aria-label', `Placer ici : ${label}`);
+            slot.setAttribute('aria-label', t('game.place_here_aria', { label }));
             slot.innerHTML = `<span class="slot-grid"><span></span><span class="slot-caret"></span>` +
                 `<span class="slot-body"><span class="slot-label">${label}</span></span></span>`;
             slot.onclick = () => checkPlacement(index, slot);
@@ -3410,7 +3454,7 @@ function ensureCustomCategoryInBdd() {
                 `<span class="entry-tick"></span>` +
                 `<span class="entry-body"><span class="entry-title">${evt.titre}</span>` +
                 axeHtml +
-                (evt.missed ? `<span class="entry-flag">manqué</span>` : '') +
+                (evt.missed ? `<span class="entry-flag">${t('game.missed_tag')}</span>` : '') +
                 `<span class="entry-chevron" aria-hidden="true">›</span></span>`;
             row.onclick = () => {
                 // Défi du jour : les événements viennent de thèmes divers, donc on
@@ -3535,21 +3579,22 @@ function ensureCustomCategoryInBdd() {
                 }
 
                 // L'intervalle choisi indique la direction de l'erreur
-                const direction = (correctIndex < index) ? 'plus haut' : 'plus bas';
+                const wrongKey = (correctIndex < index) ? 'game.slot_higher' : 'game.slot_lower';
                 slotElement.classList.add('slot-wrong');
                 const labelEl = slotElement.querySelector('.slot-label');
-                if (labelEl) labelEl.innerText = `Non — ${formatYear(dateToPlace)} se place ${direction}`;
+                if (labelEl) labelEl.innerText = t(wrongKey, { date: formatYear(dateToPlace) });
 
                 // La date se dévoile sur la carte en main avant que le repère rejoigne sa place
                 const hand = document.getElementById('hand');
                 hand.classList.add('hand-revealed');
                 document.getElementById('hand-year').innerText = formatYear(dateToPlace);
-                document.getElementById('hand-kicker').innerText = 'Date révélée';
+                document.getElementById('hand-kicker').innerText = t('game.date_revealed');
 
                 eventToPlace.missed = true;
                 const missedId = eventToPlace.id;
 
-                setTimeout(() => {
+                wrongAnswerTimeoutId = setTimeout(() => {
+                    wrongAnswerTimeoutId = null;
                     placedEvents.splice(correctIndex, 0, eventToPlace);
 
                     if (currentMode === 'multi') {
@@ -3619,7 +3664,7 @@ function ensureCustomCategoryInBdd() {
             const dateFormatted = String(now.getDate()).padStart(2, '0') + '/' + String(now.getMonth() + 1).padStart(2, '0');
 
             if (isDaily) {
-                const timeStr = totalTimePlayed ? ` | ⏱️ ${totalTimePlayed.toFixed(1).replace('.', ',')}s` : '';
+                const timeStr = totalTimePlayed ? ` | ⏱️ ${formatDecimal(totalTimePlayed)}s` : '';
                 const streakStr = streak > 0 ? `\n🔥 Série : ${streak} jour${streak > 1 ? 's' : ''}` : '';
                 return `⚔️ HistoriAxe — Défi du Jour (${dateFormatted})\n${grid}\n🏆 Score : ${score} pts${timeStr}${streakStr}\n\nRejoins le défi sur HistoriAxe !`;
             } else {
@@ -3651,9 +3696,9 @@ function ensureCustomCategoryInBdd() {
         function copyToClipboardFallback(text) {
             if (navigator.clipboard && navigator.clipboard.writeText) {
                 navigator.clipboard.writeText(text).then(() => {
-                    showToast('✨ Résultat copié dans le presse-papier !');
+                    showToast(t('end.share_toast_copied'));
                 }).catch(() => {
-                    showToast('📋 Copié ! Prêt à être partagé.');
+                    showToast(t('end.share_toast_error'));
                 });
             } else {
                 const ta = document.createElement('textarea');
@@ -3665,9 +3710,9 @@ function ensureCustomCategoryInBdd() {
                 ta.select();
                 try {
                     document.execCommand('copy');
-                    showToast('✨ Résultat copié dans le presse-papier !');
+                    showToast(t('end.share_toast_copied'));
                 } catch (e) {
-                    showToast('📋 Copie manuelle requise');
+                    showToast(t('end.share_toast_error'));
                 }
                 document.body.removeChild(ta);
             }
@@ -3699,12 +3744,12 @@ function ensureCustomCategoryInBdd() {
                 return;
             }
             const wikiLink = anecdoteEvt.wikipedia
-                ? `<a href="${anecdoteEvt.wikipedia}" target="_blank" rel="noopener" class="anecdote-wiki-link">En savoir plus sur Wikipédia ↗</a>`
+                ? `<a href="${anecdoteEvt.wikipedia}" target="_blank" rel="noopener" class="anecdote-wiki-link">${t('anecdote.read_more_wiki')}</a>`
                 : '';
             container.innerHTML = `
                 <div class="anecdote-card">
                     <div class="anecdote-header">
-                        <span class="anecdote-badge">💡 Le Saviez-vous ?</span>
+                        <span class="anecdote-badge">${t('anecdote.did_you_know')}</span>
                         <span class="anecdote-date">${formatYear(anecdoteEvt.date)}</span>
                     </div>
                     <div class="anecdote-event-title">${anecdoteEvt.titre}</div>
@@ -3782,23 +3827,23 @@ function ensureCustomCategoryInBdd() {
             const timeDisplay = document.getElementById('end-time-display');
 
             if (isWin) {
-                let winTitle = "Bravo ! Frise complétée !";
-                if (currentMode === 'quiz') winTitle = "Bravo ! Quiz terminé !";
-                if (currentMode === 'avantapres') winTitle = "Bravo ! Avant / Après maîtrisé !";
-                if (currentMode === 'fil') winTitle = "Bravo ! Fil du temps parcouru !";
-                if (currentMode === 'periodes') winTitle = "Bravo ! Périodes & Ères maîtrisées !";
-                if (currentMode === 'ecart') winTitle = "Bravo ! Tous les écarts trouvés !";
-                if (currentMode === 'carte') winTitle = "Bravo ! Carte du monde explorée !";
-                if (currentMode === 'daily') winTitle = "Bravo ! Défi du jour relevé !";
+                let winTitle = t('end.victory_default');
+                if (currentMode === 'quiz') winTitle = t('end.victory_quiz');
+                if (currentMode === 'avantapres') winTitle = t('end.victory_avap');
+                if (currentMode === 'fil') winTitle = t('end.victory_fil');
+                if (currentMode === 'periodes') winTitle = t('end.victory_periodes');
+                if (currentMode === 'ecart') winTitle = t('end.victory_ecart');
+                if (currentMode === 'carte') winTitle = t('end.victory_carte');
+                if (currentMode === 'daily') winTitle = t('end.victory_daily');
                 titleElement.innerText = winTitle;
                 titleElement.style.color = "#27ae60";
             } else {
-                titleElement.innerText = "Game Over !";
+                titleElement.innerText = t('end.game_over');
                 titleElement.style.color = "var(--danger-red)";
             }
 
             if (currentMode === 'chrono' || currentMode === 'expert' || currentMode === 'daily') {
-                timeDisplay.innerText = "Durée : " + totalTimePlayed.toFixed(1).replace('.', ',') + " s";
+                timeDisplay.innerText = t('end.final_time', { val: formatDecimal(totalTimePlayed) });
                 timeDisplay.classList.remove('hidden');
             } else {
                 timeDisplay.classList.add('hidden');
@@ -3810,8 +3855,8 @@ function ensureCustomCategoryInBdd() {
                 if (awardedXpInfo && awardedXpInfo.xpAwarded > 0) {
                     const mult = awardedXpInfo.streakMultiplier || 1;
                     xpDisplay.innerText = mult > 1
-                        ? `+${awardedXpInfo.xpAwarded} XP (série ×${mult} 🔥)`
-                        : `+${awardedXpInfo.xpAwarded} XP`;
+                        ? t('game.xp_gain_streak', { xp: awardedXpInfo.xpAwarded, mult })
+                        : t('game.xp_gain', { xp: awardedXpInfo.xpAwarded });
                     xpDisplay.classList.remove('hidden');
                 } else {
                     xpDisplay.classList.add('hidden');
@@ -3823,7 +3868,7 @@ function ensureCustomCategoryInBdd() {
             if (streakDisplay) {
                 const streak = getStreakCount();
                 if (streak > 0) {
-                    streakDisplay.innerHTML = `🔥 Série en cours : <strong>${streak} jour${streak > 1 ? 's' : ''}</strong>`;
+                    streakDisplay.innerText = t('end.streak_banner', { count: streak });
                     streakDisplay.classList.remove('hidden');
                 } else {
                     streakDisplay.classList.add('hidden');
@@ -3835,10 +3880,10 @@ function ensureCustomCategoryInBdd() {
             if (shareContainer && currentMode !== 'discovery' && sessionHistory.length > 0) {
                 const grid = generateShareGrid(sessionHistory);
                 shareContainer.innerHTML = `
-                    <div class="share-card-header">Votre parcours</div>
+                    <div class="share-card-header">${t('end.share_title')}</div>
                     <div class="share-emojis-grid">${grid}</div>
                     <button class="btn-share" onclick="shareGameResults(false)">
-                        <span>Partager mon score</span> <span>📤</span>
+                        <span>${t('end.share_btn')}</span> <span>📤</span>
                     </button>
                 `;
                 shareContainer.classList.remove('hidden');
@@ -3882,7 +3927,7 @@ function ensureCustomCategoryInBdd() {
             const cancelBtn = document.getElementById('confirm-cancel-btn');
             const alertOnly = !!options.alertOnly;
             cancelBtn.classList.toggle('hidden', alertOnly);
-            okBtn.innerText = options.okLabel || (alertOnly ? 'Compris' : 'Quitter');
+            okBtn.innerText = options.okLabel || (alertOnly ? t('nav.understood') : t('nav.quit'));
             const cleanup = () => {
                 modal.classList.add('hidden');
                 okBtn.onclick = null;
@@ -3897,7 +3942,8 @@ function ensureCustomCategoryInBdd() {
                 showScreen(screenAfterGame());
                 return;
             }
-            showConfirm("Voulez-vous vraiment quitter cette partie ?", () => {
+            showConfirm(t('game.confirm_quit'), () => {
+                resetPlacementAnimationState();
                 stopTimer();
                 multiGameActive = false;
                 showScreen(screenAfterGame());
@@ -3925,7 +3971,7 @@ function ensureCustomCategoryInBdd() {
 
             const duration = formatEventDuration(evt);
             const dateStr = formatEventDate(evt);
-            document.getElementById('modal-date').innerText = duration ? `${dateStr} (Durée : ${duration})` : dateStr;
+            document.getElementById('modal-date').innerText = duration ? `${dateStr} (${t('periodes.duration_label', { val: duration })})` : dateStr;
             document.getElementById('modal-desc').innerText = evt.description;
             document.getElementById('modal-wiki').href = evt.wikipedia;
 
@@ -3933,7 +3979,7 @@ function ensureCustomCategoryInBdd() {
             const redrawBtn = document.getElementById('modal-redraw-btn');
             if (context && context.theme) {
                 themeRow.classList.remove('hidden');
-                document.getElementById('modal-theme-btn').innerText = `Jouer sur « ${context.theme.nom} »`;
+                document.getElementById('modal-theme-btn').innerText = t('modal.play_theme_btn_named', { theme: context.theme.nom });
                 document.getElementById('modal-theme-btn').onclick = () => {
                     closeModal();
                     if (dailyChallengeMode) stopTimer();

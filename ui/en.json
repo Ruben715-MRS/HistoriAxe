@@ -14,7 +14,10 @@
     "close": "Close",
     "validate": "Validate",
     "delete": "Delete",
-    "reset": "Reset"
+    "reset": "Reset",
+    "understood": "Got it",
+    "quit": "Quit",
+    "loading": "Loading…"
   },
   "categories": {
     "search_placeholder": "Search a theme…",
@@ -25,15 +28,33 @@
     "special_revision": "Review",
     "themes_count": "{count} theme(s)",
     "events_count": "{count} event(s)",
-    "choose_category": "Choose a Category"
+    "choose_category": "Choose a Category",
+    "search_clear_title": "Clear",
+    "league_btn_aria": "Weekly league",
+    "profile_btn_aria": "Profile and Trophies",
+    "profile_btn_title": "View my profile and trophies",
+    "settings_btn_aria": "Settings",
+    "streak_badge_title": "Daily streak: the longer it lasts, the more XP you earn is multiplied"
   },
   "subcategories": {
-    "choose_region": "Choose a Region / Subcategory"
+    "choose_region": "Choose a Region / Subcategory",
+    "note_title": "Important note"
   },
   "themes": {
     "choose_theme": "Choose a Theme",
     "empty_themes": "No theme available yet.",
-    "custom_badge": "Custom"
+    "custom_badge": "Custom",
+    "remove_favorite": "Remove from favorites",
+    "add_favorite": "Add to favorites",
+    "delete_theme_title": "Delete this theme",
+    "favorites_title": "Favorite themes",
+    "favorites_empty": "No favorite themes yet. From the theme list, tap the ☆ star to add one here.",
+    "loading_title": "Loading the historical library…",
+    "loading_subtitle": "Initializing {events} events and {themes} themes.",
+    "subcategories_count": "{count} Subcategories",
+    "your_themes": "Your themes",
+    "select_cta": "Select",
+    "soon_available": "Coming soon"
   },
   "axes": {
     "title": "Thematic Threads",
@@ -95,7 +116,19 @@
       "title": "Multiplayer",
       "desc": "Pass and play on the same screen, elimination after 2 misses."
     },
-    "score_history": "🏆 Score History"
+    "score_history": "🏆 Score History",
+    "axis_summary": "{theme} — {axesCount} axis(es), {eventsCount} event(s)",
+    "chrono_lock": "Beat Classic mode on this theme first to unlock Chrono.",
+    "expert_lock": "Beat Chrono mode on this theme first to unlock Expert.",
+    "no_events_theme": "This theme has no events. Please add some first via «Add an event»!",
+    "min_events_quiz": "Quiz mode needs at least 4 events. Please add more events to this theme!",
+    "min_events_avap": "Before / After mode needs at least 4 events. Please add more events to this theme!",
+    "min_events_periodes": "Periods & Eras mode needs at least 4 events. Please add more events to this theme!",
+    "min_events_ecart": "Find the Gap mode needs at least 4 events. Please add more events to this theme!",
+    "cannot_generate": "Unable to generate questions for this theme.",
+    "cannot_generate_dates": "Unable to generate questions for this theme (all dates are identical).",
+    "no_events_daily": "No events available for today's challenge.",
+    "select_at_least_one": "You must select at least one event to play."
   },
   "game": {
     "score": "Score: {val}",
@@ -114,7 +147,36 @@
     "quiz_year_to_event": "Which event corresponds to this year?",
     "avap_which_first": "Which event occurred first?",
     "fil_enter_year": "Enter the exact year:",
-    "ecart_estimate_gap": "How many years separate these two milestones?"
+    "ecart_estimate_gap": "How many years separate these two milestones?",
+    "confirm_quit": "Do you really want to quit this game?",
+    "slot_before": "Before {year}",
+    "slot_after": "After {year}",
+    "slot_between": "Between {year1} and {year2}",
+    "place_here_aria": "Place here: {label}",
+    "hand_kicker_first": "Tap an interval",
+    "hand_kicker_default": "To place",
+    "missed_tag": "missed",
+    "axes_legend_label": "Axes:",
+    "axes_legend_hide": "Hide axes while scrolling",
+    "axes_legend_show": "Keep axes visible while scrolling",
+    "correct_answer": "Correct answer: {year}",
+    "exact_with_hint": "Exact (with hint)",
+    "exact": "Exact!",
+    "real_gap": "Actual gap: {gap} year(s)",
+    "century_label": "{n}th century",
+    "century_label_1": "1st century",
+    "decade_label": "{start}s",
+    "frise_complete": "Full timeline · {n} events",
+    "xp_gain_streak": "+{xp} XP (streak ×{mult} 🔥)",
+    "xp_gain": "+{xp} XP",
+    "duration_years": "{n} year(s)",
+    "decrease_text_aria": "Decrease text size",
+    "increase_text_aria": "Increase text size",
+    "hint_btn_full": "💡 Hint",
+    "erase_btn": "Clear",
+    "avap_vs": "before · after",
+    "attempts_badge": "🎯 {n} attempts",
+    "years_unit": "years"
   },
   "end": {
     "game_over": "Game Over!",
@@ -136,7 +198,11 @@
     "share_daily_btn": "Share Result",
     "share_toast_copied": "✨ Result copied to clipboard!",
     "share_toast_error": "📋 Could not copy automatically",
-    "share_cta": "Join the challenge on HistoriAxe!"
+    "share_cta": "Join the challenge on HistoriAxe!",
+    "victory_carte": "Well done! World map explored!",
+    "title_default": "Game Over",
+    "score_label_prefix": "Score: ",
+    "score_label_suffix": " points"
   },
   "daily": {
     "title_win": "🌍 Daily Challenge Mastered!",
@@ -172,7 +238,9 @@
     "progress_legend_mid": "In Progress (40-74%)",
     "progress_legend_low": "Fragile (< 40%)",
     "progress_legend_none": "Not yet tested",
-    "progress_empty": "No data yet. Play a few games to see your mastery tree."
+    "progress_empty": "No data yet. Play a few games to see your mastery tree.",
+    "targeted_title": "Targeted revision ({count} events)",
+    "weak_count_subtitle": "{count} event(s) to review, across {themeCount} theme(s)"
   },
   "gamification": {
     "rank_badge": "Lvl. {level}",
@@ -185,7 +253,84 @@
     "trophies_title": "🏆 Trophies & Achievements",
     "status_unlocked": "Unlocked ✓",
     "new_rank_toast": "👑 NEW RANK: {title} (Lvl. {level})!",
-    "new_badge_toast": "🏆 NEW TROPHY: « {name} » unlocked (+250 XP)!"
+    "new_badge_toast": "🏆 NEW TROPHY: « {name} » unlocked (+250 XP)!",
+    "ranks": {
+      "1": {
+        "title": "Annals Novice"
+      },
+      "2": {
+        "title": "Apprentice Chronicler"
+      },
+      "3": {
+        "title": "Scroll Scribe"
+      },
+      "4": {
+        "title": "Keeper of Knowledge"
+      },
+      "5": {
+        "title": "Royal Archivist"
+      },
+      "6": {
+        "title": "Historian Emeritus"
+      },
+      "7": {
+        "title": "Grand Scholar"
+      },
+      "8": {
+        "title": "Master of Ages"
+      },
+      "9": {
+        "title": "Grand Chronomancer"
+      },
+      "10": {
+        "title": "Master of Time"
+      }
+    },
+    "badges": {
+      "antiquaire": {
+        "name": "Antiquarian",
+        "desc": "Complete 5 Antiquity themes (dates before 476) without a single mistake."
+      },
+      "centurion": {
+        "name": "Centurion",
+        "desc": "Place 100 events in a row without any error."
+      },
+      "memoire_elephant": {
+        "name": "Elephant Memory",
+        "desc": "Fully clear your weak-spot box (at least 5 weak spots mastered again)."
+      },
+      "seigneur_medieval": {
+        "name": "Medieval Lord",
+        "desc": "Complete 5 Middle Ages themes (476 - 1492) without a mistake."
+      },
+      "chroniqueur_lumieres": {
+        "name": "Chronicler of the Enlightenment",
+        "desc": "Complete 5 Early Modern themes (1492 - 1789) without a mistake."
+      },
+      "temoin_siecle": {
+        "name": "Witness of the Century",
+        "desc": "Complete 5 Contemporary Era themes (1789 to today) without a mistake."
+      },
+      "flamme_eternelle": {
+        "name": "Eternal Flame",
+        "desc": "Keep a 7-day streak on the Daily Challenge."
+      },
+      "eclair_temporel": {
+        "name": "Temporal Lightning",
+        "desc": "Finish a Chrono, Expert, or Daily Challenge run in under 30 seconds."
+      },
+      "major_concours": {
+        "name": "Top of the Class",
+        "desc": "Get a perfect score on a School Curriculum or Teaching Exam theme."
+      }
+    },
+    "progress_fraction": "{current}/{target}",
+    "streak_active": "🔥 Streak active: XP ×{mult}",
+    "streak_inactive": "🔥 Play today to activate an XP multiplier",
+    "streak_next_tier": " — {days} more day(s) for ×{mult}",
+    "streak_risk": " (miss a single day and your streak — and multiplier — reset to zero).",
+    "recap_btn": "📊 View my weekly/monthly recap",
+    "hero_level_line": "Level {level} • {xp} XP"
   },
   "settings": {
     "title": "Settings",
@@ -217,7 +362,19 @@
     "data_section": "Game Data",
     "scoring_info_btn": "📖 How Points are Calculated",
     "reset_game_btn": "⚠️ Reset All Game Data",
-    "reset_confirm_msg": "This action permanently deletes all favorites, custom themes, SRS boxes, scores, and progress. Continue?"
+    "reset_confirm_msg": "This action permanently deletes all favorites, custom themes, SRS boxes, scores, and progress. Continue?",
+    "notifications_label": "Notifications",
+    "notifications_on": "Enabled",
+    "notifications_off": "Disabled",
+    "notifications_hint": "Reminders to keep your streak and not miss the Daily Challenge. Available in the iOS app (not on the web).",
+    "onboarding_btn": "🧭 Replay the tutorial",
+    "reset_hint": "Permanently deletes your favorites, all custom themes and events you created, your revision history (weak spots), and your Chrono/Expert mode unlock progress. Your display settings (orientation, appearance) are kept.",
+    "reset_confirm_full": "This action permanently deletes your favorite themes, all your custom themes and events, your entire revision history (weak spots, memorization boxes), and your Chrono/Expert mode unlock progress. This action is irreversible. Do you want to continue?",
+    "reset_confirm_ok": "Reset everything",
+    "size_mb": "{val} MB",
+    "size_kb": "{val} KB",
+    "pack_full_suffix": "Full",
+    "pack_demo_suffix": "Demo"
   },
   "anecdote": {
     "did_you_know": "💡 Did You Know?",
@@ -231,6 +388,189 @@
     "event_year_label": "Year *",
     "event_title_label": "Event Title *",
     "event_desc_label": "Description (optional)",
-    "save_btn": "Create"
+    "save_btn": "Create",
+    "create_theme_btn": "Create theme",
+    "create_event_btn": "Create event",
+    "event_added_success": "Event added successfully!",
+    "theme_name_required": "Please enter a name for your theme.",
+    "event_fields_required": "Please fill in the year and title.",
+    "confirm_delete_theme": "Do you really want to delete this custom theme and all its events?",
+    "difficulty_all_levels": "All levels",
+    "theme_name_placeholder": "E.g. History of Aviation",
+    "theme_diff_placeholder": "E.g. All levels, Expert...",
+    "event_year_placeholder": "E.g. 1789",
+    "event_title_placeholder": "E.g. Storming of the Bastille",
+    "event_desc_placeholder": "A few details...",
+    "new_theme_btn": "➕ Create a new theme",
+    "new_theme_subtitle": "Add a custom theme with your own dates",
+    "empty_custom_themes": "You haven't created any custom themes yet. Click «Create a new theme» to get started!"
+  },
+  "periodes": {
+    "era_axis_label": "Era / Theme axis",
+    "duration_period_kicker": "Duration & Exact Period",
+    "century_kicker": "Time Slice & Century",
+    "contemporary_kicker": "Contemporaries & Same Era",
+    "epoch_kicker": "Era Attribution",
+    "duration_label": "Duration: {val}",
+    "long_event_tag": "Long-lasting event",
+    "which_contemporary": "Which of these events is a contemporary of:",
+    "axe_tag": "Axis: {axe}"
+  },
+  "leaderboard": {
+    "title": "🏆 Score History",
+    "theme_label": "Theme: {name}",
+    "empty": "No score recorded on this theme yet.",
+    "col_mode": "Mode",
+    "col_score": "Score",
+    "col_date": "Date"
+  },
+  "selection": {
+    "title": "Event Selection",
+    "subtitle": "Uncheck the events you don't want to appear.",
+    "check_all": "Check all",
+    "uncheck_all": "Uncheck all",
+    "validate_btn": "Confirm selection",
+    "delete_event_title": "Delete this event",
+    "confirm_delete_event": "Do you really want to delete this event?",
+    "empty": "No events in this theme."
+  },
+  "multiplayer": {
+    "title": "Multiplayer Mode",
+    "player_count_label": "Number of players:",
+    "player_count_option": "{n} Players",
+    "player_name_placeholder": "Player {n} name",
+    "player_default_name": "Player {n}",
+    "start_btn": "Start game",
+    "turn_banner": "{name}'s turn!",
+    "ready_btn": "Ready?",
+    "results_title": "Multiplayer Results"
+  },
+  "mastery": {
+    "tested_meta": "{tested}/{total} event(s) tested",
+    "weak_badge": "⚠ {count} weak spot(s)",
+    "theme_count": "{count} theme(s)",
+    "radar_untested": "not tested",
+    "radar_aria": "Mastery radar by category"
+  },
+  "onboarding": {
+    "welcome_title": "👋 Welcome to HistoriAxe!",
+    "welcome_text": "Learn how to progress in 3 minutes: a few help bubbles will pop up as you explore. Tap the screen to begin.",
+    "lets_go_btn": "Let's go",
+    "daily_title": "🎯 The Daily Challenge",
+    "daily_text": "10 events to put in order in 2 minutes flat: the easiest way to start, and the beginning of your daily streak 🔥. You can also browse a category below.",
+    "modes_title": "🧭 Discovery mode",
+    "modes_text": "Perfect for beginners: browse the timeline with no pressure and no lives at stake. Once comfortable, try Classic mode!",
+    "first_xp_title": "🔥 Nice, you earned XP!",
+    "first_xp_text": "Come back every day to play the Daily Challenge and keep your streak: the longer it lasts, the more your XP gets multiplied (visible at the top of the home screen). Miss a single day, and it resets to zero.",
+    "skip_label": "Skip tutorial",
+    "next_label": "Next",
+    "got_it_label": "Got it!"
+  },
+  "recap": {
+    "title_week": "📊 Your weekly recap",
+    "title_month": "📊 Your monthly recap",
+    "period_week": "This week",
+    "period_month": "This month",
+    "tab_week": "This week",
+    "tab_month": "This month",
+    "stat_xp": "XP earned",
+    "stat_themes": "Games won",
+    "stat_days": "Active days",
+    "stat_streak": "Current streak",
+    "no_activity_week": "No activity this week yet — the Daily Challenge is waiting for you!",
+    "no_activity_month": "No activity this month yet — the Daily Challenge is waiting for you!",
+    "first_period_week": "First week tracked — come back next time to see your progress!",
+    "first_period_month": "First month tracked — come back next time to see your progress!",
+    "delta_up": "📈 +{pct}% XP compared to {prev}!",
+    "delta_down": "📉 {pct}% XP compared to {prev}.",
+    "prev_week": "last week",
+    "prev_month": "last month",
+    "share_btn": "Share my recap",
+    "share_copied": "Recap copied to clipboard!",
+    "share_text": "📊 HistoriAxe — {period}: {xp} XP, {games} game(s) won, {days} active day(s)!"
+  },
+  "league": {
+    "title": "🥇 Your weekly league",
+    "week_hint": "Your total this week: {xp} XP. The leaderboard resets every week.",
+    "offline": "League unavailable offline.",
+    "loading": "Loading…",
+    "error": "League temporarily unavailable.",
+    "empty": "No one in your league yet this week — be the first to score points!",
+    "you_suffix": "(you)"
+  },
+  "duels": {
+    "title_btn": "⚔️ Challenge a friend",
+    "creating": "Creating duel…",
+    "requires_connection": "Duels require a connection.",
+    "create_error": "Unable to create the duel right now.",
+    "share_text": "⚔️ I challenge you on HistoriAxe's Daily Challenge! Beat me if you can: {url}",
+    "link_copied": "Duel link copied to clipboard!",
+    "incoming_toast": "⚔️ {name} is challenging you on the Daily Challenge{scoreTxt}!",
+    "incoming_score_suffix": " ({score} pts to beat)",
+    "win": "🏆 You beat {name} ({score} pts)!",
+    "lose": "😅 {name} wins with {score} pts.",
+    "draw": "🤝 Tied with {name}!",
+    "overtaken_toast": "⚔️ {name} beat you on your duel from {date} with {score} pts!"
+  },
+  "carte": {
+    "mode_title": "🗺️ Map Mode",
+    "mode_subtitle": "Locate the events of «{label}» on the world map, then in time.",
+    "world_label": "World",
+    "where_kicker": "Where did this event take place?",
+    "correct_reveal": "✅ Correct answer: {flag} {name}",
+    "wrong_reveal": "❌ It was: {flag} {name}",
+    "not_enough_events": "This area doesn't have enough geolocated events to play Map Mode."
+  },
+  "notifications": {
+    "streak_title": "🔥 Your streak is at risk",
+    "streak_body": "Your {days}-day streak will end tonight. Play the Daily Challenge to keep it going!",
+    "daily_title": "🌍 Today's Daily Challenge is available",
+    "daily_body": "Ten events to put back in chronological order. Your turn to play!",
+    "recap_title": "📊 Your weekly recap is ready",
+    "recap_body": "Discover the XP you earned, the challenges you completed and the themes you mastered this week.",
+    "duel_title": "⚔️ Your duel awaits",
+    "duel_body": "Come see if your friend has taken on your challenge — and whether you've been beaten.",
+    "streak_reminder_fallback": "The Daily Challenge is waiting: 2 minutes to start your streak 🔥."
+  },
+  "scoring": {
+    "title": "How are points calculated?",
+    "exact_title": "🎯 Exact answer",
+    "exact_desc": "Every correct timeline slot, correct Quiz answer, or exact year found in Timeline mode earns 100 base points, multiplied by your current winning streak.",
+    "combo_title": "🔥 Streak (combo multiplier)",
+    "combo_desc": "Each correct answer in a row (without a hint) increases the multiplier by +0.1: ×1.0 → ×1.1 → ×1.2… up to ×5.0. The slightest mistake or use of a hint resets the multiplier to ×1.0.",
+    "combo_example": "Example: 3 correct answers in a row with no mistake earn 100, then 110, then 120 points.",
+    "proximity_title": "📐 Incorrect answer: proximity principle",
+    "proximity_desc": "A mistake isn't punished with 0 points: the gap in years from the real date is compared to the theme's chronological span to reward historical relevance.",
+    "proximity_example": "Example: on a 100-year theme, a 10-year mistake still earns 90 points (100 × (1 − 10/100)); an 80-year mistake earns 20 points.",
+    "proximity_life_note": "A life is lost on every mistake (except in Training mode), regardless of the points awarded.",
+    "speed_title": "⚡ Speed bonus (Chrono and Expert)",
+    "speed_desc": "In the timed Chrono and Expert modes, a correct answer given in under 3 seconds grants up to +50 extra points (tapering off to 0 beyond 15 seconds).",
+    "quiz_title": "❓ Quiz mode (multiple choice)",
+    "quiz_desc": "The proximity principle applies to the 4 dates offered. Using the 50:50 joker (2 per game) removes 2 wrong answers and halves the points obtainable on that question.",
+    "avap_title": "🥇 «Before / After» mode",
+    "avap_desc": "Two events are shown without their dates: you must guess which happened first.",
+    "avap_correct": "Correct answer: 100 points × combo multiplier — like Periods & Eras, there are no partial points, it's all or nothing.",
+    "avap_wrong": "Wrong answer: no points, a life is lost and the multiplier drops back to ×1.0. Both real dates are shown right away to correct you.",
+    "fil_title": "⏳ «Timeline» mode",
+    "fil_desc": "Events scroll by in chronological order and the exact year must be typed on the keypad:",
+    "fil_direct": "Exact direct entry: 100 points × combo multiplier.",
+    "fil_hint_btn_desc": "💡 Hint button: Reveals the era (BC / AD) on the first tap, then reveals the year's digits one by one from the left.",
+    "fil_penalty": "Penalty per digit: Each digit revealed by the hint deducts 25 points from the question and resets the multiplier to ×1.0.",
+    "fil_full_reveal": "Full reveal: Revealing every digit via the hint counts as a failure (0 points, a life is lost).",
+    "fil_wrong_entry": "Entry mistake: If the submitted year is wrong, partial proximity points are awarded (minus any hint penalties) and a life is lost.",
+    "ecart_title": "📏 «Find the Gap» mode",
+    "ecart_desc": "Two events are shown without their dates: you must guess the number of years between them, like a «Price is Right» game. You propose a number, the game tells you «more» or «less», and you try again.",
+    "ecart_attempts": "5 attempts per question: each question starts at 100 points, and each wrong guess costs 20 points (80, then 60, 40, 20…).",
+    "ecart_first_try": "Found on the first try: the 100 points are multiplied by the current combo, just like a correct answer in the other modes.",
+    "ecart_after_tries": "Found after one or more attempts: you earn the remaining points on the question (no combo bonus), and the multiplier drops back to ×1.0.",
+    "ecart_exhausted": "5 attempts used without finding the gap: 0 points on the question, the correct answer is shown, and a life is lost.",
+    "discovery_title": "🌱 Discovery and Training modes",
+    "discovery_desc": "These modes have no scoring system: they're designed for stress-free review and memorization with unlimited lives."
+  },
+  "modal": {
+    "wiki_link": "View on Wikipedia",
+    "redraw_btn": "🔀 Another event",
+    "play_theme_btn": "Play this theme",
+    "play_theme_btn_named": "Play «{theme}»"
   }
 }

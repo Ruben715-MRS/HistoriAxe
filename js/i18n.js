@@ -4,13 +4,17 @@
 
 const I18N_DATA_CACHE = 'historiaxe-data-v1.0.0';
 
+// Le nom de chaque langue reste dans sa propre langue (autonyme) — convention
+// standard des sélecteurs de langue, ne dépend jamais de la langue active.
+// La taille du pack, elle, est traduite à l'affichage (voir packSizeLabel()
+// ci-dessous) plutôt que figée ici en français.
 const AVAILABLE_LANGUAGES = [
-    { code: 'fr', name: 'Français', flag: '🇫🇷', version: '1.0.0', size: '11.7 Mo (Intégral)', isDefault: true },
-    { code: 'en', name: 'English', flag: '🇬🇧', version: '1.0.0', size: '150 Ko (Démo)', isDefault: false },
-    { code: 'es', name: 'Español', flag: '🇪🇸', version: '1.0.0', size: '150 Ko (Démo)', isDefault: false },
-    { code: 'de', name: 'Deutsch', flag: '🇩🇪', version: '1.0.0', size: '150 Ko (Démo)', isDefault: false },
-    { code: 'it', name: 'Italiano', flag: '🇮🇹', version: '1.0.0', size: '150 Ko (Démo)', isDefault: false },
-    { code: 'ja', name: '日本語', flag: '🇯🇵', version: '1.0.0', size: '150 Ko (Démo)', isDefault: false }
+    { code: 'fr', name: 'Français', flag: '🇫🇷', version: '1.0.0', sizeVal: '11.7', sizeUnit: 'mb', isDemo: false, isDefault: true },
+    { code: 'en', name: 'English', flag: '🇬🇧', version: '1.0.0', sizeVal: '150', sizeUnit: 'kb', isDemo: true, isDefault: false },
+    { code: 'es', name: 'Español', flag: '🇪🇸', version: '1.0.0', sizeVal: '150', sizeUnit: 'kb', isDemo: true, isDefault: false },
+    { code: 'de', name: 'Deutsch', flag: '🇩🇪', version: '1.0.0', sizeVal: '150', sizeUnit: 'kb', isDemo: true, isDefault: false },
+    { code: 'it', name: 'Italiano', flag: '🇮🇹', version: '1.0.0', sizeVal: '150', sizeUnit: 'kb', isDemo: true, isDefault: false },
+    { code: 'ja', name: '日本語', flag: '🇯🇵', version: '1.0.0', sizeVal: '150', sizeUnit: 'kb', isDemo: true, isDefault: false }
 ];
 
 // Dictionnaire de secours intégré pour garantir un affichage parfait même hors-ligne
@@ -115,6 +119,13 @@ class I18nManager {
             document.documentElement.lang = lang;
 
             this.applyTranslations();
+            try {
+                const appTitle = this.t('app.title');
+                const appSubtitle = this.t('app.subtitle');
+                if (appTitle && appTitle !== 'app.title') {
+                    document.title = appSubtitle && appSubtitle !== 'app.subtitle' ? `${appTitle} - ${appSubtitle}` : appTitle;
+                }
+            } catch (e) {}
             if (typeof initCategories === 'function') initCategories();
             if (typeof updateHeaderProfileBar === 'function') updateHeaderProfileBar();
             if (typeof renderSettingsUI === 'function') renderSettingsUI();
@@ -249,7 +260,12 @@ class I18nManager {
     applyTranslations() {
         document.querySelectorAll('[data-i18n]').forEach(el => {
             const key = el.getAttribute('data-i18n');
-            const translated = this.t(key);
+            let params;
+            const paramsAttr = el.getAttribute('data-i18n-params');
+            if (paramsAttr) {
+                try { params = JSON.parse(paramsAttr); } catch (e) { params = undefined; }
+            }
+            const translated = this.t(key, params);
             if (translated && translated !== key) {
                 el.innerText = translated;
             }
@@ -267,6 +283,14 @@ class I18nManager {
                 }
             });
         });
+    }
+
+    // Reconstruit « 150 Ko (Démo) » / « 11.7 Mo (Intégral) » dans la langue active,
+    // à partir des valeurs brutes de AVAILABLE_LANGUAGES (voir plus haut).
+    packSizeLabel(langItem) {
+        const sizeStr = this.t(langItem.sizeUnit === 'mb' ? 'settings.size_mb' : 'settings.size_kb', { val: langItem.sizeVal });
+        const suffix = this.t(langItem.isDemo ? 'settings.pack_demo_suffix' : 'settings.pack_full_suffix');
+        return `${sizeStr} (${suffix})`;
     }
 
     renderLanguagePacksSettingsUI() {
@@ -302,7 +326,7 @@ class I18nManager {
                 '<span class="lang-pack-flag">' + langItem.flag + '</span>' +
                 '<div class="lang-pack-info">' +
                     '<div class="lang-pack-name">' + langItem.name + ' ' + statusBadge + '</div>' +
-                    '<div class="lang-pack-details">' + langItem.size + ' • v' + langItem.version + '</div>' +
+                    '<div class="lang-pack-details">' + this.packSizeLabel(langItem) + ' • v' + langItem.version + '</div>' +
                 '</div>' +
             '</div>' +
             '<div class="lang-pack-actions">' + actionBtns + '</div>';

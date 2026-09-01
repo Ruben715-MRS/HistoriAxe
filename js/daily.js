@@ -53,7 +53,7 @@ function openDailyResultsModal(isWin) {
         ? (t('daily.title_win') || '🌍 Défi du jour relevé !')
         : (t('daily.title_over') || '🌍 Défi du jour terminé');
     if (scoreEl) scoreEl.innerText = Math.round(score);
-    if (timeEl) timeEl.innerText = `${totalTimePlayed.toFixed(1).replace('.', ',')} s`;
+    if (timeEl) timeEl.innerText = `${formatDecimal(totalTimePlayed)} s`;
 
     if (feedbackEl) { feedbackEl.innerText = ''; feedbackEl.className = 'daily-submit-feedback'; }
     if (submitBtn) {

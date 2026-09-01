@@ -198,7 +198,7 @@ function startGeoModeFromNode(node, label) {
         }
         const fullPool = collectGeoPool(node);
         if (fullPool.length < GEO_SESSION_MIN_EVENTS) {
-            alert("Cette zone ne contient pas assez d'événements géolocalisés pour jouer en Mode Carte.");
+            alert(t('carte.not_enough_events'));
             return;
         }
 
@@ -253,7 +253,7 @@ function renderGeoLocatePhase() {
     isAnimating = false;
     const round = geoCurrentRound;
 
-    document.getElementById('geo-phase-kicker').innerText = 'Où cet événement s\'est-il déroulé ?';
+    document.getElementById('geo-phase-kicker').innerText = t('carte.where_kicker');
     document.getElementById('geo-event-title').innerText = round.item.event.titre;
     document.getElementById('geo-event-desc').innerText = round.item.event.description || '';
     document.getElementById('geo-reveal-label').classList.add('hidden');
@@ -351,8 +351,8 @@ function answerGeoLocate(chosenIso2) {
     const flag = isoToFlagEmoji(round.correctIso2);
     const name = countryDisplayName(round.correctIso2);
     revealEl.innerHTML = isCorrect
-        ? `✅ Bonne réponse : ${flag} ${name}`
-        : `❌ C'était : ${flag} ${name}`;
+        ? t('carte.correct_reveal', { flag, name })
+        : t('carte.wrong_reveal', { flag, name });
     revealEl.classList.remove('hidden');
     revealEl.classList.toggle('is-correct', isCorrect);
     revealEl.classList.toggle('is-wrong', !isCorrect);
@@ -380,7 +380,7 @@ function renderGeoTimePhase() {
     document.getElementById('geo-map-phase').classList.add('hidden');
     const timePhase = document.getElementById('geo-time-phase');
     timePhase.classList.remove('hidden');
-    document.getElementById('geo-time-kicker').innerText = 'En quelle année cet événement a-t-il eu lieu ?';
+    document.getElementById('geo-time-kicker').innerText = t('game.quiz_event_to_year');
 
     const optionsContainer = document.getElementById('geo-time-options');
     optionsContainer.innerHTML = '';
@@ -489,8 +489,8 @@ function buildGeoModeCard(node, label) {
     card.style.background = 'linear-gradient(135deg, #0B6E4F, #08A045)';
     card.style.gridColumn = '1 / -1';
     card.innerHTML = `
-        <div class="special-card-title">🗺️ Mode Carte</div>
-        <div class="special-card-subtitle">Situez les événements de « ${label} » sur la carte du monde, puis dans le temps.</div>
+        <div class="special-card-title">${t('carte.mode_title')}</div>
+        <div class="special-card-subtitle">${t('carte.mode_subtitle', { label })}</div>
     `;
     card.onclick = () => startGeoModeFromNode(node, label);
     return card;

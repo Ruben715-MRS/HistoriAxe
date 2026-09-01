@@ -47,25 +47,25 @@
 
     <!-- ÉCRAN 2 : CATÉGORIES (Grandes sections) -->
     <div id="screen-categories" class="list-screen hidden">
-        <button class="back-btn" onclick="showScreen('screen-home')" aria-label="Retour à l'accueil">‹</button>
-        <button class="league-btn" onclick="openLeagueModal()" aria-label="Ligue hebdomadaire">🥇</button>
-        <button class="profile-btn" onclick="openProfileModal()" aria-label="Profil et Trophées">🏅</button>
-        <button class="settings-btn" onclick="openSettings()" aria-label="Réglages">⚙</button>
+        <button class="back-btn" onclick="showScreen('screen-home')" aria-label="Retour à l'accueil" data-i18n-attr="aria-label:nav.back">‹</button>
+        <button class="league-btn" onclick="openLeagueModal()" aria-label="Ligue hebdomadaire" data-i18n-attr="aria-label:categories.league_btn_aria">🥇</button>
+        <button class="profile-btn" onclick="openProfileModal()" aria-label="Profil et Trophées" data-i18n-attr="aria-label:categories.profile_btn_aria">🏅</button>
+        <button class="settings-btn" onclick="openSettings()" aria-label="Réglages" data-i18n-attr="aria-label:categories.settings_btn_aria">⚙</button>
         <div class="search-bar-wrap">
             <div class="search-bar">
                 <span class="search-bar-icon" aria-hidden="true">🔍</span>
-                <input type="text" id="theme-search-input" class="search-bar-input" placeholder="Rechercher un thème…" autocomplete="off" oninput="onThemeSearchInput(this.value)" aria-label="Rechercher un thème">
-                <span class="search-bar-clear hidden" id="theme-search-clear" onclick="clearThemeSearch()" title="Effacer" aria-label="Effacer la recherche">✕</span>
+                <input type="text" id="theme-search-input" class="search-bar-input" placeholder="Rechercher un thème…" autocomplete="off" oninput="onThemeSearchInput(this.value)" aria-label="Rechercher un thème" data-i18n-attr="placeholder:categories.search_placeholder;aria-label:categories.search_placeholder">
+                <span class="search-bar-clear hidden" id="theme-search-clear" onclick="clearThemeSearch()" title="Effacer" aria-label="Effacer la recherche" data-i18n-attr="title:categories.search_clear_title;aria-label:categories.search_clear_title">✕</span>
             </div>
             <div id="theme-search-results" class="search-results hidden"></div>
-            
+
             <!-- Bannière de Grade & Progression XP -->
-            <div class="player-rank-bar" onclick="openProfileModal()" title="Voir mon profil et mes trophées">
+            <div class="player-rank-bar" onclick="openProfileModal()" title="Voir mon profil et mes trophées" data-i18n-attr="title:categories.profile_btn_title">
                 <div class="player-rank-avatar" id="header-rank-avatar">📜</div>
                 <div class="player-rank-details">
                     <div class="player-rank-row">
                         <span class="player-rank-title" id="header-rank-title">Novice des Annales</span>
-                        <span class="player-rank-streak-badge hidden" id="header-streak-badge" title="Série quotidienne : plus elle est longue, plus l'XP gagné est multiplié">🔥 0</span>
+                        <span class="player-rank-streak-badge hidden" id="header-streak-badge" title="Série quotidienne : plus elle est longue, plus l'XP gagné est multiplié" data-i18n-attr="title:categories.streak_badge_title">🔥 0</span>
                         <span class="player-rank-level-badge" id="header-rank-level">Niv. 1</span>
                     </div>
                     <div class="player-rank-track">
@@ -80,24 +80,24 @@
 
     <!-- ÉCRAN 2ter : RÉVISION DES POINTS FAIBLES (choix session mélangée / reprise d'un thème) + PROGRESSION PAR THÈME -->
     <div id="screen-revision-hub" class="list-screen hidden">
-        <button class="back-btn" onclick="showScreen('screen-categories')" aria-label="Retour aux catégories">‹</button>
-        <h2 class="header-title">Réviser mes points faibles</h2>
+        <button class="back-btn" onclick="showScreen('screen-categories')" aria-label="Retour aux catégories" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" data-i18n="revision.hub_title">Réviser mes points faibles</h2>
         <div class="segmented" id="revision-hub-tabs">
-            <button type="button" data-value="weak">Points faibles</button>
-            <button type="button" data-value="progress">Progression</button>
+            <button type="button" data-value="weak" data-i18n="revision.tab_weak">Points faibles</button>
+            <button type="button" data-value="progress" data-i18n="revision.tab_progress">Progression</button>
         </div>
 
         <div id="revision-hub-weak-container">
             <p id="revision-hub-subtitle" class="revision-hub-subtitle"></p>
 
-            <div id="revision-hub-empty" class="empty-msg hidden">
+            <div id="revision-hub-empty" class="empty-msg hidden" data-i18n="revision.weak_empty">
                 Aucun point faible détecté pour l'instant. Les événements que vous répondez de travers lors d'une partie apparaîtront ici pour être retravaillés.
             </div>
 
             <div id="revision-hub-content" class="revision-hub-content hidden">
                 <div class="revision-option-block">
-                    <h3 class="revision-option-title">🎲 Session aléatoire</h3>
-                    <p class="revision-option-desc">Un mélange de vos points faibles, toutes catégories confondues. Si vous en avez moins que le nombre choisi, on vous montre tout ce qu'il y a.</p>
+                    <h3 class="revision-option-title" data-i18n="revision.random_session_title">🎲 Session aléatoire</h3>
+                    <p class="revision-option-desc" data-i18n="revision.random_session_desc">Un mélange de vos points faibles, toutes catégories confondues. Si vous en avez moins que le nombre choisi, on vous montre tout ce qu'il y a.</p>
                     <div class="revision-quantity-row">
                         <button class="btn quantity-btn" onclick="launchRandomRevision(10)">10</button>
                         <button class="btn quantity-btn" onclick="launchRandomRevision(20)">20</button>
@@ -108,14 +108,14 @@
                 </div>
 
                 <div class="revision-option-block">
-                    <h3 class="revision-option-title">📚 Reprendre un thème entier</h3>
-                    <p class="revision-option-desc">Retournez vous entraîner sur l'intégralité d'un thème où des dates vous ont posé difficulté.</p>
+                    <h3 class="revision-option-title" data-i18n="revision.theme_session_title">📚 Reprendre un thème entier</h3>
+                    <p class="revision-option-desc" data-i18n="revision.theme_session_desc">Retournez vous entraîner sur l'intégralité d'un thème où des dates vous ont posé difficulté.</p>
                     <div class="grid-cards" id="revision-themes-container"></div>
                 </div>
             </div>
 
             <div style="margin-top: 30px; margin-bottom: 50px; display:flex; align-items:center; justify-content:center; gap:15px;">
-                <span class="reset-srs-btn reset-srs-link" id="reset-srs-btn-hub" title="Réinitialiser le suivi de révision">⟲ Réinitialiser</span>
+                <span class="reset-srs-btn reset-srs-link" id="reset-srs-btn-hub" title="Réinitialiser le suivi de révision" data-i18n="revision.reset_srs" data-i18n-attr="title:revision.reset_srs">⟲ Réinitialiser</span>
             </div>
         </div>
 
@@ -123,17 +123,17 @@
             <p class="progress-subtitle">Maîtrise calculée à partir de votre historique de jeu (boîtes de mémorisation), tous modes et toutes parties confondus : elle tient compte à la fois de la qualité de vos réponses et de la part du thème déjà couverte (un thème à peine entamé ne peut donc pas afficher un score élevé, même si le peu que vous avez tenté est réussi). Les thèmes et catégories les moins maîtrisés apparaissent en premier : c'est par là qu'il est le plus utile de commencer à réviser.</p>
 
             <div class="progress-legend">
-                <span class="progress-legend-item"><span class="progress-legend-dot" style="background:#2ECC71;"></span>Bien maîtrisé (≥ 75%)</span>
-                <span class="progress-legend-item"><span class="progress-legend-dot" style="background:#E0A639;"></span>À consolider (40-74%)</span>
-                <span class="progress-legend-item"><span class="progress-legend-dot" style="background:var(--danger-red);"></span>Fragile (&lt; 40%)</span>
-                <span class="progress-legend-item"><span class="progress-legend-dot" style="background:var(--border-soft);"></span>Pas encore testé</span>
+                <span class="progress-legend-item"><span class="progress-legend-dot" style="background:#2ECC71;"></span><span data-i18n="revision.progress_legend_high">Bien maîtrisé (≥ 75%)</span></span>
+                <span class="progress-legend-item"><span class="progress-legend-dot" style="background:#E0A639;"></span><span data-i18n="revision.progress_legend_mid">À consolider (40-74%)</span></span>
+                <span class="progress-legend-item"><span class="progress-legend-dot" style="background:var(--danger-red);"></span><span data-i18n="revision.progress_legend_low">Fragile (&lt; 40%)</span></span>
+                <span class="progress-legend-item"><span class="progress-legend-dot" style="background:var(--border-soft);"></span><span data-i18n="revision.progress_legend_none">Pas encore testé</span></span>
             </div>
 
             <div id="progress-radar-wrap" class="progress-radar-wrap">
                 <div id="progress-radar-container"></div>
             </div>
 
-            <div id="progress-empty" class="empty-msg hidden">
+            <div id="progress-empty" class="empty-msg hidden" data-i18n="revision.progress_empty">
                 Aucune donnée pour l'instant. Jouez quelques parties pour voir apparaître ici votre progression par thème et par catégorie.
             </div>
 
@@ -143,10 +143,10 @@
 
     <!-- ÉCRAN 2bis : SOUS-CATÉGORIES (régions, uniquement pour les catégories qui en définissent) -->
     <div id="screen-subcategories" class="list-screen hidden">
-        <button class="back-btn" onclick="backFromSubcategories()" aria-label="Retour">‹</button>
-        <h2 class="header-title" id="subcategory-screen-title">Choisissez une région</h2>
+        <button class="back-btn" onclick="backFromSubcategories()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" id="subcategory-screen-title" data-i18n="subcategories.choose_region">Choisissez une région</h2>
         <div id="subcategory-note" class="subcategory-note hidden">
-            <div class="subcategory-note-title">Note importante</div>
+            <div class="subcategory-note-title" data-i18n="subcategories.note_title">Note importante</div>
             <p id="subcategory-note-text"></p>
         </div>
         <div class="list-categories" id="subcategories-container"></div>
@@ -154,39 +154,39 @@
 
     <!-- ÉCRAN 3 : THÈMES (Sous-sections) -->
     <div id="screen-themes" class="list-screen hidden">
-        <button class="back-btn" onclick="backFromThemes()" aria-label="Retour">‹</button>
-        <h2 class="header-title" id="theme-screen-title">Thèmes</h2>
+        <button class="back-btn" onclick="backFromThemes()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" id="theme-screen-title" data-i18n="themes.choose_theme">Thèmes</h2>
         <div class="grid-cards" id="themes-container"></div>
     </div>
 
     <!-- ÉCRAN 3bis : AXES THÉMATIQUES (filtre optionnel, si le thème en propose) -->
     <div id="screen-axes" class="list-screen hidden">
-        <button class="back-btn" onclick="axisFilterActive=false; showScreen('screen-themes', 'back')" aria-label="Retour aux thèmes">‹</button>
-        <h2 class="header-title">Filtrer par axe thématique</h2>
+        <button class="back-btn" onclick="axisFilterActive=false; showScreen('screen-themes', 'back')" aria-label="Retour aux thèmes" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" data-i18n="axes.title">Filtrer par axe thématique</h2>
         <p id="axes-subtitle" style="font-size:14px; color:var(--muted-text); margin-bottom:20px;"></p>
         <div class="grid-cards" id="axes-container"></div>
         <div style="margin-top: 30px; margin-bottom: 50px; display:flex; gap:15px; justify-content:center;">
-            <button class="btn" id="axes-continue-btn" onclick="confirmAxesSelection()">Continuer ›</button>
+            <button class="btn" id="axes-continue-btn" onclick="confirmAxesSelection()" data-i18n="axes.continue_btn">Continuer ›</button>
         </div>
     </div>
 
     <!-- ÉCRAN 4 : MODES DE JEU -->
     <div id="screen-modes" class="list-screen hidden">
-        <button class="back-btn" onclick="backFromModes()" aria-label="Retour">‹</button>
-        <h2 class="header-title" id="modes-header-title">Choisissez un mode de jeu</h2>
-        
+        <button class="back-btn" onclick="backFromModes()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" id="modes-header-title" data-i18n="modes.choose_mode">Choisissez un mode de jeu</h2>
+
         <div class="grid-modes">
             <div class="mode-card" id="mode-card-discovery" style="background-color: #2c3e50;" onclick="startActualGame('discovery')">
-                <h3>Découverte</h3>
-                <p>Consultez la frise chronologique sans jouer.</p>
+                <h3 data-i18n="modes.discovery.title">Découverte</h3>
+                <p data-i18n="modes.discovery.desc">Consultez la frise chronologique sans jouer.</p>
             </div>
             <div class="mode-card" style="background-color: #34495e;" onclick="openSelectionMode()">
-                <h3>Sélection</h3>
-                <p>Choisissez les événements à conserver dans la partie.</p>
+                <h3 data-i18n="modes.selection.title">Sélection</h3>
+                <p data-i18n="modes.selection.desc">Choisissez les événements à conserver dans la partie.</p>
             </div>
             <div class="mode-card" style="background-color: #34495e;" onclick="openAddEventModal()">
-                <h3>Ajouter un événement</h3>
-                <p>Créez vos événements pour ce thème.</p>
+                <h3 data-i18n="modes.add_event.title">Ajouter un événement</h3>
+                <p data-i18n="modes.add_event.desc">Créez vos événements pour ce thème.</p>
             </div>
         </div>
 
@@ -194,20 +194,20 @@
 
         <div class="grid-modes-square">
             <div class="mode-card" onclick="startActualGame('training')">
-                <h3>Entraînement</h3>
-                <p>Aucune vie perdue. Jouez à votre rythme.</p>
+                <h3 data-i18n="modes.training.title">Entraînement</h3>
+                <p data-i18n="modes.training.desc">Aucune vie perdue. Jouez à votre rythme.</p>
             </div>
             <div class="mode-card" onclick="startActualGame('classic')">
-                <h3>Classique</h3>
-                <p>3 vies. Le mode de jeu standard.</p>
+                <h3 data-i18n="modes.classic.title">Classique</h3>
+                <p data-i18n="modes.classic.desc">3 vies. Le mode de jeu standard.</p>
             </div>
             <div class="mode-card" id="mode-card-chrono">
-                <h3>Chrono</h3>
-                <p>3 vies. Placez-les vite.</p>
+                <h3 data-i18n="modes.chrono.title">Chrono</h3>
+                <p data-i18n="modes.chrono.desc">3 vies. Placez-les vite.</p>
             </div>
             <div class="mode-card" id="mode-card-expert">
-                <h3>Expert</h3>
-                <p>1 vie, chronométré.</p>
+                <h3 data-i18n="modes.expert.title">Expert</h3>
+                <p data-i18n="modes.expert.desc">1 vie, chronométré.</p>
             </div>
         </div>
 
@@ -215,28 +215,28 @@
 
         <div class="grid-modes">
             <div class="mode-card quiz-card" onclick="startQuizGame()">
-                <h3>Quiz</h3>
-                <p>Questions à choix multiples (QCM).</p>
+                <h3 data-i18n="modes.quiz.title">Quiz</h3>
+                <p data-i18n="modes.quiz.desc">Questions à choix multiples (QCM).</p>
             </div>
             <div class="mode-card avap-card" onclick="startAvapGame()">
-                <h3>Avant / Après</h3>
-                <p>3 vies. Entre deux événements sans dates, devinez lequel s'est produit en premier.</p>
+                <h3 data-i18n="modes.avantapres.title">Avant / Après</h3>
+                <p data-i18n="modes.avantapres.desc">3 vies. Entre deux événements sans dates, devinez lequel s'est produit en premier.</p>
             </div>
             <div class="mode-card periodes-card" onclick="startPeriodesGame()">
-                <h3>Périodes & Ères</h3>
-                <p>3 vies. Situez chaque événement dans son siècle, son époque ou ses contemporains.</p>
+                <h3 data-i18n="modes.periodes.title">Périodes & Ères</h3>
+                <p data-i18n="modes.periodes.desc">3 vies. Situez chaque événement dans son siècle, son époque ou ses contemporains.</p>
             </div>
             <div class="mode-card fil-card" onclick="startFilGame()">
-                <h3>Le fil du temps</h3>
-                <p>Du tout premier événement du thème jusqu'au dernier, dans l'ordre chronologique : saisissez l'année exacte au clavier.</p>
+                <h3 data-i18n="modes.fil.title">Le fil du temps</h3>
+                <p data-i18n="modes.fil.desc">Du tout premier événement du thème jusqu'au dernier, dans l'ordre chronologique : saisissez l'année exacte au clavier.</p>
             </div>
             <div class="mode-card ecart-card" onclick="startEcartGame()">
-                <h3>Trouve l'écart</h3>
-                <p>3 vies. Devinez le nombre d'années entre deux événements : 5 essais, le jeu vous dit si c'est plus ou moins.</p>
+                <h3 data-i18n="modes.ecart.title">Trouve l'écart</h3>
+                <p data-i18n="modes.ecart.desc">3 vies. Devinez le nombre d'années entre deux événements : 5 essais, le jeu vous dit si c'est plus ou moins.</p>
             </div>
             <div class="mode-card multi-card" onclick="showMultiplayerSetup()">
-                <h3>Multijoueurs</h3>
-                <p>À tour de rôle, élimination au bout de 2 erreurs.</p>
+                <h3 data-i18n="modes.multi.title">Multijoueurs</h3>
+                <p data-i18n="modes.multi.desc">À tour de rôle, élimination au bout de 2 erreurs.</p>
             </div>
         </div>
 
@@ -249,20 +249,20 @@
     <!-- ÉCRAN MULTIJOUEURS SETUP -->
     <div id="screen-multiplayer-setup" class="hidden">
         <div class="header">
-            <h2>Mode Multijoueurs</h2>
+            <h2 data-i18n="multiplayer.title">Mode Multijoueurs</h2>
         </div>
         <div class="multiplayer-setup-container">
-            <label for="multi-player-count">Nombre de joueurs :</label>
+            <label for="multi-player-count" data-i18n="multiplayer.player_count_label">Nombre de joueurs :</label>
             <select id="multi-player-count" onchange="renderMultiplayerNameInputs()">
-                <option value="2">2 Joueurs</option>
-                <option value="3">3 Joueurs</option>
-                <option value="4">4 Joueurs</option>
+                <option value="2" data-i18n="multiplayer.player_count_option" data-i18n-params='{"n":2}'>2 Joueurs</option>
+                <option value="3" data-i18n="multiplayer.player_count_option" data-i18n-params='{"n":3}'>3 Joueurs</option>
+                <option value="4" data-i18n="multiplayer.player_count_option" data-i18n-params='{"n":4}'>4 Joueurs</option>
             </select>
             <div id="multi-player-names">
                 <!-- Inputs générés dynamiquement -->
             </div>
-            <button class="btn" style="width:100%; margin-top:20px; background-color:#8e44ad;" onclick="startMultiplayerGame()">Commencer la partie</button>
-            <button class="btn btn-secondary" style="width:100%; margin-top:10px;" onclick="showScreen('screen-modes')">Annuler</button>
+            <button class="btn" style="width:100%; margin-top:20px; background-color:#8e44ad;" onclick="startMultiplayerGame()" data-i18n="multiplayer.start_btn">Commencer la partie</button>
+            <button class="btn btn-secondary" style="width:100%; margin-top:10px;" onclick="showScreen('screen-modes')" data-i18n="nav.cancel">Annuler</button>
         </div>
     </div>
 
@@ -270,21 +270,21 @@
     <div id="screen-multi-turn" class="hidden" style="position: fixed; inset: 0; background: #ecf0f1; z-index: 9999;">
         <div class="multi-turn-banner">
             <h2 id="multi-turn-text">À Joueur 1 de jouer !</h2>
-            <button class="btn" style="background-color:#E67E22; font-size:20px; padding:15px 30px;" onclick="resumeMultiplayerTurn()">Prêt ?</button>
+            <button class="btn" style="background-color:#E67E22; font-size:20px; padding:15px 30px;" onclick="resumeMultiplayerTurn()" data-i18n="multiplayer.ready_btn">Prêt ?</button>
         </div>
     </div>
 
     <!-- ÉCRAN MULTIJOUEURS FIN -->
     <div id="screen-multiplayer-end" class="hidden">
-        <button class="back-btn" onclick="showScreen('screen-modes')" aria-label="Retour aux modes">‹</button>
+        <button class="back-btn" onclick="showScreen('screen-modes')" aria-label="Retour aux modes" data-i18n-attr="aria-label:nav.back">‹</button>
         <div class="header">
-            <h2>Résultats Multijoueurs</h2>
+            <h2 data-i18n="multiplayer.results_title">Résultats Multijoueurs</h2>
         </div>
         <div class="multiplayer-setup-container" style="max-width:600px;">
             <div id="multi-podium" class="multi-end-podium">
                 <!-- Classement généré dynamiquement -->
             </div>
-            <button class="btn" style="background-color:#8e44ad; margin-bottom:15px; width:100%;" onclick="showMultiplayerSetup()">Rejouer</button>
+            <button class="btn" style="background-color:#8e44ad; margin-bottom:15px; width:100%;" onclick="showMultiplayerSetup()" data-i18n="end.replay_btn">Rejouer</button>
         </div>
     </div>
 
@@ -293,13 +293,13 @@
     <div id="screen-game" class="hidden">
         <div class="game-bar">
             <div class="bar-row">
-                <button class="quit-btn" onclick="quitGame()">‹ Quitter</button>
+                <button class="quit-btn" onclick="quitGame()">‹ <span data-i18n="nav.quit">Quitter</span></button>
                 <span class="bar-fill"></span>
                 <span id="hud-timer-container" class="timer-chip hidden"><span id="hud-timer">0,0</span> s</span>
                 <span class="lives-row" id="hud-lives"></span>
                 <span class="type-size">
-                    <button type="button" onclick="changeZoom(-0.15)" aria-label="Réduire le texte">A−</button>
-                    <button type="button" onclick="changeZoom(0.15)" aria-label="Agrandir le texte">A+</button>
+                    <button type="button" onclick="changeZoom(-0.15)" aria-label="Réduire le texte" data-i18n-attr="aria-label:game.decrease_text_aria">A−</button>
+                    <button type="button" onclick="changeZoom(0.15)" aria-label="Agrandir le texte" data-i18n-attr="aria-label:game.increase_text_aria">A+</button>
                 </span>
             </div>
             <div class="bar-row">
@@ -318,8 +318,8 @@
             <div class="hand-card">
                 <span class="hand-year" id="hand-year">?</span>
                 <span class="hand-text">
-                    <span class="hand-kicker" id="hand-kicker">À placer</span>
-                    <span class="hand-title" id="hand-title">Chargement…</span>
+                    <span class="hand-kicker" id="hand-kicker" data-i18n="game.hand_kicker_default">À placer</span>
+                    <span class="hand-title" id="hand-title" data-i18n="nav.loading">Chargement…</span>
                 </span>
             </div>
         </div>
@@ -327,16 +327,16 @@
 
     <!-- ÉCRAN : SÉLECTION -->
     <div id="screen-selection" class="list-screen hidden">
-        <button class="back-btn" onclick="showScreen('screen-modes')" aria-label="Retour">‹</button>
-        <h2 class="header-title">Sélection des événements</h2>
-        <p style="font-size:14px; color:var(--muted-text); margin-bottom:15px;">Décochez les événements que vous ne souhaitez pas faire apparaître.</p>
+        <button class="back-btn" onclick="showScreen('screen-modes')" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" data-i18n="selection.title">Sélection des événements</h2>
+        <p style="font-size:14px; color:var(--muted-text); margin-bottom:15px;" data-i18n="selection.subtitle">Décochez les événements que vous ne souhaitez pas faire apparaître.</p>
         <div style="display:flex; gap:10px; justify-content:center; margin-bottom:15px;">
-            <button class="btn btn-secondary" style="padding:6px 12px; font-size:13px;" onclick="selectAllEvents(true)">Tout cocher</button>
-            <button class="btn btn-secondary" style="padding:6px 12px; font-size:13px;" onclick="selectAllEvents(false)">Tout décocher</button>
+            <button class="btn btn-secondary" style="padding:6px 12px; font-size:13px;" onclick="selectAllEvents(true)" data-i18n="selection.check_all">Tout cocher</button>
+            <button class="btn btn-secondary" style="padding:6px 12px; font-size:13px;" onclick="selectAllEvents(false)" data-i18n="selection.uncheck_all">Tout décocher</button>
         </div>
         <div class="selection-list" id="selection-list-container"></div>
         <div style="margin-top: 20px; margin-bottom: 50px; display:flex; gap:15px; justify-content:center;">
-            <button class="btn" onclick="saveSelectionAndReturn()">Valider la sélection</button>
+            <button class="btn" onclick="saveSelectionAndReturn()" data-i18n="selection.validate_btn">Valider la sélection</button>
         </div>
     </div>
 
@@ -344,12 +344,12 @@
     <div id="screen-quiz" class="hidden">
         <div class="game-bar">
             <div class="bar-row">
-                <button class="quit-btn" onclick="quitGame()">‹ Quitter</button>
+                <button class="quit-btn" onclick="quitGame()">‹ <span data-i18n="nav.quit">Quitter</span></button>
                 <span class="bar-fill"></span>
                 <span class="lives-row" id="quiz-hud-lives"></span>
                 <span class="type-size">
-                    <button type="button" onclick="changeZoom(-0.15)" aria-label="Réduire le texte">A−</button>
-                    <button type="button" onclick="changeZoom(0.15)" aria-label="Agrandir le texte">A+</button>
+                    <button type="button" onclick="changeZoom(-0.15)" aria-label="Réduire le texte" data-i18n-attr="aria-label:game.decrease_text_aria">A−</button>
+                    <button type="button" onclick="changeZoom(0.15)" aria-label="Agrandir le texte" data-i18n-attr="aria-label:game.increase_text_aria">A+</button>
                 </span>
             </div>
             <div class="bar-row">
@@ -361,8 +361,8 @@
 
         <div class="quiz-body">
             <div class="quiz-question-card">
-                <div class="quiz-kicker" id="quiz-kicker">En quelle année cet événement a-t-il eu lieu ?</div>
-                <div class="quiz-prompt" id="quiz-prompt">Chargement…</div>
+                <div class="quiz-kicker" id="quiz-kicker" data-i18n="game.quiz_event_to_year">En quelle année cet événement a-t-il eu lieu ?</div>
+                <div class="quiz-prompt" id="quiz-prompt" data-i18n="nav.loading">Chargement…</div>
             </div>
             <div class="quiz-options" id="quiz-options"></div>
             <div class="quiz-fifty-row">
@@ -375,12 +375,12 @@
     <div id="screen-carte" class="hidden">
         <div class="game-bar">
             <div class="bar-row">
-                <button class="quit-btn" onclick="quitGame()">‹ Quitter</button>
+                <button class="quit-btn" onclick="quitGame()">‹ <span data-i18n="nav.quit">Quitter</span></button>
                 <span class="bar-fill"></span>
                 <span class="lives-row" id="geo-hud-lives"></span>
                 <span class="type-size">
-                    <button type="button" onclick="changeZoom(-0.15)" aria-label="Réduire le texte">A−</button>
-                    <button type="button" onclick="changeZoom(0.15)" aria-label="Agrandir le texte">A+</button>
+                    <button type="button" onclick="changeZoom(-0.15)" aria-label="Réduire le texte" data-i18n-attr="aria-label:game.decrease_text_aria">A−</button>
+                    <button type="button" onclick="changeZoom(0.15)" aria-label="Agrandir le texte" data-i18n-attr="aria-label:game.increase_text_aria">A+</button>
                 </span>
             </div>
             <div class="bar-row">
@@ -391,10 +391,10 @@
         </div>
 
         <div class="geo-body">
-            <div class="geo-scope-chip" id="geo-scope-label">Monde</div>
+            <div class="geo-scope-chip" id="geo-scope-label" data-i18n="carte.world_label">Monde</div>
             <div class="quiz-question-card">
-                <div class="geo-phase-kicker" id="geo-phase-kicker">Où cet événement s'est-il déroulé ?</div>
-                <div class="geo-event-title" id="geo-event-title">Chargement…</div>
+                <div class="geo-phase-kicker" id="geo-phase-kicker" data-i18n="carte.where_kicker">Où cet événement s'est-il déroulé ?</div>
+                <div class="geo-event-title" id="geo-event-title" data-i18n="nav.loading">Chargement…</div>
                 <div class="geo-event-desc" id="geo-event-desc"></div>
             </div>
 
@@ -408,7 +408,7 @@
             </div>
 
             <div class="geo-time-phase hidden" id="geo-time-phase">
-                <div class="quiz-kicker" id="geo-time-kicker">En quelle année cet événement a-t-il eu lieu ?</div>
+                <div class="quiz-kicker" id="geo-time-kicker" data-i18n="game.quiz_event_to_year">En quelle année cet événement a-t-il eu lieu ?</div>
                 <div class="quiz-options" id="geo-time-options"></div>
             </div>
         </div>
@@ -418,12 +418,12 @@
     <div id="screen-fil" class="hidden">
         <div class="game-bar">
             <div class="bar-row">
-                <button class="quit-btn" onclick="quitGame()">‹ Quitter</button>
+                <button class="quit-btn" onclick="quitGame()">‹ <span data-i18n="nav.quit">Quitter</span></button>
                 <span class="bar-fill"></span>
                 <span class="lives-row" id="fil-hud-lives"></span>
                 <span class="type-size">
-                    <button type="button" onclick="changeZoom(-0.15)" aria-label="Réduire le texte">A−</button>
-                    <button type="button" onclick="changeZoom(0.15)" aria-label="Agrandir le texte">A+</button>
+                    <button type="button" onclick="changeZoom(-0.15)" aria-label="Réduire le texte" data-i18n-attr="aria-label:game.decrease_text_aria">A−</button>
+                    <button type="button" onclick="changeZoom(0.15)" aria-label="Agrandir le texte" data-i18n-attr="aria-label:game.increase_text_aria">A+</button>
                 </span>
             </div>
             <div class="bar-row">
@@ -435,16 +435,16 @@
 
         <div class="fil-body">
             <div class="fil-question-card">
-                <div class="fil-kicker">Quelle est l'année exacte de cet événement ?</div>
-                <div class="fil-prompt" id="fil-prompt">Chargement…</div>
+                <div class="fil-kicker" data-i18n="game.fil_enter_year">Quelle est l'année exacte de cet événement ?</div>
+                <div class="fil-prompt" id="fil-prompt" data-i18n="nav.loading">Chargement…</div>
             </div>
 
             <div class="fil-display">
-                <button class="fil-hint-btn" id="fil-hint-btn" onclick="filUseHint()">💡 Indice</button>
+                <button class="fil-hint-btn" id="fil-hint-btn" onclick="filUseHint()" data-i18n="game.hint_btn_full">💡 Indice</button>
                 <span class="fil-display-value" id="fil-display-value">—</span>
-                <button class="fil-era-btn" id="fil-era-btn" onclick="filToggleEra()">apr. J.-C.</button>
+                <button class="fil-era-btn" id="fil-era-btn" onclick="filToggleEra()" data-i18n="game.era_ad">apr. J.-C.</button>
             </div>
-            
+
             <div class="fil-answer-badge hidden" id="fil-answer-badge"></div>
 
             <div class="fil-keypad">
@@ -457,12 +457,12 @@
                 <button class="fil-key" onclick="filKeyPress('7')">7</button>
                 <button class="fil-key" onclick="filKeyPress('8')">8</button>
                 <button class="fil-key" onclick="filKeyPress('9')">9</button>
-                <button class="fil-key fil-key-erase" onclick="filClear()">Effacer</button>
+                <button class="fil-key fil-key-erase" onclick="filClear()" data-i18n="game.erase_btn">Effacer</button>
                 <button class="fil-key" onclick="filKeyPress('0')">0</button>
                 <button class="fil-key fil-key-erase" onclick="filBackspace()">⌫</button>
             </div>
 
-            <button class="fil-validate-btn" id="fil-validate-btn" onclick="filSubmit()" disabled>Valider</button>
+            <button class="fil-validate-btn" id="fil-validate-btn" onclick="filSubmit()" disabled data-i18n="game.validate_btn">Valider</button>
         </div>
     </div>
 
@@ -470,12 +470,12 @@
     <div id="screen-periodes" class="hidden">
         <div class="game-bar">
             <div class="bar-row">
-                <button class="quit-btn" onclick="quitGame()">‹ Quitter</button>
+                <button class="quit-btn" onclick="quitGame()">‹ <span data-i18n="nav.quit">Quitter</span></button>
                 <span class="bar-fill"></span>
                 <span class="lives-row" id="periodes-hud-lives"></span>
                 <span class="type-size">
-                    <button type="button" onclick="changeZoom(-0.15)" aria-label="Réduire le texte">A−</button>
-                    <button type="button" onclick="changeZoom(0.15)" aria-label="Agrandir le texte">A+</button>
+                    <button type="button" onclick="changeZoom(-0.15)" aria-label="Réduire le texte" data-i18n-attr="aria-label:game.decrease_text_aria">A−</button>
+                    <button type="button" onclick="changeZoom(0.15)" aria-label="Agrandir le texte" data-i18n-attr="aria-label:game.increase_text_aria">A+</button>
                 </span>
             </div>
             <div class="bar-row">
@@ -487,8 +487,8 @@
 
         <div class="periodes-body">
             <div class="periodes-question-card">
-                <div class="periodes-kicker" id="periodes-kicker">Tranche chronologique & Siècle</div>
-                <div class="periodes-prompt" id="periodes-prompt">Chargement…</div>
+                <div class="periodes-kicker" id="periodes-kicker" data-i18n="periodes.century_kicker">Tranche chronologique & Siècle</div>
+                <div class="periodes-prompt" id="periodes-prompt" data-i18n="nav.loading">Chargement…</div>
                 <div class="periodes-tag hidden" id="periodes-tag"></div>
             </div>
             <div class="periodes-options" id="periodes-options"></div>
@@ -499,12 +499,12 @@
     <div id="screen-avant-apres" class="hidden">
         <div class="game-bar">
             <div class="bar-row">
-                <button class="quit-btn" onclick="quitGame()">‹ Quitter</button>
+                <button class="quit-btn" onclick="quitGame()">‹ <span data-i18n="nav.quit">Quitter</span></button>
                 <span class="bar-fill"></span>
                 <span class="lives-row" id="avap-hud-lives"></span>
                 <span class="type-size">
-                    <button type="button" onclick="changeZoom(-0.15)" aria-label="Réduire le texte">A−</button>
-                    <button type="button" onclick="changeZoom(0.15)" aria-label="Agrandir le texte">A+</button>
+                    <button type="button" onclick="changeZoom(-0.15)" aria-label="Réduire le texte" data-i18n-attr="aria-label:game.decrease_text_aria">A−</button>
+                    <button type="button" onclick="changeZoom(0.15)" aria-label="Agrandir le texte" data-i18n-attr="aria-label:game.increase_text_aria">A+</button>
                 </span>
             </div>
             <div class="bar-row">
@@ -515,15 +515,15 @@
         </div>
 
         <div class="avap-body">
-            <div class="avap-kicker-card">Lequel de ces deux événements s'est produit en premier ?</div>
+            <div class="avap-kicker-card" data-i18n="game.avap_which_first">Lequel de ces deux événements s'est produit en premier ?</div>
             <div class="avap-options">
                 <button class="avap-option" id="avap-option-a" type="button">
-                    <span class="avap-option-title" id="avap-option-a-title">Chargement…</span>
+                    <span class="avap-option-title" id="avap-option-a-title" data-i18n="nav.loading">Chargement…</span>
                     <span class="avap-option-year hidden" id="avap-option-a-year"></span>
                 </button>
-                <div class="avap-vs">avant · après</div>
+                <div class="avap-vs" data-i18n="game.avap_vs">avant · après</div>
                 <button class="avap-option" id="avap-option-b" type="button">
-                    <span class="avap-option-title" id="avap-option-b-title">Chargement…</span>
+                    <span class="avap-option-title" id="avap-option-b-title" data-i18n="nav.loading">Chargement…</span>
                     <span class="avap-option-year hidden" id="avap-option-b-year"></span>
                 </button>
             </div>
@@ -534,12 +534,12 @@
     <div id="screen-ecart" class="hidden">
         <div class="game-bar">
             <div class="bar-row">
-                <button class="quit-btn" onclick="quitGame()">‹ Quitter</button>
+                <button class="quit-btn" onclick="quitGame()">‹ <span data-i18n="nav.quit">Quitter</span></button>
                 <span class="bar-fill"></span>
                 <span class="lives-row" id="ecart-hud-lives"></span>
                 <span class="type-size">
-                    <button type="button" onclick="changeZoom(-0.15)" aria-label="Réduire le texte">A−</button>
-                    <button type="button" onclick="changeZoom(0.15)" aria-label="Agrandir le texte">A+</button>
+                    <button type="button" onclick="changeZoom(-0.15)" aria-label="Réduire le texte" data-i18n-attr="aria-label:game.decrease_text_aria">A−</button>
+                    <button type="button" onclick="changeZoom(0.15)" aria-label="Agrandir le texte" data-i18n-attr="aria-label:game.increase_text_aria">A+</button>
                 </span>
             </div>
             <div class="bar-row">
@@ -551,11 +551,11 @@
 
         <div class="fil-body">
             <div class="fil-question-card">
-                <div class="fil-kicker">Combien d'années séparent ces deux événements ? Proposez un nombre, le jeu vous dira si c'est plus ou moins.</div>
+                <div class="fil-kicker" data-i18n="game.ecart_estimate_gap">Combien d'années séparent ces deux événements ? Proposez un nombre, le jeu vous dira si c'est plus ou moins.</div>
                 <div class="ecart-pair">
-                    <div class="ecart-pair-event" id="ecart-event-a">Chargement…</div>
+                    <div class="ecart-pair-event" id="ecart-event-a" data-i18n="nav.loading">Chargement…</div>
                     <div class="ecart-pair-sep">↕</div>
-                    <div class="ecart-pair-event" id="ecart-event-b">Chargement…</div>
+                    <div class="ecart-pair-event" id="ecart-event-b" data-i18n="nav.loading">Chargement…</div>
                 </div>
                 <div class="ecart-pair-years">
                     <span class="ecart-pair-year hidden" id="ecart-event-a-year"></span>
@@ -564,9 +564,9 @@
             </div>
 
             <div class="fil-display">
-                <span class="fil-hint-btn ecart-chances-badge" id="ecart-chances-badge" aria-live="polite">🎯 5 essais</span>
+                <span class="fil-hint-btn ecart-chances-badge" id="ecart-chances-badge" aria-live="polite" data-i18n="game.attempts_badge" data-i18n-params='{"n":5}'>🎯 5 essais</span>
                 <span class="fil-display-value" id="ecart-display-value">—</span>
-                <span class="fil-era-btn ecart-unit-label" aria-hidden="true">ans</span>
+                <span class="fil-era-btn ecart-unit-label" aria-hidden="true" data-i18n="game.years_unit">ans</span>
             </div>
 
             <div class="fil-answer-badge hidden" id="ecart-answer-badge"></div>
@@ -581,26 +581,26 @@
                 <button class="fil-key" onclick="ecartKeyPress('7')">7</button>
                 <button class="fil-key" onclick="ecartKeyPress('8')">8</button>
                 <button class="fil-key" onclick="ecartKeyPress('9')">9</button>
-                <button class="fil-key fil-key-erase" onclick="ecartClear()">Effacer</button>
+                <button class="fil-key fil-key-erase" onclick="ecartClear()" data-i18n="game.erase_btn">Effacer</button>
                 <button class="fil-key" onclick="ecartKeyPress('0')">0</button>
                 <button class="fil-key fil-key-erase" onclick="ecartBackspace()">⌫</button>
             </div>
 
-            <button class="fil-validate-btn" id="ecart-validate-btn" onclick="ecartSubmit()" disabled>Valider</button>
+            <button class="fil-validate-btn" id="ecart-validate-btn" onclick="ecartSubmit()" disabled data-i18n="game.validate_btn">Valider</button>
         </div>
     </div>
 
     <!-- ÉCRAN 6 : FIN DE PARTIE -->
     <div id="screen-end" class="hidden">
-        <button class="back-btn" onclick="showScreen(screenAfterGame())" aria-label="Retour">‹</button>
+        <button class="back-btn" onclick="showScreen(screenAfterGame())" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
         <div class="end-content-wrapper">
-            <div class="end-title" id="end-title">Partie Terminée</div>
-            <div class="end-score">Score : <strong id="end-score-val">0</strong> points</div>
+            <div class="end-title" id="end-title" data-i18n="end.title_default">Partie Terminée</div>
+            <div class="end-score"><span data-i18n="end.score_label_prefix">Score : </span><strong id="end-score-val">0</strong><span data-i18n="end.score_label_suffix"> points</span></div>
             <div id="end-xp-display" class="end-xp hidden"></div>
             <div id="end-time-display" class="end-time hidden">Durée : 0,0 s</div>
             <div id="end-streak-display" class="end-streak-banner hidden"></div>
             <div style="display:flex; gap:15px; margin-top: 20px;">
-                <button class="btn" onclick="replayCurrentGame()">Rejouer</button>
+                <button class="btn" onclick="replayCurrentGame()" data-i18n="end.replay_btn">Rejouer</button>
             </div>
             <div id="end-share-container" class="share-card hidden"></div>
             <div id="end-anecdote-container" class="anecdote-card-wrapper hidden"></div>
@@ -615,10 +615,10 @@
             <div id="modal-axe-badge-container" style="margin-top: 4px; margin-bottom: 8px;"></div>
             <div class="modal-date" id="modal-date">Date</div>
             <div class="modal-desc" id="modal-desc">Description explicative.</div>
-            <a href="#" target="_blank" class="modal-link" id="modal-wiki">Voir sur Wikipédia</a>
+            <a href="#" target="_blank" class="modal-link" id="modal-wiki" data-i18n="modal.wiki_link">Voir sur Wikipédia</a>
             <div id="modal-theme-row" class="modal-theme-row hidden">
-                <button class="btn btn-secondary" id="modal-redraw-btn">🔀 Un autre événement</button>
-                <button class="btn" id="modal-theme-btn">Jouer sur ce thème</button>
+                <button class="btn btn-secondary" id="modal-redraw-btn" data-i18n="modal.redraw_btn">🔀 Un autre événement</button>
+                <button class="btn" id="modal-theme-btn" data-i18n="modal.play_theme_btn">Jouer sur ce thème</button>
             </div>
         </div>
     </div>
@@ -656,7 +656,7 @@
             <div class="daily-leaderboard-title" data-i18n="daily.leaderboard_title">🏆 Classement du jour</div>
             <div id="daily-leaderboard-preview"></div>
 
-            <button class="btn btn-secondary" id="btn-daily-challenge-friend" style="width:100%; margin-top:14px;" onclick="challengeFriendToDuel()">⚔️ Défier un ami</button>
+            <button class="btn btn-secondary" id="btn-daily-challenge-friend" style="width:100%; margin-top:14px;" onclick="challengeFriendToDuel()" data-i18n="duels.title_btn">⚔️ Défier un ami</button>
         </div>
     </div>
 
@@ -664,18 +664,18 @@
     <div id="modal-add-theme" class="modal-overlay hidden" onclick="if(event.target===this)closeAddThemeModal()">
         <div class="modal-content" style="max-width:420px;">
             <span class="close-btn" onclick="closeAddThemeModal()">×</span>
-            <h2 style="font-size:20px; margin-bottom:20px; color:var(--text-dark);">Créer un thème personnalisé</h2>
-            
+            <h2 style="font-size:20px; margin-bottom:20px; color:var(--text-dark);" data-i18n="custom.create_theme_title">Créer un thème personnalisé</h2>
+
             <div class="form-group">
-                <label class="form-label">Nom du thème *</label>
-                <input type="text" id="custom-theme-name" class="form-input" placeholder="Ex: Histoire de l'Aviation" required>
+                <label class="form-label" data-i18n="custom.theme_name_label">Nom du thème *</label>
+                <input type="text" id="custom-theme-name" class="form-input" placeholder="Ex: Histoire de l'Aviation" required data-i18n-attr="placeholder:custom.theme_name_placeholder">
             </div>
             <div class="form-group">
-                <label class="form-label">Difficulté / Niveau (facultatif)</label>
-                <input type="text" id="custom-theme-diff" class="form-input" placeholder="Ex: Tous niveaux, Expert...">
+                <label class="form-label" data-i18n="custom.theme_diff_label">Difficulté / Niveau (facultatif)</label>
+                <input type="text" id="custom-theme-diff" class="form-input" placeholder="Ex: Tous niveaux, Expert..." data-i18n-attr="placeholder:custom.theme_diff_placeholder">
             </div>
-            
-            <button class="btn" style="width:100%; margin-top:10px;" onclick="saveCustomTheme()">Créer le thème</button>
+
+            <button class="btn" style="width:100%; margin-top:10px;" onclick="saveCustomTheme()" data-i18n="custom.create_theme_btn">Créer le thème</button>
         </div>
     </div>
 
@@ -683,28 +683,28 @@
     <div id="modal-add-event" class="modal-overlay hidden" onclick="if(event.target===this)closeAddEventModal()">
         <div class="modal-content" style="max-width:400px;">
             <span class="close-btn" onclick="closeAddEventModal()">×</span>
-            <h2 style="font-size:20px; margin-bottom:20px; color:var(--text-dark);">Ajouter un événement</h2>
-            
+            <h2 style="font-size:20px; margin-bottom:20px; color:var(--text-dark);" data-i18n="custom.create_event_title">Ajouter un événement</h2>
+
             <div class="form-group">
-                <label class="form-label">Année *</label>
+                <label class="form-label" data-i18n="custom.event_year_label">Année *</label>
                 <div class="form-row">
-                    <input type="number" id="custom-event-year" class="form-input" placeholder="Ex: 1789" style="flex:1;" required>
+                    <input type="number" id="custom-event-year" class="form-input" placeholder="Ex: 1789" style="flex:1;" required data-i18n-attr="placeholder:custom.event_year_placeholder">
                     <select id="custom-event-era" class="form-input" style="width:110px;">
-                        <option value="1">apr. J.-C.</option>
-                        <option value="-1">av. J.-C.</option>
+                        <option value="1" data-i18n="game.era_ad">apr. J.-C.</option>
+                        <option value="-1" data-i18n="game.era_bc">av. J.-C.</option>
                     </select>
                 </div>
             </div>
             <div class="form-group">
-                <label class="form-label">Titre de l'événement *</label>
-                <input type="text" id="custom-event-title" class="form-input" placeholder="Ex: Prise de la Bastille" required>
+                <label class="form-label" data-i18n="custom.event_title_label">Titre de l'événement *</label>
+                <input type="text" id="custom-event-title" class="form-input" placeholder="Ex: Prise de la Bastille" required data-i18n-attr="placeholder:custom.event_title_placeholder">
             </div>
             <div class="form-group">
-                <label class="form-label">Description (facultatif)</label>
-                <textarea id="custom-event-desc" class="form-input" rows="3" placeholder="Quelques détails..."></textarea>
+                <label class="form-label" data-i18n="custom.event_desc_label">Description (facultatif)</label>
+                <textarea id="custom-event-desc" class="form-input" rows="3" placeholder="Quelques détails..." data-i18n-attr="placeholder:custom.event_desc_placeholder"></textarea>
             </div>
-            
-            <button class="btn" style="width:100%; margin-top:10px;" onclick="saveCustomEvent()">Créer l'événement</button>
+
+            <button class="btn" style="width:100%; margin-top:10px;" onclick="saveCustomEvent()" data-i18n="custom.create_event_btn">Créer l'événement</button>
         </div>
     </div>
 
@@ -727,39 +727,39 @@
             <div class="profile-stats-grid">
                 <div class="profile-stat-box">
                     <span class="profile-stat-val" id="profile-stat-total-xp">0</span>
-                    <span class="profile-stat-label">Total XP</span>
+                    <span class="profile-stat-label" data-i18n="gamification.stats_total_xp">Total XP</span>
                 </div>
                 <div class="profile-stat-box">
                     <span class="profile-stat-val" id="profile-stat-streak">0 🔥</span>
-                    <span class="profile-stat-label">Série Record</span>
+                    <span class="profile-stat-label" data-i18n="gamification.stats_streak">Série Record</span>
                 </div>
                 <div class="profile-stat-box">
                     <span class="profile-stat-val" id="profile-stat-centurion">0</span>
-                    <span class="profile-stat-label">Max Sans-Faute</span>
+                    <span class="profile-stat-label" data-i18n="gamification.stats_centurion">Max Sans-Faute</span>
                 </div>
                 <div class="profile-stat-box">
                     <span class="profile-stat-val" id="profile-stat-badges-count">0 / 9</span>
-                    <span class="profile-stat-label">Trophées</span>
+                    <span class="profile-stat-label" data-i18n="gamification.stats_badges">Trophées</span>
                 </div>
             </div>
 
             <div class="profile-streak-multiplier" id="profile-streak-multiplier">🔥 Joue aujourd'hui pour activer un multiplicateur d'XP</div>
 
-            <button class="btn btn-secondary" style="width:100%; margin-bottom:20px;" onclick="closeProfileModal(); openRecapModal();">📊 Voir mon récap hebdo/mensuel</button>
+            <button class="btn btn-secondary" style="width:100%; margin-bottom:20px;" onclick="closeProfileModal(); openRecapModal();" data-i18n="gamification.recap_btn">📊 Voir mon récap hebdo/mensuel</button>
 
-            <div class="profile-section-title">🏆 Trophées & Hauts Faits</div>
+            <div class="profile-section-title" data-i18n="gamification.trophies_title">🏆 Trophées & Hauts Faits</div>
             <div class="trophies-grid" id="profile-trophies-container">
                 <!-- Badges générés dynamiquement -->
             </div>
         </div>
     </div>
-    
+
     <!-- MODAL LIGUE HEBDOMADAIRE (voir js/league.js + api/league.js) -->
     <div id="modal-league" class="modal-overlay hidden" onclick="if(event.target===this)closeLeagueModal()">
         <div class="modal-content" style="max-width: 460px;">
             <span class="close-btn" onclick="closeLeagueModal()">×</span>
-            <h2 style="font-size:20px; margin-bottom:5px; color:var(--text-dark);">🥇 Ta ligue de la semaine</h2>
-            <div class="league-week-hint">Ton total cette semaine : <strong id="league-my-xp">0</strong> XP. Le classement se réinitialise chaque semaine.</div>
+            <h2 style="font-size:20px; margin-bottom:5px; color:var(--text-dark);" data-i18n="league.title">🥇 Ta ligue de la semaine</h2>
+            <div class="league-week-hint" id="league-week-hint">Ton total cette semaine : <strong id="league-my-xp">0</strong> XP. Le classement se réinitialise chaque semaine.</div>
             <div id="league-list-container"></div>
         </div>
     </div>
@@ -770,30 +770,30 @@
             <span class="close-btn" onclick="closeRecapModal()">×</span>
             <div class="modal-title" id="recap-title">📊 Ton récap de la semaine</div>
             <div class="segmented" id="recap-period-tabs" style="margin: 16px auto 20px;">
-                <button type="button" data-value="week">Cette semaine</button>
-                <button type="button" data-value="month">Ce mois-ci</button>
+                <button type="button" data-value="week" data-i18n="recap.tab_week">Cette semaine</button>
+                <button type="button" data-value="month" data-i18n="recap.tab_month">Ce mois-ci</button>
             </div>
             <div class="profile-stats-grid">
                 <div class="profile-stat-box">
                     <span class="profile-stat-val" id="recap-stat-xp">0</span>
-                    <span class="profile-stat-label">XP gagné</span>
+                    <span class="profile-stat-label" data-i18n="recap.stat_xp">XP gagné</span>
                 </div>
                 <div class="profile-stat-box">
                     <span class="profile-stat-val" id="recap-stat-themes">0</span>
-                    <span class="profile-stat-label">Parties gagnées</span>
+                    <span class="profile-stat-label" data-i18n="recap.stat_themes">Parties gagnées</span>
                 </div>
                 <div class="profile-stat-box">
                     <span class="profile-stat-val" id="recap-stat-days">0</span>
-                    <span class="profile-stat-label">Jours actifs</span>
+                    <span class="profile-stat-label" data-i18n="recap.stat_days">Jours actifs</span>
                 </div>
                 <div class="profile-stat-box">
                     <span class="profile-stat-val" id="recap-stat-streak">0 🔥</span>
-                    <span class="profile-stat-label">Série actuelle</span>
+                    <span class="profile-stat-label" data-i18n="recap.stat_streak">Série actuelle</span>
                 </div>
             </div>
             <p class="settings-hint" id="recap-delta" style="text-align:center;"></p>
             <button class="btn-share" onclick="shareRecapResults()" style="margin-top:10px;">
-                <span>Partager mon récap</span> <span>📤</span>
+                <span data-i18n="recap.share_btn">Partager mon récap</span> <span>📤</span>
             </button>
         </div>
     </div>
@@ -802,9 +802,9 @@
     <div id="modal-leaderboard" class="modal-overlay hidden">
         <div class="modal-content" style="max-width:500px;">
             <span class="close-btn" onclick="closeLeaderboard()">×</span>
-            <h2 style="font-size:20px; margin-bottom:5px; color:var(--text-dark);">🏆 Historique des scores</h2>
+            <h2 style="font-size:20px; margin-bottom:5px; color:var(--text-dark);" data-i18n="leaderboard.title">🏆 Historique des scores</h2>
             <p id="leaderboard-subtitle" style="font-size:14px; color:var(--muted-text); margin-bottom:20px;">Thème : ...</p>
-            
+
             <div id="leaderboard-content"></div>
         </div>
     </div>
@@ -813,54 +813,54 @@
     <div id="modal-scoring-info" class="modal-overlay hidden">
         <div class="modal-content" style="max-width:580px;">
             <span class="close-btn" onclick="closeScoringInfo()">×</span>
-            <h2 style="font-size:20px; margin-bottom:20px; color:var(--text-dark);">Comment sont calculés les points ?</h2>
+            <h2 style="font-size:20px; margin-bottom:20px; color:var(--text-dark);" data-i18n="scoring.title">Comment sont calculés les points ?</h2>
             <div class="scoring-info-body">
-                <h3>🎯 Réponse exacte</h3>
-                <p>Chaque bon créneau en frise, bonne réponse en Quiz ou année exacte trouvée en Fil du temps rapporte <strong>100 points de base</strong>, multipliés par votre série de victoires en cours.</p>
+                <h3 data-i18n="scoring.exact_title">🎯 Réponse exacte</h3>
+                <p data-i18n="scoring.exact_desc">Chaque bon créneau en frise, bonne réponse en Quiz ou année exacte trouvée en Fil du temps rapporte 100 points de base, multipliés par votre série de victoires en cours.</p>
 
-                <h3>🔥 Série (combo multiplicateur)</h3>
-                <p>Chaque bonne réponse d'affilée (sans indice) augmente le multiplicateur de <strong>+0,1</strong> : ×1,0 → ×1,1 → ×1,2… jusqu'à ×5,0. La moindre erreur ou recours à un indice remet le multiplicateur à ×1,0.</p>
-                <p><em>Exemple : 3 bonnes réponses d'affilée sans faute rapportent 100, puis 110, puis 120 points.</em></p>
+                <h3 data-i18n="scoring.combo_title">🔥 Série (combo multiplicateur)</h3>
+                <p data-i18n="scoring.combo_desc">Chaque bonne réponse d'affilée (sans indice) augmente le multiplicateur de +0,1 : ×1,0 → ×1,1 → ×1,2… jusqu'à ×5,0. La moindre erreur ou recours à un indice remet le multiplicateur à ×1,0.</p>
+                <p><em data-i18n="scoring.combo_example">Exemple : 3 bonnes réponses d'affilée sans faute rapportent 100, puis 110, puis 120 points.</em></p>
 
-                <h3>📐 Réponse inexacte : principe de proximité</h3>
-                <p>Une erreur n'est pas sanctionnée par 0 point : l'écart en années avec la date réelle est comparé à l'étendue chronologique du thème pour récompenser la pertinence historique.</p>
-                <p><em>Exemple : sur un thème de 100 ans, une erreur de 10 ans rapporte encore 90 points (100 × (1 − 10/100)) ; une erreur de 80 ans rapporte 20 points.</em></p>
-                <p>Une vie est retirée à chaque erreur (sauf en Entraînement), quel que soit le nombre de points accordés.</p>
+                <h3 data-i18n="scoring.proximity_title">📐 Réponse inexacte : principe de proximité</h3>
+                <p data-i18n="scoring.proximity_desc">Une erreur n'est pas sanctionnée par 0 point : l'écart en années avec la date réelle est comparé à l'étendue chronologique du thème pour récompenser la pertinence historique.</p>
+                <p><em data-i18n="scoring.proximity_example">Exemple : sur un thème de 100 ans, une erreur de 10 ans rapporte encore 90 points (100 × (1 − 10/100)) ; une erreur de 80 ans rapporte 20 points.</em></p>
+                <p data-i18n="scoring.proximity_life_note">Une vie est retirée à chaque erreur (sauf en Entraînement), quel que soit le nombre de points accordés.</p>
 
-                <h3>⚡ Bonus de rapidité (Chrono et Expert)</h3>
-                <p>Sur les modes chronométrés <strong>Chrono</strong> et <strong>Expert</strong>, une bonne réponse donnée en moins de 3 secondes confère jusqu'à <strong>+50 points</strong> supplémentaires (dégressif jusqu'à 0 au-delà de 15 secondes).</p>
+                <h3 data-i18n="scoring.speed_title">⚡ Bonus de rapidité (Chrono et Expert)</h3>
+                <p data-i18n="scoring.speed_desc">Sur les modes chronométrés Chrono et Expert, une bonne réponse donnée en moins de 3 secondes confère jusqu'à +50 points supplémentaires (dégressif jusqu'à 0 au-delà de 15 secondes).</p>
 
-                <h3>❓ Mode Quiz (QCM)</h3>
-                <p>Le principe de proximité s'applique aux 4 dates proposées. Utiliser le joker <strong>50:50</strong> (2 par partie) retire 2 mauvaises réponses et divise par 2 les points gagnables sur la question.</p>
+                <h3 data-i18n="scoring.quiz_title">❓ Mode Quiz (QCM)</h3>
+                <p data-i18n="scoring.quiz_desc">Le principe de proximité s'applique aux 4 dates proposées. Utiliser le joker 50:50 (2 par partie) retire 2 mauvaises réponses et divise par 2 les points gagnables sur la question.</p>
 
-                <h3>🥇 Mode « Avant / Après »</h3>
-                <p>Deux événements sont présentés sans leurs dates : il faut deviner lequel s'est produit en premier.</p>
+                <h3 data-i18n="scoring.avap_title">🥇 Mode « Avant / Après »</h3>
+                <p data-i18n="scoring.avap_desc">Deux événements sont présentés sans leurs dates : il faut deviner lequel s'est produit en premier.</p>
                 <ul>
-                    <li><strong>Bonne réponse</strong> : 100 points × multiplicateur de combo — comme pour Périodes & Ères, il n'y a pas de points partiels, c'est tout ou rien.</li>
-                    <li><strong>Mauvaise réponse</strong> : aucun point, une vie est perdue et le multiplicateur retombe à ×1,0. Les deux dates réelles s'affichent aussitôt pour corriger.</li>
+                    <li data-i18n="scoring.avap_correct">Bonne réponse : 100 points × multiplicateur de combo — comme pour Périodes & Ères, il n'y a pas de points partiels, c'est tout ou rien.</li>
+                    <li data-i18n="scoring.avap_wrong">Mauvaise réponse : aucun point, une vie est perdue et le multiplicateur retombe à ×1,0. Les deux dates réelles s'affichent aussitôt pour corriger.</li>
                 </ul>
 
-                <h3>⏳ Mode « Le fil du temps »</h3>
-                <p>Les événements défilent dans l'ordre chronologique et l'année exacte doit être tapée au clavier :</p>
+                <h3 data-i18n="scoring.fil_title">⏳ Mode « Le fil du temps »</h3>
+                <p data-i18n="scoring.fil_desc">Les événements défilent dans l'ordre chronologique et l'année exacte doit être tapée au clavier :</p>
                 <ul>
-                    <li><strong>Saisie directe exacte</strong> : 100 points × multiplicateur de combo.</li>
-                    <li><strong>Bouton 💡 Indice</strong> : Révèle l'ère (<em>av.</em> / <em>apr. J.-C.</em>) au premier clic, puis dévoile les chiffres de l'année un par un depuis la gauche.</li>
-                    <li><strong>Pénalité par chiffre</strong> : Chaque chiffre dévoilé par l'indice déduit <strong>25 points</strong> sur la question et réinitialise le multiplicateur à ×1,0.</li>
-                    <li><strong>Révélation complète</strong> : Dévoiler tous les chiffres par l'indice équivaut à un échec (0 point, perte d'une vie).</li>
-                    <li><strong>Erreur de saisie</strong> : Si l'année soumise est fausse, les points partiels de proximité sont attribués (moins les pénalités d'indices éventuelles) et une vie est perdue.</li>
+                    <li data-i18n="scoring.fil_direct">Saisie directe exacte : 100 points × multiplicateur de combo.</li>
+                    <li data-i18n="scoring.fil_hint_btn_desc">Bouton 💡 Indice : Révèle l'ère (av. / apr. J.-C.) au premier clic, puis dévoile les chiffres de l'année un par un depuis la gauche.</li>
+                    <li data-i18n="scoring.fil_penalty">Pénalité par chiffre : Chaque chiffre dévoilé par l'indice déduit 25 points sur la question et réinitialise le multiplicateur à ×1,0.</li>
+                    <li data-i18n="scoring.fil_full_reveal">Révélation complète : Dévoiler tous les chiffres par l'indice équivaut à un échec (0 point, perte d'une vie).</li>
+                    <li data-i18n="scoring.fil_wrong_entry">Erreur de saisie : Si l'année soumise est fausse, les points partiels de proximité sont attribués (moins les pénalités d'indices éventuelles) et une vie est perdue.</li>
                 </ul>
 
-                <h3>📏 Mode « Trouve l'écart »</h3>
-                <p>Deux événements sont présentés sans leurs dates : il faut deviner le nombre d'années qui les séparent, comme au « Juste Prix ». Vous proposez un nombre, le jeu vous répond <strong>« plus »</strong> ou <strong>« moins »</strong>, et vous retentez votre chance.</p>
+                <h3 data-i18n="scoring.ecart_title">📏 Mode « Trouve l'écart »</h3>
+                <p data-i18n="scoring.ecart_desc">Deux événements sont présentés sans leurs dates : il faut deviner le nombre d'années qui les séparent, comme au « Juste Prix ». Vous proposez un nombre, le jeu vous répond « plus » ou « moins », et vous retentez votre chance.</p>
                 <ul>
-                    <li><strong>5 essais par question</strong> : chaque question démarre à <strong>100 points</strong>, et chaque proposition fausse coûte <strong>20 points</strong> (80, puis 60, 40, 20…).</li>
-                    <li><strong>Trouvé du premier coup</strong> : les 100 points sont multipliés par le combo en cours, comme pour une réponse exacte dans les autres modes.</li>
-                    <li><strong>Trouvé après un ou plusieurs essais</strong> : vous gagnez les points restants sur la question (sans bonus de combo), et le multiplicateur retombe à ×1,0.</li>
-                    <li><strong>5 essais épuisés sans trouver l'écart</strong> : 0 point sur la question, la bonne réponse s'affiche et une vie est perdue.</li>
+                    <li data-i18n="scoring.ecart_attempts">5 essais par question : chaque question démarre à 100 points, et chaque proposition fausse coûte 20 points (80, puis 60, 40, 20…).</li>
+                    <li data-i18n="scoring.ecart_first_try">Trouvé du premier coup : les 100 points sont multipliés par le combo en cours, comme pour une réponse exacte dans les autres modes.</li>
+                    <li data-i18n="scoring.ecart_after_tries">Trouvé après un ou plusieurs essais : vous gagnez les points restants sur la question (sans bonus de combo), et le multiplicateur retombe à ×1,0.</li>
+                    <li data-i18n="scoring.ecart_exhausted">5 essais épuisés sans trouver l'écart : 0 point sur la question, la bonne réponse s'affiche et une vie est perdue.</li>
                 </ul>
 
-                <h3>🌱 Modes Découverte et Entraînement</h3>
-                <p>Ces modes n'ont pas de système de score : ils sont pensés pour réviser et mémoriser sans stress à vies illimitées.</p>
+                <h3 data-i18n="scoring.discovery_title">🌱 Modes Découverte et Entraînement</h3>
+                <p data-i18n="scoring.discovery_desc">Ces modes n'ont pas de système de score : ils sont pensés pour réviser et mémoriser sans stress à vies illimitées.</p>
             </div>
         </div>
     </div>
@@ -868,10 +868,10 @@
     <!-- MODAL CONFIRMATION (remplace window.confirm, bloqué dans certains environnements) -->
     <div id="modal-confirm" class="modal-overlay hidden">
         <div class="modal-content" style="max-width:400px; text-align:center;">
-            <p id="confirm-message" style="font-size:17px; color:var(--text-dark); margin-bottom:25px;">Voulez-vous vraiment quitter cette partie ?</p>
+            <p id="confirm-message" style="font-size:17px; color:var(--text-dark); margin-bottom:25px;" data-i18n="game.confirm_quit">Voulez-vous vraiment quitter cette partie ?</p>
             <div style="display:flex; gap:15px; justify-content:center;">
-                <button class="btn btn-secondary" id="confirm-cancel-btn">Annuler</button>
-                <button class="btn" id="confirm-ok-btn">Quitter</button>
+                <button class="btn btn-secondary" id="confirm-cancel-btn" data-i18n="nav.cancel">Annuler</button>
+                <button class="btn" id="confirm-ok-btn" data-i18n="nav.quit">Quitter</button>
             </div>
         </div>
     </div>
@@ -880,36 +880,36 @@
     <div id="modal-settings" class="modal-overlay hidden" onclick="if(event.target===this)closeSettings()">
         <div class="modal-content" style="max-width:420px;">
             <span class="close-btn" onclick="closeSettings()">×</span>
-            <h2 style="font-size:20px; margin-bottom:24px; color:var(--text-dark);">Réglages</h2>
+            <h2 style="font-size:20px; margin-bottom:24px; color:var(--text-dark);" data-i18n="settings.title">Réglages</h2>
 
             <div class="settings-group">
-                <div class="settings-label">Orientation de la frise</div>
+                <div class="settings-label" data-i18n="settings.orientation_label">Orientation de la frise</div>
                 <div class="segmented" id="settings-orientation">
-                    <button type="button" data-value="auto">Auto</button>
-                    <button type="button" data-value="vertical">Verticale</button>
-                    <button type="button" data-value="horizontal">Horizontale</button>
+                    <button type="button" data-value="auto" data-i18n="settings.orientation_auto">Auto</button>
+                    <button type="button" data-value="vertical" data-i18n="settings.orientation_vertical">Verticale</button>
+                    <button type="button" data-value="horizontal" data-i18n="settings.orientation_horizontal">Horizontale</button>
                 </div>
-                <p class="settings-hint">« Auto » suit la rotation de l'appareil : portrait affiche la frise verticale, paysage l'affiche horizontale.</p>
+                <p class="settings-hint" data-i18n="settings.orientation_hint">« Auto » suit la rotation de l'appareil : portrait affiche la frise verticale, paysage l'affiche horizontale.</p>
             </div>
             <div class="settings-group">
-                <div class="settings-label">Apparence</div>
+                <div class="settings-label" data-i18n="settings.appearance_label">Apparence</div>
                 <div class="segmented" id="settings-appearance">
-                    <button type="button" data-value="auto">Auto</button>
-                    <button type="button" data-value="light">Clair</button>
-                    <button type="button" data-value="dark">Sombre</button>
+                    <button type="button" data-value="auto" data-i18n="settings.appearance_auto">Auto</button>
+                    <button type="button" data-value="light" data-i18n="settings.appearance_light">Clair</button>
+                    <button type="button" data-value="dark" data-i18n="settings.appearance_dark">Sombre</button>
                 </div>
-                <p class="settings-hint">« Auto » suit le réglage clair/sombre programmé sur votre appareil.</p>
+                <p class="settings-hint" data-i18n="settings.appearance_hint">« Auto » suit le réglage clair/sombre programmé sur votre appareil.</p>
             </div>
-            
+
             <div class="settings-group">
-                <div class="settings-label">Son immersif</div>
+                <div class="settings-label" data-i18n="settings.sound_label">Son immersif</div>
                 <div class="segmented" id="settings-sound">
-                    <button type="button" data-value="on">Activé</button>
-                    <button type="button" data-value="off">Désactivé</button>
+                    <button type="button" data-value="on" data-i18n="settings.sound_on">Activé</button>
+                    <button type="button" data-value="off" data-i18n="settings.sound_off">Désactivé</button>
                 </div>
-                <p class="settings-hint">Carillons harmoniques, bruits de cartes et retour audio sur les réponses.</p>
+                <p class="settings-hint" data-i18n="settings.sound_hint">Carillons harmoniques, bruits de cartes et retour audio sur les réponses.</p>
             </div>
-            
+
             <div class="settings-group">
                 <div class="settings-label" data-i18n="settings.haptics_label">Vibrations & Haptique</div>
                 <div class="segmented" id="settings-haptics">
@@ -920,12 +920,12 @@
             </div>
 
             <div class="settings-group hidden" id="settings-group-notifications">
-                <div class="settings-label">Notifications</div>
+                <div class="settings-label" data-i18n="settings.notifications_label">Notifications</div>
                 <div class="segmented" id="settings-notifications">
-                    <button type="button" data-value="on">Activées</button>
-                    <button type="button" data-value="off">Désactivées</button>
+                    <button type="button" data-value="on" data-i18n="settings.notifications_on">Activées</button>
+                    <button type="button" data-value="off" data-i18n="settings.notifications_off">Désactivées</button>
                 </div>
-                <p class="settings-hint">Rappels pour garder ta série et ne pas manquer le Défi du jour. Disponible dans l'app iOS (pas sur le web).</p>
+                <p class="settings-hint" data-i18n="settings.notifications_hint">Rappels pour garder ta série et ne pas manquer le Défi du jour. Disponible dans l'app iOS (pas sur le web).</p>
             </div>
 
             <div class="settings-group">
@@ -935,15 +935,15 @@
                 </div>
                 <p class="settings-hint" data-i18n="settings.offline_ready_hint">Les packs téléchargés sont 100% accessibles hors-ligne.</p>
             </div>
-    
-    
+
+
 
             <div class="settings-group">
-                <div class="settings-label">Données de jeu</div>
-                <button class="btn btn-secondary" style="width:100%; margin-bottom:12px;" onclick="openScoringInfo()">📖 Explications du calcul des points</button>
-                <button class="btn btn-secondary" style="width:100%; margin-bottom:12px;" onclick="restartOnboarding()">🧭 Revoir le tutoriel</button>
-                <button class="btn" style="width:100%; background:var(--danger-red);" onclick="resetGameData()">⚠️ Réinitialiser le jeu</button>
-                <p class="settings-hint">Supprime définitivement vos favoris, tous vos thèmes et événements personnalisés créés, votre historique de révision (points faibles) et la progression de déverrouillage des modes Chrono/Expert. Vos réglages d'affichage (orientation, apparence) sont conservés.</p>
+                <div class="settings-label" data-i18n="settings.data_section">Données de jeu</div>
+                <button class="btn btn-secondary" style="width:100%; margin-bottom:12px;" onclick="openScoringInfo()" data-i18n="settings.scoring_info_btn">📖 Explications du calcul des points</button>
+                <button class="btn btn-secondary" style="width:100%; margin-bottom:12px;" onclick="restartOnboarding()" data-i18n="settings.onboarding_btn">🧭 Revoir le tutoriel</button>
+                <button class="btn" style="width:100%; background:var(--danger-red);" onclick="resetGameData()" data-i18n="settings.reset_game_btn">⚠️ Réinitialiser le jeu</button>
+                <p class="settings-hint" data-i18n="settings.reset_hint">Supprime définitivement vos favoris, tous vos thèmes et événements personnalisés créés, votre historique de révision (points faibles) et la progression de déverrouillage des modes Chrono/Expert. Vos réglages d'affichage (orientation, apparence) sont conservés.</p>
             </div>
         </div>
     </div>
