@@ -2,9 +2,19 @@
 // === HISTORIAXE — SERVICE WORKER OFF-LINE & PACKS DE DONNÉES (SW.JS) ===
 // =========================================================================
 
-const CACHE_VERSION = '1.2.0';
+// Bumped alongside any change to ui/*.json, data/*.json, or the files listed
+// in APP_SHELL_FILES below : ces deux caches suivent une stratégie
+// cache-first (voir le handler 'fetch' plus bas), donc leur contenu n'est
+// JAMAIS revalidé contre le réseau une fois mis en cache — la seule façon de
+// pousser une mise à jour de ces fichiers vers un client qui a déjà l'app en
+// cache est de changer ces identifiants de version, pour que le nettoyage
+// dans 'activate' purge les anciens caches (devenus orphelins) et que
+// 'install' recharge tout depuis le réseau. Un pack de langue ou un texte
+// d'UI modifié qui ne s'affiche pas malgré un déploiement réussi est
+// généralement le signe que l'un de ces deux numéros n'a pas été incrémenté.
+const CACHE_VERSION = '1.3.0';
 const APP_SHELL_CACHE = `historiaxe-shell-v${CACHE_VERSION}`;
-const DATA_CACHE = 'historiaxe-data-v1.0.3';
+const DATA_CACHE = 'historiaxe-data-v1.0.4';
 
 // Tailwind (css/tailwind.generated.css) et les polices Inter / Material
 // Symbols (css/fonts.css + assets/fonts/*) sont désormais compilées et
