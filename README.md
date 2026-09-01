@@ -82,9 +82,12 @@ le serveur ne fait jamais confiance à un score, seulement aux actions.
 - **Sign in with Apple / Game Center** : intégration native (entitlements
   Xcode, revue App Store) — l'identité actuelle (UUID d'appareil + pseudo)
   couvre déjà le classement mondial et la sync, ceci s'ajouterait en option.
-- **Ligues façon Duolingo** (groupes de 20-30 joueurs, promotion/relégation
-  hebdomadaire) : nécessite un job planifié (cron Vercel) en plus de l'API
-  actuelle.
+- **Vraie promotion/relégation de ligue** (paliers façon Bronze/Argent/Or
+  persistés d'une semaine à l'autre) : la ligue hebdomadaire actuelle
+  (`api/league.js`) recalcule un groupe à la volée par hash déterministe et
+  réinitialise le classement chaque semaine ISO — volontairement sans job
+  planifié ni table de cohortes, voir la section Rétention ci-dessous. Une
+  vraie échelle de paliers persistés est un chantier ultérieur.
 - **Fusion multi-appareils de la progression** : le modèle actuel est
   "dernière écriture gagne" (voir `api/sync.js`) — suffisant pour la sauvegarde
   de secours / changement d'appareil, pas encore une vraie fusion.
@@ -111,6 +114,43 @@ le serveur ne fait jamais confiance à un score, seulement aux actions.
   fichier avec une suite de tests qui couvre chaque mode de jeu — pas en
   un seul passage, sous peine d'introduire exactement ce genre de
   régression.
+
+## Rétention — onboarding, notifications, série, ligues & duels
+
+- **Onboarding guidé** (`js/onboarding.js`) : 4 bulles d'aide contextuelles
+  (coach-marks) sur les 3 premières minutes d'un nouvel arrivant. Purement
+  local, aucun réglage requis. Rejouable depuis Réglages → « Revoir le
+  tutoriel ».
+- **Notifications locales** (`js/notifications.js`, plugin
+  `@capacitor/local-notifications`) : rappel de série en péril, Défi du jour
+  disponible, récap hebdo prêt, nudge de duel. Actives uniquement dans l'app
+  native iOS (no-op silencieux sur le web/PWA — aucune API de notification
+  programmée fiable n'existe côté navigateur sans backend push). Après
+  `npm install`, un `npx cap sync ios` est nécessaire pour que le projet Xcode
+  embarque le nouveau plugin.
+- **Multiplicateur d'XP lié à la série** (`js/gamification.js:
+  getStreakXpMultiplier`) : de ×1.0 à ×2.0 selon la série quotidienne en
+  cours, retombe à ×1.0 dès qu'un jour est manqué — volontairement sans « gel
+  de série » pour garder un vrai enjeu de perte.
+- **Récap hebdo/mensuel** (`js/recap.js`) : XP gagné, parties gagnées, jours
+  actifs, comparaison à la période précédente. Entièrement local (journal
+  compact dans `localStorage`, purgé au-delà de 35 jours), proposé
+  automatiquement une fois par semaine ISO.
+- **Ligue hebdomadaire** (`api/league.js`, table `weekly_xp`) : classement
+  d'un groupe d'une trentaine de joueurs par XP gagné cette semaine. Le
+  groupe est recalculé à la volée par hash déterministe
+  (`player_id` + semaine ISO), sans job planifié ni table de cohortes — voir
+  le commentaire en tête du fichier pour les limites connues de cette
+  approche volontairement légère.
+- **Duels asynchrones entre amis** (`api/duels.js`, table `duels`) : lien/code
+  court à partager depuis la modale de résultats du Défi du jour, comparaison
+  de score une fois l'adversaire ouvert le lien et joué. Sans infrastructure
+  de push serveur (choix assumé pour rester livrable sans APNs), la détection
+  « tu as été dépassé » se fait au mieux, à l'ouverture de l'app.
+
+Ces fonctionnalités réutilisent l'infrastructure existante (`DATABASE_URL`,
+`api/_lib/db.js: ensureSchema`) : aucune nouvelle variable d'environnement
+n'est requise.
 
 ## Développement
 

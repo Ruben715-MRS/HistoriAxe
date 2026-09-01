@@ -44,3 +44,38 @@ create table if not exists player_progress (
     data        jsonb not null default '{}'::jsonb,
     updated_at  timestamptz not null default now()
 );
+
+-- Ligues hebdomadaires (voir api/league.js) : un total d'XP hebdo par joueur
+-- et par semaine ISO ('2026-W36'). Le regroupement en ligues n'est PAS
+-- persisté : il est recalculé à la volée par hash déterministe
+-- (player_id + semaine ISO), pour ne dépendre d'aucune tâche planifiée. Avec
+-- peu de joueurs actifs, certains groupes seront petits/vides en début de
+-- vie du produit — limite connue et acceptée pour ce premier jet.
+create table if not exists weekly_xp (
+    player_id   uuid not null references players(id) on delete cascade,
+    iso_week    text not null,
+    xp          integer not null default 0,
+    updated_at  timestamptz not null default now(),
+    primary key (player_id, iso_week)
+);
+
+create index if not exists idx_weekly_xp_week_xp
+    on weekly_xp (iso_week, xp desc);
+
+-- Duels asynchrones entre amis (voir api/duels.js) : un lien/code partageable
+-- pointant vers le score du créateur sur le Défi du jour d'une date donnée ;
+-- le score de l'adversaire est lu directement dans daily_scores (même
+-- joueur/date/lang), pas dupliqué ici.
+create table if not exists duels (
+    id                  text primary key,
+    creator_player_id   uuid not null references players(id) on delete cascade,
+    opponent_player_id  uuid references players(id) on delete set null,
+    challenge_date      date not null,
+    lang                text not null,
+    created_at          timestamptz not null default now(),
+    opened_at           timestamptz,
+    notified            boolean not null default false
+);
+
+create index if not exists idx_duels_creator
+    on duels (creator_player_id);

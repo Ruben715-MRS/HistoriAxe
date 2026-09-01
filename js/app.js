@@ -11,6 +11,15 @@
             if (modal) modal.classList.add('hidden');
         }
 
+        // Relance la séquence de coach-marks d'onboarding (voir js/onboarding.js)
+        // depuis le tout début, à la demande de l'utilisateur.
+        function restartOnboarding() {
+            if (typeof Onboarding === 'undefined') return;
+            Onboarding.restart();
+            closeSettings();
+            showScreen('screen-home');
+        }
+
         function openScoringInfo() {
             const modal = document.getElementById('modal-scoring-info');
             if (modal) modal.classList.remove('hidden');
@@ -91,6 +100,16 @@ let appSettings = settingsLoad();
             document.querySelectorAll('#settings-haptics button').forEach(btn => {
                 btn.classList.toggle('active', (btn.dataset.value === 'on') === appSettings.haptics);
             });
+            document.querySelectorAll('#settings-notifications button').forEach(btn => {
+                btn.classList.toggle('active', (btn.dataset.value === 'on') === appSettings.notifications);
+            });
+            // Réglage inutile (et silencieusement inopérant) hors app native iOS :
+            // on le masque plutôt que d'afficher un bouton qui ne fait rien.
+            const notifGroup = document.getElementById('settings-group-notifications');
+            if (notifGroup) {
+                const supported = typeof HistoriAxeNotifications !== 'undefined' && HistoriAxeNotifications.isSupported();
+                notifGroup.classList.toggle('hidden', !supported);
+            }
             if (typeof i18n !== 'undefined' && typeof i18n.renderLanguagePacksSettingsUI === 'function') {
                 i18n.renderLanguagePacksSettingsUI();
             }
@@ -127,6 +146,17 @@ let appSettings = settingsLoad();
                     settingsSave(appSettings);
                     if (appSettings.haptics) triggerHaptic('success');
                     renderSettingsUI();
+                };
+            });
+            document.querySelectorAll('#settings-notifications button').forEach(btn => {
+                btn.onclick = () => {
+                    const wantsOn = (btn.dataset.value === 'on');
+                    appSettings.notifications = wantsOn;
+                    settingsSave(appSettings);
+                    renderSettingsUI();
+                    if (typeof HistoriAxeNotifications === 'undefined') return;
+                    if (wantsOn) HistoriAxeNotifications.enableAndSchedule();
+                    else HistoriAxeNotifications.cancelAll();
                 };
             });
         }
@@ -1043,6 +1073,9 @@ function ensureCustomCategoryInBdd() {
             document.querySelectorAll('body > div').forEach(div => {
                 if(div.id !== 'modal-details' && div.id !== 'modal-confirm' && div.id !== 'modal-settings' && div.id !== 'modal-scoring-info' && div.id !== 'modal-daily-results') div.classList.add('hidden');
             });
+            // Toute bulle d'onboarding affichée sur l'écran quitté n'a plus de sens
+            // une fois l'écran caché (sa cible n'est plus visible) : on la retire.
+            document.querySelectorAll('.onboarding-overlay').forEach(el => el.remove());
             const targetScreen = document.getElementById(screenId);
             targetScreen.classList.remove('hidden');
 
@@ -1064,6 +1097,14 @@ function ensureCustomCategoryInBdd() {
             if (screenId === 'screen-themes') initThemes();
             if (screenId === 'screen-axes') initAxes();
             if (screenId === 'screen-revision-hub') initRevisionHub();
+
+            // Onboarding guidé (voir js/onboarding.js) : chaque bulle ne s'affiche
+            // qu'une fois, et jamais si le tutoriel a été terminé/passé.
+            if (typeof Onboarding !== 'undefined') {
+                if (screenId === 'screen-home') Onboarding.onHomeScreen();
+                if (screenId === 'screen-categories') Onboarding.onCategoriesScreen();
+                if (screenId === 'screen-modes') Onboarding.onModesScreen();
+            }
             if (screenId === 'screen-modes') {
                 const titleEl = document.getElementById('modes-header-title');
                 if (revisionMode) {
@@ -3674,16 +3715,33 @@ function ensureCustomCategoryInBdd() {
                 streakRecordToday();
             }
 
+            // Notifications locales (voir js/notifications.js) : demande la
+            // permission (no-op si déjà répondue ou déjà accordée) puis
+            // reprogramme les rappels — en particulier le rappel de série, qui
+            // doit maintenant tenir compte de la partie qui vient d'être jouée.
+            if (currentMode !== 'discovery' && typeof HistoriAxeNotifications !== 'undefined') {
+                HistoriAxeNotifications.enableAndSchedule();
+            }
+
             // Calcul des erreurs de la session
             const sessionMistakes = sessionHistory.filter(item => !item.isCorrect).length;
 
             // Attribution d'XP selon le mode et le score
+            let awardedXpInfo = null;
             if (currentMode !== 'discovery') {
                 let xpGain = Math.round(score * 0.5);
                 if (isWin) xpGain += 50; // Bonus victoire
                 if (sessionMistakes === 0 && isWin) xpGain += 100; // Bonus parfait
                 if (currentMode === 'daily') xpGain += 100; // Bonus Défi du jour
-                awardXP(xpGain, 'Fin de partie');
+                awardedXpInfo = awardXP(xpGain, 'Fin de partie');
+
+                // Journal du récap hebdo/mensuel (voir js/recap.js et
+                // js/storage.js: addRecapLogEntry) : XP réellement crédité (après
+                // multiplicateur de série) + une victoire de plus si la partie est
+                // gagnée.
+                if (typeof addRecapLogEntry === 'function') {
+                    addRecapLogEntry(awardedXpInfo ? awardedXpInfo.xpAwarded : 0, isWin ? 1 : 0);
+                }
             }
 
             // Vérification de la progression des trophées
@@ -3714,6 +3772,20 @@ function ensureCustomCategoryInBdd() {
                 timeDisplay.classList.remove('hidden');
             } else {
                 timeDisplay.classList.add('hidden');
+            }
+
+            // Affichage de l'XP gagné (et du multiplicateur de série, s'il y en a un)
+            const xpDisplay = document.getElementById('end-xp-display');
+            if (xpDisplay) {
+                if (awardedXpInfo && awardedXpInfo.xpAwarded > 0) {
+                    const mult = awardedXpInfo.streakMultiplier || 1;
+                    xpDisplay.innerText = mult > 1
+                        ? `+${awardedXpInfo.xpAwarded} XP (série ×${mult} 🔥)`
+                        : `+${awardedXpInfo.xpAwarded} XP`;
+                    xpDisplay.classList.remove('hidden');
+                } else {
+                    xpDisplay.classList.add('hidden');
+                }
             }
 
             // Affichage de la série sur l'écran de fin
@@ -3755,12 +3827,18 @@ function ensureCustomCategoryInBdd() {
 
             if (currentMode === 'daily') {
                 openDailyResultsModal(isWin);
+            } else if (typeof Onboarding !== 'undefined') {
+                // La modale du Défi du jour prend le dessus sur screen-end : on ne
+                // propose la bulle d'onboarding de fin de partie que si elle est
+                // effectivement visible (voir js/onboarding.js: onFirstGameEnd).
+                Onboarding.onFirstGameEnd();
             }
 
             // Sauvegarde cloud best-effort de la progression (XP, badges, série,
             // SRS, favoris...) après chaque partie — voir syncPushProgress ci-dessus.
             if (currentMode !== 'discovery') {
                 syncPushProgress();
+                if (typeof pushWeeklyLeagueXp === 'function') pushWeeklyLeagueXp();
             }
         }
 
@@ -3907,6 +3985,7 @@ function ensureCustomCategoryInBdd() {
             applyAppearance();
             applyOrientationLayout();
             initSettingsControls();
+            if (typeof initRecapControls === 'function') initRecapControls();
 
             // Initialisation i18n et chargement de la langue active
             if (typeof i18n !== 'undefined') {
@@ -3919,6 +3998,35 @@ function ensureCustomCategoryInBdd() {
 
             syncOnAppStart();
 
+            // Duels asynchrones entre amis (voir js/duels.js) : lien entrant
+            // (?duel=xxx) et vérification best-effort des duels perdus depuis la
+            // dernière ouverture de l'app.
+            if (typeof checkIncomingDuelLink === 'function') checkIncomingDuelLink();
+            if (typeof checkMyDuels === 'function') checkMyDuels();
+
+            // Notifications locales (voir js/notifications.js) : reprogrammées à
+            // chaque retour au premier plan (le plugin @capacitor/app est déjà
+            // une dépendance native, jusqu'ici inutilisée). N'a d'effet que si la
+            // permission a déjà été accordée — jamais demandée au démarrage.
+            if (typeof HistoriAxeNotifications !== 'undefined' && HistoriAxeNotifications.isSupported()) {
+                HistoriAxeNotifications.refreshAll();
+                try {
+                    if (window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.App) {
+                        window.Capacitor.Plugins.App.addListener('appStateChange', (state) => {
+                            if (state && state.isActive) HistoriAxeNotifications.refreshAll();
+                        });
+                    }
+                } catch (e) {}
+            }
+
             showScreen('screen-home');
+
+            // Récap hebdo/mensuel (voir js/recap.js) : proposé au plus une fois par
+            // semaine ISO, jamais tant que l'onboarding n'est pas terminé. Léger
+            // différé pour ne jamais concurrencer la bulle de bienvenue de
+            // l'onboarding sur ce même écran.
+            if (typeof maybeShowAutoRecap === 'function') {
+                setTimeout(maybeShowAutoRecap, 1200);
+            }
         };
     

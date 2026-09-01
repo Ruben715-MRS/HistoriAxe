@@ -15,6 +15,9 @@ const LANG_KEY = 'historiaxe_language_v1';
 const INSTALLED_LANGS_KEY = 'historiaxe_installed_languages_v1';
 const DEVICE_ID_KEY = 'historiaxe_device_id_v1';
 const PSEUDO_KEY = 'historiaxe_pseudo_v1';
+const ONBOARDING_KEY = 'historiaxe_onboarding_v1';
+const RECAP_LOG_KEY = 'historiaxe_recap_log_v1';
+const WEEKLY_XP_KEY = 'historiaxe_weekly_xp_v1';
 
 // Clés dont le contenu est envoyé/reçu par la synchronisation cloud
 // (api/sync.js) — progression de jeu uniquement, jamais les préférences
@@ -27,6 +30,7 @@ const DEFAULT_SETTINGS = {
     axesLegendPinned: true,
     sound: true,
     haptics: true,
+    notifications: true,
     lang: 'fr'
 };
 
@@ -224,6 +228,33 @@ function streakRecordToday() {
     return data;
 }
 
+// Date locale (fuseau de l'appareil) au format YYYY-MM-DD — contrairement à
+// getTodayStringUTC() ci-dessus (frontière UTC 05h00, choisie pour l'équité du
+// Défi du jour entre fuseaux), le récap hebdo/mensuel (js/recap.js) et le
+// regroupement en ligues hebdomadaires (js/apiClient.js) sont des vues
+// personnelles sans enjeu d'équité entre joueurs : la date ressentie par le
+// joueur (son propre fuseau) est plus juste ici.
+function getLocalDateString(refDate) {
+    const d = refDate || new Date();
+    const year = d.getFullYear();
+    const month = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+}
+
+// Semaine ISO 8601 (ex: '2026-W36') de la date locale donnée (par défaut :
+// aujourd'hui). Algorithme standard (jeudi de la semaine ISO courante).
+function getIsoWeekString(refDate) {
+    const d = refDate ? new Date(refDate.getTime()) : new Date();
+    d.setHours(0, 0, 0, 0);
+    const dayNum = (d.getDay() + 6) % 7; // Lundi=0 ... Dimanche=6
+    d.setDate(d.getDate() - dayNum + 3); // Jeudi de cette semaine ISO
+    const firstThursday = new Date(d.getFullYear(), 0, 4);
+    const diffDays = Math.round((d.getTime() - firstThursday.getTime()) / 86400000);
+    const week = 1 + Math.round(diffDays / 7);
+    return `${d.getFullYear()}-W${String(week).padStart(2, '0')}`;
+}
+
 function getStreakCount() {
     const data = streakLoad();
     const today = getTodayStringUTC();
@@ -233,6 +264,82 @@ function getStreakCount() {
         return data.currentStreak;
     }
     return 0;
+}
+
+// --- JOURNAL DU RÉCAP HEBDO/MENSUEL (voir js/recap.js) ---
+// Journal compact, un point par jour joué : [{date:'YYYY-MM-DD', xp, themesWon}].
+// Alimenté par gamification.js: awardXP() (xp) et recordThemeCompletion()
+// ci-dessous (themesWon). Purgé au-delà de 35 jours glissants — largement
+// suffisant pour comparer une semaine/un mois au précédent (voir
+// computeWeeklyRecap/computeMonthlyRecap dans js/recap.js), inutile de
+// conserver un historique illimité en localStorage.
+const RECAP_LOG_MAX_DAYS = 35;
+
+function recapLogLoad() {
+    try {
+        const data = JSON.parse(localStorage.getItem(RECAP_LOG_KEY));
+        return Array.isArray(data) ? data : [];
+    } catch (e) {
+        return [];
+    }
+}
+
+function recapLogSave(list) {
+    try { localStorage.setItem(RECAP_LOG_KEY, JSON.stringify(list)); } catch (e) {}
+}
+
+function addRecapLogEntry(xpDelta, themesWonDelta) {
+    const today = getLocalDateString();
+    const list = recapLogLoad();
+    let entry = list.find(e => e.date === today);
+    if (!entry) {
+        entry = { date: today, xp: 0, themesWon: 0 };
+        list.push(entry);
+    }
+    entry.xp += Math.max(0, Math.round(xpDelta) || 0);
+    entry.themesWon += Math.max(0, Math.round(themesWonDelta) || 0);
+
+    const cutoff = Date.now() - RECAP_LOG_MAX_DAYS * 24 * 3600 * 1000;
+    const pruned = list.filter(e => {
+        const t = new Date(e.date + 'T00:00:00').getTime();
+        return isFinite(t) && t >= cutoff;
+    });
+    recapLogSave(pruned);
+}
+
+// --- XP HEBDOMADAIRE (ligues, voir js/league.js + api/league.js) ---
+// Accumulateur local, remis à zéro automatiquement au changement de semaine
+// ISO (voir getIsoWeekString ci-dessus) — c'est le total envoyé tel quel au
+// backend (pas un delta, voir api/league.js pour la raison).
+function weeklyXpLoad() {
+    const currentWeek = getIsoWeekString();
+    try {
+        const data = JSON.parse(localStorage.getItem(WEEKLY_XP_KEY));
+        if (data && data.isoWeek === currentWeek && typeof data.xp === 'number') return data;
+    } catch (e) {}
+    return { isoWeek: currentWeek, xp: 0 };
+}
+
+function weeklyXpAdd(delta) {
+    const data = weeklyXpLoad(); // Remis à zéro ci-dessus si la semaine a changé.
+    data.xp += Math.max(0, Math.round(delta) || 0);
+    try { localStorage.setItem(WEEKLY_XP_KEY, JSON.stringify(data)); } catch (e) {}
+    return data;
+}
+
+// --- ONBOARDING (coach-marks des 3 premières minutes, voir js/onboarding.js) ---
+// Volontairement non synchronisé (SYNC_KEYS) : c'est une préférence d'affichage
+// propre à cet appareil, comme SETTINGS_KEY, pas une donnée de progression.
+function onboardingLoad() {
+    try {
+        return Object.assign({ completed: false, shownSteps: [] }, JSON.parse(localStorage.getItem(ONBOARDING_KEY)) || {});
+    } catch (e) {
+        return { completed: false, shownSteps: [] };
+    }
+}
+
+function onboardingSave(data) {
+    try { localStorage.setItem(ONBOARDING_KEY, JSON.stringify(data)); } catch (e) {}
 }
 
 // --- IDENTITÉ JOUEUR (classement mondial & sync cloud) ---
@@ -303,4 +410,12 @@ function resetAllGameData() {
     try { localStorage.removeItem(LEADERBOARD_KEY); } catch (e) {}
     try { localStorage.removeItem(STREAK_KEY); } catch (e) {}
     try { localStorage.removeItem(GAMIFICATION_KEY); } catch (e) {}
+}
+
+// Export CommonJS pour les tests unitaires (node --test tests/), même
+// principe que js/gamification.js et js/dailyEngine.js : no-op dans le
+// navigateur. Seules les fonctions pures (sans DOM/localStorage) sont
+// exposées ici.
+if (typeof module === 'object' && typeof module.exports === 'object') {
+    module.exports = { getIsoWeekString, getLocalDateString, getDaysDifference, getTodayStringUTC };
 }

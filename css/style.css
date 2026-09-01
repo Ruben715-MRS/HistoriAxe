@@ -243,6 +243,22 @@
         .daily-submit-feedback { margin-top: 10px; font-size: 13px; text-align: center; min-height: 18px; }
         .daily-submit-feedback.success { color: var(--progress-green); }
         .daily-submit-feedback.error { color: var(--danger-red); }
+        .daily-duel-comparison {
+            background: linear-gradient(135deg, rgba(212, 160, 23, 0.12), rgba(247, 147, 30, 0.18));
+            border: 1px solid rgba(212, 160, 23, 0.35);
+            color: #a86b00;
+            padding: 10px 14px;
+            border-radius: 12px;
+            font-size: 13.5px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        :root[data-theme="dark"] .daily-duel-comparison {
+            color: #f0b90b;
+            background: rgba(212, 160, 23, 0.15);
+            border-color: rgba(212, 160, 23, 0.4);
+        }
         .daily-leaderboard-title { font-size: 14px; font-weight: 700; color: var(--text-dark); margin: 18px 0 8px; }
         .daily-leaderboard-empty { text-align: center; padding: 16px 10px; color: var(--muted-text); font-size: 13px; }
         #daily-leaderboard-preview .leaderboard-row {
@@ -261,6 +277,26 @@
         #daily-leaderboard-preview .leaderboard-pseudo { color: var(--text-dark); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
         #daily-leaderboard-preview .leaderboard-pseudo em { color: var(--muted-text); font-style: italic; font-weight: 400; }
         #daily-leaderboard-preview .leaderboard-time { color: var(--muted-text); font-size: 12px; }
+
+        /* MODALE LIGUE HEBDOMADAIRE (voir js/league.js) : même grille que
+           l'aperçu de classement du Défi du jour ci-dessus, sans colonne temps. */
+        .league-week-hint { text-align: center; font-size: 13px; color: var(--muted-text); background: rgba(107,142,173,0.10); border-radius: 12px; padding: 10px 14px; margin-bottom: 16px; }
+        .league-week-hint strong { color: var(--primary-blue); }
+        #league-list-container .leaderboard-row {
+            display: grid;
+            grid-template-columns: 28px 1fr auto;
+            align-items: center;
+            gap: 8px;
+            padding: 9px 4px;
+            border-bottom: 1px solid var(--rule);
+            font-size: 13.5px;
+            text-align: left;
+        }
+        #league-list-container .leaderboard-row:last-child { border-bottom: none; }
+        #league-list-container .leaderboard-row-me { background: rgba(107,142,173,0.10); border-radius: 8px; }
+        #league-list-container .leaderboard-rank { font-weight: 700; text-align: center; }
+        #league-list-container .leaderboard-pseudo { color: var(--text-dark); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        #league-list-container .leaderboard-pseudo em { color: var(--muted-text); font-style: italic; font-weight: 400; }
 
 
         /* =====================================================================
@@ -516,6 +552,18 @@
         .end-title { font-size: 28px; margin-bottom: 12px; color: var(--primary-blue); font-weight: 800; }
         .end-score { font-size: 22px; margin-bottom: 12px; }
         .end-time { font-size: 16px; margin-bottom: 16px; color: var(--muted-text); font-weight: bold; }
+        .end-xp {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: linear-gradient(135deg, #F59E0B, #10B981);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 9999px;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
 
         /* --- SYSTÈME DE RÉTENTION : STREAKS, PARTAGE WORDLE & ANECDOTES --- */
         .streak-pill-badge {
@@ -996,6 +1044,29 @@
             z-index: 100;
             transition: transform 0.2s, background 0.2s;
         }
+        .league-btn {
+            position: fixed;
+            top: 20px;
+            right: 124px;
+            background: var(--surface);
+            color: var(--text-dark);
+            border: 1px solid var(--border-soft);
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 19px;
+            cursor: pointer;
+            box-shadow: var(--card-shadow);
+            z-index: 100;
+            transition: transform 0.2s, background 0.2s;
+        }
+        .league-btn:hover {
+            transform: scale(1.08);
+            background: var(--surface-2);
+        }
         .profile-btn:hover {
             transform: scale(1.08);
             background: var(--surface-2);
@@ -1065,6 +1136,17 @@
         }
         :root[data-theme="dark"] .player-rank-level-badge {
             background: #2980b9;
+        }
+        .player-rank-streak-badge {
+            font-size: 11px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #FF6B35, #F7931E);
+            color: white;
+            padding: 2px 7px;
+            border-radius: 9999px;
+            letter-spacing: 0.2px;
+            flex-shrink: 0;
+            white-space: nowrap;
         }
         .player-rank-track {
             height: 6px;
@@ -1184,6 +1266,23 @@
             display: flex;
             align-items: center;
             gap: 8px;
+        }
+
+        .profile-streak-multiplier {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.12), rgba(247, 147, 30, 0.18));
+            border: 1px solid rgba(247, 147, 30, 0.35);
+            color: #d35400;
+            padding: 10px 14px;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 600;
+            line-height: 1.4;
+            margin-bottom: 20px;
+        }
+        :root[data-theme="dark"] .profile-streak-multiplier {
+            color: #f39c12;
+            background: rgba(247, 147, 30, 0.15);
+            border-color: rgba(247, 147, 30, 0.4);
         }
 
         .trophies-grid {
@@ -1993,10 +2092,78 @@
             user-select: auto;
         }
 
-        .back-btn, .settings-btn, .profile-btn {
+        .back-btn, .settings-btn, .profile-btn, .league-btn {
             top: calc(20px + var(--sat)) !important;
         }
 
         .modal-content {
             max-height: calc(88vh - var(--sat) - var(--sab)) !important;
+        }
+
+        /* =====================================================================
+           ONBOARDING GUIDÉ — coach-marks des 3 premières minutes (js/onboarding.js)
+           ===================================================================== */
+        .onboarding-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 9998;
+            pointer-events: none;
+        }
+        .onboarding-spotlight {
+            position: fixed;
+            border-radius: 16px;
+            box-shadow: 0 0 0 9999px rgba(0, 10, 30, 0.65);
+            pointer-events: none;
+            transition: top 0.2s ease, left 0.2s ease, width 0.2s ease, height 0.2s ease;
+        }
+        .onboarding-bubble {
+            position: fixed;
+            top: 40vh;
+            left: 50%;
+            transform: translateX(-50%);
+            width: min(90vw, 340px);
+            background: var(--surface);
+            color: var(--text-dark);
+            border-radius: 16px;
+            padding: 18px 20px;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+            pointer-events: auto;
+            box-sizing: border-box;
+        }
+        .onboarding-bubble-title {
+            font-size: 15px;
+            font-weight: 800;
+            margin-bottom: 6px;
+        }
+        .onboarding-bubble-text {
+            font-size: 13.5px;
+            line-height: 1.5;
+            color: var(--muted-text);
+            margin-bottom: 14px;
+        }
+        .onboarding-bubble-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+        .onboarding-skip {
+            background: none;
+            border: none;
+            color: var(--muted-text);
+            font-size: 12.5px;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 6px 4px;
+        }
+        .onboarding-next {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            border-radius: 9999px;
+            padding: 9px 18px;
+            font-size: 13.5px;
+            font-weight: 700;
+            cursor: pointer;
+            white-space: nowrap;
         }
