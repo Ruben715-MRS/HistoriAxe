@@ -2,7 +2,11 @@
 // === HISTORIAXE — MOTEUR D'INTERNATIONALISATION (i18n & PACKS DE LANGUE) ===
 // =========================================================================
 
-const I18N_DATA_CACHE = 'historiaxe-data-v1.0.0';
+// Bumpé en même temps que sw.js: DATA_CACHE (voir ce fichier) — sinon un
+// pack de langue explicitement téléchargé avant une mise à jour de
+// ui/<lang>.json resterait bloqué sur son ancien contenu indéfiniment (ce
+// cache n'est jamais revalidé contre le réseau une fois rempli).
+const I18N_DATA_CACHE = 'historiaxe-data-v1.0.1';
 
 // Le nom de chaque langue reste dans sa propre langue (autonyme) — convention
 // standard des sélecteurs de langue, ne dépend jamais de la langue active.
