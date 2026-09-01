@@ -149,10 +149,13 @@
     "pseudo_placeholder": "e.g. ChronoMaster",
     "submit_btn": "Submit my score",
     "submit_loading": "Sending…",
-    "submit_success": "Score submitted! Local rank: #{rank} out of {total}.",
+    "submit_success": "Score submitted! #{rank} out of {total} worldwide.",
     "submit_error": "Unable to submit score right now. Try again.",
+    "submit_offline": "World leaderboard unavailable offline.",
     "leaderboard_title": "🏆 Today's Leaderboard",
-    "leaderboard_empty": "No score submitted yet today. Be the first!"
+    "leaderboard_empty": "No score submitted yet today. Be the first!",
+    "leaderboard_loading": "Loading leaderboard…",
+    "leaderboard_error": "Leaderboard temporarily unavailable."
   },
   "revision": {
     "hub_title": "Review Weak Milestones",

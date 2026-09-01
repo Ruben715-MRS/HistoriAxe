@@ -29,6 +29,7 @@
                 () => {
                     resetAllGameData();
                     if (typeof customCategory !== 'undefined') customCategory.themes = [];
+                    if (typeof syncPushProgress === 'function') syncPushProgress();
                     closeSettings();
                     showScreen('screen-categories');
                 },
@@ -872,6 +873,12 @@ function ensureCustomCategoryInBdd() {
         let dailyChallengeMode = false;
         let dailyChallengeEventsWithLocation = [];
         let dailyCountdownInterval = null;
+        // Journal des manches du Défi du jour ({ slotIndex, elapsedMs } dans
+        // l'ordre de jeu), envoyé tel quel à l'API : c'est le SERVEUR qui
+        // recalcule le score à partir de ces actions brutes (voir daily.js:
+        // submitDailyScoreToServer et api/scores.js) — jamais depuis `score`,
+        // qui n'est qu'un affichage local et n'est jamais transmis tel quel.
+        let dailyRoundLog = [];
         let favoritesMode = false;
         let axisFilterActive = false;
         let currentThemeAxes = [];
@@ -1134,6 +1141,7 @@ function ensureCustomCategoryInBdd() {
             }
             dailyChallengeEventsWithLocation = picks;
             dailyChallengeMode = true;
+            dailyRoundLog = [];
             revisionMode = false;
             favoritesMode = false;
             axisFilterActive = false;
@@ -3388,6 +3396,15 @@ function ensureCustomCategoryInBdd() {
             if (isAnimating || currentMode === 'discovery') return;
 
             const dateToPlace = eventToPlace.date;
+
+            // Défi du jour : on journalise l'action brute (où, en combien de
+            // temps) avant tout calcul local — c'est ce journal, et non le
+            // score affiché, qui sera envoyé au serveur pour validation
+            // (voir startDailyChallenge, submitDailyScoreToServer dans daily.js).
+            if (currentMode === 'daily') {
+                dailyRoundLog.push({ slotIndex: index, elapsedMs: Date.now() - questionStartTime });
+            }
+
             let isCorrect = true;
             let gap = 0;
 
@@ -3739,6 +3756,12 @@ function ensureCustomCategoryInBdd() {
             if (currentMode === 'daily') {
                 openDailyResultsModal(isWin);
             }
+
+            // Sauvegarde cloud best-effort de la progression (XP, badges, série,
+            // SRS, favoris...) après chaque partie — voir syncPushProgress ci-dessus.
+            if (currentMode !== 'discovery') {
+                syncPushProgress();
+            }
         }
 
         // Confirmation intégrée à l'interface (remplace window.confirm, qui peut être
@@ -3837,19 +3860,64 @@ function ensureCustomCategoryInBdd() {
             document.documentElement.style.setProperty('--zoom-level', currentZoom);
         }
 
+        // =========================================================================
+        // === SYNCHRONISATION CLOUD DE LA PROGRESSION (best-effort) ===
+        // =========================================================================
+        // Modèle volontairement simple pour cette première version (voir
+        // api/sync.js) : si l'appareil n'a localement AUCUNE progression (premier
+        // lancement après réinstallation, ou nouvel appareil), on restaure celle
+        // sauvegardée dans le cloud sous ce device_id. Sinon, la progression
+        // locale reste la source de vérité et on se contente de la pousser vers
+        // le cloud (sauvegarde de secours). Ni l'un ni l'autre ne bloque le
+        // lancement de l'app : en cas d'échec réseau, tout continue localement.
+        function hasAnyLocalProgress() {
+            return SYNC_KEYS.some(key => {
+                try { return localStorage.getItem(key) != null; } catch (e) { return false; }
+            });
+        }
+
+        function syncPushProgress() {
+            if (typeof HistoriAxeAPI === 'undefined' || !HistoriAxeAPI.isConfigured()) return;
+            try {
+                const deviceId = getOrCreateDeviceId();
+                const pseudo = (typeof pseudoLoad === 'function' ? pseudoLoad() : '') || null;
+                HistoriAxeAPI.pushProgress(deviceId, pseudo, exportSyncableState());
+            } catch (e) {}
+        }
+
+        function syncOnAppStart() {
+            if (typeof HistoriAxeAPI === 'undefined' || !HistoriAxeAPI.isConfigured()) return;
+            const deviceId = getOrCreateDeviceId();
+            const localAlreadyHasProgress = hasAnyLocalProgress();
+
+            HistoriAxeAPI.pullProgress(deviceId).then(res => {
+                if (!res.ok || !res.data) return;
+                if (!localAlreadyHasProgress && res.data.data) {
+                    importSyncableState(res.data.data);
+                    if (res.data.pseudo) pseudoSave(res.data.pseudo);
+                } else {
+                    // La progression locale prime : on (re)pousse pour que le
+                    // cloud reflète le dernier état connu de cet appareil.
+                    syncPushProgress();
+                }
+            });
+        }
+
         window.onload = async () => {
             applyAppearance();
             applyOrientationLayout();
             initSettingsControls();
-            
+
             // Initialisation i18n et chargement de la langue active
             if (typeof i18n !== 'undefined') {
                 await i18n.init();
             }
-            
+
             if (typeof initCategories === 'function') {
                 initCategories();
             }
+
+            syncOnAppStart();
 
             showScreen('screen-home');
         };

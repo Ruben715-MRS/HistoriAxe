@@ -149,10 +149,13 @@
     "pseudo_placeholder": "例: ChronoMaster",
     "submit_btn": "スコアを送信",
     "submit_loading": "送信中…",
-    "submit_success": "スコア送信完了！ローカル順位: {total}人中 #{rank}位。",
+    "submit_success": "スコア送信完了！世界 {total}人中 #{rank}位。",
     "submit_error": "スコアの送信に失敗しました。再試行してください。",
+    "submit_offline": "オフラインのため世界ランキングを利用できません。",
     "leaderboard_title": "🏆 今日のランキング",
-    "leaderboard_empty": "本日のスコアはまだありません。最初の挑戦者になりましょう！"
+    "leaderboard_empty": "本日のスコアはまだありません。最初の挑戦者になりましょう！",
+    "leaderboard_loading": "ランキングを読み込み中…",
+    "leaderboard_error": "ランキングは現在利用できません。"
   },
   "revision": {
     "hub_title": "苦手な出来事を復習",
