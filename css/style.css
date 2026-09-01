@@ -480,6 +480,45 @@
         .quiz-fifty-btn { padding: 10px 22px; border-radius: 999px; border: none; background: var(--surface-2); color: var(--text-dark); font: inherit; font-weight: 700; font-size: 14px; cursor: pointer; }
         .quiz-fifty-btn:disabled { opacity: 0.4; cursor: not-allowed; }
 
+        /* Mode Carte (localisation géographique puis temporelle — voir js/geoMap.js) */
+        .geo-body { max-width: 720px; margin: 0 auto; padding: 16px 16px 40px; }
+        .geo-scope-chip { display: inline-block; margin: 0 auto 14px; padding: 4px 14px; border-radius: 999px; background: var(--surface-2); color: var(--primary-blue); font-size: 12px; font-weight: 700; text-align: center; }
+        .geo-body > .geo-scope-chip { display: block; width: fit-content; }
+        .geo-phase-kicker { font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted-text); margin-bottom: 10px; }
+        .geo-event-title { font-size: 20px; font-weight: 700; color: var(--text-dark); line-height: 1.35; margin-bottom: 8px; }
+        .geo-event-desc { font-size: 14.5px; color: var(--muted-text); line-height: 1.5; max-height: 4.5em; overflow: hidden; }
+        .geo-reveal-label { text-align: center; font-weight: 700; font-size: 15px; padding: 10px 16px; border-radius: 12px; margin-bottom: 16px; }
+        .geo-reveal-label.is-correct { background: rgba(44,168,90,0.14); color: #1D7A41; }
+        .geo-reveal-label.is-wrong { background: rgba(217,83,79,0.12); color: var(--danger-red); }
+
+        .geo-map-frame { position: relative; width: 100%; aspect-ratio: 1000 / 440; background: #eaf3fb; border-radius: 16px; overflow: hidden; box-shadow: var(--card-shadow); }
+        :root[data-theme="dark"] .geo-map-frame { background: #142033; }
+        .geo-map-svg-holder, .geo-map-svg-holder svg { display: block; width: 100%; height: 100%; }
+        .geo-land { fill: #c7d6e3; }
+        :root[data-theme="dark"] .geo-land { fill: #2a3a52; }
+        .geo-pins-layer { position: absolute; inset: 0; }
+        .geo-pin-btn {
+            position: absolute; transform: translate(-50%, -50%);
+            width: 30px; height: 30px; border-radius: 50%;
+            background: var(--primary-blue); color: #fff; border: 3px solid #fff;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+            font-weight: 800; font-size: 14px; cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            transition: transform 0.15s, background 0.15s;
+        }
+        .geo-pin-btn:hover { transform: translate(-50%, -50%) scale(1.12); }
+        .geo-pin-btn:disabled { cursor: default; }
+        .geo-pin-btn.correct { background: #2CA85A; }
+        .geo-pin-btn.wrong { background: var(--danger-red); }
+        .geo-pin-number { pointer-events: none; }
+
+        .geo-time-phase { margin-top: 4px; }
+
+        /* Carte d'accès au Mode Carte, injectée dans screen-subcategories /
+           screen-themes (voir js/geoMap.js: buildGeoModeCard) — même gabarit que
+           .special-card, teinte propre pour la distinguer visuellement. */
+        .geo-mode-card { margin-bottom: 6px; }
+
         /* Mode « Le fil du temps » */
         .fil-body { max-width: 480px; margin: 0 auto; padding: 20px 16px 40px; }
         .fil-question-card { background: var(--surface); border-radius: 14px; padding: 28px 24px; text-align: center; box-shadow: var(--card-shadow); margin-bottom: 22px; }
