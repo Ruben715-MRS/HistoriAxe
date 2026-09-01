@@ -15,6 +15,39 @@ const RANKS = [
     { level: 10, title: "Maître du Temps", minXP: 42000, maxXP: 42000, icon: "👑" }
 ];
 
+// Multiplicateur d'XP lié à la série quotidienne en cours (jours consécutifs de
+// Défi du jour/partie gagnée, cf. js/storage.js: getStreakCount). Contrairement
+// au combo intra-partie (comboMultiplier dans js/app.js, remis à 1.0 à chaque
+// erreur DANS une partie), ce multiplicateur porte sur TOUT l'XP gagné et
+// retombe à ×1.0 dès qu'un jour est manqué (streak cassée) — c'est le vrai
+// risque de perte demandé : pas de « gel de série » pour l'amortir.
+const STREAK_XP_MULTIPLIER_TIERS = [
+    { minDays: 0, multiplier: 1.0 },
+    { minDays: 3, multiplier: 1.1 },
+    { minDays: 7, multiplier: 1.25 },
+    { minDays: 14, multiplier: 1.5 },
+    { minDays: 30, multiplier: 2.0 }
+];
+
+function getStreakXpMultiplier(streakCount) {
+    const days = Math.max(0, Math.round(streakCount) || 0);
+    let mult = STREAK_XP_MULTIPLIER_TIERS[0].multiplier;
+    for (let i = 0; i < STREAK_XP_MULTIPLIER_TIERS.length; i++) {
+        if (days >= STREAK_XP_MULTIPLIER_TIERS[i].minDays) mult = STREAK_XP_MULTIPLIER_TIERS[i].multiplier;
+    }
+    return mult;
+}
+
+// Palier suivant (pour l'affichage « Encore N jours pour ×1.5 » dans le profil) :
+// renvoie null si le palier maximum est déjà atteint.
+function getNextStreakXpTier(streakCount) {
+    const days = Math.max(0, Math.round(streakCount) || 0);
+    for (let i = 0; i < STREAK_XP_MULTIPLIER_TIERS.length; i++) {
+        if (STREAK_XP_MULTIPLIER_TIERS[i].minDays > days) return STREAK_XP_MULTIPLIER_TIERS[i];
+    }
+    return null;
+}
+
 const BADGES_CONFIG = [
     {
         id: "antiquaire",
@@ -128,12 +161,23 @@ function getRankInfo(xp) {
 
 function awardXP(points, reason = '') {
     if (points <= 0) return;
+    const streakCount = typeof getStreakCount === 'function' ? getStreakCount() : 0;
+    const multiplier = getStreakXpMultiplier(streakCount);
+    const finalPoints = Math.round(points * multiplier);
+
     const data = gamificationLoad();
     const prevRank = getRankInfo(data.xp).currentRank;
-    data.xp += points;
+    data.xp += finalPoints;
     gamificationSave(data);
 
+    // Ligue hebdomadaire (voir js/league.js + api/league.js) : accumulateur
+    // local, poussé au backend en fin de partie (throttle, voir js/app.js:
+    // endGame → pushWeeklyLeagueXp), pas à chaque appel d'awardXP.
+    if (typeof weeklyXpAdd === 'function') weeklyXpAdd(finalPoints);
+
     const newRankInfo = getRankInfo(data.xp);
+    newRankInfo.xpAwarded = finalPoints;
+    newRankInfo.streakMultiplier = multiplier;
     updateHeaderProfileBar();
 
     if (newRankInfo.currentRank.level > prevRank.level) {
@@ -286,6 +330,18 @@ function updateHeaderProfileBar() {
     const levelEl = document.getElementById('header-rank-level');
     const fillEl = document.getElementById('header-rank-fill');
     const xpTextEl = document.getElementById('header-rank-xp');
+    const streakBadgeEl = document.getElementById('header-streak-badge');
+
+    if (streakBadgeEl) {
+        const streak = (typeof getStreakCount === 'function') ? getStreakCount() : 0;
+        if (streak > 0) {
+            const mult = getStreakXpMultiplier(streak);
+            streakBadgeEl.innerText = mult > 1 ? `🔥 ${streak} ×${mult}` : `🔥 ${streak}`;
+            streakBadgeEl.classList.remove('hidden');
+        } else {
+            streakBadgeEl.classList.add('hidden');
+        }
+    }
 
     if (avatarEl) avatarEl.innerText = rankInfo.currentRank.icon;
     if (titleEl) titleEl.innerText = rankInfo.currentRank.title;
@@ -352,6 +408,24 @@ function renderProfileModal() {
     if (statXp) statXp.innerText = data.xp;
     if (statStreak) statStreak.innerText = `${streakData.maxStreak || 0} 🔥`;
     if (statCenturion) statCenturion.innerText = data.maxConsecutiveCorrectPlacements || 0;
+
+    const streakMultiplierEl = document.getElementById('profile-streak-multiplier');
+    if (streakMultiplierEl) {
+        const currentStreak = getStreakCount();
+        const currentMult = getStreakXpMultiplier(currentStreak);
+        const nextTier = getNextStreakXpTier(currentStreak);
+        let txt = currentMult > 1
+            ? `🔥 Série active : XP ×${currentMult}`
+            : `🔥 Joue aujourd'hui pour activer un multiplicateur d'XP`;
+        if (nextTier) {
+            const daysLeft = nextTier.minDays - currentStreak;
+            txt += ` — encore ${daysLeft} jour${daysLeft > 1 ? 's' : ''} pour ×${nextTier.multiplier}`;
+        }
+        txt += currentStreak > 0
+            ? ` (un seul jour manqué et la série — et le multiplicateur — repartent à zéro).`
+            : '';
+        streakMultiplierEl.innerText = txt;
+    }
     
     const unlockedCount = Object.keys(data.unlockedBadges || {}).length;
     if (statBadgesCount) statBadgesCount.innerText = `${unlockedCount} / ${BADGES_CONFIG.length}`;
@@ -396,5 +470,5 @@ function renderProfileModal() {
 // pas. Seules les fonctions pures (sans dépendance DOM/localStorage) sont
 // exposées ici.
 if (typeof module === 'object' && typeof module.exports === 'object') {
-    module.exports = { RANKS, BADGES_CONFIG, getRankInfo };
+    module.exports = { RANKS, BADGES_CONFIG, getRankInfo, STREAK_XP_MULTIPLIER_TIERS, getStreakXpMultiplier, getNextStreakXpTier };
 }

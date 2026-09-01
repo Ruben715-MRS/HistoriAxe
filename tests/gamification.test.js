@@ -4,7 +4,7 @@
 // fichier touche le DOM/localStorage et n'est pas testé ici.
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const { RANKS, getRankInfo } = require('../js/gamification.js');
+const { RANKS, getRankInfo, getStreakXpMultiplier, getNextStreakXpTier } = require('../js/gamification.js');
 
 test('getRankInfo renvoie le premier rang pour 0 XP', () => {
     const info = getRankInfo(0);
@@ -39,4 +39,38 @@ test('getRankInfo plafonne au dernier rang (pas de nextRank)', () => {
 test('getRankInfo tolère un XP négatif ou invalide', () => {
     assert.equal(getRankInfo(-50).currentRank.level, 1);
     assert.equal(getRankInfo(NaN).currentRank.level, 1);
+});
+
+// --- getStreakXpMultiplier / getNextStreakXpTier ---
+// Multiplicateur d'XP lié à la série quotidienne (voir §3 de la demande de
+// rétention : un vrai risque de perte plutôt qu'un "gel de série").
+
+test('getStreakXpMultiplier vaut ×1.0 tant que la série est courte (0-2 jours)', () => {
+    assert.equal(getStreakXpMultiplier(0), 1.0);
+    assert.equal(getStreakXpMultiplier(1), 1.0);
+    assert.equal(getStreakXpMultiplier(2), 1.0);
+});
+
+test('getStreakXpMultiplier franchit chaque palier pile au seuil', () => {
+    assert.equal(getStreakXpMultiplier(3), 1.1);
+    assert.equal(getStreakXpMultiplier(6), 1.1);
+    assert.equal(getStreakXpMultiplier(7), 1.25);
+    assert.equal(getStreakXpMultiplier(13), 1.25);
+    assert.equal(getStreakXpMultiplier(14), 1.5);
+    assert.equal(getStreakXpMultiplier(29), 1.5);
+    assert.equal(getStreakXpMultiplier(30), 2.0);
+    assert.equal(getStreakXpMultiplier(365), 2.0);
+});
+
+test('getStreakXpMultiplier tolère une série négative ou invalide (retombe à ×1.0)', () => {
+    assert.equal(getStreakXpMultiplier(-5), 1.0);
+    assert.equal(getStreakXpMultiplier(NaN), 1.0);
+});
+
+test('getNextStreakXpTier pointe vers le palier suivant, et null au maximum', () => {
+    assert.equal(getNextStreakXpTier(0).multiplier, 1.1);
+    assert.equal(getNextStreakXpTier(5).multiplier, 1.25);
+    assert.equal(getNextStreakXpTier(29).multiplier, 2.0);
+    assert.equal(getNextStreakXpTier(30), null);
+    assert.equal(getNextStreakXpTier(1000), null);
 });

@@ -71,6 +71,7 @@ function openDailyResultsModal(isWin) {
     dailyCountdownInterval = setInterval(updateDailyCountdown, 1000);
 
     renderDailyLeaderboardPreview();
+    if (typeof renderDuelComparisonIfPending === 'function') renderDuelComparisonIfPending();
     modal.classList.remove('hidden');
 }
 

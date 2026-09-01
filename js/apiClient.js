@@ -92,6 +92,32 @@ var HistoriAxeAPI = (function () {
                 scope: 'allTime', lang: opts.lang, deviceId: opts.deviceId, limit: opts.limit
             }));
         },
+        getWeeklyLeague: function (opts) {
+            opts = opts || {};
+            return request('GET', '/api/league' + qs({
+                isoWeek: opts.isoWeek, deviceId: opts.deviceId, limit: opts.limit
+            }));
+        },
+        submitWeeklyXp: function (deviceId, pseudo, isoWeek, xp) {
+            return request('POST', '/api/league', { deviceId: deviceId, pseudo: pseudo, isoWeek: isoWeek, xp: xp });
+        },
+        createDuel: function (deviceId, pseudo, lang, date) {
+            return request('POST', '/api/duels', { deviceId: deviceId, pseudo: pseudo, lang: lang, date: date });
+        },
+        getDuel: function (id, deviceId) {
+            return request('GET', '/api/duels' + qs({ id: id, deviceId: deviceId }));
+        },
+        getMyDuels: function (deviceId) {
+            return request('GET', '/api/duels' + qs({ mine: '1', deviceId: deviceId }));
+        },
+        ackDuel: function (id, deviceId) {
+            return request('PATCH', '/api/duels', { id: id, deviceId: deviceId });
+        },
+        // Origine du backend déployé (voir detectApiBase ci-dessus) : réutilisée
+        // pour construire un lien de duel partageable, valable aussi bien depuis
+        // le web (déjà le bon domaine) que depuis l'app native (qui n'a pas
+        // d'origine https utilisable pour un lien, voir NATIVE_APP_API_BASE_URL).
+        getApiBase: function () { return API_BASE; },
         pullProgress: function (deviceId) {
             return request('GET', '/api/sync' + qs({ deviceId: deviceId }));
         },

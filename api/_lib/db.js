@@ -90,6 +90,40 @@ async function ensureSchema() {
                 updated_at  timestamptz not null default now()
             );
         `);
+        // Ligues hebdomadaires (voir api/league.js) : un total d'XP hebdo par
+        // joueur et par semaine ISO. Le regroupement en ligues lui-même n'est
+        // PAS stocké ici — il est recalculé à la volée par hash déterministe
+        // (voir api/league.js) pour éviter toute tâche planifiée.
+        await query(`
+            create table if not exists weekly_xp (
+                player_id   uuid not null references players(id) on delete cascade,
+                iso_week    text not null,
+                xp          integer not null default 0,
+                updated_at  timestamptz not null default now(),
+                primary key (player_id, iso_week)
+            );
+        `);
+        await query(`
+            create index if not exists idx_weekly_xp_week_xp
+                on weekly_xp (iso_week, xp desc);
+        `);
+        // Duels asynchrones entre amis (voir api/duels.js).
+        await query(`
+            create table if not exists duels (
+                id                  text primary key,
+                creator_player_id   uuid not null references players(id) on delete cascade,
+                opponent_player_id  uuid references players(id) on delete set null,
+                challenge_date      date not null,
+                lang                text not null,
+                created_at          timestamptz not null default now(),
+                opened_at           timestamptz,
+                notified            boolean not null default false
+            );
+        `);
+        await query(`
+            create index if not exists idx_duels_creator
+                on duels (creator_player_id);
+        `);
     })().catch((err) => {
         // En cas d'échec (permissions restreintes, base non joignable...),
         // on ne met pas le résultat en cache : la prochaine requête réessaiera.

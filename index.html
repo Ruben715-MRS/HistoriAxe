@@ -48,6 +48,7 @@
     <!-- ÉCRAN 2 : CATÉGORIES (Grandes sections) -->
     <div id="screen-categories" class="list-screen hidden">
         <button class="back-btn" onclick="showScreen('screen-home')" aria-label="Retour à l'accueil">‹</button>
+        <button class="league-btn" onclick="openLeagueModal()" aria-label="Ligue hebdomadaire">🥇</button>
         <button class="profile-btn" onclick="openProfileModal()" aria-label="Profil et Trophées">🏅</button>
         <button class="settings-btn" onclick="openSettings()" aria-label="Réglages">⚙</button>
         <div class="search-bar-wrap">
@@ -64,6 +65,7 @@
                 <div class="player-rank-details">
                     <div class="player-rank-row">
                         <span class="player-rank-title" id="header-rank-title">Novice des Annales</span>
+                        <span class="player-rank-streak-badge hidden" id="header-streak-badge" title="Série quotidienne : plus elle est longue, plus l'XP gagné est multiplié">🔥 0</span>
                         <span class="player-rank-level-badge" id="header-rank-level">Niv. 1</span>
                     </div>
                     <div class="player-rank-track">
@@ -174,7 +176,7 @@
         <h2 class="header-title" id="modes-header-title">Choisissez un mode de jeu</h2>
         
         <div class="grid-modes">
-            <div class="mode-card" style="background-color: #2c3e50;" onclick="startActualGame('discovery')">
+            <div class="mode-card" id="mode-card-discovery" style="background-color: #2c3e50;" onclick="startActualGame('discovery')">
                 <h3>Découverte</h3>
                 <p>Consultez la frise chronologique sans jouer.</p>
             </div>
@@ -548,11 +550,17 @@
     <!-- ÉCRAN 6 : FIN DE PARTIE -->
     <div id="screen-end" class="hidden">
         <button class="back-btn" onclick="showScreen(screenAfterGame())" aria-label="Retour">‹</button>
-        <div class="end-title" id="end-title">Partie Terminée</div>
-        <div class="end-score">Score : <strong id="end-score-val">0</strong> points</div>
-        <div id="end-time-display" class="end-time hidden">Durée : 0,0 s</div>
-        <div style="display:flex; gap:15px; margin-top: 20px;">
-            <button class="btn" onclick="replayCurrentGame()">Rejouer</button>
+        <div class="end-content-wrapper">
+            <div class="end-title" id="end-title">Partie Terminée</div>
+            <div class="end-score">Score : <strong id="end-score-val">0</strong> points</div>
+            <div id="end-xp-display" class="end-xp hidden"></div>
+            <div id="end-time-display" class="end-time hidden">Durée : 0,0 s</div>
+            <div id="end-streak-display" class="end-streak-banner hidden"></div>
+            <div style="display:flex; gap:15px; margin-top: 20px;">
+                <button class="btn" onclick="replayCurrentGame()">Rejouer</button>
+            </div>
+            <div id="end-share-container" class="share-card hidden"></div>
+            <div id="end-anecdote-container" class="anecdote-card-wrapper hidden"></div>
         </div>
     </div>
 
@@ -589,6 +597,8 @@
                 </div>
             </div>
 
+            <div class="daily-duel-comparison hidden" id="daily-duel-comparison"></div>
+
             <div class="daily-countdown-box">
                 <span data-i18n="daily.countdown_label">Prochain défi dans</span> <span class="daily-countdown-val" id="daily-countdown-val">--:--:--</span>
             </div>
@@ -602,6 +612,8 @@
 
             <div class="daily-leaderboard-title" data-i18n="daily.leaderboard_title">🏆 Classement du jour</div>
             <div id="daily-leaderboard-preview"></div>
+
+            <button class="btn btn-secondary" id="btn-daily-challenge-friend" style="width:100%; margin-top:14px;" onclick="challengeFriendToDuel()">⚔️ Défier un ami</button>
         </div>
     </div>
 
@@ -688,6 +700,10 @@
                 </div>
             </div>
 
+            <div class="profile-streak-multiplier" id="profile-streak-multiplier">🔥 Joue aujourd'hui pour activer un multiplicateur d'XP</div>
+
+            <button class="btn btn-secondary" style="width:100%; margin-bottom:20px;" onclick="closeProfileModal(); openRecapModal();">📊 Voir mon récap hebdo/mensuel</button>
+
             <div class="profile-section-title">🏆 Trophées & Hauts Faits</div>
             <div class="trophies-grid" id="profile-trophies-container">
                 <!-- Badges générés dynamiquement -->
@@ -695,6 +711,50 @@
         </div>
     </div>
     
+    <!-- MODAL LIGUE HEBDOMADAIRE (voir js/league.js + api/league.js) -->
+    <div id="modal-league" class="modal-overlay hidden" onclick="if(event.target===this)closeLeagueModal()">
+        <div class="modal-content" style="max-width: 460px;">
+            <span class="close-btn" onclick="closeLeagueModal()">×</span>
+            <h2 style="font-size:20px; margin-bottom:5px; color:var(--text-dark);">🥇 Ta ligue de la semaine</h2>
+            <div class="league-week-hint">Ton total cette semaine : <strong id="league-my-xp">0</strong> XP. Le classement se réinitialise chaque semaine.</div>
+            <div id="league-list-container"></div>
+        </div>
+    </div>
+
+    <!-- MODAL RÉCAP HEBDO / MENSUEL (voir js/recap.js) -->
+    <div id="modal-recap" class="modal-overlay hidden" onclick="if(event.target===this)closeRecapModal()">
+        <div class="modal-content" style="max-width: 460px; text-align:center;">
+            <span class="close-btn" onclick="closeRecapModal()">×</span>
+            <div class="modal-title" id="recap-title">📊 Ton récap de la semaine</div>
+            <div class="segmented" id="recap-period-tabs" style="margin: 16px auto 20px;">
+                <button type="button" data-value="week">Cette semaine</button>
+                <button type="button" data-value="month">Ce mois-ci</button>
+            </div>
+            <div class="profile-stats-grid">
+                <div class="profile-stat-box">
+                    <span class="profile-stat-val" id="recap-stat-xp">0</span>
+                    <span class="profile-stat-label">XP gagné</span>
+                </div>
+                <div class="profile-stat-box">
+                    <span class="profile-stat-val" id="recap-stat-themes">0</span>
+                    <span class="profile-stat-label">Parties gagnées</span>
+                </div>
+                <div class="profile-stat-box">
+                    <span class="profile-stat-val" id="recap-stat-days">0</span>
+                    <span class="profile-stat-label">Jours actifs</span>
+                </div>
+                <div class="profile-stat-box">
+                    <span class="profile-stat-val" id="recap-stat-streak">0 🔥</span>
+                    <span class="profile-stat-label">Série actuelle</span>
+                </div>
+            </div>
+            <p class="settings-hint" id="recap-delta" style="text-align:center;"></p>
+            <button class="btn-share" onclick="shareRecapResults()" style="margin-top:10px;">
+                <span>Partager mon récap</span> <span>📤</span>
+            </button>
+        </div>
+    </div>
+
     <!-- MODAL LEADERBOARD / SCORES -->
     <div id="modal-leaderboard" class="modal-overlay hidden">
         <div class="modal-content" style="max-width:500px;">
@@ -816,6 +876,15 @@
                 <p class="settings-hint" data-i18n="settings.haptics_hint">Retours tactiles lors des interactions, bonnes réponses et erreurs.</p>
             </div>
 
+            <div class="settings-group hidden" id="settings-group-notifications">
+                <div class="settings-label">Notifications</div>
+                <div class="segmented" id="settings-notifications">
+                    <button type="button" data-value="on">Activées</button>
+                    <button type="button" data-value="off">Désactivées</button>
+                </div>
+                <p class="settings-hint">Rappels pour garder ta série et ne pas manquer le Défi du jour. Disponible dans l'app iOS (pas sur le web).</p>
+            </div>
+
             <div class="settings-group">
                 <div class="settings-label" data-i18n="settings.language_label">Langue & Packs de contenu</div>
                 <div id="settings-lang-packs-container" class="lang-packs-list">
@@ -829,6 +898,7 @@
             <div class="settings-group">
                 <div class="settings-label">Données de jeu</div>
                 <button class="btn btn-secondary" style="width:100%; margin-bottom:12px;" onclick="openScoringInfo()">📖 Explications du calcul des points</button>
+                <button class="btn btn-secondary" style="width:100%; margin-bottom:12px;" onclick="restartOnboarding()">🧭 Revoir le tutoriel</button>
                 <button class="btn" style="width:100%; background:var(--danger-red);" onclick="resetGameData()">⚠️ Réinitialiser le jeu</button>
                 <p class="settings-hint">Supprime définitivement vos favoris, tous vos thèmes et événements personnalisés créés, votre historique de révision (points faibles) et la progression de déverrouillage des modes Chrono/Expert. Vos réglages d'affichage (orientation, apparence) sont conservés.</p>
             </div>
@@ -838,6 +908,11 @@
     <!-- MODULES JAVASCRIPT MODULAIRES HISTORIAXE -->
     <script src="js/storage.js"></script>
     <script src="js/audio.js"></script>
+    <script src="js/onboarding.js"></script>
+    <script src="js/notifications.js"></script>
+    <script src="js/recap.js"></script>
+    <script src="js/league.js"></script>
+    <script src="js/duels.js"></script>
     <script src="js/gamification.js"></script>
     <script src="js/dailyEngine.js"></script>
     <script src="js/apiClient.js"></script>
