@@ -51,6 +51,15 @@ var NATIVE_APP_API_BASE_URL = 'https://votre-projet.vercel.app';
 
 Puis `npm run cap:build:ios`.
 
+**Privacy Manifest (obligatoire à la soumission App Store depuis 2024) :**
+`ios/App/App/PrivacyInfo.xcprivacy` est fourni (déclare les APIs "required
+reason" UserDefaults/FileTimestamp utilisées indirectement par les plugins
+Capacitor, et l'absence de tracking). Le format du projet Xcode généré ici
+(objectVersion 48, pré-Xcode 16) ne référence pas automatiquement les
+fichiers ajoutés au dossier — avant de builder/soumettre, ajoutez-le une
+fois dans Xcode : clic droit sur le groupe "App" → *Add Files to "App"...*
+→ sélectionner `PrivacyInfo.xcprivacy` (target "App" coché).
+
 ### Comment fonctionne l'anti-triche du Défi du jour
 
 Le score n'est **jamais** envoyé par le client. Pendant la partie, chaque
@@ -79,16 +88,57 @@ le serveur ne fait jamais confiance à un score, seulement aux actions.
 - **Fusion multi-appareils de la progression** : le modèle actuel est
   "dernière écriture gagne" (voir `api/sync.js`) — suffisant pour la sauvegarde
   de secours / changement d'appareil, pas encore une vraie fusion.
+- **Capacitor 7** : les dépendances sont encore en v6 (`^6.0.0`). La v7
+  ajoute le support iOS 18/Xcode 16 (SDK le plus récent, régulièrement
+  exigé par Apple à la soumission) mais implique une migration native
+  (Swift Package Manager, `pod install`/Xcode) qui ne peut être vérifiée
+  que sur un Mac avec Xcode — à faire et tester avant une soumission App
+  Store.
+- **Compression des images** (`assets/`, ~34 Mo, essentiellement des JPEG
+  non optimisés) : un passage en WebP/AVIF réduirait sensiblement le poids
+  au téléchargement, un facteur de conversion sur l'App Store. Nécessite
+  un outil de conversion (`cwebp`/`sharp`) non disponible dans tous les
+  environnements et une vérification visuelle par image avant de committer.
+- **Télémétrie/monitoring** (crashs, rétention J1/J7/J30, thèmes qui
+  plantent) : volontairement absent — le choix d'un prestataire (Sentry,
+  Plausible, Firebase Analytics...) engage la politique de confidentialité
+  de l'app et mérite une décision produit, pas un ajout silencieux d'un
+  service tiers qui recevrait des données de tous les joueurs.
+- **`js/app.js` (185 Ko, variables globales)** : une migration vers des
+  modules ES (`type="module"`, imports explicites) réduirait le risque de
+  régression du type "fonction supprimée par erreur lors d'un refactor"
+  (déjà vu dans l'historique du projet), mais doit se faire fichier par
+  fichier avec une suite de tests qui couvre chaque mode de jeu — pas en
+  un seul passage, sous peine d'introduire exactement ce genre de
+  régression.
 
 ## Développement
 
 ```bash
 npm install
-npm run build          # copie les fichiers statiques dans www/ (build iOS)
+npm run build          # compile Tailwind (css/tailwind.generated.css) puis copie les fichiers statiques dans www/ (build iOS)
 npm run cap:sync        # + npx cap sync
 npm run cap:open:ios
+npm test                # tests unitaires + validation du schéma des packs de données (data/*.json)
 ```
 
 Le site statique (`index.html`, `js/`, `css/`, `data/`...) se sert tel quel ;
 `vercel.json` déploie le dossier racine et détecte automatiquement les
-fonctions serverless dans `api/`.
+fonctions serverless dans `api/`. Une CI GitHub Actions (`.github/workflows/ci.yml`)
+lance `npm test` et `npm run build` sur chaque pull request.
+
+### Tailwind CSS
+
+Le CSS Tailwind est compilé à l'avance (`tailwind.config.js` +
+`css/tailwind-input.css` → `css/tailwind.generated.css`, régénéré via
+`npm run build:css` ou `npm run build`) plutôt que chargé depuis le Play
+CDN (`cdn.tailwindcss.com`) : ce CDN est déconseillé en production par
+Tailwind lui-même (compilation JIT à chaque chargement) et, pour une app
+qui se veut utilisable hors-ligne, dépendait d'un accès réseau à un
+domaine tiers à chaque lancement. `css/tailwind.generated.css` est
+committé (comme `css/style.css`) : après une modification de classes
+Tailwind dans `index.html`/`js/*.js` ou de `tailwind.config.js`, relancez
+`npm run build:css` et committez le fichier généré. Les polices Inter et
+Material Symbols sont pour la même raison auto-hébergées
+(`css/fonts.css` + `assets/fonts/`) plutôt que chargées depuis
+`fonts.googleapis.com`.

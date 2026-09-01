@@ -2,15 +2,28 @@
 // === HISTORIAXE — SERVICE WORKER OFF-LINE & PACKS DE DONNÉES (SW.JS) ===
 // =========================================================================
 
-const CACHE_VERSION = '1.0.5';
+const CACHE_VERSION = '1.1.0';
 const APP_SHELL_CACHE = `historiaxe-shell-v${CACHE_VERSION}`;
 const DATA_CACHE = 'historiaxe-data-v1.0.3';
 
+// Tailwind (css/tailwind.generated.css) et les polices Inter / Material
+// Symbols (css/fonts.css + assets/fonts/*) sont désormais compilées et
+// auto-hébergées (voir scripts/build.js et index.html) au lieu d'être
+// chargées depuis cdn.tailwindcss.com / fonts.googleapis.com : elles sont
+// donc des ressources same-origin normales, précachées ici comme le reste
+// de l'App Shell. Avant ce changement, le premier lancement hors-ligne
+// perdait tout le style Tailwind et la police Inter, ces ressources
+// cross-origin n'étant jamais interceptées ni mises en cache (cf. le test
+// `url.origin !== self.location.origin` plus bas).
 const APP_SHELL_FILES = [
     './',
     './index.html',
     './manifest.webmanifest',
     './css/style.css',
+    './css/tailwind.generated.css',
+    './css/fonts.css',
+    './assets/fonts/inter-latin.woff2',
+    './assets/fonts/material-symbols-outlined.woff2',
     './js/storage.js',
     './js/audio.js',
     './js/gamification.js',

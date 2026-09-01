@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- HistoriAxe ne fait aucun tracking cross-app/cross-site et ne
+	     collecte aucune donnée transmise à un tiers : c'est une app
+	     hors-ligne dont les seules données sortantes sont, en option,
+	     le pseudo + score du Défi du jour envoyés à l'API du classement
+	     mondial (voir js/apiClient.js / api/). -->
+	<key>NSPrivacyTracking</key>
+	<false/>
+	<key>NSPrivacyTrackingDomains</key>
+	<array/>
+	<key>NSPrivacyCollectedDataTypes</key>
+	<array/>
+
+	<!-- APIs "required reason" utilisées indirectement via Capacitor
+	     (@capacitor/core, app, haptics, splash-screen, status-bar) : ces
+	     plugins lisent/écrivent des préférences via UserDefaults et
+	     consultent des dates de fichiers du bundle de l'app. Raisons
+	     choisies parmi celles listées par Apple pour un usage interne à
+	     l'app, sans partage avec un tiers. -->
+	<key>NSPrivacyAccessedAPITypes</key>
+	<array>
+		<dict>
+			<key>NSPrivacyAccessedAPIType</key>
+			<string>NSPrivacyAccessedAPICategoryUserDefaults</string>
+			<key>NSPrivacyAccessedAPITypeReasons</key>
+			<array>
+				<string>CA92.1</string>
+			</array>
+		</dict>
+		<dict>
+			<key>NSPrivacyAccessedAPIType</key>
+			<string>NSPrivacyAccessedAPICategoryFileTimestamp</string>
+			<key>NSPrivacyAccessedAPITypeReasons</key>
+			<array>
+				<string>C617.1</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>

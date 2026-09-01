@@ -389,3 +389,12 @@ function renderProfileModal() {
         container.appendChild(card);
     });
 }
+
+// Export CommonJS pour les tests unitaires (node --test tests/), sur le
+// même principe que js/dailyEngine.js : ce bloc est un no-op dans le
+// navigateur, où ce fichier est chargé via <script> et `module` n'existe
+// pas. Seules les fonctions pures (sans dépendance DOM/localStorage) sont
+// exposées ici.
+if (typeof module === 'object' && typeof module.exports === 'object') {
+    module.exports = { RANKS, BADGES_CONFIG, getRankInfo };
+}

@@ -1,7 +1,11 @@
 const fs = require('fs');
 const path = require('path');
 
-const projectDir = path.resolve('c:/Users/natha/OneDrive/Bureau/My Apps/HistoriAxe');
+// Résolu relativement à ce script (scripts/../ = racine du repo), et non
+// codé en dur sur un poste précis : ainsi `node scripts/build.js`
+// fonctionne sur n'importe quelle machine, CI ou environnement, pas
+// uniquement sur celle où il a été écrit.
+const projectDir = path.resolve(__dirname, '..');
 const wwwDir = path.join(projectDir, 'www');
 
 console.log('Building web bundle into www/...');
@@ -24,13 +28,16 @@ function copyRecursiveSync(src, dest) {
 }
 
 // Files & Folders to bundle
+// Note : accueil_original.jpg (~3,1 Mo, fichier source non compressé de
+// accueil.jpg) n'est jamais référencé par l'app et n'a donc rien à faire
+// dans le bundle livré — il reste versionné comme source de travail, mais
+// n'est plus copié dans www/.
 const itemsToCopy = [
     'index.html',
     'manifest.webmanifest',
     'sw.js',
     'apple_icon.jpg',
     'accueil.jpg',
-    'accueil_original.jpg',
     'splash_ipad_landscape.jpg',
     'splash_ipad_portrait.jpg',
     'splash_iphone_landscape.jpg',
