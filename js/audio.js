@@ -178,3 +178,82 @@ function playTapSound() {
     const now = ctx.currentTime;
     playNote(ctx, 480, now, 0.03, { type: 'sine', glideTo: 220, volume: 0.05, attack: 0.002 });
 }
+
+// --- CONFETTIS (célébration : fin de partie gagnée, badge, changement de grade) ---
+// Canvas plein écran créé à la volée (voir #confetti-canvas dans style.css) : aucune
+// dépendance externe, pas d'élément à prévoir dans le HTML.
+let confettiCanvas = null;
+let confettiCtx = null;
+let confettiAnimId = null;
+let confettiParticles = [];
+
+function getConfettiCanvas() {
+    if (confettiCanvas && document.body.contains(confettiCanvas)) return confettiCanvas;
+    confettiCanvas = document.getElementById('confetti-canvas');
+    if (!confettiCanvas) {
+        confettiCanvas = document.createElement('canvas');
+        confettiCanvas.id = 'confetti-canvas';
+        document.body.appendChild(confettiCanvas);
+    }
+    confettiCtx = confettiCanvas.getContext('2d');
+    return confettiCanvas;
+}
+
+function triggerConfetti(duration = 2500) {
+    try {
+        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+        const canvas = getConfettiCanvas();
+        const ctx = confettiCtx;
+        if (!ctx) return;
+        const dpr = window.devicePixelRatio || 1;
+        canvas.width = window.innerWidth * dpr;
+        canvas.height = window.innerHeight * dpr;
+
+        const colors = ['#f7931e', '#27ae60', '#3498db', '#e74c3c', '#9b59b6', '#f1c40f'];
+        const count = 140;
+        for (let i = 0; i < count; i++) {
+            confettiParticles.push({
+                x: Math.random() * canvas.width,
+                y: -20 * dpr - Math.random() * canvas.height * 0.3,
+                w: (6 + Math.random() * 6) * dpr,
+                h: (8 + Math.random() * 10) * dpr,
+                color: colors[Math.floor(Math.random() * colors.length)],
+                vy: (2 + Math.random() * 3) * dpr,
+                vx: (Math.random() - 0.5) * 2.5 * dpr,
+                rotation: Math.random() * Math.PI * 2,
+                vr: (Math.random() - 0.5) * 0.3,
+                sway: Math.random() * Math.PI * 2
+            });
+        }
+
+        const startTime = Date.now();
+
+        function frame() {
+            const elapsed = Date.now() - startTime;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            confettiParticles.forEach(p => {
+                p.sway += 0.05;
+                p.x += p.vx + Math.sin(p.sway) * 0.6 * dpr;
+                p.y += p.vy;
+                p.rotation += p.vr;
+                ctx.save();
+                ctx.translate(p.x, p.y);
+                ctx.rotate(p.rotation);
+                ctx.fillStyle = p.color;
+                ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+                ctx.restore();
+            });
+            confettiParticles = confettiParticles.filter(p => p.y < canvas.height + 40 * dpr);
+
+            if (elapsed < duration || confettiParticles.length > 0) {
+                confettiAnimId = requestAnimationFrame(frame);
+            } else {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                confettiAnimId = null;
+            }
+        }
+
+        if (!confettiAnimId) confettiAnimId = requestAnimationFrame(frame);
+    } catch (e) {}
+}
