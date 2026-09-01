@@ -22,101 +22,18 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="HistoriAxe">
-    
-    <!-- Tailwind CSS & Fonts (Tailored Executive) -->
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com" rel="preconnect"/>
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "secondary-fixed-dim": "#e9c349",
-                        "on-surface-variant": "#44464f",
-                        "outline": "#757780",
-                        "on-primary": "#ffffff",
-                        "on-tertiary": "#ffffff",
-                        "surface-container-highest": "#dbe4ed",
-                        "primary-fixed": "#dae2ff",
-                        "on-primary-fixed": "#001847",
-                        "inverse-surface": "#293138",
-                        "on-tertiary-fixed-variant": "#454748",
-                        "on-background": "#141d23",
-                        "surface": "#f6faff",
-                        "tertiary-container": "#1b1e1f",
-                        "tertiary-fixed-dim": "#c5c7c8",
-                        "on-primary-container": "#7084ba",
-                        "on-secondary": "#ffffff",
-                        "on-secondary-fixed-variant": "#574500",
-                        "error": "#ba1a1a",
-                        "surface-tint": "#495d90",
-                        "on-error-container": "#93000a",
-                        "on-tertiary-fixed": "#191c1d",
-                        "on-primary-fixed-variant": "#314577",
-                        "on-secondary-container": "#745c00",
-                        "surface-container-lowest": "#ffffff",
-                        "secondary": "#735c00",
-                        "surface-variant": "#dbe4ed",
-                        "primary-container": "#001a4b",
-                        "tertiary": "#020404",
-                        "on-surface": "#141d23",
-                        "secondary-fixed": "#ffe088",
-                        "on-error": "#ffffff",
-                        "secondary-container": "#fed65b",
-                        "surface-container-low": "#ecf5fe",
-                        "on-tertiary-container": "#848687",
-                        "surface-bright": "#f6faff",
-                        "error-container": "#ffdad6",
-                        "background": "#f6faff",
-                        "inverse-on-surface": "#e9f2fb",
-                        "surface-container-high": "#e0e9f2",
-                        "primary-fixed-dim": "#b2c5ff",
-                        "inverse-primary": "#b2c5ff",
-                        "surface-container": "#e6eff8",
-                        "surface-dim": "#d2dbe4",
-                        "on-secondary-fixed": "#241a00",
-                        "outline-variant": "#c5c6d0",
-                        "primary": "#000311",
-                        "tertiary-fixed": "#e1e3e4"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "1rem",
-                        "lg": "2rem",
-                        "xl": "3rem",
-                        "full": "9999px"
-                    },
-                    "spacing": {
-                        "md": "24px",
-                        "gutter": "16px",
-                        "xl": "48px",
-                        "lg": "32px",
-                        "margin-desktop": "64px",
-                        "base": "8px",
-                        "sm": "12px",
-                        "xs": "4px",
-                        "margin-mobile": "20px"
-                    },
-                    "fontFamily": {
-                        "body-lg": ["Inter"],
-                        "headline-lg": ["Inter"],
-                        "headline-md": ["Inter"],
-                        "label-sm": ["Inter"],
-                        "headline-lg-mobile": ["Inter"],
-                        "label-lg": ["Inter"],
-                        "display": ["Inter"],
-                        "body-md": ["Inter"]
-                    },
-                    boxShadow: {
-                        'executive': '0px 10px 30px rgba(0, 26, 75, 0.05)',
-                    }
-                }
-            }
-        }
-    </script>
+
+    <!-- Tailwind CSS (Tailored Executive) & polices : compilées à l'avance
+         (voir tailwind.config.js + css/tailwind-input.css, régénérées via
+         `npm run build:css`) et auto-hébergées (css/fonts.css) plutôt que
+         chargées depuis cdn.tailwindcss.com / fonts.googleapis.com. Le
+         Play CDN de Tailwind est déconseillé en prod par Tailwind lui-même
+         (compilation JIT à chaque chargement) et, comme les polices
+         Google, dépendait d'un accès réseau à un domaine tiers à chaque
+         lancement — inacceptable pour une app qui se veut utilisable
+         hors-ligne. -->
+    <link rel="stylesheet" href="css/tailwind.generated.css">
+    <link rel="stylesheet" href="css/fonts.css">
     <link rel="manifest" href="manifest.webmanifest">
     <link rel="stylesheet" href="css/style.css">
 </head>
