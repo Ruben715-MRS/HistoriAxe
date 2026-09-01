@@ -123,12 +123,13 @@ var HistoriAxeNotifications = (function () {
             target.setHours(20, 0, 0, 0);
             if (target.getTime() <= Date.now()) return; // Trop tard pour ce soir : le prochain refresh reprogrammera pour demain.
 
+            var tFn = (typeof t === 'function') ? t : function (key) { return key; };
             var body = streak > 0
-                ? 'Ta série de ' + streak + ' jour' + (streak > 1 ? 's' : '') + ' va se briser ce soir. Relève le Défi du jour pour la garder !'
-                : 'Le Défi du jour t’attend : 2 minutes pour lancer ta série 🔥.';
+                ? tFn('notifications.streak_body', { days: streak })
+                : tFn('notifications.streak_reminder_fallback');
             scheduleOne({
                 id: IDS.STREAK_REMINDER,
-                title: '🔥 Ta série est en péril',
+                title: tFn('notifications.streak_title'),
                 body: body,
                 schedule: { at: target }
             });
@@ -140,10 +141,11 @@ var HistoriAxeNotifications = (function () {
         cancel(IDS.DAILY_AVAILABLE);
         if (!isSupported() || !userEnabled()) return;
         try {
+            var tFn = (typeof t === 'function') ? t : function (key) { return key; };
             scheduleOne({
                 id: IDS.DAILY_AVAILABLE,
-                title: '🌍 Le Défi du jour est disponible',
-                body: 'Dix événements à replacer dans l’ordre chronologique. À toi de jouer !',
+                title: tFn('notifications.daily_title'),
+                body: tFn('notifications.daily_body'),
                 schedule: { on: { hour: 9, minute: 0 }, repeats: true }
             });
         } catch (e) {}
@@ -155,10 +157,11 @@ var HistoriAxeNotifications = (function () {
         cancel(IDS.WEEKLY_RECAP);
         if (!isSupported() || !userEnabled()) return;
         try {
+            var tFn = (typeof t === 'function') ? t : function (key) { return key; };
             scheduleOne({
                 id: IDS.WEEKLY_RECAP,
-                title: '📊 Ton récap de la semaine est prêt',
-                body: 'Découvre ton XP gagné, tes défis relevés et tes thèmes maîtrisés cette semaine.',
+                title: tFn('notifications.recap_title'),
+                body: tFn('notifications.recap_body'),
                 schedule: { on: { weekday: 2, hour: 19, minute: 0 }, repeats: true }
             });
         } catch (e) {}
@@ -173,10 +176,11 @@ var HistoriAxeNotifications = (function () {
         try {
             var id = 2000 + (hashCode(String(duelId)) % 100000);
             var target = new Date(Date.now() + 24 * 3600 * 1000);
+            var tFn = (typeof t === 'function') ? t : function (key) { return key; };
             scheduleOne({
                 id: id,
-                title: '⚔️ Ton duel t’attend',
-                body: 'Viens voir si ton ami a relevé ton défi — et si tu as été dépassé.',
+                title: tFn('notifications.duel_title'),
+                body: tFn('notifications.duel_body'),
                 schedule: { at: target }
             });
         } catch (e) {}

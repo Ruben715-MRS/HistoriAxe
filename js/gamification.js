@@ -2,6 +2,8 @@
 // === HISTORIAXE — MODULE DE GAMIFICATION (XP, RANGS & TROPHÉES) ===
 // =========================================================================
 
+// Les titres et icônes sont traduits via ui/<lang>.json (clé gamification.ranks.<level>.title),
+// avec le texte français ci-dessous comme repli si la clé est absente (voir rankTitle()).
 const RANKS = [
     { level: 1, title: "Novice des Annales", minXP: 0, maxXP: 500, icon: "📜" },
     { level: 2, title: "Apprenti Chroniqueur", minXP: 500, maxXP: 1500, icon: "✍️" },
@@ -14,6 +16,15 @@ const RANKS = [
     { level: 9, title: "Grand Chronomancien", minXP: 30000, maxXP: 42000, icon: "⏳" },
     { level: 10, title: "Maître du Temps", minXP: 42000, maxXP: 42000, icon: "👑" }
 ];
+
+// Titre traduit d'un grade (repli sur le libellé français figé dans RANKS ci-dessus
+// si la clé i18n manque, ex. hors-ligne sans pack de langue chargé).
+function rankTitle(rank) {
+    if (!rank) return '';
+    const key = 'gamification.ranks.' + rank.level + '.title';
+    const translated = (typeof t === 'function') ? t(key) : key;
+    return (translated && translated !== key) ? translated : rank.title;
+}
 
 // Multiplicateur d'XP lié à la série quotidienne en cours (jours consécutifs de
 // Défi du jour/partie gagnée, cf. js/storage.js: getStreakCount). Contrairement
@@ -48,6 +59,8 @@ function getNextStreakXpTier(streakCount) {
     return null;
 }
 
+// Nom et description sont traduits via ui/<lang>.json (clé gamification.badges.<id>.name/.desc),
+// avec le texte français ci-dessous comme repli (voir badgeName()/badgeDesc()).
 const BADGES_CONFIG = [
     {
         id: "antiquaire",
@@ -113,6 +126,20 @@ const BADGES_CONFIG = [
         target: 1
     }
 ];
+
+function badgeName(badge) {
+    if (!badge) return '';
+    const key = 'gamification.badges.' + badge.id + '.name';
+    const translated = (typeof t === 'function') ? t(key) : key;
+    return (translated && translated !== key) ? translated : badge.name;
+}
+
+function badgeDesc(badge) {
+    if (!badge) return '';
+    const key = 'gamification.badges.' + badge.id + '.desc';
+    const translated = (typeof t === 'function') ? t(key) : key;
+    return (translated && translated !== key) ? translated : badge.desc;
+}
 
 function gamificationLoad() {
     const defaults = {
@@ -185,9 +212,10 @@ function awardXP(points, reason = '') {
             playVictorySound();
             triggerHaptic('victory');
             triggerConfetti(3500);
-            const msg = typeof t === 'function' 
-                ? t('gamification.new_rank_toast', { title: newRankInfo.currentRank.title, level: newRankInfo.currentRank.level })
-                : `👑 NOUVEAU GRADE : ${newRankInfo.currentRank.title} (Niv. ${newRankInfo.currentRank.level}) !`;
+            const rankTitleTxt = rankTitle(newRankInfo.currentRank);
+            const msg = typeof t === 'function'
+                ? t('gamification.new_rank_toast', { title: rankTitleTxt, level: newRankInfo.currentRank.level })
+                : `👑 NOUVEAU GRADE : ${rankTitleTxt} (Niv. ${newRankInfo.currentRank.level}) !`;
             showToast(msg, 4000);
         }, 800);
     }
@@ -209,9 +237,10 @@ function unlockBadge(badgeId) {
     playVictorySound();
     triggerHaptic('victory');
     triggerConfetti(2800);
+    const badgeNameTxt = badgeName(badgeConfig);
     const msg = typeof t === 'function'
-        ? t('gamification.new_badge_toast', { name: badgeConfig.name })
-        : `🏆 NOUVEAU TROPHÉE : « ${badgeConfig.name} » débloqué (+250 XP) !`;
+        ? t('gamification.new_badge_toast', { name: badgeNameTxt })
+        : `🏆 NOUVEAU TROPHÉE : « ${badgeNameTxt} » débloqué (+250 XP) !`;
     showToast(msg, 4000);
 }
 
@@ -344,7 +373,7 @@ function updateHeaderProfileBar() {
     }
 
     if (avatarEl) avatarEl.innerText = rankInfo.currentRank.icon;
-    if (titleEl) titleEl.innerText = rankInfo.currentRank.title;
+    if (titleEl) titleEl.innerText = rankTitle(rankInfo.currentRank);
     if (levelEl) {
         let badgeStr = (typeof t === 'function') ? t('gamification.rank_badge', { level: rankInfo.currentRank.level }) : null;
         if (!badgeStr || badgeStr === 'gamification.rank_badge' || badgeStr.includes('{level}')) {
@@ -386,15 +415,20 @@ function renderProfileModal() {
     const xpNeededEl = document.getElementById('profile-hero-xp-needed');
 
     if (heroIcon) heroIcon.innerText = rankInfo.currentRank.icon;
-    if (heroTitle) heroTitle.innerText = rankInfo.currentRank.title;
-    if (heroLevel) heroLevel.innerText = `Niveau ${rankInfo.currentRank.level} • ${data.xp} XP`;
+    if (heroTitle) heroTitle.innerText = rankTitle(rankInfo.currentRank);
+    if (heroLevel) {
+        heroLevel.innerText = (typeof t === 'function')
+            ? t('gamification.hero_level_line', { level: rankInfo.currentRank.level, xp: data.xp })
+            : `Niveau ${rankInfo.currentRank.level} • ${data.xp} XP`;
+    }
     if (heroFill) heroFill.style.width = `${rankInfo.progressPct}%`;
-    
+
     if (xpNeededEl) {
         if (rankInfo.nextRank) {
+            const nextTitle = rankTitle(rankInfo.nextRank);
             xpNeededEl.innerText = (typeof t === 'function')
-                ? t('gamification.xp_needed', { needed: rankInfo.xpToNext, next: rankInfo.nextRank.title })
-                : `Encore ${rankInfo.xpToNext} XP avant ${rankInfo.nextRank.title}`;
+                ? t('gamification.xp_needed', { needed: rankInfo.xpToNext, next: nextTitle })
+                : `Encore ${rankInfo.xpToNext} XP avant ${nextTitle}`;
         } else {
             xpNeededEl.innerText = (typeof t === 'function') ? t('gamification.max_rank') : `Grade suprême atteint !`;
         }
@@ -414,16 +448,15 @@ function renderProfileModal() {
         const currentStreak = getStreakCount();
         const currentMult = getStreakXpMultiplier(currentStreak);
         const nextTier = getNextStreakXpTier(currentStreak);
+        const tFn = (typeof t === 'function') ? t : (key) => key;
         let txt = currentMult > 1
-            ? `🔥 Série active : XP ×${currentMult}`
-            : `🔥 Joue aujourd'hui pour activer un multiplicateur d'XP`;
+            ? tFn('gamification.streak_active', { mult: currentMult })
+            : tFn('gamification.streak_inactive');
         if (nextTier) {
             const daysLeft = nextTier.minDays - currentStreak;
-            txt += ` — encore ${daysLeft} jour${daysLeft > 1 ? 's' : ''} pour ×${nextTier.multiplier}`;
+            txt += tFn('gamification.streak_next_tier', { days: daysLeft, mult: nextTier.multiplier });
         }
-        txt += currentStreak > 0
-            ? ` (un seul jour manqué et la série — et le multiplicateur — repartent à zéro).`
-            : '';
+        txt += currentStreak > 0 ? tFn('gamification.streak_risk') : '';
         streakMultiplierEl.innerText = txt;
     }
     
@@ -447,16 +480,21 @@ function renderProfileModal() {
 
         const pct = Math.min(100, Math.round((currentProg / badge.target) * 100));
 
+        const tFn = (typeof t === 'function') ? t : (key) => key;
+        const statusTxt = isUnlocked
+            ? tFn('gamification.status_unlocked')
+            : tFn('gamification.progress_fraction', { current: currentProg, target: badge.target });
+
         const card = document.createElement('div');
         card.className = `trophy-card ${isUnlocked ? 'unlocked' : 'locked'}`;
         card.innerHTML = `
             <div class="trophy-icon">${badge.icon}</div>
             <div class="trophy-info">
                 <div class="trophy-name-row">
-                    <span class="trophy-name">${badge.name}</span>
-                    <span class="trophy-status-badge">${isUnlocked ? 'Débloqué ✓' : `${currentProg}/${badge.target}`}</span>
+                    <span class="trophy-name">${badgeName(badge)}</span>
+                    <span class="trophy-status-badge">${statusTxt}</span>
                 </div>
-                <div class="trophy-desc">${badge.desc}</div>
+                <div class="trophy-desc">${badgeDesc(badge)}</div>
                 ${!isUnlocked ? `<div class="trophy-progress-bar"><div class="trophy-progress-fill" style="width:${pct}%"></div></div>` : ''}
             </div>
         `;

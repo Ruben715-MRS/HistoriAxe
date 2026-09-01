@@ -14,7 +14,10 @@
     "close": "Chiudi",
     "validate": "Conferma",
     "delete": "Elimina",
-    "reset": "Ripristina"
+    "reset": "Ripristina",
+    "understood": "Capito",
+    "quit": "Esci",
+    "loading": "Caricamento…"
   },
   "categories": {
     "search_placeholder": "Cerca un tema…",
@@ -25,15 +28,33 @@
     "special_revision": "Ripasso",
     "themes_count": "{count} tema/i",
     "events_count": "{count} evento/i",
-    "choose_category": "Scegli una Categoria"
+    "choose_category": "Scegli una Categoria",
+    "search_clear_title": "Cancella",
+    "league_btn_aria": "Lega settimanale",
+    "profile_btn_aria": "Profilo e Trofei",
+    "profile_btn_title": "Vedi il mio profilo e i miei trofei",
+    "settings_btn_aria": "Impostazioni",
+    "streak_badge_title": "Serie quotidiana: più dura, più viene moltiplicato l'XP guadagnato"
   },
   "subcategories": {
-    "choose_region": "Scegli una Regione / Sottocategoria"
+    "choose_region": "Scegli una Regione / Sottocategoria",
+    "note_title": "Nota importante"
   },
   "themes": {
     "choose_theme": "Scegli un Tema",
     "empty_themes": "Nessun tema disponibile al momento.",
-    "custom_badge": "Personalizzato"
+    "custom_badge": "Personalizzato",
+    "remove_favorite": "Rimuovi dai preferiti",
+    "add_favorite": "Aggiungi ai preferiti",
+    "delete_theme_title": "Elimina questo tema",
+    "favorites_title": "Temi preferiti",
+    "favorites_empty": "Nessun tema preferito per il momento. Dalla lista dei temi, tocca la stella ☆ per aggiungerne uno qui.",
+    "loading_title": "Caricamento della biblioteca storica…",
+    "loading_subtitle": "Inizializzazione di {events} eventi e {themes} temi.",
+    "subcategories_count": "{count} Sottocategorie",
+    "your_themes": "I tuoi temi",
+    "select_cta": "Seleziona",
+    "soon_available": "Prossimamente"
   },
   "axes": {
     "title": "Assi Tematici",
@@ -95,7 +116,19 @@
       "title": "Multigiocatore",
       "desc": "A turno sullo stesso schermo, eliminazione dopo 2 errori."
     },
-    "score_history": "🏆 Storico Punteggi"
+    "score_history": "🏆 Storico Punteggi",
+    "axis_summary": "{theme} — {axesCount} asse/i, {eventsCount} evento/i",
+    "chrono_lock": "Completa prima la modalità Classica su questo tema per sbloccare Cronometrata.",
+    "expert_lock": "Completa prima la modalità Cronometrata su questo tema per sbloccare Esperto.",
+    "no_events_theme": "Questo tema non contiene alcun evento. Aggiungi prima degli eventi tramite «Aggiungi un evento»!",
+    "min_events_quiz": "La modalità Quiz richiede almeno 4 eventi. Aggiungi altri eventi a questo tema!",
+    "min_events_avap": "La modalità Prima / Dopo richiede almeno 4 eventi. Aggiungi altri eventi a questo tema!",
+    "min_events_periodes": "La modalità Periodi & Epoche richiede almeno 4 eventi. Aggiungi altri eventi a questo tema!",
+    "min_events_ecart": "La modalità Trova lo scarto richiede almeno 4 eventi. Aggiungi altri eventi a questo tema!",
+    "cannot_generate": "Impossibile generare domande per questo tema.",
+    "cannot_generate_dates": "Impossibile generare domande per questo tema (date tutte identiche).",
+    "no_events_daily": "Nessun evento disponibile per la sfida di oggi.",
+    "select_at_least_one": "Devi selezionare almeno un evento per giocare."
   },
   "game": {
     "score": "Punteggio: {val}",
@@ -114,7 +147,36 @@
     "quiz_year_to_event": "Quale evento corrisponde a quest'anno?",
     "avap_which_first": "Quale evento si è verificato per primo?",
     "fil_enter_year": "Inserisci l'anno esatto:",
-    "ecart_estimate_gap": "Quanti anni separano questi due eventi?"
+    "ecart_estimate_gap": "Quanti anni separano questi due eventi?",
+    "confirm_quit": "Vuoi davvero abbandonare questa partita?",
+    "slot_before": "Prima del {year}",
+    "slot_after": "Dopo il {year}",
+    "slot_between": "Tra il {year1} e il {year2}",
+    "place_here_aria": "Posiziona qui: {label}",
+    "hand_kicker_first": "Tocca un intervallo",
+    "hand_kicker_default": "Da posizionare",
+    "missed_tag": "mancato",
+    "axes_legend_label": "Assi:",
+    "axes_legend_hide": "Nascondi gli assi durante lo scorrimento",
+    "axes_legend_show": "Mantieni gli assi visibili durante lo scorrimento",
+    "correct_answer": "Risposta corretta: {year}",
+    "exact_with_hint": "Esatto (con suggerimento)",
+    "exact": "Esatto!",
+    "real_gap": "Scarto reale: {gap} anno/i",
+    "century_label": "{n}° secolo",
+    "century_label_1": "I secolo",
+    "decade_label": "Anni {start}",
+    "frise_complete": "Linea completa · {n} eventi",
+    "xp_gain_streak": "+{xp} XP (serie ×{mult} 🔥)",
+    "xp_gain": "+{xp} XP",
+    "duration_years": "{n} anno/i",
+    "decrease_text_aria": "Riduci il testo",
+    "increase_text_aria": "Ingrandisci il testo",
+    "hint_btn_full": "💡 Suggerimento",
+    "erase_btn": "Cancella",
+    "avap_vs": "prima · dopo",
+    "attempts_badge": "🎯 {n} tentativi",
+    "years_unit": "anni"
   },
   "end": {
     "game_over": "Game Over!",
@@ -136,7 +198,11 @@
     "share_daily_btn": "Condividi Risultato",
     "share_toast_copied": "✨ Risultato copiato negli appunti!",
     "share_toast_error": "📋 Impossibile copiare automaticamente",
-    "share_cta": "Unisciti alla sfida su HistoriAxe!"
+    "share_cta": "Unisciti alla sfida su HistoriAxe!",
+    "victory_carte": "Bravo! Mappa del mondo esplorata!",
+    "title_default": "Partita Terminata",
+    "score_label_prefix": "Punteggio: ",
+    "score_label_suffix": " punti"
   },
   "daily": {
     "title_win": "🌍 Sfida del Giorno Superata!",
@@ -172,7 +238,9 @@
     "progress_legend_mid": "Da consolidare (40-74%)",
     "progress_legend_low": "Fragile (< 40%)",
     "progress_legend_none": "Non ancora testato",
-    "progress_empty": "Nessun dato al momento. Gioca qualche partita per vedere i tuoi progressi."
+    "progress_empty": "Nessun dato al momento. Gioca qualche partita per vedere i tuoi progressi.",
+    "targeted_title": "Revisione mirata ({count} eventi)",
+    "weak_count_subtitle": "{count} evento/i da ripassare, in {themeCount} tema/i"
   },
   "gamification": {
     "rank_badge": "Liv. {level}",
@@ -185,7 +253,84 @@
     "trophies_title": "🏆 Trofei & Imprese",
     "status_unlocked": "Sbloccato ✓",
     "new_rank_toast": "👑 NUOVO GRADO: {title} (Liv. {level})!",
-    "new_badge_toast": "🏆 NUOVO TROFEO: « {name} » sbloccato (+250 XP)!"
+    "new_badge_toast": "🏆 NUOVO TROFEO: « {name} » sbloccato (+250 XP)!",
+    "ranks": {
+      "1": {
+        "title": "Novizio degli Annali"
+      },
+      "2": {
+        "title": "Cronista Apprendista"
+      },
+      "3": {
+        "title": "Scriba delle Pergamene"
+      },
+      "4": {
+        "title": "Custode del Sapere"
+      },
+      "5": {
+        "title": "Archivista Reale"
+      },
+      "6": {
+        "title": "Storico Emerito"
+      },
+      "7": {
+        "title": "Grande Erudito"
+      },
+      "8": {
+        "title": "Maestro delle Epoche"
+      },
+      "9": {
+        "title": "Grande Cronomante"
+      },
+      "10": {
+        "title": "Maestro del Tempo"
+      }
+    },
+    "badges": {
+      "antiquaire": {
+        "name": "Antiquario",
+        "desc": "Completa 5 temi dell'Antichità (date precedenti al 476) senza commettere il minimo errore."
+      },
+      "centurion": {
+        "name": "Centurione",
+        "desc": "Colloca 100 eventi di fila senza alcun errore."
+      },
+      "memoire_elephant": {
+        "name": "Memoria di Elefante",
+        "desc": "Svuota completamente la tua casella dei punti deboli (almeno 5 punti deboli rimasterizzati)."
+      },
+      "seigneur_medieval": {
+        "name": "Signore Medievale",
+        "desc": "Completa 5 temi del Medioevo (476 - 1492) senza errori."
+      },
+      "chroniqueur_lumieres": {
+        "name": "Cronista dei Lumi",
+        "desc": "Completa 5 temi dell'Età Moderna (1492 - 1789) senza errori."
+      },
+      "temoin_siecle": {
+        "name": "Testimone del Secolo",
+        "desc": "Completa 5 temi dell'Età Contemporanea (1789 a oggi) senza errori."
+      },
+      "flamme_eternelle": {
+        "name": "Fiamma Eterna",
+        "desc": "Mantieni una serie di 7 giorni consecutivi nella Sfida del giorno."
+      },
+      "eclair_temporel": {
+        "name": "Fulmine Temporale",
+        "desc": "Completa una modalità Cronometrata, Esperto o Sfida del giorno in meno di 30 secondi."
+      },
+      "major_concours": {
+        "name": "Primo della Classe",
+        "desc": "Ottieni un punteggio perfetto su un tema Scolastico o di Concorso."
+      }
+    },
+    "progress_fraction": "{current}/{target}",
+    "streak_active": "🔥 Serie attiva: XP ×{mult}",
+    "streak_inactive": "🔥 Gioca oggi per attivare un moltiplicatore di XP",
+    "streak_next_tier": " — ancora {days} giorno/i per ×{mult}",
+    "streak_risk": " (basta un solo giorno saltato e la serie — e il moltiplicatore — ripartono da zero).",
+    "recap_btn": "📊 Vedi il mio riepilogo settimanale/mensile",
+    "hero_level_line": "Livello {level} • {xp} XP"
   },
   "settings": {
     "title": "Impostazioni",
@@ -217,7 +362,19 @@
     "data_section": "Dati di Gioco",
     "scoring_info_btn": "📖 Spiegazione del calcolo dei punti",
     "reset_game_btn": "⚠️ Ripristina tutti i dati",
-    "reset_confirm_msg": "Questa azione cancellerà definitivamente preferiti, temi personalizzati, cronologia SRS, punteggi e progressi. Continuare?"
+    "reset_confirm_msg": "Questa azione cancellerà definitivamente preferiti, temi personalizzati, cronologia SRS, punteggi e progressi. Continuare?",
+    "notifications_label": "Notifiche",
+    "notifications_on": "Attivate",
+    "notifications_off": "Disattivate",
+    "notifications_hint": "Promemoria per mantenere la tua serie e non perdere la Sfida del giorno. Disponibile nell'app iOS (non sul web).",
+    "onboarding_btn": "🧭 Rivedi il tutorial",
+    "reset_hint": "Elimina definitivamente i tuoi preferiti, tutti i tuoi temi ed eventi personalizzati creati, la tua cronologia di revisione (punti deboli) e i progressi di sblocco delle modalità Cronometrata/Esperto. Le tue impostazioni di visualizzazione (orientamento, aspetto) vengono conservate.",
+    "reset_confirm_full": "Questa azione elimina definitivamente i tuoi temi preferiti, tutti i tuoi temi ed eventi personalizzati, l'intera cronologia di revisione (punti deboli, caselle di memorizzazione) e i progressi di sblocco delle modalità Cronometrata/Esperto. Questa azione è irreversibile. Vuoi continuare?",
+    "reset_confirm_ok": "Ripristina tutto",
+    "size_mb": "{val} MB",
+    "size_kb": "{val} KB",
+    "pack_full_suffix": "Completo",
+    "pack_demo_suffix": "Demo"
   },
   "anecdote": {
     "did_you_know": "💡 Lo sapevi che…?",
@@ -231,6 +388,189 @@
     "event_year_label": "Anno *",
     "event_title_label": "Titolo dell'Evento *",
     "event_desc_label": "Descrizione (facoltativo)",
-    "save_btn": "Crea"
+    "save_btn": "Crea",
+    "create_theme_btn": "Crea tema",
+    "create_event_btn": "Crea evento",
+    "event_added_success": "Evento aggiunto con successo!",
+    "theme_name_required": "Inserisci un nome per il tuo tema.",
+    "event_fields_required": "Compila l'anno e il titolo.",
+    "confirm_delete_theme": "Vuoi davvero eliminare questo tema personalizzato e tutti i suoi eventi?",
+    "difficulty_all_levels": "Tutti i livelli",
+    "theme_name_placeholder": "Es: Storia dell'Aviazione",
+    "theme_diff_placeholder": "Es: Tutti i livelli, Esperto...",
+    "event_year_placeholder": "Es: 1789",
+    "event_title_placeholder": "Es: Presa della Bastiglia",
+    "event_desc_placeholder": "Alcuni dettagli...",
+    "new_theme_btn": "➕ Crea un nuovo tema",
+    "new_theme_subtitle": "Aggiungi un tema personalizzato con le tue date",
+    "empty_custom_themes": "Non hai ancora creato un tema personalizzato. Clicca su «Crea un nuovo tema» per iniziare!"
+  },
+  "periodes": {
+    "era_axis_label": "Epoca / Asse tematico",
+    "duration_period_kicker": "Durata & Periodo esatto",
+    "century_kicker": "Fascia cronologica & Secolo",
+    "contemporary_kicker": "Contemporanei & Stessa epoca",
+    "epoch_kicker": "Collocazione d'epoca",
+    "duration_label": "Durata: {val}",
+    "long_event_tag": "Evento di lunga durata",
+    "which_contemporary": "Quale di questi eventi è contemporaneo di:",
+    "axe_tag": "Asse: {axe}"
+  },
+  "leaderboard": {
+    "title": "🏆 Storico dei punteggi",
+    "theme_label": "Tema: {name}",
+    "empty": "Nessun punteggio registrato su questo tema per il momento.",
+    "col_mode": "Modalità",
+    "col_score": "Punteggio",
+    "col_date": "Data"
+  },
+  "selection": {
+    "title": "Selezione degli eventi",
+    "subtitle": "Deseleziona gli eventi che non vuoi far comparire.",
+    "check_all": "Seleziona tutto",
+    "uncheck_all": "Deseleziona tutto",
+    "validate_btn": "Conferma selezione",
+    "delete_event_title": "Elimina questo evento",
+    "confirm_delete_event": "Vuoi davvero eliminare questo evento?",
+    "empty": "Nessun evento in questo tema."
+  },
+  "multiplayer": {
+    "title": "Modalità Multigiocatore",
+    "player_count_label": "Numero di giocatori:",
+    "player_count_option": "{n} Giocatori",
+    "player_name_placeholder": "Nome del giocatore {n}",
+    "player_default_name": "Giocatore {n}",
+    "start_btn": "Inizia partita",
+    "turn_banner": "Tocca a {name}!",
+    "ready_btn": "Pronto?",
+    "results_title": "Risultati Multigiocatore"
+  },
+  "mastery": {
+    "tested_meta": "{tested}/{total} evento/i testato/i",
+    "weak_badge": "⚠ {count} punto/i debole/i",
+    "theme_count": "{count} tema/i",
+    "radar_untested": "non testato",
+    "radar_aria": "Radar di padronanza per categoria"
+  },
+  "onboarding": {
+    "welcome_title": "👋 Benvenuto su HistoriAxe!",
+    "welcome_text": "Scopri come progredire in 3 minuti: alcuni fumetti di aiuto compariranno mentre esplori. Tocca lo schermo per iniziare.",
+    "lets_go_btn": "Si comincia",
+    "daily_title": "🎯 La Sfida del giorno",
+    "daily_text": "10 eventi da rimettere in ordine in 2 minuti: il modo più semplice per iniziare, e il punto di partenza della tua serie quotidiana 🔥. Puoi anche esplorare una categoria qui sotto.",
+    "modes_title": "🧭 La modalità Scoperta",
+    "modes_text": "Perfetta per iniziare: consulta la linea del tempo senza alcuna pressione né vite in gioco. Una volta a tuo agio, prova la modalità Classica!",
+    "first_xp_title": "🔥 Bravo, hai guadagnato XP!",
+    "first_xp_text": "Torna ogni giorno a giocare la Sfida del giorno per mantenere la tua serie: più dura a lungo, più l'XP che guadagni viene moltiplicato (visibile in alto nella schermata iniziale). Basta un solo giorno saltato e tutto riparte da zero.",
+    "skip_label": "Salta il tutorial",
+    "next_label": "Avanti",
+    "got_it_label": "Capito!"
+  },
+  "recap": {
+    "title_week": "📊 Il tuo riepilogo settimanale",
+    "title_month": "📊 Il tuo riepilogo mensile",
+    "period_week": "Questa settimana",
+    "period_month": "Questo mese",
+    "tab_week": "Questa settimana",
+    "tab_month": "Questo mese",
+    "stat_xp": "XP guadagnati",
+    "stat_themes": "Partite vinte",
+    "stat_days": "Giorni attivi",
+    "stat_streak": "Serie attuale",
+    "no_activity_week": "Ancora nessuna attività questa settimana — la Sfida del giorno ti aspetta!",
+    "no_activity_month": "Ancora nessuna attività questo mese — la Sfida del giorno ti aspetta!",
+    "first_period_week": "Prima settimana monitorata — torna la prossima volta per vedere i tuoi progressi!",
+    "first_period_month": "Primo mese monitorato — torna la prossima volta per vedere i tuoi progressi!",
+    "delta_up": "📈 +{pct}% di XP rispetto a {prev}!",
+    "delta_down": "📉 {pct}% di XP rispetto a {prev}.",
+    "prev_week": "la settimana scorsa",
+    "prev_month": "il mese scorso",
+    "share_btn": "Condividi il mio riepilogo",
+    "share_copied": "Riepilogo copiato negli appunti!",
+    "share_text": "📊 HistoriAxe — {period}: {xp} XP, {games} partita/e vinta/e, {days} giorno/i attivo/i!"
+  },
+  "league": {
+    "title": "🥇 La tua lega settimanale",
+    "week_hint": "Il tuo totale questa settimana: {xp} XP. La classifica si azzera ogni settimana.",
+    "offline": "Lega non disponibile offline.",
+    "loading": "Caricamento…",
+    "error": "Lega momentaneamente non disponibile.",
+    "empty": "Ancora nessuno nella tua lega questa settimana — sii il primo a segnare punti!",
+    "you_suffix": "(tu)"
+  },
+  "duels": {
+    "title_btn": "⚔️ Sfida un amico",
+    "creating": "Creazione della sfida…",
+    "requires_connection": "Le sfide richiedono una connessione.",
+    "create_error": "Impossibile creare la sfida al momento.",
+    "share_text": "⚔️ Ti sfido nella Sfida del giorno di HistoriAxe! Battimi se ci riesci: {url}",
+    "link_copied": "Link della sfida copiato negli appunti!",
+    "incoming_toast": "⚔️ {name} ti sfida nella Sfida del giorno{scoreTxt}!",
+    "incoming_score_suffix": " ({score} pt da battere)",
+    "win": "🏆 Batti {name} ({score} pt)!",
+    "lose": "😅 {name} vince con {score} pt.",
+    "draw": "🤝 Pareggio con {name}!",
+    "overtaken_toast": "⚔️ {name} ti ha superato nella vostra sfida del {date} con {score} pt!"
+  },
+  "carte": {
+    "mode_title": "🗺️ Modalità Mappa",
+    "mode_subtitle": "Colloca gli eventi di «{label}» sulla mappa del mondo, poi nel tempo.",
+    "world_label": "Mondo",
+    "where_kicker": "Dove si è svolto questo evento?",
+    "correct_reveal": "✅ Risposta corretta: {flag} {name}",
+    "wrong_reveal": "❌ Era: {flag} {name}",
+    "not_enough_events": "Questa zona non contiene abbastanza eventi geolocalizzati per giocare in Modalità Mappa."
+  },
+  "notifications": {
+    "streak_title": "🔥 La tua serie è a rischio",
+    "streak_body": "La tua serie di {days} giorno/i si interromperà stasera. Gioca la Sfida del giorno per mantenerla!",
+    "daily_title": "🌍 La Sfida del giorno è disponibile",
+    "daily_body": "Dieci eventi da rimettere in ordine cronologico. Tocca a te giocare!",
+    "recap_title": "📊 Il tuo riepilogo settimanale è pronto",
+    "recap_body": "Scopri gli XP guadagnati, le sfide superate e i temi padroneggiati questa settimana.",
+    "duel_title": "⚔️ La tua sfida ti aspetta",
+    "duel_body": "Vieni a vedere se il tuo amico ha raccolto la tua sfida — e se sei stato superato.",
+    "streak_reminder_fallback": "La Sfida del giorno ti aspetta: 2 minuti per iniziare la tua serie 🔥."
+  },
+  "scoring": {
+    "title": "Come vengono calcolati i punti?",
+    "exact_title": "🎯 Risposta esatta",
+    "exact_desc": "Ogni posizione corretta sulla linea del tempo, risposta corretta al Quiz o anno esatto trovato in Filo del tempo assegna 100 punti base, moltiplicati per la tua serie di vittorie in corso.",
+    "combo_title": "🔥 Serie (moltiplicatore combo)",
+    "combo_desc": "Ogni risposta corretta di fila (senza suggerimento) aumenta il moltiplicatore di +0,1: ×1,0 → ×1,1 → ×1,2… fino a ×5,0. Il minimo errore o l'uso di un suggerimento riporta il moltiplicatore a ×1,0.",
+    "combo_example": "Esempio: 3 risposte corrette di fila senza errori assegnano 100, poi 110, poi 120 punti.",
+    "proximity_title": "📐 Risposta errata: principio di prossimità",
+    "proximity_desc": "Un errore non è penalizzato con 0 punti: lo scarto in anni rispetto alla data reale viene confrontato con l'estensione cronologica del tema per premiare la pertinenza storica.",
+    "proximity_example": "Esempio: su un tema di 100 anni, un errore di 10 anni assegna comunque 90 punti (100 × (1 − 10/100)); un errore di 80 anni assegna 20 punti.",
+    "proximity_life_note": "A ogni errore viene tolta una vita (tranne in Allenamento), indipendentemente dal numero di punti assegnati.",
+    "speed_title": "⚡ Bonus di rapidità (Cronometrata ed Esperto)",
+    "speed_desc": "Nelle modalità cronometrate Cronometrata ed Esperto, una risposta corretta data in meno di 3 secondi conferisce fino a +50 punti supplementari (decrescente fino a 0 oltre i 15 secondi).",
+    "quiz_title": "❓ Modalità Quiz (a scelta multipla)",
+    "quiz_desc": "Il principio di prossimità si applica alle 4 date proposte. Usare il jolly 50:50 (2 per partita) rimuove 2 risposte errate e dimezza i punti ottenibili sulla domanda.",
+    "avap_title": "🥇 Modalità «Prima / Dopo»",
+    "avap_desc": "Vengono presentati due eventi senza le loro date: bisogna indovinare quale si è verificato per primo.",
+    "avap_correct": "Risposta corretta: 100 punti × moltiplicatore combo — come per Periodi & Epoche, non ci sono punti parziali, è tutto o niente.",
+    "avap_wrong": "Risposta errata: nessun punto, si perde una vita e il moltiplicatore torna a ×1,0. Entrambe le date reali vengono mostrate subito per correggere.",
+    "fil_title": "⏳ Modalità «Il filo del tempo»",
+    "fil_desc": "Gli eventi scorrono in ordine cronologico e l'anno esatto va digitato sulla tastiera:",
+    "fil_direct": "Inserimento diretto esatto: 100 punti × moltiplicatore combo.",
+    "fil_hint_btn_desc": "Pulsante 💡 Suggerimento: Rivela l'era (a.C. / d.C.) al primo tocco, poi svela le cifre dell'anno una per una da sinistra.",
+    "fil_penalty": "Penalità per cifra: Ogni cifra rivelata dal suggerimento sottrae 25 punti dalla domanda e azzera il moltiplicatore a ×1,0.",
+    "fil_full_reveal": "Rivelazione completa: Svelare tutte le cifre tramite il suggerimento equivale a un fallimento (0 punti, perdita di una vita).",
+    "fil_wrong_entry": "Errore di inserimento: Se l'anno inviato è errato, vengono assegnati i punti parziali di prossimità (meno le eventuali penalità dei suggerimenti) e si perde una vita.",
+    "ecart_title": "📏 Modalità «Trova lo scarto»",
+    "ecart_desc": "Vengono presentati due eventi senza le loro date: bisogna indovinare quanti anni li separano, come al «Prezzo giusto». Proponi un numero, il gioco risponde «di più» o «di meno», e ci riprovi.",
+    "ecart_attempts": "5 tentativi per domanda: ogni domanda parte da 100 punti, e ogni proposta errata costa 20 punti (80, poi 60, 40, 20…).",
+    "ecart_first_try": "Trovato al primo tentativo: i 100 punti vengono moltiplicati per il combo in corso, come per una risposta esatta nelle altre modalità.",
+    "ecart_after_tries": "Trovato dopo uno o più tentativi: guadagni i punti rimanenti sulla domanda (senza bonus combo), e il moltiplicatore torna a ×1,0.",
+    "ecart_exhausted": "5 tentativi esauriti senza trovare lo scarto: 0 punti sulla domanda, viene mostrata la risposta corretta e si perde una vita.",
+    "discovery_title": "🌱 Modalità Scoperta e Allenamento",
+    "discovery_desc": "Queste modalità non hanno un sistema di punteggio: sono pensate per ripassare e memorizzare senza stress, con vite illimitate."
+  },
+  "modal": {
+    "wiki_link": "Vedi su Wikipedia",
+    "redraw_btn": "🔀 Un altro evento",
+    "play_theme_btn": "Gioca questo tema",
+    "play_theme_btn_named": "Gioca «{theme}»"
   }
 }

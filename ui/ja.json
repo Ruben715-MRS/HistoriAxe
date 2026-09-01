@@ -14,7 +14,10 @@
     "close": "閉じる",
     "validate": "決定",
     "delete": "削除",
-    "reset": "リセット"
+    "reset": "リセット",
+    "understood": "わかりました",
+    "quit": "終了",
+    "loading": "読み込み中…"
   },
   "categories": {
     "search_placeholder": "テーマを検索…",
@@ -25,15 +28,33 @@
     "special_revision": "復習",
     "themes_count": "{count} テーマ",
     "events_count": "{count} 件の出来事",
-    "choose_category": "カテゴリーを選択"
+    "choose_category": "カテゴリーを選択",
+    "search_clear_title": "消去",
+    "league_btn_aria": "週間リーグ",
+    "profile_btn_aria": "プロフィールとトロフィー",
+    "profile_btn_title": "プロフィールとトロフィーを見る",
+    "settings_btn_aria": "設定",
+    "streak_badge_title": "連続記録:続くほど獲得XPの倍率が上がります"
   },
   "subcategories": {
-    "choose_region": "地域・サブカテゴリーを選択"
+    "choose_region": "地域・サブカテゴリーを選択",
+    "note_title": "重要な注意事項"
   },
   "themes": {
     "choose_theme": "テーマを選択",
     "empty_themes": "現在利用可能なテーマはありません。",
-    "custom_badge": "カスタム"
+    "custom_badge": "カスタム",
+    "remove_favorite": "お気に入りから削除",
+    "add_favorite": "お気に入りに追加",
+    "delete_theme_title": "このテーマを削除",
+    "favorites_title": "お気に入りのテーマ",
+    "favorites_empty": "お気に入りのテーマはまだありません。テーマ一覧で☆マークをタップして追加してください。",
+    "loading_title": "歴史ライブラリを読み込み中…",
+    "loading_subtitle": "{events}件の出来事と{themes}件のテーマを初期化しています。",
+    "subcategories_count": "{count}個のサブカテゴリ",
+    "your_themes": "あなたのテーマ",
+    "select_cta": "選択",
+    "soon_available": "近日公開"
   },
   "axes": {
     "title": "テーマ軸",
@@ -95,7 +116,19 @@
       "title": "マルチプレイ",
       "desc": "同じ端末で交代プレイ。2回ミスで脱落。"
     },
-    "score_history": "🏆 スコア履歴"
+    "score_history": "🏆 スコア履歴",
+    "axis_summary": "{theme} — {axesCount}軸、{eventsCount}件の出来事",
+    "chrono_lock": "クロノを解放するには、まずこのテーマでクラシックモードをクリアしてください。",
+    "expert_lock": "エキスパートを解放するには、まずこのテーマでクロノモードをクリアしてください。",
+    "no_events_theme": "このテーマには出来事が登録されていません。「出来事を追加」からまず出来事を追加してください!",
+    "min_events_quiz": "クイズモードには最低4件の出来事が必要です。このテーマに出来事を追加してください!",
+    "min_events_avap": "「前 / 後」モードには最低4件の出来事が必要です。このテーマに出来事を追加してください!",
+    "min_events_periodes": "「時代とエポック」モードには最低4件の出来事が必要です。このテーマに出来事を追加してください!",
+    "min_events_ecart": "「差を見つけろ」モードには最低4件の出来事が必要です。このテーマに出来事を追加してください!",
+    "cannot_generate": "このテーマでは問題を生成できません。",
+    "cannot_generate_dates": "このテーマでは問題を生成できません(すべての年代が同一です)。",
+    "no_events_daily": "本日のチャレンジに使える出来事がありません。",
+    "select_at_least_one": "プレイするには少なくとも1つの出来事を選択してください。"
   },
   "game": {
     "score": "スコア: {val}",
@@ -114,7 +147,36 @@
     "quiz_year_to_event": "この年に起きた出来事はどれですか？",
     "avap_which_first": "どちらの出来事が先に起きましたか？",
     "fil_enter_year": "正確な年を入力してください:",
-    "ecart_estimate_gap": "この2つの出来事の差は何年ですか？"
+    "ecart_estimate_gap": "この2つの出来事の差は何年ですか？",
+    "confirm_quit": "本当にこのゲームを終了しますか?",
+    "slot_before": "{year}より前",
+    "slot_after": "{year}より後",
+    "slot_between": "{year1}年から{year2}年の間",
+    "place_here_aria": "ここに配置:{label}",
+    "hand_kicker_first": "区間をタップしてください",
+    "hand_kicker_default": "配置する出来事",
+    "missed_tag": "ミス",
+    "axes_legend_label": "軸:",
+    "axes_legend_hide": "スクロール中は軸を非表示にする",
+    "axes_legend_show": "スクロール中も軸を表示する",
+    "correct_answer": "正解:{year}",
+    "exact_with_hint": "正解(ヒント使用)",
+    "exact": "正解!",
+    "real_gap": "実際の差:{gap}年",
+    "century_label": "{n}世紀",
+    "century_label_1": "1世紀",
+    "decade_label": "{start}年代",
+    "frise_complete": "年表完了 · {n}件の出来事",
+    "xp_gain_streak": "+{xp} XP(連続記録 ×{mult} 🔥)",
+    "xp_gain": "+{xp} XP",
+    "duration_years": "{n}年",
+    "decrease_text_aria": "文字を小さくする",
+    "increase_text_aria": "文字を大きくする",
+    "hint_btn_full": "💡 ヒント",
+    "erase_btn": "消去",
+    "avap_vs": "前 · 後",
+    "attempts_badge": "🎯 残り{n}回",
+    "years_unit": "年"
   },
   "end": {
     "game_over": "ゲームオーバー！",
@@ -136,7 +198,11 @@
     "share_daily_btn": "結果をシェア",
     "share_toast_copied": "✨ 結果をクリップボードにコピーしました！",
     "share_toast_error": "📋 自動コピーに失敗しました",
-    "share_cta": "HistoriAxeで歴史に挑戦しよう！"
+    "share_cta": "HistoriAxeで歴史に挑戦しよう！",
+    "victory_carte": "お見事!世界地図を制覇しました!",
+    "title_default": "ゲーム終了",
+    "score_label_prefix": "スコア:",
+    "score_label_suffix": "点"
   },
   "daily": {
     "title_win": "🌍 デイリーチャレンジ達成！",
@@ -172,7 +238,9 @@
     "progress_legend_mid": "要復習 (40-74%)",
     "progress_legend_low": "未定着 (< 40%)",
     "progress_legend_none": "未挑戦",
-    "progress_empty": "データがまだありません。ゲームをプレイして進捗を確認しましょう。"
+    "progress_empty": "データがまだありません。ゲームをプレイして進捗を確認しましょう。",
+    "targeted_title": "重点復習({count}件の出来事)",
+    "weak_count_subtitle": "{themeCount}個のテーマにわたる{count}件の出来事を復習"
   },
   "gamification": {
     "rank_badge": "Lv. {level}",
@@ -185,7 +253,84 @@
     "trophies_title": "🏆 トロフィー＆実績",
     "status_unlocked": "獲得済み ✓",
     "new_rank_toast": "👑 ランクアップ: {title} (Lv. {level})！",
-    "new_badge_toast": "🏆 トロフィー獲得: 「{name}」 (+250 XP)！"
+    "new_badge_toast": "🏆 トロフィー獲得: 「{name}」 (+250 XP)！",
+    "ranks": {
+      "1": {
+        "title": "年代記の見習い"
+      },
+      "2": {
+        "title": "年代記編者の弟子"
+      },
+      "3": {
+        "title": "巻物の書記官"
+      },
+      "4": {
+        "title": "知識の守護者"
+      },
+      "5": {
+        "title": "王室文書管理官"
+      },
+      "6": {
+        "title": "名誉歴史家"
+      },
+      "7": {
+        "title": "大学者"
+      },
+      "8": {
+        "title": "時代の達人"
+      },
+      "9": {
+        "title": "大いなる時の魔導師"
+      },
+      "10": {
+        "title": "時の支配者"
+      }
+    },
+    "badges": {
+      "antiquaire": {
+        "name": "骨董収集家",
+        "desc": "古代(476年以前)のテーマを5つ、一切のミスなくクリアする。"
+      },
+      "centurion": {
+        "name": "百人隊長",
+        "desc": "100個の出来事をミスなく連続で配置する。"
+      },
+      "memoire_elephant": {
+        "name": "象の記憶力",
+        "desc": "苦手ボックスを完全に空にする(少なくとも5個の苦手項目を克服)。"
+      },
+      "seigneur_medieval": {
+        "name": "中世の領主",
+        "desc": "中世(476年〜1492年)のテーマを5つ、ミスなくクリアする。"
+      },
+      "chroniqueur_lumieres": {
+        "name": "啓蒙時代の記録者",
+        "desc": "近世(1492年〜1789年)のテーマを5つ、ミスなくクリアする。"
+      },
+      "temoin_siecle": {
+        "name": "世紀の証人",
+        "desc": "近現代(1789年〜現在)のテーマを5つ、ミスなくクリアする。"
+      },
+      "flamme_eternelle": {
+        "name": "永遠の炎",
+        "desc": "デイリーチャレンジを7日連続で達成する。"
+      },
+      "eclair_temporel": {
+        "name": "時の稲妻",
+        "desc": "クロノ、エキスパート、またはデイリーチャレンジを30秒未満でクリアする。"
+      },
+      "major_concours": {
+        "name": "首席合格者",
+        "desc": "学校カリキュラムまたは教員採用試験のテーマで満点を取る。"
+      }
+    },
+    "progress_fraction": "{current}/{target}",
+    "streak_active": "🔥 連続記録中:XP ×{mult}",
+    "streak_inactive": "🔥 今日プレイしてXP倍率を発動しよう",
+    "streak_next_tier": " — ×{mult}まであと{days}日",
+    "streak_risk": "(1日でも休むと連続記録と倍率がゼロに戻ります)。",
+    "recap_btn": "📊 週間/月間まとめを見る",
+    "hero_level_line": "レベル{level} • {xp} XP"
   },
   "settings": {
     "title": "設定",
@@ -217,7 +362,19 @@
     "data_section": "ゲームデータ",
     "scoring_info_btn": "📖 スコア計算の仕組み",
     "reset_game_btn": "⚠️ すべてのデータをリセット",
-    "reset_confirm_msg": "お気に入り、カスタムテーマ、復習履歴、スコア、進捗が完全に消去されます。続行しますか？"
+    "reset_confirm_msg": "お気に入り、カスタムテーマ、復習履歴、スコア、進捗が完全に消去されます。続行しますか？",
+    "notifications_label": "通知",
+    "notifications_on": "オン",
+    "notifications_off": "オフ",
+    "notifications_hint": "連続記録を維持し、デイリーチャレンジを見逃さないためのリマインダーです。iOSアプリで利用可能です(Web版では利用できません)。",
+    "onboarding_btn": "🧭 チュートリアルを見直す",
+    "reset_hint": "お気に入り、作成したすべてのカスタムテーマと出来事、復習履歴(苦手項目)、クロノ/エキスパートモードの解放進捗を完全に削除します。表示設定(向き、外観)は保持されます。",
+    "reset_confirm_full": "この操作により、お気に入りのテーマ、作成したすべてのカスタムテーマと出来事、復習履歴(苦手項目、記憶ボックス)、クロノ/エキスパートモードの解放進捗が完全に削除されます。この操作は取り消せません。続行しますか?",
+    "reset_confirm_ok": "すべてリセット",
+    "size_mb": "{val} MB",
+    "size_kb": "{val} KB",
+    "pack_full_suffix": "フル版",
+    "pack_demo_suffix": "デモ版"
   },
   "anecdote": {
     "did_you_know": "💡 ご存知でしたか？",
@@ -231,6 +388,189 @@
     "event_year_label": "年 *",
     "event_title_label": "出来事のタイトル *",
     "event_desc_label": "説明（任意）",
-    "save_btn": "作成"
+    "save_btn": "作成",
+    "create_theme_btn": "テーマを作成",
+    "create_event_btn": "出来事を作成",
+    "event_added_success": "出来事を追加しました!",
+    "theme_name_required": "テーマの名前を入力してください。",
+    "event_fields_required": "年と タイトルを入力してください。",
+    "confirm_delete_theme": "本当にこのカスタムテーマとそのすべての出来事を削除しますか?",
+    "difficulty_all_levels": "全レベル",
+    "theme_name_placeholder": "例:航空史",
+    "theme_diff_placeholder": "例:全レベル、エキスパート...",
+    "event_year_placeholder": "例:1789",
+    "event_title_placeholder": "例:バスティーユ襲撃",
+    "event_desc_placeholder": "詳細を入力...",
+    "new_theme_btn": "➕ 新しいテーマを作成",
+    "new_theme_subtitle": "独自の年代でカスタムテーマを追加しましょう",
+    "empty_custom_themes": "まだカスタムテーマが作成されていません。「新しいテーマを作成」をクリックして始めましょう!"
+  },
+  "periodes": {
+    "era_axis_label": "時代 / テーマ軸",
+    "duration_period_kicker": "期間と正確な時代",
+    "century_kicker": "時代区分と世紀",
+    "contemporary_kicker": "同時代の出来事",
+    "epoch_kicker": "時代への分類",
+    "duration_label": "期間:{val}",
+    "long_event_tag": "長期にわたる出来事",
+    "which_contemporary": "次のうち、この出来事と同時代のものはどれ:",
+    "axe_tag": "軸:{axe}"
+  },
+  "leaderboard": {
+    "title": "🏆 スコア履歴",
+    "theme_label": "テーマ:{name}",
+    "empty": "このテーマではまだスコアが記録されていません。",
+    "col_mode": "モード",
+    "col_score": "スコア",
+    "col_date": "日付"
+  },
+  "selection": {
+    "title": "出来事の選択",
+    "subtitle": "表示したくない出来事のチェックを外してください。",
+    "check_all": "すべて選択",
+    "uncheck_all": "すべて解除",
+    "validate_btn": "選択を確定",
+    "delete_event_title": "この出来事を削除",
+    "confirm_delete_event": "本当にこの出来事を削除しますか?",
+    "empty": "このテーマには出来事がありません。"
+  },
+  "multiplayer": {
+    "title": "マルチプレイヤーモード",
+    "player_count_label": "プレイヤー数:",
+    "player_count_option": "{n}人プレイ",
+    "player_name_placeholder": "プレイヤー{n}の名前",
+    "player_default_name": "プレイヤー{n}",
+    "start_btn": "ゲーム開始",
+    "turn_banner": "{name}の番です!",
+    "ready_btn": "準備完了?",
+    "results_title": "マルチプレイヤー結果"
+  },
+  "mastery": {
+    "tested_meta": "{tested}/{total}件の出来事をテスト済み",
+    "weak_badge": "⚠ 苦手項目 {count}件",
+    "theme_count": "{count}個のテーマ",
+    "radar_untested": "未テスト",
+    "radar_aria": "カテゴリ別習熟度レーダー"
+  },
+  "onboarding": {
+    "welcome_title": "👋 HistoriAxeへようこそ!",
+    "welcome_text": "3分で上達のコツを紹介します。探索していると、いくつかヘルプの吹き出しが表示されます。画面をタップして始めましょう。",
+    "lets_go_btn": "始める",
+    "daily_title": "🎯 デイリーチャレンジ",
+    "daily_text": "10個の出来事を2分以内に正しい順番に並べます。始めるのに一番簡単な方法で、毎日の連続記録🔥の出発点にもなります。下のカテゴリを探索することもできます。",
+    "modes_title": "🧭 発見モード",
+    "modes_text": "初心者に最適:プレッシャーもライフの消費もなく年表をじっくり見られます。慣れたらクラシックモードにも挑戦してみましょう!",
+    "first_xp_title": "🔥 おめでとう、XPを獲得しました!",
+    "first_xp_text": "毎日デイリーチャレンジに挑戦して連続記録を維持しましょう。続くほど獲得XPの倍率が上がります(ホーム画面上部で確認できます)。1日でも休むとゼロに戻ってしまいます。",
+    "skip_label": "チュートリアルをスキップ",
+    "next_label": "次へ",
+    "got_it_label": "わかりました!"
+  },
+  "recap": {
+    "title_week": "📊 今週のまとめ",
+    "title_month": "📊 今月のまとめ",
+    "period_week": "今週",
+    "period_month": "今月",
+    "tab_week": "今週",
+    "tab_month": "今月",
+    "stat_xp": "獲得XP",
+    "stat_themes": "勝利数",
+    "stat_days": "活動日数",
+    "stat_streak": "現在の連続記録",
+    "no_activity_week": "今週はまだ活動がありません — デイリーチャレンジが待っています!",
+    "no_activity_month": "今月はまだ活動がありません — デイリーチャレンジが待っています!",
+    "first_period_week": "記録された最初の週です — 次回また来て進捗を確認しましょう!",
+    "first_period_month": "記録された最初の月です — 次回また来て進捗を確認しましょう!",
+    "delta_up": "📈 {prev}に比べてXPが+{pct}%!",
+    "delta_down": "📉 {prev}に比べてXPが{pct}%。",
+    "prev_week": "先週",
+    "prev_month": "先月",
+    "share_btn": "まとめをシェア",
+    "share_copied": "まとめをクリップボードにコピーしました!",
+    "share_text": "📊 HistoriAxe — {period}:{xp} XP、{games}勝、活動日数{days}日!"
+  },
+  "league": {
+    "title": "🥇 あなたの週間リーグ",
+    "week_hint": "今週の合計:{xp} XP。ランキングは毎週リセットされます。",
+    "offline": "オフラインではリーグを利用できません。",
+    "loading": "読み込み中…",
+    "error": "リーグは一時的に利用できません。",
+    "empty": "今週はまだあなたのリーグに誰もいません — 最初にポイントを獲得しましょう!",
+    "you_suffix": "(あなた)"
+  },
+  "duels": {
+    "title_btn": "⚔️ 友達に挑戦",
+    "creating": "対戦を作成中…",
+    "requires_connection": "対戦にはインターネット接続が必要です。",
+    "create_error": "現在、対戦を作成できません。",
+    "share_text": "⚔️ HistoriAxeのデイリーチャレンジで挑戦状を送ります!できるものなら私を倒してみて:{url}",
+    "link_copied": "対戦リンクをクリップボードにコピーしました!",
+    "incoming_toast": "⚔️ {name}さんがデイリーチャレンジであなたに挑戦しています{scoreTxt}!",
+    "incoming_score_suffix": "(打ち破るべき{score}点)",
+    "win": "🏆 {name}さんに勝利しました({score}点)!",
+    "lose": "😅 {name}さんが{score}点で勝利しました。",
+    "draw": "🤝 {name}さんと引き分けです!",
+    "overtaken_toast": "⚔️ {date}の対戦で{name}さんが{score}点であなたを上回りました!"
+  },
+  "carte": {
+    "mode_title": "🗺️ マップモード",
+    "mode_subtitle": "「{label}」の出来事を世界地図上で、そして時系列で特定しましょう。",
+    "world_label": "世界",
+    "where_kicker": "この出来事はどこで起きましたか?",
+    "correct_reveal": "✅ 正解:{flag} {name}",
+    "wrong_reveal": "❌ 正解は:{flag} {name}",
+    "not_enough_events": "このエリアにはマップモードをプレイするのに十分な位置情報付きの出来事がありません。"
+  },
+  "notifications": {
+    "streak_title": "🔥 連続記録が途切れそうです",
+    "streak_body": "{days}日間の連続記録は今夜途切れてしまいます。デイリーチャレンジに挑戦して記録を守りましょう!",
+    "daily_title": "🌍 本日のデイリーチャレンジが利用可能です",
+    "daily_body": "10個の出来事を時系列に並べ替えましょう。あなたの番です!",
+    "recap_title": "📊 今週のまとめの準備ができました",
+    "recap_body": "今週獲得したXP、達成したチャレンジ、習得したテーマを確認しましょう。",
+    "duel_title": "⚔️ あなたの対戦が待っています",
+    "duel_body": "友達があなたの挑戦を受けたか、そしてあなたが追い抜かれていないか確認しに行きましょう。",
+    "streak_reminder_fallback": "デイリーチャレンジが待っています:連続記録を始めるのに2分だけ🔥。"
+  },
+  "scoring": {
+    "title": "ポイントはどのように計算されますか?",
+    "exact_title": "🎯 正確な回答",
+    "exact_desc": "年表での正しい配置、クイズの正解、または「時の流れ」で見つけた正確な年は、現在の連勝数を掛けた基本100ポイントを獲得します。",
+    "combo_title": "🔥 連勝(コンボ倍率)",
+    "combo_desc": "連続で正解する(ヒントなし)たびに倍率が+0.1上がります:×1.0 → ×1.1 → ×1.2…最大×5.0まで。少しでもミスをするかヒントを使うと倍率は×1.0に戻ります。",
+    "combo_example": "例:ミスなく3回連続正解すると、100点、110点、120点を獲得します。",
+    "proximity_title": "📐 不正解:近似の原則",
+    "proximity_desc": "ミスをしても0点になるわけではありません。実際の年との差(年数)がテーマの時代範囲と比較され、歴史的な妥当性に応じて得点が与えられます。",
+    "proximity_example": "例:100年の幅を持つテーマで10年のズレなら90点(100 × (1 − 10/100))、80年のズレなら20点を獲得します。",
+    "proximity_life_note": "獲得ポイントに関わらず、ミスをするたびにライフが1つ失われます(トレーニングモードを除く)。",
+    "speed_title": "⚡ スピードボーナス(クロノ・エキスパート)",
+    "speed_desc": "時間制限のあるクロノ・エキスパートモードでは、3秒未満で正解すると最大+50点のボーナスが得られます(15秒を超えると0まで減少)。",
+    "quiz_title": "❓ クイズモード(4択)",
+    "quiz_desc": "近似の原則は提示された4つの日付にも適用されます。50:50のジョーカー(1ゲームにつき2回)を使うと不正解の選択肢が2つ消え、その問題で獲得できるポイントは半分になります。",
+    "avap_title": "🥇 「前 / 後」モード",
+    "avap_desc": "日付を伏せた2つの出来事が提示され、どちらが先に起きたかを当てます。",
+    "avap_correct": "正解:100点 × コンボ倍率 — 「時代とエポック」と同様、部分点はなく、オール・オア・ナッシングです。",
+    "avap_wrong": "不正解:ポイントはなく、ライフが1つ失われ、倍率は×1.0に戻ります。正しい2つの日付がすぐに表示され、確認できます。",
+    "fil_title": "⏳ 「時の流れ」モード",
+    "fil_desc": "出来事が時系列順に表示され、正確な年をキーパッドで入力します:",
+    "fil_direct": "正確な直接入力:100点 × コンボ倍率。",
+    "fil_hint_btn_desc": "💡ヒントボタン:最初のタップで時代(紀元前 / 紀元後)を表示し、その後左から順に年の数字を1桁ずつ明かします。",
+    "fil_penalty": "1桁ごとのペナルティ:ヒントで明かされた数字1桁につき、その問題から25点差し引かれ、倍率は×1.0にリセットされます。",
+    "fil_full_reveal": "完全な開示:ヒントですべての数字を明かすと失敗扱いになります(0点、ライフ1つ喪失)。",
+    "fil_wrong_entry": "入力ミス:入力した年が間違っている場合、近似による部分点が(ヒントのペナルティを差し引いて)与えられ、ライフが1つ失われます。",
+    "ecart_title": "📏 「差を見つけろ」モード",
+    "ecart_desc": "日付を伏せた2つの出来事が提示され、その間の年数を「ザ・プライス・イズ・ライト」のように当てます。数字を提案すると、ゲームが「もっと多い」か「もっと少ない」かを教えてくれるので、再挑戦します。",
+    "ecart_attempts": "1問につき5回挑戦できます。各問題は100点から始まり、不正解のたびに20点失います(80、60、40、20…)。",
+    "ecart_first_try": "1回目で正解:他のモードでの正解と同様、100点に現在のコンボ倍率が掛けられます。",
+    "ecart_after_tries": "複数回の挑戦の末に正解:その問題で残っているポイントを獲得します(コンボボーナスなし)。倍率は×1.0に戻ります。",
+    "ecart_exhausted": "5回挑戦しても差を見つけられなかった場合:その問題は0点となり、正解が表示され、ライフが1つ失われます。",
+    "discovery_title": "🌱 発見モードとトレーニングモード",
+    "discovery_desc": "これらのモードにはスコアシステムがありません。ライフ無制限で、ストレスなく復習・暗記するためのモードです。"
+  },
+  "modal": {
+    "wiki_link": "Wikipediaで見る",
+    "redraw_btn": "🔀 別の出来事",
+    "play_theme_btn": "このテーマをプレイ",
+    "play_theme_btn_named": "「{theme}」をプレイ"
   }
 }
