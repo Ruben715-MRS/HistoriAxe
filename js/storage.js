@@ -75,14 +75,11 @@ function srsRecord(eventId, isSuccess) {
     srsSave(data);
 }
 
-function getWeakEvents(customPool = null) {
-    const data = srsLoad();
-    const pool = customPool || (typeof getAllEvents === 'function' ? getAllEvents() : []);
-    return pool.filter(e => {
-        const info = data[e.id];
-        return info && info.box < 5 && (info.failCount || 0) > 0;
-    });
-}
+// Note : getWeakEvents() (liste des événements « points faibles » du SRS,
+// utilisée pour les modes de révision) vit dans js/app.js — elle a besoin de
+// getAllEventsWithLocation() pour retrouver le thème d'origine de chaque
+// événement, une info que ce module (sans dépendance au reste de l'app) n'a
+// pas.
 
 // --- PROGRESSION & HISTORIQUE DES THEMES ---
 function progressLoad() {

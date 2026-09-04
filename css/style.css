@@ -114,21 +114,12 @@
         .search-result-path { font-size: 12.5px; color: var(--muted-text); }
         .search-empty { padding: 16px 18px; font-size: 14px; color: var(--muted-text); font-style: italic; text-align: center; }
 
-        /* Rangée des 4 cartes spéciales (Favoris / Découvrir / Révision / Progression),
-           en tête de l'écran des catégories. Format compact façon carte-thème, mais
-           chacune dans sa propre teinte pour bien les distinguer des catégories
-           ordinaires. */
-        .special-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; width: 100%; max-width: 900px; margin: 0 auto 20px; }
-        @media (max-width: 900px) { .special-row { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 480px) { .special-row { grid-template-columns: 1fr; } }
+        /* Cartes spéciales (« Ajouter un thème », mode Carte, etc.) intercalées
+           parmi les catégories. Format compact façon carte-thème. */
         .special-card { border-radius: 12px; padding: 18px 20px; color: white; display: flex; flex-direction: column; justify-content: center; gap: 5px; cursor: pointer; box-shadow: var(--card-shadow); transition: transform 0.2s, box-shadow 0.2s; min-height: 88px; }
         .special-card:hover { transform: translateY(-3px); box-shadow: var(--card-shadow-hover); }
         .special-card-title { font-size: 16px; font-weight: bold; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
         .special-card-subtitle { font-size: 13px; opacity: 0.85; }
-        .special-card.favorites { background: linear-gradient(135deg, #B8892E, #E3B24F); }
-        .special-card.discover { background: linear-gradient(135deg, #5B4B8A, #8672B8); }
-        .special-card.revision { background: linear-gradient(135deg, #B23A32, #D9534F); }
-        .special-card.progress { background: linear-gradient(135deg, #1B6E8C, #3FA7C9); }
 
         /* Icônes rondes des 4 actions rapides (Favoris / Découvrir / Réviser / Progression),
            en tête de l'écran des catégories. Couleurs pilotées par les tokens de thème :
@@ -137,23 +128,8 @@
            En mode sombre, elles utilisent var(--surface) (bleu nuit élégant). */
         .quick-action-circle { background: var(--surface); border: 1px solid var(--border-soft); box-shadow: var(--card-shadow); transition: background 0.2s, box-shadow 0.2s, transform 0.2s; }
         .quick-action-circle:hover { background: var(--surface-2); transform: translateY(-2px); }
-        .quick-action-icon { color: var(--primary-blue); }
-        .quick-action-icon.danger { color: var(--danger-red); }
-        .quick-action-icon.favoris { color: var(--favorite-yellow); }
-        .quick-action-icon.progress { color: var(--progress-green); }
         .quick-action-label { font-size: 12px; font-weight: 500; display: block; margin-top: 8px; color: var(--muted-text); }
         :root[data-theme="dark"] .quick-action-circle { background: var(--surface); border-color: var(--border-soft); }
-        :root[data-theme="dark"] .quick-action-icon { color: #5dade2; }
-        :root[data-theme="dark"] .quick-action-icon.danger { color: #ec7063; }
-        :root[data-theme="dark"] .quick-action-icon.favoris { color: #f0c419; }
-        :root[data-theme="dark"] .quick-action-icon.progress { color: #4caf6f; }
-
-        /* Puce du « Défi du jour » : en thème clair, le fond reste blanc et l'icône verte.
-           En thème sombre, fond bleu nuit var(--surface) avec bordure douce et icône verte claire. */
-        .quick-action-circle.daily-white { background: var(--surface); border: 1px solid var(--border-soft); }
-        :root[data-theme="dark"] .quick-action-circle.daily-white { background: var(--surface); border-color: var(--border-soft); }
-        .quick-action-icon.daily-challenge { color: #1E8449; }
-        :root[data-theme="dark"] .quick-action-icon.daily-challenge { color: #2ECC71; }
 
         /* ÉCRAN « PROGRESSION PAR THÈME » : radar de synthèse par catégorie et liste
            de barres de maîtrise détaillées (thème par thème), triées du moins
@@ -658,24 +634,6 @@
         }
 
         /* --- SYSTÈME DE RÉTENTION : STREAKS, PARTAGE WORDLE & ANECDOTES --- */
-        .streak-pill-badge {
-            position: absolute;
-            top: -6px;
-            right: -8px;
-            background: linear-gradient(135deg, #FF6B35, #F7931E);
-            color: #ffffff;
-            font-size: 11px;
-            font-weight: 800;
-            padding: 2px 7px;
-            border-radius: 9999px;
-            box-shadow: 0 2px 6px rgba(247, 147, 30, 0.4);
-            display: flex;
-            align-items: center;
-            gap: 2px;
-            border: 2px solid var(--surface);
-            pointer-events: none;
-            z-index: 5;
-        }
         .end-streak-banner {
             display: inline-flex;
             align-items: center;
@@ -878,15 +836,6 @@
 
         
         /* --- ANIMATIONS ET GAME FEEL (ÉLASTICITÉ, SECOUSSE, HALO, TOUCH) --- */
-        @keyframes cardSnap {
-            0% { transform: scale(0.88) translateY(-10px); opacity: 0.6; }
-            55% { transform: scale(1.04) translateY(2px); opacity: 1; }
-            100% { transform: scale(1) translateY(0); opacity: 1; }
-        }
-        .entry-snap {
-            animation: cardSnap 0.38s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-        }
-
         @keyframes errorShake {
             0%, 100% { transform: translateX(0); }
             20% { transform: translateX(-9px) rotate(-1.2deg); }
@@ -1377,16 +1326,9 @@
 
         /* STYLE POUR LES CATÉGORIES (BANNIÈRES) */
         .list-categories { display: flex; flex-direction: column; gap: 15px; width: 100%; max-width: 800px; margin: 0 auto; }
-        .category-banner { background: linear-gradient(135deg, #2C3E50, #4CA1AF); color: white; border-radius: 12px; padding: 20px 25px; display: flex; justify-content: space-between; align-items: center; box-shadow: var(--card-shadow); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
-        .category-banner.empires-banner { background: linear-gradient(135deg, #4A235A, #9B59B6); }
-        .category-banner.custom-theme-banner { background: linear-gradient(135deg, #1E8449, #2ECC71); }
         .subcategory-note { background: var(--surface-2); border-left: 4px solid var(--primary-blue); border-radius: 9999px; padding: 14px 18px; margin: 0 auto 22px; max-width: 800px; }
         .subcategory-note-title { font-weight: 700; font-size: 14px; color: var(--text-dark); margin-bottom: 4px; }
         .subcategory-note p { font-size: 13px; line-height: 1.5; color: var(--ink-soft); margin: 0; }
-        .category-banner:hover { transform: translateY(-3px); box-shadow: var(--card-shadow-hover); }
-        .category-banner-title { font-size: 22px; font-weight: bold; }
-        .category-banner-subtitle { font-size: 14px; opacity: 0.8; margin-top: 5px; }
-        .category-banner-icon { font-size: 24px; background: rgba(255,255,255,0.2); width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
         .reset-srs-btn { font-size: 20px; opacity: 0.85; padding: 4px 9px; border-radius: 50%; transition: background 0.15s, opacity 0.15s; }
         .reset-srs-btn:hover { opacity: 1; background: rgba(255,255,255,0.2); }
         .reset-srs-btn.reset-srs-link { font-size: 14px; font-weight: 600; color: var(--muted-text); background: var(--surface-2); border-radius: 9999px; padding: 10px 16px; cursor: pointer; opacity: 1; }
@@ -1598,9 +1540,8 @@
 
         /* Éléments où le bleu de marque sert d'indicateur d'état (bascule
            « avant J.-C. », axe sélectionné) : on garde une teinte bleue
-           pour conserver le sens visuel, mais la variante claire déjà
-           utilisée ailleurs en thème sombre (cf. .quick-action-icon plus
-           haut), bien plus lisible sur fond sombre que le bleu marine. */
+           pour conserver le sens visuel, mais avec une variante claire,
+           bien plus lisible sur fond sombre que le bleu marine. */
         :root[data-theme="dark"] .fil-era-btn.era-bc {
             border-color: #5dade2;
             color: #5dade2;

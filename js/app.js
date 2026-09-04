@@ -261,25 +261,6 @@ const customCategory = {
     themes: []
 };
 
-function getAllEvents() {
-    const all = [];
-    const currentBdd = window.bdd || bdd || [];
-    currentBdd.forEach(cat => {
-        (function walk(node) {
-            if (node.subcategories) {
-                node.subcategories.forEach(walk);
-            } else if (node.themes) {
-                node.themes.forEach(thm => {
-                    if (thm.events) thm.events.forEach(evt => all.push(evt));
-                });
-            } else if (node.events) {
-                node.events.forEach(evt => all.push(evt));
-            }
-        })(cat);
-    });
-    return all;
-}
-
 function getAllEventsWithLocation() {
     const all = [];
     const currentBdd = window.bdd || bdd || [];
@@ -328,18 +309,11 @@ function ensureCustomCategoryInBdd() {
         bdd.push(customCategory);
 
         function loadCustomThemesIntoBdd() {
-            try {
-                const stored = JSON.parse(localStorage.getItem(CUSTOM_THEMES_KEY)) || [];
-                customCategory.themes = stored;
-            } catch (e) {
-                customCategory.themes = [];
-            }
+            customCategory.themes = customThemesLoad();
         }
 
         function saveCustomThemesToStorage() {
-            try {
-                localStorage.setItem(CUSTOM_THEMES_KEY, JSON.stringify(customCategory.themes));
-            } catch (e) {}
+            customThemesSave(customCategory.themes);
         }
 
         function openAddThemeModal() {
@@ -385,7 +359,7 @@ function ensureCustomCategoryInBdd() {
 
         function loadCustomEventsIntoBdd() {
             try {
-                const custom = JSON.parse(localStorage.getItem(CUSTOM_EVENTS_KEY)) || {};
+                const custom = customEventsLoad();
                 function traverse(categories) {
                     for (let cat of categories) {
                         if (cat.isCustomCategory) continue; // Les thèmes personnalisés gèrent déjà leurs événements
@@ -447,12 +421,10 @@ function ensureCustomCategoryInBdd() {
                 theme.events.sort((a, b) => a.date - b.date);
                 saveCustomThemesToStorage();
             } else {
-                try {
-                    const custom = JSON.parse(localStorage.getItem(CUSTOM_EVENTS_KEY)) || {};
-                    if (!custom[theme.id]) custom[theme.id] = [];
-                    custom[theme.id].push(newEvent);
-                    localStorage.setItem(CUSTOM_EVENTS_KEY, JSON.stringify(custom));
-                } catch (e) {}
+                const custom = customEventsLoad();
+                if (!custom[theme.id]) custom[theme.id] = [];
+                custom[theme.id].push(newEvent);
+                customEventsSave(custom);
 
                 theme.events.push(newEvent);
                 theme.events.sort((a, b) => a.date - b.date);
@@ -532,13 +504,11 @@ function ensureCustomCategoryInBdd() {
                 if (theme.isCustom) {
                     saveCustomThemesToStorage();
                 } else {
-                    try {
-                        const custom = JSON.parse(localStorage.getItem(CUSTOM_EVENTS_KEY)) || {};
-                        if (custom[theme.id]) {
-                            custom[theme.id] = custom[theme.id].filter(e => e.id !== eventId);
-                            localStorage.setItem(CUSTOM_EVENTS_KEY, JSON.stringify(custom));
-                        }
-                    } catch (e) {}
+                    const custom = customEventsLoad();
+                    if (custom[theme.id]) {
+                        custom[theme.id] = custom[theme.id].filter(e => e.id !== eventId);
+                        customEventsSave(custom);
+                    }
                 }
 
                 openSelectionMode();
@@ -996,8 +966,7 @@ function ensureCustomCategoryInBdd() {
         let ecartQuestions = [];
         let ecartIndex = 0;
         let ecartInput = '';
-        let ecartHintsRevealed = 0;
-        let ecartCorrectGapString = '';
+        let ecartAttemptsUsed = 0;
 
         // Certaines catégories (ex. « Histoires nationales », « Programmes scolaires »)
         // insèrent un ou plusieurs niveaux de sous-catégories entre la catégorie et les
@@ -1173,11 +1142,6 @@ function ensureCustomCategoryInBdd() {
             return target;
         }
 
-        // Ouvre l'écran de choix de révision (session aléatoire ou reprise d'un thème entier)
-        function startRevision() {
-            showScreen('screen-revision-hub');
-        }
-
         // Lance une session mélangée d'au plus n événements piochés parmi les points
         // faibles actuels. Si le stock est plus petit que n, on affiche simplement tout.
         function launchRandomRevision(n) {
@@ -1347,19 +1311,6 @@ function ensureCustomCategoryInBdd() {
             if (selectedAxes.size === 0) return;
             axisFilterActive = true;
             showScreen('screen-modes', 'forward');
-        }
-
-        // Ouvre l'écran des thèmes personnalisés
-        function openCustomThemes() {
-            favoritesMode = false;
-            let customCatIndex = bdd.findIndex(c => c.isCustomCategory);
-            if (customCatIndex === -1) {
-                bdd.push(customCategory);
-                customCatIndex = bdd.length - 1;
-            }
-            selectedCategoryIndex = customCatIndex;
-            selectedSubcategoryIndex = null;
-            showScreen('screen-themes');
         }
 
         // INIT CATÉGORIES (Dossiers)
@@ -3066,11 +3017,9 @@ function ensureCustomCategoryInBdd() {
             }
             isAnimating = false;
             ecartInput = '';
-            ecartHintsRevealed = 0;
-            document.getElementById('ecart-hint-btn').disabled = false;
+            ecartAttemptsUsed = 0;
 
             const q = ecartQuestions[ecartIndex];
-            ecartCorrectGapString = q.gap.toString();
 
             document.getElementById('ecart-event-a').innerText = q.eventA.titre;
             document.getElementById('ecart-event-b').innerText = q.eventB.titre;
@@ -3081,6 +3030,7 @@ function ensureCustomCategoryInBdd() {
             badge.className = 'fil-answer-badge hidden';
             badge.innerText = '';
 
+            updateEcartChancesBadge();
             updateEcartDisplay();
 
             document.getElementById('ecart-hud-count').innerText = `${ecartIndex + 1} / ${ecartQuestions.length}`;
@@ -3089,28 +3039,13 @@ function ensureCustomCategoryInBdd() {
             updateEcartHUD();
         }
 
-        function ecartUseHint() {
-            if (isAnimating) return;
-            const targetStr = ecartCorrectGapString;
-
-            if (ecartHintsRevealed < targetStr.length) {
-                ecartHintsRevealed++;
-                let currentInput = ecartInput;
-                let newStr = '';
-                for (let i = 0; i < targetStr.length; i++) {
-                    if (i < ecartHintsRevealed) {
-                        newStr += targetStr[i];
-                    } else if (i < currentInput.length) {
-                        newStr += currentInput[i];
-                    }
-                }
-                ecartInput = newStr;
-                updateEcartDisplay();
-
-                if (ecartHintsRevealed === targetStr.length) {
-                    ecartSubmit(true);
-                }
-            }
+        // Puce « 🎯 N essais » au-dessus du clavier : reflète le nombre de
+        // propositions encore possibles sur la question en cours (5 au départ,
+        // voir ecartSubmit). Remplace l'ancien bouton indice, retiré lors du
+        // passage au format Juste Prix (plus/moins).
+        function updateEcartChancesBadge() {
+            const badge = document.getElementById('ecart-chances-badge');
+            if (badge) badge.innerText = t('game.attempts_badge', { n: 5 - ecartAttemptsUsed });
         }
 
         function ecartKeyPress(digit) {
@@ -3122,7 +3057,7 @@ function ensureCustomCategoryInBdd() {
 
         function ecartBackspace() {
             if (isAnimating) return;
-            if (ecartInput.length > ecartHintsRevealed) {
+            if (ecartInput.length > 0) {
                 ecartInput = ecartInput.slice(0, -1);
                 updateEcartDisplay();
             }
@@ -3130,110 +3065,109 @@ function ensureCustomCategoryInBdd() {
 
         function ecartClear() {
             if (isAnimating) return;
-            ecartInput = ecartInput.slice(0, ecartHintsRevealed);
+            ecartInput = '';
             updateEcartDisplay();
         }
 
         function updateEcartDisplay() {
             const display = document.getElementById('ecart-display-value');
-            if (!ecartInput) {
-                display.innerHTML = '—';
-            } else {
-                let html = '';
-                for (let i = 0; i < ecartInput.length; i++) {
-                    if (i < ecartHintsRevealed) {
-                        html += `<span style="color: #2CA85A;">${ecartInput[i]}</span>`;
-                    } else {
-                        html += ecartInput[i];
-                    }
-                }
-                display.innerHTML = html;
-            }
+            display.innerHTML = ecartInput || '—';
             display.classList.remove('fil-feedback-correct', 'fil-feedback-wrong');
-
-            document.getElementById('ecart-validate-btn').disabled = ecartInput.length === 0 && ecartHintsRevealed === 0;
-            document.getElementById('ecart-hint-btn').disabled = (ecartHintsRevealed >= ecartCorrectGapString.length);
+            document.getElementById('ecart-validate-btn').disabled = ecartInput.length === 0;
         }
 
-        function ecartSubmit(autoFailByHint = false) {
-            // gère la différence de signature puisque onclick n'y passe aucun argument
-            if (typeof autoFailByHint !== 'boolean') autoFailByHint = false;
+        // Format « Juste Prix » : le joueur propose un nombre d'années, le jeu
+        // répond « plus » ou « moins » et laisse retenter tant qu'il reste des
+        // essais (5 par question, -20 points par proposition fausse — voir
+        // l'explication dans le menu Réglages > scoring.ecart_*).
+        function ecartSubmit() {
             if (isAnimating) return;
-            if (!autoFailByHint && ecartInput.length === 0) return;
-            isAnimating = true;
+            if (ecartInput.length === 0) return;
 
             const q = ecartQuestions[ecartIndex];
             const guessedGap = parseInt(ecartInput, 10);
-            const gapError = autoFailByHint ? Infinity : Math.abs(guessedGap - q.gap);
-            const isPerfect = gapError === 0;
+            const isPerfect = guessedGap === q.gap;
+            const badge = document.getElementById('ecart-answer-badge');
 
-            if (autoFailByHint) {
+            if (isPerfect) {
+                isAnimating = true;
+                let points = Math.max(0, 100 - ecartAttemptsUsed * 20);
+                if (ecartAttemptsUsed === 0) {
+                    points = Math.round(points * comboMultiplier);
+                    comboMultiplier = Math.min(5.0, comboMultiplier + 0.1);
+                } else {
+                    comboMultiplier = 1.0;
+                }
+                score += points;
+                playCorrectSound(comboMultiplier);
+
+                srsRecord(q.eventA, true);
+                srsRecord(q.eventB, true);
+                recordSessionStep(q.eventA, true, ecartAttemptsUsed > 0);
+                checkBadgeProgressOnAction(true);
+                updateEcartHUD();
+
+                document.getElementById('ecart-display-value').classList.add('fil-feedback-correct');
+                document.getElementById('ecart-validate-btn').disabled = true;
+
+                badge.innerText = ecartAttemptsUsed > 0 ? t('game.ecart_exact_after_tries') : t('game.exact');
+                badge.className = 'fil-answer-badge badge-correct';
+
+                document.getElementById('ecart-event-a-year').innerText = formatYear(q.eventA.date);
+                document.getElementById('ecart-event-b-year').innerText = formatYear(q.eventB.date);
+                document.getElementById('ecart-event-a-year').classList.remove('hidden');
+                document.getElementById('ecart-event-b-year').classList.remove('hidden');
+
+                setTimeout(() => {
+                    ecartIndex++;
+                    renderEcartQuestion();
+                }, 1800);
+                return;
+            }
+
+            ecartAttemptsUsed++;
+            playWrongSound();
+
+            if (ecartAttemptsUsed >= 5) {
+                // Les 5 essais sont épuisés : 0 point sur la question, vie perdue.
+                isAnimating = true;
                 lives -= 1;
                 comboMultiplier = 1.0;
-                playWrongSound();
-            } else {
-                let deduction = ecartHintsRevealed * 25;
-                if (deduction > 100) deduction = 100;
 
-                let points = 0;
-                if (isPerfect) {
-                    points = Math.max(0, 100 - deduction);
-                    if (ecartHintsRevealed === 0) {
-                        points = Math.round(points * comboMultiplier);
-                        comboMultiplier = Math.min(5.0, comboMultiplier + 0.1);
-                    } else {
-                        comboMultiplier = 1.0;
-                    }
-                    score += points;
-                    playCorrectSound(comboMultiplier);
-                } else {
-                    lives -= 1;
-                    const maxGap = Math.max(currentGameSpan, 10);
-                    let basePts = 100 * (1 - (gapError / maxGap));
-                    if (basePts < 0) basePts = 0;
-                    points = Math.max(0, Math.round(basePts) - deduction);
-                    score += points;
-                    comboMultiplier = 1.0;
-                    playWrongSound();
-                }
-            }
+                srsRecord(q.eventA, false);
+                srsRecord(q.eventB, false);
+                recordSessionStep(q.eventA, false, false);
+                checkBadgeProgressOnAction(false);
+                updateEcartHUD();
 
-            srsRecord(q.eventA, isPerfect);
-            srsRecord(q.eventB, isPerfect);
-            recordSessionStep(q.eventA, isPerfect, isPerfect && ecartHintsRevealed > 0);
-            checkBadgeProgressOnAction(isPerfect);
-            updateEcartHUD();
+                document.getElementById('ecart-display-value').classList.add('fil-feedback-wrong');
+                document.getElementById('ecart-validate-btn').disabled = true;
 
-            const display = document.getElementById('ecart-display-value');
-            display.classList.add(isPerfect ? 'fil-feedback-correct' : 'fil-feedback-wrong');
-            document.getElementById('ecart-validate-btn').disabled = true;
-            document.getElementById('ecart-hint-btn').disabled = true;
-
-            const badge = document.getElementById('ecart-answer-badge');
-            if (!isPerfect) {
                 badge.innerText = t('game.real_gap', { gap: q.gap });
                 badge.className = 'fil-answer-badge badge-wrong';
-            } else if (ecartHintsRevealed > 0) {
-                badge.innerText = t('game.exact_with_hint');
-                badge.className = 'fil-answer-badge badge-correct';
-            } else {
-                badge.innerText = t('game.exact');
-                badge.className = 'fil-answer-badge badge-correct';
+
+                document.getElementById('ecart-event-a-year').innerText = formatYear(q.eventA.date);
+                document.getElementById('ecart-event-b-year').innerText = formatYear(q.eventB.date);
+                document.getElementById('ecart-event-a-year').classList.remove('hidden');
+                document.getElementById('ecart-event-b-year').classList.remove('hidden');
+
+                setTimeout(() => {
+                    ecartIndex++;
+                    if (lives <= 0) {
+                        endGame(false);
+                    } else {
+                        renderEcartQuestion();
+                    }
+                }, 1800);
+                return;
             }
 
-            document.getElementById('ecart-event-a-year').innerText = formatYear(q.eventA.date);
-            document.getElementById('ecart-event-b-year').innerText = formatYear(q.eventB.date);
-            document.getElementById('ecart-event-a-year').classList.remove('hidden');
-            document.getElementById('ecart-event-b-year').classList.remove('hidden');
-
-            setTimeout(() => {
-                ecartIndex++;
-                if (lives <= 0) {
-                    endGame(false);
-                } else {
-                    renderEcartQuestion();
-                }
-            }, 1800);
+            // Il reste des essais : feedback plus/moins, la question ne change pas.
+            badge.innerText = guessedGap < q.gap ? t('game.ecart_feedback_more') : t('game.ecart_feedback_less');
+            badge.className = 'fil-answer-badge badge-wrong';
+            ecartInput = '';
+            updateEcartDisplay();
+            updateEcartChancesBadge();
         }
 
         function updateEcartHUD() {

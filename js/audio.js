@@ -172,13 +172,6 @@ function playVictorySound() {
     });
 }
 
-function playTapSound() {
-    const ctx = getAudioCtx();
-    if (!ctx) return;
-    const now = ctx.currentTime;
-    playNote(ctx, 480, now, 0.03, { type: 'sine', glideTo: 220, volume: 0.05, attack: 0.002 });
-}
-
 // --- CONFETTIS (célébration : fin de partie gagnée, badge, changement de grade) ---
 // Canvas plein écran créé à la volée (voir #confetti-canvas dans style.css) : aucune
 // dépendance externe, pas d'élément à prévoir dans le HTML.
