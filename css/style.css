@@ -613,6 +613,17 @@
             font-weight: 700;
             margin-bottom: 12px;
         }
+        /* Entrée de l'XP gagné en fin de partie (voir endGame() dans js/app.js, qui
+           ajoute cette classe et anime le chiffre en comptage montant) : la puce
+           "rebondit" vers sa position finale plutôt que d'apparaître figée. */
+        @keyframes xpChipRise {
+            0% { opacity: 0; transform: translateY(16px) scale(0.85); }
+            60% { opacity: 1; transform: translateY(-4px) scale(1.06); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .end-xp.xp-rise {
+            animation: xpChipRise 0.55s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
 
         /* --- SYSTÈME DE RÉTENTION : STREAKS, PARTAGE WORDLE & ANECDOTES --- */
         .streak-pill-badge {
@@ -651,212 +662,18 @@
             background: rgba(247, 147, 30, 0.15);
             border-color: rgba(247, 147, 30, 0.4);
         }
-
-        /* Conteneur et carte de fin */
-        .end-content-wrapper {
-            width: 100%;
-            max-width: 480px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
+        /* Célébration de série en fin de partie : un vrai rebond d'entrée plutôt que
+           le texte qui se contente de changer (voir endGame() dans js/app.js). */
+        @keyframes streakBannerPop {
+            0% { opacity: 0; transform: scale(0.7) translateY(10px); }
+            55% { opacity: 1; transform: scale(1.08) translateY(-2px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
         }
-
-        /* Carte de partage Wordle */
-        .share-card {
-            width: 100%;
-            background: var(--surface);
-            border: 1px solid var(--border-soft);
-            border-radius: 16px;
-            padding: 16px;
-            margin: 14px 0;
-            box-shadow: var(--card-shadow);
-            text-align: center;
-            box-sizing: border-box;
+        .end-streak-banner.streak-pop {
+            animation: streakBannerPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
-        .share-card-header {
-            font-size: 12px;
-            font-weight: 700;
-            color: var(--muted-text);
-            text-transform: uppercase;
-            letter-spacing: 0.6px;
-            margin-bottom: 8px;
-        }
-        .share-emojis-grid {
-            font-size: 22px;
-            line-height: 1.4;
-            letter-spacing: 3px;
-            margin-bottom: 12px;
-            word-break: break-all;
-            user-select: all;
-        }
-        .btn-share {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            background: linear-gradient(135deg, #10B981, #059669);
-            color: white;
-            border: none;
-            padding: 11px 20px;
-            border-radius: 9999px;
-            font-size: 14.5px;
-            font-weight: 700;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
-            transition: transform 0.15s ease, opacity 0.15s ease;
-            width: 100%;
-        }
-        .btn-share:hover {
-            transform: translateY(-2px);
-            opacity: 0.92;
-        }
-        .btn-share:active {
-            transform: translateY(0);
-        }
-
-        /* Anecdote Historique « Le Saviez-vous ? » */
-        .anecdote-card-wrapper {
-            width: 100%;
-            margin-top: 16px;
-            text-align: left;
-        }
-        .anecdote-card {
-            background: var(--surface);
-            border-left: 4px solid var(--favorite-yellow);
-            border-top: 1px solid var(--border-soft);
-            border-right: 1px solid var(--border-soft);
-            border-bottom: 1px solid var(--border-soft);
-            border-radius: 14px;
-            padding: 16px 18px;
-            box-shadow: var(--card-shadow);
-        }
-        .anecdote-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 8px;
-            gap: 8px;
-        }
-        .anecdote-badge {
-            font-size: 11px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.6px;
-            color: #b7791f;
-            background: rgba(212, 160, 23, 0.15);
-            padding: 3px 8px;
-            border-radius: 9999px;
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-        }
-        :root[data-theme="dark"] .anecdote-badge {
-            color: #f6e05e;
-            background: rgba(246, 224, 94, 0.2);
-        }
-        .anecdote-date {
-            font-size: 12.5px;
-            font-weight: 700;
-            color: var(--muted-text);
-        }
-        .anecdote-event-title {
-            font-size: 15.5px;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 6px;
-            line-height: 1.35;
-        }
-        .anecdote-desc {
-            font-size: 13.5px;
-            line-height: 1.5;
-            color: var(--on-surface-variant);
-            margin-bottom: 10px;
-        }
-        .anecdote-wiki-link {
-            font-size: 12.5px;
-            font-weight: 600;
-            color: #2980b9;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            transition: color 0.15s;
-        }
-        .anecdote-wiki-link:hover {
-            color: #1a5276;
-            text-decoration: underline;
-        }
-        :root[data-theme="dark"] .anecdote-wiki-link {
-            color: #5dade2;
-        }
-
-        /* Toast notification */
-        .toast-notification {
-            position: fixed;
-            bottom: 28px;
-            left: 50%;
-            transform: translateX(-50%) translateY(0);
-            background: rgba(20, 29, 35, 0.82);
-            color: #ffffff;
-            border: 1px solid rgba(255,255,255,0.1);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
-            padding: 12px 24px;
-            border-radius: 9999px;
-            font-size: 14.5px;
-            font-weight: 600;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            z-index: 100000;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            pointer-events: none;
-        }
-        .toast-notification.toast-hide {
-            opacity: 0;
-            transform: translateX(-50%) translateY(20px);
-        }
-        
-        
-        /* --- SYSTÈME DE RÉTENTION : STREAKS, PARTAGE WORDLE & ANECDOTES --- */
-        .streak-pill-badge {
-            position: absolute;
-            top: -6px;
-            right: -8px;
-            background: linear-gradient(135deg, #FF6B35, #F7931E);
-            color: #ffffff;
-            font-size: 11px;
-            font-weight: 800;
-            padding: 2px 7px;
-            border-radius: 9999px;
-            box-shadow: 0 2px 6px rgba(247, 147, 30, 0.4);
-            display: flex;
-            align-items: center;
-            gap: 2px;
-            border: 2px solid var(--surface);
-            pointer-events: none;
-            z-index: 5;
-        }
-        .end-streak-banner {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: linear-gradient(135deg, rgba(255, 107, 53, 0.12), rgba(247, 147, 30, 0.18));
-            border: 1px solid rgba(247, 147, 30, 0.35);
-            color: #d35400;
-            padding: 6px 14px;
-            border-radius: 9999px;
-            font-size: 14px;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-        :root[data-theme="dark"] .end-streak-banner {
-            color: #f39c12;
-            background: rgba(247, 147, 30, 0.15);
-            border-color: rgba(247, 147, 30, 0.4);
+        @media (prefers-reduced-motion: reduce) {
+            .end-xp.xp-rise, .end-streak-banner.streak-pop { animation: none; }
         }
 
         /* Conteneur et carte de fin */
@@ -1059,12 +876,92 @@
         }
 
         /* Micro-interactions tactiles réactives */
-        .btn, .data-card, .mode-card, .quiz-option, .avap-btn, .periodes-option, .quick-action-circle, .selection-item {
+        .btn, .data-card, .mode-card, .quiz-option, .avap-option, .periodes-option, .quick-action-circle, .selection-item {
             transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
             -webkit-tap-highlight-color: transparent;
         }
-        .btn:active, .data-card:active, .mode-card:active, .quiz-option:active, .avap-btn:active, .periodes-option:active, .quick-action-circle:active {
+        .btn:active, .data-card:active, .mode-card:active, .quiz-option:active, .avap-option:active, .periodes-option:active, .quick-action-circle:active {
             transform: scale(0.96) !important;
+        }
+
+        /* Pulse vert sur le repère qui vient d'être placé correctement sur la frise
+           (au-delà du simple fondu de .entry-new) : un léger rebond + halo vert qui
+           confirme visuellement la bonne réponse, symétrique du tremblement rouge de
+           .shake-anim côté erreur. */
+        @keyframes correctPulse {
+            0% { transform: scale(0.94); box-shadow: 0 0 0 0 rgba(30,142,62,0.45); }
+            45% { transform: scale(1.03); box-shadow: 0 0 0 9px rgba(30,142,62,0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(30,142,62,0); }
+        }
+        .entry-correct-pulse {
+            animation: correctPulse 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        /* Pulse bonne/mauvaise réponse sur les boutons de choix des modes Quiz,
+           Avant/Après, Périodes & Ères et Mode Carte (temporel) : ils reçoivent déjà
+           les classes .correct/.wrong (couleur figée définie plus haut), on y ajoute
+           ici juste le mouvement. */
+        @keyframes optionCorrectPulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(44,168,90,0.45); }
+            45% { transform: scale(1.035); box-shadow: 0 0 0 9px rgba(44,168,90,0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(44,168,90,0); }
+        }
+        @keyframes optionWrongPulse {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-6px); }
+            50% { transform: translateX(6px); }
+            75% { transform: translateX(-3px); }
+        }
+        .quiz-option.correct, .avap-option.correct, .periodes-option.correct,
+        .fil-display-value.fil-feedback-correct {
+            animation: optionCorrectPulse 0.5s ease-out;
+        }
+        .quiz-option.wrong, .avap-option.wrong, .periodes-option.wrong,
+        .fil-display-value.fil-feedback-wrong {
+            animation: optionWrongPulse 0.4s ease-in-out;
+        }
+        /* Pins du Mode Carte : transform de base translate(-50%,-50%) pour le
+           centrage, à préserver dans l'animation sous peine de faire sauter le pin
+           de sa position lors du pulse. */
+        @keyframes geoPinCorrectPulse {
+            0% { transform: translate(-50%,-50%) scale(1); }
+            45% { transform: translate(-50%,-50%) scale(1.22); box-shadow: 0 3px 8px rgba(0,0,0,0.25), 0 0 0 8px rgba(44,168,90,0); }
+            100% { transform: translate(-50%,-50%) scale(1); }
+        }
+        @keyframes geoPinWrongPulse {
+            0%, 100% { transform: translate(-50%,-50%) rotate(0); }
+            25% { transform: translate(-50%,-50%) rotate(-10deg); }
+            50% { transform: translate(-50%,-50%) rotate(10deg); }
+            75% { transform: translate(-50%,-50%) rotate(-5deg); }
+        }
+        .geo-pin-btn.correct { animation: geoPinCorrectPulse 0.5s ease-out; }
+        .geo-pin-btn.wrong { animation: geoPinWrongPulse 0.4s ease-in-out; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .entry-correct-pulse,
+            .quiz-option.correct, .avap-option.correct, .periodes-option.correct, .fil-display-value.fil-feedback-correct,
+            .quiz-option.wrong, .avap-option.wrong, .periodes-option.wrong, .fil-display-value.fil-feedback-wrong,
+            .geo-pin-btn.correct, .geo-pin-btn.wrong {
+                animation: none;
+            }
+        }
+
+        /* --- APPARITION EN CASCADE (STAGGER) DES LISTES DE CARTES --- */
+        /* Catégories, sous-catégories, thèmes, favoris, points faibles à réviser :
+           décale légèrement l'entrée de chaque carte selon --stagger-i (posé en JS,
+           voir applyStagger() dans js/app.js) pour une ouverture de liste plus vivante
+           qu'un affichage simultané figé. Délai plafonné côté JS pour qu'une longue
+           liste ne fasse pas attendre ses dernières cartes une éternité. */
+        @keyframes staggerIn {
+            from { opacity: 0; transform: translateY(14px) scale(0.97); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .stagger-in {
+            animation: staggerIn 0.36s cubic-bezier(0.16, 1, 0.3, 1) both;
+            animation-delay: calc(var(--stagger-i, 0) * 45ms);
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .stagger-in { animation: none; }
         }
 
         #confetti-canvas {
@@ -1204,6 +1101,19 @@
             letter-spacing: 0.2px;
             flex-shrink: 0;
             white-space: nowrap;
+        }
+        /* Légère flamme "vivante" tant que la série est en cours (badge visible,
+           donc pas .hidden) : un rappel ambiant discret de l'enjeu de la série,
+           plutôt qu'un badge complètement statique. */
+        @keyframes flameFlicker {
+            0%, 100% { filter: drop-shadow(0 0 0 rgba(247,147,30,0)); }
+            50% { filter: drop-shadow(0 0 4px rgba(247,147,30,0.7)); }
+        }
+        .player-rank-streak-badge:not(.hidden) {
+            animation: flameFlicker 1.8s ease-in-out infinite;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .player-rank-streak-badge { animation: none; }
         }
         .player-rank-track {
             height: 6px;

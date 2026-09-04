@@ -1487,8 +1487,9 @@ function ensureCustomCategoryInBdd() {
                 };
                 catGrid.appendChild(card);
             });
+            applyStagger(catGrid);
         }
-        
+
         // INIT SOUS-CATÉGORIES (régions, niveaux scolaires, etc. — potentiellement imbriquées)
         function initSubcategories() {
             const container = document.getElementById('subcategories-container');
@@ -1627,7 +1628,7 @@ function ensureCustomCategoryInBdd() {
                 };
                 gridSection.appendChild(card);
             });
-            
+            applyStagger(gridSection);
         }
 
 
@@ -1835,6 +1836,7 @@ function ensureCustomCategoryInBdd() {
                 });
                 container.appendChild(card);
             });
+            applyStagger(container);
         }
 
         // Liste des thèmes marqués en favoris, retrouvés à travers tout l'arbre bdd
@@ -1871,6 +1873,7 @@ function ensureCustomCategoryInBdd() {
                 }, { onFavoriteToggle: () => renderFavoritesThemes(container) });
                 container.appendChild(card);
             });
+            applyStagger(container);
         }
 
         // Bascule entre les deux onglets de l'écran « Réviser » : Points faibles (par
@@ -1920,6 +1923,7 @@ function ensureCustomCategoryInBdd() {
                 }, { badge: count });
                 themesContainer.appendChild(card);
             });
+            applyStagger(themesContainer);
         }
 
         // VERROUS DE MODE (Chrono / Expert) — recalculés à chaque ouverture de l'écran des modes
@@ -2329,13 +2333,7 @@ function ensureCustomCategoryInBdd() {
 
         function updateQuizHUD() {
             document.getElementById('quiz-hud-score').innerText = score;
-            const comboChip = document.getElementById('quiz-hud-combo');
-            if (comboMultiplier > 1) {
-                comboChip.innerText = `×${comboMultiplier.toFixed(1)}`;
-                comboChip.classList.remove('hidden');
-            } else {
-                comboChip.classList.add('hidden');
-            }
+            renderComboChip(document.getElementById('quiz-hud-combo'), comboMultiplier);
             let pips = '';
             for (let i = 0; i < 3; i++) {
                 pips += `<span class="pip${i < lives ? '' : ' spent'}"></span>`;
@@ -2485,13 +2483,7 @@ function ensureCustomCategoryInBdd() {
 
         function updateAvapHUD() {
             document.getElementById('avap-hud-score').innerText = score;
-            const comboChip = document.getElementById('avap-hud-combo');
-            if (comboMultiplier > 1) {
-                comboChip.innerText = `×${comboMultiplier.toFixed(1)}`;
-                comboChip.classList.remove('hidden');
-            } else {
-                comboChip.classList.add('hidden');
-            }
+            renderComboChip(document.getElementById('avap-hud-combo'), comboMultiplier);
             let pips = '';
             for (let i = 0; i < 3; i++) {
                 pips += `<span class="pip${i < lives ? '' : ' spent'}"></span>`;
@@ -2768,13 +2760,7 @@ function ensureCustomCategoryInBdd() {
 
         function updatePeriodesHUD() {
             document.getElementById('periodes-hud-score').innerText = score;
-            const comboChip = document.getElementById('periodes-hud-combo');
-            if (comboMultiplier > 1) {
-                comboChip.innerText = `×${comboMultiplier.toFixed(1)}`;
-                comboChip.classList.remove('hidden');
-            } else {
-                comboChip.classList.add('hidden');
-            }
+            renderComboChip(document.getElementById('periodes-hud-combo'), comboMultiplier);
             let pips = '';
             for (let i = 0; i < 3; i++) {
                 pips += `<span class="pip${i < lives ? '' : ' spent'}"></span>`;
@@ -3010,13 +2996,7 @@ function ensureCustomCategoryInBdd() {
 
         function updateFilHUD() {
             document.getElementById('fil-hud-score').innerText = score;
-            const comboChip = document.getElementById('fil-hud-combo');
-            if (comboMultiplier > 1) {
-                comboChip.innerText = `×${comboMultiplier.toFixed(1)}`;
-                comboChip.classList.remove('hidden');
-            } else {
-                comboChip.classList.add('hidden');
-            }
+            renderComboChip(document.getElementById('fil-hud-combo'), comboMultiplier);
             let pips = '';
             for (let i = 0; i < 3; i++) {
                 pips += `<span class="pip${i < lives ? '' : ' spent'}"></span>`;
@@ -3258,13 +3238,7 @@ function ensureCustomCategoryInBdd() {
 
         function updateEcartHUD() {
             document.getElementById('ecart-hud-score').innerText = score;
-            const comboChip = document.getElementById('ecart-hud-combo');
-            if (comboMultiplier > 1) {
-                comboChip.innerText = `×${comboMultiplier.toFixed(1)}`;
-                comboChip.classList.remove('hidden');
-            } else {
-                comboChip.classList.add('hidden');
-            }
+            renderComboChip(document.getElementById('ecart-hud-combo'), comboMultiplier);
             let pips = '';
             for (let i = 0; i < 3; i++) {
                 pips += `<span class="pip${i < lives ? '' : ' spent'}"></span>`;
@@ -3321,18 +3295,85 @@ function ensureCustomCategoryInBdd() {
             renderTimeline();
         }
 
+        // =====================================================================
+        // MICRO-ANIMATIONS PARTAGÉES (voir css/style.css : .stagger-in, .combo-pulse,
+        // .xp-rise, .streak-pop) — utilisées par plusieurs modes de jeu et écrans.
+        // =====================================================================
+
+        // Apparition en cascade des cartes d'une liste qui vient de s'afficher
+        // (catégories, thèmes, favoris, points faibles à réviser...) : décale
+        // légèrement l'entrée de chaque enfant du conteneur au lieu d'un affichage
+        // simultané figé. Index plafonné pour qu'une longue liste ne fasse pas
+        // attendre ses dernières cartes une éternité (au-delà, même délai maximal).
+        function applyStagger(container) {
+            if (!container) return;
+            Array.from(container.children).forEach((el, i) => {
+                el.style.setProperty('--stagger-i', Math.min(i, 10));
+                el.classList.add('stagger-in');
+            });
+        }
+
+        // Met à jour un badge de combo (×1.2, ×1.3...) et le fait pulser (voir
+        // .combo-pulse) uniquement quand la valeur affichée change réellement — pas
+        // à chaque simple rafraîchissement du HUD — pour que le pulse reste un vrai
+        // signal de bonne réponse, pas un scintillement continu. Partagé par tous
+        // les modes de jeu (frise, quiz, avant/après, périodes, fil, écart, carte).
+        function renderComboChip(el, multiplier) {
+            if (!el) return;
+            if (multiplier > 1) {
+                const val = multiplier.toFixed(1);
+                if (el.dataset.mult !== val) {
+                    el.classList.remove('combo-pulse');
+                    void el.offsetWidth;
+                    el.classList.add('combo-pulse');
+                    el.dataset.mult = val;
+                }
+                el.innerText = `×${val}`;
+                el.classList.remove('hidden');
+            } else {
+                el.classList.add('hidden');
+                delete el.dataset.mult;
+            }
+        }
+
+        // Anime un compteur numérique de `from` à `to` (utilisé pour l'XP gagnée en
+        // fin de partie) : à chaque frame, `onFrame(val, isDone)` reçoit la valeur
+        // intermédiaire arrondie — c'est l'appelant qui décide comment l'afficher
+        // (ici en rappelant t() pour rester juste dans toutes les langues, plutôt
+        // que de manipuler le texte déjà traduit). Respecte prefers-reduced-motion.
+        function animateCountUp(from, to, duration, onFrame) {
+            if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                onFrame(to, true);
+                return;
+            }
+            const start = performance.now();
+            const diff = to - from;
+            function tick(now) {
+                const progress = Math.min(1, (now - start) / duration);
+                const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubique
+                const done = progress >= 1;
+                onFrame(done ? to : Math.round(from + diff * eased), done);
+                if (!done) requestAnimationFrame(tick);
+            }
+            requestAnimationFrame(tick);
+        }
+
+        // Rejoue une animation CSS déjà en cours (ou déjà jouée) sur `el` en forçant
+        // un reflow entre le retrait et l'ajout de la classe — sinon le navigateur ne
+        // redétecte pas de changement et l'animation ne se relance pas.
+        function replayAnimClass(el, className) {
+            if (!el) return;
+            el.classList.remove(className);
+            void el.offsetWidth;
+            el.classList.add(className);
+        }
+
         function updateHUD() {
             if (currentMode === 'multi') {
                 const cp = multiPlayers[currentMultiPlayerIndex];
                 document.getElementById('hud-score').innerText = cp.score;
-                const comboChip = document.getElementById('hud-combo');
-                if (cp.comboMultiplier > 1) {
-                    comboChip.innerText = `×${cp.comboMultiplier.toFixed(1)}`;
-                    comboChip.classList.remove('hidden');
-                } else {
-                    comboChip.classList.add('hidden');
-                }
-                
+                renderComboChip(document.getElementById('hud-combo'), cp.comboMultiplier);
+
                 let pips = `<span class="multi-player-hud">${cp.name}</span> `;
                 for (let i = 0; i < 2; i++) {
                     pips += `<span class="pip${i < cp.lives ? '' : ' spent'}"></span>`;
@@ -3340,13 +3381,7 @@ function ensureCustomCategoryInBdd() {
                 document.getElementById('hud-lives').innerHTML = pips;
             } else {
                 document.getElementById('hud-score').innerText = score;
-                const comboChip = document.getElementById('hud-combo');
-                if (comboMultiplier > 1) {
-                    comboChip.innerText = `×${comboMultiplier.toFixed(1)}`;
-                    comboChip.classList.remove('hidden');
-                } else {
-                    comboChip.classList.add('hidden');
-                }
+                renderComboChip(document.getElementById('hud-combo'), comboMultiplier);
 
                 if (currentMode !== 'training' && currentMode !== 'discovery') {
                     const maxLives = (currentMode === 'expert') ? 1 : 3;
@@ -3471,11 +3506,14 @@ function ensureCustomCategoryInBdd() {
             return row;
         }
 
-        // Amène un repère au centre de la colonne et le signale visuellement
+        // Amène un repère au centre de la colonne et le signale visuellement.
+        // extraClass accepte une ou plusieurs classes séparées par un espace (ex.
+        // 'entry-new entry-correct-pulse') — classList.add() refuse un seul token
+        // contenant un espace, d'où la répartition ci-dessous.
         function focusEntry(eventId, extraClass) {
             const row = document.querySelector(`#timeline .entry[data-event-id="${eventId}"]`);
             if (!row) return;
-            if (extraClass) row.classList.add(extraClass);
+            if (extraClass) extraClass.split(' ').filter(Boolean).forEach(c => row.classList.add(c));
             row.scrollIntoView({ block: 'center', inline: 'center', behavior: 'smooth' });
         }
 
@@ -3540,7 +3578,7 @@ function ensureCustomCategoryInBdd() {
                 const placedId = eventToPlace.id;
                 placedEvents.splice(index, 0, eventToPlace);
                 updateHUD();
-                focusEntry(placedId, 'entry-new');
+                focusEntry(placedId, 'entry-new entry-correct-pulse');
                 if (currentMode === 'multi') {
                     setTimeout(() => nextMultiPlayerTurn(), 1000);
                 } else {
@@ -3849,27 +3887,38 @@ function ensureCustomCategoryInBdd() {
                 timeDisplay.classList.add('hidden');
             }
 
-            // Affichage de l'XP gagné (et du multiplicateur de série, s'il y en a un)
+            // Affichage de l'XP gagné (et du multiplicateur de série, s'il y en a un) :
+            // la puce "rebondit" à l'affichage (.xp-rise) et le nombre compte en
+            // montant de 0 jusqu'au gain réel plutôt que de s'afficher figé — à
+            // chaque frame on rappelle t() avec la valeur intermédiaire pour rester
+            // juste dans toutes les langues (voir animateCountUp()).
             const xpDisplay = document.getElementById('end-xp-display');
             if (xpDisplay) {
                 if (awardedXpInfo && awardedXpInfo.xpAwarded > 0) {
                     const mult = awardedXpInfo.streakMultiplier || 1;
-                    xpDisplay.innerText = mult > 1
-                        ? t('game.xp_gain_streak', { xp: awardedXpInfo.xpAwarded, mult })
-                        : t('game.xp_gain', { xp: awardedXpInfo.xpAwarded });
+                    const xpTarget = awardedXpInfo.xpAwarded;
                     xpDisplay.classList.remove('hidden');
+                    replayAnimClass(xpDisplay, 'xp-rise');
+                    animateCountUp(0, xpTarget, 700, (val) => {
+                        xpDisplay.innerText = mult > 1
+                            ? t('game.xp_gain_streak', { xp: val, mult })
+                            : t('game.xp_gain', { xp: val });
+                    });
                 } else {
                     xpDisplay.classList.add('hidden');
                 }
             }
 
-            // Affichage de la série sur l'écran de fin
+            // Affichage de la série sur l'écran de fin : un vrai rebond d'entrée
+            // (.streak-pop) pour la célébrer, plutôt qu'un chiffre qui se contente
+            // de changer dans un texte statique.
             const streakDisplay = document.getElementById('end-streak-display');
             if (streakDisplay) {
                 const streak = getStreakCount();
                 if (streak > 0) {
                     streakDisplay.innerText = t('end.streak_banner', { count: streak });
                     streakDisplay.classList.remove('hidden');
+                    replayAnimClass(streakDisplay, 'streak-pop');
                 } else {
                     streakDisplay.classList.add('hidden');
                 }
