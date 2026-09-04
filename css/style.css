@@ -20,6 +20,13 @@
             --selected-tint: #EAF1F6;
             --modal-overlay-bg: rgba(0,0,0,0.5);
             --locked-bg: #9AA4AD;
+            /* Glassmorphisme (design "Tailored Executive") : verre dépoli utilisé sur les
+               modales, la barre de notification du bas et les boutons flottants. Dérivé de
+               --surface via color-mix plutôt qu'une couleur figée, pour suivre automatiquement
+               le thème clair/sombre sans jeton dupliqué. */
+            --glass-bg: color-mix(in srgb, var(--surface) 78%, transparent);
+            --glass-border: rgba(255,255,255,0.4);
+            --glass-shadow: 0 10px 30px rgba(0, 26, 75, 0.08);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: var(--font-main); }
         body { background-color: var(--bg-color); color: var(--text-dark); height: 100vh; height: 100dvh; display: flex; flex-direction: column; overflow: hidden; }
@@ -442,10 +449,13 @@
             .slot-caret, .progress-fill { transition: none; }
         }
         
-        .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--modal-overlay-bg); display: flex; align-items: center; justify-content: center; z-index: 100; }
+        .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--modal-overlay-bg); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); display: flex; align-items: center; justify-content: center; z-index: 100; }
         #modal-confirm { z-index: 105; }
         #modal-scoring-info { z-index: 110; }
-        .modal-content { background: var(--surface); width: 90%; max-width: 600px; max-height: 80vh; overflow-y: auto; border-radius: 12px; padding: 30px; position: relative; box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+        /* Verre dépoli : le fond de la modale laisse deviner l'écran flouté derrière elle
+           au lieu d'un aplat opaque — c'est le rendu "premium" des maquettes Tailored
+           Executive (cf. ui/historiaxe_*_tailored_style/code.html). */
+        .modal-content { background: var(--glass-bg); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid var(--glass-border); width: 90%; max-width: 600px; max-height: 80vh; overflow-y: auto; border-radius: 24px; padding: 30px; position: relative; box-shadow: var(--glass-shadow); }
         .close-btn { position: absolute; top: 15px; right: 20px; font-size: 24px; cursor: pointer; color: var(--muted-text); }
         .modal-title { font-size: 22px; color: var(--text-dark); margin-bottom: 10px; padding-right: 20px; }
         .modal-date { font-size: 18px; color: var(--primary-blue); font-weight: bold; margin-bottom: 20px; }
@@ -788,9 +798,11 @@
             bottom: 28px;
             left: 50%;
             transform: translateX(-50%) translateY(0);
-            background: rgba(20, 29, 35, 0.95);
+            background: rgba(20, 29, 35, 0.82);
             color: #ffffff;
-            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
             padding: 12px 24px;
             border-radius: 9999px;
             font-size: 14.5px;
@@ -993,9 +1005,11 @@
             bottom: 28px;
             left: 50%;
             transform: translateX(-50%) translateY(0);
-            background: rgba(20, 29, 35, 0.95);
+            background: rgba(20, 29, 35, 0.82);
             color: #ffffff;
-            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
             padding: 12px 24px;
             border-radius: 9999px;
             font-size: 14.5px;
@@ -1068,9 +1082,11 @@
             position: fixed;
             top: 20px;
             right: 70px;
-            background: var(--surface);
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             color: var(--text-dark);
-            border: 1px solid var(--border-soft);
+            border: 1px solid var(--glass-border);
             width: 42px;
             height: 42px;
             border-radius: 50%;
@@ -1087,9 +1103,11 @@
             position: fixed;
             top: 20px;
             right: 124px;
-            background: var(--surface);
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             color: var(--text-dark);
-            border: 1px solid var(--border-soft);
+            border: 1px solid var(--glass-border);
             width: 42px;
             height: 42px;
             border-radius: 50%;
@@ -1104,11 +1122,11 @@
         }
         .league-btn:hover {
             transform: scale(1.08);
-            background: var(--surface-2);
+            background: color-mix(in srgb, var(--surface) 92%, transparent);
         }
         .profile-btn:hover {
             transform: scale(1.08);
-            background: var(--surface-2);
+            background: color-mix(in srgb, var(--surface) 92%, transparent);
         }
 
         .player-rank-bar {
@@ -1551,12 +1569,12 @@
         .btn-secondary { background: var(--btn-secondary-bg); color: var(--btn-secondary-text); }
 
         /* --- Bouton de réglages (roue dentée) --- */
-        .settings-btn { position: fixed; top: calc(env(safe-area-inset-top, 0px) + 14px); right: 16px; z-index: 60; width: 42px; height: 42px; border-radius: 50%; border: none; background: var(--surface); box-shadow: var(--card-shadow); font-size: 19px; line-height: 1; color: var(--text-dark); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: transform 0.25s ease, background 0.2s; }
+        .settings-btn { position: fixed; top: calc(env(safe-area-inset-top, 0px) + 14px); right: 16px; z-index: 60; width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--glass-border); background: var(--glass-bg); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: var(--card-shadow); font-size: 19px; line-height: 1; color: var(--text-dark); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: transform 0.25s ease, background 0.2s; }
         .settings-btn:hover { transform: rotate(35deg); }
         .settings-btn:active { transform: rotate(70deg); }
 
         /* --- Bouton retour (chevron), fixé en haut à gauche de l'écran --- */
-        .back-btn { position: fixed; top: calc(env(safe-area-inset-top, 0px) + 14px); left: 16px; z-index: 60; width: 42px; height: 42px; border-radius: 50%; border: none; background: var(--surface); box-shadow: var(--card-shadow); font-size: 24px; font-weight: bold; line-height: 1; color: var(--text-dark); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: transform 0.2s ease, background 0.2s; }
+        .back-btn { position: fixed; top: calc(env(safe-area-inset-top, 0px) + 14px); left: 16px; z-index: 60; width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--glass-border); background: var(--glass-bg); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: var(--card-shadow); font-size: 24px; font-weight: bold; line-height: 1; color: var(--text-dark); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: transform 0.2s ease, background 0.2s; }
         .back-btn:hover { opacity: 0.85; }
         .back-btn:active { transform: scale(0.9); }
 
@@ -1600,6 +1618,10 @@
             --selected-tint: rgba(127,166,201,0.18);
             --modal-overlay-bg: rgba(0,0,0,0.7);
             --locked-bg: #3B4350;
+            /* Verre plus discret en thème sombre : un liseré clair trop marqué
+               romprait l'ambiance, l'ombre doit rester noire (pas teintée navy). */
+            --glass-border: rgba(255,255,255,0.08);
+            --glass-shadow: 0 10px 30px rgba(0,0,0,0.45);
         }
 
         /* Cartes d'événements (.entry-title) : la version « Tailored Executive »
