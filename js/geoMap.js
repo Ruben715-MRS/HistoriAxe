@@ -444,15 +444,7 @@ function finalizeGeoRound(round) {
 function updateGeoHUD() {
     const scoreEl = document.getElementById('geo-hud-score');
     if (scoreEl) scoreEl.innerText = score;
-    const comboChip = document.getElementById('geo-hud-combo');
-    if (comboChip) {
-        if (comboMultiplier > 1) {
-            comboChip.innerText = `×${comboMultiplier.toFixed(1)}`;
-            comboChip.classList.remove('hidden');
-        } else {
-            comboChip.classList.add('hidden');
-        }
-    }
+    renderComboChip(document.getElementById('geo-hud-combo'), comboMultiplier);
     const livesEl = document.getElementById('geo-hud-lives');
     if (livesEl) {
         let pips = '';

@@ -7,6 +7,11 @@
             --favorite-yellow: #d4a017;
             --progress-green: #1e8e3e;
             --card-shadow: 0px 10px 30px rgba(0, 26, 75, 0.05);
+            /* Variante « survolée » de --card-shadow (même teinte navy diffuse, plus
+               marquée) : formule signature du design "Tailored Executive"
+               (ui/tailored_executive/DESIGN.md), à utiliser à la place d'une ombre
+               noire générique partout où une carte se soulève au survol. */
+            --card-shadow-hover: 0 6px 12px rgba(0, 26, 75, 0.15);
             --font-main: 'Inter', sans-serif;
             --zoom-level: 1;
             /* Jetons additionnels pour le thème sombre */
@@ -20,6 +25,13 @@
             --selected-tint: #EAF1F6;
             --modal-overlay-bg: rgba(0,0,0,0.5);
             --locked-bg: #9AA4AD;
+            /* Glassmorphisme (design "Tailored Executive") : verre dépoli utilisé sur les
+               modales, la barre de notification du bas et les boutons flottants. Dérivé de
+               --surface via color-mix plutôt qu'une couleur figée, pour suivre automatiquement
+               le thème clair/sombre sans jeton dupliqué. */
+            --glass-bg: color-mix(in srgb, var(--surface) 78%, transparent);
+            --glass-border: rgba(255,255,255,0.4);
+            --glass-shadow: 0 10px 30px rgba(0, 26, 75, 0.08);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: var(--font-main); }
         body { background-color: var(--bg-color); color: var(--text-dark); height: 100vh; height: 100dvh; display: flex; flex-direction: column; overflow: hidden; }
@@ -32,6 +44,33 @@
         .home-backdrop { position: absolute; inset: -20px; width: calc(100% + 40px); height: calc(100% + 40px); object-fit: cover; filter: blur(28px) brightness(0.95); opacity: 0.6; transform: scale(1.08); pointer-events: none; }
         .home-backdrop-overlay { position: absolute; inset: 0; background: radial-gradient(circle at center, transparent 35%, rgba(230, 213, 184, 0.75) 100%), linear-gradient(to right, rgba(230, 213, 184, 0.7) 0%, transparent 15%, transparent 85%, rgba(230, 213, 184, 0.7) 100%); pointer-events: none; z-index: 1; }
         .home-image { position: relative; z-index: 2; width: 100%; height: 100%; max-width: 100%; max-height: 100%; object-fit: contain; object-position: center; display: block; filter: drop-shadow(0 0 30px rgba(0, 0, 0, 0.18)); }
+        /* Sous-titre d'accueil (voir index.html : data-i18n="app.tagline") : teintes
+           sombres/dorées assorties à l'illustration (livres, boussole, sablier) plutôt
+           que les jetons --glass-* navy/blancs du reste de l'appli, qui jureraient sur
+           ce fond sépia. Ancré en bas de l'écran (pas de l'image) pour ne jamais
+           recouvrir l'illustration, quel que soit le ratio d'écran. */
+        .home-tagline-badge {
+            position: absolute;
+            z-index: 3;
+            left: 50%;
+            bottom: calc(env(safe-area-inset-bottom, 0px) + 28px);
+            transform: translateX(-50%);
+            max-width: min(92%, 420px);
+            margin: 0;
+            padding: 9px 20px;
+            border-radius: 9999px;
+            background: rgba(24, 16, 8, 0.55);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(212, 160, 23, 0.45);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            color: #f5e4bc;
+            font-size: 12.5px;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+            line-height: 1.4;
+            text-align: center;
+        }
         
         /* LISTES : CATÉGORIES & THÈMES */
         .list-screen { flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; align-items: center; }
@@ -45,7 +84,7 @@
            la teinte bleue propre aux thèmes, pour rester distinguable du
            dossier parent tout en s'accordant esthétiquement avec lui. */
         .data-card { background: linear-gradient(135deg, var(--primary-blue), #9CB8CE); color: white; border-radius: 12px; padding: 20px 25px; display: flex; justify-content: space-between; align-items: center; gap: 14px; box-shadow: var(--card-shadow); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
-        .data-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .data-card:hover { transform: translateY(-3px); box-shadow: var(--card-shadow-hover); }
         .data-card-title { flex: 1; font-size: 19px; font-weight: bold; line-height: 1.3; }
         .data-card-icon { flex-shrink: 0; font-size: 22px; background: rgba(255,255,255,0.2); width: 38px; height: 38px; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
         /* Étoile de favori sur une carte-thème : cliquable indépendamment de la carte
@@ -83,7 +122,7 @@
         @media (max-width: 900px) { .special-row { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 480px) { .special-row { grid-template-columns: 1fr; } }
         .special-card { border-radius: 12px; padding: 18px 20px; color: white; display: flex; flex-direction: column; justify-content: center; gap: 5px; cursor: pointer; box-shadow: var(--card-shadow); transition: transform 0.2s, box-shadow 0.2s; min-height: 88px; }
-        .special-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .special-card:hover { transform: translateY(-3px); box-shadow: var(--card-shadow-hover); }
         .special-card-title { font-size: 16px; font-weight: bold; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
         .special-card-subtitle { font-size: 13px; opacity: 0.85; }
         .special-card.favorites { background: linear-gradient(135deg, #B8892E, #E3B24F); }
@@ -396,7 +435,7 @@
         .slot-wrong .slot-caret { border-left-color: var(--danger-red); }
 
         /* --- Événement en main --- */
-        .hand { flex-shrink: 0; background: var(--surface); border-top: 1px solid var(--rule); box-shadow: 0 -2px 14px rgba(16,24,32,0.05); padding: 12px 16px calc(12px + env(safe-area-inset-bottom, 0px)); }
+        .hand { flex-shrink: 0; background: var(--surface); border-top: 1px solid var(--rule); box-shadow: 0 -2px 14px rgba(0, 26, 75, 0.05); padding: 12px 16px calc(12px + env(safe-area-inset-bottom, 0px)); }
         .hand-card { max-width: 720px; margin: 0 auto; display: flex; align-items: center; gap: 14px; background: var(--hand-bg); border-radius: 10px; padding: 13px 16px; }
         .hand-year { flex-shrink: 0; min-width: calc(58px * var(--zoom-level)); text-align: center; font-family: var(--font-year); font-size: calc(20px * var(--zoom-level)); font-weight: 700; color: var(--amber); border: 1px dashed rgba(255,255,255,0.3); border-radius: 6px; padding: 7px 6px; font-variant-numeric: tabular-nums; }
         .hand-text { display: flex; flex-direction: column; min-width: 0; }
@@ -442,10 +481,13 @@
             .slot-caret, .progress-fill { transition: none; }
         }
         
-        .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--modal-overlay-bg); display: flex; align-items: center; justify-content: center; z-index: 100; }
+        .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--modal-overlay-bg); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); display: flex; align-items: center; justify-content: center; z-index: 100; }
         #modal-confirm { z-index: 105; }
         #modal-scoring-info { z-index: 110; }
-        .modal-content { background: var(--surface); width: 90%; max-width: 600px; max-height: 80vh; overflow-y: auto; border-radius: 12px; padding: 30px; position: relative; box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+        /* Verre dépoli : le fond de la modale laisse deviner l'écran flouté derrière elle
+           au lieu d'un aplat opaque — c'est le rendu "premium" des maquettes Tailored
+           Executive (cf. ui/historiaxe_*_tailored_style/code.html). */
+        .modal-content { background: var(--glass-bg); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid var(--glass-border); width: 90%; max-width: 600px; max-height: 80vh; overflow-y: auto; border-radius: 24px; padding: 30px; position: relative; box-shadow: var(--glass-shadow); }
         .close-btn { position: absolute; top: 15px; right: 20px; font-size: 24px; cursor: pointer; color: var(--muted-text); }
         .modal-title { font-size: 22px; color: var(--text-dark); margin-bottom: 10px; padding-right: 20px; }
         .modal-date { font-size: 18px; color: var(--primary-blue); font-weight: bold; margin-bottom: 20px; }
@@ -501,7 +543,7 @@
             position: absolute; transform: translate(-50%, -50%);
             width: 30px; height: 30px; border-radius: 50%;
             background: var(--primary-blue); color: #fff; border: 3px solid #fff;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+            box-shadow: 0 3px 8px rgba(0, 26, 75, 0.25);
             font-weight: 800; font-size: 14px; cursor: pointer;
             display: flex; align-items: center; justify-content: center;
             transition: transform 0.15s, background 0.15s;
@@ -603,6 +645,17 @@
             font-weight: 700;
             margin-bottom: 12px;
         }
+        /* Entrée de l'XP gagné en fin de partie (voir endGame() dans js/app.js, qui
+           ajoute cette classe et anime le chiffre en comptage montant) : la puce
+           "rebondit" vers sa position finale plutôt que d'apparaître figée. */
+        @keyframes xpChipRise {
+            0% { opacity: 0; transform: translateY(16px) scale(0.85); }
+            60% { opacity: 1; transform: translateY(-4px) scale(1.06); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .end-xp.xp-rise {
+            animation: xpChipRise 0.55s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
 
         /* --- SYSTÈME DE RÉTENTION : STREAKS, PARTAGE WORDLE & ANECDOTES --- */
         .streak-pill-badge {
@@ -640,6 +693,19 @@
             color: #f39c12;
             background: rgba(247, 147, 30, 0.15);
             border-color: rgba(247, 147, 30, 0.4);
+        }
+        /* Célébration de série en fin de partie : un vrai rebond d'entrée plutôt que
+           le texte qui se contente de changer (voir endGame() dans js/app.js). */
+        @keyframes streakBannerPop {
+            0% { opacity: 0; transform: scale(0.7) translateY(10px); }
+            55% { opacity: 1; transform: scale(1.08) translateY(-2px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        .end-streak-banner.streak-pop {
+            animation: streakBannerPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .end-xp.xp-rise, .end-streak-banner.streak-pop { animation: none; }
         }
 
         /* Conteneur et carte de fin */
@@ -788,214 +854,11 @@
             bottom: 28px;
             left: 50%;
             transform: translateX(-50%) translateY(0);
-            background: rgba(20, 29, 35, 0.95);
+            background: rgba(20, 29, 35, 0.82);
             color: #ffffff;
-            backdrop-filter: blur(12px);
-            padding: 12px 24px;
-            border-radius: 9999px;
-            font-size: 14.5px;
-            font-weight: 600;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            z-index: 100000;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            pointer-events: none;
-        }
-        .toast-notification.toast-hide {
-            opacity: 0;
-            transform: translateX(-50%) translateY(20px);
-        }
-        
-        
-        /* --- SYSTÈME DE RÉTENTION : STREAKS, PARTAGE WORDLE & ANECDOTES --- */
-        .streak-pill-badge {
-            position: absolute;
-            top: -6px;
-            right: -8px;
-            background: linear-gradient(135deg, #FF6B35, #F7931E);
-            color: #ffffff;
-            font-size: 11px;
-            font-weight: 800;
-            padding: 2px 7px;
-            border-radius: 9999px;
-            box-shadow: 0 2px 6px rgba(247, 147, 30, 0.4);
-            display: flex;
-            align-items: center;
-            gap: 2px;
-            border: 2px solid var(--surface);
-            pointer-events: none;
-            z-index: 5;
-        }
-        .end-streak-banner {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: linear-gradient(135deg, rgba(255, 107, 53, 0.12), rgba(247, 147, 30, 0.18));
-            border: 1px solid rgba(247, 147, 30, 0.35);
-            color: #d35400;
-            padding: 6px 14px;
-            border-radius: 9999px;
-            font-size: 14px;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-        :root[data-theme="dark"] .end-streak-banner {
-            color: #f39c12;
-            background: rgba(247, 147, 30, 0.15);
-            border-color: rgba(247, 147, 30, 0.4);
-        }
-
-        /* Conteneur et carte de fin */
-        .end-content-wrapper {
-            width: 100%;
-            max-width: 480px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        /* Carte de partage Wordle */
-        .share-card {
-            width: 100%;
-            background: var(--surface);
-            border: 1px solid var(--border-soft);
-            border-radius: 16px;
-            padding: 16px;
-            margin: 14px 0;
-            box-shadow: var(--card-shadow);
-            text-align: center;
-            box-sizing: border-box;
-        }
-        .share-card-header {
-            font-size: 12px;
-            font-weight: 700;
-            color: var(--muted-text);
-            text-transform: uppercase;
-            letter-spacing: 0.6px;
-            margin-bottom: 8px;
-        }
-        .share-emojis-grid {
-            font-size: 22px;
-            line-height: 1.4;
-            letter-spacing: 3px;
-            margin-bottom: 12px;
-            word-break: break-all;
-            user-select: all;
-        }
-        .btn-share {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            background: linear-gradient(135deg, #10B981, #059669);
-            color: white;
-            border: none;
-            padding: 11px 20px;
-            border-radius: 9999px;
-            font-size: 14.5px;
-            font-weight: 700;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
-            transition: transform 0.15s ease, opacity 0.15s ease;
-            width: 100%;
-        }
-        .btn-share:hover {
-            transform: translateY(-2px);
-            opacity: 0.92;
-        }
-        .btn-share:active {
-            transform: translateY(0);
-        }
-
-        /* Anecdote Historique « Le Saviez-vous ? » */
-        .anecdote-card-wrapper {
-            width: 100%;
-            margin-top: 16px;
-            text-align: left;
-        }
-        .anecdote-card {
-            background: var(--surface);
-            border-left: 4px solid var(--favorite-yellow);
-            border-top: 1px solid var(--border-soft);
-            border-right: 1px solid var(--border-soft);
-            border-bottom: 1px solid var(--border-soft);
-            border-radius: 14px;
-            padding: 16px 18px;
-            box-shadow: var(--card-shadow);
-        }
-        .anecdote-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 8px;
-            gap: 8px;
-        }
-        .anecdote-badge {
-            font-size: 11px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.6px;
-            color: #b7791f;
-            background: rgba(212, 160, 23, 0.15);
-            padding: 3px 8px;
-            border-radius: 9999px;
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-        }
-        :root[data-theme="dark"] .anecdote-badge {
-            color: #f6e05e;
-            background: rgba(246, 224, 94, 0.2);
-        }
-        .anecdote-date {
-            font-size: 12.5px;
-            font-weight: 700;
-            color: var(--muted-text);
-        }
-        .anecdote-event-title {
-            font-size: 15.5px;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 6px;
-            line-height: 1.35;
-        }
-        .anecdote-desc {
-            font-size: 13.5px;
-            line-height: 1.5;
-            color: var(--on-surface-variant);
-            margin-bottom: 10px;
-        }
-        .anecdote-wiki-link {
-            font-size: 12.5px;
-            font-weight: 600;
-            color: #2980b9;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            transition: color 0.15s;
-        }
-        .anecdote-wiki-link:hover {
-            color: #1a5276;
-            text-decoration: underline;
-        }
-        :root[data-theme="dark"] .anecdote-wiki-link {
-            color: #5dade2;
-        }
-
-        /* Toast notification */
-        .toast-notification {
-            position: fixed;
-            bottom: 28px;
-            left: 50%;
-            transform: translateX(-50%) translateY(0);
-            background: rgba(20, 29, 35, 0.95);
-            color: #ffffff;
-            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
             padding: 12px 24px;
             border-radius: 9999px;
             font-size: 14.5px;
@@ -1045,12 +908,92 @@
         }
 
         /* Micro-interactions tactiles réactives */
-        .btn, .data-card, .mode-card, .quiz-option, .avap-btn, .periodes-option, .quick-action-circle, .selection-item {
+        .btn, .data-card, .mode-card, .quiz-option, .avap-option, .periodes-option, .quick-action-circle, .selection-item {
             transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
             -webkit-tap-highlight-color: transparent;
         }
-        .btn:active, .data-card:active, .mode-card:active, .quiz-option:active, .avap-btn:active, .periodes-option:active, .quick-action-circle:active {
+        .btn:active, .data-card:active, .mode-card:active, .quiz-option:active, .avap-option:active, .periodes-option:active, .quick-action-circle:active {
             transform: scale(0.96) !important;
+        }
+
+        /* Pulse vert sur le repère qui vient d'être placé correctement sur la frise
+           (au-delà du simple fondu de .entry-new) : un léger rebond + halo vert qui
+           confirme visuellement la bonne réponse, symétrique du tremblement rouge de
+           .shake-anim côté erreur. */
+        @keyframes correctPulse {
+            0% { transform: scale(0.94); box-shadow: 0 0 0 0 rgba(30,142,62,0.45); }
+            45% { transform: scale(1.03); box-shadow: 0 0 0 9px rgba(30,142,62,0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(30,142,62,0); }
+        }
+        .entry-correct-pulse {
+            animation: correctPulse 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        /* Pulse bonne/mauvaise réponse sur les boutons de choix des modes Quiz,
+           Avant/Après, Périodes & Ères et Mode Carte (temporel) : ils reçoivent déjà
+           les classes .correct/.wrong (couleur figée définie plus haut), on y ajoute
+           ici juste le mouvement. */
+        @keyframes optionCorrectPulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(44,168,90,0.45); }
+            45% { transform: scale(1.035); box-shadow: 0 0 0 9px rgba(44,168,90,0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(44,168,90,0); }
+        }
+        @keyframes optionWrongPulse {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-6px); }
+            50% { transform: translateX(6px); }
+            75% { transform: translateX(-3px); }
+        }
+        .quiz-option.correct, .avap-option.correct, .periodes-option.correct,
+        .fil-display-value.fil-feedback-correct {
+            animation: optionCorrectPulse 0.5s ease-out;
+        }
+        .quiz-option.wrong, .avap-option.wrong, .periodes-option.wrong,
+        .fil-display-value.fil-feedback-wrong {
+            animation: optionWrongPulse 0.4s ease-in-out;
+        }
+        /* Pins du Mode Carte : transform de base translate(-50%,-50%) pour le
+           centrage, à préserver dans l'animation sous peine de faire sauter le pin
+           de sa position lors du pulse. */
+        @keyframes geoPinCorrectPulse {
+            0% { transform: translate(-50%,-50%) scale(1); }
+            45% { transform: translate(-50%,-50%) scale(1.22); box-shadow: 0 3px 8px rgba(0, 26, 75, 0.25), 0 0 0 8px rgba(44,168,90,0); }
+            100% { transform: translate(-50%,-50%) scale(1); }
+        }
+        @keyframes geoPinWrongPulse {
+            0%, 100% { transform: translate(-50%,-50%) rotate(0); }
+            25% { transform: translate(-50%,-50%) rotate(-10deg); }
+            50% { transform: translate(-50%,-50%) rotate(10deg); }
+            75% { transform: translate(-50%,-50%) rotate(-5deg); }
+        }
+        .geo-pin-btn.correct { animation: geoPinCorrectPulse 0.5s ease-out; }
+        .geo-pin-btn.wrong { animation: geoPinWrongPulse 0.4s ease-in-out; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .entry-correct-pulse,
+            .quiz-option.correct, .avap-option.correct, .periodes-option.correct, .fil-display-value.fil-feedback-correct,
+            .quiz-option.wrong, .avap-option.wrong, .periodes-option.wrong, .fil-display-value.fil-feedback-wrong,
+            .geo-pin-btn.correct, .geo-pin-btn.wrong {
+                animation: none;
+            }
+        }
+
+        /* --- APPARITION EN CASCADE (STAGGER) DES LISTES DE CARTES --- */
+        /* Catégories, sous-catégories, thèmes, favoris, points faibles à réviser :
+           décale légèrement l'entrée de chaque carte selon --stagger-i (posé en JS,
+           voir applyStagger() dans js/app.js) pour une ouverture de liste plus vivante
+           qu'un affichage simultané figé. Délai plafonné côté JS pour qu'une longue
+           liste ne fasse pas attendre ses dernières cartes une éternité. */
+        @keyframes staggerIn {
+            from { opacity: 0; transform: translateY(14px) scale(0.97); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .stagger-in {
+            animation: staggerIn 0.36s cubic-bezier(0.16, 1, 0.3, 1) both;
+            animation-delay: calc(var(--stagger-i, 0) * 45ms);
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .stagger-in { animation: none; }
         }
 
         #confetti-canvas {
@@ -1068,9 +1011,11 @@
             position: fixed;
             top: 20px;
             right: 70px;
-            background: var(--surface);
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             color: var(--text-dark);
-            border: 1px solid var(--border-soft);
+            border: 1px solid var(--glass-border);
             width: 42px;
             height: 42px;
             border-radius: 50%;
@@ -1087,9 +1032,11 @@
             position: fixed;
             top: 20px;
             right: 124px;
-            background: var(--surface);
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             color: var(--text-dark);
-            border: 1px solid var(--border-soft);
+            border: 1px solid var(--glass-border);
             width: 42px;
             height: 42px;
             border-radius: 50%;
@@ -1104,11 +1051,11 @@
         }
         .league-btn:hover {
             transform: scale(1.08);
-            background: var(--surface-2);
+            background: color-mix(in srgb, var(--surface) 92%, transparent);
         }
         .profile-btn:hover {
             transform: scale(1.08);
-            background: var(--surface-2);
+            background: color-mix(in srgb, var(--surface) 92%, transparent);
         }
 
         .player-rank-bar {
@@ -1186,6 +1133,19 @@
             letter-spacing: 0.2px;
             flex-shrink: 0;
             white-space: nowrap;
+        }
+        /* Légère flamme "vivante" tant que la série est en cours (badge visible,
+           donc pas .hidden) : un rappel ambiant discret de l'enjeu de la série,
+           plutôt qu'un badge complètement statique. */
+        @keyframes flameFlicker {
+            0%, 100% { filter: drop-shadow(0 0 0 rgba(247,147,30,0)); }
+            50% { filter: drop-shadow(0 0 4px rgba(247,147,30,0.7)); }
+        }
+        .player-rank-streak-badge:not(.hidden) {
+            animation: flameFlicker 1.8s ease-in-out infinite;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .player-rank-streak-badge { animation: none; }
         }
         .player-rank-track {
             height: 6px;
@@ -1423,7 +1383,7 @@
         .subcategory-note { background: var(--surface-2); border-left: 4px solid var(--primary-blue); border-radius: 9999px; padding: 14px 18px; margin: 0 auto 22px; max-width: 800px; }
         .subcategory-note-title { font-weight: 700; font-size: 14px; color: var(--text-dark); margin-bottom: 4px; }
         .subcategory-note p { font-size: 13px; line-height: 1.5; color: var(--ink-soft); margin: 0; }
-        .category-banner:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .category-banner:hover { transform: translateY(-3px); box-shadow: var(--card-shadow-hover); }
         .category-banner-title { font-size: 22px; font-weight: bold; }
         .category-banner-subtitle { font-size: 14px; opacity: 0.8; margin-top: 5px; }
         .category-banner-icon { font-size: 24px; background: rgba(255,255,255,0.2); width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
@@ -1551,12 +1511,12 @@
         .btn-secondary { background: var(--btn-secondary-bg); color: var(--btn-secondary-text); }
 
         /* --- Bouton de réglages (roue dentée) --- */
-        .settings-btn { position: fixed; top: calc(env(safe-area-inset-top, 0px) + 14px); right: 16px; z-index: 60; width: 42px; height: 42px; border-radius: 50%; border: none; background: var(--surface); box-shadow: var(--card-shadow); font-size: 19px; line-height: 1; color: var(--text-dark); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: transform 0.25s ease, background 0.2s; }
+        .settings-btn { position: fixed; top: calc(env(safe-area-inset-top, 0px) + 14px); right: 16px; z-index: 60; width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--glass-border); background: var(--glass-bg); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: var(--card-shadow); font-size: 19px; line-height: 1; color: var(--text-dark); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: transform 0.25s ease, background 0.2s; }
         .settings-btn:hover { transform: rotate(35deg); }
         .settings-btn:active { transform: rotate(70deg); }
 
         /* --- Bouton retour (chevron), fixé en haut à gauche de l'écran --- */
-        .back-btn { position: fixed; top: calc(env(safe-area-inset-top, 0px) + 14px); left: 16px; z-index: 60; width: 42px; height: 42px; border-radius: 50%; border: none; background: var(--surface); box-shadow: var(--card-shadow); font-size: 24px; font-weight: bold; line-height: 1; color: var(--text-dark); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: transform 0.2s ease, background 0.2s; }
+        .back-btn { position: fixed; top: calc(env(safe-area-inset-top, 0px) + 14px); left: 16px; z-index: 60; width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--glass-border); background: var(--glass-bg); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: var(--card-shadow); font-size: 24px; font-weight: bold; line-height: 1; color: var(--text-dark); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: transform 0.2s ease, background 0.2s; }
         .back-btn:hover { opacity: 0.85; }
         .back-btn:active { transform: scale(0.9); }
 
@@ -1584,6 +1544,7 @@
             --bg-color: #12161D;
             --text-dark: #F2F4F7;
             --card-shadow: 0 4px 16px rgba(0,0,0,0.55);
+            --card-shadow-hover: 0 6px 20px rgba(0,0,0,0.65);
             --paper: #171C24;
             --rule: #2A313D;
             --ink: #F2F4F7;
@@ -1600,6 +1561,10 @@
             --selected-tint: rgba(127,166,201,0.18);
             --modal-overlay-bg: rgba(0,0,0,0.7);
             --locked-bg: #3B4350;
+            /* Verre plus discret en thème sombre : un liseré clair trop marqué
+               romprait l'ambiance, l'ombre doit rester noire (pas teintée navy). */
+            --glass-border: rgba(255,255,255,0.08);
+            --glass-shadow: 0 10px 30px rgba(0,0,0,0.45);
         }
 
         /* Cartes d'événements (.entry-title) : la version « Tailored Executive »
@@ -1715,7 +1680,7 @@
     background: #fff;
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: var(--card-shadow);
     color: #333;
     text-align: center;
 }
@@ -1747,7 +1712,7 @@
     padding: 40px;
     border-radius: 12px;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 30px rgba(0, 26, 75, 0.5);
     z-index: 1000;
     width: 90%;
     max-width: 400px;
@@ -1828,7 +1793,7 @@
             border: 4px solid #ffffff !important; 
             border-radius: 50% !important; 
             transform: none !important; 
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+            box-shadow: 0 2px 4px rgba(0, 26, 75, 0.15) !important;
         }
         
         /* Slots */
@@ -2165,7 +2130,7 @@
             color: var(--text-dark);
             border-radius: 16px;
             padding: 18px 20px;
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+            box-shadow: 0 12px 32px rgba(0, 26, 75, 0.35);
             pointer-events: auto;
             box-sizing: border-box;
         }
