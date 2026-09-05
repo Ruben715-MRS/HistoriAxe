@@ -901,6 +901,7 @@ function ensureCustomCategoryInBdd() {
         let dailyRoundLog = [];
         let favoritesMode = false;
         let axisFilterActive = false;
+        let essentialFilterActive = false;
         let currentThemeAxes = [];
         let selectedAxes = new Set();
         
@@ -1106,6 +1107,9 @@ function ensureCustomCategoryInBdd() {
                 const titleEl = document.getElementById('modes-header-title');
                 if (revisionMode) {
                     titleEl.innerText = t('revision.targeted_title', { count: revisionEvents.length });
+                } else if (essentialFilterActive) {
+                    const theme = getCurrentTheme();
+                    titleEl.innerText = t('modes.essential_summary', { theme: theme.nom, count: theme.essentiel.length });
                 } else if (axisFilterActive) {
                     const theme = getCurrentTheme();
                     const count = theme.events.filter(e => selectedAxes.has(e.axe)).length;
@@ -1132,7 +1136,7 @@ function ensureCustomCategoryInBdd() {
                 target = 'screen-revision-hub';
             } else if (dailyChallengeMode) {
                 target = 'screen-categories';
-            } else if (axisFilterActive) {
+            } else if (essentialFilterActive || axisFilterActive) {
                 target = 'screen-axes';
             } else {
                 target = 'screen-themes';
@@ -1261,6 +1265,18 @@ function ensureCustomCategoryInBdd() {
             return AXIS_PALETTE[paletteIndex];
         }
 
+        function getCurrentThemeEventsForMode() {
+            const theme = getCurrentTheme();
+            let sourceEvents = (axisFilterActive && selectedAxes.size > 0)
+                ? theme.events.filter(e => selectedAxes.has(e.axe))
+                : theme.events;
+            if (essentialFilterActive && theme.essentiel) {
+                const essentialIds = new Set(theme.essentiel);
+                sourceEvents = sourceEvents.filter(e => essentialIds.has(e.id));
+            }
+            return sourceEvents;
+        }
+
         // INIT ÉCRAN DES AXES THÉMATIQUES (Amériques, Campagne, ou tout thème taggé)
         function initAxes() {
             const theme = getCurrentTheme();
@@ -1281,9 +1297,26 @@ function ensureCustomCategoryInBdd() {
         function renderAxesScreen() {
             const theme = getCurrentTheme();
             const container = document.getElementById('axes-container');
+            const essentialZone = document.getElementById('essentiel-zone');
             container.innerHTML = '';
+            essentialZone.innerHTML = '';
+            if (theme.essentiel) {
+                const essentialCard = document.createElement('div');
+                essentialCard.className = 'essentiel-card' + (essentialFilterActive ? ' active' : '');
+                essentialCard.innerHTML = `<span class="essentiel-icon">⭐</span><span><strong>${t('axes.essential_title')}</strong><small>${t('axes.essential_desc', { count: theme.essentiel.length })}</small></span>`;
+                essentialCard.onclick = () => {
+                    essentialFilterActive = true;
+                    axisFilterActive = false;
+                    selectedAxes = new Set(currentThemeAxes);
+                    showScreen('screen-modes', 'forward');
+                };
+                essentialZone.appendChild(essentialCard);
+            }
             currentThemeAxes.forEach(axe => {
                 const count = theme.events.filter(e => e.axe === axe).length;
+                const essentialCount = theme.essentiel
+                    ? theme.essentiel.filter(id => theme.events.some(e => e.id === id && e.axe === axe)).length
+                    : 0;
                 const card = document.createElement('div');
                 const isSelected = selectedAxes.has(axe);
                 const color = getAxisColor(axe);
@@ -1291,7 +1324,8 @@ function ensureCustomCategoryInBdd() {
                 if (color) {
                     card.dataset.axis = color.name;
                 }
-                card.innerHTML = `<h3>${axe}</h3><p>${t('categories.events_count', { count })}</p>`;
+                const essentialBadge = theme.essentiel ? `<span class="axis-essentiel-badge">⭐ ${essentialCount}</span>` : '';
+                card.innerHTML = `<h3>${axe}</h3><p>${t('categories.events_count', { count })} ${essentialBadge}</p>`;
                 card.onclick = () => {
                     if (selectedAxes.has(axe)) { selectedAxes.delete(axe); }
                     else { selectedAxes.add(axe); }
@@ -1309,6 +1343,7 @@ function ensureCustomCategoryInBdd() {
 
         function confirmAxesSelection() {
             if (selectedAxes.size === 0) return;
+            essentialFilterActive = false;
             axisFilterActive = true;
             showScreen('screen-modes', 'forward');
         }
@@ -1718,6 +1753,7 @@ function ensureCustomCategoryInBdd() {
             selectedSubcategoryIndex = si;
             selectedThemeIndex = ti;
             revisionMode = false;
+            essentialFilterActive = false;
             axisFilterActive = false;
             isSelectionActive = false;
             const theme = getCurrentThemeList()[ti];
@@ -2029,10 +2065,7 @@ function ensureCustomCategoryInBdd() {
             } else if (revisionMode) {
                 sourceEvents = revisionEvents;
             } else {
-                const themeEvents = getCurrentTheme().events;
-                sourceEvents = (axisFilterActive && selectedAxes.size > 0)
-                    ? themeEvents.filter(e => selectedAxes.has(e.axe))
-                    : themeEvents;
+                sourceEvents = getCurrentThemeEventsForMode();
             }
             if (isSelectionActive && !revisionMode) {
                 sourceEvents = sourceEvents.filter(e => selectedEventsIds.has(e.id));
@@ -2126,10 +2159,7 @@ function ensureCustomCategoryInBdd() {
             if (revisionMode) {
                 sourceEvents = revisionEvents;
             } else {
-                const themeEvents = getCurrentTheme().events;
-                sourceEvents = (axisFilterActive && selectedAxes.size > 0)
-                    ? themeEvents.filter(e => selectedAxes.has(e.axe))
-                    : themeEvents;
+                sourceEvents = getCurrentThemeEventsForMode();
             }
             if (isSelectionActive && !revisionMode) {
                 sourceEvents = sourceEvents.filter(e => selectedEventsIds.has(e.id));
@@ -2305,10 +2335,7 @@ function ensureCustomCategoryInBdd() {
             if (revisionMode) {
                 sourceEvents = revisionEvents;
             } else {
-                const themeEvents = getCurrentTheme().events;
-                sourceEvents = (axisFilterActive && selectedAxes.size > 0)
-                    ? themeEvents.filter(e => selectedAxes.has(e.axe))
-                    : themeEvents;
+                sourceEvents = getCurrentThemeEventsForMode();
             }
             if (isSelectionActive && !revisionMode) {
                 sourceEvents = sourceEvents.filter(e => selectedEventsIds.has(e.id));
@@ -2454,10 +2481,7 @@ function ensureCustomCategoryInBdd() {
             if (revisionMode) {
                 sourceEvents = revisionEvents;
             } else {
-                const themeEvents = getCurrentTheme().events;
-                sourceEvents = (axisFilterActive && selectedAxes.size > 0)
-                    ? themeEvents.filter(e => selectedAxes.has(e.axe))
-                    : themeEvents;
+                sourceEvents = getCurrentThemeEventsForMode();
             }
             if (isSelectionActive && !revisionMode) {
                 sourceEvents = sourceEvents.filter(e => selectedEventsIds.has(e.id));
@@ -2731,10 +2755,7 @@ function ensureCustomCategoryInBdd() {
             if (revisionMode) {
                 sourceEvents = revisionEvents;
             } else {
-                const themeEvents = getCurrentTheme().events;
-                sourceEvents = (axisFilterActive && selectedAxes.size > 0)
-                    ? themeEvents.filter(e => selectedAxes.has(e.axe))
-                    : themeEvents;
+                sourceEvents = getCurrentThemeEventsForMode();
             }
             if (isSelectionActive && !revisionMode) {
                 sourceEvents = sourceEvents.filter(e => selectedEventsIds.has(e.id));
@@ -2967,10 +2988,7 @@ function ensureCustomCategoryInBdd() {
             if (revisionMode) {
                 sourceEvents = revisionEvents;
             } else {
-                const themeEvents = getCurrentTheme().events;
-                sourceEvents = (axisFilterActive && selectedAxes.size > 0)
-                    ? themeEvents.filter(e => selectedAxes.has(e.axe))
-                    : themeEvents;
+                sourceEvents = getCurrentThemeEventsForMode();
             }
             if (isSelectionActive && !revisionMode) {
                 sourceEvents = sourceEvents.filter(e => selectedEventsIds.has(e.id));

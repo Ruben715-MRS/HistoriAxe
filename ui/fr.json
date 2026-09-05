@@ -58,12 +58,15 @@
   },
   "axes": {
     "title": "Axes thématiques",
+    "essential_title": "Les Incontournables",
+    "essential_desc": "{count} événements clés",
     "subtitle_selected": "{theme} — {count} événement(s) sélectionné(s)",
     "subtitle_select_one": "{theme} — sélectionnez au moins un axe",
     "continue_btn": "Continuer avec ces axes"
   },
   "modes": {
     "choose_mode": "Choisissez un mode de jeu",
+    "essential_summary": "{theme} — ⭐ Les Incontournables ({count} événements)",
     "discovery": {
       "title": "Découverte",
       "desc": "Consultez la frise chronologique sans jouer."

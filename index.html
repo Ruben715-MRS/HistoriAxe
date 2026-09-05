@@ -166,8 +166,9 @@
 
     <!-- ÉCRAN 3bis : AXES THÉMATIQUES (filtre optionnel, si le thème en propose) -->
     <div id="screen-axes" class="list-screen hidden">
-        <button class="back-btn" onclick="axisFilterActive=false; showScreen('screen-themes', 'back')" aria-label="Retour aux thèmes" data-i18n-attr="aria-label:nav.back">‹</button>
+        <button class="back-btn" onclick="axisFilterActive=false; essentialFilterActive=false; showScreen('screen-themes', 'back')" aria-label="Retour aux thèmes" data-i18n-attr="aria-label:nav.back">‹</button>
         <h2 class="header-title" data-i18n="axes.title">Filtrer par axe thématique</h2>
+        <div id="essentiel-zone"></div>
         <p id="axes-subtitle" style="font-size:14px; color:var(--muted-text); margin-bottom:20px;"></p>
         <div class="grid-cards" id="axes-container"></div>
         <div style="margin-top: 30px; margin-bottom: 50px; display:flex; gap:15px; justify-content:center;">

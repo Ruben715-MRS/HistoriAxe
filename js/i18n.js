@@ -6,7 +6,7 @@
 // pack de langue explicitement téléchargé avant une mise à jour de
 // ui/<lang>.json resterait bloqué sur son ancien contenu indéfiniment (ce
 // cache n'est jamais revalidé contre le réseau une fois rempli).
-const I18N_DATA_CACHE = 'historiaxe-data-v1.0.1';
+const I18N_DATA_CACHE = 'historiaxe-data-v1.0.2';
 
 // Le nom de chaque langue reste dans sa propre langue (autonyme) — convention
 // standard des sélecteurs de langue, ne dépend jamais de la langue active.
@@ -40,6 +40,13 @@ const DEFAULT_FR_FALLBACK_UI = {
         validate: "Activer",
         back: "Retour",
         quit: "Quitter"
+    },
+    axes: {
+        essential_title: "Les Incontournables",
+        essential_desc: "{count} événements clés"
+    },
+    modes: {
+        essential_summary: "{theme} — ⭐ Les Incontournables ({count} événements)"
     }
 };
 

@@ -1347,6 +1347,16 @@
         .axis-card.selected[data-axis="teal"]   { border-color: #16a085; }
         .axis-card.selected[data-axis="gold"]   { border-color: #b8892e; }
         .axis-card.selected[data-axis="pink"]   { border-color: #d81b60; }
+        .essentiel-card { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; padding: 18px 20px; border: 2px solid #b8892e; border-radius: 12px; background: #fff8e7; color: #6d4c16; cursor: pointer; box-shadow: var(--card-shadow); transition: all 0.15s; }
+        .essentiel-card:hover, .essentiel-card.active { background: #b8892e; color: #fff; }
+        .essentiel-icon { font-size: 28px; line-height: 1; }
+        .essentiel-card strong, .essentiel-card small { display: block; }
+        .essentiel-card strong { font-size: 17px; }
+        .essentiel-card small { margin-top: 3px; font-size: 13px; opacity: 0.85; }
+        .axis-essentiel-badge { margin-left: 8px; color: #b8892e; font-size: 11px; font-weight: 700; white-space: nowrap; }
+        .axis-card.selected .axis-essentiel-badge { color: #8c681e; }
+        :root[data-theme="dark"] .essentiel-card { background: #3d321d; color: #f5d98a; }
+        :root[data-theme="dark"] .essentiel-card:hover, :root[data-theme="dark"] .essentiel-card.active { background: #8c681e; color: #fff; }
 
         /* ENCADRÉ COLORÉ POUR LES AXES THÉMATIQUES */
         .entry-axe-badge {
