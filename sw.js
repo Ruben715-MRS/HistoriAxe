@@ -14,7 +14,7 @@
 // généralement le signe que l'un de ces deux numéros n'a pas été incrémenté.
 const CACHE_VERSION = '1.3.0';
 const APP_SHELL_CACHE = `historiaxe-shell-v${CACHE_VERSION}`;
-const DATA_CACHE = 'historiaxe-data-v1.0.4';
+const DATA_CACHE = 'historiaxe-data-v1.0.5';
 
 // Tailwind (css/tailwind.generated.css) et les polices Inter / Material
 // Symbols (css/fonts.css + assets/fonts/*) sont désormais compilées et
