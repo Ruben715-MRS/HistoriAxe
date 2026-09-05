@@ -3361,6 +3361,8 @@ function ensureCustomCategoryInBdd() {
             if (!legendEl) return;
             if (currentMode === 'discovery' && currentThemeAxes && currentThemeAxes.length > 1) {
                 const pinned = appSettings.axesLegendPinned !== false;
+                const timeline = document.getElementById('timeline');
+                if (timeline) timeline.classList.toggle('axes-entry-badges-hidden', !pinned);
                 const badges = currentThemeAxes.map(axe => {
                     const color = getAxisColor(axe);
                     return `<span class="entry-axe-badge" data-axis="${color ? color.name : 'blue'}">${axe}</span>`;
@@ -3373,6 +3375,8 @@ function ensureCustomCategoryInBdd() {
                 legendEl.classList.remove('hidden');
                 legendEl.classList.toggle('pinned', pinned);
             } else {
+                const timeline = document.getElementById('timeline');
+                if (timeline) timeline.classList.remove('axes-entry-badges-hidden');
                 legendEl.classList.add('hidden');
             }
         }

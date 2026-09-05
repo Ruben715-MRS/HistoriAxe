@@ -1375,6 +1375,10 @@
             margin-left: 6px;
         }
 
+        .axes-entry-badges-hidden .entry-axe-badge {
+            display: none;
+        }
+
         .entry-axe-badge[data-axis="blue"]   { background: rgba(41, 128, 185, 0.12); border-color: #2980b9; color: #1a5276; }
         .entry-axe-badge[data-axis="green"]  { background: rgba(39, 174, 96, 0.12); border-color: #27ae60; color: #196f3d; }
         .entry-axe-badge[data-axis="orange"] { background: rgba(230, 126, 34, 0.12); border-color: #e67e22; color: #a04000; }
