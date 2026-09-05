@@ -1,0 +1,856 @@
+[
+  {
+    "theme_id": "thm_femmes",
+    "theme_nom": "Histoire des Femmes et pionnières",
+    "event_count": 70,
+    "events": [
+      {
+        "id": "fem1",
+        "titre": "Couronnement d'Hatchepsout comme pharaon d'Égypte",
+        "axe": "Souveraines, dirigeantes et stratèges",
+        "date": -1479
+      },
+      {
+        "id": "fem2",
+        "titre": "Poésie lyrique de Sappho à Lesbos",
+        "axe": "Arts, littérature et pensée philosophique",
+        "date": -600
+      },
+      {
+        "id": "fem3",
+        "titre": "Règne de Cléopâtre VII en Égypte",
+        "axe": "Souveraines, dirigeantes et stratèges",
+        "date": -51
+      },
+      {
+        "id": "fem4",
+        "titre": "Hypatie d'Alexandrie, savante et philosophe néoplatonicienne",
+        "axe": "Sciences, médecine et découvertes",
+        "date": 415
+      },
+      {
+        "id": "fem5",
+        "titre": "Aliénor d'Aquitaine: reine des deux royaumes",
+        "axe": "Souveraines, dirigeantes et stratèges",
+        "date": 1137
+      },
+      {
+        "id": "fem6",
+        "titre": "Pizan publie La Cité des Dames",
+        "axe": "Arts, littérature et pensée philosophique",
+        "date": 1405
+      },
+      {
+        "id": "fem7",
+        "titre": "Jeanne d'Arc délivre Orléans en 1429",
+        "axe": "Souveraines, dirigeantes et stratèges",
+        "date": 1429
+      },
+      {
+        "id": "fem8",
+        "titre": "Accession d'Élisabeth Ire au trône d'Angleterre",
+        "axe": "Souveraines, dirigeantes et stratèges",
+        "date": 1558
+      },
+      {
+        "id": "fem9",
+        "titre": "Artemisia Gentileschi, grande peintre du baroque",
+        "axe": "Arts, littérature et pensée philosophique",
+        "date": 1610
+      },
+      {
+        "id": "fem10",
+        "titre": "Émilie du Châtelet traduit les Principia",
+        "axe": "Sciences, médecine et découvertes",
+        "date": 1706
+      },
+      {
+        "id": "fem11",
+        "titre": "Catherine II devient impératrice de Russie",
+        "axe": "Souveraines, dirigeantes et stratèges",
+        "date": 1762
+      },
+      {
+        "id": "fem12",
+        "titre": "Déclaration des droits de la femme",
+        "axe": "Droits civiques, politiques et suffragisme",
+        "date": 1791
+      },
+      {
+        "id": "fem13",
+        "titre": "Wollstonecraft défend les droits des femmes",
+        "axe": "Arts, littérature et pensée philosophique",
+        "date": 1792
+      },
+      {
+        "id": "fem14",
+        "titre": "Ada Lovelace conçoit le premier algorithme",
+        "axe": "Sciences, médecine et découvertes",
+        "date": 1843
+      },
+      {
+        "id": "fem15",
+        "titre": "Première convention féministe à Seneca Falls",
+        "axe": "Droits civiques, politiques et suffragisme",
+        "date": 1848
+      },
+      {
+        "id": "fem16",
+        "titre": "Elizabeth Blackwell: première femme médecin diplômée",
+        "axe": "Sciences, médecine et découvertes",
+        "date": 1849
+      },
+      {
+        "id": "fem17",
+        "titre": "Tubman s'évade et libère des esclaves",
+        "axe": "Émancipation sociale, justice et luttes contemporaines",
+        "date": 1849
+      },
+      {
+        "id": "fem18",
+        "titre": "Florence Nightingale professionnalise les soins infirmiers",
+        "axe": "Sciences, médecine et découvertes",
+        "date": 1854
+      },
+      {
+        "id": "fem19",
+        "titre": "Julie-Victoire Daubié: première bachelière de France",
+        "axe": "Droits civiques, politiques et suffragisme",
+        "date": 1861
+      },
+      {
+        "id": "fem20",
+        "titre": "Auclert fonde Le Droit des femmes",
+        "axe": "Droits civiques, politiques et suffragisme",
+        "date": 1876
+      },
+      {
+        "id": "fem21",
+        "titre": "La Nouvelle-Zélande accorde le vote féminin",
+        "axe": "Droits civiques, politiques et suffragisme",
+        "date": 1893
+      },
+      {
+        "id": "fem22",
+        "titre": "Marie Curie: prix Nobel de physique",
+        "axe": "Sciences, médecine et découvertes",
+        "date": 1903
+      },
+      {
+        "id": "fem23",
+        "titre": "Emmeline Pankhurst fonde la WSPU suffragiste",
+        "axe": "Droits civiques, politiques et suffragisme",
+        "date": 1903
+      },
+      {
+        "id": "fem24",
+        "titre": "Marie Curie: prix Nobel de chimie",
+        "axe": "Sciences, médecine et découvertes",
+        "date": 1911
+      },
+      {
+        "id": "fem25",
+        "titre": "Droit de vote féminin au Royaume-Uni",
+        "axe": "Droits civiques, politiques et suffragisme",
+        "date": 1928
+      },
+      {
+        "id": "fem26",
+        "titre": "Amelia Earhart traverse l'Atlantique en solitaire",
+        "axe": "Sciences, médecine et découvertes",
+        "date": 1932
+      },
+      {
+        "id": "fem27",
+        "titre": "Droit de vote accordé aux Françaises",
+        "axe": "Droits civiques, politiques et suffragisme",
+        "date": 1944
+      },
+      {
+        "id": "fem28",
+        "titre": "Publication du Deuxième Sexe de Beauvoir",
+        "axe": "Arts, littérature et pensée philosophique",
+        "date": 1949
+      },
+      {
+        "id": "fem29",
+        "titre": "Rosalind Franklin capture le Cliché 51",
+        "axe": "Sciences, médecine et découvertes",
+        "date": 1952
+      },
+      {
+        "id": "fem30",
+        "titre": "Première rétrospective Frida Kahlo au Mexique",
+        "axe": "Arts, littérature et pensée philosophique",
+        "date": 1953
+      },
+      {
+        "id": "fem31",
+        "titre": "Rosa Parks refuse de se lever",
+        "axe": "Émancipation sociale, justice et luttes contemporaines",
+        "date": 1955
+      },
+      {
+        "id": "fem32",
+        "titre": "Sirimavo Bandaranaike, première femme Première ministre",
+        "axe": "Souveraines, dirigeantes et stratèges",
+        "date": 1960
+      },
+      {
+        "id": "fem33",
+        "titre": "Katherine Johnson calcule pour la NASA",
+        "axe": "Sciences, médecine et découvertes",
+        "date": 1962
+      },
+      {
+        "id": "fem34",
+        "titre": "Valentina Terechkova, première femme dans l'espace",
+        "axe": "Sciences, médecine et découvertes",
+        "date": 1963
+      },
+      {
+        "id": "fem35",
+        "titre": "Autonomie financière et professionnelle des Françaises",
+        "axe": "Émancipation sociale, justice et luttes contemporaines",
+        "date": 1965
+      },
+      {
+        "id": "fem36",
+        "titre": "Indira Gandhi Première ministre d'Inde",
+        "axe": "Souveraines, dirigeantes et stratèges",
+        "date": 1966
+      },
+      {
+        "id": "fem37",
+        "titre": "Golda Meir Première ministre d'Israël",
+        "axe": "Souveraines, dirigeantes et stratèges",
+        "date": 1969
+      },
+      {
+        "id": "fem38",
+        "titre": "Publication du Manifeste des 343",
+        "axe": "Émancipation sociale, justice et luttes contemporaines",
+        "date": 1971
+      },
+      {
+        "id": "fem39",
+        "titre": "Gisèle Halimi au procès de Bobigny",
+        "axe": "Émancipation sociale, justice et luttes contemporaines",
+        "date": 1972
+      },
+      {
+        "id": "fem40",
+        "titre": "Loi Veil dépénalise l'avortement en France",
+        "axe": "Émancipation sociale, justice et luttes contemporaines",
+        "date": 1975
+      },
+      {
+        "id": "fem41",
+        "titre": "Margaret Thatcher Première ministre britannique",
+        "axe": "Souveraines, dirigeantes et stratèges",
+        "date": 1979
+      },
+      {
+        "id": "fem42",
+        "titre": "Sally Ride, première Américaine dans l'espace",
+        "axe": "Sciences, médecine et découvertes",
+        "date": 1983
+      },
+      {
+        "id": "fem43",
+        "titre": "Toni Morrison, Prix Nobel de littérature",
+        "axe": "Arts, littérature et pensée philosophique",
+        "date": 1993
+      },
+      {
+        "id": "fem44",
+        "titre": "Wangari Maathai, Nobel de la paix",
+        "axe": "Émancipation sociale, justice et luttes contemporaines",
+        "date": 2004
+      },
+      {
+        "id": "fem45",
+        "titre": "Angela Merkel, première chancelière d'Allemagne",
+        "axe": "Souveraines, dirigeantes et stratèges",
+        "date": 2005
+      },
+      {
+        "id": "fem46",
+        "titre": "Ellen Johnson Sirleaf, présidente en Afrique",
+        "axe": "Souveraines, dirigeantes et stratèges",
+        "date": 2006
+      },
+      {
+        "id": "fem47",
+        "titre": "Malala Yousafzai, plus jeune prix Nobel",
+        "axe": "Émancipation sociale, justice et luttes contemporaines",
+        "date": 2014
+      },
+      {
+        "id": "fem48",
+        "titre": "Tu Youyou, Nobel pour l'artémisinine",
+        "axe": "Sciences, médecine et découvertes",
+        "date": 2015
+      },
+      {
+        "id": "fem49",
+        "titre": "Mouvement #MeToo contre les violences sexistes",
+        "axe": "Émancipation sociale, justice et luttes contemporaines",
+        "date": 2017
+      },
+      {
+        "id": "fem50",
+        "titre": "Charpentier et Doudna, prix pour CRISPR-Cas9",
+        "axe": "Sciences, médecine et découvertes",
+        "date": 2020
+      },
+      {
+        "id": "fem51",
+        "titre": "Okonjo-Iweala prend la tête de l'OMC",
+        "axe": "Souveraines, dirigeantes et stratèges",
+        "date": 2021
+      },
+      {
+        "id": "fem52",
+        "titre": "Constitutionnalisation de l'IVG en France",
+        "axe": "Émancipation sociale, justice et luttes contemporaines",
+        "date": 2024
+      },
+      {
+        "id": "fem53",
+        "titre": "Artémise Ire d'Halicarnasse à Salamine",
+        "axe": "Souveraines, dirigeantes et stratèges",
+        "date": -480
+      },
+      {
+        "id": "fem54",
+        "titre": "Murasaki Shikibu, Le Dit du Genji",
+        "axe": "Arts, littérature et pensée philosophique",
+        "date": 1000
+      },
+      {
+        "id": "fem55",
+        "titre": "Hildegarde de Bingen, mystique et médecin",
+        "axe": "Arts, littérature et pensée philosophique",
+        "date": 1150
+      },
+      {
+        "id": "fem56",
+        "titre": "Christine de Pizan, Cité des Dames",
+        "axe": "Arts, littérature et pensée philosophique",
+        "date": 1405
+      },
+      {
+        "id": "fem57",
+        "titre": "Nzinga résiste aux Portugais en Angola",
+        "axe": "Souveraines, dirigeantes et stratèges",
+        "date": 1624
+      },
+      {
+        "id": "fem58",
+        "titre": "Maria Sibylla Merian explore la faune",
+        "axe": "Sciences, médecine et découvertes",
+        "date": 1699
+      },
+      {
+        "id": "fem59",
+        "titre": "Émilie du Châtelet traduit",
+        "axe": "Sciences, médecine et découvertes",
+        "date": 1749
+      },
+      {
+        "id": "fem60",
+        "titre": "Caroline Herschel découvre sa première comète",
+        "axe": "Sciences, médecine et découvertes",
+        "date": 1786
+      },
+      {
+        "id": "fem61",
+        "titre": "Harriet Tubman s'évade",
+        "axe": "Émancipation sociale, justice et luttes contemporaines",
+        "date": 1849
+      },
+      {
+        "id": "fem62",
+        "titre": "Elizabeth Blackwell, première femme médecin",
+        "axe": "Sciences, médecine et découvertes",
+        "date": 1849
+      },
+      {
+        "id": "fem63",
+        "titre": "Florence Nightingale fonde les soins infirmiers",
+        "axe": "Sciences, médecine et découvertes",
+        "date": 1854
+      },
+      {
+        "id": "fem64",
+        "titre": "Hubertine Auclert et le suffragisme français",
+        "axe": "Droits civiques, politiques et suffragisme",
+        "date": 1888
+      },
+      {
+        "id": "fem65",
+        "titre": "Montessori ouvre la Maison des Enfants",
+        "axe": "Émancipation sociale, justice et luttes contemporaines",
+        "date": 1907
+      },
+      {
+        "id": "fem66",
+        "titre": "Hedy Lamarr invente l'ancêtre du Wi-Fi",
+        "axe": "Sciences, médecine et découvertes",
+        "date": 1942
+      },
+      {
+        "id": "fem67",
+        "titre": "Rosalind Franklin, Cliché 51 de l'ADN",
+        "axe": "Sciences, médecine et découvertes",
+        "date": 1953
+      },
+      {
+        "id": "fem68",
+        "titre": "Simone Veil défend",
+        "axe": "Droits civiques, politiques et suffragisme",
+        "date": 1974
+      },
+      {
+        "id": "fem69",
+        "titre": "Margaret Thatcher Première ministre du Royaume-Uni",
+        "axe": "Souveraines, dirigeantes et stratèges",
+        "date": 1979
+      },
+      {
+        "id": "fem70",
+        "titre": "Malala Yousafzai reçoit le prix Nobel",
+        "axe": "Émancipation sociale, justice et luttes contemporaines",
+        "date": 2014
+      }
+    ]
+  },
+  {
+    "theme_id": "thm_bat",
+    "theme_nom": "Grandes batailles de l'Histoire",
+    "event_count": 70,
+    "events": [
+      {
+        "id": "b1",
+        "titre": "Bataille de Marathon",
+        "axe": "Batailles de l'Antiquité",
+        "date": -490
+      },
+      {
+        "id": "b2",
+        "titre": "Bataille navale de Salamine",
+        "axe": "Batailles de l'Antiquité",
+        "date": -480
+      },
+      {
+        "id": "b3",
+        "titre": "Bataille de Gaugamèles",
+        "axe": "Batailles de l'Antiquité",
+        "date": -331
+      },
+      {
+        "id": "b4",
+        "titre": "Bataille de Cannes (Hannibal)",
+        "axe": "Batailles de l'Antiquité",
+        "date": -216
+      },
+      {
+        "id": "b5",
+        "titre": "Bataille de Zama",
+        "axe": "Batailles de l'Antiquité",
+        "date": -202
+      },
+      {
+        "id": "b6",
+        "titre": "Siège et bataille d'Alésia",
+        "axe": "Batailles de l'Antiquité",
+        "date": -52
+      },
+      {
+        "id": "b7",
+        "titre": "Bataille navale d'Actium",
+        "axe": "Batailles de l'Antiquité",
+        "date": -31
+      },
+      {
+        "id": "b8",
+        "titre": "Désastre de Varus à Teutobourg",
+        "axe": "Batailles de l'Antiquité",
+        "date": 9
+      },
+      {
+        "id": "b9",
+        "titre": "Bataille d'Andrinople",
+        "axe": "Batailles de l'Antiquité",
+        "date": 378
+      },
+      {
+        "id": "b10",
+        "titre": "Bataille des Champs Catalauniques",
+        "axe": "Batailles de l'Antiquité",
+        "date": 451
+      },
+      {
+        "id": "b11",
+        "titre": "Bataille du Yarmouk",
+        "axe": "Conflits du Moyen Âge",
+        "date": 636
+      },
+      {
+        "id": "b12",
+        "titre": "Bataille de Poitiers (Charles Martel)",
+        "axe": "Conflits du Moyen Âge",
+        "date": 732
+      },
+      {
+        "id": "b13",
+        "titre": "Bataille de Talas",
+        "axe": "Conflits du Moyen Âge",
+        "date": 751
+      },
+      {
+        "id": "b14",
+        "titre": "Bataille d'Hastings",
+        "axe": "Conflits du Moyen Âge",
+        "date": 1066
+      },
+      {
+        "id": "b15",
+        "titre": "Bataille de Manzikert",
+        "axe": "Conflits du Moyen Âge",
+        "date": 1071
+      },
+      {
+        "id": "b16",
+        "titre": "Bataille de Hattin",
+        "axe": "Conflits du Moyen Âge",
+        "date": 1187
+      },
+      {
+        "id": "b17",
+        "titre": "Bataille de Las Navas de Tolosa",
+        "axe": "Conflits du Moyen Âge",
+        "date": 1212
+      },
+      {
+        "id": "b18",
+        "titre": "Bataille de Bouvines",
+        "axe": "Conflits du Moyen Âge",
+        "date": 1214
+      },
+      {
+        "id": "b19",
+        "titre": "Bataille d'Aïn Djalout",
+        "axe": "Conflits du Moyen Âge",
+        "date": 1260
+      },
+      {
+        "id": "b20",
+        "titre": "Bataille de Crécy",
+        "axe": "Conflits du Moyen Âge",
+        "date": 1346
+      },
+      {
+        "id": "b21",
+        "titre": "Bataille d'Azincourt",
+        "axe": "Conflits du Moyen Âge",
+        "date": 1415
+      },
+      {
+        "id": "b22",
+        "titre": "Siège et chute de Constantinople",
+        "axe": "Conflits du Moyen Âge",
+        "date": 1453
+      },
+      {
+        "id": "b23",
+        "titre": "Bataille de Marignan",
+        "axe": "Guerres de l'Époque moderne (XVIe-XVIIIe s.)",
+        "date": 1515
+      },
+      {
+        "id": "b24",
+        "titre": "Première bataille de Panipat",
+        "axe": "Guerres de l'Époque moderne (XVIe-XVIIIe s.)",
+        "date": 1526
+      },
+      {
+        "id": "b25",
+        "titre": "Bataille navale de Lépante",
+        "axe": "Guerres de l'Époque moderne (XVIe-XVIIIe s.)",
+        "date": 1571
+      },
+      {
+        "id": "b26",
+        "titre": "Défaite de l'Invincible Armada espagnole",
+        "axe": "Guerres de l'Époque moderne (XVIe-XVIIIe s.)",
+        "date": 1588
+      },
+      {
+        "id": "b27",
+        "titre": "Bataille de Sekigahara au Japon",
+        "axe": "Guerres de l'Époque moderne (XVIe-XVIIIe s.)",
+        "date": 1600
+      },
+      {
+        "id": "b28",
+        "titre": "Bataille de Rocroi",
+        "axe": "Guerres de l'Époque moderne (XVIe-XVIIIe s.)",
+        "date": 1643
+      },
+      {
+        "id": "b29",
+        "titre": "Siège et bataille de Vienne",
+        "axe": "Guerres de l'Époque moderne (XVIe-XVIIIe s.)",
+        "date": 1683
+      },
+      {
+        "id": "b30",
+        "titre": "Bataille de Blenheim (Höchstädt)",
+        "axe": "Guerres de l'Époque moderne (XVIe-XVIIIe s.)",
+        "date": 1704
+      },
+      {
+        "id": "b31",
+        "titre": "Bataille de Poltava",
+        "axe": "Guerres de l'Époque moderne (XVIe-XVIIIe s.)",
+        "date": 1709
+      },
+      {
+        "id": "b32",
+        "titre": "Bataille de Fontenoy",
+        "axe": "Guerres de l'Époque moderne (XVIe-XVIIIe s.)",
+        "date": 1745
+      },
+      {
+        "id": "b33",
+        "titre": "Bataille des Plaines d'Abraham à Québec",
+        "axe": "Guerres de l'Époque moderne (XVIe-XVIIIe s.)",
+        "date": 1759
+      },
+      {
+        "id": "b34",
+        "titre": "Siège et bataille de Yorktown",
+        "axe": "Guerres de l'Époque moderne (XVIe-XVIIIe s.)",
+        "date": 1781
+      },
+      {
+        "id": "b35",
+        "titre": "Bataille de Valmy",
+        "axe": "Guerres de l'Époque moderne (XVIe-XVIIIe s.)",
+        "date": 1792
+      },
+      {
+        "id": "b36",
+        "titre": "Bataille d'Austerlitz (les Trois Empereurs)",
+        "axe": "Guerres napoléoniennes et conflits du XIXe siècle",
+        "date": 1805
+      },
+      {
+        "id": "b37",
+        "titre": "Bataille navale de Trafalgar",
+        "axe": "Guerres napoléoniennes et conflits du XIXe siècle",
+        "date": 1805
+      },
+      {
+        "id": "b38",
+        "titre": "Bataille de la Moskova (Borodino)",
+        "axe": "Guerres napoléoniennes et conflits du XIXe siècle",
+        "date": 1812
+      },
+      {
+        "id": "b39",
+        "titre": "Bataille des Nations à Leipzig",
+        "axe": "Guerres napoléoniennes et conflits du XIXe siècle",
+        "date": 1813
+      },
+      {
+        "id": "b40",
+        "titre": "Bataille de Waterloo",
+        "axe": "Guerres napoléoniennes et conflits du XIXe siècle",
+        "date": 1815
+      },
+      {
+        "id": "b41",
+        "titre": "Bataille de Solférino",
+        "axe": "Guerres napoléoniennes et conflits du XIXe siècle",
+        "date": 1859
+      },
+      {
+        "id": "b42",
+        "titre": "Bataille de Gettysburg",
+        "axe": "Guerres napoléoniennes et conflits du XIXe siècle",
+        "date": 1863
+      },
+      {
+        "id": "b43",
+        "titre": "Bataille et capitulation de Sedan",
+        "axe": "Guerres napoléoniennes et conflits du XIXe siècle",
+        "date": 1870
+      },
+      {
+        "id": "b44",
+        "titre": "Bataille navale de Tsushima",
+        "axe": "Guerres napoléoniennes et conflits du XIXe siècle",
+        "date": 1905
+      },
+      {
+        "id": "b45",
+        "titre": "Première bataille de la Marne",
+        "axe": "Guerres mondiales et tournants du XXe siècle",
+        "date": 1914
+      },
+      {
+        "id": "b46",
+        "titre": "Bataille de Verdun",
+        "axe": "Guerres mondiales et tournants du XXe siècle",
+        "date": 1916
+      },
+      {
+        "id": "b47",
+        "titre": "Bataille de la Somme",
+        "axe": "Guerres mondiales et tournants du XXe siècle",
+        "date": 1916
+      },
+      {
+        "id": "b48",
+        "titre": "Bataille aéronavale de Midway",
+        "axe": "Guerres mondiales et tournants du XXe siècle",
+        "date": 1942
+      },
+      {
+        "id": "b49",
+        "titre": "Seconde bataille d'El-Alamein",
+        "axe": "Guerres mondiales et tournants du XXe siècle",
+        "date": 1942
+      },
+      {
+        "id": "b50",
+        "titre": "Bataille et victoire soviétique de Stalingrad",
+        "axe": "Guerres mondiales et tournants du XXe siècle",
+        "date": 1943
+      },
+      {
+        "id": "b51",
+        "titre": "Bataille de Koursk",
+        "axe": "Guerres mondiales et tournants du XXe siècle",
+        "date": 1943
+      },
+      {
+        "id": "b52",
+        "titre": "Débarquement allié en Normandie (Jour J)",
+        "axe": "Guerres mondiales et tournants du XXe siècle",
+        "date": 1944
+      },
+      {
+        "id": "b53",
+        "titre": "Bataille de Diên Biên Phu",
+        "axe": "Guerres mondiales et tournants du XXe siècle",
+        "date": 1954
+      },
+      {
+        "id": "b54",
+        "titre": "Bataille de Platées et libération grecque",
+        "axe": "Batailles de l'Antiquité",
+        "date": -479
+      },
+      {
+        "id": "b55",
+        "titre": "Bataille du Métaure contre les Carthaginois",
+        "axe": "Batailles de l'Antiquité",
+        "date": -207
+      },
+      {
+        "id": "b56",
+        "titre": "Désastre de Teutobourg",
+        "axe": "Batailles de l'Antiquité",
+        "date": 9
+      },
+      {
+        "id": "b57",
+        "titre": "Bataille du Yarmouk, conquête du Levant",
+        "axe": "Conflits du Moyen Âge",
+        "date": 636
+      },
+      {
+        "id": "b58",
+        "titre": "Bataille de Las Navas de Tolosa",
+        "axe": "Conflits du Moyen Âge",
+        "date": 1212
+      },
+      {
+        "id": "b59",
+        "titre": "Bataille de Grunwald contre l'Ordre Teutonique",
+        "axe": "Conflits du Moyen Âge",
+        "date": 1410
+      },
+      {
+        "id": "b60",
+        "titre": "Première bataille de Panipat",
+        "axe": "Guerres de l'Époque moderne (XVIe-XVIIIe s.)",
+        "date": 1526
+      },
+      {
+        "id": "b61",
+        "titre": "Victoire de Tokugawa Ieyasu à Sekigahara",
+        "axe": "Guerres de l'Époque moderne (XVIe-XVIIIe s.)",
+        "date": 1600
+      },
+      {
+        "id": "b62",
+        "titre": "Victoire de Gustave-Adolphe à Breitenfeld",
+        "axe": "Guerres de l'Époque moderne (XVIe-XVIIIe s.)",
+        "date": 1631
+      },
+      {
+        "id": "b63",
+        "titre": "Bataille de Blenheim en 1704",
+        "axe": "Guerres de l'Époque moderne (XVIe-XVIIIe s.)",
+        "date": 1704
+      },
+      {
+        "id": "b64",
+        "titre": "Bataille de Plassey",
+        "axe": "Guerres de l'Époque moderne (XVIe-XVIIIe s.)",
+        "date": 1757
+      },
+      {
+        "id": "b65",
+        "titre": "Bataille de Leipzig, effondrement de l'Empire",
+        "axe": "Guerres napoléoniennes et conflits du XIXe siècle",
+        "date": 1813
+      },
+      {
+        "id": "b66",
+        "titre": "Bataille de Gettysburg, tournant de Sécession",
+        "axe": "Guerres napoléoniennes et conflits du XIXe siècle",
+        "date": 1863
+      },
+      {
+        "id": "b67",
+        "titre": "Sedan et capitulation de Napoléon III",
+        "axe": "Guerres napoléoniennes et conflits du XIXe siècle",
+        "date": 1870
+      },
+      {
+        "id": "b68",
+        "titre": "Bataille d'Adoua et indépendance de l'Éthiopie",
+        "axe": "Guerres napoléoniennes et conflits du XIXe siècle",
+        "date": 1896
+      },
+      {
+        "id": "b69",
+        "titre": "Bataille d'Angleterre, échec de la Luftwaffe",
+        "axe": "Guerres mondiales et tournants du XXe siècle",
+        "date": 1940
+      },
+      {
+        "id": "b70",
+        "titre": "Bataille de Diên Biên Phu",
+        "axe": "Guerres mondiales et tournants du XXe siècle",
+        "date": 1954
+      }
+    ]
+  }
+]

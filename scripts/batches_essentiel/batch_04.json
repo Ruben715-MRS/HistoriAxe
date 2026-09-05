@@ -1,0 +1,2109 @@
+[
+  {
+    "theme_id": "thm_med",
+    "theme_nom": "Histoire de la Médecine et Santé",
+    "event_count": 350,
+    "events": [
+      {
+        "id": "med21",
+        "titre": "Imhotep, médecin de l'Égypte antique",
+        "axe": "Savoirs médicaux",
+        "date": -2600
+      },
+      {
+        "id": "med22",
+        "titre": "Papyrus de Kahoun",
+        "axe": "Savoirs médicaux",
+        "date": -1800
+      },
+      {
+        "id": "med23",
+        "titre": "Papyrus Edwin Smith",
+        "axe": "Savoirs médicaux",
+        "date": -1600
+      },
+      {
+        "id": "med24",
+        "titre": "Papyrus Ebers",
+        "axe": "Savoirs médicaux",
+        "date": -1550
+      },
+      {
+        "id": "med25",
+        "titre": "Manuel diagnostique d'Esagil-kin-apli",
+        "axe": "Savoirs médicaux",
+        "date": -1050
+      },
+      {
+        "id": "med26",
+        "titre": "Atharva-Véda et les racines de l'Ayurveda",
+        "axe": "Savoirs médicaux",
+        "date": -1000
+      },
+      {
+        "id": "med27",
+        "titre": "École médicale de Cnide",
+        "axe": "Savoirs médicaux",
+        "date": -500
+      },
+      {
+        "id": "med28",
+        "titre": "École médicale de Cos",
+        "axe": "Savoirs médicaux",
+        "date": -420
+      },
+      {
+        "id": "med1",
+        "titre": "Serment d'Hippocrate",
+        "axe": "Savoirs médicaux",
+        "date": -400
+      },
+      {
+        "id": "med29",
+        "titre": "Construction de l'Aqua Appia",
+        "axe": "Santé publique et institutions",
+        "date": -312
+      },
+      {
+        "id": "med30",
+        "titre": "Fondation du Mouseion d'Alexandrie",
+        "axe": "Santé publique et institutions",
+        "date": -300
+      },
+      {
+        "id": "med31",
+        "titre": "Dissections humaines d'Hérophile",
+        "axe": "Savoirs médicaux",
+        "date": -280
+      },
+      {
+        "id": "med32",
+        "titre": "Compilation du Huangdi Neijing",
+        "axe": "Savoirs médicaux",
+        "date": -200
+      },
+      {
+        "id": "med33",
+        "titre": "Compilation de la Sushruta Samhita",
+        "axe": "Techniques et traitements",
+        "date": -100
+      },
+      {
+        "id": "med34",
+        "titre": "La Charaka Samhita",
+        "axe": "Savoirs médicaux",
+        "date": -50
+      },
+      {
+        "id": "med35",
+        "titre": "De Medicina d'Aulus Cornelius Celsus",
+        "axe": "Savoirs médicaux",
+        "date": 30
+      },
+      {
+        "id": "med36",
+        "titre": "Valetudinaria, hôpitaux militaires romains",
+        "axe": "Santé publique et institutions",
+        "date": 100
+      },
+      {
+        "id": "med37",
+        "titre": "Traité de gynécologie de Soranos d'Éphèse",
+        "axe": "Savoirs médicaux",
+        "date": 150
+      },
+      {
+        "id": "med2",
+        "titre": "Traités anatomiques de Galien",
+        "axe": "Savoirs médicaux",
+        "date": 160
+      },
+      {
+        "id": "med38",
+        "titre": "Fondation de la Basiliade de Césarée",
+        "axe": "Santé publique et institutions",
+        "date": 372
+      },
+      {
+        "id": "med39",
+        "titre": "Peste de Justinien",
+        "axe": "Santé publique et institutions",
+        "date": 541
+      },
+      {
+        "id": "med40",
+        "titre": "Développement des hôpitaux byzantins",
+        "axe": "Santé publique et institutions",
+        "date": 600
+      },
+      {
+        "id": "med41",
+        "titre": "Encyclopédie médicale de Paul d'Égine",
+        "axe": "Savoirs médicaux",
+        "date": 640
+      },
+      {
+        "id": "med42",
+        "titre": "Qianjin Yaofang de Sun Simiao",
+        "axe": "Savoirs médicaux",
+        "date": 652
+      },
+      {
+        "id": "med43",
+        "titre": "Fondation du bimaristan de Damas",
+        "axe": "Santé publique et institutions",
+        "date": 706
+      },
+      {
+        "id": "med44",
+        "titre": "Al-Razi distingue rougeole et variole",
+        "axe": "Savoirs médicaux",
+        "date": 850
+      },
+      {
+        "id": "med45",
+        "titre": "Fondation du bimaristan al-Adudi de Bagdad",
+        "axe": "Santé publique et institutions",
+        "date": 872
+      },
+      {
+        "id": "med46",
+        "titre": "Traductions médicales de Hunayn ibn Ishaq",
+        "axe": "Savoirs médicaux",
+        "date": 900
+      },
+      {
+        "id": "med47",
+        "titre": "Variolation contre la variole en Chine",
+        "axe": "Techniques et traitements",
+        "date": 990
+      },
+      {
+        "id": "med48",
+        "titre": "Kitab al-Tasrif d'Al-Zahrawi",
+        "axe": "Techniques et traitements",
+        "date": 1000
+      },
+      {
+        "id": "med3",
+        "titre": "Le Canon de la médecine d'Avicenne",
+        "axe": "Savoirs médicaux",
+        "date": 1025
+      },
+      {
+        "id": "med49",
+        "titre": "Traductions médicales de Constantin l'Africain",
+        "axe": "Savoirs médicaux",
+        "date": 1050
+      },
+      {
+        "id": "med50",
+        "titre": "Apogée de l'école de Salerne",
+        "axe": "Santé publique et institutions",
+        "date": 1080
+      },
+      {
+        "id": "med51",
+        "titre": "Corpus médical de Trotula de Salerne",
+        "axe": "Savoirs médicaux",
+        "date": 1150
+      },
+      {
+        "id": "med52",
+        "titre": "Traités médicaux de Maïmonide",
+        "axe": "Savoirs médicaux",
+        "date": 1190
+      },
+      {
+        "id": "med53",
+        "titre": "Expansion de l'ordre hospitalier du Saint-Esprit",
+        "axe": "Santé publique et institutions",
+        "date": 1210
+      },
+      {
+        "id": "med54",
+        "titre": "Faculté de médecine de Montpellier fondée",
+        "axe": "Santé publique et institutions",
+        "date": 1220
+      },
+      {
+        "id": "med55",
+        "titre": "Édit médical de Frédéric II",
+        "axe": "Santé publique et institutions",
+        "date": 1231
+      },
+      {
+        "id": "med56",
+        "titre": "Ibn al-Nafis décrit la circulation pulmonaire",
+        "axe": "Savoirs médicaux",
+        "date": 1242
+      },
+      {
+        "id": "med57",
+        "titre": "Xiyuan Jilu de Song Ci",
+        "axe": "Savoirs médicaux",
+        "date": 1247
+      },
+      {
+        "id": "med58",
+        "titre": "Fondation de l'hôpital Santa Maria Nuova",
+        "axe": "Santé publique et institutions",
+        "date": 1284
+      },
+      {
+        "id": "med59",
+        "titre": "Anathomia de Mondino de Liuzzi",
+        "axe": "Savoirs médicaux",
+        "date": 1316
+      },
+      {
+        "id": "med60",
+        "titre": "La peste noire arrive en Europe",
+        "axe": "Santé publique et institutions",
+        "date": 1347
+      },
+      {
+        "id": "med61",
+        "titre": "Instauration de la quarantaine à Raguse",
+        "axe": "Santé publique et institutions",
+        "date": 1377
+      },
+      {
+        "id": "med62",
+        "titre": "Fondation du Lazzaretto Vecchio de Venise",
+        "axe": "Santé publique et institutions",
+        "date": 1423
+      },
+      {
+        "id": "med63",
+        "titre": "Études anatomiques de Léonard de Vinci",
+        "axe": "Savoirs médicaux",
+        "date": 1489
+      },
+      {
+        "id": "med64",
+        "titre": "Fondation du Royal College of Physicians",
+        "axe": "Santé publique et institutions",
+        "date": 1518
+      },
+      {
+        "id": "med65",
+        "titre": "Paracelse brûle les œuvres de Galien",
+        "axe": "Savoirs médicaux",
+        "date": 1527
+      },
+      {
+        "id": "med66",
+        "titre": "Paracelse et la naissance de l'iatrochimie",
+        "axe": "Savoirs médicaux",
+        "date": 1530
+      },
+      {
+        "id": "med67",
+        "titre": "Fusion des barbiers et chirurgiens anglais",
+        "axe": "Santé publique et institutions",
+        "date": 1540
+      },
+      {
+        "id": "med4",
+        "titre": "De humani corporis fabrica de Vésale",
+        "axe": "Savoirs médicaux",
+        "date": 1543
+      },
+      {
+        "id": "med68",
+        "titre": "De contagione de Girolamo Fracastoro",
+        "axe": "Savoirs médicaux",
+        "date": 1546
+      },
+      {
+        "id": "med5",
+        "titre": "Ligature des artères par Ambroise Paré",
+        "axe": "Techniques et traitements",
+        "date": 1552
+      },
+      {
+        "id": "med69",
+        "titre": "Michel Servet décrit la circulation pulmonaire",
+        "axe": "Savoirs médicaux",
+        "date": 1553
+      },
+      {
+        "id": "med70",
+        "titre": "De re anatomica de Realdo Colombo",
+        "axe": "Savoirs médicaux",
+        "date": 1559
+      },
+      {
+        "id": "med71",
+        "titre": "Falloppio décrit les trompes utérines",
+        "axe": "Savoirs médicaux",
+        "date": 1561
+      },
+      {
+        "id": "med72",
+        "titre": "Techniques chirurgicales de Wilhelm Fabry",
+        "axe": "Techniques et traitements",
+        "date": 1593
+      },
+      {
+        "id": "med73",
+        "titre": "Invention des forceps obstétricaux par Chamberlen",
+        "axe": "Techniques et traitements",
+        "date": 1600
+      },
+      {
+        "id": "med74",
+        "titre": "De venarum ostiolis de Girolamo Fabrici",
+        "axe": "Savoirs médicaux",
+        "date": 1603
+      },
+      {
+        "id": "med75",
+        "titre": "Publication de la Pharmacopoeia Londinensis",
+        "axe": "Santé publique et institutions",
+        "date": 1618
+      },
+      {
+        "id": "med76",
+        "titre": "Aselli découvre les vaisseaux chylifères",
+        "axe": "Savoirs médicaux",
+        "date": 1622
+      },
+      {
+        "id": "med6",
+        "titre": "Découverte de la circulation sanguine (Harvey)",
+        "axe": "Savoirs médicaux",
+        "date": 1628
+      },
+      {
+        "id": "med77",
+        "titre": "Introduction du quinquina en Europe",
+        "axe": "Techniques et traitements",
+        "date": 1640
+      },
+      {
+        "id": "med78",
+        "titre": "Jean Pecquet découvre le canal thoracique",
+        "axe": "Savoirs médicaux",
+        "date": 1651
+      },
+      {
+        "id": "med79",
+        "titre": "Thomas Bartholin décrit le système lymphatique",
+        "axe": "Savoirs médicaux",
+        "date": 1652
+      },
+      {
+        "id": "med80",
+        "titre": "Épidémie de peste à Naples",
+        "axe": "Santé publique et institutions",
+        "date": 1656
+      },
+      {
+        "id": "med81",
+        "titre": "Fondation de l'Hôpital général de Paris",
+        "axe": "Santé publique et institutions",
+        "date": 1656
+      },
+      {
+        "id": "med82",
+        "titre": "Premières injections intraveineuses expérimentales",
+        "axe": "Techniques et traitements",
+        "date": 1657
+      },
+      {
+        "id": "med83",
+        "titre": "Swammerdam observe les globules rouges",
+        "axe": "Savoirs médicaux",
+        "date": 1658
+      },
+      {
+        "id": "med84",
+        "titre": "Malpighi découvre les capillaires sanguins",
+        "axe": "Savoirs médicaux",
+        "date": 1661
+      },
+      {
+        "id": "med85",
+        "titre": "Fondation de la Royal Society",
+        "axe": "Santé publique et institutions",
+        "date": 1662
+      },
+      {
+        "id": "med86",
+        "titre": "Premières transfusions sanguines expérimentales",
+        "axe": "Techniques et traitements",
+        "date": 1663
+      },
+      {
+        "id": "med87",
+        "titre": "Cerebri Anatome de Thomas Willis",
+        "axe": "Savoirs médicaux",
+        "date": 1664
+      },
+      {
+        "id": "med88",
+        "titre": "Grande peste de Londres",
+        "axe": "Santé publique et institutions",
+        "date": 1665
+      },
+      {
+        "id": "med89",
+        "titre": "Micrographia de Robert Hooke",
+        "axe": "Savoirs médicaux",
+        "date": 1665
+      },
+      {
+        "id": "med90",
+        "titre": "Naissance des premières revues scientifiques",
+        "axe": "Santé publique et institutions",
+        "date": 1665
+      },
+      {
+        "id": "med91",
+        "titre": "Fondation de l'Académie royale des sciences",
+        "axe": "Santé publique et institutions",
+        "date": 1666
+      },
+      {
+        "id": "med92",
+        "titre": "Malpighi étudie l'anatomie microscopique des reins",
+        "axe": "Savoirs médicaux",
+        "date": 1666
+      },
+      {
+        "id": "med93",
+        "titre": "Première transfusion sanguine chez l'homme",
+        "axe": "Techniques et traitements",
+        "date": 1667
+      },
+      {
+        "id": "med94",
+        "titre": "Francesco Redi réfute la génération spontanée",
+        "axe": "Savoirs médicaux",
+        "date": 1668
+      },
+      {
+        "id": "med95",
+        "titre": "Nicolas Sténon décrit les glandes salivaires",
+        "axe": "Savoirs médicaux",
+        "date": 1670
+      },
+      {
+        "id": "med96",
+        "titre": "De Graaf décrit les follicules ovariens",
+        "axe": "Savoirs médicaux",
+        "date": 1672
+      },
+      {
+        "id": "med97",
+        "titre": "Van Leeuwenhoek observe les micro-organismes",
+        "axe": "Savoirs médicaux",
+        "date": 1673
+      },
+      {
+        "id": "med98",
+        "titre": "John Mayow étudie la respiration",
+        "axe": "Savoirs médicaux",
+        "date": 1674
+      },
+      {
+        "id": "med99",
+        "titre": "Cours de chymie de Nicolas Lémery",
+        "axe": "Savoirs médicaux",
+        "date": 1675
+      },
+      {
+        "id": "med100",
+        "titre": "Observationes Medicae de Thomas Sydenham",
+        "axe": "Savoirs médicaux",
+        "date": 1676
+      },
+      {
+        "id": "med101",
+        "titre": "Van Leeuwenhoek observe les spermatozoïdes",
+        "axe": "Savoirs médicaux",
+        "date": 1677
+      },
+      {
+        "id": "med102",
+        "titre": "Van Leeuwenhoek observe les premières bactéries",
+        "axe": "Savoirs médicaux",
+        "date": 1683
+      },
+      {
+        "id": "med103",
+        "titre": "Neurographia Universalis de Raymond Vieussens",
+        "axe": "Savoirs médicaux",
+        "date": 1684
+      },
+      {
+        "id": "med104",
+        "titre": "De morbis artificum diatriba de Ramazzini",
+        "axe": "Savoirs médicaux",
+        "date": 1700
+      },
+      {
+        "id": "med105",
+        "titre": "Le pouls chronométré par Floyer",
+        "axe": "Techniques et traitements",
+        "date": 1707
+      },
+      {
+        "id": "med106",
+        "titre": "Fondation de la Charité de Berlin",
+        "axe": "Santé publique et institutions",
+        "date": 1710
+      },
+      {
+        "id": "med107",
+        "titre": "Fahrenheit invente le thermomètre à mercure",
+        "axe": "Techniques et traitements",
+        "date": 1714
+      },
+      {
+        "id": "med108",
+        "titre": "La grande peste de Marseille",
+        "axe": "Santé publique et institutions",
+        "date": 1720
+      },
+      {
+        "id": "med109",
+        "titre": "Lady Montagu diffuse la variolisation",
+        "axe": "Techniques et traitements",
+        "date": 1721
+      },
+      {
+        "id": "med110",
+        "titre": "Fauchard fonde l'odontologie moderne",
+        "axe": "Savoirs médicaux",
+        "date": 1728
+      },
+      {
+        "id": "med111",
+        "titre": "Fondation de l'Académie royale de chirurgie",
+        "axe": "Santé publique et institutions",
+        "date": 1731
+      },
+      {
+        "id": "med112",
+        "titre": "Hales mesure la pression artérielle",
+        "axe": "Savoirs médicaux",
+        "date": 1733
+      },
+      {
+        "id": "med113",
+        "titre": "Première appendicectomie réussie",
+        "axe": "Techniques et traitements",
+        "date": 1736
+      },
+      {
+        "id": "med114",
+        "titre": "Celsius propose l'échelle centigrade",
+        "axe": "Techniques et traitements",
+        "date": 1742
+      },
+      {
+        "id": "med115",
+        "titre": "Séparation des barbiers et chirurgiens anglais",
+        "axe": "Santé publique et institutions",
+        "date": 1745
+      },
+      {
+        "id": "med116",
+        "titre": "Premier essai clinique contrôlé par Lind",
+        "axe": "Savoirs médicaux",
+        "date": 1747
+      },
+      {
+        "id": "med117",
+        "titre": "Fondation du Pennsylvania Hospital",
+        "axe": "Santé publique et institutions",
+        "date": 1751
+      },
+      {
+        "id": "med118",
+        "titre": "Haller distingue irritabilité et sensibilité",
+        "axe": "Savoirs médicaux",
+        "date": 1752
+      },
+      {
+        "id": "med119",
+        "titre": "Traité sur le scorbut de Lind",
+        "axe": "Techniques et traitements",
+        "date": 1753
+      },
+      {
+        "id": "med120",
+        "titre": "Lind à l'hôpital naval de Haslar",
+        "axe": "Santé publique et institutions",
+        "date": 1758
+      },
+      {
+        "id": "med121",
+        "titre": "Madame du Coudray forme les sages-femmes",
+        "axe": "Santé publique et institutions",
+        "date": 1759
+      },
+      {
+        "id": "med122",
+        "titre": "Morgagni fonde l'anatomie pathologique",
+        "axe": "Savoirs médicaux",
+        "date": 1761
+      },
+      {
+        "id": "med123",
+        "titre": "Auenbrugger invente la percussion thoracique",
+        "axe": "Techniques et traitements",
+        "date": 1761
+      },
+      {
+        "id": "med124",
+        "titre": "Première école de médecine américaine",
+        "axe": "Santé publique et institutions",
+        "date": 1765
+      },
+      {
+        "id": "med125",
+        "titre": "L'école de Montpellier et le vitalisme",
+        "axe": "Savoirs médicaux",
+        "date": 1770
+      },
+      {
+        "id": "med126",
+        "titre": "Atlas de l'utérus de William Hunter",
+        "axe": "Savoirs médicaux",
+        "date": 1774
+      },
+      {
+        "id": "med127",
+        "titre": "Pott décrit le cancer des ramoneurs",
+        "axe": "Savoirs médicaux",
+        "date": 1775
+      },
+      {
+        "id": "med128",
+        "titre": "Société royale de médecine fondée",
+        "axe": "Santé publique et institutions",
+        "date": 1776
+      },
+      {
+        "id": "med129",
+        "titre": "Lavoisier étudie la chimie respiratoire",
+        "axe": "Savoirs médicaux",
+        "date": 1777
+      },
+      {
+        "id": "med130",
+        "titre": "Baudelocque systématise la pelvimétrie",
+        "axe": "Techniques et traitements",
+        "date": 1781
+      },
+      {
+        "id": "med131",
+        "titre": "Lavoisier assimile respiration et combustion",
+        "axe": "Savoirs médicaux",
+        "date": 1783
+      },
+      {
+        "id": "med132",
+        "titre": "Commission royale contre le magnétisme animal",
+        "axe": "Savoirs médicaux",
+        "date": 1784
+      },
+      {
+        "id": "med133",
+        "titre": "Withering introduit la digitale pourprée",
+        "axe": "Techniques et traitements",
+        "date": 1785
+      },
+      {
+        "id": "med134",
+        "titre": "Réforme hygiéniste des lazarets par Howard",
+        "axe": "Santé publique et institutions",
+        "date": 1789
+      },
+      {
+        "id": "med135",
+        "titre": "Galvani et l'électricité animale",
+        "axe": "Savoirs médicaux",
+        "date": 1791
+      },
+      {
+        "id": "med136",
+        "titre": "Larrey invente les ambulances volantes",
+        "axe": "Techniques et traitements",
+        "date": 1793
+      },
+      {
+        "id": "med137",
+        "titre": "Pinel libère les aliénés",
+        "axe": "Techniques et traitements",
+        "date": 1793
+      },
+      {
+        "id": "med138",
+        "titre": "École de santé de Paris fondée",
+        "axe": "Santé publique et institutions",
+        "date": 1794
+      },
+      {
+        "id": "med7",
+        "titre": "Premier vaccin par Edward Jenner",
+        "axe": "Techniques et traitements",
+        "date": 1796
+      },
+      {
+        "id": "med139",
+        "titre": "Bichat fonde la théorie des tissus",
+        "axe": "Savoirs médicaux",
+        "date": 1800
+      },
+      {
+        "id": "med140",
+        "titre": "Loi du 19 ventôse an XI",
+        "axe": "Santé publique et institutions",
+        "date": 1803
+      },
+      {
+        "id": "med141",
+        "titre": "Sertürner isole la morphine",
+        "axe": "Techniques et traitements",
+        "date": 1805
+      },
+      {
+        "id": "med142",
+        "titre": "McDowell réalise la première ovariotomie",
+        "axe": "Techniques et traitements",
+        "date": 1809
+      },
+      {
+        "id": "med143",
+        "titre": "Bell distingue nerfs moteurs et sensitifs",
+        "axe": "Savoirs médicaux",
+        "date": 1811
+      },
+      {
+        "id": "med8",
+        "titre": "Invention du stéthoscope par Laennec",
+        "axe": "Techniques et traitements",
+        "date": 1816
+      },
+      {
+        "id": "med144",
+        "titre": "Parkinson décrit la paralysie agitante",
+        "axe": "Savoirs médicaux",
+        "date": 1817
+      },
+      {
+        "id": "med145",
+        "titre": "Première transfusion sanguine humaine par Blundell",
+        "axe": "Techniques et traitements",
+        "date": 1818
+      },
+      {
+        "id": "med146",
+        "titre": "Fondation de l'Académie royale de médecine",
+        "axe": "Santé publique et institutions",
+        "date": 1820
+      },
+      {
+        "id": "med147",
+        "titre": "Pelletier et Caventou isolent la quinine",
+        "axe": "Techniques et traitements",
+        "date": 1820
+      },
+      {
+        "id": "med148",
+        "titre": "Fondation du Massachusetts General Hospital",
+        "axe": "Santé publique et institutions",
+        "date": 1821
+      },
+      {
+        "id": "med149",
+        "titre": "Magendie complète la loi de Bell-Magendie",
+        "axe": "Savoirs médicaux",
+        "date": 1822
+      },
+      {
+        "id": "med150",
+        "titre": "Von Baer découvre l'ovule des mammifères",
+        "axe": "Savoirs médicaux",
+        "date": 1827
+      },
+      {
+        "id": "med151",
+        "titre": "Épidémie de choléra à Paris",
+        "axe": "Santé publique et institutions",
+        "date": 1832
+      },
+      {
+        "id": "med152",
+        "titre": "Pierre Louis fonde la méthode numérique",
+        "axe": "Santé publique et institutions",
+        "date": 1835
+      },
+      {
+        "id": "med153",
+        "titre": "Schwann étend la théorie cellulaire animale",
+        "axe": "Savoirs médicaux",
+        "date": 1839
+      },
+      {
+        "id": "med154",
+        "titre": "Première école dentaire au monde",
+        "axe": "Santé publique et institutions",
+        "date": 1840
+      },
+      {
+        "id": "med155",
+        "titre": "Chadwick dénonce l'insalubrité ouvrière",
+        "axe": "Santé publique et institutions",
+        "date": 1842
+      },
+      {
+        "id": "med156",
+        "titre": "Crawford Long opère sous éther",
+        "axe": "Techniques et traitements",
+        "date": 1842
+      },
+      {
+        "id": "med157",
+        "titre": "Holmes et la fièvre puerpérale contagieuse",
+        "axe": "Savoirs médicaux",
+        "date": 1843
+      },
+      {
+        "id": "med158",
+        "titre": "Horace Wells expérimente le protoxyde d'azote",
+        "axe": "Techniques et traitements",
+        "date": 1844
+      },
+      {
+        "id": "med9",
+        "titre": "Première anesthésie générale publique",
+        "axe": "Techniques et traitements",
+        "date": 1846
+      },
+      {
+        "id": "med10",
+        "titre": "Lavage des mains d'Ignace Semmelweis",
+        "axe": "Techniques et traitements",
+        "date": 1847
+      },
+      {
+        "id": "med159",
+        "titre": "Simpson introduit le chloroforme en obstétrique",
+        "axe": "Techniques et traitements",
+        "date": 1847
+      },
+      {
+        "id": "med160",
+        "titre": "Fondation de la Société de biologie",
+        "axe": "Santé publique et institutions",
+        "date": 1848
+      },
+      {
+        "id": "med161",
+        "titre": "Le premier Public Health Act britannique",
+        "axe": "Santé publique et institutions",
+        "date": 1848
+      },
+      {
+        "id": "med162",
+        "titre": "Elizabeth Blackwell, première femme médecin diplômée",
+        "axe": "Santé publique et institutions",
+        "date": 1849
+      },
+      {
+        "id": "med163",
+        "titre": "Helmholtz invente l'ophtalmoscope",
+        "axe": "Techniques et traitements",
+        "date": 1851
+      },
+      {
+        "id": "med164",
+        "titre": "Adoption du Vaccination Act britannique",
+        "axe": "Santé publique et institutions",
+        "date": 1853
+      },
+      {
+        "id": "med165",
+        "titre": "John Snow chloroforme la reine Victoria",
+        "axe": "Techniques et traitements",
+        "date": 1853
+      },
+      {
+        "id": "med166",
+        "titre": "Snow relie choléra à Broad Street",
+        "axe": "Santé publique et institutions",
+        "date": 1854
+      },
+      {
+        "id": "med167",
+        "titre": "Nightingale réduit la mortalité en Crimée",
+        "axe": "Santé publique et institutions",
+        "date": 1855
+      },
+      {
+        "id": "med168",
+        "titre": "Pasteur et la fermentation lactique",
+        "axe": "Savoirs médicaux",
+        "date": 1857
+      },
+      {
+        "id": "med169",
+        "titre": "Virchow fonde la pathologie cellulaire",
+        "axe": "Savoirs médicaux",
+        "date": 1858
+      },
+      {
+        "id": "med170",
+        "titre": "Nightingale invente le diagramme en rose",
+        "axe": "Santé publique et institutions",
+        "date": 1858
+      },
+      {
+        "id": "med171",
+        "titre": "Fondation de l'American Dental Association",
+        "axe": "Santé publique et institutions",
+        "date": 1859
+      },
+      {
+        "id": "med172",
+        "titre": "Nightingale fonde son école d'infirmières",
+        "axe": "Santé publique et institutions",
+        "date": 1860
+      },
+      {
+        "id": "med173",
+        "titre": "Pasteur réfute la génération spontanée",
+        "axe": "Savoirs médicaux",
+        "date": 1862
+      },
+      {
+        "id": "med174",
+        "titre": "Snellen invente son échelle optométrique",
+        "axe": "Techniques et traitements",
+        "date": 1862
+      },
+      {
+        "id": "med175",
+        "titre": "Dunant fonde la Croix-Rouge",
+        "axe": "Santé publique et institutions",
+        "date": 1863
+      },
+      {
+        "id": "med176",
+        "titre": "La première Convention de Genève",
+        "axe": "Santé publique et institutions",
+        "date": 1864
+      },
+      {
+        "id": "med177",
+        "titre": "Claude Bernard fonde la médecine expérimentale",
+        "axe": "Savoirs médicaux",
+        "date": 1865
+      },
+      {
+        "id": "med11",
+        "titre": "Antisepsie chirurgicale par Joseph Lister",
+        "axe": "Techniques et traitements",
+        "date": 1867
+      },
+      {
+        "id": "med178",
+        "titre": "Wunderlich systématise la thermométrie clinique",
+        "axe": "Savoirs médicaux",
+        "date": 1868
+      },
+      {
+        "id": "med179",
+        "titre": "Hansen identifie le bacille lépreux",
+        "axe": "Savoirs médicaux",
+        "date": 1873
+      },
+      {
+        "id": "med180",
+        "titre": "L'Allemagne impose la vaccination antivariolique",
+        "axe": "Santé publique et institutions",
+        "date": 1874
+      },
+      {
+        "id": "med181",
+        "titre": "Koch identifie la bactérie du charbon",
+        "axe": "Savoirs médicaux",
+        "date": 1876
+      },
+      {
+        "id": "med182",
+        "titre": "Pasteur formalise la théorie des germes",
+        "axe": "Savoirs médicaux",
+        "date": 1878
+      },
+      {
+        "id": "med183",
+        "titre": "Bertillon invente l'anthropométrie judiciaire",
+        "axe": "Savoirs médicaux",
+        "date": 1879
+      },
+      {
+        "id": "med184",
+        "titre": "Pasteur démontre le vaccin anticharbonneux",
+        "axe": "Techniques et traitements",
+        "date": 1881
+      },
+      {
+        "id": "med185",
+        "titre": "Koch découvre le bacille de tuberculose",
+        "axe": "Savoirs médicaux",
+        "date": 1882
+      },
+      {
+        "id": "med186",
+        "titre": "Charcot fonde la neurologie clinique moderne",
+        "axe": "Savoirs médicaux",
+        "date": 1882
+      },
+      {
+        "id": "med187",
+        "titre": "Sänger invente la suture utérine",
+        "axe": "Techniques et traitements",
+        "date": 1882
+      },
+      {
+        "id": "med188",
+        "titre": "Koch identifie le bacille du choléra",
+        "axe": "Savoirs médicaux",
+        "date": 1883
+      },
+      {
+        "id": "med189",
+        "titre": "L'Allemagne crée la première assurance maladie",
+        "axe": "Santé publique et institutions",
+        "date": 1883
+      },
+      {
+        "id": "med190",
+        "titre": "Loeffler isole le bacille diphtérique",
+        "axe": "Savoirs médicaux",
+        "date": 1884
+      },
+      {
+        "id": "med191",
+        "titre": "Koller introduit l'anesthésie à la cocaïne",
+        "axe": "Techniques et traitements",
+        "date": 1884
+      },
+      {
+        "id": "med12",
+        "titre": "Vaccin contre la rage de Pasteur",
+        "axe": "Techniques et traitements",
+        "date": 1885
+      },
+      {
+        "id": "med192",
+        "titre": "Lacassagne fonde la médecine légale française",
+        "axe": "Savoirs médicaux",
+        "date": 1886
+      },
+      {
+        "id": "med193",
+        "titre": "Roux et Yersin isolent toxine diphtérique",
+        "axe": "Savoirs médicaux",
+        "date": 1887
+      },
+      {
+        "id": "med194",
+        "titre": "Fondation de l'Institut Pasteur",
+        "axe": "Santé publique et institutions",
+        "date": 1888
+      },
+      {
+        "id": "med195",
+        "titre": "Behring découvre la sérothérapie antidiphtérique",
+        "axe": "Techniques et traitements",
+        "date": 1890
+      },
+      {
+        "id": "med196",
+        "titre": "Halsted introduit les gants chirurgicaux",
+        "axe": "Techniques et traitements",
+        "date": 1890
+      },
+      {
+        "id": "med197",
+        "titre": "Traité de médecine interne d'Osler",
+        "axe": "Savoirs médicaux",
+        "date": 1892
+      },
+      {
+        "id": "med198",
+        "titre": "Alexandre Yersin découvre le bacille pesteux",
+        "axe": "Savoirs médicaux",
+        "date": 1894
+      },
+      {
+        "id": "med13",
+        "titre": "Découverte des rayons X par Röntgen",
+        "axe": "Techniques et traitements",
+        "date": 1895
+      },
+      {
+        "id": "med199",
+        "titre": "Béclère développe l'usage des rayons X",
+        "axe": "Techniques et traitements",
+        "date": 1896
+      },
+      {
+        "id": "med200",
+        "titre": "Hoffmann synthétise l'aspirine",
+        "axe": "Techniques et traitements",
+        "date": 1897
+      },
+      {
+        "id": "med201",
+        "titre": "Ross découvre la transmission du paludisme",
+        "axe": "Savoirs médicaux",
+        "date": 1898
+      },
+      {
+        "id": "med14",
+        "titre": "Découverte des groupes sanguins (Landsteiner)",
+        "axe": "Savoirs médicaux",
+        "date": 1900
+      },
+      {
+        "id": "med202",
+        "titre": "Landsteiner découvre les groupes sanguins",
+        "axe": "Savoirs médicaux",
+        "date": 1900
+      },
+      {
+        "id": "med203",
+        "titre": "Premier prix Nobel de médecine",
+        "axe": "Santé publique et institutions",
+        "date": 1901
+      },
+      {
+        "id": "med204",
+        "titre": "Découverte de la sécrétine",
+        "axe": "Savoirs médicaux",
+        "date": 1902
+      },
+      {
+        "id": "med205",
+        "titre": "Invention de l'électrocardiographe",
+        "axe": "Techniques et traitements",
+        "date": 1903
+      },
+      {
+        "id": "med206",
+        "titre": "Nobel de médecine pour la tuberculose",
+        "axe": "Santé publique et institutions",
+        "date": 1905
+      },
+      {
+        "id": "med207",
+        "titre": "Description de la maladie d'Alzheimer",
+        "axe": "Savoirs médicaux",
+        "date": 1906
+      },
+      {
+        "id": "med208",
+        "titre": "Transfusion sanguine par compatibilité croisée",
+        "axe": "Techniques et traitements",
+        "date": 1907
+      },
+      {
+        "id": "med209",
+        "titre": "Découverte du Salvarsan",
+        "axe": "Techniques et traitements",
+        "date": 1909
+      },
+      {
+        "id": "med210",
+        "titre": "Commercialisation du Salvarsan",
+        "axe": "Techniques et traitements",
+        "date": 1910
+      },
+      {
+        "id": "med211",
+        "titre": "Le terme «vitamine» est proposé",
+        "axe": "Savoirs médicaux",
+        "date": 1911
+      },
+      {
+        "id": "med212",
+        "titre": "Nobel pour la suture vasculaire",
+        "axe": "Santé publique et institutions",
+        "date": 1912
+      },
+      {
+        "id": "med213",
+        "titre": "Fondation Rockefeller et santé publique",
+        "axe": "Santé publique et institutions",
+        "date": 1913
+      },
+      {
+        "id": "med214",
+        "titre": "Conservation sanguine au citrate de sodium",
+        "axe": "Techniques et traitements",
+        "date": 1914
+      },
+      {
+        "id": "med215",
+        "titre": "Découverte de l'héparine",
+        "axe": "Savoirs médicaux",
+        "date": 1916
+      },
+      {
+        "id": "med216",
+        "titre": "Naissance de la chirurgie plastique reconstructrice",
+        "axe": "Techniques et traitements",
+        "date": 1916
+      },
+      {
+        "id": "med217",
+        "titre": "Malariathérapie contre la neurosyphilis",
+        "axe": "Techniques et traitements",
+        "date": 1917
+      },
+      {
+        "id": "med218",
+        "titre": "Début de la grippe espagnole",
+        "axe": "Santé publique et institutions",
+        "date": 1918
+      },
+      {
+        "id": "med219",
+        "titre": "Deuxième vague de la grippe espagnole",
+        "axe": "Santé publique et institutions",
+        "date": 1918
+      },
+      {
+        "id": "med220",
+        "titre": "Vitamine D identifiée contre le rachitisme",
+        "axe": "Savoirs médicaux",
+        "date": 1919
+      },
+      {
+        "id": "med221",
+        "titre": "Bilan de la grippe espagnole",
+        "axe": "Santé publique et institutions",
+        "date": 1919
+      },
+      {
+        "id": "med222",
+        "titre": "Création du ministère français de l'Hygiène",
+        "axe": "Santé publique et institutions",
+        "date": 1920
+      },
+      {
+        "id": "med15",
+        "titre": "Découverte de l'insuline",
+        "axe": "Techniques et traitements",
+        "date": 1921
+      },
+      {
+        "id": "med223",
+        "titre": "Première clinique de planning familial",
+        "axe": "Santé publique et institutions",
+        "date": 1921
+      },
+      {
+        "id": "med224",
+        "titre": "Premier essai humain du vaccin BCG",
+        "axe": "Techniques et traitements",
+        "date": 1921
+      },
+      {
+        "id": "med225",
+        "titre": "Preuve de la transmission chimique nerveuse",
+        "axe": "Savoirs médicaux",
+        "date": 1921
+      },
+      {
+        "id": "med226",
+        "titre": "Premiers essais cliniques de l'insuline",
+        "axe": "Techniques et traitements",
+        "date": 1922
+      },
+      {
+        "id": "med227",
+        "titre": "Organisation d'hygiène de la SDN",
+        "axe": "Santé publique et institutions",
+        "date": 1923
+      },
+      {
+        "id": "med228",
+        "titre": "Mise au point de l'anatoxine diphtérique",
+        "axe": "Techniques et traitements",
+        "date": 1923
+      },
+      {
+        "id": "med229",
+        "titre": "Généralisation du BCG en France",
+        "axe": "Santé publique et institutions",
+        "date": 1924
+      },
+      {
+        "id": "med230",
+        "titre": "Premier enregistrement d'une électroencéphalographie",
+        "axe": "Techniques et traitements",
+        "date": 1924
+      },
+      {
+        "id": "med231",
+        "titre": "Mise au point de l'anatoxine tétanique",
+        "axe": "Techniques et traitements",
+        "date": 1926
+      },
+      {
+        "id": "med232",
+        "titre": "Traitement hépatique de l'anémie pernicieuse",
+        "axe": "Techniques et traitements",
+        "date": 1926
+      },
+      {
+        "id": "med233",
+        "titre": "Isolement de la thiamine, vitamine B1",
+        "axe": "Techniques et traitements",
+        "date": 1926
+      },
+      {
+        "id": "med234",
+        "titre": "L'insulinothérapie de choc en psychiatrie",
+        "axe": "Techniques et traitements",
+        "date": 1927
+      },
+      {
+        "id": "med16",
+        "titre": "Découverte de la pénicilline par Fleming",
+        "axe": "Techniques et traitements",
+        "date": 1928
+      },
+      {
+        "id": "med235",
+        "titre": "Travaux de Hans Berger sur l'EEG",
+        "axe": "Techniques et traitements",
+        "date": 1929
+      },
+      {
+        "id": "med236",
+        "titre": "Isolement des hormones œstrogènes",
+        "axe": "Savoirs médicaux",
+        "date": 1929
+      },
+      {
+        "id": "med237",
+        "titre": "Premier prototype de microscope électronique",
+        "axe": "Techniques et traitements",
+        "date": 1931
+      },
+      {
+        "id": "med238",
+        "titre": "Découverte des propriétés antibactériennes du Prontosil",
+        "axe": "Techniques et traitements",
+        "date": 1932
+      },
+      {
+        "id": "med239",
+        "titre": "Isolement de la vitamine C",
+        "axe": "Techniques et traitements",
+        "date": 1932
+      },
+      {
+        "id": "med240",
+        "titre": "Première pneumonectomie réussie",
+        "axe": "Techniques et traitements",
+        "date": 1933
+      },
+      {
+        "id": "med241",
+        "titre": "Nobel pour traitement de l'anémie pernicieuse",
+        "axe": "Santé publique et institutions",
+        "date": 1934
+      },
+      {
+        "id": "med242",
+        "titre": "Commercialisation du Prontosil et des sulfamides",
+        "axe": "Techniques et traitements",
+        "date": 1935
+      },
+      {
+        "id": "med243",
+        "titre": "Vaccin contre la fièvre jaune",
+        "axe": "Techniques et traitements",
+        "date": 1937
+      },
+      {
+        "id": "med244",
+        "titre": "Première banque du sang hospitalière",
+        "axe": "Santé publique et institutions",
+        "date": 1937
+      },
+      {
+        "id": "med245",
+        "titre": "Invention de l'électroconvulsivothérapie",
+        "axe": "Techniques et traitements",
+        "date": 1938
+      },
+      {
+        "id": "med246",
+        "titre": "Première chirurgie réussie d'une cardiopathie congénitale",
+        "axe": "Techniques et traitements",
+        "date": 1938
+      },
+      {
+        "id": "med247",
+        "titre": "Isolement de la vitamine K",
+        "axe": "Techniques et traitements",
+        "date": 1939
+      },
+      {
+        "id": "med248",
+        "titre": "Découverte des propriétés insecticides du DDT",
+        "axe": "Santé publique et institutions",
+        "date": 1939
+      },
+      {
+        "id": "med249",
+        "titre": "Découverte du facteur Rhésus",
+        "axe": "Savoirs médicaux",
+        "date": 1940
+      },
+      {
+        "id": "med250",
+        "titre": "Purification de la pénicilline",
+        "axe": "Techniques et traitements",
+        "date": 1940
+      },
+      {
+        "id": "med251",
+        "titre": "Premier essai humain de la pénicilline",
+        "axe": "Techniques et traitements",
+        "date": 1941
+      },
+      {
+        "id": "med252",
+        "titre": "Isolement des hormones corticosurrénales",
+        "axe": "Techniques et traitements",
+        "date": 1942
+      },
+      {
+        "id": "med253",
+        "titre": "Découverte de la streptomycine",
+        "axe": "Techniques et traitements",
+        "date": 1943
+      },
+      {
+        "id": "med254",
+        "titre": "Création du premier rein artificiel",
+        "axe": "Techniques et traitements",
+        "date": 1943
+      },
+      {
+        "id": "med255",
+        "titre": "Publication du frottis de Papanicolaou",
+        "axe": "Techniques et traitements",
+        "date": 1943
+      },
+      {
+        "id": "med256",
+        "titre": "Opération Blalock-Taussig, chirurgie des «bébés bleus»",
+        "axe": "Techniques et traitements",
+        "date": 1944
+      },
+      {
+        "id": "med257",
+        "titre": "L'ADN identifié comme support de l'hérédité",
+        "axe": "Savoirs médicaux",
+        "date": 1944
+      },
+      {
+        "id": "med258",
+        "titre": "Première fluoration de l'eau potable",
+        "axe": "Santé publique et institutions",
+        "date": 1945
+      },
+      {
+        "id": "med259",
+        "titre": "Production industrielle massive de la pénicilline",
+        "axe": "Techniques et traitements",
+        "date": 1945
+      },
+      {
+        "id": "med260",
+        "titre": "Code de Nuremberg",
+        "axe": "Santé publique et institutions",
+        "date": 1947
+      },
+      {
+        "id": "med261",
+        "titre": "Création de l'Organisation mondiale de santé",
+        "axe": "Santé publique et institutions",
+        "date": 1948
+      },
+      {
+        "id": "med262",
+        "titre": "Lancement de l'étude de Framingham",
+        "axe": "Santé publique et institutions",
+        "date": 1948
+      },
+      {
+        "id": "med263",
+        "titre": "Nobel pour découverte de la cortisone",
+        "axe": "Santé publique et institutions",
+        "date": 1949
+      },
+      {
+        "id": "med264",
+        "titre": "Lien entre tabac et cancer pulmonaire",
+        "axe": "Santé publique et institutions",
+        "date": 1950
+      },
+      {
+        "id": "med265",
+        "titre": "La chlorpromazine, premier neuroleptique",
+        "axe": "Techniques et traitements",
+        "date": 1952
+      },
+      {
+        "id": "med266",
+        "titre": "Premier stimulateur cardiaque externe",
+        "axe": "Techniques et traitements",
+        "date": 1952
+      },
+      {
+        "id": "med17",
+        "titre": "Découverte de la double hélice d'ADN",
+        "axe": "Savoirs médicaux",
+        "date": 1953
+      },
+      {
+        "id": "med267",
+        "titre": "Première greffe rénale réussie entre jumeaux",
+        "axe": "Techniques et traitements",
+        "date": 1954
+      },
+      {
+        "id": "med268",
+        "titre": "Grand essai du vaccin Salk",
+        "axe": "Techniques et traitements",
+        "date": 1954
+      },
+      {
+        "id": "med269",
+        "titre": "Homologation du vaccin antipoliomyélitique de Salk",
+        "axe": "Techniques et traitements",
+        "date": 1955
+      },
+      {
+        "id": "med270",
+        "titre": "Premiers essais de la pilule contraceptive",
+        "axe": "Techniques et traitements",
+        "date": 1956
+      },
+      {
+        "id": "med271",
+        "titre": "Premiers essais du vaccin oral antipolio",
+        "axe": "Techniques et traitements",
+        "date": 1957
+      },
+      {
+        "id": "med272",
+        "titre": "Première échographie obstétricale",
+        "axe": "Techniques et traitements",
+        "date": 1958
+      },
+      {
+        "id": "med273",
+        "titre": "Premier stimulateur cardiaque implantable",
+        "axe": "Techniques et traitements",
+        "date": 1958
+      },
+      {
+        "id": "med274",
+        "titre": "Approbation de la pilule aux États-Unis",
+        "axe": "Techniques et traitements",
+        "date": 1960
+      },
+      {
+        "id": "med275",
+        "titre": "Codification moderne de la réanimation cardio-pulmonaire",
+        "axe": "Techniques et traitements",
+        "date": 1960
+      },
+      {
+        "id": "med276",
+        "titre": "Scandale sanitaire de la thalidomide",
+        "axe": "Santé publique et institutions",
+        "date": 1961
+      },
+      {
+        "id": "med277",
+        "titre": "Homologation américaine du vaccin Sabin",
+        "axe": "Techniques et traitements",
+        "date": 1962
+      },
+      {
+        "id": "med278",
+        "titre": "Première greffe de foie",
+        "axe": "Techniques et traitements",
+        "date": 1963
+      },
+      {
+        "id": "med279",
+        "titre": "Première greffe de poumon",
+        "axe": "Techniques et traitements",
+        "date": 1963
+      },
+      {
+        "id": "med280",
+        "titre": "Mise au point du vaccin antirougeoleux",
+        "axe": "Techniques et traitements",
+        "date": 1963
+      },
+      {
+        "id": "med281",
+        "titre": "Création de Medicare et Medicaid",
+        "axe": "Santé publique et institutions",
+        "date": 1965
+      },
+      {
+        "id": "med282",
+        "titre": "Première greffe de pancréas",
+        "axe": "Techniques et traitements",
+        "date": 1966
+      },
+      {
+        "id": "med18",
+        "titre": "Première greffe de cœur (Christiaan Barnard)",
+        "axe": "Techniques et traitements",
+        "date": 1967
+      },
+      {
+        "id": "med283",
+        "titre": "Première greffe de moelle osseuse réussie",
+        "axe": "Techniques et traitements",
+        "date": 1968
+      },
+      {
+        "id": "med284",
+        "titre": "Loi américaine contre le cancer",
+        "axe": "Santé publique et institutions",
+        "date": 1971
+      },
+      {
+        "id": "med285",
+        "titre": "Invention du scanner à rayons X",
+        "axe": "Techniques et traitements",
+        "date": 1972
+      },
+      {
+        "id": "med286",
+        "titre": "Premier brevet d'IRM médicale",
+        "axe": "Techniques et traitements",
+        "date": 1973
+      },
+      {
+        "id": "med287",
+        "titre": "Lancement du Programme élargi de vaccination",
+        "axe": "Santé publique et institutions",
+        "date": 1974
+      },
+      {
+        "id": "med288",
+        "titre": "Mise au point des anticorps monoclonaux",
+        "axe": "Techniques et traitements",
+        "date": 1975
+      },
+      {
+        "id": "med289",
+        "titre": "Première image du corps par IRM",
+        "axe": "Techniques et traitements",
+        "date": 1977
+      },
+      {
+        "id": "med290",
+        "titre": "Dernier cas naturel de variole",
+        "axe": "Santé publique et institutions",
+        "date": 1977
+      },
+      {
+        "id": "med291",
+        "titre": "Publication du séquençage de l'ADN",
+        "axe": "Savoirs médicaux",
+        "date": 1977
+      },
+      {
+        "id": "med292",
+        "titre": "Naissance du premier bébé-éprouvette",
+        "axe": "Techniques et traitements",
+        "date": 1978
+      },
+      {
+        "id": "med19",
+        "titre": "Éradication mondiale de la variole",
+        "axe": "Santé publique et institutions",
+        "date": 1980
+      },
+      {
+        "id": "med293",
+        "titre": "Premiers cas cliniques de sida identifiés",
+        "axe": "Santé publique et institutions",
+        "date": 1981
+      },
+      {
+        "id": "med294",
+        "titre": "Premier cœur artificiel permanent implanté",
+        "axe": "Techniques et traitements",
+        "date": 1982
+      },
+      {
+        "id": "med295",
+        "titre": "Commercialisation de l'insuline humaine recombinante",
+        "axe": "Techniques et traitements",
+        "date": 1982
+      },
+      {
+        "id": "med296",
+        "titre": "Découverte du VIH",
+        "axe": "Savoirs médicaux",
+        "date": 1983
+      },
+      {
+        "id": "med297",
+        "titre": "Premier test de dépistage du VIH",
+        "axe": "Techniques et traitements",
+        "date": 1985
+      },
+      {
+        "id": "med298",
+        "titre": "Premier traitement antirétroviral contre le sida",
+        "axe": "Techniques et traitements",
+        "date": 1986
+      },
+      {
+        "id": "med299",
+        "titre": "Premier vaccin recombinant contre l'hépatite B",
+        "axe": "Techniques et traitements",
+        "date": 1986
+      },
+      {
+        "id": "med300",
+        "titre": "Première cholécystectomie par cœlioscopie",
+        "axe": "Techniques et traitements",
+        "date": 1987
+      },
+      {
+        "id": "med301",
+        "titre": "Initiative mondiale d'éradication de la polio",
+        "axe": "Santé publique et institutions",
+        "date": 1988
+      },
+      {
+        "id": "med302",
+        "titre": "Lancement officiel du Projet Génome humain",
+        "axe": "Savoirs médicaux",
+        "date": 1990
+      },
+      {
+        "id": "med303",
+        "titre": "Première thérapie génique réussie chez l'humain",
+        "axe": "Techniques et traitements",
+        "date": 1990
+      },
+      {
+        "id": "med304",
+        "titre": "Mise au point de l'ICSI",
+        "axe": "Techniques et traitements",
+        "date": 1992
+      },
+      {
+        "id": "med305",
+        "titre": "Nobel pour l'invention de la PCR",
+        "axe": "Santé publique et institutions",
+        "date": 1993
+      },
+      {
+        "id": "med306",
+        "titre": "Découverte du gène BRCA1",
+        "axe": "Savoirs médicaux",
+        "date": 1994
+      },
+      {
+        "id": "med307",
+        "titre": "Trithérapie généralisée contre le sida",
+        "axe": "Techniques et traitements",
+        "date": 1996
+      },
+      {
+        "id": "med308",
+        "titre": "Clonage de la brebis Dolly",
+        "axe": "Savoirs médicaux",
+        "date": 1996
+      },
+      {
+        "id": "med309",
+        "titre": "Approbation du Viagra",
+        "axe": "Techniques et traitements",
+        "date": 1998
+      },
+      {
+        "id": "med310",
+        "titre": "Séquençage complet du génome d'un animal",
+        "axe": "Savoirs médicaux",
+        "date": 1998
+      },
+      {
+        "id": "med311",
+        "titre": "Décès de Jesse Gelsinger",
+        "axe": "Santé publique et institutions",
+        "date": 1999
+      },
+      {
+        "id": "med312",
+        "titre": "Approbation du système chirurgical Da Vinci",
+        "axe": "Techniques et traitements",
+        "date": 2000
+      },
+      {
+        "id": "med313",
+        "titre": "Première télé-chirurgie transatlantique",
+        "axe": "Techniques et traitements",
+        "date": 2001
+      },
+      {
+        "id": "med314",
+        "titre": "Achèvement du séquençage du génome humain",
+        "axe": "Savoirs médicaux",
+        "date": 2003
+      },
+      {
+        "id": "med315",
+        "titre": "Épidémie de SRAS",
+        "axe": "Santé publique et institutions",
+        "date": 2003
+      },
+      {
+        "id": "med316",
+        "titre": "Première greffe partielle du visage",
+        "axe": "Techniques et traitements",
+        "date": 2005
+      },
+      {
+        "id": "med317",
+        "titre": "Premier vaccin approuvé contre le papillomavirus",
+        "axe": "Techniques et traitements",
+        "date": 2006
+      },
+      {
+        "id": "med318",
+        "titre": "Découverte des cellules souches pluripotentes induites",
+        "axe": "Savoirs médicaux",
+        "date": 2006
+      },
+      {
+        "id": "med319",
+        "titre": "Mise au point des organoïdes intestinaux",
+        "axe": "Savoirs médicaux",
+        "date": 2009
+      },
+      {
+        "id": "med320",
+        "titre": "Pandémie de grippe A(H1N1)",
+        "axe": "Santé publique et institutions",
+        "date": 2009
+      },
+      {
+        "id": "med321",
+        "titre": "Première greffe totale du visage",
+        "axe": "Techniques et traitements",
+        "date": 2010
+      },
+      {
+        "id": "med322",
+        "titre": "Nobel pour la fécondation in vitro",
+        "axe": "Santé publique et institutions",
+        "date": 2010
+      },
+      {
+        "id": "med323",
+        "titre": "Découverte de l'édition génomique CRISPR-Cas9",
+        "axe": "Savoirs médicaux",
+        "date": 2012
+      },
+      {
+        "id": "med324",
+        "titre": "Identification du coronavirus MERS-CoV",
+        "axe": "Savoirs médicaux",
+        "date": 2012
+      },
+      {
+        "id": "med325",
+        "titre": "Épidémie d'Ebola en Afrique de l'Ouest",
+        "axe": "Santé publique et institutions",
+        "date": 2014
+      },
+      {
+        "id": "med326",
+        "titre": "Nobel pour la découverte de l'artémisinine",
+        "axe": "Santé publique et institutions",
+        "date": 2015
+      },
+      {
+        "id": "med327",
+        "titre": "Approbation du premier virus oncolytique",
+        "axe": "Techniques et traitements",
+        "date": 2015
+      },
+      {
+        "id": "med328",
+        "titre": "Urgence sanitaire mondiale liée à Zika",
+        "axe": "Santé publique et institutions",
+        "date": 2016
+      },
+      {
+        "id": "med329",
+        "titre": "Première thérapie CAR-T approuvée",
+        "axe": "Techniques et traitements",
+        "date": 2017
+      },
+      {
+        "id": "med330",
+        "titre": "Premier diagnostic par IA autorisé",
+        "axe": "Techniques et traitements",
+        "date": 2018
+      },
+      {
+        "id": "med331",
+        "titre": "Nobel pour l'immunothérapie du cancer",
+        "axe": "Santé publique et institutions",
+        "date": 2018
+      },
+      {
+        "id": "med332",
+        "titre": "Bébés génétiquement modifiés en Chine",
+        "axe": "Santé publique et institutions",
+        "date": 2018
+      },
+      {
+        "id": "med333",
+        "titre": "Premier cœur imprimé en 3D",
+        "axe": "Techniques et traitements",
+        "date": 2019
+      },
+      {
+        "id": "med334",
+        "titre": "Émergence du SARS-CoV-2",
+        "axe": "Santé publique et institutions",
+        "date": 2019
+      },
+      {
+        "id": "med20",
+        "titre": "Premiers vaccins à ARN messager (Covid-19)",
+        "axe": "Techniques et traitements",
+        "date": 2020
+      },
+      {
+        "id": "med335",
+        "titre": "Séquençage mondial du génome SARS-CoV-2",
+        "axe": "Savoirs médicaux",
+        "date": 2020
+      },
+      {
+        "id": "med336",
+        "titre": "L'OMS déclare la pandémie de Covid-19",
+        "axe": "Santé publique et institutions",
+        "date": 2020
+      },
+      {
+        "id": "med337",
+        "titre": "Confinements généralisés face au Covid-19",
+        "axe": "Santé publique et institutions",
+        "date": 2020
+      },
+      {
+        "id": "med338",
+        "titre": "Nobel pour l'édition génomique CRISPR-Cas9",
+        "axe": "Santé publique et institutions",
+        "date": 2020
+      },
+      {
+        "id": "med339",
+        "titre": "Essor mondial de la télémédecine",
+        "axe": "Santé publique et institutions",
+        "date": 2020
+      },
+      {
+        "id": "med340",
+        "titre": "Vaccination mondiale contre la Covid-19",
+        "axe": "Santé publique et institutions",
+        "date": 2021
+      },
+      {
+        "id": "med341",
+        "titre": "Nobel pour les récepteurs de température",
+        "axe": "Santé publique et institutions",
+        "date": 2021
+      },
+      {
+        "id": "med342",
+        "titre": "Approbation du Wegovy contre l'obésité",
+        "axe": "Techniques et traitements",
+        "date": 2021
+      },
+      {
+        "id": "med343",
+        "titre": "Émergence du variant Delta",
+        "axe": "Santé publique et institutions",
+        "date": 2021
+      },
+      {
+        "id": "med344",
+        "titre": "Émergence du variant Omicron",
+        "axe": "Santé publique et institutions",
+        "date": 2021
+      },
+      {
+        "id": "med345",
+        "titre": "Première greffe de cœur porcin modifié",
+        "axe": "Techniques et traitements",
+        "date": 2022
+      },
+      {
+        "id": "med346",
+        "titre": "Fin d'urgence sanitaire liée au Covid-19",
+        "axe": "Santé publique et institutions",
+        "date": 2023
+      },
+      {
+        "id": "med347",
+        "titre": "Première thérapie génique CRISPR approuvée",
+        "axe": "Techniques et traitements",
+        "date": 2023
+      },
+      {
+        "id": "med348",
+        "titre": "Première greffe de rein porcin vivant",
+        "axe": "Techniques et traitements",
+        "date": 2024
+      },
+      {
+        "id": "med349",
+        "titre": "Premier implant cérébral Neuralink chez l'humain",
+        "axe": "Techniques et traitements",
+        "date": 2024
+      },
+      {
+        "id": "med350",
+        "titre": "Urgence sanitaire mondiale liée au mpox",
+        "axe": "Santé publique et institutions",
+        "date": 2024
+      }
+    ]
+  }
+]
