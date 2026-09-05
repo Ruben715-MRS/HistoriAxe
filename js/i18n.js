@@ -121,12 +121,12 @@ class I18nManager {
             } catch (err) {
                 console.error('Could not fetch data/' + lang + '.json:', err);
             }
-            
+
             if (typeof ensureCustomCategoryInBdd === 'function') ensureCustomCategoryInBdd();
             else if (typeof bdd !== 'undefined') bdd = window.bdd;
-            
+
             this.currentLang = lang;
-            try { localStorage.setItem(LANG_KEY, lang); } catch(e) {}
+            try { localStorage.setItem(LANG_KEY, lang); } catch (e) { }
             document.documentElement.lang = lang;
 
             this.applyTranslations();
@@ -136,7 +136,7 @@ class I18nManager {
                 if (appTitle && appTitle !== 'app.title') {
                     document.title = appSubtitle && appSubtitle !== 'app.subtitle' ? `${appTitle} - ${appSubtitle}` : appTitle;
                 }
-            } catch (e) {}
+            } catch (e) { }
             if (typeof initCategories === 'function') initCategories();
             if (typeof updateHeaderProfileBar === 'function') updateHeaderProfileBar();
             if (typeof renderSettingsUI === 'function') renderSettingsUI();
@@ -336,11 +336,11 @@ class I18nManager {
             card.innerHTML = '<div class="lang-pack-left">' +
                 '<span class="lang-pack-flag">' + langItem.flag + '</span>' +
                 '<div class="lang-pack-info">' +
-                    '<div class="lang-pack-name">' + langItem.name + ' ' + statusBadge + '</div>' +
-                    '<div class="lang-pack-details">' + this.packSizeLabel(langItem) + ' • v' + langItem.version + '</div>' +
+                '<div class="lang-pack-name">' + langItem.name + ' ' + statusBadge + '</div>' +
+                '<div class="lang-pack-details">' + this.packSizeLabel(langItem) + ' • v' + langItem.version + '</div>' +
                 '</div>' +
-            '</div>' +
-            '<div class="lang-pack-actions">' + actionBtns + '</div>';
+                '</div>' +
+                '<div class="lang-pack-actions">' + actionBtns + '</div>';
 
             container.appendChild(card);
         });
