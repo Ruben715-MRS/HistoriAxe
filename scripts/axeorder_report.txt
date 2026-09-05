@@ -1,0 +1,770 @@
+﻿=== Themes WITH axeOrder defined ===
+  [ 70] Explorations et Grandes D├®couvertes
+       axeOrder: ['Antiquit├® et p├®riples m├®di├®vaux', "L'├ége des Grandes D├®couvertes maritimes (XVe-XVIe s.)", 'Explorations scientifiques et cartographie des Lumi├¿res (XVIIe-XVIIIe s.)', 'P├®n├®tration des continents et int├®rieurs terrestres (XIXe s.)', 'Explorations polaires, abyssales et des cimes (XXe-XXIe s.)', 'Antiquit├® et Moyen ├ége : Premiers horizons', 'Grandes d├®couvertes : Les routes maritimes mondiales (XVe-XVIe)', 'Le temps des cartographes et des naturalistes (XVIIe-XVIIIe)', "L'exploration des continents et des c┼ôurs de terre (XIXe)"]
+  [ 70] M├®dias, presse et t├®l├®communications
+       axeOrder: ["De l'imprimerie aux premiers p├®riodiques (XVe-XVIIIe s.)", "L'essor de la presse de masse et du t├®l├®graphe (XIXe s.)", "L'├óge d'or de la radio, du cin├®ma d'actualit├® et du t├®l├®phone (1900-1945)", 'Le r├¿gne de la t├®l├®vision et des t├®l├®communications satellitaires (1945-1990)', "L'├¿re num├®rique, r├®seau mondial et information en continu (depuis 1990)"]
+  [120] Histoire de la Musique
+       axeOrder: ['Musiques antiques et m├®di├®vales', 'Renaissance et musique baroque', 'Classicisme et romantisme', 'Modernit├® musicale (1900-1945)', 'Jazz, chanson et musiques populaires (1945-1980)', 'Rock, musiques ├®lectroniques et hip-hop (depuis 1980)']
+  [100] Histoire du Cin├®ma
+       axeOrder: ["Les pr├®curseurs et la naissance du cin├®ma (jusqu'├á 1918)", 'Cin├®ma muet, avant-gardes et av├¿nement du parlant (1919-1945)', "├ége d'or hollywoodien et nouvelles cin├®matographies (1945-1967)", 'Nouvel Hollywood et cin├®mas du monde (1968-1999)', 'Cin├®ma num├®rique et mondialisation (depuis 2000)']
+  [175] Merveilles et monuments
+       axeOrder: ['Europe', 'Moyen-Orient et Afrique du Nord', 'Asie', 'Afrique subsaharienne', 'Am├®rique du Nord', 'Am├®rique latine et Cara├»bes', 'Oc├®anie et Pacifique']
+  [ 70] Histoire des Jeux Vid├®o
+       axeOrder: ["Pionniers de laboratoire et ├¿re de l'arcade (1958-1982)", 'Renaissance des consoles et ├¿re 8/16-bits (1983-1993)', 'R├®volution 3D et av├¿nement du CD-ROM (1993-2000)', 'Jeux en ligne, mondes ouverts et 7e/8e g├®n├®rations (2001-2015)', '├êre contemporaine, plateformes hybrides et esport (depuis 2016)']
+  [ 70] Architecture et Urbanisme
+       axeOrder: ['Antiquit├® et monumentalit├® classique', 'Moyen ├ége : ├ëclosion romane et splendeurs gothiques', 'Renaissance, classicisme et faste baroque', 'R├®volution industrielle, fer et haussmannisation (XIXe s.)', 'Modernisme, Bauhaus, Art D├®co et gratte-ciels (1900-1960)', 'Architecture contemporaine, d├®constructivisme et urbanisme durable (depuis 1960)']
+  [ 70] Dates clefs du Sport
+       axeOrder: ['Origines et institutions sportives', 'Grands exploits et records l├®gendaires', "Confrontations et finales d'anthologie", 'Sport, politique et luttes soci├®tales', 'Pionni├¿res et ├®mancipation f├®minine']
+  [ 70] Histoire des Femmes et pionni├¿res
+       axeOrder: ['Droits civiques, politiques et suffragisme', 'Sciences, m├®decine et d├®couvertes', 'Souveraines, dirigeantes et strat├¿ges', 'Arts, litt├®rature et pens├®e philosophique', '├ëmancipation sociale, justice et luttes contemporaines']
+  [ 70] Grandes batailles de l'Histoire
+       axeOrder: ["Batailles de l'Antiquit├®", 'Conflits du Moyen ├ége', "Guerres de l'├ëpoque moderne (XVIe-XVIIIe s.)", 'Guerres napol├®oniennes et conflits du XIXe si├¿cle', 'Guerres mondiales et tournants du XXe si├¿cle']
+  [ 70] Grands trait├®s et paix de l'Histoire
+       axeOrder: ["Trait├®s de l'Antiquit├® et du Moyen ├ége", '├ëquilibre europ├®en et diplomatie moderne (XVIe-XVIIIe s.)', 'Concerts des nations et partages coloniaux (XIXe s.)', 'R├¿glements des guerres mondiales (1914-1945)', 'Guerre froide, construction europ├®enne et trait├®s mondiaux (depuis 1945)']
+  [ 70] Histoire des Id├®es et Philosophie
+       axeOrder: ['Philosophie antique et sagesses fondamentales', 'Pens├®e m├®di├®vale, scolastique et humanisme de la Renaissance', "L'├ége classique, rationalisme et philosophie politique moderne", 'Le si├¿cle des Lumi├¿res, contractualisme et id├®alisme allemand', 'Le XIXe si├¿cle : Marxisme, positivisme, utilitarisme et nihilisme', 'Le XXe-XXIe si├¿cle : Ph├®nom├®nologie, existentialisme et pens├®e contemporaine']
+  [ 70] Gastronomie, mode et art de vivre
+       axeOrder: ['Banquets antiques et usages de table gr├®co-romains', "├ëpices d'Orient, festins m├®di├®vaux et premi├¿res r├¿gles de cour", 'Renaissance et Grand Si├¿cle : Du faste royal ├á la haute cuisine fran├ºaise', 'Le XIXe si├¿cle : Naissance du restaurant, grands chefs et haute couture', 'Le XXe-XXIe si├¿cle : R├®volution du pr├¬t-├á-porter, Nouvelle Cuisine et patrimoine mondial']
+  [ 12] Ashoka le Grand (ÓñàÓñÂÓÑïÓñò)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 21] Qin Shi Huang (þºªÕºïþÜç)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 22] Jules C├®sar
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 20] Cl├®op├ótre VII (╬Ü╬╗╬Á╬┐¤Ç╬¼¤ä¤ü╬▒)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Justinien Ier (ß╝©╬┐¤à¤â¤ä╬╣╬¢╬╣╬▒╬¢¤î¤é)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Wu Zetian (µ¡ªÕëçÕñ®)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Charlemagne
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Harun al-Rashid (┘çÏºÏ▒┘ê┘å Ïº┘äÏ▒Ï┤┘èÏ»)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Mansa Moussa
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Isabelle Ire de Castille
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Henri VIII
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Fran├ºois Ier
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Soliman le Magnifique (Ï│┘ä┘è┘àÏº┘å Ïº┘ä┘éÏº┘å┘ê┘å┘è)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 17] ├ëlisabeth Ire d'Angleterre
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 19] Akbar le Grand (Ïº┌®Ï¿Ï▒)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 21] Louis XIV
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Pierre le Grand (ðƒÐæÐéÐÇ ðÆðÁð╗ð©ð║ð©ð╣)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 20] Catherine II de Russie (ðòð║ð░ÐéðÁÐÇð©ð¢ð░ II)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 17] George Washington
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 20] Abraham Lincoln
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 19] Reine Victoria
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 17] Porfirio D├¡az
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 17] L├®opold II de Belgique
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 17] Franklin D. Roosevelt
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 21] Charles de Gaulle
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 17] Robert Menzies
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 16] Juan Domingo Per├│n
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 17] Pierre Elliott Trudeau
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Elizabeth II
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 14] Micheline Calmy-Rey
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 19] Sun Tzu (Õ¡½Õ¡É)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 21] Alexandre le Grand (ß╝ê╬╗╬¡╬¥╬▒╬¢╬┤¤ü╬┐¤é)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 20] Hannibal Barca
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Scipion l'Africain
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Vercing├®torix
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Zhuge Liang (Þ½©Þæøõ║«)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Khalid ibn al-Walid (Ï«Ïº┘äÏ» Ï¿┘å Ïº┘ä┘ê┘ä┘èÏ»)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] El Cid Campeador
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Saladin (ÏÁ┘äÏºÏ¡ Ïº┘äÏ»┘è┘å)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Gengis Khan (ðºð©ð¢ð│ð©ÐüÐàð░ð░ð¢)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Soubota├» (ðíÊ»ð▒Ðìð┤Ðìð╣)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Jeanne d'Arc
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Miyamoto Musashi (Õ««µ£¼µ¡ªÞöÁ)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 19] Toussaint Louverture
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Mikha├»l Koutouzov (ð£ð©Ðàð░ð©ð╗ ðÜÐâÐéÐâðÀð¥ð▓)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Horatio Nelson
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 24] Napol├®on Bonaparte
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Duc de Wellington
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Jos├® de San Mart├¡n
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 21] Sim├│n Bol├¡var
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Guillaume-Henri Dufour
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Ulysses S. Grant
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] G├®rard Leman
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] John Monash
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Arthur Currie
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Emiliano Zapata
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] George S. Patton
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Dwight D. Eisenhower
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Erwin Rommel
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 20] Gueorgui Joukov (ðôðÁð¥ÐÇð│ð©ð╣ ðûÐâð║ð¥ð▓)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] T├║pac Amaru II
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Olympe de Gouges
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] William Wilberforce
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Frederick Douglass
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Susan B. Anthony
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Harriet Tubman
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Henry Dunant
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Sitting Bull
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Emmeline Pankhurst
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Mahatma Gandhi (Óñ«ÓÑïÓñ╣Óñ¿ÓñªÓñ¥Óñ© ÓñòÓñ░Óñ«ÓñÜÓñéÓñª ÓñùÓñ¥ÓñéÓñºÓÑÇ)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Dolores Ib├írruri
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Jean Moulin
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Tommy Douglas
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Rosa Parks
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Andr├®e De Jongh
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 20] Nelson Mandela
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Sophie Scholl
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Simone Veil
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Che Guevara
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Martin Luther King
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Desmond Tutu
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Eddie Mabo
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] V├íclav Havel
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Wangari Maathai
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Lech Wa┼é─Ösa
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Steve Biko
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Liu Xiaobo (ÕêÿµÖôµ│ó)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Rigoberta Mench├║
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Tawakkol Karman (Ï¬┘ê┘â┘ä ┘âÏ▒┘àÏº┘å)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Malala Yousafzai (┘à┘äÏº┘ä┘ç █î┘êÏ│┘üÏ▓█ì)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Mo├»se (Î×Î®Îö)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Zoroastre (Ï▓Ï▒Ï¬Ï┤Ï¬)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Laozi (ÞÇüÕ¡É)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 19] Siddhartha Gautama (Bouddha) (Óñ©Óñ┐ÓñªÓÑìÓñºÓñ¥Óñ░ÓÑìÓñÑ ÓñùÓÑîÓññÓñ«)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 19] J├®sus de Nazareth (ÎÖÎ®ÎòÎó)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 20] Mahomet (┘àÏ¡┘àÏ»)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Rabia al-Adawiyya (Ï▒ÏºÏ¿Ï╣Ï® Ïº┘äÏ╣Ï»┘ê┘èÏ®)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Adi Shankara (ÓñåÓñªÓñ┐ ÓñÂÓñéÓñòÓñ░)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Thomas Becket
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Ma├»monide (Î×Î®Îö ÎæÎƒ Î×ÎÖÎ×ÎòÎƒ)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Fran├ºois d'Assise
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Thomas d'Aquin
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Guru Nanak (Ó¿ùÓ®üÓ¿░Ó®é Ó¿¿Ó¿¥Ó¿¿Ó¿ò)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 19] Martin Luther
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Ignace de Loyola
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Jean Calvin
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Rose de Lima
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Kateri Tekakwitha
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Guru Gobind Singh (Ó¿ùÓ®üÓ¿░Ó®é Ó¿ùÓ®ïÓ¿¼Ó¿┐Ó®░Ó¿ª Ó¿©Ó¿┐Ó®░Ó¿ÿ)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] John Wesley
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] F├®lix Neff
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Joseph Smith
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Bah├í'u'll├íh (Ï¿┘çÏºÏíÏº┘ä┘ä┘ç)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Damien de Veuster
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Mary MacKillop
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Th├®r├¿se de Lisieux
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] M├¿re Teresa
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] ├ôscar Romero
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Billy Graham
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Dala├»-Lama (Ó¢ûÓ¢ªÓ¥ƒÓ¢ôÓ╝ïÓ¢áÓ¢øÓ¢▓Ó¢ôÓ╝ïÓ¢óÓ¥ÆÓ¥▒Ó╝ïÓ¢ÿÓ¢ÜÓ¢╝)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Confucius (Õ¡öÕ¡É)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Socrate (╬ú¤ë╬║¤ü╬¼¤ä╬À¤é)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Platon (╬á╬╗╬¼¤ä¤ë╬¢)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Aristote (ß╝ê¤ü╬╣¤â¤ä╬┐¤ä╬¡╬╗╬À¤é)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Mencius (Õ¡ƒÕ¡É)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Zhuangzi (ÞÄèÕ¡É)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Avicenne (ÏºÏ¿┘å Ï│┘è┘åÏº)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Averro├¿s (ÏºÏ¿┘å Ï▒Ï┤Ï»)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Ibn Khaldun (ÏºÏ¿┘å Ï«┘äÏ»┘ê┘å)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Michel de Montaigne
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Ren├® Descartes
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] John Locke
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Baruch Spinoza
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Voltaire
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Jean-Jacques Rousseau
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Emmanuel Kant
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Georg Wilhelm Friedrich Hegel
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Ralph Waldo Emerson
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] John Stuart Mill
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 19] Karl Marx
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Friedrich Nietzsche
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Jos├® Vasconcelos
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Jos├® Ortega y Gasset
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Jean-Paul Sartre
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Simone de Beauvoir
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Cha├»m Perelman
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Octavio Paz
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] John Rawls
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Charles Taylor
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Peter Singer
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Archim├¿de (ß╝ê¤ü¤ç╬╣╬╝╬«╬┤╬À¤é)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Zhang Heng (Õ╝ÁÞíí)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Al-Khwarizmi (Ïº┘äÏ«┘êÏºÏ▒Ï▓┘à┘è)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Ibn al-Haytham (ÏºÏ¿┘å Ïº┘ä┘ç┘èÏ½┘à)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Galil├®e
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Isaac Newton
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Benjamin Franklin
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Horace-B├®n├®dict de Saussure
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Antoine Lavoisier
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Michael Faraday
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Charles Darwin
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Ada Lovelace
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Louis Pasteur
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Gregor Mendel
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] James Clerk Maxwell
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Dmitri Mendele├»ev (ðöð╝ð©ÐéÐÇð©ð╣ ð£ðÁð¢ð┤ðÁð╗ðÁðÁð▓)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Santiago Ram├│n y Cajal
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Nikola Tesla (ðØð©ð║ð¥ð╗ð░ ðóðÁÐüð╗ð░)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Marie Curie
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Albert Einstein
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Bernardo Houssay
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Frederick Banting
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Georges Lema├«tre
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Howard Florey
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Alan Turing
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Richard Feynman
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Rosalind Franklin
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Tu Youyou (Õ▒áÕæªÕæª)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Stephen Hawking
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Mario Molina
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Hom├¿re (ß¢ì╬╝╬À¤ü╬┐¤é)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Murasaki Shikibu (þ┤½Õ╝ÅÚâ¿)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] R├╗m├« (Ï¼┘äÏº┘äÔÇîÏº┘äÏ»█î┘å ┘àÏ¡┘àÏ» Ï▒┘ê┘à█î)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Dante Alighieri
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Miguel de Cervant├¿s
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] William Shakespeare
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Moli├¿re
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Johann Wolfgang von Goethe
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Jane Austen
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Victor Hugo
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Charles Dickens
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Fiodor Dosto├»evski (ðñÐæð┤ð¥ÐÇ ðöð¥ÐüÐéð¥ðÁð▓Ðüð║ð©ð╣)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] L├®on Tolsto├» (ðøðÁð▓ ðóð¥ð╗ÐüÐéð¥ð╣)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Mark Twain
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Rabindranath Tagore (Óª░Óª¼ÓºÇÓª¿ÓºìÓªªÓºìÓª░Óª¿Óª¥ÓªÑ ÓªáÓª¥ÓªòÓºüÓª░)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Marcel Proust
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Charles Ferdinand Ramuz
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Lu Xun (Ú▓üÞ┐à)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Virginia Woolf
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Franz Kafka
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Jorge Luis Borges
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Georges Simenon
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Pablo Neruda
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Naguib Mahfouz (┘åÏ¼┘èÏ¿ ┘àÏ¡┘ü┘êÏ©)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Patrick White
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Albert Camus
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Gabriel Garc├¡a M├írquez
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Chinua Achebe
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Toni Morrison
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Margaret Atwood
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Johann Sebastian Bach
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Wolfgang Amadeus Mozart
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Ludwig van Beethoven
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Ernest Ansermet
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Charlie Chaplin
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Carlos Gardel
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Oum Kalthoum (Ïú┘à ┘â┘äÏ½┘ê┘à)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Louis Armstrong
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Josephine Baker
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] ├ëdith Piaf
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Frank Sinatra
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Ravi Shankar (Óñ░ÓñÁÓñ┐ ÓñÂÓñéÓñòÓñ░)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Maria Callas (╬£╬▒¤ü╬»╬▒ ╬Ü╬¼╬╗╬╗╬▒¤é)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Marlon Brando
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Celia Cruz
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Marilyn Monroe
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Serge Gainsbourg
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Jacques Brel
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Fairuz (┘ü┘èÏ▒┘êÏ▓)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Elvis Presley
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Fela Kuti
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] John Lennon
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Bruce Lee (µØÄÕ░ÅÚ¥ì)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Pl├ícido Domingo
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Bob Marley
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Freddie Mercury
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] David Bowie
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Michael Jackson
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Nicole Kidman
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] C├®line Dion
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Imhotep
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Filippo Brunelleschi
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] L├®onard de Vinci
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Mimar Sinan (┘àÏ╣┘àÏºÏ▒ Ï│┘åÏº┘å)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Andrea Palladio
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Christopher Wren
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Ferdinand de Lesseps
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Isambard Kingdom Brunel
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Georges-Eug├¿ne Haussmann
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Gustave Eiffel
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Antoni Gaud├¡
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Victor Horta
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Frank Lloyd Wright
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Walter Gropius
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Le Corbusier
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Buckminster Fuller
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Hassan Fathy (Ï¡Ï│┘å ┘üÏ¬Ï¡┘è)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Luis Barrag├ín
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Oscar Niemeyer
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] I. M. Pei (Þ▓ØÞü┐Úèÿ)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Clorindo Testa
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Frank Gehry
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Norman Foster
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Glenn Murcutt
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Renzo Piano
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Tadao Ando (Õ«ëÞùñÕ┐áÚøä)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Bernard Tschumi
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Zaha Hadid (Ï▓┘çÏº Ï¡Ï»┘èÏ»)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Santiago Calatrava
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Wang Shu (þÄïµ¥ì)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Xuanzang (þÄäÕÑÿ)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Ahmad Ibn Fadl├ón (ÏúÏ¡┘àÏ» Ï¿┘å ┘üÏÂ┘äÏº┘å)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Marco Polo
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Ibn Batt├╗ta (ÏºÏ¿┘å Ï¿ÏÀ┘êÏÀÏ®)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Zheng He (Úä¡ÕÆî)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Ahmad ibn Majid (ÏúÏ¡┘àÏ» Ï¿┘å ┘àÏºÏ¼Ï»)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Christophe Colomb
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Amerigo Vespucci
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Vasco de Gama
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Vasco N├║├▒ez de Balboa
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Fernand de Magellan
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] James Cook
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Alexander Mackenzie
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Meriwether Lewis
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] David Livingstone
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Robert O'Hara Burke
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Henry Morton Stanley
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Fridtjof Nansen
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Adrien de Gerlache
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Alexandra David-N├®el
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Ynes Mex├¡a
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Roald Amundsen
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Ernest Shackleton
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Jacques-Yves Cousteau
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Thor Heyerdahl
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Neil Armstrong
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Youri Gagarine (ð«ÐÇð©ð╣ ðôð░ð│ð░ÐÇð©ð¢)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Valentina Terechkova (ðÆð░ð╗ðÁð¢Ðéð©ð¢ð░ ðóðÁÐÇðÁÐêð║ð¥ð▓ð░)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Franklin Chang-D├¡az
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Bertrand Piccard
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Jakob Fugger
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Josiah Wedgwood
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Alfred Nobel
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Andrew Carnegie
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] J.P. Morgan
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Ernest Solvay
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] John D. Rockefeller
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Thomas Edison
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] C├®sar Ritz
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Henry Ford
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Madam C.J. Walker
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Coco Chanel
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Walt Disney
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Aristote Onassis (╬æ¤ü╬╣¤â¤ä╬┐¤ä╬¡╬╗╬À¤é ╬®╬¢╬¼¤â╬À¤é)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Joseph-Armand Bombardier
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Akio Morita (þøøþö░µÿ¡Õñ½)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Ingvar Kamprad
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Rupert Murdoch
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Roberto Goizueta
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Amancio Ortega
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Carlos Slim
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Bernard Arnault
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Richard Branson
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Oprah Winfrey
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Naguib Sawiris (┘åÏ¼┘èÏ¿ Ï│Ïº┘ê┘èÏ▒Ï│)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Steve Jobs
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Bill Gates
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Jack Ma (Ú®¼õ║æ)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Jeff Bezos
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Elon Musk
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Babe Ruth
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Jesse Owens
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Jackie Robinson
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Roger Bannister
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Roberto Clemente
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Pel├®
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Wilma Rudolph
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Mohamed Ali
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Eddy Merckx
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Martina Navratilova
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Ayrton Senna
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Diego Maradona
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Wayne Gretzky
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Nadia Com─âneci
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Michael Jordan
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Zin├®dine Zidane
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Cathy Freeman
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Hicham El Guerrouj (┘çÏ┤Ïº┘à Ïº┘ä┘âÏ▒┘êÏ¼)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] David Beckham
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Kobe Bryant
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Pau Gasol
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Yao Ming (ÕºÜµÿÄ)
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Serena Williams
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Roger Federer
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Eliud Kipchoge
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Michael Phelps
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Rafael Nadal
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 18] Usain Bolt
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Lionel Messi
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 12] Simone Biles
+       axeOrder: ['Enfance et formation', 'D├®but de carri├¿re et ascension', 'Apog├®e et r├┤le majeur', 'D├®clin et fin de carri├¿re', 'Mort et post├®rit├®']
+  [ 52] Histoire de l'├ëgypte ­ƒç¬­ƒç¼
+       axeOrder: ["├ëgypte pharaonique et antique (jusqu'en 30 av. J.-C.)", '├ëpoques romaine, byzantine et califats (30 av. J.-C. ÔÇô 1517)', '├ëgypte ottomane et dynastie M├®h├®met Ali (1517ÔÇô1882)', 'Protectorat britannique et monarchie (1882ÔÇô1952)', 'R├®publique, nass├®risme et ├®poque contemporaine (depuis 1952)']
+  [ 52] Histoire de l'├ëtat d'Isra├½l ­ƒç«­ƒç▒
+       axeOrder: ["Origines antiques et Terre d'Isra├½l (jusqu'en 1897)", 'Mouvement sioniste et Mandat britannique (1897ÔÇô1948)', 'Fondation, guerres et construction nationale (1948ÔÇô1967)', 'Conflits r├®gionaux et processus de paix (1967ÔÇô1993)', "Accords d'Oslo et Isra├½l contemporain (depuis 1993)"]
+  [ 52] Histoire de la Turquie ­ƒç╣­ƒçÀ
+       axeOrder: ["Anatolie antique, Seldjoukides et origines (jusqu'en 1299)", "Fondation et expansion de l'Empire ottoman (1299ÔÇô1683)", "D├®clin, r├®formes des Tanzimat et fin de l'Empire (1683ÔÇô1923)", "R├®publique d'Atat├╝rk et modernisation (1923ÔÇô1980)", 'Turquie contemporaine et ├¿re Erdogan (depuis 1980)']
+  [ 50] Histoire de l'Australie ­ƒçª­ƒç║
+       axeOrder: ["Temps du R├¬ve et premiers contacts (jusqu'en 1788)", 'Colonisation p├®nitentiaire et explorations (1788ÔÇô1850)', "Ru├®e vers l'or et d├®mocratie coloniale (1850ÔÇô1901)", 'F├®d├®ration et guerres mondiales (1901ÔÇô1945)', "Australie d'apr├¿s-guerre et ├®poque contemporaine (depuis 1945)"]
+  [ 65] ├Äles du Pacifique ­ƒîÅ
+       axeOrder: ['M├®lan├®sie', 'Micron├®sie', 'Polyn├®sie']
+  [146] Histoire de la Rome antique ­ƒÅø´©Å
+       axeOrder: ['Rome royale (-753 ├á -509)', 'R├®publique moyenne et conqu├¬te de la M├®diterran├®e (-509 ├á -133)', 'R├®publique tardive et guerres civiles (-133 ├á -27)', "Le Haut-Empire romain : Du principat d'Auguste aux S├®v├¿res (-27 ├á 235)", "Le Bas-Empire romain et la chute de l'Occident (235 ├á 476)"]
+  [ 30] Classe de 6ßÁë
+       axeOrder: ["La longue histoire de l'humanit├® et des migrations", 'R├®cits fondateurs, croyances et citoyennet├® dans la M├®diterran├®e antique', "L'empire romain dans le monde antique"]
+  [ 36] Classe de 5ßÁë
+       axeOrder: ['Chr├®tient├®s et Islam (VIe-XIIIe si├¿cle), des mondes en contact', 'Soci├®t├®, ├ëglise et pouvoirs en Occident f├®odal (XIe-XVe si├¿cle)', "Transformations de l'Europe et ouverture sur le monde aux XVIe et XVIIe si├¿cles"]
+  [ 40] Classe de 4ßÁë
+       axeOrder: ['Le XVIIIe si├¿cle : Expansions, Lumi├¿res et r├®volutions', "L'Europe et le monde au XIXe si├¿cle", 'Transformations et mutations de la soci├®t├® fran├ºaise (seconde moiti├® du XIXe si├¿cle - d├®but du XXe si├¿cle)']
+  [ 48] Classe de 3ßÁë (Brevet)
+       axeOrder: ["L'Europe, un th├®├ótre majeur des guerres totales", 'Le monde depuis 1945', 'Fran├ºaises et Fran├ºais dans une R├®publique repens├®e']
+
+=== All unique field names in theme objects ===
+['axeOrder', 'difficulte', 'events', 'id', 'nom']
