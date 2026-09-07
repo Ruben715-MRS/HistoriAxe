@@ -3443,10 +3443,10 @@ function buildEntry(evt) {
     const dateText = currentMode === 'discovery' ? formatEventDate(evt) : formatYear(evt.date);
     row.innerHTML = `<span class="entry-year">${dateText}</span>` +
         `<span class="entry-tick"></span>` +
-        `<span class="entry-body"><span class="entry-title">${evt.titre}</span>` +
+        `<span class="entry-body"><span class="entry-main"><span class="entry-title">${evt.titre}</span>` +
         axeHtml +
         (evt.missed ? `<span class="entry-flag">${t('game.missed_tag')}</span>` : '') +
-        `<span class="entry-chevron" aria-hidden="true">›</span></span>`;
+        `</span><span class="entry-chevron" aria-hidden="true">›</span></span>`;
     row.onclick = () => {
         // Défi du jour : les événements viennent de thèmes divers, donc on
         // affiche la ligne « Jouer sur ce thème » (.modal-theme-row) pour

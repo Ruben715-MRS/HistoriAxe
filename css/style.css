@@ -1440,6 +1440,19 @@ textarea.form-input {
     padding: calc(6px * var(--zoom-level)) 0 calc(6px * var(--zoom-level)) 14px;
 }
 
+/* Regroupe titre + badge d'axe (+ éventuel flag « manqué ») en colonne,
+   pour que le badge se place sous le titre plutôt qu'à sa droite, où il
+   pouvait dépasser hors de l'écran en portrait. Le chevron reste hors de
+   ce groupe, aligné à droite sur toute la hauteur de l'entrée. */
+.entry-main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    flex: 1;
+    min-width: 0;
+}
+
 .entry-title {
     flex: 1;
     font-size: calc(15px * var(--zoom-level));
@@ -3788,6 +3801,13 @@ textarea.form-input {
     margin-left: 6px;
 }
 
+/* Dans la liste (.entry-main empile titre puis badge), le badge n'a plus
+   besoin de ce décalage horizontal pensé pour un alignement sur la même
+   ligne que le titre. */
+.entry-main .entry-axe-badge {
+    margin-left: 0;
+}
+
 .axes-entry-badges-hidden .entry-axe-badge {
     display: none;
 }
@@ -4272,6 +4292,14 @@ textarea.form-input {
     align-items: center;
     padding: 8px 0 0;
     gap: 4px;
+}
+
+/* En paysage, titre/badge/chevron sont déjà chacun repositionnés
+   directement en enfants de .entry-body (voir règles ci-dessus/ci-dessous) :
+   .entry-main ne doit pas y introduire de boîte propre, sous peine de casser
+   cet agencement en carte verticale centrée. */
+[data-layout="horizontal"] .entry-main {
+    display: contents;
 }
 
 [data-layout="horizontal"] .entry-title {
