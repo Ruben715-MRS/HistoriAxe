@@ -272,7 +272,7 @@ body {
 .search-bar-wrap {
     width: 100%;
     max-width: 640px;
-    margin: 40px auto 20px;
+    margin: 64px auto 20px;
     position: relative;
     z-index: 20;
 }
@@ -3278,6 +3278,8 @@ textarea.form-input {
     padding: 2px 7px;
     border-radius: 9999px;
     letter-spacing: 0.3px;
+    flex-shrink: 0;
+    white-space: nowrap;
 }
 
 :root[data-theme="dark"] .player-rank-level-badge {
