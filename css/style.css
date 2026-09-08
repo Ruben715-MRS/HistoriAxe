@@ -2076,9 +2076,15 @@ textarea.form-input {
     transition: transform 0.15s, border-color 0.15s, background 0.15s;
 }
 
-.quiz-option:hover {
-    transform: translateY(-2px);
-    border-color: var(--primary-blue);
+/* (hover: hover) évite qu'un tap tactile (tablette) ne laisse l'option
+           encadrée dans son état survolé une fois le doigt relevé — aucun mouseleave
+           n'est jamais émis sur ces appareils, et le cadre reste alors visible sur les
+           nouvelles options rendues à la question suivante, sans rapport avec elles. */
+@media (hover: hover) {
+    .quiz-option:hover {
+        transform: translateY(-2px);
+        border-color: var(--primary-blue);
+    }
 }
 
 .quiz-option.correct {
@@ -2520,9 +2526,15 @@ textarea.form-input {
     min-height: 72px;
 }
 
-.periodes-option:hover {
-    transform: translateY(-2px);
-    border-color: #8E44AD;
+/* (hover: hover) évite qu'un tap tactile (tablette) ne laisse l'option
+           encadrée dans son état survolé une fois le doigt relevé — aucun mouseleave
+           n'est jamais émis sur ces appareils, et le cadre reste alors visible sur les
+           nouvelles options rendues à la question suivante, sans rapport avec elles. */
+@media (hover: hover) {
+    .periodes-option:hover {
+        transform: translateY(-2px);
+        border-color: #8E44AD;
+    }
 }
 
 .periodes-option-main {
@@ -2597,9 +2609,15 @@ textarea.form-input {
     width: 100%;
 }
 
-.avap-option:hover {
-    transform: translateY(-2px);
-    border-color: var(--primary-blue);
+/* (hover: hover) évite qu'un tap tactile (tablette) ne laisse l'option
+           encadrée dans son état survolé une fois le doigt relevé — aucun mouseleave
+           n'est jamais émis sur ces appareils, et le cadre reste alors visible sur les
+           nouvelles options rendues à la question suivante, sans rapport avec elles. */
+@media (hover: hover) {
+    .avap-option:hover {
+        transform: translateY(-2px);
+        border-color: var(--primary-blue);
+    }
 }
 
 /* Le focus persiste sur le même bouton d'une question à l'autre (les boutons ne
