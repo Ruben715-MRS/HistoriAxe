@@ -32,6 +32,19 @@ const GEO_MAP_VIEWBOX = { w: 1000, h: 440 };
 const GEO_SESSION_MAX_ROUNDS = 12;
 const GEO_SESSION_MIN_EVENTS = 4;
 const GEO_LOCATE_BASE_POINTS = 80;
+// Nombre minimal de pays distincts dans le périmètre pour oser cadrer la carte
+// dessus : doit rester cohérent avec le seuil de repli de pickGeoCountryOptions
+// (candidates.length < 3, une fois le bon pays retiré, donc 4 pays au total)
+// sous lequel les distracteurs sont piochés dans le monde entier — un cadrage
+// serré les enverrait alors hors-champ.
+const GEO_ZOOM_MIN_COUNTRIES = 4;
+// Marge (en unités de la viewBox monde, 1000×440) ajoutée autour des pays du
+// périmètre avant recadrage, pour ne pas coller les pions au bord de l'écran.
+const GEO_ZOOM_PADDING = 60;
+// Au-delà de cette fraction de la largeur/hauteur du monde, le cadrage calculé
+// n'apporte plus un zoom perceptible : autant garder la vue complète plutôt
+// qu'un cadrage quasi identique mais légèrement décentré.
+const GEO_ZOOM_MAX_COVERAGE = 0.92;
 
 // État de la partie en cours (mode 'carte' uniquement)
 let geoScopeLabel = '';
@@ -39,6 +52,10 @@ let geoReturnScreen = 'screen-themes';
 let geoSessionPool = [];   // [{ event, iso2, themeName }], un par round de la session
 let geoRoundIndex = 0;
 let geoCurrentRound = null;
+// Zone (en unités de la viewBox monde) actuellement affichée sur la carte :
+// le monde entier par défaut, ou un rectangle recadré sur la sous-catégorie
+// régionale en cours (voir computeGeoRegion) — recalculée à chaque partie.
+let geoViewBox = { x: 0, y: 0, w: GEO_MAP_VIEWBOX.w, h: GEO_MAP_VIEWBOX.h };
 
 // --- CHARGEMENT DES ASSETS (paresseux, une seule fois) ---
 function loadGeoAssets() {
@@ -103,6 +120,65 @@ function collectGeoPool(node) {
         }
     })(node);
     return pool;
+}
+
+// --- CADRAGE DE LA CARTE SUR LE PÉRIMÈTRE JOUÉ ---
+// La home « monde entier » de Histoires nationales doit rester une carte du
+// monde, mais une sous-catégorie régionale (ex. Europe, Afrique de l'Ouest…)
+// doit recadrer la vue sur sa zone plutôt que de garder les pions sur une
+// mappemonde entière où ils sont minuscules et perdus. Calculé une fois par
+// pays distincts du périmètre (voir GEO_ZOOM_MIN_COUNTRIES : en dessous, les
+// distracteurs de pickGeoCountryOptions retombent sur le monde entier, donc
+// un cadrage serré les enverrait hors-champ) plutôt que codé en dur par nom
+// de continent, ce qui reste valable à n'importe quel niveau de la hiérarchie
+// régionale et indépendant de la langue.
+function computeGeoRegion(pool) {
+    const isoSet = new Set(pool.map(p => p.iso2));
+    if (isoSet.size < GEO_ZOOM_MIN_COUNTRIES) return null;
+
+    let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+    isoSet.forEach(iso => {
+        const p = GEO_PINS[iso];
+        if (!p) return;
+        minX = Math.min(minX, p[0]); maxX = Math.max(maxX, p[0]);
+        minY = Math.min(minY, p[1]); maxY = Math.max(maxY, p[1]);
+    });
+    if (!isFinite(minX)) return null;
+
+    minX -= GEO_ZOOM_PADDING; maxX += GEO_ZOOM_PADDING;
+    minY -= GEO_ZOOM_PADDING; maxY += GEO_ZOOM_PADDING;
+
+    // Étend le côté le plus court pour respecter le ratio fixe du cadre
+    // (celui de la viewBox monde, voir .geo-map-frame en CSS), en conservant
+    // le centre de la zone calculée.
+    const targetRatio = GEO_MAP_VIEWBOX.w / GEO_MAP_VIEWBOX.h;
+    let w = maxX - minX, h = maxY - minY;
+    const cx = (minX + maxX) / 2, cy = (minY + maxY) / 2;
+    if (w / h > targetRatio) h = w / targetRatio;
+    else w = h * targetRatio;
+    minX = cx - w / 2; maxX = cx + w / 2;
+    minY = cy - h / 2; maxY = cy + h / 2;
+
+    // Zone déjà quasi aussi large/haute que le monde entier : le zoom serait
+    // imperceptible mais décentrerait la carte pour rien, autant garder la
+    // vue complète (repli sur null, interprété comme monde entier).
+    if (w >= GEO_MAP_VIEWBOX.w * GEO_ZOOM_MAX_COVERAGE || h >= GEO_MAP_VIEWBOX.h * GEO_ZOOM_MAX_COVERAGE) {
+        return null;
+    }
+
+    // Recadrage dans les bornes réelles du monde en translatant si besoin
+    // (sans réduire la taille déjà calculée) plutôt qu'en la coupant net.
+    if (minX < 0) { maxX -= minX; minX = 0; }
+    if (minY < 0) { maxY -= minY; minY = 0; }
+    if (maxX > GEO_MAP_VIEWBOX.w) { minX -= (maxX - GEO_MAP_VIEWBOX.w); maxX = GEO_MAP_VIEWBOX.w; }
+    if (maxY > GEO_MAP_VIEWBOX.h) { minY -= (maxY - GEO_MAP_VIEWBOX.h); maxY = GEO_MAP_VIEWBOX.h; }
+    // Filet de sécurité si la zone dépasse encore (cas limite où w/h approche
+    // la taille du monde sur un seul axe) : clamp final, quitte à légèrement
+    // déformer le ratio plutôt que de laisser des pions hors-viewBox.
+    minX = Math.max(0, minX); minY = Math.max(0, minY);
+    maxX = Math.min(GEO_MAP_VIEWBOX.w, maxX); maxY = Math.min(GEO_MAP_VIEWBOX.h, maxY);
+
+    return { x: minX, y: minY, w: maxX - minX, h: maxY - minY };
 }
 
 function geoPixelDistance(isoA, isoB) {
@@ -220,9 +296,18 @@ function startGeoModeFromNode(node, label) {
         const dates = geoSessionPool.map(item => item.event.date);
         currentGameSpan = Math.max(1, Math.max(...dates) - Math.min(...dates));
 
+        // Cadrage sur le périmètre régional (voir computeGeoRegion) plutôt que sur
+        // le seul échantillon de la session : la zone visible doit rester stable
+        // même si le tirage des 12 rounds ne couvre pas tous les pays du nœud.
+        geoViewBox = computeGeoRegion(fullPool) || { x: 0, y: 0, w: GEO_MAP_VIEWBOX.w, h: GEO_MAP_VIEWBOX.h };
+
         document.getElementById('geo-scope-label').innerText = label;
         const svgHolder = document.getElementById('geo-map-svg-holder');
-        if (svgHolder) svgHolder.innerHTML = GEO_BASEMAP_MARKUP;
+        if (svgHolder) {
+            svgHolder.innerHTML = GEO_BASEMAP_MARKUP;
+            const svgEl = svgHolder.querySelector('svg');
+            if (svgEl) svgEl.setAttribute('viewBox', `${geoViewBox.x} ${geoViewBox.y} ${geoViewBox.w} ${geoViewBox.h}`);
+        }
 
         showScreen('screen-carte');
         pickNextGeoRound();
@@ -271,8 +356,11 @@ function renderGeoLocatePhase() {
         btn.type = 'button';
         btn.className = 'geo-pin-btn';
         btn.dataset.iso = iso2;
-        btn.style.left = (x / GEO_MAP_VIEWBOX.w * 100) + '%';
-        btn.style.top = (y / GEO_MAP_VIEWBOX.h * 100) + '%';
+        // Position en % relatifs à la zone actuellement affichée (geoViewBox :
+        // le monde entier, ou la région recadrée — voir computeGeoRegion), pas
+        // au monde entier, sous peine de mal placer les pions une fois zoomé.
+        btn.style.left = ((x - geoViewBox.x) / geoViewBox.w * 100) + '%';
+        btn.style.top = ((y - geoViewBox.y) / geoViewBox.h * 100) + '%';
         btn.innerHTML = `<span class="geo-pin-number">${idx + 1}</span>`;
         btn.setAttribute('aria-label', `Option ${idx + 1}`);
         btn.onclick = () => answerGeoLocate(iso2);
@@ -313,9 +401,12 @@ function layoutPinsAvoidingOverlap(iso2List) {
         }
         if (!moved) break;
     }
+    // Bornage dans la zone actuellement affichée (geoViewBox), pas dans le
+    // monde entier : une fois zoomé sur une région, border sur les bords du
+    // monde enverrait les pions hors du cadre visible.
     pts.forEach(p => {
-        p.x = Math.min(GEO_MAP_VIEWBOX.w - margin, Math.max(margin, p.x));
-        p.y = Math.min(GEO_MAP_VIEWBOX.h - margin, Math.max(margin, p.y));
+        p.x = Math.min(geoViewBox.x + geoViewBox.w - margin, Math.max(geoViewBox.x + margin, p.x));
+        p.y = Math.min(geoViewBox.y + geoViewBox.h - margin, Math.max(geoViewBox.y + margin, p.y));
     });
     return pts;
 }
