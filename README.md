@@ -29,10 +29,10 @@ Dans votre projet Vercel → **Settings → Environment Variables**, ajoutez :
 | `DATABASE_URL` | La connection string Postgres de l'étape précédente |
 
 C'est la **seule** variable requise. Les tables (`players`, `daily_scores`,
-`player_progress`) sont créées automatiquement au premier appel d'une
-fonction API (voir `api/_lib/db.js: ensureSchema`) — aucune migration
-manuelle n'est nécessaire. Le schéma est aussi documenté dans
-`api/_lib/schema.sql` si vous préférez l'exécuter vous-même.
+`weekly_challenge_scores`, `player_progress`) sont créées automatiquement au
+premier appel d'une fonction API (voir `api/_lib/db.js: ensureSchema`) —
+aucune migration manuelle n'est nécessaire. Le schéma est aussi documenté
+dans `api/_lib/schema.sql` si vous préférez l'exécuter vous-même.
 
 Redéployez (ou déclenchez un nouveau déploiement) après avoir ajouté la
 variable.
@@ -60,22 +60,42 @@ fichiers ajoutés au dossier — avant de builder/soumettre, ajoutez-le une
 fois dans Xcode : clic droit sur le groupe "App" → *Add Files to "App"...*
 → sélectionner `PrivacyInfo.xcprivacy` (target "App" coché).
 
-### Comment fonctionne l'anti-triche du Défi du jour
+### Comment fonctionne l'anti-triche du Défi du jour (et du Défi hebdomadaire)
 
 Le score n'est **jamais** envoyé par le client. Pendant la partie, chaque
 placement de carte ({ intervalle choisi, temps de réponse }) est journalisé
-(`js/app.js: dailyRoundLog`, rempli dans `checkPlacement`). À l'envoi, seul
-ce journal brut est transmis à `POST /api/scores`, qui :
+(`js/app.js: dailyRoundLog`/`weeklyChallengeRoundLog`, rempli dans
+`checkPlacement`). À l'envoi, seul ce journal brut est transmis à
+`POST /api/scores` (Défi du jour) ou `POST /api/weeklyScores` (Défi
+hebdomadaire), qui :
 
-1. retrouve les 10 événements du tirage du jour pour la langue donnée, à
-   partir des vraies dates de `data/<lang>.json` ;
+1. retrouve les 10 (ou 30, pour l'hebdomadaire) événements du tirage pour la
+   langue donnée, à partir des vraies dates de `data/<lang>.json` ;
 2. rejoue la partie coup par coup avec `js/dailyEngine.js` (le même module
    que le client, partagé pour ne jamais diverger) ;
 3. enregistre le score ainsi recalculé, en ne conservant que le meilleur par
-   joueur/jour/langue.
+   joueur/jour (ou semaine ISO)/langue.
 
 Modifier le score en local (DevTools, JS altéré...) n'a donc aucun effet :
 le serveur ne fait jamais confiance à un score, seulement aux actions.
+
+Le Défi hebdomadaire (`js/weekly.js`, `api/_lib/weeklyChallenge.js`,
+`api/weeklyScores.js`, `api/weeklyLeaderboard.js`) est un miroir volontaire
+du Défi du jour plutôt qu'une généralisation des mêmes fichiers : plus
+difficile (30 événements au lieu de 10), tiré une fois par semaine ISO
+(`DailyEngine.getWeeklySeedString`, frontière UTC identique à
+`getDailySeedString`) plutôt qu'une fois par jour, mais mêmes règles de jeu
+(3 vies, chronométré) et même mécanisme anti-triche. Accessible depuis le
+bouton « Défis » de l'écran des catégories, qui déplie un choix entre les
+deux plutôt que de lancer directement le Défi du jour comme auparavant. Les
+deux thèmes exclus du tirage (calendrier non grégorien — voir
+`DailyEngine.EXCLUDED_THEME_IDS`) et les séries consécutives (Défi du jour :
+7 jours, trophée « Flamme Éternelle » ; Défi hebdomadaire : 4 semaines,
+trophée « Pilier Hebdomadaire », `WEEKLY_CHALLENGE_STREAK_KEY` dans
+`js/storage.js`) suivent le même principe des deux côtés, en parallèle plutôt
+qu'en partagé — les deux défis ne tournent jamais en même temps, mais des
+états séparés évitent toute ambiguïté dans les écrans/journaux partagés
+(récap, sync cloud...).
 
 ### Points volontairement laissés pour une itération ultérieure
 

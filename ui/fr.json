@@ -24,7 +24,9 @@
     "search_empty": "Aucun thème ne correspond à votre recherche.",
     "special_favorites": "Favoris",
     "special_discover": "Découvrir",
+    "special_challenges": "Défis",
     "special_daily": "Défi du jour",
+    "special_weekly": "Défi hebdomadaire",
     "special_revision": "Réviser",
     "themes_count": "{count} thèmes",
     "events_count": "{count} événements",
@@ -131,6 +133,7 @@
     "cannot_generate": "Impossible de générer des questions pour ce thème.",
     "cannot_generate_dates": "Impossible de générer des questions pour ce thème (dates toutes identiques).",
     "no_events_daily": "Aucun événement disponible pour le défi du jour.",
+    "no_events_weekly": "Aucun événement disponible pour le défi hebdomadaire.",
     "select_at_least_one": "Vous devez sélectionner au moins un événement pour jouer."
   },
   "game": {
@@ -193,6 +196,7 @@
     "victory_periodes": "Bravo ! Périodes & Ères maîtrisées !",
     "victory_ecart": "Bravo ! Tous les écarts trouvés !",
     "victory_daily": "Bravo ! Défi du jour relevé !",
+    "victory_weekly": "Bravo ! Défi hebdomadaire relevé !",
     "final_score": "Score : {val} points",
     "final_time": "Durée : {val} s",
     "streak_banner": "🔥 Série en cours : {count} jours",
@@ -225,6 +229,25 @@
     "submit_error": "Impossible d'envoyer le score pour le moment. Réessayez.",
     "submit_offline": "Classement mondial indisponible hors connexion.",
     "leaderboard_title": "🏆 Classement du jour",
+    "leaderboard_empty": "Aucun score envoyé pour l'instant. Soyez le premier !",
+    "leaderboard_loading": "Chargement du classement…",
+    "leaderboard_error": "Classement momentanément indisponible."
+  },
+  "weekly": {
+    "title_win": "🌍 Défi hebdomadaire relevé !",
+    "title_over": "🌍 Défi hebdomadaire terminé",
+    "score_stat": "Score",
+    "time_stat": "Temps",
+    "streak_stat": "Série",
+    "countdown_label": "Prochain défi dans",
+    "pseudo_label": "Votre pseudo (classement mondial)",
+    "pseudo_placeholder": "Ex : ChronoMaster",
+    "submit_btn": "Envoyer mon score",
+    "submit_loading": "Envoi en cours…",
+    "submit_success": "Score envoyé ! #{rank} sur {total} dans le monde.",
+    "submit_error": "Impossible d'envoyer le score pour le moment. Réessayez.",
+    "submit_offline": "Classement mondial indisponible hors connexion.",
+    "leaderboard_title": "🏆 Classement de la semaine",
     "leaderboard_empty": "Aucun score envoyé pour l'instant. Soyez le premier !",
     "leaderboard_loading": "Chargement du classement…",
     "leaderboard_error": "Classement momentanément indisponible."
@@ -321,9 +344,13 @@
         "name": "Flamme Éternelle",
         "desc": "Maintenir une série de 7 jours consécutifs au Défi du jour."
       },
+      "pilier_hebdomadaire": {
+        "name": "Pilier Hebdomadaire",
+        "desc": "Maintenir une série de 4 semaines consécutives au Défi hebdomadaire."
+      },
       "eclair_temporel": {
         "name": "Éclair Temporel",
-        "desc": "Terminer un mode Chrono, Expert ou Défi du jour en moins de 30 secondes."
+        "desc": "Terminer un mode Chrono, Expert, Défi du jour ou Défi hebdomadaire en moins de 30 secondes."
       },
       "major_concours": {
         "name": "Major de Concours",

@@ -919,6 +919,15 @@ let dailyCountdownInterval = null;
 // submitDailyScoreToServer et api/scores.js) — jamais depuis `score`,
 // qui n'est qu'un affichage local et n'est jamais transmis tel quel.
 let dailyRoundLog = [];
+// Défi hebdomadaire (js/weekly.js) : même principe que les 5 variables
+// ci-dessus, en parallèle plutôt qu'en réutilisant les mêmes (les deux
+// défis ne tournent jamais en même temps, mais garder deux jeux de
+// variables distincts évite toute ambiguïté dans les écrans/journaux
+// partagés — ex. le récap affiche les deux séries séparément).
+let weeklyChallengeMode = false;
+let weeklyChallengeEventsWithLocation = [];
+let weeklyChallengeCountdownInterval = null;
+let weeklyChallengeRoundLog = [];
 let favoritesMode = false;
 let axisFilterActive = false;
 let essentialFilterActive = false;
@@ -1168,7 +1177,7 @@ function screenAfterGame() {
         target = geoReturnScreen || 'screen-themes';
     } else if (revisionMode) {
         target = 'screen-revision-hub';
-    } else if (dailyChallengeMode) {
+    } else if (dailyChallengeMode || weeklyChallengeMode) {
         target = 'screen-categories';
     } else if (essentialFilterActive || axisFilterActive) {
         target = 'screen-axes';
@@ -1177,6 +1186,7 @@ function screenAfterGame() {
     }
     revisionMode = false;
     dailyChallengeMode = false;
+    weeklyChallengeMode = false;
     return target;
 }
 
@@ -1232,6 +1242,27 @@ function startDailyChallenge() {
     startActualGame('daily');
 }
 
+// Lance le Défi hebdomadaire : même principe que le Défi du jour ci-dessus,
+// en plus difficile — 30 événements (voir generateWeeklyChallengeEvents dans
+// js/weekly.js) au lieu de 10, tirés une fois par semaine ISO plutôt que par
+// jour. Mêmes règles de jeu (3 vies, chronométré).
+function startWeeklyChallenge() {
+    const picks = generateWeeklyChallengeEvents();
+    if (picks.length === 0) {
+        alert(t('modes.no_events_weekly'));
+        return;
+    }
+    weeklyChallengeEventsWithLocation = picks;
+    weeklyChallengeMode = true;
+    weeklyChallengeRoundLog = [];
+    revisionMode = false;
+    favoritesMode = false;
+    axisFilterActive = false;
+    isSelectionActive = false;
+    currentThemeAxes = [...new Set(picks.map(item => item.event.axe).filter(Boolean))];
+    startActualGame('weekly');
+}
+
 // Relance la partie en cours ; en mode révision, repioche parmi les points faibles
 // actuels (en tenant compte des résultats qui viennent d'être enregistrés), en
 // conservant la taille de session initialement choisie par le joueur.
@@ -1241,6 +1272,10 @@ function replayCurrentGame() {
         // la date UTC de basculement n'est pas franchie), pour s'entraîner sans
         // fausser l'équité du classement mondial.
         startDailyChallenge();
+        return;
+    }
+    if (currentMode === 'weekly') {
+        startWeeklyChallenge();
         return;
     }
     if (currentMode === 'quiz') {
@@ -1434,7 +1469,7 @@ function initCategories() {
                         <div class="quick-action-circle rounded-full flex items-center justify-center transition-colors cursor-pointer group mx-auto" style="border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; background: var(--surface); border: 1px solid var(--border-soft); box-shadow: var(--card-shadow);">
                             <span style="font-size: 28px;">🎯</span>
                         </div>
-                        <span class="quick-action-label" style="font-size: 13px; font-weight: 600;">${(typeof t === 'function' ? t('categories.special_daily') : 'Défi')}</span>
+                        <span class="quick-action-label" style="font-size: 13px; font-weight: 600;">${(typeof t === 'function' ? t('categories.special_challenges') : 'Défis')}</span>
                     </div>
                     <div class="flex flex-col items-center gap-2" id="btn-reviser" style="cursor: pointer;">
                         <div class="quick-action-circle rounded-full flex items-center justify-center transition-colors cursor-pointer group mx-auto" style="border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; background: var(--surface); border: 1px solid var(--border-soft); box-shadow: var(--card-shadow);">
@@ -1443,6 +1478,16 @@ function initCategories() {
                         <span class="quick-action-label" style="font-size: 13px; font-weight: 600;">${(typeof t === 'function' ? t('categories.special_revision') : 'Réviser')} (${weakCount})</span>
                     </div>
                 </div>
+                <div class="challenge-picker hidden" id="challenge-picker">
+                    <button type="button" class="challenge-picker-btn" id="btn-challenge-daily">
+                        <span class="challenge-picker-icon">☀️</span>
+                        <span>${(typeof t === 'function' ? t('categories.special_daily') : 'Défi du jour')}</span>
+                    </button>
+                    <button type="button" class="challenge-picker-btn" id="btn-challenge-weekly">
+                        <span class="challenge-picker-icon">🗓️</span>
+                        <span>${(typeof t === 'function' ? t('categories.special_weekly') : 'Défi hebdomadaire')}</span>
+                    </button>
+                </div>
             `;
     container.appendChild(gridSection);
 
@@ -1450,8 +1495,19 @@ function initCategories() {
     if (btnFav) btnFav.onclick = () => openFavorites();
     const btnDisc = gridSection.querySelector('#btn-discover');
     if (btnDisc) btnDisc.onclick = () => discoverRandomEvent();
+    // Le bouton « Défis » ne lance plus directement le Défi du jour : il
+    // déplie/replie un choix entre Défi du jour et Défi hebdomadaire, sous
+    // forme de deux boutons côte à côte sous la grille (voir #challenge-picker
+    // en CSS).
     const btnDay = gridSection.querySelector('#btn-daily');
-    if (btnDay) btnDay.onclick = () => startDailyChallenge();
+    const challengePicker = gridSection.querySelector('#challenge-picker');
+    if (btnDay && challengePicker) {
+        btnDay.onclick = () => challengePicker.classList.toggle('hidden');
+    }
+    const btnChallengeDaily = gridSection.querySelector('#btn-challenge-daily');
+    if (btnChallengeDaily) btnChallengeDaily.onclick = () => startDailyChallenge();
+    const btnChallengeWeekly = gridSection.querySelector('#btn-challenge-weekly');
+    if (btnChallengeWeekly) btnChallengeWeekly.onclick = () => startWeeklyChallenge();
     const btnRev = gridSection.querySelector('#btn-reviser');
     if (btnRev) btnRev.onclick = () => showScreen('screen-revision-hub');
 
@@ -2096,6 +2152,10 @@ function startActualGame(mode) {
         // déterministe par generateDailyEvents, indépendamment du thème
         // actuellement sélectionné dans le menu.
         sourceEvents = dailyChallengeEventsWithLocation.map(item => item.event);
+    } else if (mode === 'weekly') {
+        // Défi hebdomadaire : même principe, 30 événements (voir
+        // generateWeeklyChallengeEvents dans js/weekly.js).
+        sourceEvents = weeklyChallengeEventsWithLocation.map(item => item.event);
     } else if (revisionMode) {
         sourceEvents = revisionEvents;
     } else {
@@ -2115,10 +2175,11 @@ function startActualGame(mode) {
         placedEvents = eventsCopy;
         currentPool = [];
         totalEvents = placedEvents.length;
-    } else if (mode === 'daily') {
+    } else if (mode === 'daily' || mode === 'weekly') {
         // Ordre de pioche déjà mélangé de façon déterministe (même graine du
-        // jour pour tous les joueurs) : surtout ne pas re-mélanger avec
-        // Math.random ici, sous peine de casser l'équité du classement mondial.
+        // jour/de la semaine pour tous les joueurs) : surtout ne pas
+        // re-mélanger avec Math.random ici, sous peine de casser l'équité du
+        // classement mondial.
         totalEvents = eventsCopy.length;
         placedEvents = [eventsCopy.pop()];
         currentPool = eventsCopy;
@@ -2132,7 +2193,7 @@ function startActualGame(mode) {
     if (mode === 'training' || mode === 'discovery') lives = Infinity;
     else if (mode === 'expert') lives = 1;
     else if (mode === 'multi') lives = 2; // unused directly, but for safety
-    else lives = 3; // classic, chrono, daily
+    else lives = 3; // classic, chrono, daily, weekly
 
     score = 0;
     totalTimePlayed = 0;
@@ -2166,7 +2227,7 @@ function startActualGame(mode) {
         document.getElementById('hud-count').innerText = t('game.frise_complete', { n: totalEvents });
     }
 
-    if (mode === 'chrono' || mode === 'expert' || mode === 'daily') {
+    if (mode === 'chrono' || mode === 'expert' || mode === 'daily' || mode === 'weekly') {
         hudTimer.classList.remove('hidden');
         document.getElementById('hud-timer').innerText = "0,0";
         startTimer();
@@ -3266,17 +3327,20 @@ function pickNextEvent() {
     document.getElementById('hand-kicker').innerText =
         (placedEvents.length === 1) ? t('game.hand_kicker_first') : t('game.hand_kicker_default');
     document.getElementById('hand-year').innerText = '?';
-    // Défi du jour : les 10 événements viennent de thèmes très divers, et un
-    // titre seul manque parfois de contexte (« Fondation légendaire par saint
-    // Marin », « Colonisation française »...). On rappelle donc le thème
-    // d'origine entre parenthèses tant que l'événement est « en main » ; une
-    // fois placé sur la frise, buildEntry n'affiche plus que le titre, comme
-    // dans les autres modes.
-    const dailyThemeName = dailyChallengeMode
-        ? (dailyChallengeEventsWithLocation.find(item => item.event.id === eventToPlace.id) || {}).theme
+    // Défis du jour/hebdomadaire : les événements viennent de thèmes très
+    // divers, et un titre seul manque parfois de contexte (« Fondation
+    // légendaire par saint Marin », « Colonisation française »...). On
+    // rappelle donc le thème d'origine entre parenthèses tant que
+    // l'événement est « en main » ; une fois placé sur la frise, buildEntry
+    // n'affiche plus que le titre, comme dans les autres modes.
+    const challengeEventsWithLocation = dailyChallengeMode
+        ? dailyChallengeEventsWithLocation
+        : (weeklyChallengeMode ? weeklyChallengeEventsWithLocation : null);
+    const challengeThemeName = challengeEventsWithLocation
+        ? (challengeEventsWithLocation.find(item => item.event.id === eventToPlace.id) || {}).theme
         : null;
-    document.getElementById('hand-title').innerHTML = dailyThemeName
-        ? `${eventToPlace.titre} <em class="hand-title-theme">(${dailyThemeName.nom})</em>`
+    document.getElementById('hand-title').innerHTML = challengeThemeName
+        ? `${eventToPlace.titre} <em class="hand-title-theme">(${challengeThemeName.nom})</em>`
         : eventToPlace.titre;
     renderTimeline();
 }
@@ -3487,12 +3551,14 @@ function buildEntry(evt) {
         (evt.missed ? `<span class="entry-flag">${t('game.missed_tag')}</span>` : '') +
         `</span><span class="entry-chevron" aria-hidden="true">›</span></span>`;
     row.onclick = () => {
-        // Défi du jour : les événements viennent de thèmes divers, donc on
-        // affiche la ligne « Jouer sur ce thème » (.modal-theme-row) pour
-        // pouvoir rejoindre le thème d'origine — sans proposer de repiochage,
-        // qui n'a pas de sens pour un tirage quotidien commun à tous.
-        if (dailyChallengeMode) {
-            const ctx = dailyChallengeEventsWithLocation.find(item => item.event.id === evt.id);
+        // Défis du jour/hebdomadaire : les événements viennent de thèmes
+        // divers, donc on affiche la ligne « Jouer sur ce thème »
+        // (.modal-theme-row) pour pouvoir rejoindre le thème d'origine —
+        // sans proposer de repiochage, qui n'a pas de sens pour un tirage
+        // commun à tous les joueurs.
+        if (dailyChallengeMode || weeklyChallengeMode) {
+            const events = dailyChallengeMode ? dailyChallengeEventsWithLocation : weeklyChallengeEventsWithLocation;
+            const ctx = events.find(item => item.event.id === evt.id);
             openModal(evt, ctx ? { ...ctx, hideRedraw: true } : null);
         } else {
             openModal(evt);
@@ -3537,12 +3603,15 @@ function checkPlacement(index, slotElement) {
 
     const dateToPlace = eventToPlace.date;
 
-    // Défi du jour : on journalise l'action brute (où, en combien de
-    // temps) avant tout calcul local — c'est ce journal, et non le
-    // score affiché, qui sera envoyé au serveur pour validation
-    // (voir startDailyChallenge, submitDailyScoreToServer dans daily.js).
+    // Défis du jour/hebdomadaire : on journalise l'action brute (où, en
+    // combien de temps) avant tout calcul local — c'est ce journal, et non
+    // le score affiché, qui sera envoyé au serveur pour validation (voir
+    // startDailyChallenge/startWeeklyChallenge, submitDailyScoreToServer/
+    // submitWeeklyChallengeScoreToServer dans daily.js/weekly.js).
     if (currentMode === 'daily') {
         dailyRoundLog.push({ slotIndex: index, elapsedMs: Date.now() - questionStartTime });
+    } else if (currentMode === 'weekly') {
+        weeklyChallengeRoundLog.push({ slotIndex: index, elapsedMs: Date.now() - questionStartTime });
     }
 
     let isCorrect = true;
@@ -3559,7 +3628,7 @@ function checkPlacement(index, slotElement) {
 
     if (isCorrect) {
         let speedBonus = 0;
-        if (currentMode === 'chrono' || currentMode === 'expert' || currentMode === 'daily') {
+        if (currentMode === 'chrono' || currentMode === 'expert' || currentMode === 'daily' || currentMode === 'weekly') {
             const elapsed = (Date.now() - questionStartTime) / 1000;
             speedBonus = Math.round(50 * Math.max(0, 1 - elapsed / 15));
         }
@@ -3800,12 +3869,12 @@ function endGame(isWin) {
 
     if (isWin) { playVictorySound(); triggerHaptic('victory'); triggerConfetti(); } else { triggerHaptic('error'); }
 
-    if (isWin && !revisionMode && !dailyChallengeMode && (currentMode === 'classic' || currentMode === 'chrono')) {
+    if (isWin && !revisionMode && !dailyChallengeMode && !weeklyChallengeMode && (currentMode === 'classic' || currentMode === 'chrono')) {
         const theme = getCurrentTheme();
         progressRecordWin(theme.id, currentMode);
     }
 
-    if (!revisionMode && !dailyChallengeMode && currentMode !== 'discovery' && currentMode !== 'training' && currentMode !== 'carte') {
+    if (!revisionMode && !dailyChallengeMode && !weeklyChallengeMode && currentMode !== 'discovery' && currentMode !== 'training' && currentMode !== 'carte') {
         const theme = getCurrentTheme();
         saveScoreToLeaderboard(theme.id, currentMode, score);
     }
@@ -3817,9 +3886,16 @@ function endGame(isWin) {
         saveScoreToLeaderboard('geo:' + scopeSlug, 'carte', score);
     }
 
-    // Enregistrement de la série quotidienne
+    // Enregistrement de la série quotidienne (Défi du jour toujours, ou
+    // toute autre victoire hors Découverte/Entraînement) et de la série
+    // hebdomadaire (Défi hebdomadaire uniquement — cf. trophée
+    // « pilier_hebdomadaire », propre à ce défi et non à l'activité
+    // générale de la semaine, déjà suivie par ailleurs via la ligue XP).
     if (currentMode === 'daily' || (isWin && currentMode !== 'discovery' && currentMode !== 'training')) {
         streakRecordToday();
+    }
+    if (currentMode === 'weekly') {
+        weeklyChallengeStreakRecordThisWeek();
     }
 
     // Notifications locales (voir js/notifications.js) : demande la
@@ -3839,7 +3915,7 @@ function endGame(isWin) {
         let xpGain = Math.round(score * 0.5);
         if (isWin) xpGain += 50; // Bonus victoire
         if (sessionMistakes === 0 && isWin) xpGain += 100; // Bonus parfait
-        if (currentMode === 'daily') xpGain += 100; // Bonus Défi du jour
+        if (currentMode === 'daily' || currentMode === 'weekly') xpGain += 100; // Bonus Défi du jour/hebdomadaire
         awardedXpInfo = awardXP(xpGain, 'Fin de partie');
 
         // Journal du récap hebdo/mensuel (voir js/recap.js et
@@ -3868,6 +3944,7 @@ function endGame(isWin) {
         if (currentMode === 'ecart') winTitle = t('end.victory_ecart');
         if (currentMode === 'carte') winTitle = t('end.victory_carte');
         if (currentMode === 'daily') winTitle = t('end.victory_daily');
+        if (currentMode === 'weekly') winTitle = t('end.victory_weekly');
         titleElement.innerText = winTitle;
         titleElement.style.color = "#27ae60";
     } else {
@@ -3875,7 +3952,7 @@ function endGame(isWin) {
         titleElement.style.color = "var(--danger-red)";
     }
 
-    if (currentMode === 'chrono' || currentMode === 'expert' || currentMode === 'daily') {
+    if (currentMode === 'chrono' || currentMode === 'expert' || currentMode === 'daily' || currentMode === 'weekly') {
         timeDisplay.innerText = t('end.final_time', { val: formatDecimal(totalTimePlayed) });
         timeDisplay.classList.remove('hidden');
     } else {
@@ -3946,10 +4023,13 @@ function endGame(isWin) {
 
     if (currentMode === 'daily') {
         openDailyResultsModal(isWin);
+    } else if (currentMode === 'weekly') {
+        openWeeklyChallengeResultsModal(isWin);
     } else if (typeof Onboarding !== 'undefined') {
-        // La modale du Défi du jour prend le dessus sur screen-end : on ne
-        // propose la bulle d'onboarding de fin de partie que si elle est
-        // effectivement visible (voir js/onboarding.js: onFirstGameEnd).
+        // Les modales de résultats des Défis du jour/hebdomadaire prennent
+        // le dessus sur screen-end : on ne propose la bulle d'onboarding de
+        // fin de partie que si elle est effectivement visible (voir
+        // js/onboarding.js: onFirstGameEnd).
         Onboarding.onFirstGameEnd();
     }
 
@@ -4026,13 +4106,14 @@ function openModal(evt, context = null) {
         document.getElementById('modal-theme-btn').innerText = t('modal.play_theme_btn_named', { theme: context.theme.nom });
         document.getElementById('modal-theme-btn').onclick = () => {
             closeModal();
-            if (dailyChallengeMode) stopTimer();
+            if (dailyChallengeMode || weeklyChallengeMode) stopTimer();
             favoritesMode = false;
             dailyChallengeMode = false;
+            weeklyChallengeMode = false;
             openThemeAt(context.categoryIndex, context.subcategoryIndex, context.themeIndex);
         };
         // Repiocher un événement au hasard n'a de sens que depuis « Découvrir »
-        // (context.hideRedraw le masque depuis le Défi du jour, cf. buildEntry).
+        // (context.hideRedraw le masque depuis les Défis du jour/hebdomadaire, cf. buildEntry).
         if (context.hideRedraw) {
             redrawBtn.classList.add('hidden');
         } else {

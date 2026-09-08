@@ -92,6 +92,19 @@ var HistoriAxeAPI = (function () {
                 scope: 'allTime', lang: opts.lang, deviceId: opts.deviceId, limit: opts.limit
             }));
         },
+        // Défi hebdomadaire (30 événements/semaine ISO) — à ne pas confondre
+        // avec getWeeklyLeague/submitWeeklyXp ci-dessous, qui portent sur la
+        // ligue hebdomadaire par XP cumulé, une feature distincte.
+        submitWeeklyChallengeScore: function (payload) {
+            // payload : { deviceId, pseudo, lang, isoWeek, rounds }
+            return request('POST', '/api/weeklyScores', payload);
+        },
+        getWeeklyChallengeLeaderboard: function (opts) {
+            opts = opts || {};
+            return request('GET', '/api/weeklyLeaderboard' + qs({
+                scope: 'weekly', lang: opts.lang, isoWeek: opts.isoWeek, deviceId: opts.deviceId, limit: opts.limit
+            }));
+        },
         getWeeklyLeague: function (opts) {
             opts = opts || {};
             return request('GET', '/api/league' + qs({

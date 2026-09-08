@@ -18,11 +18,15 @@ const PSEUDO_KEY = 'historiaxe_pseudo_v1';
 const ONBOARDING_KEY = 'historiaxe_onboarding_v1';
 const RECAP_LOG_KEY = 'historiaxe_recap_log_v1';
 const WEEKLY_XP_KEY = 'historiaxe_weekly_xp_v1';
+// Série de semaines consécutives au Défi hebdomadaire (voir
+// weeklyChallengeStreakRecordToday ci-dessous) — sans rapport avec
+// WEEKLY_XP_KEY (ligue hebdomadaire par XP cumulé, feature distincte).
+const WEEKLY_CHALLENGE_STREAK_KEY = 'historiaxe_weekly_challenge_streak_v1';
 
 // Clés dont le contenu est envoyé/reçu par la synchronisation cloud
 // (api/sync.js) — progression de jeu uniquement, jamais les préférences
 // d'affichage (SETTINGS_KEY), qui restent propres à chaque appareil.
-const SYNC_KEYS = [SRS_KEY, PROGRESS_KEY, FAVORITES_KEY, CUSTOM_THEMES_KEY, CUSTOM_EVENTS_KEY, STREAK_KEY, GAMIFICATION_KEY];
+const SYNC_KEYS = [SRS_KEY, PROGRESS_KEY, FAVORITES_KEY, CUSTOM_THEMES_KEY, CUSTOM_EVENTS_KEY, STREAK_KEY, GAMIFICATION_KEY, WEEKLY_CHALLENGE_STREAK_KEY];
 
 const DEFAULT_SETTINGS = {
     orientation: 'auto',
@@ -263,6 +267,64 @@ function getStreakCount() {
     return 0;
 }
 
+// --- SÉRIE DE SEMAINES CONSÉCUTIVES (Défi hebdomadaire) ---
+// Même logique que la série quotidienne ci-dessus, mais par semaine ISO
+// (DailyEngine.getWeeklySeedString — frontière UTC, cf. commentaire de cette
+// fonction) plutôt que par jour. Alimente le trophée « pilier_hebdomadaire »
+// (voir js/gamification.js).
+function weeklyChallengeStreakLoad() {
+    try {
+        return JSON.parse(localStorage.getItem(WEEKLY_CHALLENGE_STREAK_KEY)) || { currentStreak: 0, maxStreak: 0, lastPlayedWeek: null };
+    } catch (e) {
+        return { currentStreak: 0, maxStreak: 0, lastPlayedWeek: null };
+    }
+}
+
+function weeklyChallengeStreakSave(data) {
+    try {
+        localStorage.setItem(WEEKLY_CHALLENGE_STREAK_KEY, JSON.stringify(data));
+    } catch (e) {}
+}
+
+// Semaine ISO (frontière UTC) immédiatement précédant celle de `refDate` —
+// on recule de 7 jours puis on relit la graine hebdo plutôt que d'arithmétiser
+// '2026-W36' à la main (déborderait sur les années à semaine 53).
+function previousWeeklySeedString(refDate) {
+    return DailyEngine.getWeeklySeedString(new Date((refDate || new Date()).getTime() - 7 * 24 * 3600 * 1000));
+}
+
+function weeklyChallengeStreakRecordThisWeek() {
+    const data = weeklyChallengeStreakLoad();
+    const thisWeek = DailyEngine.getWeeklySeedString();
+
+    if (data.lastPlayedWeek === thisWeek) {
+        return data;
+    }
+
+    if (!data.lastPlayedWeek) {
+        data.currentStreak = 1;
+    } else if (data.lastPlayedWeek === previousWeeklySeedString()) {
+        data.currentStreak += 1;
+    } else {
+        data.currentStreak = 1;
+    }
+
+    data.maxStreak = Math.max(data.maxStreak || 0, data.currentStreak);
+    data.lastPlayedWeek = thisWeek;
+    weeklyChallengeStreakSave(data);
+    return data;
+}
+
+function getWeeklyChallengeStreakCount() {
+    const data = weeklyChallengeStreakLoad();
+    if (!data.lastPlayedWeek) return 0;
+    const thisWeek = DailyEngine.getWeeklySeedString();
+    if (data.lastPlayedWeek === thisWeek || data.lastPlayedWeek === previousWeeklySeedString()) {
+        return data.currentStreak;
+    }
+    return 0;
+}
+
 // --- JOURNAL DU RÉCAP HEBDO/MENSUEL (voir js/recap.js) ---
 // Journal compact, un point par jour joué : [{date:'YYYY-MM-DD', xp, themesWon}].
 // Alimenté par gamification.js: awardXP() (xp) et recordThemeCompletion()
@@ -406,6 +468,7 @@ function resetAllGameData() {
     try { localStorage.removeItem(CUSTOM_EVENTS_KEY); } catch (e) {}
     try { localStorage.removeItem(LEADERBOARD_KEY); } catch (e) {}
     try { localStorage.removeItem(STREAK_KEY); } catch (e) {}
+    try { localStorage.removeItem(WEEKLY_CHALLENGE_STREAK_KEY); } catch (e) {}
     try { localStorage.removeItem(GAMIFICATION_KEY); } catch (e) {}
 }
 

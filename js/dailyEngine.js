@@ -51,6 +51,34 @@
         return year + '-' + month + '-' + day;
     }
 
+    // Semaine ISO 8601 (ex: '2026-W36') d'une date UTC, algorithme standard
+    // (jeudi de la semaine ISO courante). Calculée en UTC — contrairement à
+    // getIsoWeekString() dans js/storage.js (fuseau local de l'appareil,
+    // utilisée pour le récap et la ligue XP, sans enjeu d'équité entre
+    // joueurs) — pour que tous les joueurs du monde voient la même semaine
+    // basculer au même instant, comme getDailySeedString ci-dessus pour le
+    // Défi du jour.
+    function getIsoWeekStringUTC(date) {
+        var d = new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate()));
+        var dayNum = (d.getUTCDay() + 6) % 7; // Lundi=0 ... Dimanche=6
+        d.setUTCDate(d.getUTCDate() - dayNum + 3); // Jeudi de cette semaine ISO
+        var firstThursday = new Date(Date.UTC(d.getUTCFullYear(), 0, 4));
+        var fdDayNum = (firstThursday.getUTCDay() + 6) % 7;
+        firstThursday.setUTCDate(firstThursday.getUTCDate() - fdDayNum + 3);
+        var diffDays = Math.round((d.getTime() - firstThursday.getTime()) / 86400000);
+        var week = 1 + Math.round(diffDays / 7);
+        return d.getUTCFullYear() + '-W' + String(week).padStart(2, '0');
+    }
+
+    // Même frontière que getDailySeedString (05h00 UTC) : la semaine du Défi
+    // hebdomadaire bascule donc en même temps que celle du Défi du jour qui
+    // ouvre une nouvelle semaine ISO, plutôt qu'à minuit UTC pile.
+    function getWeeklySeedString(refDate) {
+        var now = refDate || new Date();
+        var adjusted = new Date(now.getTime() - DAY_BOUNDARY_OFFSET_MS);
+        return getIsoWeekStringUTC(adjusted);
+    }
+
     function mulberry32(seed) {
         return function () {
             var t = (seed += 0x6D2B79F5);
@@ -92,12 +120,21 @@
     // js/daily.js: generateDailyEvents, qui exclut les événements/thèmes
     // personnalisés avant d'appeler cette fonction, précisément pour cette
     // raison — le serveur ne connaît que le contenu officiel).
-    function pickDailyItems(items, dateStr, count, getDate) {
+    //
+    // `dateStr` est en réalité n'importe quelle chaîne-graine (date du jour
+    // pour le Défi du jour, semaine ISO pour le Défi hebdomadaire — voir
+    // js/weekly.js: generateWeeklyChallengeEvents) ; `seedPrefix` isole les
+    // graines des deux défis l'une de l'autre (sinon un jour et une semaine
+    // ISO au même libellé produiraient... en pratique jamais le cas, les
+    // deux formats de chaîne ne se recoupent pas, mais autant rester
+    // explicite plutôt que de compter dessus).
+    function pickDailyItems(items, dateStr, count, getDate, seedPrefix) {
         count = count || 10;
         getDate = getDate || function (it) { return it.date; };
+        seedPrefix = seedPrefix || 'historiaxe_daily_';
         if (!items || items.length === 0) return [];
 
-        var seed = hashStringToSeed('historiaxe_daily_' + dateStr);
+        var seed = hashStringToSeed(seedPrefix + dateStr);
         var rng = mulberry32(seed);
 
         var shuffled = items.slice();
@@ -242,6 +279,7 @@
 
     return {
         getDailySeedString: getDailySeedString,
+        getWeeklySeedString: getWeeklySeedString,
         mulberry32: mulberry32,
         hashStringToSeed: hashStringToSeed,
         getCenturyKey: getCenturyKey,

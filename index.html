@@ -802,6 +802,46 @@
         </div>
     </div>
 
+    <!-- MODAL RÉSULTATS — DÉFI HEBDOMADAIRE : miroir de modal-daily-results ci-dessus (30 événements/semaine ISO
+         au lieu de 10/jour, backend api/weeklyScores.js + api/weeklyLeaderboard.js). Pas de bouton « Défier un ami » :
+         les duels asynchrones (js/duels.js) ne portent que sur le Défi du jour. Classes CSS "daily-*" réutilisées
+         telles quelles (mise en page identique), seuls les id changent. -->
+    <div id="modal-weekly-results" class="modal-overlay hidden">
+        <div class="modal-content" style="max-width:420px; text-align:center;">
+            <span class="close-btn" onclick="closeWeeklyChallengeResultsModal()">×</span>
+            <div class="modal-title" id="weekly-results-title">🌍 Défi hebdomadaire terminé !</div>
+
+            <div class="daily-results-summary">
+                <div class="daily-results-stat">
+                    <span class="daily-results-stat-val" id="weekly-results-score">0</span>
+                    <span class="daily-results-stat-label" data-i18n="weekly.score_stat">Score</span>
+                </div>
+                <div class="daily-results-stat">
+                    <span class="daily-results-stat-val" id="weekly-results-time">0,0 s</span>
+                    <span class="daily-results-stat-label" data-i18n="weekly.time_stat">Temps</span>
+                </div>
+            </div>
+
+            <div class="daily-countdown-box">
+                <span data-i18n="weekly.countdown_label">Prochain défi dans</span> <span class="daily-countdown-val"
+                    id="weekly-countdown-val">--:--:--</span>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="weekly-pseudo-input" data-i18n="weekly.pseudo_label">Votre pseudo
+                    (classement mondial)</label>
+                <input type="text" id="weekly-pseudo-input" class="form-input" placeholder="Ex : ChronoMaster"
+                    maxlength="20" data-i18n-attr="placeholder:weekly.pseudo_placeholder">
+            </div>
+            <button class="btn" id="btn-weekly-submit" style="width:100%;" onclick="handleWeeklyChallengeScoreSubmit()"
+                data-i18n="weekly.submit_btn">Envoyer mon score</button>
+            <p class="daily-submit-feedback" id="weekly-submit-feedback"></p>
+
+            <div class="daily-leaderboard-title" data-i18n="weekly.leaderboard_title">🏆 Classement de la semaine</div>
+            <div id="weekly-leaderboard-preview"></div>
+        </div>
+    </div>
+
     <!-- MODAL CRÉER UN THÈME PERSONNALISÉ -->
     <div id="modal-add-theme" class="modal-overlay hidden" onclick="if(event.target===this)closeAddThemeModal()">
         <div class="modal-content" style="max-width:420px;">
@@ -1169,6 +1209,7 @@
     <script src="js/dailyEngine.js"></script>
     <script src="js/apiClient.js"></script>
     <script src="js/daily.js"></script>
+    <script src="js/weekly.js"></script>
     <script src="js/i18n.js"></script>
     <script src="js/geoMap.js"></script>
     <script src="js/app.js"></script>

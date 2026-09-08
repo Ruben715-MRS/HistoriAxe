@@ -24,7 +24,9 @@
     "search_empty": "No theme matches your search.",
     "special_favorites": "Favorites",
     "special_discover": "Discover",
+    "special_challenges": "Challenges",
     "special_daily": "Daily Challenge",
+    "special_weekly": "Weekly Challenge",
     "special_revision": "Review",
     "themes_count": "{count} themes",
     "events_count": "{count} events",
@@ -128,6 +130,7 @@
     "cannot_generate": "Unable to generate questions for this theme.",
     "cannot_generate_dates": "Unable to generate questions for this theme (all dates are identical).",
     "no_events_daily": "No events available for today's challenge.",
+    "no_events_weekly": "No events available for this week's challenge.",
     "select_at_least_one": "You must select at least one event to play."
   },
   "game": {
@@ -190,6 +193,7 @@
     "victory_periodes": "Congratulations! Eras & Centuries mastered!",
     "victory_ecart": "Congratulations! All gaps solved!",
     "victory_daily": "Congratulations! Daily Challenge solved!",
+    "victory_weekly": "Congratulations! Weekly Challenge solved!",
     "final_score": "Score: {val} points",
     "final_time": "Time: {val} s",
     "streak_banner": "🔥 Active Streak: {count} days",
@@ -223,6 +227,25 @@
     "submit_offline": "World leaderboard unavailable offline.",
     "leaderboard_title": "🏆 Today's Leaderboard",
     "leaderboard_empty": "No score submitted yet today. Be the first!",
+    "leaderboard_loading": "Loading leaderboard…",
+    "leaderboard_error": "Leaderboard temporarily unavailable."
+  },
+  "weekly": {
+    "title_win": "🌍 Weekly Challenge Mastered!",
+    "title_over": "🌍 Weekly Challenge Finished",
+    "score_stat": "Score",
+    "time_stat": "Time",
+    "streak_stat": "Streak",
+    "countdown_label": "Next challenge in",
+    "pseudo_label": "Your nickname (global leaderboard)",
+    "pseudo_placeholder": "e.g. ChronoMaster",
+    "submit_btn": "Submit my score",
+    "submit_loading": "Sending…",
+    "submit_success": "Score submitted! #{rank} out of {total} worldwide.",
+    "submit_error": "Unable to submit score right now. Try again.",
+    "submit_offline": "World leaderboard unavailable offline.",
+    "leaderboard_title": "🏆 This Week's Leaderboard",
+    "leaderboard_empty": "No score submitted yet this week. Be the first!",
     "leaderboard_loading": "Loading leaderboard…",
     "leaderboard_error": "Leaderboard temporarily unavailable."
   },
@@ -318,9 +341,13 @@
         "name": "Eternal Flame",
         "desc": "Keep a 7-day streak on the Daily Challenge."
       },
+      "pilier_hebdomadaire": {
+        "name": "Weekly Pillar",
+        "desc": "Keep a 4-week streak on the Weekly Challenge."
+      },
       "eclair_temporel": {
         "name": "Temporal Lightning",
-        "desc": "Finish a Chrono, Expert, or Daily Challenge run in under 30 seconds."
+        "desc": "Finish a Chrono, Expert, Daily Challenge, or Weekly Challenge run in under 30 seconds."
       },
       "major_concours": {
         "name": "Top of the Class",

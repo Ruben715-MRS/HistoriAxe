@@ -112,10 +112,17 @@ const BADGES_CONFIG = [
         target: 7
     },
     {
+        id: "pilier_hebdomadaire",
+        name: "Pilier Hebdomadaire",
+        icon: "📆",
+        desc: "Maintenir une série de 4 semaines consécutives au Défi hebdomadaire.",
+        target: 4
+    },
+    {
         id: "eclair_temporel",
         name: "Éclair Temporel",
         icon: "⚡",
-        desc: "Terminer un mode Chrono, Expert ou Défi du jour en moins de 30 secondes.",
+        desc: "Terminer un mode Chrono, Expert, Défi du jour ou Défi hebdomadaire en moins de 30 secondes.",
         target: 1
     },
     {
@@ -272,8 +279,14 @@ function checkBadgeProgressOnGameEnd(isWin, sessionMistakesCount) {
         badgesToUnlock.push('flamme_eternelle');
     }
 
+    // 1bis. Pilier Hebdomadaire
+    const weeklyChallengeStreak = typeof getWeeklyChallengeStreakCount === 'function' ? getWeeklyChallengeStreakCount() : 0;
+    if (weeklyChallengeStreak >= 4 && (!data.unlockedBadges || !data.unlockedBadges['pilier_hebdomadaire'])) {
+        badgesToUnlock.push('pilier_hebdomadaire');
+    }
+
     // 2. Éclair Temporel (< 30s)
-    if (isWin && (typeof currentMode !== 'undefined') && (currentMode === 'chrono' || currentMode === 'expert' || currentMode === 'daily') && (typeof totalTimePlayed !== 'undefined') && totalTimePlayed > 0 && totalTimePlayed < 30) {
+    if (isWin && (typeof currentMode !== 'undefined') && (currentMode === 'chrono' || currentMode === 'expert' || currentMode === 'daily' || currentMode === 'weekly') && (typeof totalTimePlayed !== 'undefined') && totalTimePlayed > 0 && totalTimePlayed < 30) {
         if (!data.unlockedBadges || !data.unlockedBadges['eclair_temporel']) {
             badgesToUnlock.push('eclair_temporel');
         }
@@ -289,7 +302,7 @@ function checkBadgeProgressOnGameEnd(isWin, sessionMistakesCount) {
     }
 
     // 4. Badges d'époques sur parties sans faute
-    if (isWin && sessionMistakesCount === 0 && (typeof dailyChallengeMode === 'undefined' || !dailyChallengeMode) && (typeof revisionMode === 'undefined' || !revisionMode)) {
+    if (isWin && sessionMistakesCount === 0 && (typeof dailyChallengeMode === 'undefined' || !dailyChallengeMode) && (typeof weeklyChallengeMode === 'undefined' || !weeklyChallengeMode) && (typeof revisionMode === 'undefined' || !revisionMode)) {
         const theme = typeof getCurrentTheme === 'function' ? getCurrentTheme() : null;
         if (theme && theme.events && theme.events.length >= 5) {
             const avgDate = theme.events.reduce((sum, e) => sum + e.date, 0) / theme.events.length;
@@ -407,6 +420,7 @@ function renderProfileModal() {
     const data = gamificationLoad();
     const rankInfo = getRankInfo(data.xp);
     const streakData = streakLoad();
+    const weeklyChallengeStreakData = typeof weeklyChallengeStreakLoad === 'function' ? weeklyChallengeStreakLoad() : { maxStreak: 0 };
 
     const heroIcon = document.getElementById('profile-hero-icon');
     const heroTitle = document.getElementById('profile-hero-title');
@@ -476,6 +490,7 @@ function renderProfileModal() {
         else if (badge.id === 'temoin_siecle') currentProg = (data.perfectContemporaryThemes || []).length;
         else if (badge.id === 'centurion') currentProg = Math.min(100, data.maxConsecutiveCorrectPlacements || 0);
         else if (badge.id === 'flamme_eternelle') currentProg = Math.min(7, streakData.maxStreak || 0);
+        else if (badge.id === 'pilier_hebdomadaire') currentProg = Math.min(4, weeklyChallengeStreakData.maxStreak || 0);
         else currentProg = isUnlocked ? badge.target : 0;
 
         const pct = Math.min(100, Math.round((currentProg / badge.target) * 100));

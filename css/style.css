@@ -479,6 +479,42 @@ body {
     border-color: var(--border-soft);
 }
 
+/* Choix Défi du jour / Défi hebdomadaire (voir js/app.js: initCategories) :
+   déplié/replié sous la grille d'actions rapides par le bouton « Défis »,
+   plutôt qu'un nouvel écran — le choix reste à un tap de distance. */
+.challenge-picker {
+    display: flex;
+    gap: 12px;
+    margin-top: 14px;
+}
+
+.challenge-picker-btn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 14px 10px;
+    border-radius: 16px;
+    background: var(--surface);
+    border: 1px solid var(--border-soft);
+    box-shadow: var(--card-shadow);
+    color: var(--text-dark);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.challenge-picker-btn:hover {
+    background: var(--surface-2);
+    transform: translateY(-2px);
+}
+
+.challenge-picker-icon {
+    font-size: 24px;
+}
+
 /* ÉCRAN « PROGRESSION PAR THÈME » : radar de synthèse par catégorie et liste
            de barres de maîtrise détaillées (thème par thème), triées du moins
            maîtrisé au mieux maîtrisé pour indiquer d'un coup d'œil où concentrer sa
