@@ -33,6 +33,15 @@
     // nuit pour la majorité des joueurs plutôt qu'en pleine journée.
     var DAY_BOUNDARY_OFFSET_MS = 5 * 3600 * 1000;
 
+    // Thèmes exclus du tirage des défis (quotidien et hebdomadaire) : leurs
+    // dates ne sont pas des années du calendrier grégorien (ex. le calendrier
+    // hébraïque), donc les mélanger avec le reste de la base n'aurait aucun
+    // sens chronologique. Le thème reste jouable normalement partout
+    // ailleurs dans l'app — seul le tirage des défis l'ignore. Constante
+    // partagée client/serveur (voir js/daily.js et api/_lib/dataset.js) pour
+    // que les deux calculent exactement le même tirage.
+    var EXCLUDED_THEME_IDS = ['thm_histoire_juive_hebraique'];
+
     function getDailySeedString(refDate) {
         var now = refDate || new Date();
         var adjusted = new Date(now.getTime() - DAY_BOUNDARY_OFFSET_MS);
@@ -237,6 +246,7 @@
         hashStringToSeed: hashStringToSeed,
         getCenturyKey: getCenturyKey,
         pickDailyItems: pickDailyItems,
-        replayDailyGame: replayDailyGame
+        replayDailyGame: replayDailyGame,
+        EXCLUDED_THEME_IDS: EXCLUDED_THEME_IDS
     };
 });
