@@ -276,6 +276,8 @@ if (typeof window.bdd === 'undefined') {
 var bdd = window.bdd;
 
 const customCategory = {
+    // Nom de repli avant chargement du pack de langue — retraduit dynamiquement
+    // dans ensureCustomCategoryInBdd() via custom.category_title (voir ui/<lang>.json).
     nom: "🎨 Mes thèmes personnalisés",
     isCustomCategory: true,
     themes: []
@@ -312,6 +314,12 @@ function getAllEventsWithLocation() {
 
 function ensureCustomCategoryInBdd() {
     bdd = window.bdd || [];
+    if (typeof t === 'function') {
+        const translatedNom = t('custom.category_title');
+        if (translatedNom && translatedNom !== 'custom.category_title') {
+            customCategory.nom = translatedNom;
+        }
+    }
     if (!bdd.some(c => c && c.isCustomCategory)) {
         bdd.push(customCategory);
     }
