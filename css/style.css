@@ -85,6 +85,15 @@ body {
     overflow: hidden;
 }
 
+/* Les <img> home-backdrop/home-image sont désormais chacune enveloppées
+   dans un <picture> (choix du visuel selon le format d'écran, voir
+   index.html) : display:contents fait disparaître cette boîte du rendu,
+   pour que la mise en page ci-dessous (position absolute, tailles en %…)
+   se comporte exactement comme avec un <img> en enfant direct. */
+#screen-home picture {
+    display: contents;
+}
+
 .home-backdrop {
     position: absolute;
     inset: -20px;
@@ -166,6 +175,37 @@ body {
     margin-top: 20px;
     padding: 0 60px;
     box-sizing: border-box;
+}
+
+/* Écran des modes : nom du thème (titre) + décompte d'axes/événements
+   sélectionnés (sous-titre) sont deux éléments distincts plutôt qu'une
+   seule phrase jointe par un tiret cadratin (voir showScreen() dans
+   app.js) — le sous-titre hérite de l'espacement bas que le titre seul
+   portait jusqu'ici. */
+.modes-header-title {
+    margin-bottom: 4px;
+}
+
+.modes-header-subtitle {
+    text-align: center;
+    color: var(--muted-text);
+    font-size: 15px;
+    margin: 0 60px 20px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Sur petit écran, un nom de thème long peut s'étaler sur plusieurs
+   lignes : un corps un peu plus petit laisse le titre respirer sans
+   pousser tout le reste de l'écran hors du premier écran visible. */
+@media (max-width: 600px) {
+    .modes-header-title {
+        font-size: 20px;
+    }
+
+    .modes-header-subtitle {
+        font-size: 13px;
+    }
 }
 
 .grid-cards {
@@ -3293,6 +3333,28 @@ textarea.form-input {
     text-overflow: ellipsis;
 }
 
+/* Sur petit écran, la barre de grade est trop étroite pour un rang sur une
+   seule ligne une fois le badge de niveau et le texte XP soustraits (même
+   le tout premier rang, le plus court, s'y retrouvait tronqué) : on laisse
+   le titre passer sur deux lignes plutôt que de le couper. Tablette et
+   ordinateur, où la largeur suffit, gardent l'ellipse d'origine. */
+@media (max-width: 600px) {
+    .player-rank-title {
+        white-space: normal;
+        overflow: visible;
+        text-overflow: clip;
+        line-height: 1.2;
+    }
+
+    .player-rank-row {
+        align-items: flex-start;
+    }
+
+    .player-rank-level-badge {
+        margin-top: 1px;
+    }
+}
+
 .player-rank-level-badge {
     font-size: 11px;
     font-weight: 800;
@@ -3813,9 +3875,13 @@ textarea.form-input {
 
 /* Dans la liste (.entry-main empile titre puis badge), le badge n'a plus
    besoin de ce décalage horizontal pensé pour un alignement sur la même
-   ligne que le titre. */
-.entry-main .entry-axe-badge {
+   ligne que le titre — et se centre sous lui (tout en restant sous le
+   titre, qui lui reste aligné à gauche) plutôt que de démarrer contre le
+   bord gauche de la carte. */
+.entry-main .entry-axe-badge,
+.entry-main .entry-flag {
     margin-left: 0;
+    align-self: center;
 }
 
 .axes-entry-badges-hidden .entry-axe-badge {

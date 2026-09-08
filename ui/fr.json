@@ -66,7 +66,7 @@
   },
   "modes": {
     "choose_mode": "Choisissez un mode de jeu",
-    "essential_summary": "{theme} — ⭐ Les Incontournables ({count} événements)",
+    "essential_summary_subtitle": "⭐ Les Incontournables ({count} événements)",
     "discovery": {
       "title": "Découverte",
       "desc": "Consultez la frise chronologique sans jouer."
@@ -120,7 +120,7 @@
       "desc": "À tour de rôle sur le même écran, élimination à 2 erreurs."
     },
     "score_history": "🏆 Historique des scores",
-    "axis_summary": "{theme} — {axesCount} axes, {eventsCount} événements",
+    "axis_summary_subtitle": "{axesCount} axes, {eventsCount} événements",
     "chrono_lock": "Réussissez d'abord le mode Classique sur ce thème pour débloquer Chrono.",
     "expert_lock": "Réussissez d'abord le mode Chrono sur ce thème pour débloquer Expert.",
     "no_events_theme": "Ce thème ne contient aucun événement. Veuillez d'abord ajouter des événements via « Ajouter un événement » !",

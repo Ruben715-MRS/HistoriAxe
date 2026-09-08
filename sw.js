@@ -12,7 +12,7 @@
 // 'install' recharge tout depuis le réseau. Un pack de langue ou un texte
 // d'UI modifié qui ne s'affiche pas malgré un déploiement réussi est
 // généralement le signe que l'un de ces deux numéros n'a pas été incrémenté.
-const CACHE_VERSION = '1.3.1';
+const CACHE_VERSION = '1.3.2';
 const APP_SHELL_CACHE = `historiaxe-shell-v${CACHE_VERSION}`;
 const DATA_CACHE = 'historiaxe-data-v1.0.7';
 
@@ -45,6 +45,13 @@ const APP_SHELL_FILES = [
     './data/fr.json',
     './apple_icon.jpg',
     './accueil.jpg',
+    // Variantes d'écran d'accueil selon le format d'écran (voir index.html
+    // et #screen-home picture en CSS) : accueil.jpg reste le repli par
+    // défaut, ces trois-là ne sont choisies que sur un format d'écran
+    // correspondant.
+    './splash_iphone_portrait.jpg',
+    './splash_iphone_landscape.jpg',
+    './splash_ipad_portrait.jpg',
     './assets/geo/world-basemap.svg',
     './assets/geo/country-pins.json',
     './assets/geo/theme-country-map.json'

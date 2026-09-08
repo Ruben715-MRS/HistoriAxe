@@ -1125,17 +1125,31 @@ function showScreen(screenId, direction) {
     }
     if (screenId === 'screen-modes') {
         const titleEl = document.getElementById('modes-header-title');
+        const subtitleEl = document.getElementById('modes-header-subtitle');
+        // Le nom du thème (titre) et le décompte d'axes/événements
+        // (sous-titre) sont deux éléments distincts plutôt qu'une seule
+        // phrase jointe par un tiret cadratin : sur petit écran, ce
+        // découpage évite qu'un long nom de thème ne relègue le décompte
+        // tout en bas, ou qu'un nombre se retrouve seul en fin de ligne,
+        // coupé du mot qu'il qualifie (voir .modes-header-subtitle en CSS).
+        let subtitle = '';
         if (revisionMode) {
             titleEl.innerText = t('revision.targeted_title', { count: revisionEvents.length });
         } else if (essentialFilterActive) {
             const theme = getCurrentTheme();
-            titleEl.innerText = t('modes.essential_summary', { theme: theme.nom, count: theme.essentiel.length });
+            titleEl.innerText = theme.nom;
+            subtitle = t('modes.essential_summary_subtitle', { count: theme.essentiel.length });
         } else if (axisFilterActive) {
             const theme = getCurrentTheme();
             const count = theme.events.filter(e => selectedAxes.has(e.axe)).length;
-            titleEl.innerText = t('modes.axis_summary', { theme: theme.nom, axesCount: selectedAxes.size, eventsCount: count });
+            titleEl.innerText = theme.nom;
+            subtitle = t('modes.axis_summary_subtitle', { axesCount: selectedAxes.size, eventsCount: count });
         } else {
             titleEl.innerText = t('modes.choose_mode');
+        }
+        if (subtitleEl) {
+            subtitleEl.innerText = subtitle;
+            subtitleEl.classList.toggle('hidden', !subtitle);
         }
         updateModeLocks();
     }
