@@ -26,8 +26,8 @@
     "special_discover": "Descubrir",
     "special_daily": "Desafío del Día",
     "special_revision": "Repasar",
-    "themes_count": "{count} tema(s)",
-    "events_count": "{count} evento(s)",
+    "themes_count": "{count} temas",
+    "events_count": "{count} eventos",
     "choose_category": "Elige una Categoría",
     "search_clear_title": "Borrar",
     "league_btn_aria": "Liga semanal",
@@ -58,7 +58,7 @@
   },
   "axes": {
     "title": "Ejes Temáticos",
-    "subtitle_selected": "{theme} — {count} evento(s) seleccionado(s)",
+    "subtitle_selected": "{theme} — {count} eventos seleccionados",
     "subtitle_select_one": "{theme} — selecciona al menos un eje",
     "continue_btn": "Continuar con estos ejes"
   },
@@ -117,7 +117,7 @@
       "desc": "Por turnos en la misma pantalla, eliminación a los 2 fallos."
     },
     "score_history": "🏆 Historial de Puntuaciones",
-    "axis_summary": "{theme} — {axesCount} eje(s), {eventsCount} evento(s)",
+    "axis_summary": "{theme} — {axesCount} ejes, {eventsCount} eventos",
     "chrono_lock": "Supera antes el modo Clásico en este tema para desbloquear Cronometrado.",
     "expert_lock": "Supera antes el modo Cronometrado en este tema para desbloquear Experto.",
     "no_events_theme": "Este tema no contiene ningún evento. ¡Añade primero eventos con «Añadir un evento»!",
@@ -162,7 +162,7 @@
     "correct_answer": "Respuesta correcta: {year}",
     "exact_with_hint": "Exacto (con pista)",
     "exact": "¡Exacto!",
-    "real_gap": "Diferencia real: {gap} año(s)",
+    "real_gap": "Diferencia real: {gap} años",
     "ecart_exact_after_tries": "Exacto (tras varios intentos)",
     "ecart_feedback_more": "🔼 ¡Más!",
     "ecart_feedback_less": "🔽 ¡Menos!",
@@ -172,7 +172,7 @@
     "frise_complete": "Línea completa · {n} eventos",
     "xp_gain_streak": "+{xp} XP (racha ×{mult} 🔥)",
     "xp_gain": "+{xp} XP",
-    "duration_years": "{n} año(s)",
+    "duration_years": "{n} años",
     "decrease_text_aria": "Reducir el texto",
     "increase_text_aria": "Aumentar el texto",
     "hint_btn_full": "💡 Pista",
@@ -192,7 +192,7 @@
     "victory_daily": "¡Bravo! ¡Desafío del día superado!",
     "final_score": "Puntuación: {val} puntos",
     "final_time": "Duración: {val} s",
-    "streak_banner": "🔥 Racha activa: {count} día(s)",
+    "streak_banner": "🔥 Racha activa: {count} días",
     "replay_btn": "Jugar de Nuevo",
     "menu_btn": "Menú",
     "share_title": "Tu Partida",
@@ -243,7 +243,7 @@
     "progress_legend_none": "Aún no probado",
     "progress_empty": "Sin datos todavía. Juega algunas partidas para ver tu progreso.",
     "targeted_title": "Repaso dirigido ({count} eventos)",
-    "weak_count_subtitle": "{count} evento(s) por repasar, en {themeCount} tema(s)"
+    "weak_count_subtitle": "{count} eventos por repasar, en {themeCount} temas"
   },
   "gamification": {
     "rank_badge": "Niv. {level}",
@@ -330,7 +330,7 @@
     "progress_fraction": "{current}/{target}",
     "streak_active": "🔥 Racha activa: XP ×{mult}",
     "streak_inactive": "🔥 Juega hoy para activar un multiplicador de XP",
-    "streak_next_tier": " — {days} día(s) más para ×{mult}",
+    "streak_next_tier": " — {days} días más para ×{mult}",
     "streak_risk": " (un solo día perdido y la racha —y el multiplicador— vuelven a cero).",
     "recap_btn": "📊 Ver mi resumen semanal/mensual",
     "hero_level_line": "Nivel {level} • {xp} XP"
@@ -449,9 +449,9 @@
     "results_title": "Resultados Multijugador"
   },
   "mastery": {
-    "tested_meta": "{tested}/{total} evento(s) evaluado(s)",
-    "weak_badge": "⚠ {count} punto(s) débil(es)",
-    "theme_count": "{count} tema(s)",
+    "tested_meta": "{tested}/{total} eventos evaluados",
+    "weak_badge": "⚠ {count} puntos débiles",
+    "theme_count": "{count} temas",
     "radar_untested": "sin evaluar",
     "radar_aria": "Radar de dominio por categoría"
   },
@@ -490,7 +490,7 @@
     "prev_month": "el mes pasado",
     "share_btn": "Compartir mi resumen",
     "share_copied": "¡Resumen copiado al portapapeles!",
-    "share_text": "📊 HistoriAxe — {period}: {xp} XP, {games} partida(s) ganada(s), ¡{days} día(s) activo(s)!"
+    "share_text": "📊 HistoriAxe — {period}: {xp} XP, {games} partidas ganadas, ¡{days} días activos!"
   },
   "league": {
     "title": "🥇 Tu liga semanal",
@@ -526,7 +526,7 @@
   },
   "notifications": {
     "streak_title": "🔥 Tu racha está en peligro",
-    "streak_body": "Tu racha de {days} día(s) se romperá esta noche. ¡Juega el Reto diario para mantenerla!",
+    "streak_body": "Tu racha de {days} días se romperá esta noche. ¡Juega el Reto diario para mantenerla!",
     "daily_title": "🌍 El Reto diario ya está disponible",
     "daily_body": "Diez eventos para reordenar cronológicamente. ¡Te toca jugar!",
     "recap_title": "📊 Tu resumen semanal ya está listo",

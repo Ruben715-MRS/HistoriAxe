@@ -1425,6 +1425,16 @@ textarea.form-input {
     font-variant-numeric: tabular-nums;
 }
 
+/* Dates très longues (Préhistoire, ex. « 3 300 000 av. J.-C. », voir
+   formatYear()) : un corps un peu plus petit suffit à garder le nombre
+   groupé par milliers sur une seule ligne dans la gouttière existante,
+   sans en changer la largeur (ce qui désaxerait la puce des autres
+   repères par rapport au trait de la frise). Les dates courantes
+   (jusqu'à 4 chiffres) ne sont pas concernées. */
+.entry-year.entry-year-long {
+    font-size: calc(15px * var(--zoom-level));
+}
+
 .entry-tick {
     justify-self: center;
     width: 7px;

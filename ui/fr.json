@@ -26,8 +26,8 @@
     "special_discover": "Découvrir",
     "special_daily": "Défi du jour",
     "special_revision": "Réviser",
-    "themes_count": "{count} thème(s)",
-    "events_count": "{count} événement(s)",
+    "themes_count": "{count} thèmes",
+    "events_count": "{count} événements",
     "choose_category": "Choisissez une catégorie",
     "search_clear_title": "Effacer",
     "league_btn_aria": "Ligue hebdomadaire",
@@ -60,7 +60,7 @@
     "title": "Axes thématiques",
     "essential_title": "Les Incontournables",
     "essential_desc": "{count} événements clés",
-    "subtitle_selected": "{theme} — {count} événement(s) sélectionné(s)",
+    "subtitle_selected": "{theme} — {count} événements sélectionnés",
     "subtitle_select_one": "{theme} — sélectionnez au moins un axe",
     "continue_btn": "Continuer avec ces axes"
   },
@@ -120,7 +120,7 @@
       "desc": "À tour de rôle sur le même écran, élimination à 2 erreurs."
     },
     "score_history": "🏆 Historique des scores",
-    "axis_summary": "{theme} — {axesCount} axe(s), {eventsCount} événement(s)",
+    "axis_summary": "{theme} — {axesCount} axes, {eventsCount} événements",
     "chrono_lock": "Réussissez d'abord le mode Classique sur ce thème pour débloquer Chrono.",
     "expert_lock": "Réussissez d'abord le mode Chrono sur ce thème pour débloquer Expert.",
     "no_events_theme": "Ce thème ne contient aucun événement. Veuillez d'abord ajouter des événements via « Ajouter un événement » !",
@@ -165,7 +165,7 @@
     "correct_answer": "Bonne réponse : {year}",
     "exact_with_hint": "Exact (avec indice)",
     "exact": "Exact !",
-    "real_gap": "Écart réel : {gap} an(s)",
+    "real_gap": "Écart réel : {gap} ans",
     "ecart_exact_after_tries": "Exact (après plusieurs essais)",
     "ecart_feedback_more": "🔼 Plus !",
     "ecart_feedback_less": "🔽 Moins !",
@@ -175,7 +175,7 @@
     "frise_complete": "Frise complète · {n} repères",
     "xp_gain_streak": "+{xp} XP (série ×{mult} 🔥)",
     "xp_gain": "+{xp} XP",
-    "duration_years": "{n} an(s)",
+    "duration_years": "{n} ans",
     "decrease_text_aria": "Réduire le texte",
     "increase_text_aria": "Agrandir le texte",
     "hint_btn_full": "💡 Indice",
@@ -195,7 +195,7 @@
     "victory_daily": "Bravo ! Défi du jour relevé !",
     "final_score": "Score : {val} points",
     "final_time": "Durée : {val} s",
-    "streak_banner": "🔥 Série en cours : {count} jour(s)",
+    "streak_banner": "🔥 Série en cours : {count} jours",
     "replay_btn": "Rejouer",
     "menu_btn": "Menu",
     "share_title": "Votre parcours",
@@ -246,7 +246,7 @@
     "progress_legend_none": "Pas encore testé",
     "progress_empty": "Aucune donnée pour l'instant. Jouez quelques parties pour voir votre progression.",
     "targeted_title": "Révision ciblée ({count} événements)",
-    "weak_count_subtitle": "{count} événement(s) à retravailler, dans {themeCount} thème(s)"
+    "weak_count_subtitle": "{count} événements à retravailler, dans {themeCount} thèmes"
   },
   "gamification": {
     "rank_badge": "Niv. {level}",
@@ -333,7 +333,7 @@
     "progress_fraction": "{current}/{target}",
     "streak_active": "🔥 Série active : XP ×{mult}",
     "streak_inactive": "🔥 Joue aujourd'hui pour activer un multiplicateur d'XP",
-    "streak_next_tier": " — encore {days} jour(s) pour ×{mult}",
+    "streak_next_tier": " — encore {days} jours pour ×{mult}",
     "streak_risk": " (un seul jour manqué et la série — et le multiplicateur — repartent à zéro).",
     "recap_btn": "📊 Voir mon récap hebdo/mensuel",
     "hero_level_line": "Niveau {level} • {xp} XP"
@@ -452,9 +452,9 @@
     "results_title": "Résultats Multijoueurs"
   },
   "mastery": {
-    "tested_meta": "{tested}/{total} événement(s) testé(s)",
-    "weak_badge": "⚠ {count} point(s) faible(s)",
-    "theme_count": "{count} thème(s)",
+    "tested_meta": "{tested}/{total} événements testés",
+    "weak_badge": "⚠ {count} points faibles",
+    "theme_count": "{count} thèmes",
     "radar_untested": "non testé",
     "radar_aria": "Radar de maîtrise par catégorie"
   },
@@ -493,7 +493,7 @@
     "prev_month": "le mois dernier",
     "share_btn": "Partager mon récap",
     "share_copied": "Récap copié dans le presse-papiers !",
-    "share_text": "📊 HistoriAxe — {period} : {xp} XP, {games} partie(s) gagnée(s), {days} jour(s) actif(s) !"
+    "share_text": "📊 HistoriAxe — {period} : {xp} XP, {games} parties gagnées, {days} jours actifs !"
   },
   "league": {
     "title": "🥇 Ta ligue de la semaine",
@@ -529,7 +529,7 @@
   },
   "notifications": {
     "streak_title": "🔥 Ta série est en péril",
-    "streak_body": "Ta série de {days} jour(s) va se briser ce soir. Relève le Défi du jour pour la garder !",
+    "streak_body": "Ta série de {days} jours va se briser ce soir. Relève le Défi du jour pour la garder !",
     "daily_title": "🌍 Le Défi du jour est disponible",
     "daily_body": "Dix événements à replacer dans l'ordre chronologique. À toi de jouer !",
     "recap_title": "📊 Ton récap de la semaine est prêt",

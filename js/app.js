@@ -182,9 +182,29 @@ function formatDecimal(n) {
     return commaLangs.includes(lang) ? str.replace('.', ',') : str;
 }
 
+// Seuil (en valeur absolue) à partir duquel une année reçoit un séparateur
+// de milliers, ex. « 3 300 000 av. J.-C. » (Préhistoire). En dessous, les
+// dates courantes (jusqu'à 4 chiffres, ex. 2026 ou 776 av. J.-C.) restent
+// affichées telles quelles : un espace entre centaines et milliers y serait
+// incongru (« 2 026 »).
+const LONG_YEAR_THRESHOLD = 10000;
+
+// Locale utilisée pour le regroupement par milliers (espace insécable fin
+// en français, virgule en anglais, etc.), alignée sur la langue de l'UI
+// plutôt que sur celle du navigateur.
+const YEAR_GROUPING_LOCALES = { fr: 'fr-FR', en: 'en-US', es: 'es-ES', de: 'de-DE', it: 'it-IT', ja: 'ja-JP' };
+
+function isLongYear(year) {
+    return Math.abs(year) >= LONG_YEAR_THRESHOLD;
+}
+
 function formatYear(year) {
-    if (year < 0) return Math.abs(year) + " " + t('game.era_bc');
-    return year;
+    const abs = Math.abs(year);
+    const display = isLongYear(year)
+        ? abs.toLocaleString(YEAR_GROUPING_LOCALES[i18n.currentLang] || 'fr-FR')
+        : abs;
+    if (year < 0) return display + " " + t('game.era_bc');
+    return display;
 }
 
 function formatEventDate(evt) {
@@ -806,8 +826,8 @@ function buildMasteryBarHtml(name, stats, extraMetaHtml) {
     const pct = masteryPctOf(stats);
     const band = masteryBand(pct);
     const pctLabel = pct === null ? '—' : pct + '%';
-    const testedMeta = `${stats.tested}/${stats.total} événement(s) testé(s)`;
-    const weakMeta = stats.weak > 0 ? `<span class="mastery-row-weak-badge">⚠ ${stats.weak} point(s) faible(s)</span>` : '';
+    const testedMeta = `${stats.tested}/${stats.total} événements testés`;
+    const weakMeta = stats.weak > 0 ? `<span class="mastery-row-weak-badge">⚠ ${stats.weak} points faibles</span>` : '';
     return `
                 <div class="mastery-row-top">
                     <span class="mastery-row-name">${name}</span>
@@ -832,7 +852,7 @@ function renderProgressGroup(node) {
 
     const summary = document.createElement('summary');
     summary.className = 'mastery-group-summary';
-    const themeCountMeta = `<span>${node.stats.themeCount} thème(s)</span>`;
+    const themeCountMeta = `<span>${node.stats.themeCount} thèmes</span>`;
     summary.innerHTML = buildMasteryBarHtml('📁 ' + node.nom, node.stats, themeCountMeta);
     details.appendChild(summary);
 
@@ -3441,7 +3461,12 @@ function buildEntry(evt) {
     }
 
     const dateText = currentMode === 'discovery' ? formatEventDate(evt) : formatYear(evt.date);
-    row.innerHTML = `<span class="entry-year">${dateText}</span>` +
+    // Voir .entry-year-long (css/style.css) : corps réduit pour que les rares
+    // dates très longues (Préhistoire) restent sur une ligne dans la
+    // gouttière existante, sans en changer la largeur pour tous les repères.
+    const yearIsLong = isLongYear(evt.date) || (evt.dateFin != null && isLongYear(evt.dateFin));
+    const yearClass = 'entry-year' + (yearIsLong ? ' entry-year-long' : '');
+    row.innerHTML = `<span class="${yearClass}">${dateText}</span>` +
         `<span class="entry-tick"></span>` +
         `<span class="entry-body"><span class="entry-main"><span class="entry-title">${evt.titre}</span>` +
         axeHtml +
