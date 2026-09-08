@@ -46,7 +46,7 @@ const DEFAULT_FR_FALLBACK_UI = {
         essential_desc: "{count} événements clés"
     },
     modes: {
-        essential_summary: "{theme} — ⭐ Les Incontournables ({count} événements)"
+        essential_summary_subtitle: "⭐ Les Incontournables ({count} événements)"
     }
 };
 

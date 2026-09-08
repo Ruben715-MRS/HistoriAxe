@@ -47,11 +47,29 @@
 </head>
 
 <body>
-    <!-- ÉCRAN 1 : ACCUEIL -->
+    <!-- ÉCRAN 1 : ACCUEIL
+         Visuel adapté au format de l'écran plutôt qu'un unique recadrage
+         4:3 affiché partout : les 4 variantes (mêmes crops que les écrans
+         de lancement iOS ci-dessus, réutilisées ici) couvrent téléphone/
+         tablette × portrait/paysage. Ordre des <source> important : le
+         navigateur retient la première correspondance, donc le format
+         téléphone (le plus étroit/large) est testé avant le format
+         tablette de la même orientation. Repli sur accueil.jpg (~4:3,
+         tablette paysage) pour tout le reste — desktop compris. -->
     <div id="screen-home" onclick="showScreen('screen-categories')">
-        <img src="accueil.jpg" alt="" class="home-backdrop" aria-hidden="true">
+        <picture>
+            <source media="(orientation: portrait) and (max-aspect-ratio: 2/3)" srcset="splash_iphone_portrait.jpg">
+            <source media="(orientation: portrait)" srcset="splash_ipad_portrait.jpg">
+            <source media="(orientation: landscape) and (min-aspect-ratio: 3/2)" srcset="splash_iphone_landscape.jpg">
+            <img src="accueil.jpg" alt="" class="home-backdrop" aria-hidden="true">
+        </picture>
         <div class="home-backdrop-overlay"></div>
-        <img src="accueil.jpg" alt="HistoriAxe" class="home-image">
+        <picture>
+            <source media="(orientation: portrait) and (max-aspect-ratio: 2/3)" srcset="splash_iphone_portrait.jpg">
+            <source media="(orientation: portrait)" srcset="splash_ipad_portrait.jpg">
+            <source media="(orientation: landscape) and (min-aspect-ratio: 3/2)" srcset="splash_iphone_landscape.jpg">
+            <img src="accueil.jpg" alt="HistoriAxe" class="home-image">
+        </picture>
         <!-- Sous-titre d'accueil : appuie le sérieux de l'outil (mémorisation espacée,
              classement mondial vérifié côté serveur) dès la première seconde, plutôt
              que de laisser le visuel seul suggérer « juste un jeu ». -->
@@ -228,7 +246,8 @@
     <div id="screen-modes" class="list-screen hidden">
         <button class="back-btn" onclick="backFromModes()" aria-label="Retour"
             data-i18n-attr="aria-label:nav.back">‹</button>
-        <h2 class="header-title" id="modes-header-title" data-i18n="modes.choose_mode">Choisissez un mode de jeu</h2>
+        <h2 class="header-title modes-header-title" id="modes-header-title" data-i18n="modes.choose_mode">Choisissez un mode de jeu</h2>
+        <p class="modes-header-subtitle hidden" id="modes-header-subtitle"></p>
 
         <div class="grid-modes">
             <div class="mode-card" id="mode-card-discovery" style="background-color: #2c3e50;"
@@ -783,6 +802,46 @@
         </div>
     </div>
 
+    <!-- MODAL RÉSULTATS — DÉFI HEBDOMADAIRE : miroir de modal-daily-results ci-dessus (30 événements/semaine ISO
+         au lieu de 10/jour, backend api/weeklyScores.js + api/weeklyLeaderboard.js). Pas de bouton « Défier un ami » :
+         les duels asynchrones (js/duels.js) ne portent que sur le Défi du jour. Classes CSS "daily-*" réutilisées
+         telles quelles (mise en page identique), seuls les id changent. -->
+    <div id="modal-weekly-results" class="modal-overlay hidden">
+        <div class="modal-content" style="max-width:420px; text-align:center;">
+            <span class="close-btn" onclick="closeWeeklyChallengeResultsModal()">×</span>
+            <div class="modal-title" id="weekly-results-title">🌍 Défi hebdomadaire terminé !</div>
+
+            <div class="daily-results-summary">
+                <div class="daily-results-stat">
+                    <span class="daily-results-stat-val" id="weekly-results-score">0</span>
+                    <span class="daily-results-stat-label" data-i18n="weekly.score_stat">Score</span>
+                </div>
+                <div class="daily-results-stat">
+                    <span class="daily-results-stat-val" id="weekly-results-time">0,0 s</span>
+                    <span class="daily-results-stat-label" data-i18n="weekly.time_stat">Temps</span>
+                </div>
+            </div>
+
+            <div class="daily-countdown-box">
+                <span data-i18n="weekly.countdown_label">Prochain défi dans</span> <span class="daily-countdown-val"
+                    id="weekly-countdown-val">--:--:--</span>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="weekly-pseudo-input" data-i18n="weekly.pseudo_label">Votre pseudo
+                    (classement mondial)</label>
+                <input type="text" id="weekly-pseudo-input" class="form-input" placeholder="Ex : ChronoMaster"
+                    maxlength="20" data-i18n-attr="placeholder:weekly.pseudo_placeholder">
+            </div>
+            <button class="btn" id="btn-weekly-submit" style="width:100%;" onclick="handleWeeklyChallengeScoreSubmit()"
+                data-i18n="weekly.submit_btn">Envoyer mon score</button>
+            <p class="daily-submit-feedback" id="weekly-submit-feedback"></p>
+
+            <div class="daily-leaderboard-title" data-i18n="weekly.leaderboard_title">🏆 Classement de la semaine</div>
+            <div id="weekly-leaderboard-preview"></div>
+        </div>
+    </div>
+
     <!-- MODAL CRÉER UN THÈME PERSONNALISÉ -->
     <div id="modal-add-theme" class="modal-overlay hidden" onclick="if(event.target===this)closeAddThemeModal()">
         <div class="modal-content" style="max-width:420px;">
@@ -1150,6 +1209,7 @@
     <script src="js/dailyEngine.js"></script>
     <script src="js/apiClient.js"></script>
     <script src="js/daily.js"></script>
+    <script src="js/weekly.js"></script>
     <script src="js/i18n.js"></script>
     <script src="js/geoMap.js"></script>
     <script src="js/app.js"></script>

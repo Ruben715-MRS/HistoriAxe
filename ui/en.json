@@ -24,10 +24,12 @@
     "search_empty": "No theme matches your search.",
     "special_favorites": "Favorites",
     "special_discover": "Discover",
+    "special_challenges": "Challenges",
     "special_daily": "Daily Challenge",
+    "special_weekly": "Weekly Challenge",
     "special_revision": "Review",
-    "themes_count": "{count} theme(s)",
-    "events_count": "{count} event(s)",
+    "themes_count": "{count} themes",
+    "events_count": "{count} events",
     "choose_category": "Choose a Category",
     "search_clear_title": "Clear",
     "league_btn_aria": "Weekly league",
@@ -58,7 +60,7 @@
   },
   "axes": {
     "title": "Thematic Threads",
-    "subtitle_selected": "{theme} — {count} event(s) selected",
+    "subtitle_selected": "{theme} — {count} events selected",
     "subtitle_select_one": "{theme} — select at least one thread",
     "continue_btn": "Continue with these threads"
   },
@@ -117,7 +119,7 @@
       "desc": "Pass and play on the same screen, elimination after 2 misses."
     },
     "score_history": "🏆 Score History",
-    "axis_summary": "{theme} — {axesCount} axis(es), {eventsCount} event(s)",
+    "axis_summary_subtitle": "{axesCount} axes, {eventsCount} events",
     "chrono_lock": "Beat Classic mode on this theme first to unlock Chrono.",
     "expert_lock": "Beat Chrono mode on this theme first to unlock Expert.",
     "no_events_theme": "This theme has no events. Please add some first via «Add an event»!",
@@ -128,6 +130,7 @@
     "cannot_generate": "Unable to generate questions for this theme.",
     "cannot_generate_dates": "Unable to generate questions for this theme (all dates are identical).",
     "no_events_daily": "No events available for today's challenge.",
+    "no_events_weekly": "No events available for this week's challenge.",
     "select_at_least_one": "You must select at least one event to play."
   },
   "game": {
@@ -162,7 +165,7 @@
     "correct_answer": "Correct answer: {year}",
     "exact_with_hint": "Exact (with hint)",
     "exact": "Exact!",
-    "real_gap": "Actual gap: {gap} year(s)",
+    "real_gap": "Actual gap: {gap} years",
     "ecart_exact_after_tries": "Exact (after several tries)",
     "ecart_feedback_more": "🔼 Higher!",
     "ecart_feedback_less": "🔽 Lower!",
@@ -172,7 +175,7 @@
     "frise_complete": "Full timeline · {n} events",
     "xp_gain_streak": "+{xp} XP (streak ×{mult} 🔥)",
     "xp_gain": "+{xp} XP",
-    "duration_years": "{n} year(s)",
+    "duration_years": "{n} years",
     "decrease_text_aria": "Decrease text size",
     "increase_text_aria": "Increase text size",
     "hint_btn_full": "💡 Hint",
@@ -190,9 +193,10 @@
     "victory_periodes": "Congratulations! Eras & Centuries mastered!",
     "victory_ecart": "Congratulations! All gaps solved!",
     "victory_daily": "Congratulations! Daily Challenge solved!",
+    "victory_weekly": "Congratulations! Weekly Challenge solved!",
     "final_score": "Score: {val} points",
     "final_time": "Time: {val} s",
-    "streak_banner": "🔥 Active Streak: {count} day(s)",
+    "streak_banner": "🔥 Active Streak: {count} days",
     "replay_btn": "Play Again",
     "menu_btn": "Menu",
     "share_title": "Your Run",
@@ -226,6 +230,25 @@
     "leaderboard_loading": "Loading leaderboard…",
     "leaderboard_error": "Leaderboard temporarily unavailable."
   },
+  "weekly": {
+    "title_win": "🌍 Weekly Challenge Mastered!",
+    "title_over": "🌍 Weekly Challenge Finished",
+    "score_stat": "Score",
+    "time_stat": "Time",
+    "streak_stat": "Streak",
+    "countdown_label": "Next challenge in",
+    "pseudo_label": "Your nickname (global leaderboard)",
+    "pseudo_placeholder": "e.g. ChronoMaster",
+    "submit_btn": "Submit my score",
+    "submit_loading": "Sending…",
+    "submit_success": "Score submitted! #{rank} out of {total} worldwide.",
+    "submit_error": "Unable to submit score right now. Try again.",
+    "submit_offline": "World leaderboard unavailable offline.",
+    "leaderboard_title": "🏆 This Week's Leaderboard",
+    "leaderboard_empty": "No score submitted yet this week. Be the first!",
+    "leaderboard_loading": "Loading leaderboard…",
+    "leaderboard_error": "Leaderboard temporarily unavailable."
+  },
   "revision": {
     "hub_title": "Review Weak Milestones",
     "tab_weak": "Weak Points",
@@ -243,7 +266,7 @@
     "progress_legend_none": "Not yet tested",
     "progress_empty": "No data yet. Play a few games to see your mastery tree.",
     "targeted_title": "Targeted revision ({count} events)",
-    "weak_count_subtitle": "{count} event(s) to review, across {themeCount} theme(s)"
+    "weak_count_subtitle": "{count} events to review, across {themeCount} themes"
   },
   "gamification": {
     "rank_badge": "Lvl. {level}",
@@ -318,9 +341,13 @@
         "name": "Eternal Flame",
         "desc": "Keep a 7-day streak on the Daily Challenge."
       },
+      "pilier_hebdomadaire": {
+        "name": "Weekly Pillar",
+        "desc": "Keep a 4-week streak on the Weekly Challenge."
+      },
       "eclair_temporel": {
         "name": "Temporal Lightning",
-        "desc": "Finish a Chrono, Expert, or Daily Challenge run in under 30 seconds."
+        "desc": "Finish a Chrono, Expert, Daily Challenge, or Weekly Challenge run in under 30 seconds."
       },
       "major_concours": {
         "name": "Top of the Class",
@@ -330,7 +357,7 @@
     "progress_fraction": "{current}/{target}",
     "streak_active": "🔥 Streak active: XP ×{mult}",
     "streak_inactive": "🔥 Play today to activate an XP multiplier",
-    "streak_next_tier": " — {days} more day(s) for ×{mult}",
+    "streak_next_tier": " — {days} more days for ×{mult}",
     "streak_risk": " (miss a single day and your streak — and multiplier — reset to zero).",
     "recap_btn": "📊 View my weekly/monthly recap",
     "hero_level_line": "Level {level} • {xp} XP"
@@ -449,9 +476,9 @@
     "results_title": "Multiplayer Results"
   },
   "mastery": {
-    "tested_meta": "{tested}/{total} event(s) tested",
-    "weak_badge": "⚠ {count} weak spot(s)",
-    "theme_count": "{count} theme(s)",
+    "tested_meta": "{tested}/{total} events tested",
+    "weak_badge": "⚠ {count} weak spots",
+    "theme_count": "{count} themes",
     "radar_untested": "not tested",
     "radar_aria": "Mastery radar by category"
   },
@@ -490,7 +517,7 @@
     "prev_month": "last month",
     "share_btn": "Share my recap",
     "share_copied": "Recap copied to clipboard!",
-    "share_text": "📊 HistoriAxe — {period}: {xp} XP, {games} game(s) won, {days} active day(s)!"
+    "share_text": "📊 HistoriAxe — {period}: {xp} XP, {games} games won, {days} active days!"
   },
   "league": {
     "title": "🥇 Your weekly league",

@@ -39,6 +39,33 @@ create index if not exists idx_daily_scores_leaderboard
 create index if not exists idx_daily_scores_player
     on daily_scores (player_id);
 
+-- Défi hebdomadaire (voir api/weeklyScores.js, api/weeklyLeaderboard.js) :
+-- même structure que daily_scores ci-dessus, une ligne par joueur/semaine
+-- ISO/langue — nommée "weekly_challenge_scores" (et non "weekly_scores")
+-- pour ne pas se confondre avec weekly_xp (ligue hebdomadaire par XP
+-- cumulé, table différente, feature différente) plus bas.
+create table if not exists weekly_challenge_scores (
+    id             bigserial primary key,
+    player_id      uuid not null references players(id) on delete cascade,
+    challenge_week text not null,
+    lang           text not null,
+    score          integer not null,
+    time_seconds   numeric(7,1) not null default 0,
+    rounds_played  smallint not null default 0,
+    rounds_total   smallint not null default 0,
+    won            boolean not null default false,
+    suspicious     boolean not null default false,
+    created_at     timestamptz not null default now(),
+    updated_at     timestamptz not null default now(),
+    unique (player_id, challenge_week, lang)
+);
+
+create index if not exists idx_weekly_challenge_scores_leaderboard
+    on weekly_challenge_scores (challenge_week, lang, score desc, time_seconds asc);
+
+create index if not exists idx_weekly_challenge_scores_player
+    on weekly_challenge_scores (player_id);
+
 create table if not exists player_progress (
     player_id   uuid primary key references players(id) on delete cascade,
     data        jsonb not null default '{}'::jsonb,

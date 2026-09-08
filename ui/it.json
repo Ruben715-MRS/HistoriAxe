@@ -26,8 +26,8 @@
     "special_discover": "Scopri",
     "special_daily": "Sfida del Giorno",
     "special_revision": "Ripasso",
-    "themes_count": "{count} tema/i",
-    "events_count": "{count} evento/i",
+    "themes_count": "{count} temi",
+    "events_count": "{count} eventi",
     "choose_category": "Scegli una Categoria",
     "search_clear_title": "Cancella",
     "league_btn_aria": "Lega settimanale",
@@ -58,7 +58,7 @@
   },
   "axes": {
     "title": "Assi Tematici",
-    "subtitle_selected": "{theme} — {count} evento/i selezionato/i",
+    "subtitle_selected": "{theme} — {count} eventi selezionati",
     "subtitle_select_one": "{theme} — seleziona almeno un asse",
     "continue_btn": "Continua con questi assi"
   },
@@ -117,7 +117,7 @@
       "desc": "A turno sullo stesso schermo, eliminazione dopo 2 errori."
     },
     "score_history": "🏆 Storico Punteggi",
-    "axis_summary": "{theme} — {axesCount} asse/i, {eventsCount} evento/i",
+    "axis_summary_subtitle": "{axesCount} assi, {eventsCount} eventi",
     "chrono_lock": "Completa prima la modalità Classica su questo tema per sbloccare Cronometrata.",
     "expert_lock": "Completa prima la modalità Cronometrata su questo tema per sbloccare Esperto.",
     "no_events_theme": "Questo tema non contiene alcun evento. Aggiungi prima degli eventi tramite «Aggiungi un evento»!",
@@ -162,7 +162,7 @@
     "correct_answer": "Risposta corretta: {year}",
     "exact_with_hint": "Esatto (con suggerimento)",
     "exact": "Esatto!",
-    "real_gap": "Scarto reale: {gap} anno/i",
+    "real_gap": "Scarto reale: {gap} anni",
     "ecart_exact_after_tries": "Esatto (dopo diversi tentativi)",
     "ecart_feedback_more": "🔼 Di più!",
     "ecart_feedback_less": "🔽 Di meno!",
@@ -172,7 +172,7 @@
     "frise_complete": "Linea completa · {n} eventi",
     "xp_gain_streak": "+{xp} XP (serie ×{mult} 🔥)",
     "xp_gain": "+{xp} XP",
-    "duration_years": "{n} anno/i",
+    "duration_years": "{n} anni",
     "decrease_text_aria": "Riduci il testo",
     "increase_text_aria": "Ingrandisci il testo",
     "hint_btn_full": "💡 Suggerimento",
@@ -192,7 +192,7 @@
     "victory_daily": "Bravo! Sfida del giorno superata!",
     "final_score": "Punteggio: {val} punti",
     "final_time": "Durata: {val} s",
-    "streak_banner": "🔥 Serie attuale: {count} giorno/i",
+    "streak_banner": "🔥 Serie attuale: {count} giorni",
     "replay_btn": "Gioca di Nuovo",
     "menu_btn": "Menu",
     "share_title": "La tua Partita",
@@ -243,7 +243,7 @@
     "progress_legend_none": "Non ancora testato",
     "progress_empty": "Nessun dato al momento. Gioca qualche partita per vedere i tuoi progressi.",
     "targeted_title": "Revisione mirata ({count} eventi)",
-    "weak_count_subtitle": "{count} evento/i da ripassare, in {themeCount} tema/i"
+    "weak_count_subtitle": "{count} eventi da ripassare, in {themeCount} temi"
   },
   "gamification": {
     "rank_badge": "Liv. {level}",
@@ -330,7 +330,7 @@
     "progress_fraction": "{current}/{target}",
     "streak_active": "🔥 Serie attiva: XP ×{mult}",
     "streak_inactive": "🔥 Gioca oggi per attivare un moltiplicatore di XP",
-    "streak_next_tier": " — ancora {days} giorno/i per ×{mult}",
+    "streak_next_tier": " — ancora {days} giorni per ×{mult}",
     "streak_risk": " (basta un solo giorno saltato e la serie — e il moltiplicatore — ripartono da zero).",
     "recap_btn": "📊 Vedi il mio riepilogo settimanale/mensile",
     "hero_level_line": "Livello {level} • {xp} XP"
@@ -449,9 +449,9 @@
     "results_title": "Risultati Multigiocatore"
   },
   "mastery": {
-    "tested_meta": "{tested}/{total} evento/i testato/i",
-    "weak_badge": "⚠ {count} punto/i debole/i",
-    "theme_count": "{count} tema/i",
+    "tested_meta": "{tested}/{total} eventi testati",
+    "weak_badge": "⚠ {count} punti deboli",
+    "theme_count": "{count} temi",
     "radar_untested": "non testato",
     "radar_aria": "Radar di padronanza per categoria"
   },
@@ -490,7 +490,7 @@
     "prev_month": "il mese scorso",
     "share_btn": "Condividi il mio riepilogo",
     "share_copied": "Riepilogo copiato negli appunti!",
-    "share_text": "📊 HistoriAxe — {period}: {xp} XP, {games} partita/e vinta/e, {days} giorno/i attivo/i!"
+    "share_text": "📊 HistoriAxe — {period}: {xp} XP, {games} partite vinte, {days} giorni attivi!"
   },
   "league": {
     "title": "🥇 La tua lega settimanale",
@@ -526,7 +526,7 @@
   },
   "notifications": {
     "streak_title": "🔥 La tua serie è a rischio",
-    "streak_body": "La tua serie di {days} giorno/i si interromperà stasera. Gioca la Sfida del giorno per mantenerla!",
+    "streak_body": "La tua serie di {days} giorni si interromperà stasera. Gioca la Sfida del giorno per mantenerla!",
     "daily_title": "🌍 La Sfida del giorno è disponibile",
     "daily_body": "Dieci eventi da rimettere in ordine cronologico. Tocca a te giocare!",
     "recap_title": "📊 Il tuo riepilogo settimanale è pronto",

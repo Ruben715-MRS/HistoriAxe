@@ -17,12 +17,17 @@ function getDailySeedString() {
 // Les thèmes/événements personnalisés sont exclus du tirage — ils n'existent
 // que dans le localStorage de chaque joueur, le serveur ne les connaît pas,
 // et les inclure romprait l'équité (et la validation) du classement mondial.
+// Certains thèmes officiels (calendrier non grégorien, cf.
+// DailyEngine.EXCLUDED_THEME_IDS) sont eux aussi exclus, pour la même
+// raison qu'un serveur qui recalcule ce même tirage doit obtenir exactement
+// le même résultat.
 function generateDailyEvents() {
     const allWithLocation = (typeof getAllEventsWithLocation === 'function' ? getAllEventsWithLocation() : [])
         .filter(item => item && item.event
             && typeof item.event.date === 'number'
             && !item.event.isCustom
-            && !(item.theme && item.theme.isCustom));
+            && !(item.theme && item.theme.isCustom)
+            && !(item.theme && DailyEngine.EXCLUDED_THEME_IDS.includes(item.theme.id)));
     if (allWithLocation.length === 0) return [];
 
     const seedStr = getDailySeedString();

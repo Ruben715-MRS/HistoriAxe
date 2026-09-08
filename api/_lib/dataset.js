@@ -13,6 +13,8 @@
 // la fonction serverless — un require dynamique risquerait de ne PAS être
 // inclus au déploiement.
 
+const DailyEngine = require('../../js/dailyEngine.js');
+
 const DATASETS = {
     fr: require('../../data/fr.json'),
     en: require('../../data/en.json'),
@@ -33,6 +35,10 @@ function flattenCategories(categories) {
         } else if (node.themes) {
             node.themes.forEach((thm) => {
                 if (!thm || !thm.events || thm.isCustom) return;
+                // Cf. js/daily.js: generateDailyEvents — mêmes thèmes exclus
+                // des deux côtés (calendrier non grégorien), pour que le
+                // tirage recalculé ici retombe bit-à-bit sur celui du client.
+                if (thm.id && DailyEngine.EXCLUDED_THEME_IDS.includes(thm.id)) return;
                 thm.events.forEach((evt) => {
                     if (evt && evt.id != null && typeof evt.date === 'number' && !evt.isCustom) {
                         out.push({ id: String(evt.id), date: evt.date });

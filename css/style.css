@@ -85,6 +85,15 @@ body {
     overflow: hidden;
 }
 
+/* Les <img> home-backdrop/home-image sont désormais chacune enveloppées
+   dans un <picture> (choix du visuel selon le format d'écran, voir
+   index.html) : display:contents fait disparaître cette boîte du rendu,
+   pour que la mise en page ci-dessous (position absolute, tailles en %…)
+   se comporte exactement comme avec un <img> en enfant direct. */
+#screen-home picture {
+    display: contents;
+}
+
 .home-backdrop {
     position: absolute;
     inset: -20px;
@@ -166,6 +175,37 @@ body {
     margin-top: 20px;
     padding: 0 60px;
     box-sizing: border-box;
+}
+
+/* Écran des modes : nom du thème (titre) + décompte d'axes/événements
+   sélectionnés (sous-titre) sont deux éléments distincts plutôt qu'une
+   seule phrase jointe par un tiret cadratin (voir showScreen() dans
+   app.js) — le sous-titre hérite de l'espacement bas que le titre seul
+   portait jusqu'ici. */
+.modes-header-title {
+    margin-bottom: 4px;
+}
+
+.modes-header-subtitle {
+    text-align: center;
+    color: var(--muted-text);
+    font-size: 15px;
+    margin: 0 60px 20px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Sur petit écran, un nom de thème long peut s'étaler sur plusieurs
+   lignes : un corps un peu plus petit laisse le titre respirer sans
+   pousser tout le reste de l'écran hors du premier écran visible. */
+@media (max-width: 600px) {
+    .modes-header-title {
+        font-size: 20px;
+    }
+
+    .modes-header-subtitle {
+        font-size: 13px;
+    }
 }
 
 .grid-cards {
@@ -437,6 +477,42 @@ body {
 :root[data-theme="dark"] .quick-action-circle {
     background: var(--surface);
     border-color: var(--border-soft);
+}
+
+/* Choix Défi du jour / Défi hebdomadaire (voir js/app.js: initCategories) :
+   déplié/replié sous la grille d'actions rapides par le bouton « Défis »,
+   plutôt qu'un nouvel écran — le choix reste à un tap de distance. */
+.challenge-picker {
+    display: flex;
+    gap: 12px;
+    margin-top: 14px;
+}
+
+.challenge-picker-btn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 14px 10px;
+    border-radius: 16px;
+    background: var(--surface);
+    border: 1px solid var(--border-soft);
+    box-shadow: var(--card-shadow);
+    color: var(--text-dark);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.challenge-picker-btn:hover {
+    background: var(--surface-2);
+    transform: translateY(-2px);
+}
+
+.challenge-picker-icon {
+    font-size: 24px;
 }
 
 /* ÉCRAN « PROGRESSION PAR THÈME » : radar de synthèse par catégorie et liste
@@ -1425,6 +1501,16 @@ textarea.form-input {
     font-variant-numeric: tabular-nums;
 }
 
+/* Dates très longues (Préhistoire, ex. « 3 300 000 av. J.-C. », voir
+   formatYear()) : un corps un peu plus petit suffit à garder le nombre
+   groupé par milliers sur une seule ligne dans la gouttière existante,
+   sans en changer la largeur (ce qui désaxerait la puce des autres
+   repères par rapport au trait de la frise). Les dates courantes
+   (jusqu'à 4 chiffres) ne sont pas concernées. */
+.entry-year.entry-year-long {
+    font-size: calc(15px * var(--zoom-level));
+}
+
 .entry-tick {
     justify-self: center;
     width: 7px;
@@ -1438,6 +1524,19 @@ textarea.form-input {
     align-items: center;
     gap: 10px;
     padding: calc(6px * var(--zoom-level)) 0 calc(6px * var(--zoom-level)) 14px;
+}
+
+/* Regroupe titre + badge d'axe (+ éventuel flag « manqué ») en colonne,
+   pour que le badge se place sous le titre plutôt qu'à sa droite, où il
+   pouvait dépasser hors de l'écran en portrait. Le chevron reste hors de
+   ce groupe, aligné à droite sur toute la hauteur de l'entrée. */
+.entry-main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    flex: 1;
+    min-width: 0;
 }
 
 .entry-title {
@@ -3270,6 +3369,28 @@ textarea.form-input {
     text-overflow: ellipsis;
 }
 
+/* Sur petit écran, la barre de grade est trop étroite pour un rang sur une
+   seule ligne une fois le badge de niveau et le texte XP soustraits (même
+   le tout premier rang, le plus court, s'y retrouvait tronqué) : on laisse
+   le titre passer sur deux lignes plutôt que de le couper. Tablette et
+   ordinateur, où la largeur suffit, gardent l'ellipse d'origine. */
+@media (max-width: 600px) {
+    .player-rank-title {
+        white-space: normal;
+        overflow: visible;
+        text-overflow: clip;
+        line-height: 1.2;
+    }
+
+    .player-rank-row {
+        align-items: flex-start;
+    }
+
+    .player-rank-level-badge {
+        margin-top: 1px;
+    }
+}
+
 .player-rank-level-badge {
     font-size: 11px;
     font-weight: 800;
@@ -3788,6 +3909,17 @@ textarea.form-input {
     margin-left: 6px;
 }
 
+/* Dans la liste (.entry-main empile titre puis badge), le badge n'a plus
+   besoin de ce décalage horizontal pensé pour un alignement sur la même
+   ligne que le titre — et se centre sous lui (tout en restant sous le
+   titre, qui lui reste aligné à gauche) plutôt que de démarrer contre le
+   bord gauche de la carte. */
+.entry-main .entry-axe-badge,
+.entry-main .entry-flag {
+    margin-left: 0;
+    align-self: center;
+}
+
 .axes-entry-badges-hidden .entry-axe-badge {
     display: none;
 }
@@ -4272,6 +4404,14 @@ textarea.form-input {
     align-items: center;
     padding: 8px 0 0;
     gap: 4px;
+}
+
+/* En paysage, titre/badge/chevron sont déjà chacun repositionnés
+   directement en enfants de .entry-body (voir règles ci-dessus/ci-dessous) :
+   .entry-main ne doit pas y introduire de boîte propre, sous peine de casser
+   cet agencement en carte verticale centrée. */
+[data-layout="horizontal"] .entry-main {
+    display: contents;
 }
 
 [data-layout="horizontal"] .entry-title {

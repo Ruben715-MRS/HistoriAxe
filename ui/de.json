@@ -26,8 +26,8 @@
     "special_discover": "Entdecken",
     "special_daily": "Tages-Herausforderung",
     "special_revision": "Wiederholen",
-    "themes_count": "{count} Thema/Themen",
-    "events_count": "{count} Ereignis(se)",
+    "themes_count": "{count} Themen",
+    "events_count": "{count} Ereignisse",
     "choose_category": "Wählen Sie eine Kategorie",
     "search_clear_title": "Löschen",
     "league_btn_aria": "Wochenliga",
@@ -58,7 +58,7 @@
   },
   "axes": {
     "title": "Thematische Schwerpunkte",
-    "subtitle_selected": "{theme} — {count} Ereignis(se) ausgewählt",
+    "subtitle_selected": "{theme} — {count} Ereignisse ausgewählt",
     "subtitle_select_one": "{theme} — wählen Sie mindestens einen Schwerpunkt",
     "continue_btn": "Mit diesen Schwerpunkten fortfahren"
   },
@@ -117,7 +117,7 @@
       "desc": "Abwechselnd auf demselben Bildschirm, Ausscheiden nach 2 Fehlern."
     },
     "score_history": "🏆 Punkteverlauf",
-    "axis_summary": "{theme} — {axesCount} Achse(n), {eventsCount} Ereignis(se)",
+    "axis_summary_subtitle": "{axesCount} Achsen, {eventsCount} Ereignisse",
     "chrono_lock": "Schließe zuerst den Modus Klassisch bei diesem Thema ab, um Chrono freizuschalten.",
     "expert_lock": "Schließe zuerst den Modus Chrono bei diesem Thema ab, um Experte freizuschalten.",
     "no_events_theme": "Dieses Thema enthält keine Ereignisse. Bitte zuerst Ereignisse über „Ereignis hinzufügen“ ergänzen!",
@@ -162,7 +162,7 @@
     "correct_answer": "Richtige Antwort: {year}",
     "exact_with_hint": "Genau (mit Hinweis)",
     "exact": "Genau!",
-    "real_gap": "Tatsächlicher Abstand: {gap} Jahr(e)",
+    "real_gap": "Tatsächlicher Abstand: {gap} Jahre",
     "ecart_exact_after_tries": "Genau (nach mehreren Versuchen)",
     "ecart_feedback_more": "🔼 Mehr!",
     "ecart_feedback_less": "🔽 Weniger!",
@@ -172,7 +172,7 @@
     "frise_complete": "Vollständige Zeitleiste · {n} Ereignisse",
     "xp_gain_streak": "+{xp} XP (Serie ×{mult} 🔥)",
     "xp_gain": "+{xp} XP",
-    "duration_years": "{n} Jahr(e)",
+    "duration_years": "{n} Jahre",
     "decrease_text_aria": "Text verkleinern",
     "increase_text_aria": "Text vergrößern",
     "hint_btn_full": "💡 Hinweis",
@@ -192,7 +192,7 @@
     "victory_daily": "Bravo! Tages-Herausforderung bestanden!",
     "final_score": "Punktzahl: {val} Punkte",
     "final_time": "Dauer: {val} s",
-    "streak_banner": "🔥 Aktuelle Serie: {count} Tag(e)",
+    "streak_banner": "🔥 Aktuelle Serie: {count} Tage",
     "replay_btn": "Nochmal spielen",
     "menu_btn": "Menü",
     "share_title": "Ihr Ergebnis",
@@ -243,7 +243,7 @@
     "progress_legend_none": "Noch nicht getestet",
     "progress_empty": "Noch keine Daten vorhanden. Spielen Sie einige Runden, um Ihren Fortschritt zu sehen.",
     "targeted_title": "Gezielte Wiederholung ({count} Ereignisse)",
-    "weak_count_subtitle": "{count} Ereignis(se) zu wiederholen, in {themeCount} Thema/Themen"
+    "weak_count_subtitle": "{count} Ereignisse zu wiederholen, in {themeCount} Themen"
   },
   "gamification": {
     "rank_badge": "Stufe {level}",
@@ -330,7 +330,7 @@
     "progress_fraction": "{current}/{target}",
     "streak_active": "🔥 Serie aktiv: XP ×{mult}",
     "streak_inactive": "🔥 Spiele heute, um einen XP-Multiplikator zu aktivieren",
-    "streak_next_tier": " — noch {days} Tag(e) bis ×{mult}",
+    "streak_next_tier": " — noch {days} Tage bis ×{mult}",
     "streak_risk": " (ein einziger verpasster Tag, und Serie sowie Multiplikator fallen auf null zurück).",
     "recap_btn": "📊 Meine Wochen-/Monatsübersicht ansehen",
     "hero_level_line": "Level {level} • {xp} XP"
@@ -449,9 +449,9 @@
     "results_title": "Mehrspieler-Ergebnisse"
   },
   "mastery": {
-    "tested_meta": "{tested}/{total} Ereignis(se) getestet",
-    "weak_badge": "⚠ {count} Schwachstelle(n)",
-    "theme_count": "{count} Thema/Themen",
+    "tested_meta": "{tested}/{total} Ereignisse getestet",
+    "weak_badge": "⚠ {count} Schwachstellen",
+    "theme_count": "{count} Themen",
     "radar_untested": "nicht getestet",
     "radar_aria": "Beherrschungsradar nach Kategorie"
   },
@@ -490,7 +490,7 @@
     "prev_month": "letzten Monat",
     "share_btn": "Meine Übersicht teilen",
     "share_copied": "Übersicht in die Zwischenablage kopiert!",
-    "share_text": "📊 HistoriAxe — {period}: {xp} XP, {games} gewonnene Partie(n), {days} aktive(r) Tag(e)!"
+    "share_text": "📊 HistoriAxe — {period}: {xp} XP, {games} gewonnene Partien, {days} aktive Tage!"
   },
   "league": {
     "title": "🥇 Deine Wochenliga",
