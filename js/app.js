@@ -1703,7 +1703,7 @@ function initSubcategories() {
                     </div>
                 `;
 
-        const canEnter = nbThemes > 0 || !!sub.subcategories;
+        const canEnter = nbThemes > 0 || !!sub.subcategories || !!sub.note;
         card.onclick = () => {
             if (canEnter) {
                 selectedSubcategoryIndex = [...basePath, index];
@@ -1883,6 +1883,18 @@ function initThemes() {
     const node = category.subcategories ? resolveSubcategory(category, selectedSubcategoryIndex) : category;
     document.getElementById('theme-screen-title').innerText = node.nom;
 
+    // Note explicative éventuelle rattachée à ce nœud précis (ex. renvoi vers
+    // une autre catégorie pour un pan d'histoire déjà traité ailleurs) — même
+    // mécanisme visuel que la note de catégorie affichée sur l'écran des
+    // sous-catégories (voir initSubcategories), mais au niveau du thème.
+    const themeNoteBox = document.getElementById('theme-screen-note');
+    if (node.note) {
+        document.getElementById('theme-screen-note-text').innerText = node.note;
+        themeNoteBox.classList.remove('hidden');
+    } else {
+        themeNoteBox.classList.add('hidden');
+    }
+
     if (category.isCustomCategory) {
         const addCard = document.createElement('div');
         addCard.className = 'special-card';
@@ -1913,6 +1925,16 @@ function initThemes() {
     // avant la liste de thèmes — contient assez d'événements géolocalisables.
     if (!category.isCustomCategory && typeof isGeoEligible === 'function' && isGeoEligible(node)) {
         container.appendChild(buildGeoModeCard(node, node.nom));
+    }
+
+    if (themeList.length === 0 && !category.isCustomCategory) {
+        // Sous-catégorie déjà créée (ex. futur pays d'un programme scolaire)
+        // mais dont les thèmes n'ont pas encore été intégrés.
+        const emptyMsg = document.createElement('div');
+        emptyMsg.className = 'empty-msg';
+        emptyMsg.innerText = t('themes.empty_themes');
+        emptyMsg.style.gridColumn = '1 / -1';
+        container.appendChild(emptyMsg);
     }
 
     themeList.forEach((theme, index) => {
