@@ -5100,6 +5100,13 @@ textarea.form-input {
     color: var(--muted-text);
 }
 
+.lang-pack-content-hint {
+    font-size: 11px;
+    font-style: italic;
+    color: var(--muted-text);
+    opacity: 0.85;
+}
+
 .lang-pack-actions {
     display: flex;
     align-items: center;

@@ -12,13 +12,15 @@ const I18N_DATA_CACHE = 'historiaxe-data-v1.0.2';
 // standard des sélecteurs de langue, ne dépend jamais de la langue active.
 // La taille du pack, elle, est traduite à l'affichage (voir packSizeLabel()
 // ci-dessous) plutôt que figée ici en français.
+// themeCount/eventCount reflètent data/<lang>.json: totalThemes/totalEvents —
+// à mettre à jour si le contenu d'une langue est enrichi (voir tests/data-schema.test.js).
 const AVAILABLE_LANGUAGES = [
-    { code: 'fr', name: 'Français', flag: '🇫🇷', version: '1.0.0', sizeVal: '11.7', sizeUnit: 'mb', isDemo: false, isDefault: true },
-    { code: 'en', name: 'English', flag: '🇬🇧', version: '1.0.0', sizeVal: '150', sizeUnit: 'kb', isDemo: true, isDefault: false },
-    { code: 'es', name: 'Español', flag: '🇪🇸', version: '1.0.0', sizeVal: '150', sizeUnit: 'kb', isDemo: true, isDefault: false },
-    { code: 'de', name: 'Deutsch', flag: '🇩🇪', version: '1.0.0', sizeVal: '150', sizeUnit: 'kb', isDemo: true, isDefault: false },
-    { code: 'it', name: 'Italiano', flag: '🇮🇹', version: '1.0.0', sizeVal: '150', sizeUnit: 'kb', isDemo: true, isDefault: false },
-    { code: 'ja', name: '日本語', flag: '🇯🇵', version: '1.0.0', sizeVal: '150', sizeUnit: 'kb', isDemo: true, isDefault: false }
+    { code: 'fr', name: 'Français', flag: '🇫🇷', version: '1.0.0', sizeVal: '11.7', sizeUnit: 'mb', isDemo: false, isDefault: true, themeCount: 749, eventCount: 18997 },
+    { code: 'en', name: 'English', flag: '🇬🇧', version: '1.0.0', sizeVal: '9.3', sizeUnit: 'kb', isDemo: true, isDefault: false, themeCount: 2, eventCount: 20 },
+    { code: 'es', name: 'Español', flag: '🇪🇸', version: '1.0.0', sizeVal: '5.1', sizeUnit: 'kb', isDemo: true, isDefault: false, themeCount: 2, eventCount: 10 },
+    { code: 'de', name: 'Deutsch', flag: '🇩🇪', version: '1.0.0', sizeVal: '6.6', sizeUnit: 'kb', isDemo: true, isDefault: false, themeCount: 2, eventCount: 14 },
+    { code: 'it', name: 'Italiano', flag: '🇮🇹', version: '1.0.0', sizeVal: '5.5', sizeUnit: 'kb', isDemo: true, isDefault: false, themeCount: 2, eventCount: 11 },
+    { code: 'ja', name: '日本語', flag: '🇯🇵', version: '1.0.0', sizeVal: '6.0', sizeUnit: 'kb', isDemo: true, isDefault: false, themeCount: 2, eventCount: 11 }
 ];
 
 // Dictionnaire de secours intégré pour garantir un affichage parfait même hors-ligne
@@ -304,6 +306,14 @@ class I18nManager {
         return `${sizeStr} (${suffix})`;
     }
 
+    // Ligne « 2 thèmes • 14 événements » affichée sous les packs à contenu
+    // limité (isDemo) — sans elle, « Démo »/« Contenu limité » seul ne dit
+    // pas à quel point le contenu est réduit avant de télécharger le pack.
+    packContentHint(langItem) {
+        if (!langItem.isDemo) return '';
+        return this.t('settings.pack_demo_content', { themes: langItem.themeCount, events: langItem.eventCount });
+    }
+
     renderLanguagePacksSettingsUI() {
         const container = document.getElementById('settings-lang-packs-container');
         if (!container) return;
@@ -333,11 +343,14 @@ class I18nManager {
                 actionBtns = '<button class="btn-pack-action btn-primary" id="btn-dl-' + langItem.code + '" onclick="i18n.downloadLanguagePack(\'' + langItem.code + '\')">📥 ' + (this.t('settings.download_btn') || 'Télécharger') + '</button>';
             }
 
+            const contentHint = this.packContentHint(langItem);
+
             card.innerHTML = '<div class="lang-pack-left">' +
                 '<span class="lang-pack-flag">' + langItem.flag + '</span>' +
                 '<div class="lang-pack-info">' +
                 '<div class="lang-pack-name">' + langItem.name + ' ' + statusBadge + '</div>' +
                 '<div class="lang-pack-details">' + this.packSizeLabel(langItem) + ' • v' + langItem.version + '</div>' +
+                (contentHint ? '<div class="lang-pack-content-hint">' + contentHint + '</div>' : '') +
                 '</div>' +
                 '</div>' +
                 '<div class="lang-pack-actions">' + actionBtns + '</div>';
