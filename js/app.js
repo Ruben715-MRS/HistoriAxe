@@ -3338,6 +3338,16 @@ function stopTimer() {
     totalTimePlayed = (Date.now() - startTime) / 1000;
 }
 
+// Certains noms de thème se terminent par une période entre parenthèses
+// (« Le Watergate (1972-1974) », « La guerre des Malouines (1982) »...), ce
+// qui est précieux dans les menus de navigation mais donnerait la réponse
+// si on l'affichait tel quel comme indice pendant un défi. On retire donc
+// cette parenthèse finale uniquement à l'affichage, ici, sans toucher au
+// nom stocké dans les données (utilisé partout ailleurs).
+function stripThemePeriodSuffix(nom) {
+    return (nom || '').replace(/\s*\([^()]*\d[^()]*\)\s*$/, '').trim();
+}
+
 // LOGIQUE DE JEU
 function pickNextEvent() {
     playCardSlideSound();
@@ -3370,7 +3380,7 @@ function pickNextEvent() {
         ? (challengeEventsWithLocation.find(item => item.event.id === eventToPlace.id) || {}).theme
         : null;
     document.getElementById('hand-title').innerHTML = challengeThemeName
-        ? `${eventToPlace.titre} <em class="hand-title-theme">(${challengeThemeName.nom})</em>`
+        ? `${eventToPlace.titre} <em class="hand-title-theme">(${stripThemePeriodSuffix(challengeThemeName.nom)})</em>`
         : eventToPlace.titre;
     renderTimeline();
 }
