@@ -162397,7 +162397,326 @@
             "c46",
             "c48",
             "c49"
-          ]
+          ],
+          "carteMentale": {
+            "sousTitre": "Histoire contemporaine — thème d’agrégation",
+            "esprit": "Le titre est à prendre dans toute son ampleur : le cadrage met explicitement en garde contre une réduction à une histoire agricole. Il s’agit d’une histoire rurale totale, envisagée à hauteur d’hommes et de femmes, comme observatoire des mutations et des continuités de la société française — et européenne — sur la longue durée.",
+            "branches": [
+              {
+                "titre": "Une histoire rurale totale",
+                "couleur": "orange",
+                "intro": "La diversité des expériences sociales, avant toute réduction à une histoire agricole.",
+                "sousBranches": [
+                  {
+                    "titre": "Statuts et catégories sociales",
+                    "axe": "Économie et structures agraires",
+                    "items": [
+                      "Grande hiérarchie foncière : propriétaires-exploitants, fermiers, métayers, journaliers, domestiques agricoles.",
+                      "Notables ruraux : châtelains, notaires, médecins, curés, instituteurs — relais essentiels entre village et nation.",
+                      "Travailleurs saisonniers étrangers (Belges, Italiens, Espagnols), présence croissante au XXe siècle."
+                    ]
+                  },
+                  {
+                    "titre": "Âges et genre de la vie rurale",
+                    "items": [
+                      "Enfance : travail agricole précoce (garde des troupeaux), scolarisation progressive après 1882.",
+                      "Femmes : travail largement invisibilisé (basse-cour, jardin, traite), production textile domestique, rôle central dans l’économie familiale.",
+                      "Vieillesse paysanne : maintien tardif au travail, transmission de l’exploitation, absence de retraite avant les lois sociales du XXe siècle."
+                    ]
+                  },
+                  {
+                    "titre": "Les verbes de l’existence rurale",
+                    "intro": "Liste indicative et non hiérarchisée, pour une histoire par en bas :",
+                    "tags": [
+                      "grandir",
+                      "apprendre",
+                      "travailler",
+                      "manger",
+                      "consommer",
+                      "prier",
+                      "voter",
+                      "combattre",
+                      "résister",
+                      "lutter",
+                      "aimer",
+                      "se soigner",
+                      "souffrir",
+                      "mourir"
+                    ]
+                  },
+                  {
+                    "titre": "Spécificités régionales et locales",
+                    "items": [
+                      "Contrastes géographiques majeurs : bocage de l’Ouest, openfield du Bassin parisien, montagne (Alpes, Massif central, Pyrénées), Midi viticole.",
+                      "Pays de petite propriété (Ouest, Midi) contre pays de grande propriété (Bassin parisien, Beauce).",
+                      "Langues régionales et cultures locales (breton, occitan, alsacien…) en tension avec l’uniformisation nationale."
+                    ]
+                  }
+                ]
+              },
+              {
+                "titre": "Systèmes agraires et modernisation",
+                "couleur": "gold",
+                "axe": "Économie et structures agraires",
+                "intro": "Des communs mis à l’épreuve à une agriculture productiviste et capitalistique : acteurs, techniques, crises, institutions.",
+                "sousBranches": [
+                  {
+                    "titre": "Les communs à l’épreuve",
+                    "items": [
+                      "Partage et privatisation des biens communaux, accélérés depuis la Révolution.",
+                      "Tensions autour des droits d’usage : vaine pâture, glanage, affouage — pratiques progressivement restreintes.",
+                      "Défrichements et extension des surfaces cultivées au XIXe siècle."
+                    ]
+                  },
+                  {
+                    "titre": "Vers une agriculture productiviste",
+                    "items": [
+                      "Essor du fermage capitaliste dans le Bassin parisien, grande culture céréalière tournée vers le marché.",
+                      "Différenciation régionale persistante : polyculture-élevage à l’Ouest, monoculture céréalière ou viticole ailleurs.",
+                      "Intégration croissante au marché national puis mondial, exposant l’agriculture à la concurrence internationale."
+                    ]
+                  },
+                  {
+                    "titre": "Acteurs de la modernisation",
+                    "items": [
+                      "Notables agronomes et sociétés d’agriculture, dès la Restauration.",
+                      "Naissance du syndicalisme agricole dans les années 1880 (loi de 1884 sur les syndicats professionnels).",
+                      "Un État de plus en plus présent : ministère de l’Agriculture (1881), puis FNSEA (1946) et PAC (1962)."
+                    ]
+                  },
+                  {
+                    "titre": "Mécanisation, innovations et crises",
+                    "items": [
+                      "Diffusion lente de la charrue en fer puis des batteuses ; mécanisation et motorisation massives après 1945.",
+                      "Engrais chimiques et sélection variétale à partir de la fin du XIXe siècle.",
+                      "Crises structurantes : phylloxéra (1863-années 1890), grande dépression agricole de fin de siècle, crise des années 1930."
+                    ]
+                  },
+                  {
+                    "titre": "Structuration institutionnelle",
+                    "items": [
+                      "Coopératives agricoles, essor net dès la loi de 1884 et surtout dans l’entre-deux-guerres.",
+                      "Crédit agricole (fondé en 1894), chambres d’agriculture (1924-1927).",
+                      "Politique agricole commune (1962), qui réoriente durablement l’agriculture française."
+                    ]
+                  }
+                ]
+              },
+              {
+                "titre": "Au-delà de l’agriculture : la pluriactivité",
+                "couleur": "teal",
+                "intro": "Le cadrage insiste : la campagne n’est jamais seulement agricole.",
+                "sousBranches": [
+                  {
+                    "titre": "Artisanat et industrie rurale",
+                    "items": [
+                      "Artisans indispensables au village : forgerons, sabotiers, tisserands, meuniers.",
+                      "Proto-industrialisation : travail à domicile pour des marchands-fabricants urbains (textile, dentelle, chapellerie), en déclin face à la concentration industrielle urbaine dès la fin du XIXe siècle."
+                    ]
+                  },
+                  {
+                    "titre": "Mobilités et travail hors de l’exploitation",
+                    "axe": "Intégration nationale et désenclavement",
+                    "items": [
+                      "Migrations saisonnières anciennes : moissonneurs itinérants, maçons de la Creuse montant à Paris.",
+                      "Migrations pendulaires modernes, facilitées par le train puis l’automobile — navette domicile-travail vers les villes proches.",
+                      "Fonction publique en milieu rural : instituteurs, gardes-champêtres, postiers, cantonniers."
+                    ]
+                  },
+                  {
+                    "titre": "Tourisme naissant",
+                    "items": [
+                      "Villégiature et débuts du tourisme vert dès le XIXe siècle.",
+                      "Essor net des résidences secondaires dans les années 1960-1970."
+                    ]
+                  }
+                ]
+              },
+              {
+                "titre": "Désenclavement et intégration nationale",
+                "couleur": "blue",
+                "axe": "Intégration nationale et désenclavement",
+                "intro": "Transports, communications, école et conscription referment lentement la distance entre petites patries et grande patrie.",
+                "sousBranches": [
+                  {
+                    "titre": "Révolution des transports",
+                    "items": [
+                      "Réseau routier puis chemin de fer, dont l’essor à partir des années 1840-1850 achève de désenclaver la majorité des campagnes vers 1900-1910.",
+                      "Automobile, puis Mobylette (lancée en 1949) : une mobilité individuelle nouvelle après 1945."
+                    ]
+                  },
+                  {
+                    "titre": "Révolution des communications",
+                    "items": [
+                      "Poste rurale, télégraphe (essor sous le Second Empire et la IIIe République).",
+                      "Téléphone, diffusion lente en milieu rural ; radio dans les années 1920-1930.",
+                      "Télévision, diffusion massive dans les années 1960-1970 — parachève l’intégration culturelle nationale."
+                    ]
+                  },
+                  {
+                    "titre": "L’école, agent d’acculturation nationale",
+                    "items": [
+                      "Lois Ferry (1881-1882) : gratuité, obligation, laïcité.",
+                      "L’instituteur, relais central de la nation dans le village, recul progressif des patois — la thèse de la « francisation des campagnes » (Eugen Weber, *Peasants into Frenchmen*)."
+                    ]
+                  },
+                  {
+                    "titre": "Conscription et expérience de la guerre",
+                    "axe": "Guerres, ruptures et mémoire",
+                    "items": [
+                      "Service militaire universel (loi de 1889 puis 1905), creuset national de brassage.",
+                      "Première Guerre mondiale : mobilisation et deuil massifs des sociétés rurales, monuments aux morts dans chaque village."
+                    ]
+                  }
+                ]
+              },
+              {
+                "titre": "Religion, contrôle social, conflictualités",
+                "couleur": "pink",
+                "axe": "Société, religion et sociabilités",
+                "intro": "Le recul des pratiques religieuses, l’ancien et le nouveau contrôle social, les conflictualités rurales : des dimensions politiques et culturelles à ne pas minorer.",
+                "sousBranches": [
+                  {
+                    "titre": "Pratiques religieuses",
+                    "items": [
+                      "Vitalité du catholicisme rural au XIXe siècle : processions, pèlerinages.",
+                      "Déchristianisation progressive au XXe siècle, nettement accélérée après la Seconde Guerre mondiale.",
+                      "Tensions entre catholicisme rural et laïcisation républicaine, cristallisées autour de l’école puis de la loi de séparation de 1905."
+                    ]
+                  },
+                  {
+                    "titre": "Formes de contrôle social",
+                    "items": [
+                      "Contrôle communautaire ancien : réputation, rumeur, charivari.",
+                      "Renforcement du contrôle étatique au XIXe siècle : gendarmerie, préfet, instituteur."
+                    ]
+                  },
+                  {
+                    "titre": "Conflictualités rurales",
+                    "axe": "État, droit et politique",
+                    "items": [
+                      "Révoltes fiscales et frumentaires, notamment sous la Restauration et en 1848.",
+                      "Politisation paysanne croissante sous la IIIe République, poids électoral décisif de la paysannerie.",
+                      "Luttes de classe rurales : grèves d’ouvriers agricoles, notamment dans le Bassin parisien à la Belle Époque."
+                    ]
+                  }
+                ]
+              },
+              {
+                "titre": "Culture matérielle, sociabilités, rapport au monde",
+                "couleur": "green",
+                "axe": "Société, religion et sociabilités",
+                "intro": "Entrée dans la consommation de masse, intimité des foyers, sociabilités élargies, rapport sensoriel au paysage et au monde animal.",
+                "sousBranches": [
+                  {
+                    "titre": "Entrée dans la consommation de masse",
+                    "items": [
+                      "Du fait-maison à l’achat : diffusion croissante des objets manufacturés.",
+                      "De l’épicerie de village au supermarché, dont l’essor en périphérie rurale date des années 1960-1970."
+                    ]
+                  },
+                  {
+                    "titre": "Intimité des foyers",
+                    "items": [
+                      "Habitat rural : de la maison à feu unique à la différenciation progressive des pièces.",
+                      "Émotions, croyances et peurs : persistance locale de pratiques de sorcellerie jusqu’au XXe siècle (travaux de Jeanne Favret-Saada en Mayenne, années 1970).",
+                      "Violences domestiques et conjugales, longtemps couvertes par le silence communautaire."
+                    ]
+                  },
+                  {
+                    "titre": "Élargissement des sociabilités",
+                    "items": [
+                      "Du voisinage à l’association : essor du milieu associatif après la loi de 1901.",
+                      "De la veillée au bal puis au sport : patronages, clubs sportifs ruraux.",
+                      "Des foires aux supermarchés : transformation des lieux d’échange et de rencontre."
+                    ]
+                  },
+                  {
+                    "titre": "Rapport sensoriel au paysage et au monde animal",
+                    "items": [
+                      "Le paysage comme construction sociale : odeurs, bruits, rythmes des saisons (histoire sensible, Alain Corbin).",
+                      "Rapport ambivalent au monde animal : animal de trait, de rente, puis de compagnie."
+                    ]
+                  }
+                ]
+              },
+              {
+                "titre": "Repères chronologiques",
+                "couleur": "purple",
+                "intro": "Quelques jalons pour ancrer les six axes dans le temps. Les repères soulignés ouvrent la fiche de l’événement correspondant dans le thème.",
+                "reperes": [
+                  {
+                    "date": "1815",
+                    "texte": "Restauration ; début de la période, la France reste rurale à plus de 80 % de sa population."
+                  },
+                  {
+                    "date": "1833",
+                    "texte": "Loi Guizot sur l’instruction primaire, prélude aux lois Ferry.",
+                    "eventId": "c2"
+                  },
+                  {
+                    "date": "1863-années 1890",
+                    "texte": "Crise du phylloxéra, qui ravage le vignoble français.",
+                    "eventId": "c11"
+                  },
+                  {
+                    "date": "1881-1882",
+                    "texte": "Lois Ferry : école gratuite, obligatoire, laïque.",
+                    "eventId": "c15"
+                  },
+                  {
+                    "date": "1884",
+                    "texte": "Loi sur les syndicats professionnels ; essor du syndicalisme agricole.",
+                    "eventId": "c16"
+                  },
+                  {
+                    "date": "1889",
+                    "texte": "Loi sur le service militaire universel.",
+                    "eventId": "c17"
+                  },
+                  {
+                    "date": "1894",
+                    "texte": "Fondation du Crédit agricole.",
+                    "eventId": "c20"
+                  },
+                  {
+                    "date": "1905",
+                    "texte": "Loi de séparation des Églises et de l’État.",
+                    "eventId": "c22"
+                  },
+                  {
+                    "date": "1914-1918",
+                    "texte": "Première Guerre mondiale ; mobilisation et deuil massifs des campagnes.",
+                    "eventId": "c25"
+                  },
+                  {
+                    "date": "1924-1927",
+                    "texte": "Création des chambres d’agriculture."
+                  },
+                  {
+                    "date": "1946",
+                    "texte": "Fondation de la FNSEA.",
+                    "eventId": "c36"
+                  },
+                  {
+                    "date": "1949",
+                    "texte": "Lancement de la Mobylette.",
+                    "eventId": "c37"
+                  },
+                  {
+                    "date": "1962",
+                    "texte": "Politique agricole commune (PAC).",
+                    "eventId": "c44"
+                  },
+                  {
+                    "date": "1967",
+                    "texte": "Henri Mendras publie *La Fin des paysans* — borne conventionnelle de la période.",
+                    "eventId": "c48"
+                  }
+                ]
+              }
+            ]
+          }
         },
         {
           "id": "thm_colafr",
