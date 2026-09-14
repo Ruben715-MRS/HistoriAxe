@@ -2,8 +2,8 @@
   "version": "1.0.0",
   "lang": "fr",
   "name": "Français (Intégral)",
-  "totalThemes": 787,
-  "totalEvents": 19344,
+  "totalThemes": 795,
+  "totalEvents": 19416,
   "categories": [
     {
       "nom": "Culture générale",
@@ -137541,7 +137541,7 @@
     },
     {
       "nom": "Programmes scolaires",
-      "note": "Les grands événements de l'histoire mondiale contemporaine (Première et Seconde Guerres mondiales, totalitarismes, guerre froide, décolonisation, construction européenne) sont traités de manière approfondie dans le programme français, disponible dans les catégories Collège (Classe de 3ème) et Lycée (Classe de Terminale). Les thèmes ci-dessous se concentrent sur les épisodes propres à l'histoire nationale de chaque pays, absents ou seulement effleurés par le programme français. Chaque pays fait par ailleurs l'objet d'un panorama d'ensemble dans « Histoires nationales » : lorsqu'un même épisode figure aux deux endroits, il est abordé ici sous l'angle retenu par le programme scolaire du pays concerné, et non repris à l'identique.",
+      "note": "Les grands événements de l'histoire mondiale contemporaine (Première et Seconde Guerres mondiales, totalitarismes, guerre froide, décolonisation, construction européenne) sont traités de manière approfondie dans le programme français, disponible dans les catégories Collège (Classe de 3ème) et Lycée (Classe de Terminale). Les thèmes ci-dessous se concentrent sur les épisodes propres à l'histoire nationale de chaque pays, absents ou seulement effleurés par le programme français. Chaque pays fait par ailleurs l'objet d'un panorama d'ensemble dans « Histoires nationales » : lorsqu'un même épisode figure aux deux endroits, il est abordé ici sous l'angle retenu par le programme scolaire du pays concerné, et non repris à l'identique. Deux précisions sur ce que recouvre ici « programme scolaire ». Plusieurs de ces pays — Allemagne, Belgique, Canada, Espagne, États-Unis, Suisse — n'ont pas de programme national unique, les contenus relevant des Länder, Communautés, provinces, communautés autonomes, États fédérés ou cantons ; les thèmes suivent alors le découpage le plus largement partagé. Et le dernier thème de chaque pays prolonge le fil national jusqu'à la période récente, souvent au-delà du point où les programmes eux-mêmes s'arrêtent.",
       "subcategories": [
         {
           "nom": "France",
@@ -142657,7 +142657,7 @@
           "themes": [
             {
               "id": "psn_za_t1",
-              "nom": "Sociétés précoloniales et colonisation hollandaise puis britannique, le Grand Trek des Boers",
+              "nom": "Sociétés précoloniales, colonisation et Grand Trek (-2000 à 1854)",
               "difficulte": "Tous niveaux",
               "axeOrder": [
                 "Sociétés africaines avant la colonisation européenne (jusqu'à 1795)",
@@ -142830,7 +142830,7 @@
             },
             {
               "id": "psn_za_t2",
-              "nom": "Les guerres anglo-boers",
+              "nom": "Les guerres anglo-boers (1867-1910)",
               "difficulte": "Tous niveaux",
               "axeOrder": [
                 "Rivalités et Première Guerre des Boers (1867-1881)",
@@ -143002,8 +143002,92 @@
               ]
             },
             {
+              "id": "psn_za_t6",
+              "nom": "Le royaume zoulou face à l'Empire britannique (1873-1887)",
+              "difficulte": "Tous niveaux",
+              "axeOrder": [
+                "La politique de confédération",
+                "La guerre de 1879",
+                "Le démembrement du royaume"
+              ],
+              "events": [
+                {
+                  "id": "psn_za_t6_1",
+                  "axe": "La politique de confédération",
+                  "date": 1873,
+                  "titre": "Le couronnement de Cetshwayo",
+                  "description": "Le nouveau roi zoulou se fait couronner en présence de Theophilus Shepstone, secrétaire aux Affaires indigènes du Natal, qui prétend ainsi le placer sous tutelle britannique. Cetshwayo, lui, y voit une reconnaissance entre égaux. Le malentendu sur la nature de ce lien servira six ans plus tard à justifier la guerre.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Cetshwayo_kaMpande"
+                },
+                {
+                  "id": "psn_za_t6_2",
+                  "axe": "La politique de confédération",
+                  "date": 1877,
+                  "titre": "La politique de confédération et l'annexion du Transvaal",
+                  "description": "Londres veut regrouper colonies britanniques, républiques boers et royaumes africains en une fédération sous son autorité, notamment pour sécuriser la main-d'œuvre des mines de diamants. L'annexion du Transvaal est la première pièce ; le royaume zoulou, puissance militaire indépendante de quarante mille hommes, apparaît dès lors comme l'obstacle à éliminer.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Guerre_anglo-zouloue"
+                },
+                {
+                  "id": "psn_za_t6_3",
+                  "axe": "La politique de confédération",
+                  "date": 1878,
+                  "titre": "L'ultimatum impossible de Frere",
+                  "description": "Le haut-commissaire Bartle Frere, sans instruction de Londres, exige de Cetshwayo la dissolution de son armée sous trente jours — condition qu'aucun souverain zoulou ne pourrait accepter, le système militaire étant le fondement même de l'État. Le refus attendu fournit le prétexte à l'invasion. Frere sera désavoué après coup, la guerre ayant déjà eu lieu.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Henry_Bartle_Frere"
+                },
+                {
+                  "id": "psn_za_t6_4",
+                  "axe": "La guerre de 1879",
+                  "date": 1879,
+                  "titre": "Isandlwana, la plus lourde défaite coloniale britannique",
+                  "description": "Un corps d'armée britannique campé sans retranchement est encerclé et anéanti par vingt mille guerriers zoulous armés surtout de sagaies : plus de treize cents morts, dont la quasi-totalité des soldats européens engagés. La nouvelle stupéfie Londres. Les manuels sud-africains s'en servent pour discuter la supposée supériorité technique européenne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_d%27Isandhlwana"
+                },
+                {
+                  "id": "psn_za_t6_5",
+                  "axe": "La guerre de 1879",
+                  "date": 1879,
+                  "titre": "Rorke's Drift et la fabrique d'un récit",
+                  "description": "Le même jour, une centaine de soldats retranchés dans une mission repoussent plusieurs assauts. Onze croix de Victoria, le plus grand nombre jamais décerné pour un seul engagement, sont distribuées — manière de couvrir le désastre d'Isandlwana par un fait d'armes. L'épisode, popularisé par le cinéma, illustre comment une défaite se transforme en légende héroïque.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Rorke%27s_Drift"
+                },
+                {
+                  "id": "psn_za_t6_6",
+                  "axe": "La guerre de 1879",
+                  "date": 1879,
+                  "titre": "Ulundi et la destruction du royaume",
+                  "description": "Avec des renforts massifs, Chelmsford écrase l'armée zouloue devant la capitale royale, qu'il fait incendier. Cetshwayo est capturé puis exilé au Cap. En six mois, l'État militaire fondé par Chaka soixante ans plus tôt a cessé d'exister comme puissance indépendante.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_d%27Ulundi"
+                },
+                {
+                  "id": "psn_za_t6_7",
+                  "axe": "Le démembrement du royaume",
+                  "date": 1879,
+                  "titre": "Les treize chefferies et la guerre civile",
+                  "description": "Plutôt que d'annexer, les Britanniques découpent le Zoulouland en treize chefferies rivales confiées à des chefs choisis pour leur docilité, dont un ancien conseiller blanc de Cetshwayo. Le dispositif provoque exactement ce qu'il prétendait éviter : une guerre civile entre factions qui ravage le pays pendant des années.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Royaume_zoulou"
+                },
+                {
+                  "id": "psn_za_t6_8",
+                  "axe": "Le démembrement du royaume",
+                  "date": 1883,
+                  "titre": "Le retour manqué de Cetshwayo",
+                  "description": "Reçu à Londres par la reine Victoria, le roi obtient de rentrer sur une partie seulement de son territoire. Attaqué par ses rivaux dès son retour, il doit fuir et meurt l'année suivante. Sa tentative de restauration échoue faute des moyens militaires que la Grande-Bretagne lui avait précisément retirés.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Cetshwayo_kaMpande"
+                },
+                {
+                  "id": "psn_za_t6_9",
+                  "axe": "Le démembrement du royaume",
+                  "date": 1887,
+                  "titre": "L'annexion du Zoulouland",
+                  "description": "Le territoire passe sous administration britannique directe, puis est rattaché au Natal en 1897. Les terres sont ouvertes à la colonisation et l'impôt de capitation contraint les hommes à descendre travailler dans les mines. Le programme sud-africain relie explicitement cette dépossession à la formation du système de travail migrant sur lequel reposera l'économie du pays.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Zoulouland"
+                }
+              ]
+            },
+            {
               "id": "psn_za_t3",
-              "nom": "Mise en place et lois de l'apartheid, la résistance",
+              "nom": "Mise en place et lois de l'apartheid, la résistance (1912-1985)",
               "difficulte": "Tous niveaux",
               "axeOrder": [
                 "Racialisation de la société avant 1948 (fondations)",
@@ -143208,7 +143292,7 @@
             },
             {
               "id": "psn_za_t4",
-              "nom": "La chute de l'apartheid et la transition démocratique",
+              "nom": "La chute de l'apartheid et la transition démocratique (1985-1999)",
               "difficulte": "Tous niveaux",
               "axeOrder": [
                 "Prémices du changement (1985-1989)",
@@ -143389,7 +143473,7 @@
             },
             {
               "id": "psn_za_t5",
-              "nom": "L'Afrique du Sud post-apartheid",
+              "nom": "L'Afrique du Sud post-apartheid (prolongement, 1998-2024)",
               "difficulte": "Tous niveaux",
               "axeOrder": [
                 "La présidence Mbeki (1999-2008)",
@@ -143550,6 +143634,174 @@
           "nom": "Algérie",
           "note": "La guerre d'Algérie est déjà traitée du point de vue français dans « Programmes scolaires » > « France » (classes de 3ᵉ et de Terminale), et l'histoire générale du pays dans « Histoires nationales » > « Afrique » > « Afrique du Nord » > « Histoire de l'Algérie ». Les thèmes ci-dessous suivent le découpage du programme d'histoire algérien, qui accorde une place centrale à la Régence d'Alger, aux résistances à la conquête, au système colonial et à la guerre de libération nationale envisagée depuis l'intérieur du mouvement indépendantiste.",
           "themes": [
+            {
+              "id": "psn_dz_t7",
+              "nom": "L'Algérie antique : Numidie, Rome et le christianisme africain (-203 à 429)",
+              "difficulte": "Tous niveaux",
+              "axeOrder": [
+                "Les royaumes numides",
+                "L'Afrique romaine",
+                "Un foyer du christianisme"
+              ],
+              "events": [
+                {
+                  "id": "psn_dz_t7_1",
+                  "axe": "Les royaumes numides",
+                  "date": -203,
+                  "titre": "Massinissa rallie Rome contre Carthage",
+                  "description": "Chef des Massyles, Massinissa abandonne l'alliance carthaginoise pour celle de Scipion et lui apporte à Zama la cavalerie qui décide de la bataille. Rome lui livre en retour le royaume de son rival Syphax. Les manuels algériens font de ce règne de plus de cinquante ans le moment où la Numidie devient un État structuré, avec monnaie, agriculture sédentaire et capitale à Cirta, l'actuelle Constantine.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Massinissa"
+                },
+                {
+                  "id": "psn_dz_t7_2",
+                  "axe": "Les royaumes numides",
+                  "date": -148,
+                  "titre": "Le royaume numide partagé à la mort de Massinissa",
+                  "description": "Scipion Émilien divise l'héritage entre les trois fils du roi, selon une pratique romaine constante d'affaiblissement des royaumes clients. La Numidie cesse d'être une puissance unifiée et devient un enjeu de rivalités que Rome arbitre à sa convenance, jusqu'à ce qu'un prétendant décide de refuser cet arbitrage.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Royaume_de_Numidie"
+                },
+                {
+                  "id": "psn_dz_t7_3",
+                  "axe": "Les royaumes numides",
+                  "date": -112,
+                  "titre": "La guerre de Jugurtha",
+                  "description": "Petit-fils de Massinissa, Jugurtha élimine ses cousins et tient tête sept ans aux légions, achetant au passage des sénateurs romains — ce qui fait dire à Salluste que Rome est « une ville à vendre ». Trahi et livré par son beau-père, il meurt étranglé dans la prison du Tullianum. Il reste dans la mémoire algérienne la figure de la résistance à l'occupation étrangère.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jugurtha"
+                },
+                {
+                  "id": "psn_dz_t7_4",
+                  "axe": "L'Afrique romaine",
+                  "date": -46,
+                  "titre": "La Numidie annexée, l'Africa Nova",
+                  "description": "Après la défaite du roi Juba Ier, allié de Pompée, César transforme le royaume en province romaine. La côte et les hautes plaines céréalières sont progressivement quadrillées par les colonies de vétérans, tandis que le limes marque la limite mouvante avec les populations restées autonomes du Sud.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Province_d%27Afrique"
+                },
+                {
+                  "id": "psn_dz_t7_5",
+                  "axe": "L'Afrique romaine",
+                  "date": 17,
+                  "titre": "La révolte de Tacfarinas",
+                  "description": "Ancien auxiliaire de l'armée romaine, Tacfarinas soulève les Musulames contre la confiscation des terres de parcours par la colonisation et mène sept ans une guerre de harcèlement qui mobilise plusieurs légions. Tacite lui consacre un long récit. Les programmes algériens y lisent la première résistance organisée à une occupation fondée sur la dépossession foncière.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Tacfarinas"
+                },
+                {
+                  "id": "psn_dz_t7_6",
+                  "axe": "L'Afrique romaine",
+                  "date": 100,
+                  "titre": "Timgad et Djemila, villes de la colonisation",
+                  "description": "Fondée par Trajan pour des vétérans de la IIIᵉ légion Auguste, Timgad déploie son damier parfait, son forum, son théâtre et sa bibliothèque au pied des Aurès. Avec Djemila et Tipasa, elle témoigne d'une Afrique romaine urbaine et prospère, grenier à blé et à huile de l'Empire, dont les ruines figurent aujourd'hui au patrimoine mondial.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Timgad"
+                },
+                {
+                  "id": "psn_dz_t7_7",
+                  "axe": "Un foyer du christianisme",
+                  "date": 313,
+                  "titre": "Le schisme donatiste",
+                  "description": "Le refus d'accepter des évêques qui avaient livré les Écritures pendant la persécution divise l'Église d'Afrique en deux hiérarchies rivales. Majoritaire en Numidie, le donatisme s'enracine dans les campagnes berbérophones et s'accompagne d'une contestation sociale, celle des circoncellions. Le conflit durera plus d'un siècle malgré la répression impériale.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Donatisme"
+                },
+                {
+                  "id": "psn_dz_t7_8",
+                  "axe": "Un foyer du christianisme",
+                  "date": 396,
+                  "titre": "Augustin évêque d'Hippone",
+                  "description": "Né à Thagaste, l'actuelle Souk Ahras, formé à Carthage, Augustin devient évêque d'Hippone, aujourd'hui Annaba, et y écrit les Confessions et la Cité de Dieu. Son œuvre, façonnée par la controverse avec les donatistes et les manichéens, fait de l'Afrique du Nord l'un des grands foyers intellectuels du christianisme ancien.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Augustin_d%27Hippone"
+                },
+                {
+                  "id": "psn_dz_t7_9",
+                  "axe": "Un foyer du christianisme",
+                  "date": 429,
+                  "titre": "Les Vandales débarquent en Afrique du Nord",
+                  "description": "Appelés ou non par un gouverneur en révolte, quatre-vingt mille Vandales traversent le détroit et s'emparent en dix ans des provinces africaines. Augustin meurt pendant le siège d'Hippone. La conquête arienne, puis la reconquête byzantine de 533, désorganisent durablement l'Église africaine et affaiblissent les villes avant l'arrivée des armées arabes.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Vandales"
+                }
+              ]
+            },
+            {
+              "id": "psn_dz_t8",
+              "nom": "Des conquêtes arabes aux dynasties berbères (683-1509)",
+              "difficulte": "Tous niveaux",
+              "axeOrder": [
+                "La conquête et les résistances",
+                "Les royaumes berbères médiévaux",
+                "Tlemcen et la pression ibérique"
+              ],
+              "events": [
+                {
+                  "id": "psn_dz_t8_1",
+                  "axe": "La conquête et les résistances",
+                  "date": 683,
+                  "titre": "Kusayla défait Oqba à Tahuda",
+                  "description": "Chef berbère des Awraba, un temps rallié aux musulmans puis humilié par Oqba ibn Nafi, Kusayla le surprend et le tue près de Biskra, reprenant Kairouan pour plusieurs années. Avec la Kahina des Aurès qui poursuit la lutte après lui, il occupe dans les manuels algériens la place des résistances berbères à une conquête qui mit un demi-siècle à aboutir.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Koce%C3%AFla"
+                },
+                {
+                  "id": "psn_dz_t8_2",
+                  "axe": "La conquête et les résistances",
+                  "date": 740,
+                  "titre": "La grande révolte kharidjite des Berbères",
+                  "description": "Les tribus se soulèvent contre la fiscalité omeyyade, qui les traitait en sujets tributaires malgré leur conversion, et adoptent le kharidjisme, doctrine égalitaire selon laquelle tout musulman peut devenir calife, fût-il un esclave. La défaite des armées de Damas soustrait durablement le Maghreb central à l'autorité orientale.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Grande_r%C3%A9volte_berb%C3%A8re"
+                },
+                {
+                  "id": "psn_dz_t8_3",
+                  "axe": "La conquête et les résistances",
+                  "date": 761,
+                  "titre": "Les Rostémides fondent Tahert",
+                  "description": "Les kharidjites ibadites établissent autour de Tiaret un imamat élu, réputé pour sa frugalité, son ouverture aux savants et son commerce transsaharien avec le pays de l'or. Détruit par les Fatimides en 909, il survit dans les communautés ibadites du Mzab, à Ghardaïa, qui perpétuent aujourd'hui encore cette tradition.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Rost%C3%A9mides"
+                },
+                {
+                  "id": "psn_dz_t8_4",
+                  "axe": "Les royaumes berbères médiévaux",
+                  "date": 972,
+                  "titre": "Les Zirides gouvernent pour les Fatimides",
+                  "description": "Partis conquérir l'Égypte, les Fatimides laissent le Maghreb central et l'Ifriqiya à leurs lieutenants berbères sanhadja, les Zirides, qui deviennent vite autonomes. Leur rupture avec Le Caire en 1048 provoquera l'envoi des tribus hilaliennes, épisode charnière de l'arabisation des campagnes.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Zirides"
+                },
+                {
+                  "id": "psn_dz_t8_5",
+                  "axe": "Les royaumes berbères médiévaux",
+                  "date": 1007,
+                  "titre": "La Qal'a des Beni Hammad",
+                  "description": "Une branche ziride fonde dans les monts du Hodna une capitale fortifiée dotée d'un minaret de vingt-cinq mètres, de palais à bassins et de canalisations, avant de transférer le pouvoir à Béjaïa. Les Hammadides font du Maghreb central un royaume distinct de l'Ifriqiya : c'est, pour l'historiographie algérienne, une première esquisse territoriale du pays.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Hammadides"
+                },
+                {
+                  "id": "psn_dz_t8_6",
+                  "axe": "Les royaumes berbères médiévaux",
+                  "date": 1152,
+                  "titre": "Les Almohades unifient le Maghreb",
+                  "description": "Abd al-Mumin, lui-même originaire de la région de Tlemcen, soumet Béjaïa puis écrase les Hilaliens à Sétif, réunissant pour la première et dernière fois tout le Maghreb et al-Andalus sous une même autorité. L'unité se défait après la défaite de Las Navas de Tolosa, laissant place à trois royaumes durables.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Almohades"
+                },
+                {
+                  "id": "psn_dz_t8_7",
+                  "axe": "Tlemcen et la pression ibérique",
+                  "date": 1235,
+                  "titre": "Les Zianides fondent le royaume de Tlemcen",
+                  "description": "Gouverneur almohade de la région, Yaghmoracen se proclame indépendant et installe à Tlemcen une dynastie qui régnera trois siècles. Placée au débouché des pistes sahariennes et du port de Honaïne, la ville devient un carrefour commercial et un foyer intellectuel, dotée de medersas et visitée par les marchands catalans et génois.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Abdelwadides"
+                },
+                {
+                  "id": "psn_dz_t8_8",
+                  "axe": "Tlemcen et la pression ibérique",
+                  "date": 1299,
+                  "titre": "Tlemcen assiégée par les Mérinides",
+                  "description": "Les souverains de Fès mettent le siège huit années durant et bâtissent en face une ville neuve, El Mansourah, pour y installer leur armée et leur cour. Prise puis reperdue à plusieurs reprises au XIVᵉ siècle, Tlemcen survit en jouant des rivalités entre Fès et Tunis : c'est la condition, précaire, de son indépendance.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sultanat_zianide"
+                },
+                {
+                  "id": "psn_dz_t8_9",
+                  "axe": "Tlemcen et la pression ibérique",
+                  "date": 1509,
+                  "titre": "Les présides espagnols sur la côte",
+                  "description": "Après la chute de Grenade, l'Espagne prend Mers el-Kébir puis Oran, Bougie et le rocher face à Alger, et impose tribut aux ports restants. Incapables de résister seuls, les notables algérois appelleront quelques années plus tard des corsaires ottomans : c'est de cette demande de protection que naîtra la Régence.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Oran"
+                }
+              ]
+            },
             {
               "id": "psn_dz_t1",
               "nom": "La Régence d'Alger, puissance méditerranéenne (1516-1830)",
@@ -146407,8 +146659,92 @@
         },
         {
           "nom": "Autriche",
-          "note": "Une grande partie de l'histoire des Habsbourg et de l'empire austro-hongrois est déjà couverte par « Histoires nationales » > « Empires et grandes puissances disparues » > « Histoire de l'Empire austro-hongrois ». Les thèmes ci-dessous se concentrent donc sur le XXe siècle autrichien (Première République, Anschluss, Deuxième République), conformément aux contenus effectivement prévus par le Lehrplan Geschichte und Sozialkunde/Politische Bildung autrichien.",
+          "note": "L'histoire de la double monarchie est couverte par « Histoires nationales » > « Empires et grandes puissances disparues » > « Histoire de l'Empire austro-hongrois », dont les événements ne commencent qu'au XIXᵉ siècle : les réformes de Marie-Thérèse et de Joseph II, centrales dans le Lehrplan Geschichte und Sozialkunde/Politische Bildung, n'y figurent pas et sont donc traitées ici. Les autres thèmes suivent le découpage autrichien du XXᵉ siècle — Vienne 1900, Anschluss, neutralité, Deuxième République.",
           "themes": [
+            {
+              "id": "psn_at_t4",
+              "nom": "Marie-Thérèse, Joseph II et les réformes éclairées (1740-1790)",
+              "difficulte": "Tous niveaux",
+              "axeOrder": [
+                "Une héritière contestée",
+                "L'État réformé",
+                "Le joséphisme et ses limites"
+              ],
+              "events": [
+                {
+                  "id": "psn_at_t4_1",
+                  "axe": "Une héritière contestée",
+                  "date": 1740,
+                  "titre": "Une femme hérite des États Habsbourg",
+                  "description": "À la mort de Charles VI, sa fille recueille une monarchie composite que la Pragmatique Sanction devait lui garantir. La Prusse envahit aussitôt la Silésie et la plupart des puissances contestent son droit : la guerre de Succession d'Autriche dure huit ans. Marie-Thérèse conserve tout sauf la Silésie, dont la perte orientera sa politique jusqu'à sa mort.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Marie-Th%C3%A9r%C3%A8se_d%27Autriche"
+                },
+                {
+                  "id": "psn_at_t4_2",
+                  "axe": "Une héritière contestée",
+                  "date": 1749,
+                  "titre": "La réforme de Haugwitz : un État qui se dote de moyens",
+                  "description": "Pour ne plus dépendre du bon vouloir des diètes provinciales, l'impôt est voté pour dix ans, la noblesse et le clergé y sont assujettis, et une administration centrale salariée remplace les officiers locaux. L'armée passe à cent mille hommes permanents. Les manuels autrichiens datent de là la naissance de l'État moderne dans la monarchie des Habsbourg.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Friedrich_Wilhelm_von_Haugwitz"
+                },
+                {
+                  "id": "psn_at_t4_3",
+                  "axe": "Une héritière contestée",
+                  "date": 1756,
+                  "titre": "Le renversement des alliances et la guerre de Sept Ans",
+                  "description": "Le chancelier Kaunitz obtient l'alliance de la France, ennemie héréditaire, contre la Prusse — retournement diplomatique scellé par le mariage de Marie-Antoinette avec le futur Louis XVI. Malgré cette coalition, la Silésie n'est pas reconquise. L'échec militaire accélère les réformes intérieures, seule voie restante pour rattraper la Prusse.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Wenceslas_Antoine_de_Kaunitz"
+                },
+                {
+                  "id": "psn_at_t4_4",
+                  "axe": "L'État réformé",
+                  "date": 1774,
+                  "titre": "L'école obligatoire avant presque partout ailleurs",
+                  "description": "Le règlement scolaire général impose une école dans chaque paroisse et la scolarité de six à douze ans, avec des manuels et une formation des maîtres unifiés. L'application reste longtemps partielle, mais la mesure précède de plus d'un siècle celles de la plupart des États européens et reste l'un des titres de gloire du règne dans la mémoire scolaire autrichienne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Marie-Th%C3%A9r%C3%A8se_d%27Autriche"
+                },
+                {
+                  "id": "psn_at_t4_5",
+                  "axe": "L'État réformé",
+                  "date": 1781,
+                  "titre": "Le brevet de tolérance",
+                  "description": "Joseph II accorde aux luthériens, calvinistes et orthodoxes le droit au culte privé, à l'école et aux charges publiques, et allège dans la foulée les restrictions imposées aux juifs. Le catholicisme reste religion d'État, mais la tolérance devient un principe de gouvernement dans une monarchie qui avait mené la Contre-Réforme.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Patentes_de_tol%C3%A9rance"
+                },
+                {
+                  "id": "psn_at_t4_6",
+                  "axe": "L'État réformé",
+                  "date": 1781,
+                  "titre": "L'abolition du servage personnel",
+                  "description": "Les paysans cessent d'être attachés à la glèbe : ils peuvent se marier, apprendre un métier et quitter la seigneurie sans autorisation. Les corvées subsistent toutefois, et la tentative de les convertir en impôt en 1789 sera annulée à la mort de l'empereur. La réforme rurale reste inachevée, ce que les manuels relient à l'absence de soutien social au joséphisme.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Joseph_II_(empereur_du_Saint-Empire)"
+                },
+                {
+                  "id": "psn_at_t4_7",
+                  "axe": "Le joséphisme et ses limites",
+                  "date": 1782,
+                  "titre": "La dissolution des couvents contemplatifs",
+                  "description": "Plus de sept cents monastères jugés inutiles à la société sont fermés et leurs biens versés à un fonds de religion finançant paroisses, écoles et hôpitaux. Le pape Pie VI vient en personne à Vienne pour tenter de l'en dissuader, sans succès. Ce contrôle étroit de l'Église par l'État a donné son nom au joséphisme.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jos%C3%A9phisme"
+                },
+                {
+                  "id": "psn_at_t4_8",
+                  "axe": "Le joséphisme et ses limites",
+                  "date": 1784,
+                  "titre": "L'allemand imposé comme langue d'administration",
+                  "description": "Pour unifier une monarchie de douze peuples, Joseph II remplace le latin et les langues locales par l'allemand dans l'administration et la justice, y compris en Hongrie. La mesure, conçue comme une rationalisation, est reçue comme une agression et déclenche un réveil national hongrois : elle inaugure la question qui minera l'Empire jusqu'en 1918.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Joseph_II_(empereur_du_Saint-Empire)"
+                },
+                {
+                  "id": "psn_at_t4_9",
+                  "axe": "Le joséphisme et ses limites",
+                  "date": 1790,
+                  "titre": "Les révocations du lit de mort",
+                  "description": "Face à la révolte des Pays-Bas autrichiens, à l'agitation hongroise et à l'hostilité générale, l'empereur mourant révoque presque toutes ses réformes sauf la tolérance et l'abolition du servage. Son épitaphe, qu'il aurait dictée — « ici repose un prince dont les intentions furent pures mais qui eut le malheur de voir échouer tous ses projets » — résume le bilan que discutent les manuels.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Joseph_II_(empereur_du_Saint-Empire)"
+                }
+              ]
+            },
             {
               "id": "psn_at_t1",
               "nom": "Vienne fin de siècle (Sécession, Freud, effervescence culturelle) (1897-1913)",
@@ -146660,12 +146996,180 @@
                   "wikipedia": "https://fr.wikipedia.org/wiki/États_membres_de_l'Organisation_des_Nations_unies"
                 }
               ]
+            },
+            {
+              "id": "psn_at_t5",
+              "nom": "La Deuxième République : Kreisky, Waldheim, l'Europe (1957-1994)",
+              "difficulte": "Tous niveaux",
+              "axeOrder": [
+                "La démocratie de concertation",
+                "Les années Kreisky",
+                "Sortir du mythe de la victime"
+              ],
+              "events": [
+                {
+                  "id": "psn_at_t5_1",
+                  "axe": "La démocratie de concertation",
+                  "date": 1957,
+                  "titre": "La grande coalition et le partage des postes",
+                  "description": "Conservateurs et sociaux-démocrates, qui s'étaient affrontés jusqu'à la guerre civile en 1934, gouvernent ensemble pendant vingt ans et se répartissent selon une clé fixe les emplois publics, des directions de banques aux postes d'enseignants. Ce Proporz, souvent critiqué, est présenté comme le prix payé pour la stabilité d'un pays qui s'était déchiré.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Proporz"
+                },
+                {
+                  "id": "psn_at_t5_2",
+                  "axe": "La démocratie de concertation",
+                  "date": 1966,
+                  "titre": "La fin de la grande coalition",
+                  "description": "Pour la première fois depuis la guerre, un parti gouverne seul. L'alternance devient possible et la vie politique se normalise, tandis que la concertation économique entre patronat et syndicats, la Sozialpartnerschaft, continue de régler les salaires et les prix hors du Parlement — autre trait durable du modèle autrichien.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Partenariat_social"
+                },
+                {
+                  "id": "psn_at_t5_3",
+                  "axe": "Les années Kreisky",
+                  "date": 1970,
+                  "titre": "Bruno Kreisky arrive au pouvoir",
+                  "description": "Social-démocrate revenu de son exil suédois, juif et ancien détenu politique, Kreisky gouverne treize ans, dont onze avec la majorité absolue. Son programme associe réformes sociales, gratuité des manuels et des transports scolaires, et une politique étrangère active de médiation qui donne à un petit pays neutre une visibilité internationale disproportionnée.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bruno_Kreisky"
+                },
+                {
+                  "id": "psn_at_t5_4",
+                  "axe": "Les années Kreisky",
+                  "date": 1975,
+                  "titre": "La réforme du droit de la famille",
+                  "description": "L'autorité maritale est supprimée au profit de l'égalité des époux ; suivent la dépénalisation de l'avortement, la réforme du divorce et celle du droit pénal. Ces textes, portés par la ministre Hertha Firnberg et les mouvements de femmes, font de la décennie Kreisky la grande période de modernisation sociale de l'Autriche.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bruno_Kreisky"
+                },
+                {
+                  "id": "psn_at_t5_5",
+                  "axe": "Les années Kreisky",
+                  "date": 1978,
+                  "titre": "Le référendum antinucléaire de Zwentendorf",
+                  "description": "Une centrale achevée et prête à démarrer est rejetée de justesse par référendum ; elle ne sera jamais mise en service. Premier vote de ce type en Europe, il inscrit le refus du nucléaire dans la loi puis dans la constitution, et révèle une société civile capable de faire échec à un consensus entre partis.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Centrale_nucl%C3%A9aire_de_Zwentendorf"
+                },
+                {
+                  "id": "psn_at_t5_6",
+                  "axe": "Sortir du mythe de la victime",
+                  "date": 1986,
+                  "titre": "L'affaire Waldheim",
+                  "description": "La révélation du passé militaire caché de l'ancien secrétaire général de l'ONU, candidat à la présidence, déclenche une controverse internationale. Élu malgré tout, il se trouve isolé diplomatiquement. L'affaire oblige l'Autriche à regarder en face sa participation au nazisme, que le mythe de la « première victime » avait permis d'esquiver pendant quarante ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kurt_Waldheim"
+                },
+                {
+                  "id": "psn_at_t5_7",
+                  "axe": "Sortir du mythe de la victime",
+                  "date": 1991,
+                  "titre": "L'aveu du chancelier Vranitzky",
+                  "description": "Devant le Parlement, le chancelier reconnaît au nom de la République la coresponsabilité d'Autrichiens dans les crimes du national-socialisme et présente des excuses aux victimes. C'est la première déclaration officielle de ce genre. Elle ouvre la voie aux fonds d'indemnisation et à la restitution des biens spoliés, engagés dans les années suivantes.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Franz_Vranitzky"
+                },
+                {
+                  "id": "psn_at_t5_8",
+                  "axe": "Sortir du mythe de la victime",
+                  "date": 1994,
+                  "titre": "Le référendum d'adhésion à l'Union européenne",
+                  "description": "Les deux tiers des votants approuvent l'entrée dans l'Union, effective au 1er janvier 1995. La neutralité, pilier identitaire depuis 1955, doit être redéfinie pour s'accommoder d'une politique étrangère commune : le débat sur ce qu'il en reste traverse depuis toute la vie politique autrichienne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Proc%C3%A9dure_d%27adh%C3%A9sion_de_l%27Autriche_%C3%A0_l%27Union_europ%C3%A9enne"
+                },
+                {
+                  "id": "psn_at_t5_9",
+                  "axe": "Sortir du mythe de la victime",
+                  "date": 1986,
+                  "titre": "La montée du FPÖ sous Jörg Haider",
+                  "description": "La prise de contrôle du parti libéral par son aile nationale, la même année que l'affaire Waldheim, transforme une formation marginale en force électorale majeure. Le phénomène, longtemps analysé comme une exception autrichienne, apparaît rétrospectivement comme l'un des premiers exemples européens de la poussée populiste de droite.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/J%C3%B6rg_Haider"
+                }
+              ]
             }
           ]
         },
         {
           "nom": "Belgique",
           "themes": [
+            {
+              "id": "psn_be_t5",
+              "nom": "Des Pays-Bas bourguignons à la révolution brabançonne (1384-1789)",
+              "difficulte": "Tous niveaux",
+              "axeOrder": [
+                "L'État bourguignon",
+                "Les Pays-Bas espagnols",
+                "Les Pays-Bas autrichiens"
+              ],
+              "events": [
+                {
+                  "id": "psn_be_t5_1",
+                  "axe": "L'État bourguignon",
+                  "date": 1384,
+                  "titre": "Les ducs de Bourgogne rassemblent les principautés",
+                  "description": "Par héritages, achats et mariages, Philippe le Hardi puis ses successeurs réunissent en un demi-siècle la Flandre, le Brabant, le Hainaut, la Hollande et le Luxembourg. Ce vaste ensemble entre Empire et royaume de France n'a ni nom ni unité institutionnelle, mais les manuels belges y voient la première ébauche d'un espace politique correspondant aux Pays-Bas historiques.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89tat_bourguignon"
+                },
+                {
+                  "id": "psn_be_t5_2",
+                  "axe": "L'État bourguignon",
+                  "date": 1464,
+                  "titre": "Les premiers États généraux réunis à Bruges",
+                  "description": "Pour obtenir des subsides, Philippe le Bon convoque ensemble les députations des différentes principautés, jusque-là consultées séparément. L'assemblée prend vite l'habitude de marchander son consentement à l'impôt contre le respect des privilèges locaux. Cette tradition de négociation entre le prince et les villes traverse toute l'histoire des Pays-Bas et nourrira les révoltes des siècles suivants.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89tats_g%C3%A9n%C3%A9raux_(Pays-Bas)"
+                },
+                {
+                  "id": "psn_be_t5_3",
+                  "axe": "L'État bourguignon",
+                  "date": 1500,
+                  "titre": "Charles Quint, né à Gand",
+                  "description": "Héritier de Bourgogne, d'Espagne et d'Autriche, il fait des dix-sept provinces un ensemble indivisible par la Pragmatique Sanction de 1549, tout en les détachant juridiquement de l'Empire. Son abdication à Bruxelles en 1555 lègue les Pays-Bas à son fils Philippe II, roi d'Espagne élevé en Castille et étranger au pays : le malentendu qui mènera à la révolte est en place.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Charles_Quint"
+                },
+                {
+                  "id": "psn_be_t5_4",
+                  "axe": "Les Pays-Bas espagnols",
+                  "date": 1568,
+                  "titre": "La révolte des Pays-Bas et la séparation",
+                  "description": "L'intransigeance religieuse et fiscale de Philippe II soulève les provinces. La guerre de Quatre-Vingts Ans aboutit à une cassure durable : les provinces du Nord forment les Provinces-Unies calvinistes et indépendantes, celles du Sud restent catholiques et espagnoles. Les manuels belges datent de cette fracture la naissance d'une histoire méridionale distincte de celle des Pays-Bas actuels.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Guerre_de_Quatre-Vingts_Ans"
+                },
+                {
+                  "id": "psn_be_t5_5",
+                  "axe": "Les Pays-Bas espagnols",
+                  "date": 1585,
+                  "titre": "La chute d'Anvers et l'exode des élites",
+                  "description": "Reprise par Alexandre Farnèse après un siège d'un an, la métropole commerciale et intellectuelle de l'Europe du Nord voit des dizaines de milliers de protestants — marchands, imprimeurs, artisans — émigrer vers Amsterdam. La fermeture de l'Escaut par les Provinces-Unies achève de ruiner le port. Le basculement économique vers le Nord, pour deux siècles, se joue là.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Si%C3%A8ge_d%27Anvers_(1584-1585)"
+                },
+                {
+                  "id": "psn_be_t5_6",
+                  "axe": "Les Pays-Bas espagnols",
+                  "date": 1648,
+                  "titre": "Westphalie ferme l'Escaut",
+                  "description": "Le traité de Münster reconnaît l'indépendance des Provinces-Unies et consacre la fermeture de l'Escaut au commerce maritime, imposée par le Nord vainqueur. Anvers restera privée de son fleuve jusqu'en 1863. Les provinces du Sud, devenues un glacis disputé entre la France et les puissances maritimes, seront surnommées le « champ de bataille de l'Europe ».",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Trait%C3%A9_de_M%C3%BCnster"
+                },
+                {
+                  "id": "psn_be_t5_7",
+                  "axe": "Les Pays-Bas autrichiens",
+                  "date": 1713,
+                  "titre": "Les Pays-Bas passent aux Habsbourg d'Autriche",
+                  "description": "Les traités d'Utrecht transfèrent les provinces méridionales de l'Espagne à l'Autriche, tandis que le traité de la Barrière autorise les Provinces-Unies à tenir garnison dans plusieurs places fortes. Gouvernés depuis Vienne par un gouverneur général, les Pays-Bas autrichiens connaissent un redressement économique réel mais restent sans souveraineté propre.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Pays-Bas_autrichiens"
+                },
+                {
+                  "id": "psn_be_t5_8",
+                  "axe": "Les Pays-Bas autrichiens",
+                  "date": 1781,
+                  "titre": "Les réformes de Joseph II heurtent le pays",
+                  "description": "L'empereur supprime les couvents contemplatifs, proclame la tolérance religieuse, réorganise la justice et l'administration en ignorant les chartes provinciales. Ces réformes éclairées, imposées sans consultation, dressent contre lui le clergé, les corporations et les États : les manuels belges en font un cas d'école du réformisme autoritaire qui échoue faute d'assentiment.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Joseph_II_(empereur_du_Saint-Empire)"
+                },
+                {
+                  "id": "psn_be_t5_9",
+                  "axe": "Les Pays-Bas autrichiens",
+                  "date": 1789,
+                  "titre": "La révolution brabançonne et les États belgiques unis",
+                  "description": "Le Brabant et la Flandre se soulèvent contre Joseph II et proclament en janvier 1790 une république fédérale, les États belgiques unis — première apparition du mot « belge » dans un intitulé d'État. Divisés entre conservateurs et démocrates, les insurgés sont écrasés dès la fin de l'année ; la France annexera le pays en 1795.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9volution_braban%C3%A7onne"
+                }
+              ]
+            },
             {
               "id": "psn_be_t1",
               "nom": "L'indépendance belge et la construction de l'État (1830-1914)",
@@ -146927,6 +147431,90 @@
               ]
             },
             {
+              "id": "psn_be_t6",
+              "nom": "La Question royale et la crise du trône (1940-1951)",
+              "difficulte": "Tous niveaux",
+              "axeOrder": [
+                "La capitulation de 1940",
+                "Le roi et l'occupation",
+                "Le référendum et l'abdication"
+              ],
+              "events": [
+                {
+                  "id": "psn_be_t6_1",
+                  "axe": "La capitulation de 1940",
+                  "date": 1940,
+                  "titre": "La capitulation de l'armée belge",
+                  "description": "Après dix-huit jours de combats, Léopold III, commandant en chef, ordonne la reddition sans consulter ses ministres et refuse de les suivre à Londres, estimant devoir partager le sort de son armée et de son peuple. Le gouvernement, replié en France puis à Londres, dénonce une décision inconstitutionnelle. Le pays est désormais coupé en deux légitimités.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Campagne_des_18_jours"
+                },
+                {
+                  "id": "psn_be_t6_2",
+                  "axe": "La capitulation de 1940",
+                  "date": 1940,
+                  "titre": "L'entrevue de Berchtesgaden",
+                  "description": "Le roi prisonnier rencontre Hitler pour plaider le sort des prisonniers de guerre belges et l'avenir du pays. Aucun accord n'en sort, mais l'entrevue, et le silence royal sur ses raisons, alimenteront durablement le soupçon d'accommodement. Les historiens belges soulignent que le roi n'a jamais collaboré, tout en refusant de dire publiquement son camp.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/L%C3%A9opold_III"
+                },
+                {
+                  "id": "psn_be_t6_3",
+                  "axe": "La capitulation de 1940",
+                  "date": 1941,
+                  "titre": "Le mariage secret avec Lilian Baels",
+                  "description": "Veuf depuis la mort de la reine Astrid, le roi épouse en secret une jeune femme de la bourgeoisie flamande, dans un pays occupé et affamé. L'annonce, faite plusieurs mois après, choque une opinion qui voyait en lui un prisonnier partageant les épreuves de la nation. L'affaire, marginale en apparence, entame sérieusement son capital de sympathie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Lilian_Baels"
+                },
+                {
+                  "id": "psn_be_t6_4",
+                  "axe": "Le roi et l'occupation",
+                  "date": 1944,
+                  "titre": "La régence du prince Charles",
+                  "description": "Déporté en Allemagne par les Allemands en juin 1944, Léopold III se trouve dans l'impossibilité de régner. Le Parlement confie la régence à son frère Charles, qui l'exercera six ans. La Belgique est ainsi libérée et reconstruite sans son roi, et une génération politique entière prend l'habitude de gouverner sans lui.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Charles_de_Belgique"
+                },
+                {
+                  "id": "psn_be_t6_5",
+                  "axe": "Le roi et l'occupation",
+                  "date": 1945,
+                  "titre": "Le roi tenu à l'écart du retour",
+                  "description": "Libéré en Autriche par les Américains, Léopold III ne peut rentrer : une loi subordonne son retour à un vote du Parlement. Il s'installe en Suisse, à Pregny, pour cinq années. La question de son retour devient le principal clivage de la vie politique belge, au point de recouper et de raviver toutes les autres fractures du pays.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Question_royale"
+                },
+                {
+                  "id": "psn_be_t6_6",
+                  "axe": "Le roi et l'occupation",
+                  "date": 1946,
+                  "titre": "Un pays coupé en deux sur le roi",
+                  "description": "Sociaux-chrétiens et Flandre majoritairement favorables au retour, socialistes, libéraux, communistes et Wallonie majoritairement hostiles : le clivage sur le roi superpose la fracture idéologique et la fracture linguistique. Les manuels belges présentent la Question royale comme le moment où ces deux lignes de faille se renforcent au lieu de se compenser.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Question_royale"
+                },
+                {
+                  "id": "psn_be_t6_7",
+                  "axe": "Le référendum et l'abdication",
+                  "date": 1950,
+                  "titre": "Le référendum du 12 mars",
+                  "description": "Consultés — sans que le résultat lie le Parlement — les Belges se prononcent à 57,68 % pour le retour du roi. Mais le détail des chiffres est explosif : 72 % en Flandre, 42 % en Wallonie. Une majorité nationale nette recouvre donc deux majorités régionales contraires, et le vainqueur du scrutin ne peut pas gouverner avec ce résultat.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Question_royale"
+                },
+                {
+                  "id": "psn_be_t6_8",
+                  "axe": "Le référendum et l'abdication",
+                  "date": 1950,
+                  "titre": "Grèves, morts de Grâce-Berleur et retrait",
+                  "description": "Le retour effectif du roi en juillet déclenche une grève générale en Wallonie, des sabotages et une marche annoncée sur Bruxelles ; la gendarmerie tue quatre manifestants à Grâce-Berleur. Devant le risque de guerre civile, Léopold III délègue ses pouvoirs à son fils Baudouin après quelques jours seulement.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Question_royale"
+                },
+                {
+                  "id": "psn_be_t6_9",
+                  "axe": "Le référendum et l'abdication",
+                  "date": 1951,
+                  "titre": "L'abdication et l'avènement de Baudouin",
+                  "description": "Léopold III abdique le 16 juillet ; son fils, âgé de vingt ans, prête serment le lendemain. La monarchie est sauvée par le sacrifice du souverain, mais la crise a montré qu'une majorité nationale pouvait être politiquement inapplicable — un constat qui pèsera sur toutes les réformes institutionnelles belges ultérieures.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Baudouin_(roi_des_Belges)"
+                }
+              ]
+            },
+            {
               "id": "psn_be_t4",
               "nom": "Bruxelles, capitale institutionnelle de l'Europe (1958-aujourd'hui)",
               "difficulte": "Tous niveaux",
@@ -147015,6 +147603,90 @@
         {
           "nom": "Canada",
           "themes": [
+            {
+              "id": "psn_ca_t6",
+              "nom": "Les premiers occupants et la rencontre (-13000 à 1600)",
+              "difficulte": "Tous niveaux",
+              "axeOrder": [
+                "Le peuplement et les grandes familles culturelles",
+                "Organiser la société et le territoire",
+                "La rencontre et ses effets"
+              ],
+              "events": [
+                {
+                  "id": "psn_ca_t6_1",
+                  "axe": "Le peuplement et les grandes familles culturelles",
+                  "date": -13000,
+                  "titre": "Le peuplement de l'Amérique du Nord",
+                  "description": "Des populations venues d'Asie gagnent le continent à la faveur de la baisse du niveau des mers et de la fonte des glaciers, par la Béringie et sans doute aussi par la côte pacifique. Les datations et les routes font encore débat. Le programme québécois ouvre son premier module sur ce long peuplement, pour établir d'emblée que l'histoire du territoire ne commence pas avec les Européens.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Premier_peuplement_de_l%27Am%C3%A9rique"
+                },
+                {
+                  "id": "psn_ca_t6_2",
+                  "axe": "Le peuplement et les grandes familles culturelles",
+                  "date": -1000,
+                  "titre": "Iroquoiens, Algonquiens et Inuits",
+                  "description": "Trois grandes familles culturelles se partagent le territoire : les Iroquoiens, agriculteurs sédentaires des basses terres du Saint-Laurent et des Grands Lacs ; les Algonquiens, chasseurs-cueilleurs nomades de la forêt boréale ; les Inuits de l'Arctique. Le programme fait comparer leurs modes de vie pour montrer que l'environnement, et non une prétendue étape de développement, explique ces différences.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Autochtones_du_Canada"
+                },
+                {
+                  "id": "psn_ca_t6_3",
+                  "axe": "Le peuplement et les grandes familles culturelles",
+                  "date": 1000,
+                  "titre": "L'agriculture des trois sœurs",
+                  "description": "Les Iroquoiens cultivent ensemble maïs, haricot et courge, association qui enrichit le sol, limite les mauvaises herbes et fournit un régime complet. Cette agriculture permet des villages de plusieurs centaines d'habitants, entourés de palissades et déplacés tous les quinze à vingt ans quand les terres s'épuisent. Les maisons longues y abritent plusieurs familles d'une même lignée maternelle.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Trois_s%C5%93urs_(agriculture)"
+                },
+                {
+                  "id": "psn_ca_t6_4",
+                  "axe": "Organiser la société et le territoire",
+                  "date": 1142,
+                  "titre": "La Grande Loi de la Paix et la ligue iroquoise",
+                  "description": "Cinq nations — Mohawks, Onneiouts, Onondagas, Cayugas et Tsonnontouans — s'unissent en une confédération dotée d'un conseil de cinquante chefs, de règles de délibération et d'un principe d'unanimité. La date, transmise par tradition orale, est discutée. Certains historiens y voient l'une des plus anciennes démocraties représentatives encore existantes.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Constitution_iroquoise"
+                },
+                {
+                  "id": "psn_ca_t6_5",
+                  "axe": "Organiser la société et le territoire",
+                  "date": 1300,
+                  "titre": "Les réseaux d'échange à l'échelle du continent",
+                  "description": "Bien avant l'arrivée des Européens, cuivre du lac Supérieur, coquillages de l'Atlantique, silex et fourrures circulent sur des milliers de kilomètres par des routes de portage connues et négociées. Les wampums de coquillage servent d'archives et de garanties d'accords. Ces réseaux expliqueront la rapidité avec laquelle la traite des fourrures se diffusera à l'intérieur du continent.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Collier_de_wampum"
+                },
+                {
+                  "id": "psn_ca_t6_6",
+                  "axe": "Organiser la société et le territoire",
+                  "date": 1500,
+                  "titre": "Des sociétés sans État ni propriété privée du sol",
+                  "description": "L'autorité des chefs repose sur le prestige et la persuasion, non sur la contrainte ; les décisions se prennent en conseil ; la terre s'occupe et s'utilise mais ne s'achète pas. Ces principes, radicalement étrangers aux catégories juridiques européennes, rendront possibles des malentendus durables sur le sens des traités et des cessions de territoire.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Autochtones_du_Canada"
+                },
+                {
+                  "id": "psn_ca_t6_7",
+                  "axe": "La rencontre et ses effets",
+                  "date": 1534,
+                  "titre": "Le geste de la croix à Gaspé",
+                  "description": "Jacques Cartier plante une croix de neuf mètres portant les armes du roi de France. Le chef iroquoien Donnacona proteste aussitôt, faisant comprendre que le territoire lui appartient. Cartier prétend qu'il ne s'agit que d'un repère de navigation, puis emmène ses deux fils en France. La scène, rapportée par Cartier lui-même, est étudiée comme le premier malentendu fondateur.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jacques_Cartier"
+                },
+                {
+                  "id": "psn_ca_t6_8",
+                  "axe": "La rencontre et ses effets",
+                  "date": 1580,
+                  "titre": "La traite des fourrures recompose les alliances",
+                  "description": "La mode du chapeau de castor en Europe transforme un échange marginal en commerce structurant. Les nations autochtones deviennent intermédiaires, se disputent le contrôle des routes et cherchent des alliés européens, tandis que les armes à feu modifient les rapports de force. La rivalité entre la ligue iroquoise et les alliés des Français s'en trouve durablement aggravée.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Commerce_de_la_fourrure_en_Nouvelle-France"
+                },
+                {
+                  "id": "psn_ca_t6_9",
+                  "axe": "La rencontre et ses effets",
+                  "date": 1600,
+                  "titre": "Les épidémies et l'effondrement démographique",
+                  "description": "Variole, rougeole et grippe, contre lesquelles les populations n'ont aucune immunité, précèdent souvent les colons eux-mêmes en suivant les routes d'échange. Les estimations de pertes vont de la moitié aux neuf dixièmes selon les régions et les décennies. Les manuels canadiens insistent sur ce point : le territoire que les Européens décriront comme peu peuplé venait d'être vidé.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Histoire_d%C3%A9mographique_des_Am%C3%A9rindiens"
+                }
+              ]
+            },
             {
               "id": "psn_ca_t1",
               "nom": "La Nouvelle-France et la Conquête britannique (1608-1840)",
@@ -153763,7 +154435,7 @@
             },
             {
               "id": "psn_gb_t8",
-              "nom": "Le Brexit (2013-2020)",
+              "nom": "Le Brexit (prolongement, 2013-2020)",
               "difficulte": "Tous niveaux",
               "axeOrder": [
                 "Les origines du référendum",
