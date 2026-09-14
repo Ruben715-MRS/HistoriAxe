@@ -263,7 +263,43 @@ npm run build          # compile Tailwind (css/tailwind.generated.css) puis copi
 npm run cap:sync        # + npx cap sync
 npm run cap:open:ios
 npm test                # tests unitaires + validation du schéma des packs de données (data/*.json)
+npm run test:e2e        # tests de bout en bout dans un vrai navigateur (voir ci-dessous)
 ```
+
+### Tests de bout en bout
+
+`npm test` (node --test, sans DOM) couvre les modules isolables : stockage,
+gamification, moteur du Défi du jour, schéma des packs de données. Il ne
+peut rien dire de `js/app.js`, qui suppose un `document`, un `localStorage`
+et un `fetch` — c'est-à-dire de la quasi-totalité de l'interface.
+
+`npm run test:e2e` (Playwright, `e2e/`) comble ce trou en ouvrant un vrai
+navigateur sur le site servi tel qu'il l'est en production
+(`e2e/server.js`, un serveur statique sans dépendance). Deux parcours pour
+l'instant :
+
+- `e2e/modes.spec.js` — chaque mode de jeu se lance et répond à une
+  première interaction. C'est la famille de régressions déjà vécue ici :
+  une fonction supprimée lors d'un refactor, un mode qui ne démarre plus.
+- `e2e/axes.spec.js` — le filtre par axe thématique : changer de thème
+  repart de tous les axes, revenir au même thème conserve la sélection.
+
+Chaque test hérite d'une assertion du socle (`e2e/fixtures.js`) : **aucune
+erreur console ni exception non rattrapée** sur les écrans traversés. C'est
+la ligne la plus rentable de la suite ; elle a déjà trouvé un compteur de
+progression qui se désynchronisait après un mauvais placement.
+
+Le socle neutralise trois choses, chacune pour une raison précise : le
+service worker (il recharge la page en plein test et relaie des requêtes
+hors de portée des interceptions), les appels `/api/*` (les fonctions
+serverless ne tournent pas derrière le serveur de test) et le tutoriel (ses
+bulles interceptent les clics). Par défaut, Playwright utilise le Chromium
+qu'il télécharge lui-même ; `E2E_CHROMIUM_PATH` permet d'en désigner un
+déjà installé (image de CI, poste hors ligne).
+
+Un test instable est traité comme un bug, pas comme un aléa : aucune
+nouvelle tentative en local, une seule en CI pour distinguer une régression
+d'un incident d'infrastructure.
 
 Le site statique (`index.html`, `js/`, `css/`, `data/`...) se sert tel quel ;
 `vercel.json` déploie le dossier racine et détecte automatiquement les

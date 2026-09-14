@@ -3761,6 +3761,13 @@ function checkPlacement(index, slotElement) {
         wrongAnswerTimeoutId = setTimeout(() => {
             wrongAnswerTimeoutId = null;
             placedEvents.splice(correctIndex, 0, eventToPlace);
+            // La carte rejoint la frise 2,2 s après le clic : le bandeau doit
+            // en tenir compte ici. L'updateHUD() plus haut a bien enregistré
+            // la vie perdue, mais il s'exécutait avant cette insertion — sans
+            // ce rappel, le compteur et la barre de progression restaient en
+            // retard d'une carte jusqu'au prochain placement réussi (le
+            // chemin correct, lui, met à jour juste après son propre splice).
+            updateHUD();
 
             if (currentMode === 'multi') {
                 focusEntry(missedId, 'entry-reveal');

@@ -15,3 +15,7 @@ ios/App/DerivedData/
 
 # Generated web build folder
 www/
+
+# Artefacts des tests de bout en bout (voir playwright.config.js)
+test-results/
+playwright-report/
