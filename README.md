@@ -178,8 +178,8 @@ Un thème peut porter, à côté de ses événements, une **carte mentale**
 (`js/mindMap.js`, écran `#screen-mindmap`) : une fiche de révision en
 branches et sous-branches dépliables, accessible par la carte « Carte
 mentale » de l'écran des modes — qui n'apparaît que pour les thèmes qui en
-définissent une. Première carte mentale disponible : « Les Amériques
-(1550-1660) » (CAPES & Agrégation).
+définissent une. Cartes mentales disponibles (CAPES & Agrégation) : « Les
+Amériques (1550-1660) » et « Vivre à la campagne en France (1815-1970) ».
 
 Elle complète la frise sans la remplacer : la frise ordonne par dates, la
 carte mentale donne la structure thématique (ce qui se joue en parallèle,
@@ -203,7 +203,7 @@ La carte mentale est un champ facultatif `carteMentale` du thème, dans
 texte, mis en forme par `js/mindMap.js`. C'est ce qui lui permet de suivre
 le thème clair/sombre, la taille de texte et la langue de l'interface, là
 où un document HTML autonome resterait figé. Le seul balisage accepté dans
-un texte est `**gras**`.
+un texte est `**gras**` et `*italique*` (titres d'ouvrages).
 
 ```jsonc
 "carteMentale": {
@@ -219,7 +219,9 @@ un texte est `**gras**`.
         {
           "titre": "Ressources exportées et économies locales",
           "axe": "…",             // facultatif, si la sous-branche vise un autre axe
-          "items": ["**Métaux précieux** : argent de Potosí…"]
+          "intro": "…",           // facultatif, une phrase avant la liste
+          "items": ["**Métaux précieux** : argent de Potosí…"],
+          "tags": ["grandir", "apprendre"]   // au lieu d'items : mots non hiérarchisés
         }
       ]
     },
@@ -234,7 +236,9 @@ un texte est `**gras**`.
 }
 ```
 
-Une branche porte soit des `sousBranches`, soit des `reperes`. Les deux
+Une branche porte soit des `sousBranches`, soit des `reperes` ; une
+sous-branche porte des `items` rédigés, ou des `tags` — une série de mots
+rendue en pastilles, pour une liste que rien ne hiérarchise. Les deux
 références vers le reste du thème — l'`axe` d'une (sous-)branche et
 l'`eventId` d'un repère — sont validées par `tests/data-schema.test.js` :
 une référence morte casse les tests au lieu de ne se voir qu'en dépliant la

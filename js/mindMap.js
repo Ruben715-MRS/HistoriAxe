@@ -32,11 +32,16 @@ function themeHasMindMap(theme) {
 }
 
 // Texte de donnée → HTML : échappement complet, puis le seul balisage
-// autorisé (**gras**). Volontairement minimal — la donnée reste lisible
-// telle quelle dans le pack de langue, et rien d'exécutable ne peut y
-// être glissé.
+// autorisé (**gras** et *italique*, ce dernier pour les titres d'ouvrages).
+// Volontairement minimal — la donnée reste lisible telle quelle dans le
+// pack de langue, et rien d'exécutable ne peut y être glissé. Les deux
+// marqueurs sont reconnus en une seule passe, le gras d'abord : sinon
+// **gras** serait vu comme une italique vide suivie d'un astérisque.
 function renderMindMapText(text) {
-    return escapeHtml(text).replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+    return escapeHtml(text).replace(
+        /\*\*([^*]+)\*\*|\*([^*]+)\*/g,
+        (match, bold, italic) => (bold ? `<strong>${bold}</strong>` : `<em>${italic}</em>`)
+    );
 }
 
 // Ouvre la carte mentale du thème courant. Le retour se fait vers l'écran
@@ -130,14 +135,38 @@ function buildMindMapSubBranch(theme, sub) {
     const wrap = document.createElement('div');
     wrap.className = 'mindmap-sub-body';
 
-    const list = document.createElement('ul');
-    list.className = 'mindmap-items';
-    (sub.items || []).forEach(item => {
-        const li = document.createElement('li');
-        li.innerHTML = renderMindMapText(item);
-        list.appendChild(li);
-    });
-    wrap.appendChild(list);
+    if (sub.intro) {
+        const intro = document.createElement('p');
+        intro.className = 'mindmap-sub-intro';
+        intro.innerHTML = renderMindMapText(sub.intro);
+        wrap.appendChild(intro);
+    }
+
+    if (sub.items && sub.items.length > 0) {
+        const list = document.createElement('ul');
+        list.className = 'mindmap-items';
+        sub.items.forEach(item => {
+            const li = document.createElement('li');
+            li.innerHTML = renderMindMapText(item);
+            list.appendChild(li);
+        });
+        wrap.appendChild(list);
+    }
+
+    // Une sous-branche peut porter, au lieu d'items rédigés, une simple
+    // série de mots (les « verbes de l'existence rurale » de la carte sur
+    // les campagnes, par exemple) : une liste à puces les ferait lire comme
+    // une hiérarchie, alors qu'ils sont explicitement non hiérarchisés.
+    if (sub.tags && sub.tags.length > 0) {
+        const tags = document.createElement('ul');
+        tags.className = 'mindmap-tags';
+        sub.tags.forEach(tag => {
+            const li = document.createElement('li');
+            li.innerText = tag;
+            tags.appendChild(li);
+        });
+        wrap.appendChild(tags);
+    }
 
     if (sub.axe) {
         const chip = buildMindMapAxisChip(theme, sub.axe);
@@ -168,11 +197,11 @@ function buildMindMapTimeline(theme, reperes) {
             const btn = document.createElement('button');
             btn.type = 'button';
             btn.className = 'mindmap-repere-link';
-            btn.innerText = repere.texte;
+            btn.innerHTML = renderMindMapText(repere.texte);
             btn.onclick = () => openModal(event);
             dd.appendChild(btn);
         } else {
-            dd.innerText = repere.texte;
+            dd.innerHTML = renderMindMapText(repere.texte);
         }
         list.appendChild(dd);
     });
