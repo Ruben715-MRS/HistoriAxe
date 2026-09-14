@@ -3,7 +3,7 @@
   "lang": "fr",
   "name": "Français (Intégral)",
   "totalThemes": 767,
-  "totalEvents": 19159,
+  "totalEvents": 19162,
   "categories": [
     {
       "nom": "Culture générale",
@@ -138931,6 +138931,7 @@
                       "nom": "Périodisation historique",
                       "difficulte": "Seconde",
                       "axeOrder": [
+                        "Compter les années : le point de départ des ères",
                         "Bascule de l'Antiquité au Moyen Âge",
                         "Bascule du Moyen Âge à l'époque moderne",
                         "Bascule de l'époque moderne à l'époque contemporaine"
@@ -138945,12 +138946,36 @@
                           "wikipedia": "https://fr.wikipedia.org/wiki/D%C3%A9buts_de_l%27%C3%A9criture_en_M%C3%A9sopotamie"
                         },
                         {
+                          "id": "sp_8",
+                          "axe": "Compter les années : le point de départ des ères",
+                          "date": 1,
+                          "titre": "Le début de l'ère chrétienne",
+                          "description": "Chargé au VIᵉ siècle de calculer la date de Pâques, le moine Denys le Petit choisit de compter les années à partir de l'Incarnation du Christ plutôt qu'à partir du règne de l'empereur persécuteur Dioclétien ; Bède le Vénérable diffuse ensuite ce comput, devenu la référence mondiale. Deux singularités en font un cas d'école pour la périodisation : il n'existe pas d'an zéro, l'an 1 avant Jésus-Christ étant immédiatement suivi de l'an 1 après, et les historiens situent aujourd'hui la naissance de Jésus vers 7 à 4 avant notre ère, Denys s'étant trompé de quelques années.",
+                          "wikipedia": "https://fr.wikipedia.org/wiki/%C3%88re_chr%C3%A9tienne"
+                        },
+                        {
                           "id": "sp_2",
                           "axe": "Bascule de l'Antiquité au Moyen Âge",
                           "date": 476,
                           "titre": "Chute de l’Empire romain d’Occident",
                           "description": "Affaibli depuis des décennies par les invasions de peuples germaniques et par de profondes crises internes, l'Empire romain d'Occident ne dispose plus des moyens de se défendre. Le chef germain Odoacre dépose sans ménagement le dernier empereur, le jeune Romulus Augustule, sans chercher à lui trouver de successeur romain. Cet effondrement politique sert de repère conventionnel aux historiens pour marquer le passage de l'Antiquité au Moyen Âge en Europe occidentale.",
                           "wikipedia": "https://fr.wikipedia.org/wiki/Chute_de_l%27Empire_romain_d%27Occident"
+                        },
+                        {
+                          "id": "sp_9",
+                          "axe": "Bascule de l'Antiquité au Moyen Âge",
+                          "date": 496,
+                          "titre": "Le baptême de Clovis, autre borne du Moyen Âge",
+                          "description": "Traditionnellement fixé à 496, mais peut-être postérieur de deux ou trois ans, le baptême du roi franc à Reims fait de Clovis le premier souverain germanique converti au catholicisme et non à l'arianisme, scellant l'alliance de la royauté franque et de l'Église. Là où 476 marque la fin d'un empire, cette date marque la naissance d'une Europe chrétienne : une tradition historiographique, longtemps dominante en France, en a fait la véritable entrée dans le Moyen Âge. Périodiser, c'est choisir ce que l'on juge décisif.",
+                          "wikipedia": "https://fr.wikipedia.org/wiki/Bapt%C3%AAme_de_Clovis"
+                        },
+                        {
+                          "id": "sp_10",
+                          "axe": "Compter les années : le point de départ des ères",
+                          "date": 622,
+                          "titre": "L'Hégire, an 1 du calendrier musulman",
+                          "description": "Le départ de Mahomet et de ses compagnons de La Mecque vers Médine est retenu vers 639 par le calife Omar comme point de départ de l'ère musulmane : ni la naissance du Prophète, ni la première révélation, mais l'acte fondateur de la communauté en corps politique. Le calendrier hégirien étant lunaire, ses années comptent environ trois cent cinquante-quatre jours et se décalent donc sur le calendrier grégorien. Pour l'historien Henri Pirenne, ce sont d'ailleurs les conquêtes arabes, et non les royaumes germaniques, qui closent réellement l'Antiquité.",
+                          "wikipedia": "https://fr.wikipedia.org/wiki/Calendrier_h%C3%A9girien"
                         },
                         {
                           "id": "sp_3",
