@@ -2,8 +2,8 @@
   "version": "1.0.0",
   "lang": "fr",
   "name": "Français (Intégral)",
-  "totalThemes": 772,
-  "totalEvents": 19209,
+  "totalThemes": 779,
+  "totalEvents": 19272,
   "categories": [
     {
       "nom": "Culture générale",
@@ -144244,6 +144244,258 @@
               ]
             },
             {
+              "id": "psn_de_t6",
+              "nom": "La Prusse, la fin de l'Empire et le choc napoléonien (1740-1815)",
+              "difficulte": "Tous niveaux",
+              "axeOrder": [
+                "La Prusse de Frédéric II",
+                "Le choc napoléonien et les réformes",
+                "La réorganisation de 1815"
+              ],
+              "events": [
+                {
+                  "id": "psn_de_t6_1",
+                  "axe": "La Prusse de Frédéric II",
+                  "date": 1740,
+                  "titre": "Frédéric II enlève la Silésie à l'Autriche",
+                  "description": "À peine monté sur le trône, le roi de Prusse envahit sans déclaration de guerre la plus riche province des Habsbourg. Le coup de force, qui double presque la population de son royaume, ouvre un siècle de dualisme austro-prussien pour la direction du monde germanique. Les manuels allemands y lisent l'entrée de la Prusse, État pauvre et dispersé, dans le club des grandes puissances, et la matrice du conflit que Bismarck tranchera en 1866.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Guerres_de_Sil%C3%A9sie"
+                },
+                {
+                  "id": "psn_de_t6_2",
+                  "axe": "La Prusse de Frédéric II",
+                  "date": 1756,
+                  "titre": "La guerre de Sept Ans et la survie de la Prusse",
+                  "description": "Coalisée contre lui, l'Autriche, la France et la Russie manquent d'écraser la Prusse, sauvée par la mort de la tsarine Élisabeth et le retournement de son successeur. Frédéric conserve la Silésie au prix d'un pays exsangue. L'épisode nourrit durablement le récit prussien de l'État militaire résistant à toute l'Europe, récit que l'historiographie allemande d'après 1945 a entrepris de démonter.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Guerre_de_Sept_Ans"
+                },
+                {
+                  "id": "psn_de_t6_3",
+                  "axe": "La Prusse de Frédéric II",
+                  "date": 1772,
+                  "titre": "Le premier partage de la Pologne",
+                  "description": "La Prusse, la Russie et l'Autriche s'attribuent chacune une part du territoire polonais ; Frédéric obtient la Prusse royale et soude enfin ses possessions de Brandebourg à celles de la Baltique. L'opération, menée sans guerre entre les trois puissances, illustre une pratique européenne du démembrement qui se répétera en 1793 et 1795 jusqu'à l'effacement de la Pologne de la carte.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Partages_de_la_Pologne"
+                },
+                {
+                  "id": "psn_de_t6_4",
+                  "axe": "Le choc napoléonien et les réformes",
+                  "date": 1803,
+                  "titre": "Le Reichsdeputationshauptschluss : l'Empire redessiné",
+                  "description": "Sous la pression française, une commission d'Empire sécularise les principautés ecclésiastiques et supprime la quasi-totalité des villes libres, dont les territoires indemnisent les princes dépouillés sur la rive gauche du Rhin. Plus de cent entités disparaissent d'un trait de plume. Cette recomposition prépare matériellement l'Allemagne des États moyens et retire au Saint-Empire toute substance avant même sa disparition formelle.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Rec%C3%A8s_de_la_Di%C3%A8te_d%27Empire_de_1803"
+                },
+                {
+                  "id": "psn_de_t6_5",
+                  "axe": "Le choc napoléonien et les réformes",
+                  "date": 1806,
+                  "titre": "Iéna, la Confédération du Rhin et la fin du Saint-Empire",
+                  "description": "Seize princes allemands se placent sous la protection de Napoléon et quittent l'Empire ; François II abdique la couronne impériale, éteignant une institution vieille de huit siècles. Quelques semaines plus tard, l'armée prussienne est anéantie à Iéna et Auerstedt. L'occupation française et l'humiliation militaire deviennent, dans les manuels, le déclencheur à la fois des réformes d'État et d'un nationalisme allemand naissant.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Conf%C3%A9d%C3%A9ration_du_Rhin"
+                },
+                {
+                  "id": "psn_de_t6_6",
+                  "axe": "Le choc napoléonien et les réformes",
+                  "date": 1807,
+                  "titre": "Les réformes Stein-Hardenberg",
+                  "description": "Pour relever un État amputé de la moitié de son territoire, les ministres prussiens abolissent le servage, ouvrent les métiers, accordent l'autonomie aux villes, réorganisent l'armée autour du mérite et créent l'université de Berlin. Réformes d'en haut destinées à éviter une révolution d'en bas, elles modernisent la société sans toucher au pouvoir du roi : les manuels en font le modèle même de la « révolution conservatrice ».",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9formes_prussiennes"
+                },
+                {
+                  "id": "psn_de_t6_7",
+                  "axe": "La réorganisation de 1815",
+                  "date": 1813,
+                  "titre": "Les guerres de libération et le réveil national",
+                  "description": "Après la retraite de Russie, la Prusse se soulève, appelle des volontaires et bat Napoléon à Leipzig au terme de la plus grande bataille que l'Europe ait connue. Poètes et sociétés de gymnastique font de cette guerre une affaire de peuple et non de princes. C'est là que se forge le lien, lourd de conséquences pour le siècle suivant, entre libération, nation et armée en Allemagne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Campagne_d%27Allemagne_(1813)"
+                },
+                {
+                  "id": "psn_de_t6_8",
+                  "axe": "La réorganisation de 1815",
+                  "date": 1815,
+                  "titre": "Le Congrès de Vienne : trente-neuf États au lieu de trois cents",
+                  "description": "Les vainqueurs refusent de restaurer le Saint-Empire et de créer un État national : ils instituent une Confédération germanique, simple association de souverains dotée d'une Diète siégeant à Francfort, sans chef d'État ni armée commune, et présidée par l'Autriche. La Prusse y gagne la Rhénanie et la Westphalie, futures régions industrielles. La déception des libéraux et des nationaux alimentera tout le Vormärz.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Conf%C3%A9d%C3%A9ration_germanique"
+                },
+                {
+                  "id": "psn_de_t6_9",
+                  "axe": "La réorganisation de 1815",
+                  "date": 1815,
+                  "titre": "La Sainte-Alliance et le système de Metternich",
+                  "description": "Le chancelier autrichien organise un ordre européen fondé sur la solidarité des souverains contre toute contestation révolutionnaire ou nationale, avec droit d'intervention collective. Appliqué à l'Allemagne par la surveillance de la Diète, ce système bloque pour trente ans toute évolution constitutionnelle et fait de l'Autriche la gardienne de l'immobilisme allemand.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Klemens_Wenzel_von_Metternich"
+                }
+              ]
+            },
+            {
+              "id": "psn_de_t7",
+              "nom": "Vormärz, Zollverein et la révolution de 1848 (1817-1850)",
+              "difficulte": "Tous niveaux",
+              "axeOrder": [
+                "L'opposition libérale et nationale sous surveillance",
+                "L'unité par l'économie",
+                "La révolution de 1848 et son échec"
+              ],
+              "events": [
+                {
+                  "id": "psn_de_t7_1",
+                  "axe": "L'opposition libérale et nationale sous surveillance",
+                  "date": 1817,
+                  "titre": "La fête de la Wartburg",
+                  "description": "Des centaines d'étudiants des Burschenschaften se rassemblent au château de la Wartburg pour le tricentenaire de la Réforme et l'anniversaire de Leipzig, arborant le noir-rouge-or et brûlant des symboles de la réaction ainsi que des livres jugés antinationaux. Premier rassemblement politique d'ampleur de l'Allemagne moderne, il soude étudiants, unité nationale et libéralisme, et inquiète aussitôt les princes.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/F%C3%AAte_de_la_Wartbourg"
+                },
+                {
+                  "id": "psn_de_t7_2",
+                  "axe": "L'opposition libérale et nationale sous surveillance",
+                  "date": 1819,
+                  "titre": "Les décrets de Carlsbad",
+                  "description": "Après l'assassinat d'un dramaturge conservateur par un étudiant, Metternich fait adopter par la Diète la dissolution des Burschenschaften, la censure préalable de la presse, la surveillance policière des universités et la révocation des professeurs suspects. L'opposition bascule dans la clandestinité et les sociétés secrètes pour une décennie : c'est l'acte de naissance de la persécution politique en Allemagne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/D%C3%A9crets_de_Carlsbad"
+                },
+                {
+                  "id": "psn_de_t7_3",
+                  "axe": "L'opposition libérale et nationale sous surveillance",
+                  "date": 1832,
+                  "titre": "La fête de Hambach",
+                  "description": "Vingt à trente mille personnes — artisans, paysans, étudiants, femmes, exilés polonais — montent au château de Hambach derrière des drapeaux noir-rouge-or et réclament ouvertement une Allemagne unie, républicaine et fédérée à une Europe des peuples libres. C'est la plus grande manifestation politique du Vormärz, et la première où le mot d'ordre national s'accompagne d'une revendication démocratique explicite.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/F%C3%AAte_de_Hambach"
+                },
+                {
+                  "id": "psn_de_t7_4",
+                  "axe": "L'unité par l'économie",
+                  "date": 1834,
+                  "titre": "L'union douanière, l'unité par l'économie",
+                  "description": "Dix-huit États suppriment entre eux droits de douane et péages, créant un marché de vingt-trois millions d'habitants sous direction prussienne, l'Autriche en restant exclue. La circulation des marchandises précède ainsi de trente-sept ans l'unité politique, et elle la prépare : les manuels allemands présentent le Zollverein comme la première victoire, silencieuse, de la solution petite-allemande.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Zollverein"
+                },
+                {
+                  "id": "psn_de_t7_5",
+                  "axe": "L'unité par l'économie",
+                  "date": 1844,
+                  "titre": "La révolte des tisserands de Silésie",
+                  "description": "Ruinés par la concurrence des tissus mécaniques anglais, des tisserands à domicile saccagent les demeures de leurs donneurs d'ordre avant d'être dispersés par l'armée. Le soulèvement, chanté par Heine et peint plus tard par Käthe Kollwitz, fait entrer la « question sociale » dans le débat public allemand et donne au paupérisme préindustriel son image durable.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9volution_industrielle_en_Allemagne"
+                },
+                {
+                  "id": "psn_de_t7_6",
+                  "axe": "La révolution de 1848 et son échec",
+                  "date": 1848,
+                  "titre": "Mars 1848 : les barricades de Berlin et de Vienne",
+                  "description": "Partie de Paris, l'insurrection gagne les États allemands. À Vienne, Metternich s'enfuit ; à Berlin, après une nuit de combats de rue, le roi Frédéric-Guillaume IV salue les morts des barricades et promet une constitution. Partout des « ministères de mars » libéraux se forment. En quelques semaines, le système de 1815 paraît emporté.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9volution_de_Mars"
+                },
+                {
+                  "id": "psn_de_t7_7",
+                  "axe": "La révolution de 1848 et son échec",
+                  "date": 1848,
+                  "titre": "L'assemblée de la Paulskirche et la question des frontières",
+                  "description": "Élus au suffrage quasi universel masculin, huit cents députés siègent dans l'église Saint-Paul de Francfort pour doter l'Allemagne d'une constitution. Ils butent sur une question insoluble : une Grande Allemagne incluant l'Autriche et ses peuples non allemands, ou une Petite Allemagne autour de la Prusse ? Le débat, tranché en faveur de la seconde, dessine déjà la carte de 1871.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Parlement_de_Francfort"
+                },
+                {
+                  "id": "psn_de_t7_8",
+                  "axe": "La révolution de 1848 et son échec",
+                  "date": 1849,
+                  "titre": "La couronne refusée par Frédéric-Guillaume IV",
+                  "description": "L'assemblée offre au roi de Prusse la couronne impériale d'une Allemagne constitutionnelle. Il la refuse, la jugeant ramassée « dans le caniveau » parce qu'offerte par des députés et non par des princes. Sans armée ni pouvoir exécutif, le Parlement est dispersé ; les derniers soulèvements du Palatinat et de Bade sont écrasés par les troupes prussiennes. La révolution a échoué.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Constitution_de_Francfort"
+                },
+                {
+                  "id": "psn_de_t7_9",
+                  "axe": "La révolution de 1848 et son échec",
+                  "date": 1850,
+                  "titre": "La réaction et le suffrage prussien à trois classes",
+                  "description": "Octroyée par le roi, la constitution prussienne instaure un système électoral répartissant les électeurs en trois collèges selon l'impôt payé : la voix d'un contribuable aisé pèse des dizaines de fois celle d'un ouvrier. Maintenu jusqu'en 1918, ce suffrage devient le symbole du décalage entre une Allemagne économiquement moderne et un régime politique verrouillé.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Syst%C3%A8me_des_trois_classes"
+                }
+              ]
+            },
+            {
+              "id": "psn_de_t8",
+              "nom": "Industrialisation et question sociale (1835-1878)",
+              "difficulte": "Tous niveaux",
+              "axeOrder": [
+                "Le décollage industriel allemand",
+                "La naissance du mouvement ouvrier",
+                "L'affrontement avec l'État"
+              ],
+              "events": [
+                {
+                  "id": "psn_de_t8_1",
+                  "axe": "Le décollage industriel allemand",
+                  "date": 1835,
+                  "titre": "La première ligne de chemin de fer, Nuremberg-Fürth",
+                  "description": "Six kilomètres parcourus par une locomotive anglaise conduite par un mécanicien anglais inaugurent le rail allemand. En trente ans, le réseau dépasse celui de la France : morcelé politiquement, le pays s'unifie d'abord par les rails, qui appellent charbon, acier et machines. Le chemin de fer est présenté dans les manuels comme le moteur, et non le produit, de l'industrialisation allemande.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Histoire_des_chemins_de_fer_allemands"
+                },
+                {
+                  "id": "psn_de_t8_2",
+                  "axe": "Le décollage industriel allemand",
+                  "date": 1850,
+                  "titre": "Le bassin de la Ruhr et l'essor de l'acier",
+                  "description": "L'exploitation du charbon en profondeur et l'adoption des procédés anglais de fabrication de l'acier transforment une région agricole en cœur industriel du continent. Des entreprises familiales comme Krupp deviennent des empires employant des dizaines de milliers d'ouvriers, logés dans des cités patronales. L'Allemagne rattrape puis dépasse la Grande-Bretagne dans la chimie et l'électricité à la fin du siècle.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ruhr_(r%C3%A9gion)"
+                },
+                {
+                  "id": "psn_de_t8_3",
+                  "axe": "Le décollage industriel allemand",
+                  "date": 1873,
+                  "titre": "Les Gründerjahre et le krach de 1873",
+                  "description": "L'indemnité de guerre française et la fièvre de fondation de sociétés après 1871 nourrissent une spéculation effrénée, brutalement interrompue par le krach de la Bourse de Vienne. La dépression qui suit dure vingt ans, discrédite le libéralisme économique, pousse au retour du protectionnisme en 1879 et alimente une recherche de boucs émissaires où l'antisémitisme politique trouve son premier essor organisé.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Crise_bancaire_de_mai_1873"
+                },
+                {
+                  "id": "psn_de_t8_4",
+                  "axe": "La naissance du mouvement ouvrier",
+                  "date": 1848,
+                  "titre": "Marx et Engels publient le Manifeste du parti communiste",
+                  "description": "Rédigé à Bruxelles pour une petite ligue d'artisans allemands émigrés et publié à Londres quelques semaines avant les révolutions, le texte fait de la lutte des classes le moteur de l'histoire et appelle les prolétaires de tous les pays à s'unir. Longtemps confidentiel, il devient après 1870 la matrice théorique du plus puissant mouvement ouvrier d'Europe, celui-là même qui naît en Allemagne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Manifeste_du_parti_communiste"
+                },
+                {
+                  "id": "psn_de_t8_5",
+                  "axe": "La naissance du mouvement ouvrier",
+                  "date": 1863,
+                  "titre": "Lassalle fonde la première organisation ouvrière allemande",
+                  "description": "L'Association générale des travailleurs allemands réclame le suffrage universel et des coopératives de production financées par l'État, misant sur une alliance avec le pouvoir contre la bourgeoisie libérale. Cette stratégie, opposée à celle de Marx, structure la première génération militante et vaut à son fondateur des entrevues discrètes avec Bismarck lui-même.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Association_g%C3%A9n%C3%A9rale_des_travailleurs_allemands"
+                },
+                {
+                  "id": "psn_de_t8_6",
+                  "axe": "La naissance du mouvement ouvrier",
+                  "date": 1869,
+                  "titre": "Le parti ouvrier social-démocrate d'Eisenach",
+                  "description": "August Bebel et Wilhelm Liebknecht fondent un parti se réclamant de Marx, hostile à la solution prussienne de l'unité et favorable à une Allemagne démocratique. Leur opposition aux crédits de guerre en 1870 leur vaut la prison pour haute trahison. Deux traditions ouvrières coexistent désormais, que le congrès de Gotha réunira en 1875.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Parti_social-d%C3%A9mocrate_d%27Allemagne"
+                },
+                {
+                  "id": "psn_de_t8_7",
+                  "axe": "L'affrontement avec l'État",
+                  "date": 1875,
+                  "titre": "Le congrès de Gotha et la naissance du parti unifié",
+                  "description": "Les deux courants fusionnent autour d'un programme de compromis que Marx critique durement depuis Londres. Le parti unifié, doté de journaux, de syndicats, de chorales et de bibliothèques, devient une contre-société ouvrière et le premier parti socialiste de masse au monde, capable de faire élire des députés au Reichstag malgré l'hostilité de l'État.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Programme_de_Gotha"
+                },
+                {
+                  "id": "psn_de_t8_8",
+                  "axe": "L'affrontement avec l'État",
+                  "date": 1878,
+                  "titre": "Les lois antisocialistes",
+                  "description": "Prenant prétexte de deux attentats contre l'empereur, sans lien établi avec les socialistes, Bismarck fait interdire les associations, les réunions et la presse sociale-démocrate. Les candidatures individuelles restent pourtant possibles : traqué pendant douze ans, le parti sort de l'épreuve plus fort, et son score électoral triple. La répression, ici, manque entièrement son objectif.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Lois_antisocialistes"
+                },
+                {
+                  "id": "psn_de_t8_9",
+                  "axe": "L'affrontement avec l'État",
+                  "date": 1877,
+                  "titre": "L'exode rural et la croissance des villes",
+                  "description": "Attirés par les salaires industriels, des millions de ruraux quittent l'est agricole pour la Ruhr, Berlin ou la Saxe, tandis que d'autres émigrent vers les États-Unis. Berlin passe de quatre cent mille habitants en 1850 à près de deux millions en 1900, avec des casernes locatives surpeuplées. Logement, hygiène et travail des enfants deviennent les grands dossiers de la question sociale allemande.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Exode_rural"
+                }
+              ]
+            },
+            {
               "id": "psn_de_t3",
               "nom": "L'unification allemande (Bismarck, 1871)",
               "difficulte": "Tous niveaux",
@@ -147256,6 +147508,174 @@
               ]
             },
             {
+              "id": "psn_co_t5",
+              "nom": "Partis, guerres civiles et Regeneración (1849-1895)",
+              "difficulte": "Tous niveaux",
+              "axeOrder": [
+                "La naissance des deux partis",
+                "Le fédéralisme radical",
+                "La Regeneración de Núñez"
+              ],
+              "events": [
+                {
+                  "id": "psn_co_t5_1",
+                  "axe": "La naissance des deux partis",
+                  "date": 1849,
+                  "titre": "La naissance des partis libéral et conservateur",
+                  "description": "Deux programmes rivaux se formalisent la même année autour de la place de l'Église, du degré de centralisation et de l'ouverture économique. Les deux partis encadreront la vie politique colombienne pendant plus d'un siècle et demi, se transmettant de père en fils comme une appartenance quasi héréditaire. Cette bipolarité précoce, antérieure à la formation d'un État solide, est la clé de lecture des guerres civiles du siècle.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Parti_lib%C3%A9ral_colombien"
+                },
+                {
+                  "id": "psn_co_t5_2",
+                  "axe": "La naissance des deux partis",
+                  "date": 1851,
+                  "titre": "Les réformes libérales du demi-siècle",
+                  "description": "Abolition de l'esclavage, suppression des derniers monopoles coloniaux, liberté d'expression et d'enseignement, expulsion des jésuites : la génération libérale démantèle méthodiquement l'héritage institutionnel espagnol. Ces réformes, menées vite et contre l'Église, provoquent des soulèvements conservateurs et fixent le clivage qui structurera tous les affrontements suivants.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Histoire_de_la_Colombie"
+                },
+                {
+                  "id": "psn_co_t5_3",
+                  "axe": "La naissance des deux partis",
+                  "date": 1861,
+                  "titre": "La mainmorte ecclésiastique expropriée",
+                  "description": "Le général Mosquera décrète la « désamortisation » des biens de mainmorte : couvents, terres et rentes de l'Église sont saisis et vendus aux enchères. La mesure, qui vise autant à financer la guerre qu'à briser un pouvoir rival, enrichit surtout des acheteurs déjà fortunés et scelle une hostilité durable entre l'Église et le libéralisme colombien.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Tom%C3%A1s_Cipriano_de_Mosquera"
+                },
+                {
+                  "id": "psn_co_t5_4",
+                  "axe": "Le fédéralisme radical",
+                  "date": 1863,
+                  "titre": "La constitution de Rionegro et les États souverains",
+                  "description": "Le texte le plus fédéraliste de l'histoire du pays crée neuf États souverains disposant de leurs propres armées et lois, réduit le mandat présidentiel à deux ans sans réélection immédiate et garantit des libertés très étendues, dont le port d'armes. L'État central en sort presque impuissant : plus de quarante guerres civiles locales éclatent sous son empire.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Constitution_colombienne_de_1863"
+                },
+                {
+                  "id": "psn_co_t5_5",
+                  "axe": "Le fédéralisme radical",
+                  "date": 1876,
+                  "titre": "La guerre civile des écoles",
+                  "description": "La création d'un enseignement primaire public, gratuit et religieusement neutre soulève les conservateurs et le clergé, qui y voient une entreprise d'athéisme d'État. Le conflit, l'un des plus meurtriers du siècle, est remporté par les libéraux mais ruine le pays. Il montre que l'école, et non la seule propriété, est devenue l'enjeu central de la bataille entre les deux Colombie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Guerres_civiles_colombiennes"
+                },
+                {
+                  "id": "psn_co_t5_6",
+                  "axe": "La Regeneración de Núñez",
+                  "date": 1880,
+                  "titre": "Rafael Núñez et le mot d'ordre de Regeneración",
+                  "description": "Libéral passé au camp de l'ordre, Núñez diagnostique dans le fédéralisme radical la cause de l'anarchie et lance le mot d'ordre « régénération ou catastrophe ». Sa coalition rassemble conservateurs et libéraux modérés autour d'un programme de recentralisation, de protection douanière et de réconciliation avec l'Église. Il domine la politique colombienne jusqu'à sa mort en 1894.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Rafael_N%C3%BA%C3%B1ez"
+                },
+                {
+                  "id": "psn_co_t5_7",
+                  "axe": "La Regeneración de Núñez",
+                  "date": 1886,
+                  "titre": "La constitution de 1886 : centralisme et retour de l'Église",
+                  "description": "Les États souverains deviennent de simples départements dont les gouverneurs sont nommés par le président, le mandat présidentiel passe à six ans et le catholicisme redevient religion de la nation. Ce texte, le plus durable d'Amérique latine, régira la Colombie pendant cent cinq ans, jusqu'à la constitution de 1991.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Constitution_colombienne_de_1886"
+                },
+                {
+                  "id": "psn_co_t5_8",
+                  "axe": "La Regeneración de Núñez",
+                  "date": 1887,
+                  "titre": "Le concordat avec le Saint-Siège",
+                  "description": "L'Église recouvre la personnalité juridique, la propriété de ses biens, le contrôle du mariage, de l'état civil et surtout de l'enseignement public, dont les programmes et les manuels doivent être conformes au dogme. Ce verrou sur l'école, maintenu pour l'essentiel jusqu'aux années 1970, fait du conflit religieux une composante permanente de la vie politique colombienne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Regeneraci%C3%B3n_(Colombie)"
+                },
+                {
+                  "id": "psn_co_t5_9",
+                  "axe": "La Regeneración de Núñez",
+                  "date": 1895,
+                  "titre": "La guerre civile de 1895 et la marche vers la rupture",
+                  "description": "Écartés du pouvoir par un système électoral verrouillé et par la fraude, les libéraux tentent un soulèvement, rapidement écrasé. L'échec convainc leur aile radicale que seule une guerre générale peut rouvrir le jeu politique. Quatre ans plus tard, ce calcul débouchera sur le conflit le plus destructeur de l'histoire du pays.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Guerres_civiles_colombiennes"
+                }
+              ]
+            },
+            {
+              "id": "psn_co_t6",
+              "nom": "Des Mille Jours à la République libérale (1899-1946)",
+              "difficulte": "Tous niveaux",
+              "axeOrder": [
+                "La guerre des Mille Jours et la perte du Panama",
+                "Café, dette et question sociale",
+                "La République libérale"
+              ],
+              "events": [
+                {
+                  "id": "psn_co_t6_1",
+                  "axe": "La guerre des Mille Jours et la perte du Panama",
+                  "date": 1899,
+                  "titre": "Le déclenchement de la guerre des Mille Jours",
+                  "description": "Le soulèvement libéral dégénère en guerre totale : après la défaite des armées régulières à Palonegro, le conflit se poursuit en guérilla dans tout le pays, avec exécutions de prisonniers et recrutement forcé d'adolescents. Trois ans de combats laissent près de cent mille morts pour une population de quatre millions, une monnaie effondrée et un État exsangue.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Guerre_des_Mille_Jours"
+                },
+                {
+                  "id": "psn_co_t6_2",
+                  "axe": "La guerre des Mille Jours et la perte du Panama",
+                  "date": 1902,
+                  "titre": "La paix signée à bord du Wisconsin",
+                  "description": "Les traités de Neerlandia puis du cuirassé américain Wisconsin mettent fin aux combats sans rien changer au monopole conservateur du pouvoir. Les libéraux déposent les armes contre une amnistie et de vagues promesses. Le pays sort de l'épreuve incapable de défendre son isthme, au moment précis où les États-Unis en veulent le contrôle.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Guerre_des_Mille_Jours"
+                },
+                {
+                  "id": "psn_co_t6_3",
+                  "axe": "La guerre des Mille Jours et la perte du Panama",
+                  "date": 1903,
+                  "titre": "Le Panama arraché et le canal américain",
+                  "description": "Le Sénat colombien ayant rejeté le traité cédant la zone du canal, Washington soutient la sécession du département de Panama, reconnaît le nouvel État en trois jours et interdit à la marine colombienne d'intervenir. La perte, vécue comme une humiliation nationale fondatrice, oriente durablement le rapport de la Colombie aux États-Unis.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ind%C3%A9pendance_du_Panama"
+                },
+                {
+                  "id": "psn_co_t6_4",
+                  "axe": "Café, dette et question sociale",
+                  "date": 1922,
+                  "titre": "L'indemnité américaine et la danse des millions",
+                  "description": "Washington verse vingt-cinq millions de dollars en réparation de la perte du Panama. Cette manne, conjuguée à des emprunts massifs à New York et à l'envolée des cours du café, finance chemins de fer, routes et ports : c'est la « danse des millions », une décennie de croissance qui urbanise le pays et fait naître une classe ouvrière.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Histoire_de_la_Colombie"
+                },
+                {
+                  "id": "psn_co_t6_5",
+                  "axe": "Café, dette et question sociale",
+                  "date": 1928,
+                  "titre": "La grève de la United Fruit et la répression de Ciénaga",
+                  "description": "Des milliers de travailleurs des plantations de bananes réclament contrats écrits, journée de huit heures et suppression du paiement en bons. L'armée, envoyée sous la pression de la compagnie américaine et de la menace d'un débarquement, tire sur la foule rassemblée à Ciénaga. Le nombre de morts, jamais établi, reste disputé ; l'épisode nourrira Cent ans de solitude.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Massacre_des_bananeraies"
+                },
+                {
+                  "id": "psn_co_t6_6",
+                  "axe": "Café, dette et question sociale",
+                  "date": 1930,
+                  "titre": "La fin de l'hégémonie conservatrice",
+                  "description": "Divisés et usés par quarante-cinq ans de pouvoir, les conservateurs laissent élire un président libéral sans coup d'État ni guerre. Cette alternance pacifique, exceptionnelle dans l'histoire du pays, s'accompagne pourtant de violences locales là où les clientèles changent de camp : la « violence » des campagnes précède de loin La Violencia.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Enrique_Olaya_Herrera"
+                },
+                {
+                  "id": "psn_co_t6_7",
+                  "axe": "La République libérale",
+                  "date": 1936,
+                  "titre": "La « révolution en marche » de López Pumarejo",
+                  "description": "La réforme constitutionnelle reconnaît la fonction sociale de la propriété, autorise l'expropriation, sépare l'Église de l'enseignement public et institue le suffrage universel masculin. Une loi foncière tente de donner la terre à ceux qui la cultivent, et le syndicalisme est légalisé. C'est la tentative la plus poussée de réforme sociale par la voie légale de l'histoire colombienne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Alfonso_L%C3%B3pez_Pumarejo"
+                },
+                {
+                  "id": "psn_co_t6_8",
+                  "axe": "La République libérale",
+                  "date": 1944,
+                  "titre": "L'essoufflement de la réforme",
+                  "description": "Devant l'opposition des propriétaires, de l'Église et d'une partie de son propre camp, López doit reculer sur la réforme agraire ; une tentative de coup militaire l'affaiblit et il démissionne en 1945. Les attentes soulevées dans les campagnes et les faubourgs restent sans réponse, et se reportent sur un tribun d'un genre nouveau.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Alfonso_L%C3%B3pez_Pumarejo"
+                },
+                {
+                  "id": "psn_co_t6_9",
+                  "axe": "La République libérale",
+                  "date": 1946,
+                  "titre": "La division libérale et la montée de Gaitán",
+                  "description": "Les libéraux se présentent divisés entre le candidat officiel et Jorge Eliécer Gaitán, avocat populaire dénonçant l'oligarchie des deux partis à la fois ; un conservateur l'emporte avec moins de la moitié des voix. Les affrontements reprennent aussitôt dans les campagnes. Deux ans plus tard, l'assassinat de Gaitán fera basculer le pays dans La Violencia.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jorge_Eli%C3%A9cer_Gait%C3%A1n"
+                }
+              ]
+            },
+            {
               "id": "psn_co_t2",
               "nom": "La Violencia (1948-1974)",
               "difficulte": "Tous niveaux",
@@ -149565,6 +149985,174 @@
                   "titre": "Adoption des lois pénales anti-catholiques",
                   "description": "Le Parlement irlandais, entièrement composé de protestants, adopte une série de lois pénales discriminatoires restreignant sévèrement les droits politiques, économiques, religieux et éducatifs de la majorité catholique irlandaise, lui interdisant notamment l'accès aux fonctions publiques, à la propriété foncière étendue et à l'enseignement supérieur. Ce système structure la société irlandaise pendant tout le siècle suivant, jusqu'à son démantèlement progressif à partir de la fin du XVIIIe siècle.",
                   "wikipedia": "https://fr.wikipedia.org/wiki/Lois_pénales_(Irlande)"
+                }
+              ]
+            },
+            {
+              "id": "psn_ie_t8",
+              "nom": "L'Ascendancy, le parlement de Grattan et 1798 (1704-1798)",
+              "difficulte": "Tous niveaux",
+              "axeOrder": [
+                "Les lois pénales et l'Ascendancy",
+                "Le parlement de Grattan",
+                "Les United Irishmen et la rébellion de 1798"
+              ],
+              "events": [
+                {
+                  "id": "psn_ie_t8_1",
+                  "axe": "Les lois pénales et l'Ascendancy",
+                  "date": 1704,
+                  "titre": "Le Popery Act et le morcellement des héritages",
+                  "description": "La loi impose qu'à la mort d'un propriétaire catholique, ses terres soient partagées entre tous ses fils — sauf si l'aîné se convertit, auquel cas il hérite de tout. Combinée à l'interdiction d'acheter des terres ou de prendre des baux longs, elle fait fondre la part du sol détenue par les catholiques, encore les trois quarts de la population, jusqu'à environ cinq pour cent un siècle plus tard.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Lois_p%C3%A9nales_(Irlande)"
+                },
+                {
+                  "id": "psn_ie_t8_2",
+                  "axe": "Les lois pénales et l'Ascendancy",
+                  "date": 1720,
+                  "titre": "Le Declaratory Act : Westminster légifère pour l'Irlande",
+                  "description": "Le parlement britannique s'arroge le droit de légiférer directement pour l'Irlande et fait de la Chambre des lords de Londres l'ultime cour d'appel irlandaise. À cette subordination politique s'ajoutent des lois commerciales interdisant l'exportation de la laine irlandaise. Ce sont ces griefs, ressentis par l'élite protestante elle-même, qui nourriront le patriotisme constitutionnel de la fin du siècle.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Declaratory_Act"
+                },
+                {
+                  "id": "psn_ie_t8_3",
+                  "axe": "Les lois pénales et l'Ascendancy",
+                  "date": 1729,
+                  "titre": "Les catholiques privés du droit de vote",
+                  "description": "Déjà exclus du parlement, du barreau, de l'armée et des charges publiques, les catholiques perdent le droit de vote aux élections parlementaires. L'Irlande est dès lors gouvernée par et pour une minorité protestante d'environ un dixième de la population, propriétaire de presque toute la terre : c'est ce que les historiens irlandais nomment l'Ascendancy protestante.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ascendance_protestante"
+                },
+                {
+                  "id": "psn_ie_t8_4",
+                  "axe": "Le parlement de Grattan",
+                  "date": 1778,
+                  "titre": "Les Volunteers et la pression armée sur Londres",
+                  "description": "La guerre d'Amérique dégarnissant les garnisons, des corps de volontaires protestants se lèvent pour défendre l'île — et se muent en force de pression politique, défilant canons à l'appui pour réclamer la liberté du commerce. Londres cède sur les restrictions commerciales, puis, en 1782, sur l'autonomie législative : l'exemple américain a fonctionné.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Irish_Volunteers_(1778)"
+                },
+                {
+                  "id": "psn_ie_t8_5",
+                  "axe": "Le parlement de Grattan",
+                  "date": 1782,
+                  "titre": "La « constitution de 1782 » et le parlement de Grattan",
+                  "description": "Le Declaratory Act est abrogé et le parlement de Dublin retrouve le droit de légiférer seul. Henry Grattan y défend un patriotisme irlandais qui reste protestant : l'exécutif demeure nommé par Londres et la représentation, largement contrôlée par une poignée de grands propriétaires. Les premières lois de relèvement des catholiques sont malgré tout votées entre 1778 et 1793.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Henry_Grattan"
+                },
+                {
+                  "id": "psn_ie_t8_6",
+                  "axe": "Les United Irishmen et la rébellion de 1798",
+                  "date": 1791,
+                  "titre": "Wolfe Tone fonde les United Irishmen",
+                  "description": "Inspirés par la Révolution française, des protestants dissidents de Belfast et des catholiques de Dublin fondent une société réclamant la réforme du parlement et l'union des Irlandais « de toutes confessions » — catholiques, protestants et dissidents. Interdite en 1794, l'organisation bascule dans la clandestinité, se militarise et cherche l'appui de la France républicaine.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Theobald_Wolfe_Tone"
+                },
+                {
+                  "id": "psn_ie_t8_7",
+                  "axe": "Les United Irishmen et la rébellion de 1798",
+                  "date": 1795,
+                  "titre": "La fondation de l'ordre d'Orange",
+                  "description": "Après un affrontement sanglant entre bandes rivales dans le comté d'Armagh, des protestants fondent une société jurée de défendre la couronne et l'ascendant protestant. Structuré en loges et bientôt utilisé par les autorités pour lever des milices, l'ordre installe durablement le clivage confessionnel dans l'Ulster, dont les défilés annuels perpétuent la mémoire.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ordre_d%27Orange"
+                },
+                {
+                  "id": "psn_ie_t8_8",
+                  "axe": "Les United Irishmen et la rébellion de 1798",
+                  "date": 1796,
+                  "titre": "L'expédition française de Bantry Bay",
+                  "description": "Une flotte de quarante-trois navires portant quinze mille hommes, Wolfe Tone à bord, mouille dans la baie de Bantry mais ne peut débarquer, dispersée par une tempête de dix jours. L'alerte terrifie Londres, qui confie le désarmement de l'Ulster à des troupes dont les exactions — flagellations, incendies, tortures — précipitent l'insurrection deux ans plus tard.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Exp%C3%A9dition_d%27Irlande_(1796)"
+                },
+                {
+                  "id": "psn_ie_t8_9",
+                  "axe": "Les United Irishmen et la rébellion de 1798",
+                  "date": 1798,
+                  "titre": "La rébellion de 1798 et Vinegar Hill",
+                  "description": "Le soulèvement éclate sans coordination : réprimé en quelques jours autour de Dublin, il embrase le Wexford où les insurgés tiennent plusieurs semaines avant d'être écrasés à Vinegar Hill, tandis qu'un débarquement français tardif capitule dans le Mayo. Les combats et la répression font sans doute trente mille morts. Capturé, Wolfe Tone se donne la mort en prison.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9bellion_irlandaise_de_1798"
+                }
+              ]
+            },
+            {
+              "id": "psn_ie_t9",
+              "nom": "L'Union, O'Connell et l'émancipation catholique (1800-1843)",
+              "difficulte": "Tous niveaux",
+              "axeOrder": [
+                "L'Union et ses lendemains",
+                "O'Connell et l'émancipation",
+                "Le Repeal et la Jeune Irlande"
+              ],
+              "events": [
+                {
+                  "id": "psn_ie_t9_1",
+                  "axe": "L'Union et ses lendemains",
+                  "date": 1800,
+                  "titre": "Le parlement de Dublin vote sa propre disparition",
+                  "description": "Obtenu à force de pairies, de pensions et de sièges rachetés après un premier rejet, le vote supprime le parlement irlandais et envoie cent députés à Westminster à partir du 1ᵉʳ janvier 1801. L'émancipation des catholiques, promise pour accompagner l'Union, est bloquée par le roi George III : la déception fournit au siècle irlandais son grief fondateur.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Actes_d%27Union_(1800)"
+                },
+                {
+                  "id": "psn_ie_t9_2",
+                  "axe": "L'Union et ses lendemains",
+                  "date": 1803,
+                  "titre": "La tentative de Robert Emmet",
+                  "description": "Le soulèvement improvisé d'une centaine d'hommes dans Dublin tourne à l'émeute et échoue en quelques heures. Jugé et pendu, Emmet prononce un discours du banc des accusés — « quand mon pays aura pris sa place parmi les nations, alors, et alors seulement, que mon épitaphe soit écrite » — qui devient l'un des textes les plus appris de la mémoire nationaliste irlandaise.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Robert_Emmet"
+                },
+                {
+                  "id": "psn_ie_t9_3",
+                  "axe": "L'Union et ses lendemains",
+                  "date": 1823,
+                  "titre": "L'Association catholique et le penny du peuple",
+                  "description": "Daniel O'Connell fonde une organisation de masse financée par une cotisation mensuelle d'un penny, collectée à la porte des églises par les prêtres de paroisse. Pour la première fois, la paysannerie catholique est encadrée, dénombrée et mobilisée légalement : c'est l'invention, en Irlande, du parti de masse moderne et de la pression pacifique organisée.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Daniel_O%27Connell"
+                },
+                {
+                  "id": "psn_ie_t9_4",
+                  "axe": "O'Connell et l'émancipation",
+                  "date": 1828,
+                  "titre": "L'élection de Clare",
+                  "description": "O'Connell se présente dans le comté de Clare alors qu'en tant que catholique il ne peut siéger, et l'emporte largement. Londres se trouve devant un choix : céder, ou refuser son siège à un élu et affronter un pays au bord du soulèvement. Wellington et Peel, longtemps opposés, choisissent de céder pour éviter la guerre civile.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89mancipation_des_catholiques"
+                },
+                {
+                  "id": "psn_ie_t9_5",
+                  "axe": "O'Connell et l'émancipation",
+                  "date": 1829,
+                  "titre": "L'émancipation catholique",
+                  "description": "La loi ouvre aux catholiques le parlement et presque toutes les charges publiques. Le même texte multiplie cependant par cinq le cens électoral irlandais, privant du vote les petits fermiers qui avaient fait la victoire de Clare : l'élite catholique gagne des droits, la paysannerie en perd. Cette ambivalence est un point d'analyse classique des programmes irlandais.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Roman_Catholic_Relief_Act_1829"
+                },
+                {
+                  "id": "psn_ie_t9_6",
+                  "axe": "O'Connell et l'émancipation",
+                  "date": 1831,
+                  "titre": "La guerre des dîmes",
+                  "description": "Pendant six ans, des paysans catholiques refusent de payer la dîme due à l'Église anglicane, à laquelle ils n'appartiennent pas. Saisies de bétail, affrontements meurtriers avec la police et la troupe se multiplient. Londres finit par convertir la dîme en une rente incorporée au loyer, mais l'épisode a lié durablement question religieuse et question agraire.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Guerre_de_la_d%C3%AEme"
+                },
+                {
+                  "id": "psn_ie_t9_7",
+                  "axe": "Le Repeal et la Jeune Irlande",
+                  "date": 1842,
+                  "titre": "La Jeune Irlande et le journal The Nation",
+                  "description": "Autour de Thomas Davis, de jeunes intellectuels, protestants et catholiques, fondent un hebdomadaire qui diffuse poèmes, ballades et récits destinés à forger une conscience nationale fondée sur la culture et la langue plutôt que sur la confession. Leur rupture avec O'Connell, jugé trop attaché aux moyens légaux, prépare la tentative insurrectionnelle de 1848.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jeune_Irlande"
+                },
+                {
+                  "id": "psn_ie_t9_8",
+                  "axe": "Le Repeal et la Jeune Irlande",
+                  "date": 1843,
+                  "titre": "L'année du Repeal et les monster meetings",
+                  "description": "O'Connell lance une campagne pour l'abrogation de l'Union en tenant des rassemblements en plein air qui réunissent des centaines de milliers de personnes, à Tara ou à Mullaghmast. Il compte sur le nombre et la discipline pour arracher à Londres ce que l'émancipation avait donné. Le pari repose entièrement sur le refus de toute violence.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Association_pour_l%27abrogation"
+                },
+                {
+                  "id": "psn_ie_t9_9",
+                  "axe": "Le Repeal et la Jeune Irlande",
+                  "date": 1843,
+                  "titre": "L'interdiction de Clontarf et l'échec du Repeal",
+                  "description": "Le gouvernement interdit au dernier moment le rassemblement prévu à Clontarf et masse l'armée ; O'Connell décommande pour éviter un massacre, puis est emprisonné. Sa stratégie, qui supposait qu'un pouvoir décidé reculerait toujours devant une foule pacifique, est démentie : le Repeal s'effondre, et la famine emportera deux ans plus tard le monde rural qui le portait.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Daniel_O%27Connell"
                 }
               ]
             },
