@@ -172,6 +172,74 @@ Ces fonctionnalités réutilisent l'infrastructure existante (`DATABASE_URL`,
 `api/_lib/db.js: ensureSchema`) : aucune nouvelle variable d'environnement
 n'est requise.
 
+## Cartes mentales (fiches de synthèse dépliables)
+
+Un thème peut porter, à côté de ses événements, une **carte mentale**
+(`js/mindMap.js`, écran `#screen-mindmap`) : une fiche de révision en
+branches et sous-branches dépliables, accessible par la carte « Carte
+mentale » de l'écran des modes — qui n'apparaît que pour les thèmes qui en
+définissent une. Première carte mentale disponible : « Les Amériques
+(1550-1660) » (CAPES & Agrégation).
+
+Elle complète la frise sans la remplacer : la frise ordonne par dates, la
+carte mentale donne la structure thématique (ce qui se joue en parallèle,
+les notions transversales, les séries d'exemples comparables d'un empire à
+l'autre) que l'ordre chronologique ne montre jamais.
+
+Deux liens la rattachent au reste du jeu plutôt que d'en faire un document
+isolé :
+
+- une pastille **« Réviser cet axe »** en bas de branche ou de sous-branche
+  prépare exactement l'état de l'écran des axes (voir `js/app.js:
+  confirmAxesSelection`) et renvoie sur le choix des modes, filtré sur ce
+  seul axe ;
+- un **repère chronologique** qui correspond à un événement du thème
+  (`eventId`) ouvre sa fiche, la même que depuis la frise.
+
+### Format des données
+
+La carte mentale est un champ facultatif `carteMentale` du thème, dans
+`data/<lang>.json` — jamais du HTML : le pack de données ne contient que du
+texte, mis en forme par `js/mindMap.js`. C'est ce qui lui permet de suivre
+le thème clair/sombre, la taille de texte et la langue de l'interface, là
+où un document HTML autonome resterait figé. Le seul balisage accepté dans
+un texte est `**gras**`.
+
+```jsonc
+"carteMentale": {
+  "sousTitre": "Histoire moderne — thème d'agrégation",
+  "esprit": "Le chapeau de la fiche : ce que le thème demande de savoir.",
+  "branches": [
+    {
+      "titre": "Appropriation et exploitation des ressources",
+      "couleur": "gold",          // palette d'axes (AXIS_PALETTE, js/app.js)
+      "axe": "Économie coloniale, mines et traite",  // pastille de révision
+      "intro": "Une phrase de cadrage.",
+      "sousBranches": [
+        {
+          "titre": "Ressources exportées et économies locales",
+          "axe": "…",             // facultatif, si la sous-branche vise un autre axe
+          "items": ["**Métaux précieux** : argent de Potosí…"]
+        }
+      ]
+    },
+    {
+      "titre": "Repères chronologiques",
+      "couleur": "purple",
+      "reperes": [
+        { "date": "1550-1551", "texte": "Controverse de Valladolid.", "eventId": "a1" }
+      ]
+    }
+  ]
+}
+```
+
+Une branche porte soit des `sousBranches`, soit des `reperes`. Les deux
+références vers le reste du thème — l'`axe` d'une (sous-)branche et
+l'`eventId` d'un repère — sont validées par `tests/data-schema.test.js` :
+une référence morte casse les tests au lieu de ne se voir qu'en dépliant la
+bonne branche au bon endroit de l'app.
+
 ## Développement
 
 ```bash

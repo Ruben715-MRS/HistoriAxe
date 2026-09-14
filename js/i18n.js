@@ -6,7 +6,7 @@
 // pack de langue explicitement téléchargé avant une mise à jour de
 // ui/<lang>.json resterait bloqué sur son ancien contenu indéfiniment (ce
 // cache n'est jamais revalidé contre le réseau une fois rempli).
-const I18N_DATA_CACHE = 'historiaxe-data-v1.0.2';
+const I18N_DATA_CACHE = 'historiaxe-data-v1.0.3';
 
 // Le nom de chaque langue reste dans sa propre langue (autonyme) — convention
 // standard des sélecteurs de langue, ne dépend jamais de la langue active.

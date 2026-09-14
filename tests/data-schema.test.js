@@ -34,6 +34,55 @@ for (const file of localeFiles) {
         let themeCount = 0;
         let eventCount = 0;
 
+        // Carte mentale (champ facultatif "carteMentale" d'un thème, rendu par
+        // js/mindMap.js) : fiche de synthèse en branches dépliables. Les deux
+        // références qu'elle porte vers le reste du thème — un axe à réviser,
+        // un événement dont on ouvre la fiche — sont validées ici, parce
+        // qu'une référence morte ne se voit qu'en dépliant la bonne branche
+        // au bon endroit de l'app.
+        function checkMindMap(theme, knownEventIds) {
+            const carte = theme.carteMentale;
+            const where = `carte mentale de "${theme.id}"`;
+            const knownAxes = new Set(theme.events.map((evt) => evt.axe).filter(Boolean));
+
+            assert.ok(Array.isArray(carte.branches) && carte.branches.length > 0, `${file}: ${where} sans "branches"`);
+
+            function checkAxis(axe, at) {
+                if (axe === undefined) return;
+                assert.ok(knownAxes.has(axe), `${file}: ${where} renvoie à l'axe inconnu "${axe}" (${at})`);
+            }
+
+            for (const branch of carte.branches) {
+                assert.ok(typeof branch.titre === 'string' && branch.titre.length > 0, `${file}: ${where} a une branche sans "titre"`);
+                const at = `branche "${branch.titre}"`;
+                checkAxis(branch.axe, at);
+                assert.ok(
+                    Array.isArray(branch.sousBranches) || Array.isArray(branch.reperes),
+                    `${file}: ${where} — ${at} n'a ni "sousBranches" ni "reperes"`
+                );
+
+                for (const sub of branch.sousBranches || []) {
+                    assert.ok(typeof sub.titre === 'string' && sub.titre.length > 0, `${file}: ${where} — ${at} a une sous-branche sans "titre"`);
+                    checkAxis(sub.axe, `${at} > "${sub.titre}"`);
+                    assert.ok(Array.isArray(sub.items) && sub.items.length > 0, `${file}: ${where} — sous-branche "${sub.titre}" sans "items"`);
+                    for (const item of sub.items) {
+                        assert.ok(typeof item === 'string' && item.length > 0, `${file}: ${where} — sous-branche "${sub.titre}" a un item vide`);
+                    }
+                }
+
+                for (const repere of branch.reperes || []) {
+                    assert.ok(typeof repere.date === 'string' && repere.date.length > 0, `${file}: ${where} — ${at} a un repère sans "date"`);
+                    assert.ok(typeof repere.texte === 'string' && repere.texte.length > 0, `${file}: ${where} — repère "${repere.date}" sans "texte"`);
+                    if (repere.eventId !== undefined) {
+                        assert.ok(
+                            knownEventIds.has(repere.eventId),
+                            `${file}: ${where} — repère "${repere.date}" renvoie à l'événement inconnu "${repere.eventId}"`
+                        );
+                    }
+                }
+            }
+        }
+
         function walk(node, label) {
             assert.ok(typeof node.nom === 'string' && node.nom.length > 0, `${file}: un nœud sans "nom" (sous ${label})`);
             const here = `${label} > ${node.nom}`;
@@ -55,6 +104,8 @@ for (const file of localeFiles) {
                         assert.ok(typeof evt.date === 'number' && Number.isFinite(evt.date), `${file}: événement "${evt.id}" a une "date" invalide`);
                         assert.ok(typeof evt.titre === 'string' && evt.titre.length > 0, `${file}: événement "${evt.id}" sans "titre"`);
                     }
+
+                    if (theme.carteMentale) checkMindMap(theme, seenEventIds);
                 }
             } else if (Array.isArray(node.subcategories)) {
                 for (const child of node.subcategories) walk(child, here);
