@@ -254,14 +254,25 @@
         <p class="modes-header-subtitle hidden" id="modes-header-subtitle"></p>
 
         <div class="grid-modes">
-            <div class="mode-card" id="mode-card-discovery" style="background-color: #2c3e50;"
-                onclick="startActualGame('discovery')">
-                <h3 data-i18n="modes.discovery.title">Découverte</h3>
-                <p data-i18n="modes.discovery.desc">Consultez la frise chronologique sans jouer.</p>
-            </div>
-            <div class="mode-card mindmap-mode-card hidden" id="mode-card-mindmap" onclick="openMindMap()">
-                <h3 data-i18n="mindmap.card_title">Carte mentale</h3>
-                <p data-i18n="mindmap.card_desc">La fiche de synthèse du thème, en branches à déplier.</p>
+            <!-- Découverte : lance la frise directement, sauf pour un thème qui
+                 propose un sommaire — elle déplie alors le choix ci-dessous
+                 (voir js/mindMap.js: refreshDiscoveryPicker). -->
+            <div class="discovery-block">
+                <div class="mode-card" id="mode-card-discovery" style="background-color: #2c3e50;"
+                    onclick="openDiscoveryMode()">
+                    <h3 data-i18n="modes.discovery.title">Découverte</h3>
+                    <p data-i18n="modes.discovery.desc">Consultez la frise chronologique sans jouer.</p>
+                </div>
+                <div class="mode-picker hidden" id="discovery-picker">
+                    <button type="button" class="mode-picker-btn" onclick="startActualGame('discovery')">
+                        <span class="mode-picker-icon">📜</span>
+                        <span data-i18n="mindmap.picker_frise">Frise</span>
+                    </button>
+                    <button type="button" class="mode-picker-btn" onclick="openMindMap()">
+                        <span class="mode-picker-icon">🗂️</span>
+                        <span data-i18n="mindmap.picker_summary">Sommaire</span>
+                    </button>
+                </div>
             </div>
             <div class="mode-card" style="background-color: #34495e;" onclick="openSelectionMode()">
                 <h3 data-i18n="modes.selection.title">Sélection</h3>
@@ -334,12 +345,12 @@
     </div>
 
 
-    <!-- ÉCRAN 4bis : CARTE MENTALE (fiche de synthèse dépliable, pour les
-         thèmes qui en proposent une — voir js/mindMap.js) -->
+    <!-- ÉCRAN 4bis : SOMMAIRE (fiche de synthèse dépliable, pour les thèmes
+         qui en proposent une — voir js/mindMap.js) -->
     <div id="screen-mindmap" class="list-screen hidden">
         <button class="back-btn" onclick="showScreen('screen-modes', 'back')" aria-label="Retour aux modes de jeu"
             data-i18n-attr="aria-label:nav.back">‹</button>
-        <h2 class="header-title" id="mindmap-title">Carte mentale</h2>
+        <h2 class="header-title" id="mindmap-title">Sommaire</h2>
         <p class="mindmap-subtitle hidden" id="mindmap-subtitle"></p>
         <p class="mindmap-esprit hidden" id="mindmap-esprit"></p>
 

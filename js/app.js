@@ -1169,9 +1169,9 @@ function showScreen(screenId, direction) {
             subtitleEl.classList.toggle('hidden', !subtitle);
         }
         updateModeLocks();
-        // Carte mentale du thème : affichée seulement si le thème en
-        // propose une (voir js/mindMap.js).
-        if (typeof refreshMindMapModeCard === 'function') refreshMindMapModeCard();
+        // Choix Frise / Sommaire sous « Découverte » : déplié seulement
+        // pour un thème qui propose un sommaire (voir js/mindMap.js).
+        if (typeof refreshDiscoveryPicker === 'function') refreshDiscoveryPicker();
     }
 }
 
@@ -2030,6 +2030,19 @@ function initRevisionHub() {
 }
 
 // VERROUS DE MODE (Chrono / Expert) — recalculés à chaque ouverture de l'écran des modes
+// Carte « Découverte » de l'écran des modes. Elle lance la frise, sauf pour
+// un thème qui propose un sommaire : elle déplie alors le choix entre les
+// deux, juste en dessous (voir js/mindMap.js: refreshDiscoveryPicker, qui
+// renseigne data-available à chaque arrivée sur l'écran).
+function openDiscoveryMode() {
+    const picker = document.getElementById('discovery-picker');
+    if (picker && picker.dataset.available === 'yes') {
+        picker.classList.toggle('hidden');
+        return;
+    }
+    startActualGame('discovery');
+}
+
 function updateModeLocks() {
     // La session de révision traverse plusieurs thèmes : la notion de progression
     // « par thème » ne s'y applique pas, tous les modes y restent donc accessibles.

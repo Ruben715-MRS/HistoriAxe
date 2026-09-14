@@ -1,20 +1,24 @@
 // =========================================================================
-// === HISTORIAXE — CARTES MENTALES (FICHES DE RÉVISION DÉPLIABLES) ======
+// === HISTORIAXE — SOMMAIRES (FICHES DE RÉVISION DÉPLIABLES) ============
 // =========================================================================
 
-// Un thème peut porter, en plus de ses événements, une carte mentale :
-// une fiche de synthèse organisée en branches dépliables (voir le champ
-// facultatif `carteMentale` dans data/<lang>.json, et sa validation dans
-// tests/data-schema.test.js). Elle ne remplace pas la frise — elle donne
-// la structure thématique que la frise, ordonnée par dates, ne montre
+// Un thème peut porter, en plus de ses événements, un sommaire : une fiche
+// de synthèse organisée en branches dépliables (voir le champ facultatif
+// `carteMentale` dans data/<lang>.json, et sa validation dans
+// tests/data-schema.test.js). Il ne remplace pas la frise — il donne la
+// structure thématique que la frise, ordonnée par dates, ne montre
 // jamais : ce qui se joue en parallèle, les notions transversales, les
 // séries d'exemples comparables d'un empire à l'autre.
 //
+// « Sommaire » est le nom côté interface ; le code et les packs de données
+// gardent leur vocabulaire d'origine (mindMap, carteMentale), pour ne pas
+// réécrire des centaines de lignes de contenu au profit d'un synonyme.
+//
 // Le rendu n'embarque aucun HTML venu du pack de données : la donnée est
 // du texte (avec un seul marqueur d'emphase **gras**), mis en forme ici.
-// C'est ce qui permet à une carte mentale de suivre automatiquement le
-// thème clair/sombre, le réglage de taille de texte et la langue de
-// l'interface, là où un document HTML autonome resterait figé.
+// C'est ce qui permet à un sommaire de suivre automatiquement le thème
+// clair/sombre, le réglage de taille de texte et la langue de l'interface,
+// là où un document HTML autonome resterait figé.
 
 // Chaque branche peut déclarer une `couleur` parmi la palette d'axes de
 // js/app.js (AXIS_PALETTE) ; à défaut, elle prend celle de son rang.
@@ -44,8 +48,8 @@ function renderMindMapText(text) {
     );
 }
 
-// Ouvre la carte mentale du thème courant. Le retour se fait vers l'écran
-// des modes : la carte est une façon de réviser le thème, pas une partie.
+// Ouvre le sommaire du thème courant. Le retour se fait vers l'écran des
+// modes : le sommaire est une façon de réviser le thème, pas une partie.
 function openMindMap() {
     const theme = getCurrentTheme();
     if (!themeHasMindMap(theme)) return;
@@ -236,14 +240,21 @@ function setAllMindMapBranches(open) {
     document.querySelectorAll('#screen-mindmap details').forEach(d => { d.open = open; });
 }
 
-// --- POINT D'ENTRÉE (carte injectée dans l'écran des modes de jeu) ---
-// Appelé par js/app.js: showScreen('screen-modes'). La carte n'apparaît
-// que pour un thème qui en propose une, et jamais en session de révision
-// (qui traverse plusieurs thèmes : il n'y a alors pas de thème courant
-// dont afficher la fiche).
-function refreshMindMapModeCard() {
-    const card = document.getElementById('mode-card-mindmap');
-    if (!card) return;
+// --- POINT D'ENTRÉE (choix déplié sous la carte « Découverte ») ---
+// Appelé par js/app.js: showScreen('screen-modes'). Pour un thème qui
+// propose un sommaire, « Découverte » cesse de lancer la frise au premier
+// tap : elle déplie le choix Frise / Sommaire (même principe que le bouton
+// « Défis » de l'écran des catégories). Les autres thèmes — la quasi-
+// totalité — gardent le comportement d'origine, et jamais en session de
+// révision, qui traverse plusieurs thèmes : il n'y a alors pas de thème
+// courant dont afficher la fiche.
+//
+// Le choix est replié à chaque arrivée sur l'écran : c'est l'état de
+// départ attendu, y compris au retour du sommaire lui-même.
+function refreshDiscoveryPicker() {
+    const picker = document.getElementById('discovery-picker');
+    if (!picker) return;
     const theme = revisionMode ? null : getCurrentTheme();
-    card.classList.toggle('hidden', !themeHasMindMap(theme));
+    picker.dataset.available = themeHasMindMap(theme) ? 'yes' : 'no';
+    picker.classList.add('hidden');
 }

@@ -172,21 +172,32 @@ Ces fonctionnalités réutilisent l'infrastructure existante (`DATABASE_URL`,
 `api/_lib/db.js: ensureSchema`) : aucune nouvelle variable d'environnement
 n'est requise.
 
-## Cartes mentales (fiches de synthèse dépliables)
+## Sommaires (fiches de synthèse dépliables)
 
-Un thème peut porter, à côté de ses événements, une **carte mentale**
+Un thème peut porter, à côté de ses événements, un **sommaire**
 (`js/mindMap.js`, écran `#screen-mindmap`) : une fiche de révision en
-branches et sous-branches dépliables, accessible par la carte « Carte
-mentale » de l'écran des modes — qui n'apparaît que pour les thèmes qui en
-définissent une. Cartes mentales disponibles (CAPES & Agrégation) : « Les
-Amériques (1550-1660) » et « Vivre à la campagne en France (1815-1970) ».
+branches et sous-branches dépliables. Sommaires disponibles (CAPES &
+Agrégation) : « Les Amériques (1550-1660) » et « Vivre à la campagne en
+France (1815-1970) ».
 
-Elle complète la frise sans la remplacer : la frise ordonne par dates, la
-carte mentale donne la structure thématique (ce qui se joue en parallèle,
-les notions transversales, les séries d'exemples comparables d'un empire à
+Il se prend par la carte « Découverte » de l'écran des modes : pour un
+thème qui propose un sommaire, elle ne lance plus la frise au premier tap
+mais déplie un choix entre les deux, Frise à gauche et Sommaire à droite —
+même principe que le bouton « Défis » de l'écran des catégories. Les
+thèmes sans sommaire, c'est-à-dire presque tous, gardent « Découverte »
+telle qu'elle était.
+
+Le vocabulaire diffère volontairement entre l'interface et le code :
+« sommaire » à l'écran, `mindMap`/`carteMentale` dans les fichiers et les
+packs de données, où le terme d'origine est resté plutôt que de réécrire
+des centaines de lignes de contenu au profit d'un synonyme.
+
+Il complète la frise sans la remplacer : la frise ordonne par dates, le
+sommaire donne la structure thématique (ce qui se joue en parallèle, les
+notions transversales, les séries d'exemples comparables d'un empire à
 l'autre) que l'ordre chronologique ne montre jamais.
 
-Deux liens la rattachent au reste du jeu plutôt que d'en faire un document
+Deux liens le rattachent au reste du jeu plutôt que d'en faire un document
 isolé :
 
 - une pastille **« Réviser cet axe »** en bas de branche ou de sous-branche
@@ -198,7 +209,7 @@ isolé :
 
 ### Format des données
 
-La carte mentale est un champ facultatif `carteMentale` du thème, dans
+Le sommaire est un champ facultatif `carteMentale` du thème, dans
 `data/<lang>.json` — jamais du HTML : le pack de données ne contient que du
 texte, mis en forme par `js/mindMap.js`. C'est ce qui lui permet de suivre
 le thème clair/sombre, la taille de texte et la langue de l'interface, là
