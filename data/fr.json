@@ -2,8 +2,8 @@
   "version": "1.0.0",
   "lang": "fr",
   "name": "Français (Intégral)",
-  "totalThemes": 779,
-  "totalEvents": 19272,
+  "totalThemes": 787,
+  "totalEvents": 19344,
   "categories": [
     {
       "nom": "Culture générale",
@@ -148102,6 +148102,90 @@
               ]
             },
             {
+              "id": "psn_es_t8",
+              "nom": "Les Bourbons et le réformisme éclairé (1701-1808)",
+              "difficulte": "Tous niveaux",
+              "axeOrder": [
+                "La guerre de Succession et le centralisme",
+                "Le despotisme éclairé de Charles III",
+                "La crise de la monarchie"
+              ],
+              "events": [
+                {
+                  "id": "psn_es_t8_1",
+                  "axe": "La guerre de Succession et le centralisme",
+                  "date": 1701,
+                  "titre": "La guerre de Succession d'Espagne",
+                  "description": "La mort sans héritier du dernier Habsbourg espagnol dresse l'Europe contre l'avènement d'un petit-fils de Louis XIV. Treize ans de guerre se jouent autant en Flandre et en Italie que dans la péninsule, où l'Aragon, la Catalogne et Valence soutiennent le prétendant autrichien contre le candidat français : le conflit européen se double d'une guerre civile espagnole.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Guerre_de_Succession_d%27Espagne"
+                },
+                {
+                  "id": "psn_es_t8_2",
+                  "axe": "La guerre de Succession et le centralisme",
+                  "date": 1707,
+                  "titre": "Les décrets de Nueva Planta abolissent les fueros",
+                  "description": "Vainqueur, Philippe V supprime les institutions, les lois et les monnaies propres à l'Aragon, à Valence, puis à la Catalogne après la chute de Barcelone en 1714, et impose le droit castillan et la langue castillane dans l'administration. L'Espagne devient un État unitaire à la française ; la date de 1714 reste au cœur de la mémoire politique catalane contemporaine.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/D%C3%A9crets_de_Nueva_Planta"
+                },
+                {
+                  "id": "psn_es_t8_3",
+                  "axe": "La guerre de Succession et le centralisme",
+                  "date": 1713,
+                  "titre": "Utrecht : l'Espagne perd l'Europe et garde l'Amérique",
+                  "description": "Les traités confirment Philippe V sur le trône à condition qu'il renonce à celui de France, mais dépouillent l'Espagne des Pays-Bas, de Naples, de la Sardaigne et du Milanais, cèdent Gibraltar et Minorque à la Grande-Bretagne et lui accordent l'asiento, le monopole de la fourniture d'esclaves aux colonies espagnoles. L'empire américain, lui, reste intact.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Trait%C3%A9s_d%27Utrecht"
+                },
+                {
+                  "id": "psn_es_t8_4",
+                  "axe": "Le despotisme éclairé de Charles III",
+                  "date": 1759,
+                  "titre": "Charles III, roi réformateur venu de Naples",
+                  "description": "Déjà roi de Naples depuis vingt-cinq ans, il arrive avec une équipe de ministres et un programme : assainir les finances, réformer l'agriculture, relancer les manufactures, embellir Madrid, rendre à l'État le contrôle des affaires ecclésiastiques. Son règne est le moment espagnol du despotisme éclairé, mené par en haut et sans partage du pouvoir.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Charles_III_(roi_d%27Espagne)"
+                },
+                {
+                  "id": "psn_es_t8_5",
+                  "axe": "Le despotisme éclairé de Charles III",
+                  "date": 1766,
+                  "titre": "L'émeute d'Esquilache",
+                  "description": "Une ordonnance interdisant la cape longue et le chapeau à larges bords, jugés propices à l'anonymat des malfaiteurs, met Madrid en insurrection contre un ministre italien accusé d'affamer le peuple. Le roi doit fuir et renvoyer Esquilache. L'épisode montre la fragilité d'un réformisme qui heurte les usages sans jamais consulter ceux qu'il prétend améliorer.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9volte_contre_Esquilache"
+                },
+                {
+                  "id": "psn_es_t8_6",
+                  "axe": "Le despotisme éclairé de Charles III",
+                  "date": 1767,
+                  "titre": "L'expulsion des jésuites",
+                  "description": "Accusés d'avoir armé l'émeute de l'année précédente et de former un État dans l'État, les jésuites sont arrêtés une même nuit dans tout l'empire et déportés vers les États pontificaux. Leurs collèges, qui formaient l'élite, et leurs missions d'Amérique passent à l'État ou au clergé séculier : c'est l'acte le plus spectaculaire du regalisme bourbonien.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Expulsion_des_J%C3%A9suites"
+                },
+                {
+                  "id": "psn_es_t8_7",
+                  "axe": "La crise de la monarchie",
+                  "date": 1778,
+                  "titre": "Le décret de libre commerce avec l'Amérique",
+                  "description": "Le monopole de Cadix est aboli : treize ports espagnols et une vingtaine de ports américains peuvent commercer directement. Le trafic est multiplié par plusieurs, mais la métropole, faute d'industrie, exporte surtout des produits étrangers et laisse les colonies s'habituer à un marché ouvert — un des ressorts, à terme, de leur émancipation.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Empire_espagnol"
+                },
+                {
+                  "id": "psn_es_t8_8",
+                  "axe": "La crise de la monarchie",
+                  "date": 1793,
+                  "titre": "La guerre contre la Convention et le renversement d'alliance",
+                  "description": "L'exécution de Louis XVI jette l'Espagne dans la guerre contre la France révolutionnaire ; battue en deux ans, elle change de camp et devient l'alliée subordonnée de Paris. Cette alliance lui coûte sa flotte à Trafalgar en 1805, la coupe de ses colonies et ruine ses finances, préparant l'effondrement de 1808.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Guerre_du_Roussillon"
+                },
+                {
+                  "id": "psn_es_t8_9",
+                  "axe": "La crise de la monarchie",
+                  "date": 1808,
+                  "titre": "Aranjuez, Bayonne et l'abdication des Bourbons",
+                  "description": "Une émeute de cour à Aranjuez renverse le favori Godoy et contraint Charles IV à abdiquer en faveur de son fils. Napoléon convoque les deux rois à Bayonne, obtient leurs renonciations et installe son frère Joseph sur le trône. La monarchie s'étant effondrée d'elle-même, la souveraineté retombe aux juntes locales : la nation entre en scène.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Abdication_de_Bayonne"
+                }
+              ]
+            },
+            {
               "id": "psn_es_t3",
               "nom": "La guerre d'indépendance contre Napoléon (1808-1814)",
               "difficulte": "Tous niveaux",
@@ -148535,6 +148619,90 @@
           "nom": "États-Unis",
           "themes": [
             {
+              "id": "psn_us_t8",
+              "nom": "Les treize colonies britanniques (1607-1763)",
+              "difficulte": "Tous niveaux",
+              "axeOrder": [
+                "Fonder des colonies",
+                "Une société coloniale esclavagiste",
+                "Guerres impériales et premières tensions"
+              ],
+              "events": [
+                {
+                  "id": "psn_us_t8_1",
+                  "axe": "Fonder des colonies",
+                  "date": 1607,
+                  "titre": "Jamestown, une colonie d'actionnaires",
+                  "description": "La Virginia Company, société par actions cherchant un profit rapide, débarque une centaine d'hommes dans un marais insalubre. La famine de l'hiver 1609 en tue les neuf dixièmes. La colonie ne survit que par la culture du tabac, dont l'exportation devient si lucrative qu'elle fixe le modèle de la plantation : une monoculture d'exportation dévoreuse de terres et de main-d'œuvre.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jamestown_(Virginie)"
+                },
+                {
+                  "id": "psn_us_t8_2",
+                  "axe": "Fonder des colonies",
+                  "date": 1619,
+                  "titre": "La Chambre des bourgeois et les premiers Africains de Virginie",
+                  "description": "La même année, la colonie se dote de la première assemblée élue d'Amérique du Nord britannique et voit débarquer une vingtaine d'Africains vendus par un corsaire. Les manuels américains font de cette coïncidence un point de départ symbolique : la liberté politique et l'esclavage naissent ensemble, dans la même colonie, et grandiront ensemble pendant deux siècles et demi.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Chambre_des_Bourgeois_de_Virginie"
+                },
+                {
+                  "id": "psn_us_t8_3",
+                  "axe": "Fonder des colonies",
+                  "date": 1620,
+                  "titre": "Le pacte du Mayflower : se gouverner par contrat",
+                  "description": "Avant même de débarquer, les passagers séparatistes signent un accord par lequel ils se constituent en corps politique et promettent d'obéir aux lois qu'ils se donneront. Rédigé faute de charte valable pour la région où ils ont dérivé, ce texte de circonstance est devenu dans le récit national l'acte fondateur du gouvernement par consentement.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mayflower_Compact"
+                },
+                {
+                  "id": "psn_us_t8_4",
+                  "axe": "Fonder des colonies",
+                  "date": 1636,
+                  "titre": "Roger Williams, Rhode Island et la dissidence",
+                  "description": "Banni du Massachusetts pour avoir contesté la confiscation des terres indiennes et l'autorité religieuse des magistrats, Williams fonde une colonie qui garantit la liberté de conscience et sépare l'Église de l'État. La Nouvelle-Angleterre puritaine, souvent présentée comme une terre de liberté, se révèle ainsi productrice de ses propres exilés.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Roger_Williams"
+                },
+                {
+                  "id": "psn_us_t8_5",
+                  "axe": "Une société coloniale esclavagiste",
+                  "date": 1676,
+                  "titre": "La rébellion de Bacon et le basculement vers l'esclavage",
+                  "description": "Petits planteurs blancs et serviteurs sous contrat, noirs comme blancs, se soulèvent ensemble contre le gouverneur et incendient Jamestown. L'alliance effraie durablement l'élite coloniale. Les historiens américains datent de là le choix délibéré de remplacer la servitude temporaire par un esclavage héréditaire réservé aux Africains, qui divise ceux que la rébellion avait unis.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9volte_de_Nathaniel_Bacon"
+                },
+                {
+                  "id": "psn_us_t8_6",
+                  "axe": "Une société coloniale esclavagiste",
+                  "date": 1705,
+                  "titre": "Les codes esclavagistes de Virginie",
+                  "description": "Une loi de compilation fixe que tout serviteur non chrétien importé sera esclave à vie, que le statut se transmet par la mère, qu'un maître tuant un esclave lors d'une punition ne commet pas de crime, et interdit les mariages mixtes. L'esclavage cesse d'être un fait économique pour devenir une catégorie juridique et raciale, inscrite dans le droit colonial.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Histoire_de_l%27esclavage_en_Virginie"
+                },
+                {
+                  "id": "psn_us_t8_7",
+                  "axe": "Une société coloniale esclavagiste",
+                  "date": 1739,
+                  "titre": "Le Grand Réveil et l'autorité contestée",
+                  "description": "Des prédicateurs itinérants comme George Whitefield rassemblent des foules immenses en plein air, par-dessus les frontières coloniales et les hiérarchies d'Églises établies, en s'adressant aussi aux femmes, aux pauvres et aux esclaves. Ce mouvement religieux crée la première expérience commune aux treize colonies et habitue les colons à contester une autorité instituée.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Grand_r%C3%A9veil"
+                },
+                {
+                  "id": "psn_us_t8_8",
+                  "axe": "Guerres impériales et premières tensions",
+                  "date": 1754,
+                  "titre": "La guerre de Sept Ans en Amérique et la dette impériale",
+                  "description": "Une escarmouche menée par un jeune officier virginien, George Washington, dégénère en guerre mondiale. La victoire de 1763 chasse la France du continent, mais laisse Londres avec une dette doublée et un immense territoire à défendre. C'est pour la faire payer aux colonies que naîtront les taxes, et avec elles la crise qui conduit à l'indépendance.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Guerre_de_la_Conqu%C3%AAte"
+                },
+                {
+                  "id": "psn_us_t8_9",
+                  "axe": "Guerres impériales et premières tensions",
+                  "date": 1763,
+                  "titre": "La Proclamation royale et la ligne des Appalaches",
+                  "description": "Pour éviter de nouvelles guerres indiennes après la révolte de Pontiac, Londres interdit aux colons de s'établir à l'ouest des Appalaches. La mesure, protectrice pour les nations amérindiennes, est vécue par les colons et les spéculateurs fonciers comme la confiscation de la victoire qu'ils venaient de remporter. C'est le premier grief de la décennie révolutionnaire.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Proclamation_royale_de_1763"
+                }
+              ]
+            },
+            {
               "id": "psn_us_t1",
               "nom": "La Révolution américaine et la fondation de la République (1765-1791)",
               "difficulte": "Tous niveaux",
@@ -148799,6 +148967,174 @@
                   "titre": "Fin de la Reconstruction, compromis de 1877",
                   "description": "Pour résoudre l'élection présidentielle contestée de 1876, les dirigeants républicains et démocrates négocient un compromis politique retirant les dernières troupes fédérales stationnées dans le Sud en échange de l'investiture du candidat républicain Rutherford Hayes, mettant fin de facto à la période de Reconstruction et abandonnant les Afro-Américains du Sud à un système croissant de ségrégation légale (lois Jim Crow) qui durera près d'un siècle. Ce compromis ouvre près d'un siècle de ségrégation légale dans le Sud américain, dont le mouvement des droits civiques ne parviendra à démanteler les fondements qu'à partir des années 1950 et 1960.",
                   "wikipedia": "https://fr.wikipedia.org/wiki/Compromis_de_1877"
+                }
+              ]
+            },
+            {
+              "id": "psn_us_t9",
+              "nom": "Le Gilded Age : trusts, immigration et grèves (1869-1896)",
+              "difficulte": "Tous niveaux",
+              "axeOrder": [
+                "Le capitalisme des trusts",
+                "Immigrer et habiter la ville industrielle",
+                "Le monde du travail et la contestation"
+              ],
+              "events": [
+                {
+                  "id": "psn_us_t9_1",
+                  "axe": "Le capitalisme des trusts",
+                  "date": 1869,
+                  "titre": "Le transcontinental et les ouvriers chinois",
+                  "description": "La jonction des deux compagnies dans l'Utah ouvre une ligne d'un océan à l'autre, construite pour sa section occidentale par plus de dix mille ouvriers chinois payés moins que les Blancs, logés à part et absents de la photographie officielle de la cérémonie. Le rail unifie le marché national, fait naître les fuseaux horaires et accélère la conquête des terres indiennes.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Premier_chemin_de_fer_transcontinental"
+                },
+                {
+                  "id": "psn_us_t9_2",
+                  "axe": "Le capitalisme des trusts",
+                  "date": 1882,
+                  "titre": "Standard Oil invente le trust",
+                  "description": "Pour contourner l'interdiction faite à une société de détenir des actions hors de son État, les avocats de Rockefeller placent les actions de quarante compagnies entre les mains d'un conseil de fiduciaires. Le procédé, aussitôt imité dans le sucre, le whisky et l'acier, donne son nom à toute une génération de concentrations industrielles et au combat politique qui les vise.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Standard_Oil"
+                },
+                {
+                  "id": "psn_us_t9_3",
+                  "axe": "Le capitalisme des trusts",
+                  "date": 1890,
+                  "titre": "Le Sherman Antitrust Act, une loi retournée",
+                  "description": "Le Congrès déclare illégale toute entente restreignant le commerce, mais le texte est si vague que les tribunaux l'appliquent d'abord contre les syndicats, accusés d'entraver le commerce en faisant grève, plutôt que contre les trusts. Il faudra l'ère progressiste pour qu'il devienne un instrument de démantèlement effectif.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sherman_Antitrust_Act"
+                },
+                {
+                  "id": "psn_us_t9_4",
+                  "axe": "Immigrer et habiter la ville industrielle",
+                  "date": 1886,
+                  "titre": "La Statue de la Liberté et la grande migration",
+                  "description": "Offerte par la France, la statue devient le premier repère des millions d'Européens du Sud et de l'Est qui débarquent, bientôt filtrés par le centre d'Ellis Island ouvert en 1892. Entassés dans les immeubles de rapport de New York ou de Chicago, ils fournissent la main-d'œuvre de l'industrie et alimentent une hostilité nativiste croissante.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Statue_de_la_Libert%C3%A9"
+                },
+                {
+                  "id": "psn_us_t9_5",
+                  "axe": "Immigrer et habiter la ville industrielle",
+                  "date": 1882,
+                  "titre": "L'exclusion des Chinois, première loi d'immigration raciale",
+                  "description": "Le Congrès suspend pour dix ans l'immigration des travailleurs chinois et interdit leur naturalisation : pour la première fois, les États-Unis ferment leurs portes à un groupe désigné par son origine. Prolongée puis rendue permanente, la loi n'est abrogée qu'en 1943, et sert de matrice aux quotas ethniques des années 1920.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Loi_d%27exclusion_des_Chinois"
+                },
+                {
+                  "id": "psn_us_t9_6",
+                  "axe": "Immigrer et habiter la ville industrielle",
+                  "date": 1890,
+                  "titre": "Comment vit l'autre moitié : l'enquête de Jacob Riis",
+                  "description": "Le photographe et journaliste danois publie un reportage sur les taudis de New York, où le flash au magnésium rend visibles des caves et des arrière-cours que personne n'avait vues. Le livre choque l'opinion aisée, lance le photojournalisme social et prépare les campagnes progressistes sur le logement et l'hygiène urbaine.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jacob_Riis"
+                },
+                {
+                  "id": "psn_us_t9_7",
+                  "axe": "Le monde du travail et la contestation",
+                  "date": 1877,
+                  "titre": "La grande grève des chemins de fer",
+                  "description": "Partie de Virginie-Occidentale après une nouvelle baisse des salaires, la grève paralyse le rail sur la moitié du pays. Des milices d'État puis des troupes fédérales tirent sur les grévistes : une centaine de morts. Premier conflit social d'ampleur nationale, il installe pour trente ans le recours à l'armée fédérale contre les grèves.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Gilded_Age"
+                },
+                {
+                  "id": "psn_us_t9_8",
+                  "axe": "Le monde du travail et la contestation",
+                  "date": 1886,
+                  "titre": "Haymarket et la peur de l'anarchisme",
+                  "description": "Lors d'un meeting pour la journée de huit heures à Chicago, une bombe tue des policiers ; huit militants anarchistes sont condamnés sans preuve de leur implication, quatre sont pendus. L'affaire brise le mouvement des Chevaliers du travail, associe durablement syndicalisme et subversion dans l'opinion américaine, et fait du 1er mai une date ouvrière internationale.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Massacre_de_Haymarket_Square"
+                },
+                {
+                  "id": "psn_us_t9_9",
+                  "axe": "Le monde du travail et la contestation",
+                  "date": 1896,
+                  "titre": "Le populisme agraire et la croisade de Bryan",
+                  "description": "Écrasés par les dettes, la chute des prix et les tarifs ferroviaires, les fermiers du Sud et de l'Ouest fondent un parti réclamant la monnaie d'argent, l'impôt progressif et la nationalisation du rail. Leur candidat rallié aux démocrates, William Jennings Bryan, clôt sa campagne sur la « croix d'or » et perd : le populisme s'éteint mais lègue ses thèmes au progressisme.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Parti_populiste"
+                }
+              ]
+            },
+            {
+              "id": "psn_us_t10",
+              "nom": "L'ère progressiste (1901-1920)",
+              "difficulte": "Tous niveaux",
+              "axeOrder": [
+                "Réformer le capitalisme",
+                "Les muckrakers et l'opinion",
+                "Élargir et limiter la démocratie"
+              ],
+              "events": [
+                {
+                  "id": "psn_us_t10_1",
+                  "axe": "Réformer le capitalisme",
+                  "date": 1901,
+                  "titre": "Theodore Roosevelt, le président briseur de trusts",
+                  "description": "Porté à la présidence par l'assassinat de McKinley, Roosevelt engage des poursuites contre la holding ferroviaire Northern Securities et en obtient la dissolution, puis arbitre en personne la grève du charbon de 1902 en menaçant les patrons de réquisition. L'État fédéral cesse d'être l'allié automatique du capital : c'est le sens du Square Deal.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Theodore_Roosevelt"
+                },
+                {
+                  "id": "psn_us_t10_2",
+                  "axe": "Réformer le capitalisme",
+                  "date": 1906,
+                  "titre": "La Jungle d'Upton Sinclair et les lois sanitaires",
+                  "description": "Le roman décrit les abattoirs de Chicago pour dénoncer l'exploitation des ouvriers immigrés ; le public retient surtout ce que contiennent les conserves. « J'ai visé le cœur du public, et je l'ai atteint à l'estomac », résume l'auteur. Le scandale emporte en quelques mois la loi sur la pureté des aliments et des médicaments et l'inspection fédérale des viandes.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/La_Jungle"
+                },
+                {
+                  "id": "psn_us_t10_3",
+                  "axe": "Réformer le capitalisme",
+                  "date": 1913,
+                  "titre": "Le seizième amendement et l'impôt fédéral sur le revenu",
+                  "description": "Après qu'une décision de la Cour suprême eut invalidé une première tentative, un amendement constitutionnel autorise l'État fédéral à taxer les revenus. Frappant d'abord les seuls hauts revenus, il donne à Washington les moyens financiers de ses ambitions et déplace durablement le centre de gravité du fédéralisme américain.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Seizi%C3%A8me_amendement_de_la_Constitution_des_%C3%89tats-Unis"
+                },
+                {
+                  "id": "psn_us_t10_4",
+                  "axe": "Les muckrakers et l'opinion",
+                  "date": 1904,
+                  "titre": "Ida Tarbell et l'enquête sur la Standard Oil",
+                  "description": "Dix-neuf articles nourris de documents internes et d'entretiens retracent méthodiquement comment Rockefeller a éliminé ses concurrents par des rabais secrets sur le transport. L'enquête, modèle du journalisme d'investigation, pèse directement sur la décision de la Cour suprême qui démantèlera le trust en 1911.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ida_Minerva_Tarbell"
+                },
+                {
+                  "id": "psn_us_t10_5",
+                  "axe": "Les muckrakers et l'opinion",
+                  "date": 1911,
+                  "titre": "L'incendie du Triangle Shirtwaist",
+                  "description": "Cent quarante-six ouvrières, immigrées juives et italiennes pour la plupart, meurent dans l'incendie d'un atelier new-yorkais dont les portes de secours avaient été verrouillées pour empêcher les vols. Le choc provoque une trentaine de lois de sécurité du travail dans l'État de New York et fait du syndicat du textile une force politique.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Incendie_de_l%27usine_Triangle_Shirtwaist"
+                },
+                {
+                  "id": "psn_us_t10_6",
+                  "axe": "Les muckrakers et l'opinion",
+                  "date": 1909,
+                  "titre": "La NAACP et les limites raciales du progressisme",
+                  "description": "Après des émeutes raciales à Springfield, ville de Lincoln, militants noirs et progressistes blancs fondent une association pour l'égalité juridique, dont W. E. B. Du Bois dirige la revue. La même génération progressiste laisse pourtant s'étendre la ségrégation légale, que le président Wilson introduira jusque dans l'administration fédérale.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/National_Association_for_the_Advancement_of_Colored_People"
+                },
+                {
+                  "id": "psn_us_t10_7",
+                  "axe": "Élargir et limiter la démocratie",
+                  "date": 1913,
+                  "titre": "Le dix-septième amendement : des sénateurs élus par le peuple",
+                  "description": "Jusque-là désignés par les législatures d'État, terrain d'élection des marchandages et de la corruption, les sénateurs sont désormais élus au suffrage direct. Avec le référendum, l'initiative populaire et la révocation adoptés par plusieurs États de l'Ouest, la réforme traduit la conviction progressiste que plus de démocratie directe guérit les maux de la démocratie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Dix-septi%C3%A8me_amendement_de_la_Constitution_des_%C3%89tats-Unis"
+                },
+                {
+                  "id": "psn_us_t10_8",
+                  "axe": "Élargir et limiter la démocratie",
+                  "date": 1919,
+                  "titre": "La prohibition, apogée du réformisme moral",
+                  "description": "L'interdiction de fabriquer et de vendre de l'alcool couronne un siècle de campagnes des ligues de tempérance, portées par les Églises protestantes et les organisations féminines, et nourries d'hostilité envers les immigrés catholiques. Le résultat — contrebande, corruption, crime organisé — fera de cette réforme le contre-exemple favori des manuels américains.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Prohibition"
+                },
+                {
+                  "id": "psn_us_t10_9",
+                  "axe": "Élargir et limiter la démocratie",
+                  "date": 1920,
+                  "titre": "Le dix-neuvième amendement et le vote des femmes",
+                  "description": "Après soixante-douze ans de campagne depuis Seneca Falls, marquée par les piquets devant la Maison-Blanche et les grèves de la faim des militantes emprisonnées, le droit de vote est reconnu aux femmes dans tout le pays. Dans le Sud, les lois de ségrégation continuent d'en priver en pratique les femmes noires, comme les hommes, jusqu'aux années 1960.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Dix-neuvi%C3%A8me_amendement_de_la_Constitution_des_%C3%89tats-Unis"
                 }
               ]
             },
@@ -152329,6 +152665,90 @@
               ]
             },
             {
+              "id": "psn_mx_t6",
+              "nom": "La Reforma, Juárez et l'intervention française (1854-1867)",
+              "difficulte": "Tous niveaux",
+              "axeOrder": [
+                "Les lois de Réforme",
+                "L'intervention française et l'Empire",
+                "La République restaurée"
+              ],
+              "events": [
+                {
+                  "id": "psn_mx_t6_1",
+                  "axe": "Les lois de Réforme",
+                  "date": 1854,
+                  "titre": "Le plan d'Ayutla et la chute de Santa Anna",
+                  "description": "Un pronunciamiento lancé dans le Guerrero contre le régime autoritaire de Santa Anna, qui s'était fait appeler Altesse sérénissime et venait de vendre un nouveau morceau du territoire aux États-Unis, rallie libéraux modérés et radicaux. Sa victoire porte au pouvoir une génération formée au droit, dont Benito Juárez, avocat zapotèque originaire d'un village d'Oaxaca.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9volution_d%27Ayutla"
+                },
+                {
+                  "id": "psn_mx_t6_2",
+                  "axe": "Les lois de Réforme",
+                  "date": 1855,
+                  "titre": "La loi Juárez supprime les tribunaux d'exception",
+                  "description": "Le ministre de la Justice abolit la compétence des tribunaux ecclésiastiques et militaires en matière civile : clercs et officiers relèvent désormais des juridictions ordinaires comme tout citoyen. En s'attaquant aux fueros, privilèges hérités de la colonie, la réforme pose le principe d'égalité devant la loi et déclenche l'opposition frontale de l'Église et de l'armée.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Benito_Ju%C3%A1rez"
+                },
+                {
+                  "id": "psn_mx_t6_3",
+                  "axe": "Les lois de Réforme",
+                  "date": 1856,
+                  "titre": "La loi Lerdo et la désamortisation",
+                  "description": "La loi oblige les corporations civiles et religieuses à vendre les biens fonciers qu'elles n'utilisent pas directement. Visant les immenses propriétés de l'Église, elle frappe aussi les terres communales indiennes, que le texte assimile à des corporations : des villages entiers perdent leurs terres au profit d'acheteurs fortunés. Les manuels mexicains soulignent cet effet non voulu, lourd de conséquences jusqu'à la révolution de 1910.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Lois_de_r%C3%A9forme"
+                },
+                {
+                  "id": "psn_mx_t6_4",
+                  "axe": "Les lois de Réforme",
+                  "date": 1857,
+                  "titre": "La Constitution de 1857 et l'excommunication des jurés",
+                  "description": "Le texte consacre les libertés d'expression, d'enseignement et de réunion, abolit l'esclavage et les titres de noblesse, et constitutionnalise les lois de Réforme sans proclamer la liberté des cultes. L'Église menace d'excommunication quiconque y prête serment, obligeant des fonctionnaires à choisir entre leur charge et leurs sacrements : le pays se scinde en deux.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Constitution_f%C3%A9d%C3%A9rale_des_%C3%89tats_Unis_mexicains_(1857)"
+                },
+                {
+                  "id": "psn_mx_t6_5",
+                  "axe": "Les lois de Réforme",
+                  "date": 1858,
+                  "titre": "La guerre de Réforme",
+                  "description": "Conservateurs et libéraux se livrent trois ans de guerre civile, avec deux gouvernements parallèles : le conservateur à Mexico, le libéral itinérant puis installé à Veracruz, d'où Juárez décrète la nationalisation des biens du clergé, la séparation de l'Église et de l'État et l'état civil laïque. La victoire libérale de 1861 laisse un pays ruiné et une dette impayable.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Guerre_de_r%C3%A9forme"
+                },
+                {
+                  "id": "psn_mx_t6_6",
+                  "axe": "L'intervention française et l'Empire",
+                  "date": 1861,
+                  "titre": "La suspension de la dette et la convention de Londres",
+                  "description": "Le trésor vide, Juárez suspend pour deux ans le paiement de la dette extérieure. La Grande-Bretagne, l'Espagne et la France s'entendent pour occuper les douanes de Veracruz et se faire payer. Comprenant que Napoléon III vise en réalité la conquête et l'installation d'un trône, Londres et Madrid rembarquent : la France reste seule.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Exp%C3%A9dition_du_Mexique"
+                },
+                {
+                  "id": "psn_mx_t6_7",
+                  "axe": "L'intervention française et l'Empire",
+                  "date": 1862,
+                  "titre": "Le Cinco de Mayo : Zaragoza arrête les Français à Puebla",
+                  "description": "Le général Ignacio Zaragoza inflige au corps expéditionnaire français, réputé la meilleure armée du monde, une défaite inattendue sous les forts de Puebla. Militairement sans lendemain — la ville tombe l'année suivante après un second siège — la victoire devient la grande fête patriotique mexicaine, aujourd'hui plus célébrée aux États-Unis qu'au Mexique.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Puebla"
+                },
+                {
+                  "id": "psn_mx_t6_8",
+                  "axe": "L'intervention française et l'Empire",
+                  "date": 1864,
+                  "titre": "Maximilien empereur, un libéral malgré lui",
+                  "description": "Appelé par les conservateurs mexicains et installé par les baïonnettes françaises, l'archiduc autrichien déçoit aussitôt ceux qui l'ont fait venir : il confirme les lois de Réforme, refuse de rendre ses biens à l'Église et s'entoure de libéraux modérés. Sans base politique d'aucun côté, son trône ne tient que par l'armée française.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Maximilien_Ier_(empereur_du_Mexique)"
+                },
+                {
+                  "id": "psn_mx_t6_9",
+                  "axe": "La République restaurée",
+                  "date": 1867,
+                  "titre": "Querétaro et la République restaurée",
+                  "description": "Les États-Unis, sortis de leur guerre civile, pressent Paris d'évacuer ; Napoléon III retire ses troupes et Maximilien, resté par point d'honneur, est capturé puis fusillé malgré les suppliques de l'Europe. Juárez rétablit la République et engage la reconstruction : école laïque, chemins de fer, réduction de l'armée. Sa mort en 1872 ouvre la voie au long règne de Porfirio Díaz.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Benito_Ju%C3%A1rez"
+                }
+              ]
+            },
+            {
               "id": "psn_mx_t3",
               "nom": "La révolution mexicaine (Zapata, Pancho Villa, 1910-1923)",
               "difficulte": "Tous niveaux",
@@ -152585,6 +153005,90 @@
         {
           "nom": "Royaume-Uni",
           "themes": [
+            {
+              "id": "psn_gb_t9",
+              "nom": "1066 et l'Angleterre normande (1066-1205)",
+              "difficulte": "Tous niveaux",
+              "axeOrder": [
+                "La conquête et la mainmise normande",
+                "Un royaume administré",
+                "Angevins, Église et barons"
+              ],
+              "events": [
+                {
+                  "id": "psn_gb_t9_1",
+                  "axe": "La conquête et la mainmise normande",
+                  "date": 1066,
+                  "titre": "Hastings : trois prétendants pour une couronne",
+                  "description": "À la mort d'Édouard le Confesseur sans héritier, trois hommes revendiquent le trône. Harold Godwinson écrase le Norvégien Harald à Stamford Bridge, puis redescend en hâte le pays entier pour affronter Guillaume de Normandie près de Hastings, où il meurt au terme d'une bataille d'une journée. Le programme anglais fait de cette année la borne d'ouverture de son enseignement de l'histoire médiévale.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_d%27Hastings"
+                },
+                {
+                  "id": "psn_gb_t9_2",
+                  "axe": "La conquête et la mainmise normande",
+                  "date": 1069,
+                  "titre": "Le ravage du Nord",
+                  "description": "Face aux révoltes répétées du Yorkshire et de la Northumbrie, appuyées par les Danois, Guillaume fait systématiquement brûler récoltes, villages et bétail sur des centaines de kilomètres. Des chroniqueurs contemporains parlent de dizaines de milliers de morts de faim ; le Domesday Book note encore, dix-sept ans plus tard, des comtés entiers « wasta est », en friche.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/D%C3%A9vastation_du_Nord_de_l%27Angleterre"
+                },
+                {
+                  "id": "psn_gb_t9_3",
+                  "axe": "La conquête et la mainmise normande",
+                  "date": 1070,
+                  "titre": "Une aristocratie entièrement remplacée",
+                  "description": "En vingt ans, la quasi-totalité des grands propriétaires anglo-saxons est dépossédée au profit de quelques milliers de Normands, et les évêchés passent à des prélats venus du continent. Le français devient la langue de la cour et du droit, le latin celle de l'écrit : l'anglais, langue des vaincus, disparaît des documents officiels pour trois siècles.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Conqu%C3%AAte_normande_de_l%27Angleterre"
+                },
+                {
+                  "id": "psn_gb_t9_4",
+                  "axe": "Un royaume administré",
+                  "date": 1086,
+                  "titre": "Le Domesday Book, inventaire du royaume conquis",
+                  "description": "Guillaume fait recenser manoir par manoir les terres, les hommes, les charrues et le bétail de l'Angleterre, avec leur valeur avant et après la conquête. Aucun État d'Europe occidentale ne dispose alors d'un tel instrument. Son nom, « livre du Jugement dernier », vient de ce qu'on ne pouvait faire appel de ses conclusions, comme du jugement de Dieu.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Domesday_Book"
+                },
+                {
+                  "id": "psn_gb_t9_5",
+                  "axe": "Un royaume administré",
+                  "date": 1100,
+                  "titre": "La charte des libertés d'Henri Ier",
+                  "description": "Pour asseoir une succession contestée, Henri Ier promet par écrit de renoncer aux abus de son frère : ne plus vendre les charges d'Église, ne plus rançonner les héritages, respecter les coutumes. Largement ignorée ensuite, cette charte fournira aux barons de 1215 le précédent et jusqu'aux formules de la Grande Charte.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Charte_des_libert%C3%A9s"
+                },
+                {
+                  "id": "psn_gb_t9_6",
+                  "axe": "Un royaume administré",
+                  "date": 1166,
+                  "titre": "L'assise de Clarendon et les origines du jury",
+                  "description": "Henri II impose que dans chaque centaine, douze hommes dignes de foi désignent sous serment les suspects de vol, de meurtre ou de brigandage, jugés ensuite par des juges royaux itinérants. En substituant l'enquête locale à l'ordalie et au duel judiciaire, la réforme jette les bases de la common law et du jury, exportés plus tard dans tout le monde anglophone.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Assise_de_Clarendon"
+                },
+                {
+                  "id": "psn_gb_t9_7",
+                  "axe": "Angevins, Église et barons",
+                  "date": 1154,
+                  "titre": "Henri II et l'espace angevin",
+                  "description": "Par héritage et par mariage avec Aliénor d'Aquitaine, Henri II règne de l'Écosse aux Pyrénées : l'Angleterre n'est qu'une pièce d'un ensemble continental dont le centre de gravité est en France. Les manuels britanniques en tirent un point contre-intuitif pour les élèves : pendant un siècle et demi, les rois d'Angleterre parlent français et vivent surtout hors d'Angleterre.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Henri_II_(roi_d%27Angleterre)"
+                },
+                {
+                  "id": "psn_gb_t9_8",
+                  "axe": "Angevins, Église et barons",
+                  "date": 1170,
+                  "titre": "Becket assassiné dans sa cathédrale",
+                  "description": "Quatre chevaliers, croyant exécuter le vœu du roi excédé par son ancien chancelier devenu archevêque, tuent Thomas Becket dans Canterbury. Le scandale européen contraint Henri II à faire pénitence publique et à reculer sur la juridiction ecclésiastique. Le tombeau devient le premier pèlerinage d'Angleterre, celui-là même des Contes de Canterbury.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Thomas_Becket"
+                },
+                {
+                  "id": "psn_gb_t9_9",
+                  "axe": "Angevins, Église et barons",
+                  "date": 1205,
+                  "titre": "Jean sans Terre perd la Normandie",
+                  "description": "En quelques campagnes, Philippe Auguste enlève au roi d'Angleterre la Normandie, l'Anjou et le Maine. Les barons anglo-normands doivent choisir entre leurs domaines des deux rives et deviennent anglais par défaut. Pour financer la reconquête, Jean pressure ses vassaux d'impôts extraordinaires : c'est cette fiscalité, et l'échec militaire de 1214, qui produiront la Grande Charte.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jean_sans_Terre"
+                }
+              ]
+            },
             {
               "id": "psn_gb_t1",
               "nom": "La formation du royaume (unions Angleterre/Écosse 1707, Irlande 1801) (1603-1922)",
@@ -153006,6 +153510,90 @@
               ]
             },
             {
+              "id": "psn_gb_t10",
+              "nom": "La traite négrière britannique et son abolition (1672-1838)",
+              "difficulte": "Tous niveaux",
+              "axeOrder": [
+                "Le commerce triangulaire",
+                "Résistances et révoltes",
+                "L'abolition et ses limites"
+              ],
+              "events": [
+                {
+                  "id": "psn_gb_t10_1",
+                  "axe": "Le commerce triangulaire",
+                  "date": 1672,
+                  "titre": "La Royal African Company et le monopole royal",
+                  "description": "Fondée sous le patronage du frère du roi, la compagnie reçoit le monopole du commerce anglais sur la côte d'Afrique et déporte en un demi-siècle plus de cent mille captifs, marqués au fer des initiales de la société. L'ouverture du trafic à tous les marchands en 1698 en démultiplie le volume : la traite devient une affaire nationale, non plus une affaire de cour.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Royal_African_Company"
+                },
+                {
+                  "id": "psn_gb_t10_2",
+                  "axe": "Le commerce triangulaire",
+                  "date": 1713,
+                  "titre": "L'asiento : fournir des esclaves aux colonies espagnoles",
+                  "description": "Le traité d'Utrecht accorde à la Grande-Bretagne le droit exclusif de vendre des captifs africains dans l'empire espagnol d'Amérique. Concédé à la South Sea Company, ce privilège, longtemps présenté dans les manuels comme un succès diplomatique, fait du pays le premier transporteur d'êtres humains de l'Atlantique pour tout le XVIIIᵉ siècle.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Asiento_(%C3%A9conomie)"
+                },
+                {
+                  "id": "psn_gb_t10_3",
+                  "axe": "Le commerce triangulaire",
+                  "date": 1750,
+                  "titre": "Liverpool, premier port négrier d'Europe",
+                  "description": "Le port supplante Bristol et Londres et arme bientôt la majorité des expéditions britanniques. Autour de la traite prospèrent chantiers navals, assurances, banques, raffineries de sucre et industrie cotonnière du Lancashire. Les programmes britanniques demandent d'examiner cette imbrication : la prospérité industrielle du Nord-Ouest s'est construite en partie sur ce commerce.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Liverpool"
+                },
+                {
+                  "id": "psn_gb_t10_4",
+                  "axe": "Résistances et révoltes",
+                  "date": 1781,
+                  "titre": "Le massacre du Zong",
+                  "description": "L'équipage d'un navire négrier jette à la mer cent trente-deux captifs vivants, puis réclame l'indemnité d'assurance en invoquant le manque d'eau. Le procès qui suit ne porte pas sur un meurtre mais sur une créance : la loi traite les victimes comme une cargaison. Révélée par Olaudah Equiano et reprise par les abolitionnistes, l'affaire devient le symbole de l'inhumanité juridique du système.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Massacre_du_Zong"
+                },
+                {
+                  "id": "psn_gb_t10_5",
+                  "axe": "Résistances et révoltes",
+                  "date": 1789,
+                  "titre": "Le récit d'Olaudah Equiano",
+                  "description": "Ancien captif devenu affranchi, Equiano publie son autobiographie, qui connaît neuf éditions de son vivant et le fait parcourir le pays en tournées de conférences. Pour la première fois, l'opinion britannique lit la traite racontée par quelqu'un qui l'a subie, et non décrite par des observateurs. Le livre est aujourd'hui une source centrale des programmes scolaires anglais.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Olaudah_Equiano"
+                },
+                {
+                  "id": "psn_gb_t10_6",
+                  "axe": "Résistances et révoltes",
+                  "date": 1831,
+                  "titre": "La guerre baptiste en Jamaïque",
+                  "description": "Ce qui devait être une grève pacifique menée par le prédicateur Samuel Sharpe, à Noël, se transforme en la plus vaste révolte d'esclaves des Antilles britanniques : soixante mille insurgés, des centaines d'exécutions dans la répression. L'ampleur du soulèvement et la brutalité des représailles convainquent Londres que le maintien de l'esclavage coûtera plus cher que son abolition.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Grande_r%C3%A9volte_des_esclaves_de_1831"
+                },
+                {
+                  "id": "psn_gb_t10_7",
+                  "axe": "L'abolition et ses limites",
+                  "date": 1787,
+                  "titre": "La société pour l'abolition et la campagne d'opinion",
+                  "description": "Douze hommes, quakers pour la plupart, fondent à Londres un comité qui invente les méthodes de la campagne moderne : pétitions de masse, conférences, insigne de Wedgwood, boycott du sucre suivi par des centaines de milliers de familles, et le plan du négrier Brooks montrant l'entassement des corps. Thomas Clarkson rassemble les preuves, William Wilberforce porte la cause aux Communes.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Society_for_Effecting_the_Abolition_of_the_Slave_Trade"
+                },
+                {
+                  "id": "psn_gb_t10_8",
+                  "axe": "L'abolition et ses limites",
+                  "date": 1807,
+                  "titre": "L'abolition de la traite et ses contournements",
+                  "description": "Après vingt ans de campagne et onze rejets parlementaires, la loi interdit le commerce des esclaves sous pavillon britannique et la Royal Navy en fait la police dans l'Atlantique. Mais l'esclavage lui-même reste légal dans les colonies, et le trafic se poursuit sous d'autres pavillons : le nombre de personnes déportées d'Afrique reste élevé pendant des décennies.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Slave_Trade_Act_1807"
+                },
+                {
+                  "id": "psn_gb_t10_9",
+                  "axe": "L'abolition et ses limites",
+                  "date": 1838,
+                  "titre": "L'émancipation, l'apprentissage et l'indemnisation des propriétaires",
+                  "description": "La loi de 1833 libère huit cent mille personnes, mais les astreint d'abord à un « apprentissage » non rémunéré auprès de leurs anciens maîtres, supprimé en 1838 devant la résistance. L'État verse vingt millions de livres, soit environ quarante pour cent de son budget annuel, non aux affranchis mais aux propriétaires : l'emprunt contracté pour les indemniser n'a été soldé qu'en 2015.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Slavery_Abolition_Act_1833"
+                }
+              ]
+            },
+            {
               "id": "psn_gb_t6",
               "nom": "L'Irlande : Home Rule, guerre d'indépendance, partition, Troubles (1886-1998)",
               "difficulte": "Tous niveaux",
@@ -153343,6 +153931,90 @@
                   "titre": "Wettstein obtient l'exemption d'Empire",
                   "description": "Envoyé à Osnabrück par la seule ville de Bâle, le bourgmestre Johann Rudolf Wettstein obtient que les traités inscrivent l'exemption des cantons de toute juridiction impériale. Juridiquement, il ne s'agit pas d'une indépendance proclamée mais de la reconnaissance d'un état de fait acquis depuis la guerre de Souabe en 1499. La Confédération reste alors un assemblage de treize cantons souverains et de territoires sujets, sans capitale, sans armée commune et divisé par la confession.",
                   "wikipedia": "https://fr.wikipedia.org/wiki/Traités_de_Westphalie"
+                }
+              ]
+            },
+            {
+              "id": "psn_ch_t6",
+              "nom": "La Réforme, Zwingli, Calvin et les guerres confessionnelles (1519-1712)",
+              "difficulte": "Tous niveaux",
+              "axeOrder": [
+                "Zwingli et Zurich",
+                "Calvin et Genève",
+                "Une Confédération divisée par la foi"
+              ],
+              "events": [
+                {
+                  "id": "psn_ch_t6_1",
+                  "axe": "Zwingli et Zurich",
+                  "date": 1519,
+                  "titre": "Zwingli prêche à Zurich",
+                  "description": "Nommé prédicateur du Grossmünster, Huldrych Zwingli abandonne le calendrier liturgique pour commenter l'Évangile de Matthieu verset après verset. Sa critique du mercenariat, qui vidait les vallées de leurs hommes au profit des puissances étrangères, autant que sa théologie, lui gagne le conseil de la ville : la Réforme suisse naît en même temps que la réforme allemande, mais indépendamment d'elle.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ulrich_Zwingli"
+                },
+                {
+                  "id": "psn_ch_t6_2",
+                  "axe": "Zwingli et Zurich",
+                  "date": 1523,
+                  "titre": "Les disputes de Zurich : la Réforme décidée par un vote",
+                  "description": "Le conseil de la ville convoque un débat public entre Zwingli et les envoyés de l'évêque, tranche en faveur du réformateur et décrète l'application de ses thèses. Le procédé — une question de doctrine réglée par une assemblée civique et non par une autorité ecclésiastique — est une singularité suisse que les manuels du pays soulignent comme un précédent politique autant que religieux.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9forme_protestante_en_Suisse"
+                },
+                {
+                  "id": "psn_ch_t6_3",
+                  "axe": "Zwingli et Zurich",
+                  "date": 1525,
+                  "titre": "Messe abolie, anabaptistes noyés",
+                  "description": "Zurich remplace la messe par une cène en langue vulgaire et supprime images et orgues. La même année, des disciples plus radicaux, qui exigent un baptême d'adultes consentants et le refus du serment civique, sont bannis puis exécutés par noyade. La Réforme d'État réprime ainsi, dès sa naissance, la Réforme radicale sortie de ses propres rangs.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Anabaptisme"
+                },
+                {
+                  "id": "psn_ch_t6_4",
+                  "axe": "Calvin et Genève",
+                  "date": 1536,
+                  "titre": "Genève adopte la Réforme et Calvin s'y arrête",
+                  "description": "L'assemblée des citoyens vote l'abolition de la messe quelques mois après que la ville s'est libérée de son évêque et du duc de Savoie avec l'appui de Berne. Jean Calvin, juriste picard en route pour Strasbourg, n'y fait halte qu'une nuit ; Guillaume Farel le retient en le menaçant de la colère de Dieu. Il y passera, avec une interruption, le reste de sa vie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jean_Calvin"
+                },
+                {
+                  "id": "psn_ch_t6_5",
+                  "axe": "Calvin et Genève",
+                  "date": 1553,
+                  "titre": "Le bûcher de Michel Servet",
+                  "description": "Le médecin espagnol, qui niait la Trinité et avait fui l'Inquisition catholique, est arrêté à Genève, jugé par le conseil de la ville et brûlé vif. L'exécution provoque la protestation de Sébastien Castellion — « tuer un homme, ce n'est pas défendre une doctrine, c'est tuer un homme » — qui ouvre en Europe le débat sur la tolérance religieuse.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Michel_Servet"
+                },
+                {
+                  "id": "psn_ch_t6_6",
+                  "axe": "Calvin et Genève",
+                  "date": 1559,
+                  "titre": "L'Académie de Genève, école de l'Europe réformée",
+                  "description": "Calvin fonde une institution qui forme des pasteurs venus de France, d'Écosse, des Pays-Bas, de Pologne et de Hongrie, et les renvoie chez eux organiser des Églises. Genève devient la capitale intellectuelle du protestantisme réformé et la « Rome protestante », son rayonnement dépassant de très loin les quelques milliers d'habitants de la cité.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Universit%C3%A9_de_Gen%C3%A8ve"
+                },
+                {
+                  "id": "psn_ch_t6_7",
+                  "axe": "Une Confédération divisée par la foi",
+                  "date": 1529,
+                  "titre": "La première guerre de Kappel",
+                  "description": "Cantons réformés et cantons catholiques campent face à face sans combattre ; la tradition veut que les soldats aient partagé une soupe au lait sur la ligne de front. La paix conclue laisse chaque canton libre de sa confession. La Confédération invente ainsi, par nécessité, une coexistence confessionnelle négociée là où l'Empire fera la guerre.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Guerres_de_Kappel"
+                },
+                {
+                  "id": "psn_ch_t6_8",
+                  "axe": "Une Confédération divisée par la foi",
+                  "date": 1531,
+                  "titre": "Zwingli tué à Kappel et la frontière confessionnelle figée",
+                  "description": "La seconde guerre tourne à la défaite des Zurichois ; Zwingli, parti comme aumônier, est tué et son corps écartelé. La paix qui suit consacre la supériorité juridique des cantons catholiques et fige pour près de trois siècles la carte confessionnelle de la Suisse, canton par canton, parfois village par village.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Guerres_de_Kappel"
+                },
+                {
+                  "id": "psn_ch_t6_9",
+                  "axe": "Une Confédération divisée par la foi",
+                  "date": 1712,
+                  "titre": "La bataille de Villmergen renverse l'équilibre",
+                  "description": "Après un siècle de tensions et une première guerre perdue en 1656, les cantons réformés de Zurich et de Berne l'emportent enfin militairement et obtiennent la parité dans les bailliages communs. Le rapport de force établi en 1531 s'inverse, mais la Confédération reste jusqu'en 1798 un assemblage confessionnellement divisé, sans capitale ni gouvernement commun.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Batailles_de_Villmergen"
                 }
               ]
             },
