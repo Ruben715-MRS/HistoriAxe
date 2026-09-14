@@ -2,8 +2,8 @@
   "version": "1.0.0",
   "lang": "fr",
   "name": "Français (Intégral)",
-  "totalThemes": 749,
-  "totalEvents": 18997,
+  "totalThemes": 767,
+  "totalEvents": 19159,
   "categories": [
     {
       "nom": "Culture générale",
@@ -143563,6 +143563,550 @@
           ]
         },
         {
+          "nom": "Algérie",
+          "note": "La guerre d'Algérie est déjà traitée du point de vue français dans « Programmes scolaires » > « France » (classes de 3ᵉ et de Terminale), et l'histoire générale du pays dans « Histoires nationales » > « Afrique » > « Afrique du Nord » > « Histoire de l'Algérie ». Les thèmes ci-dessous suivent le découpage du programme d'histoire algérien, qui accorde une place centrale à la Régence d'Alger, aux résistances à la conquête, au système colonial et à la guerre de libération nationale envisagée depuis l'intérieur du mouvement indépendantiste.",
+          "themes": [
+            {
+              "id": "psn_dz_t1",
+              "nom": "La Régence d'Alger, puissance méditerranéenne (1516-1830)",
+              "difficulte": "Tous niveaux",
+              "axeOrder": [
+                "La naissance de la Régence ottomane",
+                "Une puissance maritime et un État autonome",
+                "La crise des relations avec la France"
+              ],
+              "events": [
+                {
+                  "id": "psn_dz_t1_1",
+                  "axe": "La naissance de la Régence ottomane",
+                  "date": 1516,
+                  "titre": "Les frères Barberousse s'emparent d'Alger",
+                  "description": "Appelés par les notables de la ville contre la menace espagnole installée sur l'îlot du Peñón, les corsaires Aroudj puis Kheir ed-Din Barberousse prennent le contrôle d'Alger. Kheir ed-Din place la ville sous la souveraineté du sultan ottoman, dont il obtient troupes et artillerie : la Régence d'Alger naît de cette alliance entre une cité marchande, des corsaires et l'Empire ottoman.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Khayr_ad-Din_Barberousse"
+                },
+                {
+                  "id": "psn_dz_t1_2",
+                  "axe": "La naissance de la Régence ottomane",
+                  "date": 1541,
+                  "titre": "L'échec de Charles Quint devant Alger",
+                  "description": "L'empereur débarque avec une armada de plus de cinq cents navires pour en finir avec la course algéroise. Une tempête d'automne disperse sa flotte et l'expédition tourne au désastre. Cet échec retentissant consolide durablement la Régence, qui apparaît désormais comme une puissance capable de tenir tête à la première monarchie d'Europe.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Exp%C3%A9dition_d%27Alger_(1541)"
+                },
+                {
+                  "id": "psn_dz_t1_3",
+                  "axe": "Une puissance maritime et un État autonome",
+                  "date": 1671,
+                  "titre": "Le régime des deys, une république militaire",
+                  "description": "La milice des janissaires, l'odjak, et la corporation des capitaines corsaires, la taïfa des raïs, imposent l'élection d'un dey qui gouverne à vie. Le lien avec Istanbul devient largement symbolique : la Régence bat monnaie, lève l'impôt, signe des traités et déclare la guerre. Les manuels algériens y voient un État autonome, et non une simple province ottomane.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9gence_d%27Alger"
+                },
+                {
+                  "id": "psn_dz_t1_4",
+                  "axe": "Une puissance maritime et un État autonome",
+                  "date": 1682,
+                  "titre": "Les bombardements français d'Alger",
+                  "description": "Pour mettre fin à la course et libérer les captifs chrétiens, Louis XIV envoie Duquesne bombarder Alger avec des galiotes à bombes, arme nouvelle. Les destructions sont lourdes, la ville ne cède pas et exécute le consul Jean Le Vacher. L'épisode inaugure deux siècles de relations heurtées entre la France et la Régence, faites de traités commerciaux et d'expéditions punitives.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bombardement_d%27Alger_(1682)"
+                },
+                {
+                  "id": "psn_dz_t1_5",
+                  "axe": "Une puissance maritime et un État autonome",
+                  "date": 1792,
+                  "titre": "La reprise d'Oran aux Espagnols",
+                  "description": "Après près de trois siècles d'occupation espagnole entrecoupée, le bey de Mascara Mohamed el-Kébir obtient l'évacuation d'Oran, ruinée par un tremblement de terre. La Régence retrouve la maîtrise de la côte occidentale et installe le beylik de l'Ouest à Oran. C'est l'un des rares exemples maghrébins de reconquête complète d'un préside européen.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Oran"
+                },
+                {
+                  "id": "psn_dz_t1_6",
+                  "axe": "La crise des relations avec la France",
+                  "date": 1798,
+                  "titre": "Le blé algérien et la dette Bacri-Busnach",
+                  "description": "Les maisons juives livournaises Bacri et Busnach fournissent d'importantes quantités de blé algérien aux armées du Directoire, en partie à crédit. La créance, qui atteint plusieurs millions de francs, n'est jamais entièrement réglée par Paris. Cette dette empoisonne les relations franco-algériennes et sert de toile de fond à la crise de 1827.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Affaire_de_Bachri-Busnach"
+                },
+                {
+                  "id": "psn_dz_t1_7",
+                  "axe": "La crise des relations avec la France",
+                  "date": 1816,
+                  "titre": "Le bombardement anglo-néerlandais d'Alger",
+                  "description": "Une escadre de lord Exmouth détruit la flotte de la Régence et impose l'abolition de l'esclavage des chrétiens et la libération de milliers de captifs. La course, principale ressource extérieure d'Alger depuis trois siècles, s'effondre, privant l'État de revenus au moment où les puissances européennes entendent régenter la Méditerranée.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bombardement_d%27Alger_(1816)"
+                },
+                {
+                  "id": "psn_dz_t1_8",
+                  "axe": "La crise des relations avec la France",
+                  "date": 1827,
+                  "titre": "Le coup d'éventail et le blocus d'Alger",
+                  "description": "Excédé par le refus français de régler la dette et par les fortifications élevées à La Calle, le dey Hussein frappe le consul Deval de son chasse-mouches lors d'une audience. La France exige des excuses, puis instaure un blocus naval de trois ans, coûteux et inefficace, qui prépare l'opinion à une expédition militaire.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Hussein_Dey"
+                },
+                {
+                  "id": "psn_dz_t1_9",
+                  "axe": "La crise des relations avec la France",
+                  "date": 1830,
+                  "titre": "La capitulation du dey Hussein",
+                  "description": "Débarquée à Sidi Ferruch en juin, l'armée française de Bourmont l'emporte à Staouéli puis contraint le dey à capituler le 5 juillet contre la garantie des personnes, des biens, des mosquées et de la religion. Charles X cherchait un succès de prestige pour sauver son trône ; il est renversé trois semaines plus tard, mais la France reste, et les engagements de la capitulation sont rapidement bafoués.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Exp%C3%A9dition_d%27Alger_(1830)"
+                }
+              ],
+              "essentiel": [
+                "psn_dz_t1_1",
+                "psn_dz_t1_2",
+                "psn_dz_t1_9"
+              ]
+            },
+            {
+              "id": "psn_dz_t2",
+              "nom": "La conquête française et les résistances populaires (1832-1871)",
+              "difficulte": "Tous niveaux",
+              "axeOrder": [
+                "L'État de l'émir Abdelkader",
+                "La guerre totale et la soumission du pays",
+                "Dépossession et dernières insurrections"
+              ],
+              "events": [
+                {
+                  "id": "psn_dz_t2_1",
+                  "axe": "L'État de l'émir Abdelkader",
+                  "date": 1832,
+                  "titre": "Abdelkader proclamé émir à Mascara",
+                  "description": "Les tribus de l'Ouest prêtent allégeance au jeune Abdelkader ibn Muhieddine, lettré et chef de confrérie, pour conduire la résistance. Il entreprend de bâtir un État : administration, impôt régulier, armée permanente en uniforme, ateliers d'armement, villes-entrepôts mobiles appelées smalas. Les manuels algériens font de cette construction la première expression d'un État national algérien moderne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Abdelkader_(%C3%A9mir)"
+                },
+                {
+                  "id": "psn_dz_t2_2",
+                  "axe": "L'État de l'émir Abdelkader",
+                  "date": 1837,
+                  "titre": "Le traité de la Tafna",
+                  "description": "Signé avec le général Bugeaud, le traité reconnaît l'autorité d'Abdelkader sur les deux tiers de l'Algérie, la France ne conservant que quelques places côtières. L'émir en profite pour consolider son État, la France pour prendre Constantine la même année. Le texte, diversement interprété des deux côtés, ne tient que deux ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Trait%C3%A9_de_la_Tafna"
+                },
+                {
+                  "id": "psn_dz_t2_3",
+                  "axe": "L'État de l'émir Abdelkader",
+                  "date": 1843,
+                  "titre": "La prise de la smala d'Abdelkader",
+                  "description": "Le duc d'Aumale surprend et enlève la capitale itinérante de l'émir, avec ses familles, son trésor et son administration. Le coup, immortalisé par le panorama d'Horace Vernet, brise l'ossature de l'État algérien naissant. Abdelkader se replie au Maroc, dont l'intervention à ses côtés conduit à la défaite marocaine d'Isly en 1844.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Prise_de_la_smalah_d%27Abd-el-Kader"
+                },
+                {
+                  "id": "psn_dz_t2_4",
+                  "axe": "La guerre totale et la soumission du pays",
+                  "date": 1840,
+                  "titre": "Bugeaud, les razzias et les enfumades",
+                  "description": "Nommé gouverneur général, Bugeaud renonce à l'occupation restreinte et théorise une guerre contre les populations elles-mêmes : colonnes mobiles, destruction des récoltes, des villages et des troupeaux. Les enfumades des grottes du Dahra, où des tribus entières périssent asphyxiées en 1845, provoquent un scandale jusqu'en France et restent un épisode central de la mémoire algérienne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Thomas_Robert_Bugeaud"
+                },
+                {
+                  "id": "psn_dz_t2_5",
+                  "axe": "La guerre totale et la soumission du pays",
+                  "date": 1847,
+                  "titre": "La reddition d'Abdelkader",
+                  "description": "Après quinze ans de guerre et l'échec de son repli marocain, l'émir se rend contre la promesse d'un exil en Orient. La France ne tient pas parole et le détient cinq ans en France avant que Napoléon III ne le libère : il finit sa vie à Damas, où il protège les chrétiens lors des massacres de 1860. Sa figure domine la mémoire nationale algérienne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Abdelkader_(%C3%A9mir)"
+                },
+                {
+                  "id": "psn_dz_t2_6",
+                  "axe": "La guerre totale et la soumission du pays",
+                  "date": 1857,
+                  "titre": "La résistance de Lalla Fatma N'Soumer en Kabylie",
+                  "description": "La Kabylie, longtemps restée hors d'atteinte, est soumise par les colonnes de Randon. La jeune chef spirituelle Lalla Fatma N'Soumer, qui avait animé la résistance des Igawawen et remporté plusieurs succès, est capturée et assignée à résidence. Elle devient l'une des grandes figures féminines du récit national algérien.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Fatma_N%27Soumer"
+                },
+                {
+                  "id": "psn_dz_t2_7",
+                  "axe": "Dépossession et dernières insurrections",
+                  "date": 1863,
+                  "titre": "Le sénatus-consulte sur les terres tribales",
+                  "description": "Présenté comme une protection des tribus, le texte déclare celles-ci propriétaires de leurs terres puis organise leur division entre douars et entre familles. Le morcellement rend les terres aliénables et ouvre la voie à leur rachat massif par les colons. Associé à la loi Warnier de 1873, il constitue le principal instrument de la dépossession foncière des Algériens.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/S%C3%A9natus-consulte_du_22_avril_1863"
+                },
+                {
+                  "id": "psn_dz_t2_8",
+                  "axe": "Dépossession et dernières insurrections",
+                  "date": 1870,
+                  "titre": "Le décret Crémieux et l'inégalité des statuts",
+                  "description": "Le décret naturalise collectivement les juifs d'Algérie, tandis que les musulmans, sujets français mais non citoyens, ne peuvent accéder à la citoyenneté qu'en renonçant à leur statut personnel, c'est-à-dire, à leurs yeux, à leur religion. Ce partage juridique devient le cœur du système colonial et l'un des principaux griefs du futur mouvement national.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/D%C3%A9cret_Cr%C3%A9mieux"
+                },
+                {
+                  "id": "psn_dz_t2_9",
+                  "axe": "Dépossession et dernières insurrections",
+                  "date": 1871,
+                  "titre": "L'insurrection de Mokrani et de Cheikh Haddad",
+                  "description": "Profitant de la défaite française face à la Prusse, le bachagha El Mokrani et le chef de la confrérie Rahmaniya Cheikh Haddad soulèvent la Kabylie et une grande partie de l'Est : plus de deux cent cinquante tribus s'engagent. La répression est terrible : exécutions, déportations en Nouvelle-Calédonie, amendes de guerre et séquestre de centaines de milliers d'hectares livrés à la colonisation.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9volte_de_Mokrani"
+                }
+              ],
+              "essentiel": [
+                "psn_dz_t2_1",
+                "psn_dz_t2_4",
+                "psn_dz_t2_6",
+                "psn_dz_t2_9"
+              ]
+            },
+            {
+              "id": "psn_dz_t3",
+              "nom": "Le système colonial et l'éveil du mouvement national (1873-1945)",
+              "difficulte": "Tous niveaux",
+              "axeOrder": [
+                "Le code de l'indigénat et la dépossession",
+                "Les courants du mouvement national",
+                "Les espoirs déçus et la rupture de 1945"
+              ],
+              "events": [
+                {
+                  "id": "psn_dz_t3_1",
+                  "axe": "Le code de l'indigénat et la dépossession",
+                  "date": 1873,
+                  "titre": "La loi Warnier et le transfert des terres",
+                  "description": "En généralisant la propriété individuelle de type français et en rendant les terres collectives aliénables, la loi Warnier accélère le passage des meilleures terres céréalières et viticoles aux colons et aux sociétés métropolitaines. Refoulées vers les zones de montagne et les terres pauvres, les familles paysannes basculent dans le salariat agricole et la misère.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Chronologie_de_la_l%C3%A9gislation_fonci%C3%A8re_en_Alg%C3%A9rie_coloniale"
+                },
+                {
+                  "id": "psn_dz_t3_2",
+                  "axe": "Le code de l'indigénat et la dépossession",
+                  "date": 1881,
+                  "titre": "Le code de l'indigénat en Algérie",
+                  "description": "Un ensemble d'infractions spéciales — réunion sans autorisation, déplacement sans permis, propos jugés irrespectueux envers un fonctionnaire — n'est applicable qu'aux « indigènes » et peut être sanctionné par l'administrateur lui-même, sans jugement. Régulièrement prorogé jusqu'en 1944, ce régime d'exception organise l'infériorité juridique quotidienne des Algériens musulmans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Indig%C3%A9nat"
+                },
+                {
+                  "id": "psn_dz_t3_3",
+                  "axe": "Le code de l'indigénat et la dépossession",
+                  "date": 1912,
+                  "titre": "La conscription des « indigènes » et l'émigration vers la France",
+                  "description": "L'instauration du service militaire obligatoire pour les Algériens musulmans, sans contrepartie de droits politiques, provoque protestations et départs vers le Maroc et l'Orient. Les deux guerres mondiales mobiliseront des centaines de milliers d'hommes, tandis que l'émigration ouvrière vers les usines françaises devient un foyer décisif de politisation.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Tirailleurs_alg%C3%A9riens"
+                },
+                {
+                  "id": "psn_dz_t3_4",
+                  "axe": "Les courants du mouvement national",
+                  "date": 1926,
+                  "titre": "Messali Hadj fonde l'Étoile nord-africaine",
+                  "description": "Créée à Paris dans le milieu ouvrier immigré et d'abord proche du Parti communiste, l'Étoile nord-africaine est la première organisation à réclamer explicitement l'indépendance de l'Algérie, avec une armée nationale, une assemblée élue au suffrage universel et la restitution des terres confisquées. Dissoute à plusieurs reprises, elle renaît sous d'autres sigles autour de Messali Hadj.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89toile_nord-africaine"
+                },
+                {
+                  "id": "psn_dz_t3_5",
+                  "axe": "Les courants du mouvement national",
+                  "date": 1931,
+                  "titre": "L'Association des oulémas musulmans algériens",
+                  "description": "Fondée par Abdelhamid Ben Badis, elle entend réformer l'islam algérien, combattre le maraboutisme et restaurer la langue arabe par un réseau de medersas, de cercles et de journaux. Sa devise — « l'islam est ma religion, l'arabe ma langue, l'Algérie ma patrie » — répond directement au discours assimilationniste et fonde une identité nationale sur la culture.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Association_des_oul%C3%A9mas_musulmans_alg%C3%A9riens"
+                },
+                {
+                  "id": "psn_dz_t3_6",
+                  "axe": "Les courants du mouvement national",
+                  "date": 1936,
+                  "titre": "L'échec du projet Blum-Viollette",
+                  "description": "Le Front populaire propose d'accorder la citoyenneté française, sans abandon du statut personnel, à une élite d'environ vingt mille Algériens. Le texte, pourtant très limité, est enterré sous la pression des élus européens d'Algérie. Son échec ruine les espoirs du courant assimilationniste incarné par Ferhat Abbas et pousse ce dernier vers le nationalisme.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Projet_Blum-Viollette"
+                },
+                {
+                  "id": "psn_dz_t3_7",
+                  "axe": "Les espoirs déçus et la rupture de 1945",
+                  "date": 1943,
+                  "titre": "Le Manifeste du peuple algérien",
+                  "description": "Remis aux autorités françaises et alliées au moment où Alger est la capitale de la France libre, le texte de Ferhat Abbas dénonce l'échec de l'assimilation et réclame une constitution algérienne garantissant l'égalité et la participation des musulmans au gouvernement. Il marque le ralliement des modérés à l'idée d'une nation algérienne distincte.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Manifeste_du_peuple_alg%C3%A9rien"
+                },
+                {
+                  "id": "psn_dz_t3_8",
+                  "axe": "Les espoirs déçus et la rupture de 1945",
+                  "date": 1945,
+                  "titre": "Le 8 mai 1945 : Sétif, Guelma, Kherrata",
+                  "description": "Le jour de la victoire alliée, des manifestations nationalistes brandissant le drapeau algérien dégénèrent à Sétif ; des Européens sont tués dans le Constantinois. La répression par l'armée, l'aviation, la marine et des milices fait des milliers de morts algériens, avec des estimations très divergentes. Pour toute une génération de futurs dirigeants du FLN, ce jour signe la fin de l'espoir réformiste.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Massacres_de_S%C3%A9tif%2C_Guelma_et_Kherrata"
+                },
+                {
+                  "id": "psn_dz_t3_9",
+                  "axe": "Les espoirs déçus et la rupture de 1945",
+                  "date": 1947,
+                  "titre": "L'Organisation spéciale et la fraude électorale",
+                  "description": "Le statut de l'Algérie crée une assemblée à deux collèges où la voix d'un Européen pèse près de dix fois celle d'un musulman, et les scrutins suivants sont massivement truqués par l'administration. Convaincus que la voie légale est fermée, des militants du MTLD fondent l'Organisation spéciale, structure clandestine et armée d'où sortiront les chefs de la guerre de libération.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Organisation_sp%C3%A9ciale_(Alg%C3%A9rie)"
+                }
+              ],
+              "essentiel": [
+                "psn_dz_t3_2",
+                "psn_dz_t3_5",
+                "psn_dz_t3_9"
+              ]
+            },
+            {
+              "id": "psn_dz_t4",
+              "nom": "La guerre de libération nationale (1954-1962)",
+              "difficulte": "Tous niveaux",
+              "axeOrder": [
+                "Le déclenchement et la structuration du FLN",
+                "L'internationalisation et la guerre totale",
+                "Vers l'indépendance"
+              ],
+              "events": [
+                {
+                  "id": "psn_dz_t4_1",
+                  "axe": "Le déclenchement et la structuration du FLN",
+                  "date": 1954,
+                  "titre": "La Toussaint rouge et la proclamation du FLN",
+                  "description": "Dans la nuit du 1ᵉʳ novembre, une trentaine d'attaques coordonnées visent des objectifs militaires et économiques à travers le pays, tandis qu'une proclamation appelle à la restauration d'un État algérien souverain dans le cadre des principes islamiques. Le Front de libération nationale, né de l'OS et du comité des Vingt-Deux, se substitue aux partis existants et s'impose comme la direction unique de la lutte.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Toussaint_rouge"
+                },
+                {
+                  "id": "psn_dz_t4_2",
+                  "axe": "Le déclenchement et la structuration du FLN",
+                  "date": 1955,
+                  "titre": "L'offensive du Nord-Constantinois",
+                  "description": "Youcef Zighoud lance des attaques de masse associant la population civile autour de Philippeville et d'El Halia ; la répression fait des milliers de victimes algériennes. En brisant toute possibilité de coexistence, l'opération élargit le soutien populaire au FLN et enterre les solutions intermédiaires : elle fait basculer l'insurrection en guerre généralisée.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Massacres_d%27ao%C3%BBt_1955_dans_le_Constantinois"
+                },
+                {
+                  "id": "psn_dz_t4_3",
+                  "axe": "Le déclenchement et la structuration du FLN",
+                  "date": 1956,
+                  "titre": "Le congrès de la Soummam",
+                  "description": "Réuni clandestinement en Kabylie à l'initiative d'Abane Ramdane, le congrès dote le FLN d'une plateforme politique, d'institutions — CNRA et CCE —, d'un découpage en six wilayas et de deux principes appelés à peser lourd : primauté du politique sur le militaire et de l'intérieur sur l'extérieur. Ces principes seront contestés dès 1957 et nourriront les luttes de pouvoir jusqu'à l'indépendance.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Congr%C3%A8s_de_la_Soummam"
+                },
+                {
+                  "id": "psn_dz_t4_4",
+                  "axe": "L'internationalisation et la guerre totale",
+                  "date": 1957,
+                  "titre": "La bataille d'Alger et la pratique de la torture",
+                  "description": "Les pleins pouvoirs de police confiés à la 10ᵉ division parachutiste permettent de démanteler le réseau urbain du FLN au prix d'arrestations massives, d'exécutions sommaires et d'un usage systématique de la torture. Militairement gagnée par l'armée française, la bataille est politiquement perdue : les révélations sur la torture ébranlent l'opinion française et internationalisent la cause algérienne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_d%27Alger"
+                },
+                {
+                  "id": "psn_dz_t4_5",
+                  "axe": "L'internationalisation et la guerre totale",
+                  "date": 1957,
+                  "titre": "Les lignes Morice et Challe",
+                  "description": "Barrages électrifiés, champs de mines et radars le long des frontières tunisienne et marocaine coupent les maquis de l'intérieur de leurs bases arrière et de leurs approvisionnements. Les tentatives de franchissement coûtent très cher à l'ALN. Combinées aux regroupements forcés de populations rurales, ces lignes affaiblissent durablement la guérilla intérieure.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ligne_Morice"
+                },
+                {
+                  "id": "psn_dz_t4_6",
+                  "axe": "L'internationalisation et la guerre totale",
+                  "date": 1958,
+                  "titre": "Le 13 mai, de Gaulle et la création du GPRA",
+                  "description": "L'émeute des Européens d'Alger et le comité de salut public ramènent de Gaulle au pouvoir et emportent la IVᵉ République. En réponse, le FLN se dote au Caire d'un Gouvernement provisoire de la République algérienne, reconnu par de nombreux États afro-asiatiques : la guerre se joue désormais autant à l'ONU et dans les capitales étrangères que dans les djebels.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Gouvernement_provisoire_de_la_R%C3%A9publique_alg%C3%A9rienne"
+                },
+                {
+                  "id": "psn_dz_t4_7",
+                  "axe": "Vers l'indépendance",
+                  "date": 1960,
+                  "titre": "Les manifestations de décembre 1960",
+                  "description": "Lors d'une tournée de De Gaulle, des manifestations populaires massives éclatent dans les quartiers algériens d'Alger et d'Oran, drapeaux vert et blanc en tête. Elles démontrent au monde que le FLN dispose d'un véritable soutien de masse et pèsent directement sur le vote, en janvier 1961, du référendum français sur l'autodétermination.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Manifestations_de_d%C3%A9cembre_1960"
+                },
+                {
+                  "id": "psn_dz_t4_8",
+                  "axe": "Vers l'indépendance",
+                  "date": 1961,
+                  "titre": "Le putsch des généraux et l'OAS",
+                  "description": "Quatre généraux tentent de s'emparer du pouvoir à Alger pour empêcher l'indépendance ; l'échec du putsch en quatre jours laisse place à l'Organisation armée secrète, qui multiplie attentats et politique de la terre brûlée. La même année, à Paris, une manifestation pacifique d'Algériens est réprimée dans le sang le 17 octobre.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Putsch_des_g%C3%A9n%C3%A9raux"
+                },
+                {
+                  "id": "psn_dz_t4_9",
+                  "axe": "Vers l'indépendance",
+                  "date": 1962,
+                  "titre": "Les accords d'Évian et l'indépendance",
+                  "description": "Signés le 18 mars, les accords prévoient un cessez-le-feu, l'autodétermination et des garanties pour les Européens ; le référendum du 1ᵉʳ juillet approuve massivement l'indépendance, proclamée le 5 juillet, jour anniversaire de la capitulation de 1830. Suivent l'exode de près d'un million de pieds-noirs et le massacre de milliers de harkis abandonnés, deux blessures durables des deux côtés de la Méditerranée.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Accords_d%27%C3%89vian"
+                }
+              ],
+              "essentiel": [
+                "psn_dz_t4_1",
+                "psn_dz_t4_3",
+                "psn_dz_t4_4",
+                "psn_dz_t4_9"
+              ]
+            },
+            {
+              "id": "psn_dz_t5",
+              "nom": "L'Algérie indépendante : État, socialisme et hydrocarbures (1962-1988)",
+              "difficulte": "Tous niveaux",
+              "axeOrder": [
+                "La construction d'un État à parti unique",
+                "L'industrialisation et la révolution agraire",
+                "Les fractures d'une société en crise"
+              ],
+              "events": [
+                {
+                  "id": "psn_dz_t5_1",
+                  "axe": "La construction d'un État à parti unique",
+                  "date": 1962,
+                  "titre": "La crise de l'été 1962",
+                  "description": "À peine l'indépendance acquise, l'état-major de l'ALN allié à Ben Bella s'oppose au GPRA et marche sur Alger : des affrontements entre wilayas font plusieurs centaines de morts sous le slogan « sept ans, ça suffit ! ». Cette crise fondatrice installe durablement l'armée comme arbitre du pouvoir politique algérien.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Crise_de_l%27%C3%A9t%C3%A9_1962"
+                },
+                {
+                  "id": "psn_dz_t5_2",
+                  "axe": "La construction d'un État à parti unique",
+                  "date": 1963,
+                  "titre": "Ben Bella président et l'autogestion",
+                  "description": "Élu président, Ahmed Ben Bella fait adopter une constitution consacrant le parti unique et légalise par les décrets de mars l'autogestion des fermes et des entreprises abandonnées par les Européens. Le FLN devient parti-État ; l'expérience autogestionnaire, largement spontanée à l'origine, est rapidement encadrée par l'administration.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ahmed_Ben_Bella"
+                },
+                {
+                  "id": "psn_dz_t5_3",
+                  "axe": "La construction d'un État à parti unique",
+                  "date": 1965,
+                  "titre": "Le « redressement révolutionnaire » de Boumédiène",
+                  "description": "Le ministre de la Défense Houari Boumédiène renverse Ben Bella et instaure un Conseil de la révolution. Le nouveau régime, militaire et centralisateur, met l'accent sur la construction de l'État, la planification et l'industrie lourde, et gouvernera sans constitution pendant onze ans, jusqu'à la Charte nationale de 1976.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Houari_Boum%C3%A9di%C3%A8ne"
+                },
+                {
+                  "id": "psn_dz_t5_4",
+                  "axe": "L'industrialisation et la révolution agraire",
+                  "date": 1971,
+                  "titre": "La nationalisation des hydrocarbures",
+                  "description": "Le 24 février, l'Algérie prend 51 % des sociétés pétrolières françaises et nationalise le gaz et les oléoducs, au terme d'un bras de fer avec Paris. La date devient fête nationale. Les revenus pétroliers financent les « industries industrialisantes » — sidérurgie, pétrochimie, mécanique — qui doivent doter le pays d'une base productive autonome.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sonatrach"
+                },
+                {
+                  "id": "psn_dz_t5_5",
+                  "axe": "L'industrialisation et la révolution agraire",
+                  "date": 1971,
+                  "titre": "La révolution agraire",
+                  "description": "Le régime limite la taille des propriétés, nationalise les terres des absentéistes et les redistribue à des coopératives paysannes, tout en édifiant des « villages socialistes ». Les résultats restent décevants : bureaucratie, manque d'encadrement et exode rural persistant obligeront le pays à importer massivement sa nourriture malgré ses immenses terres céréalières.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Histoire_de_l%27Alg%C3%A9rie_depuis_1962"
+                },
+                {
+                  "id": "psn_dz_t5_6",
+                  "axe": "L'industrialisation et la révolution agraire",
+                  "date": 1974,
+                  "titre": "Boumédiène et le nouvel ordre économique international",
+                  "description": "À la tribune d'une session spéciale de l'ONU obtenue à son initiative, le président algérien porte la revendication d'un nouvel ordre économique international : souveraineté sur les ressources naturelles, prix rémunérateurs des matières premières, transfert de technologies. Alger devient alors une capitale du tiers-mondisme et du non-alignement, accueillant nombre de mouvements de libération.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Nouvel_ordre_%C3%A9conomique_international"
+                },
+                {
+                  "id": "psn_dz_t5_7",
+                  "axe": "Les fractures d'une société en crise",
+                  "date": 1980,
+                  "titre": "Le Printemps berbère de Kabylie",
+                  "description": "L'interdiction d'une conférence de Mouloud Mammeri sur la poésie kabyle ancienne déclenche grèves et manifestations à Tizi Ouzou et à Alger, durement réprimées. Le mouvement pose publiquement la question de la reconnaissance de la langue et de la culture amazighes face à une politique d'arabisation, et fonde une contestation démocratique qui ressurgira en 2001.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Printemps_berb%C3%A8re"
+                },
+                {
+                  "id": "psn_dz_t5_8",
+                  "axe": "Les fractures d'une société en crise",
+                  "date": 1986,
+                  "titre": "Le contre-choc pétrolier et la crise",
+                  "description": "L'effondrement des cours du pétrole ampute brutalement les recettes d'un État qui en tire l'essentiel de ses devises. Pénuries, chômage des jeunes, crise du logement et endettement extérieur s'aggravent, révélant la fragilité d'une économie rentière et l'échec de l'industrialisation à créer assez d'emplois.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Contre-choc_p%C3%A9trolier"
+                },
+                {
+                  "id": "psn_dz_t5_9",
+                  "axe": "Les fractures d'une société en crise",
+                  "date": 1988,
+                  "titre": "Les émeutes d'Octobre et la fin du parti unique",
+                  "description": "Des émeutes de la jeunesse embrasent Alger et les grandes villes ; la répression fait des centaines de morts. Le président Chadli Bendjedid répond par une ouverture sans précédent : la constitution de 1989 met fin au monopole du FLN, autorise le multipartisme et la liberté de la presse. L'Algérie entre dans une transition démocratique qui sera brutalement interrompue.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89v%C3%A9nements_d%27octobre_1988_en_Alg%C3%A9rie"
+                }
+              ],
+              "essentiel": [
+                "psn_dz_t5_2",
+                "psn_dz_t5_4",
+                "psn_dz_t5_6",
+                "psn_dz_t5_9"
+              ]
+            },
+            {
+              "id": "psn_dz_t6",
+              "nom": "De la décennie noire au Hirak (1989-2019)",
+              "difficulte": "Tous niveaux",
+              "axeOrder": [
+                "L'ouverture démocratique et son interruption",
+                "La guerre civile et la réconciliation",
+                "Le système Bouteflika et sa contestation"
+              ],
+              "events": [
+                {
+                  "id": "psn_dz_t6_1",
+                  "axe": "L'ouverture démocratique et son interruption",
+                  "date": 1989,
+                  "titre": "La constitution du multipartisme",
+                  "description": "Adoptée par référendum, la nouvelle loi fondamentale supprime toute référence au socialisme comme au rôle dirigeant du FLN et autorise les « associations à caractère politique ». Des dizaines de partis et de journaux naissent en quelques mois ; parmi eux, le Front islamique du salut, qui capte le mécontentement social et remporte les élections locales de 1990.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Constitution_alg%C3%A9rienne_de_1989"
+                },
+                {
+                  "id": "psn_dz_t6_2",
+                  "axe": "L'ouverture démocratique et son interruption",
+                  "date": 1991,
+                  "titre": "L'interruption du processus électoral",
+                  "description": "Après la large victoire du FIS au premier tour des législatives de décembre, l'armée obtient la démission du président Chadli, annule le scrutin en janvier 1992 et installe un Haut Comité d'État. Le FIS est dissous et des milliers de militants internés dans le Sud : la décision, présentée comme un sauvetage de la République, ouvre une décennie de guerre civile.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89lections_l%C3%A9gislatives_alg%C3%A9riennes_de_1991"
+                },
+                {
+                  "id": "psn_dz_t6_3",
+                  "axe": "La guerre civile et la réconciliation",
+                  "date": 1992,
+                  "titre": "L'assassinat de Mohamed Boudiaf",
+                  "description": "Rappelé de son exil marocain pour présider le Haut Comité d'État et incarner une autorité morale, l'ancien chef historique du FLN est abattu en direct à la télévision, à Annaba, par un membre de sa garde. L'enquête, jamais close dans l'esprit de l'opinion, nourrit durablement la méfiance des Algériens envers « le pouvoir ».",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mohamed_Boudiaf"
+                },
+                {
+                  "id": "psn_dz_t6_4",
+                  "axe": "La guerre civile et la réconciliation",
+                  "date": 1997,
+                  "titre": "Les grands massacres de civils",
+                  "description": "Groupes islamiques armés, milices d'autodéfense et forces de sécurité s'affrontent dans une violence extrême ; les massacres de villages entiers à Raïs, Bentalha ou Relizane marquent l'année. Journalistes, intellectuels, enseignants et moines de Tibhirine figurent parmi les victimes. Le bilan de la décennie est estimé entre cent cinquante mille et deux cent mille morts.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/D%C3%A9cennie_noire"
+                },
+                {
+                  "id": "psn_dz_t6_5",
+                  "axe": "La guerre civile et la réconciliation",
+                  "date": 1999,
+                  "titre": "La concorde civile de Bouteflika",
+                  "description": "Élu président après le retrait de ses concurrents, Abdelaziz Bouteflika fait approuver par référendum une loi qui offre l'amnistie aux combattants renonçant à la lutte armée, prolongée en 2005 par la Charte pour la paix et la réconciliation nationale. La violence reflue fortement, au prix d'une impunité et d'un silence officiel que dénoncent les familles de disparus.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Concorde_civile"
+                },
+                {
+                  "id": "psn_dz_t6_6",
+                  "axe": "Le système Bouteflika et sa contestation",
+                  "date": 2001,
+                  "titre": "Le Printemps noir de Kabylie",
+                  "description": "La mort d'un lycéen dans une brigade de gendarmerie déclenche en Kabylie un soulèvement réprimé dans le sang, avec plus de cent morts. Le mouvement des archs formule la plateforme d'El-Kseur, réclamant justice, retrait de la gendarmerie et reconnaissance de la langue amazighe, qui devient langue nationale en 2002 puis officielle en 2016.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Printemps_noir"
+                },
+                {
+                  "id": "psn_dz_t6_7",
+                  "axe": "Le système Bouteflika et sa contestation",
+                  "date": 2008,
+                  "titre": "La révision constitutionnelle et le troisième mandat",
+                  "description": "Le Parlement supprime la limitation à deux mandats présidentiels, ouvrant la voie à la réélection de Bouteflika en 2009 puis en 2014, alors que sa santé s'est gravement dégradée après un accident vasculaire cérébral. Le pouvoir réel se déplace vers un entourage présidentiel, l'armée et des milieux d'affaires, configuration que les Algériens désignent comme « le système ».",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Abdelaziz_Bouteflika"
+                },
+                {
+                  "id": "psn_dz_t6_8",
+                  "axe": "Le système Bouteflika et sa contestation",
+                  "date": 2014,
+                  "titre": "La chute des cours et la fin de la paix sociale achetée",
+                  "description": "L'effondrement du prix du baril réduit de moitié les recettes d'exportation, dont les hydrocarbures représentent encore plus de 90 %. Le modèle de redistribution — subventions, emplois publics, crédits à la jeunesse — qui avait acheté le calme social depuis 2001 devient intenable, et les plans de diversification restent lettre morte.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89conomie_de_l%27Alg%C3%A9rie"
+                },
+                {
+                  "id": "psn_dz_t6_9",
+                  "axe": "Le système Bouteflika et sa contestation",
+                  "date": 2019,
+                  "titre": "Le Hirak, soulèvement pacifique",
+                  "description": "L'annonce d'une candidature à un cinquième mandat déclenche des manifestations hebdomadaires massives et pacifiques dans tout le pays, portées par la jeunesse et les femmes et réclamant le départ du « système » tout entier. Bouteflika démissionne le 2 avril ; les poursuites contre oligarques et anciens ministres, puis la pandémie, ne referment pas la crise de légitimité ouverte par ce mouvement.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Hirak_(Alg%C3%A9rie)"
+                }
+              ],
+              "essentiel": [
+                "psn_dz_t6_2",
+                "psn_dz_t6_3",
+                "psn_dz_t6_6",
+                "psn_dz_t6_9"
+              ]
+            }
+          ]
+        },
+        {
           "nom": "Allemagne",
           "themes": [
             {
@@ -150543,6 +151087,547 @@
           ]
         },
         {
+          "nom": "Maroc",
+          "note": "L'histoire générale du pays est déjà couverte par « Histoires nationales » > « Afrique » > « Afrique du Nord » > « Histoire du Maroc », et la colonisation comme la décolonisation sont traitées du point de vue français dans les classes de 4ᵉ, de 3ᵉ et de Terminale. Les thèmes ci-dessous suivent le découpage du programme d'histoire marocain, qui insiste sur les dynasties chérifiennes, la résistance aux convoitises étrangères, le mouvement national et le parachèvement de l'unité territoriale.",
+          "themes": [
+            {
+              "id": "psn_ma_t1",
+              "nom": "Les dynasties du Maroc médiéval : Idrissides, Almoravides, Almohades (789-1269)",
+              "difficulte": "Tous niveaux",
+              "axeOrder": [
+                "Les Idrissides et la naissance d'un État marocain",
+                "L'empire almoravide, du Sahara à al-Andalus",
+                "L'apogée almohade et l'avènement des Mérinides"
+              ],
+              "events": [
+                {
+                  "id": "psn_ma_t1_1",
+                  "axe": "Les Idrissides et la naissance d'un État marocain",
+                  "date": 789,
+                  "titre": "Le serment d'allégeance des Awraba à Idris Ier",
+                  "description": "Descendant du Prophète par Ali, Idris ibn Abdallah fuit la répression abbasside et trouve refuge à Walili, l'ancienne Volubilis romaine. La tribu berbère des Awraba lui prête serment d'allégeance et le reconnaît comme imam, fondant le premier État musulman indépendant du Maghreb occidental, détaché du califat de Bagdad. Les manuels marocains y voient l'acte de naissance de l'État marocain, né de la rencontre entre une légitimité religieuse chérifienne et des tribus berbères.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Idris_Ier"
+                },
+                {
+                  "id": "psn_ma_t1_2",
+                  "axe": "Les Idrissides et la naissance d'un État marocain",
+                  "date": 818,
+                  "titre": "L'arrivée des réfugiés andalous à Fès",
+                  "description": "Après l'écrasement de la révolte du faubourg de Cordoue contre l'émir omeyyade, des milliers de familles andalouses sont expulsées et s'installent sur la rive droite de l'oued Fès, face au quartier peuplé peu avant par des réfugiés de Kairouan. La ville fondée par Idris II tire de ces deux vagues ses quartiers des Andalous et des Kairouanais, ses savoir-faire artisanaux et son rôle de capitale intellectuelle du Maroc.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/F%C3%A8s"
+                },
+                {
+                  "id": "psn_ma_t1_3",
+                  "axe": "Les Idrissides et la naissance d'un État marocain",
+                  "date": 859,
+                  "titre": "La fondation de la mosquée al-Quaraouiyine",
+                  "description": "Fatima al-Fihriya, héritière d'une riche famille kairouanaise installée à Fès, consacre sa fortune à l'édification d'une mosquée dans le quartier des Kairouanais. Rapidement dotée de cercles d'enseignement en théologie, en droit malikite, en grammaire, en astronomie et en médecine, elle attire des étudiants de tout l'Occident musulman et devient le grand foyer de savoir du Maroc, souvent présentée comme la plus ancienne institution d'enseignement supérieur encore en activité.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Universit%C3%A9_Al_Quaraouiyine"
+                },
+                {
+                  "id": "psn_ma_t1_4",
+                  "axe": "L'empire almoravide, du Sahara à al-Andalus",
+                  "date": 1040,
+                  "titre": "Abdallah ibn Yassin fonde le mouvement almoravide",
+                  "description": "Le juriste malikite Abdallah ibn Yassin est appelé par les chefs sanhadja du Sahara occidental pour redresser des pratiques religieuses jugées relâchées. Autour de sa prédication rigoriste se forme le mouvement des al-Murabitun, « ceux du ribat », qui unit discipline militaire et réforme religieuse. Maîtres des routes caravanières de l'or, les Almoravides se lancent à la conquête du Maghreb et fondent Marrakech, qui devient leur capitale.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Abdellah_ben_Yassin"
+                },
+                {
+                  "id": "psn_ma_t1_5",
+                  "axe": "L'empire almoravide, du Sahara à al-Andalus",
+                  "date": 1086,
+                  "titre": "La victoire almoravide de Sagrajas",
+                  "description": "Appelés au secours par les rois des taïfas andalouses menacés par Alphonse VI de Castille, qui vient de prendre Tolède, les Almoravides de Youssef ibn Tachfine franchissent le détroit et écrasent l'armée castillane près de Badajoz. Connue en arabe sous le nom de Zallaqa, la victoire stoppe net l'avancée chrétienne et fait du souverain de Marrakech l'arbitre de l'Espagne musulmane.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Sagrajas"
+                },
+                {
+                  "id": "psn_ma_t1_6",
+                  "axe": "L'empire almoravide, du Sahara à al-Andalus",
+                  "date": 1090,
+                  "titre": "Les Almoravides annexent les taïfas d'al-Andalus",
+                  "description": "Jugeant les rois des taïfas incapables de se défendre et coupables de lever des impôts non canoniques, Youssef ibn Tachfine les dépose l'un après l'autre et rattache leurs royaumes à son empire. Pour la première fois de l'histoire, al-Andalus est gouvernée depuis le Maroc : un même pouvoir s'étend alors du fleuve Sénégal à l'Èbre, avec Marrakech pour capitale.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Almoravides"
+                },
+                {
+                  "id": "psn_ma_t1_7",
+                  "axe": "L'apogée almohade et l'avènement des Mérinides",
+                  "date": 1121,
+                  "titre": "Ibn Toumart proclamé Mahdi à Tinmel",
+                  "description": "De retour d'un long séjour d'études en Orient, le théologien masmouda Ibn Toumart prêche un retour à l'unicité absolue de Dieu, le tawhid, et accuse les Almoravides d'anthropomorphisme et de laxisme. Reconnu comme Mahdi, guide impeccable, par les tribus du Haut Atlas, il organise sa communauté dans le ribat fortifié de Tinmel. Son disciple Abd al-Mumin transforme ce mouvement religieux en empire almohade et prend Marrakech en 1147.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ibn_T%C3%BBmart"
+                },
+                {
+                  "id": "psn_ma_t1_8",
+                  "axe": "L'apogée almohade et l'avènement des Mérinides",
+                  "date": 1195,
+                  "titre": "La victoire almohade d'Alarcos",
+                  "description": "Le calife Yaqub al-Mansour inflige à Alphonse VIII de Castille une défaite écrasante à Alarcos, au sud de Tolède. L'empire almohade atteint alors son apogée, régnant de l'Atlantique à la Tripolitaine et de l'Èbre au Sahara ; son souverain prend le surnom d'al-Mansour, le Victorieux, et fait édifier la Koutoubia de Marrakech, la Giralda de Séville et la tour Hassan de Rabat, restée inachevée.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_d%27Alarcos"
+                },
+                {
+                  "id": "psn_ma_t1_9",
+                  "axe": "L'apogée almohade et l'avènement des Mérinides",
+                  "date": 1269,
+                  "titre": "Les Mérinides s'emparent de Marrakech",
+                  "description": "Après un demi-siècle de déclin ouvert par la défaite de Las Navas de Tolosa en 1212, le dernier calife almohade est chassé de Marrakech par les Mérinides, tribu zénète venue de l'est. Ceux-ci abandonnent la prétention califale, transfèrent la capitale à Fès et y multiplient les medersas, faisant de la ville un centre majeur de l'enseignement musulman, tandis que l'Espagne musulmane se réduit au seul royaume de Grenade.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sultanat_m%C3%A9rinide"
+                }
+              ],
+              "essentiel": [
+                "psn_ma_t1_1",
+                "psn_ma_t1_3",
+                "psn_ma_t1_7"
+              ]
+            },
+            {
+              "id": "psn_ma_t2",
+              "nom": "Les Saadiens : l'Oued al-Makhazin et l'empire saharien (1541-1627)",
+              "difficulte": "Tous niveaux",
+              "axeOrder": [
+                "L'essor saadien face aux présides ibériques",
+                "L'Oued al-Makhazin et l'apogée d'Ahmed al-Mansour",
+                "Le déclin saadien et la fragmentation du pays"
+              ],
+              "events": [
+                {
+                  "id": "psn_ma_t2_1",
+                  "axe": "L'essor saadien face aux présides ibériques",
+                  "date": 1541,
+                  "titre": "La reconquête saadienne d'Agadir",
+                  "description": "Partis du Souss où ils prêchaient la guerre sainte contre les comptoirs portugais, les chérifs saadiens enlèvent la forteresse de Santa Cruz du Cap de Gué, l'actuelle Agadir. Le Portugal évacue dans la foulée Safi et Azemmour. Sur ce succès militaire contre l'occupation étrangère, là où les Wattassides avaient échoué, les Saadiens bâtissent la légitimité qui leur permet de prendre le pouvoir.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Agadir"
+                },
+                {
+                  "id": "psn_ma_t2_2",
+                  "axe": "L'essor saadien face aux présides ibériques",
+                  "date": 1549,
+                  "titre": "Les Saadiens prennent Fès aux Wattassides",
+                  "description": "Mohammed ech-Cheikh s'empare de Fès et met fin à la dynastie wattasside, réunifiant le Maroc sous l'autorité d'une famille chérifienne du Drâa. Le pays est désormais gouverné par des descendants du Prophète, principe de légitimité qui reste depuis lors au fondement de la monarchie marocaine.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Saadiens"
+                },
+                {
+                  "id": "psn_ma_t2_3",
+                  "axe": "L'essor saadien face aux présides ibériques",
+                  "date": 1557,
+                  "titre": "L'assassinat de Mohammed ech-Cheikh par les Ottomans",
+                  "description": "Refusant de reconnaître la suzeraineté du sultan d'Istanbul et cherchant l'alliance espagnole pour contenir la Régence d'Alger, le souverain saadien est assassiné dans le Haut Atlas par des janissaires infiltrés dans sa garde. L'épisode illustre la position singulière du Maroc, seul pays du Maghreb à échapper durablement à l'autorité ottomane.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mohammed_ech-Cheikh"
+                },
+                {
+                  "id": "psn_ma_t2_4",
+                  "axe": "L'Oued al-Makhazin et l'apogée d'Ahmed al-Mansour",
+                  "date": 1578,
+                  "titre": "La bataille de l'Oued al-Makhazin",
+                  "description": "Près de Ksar el-Kébir, l'armée saadienne écrase l'expédition débarquée par le roi Sébastien de Portugal au profit d'un prétendant détrôné. Trois souverains y meurent le même jour, ce qui vaut à l'affrontement le nom de bataille des Trois Rois. Privé d'héritier, le Portugal passe sous domination espagnole en 1580 tandis que le Maroc préserve son indépendance : les manuels marocains en font l'acte fondateur de la souveraineté nationale face à l'Europe.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_des_Trois_Rois"
+                },
+                {
+                  "id": "psn_ma_t2_5",
+                  "axe": "L'Oued al-Makhazin et l'apogée d'Ahmed al-Mansour",
+                  "date": 1591,
+                  "titre": "La conquête saadienne de l'empire songhaï",
+                  "description": "Ahmed al-Mansour envoie à travers le Sahara une colonne d'arquebusiers qui écrase à Tondibi l'armée songhaï, pourtant très supérieure en nombre mais dépourvue d'armes à feu, puis occupe Gao et Tombouctou. Le contrôle des mines d'or et du commerce transsaharien vaut au sultan le surnom d'ed-Dehbi, « le Doré », et fait brièvement du Maroc une puissance sahélienne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Tondibi"
+                },
+                {
+                  "id": "psn_ma_t2_6",
+                  "axe": "L'Oued al-Makhazin et l'apogée d'Ahmed al-Mansour",
+                  "date": 1594,
+                  "titre": "L'édification du palais El Badi à Marrakech",
+                  "description": "Financé par la rançon des captifs portugais de l'Oued al-Makhazin et par l'or soudanais, le palais El Badi, « l'Incomparable », est construit avec du marbre de Carrare échangé, dit-on, contre son poids en sucre marocain. Sa magnificence donne la mesure de la richesse saadienne et du rayonnement diplomatique d'un souverain qui échange ambassades et cadeaux avec Élisabeth Iʳᵉ d'Angleterre.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Palais_El_Badi"
+                },
+                {
+                  "id": "psn_ma_t2_7",
+                  "axe": "Le déclin saadien et la fragmentation du pays",
+                  "date": 1603,
+                  "titre": "La mort d'al-Mansour et la guerre civile saadienne",
+                  "description": "Emporté par la peste, Ahmed al-Mansour laisse plusieurs fils qui se disputent le trône. Le pays se scinde durablement entre un royaume de Fès et un royaume de Marrakech, les zaouïas religieuses et les chefs locaux s'émancipent, et le contrôle du Soudan occidental est perdu. Cette décomposition ouvre plus de soixante ans de troubles avant la réunification alaouite.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ahmed_al-Mansour"
+                },
+                {
+                  "id": "psn_ma_t2_8",
+                  "axe": "Le déclin saadien et la fragmentation du pays",
+                  "date": 1614,
+                  "titre": "L'installation des Morisques expulsés d'Espagne",
+                  "description": "Chassés d'Espagne par Philippe III, des dizaines de milliers de Morisques, descendants des musulmans convertis de force, gagnent le Maroc et s'installent surtout à Tétouan, Rabat et Salé. Ils y apportent leurs techniques agricoles et artisanales, leur langue et une hostilité tenace envers la monarchie espagnole qui alimentera la course maritime.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Morisques"
+                },
+                {
+                  "id": "psn_ma_t2_9",
+                  "axe": "Le déclin saadien et la fragmentation du pays",
+                  "date": 1627,
+                  "titre": "La république corsaire du Bouregreg",
+                  "description": "Les Morisques installés à Salé-le-Neuf, l'actuelle Rabat, se constituent en une république indépendante du sultan, gouvernée par un dîwan de notables et vivant de la course. Leurs navires poussent jusqu'à l'Islande et Terre-Neuve. L'existence même de cet État corsaire mesure l'effacement du pouvoir central marocain avant la restauration alaouite.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9publique_du_Bouregreg"
+                }
+              ],
+              "essentiel": [
+                "psn_ma_t2_1",
+                "psn_ma_t2_4",
+                "psn_ma_t2_5"
+              ]
+            },
+            {
+              "id": "psn_ma_t3",
+              "nom": "L'État alaouite face aux convoitises européennes (1666-1894)",
+              "difficulte": "Tous niveaux",
+              "axeOrder": [
+                "La réunification alaouite et l'État de Moulay Ismaïl",
+                "L'ouverture commerciale et les premières défaites",
+                "Les tentatives de réforme du Makhzen"
+              ],
+              "events": [
+                {
+                  "id": "psn_ma_t3_1",
+                  "axe": "La réunification alaouite et l'État de Moulay Ismaïl",
+                  "date": 1666,
+                  "titre": "Moulay Rachid fonde le pouvoir alaouite",
+                  "description": "Chérif originaire du Tafilalet, Moulay Rachid met fin à des décennies d'anarchie en s'emparant de Fès puis de Marrakech, réduisant les zaouïas, les principautés locales et les républiques corsaires. La dynastie alaouite, qui fait comme les Saadiens remonter sa généalogie au Prophète, règne depuis lors sans interruption sur le Maroc : c'est l'une des plus anciennes monarchies du monde encore en place.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Dynastie_alaouite"
+                },
+                {
+                  "id": "psn_ma_t3_2",
+                  "axe": "La réunification alaouite et l'État de Moulay Ismaïl",
+                  "date": 1672,
+                  "titre": "Moulay Ismaïl fait de Meknès sa capitale impériale",
+                  "description": "Au cours d'un règne de cinquante-cinq ans, Moulay Ismaïl dote le Maroc d'une armée permanente, les Abid al-Boukhari, recrutée hors des tribus et directement liée au sultan, et couvre Meknès de palais, de greniers et de murailles qui lui valent le surnom de « Versailles marocain ». Il échange des ambassades avec Louis XIV tout en réduisant méthodiquement les enclaves européennes de la côte.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Isma%C3%AFl_ben_Ch%C3%A9rif"
+                },
+                {
+                  "id": "psn_ma_t3_3",
+                  "axe": "La réunification alaouite et l'État de Moulay Ismaïl",
+                  "date": 1684,
+                  "titre": "La reprise de Tanger aux Anglais",
+                  "description": "Assiégée pendant des années par les troupes du sultan, la garnison anglaise de Tanger — que le Portugal avait apportée en dot à Charles II — évacue la ville après avoir fait sauter le port et la jetée. Cette reconquête, suivie de celle de Larache et d'Asilah, illustre la politique systématique de récupération des présides menée par Moulay Ismaïl.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Tanger"
+                },
+                {
+                  "id": "psn_ma_t3_4",
+                  "axe": "L'ouverture commerciale et les premières défaites",
+                  "date": 1765,
+                  "titre": "La fondation du port d'Essaouira",
+                  "description": "Sidi Mohammed ben Abdallah fait tracer par l'ingénieur français Théodore Cornut un port neuf à Mogador, conçu pour capter et contrôler l'ensemble du commerce européen du royaume. Négociants juifs et étrangers y reçoivent des privilèges ; la ville devient le débouché atlantique des caravanes et le « port de Tombouctou », symbole d'une ouverture commerciale voulue et encadrée par le sultan.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Essaouira"
+                },
+                {
+                  "id": "psn_ma_t3_5",
+                  "axe": "L'ouverture commerciale et les premières défaites",
+                  "date": 1844,
+                  "titre": "La défaite marocaine d'Isly",
+                  "description": "Pour avoir accueilli et soutenu l'émir Abdelkader en lutte contre la conquête de l'Algérie, le Maroc est attaqué par la France : Bugeaud écrase l'armée du sultan sur l'oued Isly, près d'Oujda, tandis que la flotte bombarde Tanger et Mogador. La défaite révèle brutalement le retard militaire du Makhzen et ouvre la longue phase des pressions européennes sur le pays.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_d%27Isly"
+                },
+                {
+                  "id": "psn_ma_t3_6",
+                  "axe": "L'ouverture commerciale et les premières défaites",
+                  "date": 1856,
+                  "titre": "Le traité anglo-marocain de libre-échange",
+                  "description": "Négocié par le consul John Drummond Hay, le traité abolit les monopoles commerciaux du sultan, plafonne les droits de douane à dix pour cent et étend le régime des protections consulaires. L'économie marocaine est ouverte aux produits industriels européens, tandis que la principale ressource fiscale du Makhzen s'effondre : c'est le point de départ de la dépendance financière du royaume.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Histoire_du_Maroc"
+                },
+                {
+                  "id": "psn_ma_t3_7",
+                  "axe": "L'ouverture commerciale et les premières défaites",
+                  "date": 1860,
+                  "titre": "La guerre de Tétouan et l'indemnité espagnole",
+                  "description": "L'Espagne s'empare de Tétouan et impose au Maroc une indemnité de cent millions de pesetas, somme considérable que le sultan ne peut payer qu'en empruntant à Londres et en gageant le produit de ses douanes, contrôlées par des agents européens. Le pays entre ainsi dans l'engrenage de la dette et de la mise sous tutelle financière.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Guerre_hispano-marocaine_(1859-1860)"
+                },
+                {
+                  "id": "psn_ma_t3_8",
+                  "axe": "Les tentatives de réforme du Makhzen",
+                  "date": 1880,
+                  "titre": "La conférence de Madrid et le régime des protégés",
+                  "description": "Réunies officiellement pour limiter les abus du système, les puissances européennes consacrent au contraire le droit de « protection », qui soustrait des milliers de sujets marocains — intermédiaires, courtiers, propriétaires — à l'impôt et à la justice du sultan. Le Makhzen perd le contrôle d'une partie de sa population, et l'ingérence étrangère acquiert un fondement juridique international.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Conf%C3%A9rence_de_Madrid"
+                },
+                {
+                  "id": "psn_ma_t3_9",
+                  "axe": "Les tentatives de réforme du Makhzen",
+                  "date": 1894,
+                  "titre": "La mort de Hassan Ier et l'échec des réformes",
+                  "description": "Le sultan avait tenté de moderniser l'État : missions militaires européennes, fabriques d'armes, monnaie nouvelle, harkas annuelles pour soumettre les tribus dissidentes. Sa mort au cours d'une expédition et l'avènement de l'enfant Abdelaziz, entouré de conseillers étrangers, ouvrent une période d'endettement, d'emprunts ruineux et de révoltes qui conduit en vingt ans à l'établissement du protectorat.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Hassan_ben_Mohammed"
+                }
+              ],
+              "essentiel": [
+                "psn_ma_t3_2",
+                "psn_ma_t3_5",
+                "psn_ma_t3_7"
+              ]
+            },
+            {
+              "id": "psn_ma_t4",
+              "nom": "Le protectorat français et espagnol (1906-1934)",
+              "difficulte": "Tous niveaux",
+              "axeOrder": [
+                "La mise sous tutelle internationale du Maroc",
+                "L'instauration du protectorat",
+                "La conquête militaire et la résistance des tribus"
+              ],
+              "events": [
+                {
+                  "id": "psn_ma_t4_1",
+                  "axe": "La mise sous tutelle internationale du Maroc",
+                  "date": 1906,
+                  "titre": "L'acte d'Algésiras internationalise la question marocaine",
+                  "description": "Réunie après le coup de force diplomatique allemand de Tanger, la conférence d'Algésiras proclame l'indépendance du sultan et la « porte ouverte » commerciale, mais confie dans les faits la police des ports et la Banque d'État du Maroc à un consortium où la France et l'Espagne sont prépondérantes. La souveraineté marocaine devient une fiction encadrée par les puissances européennes.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Conf%C3%A9rence_d%27Alg%C3%A9siras"
+                },
+                {
+                  "id": "psn_ma_t4_2",
+                  "axe": "La mise sous tutelle internationale du Maroc",
+                  "date": 1907,
+                  "titre": "Le débarquement français à Casablanca",
+                  "description": "Après la mort d'ouvriers européens travaillant à la voie ferrée du port, la France bombarde puis occupe Casablanca et pénètre dans la Chaouïa. Cette première occupation territoriale durable, menée sans mandat international, provoque la destitution du sultan Abdelaziz par son frère Abdelhafid, porté au pouvoir par un mouvement hostile à la pénétration étrangère.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Casablanca"
+                },
+                {
+                  "id": "psn_ma_t4_3",
+                  "axe": "La mise sous tutelle internationale du Maroc",
+                  "date": 1911,
+                  "titre": "Le coup d'Agadir",
+                  "description": "Alors que les troupes françaises sont entrées à Fès pour secourir le sultan assiégé par les tribus, l'Allemagne envoie la canonnière Panther devant Agadir pour exiger des compensations. La crise, qui met un moment l'Europe au bord de la guerre, se règle par un marchandage colonial : Berlin accepte la mainmise française sur le Maroc contre une partie du Congo français.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Coup_d%27Agadir"
+                },
+                {
+                  "id": "psn_ma_t4_4",
+                  "axe": "L'instauration du protectorat",
+                  "date": 1912,
+                  "titre": "Le traité du protectorat signé à Fès",
+                  "description": "Le sultan Moulay Hafid signe un traité qui confie à la France la représentation extérieure du Maroc, son armée, ses finances et son administration, sous l'autorité d'un résident général. Le sultan conserve la souveraineté religieuse et le pouvoir de signer les dahirs, fiction juridique qui distingue le protectorat d'une annexion pure et simple et que le mouvement national retournera plus tard contre la France.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Trait%C3%A9_de_F%C3%A8s"
+                },
+                {
+                  "id": "psn_ma_t4_5",
+                  "axe": "L'instauration du protectorat",
+                  "date": 1912,
+                  "titre": "La convention franco-espagnole partage le pays",
+                  "description": "Un accord conclu quelques mois après le traité de Fès réserve à l'Espagne une zone nord autour du Rif et de Tétouan ainsi qu'une bande saharienne au sud, tandis que Tanger reçoit un statut international en 1923. Le Maroc est ainsi découpé en trois ensembles administrés séparément, découpage dont l'héritage pèsera lourd au moment de l'indépendance.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Protectorat_espagnol_au_Maroc"
+                },
+                {
+                  "id": "psn_ma_t4_6",
+                  "axe": "L'instauration du protectorat",
+                  "date": 1912,
+                  "titre": "Lyautey, premier résident général",
+                  "description": "Nommé à la tête du protectorat, Hubert Lyautey met en œuvre une politique d'administration indirecte : maintien des formes du Makhzen, respect affiché des élites traditionnelles, appui sur les grands caïds comme le Glaoui. Il fait construire des « villes nouvelles » à l'écart des médinas, des ports et des voies ferrées, dessinant un Maroc à deux vitesses que dénonceront les nationalistes.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Hubert_Lyautey"
+                },
+                {
+                  "id": "psn_ma_t4_7",
+                  "axe": "La conquête militaire et la résistance des tribus",
+                  "date": 1912,
+                  "titre": "El Hiba et la résistance du Sud",
+                  "description": "Fils d'un chef religieux saharien, Ahmed al-Hiba est proclamé sultan à Tiznit et entre dans Marrakech, porté par les tribus qui refusent le traité de Fès. Sa colonne est brisée à Sidi Bou Othmane par les troupes du colonel Mangin, mais la résistance se prolonge dans l'Anti-Atlas et le Sahara : le protectorat ne s'établit pas sur un pays conquis, mais sur un pays à conquérir.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ahmed_al-Hiba"
+                },
+                {
+                  "id": "psn_ma_t4_8",
+                  "axe": "La conquête militaire et la résistance des tribus",
+                  "date": 1933,
+                  "titre": "La bataille du Bougafer dans le Haut Atlas",
+                  "description": "Retranchés sur le djebel Bougafer, les guerriers Aït Atta et leurs familles résistent plusieurs semaines à une armée française appuyée par l'artillerie et l'aviation. La reddition négociée d'Assou Oubasslam, qui obtient de n'être soumis qu'au sultan et non aux caïds, devient dans la mémoire nationale un symbole de la résistance amazighe.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Bougafer"
+                },
+                {
+                  "id": "psn_ma_t4_9",
+                  "axe": "La conquête militaire et la résistance des tribus",
+                  "date": 1934,
+                  "titre": "La soumission de l'Anti-Atlas achève la « pacification »",
+                  "description": "Avec la reddition des dernières tribus du Jbel Sarhro, du Saghro et du Sahara marocain, la France contrôle enfin la totalité de sa zone, vingt-deux ans après le traité de Fès. Cette conquête, la plus longue de l'histoire coloniale française au Maghreb, a mobilisé jusqu'à cent mille hommes ; elle s'achève au moment même où naît le mouvement nationaliste urbain.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Campagne_du_Maroc"
+                }
+              ],
+              "essentiel": [
+                "psn_ma_t4_3",
+                "psn_ma_t4_4",
+                "psn_ma_t4_9"
+              ]
+            },
+            {
+              "id": "psn_ma_t5",
+              "nom": "La guerre du Rif et la République d'Abdelkrim (1920-1926)",
+              "difficulte": "Tous niveaux",
+              "axeOrder": [
+                "L'offensive espagnole et le désastre d'Anoual",
+                "La République confédérée des tribus du Rif",
+                "L'intervention française et l'écrasement du Rif"
+              ],
+              "events": [
+                {
+                  "id": "psn_ma_t5_1",
+                  "axe": "L'offensive espagnole et le désastre d'Anoual",
+                  "date": 1920,
+                  "titre": "L'Espagne lance la conquête du Rif central",
+                  "description": "Le général Manuel Fernández Silvestre pousse ses colonnes vers l'intérieur du Rif depuis Melilla, multipliant les postes isolés dans une région montagneuse jamais soumise, ni au sultan ni à l'Espagne. Face à lui, Mohamed ben Abdelkrim el-Khattabi, ancien juge et journaliste formé à Melilla, fédère les tribus autour d'un projet de résistance organisée.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Manuel_Fern%C3%A1ndez_Silvestre"
+                },
+                {
+                  "id": "psn_ma_t5_2",
+                  "axe": "L'offensive espagnole et le désastre d'Anoual",
+                  "date": 1921,
+                  "titre": "Le désastre d'Anoual",
+                  "description": "En quelques jours, l'armée espagnole s'effondre : le front rifain enfonce le dispositif, Silvestre disparaît et la retraite se transforme en déroute, achevée par le massacre de Monte Arruit. L'Espagne perd plus de dix mille hommes et tout le territoire conquis. C'est l'une des défaites coloniales les plus lourdes du siècle, et elle fait d'Abdelkrim une figure mondiale de la lutte anticoloniale.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_d%27Anoual"
+                },
+                {
+                  "id": "psn_ma_t5_3",
+                  "axe": "L'offensive espagnole et le désastre d'Anoual",
+                  "date": 1922,
+                  "titre": "Le dossier Picasso et la crise politique espagnole",
+                  "description": "L'enquête confiée au général Picasso sur les responsabilités du désastre met en cause le commandement, l'intendance et jusqu'à l'entourage du roi Alphonse XIII. L'agitation qu'elle provoque contribue directement au coup d'État de Primo de Rivera en 1923 : la guerre du Rif déstabilise ainsi le régime parlementaire espagnol lui-même.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Guerre_du_Rif"
+                },
+                {
+                  "id": "psn_ma_t5_4",
+                  "axe": "La République confédérée des tribus du Rif",
+                  "date": 1921,
+                  "titre": "Abdelkrim proclame la République du Rif",
+                  "description": "Abdelkrim fédère les tribus en une République confédérée des tribus du Rif, dotée d'une assemblée, de ministères, d'une administration fiscale, d'une monnaie et d'une armée régulière. Il tente d'obtenir une reconnaissance internationale et s'appuie sur le droit des peuples à disposer d'eux-mêmes : c'est le premier État moderne né d'une insurrection anticoloniale au Maghreb.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9publique_du_Rif"
+                },
+                {
+                  "id": "psn_ma_t5_5",
+                  "axe": "La République confédérée des tribus du Rif",
+                  "date": 1923,
+                  "titre": "L'organisation de l'État rifain",
+                  "description": "Abdelkrim dote sa République d'écoles, de tribunaux appliquant un droit unifié au détriment des coutumes tribales, d'un service télégraphique et d'une armée encadrée par des déserteurs et des techniciens étrangers. Il interdit la vendetta entre tribus, condition de l'unité militaire, et finance l'État par l'impôt religieux et les prises de guerre.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Abdelkrim_el-Khattabi"
+                },
+                {
+                  "id": "psn_ma_t5_6",
+                  "axe": "La République confédérée des tribus du Rif",
+                  "date": 1924,
+                  "titre": "Le repli espagnol sur la ligne Primo de Rivera",
+                  "description": "Devenu chef du gouvernement à Madrid, Primo de Rivera ordonne l'évacuation de l'intérieur du Rif et le repli sur une ligne fortifiée couvrant Tétouan et Ceuta. La retraite de Xauen coûte des milliers d'hommes. Au sommet de sa puissance, Abdelkrim contrôle alors la quasi-totalité de la zone espagnole du Maroc.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Miguel_Primo_de_Rivera"
+                },
+                {
+                  "id": "psn_ma_t5_7",
+                  "axe": "L'intervention française et l'écrasement du Rif",
+                  "date": 1925,
+                  "titre": "L'offensive rifaine sur l'Ouergha et l'entrée en guerre de la France",
+                  "description": "Cherchant à sécuriser les greniers de la vallée de l'Ouergha, Abdelkrim attaque les postes français installés en zone contestée et menace Fès. La France engage alors des moyens massifs sous l'autorité de Pétain, qui remplace Lyautey, et s'entend avec Madrid : plus de cinq cent mille soldats français et espagnols sont mobilisés contre quelques dizaines de milliers de combattants rifains.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Guerre_du_Rif"
+                },
+                {
+                  "id": "psn_ma_t5_8",
+                  "axe": "L'intervention française et l'écrasement du Rif",
+                  "date": 1925,
+                  "titre": "Le débarquement d'Al Hoceima",
+                  "description": "Le débarquement combiné franco-espagnol dans la baie d'Al Hoceima, opération amphibie qui servira de modèle aux planificateurs alliés, prend la République rifaine à revers. La campagne est également marquée par l'emploi systématique, par l'aviation espagnole, d'armes chimiques telles que l'ypérite contre les villages et les marchés du Rif, dont les conséquences sanitaires font encore débat aujourd'hui.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/D%C3%A9barquement_d%27Al_Hoce%C3%AFma"
+                },
+                {
+                  "id": "psn_ma_t5_9",
+                  "axe": "L'intervention française et l'écrasement du Rif",
+                  "date": 1926,
+                  "titre": "La reddition d'Abdelkrim et son exil",
+                  "description": "Encerclé et à court de munitions, Abdelkrim se rend aux autorités françaises, qui le déportent à La Réunion ; il s'évadera en 1947 pour Le Caire, où il présidera le Comité de libération du Maghreb arabe. Écrasée, l'expérience rifaine devient une référence pour les mouvements de libération du XXᵉ siècle, du Maghreb à l'Asie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Abdelkrim_el-Khattabi"
+                }
+              ],
+              "essentiel": [
+                "psn_ma_t5_2",
+                "psn_ma_t5_4",
+                "psn_ma_t5_9"
+              ]
+            },
+            {
+              "id": "psn_ma_t6",
+              "nom": "Le mouvement national, l'indépendance et l'unité territoriale (1930-1975)",
+              "difficulte": "Tous niveaux",
+              "axeOrder": [
+                "La naissance du mouvement national",
+                "La crise du trône et la lutte armée",
+                "L'indépendance et le parachèvement de l'unité territoriale"
+              ],
+              "events": [
+                {
+                  "id": "psn_ma_t6_1",
+                  "axe": "La naissance du mouvement national",
+                  "date": 1930,
+                  "titre": "Le dahir berbère soulève l'opinion marocaine",
+                  "description": "Un dahir soustrait les tribus berbères aux tribunaux du chraa pour les placer sous des juridictions coutumières et, en matière pénale, sous la justice française. Perçu comme une tentative de diviser le pays et de soustraire une partie des Marocains à l'islam, le texte provoque des manifestations et la récitation du latif dans les mosquées. De cette mobilisation naît le mouvement national marocain.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Dahir_berb%C3%A8re"
+                },
+                {
+                  "id": "psn_ma_t6_2",
+                  "axe": "La naissance du mouvement national",
+                  "date": 1934,
+                  "titre": "Le Plan de réformes marocaines",
+                  "description": "Les jeunes nationalistes du Comité d'action marocaine, formés à Fès, à Paris ou au Caire, remettent aux autorités un programme qui ne réclame pas encore l'indépendance mais l'application loyale du traité de Fès : égalité devant l'impôt, accès des Marocains à l'administration, liberté de la presse, enseignement. Le refus opposé par la Résidence radicalise durablement le mouvement.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Comit%C3%A9_d%27action_marocaine"
+                },
+                {
+                  "id": "psn_ma_t6_3",
+                  "axe": "La naissance du mouvement national",
+                  "date": 1944,
+                  "titre": "Le Manifeste de l'Indépendance",
+                  "description": "Le 11 janvier, le parti de l'Istiqlal, soutenu discrètement par le sultan Mohammed ben Youssef, réclame pour la première fois l'indépendance du Maroc et une monarchie constitutionnelle. Les arrestations qui suivent déclenchent des émeutes à Fès et à Rabat. La date reste l'une des grandes commémorations nationales marocaines.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Parti_de_l%27Istiqlal"
+                },
+                {
+                  "id": "psn_ma_t6_4",
+                  "axe": "La naissance du mouvement national",
+                  "date": 1947,
+                  "titre": "Le discours de Tanger de Mohammed V",
+                  "description": "Dans la zone internationale, le sultan salue publiquement les liens du Maroc avec la Ligue arabe et évoque les droits légitimes du pays, sans prononcer un seul mot de remerciement envers la France. Ce discours scelle l'alliance entre le trône et le mouvement national : le sultan cesse d'être un instrument du protectorat pour devenir le symbole de la revendication d'indépendance.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mohammed_V"
+                },
+                {
+                  "id": "psn_ma_t6_5",
+                  "axe": "La crise du trône et la lutte armée",
+                  "date": 1953,
+                  "titre": "La déposition et l'exil de Mohammed V",
+                  "description": "Avec l'appui de la Résidence, le pacha de Marrakech Thami El Glaoui et des notables conservateurs obtiennent la destitution du sultan, déporté en Corse puis à Madagascar et remplacé par Mohammed Ben Arafa. Le calcul se retourne : l'exilé devient un héros national, son portrait est cherché jusque dans la lune, et la lutte pour son retour fédère tout le pays.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mohammed_V"
+                },
+                {
+                  "id": "psn_ma_t6_6",
+                  "axe": "La crise du trône et la lutte armée",
+                  "date": 1955,
+                  "titre": "L'Armée de libération nationale entre en action",
+                  "description": "Des maquis se forment dans le Rif et le Moyen Atlas, coordonnés avec les nationalistes algériens, tandis que le terrorisme urbain frappe les villes et que les violences éclatent à Oued Zem. La France, déjà engagée en Algérie depuis un an et sortie d'Indochine, comprend qu'elle ne peut tenir le Maroc par la force.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Protectorat_fran%C3%A7ais_au_Maroc"
+                },
+                {
+                  "id": "psn_ma_t6_7",
+                  "axe": "La crise du trône et la lutte armée",
+                  "date": 1955,
+                  "titre": "Les accords de La Celle-Saint-Cloud",
+                  "description": "Reçu près de Paris après le ralliement spectaculaire du Glaoui, Mohammed V négocie son retour et l'ouverture de discussions sur « l'indépendance dans l'interdépendance ». Il rentre triomphalement à Rabat le 16 novembre : la question n'est plus de savoir si le Maroc sera indépendant, mais quand et à quelles conditions.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Thami_El_Glaoui"
+                },
+                {
+                  "id": "psn_ma_t6_8",
+                  "axe": "L'indépendance et le parachèvement de l'unité territoriale",
+                  "date": 1956,
+                  "titre": "La déclaration commune met fin au protectorat",
+                  "description": "Le 2 mars, une déclaration franco-marocaine abroge le traité de Fès et reconnaît l'indépendance du Maroc ; l'Espagne suit en avril pour sa zone nord, et Tanger perd son statut international en octobre. Le pays doit alors bâtir un État unifié à partir de trois administrations distinctes, avec une armée neuve, les Forces armées royales, formée des maquisards et des soldats issus des troupes coloniales.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Histoire_du_Maroc"
+                },
+                {
+                  "id": "psn_ma_t6_9",
+                  "axe": "L'indépendance et le parachèvement de l'unité territoriale",
+                  "date": 1975,
+                  "titre": "La Marche verte vers le Sahara occidental",
+                  "description": "Après la restitution de Tarfaya en 1958 et d'Ifni en 1969, Hassan II lance trois cent cinquante mille volontaires désarmés, Coran en main, vers le Sahara alors sous administration espagnole, au lendemain d'un avis de la Cour internationale de justice. Madrid cède le territoire par les accords de Madrid, mais le Front Polisario proclame la RASD : s'ouvre un conflit régional avec l'Algérie qui n'est toujours pas réglé.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Marche_verte"
+                }
+              ],
+              "essentiel": [
+                "psn_ma_t6_1",
+                "psn_ma_t6_3",
+                "psn_ma_t6_5",
+                "psn_ma_t6_8"
+              ]
+            }
+          ]
+        },
+        {
           "nom": "Mexique",
           "note": "La conquête espagnole du Mexique et l'histoire de l'Empire aztèque sont déjà traitées dans « Histoires nationales » > « Empires et grandes puissances disparues » (« Histoire de l'Empire espagnol » et « Histoire de l'Empire aztèque »). Elles ne sont pas dupliquées ici.",
           "themes": [
@@ -152151,6 +153236,550 @@
                 "psn_ch_t5_1",
                 "psn_ch_t5_3",
                 "psn_ch_t5_4"
+              ]
+            }
+          ]
+        },
+        {
+          "nom": "Tunisie",
+          "note": "L'histoire générale du pays est déjà couverte par « Histoires nationales » > « Afrique » > « Afrique du Nord » > « Histoire de la Tunisie », et Rome comme les guerres puniques le sont par « Histoires nationales » > « Empires et grandes puissances disparues » > « Histoire de la Rome antique ». Les thèmes ci-dessous suivent le découpage du programme d'histoire tunisien, qui part de Carthage vue depuis l'Afrique, insiste sur les réformes du XIXᵉ siècle — première constitution du monde arabe — et sur le mouvement national destourien.",
+          "themes": [
+            {
+              "id": "psn_tn_t1",
+              "nom": "Carthage et l'Afrique antique (-814 à 439)",
+              "difficulte": "Tous niveaux",
+              "axeOrder": [
+                "La thalassocratie punique",
+                "L'affrontement avec Rome",
+                "L'Afrique romaine et chrétienne"
+              ],
+              "events": [
+                {
+                  "id": "psn_tn_t1_1",
+                  "axe": "La thalassocratie punique",
+                  "date": -814,
+                  "titre": "La fondation de Carthage par les Tyriens",
+                  "description": "Selon la tradition rapportée par les auteurs anciens, la princesse phénicienne Élissa, que les Romains appelleront Didon, fuit Tyr et fonde Qart Hadasht, « la ville neuve », sur un promontoire du golfe de Tunis. L'archéologie situe l'installation vers la fin du IXᵉ siècle avant notre ère. Sa position au détroit entre les deux bassins de la Méditerranée fait très tôt de la cité un carrefour du commerce antique.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Carthage"
+                },
+                {
+                  "id": "psn_tn_t1_2",
+                  "axe": "La thalassocratie punique",
+                  "date": -480,
+                  "titre": "La défaite d'Himère et le repli africain",
+                  "description": "Battue par les Grecs de Sicile à Himère, Carthage renonce pour un temps à l'expansion dans l'île et se tourne vers la mise en valeur de son arrière-pays africain. Les grands domaines agricoles de la vallée de la Medjerda, l'huile, le blé et le célèbre traité d'agronomie de Magon font de la cité une puissance terrienne autant que maritime.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_d%27Him%C3%A8re_(480_av._J.-C.)"
+                },
+                {
+                  "id": "psn_tn_t1_3",
+                  "axe": "La thalassocratie punique",
+                  "date": -450,
+                  "titre": "Le périple d'Hannon et les comptoirs atlantiques",
+                  "description": "Le récit du navigateur Hannon, conservé par une traduction grecque, décrit une expédition le long des côtes africaines au-delà des colonnes d'Hercule et la fondation de comptoirs. Associé au voyage d'Himilcon vers le nord, il témoigne de l'étendue du réseau commercial punique, qui va de l'étain atlantique à l'or et à l'ivoire d'Afrique.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Hannon_le_Navigateur"
+                },
+                {
+                  "id": "psn_tn_t1_4",
+                  "axe": "L'affrontement avec Rome",
+                  "date": -264,
+                  "titre": "La première guerre punique et la perte de la Sicile",
+                  "description": "L'affrontement avec Rome pour le contrôle de la Sicile dure vingt-trois ans et oblige les Romains à se doter d'une flotte. Vaincue aux îles Égates en 241, Carthage évacue la Sicile, paie un lourd tribut et doit affronter la révolte de ses mercenaires impayés, la « guerre inexpiable », avant de chercher des compensations en Espagne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Premi%C3%A8re_guerre_punique"
+                },
+                {
+                  "id": "psn_tn_t1_5",
+                  "axe": "L'affrontement avec Rome",
+                  "date": -218,
+                  "titre": "Hannibal porte la guerre en Italie",
+                  "description": "Parti d'Espagne avec ses éléphants, Hannibal Barca franchit les Alpes et inflige à Rome les désastres de la Trébie, de Trasimène et de Cannes, sans parvenir à prendre la ville ni à rallier durablement ses alliés italiens. Sa campagne, étudiée dans toutes les écoles militaires, reste la plus grande menace qu'ait connue la République romaine.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Hannibal_Barca"
+                },
+                {
+                  "id": "psn_tn_t1_6",
+                  "axe": "L'affrontement avec Rome",
+                  "date": -146,
+                  "titre": "Carthage rasée et la naissance de la province d'Afrique",
+                  "description": "Au terme d'un siège de trois ans, Scipion Émilien prend et détruit Carthage, dont la population survivante est réduite en esclavage. Rome organise le territoire en province d'Afrique, dotée d'une frontière, la fossa regia, et confie une partie de l'arrière-pays aux rois numides. La Méditerranée occidentale devient un lac romain.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Troisi%C3%A8me_guerre_punique"
+                },
+                {
+                  "id": "psn_tn_t1_7",
+                  "axe": "L'Afrique romaine et chrétienne",
+                  "date": -44,
+                  "titre": "La refondation romaine de Carthage",
+                  "description": "Décidée par César et menée à bien par Auguste, la colonie Julia Concordia Carthago s'élève sur les ruines de la cité punique et devient rapidement la deuxième ville de l'Occident romain. Capitale d'une province qui fournit une part majeure du blé et de l'huile de Rome, elle se couvre de thermes, de cirques et d'aqueducs.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Histoire_de_Carthage"
+                },
+                {
+                  "id": "psn_tn_t1_8",
+                  "axe": "L'Afrique romaine et chrétienne",
+                  "date": 238,
+                  "titre": "Thysdrus et la révolte des Gordiens",
+                  "description": "Les grands propriétaires de Thysdrus, l'actuelle El Jem, se soulèvent contre la pression fiscale impériale et proclament empereur le proconsul Gordien. L'épisode éclaire la richesse d'une Afrique de l'huile d'olive dont témoigne encore l'immense amphithéâtre d'El Jem, l'un des plus vastes du monde romain.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Gordien_Ier"
+                },
+                {
+                  "id": "psn_tn_t1_9",
+                  "axe": "L'Afrique romaine et chrétienne",
+                  "date": 439,
+                  "titre": "La prise de Carthage par les Vandales",
+                  "description": "Genséric s'empare de Carthage et fonde un royaume vandale qui contrôle le grenier à blé de Rome et lance des raids jusqu'en Italie. L'Afrique chrétienne, qui avait donné à l'Occident Tertullien, Cyprien et saint Augustin, et où le donatisme avait profondément divisé les fidèles, passe sous une domination arienne avant la reconquête byzantine de 533.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Royaume_vandale"
+                }
+              ],
+              "essentiel": [
+                "psn_tn_t1_1",
+                "psn_tn_t1_4",
+                "psn_tn_t1_6"
+              ]
+            },
+            {
+              "id": "psn_tn_t2",
+              "nom": "De la conquête arabe à l'Ifriqiya hafside (647-1574)",
+              "difficulte": "Tous niveaux",
+              "axeOrder": [
+                "La conquête et la fondation de Kairouan",
+                "Aghlabides et Fatimides, l'Ifriqiya rayonnante",
+                "Hilaliens et Hafsides"
+              ],
+              "events": [
+                {
+                  "id": "psn_tn_t2_1",
+                  "axe": "La conquête et la fondation de Kairouan",
+                  "date": 647,
+                  "titre": "La première expédition arabe en Ifriqiya",
+                  "description": "Une armée venue d'Égypte défait le patrice byzantin Grégoire près de Sbeïtla et obtient un tribut avant de se retirer. Cette première incursion ouvre un demi-siècle de conquête intermittente, marqué par la résistance conjointe des Byzantins et des tribus berbères, avant l'installation durable des musulmans en Afrique du Nord.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Suf%C3%A9tula_(647)"
+                },
+                {
+                  "id": "psn_tn_t2_2",
+                  "axe": "La conquête et la fondation de Kairouan",
+                  "date": 670,
+                  "titre": "Oqba ibn Nafi fonde Kairouan",
+                  "description": "Le général arabe établit à l'intérieur des terres, à l'écart d'une côte tenue par la flotte byzantine, un camp permanent qui devient la première grande ville musulmane du Maghreb. Kairouan est à la fois base militaire, capitale provinciale et foyer religieux : sa Grande Mosquée en fait pour des siècles le principal centre de l'islam malikite en Occident.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kairouan"
+                },
+                {
+                  "id": "psn_tn_t2_3",
+                  "axe": "La conquête et la fondation de Kairouan",
+                  "date": 698,
+                  "titre": "La chute de Carthage et la résistance de la Kahina",
+                  "description": "Hassan ibn Numan enlève Carthage aux Byzantins et fonde Tunis avec un arsenal, déplaçant le centre de gravité du pays. La reine berbère des Aurès surnommée la Kahina oppose une dernière résistance avant d'être vaincue ; ses fils se rallient. La conquête s'achève et l'islamisation puis l'arabisation du pays commencent.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Dihya"
+                },
+                {
+                  "id": "psn_tn_t2_4",
+                  "axe": "Aghlabides et Fatimides, l'Ifriqiya rayonnante",
+                  "date": 800,
+                  "titre": "Ibrahim ibn al-Aghlab fonde l'émirat aghlabide",
+                  "description": "Le calife de Bagdad concède à son gouverneur l'Ifriqiya à titre héréditaire contre un tribut annuel : l'émirat aghlabide est autonome en tout sauf le nom. Ses souverains bâtissent Raqqada, dotent le pays de grands bassins, de ribats à Sousse et Monastir, et donnent à la Grande Mosquée de Kairouan sa forme définitive.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Aghlabides"
+                },
+                {
+                  "id": "psn_tn_t2_5",
+                  "axe": "Aghlabides et Fatimides, l'Ifriqiya rayonnante",
+                  "date": 827,
+                  "titre": "La conquête aghlabide de la Sicile",
+                  "description": "Profitant d'une révolte byzantine, une flotte partie de Sousse débarque à Mazara et entreprend la conquête de la Sicile, achevée avec la prise de Syracuse puis de Taormine. Pendant plus de deux siècles, l'île devient une terre d'islam étroitement liée à l'Ifriqiya, avant que les Normands ne la conquièrent à leur tour.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89mirat_de_Sicile"
+                },
+                {
+                  "id": "psn_tn_t2_6",
+                  "axe": "Aghlabides et Fatimides, l'Ifriqiya rayonnante",
+                  "date": 909,
+                  "titre": "Les Fatimides et la fondation de Mahdia",
+                  "description": "Le mouvement chiite ismaélien renverse les Aghlabides et proclame le califat fatimide, rival de Bagdad ; son fondateur édifie la ville-forteresse de Mahdia sur une presqu'île. C'est depuis l'Ifriqiya que les Fatimides conquièrent l'Égypte et fondent Le Caire en 969, transférant leur capitale vers l'Orient.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Fatimides"
+                },
+                {
+                  "id": "psn_tn_t2_7",
+                  "axe": "Hilaliens et Hafsides",
+                  "date": 1057,
+                  "titre": "L'invasion hilalienne",
+                  "description": "Les Zirides, gouverneurs berbères devenus autonomes, rompent avec les Fatimides et reconnaissent Bagdad ; Le Caire lâche alors sur l'Ifriqiya les tribus arabes des Banu Hilal. Kairouan est prise et abandonnée, le pouvoir se replie sur les ports. Au-delà des ruines, l'événement accélère durablement l'arabisation linguistique des campagnes.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Hilaliens"
+                },
+                {
+                  "id": "psn_tn_t2_8",
+                  "axe": "Hilaliens et Hafsides",
+                  "date": 1236,
+                  "titre": "Abu Zakariya fonde la dynastie hafside",
+                  "description": "Le gouverneur almohade de Tunis proclame son indépendance et fonde une dynastie qui règne plus de trois siècles. Tunis devient la capitale du pays, sa médina et la mosquée de la Zitouna prospèrent, les traités commerciaux avec Gênes, Pise, Venise et l'Aragon se multiplient : l'Ifriqiya hafside connaît son âge d'or.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Hafsides"
+                },
+                {
+                  "id": "psn_tn_t2_9",
+                  "axe": "Hilaliens et Hafsides",
+                  "date": 1270,
+                  "titre": "La croisade de Saint Louis devant Tunis",
+                  "description": "Le roi de France débarque sur les ruines de Carthage pour frapper l'allié du sultan d'Égypte ; l'épidémie décime l'armée et emporte le souverain. La croisade s'achève par un traité commercial avantageux pour les Hafsides. L'épisode illustre l'insertion de la Tunisie dans les rapports de force et les échanges de la Méditerranée médiévale.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Huiti%C3%A8me_croisade"
+                }
+              ],
+              "essentiel": [
+                "psn_tn_t2_2",
+                "psn_tn_t2_4",
+                "psn_tn_t2_7"
+              ]
+            },
+            {
+              "id": "psn_tn_t3",
+              "nom": "La Régence de Tunis et les réformes husseinites (1574-1881)",
+              "difficulte": "Tous niveaux",
+              "axeOrder": [
+                "La Régence ottomane et la course",
+                "La dynastie husseinite et l'ouverture",
+                "Les réformes et la faillite"
+              ],
+              "events": [
+                {
+                  "id": "psn_tn_t3_1",
+                  "axe": "La Régence ottomane et la course",
+                  "date": 1574,
+                  "titre": "La Régence de Tunis passe sous autorité ottomane",
+                  "description": "Sinan Pacha reprend Tunis et La Goulette aux Espagnols et met fin à la dynastie hafside. La Tunisie devient une province ottomane gouvernée par un pacha assisté d'une milice de janissaires, insérée dans le système des régences barbaresques aux côtés d'Alger et de Tripoli.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9gence_de_Tunis"
+                },
+                {
+                  "id": "psn_tn_t3_2",
+                  "axe": "La Régence ottomane et la course",
+                  "date": 1591,
+                  "titre": "Le régime des deys et l'essor de la course",
+                  "description": "Une révolte des officiers janissaires impose le gouvernement d'un dey élu, tandis que les beys, chargés de lever l'impôt dans l'intérieur, prennent une importance croissante. La course maritime, l'accueil des Morisques expulsés d'Espagne et le commerce avec Marseille et Livourne façonnent une société urbaine cosmopolite.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Barbaresques"
+                },
+                {
+                  "id": "psn_tn_t3_3",
+                  "axe": "La dynastie husseinite et l'ouverture",
+                  "date": 1705,
+                  "titre": "Hussein ben Ali fonde la dynastie husseinite",
+                  "description": "Officier d'origine crétoise, il repousse une incursion algérienne et se fait proclamer bey ; sa dynastie régnera jusqu'en 1957. Les beys husseinites gouvernent en souverains quasi indépendants, ne reconnaissant à Istanbul qu'une suzeraineté nominale, et s'appuient sur une administration où les mamelouks tiennent une grande place.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Husseinites"
+                },
+                {
+                  "id": "psn_tn_t3_4",
+                  "axe": "La dynastie husseinite et l'ouverture",
+                  "date": 1837,
+                  "titre": "Ahmed Bey et la modernisation de l'État",
+                  "description": "Inspiré par les réformes ottomanes et par l'Égypte de Méhémet Ali, Ahmed Bey crée une armée à l'européenne, l'école polytechnique du Bardo, des manufactures d'État et une flotte. Ces réformes coûteuses, financées par l'impôt et l'emprunt, modernisent l'appareil d'État mais creusent le déficit et pèsent lourdement sur les campagnes.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ahmed_Ier_Bey"
+                },
+                {
+                  "id": "psn_tn_t3_5",
+                  "axe": "La dynastie husseinite et l'ouverture",
+                  "date": 1846,
+                  "titre": "L'abolition de l'esclavage en Tunisie",
+                  "description": "Ahmed Bey ferme le marché aux esclaves de Tunis puis proclame l'affranchissement général, près de deux ans avant l'abolition française de 1848. Décidée sous l'influence des idées réformistes et de la pression britannique, mais justifiée en termes islamiques, la mesure fait de la Régence un pionnier dans le monde arabe et ottoman.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Esclavage_en_Tunisie"
+                },
+                {
+                  "id": "psn_tn_t3_6",
+                  "axe": "Les réformes et la faillite",
+                  "date": 1857,
+                  "titre": "Le Pacte fondamental",
+                  "description": "Après l'exécution retentissante d'un sujet juif, Batou Sfez, les puissances européennes obtiennent du bey la proclamation du Ahd al-Aman, qui garantit la sécurité des personnes et des biens, l'égalité devant l'impôt et la justice, et la liberté de commerce pour tous les habitants, quelle que soit leur religion. C'est le socle des réformes constitutionnelles tunisiennes.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Pacte_fondamental_de_1857"
+                },
+                {
+                  "id": "psn_tn_t3_7",
+                  "axe": "Les réformes et la faillite",
+                  "date": 1861,
+                  "titre": "La première constitution du monde arabe",
+                  "description": "Promulguée par Mohammed Sadok Bey, elle institue une monarchie limitée : un Grand Conseil de soixante membres, la responsabilité des ministres, l'indépendance affichée des tribunaux et la fixation des impôts par la loi. Suspendue dès 1864 sous la pression de la révolte, elle reste une référence majeure du constitutionnalisme arabe et donne son nom au parti Destour, c'est-à-dire « constitution ».",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Constitution_tunisienne_de_1861"
+                },
+                {
+                  "id": "psn_tn_t3_8",
+                  "axe": "Les réformes et la faillite",
+                  "date": 1864,
+                  "titre": "La révolte d'Ali Ben Ghedhahem",
+                  "description": "Le doublement de l'impôt de capitation, la mejba, soulève les tribus du Centre et du Sud derrière Ali Ben Ghedhahem, qui marche sur Kairouan. La répression, les amendes collectives et les confiscations écrasent les campagnes, la constitution est suspendue, et l'État sort de l'épreuve exsangue et plus dépendant encore des prêteurs étrangers.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Insurrection_de_1864"
+                },
+                {
+                  "id": "psn_tn_t3_9",
+                  "axe": "Les réformes et la faillite",
+                  "date": 1869,
+                  "titre": "La banqueroute et la Commission financière internationale",
+                  "description": "Incapable de servir une dette née des réformes, des emprunts à taux ruineux et des dépenses de cour, la Régence fait faillite. Une commission où siègent la France, l'Italie et le Royaume-Uni prend le contrôle des finances publiques. Malgré les réformes du Premier ministre Kheireddine Pacha, la tutelle financière prépare directement la perte d'indépendance.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kheireddine_Pacha"
+                }
+              ],
+              "essentiel": [
+                "psn_tn_t3_3",
+                "psn_tn_t3_5",
+                "psn_tn_t3_6",
+                "psn_tn_t3_9"
+              ]
+            },
+            {
+              "id": "psn_tn_t4",
+              "nom": "Le protectorat français et la naissance du mouvement national (1881-1938)",
+              "difficulte": "Tous niveaux",
+              "axeOrder": [
+                "L'établissement du protectorat",
+                "Colonisation et premières contestations",
+                "Du Destour au Néo-Destour"
+              ],
+              "events": [
+                {
+                  "id": "psn_tn_t4_1",
+                  "axe": "L'établissement du protectorat",
+                  "date": 1881,
+                  "titre": "Le traité du Bardo instaure le protectorat",
+                  "description": "Invoquant des incursions de la tribu des Khroumirs à la frontière algérienne, la France envoie trente mille hommes et impose au bey Mohammed Sadok la signature du traité du Bardo, qui lui confie la défense et la politique extérieure de la Régence. L'opération, encouragée à Berlin lors du congrès de 1878, provoque une crise durable avec l'Italie, qui convoitait la Tunisie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Trait%C3%A9_du_Bardo"
+                },
+                {
+                  "id": "psn_tn_t4_2",
+                  "axe": "L'établissement du protectorat",
+                  "date": 1881,
+                  "titre": "La résistance du Sud et le bombardement de Sfax",
+                  "description": "Le protectorat n'est pas accepté sans combat : Sfax résiste et est bombardée puis prise d'assaut, Kairouan est occupée, et des milliers de familles s'exilent en Tripolitaine. La soumission du Sud demande plusieurs mois de campagne, démentant l'idée d'une occupation pacifique acceptée par le pays.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Histoire_de_la_Tunisie"
+                },
+                {
+                  "id": "psn_tn_t4_3",
+                  "axe": "L'établissement du protectorat",
+                  "date": 1883,
+                  "titre": "La convention de La Marsa",
+                  "description": "Elle complète le traité du Bardo en confiant à la France les réformes administratives, judiciaires et financières, et en installant un résident général qui devient le véritable chef du gouvernement. Le bey conserve les apparences de la souveraineté et signe les décrets : la fiction juridique du protectorat servira plus tard d'argument aux nationalistes.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Conventions_de_La_Marsa"
+                },
+                {
+                  "id": "psn_tn_t4_4",
+                  "axe": "Colonisation et premières contestations",
+                  "date": 1892,
+                  "titre": "La colonisation foncière et les terres habous",
+                  "description": "Une série de textes permet l'enregistrement des terres au nom de colons et l'aliénation de terres habous jusque-là inaliénables, au bénéfice d'une colonisation officielle et privée. En une génération, des centaines de milliers d'hectares parmi les plus fertiles du Nord passent aux mains d'Européens, tandis que se développent mines de phosphates, chemins de fer et ports.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Protectorat_fran%C3%A7ais_de_Tunisie"
+                },
+                {
+                  "id": "psn_tn_t4_5",
+                  "axe": "Colonisation et premières contestations",
+                  "date": 1907,
+                  "titre": "Le mouvement des Jeunes Tunisiens",
+                  "description": "Formés au Collège Sadiki et souvent francophones, Ali Bach Hamba, Béchir Sfar et Abdeljelil Zaouche réclament dans leur journal Le Tunisien l'égalité des salaires, l'accès à l'instruction moderne et la participation des Tunisiens à la gestion du pays. Leur programme reste réformiste, mais ils posent les bases intellectuelles du nationalisme.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jeunes_Tunisiens"
+                },
+                {
+                  "id": "psn_tn_t4_6",
+                  "axe": "Colonisation et premières contestations",
+                  "date": 1911,
+                  "titre": "L'affaire du Jellaz et le boycott des tramways",
+                  "description": "L'immatriculation du cimetière du Jellaz, perçue comme une atteinte au caractère sacré des terres musulmanes, provoque des affrontements meurtriers puis des condamnations à mort ; le boycott des tramways de Tunis l'année suivante est le premier mouvement de masse organisé. La répression et l'état de siège brisent le mouvement des Jeunes Tunisiens.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Cimeti%C3%A8re_du_Djellaz"
+                },
+                {
+                  "id": "psn_tn_t4_7",
+                  "axe": "Du Destour au Néo-Destour",
+                  "date": 1920,
+                  "titre": "La fondation du Destour",
+                  "description": "Le parti libéral constitutionnel, le Destour, réclame une constitution, un parlement élu et un gouvernement responsable, en s'appuyant sur la mémoire du texte de 1861 et sur le droit des peuples proclamé après la Première Guerre mondiale. Dirigé par Abdelaziz Thâalbi, auteur de La Tunisie martyre, il reste un parti de notables citadins.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Destour"
+                },
+                {
+                  "id": "psn_tn_t4_8",
+                  "axe": "Du Destour au Néo-Destour",
+                  "date": 1924,
+                  "titre": "La CGTT de Mohamed Ali El Hammi",
+                  "description": "La première centrale syndicale tunisienne, détachée de la CGT française, organise les dockers et les ouvriers et fait le lien entre revendication sociale et question nationale. Dissoute et ses dirigeants exilés dès 1925, elle inaugure une tradition dont l'UGTT, fondée en 1946 par Farhat Hached, sera l'héritière et un pilier du mouvement national.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Conf%C3%A9d%C3%A9ration_g%C3%A9n%C3%A9rale_des_travailleurs_tunisiens"
+                },
+                {
+                  "id": "psn_tn_t4_9",
+                  "axe": "Du Destour au Néo-Destour",
+                  "date": 1934,
+                  "titre": "Le congrès de Ksar Hellal et le Néo-Destour",
+                  "description": "De jeunes militants formés en France, autour d'Habib Bourguiba et du journal L'Action tunisienne, rompent avec la direction du Destour jugée trop attentiste et fondent le Néo-Destour. Doté de cellules jusque dans les villages et d'un discours d'indépendance, le nouveau parti transforme le nationalisme tunisien en mouvement de masse et conduira le pays à l'indépendance.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/N%C3%A9o-Destour"
+                }
+              ],
+              "essentiel": [
+                "psn_tn_t4_1",
+                "psn_tn_t4_5",
+                "psn_tn_t4_7",
+                "psn_tn_t4_9"
+              ]
+            },
+            {
+              "id": "psn_tn_t5",
+              "nom": "La lutte pour l'indépendance et l'État bourguibien (1938-1987)",
+              "difficulte": "Tous niveaux",
+              "axeOrder": [
+                "De la répression à la lutte armée",
+                "L'indépendance et les réformes bourguibiennes",
+                "Les impasses du régime"
+              ],
+              "events": [
+                {
+                  "id": "psn_tn_t5_1",
+                  "axe": "De la répression à la lutte armée",
+                  "date": 1938,
+                  "titre": "Les manifestations du 9 avril 1938",
+                  "description": "Réclamant un parlement tunisien, des milliers de manifestants affrontent la police à Tunis ; la fusillade fait des dizaines de morts. Le Néo-Destour est dissous et ses dirigeants, dont Bourguiba, emprisonnés. La date est devenue la fête des Martyrs, l'une des grandes commémorations nationales tunisiennes.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89v%C3%A9nements_du_9_avril_1938"
+                },
+                {
+                  "id": "psn_tn_t5_2",
+                  "axe": "De la répression à la lutte armée",
+                  "date": 1943,
+                  "titre": "Moncef Bey déposé par la France libre",
+                  "description": "Monté sur le trône en 1942, Moncef Bey avait formé un gouvernement à coloration nationaliste et refusé de choisir entre l'Axe et les Alliés pendant la campagne de Tunisie. Accusé de collaboration, il est déposé et exilé par les autorités françaises. Le « moncéfisme » devient un puissant symbole de l'unité nationale autour du trône.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Moncef_Bey"
+                },
+                {
+                  "id": "psn_tn_t5_3",
+                  "axe": "De la répression à la lutte armée",
+                  "date": 1952,
+                  "titre": "Les fellagas et l'assassinat de Farhat Hached",
+                  "description": "Face à la répression et à l'arrestation des dirigeants du Néo-Destour, des maquis, les fellagas, se soulèvent dans le Sud et le Centre. L'assassinat du secrétaire général de l'UGTT Farhat Hached par la Main rouge, organisation liée à des milieux coloniaux, provoque grèves et émeutes dans tout le Maghreb et internationalise la question tunisienne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Farhat_Hached"
+                },
+                {
+                  "id": "psn_tn_t5_4",
+                  "axe": "L'indépendance et les réformes bourguibiennes",
+                  "date": 1954,
+                  "titre": "Mendès France et l'autonomie interne",
+                  "description": "Venu à Carthage peu après la chute de Diên Biên Phu, le président du Conseil reconnaît solennellement l'autonomie interne de la Tunisie ; les conventions sont signées en 1955. Bourguiba accepte cette étape que Salah Ben Youssef rejette au nom d'une indépendance immédiate et maghrébine : la rupture entre les deux hommes divise durablement le mouvement national.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Pierre_Mend%C3%A8s_France"
+                },
+                {
+                  "id": "psn_tn_t5_5",
+                  "axe": "L'indépendance et les réformes bourguibiennes",
+                  "date": 1956,
+                  "titre": "Le protocole d'indépendance du 20 mars",
+                  "description": "Le protocole franco-tunisien abroge le traité du Bardo et reconnaît l'indépendance de la Tunisie ; une Assemblée constituante est élue dans la foulée et Bourguiba devient président du Conseil. L'indépendance est obtenue par la négociation, quelques mois après celle du Maroc et un an et demi après le déclenchement de la guerre d'Algérie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Histoire_de_la_Tunisie"
+                },
+                {
+                  "id": "psn_tn_t5_6",
+                  "axe": "L'indépendance et les réformes bourguibiennes",
+                  "date": 1956,
+                  "titre": "Le Code du statut personnel",
+                  "description": "Promulgué en août, il abolit la polygamie et la répudiation, institue le divorce judiciaire et un âge minimum au mariage, et exige le consentement des époux. Complété par l'accès des filles à l'école, le droit de vote des femmes et, en 1965, la légalisation de l'avortement, il fait de la Tunisie le pays le plus avancé du monde arabe en matière de droits des femmes.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Code_du_statut_personnel_(Tunisie)"
+                },
+                {
+                  "id": "psn_tn_t5_7",
+                  "axe": "L'indépendance et les réformes bourguibiennes",
+                  "date": 1957,
+                  "titre": "La déposition du bey et la proclamation de la République",
+                  "description": "L'Assemblée constituante abolit la monarchie husseinite vieille de deux siècles et proclame la République, avec Bourguiba pour premier président. Le nouveau régime nationalise les terres coloniales, supprime les juridictions religieuses et intègre l'université de la Zitouna à l'enseignement d'État : c'est la construction d'un État centralisé et modernisateur.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Habib_Bourguiba"
+                },
+                {
+                  "id": "psn_tn_t5_8",
+                  "axe": "Les impasses du régime",
+                  "date": 1961,
+                  "titre": "La crise de Bizerte",
+                  "description": "La Tunisie réclame l'évacuation de la base navale française de Bizerte, dernière emprise militaire étrangère du pays, et lance une pression populaire sur le camp retranché. L'affrontement fait plus d'un millier de morts tunisiens en trois jours. La base sera évacuée en octobre 1963, achevant la décolonisation territoriale du pays.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Crise_de_Bizerte"
+                },
+                {
+                  "id": "psn_tn_t5_9",
+                  "axe": "Les impasses du régime",
+                  "date": 1969,
+                  "titre": "L'échec de la collectivisation d'Ahmed Ben Salah",
+                  "description": "La généralisation autoritaire des coopératives agricoles, pilotée par le ministre Ahmed Ben Salah, se heurte à la résistance des paysans et des propriétaires et désorganise la production. Bourguiba abandonne brutalement la politique socialiste et fait juger son ministre. Le pays s'oriente vers l'ouverture économique et le tourisme, mais le pouvoir se personnalise : Bourguiba est proclamé président à vie en 1975.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ahmed_Ben_Salah"
+                }
+              ],
+              "essentiel": [
+                "psn_tn_t5_2",
+                "psn_tn_t5_4",
+                "psn_tn_t5_5",
+                "psn_tn_t5_6"
+              ]
+            },
+            {
+              "id": "psn_tn_t6",
+              "nom": "De Ben Ali à la transition démocratique (1987-2021)",
+              "difficulte": "Tous niveaux",
+              "axeOrder": [
+                "Le régime de Ben Ali",
+                "La révolution de 2011",
+                "La transition et ses crises"
+              ],
+              "events": [
+                {
+                  "id": "psn_tn_t6_1",
+                  "axe": "Le régime de Ben Ali",
+                  "date": 1987,
+                  "titre": "Le « coup d'État médical » du 7 novembre",
+                  "description": "Nommé Premier ministre quelques semaines plus tôt, Zine el-Abidine Ben Ali fait constater par un collège de médecins l'incapacité de Bourguiba, âgé de 84 ans, et le destitue conformément à la Constitution. Le changement, salué par des promesses de démocratisation et de limitation des mandats, est d'abord accueilli avec soulagement par la population.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Zine_el-Abidine_Ben_Ali"
+                },
+                {
+                  "id": "psn_tn_t6_2",
+                  "axe": "Le régime de Ben Ali",
+                  "date": 1991,
+                  "titre": "Le verrouillage du système et l'écrasement d'Ennahdha",
+                  "description": "Après une brève ouverture, le mouvement islamiste Ennahdha est interdit et des milliers de ses militants emprisonnés ou exilés. Le parti présidentiel, rebaptisé RCD, quadrille le pays, la presse est contrôlée et la police politique surveille la société. Les scrutins successifs donnent au président des scores supérieurs à 90 %.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Rassemblement_constitutionnel_d%C3%A9mocratique"
+                },
+                {
+                  "id": "psn_tn_t6_3",
+                  "axe": "Le régime de Ben Ali",
+                  "date": 2008,
+                  "titre": "Le soulèvement du bassin minier de Gafsa",
+                  "description": "Six mois de grèves, de sit-in et de manifestations contre le chômage et le clientélisme dans les recrutements de la Compagnie des phosphates sont réprimés dans l'isolement et le silence médiatique. Premier grand mouvement social depuis vingt ans, il annonce le soulèvement de 2010 par ses ressorts : chômage des diplômés, inégalités régionales et corruption.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Gr%C3%A8ves_de_Gafsa"
+                },
+                {
+                  "id": "psn_tn_t6_4",
+                  "axe": "La révolution de 2011",
+                  "date": 2010,
+                  "titre": "Le geste de Mohamed Bouazizi à Sidi Bouzid",
+                  "description": "Le 17 décembre, un jeune vendeur ambulant s'immole par le feu après la saisie de sa marchandise et une humiliation subie devant l'administration. Relayée par les réseaux sociaux et par des télévisions satellitaires, l'affaire déclenche des manifestations qui gagnent en quelques semaines l'ensemble du pays et débordent les relais habituels du pouvoir.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mohamed_Bouazizi"
+                },
+                {
+                  "id": "psn_tn_t6_5",
+                  "axe": "La révolution de 2011",
+                  "date": 2011,
+                  "titre": "Le 14 janvier : la chute de Ben Ali",
+                  "description": "Après le ralliement de l'UGTT, le refus de l'armée de tirer sur la foule et une manifestation immense devant le ministère de l'Intérieur, Ben Ali quitte le pays pour l'Arabie saoudite au terme de vingt-trois ans de pouvoir. C'est la première chute d'un régime autoritaire du monde arabe par un soulèvement populaire : elle ouvre le cycle des printemps arabes.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9volution_tunisienne"
+                },
+                {
+                  "id": "psn_tn_t6_6",
+                  "axe": "La révolution de 2011",
+                  "date": 2011,
+                  "titre": "L'élection de l'Assemblée constituante",
+                  "description": "Le 23 octobre, les premières élections libres de l'histoire du pays portent Ennahdha en tête ; le mouvement gouverne en coalition avec deux partis laïques, la « troïka ». Le débat constituant, la liberté retrouvée de la presse et l'irruption d'une société civile organisée transforment durablement la vie politique tunisienne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89lections_constituantes_tunisiennes_de_2011"
+                },
+                {
+                  "id": "psn_tn_t6_7",
+                  "axe": "La transition et ses crises",
+                  "date": 2013,
+                  "titre": "Les assassinats politiques et le Dialogue national",
+                  "description": "Les assassinats de Chokri Belaïd en février et de Mohamed Brahmi en juillet, dans un contexte de violence jihadiste et de blocage institutionnel, plongent le pays dans sa plus grave crise. Un quartet — UGTT, patronat, Ligue des droits de l'homme et Ordre des avocats — parraine un dialogue national qui aboutit à un gouvernement de technocrates et vaudra à ses membres le prix Nobel de la paix en 2015.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Quartet_du_dialogue_national"
+                },
+                {
+                  "id": "psn_tn_t6_8",
+                  "axe": "La transition et ses crises",
+                  "date": 2014,
+                  "titre": "L'adoption de la Constitution de la Deuxième République",
+                  "description": "Votée le 26 janvier par une très large majorité de la Constituante, la Constitution garantit les libertés, l'égalité des citoyens et des citoyennes et la liberté de conscience, et institue un régime parlementaire à exécutif partagé. Les élections de la fin de l'année et l'alternance pacifique qui suit font de la Tunisie la seule démocratie issue des printemps arabes.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Constitution_tunisienne_de_2014"
+                },
+                {
+                  "id": "psn_tn_t6_9",
+                  "axe": "La transition et ses crises",
+                  "date": 2021,
+                  "titre": "Le 25 juillet : gel du Parlement par Kaïs Saïed",
+                  "description": "Invoquant le péril imminent prévu par l'article 80, le président élu en 2019 gèle le Parlement, lève l'immunité des députés et limoge le chef du gouvernement, avant de gouverner par décrets puis de faire adopter en 2022 une constitution hyperprésidentielle. Salué par une partie d'une population épuisée par la crise économique, ce tournant remet en cause l'équilibre institutionnel issu de 2014.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ka%C3%AFs_Sa%C3%AFed"
+                }
+              ],
+              "essentiel": [
+                "psn_tn_t6_1",
+                "psn_tn_t6_4",
+                "psn_tn_t6_5",
+                "psn_tn_t6_8"
               ]
             }
           ]
