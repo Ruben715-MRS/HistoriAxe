@@ -941,6 +941,11 @@ let axisFilterActive = false;
 let essentialFilterActive = false;
 let currentThemeAxes = [];
 let selectedAxes = new Set();
+// Thème auquel se rapporte selectedAxes. La sélection d'axes doit survivre
+// à un aller-retour sur le MÊME thème (retour de partie, bouton retour) et
+// repartir de « tous les axes » dès qu'on en ouvre un autre — voir
+// initAxes(), qui comparait jusqu'ici les listes d'axes au lieu du thème.
+let selectedAxesThemeId = null;
 
 let currentPool = [];
 let placedEvents = [];
@@ -1366,11 +1371,20 @@ function initAxes() {
         // d'apparition dans le tableau d'événements (qui reste, lui, chronologique).
         axes = theme.axeOrder.filter(a => axes.includes(a));
     }
-    const sameTheme = currentThemeAxes.length === axes.length && currentThemeAxes.every(a => axes.includes(a));
+    // Comparaison sur l'identité du thème, et non sur sa liste d'axes :
+    // openThemeAt() renseigne déjà currentThemeAxes avec les axes du thème
+    // qu'on vient d'ouvrir avant d'afficher cet écran, si bien qu'une
+    // comparaison de listes se concluait toujours par « même thème ». La
+    // sélection du thème précédent restait alors active : les axes du
+    // nouveau thème s'affichaient tous décochés, le sous-titre annonçait
+    // « 0 événement sélectionné », et lancer un mode se soldait par
+    // « Ce thème ne contient aucun événement » sur un thème qui en a 50.
+    const sameTheme = selectedAxesThemeId === theme.id;
     currentThemeAxes = axes;
     if (!sameTheme || selectedAxes.size === 0) {
         selectedAxes = new Set(axes); // nouveau thème (ou état vide) : tout sélectionné par défaut
     }
+    selectedAxesThemeId = theme.id;
     renderAxesScreen();
 }
 
