@@ -137541,7 +137541,7 @@
     },
     {
       "nom": "Programmes scolaires",
-      "note": "Les grands événements de l'histoire mondiale contemporaine (Première et Seconde Guerres mondiales, totalitarismes, guerre froide, décolonisation, construction européenne) sont traités de manière approfondie dans le programme français, disponible dans les catégories Collège (Classe de 3ème) et Lycée (Classe de Terminale). Les thèmes ci-dessous se concentrent sur les épisodes propres à l'histoire nationale de chaque pays, absents ou seulement effleurés par le programme français.",
+      "note": "Les grands événements de l'histoire mondiale contemporaine (Première et Seconde Guerres mondiales, totalitarismes, guerre froide, décolonisation, construction européenne) sont traités de manière approfondie dans le programme français, disponible dans les catégories Collège (Classe de 3ème) et Lycée (Classe de Terminale). Les thèmes ci-dessous se concentrent sur les épisodes propres à l'histoire nationale de chaque pays, absents ou seulement effleurés par le programme français. Chaque pays fait par ailleurs l'objet d'un panorama d'ensemble dans « Histoires nationales » : lorsqu'un même épisode figure aux deux endroits, il est abordé ici sous l'angle retenu par le programme scolaire du pays concerné, et non repris à l'identique.",
       "subcategories": [
         {
           "nom": "France",
@@ -137795,8 +137795,8 @@
                       "id": "6e_30",
                       "axe": "L'empire romain dans le monde antique",
                       "date": 476,
-                      "titre": "Chute de l'Empire romain d'Occident",
-                      "description": "Affaibli depuis des décennies par les invasions de peuples venus d'au-delà de ses frontières et par de graves crises internes, l'Empire romain d'Occident perd tout pouvoir réel. Le chef germain Odoacre dépose le dernier empereur, le jeune Romulus Augustule, sans même chercher à le remplacer par un nouvel empereur romain. Cet événement symbolise, pour les historiens, la fin de l'Antiquité et le basculement de l'Europe occidentale dans le Moyen Âge.",
+                      "titre": "La déposition de Romulus Augustule",
+                      "description": "Le chef germain Odoacre, à la tête de soldats qui servaient déjà Rome, dépose le dernier empereur d'Occident, un adolescent, et renvoie les insignes impériaux à Constantinople : il ne prend pas sa place, il déclare la fonction inutile. L'Empire romain d'Orient, lui, continue pour mille ans encore. Les historiens ont choisi cette date comme repère pour marquer la fin de l'Antiquité, mais les habitants de l'époque n'ont pas eu le sentiment de changer de monde du jour au lendemain.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Chute_de_l%27Empire_romain_d%27Occident"
                     }
                   ],
@@ -143085,8 +143085,8 @@
                   "id": "psn_za_t3_12",
                   "axe": "Radicalisation de la résistance et répression (1960-1976)",
                   "date": 1960,
-                  "titre": "Massacre de Sharpeville",
-                  "description": "La police ouvre le feu sur une foule pacifique rassemblée devant un poste de police à Sharpeville pour protester contre les lois sur les laissez-passer, tuant 69 personnes et en blessant environ 180, la plupart touchées dans le dos en fuyant. Ce massacre provoque une onde de choc internationale, la première condamnation par l'ONU de l'apartheid et le début de sanctions économiques croissantes. Il marque un tournant stratégique majeur : le CNA et le Congrès panafricaniste, jusque-là non-violents, se tournent vers la lutte armée.",
+                  "titre": "Sharpeville et le tournant de la lutte armée",
+                  "description": "Au lendemain de la fusillade, le gouvernement proclame l'état d'urgence, interdit le Congrès national africain et le Congrès panafricaniste et emprisonne des milliers de militants. Privées de tout moyen d'action légale après un demi-siècle de protestation non violente, les deux organisations basculent dans la clandestinité et fondent des branches armées, dont Umkhonto we Sizwe en 1961. Les programmes sud-africains font de ce basculement stratégique, plus encore que du massacre lui-même, le véritable tournant de la résistance.",
                   "wikipedia": "https://fr.wikipedia.org/wiki/Massacre_de_Sharpeville"
                 },
                 {
@@ -143295,8 +143295,8 @@
                   "id": "psn_za_t4_11",
                   "axe": "Transition institutionnelle et premières élections (1993-1994)",
                   "date": 1994,
-                  "titre": "Premières élections multiraciales",
-                  "description": "Pour la première fois de son histoire, l'Afrique du Sud organise des élections générales ouvertes à l'ensemble de sa population adulte, sans distinction de race, avec un taux de participation avoisinant 87 % et des files d'attente de plusieurs kilomètres devant les bureaux de vote. Le Congrès national africain remporte une victoire écrasante avec environ 62 % des suffrages exprimés. Cet événement, suivi dans le monde entier, marque symboliquement la fin définitive du régime de l'apartheid après 46 années de ségrégation légale.",
+                  "titre": "Le scrutin d'avril 1994 et le gouvernement d'unité nationale",
+                  "description": "Avec environ 62 % des voix, le Congrès national africain obtient la majorité absolue mais non les deux tiers qui lui auraient permis de rédiger seul la Constitution définitive. Conformément à la Constitution intérimaire négociée à Kempton Park, tout parti dépassant 5 % entre au gouvernement : de Klerk devient vice-président et l'Inkatha de Buthelezi participe à l'exécutif. Ce partage négocié du pouvoir, et non le seul verdict des urnes, est ce que les manuels retiennent comme la clé d'une transition sans guerre civile.",
                   "wikipedia": "https://fr.wikipedia.org/wiki/Élections_générales_sud-africaines_de_1994"
                 },
                 {
@@ -143652,6 +143652,7 @@
               "essentiel": [
                 "psn_dz_t1_1",
                 "psn_dz_t1_2",
+                "psn_dz_t1_3",
                 "psn_dz_t1_9"
               ]
             },
@@ -143830,7 +143831,9 @@
               ],
               "essentiel": [
                 "psn_dz_t3_2",
+                "psn_dz_t3_4",
                 "psn_dz_t3_5",
+                "psn_dz_t3_8",
                 "psn_dz_t3_9"
               ]
             },
@@ -144358,8 +144361,8 @@
                   "id": "psn_de_t3_6",
                   "axe": "La guerre franco-prussienne et la proclamation de l'Empire (1870-1871)",
                   "date": 1871,
-                  "titre": "Proclamation de l'Empire allemand à Versailles",
-                  "description": "Dans la galerie des Glaces du château de Versailles occupé par les troupes prussiennes, le roi Guillaume Ier de Prusse est proclamé empereur allemand (Kaiser) par les princes allemands réunis, achevant en un lieu hautement symbolique l'unification politique de l'Allemagne sous direction prussienne. Ce choix délibéré du lieu, siège historique de la monarchie française, constitue une humiliation calculée envers la France vaincue, dont le ressentiment nourrira durablement les tensions franco-allemandes jusqu'à la Première Guerre mondiale. Cette proclamation met fin à des siècles de fragmentation politique allemande et fait naître, en plein cœur de l'Europe, une nouvelle grande puissance industrielle et militaire.",
+                  "titre": "Le Kaiserreich, un empire fédéral sous hégémonie prussienne",
+                  "description": "La constitution d'avril 1871 fait du nouvel État une fédération de vingt-cinq États qui conservent leurs souverains, leur administration et une part de leur fiscalité. Le Reichstag est élu au suffrage universel masculin, mais le chancelier ne répond que devant l'empereur, et la Prusse, avec les deux tiers de la population, dispose d'une minorité de blocage au Bundesrat. Les manuels allemands insistent sur cette architecture : un régime moderne par son suffrage, autoritaire par son exécutif, dont les contradictions pèseront jusqu'en 1918.",
                   "wikipedia": "https://fr.wikipedia.org/wiki/Proclamation_de_l'Empire_allemand"
                 },
                 {
@@ -144814,8 +144817,8 @@
                   "id": "psn_ar_t1_5",
                   "axe": "Les invasions anglaises et le mouvement indépendantiste (1806-1816)",
                   "date": 1816,
-                  "titre": "Déclaration d'indépendance à Tucumán",
-                  "description": "Réuni dans la ville de Tucumán, un congrès de représentants des provinces unies du Río de la Plata proclame formellement l'indépendance vis-à-vis de l'Espagne, six ans après la première autonomie de fait obtenue en 1810. Cette déclaration, dont la date du 9 juillet devient depuis la fête nationale argentine de l'indépendance, ne règle cependant pas immédiatement la question du régime politique à adopter ni les rivalités profondes entre Buenos Aires et les provinces de l'intérieur. Elle ouvre une période de plusieurs décennies d'instabilité institutionnelle et de guerres civiles avant la stabilisation politique du pays.",
+                  "titre": "Le congrès de Tucumán et la question du régime",
+                  "description": "Le congrès proclame l'indépendance mais se divise aussitôt sur la forme de l'État : Belgrano propose une monarchie constitutionnelle confiée à un descendant des Incas, d'autres plaident pour un prince européen, les partisans de la république restent minoritaires. Les provinces de la Ligue fédérale d'Artigas, elles, ne siègent pas. Les programmes argentins lisent ce congrès moins comme un aboutissement que comme le point de départ du conflit entre unitaires et fédéraux qui ensanglantera le demi-siècle suivant.",
                   "wikipedia": "https://fr.wikipedia.org/wiki/Déclaration_d'indépendance_de_l'Argentine"
                 },
                 {
@@ -144870,8 +144873,8 @@
                   "id": "psn_ar_t1_12",
                   "axe": "Unification nationale et consolidation de l'État (1852-1880)",
                   "date": 1868,
-                  "titre": "Présidence de Domingo Faustino Sarmiento",
-                  "description": "Écrivain, journaliste et homme d'État, Domingo Faustino Sarmiento devient président de la République et mène une politique volontariste de développement de l'instruction publique gratuite et obligatoire, construisant des centaines d'écoles à travers le pays et faisant venir des institutrices américaines pour former les enseignants argentins. Son œuvre éducative, considérée comme fondatrice du système scolaire argentin moderne, contribue à l'alphabétisation rapide du pays par rapport à ses voisins latino-américains. Il reste l'une des figures intellectuelles et politiques les plus respectées de l'histoire argentine, son visage figurant sur le billet de banque national.",
+                  "titre": "Sarmiento et l'école comme instrument de la nation",
+                  "description": "Auteur de Facundo, où il oppose « civilisation » et « barbarie », Sarmiento voit dans l'école le moyen de fabriquer des citoyens à partir d'une population rurale et, bientôt, massivement immigrée. Il fait venir soixante-cinq institutrices des États-Unis pour fonder des écoles normales et former des maîtres argentins. Les manuels discutent aujourd'hui les deux faces de cette œuvre : une alphabétisation exceptionnelle en Amérique latine, obtenue par l'effacement assumé des cultures indigènes et gauchas.",
                   "wikipedia": "https://fr.wikipedia.org/wiki/Domingo_Faustino_Sarmiento"
                 },
                 {
@@ -146646,8 +146649,8 @@
                   "id": "psn_be_t1_1",
                   "axe": "La révolution belge et l'indépendance (1830-1831)",
                   "date": 1830,
-                  "titre": "Révolution belge",
-                  "description": "Inspirée par la révolution française de juillet 1830 et déclenchée par une représentation d'opéra à Bruxelles, une insurrection populaire éclate contre le régime du royaume uni des Pays-Bas, jugé trop centralisateur et peu attentif aux spécificités catholiques et francophones des provinces méridionales. Ce soulèvement, mené par une coalition improbable de catholiques et de libéraux belges, aboutit en quelques semaines à l'expulsion des troupes hollandaises de Bruxelles et des principales villes du sud. Cette révolution ouvre directement la voie à la proclamation de l'indépendance belge quelques semaines plus tard.",
+                  "titre": "L'unionisme : catholiques et libéraux contre Guillaume Ier",
+                  "description": "Le soulèvement de septembre doit son succès à une alliance inattendue, l'unionisme : les catholiques reprochent au roi des Pays-Bas son contrôle des séminaires et de l'enseignement, les libéraux son refus de la responsabilité ministérielle et de la liberté de la presse. Cette coalition de circonstance entre deux familles politiques que tout oppose donnera à la Belgique la constitution la plus libérale d'Europe en 1831, et structurera sa vie politique jusqu'à la rupture scolaire des années 1840.",
                   "wikipedia": "https://fr.wikipedia.org/wiki/Révolution_belge"
                 },
                 {
@@ -146802,8 +146805,8 @@
                   "id": "psn_be_t2_8",
                   "axe": "La décolonisation et l'indépendance (1955-1961)",
                   "date": 1960,
-                  "titre": "Indépendance du Congo",
-                  "description": "Après seulement quelques mois de négociations accélérées lors de la Table ronde belgo-congolaise de Bruxelles, le Congo accède à l'indépendance le 30 juin 1960, marquée par un discours resté célèbre de Patrice Lumumba dénonçant vivement, devant le roi Baudouin lui-même, les humiliations et les souffrances subies par les Congolais durant la période coloniale. Cette indépendance, célébrée dans toute l'Afrique comme un symbole de la décolonisation du continent, ouvre pourtant immédiatement une période de crise et d'ingérences étrangères qui marquera durablement les relations belgo-congolaises.",
+                  "titre": "Le discours de Lumumba du 30 juin 1960",
+                  "description": "Après l'allocution du roi Baudouin louant l'œuvre civilisatrice de Léopold II, Patrice Lumumba prend la parole hors protocole et énumère devant lui les travaux forcés, les coups, les logements réservés aux Blancs et les terres confisquées. Le discours provoque la stupeur de la délégation belge et pèse lourd dans la crise ouverte cinq jours plus tard. Les manuels belges en ont fait le point de départ du long réexamen du passé colonial du pays, jusqu'aux excuses royales de 2020.",
                   "wikipedia": "https://fr.wikipedia.org/wiki/Indépendance_de_la_République_démocratique_du_Congo"
                 },
                 {
@@ -147019,8 +147022,8 @@
                   "id": "psn_ca_t1_1",
                   "axe": "Fondation et essor de la Nouvelle-France",
                   "date": 1608,
-                  "titre": "Fondation de Québec par Samuel de Champlain",
-                  "description": "L'explorateur français Samuel de Champlain fonde sur les rives du Saint-Laurent un poste de traite fortifié appelé Québec, qui deviendra la première implantation permanente durable de la colonie de la Nouvelle-France. Cette fondation, précédée de tentatives françaises antérieures infructueuses, marque le véritable point de départ de la présence coloniale française en Amérique du Nord. Elle pose les bases du peuplement francophone qui façonnera durablement l'histoire et l'identité du futur Québec.",
+                  "titre": "L'Habitation de Québec et l'alliance avec les Innus et les Hurons",
+                  "description": "Le poste fondé par Champlain ne survit que par le commerce des fourrures, donc par des alliances : les Innus, les Algonquins puis les Hurons-Wendats fournissent les peaux et la connaissance du territoire en échange de marchandises européennes et d'un appui militaire contre les Haudenosaunee. Cet engagement, scellé dès 1609 par la participation française à une expédition contre les Iroquois, oriente pour un siècle et demi la géopolitique de la Nouvelle-France et la place des nations autochtones dans les programmes canadiens.",
                   "wikipedia": "https://fr.wikipedia.org/wiki/Fondation_de_Québec"
                 },
                 {
@@ -147131,8 +147134,8 @@
                   "id": "psn_ca_t2_4",
                   "axe": "Expansion territoriale et rébellions métisses",
                   "date": 1870,
-                  "titre": "Achat de la Terre de Rupert",
-                  "description": "Le nouveau gouvernement fédéral canadien achète à la Compagnie de la Baie d'Hudson un vaste territoire du nord et de l'ouest du continent, la Terre de Rupert, multipliant considérablement la superficie du pays sans consultation préalable des populations métisses et autochtones qui y résident depuis des générations. Cette acquisition territoriale majeure, réalisée dans un esprit d'expansion continentale inspiré du modèle américain, provoque immédiatement des tensions avec la population métisse de la colonie de la rivière Rouge, inquiète pour ses droits fonciers et culturels. Elle ouvre la voie à la première grande crise politique du jeune Canada fédéral.",
+                  "titre": "La résistance de la rivière Rouge et l'entrée du Manitoba",
+                  "description": "L'arrivée des arpenteurs fédéraux sur des terres occupées sans titre écrit pousse les Métis de la rivière Rouge à former, sous la direction de Louis Riel, un gouvernement provisoire et à négocier leur entrée dans la fédération. La Loi sur le Manitoba de 1870 crée une province bilingue, avec écoles catholiques et protestantes et réserve de terres métisses. L'exécution de Thomas Scott et la fuite de Riel transforment pourtant l'épisode en fracture durable entre le Canada français et le Canada anglais.",
                   "wikipedia": "https://fr.wikipedia.org/wiki/Terre_de_Rupert"
                 },
                 {
@@ -147170,8 +147173,8 @@
                   "id": "psn_ca_t3_1",
                   "axe": "Politique d'assimilation",
                   "date": 1876,
-                  "titre": "Adoption de la Loi sur les Indiens",
-                  "description": "Le Parlement fédéral canadien adopte la Loi sur les Indiens, un texte législatif unique qui place l'ensemble des peuples autochtones du pays sous la tutelle administrative directe du gouvernement fédéral, définissant notamment le statut légal d'« Indien » et instaurant le système des réserves. Cette loi, dénoncée aujourd'hui par de nombreuses Premières Nations comme un instrument de colonisation persistant, fait l'objet de réformes partielles répétées sans jamais avoir été pleinement abrogée.",
+                  "titre": "Le statut d'« Indien » et la tutelle fédérale",
+                  "description": "La loi confie à un fonctionnaire le pouvoir de dire qui est légalement « Indien » : elle exclut du statut la femme qui épouse un non-Indien et ses enfants, encourage l'« émancipation » de ceux qui renoncent à leur appartenance pour devenir citoyens, et soumet ventes de terres, testaments et conseils de bande à l'approbation d'un agent. Interdiction du potlatch et des danses suivra. Les programmes canadiens étudient ce texte comme le cadre juridique de l'assimilation, toujours en vigueur sous une forme amendée.",
                   "wikipedia": "https://fr.wikipedia.org/wiki/Loi_sur_les_Indiens"
                 },
                 {
@@ -147330,8 +147333,8 @@
                   "id": "psn_ca_t4_10",
                   "axe": "Les référendums et les échecs constitutionnels",
                   "date": 1995,
-                  "titre": "Second référendum sur la souveraineté du Québec",
-                  "description": "Le gouvernement péquiste de Jacques Parizeau organise un second référendum sur la souveraineté du Québec, dont le résultat extrêmement serré, remporté par le camp du non avec seulement 50,58 % des voix, révèle une société québécoise presque parfaitement divisée sur la question de son avenir politique au sein du Canada. Ce résultat extrêmement serré laisse une société québécoise durablement partagée sur la question nationale, un clivage qui continue de structurer la vie politique de la province aujourd'hui.",
+                  "titre": "L'après-référendum : renvoi à la Cour suprême et Loi sur la clarté",
+                  "description": "Le soir de la défaite, Jacques Parizeau impute le résultat à « l'argent et des votes ethniques » et démissionne. Ottawa saisit la Cour suprême, qui juge en 1998 qu'une sécession unilatérale serait illégale mais qu'une majorité claire à une question claire obligerait le reste du pays à négocier. La Loi sur la clarté de 2000 tire les conséquences de cet avis. Les manuels retiennent moins le scrutin lui-même que ce cadre juridique, qui encadre depuis toute nouvelle consultation.",
                   "wikipedia": "https://fr.wikipedia.org/wiki/Référendum_québécois_de_1995"
                 }
               ],
@@ -147354,8 +147357,8 @@
                   "id": "psn_ca_t5_1",
                   "axe": "L'affirmation de l'autonomie internationale",
                   "date": 1917,
-                  "titre": "Bataille de la crête de Vimy",
-                  "description": "Lors de la Première Guerre mondiale, les quatre divisions du Corps canadien combattent pour la première fois ensemble et s'emparent, avec des pertes très lourdes mais un succès tactique complet, de la crête stratégique de Vimy dans le nord de la France, un objectif jusque-là inatteignable pour les armées française et britannique. Cette victoire reste célébrée chaque année au Canada comme un moment fondateur de l'identité nationale, distincte de celle du Royaume-Uni.",
+                  "titre": "Vimy et la revendication d'une voix canadienne",
+                  "description": "Le succès remporté par les quatre divisions réunies sous un commandement canadien donne à Ottawa un argument politique : Borden obtient un siège au Cabinet de guerre impérial, puis la signature distincte du traité de Versailles et un siège propre à la Société des Nations. La guerre a pourtant divisé le pays, la conscription de 1917 dressant le Québec contre le reste du Canada. Les programmes lient ces deux faces : l'autonomie internationale se gagne au moment même où l'unité intérieure se fissure.",
                   "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_la_crête_de_Vimy"
                 },
                 {
@@ -147641,8 +147644,8 @@
                   "id": "psn_co_t3_3",
                   "axe": "L'essor et la chute du narcotrafic de Medellín",
                   "date": 1993,
-                  "titre": "Mort de Pablo Escobar",
-                  "description": "Après des années de traque intensive menée conjointement par les forces de sécurité colombiennes et américaines, le narcotrafiquant Pablo Escobar, chef du cartel de Medellín et responsable présumé de milliers d'assassinats, d'attentats à la bombe et d'actes de corruption durant la décennie précédente, est abattu sur un toit de Medellín alors qu'il tentait de fuir. Cette mort, largement célébrée en Colombie comme aux États-Unis, n'empêche cependant pas le narcotrafic colombien de perdurer sous des formes plus fragmentées jusqu'à aujourd'hui.",
+                  "titre": "La fin du cartel de Medellín et la recomposition du narcotrafic",
+                  "description": "La traque a mobilisé un Bloc de recherche appuyé par les États-Unis, mais aussi Los Pepes, un groupe de victimes et de rivaux lié aux futurs paramilitaires des AUC, qui assassine méthodiquement l'entourage du chef du cartel. Sa mort ne met pas fin au trafic : le cartel de Cali le supplante, puis l'activité se fragmente et se déplace vers les guérillas et les paramilitaires, qui y trouvent leur principal financement. Les manuels colombiens insistent sur cette continuité plutôt que sur la chute d'un homme.",
                   "wikipedia": "https://fr.wikipedia.org/wiki/Pablo_Escobar"
                 },
                 {
@@ -147944,8 +147947,8 @@
                   "id": "psn_es_t2_7",
                   "axe": "Le Siècle d'or culturel",
                   "date": 1605,
-                  "titre": "Publication de Don Quichotte de Cervantès",
-                  "description": "L'écrivain Miguel de Cervantès publie la première partie de son roman « L'Ingénieux Hidalgo Don Quichotte de la Manche », considéré comme le premier grand roman moderne de la littérature occidentale et l'œuvre la plus emblématique du Siècle d'or littéraire espagnol. Cette œuvre reste aujourd'hui le livre le plus traduit et le plus publié de la littérature espagnole, et continue d'influencer la littérature mondiale plus de quatre siècles après sa parution.",
+                  "titre": "Don Quichotte, miroir d'une Espagne en crise",
+                  "description": "Le roman paraît au moment où l'Espagne encaisse les banqueroutes royales, l'expulsion prochaine des morisques et les critiques des arbitristas sur la ruine de l'agriculture et l'obsession des titres nobiliaires. Cervantès, vétéran de Lépante, captif à Alger puis collecteur d'impôts emprisonné pour ses comptes, met en scène un hidalgo appauvri que ses lectures détachent du réel. Les programmes espagnols lisent l'œuvre comme un document sur la société du Siècle d'or autant que comme un chef-d'œuvre littéraire.",
                   "wikipedia": "https://fr.wikipedia.org/wiki/Don_Quichotte_de_la_Manche"
                 },
                 {
@@ -148442,8 +148445,8 @@
                   "id": "psn_us_t1_2",
                   "axe": "Les origines de la rupture avec la Grande-Bretagne",
                   "date": 1770,
-                  "titre": "Massacre de Boston",
-                  "description": "Des soldats britanniques stationnés à Boston pour faire respecter les taxes impopulaires ouvrent le feu sur une foule de colons qui les provoquaient, tuant cinq personnes lors d'un incident isolé mais immédiatement exploité par la propagande des Patriotes américains, notamment par une gravure célèbre de Paul Revere largement diffusée. Cet incident, largement amplifié par la propagande patriote, reste commémoré aujourd'hui à Boston comme l'un des symboles fondateurs de la résistance coloniale américaine.",
+                  "titre": "Boston 1770 : l'événement et sa mise en récit",
+                  "description": "Cinq hommes meurent devant la douane, dont le marin noir Crispus Attucks. Paul Revere diffuse aussitôt une gravure montrant des soldats alignés tirant sur une foule paisible, scène contredite par les témoignages. Les soldats sont pourtant défendus au procès par John Adams, futur président, et six sur huit sont acquittés. Les programmes américains utilisent ce dossier pour confronter une source de propagande aux pièces judiciaires et faire mesurer l'écart entre un fait et son usage politique.",
                   "wikipedia": "https://fr.wikipedia.org/wiki/Massacre_de_Boston"
                 },
                 {
@@ -149334,8 +149337,8 @@
                   "id": "psn_in_t4_1",
                   "axe": "Naissance et radicalisation du nationalisme (1885-1919)",
                   "date": 1885,
-                  "titre": "Fondation du Congrès national indien",
-                  "description": "Des intellectuels et professionnels indiens formés à l'occidentale, dont le fonctionnaire britannique à la retraite Allan Octavian Hume, fondent à Bombay le Congrès national indien, une organisation politique modérée initialement destinée à représenter les intérêts et les revendications de la population indienne éduquée auprès de l'administration coloniale britannique. Cette organisation deviendra progressivement le principal parti nationaliste et indépendantiste indien, dirigeant finalement le pays à l'indépendance en 1947.",
+                  "titre": "Le Congrès, des « modérés » aux « extrémistes »",
+                  "description": "Fondé pour dialoguer avec l'administration, le Congrès est d'abord dominé par des modérés comme Naoroji et Gokhale, qui réclament des places dans la fonction publique et dénoncent le drainage des richesses vers Londres. La partition du Bengale en 1905 et le boycott swadeshi donnent la main aux « extrémistes » de Tilak, partisans de l'action directe. La rupture éclate au congrès de Surat en 1907. Les manuels indiens datent de là le passage d'un cercle de notables à un mouvement de masse.",
                   "wikipedia": "https://fr.wikipedia.org/wiki/Congrès_national_indien"
                 },
                 {
@@ -149390,8 +149393,8 @@
                   "id": "psn_in_t4_8",
                   "axe": "Vers l'indépendance : la mobilisation finale",
                   "date": 1942,
-                  "titre": "Lancement du mouvement Quit India",
-                  "description": "Le Congrès national indien, sous l'impulsion déterminée de Gandhi, lance le mouvement « Quit India » (« Quittez l'Inde »), exigeant le départ immédiat et complet des autorités coloniales britanniques du pays, sous le slogan mobilisateur « faire ou mourir », provoquant l'arrestation immédiate de l'ensemble de la direction du Congrès et déclenchant des soulèvements populaires spontanés à travers tout le pays, durement réprimés par les autorités britanniques. Ce mouvement illustre l'impatience croissante de la population indienne face à la prolongation indéfinie de la domination coloniale, y compris en pleine Seconde Guerre mondiale.",
+                  "titre": "Quit India : l'échec de la mission Cripps et la rupture",
+                  "description": "Londres avait engagé l'Inde dans la guerre sans consulter ses élus ; la mission Cripps, envoyée en mars 1942, n'offre qu'un statut de dominion après la victoire, avec droit de retrait pour les provinces. Le Congrès refuse ce « chèque sur une banque en faillite » et vote la résolution Quit India. L'arrestation immédiate de ses dirigeants laisse le champ libre à la Ligue musulmane, qui coopère avec les Britanniques : les manuels indiens y voient une étape décisive vers la partition.",
                   "wikipedia": "https://fr.wikipedia.org/wiki/Mouvement_Quit_India"
                 },
                 {
@@ -149657,8 +149660,8 @@
                   "id": "psn_ie_t1_7",
                   "axe": "La guerre williamite et les lois pénales",
                   "date": 1690,
-                  "titre": "Bataille de la Boyne",
-                  "description": "Le roi protestant Guillaume d'Orange, récemment installé sur le trône d'Angleterre après la Glorieuse Révolution, défait militairement son rival catholique déchu Jacques II lors d'une bataille décisive livrée près de la rivière Boyne en Irlande, un affrontement qui met fin aux espoirs catholiques irlandais de restauration jacobite. Cette victoire reste célébrée encore aujourd'hui chaque année par les défilés unionistes protestants d'Irlande du Nord comme symbole fondateur de leur identité.",
+                  "titre": "La Boyne, les lois pénales et l'Ascendancy protestante",
+                  "description": "La défaite jacobite, consommée à Aughrim puis au traité de Limerick en 1691, est suivie d'un arsenal législatif : les catholiques, encore les trois quarts de la population, sont exclus du Parlement, de l'armée, du barreau et de l'achat de terres, et leurs héritages sont divisés entre tous les fils. La part du sol détenue par des catholiques tombe d'environ un cinquième à un vingtième en un siècle. Les programmes irlandais étudient cette Ascendancy comme la matrice sociale des conflits ultérieurs.",
                   "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_la_Boyne"
                 },
                 {
@@ -150298,8 +150301,8 @@
                   "id": "psn_it_t1_9",
                   "axe": "L'expédition des Mille et la proclamation du royaume",
                   "date": 1861,
-                  "titre": "Proclamation du royaume d'Italie",
-                  "description": "Le premier Parlement italien réuni à Turin proclame officiellement la naissance du royaume d'Italie sous la couronne de Victor-Emmanuel II de Savoie, unifiant pour la première fois depuis l'Antiquité romaine l'essentiel de la péninsule italienne sous un même État souverain, à l'exception notable de Rome, encore protégée par la France, et de la Vénétie, toujours sous domination autrichienne. Cette proclamation constitue l'acte de naissance officiel de l'État italien moderne, aboutissement de plusieurs décennies de mouvement national.",
+                  "titre": "« L'Italie est faite, il reste à faire les Italiens »",
+                  "description": "Le royaume naît avec environ 78 % d'analphabètes, une multitude de dialectes dont l'italien n'est la langue courante que d'une infime minorité, et un corps électoral limité à quelque 2 % de la population. Les lois, l'administration et la fiscalité piémontaises sont étendues d'un coup au Sud, où la conscription et l'impôt sur la mouture nourrissent le brigandage, réprimé par des années d'état de siège. Les manuels italiens ouvrent ici la « question méridionale », qui traverse toute l'histoire du pays.",
                   "wikipedia": "https://fr.wikipedia.org/wiki/Royaume_d'Italie_(1861-1946)"
                 },
                 {
@@ -151176,6 +151179,7 @@
               "essentiel": [
                 "psn_ma_t1_1",
                 "psn_ma_t1_3",
+                "psn_ma_t1_4",
                 "psn_ma_t1_7"
               ]
             },
@@ -151264,6 +151268,7 @@
               ],
               "essentiel": [
                 "psn_ma_t2_1",
+                "psn_ma_t2_2",
                 "psn_ma_t2_4",
                 "psn_ma_t2_5"
               ]
@@ -151352,6 +151357,7 @@
                 }
               ],
               "essentiel": [
+                "psn_ma_t3_1",
                 "psn_ma_t3_2",
                 "psn_ma_t3_5",
                 "psn_ma_t3_7"
@@ -151441,6 +151447,7 @@
                 }
               ],
               "essentiel": [
+                "psn_ma_t4_1",
                 "psn_ma_t4_3",
                 "psn_ma_t4_4",
                 "psn_ma_t4_9"
@@ -151532,6 +151539,7 @@
               "essentiel": [
                 "psn_ma_t5_2",
                 "psn_ma_t5_4",
+                "psn_ma_t5_8",
                 "psn_ma_t5_9"
               ]
             },
@@ -151848,8 +151856,8 @@
                   "id": "psn_mx_t3_4",
                   "axe": "Zapata, Villa et la lutte armée",
                   "date": 1911,
-                  "titre": "Proclamation du Plan d'Ayala par Zapata",
-                  "description": "Déçu par l'absence de réforme agraire concrète promise par le nouveau président Madero, le chef paysan Emiliano Zapata proclame dans le sud du pays le Plan d'Ayala, réclamant la restitution immédiate aux communautés paysannes des terres accaparées par les grands propriétaires terriens durant l'ère porfiriste, sous le slogan devenu célèbre « la terre appartient à ceux qui la travaillent ». Ce plan, qui rompt définitivement l'alliance initiale entre Zapata et Madero, fait de la question agraire l'enjeu central et radical du mouvement révolutionnaire zapatiste dans l'État du Morelos et ses environs pendant toute la décennie suivante. Ce texte reste aujourd'hui un document fondateur de l'histoire sociale mexicaine, régulièrement cité par les mouvements paysans et indigènes contemporains, notamment le mouvement zapatiste du Chiapas apparu dans les années 1990.",
+                  "titre": "Le Plan d'Ayala et l'article 27 de la Constitution",
+                  "description": "Le texte réclame la restitution immédiate des terres, bois et eaux usurpés aux villages, l'expropriation d'un tiers des haciendas avec indemnité et la confiscation totale des biens des opposants. Zapata ne verra pas son application, mais ses exigences passent pour l'essentiel dans l'article 27 de la Constitution de 1917, qui fait des terres et du sous-sol la propriété originelle de la nation et fonde l'ejido. Les manuels mexicains suivent ce fil du maquis du Morelos au texte constitutionnel.",
                   "wikipedia": "https://fr.wikipedia.org/wiki/Plan_d'Ayala"
                 },
                 {
@@ -152187,8 +152195,8 @@
                   "id": "psn_gb_t2_1",
                   "axe": "La Magna Carta et les origines des libertés constitutionnelles",
                   "date": 1215,
-                  "titre": "Signature de la Magna Carta",
-                  "description": "Le roi Jean sans Terre, affaibli par des défaites militaires coûteuses en France et confronté à une rébellion armée de ses barons excédés par ses exigences fiscales arbitraires, est contraint d'apposer son sceau sur la Grande Charte à Runnymede, un document limitant pour la première fois explicitement le pouvoir royal par des principes juridiques écrits, notamment la protection contre l'emprisonnement arbitraire et la nécessité du consentement pour lever de nouveaux impôts. Cette charte, immédiatement répudiée par le roi puis réaffirmée après sa mort par son successeur, pose les fondements symboliques et juridiques durables de la limitation constitutionnelle du pouvoir royal en Angleterre. Ce document reste aujourd'hui l'un des textes fondateurs les plus universellement invoqués de l'histoire constitutionnelle mondiale, ayant directement inspiré des textes ultérieurs comme la Déclaration des droits américaine.",
+                  "titre": "La Grande Charte, annulée puis refondatrice",
+                  "description": "Le pape Innocent III annule la charte dix semaines après Runnymede et la guerre civile reprend aussitôt ; c'est sa réémission par les régents d'Henri III, en 1216, 1217 et 1225, qui l'installe dans le droit anglais. Sur soixante-trois articles, trois seulement sont encore en vigueur, dont celui garantissant qu'aucun homme libre ne sera emprisonné sans jugement de ses pairs ou par la loi du pays. Les programmes britanniques travaillent précisément cet écart entre un texte féodal et sa postérité constitutionnelle.",
                   "wikipedia": "https://fr.wikipedia.org/wiki/Magna_Carta"
                 },
                 {
@@ -152235,8 +152243,8 @@
                   "id": "psn_gb_t2_7",
                   "axe": "La consolidation constitutionnelle moderne",
                   "date": 1689,
-                  "titre": "Adoption du Bill of Rights",
-                  "description": "Le Parlement anglais fait adopter par le nouveau couple royal Guillaume III et Marie II le Bill of Rights, un texte fondamental limitant définitivement et explicitement les pouvoirs de la couronne, interdisant notamment la suspension unilatérale des lois par le roi, garantissant la liberté d'expression parlementaire et la tenue d'élections régulières, et posant ainsi les bases juridiques durables de la monarchie constitutionnelle britannique moderne. Ce texte, adopté au lendemain immédiat de la Glorieuse Révolution qui avait chassé le roi catholique Jacques II, consacre juridiquement et durablement la primauté du Parlement sur la couronne dans le système politique britannique. Ce Bill of Rights reste aujourd'hui l'un des textes constitutionnels fondateurs les plus fréquemment cités du Royaume-Uni, ayant directement inspiré la Déclaration des droits américaine un siècle plus tard.",
+                  "titre": "Le Bill of Rights : la couronne sous conditions",
+                  "description": "Le texte n'est pas octroyé, il est la condition posée à l'accession au trône : plus d'impôt ni de suspension des lois sans le Parlement, plus d'armée permanente en temps de paix sans son accord, élections libres, liberté de parole des députés, et interdiction faite à un catholique de régner. Comme le Parlement vote désormais les crédits militaires pour un an, le roi ne peut plus se passer de le réunir. Les manuels britanniques datent de là la mécanique concrète de la monarchie parlementaire.",
                   "wikipedia": "https://fr.wikipedia.org/wiki/Bill_of_Rights_de_1689"
                 },
                 {
@@ -152251,8 +152259,8 @@
                   "id": "psn_gb_t2_9",
                   "axe": "La consolidation constitutionnelle moderne",
                   "date": 1911,
-                  "titre": "Adoption du Parliament Act",
-                  "description": "Le gouvernement libéral, confronté au rejet répété par la Chambre des lords conservatrice de réformes sociales majeures, notamment le budget populaire de 1909 instaurant de nouveaux impôts progressifs, fait adopter le Parliament Act limitant définitivement le pouvoir de veto de la Chambre haute non élue sur la législation financière et retardant seulement de deux ans son opposition aux autres lois ordinaires. Cette loi, obtenue après une crise constitutionnelle majeure impliquant la menace royale de créer suffisamment de nouveaux pairs libéraux pour submerger la majorité conservatrice à la Chambre des lords, consacre définitivement la suprématie démocratique de la Chambre des communes élue sur l'aristocratie héréditaire non élue. Cette loi reste le fondement juridique moderne de l'équilibre des pouvoirs entre les deux chambres du Parlement britannique contemporain.",
+                  "titre": "Le People's Budget et la crise des Lords",
+                  "description": "En rejetant en 1909 le budget de Lloyd George, qui finançait les retraites par un impôt sur les hauts revenus et les grandes propriétés, la Chambre des lords rompt une coutume séculaire. Deux élections générales en 1910 et la menace d'Asquith de faire créer des centaines de pairs libéraux par le roi contraignent les Lords à céder. Les programmes britanniques présentent l'épisode comme un conflit de classes autant que de chambres, et comme le dernier verrou levé avant l'État social.",
                   "wikipedia": "https://fr.wikipedia.org/wiki/Parliament_Act_1911"
                 }
               ],
@@ -152809,16 +152817,16 @@
                   "id": "psn_ch_t1_1",
                   "axe": "Le pacte fondateur et les premières alliances",
                   "date": 1291,
-                  "titre": "Pacte fédéral du Grütli",
-                  "description": "Les représentants des trois communautés alpines d'Uri, Schwytz et Unterwald concluent un pacte d'assistance mutuelle défensive, s'engageant à se prêter secours contre toute agression extérieure et à régler leurs différends internes par l'arbitrage plutôt que par la force, un document rédigé en latin qui deviendra rétrospectivement le symbole fondateur de la Confédération suisse. Ce pacte, dont la portée réelle immédiate reste probablement plus modeste que ne le suggère sa postérité symbolique considérable, s'inscrit dans un contexte de vide de pouvoir régional consécutif à la mort de l'empereur Rodolphe de Habsbourg, plutôt que comme une déclaration d'indépendance explicite envers l'Empire. Ce document reste aujourd'hui la date de référence officielle de la fondation de la Suisse, célébrée chaque année comme fête nationale le 1er août.",
+                  "titre": "Le pacte de 1291, entre document et mythe national",
+                  "description": "Le parchemin d'août 1291 est un renouvellement d'alliance entre communautés de vallée, sans mention d'indépendance ni de serment sur une prairie. Le récit du Grütli et de Guillaume Tell apparaît dans les chroniques deux siècles plus tard, et c'est en 1891 seulement que la Confédération choisit 1291 comme date de fondation et institue la fête du 1er août. Les programmes suisses font travailler cet écart : comment un État se donne après coup l'origine dont il a besoin.",
                   "wikipedia": "https://fr.wikipedia.org/wiki/Pacte_fédéral_de_1291"
                 },
                 {
                   "id": "psn_ch_t1_2",
                   "axe": "Le pacte fondateur et les premières alliances",
                   "date": 1315,
-                  "titre": "Bataille de Morgarten",
-                  "description": "Les milices paysannes des trois cantons fondateurs infligent une défaite militaire surprenante et décisive à une armée de chevaliers autrichiens des Habsbourg près du lac de Ägeri, utilisant habilement le terrain montagneux escarpé pour piéger et écraser une force pourtant considérée comme largement supérieure sur le plan militaire conventionnel. Cette victoire inattendue, qui démontre pour la première fois l'efficacité redoutable de l'infanterie paysanne suisse face à la cavalerie féodale traditionnelle, renforce considérablement la cohésion et la confiance politique des cantons confédérés naissants. Cette bataille reste célébrée dans la mémoire nationale suisse comme la première démonstration militaire de la viabilité et de la détermination de l'alliance confédérale.",
+                  "titre": "Morgarten et la réputation de l'infanterie confédérée",
+                  "description": "Dans un défilé entre pente et marais, des paysans armés de hallebardes brisent une colonne de chevaliers incapables de manœuvrer. La leçon tactique, confirmée à Sempach en 1386 puis contre Charles le Téméraire, fonde la réputation militaire des Confédérés et lance le mercenariat suisse, qui fournira pendant des siècles les armées européennes. Dans l'immédiat, la victoire scelle le renouvellement de l'alliance par le pacte de Brunnen, premier texte signé par les trois cantons ensemble.",
                   "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Morgarten"
                 },
                 {
@@ -152873,8 +152881,8 @@
                   "id": "psn_ch_t1_9",
                   "axe": "L'affirmation et la reconnaissance de l'indépendance",
                   "date": 1648,
-                  "titre": "Reconnaissance à Westphalie",
-                  "description": "Les traités de paix de Westphalie mettant fin à la guerre de Trente Ans reconnaissent formellement et juridiquement, pour la première fois au niveau international, l'indépendance complète de la Confédération suisse vis-à-vis du Saint-Empire romain germanique, plus de cent cinquante ans après que cette indépendance était devenue une réalité politique et militaire de facto suite à la guerre de Souabe. Cette reconnaissance internationale formelle, négociée notamment grâce à la diplomatie habile du bourgmestre bâlois Johann Rudolf Wettstein, ancre définitivement et durablement le statut souverain de la Suisse dans le droit international européen naissant de l'époque moderne. Cette reconnaissance reste un jalon juridique fondateur essentiel de la souveraineté suisse, régulièrement célébré comme l'acte de naissance international officiel de l'État suisse indépendant.",
+                  "titre": "Wettstein obtient l'exemption d'Empire",
+                  "description": "Envoyé à Osnabrück par la seule ville de Bâle, le bourgmestre Johann Rudolf Wettstein obtient que les traités inscrivent l'exemption des cantons de toute juridiction impériale. Juridiquement, il ne s'agit pas d'une indépendance proclamée mais de la reconnaissance d'un état de fait acquis depuis la guerre de Souabe en 1499. La Confédération reste alors un assemblage de treize cantons souverains et de territoires sujets, sans capitale, sans armée commune et divisé par la confession.",
                   "wikipedia": "https://fr.wikipedia.org/wiki/Traités_de_Westphalie"
                 }
               ],
@@ -153330,6 +153338,7 @@
               "essentiel": [
                 "psn_tn_t1_1",
                 "psn_tn_t1_4",
+                "psn_tn_t1_5",
                 "psn_tn_t1_6"
               ]
             },
@@ -153419,7 +153428,8 @@
               "essentiel": [
                 "psn_tn_t2_2",
                 "psn_tn_t2_4",
-                "psn_tn_t2_7"
+                "psn_tn_t2_7",
+                "psn_tn_t2_8"
               ]
             },
             {
