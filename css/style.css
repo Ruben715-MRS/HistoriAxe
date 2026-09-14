@@ -5348,11 +5348,13 @@ textarea {
     --mm-accent: #f06292;
 }
 
-/* Carte d'accès depuis l'écran des modes : teinte distincte des modes de
-   jeu (ce n'est pas une partie, mais une lecture) — et surtout pas un gris,
-   réservé ici aux modes verrouillés (--locked-bg). */
+/* Carte d'accès depuis l'écran des modes. Même teinte que « Découverte »
+   (voir son style en ligne dans index.html) : ce sont les deux cartes de la
+   première grille qui se consultent au lieu de se jouer, et cette grille
+   forme une famille navy homogène — les dégradés colorés sont réservés,
+   plus bas dans l'écran, aux vrais modes de jeu (quiz, avant/après…). */
 .mode-card.mindmap-mode-card {
-    background: linear-gradient(135deg, #3D348B, #7B6CD9);
+    background-color: #2c3e50;
 }
 
 #screen-mindmap {
