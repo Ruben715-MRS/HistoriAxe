@@ -259,6 +259,10 @@
                 <h3 data-i18n="modes.discovery.title">Découverte</h3>
                 <p data-i18n="modes.discovery.desc">Consultez la frise chronologique sans jouer.</p>
             </div>
+            <div class="mode-card mindmap-mode-card hidden" id="mode-card-mindmap" onclick="openMindMap()">
+                <h3 data-i18n="mindmap.card_title">Carte mentale</h3>
+                <p data-i18n="mindmap.card_desc">La fiche de synthèse du thème, en branches à déplier.</p>
+            </div>
             <div class="mode-card" style="background-color: #34495e;" onclick="openSelectionMode()">
                 <h3 data-i18n="modes.selection.title">Sélection</h3>
                 <p data-i18n="modes.selection.desc">Choisissez les événements à conserver dans la partie.</p>
@@ -329,6 +333,25 @@
         </div>
     </div>
 
+
+    <!-- ÉCRAN 4bis : CARTE MENTALE (fiche de synthèse dépliable, pour les
+         thèmes qui en proposent une — voir js/mindMap.js) -->
+    <div id="screen-mindmap" class="list-screen hidden">
+        <button class="back-btn" onclick="showScreen('screen-modes', 'back')" aria-label="Retour aux modes de jeu"
+            data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" id="mindmap-title">Carte mentale</h2>
+        <p class="mindmap-subtitle hidden" id="mindmap-subtitle"></p>
+        <p class="mindmap-esprit hidden" id="mindmap-esprit"></p>
+
+        <div class="mindmap-toolbar">
+            <button type="button" class="mindmap-toolbar-btn" onclick="setAllMindMapBranches(true)"
+                data-i18n="mindmap.expand_all">Tout déplier</button>
+            <button type="button" class="mindmap-toolbar-btn" onclick="setAllMindMapBranches(false)"
+                data-i18n="mindmap.collapse_all">Tout replier</button>
+        </div>
+
+        <div id="mindmap-branches"></div>
+    </div>
 
     <!-- ÉCRAN MULTIJOUEURS SETUP -->
     <div id="screen-multiplayer-setup" class="hidden">
@@ -1216,6 +1239,7 @@
     <script src="js/weekly.js"></script>
     <script src="js/i18n.js"></script>
     <script src="js/geoMap.js"></script>
+    <script src="js/mindMap.js"></script>
     <script src="js/app.js"></script>
 
     <!-- ENREGISTREMENT DU SERVICE WORKER PWA -->

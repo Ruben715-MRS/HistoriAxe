@@ -1169,6 +1169,9 @@ function showScreen(screenId, direction) {
             subtitleEl.classList.toggle('hidden', !subtitle);
         }
         updateModeLocks();
+        // Carte mentale du thème : affichée seulement si le thème en
+        // propose une (voir js/mindMap.js).
+        if (typeof refreshMindMapModeCard === 'function') refreshMindMapModeCard();
     }
 }
 
