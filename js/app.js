@@ -1609,13 +1609,6 @@ function initSubcategories() {
     if (category.note && selectedSubcategoryIndex.length === 0) {
         document.getElementById('subcategory-note-text').innerText = category.note;
         noteBox.classList.remove('hidden');
-        noteBox.style.backgroundColor = 'var(--surface-2)';
-        noteBox.style.color = 'var(--text-dark)';
-        noteBox.style.border = '1px solid var(--border-soft)';
-        noteBox.style.borderRadius = '16px';
-        noteBox.style.padding = '16px';
-        noteBox.style.marginBottom = '24px';
-        noteBox.style.boxShadow = 'var(--card-shadow)';
     } else {
         noteBox.classList.add('hidden');
     }

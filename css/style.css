@@ -3760,11 +3760,13 @@ textarea.form-input {
 
 .subcategory-note {
     background: var(--surface-2);
-    border-left: 4px solid var(--primary-blue);
-    border-radius: 9999px;
-    padding: 14px 18px;
-    margin: 0 auto 22px;
+    color: var(--text-dark);
+    border: 1px solid var(--border-soft);
+    border-radius: 16px;
+    padding: 16px;
+    margin: 0 auto 24px;
     max-width: 800px;
+    box-shadow: var(--card-shadow);
 }
 
 .subcategory-note-title {
