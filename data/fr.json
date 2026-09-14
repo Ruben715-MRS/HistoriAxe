@@ -2,8 +2,8 @@
   "version": "1.0.0",
   "lang": "fr",
   "name": "Français (Intégral)",
-  "totalThemes": 767,
-  "totalEvents": 19164,
+  "totalThemes": 772,
+  "totalEvents": 19209,
   "categories": [
     {
       "nom": "Culture générale",
@@ -148724,6 +148724,258 @@
           "nom": "Inde",
           "themes": [
             {
+              "id": "psn_in_t7",
+              "nom": "La civilisation de l'Indus et l'âge védique (-2600 à -500)",
+              "difficulte": "Tous niveaux",
+              "axeOrder": [
+                "Les villes de l'Indus",
+                "La fin des cités et ses hypothèses",
+                "L'âge védique et les premiers royaumes"
+              ],
+              "events": [
+                {
+                  "id": "psn_in_t7_1",
+                  "axe": "Les villes de l'Indus",
+                  "date": -2600,
+                  "titre": "Les villes de brique cuite de la vallée de l'Indus",
+                  "description": "Sur plus d'un million de kilomètres carrés s'étend un réseau de cités bâties selon un plan orthogonal, dotées de greniers, de bains, de puits et d'un système d'évacuation des eaux inégalé dans le monde antique. Les briques sont normalisées, les poids aussi, d'un site à l'autre. Les manuels indiens soulignent l'absence de palais, de temples monumentaux et de sépultures royales fastueuses : une civilisation urbaine sans pouvoir ostentatoire identifiable.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Civilisation_de_la_vall%C3%A9e_de_l%27Indus"
+                },
+                {
+                  "id": "psn_in_t7_2",
+                  "axe": "Les villes de l'Indus",
+                  "date": -2500,
+                  "titre": "Les sceaux de l'Indus, une écriture toujours indéchiffrée",
+                  "description": "Des milliers de sceaux de stéatite gravés d'animaux et de courtes suites de signes ont été mis au jour. Malgré un siècle de tentatives, l'écriture de l'Indus résiste au déchiffrement : les inscriptions sont trop brèves et aucun texte bilingue n'a été trouvé. Les programmes indiens s'en servent pour faire mesurer ce qu'une société sans archives lisibles interdit de savoir d'elle.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89criture_de_l%27Indus"
+                },
+                {
+                  "id": "psn_in_t7_3",
+                  "axe": "Les villes de l'Indus",
+                  "date": -2000,
+                  "titre": "Le commerce avec la Mésopotamie",
+                  "description": "Des sceaux de l'Indus retrouvés en Mésopotamie et des textes sumériens mentionnant le pays de Meluhha attestent des échanges maritimes par le Golfe : cornaline, ivoire, bois et coton contre argent et laine. Le port de Lothal, avec son bassin aménagé, matérialise cette ouverture. L'Inde ancienne apparaît ainsi d'emblée insérée dans un réseau d'échanges à l'échelle de l'Asie occidentale.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Meluhha"
+                },
+                {
+                  "id": "psn_in_t7_4",
+                  "axe": "La fin des cités et ses hypothèses",
+                  "date": -1900,
+                  "titre": "La fin des villes de l'Indus, hypothèses en débat",
+                  "description": "En quelques siècles, l'entretien des drains cesse, les poids standardisés disparaissent, les villes se vident. L'hypothèse ancienne d'une invasion aryenne est aujourd'hui écartée ; on invoque plutôt l'assèchement d'un système fluvial, des changements de mousson, la rupture des routes commerciales. Les manuels indiens présentent ce dossier comme un exercice de confrontation d'hypothèses concurrentes.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Civilisation_de_la_vall%C3%A9e_de_l%27Indus"
+                },
+                {
+                  "id": "psn_in_t7_5",
+                  "axe": "L'âge védique et les premiers royaumes",
+                  "date": -1500,
+                  "titre": "La société védique d'après le Rig-Véda",
+                  "description": "Transmis oralement pendant des siècles avant d'être fixés, les hymnes du Rig-Véda décrivent des groupes d'éleveurs organisés en clans, dont la richesse se compte en troupeaux et qui se disputent pâturages et rivières. Ils ne mentionnent ni cités ni écriture. Utilisés comme source historique, ces textes religieux posent aux élèves un problème de méthode : que peut-on tirer d'une poésie rituelle ?",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Rig-V%C3%A9da"
+                },
+                {
+                  "id": "psn_in_t7_6",
+                  "axe": "L'âge védique et les premiers royaumes",
+                  "date": -1000,
+                  "titre": "Le fer et la conquête de la plaine du Gange",
+                  "description": "La métallurgie du fer permet de défricher la forêt dense de la plaine gangétique et d'y étendre la riziculture. Le surplus agricole nourrit des populations plus nombreuses, fixées dans des villages puis des villes, et rend possible l'entretien de guerriers et de prêtres qui ne cultivent pas. Le centre de gravité de l'Inde ancienne se déplace ainsi vers l'est, du Panjab vers le Bihar actuel.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/%C3%82ge_du_fer"
+                },
+                {
+                  "id": "psn_in_t7_7",
+                  "axe": "L'âge védique et les premiers royaumes",
+                  "date": -800,
+                  "titre": "Des sacrifices aux Upanishad",
+                  "description": "À l'apogée d'une religion de sacrifices coûteux monopolisés par les brahmanes, des textes nouveaux déplacent la question vers l'intériorité : identité du soi et de l'absolu, transmigration des âmes, libération. Cette inflexion prépare le terrain où prospéreront, deux siècles plus tard, le bouddhisme et le jaïnisme, qui contestent frontalement l'autorité du sacrifice et de la naissance.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Upanishad"
+                },
+                {
+                  "id": "psn_in_t7_8",
+                  "axe": "L'âge védique et les premiers royaumes",
+                  "date": -600,
+                  "titre": "Les mahajanapada : villes, monnaie et royaumes",
+                  "description": "Seize grands ensembles politiques se partagent le nord du sous-continent, les uns monarchiques, les autres gouvernés par des assemblées d'aristocrates. Apparaissent alors les premières monnaies poinçonnées, les remparts de brique et une fiscalité régulière. Les programmes indiens datent de là la naissance de l'État en Inde, que documentent à la fois l'archéologie et les textes bouddhiques.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mahajanapadas"
+                },
+                {
+                  "id": "psn_in_t7_9",
+                  "axe": "L'âge védique et les premiers royaumes",
+                  "date": -500,
+                  "titre": "La montée du Magadha",
+                  "description": "Riche en fer, en éléphants et en terres fertiles, contrôlant le trafic du Gange, le royaume du Magadha absorbe méthodiquement ses voisins depuis sa capitale de Rajagriha puis de Pataliputra. Cette prééminence, construite sur des ressources matérielles autant que sur l'ambition de ses souverains, fournit la base territoriale sur laquelle s'édifiera le premier empire indien.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Magadha"
+                }
+              ]
+            },
+            {
+              "id": "psn_in_t8",
+              "nom": "Les Maurya, Ashoka et l'âge classique gupta (-321 à 528)",
+              "difficulte": "Tous niveaux",
+              "axeOrder": [
+                "Le premier empire indien",
+                "Ashoka et le dharma",
+                "L'âge classique des Gupta"
+              ],
+              "events": [
+                {
+                  "id": "psn_in_t8_1",
+                  "axe": "Le premier empire indien",
+                  "date": -321,
+                  "titre": "Chandragupta unifie du Gange à l'Indus",
+                  "description": "Profitant du reflux des garnisons laissées par Alexandre, Chandragupta renverse la dynastie Nanda et étend son autorité de la vallée du Gange à l'Indus, puis obtient de Séleucos les provinces de l'actuel Afghanistan contre cinq cents éléphants de guerre. Pour la première fois, la majeure partie du sous-continent est réunie sous une seule autorité.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Chandragupta_Maurya"
+                },
+                {
+                  "id": "psn_in_t8_2",
+                  "axe": "Le premier empire indien",
+                  "date": -300,
+                  "titre": "L'Arthashastra et l'État maurya",
+                  "description": "Attribué à Kautilya, conseiller de Chandragupta, ce traité de gouvernement décrit une administration d'une minutie remarquable : arpentage et taxation des terres, contrôle des corporations, réseau d'informateurs, monopoles d'État sur les mines et le sel. Sa vision froide du pouvoir, souvent comparée à celle de Machiavel, sert de contrepoint aux édits moraux du règne suivant.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Arthash%C3%A2stra"
+                },
+                {
+                  "id": "psn_in_t8_3",
+                  "axe": "Ashoka et le dharma",
+                  "date": -261,
+                  "titre": "Le Kalinga, la guerre qui fait renoncer à la guerre",
+                  "description": "La conquête du Kalinga, sur la côte orientale, coûte selon l'édit d'Ashoka lui-même cent mille morts, cent cinquante mille déportés et bien davantage de victimes indirectes. Le souverain déclare en concevoir un remords profond et renoncer à la conquête armée. C'est le seul cas connu, dans l'Antiquité, d'un empereur proclamant publiquement le regret de sa propre victoire.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ashoka"
+                },
+                {
+                  "id": "psn_in_t8_4",
+                  "axe": "Ashoka et le dharma",
+                  "date": -250,
+                  "titre": "Le dharma d'Ashoka gravé dans la pierre",
+                  "description": "Des édits sont gravés sur des rochers et des piliers polis à travers tout l'empire, en langues locales et en écritures variées, grec et araméen aux marges. Ils prêchent le respect de la vie, la tolérance entre écoles religieuses, les soins aux hommes et aux bêtes. Déchiffrés seulement en 1837, ils ont rendu Ashoka à l'histoire ; le chapiteau aux lions de Sarnath est aujourd'hui l'emblème de la République indienne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89dits_d%27Ashoka"
+                },
+                {
+                  "id": "psn_in_t8_5",
+                  "axe": "Ashoka et le dharma",
+                  "date": -185,
+                  "titre": "La fin des Maurya et la fragmentation",
+                  "description": "L'assassinat du dernier souverain maurya par son propre général disloque l'empire moins d'un demi-siècle après la mort d'Ashoka. Le nord-ouest est disputé par des royaumes indo-grecs, puis par des dynasties venues d'Asie centrale. Les manuels discutent les causes avancées : coût de l'administration, succession de souverains faibles, dimensions ingérables pour les communications de l'époque.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Empire_maurya"
+                },
+                {
+                  "id": "psn_in_t8_6",
+                  "axe": "Ashoka et le dharma",
+                  "date": 78,
+                  "titre": "Les Kouchans, carrefour des routes de la soie",
+                  "description": "Venus d'Asie centrale, les Kouchans établissent un empire à cheval sur l'Afghanistan, le Panjab et le bassin du Gange, qui contrôle le commerce entre la Chine, l'Inde et Rome. Sous leur protection s'épanouit l'art du Gandhara, où le Bouddha reçoit pour la première fois un visage, de facture gréco-romaine, et le bouddhisme mahayana gagne l'Asie orientale.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Empire_kouchan"
+                },
+                {
+                  "id": "psn_in_t8_7",
+                  "axe": "L'âge classique des Gupta",
+                  "date": 320,
+                  "titre": "L'essor des Gupta et l'« âge classique »",
+                  "description": "Depuis Pataliputra, les Gupta rassemblent le nord de l'Inde dans un empire moins centralisé que celui des Maurya, laissant en place rois vassaux et pouvoirs locaux. La période est retenue par l'historiographie indienne comme un âge classique : théâtre de Kalidasa, fixation des grands textes hindous, temples de pierre, université monastique de Nalanda.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Empire_Gupta"
+                },
+                {
+                  "id": "psn_in_t8_8",
+                  "axe": "L'âge classique des Gupta",
+                  "date": 499,
+                  "titre": "Les mathématiques gupta : le zéro et la numération de position",
+                  "description": "Aryabhata, âgé de vingt-trois ans, compose un traité qui calcule une valeur remarquablement exacte de pi, propose que la rotation apparente du ciel s'explique par celle de la Terre sur elle-même, et emploie une numération de position. Le zéro comme chiffre à part entière, transmis ensuite au monde arabe puis à l'Europe, est l'apport indien le plus universellement diffusé.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Aryabhata"
+                },
+                {
+                  "id": "psn_in_t8_9",
+                  "axe": "L'âge classique des Gupta",
+                  "date": 528,
+                  "titre": "Les invasions hephtalites et le déclin gupta",
+                  "description": "Les incursions répétées des Huns hephtalites depuis le nord-ouest épuisent les finances et l'armée impériales ; les gouverneurs et les feudataires s'émancipent. L'empire se défait au profit de royaumes régionaux, et l'Inde du Nord n'est plus réunifiée durablement avant des siècles. Le bouddhisme, privé du mécénat impérial, recule progressivement dans son pays d'origine.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Shvetah%C3%BBna"
+                }
+              ]
+            },
+            {
+              "id": "psn_in_t9",
+              "nom": "Le sultanat de Delhi et Vijayanagara (1206-1526)",
+              "difficulte": "Tous niveaux",
+              "axeOrder": [
+                "Le sultanat de Delhi",
+                "Les royaumes du Sud",
+                "Sociétés et dévotions nouvelles"
+              ],
+              "events": [
+                {
+                  "id": "psn_in_t9_1",
+                  "axe": "Le sultanat de Delhi",
+                  "date": 1206,
+                  "titre": "Qutb al-Din Aibak et le sultanat des esclaves",
+                  "description": "Ancien esclave militaire devenu gouverneur, Qutb al-Din Aibak se rend indépendant après la mort de son maître et fonde à Delhi un sultanat que dirigeront cinq dynasties successives. L'origine servile de plusieurs de ses souverains, courante dans le monde musulman médiéval, en fait un régime où le mérite militaire prime la naissance — un trait que relèvent les manuels indiens.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sultanat_de_Delhi"
+                },
+                {
+                  "id": "psn_in_t9_2",
+                  "axe": "Le sultanat de Delhi",
+                  "date": 1303,
+                  "titre": "Alauddin Khalji : contrôle des prix et défense contre les Mongols",
+                  "description": "Face aux raids mongols répétés, le sultan entretient une immense armée permanente. Pour la payer sans ruiner le trésor, il fixe par décret le prix des grains, des étoffes et des chevaux, crée des greniers d'État et un corps d'inspecteurs des marchés. Cette économie administrée, décrite en détail par le chroniqueur Barani, est un cas d'école du dirigisme médiéval.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Al%C3%A2_ud-D%C3%AEn_Khalj%C3%AE"
+                },
+                {
+                  "id": "psn_in_t9_3",
+                  "axe": "Le sultanat de Delhi",
+                  "date": 1327,
+                  "titre": "Muhammad ibn Tughluq et le transfert de la capitale",
+                  "description": "Le sultan ordonne le déplacement de l'administration et d'une partie de la population de Delhi vers Daulatabad, à plus de mille kilomètres au sud, puis fait marche arrière quelques années plus tard. Il émet aussi une monnaie de bronze à valeur forcée, aussitôt contrefaite. Ces projets, jugés visionnaires par les uns et désastreux par les autres, nourrissent un débat historiographique classique.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mouhammed_ibn_Tughl%C3%BBq"
+                },
+                {
+                  "id": "psn_in_t9_4",
+                  "axe": "Les royaumes du Sud",
+                  "date": 1336,
+                  "titre": "Vijayanagara, une capitale d'eau et de pierre",
+                  "description": "Deux frères fondent au sud de la Krishna un royaume qui deviendra le plus puissant de l'Inde méridionale. Sa capitale, bâtie dans un chaos de granite et irriguée par un réseau élaboré de canaux et de réservoirs, impressionne les voyageurs persans et portugais qui la comparent à Rome. Le site de Hampi en conserve les ruines monumentales.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Royaume_de_Vijayanagara"
+                },
+                {
+                  "id": "psn_in_t9_5",
+                  "axe": "Les royaumes du Sud",
+                  "date": 1347,
+                  "titre": "Le sultanat bahmani et la rivalité du Deccan",
+                  "description": "Une révolte de gouverneurs contre Delhi donne naissance au sultanat bahmani, qui partage le Deccan avec Vijayanagara. Les deux puissances se disputent pendant deux siècles la fertile plaine entre les fleuves, les ports de la côte et l'accès aux chevaux importés d'Arabie et de Perse, nerf de la guerre dans une région qui n'en élève pas.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sultanat_bahmanide"
+                },
+                {
+                  "id": "psn_in_t9_6",
+                  "axe": "Les royaumes du Sud",
+                  "date": 1398,
+                  "titre": "Le sac de Delhi par Timur",
+                  "description": "Le conquérant venu de Samarcande pille Delhi et en massacre la population pendant plusieurs jours, avant de repartir avec un immense butin et des artisans déportés. Le sultanat ne s'en relève pas : il se réduit à la région de Delhi, tandis que les provinces se constituent en sultanats indépendants au Bengale, au Gujarat, au Malwa et au Jaunpur.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Tamerlan"
+                },
+                {
+                  "id": "psn_in_t9_7",
+                  "axe": "Sociétés et dévotions nouvelles",
+                  "date": 1440,
+                  "titre": "Kabir, la dévotion par-delà les religions",
+                  "description": "Tisserand de Bénarès élevé dans une famille musulmane et disciple d'un maître hindou, Kabir compose des poèmes cinglants qui rejettent à la fois les rites brahmaniques, les pèlerinages et l'orthodoxie musulmane, pour ne retenir qu'une dévotion intérieure à un Dieu sans forme. Ses vers, transmis oralement, figurent aujourd'hui dans le livre saint des sikhs.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kab%C3%AEr"
+                },
+                {
+                  "id": "psn_in_t9_8",
+                  "axe": "Sociétés et dévotions nouvelles",
+                  "date": 1499,
+                  "titre": "Guru Nanak et la naissance du sikhisme",
+                  "description": "Après une expérience spirituelle décisive, Nanak parcourt le sous-continent en enseignant l'unicité de Dieu, l'égalité des hommes et des femmes, le refus des castes et du rituel, et la valeur du travail honnête. La communauté qu'il fonde au Panjab, organisée autour du repas commun ouvert à tous, deviendra sous ses successeurs une religion et un pouvoir constitués.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Guru_Nanak"
+                },
+                {
+                  "id": "psn_in_t9_9",
+                  "axe": "Sociétés et dévotions nouvelles",
+                  "date": 1526,
+                  "titre": "Pânipat : l'artillerie met fin au sultanat",
+                  "description": "Babur, prince timouride chassé d'Asie centrale, écrase avec une armée bien inférieure en nombre les forces du dernier sultan Lodi, en combinant artillerie de campagne, retranchements de chariots et cavalerie tournante. La bataille ouvre la période moghole et illustre le basculement militaire que la poudre impose alors partout en Asie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Premi%C3%A8re_bataille_de_Panipat"
+                }
+              ]
+            },
+            {
               "id": "psn_in_t1",
               "nom": "L'Empire moghol (avant la colonisation) (1526-1739)",
               "difficulte": "Tous niveaux",
@@ -150216,6 +150468,174 @@
         {
           "nom": "Japon",
           "themes": [
+            {
+              "id": "psn_jp_t6",
+              "nom": "Des Jōmon à l'État de Yamato (-14000 à 592)",
+              "difficulte": "Tous niveaux",
+              "axeOrder": [
+                "Jōmon et Yayoi : de la cueillette à la riziculture",
+                "Le Japon vu de Chine : premiers textes, premiers rois",
+                "Les tombes à tumulus et la formation du Yamato"
+              ],
+              "events": [
+                {
+                  "id": "psn_jp_t6_1",
+                  "axe": "Jōmon et Yayoi : de la cueillette à la riziculture",
+                  "date": -14000,
+                  "titre": "La poterie Jōmon, parmi les plus anciennes du monde",
+                  "description": "Des groupes de chasseurs-cueilleurs de l'archipel façonnent des récipients d'argile décorés à la cordelette, d'où le nom de Jōmon. Ils comptent parmi les plus anciens du monde et supposent une vie déjà sédentaire, fondée sur la pêche, la cueillette et la chasse dans une forêt tempérée abondante. Les manuels japonais insistent sur cette anomalie : une sédentarité durable de plus de dix millénaires sans agriculture ni élevage, contrairement au schéma continental.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/P%C3%A9riode_J%C5%8Dmon"
+                },
+                {
+                  "id": "psn_jp_t6_2",
+                  "axe": "Jōmon et Yayoi : de la cueillette à la riziculture",
+                  "date": -900,
+                  "titre": "L'arrivée de la riziculture irriguée",
+                  "description": "Venues de la péninsule coréenne par le nord de Kyūshū, la riziculture en rizières inondées, la métallurgie et le tissage transforment l'archipel en quelques siècles. Le stockage du riz rend possibles le surplus, l'inégalité et la guerre : les villages se ceinturent de fossés et de palissades. Cette période Yayoi est présentée comme le véritable seuil de l'histoire sociale japonaise, celui qui rend des chefferies possibles.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/P%C3%A9riode_Yayoi"
+                },
+                {
+                  "id": "psn_jp_t6_3",
+                  "axe": "Jōmon et Yayoi : de la cueillette à la riziculture",
+                  "date": -300,
+                  "titre": "Les cloches dōtaku et la hiérarchie des chefferies",
+                  "description": "De grandes cloches de bronze sans battant, les dōtaku, enfouies à l'écart des habitations, accompagnent des rites agraires ; miroirs et armes de bronze importés du continent deviennent des insignes de pouvoir. La répartition inégale de ces objets dans les tombes permet aux archéologues de lire l'apparition de chefferies hiérarchisées, bien avant l'apparition de tout État.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/D%C5%8Dtaku"
+                },
+                {
+                  "id": "psn_jp_t6_4",
+                  "axe": "Le Japon vu de Chine : premiers textes, premiers rois",
+                  "date": 57,
+                  "titre": "Le sceau d'or du roi de Na",
+                  "description": "L'empereur des Han offre un sceau d'or au souverain d'un petit royaume de l'archipel, le pays de Na. Retrouvé en 1784 dans la baie de Hakata, l'objet porte une inscription chinoise et constitue la plus ancienne trace écrite concernant le Japon. Les manuels s'en servent pour montrer que l'histoire japonaise commence dans des sources étrangères, l'archipel n'écrivant pas encore lui-même.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sceau_du_roi_de_Na"
+                },
+                {
+                  "id": "psn_jp_t6_5",
+                  "axe": "Le Japon vu de Chine : premiers textes, premiers rois",
+                  "date": 239,
+                  "titre": "Himiko, reine chamane du Yamatai",
+                  "description": "La chronique chinoise des Wei décrit une reine gouvernant par la magie le pays de Yamatai, reconnue par une trentaine de communautés et recevant du titre de « reine de Wa amie des Wei » ainsi que cent miroirs de bronze. L'emplacement du Yamatai, au Kyūshū ou dans la région du Kinai, fait l'objet d'une controverse scolaire classique, jamais tranchée, entre archéologues japonais.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Himiko"
+                },
+                {
+                  "id": "psn_jp_t6_6",
+                  "axe": "Le Japon vu de Chine : premiers textes, premiers rois",
+                  "date": 478,
+                  "titre": "La lettre du roi Bu à la cour chinoise",
+                  "description": "Le dernier des cinq rois de Wa mentionnés par les annales chinoises réclame à l'empereur Song une reconnaissance de son autorité sur l'archipel et une partie de la péninsule coréenne. Sa lettre revendique des conquêtes menées par ses ancêtres. Les historiens la rapprochent des inscriptions sur épées retrouvées dans des tombes japonaises, qui nomment un même grand roi : le Yamato est désormais une puissance qui se raconte.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Cinq_rois_de_Wa"
+                },
+                {
+                  "id": "psn_jp_t6_7",
+                  "axe": "Les tombes à tumulus et la formation du Yamato",
+                  "date": 300,
+                  "titre": "Les kofun, tombes géantes des chefs de Yamato",
+                  "description": "Des tumulus en forme de trou de serrure, parfois longs de plusieurs centaines de mètres et entourés de douves, sont élevés dans la plaine du Kinai. Leur construction suppose la mobilisation de milliers de travailleurs et donc un pouvoir capable de commander le travail sur de vastes territoires. Leur diffusion progressive à travers l'archipel sert à cartographier l'extension de l'autorité du Yamato.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/P%C3%A9riode_Kofun"
+                },
+                {
+                  "id": "psn_jp_t6_8",
+                  "axe": "Les tombes à tumulus et la formation du Yamato",
+                  "date": 587,
+                  "titre": "La victoire des Soga et l'adoption du bouddhisme par la cour",
+                  "description": "Le conflit entre les Soga, favorables à la religion venue du continent, et les Mononobe, gardiens des cultes locaux, se règle par les armes. La victoire des Soga installe durablement le bouddhisme à la cour, non comme une conversion des esprits mais comme un instrument de prestige et de gouvernement, associé à l'écriture chinoise et aux techniques continentales.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Clan_Soga"
+                },
+                {
+                  "id": "psn_jp_t6_9",
+                  "axe": "Les tombes à tumulus et la formation du Yamato",
+                  "date": 592,
+                  "titre": "Suiko, première souveraine régnante",
+                  "description": "Portée au trône par les Soga après l'assassinat de son prédécesseur, Suiko devient la première femme à régner sur le Japon de manière attestée, ouvrant une série de huit impératrices régnantes. Son règne, conduit avec le prince Shōtoku et le chef des Soga, engage la transformation d'une fédération de clans en un État inspiré du modèle chinois.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Suiko"
+                }
+              ]
+            },
+            {
+              "id": "psn_jp_t7",
+              "nom": "L'État de code et la cour de Heian (607-1167)",
+              "difficulte": "Tous niveaux",
+              "axeOrder": [
+                "Bâtir un État sur le modèle chinois",
+                "La cour de Heian et la culture nationale",
+                "L'effritement du pouvoir impérial"
+              ],
+              "events": [
+                {
+                  "id": "psn_jp_t7_1",
+                  "axe": "Bâtir un État sur le modèle chinois",
+                  "date": 607,
+                  "titre": "L'ambassade d'Ono no Imoko en Chine des Sui",
+                  "description": "Le Japon envoie une mission officielle à la cour des Sui porteuse d'une lettre qui salue « le souverain du pays où le soleil se lève » adressée au « souverain du pays où le soleil se couche ». La formule, qui pose l'égalité entre les deux trônes, irrite l'empereur chinois. Ces ambassades rapportent pendant deux siècles droit, écriture, urbanisme et bouddhisme, que le Japon adapte plutôt qu'il ne les copie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ono_no_Imoko"
+                },
+                {
+                  "id": "psn_jp_t7_2",
+                  "axe": "Bâtir un État sur le modèle chinois",
+                  "date": 646,
+                  "titre": "L'édit de réforme : terres publiques et sujets publics",
+                  "description": "Au lendemain de l'élimination des Soga, un édit proclame que la terre et les hommes appartiennent désormais à l'État et non aux clans : registres de population, redistribution périodique des rizières, impôt et corvée. L'application réelle est lente et partielle, mais le principe du kōchi kōmin fournit aux manuels le socle de l'État centralisé japonais.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9forme_de_Taika"
+                },
+                {
+                  "id": "psn_jp_t7_3",
+                  "axe": "Bâtir un État sur le modèle chinois",
+                  "date": 701,
+                  "titre": "Le système ritsuryō : provinces, impôts et conscription",
+                  "description": "Un code pénal et administratif complet, calqué sur celui des Tang, organise un État de bureaux : provinces et districts dirigés par des fonctionnaires nommés, impôt en grain, en tissu et en travail, conscription d'un homme sur trois. À la différence de la Chine, l'accès aux charges reste fondé sur la naissance et non sur des examens : c'est la grande divergence relevée par les programmes japonais.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Code_de_Taih%C5%8D"
+                },
+                {
+                  "id": "psn_jp_t7_4",
+                  "axe": "Bâtir un État sur le modèle chinois",
+                  "date": 710,
+                  "titre": "Heijō-kyō, une capitale sur le modèle de Chang'an",
+                  "description": "La cour s'installe à Nara dans une ville neuve au plan en damier, copiée sur la capitale chinoise, dotée de vastes monastères d'État. La proximité de ces temples et leur poids politique croissant pèseront lourd dans la décision de déplacer à nouveau la capitale. Les grandes compilations écrites de cette période fixent pour la première fois la mémoire de l'archipel.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Heij%C5%8D-ky%C5%8D"
+                },
+                {
+                  "id": "psn_jp_t7_5",
+                  "axe": "La cour de Heian et la culture nationale",
+                  "date": 743,
+                  "titre": "L'édit de propriété perpétuelle des terres défrichées",
+                  "description": "Pour encourager la mise en culture, l'État autorise ceux qui défrichent à conserver la terre à titre héréditaire. La mesure contredit frontalement le principe des terres publiques : nobles et monastères, seuls capables de financer de grands défrichements, constituent des domaines privés, les shōen, soustraits à l'impôt. Les manuels japonais y voient la faille par laquelle tout le système ritsuryō s'effondrera.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sh%C5%8Den"
+                },
+                {
+                  "id": "psn_jp_t7_6",
+                  "axe": "La cour de Heian et la culture nationale",
+                  "date": 794,
+                  "titre": "Le transfert à Heian-kyō",
+                  "description": "L'empereur Kanmu quitte Nara pour une capitale neuve, l'actuelle Kyoto, notamment pour échapper à l'emprise des monastères. La ville restera le siège de la cour pendant plus de mille ans. S'y déploie une aristocratie de quelques milliers de personnes dont la vie, rythmée par les rites, la poésie et les préséances, occupe une place considérable dans l'enseignement de l'histoire au Japon.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Heian-ky%C5%8D"
+                },
+                {
+                  "id": "psn_jp_t7_7",
+                  "axe": "La cour de Heian et la culture nationale",
+                  "date": 894,
+                  "titre": "La fin des ambassades vers la Chine et la culture kokufū",
+                  "description": "Sur l'avis de Sugawara no Michizane, la cour renonce à envoyer de nouvelles missions vers une Chine des Tang en pleine décomposition. Coupée du modèle continental, l'aristocratie développe une culture proprement japonaise : l'écriture syllabique kana rend possible une littérature en langue vernaculaire, portée notamment par des femmes de la cour, dont le Dit du Genji est l'aboutissement.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sugawara_no_Michizane"
+                },
+                {
+                  "id": "psn_jp_t7_8",
+                  "axe": "L'effritement du pouvoir impérial",
+                  "date": 1086,
+                  "titre": "Le gouvernement des empereurs retirés",
+                  "description": "L'empereur Shirakawa abdique tout en conservant le pouvoir réel depuis sa retraite, contournant ainsi la tutelle des régents Fujiwara qui contrôlaient le trône par les mariages. Ce régime de l'insei installe une confusion durable entre plusieurs centres d'autorité — empereur, empereur retiré, régent, grands monastères — dont les guerriers de province deviendront les arbitres armés.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Insei"
+                },
+                {
+                  "id": "psn_jp_t7_9",
+                  "axe": "L'effritement du pouvoir impérial",
+                  "date": 1167,
+                  "titre": "Taira no Kiyomori, premier guerrier chancelier",
+                  "description": "Vainqueur des troubles qui ont opposé les factions de la cour, le chef du clan Taira accède à la plus haute charge civile de l'État et marie sa fille à l'empereur. Pour la première fois, un chef de guerre gouverne depuis le sommet des institutions civiles. La réaction des Minamoto ouvrira la guerre de Genpei et, avec elle, le basculement du pays vers le gouvernement des guerriers.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Taira_no_Kiyomori"
+                }
+              ]
+            },
             {
               "id": "psn_jp_t1",
               "nom": "L'époque féodale (shogunat, samouraïs) (1192-1639)",
