@@ -64,9 +64,13 @@ for (const file of localeFiles) {
                 for (const sub of branch.sousBranches || []) {
                     assert.ok(typeof sub.titre === 'string' && sub.titre.length > 0, `${file}: ${where} — ${at} a une sous-branche sans "titre"`);
                     checkAxis(sub.axe, `${at} > "${sub.titre}"`);
-                    assert.ok(Array.isArray(sub.items) && sub.items.length > 0, `${file}: ${where} — sous-branche "${sub.titre}" sans "items"`);
-                    for (const item of sub.items) {
-                        assert.ok(typeof item === 'string' && item.length > 0, `${file}: ${where} — sous-branche "${sub.titre}" a un item vide`);
+                    // Une sous-branche porte des items rédigés, ou une simple
+                    // série de mots (tags) — au moins l'un des deux.
+                    const hasItems = Array.isArray(sub.items) && sub.items.length > 0;
+                    const hasTags = Array.isArray(sub.tags) && sub.tags.length > 0;
+                    assert.ok(hasItems || hasTags, `${file}: ${where} — sous-branche "${sub.titre}" sans "items" ni "tags"`);
+                    for (const entry of [...(sub.items || []), ...(sub.tags || [])]) {
+                        assert.ok(typeof entry === 'string' && entry.length > 0, `${file}: ${where} — sous-branche "${sub.titre}" a une entrée vide`);
                     }
                 }
 
