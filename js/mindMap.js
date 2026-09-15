@@ -88,9 +88,10 @@ function buildMindMapBranch(theme, branch, index) {
     const details = document.createElement('details');
     details.className = 'mindmap-branch';
     details.dataset.axis = branch.couleur || MINDMAP_FALLBACK_COLORS[index % MINDMAP_FALLBACK_COLORS.length];
-    // Première branche ouverte d'entrée : l'écran ne s'ouvre jamais sur
-    // une simple liste de titres fermés, dont on ne devine pas le contenu.
-    details.open = index === 0;
+    // Toutes les branches repliées à l'ouverture : le sommaire s'annonce
+    // d'abord comme un plan, et c'est au lecteur de décider par où entrer.
+    // « Tout déplier » reste à un tap pour qui veut la fiche entière.
+    details.open = false;
 
     const summary = document.createElement('summary');
     summary.innerHTML = `<span class="mindmap-branch-num">${romanNumeral(index)}.</span>`

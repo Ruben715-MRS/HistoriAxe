@@ -53,9 +53,10 @@ test('« Découverte » déplie le choix Frise / Sommaire, et le sommaire s’ou
     await expect(page.locator('#mindmap-title')).toHaveText(nomDuTheme);
     await expect(page.locator('.mindmap-branch')).toHaveCount(await branchesDeclarees(page));
 
-    // Première branche ouverte d'entrée : l'écran ne s'ouvre jamais sur une
-    // simple liste de titres fermés (voir js/mindMap.js: buildMindMapBranch).
-    await expect(page.locator('.mindmap-branch').first()).toHaveAttribute('open', '');
+    // Rien n'est déplié à l'arrivée : le sommaire s'annonce comme un plan,
+    // et c'est au lecteur de choisir par où entrer (voir js/mindMap.js:
+    // buildMindMapBranch).
+    await expect(page.locator('#screen-mindmap details[open]')).toHaveCount(0);
 
     // Retour : le choix est replié, comme à chaque arrivée sur l'écran.
     await page.locator('#screen-mindmap .back-btn').click();
