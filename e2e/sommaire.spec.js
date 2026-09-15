@@ -114,8 +114,8 @@ test('une pastille « Réviser cet axe » prépare la révision de ce seul axe',
     await openThemeModes(page, THEME_AVEC);
     await page.locator('#mode-card-discovery').click();
     await page.locator('#discovery-picker .mode-picker-btn').nth(1).click();
-    // Les pastilles sont en bas des branches et sous-branches, repliées par
-    // défaut hormis la première.
+    // Les pastilles sont en bas des branches et sous-branches, toutes
+    // repliées à l'arrivée.
     await page.locator('.mindmap-toolbar-btn').first().click();
 
     const pastille = page.locator('.mindmap-axis-chip').first();
