@@ -275,19 +275,31 @@ et un `fetch` — c'est-à-dire de la quasi-totalité de l'interface.
 
 `npm run test:e2e` (Playwright, `e2e/`) comble ce trou en ouvrant un vrai
 navigateur sur le site servi tel qu'il l'est en production
-(`e2e/server.js`, un serveur statique sans dépendance). Deux parcours pour
-l'instant :
+(`e2e/server.js`, un serveur statique sans dépendance). Quatre parcours,
+25 tests, une trentaine de secondes :
 
 - `e2e/modes.spec.js` — chaque mode de jeu se lance et répond à une
   première interaction. C'est la famille de régressions déjà vécue ici :
   une fonction supprimée lors d'un refactor, un mode qui ne démarre plus.
 - `e2e/axes.spec.js` — le filtre par axe thématique : changer de thème
   repart de tous les axes, revenir au même thème conserve la sélection.
+- `e2e/sommaire.spec.js` — le sommaire d'un thème : autant de branches
+  affichées que la donnée en déclare, un repère daté qui ouvre la fiche du
+  bon événement, une pastille qui prépare la révision du bon axe.
+- `e2e/navigation.spec.js` — le seul parcours qui prend l'app par la porte :
+  accueil, catégories, sous-catégories imbriquées, retours arrière,
+  recherche, favoris, « Hasard », « Réviser » et « Défis ».
 
 Chaque test hérite d'une assertion du socle (`e2e/fixtures.js`) : **aucune
 erreur console ni exception non rattrapée** sur les écrans traversés. C'est
 la ligne la plus rentable de la suite ; elle a déjà trouvé un compteur de
 progression qui se désynchronisait après un mauvais placement.
+
+Les parcours entrent dans un thème par un raccourci assumé (choisir la
+catégorie par programme, puis cliquer comme un joueur — voir
+`e2e/fixtures.js: openThemeCard`), à une exception près :
+`navigation.spec.js` ne clique que de vrais éléments, du premier écran au
+dernier.
 
 Le socle neutralise trois choses, chacune pour une raison précise : le
 service worker (il recharge la page en plein test et relaie des requêtes
