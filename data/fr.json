@@ -3,7 +3,7 @@
   "lang": "fr",
   "name": "Français (Intégral)",
   "totalThemes": 795,
-  "totalEvents": 19660,
+  "totalEvents": 19781,
   "categories": [
     {
       "nom": "Culture générale",
@@ -91453,154 +91453,447 @@
                   "id": "thm_at",
                   "nom": "Histoire de l'Autriche 🇦🇹",
                   "difficulte": "Intermédiaire",
+                  "axeOrder": [
+                    "Marche d'Autriche, Babenberg et avènement des Habsbourg (jusqu'en 1519)",
+                    "La monarchie danubienne, les Ottomans et la Réforme (1519-1740)",
+                    "Réformes éclairées, Empire et système Metternich (1740-1848)",
+                    "François-Joseph et l'Autriche-Hongrie (1848-1918)",
+                    "Première République, austrofascisme et Anschluss (1918-1945)",
+                    "La Deuxième République (depuis 1945)"
+                  ],
                   "events": [
                     {
                       "id": "at1",
+                      "axe": "Marche d'Autriche, Babenberg et avènement des Habsbourg (jusqu'en 1519)",
                       "date": 976,
                       "titre": "Fondation de la marche d'Autriche",
-                      "description": "L'empereur Otton II confie la marche d'Autriche (Ostarrichi) au margrave Léopold Ier de Babenberg, posant les fondations territoriales du futur pays.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Marche_d%27Autriche"
+                      "description": "L'empereur Otton II confie à Léopold de Babenberg la marche frontalière établie sur le Danube face aux Hongrois, après la victoire impériale du Lechfeld. Ce commandement militaire, d'abord révocable, devient héréditaire dans la famille qui le tiendra pendant deux cent soixante-dix ans. La marche de l'Est constitue le premier noyau territorial d'où sortira l'Autriche.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Margraviat_d%27Autriche"
                     },
                     {
                       "id": "at2",
+                      "axe": "Marche d'Autriche, Babenberg et avènement des Habsbourg (jusqu'en 1519)",
                       "date": 996,
                       "titre": "Première mention du nom « Ostarrichi »",
-                      "description": "Un diplôme de l'empereur Otton III mentionne pour la première fois le nom « Ostarrichi », ancêtre du nom actuel de l'Autriche (Österreich).",
+                      "description": "Un diplôme d'Otton III donnant une terre à l'évêché de Freising désigne la région par le mot « Ostarrichi », en vieux haut-allemand le royaume de l'Est. C'est la plus ancienne attestation du nom dont dérive l'actuel Österreich. Le document, conservé à Munich, est devenu pour l'Autriche l'équivalent d'un acte de naissance et a été célébré en grande pompe lors de son millénaire en 1996.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Ostarrichi"
                     },
                     {
                       "id": "at3",
+                      "axe": "Marche d'Autriche, Babenberg et avènement des Habsbourg (jusqu'en 1519)",
                       "date": 1156,
                       "titre": "Privilegium Minus",
-                      "description": "L'empereur Frédéric Barberousse élève la marche d'Autriche au rang de duché héréditaire au profit de la maison de Babenberg, par le Privilegium Minus.",
+                      "description": "Frédéric Barberousse détache l'Autriche de la Bavière et l'érige en duché héréditaire au profit d'Henri II Jasomirgott, avec des privilèges exceptionnels : transmission par les femmes, justice propre, dispense de service militaire hors des pays voisins. Le Privilegium Minus fait de l'Autriche une principauté quasi souveraine au sein de l'Empire. Vienne devient dans la foulée résidence ducale, statut qu'elle n'a plus jamais perdu.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Privilegium_Minus"
                     },
                     {
+                      "id": "atn1",
+                      "axe": "Marche d'Autriche, Babenberg et avènement des Habsbourg (jusqu'en 1519)",
+                      "date": 1246,
+                      "titre": "L'extinction des Babenberg",
+                      "description": "Frédéric II le Belliqueux, dernier duc de la lignée, meurt sans descendance mâle en combattant les Hongrois sur la Leitha, laissant l'Autriche sans maître. S'ouvre une vingtaine d'années de vacance pendant lesquelles le roi de Bohême Ottokar II s'empare du duché. Cette crise de succession attire l'attention de l'Empire sur l'Autriche et prépare l'arrivée des Habsbourg.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Fr%C3%A9d%C3%A9ric_II_(duc_d%27Autriche)"
+                    },
+                    {
                       "id": "at4",
+                      "axe": "Marche d'Autriche, Babenberg et avènement des Habsbourg (jusqu'en 1519)",
                       "date": 1273,
                       "titre": "Rodolphe de Habsbourg élu roi des Romains",
-                      "description": "Le comte Rodolphe de Habsbourg est élu roi des Romains, marquant le début de l'ascension politique de la maison de Habsbourg en Autriche.",
+                      "description": "Élu roi des Romains par des princes qui le croient faible, le comte Rodolphe de Habsbourg, seigneur d'un modeste domaine d'Argovie et d'Alsace, réclame aussitôt les duchés autrichiens occupés sans titre par le roi de Bohême Ottokar II. Son élection met fin au Grand Interrègne. Elle lance surtout une dynastie qui régnera sur l'Autriche jusqu'en 1918 et sur l'Empire jusqu'en 1806.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Rodolphe_Ier_du_Saint-Empire"
                     },
                     {
+                      "id": "atn2",
+                      "axe": "Marche d'Autriche, Babenberg et avènement des Habsbourg (jusqu'en 1519)",
+                      "date": 1278,
+                      "titre": "Marchfeld installe les Habsbourg",
+                      "description": "Rodolphe de Habsbourg, allié au roi de Hongrie, bat et tue Ottokar II de Bohême dans la plaine du Marchfeld au nord-est de Vienne, dans l'une des plus grandes batailles de cavalerie du Moyen Âge. Il inféode aussitôt l'Autriche et la Styrie à ses fils. Les Habsbourg, jusque-là seigneurs souabes de second rang, deviennent une dynastie danubienne, ce qu'ils resteront six siècles et demi.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Marchfeld"
+                    },
+                    {
+                      "id": "atn3",
+                      "axe": "Marche d'Autriche, Babenberg et avènement des Habsbourg (jusqu'en 1519)",
+                      "date": 1365,
+                      "titre": "Rodolphe IV fonde l'université de Vienne",
+                      "description": "Le duc surnommé « le Fondateur », qui a aussi lancé la cathédrale Saint-Étienne et fabriqué le faux Privilegium Maius pour hisser l'Autriche au rang d'archiduché, dote Vienne de la première université de langue allemande après Prague. L'Alma Mater Rudolphina forme dès lors les juristes et les théologiens de la monarchie. Elle fait de Vienne un centre intellectuel, condition de son futur rôle de capitale impériale.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Universit%C3%A9_de_Vienne"
+                    },
+                    {
+                      "id": "atn4",
+                      "axe": "Marche d'Autriche, Babenberg et avènement des Habsbourg (jusqu'en 1519)",
+                      "date": 1477,
+                      "titre": "Le mariage bourguignon de Maximilien",
+                      "description": "Maximilien de Habsbourg épouse Marie de Bourgogne, héritière de Charles le Téméraire, et apporte à sa maison les Pays-Bas et la Franche-Comté, les provinces les plus riches d'Europe. La formule « que d'autres fassent la guerre, toi, heureuse Autriche, marie-toi » résume la méthode qui bâtira l'empire. Ce mariage engage aussi la rivalité multiséculaire des Habsbourg avec la France.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Marie_de_Bourgogne"
+                    },
+                    {
+                      "id": "atn5",
+                      "axe": "Marche d'Autriche, Babenberg et avènement des Habsbourg (jusqu'en 1519)",
+                      "date": 1515,
+                      "titre": "Le double mariage de Vienne",
+                      "description": "Maximilien Ier conclut avec les Jagellon un traité mariant ses petits-enfants au roi de Hongrie et de Bohême et à sa sœur, avec clause de succession réciproque en cas d'extinction. L'arrangement paraît alors secondaire. Onze ans plus tard, la mort de Louis II à Mohács le rend décisif et donne aux Habsbourg les couronnes de Hongrie et de Bohême, fondement de la monarchie danubienne.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Anne_Jagellon"
+                    },
+                    {
+                      "id": "atn6",
+                      "axe": "La monarchie danubienne, les Ottomans et la Réforme (1519-1740)",
+                      "date": 1521,
+                      "titre": "Le partage de Worms sépare les deux branches",
+                      "description": "Charles Quint cède à son frère Ferdinand les possessions autrichiennes des Habsbourg, se réservant l'Espagne, les Pays-Bas et l'Amérique ; la maison se divise en une branche espagnole et une branche autrichienne. Ferdinand reçoit ainsi une base territoriale qui lui permettra d'ajouter la Hongrie et la Bohême. Cette séparation fait naître l'Autriche des Habsbourg comme puissance distincte de l'empire espagnol.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Ferdinand_Ier_(empereur_du_Saint-Empire)"
+                    },
+                    {
                       "id": "at5",
+                      "axe": "La monarchie danubienne, les Ottomans et la Réforme (1519-1740)",
                       "date": 1526,
                       "titre": "Bataille de Mohács",
-                      "description": "La mort du roi Louis II de Hongrie face aux Ottomans permet à Ferdinand Ier de Habsbourg d'hériter des couronnes de Bohême et de Hongrie, agrandissant considérablement les possessions autrichiennes.",
+                      "description": "Le roi Louis II de Hongrie et de Bohême, écrasé par Soliman le Magnifique, meurt sans héritier dans sa fuite ; son beau-frère Ferdinand de Habsbourg revendique aussitôt les deux couronnes en vertu des accords matrimoniaux de 1515. Les Habsbourg triplent ainsi leurs domaines et deviennent la puissance dominante d'Europe centrale. Ils héritent en même temps d'une frontière militaire avec l'Empire ottoman qu'ils tiendront pendant cent cinquante ans.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Moh%C3%A1cs"
                     },
                     {
                       "id": "at6",
+                      "axe": "La monarchie danubienne, les Ottomans et la Réforme (1519-1740)",
                       "date": 1529,
                       "titre": "Premier siège de Vienne",
-                      "description": "L'armée ottomane de Soliman le Magnifique assiège sans succès Vienne, marquant l'apogée de l'expansion turque en Europe centrale.",
+                      "description": "Soliman le Magnifique remonte le Danube avec une armée considérable et assiège Vienne pendant trois semaines ; la pluie, la boue qui a fait abandonner l'artillerie lourde et l'approche de l'hiver le contraignent à lever le siège. L'échec fixe la limite extrême de l'expansion ottomane en Europe centrale. Vienne devient pour deux siècles la ville-forteresse de la chrétienté et l'Autriche se pense désormais comme son rempart.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Si%C3%A8ge_de_Vienne_(1529)"
                     },
                     {
+                      "id": "atn7",
+                      "axe": "La monarchie danubienne, les Ottomans et la Réforme (1519-1740)",
+                      "date": 1555,
+                      "titre": "La paix d'Augsbourg",
+                      "description": "Après trente ans de conflits, la diète d'Augsbourg reconnaît le luthéranisme et pose le principe selon lequel chaque prince fixe la religion de ses sujets. Dans les pays autrichiens, où la noblesse est largement passée à la Réforme, le compromis laisse aux Habsbourg catholiques un territoire majoritairement protestant. La reconquête catholique de ces terres, menée à partir de la fin du siècle, façonnera durablement le baroque et la piété autrichiens.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Paix_d%27Augsbourg"
+                    },
+                    {
+                      "id": "atn8",
+                      "axe": "La monarchie danubienne, les Ottomans et la Réforme (1519-1740)",
+                      "date": 1618,
+                      "titre": "La défenestration de Prague",
+                      "description": "Des nobles protestants de Bohême jettent par les fenêtres du château deux gouverneurs impériaux et leur secrétaire, qui survivent à la chute, pour protester contre les atteintes aux libertés religieuses garanties par la Lettre de majesté. Le geste déclenche la guerre de Trente Ans, qui ravagera l'Europe centrale. Il ouvre aussi l'affrontement décisif entre les Habsbourg et leurs sujets tchèques.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/D%C3%A9fenestration_de_Prague"
+                    },
+                    {
+                      "id": "atn9",
+                      "axe": "La monarchie danubienne, les Ottomans et la Réforme (1519-1740)",
+                      "date": 1620,
+                      "titre": "La Montagne Blanche et la recatholicisation",
+                      "description": "En deux heures, l'armée impériale et catholique écrase les états de Bohême devant Prague ; vingt-sept chefs de la révolte sont exécutés sur la place de la Vieille-Ville, la noblesse protestante est dépossédée et la Bohême perd son électorat et sa constitution. Le tchèque recule devant l'allemand pour deux siècles. Cette défaite, devenue le deuil national tchèque, ancre la Bohême dans la monarchie des Habsbourg jusqu'en 1918.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_la_Montagne_Blanche"
+                    },
+                    {
                       "id": "at7",
+                      "axe": "La monarchie danubienne, les Ottomans et la Réforme (1519-1740)",
                       "date": 1683,
                       "titre": "Bataille de Vienne",
-                      "description": "Une armée de secours menée par le roi de Pologne Jean III Sobieski délivre Vienne assiégée par les Ottomans, tournant décisif qui met fin à l'expansion turque en Europe.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Vienne_(1683)"
+                      "description": "Après deux mois de siège par le grand vizir Kara Mustafa, une armée de secours conduite par Jean III Sobieski et Charles de Lorraine descend du Kahlenberg et met en déroute les Ottomans lors de la plus grande charge de cavalerie de l'histoire. C'est le dernier assaut turc sur Vienne. La contre-offensive qui suit reprend la Hongrie entière et fait des Habsbourg une grande puissance européenne, non plus seulement une dynastie impériale.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Vienne"
+                    },
+                    {
+                      "id": "atn10",
+                      "axe": "La monarchie danubienne, les Ottomans et la Réforme (1519-1740)",
+                      "date": 1699,
+                      "titre": "Karlowitz, la Hongrie reconquise",
+                      "description": "Seize ans après Vienne, les victoires du prince Eugène de Savoie obligent les Ottomans à céder par traité la Hongrie, la Transylvanie et la Croatie ; c'est la première fois que la Sublime Porte négocie en position de vaincue. Les Habsbourg règnent désormais sur un vaste ensemble multiethnique du Tyrol aux Carpates. Karlowitz fait de l'Autriche une grande puissance et inverse durablement le rapport de forces en Europe orientale.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Trait%C3%A9_de_Karlowitz"
+                    },
+                    {
+                      "id": "atn11",
+                      "axe": "La monarchie danubienne, les Ottomans et la Réforme (1519-1740)",
+                      "date": 1713,
+                      "titre": "La Pragmatique Sanction",
+                      "description": "Sans héritier mâle, Charles VI proclame un ordre de succession qui déclare les pays héréditaires indivisibles et transmissibles par les femmes, puis consacre son règne à en obtenir la reconnaissance par les diètes et les puissances, au prix de concessions considérables. Le texte donne pour la première fois une unité juridique aux États des Habsbourg. Sa violation par Frédéric II en 1740 déclenchera pourtant la guerre de Succession d'Autriche.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Pragmatique_Sanction_(Autriche)"
                     },
                     {
                       "id": "at8",
+                      "axe": "Réformes éclairées, Empire et système Metternich (1740-1848)",
                       "date": 1740,
                       "titre": "Accession de Marie-Thérèse",
-                      "description": "Marie-Thérèse accède aux possessions des Habsbourg malgré la Pragmatique Sanction contestée, et engage d'importantes réformes administratives et sociales durant son règne.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Marie-Th%C3%A9r%C3%A8se_(archiduchesse_d%27Autriche)"
+                      "description": "À la mort de Charles VI, sa fille de vingt-trois ans hérite des États héréditaires en vertu de la Pragmatique Sanction, aussitôt bafouée par la Prusse qui envahit la Silésie et par une coalition qui vise le démembrement. Marie-Thérèse sauve la monarchie en s'appuyant sur la Hongrie et engage une refonte complète de l'administration, de la fiscalité, de l'armée et de l'école. Son règne de quarante ans transforme un agrégat de pays en un État moderne centralisé.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Marie-Th%C3%A9r%C3%A8se_d%27Autriche_(1717-1780)"
+                    },
+                    {
+                      "id": "atn12",
+                      "axe": "Réformes éclairées, Empire et système Metternich (1740-1848)",
+                      "date": 1748,
+                      "titre": "La perte de la Silésie",
+                      "description": "La paix d'Aix-la-Chapelle clôt la guerre de Succession d'Autriche : Marie-Thérèse conserve l'essentiel de son héritage mais doit abandonner à la Prusse la Silésie, la province la plus peuplée et la plus industrielle de la monarchie. Cette amputation la convainc que l'État doit être refondu de fond en comble pour soutenir la comparaison avec Berlin. La rivalité austro-prussienne ouverte ici ne se refermera qu'à Sadowa.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Trait%C3%A9_d%27Aix-la-Chapelle_(1748)"
+                    },
+                    {
+                      "id": "atn13",
+                      "axe": "Réformes éclairées, Empire et système Metternich (1740-1848)",
+                      "date": 1772,
+                      "titre": "La part autrichienne du partage de la Pologne",
+                      "description": "Marie-Thérèse accepte, en pleurant selon Frédéric II mais en prenant toujours, sa part du démembrement de la Pologne : la Galicie, avec Lemberg et Cracovie bientôt ajoutée. La monarchie gagne une province immense, pauvre et peuplée de Polonais, de Ruthènes et de Juifs. Ce gain achève de faire de l'Autriche un empire multinational, dont la Galicie deviendra l'un des foyers intellectuels et politiques les plus actifs.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Partages_de_la_Pologne"
                     },
                     {
                       "id": "at9",
+                      "axe": "Réformes éclairées, Empire et système Metternich (1740-1848)",
                       "date": 1804,
                       "titre": "Proclamation de l'Empire d'Autriche",
-                      "description": "Face aux ambitions de Napoléon, François II se proclame empereur héréditaire d'Autriche sous le nom de François Ier, deux ans avant de renoncer à la couronne du Saint-Empire.",
+                      "description": "Anticipant la disparition du Saint-Empire dont Napoléon vient de se faire couronner le rival, François II se proclame empereur héréditaire d'Autriche, créant un titre pour des territoires qui n'en avaient jamais eu de commun. Il abdique la couronne impériale deux ans plus tard. L'Empire d'Autriche donne pour la première fois un nom et une existence juridique unique à l'ensemble des possessions des Habsbourg.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Empire_d%27Autriche"
                     },
                     {
+                      "id": "atn14",
+                      "axe": "Réformes éclairées, Empire et système Metternich (1740-1848)",
+                      "date": 1806,
+                      "titre": "La fin du Saint-Empire",
+                      "description": "Après Austerlitz et la formation de la Confédération du Rhin sous protection française, François II dépose la couronne impériale et prononce la dissolution du Saint-Empire romain germanique, vieux de mille ans. Les Habsbourg perdent la dignité qu'ils détenaient presque sans interruption depuis 1438. Il ne leur reste que l'Empire d'Autriche créé deux ans plus tôt, ce qui les oblige à fonder leur légitimité sur leurs propres terres.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Saint-Empire_romain_germanique"
+                    },
+                    {
+                      "id": "atn15",
+                      "axe": "Réformes éclairées, Empire et système Metternich (1740-1848)",
+                      "date": 1809,
+                      "titre": "Wagram et le mariage autrichien",
+                      "description": "L'archiduc Charles, seul général à avoir battu Napoléon à Aspern quelques semaines plus tôt, est vaincu à Wagram ; l'Autriche cède l'Illyrie, paie une lourde indemnité et Metternich fait épouser à l'Empereur l'archiduchesse Marie-Louise. La monarchie choisit l'alliance humiliante pour survivre. Ce calcul lui permettra de se retourner à temps en 1813 et de présider, deux ans plus tard, au congrès de Vienne.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Wagram"
+                    },
+                    {
                       "id": "at10",
+                      "axe": "Réformes éclairées, Empire et système Metternich (1740-1848)",
                       "date": 1815,
                       "titre": "Congrès de Vienne",
-                      "description": "Réuni sous la présidence du chancelier autrichien Metternich, le congrès redessine la carte de l'Europe après les guerres napoléoniennes et fait de Vienne le centre de la diplomatie continentale.",
+                      "description": "Réuni à Vienne sous la houlette de Metternich, le congrès redessine l'Europe sur les principes de légitimité et d'équilibre, dote l'Autriche de la Lombardie-Vénétie et lui confie la présidence de la Confédération germanique. Vienne devient pour une génération le centre de la diplomatie continentale. L'ordre issu du congrès, garanti par la Sainte-Alliance, assure à l'Europe quarante ans sans guerre générale et à l'Autriche son apogée diplomatique.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Congr%C3%A8s_de_Vienne"
                     },
                     {
+                      "id": "atn16",
+                      "axe": "Réformes éclairées, Empire et système Metternich (1740-1848)",
+                      "date": 1820,
+                      "titre": "Le système Metternich",
+                      "description": "Chancelier de l'Empire, Metternich fait des congrès européens l'instrument d'une répression concertée des mouvements libéraux et nationaux, de Naples à l'Espagne, tandis que la censure et la police politique quadrillent l'intérieur. Son système préserve l'ordre de 1815 pendant une génération. Il fige aussi l'Autriche dans l'immobilisme, au moment où l'industrie et les nationalités transforment l'Europe centrale.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Klemens_Wenzel_von_Metternich"
+                    },
+                    {
+                      "id": "atn17",
+                      "axe": "Réformes éclairées, Empire et système Metternich (1740-1848)",
+                      "date": 1848,
+                      "titre": "La révolution de mars et la chute de Metternich",
+                      "description": "Des manifestations étudiantes et ouvrières à Vienne contraignent le chancelier à fuir en Angleterre ; la révolution gagne Prague, Budapest et Milan, obtient une constitution, l'abolition du servage et la liberté de presse. L'armée reprend les villes une à une et Vienne est bombardée en octobre, mais le servage n'est pas rétabli. Le cycle révolutionnaire pose pour soixante-dix ans la question qui minera la monarchie : comment concilier un État unique et une douzaine de nations.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9volution_de_Mars"
+                    },
+                    {
+                      "id": "atn18",
+                      "axe": "François-Joseph et l'Autriche-Hongrie (1848-1918)",
+                      "date": 1848,
+                      "titre": "L'avènement de François-Joseph",
+                      "description": "En décembre, la cour réfugiée à Olmütz fait abdiquer l'empereur Ferdinand au profit de son neveu de dix-huit ans, jugé capable d'incarner un pouvoir neuf sans être lié aux promesses de mars. François-Joseph règne pendant soixante-huit ans, le plus long règne de l'histoire européenne après celui de Louis XIV. Sa longévité même donne à la double monarchie sa cohésion et son incapacité à se réformer.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Fran%C3%A7ois-Joseph_Ier"
+                    },
+                    {
+                      "id": "atn19",
+                      "axe": "François-Joseph et l'Autriche-Hongrie (1848-1918)",
+                      "date": 1859,
+                      "titre": "Solférino et la perte de la Lombardie",
+                      "description": "Battue par les armées française et piémontaise en Lombardie, l'Autriche cède Milan et voit s'engager l'unification italienne à ses dépens ; l'horreur du champ de bataille inspire à Henry Dunant la fondation de la Croix-Rouge. La défaite contraint François-Joseph à abandonner le néo-absolutisme et à convoquer des assemblées. Elle amorce le recul autrichien en Italie, achevé par la perte de la Vénétie en 1866.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Solf%C3%A9rino"
+                    },
+                    {
                       "id": "at11",
+                      "axe": "François-Joseph et l'Autriche-Hongrie (1848-1918)",
                       "date": 1866,
                       "titre": "Défaite de Sadowa",
-                      "description": "La défaite autrichienne face à la Prusse lors de la guerre austro-prussienne exclut définitivement l'Autriche de l'unification allemande.",
+                      "description": "En sept semaines, l'armée prussienne dotée du fusil à aiguille écrase l'Autriche à Sadowa en Bohême ; Bismarck impose une paix modérée qui exclut simplement Vienne de l'Allemagne. La Confédération germanique est dissoute et la Prusse unifiera l'Allemagne sans les Autrichiens. Privée de sa vocation allemande, l'Autriche doit se redéfinir comme puissance danubienne, ce qui la contraint dès l'année suivante à composer avec la Hongrie.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Sadowa"
                     },
                     {
                       "id": "at12",
+                      "axe": "François-Joseph et l'Autriche-Hongrie (1848-1918)",
                       "date": 1867,
                       "titre": "Compromis austro-hongrois",
-                      "description": "Le compromis (Ausgleich) transforme l'Empire d'Autriche en double monarchie d'Autriche-Hongrie, accordant à la Hongrie une large autonomie sous la couronne commune de François-Joseph.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Compromis_austro-hongrois_de_1867"
+                      "description": "Affaibli par Sadowa, François-Joseph accorde à la Hongrie un compromis qui lui rend son parlement, son gouvernement et sa constitution : deux États souverains ne partagent plus que le souverain, l'armée, la diplomatie et les finances communes. L'Empire devient la double monarchie d'Autriche-Hongrie. Le compromis satisfait les Hongrois mais frustre Tchèques, Croates et Roumains, dont la question nationale rongera la monarchie jusqu'à sa dislocation.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Compromis_austro-hongrois"
+                    },
+                    {
+                      "id": "atn20",
+                      "axe": "François-Joseph et l'Autriche-Hongrie (1848-1918)",
+                      "date": 1873,
+                      "titre": "L'Exposition universelle et le krach de Vienne",
+                      "description": "Neuf jours après l'ouverture de l'Exposition universelle censée célébrer la puissance de l'Empire, la Bourse de Vienne s'effondre, entraînant des centaines de faillites et le début d'une longue dépression européenne. La Gründerzeit, période d'urbanisation fiévreuse qui a bâti la Ringstrasse, s'achève brutalement. Le krach nourrit la défiance envers le libéralisme et le capitalisme financier, terreau des mouvements antisémites et populistes de la fin du siècle.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Crise_bancaire_de_mai_1873"
+                    },
+                    {
+                      "id": "atn21",
+                      "axe": "François-Joseph et l'Autriche-Hongrie (1848-1918)",
+                      "date": 1897,
+                      "titre": "Karl Lueger, maire antisémite de Vienne",
+                      "description": "Après que François-Joseph eut refusé quatre fois de le confirmer, le chef du Parti chrétien-social devient maire de Vienne, qu'il dote du gaz, de l'électricité et des tramways municipaux tout en faisant de l'antisémitisme un instrument électoral de masse. Il invente la politique moderne d'appel au petit peuple urbain. Le jeune Hitler, vivant alors à Vienne, reconnaîtra en lui son modèle de tribun.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Karl_Lueger"
+                    },
+                    {
+                      "id": "atn22",
+                      "axe": "François-Joseph et l'Autriche-Hongrie (1848-1918)",
+                      "date": 1908,
+                      "titre": "L'annexion de la Bosnie-Herzégovine",
+                      "description": "Vienne annexe une province qu'elle administrait depuis 1878 tout en la laissant nominalement ottomane, provoquant la fureur de la Serbie et de la Russie et une crise européenne qui manque de dégénérer. L'Autriche-Hongrie n'obtient gain de cause que grâce au soutien allemand, dont elle devient dépendante. L'annexion attise l'irrédentisme serbe et fait de Sarajevo le point où la monarchie recevra le coup fatal.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Crise_bosniaque"
                     },
                     {
                       "id": "at13",
+                      "axe": "François-Joseph et l'Autriche-Hongrie (1848-1918)",
                       "date": 1914,
                       "titre": "Assassinat de l'archiduc François-Ferdinand",
-                      "description": "L'assassinat de l'héritier du trône austro-hongrois à Sarajevo par un nationaliste serbe déclenche la crise de juillet qui débouche sur la Première Guerre mondiale.",
+                      "description": "L'héritier du trône et son épouse sont abattus à Sarajevo par Gavrilo Princip, nationaliste bosno-serbe lié à une société secrète de Belgrade. Vienne, décidée à en finir avec la Serbie, lui adresse un ultimatum délibérément inacceptable et lui déclare la guerre, déclenchant par le jeu des alliances la Première Guerre mondiale. L'Autriche-Hongrie, qui voulait sauver son rang de grande puissance, y perd son existence.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Assassinat_de_Fran%C3%A7ois-Ferdinand_d%27Autriche"
                     },
                     {
+                      "id": "atn23",
+                      "axe": "François-Joseph et l'Autriche-Hongrie (1848-1918)",
+                      "date": 1916,
+                      "titre": "La mort de François-Joseph",
+                      "description": "L'empereur s'éteint à quatre-vingt-six ans en pleine guerre, après un règne qui avait commencé avec les révolutions de 1848 ; son petit-neveu Charles lui succède et tente aussitôt d'obtenir une paix séparée par l'intermédiaire de son beau-frère, démarche qui échoue et l'humilie. Avec lui disparaît le seul lien symbolique tenant ensemble les peuples de la monarchie. Deux ans plus tard, l'Autriche-Hongrie se dissout en une semaine.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Charles_Ier_(empereur_d%27Autriche)"
+                    },
+                    {
                       "id": "at14",
+                      "axe": "Première République, austrofascisme et Anschluss (1918-1945)",
                       "date": 1918,
                       "titre": "Proclamation de la République",
-                      "description": "Après l'effondrement de l'Autriche-Hongrie à la fin de la guerre, l'Assemblée nationale proclame la République d'Autriche allemande, réduite à ses seuls territoires germanophones.",
+                      "description": "Au lendemain de l'abdication de Charles Ier et de l'effondrement de la double monarchie, l'Assemblée nationale proclame la République d'Autriche allemande et demande son rattachement à l'Allemagne. De cinquante millions de sujets, l'État tombe à six millions et demi d'habitants pour un huitième du territoire, avec une capitale de deux millions d'âmes sans arrière-pays. Peu d'Autrichiens croient alors à la viabilité de ce pays « que personne n'a voulu ».",
                       "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9publique_d%27Autriche_allemande"
                     },
                     {
+                      "id": "atn24",
+                      "axe": "Première République, austrofascisme et Anschluss (1918-1945)",
+                      "date": 1919,
+                      "titre": "Saint-Germain interdit l'Anschluss",
+                      "description": "Le traité impose à la nouvelle république le nom d'Autriche, lui interdit expressément toute union avec l'Allemagne et lui retire le Tyrol du Sud, donné à l'Italie, ainsi que la Bohême allemande, attribuée à la Tchécoslovaquie. Trois millions et demi de germanophones se retrouvent hors des frontières. Ce traité, vécu comme un déni du droit des peuples que les vainqueurs invoquaient ailleurs, empoisonne toute la Première République.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Trait%C3%A9_de_Saint-Germain-en-Laye_(1919)"
+                    },
+                    {
+                      "id": "atn25",
+                      "axe": "Première République, austrofascisme et Anschluss (1918-1945)",
+                      "date": 1922,
+                      "titre": "La Vienne rouge",
+                      "description": "Dotée du statut de Land et administrée sans interruption par les sociaux-démocrates, la capitale lève un impôt progressif sur le logement de luxe et bâtit soixante mille appartements municipaux, dont le Karl-Marx-Hof, avec crèches, bains et bibliothèques. L'expérience attire les observateurs du monde entier. Elle oppose une capitale ouvrière à des provinces catholiques et conservatrices, fracture qui mènera à la guerre civile.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Vienne_la_rouge"
+                    },
+                    {
+                      "id": "atn26",
+                      "axe": "Première République, austrofascisme et Anschluss (1918-1945)",
+                      "date": 1927,
+                      "titre": "L'incendie du Palais de justice",
+                      "description": "L'acquittement de miliciens d'extrême droite ayant tué un enfant et un invalide déclenche une manifestation spontanée qui incendie le Palais de justice ; la police tire sur la foule et fait quatre-vingt-neuf morts. La confiance entre les deux camps politiques est rompue et chacun renforce sa milice armée. Cette journée est considérée comme le véritable début de la décomposition de la démocratie autrichienne.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9volte_de_Juillet"
+                    },
+                    {
+                      "id": "atn27",
+                      "axe": "Première République, austrofascisme et Anschluss (1918-1945)",
+                      "date": 1934,
+                      "titre": "La guerre civile de février",
+                      "description": "Le chancelier Dollfuss ayant gouverné sans parlement depuis un an, une perquisition d'armes à Linz déclenche quatre jours de combats entre le Schutzbund social-démocrate et l'armée, qui bombarde les immeubles ouvriers de Vienne à l'artillerie. Le parti social-démocrate et les syndicats sont interdits, leurs chefs pendus ou exilés. L'Autriche devient un État corporatiste autoritaire, privé de la seule force qui s'opposait résolument au national-socialisme.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Guerre_civile_autrichienne"
+                    },
+                    {
+                      "id": "atn28",
+                      "axe": "Première République, austrofascisme et Anschluss (1918-1945)",
+                      "date": 1934,
+                      "titre": "L'assassinat de Dollfuss",
+                      "description": "En juillet, des SS autrichiens déguisés en policiers prennent la chancellerie et abattent Dollfuss, qu'ils laissent mourir sans soins, mais le putsch échoue et Mussolini masse des troupes au Brenner pour protéger l'indépendance autrichienne. Schuschnigg lui succède et gouverne quatre ans dans la même impasse. Lorsque l'Italie basculera dans l'alliance allemande, plus rien ne s'opposera à l'Anschluss.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Engelbert_Dollfuss"
+                    },
+                    {
                       "id": "at15",
+                      "axe": "Première République, austrofascisme et Anschluss (1918-1945)",
                       "date": 1938,
                       "titre": "Anschluss",
-                      "description": "Sous la pression allemande, l'Autriche est annexée par le Troisième Reich, disparaissant en tant qu'État indépendant jusqu'en 1945.",
+                      "description": "Après le suicide politique de Schuschnigg, contraint de renoncer à son plébiscite, la Wehrmacht entre sans combat et Hitler proclame à Vienne le rattachement de son pays natal au Reich, acclamé par des foules considérables sur la Heldenplatz. Un plébiscite truqué l'approuve à quatre-vingt-dix-neuf pour cent. L'Autriche disparaît de la carte pendant sept ans, et la persécution immédiate des Juifs viennois annonce l'ampleur du crime à venir.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Anschluss"
                     },
                     {
                       "id": "at16",
+                      "axe": "La Deuxième République (depuis 1945)",
                       "date": 1945,
                       "titre": "Occupation alliée de l'Autriche",
-                      "description": "Après la défaite du Troisième Reich, l'Autriche retrouve son indépendance formelle mais est divisée en quatre zones d'occupation par les Alliés, à l'image de l'Allemagne.",
+                      "description": "Libérée par l'Armée rouge et les Alliés occidentaux, l'Autriche est divisée en quatre zones d'occupation, Vienne étant elle-même partagée entre les quatre puissances avec un centre administré à tour de rôle. La déclaration de Moscou de 1943, qui la qualifiait de « première victime » de Hitler, lui vaut d'être traitée en pays libéré plutôt qu'en vaincu. Ce statut ambigu épargne l'Autriche mais lui permet aussi de différer pendant quarante ans l'examen de sa participation au nazisme.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Autriche_occup%C3%A9e"
                     },
                     {
                       "id": "at17",
+                      "axe": "La Deuxième République (depuis 1945)",
                       "date": 1955,
                       "titre": "Traité d'État autrichien",
-                      "description": "Le traité signé au Belvédère met fin à l'occupation alliée et restaure la pleine souveraineté de l'Autriche, qui adopte peu après une neutralité perpétuelle inscrite dans sa Constitution.",
+                      "description": "Après dix ans de négociations et grâce au dégel qui suit la mort de Staline, les quatre puissances signent un traité qui rend à l'Autriche sa pleine souveraineté et retirent leurs troupes ; le Parlement vote en octobre une loi constitutionnelle de neutralité permanente. Le ministre Leopold Figl résume l'événement d'un « L'Autriche est libre ». La neutralité, prix de l'indépendance, devient un élément central de l'identité nationale de la Deuxième République.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Trait%C3%A9_d%27%C3%89tat_autrichien"
                     },
                     {
                       "id": "at18",
+                      "axe": "La Deuxième République (depuis 1945)",
                       "date": 1995,
                       "titre": "Adhésion à l'Union européenne",
-                      "description": "L'Autriche rejoint l'Union européenne aux côtés de la Suède et de la Finlande, ancrant définitivement le pays dans l'intégration économique et politique européenne.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89largissement_de_l%27Union_europ%C3%A9enne_de_1995"
+                      "description": "Deux tiers des Autrichiens approuvent par référendum l'adhésion à l'Union européenne, qui prend effet en janvier ; la neutralité est maintenue mais réinterprétée pour permettre la participation à la politique étrangère commune. Le pays quitte la zone grise entre les deux blocs où la guerre froide l'avait placé. L'adhésion, suivie de l'euro et de Schengen, replace Vienne au centre d'une Europe centrale rouverte depuis 1989.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Quatri%C3%A8me_%C3%A9largissement_de_l%27Union_europ%C3%A9enne"
+                    },
+                    {
+                      "id": "atn29",
+                      "axe": "La Deuxième République (depuis 1945)",
+                      "date": 2000,
+                      "titre": "Les sanctions européennes contre le gouvernement Schüssel",
+                      "description": "La formation d'une coalition entre les conservateurs de Wolfgang Schüssel et le FPÖ de Jörg Haider conduit les quatorze autres États de l'Union à réduire leurs relations bilatérales avec Vienne pendant sept mois, avant qu'un rapport de sages ne conclue à la levée des mesures. C'est la première fois que l'Union tente de sanctionner un membre pour la composition de son gouvernement. L'épisode, ressenti en Autriche comme une humiliation, a surtout profité électoralement à ceux qu'il visait.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Wolfgang_Sch%C3%BCssel"
                     },
                     {
                       "id": "at19",
+                      "axe": "La Deuxième République (depuis 1945)",
                       "date": 2015,
                       "titre": "Crise migratoire européenne",
-                      "description": "L'Autriche devient un point de passage majeur pour les migrants et réfugiés empruntant la route des Balkans, avant de durcir ses contrôles frontaliers face à l'afflux.",
+                      "description": "Sur la route des Balkans, des centaines de milliers de réfugiés syriens, afghans et irakiens traversent l'Autriche ou y demandent l'asile ; le pays en accueille près de neuf cents pour dix mille habitants, l'un des taux les plus élevés d'Europe. L'élan d'accueil initial cède la place à la fermeture des frontières et au plafonnement des demandes. La crise redéfinit durablement la vie politique autrichienne autour de la question migratoire.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Crise_migratoire_en_Europe"
                     },
                     {
                       "id": "at20",
+                      "axe": "La Deuxième République (depuis 1945)",
                       "date": 2019,
                       "titre": "Affaire Ibiza",
-                      "description": "La diffusion d'une vidéo compromettante impliquant le chef du FPÖ Heinz-Christian Strache provoque l'effondrement de la coalition gouvernementale du chancelier Sebastian Kurz et des élections anticipées.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Affaire_Ibiza"
+                      "description": "La diffusion d'une vidéo tournée à Ibiza deux ans plus tôt montre le vice-chancelier Heinz-Christian Strache offrant des marchés publics à une fausse oligarque russe en échange d'un soutien financier occulte. La coalition de Sebastian Kurz avec le FPÖ s'effondre en quelques jours et le gouvernement tombe sur une motion de censure, la première de l'histoire de la République. L'affaire ouvre une série de scandales qui emporteront Kurz lui-même en 2021.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Heinz-Christian_Strache"
                     },
                     {
                       "id": "at21",
+                      "axe": "La Deuxième République (depuis 1945)",
                       "date": 2024,
                       "titre": "Victoire du FPÖ aux élections législatives",
-                      "description": "Le parti d'extrême droite FPÖ, dirigé par Herbert Kickl, arrive pour la première fois en tête d'élections législatives depuis 1945, avant qu'une coalition ÖVP-SPÖ-NEOS ne se forme pour l'exclure du pouvoir.",
+                      "description": "Le Parti de la liberté arrive pour la première fois en tête d'élections législatives nationales avec près de trente pour cent des voix, devant les conservateurs de l'ÖVP. Les autres partis refusent toutefois de gouverner sous la direction de Herbert Kickl, et une coalition sans le FPÖ finit par se former. Ce résultat mesure l'ancrage durable de la droite nationale dans un pays où elle participe au gouvernement par intermittence depuis 1983.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89lections_l%C3%A9gislatives_autrichiennes_de_2024"
                     }
+                  ],
+                  "essentiel": [
+                    "at1",
+                    "at3",
+                    "at4",
+                    "at5",
+                    "at7",
+                    "at8",
+                    "at9",
+                    "at10",
+                    "at11",
+                    "at12",
+                    "at13",
+                    "at14",
+                    "at15",
+                    "at16",
+                    "at17",
+                    "at18",
+                    "atn2",
+                    "atn4",
+                    "atn5",
+                    "atn6",
+                    "atn8",
+                    "atn9",
+                    "atn10",
+                    "atn11",
+                    "atn12",
+                    "atn14",
+                    "atn17",
+                    "atn18",
+                    "atn22",
+                    "atn27"
                   ]
                 },
                 {
@@ -94426,140 +94719,446 @@
                   "id": "thm_ch",
                   "nom": "Histoire de la Suisse 🇨🇭",
                   "difficulte": "Intermédiaire",
+                  "axeOrder": [
+                    "Des Waldstätten aux Treize Cantons (jusqu'en 1515)",
+                    "Réforme, Ancien Régime et Corps helvétique (1515-1798)",
+                    "De la République helvétique à l'État fédéral (1798-1874)",
+                    "Neutralité armée, guerres mondiales et prospérité (1874-1971)",
+                    "La Suisse contemporaine (depuis 1971)"
+                  ],
                   "events": [
                     {
+                      "id": "suin1",
+                      "axe": "Des Waldstätten aux Treize Cantons (jusqu'en 1515)",
+                      "date": 1231,
+                      "titre": "La route du Gothard et la franchise impériale",
+                      "description": "L'ouverture du passage des Schöllenen fait du col du Saint-Gothard la voie la plus courte entre l'Allemagne du Sud et l'Italie, et l'empereur Frédéric II accorde à Uri la franchise impériale pour s'en assurer le contrôle. Les vallées échappent ainsi à tout seigneur intermédiaire et ne dépendent que de l'empereur. Cette liberté, économique avant d'être politique, est la véritable racine de la Confédération.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Col_du_Saint-Gothard"
+                    },
+                    {
                       "id": "ch1",
+                      "axe": "Des Waldstätten aux Treize Cantons (jusqu'en 1515)",
                       "date": 1291,
                       "titre": "Pacte fédéral du Grütli",
-                      "description": "Les communautés d'Uri, Schwytz et Unterwald scellent une alliance défensive mutuelle, épisode fondateur légendaire de la future Confédération suisse.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Pacte_f%C3%A9d%C3%A9ral_de_1291"
+                      "description": "Les hommes des vallées d'Uri, Schwytz et Unterwald jurent une alliance de secours mutuel et s'engagent à ne reconnaître aucun juge étranger à leurs communautés. Le parchemin, conservé à Schwytz, est en réalité l'un des nombreux pactes de ce type conclus dans les Alpes, et il ne parle ni de Guillaume Tell ni d'indépendance. C'est pourtant ce document que la Suisse moderne choisira en 1891 comme acte de naissance de la Confédération.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Pacte_f%C3%A9d%C3%A9ral"
                     },
                     {
                       "id": "ch2",
+                      "axe": "Des Waldstätten aux Treize Cantons (jusqu'en 1515)",
                       "date": 1315,
                       "titre": "Bataille de Morgarten",
-                      "description": "Les confédérés infligent une défaite surprenante aux troupes des Habsbourg, confortant l'autonomie naissante des cantons alpins face à leurs puissants voisins.",
+                      "description": "Les paysans de Schwytz tendent une embuscade à la chevalerie du duc Léopold Ier de Habsbourg dans un défilé au bord du lac d'Ægeri et la taillent en pièces à coups de hallebardes. La victoire consacre la supériorité d'une infanterie de milice sur la cavalerie féodale, réputation que les Confédérés monnaieront ensuite dans toute l'Europe. Elle scelle aussi le renouvellement du pacte à Brunnen et fait passer l'alliance du statut d'entente locale à celui de puissance militaire.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Morgarten"
                     },
                     {
+                      "id": "suin2",
+                      "axe": "Des Waldstätten aux Treize Cantons (jusqu'en 1515)",
+                      "date": 1339,
+                      "titre": "La victoire bernoise de Laupen",
+                      "description": "Berne, soutenue par les Waldstätten, écrase à Laupen une coalition de nobles bourguignons et de villes rivales qui voulaient briser son expansion. La cité de l'Aar s'impose comme la grande puissance du Plateau et se rapproche durablement des cantons forestiers. Son entrée dans la Confédération en 1353 y transfère le centre de gravité des Alpes vers les terres agricoles et les villes.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Guerre_de_Laupen"
+                    },
+                    {
+                      "id": "suin3",
+                      "axe": "Des Waldstätten aux Treize Cantons (jusqu'en 1515)",
+                      "date": 1388,
+                      "titre": "Näfels et la fin des prétentions habsbourgeoises",
+                      "description": "Les Glaronais, grandement inférieurs en nombre, repoussent à Näfels une armée autrichienne venue reprendre le pays deux ans après le désastre habsbourgeois de Sempach. La paix conclue en 1394 oblige les Habsbourg à renoncer de fait à leurs droits sur les cantons. La dynastie originaire d'Argovie est ainsi définitivement chassée du berceau de sa puissance.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_N%C3%A4fels"
+                    },
+                    {
+                      "id": "suin4",
+                      "axe": "Des Waldstätten aux Treize Cantons (jusqu'en 1515)",
+                      "date": 1415,
+                      "titre": "La conquête de l'Argovie",
+                      "description": "À l'appel de l'empereur Sigismond, qui met au ban le duc Frédéric IV, les Confédérés s'emparent de l'Argovie, terre d'origine des Habsbourg, et se la partagent comme bailliage commun. Pour la première fois, la Confédération administre ensemble un territoire conquis. Ces bailliages communs, gérés par des baillis tournants, créent les premières institutions fédérales véritables.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Canton_d%27Argovie"
+                    },
+                    {
+                      "id": "suin5",
+                      "axe": "Des Waldstätten aux Treize Cantons (jusqu'en 1515)",
+                      "date": 1476,
+                      "titre": "Grandson, Morat et la chute du Téméraire",
+                      "description": "En quelques mois, les Confédérés battent Charles le Téméraire à Grandson puis à Morat, s'emparent d'un butin légendaire et laissent le duc se faire tuer à Nancy l'hiver suivant. L'État bourguignon disparaît et son héritage passe aux Habsbourg, changeant la carte de l'Europe. La Suisse en sort avec la réputation militaire qui fera de ses mercenaires le corps d'élite le plus recherché du continent.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Morat"
+                    },
+                    {
+                      "id": "suin6",
+                      "axe": "Des Waldstätten aux Treize Cantons (jusqu'en 1515)",
+                      "date": 1481,
+                      "titre": "Le convenant de Stans",
+                      "description": "Les cantons ruraux et les villes, prêts à en découdre sur le partage du butin bourguignon et l'admission de Fribourg et Soleure, trouvent un compromis que la tradition attribue à l'intervention de l'ermite Nicolas de Flüe. Le convenant interdit les alliances séparées et les assemblées illégales. Il sauve la Confédération de l'éclatement et devient le premier texte constitutionnel commun aux huit cantons.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Convenant_de_Stans"
+                    },
+                    {
                       "id": "ch3",
+                      "axe": "Des Waldstätten aux Treize Cantons (jusqu'en 1515)",
                       "date": 1499,
                       "titre": "Paix de Bâle",
-                      "description": "Après leur victoire dans la guerre de Souabe, les confédérés obtiennent une indépendance de fait vis-à-vis du Saint-Empire, bien que non reconnue juridiquement avant 1648.",
+                      "description": "Après une campagne victorieuse contre les troupes de Maximilien Ier, les Confédérés obtiennent à Bâle une paix qui les dispense de l'impôt d'Empire et de la juridiction impériale. Le lien avec le Saint-Empire devient purement formel, cent cinquante ans avant sa reconnaissance officielle à Westphalie. La Confédération est désormais, en fait sinon en droit, un corps politique indépendant.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Guerre_de_Souabe"
                     },
                     {
                       "id": "ch4",
+                      "axe": "Des Waldstätten aux Treize Cantons (jusqu'en 1515)",
                       "date": 1515,
                       "titre": "Bataille de Marignan",
-                      "description": "La lourde défaite face aux troupes de François Ier convainc durablement les cantons suisses de renoncer aux ambitions expansionnistes et d'adopter la neutralité.",
+                      "description": "À Marignan, l'armée confédérée qui dominait le Milanais est brisée par François Ier et ses canons au terme de deux jours de combat, avec près de dix mille morts. La défaite met fin aux ambitions de conquête au sud des Alpes et conduit l'année suivante à la paix perpétuelle avec la France. Marignan est traditionnellement présenté comme l'acte de naissance de la neutralité suisse, lecture que les historiens jugent aujourd'hui très postérieure aux faits.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Marignan"
                     },
                     {
+                      "id": "suin7",
+                      "axe": "Réforme, Ancien Régime et Corps helvétique (1515-1798)",
+                      "date": 1521,
+                      "titre": "Le service étranger, du sang contre des pensions",
+                      "description": "La France obtient par capitulation le droit de recruter en permanence des régiments suisses, accord bientôt imité par l'Espagne, Naples et le Saint-Siège ; des centaines de milliers d'hommes serviront ainsi jusqu'au XIXᵉ siècle. Les pensions versées aux magistrats cantonaux deviennent un ressort essentiel de la vie politique, et une cause de corruption dénoncée par Zwingli. Le mercenariat enrichit le pays, le lie à l'étranger et lui interdit la neutralité qu'on lui prêtera plus tard.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Mercenaires_suisses"
+                    },
+                    {
+                      "id": "suin8",
+                      "axe": "Réforme, Ancien Régime et Corps helvétique (1515-1798)",
+                      "date": 1536,
+                      "titre": "Berne conquiert le Pays de Vaud",
+                      "description": "Profitant de la guerre entre la Savoie et la France, Berne s'empare en quelques semaines du Pays de Vaud et y impose la Réforme, devenant le plus vaste État au nord des Alpes après la France. Les Vaudois restent pendant deux cent soixante ans des sujets sans droits politiques, administrés par des baillis bernois. Ce statut nourrit le ressentiment qui éclatera avec Davel puis la Révolution vaudoise de 1798.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Canton_de_Vaud"
+                    },
+                    {
+                      "id": "suin9",
+                      "axe": "Réforme, Ancien Régime et Corps helvétique (1515-1798)",
+                      "date": 1541,
+                      "titre": "Genève, la Rome protestante",
+                      "description": "Rappelé après trois ans d'exil, Calvin fait adopter les Ordonnances ecclésiastiques qui organisent l'Église genevoise et son Consistoire, faisant de la ville un modèle de discipline chrétienne et un refuge pour les réformés persécutés d'Europe. Genève imprime, forme et renvoie des pasteurs dans toute la France et jusqu'en Écosse. Cité indépendante, elle n'entrera dans la Confédération qu'en 1815, mais donne à la Suisse son rayonnement religieux international.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Jean_Calvin"
+                    },
+                    {
+                      "id": "suin10",
+                      "axe": "Réforme, Ancien Régime et Corps helvétique (1515-1798)",
+                      "date": 1602,
+                      "titre": "L'Escalade de Genève",
+                      "description": "Dans la nuit du 11 au 12 décembre, les troupes du duc de Savoie tentent de prendre Genève par surprise en escaladant ses murailles ; l'alerte donnée, la population repousse l'assaut et la ville conserve son indépendance. La Savoie y renonce définitivement par le traité de Saint-Julien. L'Escalade reste la fête populaire la plus vivante de Suisse romande et le récit fondateur de l'identité genevoise.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Escalade_(Gen%C3%A8ve)"
+                    },
+                    {
                       "id": "ch5",
+                      "axe": "Réforme, Ancien Régime et Corps helvétique (1515-1798)",
                       "date": 1648,
                       "titre": "Reconnaissance à Westphalie",
-                      "description": "Les traités de Westphalie reconnaissent officiellement l'indépendance de la Confédération suisse vis-à-vis du Saint-Empire romain germanique.",
+                      "description": "À la demande du bourgmestre bâlois Johann Rudolf Wettstein, les traités de Westphalie exemptent formellement les cantons de toute juridiction impériale, consacrant en droit l'indépendance acquise en fait depuis 1499. Le Corps helvétique cesse d'appartenir au Saint-Empire. Cette sortie du cadre impérial, obtenue par la seule négociation, est le premier grand succès diplomatique de la Suisse.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Trait%C3%A9s_de_Westphalie"
                     },
                     {
+                      "id": "suin11",
+                      "axe": "Réforme, Ancien Régime et Corps helvétique (1515-1798)",
+                      "date": 1653,
+                      "titre": "La guerre des Paysans",
+                      "description": "Ruinés par la dévaluation monétaire qui suit la fin de la conjoncture favorable de la guerre de Trente Ans, les paysans de Lucerne, Berne, Bâle et Soleure se fédèrent, assiègent les villes et sont écrasés par l'armée des cantons ; leurs chefs sont exécutés. C'est la plus grande révolte sociale de l'histoire suisse. Sa répression fige pour cent cinquante ans la domination des patriciats urbains sur les campagnes.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Guerre_des_paysans_de_1653"
+                    },
+                    {
+                      "id": "suin12",
+                      "axe": "Réforme, Ancien Régime et Corps helvétique (1515-1798)",
+                      "date": 1685,
+                      "titre": "Le refuge huguenot",
+                      "description": "La révocation de l'édit de Nantes jette sur Genève, Vaud et Neuchâtel des dizaines de milliers de protestants français, dont une partie s'installe durablement. Ils apportent l'horlogerie, l'indiennage, la banque et un réseau commercial européen. Ce refuge transforme l'économie de la Suisse romande et fonde des industries qui font encore aujourd'hui sa réputation.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9vocation_de_l%27%C3%A9dit_de_Nantes"
+                    },
+                    {
+                      "id": "suin13",
+                      "axe": "Réforme, Ancien Régime et Corps helvétique (1515-1798)",
+                      "date": 1723,
+                      "titre": "Le major Davel et le réveil vaudois",
+                      "description": "Officier vaudois au service de Berne, Jean Daniel Abraham Davel marche sur Lausanne avec sa milice pour appeler ses compatriotes à secouer la tutelle bernoise ; dénoncé par les autorités lausannoises elles-mêmes, il est décapité quelques semaines plus tard. Son échec complet lui vaut de devenir un martyr. Le XIXᵉ siècle vaudois en fera le héros fondateur de son canton et le symbole de la fin des pays sujets.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Abraham_Davel"
+                    },
+                    {
+                      "id": "suin14",
+                      "axe": "Réforme, Ancien Régime et Corps helvétique (1515-1798)",
+                      "date": 1755,
+                      "titre": "Rousseau, Voltaire et les Lumières helvétiques",
+                      "description": "Jean-Jacques Rousseau signe ses œuvres « citoyen de Genève » et Voltaire s'installe à Ferney puis aux Délices, tandis que Berne, Zurich et Bâle abritent savants et sociétés d'utilité publique. Le pays devient un laboratoire des Lumières européennes, tout en brûlant l'Émile et le Contrat social sur la place de Genève. Cette contradiction entre rayonnement intellectuel et gouvernements patriciens prépare les révolutions de 1798.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Jean-Jacques_Rousseau"
+                    },
+                    {
+                      "id": "suin15",
+                      "axe": "Réforme, Ancien Régime et Corps helvétique (1515-1798)",
+                      "date": 1761,
+                      "titre": "La Société helvétique et l'idée nationale",
+                      "description": "Des patriciens et lettrés des deux confessions se réunissent chaque année à Schinznach pour dépasser les clivages cantonaux et religieux au nom d'une patrie helvétique commune, qu'ils célèbrent en éditant les chroniques et en chantant les victoires des ancêtres. Aucune institution ne relie alors les treize cantons hors de la Diète. Cette sociabilité savante invente la Suisse comme nation avant que l'État fédéral ne lui donne un corps.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Soci%C3%A9t%C3%A9_helv%C3%A9tique"
+                    },
+                    {
                       "id": "ch6",
+                      "axe": "De la République helvétique à l'État fédéral (1798-1874)",
                       "date": 1798,
                       "titre": "République helvétique",
-                      "description": "Les troupes révolutionnaires françaises envahissent la Suisse et y imposent une République helvétique unitaire et centralisée, rompant avec la tradition confédérale.",
+                      "description": "Les armées du Directoire envahissent la Suisse et imposent une république unitaire à la française, qui abolit les sujétions, proclame l'égalité des citoyens et supprime la souveraineté des cantons. Le pays devient un champ de bataille entre Français, Autrichiens et Russes, et le régime s'effondre en cinq ans. L'expérience laisse deux acquis irréversibles : la fin des pays sujets et l'idée d'une citoyenneté suisse commune.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9publique_helv%C3%A9tique"
                     },
                     {
+                      "id": "suin16",
+                      "axe": "De la République helvétique à l'État fédéral (1798-1874)",
+                      "date": 1803,
+                      "titre": "L'Acte de Médiation",
+                      "description": "Bonaparte, arbitrant entre unitaires et fédéralistes après cinq ans de troubles, rend aux cantons leur souveraineté tout en maintenant l'égalité des citoyens et en érigeant six anciens pays sujets, dont Vaud, Argovie et le Tessin, en cantons de plein droit. La Suisse compte désormais dix-neuf cantons égaux. Ce compromis dessine la carte et l'équilibre qui sont encore ceux de la Confédération.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Acte_de_M%C3%A9diation"
+                    },
+                    {
                       "id": "ch7",
+                      "axe": "De la République helvétique à l'État fédéral (1798-1874)",
                       "date": 1815,
                       "titre": "Neutralité perpétuelle reconnue",
-                      "description": "Le congrès de Vienne reconnaît et garantit collectivement la neutralité perpétuelle de la Suisse, un statut qui structurera toute sa diplomatie ultérieure.",
+                      "description": "Les puissances réunies à Vienne reconnaissent la neutralité perpétuelle de la Suisse et garantissent son territoire, élargi de Genève, Neuchâtel et du Valais. Ce statut n'est pas un choix suisse mais un arrangement européen : une Suisse neutre convient à tous ses voisins. La neutralité cesse d'être une pratique commode pour devenir un statut de droit international, fondement de la politique extérieure du pays jusqu'à aujourd'hui.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Neutralit%C3%A9_de_la_Suisse"
                     },
                     {
+                      "id": "suin17",
+                      "axe": "De la République helvétique à l'État fédéral (1798-1874)",
+                      "date": 1831,
+                      "titre": "La Régénération libérale",
+                      "description": "Dans la foulée des Trois Glorieuses parisiennes, une dizaine de cantons se donnent en quelques mois des constitutions garantissant la souveraineté populaire, l'égalité devant la loi et la liberté de presse, souvent sous la pression de grandes assemblées populaires. Les patriciats de l'Ancien Régime tombent presque sans violence. La Régénération crée dans les cantons les libertés que la Constitution de 1848 étendra à tout le pays.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Conf%C3%A9d%C3%A9ration_des_XXII_cantons"
+                    },
+                    {
+                      "id": "suin18",
+                      "axe": "De la République helvétique à l'État fédéral (1798-1874)",
+                      "date": 1847,
+                      "titre": "La guerre du Sonderbund",
+                      "description": "Sept cantons catholiques conservateurs ayant formé une ligue séparée, la Diète la déclare illégale et confie au général Dufour une armée qui l'emporte en vingt-six jours avec moins d'une centaine de morts, Dufour ayant ordonné d'épargner les vaincus. C'est la dernière guerre livrée sur le sol suisse. Sa brièveté et sa modération rendent possible le compromis fédéral de 1848, au lieu d'une revanche des vainqueurs.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Guerre_du_Sonderbund"
+                    },
+                    {
                       "id": "ch8",
+                      "axe": "De la République helvétique à l'État fédéral (1798-1874)",
                       "date": 1848,
                       "titre": "Constitution fédérale",
-                      "description": "Au lendemain d'une brève guerre civile (le Sonderbund), une nouvelle Constitution fédérale fait naître l'État fédéral suisse moderne, avec Berne pour capitale.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Constitution_f%C3%A9d%C3%A9rale_de_la_Conf%C3%A9d%C3%A9ration_suisse_de_1848"
+                      "description": "Au lendemain de la guerre du Sonderbund, les vainqueurs libéraux dotent le pays d'une constitution qui crée un État fédéral doté d'un parlement bicaméral, d'une monnaie, d'une poste et d'un marché uniques, tout en laissant aux cantons de larges compétences. Le compromis, inspiré des États-Unis, évite d'humilier les vaincus catholiques. La Suisse passe ainsi d'une confédération d'États à un État fédéral, sans la révolution qui échoue partout ailleurs en Europe cette année-là.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89tat_f%C3%A9d%C3%A9ral_de_1848"
+                    },
+                    {
+                      "id": "suin19",
+                      "axe": "De la République helvétique à l'État fédéral (1798-1874)",
+                      "date": 1857,
+                      "titre": "Neuchâtel cesse d'être prussienne",
+                      "description": "Canton suisse depuis 1815 mais aussi principauté du roi de Prusse, Neuchâtel voit une tentative de coup d'État royaliste échouer en 1856 ; la crise européenne qui s'ensuit se règle par un traité où Frédéric-Guillaume IV renonce à ses droits contre la libération des prisonniers. Le dernier lien monarchique du territoire suisse disparaît. La Confédération règle ainsi par la diplomatie un conflit qui avait failli lui valoir une guerre avec la Prusse.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Affaire_de_Neuch%C3%A2tel"
                     },
                     {
                       "id": "ch9",
+                      "axe": "De la République helvétique à l'État fédéral (1798-1874)",
                       "date": 1863,
                       "titre": "Fondation de la Croix-Rouge",
-                      "description": "L'homme d'affaires genevois Henry Dunant fonde le Comité international de la Croix-Rouge, bientôt suivi par les premières Conventions de Genève.",
+                      "description": "À l'initiative d'Henry Dunant, quatre Genevois fondent un comité international de secours aux militaires blessés, qui adopte l'emblème de la croix rouge sur fond blanc, inversion des couleurs helvétiques. La Convention de Genève signée l'année suivante en fait le premier instrument du droit humanitaire moderne. La Suisse trouve dans cette vocation humanitaire le prolongement naturel et le rachat moral de sa neutralité.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Comit%C3%A9_international_de_la_Croix-Rouge"
                     },
                     {
+                      "id": "suin20",
+                      "axe": "De la République helvétique à l'État fédéral (1798-1874)",
+                      "date": 1871,
+                      "titre": "L'internement de l'armée de Bourbaki",
+                      "description": "Repoussée par les Prussiens, l'armée française de l'Est franchit la frontière avec quatre-vingt-sept mille hommes affamés et gelés, que la Suisse désarme, soigne et héberge tout un hiver dans presque toutes ses communes. C'est la première grande opération humanitaire menée par un État neutre, appuyée par la jeune Croix-Rouge. L'épisode, fixé dans le Panorama Bourbaki de Lucerne, donne à la neutralité suisse son contenu concret aux yeux de l'opinion.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Convention_des_Verri%C3%A8res"
+                    },
+                    {
                       "id": "ch10",
+                      "axe": "De la République helvétique à l'État fédéral (1798-1874)",
                       "date": 1874,
                       "titre": "Révision constitutionnelle",
-                      "description": "Une révision totale de la Constitution renforce le pouvoir fédéral et introduit le référendum facultatif, instrument central de la démocratie directe suisse.",
+                      "description": "La révision adoptée en votation renforce les compétences fédérales en matière militaire, judiciaire et scolaire, et surtout introduit le référendum facultatif contre les lois du Parlement. Les catholiques conservateurs, battus en 1847, disposent désormais d'un instrument légal pour bloquer les projets radicaux. C'est le point de départ de la démocratie semi-directe et de la culture du compromis qui caractérisent la vie politique suisse.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Constitution_f%C3%A9d%C3%A9rale_de_la_Conf%C3%A9d%C3%A9ration_suisse"
                     },
                     {
+                      "id": "suin21",
+                      "axe": "Neutralité armée, guerres mondiales et prospérité (1874-1971)",
+                      "date": 1882,
+                      "titre": "Le tunnel du Gothard",
+                      "description": "Après dix ans de chantier et près de deux cents morts, le tunnel ferroviaire de quinze kilomètres perce les Alpes et relie directement l'Allemagne à l'Italie à travers la Suisse. Le pays, sans matières premières ni accès à la mer, fait de sa position alpine une ressource. Le Gothard devient l'axe économique majeur de la Confédération et le symbole de sa maîtrise technique.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Tunnel_ferroviaire_du_Saint-Gothard"
+                    },
+                    {
+                      "id": "suin22",
+                      "axe": "Neutralité armée, guerres mondiales et prospérité (1874-1971)",
+                      "date": 1891,
+                      "titre": "La Confédération se donne 1291 pour naissance",
+                      "description": "Pour souder un pays divisé par la langue, la religion et la question ouvrière, les autorités fédérales organisent un jubilé national fixant à 1291 la fondation de la Suisse, date jusque-là ignorée au profit de 1307 et du serment du Grütli. Le 1ᵉʳ août devient fête nationale, officiellement jour férié seulement en 1994. C'est l'exemple le plus net d'une nation suisse construite par l'État après coup.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/F%C3%AAte_nationale_suisse"
+                    },
+                    {
+                      "id": "suin23",
+                      "axe": "Neutralité armée, guerres mondiales et prospérité (1874-1971)",
+                      "date": 1898,
+                      "titre": "La nationalisation des chemins de fer",
+                      "description": "Le peuple approuve massivement le rachat des grandes compagnies privées, ruineuses et mal coordonnées, qui donne naissance aux Chemins de fer fédéraux. L'État fédéral acquiert d'un coup son premier grand instrument économique. Cette nationalisation précoce inaugure le modèle suisse d'un service public fédéral fort coexistant avec une économie très libérale.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Chemins_de_fer_f%C3%A9d%C3%A9raux_suisses"
+                    },
+                    {
+                      "id": "suin24",
+                      "axe": "Neutralité armée, guerres mondiales et prospérité (1874-1971)",
+                      "date": 1918,
+                      "titre": "La grève générale",
+                      "description": "Un comité d'Olten appelle deux cent cinquante mille ouvriers à la grève pour réclamer la semaine de quarante-huit heures, la proportionnelle, le suffrage féminin et l'assurance vieillesse ; le Conseil fédéral envoie l'armée, trois grévistes sont tués à Granges et le mouvement cesse en trois jours. Presque toutes les revendications seront pourtant satisfaites en vingt ans. La crise la plus grave de l'histoire fédérale débouche ainsi sur l'intégration du mouvement ouvrier plutôt que sur sa répression durable.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Gr%C3%A8ve_g%C3%A9n%C3%A9rale_de_1918_en_Suisse"
+                    },
+                    {
                       "id": "ch11",
+                      "axe": "Neutralité armée, guerres mondiales et prospérité (1874-1971)",
                       "date": 1920,
                       "titre": "Siège de la Société des Nations",
-                      "description": "Genève est choisie pour accueillir le siège de la Société des Nations, ancrant durablement la vocation diplomatique internationale de la Suisse neutre.",
+                      "description": "Genève est choisie pour accueillir le siège de la Société des Nations, et la Suisse y adhère après une votation serrée, en obtenant un statut de neutralité dite différentielle qui l'exempte de toute participation militaire aux sanctions. Le pays concilie ainsi engagement international et neutralité. Genève devient pour un siècle la capitale de la diplomatie multilatérale et du droit humanitaire.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Soci%C3%A9t%C3%A9_des_Nations"
                     },
                     {
+                      "id": "suin25",
+                      "axe": "Neutralité armée, guerres mondiales et prospérité (1874-1971)",
+                      "date": 1937,
+                      "titre": "La paix du travail",
+                      "description": "Syndicats et patronat de l'industrie des machines signent une convention par laquelle ils renoncent à la grève et au lock-out et s'engagent à négocier tout différend, accord bientôt étendu à l'ensemble de l'économie. La Suisse devient l'un des pays industriels les moins touchés par les conflits sociaux. Ce partenariat social, jamais dénoncé depuis, est l'un des piliers du modèle économique helvétique.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Paix_du_travail"
+                    },
+                    {
                       "id": "ch12",
+                      "axe": "Neutralité armée, guerres mondiales et prospérité (1874-1971)",
                       "date": 1939,
                       "titre": "Mobilisation générale",
-                      "description": "Face au déclenchement de la Seconde Guerre mondiale, la Suisse mobilise son armée et pratique une neutralité armée pour dissuader toute invasion.",
+                      "description": "À la veille de l'invasion de la Pologne, la Suisse mobilise quatre cent trente mille hommes et l'Assemblée fédérale élit Henri Guisan général, charge qui n'existe qu'en temps de guerre. Le pays traverse le conflit sans être envahi, au prix d'un rationnement sévère, d'une censure de la presse et d'arrangements économiques avec le Reich. Cette période nourrit longtemps le récit d'une Suisse préservée par sa seule vigilance, que les travaux historiques ont depuis nuancé.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Suisse_pendant_la_Seconde_Guerre_mondiale"
                     },
                     {
+                      "id": "suin26",
+                      "axe": "Neutralité armée, guerres mondiales et prospérité (1874-1971)",
+                      "date": 1947,
+                      "titre": "L'AVS, pilier de l'État social",
+                      "description": "Le peuple approuve à plus de quatre-vingts pour cent l'assurance-vieillesse et survivants, financée par des cotisations sur tous les salaires et versée à chaque résident, après un demi-siècle de projets refusés. La proposition, portée par la mobilisation de guerre et le souvenir de 1918, réunit droite et gauche. L'AVS demeure l'institution sociale la plus populaire du pays et le fondement de son système de retraites à trois piliers.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Assurance-vieillesse_et_survivants"
+                    },
+                    {
                       "id": "ch13",
+                      "axe": "Neutralité armée, guerres mondiales et prospérité (1874-1971)",
                       "date": 1959,
                       "titre": "Formule magique",
-                      "description": "La répartition stable des sept sièges du Conseil fédéral entre les quatre principaux partis inaugure une longue période de concordance politique helvétique.",
+                      "description": "Les quatre principaux partis se répartissent les sept sièges du Conseil fédéral selon une clé fixe de deux radicaux, deux démocrates-chrétiens, deux socialistes et un agrarien, qui restera inchangée quarante-quatre ans. Aucune majorité ne gouverne seule et aucune opposition ne siège hors du gouvernement. Cette concordance, jointe au référendum, fait de la Suisse une démocratie où le compromis précède le vote plutôt que de le suivre.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Formule_magique"
                     },
                     {
                       "id": "ch14",
+                      "axe": "Neutralité armée, guerres mondiales et prospérité (1874-1971)",
                       "date": 1971,
                       "titre": "Droit de vote des femmes",
-                      "description": "Après plusieurs refus référendaires, les hommes suisses accordent enfin le droit de vote et d'éligibilité aux femmes au niveau fédéral, très tardivement par rapport au reste de l'Europe.",
+                      "description": "Les électeurs, exclusivement masculins, accordent enfin aux femmes le droit de vote et d'éligibilité au niveau fédéral, douze ans après l'avoir refusé et plus d'un demi-siècle après la plupart des démocraties. Le retard s'explique par la démocratie directe elle-même, qui exigeait que les hommes votent leur propre dessaisissement. Appenzell Rhodes-Intérieures ne cédera qu'en 1990, sur décision du Tribunal fédéral.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Droit_de_vote_des_femmes_en_Suisse"
                     },
                     {
                       "id": "ch15",
+                      "axe": "La Suisse contemporaine (depuis 1971)",
                       "date": 1979,
                       "titre": "Création du canton du Jura",
-                      "description": "Après un long processus séparatiste, les districts francophones du Jura bernois forment un nouveau canton, le premier créé depuis 1815.",
+                      "description": "Après trente ans de lutte autonomiste, parfois violente, des districts francophones et catholiques du nord du canton de Berne, un scrutin fédéral approuve la création du canton du Jura, le premier depuis 1815. Le processus, entièrement réglé par des votations en cascade, devient un modèle de résolution pacifique d'un conflit identitaire. Le Jura montre que la Suisse sait redessiner ses frontières internes sans rompre son équilibre.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Canton_du_Jura"
                     },
                     {
+                      "id": "suin27",
+                      "axe": "La Suisse contemporaine (depuis 1971)",
+                      "date": 1989,
+                      "titre": "L'affaire des fiches",
+                      "description": "Une commission parlementaire révèle que la police fédérale a constitué neuf cent mille fiches sur des citoyens et des organisations, soit près d'un adulte sur six, au nom de la lutte anticommuniste. Le scandale provoque des manifestations, des demandes massives de consultation et la démission d'une conseillère fédérale. Il met fin à la culture du secret d'État héritée de la guerre froide et débouche sur une loi sur la protection des données.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Affaire_des_fiches"
+                    },
+                    {
                       "id": "ch16",
+                      "axe": "La Suisse contemporaine (depuis 1971)",
                       "date": 1992,
                       "titre": "Refus de l'Espace économique européen",
-                      "description": "Un référendum rejette de justesse l'adhésion à l'Espace économique européen, orientant durablement la Suisse vers une politique d'accords bilatéraux avec l'UE.",
+                      "description": "Contre l'avis du Conseil fédéral, de tous les grands partis et des milieux économiques, le peuple refuse d'un souffle l'adhésion à l'Espace économique européen, la Suisse alémanique et rurale l'emportant sur les cantons romands unanimement favorables. Le résultat révèle un « fossé » entre régions linguistiques dont le pays parlera pendant des décennies. Il engage la Suisse dans la voie des accords bilatéraux sectoriels, laborieuse mais toujours suivie aujourd'hui.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Espace_%C3%A9conomique_europ%C3%A9en"
                     },
                     {
+                      "id": "suin28",
+                      "axe": "La Suisse contemporaine (depuis 1971)",
+                      "date": 1999,
+                      "titre": "La nouvelle Constitution fédérale",
+                      "description": "Le peuple et les cantons adoptent une Constitution entièrement réécrite qui remplace le texte de 1874 surchargé d'amendements, met à jour la langue, codifie les droits fondamentaux dégagés par la jurisprudence et clarifie le partage des compétences. La révision est présentée comme une simple « mise à jour » sans changement matériel. Elle donne à la Suisse le texte fondamental sous lequel elle vit aujourd'hui.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Constitution_de_la_Suisse"
+                    },
+                    {
+                      "id": "suin29",
+                      "axe": "La Suisse contemporaine (depuis 1971)",
+                      "date": 2001,
+                      "titre": "Swissair reste au sol",
+                      "description": "Le 2 octobre, faute de liquidités après une stratégie d'acquisitions désastreuse, la compagnie nationale immobilise toute sa flotte et laisse des dizaines de milliers de passagers bloqués ; la Confédération et les banques financent un sauvetage qui donnera Swiss. Le pays perd le symbole le plus visible de sa fiabilité. Le « grounding » reste dans la mémoire collective comme la fin d'une certaine idée de l'infaillibilité suisse.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Swissair"
+                    },
+                    {
                       "id": "ch17",
+                      "axe": "La Suisse contemporaine (depuis 1971)",
                       "date": 2002,
                       "titre": "Adhésion à l'ONU",
-                      "description": "Après un référendum populaire favorable, la Suisse devient enfin membre de l'Organisation des Nations unies, mettant fin à des décennies d'abstention volontaire.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Adh%C3%A9sion_de_la_Suisse_%C3%A0_l%27Organisation_des_Nations_unies"
+                      "description": "Cinquante-sept ans après la fondation de l'organisation et treize ans après un premier refus massif, les Suisses acceptent de justesse d'adhérer à l'ONU, dont ils accueillaient pourtant le deuxième siège mondial à Genève. Le pays y entre en conservant sa neutralité militaire. Cette adhésion tardive mesure la difficulté persistante de la Suisse à convertir son rôle international en engagement institutionnel.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Votations_f%C3%A9d%C3%A9rales_de_2002_en_Suisse"
                     },
                     {
                       "id": "ch18",
+                      "axe": "La Suisse contemporaine (depuis 1971)",
                       "date": 2008,
                       "titre": "Adhésion à l'espace Schengen",
-                      "description": "La Suisse rejoint l'espace Schengen, supprimant les contrôles systématiques à ses frontières avec les pays membres de l'Union européenne.",
+                      "description": "L'entrée en vigueur de l'association à Schengen et Dublin, approuvée en votation trois ans plus tôt, supprime les contrôles systématiques aux frontières terrestres et relie la Suisse aux fichiers policiers et d'asile européens. Le pays participe ainsi à une politique communautaire sans être membre de l'Union. C'est l'aboutissement le plus visible de la voie bilatérale choisie après le refus de 1992.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Espace_Schengen"
                     },
                     {
+                      "id": "suin30",
+                      "axe": "La Suisse contemporaine (depuis 1971)",
+                      "date": 2009,
+                      "titre": "La fin du secret bancaire",
+                      "description": "Sous la pression des États-Unis dans l'affaire UBS, puis du G20 qui menace d'inscrire la Suisse sur une liste noire, le Conseil fédéral accepte les standards de l'OCDE sur l'entraide fiscale, avant de consentir en 2014 à l'échange automatique de renseignements. Un principe défendu depuis 1934 comme une part de l'identité nationale s'effondre en quelques années. La place financière suisse doit se réinventer sur la gestion de fortune déclarée.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Secret_bancaire_en_Suisse"
+                    },
+                    {
                       "id": "ch19",
+                      "axe": "La Suisse contemporaine (depuis 1971)",
                       "date": 2014,
                       "titre": "Votation sur l'immigration de masse",
-                      "description": "Le peuple suisse approuve de justesse une initiative visant à limiter l'immigration par des contingents, provoquant une crise diplomatique avec l'Union européenne.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Initiative_contre_l%27immigration_de_masse"
+                      "description": "L'initiative de l'UDC « contre l'immigration de masse », qui exige des plafonds annuels d'étrangers, est acceptée de justesse et contredit frontalement l'accord de libre circulation avec l'Union européenne. Le Parlement en donne trois ans plus tard une application minimale, préférence indigène à l'embauche, pour sauver les bilatérales. Le scrutin illustre la tension structurelle entre démocratie directe et engagements internationaux.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Initiative_populaire_%C2%AB_contre_l%27immigration_de_masse_%C2%BB"
+                    },
+                    {
+                      "id": "suin31",
+                      "axe": "La Suisse contemporaine (depuis 1971)",
+                      "date": 2021,
+                      "titre": "Le mariage pour tous approuvé en votation",
+                      "description": "Les Suisses acceptent à plus de soixante pour cent l'ouverture du mariage aux couples de même sexe, avec accès à l'adoption conjointe et au don de sperme pour les couples de femmes, seul pays à avoir tranché la question par référendum national. Tous les cantons approuvent. Le scrutin montre que la démocratie directe, souvent tenue pour un frein, peut aussi légitimer une réforme sociétale plus solidement qu'un vote parlementaire.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Mariage_entre_personnes_de_m%C3%AAme_sexe_en_Suisse"
                     }
+                  ],
+                  "essentiel": [
+                    "ch1",
+                    "ch2",
+                    "ch3",
+                    "ch4",
+                    "ch5",
+                    "ch6",
+                    "ch7",
+                    "ch8",
+                    "ch9",
+                    "ch10",
+                    "ch12",
+                    "ch13",
+                    "ch14",
+                    "ch15",
+                    "ch16",
+                    "ch17",
+                    "suin1",
+                    "suin5",
+                    "suin6",
+                    "suin7",
+                    "suin8",
+                    "suin11",
+                    "suin16",
+                    "suin17",
+                    "suin18",
+                    "suin21",
+                    "suin22",
+                    "suin24",
+                    "suin26",
+                    "suin29"
                   ]
                 }
               ]
@@ -94983,7 +95582,7 @@
                       "date": 1995,
                       "titre": "Adhésion à l'Union européenne",
                       "description": "Après un référendum favorable, la Finlande rejoint l'Union européenne aux côtés de la Suède et de l'Autriche, tournant définitivement la page de sa prudente neutralité de guerre froide.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89largissement_de_l%27Union_europ%C3%A9enne_de_1995"
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Quatri%C3%A8me_%C3%A9largissement_de_l%27Union_europ%C3%A9enne"
                     },
                     {
                       "id": "fi18",
@@ -100555,7 +101154,7 @@
                       "date": 1867,
                       "titre": "Compromis austro-hongrois",
                       "description": "Le compromis crée la double monarchie d'Autriche-Hongrie, accordant à la Hongrie une large autonomie interne.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Compromis_austro-hongrois_de_1867"
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Compromis_austro-hongrois"
                     },
                     {
                       "id": "hu12",
@@ -100987,7 +101586,7 @@
                       "date": 1683,
                       "titre": "Jean III Sobieski sauve Vienne",
                       "description": "Le roi de Pologne Jean III Sobieski prend la tête de la charge de cavalerie de vingt mille hussards ailés polonais et déroute l'immense armée ottomane de Kara Moustapha lors de la bataille du Kahlenberg le 12 septembre 1683, libérant la ville de Vienne assiégée. Cette victoire militaire retentissante sauve la chrétienté occidentale de la conquête ottomane et confère un prestige immense au souverain polonais (« Venimus, vidimus, Deus vicit »). Sobieski fait bâtir le splendide palais baroque de Wilanów.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Vienne_(1683)"
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Vienne"
                     },
                     {
                       "id": "pl49",
@@ -111012,147 +111611,446 @@
                   "id": "thm_co",
                   "nom": "Histoire de la Colombie 🇨🇴",
                   "difficulte": "Intermédiaire",
+                  "axeOrder": [
+                    "Mondes précolombiens et Nouvelle-Grenade coloniale (jusqu'en 1810)",
+                    "Indépendance et construction républicaine (1810-1886)",
+                    "Regeneración, Mille Jours et République libérale (1886-1948)",
+                    "La Violencia, le Frente Nacional et les guérillas (1948-1991)",
+                    "La Colombie contemporaine (depuis 1991)"
+                  ],
                   "events": [
                     {
+                      "id": "con1",
+                      "axe": "Mondes précolombiens et Nouvelle-Grenade coloniale (jusqu'en 1810)",
+                      "date": -800,
+                      "titre": "L'or des Muiscas et la légende de l'Eldorado",
+                      "description": "Sur les hauts plateaux de l'actuelle Cundinamarca, les Muiscas développent une société de chefferies, cultivent la pomme de terre et le maïs, exploitent le sel et produisent une orfèvrerie votive d'une finesse exceptionnelle. Le rite d'intronisation du cacique de Guatavita, couvert de poudre d'or et plongeant dans la lagune, donne naissance au mythe européen de l'Eldorado. Cette quête de l'or guidera toute la conquête espagnole du territoire.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Chibchas"
+                    },
+                    {
                       "id": "co1",
+                      "axe": "Mondes précolombiens et Nouvelle-Grenade coloniale (jusqu'en 1810)",
                       "date": 1499,
                       "titre": "Exploration espagnole d'Ojeda",
-                      "description": "Alonso de Ojeda et Amerigo Vespucci explorent les côtes caraïbes de la Colombie (péninsule de La Guajira), ouvrant l'ère de la conquête.",
+                      "description": "Alonso de Ojeda, compagnon de Colomb lors du troisième voyage, longe le premier les côtes de l'actuelle Colombie et reconnaît le cap de la Vela et le golfe de Venezuela. Il ouvre la voie aux expéditions de conquête qui suivront un quart de siècle plus tard. Cette reconnaissance inscrit le futur territoire colombien dans l'orbite espagnole avant même que ses sociétés indigènes ne soient connues.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Alonso_de_Ojeda"
                     },
                     {
                       "id": "co2",
+                      "axe": "Mondes précolombiens et Nouvelle-Grenade coloniale (jusqu'en 1810)",
                       "date": 1525,
                       "titre": "Fondation de Santa Marta",
-                      "description": "Rodrigo de Bastidas fonde Santa Marta au pied de la Sierra Nevada, plus ancienne ville espagnole subsistant sur le territoire colombien.",
+                      "description": "Rodrigo de Bastidas fonde Santa Marta sur la côte caraïbe, première ville espagnole permanente du territoire et plus ancienne cité encore habitée de Colombie. La localisation, au pied de la Sierra Nevada, permet de contrôler les échanges avec les Tayronas. Santa Marta sert ensuite de base de départ aux expéditions qui remonteront le Magdalena vers l'intérieur des terres.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Santa_Marta"
                     },
                     {
                       "id": "co3",
+                      "axe": "Mondes précolombiens et Nouvelle-Grenade coloniale (jusqu'en 1810)",
                       "date": 1533,
                       "titre": "Fondation de Carthagène des Indes",
-                      "description": "Pedro de Heredia fonde Carthagène des Indes, qui devient le principal port militaire et d'exportation de l'or de l'Empire espagnol aux Amériques.",
+                      "description": "Pedro de Heredia fonde Carthagène sur une baie profonde et abritée qui en fait le meilleur port de la mer des Caraïbes. La ville devient le principal point d'entrée des esclaves africains en Amérique du Sud espagnole et l'un des deux ports autorisés pour le commerce avec l'Espagne. Ses fortifications, les plus vastes d'Amérique, témoignent encore de cette fonction stratégique et de la richesse qu'elle draina.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Carthag%C3%A8ne_des_Indes"
                     },
                     {
                       "id": "co4",
+                      "axe": "Mondes précolombiens et Nouvelle-Grenade coloniale (jusqu'en 1810)",
                       "date": 1538,
                       "titre": "Fondation de Santa Fe de Bogotá",
-                      "description": "Gonzalo Jiménez de Quesada soumet la confédération muisca des hauts plateaux andins et fonde la cité de Santa Fe de Bogotá.",
+                      "description": "Gonzalo Jiménez de Quesada, remonté du Magdalena avec une expédition décimée, fonde Santa Fe sur le haut plateau muisca, où le rejoignent presque simultanément Belalcázar venu du Sud et Federmann venu de l'Est. Les trois conquistadors se partagent le territoire au lieu de s'affronter. La ville, perchée à deux mille six cents mètres, devient la capitale du Nouveau Royaume de Grenade puis de la Colombie.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Bogota"
                     },
                     {
+                      "id": "con2",
+                      "axe": "Mondes précolombiens et Nouvelle-Grenade coloniale (jusqu'en 1810)",
+                      "date": 1564,
+                      "titre": "La Real Audiencia gouverne le Nouveau Royaume",
+                      "description": "L'arrivée du premier président de l'Audience royale de Santafé dote le Nouveau Royaume de Grenade d'un gouvernement propre, à la fois tribunal suprême et administration, relevant encore du vice-roi du Pérou. Les encomiendas et la mita organisent le travail forcé des indigènes, dont la population s'effondre. Cette administration lointaine et lente, dans un pays fragmenté par trois cordillères, installe l'autonomie des régions qui caractérise encore la Colombie.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Royaume_de_Nouvelle-Grenade"
+                    },
+                    {
+                      "id": "con3",
+                      "axe": "Mondes précolombiens et Nouvelle-Grenade coloniale (jusqu'en 1810)",
+                      "date": 1691,
+                      "titre": "San Basilio de Palenque, premier village libre",
+                      "description": "La couronne reconnaît l'autonomie du palenque fondé près de Carthagène par des esclaves marrons menés par Benkos Biohó, faisant de ce village le premier territoire noir libre des Amériques. Sa langue créole, le palenquero, et ses formes d'organisation funéraire et musicale s'y maintiennent jusqu'à aujourd'hui. Palenque est devenu le symbole de la résistance afro-colombienne et un patrimoine immatériel reconnu par l'Unesco.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Palenque_de_San_Basilio"
+                    },
+                    {
                       "id": "co5",
+                      "axe": "Mondes précolombiens et Nouvelle-Grenade coloniale (jusqu'en 1810)",
                       "date": 1717,
                       "titre": "Création de la vice-royauté de Nouvelle-Grenade",
-                      "description": "La Couronne espagnole érige Bogotá en capitale d'une nouvelle vice-royauté englobant la Colombie, le Venezuela, l'Équateur et le Panama.",
+                      "description": "La couronne détache le Nouveau Royaume de Grenade de la vice-royauté du Pérou pour créer une entité qui réunit les actuelles Colombie, Venezuela, Équateur et Panama, avec Bogotá pour capitale. La mesure vise à mieux défendre les Caraïbes contre les Anglais et à contrôler l'or de la Nouvelle-Grenade. Cet ensemble territorial est celui que Bolívar tentera de ressusciter sous le nom de Grande Colombie.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Vice-royaut%C3%A9_de_Nouvelle-Grenade"
                     },
                     {
                       "id": "co6",
+                      "axe": "Mondes précolombiens et Nouvelle-Grenade coloniale (jusqu'en 1810)",
                       "date": 1781,
                       "titre": "Insurrection des Comuneros",
-                      "description": "Une vaste révolte populaire et créole menée par Manuela Beltrán et José Antonio Galán s'oppose aux hausses d'impôts imposées par la Couronne espagnole.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9volte_des_Comuneros_(Nouvelle-Grenade)"
+                      "description": "La hausse des impôts décidée par le visiteur Gutiérrez de Piñeres déclenche à Socorro une révolte des artisans et petits propriétaires qui rassemble vingt mille hommes et marche sur Bogotá. Les autorités signent des capitulations puis les répudient et exécutent le chef José Antonio Galán. Cette première grande révolte contre l'administration coloniale annonce, sans la réclamer encore, l'indépendance de trente ans plus tard.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9volte_des_Comuneros_(Colombie)"
+                    },
+                    {
+                      "id": "con4",
+                      "axe": "Mondes précolombiens et Nouvelle-Grenade coloniale (jusqu'en 1810)",
+                      "date": 1783,
+                      "titre": "L'Expédition botanique de Mutis",
+                      "description": "Le prêtre et savant gaditan José Celestino Mutis obtient de la couronne une expédition chargée d'inventorier la flore du Nouveau Royaume, qui produira plus de six mille planches peintes par des artistes créoles et formera une génération de savants. Ses élèves, Caldas au premier rang, deviendront des dirigeants de l'indépendance. L'expédition donne aux créoles la conscience d'un territoire propre, distinct et digne d'être connu par eux-mêmes.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Jos%C3%A9_Celestino_Bruno_Mutis_y_Bosio"
                     },
                     {
                       "id": "co7",
+                      "axe": "Indépendance et construction républicaine (1810-1886)",
                       "date": 1810,
                       "titre": "Cri d'indépendance du 20 juillet",
-                      "description": "À Bogotá, le peuple et les notables créoles créent une junte autonome (l'épisode du vase de Llorente), fête nationale de l'indépendance colombienne.",
+                      "description": "Profitant de l'effondrement de la monarchie espagnole face à Napoléon, les notables de Bogotá provoquent un incident autour d'un vase prêté par un commerçant espagnol, le transforment en émeute et obtiennent la formation d'une junte au nom de Ferdinand VII. L'acte du 20 juillet reste le geste fondateur de la nation. Il ouvre en réalité une décennie de guerres, d'abord entre provinces créoles avant de l'être contre l'Espagne.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Ind%C3%A9pendance_de_la_Colombie"
                     },
                     {
+                      "id": "con5",
+                      "axe": "Indépendance et construction républicaine (1810-1886)",
+                      "date": 1811,
+                      "titre": "La Patria Boba",
+                      "description": "Sitôt l'autorité espagnole écartée, les provinces s'opposent sur la forme de l'État : Cundinamarca veut un régime centralisé, les Provinces-Unies une fédération, et les deux camps se font la guerre pendant cinq ans, Bolívar y combattant un temps aux côtés des centralistes. Cette « patrie sotte », selon le nom que lui donneront les historiens, dilapide les forces de la révolution. Elle livre le pays sans défense à la reconquête espagnole de 1816.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Premi%C3%A8re_r%C3%A9publique_de_Nouvelle-Grenade"
+                    },
+                    {
+                      "id": "con6",
+                      "axe": "Indépendance et construction républicaine (1810-1886)",
+                      "date": 1816,
+                      "titre": "La Reconquista de Morillo",
+                      "description": "Envoyé par Ferdinand VII restauré avec dix mille hommes, le général Pablo Morillo reprend Carthagène après un siège qui tue un tiers de sa population, puis installe à Bogotá un Conseil de purification et un Tribunal du sang qui exécutent des centaines de notables, dont Camilo Torres et Francisco José de Caldas. La terreur détruit l'élite créole modérée. Elle transforme une querelle d'autonomie en guerre d'indépendance sans retour possible.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Pablo_Morillo"
+                    },
+                    {
                       "id": "co8",
+                      "axe": "Indépendance et construction républicaine (1810-1886)",
                       "date": 1819,
                       "titre": "Bataille de Boyacá et Grande Colombie",
-                      "description": "Simón Bolívar bat l'armée royaliste espagnole à Boyacá, libère Bogotá et fonde la République de Grande Colombie réunissant Venezuela, Colombie et Équateur.",
+                      "description": "Après avoir franchi les Andes par le páramo de Pisba avec une armée épuisée, Bolívar écrase les forces royalistes de Barreiro au pont de Boyacá et entre dans Bogotá trois jours plus tard. La victoire libère définitivement la Nouvelle-Grenade et fournit la base territoriale et financière de la guerre au Venezuela et en Équateur. Le congrès d'Angostura proclame dans la foulée la République de Colombie, dite Grande Colombie.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Boyac%C3%A1"
                     },
                     {
+                      "id": "con7",
+                      "axe": "Indépendance et construction républicaine (1810-1886)",
+                      "date": 1826,
+                      "titre": "Le congrès de Panama",
+                      "description": "Bolívar convoque à Panama les républiques hispano-américaines pour former une confédération dotée d'une armée et d'une diplomatie communes ; seuls quatre États y envoient des délégués et le traité signé ne sera ratifié que par la Grande Colombie. L'échec du projet consacre la fragmentation du continent en États rivaux. Ce congrès reste néanmoins invoqué comme l'acte fondateur du panaméricanisme et de l'intégration latino-américaine.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Congr%C3%A8s_de_Panama"
+                    },
+                    {
+                      "id": "con8",
+                      "axe": "Indépendance et construction républicaine (1810-1886)",
+                      "date": 1828,
+                      "titre": "La conspiration septembrine",
+                      "description": "Dans la nuit du 25 septembre, des conjurés partisans de Santander tentent d'assassiner Bolívar, devenu dictateur après l'échec de la convention d'Ocaña ; il s'échappe par une fenêtre grâce à Manuela Sáenz. La répression qui suit, avec quatorze exécutions et l'exil de Santander, ruine définitivement l'entente entre les deux fondateurs. Leur rupture donne naissance aux deux traditions politiques dont sortiront les partis conservateur et libéral.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Conspiration_de_septembre"
+                    },
+                    {
                       "id": "co9",
+                      "axe": "Indépendance et construction républicaine (1810-1886)",
                       "date": 1830,
                       "titre": "Mort de Bolívar et dissolution de Grande Colombie",
-                      "description": "Simón Bolívar meurt à Santa Marta tandis que le Venezuela et l'Équateur font sécession, réduisant le pays à la République de Nouvelle-Grenade.",
+                      "description": "Miné par la tuberculose et par l'échec de son projet d'union, Bolívar démissionne puis meurt à Santa Marta quelques mois après la sécession du Venezuela et de l'Équateur. La Grande Colombie se disloque définitivement en 1831. Son échec laisse au pays une double tradition, centraliste et fédéraliste, dont l'affrontement structurera un siècle de guerres civiles.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Grande_Colombie"
                     },
                     {
+                      "id": "con9",
+                      "axe": "Indépendance et construction républicaine (1810-1886)",
+                      "date": 1839,
+                      "titre": "La guerre des Suprêmes",
+                      "description": "La fermeture de petits couvents de Pasto déclenche une insurrection religieuse qui s'étend à tout le pays, chaque chef régional se proclamant « suprême directeur de la guerre » contre le gouvernement de Bogotá. Le conflit, le premier à embraser l'ensemble du territoire, dure trois ans. Il cristallise les deux camps qui se donneront en 1849 les noms de conservateur et libéral, et inaugure le siècle des guerres civiles colombiennes.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Guerre_des_Supr%C3%AAmes"
+                    },
+                    {
                       "id": "co10",
+                      "axe": "Indépendance et construction républicaine (1810-1886)",
                       "date": 1851,
                       "titre": "Abolition définitive de l'esclavage",
-                      "description": "Le président libéral José Hilario López promulgue la loi libérant tous les esclaves afro-colombiens et engage des réformes anticléricales.",
+                      "description": "Sous la présidence de José Hilario López, le Congrès abolit l'esclavage et indemnise les propriétaires, aboutissement d'un processus entamé par la liberté des ventres en 1821. Quelque vingt mille personnes sont affranchies, surtout dans les mines du Cauca et du Chocó. L'abolition figure parmi les réformes libérales du demi-siècle qui provoqueront en retour la réaction conservatrice de la Regeneración.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Abolition_de_l%27esclavage"
                     },
                     {
+                      "id": "con10",
+                      "axe": "Indépendance et construction républicaine (1810-1886)",
+                      "date": 1867,
+                      "titre": "La fondation de l'Université nationale",
+                      "description": "Le gouvernement radical crée à Bogotá une université publique et laïque réunissant les écoles de droit, de médecine, d'ingénierie et des arts, dans un pays où l'enseignement supérieur relevait jusque-là de l'Église. Elle forme les cadres de l'État et devient le foyer des débats intellectuels et politiques du pays. Sa création illustre le projet éducatif des libéraux radicaux, que la Regeneración s'emploiera ensuite à défaire.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Universit%C3%A9_nationale_de_Colombie"
+                    },
+                    {
                       "id": "co11",
+                      "axe": "Regeneración, Mille Jours et République libérale (1886-1948)",
                       "date": 1886,
                       "titre": "Constitution centraliste de 1886",
-                      "description": "Le président Rafael Núñez promulgue une Constitution unitaire et conservatrice restaurant l'alliance avec l'Église catholique sous le nom de République de Colombie.",
+                      "description": "Rafael Núñez et Miguel Antonio Caro remplacent la constitution fédérale de Rionegro par un texte centraliste qui allonge le mandat présidentiel, restreint les libertés de presse et rétablit la place de l'Église catholique, consacrée par le concordat de 1887. Le pays cesse d'être les États-Unis de Colombie pour devenir la République de Colombie. Cette constitution, la plus durable d'Amérique latine, régira le pays pendant cent cinq ans.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Constitution_colombienne_de_1886"
                     },
                     {
                       "id": "co12",
+                      "axe": "Regeneración, Mille Jours et République libérale (1886-1948)",
                       "date": 1899,
                       "titre": "Guerre des Mille Jours",
-                      "description": "Une guerre civile particulièrement meurtrière éclate entre conservateurs au pouvoir et rebelles libéraux, ruinant le pays et faisant 100 000 morts.",
+                      "description": "Le refus conservateur de toute ouverture électorale pousse les libéraux à la guerre, qui fait plus de cent mille morts en trois ans dans un pays de quatre millions d'habitants et ruine l'économie du café. La paix est signée à bord du cuirassé américain Wisconsin. L'épuisement du pays explique directement son incapacité à s'opposer, l'année suivante, à la sécession du Panama.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Guerre_des_Mille_Jours"
                     },
                     {
                       "id": "co13",
+                      "axe": "Regeneración, Mille Jours et République libérale (1886-1948)",
                       "date": 1903,
                       "titre": "Sécession du Panama",
-                      "description": "Soutenue par les États-Unis de Theodore Roosevelt désireux de percer le canal, la province de Panama se sépare définitivement de la Colombie.",
+                      "description": "Après le refus du Sénat colombien de ratifier le traité Herrán-Hay sur le canal, Washington appuie une sécession panaméenne et reconnaît le nouvel État en trois jours, envoyant un cuirassé empêcher le débarquement des troupes colombiennes. La Colombie perd un tiers de son territoire et le contrôle de l'isthme. Le traumatisme du Panama nourrit durablement le nationalisme colombien et la méfiance envers les États-Unis.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/S%C3%A9paration_du_Panama_de_la_Colombie"
                     },
                     {
+                      "id": "con11",
+                      "axe": "Regeneración, Mille Jours et République libérale (1886-1948)",
+                      "date": 1910,
+                      "titre": "Le centenaire et l'hégémonie conservatrice",
+                      "description": "Après la dictature de Rafael Reyes, une assemblée réforme la constitution de 1886 pour raccourcir le mandat présidentiel, abolir la peine de mort et garantir une représentation des minorités, tandis que le pays fête son centenaire. Les conservateurs gouvernent seuls depuis 1886 et le feront jusqu'en 1930. Cette longue hégémonie, stabilisée par la réforme, permet l'essor du café et les premières industries.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/H%C3%A9g%C3%A9monie_conservatrice"
+                    },
+                    {
+                      "id": "con12",
+                      "axe": "Regeneración, Mille Jours et République libérale (1886-1948)",
+                      "date": 1914,
+                      "titre": "L'assassinat de Rafael Uribe Uribe",
+                      "description": "Le général libéral, dernier grand chef de la guerre des Mille Jours devenu sénateur et théoricien d'un socialisme d'État, est tué à coups de hachette devant le Capitole par deux artisans. Son assassinat prive le libéralisme de la figure capable d'incarner sa modernisation. García Márquez s'en inspirera pour le colonel Aureliano Buendía, et l'affaire annonce la longue série de meurtres politiques qui ponctuent l'histoire colombienne.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Rafael_Uribe_Uribe"
+                    },
+                    {
+                      "id": "con13",
+                      "axe": "Regeneración, Mille Jours et République libérale (1886-1948)",
+                      "date": 1919,
+                      "titre": "La SCADTA et la conquête du ciel",
+                      "description": "Des entrepreneurs allemands et colombiens fondent à Barranquilla la Société colombo-allemande de transport aérien, deuxième compagnie aérienne du monde encore en activité sous le nom d'Avianca. Dans un pays coupé par trois cordillères et des fleuves difficiles, l'avion fait en heures ce que la mule faisait en semaines. L'aviation devient le principal facteur d'unification du territoire national avant même le chemin de fer.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Avianca"
+                    },
+                    {
+                      "id": "con14",
+                      "axe": "Regeneración, Mille Jours et République libérale (1886-1948)",
+                      "date": 1927,
+                      "titre": "Le café fait la Colombie moderne",
+                      "description": "La création de la Fédération nationale des caféiculteurs organise des centaines de milliers de petits producteurs, garantit un prix d'achat et finance routes, écoles et dispensaires dans les régions de montagne. Le café représente alors les trois quarts des exportations du pays. Cette économie de petite propriété, à l'inverse des grandes plantations d'Amérique centrale, façonne une classe moyenne rurale et le paysage de l'Axe caféier.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Caf%C3%A9iculture_en_Colombie"
+                    },
+                    {
                       "id": "co14",
+                      "axe": "Regeneración, Mille Jours et République libérale (1886-1948)",
                       "date": 1928,
                       "titre": "Massacre des bananeraies",
-                      "description": "L'armée tire sur des ouvriers grévistes de la multinationale américaine United Fruit Company à Ciénaga, un massacre immortalisé par Gabriel García Márquez.",
+                      "description": "Après un mois de grève des ouvriers de la United Fruit réclamant des contrats écrits et des journées de huit heures, l'armée ouvre le feu sur la foule rassemblée à Ciénaga ; le bilan, jamais établi, va de quelques dizaines à plus d'un millier de morts. L'affaire discrédite l'hégémonie conservatrice et lance la carrière de Jorge Eliécer Gaitán, qui mène l'enquête parlementaire. García Márquez en fera l'un des épisodes centraux de Cent ans de solitude.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Massacre_des_bananeraies"
                     },
                     {
+                      "id": "con15",
+                      "axe": "Regeneración, Mille Jours et République libérale (1886-1948)",
+                      "date": 1932,
+                      "titre": "La guerre de Leticia contre le Pérou",
+                      "description": "Des civils péruviens s'emparent du port amazonien de Leticia, cédé à la Colombie dix ans plus tôt, et les deux pays s'affrontent un an durant sur les fleuves, la Colombie improvisant une flottille et une aviation de guerre. La Société des Nations obtient le retour au statu quo, l'un de ses rares succès. Le conflit provoque une union nationale éphémère et accélère la modernisation de l'armée colombienne.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Guerre_colombo-p%C3%A9ruvienne_de_1932-1933"
+                    },
+                    {
+                      "id": "con16",
+                      "axe": "Regeneración, Mille Jours et République libérale (1886-1948)",
+                      "date": 1948,
+                      "titre": "La conférence de Bogotá fonde l'OEA",
+                      "description": "La neuvième conférence panaméricaine, réunie à Bogotá, adopte la charte créant l'Organisation des États américains, au moment même où l'assassinat de Gaitán met la ville à feu et à sang autour des délégués. Le jeune Fidel Castro, présent comme étudiant, assiste à l'émeute. La Colombie donne ainsi son siège à l'organisation régionale au moment où elle bascule elle-même dans la guerre civile.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Organisation_des_%C3%89tats_am%C3%A9ricains"
+                    },
+                    {
                       "id": "co15",
+                      "axe": "La Violencia, le Frente Nacional et les guérillas (1948-1991)",
                       "date": 1948,
                       "titre": "Assassinat de Gaitán et Bogotazo",
-                      "description": "L'assassinat à Bogotá du leader populaire libéral Jorge Eliécer Gaitán déclenche une insurrection urbaine destructrice et la période sanglante de « La Violencia ».",
+                      "description": "L'assassinat en pleine rue du chef libéral Jorge Eliécer Gaitán, favori de la présidentielle et tribun des classes populaires, déclenche à Bogotá une émeute de trois jours qui détruit le centre-ville et fait des milliers de morts. La violence gagne aussitôt les campagnes. Le Bogotazo ouvre la Violencia, guerre civile larvée entre libéraux et conservateurs qui fera plus de deux cent mille morts en une décennie.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Bogotazo"
                     },
                     {
+                      "id": "con17",
+                      "axe": "La Violencia, le Frente Nacional et les guérillas (1948-1991)",
+                      "date": 1957,
+                      "titre": "Le plébiscite ouvre le vote aux femmes",
+                      "description": "Après la chute de Rojas Pinilla, un plébiscite approuve à plus de quatre-vingt-quinze pour cent l'accord de partage du pouvoir entre libéraux et conservateurs ; c'est le premier scrutin national auquel les Colombiennes participent, le droit de vote leur ayant été accordé en 1954. Le corps électoral double d'un coup. Ce vote fonde le Frente Nacional, qui ramène la paix entre les deux partis en fermant la vie politique à tous les autres.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Front_national_(Colombie)"
+                    },
+                    {
+                      "id": "con18",
+                      "axe": "La Violencia, le Frente Nacional et les guérillas (1948-1991)",
+                      "date": 1961,
+                      "titre": "La réforme agraire et l'Alliance pour le progrès",
+                      "description": "Dans le cadre du programme américain lancé après la révolution cubaine, la Colombie crée l'Incora et vote une loi de réforme agraire censée redistribuer les terres improductives et titrer les colons. Appliquée avec prudence sous la pression des propriétaires, elle aboutit surtout à pousser les paysans vers les fronts de colonisation amazoniens. L'échec de cette réforme reste la racine reconnue du conflit armé, et la question foncière ouvre l'accord de paix de 2016.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Alliance_pour_le_progr%C3%A8s"
+                    },
+                    {
                       "id": "co16",
+                      "axe": "La Violencia, le Frente Nacional et les guérillas (1948-1991)",
                       "date": 1964,
                       "titre": "Émergence des FARC et de l'ELN",
-                      "description": "Après l'attaque de la république paysanne de Marquetalia, des paysans communistes fondent les FARC, amorçant un demi-siècle de conflit armé interne.",
+                      "description": "L'assaut de l'armée contre la communauté paysanne autonome de Marquetalia pousse ses survivants communistes, menés par Manuel Marulanda, à créer une guérilla mobile qui prend le nom de FARC ; la même année, des étudiants inspirés par Cuba fondent l'ELN. Le Frente Nacional, en réservant le pouvoir aux deux partis traditionnels, a fermé toute autre voie politique. Ces deux organisations alimenteront un conflit armé de plus d'un demi-siècle.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Forces_arm%C3%A9es_r%C3%A9volutionnaires_de_Colombie"
                     },
                     {
+                      "id": "con19",
+                      "axe": "La Violencia, le Frente Nacional et les guérillas (1948-1991)",
+                      "date": 1965,
+                      "titre": "Camilo Torres, le prêtre guérillero",
+                      "description": "Sociologue et cofondateur de la faculté de sociologie de l'Université nationale, le prêtre Camilo Torres quitte le sacerdoce, appelle à l'abstention puis rejoint l'ELN, où il est tué lors de son premier combat. Sa formule sur le devoir chrétien de faire la révolution le rend célèbre dans toute l'Amérique latine. Il incarne la rencontre entre catholicisme social et lutte armée, qui donnera à l'ELN sa physionomie particulière.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Camilo_Torres_Restrepo"
+                    },
+                    {
+                      "id": "con20",
+                      "axe": "La Violencia, le Frente Nacional et les guérillas (1948-1991)",
+                      "date": 1982,
+                      "titre": "García Márquez reçoit le prix Nobel",
+                      "description": "L'écrivain d'Aracataca, dont Cent ans de solitude a fait de Macondo un lieu universel, reçoit le Nobel de littérature et consacre son discours à la solitude et à la violence de l'Amérique latine, en habit caribéen plutôt qu'en frac. Le réalisme magique devient l'image mondiale de la Colombie. Cette reconnaissance donne au pays, au plus fort de la violence, une fierté et un visage qui ne sont pas ceux du conflit.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez"
+                    },
+                    {
                       "id": "co17",
+                      "axe": "La Violencia, le Frente Nacional et les guérillas (1948-1991)",
                       "date": 1985,
                       "titre": "Prise du Palais de justice et drame d'Armero",
-                      "description": "Une tragédie double frappe le pays : l'assaut du Palais de justice par le M-19 fait une centaine de morts, et l'éruption du Nevado del Ruiz rase la ville d'Armero (25 000 morts).",
+                      "description": "Le M-19 prend d'assaut le Palais de justice de Bogotá ; la reprise par l'armée, menée au canon sans négociation, fait une centaine de morts dont onze magistrats de la Cour suprême. Trois semaines plus tard, l'éruption du Nevado del Ruiz ensevelit Armero et tue vingt-trois mille personnes malgré des alertes ignorées. Ces deux catastrophes en un mois marquent le point le plus bas de la crédibilité de l'État colombien.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Prise_du_palais_de_justice_de_Bogot%C3%A1"
                     },
                     {
+                      "id": "con21",
+                      "axe": "La Violencia, le Frente Nacional et les guérillas (1948-1991)",
+                      "date": 1988,
+                      "titre": "L'extermination de l'Union patriotique",
+                      "description": "Le parti né des négociations de paix entre le gouvernement Betancur et les FARC voit ses militants assassinés par centaines puis par milliers, y compris deux candidats à la présidence, par des paramilitaires souvent liés à des agents de l'État. La justice reconnaîtra en 2023 la responsabilité de l'État devant la Cour interaméricaine. Ce massacre politique convainc durablement les guérillas que déposer les armes revient à se condamner.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Union_patriotique_(Colombie)"
+                    },
+                    {
+                      "id": "con22",
+                      "axe": "La Violencia, le Frente Nacional et les guérillas (1948-1991)",
+                      "date": 1989,
+                      "titre": "L'assassinat de Luis Carlos Galán",
+                      "description": "Candidat libéral favori de la présidentielle et partisan résolu de l'extradition des narcotrafiquants, Galán est abattu en meeting à Soacha sur ordre du cartel de Medellín, troisième candidat tué en quelques mois. Son fils lance depuis l'estrade funèbre l'appel qui aboutira à l'Assemblée constituante. Le meurtre marque l'apogée de la guerre du narcotrafic contre l'État et le point de départ direct de la Constitution de 1991.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Luis_Carlos_Gal%C3%A1n"
+                    },
+                    {
+                      "id": "con23",
+                      "axe": "La Violencia, le Frente Nacional et les guérillas (1948-1991)",
+                      "date": 1990,
+                      "titre": "La démobilisation du M-19",
+                      "description": "La guérilla urbaine issue de la fraude électorale de 1970 rend les armes, obtient l'amnistie et se présente aux élections, où sa liste arrive en tête pour l'Assemblée constituante avec son chef Antonio Navarro Wolff comme coprésident. C'est la première réinsertion politique réussie d'une guérilla colombienne. Elle sert de précédent et d'argument à tous les processus de paix ultérieurs, jusqu'à celui des FARC.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Mouvement_du_19_avril"
+                    },
+                    {
                       "id": "co18",
+                      "axe": "La Colombie contemporaine (depuis 1991)",
                       "date": 1991,
                       "titre": "Nouvelle Constitution démocratique",
-                      "description": "Une Assemblée constituante pluraliste adopte une nouvelle Constitution progressiste garantissant les droits fondamentaux et la diversité ethnique.",
+                      "description": "Une assemblée constituante élue, où siègent le M-19 démobilisé, des indigènes et des évangéliques, remplace la constitution de 1886 par un texte qui proclame l'État social de droit, crée la Cour constitutionnelle et l'action de tutelle, reconnaît la diversité ethnique et interdit l'extradition. La Colombie se dote de l'une des constitutions les plus progressistes du continent. Son application reste inégale, mais elle transforme durablement le droit et la vie politique.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Constitution_colombienne_de_1991"
                     },
                     {
                       "id": "co19",
+                      "axe": "La Colombie contemporaine (depuis 1991)",
                       "date": 1993,
                       "titre": "Mort de Pablo Escobar",
-                      "description": "Le baron de la drogue Pablo Escobar, chef du tout-puissant cartel de Medellín, est abattu par les forces spéciales de police sur un toit de Medellín.",
+                      "description": "Traqué après son évasion de la prison sur mesure de La Catedral, le chef du cartel de Medellín est abattu sur les toits de sa ville par le Bloc de recherche appuyé par les services américains. Sa mort met fin au narcoterrorisme des années d'attentats et d'assassinats de candidats. Elle ne supprime pas le trafic, qui se recompose en cartels plus discrets puis passe aux mains des guérillas et des paramilitaires.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Pablo_Escobar"
                     },
                     {
+                      "id": "con24",
+                      "axe": "La Colombie contemporaine (depuis 1991)",
+                      "date": 1994,
+                      "titre": "Le Processus 8000",
+                      "description": "Une enquête révèle que le cartel de Cali a financé la campagne présidentielle d'Ernesto Samper à hauteur de plusieurs millions de dollars ; le président est absous par un Congrès dont de nombreux membres sont eux-mêmes poursuivis, mais Washington lui retire son visa et décertifie la Colombie. Le pays est mis au ban par son principal allié. Le scandale, en délégitimant l'État, prépare l'expansion des paramilitaires et l'appel à l'aide américaine du Plan Colombie.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Proc%C3%A9dure_8000"
+                    },
+                    {
+                      "id": "con25",
+                      "axe": "La Colombie contemporaine (depuis 1991)",
+                      "date": 1999,
+                      "titre": "Le séisme de l'Axe caféier",
+                      "description": "Un tremblement de terre de magnitude six détruit Armenia et Pereira, au cœur de la région du café, tuant plus de mille personnes et laissant deux cent mille sans abri. La reconstruction est confiée à un fonds spécial sous contrôle civil plutôt qu'aux administrations locales. Survenue au creux de la pire récession du siècle, la catastrophe frappe la région qui symbolisait la prospérité paysanne colombienne.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Armenia_(Quind%C3%ADo)"
+                    },
+                    {
+                      "id": "con26",
+                      "axe": "La Colombie contemporaine (depuis 1991)",
+                      "date": 2000,
+                      "titre": "Le Plan Colombie",
+                      "description": "Washington accorde une aide de plusieurs milliards de dollars, très majoritairement militaire, pour combattre la production de coca et les guérillas qui la taxent, avec épandages aériens de glyphosate et modernisation de l'armée. L'État reprend le contrôle de vastes zones et les FARC perdent l'initiative. Le plan rend possible la politique de sécurité d'Uribe puis, paradoxalement, la négociation de paix menée depuis une position de force.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Plan_Colombie"
+                    },
+                    {
+                      "id": "con27",
+                      "axe": "La Colombie contemporaine (depuis 1991)",
+                      "date": 2008,
+                      "titre": "L'opération Jaque",
+                      "description": "Des militaires déguisés en membres d'une organisation humanitaire persuadent un commandant des FARC de leur remettre quinze otages, dont Íngrid Betancourt et trois contractants américains, libérés sans un coup de feu. L'opération, montée sur le renseignement et la ruse, fait le tour du monde. Elle marque le basculement du rapport de force et achève de discréditer la guérilla auprès de l'opinion colombienne.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Op%C3%A9ration_Jaque"
+                    },
+                    {
+                      "id": "con28",
+                      "axe": "La Colombie contemporaine (depuis 1991)",
+                      "date": 2008,
+                      "titre": "Le scandale des faux positifs",
+                      "description": "La disparition de jeunes hommes de Soacha, retrouvés morts en uniforme de guérilleros à des centaines de kilomètres, révèle un système où des militaires exécutaient des civils pour gonfler les statistiques de combat contre primes et permissions. La juridiction de paix a établi plus de six mille victimes entre 2002 et 2008. Ces crimes constituent la pire atteinte aux droits humains commise par l'armée colombienne et hantent toujours le débat sur la sécurité.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Scandale_des_faux_positifs"
+                    },
+                    {
                       "id": "co20",
+                      "axe": "La Colombie contemporaine (depuis 1991)",
                       "date": 2016,
                       "titre": "Accords de paix historiques avec les FARC",
-                      "description": "Le président Juan Manuel Santos et les FARC signent à La Havane un accord de paix historique mettant fin à 52 ans de guerre civile, récompensé par le prix Nobel.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Accords_de_paix_entre_le_gouvernement_colombien_et_les_FARC-EP"
+                      "description": "Après quatre ans de négociations à La Havane et le rejet du premier texte par référendum, un accord révisé est ratifié par le Congrès : les FARC déposent les armes, deviennent un parti et une juridiction spéciale juge les crimes du conflit en échange de peines alternatives. Plus de cinquante ans de guerre et huit millions de victimes enregistrées prennent officiellement fin. La mise en œuvre, contestée et inégale, reste l'enjeu central de la vie politique colombienne.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Processus_de_paix_entre_le_gouvernement_colombien_et_les_FARC-EP"
+                    },
+                    {
+                      "id": "con29",
+                      "axe": "La Colombie contemporaine (depuis 1991)",
+                      "date": 2018,
+                      "titre": "L'exode vénézuélien",
+                      "description": "L'effondrement du Venezuela pousse en quelques années près de trois millions de personnes à franchir la frontière, faisant de la Colombie le premier pays d'accueil du continent ; Bogotá répond en 2021 par un statut de protection temporaire de dix ans accordé à presque tous. Le pays d'émigration devient pays d'immigration. Cette inversion, qui touche santé, écoles et marché du travail, redéfinit la relation entre les deux voisins.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Crise_des_r%C3%A9fugi%C3%A9s_v%C3%A9n%C3%A9zu%C3%A9liens"
+                    },
+                    {
+                      "id": "con30",
+                      "axe": "La Colombie contemporaine (depuis 1991)",
+                      "date": 2021,
+                      "titre": "Le paro nacional",
+                      "description": "Une réforme fiscale déclenche des semaines de manifestations et de blocages, portées par une jeunesse frappée par le chômage et la pandémie ; la répression fait des dizaines de morts, surtout à Cali, et provoque le retrait de la réforme. Le mouvement révèle l'ampleur des inégalités et la défiance envers les institutions. Il ouvre la voie à l'élection de Gustavo Petro, premier président de gauche du pays, l'année suivante.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Manifestations_de_2021_en_Colombie"
                     }
+                  ],
+                  "essentiel": [
+                    "co1",
+                    "co4",
+                    "co5",
+                    "co6",
+                    "co7",
+                    "co8",
+                    "co9",
+                    "co10",
+                    "co11",
+                    "co12",
+                    "co13",
+                    "co14",
+                    "co15",
+                    "co16",
+                    "co17",
+                    "co18",
+                    "co19",
+                    "co20",
+                    "con1",
+                    "con5",
+                    "con6",
+                    "con9",
+                    "con10",
+                    "con14",
+                    "con16",
+                    "con18",
+                    "con22",
+                    "con23",
+                    "con26",
+                    "con30"
                   ]
                 },
                 {
@@ -122043,7 +122941,7 @@
                   "date": 1683,
                   "titre": "Le second siège manqué de Vienne",
                   "description": "L'immense armée ottomane de 150 000 hommes commandée par le grand vizir Kara Moustapha assiège la capitale autrichienne de Vienne pendant deux mois avant d'être écrasée par la charge de cavalerie héroïque des hussards ailés du roi de Pologne Jean III Sobieski lors de la bataille du Kahlenberg le 12 septembre 1683. Cette défaite retentissante marque le coup d'arrêt définitif à l'expansion militaire ottomane en Europe. Elle inaugure une longue phase de reflux territorial.",
-                  "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Vienne_(1683)"
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Vienne"
                 },
                 {
                   "id": "tr20",
@@ -123104,140 +124002,446 @@
                   "id": "thm_ma",
                   "nom": "Histoire du Maroc 🇲🇦",
                   "difficulte": "Intermédiaire",
+                  "axeOrder": [
+                    "Maurétanie, islamisation et dynasties berbères (jusqu'en 1465)",
+                    "Chérifs saadiens et fondation alaouite (1465-1727)",
+                    "L'empire chérifien face à l'Europe (1727-1912)",
+                    "Le protectorat et la lutte nationale (1912-1956)",
+                    "Le Maroc indépendant (depuis 1956)"
+                  ],
                   "events": [
                     {
+                      "id": "man1",
+                      "axe": "Maurétanie, islamisation et dynasties berbères (jusqu'en 1465)",
+                      "date": -40,
+                      "titre": "Volubilis et le royaume de Maurétanie",
+                      "description": "Le royaume berbère de Maurétanie, dont Volubilis est l'une des capitales, est annexé par Rome après l'assassinat du roi Ptolémée sur ordre de Caligula, puis organisé en province de Maurétanie Tingitane. La romanisation reste limitée au Nord-Ouest, les tribus de l'Atlas conservant leur autonomie. Cette antiquité berbère et romaine constitue la première strate de l'identité marocaine, redécouverte et revendiquée depuis l'indépendance.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Maur%C3%A9tanie_tingitane"
+                    },
+                    {
+                      "id": "man2",
+                      "axe": "Maurétanie, islamisation et dynasties berbères (jusqu'en 1465)",
+                      "date": 683,
+                      "titre": "Oqba ibn Nafi atteint l'Atlantique",
+                      "description": "Le conquérant arabe Oqba ibn Nafi pousse sa chevauchée jusqu'à l'océan, où la tradition le montre entrant dans les flots pour prendre Dieu à témoin qu'aucune terre ne l'arrête plus. Il est tué peu après sur le chemin du retour par les Berbères de Koceïla. Cette expédition fonde le récit de l'islamisation du Maghreb extrême, qui sera en réalité l'œuvre lente d'un siècle de contacts et de conversions.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Oqba_Ibn_Nafi_al-Fihri"
+                    },
+                    {
+                      "id": "man3",
+                      "axe": "Maurétanie, islamisation et dynasties berbères (jusqu'en 1465)",
+                      "date": 740,
+                      "titre": "La grande révolte berbère",
+                      "description": "Les Berbères du Maghreb occidental, convertis à l'islam mais traités en sujets de second rang et soumis au tribut, se soulèvent au nom du kharidjisme égalitaire et écrasent les armées omeyyades à la bataille des Nobles. Le califat de Damas perd définitivement le contrôle de la région. Cette rupture ouvre la voie aux États berbères indépendants, dont celui des Idrissides, et fait du Maroc une terre qui ne sera plus jamais gouvernée depuis l'Orient.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Grande_r%C3%A9volte_berb%C3%A8re"
+                    },
+                    {
                       "id": "ma1",
+                      "axe": "Maurétanie, islamisation et dynasties berbères (jusqu'en 1465)",
                       "date": 788,
                       "titre": "Fondation de la dynastie idrisside",
-                      "description": "Idris Ier, descendant du prophète réfugié au Maghreb, fonde le premier grand État musulman marocain, berceau de la dynastie idrisside.",
+                      "description": "Idris Ier, descendant d'Ali réfugié au Maghreb après la défaite chiite de Fakhkh, reçoit l'allégeance des tribus Awraba de Volubilis et fonde le premier État musulman indépendant du Maroc. Son autorité repose sur le prestige chérifien, c'est-à-dire la descendance du Prophète, et non sur la conquête. Ce principe de légitimité par le sang prophétique traverse toute l'histoire marocaine et fonde encore aujourd'hui le statut du souverain.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Idrissides"
                     },
                     {
                       "id": "ma2",
+                      "axe": "Maurétanie, islamisation et dynasties berbères (jusqu'en 1465)",
                       "date": 808,
                       "titre": "Fondation de Fès",
-                      "description": "La ville de Fès est fondée par Idris II, qui en fait sa capitale ; elle deviendra un immense foyer religieux et intellectuel du monde musulman.",
+                      "description": "Idris II fait de Fès une véritable capitale en y installant deux vagues de réfugiés, les Andalous de Cordoue et les Kairouanais d'Ifriqiya, qui donnent leurs noms aux deux rives de la ville. Ces populations urbaines apportent l'artisanat, le commerce et les sciences religieuses du monde musulman oriental. Fès devient pour mille ans la capitale intellectuelle et spirituelle du pays, et le modèle de la ville marocaine.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/F%C3%A8s"
                     },
                     {
                       "id": "ma3",
+                      "axe": "Maurétanie, islamisation et dynasties berbères (jusqu'en 1465)",
                       "date": 1062,
                       "titre": "Fondation de Marrakech",
-                      "description": "Les Almoravides, dynastie berbère venue du Sahara, fondent Marrakech, qui deviendra la capitale d'un empire s'étendant jusqu'en Espagne.",
+                      "description": "Les Almoravides, guerriers voilés venus du Sahara occidental, établissent un camp fortifié au pied du Haut Atlas qui devient leur capitale. Marrakech commande à la fois les routes caravanières du Soudan et les plaines agricoles de l'Atlantique, position qui explique sa fortune. La ville donne son nom au pays tout entier dans la plupart des langues européennes, et reste la capitale du Sud marocain.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Marrakech"
                     },
                     {
+                      "id": "man4",
+                      "axe": "Maurétanie, islamisation et dynasties berbères (jusqu'en 1465)",
+                      "date": 1106,
+                      "titre": "L'empire de Youssef ibn Tachfin",
+                      "description": "Parti du Sahara, le chef almoravide unifie le Maroc, franchit le détroit à l'appel des rois de taïfas et règne du fleuve Sénégal à l'Èbre, frappant une monnaie d'or qui circule dans toute la Méditerranée. Son empire relie pour la première fois le Maghreb extrême, l'Afrique subsaharienne et l'Espagne musulmane. Il fixe aussi le malikisme comme doctrine juridique du pays, ce qu'il est resté jusqu'à aujourd'hui.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Youssef_ben_Tachfine"
+                    },
+                    {
                       "id": "ma4",
+                      "axe": "Maurétanie, islamisation et dynasties berbères (jusqu'en 1465)",
                       "date": 1147,
                       "titre": "Les Almohades s'emparent de Marrakech",
-                      "description": "Le mouvement réformateur almohade renverse la dynastie almoravide et fonde un vaste empire unifiant le Maghreb et l'Espagne musulmane (al-Andalus).",
+                      "description": "Le mouvement almohade, né de la prédication rigoriste d'Ibn Toumart chez les Masmouda de l'Atlas, s'empare de la capitale almoravide et détruit la dynastie des voilés. Abd al-Mumin réunit alors sous une seule autorité tout le Maghreb et al-Andalus, la plus vaste construction politique jamais bâtie depuis le Maroc. Cet empire donne au pays son apogée territorial et ses grands monuments, de la Koutoubia à la Giralda de Séville.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Almohades"
                     },
                     {
+                      "id": "man5",
+                      "axe": "Maurétanie, islamisation et dynasties berbères (jusqu'en 1465)",
+                      "date": 1212,
+                      "titre": "Las Navas de Tolosa et le reflux almohade",
+                      "description": "La coalition des rois chrétiens d'Espagne écrase l'armée du calife almohade dans la Sierra Morena, ouvrant la vallée du Guadalquivir à la Reconquête. L'empire almohade, ébranlé, se disloque en quelques décennies entre Hafsides, Zianides et Mérinides. Le Maroc cesse alors d'être la puissance dominante de l'Occident musulman et voit s'amorcer le retrait définitif de l'islam d'al-Andalus.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Las_Navas_de_Tolosa"
+                    },
+                    {
+                      "id": "man6",
+                      "axe": "Maurétanie, islamisation et dynasties berbères (jusqu'en 1465)",
+                      "date": 1465,
+                      "titre": "La chute des Mérinides et l'avènement wattasside",
+                      "description": "Une révolte populaire à Fès, provoquée par l'impuissance du sultan devant les prises portugaises sur la côte, massacre le dernier Mérinide et sa famille ; les Wattassides, leurs cousins et vizirs, recueillent un pouvoir affaibli. Le Maroc se fragmente alors en principautés et confréries pendant que Ceuta, Tanger et Agadir tombent aux mains du Portugal. Cette crise ouvre le siècle où la légitimité passera des sultans berbères aux chérifs descendants du Prophète.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Wattassides"
+                    },
+                    {
+                      "id": "man7",
+                      "axe": "Chérifs saadiens et fondation alaouite (1465-1727)",
+                      "date": 1471,
+                      "titre": "Les présides portugais sur les côtes",
+                      "description": "Après Ceuta en 1415, le Portugal s'empare de Tanger et d'Asilah puis jalonne l'Atlantique de places fortes, de Safi à Agadir, pour contrôler la route des Indes et le commerce de l'or. Ces présides coupent le Maroc de la mer et humilient un pouvoir central incapable de les déloger. L'incapacité wattasside à mener le jihad côtier discrédite la dynastie et fait la fortune politique des chérifs saadiens du Sud.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Maroc_portugais"
+                    },
+                    {
+                      "id": "man8",
+                      "axe": "Chérifs saadiens et fondation alaouite (1465-1727)",
+                      "date": 1492,
+                      "titre": "L'exode andalou après la chute de Grenade",
+                      "description": "La prise de Grenade puis les expulsions successives jettent sur les ports marocains des dizaines de milliers de musulmans et de juifs d'Espagne, qui s'installent à Fès, Tétouan, Rabat et Salé. Ils apportent des techniques, des capitaux, une culture urbaine raffinée et une haine tenace de la chrétienté ibérique. Cette greffe andalouse marque durablement la musique, l'architecture, la cuisine et les élites citadines du pays.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Morisques"
+                    },
+                    {
+                      "id": "man9",
+                      "axe": "Chérifs saadiens et fondation alaouite (1465-1727)",
+                      "date": 1510,
+                      "titre": "Les chérifs saadiens lèvent l'étendard du jihad",
+                      "description": "Dans le Souss, les tribus donnent leur allégeance aux chérifs saadiens venus du Draa pour organiser la lutte contre les présides portugais, seule cause capable de fédérer le pays. Leur légitimité prophétique leur permet de lever l'impôt et les hommes là où les Wattassides ont échoué. La conquête du pouvoir par le jihad côtier installe durablement le principe chérifien au cœur de la souveraineté marocaine.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Saadiens"
+                    },
+                    {
                       "id": "ma5",
+                      "axe": "Chérifs saadiens et fondation alaouite (1465-1727)",
                       "date": 1578,
                       "titre": "Bataille des Trois Rois",
-                      "description": "L'armée marocaine remporte une victoire éclatante sur les troupes portugaises près de Ksar el-Kébir, affirmant durablement l'indépendance du royaume chérifien.",
+                      "description": "Près de Ksar el-Kébir, l'armée saadienne d'Abd al-Malik écrase l'expédition du roi Sébastien du Portugal venu soutenir un prétendant déchu ; trois souverains y trouvent la mort, d'où le nom donné à la bataille. Le Portugal, privé de roi et d'héritier, tombe sous la couronne espagnole pour soixante ans. Le Maroc échappe au sort de l'Algérie ottomane et de l'Amérique espagnole, et reste le seul État du Maghreb jamais conquis par les Turcs ni par l'Europe.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_des_Trois_Rois"
                     },
                     {
+                      "id": "man10",
+                      "axe": "Chérifs saadiens et fondation alaouite (1465-1727)",
+                      "date": 1591,
+                      "titre": "Tondibi et l'or du Soudan",
+                      "description": "Ahmed al-Mansour envoie à travers le Sahara une colonne d'arquebusiers qui écrase à Tondibi l'armée de l'empire songhaï et s'empare de Gao et Tombouctou. Le Maroc contrôle un temps les mines et les routes de l'or, d'où le surnom d'al-Dhahabi, « le Doré », donné au sultan. Cette expansion saharienne, éphémère politiquement, nourrit encore la mémoire d'un Maroc puissance africaine.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Tondibi"
+                    },
+                    {
                       "id": "ma6",
+                      "axe": "Chérifs saadiens et fondation alaouite (1465-1727)",
                       "date": 1666,
                       "titre": "Fondation de la dynastie alaouite",
-                      "description": "La dynastie alaouite s'impose sur l'ensemble du Maroc ; elle règne encore aujourd'hui, en faisant l'une des plus anciennes dynasties régnantes au monde.",
+                      "description": "Moulay Rachid, chérif du Tafilalet, achève de soumettre Fès puis Marrakech et fonde la dynastie alaouite au terme de la longue anarchie qui a suivi l'effondrement saadien. Comme les Idrissides huit siècles plus tôt, les Alaouites tirent leur légitimité de leur ascendance prophétique. La dynastie règne sans interruption depuis lors, ce qui fait de la monarchie marocaine l'une des plus anciennes du monde encore en exercice.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Alaouites"
                     },
                     {
+                      "id": "man11",
+                      "axe": "Chérifs saadiens et fondation alaouite (1465-1727)",
+                      "date": 1679,
+                      "titre": "L'armée des Abid al-Boukhari",
+                      "description": "Moulay Ismaïl constitue une armée permanente de plusieurs dizaines de milliers d'esclaves noirs, recrutés puis reproduits en communautés militaires et liés au seul sultan par un serment sur le recueil de hadiths d'al-Boukhari. Cette force échappe aux solidarités tribales qui ont toujours limité le pouvoir central. Elle permet pour la première fois de soumettre durablement tout le pays et fonde le Makhzen moderne.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Abid_al-Boukhari"
+                    },
+                    {
+                      "id": "man12",
+                      "axe": "Chérifs saadiens et fondation alaouite (1465-1727)",
+                      "date": 1682,
+                      "titre": "Moulay Ismaïl, Meknès et Versailles",
+                      "description": "Le sultan alaouite bâtit à Meknès une capitale aux murailles démesurées et entretient une correspondance suivie avec Louis XIV, allant jusqu'à demander la main d'une princesse de sang royal. Son règne de cinquante-cinq ans reprend Tanger aux Anglais, Larache aux Espagnols et impose l'ordre aux tribus. Il incarne le modèle du sultan fort auquel se réfèrent encore les historiens marocains du pouvoir central.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Isma%C3%AFl_ben_Ch%C3%A9rif"
+                    },
+                    {
+                      "id": "man13",
+                      "axe": "Chérifs saadiens et fondation alaouite (1465-1727)",
+                      "date": 1689,
+                      "titre": "La reprise de Larache aux Espagnols",
+                      "description": "Moulay Ismaïl enlève aux Espagnols le port de Larache après un long siège, poursuivant la reconquête méthodique des présides entamée avec Tanger et Mehdia. Les captifs chrétiens deviennent la main-d'œuvre des chantiers de Meknès et un instrument de négociation diplomatique. À sa mort, il ne reste plus à l'Europe que Ceuta et Melilla, encore espagnoles aujourd'hui.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Larache"
+                    },
+                    {
+                      "id": "man14",
+                      "axe": "Chérifs saadiens et fondation alaouite (1465-1727)",
+                      "date": 1727,
+                      "titre": "La mort de Moulay Ismaïl ouvre trente ans d'anarchie",
+                      "description": "La disparition du sultan laisse s'affronter ses fils et l'armée des Abid, qui font et défont sept souverains en une génération, tandis que les tribus cessent l'impôt et que les ports s'appauvrissent. Le Maroc manque de sombrer comme s'était effondré l'État saadien un siècle plus tôt. Cette crise montre la fragilité d'un pouvoir dépendant d'une armée prétorienne, leçon que retiendra le restaurateur Mohammed III.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Dynastie_alaouite"
+                    },
+                    {
+                      "id": "man15",
+                      "axe": "L'empire chérifien face à l'Europe (1727-1912)",
+                      "date": 1757,
+                      "titre": "Mohammed III ouvre le pays au commerce",
+                      "description": "Le sultan restaure l'État après l'anarchie en renonçant à l'armée des Abid et en finançant le Makhzen par les douanes plutôt que par l'impôt tribal, ce qui le conduit à multiplier les traités commerciaux avec l'Europe. Il fonde le port d'Essaouira et fait appel à des marchands juifs, les tujjar al-sultan, pour le commerce extérieur. Ce choix fiscal engage le Maroc dans une dépendance croissante envers les puissances européennes.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Mohammed_ben_Abdallah"
+                    },
+                    {
+                      "id": "man16",
+                      "axe": "L'empire chérifien face à l'Europe (1727-1912)",
+                      "date": 1769,
+                      "titre": "L'évacuation portugaise de Mazagan",
+                      "description": "Les Portugais abandonnent Mazagan, l'actuelle El Jadida, dernier préside qu'ils tenaient sur la côte atlantique depuis le début du XVIᵉ siècle. Trois siècles et demi de présence européenne sur le littoral marocain prennent fin, à l'exception de Ceuta et Melilla. Le pays retrouve la maîtrise complète de ses ports au moment même où l'Europe s'apprête à revenir par le commerce et la diplomatie.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/El_Jadida"
+                    },
+                    {
                       "id": "ma7",
+                      "axe": "L'empire chérifien face à l'Europe (1727-1912)",
                       "date": 1777,
                       "titre": "Reconnaissance des États-Unis",
-                      "description": "Le sultan Mohammed III fait du Maroc le premier pays au monde à reconnaître officiellement l'indépendance des jeunes États-Unis d'Amérique.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Relations_entre_le_Maroc_et_les_%C3%89tats-Unis"
+                      "description": "Le sultan Mohammed III ouvre les ports marocains aux navires battant pavillon des treize colonies insurgées, faisant du Maroc le premier État à reconnaître de fait l'indépendance américaine. Un traité de paix et d'amitié suit en 1786, toujours en vigueur : c'est le plus ancien traité ininterrompu des États-Unis. Cet épisode illustre la diplomatie d'ouverture commerciale par laquelle le Maroc cherche alors à échapper à l'isolement.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Mohammed_ben_Abdallah"
+                    },
+                    {
+                      "id": "man17",
+                      "axe": "L'empire chérifien face à l'Europe (1727-1912)",
+                      "date": 1830,
+                      "titre": "L'onde de choc de la prise d'Alger",
+                      "description": "La conquête française d'Alger installe une puissance européenne à la frontière orientale et place le sultan devant un dilemme : soutenir la résistance musulmane d'Abdelkader ou préserver la paix avec Paris. Le Makhzen choisit d'abord l'appui discret, ce qui le mènera à la guerre. L'événement fait entrer le Maroc dans l'ère des convoitises coloniales dont il ne sortira qu'en 1956.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Exp%C3%A9dition_d%27Alger_(1830)"
+                    },
+                    {
+                      "id": "man18",
+                      "axe": "L'empire chérifien face à l'Europe (1727-1912)",
+                      "date": 1845,
+                      "titre": "Le traité de Lalla Maghnia fixe la frontière",
+                      "description": "Après la défaite d'Isly, le Maroc signe avec la France un traité qui délimite la frontière avec l'Algérie sur sa partie nord mais la laisse indéterminée dans le Sahara, faute d'accord sur des territoires jugés sans valeur. Cette imprécision volontaire nourrit un siècle plus tard le conflit frontalier de la guerre des Sables. Le traité marque aussi le premier recul territorial imposé au Maroc par une puissance européenne.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Trait%C3%A9_de_Lalla_Maghnia"
+                    },
+                    {
+                      "id": "man19",
+                      "axe": "L'empire chérifien face à l'Europe (1727-1912)",
+                      "date": 1873,
+                      "titre": "Hassan Ier et la tentative de réforme",
+                      "description": "Le nouveau sultan parcourt inlassablement le pays en harkas pour lever l'impôt, fait instruire une armée par des officiers européens, envoie des étudiants en mission et crée une fonderie de canons à Fès. Ces réformes se heurtent au manque de ressources et à la résistance des notables et des oulémas. L'échec de cette modernisation par le haut laisse le Maroc désarmé face à la pression européenne qui s'accélère après sa mort.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Hassan_ben_Mohammed"
+                    },
+                    {
+                      "id": "man20",
+                      "axe": "L'empire chérifien face à l'Europe (1727-1912)",
+                      "date": 1902,
+                      "titre": "La révolte de Bou Hmara",
+                      "description": "Un ancien secrétaire du Makhzen se proclame sultan dans le Rif oriental en se faisant passer pour un frère aîné du souverain et tient tête au pouvoir central pendant sept ans, allant jusqu'à vendre des concessions minières aux Espagnols. Sa révolte révèle la faillite de l'autorité chérifienne et l'endettement de l'État. Elle fournit aux puissances européennes le prétexte d'une intervention au nom du rétablissement de l'ordre.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Rogui_Bou_Hmara"
+                    },
+                    {
+                      "id": "man21",
+                      "axe": "L'empire chérifien face à l'Europe (1727-1912)",
+                      "date": 1904,
+                      "titre": "L'Entente cordiale échange le Maroc contre l'Égypte",
+                      "description": "Dans leur accord colonial, Londres laisse à la France les mains libres au Maroc en échange de la reconnaissance britannique en Égypte, arrangement complété par un accord secret avec l'Espagne sur le partage du pays. Le sort du Maroc se décide ainsi entre chancelleries, sans son sultan. Cette diplomatie de marchandage explique la brutalité de la réaction allemande à Tanger l'année suivante et la crise qui mène à Algésiras.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Entente_cordiale"
                     },
                     {
                       "id": "ma8",
+                      "axe": "L'empire chérifien face à l'Europe (1727-1912)",
                       "date": 1906,
                       "titre": "Conférence d'Algésiras",
-                      "description": "Les grandes puissances européennes négocient leurs intérêts rivaux au Maroc, prélude direct à l'instauration du protectorat quelques années plus tard.",
+                      "description": "Réunie à la demande de l'Allemagne après le coup de Tanger, la conférence rassemble treize puissances pour statuer sur le Maroc et consacre en réalité la prééminence française et espagnole sur sa police et ses finances. L'indépendance du sultan est proclamée mais vidée de sa substance économique. Algésiras internationalise la question marocaine et ouvre la voie au protectorat six ans plus tard.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Conf%C3%A9rence_d%27Alg%C3%A9siras"
                     },
                     {
+                      "id": "man22",
+                      "axe": "L'empire chérifien face à l'Europe (1727-1912)",
+                      "date": 1908,
+                      "titre": "Moulay Hafid renverse son frère",
+                      "description": "Proclamé à Marrakech au nom du refus des concessions faites à l'étranger, Moulay Hafid dépose son frère Abdelaziz jugé trop docile, puis se trouve contraint d'accepter les mêmes tutelles et d'emprunter pour payer les indemnités exigées. Les oulémas de Fès lui avaient pourtant prêté une allégeance conditionnelle, exigeant le jihad contre l'occupation. Cet épisode montre qu'aucun sultan ne peut plus, en 1908, échapper à l'étau financier et militaire européen.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Abdelhafid_ben_Hassan"
+                    },
+                    {
                       "id": "ma9",
+                      "axe": "Le protectorat et la lutte nationale (1912-1956)",
                       "date": 1912,
                       "titre": "Traité de Fès",
-                      "description": "Le sultan Moulay Hafid signe le traité instaurant le protectorat franco-espagnol sur le Maroc, mettant fin à des siècles de souveraineté pleine et entière.",
+                      "description": "Sous la pression militaire française et après les émeutes de Fès, le sultan Moulay Hafid signe un traité qui place l'empire chérifien sous protectorat français, complété par une convention donnant au Maroc du Nord et au Sahara un protectorat espagnol. Le sultan conserve son titre religieux mais perd la conduite des affaires. Quarante-quatre ans de tutelle étrangère commencent, et avec eux la naissance d'un nationalisme marocain moderne.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Trait%C3%A9_de_F%C3%A8s"
                     },
                     {
+                      "id": "man23",
+                      "axe": "Le protectorat et la lutte nationale (1912-1956)",
+                      "date": 1912,
+                      "titre": "Les journées sanglantes de Fès",
+                      "description": "Quelques semaines après la signature du traité de Fès, les soldats marocains de la garnison se mutinent contre leurs instructeurs français et la population massacre des Européens ; la répression fait plusieurs centaines de morts. La France en tire argument pour transférer la capitale à Rabat, loin des villes impériales rebelles. Cette première explosion montre que le protectorat s'installe contre le pays, et non avec son accord.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Journ%C3%A9es_sanglantes_de_F%C3%A8s"
+                    },
+                    {
                       "id": "ma10",
+                      "axe": "Le protectorat et la lutte nationale (1912-1956)",
                       "date": 1921,
                       "titre": "Guerre du Rif",
-                      "description": "Abd el-Krim inflige une sévère défaite à l'armée espagnole à Anoual, fondant une éphémère République du Rif avant d'être finalement vaincu par une coalition franco-espagnole.",
+                      "description": "Dans le Rif espagnol, Abdelkrim el-Khattabi inflige à l'armée de Silvestre le désastre d'Anoual, l'une des plus lourdes défaites coloniales européennes, puis proclame une République du Rif dotée d'institutions modernes. Il faut l'alliance de la France et de l'Espagne et près de cinq cent mille hommes pour en venir à bout en 1926. La guerre du Rif devient une référence mondiale des luttes anticoloniales et un épisode fondateur de la mémoire marocaine.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Guerre_du_Rif"
                     },
                     {
+                      "id": "man24",
+                      "axe": "Le protectorat et la lutte nationale (1912-1956)",
+                      "date": 1942,
+                      "titre": "Le débarquement allié au Maroc",
+                      "description": "L'opération Torch jette les troupes américaines sur les plages de Casablanca, Safi et Mehdia, où elles affrontent brièvement les forces de Vichy avant le ralliement de Darlan. La présence américaine, l'Atlantic Charter et le discours anticolonial de Washington nourrissent les espoirs des nationalistes marocains. Le protectorat sort de la guerre affaibli et contesté, à la veille du Manifeste de l'Indépendance.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Op%C3%A9ration_Torch"
+                    },
+                    {
                       "id": "ma11",
+                      "axe": "Le protectorat et la lutte nationale (1912-1956)",
                       "date": 1943,
                       "titre": "Conférence d'Anfa",
-                      "description": "Roosevelt, Churchill et le sultan Mohammed V se rencontrent à Casablanca, un épisode qui nourrit les premières discussions sur l'avenir de l'indépendance marocaine.",
+                      "description": "Réunis à Anfa près de Casablanca pour arrêter la stratégie alliée, Roosevelt et Churchill reçoivent le sultan Mohammed V ; le président américain laisse entendre son appui à l'émancipation du Maroc après la guerre. Cet encouragement, réel ou supposé, rapproche le trône du mouvement national. La conférence marque le moment où le sultan cesse d'être l'instrument du protectorat pour en devenir le principal adversaire.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Conf%C3%A9rence_d%27Anfa"
                     },
                     {
+                      "id": "man25",
+                      "axe": "Le protectorat et la lutte nationale (1912-1956)",
+                      "date": 1952,
+                      "titre": "Les émeutes de Casablanca",
+                      "description": "L'assassinat du syndicaliste tunisien Farhat Hached provoque à Casablanca des manifestations de solidarité maghrébine violemment réprimées, avec des dizaines de morts dans les quartiers ouvriers des Carrières centrales. Le parti de l'Istiqlal et le syndicat sont interdits et leurs dirigeants arrêtés. La répression radicalise le mouvement national et prépare le passage à l'action armée après la déposition du sultan.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Farhat_Hached"
+                    },
+                    {
                       "id": "ma12",
+                      "axe": "Le protectorat et la lutte nationale (1912-1956)",
                       "date": 1953,
                       "titre": "Exil de Mohammed V",
-                      "description": "Les autorités françaises déposent et exilent à Madagascar le sultan Mohammed V, jugé trop favorable aux nationalistes, provoquant une vive agitation populaire.",
+                      "description": "La Résidence générale, appuyée par le pacha de Marrakech El Glaoui et des notables ralliés, dépose Mohammed V et le déporte en Corse puis à Madagascar, le remplaçant par un souverain docile. Loin de briser le mouvement national, l'exil transforme le sultan en symbole de l'indépendance et déclenche attentats et guérilla. Le protectorat perd ainsi la seule légitimité religieuse qui lui permettait de gouverner.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Mohammed_V_(roi_du_Maroc)"
                     },
                     {
                       "id": "ma13",
+                      "axe": "Le protectorat et la lutte nationale (1912-1956)",
                       "date": 1955,
                       "titre": "Retour de Mohammed V",
-                      "description": "Le sultan revient triomphalement d'exil, un moment décisif qui précipite les négociations conduisant à l'indépendance du Maroc l'année suivante.",
+                      "description": "Face à l'insurrection généralisée et à l'enlisement algérien, la France se résout à ramener Mohammed V, accueilli par des foules considérables : c'est la « Fête du Trône » la plus célèbre de l'histoire marocaine. Les accords de La Celle-Saint-Cloud ouvrent aussitôt la négociation sur l'indépendance. Le retour scelle l'alliance entre la monarchie et le nationalisme qui fonde le régime marocain contemporain.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Mohammed_V_(roi_du_Maroc)"
                     },
                     {
                       "id": "ma14",
+                      "axe": "Le protectorat et la lutte nationale (1912-1956)",
                       "date": 1956,
                       "titre": "Indépendance du Maroc",
-                      "description": "La France reconnaît l'indépendance du Maroc, mettant fin à quarante-quatre années de protectorat ; Mohammed V devient roi deux ans plus tard.",
+                      "description": "Une déclaration commune franco-marocaine abroge le traité de Fès et reconnaît l'indépendance du royaume ; l'Espagne suit en avril et Tanger est réintégrée en octobre. Le pays retrouve sa souveraineté avec sa dynastie intacte, cas unique au Maghreb. Cette continuité dynastique explique que le Maroc n'ait connu ni république ni parti unique, à la différence de ses voisins.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Ind%C3%A9pendance_du_Maroc"
                     },
                     {
+                      "id": "man26",
+                      "axe": "Le protectorat et la lutte nationale (1912-1956)",
+                      "date": 1956,
+                      "titre": "Tanger retrouve le royaume",
+                      "description": "La zone internationale de Tanger, administrée depuis 1923 par un condominium de puissances européennes avec son propre statut fiscal et monétaire, est restituée au Maroc par la conférence de Fedala quelques mois après l'indépendance. La ville perd ses privilèges de port franc et de paradis financier. Son retour parachève l'unité territoriale du royaume, à l'exception de Ceuta, Melilla, Ifni et du Sahara.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Zone_internationale_de_Tanger"
+                    },
+                    {
                       "id": "ma15",
+                      "axe": "Le Maroc indépendant (depuis 1956)",
                       "date": 1961,
                       "titre": "Avènement de Hassan II",
-                      "description": "À la mort de son père Mohammed V, Hassan II accède au trône et règne pendant trente-huit ans, marqués par une forte concentration du pouvoir royal.",
+                      "description": "À la mort de Mohammed V, son fils Hassan II monte sur le trône et impose l'année suivante une constitution qui consacre le pouvoir royal, ouvrant trente-huit ans d'un règne autoritaire. Il affronte deux coups d'État militaires, réprime durement l'opposition durant les « années de plomb » et fait du Sahara la cause nationale. Son règne façonne les institutions, les équilibres et les blocages du Maroc contemporain.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Hassan_II"
                     },
                     {
+                      "id": "man27",
+                      "axe": "Le Maroc indépendant (depuis 1956)",
+                      "date": 1963,
+                      "titre": "La guerre des Sables",
+                      "description": "Le Maroc et l'Algérie s'affrontent à Tindouf et Figuig sur une frontière saharienne que le traité de 1845 n'avait jamais tracée et que Rabat conteste à l'Algérie indépendante. Le cessez-le-feu négocié par l'Éthiopie et le Mali laisse la situation en l'état. Cette guerre de quelques semaines inaugure six décennies de rivalité entre les deux pays, qui structure toute la politique maghrébine.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Guerre_des_Sables"
+                    },
+                    {
+                      "id": "man28",
+                      "axe": "Le Maroc indépendant (depuis 1956)",
+                      "date": 1971,
+                      "titre": "Le coup d'État de Skhirat",
+                      "description": "Des cadets militaires font irruption dans le palais de Skhirat pendant la réception d'anniversaire du roi et tuent une centaine d'invités ; Hassan II échappe à la mort et fait exécuter les généraux impliqués. Une seconde tentative, l'attaque du Boeing royal par des chasseurs, suit un an plus tard. Ces deux complots ouvrent les « années de plomb », période de répression massive de toute opposition.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Coup_d%27%C3%89tat_de_Skhirat"
+                    },
+                    {
                       "id": "ma16",
+                      "axe": "Le Maroc indépendant (depuis 1956)",
                       "date": 1975,
                       "titre": "Marche verte",
-                      "description": "Hassan II organise une marche pacifique de 350 000 civils marocains vers le Sahara occidental pour en revendiquer la souveraineté après le retrait espagnol.",
+                      "description": "Hassan II lance trois cent cinquante mille civils désarmés, munis de corans et de drapeaux, vers le Sahara espagnol que la Cour internationale de justice vient de refuser d'attribuer au Maroc. Madrid cède et signe les accords de Madrid qui organisent son retrait. La Marche verte fonde la revendication marocaine sur le Sahara, mobilise durablement l'opinion autour du trône et ouvre un conflit avec le Front Polisario toujours ouvert.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Marche_verte"
                     },
                     {
+                      "id": "man29",
+                      "axe": "Le Maroc indépendant (depuis 1956)",
+                      "date": 1990,
+                      "titre": "Tazmamart et les années de plomb",
+                      "description": "La révélation du bagne secret de Tazmamart, où des militaires impliqués dans les coups d'État de 1971 et 1972 ont été enterrés vivants dans des cellules pendant dix-huit ans, éclate dans la presse internationale et embarrasse le pouvoir. Le camp est fermé et les survivants libérés. Ce scandale contraint la monarchie à ouvrir le dossier des disparitions forcées et de la torture qui ont marqué le règne.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Tazmamart"
+                    },
+                    {
                       "id": "ma17",
+                      "axe": "Le Maroc indépendant (depuis 1956)",
                       "date": 1999,
                       "titre": "Avènement de Mohammed VI",
-                      "description": "À la mort de Hassan II, son fils Mohammed VI monte sur le trône et engage plusieurs réformes sociales et politiques d'ouverture.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Mohammed_VI_(roi_du_Maroc)"
+                      "description": "Mohammed VI succède à son père et engage une ouverture : libération de prisonniers politiques, retour de l'opposant Abraham Serfaty, limogeage du ministre de l'Intérieur Driss Basri, création d'une instance d'équité sur les années de plomb. Le nouveau règne se présente sous le signe du « concept d'autorité » et du développement humain. Il maintient toutefois intact le pouvoir de décision du souverain, commandeur des croyants.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Mohammed_VI"
+                    },
+                    {
+                      "id": "man30",
+                      "axe": "Le Maroc indépendant (depuis 1956)",
+                      "date": 2004,
+                      "titre": "La Moudawana réforme le statut des femmes",
+                      "description": "Le nouveau code de la famille, promulgué par le roi en sa qualité de commandeur des croyants après un long affrontement entre islamistes et associations féministes, élève l'âge du mariage, encadre strictement la polygamie et place la famille sous la responsabilité conjointe des époux. La réforme est présentée comme une lecture renouvelée du droit musulman, non comme une rupture avec lui. Elle constitue l'avancée juridique la plus importante pour les Marocaines depuis l'indépendance.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Moudawana"
+                    },
+                    {
+                      "id": "man31",
+                      "axe": "Le Maroc indépendant (depuis 1956)",
+                      "date": 2005,
+                      "titre": "L'Instance équité et réconciliation",
+                      "description": "Créée à l'initiative du roi et présidée par un ancien détenu politique, l'instance entend les victimes des années de plomb en audiences publiques télévisées, établit le sort de centaines de disparus et recommande des réparations ainsi que des réformes institutionnelles. Elle ne nomme toutefois aucun responsable et n'engage aucune poursuite. Cette justice transitionnelle sans procès, première du genre dans le monde arabe, reste un modèle discuté.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Instance_%C3%A9quit%C3%A9_et_r%C3%A9conciliation"
                     },
                     {
                       "id": "ma18",
+                      "axe": "Le Maroc indépendant (depuis 1956)",
                       "date": 2011,
                       "titre": "Réforme constitutionnelle",
-                      "description": "Dans le sillage du Printemps arabe, une révision constitutionnelle approuvée par référendum élargit les pouvoirs du Parlement et du chef du gouvernement.",
+                      "description": "Face aux manifestations du Mouvement du 20-Février, écho marocain des printemps arabes, le roi annonce dès mars une révision constitutionnelle adoptée par référendum en juillet. Le texte renforce le chef du gouvernement, issu désormais du parti arrivé en tête, et reconnaît l'amazigh comme langue officielle. Le Maroc traverse ainsi la vague de 2011 par la réforme concédée d'en haut plutôt que par la rupture.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Constitution_marocaine_de_2011"
                     },
                     {
                       "id": "ma19",
+                      "axe": "Le Maroc indépendant (depuis 1956)",
                       "date": 2020,
                       "titre": "Accords de normalisation avec Israël",
-                      "description": "Le Maroc rejoint les Accords d'Abraham et normalise ses relations diplomatiques avec Israël, en échange notamment d'une reconnaissance américaine sur le Sahara occidental.",
+                      "description": "Le Maroc rétablit ses relations avec Israël dans le cadre des accords d'Abraham, en échange de la reconnaissance américaine de sa souveraineté sur le Sahara occidental. Le royaume met en avant l'ancienneté de sa communauté juive, la plus nombreuse du monde arabe avant 1948, et le rôle de Mohammed V pendant la guerre. Cette normalisation marque un tournant diplomatique majeur sur le dossier saharien.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Accords_d%27Abraham"
                     }
+                  ],
+                  "essentiel": [
+                    "ma1",
+                    "ma2",
+                    "ma3",
+                    "ma4",
+                    "ma5",
+                    "ma6",
+                    "ma8",
+                    "ma9",
+                    "ma10",
+                    "ma12",
+                    "ma13",
+                    "ma14",
+                    "ma15",
+                    "ma16",
+                    "ma17",
+                    "ma18",
+                    "man3",
+                    "man4",
+                    "man6",
+                    "man7",
+                    "man9",
+                    "man10",
+                    "man11",
+                    "man15",
+                    "man17",
+                    "man20",
+                    "man23",
+                    "man25",
+                    "man26",
+                    "man29"
                   ]
                 },
                 {
@@ -139593,7 +140797,7 @@
                   "date": 1867,
                   "titre": "Compromis austro-hongrois",
                   "description": "Traumatisé par la défaite de Sadowa et cherchant désespérément à stabiliser durablement son empire multinational fragilisé, l'empereur François-Joseph négocie avec les élites politiques hongroises, notamment Ferenc Deák, un compromis constitutionnel fondamental transformant l'Empire d'Autriche unitaire en une monarchie double, l'Autriche-Hongrie, où chaque moitié dispose de son propre gouvernement et de son propre parlement tout en partageant certaines institutions communes essentielles. Ce compromis, négocié directement entre l'empereur et les élites hongroises sans consultation véritable des autres nationalités de l'empire, notamment les Slaves, accorde à la Hongrie une autonomie et une égalité de statut inédites avec l'Autriche elle-même. Ce système dualiste original, unique dans l'histoire constitutionnelle européenne, va structurer l'ensemble de la vie politique de l'empire pendant les cinquante et une années suivantes, jusqu'à son effondrement complet en 1918.",
-                  "wikipedia": "https://fr.wikipedia.org/wiki/Compromis_austro-hongrois_de_1867"
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Compromis_austro-hongrois"
                 },
                 {
                   "id": "aho8",
@@ -156816,7 +158020,7 @@
                   "date": 1291,
                   "titre": "Le pacte de 1291, entre document et mythe national",
                   "description": "Le parchemin d'août 1291 est un renouvellement d'alliance entre communautés de vallée, sans mention d'indépendance ni de serment sur une prairie. Le récit du Grütli et de Guillaume Tell apparaît dans les chroniques deux siècles plus tard, et c'est en 1891 seulement que la Confédération choisit 1291 comme date de fondation et institue la fête du 1er août. Les programmes suisses font travailler cet écart : comment un État se donne après coup l'origine dont il a besoin.",
-                  "wikipedia": "https://fr.wikipedia.org/wiki/Pacte_fédéral_de_1291"
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Pacte_f%C3%A9d%C3%A9ral"
                 },
                 {
                   "id": "psn_ch_t1_2",
@@ -156832,7 +158036,7 @@
                   "date": 1315,
                   "titre": "Pacte de Brunnen",
                   "description": "Immédiatement après leur victoire à Morgarten, les trois cantons fondateurs renouvellent et renforcent solennellement leur pacte d'alliance initial de 1291 à Brunnen, précisant davantage les modalités concrètes de leur assistance militaire mutuelle et de leur coopération politique face aux menaces extérieures persistantes des Habsbourg. Ce renouvellement, qui consolide juridiquement et symboliquement l'alliance confédérale dans la foulée immédiate de son premier succès militaire majeur, illustre la manière dont les victoires concrètes viennent progressivement solidifier des engagements initialement plus vagues et incertains. Ce pacte renforcé prépare le terrain à l'élargissement progressif de la Confédération à de nouveaux cantons dans les décennies suivantes.",
-                  "wikipedia": "https://fr.wikipedia.org/wiki/Pacte_fédéral_de_1291"
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Conf%C3%A9d%C3%A9ration_des_III_cantons"
                 },
                 {
                   "id": "psn_ch_t1_4",
@@ -157048,7 +158252,7 @@
                   "date": 2002,
                   "titre": "Adhésion de la Suisse à l'ONU",
                   "description": "Après plusieurs décennies de débat interne prudent sur la compatibilité de l'adhésion aux Nations unies avec la doctrine traditionnelle de neutralité suisse, et après un premier référendum populaire négatif en 1986 ayant massivement rejeté cette adhésion, les citoyens suisses approuvent finalement par référendum, cette fois de justesse, l'adhésion pleine et entière du pays à l'Organisation des Nations unies, mettant ainsi fin à des décennies d'isolement diplomatique institutionnel relatif du pays. Cette adhésion tardive, survenue plus d'un demi-siècle après la fondation même de l'organisation internationale, illustre la prudence caractéristique et la lenteur délibérée du processus décisionnel démocratique direct suisse face à toute évolution significative perçue comme pouvant affecter le statut neutre traditionnel du pays. Cette adhésion reste un tournant diplomatique majeur récent, marquant l'aboutissement d'une évolution progressive et prudente de la doctrine suisse vers une participation internationale plus active tout en préservant l'essentiel de son statut neutre historique.",
-                  "wikipedia": "https://fr.wikipedia.org/wiki/Adhésion_de_la_Suisse_à_l'Organisation_des_Nations_unies"
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Votations_f%C3%A9d%C3%A9rales_de_2002_en_Suisse"
                 }
               ]
             },
