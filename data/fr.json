@@ -3,7 +3,7 @@
   "lang": "fr",
   "name": "Français (Intégral)",
   "totalThemes": 795,
-  "totalEvents": 19416,
+  "totalEvents": 19478,
   "categories": [
     {
       "nom": "Culture générale",
@@ -121726,133 +121726,446 @@
                   "id": "thm_tn",
                   "nom": "Histoire de la Tunisie 🇹🇳",
                   "difficulte": "Intermédiaire",
+                  "axeOrder": [
+                    "Carthage et l'Afrique antique (jusqu'en 647)",
+                    "L'Ifriqiya musulmane et les dynasties médiévales (647-1574)",
+                    "La Régence de Tunis et les réformes (1574-1881)",
+                    "Le protectorat et le mouvement national (1881-1956)",
+                    "La Tunisie indépendante (depuis 1956)"
+                  ],
                   "events": [
                     {
                       "id": "tn1",
+                      "axe": "Carthage et l'Afrique antique (jusqu'en 647)",
                       "date": -814,
                       "titre": "Fondation légendaire de Carthage",
-                      "description": "Selon la légende, la reine phénicienne Didon fonde Carthage, qui deviendra une puissante cité marchande rivale de Rome en Méditerranée occidentale.",
+                      "description": "La tradition rapportée par les auteurs anciens fait fuir de Tyr la princesse Élissa, que les Romains appelleront Didon, pour fonder Qart Hadasht, « la ville neuve », sur un promontoire du golfe de Tunis. L'archéologie situe l'installation phénicienne vers la fin du IXe siècle avant notre ère. Sa position au détroit séparant les deux bassins de la Méditerranée en fait très tôt un carrefour du commerce antique.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Carthage"
                     },
                     {
+                      "id": "tnn1",
+                      "axe": "Carthage et l'Afrique antique (jusqu'en 647)",
+                      "date": -750,
+                      "titre": "Le tophet de Salammbô",
+                      "description": "Sur un sanctuaire à ciel ouvert de Carthage, des milliers d'urnes contiennent les restes incinérés de très jeunes enfants et d'agneaux, surmontés de stèles dédiées aux divinités Baal Hammon et Tanit. Les auteurs grecs et romains y voyaient la preuve de sacrifices d'enfants, thèse que certains archéologues contestent en invoquant une nécropole de mortalité périnatale. Le débat, toujours ouvert, illustre la difficulté d'écrire l'histoire punique à partir de sources écrites par ses ennemis.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Tophet_de_Carthage"
+                    },
+                    {
+                      "id": "tnn2",
+                      "axe": "Carthage et l'Afrique antique (jusqu'en 647)",
+                      "date": -480,
+                      "titre": "Carthage écartée de la Sicile",
+                      "description": "Battue par les Grecs de Syracuse et d'Agrigente à Himère, Carthage renonce pour trois générations à s'étendre dans l'île. Elle se tourne alors vers la mise en valeur de son arrière-pays africain, dont la vallée de la Medjerda devient le grenier. L'huile, le blé et le traité d'agronomie de Magon font de la cité une puissance terrienne autant que maritime.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_d%27Him%C3%A8re_(480_av._J.-C.)"
+                    },
+                    {
+                      "id": "tnn3",
+                      "axe": "Carthage et l'Afrique antique (jusqu'en 647)",
+                      "date": -238,
+                      "titre": "La guerre des Mercenaires",
+                      "description": "Au lendemain de la première guerre punique, les troupes étrangères impayées se révoltent et rallient les populations libyennes écrasées d'impôts, menaçant l'existence même de Carthage. Hamilcar Barca écrase la rébellion après trois ans d'atrocités réciproques, tandis que Rome en profite pour s'emparer de la Sardaigne. Le conflit, que Flaubert prendra pour sujet de Salammbô, révèle la fragilité d'une cité qui ne compte pas sur ses propres citoyens pour combattre.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Guerre_des_Mercenaires"
+                    },
+                    {
+                      "id": "tnn4",
+                      "axe": "Carthage et l'Afrique antique (jusqu'en 647)",
+                      "date": -202,
+                      "titre": "La défaite de Zama",
+                      "description": "Rappelé d'Italie pour défendre sa cité, Hannibal est battu par Scipion, dont la cavalerie numide de Massinissa emporte la décision. Carthage perd sa flotte, ses possessions extérieures et le droit de faire la guerre sans l'accord de Rome. Réduite à son territoire africain, elle connaîtra malgré tout une prospérité commerciale qui inquiétera suffisamment Rome pour justifier sa destruction.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Zama"
+                    },
+                    {
                       "id": "tn2",
+                      "axe": "Carthage et l'Afrique antique (jusqu'en 647)",
                       "date": -146,
                       "titre": "Destruction de Carthage",
-                      "description": "Au terme de la troisième guerre punique, Rome rase entièrement Carthage, mettant fin à des siècles de rivalité entre les deux puissances méditerranéennes.",
+                      "description": "Au terme d'un siège de trois ans, Scipion Émilien enlève la ville rue par rue et la fait raser, sa population survivante étant vendue en esclavage. Rome organise le territoire en province d'Afrique, délimitée par un fossé, la fossa regia. La destruction met fin à sept siècles de puissance punique et fait de la Méditerranée occidentale un lac romain.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Troisi%C3%A8me_guerre_punique"
                     },
                     {
+                      "id": "tnn5",
+                      "axe": "Carthage et l'Afrique antique (jusqu'en 647)",
+                      "date": -44,
+                      "titre": "Colonia Julia Carthago",
+                      "description": "Décidée par César peu avant sa mort et menée à bien par Auguste, la refondation installe une colonie romaine sur les ruines de la cité punique, un siècle après sa destruction. Carthage redevient en quelques décennies la deuxième ville de l'Occident romain, capitale d'une province qui fournit une grande part du blé et de l'huile de Rome. Thermes, cirque et aqueduc de Zaghouan témoignent de cette seconde grandeur.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Carthage"
+                    },
+                    {
+                      "id": "tnn6",
+                      "axe": "Carthage et l'Afrique antique (jusqu'en 647)",
+                      "date": 203,
+                      "titre": "Perpétue et Félicité, martyres de Carthage",
+                      "description": "Une jeune patricienne et son esclave enceinte sont livrées aux bêtes dans l'amphithéâtre de Carthage pour avoir refusé de sacrifier aux dieux de l'Empire. Le récit de leur détention, en partie rédigé par Perpétue elle-même, est l'un des plus anciens textes connus écrits par une femme en latin. Il témoigne de l'implantation précoce et populaire du christianisme en Afrique, qui donnera à l'Occident Tertullien, Cyprien puis Augustin.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Perp%C3%A9tue_et_F%C3%A9licit%C3%A9"
+                    },
+                    {
+                      "id": "tnn7",
+                      "axe": "Carthage et l'Afrique antique (jusqu'en 647)",
+                      "date": 439,
+                      "titre": "Genséric s'empare de Carthage",
+                      "description": "Le roi vandale prend la ville sans combat après dix ans de campagnes en Afrique du Nord et en fait la capitale d'un royaume qui contrôle le grenier à blé de Rome. Sa flotte pille Rome elle-même en 455 et domine la Méditerranée occidentale. L'Afrique chrétienne, alors profondément divisée par le donatisme, passe sous une domination arienne qui persécute le clergé catholique.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Gens%C3%A9ric"
+                    },
+                    {
+                      "id": "tnn8",
+                      "axe": "Carthage et l'Afrique antique (jusqu'en 647)",
+                      "date": 533,
+                      "titre": "La reconquête byzantine de l'Afrique",
+                      "description": "Le général Bélisaire, envoyé par Justinien, défait les Vandales en deux batailles et rétablit l'autorité impériale sur l'Afrique en quelques mois. Byzance fortifie les villes et rebâtit les églises, mais doit affronter pendant un siècle les révoltes des tribus de l'intérieur et les querelles religieuses. Cette domination affaiblie et mal enracinée cédera rapidement devant les armées arabes.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Guerre_des_Vandales"
+                    },
+                    {
+                      "id": "tnn9",
+                      "axe": "L'Ifriqiya musulmane et les dynasties médiévales (647-1574)",
+                      "date": 647,
+                      "titre": "Le patrice Grégoire tué à Sufétula",
+                      "description": "Une armée arabe venue d'Égypte défait près de Sbeïtla le gouverneur byzantin qui s'était proclamé empereur, et repart avec un tribut considérable. Cette première incursion n'établit aucune domination durable mais révèle la faiblesse de la défense byzantine. Elle ouvre un demi-siècle de conquête intermittente, marqué par la résistance conjointe des Byzantins et des tribus berbères.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Suf%C3%A9tula_(647)"
+                    },
+                    {
                       "id": "tn3",
+                      "axe": "L'Ifriqiya musulmane et les dynasties médiévales (647-1574)",
                       "date": 698,
                       "titre": "Conquête arabo-musulmane",
-                      "description": "Les troupes omeyyades s'emparent de Carthage byzantine et fondent Kairouan comme nouvelle capitale, intégrant durablement la région au monde musulman.",
+                      "description": "Hassan ibn Numan enlève Carthage aux Byzantins et fonde Tunis avec un arsenal, déplaçant vers l'intérieur du golfe le centre de gravité du pays. La reine berbère des Aurès, surnommée la Kahina, oppose une dernière résistance avant d'être vaincue et ses fils ralliés. La conquête s'achève et commencent l'islamisation puis, plus lentement, l'arabisation du pays.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Kairouan"
                     },
                     {
                       "id": "tn4",
+                      "axe": "L'Ifriqiya musulmane et les dynasties médiévales (647-1574)",
                       "date": 800,
                       "titre": "Dynastie aghlabide",
-                      "description": "Ibrahim ibn al-Aghlab obtient l'autonomie de la province vis-à-vis du calife de Bagdad, fondant une dynastie prospère qui lancera la conquête de la Sicile.",
+                      "description": "Le calife de Bagdad concède à son gouverneur Ibrahim ibn al-Aghlab l'Ifriqiya à titre héréditaire contre un tribut annuel, ce qui revient à une autonomie complète. Les Aghlabides bâtissent la résidence princière de Raqqada, dotent le pays de grands bassins et de ribats à Sousse et Monastir, et conquièrent la Sicile à partir de 827. Kairouan devient sous leur règne le grand foyer de l'islam malikite en Occident.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Aghlabides"
                     },
                     {
+                      "id": "tnn10",
+                      "axe": "L'Ifriqiya musulmane et les dynasties médiévales (647-1574)",
+                      "date": 836,
+                      "titre": "La Grande Mosquée de Kairouan reconstruite",
+                      "description": "L'émir aghlabide Ziyadat Allah rebâtit entièrement le sanctuaire fondé par Oqba ibn Nafi, lui donnant sa salle de prière hypostyle, sa cour et son minaret massif à trois degrés. Des colonnes antiques prélevées sur les ruines romaines soutiennent l'édifice, mêlant les deux passés du pays. Le monument devient le modèle architectural des mosquées du Maghreb et d'al-Andalus.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Grande_mosqu%C3%A9e_de_Kairouan"
+                    },
+                    {
+                      "id": "tnn11",
+                      "axe": "L'Ifriqiya musulmane et les dynasties médiévales (647-1574)",
+                      "date": 909,
+                      "titre": "Les Fatimides proclament le califat en Ifriqiya",
+                      "description": "Le mouvement chiite ismaélien, organisé par une prédication clandestine auprès des Kutama de Kabylie, renverse les Aghlabides et proclame un califat rival de Bagdad. Son fondateur édifie la ville-forteresse de Mahdia sur une presqu'île facile à défendre. C'est depuis la Tunisie que les Fatimides conquerront l'Égypte et fonderont Le Caire en 969, avant d'y transférer leur capitale.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Fatimides"
+                    },
+                    {
+                      "id": "tnn12",
+                      "axe": "L'Ifriqiya musulmane et les dynasties médiévales (647-1574)",
+                      "date": 1048,
+                      "titre": "La rupture ziride avec Le Caire",
+                      "description": "Gouverneurs berbères devenus autonomes, les Zirides rompent avec les Fatimides et reconnaissent le calife sunnite de Bagdad. Le Caire lâche alors sur l'Ifriqiya les tribus arabes des Banu Hilal, qui prennent Kairouan et la laissent à l'abandon. Au-delà des destructions, longtemps exagérées par Ibn Khaldoun, l'événement accélère durablement l'arabisation linguistique des campagnes tunisiennes.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Zirides"
+                    },
+                    {
                       "id": "tn5",
+                      "axe": "L'Ifriqiya musulmane et les dynasties médiévales (647-1574)",
                       "date": 1159,
                       "titre": "Conquête almohade",
-                      "description": "Le mouvement réformateur almohade, venu du Maroc, s'empare de l'Ifriqiya, intégrant la Tunisie à un vaste empire unifiant tout le Maghreb.",
+                      "description": "Venus du Maroc, les Almohades s'emparent de l'Ifriqiya et en chassent les Normands de Sicile, qui occupaient plusieurs ports depuis une vingtaine d'années. Le pays est rattaché pour la première fois à un empire couvrant tout le Maghreb et al-Andalus. Cette unité ne dure pas, mais le gouverneur almohade de Tunis fondera bientôt la dynastie qui donnera au pays sa forme durable.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Almohades"
                     },
                     {
                       "id": "tn6",
+                      "axe": "L'Ifriqiya musulmane et les dynasties médiévales (647-1574)",
                       "date": 1236,
                       "titre": "Dynastie hafside",
-                      "description": "La dynastie hafside s'émancipe des Almohades et fait de Tunis une capitale prospère et raffinée, âge d'or politique et culturel de la Tunisie médiévale.",
+                      "description": "Abu Zakariya, gouverneur almohade de Tunis, proclame son indépendance et fonde une dynastie qui règne plus de trois siècles. Tunis devient la capitale du pays, sa médina et la mosquée de la Zitouna prospèrent, et les traités commerciaux se multiplient avec Gênes, Pise, Venise et l'Aragon. L'Ifriqiya hafside connaît alors son âge d'or, et c'est de cette période que date le territoire tunisien tel qu'il se reconnaît aujourd'hui.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Hafsides"
                     },
                     {
+                      "id": "tnn13",
+                      "axe": "L'Ifriqiya musulmane et les dynasties médiévales (647-1574)",
+                      "date": 1270,
+                      "titre": "Saint Louis meurt devant Tunis",
+                      "description": "Le roi de France débarque sur les ruines de Carthage pour frapper l'allié du sultan mamelouk d'Égypte, espérant peut-être convertir le souverain hafside. L'épidémie décime son armée et l'emporte lui-même en quelques semaines. La croisade s'achève par un traité commercial avantageux pour Tunis, qui confirme l'insertion du royaume hafside dans les échanges méditerranéens.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Huiti%C3%A8me_croisade"
+                    },
+                    {
+                      "id": "tnn14",
+                      "axe": "L'Ifriqiya musulmane et les dynasties médiévales (647-1574)",
+                      "date": 1535,
+                      "titre": "Charles Quint prend Tunis",
+                      "description": "À la tête d'une armada de quatre cents navires, l'empereur s'empare de Tunis et de La Goulette pour en chasser Khayr ad-Din Barberousse, qui les tenait au nom du sultan ottoman. Il rétablit sur le trône un souverain hafside réduit au rang de vassal tributaire et laisse une garnison espagnole. La Tunisie devient pour un demi-siècle un enjeu direct de l'affrontement entre Habsbourg et Ottomans en Méditerranée.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Conqu%C3%AAte_de_Tunis_(1535)"
+                    },
+                    {
                       "id": "tn7",
+                      "axe": "La Régence de Tunis et les réformes (1574-1881)",
                       "date": 1574,
                       "titre": "Conquête ottomane",
-                      "description": "L'Empire ottoman s'empare définitivement de Tunis, en faisant l'une de ses régences nord-africaines, dotée d'une large autonomie de gestion locale.",
+                      "description": "Sinan Pacha reprend Tunis et La Goulette aux Espagnols et met fin à la dynastie hafside, vieille de trois siècles. La Tunisie devient une province ottomane gouvernée par un pacha assisté d'une milice de janissaires. Elle entre ainsi dans le système des régences barbaresques, aux côtés d'Alger et de Tripoli, dont elle partagera le sort jusqu'au XIXe siècle.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9gence_de_Tunis"
                     },
                     {
+                      "id": "tnn15",
+                      "axe": "La Régence de Tunis et les réformes (1574-1881)",
+                      "date": 1705,
+                      "titre": "La dynastie husseinite s'installe",
+                      "description": "Officier d'origine crétoise, Hussein ben Ali repousse une incursion algérienne et se fait proclamer bey par les notables et la milice. Sa dynastie régnera deux siècles et demi, jusqu'à la proclamation de la République. Les beys husseinites gouvernent en souverains quasi indépendants, ne reconnaissant à Istanbul qu'une suzeraineté nominale.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Husseinites"
+                    },
+                    {
+                      "id": "tnn16",
+                      "axe": "La Régence de Tunis et les réformes (1574-1881)",
+                      "date": 1756,
+                      "titre": "L'intervention algérienne à Tunis",
+                      "description": "Profitant d'une guerre de succession entre prétendants husseinites, le dey d'Alger envahit le pays, met Tunis à sac et impose son candidat contre tribut. La Tunisie restera formellement tributaire d'Alger pendant une trentaine d'années. L'humiliation nourrit une méfiance durable envers le voisin de l'ouest et pousse les beys à rechercher des appuis européens.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9gence_de_Tunis"
+                    },
+                    {
+                      "id": "tnn17",
+                      "axe": "La Régence de Tunis et les réformes (1574-1881)",
+                      "date": 1816,
+                      "titre": "La fin de la course barbaresque",
+                      "description": "Après le bombardement d'Alger par une escadre anglo-néerlandaise, le bey de Tunis accepte d'abolir l'esclavage des captifs chrétiens et de renoncer à la course. La Régence perd ainsi une ressource extérieure qui l'avait fait vivre pendant trois siècles. Contrainte de trouver d'autres revenus, elle s'engage dans une fiscalité plus lourde et bientôt dans l'emprunt étranger.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Barbaresques"
+                    },
+                    {
+                      "id": "tnn18",
+                      "axe": "La Régence de Tunis et les réformes (1574-1881)",
+                      "date": 1837,
+                      "titre": "L'armée nouvelle d'Ahmed Bey",
+                      "description": "Inspiré par les réformes ottomanes et par l'Égypte de Méhémet Ali, le bey crée une armée à l'européenne, l'école polytechnique du Bardo pour former ses officiers, des manufactures d'État et une flotte. Ces réformes modernisent l'appareil d'État mais coûtent une fortune, financée par l'impôt et l'emprunt. Elles engagent la Régence sur la voie qui mènera à la faillite trente ans plus tard.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Ahmed_Ier_Bey"
+                    },
+                    {
+                      "id": "tnn19",
+                      "axe": "La Régence de Tunis et les réformes (1574-1881)",
+                      "date": 1846,
+                      "titre": "Le marché aux esclaves de Tunis fermé",
+                      "description": "Ahmed Bey ferme d'abord le marché de la capitale, puis proclame l'affranchissement général, près de deux ans avant l'abolition française. La mesure, décidée sous l'influence des idées réformistes et de la pression britannique, est justifiée en termes islamiques par le bey lui-même. Elle fait de la Tunisie un pionnier dans le monde arabe et ottoman, ce dont les manuels du pays tirent une fierté particulière.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Esclavage_en_Tunisie"
+                    },
+                    {
+                      "id": "tnn20",
+                      "axe": "La Régence de Tunis et les réformes (1574-1881)",
+                      "date": 1857,
+                      "titre": "Le Ahd al-Aman, pacte de sécurité",
+                      "description": "Après l'exécution retentissante d'un sujet juif accusé de blasphème, les consuls européens obtiennent du bey une charte garantissant la sécurité des personnes et des biens, l'égalité devant l'impôt et la justice, et la liberté de commerce pour tous les habitants quelle que soit leur religion. Le texte est proclamé solennellement au Bardo devant les représentants étrangers. Il fournit le socle sur lequel sera bâtie, quatre ans plus tard, la constitution de 1861.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Pacte_fondamental_de_1857"
+                    },
+                    {
                       "id": "tn8",
+                      "axe": "La Régence de Tunis et les réformes (1574-1881)",
                       "date": 1861,
                       "titre": "Constitution tunisienne",
-                      "description": "La régence de Tunis se dote de l'une des toutes premières constitutions du monde arabo-musulman, limitant en théorie le pouvoir du bey.",
+                      "description": "Promulguée par Mohammed Sadok Bey, la première constitution du monde arabe institue une monarchie limitée : un Grand Conseil de soixante membres, la responsabilité des ministres et la fixation des impôts par la loi. Suspendue dès 1864 sous la pression de la révolte, elle n'aura duré que trois ans. Elle reste une référence majeure du constitutionnalisme arabe et donne son nom au parti Destour, c'est-à-dire « constitution ».",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Constitution_tunisienne_de_1861"
                     },
                     {
+                      "id": "tnn21",
+                      "axe": "La Régence de Tunis et les réformes (1574-1881)",
+                      "date": 1864,
+                      "titre": "L'insurrection contre le doublement de la mejba",
+                      "description": "Le doublement de l'impôt de capitation soulève les tribus du Centre et du Sud derrière Ali Ben Ghedhahem, qui marche sur Kairouan et menace un moment le pouvoir beylical. La répression, les amendes collectives et les confiscations écrasent les campagnes pour une génération. La constitution est suspendue, et l'État sort de l'épreuve exsangue et plus dépendant encore de ses prêteurs étrangers.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Insurrection_de_1864"
+                    },
+                    {
+                      "id": "tnn22",
+                      "axe": "La Régence de Tunis et les réformes (1574-1881)",
+                      "date": 1869,
+                      "titre": "La Commission financière internationale",
+                      "description": "Incapable de servir une dette née des réformes, d'emprunts à taux ruineux et des dépenses de cour, la Régence fait faillite. Une commission où siègent la France, l'Italie et le Royaume-Uni prend le contrôle des finances publiques et affecte les recettes au remboursement. Malgré les réformes du Premier ministre Kheireddine Pacha, cette tutelle financière prépare directement la perte d'indépendance.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Kheireddine_Pacha"
+                    },
+                    {
                       "id": "tn9",
+                      "axe": "Le protectorat et le mouvement national (1881-1956)",
                       "date": 1881,
                       "titre": "Traité du Bardo",
-                      "description": "Face à l'endettement de la régence, la France impose au bey de Tunis un protectorat qui durera plus de sept décennies.",
+                      "description": "Invoquant des incursions de la tribu des Khroumirs à la frontière algérienne, la France envoie trente mille hommes et impose au bey la signature d'un traité lui confiant la défense et la politique extérieure du pays. L'opération, encouragée par Bismarck au congrès de Berlin, provoque une crise durable avec l'Italie, qui convoitait la Tunisie. Le bey conserve les apparences de la souveraineté, fiction dont les nationalistes se serviront plus tard.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Trait%C3%A9_du_Bardo"
                     },
                     {
+                      "id": "tnn23",
+                      "axe": "Le protectorat et le mouvement national (1881-1956)",
+                      "date": 1883,
+                      "titre": "Le protectorat prend sa forme définitive",
+                      "description": "La convention de La Marsa complète le traité du Bardo en confiant à la France les réformes administratives, judiciaires et financières du pays. Un résident général devient le véritable chef du gouvernement, tandis que le bey continue de signer les décrets. Cette fiction juridique, qui distingue le protectorat d'une annexion, servira plus tard d'argument central aux nationalistes.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Conventions_de_La_Marsa"
+                    },
+                    {
+                      "id": "tnn24",
+                      "axe": "Le protectorat et le mouvement national (1881-1956)",
+                      "date": 1907,
+                      "titre": "Le journal Le Tunisien",
+                      "description": "Formés au Collège Sadiki et souvent francophones, Ali Bach Hamba, Béchir Sfar et Abdeljelil Zaouche lancent un hebdomadaire en français réclamant l'égalité des salaires, l'accès à l'instruction moderne et la participation des Tunisiens à la gestion du pays. Leur programme reste réformiste et ne demande pas l'indépendance. Ils posent néanmoins les bases intellectuelles et le vocabulaire du nationalisme tunisien.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Jeunes_Tunisiens"
+                    },
+                    {
+                      "id": "tnn25",
+                      "axe": "Le protectorat et le mouvement national (1881-1956)",
+                      "date": 1911,
+                      "titre": "L'affaire du cimetière du Jellaz",
+                      "description": "L'immatriculation du cimetière musulman du Jellaz, perçue comme une étape vers son expropriation, provoque des affrontements meurtriers à Tunis, suivis de condamnations à mort et de l'état de siège. Le boycott des tramways de la capitale, l'année suivante, constitue le premier mouvement de masse organisé du pays. La répression brise le mouvement des Jeunes Tunisiens et en exile les dirigeants.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Cimeti%C3%A8re_du_Djellaz"
+                    },
+                    {
+                      "id": "tnn26",
+                      "axe": "Le protectorat et le mouvement national (1881-1956)",
+                      "date": 1920,
+                      "titre": "La Tunisie martyre et le parti Destour",
+                      "description": "Abdelaziz Thâalbi publie à Paris un réquisitoire contre le protectorat, La Tunisie martyre, et fonde dans la foulée le parti libéral constitutionnel, le Destour. Le parti réclame une constitution, un parlement élu et un gouvernement responsable, en s'appuyant sur la mémoire du texte de 1861 et sur le droit des peuples proclamé après la guerre. Il reste un parti de notables citadins, ce que lui reprochera la génération suivante.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Destour"
+                    },
+                    {
                       "id": "tn10",
+                      "axe": "Le protectorat et le mouvement national (1881-1956)",
                       "date": 1934,
                       "titre": "Fondation du Néo-Destour",
-                      "description": "Habib Bourguiba fonde un parti nationaliste plus radical que l'ancien Destour, qui deviendra le principal moteur de la lutte pour l'indépendance.",
+                      "description": "De jeunes militants formés en France, réunis à Ksar Hellal autour d'Habib Bourguiba et du journal L'Action tunisienne, rompent avec la direction du Destour jugée trop attentiste. Leur nouveau parti se dote de cellules jusque dans les villages et adopte un discours d'indépendance sans détour. Il transforme le nationalisme tunisien, jusque-là affaire de notables citadins, en mouvement de masse.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/N%C3%A9o-Destour"
                     },
                     {
+                      "id": "tnn27",
+                      "axe": "Le protectorat et le mouvement national (1881-1956)",
+                      "date": 1938,
+                      "titre": "La fusillade du 9 avril",
+                      "description": "Des milliers de manifestants réclamant un parlement tunisien affrontent la police à Tunis ; la troupe tire et fait des dizaines de morts. Le Néo-Destour est dissous et ses dirigeants, dont Bourguiba, emprisonnés en France. La date est devenue la fête des Martyrs, l'une des grandes commémorations nationales du pays.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89v%C3%A9nements_du_9_avril_1938"
+                    },
+                    {
+                      "id": "tnn28",
+                      "axe": "Le protectorat et le mouvement national (1881-1956)",
+                      "date": 1943,
+                      "titre": "La déposition de Moncef Bey",
+                      "description": "Monté sur le trône en 1942, Moncef Bey avait formé un gouvernement à coloration nationaliste et refusé de choisir entre l'Axe et les Alliés pendant la campagne de Tunisie. Accusé de collaboration par les autorités de la France libre, il est déposé et exilé à Pau, où il mourra. Le « moncéfisme » devient un puissant symbole d'unité nationale autour du trône, que Bourguiba saura reprendre à son compte.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Moncef_Bey"
+                    },
+                    {
+                      "id": "tnn29",
+                      "axe": "Le protectorat et le mouvement national (1881-1956)",
+                      "date": 1952,
+                      "titre": "Farhat Hached assassiné par la Main rouge",
+                      "description": "Fondateur de la centrale syndicale UGTT et figure de l'alliance entre le syndicalisme et la cause nationale, Hached est abattu près de Tunis par une organisation clandestine liée à des milieux coloniaux. Son assassinat provoque grèves et émeutes dans tout le Maghreb et des manifestations jusqu'au Maroc. Il internationalise la question tunisienne au moment où les maquis des fellagas se soulèvent dans le Sud.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Farhat_Hached"
+                    },
+                    {
                       "id": "tn11",
+                      "axe": "Le protectorat et le mouvement national (1881-1956)",
                       "date": 1956,
                       "titre": "Indépendance de la Tunisie",
-                      "description": "La France reconnaît l'indépendance de la Tunisie au terme de négociations, mettant fin au protectorat instauré en 1881.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Ind%C3%A9pendance_de_la_Tunisie"
+                      "description": "Le protocole franco-tunisien du 20 mars abroge le traité du Bardo et reconnaît l'indépendance du pays, quelques mois après celle du Maroc. Une Assemblée constituante est élue dans la foulée et Bourguiba devient président du Conseil. L'indépendance est obtenue par la négociation, alors que la guerre d'Algérie voisine est engagée depuis un an et demi.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Histoire_de_la_Tunisie"
+                    },
+                    {
+                      "id": "tnn30",
+                      "axe": "La Tunisie indépendante (depuis 1956)",
+                      "date": 1956,
+                      "titre": "Polygamie abolie, divorce judiciaire institué",
+                      "description": "Promulgué cinq mois après l'indépendance, le Code du statut personnel interdit la polygamie et la répudiation, institue le divorce devant un juge et un âge minimum au mariage, et exige le consentement des époux. Complété par l'accès des filles à l'école, le droit de vote des femmes et, en 1965, la légalisation de l'avortement, il n'a pas d'équivalent dans le monde arabe. Il reste le texte le plus emblématique de l'État bourguibien, et un point d'appui constant des mobilisations féministes tunisiennes.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Code_du_statut_personnel_(Tunisie)"
                     },
                     {
                       "id": "tn12",
+                      "axe": "La Tunisie indépendante (depuis 1956)",
                       "date": 1957,
                       "titre": "Proclamation de la République",
-                      "description": "L'Assemblée constituante abolit la monarchie beylicale et proclame la République, avec Habib Bourguiba comme premier président.",
+                      "description": "L'Assemblée constituante abolit la monarchie husseinite, vieille de deux siècles et demi, et proclame la République avec Bourguiba pour premier président. Le nouveau régime nationalise les terres coloniales, supprime les juridictions religieuses et intègre l'université de la Zitouna à l'enseignement d'État. Commence la construction d'un État centralisé et modernisateur, qui marquera le pays pour trente ans.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Habib_Bourguiba"
                     },
                     {
+                      "id": "tnn31",
+                      "axe": "La Tunisie indépendante (depuis 1956)",
+                      "date": 1961,
+                      "titre": "Les trois jours de Bizerte",
+                      "description": "La Tunisie réclame l'évacuation de la base navale française de Bizerte, dernière emprise militaire étrangère sur son sol, et lance une pression populaire sur le camp retranché. L'affrontement fait plus d'un millier de morts tunisiens en trois jours face à des parachutistes appuyés par l'aviation. La base sera évacuée en octobre 1963, achevant la décolonisation territoriale du pays.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Crise_de_Bizerte"
+                    },
+                    {
+                      "id": "tnn32",
+                      "axe": "La Tunisie indépendante (depuis 1956)",
+                      "date": 1969,
+                      "titre": "Le retour en arrière sur les coopératives",
+                      "description": "La généralisation autoritaire des coopératives agricoles, pilotée par le ministre Ahmed Ben Salah, se heurte à la résistance des paysans et des propriétaires et désorganise la production. Bourguiba abandonne brutalement la politique socialiste et fait juger son ministre, qui s'évadera de prison. Le pays s'oriente vers l'ouverture économique et le tourisme, tandis que le pouvoir se personnalise jusqu'à la présidence à vie de 1975.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Ahmed_Ben_Salah"
+                    },
+                    {
                       "id": "tn13",
+                      "axe": "La Tunisie indépendante (depuis 1956)",
                       "date": 1987,
                       "titre": "Coup d'État médical",
-                      "description": "Le Premier ministre Zine el-Abidine Ben Ali fait déclarer Bourguiba inapte à gouverner pour raisons de santé et le remplace à la tête de l'État sans effusion de sang.",
+                      "description": "Nommé Premier ministre quelques semaines plus tôt, Zine el-Abidine Ben Ali fait constater par un collège de médecins l'incapacité de Bourguiba, âgé de quatre-vingt-quatre ans, et le destitue conformément à la Constitution. Le changement est d'abord accueilli avec soulagement, accompagné de promesses de démocratisation et de limitation des mandats. Ces promesses seront abandonnées en quelques années au profit d'un régime policier et d'un parti-État.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Zine_el-Abidine_Ben_Ali"
                     },
                     {
                       "id": "tn14",
+                      "axe": "La Tunisie indépendante (depuis 1956)",
                       "date": 2010,
                       "titre": "Immolation de Bouazizi",
-                      "description": "Le marchand ambulant Mohamed Bouazizi s'immole par le feu à Sidi Bouzid après une humiliation policière, déclenchant l'étincelle de la révolution tunisienne.",
+                      "description": "Le 17 décembre, un jeune vendeur ambulant s'immole par le feu à Sidi Bouzid après la saisie de sa marchandise et une humiliation subie devant l'administration. Relayée par les réseaux sociaux et les télévisions satellitaires, l'affaire déclenche des manifestations qui gagnent tout le pays en quelques semaines. Son geste devient le point de départ symbolique des soulèvements arabes de 2011.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Mohamed_Bouazizi"
                     },
                     {
                       "id": "tn15",
+                      "axe": "La Tunisie indépendante (depuis 1956)",
                       "date": 2011,
                       "titre": "Révolution tunisienne",
-                      "description": "Un vaste mouvement populaire chasse le président Ben Ali après vingt-trois ans de pouvoir, déclenchant la vague révolutionnaire du Printemps arabe dans toute la région.",
+                      "description": "Après le ralliement de la centrale syndicale UGTT, le refus de l'armée de tirer sur la foule et une manifestation immense devant le ministère de l'Intérieur, Ben Ali quitte le pays le 14 janvier au terme de vingt-trois ans de pouvoir. C'est la première chute d'un régime autoritaire arabe provoquée par un soulèvement populaire. Elle ouvre le cycle des printemps arabes, dont la Tunisie restera le seul cas de transition démocratique aboutie.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9volution_tunisienne"
                     },
                     {
                       "id": "tn16",
+                      "axe": "La Tunisie indépendante (depuis 1956)",
                       "date": 2014,
                       "titre": "Nouvelle Constitution",
-                      "description": "La Tunisie adopte une Constitution démocratique consensuelle, saluée comme l'un des rares succès institutionnels durables du Printemps arabe.",
+                      "description": "Votée le 26 janvier par une très large majorité de l'Assemblée constituante, la Constitution garantit les libertés, l'égalité des citoyens et des citoyennes et la liberté de conscience, et institue un régime parlementaire à exécutif partagé. Son élaboration a pris trois ans et traversé deux assassinats politiques et une crise institutionnelle majeure. Les élections de la fin d'année et l'alternance pacifique qui suit font de la Tunisie une exception dans la région.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Constitution_tunisienne_de_2014"
                     },
                     {
                       "id": "tn17",
+                      "axe": "La Tunisie indépendante (depuis 1956)",
                       "date": 2015,
                       "titre": "Prix Nobel de la paix",
-                      "description": "Le Quartet du dialogue national tunisien, réunissant syndicats et organisations patronales et civiles, reçoit le prix Nobel de la paix pour son rôle dans la transition démocratique.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Quartet_du_dialogue_national_tunisien"
+                      "description": "Le prix est décerné au Quartet du dialogue national — centrale syndicale, patronat, Ligue des droits de l'homme et Ordre des avocats — pour avoir sauvé la transition lors de la crise de 2013. Ces organisations de la société civile avaient imposé aux partis un dialogue aboutissant à un gouvernement de technocrates. La distinction consacre un modèle de sortie de crise par la négociation, sans intervention de l'armée.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Quartet_du_dialogue_national"
                     },
                     {
                       "id": "tn18",
+                      "axe": "La Tunisie indépendante (depuis 1956)",
                       "date": 2021,
                       "titre": "Gel du Parlement par Kaïs Saïed",
-                      "description": "Le président Kaïs Saïed suspend le Parlement et concentre les pouvoirs entre ses mains, un tournant autoritaire dénoncé par une partie de la classe politique.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Ka%C3%A9s_Sa%C3%AFed"
+                      "description": "Invoquant le péril imminent prévu par l'article 80, le président élu en 2019 gèle le Parlement, lève l'immunité des députés et limoge le chef du gouvernement, avant de gouverner par décrets. Il fera adopter en 2022 une constitution hyperprésidentielle par un référendum à faible participation. Salué par une partie d'une population épuisée par la crise économique, ce tournant remet en cause l'équilibre institutionnel issu de 2014.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Ka%C3%AFs_Sa%C3%AFed"
                     }
+                  ],
+                  "essentiel": [
+                    "tn1",
+                    "tn2",
+                    "tn3",
+                    "tn4",
+                    "tn6",
+                    "tn7",
+                    "tn8",
+                    "tn9",
+                    "tn10",
+                    "tn11",
+                    "tn12",
+                    "tn13",
+                    "tn14",
+                    "tn15",
+                    "tn16",
+                    "tn18",
+                    "tnn2",
+                    "tnn4",
+                    "tnn6",
+                    "tnn9",
+                    "tnn11",
+                    "tnn14",
+                    "tnn15",
+                    "tnn18",
+                    "tnn20",
+                    "tnn22",
+                    "tnn24",
+                    "tnn28",
+                    "tnn29",
+                    "tnn30"
                   ]
                 }
               ]
@@ -128102,147 +128415,446 @@
                   "id": "thm_za",
                   "nom": "Histoire de l'Afrique du Sud 🇿🇦",
                   "difficulte": "Intermédiaire",
+                  "axeOrder": [
+                    "Premiers peuplements et colonie du Cap (jusqu'en 1806)",
+                    "Grand Trek, royaumes africains et conquête britannique (1806-1880)",
+                    "Mines, guerres anglo-boers et naissance de l'Union (1880-1948)",
+                    "L'apartheid et la lutte pour son abolition (1948-1990)",
+                    "La démocratie sud-africaine (depuis 1990)"
+                  ],
                   "events": [
                     {
+                      "id": "zan1",
+                      "axe": "Premiers peuplements et colonie du Cap (jusqu'en 1806)",
+                      "date": -2000000,
+                      "titre": "Les hominidés du berceau de l'humanité",
+                      "description": "Les grottes dolomitiques de Sterkfontein, Swartkrans et Kromdraai, au nord-ouest de Johannesburg, ont livré des centaines de fossiles d'australopithèques, dont le crâne surnommé Mrs Ples. Le site du Taung, découvert en 1924, avait déjà fourni le premier australopithèque jamais identifié. Ces découvertes ont fait basculer en Afrique le lieu d'origine de la lignée humaine, longtemps cherché en Asie.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Sterkfontein"
+                    },
+                    {
+                      "id": "zan2",
+                      "axe": "Premiers peuplements et colonie du Cap (jusqu'en 1806)",
+                      "date": -75000,
+                      "titre": "Les ocres gravées de Blombos",
+                      "description": "Dans une grotte de la côte sud, des blocs d'ocre rouge portent des motifs géométriques tracés volontairement, accompagnés de perles de coquillage percées et d'outils finement travaillés. Ces objets sans fonction pratique attestent une pensée symbolique très antérieure à l'art des grottes européennes. Le site est devenu une référence mondiale dans le débat sur l'apparition du comportement moderne chez Homo sapiens.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Grotte_de_Blombos"
+                    },
+                    {
+                      "id": "zan3",
+                      "axe": "Premiers peuplements et colonie du Cap (jusqu'en 1806)",
+                      "date": -1000,
+                      "titre": "L'art rupestre des San du Drakensberg",
+                      "description": "Sur les parois des abris du Drakensberg, des chasseurs-cueilleurs peignent pendant des millénaires antilopes, danses de transe et figures mi-humaines mi-animales. Ces images ne décrivent pas des scènes de chasse mais des expériences chamaniques, décryptées grâce aux témoignages recueillis auprès des derniers San au XIXe siècle. Elles constituent le plus vaste ensemble d'art rupestre du continent et la trace des premiers habitants du pays.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Art_rupestre_San"
+                    },
+                    {
+                      "id": "zan4",
+                      "axe": "Premiers peuplements et colonie du Cap (jusqu'en 1806)",
+                      "date": 400,
+                      "titre": "Les premiers villages d'agriculteurs et de forgerons",
+                      "description": "Des communautés parlant des langues bantoues s'installent dans les régions orientales bien arrosées, y cultivant le sorgho et le millet, élevant du bétail et travaillant le fer. Leur mode de vie sédentaire contraste avec celui des chasseurs san et des pasteurs khoïkhoï, avec lesquels les échanges alternent avec les conflits. Cette installation, bien antérieure à l'arrivée des Européens, contredit le récit colonial d'une terre vide.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Expansion_bantoue"
+                    },
+                    {
+                      "id": "zan5",
+                      "axe": "Premiers peuplements et colonie du Cap (jusqu'en 1806)",
+                      "date": 1220,
+                      "titre": "Mapungubwe, premier royaume d'Afrique australe",
+                      "description": "Au confluent du Limpopo et du Shashe s'élève une capitale où une élite réside sur une colline dominant la plaine, marquant physiquement la hiérarchie sociale. Ses tombes ont livré un célèbre rhinocéros de feuille d'or, et ses habitants commercent ivoire et or jusqu'à la côte de l'océan Indien. Longtemps ignoré par l'historiographie blanche, le site est aujourd'hui l'emblème des États africains précoloniaux du pays.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Royaume_de_Mapungubwe"
+                    },
+                    {
+                      "id": "zan6",
+                      "axe": "Premiers peuplements et colonie du Cap (jusqu'en 1806)",
+                      "date": 1488,
+                      "titre": "Bartolomeu Dias double la pointe australe",
+                      "description": "Poussé par une tempête au-delà du cap sans l'avoir aperçu, le navigateur portugais comprend au retour qu'il a contourné l'extrémité du continent. Le roi Jean II rebaptise le lieu cap de Bonne-Espérance, du nom de la route enfin ouverte vers les Indes. Pendant un siècle et demi, les Européens n'y feront qu'escale, sans envisager de s'y établir.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Bartolomeu_Dias"
+                    },
+                    {
                       "id": "za1",
+                      "axe": "Premiers peuplements et colonie du Cap (jusqu'en 1806)",
                       "date": 1652,
                       "titre": "Fondation du comptoir du Cap",
-                      "description": "Jan van Riebeeck fonde pour la Compagnie néerlandaise des Indes orientales un poste de ravitaillement au cap de Bonne-Espérance, origine de la colonisation européenne.",
+                      "description": "La Compagnie néerlandaise des Indes orientales installe au pied de la Montagne de la Table une escale destinée à ravitailler en eau, en viande et en légumes ses navires en route vers l'Asie. Il ne s'agit pas de coloniser mais de tenir un jardin potager fortifié, confié à Jan van Riebeeck. De cette station de passage naîtra pourtant, en quelques décennies, une société de peuplement dont descend la communauté afrikaner.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Jan_van_Riebeeck"
                     },
                     {
+                      "id": "zan7",
+                      "axe": "Premiers peuplements et colonie du Cap (jusqu'en 1806)",
+                      "date": 1658,
+                      "titre": "Les premiers esclaves débarqués au Cap",
+                      "description": "Faute de main-d'œuvre, la Compagnie fait venir des captifs d'Angola et du Dahomey, bientôt suivis d'autres amenés de Madagascar, du Mozambique, d'Inde et d'Insulinde. L'esclavage devient le fondement de l'économie de la colonie et le restera près de deux siècles. Du métissage entre esclaves, Khoïkhoï et colons naît la population désignée plus tard comme « coloured », majoritaire dans la province du Cap.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Esclavage_en_Afrique"
+                    },
+                    {
+                      "id": "zan8",
+                      "axe": "Premiers peuplements et colonie du Cap (jusqu'en 1806)",
+                      "date": 1713,
+                      "titre": "La variole décime les Khoïkhoï",
+                      "description": "Introduite par le linge d'un navire de passage, l'épidémie tue une très large part des pasteurs khoïkhoï de la région du Cap, qui n'avaient aucune immunité. Les survivants, privés de leurs troupeaux et de leurs structures claniques, deviennent bergers et serviteurs des fermiers coloniaux. La disparition de cette société pastorale ouvre l'intérieur du pays à l'expansion des trekboers.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Kho%C3%AFkho%C3%AF"
+                    },
+                    {
                       "id": "za2",
+                      "axe": "Premiers peuplements et colonie du Cap (jusqu'en 1806)",
                       "date": 1795,
                       "titre": "Première prise britannique du Cap",
-                      "description": "Profitant des guerres napoléoniennes, le Royaume-Uni s'empare une première fois de la colonie du Cap aux dépens des Provinces-Unies.",
+                      "description": "Profitant des guerres révolutionnaires qui ont fait des Provinces-Unies une alliée de la France, la Grande-Bretagne s'empare du Cap pour protéger sa route maritime vers l'Inde. L'occupation est d'abord provisoire et la colonie est rendue en 1803. Elle annonce néanmoins le basculement durable de l'Afrique australe dans l'orbite britannique, acté par la reprise définitive de 1806.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Colonie_du_Cap"
+                    },
+                    {
+                      "id": "zan9",
+                      "axe": "Grand Trek, royaumes africains et conquête britannique (1806-1880)",
+                      "date": 1806,
+                      "titre": "Le Cap devient colonie britannique",
+                      "description": "Après une seconde occupation militaire pendant les guerres napoléoniennes, la Grande-Bretagne conserve définitivement le territoire, confirmé par traité en 1814. L'anglais s'impose dans l'administration et la justice, les missionnaires obtiennent une écoute qu'ils n'avaient pas, et les usages des fermiers néerlandophones sont progressivement remis en cause. Cette tutelle nouvelle nourrit le ressentiment qui poussera une partie d'entre eux à partir.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Colonie_du_Cap"
                     },
                     {
                       "id": "za3",
+                      "axe": "Grand Trek, royaumes africains et conquête britannique (1806-1880)",
                       "date": 1816,
                       "titre": "Ascension de Chaka",
-                      "description": "Chaka bâtit un puissant royaume zoulou centralisé grâce à des réformes militaires radicales, redessinant durablement la carte politique de l'Afrique australe.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Chaka_Zulu"
+                      "description": "À la tête d'une chefferie modeste, Chaka réorganise l'armée par classes d'âge, impose la sagaie courte au combat rapproché et soumet ses voisins jusqu'à former un royaume de plusieurs centaines de milliers de sujets. Sa puissance militaire bouleverse tout l'intérieur du pays et provoque migrations et guerres en chaîne. Le royaume zoulou devient l'État africain le plus structuré de la région, et le principal obstacle à l'expansion coloniale.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Chaka_(roi_zoulou)"
+                    },
+                    {
+                      "id": "zan10",
+                      "axe": "Grand Trek, royaumes africains et conquête britannique (1806-1880)",
+                      "date": 1820,
+                      "titre": "Les colons britanniques de 1820",
+                      "description": "Pour peupler la frontière orientale disputée avec les Xhosas, Londres finance l'installation de quelques milliers d'émigrants dans la région d'Albany. Mal préparés à l'agriculture locale, beaucoup se tournent vers le commerce et les métiers urbains, faisant naître Port Elizabeth et Grahamstown. Leur arrivée installe durablement une seconde communauté blanche, anglophone et distincte des Boers.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Grahamstown"
+                    },
+                    {
+                      "id": "zan11",
+                      "axe": "Grand Trek, royaumes africains et conquête britannique (1806-1880)",
+                      "date": 1828,
+                      "titre": "La mort de Chaka et l'avènement de Dingane",
+                      "description": "Devenu redouté jusque dans son entourage après la mort de sa mère, Chaka est poignardé par ses demi-frères, dont Dingane, qui lui succède. Le nouveau roi maintient l'organisation militaire de son prédécesseur mais affronte bientôt les convois de Voortrekkers venus du Cap. Son règne s'achèvera après la défaite de Blood River et une guerre civile avec son frère Mpande.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Chaka"
+                    },
+                    {
+                      "id": "zan12",
+                      "axe": "Grand Trek, royaumes africains et conquête britannique (1806-1880)",
+                      "date": 1834,
+                      "titre": "L'émancipation des esclaves du Cap",
+                      "description": "L'abolition votée à Londres libère environ trente-cinq mille personnes dans la colonie, au terme d'une période transitoire d'« apprentissage » forcé de quatre ans. Les propriétaires reçoivent une indemnité, versée à Londres et souvent bradée à des intermédiaires, ce qui accroît leur amertume. Cette mesure, jointe à l'égalité juridique accordée aux personnes de couleur libres, est l'une des causes immédiates du Grand Trek.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Abolition_de_l%27esclavage"
                     },
                     {
                       "id": "za4",
+                      "axe": "Grand Trek, royaumes africains et conquête britannique (1806-1880)",
                       "date": 1836,
                       "titre": "Grand Trek",
-                      "description": "Des milliers de colons boers quittent la colonie du Cap sous administration britannique pour fonder de nouvelles républiques indépendantes à l'intérieur des terres.",
+                      "description": "Plusieurs milliers de fermiers d'origine néerlandaise quittent la colonie du Cap en convois de chariots pour échapper à l'administration britannique, à l'abolition de l'esclavage et à l'égalité juridique accordée aux personnes de couleur libres. Ils franchissent l'Orange puis le Vaal et affrontent les royaumes africains dont ils traversent les territoires. De cette migration naissent les républiques boers, et un récit fondateur que le nationalisme afrikaner exploitera pendant un siècle.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Grand_Trek"
                     },
                     {
+                      "id": "zan13",
+                      "axe": "Grand Trek, royaumes africains et conquête britannique (1806-1880)",
+                      "date": 1852,
+                      "titre": "La convention de Sand River",
+                      "description": "La Grande-Bretagne reconnaît l'indépendance des Boers établis au nord du Vaal, renonçant à les administrer en échange de l'interdiction de l'esclavage dans leur république. Une convention analogue reconnaîtra deux ans plus tard l'État libre d'Orange. Deux États blancs indépendants coexistent désormais avec les colonies britanniques et les royaumes africains, configuration qui durera jusqu'aux guerres des mines.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Convention_de_Sand_River"
+                    },
+                    {
+                      "id": "zan14",
+                      "axe": "Grand Trek, royaumes africains et conquête britannique (1806-1880)",
+                      "date": 1860,
+                      "titre": "Les premiers engagés indiens du Natal",
+                      "description": "Les planteurs de canne à sucre du Natal, ne parvenant pas à recruter les Zoulous, font venir des travailleurs sous contrat depuis l'Inde britannique, par dizaines de milliers en quelques décennies. Beaucoup restent à l'expiration de leur engagement et sont rejoints par des commerçants gujaratis. Naît ainsi la plus importante communauté d'origine indienne hors d'Asie, qui donnera à la lutte politique du pays certaines de ses méthodes.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Sud-Africains_indiens"
+                    },
+                    {
                       "id": "za5",
+                      "axe": "Grand Trek, royaumes africains et conquête britannique (1806-1880)",
                       "date": 1867,
                       "titre": "Découverte de diamants",
-                      "description": "D'importants gisements de diamants sont découverts près de Kimberley, déclenchant une ruée qui transforme radicalement l'économie régionale.",
+                      "description": "La découverte de pierres précieuses près du confluent du Vaal et de l'Orange déclenche une ruée qui fait surgir Kimberley et sa mine géante creusée à la main. Des dizaines de milliers de travailleurs africains y sont employés sous contrat, logés dans des enceintes fermées où s'invente le contrôle de la main-d'œuvre. L'Afrique australe cesse d'être une périphérie agricole pour devenir un enjeu économique majeur de l'Empire britannique.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Kimberley_(Afrique_du_Sud)"
                     },
                     {
                       "id": "za6",
+                      "axe": "Grand Trek, royaumes africains et conquête britannique (1806-1880)",
                       "date": 1879,
                       "titre": "Guerre anglo-zouloue",
-                      "description": "Malgré une victoire éclatante à Isandhlwana, le royaume zoulou finit par être vaincu par les forces britanniques, plus lourdement armées.",
+                      "description": "Sommé de dissoudre son armée par un ultimatum impossible à accepter, le roi Cetshwayo voit son royaume envahi. Les Zoulous anéantissent une colonne britannique à Isandlwana avant d'être écrasés à Ulundi six mois plus tard. La destruction du dernier grand royaume indépendant de la région ouvre la voie à la mainmise coloniale sur tout le sud du continent.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Guerre_anglo-zouloue"
                     },
                     {
                       "id": "za7",
+                      "axe": "Mines, guerres anglo-boers et naissance de l'Union (1880-1948)",
                       "date": 1886,
                       "titre": "Or du Witwatersrand",
-                      "description": "La découverte d'immenses gisements aurifères provoque l'essor fulgurant de Johannesburg et attire des dizaines de milliers de prospecteurs étrangers.",
+                      "description": "La mise au jour du plus grand gisement aurifère du monde transforme en quelques années une république agricole en première puissance économique de la région, et fait surgir Johannesburg du veld. L'or attire des dizaines de milliers d'étrangers, les Uitlanders, que le président Kruger refuse d'intégrer politiquement. Le contrôle de cette richesse devient l'enjeu central du conflit qui opposera bientôt les Boers à la Grande-Bretagne.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Witwatersrand"
                     },
                     {
+                      "id": "zan15",
+                      "axe": "Mines, guerres anglo-boers et naissance de l'Union (1880-1948)",
+                      "date": 1893,
+                      "titre": "Gandhi jeté hors du train à Pietermaritzburg",
+                      "description": "Jeune avocat venu plaider une affaire commerciale, Mohandas Gandhi est expulsé d'un compartiment de première classe parce qu'il n'est pas blanc, et passe la nuit sur le quai. Il restera vingt ans dans le pays et y élaborera la satyagraha, l'action non violente, lors des campagnes contre les lois discriminatoires. L'Afrique du Sud est ainsi le laboratoire des méthodes qui libéreront l'Inde, puis inspireront le mouvement antiapartheid.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Mohandas_Karamchand_Gandhi"
+                    },
+                    {
                       "id": "za8",
+                      "axe": "Mines, guerres anglo-boers et naissance de l'Union (1880-1948)",
                       "date": 1899,
                       "titre": "Seconde guerre des Boers",
-                      "description": "Le Royaume-Uni affronte les républiques boers dans un conflit marqué par l'invention des camps de concentration civils, un épisode particulièrement meurtrier.",
+                      "description": "Devant les visées britanniques sur les mines d'or, les républiques boers prennent l'initiative d'un conflit qui devait être bref et dure près de trois ans. Après la chute de leurs capitales, les Boers passent à la guérilla ; l'armée britannique répond par la terre brûlée et l'internement des familles dans des camps où meurent des dizaines de milliers de civils. La victoire militaire de Londres laisse un ressentiment afrikaner qui nourrira le nationalisme du XXe siècle.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Seconde_guerre_des_Boers"
                     },
                     {
+                      "id": "zan16",
+                      "axe": "Mines, guerres anglo-boers et naissance de l'Union (1880-1948)",
+                      "date": 1902,
+                      "titre": "La paix de Vereeniging et ses exclus",
+                      "description": "Les républiques boers reconnaissent la souveraineté britannique contre une amnistie, une aide à la reconstruction et la promesse d'une autonomie future. Une clause capitale reporte après l'octroi de cette autonomie toute décision sur le droit de vote des Africains, ce qui revient à l'abandonner aux vainqueurs locaux. Des dizaines de milliers d'Africains ont pourtant servi dans les deux camps : la paix se fait sans eux et contre eux.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Trait%C3%A9_de_Vereeniging"
+                    },
+                    {
                       "id": "za9",
+                      "axe": "Mines, guerres anglo-boers et naissance de l'Union (1880-1948)",
                       "date": 1910,
                       "titre": "Union sud-africaine",
-                      "description": "Les anciennes colonies britanniques et républiques boers fusionnent en un dominion unique au sein de l'Empire britannique, l'Union sud-africaine.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Union_sud-africaine"
+                      "description": "Colonies britanniques et anciennes républiques boers fusionnent en un dominion autonome doté de son propre parlement. La réconciliation se fait entre Blancs, et à leur seul bénéfice : la majorité africaine est exclue du droit de vote partout sauf, sous condition de cens, dans la province du Cap. L'Union naît ainsi sur un compromis racial qui sera le socle juridique de tout ce qui suivra.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Union_d%27Afrique_du_Sud"
                     },
                     {
                       "id": "za10",
+                      "axe": "Mines, guerres anglo-boers et naissance de l'Union (1880-1948)",
                       "date": 1912,
                       "titre": "Fondation de l'ANC",
-                      "description": "Le Congrès national africain est fondé pour défendre les droits politiques de la population noire, il deviendra le fer de lance de la lutte anti-apartheid.",
+                      "description": "Réunis à Bloemfontein, des avocats, pasteurs et chefs traditionnels africains fondent une organisation destinée à défendre par la pétition et le plaidoyer les droits de la majorité exclue de l'Union. Son ton est d'abord modéré, loyaliste et respectueux des institutions. Devenue plus tard le Congrès national africain, elle traversera un siècle d'interdiction et de clandestinité avant de gouverner le pays.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Congr%C3%A8s_national_africain"
+                    },
+                    {
+                      "id": "zan17",
+                      "axe": "Mines, guerres anglo-boers et naissance de l'Union (1880-1948)",
+                      "date": 1913,
+                      "titre": "Sept pour cent des terres pour la majorité",
+                      "description": "Le Natives Land Act interdit aux Africains d'acheter ou de louer des terres hors de réserves représentant à peine un treizième du territoire, portées plus tard à environ 13 %. Des milliers de métayers sont chassés du jour au lendemain et errent sur les routes avec leur bétail, scène que décrit Sol Plaatje dans un livre célèbre. Cette loi fonde la géographie raciale du pays, et ses effets sur la propriété foncière n'ont pas été effacés à ce jour.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Natives_Land_Act"
+                    },
+                    {
+                      "id": "zan18",
+                      "axe": "Mines, guerres anglo-boers et naissance de l'Union (1880-1948)",
+                      "date": 1922,
+                      "titre": "La révolte du Rand",
+                      "description": "Des mineurs blancs se soulèvent contre le projet des compagnies de confier à des Africains, moins payés, des emplois qui leur étaient réservés. Le gouvernement de Smuts écrase l'insurrection à l'artillerie et à l'aviation, faisant deux cents morts. Le mot d'ordre des grévistes — « Travailleurs du monde, unissez-vous pour une Afrique du Sud blanche » — résume la logique qui liera longtemps défense ouvrière et privilège racial.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9volte_du_Rand"
+                    },
+                    {
+                      "id": "zan19",
+                      "axe": "Mines, guerres anglo-boers et naissance de l'Union (1880-1948)",
+                      "date": 1936,
+                      "titre": "La fin du vote africain dans la province du Cap",
+                      "description": "Les électeurs africains qui, seuls dans le pays, votaient depuis 1853 sous condition de propriété et d'instruction, sont retirés des listes communes et relégués sur un registre séparé élisant trois députés blancs. La mesure exige une majorité des deux tiers, obtenue sans difficulté. Le dernier vestige de citoyenneté non raciale hérité du XIXe siècle disparaît, douze ans avant l'apartheid proprement dit.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/S%C3%A9gr%C3%A9gation_raciale"
+                    },
+                    {
+                      "id": "zan20",
+                      "axe": "Mines, guerres anglo-boers et naissance de l'Union (1880-1948)",
+                      "date": 1946,
+                      "titre": "La grève des mineurs africains",
+                      "description": "Soixante-dix mille mineurs du Witwatersrand cessent le travail pour réclamer un salaire décent ; la police les fait redescendre dans les puits à coups de matraque et la grève est brisée en une semaine, au prix d'une dizaine de morts. L'échec convainc une jeune génération du Congrès national africain, autour de Mandela, Sisulu et Tambo, que la pétition ne suffit plus. Leur Ligue de la jeunesse imposera deux ans plus tard une stratégie d'action de masse.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Congr%C3%A8s_national_africain"
                     },
                     {
                       "id": "za11",
+                      "axe": "L'apartheid et la lutte pour son abolition (1948-1990)",
                       "date": 1948,
                       "titre": "Instauration de l'apartheid",
-                      "description": "La victoire électorale du Parti national permet la mise en place légale et systématique de la ségrégation raciale institutionnalisée, l'apartheid.",
+                      "description": "Le Parti national remporte les élections sur le mot d'ordre d'apartheid, la « séparation », et entreprend d'inscrire dans la loi une ségrégation jusque-là surtout coutumière. Classification raciale, zones résidentielles réservées, interdiction des mariages mixtes et enseignement séparé sont adoptés en quelques années. L'Afrique du Sud se dote ainsi du système de discrimination le plus complètement codifié du XXe siècle.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Apartheid"
                     },
                     {
+                      "id": "zan21",
+                      "axe": "L'apartheid et la lutte pour son abolition (1948-1990)",
+                      "date": 1950,
+                      "titre": "Classer chaque habitant par race",
+                      "description": "Le Population Registration Act oblige à inscrire chaque personne dans un registre national comme Blanc, Africain ou Métis, selon l'apparence, l'ascendance et l'« acceptation générale » par un groupe. Des commissions statuent sur les cas douteux à l'aide de critères aussi humiliants que le passage d'un crayon dans les cheveux, séparant parfois des membres d'une même famille. Toute l'architecture de l'apartheid repose sur cette classification préalable.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Population_Registration_Act"
+                    },
+                    {
+                      "id": "zan22",
+                      "axe": "L'apartheid et la lutte pour son abolition (1948-1990)",
+                      "date": 1955,
+                      "titre": "La Charte de la liberté à Kliptown",
+                      "description": "Trois mille délégués de toutes origines, réunis en plein air près de Johannesburg, adoptent un texte affirmant que « l'Afrique du Sud appartient à tous ceux qui y vivent, Noirs et Blancs ». La police disperse le rassemblement le second jour et saisit les documents. La Charte devient le programme du Congrès national africain pour quarante ans, et inspirera directement la Constitution de 1996.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Charte_de_la_libert%C3%A9"
+                    },
+                    {
+                      "id": "zan23",
+                      "axe": "L'apartheid et la lutte pour son abolition (1948-1990)",
+                      "date": 1956,
+                      "titre": "Le procès pour trahison",
+                      "description": "Cent cinquante-six dirigeants de l'opposition multiraciale, dont Mandela, Sisulu et Luthuli, sont arrêtés et poursuivis pour trahison sur la base de la Charte de la liberté, qualifiée de projet communiste. La procédure dure quatre ans et demi et s'achève par l'acquittement général de tous les accusés. Elle échoue à décapiter le mouvement mais soude ses dirigeants et les convainc que la voie légale se referme.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Proc%C3%A8s_de_la_trahison"
+                    },
+                    {
                       "id": "za12",
+                      "axe": "L'apartheid et la lutte pour son abolition (1948-1990)",
                       "date": 1960,
                       "titre": "Massacre de Sharpeville",
-                      "description": "La police ouvre le feu sur des manifestants pacifiques opposés aux lois sur les laissez-passer, tuant 69 personnes et provoquant une condamnation internationale.",
+                      "description": "La police ouvre le feu sur une foule rassemblée devant un commissariat pour protester contre les laissez-passer, tuant soixante-neuf personnes, la plupart atteintes dans le dos. Le choc international vaut au pays sa première condamnation par le Conseil de sécurité et le début des sanctions. Il pousse surtout le Congrès national africain, interdit dans la foulée, à abandonner la non-violence pour la lutte armée.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Massacre_de_Sharpeville"
                     },
                     {
                       "id": "za13",
+                      "axe": "L'apartheid et la lutte pour son abolition (1948-1990)",
                       "date": 1962,
                       "titre": "Arrestation de Nelson Mandela",
-                      "description": "Le dirigeant de la branche armée de l'ANC est arrêté puis condamné à la prison à perpétuité lors du procès de Rivonia deux ans plus tard.",
+                      "description": "Recherché depuis des mois et surnommé le « Mouron noir » pour ses échappées, Nelson Mandela est arrêté près de Howick après un signalement. Condamné d'abord pour incitation à la grève et sortie illégale du territoire, il sera rejugé deux ans plus tard au procès de Rivonia. Commencent vingt-sept années de détention qui feront de lui le prisonnier politique le plus connu au monde.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Nelson_Mandela"
                     },
                     {
+                      "id": "zan24",
+                      "axe": "L'apartheid et la lutte pour son abolition (1948-1990)",
+                      "date": 1964,
+                      "titre": "« Un idéal pour lequel je suis prêt à mourir »",
+                      "description": "Jugés pour sabotage après la découverte de la ferme de Rivonia, Mandela et ses codétenus renoncent à se défendre et transforment le procès en tribune. Depuis le banc des accusés, Mandela expose le projet d'une société démocratique, et conclut que c'est un idéal pour lequel il est prêt à mourir. Condamnés à la perpétuité plutôt qu'à la pendaison, ils partent pour Robben Island et deviennent le symbole mondial de la cause.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Proc%C3%A8s_de_Rivonia"
+                    },
+                    {
                       "id": "za14",
+                      "axe": "L'apartheid et la lutte pour son abolition (1948-1990)",
                       "date": 1976,
                       "titre": "Émeutes de Soweto",
-                      "description": "La répression sanglante d'une manifestation d'élèves opposés à l'enseignement obligatoire en afrikaans déclenche une vague de révolte à travers tout le pays.",
+                      "description": "Des lycéens manifestent contre l'obligation d'étudier plusieurs matières en afrikaans, la langue qu'ils identifient au pouvoir blanc ; la police tire et le premier mort, Hector Pieterson, a douze ans. La révolte gagne les townships de tout le pays et dure des mois, faisant des centaines de victimes. Une génération entière bascule dans la contestation et l'exil militant, et l'apartheid perd définitivement la bataille de l'opinion mondiale.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89meutes_de_Soweto"
                     },
                     {
-                      "id": "za15",
-                      "date": 1990,
-                      "titre": "Libération de Mandela",
-                      "description": "Après vingt-sept années d'emprisonnement, Nelson Mandela est libéré par le président Frederik de Klerk, ouvrant la voie aux négociations sur la fin de l'apartheid.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Lib%C3%A9ration_de_Nelson_Mandela"
+                      "id": "zan25",
+                      "axe": "L'apartheid et la lutte pour son abolition (1948-1990)",
+                      "date": 1977,
+                      "titre": "Steve Biko tué en garde à vue",
+                      "description": "Fondateur du mouvement de la Conscience noire, qui prône la fierté et l'autonomie psychologique des opprimés, Biko meurt à trente ans après avoir été battu par la police de sécurité puis transporté nu sur mille kilomètres dans une fourgonnette. Le ministre de la Police déclare que sa mort le laisse froid. L'enquête blanchit les policiers, mais le scandale international entraîne l'embargo obligatoire sur les armes décidé par l'ONU.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Steve_Biko"
                     },
                     {
-                      "id": "za16",
-                      "date": 1991,
-                      "titre": "Abrogation des lois d'apartheid",
-                      "description": "Le Parlement abroge les principales lois fondatrices de la ségrégation raciale, dernière étape législative avant la transition démocratique complète.",
+                      "id": "zan26",
+                      "axe": "L'apartheid et la lutte pour son abolition (1948-1990)",
+                      "date": 1985,
+                      "titre": "L'état d'urgence et les townships ingouvernables",
+                      "description": "Face aux comités civiques, aux boycotts de loyers et aux grèves scolaires qui rendent les quartiers noirs ingérables, le gouvernement décrète l'état d'urgence, autorisant détentions sans jugement et censure de la presse. Des dizaines de milliers de personnes sont arrêtées, dont de nombreux enfants. La répression ne rétablit pas l'ordre et convainc une partie du patronat et du pouvoir qu'il faudra négocier.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Apartheid"
                     },
                     {
+                      "id": "za15",
+                      "axe": "La démocratie sud-africaine (depuis 1990)",
+                      "date": 1990,
+                      "titre": "Libération de Mandela",
+                      "description": "Après vingt-sept ans de détention, Nelson Mandela franchit à pied les grilles de la prison Victor Verster, neuf jours après la légalisation du Congrès national africain annoncée par Frederik de Klerk. L'image, retransmise en direct dans le monde entier, scelle la fin de l'ordre ancien. Commencent quatre années de négociations difficiles, menées sous la menace constante d'une violence politique qui fera des milliers de morts.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Nelson_Mandela"
+                    },
+                    {
+                      "id": "za16",
+                      "axe": "La démocratie sud-africaine (depuis 1990)",
+                      "date": 1991,
+                      "titre": "Abrogation des lois d'apartheid",
+                      "description": "Le Parlement abroge les textes qui formaient l'ossature juridique du système : classification raciale des personnes, attribution des zones résidentielles par groupe, réserve des terres aux Blancs. La discrimination cesse d'être inscrite dans la loi, mais la géographie, la propriété et les inégalités héritées demeurent intactes. Cette abrogation ouvre la voie aux négociations constitutionnelles plutôt qu'elle ne les conclut.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Apartheid"
+                    },
+                    {
+                      "id": "zan27",
+                      "axe": "La démocratie sud-africaine (depuis 1990)",
+                      "date": 1993,
+                      "titre": "Chris Hani abattu devant chez lui",
+                      "description": "Chef d'état-major d'Umkhonto we Sizwe et dirigeant communiste très populaire chez les jeunes, Hani est tué par un extrémiste polonais aidé d'un parlementaire conservateur, dans l'espoir de faire dérailler les négociations. Le pays est au bord de l'explosion ; c'est Mandela, et non le président en exercice, qui s'adresse à la nation pour appeler au calme. Le choc accélère au contraire l'accord sur une date d'élections.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Chris_Hani"
+                    },
+                    {
                       "id": "za17",
+                      "axe": "La démocratie sud-africaine (depuis 1990)",
                       "date": 1994,
                       "titre": "Premières élections multiraciales",
-                      "description": "Toute la population, sans distinction de race, vote pour la première fois ; Nelson Mandela est élu président de la nouvelle Afrique du Sud démocratique.",
+                      "description": "Pendant trois jours, les Sud-Africains de toutes origines votent ensemble pour la première fois, dans des files d'attente longues de plusieurs kilomètres et devant les caméras du monde entier. Le Congrès national africain obtient environ 62 % des voix et Nelson Mandela devient président. Le scrutin clôt quarante-six ans d'apartheid légal et trois siècles de pouvoir réservé à une minorité.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89lections_g%C3%A9n%C3%A9rales_sud-africaines_de_1994"
                     },
                     {
                       "id": "za18",
+                      "axe": "La démocratie sud-africaine (depuis 1990)",
                       "date": 1995,
                       "titre": "Coupe du monde de rugby",
-                      "description": "L'Afrique du Sud organise et remporte la Coupe du monde de rugby, moment fort de réconciliation nationale symbolisé par Mandela portant le maillot des Springboks.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Coupe_du_monde_de_rugby_1995"
+                      "description": "Le pays, longtemps banni des compétitions internationales, accueille et remporte le Mondial de rugby, sport jusque-là emblème de la communauté afrikaner. Mandela remet le trophée au capitaine François Pienaar en portant lui-même le maillot des Springboks. Le geste, calculé, offre à une nation divisée une image d'unité que la réconciliation politique peinait encore à produire.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Coupe_du_monde_de_rugby_%C3%A0_XV_1995"
                     },
                     {
                       "id": "za19",
+                      "axe": "La démocratie sud-africaine (depuis 1990)",
                       "date": 1996,
                       "titre": "Nouvelle Constitution",
-                      "description": "L'Afrique du Sud adopte l'une des Constitutions les plus progressistes au monde, garantissant un large éventail de droits fondamentaux et sociaux.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Constitution_de_l%27Afrique_du_Sud"
+                      "description": "Adoptée par l'Assemblée constituante issue des élections, la Constitution définitive instaure une déclaration des droits parmi les plus étendues du monde, une Cour constitutionnelle puissante et onze langues officielles. Elle est la première au monde à interdire explicitement la discrimination fondée sur l'orientation sexuelle. Elle demeure le socle et la fierté de la démocratie sud-africaine, quelles que soient les crises politiques ultérieures.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Constitution_sud-africaine_de_1996"
+                    },
+                    {
+                      "id": "zan28",
+                      "axe": "La démocratie sud-africaine (depuis 1990)",
+                      "date": 1998,
+                      "titre": "Le rapport de la Commission Vérité et Réconciliation",
+                      "description": "Présidée par Desmond Tutu, la commission a entendu pendant deux ans victimes et bourreaux, accordant l'amnistie à ceux qui avouaient intégralement des crimes politiques. Son rapport met en cause l'État d'apartheid mais aussi des exactions commises par les mouvements de libération, ce que le Congrès national africain tente d'empêcher en justice. Le modèle, imité dans une trentaine de pays, reste discuté pour avoir troqué la justice pénale contre la vérité.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Commission_de_la_v%C3%A9rit%C3%A9_et_de_la_r%C3%A9conciliation_(Afrique_du_Sud)"
+                    },
+                    {
+                      "id": "zan29",
+                      "axe": "La démocratie sud-africaine (depuis 1990)",
+                      "date": 2008,
+                      "titre": "Les violences xénophobes de mai 2008",
+                      "description": "Des habitants de townships s'en prennent aux migrants zimbabwéens, mozambicains et somaliens, accusés de prendre emplois et logements ; soixante-deux personnes sont tuées et des dizaines de milliers déplacées. Les violences révèlent la profondeur du chômage et de la crise du logement quatorze ans après la fin de l'apartheid. Elles écornent durablement l'image d'une nation arc-en-ciel accueillante au reste du continent.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/X%C3%A9nophobie"
                     },
                     {
                       "id": "za20",
+                      "axe": "La démocratie sud-africaine (depuis 1990)",
                       "date": 2010,
                       "titre": "Coupe du monde de football",
-                      "description": "L'Afrique du Sud devient le premier pays africain à organiser une Coupe du monde de football, événement retentissant popularisé par le bruit des vuvuzelas.",
+                      "description": "Premier pays africain à organiser la Coupe du monde de football, l'Afrique du Sud construit stades et infrastructures et déjoue les pronostics sur sa capacité à accueillir l'événement. Le tournoi offre au pays un moment d'unité nationale comparable à celui de 1995 et une vitrine mondiale. Le coût des équipements et leur faible usage ultérieur nourriront cependant un débat durable sur la priorité donnée au prestige.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Coupe_du_monde_de_football_2010"
+                    },
+                    {
+                      "id": "zan30",
+                      "axe": "La démocratie sud-africaine (depuis 1990)",
+                      "date": 2012,
+                      "titre": "Les mineurs de Marikana abattus par la police",
+                      "description": "Lors d'une grève sauvage pour les salaires dans une mine de platine, la police tire à balles réelles sur les grévistes et tue trente-quatre hommes, dans la fusillade la plus meurtrière commise par les forces de l'ordre depuis 1994. Les images rappellent Sharpeville, mais le gouvernement en cause est celui du Congrès national africain. L'événement marque une rupture durable entre le parti de la libération et une partie du monde du travail.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Gr%C3%A8ve_des_mineurs_%C3%A0_Marikana"
                     }
+                  ],
+                  "essentiel": [
+                    "za1",
+                    "za3",
+                    "za4",
+                    "za5",
+                    "za6",
+                    "za7",
+                    "za8",
+                    "za9",
+                    "za10",
+                    "za11",
+                    "za12",
+                    "za13",
+                    "za14",
+                    "za15",
+                    "za16",
+                    "za17",
+                    "za19",
+                    "zan1",
+                    "zan5",
+                    "zan9",
+                    "zan15",
+                    "zan17",
+                    "zan18",
+                    "zan20",
+                    "zan21",
+                    "zan22",
+                    "zan24",
+                    "zan25",
+                    "zan28",
+                    "zan30"
                   ]
                 },
                 {
