@@ -22510,6 +22510,7 @@
           "subcategories": [
             {
               "nom": "Judaïsme",
+              "note": "Deux thèmes racontent la même histoire selon deux façons de compter le temps. « Histoire du peuple juif (Années hébraïques) » est de très loin le plus complet : il suit le comput traditionnel Anno Mundi du Seder Olam Rabbah et déroule toute la chronologie de la Torah, des Nevi'im et des Ketouvim, depuis la Création jusqu'à l'État d'Israël. Ses dates sont des dates traditionnelles, reçues de la tradition rabbinique, et non des dates historiquement vérifiables : elles diffèrent souvent des reconstitutions de l'historiographie moderne. « Histoire du peuple juif (Années civiles) » s'en tient aux dates de l'ère commune établies par les historiens et reste donc beaucoup plus resserré.",
               "themes": [
                 {
                   "id": "thm_histoire_juive_civile",
@@ -23130,210 +23131,954 @@
                   "events": [
                     {
                       "id": "hjh_1",
-                      "axe": "Torah",
+                      "axe": "Torah : de la Création au Déluge",
                       "date": 1,
                       "titre": "La création du monde",
-                      "description": "Selon la tradition biblique et le comput du calendrier hébraïque (Anno Mundi), création du monde et d'Adam.",
+                      "description": "L'an 1 du calendrier hébraïque correspond, selon la tradition juive, à l'achèvement de la Création et à la formation d'Adam et Ève le sixième jour. Le comput Anno Mundi fixé par le Seder Olam Rabbah fait de cette année le point zéro à partir duquel toute la chronologie juive est calculée. Cet événement donne au peuple juif un décompte continu du temps, encore utilisé aujourd'hui pour dater les fêtes et les documents religieux.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Cr%C3%A9ation_(th%C3%A9ologie)"
                     },
                     {
+                      "id": "hjh_71",
+                      "axe": "Torah : de la Création au Déluge",
+                      "date": 1,
+                      "titre": "La faute de l’Arbre de la Connaissance",
+                      "description": "Le jour même de leur création, Adam et Ève transgressent l'interdit de l'Arbre de la Connaissance du bien et du mal et sont chassés du jardin d'Éden. La tradition juive lit ce récit comme l'entrée de la mortalité, du labeur et du libre arbitre dans la condition humaine. Il ouvre le grand récit de la réparation du monde (tikkoun olam) que la Torah confiera plus tard à Israël.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Jardin_d%27%C3%89den"
+                    },
+                    {
+                      "id": "hjh_72",
+                      "axe": "Torah : de la Création au Déluge",
+                      "date": 40,
+                      "titre": "Le meurtre d’Abel par Caïn",
+                      "description": "En l'an 40, Caïn tue son frère Abel après que leurs offrandes ont été accueillies différemment. La tradition y voit le premier meurtre de l'histoire humaine et la source des enseignements rabbiniques sur la valeur infinie de chaque vie. Le Talmud en tire le principe que détruire une seule âme revient à détruire un monde entier, pierre angulaire de l'éthique juive.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Ca%C3%AFn_et_Abel"
+                    },
+                    {
+                      "id": "hjh_73",
+                      "axe": "Torah : de la Création au Déluge",
+                      "date": 130,
+                      "titre": "Naissance de Seth",
+                      "description": "En l'an 130, Adam et Ève ont un troisième fils, Seth, né après la mort d'Abel. La Genèse fait de lui l'ancêtre de la lignée qui conduit à Noé, puis à Abraham et à Israël. Sa naissance assure la continuité d'une transmission humaine sur laquelle repose toute la chronologie du Seder Olam.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Seth_(Bible)"
+                    },
+                    {
+                      "id": "hjh_74",
+                      "axe": "Torah : de la Création au Déluge",
+                      "date": 235,
+                      "titre": "Naissance d’Énosh",
+                      "description": "En l'an 235 naît Énosh, fils de Seth et petit-fils d'Adam. La tradition rabbinique associe sa génération aux premiers égarements idolâtres de l'humanité, lorsque les hommes commencèrent à donner un culte aux astres. Son époque sert de contre-modèle au monothéisme qu'Abraham redécouvrira dix-sept siècles plus tard.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89nosh"
+                    },
+                    {
+                      "id": "hjh_75",
+                      "axe": "Torah : de la Création au Déluge",
+                      "date": 325,
+                      "titre": "Naissance de Kénan",
+                      "description": "En l'an 325 naît Kénan, quatrième maillon de la généalogie qui va d'Adam à Noé. La Genèse énumère les dix générations antédiluviennes avec l'âge précis de chaque père à la naissance de son fils. C'est cette suite de nombres qui permet au Seder Olam Rabbah de dater tous les événements bibliques en années depuis la Création.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/G%C3%A9n%C3%A9alogies_de_la_Gen%C3%A8se"
+                    },
+                    {
+                      "id": "hjh_76",
+                      "axe": "Torah : de la Création au Déluge",
+                      "date": 395,
+                      "titre": "Naissance de Mahalalel",
+                      "description": "En l'an 395 naît Mahalalel, fils de Kénan, dont le nom signifie « celui qui loue Dieu ». Il appartient aux dix générations qui séparent Adam de Noé et que la Torah présente comme une lente dégradation morale de l'humanité. Sa mention conserve un maillon de la chaîne généalogique qui structure le calendrier hébraïque.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/G%C3%A9n%C3%A9alogies_de_la_Gen%C3%A8se"
+                    },
+                    {
+                      "id": "hjh_77",
+                      "axe": "Torah : de la Création au Déluge",
+                      "date": 460,
+                      "titre": "Naissance de Yéred",
+                      "description": "En l'an 460 naît Yéred (Jared), père de Hénoch, dont le nom évoque la « descente ». Les midrashim rattachent son époque au déclin spirituel qui prépare le jugement du Déluge. Sa longévité, comme celle de ses contemporains, illustre la conception traditionnelle d'une humanité primitive plus proche de la Création.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Yared_(Bible)"
+                    },
+                    {
+                      "id": "hjh_78",
+                      "axe": "Torah : de la Création au Déluge",
+                      "date": 622,
+                      "titre": "Naissance de Hénoch",
+                      "description": "En l'an 622 naît Hénoch, dont la Genèse dit qu'il « marcha avec Dieu ». La tradition juive en fait une figure de piété exceptionnelle au milieu d'une génération corrompue. Son parcours inaugure dans la pensée juive l'idée qu'un homme peut s'élever spirituellement au point d'échapper au sort commun.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/H%C3%A9noch"
+                    },
+                    {
+                      "id": "hjh_79",
+                      "axe": "Torah : de la Création au Déluge",
+                      "date": 687,
+                      "titre": "Naissance de Mathusalem",
+                      "description": "En l'an 687 naît Mathusalem, fils de Hénoch, à qui la Torah attribue la plus longue vie jamais mentionnée : 969 ans. Sa mort, sept jours avant le Déluge, est comprise par les midrashim comme un ultime délai accordé par Dieu au monde. Son nom est devenu en français même le symbole de la longévité extrême.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Mathusalem"
+                    },
+                    {
+                      "id": "hjh_80",
+                      "axe": "Torah : de la Création au Déluge",
+                      "date": 874,
+                      "titre": "Naissance de Lémekh",
+                      "description": "En l'an 874 naît Lémekh, fils de Mathusalem et père de Noé. La Genèse lui prête l'espoir que son fils apportera au monde un soulagement après la malédiction du sol. Il meurt cinq ans avant le Déluge, dernier maillon d'une lignée qui s'éteint à la veille du basculement de l'humanité.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Lamech_(No%C3%A9)"
+                    },
+                    {
+                      "id": "hjh_81",
+                      "axe": "Torah : de la Création au Déluge",
+                      "date": 930,
+                      "titre": "Mort d’Adam",
+                      "description": "En l'an 930 meurt Adam, le premier homme, après neuf siècles et demi d'existence. Sa mort accomplit l'avertissement lié à la faute de l'Arbre de la Connaissance et scelle la condition mortelle de l'humanité. La tradition juive le tient pour l'ancêtre commun de tous les hommes, fondement de l'unité du genre humain avant toute distinction de peuples.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Adam"
+                    },
+                    {
+                      "id": "hjh_82",
+                      "axe": "Torah : de la Création au Déluge",
+                      "date": 987,
+                      "titre": "Hénoch enlevé auprès de Dieu",
+                      "description": "En l'an 987, à l'âge de 365 ans, Hénoch disparaît : « Dieu le prit », dit la Genèse, sans mentionner de mort. La littérature mystique juive a fait de cet enlèvement le point de départ d'une vaste tradition ésotérique. C'est l'un des rares épisodes de la Torah où un être humain franchit la frontière entre le monde d'ici-bas et le monde d'en haut.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/H%C3%A9noch"
+                    },
+                    {
+                      "id": "hjh_83",
+                      "axe": "Torah : de la Création au Déluge",
+                      "date": 1042,
+                      "titre": "Mort de Seth",
+                      "description": "En l'an 1042 meurt Seth, à l'âge de 912 ans, dernier fils direct d'Adam encore vivant. Avec lui disparaît le témoin immédiat des origines de l'humanité. La transmission du souvenir de la Création passe désormais par ses descendants, jusqu'à Noé puis Abraham.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Seth_(Bible)"
+                    },
+                    {
+                      "id": "hjh_84",
+                      "axe": "Torah : de la Création au Déluge",
+                      "date": 1056,
+                      "titre": "Naissance de Noé",
+                      "description": "En l'an 1056 naît Noé, dixième génération depuis Adam, décrit par la Torah comme « juste et intègre dans ses générations ». Il sera le seul homme, avec sa famille, à être sauvé du Déluge. Toute l'humanité postérieure, y compris le peuple juif, descend de lui selon le récit biblique.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/No%C3%A9"
+                    },
+                    {
+                      "id": "hjh_85",
+                      "axe": "Torah : de la Création au Déluge",
+                      "date": 1556,
+                      "titre": "Naissance de Sem",
+                      "description": "En l'an 1556 naît Sem, fils de Noé, aux côtés de ses frères Cham et Yéfet. La tradition juive fait de lui l'ancêtre des peuples sémites et le fondateur, avec Éber, d'une académie où Jacob étudiera plus tard. C'est par sa lignée que passera l'alliance transmise jusqu'à Abraham.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Sem_(Bible)"
+                    },
+                    {
                       "id": "hjh_2",
-                      "axe": "Torah",
+                      "axe": "Torah : de la Création au Déluge",
                       "date": 1656,
                       "titre": "Le déluge et l’arche de Noé",
-                      "description": "Le Déluge recouvre la Terre ; Noé (Noa'h), sa famille et les couples d'animaux sont sauvés dans l'arche.",
+                      "description": "En l'an 1656, alors que Noé a six cents ans, le Déluge recouvre la Terre et anéantit une humanité devenue violente et corrompue. Noé, sa famille et les couples d'animaux sont sauvés dans l'arche, qui se pose ensuite sur les monts d'Ararat. Cet épisode fonde dans la pensée juive l'idée d'un monde soumis au jugement moral et la possibilité d'un nouveau départ pour l'humanité.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Arche_de_No%C3%A9"
                     },
                     {
+                      "id": "hjh_86",
+                      "axe": "Torah : de la Création au Déluge",
+                      "date": 1657,
+                      "titre": "Sortie de l’arche et alliance de l’arc-en-ciel",
+                      "description": "En l'an 1657, Noé et les siens quittent l'arche ; Dieu scelle avec eux une alliance dont l'arc-en-ciel est le signe et promet de ne plus détruire la Terre. Cette alliance s'accompagne des sept lois noahides, socle moral que la tradition juive adresse à toute l'humanité. Arpakhshad, ancêtre d'Abraham, naît deux ans après le Déluge et relance la généalogie qui mènera à Israël.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Lois_noahides"
+                    },
+                    {
+                      "id": "hjh_87",
+                      "axe": "Torah : de Noé à Avraham",
+                      "date": 1693,
+                      "titre": "Naissance de Shélah",
+                      "description": "En l'an 1693 naît Shélah, fils d'Arpakhshad et arrière-petit-fils de Noé. Il ouvre la seconde série de dix générations que la Genèse déroule du Déluge jusqu'à Abraham. Cette chaîne post-diluvienne montre comment, selon la tradition, une humanité reconstituée chemine vers la révélation monothéiste.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/G%C3%A9n%C3%A9alogies_de_la_Gen%C3%A8se"
+                    },
+                    {
+                      "id": "hjh_88",
+                      "axe": "Torah : de Noé à Avraham",
+                      "date": 1723,
+                      "titre": "Naissance d’Éber",
+                      "description": "En l'an 1723 naît Éber, dont le nom est traditionnellement rattaché au mot « Ivri » (Hébreu). La tradition juive le présente comme un maître qui, avec Sem, maintint la connaissance du Dieu unique au milieu de l'idolâtrie. Il donne son nom au peuple hébreu, ce qui fait de lui l'un des ancêtres identitaires d'Israël.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89ber"
+                    },
+                    {
+                      "id": "hjh_89",
+                      "axe": "Torah : de Noé à Avraham",
+                      "date": 1757,
+                      "titre": "Naissance de Péleg",
+                      "description": "En l'an 1757 naît Péleg, dont le nom signifie « division » car, dit la Genèse, « de son temps la terre fut divisée ». Les commentateurs y lisent l'annonce de la dispersion des langues liée à la tour de Babel. Sa génération marque la naissance de la diversité des nations dans laquelle Israël devra ensuite trouver sa place.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/P%C3%A9leg"
+                    },
+                    {
+                      "id": "hjh_90",
+                      "axe": "Torah : de Noé à Avraham",
+                      "date": 1787,
+                      "titre": "Naissance de Réou",
+                      "description": "En l'an 1787 naît Réou, fils de Péleg, dans les générations qui suivent immédiatement la dispersion de Babel. Les durées de vie déclinent désormais rapidement, passant de plusieurs siècles à quelques décennies. Cette généalogie resserrée prépare l'apparition d'Abraham, cinq générations plus loin.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/G%C3%A9n%C3%A9alogies_de_la_Gen%C3%A8se"
+                    },
+                    {
+                      "id": "hjh_91",
+                      "axe": "Torah : de Noé à Avraham",
+                      "date": 1819,
+                      "titre": "Naissance de Seroug",
+                      "description": "En l'an 1819 naît Seroug, arrière-grand-père d'Abraham. Les midrashim situent à son époque l'enracinement définitif de l'idolâtrie en Mésopotamie. Le contraste avec l'appel d'Abraham, deux siècles plus tard, en est d'autant plus saisissant.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/G%C3%A9n%C3%A9alogies_de_la_Gen%C3%A8se"
+                    },
+                    {
+                      "id": "hjh_92",
+                      "axe": "Torah : de Noé à Avraham",
+                      "date": 1849,
+                      "titre": "Naissance de Nahor",
+                      "description": "En l'an 1849 naît Nahor, grand-père d'Abraham, dans la région d'Our en Chaldée. Sa famille appartient au monde urbain et polythéiste de la Mésopotamie du Sud. C'est de ce milieu qu'Abraham devra sortir pour fonder une nouvelle voie spirituelle.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/G%C3%A9n%C3%A9alogies_de_la_Gen%C3%A8se"
+                    },
+                    {
+                      "id": "hjh_93",
+                      "axe": "Torah : de Noé à Avraham",
+                      "date": 1878,
+                      "titre": "Naissance de Térah",
+                      "description": "En l'an 1878 naît Térah, père d'Abraham, de Nahor et de Harân. La tradition midrashique en fait un fabricant d'idoles, ce qui donne tout son relief au récit du jeune Abraham brisant les statues de son père. Térah quittera pourtant Our avec Abraham en direction de Canaan, amorçant le voyage fondateur d'Israël.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Terah"
+                    },
+                    {
+                      "id": "hjh_94",
+                      "axe": "Torah : de Noé à Avraham",
+                      "date": 1996,
+                      "titre": "La tour de Babel et la dispersion des langues",
+                      "description": "En l'an 1996, selon le Seder Olam, les hommes rassemblés dans la plaine de Shinéar entreprennent de bâtir une tour « dont le sommet touche le ciel » et voient leur langue unique confondue. La Torah présente cet épisode comme la naissance des soixante-dix nations et de leurs langues. La dispersion de Babel constitue la toile de fond du choix d'Abraham : une famille appelée à porter un message au milieu des nations.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Tour_de_Babel"
+                    },
+                    {
                       "id": "hjh_3",
-                      "axe": "Torah",
+                      "axe": "Torah : les Patriarches",
                       "date": 1948,
                       "titre": "Naissance d’Avraham",
-                      "description": "Naissance d'Avraham (Abraham) à Our en Chaldée, premier des trois Patriarches du peuple juif et père du monothéisme.",
+                      "description": "En l'an 1948 naît Avraham (Abraham) à Our en Chaldée, premier des trois Patriarches du peuple juif. La tradition raconte qu'il découvrit seul, par la raison, l'existence d'un Dieu unique créateur du monde. Il est considéré comme le père du monothéisme et l'ancêtre dont descendent toutes les générations d'Israël.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Abraham"
+                    },
+                    {
+                      "id": "hjh_95",
+                      "axe": "Torah : les Patriarches",
+                      "date": 1958,
+                      "titre": "Naissance de Sarah",
+                      "description": "En l'an 1958 naît Sarah (d'abord nommée Saraï), épouse d'Abraham et première des quatre Matriarches. La tradition la présente comme une prophétesse dont la perception spirituelle surpassait parfois celle de son mari. Mère d'Isaac à quatre-vingt-dix ans, elle est l'ancêtre par laquelle passe exclusivement l'alliance.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Sara_(Bible)"
+                    },
+                    {
+                      "id": "hjh_96",
+                      "axe": "Torah : les Patriarches",
+                      "date": 2018,
+                      "titre": "L’appel d’Avraham (Lekh Lekha)",
+                      "description": "En l'an 2018, Dieu ordonne à Abraham : « Va pour toi, quitte ton pays, ta patrie et la maison de ton père, vers le pays que je te montrerai. » Abraham quitte Harân pour Canaan avec Sarah et Loth, obéissant à un appel sans garantie ni itinéraire. Ce départ est l'acte fondateur du peuple juif : une histoire qui commence par une rupture volontaire avec le monde idolâtre.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Abraham"
                     },
                     {
                       "id": "hjh_4",
-                      "axe": "Torah",
+                      "axe": "Torah : les Patriarches",
                       "date": 2018,
                       "titre": "L’alliance entre les morceaux (Brit bein HaBetarim)",
-                      "description": "Dieu scelle une alliance éternelle avec Abraham, lui promettant une descendance nombreuse et la terre de Canaan après une période d'exil.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Alliance_entre_les_morceaux"
+                      "description": "En l'an 2018, lors d'une vision nocturne, Dieu scelle avec Abraham une alliance éternelle en faisant passer un feu entre des animaux partagés. Il lui promet une descendance aussi nombreuse que les étoiles et la terre de Canaan, mais l'avertit d'un exil de quatre cents ans avant l'accomplissement. Cette alliance fait de la promesse de la Terre et de l'annonce de l'esclavage égyptien les deux axes de toute l'histoire d'Israël.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Abraham"
+                    },
+                    {
+                      "id": "hjh_97",
+                      "axe": "Torah : les Patriarches",
+                      "date": 2034,
+                      "titre": "Naissance d’Ichmaël",
+                      "description": "En l'an 2034, Abraham, âgé de quatre-vingt-six ans, a un fils d'Agar, la servante égyptienne de Sarah : Ichmaël (Ismaël). La Torah lui promet de devenir lui aussi une grande nation, tout en réservant l'alliance à Isaac. Sa naissance ouvre la longue histoire des rapports entre les descendants d'Abraham par Isaac et par Ismaël.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Isma%C3%ABl"
+                    },
+                    {
+                      "id": "hjh_98",
+                      "axe": "Torah : les Patriarches",
+                      "date": 2047,
+                      "titre": "La circoncision d’Avraham et l’alliance de la Brit mila",
+                      "description": "En l'an 2047, à l'âge de quatre-vingt-dix-neuf ans, Abraham se circoncit ainsi qu'Ichmaël et tous les hommes de sa maison. Dieu fait de ce signe inscrit dans la chair le sceau d'une alliance perpétuelle et change son nom d'Avram en Avraham. La Brit mila, pratiquée au huitième jour, est restée depuis lors le rite d'entrée dans l'alliance pour chaque garçon juif.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Brit_mila"
                     },
                     {
                       "id": "hjh_5",
-                      "axe": "Torah",
+                      "axe": "Torah : les Patriarches",
                       "date": 2048,
                       "titre": "Naissance d’Its’hak",
-                      "description": "Naissance d'Isaac (Its'hak), fils d'Abraham et de Sarah, porteur de l'Alliance et second patriarche.",
+                      "description": "En l'an 2048, le 15 Nissan, naît Isaac (Its'hak), fils d'Abraham centenaire et de Sarah nonagénaire. Sa naissance, annoncée par des messagers divins, accomplit la promesse faite lors de l'alliance et marque le premier miracle de l'histoire patriarcale. Deuxième Patriarche, il est le seul porteur de l'alliance parmi les fils d'Abraham.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Isaac"
                     },
                     {
                       "id": "hjh_6",
-                      "axe": "Torah",
+                      "axe": "Torah : les Patriarches",
                       "date": 2085,
                       "titre": "Ligature d’Its’hak (Akedah)",
-                      "description": "L'épreuve suprême d'Abraham sur le mont Moriah, symbole fondamental de foi, de dévouement et de fidélité à Dieu.",
+                      "description": "En l'an 2085, Abraham reçoit l'ordre d'offrir son fils Isaac sur le mont Moriah, futur emplacement du Temple de Jérusalem, avant qu'un ange n'arrête son geste. L'Akedah est présentée par la tradition comme la dixième et suprême épreuve d'Abraham, où foi et amour paternel s'affrontent. Son souvenir est invoqué chaque Roch Hachana au son du chofar comme mérite fondateur du peuple juif.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Ligature_d%27Isaac"
                     },
                     {
+                      "id": "hjh_99",
+                      "axe": "Torah : les Patriarches",
+                      "date": 2085,
+                      "titre": "Mort de Sarah et achat de la grotte de Makhpéla",
+                      "description": "En l'an 2085, Sarah meurt à l'âge de cent vingt-sept ans à Hébron, selon la tradition peu après l'épisode de l'Akedah. Abraham achète alors à Éfron le Hittite la grotte de Makhpéla pour quatre cents sicles d'argent, devant témoins. C'est la première acquisition de terre par un Hébreu en Canaan, et elle sert depuis lors de titre fondateur du lien du peuple juif à Hébron.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Tombeau_des_Patriarches"
+                    },
+                    {
+                      "id": "hjh_100",
+                      "axe": "Torah : les Patriarches",
+                      "date": 2085,
+                      "titre": "Naissance de Rivka",
+                      "description": "En l'an 2085 naît Rivka (Rébecca) à Harân, dans la famille de Nahor, frère d'Abraham. Deuxième des Matriarches, elle sera choisie pour sa générosité lorsqu'elle abreuvera les chameaux du serviteur d'Abraham. C'est elle qui, plus tard, orientera l'alliance vers Jacob plutôt que vers Ésaü.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9becca"
+                    },
+                    {
+                      "id": "hjh_101",
+                      "axe": "Torah : les Patriarches",
+                      "date": 2088,
+                      "titre": "Mariage d’Its’hak et de Rivka",
+                      "description": "En l'an 2088, le serviteur Éliézer ramène Rivka de Mésopotamie et Isaac, âgé de quarante ans, l'épouse. Le récit de cette rencontre au puits est devenu dans la tradition juive le modèle du mariage fondé sur les qualités morales. Leur union assure la transmission de l'alliance à la deuxième génération patriarcale.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9becca"
+                    },
+                    {
                       "id": "hjh_7",
-                      "axe": "Torah",
+                      "axe": "Torah : les Patriarches",
                       "date": 2108,
-                      "titre": "Naissance de Yaakov",
-                      "description": "Naissance de Jacob (Yaakov), plus tard nommé Israël, père des douze tribus d'Israël et troisième patriarche.",
+                      "titre": "Naissance de Yaakov et d’Essav",
+                      "description": "En l'an 2108, alors qu'Isaac a soixante ans, Rivka met au monde des jumeaux : Essav (Ésaü) puis Yaakov (Jacob). Jacob, plus tard nommé Israël, deviendra le troisième Patriarche et le père des douze tribus. La rivalité entre les deux frères structure toute la lecture traditionnelle des rapports d'Israël avec les empires, Ésaü étant identifié à Édom puis à Rome.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Jacob"
                     },
                     {
+                      "id": "hjh_102",
+                      "axe": "Torah : les Patriarches",
+                      "date": 2123,
+                      "titre": "Mort d’Avraham",
+                      "description": "En l'an 2123, Abraham meurt à l'âge de cent soixante-quinze ans et est enterré par Isaac et Ismaël dans la grotte de Makhpéla. Sa vie aura mené la famille d'Our en Chaldée jusqu'à la possession d'un tombeau en Terre de Canaan. Il laisse à ses descendants une alliance, une terre promise et le modèle de l'hospitalité et de la foi.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Abraham"
+                    },
+                    {
+                      "id": "hjh_103",
+                      "axe": "Torah : les Patriarches",
+                      "date": 2171,
+                      "titre": "Les bénédictions d’Its’hak et la fuite de Yaakov",
+                      "description": "En l'an 2171, Jacob obtient, sur le conseil de Rivka, les bénédictions que son père aveugle destinait à Ésaü. Menacé par la colère de son frère, il s'enfuit vers Harân chez son oncle Lavan et voit en chemin, à Beth-El, l'échelle dressée entre ciel et terre. Cet épisode transfère à Jacob la continuité de l'alliance et ouvre le premier exil d'un Patriarche.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Jacob"
+                    },
+                    {
+                      "id": "hjh_104",
+                      "axe": "Torah : les Patriarches",
+                      "date": 2185,
+                      "titre": "Mariages de Yaakov et naissance des tribus",
+                      "description": "À partir de l'an 2185 et pendant ses vingt années chez Lavan, Jacob épouse Léa puis Rachel, ainsi que Bilha et Zilpa, et onze fils lui naissent avec sa fille Dina. Ces fils deviendront les ancêtres éponymes des tribus d'Israël. La famille patriarcale se transforme ainsi en un peuple structuré en douze maisons, base de toute l'organisation ultérieure d'Israël.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Douze_tribus_d%27Isra%C3%ABl"
+                    },
+                    {
+                      "id": "hjh_105",
+                      "axe": "Torah : les Patriarches",
+                      "date": 2199,
+                      "titre": "Naissance de Binyamin",
+                      "description": "Vers l'an 2199 naît Binyamin (Benjamin), douzième et dernier fils de Jacob, seul à voir le jour en Terre de Canaan. Rachel, sa mère, meurt en lui donnant naissance sur la route de Bethléem. Sa tribu fournira plus tard le premier roi d'Israël, Saül, et son territoire abritera le Temple de Jérusalem.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Benjamin_(Bible)"
+                    },
+                    {
+                      "id": "hjh_106",
+                      "axe": "Torah : les Patriarches",
+                      "date": 2205,
+                      "titre": "Mort de Rivka",
+                      "description": "En l'an 2205 meurt Rivka, deuxième des Matriarches, et elle est inhumée dans la grotte de Makhpéla à Hébron. La Torah passe sa mort sous silence, ce que les commentateurs expliquent par le contexte troublé de la famille à cette époque. Son action décisive en faveur de Jacob avait pourtant assuré la transmission de l'alliance.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9becca"
+                    },
+                    {
+                      "id": "hjh_107",
+                      "axe": "Torah : les Patriarches",
+                      "date": 2208,
+                      "titre": "Mort de Rachel",
+                      "description": "En l'an 2208, le 11 Heshvan, Rachel meurt en donnant naissance à Benjamin et Jacob l'enterre au bord du chemin, près de Bethléem. Son tombeau est resté l'un des lieux de pèlerinage les plus fréquentés du judaïsme. Le prophète Jérémie en fera la figure de la mère qui pleure ses enfants exilés et à qui Dieu promet leur retour.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Rachel_(Bible)"
+                    },
+                    {
+                      "id": "hjh_108",
+                      "axe": "Torah : les Patriarches",
+                      "date": 2228,
+                      "titre": "Mort d’Its’hak",
+                      "description": "En l'an 2228, Isaac meurt à l'âge de cent quatre-vingts ans, le plus long des trois Patriarches, et ses fils Jacob et Ésaü l'ensevelissent à Makhpéla. Sa vie entière s'est déroulée en Terre de Canaan, qu'il n'a jamais quittée. La tradition lui associe l'attribut de la rigueur et la prière de l'après-midi (min'ha).",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Isaac"
+                    },
+                    {
                       "id": "hjh_8",
-                      "axe": "Torah",
+                      "axe": "Torah : les Patriarches",
                       "date": 2238,
                       "titre": "Descente de la famille de Yaakov en Égypte",
-                      "description": "Jacob et ses soixante-dix descendants s'installent dans le pays de Goshen en Égypte auprès de Joseph, amorçant la période d'établissement puis de servitude.",
+                      "description": "En l'an 2238, Jacob, âgé de cent trente ans, descend en Égypte avec soixante-dix personnes et retrouve Joseph, devenu vice-roi. La famille s'installe dans le pays de Goshen, où elle prospère avant de connaître la servitude. Cette descente accomplit l'annonce faite à Abraham lors de l'alliance entre les morceaux et ouvre les deux cent dix années d'Égypte.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Livre_de_la_Gen%C3%A8se"
                     },
                     {
+                      "id": "hjh_109",
+                      "axe": "Torah : les Patriarches",
+                      "date": 2255,
+                      "titre": "Mort de Yaakov et funérailles à Hébron",
+                      "description": "En l'an 2255, Jacob meurt en Égypte à cent quarante-sept ans, après avoir béni ses douze fils et les deux fils de Joseph. Son corps est ramené en grand cortège jusqu'à la grotte de Makhpéla à Hébron, conformément à son serment. Ses bénédictions dessinent le portrait et la vocation de chacune des tribus pour toute l'histoire d'Israël.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Jacob"
+                    },
+                    {
+                      "id": "hjh_110",
+                      "axe": "Torah : les Patriarches",
+                      "date": 2309,
+                      "titre": "Mort de Yossef",
+                      "description": "Vers l'an 2309, Joseph meurt en Égypte à l'âge de cent dix ans, après avoir fait jurer à ses frères d'emporter ses ossements lors de la future délivrance. Sa disparition clôt le livre de la Genèse et l'ère des fondateurs. Avec la mort de sa génération commencera l'oppression des Hébreux par un pharaon « qui ne connaissait pas Joseph ».",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Joseph_(fils_de_Jacob)"
+                    },
+                    {
+                      "id": "hjh_111",
+                      "axe": "Torah : l’Égypte et la sortie d’Égypte",
+                      "date": 2332,
+                      "titre": "Début de l’asservissement des Hébreux en Égypte",
+                      "description": "En l'an 2332, après la mort de Lévi et de sa génération, un nouveau pharaon impose aux Hébreux des travaux forcés et ordonne de noyer les nouveau-nés mâles. Le séjour en Égypte aura duré au total deux cent dix ans selon la tradition rabbinique, les quatre cent trente ans de l'Exode incluant la période cananéenne. Cet esclavage forge la mémoire collective d'Israël : la Torah reviendra sans cesse sur le devoir de protéger l'étranger « car tu as été esclave en Égypte ».",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Livre_de_l%27Exode"
+                    },
+                    {
                       "id": "hjh_9",
-                      "axe": "Torah",
+                      "axe": "Torah : l’Égypte et la sortie d’Égypte",
                       "date": 2368,
                       "titre": "Naissance de Moché",
-                      "description": "Naissance de Moïse (Moché Rabbénou), sauvé des eaux du Nil par la fille de Pharaon, futur libérateur et législateur d'Israël.",
+                      "description": "En l'an 2368 naît Moché (Moïse), fils d'Amram et Yokheved, de la tribu de Lévi, en pleine période de persécution. Déposé sur le Nil, il est recueilli par la fille de Pharaon et élevé à la cour d'Égypte. Il deviendra le libérateur, le législateur et le plus grand des prophètes d'Israël, celui par qui la Torah sera donnée.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Mo%C3%AFse"
                     },
                     {
+                      "id": "hjh_112",
+                      "axe": "Torah : l’Égypte et la sortie d’Égypte",
+                      "date": 2447,
+                      "titre": "Le buisson ardent et l’appel de Moché",
+                      "description": "En l'an 2447, au pied du mont Horeb, Moché aperçoit un buisson qui brûle sans se consumer et reçoit l'ordre de faire sortir Israël d'Égypte. Dieu s'y révèle par le Nom « Ehyé asher Ehyé » et se présente comme le Dieu d'Abraham, d'Isaac et de Jacob. Cet appel transforme un berger exilé en libérateur national et lie la promesse patriarcale à la délivrance à venir.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Buisson_ardent"
+                    },
+                    {
+                      "id": "hjh_113",
+                      "axe": "Torah : l’Égypte et la sortie d’Égypte",
+                      "date": 2447,
+                      "titre": "Les dix plaies d’Égypte",
+                      "description": "En l'an 2447, devant le refus répété de Pharaon, l'Égypte est frappée par dix plaies, du sang jusqu'à la mort des premiers-nés. Chaque plaie vise, selon les commentateurs, une divinité ou une certitude du plus puissant empire du temps. Leur récit est au cœur de la Haggada de Pessah, lue chaque année dans les foyers juifs du monde entier.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Plaies_d%27%C3%89gypte"
+                    },
+                    {
                       "id": "hjh_10",
-                      "axe": "Torah",
+                      "axe": "Torah : l’Égypte et la sortie d’Égypte",
                       "date": 2448,
                       "titre": "La sortie d’Égypte",
-                      "description": "Après les dix plaies et la traversée de la mer Rouge, les Hébreux reçoivent le Décalogue et la Torah au Sinaï, naissance du peuple d'Israël.",
+                      "description": "En l'an 2448, le 15 Nissan, les Hébreux quittent l'Égypte après deux cent dix ans de séjour et la nuit de la Pâque. Six cent mille hommes en âge de porter les armes, avec leurs familles, prennent la route du désert sous la conduite de Moché. La sortie d'Égypte est l'acte de naissance du peuple d'Israël comme nation libre et le socle de la mémoire, du Chabbat et des fêtes juives.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Exode_hors_d%27%C3%89gypte"
                     },
                     {
+                      "id": "hjh_114",
+                      "axe": "Torah : l’Égypte et la sortie d’Égypte",
+                      "date": 2448,
+                      "titre": "L’ouverture de la mer des Joncs",
+                      "description": "En l'an 2448, sept jours après la sortie d'Égypte, la mer s'ouvre devant les Hébreux poursuivis par les chars de Pharaon, puis se referme sur l'armée égyptienne. Le Cantique de la mer entonné par Moché et Myriam est l'un des plus anciens poèmes de la Bible hébraïque. Ce miracle scelle la rupture définitive avec la servitude et est commémoré le septième jour de Pessah.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Passage_de_la_mer_Rouge"
+                    },
+                    {
+                      "id": "hjh_115",
+                      "axe": "Torah : l’Égypte et la sortie d’Égypte",
+                      "date": 2448,
+                      "titre": "Le don de la Torah au mont Sinaï",
+                      "description": "En l'an 2448, le 6 Sivan, sept semaines après la sortie d'Égypte, Israël rassemblé au pied du mont Sinaï reçoit les Dix Paroles et la Torah. La tradition juive y voit l'unique révélation collective de l'histoire, adressée à tout un peuple et non à un seul prophète. Cet événement fonde l'alliance du Sinaï, célébrée chaque année à Chavouot, et fait d'Israël un peuple défini par une Loi.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Don_de_la_Torah_sur_le_mont_Sina%C3%AF"
+                    },
+                    {
+                      "id": "hjh_116",
+                      "axe": "Torah : l’Égypte et la sortie d’Égypte",
+                      "date": 2448,
+                      "titre": "La faute du Veau d’or",
+                      "description": "En l'an 2448, pendant que Moché demeure quarante jours sur la montagne, le peuple fabrique un veau d'or et Moché brise les premières Tables de la Loi. Le châtiment est suivi d'un pardon obtenu par l'intercession de Moché et de la révélation des treize attributs de miséricorde. Cette faute et son pardon fondent dans le judaïsme la théologie de la techouva, le retour toujours possible après l'égarement.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Veau_d%27or"
+                    },
+                    {
+                      "id": "hjh_117",
+                      "axe": "Torah : l’Égypte et la sortie d’Égypte",
+                      "date": 2449,
+                      "titre": "Les secondes Tables de la Loi",
+                      "description": "En l'an 2449, le 10 Tichri, Moché redescend du Sinaï avec les secondes Tables, signe du pardon accordé à Israël après la faute du Veau d'or. Ce jour est devenu Yom Kippour, le jour du Grand Pardon, sommet du calendrier juif. Les secondes Tables sont conservées dans l'Arche d'alliance, avec les débris des premières.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Tables_de_la_Loi"
+                    },
+                    {
+                      "id": "hjh_118",
+                      "axe": "Torah : l’Égypte et la sortie d’Égypte",
+                      "date": 2449,
+                      "titre": "Inauguration du Michkan",
+                      "description": "En l'an 2449, le 1er Nissan, le Michkan (Tabernacle) construit sur les plans reçus au Sinaï est érigé et inauguré au milieu du camp d'Israël. La Présence divine y réside et il devient le centre du service sacrificiel pendant toute la traversée du désert. Ce sanctuaire portatif est le modèle direct du Temple que Salomon bâtira plus tard à Jérusalem.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Tabernacle"
+                    },
+                    {
                       "id": "hjh_11",
-                      "axe": "Torah",
+                      "axe": "Torah : le désert et la mort de Moché",
                       "date": 2449,
                       "titre": "La faute des explorateurs",
-                      "description": "Le rapport décourageant des dix espions entraîne une sentence de quarante années d'errance dans le désert pour toute une génération.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Explorateurs_(Bible)"
+                      "description": "En l'an 2449, douze explorateurs sont envoyés reconnaître le pays de Canaan et dix d'entre eux en rapportent un compte rendu décourageant. Le peuple pleure toute la nuit du 9 Av et se voit condamné à quarante années d'errance, le temps que disparaisse la génération de l'Exode. Seuls Josué et Caleb entreront en Terre promise, et cette date du 9 Av deviendra le jour de deuil national d'Israël.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Livre_des_Nombres"
+                    },
+                    {
+                      "id": "hjh_119",
+                      "axe": "Torah : le désert et la mort de Moché",
+                      "date": 2449,
+                      "titre": "La révolte de Kora’h",
+                      "description": "En l'an 2449, Kora'h, cousin de Moché, conteste avec deux cent cinquante notables la légitimité de Moché et d'Aharon au nom de l'égalité de tout le peuple. La terre s'ouvre et engloutit les meneurs, tandis que le bâton fleuri d'Aharon confirme le choix divin. Cet épisode est devenu dans la tradition juive le paradigme de la « controverse qui n'est pas au nom du Ciel », opposée aux débats féconds de l'étude.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Cor%C3%A9_(Bible)"
+                    },
+                    {
+                      "id": "hjh_120",
+                      "axe": "Torah : le désert et la mort de Moché",
+                      "date": 2449,
+                      "titre": "Les quarante années d’errance au désert",
+                      "description": "De 2449 à 2487, Israël chemine dans le désert du Sinaï, campant d'étape en étape, nourri de la manne et guidé par la nuée. Ces décennies voient l'épisode des serpents d'airain, les prophéties de Bilaam et les guerres victorieuses contre Si'hon et Og en Transjordanie. Cette longue traversée forge une génération née dans la liberté, seule jugée apte à entrer en Terre promise.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Livre_des_Nombres"
+                    },
+                    {
+                      "id": "hjh_121",
+                      "axe": "Torah : le désert et la mort de Moché",
+                      "date": 2487,
+                      "titre": "Mort d’Aharon au mont Hor",
+                      "description": "En l'an 2487, le 1er Av, Aharon meurt au mont Hor à l'âge de cent vingt-trois ans et son fils Élazar lui succède comme Grand Prêtre. La tradition le célèbre comme celui « qui aimait la paix et poursuivait la paix », réconciliant les époux et les querelleurs. Sa mort, pleurée par tout le peuple, marque la fin de la première génération des chefs de l'Exode.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Aaron"
+                    },
+                    {
+                      "id": "hjh_122",
+                      "axe": "Torah : le désert et la mort de Moché",
+                      "date": 2488,
+                      "titre": "Mort de Moché au mont Nébo",
+                      "description": "En l'an 2488, le 7 Adar, Moché meurt au mont Nébo à l'âge de cent vingt ans, après avoir contemplé la Terre promise sans y entrer. La Torah précise que nul n'a connu le lieu de sa sépulture et qu'aucun prophète comme lui ne s'est plus levé en Israël. Sa mort clôt la période de la Torah et transmet la conduite du peuple à Yéhochoua (Josué).",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Mo%C3%AFse"
                     },
                     {
                       "id": "hjh_12",
-                      "axe": "Prophètes (Nevi’im)",
+                      "axe": "Nevi’im : Yéhochoua et les Juges",
                       "date": 2488,
                       "titre": "Entrée en Terre d’Israël sous Yéhochoua",
-                      "description": "Après la mort de Moïse, Josué (Yéhochoua) mène les tribus d'Israël à travers le Jourdain pour conquérir et partager la Terre promise.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Josu%C3%A9_(personnage_biblique)"
+                      "description": "En l'an 2488, après la mort de Moché, Yéhochoua (Josué) fait traverser le Jourdain aux tribus d'Israël à pied sec, l'Arche d'alliance en tête. L'entrée en Canaan accomplit la promesse faite à Abraham quatre siècles et demi plus tôt. Elle transforme un peuple de nomades libérés en nation installée sur sa terre, condition de toute son histoire ultérieure.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Josu%C3%A9"
+                    },
+                    {
+                      "id": "hjh_123",
+                      "axe": "Nevi’im : Yéhochoua et les Juges",
+                      "date": 2488,
+                      "titre": "La chute de Jéricho",
+                      "description": "En l'an 2488, les murailles de Jéricho s'effondrent après sept jours de tours silencieuses autour de la ville et la sonnerie des chofarot. Première victoire de la conquête, elle est présentée par le livre de Josué comme entièrement due à l'intervention divine et non à la force des armes. Rahab, qui avait protégé les espions, est épargnée avec sa famille, figure de l'étranger accueilli dans Israël.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_J%C3%A9richo"
+                    },
+                    {
+                      "id": "hjh_124",
+                      "axe": "Nevi’im : Yéhochoua et les Juges",
+                      "date": 2488,
+                      "titre": "Le partage de la Terre entre les tribus",
+                      "description": "À partir de l'an 2488 et durant les vingt-huit années où Josué dirige le peuple, la Terre conquise est répartie par le sort entre les tribus d'Israël. Les Lévites ne reçoivent pas de territoire mais quarante-huit villes, et des villes de refuge sont instituées pour les homicides involontaires. Ce cadastre sacré fonde le lien de chaque tribu à une portion précise du pays, référence encore invoquée des siècles plus tard.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Livre_de_Josu%C3%A9"
+                    },
+                    {
+                      "id": "hjh_125",
+                      "axe": "Nevi’im : Yéhochoua et les Juges",
+                      "date": 2516,
+                      "titre": "Mort de Yéhochoua",
+                      "description": "En l'an 2516, Yéhochoua meurt à l'âge de cent dix ans, après avoir rassemblé le peuple à Sichem pour renouveler l'alliance. Disciple direct de Moché, il est le premier maillon de la chaîne de transmission de la Torah décrite dans les Pirké Avot. Sa disparition ouvre une période sans chef unique, celle des Anciens puis des Juges.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Josu%C3%A9"
                     },
                     {
                       "id": "hjh_13",
-                      "axe": "Prophètes (Nevi’im)",
+                      "axe": "Nevi’im : Yéhochoua et les Juges",
                       "date": 2516,
                       "titre": "Début de la période des Juges",
-                      "description": "Période de transition où des chefs charismatiques (Othniel, Deborah, Gédéon, Samson...) guident et défendent les tribus d'Israël.",
+                      "description": "À partir de l'an 2516 s'ouvre, après les Anciens qui avaient connu Josué, la longue période des Juges d'Israël. Des chefs charismatiques suscités au gré des crises — Otniel, Déborah, Gédéon, Samson — délivrent les tribus de leurs oppresseurs successifs. Ces trois siècles et demi, rythmés par le cycle de la faute, de l'oppression et de la délivrance, précèdent l'instauration de la royauté.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Livre_des_Juges"
                     },
                     {
+                      "id": "hjh_126",
+                      "axe": "Nevi’im : Yéhochoua et les Juges",
+                      "date": 2516,
+                      "titre": "Otniel ben Kénaz, premier Juge d’Israël",
+                      "description": "En l'an 2516, après huit années d'oppression sous Kouchan-Richataïm, Otniel ben Kénaz, frère cadet de Caleb, délivre Israël et le gouverne quarante ans. Il inaugure la fonction de Juge, à la fois chef militaire et autorité morale. La tradition talmudique en fait aussi un maître d'exception, capable de restaurer par son étude les lois oubliées pendant le deuil de Moché.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Othoniel"
+                    },
+                    {
+                      "id": "hjh_127",
+                      "axe": "Nevi’im : Yéhochoua et les Juges",
+                      "date": 2556,
+                      "titre": "Ehoud délivre Israël d’Eglon de Moav",
+                      "description": "À partir de l'an 2556, Israël subit dix-huit années d'oppression d'Eglon, roi de Moav, jusqu'à ce qu'Ehoud ben Guéra, gaucher de la tribu de Benjamin, l'élimine par une ruse audacieuse. La délivrance ouvre quatre-vingts années de tranquillité, la plus longue de la période des Juges. Shamgar ben Anat repoussera ensuite les Philistins, annonçant la menace majeure des siècles suivants.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Ehud"
+                    },
+                    {
+                      "id": "hjh_128",
+                      "axe": "Nevi’im : Yéhochoua et les Juges",
+                      "date": 2636,
+                      "titre": "Déborah et Barak triomphent de Sissera",
+                      "description": "À partir de l'an 2636, Déborah, prophétesse et seule femme Juge d'Israël, rend la justice sous son palmier et appelle Barak à affronter l'armée de Sissera. La victoire au pied du mont Tabor est célébrée par le Cantique de Déborah, l'un des plus anciens textes poétiques de la Bible. Quarante années de paix suivent, et sa figure reste dans le judaïsme le modèle d'une autorité spirituelle et politique féminine.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/D%C3%A9borah"
+                    },
+                    {
+                      "id": "hjh_129",
+                      "axe": "Nevi’im : Yéhochoua et les Juges",
+                      "date": 2676,
+                      "titre": "L’oppression madianite",
+                      "description": "À partir de l'an 2676, les Madianites et les Amalécites ravagent chaque année les récoltes d'Israël pendant sept ans, contraignant le peuple à se cacher dans les grottes. Cette détresse économique et militaire est présentée par le livre des Juges comme la conséquence d'un abandon de l'alliance. Elle prépare l'appel de Gédéon, suscité pour libérer le pays.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Madian"
+                    },
+                    {
+                      "id": "hjh_130",
+                      "axe": "Nevi’im : Yéhochoua et les Juges",
+                      "date": 2683,
+                      "titre": "Guidéon libère Israël",
+                      "description": "En l'an 2683, Guidéon (Gédéon), surnommé Yeroubaal, met en déroute l'immense camp madianite avec seulement trois cents hommes munis de cruches et de torches. Il commence par détruire l'autel de Baal de son propre père, affirmant la primauté du Dieu d'Israël. Il refuse ensuite la royauté héréditaire qu'on lui offre, rappelant que « c'est Dieu qui régnera sur vous », et gouverne quarante ans.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/G%C3%A9d%C3%A9on"
+                    },
+                    {
+                      "id": "hjh_131",
+                      "axe": "Nevi’im : Yéhochoua et les Juges",
+                      "date": 2723,
+                      "titre": "Avimélekh, le roi éphémère de Sichem",
+                      "description": "En l'an 2723, Avimélekh, fils de Gédéon, se fait proclamer roi à Sichem après avoir fait tuer ses soixante-dix demi-frères. Son règne violent ne dure que trois ans et s'achève sous une meule jetée du haut d'une tour. La parabole des arbres prononcée par Yotam à cette occasion est la première critique politique de la royauté dans la Bible hébraïque.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Livre_des_Juges"
+                    },
+                    {
+                      "id": "hjh_132",
+                      "axe": "Nevi’im : Yéhochoua et les Juges",
+                      "date": 2726,
+                      "titre": "Tola juge Israël",
+                      "description": "À partir de l'an 2726, Tola ben Poua, de la tribu d'Issakhar, juge Israël pendant vingt-trois ans depuis Shamir, dans la montagne d'Éphraïm. Le texte biblique ne lui attribue aucune guerre, signe d'une période de stabilité retrouvée après le règne d'Avimélekh. Ces « Juges mineurs » montrent que la fonction était aussi, et peut-être surtout, judiciaire et administrative.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Livre_des_Juges"
+                    },
+                    {
+                      "id": "hjh_133",
+                      "axe": "Nevi’im : Yéhochoua et les Juges",
+                      "date": 2748,
+                      "titre": "Yaïr le Galaadite",
+                      "description": "À partir de l'an 2748, Yaïr le Galaadite juge Israël pendant vingt-deux ans depuis la Transjordanie. Le livre des Juges mentionne ses trente fils montés sur trente ânons et possédant trente villes, signe d'une notabilité prospère. Son gouvernement illustre l'ancrage des tribus israélites à l'est du Jourdain, souvent oubliées au profit de la Cisjordanie.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Ya%C3%AFr"
+                    },
+                    {
+                      "id": "hjh_134",
+                      "axe": "Nevi’im : Yéhochoua et les Juges",
+                      "date": 2770,
+                      "titre": "L’oppression des Philistins et des Ammonites",
+                      "description": "À partir de l'an 2770, Israël subit dix-huit années de pression conjointe des Philistins à l'ouest et des Ammonites à l'est. Cette double menace touche à la fois les tribus de la plaine côtière et celles de Galaad. Elle amènera l'appel de Yiftah en Transjordanie et, plus tard, la longue confrontation avec les Philistins qui aboutira à la demande d'un roi.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Philistins"
+                    },
+                    {
+                      "id": "hjh_135",
+                      "axe": "Nevi’im : Yéhochoua et les Juges",
+                      "date": 2786,
+                      "titre": "Yiftah le Galaadite",
+                      "description": "À partir de l'an 2786, Yiftah (Jephté), fils rejeté par les siens et devenu chef de bande, est rappelé pour délivrer Galaad des Ammonites. Vainqueur, il est lié par un vœu imprudent concernant sa fille, épisode longuement discuté par les commentateurs comme une mise en garde contre les engagements irréfléchis. Son conflit avec la tribu d'Éphraïm, marqué par l'épreuve du mot « shibboleth », illustre les fractures internes d'Israël avant la royauté.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Jepht%C3%A9"
+                    },
+                    {
+                      "id": "hjh_136",
+                      "axe": "Nevi’im : Yéhochoua et les Juges",
+                      "date": 2792,
+                      "titre": "Ivtsan (Boaz) juge Israël",
+                      "description": "À partir de l'an 2792, Ivtsan de Bethléem juge Israël pendant sept ans ; la tradition talmudique l'identifie à Boaz, l'époux de Ruth. Notable respecté, il conjugue autorité judiciaire et générosité envers les plus pauvres selon les lois du glanage. C'est de son union avec Ruth la Moabite que naîtra la lignée aboutissant au roi David.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Booz"
+                    },
+                    {
+                      "id": "hjh_137",
+                      "axe": "Nevi’im : Yéhochoua et les Juges",
+                      "date": 2797,
+                      "titre": "Élon le Zabulonite",
+                      "description": "À partir de l'an 2797, Élon, de la tribu de Zabulon, juge Israël pendant dix ans dans le nord du pays. Le récit biblique reste très bref à son sujet, comme pour les autres Juges mineurs. Sa mention conserve néanmoins la continuité de la chaîne d'autorité entre Yiftah et l'époque de Samson.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Livre_des_Juges"
+                    },
+                    {
+                      "id": "hjh_138",
+                      "axe": "Nevi’im : Yéhochoua et les Juges",
+                      "date": 2806,
+                      "titre": "Avdon juge Israël",
+                      "description": "À partir de l'an 2806, Avdon ben Hillel, de Piraton en Éphraïm, juge Israël pendant huit ans. Le texte signale ses quarante fils et trente petits-fils montés sur soixante-dix ânons, marque de richesse et d'influence. Il est le dernier Juge avant que la pression philistine ne domine la fin de la période.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Livre_des_Juges"
+                    },
+                    {
+                      "id": "hjh_139",
+                      "axe": "Nevi’im : Yéhochoua et les Juges",
+                      "date": 2813,
+                      "titre": "Chimchon (Samson) face aux Philistins",
+                      "description": "À partir de l'an 2813, Chimchon (Samson), naziréen consacré dès le ventre de sa mère, juge Israël pendant vingt ans et affronte seul les Philistins. Trahi par Dalila qui lui fait couper les cheveux, source de sa force, il meurt en faisant s'écrouler le temple de Dagon sur ses ennemis. Sa figure singulière incarne à la fois la puissance et la fragilité d'un Israël encore incapable de s'unir contre l'adversaire philistin.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Samson"
+                    },
+                    {
+                      "id": "hjh_140",
+                      "axe": "Nevi’im : Yéhochoua et les Juges",
+                      "date": 2833,
+                      "titre": "Éli, Grand Prêtre, et la prise de l’Arche",
+                      "description": "À partir de l'an 2833, Éli le Grand Prêtre dirige Israël depuis le sanctuaire de Silo pendant quarante ans. Son sacerdoce s'achève par la défaite d'Even-Haézer, la mort de ses deux fils et la capture de l'Arche d'alliance par les Philistins. Ce désastre, dont il meurt de saisissement, marque la fin du sanctuaire de Silo et l'effondrement du vieil ordre tribal.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89li_(juge_d%27Isra%C3%ABl)"
+                    },
+                    {
+                      "id": "hjh_141",
+                      "axe": "Nevi’im : Yéhochoua et les Juges",
+                      "date": 2872,
+                      "titre": "Début du ministère du prophète Chmouel",
+                      "description": "À partir de l'an 2872, Chmouel (Samuel), élevé au sanctuaire de Silo et appelé dès l'enfance, devient prophète et dernier Juge d'Israël. Il parcourt le pays pour y rendre la justice, ramène le peuple au service exclusif de Dieu et organise des cercles de prophètes. C'est lui qui, cédant à la demande populaire, oindra Saül puis David et fera passer Israël de l'ère des Juges à celle de la royauté.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Samuel_(Bible)"
+                    },
+                    {
                       "id": "hjh_14",
-                      "axe": "Prophètes (Nevi’im)",
+                      "axe": "Nevi’im : le Royaume uni",
                       "date": 2881,
                       "titre": "Onction de Shaoul, premier Roi d’Israël",
-                      "description": "Le prophète Samuel oint Saül (Shaoul) de la tribu de Benjamin comme tout premier souverain du royaume uni d'Israël (880 AEC trad. / v. 1025 AEC hist.).",
+                      "description": "En l'an 2881, le prophète Chmouel oint Shaoul (Saül), de la tribu de Benjamin, comme tout premier souverain du royaume uni d'Israël. Cette royauté naît d'une demande du peuple, que Chmouel accueille avec réserve en avertissant des servitudes qu'entraîne un roi. Le règne de Shaoul, marqué par les guerres philistines et un conflit avec le prophète, ouvre l'ère monarchique d'Israël (880 AEC trad. / v. 1025 AEC hist.).",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Sa%C3%BCl"
                     },
                     {
-                      "id": "hjh_15",
-                      "axe": "Prophètes (Nevi’im)",
-                      "date": 2892,
-                      "titre": "Avènement et règne du Roi David à Jérusalem",
-                      "description": "Le roi David unifie les tribus, conquiert Sion, établit Jérusalem comme capitale éternelle et prépare la construction du Temple (869 AEC trad. / v. 1010 AEC hist.).",
+                      "id": "hjh_142",
+                      "axe": "Nevi’im : le Royaume uni",
+                      "date": 2884,
+                      "titre": "David oint roi à Hébron",
+                      "description": "En l'an 2884, après la mort de Shaoul au mont Guilboa, David est oint roi à Hébron et règne sept ans et demi sur la seule tribu de Juda. Ces années de royauté partagée s'achèvent par la réunification des tribus autour de lui. Elles inaugurent la dynastie davidique, à laquelle la tradition juive rattache la promesse messianique.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/David_(Bible)"
                     },
                     {
+                      "id": "hjh_15",
+                      "axe": "Nevi’im : le Royaume uni",
+                      "date": 2892,
+                      "titre": "Avènement et règne du Roi David à Jérusalem",
+                      "description": "En l'an 2892, David unifie les douze tribus, conquiert la forteresse jébusite de Sion et y installe sa capitale. Il y fait monter l'Arche d'alliance, organise le service des Lévites et rassemble les matériaux du futur Temple. En faisant de Jérusalem le centre politique et spirituel d'Israël, il fixe pour toujours l'horizon du peuple juif (869 AEC trad. / v. 1010 AEC hist.).",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/David_(Bible)"
+                    },
+                    {
+                      "id": "hjh_143",
+                      "axe": "Nevi’im : le Royaume uni",
+                      "date": 2920,
+                      "titre": "La révolte d’Avshalom",
+                      "description": "Vers l'an 2920, Avshalom (Absalon), fils de David, soulève une partie du royaume et contraint son père à fuir Jérusalem. La rébellion s'achève par sa mort dans la forêt d'Éphraïm et par le deuil déchirant du roi. Cette crise, la plus grave du règne, montre la fragilité de l'unité nationale et inspirera plusieurs Psaumes de détresse.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Absalon"
+                    },
+                    {
+                      "id": "hjh_144",
+                      "axe": "Nevi’im : le Royaume uni",
+                      "date": 2924,
+                      "titre": "Shlomo monte sur le trône",
+                      "description": "En l'an 2924, Shlomo (Salomon), fils de David et de Bat-Chéva, est proclamé roi et règne quarante ans. Il demande à Dieu, plutôt que la richesse, « un cœur qui écoute » pour juger son peuple, et sa sagesse devient proverbiale. Son règne pacifique, marqué par de grands travaux et une intense activité diplomatique, est l'apogée politique de l'Israël biblique.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Salomon"
+                    },
+                    {
                       "id": "hjh_16",
-                      "axe": "Prophètes (Nevi’im)",
+                      "axe": "Nevi’im : le Royaume uni",
                       "date": 2928,
                       "titre": "Construction du Premier Temple par le Roi Shlomo",
-                      "description": "Le roi Salomon (Shlomo) édifie le premier Temple de Jérusalem (Beit HaMikdash), centre spirituel et religieux d'Israël (833 AEC trad. / v. 957 AEC hist.).",
+                      "description": "En l'an 2928, la quatrième année de son règne, Shlomo entreprend la construction du Premier Temple (Beit HaMikdash) sur le mont Moriah. Le chantier, mené avec l'aide de Hiram de Tyr, dure sept années et remplace définitivement le Tabernacle du désert. Le Temple devient le centre unique du culte et le cœur religieux du peuple juif pour quatre siècles (833 AEC trad. / v. 957 AEC hist.).",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Premier_Temple_de_J%C3%A9rusalem"
+                    },
+                    {
+                      "id": "hjh_145",
+                      "axe": "Nevi’im : le Royaume uni",
+                      "date": 2935,
+                      "titre": "Inauguration du Premier Temple",
+                      "description": "En l'an 2935, le Temple achevé est inauguré au cours d'une fête de quatorze jours, et l'Arche d'alliance est déposée dans le Saint des Saints. La prière de dédicace prononcée par Shlomo demande que le Temple soit une maison de prière ouverte même à l'étranger venu de loin. Le Premier Temple restera debout quatre cent dix ans, de 2928 à 3338 selon la chronologie traditionnelle.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Premier_Temple_de_J%C3%A9rusalem"
                     },
                     {
                       "id": "hjh_17",
-                      "axe": "Prophètes (Nevi’im)",
+                      "axe": "Nevi’im : les royaumes divisés et les Prophètes",
                       "date": 2964,
                       "titre": "Division en deux royaumes",
-                      "description": "À la mort de Salomon, le schisme politique crée le royaume d'Israël au nord (dix tribus) et le royaume de Juda au sud (797 AEC trad. / 931 AEC hist.).",
+                      "description": "En l'an 2964, à la mort de Shlomo, le refus de son fils Roboam d'alléger les corvées provoque la sécession des tribus du Nord. Jéroboam fonde le royaume d'Israël avec ses dix tribus, tandis que Juda et Benjamin restent fidèles à la dynastie davidique. Ce schisme affaiblit durablement les Hébreux et conduira à la disparition du royaume du Nord (797 AEC trad. / 931 AEC hist.).",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Royaume_de_Juda"
                     },
                     {
+                      "id": "hjh_146",
+                      "axe": "Nevi’im : les royaumes divisés et les Prophètes",
+                      "date": 3022,
+                      "titre": "Le règne d’A’hav et le combat d’Éliyahou",
+                      "description": "Vers l'an 3022, sous le règne d'A'hav et de Jézabel, le culte de Baal s'impose dans le royaume du Nord. Le prophète Éliyahou (Élie) affronte seul les quatre cent cinquante prophètes de Baal au mont Carmel et ramène le peuple au Dieu d'Israël. Sa lutte fait de lui la figure prophétique par excellence, annonciateur de la délivrance messianique et invité symbolique de chaque Séder de Pessah.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89lie"
+                    },
+                    {
+                      "id": "hjh_147",
+                      "axe": "Nevi’im : les royaumes divisés et les Prophètes",
+                      "date": 3043,
+                      "titre": "Éliyahou enlevé au ciel, Élicha lui succède",
+                      "description": "En l'an 3043, Éliyahou est emporté dans un tourbillon sur un char de feu, sous les yeux de son disciple Élicha (Élisée). Celui-ci reçoit « une double part » de son esprit et poursuit son œuvre par de nombreux miracles au service des humbles. La succession prophétique ainsi instituée montre que la parole divine se transmet de maître à disciple, modèle repris par la chaîne rabbinique.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89lis%C3%A9e"
+                    },
+                    {
                       "id": "hjh_18",
-                      "axe": "Prophètes (Nevi’im)",
+                      "axe": "Nevi’im : les royaumes divisés et les Prophètes",
                       "date": 3205,
                       "titre": "Royaume du Nord chute, exil des dix Tribus",
-                      "description": "L'Empire assyrien de Sargon II s'empare de Samarie et déporte la population du royaume d'Israël, donnant naissance aux dix tribus perdues (556 AEC trad. / 722 AEC hist.).",
+                      "description": "Vers l'an 3205, l'Empire assyrien s'empare de Samarie après trois ans de siège et déporte la population du royaume d'Israël. Les dix tribus du Nord, dispersées aux confins de l'empire, disparaissent de l'histoire et deviennent les « dix tribus perdues ». Seul le royaume de Juda subsiste, et c'est de lui que descend, par son nom même, le judaïsme (556 AEC trad. / 722 AEC hist.).",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Dix_tribus_perdues"
                     },
                     {
                       "id": "hjh_19",
-                      "axe": "Prophètes (Nevi’im)",
+                      "axe": "Nevi’im : les royaumes divisés et les Prophètes",
                       "date": 3283,
                       "titre": "Réformes de Yoshiyahou (Josias)",
-                      "description": "Le roi Josias centralise le culte à Jérusalem et engage une profonde restauration religieuse après la redécouverte d'un rouleau de la Torah dans le Temple.",
+                      "description": "En l'an 3283, le roi Yoshiyahou (Josias) engage une profonde restauration religieuse après la redécouverte d'un rouleau de la Torah dans le Temple. Il supprime les hauts lieux, purifie le culte et centralise à Jérusalem le service divin, célébrant une Pâque comme il n'y en avait pas eu depuis les Juges. C'est le dernier grand sursaut spirituel de Juda avant la catastrophe babylonienne.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Josias"
                     },
                     {
-                      "id": "hjh_20",
-                      "axe": "Prophètes (Nevi’im)",
-                      "date": 3338,
-                      "titre": "Destruction du Premier Temple par Nabuchodonosor",
-                      "description": "L'armée babylonienne détruit Jérusalem, incendie le Premier Temple le 9 Av et déporte le peuple à Babylone (423 AEC trad. / 586 AEC hist.).",
+                      "id": "hjh_148",
+                      "axe": "Nevi’im : la fin de Juda et le Premier Temple",
+                      "date": 3319,
+                      "titre": "La montée de Nabuchodonosor",
+                      "description": "Vers l'an 3319, Nabuchodonosor II, roi de Babylone, s'impose au Proche-Orient après la défaite de l'Égypte et fait de Juda son vassal. Le prophète Jérémie avertit alors que la soumission est préférable à une révolte qui perdrait le pays. Les révoltes répétées des derniers rois de Juda déclencheront pourtant les représailles babyloniennes.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Nabuchodonosor_II"
+                    },
+                    {
+                      "id": "hjh_149",
+                      "axe": "Nevi’im : la fin de Juda et le Premier Temple",
+                      "date": 3327,
+                      "titre": "La première déportation de Judéens à Babylone",
+                      "description": "En l'an 3327, après la reddition du jeune roi Yehoyakhin (Yekhonya), Nabuchodonosor déporte l'élite du royaume : la cour, les artisans et les forgerons. Cet « exil des artisans » emporte notamment le prophète Ézéchiel, qui prophétisera depuis les rives du fleuve Kevar. Pour la première fois, une communauté juive organisée vit et prie hors de la Terre d'Israël, matrice de toute la diaspora à venir.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Exil_%C3%A0_Babylone"
+                    },
+                    {
+                      "id": "hjh_150",
+                      "axe": "Nevi’im : la fin de Juda et le Premier Temple",
+                      "date": 3336,
+                      "titre": "Début du siège de Jérusalem (10 Tevet)",
+                      "description": "En l'an 3336, le 10 Tevet, l'armée babylonienne met le siège devant Jérusalem après la révolte du roi Sédécias. Le siège dure trente mois et s'achève par la famine, la brèche dans les murailles et la chute de la ville. Cette date est devenue l'un des quatre jeûnes publics du calendrier juif, en mémoire du commencement de la catastrophe.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Si%C3%A8ge_de_J%C3%A9rusalem_(587/586_av._J.-C.)"
                     },
                     {
+                      "id": "hjh_20",
+                      "axe": "Nevi’im : la fin de Juda et le Premier Temple",
+                      "date": 3338,
+                      "titre": "Destruction du Premier Temple par Nabuchodonosor",
+                      "description": "En l'an 3338, le 9 Av, les Babyloniens incendient le Premier Temple et rasent Jérusalem après quatre cent dix ans d'existence du sanctuaire. La monarchie davidique prend fin en Juda et l'essentiel du peuple est déporté à Babylone. Le 9 Av devient le grand jour de deuil du judaïsme, et la destruction du Temple ouvre l'ère de l'exil (423 AEC trad. / 586 AEC hist.).",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Si%C3%A8ge_de_J%C3%A9rusalem_(587/586_av._J.-C.)"
+                    },
+                    {
+                      "id": "hjh_151",
+                      "axe": "Nevi’im : la fin de Juda et le Premier Temple",
+                      "date": 3338,
+                      "titre": "Les soixante-dix années d’exil à Babylone",
+                      "description": "De 3338 à 3408, le peuple de Juda vit l'exil babylonien annoncé par Jérémie pour une durée de soixante-dix ans. Privés de Temple et de terre, les exilés développent la prière, l'étude et le rassemblement communautaire, préfigurant la synagogue. Cette épreuve transforme le judaïsme en une religion capable de survivre partout, ce qui assurera sa continuité pendant les deux millénaires suivants.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Exil_%C3%A0_Babylone"
+                    },
+                    {
                       "id": "hjh_21",
-                      "axe": "Hagiographes (Ketouvim)",
+                      "axe": "Nevi’im : retour d’exil et Second Temple",
                       "date": 3390,
                       "titre": "Décret de Cyrus (fin de l’exil de Babylone)",
-                      "description": "Le roi perse Cyrus le Grand autorise les Judéens exilés à retourner à Jérusalem et à reconstruire le Temple de Dieu (371 AEC trad. / 538 AEC hist.).",
+                      "description": "En l'an 3390, le roi perse Cyrus le Grand, vainqueur de Babylone, autorise les Judéens exilés à regagner Jérusalem et à y rebâtir le Temple. Un premier convoi, conduit par Zorobabel et le Grand Prêtre Josué fils de Tsadok, remonte vers la Terre d'Israël. Ce décret met fin aux soixante-dix ans annoncés par Jérémie et ouvre l'époque du Second Temple (371 AEC trad. / 538 AEC hist.).",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Cylindre_de_Cyrus"
                     },
                     {
                       "id": "hjh_23",
-                      "axe": "Hagiographes (Ketouvim)",
+                      "axe": "Nevi’im : retour d’exil et Second Temple",
                       "date": 3405,
                       "titre": "Le miracle de Pourim en Perse",
-                      "description": "Grâce à la reine Esther et à Mardochée, le décret d'extermination d'Aman est déjoué dans l'Empire perse, instituant la fête de Pourim (356 AEC trad. / 474 AEC hist.).",
+                      "description": "En l'an 3405, dans l'Empire perse d'Assuérus, le vizir Aman obtient un décret d'extermination de tous les Juifs de cent vingt-sept provinces. La reine Esther, guidée par Mardochée, dévoile son origine au roi et fait annuler le complot, Aman périssant au gibet qu'il avait dressé. Cette délivrance, célébrée chaque année à Pourim, est le modèle d'un salut obtenu sans miracle apparent, par le courage et la providence cachée.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Pourim"
                     },
                     {
                       "id": "hjh_22",
-                      "axe": "Hagiographes (Ketouvim)",
+                      "axe": "Nevi’im : retour d’exil et Second Temple",
                       "date": 3408,
-                      "titre": "Inauguration et reconstruction du Deuxième Temple",
-                      "description": "Sous la direction de Zorobabel et Josué fils de Tsadok, le Second Temple de Jérusalem est achevé et solennellement inauguré (353 AEC trad. / 516 AEC hist.).",
+                      "titre": "Début de la reconstruction du Deuxième Temple",
+                      "description": "En l'an 3408, la deuxième année de Darius, les travaux du Second Temple reprennent sous l'impulsion des prophètes Haggai et Zacharie, après des années d'interruption. Zorobabel et le Grand Prêtre Josué dirigent le chantier malgré l'hostilité des populations voisines. La reconstruction du sanctuaire rend au peuple revenu d'exil un centre religieux et une raison d'espérer.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Second_Temple_de_J%C3%A9rusalem"
+                    },
+                    {
+                      "id": "hjh_152",
+                      "axe": "Nevi’im : retour d’exil et Second Temple",
+                      "date": 3412,
+                      "titre": "Achèvement et inauguration du Second Temple",
+                      "description": "En l'an 3412, la sixième année de Darius, le Second Temple est achevé et solennellement inauguré à Jérusalem. Plus modeste que celui de Salomon, il est dépourvu de l'Arche d'alliance, ce qui fait pleurer les anciens qui avaient connu le premier. Il restera pourtant debout quatre cent vingt ans et sera le cadre où naîtront le judaïsme du Second Temple et la tradition orale (353 AEC trad. / 516 AEC hist.).",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Second_Temple_de_J%C3%A9rusalem"
                     },
                     {
                       "id": "hjh_24",
-                      "axe": "Hagiographes (Ketouvim)",
+                      "axe": "Nevi’im : retour d’exil et Second Temple",
                       "date": 3413,
                       "titre": "Retour d’Ezra et Néhémie à Jérusalem",
-                      "description": "Le scribe Ezra et le gouverneur Néhémie restaurent l'étude de la Torah, reconstruisent les murailles de Jérusalem et réorganisent la communauté juive (348 AEC trad. / 458 AEC hist.).",
+                      "description": "En l'an 3413, le scribe Ezra remonte de Babylone avec un nouveau convoi d'exilés et restaure l'étude publique de la Torah. Le gouverneur Néhémie relève les murailles de Jérusalem en cinquante-deux jours et réorganise la vie économique et religieuse de la communauté. Ezra instaure la lecture publique de la Torah au Chabbat, au lundi et au jeudi, usage toujours en vigueur (348 AEC trad. / 458 AEC hist.).",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Esdras"
                     },
                     {
                       "id": "hjh_25",
-                      "axe": "Hagiographes (Ketouvim)",
+                      "axe": "Nevi’im : retour d’exil et Second Temple",
                       "date": 3448,
                       "titre": "Fin de l’ère des Prophètes, fermeture du canon",
-                      "description": "Les membres de la Grande Assemblée (Anshei Knesset HaGuedola) scellent les vingt-quatre livres du canon biblique (Tanakh).",
+                      "description": "En l'an 3448, avec Haggai, Zacharie et Malachie disparaît la prophétie en Israël et s'ouvre l'époque des Hommes de la Grande Assemblée. Ces cent vingt sages, dont Ezra, scellent les vingt-quatre livres du Tanakh, fixent le texte des prières et posent les bases de la loi orale. Le passage du prophète au sage fait de l'étude et de l'interprétation le mode normal du rapport à la parole divine dans le judaïsme.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Grande_Assembl%C3%A9e"
+                    },
+                    {
+                      "id": "hjh_153",
+                      "axe": "Ketouvim : les Hagiographes",
+                      "date": 2790,
+                      "titre": "Ruth, aïeule de la royauté davidique",
+                      "description": "Le livre de Ruth situe son récit vers l'an 2790, à l'époque des Juges, autour de Boaz que la tradition identifie au Juge Ivtsan. Ruth la Moabite choisit de suivre sa belle-mère Naomi et de se lier au peuple d'Israël par la formule « ton peuple sera mon peuple ». Le Talmud place ce livre en tête des Ketouvim parce qu'il introduit la lignée d'où sortiront David et le Messie.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Livre_de_Ruth"
+                    },
+                    {
+                      "id": "hjh_154",
+                      "axe": "Ketouvim : les Hagiographes",
+                      "date": 2884,
+                      "titre": "Tehillim, le livre des Psaumes",
+                      "description": "Les Tehillim (Psaumes) sont attribués par la tradition au roi David, dont le règne s'étend de 2884 à 2924. David y aurait compilé des poèmes de dix auteurs, d'Adam et Melchisédech à Moïse, Assaph et les fils de Koré. Ce recueil de cent cinquante psaumes est devenu la matière première de la liturgie juive quotidienne et le livre de prière personnelle par excellence.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Livre_des_Psaumes"
+                    },
+                    {
+                      "id": "hjh_155",
+                      "axe": "Ketouvim : les Hagiographes",
+                      "date": 2924,
+                      "titre": "Iyov (Job) et la question de la souffrance",
+                      "description": "Le livre de Iyov (Job) est diversement daté par la tradition, qui le situe tantôt à l'époque des Patriarches, tantôt après David, tantôt au retour de l'exil. Il met en scène un juste frappé par le malheur et ses trois amis venus lui expliquer sa souffrance, avant que Dieu ne réponde du sein de la tempête. C'est le grand texte du judaïsme sur la souffrance de l'innocent, discuté sans relâche par les commentateurs et les philosophes.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Livre_de_Job"
+                    },
+                    {
+                      "id": "hjh_156",
+                      "axe": "Ketouvim : les Hagiographes",
+                      "date": 2924,
+                      "titre": "Michlé, les Proverbes de Shlomo",
+                      "description": "Michlé (les Proverbes) est attribué au roi Shlomo, dont le règne commence en 2924, et fut compilé plus tard, notamment par les scribes du roi Ézéchias. Le livre rassemble des maximes sur la sagesse, la droiture, le travail et la parole, culminant dans l'éloge de la « femme vaillante ». Il constitue le socle de la littérature sapientiale juive et nourrit l'éthique quotidienne autant que l'étude.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Livre_des_Proverbes"
+                    },
+                    {
+                      "id": "hjh_157",
+                      "axe": "Ketouvim : les Hagiographes",
+                      "date": 2924,
+                      "titre": "Chir haChirim, le Cantique des cantiques",
+                      "description": "Le Chir haChirim est attribué à Shlomo, qui l'aurait composé dans sa jeunesse selon la tradition. Poème d'amour entre deux amants, il est lu par les sages comme l'allégorie de l'amour entre Dieu et Israël. Rabbi Akiva le qualifiait de « Saint des Saints » parmi les Écrits, et il est lu à la synagogue pendant la fête de Pessah.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Cantique_des_cantiques"
+                    },
+                    {
+                      "id": "hjh_158",
+                      "axe": "Ketouvim : les Hagiographes",
+                      "date": 2924,
+                      "titre": "Kohelet, l’Ecclésiaste",
+                      "description": "Kohelet (l'Ecclésiaste) est attribué à Shlomo âgé, méditant sur la vanité des entreprises humaines. Le livre affronte sans détour la mort, l'injustice et les limites du savoir, tout en appelant à jouir simplement du travail et du pain quotidien. Lu à la synagogue pendant Souccot, il apporte au canon juif une voix sceptique et grave qui équilibre l'optimisme des Proverbes.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Eccl%C3%A9siaste"
+                    },
+                    {
+                      "id": "hjh_159",
+                      "axe": "Ketouvim : les Hagiographes",
+                      "date": 3320,
+                      "titre": "Daniel, prophète de l’exil babylonien",
+                      "description": "Le livre de Daniel s'ouvre vers l'an 3320 avec la déportation à Babylone de jeunes nobles judéens, dont Daniel et ses trois compagnons. Il raconte leur fidélité à la Loi à la cour des rois, de la fournaise à la fosse aux lions, puis livre de grandes visions sur la succession des empires. Ces visions ont nourri toute l'espérance messianique juive et la réflexion sur la fin de l'exil.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Livre_de_Daniel"
+                    },
+                    {
+                      "id": "hjh_160",
+                      "axe": "Ketouvim : les Hagiographes",
+                      "date": 3338,
+                      "titre": "Eikha, les Lamentations sur Jérusalem",
+                      "description": "Eikha (les Lamentations) pleure la destruction de Jérusalem et du Premier Temple survenue le 9 Av 3338. La tradition en attribue la composition au prophète Jérémie, témoin direct de la catastrophe. Le livre est lu chaque année à la nuit du 9 Av, donnant au deuil national une forme liturgique maintenue depuis vingt-cinq siècles.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Livre_des_Lamentations"
+                    },
+                    {
+                      "id": "hjh_161",
+                      "axe": "Ketouvim : les Hagiographes",
+                      "date": 3404,
+                      "titre": "La Meguila d’Esther",
+                      "description": "La Meguilat Esther relate les événements de Pourim survenus vers 3404 sous le règne d'Assuérus et fut mise par écrit peu après, vers 3406. Elle est le seul livre du Tanakh où le Nom divin n'apparaît jamais, la délivrance passant tout entière par des enchaînements apparemment fortuits. Sa lecture publique, deux fois lors de la fête de Pourim, est une obligation pour les hommes comme pour les femmes.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Livre_d%27Esther"
+                    },
+                    {
+                      "id": "hjh_162",
+                      "axe": "Ketouvim : les Hagiographes",
+                      "date": 3408,
+                      "titre": "Ezra-Néhémie, la restauration de Jérusalem",
+                      "description": "Comptés comme un seul livre dans la tradition juive, Ezra et Néhémie couvrent la période allant de 3408 à environ 3435. Ils racontent le retour d'exil, la reconstruction du Second Temple, la remontée d'Ezra et le relèvement des murailles par Néhémie. Ce récit fonde le modèle juif de la restauration nationale par la Loi, l'étude et la reconstruction communautaire.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Livre_d%27Esdras"
+                    },
+                    {
+                      "id": "hjh_163",
+                      "axe": "Ketouvim : les Hagiographes",
+                      "date": 3408,
+                      "titre": "Divrei haYamim, les Chroniques",
+                      "description": "Les Divrei haYamim (Chroniques) sont traditionnellement attribuées à Ezra et compilées à l'époque du Second Temple. Le livre reprend toute l'histoire depuis Adam jusqu'au décret de Cyrus, en mettant l'accent sur les généalogies, la dynastie davidique et le service du Temple. Placé en dernier dans le Tanakh, il clôt les Écrits sur l'appel à remonter à Jérusalem.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Livre_des_Chroniques"
                     },
                     {
                       "id": "hjh_26",
                       "axe": "Histoire antique",
                       "date": 3448,
                       "titre": "Arrivée d’Alexandre le Grand en Judée",
-                      "description": "Alexandre le Grand traverse la Judée, rencontre le Grand Prêtre Shimon HaTzaddik et intègre pacifiquement la région dans le monde hellénistique (313 AEC trad. / 332 AEC hist.).",
+                      "description": "En l'an 3448, Alexandre le Grand traverse la Judée lors de sa campagne contre l'Empire perse. La tradition talmudique rapporte sa rencontre pacifique avec le Grand Prêtre Shimon HaTzaddik, qu'il aurait salué avec respect. La Judée entre alors dans le monde hellénistique, début d'une longue confrontation entre la culture grecque et la tradition juive (313 AEC trad. / 332 AEC hist.).",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Alexandre_le_Grand"
                     },
                     {
@@ -23341,7 +24086,7 @@
                       "axe": "Histoire antique",
                       "date": 3515,
                       "titre": "Traduction de la Torah en grec (Septante)",
-                      "description": "À Alexandrie, sous Ptolémée II Philadelphe, soixante-douze érudits juifs traduisent la Torah en langue grecque.",
+                      "description": "En l'an 3515, à Alexandrie, soixante-douze sages juifs traduisent la Torah en grec à la demande du roi Ptolémée II Philadelphe. La tradition rapporte que, isolés, ils produisirent des versions identiques, tout en modifiant sciemment quelques passages pour éviter les malentendus. La Septante rend le texte biblique accessible au monde méditerranéen, mais le 8 Tevet fut institué comme jeûne par les sages qui y voyaient un appauvrissement.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Septante"
                     },
                     {
@@ -23349,7 +24094,7 @@
                       "axe": "Histoire antique",
                       "date": 3622,
                       "titre": "Décrets de persécution religieuse d’Antiochus IV Épiphane",
-                      "description": "Le roi séleucide interdit la pratique du judaïsme (chabbat, circoncision, étude de la Torah) et profane le Temple de Jérusalem (139 AEC trad. / 167 AEC hist.).",
+                      "description": "En l'an 3622, le roi séleucide Antiochus IV interdit la pratique du judaïsme : Chabbat, circoncision, étude de la Torah et calendrier deviennent des crimes. Le Temple de Jérusalem est profané et consacré à Zeus olympien. C'est la première persécution de l'histoire visant une religion en tant que telle, et elle provoquera le soulèvement hasmonéen (139 AEC trad. / 167 AEC hist.).",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Antiochos_IV"
                     },
                     {
@@ -23357,7 +24102,7 @@
                       "axe": "Histoire antique",
                       "date": 3625,
                       "titre": "Révolte des Hasmonéens et miracle de Hanouka",
-                      "description": "Menés par Mattathias et Juda Maccabée, les Hasmonéens libèrent et purifient le Temple de Jérusalem, miracle de la fiole d'huile (136 AEC trad. / 164 AEC hist.).",
+                      "description": "En l'an 3625, le prêtre Mattathias et ses fils, menés par Juda Maccabée, soulèvent la Judée contre les Séleucides et reprennent Jérusalem. Le Temple est purifié et rededié le 25 Kislev, et la fiole d'huile pure suffit miraculeusement pour huit jours. Cette victoire donne naissance à la fête de Hanouka et à un siècle d'indépendance juive sous la dynastie hasmonéenne (136 AEC trad. / 164 AEC hist.).",
                       "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9volte_des_Maccab%C3%A9es"
                     },
                     {
@@ -23365,7 +24110,7 @@
                       "axe": "Histoire antique",
                       "date": 3698,
                       "titre": "Prise de Jérusalem par le général romain Pompée",
-                      "description": "Pompée intervient dans la guerre civile hasmonéenne, entre dans le Saint des Saints et soumet la Judée à l'autorité romaine.",
+                      "description": "En l'an 3698, appelé à arbitrer la guerre civile entre les frères hasmonéens Hyrcan et Aristobule, Pompée s'empare de Jérusalem. Il pénètre dans le Saint des Saints, geste vécu comme un sacrilège, et place la Judée sous tutelle romaine. La fin de l'indépendance hasmonéenne ouvre les deux siècles de domination romaine qui mèneront à la destruction du Second Temple.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Si%C3%A8ge_de_J%C3%A9rusalem_(63_av._J.-C.)"
                     },
                     {
@@ -23373,7 +24118,7 @@
                       "axe": "Histoire antique",
                       "date": 3742,
                       "titre": "Rénovation monumentale du Temple par Hérode le Grand",
-                      "description": "Le roi Hérode reconstruit et agrandit somptueusement le Second Temple et son esplanade, créant un chef-d'œuvre architectural mondial.",
+                      "description": "En l'an 3742, le roi Hérode entreprend la reconstruction et l'agrandissement du Second Temple et de son esplanade. Le Talmud dit que « qui n'a pas vu l'édifice d'Hérode n'a jamais vu de belle construction ». Les murs de soutènement de cette esplanade subsistent aujourd'hui, dont le Kotel, lieu le plus saint accessible au peuple juif.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Temple_d%27H%C3%A9rode"
                     },
                     {
@@ -23381,7 +24126,7 @@
                       "axe": "Histoire antique",
                       "date": 3826,
                       "titre": "La Grande Révolte juive éclate contre l’Empire romain",
-                      "description": "Face aux exactions des procurateurs romains, le peuple juif se soulève en Judée, déclenchant la Première Guerre judéo-romaine.",
+                      "description": "En l'an 3826, les exactions des procurateurs romains et les tensions entre factions juives font éclater la Grande Révolte en Judée. Les insurgés chassent d'abord la garnison romaine de Jérusalem avant que Vespasien puis Titus ne reconquièrent le pays. Les divisions internes décrites par la tradition comme la « haine gratuite » restent, pour les sages, la cause profonde du désastre qui suivra.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Premi%C3%A8re_guerre_jud%C3%A9o-romaine"
                     },
                     {
@@ -23389,7 +24134,7 @@
                       "axe": "Histoire antique",
                       "date": 3828,
                       "titre": "Destruction définitive du Deuxième Temple par Titus",
-                      "description": "Les légions de Titus incendient et rasent le Second Temple le 9 Av après un long siège de Jérusalem (68 EC trad. / 70 EC hist.).",
+                      "description": "En l'an 3828, le 9 Av, les légions de Titus incendient le Second Temple après un siège d'une extrême violence. Le service sacrificiel cesse pour toujours et le centre du judaïsme se déplace vers l'étude et la prière, notamment à l'académie de Yavné fondée par Rabban Yohanan ben Zakkaï. Cette destruction, à la même date que celle du premier Temple, ouvre l'exil bimillénaire du peuple juif (68 EC trad. / 70 EC hist.).",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Si%C3%A8ge_de_J%C3%A9rusalem_(70)"
                     },
                     {
@@ -23397,15 +24142,15 @@
                       "axe": "Histoire antique",
                       "date": 3833,
                       "titre": "Chute de Massada",
-                      "description": "Les derniers insurgés zélotes retranchés sur la forteresse de Massada préfèrent la mort à la captivité romaine lors du siège mené par Flavius Silva.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Si%C3%A8ge_de_Massada"
+                      "description": "En l'an 3833, la forteresse de Massada, dernier bastion de la révolte, tombe après un long siège mené par Flavius Silva. Selon Flavius Josèphe, les derniers zélotes préfèrent la mort à la captivité romaine. Devenu symbole national en Israël, l'épisode clôt la première guerre judéo-romaine et la résistance armée d'une génération.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Massada"
                     },
                     {
                       "id": "hjh_35",
                       "axe": "Histoire antique",
                       "date": 3895,
                       "titre": "Bar Kokhba vaincu, expulsion des Juifs de Judée",
-                      "description": "L'empereur Hadrien écrase la révolte de Shimon Bar Kokhba, transforme Jérusalem en Aelia Capitolina et rebaptise la province Syria Palaestina.",
+                      "description": "En l'an 3895, l'empereur Hadrien écrase la révolte de Shimon Bar Kokhba, que Rabbi Akiva avait un temps salué comme messie. Jérusalem est refondée en colonie romaine sous le nom d'Aelia Capitolina et la province est rebaptisée Syria Palaestina pour effacer le nom de Judée. L'interdiction faite aux Juifs d'y résider et l'exécution des dix martyrs marquent le basculement définitif du centre de gravité juif vers la Galilée puis la diaspora.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9volte_de_Bar_Kokhba"
                     },
                     {
@@ -23413,7 +24158,7 @@
                       "axe": "Littérature rabbinique et Codification halakhique",
                       "date": 3960,
                       "titre": "Rédaction de la Mishna par Rabbi Yehouda HaNassi",
-                      "description": "À Tsippori en Galilée, Rabbi Yehouda HaNassi compile par écrit la loi orale juive en six ordres fondamentaux (Shisha Sidrei Mishna).",
+                      "description": "En l'an 3960, à Tsippori en Galilée, Rabbi Yehouda HaNassi met par écrit la loi orale juive en six ordres (Shisha Sidrei Mishna). Jusque-là transmise de bouche à oreille, cette tradition risquait de se perdre sous les persécutions et la dispersion. La Mishna devient le socle de tout le droit juif ultérieur et la matière première des deux Talmuds.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Mishna"
                     },
                     {
@@ -23421,7 +24166,7 @@
                       "axe": "Littérature rabbinique et Codification halakhique",
                       "date": 4110,
                       "titre": "Clôture du Talmud de Jérusalem",
-                      "description": "Les académies de Terre d'Israël (Tibériade, Césarée, Sepphoris) achèvent la compilation du Talmud de Jérusalem (Talmud Yeroushalmi).",
+                      "description": "En l'an 4110, les académies de Terre d'Israël — Tibériade, Césarée et Sepphoris — achèvent la compilation du Talmud de Jérusalem. Pressées par la détérioration des conditions sous l'Empire romain chrétien, elles laissent une œuvre plus concise et inachevée que celle de Babylone. Le Yeroushalmi reste une source majeure, en particulier pour les lois liées à la Terre d'Israël.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Talmud_de_J%C3%A9rusalem"
                     },
                     {
@@ -23429,103 +24174,55 @@
                       "axe": "Littérature rabbinique et Codification halakhique",
                       "date": 4260,
                       "titre": "Achi et Rabina clôturent le Talmud de Babylone",
-                      "description": "Rav Achi et Rabina finalisent la rédaction du Talmud de Babylone (Bavli), monument fondamental de la pensée, du droit et de la théologie juive.",
+                      "description": "En l'an 4260, Rav Achi et Rabina achèvent la rédaction du Talmud de Babylone, somme de plusieurs siècles de discussions des académies de Soura et Poumbedita. Ses trente-sept traités mêlent droit, récits, éthique, médecine et théologie dans une argumentation dialectique unique. Le Bavli devient le texte de référence du judaïsme rabbinique et le cœur de l'étude juive jusqu'à nos jours.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Talmud_de_Babylone"
-                    },
-                    {
-                      "id": "hjh_42",
-                      "axe": "Mouvements spirituels, mystiques et intellectuels",
-                      "date": 4349,
-                      "titre": "Période des Geonim",
-                      "description": "Les directeurs académiques babyloniens (Géonim, dont Saadia Gaon) diffusent l'autorité du Talmud auprès de l'ensemble de la diaspora juive (589-1038 EC).",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Geonim"
                     },
                     {
                       "id": "hjh_39",
                       "axe": "Littérature rabbinique et Codification halakhique",
                       "date": 4800,
                       "titre": "Naissance de Rachi",
-                      "description": "Naissance à Troyes de Rabbi Shlomo ben Itzhak (Rachi), le plus éminent commentateur de la Bible hébraïque et du Talmud de tous les temps.",
+                      "description": "En l'an 4800 naît à Troyes, en Champagne, Rabbi Shlomo ben Itzhak, connu sous l'acronyme de Rachi. Vigneron et maître d'école, il rédige des commentaires d'une clarté inégalée sur la Bible hébraïque et sur la quasi-totalité du Talmud. Depuis mille ans, aucune édition du Houmash ou du Talmud ne se lit sans lui, et son école champenoise donnera naissance aux Tossafistes.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Rachi"
-                    },
-                    {
-                      "id": "hjh_48",
-                      "axe": "Exils, Persécutions et Émancipation",
-                      "date": 4856,
-                      "titre": "Massacres de Rhénanie durant la première croisade",
-                      "description": "Les croisés en route vers l'Orient anéantissent les florissantes communautés juives de Spire, Worms et Mayence (massacres de Gzeirot Tatnav).",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Pers%C3%A9cution_des_Juifs_pendant_la_premi%C3%A8re_croisade"
                     },
                     {
                       "id": "hjh_40",
                       "axe": "Littérature rabbinique et Codification halakhique",
                       "date": 4940,
                       "titre": "Rédaction du Mishné Torah par Maïmonide (Rambam)",
-                      "description": "Au Caire, Rabbi Moché ben Maïmon (Maïmonide) achève son monumental code de loi juive en 14 livres, le Mishné Torah (Yad HaHazaka).",
+                      "description": "En l'an 4940, au Caire, Rabbi Moché ben Maïmon (Maïmonide) achève le Mishné Torah, code de loi juive en quatorze livres. Pour la première fois, l'ensemble de la halakha est présenté de façon systématique, en hébreu clair et sans l'appareil des discussions talmudiques. Cette œuvre, complétée par le Guide des égarés, fait du Rambam la figure centrale de la pensée juive médiévale.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Mishn%C3%A9_Torah"
-                    },
-                    {
-                      "id": "hjh_43",
-                      "axe": "Mouvements spirituels, mystiques et intellectuels",
-                      "date": 5050,
-                      "titre": "Diffusions des écrits kabbalistiques et du Zohar",
-                      "description": "En Espagne, Moïse de León fait connaître le Sefer HaZohar (Livre de la Splendeur), texte fondamental de la Kabbale mystique juive.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Zohar"
-                    },
-                    {
-                      "id": "hjh_49",
-                      "axe": "Exils, Persécutions et Émancipation",
-                      "date": 5050,
-                      "titre": "Expulsion des Juifs d’Angleterre",
-                      "description": "Le roi Édouard Ier signe l'édit d'expulsion bannissant tous les Juifs du royaume d'Angleterre, interdiction qui perdurera pendant plus de trois siècles.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Expulsion_des_Juifs_d%27Angleterre"
-                    },
-                    {
-                      "id": "hjh_50",
-                      "axe": "Exils, Persécutions et Émancipation",
-                      "date": 5066,
-                      "titre": "Expulsion des Juifs de France par Philippe",
-                      "description": "Philippe IV le Bel fait arrêter l'ensemble des Juifs du royaume, confisque leurs biens et ordonne leur bannissement général de France.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Expulsion_des_Juifs_de_France"
-                    },
-                    {
-                      "id": "hjh_51",
-                      "axe": "Exils, Persécutions et Émancipation",
-                      "date": 5252,
-                      "titre": "Expulsion des Juifs d’Espagne (Décret de l’Alhambra)",
-                      "description": "Les Rois Catholiques Ferdinand et Isabelle ordonnent l'expulsion de tous les Juifs refusant la conversion, marquant la dispersion séfarade dans le bassin méditerranéen.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/D%C3%A9cret_de_l%27Alhambra"
-                    },
-                    {
-                      "id": "hjh_52",
-                      "axe": "Exils, Persécutions et Émancipation",
-                      "date": 5257,
-                      "titre": "Expulsion des Juifs du Portugal",
-                      "description": "Le roi Manuel Ier ordonne le baptême forcé et l'expulsion des Juifs du Portugal, créant une importante communauté de marranes (crypto-juifs).",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Expulsion_des_Juifs_du_Portugal"
                     },
                     {
                       "id": "hjh_41",
                       "axe": "Littérature rabbinique et Codification halakhique",
                       "date": 5325,
                       "titre": "Parution du Shoulhan Aroukh par Rabbi Yossef Karo",
-                      "description": "À Safed, Rabbi Yossef Karo publie le code de loi faisant autorité universelle dans le judaïsme, complété par la Mappah de Rabbi Moché Isserles (Rama).",
+                      "description": "En l'an 5325, à Safed, Rabbi Yossef Karo publie le Shoulhan Aroukh, « la table dressée », code de loi pratique en quatre parties. Les gloses de Rabbi Moché Isserles (le Rama) y ajoutent les coutumes ashkénazes, rendant l'ouvrage acceptable de Cracovie à Alep. Le Shoulhan Aroukh devient le code de référence universel du judaïsme, encore en vigueur aujourd'hui.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Choulhan_Aroukh"
                     },
                     {
-                      "id": "hjh_53",
-                      "axe": "Exils, Persécutions et Émancipation",
-                      "date": 5408,
-                      "titre": "Pogroms de Chmielnicki en Europe de l’Est",
-                      "description": "Le soulèvement cosaque de Bohdan Khmelnytsky en Ukraine et Pologne provoque le massacre de dizaines de milliers de Juifs (massacres de Gzeirot Ta'h veTat).",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Soul%C3%A8vement_de_Khmelnytsky"
+                      "id": "hjh_42",
+                      "axe": "Mouvements spirituels, mystiques et intellectuels",
+                      "date": 4349,
+                      "titre": "Période des Geonim",
+                      "description": "À partir de l'an 4349 et pendant près de cinq siècles, les Geonim dirigent les académies babyloniennes de Soura et Poumbedita. Par leurs responsa envoyés dans tout le bassin méditerranéen, ils imposent l'autorité du Talmud de Babylone à l'ensemble de la diaspora. Saadia Gaon, le plus célèbre d'entre eux, ouvre la pensée juive à la philosophie et à la grammaire (589-1038 EC).",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Geonim"
+                    },
+                    {
+                      "id": "hjh_43",
+                      "axe": "Mouvements spirituels, mystiques et intellectuels",
+                      "date": 5050,
+                      "titre": "Diffusions des écrits kabbalistiques et du Zohar",
+                      "description": "Vers l'an 5050, en Castille, Moïse de León diffuse le Sefer HaZohar, le Livre de la Splendeur, attribué au maître tannaïte Rabbi Shimon bar Yohaï. Écrit en araméen sous forme de commentaire mystique de la Torah, il expose la doctrine des dix séfirot et de l'exil de la Présence divine. Le Zohar devient le texte fondateur de la Kabbale et irriguera la liturgie, le hassidisme et toute la spiritualité juive ultérieure.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Zohar"
                     },
                     {
                       "id": "hjh_44",
                       "axe": "Mouvements spirituels, mystiques et intellectuels",
                       "date": 5426,
                       "titre": "Déclaration messianique de Sabbataï Tsevi",
-                      "description": "À Smyrne, Sabbataï Tsevi se proclame Messie, déclenchant une onde d'enthousiasme puis une immense crise dans tout le monde juif après sa conversion forcée à l'islam.",
+                      "description": "En l'an 5426, Sabbataï Tsevi, kabbaliste de Smyrne, est proclamé messie et soulève un immense espoir dans presque toutes les communautés juives du monde. Sommé de choisir par le sultan ottoman, il se convertit à l'islam, plongeant le judaïsme dans une crise sans précédent. La méfiance durable envers les mouvements messianiques et une vigilance accrue autour de la Kabbale en sont les conséquences directes.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Sabbata%C3%AF_Tsevi"
                     },
                     {
@@ -23533,7 +24230,7 @@
                       "axe": "Mouvements spirituels, mystiques et intellectuels",
                       "date": 5490,
                       "titre": "Émergence du hassidisme fondé par Baal Shem Tov",
-                      "description": "Rabbi Israël Baal Shem Tov (Besht) fonde en Europe de l'Est le hassidisme, valorisant la ferveur, la joie mystique et la prière du cœur.",
+                      "description": "Vers l'an 5490, en Podolie, Rabbi Israël Baal Shem Tov (le Besht) fonde le hassidisme, mouvement de renouveau spirituel populaire. Il enseigne que la ferveur, la joie et la prière du cœur valent autant que l'érudition, et que la Présence divine se trouve partout. Le hassidisme réconforte les masses juives d'Europe orientale après les massacres de Chmielnicki et donne naissance aux grandes dynasties rabbiniques encore actives aujourd'hui.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Hassidisme"
                     },
                     {
@@ -23541,63 +24238,87 @@
                       "axe": "Mouvements spirituels, mystiques et intellectuels",
                       "date": 5530,
                       "titre": "Début de la Haskala (mouvement des Lumières juives)",
-                      "description": "Sous l'impulsion de Moses Mendelssohn à Berlin, la Haskala promeut l'ouverture aux sciences profanes, l'hébreu moderne et l'intégration citoyenne.",
+                      "description": "À partir de l'an 5530, sous l'impulsion de Moses Mendelssohn à Berlin, la Haskala promeut l'ouverture aux sciences profanes et aux langues européennes. Ses partisans, les maskilim, renouvellent l'hébreu littéraire et plaident pour l'intégration civique des Juifs. Ce mouvement transforme profondément le judaïsme européen et prépare aussi bien les courants religieux modernes que le sionisme culturel.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Haskala"
-                    },
-                    {
-                      "id": "hjh_54",
-                      "axe": "Exils, Persécutions et Émancipation",
-                      "date": 5551,
-                      "titre": "Décret d’Émancipation des Juifs par l’Assemblée constituante française",
-                      "description": "La France devient la première nation au monde à accorder la pleine et entière citoyenneté aux Juifs, pionnière de l'émancipation en Europe.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89mancipation_des_Juifs"
                     },
                     {
                       "id": "hjh_47",
                       "axe": "Mouvements spirituels, mystiques et intellectuels",
                       "date": 5600,
                       "titre": "Émergence du Moussar par Rabbi Israël Salanter",
-                      "description": "En Lituanie, Rabbi Israël Salanter impulse un mouvement d'introspection morale et d'éthique rigoureuse dans les grandes yeshivot.",
+                      "description": "À partir de l'an 5600, en Lituanie, Rabbi Israël Salanter impulse le mouvement du Moussar, centré sur le travail éthique sur soi. Il introduit dans les grandes yeshivot l'étude régulière de textes moraux et l'examen méthodique des traits de caractère. Le Moussar répond à la crise de la modernité en plaçant la rigueur intérieure au même niveau que l'érudition talmudique.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Mouvement_du_Moussar"
                     },
                     {
-                      "id": "hjh_59",
-                      "axe": "Sionisme, Souveraineté et État d’Israël",
-                      "date": 5642,
-                      "titre": "Début de la Première Aliyah vers Israël",
-                      "description": "Fuyant les pogroms de l'Empire russe, des pionniers fondent les premières colonies agricoles modernes (Rishon LeZion, Zikhron Yaakov, Rosh Pina).",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Premi%C3%A8re_Aliyah"
+                      "id": "hjh_48",
+                      "axe": "Exils, Persécutions et Émancipation",
+                      "date": 4856,
+                      "titre": "Massacres de Rhénanie durant la première croisade",
+                      "description": "En l'an 4856, des bandes de croisés en route vers l'Orient anéantissent les communautés juives de Spire, Worms, Mayence et Cologne. Des milliers de Juifs sont tués ou se donnent la mort pour ne pas être baptisés de force, geste appelé kiddouch Hachem. Ces massacres, dits Gzeirot Tatnav, brisent le judaïsme rhénan alors florissant et inaugurent des siècles de violences antijuives en Europe chrétienne.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Pers%C3%A9cution_des_Juifs_pendant_la_premi%C3%A8re_croisade"
+                    },
+                    {
+                      "id": "hjh_49",
+                      "axe": "Exils, Persécutions et Émancipation",
+                      "date": 5050,
+                      "titre": "Expulsion des Juifs d’Angleterre",
+                      "description": "En l'an 5050, le roi Édouard Ier signe l'édit bannissant tous les Juifs du royaume d'Angleterre, après un siècle de spoliations et d'accusations de crime rituel. Environ deux mille personnes doivent quitter le pays en quelques mois. L'interdiction durera plus de trois siècles et demi, jusqu'au retour autorisé sous Cromwell, et servira de modèle aux expulsions suivantes en Europe occidentale.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Expulsion_des_Juifs_d%27Angleterre"
+                    },
+                    {
+                      "id": "hjh_50",
+                      "axe": "Exils, Persécutions et Émancipation",
+                      "date": 5066,
+                      "titre": "Expulsion des Juifs de France par Philippe le Bel",
+                      "description": "En l'an 5066, Philippe IV le Bel fait arrêter en un seul jour tous les Juifs du royaume, confisque leurs biens et ordonne leur bannissement. Une centaine de milliers de personnes prennent la route de la Provence, de l'Empire ou de la péninsule Ibérique. La France perd alors des communautés savantes héritières de Rachi, et les rappels suivis de nouvelles expulsions rendront leur situation intenable.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89dit_d%27Expulsion_(1306)"
+                    },
+                    {
+                      "id": "hjh_51",
+                      "axe": "Exils, Persécutions et Émancipation",
+                      "date": 5252,
+                      "titre": "Expulsion des Juifs d’Espagne (Décret de l’Alhambra)",
+                      "description": "En l'an 5252, les Rois Catholiques Ferdinand et Isabelle ordonnent l'expulsion de tous les Juifs d'Espagne refusant la conversion. Après huit siècles d'une présence exceptionnellement féconde, entre cent et deux cent mille personnes partent vers le Portugal, l'Afrique du Nord, l'Italie et l'Empire ottoman. Cette catastrophe donne naissance à la diaspora séfarade méditerranéenne et à un renouveau mystique qui s'épanouira à Safed.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/D%C3%A9cret_de_l%27Alhambra"
+                    },
+                    {
+                      "id": "hjh_52",
+                      "axe": "Exils, Persécutions et Émancipation",
+                      "date": 5257,
+                      "titre": "Expulsion des Juifs du Portugal",
+                      "description": "En l'an 5257, le roi Manuel Ier, après avoir accueilli les exilés d'Espagne, ordonne leur baptême forcé puis leur expulsion. Des dizaines de milliers de « nouveaux chrétiens » restent au Portugal en pratiquant secrètement le judaïsme. De ces marranes naîtront, aux siècles suivants, les communautés d'Amsterdam, de Bordeaux et de Londres, qui rejoindront ouvertement le judaïsme.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Expulsion_des_Juifs_du_Portugal"
+                    },
+                    {
+                      "id": "hjh_53",
+                      "axe": "Exils, Persécutions et Émancipation",
+                      "date": 5408,
+                      "titre": "Pogroms de Chmielnicki en Europe de l’Est",
+                      "description": "En l'an 5408, le soulèvement cosaque de Bohdan Khmelnytsky en Ukraine et en Pologne s'accompagne du massacre de dizaines de milliers de Juifs. Des centaines de communautés sont détruites et les grandes yeshivot polonaises ruinées. Ces massacres, dits Gzeirot Ta'h veTat, provoquent une vague de désespoir messianique qui favorisera l'essor du sabbataïsme puis celui du hassidisme.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Soul%C3%A8vement_de_Khmelnytsky"
+                    },
+                    {
+                      "id": "hjh_54",
+                      "axe": "Exils, Persécutions et Émancipation",
+                      "date": 5551,
+                      "titre": "Émancipation des Juifs par l’Assemblée constituante française",
+                      "description": "En l'an 5551, l'Assemblée constituante accorde aux Juifs de France la pleine et entière citoyenneté, première décision de ce type au monde. Le principe énoncé au débat — « tout refuser aux Juifs comme nation, tout leur accorder comme individus » — fixe les termes de l'intégration à la française. Cette émancipation ouvre en Europe un mouvement d'égalité civique qui transformera radicalement la condition juive au XIXe siècle.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89mancipation_des_Juifs"
                     },
                     {
                       "id": "hjh_55",
                       "axe": "Exils, Persécutions et Émancipation",
                       "date": 5655,
                       "titre": "Début de l’Affaire Dreyfus en France",
-                      "description": "Le capitaine juif Alfred Dreyfus est faussement accusé de haute trahison sur fond d'antisémitisme féroce, déchirant la société française.",
+                      "description": "En l'an 5655, le capitaine Alfred Dreyfus, officier juif alsacien, est condamné pour haute trahison sur la foi de faux documents. L'affaire déchaîne une vague d'antisémitisme dans le pays qui avait pourtant émancipé les Juifs le premier. Theodor Herzl, qui la couvre comme journaliste, en tire la conviction que seule une souveraineté juive protégera durablement le peuple juif.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Affaire_Dreyfus"
-                    },
-                    {
-                      "id": "hjh_60",
-                      "axe": "Sionisme, Souveraineté et État d’Israël",
-                      "date": 5657,
-                      "titre": "Premier Congrès sioniste à Bâle réuni par Herzl",
-                      "description": "Theodor Herzl fonde l'Organisation sioniste mondiale et formule le programme de Bâle visant à créer un foyer national pour le peuple juif en Terre d'Israël.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Premier_congr%C3%A8s_sioniste"
-                    },
-                    {
-                      "id": "hjh_61",
-                      "axe": "Sionisme, Souveraineté et État d’Israël",
-                      "date": 5678,
-                      "titre": "Publication de la Déclaration Balfour",
-                      "description": "Le gouvernement britannique déclare envisager favorablement « l'établissement en Palestine d'un foyer national pour le peuple juif ».",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/D%C3%A9claration_Balfour_de_1917"
                     },
                     {
                       "id": "hjh_56",
                       "axe": "Exils, Persécutions et Émancipation",
                       "date": 5699,
                       "titre": "Nuit de Cristal",
-                      "description": "Pogrom d'État orchestré par le régime nazi en Allemagne et en Autriche, détruisant des centaines de synagogues et inaugurant la violence ouverte.",
+                      "description": "En l'an 5699, dans la nuit du 9 au 10 novembre, le régime nazi orchestre un pogrom d'État en Allemagne et en Autriche. Des centaines de synagogues sont incendiées, des milliers de commerces saccagés et trente mille hommes juifs déportés en camp de concentration. Cette nuit fait basculer la persécution des Juifs d'Allemagne de la discrimination légale à la violence ouverte, prélude à la Shoah.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Nuit_de_Cristal"
                     },
                     {
@@ -23605,7 +24326,7 @@
                       "axe": "Exils, Persécutions et Émancipation",
                       "date": 5700,
                       "titre": "Shoah, extermination de six millions de Juifs d'Europe",
-                      "description": "Génocide systématique et industriel perpétré par l'Allemagne nazie et ses collaborateurs entre 1939 et 1945, anéantissant les deux tiers du judaïsme européen.",
+                      "description": "À partir de l'an 5700, l'Allemagne nazie et ses collaborateurs mettent en œuvre l'extermination systématique des Juifs d'Europe, par fusillades de masse puis dans les centres de mise à mort. Six millions de personnes, dont un million et demi d'enfants, sont assassinées entre 1939 et 1945. La Shoah anéantit les deux tiers du judaïsme européen et son monde yiddish, et pèse sur toute la conscience juive contemporaine.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Shoah"
                     },
                     {
@@ -23613,15 +24334,39 @@
                       "axe": "Exils, Persécutions et Émancipation",
                       "date": 5708,
                       "titre": "Exode des Juifs des pays arabes et musulmans",
-                      "description": "Près de 850 000 Juifs d'Afrique du Nord et du Moyen-Orient quittent ou sont chassés de leurs terres ancestrales entre 1948 et 1970 pour trouver refuge en Israël et en Occident.",
+                      "description": "À partir de l'an 5708, près de 850 000 Juifs quittent ou sont chassés des pays d'Afrique du Nord et du Moyen-Orient où ils vivaient depuis des siècles. Émeutes, lois d'exception et confiscations accompagnent ce départ, achevé pour l'essentiel vers 1970. La majorité trouve refuge en Israël, dont cet exode transforme durablement la démographie et la culture.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Exode_des_Juifs_des_pays_arabes_et_musulmans"
+                    },
+                    {
+                      "id": "hjh_59",
+                      "axe": "Sionisme, Souveraineté et État d’Israël",
+                      "date": 5642,
+                      "titre": "Début de la Première Aliyah vers Israël",
+                      "description": "À partir de l'an 5642, fuyant les pogroms de l'Empire russe, les pionniers des Amants de Sion et du Bilou s'installent en Terre d'Israël. Ils fondent les premières colonies agricoles modernes : Rishon LeZion, Zikhron Yaakov, Rosh Pina et Petah Tikva. Cette Première Aliyah amorce le retour organisé du peuple juif sur sa terre et la renaissance de l'hébreu parlé portée par Eliezer Ben-Yehouda.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Premi%C3%A8re_Aliyah"
+                    },
+                    {
+                      "id": "hjh_60",
+                      "axe": "Sionisme, Souveraineté et État d’Israël",
+                      "date": 5657,
+                      "titre": "Premier Congrès sioniste à Bâle réuni par Herzl",
+                      "description": "En l'an 5657, Theodor Herzl réunit à Bâle deux cents délégués venus de dix-sept pays pour le premier Congrès sioniste. L'assemblée fonde l'Organisation sioniste mondiale et adopte le programme de Bâle, qui vise un foyer national juif en Terre d'Israël garanti par le droit public. Herzl écrira dans son journal : « À Bâle, j'ai fondé l'État juif », cinquante ans avant sa proclamation.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Premier_congr%C3%A8s_sioniste"
+                    },
+                    {
+                      "id": "hjh_61",
+                      "axe": "Sionisme, Souveraineté et État d’Israël",
+                      "date": 5678,
+                      "titre": "Publication de la Déclaration Balfour",
+                      "description": "En l'an 5678, le gouvernement britannique déclare envisager favorablement « l'établissement en Palestine d'un foyer national pour le peuple juif ». Cette lettre du ministre Arthur Balfour à Lord Rothschild est la première reconnaissance par une grande puissance des aspirations nationales juives. Intégrée au mandat de la Société des Nations, elle donne au projet sioniste une assise juridique internationale.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/D%C3%A9claration_Balfour_de_1917"
                     },
                     {
                       "id": "hjh_62",
                       "axe": "Sionisme, Souveraineté et État d’Israël",
                       "date": 5708,
                       "titre": "Plan de partage de la Palestine par l’ONU",
-                      "description": "L'Assemblée générale de l'ONU adopte la résolution 181 recommandant la création d'un État juif et d'un État arabe en Terre sainte.",
+                      "description": "En l'an 5708, le 29 novembre 1947, l'Assemblée générale de l'ONU adopte la résolution 181 recommandant la création d'un État juif et d'un État arabe. Le vote, accueilli par des scènes de liesse dans le Yichouv, est rejeté par les dirigeants arabes. Il constitue la reconnaissance internationale du droit du peuple juif à un État et ouvre la voie à la proclamation de mai 1948.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Plan_de_partage_de_la_Palestine"
                     },
                     {
@@ -23629,7 +24374,7 @@
                       "axe": "Sionisme, Souveraineté et État d’Israël",
                       "date": 5708,
                       "titre": "Déclaration d’indépendance de l’État d’Israël",
-                      "description": "Le 5 Iyar 5708 (14 mai 1948) à Tel-Aviv, David Ben Gourion proclame la renaissance souveraine de l'État d'Israël.",
+                      "description": "En l'an 5708, le 5 Iyar (14 mai 1948), David Ben Gourion proclame à Tel-Aviv la naissance de l'État d'Israël. Le texte fonde un État ouvert à l'immigration juive et garantissant l'égalité de droits à tous ses habitants. Après dix-neuf siècles d'exil, le peuple juif retrouve une souveraineté politique sur sa terre, événement qui redéfinit toute son histoire contemporaine.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/D%C3%A9claration_d%27ind%C3%A9pendance_de_l%27%C3%89tat_d%27Isra%C3%ABl"
                     },
                     {
@@ -23637,7 +24382,7 @@
                       "axe": "Sionisme, Souveraineté et État d’Israël",
                       "date": 5727,
                       "titre": "Guerre des Six Jours et réunification de Jérusalem",
-                      "description": "Israël remporte une victoire décisive, libère la vieille ville de Jérusalem et le Kotel (Mur des Lamentations) et unifie la capitale.",
+                      "description": "En l'an 5727, menacé par la mobilisation de ses voisins, Israël remporte en six jours une victoire décisive sur l'Égypte, la Jordanie et la Syrie. Les parachutistes atteignent le Kotel le 28 Iyar et la vieille ville de Jérusalem est réunifiée après dix-neuf ans de séparation. Cette guerre transforme la géographie du conflit et provoque un profond renouveau d'identité juive dans le monde entier.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Guerre_des_Six_Jours"
                     },
                     {
@@ -23645,7 +24390,7 @@
                       "axe": "Sionisme, Souveraineté et État d’Israël",
                       "date": 5734,
                       "titre": "Guerre du Kippour",
-                      "description": "Attaque surprise conjointe de l'Égypte et de la Syrie le jour le plus sacré du calendrier juif ; après des combats acharnés, Tsahal reprend le dessus.",
+                      "description": "En l'an 5734, le jour de Yom Kippour, l'Égypte et la Syrie lancent une attaque surprise conjointe contre Israël. Après des combats d'une extrême dureté dans le Sinaï et sur le Golan, Tsahal reprend l'initiative, mais le pays est ébranlé par le coût humain et l'échec du renseignement. Ce traumatisme national bouleverse la vie politique israélienne et rend possible, paradoxalement, la paix avec l'Égypte six ans plus tard.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Guerre_du_Kippour"
                     },
                     {
@@ -23653,7 +24398,7 @@
                       "axe": "Sionisme, Souveraineté et État d’Israël",
                       "date": 5739,
                       "titre": "Traité de paix israélo-égyptien",
-                      "description": "À Washington, Menahem Begin et Anouar el-Sadate signent le tout premier traité de paix entre Israël et un pays arabe à la suite des accords de Camp David.",
+                      "description": "En l'an 5739, à Washington, Menahem Begin et Anouar el-Sadate signent le premier traité de paix entre Israël et un pays arabe. Issu des accords de Camp David négociés sous l'égide de Jimmy Carter, il prévoit la restitution du Sinaï contre une paix pleine et la reconnaissance mutuelle. Cette paix, toujours en vigueur, brise l'idée d'un conflit sans issue possible avec le monde arabe.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Trait%C3%A9_de_paix_isra%C3%A9lo-%C3%A9gyptien"
                     },
                     {
@@ -23661,7 +24406,7 @@
                       "axe": "Sionisme, Souveraineté et État d’Israël",
                       "date": 5753,
                       "titre": "Accords d’Oslo",
-                      "description": "Yitzhak Rabin et Yasser Arafat échangent une poignée de main historique à la Maison-Blanche pour instaurer l'Autorité palestinienne autonome.",
+                      "description": "En l'an 5753, Yitzhak Rabin et Yasser Arafat signent à la Maison-Blanche la Déclaration de principes négociée secrètement à Oslo. L'accord prévoit la reconnaissance mutuelle et la création d'une Autorité palestinienne autonome à Gaza et à Jéricho. Ce tournant diplomatique majeur divise profondément la société israélienne et sera suivi, deux ans plus tard, de l'assassinat de Rabin.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Accords_d%27Oslo"
                     },
                     {
@@ -23669,30 +24414,22 @@
                       "axe": "Sionisme, Souveraineté et État d’Israël",
                       "date": 5780,
                       "titre": "Signature des Accords d’Abraham",
-                      "description": "Normalisation diplomatique historique entre l'État d'Israël, les Émirats arabes unis, Bahreïn, le Maroc et le Soudan sous l'égide des États-Unis.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Accords_d%27Abraham"
-                    },
-                    {
-                      "id": "hjh_69",
-                      "axe": "Sionisme, Souveraineté et État d’Israël",
-                      "date": 5753,
-                      "titre": "Signature des accords d'Oslo (5753)",
-                      "description": "En l'an hébraïque 5753, le Premier ministre Yitzhak Rabin et le président de l'OLP Yasser Arafat signent à Washington la Déclaration de principes prévoyant l'autonomie palestinienne et la reconnaissance mutuelle. Cet accord diplomatique majeur marque un tournant historique pour la sécurité et la reconnaissance de la souveraineté d'Israël dans la région.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Accords_d%27Oslo"
-                    },
-                    {
-                      "id": "hjh_70",
-                      "axe": "Sionisme, Souveraineté et État d’Israël",
-                      "date": 5780,
-                      "titre": "Signature des accords d'Abraham (5780)",
-                      "description": "En l'an hébraïque 5780, Israël conclut les accords d'Abraham établissant des relations diplomatiques et économiques directes avec les Émirats arabes unis, Bahreïn, le Maroc et le Soudan. Ce traité historique consacre une avancée décisive pour l'intégration régionale et la paix entre l'État juif et le monde arabo-musulman.",
+                      "description": "En l'an 5780, Israël établit des relations diplomatiques pleines avec les Émirats arabes unis et Bahreïn, bientôt suivis du Maroc et du Soudan. Négociés sous l'égide des États-Unis, ces accords portent le nom du patriarche commun aux trois monothéismes. Ils marquent une intégration régionale inédite de l'État juif, fondée sur la coopération économique et sécuritaire plutôt que sur la résolution préalable du conflit palestinien.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Accords_d%27Abraham"
                     }
                   ],
                   "axeOrder": [
-                    "Torah",
-                    "Prophètes (Nevi’im)",
-                    "Hagiographes (Ketouvim)",
+                    "Torah : de la Création au Déluge",
+                    "Torah : de Noé à Avraham",
+                    "Torah : les Patriarches",
+                    "Torah : l’Égypte et la sortie d’Égypte",
+                    "Torah : le désert et la mort de Moché",
+                    "Nevi’im : Yéhochoua et les Juges",
+                    "Nevi’im : le Royaume uni",
+                    "Nevi’im : les royaumes divisés et les Prophètes",
+                    "Nevi’im : la fin de Juda et le Premier Temple",
+                    "Nevi’im : retour d’exil et Second Temple",
+                    "Ketouvim : les Hagiographes",
                     "Histoire antique",
                     "Littérature rabbinique et Codification halakhique",
                     "Mouvements spirituels, mystiques et intellectuels",
@@ -23701,35 +24438,58 @@
                   ],
                   "essentiel": [
                     "hjh_1",
+                    "hjh_2",
                     "hjh_3",
+                    "hjh_4",
                     "hjh_5",
+                    "hjh_6",
+                    "hjh_7",
+                    "hjh_8",
                     "hjh_9",
+                    "hjh_10",
+                    "hjh_115",
+                    "hjh_122",
+                    "hjh_12",
                     "hjh_13",
                     "hjh_14",
+                    "hjh_15",
                     "hjh_16",
+                    "hjh_17",
                     "hjh_18",
                     "hjh_20",
                     "hjh_21",
+                    "hjh_23",
+                    "hjh_22",
                     "hjh_25",
+                    "hjh_154",
                     "hjh_27",
+                    "hjh_29",
                     "hjh_30",
                     "hjh_33",
                     "hjh_34",
                     "hjh_36",
-                    "hjh_42",
+                    "hjh_38",
                     "hjh_39",
+                    "hjh_40",
+                    "hjh_41",
+                    "hjh_42",
+                    "hjh_43",
+                    "hjh_44",
+                    "hjh_45",
+                    "hjh_46",
                     "hjh_48",
                     "hjh_49",
+                    "hjh_51",
                     "hjh_52",
-                    "hjh_44",
-                    "hjh_46",
-                    "hjh_59",
                     "hjh_55",
-                    "hjh_60",
                     "hjh_57",
+                    "hjh_59",
+                    "hjh_60",
+                    "hjh_61",
                     "hjh_63",
+                    "hjh_64",
                     "hjh_66",
-                    "hjh_69"
+                    "hjh_67"
                   ]
                 },
                 {
