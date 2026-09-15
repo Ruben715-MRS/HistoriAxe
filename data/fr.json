@@ -3,7 +3,7 @@
   "lang": "fr",
   "name": "Français (Intégral)",
   "totalThemes": 795,
-  "totalEvents": 19478,
+  "totalEvents": 19569,
   "categories": [
     {
       "nom": "Culture générale",
@@ -90847,140 +90847,446 @@
                   "id": "thm_be",
                   "nom": "Histoire de la Belgique 🇧🇪",
                   "difficulte": "Intermédiaire",
+                  "axeOrder": [
+                    "Des principautés médiévales aux Pays-Bas autrichiens (jusqu'en 1830)",
+                    "La construction du royaume (1830-1914)",
+                    "Guerres, Congo et Question royale (1914-1960)",
+                    "Du pays unitaire à l'État fédéral (1960-1993)",
+                    "La Belgique contemporaine (depuis 1993)"
+                  ],
                   "events": [
                     {
+                      "id": "ben1",
+                      "axe": "Des principautés médiévales aux Pays-Bas autrichiens (jusqu'en 1830)",
+                      "date": -57,
+                      "titre": "« De tous les peuples de la Gaule, les Belges sont les plus braves »",
+                      "description": "César ouvre ses commentaires sur la guerre des Gaules par cette phrase, avant de soumettre les tribus établies entre Seine et Rhin au terme de campagnes qu'il décrit lui-même comme particulièrement dures. La Gallia Belgica devient une province romaine prospère, traversée par les routes militaires vers le Rhin. La citation, apprise par des générations d'écoliers, a longtemps servi de premier chapitre au récit national.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Gaule_belgique"
+                    },
+                    {
+                      "id": "ben2",
+                      "axe": "Des principautés médiévales aux Pays-Bas autrichiens (jusqu'en 1830)",
+                      "date": 843,
+                      "titre": "Le traité de Verdun coupe l'espace en deux",
+                      "description": "Le partage de l'empire de Charlemagne entre ses petits-fils fait passer l'Escaut comme frontière : à l'ouest le royaume de Francie occidentale, à l'est la Lotharingie puis l'Empire. Les futures principautés belges se répartissent ainsi entre deux souverainetés rivales pendant des siècles. Cette ligne, qui ne correspond à aucune frontière linguistique, explique la fragmentation politique durable de la région.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Trait%C3%A9_de_Verdun"
+                    },
+                    {
+                      "id": "ben3",
+                      "axe": "Des principautés médiévales aux Pays-Bas autrichiens (jusqu'en 1830)",
+                      "date": 1128,
+                      "titre": "Les villes drapières de Flandre",
+                      "description": "Gand, Bruges et Ypres importent la laine anglaise, la transforment et vendent le drap dans toute l'Europe, devenant parmi les villes les plus peuplées et les plus riches du continent. Leurs métiers arrachent aux comtes des chartes de liberté et se dotent de beffrois, symboles d'autonomie communale. Cette puissance urbaine précoce, sans équivalent au nord des Alpes, façonne durablement la société de la région.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Comt%C3%A9_de_Flandre"
+                    },
+                    {
+                      "id": "ben4",
+                      "axe": "Des principautés médiévales aux Pays-Bas autrichiens (jusqu'en 1830)",
+                      "date": 1302,
+                      "titre": "La bataille des Éperons d'or",
+                      "description": "Une armée de milices communales flamandes, à pied, écrase près de Courtrai la cavalerie du roi de France venue châtier la révolte des villes ; les éperons dorés ramassés sur le champ de bataille donnent son nom à l'affrontement. C'est l'une des premières grandes victoires d'une infanterie sur la chevalerie féodale. Réinterprétée au XIXe siècle comme un acte fondateur flamand, la date est devenue la fête de la Communauté flamande.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Courtrai_(1302)"
+                    },
+                    {
+                      "id": "ben5",
+                      "axe": "Des principautés médiévales aux Pays-Bas autrichiens (jusqu'en 1830)",
+                      "date": 1384,
+                      "titre": "Les ducs de Bourgogne héritent de la Flandre",
+                      "description": "Philippe le Hardi, fils du roi de France, recueille le comté de Flandre par son mariage et entreprend de réunir par héritages, achats et mariages les principautés entre Empire et royaume. Ses successeurs y ajoutent le Brabant, le Hainaut, la Hollande et le Luxembourg. Cet ensemble, sans nom ni institutions communes au départ, est la première ébauche d'un espace politique correspondant aux Pays-Bas historiques.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89tat_bourguignon"
+                    },
+                    {
+                      "id": "ben6",
+                      "axe": "Des principautés médiévales aux Pays-Bas autrichiens (jusqu'en 1830)",
+                      "date": 1500,
+                      "titre": "Gand, berceau de Charles Quint",
+                      "description": "Né dans la principale ville des Pays-Bas, héritier de Bourgogne, d'Espagne et d'Autriche, Charles fait des dix-sept provinces un ensemble indivisible par la Pragmatique Sanction de 1549, tout en les détachant juridiquement de l'Empire. Il réprime pourtant durement sa ville natale révoltée contre l'impôt en 1540. Son abdication à Bruxelles lègue les Pays-Bas à un fils élevé en Castille et étranger au pays.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Charles_Quint"
+                    },
+                    {
+                      "id": "ben7",
+                      "axe": "Des principautés médiévales aux Pays-Bas autrichiens (jusqu'en 1830)",
+                      "date": 1566,
+                      "titre": "La furie iconoclaste",
+                      "description": "Des bandes calvinistes saccagent en quelques semaines les images et le mobilier de centaines d'églises, d'Ypres à Anvers, dans un mouvement qui mêle conviction religieuse, crise économique et défiance envers Madrid. Philippe II répond en envoyant le duc d'Albe et son Conseil des troubles, qui prononce des milliers de condamnations. La répression déclenche la révolte des Pays-Bas et, à terme, leur partition.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Furie_iconoclaste"
+                    },
+                    {
+                      "id": "ben8",
+                      "axe": "Des principautés médiévales aux Pays-Bas autrichiens (jusqu'en 1830)",
+                      "date": 1585,
+                      "titre": "Anvers prise par Farnèse, l'Escaut fermé",
+                      "description": "Après un siège d'un an, Alexandre Farnèse reprend la métropole commerciale et intellectuelle de l'Europe du Nord ; des dizaines de milliers de protestants — marchands, imprimeurs, artisans — émigrent vers Amsterdam. Les Provinces-Unies ferment alors l'Escaut à la navigation maritime, étranglant le port pour plus de deux siècles. Le basculement économique vers le Nord, décisif pour les siècles suivants, se joue là.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Si%C3%A8ge_d%27Anvers_(1584-1585)"
+                    },
+                    {
+                      "id": "ben9",
+                      "axe": "Des principautés médiévales aux Pays-Bas autrichiens (jusqu'en 1830)",
+                      "date": 1713,
+                      "titre": "Utrecht livre les provinces à Vienne",
+                      "description": "Les traités transfèrent les provinces méridionales de l'Espagne à l'Autriche, tandis que le traité de la Barrière autorise les Provinces-Unies à tenir garnison dans plusieurs places fortes. Gouvernés depuis Vienne par un gouverneur général, les Pays-Bas autrichiens connaissent un réel redressement économique mais restent sans souveraineté propre. Disputée entre puissances, la région est alors surnommée le « champ de bataille de l'Europe ».",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Pays-Bas_autrichiens"
+                    },
+                    {
+                      "id": "ben10",
+                      "axe": "Des principautés médiévales aux Pays-Bas autrichiens (jusqu'en 1830)",
+                      "date": 1795,
+                      "titre": "L'annexion par la France révolutionnaire",
+                      "description": "Après Fleurus, la France annexe les Pays-Bas autrichiens et la principauté de Liège, les découpe en neuf départements et y applique sa législation : Code civil, état civil, système métrique, conscription. La révolte paysanne de 1798 contre la conscription est écrasée. Vingt ans de régime français laissent des institutions et un droit qui survivront à toutes les souverainetés suivantes.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/D%C3%A9partements_des_Pays-Bas"
+                    },
+                    {
                       "id": "bel1",
+                      "axe": "La construction du royaume (1830-1914)",
                       "date": 1830,
                       "titre": "Révolution belge",
-                      "description": "Un soulèvement populaire à Bruxelles contre le régime hollandais de Guillaume Ier des Pays-Bas aboutit à la proclamation d'un État belge indépendant.",
+                      "description": "Inspirée par la révolution parisienne de juillet et déclenchée après une représentation d'opéra à Bruxelles, une insurrection éclate contre le royaume uni des Pays-Bas, jugé trop centralisateur et indifférent aux spécificités catholiques et francophones du Sud. Catholiques et libéraux, que tout oppose par ailleurs, s'allient contre Guillaume Ier. En quelques semaines, les troupes hollandaises sont chassées de Bruxelles et l'indépendance est proclamée.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9volution_belge"
                     },
                     {
                       "id": "bel2",
+                      "axe": "La construction du royaume (1830-1914)",
                       "date": 1831,
                       "titre": "Léopold Ier, premier roi des Belges",
-                      "description": "Le Congrès national désigne Léopold de Saxe-Cobourg comme premier souverain du nouveau royaume, sous une Constitution parmi les plus libérales d'Europe.",
+                      "description": "Le Congrès national, après avoir écarté plusieurs candidats pour ne froisser aucune puissance, offre la couronne à Léopold de Saxe-Cobourg, prince allemand veuf de l'héritière du trône britannique. Il prête serment non à Dieu mais à la Constitution, inaugurant une monarchie explicitement subordonnée à la loi. Son habileté diplomatique consolide un État que ses voisins auraient pu ne pas laisser vivre.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/L%C3%A9opold_Ier_(roi_des_Belges)"
                     },
                     {
+                      "id": "ben11",
+                      "axe": "La construction du royaume (1830-1914)",
+                      "date": 1835,
+                      "titre": "Le premier chemin de fer du continent",
+                      "description": "La ligne Bruxelles-Malines est la première d'Europe continentale exploitée à la vapeur pour les voyageurs, inaugurée cinq ans seulement après l'indépendance. L'État la construit lui-même, choix délibéré pour désenclaver un pays privé de l'Escaut et dépendant de ses voisins. Le réseau belge deviendra le plus dense du monde et servira de modèle à plusieurs États européens.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Histoire_des_chemins_de_fer_belges"
+                    },
+                    {
                       "id": "bel3",
+                      "axe": "La construction du royaume (1830-1914)",
                       "date": 1839,
                       "titre": "Traité des XXIV articles",
-                      "description": "Les grandes puissances européennes reconnaissent définitivement l'indépendance et la neutralité perpétuelle de la Belgique, en fixant ses frontières avec les Pays-Bas.",
+                      "description": "Après huit ans de refus, Guillaume Ier reconnaît enfin l'indépendance belge ; en échange, la Belgique cède le Limbourg oriental et une partie du Luxembourg, et accepte une neutralité garantie par les grandes puissances. Ce statut la met à l'abri, mais fait aussi de son territoire un enjeu stratégique permanent. C'est la violation de cette neutralité qui entraînera la Grande-Bretagne dans la guerre en 1914.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Trait%C3%A9_des_XXIV_articles"
                     },
                     {
+                      "id": "ben12",
+                      "axe": "La construction du royaume (1830-1914)",
+                      "date": 1847,
+                      "titre": "Le charbon et l'acier font la Belgique industrielle",
+                      "description": "Les bassins de Liège, du Hainaut et du Borinage font de la Belgique la deuxième puissance industrielle du monde par habitant, derrière la seule Grande-Bretagne. Les conditions de travail — journées de douze heures, travail des enfants dès dix ans, corons insalubres — nourrissent une misère ouvrière décrite par les enquêtes officielles elles-mêmes. Le pays s'industrialise ainsi un demi-siècle avant la plupart de ses voisins continentaux.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Exploitation_du_charbon_en_Belgique"
+                    },
+                    {
+                      "id": "ben13",
+                      "axe": "La construction du royaume (1830-1914)",
+                      "date": 1860,
+                      "titre": "L'essor du mouvement flamand",
+                      "description": "Alors que le français est la seule langue de la justice, de l'administration et de l'armée, des écrivains et juristes flamands réclament la reconnaissance du néerlandais. L'affaire Coucke et Goethals, deux Flamands exécutés en 1860 après un procès en français qu'ils ne comprenaient pas, devient le symbole de la cause. Les premières lois linguistiques suivront à partir de 1873, appliquées lentement et partiellement.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Mouvement_flamand"
+                    },
+                    {
+                      "id": "ben14",
+                      "axe": "La construction du royaume (1830-1914)",
+                      "date": 1886,
+                      "titre": "Les grandes grèves de 1886",
+                      "description": "Parties de Liège lors d'un meeting anarchiste, les émeutes gagnent le Hainaut et le Borinage ; l'armée tire et fait des dizaines de morts. Le choc oblige le Parlement à ouvrir une enquête sur la condition ouvrière et à voter les premières lois sociales, sur le travail des femmes et des enfants et le paiement des salaires. La Belgique découvre brutalement le coût humain de son avance industrielle.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Gr%C3%A8ve_belge_de_1886"
+                    },
+                    {
+                      "id": "ben15",
+                      "axe": "La construction du royaume (1830-1914)",
+                      "date": 1893,
+                      "titre": "Le suffrage universel plural",
+                      "description": "Après une grève générale, le cens est aboli et tous les hommes de vingt-cinq ans obtiennent le droit de vote — mais les propriétaires, les pères de famille et les diplômés disposent d'une ou deux voix supplémentaires. Un électeur peut ainsi peser trois fois plus qu'un autre. Le système, qui permet au Parti ouvrier d'entrer au Parlement tout en limitant son poids, ne disparaîtra qu'en 1919.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Vote_plural"
+                    },
+                    {
                       "id": "bel4",
+                      "axe": "Guerres, Congo et Question royale (1914-1960)",
                       "date": 1885,
                       "titre": "État indépendant du Congo",
-                      "description": "Le roi Léopold II obtient la reconnaissance internationale d'un immense territoire en Afrique centrale, qu'il administre en propriété personnelle sous couvert d'action humanitaire.",
+                      "description": "La conférence de Berlin reconnaît à Léopold II, à titre personnel et non à la Belgique, la souveraineté sur un territoire quatre-vingts fois plus vaste que son royaume. Le roi le gère comme une propriété privée, en concédant l'exploitation du caoutchouc à des compagnies. Le système de quotas imposé aux villages, assorti de mutilations et de prises d'otages, provoquera l'une des premières campagnes humanitaires internationales.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89tat_ind%C3%A9pendant_du_Congo"
                     },
                     {
                       "id": "bel5",
+                      "axe": "Guerres, Congo et Question royale (1914-1960)",
                       "date": 1908,
                       "titre": "Le Congo devient colonie belge",
-                      "description": "Face au scandale international suscité par les atrocités commises sous son régime personnel, Léopold II est contraint de céder le Congo à l'État belge.",
+                      "description": "Sous la pression des révélations de Morel, Casement et de la presse internationale sur les atrocités du caoutchouc, le Parlement belge contraint Léopold II à céder son domaine privé à l'État. La colonie est désormais administrée par la Belgique, avec un paternalisme d'État qui met fin aux pires exactions sans remettre en cause le travail forcé. Le roi fait brûler les archives de l'État indépendant avant le transfert.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Congo_belge"
                     },
                     {
                       "id": "bel6",
+                      "axe": "Guerres, Congo et Question royale (1914-1960)",
                       "date": 1914,
                       "titre": "Invasion allemande de 1914",
-                      "description": "Malgré sa neutralité garantie par les traités, la Belgique est envahie par l'Allemagne au début de la Première Guerre mondiale, ce qui précipite l'entrée en guerre du Royaume-Uni.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Invasion_de_la_Belgique_(1914)"
+                      "description": "L'Allemagne exige le passage de ses troupes pour contourner les défenses françaises ; le gouvernement refuse, invoquant la neutralité garantie par les traités. L'invasion s'accompagne de représailles contre les civils — Dinant, Louvain et sa bibliothèque incendiée — qui frappent l'opinion mondiale. La résistance belge retarde l'offensive allemande et fait entrer le Royaume-Uni dans la guerre.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Belgique_(1914)"
+                    },
+                    {
+                      "id": "ben16",
+                      "axe": "Guerres, Congo et Question royale (1914-1960)",
+                      "date": 1918,
+                      "titre": "L'Yser et le roi-chevalier",
+                      "description": "L'inondation volontaire de la plaine de l'Yser arrête l'avance allemande fin 1914 et laisse à la Belgique un dernier lambeau de territoire libre, où Albert Ier passe la guerre auprès de ses soldats. Son refus de quitter le front lui vaut le surnom de roi-chevalier et confère à la monarchie un prestige considérable. À l'arrière, l'occupation allemande a aussi encouragé un mouvement flamand activiste, dont la répression d'après-guerre laissera des rancunes.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_l%27Yser"
+                    },
+                    {
+                      "id": "ben17",
+                      "axe": "Guerres, Congo et Question royale (1914-1960)",
+                      "date": 1921,
+                      "titre": "Le principe de territorialité linguistique",
+                      "description": "Une loi pose que l'administration emploie la langue de la région où elle se trouve, plutôt que celle choisie par l'habitant. Ce choix de la territorialité, opposé au principe de personnalité retenu par exemple en Suisse, sera la matrice de toute l'organisation linguistique belge. Il rend la délimitation des régions décisive, et donc éminemment conflictuelle.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Politique_linguistique_de_la_Belgique"
+                    },
+                    {
+                      "id": "ben18",
+                      "axe": "Guerres, Congo et Question royale (1914-1960)",
+                      "date": 1932,
+                      "titre": "Néerlandais à l'école et à l'université",
+                      "description": "Une série de lois impose l'unilinguisme régional dans l'enseignement, l'administration et la justice, et néerlandise l'université de Gand, francophone depuis sa fondation. La bourgeoisie flamande francophone, longtemps dominante dans ses propres villes, perd son monopole culturel. La Flandre se dote ainsi des institutions qui porteront, une génération plus tard, son affirmation politique et économique.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Mouvement_flamand"
                     },
                     {
                       "id": "bel7",
+                      "axe": "Guerres, Congo et Question royale (1914-1960)",
                       "date": 1940,
                       "titre": "Invasion allemande de 1940",
-                      "description": "La Wehrmacht envahit à nouveau la Belgique en violation de sa neutralité, forçant la capitulation du pays après dix-huit jours de combats.",
+                      "description": "L'offensive allemande de mai contourne les fortifications et perce à Sedan ; après dix-huit jours de combats, Léopold III, commandant en chef, ordonne la reddition sans consulter ses ministres et refuse de les suivre à Londres. Le gouvernement, replié en France puis en Angleterre, dénonce une décision inconstitutionnelle et poursuit la guerre. Le pays se retrouve avec deux légitimités concurrentes, matrice de la Question royale.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Campagne_des_18_jours"
                     },
                     {
                       "id": "bel8",
+                      "axe": "Guerres, Congo et Question royale (1914-1960)",
                       "date": 1944,
                       "titre": "Libération de la Belgique",
-                      "description": "Les troupes alliées libèrent progressivement le territoire belge à l'automne, malgré la contre-offensive allemande des Ardennes en fin d'année.",
+                      "description": "Les troupes alliées libèrent Bruxelles début septembre presque sans combat, la résistance ayant sauvé le port d'Anvers de la destruction. L'offensive allemande des Ardennes, en décembre, replonge une partie du pays dans la guerre pendant six semaines. La Libération ouvre aussi le règlement des comptes de l'Occupation et la répression de la collaboration, vécue très différemment au nord et au sud.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Lib%C3%A9ration_de_la_Belgique"
                     },
                     {
+                      "id": "ben19",
+                      "axe": "Guerres, Congo et Question royale (1914-1960)",
+                      "date": 1948,
+                      "titre": "Le droit de vote des femmes",
+                      "description": "Les femmes obtiennent le droit de vote aux élections législatives, vingt-neuf ans après les hommes, retard dû à la crainte des partis anticléricaux qu'elles ne votent massivement pour les catholiques. Elles avaient pourtant voté aux communales dès 1921. Leur premier scrutin national coïncide avec la Question royale, qu'elles contribueront à trancher en faveur du retour du roi.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Droit_de_vote_des_femmes"
+                    },
+                    {
                       "id": "bel9",
+                      "axe": "Guerres, Congo et Question royale (1914-1960)",
                       "date": 1950,
                       "titre": "Question royale",
-                      "description": "Un référendum très clivant sur le retour du roi Léopold III, accusé de collaboration passive, débouche sur son abdication en faveur de son fils Baudouin.",
+                      "description": "Le refus d'une majorité de Belges, surtout wallons, de voir revenir Léopold III après sa capitulation de 1940 et son attitude sous l'Occupation paralyse le pays cinq années durant. Un référendum lui donne raison à 57,68 %, mais avec 72 % en Flandre contre 42 % en Wallonie. Son retour déclenche grèves et affrontements, quatre morts à Grâce-Berleur, et il doit abdiquer en faveur de son fils Baudouin.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Question_royale"
                     },
                     {
                       "id": "bel10",
+                      "axe": "Guerres, Congo et Question royale (1914-1960)",
                       "date": 1958,
                       "titre": "Exposition universelle de Bruxelles",
-                      "description": "La Belgique accueille la première grande exposition universelle de l'après-guerre, symbolisée par l'Atomium, monument emblématique érigé pour l'occasion.",
+                      "description": "Première exposition universelle d'après-guerre, elle attire plus de quarante millions de visiteurs autour de l'Atomium, agrandissement de la maille du cristal de fer multiplié par cent soixante-cinq milliards. Elle célèbre la modernité technique, le nucléaire civil et une confiance dans le progrès qui date l'époque. Un pavillon colonial y présente encore le Congo comme une œuvre civilisatrice belge, deux ans avant l'indépendance.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Exposition_universelle_de_1958"
                     },
                     {
                       "id": "bel11",
+                      "axe": "Guerres, Congo et Question royale (1914-1960)",
                       "date": 1960,
                       "titre": "Indépendance du Congo",
-                      "description": "Précipitamment accordée après des décennies de colonisation, l'indépendance du Congo belge plonge rapidement le nouvel État dans une grave crise politique.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Ind%C3%A9pendance_du_Congo"
+                      "description": "Après seulement quelques mois de négociations lors de la Table ronde de Bruxelles, le Congo accède à l'indépendance le 30 juin. La colonie ne compte alors qu'une poignée de diplômés universitaires congolais, la Belgique n'ayant jamais formé de cadres. La crise éclate en quelques jours — mutinerie, sécession katangaise, assassinat de Lumumba — et pèsera longtemps sur les relations entre les deux pays.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Congo_belge"
+                    },
+                    {
+                      "id": "ben20",
+                      "axe": "Du pays unitaire à l'État fédéral (1960-1993)",
+                      "date": 1961,
+                      "titre": "La grève générale de l'hiver",
+                      "description": "Contre la « loi unique » d'austérité, une grève de cinq semaines paralyse le pays, très suivie en Wallonie et beaucoup moins en Flandre. Le syndicaliste André Renard en tire la conclusion que la Wallonie, dont l'industrie décline, doit obtenir l'autonomie pour mener ses propres réformes de structure. Le fédéralisme cesse d'être une revendication flamande pour devenir aussi un projet wallon, à partir de motifs opposés.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Gr%C3%A8ve_g%C3%A9n%C3%A9rale_de_l%27hiver_1960-1961"
                     },
                     {
                       "id": "bel12",
+                      "axe": "Du pays unitaire à l'État fédéral (1960-1993)",
                       "date": 1962,
                       "titre": "Frontière linguistique",
-                      "description": "Une loi fixe définitivement la frontière entre régions néerlandophone et francophone, jalon majeur du long processus de fédéralisation du pays.",
+                      "description": "Deux lois fixent définitivement la limite entre régions linguistiques, supprimant le recensement linguistique décennal qui permettait à la frontière de bouger. Le cas des communes à facilités, dont Fourons, restera conflictuel pendant des décennies. En figeant la carte, la loi transforme une question culturelle en question territoriale, ce qui structurera toute la politique belge ultérieure.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Fronti%C3%A8re_linguistique_belge"
                     },
                     {
+                      "id": "ben21",
+                      "axe": "Du pays unitaire à l'État fédéral (1960-1993)",
+                      "date": 1966,
+                      "titre": "La grève des femmes de la FN à Herstal",
+                      "description": "Trois mille ouvrières de la Fabrique Nationale d'armes cessent le travail pendant douze semaines aux cris de « à travail égal, salaire égal ». Elles n'obtiennent qu'une augmentation partielle, mais leur action met en lumière l'article du traité de Rome sur l'égalité salariale, resté lettre morte. Il servira de base à l'arrêt Defrenne de la Cour de justice européenne, qui en imposera l'application directe dans toute la Communauté.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Gr%C3%A8ve_des_femmes_de_la_FN_Herstal_de_1966"
+                    },
+                    {
+                      "id": "ben22",
+                      "axe": "Du pays unitaire à l'État fédéral (1960-1993)",
+                      "date": 1968,
+                      "titre": "Leuven Vlaams et la scission de l'université",
+                      "description": "Des étudiants flamands exigent le départ de la section francophone de l'université catholique de Louvain, située en territoire néerlandophone. La crise fait tomber le gouvernement et aboutit à la création d'une université nouvelle, Louvain-la-Neuve, bâtie de toutes pièces en Brabant wallon. Les partis politiques nationaux se scindent dans la foulée en ailes flamande et francophone, rupture jamais réparée depuis.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Universit%C3%A9_catholique_de_Louvain_(1835-1968)"
+                    },
+                    {
                       "id": "bel13",
+                      "axe": "Du pays unitaire à l'État fédéral (1960-1993)",
                       "date": 1970,
                       "titre": "Première réforme de l'État",
-                      "description": "Une première révision constitutionnelle crée trois communautés culturelles et amorce la transformation progressive de la Belgique unitaire en État fédéral.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9forme_de_l%27%C3%89tat_en_Belgique"
+                      "description": "La révision constitutionnelle reconnaît l'existence de trois Communautés culturelles et de trois Régions, et institue des mécanismes de protection des minorités : sonnette d'alarme, majorités spéciales, parité au gouvernement. Le Premier ministre Gaston Eyskens déclare que « l'État unitaire est dépassé par les faits ». S'ouvre un processus de réformes successives qui mènera au fédéralisme.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Premi%C3%A8re_r%C3%A9forme_de_l%E2%80%99%C3%89tat_belge"
+                    },
+                    {
+                      "id": "ben23",
+                      "axe": "Du pays unitaire à l'État fédéral (1960-1993)",
+                      "date": 1980,
+                      "titre": "Communautés et Régions prennent forme",
+                      "description": "La deuxième réforme de l'État dote la Flandre, la Wallonie et les Communautés d'institutions propres, avec des compétences en matière culturelle, de santé et d'économie régionale. Bruxelles reste en suspens, faute d'accord sur son statut. Le pays entre dans une logique où chaque crise se résout par un transfert supplémentaire de compétences, jamais par un retour en arrière.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9formes_de_l%27%C3%89tat_belge"
                     },
                     {
                       "id": "bel14",
+                      "axe": "Du pays unitaire à l'État fédéral (1960-1993)",
                       "date": 1985,
                       "titre": "Drame du Heysel",
-                      "description": "Avant la finale de la Coupe d'Europe des clubs champions à Bruxelles, un mouvement de foule entre supporters cause 39 morts, endeuillant durablement le football européen.",
+                      "description": "Avant la finale de la Coupe d'Europe des clubs champions, une charge de supporters anglais provoque l'effondrement d'un mur dans un stade vétuste ; trente-neuf personnes, en majorité italiennes, sont tuées. Le match est joué malgré tout pour éviter d'autres violences. Le drame entraîne l'exclusion des clubs anglais des compétitions européennes pour cinq ans et une refonte des normes de sécurité dans tous les stades.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Drame_du_Heysel"
                     },
                     {
+                      "id": "ben24",
+                      "axe": "Du pays unitaire à l'État fédéral (1960-1993)",
+                      "date": 1988,
+                      "titre": "Bruxelles devient une Région",
+                      "description": "La troisième réforme de l'État dote enfin la capitale d'un gouvernement et d'un parlement propres, après vingt ans de blocage sur son statut, et transfère l'enseignement aux Communautés. Bruxelles, majoritairement francophone mais enclavée en Flandre, obtient des garanties de représentation pour sa minorité néerlandophone. Le pays compte désormais six gouvernements, sans hiérarchie entre eux.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9gion_de_Bruxelles-Capitale"
+                    },
+                    {
+                      "id": "ben25",
+                      "axe": "Du pays unitaire à l'État fédéral (1960-1993)",
+                      "date": 1991,
+                      "titre": "Le dimanche noir",
+                      "description": "Le Vlaams Blok, parti nationaliste flamand d'extrême droite, quadruple ses voix à Anvers et fait une percée nationale ; les partis traditionnels concluent un cordon sanitaire pour refuser toute alliance avec lui. La formation sera condamnée pour racisme en 2004 et se reconstituera sous un autre nom. La question de son poids électoral, croissant depuis, pèse sur toute formation de majorité en Flandre.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89lections_l%C3%A9gislatives_belges_de_1991"
+                    },
+                    {
                       "id": "bel15",
+                      "axe": "Du pays unitaire à l'État fédéral (1960-1993)",
                       "date": 1993,
                       "titre": "État fédéral et mort de Baudouin",
-                      "description": "La Belgique devient officiellement un État fédéral la même année où le roi Baudouin Ier, sur le trône depuis 1951, s'éteint et cède la couronne à son frère Albert II.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Baudouin_Ier_(roi_des_Belges)"
+                      "description": "La quatrième réforme de l'État inscrit dans la Constitution que la Belgique est un État fédéral composé de Communautés et de Régions, dotées de parlements élus directement. Baudouin meurt subitement quelques semaines plus tard en Espagne, après un règne de quarante-deux ans. L'émotion nationale de ses funérailles offre au pays, au moment même où il se fédéralise, une dernière grande manifestation d'unité.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Baudouin_(roi_des_Belges)"
+                    },
+                    {
+                      "id": "ben26",
+                      "axe": "La Belgique contemporaine (depuis 1993)",
+                      "date": 1996,
+                      "titre": "L'affaire Dutroux et la Marche blanche",
+                      "description": "La découverte des crimes d'un pédophile récidiviste, et surtout les défaillances manifestes de la police et de la justice qui l'avaient laissé libre, provoquent une crise de confiance sans précédent. Trois cent mille personnes défilent en silence à Bruxelles, sans mot d'ordre partisan. L'affaire entraîne la refonte complète des services de police, la création d'un organe de contrôle de la justice et un droit des victimes renforcé.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Affaire_Dutroux"
                     },
                     {
                       "id": "bel16",
+                      "axe": "La Belgique contemporaine (depuis 1993)",
                       "date": 2000,
                       "titre": "Euro de football co-organisé",
-                      "description": "La Belgique coorganise avec les Pays-Bas le championnat d'Europe de football, une vitrine internationale pour les deux pays voisins.",
+                      "description": "Coorganisé avec les Pays-Bas, le championnat d'Europe est le premier grand tournoi partagé entre deux pays. L'équipe belge est éliminée dès le premier tour, mais l'événement lance la rénovation des infrastructures. Il précède d'une décennie l'apparition des « Diables rouges » d'une génération issue de l'immigration, qui deviendront pour un temps la meilleure équipe mondiale au classement FIFA.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Championnat_d%27Europe_de_football_2000"
                     },
                     {
+                      "id": "ben27",
+                      "axe": "La Belgique contemporaine (depuis 1993)",
+                      "date": 2002,
+                      "titre": "La dépénalisation de l'euthanasie",
+                      "description": "La Belgique devient, après les Pays-Bas, le deuxième pays au monde à encadrer légalement l'euthanasie pour les patients en souffrance inapaisable, sous conditions strictes et contrôle a posteriori d'une commission. La loi est adoptée par une coalition sans les chrétiens-démocrates, première depuis des décennies. Elle sera étendue aux mineurs en 2014, ce qui en fait la législation la plus ouverte du monde.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/L%C3%A9gislation_sur_l%27euthanasie_et_le_suicide_assist%C3%A9_par_pays"
+                    },
+                    {
+                      "id": "ben28",
+                      "axe": "La Belgique contemporaine (depuis 1993)",
+                      "date": 2003,
+                      "titre": "Le mariage ouvert aux couples de même sexe",
+                      "description": "La Belgique est le deuxième État au monde, un an après les Pays-Bas, à ouvrir le mariage civil aux couples de même sexe, l'adoption suivant en 2006. Le vote intervient dans le même mouvement législatif que l'euthanasie et la dépénalisation partielle du cannabis. Ces réformes dites éthiques marquent la fin de l'influence déterminante du monde catholique sur la législation belge.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Mariage_entre_personnes_de_m%C3%AAme_sexe_en_Belgique"
+                    },
+                    {
+                      "id": "ben29",
+                      "axe": "La Belgique contemporaine (depuis 1993)",
+                      "date": 2011,
+                      "titre": "Le record mondial de crise gouvernementale",
+                      "description": "Cinq cent quarante et un jours séparent les élections de la formation d'un gouvernement, record mondial pour une démocratie, en raison de l'écart croissant entre les résultats du nord et du sud. Le pays continue de fonctionner, géré par un gouvernement en affaires courantes et par les entités fédérées. La crise se dénoue par la sixième réforme de l'État, qui scinde enfin l'arrondissement de Bruxelles-Hal-Vilvorde.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Crise_politique_belge_de_2007-2011"
+                    },
+                    {
                       "id": "bel17",
+                      "axe": "La Belgique contemporaine (depuis 1993)",
                       "date": 2013,
                       "titre": "Abdication d'Albert II",
-                      "description": "Après près de vingt ans de règne, le roi Albert II abdique en faveur de son fils Philippe, qui devient le septième roi des Belges.",
+                      "description": "Après vingt ans de règne, Albert II abdique pour raisons de santé en faveur de son fils Philippe, deuxième abdication de l'histoire du pays après celle de Léopold III. La passation se déroule sans crise, dans un pays qui sort à peine de cinq cent quarante et un jours sans gouvernement. Elle confirme le rôle désormais essentiellement symbolique et fédérateur d'une monarchie sans pouvoir réel.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Albert_II_(roi_des_Belges)"
                     },
                     {
+                      "id": "ben30",
+                      "axe": "La Belgique contemporaine (depuis 1993)",
+                      "date": 2014,
+                      "titre": "La sixième réforme de l'État",
+                      "description": "Le plus vaste transfert de compétences de l'histoire du pays confie aux entités fédérées les allocations familiales, une partie de la santé, le marché de l'emploi et une autonomie fiscale élargie. Le Sénat est transformé en assemblée des entités fédérées. La Belgique devient l'un des États les plus décentralisés du monde, sans que la question de son avenir soit pour autant tranchée.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Sixi%C3%A8me_r%C3%A9forme_de_l%27%C3%89tat_belge"
+                    },
+                    {
                       "id": "bel18",
+                      "axe": "La Belgique contemporaine (depuis 1993)",
                       "date": 2016,
                       "titre": "Attentats de Bruxelles",
-                      "description": "Des attentats-suicides coordonnés frappent l'aéroport de Zaventem et une station de métro bruxelloise, faisant 32 morts et plongeant le pays dans le deuil.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Attentats_du_22_mars_2016_en_Belgique"
+                      "description": "Des kamikazes frappent l'aéroport de Zaventem et la station de métro Maelbeek, tuant trente-deux personnes ; les attentats sont liés à ceux de Paris quatre mois plus tôt. Ils mettent en cause l'efficacité d'un appareil sécuritaire éclaté entre de multiples zones de police et niveaux de pouvoir. Le quartier de Molenbeek, désigné comme un foyer, fait l'objet d'un débat public durable sur l'intégration et les politiques urbaines.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Attentats_du_22_mars_2016_%C3%A0_Bruxelles"
                     },
                     {
                       "id": "bel19",
+                      "axe": "La Belgique contemporaine (depuis 1993)",
                       "date": 2020,
                       "titre": "Gouvernement De Croo",
-                      "description": "Après 494 jours sans gouvernement fédéral de plein exercice, un record européen, une coalition menée par Alexander De Croo parvient enfin à se former.",
+                      "description": "Après cent quatre-vingt-quatorze jours de négociations, une coalition de sept partis réunissant socialistes, libéraux, écologistes et chrétiens-démocrates flamands se forme sous la conduite d'Alexander De Croo, en pleine pandémie. Elle exclut le premier parti de Flandre, la N-VA nationaliste. Cette configuration illustre la difficulté croissante à dégager des majorités quand les systèmes de partis du nord et du sud divergent.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Gouvernement_De_Croo"
+                    },
+                    {
+                      "id": "ben31",
+                      "axe": "La Belgique contemporaine (depuis 1993)",
+                      "date": 2020,
+                      "titre": "Les regrets du roi pour le passé colonial",
+                      "description": "À l'occasion du soixantième anniversaire de l'indépendance du Congo, Philippe exprime ses « plus profonds regrets » pour les blessures de la période coloniale, première déclaration de ce type d'un souverain belge. Une commission parlementaire est mise en place pour examiner ce passé, sans parvenir à un accord final. Le débat sur les statues de Léopold II, les restitutions d'objets et les excuses officielles reste ouvert.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Philippe_(roi_des_Belges)"
                     }
+                  ],
+                  "essentiel": [
+                    "bel1",
+                    "bel2",
+                    "bel3",
+                    "bel4",
+                    "bel5",
+                    "bel6",
+                    "bel7",
+                    "bel9",
+                    "bel11",
+                    "bel12",
+                    "bel13",
+                    "bel15",
+                    "bel18",
+                    "ben2",
+                    "ben4",
+                    "ben5",
+                    "ben6",
+                    "ben8",
+                    "ben10",
+                    "ben11",
+                    "ben12",
+                    "ben13",
+                    "ben14",
+                    "ben15",
+                    "ben16",
+                    "ben18",
+                    "ben20",
+                    "ben22",
+                    "ben26",
+                    "ben31"
                   ]
                 },
                 {
@@ -93946,154 +94252,446 @@
                   "id": "thm_ie",
                   "nom": "Histoire de l'Irlande 🇮🇪",
                   "difficulte": "Intermédiaire",
+                  "axeOrder": [
+                    "Irlande gaélique, christianisation et Vikings (jusqu'en 1169)",
+                    "Conquête anglo-normande et reconquête Tudor (1169-1607)",
+                    "Ascendancy, Union et Grande Famine (1607-1850)",
+                    "Renaissance nationale et indépendance (1850-1949)",
+                    "L'Irlande contemporaine (depuis 1949)"
+                  ],
                   "events": [
                     {
+                      "id": "ien1",
+                      "axe": "Irlande gaélique, christianisation et Vikings (jusqu'en 1169)",
+                      "date": -3200,
+                      "titre": "Newgrange et les tombes à couloir de la Boyne",
+                      "description": "Dans la vallée de la Boyne, des sociétés agricoles élèvent un tumulus de quatre-vingts mètres de diamètre dont le couloir est orienté pour recevoir le soleil levant du solstice d'hiver. L'édifice est antérieur de plusieurs siècles aux pyramides d'Égypte et à Stonehenge. Il atteste une organisation sociale capable de mobiliser des centaines de personnes sur des décennies, bien avant toute trace d'écriture dans l'île.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Newgrange"
+                    },
+                    {
+                      "id": "ien2",
+                      "axe": "Irlande gaélique, christianisation et Vikings (jusqu'en 1169)",
+                      "date": -300,
+                      "titre": "Tara, Emain Macha et les royaumes gaéliques",
+                      "description": "L'île se partage entre une centaine de petits royaumes regroupés en cinq grandes provinces, dont les rois se disputent la suprématie sans jamais créer d'État unitaire. Les sites de Tara et d'Emain Macha, sanctuaires autant que résidences, servent de cadre aux assemblées et aux rites d'intronisation. Cette structure politique éclatée, sans villes ni monnaie, se maintiendra jusqu'à l'arrivée des Normands.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Tara_(site_arch%C3%A9ologique)"
+                    },
+                    {
+                      "id": "ien3",
+                      "axe": "Irlande gaélique, christianisation et Vikings (jusqu'en 1169)",
+                      "date": -100,
+                      "titre": "Les lois brehon et la société des clans",
+                      "description": "Un droit coutumier transmis par une caste de juristes professionnels, les brehons, règle la propriété collective des terres, la responsabilité du clan et la réparation des dommages par compensation plutôt que par châtiment corporel. Les femmes y disposent de droits au divorce et à la propriété rares en Europe médiévale. Ce système survivra jusqu'à sa suppression par les Anglais au début du XVIIe siècle.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Brehon"
+                    },
+                    {
                       "id": "ie1",
+                      "axe": "Irlande gaélique, christianisation et Vikings (jusqu'en 1169)",
                       "date": 432,
                       "titre": "Mission de saint Patrick",
-                      "description": "Selon la tradition, saint Patrick entame en Irlande une mission d'évangélisation qui aboutit à la christianisation progressive de l'île, sans passer par une conquête romaine.",
+                      "description": "Ancien captif ramené en Irlande comme esclave puis revenu en missionnaire, Patrick évangélise l'île sans que le christianisme y soit imposé par un pouvoir d'État, contrairement au reste de l'Europe. Il s'appuie sur les rois locaux et greffe la nouvelle foi sur les structures claniques existantes. L'Irlande devient en deux siècles un foyer monastique qui renverra des missionnaires vers la Grande-Bretagne et le continent.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Patrick_d%27Irlande"
                     },
                     {
+                      "id": "ien4",
+                      "axe": "Irlande gaélique, christianisation et Vikings (jusqu'en 1169)",
+                      "date": 563,
+                      "titre": "Colomba fonde le monastère d'Iona",
+                      "description": "Exilé d'Irlande après une querelle sanglante autour d'un manuscrit copié sans autorisation, Colomba s'installe sur une île des Hébrides et y fonde un monastère qui évangélise les Pictes d'Écosse. Iona devient la tête de pont d'un réseau monastique irlandais qui s'étend jusqu'en Northumbrie et, avec Colomban, jusqu'en Bourgogne et en Italie. L'Irlande exporte alors son christianisme vers une Europe en recomposition.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Colomba_d%27Iona"
+                    },
+                    {
                       "id": "ie2",
+                      "axe": "Irlande gaélique, christianisation et Vikings (jusqu'en 1169)",
                       "date": 795,
                       "titre": "Premiers raids vikings",
-                      "description": "Des raids scandinaves frappent pour la première fois les monastères côtiers irlandais, ouvrant plus de deux siècles de razzias, d'installations et de fondations urbaines vikings comme Dublin.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Irlande_viking"
+                      "description": "Des flottes scandinaves pillent les monastères côtiers, dont Iona et Lambay, attirées par l'or des reliquaires et par des communautés sans défense. Après un demi-siècle de raids, les Vikings s'installent et fondent les premiers vrais ports de l'île. L'Irlande, jusque-là rurale et sans villes, reçoit ainsi de ses envahisseurs Dublin, Waterford, Wexford, Cork et Limerick.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/%C3%82ge_des_Vikings"
+                    },
+                    {
+                      "id": "ien5",
+                      "axe": "Irlande gaélique, christianisation et Vikings (jusqu'en 1169)",
+                      "date": 800,
+                      "titre": "Le Livre de Kells",
+                      "description": "Des moines copient et enluminent un évangéliaire dont les entrelacs, les animaux fantastiques et les pages-tapis constituent le sommet de l'art insulaire. Le manuscrit, probablement commencé à Iona puis achevé à Kells après la fuite devant les Vikings, échappe de peu à la destruction. Il témoigne du rayonnement intellectuel d'une Irlande qui, pendant que le continent se désorganise, conserve et recopie les textes latins.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Livre_de_Kells"
+                    },
+                    {
+                      "id": "ien6",
+                      "axe": "Irlande gaélique, christianisation et Vikings (jusqu'en 1169)",
+                      "date": 841,
+                      "titre": "Les Vikings fondent Dublin",
+                      "description": "Un camp fortifié établi sur la Liffey pour hiverner devient un port permanent, plaque tournante du commerce des esclaves et de l'argent entre la mer d'Irlande, York et la Scandinavie. Les Scandinaves se convertissent, se marient aux familles irlandaises et entrent dans les querelles dynastiques locales. Ils dotent ainsi l'île de sa première vie urbaine et de sa future capitale.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Royaume_de_Dublin"
+                    },
+                    {
+                      "id": "ien7",
+                      "axe": "Irlande gaélique, christianisation et Vikings (jusqu'en 1169)",
+                      "date": 1002,
+                      "titre": "Brian Boru, haut-roi d'Irlande",
+                      "description": "Venu d'une dynastie secondaire du Munster, Brian Boru écarte la famille qui monopolisait depuis des siècles la haute-royauté et se fait reconnaître par toute l'île. Il est le seul souverain de l'histoire irlandaise à avoir réellement exercé cette autorité. Sa mort à Clontarf, douze ans plus tard, laisse le pays retomber dans la rivalité des provinces, faiblesse dont profiteront les Normands.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Brian_Boru"
                     },
                     {
                       "id": "ie3",
+                      "axe": "Irlande gaélique, christianisation et Vikings (jusqu'en 1169)",
                       "date": 1014,
                       "titre": "Bataille de Clontarf",
-                      "description": "Le haut-roi Brian Boru remporte une victoire décisive sur une coalition de Vikings et de rois irlandais rivaux près de Dublin, mais trouve la mort au soir de la bataille.",
+                      "description": "Le haut-roi Brian Boru affronte près de Dublin une coalition de Vikings de Dublin, de Leinstermen et de mercenaires venus des Orcades et de l'île de Man. Ses forces l'emportent mais il est tué sous sa tente au soir de la victoire. La bataille a longtemps été présentée comme la libération de l'Irlande du joug viking ; les historiens y voient surtout un conflit interne irlandais où les Scandinaves étaient des deux côtés.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Clontarf"
                     },
                     {
                       "id": "ie4",
+                      "axe": "Conquête anglo-normande et reconquête Tudor (1169-1607)",
                       "date": 1169,
                       "titre": "Invasion anglo-normande",
-                      "description": "Des seigneurs anglo-normands débarquent en Irlande à l'invitation d'un roi local déchu, ouvrant une intervention militaire anglaise qui s'étendra sur des siècles.",
+                      "description": "Chassé par ses rivaux, le roi de Leinster Dermot MacMurrough obtient d'Henri II l'autorisation de recruter des chevaliers normands du pays de Galles, dont Richard de Clare dit Strongbow. Leur cavalerie lourde et leurs châteaux renversent l'équilibre militaire de l'île en quelques campagnes. Henri II débarque à son tour pour empêcher ses vassaux de fonder un royaume indépendant : commencent huit siècles de présence anglaise.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Invasion_normande_de_l%27Irlande"
                     },
                     {
+                      "id": "ien8",
+                      "axe": "Conquête anglo-normande et reconquête Tudor (1169-1607)",
+                      "date": 1172,
+                      "titre": "Henri II reçoit l'hommage des rois irlandais",
+                      "description": "Débarqué avec une armée considérable, le roi d'Angleterre obtient la soumission de la plupart des rois gaéliques, inquiets de l'ambition de ses propres barons. Le synode de Cashel aligne dans la foulée l'Église irlandaise sur les usages romains. Le pape Alexandre III confirme la conquête, présentée comme une réforme religieuse : l'Irlande devient une seigneurie des rois d'Angleterre.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Henri_II_(roi_d%27Angleterre)"
+                    },
+                    {
+                      "id": "ien13",
+                      "axe": "Conquête anglo-normande et reconquête Tudor (1169-1607)",
+                      "date": 1315,
+                      "titre": "L'invasion d'Edward Bruce",
+                      "description": "Frère du roi d'Écosse vainqueur à Bannockburn, Edward Bruce débarque en Ulster à l'appel de chefs gaéliques et se fait couronner roi d'Irlande, ouvrant un second front contre les Plantagenêts. Trois ans de campagnes, aggravées par la grande famine européenne de 1315, ravagent le pays avant sa mort au combat. L'épisode ruine durablement la colonie anglaise, dont l'autorité se replie sur une étroite zone autour de Dublin, le Pale.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89douard_Bruce"
+                    },
+                    {
+                      "id": "ien9",
+                      "axe": "Conquête anglo-normande et reconquête Tudor (1169-1607)",
+                      "date": 1366,
+                      "titre": "Les statuts de Kilkenny",
+                      "description": "Constatant que les colons anglo-normands parlent irlandais, épousent des Irlandaises et adoptent le droit brehon, le Parlement leur interdit sous peine de confiscation la langue, les mariages mixtes, les jeux et les modes gaéliques. L'échec est complet hors de la zone de Dublin. Ces statuts sont le premier texte à définir l'identité coloniale contre l'assimilation, et le premier aveu que celle-ci était déjà en cours.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Statuts_de_Kilkenny"
+                    },
+                    {
+                      "id": "ien10",
+                      "axe": "Conquête anglo-normande et reconquête Tudor (1169-1607)",
+                      "date": 1494,
+                      "titre": "La loi Poynings soumet le Parlement de Dublin",
+                      "description": "Envoyé pour reprendre en main une île où deux prétendants au trône anglais avaient trouvé des appuis, le vice-roi Edward Poynings fait voter que le Parlement irlandais ne peut se réunir ni légiférer sans l'accord préalable du roi et de son Conseil en Angleterre. La mesure subordonne pour trois siècles toute législation irlandaise à Londres. Son abrogation sera la revendication centrale du patriotisme parlementaire du XVIIIe siècle.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89douard_Poynings"
+                    },
+                    {
+                      "id": "ien11",
+                      "axe": "Conquête anglo-normande et reconquête Tudor (1169-1607)",
+                      "date": 1534,
+                      "titre": "La révolte de Silken Thomas",
+                      "description": "Croyant son père exécuté à Londres, l'héritier des Fitzgerald de Kildare, qui gouvernaient l'île pour la Couronne, jette publiquement son épée de fonction et se soulève. La répression détruit la plus puissante famille anglo-irlandaise et met fin au gouvernement de l'Irlande par ses propres grands. Londres administre désormais directement, avec des fonctionnaires et des garnisons venus d'Angleterre.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Thomas_FitzGerald_(10e_comte_de_Kildare)"
+                    },
+                    {
                       "id": "ie5",
+                      "axe": "Conquête anglo-normande et reconquête Tudor (1169-1607)",
                       "date": 1541,
                       "titre": "Proclamation du royaume d'Irlande",
-                      "description": "Le Parlement irlandais proclame Henri VIII roi d'Irlande, formalisant la souveraineté anglaise sur l'île et amorçant une politique de colonisation plus systématique.",
+                      "description": "Le Parlement de Dublin proclame Henri VIII roi d'Irlande, alors que les souverains anglais n'y portaient jusque-là que le titre de seigneur, concédé par le pape. Le changement supprime toute prétention pontificale sur l'île et affirme une souveraineté directe. Il ouvre la politique de « soumission et restitution » par laquelle les chefs gaéliques échangent leurs titres traditionnels contre des titres anglais.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Royaume_d%27Irlande"
                     },
                     {
+                      "id": "ien12",
+                      "axe": "Conquête anglo-normande et reconquête Tudor (1169-1607)",
+                      "date": 1595,
+                      "titre": "Hugh O'Neill et la guerre de Neuf Ans",
+                      "description": "Élevé en Angleterre et comte de Tyrone par faveur royale, O'Neill se retourne contre la Couronne et fédère les chefs d'Ulster en une coalition dotée d'armes à feu et de mercenaires écossais. Sa victoire du Yellow Ford, en 1598, est la plus lourde défaite anglaise en Irlande. La guerre, la plus coûteuse du règne d'Élisabeth, s'achèvera par la défaite de Kinsale et la soumission de l'Ulster.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Guerre_de_Neuf_Ans_en_Irlande"
+                    },
+                    {
                       "id": "ie6",
+                      "axe": "Conquête anglo-normande et reconquête Tudor (1169-1607)",
                       "date": 1601,
                       "titre": "Bataille de Kinsale",
-                      "description": "La défaite des forces gaéliques irlandaises et de leurs alliés espagnols face aux troupes anglaises marque la fin de la résistance de l'aristocratie gaélique dans le nord de l'île.",
+                      "description": "Une flotte espagnole débarque à Kinsale, à l'autre bout du pays, pour soutenir les comtes d'Ulster révoltés ; ceux-ci doivent traverser toute l'Irlande en plein hiver pour la rejoindre. La bataille tourne au désastre pour l'armée gaélique, épuisée et prise entre deux feux. La défaite met fin à la guerre de Neuf Ans et brise définitivement la puissance militaire de l'ordre gaélique.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_Kinsale"
                     },
                     {
                       "id": "ie7",
+                      "axe": "Conquête anglo-normande et reconquête Tudor (1169-1607)",
                       "date": 1607,
                       "titre": "Fuite des comtes",
-                      "description": "Les grands chefs gaéliques d'Ulster s'exilent définitivement sur le continent, événement symbolique qui ouvre la voie à la colonisation anglaise et écossaise massive de la province.",
+                      "description": "Quatre ans après leur reddition, les comtes de Tyrone et de Tyrconnell embarquent secrètement à Rathmullan avec une centaine de proches pour gagner le continent, espérant y lever une armée. Ils ne reviendront jamais et mourront en exil à Rome. Leurs terres, déclarées confisquées, serviront à la plantation de l'Ulster, dont découle la division confessionnelle du nord de l'île.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Fuite_des_comtes"
                     },
                     {
+                      "id": "ien14",
+                      "axe": "Ascendancy, Union et Grande Famine (1607-1850)",
+                      "date": 1641,
+                      "titre": "Le soulèvement de 1641 et les massacres d'Ulster",
+                      "description": "Des propriétaires catholiques dépossédés se soulèvent pour reprendre leurs terres ; la révolte échappe à ses chefs et des milliers de colons protestants sont tués ou chassés en plein hiver. Les récits, amplifiés par la propagande, fixent en Angleterre l'image d'une Irlande catholique meurtrière. Ils serviront à justifier la brutalité de la conquête cromwellienne huit ans plus tard.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9bellion_irlandaise_de_1641"
+                    },
+                    {
+                      "id": "ien15",
+                      "axe": "Ascendancy, Union et Grande Famine (1607-1850)",
+                      "date": 1652,
+                      "titre": "« En enfer ou dans le Connaught »",
+                      "description": "Après la conquête, le Parlement anglais confisque la terre de la quasi-totalité des propriétaires catholiques et les déporte à l'ouest du Shannon, dans les comtés les plus pauvres. Les terres saisies rétribuent les soldats et les prêteurs de la guerre. La part du sol détenue par des catholiques tombe de soixante à moins de vingt pour cent : c'est le plus grand transfert de propriété de l'histoire irlandaise.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Conqu%C3%AAte_cromwellienne_de_l%27Irlande"
+                    },
+                    {
                       "id": "ie8",
+                      "axe": "Ascendancy, Union et Grande Famine (1607-1850)",
                       "date": 1690,
                       "titre": "Bataille de la Boyne",
-                      "description": "Le roi protestant Guillaume III d'Orange-Nassau bat le roi catholique déchu Jacques II, consolidant la domination protestante en Irlande pour plus d'un siècle.",
+                      "description": "Le roi protestant Guillaume III bat près de la Boyne son beau-père Jacques II, catholique et déchu du trône d'Angleterre, dans une bataille où s'affrontent aussi des intérêts européens : le pape soutient alors Guillaume contre Louis XIV. La défaite jacobite, consommée l'année suivante à Aughrim, entraîne la confiscation des dernières grandes propriétés catholiques. L'anniversaire de la bataille reste commémoré chaque 12 juillet par les défilés de l'ordre d'Orange.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_de_la_Boyne"
                     },
                     {
+                      "id": "ien16",
+                      "axe": "Ascendancy, Union et Grande Famine (1607-1850)",
+                      "date": 1695,
+                      "titre": "Les lois pénales privent les catholiques de terre et d'école",
+                      "description": "Une série de lois interdit aux catholiques d'acheter des terres, de prendre des baux longs, d'enseigner, de porter les armes ou d'envoyer leurs enfants étudier à l'étranger, et morcelle leurs héritages entre tous les fils sauf conversion de l'aîné. Le clergé est banni et les écoles se tiennent clandestinement derrière les haies. En un siècle, la part catholique du sol tombe à environ cinq pour cent.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Lois_p%C3%A9nales_(Irlande)"
+                    },
+                    {
+                      "id": "ien17",
+                      "axe": "Ascendancy, Union et Grande Famine (1607-1850)",
+                      "date": 1782,
+                      "titre": "Le parlement de Grattan obtient l'autonomie législative",
+                      "description": "Profitant de l'affaiblissement britannique pendant la guerre d'Amérique et de la pression des corps de Volontaires armés, les députés obtiennent l'abrogation de la loi Poynings et le droit de légiférer seuls. Ce patriotisme reste protestant : l'exécutif est toujours nommé à Londres et la majorité catholique demeure exclue. L'expérience durera dix-huit ans, jusqu'à ce que l'Union supprime le Parlement lui-même.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Henry_Grattan"
+                    },
+                    {
+                      "id": "ien18",
+                      "axe": "Ascendancy, Union et Grande Famine (1607-1850)",
+                      "date": 1798,
+                      "titre": "Les United Irishmen soulèvent le Wexford",
+                      "description": "Inspirés par la France révolutionnaire et rassemblant protestants dissidents et catholiques, les United Irishmen se soulèvent sans coordination ; seuls les insurgés du Wexford tiennent plusieurs semaines avant d'être écrasés à Vinegar Hill. Un débarquement français arrive trop tard et capitule dans le Mayo. Les trente mille morts de la répression convainquent Londres qu'il faut supprimer le Parlement de Dublin.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9bellion_irlandaise_de_1798"
+                    },
+                    {
                       "id": "ie9",
+                      "axe": "Ascendancy, Union et Grande Famine (1607-1850)",
                       "date": 1801,
                       "titre": "Acte d'Union",
-                      "description": "Le royaume d'Irlande fusionne avec la Grande-Bretagne pour former le Royaume-Uni de Grande-Bretagne et d'Irlande, supprimant le Parlement irlandais de Dublin.",
+                      "description": "Voté par le Parlement de Dublin à force de pairies et de pensions distribuées après un premier rejet, l'Acte d'Union supprime ce Parlement et envoie cent députés à Westminster. L'émancipation des catholiques, promise pour accompagner l'Union, est bloquée par George III. Cette promesse non tenue fournit au nationalisme irlandais son grief fondateur pour tout le siècle.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Acte_d%27Union_de_1800"
                     },
                     {
+                      "id": "ien19",
+                      "axe": "Ascendancy, Union et Grande Famine (1607-1850)",
+                      "date": 1829,
+                      "titre": "Daniel O'Connell arrache l'émancipation",
+                      "description": "Après avoir bâti la première organisation de masse moderne, financée par une cotisation d'un penny collectée à la porte des églises, O'Connell se fait élire dans le comté de Clare alors qu'il ne peut légalement siéger. Devant le risque de soulèvement, Londres ouvre le Parlement aux catholiques. La même loi multiplie par cinq le cens électoral, privant du vote les petits fermiers qui avaient fait sa victoire.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89mancipation_des_catholiques"
+                    },
+                    {
                       "id": "ie10",
+                      "axe": "Ascendancy, Union et Grande Famine (1607-1850)",
                       "date": 1845,
                       "titre": "Grande famine",
-                      "description": "Le mildiou détruit plusieurs récoltes successives de pommes de terre, aliment de base de la paysannerie irlandaise, provoquant environ un million de morts et une émigration massive.",
+                      "description": "Le mildiou détruit plusieurs récoltes successives de pommes de terre, unique aliment de près de la moitié de la population, tandis que blé et bétail continuent d'être exportés vers l'Angleterre sous escorte militaire. Un million de personnes meurent de faim et de maladie, un million d'autres émigrent en quelques années. La population de l'île, qui atteignait huit millions, n'a jamais retrouvé ce niveau depuis.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Grande_famine_en_Irlande"
                     },
                     {
+                      "id": "ien20",
+                      "axe": "Ascendancy, Union et Grande Famine (1607-1850)",
+                      "date": 1847,
+                      "titre": "Un million de morts, un million de départs",
+                      "description": "L'année la plus meurtrière de la famine voit se multiplier les expulsions de fermiers insolvables, les workhouses saturées et les traversées sur des navires surchargés où le typhus tue avant l'arrivée. La clause Gregory refuse toute aide à quiconque détient plus d'un quart d'acre, contraignant les paysans à abandonner leur terre pour manger. La diaspora née de cet exode financera plus tard le nationalisme irlandais depuis l'Amérique.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Grande_famine_irlandaise"
+                    },
+                    {
+                      "id": "ien21",
+                      "axe": "Renaissance nationale et indépendance (1850-1949)",
+                      "date": 1879,
+                      "titre": "La guerre de la Terre et la Land League",
+                      "description": "Face aux expulsions massives qui suivent une nouvelle crise agricole, Michael Davitt et Charles Stewart Parnell organisent les fermiers pour obtenir la baisse des loyers et la sécurité du bail. L'ostracisme appliqué à l'intendant Charles Boycott donne un mot nouveau à toutes les langues d'Europe. Les lois foncières arrachées en vingt ans transféreront la propriété du sol des grands propriétaires aux exploitants eux-mêmes.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Guerre_agraire_(Irlande)"
+                    },
+                    {
+                      "id": "ien22",
+                      "axe": "Renaissance nationale et indépendance (1850-1949)",
+                      "date": 1893,
+                      "titre": "La Ligue gaélique et le renouveau de la langue",
+                      "description": "Douglas Hyde et Eoin MacNeill fondent une organisation vouée à sauver l'irlandais, alors en recul rapide, et à « dé-angliciser » la culture du pays. Cours du soir, concours littéraires et sports gaéliques touchent des dizaines de milliers de personnes. Apolitique en principe, la Ligue forme la génération qui fera l'insurrection de 1916 : Pearse et Collins y font leurs classes.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Ligue_ga%C3%A9lique"
+                    },
+                    {
+                      "id": "ien23",
+                      "axe": "Renaissance nationale et indépendance (1850-1949)",
+                      "date": 1912,
+                      "titre": "Le Covenant d'Ulster et la crise du Home Rule",
+                      "description": "Quand Londres s'apprête enfin à accorder l'autonomie à l'Irlande, près d'un demi-million d'unionistes d'Ulster signent un engagement solennel à s'y opposer par tous les moyens, certains de leur sang. Des milices armées se forment des deux côtés et des officiers britanniques menacent de refuser d'agir contre elles. La guerre mondiale suspend la crise, mais la partition est déjà, de fait, à l'ordre du jour.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Covenant_d%27Ulster"
+                    },
+                    {
                       "id": "ie11",
+                      "axe": "Renaissance nationale et indépendance (1850-1949)",
                       "date": 1916,
                       "titre": "Insurrection de Pâques",
-                      "description": "Des républicains armés s'emparent de plusieurs bâtiments de Dublin et proclament la République irlandaise ; l'insurrection est écrasée, mais l'exécution de ses meneurs galvanise le mouvement indépendantiste.",
+                      "description": "Quelque mille cinq cents insurgés occupent la Grande Poste de Dublin pendant la semaine de Pâques et proclament une République irlandaise, alors que la population leur est d'abord hostile. Après six jours de bombardements, ils se rendent. L'exécution de seize meneurs en quelques semaines retourne complètement l'opinion et transforme un échec militaire en fondation du nationalisme moderne.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Insurrection_de_P%C3%A2ques"
                     },
                     {
                       "id": "ie12",
+                      "axe": "Renaissance nationale et indépendance (1850-1949)",
                       "date": 1919,
                       "titre": "Guerre d'indépendance irlandaise",
-                      "description": "L'Armée républicaine irlandaise mène une guérilla contre les forces britanniques, conflit qui débouche sur des négociations et la partition de l'île.",
+                      "description": "Les députés du Sinn Féin élus en 1918 refusent de siéger à Westminster, forment leur propre assemblée à Dublin et déclarent l'indépendance ; l'IRA lance parallèlement une guérilla contre la police et l'armée. Les représailles des Black and Tans contre les civils choquent l'opinion britannique elle-même. Deux ans et demi de guerre irrégulière conduisent Londres à négocier.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Guerre_d%27ind%C3%A9pendance_irlandaise"
                     },
                     {
+                      "id": "ien24",
+                      "axe": "Renaissance nationale et indépendance (1850-1949)",
+                      "date": 1920,
+                      "titre": "La partition de l'île en deux Parlements",
+                      "description": "Le Government of Ireland Act crée deux parlements autonomes, l'un à Dublin, l'autre à Belfast pour six des neuf comtés d'Ulster, choisis pour garantir une majorité unioniste durable. Seul le second fonctionnera, le Sud étant en pleine guerre d'indépendance. La frontière ainsi tracée, censée être provisoire et révisable, deviendra la plus durable et la plus contestée des divisions irlandaises.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Loi_sur_le_gouvernement_de_l%27Irlande_de_1920"
+                    },
+                    {
                       "id": "ie13",
+                      "axe": "Renaissance nationale et indépendance (1850-1949)",
                       "date": 1921,
                       "titre": "Traité anglo-irlandais",
-                      "description": "Le traité crée l'État libre d'Irlande, dominion autonome au sein de l'Empire britannique, tout en maintenant l'Irlande du Nord dans le Royaume-Uni.",
+                      "description": "Signé à Londres après des mois de pourparlers, le traité crée un État libre d'Irlande doté du statut de dominion, avec serment d'allégeance à la Couronne et maintien de ports sous contrôle britannique. Il laisse l'Irlande du Nord libre de s'en retirer, ce qu'elle fait aussitôt. Michael Collins le présente comme la liberté d'obtenir la liberté ; ses adversaires y voient une trahison de la République proclamée en 1916.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Trait%C3%A9_anglo-irlandais"
                     },
                     {
                       "id": "ie14",
+                      "axe": "Renaissance nationale et indépendance (1850-1949)",
                       "date": 1922,
                       "titre": "Guerre civile irlandaise",
-                      "description": "Les partisans et les adversaires du traité anglo-irlandais s'affrontent dans une guerre civile brève mais très meurtrière, remportée par les pro-traité.",
+                      "description": "Partisans et adversaires du traité, compagnons d'armes la veille encore, s'affrontent pendant onze mois ; le gouvernement de l'État libre bombarde les Four Courts de Dublin avec des canons prêtés par Londres. Michael Collins est tué dans une embuscade dans son propre comté. Le conflit fait plus de morts que la guerre d'indépendance et détermine pour soixante-dix ans le clivage entre les deux grands partis irlandais.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Guerre_civile_irlandaise"
                     },
                     {
                       "id": "ie15",
+                      "axe": "Renaissance nationale et indépendance (1850-1949)",
                       "date": 1937,
                       "titre": "Nouvelle Constitution",
-                      "description": "L'Irlande adopte une nouvelle Constitution, Bunreacht na hÉireann, qui rompt largement avec le statut de dominion sans encore proclamer formellement la République.",
+                      "description": "Rédigée sous l'autorité d'Éamon de Valera, la Constitution remplace l'État libre par l'Éire, supprime le serment à la Couronne, revendique les six comtés du Nord et reconnaît une « position spéciale » à l'Église catholique. Elle inscrit également la place de la femme au foyer, disposition longtemps critiquée. Elle reste, amendée, la loi fondamentale du pays.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Constitution_de_l%27Irlande"
                     },
                     {
                       "id": "ie16",
+                      "axe": "Renaissance nationale et indépendance (1850-1949)",
                       "date": 1949,
                       "titre": "Proclamation de la République d'Irlande",
-                      "description": "La loi de 1948 sur la République d'Irlande entre en vigueur, rompant les derniers liens constitutionnels avec la Couronne britannique et faisant sortir le pays du Commonwealth.",
+                      "description": "Le Parlement de Dublin rompt les derniers liens avec le Commonwealth et proclame la République, mesure prise par un gouvernement de coalition et non par le parti de de Valera. Londres répond par une loi garantissant que l'Irlande du Nord restera britannique tant que son Parlement le voudra. L'indépendance est complète au sud, la partition durablement verrouillée au nord.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9publique_d%27Irlande"
                     },
                     {
+                      "id": "ien25",
+                      "axe": "L'Irlande contemporaine (depuis 1949)",
+                      "date": 1969,
+                      "titre": "Les Troubles éclatent à Derry et Belfast",
+                      "description": "La répression des marches pour les droits civiques, qui réclamaient un logement et un vote équitables pour la minorité catholique, dégénère en affrontements de rue puis en émeutes ; Londres envoie l'armée, d'abord accueillie comme une protection. Les barricades se dressent, les quartiers se ferment, l'IRA se scinde et renaît. Commencent trente ans de conflit qui feront plus de trois mille cinq cents morts.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Conflit_nord-irlandais"
+                    },
+                    {
+                      "id": "ien26",
+                      "axe": "L'Irlande contemporaine (depuis 1949)",
+                      "date": 1972,
+                      "titre": "Treize morts à Derry et la fin de Stormont",
+                      "description": "Des parachutistes britanniques ouvrent le feu sur une manifestation contre l'internement sans jugement et tuent treize personnes désarmées, une quatorzième mourant plus tard. L'enquête officielle immédiate blanchit les militaires ; il faudra trente-huit ans et le rapport Saville pour que Londres reconnaisse des tirs injustifiés. Le choc gonfle les rangs de l'IRA et conduit à la suspension du Parlement d'Irlande du Nord, désormais administrée directement.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Bloody_Sunday_(1972)"
+                    },
+                    {
                       "id": "ie17",
+                      "axe": "L'Irlande contemporaine (depuis 1949)",
                       "date": 1973,
                       "titre": "Adhésion à la Communauté économique européenne",
-                      "description": "L'Irlande rejoint la CEE en même temps que le Royaume-Uni et le Danemark, un tournant économique majeur qui réduit sa dépendance historique envers le marché britannique.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89largissement_de_la_Communaut%C3%A9_%C3%A9conomique_europ%C3%A9enne_de_1973"
+                      "description": "Le pays entre dans la Communauté européenne le même jour que le Royaume-Uni, dont il dépendait jusque-là pour les trois quarts de ses exportations. Les fonds structurels et la politique agricole commune transforment l'économie d'un des États les plus pauvres d'Europe occidentale. L'adhésion desserre aussi, pour la première fois depuis l'indépendance, la dépendance économique et diplomatique envers Londres.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Proc%C3%A9dure_d%27adh%C3%A9sion_de_l%27Irlande_aux_Communaut%C3%A9s_europ%C3%A9ennes"
+                    },
+                    {
+                      "id": "ien27",
+                      "axe": "L'Irlande contemporaine (depuis 1949)",
+                      "date": 1981,
+                      "titre": "Bobby Sands élu député en prison",
+                      "description": "Pour obtenir le statut de prisonnier politique, des détenus républicains entament une grève de la faim après quatre ans de protestation ; Bobby Sands est élu à Westminster au vingt-cinquième jour de jeûne. Il meurt au soixante-sixième, suivi de neuf autres grévistes. Son enterrement rassemble cent mille personnes et révèle au Sinn Féin la puissance de l'arme électorale, qui le mènera vingt ans plus tard à la table des négociations.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Gr%C3%A8ve_de_la_faim_irlandaise_de_1981"
+                    },
+                    {
+                      "id": "ien28",
+                      "axe": "L'Irlande contemporaine (depuis 1949)",
+                      "date": 1995,
+                      "titre": "La décennie du Tigre celtique",
+                      "description": "Fiscalité attractive, main-d'œuvre jeune et anglophone, fonds européens et investissements américains font passer l'Irlande, en dix ans, du rang des pays les plus pauvres d'Europe occidentale à l'un des plus riches par habitant. L'émigration s'inverse pour la première fois depuis la famine. La croissance se déplace ensuite vers une bulle immobilière et bancaire dont l'éclatement coûtera très cher.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Tigre_celtique"
                     },
                     {
                       "id": "ie18",
+                      "axe": "L'Irlande contemporaine (depuis 1949)",
                       "date": 1998,
                       "titre": "Accord du Vendredi saint",
-                      "description": "Signé à Belfast, l'accord met fin à trois décennies de conflit nord-irlandais en instaurant un partage du pouvoir entre communautés et une coopération institutionnelle entre Dublin, Belfast et Londres.",
+                      "description": "Négocié à Belfast sous médiation américaine, l'accord crée une assemblée et un exécutif où unionistes et nationalistes doivent gouverner ensemble, ainsi que des institutions communes aux deux parties de l'île. Il fait dépendre tout changement de statut du consentement de la majorité en Irlande du Nord, ce que la République acte en renonçant par référendum à sa revendication territoriale. Approuvé des deux côtés de la frontière, il met fin à trente ans de violences.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Accord_du_Vendredi_saint"
                     },
                     {
+                      "id": "ien29",
+                      "axe": "L'Irlande contemporaine (depuis 1949)",
+                      "date": 2008,
+                      "titre": "L'effondrement bancaire et la troïka",
+                      "description": "La garantie totale accordée en une nuit aux dettes des banques irlandaises transfère à l'État des pertes colossales et fait exploser le déficit. Dublin doit accepter en 2010 un plan de sauvetage de la Commission, de la Banque centrale européenne et du FMI, assorti d'une austérité sévère. Le pays sort du programme en 2013 et renoue avec la croissance, au prix d'une décennie de chômage et d'émigration retrouvée.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Crise_financi%C3%A8re_irlandaise"
+                    },
+                    {
                       "id": "ie19",
+                      "axe": "L'Irlande contemporaine (depuis 1949)",
                       "date": 2011,
                       "titre": "Visite d'État d'Élisabeth II",
-                      "description": "La reine Élisabeth II effectue la première visite d'État d'un monarque britannique en République d'Irlande depuis l'indépendance, geste hautement symbolique de réconciliation.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Visite_d%27%C3%89tat_d%27%C3%89lisabeth_II_en_Irlande"
+                      "description": "Première visite d'un souverain britannique depuis l'indépendance, elle voit la reine s'incliner au Jardin du Souvenir devant les morts des combats contre la Couronne et prononcer quelques mots en irlandais. Elle se rend aussi à Croke Park, où l'armée britannique avait tué quatorze personnes en 1920. Ces gestes, longuement négociés, scellent la normalisation des relations entre les deux États.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Relations_entre_l%27Irlande_et_le_Royaume-Uni"
                     },
                     {
                       "id": "ie20",
+                      "axe": "L'Irlande contemporaine (depuis 1949)",
                       "date": 2015,
                       "titre": "Référendum sur le mariage homosexuel",
-                      "description": "L'Irlande devient le premier pays au monde à légaliser le mariage entre personnes de même sexe par référendum populaire, avec plus de 62 % des suffrages favorables.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9f%C3%A9rendum_irlandais_de_2015_sur_le_mariage_homosexuel"
+                      "description": "Par référendum, les Irlandais approuvent à 62 % l'ouverture du mariage aux couples de même sexe, faisant de leur pays le premier au monde à l'adopter par vote populaire. Le résultat est d'autant plus remarquable que l'homosexualité n'y était dépénalisée que depuis 1993. Il mesure l'effondrement, en une génération, de l'emprise de l'Église catholique sur la société irlandaise.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9f%C3%A9rendum_irlandais_sur_le_mariage_entre_personnes_de_m%C3%AAme_sexe"
                     },
                     {
                       "id": "ie21",
+                      "axe": "L'Irlande contemporaine (depuis 1949)",
                       "date": 2018,
                       "titre": "Référendum sur l'avortement",
-                      "description": "Les électeurs irlandais abrogent massivement le huitième amendement de la Constitution qui encadrait strictement l'avortement, ouvrant la voie à sa légalisation.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9f%C3%A9rendum_irlandais_de_2018_sur_l%27avortement"
+                      "description": "Le référendum abroge à 66 % le huitième amendement, qui accordait au fœtus un droit à la vie égal à celui de la mère et interdisait l'avortement en presque toutes circonstances. La campagne a été marquée par la mort de Savita Halappanavar, à qui une interruption avait été refusée en 2012. Avec le mariage homosexuel et la démission de l'Église après les scandales d'abus, il achève la sécularisation du pays.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9f%C3%A9rendum_constitutionnel_irlandais_de_2018_sur_l%27acc%C3%A8s_%C3%A0_l%27avortement"
                     }
+                  ],
+                  "essentiel": [
+                    "ie1",
+                    "ie2",
+                    "ie3",
+                    "ie4",
+                    "ie5",
+                    "ie7",
+                    "ie8",
+                    "ie9",
+                    "ie10",
+                    "ie11",
+                    "ie12",
+                    "ie13",
+                    "ie14",
+                    "ie16",
+                    "ie17",
+                    "ie18",
+                    "ie20",
+                    "ie21",
+                    "ien1",
+                    "ien5",
+                    "ien6",
+                    "ien7",
+                    "ien10",
+                    "ien14",
+                    "ien16",
+                    "ien18",
+                    "ien19",
+                    "ien24",
+                    "ien25",
+                    "ien27"
                   ]
                 },
                 {
@@ -121145,140 +121743,447 @@
                   "id": "thm_dz",
                   "nom": "Histoire de l'Algérie 🇩🇿",
                   "difficulte": "Intermédiaire",
+                  "axeOrder": [
+                    "Numidie, Rome et l'Afrique chrétienne (jusqu'en 647)",
+                    "Conquête arabe et dynasties berbères (647-1516)",
+                    "La Régence d'Alger (1516-1830)",
+                    "La conquête française et le système colonial (1830-1954)",
+                    "La guerre de libération nationale (1954-1962)",
+                    "L'Algérie indépendante (depuis 1962)"
+                  ],
                   "events": [
                     {
                       "id": "dz1",
+                      "axe": "Numidie, Rome et l'Afrique chrétienne (jusqu'en 647)",
                       "date": -202,
                       "titre": "Massinissa unifie la Numidie",
-                      "description": "Le roi berbère Massinissa parvient à unifier l'ensemble du royaume de Numidie, ancêtre lointain de l'Algérie actuelle, allié de Rome contre Carthage.",
+                      "description": "Chef des Massyles rallié à Rome pendant la deuxième guerre punique, Massinissa reçoit après Zama le royaume de son rival Syphax et unifie la Numidie. Son règne de plus de cinquante ans y installe une monnaie, une agriculture sédentaire et une capitale à Cirta, l'actuelle Constantine. Les manuels algériens en font le premier État structuré du territoire, bien antérieur à toute présence arabe ou européenne.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Massinissa"
                     },
                     {
+                      "id": "dzn1",
+                      "axe": "Numidie, Rome et l'Afrique chrétienne (jusqu'en 647)",
+                      "date": -112,
+                      "titre": "Jugurtha tient tête à Rome",
+                      "description": "Petit-fils de Massinissa, Jugurtha élimine ses cousins et résiste sept ans aux légions, achetant au passage assez de sénateurs pour que Salluste qualifie Rome de « ville à vendre ». Trahi et livré par son beau-père Bocchus, il meurt étranglé dans une prison romaine. Il demeure dans la mémoire algérienne la figure inaugurale de la résistance à l'occupation étrangère.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Jugurtha"
+                    },
+                    {
+                      "id": "dzn2",
+                      "axe": "Numidie, Rome et l'Afrique chrétienne (jusqu'en 647)",
+                      "date": -46,
+                      "titre": "La Numidie devient province romaine",
+                      "description": "Après la défaite et le suicide du roi Juba Ier, allié de Pompée contre César, le royaume est transformé en province d'Africa Nova. Les colonies de vétérans quadrillent progressivement la côte et les hautes plaines céréalières, tandis qu'un limes marque la limite mouvante avec les populations du Sud restées autonomes. L'Algérie antique devient l'un des greniers à blé et à huile de l'Empire.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Province_d%27Afrique"
+                    },
+                    {
+                      "id": "dzn3",
+                      "axe": "Numidie, Rome et l'Afrique chrétienne (jusqu'en 647)",
+                      "date": 17,
+                      "titre": "Tacfarinas soulève les Musulames",
+                      "description": "Ancien auxiliaire de l'armée romaine, Tacfarinas prend la tête des tribus dépossédées de leurs terres de parcours par la colonisation et mène sept ans une guerre de harcèlement qui mobilise plusieurs légions. Tacite lui consacre un long récit. Les programmes algériens y lisent la première résistance organisée à une occupation fondée sur la confiscation foncière.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Tacfarinas"
+                    },
+                    {
+                      "id": "dzn4",
+                      "axe": "Numidie, Rome et l'Afrique chrétienne (jusqu'en 647)",
+                      "date": 100,
+                      "titre": "Timgad, colonie de vétérans",
+                      "description": "Fondée par Trajan pour les anciens soldats de la IIIe légion Auguste, Timgad déploie au pied des Aurès un plan en damier parfait avec forum, théâtre, thermes et bibliothèque. Avec Djemila, Tipasa et Cherchell, elle témoigne d'une Afrique romaine urbaine et prospère. Ces ruines, parmi les mieux conservées du monde romain, figurent aujourd'hui au patrimoine mondial.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Timgad"
+                    },
+                    {
+                      "id": "dzn5",
+                      "axe": "Numidie, Rome et l'Afrique chrétienne (jusqu'en 647)",
+                      "date": 313,
+                      "titre": "Le donatisme divise l'Église d'Afrique",
+                      "description": "Le refus d'accepter des évêques qui avaient livré les Écritures pendant la persécution scinde l'Église africaine en deux hiérarchies rivales. Majoritaire en Numidie, le donatisme s'enracine dans les campagnes berbérophones et se double d'une contestation sociale, celle des circoncellions. Le conflit durera plus d'un siècle malgré les condamnations impériales.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Donatisme"
+                    },
+                    {
+                      "id": "dzn6",
+                      "axe": "Numidie, Rome et l'Afrique chrétienne (jusqu'en 647)",
+                      "date": 430,
+                      "titre": "Augustin meurt dans Hippone assiégée",
+                      "description": "Né à Thagaste, l'actuelle Souk Ahras, évêque d'Hippone devenue Annaba, Augustin meurt pendant le siège de sa ville par les Vandales. Son œuvre, forgée dans la controverse avec les donatistes et les manichéens, fait de l'Afrique du Nord l'un des grands foyers intellectuels du christianisme ancien. Les Confessions et la Cité de Dieu resteront lues sans interruption pendant seize siècles.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Augustin_d%27Hippone"
+                    },
+                    {
+                      "id": "dzn7",
+                      "axe": "Numidie, Rome et l'Afrique chrétienne (jusqu'en 647)",
+                      "date": 533,
+                      "titre": "Byzance reprend l'Afrique aux Vandales",
+                      "description": "Le général Bélisaire, envoyé par Justinien, défait les Vandales en deux batailles et rétablit l'autorité impériale en quelques mois. Byzance fortifie les villes et rebâtit les églises, mais affronte un siècle durant les révoltes des tribus de l'intérieur et les querelles religieuses. Cette domination mal enracinée cédera vite devant les armées arabes.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Guerre_des_Vandales"
+                    },
+                    {
+                      "id": "dzn8",
+                      "axe": "Conquête arabe et dynasties berbères (647-1516)",
+                      "date": 683,
+                      "titre": "Kusayla reprend Kairouan",
+                      "description": "Chef berbère des Awraba, un temps rallié aux musulmans puis humilié par Oqba ibn Nafi, Kusayla le surprend et le tue près de Biskra, puis tient Kairouan plusieurs années. Sa mort au combat ouvre la voie à la résistance de la Kahina dans les Aurès. Les manuels algériens font de ces deux figures les symboles d'une conquête qui mit un demi-siècle à aboutir.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Koce%C3%AFla"
+                    },
+                    {
+                      "id": "dzn9",
+                      "axe": "Conquête arabe et dynasties berbères (647-1516)",
+                      "date": 740,
+                      "titre": "La révolte kharidjite des Berbères",
+                      "description": "Les tribus se soulèvent contre une fiscalité omeyyade qui les traitait en sujets tributaires malgré leur conversion, et adoptent le kharidjisme, doctrine selon laquelle tout musulman peut devenir calife, fût-il esclave. La défaite des armées de Damas soustrait durablement le Maghreb central à l'autorité orientale. L'islam s'enracine ainsi au Maghreb sous une forme contestataire et égalitaire.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Grande_r%C3%A9volte_berb%C3%A8re"
+                    },
+                    {
+                      "id": "dzn10",
+                      "axe": "Conquête arabe et dynasties berbères (647-1516)",
+                      "date": 761,
+                      "titre": "L'imamat ibadite de Tahert",
+                      "description": "Les kharidjites ibadites établissent près de l'actuelle Tiaret un imamat électif réputé pour sa frugalité, son ouverture aux savants et son commerce transsaharien avec le pays de l'or. Détruit par les Fatimides en 909, il survit dans les communautés ibadites du Mzab, autour de Ghardaïa. Celles-ci perpétuent aujourd'hui encore cette tradition religieuse et son architecture de villes fortifiées.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Rost%C3%A9mides"
+                    },
+                    {
+                      "id": "dzn11",
+                      "axe": "Conquête arabe et dynasties berbères (647-1516)",
+                      "date": 972,
+                      "titre": "Le Maghreb central aux Zirides",
+                      "description": "Partis conquérir l'Égypte, les Fatimides confient le Maghreb à leurs lieutenants berbères sanhadja, les Zirides, qui deviennent rapidement autonomes. Leur rupture avec Le Caire provoquera l'envoi des tribus hilaliennes au milieu du XIe siècle. Cette séquence, longtemps décrite comme une catastrophe par Ibn Khaldoun, est aujourd'hui lue surtout comme une étape décisive de l'arabisation des campagnes.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Zirides"
+                    },
+                    {
+                      "id": "dzn12",
+                      "axe": "Conquête arabe et dynasties berbères (647-1516)",
+                      "date": 1007,
+                      "titre": "La capitale fortifiée des Hammadides",
+                      "description": "Une branche ziride fonde dans les monts du Hodna la Qal'a des Beni Hammad, dotée d'un minaret de vingt-cinq mètres, de palais à bassins et de canalisations, avant de transférer le pouvoir à Béjaïa. Les Hammadides font du Maghreb central un royaume distinct de l'Ifriqiya. L'historiographie algérienne y voit une première esquisse territoriale du pays.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Hammadides"
+                    },
+                    {
+                      "id": "dzn31",
+                      "axe": "Conquête arabe et dynasties berbères (647-1516)",
+                      "date": 1082,
+                      "titre": "Les Almoravides atteignent Alger",
+                      "description": "Venus du Sahara et maîtres du Maroc, les Almoravides de Youssef ibn Tachfine poussent vers l'est et prennent Alger, mettant fin à l'autonomie hammadide sur le littoral central. Leur empire relie pour la première fois le fleuve Sénégal à l'Èbre, faisant transiter l'or soudanais par les villes du Maghreb. Le Maghreb central devient une province périphérique d'un pouvoir dont le centre est désormais Marrakech.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Almoravides"
+                    },
+                    {
+                      "id": "dzn13",
+                      "axe": "Conquête arabe et dynasties berbères (647-1516)",
+                      "date": 1152,
+                      "titre": "Abd al-Mumin soumet Béjaïa",
+                      "description": "Le successeur d'Ibn Toumart, lui-même originaire de la région de Tlemcen, prend Béjaïa puis écrase les Hilaliens à Sétif, réunissant tout le Maghreb et al-Andalus sous une même autorité almohade. C'est la seule fois de l'histoire où l'ensemble de l'Afrique du Nord occidentale est gouverné depuis un même centre. L'unité se défait après la défaite de Las Navas de Tolosa.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Almohades"
+                    },
+                    {
+                      "id": "dzn14",
+                      "axe": "Conquête arabe et dynasties berbères (647-1516)",
+                      "date": 1235,
+                      "titre": "Tlemcen, capitale zianide",
+                      "description": "Le gouverneur almohade Yaghmoracen se proclame indépendant et fonde une dynastie qui régnera trois siècles sur le Maghreb central. Placée au débouché des pistes sahariennes et du port de Honaïne, Tlemcen devient un carrefour commercial et un foyer intellectuel doté de medersas. Marchands catalans et génois y tiennent comptoir, et Ibn Khaldoun y séjourne.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Abdelwadides"
+                    },
+                    {
+                      "id": "dzn15",
+                      "axe": "Conquête arabe et dynasties berbères (647-1516)",
+                      "date": 1509,
+                      "titre": "Les Espagnols à Mers el-Kébir et Oran",
+                      "description": "Après la chute de Grenade, l'Espagne porte la guerre sur la rive sud et enlève Mers el-Kébir puis Oran, Bougie et le rocher face à Alger, imposant tribut aux ports restants. Les villes du littoral, incapables de résister seules, cherchent un protecteur. C'est cette demande qui amènera quelques années plus tard les corsaires ottomans, et avec eux la Régence.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Oran"
+                    },
+                    {
                       "id": "dz2",
+                      "axe": "La Régence d'Alger (1516-1830)",
                       "date": 1516,
                       "titre": "Régence d'Alger",
-                      "description": "Le corsaire Barberousse place Alger sous la protection de l'Empire ottoman, fondant une régence qui dominera la côte algérienne pendant trois siècles.",
+                      "description": "Appelés par les notables d'Alger contre les Espagnols installés sur l'îlot du Peñón, les corsaires Aroudj puis Kheir ed-Din Barberousse prennent la ville, et le second la place sous la souveraineté du sultan ottoman dont il obtient troupes et artillerie. Naît ainsi une Régence qui battra monnaie, lèvera l'impôt et signera des traités. Les historiens algériens y voient un État autonome et non une simple province d'Istanbul.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9gence_d%27Alger"
                     },
                     {
+                      "id": "dzn16",
+                      "axe": "La Régence d'Alger (1516-1830)",
+                      "date": 1541,
+                      "titre": "L'armada de Charles Quint brisée devant Alger",
+                      "description": "L'empereur débarque avec plus de cinq cents navires et vingt-quatre mille hommes pour en finir avec la course algéroise. Une tempête d'automne disperse sa flotte et l'expédition tourne au désastre, Cortés lui-même y participant sans pouvoir rien changer. Cet échec retentissant consolide la Régence, désormais perçue comme capable de tenir tête à la première monarchie d'Europe.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Exp%C3%A9dition_d%27Alger_(1541)"
+                    },
+                    {
+                      "id": "dzn17",
+                      "axe": "La Régence d'Alger (1516-1830)",
+                      "date": 1587,
+                      "titre": "La Régence organisée en pachalik",
+                      "description": "Istanbul divise ses possessions d'Afrique du Nord en trois gouvernements distincts — Alger, Tunis et Tripoli — et nomme à Alger un pacha pour trois ans, assisté de la milice des janissaires. Cette organisation stabilise la Régence mais crée une tension permanente entre le représentant du sultan et les corps locaux. Ceux-ci finiront par prendre le pouvoir pour eux-mêmes.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9gence_d%27Alger"
+                    },
+                    {
+                      "id": "dzn18",
+                      "axe": "La Régence d'Alger (1516-1830)",
+                      "date": 1671,
+                      "titre": "Les deys élus à vie par la milice",
+                      "description": "La milice des janissaires et la corporation des capitaines corsaires imposent l'élection d'un dey qui gouverne à vie, réduisant le pacha ottoman à un rôle honorifique. La Régence bat monnaie, lève l'impôt, signe des traités et déclare la guerre pour son propre compte. Les historiens algériens insistent sur cette souveraineté de fait, qui fait d'Alger un État et non une province.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9gence_d%27Alger"
+                    },
+                    {
+                      "id": "dzn19",
+                      "axe": "La Régence d'Alger (1516-1830)",
+                      "date": 1682,
+                      "titre": "Duquesne bombarde Alger",
+                      "description": "Louis XIV envoie une escadre équipée de galiotes à bombes, arme nouvelle permettant de tirer par-dessus les défenses, pour mettre fin à la course et libérer les captifs chrétiens. Les destructions sont lourdes mais la ville ne cède pas et exécute le consul Jean Le Vacher. L'épisode inaugure deux siècles de relations heurtées entre la France et la Régence.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Bombardement_d%27Alger_(1682)"
+                    },
+                    {
+                      "id": "dzn20",
+                      "axe": "La Régence d'Alger (1516-1830)",
+                      "date": 1792,
+                      "titre": "Le bey Mohamed el-Kébir reprend Oran",
+                      "description": "Après près de trois siècles d'occupation espagnole entrecoupée, le bey de Mascara obtient l'évacuation d'Oran, que le tremblement de terre de 1790 avait ruinée. La Régence retrouve la maîtrise de tout son littoral et installe à Oran le beylik de l'Ouest. C'est l'un des rares cas maghrébins de reconquête complète d'un préside européen.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Oran"
+                    },
+                    {
+                      "id": "dzn21",
+                      "axe": "La Régence d'Alger (1516-1830)",
+                      "date": 1816,
+                      "titre": "L'escadre d'Exmouth détruit la flotte d'Alger",
+                      "description": "Une flotte anglo-néerlandaise bombarde le port pendant neuf heures, détruit les navires de la Régence et impose la libération de milliers de captifs ainsi que l'abolition de l'esclavage des chrétiens. La course, principale ressource extérieure depuis trois siècles, s'effondre. L'État se trouve privé de revenus au moment où les puissances européennes entendent régenter la Méditerranée.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Bombardement_d%27Alger_(1816)"
+                    },
+                    {
+                      "id": "dzn22",
+                      "axe": "La Régence d'Alger (1516-1830)",
+                      "date": 1827,
+                      "titre": "Le dey Hussein frappe le consul Deval",
+                      "description": "Excédé par le refus français de régler une vieille dette de fournitures de blé et par les fortifications élevées à La Calle, le dey frappe le consul de son chasse-mouches au cours d'une audience. Paris exige des excuses puis instaure un blocus naval de trois ans, coûteux et inefficace. L'incident, disproportionné au regard de ses suites, servira de prétexte à l'expédition de 1830.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Hussein_Dey"
+                    },
+                    {
                       "id": "dz3",
+                      "axe": "La conquête française et le système colonial (1830-1954)",
                       "date": 1830,
                       "titre": "Débarquement français à Sidi Fredj",
-                      "description": "Sous prétexte d'un incident diplomatique, une expédition française débarque près d'Alger, marquant le début de la conquête coloniale de l'Algérie.",
+                      "description": "Invoquant l'affront fait à son consul et une dette impayée, la France débarque trente-sept mille hommes à Sidi Fredj et contraint le dey Hussein à capituler trois semaines plus tard, contre la garantie des personnes, des biens et de la religion. Charles X cherchait un succès pour sauver son trône ; il est renversé un mois après. La France, elle, reste, et les engagements de la capitulation sont rapidement bafoués.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Conqu%C3%AAte_de_l%27Alg%C3%A9rie_par_la_France"
                     },
                     {
+                      "id": "dzn23",
+                      "axe": "La conquête française et le système colonial (1830-1954)",
+                      "date": 1832,
+                      "titre": "L'émir Abdelkader prend la tête de la résistance",
+                      "description": "Les tribus de l'Ouest prêtent allégeance au jeune Abdelkader ibn Muhieddine, lettré et fils de chef de confrérie, pour conduire la lutte. Il bâtit un véritable État : impôt régulier, administration, armée permanente en uniforme, ateliers d'armement et villes-entrepôts mobiles. Les manuels algériens y voient la première expression d'un État national moderne sur le territoire.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Abdelkader_(%C3%A9mir)"
+                    },
+                    {
+                      "id": "dzn24",
+                      "axe": "La conquête française et le système colonial (1830-1954)",
+                      "date": 1847,
+                      "titre": "Abdelkader se rend à Lamoricière",
+                      "description": "Après quinze ans de guerre, la destruction de sa smala et l'échec de son repli au Maroc, l'émir dépose les armes contre la promesse d'un exil en Orient. La France ne tient pas parole et le détient cinq ans avant que Napoléon III ne le libère ; il finira sa vie à Damas, où il protégera les chrétiens lors des massacres de 1860. Sa figure domine la mémoire nationale algérienne.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Abdelkader_(%C3%A9mir)"
+                    },
+                    {
                       "id": "dz4",
+                      "axe": "La conquête française et le système colonial (1830-1954)",
                       "date": 1848,
                       "titre": "Rattachement à la France",
-                      "description": "L'Algérie du Nord est officiellement organisée en départements français, tandis que la colonisation de peuplement s'intensifie au détriment des populations autochtones.",
+                      "description": "Une ordonnance divise le nord du pays en trois départements administrés comme ceux de la métropole, avec préfets et conseils généraux, tandis que le Sud reste sous régime militaire. L'Algérie cesse juridiquement d'être une colonie pour devenir une partie de la France, fiction qui rendra l'indépendance d'autant plus difficile à concevoir à Paris. Les musulmans y sont pourtant sujets et non citoyens.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Alg%C3%A9rie_fran%C3%A7aise"
                     },
                     {
                       "id": "dz5",
+                      "axe": "La conquête française et le système colonial (1830-1954)",
                       "date": 1871,
                       "titre": "Insurrection de Mokrani",
-                      "description": "L'une des plus vastes révoltes contre la colonisation française est menée par le cheikh El Mokrani, sévèrement réprimée et suivie de lourdes confiscations de terres.",
-                      "wikipedia": "https://fr.wikipedia.org/wiki/Insurrection_de_Mokrani"
+                      "description": "Profitant de la défaite française face à la Prusse et du transfert du pouvoir aux civils, le bachagha El Mokrani et le chef de la confrérie Rahmaniya Cheikh Haddad soulèvent la Kabylie et une grande partie de l'Est : plus de deux cent cinquante tribus s'engagent. La répression est terrible : exécutions, déportations en Nouvelle-Calédonie, amendes de guerre. Le séquestre de centaines de milliers d'hectares livre les meilleures terres à la colonisation.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9volte_de_Mokrani"
+                    },
+                    {
+                      "id": "dzn25",
+                      "axe": "La conquête française et le système colonial (1830-1954)",
+                      "date": 1881,
+                      "titre": "L'indigénat, un droit d'exception",
+                      "description": "Un ensemble d'infractions spéciales — circuler sans permis, se réunir sans autorisation, tenir des propos jugés irrespectueux — n'est applicable qu'aux « indigènes » et peut être sanctionné sans jugement par l'administrateur lui-même. Régulièrement prorogé jusqu'en 1944, ce régime organise l'infériorité juridique quotidienne des Algériens musulmans. Il s'ajoute à une dépossession foncière que la loi Warnier a accélérée depuis 1873.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Indig%C3%A9nat"
+                    },
+                    {
+                      "id": "dzn26",
+                      "axe": "La conquête française et le système colonial (1830-1954)",
+                      "date": 1926,
+                      "titre": "La première revendication d'indépendance",
+                      "description": "Fondée à Paris dans le milieu ouvrier immigré, l'Étoile nord-africaine de Messali Hadj est la première organisation à réclamer explicitement l'indépendance de l'Algérie, avec une armée nationale, une assemblée élue et la restitution des terres. Dissoute à plusieurs reprises, elle renaît sous d'autres sigles. Le nationalisme algérien naît ainsi en France, parmi les travailleurs émigrés, avant de gagner le pays.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89toile_nord-africaine"
+                    },
+                    {
+                      "id": "dzn27",
+                      "axe": "La conquête française et le système colonial (1830-1954)",
+                      "date": 1936,
+                      "titre": "Le projet Blum-Viollette enterré",
+                      "description": "Le Front populaire propose d'accorder la citoyenneté française, sans abandon du statut personnel, à une élite d'environ vingt mille Algériens. Le texte, pourtant très limité, est enterré sous la pression des élus européens d'Algérie, qui menacent de démissionner en bloc. Son échec ruine le courant assimilationniste incarné par Ferhat Abbas et le pousse vers le nationalisme.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Projet_Blum-Viollette"
                     },
                     {
                       "id": "dz6",
+                      "axe": "La conquête française et le système colonial (1830-1954)",
                       "date": 1945,
                       "titre": "Massacres de Sétif et Guelma",
-                      "description": "La répression sanglante de manifestations nationalistes fait des milliers de victimes algériennes, un traumatisme qui radicalise durablement le mouvement indépendantiste.",
+                      "description": "Le jour même de la victoire alliée, des manifestations nationalistes brandissant le drapeau algérien dégénèrent à Sétif ; des Européens sont tués dans le Constantinois. La répression, menée par l'armée, l'aviation, la marine et des milices, fait des milliers de morts algériens, les estimations variant considérablement. Pour toute une génération de futurs dirigeants du FLN, ce jour marque la fin de l'espoir réformiste.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Massacres_de_S%C3%A9tif_et_Guelma"
                     },
                     {
                       "id": "dz7",
+                      "axe": "La guerre de libération nationale (1954-1962)",
                       "date": 1954,
                       "titre": "Déclenchement de la guerre d'indépendance",
-                      "description": "Le Front de libération nationale (FLN) lance une série d'attentats coordonnés le 1er novembre, marquant le début officiel de la guerre d'Algérie.",
+                      "description": "Dans la nuit du 1er novembre, une trentaine d'attaques coordonnées visent des objectifs militaires et économiques à travers le pays, tandis qu'une proclamation appelle à restaurer un État algérien souverain. Le Front de libération nationale, né de l'Organisation spéciale, se substitue aux partis existants. Militairement modeste, l'opération a une portée politique décisive : elle rend la guerre irréversible.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Toussaint_rouge"
                     },
                     {
+                      "id": "dzn28",
+                      "axe": "La guerre de libération nationale (1954-1962)",
+                      "date": 1955,
+                      "titre": "Philippeville et le basculement de la guerre",
+                      "description": "Youcef Zighoud lance dans le Nord-Constantinois des attaques de masse associant la population civile ; la répression, menée par l'armée et des milices européennes, fait des milliers de victimes algériennes. En brisant toute possibilité de coexistence, l'opération élargit le soutien populaire au FLN. Elle enterre les solutions intermédiaires et fait basculer l'insurrection en guerre généralisée.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Massacres_d%27ao%C3%BBt_1955_dans_le_Constantinois"
+                    },
+                    {
+                      "id": "dzn29",
+                      "axe": "La guerre de libération nationale (1954-1962)",
+                      "date": 1956,
+                      "titre": "La plateforme de la Soummam",
+                      "description": "Réuni clandestinement en Kabylie à l'initiative d'Abane Ramdane, un congrès dote le FLN d'une plateforme politique, d'institutions et d'un découpage du pays en six wilayas. Il pose deux principes appelés à peser lourd : primauté du politique sur le militaire et de l'intérieur sur l'extérieur. Contestés dès l'année suivante, ils nourriront les luttes de pouvoir jusqu'à l'indépendance et au-delà.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Congr%C3%A8s_de_la_Soummam"
+                    },
+                    {
                       "id": "dz8",
+                      "axe": "La guerre de libération nationale (1954-1962)",
                       "date": 1957,
                       "titre": "Bataille d'Alger",
-                      "description": "L'armée française mène une campagne de contre-insurrection urbaine controversée contre le FLN, marquée par un usage systématique de la torture.",
+                      "description": "Les pleins pouvoirs de police confiés à la 10e division parachutiste permettent de démanteler le réseau urbain du FLN au prix d'arrestations massives, d'exécutions sommaires et d'un usage systématique de la torture. Militairement gagnée par l'armée française, la bataille est politiquement perdue. Les révélations sur la torture ébranlent l'opinion française et internationalisent la cause algérienne.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Bataille_d%27Alger"
                     },
                     {
+                      "id": "dzn30",
+                      "axe": "La guerre de libération nationale (1954-1962)",
+                      "date": 1958,
+                      "titre": "Le Gouvernement provisoire de la République algérienne",
+                      "description": "En réponse au 13 mai algérois et au retour de de Gaulle, le FLN se dote au Caire d'un gouvernement en exil, reconnu par de nombreux États afro-asiatiques et socialistes. La guerre se joue désormais autant à l'ONU et dans les capitales étrangères que dans les djebels. Cette internationalisation, plus que la situation militaire sur le terrain, décidera de l'issue du conflit.",
+                      "wikipedia": "https://fr.wikipedia.org/wiki/Gouvernement_provisoire_de_la_R%C3%A9publique_alg%C3%A9rienne"
+                    },
+                    {
                       "id": "dz9",
+                      "axe": "La guerre de libération nationale (1954-1962)",
                       "date": 1961,
                       "titre": "Manifestations du 17 octobre",
-                      "description": "Une manifestation pacifique d'Algériens à Paris est réprimée dans une violence extrême par la police, faisant de nombreuses victimes longtemps occultées.",
+                      "description": "Des dizaines de milliers d'Algériens de la région parisienne manifestent pacifiquement contre le couvre-feu qui leur est imposé ; la police, dirigée par Maurice Papon, réprime avec une violence extrême et jette des corps dans la Seine. Le bilan, longtemps nié, est estimé à plusieurs dizaines voire une centaine de morts. Il faudra attendre 1998 pour que l'État français reconnaisse officiellement les faits.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Manifestation_du_17_octobre_1961"
                     },
                     {
                       "id": "dz10",
+                      "axe": "La guerre de libération nationale (1954-1962)",
                       "date": 1962,
                       "titre": "Indépendance de l'Algérie",
-                      "description": "Les accords d'Évian mettent fin à huit années de guerre ; un référendum d'autodétermination massif consacre l'indépendance de l'Algérie.",
+                      "description": "Signés le 18 mars, les accords d'Évian prévoient un cessez-le-feu, l'autodétermination et des garanties pour les Européens ; le référendum du 1er juillet approuve massivement l'indépendance, proclamée le 5 juillet, jour anniversaire de la capitulation de 1830. Suivent l'exode de près d'un million de pieds-noirs et le massacre de milliers de harkis abandonnés. Cent trente-deux ans de présence française prennent fin.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Accords_d%27%C3%89vian"
                     },
                     {
                       "id": "dz11",
+                      "axe": "L'Algérie indépendante (depuis 1962)",
                       "date": 1965,
                       "titre": "Coup d'État de Boumédiène",
-                      "description": "Le colonel Houari Boumédiène renverse le président Ahmed Ben Bella, engageant l'Algérie sur la voie d'un socialisme d'État autoritaire.",
+                      "description": "Le ministre de la Défense Houari Boumédiène renverse Ahmed Ben Bella et instaure un Conseil de la révolution, présentant l'opération comme un redressement et non comme un coup d'État. Le nouveau régime, militaire et centralisateur, gouvernera onze ans sans constitution. Il met l'accent sur la planification, l'industrie lourde et une diplomatie tiers-mondiste très active.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Houari_Boum%C3%A9di%C3%A8ne"
                     },
                     {
                       "id": "dz12",
+                      "axe": "L'Algérie indépendante (depuis 1962)",
                       "date": 1971,
                       "titre": "Nationalisation des hydrocarbures",
-                      "description": "L'Algérie nationalise l'essentiel de son secteur pétrolier et gazier, affirmant sa souveraineté économique sur ses ressources naturelles stratégiques.",
+                      "description": "Le 24 février, l'Algérie prend 51 % des sociétés pétrolières françaises et nationalise le gaz et les oléoducs, au terme d'un long bras de fer avec Paris. La date devient fête nationale. Les revenus dégagés financent les « industries industrialisantes » censées doter le pays d'une base productive autonome, pari dont les résultats seront très discutés.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Sonatrach"
                     },
                     {
                       "id": "dz13",
+                      "axe": "L'Algérie indépendante (depuis 1962)",
                       "date": 1988,
                       "titre": "Émeutes d'Octobre noir",
-                      "description": "De violentes émeutes populaires contre la crise économique sont durement réprimées, précipitant l'ouverture du pays au multipartisme.",
+                      "description": "Des émeutes de la jeunesse, nées de la pénurie, du chômage et de la crise du logement, embrasent Alger et les grandes villes ; l'armée tire et la répression fait des centaines de morts. Le président Chadli Bendjedid répond par une ouverture sans précédent. La constitution de 1989 mettra fin au monopole du FLN et autorisera le multipartisme et la liberté de la presse.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89meutes_d%27octobre_1988_en_Alg%C3%A9rie"
                     },
                     {
                       "id": "dz14",
+                      "axe": "L'Algérie indépendante (depuis 1962)",
                       "date": 1991,
                       "titre": "Interruption du processus électoral",
-                      "description": "Face à la victoire du Front islamique du salut au premier tour des législatives, l'armée fait interrompre le processus électoral, précipitant le pays dans la crise.",
+                      "description": "Après la large victoire du Front islamique du salut au premier tour des législatives de décembre, l'armée obtient la démission du président, annule le scrutin en janvier 1992 et installe un Haut Comité d'État. Le FIS est dissous et des milliers de militants internés dans le Sud. La décision, présentée comme un sauvetage de la République, ouvre une décennie de guerre civile.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Front_islamique_du_salut"
                     },
                     {
                       "id": "dz15",
+                      "axe": "L'Algérie indépendante (depuis 1962)",
                       "date": 1992,
                       "titre": "Début de la décennie noire",
-                      "description": "L'annulation du processus électoral déclenche une guerre civile opposant l'État aux groupes armés islamistes, faisant environ 200 000 morts en une décennie.",
+                      "description": "Groupes islamiques armés, milices d'autodéfense et forces de sécurité s'affrontent dans une violence extrême ; les massacres de villages entiers, les assassinats de journalistes, d'intellectuels et d'étrangers se multiplient. Le bilan de la décennie est estimé entre cent cinquante mille et deux cent mille morts. Le pays sort de l'épreuve avec une société traumatisée et une mémoire toujours largement non écrite.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/D%C3%A9cennie_noire"
                     },
                     {
                       "id": "dz16",
+                      "axe": "L'Algérie indépendante (depuis 1962)",
                       "date": 1999,
                       "titre": "Élection de Bouteflika",
-                      "description": "Abdelaziz Bouteflika est élu président et fait adopter une loi sur la Concorde civile visant à favoriser la réconciliation nationale et la fin des violences.",
+                      "description": "Élu après le retrait de ses concurrents qui dénonçaient une fraude annoncée, Abdelaziz Bouteflika fait approuver par référendum une concorde civile offrant l'amnistie aux combattants renonçant à la lutte armée. La violence reflue fortement dans les années suivantes. Le prix en est une impunité et un silence officiel que dénoncent toujours les familles de disparus.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Abdelaziz_Bouteflika"
                     },
                     {
                       "id": "dz17",
+                      "axe": "L'Algérie indépendante (depuis 1962)",
                       "date": 2002,
                       "titre": "Le tamazight langue nationale",
-                      "description": "Une révision constitutionnelle reconnaît le tamazight comme langue nationale aux côtés de l'arabe, une revendication historique du mouvement berbère.",
+                      "description": "Après les émeutes du Printemps noir de Kabylie, qui avaient fait plus de cent morts, la Constitution reconnaît le tamazight comme langue nationale ; il deviendra langue officielle en 2016. La revendication, portée depuis le Printemps berbère de 1980, obtient ainsi une consécration constitutionnelle. Son application dans l'enseignement et l'administration reste toutefois partielle et disputée.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Tamazight"
                     },
                     {
                       "id": "dz18",
+                      "axe": "L'Algérie indépendante (depuis 1962)",
                       "date": 2019,
                       "titre": "Hirak et démission de Bouteflika",
-                      "description": "Un vaste mouvement de contestation populaire pacifique, le Hirak, s'oppose à un cinquième mandat de Bouteflika, qui finit par démissionner sous la pression de la rue.",
+                      "description": "L'annonce d'une candidature à un cinquième mandat, alors que le président est diminué depuis un accident vasculaire, déclenche des manifestations hebdomadaires massives et pacifiques dans tout le pays. Bouteflika démissionne le 2 avril, mais le mouvement continue en réclamant le départ du « système » tout entier. Les poursuites contre oligarques et anciens ministres, puis la pandémie, ne referment pas la crise de légitimité.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Hirak_(Alg%C3%A9rie)"
                     },
                     {
                       "id": "dz19",
+                      "axe": "L'Algérie indépendante (depuis 1962)",
                       "date": 2020,
                       "titre": "Nouvelle Constitution",
-                      "description": "Un référendum approuve une révision constitutionnelle présentée comme une réponse institutionnelle aux revendications du mouvement du Hirak.",
+                      "description": "Adoptée par référendum avec une participation historiquement basse, inférieure à un quart des inscrits, la nouvelle Constitution limite les mandats présidentiels et autorise l'envoi de troupes à l'étranger. Elle est présentée comme la réponse institutionnelle au Hirak. Le faible taux de participation en dit long sur la défiance persistante à l'égard des réponses venues du sommet.",
                       "wikipedia": "https://fr.wikipedia.org/wiki/Constitution_alg%C3%A9rienne_de_2020"
                     }
+                  ],
+                  "essentiel": [
+                    "dz1",
+                    "dz2",
+                    "dz3",
+                    "dz5",
+                    "dz6",
+                    "dz7",
+                    "dz8",
+                    "dz9",
+                    "dz10",
+                    "dz11",
+                    "dz12",
+                    "dz13",
+                    "dz14",
+                    "dz15",
+                    "dz18",
+                    "dzn1",
+                    "dzn2",
+                    "dzn6",
+                    "dzn8",
+                    "dzn9",
+                    "dzn10",
+                    "dzn13",
+                    "dzn14",
+                    "dzn15",
+                    "dzn16",
+                    "dzn19",
+                    "dzn22",
+                    "dzn23",
+                    "dzn26",
+                    "dzn29"
                   ]
                 },
                 {
@@ -147999,7 +148904,7 @@
                   "date": 1968,
                   "titre": "Affaire de Louvain, scission de l'université",
                   "description": "Une crise politique majeure éclate autour de l'université catholique de Louvain, historiquement bilingue mais située en territoire flamand, lorsque des étudiants flamands réclament et obtiennent le départ de la section francophone de l'université vers un nouveau site en Wallonie (Louvain-la-Neuve), provoquant même la chute du gouvernement belge de l'époque. Cette crise universitaire reste un cas d'école régulièrement cité pour illustrer l'ampleur des fractures communautaires belges, jusque dans les institutions académiques.",
-                  "wikipedia": "https://fr.wikipedia.org/wiki/Scission_de_l'université_catholique_de_Louvain"
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Affaire_de_Louvain"
                 },
                 {
                   "id": "psn_be_t3_5",
@@ -148007,7 +148912,7 @@
                   "date": 1968,
                   "titre": "Scission du Parti social-chrétien en ailes linguistiques distinctes",
                   "description": "Dans le sillage direct de la crise de Louvain, le grand Parti social-chrétien belge, jusque-là unitaire à l'échelle nationale, se scinde définitivement en deux partis distincts organisés selon la ligne linguistique, un mouvement rapidement suivi par les autres grandes familles politiques traditionnelles du pays (libéraux puis socialistes), mettant fin à l'existence de partis politiques nationaux unitaires en Belgique. Cette fragmentation partisane le long des lignes communautaires, unique parmi les démocraties parlementaires européennes comparables, transforme durablement et structurellement le paysage politique belge, chaque électeur ne pouvant désormais plus voter que pour des partis de sa propre communauté linguistique. Cette scission reste un facteur explicatif majeur de la complexité chronique de la formation des gouvernements belges depuis cette période.",
-                  "wikipedia": "https://fr.wikipedia.org/wiki/Parti_social_chrétien_(Belgique)"
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Parti_social-chr%C3%A9tien_(Belgique)"
                 },
                 {
                   "id": "psn_be_t3_6",
@@ -148015,7 +148920,7 @@
                   "date": 1970,
                   "titre": "Réformes de l'État et transformation en État fédéral",
                   "description": "Entre 1970 et 1993, la Belgique connaît une série de réformes constitutionnelles successives qui transforment progressivement l'État unitaire d'origine en un État fédéral complexe, structuré à la fois en Régions (Flandre, Wallonie, Bruxelles) dotées de compétences territoriales et en Communautés (flamande, française, germanophone) dotées de compétences culturelles et linguistiques. Cette fédéralisation graduelle, unique par sa complexité institutionnelle en Europe, continue de faire l'objet de révisions et de négociations politiques régulières encore aujourd'hui.",
-                  "wikipedia": "https://fr.wikipedia.org/wiki/Réforme_de_l'État_en_Belgique"
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Premi%C3%A8re_r%C3%A9forme_de_l%E2%80%99%C3%89tat_belge"
                 },
                 {
                   "id": "psn_be_t3_7",
@@ -148023,7 +148928,7 @@
                   "date": 2001,
                   "titre": "Accords du Lambermont, nouvelle réforme de l'État",
                   "description": "Les principaux partis politiques belges négocient un nouvel accord de réforme institutionnelle, dit accord du Lambermont, transférant des compétences supplémentaires importantes aux Régions et Communautés, notamment en matière de commerce extérieur, d'agriculture et de financement des collectivités locales, poursuivant ainsi le processus continu de fédéralisation entamé trois décennies plus tôt. Cet accord, négocié dans le secret feutré de la résidence du Premier ministre qui lui donne son nom, illustre la méthode belge caractéristique de négociation communautaire permanente entre élites politiques francophones et néerlandophones. Cet accord reste une étape supplémentaire d'un processus de réforme institutionnelle belge qui se poursuivra encore dans les décennies suivantes.",
-                  "wikipedia": "https://fr.wikipedia.org/wiki/Réforme_de_l'État_en_Belgique"
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Cinqui%C3%A8me_r%C3%A9forme_de_l%E2%80%99%C3%89tat_belge"
                 },
                 {
                   "id": "psn_be_t3_8",
@@ -148039,7 +148944,7 @@
                   "date": 2014,
                   "titre": "Sixième réforme de l'État, nouvelles compétences régionales",
                   "description": "Après la crise politique record de 2010-2011, les partis belges négocient et mettent en œuvre la sixième réforme de l'État, la plus importante depuis la fédéralisation initiale des années 1970-1990, transférant aux Régions et Communautés de nouvelles compétences substantielles en matière d'emploi, de santé, de politique familiale et de justice, réduisant d'autant le périmètre d'action de l'État fédéral central. Cette réforme, qui approfondit encore la complexité institutionnelle déjà considérable du pays, illustre la poursuite ininterrompue du processus de fédéralisation belge, plus de quatre décennies après ses débuts. Cette réforme reste, à ce jour, la dernière grande étape en date d'un processus de fédéralisation qui continue de façonner durablement l'organisation politique du pays.",
-                  "wikipedia": "https://fr.wikipedia.org/wiki/Réforme_de_l'État_en_Belgique"
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sixi%C3%A8me_r%C3%A9forme_de_l%27%C3%89tat_belge"
                 }
               ]
             },
@@ -148143,7 +149048,7 @@
                   "date": 1958,
                   "titre": "Choix de Bruxelles comme siège provisoire des institutions",
                   "description": "Lors de l'entrée en vigueur du traité de Rome instituant la Communauté économique européenne, les six pays fondateurs, incapables de s'accorder sur un siège définitif unique, décident provisoirement d'installer les nouvelles institutions communautaires naissantes à Bruxelles, un choix pragmatique lié à la position géographique centrale de la ville et à la neutralité traditionnelle de la Belgique dans les rivalités entre grandes puissances européennes. Cette décision provisoire, jamais formellement remise en cause malgré son caractère initialement temporaire, s'avérera en pratique définitive, Bruxelles s'imposant progressivement comme la capitale de facto du projet européen au fil des décennies suivantes. Ce choix initial reste à l'origine directe du statut international exceptionnel qu'occupe aujourd'hui la ville.",
-                  "wikipedia": "https://fr.wikipedia.org/wiki/Bruxelles,_capitale_de_l'Union_européenne"
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Place_de_Bruxelles_dans_l%27Union_europ%C3%A9enne"
                 },
                 {
                   "id": "psn_be_t4_2",
@@ -148151,7 +149056,7 @@
                   "date": 1957,
                   "titre": "Installation des institutions européennes à Bruxelles",
                   "description": "À partir de la fondation de la Communauté économique européenne en 1957, Bruxelles s'impose progressivement comme siège de facto des principales institutions européennes, notamment la Commission européenne et le Conseil de l'Union européenne, faisant de la capitale belge l'un des principaux centres politiques et diplomatiques du continent européen. Cette installation façonne durablement l'identité internationale de la ville, aujourd'hui perçue comme la capitale de facto de l'Union européenne.",
-                  "wikipedia": "https://fr.wikipedia.org/wiki/Bruxelles,_capitale_de_l'Union_européenne"
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Place_de_Bruxelles_dans_l%27Union_europ%C3%A9enne"
                 },
                 {
                   "id": "psn_be_t4_3",
@@ -148183,7 +149088,7 @@
                   "date": 1992,
                   "titre": "Traité d'Édimbourg, siège officiel et définitif de l'UE",
                   "description": "Les chefs d'État et de gouvernement européens réunis en sommet à Édimbourg confirment formellement et définitivement Bruxelles comme siège officiel de la Commission européenne et du Conseil de l'Union européenne, mettant fin à des décennies d'ambiguïté juridique sur le statut provisoire ou définitif de cette implantation initialement décidée en 1958. Cette confirmation officielle, qui maintient néanmoins un compromis institutionnel complexe et coûteux avec Strasbourg pour les sessions plénières du Parlement européen et Luxembourg pour certains services administratifs, consacre juridiquement le statut de Bruxelles comme capitale politique principale de l'Union européenne. Cette décision reste la base juridique actuelle et définitive du statut institutionnel bruxellois au sein de l'Union européenne contemporaine.",
-                  "wikipedia": "https://fr.wikipedia.org/wiki/Siège_des_institutions_de_l'Union_européenne"
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Si%C3%A8ges_des_institutions_de_l%27Union_europ%C3%A9enne"
                 },
                 {
                   "id": "psn_be_t4_7",
@@ -148191,7 +149096,7 @@
                   "date": 2016,
                   "titre": "Attentats terroristes de Bruxelles",
                   "description": "Des attentats-suicides coordonnés frappent l'aéroport de Bruxelles-National et une station du métro bruxellois située à proximité immédiate des institutions européennes, faisant trente-deux morts et plusieurs centaines de blessés, des attaques revendiquées par l'organisation État islamique et directement liées au réseau ayant perpétré les attentats de Paris quelques mois plus tôt. Ces attentats, qui frappent symboliquement la capitale même de l'Union européenne et de l'OTAN, révèlent des failles sécuritaires significatives dans la coordination antiterroriste belge et européenne, provoquant un renforcement durable des mesures de sécurité autour des institutions internationales installées dans la ville. Ces attentats restent le plus grave épisode terroriste de l'histoire contemporaine belge, ayant durablement marqué la perception sécuritaire de la capitale européenne.",
-                  "wikipedia": "https://fr.wikipedia.org/wiki/Attentats_du_22_mars_2016_en_Belgique"
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Attentats_du_22_mars_2016_%C3%A0_Bruxelles"
                 },
                 {
                   "id": "psn_be_t4_8",
@@ -148199,7 +149104,7 @@
                   "date": 2010,
                   "titre": "Poids économique du secteur international et du lobbying européen",
                   "description": "La présence permanente des institutions européennes, de l'OTAN et de plusieurs milliers d'organisations non gouvernementales, cabinets de lobbying et représentations diplomatiques nationales transforme durablement l'économie bruxelloise, faisant de la ville l'un des centres de lobbying politique les plus denses au monde après Washington, employant directement et indirectement plusieurs dizaines de milliers de personnes dans le secteur international. Cette économie de la représentation politique et institutionnelle, largement concentrée dans le quartier européen de la ville, façonne durablement le tissu urbain, immobilier et démographique de Bruxelles, désormais l'une des villes les plus internationalisées et cosmopolites d'Europe en proportion de sa population. Ce poids économique reste une composante structurelle majeure et durable de l'identité contemporaine de la capitale belge.",
-                  "wikipedia": "https://fr.wikipedia.org/wiki/Bruxelles,_capitale_de_l'Union_européenne"
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Place_de_Bruxelles_dans_l%27Union_europ%C3%A9enne"
                 },
                 {
                   "id": "psn_be_t4_9",
@@ -148207,7 +149112,7 @@
                   "date": 2010,
                   "titre": "Débat persistant sur le siège unique du Parlement européen",
                   "description": "Malgré la confirmation du statut bruxellois comme siège principal des institutions européennes, le Parlement européen continue, en vertu des traités, de tenir ses sessions plénières mensuelles à Strasbourg, un arrangement coûteux et logistiquement complexe impliquant le déplacement régulier de milliers de fonctionnaires et d'élus entre les deux villes, régulièrement critiqué comme un gaspillage de ressources publiques par de nombreux observateurs et élus européens eux-mêmes. Ce débat récurrent sur la rationalisation du siège unique du Parlement européen, qui nécessiterait une modification des traités européens soumise à l'unanimité des États membres dont la France s'oppose fermement à toute perte du siège strasbourgeois, illustre les compromis institutionnels complexes hérités de l'histoire de la construction européenne. Ce débat reste aujourd'hui encore non résolu, symbole des tensions persistantes entre rationalisation administrative et symbolique politique nationale au sein de l'Union européenne.",
-                  "wikipedia": "https://fr.wikipedia.org/wiki/Siège_du_Parlement_européen"
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Institutions_europ%C3%A9ennes_%C3%A0_Strasbourg"
                 }
               ]
             }
@@ -152229,7 +153134,7 @@
                   "date": 2010,
                   "titre": "Crise financière et plan de sauvetage international",
                   "description": "Frappée de plein fouet par l'effondrement de sa bulle immobilière et bancaire dans le sillage de la crise financière mondiale de 2008, l'Irlande doit accepter un plan de sauvetage financier international de 85 milliards d'euros accordé conjointement par l'Union européenne et le Fonds monétaire international, en échange de mesures d'austérité budgétaire particulièrement sévères imposées à la population irlandaise. Cette crise met brutalement fin à l'euphorie du Tigre celtique et provoque une nouvelle vague d'émigration de jeunes Irlandais qualifiés.",
-                  "wikipedia": "https://fr.wikipedia.org/wiki/Crise_économique_irlandaise_(2008)"
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Crise_financi%C3%A8re_irlandaise"
                 },
                 {
                   "id": "psn_ie_t7_4",
@@ -152237,7 +153142,7 @@
                   "date": 1995,
                   "titre": "Légalisation du divorce par référendum",
                   "description": "Après un premier référendum de 1986 largement rejeté, les électeurs irlandais approuvent de justesse, par une marge extrêmement serrée de moins d'un point de pourcentage, la légalisation du divorce dans un pays jusque-là parmi les derniers d'Europe occidentale à l'interdire constitutionnellement, sous la forte influence historique de l'Église catholique sur la législation familiale irlandaise. Ce résultat marque une étape symbolique majeure du recul progressif de l'influence institutionnelle de l'Église catholique sur la société irlandaise.",
-                  "wikipedia": "https://fr.wikipedia.org/wiki/Divorce_en_Irlande"
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Constitution_de_l%27Irlande"
                 },
                 {
                   "id": "psn_ie_t7_5",
@@ -152253,7 +153158,7 @@
                   "date": 2018,
                   "titre": "Légalisation de l'avortement par référendum",
                   "description": "Les électeurs irlandais votent massivement, par plus des deux tiers des suffrages exprimés, en faveur de l'abrogation du huitième amendement constitutionnel qui interdisait strictement l'avortement depuis 1983, ouvrant la voie à une nouvelle législation autorisant l'interruption volontaire de grossesse sous certaines conditions, une réforme obtenue notamment après plusieurs affaires judiciaires tragiques ayant profondément marqué l'opinion publique irlandaise. Ce référendum met fin à des décennies durant lesquelles de nombreuses femmes irlandaises devaient se rendre à l'étranger pour avorter légalement.",
-                  "wikipedia": "https://fr.wikipedia.org/wiki/Référendum_irlandais_sur_l'avortement_de_2018"
+                  "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A9f%C3%A9rendum_constitutionnel_irlandais_de_2018_sur_l%27acc%C3%A8s_%C3%A0_l%27avortement"
                 },
                 {
                   "id": "psn_ie_t7_7",
@@ -152269,7 +153174,7 @@
                   "date": 2011,
                   "titre": "Visite historique de la reine Élisabeth II en Irlande",
                   "description": "La reine Élisabeth II du Royaume-Uni effectue la première visite d'État d'un monarque britannique en République d'Irlande depuis l'indépendance du pays en 1922, un déplacement hautement symbolique incluant notamment un hommage rendu aux combattants républicains irlandais morts pour l'indépendance au jardin du Souvenir de Dublin. Cette visite illustre la normalisation progressive et approfondie des relations anglo-irlandaises depuis l'accord de paix de 1998.",
-                  "wikipedia": "https://fr.wikipedia.org/wiki/Visite_d'État_d'Élisabeth_II_en_Irlande"
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Relations_entre_l%27Irlande_et_le_Royaume-Uni"
                 },
                 {
                   "id": "psn_ie_t7_9",
