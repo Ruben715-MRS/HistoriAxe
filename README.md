@@ -275,8 +275,8 @@ et un `fetch` — c'est-à-dire de la quasi-totalité de l'interface.
 
 `npm run test:e2e` (Playwright, `e2e/`) comble ce trou en ouvrant un vrai
 navigateur sur le site servi tel qu'il l'est en production
-(`e2e/server.js`, un serveur statique sans dépendance). Quatre parcours,
-25 tests, une trentaine de secondes :
+(`e2e/server.js`, un serveur statique sans dépendance). Cinq parcours,
+28 tests, une trentaine de secondes :
 
 - `e2e/modes.spec.js` — chaque mode de jeu se lance et répond à une
   première interaction. C'est la famille de régressions déjà vécue ici :
@@ -289,6 +289,14 @@ navigateur sur le site servi tel qu'il l'est en production
 - `e2e/navigation.spec.js` — le seul parcours qui prend l'app par la porte :
   accueil, catégories, sous-catégories imbriquées, retours arrière,
   recherche, favoris, « Hasard », « Réviser » et « Défis ».
+- `e2e/shuffle.spec.js` — le seul parcours qui ne clique rien : il fait
+  tourner `js/app.js: shuffleArray` 200 000 fois et vérifie que la
+  distribution reste uniforme. `sort(() => Math.random() - 0.5)`, longtemps
+  utilisé ici, ne mélangeait pas uniformément : la bonne réponse d'un QCM ne
+  tombait pas aussi souvent sur les quatre options, et la première carte
+  d'un pool de 10 ouvrait 19,5 % des parties au lieu de 10 %. Les seuils
+  sont à plus de quinze écarts-types de la valeur attendue : ce test ne peut
+  pas rougir par malchance.
 
 Chaque test hérite d'une assertion du socle (`e2e/fixtures.js`) : **aucune
 erreur console ni exception non rattrapée** sur les écrans traversés. C'est

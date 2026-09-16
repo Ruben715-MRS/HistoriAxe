@@ -654,9 +654,32 @@ function getWeakThemes() {
     return [...map.values()].sort((a, b) => b.count - a.count);
 }
 
-// Mélange simple, cohérent avec le reste du code (voir startActualGame)
+// Mélange de Fisher-Yates : le SEUL mélange de l'app côté joueur (le tirage
+// des défis a le sien, sur graine, dans js/dailyEngine.js: pickDailyItems).
+//
+// Surtout pas `sort(() => Math.random() - 0.5)`, qui a longtemps servi ici :
+// un comparateur aléatoire ne produit pas une permutation uniforme, et le
+// biais n'était pas théorique. Mesuré dans Chromium avant ce correctif :
+//
+//   - ordre de pioche d'un thème (10 cartes, voir startActualGame) : la
+//     première carte du pool ressortait en tête dans 19,5 % des parties au
+//     lieu de 10 % ;
+//   - options d'un QCM (4 choix) : la bonne réponse, toujours à l'indice 0
+//     avant mélange, tombait sur les deux premières options dans 56 % des
+//     cas au lieu de 50 %, et sur la quatrième dans 18,7 % au lieu de 25 %.
+//
+// L'ampleur exacte du second cas dépend de l'algorithme de tri du moteur JS
+// (Node et Chromium ne donnaient pas les mêmes chiffres) — raison de plus
+// pour mesurer dans un vrai navigateur plutôt que sur le papier : c'est ce
+// que fait e2e/shuffle.spec.js, qui redeviendrait rouge si le comparateur
+// revenait.
 function shuffleArray(arr) {
-    return [...arr].sort(() => Math.random() - 0.5);
+    const out = [...arr];
+    for (let i = out.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [out[i], out[j]] = [out[j], out[i]];
+    }
+    return out;
 }
 
 // === PROGRESSION PAR THÈME/CATÉGORIE (vue de synthèse pour cibler ses révisions) ===
@@ -2237,7 +2260,11 @@ function startActualGame(mode) {
         placedEvents = [eventsCopy.pop()];
         currentPool = eventsCopy;
     } else {
-        eventsCopy.sort(() => Math.random() - 0.5);
+        // Même mélange que partout ailleurs : l'ordre de pioche décide quelles
+        // cartes tombent en premier, donc à quel moment le joueur affronte les
+        // dates les plus dures — un mélange biaisé y ferait remonter toujours
+        // les mêmes.
+        eventsCopy = shuffleArray(eventsCopy);
         totalEvents = eventsCopy.length;
         placedEvents = [eventsCopy.pop()];
         currentPool = eventsCopy;
