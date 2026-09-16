@@ -484,12 +484,17 @@ body {
    plutôt qu'un nouvel écran — le choix reste à un tap de distance. */
 .challenge-picker {
     display: flex;
+    /* Trois défis depuis l'ajout du Défi de simultanéité : sur les écrans les
+       plus étroits, mieux vaut qu'un bouton passe à la ligne que d'écraser
+       les trois libellés. */
+    flex-wrap: wrap;
     gap: 12px;
     margin-top: 14px;
 }
 
 .challenge-picker-btn {
-    flex: 1;
+    flex: 1 1 28%;
+    min-width: 96px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -513,6 +518,17 @@ body {
 
 .challenge-picker-icon {
     font-size: 24px;
+}
+
+/* Un défi encore verrouillé reste visible et cliquable — le clic explique ce
+   qui l'ouvrira. Le griser sans le désactiver est délibéré : un bouton inerte
+   ne dirait pas pourquoi (même parti pris que les verrous Chrono/Expert). */
+.challenge-picker-btn.locked {
+    opacity: 0.55;
+}
+
+.challenge-picker-btn.locked .challenge-picker-icon {
+    filter: grayscale(1);
 }
 
 /* ÉCRAN « PROGRESSION PAR THÈME » : radar de synthèse par catégorie et liste

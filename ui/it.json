@@ -206,7 +206,8 @@
     "title_default": "Partita Terminata",
     "score_label_prefix": "Punteggio: ",
     "score_label_suffix": " punti",
-    "victory_simultaneity": "Bravo! Il mondo intero rimesso in orario!"
+    "victory_simultaneity": "Bravo! Il mondo intero rimesso in orario!",
+    "victory_simultaneity_challenge": "Bravo! La vostra storia, rimessa in quella del mondo!"
   },
   "daily": {
     "title_win": "🌍 Sfida del Giorno Superata!",
@@ -591,6 +592,9 @@
     "desc": "3 vite. Un evento del tema e il mondo attorno: scoprite che cosa accadeva altrove nello stesso momento.",
     "kicker": "Quale di questi eventi gli è contemporaneo?",
     "reveal_title": "Attorno al {year}, altrove nel mondo…",
-    "not_enough": "Questo tema copre un'epoca ancora poco rappresentata altrove nella base per questa modalità. Provate un tema di un altro periodo."
+    "not_enough": "Questo tema copre un'epoca ancora poco rappresentata altrove nella base per questa modalità. Provate un tema di un altro periodo.",
+    "challenge_title": "Sfida di simultaneità",
+    "challenge_locked": "La Sfida di simultaneità attinge a ciò che avete già studiato: vi mancano ancora {missing} eventi incontrati in gioco. Giocate una o due partite e si aprirà da sola.",
+    "challenge_thin": "Gli eventi che avete già incontrato coprono epoche ancora poco rappresentate altrove nella base. Esplorate qualche altro tema e tornate!"
   }
 }

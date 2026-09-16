@@ -291,6 +291,25 @@ test('les gros thèmes du pack français remplissent une session entière', () =
     });
 });
 
+test('à graine égale, la session est rigoureusement identique', () => {
+    // C'est ce qui fait du Défi de simultanéité un défi et non un mode à
+    // volonté : la graine mêle l'identifiant d'appareil au jour courant (voir
+    // js/app.js: startSimultaneityChallenge), donc le tirage ne bouge pas
+    // avant demain.
+    const theme = allThemes().find(t => t.id === 'thm_fr');
+    const empreinte = () => S.buildSession(theme.events, realPool, { rng: seededRng(4242), count: 10 })
+        .map(q => q.anchor.id + '>' + q.correct.id + '>' + q.options.map(o => o.id).join(','));
+    assert.deepEqual(empreinte(), empreinte());
+});
+
+test('une graine différente donne un tirage différent', () => {
+    // Sans quoi le défi de demain serait celui d'aujourd'hui.
+    const theme = allThemes().find(t => t.id === 'thm_fr');
+    const tirage = seed => S.buildSession(theme.events, realPool, { rng: seededRng(seed), count: 10 })
+        .map(q => q.anchor.id).join(',');
+    assert.notEqual(tirage(1), tirage(2));
+});
+
 test('une session ne repose jamais deux fois la même bonne réponse', () => {
     const theme = allThemes().find(t => t.id === 'thm_fr');
     const session = S.buildSession(theme.events, realPool, { rng: seededRng(11) });

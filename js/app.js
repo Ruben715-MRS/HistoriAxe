@@ -1216,7 +1216,7 @@ function screenAfterGame() {
         target = geoReturnScreen || 'screen-themes';
     } else if (revisionMode) {
         target = 'screen-revision-hub';
-    } else if (dailyChallengeMode || weeklyChallengeMode) {
+    } else if (dailyChallengeMode || weeklyChallengeMode || isSimultaneityChallenge()) {
         target = 'screen-categories';
     } else if (essentialFilterActive || axisFilterActive) {
         target = 'screen-axes';
@@ -1226,6 +1226,7 @@ function screenAfterGame() {
     revisionMode = false;
     dailyChallengeMode = false;
     weeklyChallengeMode = false;
+    simulChallengeMode = false;
     return target;
 }
 
@@ -1535,6 +1536,10 @@ function initCategories() {
                         <span class="challenge-picker-icon">🗓️</span>
                         <span>${(typeof t === 'function' ? t('categories.special_weekly') : 'Défi hebdomadaire')}</span>
                     </button>
+                    <button type="button" class="challenge-picker-btn" id="btn-challenge-simul">
+                        <span class="challenge-picker-icon">🌍</span>
+                        <span>${(typeof t === 'function' ? t('simultaneity.challenge_title') : 'Défi de simultanéité')}</span>
+                    </button>
                 </div>
             `;
     container.appendChild(gridSection);
@@ -1556,6 +1561,15 @@ function initCategories() {
     if (btnChallengeDaily) btnChallengeDaily.onclick = () => startDailyChallenge();
     const btnChallengeWeekly = gridSection.querySelector('#btn-challenge-weekly');
     if (btnChallengeWeekly) btnChallengeWeekly.onclick = () => startWeeklyChallenge();
+    // Le Défi de simultanéité reste VISIBLE tant qu'il est verrouillé, avec
+    // sa condition d'ouverture au clic, plutôt que caché : un mode qu'on ne
+    // voit pas ne donne envie de rien (même parti pris que les verrous
+    // Chrono/Expert, voir renderModeCard).
+    const btnChallengeSimul = gridSection.querySelector('#btn-challenge-simul');
+    if (btnChallengeSimul) {
+        btnChallengeSimul.classList.toggle('locked', !getSimultaneityChallengeStatus().unlocked);
+        btnChallengeSimul.onclick = () => startSimultaneityChallenge();
+    }
     const btnRev = gridSection.querySelector('#btn-reviser');
     if (btnRev) btnRev.onclick = () => showScreen('screen-revision-hub');
 
@@ -2506,6 +2520,19 @@ function updateQuizHUD() {
 
 let simulQuestions = [];
 let simulIndex = 0;
+// Distingue le Défi de simultanéité (ancres tirées de l'historique du joueur,
+// lancé depuis l'écran des catégories) du mode lancé depuis un thème : même
+// écran et mêmes règles, mais ni score rattaché à un thème ni retour vers lui.
+let simulChallengeMode = false;
+
+// Toujours passer par ici plutôt que de lire le drapeau nu : il reste levé
+// jusqu'au prochain screenAfterGame(), et une partie lancée entre-temps par un
+// chemin qui ne le remet pas à zéro verrait sinon son score non enregistré et
+// son retour arrière détourné. Le croiser avec currentMode rend le drapeau
+// inoffensif partout ailleurs.
+function isSimultaneityChallenge() {
+    return currentMode === 'simultaneity' && simulChallengeMode;
+}
 // Le vivier de réponses traverse les 795 thèmes : on ne le reconstruit pas à
 // chaque partie. Le cache est indexé sur la base elle-même plutôt que sur la
 // langue, parce que c'est bien `window.bdd` qui est remplacé lors d'un
@@ -2530,24 +2557,35 @@ function getSimultaneityIndexes() {
     return { pool: simulPoolCache, tagByEventId: simulTagIndexCache };
 }
 
+// Prépare des ancres à partir d'événements bruts. Chaque ancre porte
+// l'étiquette de SON thème d'origine — pas celle du thème en cours. La
+// nuance ne change rien à une partie ordinaire, mais elle est décisive
+// partout où les ancres viennent de plusieurs thèmes (Révision, Défi de
+// simultanéité) : sans elle, une réponse pourrait sortir du thème même dont
+// l'ancre est issue. Le nom du thème est embarqué ici plutôt que relu à
+// l'affichage, faute de « thème courant » dans ces deux cas.
+function buildSimultaneityAnchors(events, tagByEventId, defaultThemeName) {
+    return (events || [])
+        .filter(e => e && typeof e.date === 'number' && tagByEventId[e.id])
+        .map(e => Object.assign({}, e, {
+            tag: tagByEventId[e.id],
+            themeName: e.__themeName || defaultThemeName || ''
+        }));
+}
+
 function startSimultaneityGame() {
     resetSessionHistory();
     currentMode = 'simultaneity';
+    simulChallengeMode = false;
 
     let sourceEvents = revisionMode ? revisionEvents : getCurrentThemeEventsForMode();
     if (isSelectionActive && !revisionMode) {
         sourceEvents = sourceEvents.filter(e => selectedEventsIds.has(e.id));
     }
 
-    // Chaque ancre porte l'étiquette de SON thème d'origine — pas celle du
-    // thème en cours. La nuance ne change rien à une partie ordinaire, mais
-    // elle est décisive en mode Révision, où les ancres viennent d'une
-    // dizaine de thèmes différents : sans elle, une réponse pourrait sortir
-    // du thème même dont l'ancre est issue.
     const { pool, tagByEventId } = getSimultaneityIndexes();
-    const anchors = sourceEvents
-        .filter(e => typeof e.date === 'number' && tagByEventId[e.id])
-        .map(e => Object.assign({}, e, { tag: tagByEventId[e.id] }));
+    const theme = revisionMode ? null : getCurrentTheme();
+    const anchors = buildSimultaneityAnchors(sourceEvents, tagByEventId, theme ? theme.nom : '');
 
     const questions = Simultaneity.buildSession(anchors, pool, {
         count: Simultaneity.SESSION_ROUNDS
@@ -2560,7 +2598,10 @@ function startSimultaneityGame() {
         alert(t('simultaneity.not_enough'));
         return;
     }
+    launchSimultaneitySession(questions);
+}
 
+function launchSimultaneitySession(questions) {
     simulQuestions = questions;
     simulIndex = 0;
     lives = 3;
@@ -2574,6 +2615,116 @@ function startSimultaneityGame() {
     renderSimultaneityQuestion();
 }
 
+
+// --- DÉFI DE SIMULTANÉITÉ (version globale, depuis l'écran des catégories) ---
+//
+// Le mode par thème garantit que le joueur connaît l'ancre : c'est le thème
+// qu'il vient d'ouvrir. Une version globale perd cette garantie — d'où la
+// règle qui la rend jouable : les ancres sont tirées de ce que le joueur a
+// DÉJÀ RENCONTRÉ, jamais de toute la base.
+//
+// Le signal utilisé est le SRS (js/storage.js: srsRecord), alimenté par tous
+// les modes sans exception : y figurent exactement les événements sur
+// lesquels le joueur a été interrogé au moins une fois. On préfère ceux qu'il
+// a déjà réussis (boîte ≥ 2) — ceux-là, il les connaît vraiment — et on
+// n'élargit aux simples rencontres que si le stock est trop mince.
+//
+// Ce défi n'est PAS classé, et c'est structurel : le tirage dépend de
+// l'historique de chaque joueur, donc deux joueurs ne répondent jamais aux
+// mêmes questions. Aucun score n'est envoyé au serveur, contrairement au Défi
+// du jour et au Défi hebdomadaire (voir README). Il garde en revanche leur
+// rythme : la graine mêle l'identifiant d'appareil au jour courant, si bien
+// que les 10 questions restent les mêmes jusqu'à demain.
+
+// En dessous, le vivier personnel est trop mince pour faire une session qui
+// ne se répète pas. Atteint après deux ou trois parties — assez tôt pour ne
+// pas frustrer, assez tard pour que « déjà travaillé » veuille dire quelque
+// chose.
+const SIMUL_CHALLENGE_MIN_ENCOUNTERED = 20;
+
+// Événements déjà rencontrés par le joueur, résolus en objets jouables.
+// `known` = déjà réussi au moins une fois (boîte ≥ 2), `seen` = rencontré.
+function getEncounteredEvents() {
+    const srs = srsLoad();
+    const known = [];
+    const seen = [];
+    getAllEventsWithLocation().forEach(item => {
+        const entry = srs[item.event.id];
+        if (!entry) return;
+        // Le nom du thème voyage avec l'événement : au Défi, il n'y a pas de
+        // « thème courant » à interroger au moment de l'affichage.
+        const evt = Object.assign({}, item.event, { __themeName: item.theme ? item.theme.nom : '' });
+        seen.push(evt);
+        if ((entry.box || 1) >= 2) known.push(evt);
+    });
+    return { known, seen };
+}
+
+// État du verrou, sans résoudre les événements : l'écran des catégories se
+// redessine à chaque retour, et getEncounteredEvents() balaie les 19 781
+// événements de la base (~11 ms). Le nombre de fiches SRS suffit à décider de
+// l'affichage. Il peut surestimer légèrement — une fiche peut pointer un
+// événement disparu (thème personnalisé supprimé, changement de langue) —
+// mais la résolution réelle a lieu au lancement, et `challenge_thin` rattrape
+// le cas où elle ne donnerait pas assez d'ancres.
+function getSimultaneityChallengeStatus() {
+    let count = 0;
+    try { count = Object.keys(srsLoad()).length; } catch (e) { count = 0; }
+    return {
+        count,
+        unlocked: count >= SIMUL_CHALLENGE_MIN_ENCOUNTERED,
+        missing: Math.max(0, SIMUL_CHALLENGE_MIN_ENCOUNTERED - count)
+    };
+}
+
+function startSimultaneityChallenge() {
+    const status = getSimultaneityChallengeStatus();
+    if (!status.unlocked) {
+        showConfirm(t('simultaneity.challenge_locked', { missing: status.missing }), null, { alertOnly: true });
+        return;
+    }
+    const encountered = getEncounteredEvents();
+
+    resetSessionHistory();
+    currentMode = 'simultaneity';
+    simulChallengeMode = true;
+    revisionMode = false;
+    favoritesMode = false;
+    dailyChallengeMode = false;
+    weeklyChallengeMode = false;
+    axisFilterActive = false;
+    isSelectionActive = false;
+
+    const { pool, tagByEventId } = getSimultaneityIndexes();
+    // Les événements déjà réussis d'abord ; on retombe sur les simples
+    // rencontres tant qu'ils ne suffisent pas à nourrir une session variée.
+    const base = encountered.known.length >= SIMUL_CHALLENGE_MIN_ENCOUNTERED
+        ? encountered.known
+        : encountered.seen;
+    const anchors = buildSimultaneityAnchors(base, tagByEventId, '');
+
+    // Même graine toute la journée, propre à cet appareil : le défi du jour
+    // ne change pas si on le relance, mais il est renouvelé demain.
+    const seed = DailyEngine.hashStringToSeed(
+        'historiaxe_simul_' + getOrCreateDeviceId() + '_' + DailyEngine.getDailySeedString());
+    const questions = Simultaneity.buildSession(anchors, pool, {
+        rng: DailyEngine.mulberry32(seed),
+        count: Simultaneity.CHALLENGE_ROUNDS
+    });
+
+    if (questions.length < 4) {
+        showConfirm(t('simultaneity.challenge_thin'), null, { alertOnly: true });
+        simulChallengeMode = false;
+        return;
+    }
+
+    // Les ancres viennent de thèmes divers : on renseigne les axes à partir
+    // du tirage plutôt que d'un thème courant qui n'existe pas (même
+    // précaution que startDailyChallenge).
+    currentThemeAxes = [...new Set(questions.map(q => q.anchor.axe).filter(Boolean))];
+    launchSimultaneitySession(questions);
+}
+
 function renderSimultaneityQuestion() {
     if (simulIndex >= simulQuestions.length) {
         endGame(true);
@@ -2585,10 +2736,12 @@ function renderSimultaneityQuestion() {
     const q = simulQuestions[simulIndex];
     document.getElementById('simul-anchor-year').innerText = formatYear(q.anchor.date);
     document.getElementById('simul-anchor-title').innerText = q.anchor.titre;
+    // Le thème d'origine voyage avec l'ancre (voir buildSimultaneityAnchors) :
+    // au Défi comme en Révision, les ancres viennent de thèmes divers et il
+    // n'y a pas de « thème courant » à interroger ici.
     const themeEl = document.getElementById('simul-anchor-theme');
-    const theme = revisionMode ? null : getCurrentTheme();
-    themeEl.innerText = theme ? theme.nom : '';
-    themeEl.classList.toggle('hidden', !theme);
+    themeEl.innerText = q.anchor.themeName || '';
+    themeEl.classList.toggle('hidden', !q.anchor.themeName);
 
     const reveal = document.getElementById('simul-reveal');
     reveal.innerHTML = '';
@@ -4177,7 +4330,10 @@ function endGame(isWin) {
         progressRecordWin(theme.id, currentMode);
     }
 
-    if (!revisionMode && !dailyChallengeMode && !weeklyChallengeMode && currentMode !== 'discovery' && currentMode !== 'training' && currentMode !== 'carte') {
+    // Le Défi de simultanéité se lance depuis l'écran des catégories : ses
+    // ancres viennent de thèmes divers et il n'y a aucun theme.id auquel
+    // rattacher le score, exactement comme pour les deux autres défis.
+    if (!revisionMode && !dailyChallengeMode && !weeklyChallengeMode && !isSimultaneityChallenge() && currentMode !== 'discovery' && currentMode !== 'training' && currentMode !== 'carte') {
         const theme = getCurrentTheme();
         saveScoreToLeaderboard(theme.id, currentMode, score);
     }
@@ -4246,7 +4402,11 @@ function endGame(isWin) {
         if (currentMode === 'periodes') winTitle = t('end.victory_periodes');
         if (currentMode === 'ecart') winTitle = t('end.victory_ecart');
         if (currentMode === 'carte') winTitle = t('end.victory_carte');
-        if (currentMode === 'simultaneity') winTitle = t('end.victory_simultaneity');
+        if (currentMode === 'simultaneity') {
+            winTitle = isSimultaneityChallenge()
+                ? t('end.victory_simultaneity_challenge')
+                : t('end.victory_simultaneity');
+        }
         if (currentMode === 'daily') winTitle = t('end.victory_daily');
         if (currentMode === 'weekly') winTitle = t('end.victory_weekly');
         titleElement.innerText = winTitle;

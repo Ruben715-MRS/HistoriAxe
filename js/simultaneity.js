@@ -86,6 +86,10 @@
     var CLOSE_YEARS = 5;
     var FAR_YEARS = 40;
     var SESSION_ROUNDS = 12;
+    // Le Défi de simultanéité est plus court que le mode par thème : 10
+    // questions, comme le Défi du jour, parce qu'il se joue une fois par jour
+    // et non à la demande.
+    var CHALLENGE_ROUNDS = 10;
     var OPTIONS_PER_QUESTION = 4;
     // Au-delà, une date n'est plus une année d'histoire mais un ordre de
     // grandeur géologique (« Maîtrise du feu par l'homme », -400000). Ces
@@ -406,6 +410,7 @@
         CLOSE_YEARS: CLOSE_YEARS,
         FAR_YEARS: FAR_YEARS,
         SESSION_ROUNDS: SESSION_ROUNDS,
+        CHALLENGE_ROUNDS: CHALLENGE_ROUNDS,
         OPTIONS_PER_QUESTION: OPTIONS_PER_QUESTION,
         normalizeTitle: normalizeTitle,
         titlesTooClose: titlesTooClose,

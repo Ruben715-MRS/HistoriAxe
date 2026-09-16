@@ -206,7 +206,8 @@
     "title_default": "Partida Terminada",
     "score_label_prefix": "Puntos: ",
     "score_label_suffix": " puntos",
-    "victory_simultaneity": "¡Bien hecho! ¡El mundo entero puesto en hora!"
+    "victory_simultaneity": "¡Bien hecho! ¡El mundo entero puesto en hora!",
+    "victory_simultaneity_challenge": "¡Bien hecho! ¡Tu historia, devuelta a la del mundo!"
   },
   "daily": {
     "title_win": "🌍 ¡Desafío del Día Superado!",
@@ -591,6 +592,9 @@
     "desc": "3 vidas. Un acontecimiento del tema y el mundo alrededor: encuentra qué ocurría en otro lugar al mismo tiempo.",
     "kicker": "¿Cuál de estos acontecimientos fue contemporáneo?",
     "reveal_title": "Alrededor de {year}, en otras partes del mundo…",
-    "not_enough": "Este tema abarca una época todavía poco representada en el resto de la base para este modo. Prueba un tema de otro periodo."
+    "not_enough": "Este tema abarca una época todavía poco representada en el resto de la base para este modo. Prueba un tema de otro periodo.",
+    "challenge_title": "Desafío de simultaneidad",
+    "challenge_locked": "El Desafío de simultaneidad se nutre de lo que ya has trabajado: aún te faltan {missing} acontecimiento(s) encontrado(s) en el juego. Juega una o dos partidas y se abrirá solo.",
+    "challenge_thin": "Los acontecimientos que ya has visto abarcan épocas todavía poco representadas en el resto de la base. ¡Explora algunos temas más y vuelve!"
   }
 }

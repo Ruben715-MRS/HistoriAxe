@@ -210,7 +210,8 @@
     "title_default": "Game Over",
     "score_label_prefix": "Score: ",
     "score_label_suffix": " points",
-    "victory_simultaneity": "Well done! The whole world back in sync!"
+    "victory_simultaneity": "Well done! The whole world back in sync!",
+    "victory_simultaneity_challenge": "Well done! Your history, put back into the world's!"
   },
   "daily": {
     "title_win": "🌍 Daily Challenge Mastered!",
@@ -618,6 +619,9 @@
     "desc": "3 lives. One event from the theme, and the world around it: find what was happening elsewhere at the same time.",
     "kicker": "Which of these events was contemporary with it?",
     "reveal_title": "Around {year}, elsewhere in the world…",
-    "not_enough": "This theme covers a period still too thinly represented elsewhere in the database for this mode. Try a theme from another period."
+    "not_enough": "This theme covers a period still too thinly represented elsewhere in the database for this mode. Try a theme from another period.",
+    "challenge_title": "Simultaneity Challenge",
+    "challenge_locked": "The Simultaneity Challenge draws on what you have already studied: you are still {missing} event(s) short. Play a game or two and it will unlock by itself.",
+    "challenge_thin": "The events you have met so far cover periods still too thinly represented elsewhere in the database. Explore a few more themes and come back!"
   }
 }

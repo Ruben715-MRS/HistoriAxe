@@ -332,13 +332,40 @@ une session complète de 12 questions, 23 % en obtiennent 8 à 11. Le
 garde-fou en dessous de 4 questions (`simultaneity.not_enough`) ne sert donc
 aujourd'hui qu'aux packs de démo non francophones, dont le vivier est vide.
 
-### Une version globale, plus tard
+### Le Défi de simultanéité (version globale)
 
-Un « Défi de simultanéité » à côté du Défi du jour et du Défi hebdomadaire
-est la suite naturelle — mais il ne devra pas tirer ses ancres au hasard,
-pour la raison exposée plus haut : il faudra les prendre **parmi les thèmes
-déjà travaillés par le joueur** (la progression et le SRS le savent déjà),
-pour que l'ancre reste connue.
+Le troisième bouton du choix « Défis », à côté du Défi du jour et du Défi
+hebdomadaire (`js/app.js: startSimultaneityChallenge`). Même écran et mêmes
+règles que le mode par thème, mais lancé depuis l'écran des catégories.
+
+Il perd donc la garantie qui rend le mode par thème jouable — l'ancre n'est
+plus le thème que le joueur vient d'ouvrir. **C'est la règle du tirage qui la
+rétablit : les ancres sortent de ce que le joueur a déjà rencontré, jamais de
+toute la base.** Le signal est le SRS (`js/storage.js: srsRecord`), alimenté
+par tous les modes sans exception : y figurent exactement les événements sur
+lesquels il a été interrogé au moins une fois. Le défi préfère ceux qu'il a
+déjà réussis (boîte ≥ 2) et n'élargit aux simples rencontres que si le stock
+est trop mince.
+
+En dessous de **20 événements rencontrés**, le bouton reste visible mais
+verrouillé, et le clic annonce ce qui l'ouvrira — un mode qu'on ne voit pas
+ne donne envie de rien (même parti pris que les verrous Chrono/Expert). Le
+seuil est atteint après deux ou trois parties.
+
+**Ce défi n'est pas classé, et c'est structurel** : le tirage dépend de
+l'historique de chaque joueur, donc deux joueurs ne répondent jamais aux
+mêmes questions et aucun classement ne serait équitable. Aucun score n'est
+envoyé au serveur, contrairement au Défi du jour et au Défi hebdomadaire —
+et aucun n'est rattaché à un thème non plus, faute de `theme.id` auquel
+l'accrocher (même situation que le Mode Carte).
+
+Il garde en revanche le rythme des deux autres : la graine mêle
+l'identifiant d'appareil au jour courant (`DailyEngine.hashStringToSeed` +
+`mulberry32`, les mêmes que le Défi du jour), si bien que **les 10 questions
+restent identiques jusqu'au lendemain**. Relancer le défi dans la journée
+redonne exactement le même tirage — c'est ce que vérifie
+`e2e/defi-simultaneite.spec.js`, avec son pendant sans DOM dans
+`tests/simultaneity.test.js`.
 
 ## Développement
 
@@ -360,8 +387,8 @@ et un `fetch` — c'est-à-dire de la quasi-totalité de l'interface.
 
 `npm run test:e2e` (Playwright, `e2e/`) comble ce trou en ouvrant un vrai
 navigateur sur le site servi tel qu'il l'est en production
-(`e2e/server.js`, un serveur statique sans dépendance). Six parcours,
-32 tests, une quarantaine de secondes :
+(`e2e/server.js`, un serveur statique sans dépendance). Sept parcours,
+37 tests, une quarantaine de secondes :
 
 - `e2e/modes.spec.js` — chaque mode de jeu se lance et répond à une
   première interaction. C'est la famille de régressions déjà vécue ici :
@@ -380,6 +407,10 @@ navigateur sur le site servi tel qu'il l'est en production
   dont l'ancre est issue — l'asymétrie sans laquelle « ailleurs » serait un
   mensonge. La génération elle-même, sans DOM, est couverte par `npm test`
   (`tests/simultaneity.test.js`).
+- `e2e/defi-simultaneite.spec.js` — le Défi de simultanéité : verrouillé et
+  explicite tant que l'historique est trop mince, puis 10 questions dont
+  toutes les ancres sortent bien du SRS du joueur, un tirage stable d'une
+  partie à l'autre dans la journée, et aucun score rattaché à un thème.
 - `e2e/shuffle.spec.js` — le seul parcours qui ne clique rien : il fait
   tourner `js/app.js: shuffleArray` 200 000 fois et vérifie que la
   distribution reste uniforme. `sort(() => Math.random() - 0.5)`, longtemps
