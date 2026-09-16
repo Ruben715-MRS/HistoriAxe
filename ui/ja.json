@@ -205,7 +205,8 @@
     "victory_carte": "お見事!世界地図を制覇しました!",
     "title_default": "ゲーム終了",
     "score_label_prefix": "スコア:",
-    "score_label_suffix": "点"
+    "score_label_suffix": "点",
+    "victory_simultaneity": "お見事!世界のすべてが時を合わせました!"
   },
   "daily": {
     "title_win": "🌍 デイリーチャレンジ達成！",
@@ -584,5 +585,12 @@
     "redraw_btn": "🔀 別の出来事",
     "play_theme_btn": "このテーマをプレイ",
     "play_theme_btn_named": "「{theme}」をプレイ"
+  },
+  "simultaneity": {
+    "title": "その頃、世界では…",
+    "desc": "ライフ3。テーマの出来事と、その周りの世界。同じ頃に別の場所で何が起きていたかを当てましょう。",
+    "kicker": "同時代の出来事はどれでしょう?",
+    "reveal_title": "{year}年前後、世界のほかの場所では…",
+    "not_enough": "このテーマの時代は、このモードに使えるほかの出来事がまだ十分にありません。別の時代のテーマをお試しください。"
   }
 }

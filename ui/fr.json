@@ -212,7 +212,8 @@
     "victory_carte": "Bravo ! Carte du monde explorée !",
     "title_default": "Partie Terminée",
     "score_label_prefix": "Score : ",
-    "score_label_suffix": " points"
+    "score_label_suffix": " points",
+    "victory_simultaneity": "Bravo ! Le monde entier remis à l'heure !"
   },
   "daily": {
     "title_win": "🌍 Défi du jour relevé !",
@@ -614,5 +615,12 @@
     "redraw_btn": "🔀 Un autre événement",
     "play_theme_btn": "Jouer sur ce thème",
     "play_theme_btn_named": "Jouer sur « {theme} »"
+  },
+  "simultaneity": {
+    "title": "Pendant ce temps, ailleurs…",
+    "desc": "3 vies. Un événement du thème, et le monde autour : retrouvez ce qui se passait ailleurs au même moment.",
+    "kicker": "Lequel de ces événements lui est contemporain ?",
+    "reveal_title": "Autour de {year}, ailleurs dans le monde…",
+    "not_enough": "Ce thème couvre une époque encore trop peu représentée ailleurs dans la base pour ce mode. Essayez un thème d'une autre période."
   }
 }

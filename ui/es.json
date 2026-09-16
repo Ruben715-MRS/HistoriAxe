@@ -205,7 +205,8 @@
     "victory_carte": "¡Bien hecho! ¡Mapa del mundo explorado!",
     "title_default": "Partida Terminada",
     "score_label_prefix": "Puntos: ",
-    "score_label_suffix": " puntos"
+    "score_label_suffix": " puntos",
+    "victory_simultaneity": "¡Bien hecho! ¡El mundo entero puesto en hora!"
   },
   "daily": {
     "title_win": "🌍 ¡Desafío del Día Superado!",
@@ -584,5 +585,12 @@
     "redraw_btn": "🔀 Otro evento",
     "play_theme_btn": "Jugar este tema",
     "play_theme_btn_named": "Jugar «{theme}»"
+  },
+  "simultaneity": {
+    "title": "Mientras tanto, en otro lugar…",
+    "desc": "3 vidas. Un acontecimiento del tema y el mundo alrededor: encuentra qué ocurría en otro lugar al mismo tiempo.",
+    "kicker": "¿Cuál de estos acontecimientos fue contemporáneo?",
+    "reveal_title": "Alrededor de {year}, en otras partes del mundo…",
+    "not_enough": "Este tema abarca una época todavía poco representada en el resto de la base para este modo. Prueba un tema de otro periodo."
   }
 }

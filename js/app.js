@@ -500,7 +500,7 @@ function openLeaderboard() {
             'expert': t('modes.expert.title'), 'quiz': t('modes.quiz.title'),
             'avantapres': t('modes.avantapres.title'), 'fil': t('modes.fil.title'),
             'periodes': t('modes.periodes.title'), 'ecart': t('modes.ecart.title'),
-            'carte': t('carte.mode_title')
+            'carte': t('carte.mode_title'), 'simultaneity': t('simultaneity.title')
         };
         let html = `<table class="leaderboard-table"><thead><tr><th>${t('leaderboard.col_mode')}</th><th>${t('leaderboard.col_score')}</th><th>${t('leaderboard.col_date')}</th></tr></thead><tbody>`;
         scores.forEach(s => {
@@ -2498,6 +2498,212 @@ function updateQuizHUD() {
 }
 
 
+// === MODE « PENDANT CE TEMPS, AILLEURS… » ===
+// Le seul mode qui sorte du thème : l'ancre en vient, les quatre réponses
+// non. Toute la génération vit dans js/simultaneity.js — un module sans DOM,
+// donc testable par `npm test` (voir tests/simultaneity.test.js), ce que
+// l'écran ci-dessous ne serait pas. Ici : l'affichage, le score et le révélé.
+
+let simulQuestions = [];
+let simulIndex = 0;
+// Le vivier de réponses traverse les 795 thèmes : on ne le reconstruit pas à
+// chaque partie. Le cache est indexé sur la base elle-même plutôt que sur la
+// langue, parce que c'est bien `window.bdd` qui est remplacé lors d'un
+// changement de pack (voir js/i18n.js: loadLanguage) — et aussi à l'ajout
+// d'un thème personnalisé.
+let simulPoolCache = null;
+let simulTagIndexCache = null;
+let simulPoolCacheSource = null;
+
+function getSimultaneityIndexes() {
+    const source = window.bdd || bdd || [];
+    if (simulPoolCache && simulPoolCacheSource === source) {
+        return { pool: simulPoolCache, tagByEventId: simulTagIndexCache };
+    }
+    const options = {
+        countryByTheme: (typeof GEO_THEME_COUNTRY !== 'undefined' && GEO_THEME_COUNTRY) || {},
+        excludedThemeIds: (typeof DailyEngine !== 'undefined' && DailyEngine.EXCLUDED_THEME_IDS) || []
+    };
+    simulPoolCache = Simultaneity.buildAnswerPool(source, options);
+    simulTagIndexCache = Simultaneity.buildTagIndex(source, options);
+    simulPoolCacheSource = source;
+    return { pool: simulPoolCache, tagByEventId: simulTagIndexCache };
+}
+
+function startSimultaneityGame() {
+    resetSessionHistory();
+    currentMode = 'simultaneity';
+
+    let sourceEvents = revisionMode ? revisionEvents : getCurrentThemeEventsForMode();
+    if (isSelectionActive && !revisionMode) {
+        sourceEvents = sourceEvents.filter(e => selectedEventsIds.has(e.id));
+    }
+
+    // Chaque ancre porte l'étiquette de SON thème d'origine — pas celle du
+    // thème en cours. La nuance ne change rien à une partie ordinaire, mais
+    // elle est décisive en mode Révision, où les ancres viennent d'une
+    // dizaine de thèmes différents : sans elle, une réponse pourrait sortir
+    // du thème même dont l'ancre est issue.
+    const { pool, tagByEventId } = getSimultaneityIndexes();
+    const anchors = sourceEvents
+        .filter(e => typeof e.date === 'number' && tagByEventId[e.id])
+        .map(e => Object.assign({}, e, { tag: tagByEventId[e.id] }));
+
+    const questions = Simultaneity.buildSession(anchors, pool, {
+        count: Simultaneity.SESSION_ROUNDS
+    });
+
+    // Un thème dont l'époque est mal couverte par le vivier ne peut pas
+    // remplir une session : le dire franchement vaut mieux que de lancer
+    // trois questions et de conclure par une victoire qui n'en est pas une.
+    if (questions.length < 4) {
+        alert(t('simultaneity.not_enough'));
+        return;
+    }
+
+    simulQuestions = questions;
+    simulIndex = 0;
+    lives = 3;
+    score = 0;
+    comboMultiplier = 1.0;
+
+    const dates = questions.map(q => q.anchor.date);
+    currentGameSpan = Math.max(1, Math.max(...dates) - Math.min(...dates));
+
+    showScreen('screen-simultaneity');
+    renderSimultaneityQuestion();
+}
+
+function renderSimultaneityQuestion() {
+    if (simulIndex >= simulQuestions.length) {
+        endGame(true);
+        return;
+    }
+    isAnimating = false;
+    questionStartTime = Date.now();
+
+    const q = simulQuestions[simulIndex];
+    document.getElementById('simul-anchor-year').innerText = formatYear(q.anchor.date);
+    document.getElementById('simul-anchor-title').innerText = q.anchor.titre;
+    const themeEl = document.getElementById('simul-anchor-theme');
+    const theme = revisionMode ? null : getCurrentTheme();
+    themeEl.innerText = theme ? theme.nom : '';
+    themeEl.classList.toggle('hidden', !theme);
+
+    const reveal = document.getElementById('simul-reveal');
+    reveal.innerHTML = '';
+    reveal.classList.add('hidden');
+
+    const container = document.getElementById('simul-options');
+    container.innerHTML = '';
+    if (document.activeElement) document.activeElement.blur();
+    container.style.pointerEvents = 'none';
+    requestAnimationFrame(() => { container.style.pointerEvents = 'auto'; });
+
+    q.options.forEach(opt => {
+        const btn = document.createElement('button');
+        btn.className = 'quiz-option simul-option';
+        btn.dataset.eventId = opt.id;
+        // innerText et non innerHTML : un titre d'événement peut venir d'un
+        // thème personnalisé, donc d'une saisie du joueur.
+        btn.innerText = opt.titre;
+        btn.onclick = () => answerSimultaneity(opt);
+        container.appendChild(btn);
+    });
+
+    document.getElementById('simul-hud-count').innerText = `${simulIndex + 1} / ${simulQuestions.length}`;
+    document.getElementById('simul-progress-fill').style.width =
+        Math.round(simulIndex / simulQuestions.length * 100) + '%';
+    updateSimultaneityHUD();
+}
+
+function answerSimultaneity(chosen) {
+    if (isAnimating) return;
+    isAnimating = true;
+
+    const q = simulQuestions[simulIndex];
+    const isCorrect = chosen.id === q.correct.id;
+    // Même barème que le Quiz : l'écart de dates mesure à quel point la
+    // réponse était plausible, pas seulement si elle était juste.
+    awardPoints(Math.abs(chosen.date - q.anchor.date), isCorrect);
+    if (isCorrect) { playCorrectSound(comboMultiplier); triggerHaptic('success'); }
+    else { playWrongSound(); triggerHaptic('error'); }
+    checkBadgeProgressOnAction(isCorrect);
+
+    // Le SRS retient l'événement-RÉPONSE, jamais l'ancre : le joueur vient
+    // de rencontrer un repère venu d'un thème qu'il n'a peut-être jamais
+    // ouvert, et c'est celui-là qui mérite de revenir en révision. C'est ce
+    // qui fait de ce mode une porte d'entrée vers le reste du catalogue
+    // plutôt qu'un exercice de plus sur le thème en cours.
+    srsRecord(q.correct.id, isCorrect);
+    recordSessionStep(q.correct, isCorrect, false);
+
+    document.querySelectorAll('#simul-options .simul-option').forEach(b => {
+        b.style.pointerEvents = 'none';
+        if (b.dataset.eventId === q.correct.id) b.classList.add('correct');
+        else if (b.dataset.eventId === chosen.id) b.classList.add('wrong');
+    });
+
+    if (!isCorrect) lives -= 1;
+    updateSimultaneityHUD();
+    renderSimultaneityReveal(q);
+
+    // Plus long que les autres modes (1300 ms), et c'est délibéré : le
+    // révélé est la vraie récompense du mode, il lui faut le temps d'être lu.
+    setTimeout(() => {
+        simulIndex++;
+        if (lives <= 0) { endGame(false); return; }
+        renderSimultaneityQuestion();
+    }, 2600);
+}
+
+// « En 1789, pendant que la Bastille tombait : … » — deux ou trois
+// contemporains réels, affichés que la réponse soit bonne ou mauvaise.
+function renderSimultaneityReveal(q) {
+    const reveal = document.getElementById('simul-reveal');
+    reveal.innerHTML = '';
+
+    const title = document.createElement('div');
+    title.className = 'simul-reveal-title';
+    title.innerText = t('simultaneity.reveal_title', { year: formatYear(q.anchor.date) });
+    reveal.appendChild(title);
+
+    q.reveal.forEach(item => {
+        const row = document.createElement('div');
+        row.className = 'simul-reveal-row';
+
+        const year = document.createElement('span');
+        year.className = 'simul-reveal-year';
+        year.innerText = formatYear(item.date);
+
+        const text = document.createElement('span');
+        text.className = 'simul-reveal-text';
+        const label = document.createElement('strong');
+        label.innerText = item.titre;
+        text.appendChild(label);
+        if (item.themeName) {
+            const origin = document.createElement('small');
+            origin.innerText = item.themeName;
+            text.appendChild(origin);
+        }
+
+        row.appendChild(year);
+        row.appendChild(text);
+        reveal.appendChild(row);
+    });
+
+    reveal.classList.remove('hidden');
+}
+
+function updateSimultaneityHUD() {
+    document.getElementById('simul-hud-score').innerText = score;
+    renderComboChip(document.getElementById('simul-hud-combo'), comboMultiplier);
+    let pips = '';
+    for (let i = 0; i < 3; i++) pips += `<span class="pip${i < lives ? '' : ' spent'}"></span>`;
+    document.getElementById('simul-hud-lives').innerHTML = pips;
+}
+
+
 // === MODE AVANT / APRÈS ===
 // Chaque question pioche un événement du pool et lui oppose un autre événement
 // à date distincte ; les deux sont affichés sans leur date et il faut désigner
@@ -4040,6 +4246,7 @@ function endGame(isWin) {
         if (currentMode === 'periodes') winTitle = t('end.victory_periodes');
         if (currentMode === 'ecart') winTitle = t('end.victory_ecart');
         if (currentMode === 'carte') winTitle = t('end.victory_carte');
+        if (currentMode === 'simultaneity') winTitle = t('end.victory_simultaneity');
         if (currentMode === 'daily') winTitle = t('end.victory_daily');
         if (currentMode === 'weekly') winTitle = t('end.victory_weekly');
         titleElement.innerText = winTitle;

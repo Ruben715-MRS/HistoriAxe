@@ -205,7 +205,8 @@
     "victory_carte": "Bravo! Weltkarte erkundet!",
     "title_default": "Spiel beendet",
     "score_label_prefix": "Punkte: ",
-    "score_label_suffix": " Punkte"
+    "score_label_suffix": " Punkte",
+    "victory_simultaneity": "Bravo! Die ganze Welt wieder im Takt!"
   },
   "daily": {
     "title_win": "🌍 Tages-Herausforderung bestanden!",
@@ -584,5 +585,12 @@
     "redraw_btn": "🔀 Anderes Ereignis",
     "play_theme_btn": "Dieses Thema spielen",
     "play_theme_btn_named": "„{theme}“ spielen"
+  },
+  "simultaneity": {
+    "title": "Zur gleichen Zeit, anderswo…",
+    "desc": "3 Leben. Ein Ereignis aus dem Thema und die Welt ringsum: Finden Sie heraus, was anderswo zur selben Zeit geschah.",
+    "kicker": "Welches dieser Ereignisse war zeitgleich?",
+    "reveal_title": "Um {year}, anderswo auf der Welt…",
+    "not_enough": "Dieses Thema behandelt eine Epoche, die anderswo in der Datenbank für diesen Modus noch zu dünn vertreten ist. Versuchen Sie ein Thema aus einer anderen Zeit."
   }
 }

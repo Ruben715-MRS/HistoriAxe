@@ -871,6 +871,10 @@ body {
     background: linear-gradient(135deg, #9A7D0A, #F4D03F);
 }
 
+.mode-card.simul-card {
+    background: linear-gradient(135deg, #1B4F72, #148F77);
+}
+
 /* --- Grille carrée 2x2 pour Entraînement / Classique / Chrono / Expert --- */
 .grid-modes-square {
     display: grid;
@@ -2150,6 +2154,100 @@ textarea.form-input {
 .quiz-fifty-btn:disabled {
     opacity: 0.4;
     cursor: not-allowed;
+}
+
+/* Mode « Pendant ce temps, ailleurs… » (simultanéité — voir js/simultaneity.js).
+   L'écran réutilise la carcasse du Quiz (.quiz-body, .quiz-option…) : seules
+   l'ancre et le révélé lui sont propres. */
+.simul-anchor-card {
+    border-left: 4px solid var(--primary-blue);
+}
+
+/* L'année porte la question : elle doit se lire avant le titre, d'où la
+   taille et la police à chasse ancienne, comme les dates de la frise. */
+.simul-anchor-year {
+    font-family: var(--font-year);
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.1;
+    margin-bottom: 6px;
+}
+
+.simul-anchor-theme {
+    margin-top: 10px;
+    font-size: 13px;
+    color: var(--muted-text);
+}
+
+/* Le révélé : la vraie récompense du mode. Il apparaît sous les options une
+   fois la réponse donnée, bonne ou mauvaise. */
+.simul-reveal {
+    background: var(--surface);
+    border-radius: 14px;
+    border: 1px solid var(--border-soft);
+    padding: 18px 20px;
+    box-shadow: var(--card-shadow);
+    animation: simul-reveal-in 0.32s ease-out both;
+}
+
+@keyframes simul-reveal-in {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .simul-reveal {
+        animation: none;
+    }
+}
+
+.simul-reveal-title {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--muted-text);
+    margin-bottom: 12px;
+}
+
+.simul-reveal-row {
+    display: flex;
+    gap: 14px;
+    align-items: baseline;
+    padding: 7px 0;
+}
+
+.simul-reveal-row+.simul-reveal-row {
+    border-top: 1px solid var(--border-soft);
+}
+
+.simul-reveal-year {
+    flex: 0 0 auto;
+    min-width: 58px;
+    font-family: var(--font-year);
+    font-weight: 700;
+    color: var(--ink);
+}
+
+.simul-reveal-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    color: var(--text-dark);
+    font-size: 15px;
+    line-height: 1.35;
+}
+
+.simul-reveal-text small {
+    color: var(--muted-text);
+    font-size: 12px;
 }
 
 /* Mode Carte (localisation géographique puis temporelle — voir js/geoMap.js) */

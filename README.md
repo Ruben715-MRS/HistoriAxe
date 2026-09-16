@@ -255,6 +255,91 @@ l'`eventId` d'un repère — sont validées par `tests/data-schema.test.js` :
 une référence morte casse les tests au lieu de ne se voir qu'en dépliant la
 bonne branche au bon endroit de l'app.
 
+## « Pendant ce temps, ailleurs… » (simultanéité)
+
+Tous les autres modes piochent dans **un seul thème**. On peut donc
+maîtriser « Révolution française » et « Histoire de la Chine » chacun de son
+côté sans jamais savoir que Qianlong régnait en 1789. Ce mode-ci
+(`js/simultaneity.js` pour le moteur, `js/app.js: startSimultaneityGame`
+pour l'écran `#screen-simultaneity`) est le seul qui fasse travailler les
+795 thèmes ensemble.
+
+Toute sa conception tient dans une asymétrie :
+
+> **L'ancre vient du thème. Les réponses viennent d'ailleurs.**
+
+Ce n'est pas qu'un cadrage. La question « lequel de ces 4 événements est
+contemporain de X ? » n'est répondable que si le joueur connaît X — sans
+quoi il compare quatre inconnues à une cinquième. Le thème qu'il vient
+d'ouvrir est justement ce qu'il connaît. C'est aussi pourquoi le mode se
+prend par thème et non depuis l'accueil : un tirage global n'offrirait pas
+cette garantie.
+
+La récompense n'est pas la question mais le **révélé** qui la suit : deux ou
+trois contemporains réels, venus d'endroits différents, affichés que la
+réponse soit bonne ou mauvaise. La question n'est que le prétexte.
+
+Le SRS enregistre l'événement-**réponse**, jamais l'ancre : une session sème
+donc la liste des points faibles avec des repères venus de thèmes que le
+joueur n'a peut-être jamais ouverts, et « Réviser » devient une porte
+d'entrée vers le reste du catalogue.
+
+### Ce que « ailleurs » veut dire
+
+Les cinq catégories ne sont **pas** un signal de lieu : « Histoires
+nationales > Europe > Histoire de France » et « Programmes scolaires >
+France » parlent du même endroit. L'étiquette est donc dérivée de
+l'identifiant du thème, jamais du nom de sa catégorie — qui change d'une
+langue à l'autre (même précaution que `js/geoMap.js: isGeoEligible`). Voir
+`Simultaneity.themeTag` : pays connu (`assets/geo/theme-country-map.json`,
+déjà là pour le Mode Carte), sinon convention `psn_<iso2>_` des programmes
+scolaires nationaux, sinon position dans l'arbre (indices, pas noms).
+
+### Quatre contraintes, toutes mesurées sur les données
+
+Elles sont détaillées en tête de `js/simultaneity.js` et tenues par
+`tests/simultaneity.test.js` :
+
+1. **Dédoublonner.** 540 événements figurent dans plusieurs thèmes (6 % de
+   la base) ; 0,30 % des paires candidates ont des titres seulement
+   *proches* (« Lancement de Spoutnik 1 » / « Lancement de Spoutnik »).
+   Sans garde, le mode proposerait l'ancre elle-même comme « ailleurs ».
+2. **Exclure le calendrier non grégorien**, via
+   `DailyEngine.EXCLUDED_THEME_IDS` — la même liste que les Défis, pour la
+   même raison.
+3. **Limiter les réponses aux ⭐ Incontournables.** C'est la contrainte de
+   qualité. Sans elle la génération produit des paires exactes mais vides
+   (« Invention du moteur à quatre temps (1876) » → « Part étudier le droit
+   en Angleterre (1878) »), à cause des milliers de micro-événements
+   biographiques. Le champ `essentiel` les écarte tous seul : vivier de
+   ~2 700 réponses, dont aucune biographique. Les biographies restent
+   d'excellentes **ancres**.
+4. **Assumer un biais moderne.** 41 % du vivier tombe entre 1800 et 1999 ;
+   avant 1500, chaque siècle n'en offre que 30 à 110. Un thème d'Antiquité
+   se répétera davantage. C'est une limite du **contenu**, pas du code :
+   elle se corrigera en étendant `essentiel` (absent de 0 % des Biographies
+   et de 2 % des Programmes scolaires), pas en touchant le moteur.
+
+Une catégorie **sans sous-catégories** est écartée du vivier des réponses :
+tous ses thèmes partageraient la même étiquette, si bien qu'un thème
+français y répondrait à une ancre française sous le titre « ailleurs ».
+C'est le cas de « CAPES & Agrégation », dont les thèmes sont des
+monographies — ils restent d'excellentes ancres. La règle est structurelle,
+pas une liste en dur : toute future catégorie plate sera traitée pareil.
+
+Sur le pack français, **aucun thème ne refuse le mode** : 76 % remplissent
+une session complète de 12 questions, 23 % en obtiennent 8 à 11. Le
+garde-fou en dessous de 4 questions (`simultaneity.not_enough`) ne sert donc
+aujourd'hui qu'aux packs de démo non francophones, dont le vivier est vide.
+
+### Une version globale, plus tard
+
+Un « Défi de simultanéité » à côté du Défi du jour et du Défi hebdomadaire
+est la suite naturelle — mais il ne devra pas tirer ses ancres au hasard,
+pour la raison exposée plus haut : il faudra les prendre **parmi les thèmes
+déjà travaillés par le joueur** (la progression et le SRS le savent déjà),
+pour que l'ancre reste connue.
+
 ## Développement
 
 ```bash
@@ -275,8 +360,8 @@ et un `fetch` — c'est-à-dire de la quasi-totalité de l'interface.
 
 `npm run test:e2e` (Playwright, `e2e/`) comble ce trou en ouvrant un vrai
 navigateur sur le site servi tel qu'il l'est en production
-(`e2e/server.js`, un serveur statique sans dépendance). Cinq parcours,
-28 tests, une trentaine de secondes :
+(`e2e/server.js`, un serveur statique sans dépendance). Six parcours,
+32 tests, une quarantaine de secondes :
 
 - `e2e/modes.spec.js` — chaque mode de jeu se lance et répond à une
   première interaction. C'est la famille de régressions déjà vécue ici :
@@ -289,6 +374,12 @@ navigateur sur le site servi tel qu'il l'est en production
 - `e2e/navigation.spec.js` — le seul parcours qui prend l'app par la porte :
   accueil, catégories, sous-catégories imbriquées, retours arrière,
   recherche, favoris, « Hasard », « Réviser » et « Défis ».
+- `e2e/simultaneite.spec.js` — le mode « Pendant ce temps, ailleurs… » : la
+  carte lance la session, l'ancre et ses quatre options s'affichent, un clic
+  tranche et déplie le révélé, et surtout aucune option ne vient du thème
+  dont l'ancre est issue — l'asymétrie sans laquelle « ailleurs » serait un
+  mensonge. La génération elle-même, sans DOM, est couverte par `npm test`
+  (`tests/simultaneity.test.js`).
 - `e2e/shuffle.spec.js` — le seul parcours qui ne clique rien : il fait
   tourner `js/app.js: shuffleArray` 200 000 fois et vérifie que la
   distribution reste uniforme. `sort(() => Math.random() - 0.5)`, longtemps

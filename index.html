@@ -322,6 +322,11 @@
                 <p data-i18n="modes.periodes.desc">3 vies. Situez chaque événement dans son siècle, son époque ou ses
                     contemporains.</p>
             </div>
+            <div class="mode-card simul-card" id="mode-card-simultaneity" onclick="startSimultaneityGame()">
+                <h3 data-i18n="simultaneity.title">Pendant ce temps, ailleurs…</h3>
+                <p data-i18n="simultaneity.desc">3 vies. Un événement du thème, et le monde autour : retrouvez ce qui
+                    se passait ailleurs au même moment.</p>
+            </div>
             <div class="mode-card fil-card" onclick="startFilGame()">
                 <h3 data-i18n="modes.fil.title">Le fil du temps</h3>
                 <p data-i18n="modes.fil.desc">Du tout premier événement du thème jusqu'au dernier, dans l'ordre
@@ -509,6 +514,43 @@
                 <button class="quiz-fifty-btn" id="quiz-fifty-btn" onclick="useFiftyFifty()">50:50 <span
                         id="quiz-fifty-count">(2)</span></button>
             </div>
+        </div>
+    </div>
+
+    <!-- ÉCRAN : PENDANT CE TEMPS, AILLEURS… (simultanéité — voir js/simultaneity.js
+         pour le moteur, js/app.js: startSimultaneityGame pour l'écran) -->
+    <div id="screen-simultaneity" class="hidden">
+        <div class="game-bar">
+            <div class="bar-row">
+                <button class="quit-btn" onclick="quitGame()">‹ <span data-i18n="nav.quit">Quitter</span></button>
+                <span class="bar-fill"></span>
+                <span class="lives-row" id="simul-hud-lives"></span>
+                <span class="type-size">
+                    <button type="button" onclick="changeZoom(-0.15)" aria-label="Réduire le texte"
+                        data-i18n-attr="aria-label:game.decrease_text_aria">A−</button>
+                    <button type="button" onclick="changeZoom(0.15)" aria-label="Agrandir le texte"
+                        data-i18n-attr="aria-label:game.increase_text_aria">A+</button>
+                </span>
+            </div>
+            <div class="bar-row">
+                <span class="progress-rail" id="simul-progress-rail"><span class="progress-fill"
+                        id="simul-progress-fill"></span></span>
+                <span class="bar-meta" id="simul-hud-count">1 / 12</span>
+                <span class="bar-meta"><span id="simul-hud-score">0</span> pts<span id="simul-hud-combo"
+                        class="combo-chip hidden"></span></span>
+            </div>
+        </div>
+
+        <div class="quiz-body">
+            <div class="quiz-question-card simul-anchor-card">
+                <div class="quiz-kicker" id="simul-kicker" data-i18n="simultaneity.kicker">Lequel de ces événements
+                    lui est contemporain ?</div>
+                <div class="simul-anchor-year" id="simul-anchor-year">—</div>
+                <div class="quiz-prompt" id="simul-anchor-title" data-i18n="nav.loading">Chargement…</div>
+                <div class="simul-anchor-theme" id="simul-anchor-theme"></div>
+            </div>
+            <div class="quiz-options" id="simul-options"></div>
+            <div class="simul-reveal hidden" id="simul-reveal" aria-live="polite"></div>
         </div>
     </div>
 
@@ -1251,6 +1293,7 @@
     <script src="js/i18n.js"></script>
     <script src="js/geoMap.js"></script>
     <script src="js/mindMap.js"></script>
+    <script src="js/simultaneity.js"></script>
     <script src="js/app.js"></script>
 
     <!-- ENREGISTREMENT DU SERVICE WORKER PWA -->

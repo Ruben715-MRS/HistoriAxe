@@ -42,6 +42,7 @@ const APP_SHELL_FILES = [
     './js/i18n.js',
     './js/geoMap.js',
     './js/mindMap.js',
+    './js/simultaneity.js',
     './js/app.js',
     './ui/fr.json',
     './data/fr.json',

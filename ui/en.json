@@ -209,7 +209,8 @@
     "victory_carte": "Well done! World map explored!",
     "title_default": "Game Over",
     "score_label_prefix": "Score: ",
-    "score_label_suffix": " points"
+    "score_label_suffix": " points",
+    "victory_simultaneity": "Well done! The whole world back in sync!"
   },
   "daily": {
     "title_win": "🌍 Daily Challenge Mastered!",
@@ -611,5 +612,12 @@
     "redraw_btn": "🔀 Another event",
     "play_theme_btn": "Play this theme",
     "play_theme_btn_named": "Play «{theme}»"
+  },
+  "simultaneity": {
+    "title": "Meanwhile, elsewhere…",
+    "desc": "3 lives. One event from the theme, and the world around it: find what was happening elsewhere at the same time.",
+    "kicker": "Which of these events was contemporary with it?",
+    "reveal_title": "Around {year}, elsewhere in the world…",
+    "not_enough": "This theme covers a period still too thinly represented elsewhere in the database for this mode. Try a theme from another period."
   }
 }

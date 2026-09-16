@@ -205,7 +205,8 @@
     "victory_carte": "Bravo! Mappa del mondo esplorata!",
     "title_default": "Partita Terminata",
     "score_label_prefix": "Punteggio: ",
-    "score_label_suffix": " punti"
+    "score_label_suffix": " punti",
+    "victory_simultaneity": "Bravo! Il mondo intero rimesso in orario!"
   },
   "daily": {
     "title_win": "🌍 Sfida del Giorno Superata!",
@@ -584,5 +585,12 @@
     "redraw_btn": "🔀 Un altro evento",
     "play_theme_btn": "Gioca questo tema",
     "play_theme_btn_named": "Gioca «{theme}»"
+  },
+  "simultaneity": {
+    "title": "Nel frattempo, altrove…",
+    "desc": "3 vite. Un evento del tema e il mondo attorno: scoprite che cosa accadeva altrove nello stesso momento.",
+    "kicker": "Quale di questi eventi gli è contemporaneo?",
+    "reveal_title": "Attorno al {year}, altrove nel mondo…",
+    "not_enough": "Questo tema copre un'epoca ancora poco rappresentata altrove nella base per questa modalità. Provate un tema di un altro periodo."
   }
 }
