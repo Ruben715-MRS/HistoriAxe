@@ -264,10 +264,10 @@ découvertes » 400. Avec 3 vies, les terminer est hors d'atteinte : les
 thèmes les plus riches de la base étaient précisément les moins jouables, et
 rien dans l'interface ne le laissait deviner avant de lancer la partie.
 
-Un sélecteur **10 / 20 / Tout (N)** s'affiche donc sous l'en-tête de l'écran
-des modes (`js/app.js: renderRoundLengthPicker`). Il est placé là, au-dessus
-des modes, parce qu'il les concerne tous : c'est un cadrage de la partie à
-venir, pas un mode de plus.
+Un sélecteur **10 / 20 / 50 / Tout (N)** s'affiche donc sous l'en-tête de
+l'écran des modes (`js/app.js: renderRoundLengthPicker`). Il est placé là,
+au-dessus des modes, parce qu'il les concerne tous : c'est un cadrage de la
+partie à venir, pas un mode de plus.
 
 **La valeur par défaut est 20, et ce n'est pas neutre.** Laisser « Tout »
 par défaut n'aurait rien réglé pour qui ne trouve pas le réglage — or c'est
@@ -283,8 +283,13 @@ Trois précisions qui expliquent le code :
   serait jamais jouée.
 - Le sélecteur **suit le vivier réellement disponible**, filtre d'axes et
   ⭐ Incontournables compris — « 20 » disparaît dès que l'axe choisi n'a que
-  14 événements — et **s'efface entièrement** sous 11, où les trois choix
+  14 événements — et **s'efface entièrement** sous 11, où les quatre choix
   joueraient la même partie.
+- Chaque longueur n'apparaît que sur un thème **strictement plus grand**
+  qu'elle, jamais à l'égalité exacte : sur un thème de 50 événements pile,
+  « 50 » disparaît (il jouerait exactement la même partie que « Tout »),
+  tout comme « 20 » disparaît déjà à 20 pile. La règle est générique
+  (`roundLengthChoicesFor`) et vaudra pour toute longueur ajoutée plus tard.
 - **La Découverte garde le thème entier** : c'est une consultation, et une
   frise amputée n'a pas de sens. Les Défis (jour, hebdomadaire,
   simultanéité) et la Révision ont chacun leur propre longueur et ne sont
@@ -435,7 +440,7 @@ et un `fetch` — c'est-à-dire de la quasi-totalité de l'interface.
 `npm run test:e2e` (Playwright, `e2e/`) comble ce trou en ouvrant un vrai
 navigateur sur le site servi tel qu'il l'est en production
 (`e2e/server.js`, un serveur statique sans dépendance). Huit parcours,
-43 tests, une minute :
+45 tests, une minute :
 
 - `e2e/modes.spec.js` — chaque mode de jeu se lance et répond à une
   première interaction. C'est la famille de régressions déjà vécue ici :
@@ -456,8 +461,10 @@ navigateur sur le site servi tel qu'il l'est en production
   (`tests/simultaneity.test.js`).
 - `e2e/manche.spec.js` — la longueur de la manche : le sélecteur propose les
   longueurs qui changent quelque chose, le choix agit réellement sur la
-  partie lancée (10 cartes et non 72), il est retenu d'un thème à l'autre, la
-  Découverte y échappe, et un axe trop étroit fait disparaître le sélecteur.
+  partie lancée (10 ou 50 cartes, et non 72), il est retenu d'un thème à
+  l'autre, la Découverte y échappe, un axe trop étroit fait disparaître le
+  sélecteur, et « 50 » reste caché sur un thème de 50 événements pile —
+  pile parce que ce cas exact existe dans le pack français (`thm_rome`).
 - `e2e/defi-simultaneite.spec.js` — le Défi de simultanéité : verrouillé et
   explicite tant que l'historique est trop mince, puis 10 questions dont
   toutes les ancres sortent bien du SRS du joueur, un tirage stable d'une

@@ -51,8 +51,12 @@ const DEFAULT_SETTINGS = {
 };
 
 // Longueurs proposées, dans l'ordre d'affichage. 0 = le thème entier, et
-// ferme toujours la liste.
-const ROUND_LENGTH_CHOICES = [10, 20, 0];
+// ferme toujours la liste. Chaque valeur n'apparaît que sur un thème assez
+// grand pour qu'elle diffère de « Tout » (voir roundLengthChoicesFor) : 50
+// ne s'affiche donc qu'à partir de 51 événements, jamais à 50 pile, où elle
+// jouerait exactement la même partie que « Tout » — même règle que 10 et 20,
+// qui disparaissent déjà dans ce cas.
+const ROUND_LENGTH_CHOICES = [10, 20, 50, 0];
 
 // Combien d'événements retenir, pour un réglage et un vivier donnés.
 // Toujours borné par le vivier : demander 20 sur un thème de 12 en joue 12,

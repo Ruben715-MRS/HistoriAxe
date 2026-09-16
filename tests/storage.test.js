@@ -75,6 +75,14 @@ test('une manche ne dépasse jamais le vivier disponible', () => {
     assert.equal(resolveRoundLength(20, 12), 12);
     assert.equal(resolveRoundLength(10, 4), 4);
     assert.equal(resolveRoundLength(20, 0), 0);
+    // « 50 » sur un thème plus petit joue le thème entier, pas 50 cartes
+    // fantômes.
+    assert.equal(resolveRoundLength(50, 30), 30);
+});
+
+test('« 50 » joue bien 50 événements sur un thème assez grand', () => {
+    assert.equal(resolveRoundLength(50, 217), 50);
+    assert.equal(resolveRoundLength(50, 400), 50);
 });
 
 test('un réglage aberrant retombe sur la valeur par défaut', () => {
@@ -85,13 +93,25 @@ test('un réglage aberrant retombe sur la valeur par défaut', () => {
 });
 
 test('le sélecteur ne propose que des longueurs qui changent quelque chose', () => {
-    // Un thème de 8 événements : les trois choix y joueraient les 8, le
+    // Un thème de 8 événements : les quatre choix y joueraient les 8, le
     // sélecteur se cache donc entièrement.
     assert.deepEqual(roundLengthChoicesFor(8), []);
-    // 18 événements : « 20 » n'apporterait rien de plus que « Tout ».
+    // 18 événements : « 20 » et « 50 » n'apporteraient rien de plus que « Tout ».
     assert.deepEqual(roundLengthChoicesFor(18), [10, 0]);
-    // 217 : les trois ont un sens.
-    assert.deepEqual(roundLengthChoicesFor(217), [10, 20, 0]);
+    // 40 événements : « 20 » a un sens, mais « 50 » dépasse le thème entier —
+    // même règle que « 20 » sur un thème de 18.
+    assert.deepEqual(roundLengthChoicesFor(40), [10, 20, 0]);
+    // 217 : les quatre ont un sens, dans l'ordre 10 < 20 < 50 < Tout.
+    assert.deepEqual(roundLengthChoicesFor(217), [10, 20, 50, 0]);
+});
+
+test('« 50 » n’apparaît jamais à 50 événements pile, seulement au-delà', () => {
+    // À 50 événements exactement, choisir « 50 » jouerait très exactement la
+    // même partie que « Tout » : la règle qui écarte déjà 10 et 20 dans ce
+    // cas s'applique pareil à 50, pour ne jamais présenter deux boutons
+    // strictement équivalents.
+    assert.deepEqual(roundLengthChoicesFor(50), [10, 20, 0]);
+    assert.deepEqual(roundLengthChoicesFor(51), [10, 20, 50, 0]);
 });
 
 test('« Tout » ferme toujours la liste des choix', () => {
