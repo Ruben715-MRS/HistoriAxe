@@ -465,6 +465,12 @@ function saveCustomEvent() {
 // === TABLEAU DES SCORES (LEADERBOARD) ===
 
 
+// Combien d'événements la partie en cours retient. Renseigné au lancement
+// (voir getSessionPool / launchSimultaneitySession) et conservé dans
+// l'historique des scores, où deux parties de longueurs différentes ne se
+// comparent pas.
+let currentRoundSize = 0;
+
 function saveScoreToLeaderboard(themeId, mode, score) {
     try {
         const data = JSON.parse(localStorage.getItem(LEADERBOARD_KEY)) || {};
@@ -474,7 +480,7 @@ function saveScoreToLeaderboard(themeId, mode, score) {
         const pad = (n) => n.toString().padStart(2, '0');
         const dateStr = `${pad(now.getDate())}/${pad(now.getMonth() + 1)}/${now.getFullYear()} à ${pad(now.getHours())}:${pad(now.getMinutes())}`;
 
-        data[themeId].push({ mode, score, date: dateStr, timestamp: now.getTime() });
+        data[themeId].push({ mode, score, rounds: currentRoundSize || undefined, date: dateStr, timestamp: now.getTime() });
         // Garder les 50 meilleurs/derniers scores par thème pour éviter la surcharge
         data[themeId].sort((a, b) => b.score - a.score);
         if (data[themeId].length > 50) data[themeId] = data[themeId].slice(0, 50);
@@ -504,7 +510,10 @@ function openLeaderboard() {
         };
         let html = `<table class="leaderboard-table"><thead><tr><th>${t('leaderboard.col_mode')}</th><th>${t('leaderboard.col_score')}</th><th>${t('leaderboard.col_date')}</th></tr></thead><tbody>`;
         scores.forEach(s => {
-            html += `<tr><td>${modeNames[s.mode] || s.mode}</td><td class="leaderboard-score">${s.score}</td><td>${s.date}</td></tr>`;
+            // `rounds` est absent des scores enregistrés avant l'arrivée des
+            // manches : on n'affiche rien plutôt que d'inventer une longueur.
+            const rounds = s.rounds ? `<small class="leaderboard-rounds">${t('rounds.hint', { count: s.rounds })}</small>` : '';
+            html += `<tr><td>${modeNames[s.mode] || s.mode}${rounds}</td><td class="leaderboard-score">${s.score}</td><td>${s.date}</td></tr>`;
         });
         html += '</tbody></table>';
         container.innerHTML = html;
@@ -1196,6 +1205,7 @@ function showScreen(screenId, direction) {
             subtitleEl.innerText = subtitle;
             subtitleEl.classList.toggle('hidden', !subtitle);
         }
+        renderRoundLengthPicker();
         updateModeLocks();
         // Choix Frise / Sommaire sous « Découverte » : déplié seulement
         // pour un thème qui propose un sommaire (voir js/mindMap.js).
@@ -1372,6 +1382,88 @@ function getAxisColor(axeName) {
     const idx = axesList ? axesList.indexOf(axeName) : -1;
     const paletteIndex = idx >= 0 ? (idx % AXIS_PALETTE.length) : 0;
     return AXIS_PALETTE[paletteIndex];
+}
+
+// --- LONGUEUR DE LA MANCHE ---
+// Tous les modes qui piochent dans un thème passaient par le même bloc,
+// recopié à l'identique sept fois : « les événements du thème (ou de la
+// révision), moins ceux qu'une Sélection a écartés ». Il vit désormais ici,
+// et c'est du même coup le seul endroit où appliquer la longueur de manche.
+//
+// Deux portes plutôt qu'une : `getModePoolRaw` rend le vivier entier, que la
+// Découverte et les Défis doivent garder (consulter une frise amputée n'a pas
+// de sens, et le tirage d'un défi est fixé ailleurs) ; `getSessionPool` en
+// rend une manche.
+// Sélecteur affiché sous l'en-tête de l'écran des modes. Il se redessine à
+// chaque ouverture parce que la taille du vivier change avec le thème, mais
+// aussi avec le filtre d'axes ou les ⭐ Incontournables : « 20 » n'a plus de
+// sens une fois l'axe réduit à 14 événements.
+function renderRoundLengthPicker() {
+    const box = document.getElementById('round-length');
+    if (!box) return;
+    box.innerHTML = '';
+
+    // La révision impose déjà sa taille au lancement : deux réglages
+    // concurrents sur le même écran ne feraient que se contredire.
+    const poolSize = revisionMode ? 0 : getModePoolRaw().length;
+    const choices = roundLengthChoicesFor(poolSize);
+    box.classList.toggle('hidden', choices.length === 0);
+    if (!choices.length) return;
+
+    const current = resolveRoundLength(appSettings.roundLength, poolSize);
+    choices.forEach(choice => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'round-length-btn';
+        btn.innerText = choice === 0 ? t('rounds.all', { count: poolSize }) : String(choice);
+        // Comparer les tailles effectives et non les réglages bruts : « 20 »
+        // et « Tout » désignent la même partie sur un thème de 20, et deux
+        // boutons actifs à la fois n'auraient aucun sens.
+        const active = resolveRoundLength(choice, poolSize) === current;
+        btn.classList.toggle('active', active);
+        btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+        btn.onclick = () => {
+            appSettings.roundLength = choice;
+            settingsSave(appSettings);
+            renderRoundLengthPicker();
+        };
+        box.appendChild(btn);
+    });
+
+    const hint = document.createElement('span');
+    hint.className = 'round-length-hint';
+    hint.innerText = t('rounds.hint', { count: current });
+    box.appendChild(hint);
+}
+
+function getModePoolRaw() {
+    let sourceEvents = revisionMode ? revisionEvents : getCurrentThemeEventsForMode();
+    if (isSelectionActive && !revisionMode) {
+        sourceEvents = sourceEvents.filter(e => selectedEventsIds.has(e.id));
+    }
+    return sourceEvents;
+}
+
+function getSessionPool() {
+    const pool = applyRoundLength(getModePoolRaw());
+    // Mémorisé pour l'historique des scores : sans lui, une manche de 10 et
+    // une partie de 217 s'y afficheraient dans la même colonne, incomparables
+    // mais présentées comme si elles l'étaient.
+    currentRoundSize = pool.length;
+    return pool;
+}
+
+// La révision a déjà sa propre taille, choisie par le joueur au lancement
+// (voir launchRandomRevision) : la borner une seconde fois lui retirerait des
+// points faibles qu'il vient justement de demander à revoir.
+function applyRoundLength(events) {
+    if (revisionMode) return events;
+    const size = resolveRoundLength(appSettings.roundLength, events.length);
+    if (size >= events.length) return events;
+    // Tirage au sort dans tout le thème, plutôt qu'une tranche chronologique :
+    // une manche doit balayer toute la période couverte, pas seulement son
+    // début — sinon la fin d'un gros thème ne serait jamais jouée.
+    return shuffleArray(events).slice(0, size);
 }
 
 function getCurrentThemeEventsForMode() {
@@ -2246,13 +2338,12 @@ function startActualGame(mode) {
         // Défi hebdomadaire : même principe, 30 événements (voir
         // generateWeeklyChallengeEvents dans js/weekly.js).
         sourceEvents = weeklyChallengeEventsWithLocation.map(item => item.event);
-    } else if (revisionMode) {
-        sourceEvents = revisionEvents;
+    } else if (mode === 'discovery') {
+        // La Découverte n'est pas une partie mais une consultation : elle
+        // garde le thème entier, une frise amputée n'ayant aucun sens.
+        sourceEvents = getModePoolRaw();
     } else {
-        sourceEvents = getCurrentThemeEventsForMode();
-    }
-    if (isSelectionActive && !revisionMode) {
-        sourceEvents = sourceEvents.filter(e => selectedEventsIds.has(e.id));
+        sourceEvents = getSessionPool();
     }
     if (sourceEvents.length === 0) {
         alert(t('modes.no_events_theme'));
@@ -2344,15 +2435,7 @@ function startActualGame(mode) {
 function startQuizGame() {
     resetSessionHistory();
     currentMode = 'quiz';
-    let sourceEvents;
-    if (revisionMode) {
-        sourceEvents = revisionEvents;
-    } else {
-        sourceEvents = getCurrentThemeEventsForMode();
-    }
-    if (isSelectionActive && !revisionMode) {
-        sourceEvents = sourceEvents.filter(e => selectedEventsIds.has(e.id));
-    }
+    const sourceEvents = getSessionPool();
     if (sourceEvents.length < 4) {
         alert(t('modes.min_events_quiz'));
         return;
@@ -2578,10 +2661,11 @@ function startSimultaneityGame() {
     currentMode = 'simultaneity';
     simulChallengeMode = false;
 
-    let sourceEvents = revisionMode ? revisionEvents : getCurrentThemeEventsForMode();
-    if (isSelectionActive && !revisionMode) {
-        sourceEvents = sourceEvents.filter(e => selectedEventsIds.has(e.id));
-    }
+    // Vivier entier : ce mode a déjà sa propre longueur (SESSION_ROUNDS), et
+    // ses ancres doivent être choisies parmi TOUS les événements du thème —
+    // beaucoup n'ont aucun contemporain dans le vivier des réponses, si bien
+    // qu'une pré-coupe à 20 réduirait la session bien en dessous de 12.
+    const sourceEvents = getModePoolRaw();
 
     const { pool, tagByEventId } = getSimultaneityIndexes();
     const theme = revisionMode ? null : getCurrentTheme();
@@ -2602,6 +2686,7 @@ function startSimultaneityGame() {
 }
 
 function launchSimultaneitySession(questions) {
+    currentRoundSize = questions.length;
     simulQuestions = questions;
     simulIndex = 0;
     lives = 3;
@@ -2865,15 +2950,7 @@ function updateSimultaneityHUD() {
 function startAvapGame() {
     resetSessionHistory();
     currentMode = 'avantapres';
-    let sourceEvents;
-    if (revisionMode) {
-        sourceEvents = revisionEvents;
-    } else {
-        sourceEvents = getCurrentThemeEventsForMode();
-    }
-    if (isSelectionActive && !revisionMode) {
-        sourceEvents = sourceEvents.filter(e => selectedEventsIds.has(e.id));
-    }
+    const sourceEvents = getSessionPool();
     if (sourceEvents.length < 4) {
         alert(t('modes.min_events_avap'));
         return;
@@ -3011,15 +3088,7 @@ let periodesIndex = 0;
 function startPeriodesGame() {
     resetSessionHistory();
     currentMode = 'periodes';
-    let sourceEvents;
-    if (revisionMode) {
-        sourceEvents = revisionEvents;
-    } else {
-        sourceEvents = getCurrentThemeEventsForMode();
-    }
-    if (isSelectionActive && !revisionMode) {
-        sourceEvents = sourceEvents.filter(e => selectedEventsIds.has(e.id));
-    }
+    const sourceEvents = getSessionPool();
     if (sourceEvents.length < 4) {
         alert(t('modes.min_events_periodes'));
         return;
@@ -3285,15 +3354,7 @@ function updatePeriodesHUD() {
 function startFilGame() {
     resetSessionHistory();
     currentMode = 'fil';
-    let sourceEvents;
-    if (revisionMode) {
-        sourceEvents = revisionEvents;
-    } else {
-        sourceEvents = getCurrentThemeEventsForMode();
-    }
-    if (isSelectionActive && !revisionMode) {
-        sourceEvents = sourceEvents.filter(e => selectedEventsIds.has(e.id));
-    }
+    const sourceEvents = getSessionPool();
     if (sourceEvents.length === 0) {
         alert(t('modes.no_events_theme'));
         return;
@@ -3518,15 +3579,7 @@ function updateFilHUD() {
 function startEcartGame() {
     resetSessionHistory();
     currentMode = 'ecart';
-    let sourceEvents;
-    if (revisionMode) {
-        sourceEvents = revisionEvents;
-    } else {
-        sourceEvents = getCurrentThemeEventsForMode();
-    }
-    if (isSelectionActive && !revisionMode) {
-        sourceEvents = sourceEvents.filter(e => selectedEventsIds.has(e.id));
-    }
+    const sourceEvents = getSessionPool();
     if (sourceEvents.length < 4) {
         alert(t('modes.min_events_ecart'));
         return;

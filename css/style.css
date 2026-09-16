@@ -195,6 +195,62 @@ body {
     box-sizing: border-box;
 }
 
+/* Longueur de la manche (voir js/app.js: renderRoundLengthPicker). Placé
+   au-dessus des modes parce qu'il les concerne tous : c'est un cadrage de la
+   partie à venir, pas un mode de plus. */
+.round-length {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 0 16px 22px;
+}
+
+.round-length-btn {
+    min-width: 54px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--border-soft);
+    background: var(--surface);
+    color: var(--text-dark);
+    font: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+@media (hover: hover) {
+    .round-length-btn:hover {
+        border-color: var(--primary-blue);
+    }
+}
+
+.round-length-btn.active {
+    background: var(--primary-blue);
+    border-color: var(--primary-blue);
+    color: var(--text-light);
+}
+
+/* Le rappel en clair de ce qui va être joué : sur une ligne à part au-delà
+   des petits écrans, pour ne pas comprimer les boutons. */
+.round-length-hint {
+    flex-basis: 100%;
+    text-align: center;
+    color: var(--muted-text);
+    font-size: 13px;
+}
+
+/* Longueur de la manche rappelée sous le nom du mode, dans l'historique des
+   scores : deux parties de longueurs différentes ne se comparent pas. */
+.leaderboard-rounds {
+    display: block;
+    color: var(--muted-text);
+    font-size: 11px;
+    font-weight: 400;
+}
+
 /* Sur petit écran, un nom de thème long peut s'étaler sur plusieurs
    lignes : un corps un peu plus petit laisse le titre respirer sans
    pousser tout le reste de l'écran hors du premier écran visible. */

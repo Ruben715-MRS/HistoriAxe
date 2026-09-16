@@ -626,5 +626,11 @@
     "challenge_title": "Défi de simultanéité",
     "challenge_locked": "Le Défi de simultanéité se nourrit de ce que vous avez déjà travaillé : il vous manque encore {missing} événement(s) rencontré(s) en jeu. Jouez une partie ou deux, il s'ouvrira tout seul.",
     "challenge_thin": "Vos événements déjà rencontrés couvrent des époques encore trop peu représentées ailleurs dans la base. Explorez quelques thèmes de plus et revenez !"
+  },
+  "rounds": {
+    "label": "Longueur de la manche",
+    "aria_group": "Longueur de la manche",
+    "all": "Tout ({count})",
+    "hint": "Manche de {count} événements"
   }
 }

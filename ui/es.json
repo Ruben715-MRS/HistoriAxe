@@ -596,5 +596,11 @@
     "challenge_title": "Desafío de simultaneidad",
     "challenge_locked": "El Desafío de simultaneidad se nutre de lo que ya has trabajado: aún te faltan {missing} acontecimiento(s) encontrado(s) en el juego. Juega una o dos partidas y se abrirá solo.",
     "challenge_thin": "Los acontecimientos que ya has visto abarcan épocas todavía poco representadas en el resto de la base. ¡Explora algunos temas más y vuelve!"
+  },
+  "rounds": {
+    "label": "Duración de la ronda",
+    "aria_group": "Duración de la ronda",
+    "all": "Todo ({count})",
+    "hint": "Ronda de {count} acontecimientos"
   }
 }

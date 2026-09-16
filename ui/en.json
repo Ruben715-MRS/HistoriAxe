@@ -623,5 +623,11 @@
     "challenge_title": "Simultaneity Challenge",
     "challenge_locked": "The Simultaneity Challenge draws on what you have already studied: you are still {missing} event(s) short. Play a game or two and it will unlock by itself.",
     "challenge_thin": "The events you have met so far cover periods still too thinly represented elsewhere in the database. Explore a few more themes and come back!"
+  },
+  "rounds": {
+    "label": "Round length",
+    "aria_group": "Round length",
+    "all": "All ({count})",
+    "hint": "Round of {count} events"
   }
 }

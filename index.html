@@ -253,6 +253,12 @@
         <h2 class="header-title modes-header-title" id="modes-header-title" data-i18n="modes.choose_mode">Choisissez un mode de jeu</h2>
         <p class="modes-header-subtitle hidden" id="modes-header-subtitle"></p>
 
+        <!-- Longueur de la manche : combien d'événements du thème une partie
+             retient. Rempli par js/app.js: renderRoundLengthPicker, et masqué
+             pour un thème trop court pour que le choix change quoi que ce soit. -->
+        <div class="round-length hidden" id="round-length" role="group"
+            aria-label="Longueur de la manche" data-i18n-attr="aria-label:rounds.aria_group"></div>
+
         <div class="grid-modes">
             <!-- Découverte : lance la frise directement, sauf pour un thème qui
                  propose un sommaire — elle déplie alors le choix ci-dessous

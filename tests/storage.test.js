@@ -3,7 +3,10 @@
 // le bloc `module.exports` en bas de storage.js).
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const { getIsoWeekString, getLocalDateString, getDaysDifference, getTodayStringUTC } = require('../js/storage.js');
+const {
+    getIsoWeekString, getLocalDateString, getDaysDifference, getTodayStringUTC,
+    DEFAULT_SETTINGS, ROUND_LENGTH_CHOICES, resolveRoundLength, roundLengthChoicesFor
+} = require('../js/storage.js');
 
 // --- getIsoWeekString ---
 // Référence croisée avec les semaines ISO 8601 connues (ex: iso8601-weeknum.appspot.com).
@@ -45,4 +48,55 @@ test('getDaysDifference calcule un écart de jours simple', () => {
 
 test('getTodayStringUTC renvoie une date au format YYYY-MM-DD', () => {
     assert.match(getTodayStringUTC(), /^\d{4}-\d{2}-\d{2}$/);
+});
+
+// --- LONGUEUR DE LA MANCHE ---
+// Jusqu'ici une partie valait le thème entier. Médiane de 18 événements, donc
+// sans conséquence la plupart du temps — mais « Histoire de France » en compte
+// 217 et « Inventions et découvertes » 400, que 3 vies rendent impossibles à
+// terminer. Ces tests tiennent les deux bords : borner les gros thèmes sans
+// toucher aux petits.
+
+test('par défaut, une manche borne les gros thèmes et laisse les petits intacts', () => {
+    assert.equal(DEFAULT_SETTINGS.roundLength, 20);
+    // Le thème médian (18 événements) ne bouge pas.
+    assert.equal(resolveRoundLength(undefined, 18), 18);
+    // « Histoire de France » cesse d'être une partie de 217 placements.
+    assert.equal(resolveRoundLength(undefined, 217), 20);
+});
+
+test('« Tout » rend bien le thème entier', () => {
+    assert.equal(resolveRoundLength(0, 217), 217);
+    assert.equal(resolveRoundLength(0, 6), 6);
+});
+
+test('une manche ne dépasse jamais le vivier disponible', () => {
+    // Sinon le décompte affiché en cours de partie (« 1 / 20 ») mentirait.
+    assert.equal(resolveRoundLength(20, 12), 12);
+    assert.equal(resolveRoundLength(10, 4), 4);
+    assert.equal(resolveRoundLength(20, 0), 0);
+});
+
+test('un réglage aberrant retombe sur la valeur par défaut', () => {
+    [null, 'beaucoup', -5, NaN].forEach(mauvais => {
+        assert.equal(resolveRoundLength(mauvais, 217), DEFAULT_SETTINGS.roundLength,
+            `réglage ${String(mauvais)} : devrait retomber sur la valeur par défaut`);
+    });
+});
+
+test('le sélecteur ne propose que des longueurs qui changent quelque chose', () => {
+    // Un thème de 8 événements : les trois choix y joueraient les 8, le
+    // sélecteur se cache donc entièrement.
+    assert.deepEqual(roundLengthChoicesFor(8), []);
+    // 18 événements : « 20 » n'apporterait rien de plus que « Tout ».
+    assert.deepEqual(roundLengthChoicesFor(18), [10, 0]);
+    // 217 : les trois ont un sens.
+    assert.deepEqual(roundLengthChoicesFor(217), [10, 20, 0]);
+});
+
+test('« Tout » ferme toujours la liste des choix', () => {
+    ROUND_LENGTH_CHOICES.filter(n => n > 0).forEach(n => {
+        const choix = roundLengthChoicesFor(n * 100);
+        assert.equal(choix[choix.length - 1], 0);
+    });
 });

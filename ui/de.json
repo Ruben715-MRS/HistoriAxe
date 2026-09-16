@@ -596,5 +596,11 @@
     "challenge_title": "Gleichzeitigkeits-Challenge",
     "challenge_locked": "Die Gleichzeitigkeits-Challenge schöpft aus dem, was Sie bereits geübt haben: Ihnen fehlen noch {missing} im Spiel begegnete Ereignisse. Spielen Sie ein, zwei Partien, dann öffnet sie sich von selbst.",
     "challenge_thin": "Die Ereignisse, denen Sie bisher begegnet sind, betreffen Epochen, die anderswo in der Datenbank noch zu dünn vertreten sind. Erkunden Sie ein paar weitere Themen und kommen Sie wieder!"
+  },
+  "rounds": {
+    "label": "Rundenlänge",
+    "aria_group": "Rundenlänge",
+    "all": "Alle ({count})",
+    "hint": "Runde mit {count} Ereignissen"
   }
 }

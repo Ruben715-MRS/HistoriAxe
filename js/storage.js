@@ -35,8 +35,52 @@ const DEFAULT_SETTINGS = {
     sound: true,
     haptics: true,
     notifications: true,
-    lang: 'fr'
+    lang: 'fr',
+    // Longueur d'une manche : combien d'événements une partie retient du
+    // thème. 0 = le thème entier.
+    //
+    // La valeur par défaut n'est pas 0, et c'est délibéré. Jusqu'ici une
+    // partie valait le thème entier : médiane de 18 événements, donc sans
+    // conséquence la plupart du temps — mais « Histoire de France » en
+    // compte 217 et « Inventions et découvertes » 400. Avec 3 vies, les
+    // terminer est hors d'atteinte, si bien que les thèmes les plus riches
+    // de la base étaient précisément les moins jouables. 20 passe au-dessus
+    // de la médiane (la majorité des thèmes ne bouge donc pas) tout en
+    // bornant les gros, et « Tout » reste à un tap sur l'écran des modes.
+    roundLength: 20
 };
+
+// Longueurs proposées, dans l'ordre d'affichage. 0 = le thème entier, et
+// ferme toujours la liste.
+const ROUND_LENGTH_CHOICES = [10, 20, 0];
+
+// Combien d'événements retenir, pour un réglage et un vivier donnés.
+// Toujours borné par le vivier : demander 20 sur un thème de 12 en joue 12,
+// sans quoi le décompte affiché en cours de partie mentirait.
+function resolveRoundLength(setting, poolSize) {
+    const size = Math.max(0, poolSize || 0);
+    // Number(null), Number('') et Number(false) valent tous 0 — c'est-à-dire
+    // « le thème entier ». Coercer sans regarder le type ferait donc qu'un
+    // réglage absent ou corrompu rendrait silencieusement les parties de 217
+    // placements que cette notion existe pour éviter. On n'accepte qu'un
+    // nombre, ou une chaîne non vide qui en est un.
+    const numeric = typeof setting === 'number'
+        || (typeof setting === 'string' && setting.trim() !== '');
+    const asked = numeric ? Number(setting) : NaN;
+    if (!Number.isFinite(asked) || asked < 0) return Math.min(DEFAULT_SETTINGS.roundLength, size);
+    if (asked === 0) return size;
+    return Math.min(asked, size);
+}
+
+// Longueurs qui ont un sens pour un vivier donné : celles strictement
+// inférieures à sa taille, plus « Tout ». Un thème de 8 événements n'a rien à
+// choisir — toutes les options y joueraient les 8 — et le sélecteur se cache
+// alors plutôt que d'afficher trois boutons équivalents.
+function roundLengthChoicesFor(poolSize) {
+    const size = Math.max(0, poolSize || 0);
+    const useful = ROUND_LENGTH_CHOICES.filter(n => n > 0 && n < size);
+    return useful.length ? useful.concat(0) : [];
+}
 
 // --- RÉGLAGES ---
 function settingsLoad() {
@@ -477,5 +521,8 @@ function resetAllGameData() {
 // navigateur. Seules les fonctions pures (sans DOM/localStorage) sont
 // exposées ici.
 if (typeof module === 'object' && typeof module.exports === 'object') {
-    module.exports = { getIsoWeekString, getLocalDateString, getDaysDifference, getTodayStringUTC };
+    module.exports = {
+        getIsoWeekString, getLocalDateString, getDaysDifference, getTodayStringUTC,
+        DEFAULT_SETTINGS, ROUND_LENGTH_CHOICES, resolveRoundLength, roundLengthChoicesFor
+    };
 }
