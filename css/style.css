@@ -947,6 +947,22 @@ body {
     background: linear-gradient(135deg, #1B4F72, #148F77);
 }
 
+.mode-card.ordre-card {
+    background: linear-gradient(135deg, #4A235A, #7D3C98);
+}
+
+.mode-card.blitz-card {
+    background: linear-gradient(135deg, #922B21, #E74C3C);
+}
+
+.mode-card.curseur-card {
+    background: linear-gradient(135deg, #0E6251, #16A085);
+}
+
+.mode-card.intrus-card {
+    background: linear-gradient(135deg, #784212, #CA6F1E);
+}
+
 /* --- Grille carrée 2x2 pour Entraînement / Classique / Chrono / Expert --- */
 .grid-modes-square {
     display: grid;
@@ -2226,6 +2242,303 @@ textarea.form-input {
 .quiz-fifty-btn:disabled {
     opacity: 0.4;
     cursor: not-allowed;
+}
+
+/* === MODE « REMISE EN ORDRE » (voir js/app.js: renderOrdreCards) ===
+   Les cartes se touchent du plus ancien au plus récent, et le rang s'inscrit
+   dans la pastille de gauche. Ce sont de vrais <button> : le mode se joue
+   donc aussi bien au clavier qu'au doigt, ce qu'un glisser-déposer aurait
+   rendu impossible. */
+.ordre-progress-hint {
+    margin-top: 8px;
+    font-size: 14px;
+    color: var(--muted-text);
+}
+
+.ordre-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.ordre-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 2px solid var(--border-soft);
+    background: var(--surface);
+    color: var(--text-dark);
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s, transform 0.15s;
+}
+
+@media (hover: hover) {
+    .ordre-card:hover {
+        border-color: var(--primary-blue);
+    }
+}
+
+.ordre-card.placed {
+    border-color: var(--primary-blue);
+    background: var(--selected-tint);
+}
+
+.ordre-card.correct {
+    background: rgba(44, 168, 90, 0.14);
+    border-color: #2CA85A;
+}
+
+.ordre-card.wrong {
+    background: rgba(186, 26, 26, 0.1);
+    border-color: var(--danger-red);
+}
+
+/* La pastille garde sa place même vide : sans largeur fixe, les titres
+   sauteraient latéralement à chaque carte touchée. */
+.ordre-rank {
+    flex: 0 0 auto;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-year);
+    font-weight: 700;
+    font-size: 15px;
+    border: 1px dashed var(--border-soft);
+    color: var(--muted-text);
+}
+
+.ordre-card.placed .ordre-rank {
+    border-style: solid;
+    border-color: var(--primary-blue);
+    background: var(--primary-blue);
+    color: var(--text-light);
+}
+
+.ordre-card-title {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.ordre-actions {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 18px;
+}
+
+.ordre-reset-btn {
+    background: none;
+    border: none;
+    font: inherit;
+    font-size: 14px;
+    color: var(--muted-text);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* === MODE « BLITZ 60 SECONDES » (voir js/app.js: startBlitzGame) ===
+   Pas de vies : l'horloge est la seule contrainte, et c'est elle qui occupe
+   la place que les cœurs tiennent ailleurs. */
+.blitz-clock {
+    font-family: var(--font-year);
+    font-size: 18px;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    color: var(--ink);
+}
+
+.blitz-clock.urgent {
+    color: var(--danger-red);
+}
+
+.blitz-rail .progress-fill {
+    background: var(--danger-red);
+}
+
+.blitz-statement {
+    background: var(--surface);
+    border-radius: 14px;
+    padding: 26px 22px;
+    box-shadow: var(--card-shadow);
+    text-align: center;
+    margin-bottom: 22px;
+}
+
+.blitz-event {
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.3;
+}
+
+.blitz-link {
+    margin: 12px 0;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--muted-text);
+}
+
+.blitz-buttons {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+/* Deux cibles larges et hautes : à ce rythme, le doigt vise mal. */
+.blitz-btn {
+    flex: 1;
+    padding: 24px 10px;
+    border-radius: 16px;
+    border: 2px solid var(--border-soft);
+    background: var(--surface);
+    color: var(--text-dark);
+    font: inherit;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.1s, background 0.15s, border-color 0.15s;
+}
+
+.blitz-btn.correct {
+    background: rgba(44, 168, 90, 0.18);
+    border-color: #2CA85A;
+    color: #1D7A41;
+}
+
+.blitz-btn.wrong {
+    background: rgba(186, 26, 26, 0.12);
+    border-color: var(--danger-red);
+    color: var(--danger-red);
+}
+
+.blitz-tally {
+    text-align: center;
+    font-size: 14px;
+    color: var(--muted-text);
+}
+
+/* === MODE « LE CURSEUR » (voir js/app.js: startCurseurGame) === */
+.curseur-dial {
+    background: var(--surface);
+    border-radius: 14px;
+    padding: 22px 20px 16px;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 18px;
+}
+
+.curseur-value {
+    text-align: center;
+    font-family: var(--font-year);
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 14px;
+}
+
+/* Piste épaisse et poignée large : on vise une année en glissant au pouce,
+   pas à la souris. */
+.curseur-range {
+    width: 100%;
+    height: 34px;
+    background: transparent;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+.curseur-range::-webkit-slider-runnable-track {
+    height: 8px;
+    border-radius: 4px;
+    background: var(--border-soft);
+}
+
+.curseur-range::-moz-range-track {
+    height: 8px;
+    border-radius: 4px;
+    background: var(--border-soft);
+}
+
+.curseur-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    margin-top: -11px;
+    border-radius: 50%;
+    background: var(--primary-blue);
+    border: 3px solid var(--surface);
+    box-shadow: var(--card-shadow);
+}
+
+.curseur-range::-moz-range-thumb {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--primary-blue);
+    border: 3px solid var(--surface);
+}
+
+.curseur-range:disabled {
+    opacity: 0.6;
+}
+
+.curseur-bounds {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-year);
+    font-size: 13px;
+    color: var(--muted-text);
+}
+
+.curseur-actions {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 18px;
+}
+
+.curseur-validate {
+    min-width: 180px;
+}
+
+.curseur-verdict {
+    border-radius: 12px;
+    padding: 14px 16px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.curseur-verdict.is-good {
+    background: rgba(44, 168, 90, 0.14);
+    color: #1D7A41;
+}
+
+.curseur-verdict.is-bad {
+    background: rgba(186, 26, 26, 0.1);
+    color: var(--danger-red);
+}
+
+/* === MODE « L'INTRUS » ===
+   Réutilise .quiz-option pour les quatre choix et .simul-reveal pour le
+   révélé ; seule la ligne de l'intrus s'en distingue. */
+.simul-reveal-row.is-intrus .simul-reveal-year,
+.simul-reveal-row.is-intrus .simul-reveal-text strong {
+    color: var(--danger-red);
+}
+
+.simul-reveal-row.is-intrus .simul-reveal-text small {
+    color: var(--danger-red);
+    font-weight: 600;
 }
 
 /* Mode « Pendant ce temps, ailleurs… » (simultanéité — voir js/simultaneity.js).

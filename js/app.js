@@ -506,7 +506,9 @@ function openLeaderboard() {
             'expert': t('modes.expert.title'), 'quiz': t('modes.quiz.title'),
             'avantapres': t('modes.avantapres.title'), 'fil': t('modes.fil.title'),
             'periodes': t('modes.periodes.title'), 'ecart': t('modes.ecart.title'),
-            'carte': t('carte.mode_title'), 'simultaneity': t('simultaneity.title')
+            'carte': t('carte.mode_title'), 'simultaneity': t('simultaneity.title'),
+            'ordre': t('ordre.title'), 'blitz': t('blitz.title'),
+            'curseur': t('curseur.title'), 'intrus': t('intrus.title')
         };
         let html = `<table class="leaderboard-table"><thead><tr><th>${t('leaderboard.col_mode')}</th><th>${t('leaderboard.col_score')}</th><th>${t('leaderboard.col_date')}</th></tr></thead><tbody>`;
         scores.forEach(s => {
@@ -2942,6 +2944,632 @@ function updateSimultaneityHUD() {
 }
 
 
+// === MODE « REMISE EN ORDRE » ===
+// Cinq cartes mélangées, sans leurs dates, à classer d'un coup. Ce n'est pas
+// la frise en plus petit : la frise donne une suite déjà triée où glisser une
+// carte, ici rien n'est acquis et chaque carte se situe par rapport aux
+// quatre autres. C'est l'exercice d'examen (« classez ces événements »).
+//
+// L'interaction est le toucher seul, jamais le glisser-déposer : on touche
+// les cartes du plus ancien au plus récent, et un rang s'inscrit sur
+// chacune. Le glisser-déposer serait plus joli et inutilisable au clavier,
+// pénible au doigt sur une liste qui défile, et cassé par les lecteurs
+// d'écran — pour un gain nul, puisque l'ordre se dit aussi bien en touchant.
+// Toucher une carte déjà rangée la retire, et celles d'après se décalent.
+
+let ordreRounds = [];
+let ordreIndex = 0;
+let ordreAttempt = [];
+
+function startOrdreGame() {
+    resetSessionHistory();
+    currentMode = 'ordre';
+    const sourceEvents = getSessionPool();
+
+    ordreRounds = GameModes.buildOrderRounds(sourceEvents);
+    if (!ordreRounds.length) {
+        alert(t('ordre.not_enough', { count: GameModes.ORDER_CARDS }));
+        return;
+    }
+
+    ordreIndex = 0;
+    ordreAttempt = [];
+    lives = 3;
+    score = 0;
+    comboMultiplier = 1.0;
+    currentRoundSize = ordreRounds.length;
+
+    // Barème « tout ou rien » par manche (voir answerOrdre) : l'écart passé à
+    // awardPoints vaut 0 ou la totalité, l'étendue n'a donc qu'à être non nulle.
+    currentGameSpan = 1;
+
+    showScreen('screen-ordre');
+    renderOrdreRound();
+}
+
+function renderOrdreRound() {
+    if (ordreIndex >= ordreRounds.length) {
+        endGame(true);
+        return;
+    }
+    isAnimating = false;
+    ordreAttempt = [];
+    questionStartTime = Date.now();
+
+    document.getElementById('ordre-reveal').classList.add('hidden');
+    document.getElementById('ordre-reset-btn').classList.add('hidden');
+    document.getElementById('ordre-hud-count').innerText =
+        `${ordreIndex + 1} / ${ordreRounds.length}`;
+    document.getElementById('ordre-progress-fill').style.width =
+        Math.round(ordreIndex / ordreRounds.length * 100) + '%';
+
+    renderOrdreCards();
+    updateOrdreHUD();
+}
+
+function renderOrdreCards() {
+    const round = ordreRounds[ordreIndex];
+    const container = document.getElementById('ordre-cards');
+    container.innerHTML = '';
+
+    round.cards.forEach(card => {
+        const rank = ordreAttempt.indexOf(card.id);
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'ordre-card' + (rank >= 0 ? ' placed' : '');
+        btn.dataset.eventId = card.id;
+
+        const badge = document.createElement('span');
+        badge.className = 'ordre-rank';
+        badge.innerText = rank >= 0 ? String(rank + 1) : '';
+
+        const label = document.createElement('span');
+        label.className = 'ordre-card-title';
+        // innerText et non innerHTML : un titre peut venir d'un thème
+        // personnalisé, donc d'une saisie du joueur.
+        label.innerText = card.titre;
+
+        btn.appendChild(badge);
+        btn.appendChild(label);
+        btn.setAttribute('aria-label', rank >= 0
+            ? t('ordre.card_placed_aria', { rank: rank + 1, titre: card.titre })
+            : t('ordre.card_free_aria', { titre: card.titre }));
+        btn.onclick = () => tapOrdreCard(card.id);
+        container.appendChild(btn);
+    });
+
+    const hint = document.getElementById('ordre-hint');
+    hint.innerText = t('ordre.hint', {
+        placed: ordreAttempt.length,
+        total: round.cards.length
+    });
+    document.getElementById('ordre-reset-btn').classList.toggle('hidden', ordreAttempt.length === 0);
+}
+
+function tapOrdreCard(eventId) {
+    if (isAnimating) return;
+    const already = ordreAttempt.indexOf(eventId);
+    if (already >= 0) {
+        // Retirer une carte du classement décale toutes celles d'après : c'est
+        // le seul moyen de corriger un rang sans tout reprendre.
+        ordreAttempt.splice(already, 1);
+    } else {
+        ordreAttempt.push(eventId);
+    }
+    renderOrdreCards();
+
+    if (ordreAttempt.length === ordreRounds[ordreIndex].cards.length) {
+        answerOrdre();
+    }
+}
+
+function resetOrdreAttempt() {
+    if (isAnimating) return;
+    ordreAttempt = [];
+    renderOrdreCards();
+}
+
+function answerOrdre() {
+    if (isAnimating) return;
+    isAnimating = true;
+
+    const round = ordreRounds[ordreIndex];
+    const verdict = GameModes.scoreOrderAttempt(ordreAttempt, round.solution);
+
+    // Tout ou rien pour la vie, comme Avant/Après et Périodes & Ères — mais le
+    // score suit le nombre de rangs justes, pour qu'une manche ratée de peu ne
+    // vaille pas une manche ratée de tout.
+    awardPoints(verdict.perfect ? 0 : 1, verdict.perfect);
+    if (!verdict.perfect && verdict.correct > 0) {
+        score += Math.round(60 * (verdict.correct / verdict.total));
+    }
+    if (verdict.perfect) { playCorrectSound(comboMultiplier); triggerHaptic('success'); }
+    else { playWrongSound(); triggerHaptic('error'); }
+    checkBadgeProgressOnAction(verdict.perfect);
+
+    const correctOrder = round.solution
+        .map(id => round.cards.find(c => c.id === id))
+        .filter(Boolean);
+    correctOrder.forEach((evt, index) => {
+        srsRecord(evt.id, ordreAttempt[index] === evt.id);
+    });
+    recordSessionStep(correctOrder[0], verdict.perfect, !verdict.perfect && verdict.correct > 0);
+
+    document.querySelectorAll('#ordre-cards .ordre-card').forEach(btn => {
+        btn.style.pointerEvents = 'none';
+        const rank = ordreAttempt.indexOf(btn.dataset.eventId);
+        btn.classList.add(round.solution[rank] === btn.dataset.eventId ? 'correct' : 'wrong');
+    });
+
+    if (!verdict.perfect) lives -= 1;
+    updateOrdreHUD();
+    renderOrdreReveal(correctOrder, verdict);
+
+    setTimeout(() => {
+        ordreIndex++;
+        if (lives <= 0) { endGame(false); return; }
+        renderOrdreRound();
+    }, verdict.perfect ? 1600 : 3000);
+}
+
+function renderOrdreReveal(correctOrder, verdict) {
+    const reveal = document.getElementById('ordre-reveal');
+    reveal.innerHTML = '';
+
+    const title = document.createElement('div');
+    title.className = 'simul-reveal-title';
+    title.innerText = verdict.perfect
+        ? t('ordre.reveal_perfect')
+        : t('ordre.reveal_partial', { correct: verdict.correct, total: verdict.total });
+    reveal.appendChild(title);
+
+    correctOrder.forEach(evt => {
+        const row = document.createElement('div');
+        row.className = 'simul-reveal-row';
+        const year = document.createElement('span');
+        year.className = 'simul-reveal-year';
+        year.innerText = formatYear(evt.date);
+        const text = document.createElement('span');
+        text.className = 'simul-reveal-text';
+        const strong = document.createElement('strong');
+        strong.innerText = evt.titre;
+        text.appendChild(strong);
+        row.appendChild(year);
+        row.appendChild(text);
+        reveal.appendChild(row);
+    });
+
+    reveal.classList.remove('hidden');
+    document.getElementById('ordre-reset-btn').classList.add('hidden');
+}
+
+function updateOrdreHUD() {
+    document.getElementById('ordre-hud-score').innerText = score;
+    renderComboChip(document.getElementById('ordre-hud-combo'), comboMultiplier);
+    let pips = '';
+    for (let i = 0; i < 3; i++) pips += `<span class="pip${i < lives ? '' : ' spent'}"></span>`;
+    document.getElementById('ordre-hud-lives').innerHTML = pips;
+}
+
+
+// === MODE « BLITZ 60 SECONDES » ===
+// La partie courte qui manquait. Le format le plus rapide jusqu'ici était le
+// Défi du jour, dix cartes ; une partie de thème peut en faire soixante-douze.
+// Rien ne répondait à « j'ai deux minutes ».
+//
+// Pas de vies : le chronomètre EST la contrainte. Une erreur coûte trois
+// secondes, ce qui punit la réponse au hasard sans jamais arrêter la partie.
+
+let blitzQueue = [];
+let blitzCurrent = null;
+let blitzDeadline = 0;
+let blitzInterval = null;
+let blitzRight = 0;
+let blitzWrong = 0;
+let blitzPool = [];
+
+function startBlitzGame() {
+    resetSessionHistory();
+    currentMode = 'blitz';
+
+    // Vivier ENTIER, et non une manche : la longueur de ce mode est donnée
+    // par l'horloge, pas par un nombre de cartes. Le borner à dix ferait
+    // tourner les mêmes paires pendant soixante secondes (même raison que la
+    // Découverte, voir getModePoolRaw).
+    blitzPool = getModePoolRaw();
+    const distinctes = new Set(blitzPool.filter(e => typeof e.date === 'number').map(e => e.date));
+    if (distinctes.size < 2) {
+        alert(t('blitz.not_enough'));
+        return;
+    }
+
+    blitzQueue = [];
+    blitzCurrent = null;
+    blitzRight = 0;
+    blitzWrong = 0;
+    score = 0;
+    lives = Infinity;
+    comboMultiplier = 1.0;
+    currentGameSpan = 1;
+    currentRoundSize = 0;
+
+    blitzDeadline = Date.now() + GameModes.BLITZ_SECONDS * 1000;
+    showScreen('screen-blitz');
+    nextBlitzQuestion();
+    startBlitzClock();
+}
+
+function startBlitzClock() {
+    stopBlitzClock();
+    blitzInterval = setInterval(tickBlitzClock, 100);
+    tickBlitzClock();
+}
+
+function stopBlitzClock() {
+    if (blitzInterval) clearInterval(blitzInterval);
+    blitzInterval = null;
+}
+
+function tickBlitzClock() {
+    // Garde-fou d'auto-guérison : si le joueur a quitté l'écran pendant que
+    // l'horloge tournait (abandon, retour arrière), on s'arrête ici plutôt
+    // que de terminer une partie qui n'est plus à l'écran.
+    if (currentMode !== 'blitz') { stopBlitzClock(); return; }
+
+    const remaining = Math.max(0, blitzDeadline - Date.now());
+    const seconds = Math.ceil(remaining / 1000);
+    const clock = document.getElementById('blitz-clock');
+    clock.innerText = String(seconds);
+    clock.classList.toggle('urgent', seconds <= 10);
+    document.getElementById('blitz-progress-fill').style.width =
+        Math.round(remaining / (GameModes.BLITZ_SECONDS * 1000) * 100) + '%';
+
+    if (remaining <= 0) {
+        stopBlitzClock();
+        // Toujours une victoire : on ne « perd » pas un blitz, on le termine.
+        // Le score dit ce que la partie valait.
+        endGame(true);
+    }
+}
+
+function nextBlitzQuestion() {
+    if (!blitzQueue.length) {
+        blitzQueue = GameModes.buildBlitzQuestions(blitzPool, { count: 20 });
+    }
+    blitzCurrent = blitzQueue.shift() || null;
+    if (!blitzCurrent) { stopBlitzClock(); endGame(true); return; }
+
+    isAnimating = false;
+    questionStartTime = Date.now();
+    document.getElementById('blitz-left').innerText = blitzCurrent.left.titre;
+    document.getElementById('blitz-right').innerText = blitzCurrent.right.titre;
+    document.querySelectorAll('.blitz-btn').forEach(b => {
+        b.classList.remove('correct', 'wrong');
+        b.style.pointerEvents = 'auto';
+    });
+    updateBlitzHUD();
+}
+
+function answerBlitz(value) {
+    if (isAnimating || !blitzCurrent || currentMode !== 'blitz') return;
+    isAnimating = true;
+
+    const correct = value === blitzCurrent.answer;
+    if (correct) {
+        blitzRight++;
+        awardPoints(0, true);
+        playCorrectSound(comboMultiplier);
+        triggerHaptic('success');
+    } else {
+        blitzWrong++;
+        awardPoints(1, false);
+        // Pénalité de temps plutôt que perte de vie : elle punit la réponse
+        // au hasard sans jamais interrompre la partie.
+        blitzDeadline -= GameModes.BLITZ_PENALTY_SECONDS * 1000;
+        playWrongSound();
+        triggerHaptic('error');
+    }
+    checkBadgeProgressOnAction(correct);
+    srsRecord(blitzCurrent.left.id, correct);
+    srsRecord(blitzCurrent.right.id, correct);
+    recordSessionStep(blitzCurrent.left, correct, false);
+
+    const pressed = document.getElementById(value ? 'blitz-true' : 'blitz-false');
+    pressed.classList.add(correct ? 'correct' : 'wrong');
+    document.querySelectorAll('.blitz-btn').forEach(b => { b.style.pointerEvents = 'none'; });
+
+    updateBlitzHUD();
+    // Très court : l'enchaînement rapide est tout l'intérêt du mode.
+    setTimeout(() => {
+        if (currentMode === 'blitz') nextBlitzQuestion();
+    }, 320);
+}
+
+function updateBlitzHUD() {
+    document.getElementById('blitz-hud-score').innerText = score;
+    renderComboChip(document.getElementById('blitz-hud-combo'), comboMultiplier);
+    document.getElementById('blitz-tally').innerText =
+        t('blitz.tally', { right: blitzRight, wrong: blitzWrong });
+}
+
+
+// === MODE « LE CURSEUR » ===
+// Entre « Le fil du temps » (l'année exacte au clavier) et « Périodes & Ères »
+// (un siècle parmi quatre), il manquait le geste approximatif : celui qui
+// récompense un ordre de grandeur juste. Un seul glissement, et le score suit
+// la proximité.
+//
+// L'échelle et la tolérance sont calculées sur le thème (voir
+// GameModes.sliderScaleFor) : ±2 ans sur un thème de vingt ans, ±60 sur un
+// thème qui traverse l'Antiquité. La tolérance doit suivre ce que le thème
+// demande de savoir.
+
+let curseurRounds = [];
+let curseurIndex = 0;
+
+function startCurseurGame() {
+    resetSessionHistory();
+    currentMode = 'curseur';
+    const sourceEvents = getSessionPool();
+
+    curseurRounds = GameModes.buildSliderRounds(sourceEvents, {
+        count: Math.min(GameModes.SLIDER_ROUNDS, sourceEvents.length)
+    });
+    if (curseurRounds.length < 3) {
+        alert(t('curseur.not_enough'));
+        return;
+    }
+
+    curseurIndex = 0;
+    lives = 3;
+    score = 0;
+    comboMultiplier = 1.0;
+    currentRoundSize = curseurRounds.length;
+
+    // awardPoints calcule 1 - écart / currentGameSpan : en lui donnant trois
+    // fois la tolérance, on retrouve exactement le barème du module (pile = 1,
+    // à la tolérance = 2/3, au-delà de trois fois = 0). Lui passer l'étendue du
+    // thème, comme les autres modes, donnerait encore 96 % des points à une
+    // réponse fausse de trois siècles sur un thème qui couvre 6 600 ans.
+    currentGameSpan = Math.max(1, curseurRounds[0].tolerance * 3);
+
+    const range = document.getElementById('curseur-range');
+    range.oninput = () => {
+        document.getElementById('curseur-value').innerText = formatYear(Number(range.value));
+    };
+
+    showScreen('screen-curseur');
+    renderCurseurRound();
+}
+
+function renderCurseurRound() {
+    if (curseurIndex >= curseurRounds.length) {
+        endGame(true);
+        return;
+    }
+    isAnimating = false;
+    questionStartTime = Date.now();
+
+    const round = curseurRounds[curseurIndex];
+    document.getElementById('curseur-title').innerText = round.event.titre;
+    document.getElementById('curseur-verdict').classList.add('hidden');
+    document.getElementById('curseur-validate').disabled = false;
+
+    const range = document.getElementById('curseur-range');
+    range.min = String(round.min);
+    range.max = String(round.max);
+    // Le curseur repart du milieu à chaque manche : le laisser où il était
+    // donnerait un indice sur la réponse précédente.
+    const middle = Math.round((round.min + round.max) / 2);
+    range.value = String(middle);
+    range.disabled = false;
+
+    document.getElementById('curseur-value').innerText = formatYear(middle);
+    document.getElementById('curseur-min').innerText = formatYear(round.min);
+    document.getElementById('curseur-max').innerText = formatYear(round.max);
+    document.getElementById('curseur-kicker').innerText =
+        t('curseur.kicker_tolerance', { tolerance: round.tolerance });
+
+    document.getElementById('curseur-hud-count').innerText =
+        `${curseurIndex + 1} / ${curseurRounds.length}`;
+    document.getElementById('curseur-progress-fill').style.width =
+        Math.round(curseurIndex / curseurRounds.length * 100) + '%';
+    updateCurseurHUD();
+}
+
+function answerCurseur() {
+    if (isAnimating) return;
+    isAnimating = true;
+
+    const round = curseurRounds[curseurIndex];
+    const guess = Number(document.getElementById('curseur-range').value);
+    const verdict = GameModes.scoreSliderGuess(guess, round);
+
+    awardPoints(verdict.gap, verdict.within);
+    if (verdict.within) { playCorrectSound(comboMultiplier); triggerHaptic('success'); }
+    else { playWrongSound(); triggerHaptic('error'); }
+    checkBadgeProgressOnAction(verdict.within);
+    srsRecord(round.event.id, verdict.within);
+    recordSessionStep(round.event, verdict.within, !verdict.within && verdict.ratio > 0);
+
+    document.getElementById('curseur-range').disabled = true;
+    document.getElementById('curseur-validate').disabled = true;
+
+    const box = document.getElementById('curseur-verdict');
+    box.className = 'curseur-verdict ' + (verdict.within ? 'is-good' : 'is-bad');
+    box.innerText = verdict.exact
+        ? t('curseur.verdict_exact', { year: formatYear(round.event.date) })
+        : t('curseur.verdict_gap', { gap: verdict.gap, year: formatYear(round.event.date) });
+    box.classList.remove('hidden');
+
+    if (!verdict.within) lives -= 1;
+    updateCurseurHUD();
+
+    setTimeout(() => {
+        curseurIndex++;
+        if (lives <= 0) { endGame(false); return; }
+        renderCurseurRound();
+    }, 1900);
+}
+
+function updateCurseurHUD() {
+    document.getElementById('curseur-hud-score').innerText = score;
+    renderComboChip(document.getElementById('curseur-hud-combo'), comboMultiplier);
+    let pips = '';
+    for (let i = 0; i < 3; i++) pips += `<span class="pip${i < lives ? '' : ' spent'}"></span>`;
+    document.getElementById('curseur-hud-lives').innerHTML = pips;
+}
+
+
+// === MODE « L'INTRUS » ===
+// Quatre événements, trois qui vont ensemble et un qui détonne. Aucune date
+// affichée : c'est le sens de l'époque qu'on entraîne, pas la mémoire des
+// années — et c'est pour ça que le révélé, lui, les montre toutes.
+//
+// Deux familles de questions (voir GameModes.buildIntrusQuestions) : trois
+// événements d'une même période, ou trois d'un même axe thématique. L'énoncé
+// dit toujours laquelle, sans quoi la question serait indécidable.
+
+let intrusQuestions = [];
+let intrusIndex = 0;
+
+function startIntrusGame() {
+    resetSessionHistory();
+    currentMode = 'intrus';
+    const sourceEvents = getSessionPool();
+
+    intrusQuestions = GameModes.buildIntrusQuestions(sourceEvents);
+    if (intrusQuestions.length < 3) {
+        alert(t('intrus.not_enough'));
+        return;
+    }
+
+    intrusIndex = 0;
+    lives = 3;
+    score = 0;
+    comboMultiplier = 1.0;
+    currentRoundSize = intrusQuestions.length;
+    currentGameSpan = 1;
+
+    showScreen('screen-intrus');
+    renderIntrusQuestion();
+}
+
+function renderIntrusQuestion() {
+    if (intrusIndex >= intrusQuestions.length) {
+        endGame(true);
+        return;
+    }
+    isAnimating = false;
+    questionStartTime = Date.now();
+
+    const q = intrusQuestions[intrusIndex];
+    document.getElementById('intrus-kicker').innerText = q.kind === 'axe'
+        ? t('intrus.kicker_axe')
+        : t('intrus.kicker_periode');
+    document.getElementById('intrus-reveal').classList.add('hidden');
+
+    const container = document.getElementById('intrus-options');
+    container.innerHTML = '';
+    if (document.activeElement) document.activeElement.blur();
+    container.style.pointerEvents = 'none';
+    requestAnimationFrame(() => { container.style.pointerEvents = 'auto'; });
+
+    q.options.forEach(opt => {
+        const btn = document.createElement('button');
+        btn.className = 'quiz-option intrus-option';
+        btn.dataset.eventId = opt.id;
+        // Aucune date ici : c'est tout le sujet du mode.
+        btn.innerText = opt.titre;
+        btn.onclick = () => answerIntrus(opt.id);
+        container.appendChild(btn);
+    });
+
+    document.getElementById('intrus-hud-count').innerText =
+        `${intrusIndex + 1} / ${intrusQuestions.length}`;
+    document.getElementById('intrus-progress-fill').style.width =
+        Math.round(intrusIndex / intrusQuestions.length * 100) + '%';
+    updateIntrusHUD();
+}
+
+function answerIntrus(chosenId) {
+    if (isAnimating) return;
+    isAnimating = true;
+
+    const q = intrusQuestions[intrusIndex];
+    const correct = chosenId === q.intruderId;
+
+    awardPoints(correct ? 0 : 1, correct);
+    if (correct) { playCorrectSound(comboMultiplier); triggerHaptic('success'); }
+    else { playWrongSound(); triggerHaptic('error'); }
+    checkBadgeProgressOnAction(correct);
+    const intruder = q.options.find(o => o.id === q.intruderId);
+    srsRecord(q.intruderId, correct);
+    recordSessionStep(intruder, correct, false);
+
+    document.querySelectorAll('#intrus-options .intrus-option').forEach(b => {
+        b.style.pointerEvents = 'none';
+        if (b.dataset.eventId === q.intruderId) b.classList.add('correct');
+        else if (b.dataset.eventId === chosenId) b.classList.add('wrong');
+    });
+
+    if (!correct) lives -= 1;
+    updateIntrusHUD();
+    renderIntrusReveal(q);
+
+    setTimeout(() => {
+        intrusIndex++;
+        if (lives <= 0) { endGame(false); return; }
+        renderIntrusQuestion();
+    }, 2400);
+}
+
+// Le révélé montre les dates que la question cachait, et dit ce qui liait les
+// trois autres — sans quoi le joueur qui se trompe n'apprend rien.
+function renderIntrusReveal(q) {
+    const reveal = document.getElementById('intrus-reveal');
+    reveal.innerHTML = '';
+
+    const title = document.createElement('div');
+    title.className = 'simul-reveal-title';
+    title.innerText = q.kind === 'axe'
+        ? t('intrus.reveal_axe', { axe: q.axis })
+        : t('intrus.reveal_periode');
+    reveal.appendChild(title);
+
+    q.options.slice().sort((a, b) => a.date - b.date).forEach(opt => {
+        const row = document.createElement('div');
+        row.className = 'simul-reveal-row' + (opt.id === q.intruderId ? ' is-intrus' : '');
+        const year = document.createElement('span');
+        year.className = 'simul-reveal-year';
+        year.innerText = formatYear(opt.date);
+        const text = document.createElement('span');
+        text.className = 'simul-reveal-text';
+        const strong = document.createElement('strong');
+        strong.innerText = opt.titre;
+        text.appendChild(strong);
+        if (opt.id === q.intruderId) {
+            const tag = document.createElement('small');
+            tag.innerText = t('intrus.reveal_tag');
+            text.appendChild(tag);
+        }
+        row.appendChild(year);
+        row.appendChild(text);
+        reveal.appendChild(row);
+    });
+
+    reveal.classList.remove('hidden');
+}
+
+function updateIntrusHUD() {
+    document.getElementById('intrus-hud-score').innerText = score;
+    renderComboChip(document.getElementById('intrus-hud-combo'), comboMultiplier);
+    let pips = '';
+    for (let i = 0; i < 3; i++) pips += `<span class="pip${i < lives ? '' : ' spent'}"></span>`;
+    document.getElementById('intrus-hud-lives').innerHTML = pips;
+}
+
+
 // === MODE AVANT / APRÈS ===
 // Chaque question pioche un événement du pool et lui oppose un autre événement
 // à date distincte ; les deux sont affichés sans leur date et il faut désigner
@@ -4375,6 +5003,10 @@ function renderAnecdoteCard(container, anecdoteEvt) {
 // FIN ET NAVIGATION
 function endGame(isWin) {
     stopTimer();
+    // Le Blitz a sa propre horloge (compte à rebours plutôt que chronomètre) :
+    // elle doit s'arrêter ici aussi, sinon elle continuerait de tourner sur
+    // l'écran de fin et rappellerait endGame à zéro.
+    stopBlitzClock();
 
     if (isWin) { playVictorySound(); triggerHaptic('victory'); triggerConfetti(); } else { triggerHaptic('error'); }
 
@@ -4460,6 +5092,12 @@ function endGame(isWin) {
                 ? t('end.victory_simultaneity_challenge')
                 : t('end.victory_simultaneity');
         }
+        if (currentMode === 'ordre') winTitle = t('end.victory_ordre');
+        if (currentMode === 'curseur') winTitle = t('end.victory_curseur');
+        if (currentMode === 'intrus') winTitle = t('end.victory_intrus');
+        // Le Blitz ne se « gagne » pas : il se termine quand l'horloge tombe à
+        // zéro, et c'est le nombre de bonnes réponses qui dit ce qu'il valait.
+        if (currentMode === 'blitz') winTitle = t('end.victory_blitz', { right: blitzRight });
         if (currentMode === 'daily') winTitle = t('end.victory_daily');
         if (currentMode === 'weekly') winTitle = t('end.victory_weekly');
         titleElement.innerText = winTitle;

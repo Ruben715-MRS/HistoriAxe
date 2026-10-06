@@ -1,0 +1,288 @@
+// Les générateurs des quatre modes « Remise en ordre », « Blitz »,
+// « Curseur » et « Intrus » (js/gameModes.js).
+//
+// Comme pour js/simultaneity.js, toute la fabrication des questions vit dans
+// un module sans DOM : elle se vérifie donc ici, et pas seulement dans un
+// navigateur. Deux familles de tests, pour la même raison que là-bas :
+//
+//  - sur des viviers écrits à la main, où chaque règle peut être mise en
+//    défaut isolément ;
+//  - sur le VRAI pack français, parce que les contraintes de ces modes ont
+//    été déduites de ses données — un test qui ne tournerait que sur une
+//    maquette ne dirait rien du jour où le contenu bouge.
+
+const test = require('node:test');
+const assert = require('node:assert/strict');
+
+const G = require('../js/gameModes.js');
+
+function seededRng(seed) {
+    let s = seed >>> 0;
+    return function () {
+        s = (s * 1664525 + 1013904223) >>> 0;
+        return s / 4294967296;
+    };
+}
+
+// Vivier jouet : dates distinctes, deux axes, de quoi nourrir les quatre
+// générateurs sans dépendre du contenu réel.
+function viv(n, opts = {}) {
+    const base = opts.base === undefined ? 1900 : opts.base;
+    const pas = opts.pas || 5;
+    const axes = opts.axes || ['A', 'B'];
+    return Array.from({ length: n }, (_, i) => ({
+        id: 'e' + i,
+        date: base + i * pas,
+        titre: 'Événement ' + i,
+        axe: axes[i % axes.length]
+    }));
+}
+
+// --- 1. REMISE EN ORDRE --------------------------------------------------
+
+test('une manche de remise en ordre sert cinq cartes et leur solution triée', () => {
+    const rounds = G.buildOrderRounds(viv(20), { rng: seededRng(1), count: 2 });
+    assert.equal(rounds.length, 2);
+    rounds.forEach(r => {
+        assert.equal(r.cards.length, G.ORDER_CARDS);
+        assert.equal(r.solution.length, G.ORDER_CARDS);
+        // La solution est bien l'ordre chronologique des cartes servies.
+        const parDate = r.cards.slice().sort((a, b) => a.date - b.date).map(e => e.id);
+        assert.deepEqual(r.solution, parDate);
+    });
+});
+
+test('les cartes sont bien mélangées, et non servies dans l’ordre des dates', () => {
+    // Ce qui compte n'est pas qu'AUCUNE manche ne sorte triée — cinq cartes
+    // mélangées tombent dans l'ordre une fois sur 120, et le joueur, qui ne
+    // voit pas les dates, n'y verrait de toute façon rien — mais que le
+    // générateur ne les serve pas systématiquement triées. Le seuil est à
+    // une dizaine d'écarts-types de l'espérance (≈ 1,7 sur 200) : ce test ne
+    // peut pas rougir par malchance.
+    const rounds = G.buildOrderRounds(viv(1000), { rng: seededRng(4), count: 200 });
+    assert.equal(rounds.length, 200);
+    const triees = rounds.filter(r => r.cards.map(c => c.id).join() === r.solution.join()).length;
+    assert.ok(triees < 15, `${triees} manches sur 200 servies déjà dans l'ordre`);
+});
+
+test('deux événements de la même année ne tombent jamais dans la même manche', () => {
+    // « Lequel est antérieur ? » n'a pas de réponse pour deux 1789.
+    const doublons = Array.from({ length: 30 }, (_, i) => ({
+        id: 'd' + i, date: 1800 + (i % 6), titre: 'Doublon ' + i
+    }));
+    G.buildOrderRounds(doublons, { rng: seededRng(5) }).forEach(r => {
+        const dates = r.cards.map(c => c.date);
+        assert.equal(new Set(dates).size, dates.length);
+    });
+});
+
+test('un vivier trop court ne produit aucune manche', () => {
+    assert.deepEqual(G.buildOrderRounds(viv(4), { rng: seededRng(2) }), []);
+});
+
+test('le décompte d’une remise en ordre compte les rangs justes', () => {
+    const solution = ['a', 'b', 'c', 'd', 'e'];
+    assert.deepEqual(G.scoreOrderAttempt(solution, solution), { correct: 5, total: 5, perfect: true });
+    // Deux cartes interverties : trois rangs restent bons.
+    assert.deepEqual(G.scoreOrderAttempt(['a', 'c', 'b', 'd', 'e'], solution),
+        { correct: 3, total: 5, perfect: false });
+    // Un classement incomplet n'est jamais parfait, même sans erreur visible.
+    assert.equal(G.scoreOrderAttempt(['a', 'b'], solution).perfect, false);
+});
+
+// --- 2. BLITZ VRAI / FAUX ------------------------------------------------
+
+test('l’énoncé du blitz dit vrai exactement quand il doit', () => {
+    const rng = seededRng(3);
+    for (let i = 0; i < 200; i++) {
+        const q = G.buildBlitzQuestion(viv(12), { rng });
+        assert.ok(q, 'une question doit être produite');
+        // L'énoncé est toujours « gauche antérieur à droite » : sa véracité
+        // se vérifie donc directement sur les dates.
+        assert.equal(q.answer, q.left.date < q.right.date,
+            `« ${q.left.titre} » (${q.left.date}) avant « ${q.right.titre} » (${q.right.date})`);
+    }
+});
+
+test('une série de blitz est exactement moitié vraie, moitié fausse', () => {
+    // Sans cette contrainte, un joueur pressé gagnerait à répondre toujours
+    // la même chose.
+    const qs = G.buildBlitzQuestions(viv(30), { rng: seededRng(8), count: 40 });
+    assert.equal(qs.length, 40);
+    assert.equal(qs.filter(q => q.answer).length, 20);
+});
+
+test('le blitz ne repose jamais la même paire deux fois de suite', () => {
+    const qs = G.buildBlitzQuestions(viv(8), { rng: seededRng(9), count: 60 });
+    for (let i = 1; i < qs.length; i++) {
+        assert.notEqual(qs[i].pairKey, qs[i - 1].pairKey);
+    }
+});
+
+test('le blitz renonce plutôt que de comparer deux dates identiques', () => {
+    const memeAnnee = [
+        { id: 'x', date: 1789, titre: 'X' },
+        { id: 'y', date: 1789, titre: 'Y' }
+    ];
+    assert.equal(G.buildBlitzQuestion(memeAnnee, { rng: seededRng(6) }), null);
+});
+
+// --- 3. LE CURSEUR -------------------------------------------------------
+
+test('l’échelle du curseur déborde le vivier des deux côtés', () => {
+    // Collés aux butées, les événements extrêmes se devineraient en poussant
+    // le curseur à fond.
+    const scale = G.sliderScaleFor(viv(10, { base: 1900, pas: 10 })); // 1900 → 1990
+    assert.ok(scale.min < 1900, `min ${scale.min} devrait déborder sous 1900`);
+    assert.ok(scale.max > 1990, `max ${scale.max} devrait déborder au-delà de 1990`);
+});
+
+test('la tolérance du curseur suit l’étendue du thème', () => {
+    // Un thème de vingt ans et un thème de deux millénaires n'ont pas la
+    // même idée de « presque juste ».
+    const court = G.sliderScaleFor(viv(10, { base: 1918, pas: 2 }));   // 18 ans
+    const long = G.sliderScaleFor(viv(10, { base: -500, pas: 250 }));  // 2250 ans
+    assert.ok(court.tolerance < long.tolerance,
+        `tolérance courte ${court.tolerance} devrait être sous la longue ${long.tolerance}`);
+    assert.ok(court.tolerance >= 2, 'un plancher évite une tolérance de zéro année');
+});
+
+test('le barème du curseur se mesure à la tolérance, pas à l’échelle', () => {
+    // Le défaut que ce test garde : rapportée à l'échelle, une réponse
+    // fausse de trois siècles sur un thème de 6 600 ans gardait 96 % des
+    // points.
+    const rounds = G.buildSliderRounds(viv(40, { base: -4600, pas: 170 }), { rng: seededRng(7), count: 1 });
+    const round = rounds[0];
+    const vraie = round.event.date;
+
+    assert.equal(G.scoreSliderGuess(vraie, round).ratio, 1);
+    assert.equal(G.scoreSliderGuess(vraie, round).exact, true);
+
+    const loin = G.scoreSliderGuess(vraie + round.tolerance * 3, round);
+    assert.equal(loin.ratio, 0, 'à trois fois la tolérance, le score doit être nul');
+    assert.equal(loin.within, false);
+
+    const juste = G.scoreSliderGuess(vraie + round.tolerance, round);
+    assert.equal(juste.within, true);
+    assert.ok(juste.ratio > 0.6 && juste.ratio < 0.7, `à la tolérance pile : ${juste.ratio}`);
+});
+
+test('le curseur ne sert jamais un événement hors de son échelle', () => {
+    const rounds = G.buildSliderRounds(viv(30), { rng: seededRng(10) });
+    assert.ok(rounds.length > 0);
+    rounds.forEach(r => {
+        assert.ok(r.event.date >= r.min && r.event.date <= r.max,
+            `${r.event.date} hors de [${r.min}, ${r.max}]`);
+    });
+});
+
+// --- 4. L'INTRUS ---------------------------------------------------------
+
+test('l’intrus « période » se détache nettement de son trio', () => {
+    const q = G.buildPeriodIntrus(viv(40, { base: 1000, pas: 25 }), seededRng(11));
+    assert.ok(q, 'une question de période doit être produite');
+    assert.equal(q.kind, 'periode');
+    assert.equal(q.options.length, G.INTRUS_OPTIONS);
+
+    const trio = q.options.filter(o => o.id !== q.intruderId);
+    const intrus = q.options.find(o => o.id === q.intruderId);
+    const etalement = Math.max(...trio.map(e => e.date)) - Math.min(...trio.map(e => e.date));
+    const ecart = Math.min(...trio.map(e => Math.abs(e.date - intrus.date)));
+    // L'écart se mesure en multiples de l'étalement du trio, pour tenir
+    // aussi bien sur un thème de vingt ans que de trois millénaires.
+    assert.ok(ecart >= etalement * 3 || ecart >= 15,
+        `écart ${ecart} trop faible pour un trio étalé sur ${etalement}`);
+});
+
+test('l’intrus « axe » vient bien d’un autre fil que le trio', () => {
+    const q = G.buildAxisIntrus(viv(30, { axes: ['Guerre', 'Culture', 'Économie'] }), seededRng(12));
+    assert.ok(q, 'une question d’axe doit être produite');
+    assert.equal(q.kind, 'axe');
+    const trio = q.options.filter(o => o.id !== q.intruderId);
+    const intrus = q.options.find(o => o.id === q.intruderId);
+    trio.forEach(e => assert.equal(e.axe, q.axis));
+    assert.notEqual(intrus.axe, q.axis);
+});
+
+test('l’intrus « axe » renonce si le thème n’a qu’un seul axe', () => {
+    assert.equal(G.buildAxisIntrus(viv(20, { axes: ['Unique'] }), seededRng(13)), null);
+});
+
+test('une série d’intrus alterne les deux familles et ne répète pas son intrus', () => {
+    const qs = G.buildIntrusQuestions(viv(60, { axes: ['A', 'B', 'C'] }), { rng: seededRng(14), count: 8 });
+    assert.ok(qs.length >= 6, `seulement ${qs.length} manches produites`);
+    const familles = new Set(qs.map(q => q.kind));
+    assert.equal(familles.size, 2, 'les deux familles doivent être représentées');
+    const intrus = qs.map(q => q.intruderId);
+    assert.equal(new Set(intrus).size, intrus.length, 'un intrus ne doit pas revenir');
+});
+
+// --- SUR LE VRAI PACK FRANÇAIS -------------------------------------------
+
+const frData = require('../data/fr.json');
+
+function tousLesThemes() {
+    const out = [];
+    (function walk(nodes) {
+        nodes.forEach(n => {
+            (n.themes || []).forEach(t => out.push(t));
+            if (n.subcategories) walk(n.subcategories);
+        });
+    })(frData.categories);
+    return out;
+}
+const THEMES = tousLesThemes();
+const theme = id => THEMES.find(t => t.id === id);
+
+test('aucune date hors échelle historique n’atteint les quatre modes', () => {
+    // « Histoire de France » contient des événements préhistoriques : trois
+    // d'entre eux étiraient l'échelle du Curseur de -486162 à 38186, avec une
+    // tolérance de ±22601 ans. Ils restent jouables sur la frise, mais ces
+    // modes-ci, qui comparent des dates, les écartent.
+    const fr = theme('thm_fr');
+    assert.ok(fr, 'thm_fr doit exister dans le pack');
+    assert.ok(fr.events.some(e => Math.abs(e.date) >= G.HISTORICAL_YEAR_LIMIT),
+        'ce test ne vaut que si le thème contient encore de telles dates');
+
+    const scale = G.sliderScaleFor(fr.events);
+    assert.ok(Math.abs(scale.min) < G.HISTORICAL_YEAR_LIMIT, `min ${scale.min} hors échelle`);
+    assert.ok(Math.abs(scale.max) < G.HISTORICAL_YEAR_LIMIT, `max ${scale.max} hors échelle`);
+
+    const rng = seededRng(21);
+    G.buildOrderRounds(fr.events, { rng, count: 10 }).forEach(r => {
+        r.cards.forEach(c => assert.ok(Math.abs(c.date) < G.HISTORICAL_YEAR_LIMIT));
+    });
+    G.buildIntrusQuestions(fr.events, { rng, count: 10 }).forEach(q => {
+        q.options.forEach(o => assert.ok(Math.abs(o.date) < G.HISTORICAL_YEAR_LIMIT));
+    });
+});
+
+test('les quatre modes tiennent sur des thèmes de tailles très différentes', () => {
+    const rng = seededRng(22);
+    ['thm_aut', 'thm_fr', 'thm_rome', 'thm_jp'].forEach(id => {
+        const th = theme(id);
+        if (!th) return;
+        const ev = th.events;
+        assert.ok(G.buildOrderRounds(ev, { rng, count: 3 }).length >= 3, `${id} : remise en ordre`);
+        assert.equal(G.buildBlitzQuestions(ev, { rng, count: 20 }).length, 20, `${id} : blitz`);
+        assert.equal(G.buildSliderRounds(ev, { rng, count: 10 }).length, 10, `${id} : curseur`);
+        assert.ok(G.buildIntrusQuestions(ev, { rng, count: 10 }).length >= 8, `${id} : intrus`);
+    });
+});
+
+test('sur tout le pack français, aucun intrus n’appartient à son propre groupe', () => {
+    const rng = seededRng(23);
+    const echantillon = THEMES.filter(t => (t.events || []).length >= 20).slice(0, 60);
+    let posees = 0;
+    echantillon.forEach(th => {
+        G.buildIntrusQuestions(th.events, { rng, count: 4 }).forEach(q => {
+            posees++;
+            assert.equal(q.groupIds.includes(q.intruderId), false,
+                `« ${th.nom} » : l'intrus figure aussi dans le groupe`);
+            assert.equal(q.options.length, G.INTRUS_OPTIONS);
+            assert.equal(new Set(q.options.map(o => o.id)).size, G.INTRUS_OPTIONS,
+                `« ${th.nom} » : un événement apparaît deux fois dans les options`);
+        });
+    });
+    assert.ok(posees > 100, `échantillon trop maigre : ${posees} manches`);
+});

@@ -211,7 +211,11 @@
     "score_label_prefix": "Score: ",
     "score_label_suffix": " points",
     "victory_simultaneity": "Well done! The whole world back in sync!",
-    "victory_simultaneity_challenge": "Well done! Your history, put back into the world's!"
+    "victory_simultaneity_challenge": "Well done! Your history, put back into the world's!",
+    "victory_ordre": "Well done! All back in order!",
+    "victory_blitz": "Time's up! {right} correct answers.",
+    "victory_curseur": "Well done! A sharp eye every time!",
+    "victory_intrus": "Well done! Not one slipped past you!"
   },
   "daily": {
     "title_win": "🌍 Daily Challenge Mastered!",
@@ -629,5 +633,47 @@
     "aria_group": "Round length",
     "all": "All ({count})",
     "hint": "Round of {count} events"
+  },
+  "ordre": {
+    "title": "Put in Order",
+    "desc": "3 lives. Five shuffled cards, no dates: sort them all at once, oldest to most recent.",
+    "kicker": "Tap the cards from oldest to most recent",
+    "hint": "{placed} of {total} cards placed",
+    "reset": "Start over",
+    "card_free_aria": "Place « {titre} » in the next position",
+    "card_placed_aria": "« {titre} », position {rank}. Tap to remove it",
+    "reveal_perfect": "Perfect order!",
+    "reveal_partial": "{correct} of {total} cards in the right place. The correct order:",
+    "not_enough": "This theme does not have {count} events with distinct dates: Put in Order needs at least that many."
+  },
+  "blitz": {
+    "title": "60-Second Blitz",
+    "desc": "No lives, just the clock. “X came before Y”: true or false, as fast as you can.",
+    "before": "came before",
+    "true": "True",
+    "false": "False",
+    "tally": "{right} right · {wrong} wrong",
+    "not_enough": "This theme does not have two events with distinct dates: the blitz has nothing to compare."
+  },
+  "curseur": {
+    "title": "The Slider",
+    "desc": "3 lives. Slide to the year: the closer you land, the more you score.",
+    "kicker": "Roughly which year?",
+    "kicker_tolerance": "Which year? (within ±{tolerance} years)",
+    "range_aria": "Estimated year",
+    "validate": "Confirm",
+    "verdict_exact": "Spot on! It was {year}.",
+    "verdict_gap": "{gap} years off — it was {year}.",
+    "not_enough": "This theme does not have enough dated events for the slider."
+  },
+  "intrus": {
+    "title": "The Odd One Out",
+    "desc": "3 lives. Four events, three that belong together: find the one that does not.",
+    "kicker_periode": "Which one is not from the same period?",
+    "kicker_axe": "Which one does not follow the same thread?",
+    "reveal_periode": "The other three are contemporaries:",
+    "reveal_axe": "The other three belong to “{axe}”:",
+    "reveal_tag": "the odd one",
+    "not_enough": "This theme cannot produce enough odd-one-out questions."
   }
 }

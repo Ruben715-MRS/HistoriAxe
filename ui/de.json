@@ -207,7 +207,11 @@
     "score_label_prefix": "Punkte: ",
     "score_label_suffix": " Punkte",
     "victory_simultaneity": "Bravo! Die ganze Welt wieder im Takt!",
-    "victory_simultaneity_challenge": "Bravo! Ihre Geschichte, zurück in der Weltgeschichte!"
+    "victory_simultaneity_challenge": "Bravo! Ihre Geschichte, zurück in der Weltgeschichte!",
+    "victory_ordre": "Bravo! Alles wieder in Reihenfolge!",
+    "victory_blitz": "Zeit abgelaufen! {right} richtige Antworten.",
+    "victory_curseur": "Bravo! Jedes Mal ein sicheres Auge!",
+    "victory_intrus": "Bravo! Keiner ist Ihnen entgangen!"
   },
   "daily": {
     "title_win": "🌍 Tages-Herausforderung bestanden!",
@@ -602,5 +606,47 @@
     "aria_group": "Rundenlänge",
     "all": "Alle ({count})",
     "hint": "Runde mit {count} Ereignissen"
+  },
+  "ordre": {
+    "title": "In die richtige Reihenfolge",
+    "desc": "3 Leben. Fünf gemischte Karten ohne Datum: Ordnen Sie sie auf einmal, von der ältesten zur jüngsten.",
+    "kicker": "Tippen Sie die Karten von der ältesten zur jüngsten an",
+    "hint": "{placed} von {total} Karten gesetzt",
+    "reset": "Von vorn beginnen",
+    "card_free_aria": "« {titre} » an die nächste Stelle setzen",
+    "card_placed_aria": "« {titre} », Platz {rank}. Antippen zum Entfernen",
+    "reveal_perfect": "Perfekte Reihenfolge!",
+    "reveal_partial": "{correct} von {total} Karten richtig platziert. Die richtige Reihenfolge:",
+    "not_enough": "Dieses Thema hat keine {count} Ereignisse mit unterschiedlichen Daten: so viele braucht es mindestens."
+  },
+  "blitz": {
+    "title": "60-Sekunden-Blitz",
+    "desc": "Keine Leben, nur die Uhr. „X liegt vor Y“: wahr oder falsch, so schnell wie möglich.",
+    "before": "liegt vor",
+    "true": "Wahr",
+    "false": "Falsch",
+    "tally": "{right} richtig · {wrong} falsch",
+    "not_enough": "Dieses Thema hat keine zwei Ereignisse mit unterschiedlichen Daten: der Blitz hat nichts zu vergleichen."
+  },
+  "curseur": {
+    "title": "Der Schieberegler",
+    "desc": "3 Leben. Schieben Sie auf das Jahr: je näher Sie landen, desto mehr Punkte.",
+    "kicker": "Ungefähr in welchem Jahr?",
+    "kicker_tolerance": "In welchem Jahr? (±{tolerance} Jahre Spielraum)",
+    "range_aria": "Geschätztes Jahr",
+    "validate": "Bestätigen",
+    "verdict_exact": "Genau! Es war {year}.",
+    "verdict_gap": "{gap} Jahre daneben — es war {year}.",
+    "not_enough": "Dieses Thema hat nicht genug datierte Ereignisse für den Schieberegler."
+  },
+  "intrus": {
+    "title": "Der Ausreißer",
+    "desc": "3 Leben. Vier Ereignisse, drei gehören zusammen: Finden Sie das, was nicht passt.",
+    "kicker_periode": "Welches stammt nicht aus derselben Zeit?",
+    "kicker_axe": "Welches folgt nicht demselben Faden?",
+    "reveal_periode": "Die anderen drei sind zeitgleich:",
+    "reveal_axe": "Die anderen drei gehören zu „{axe}“:",
+    "reveal_tag": "der Ausreißer",
+    "not_enough": "Aus diesem Thema lassen sich nicht genug Ausreißer-Fragen bilden."
   }
 }

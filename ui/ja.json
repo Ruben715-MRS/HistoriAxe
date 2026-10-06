@@ -207,7 +207,11 @@
     "score_label_prefix": "スコア:",
     "score_label_suffix": "点",
     "victory_simultaneity": "お見事!世界のすべてが時を合わせました!",
-    "victory_simultaneity_challenge": "お見事!あなたの歴史が、世界の歴史とつながりました!"
+    "victory_simultaneity_challenge": "お見事!あなたの歴史が、世界の歴史とつながりました!",
+    "victory_ordre": "お見事!すべて正しい順に並びました!",
+    "victory_blitz": "時間切れ!正解{right}問。",
+    "victory_curseur": "お見事!毎回するどい勘でした!",
+    "victory_intrus": "お見事!ひとつも見逃しませんでした!"
   },
   "daily": {
     "title_win": "🌍 デイリーチャレンジ達成！",
@@ -602,5 +606,47 @@
     "aria_group": "1ラウンドの長さ",
     "all": "すべて({count})",
     "hint": "{count}件のラウンド"
+  },
+  "ordre": {
+    "title": "並べ替え",
+    "desc": "ライフ3。日付のない5枚のカードを、古い順に一度に並べ替えましょう。",
+    "kicker": "古いものから新しいものへ順にタップしてください",
+    "hint": "{total}枚中{placed}枚を配置",
+    "reset": "最初からやり直す",
+    "card_free_aria": "「{titre}」を次の位置に置く",
+    "card_placed_aria": "「{titre}」、{rank}番目。タップで取り消し",
+    "reveal_perfect": "完璧な並びです!",
+    "reveal_partial": "{total}枚中{correct}枚が正しい位置でした。正しい順序:",
+    "not_enough": "このテーマには日付の異なる出来事が{count}件ありません。並べ替えには最低それだけ必要です。"
+  },
+  "blitz": {
+    "title": "60秒ブリッツ",
+    "desc": "ライフなし、あるのは時計だけ。「XはYより前」—— 正か誤か、できるだけ速く。",
+    "before": "は次より前",
+    "true": "正",
+    "false": "誤",
+    "tally": "正解{right} · 不正解{wrong}",
+    "not_enough": "このテーマには日付の異なる出来事が2件ありません。ブリッツには比べるものがありません。"
+  },
+  "curseur": {
+    "title": "スライダー",
+    "desc": "ライフ3。スライダーを年にあわせます。近いほど高得点。",
+    "kicker": "だいたい何年でしょう?",
+    "kicker_tolerance": "何年でしょう?(±{tolerance}年まで)",
+    "range_aria": "推定した年",
+    "validate": "決定",
+    "verdict_exact": "ぴったり!{year}年でした。",
+    "verdict_gap": "{gap}年のずれ —— {year}年でした。",
+    "not_enough": "このテーマには、スライダーに使える日付つきの出来事が足りません。"
+  },
+  "intrus": {
+    "title": "仲間はずれ",
+    "desc": "ライフ3。4つの出来事のうち3つは仲間です。はずれを見つけましょう。",
+    "kicker_periode": "同じ時代でないのはどれでしょう?",
+    "kicker_axe": "ほかと同じ流れにないのはどれでしょう?",
+    "reveal_periode": "ほかの3つは同時代です:",
+    "reveal_axe": "ほかの3つは「{axe}」に属します:",
+    "reveal_tag": "仲間はずれ",
+    "not_enough": "このテーマでは、仲間はずれの問題を十分に作れません。"
   }
 }

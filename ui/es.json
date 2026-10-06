@@ -207,7 +207,11 @@
     "score_label_prefix": "Puntos: ",
     "score_label_suffix": " puntos",
     "victory_simultaneity": "¡Bien hecho! ¡El mundo entero puesto en hora!",
-    "victory_simultaneity_challenge": "¡Bien hecho! ¡Tu historia, devuelta a la del mundo!"
+    "victory_simultaneity_challenge": "¡Bien hecho! ¡Tu historia, devuelta a la del mundo!",
+    "victory_ordre": "¡Bien hecho! ¡Todo en orden!",
+    "victory_blitz": "¡Se acabó el tiempo! {right} respuestas correctas.",
+    "victory_curseur": "¡Bien hecho! ¡Buen ojo siempre!",
+    "victory_intrus": "¡Bien hecho! ¡No se te escapó ninguno!"
   },
   "daily": {
     "title_win": "🌍 ¡Desafío del Día Superado!",
@@ -602,5 +606,47 @@
     "aria_group": "Duración de la ronda",
     "all": "Todo ({count})",
     "hint": "Ronda de {count} acontecimientos"
+  },
+  "ordre": {
+    "title": "Poner en orden",
+    "desc": "3 vidas. Cinco cartas mezcladas, sin fechas: ordénalas de una vez, de la más antigua a la más reciente.",
+    "kicker": "Toca las cartas de la más antigua a la más reciente",
+    "hint": "{placed} de {total} cartas colocadas",
+    "reset": "Empezar de nuevo",
+    "card_free_aria": "Colocar « {titre} » en la siguiente posición",
+    "card_placed_aria": "« {titre} », posición {rank}. Toca para quitarla",
+    "reveal_perfect": "¡Orden perfecto!",
+    "reveal_partial": "{correct} de {total} cartas bien colocadas. El orden correcto:",
+    "not_enough": "Este tema no tiene {count} acontecimientos con fechas distintas: hacen falta al menos esos."
+  },
+  "blitz": {
+    "title": "Blitz de 60 segundos",
+    "desc": "Sin vidas, solo el reloj. «X es anterior a Y»: verdadero o falso, lo más rápido posible.",
+    "before": "es anterior a",
+    "true": "Verdadero",
+    "false": "Falso",
+    "tally": "{right} aciertos · {wrong} fallos",
+    "not_enough": "Este tema no tiene dos acontecimientos con fechas distintas: el blitz no tiene qué comparar."
+  },
+  "curseur": {
+    "title": "El deslizador",
+    "desc": "3 vidas. Desliza hasta el año: cuanto más cerca caigas, más puntúas.",
+    "kicker": "¿En qué año, más o menos?",
+    "kicker_tolerance": "¿En qué año? (con ±{tolerance} años de margen)",
+    "range_aria": "Año estimado",
+    "validate": "Validar",
+    "verdict_exact": "¡Exacto! Era {year}.",
+    "verdict_gap": "A {gap} años — era {year}.",
+    "not_enough": "Este tema no tiene suficientes acontecimientos fechados para el deslizador."
+  },
+  "intrus": {
+    "title": "El intruso",
+    "desc": "3 vidas. Cuatro acontecimientos, tres que van juntos: encuentra el que desentona.",
+    "kicker_periode": "¿Cuál no es del mismo periodo?",
+    "kicker_axe": "¿Cuál no sigue el mismo hilo que los demás?",
+    "reveal_periode": "Los otros tres son contemporáneos:",
+    "reveal_axe": "Los otros tres pertenecen a «{axe}»:",
+    "reveal_tag": "el intruso",
+    "not_enough": "Este tema no permite componer suficientes preguntas de intruso."
   }
 }

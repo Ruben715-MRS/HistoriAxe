@@ -343,6 +343,26 @@
                 <p data-i18n="modes.ecart.desc">3 vies. Devinez le nombre d'années entre deux événements : 5 essais, le
                     jeu vous dit si c'est plus ou moins.</p>
             </div>
+            <div class="mode-card ordre-card" id="mode-card-ordre" onclick="startOrdreGame()">
+                <h3 data-i18n="ordre.title">Remise en ordre</h3>
+                <p data-i18n="ordre.desc">3 vies. Cinq cartes mélangées, sans leurs dates : classez-les d'un coup du
+                    plus ancien au plus récent.</p>
+            </div>
+            <div class="mode-card blitz-card" id="mode-card-blitz" onclick="startBlitzGame()">
+                <h3 data-i18n="blitz.title">Blitz 60 secondes</h3>
+                <p data-i18n="blitz.desc">Pas de vies, juste le chrono. « X est antérieur à Y » : vrai ou faux, le
+                    plus vite possible.</p>
+            </div>
+            <div class="mode-card curseur-card" id="mode-card-curseur" onclick="startCurseurGame()">
+                <h3 data-i18n="curseur.title">Le curseur</h3>
+                <p data-i18n="curseur.desc">3 vies. Glissez le curseur sur l'année : plus vous tombez près, plus vous
+                    marquez.</p>
+            </div>
+            <div class="mode-card intrus-card" id="mode-card-intrus" onclick="startIntrusGame()">
+                <h3 data-i18n="intrus.title">L'intrus</h3>
+                <p data-i18n="intrus.desc">3 vies. Quatre événements, trois qui vont ensemble : trouvez celui qui
+                    détonne.</p>
+            </div>
             <div class="mode-card multi-card" onclick="showMultiplayerSetup()">
                 <h3 data-i18n="modes.multi.title">Multijoueurs</h3>
                 <p data-i18n="modes.multi.desc">À tour de rôle, élimination au bout de 2 erreurs.</p>
@@ -525,6 +545,165 @@
 
     <!-- ÉCRAN : PENDANT CE TEMPS, AILLEURS… (simultanéité — voir js/simultaneity.js
          pour le moteur, js/app.js: startSimultaneityGame pour l'écran) -->
+    <!-- ÉCRAN : REMISE EN ORDRE (cinq cartes à classer d'un coup — voir
+         js/gameModes.js: buildOrderRounds, js/app.js: startOrdreGame) -->
+    <div id="screen-ordre" class="hidden">
+        <div class="game-bar">
+            <div class="bar-row">
+                <button class="quit-btn" onclick="quitGame()">‹ <span data-i18n="nav.quit">Quitter</span></button>
+                <span class="bar-fill"></span>
+                <span class="lives-row" id="ordre-hud-lives"></span>
+                <span class="type-size">
+                    <button type="button" onclick="changeZoom(-0.15)" aria-label="Réduire le texte"
+                        data-i18n-attr="aria-label:game.decrease_text_aria">A−</button>
+                    <button type="button" onclick="changeZoom(0.15)" aria-label="Agrandir le texte"
+                        data-i18n-attr="aria-label:game.increase_text_aria">A+</button>
+                </span>
+            </div>
+            <div class="bar-row">
+                <span class="progress-rail" id="ordre-progress-rail"><span class="progress-fill"
+                        id="ordre-progress-fill"></span></span>
+                <span class="bar-meta" id="ordre-hud-count">1 / 5</span>
+                <span class="bar-meta"><span id="ordre-hud-score">0</span> pts<span id="ordre-hud-combo"
+                        class="combo-chip hidden"></span></span>
+            </div>
+        </div>
+
+        <div class="quiz-body">
+            <div class="quiz-question-card">
+                <div class="quiz-kicker" id="ordre-kicker" data-i18n="ordre.kicker">Touchez les cartes du plus ancien
+                    au plus récent</div>
+                <div class="ordre-progress-hint" id="ordre-hint"></div>
+            </div>
+            <div class="ordre-cards" id="ordre-cards"></div>
+            <div class="ordre-actions">
+                <button type="button" class="ordre-reset-btn hidden" id="ordre-reset-btn"
+                    onclick="resetOrdreAttempt()" data-i18n="ordre.reset">Tout recommencer</button>
+            </div>
+            <div class="simul-reveal hidden" id="ordre-reveal" aria-live="polite"></div>
+        </div>
+    </div>
+
+    <!-- ÉCRAN : BLITZ VRAI / FAUX (60 secondes — voir js/app.js: startBlitzGame) -->
+    <div id="screen-blitz" class="hidden">
+        <div class="game-bar">
+            <div class="bar-row">
+                <button class="quit-btn" onclick="quitGame()">‹ <span data-i18n="nav.quit">Quitter</span></button>
+                <span class="bar-fill"></span>
+                <span class="type-size">
+                    <button type="button" onclick="changeZoom(-0.15)" aria-label="Réduire le texte"
+                        data-i18n-attr="aria-label:game.decrease_text_aria">A−</button>
+                    <button type="button" onclick="changeZoom(0.15)" aria-label="Agrandir le texte"
+                        data-i18n-attr="aria-label:game.increase_text_aria">A+</button>
+                </span>
+            </div>
+            <div class="bar-row">
+                <span class="progress-rail blitz-rail" id="blitz-progress-rail"><span class="progress-fill"
+                        id="blitz-progress-fill"></span></span>
+                <span class="bar-meta blitz-clock" id="blitz-clock" aria-live="off">60</span>
+                <span class="bar-meta"><span id="blitz-hud-score">0</span> pts<span id="blitz-hud-combo"
+                        class="combo-chip hidden"></span></span>
+            </div>
+        </div>
+
+        <div class="quiz-body">
+            <div class="blitz-statement" id="blitz-statement">
+                <div class="blitz-event" id="blitz-left">—</div>
+                <div class="blitz-link" data-i18n="blitz.before">est antérieur à</div>
+                <div class="blitz-event" id="blitz-right">—</div>
+            </div>
+            <div class="blitz-buttons">
+                <button type="button" class="blitz-btn blitz-true" id="blitz-true"
+                    onclick="answerBlitz(true)" data-i18n="blitz.true">Vrai</button>
+                <button type="button" class="blitz-btn blitz-false" id="blitz-false"
+                    onclick="answerBlitz(false)" data-i18n="blitz.false">Faux</button>
+            </div>
+            <div class="blitz-tally" id="blitz-tally"></div>
+        </div>
+    </div>
+
+    <!-- ÉCRAN : LE CURSEUR (estimer une date en glissant — voir js/app.js: startCurseurGame) -->
+    <div id="screen-curseur" class="hidden">
+        <div class="game-bar">
+            <div class="bar-row">
+                <button class="quit-btn" onclick="quitGame()">‹ <span data-i18n="nav.quit">Quitter</span></button>
+                <span class="bar-fill"></span>
+                <span class="lives-row" id="curseur-hud-lives"></span>
+                <span class="type-size">
+                    <button type="button" onclick="changeZoom(-0.15)" aria-label="Réduire le texte"
+                        data-i18n-attr="aria-label:game.decrease_text_aria">A−</button>
+                    <button type="button" onclick="changeZoom(0.15)" aria-label="Agrandir le texte"
+                        data-i18n-attr="aria-label:game.increase_text_aria">A+</button>
+                </span>
+            </div>
+            <div class="bar-row">
+                <span class="progress-rail" id="curseur-progress-rail"><span class="progress-fill"
+                        id="curseur-progress-fill"></span></span>
+                <span class="bar-meta" id="curseur-hud-count">1 / 10</span>
+                <span class="bar-meta"><span id="curseur-hud-score">0</span> pts<span id="curseur-hud-combo"
+                        class="combo-chip hidden"></span></span>
+            </div>
+        </div>
+
+        <div class="quiz-body">
+            <div class="quiz-question-card">
+                <div class="quiz-kicker" id="curseur-kicker" data-i18n="curseur.kicker">En quelle année, à peu près ?
+                </div>
+                <div class="quiz-prompt" id="curseur-title" data-i18n="nav.loading">Chargement…</div>
+            </div>
+
+            <div class="curseur-dial">
+                <div class="curseur-value" id="curseur-value">—</div>
+                <input type="range" class="curseur-range" id="curseur-range" min="0" max="100" step="1" value="50"
+                    aria-label="Année estimée" data-i18n-attr="aria-label:curseur.range_aria">
+                <div class="curseur-bounds">
+                    <span id="curseur-min">—</span>
+                    <span id="curseur-max">—</span>
+                </div>
+            </div>
+
+            <div class="curseur-actions">
+                <button type="button" class="btn curseur-validate" id="curseur-validate"
+                    onclick="answerCurseur()" data-i18n="curseur.validate">Valider</button>
+            </div>
+            <div class="curseur-verdict hidden" id="curseur-verdict" aria-live="polite"></div>
+        </div>
+    </div>
+
+    <!-- ÉCRAN : L'INTRUS (trois événements qui vont ensemble, un qui détonne —
+         voir js/gameModes.js: buildIntrusQuestions) -->
+    <div id="screen-intrus" class="hidden">
+        <div class="game-bar">
+            <div class="bar-row">
+                <button class="quit-btn" onclick="quitGame()">‹ <span data-i18n="nav.quit">Quitter</span></button>
+                <span class="bar-fill"></span>
+                <span class="lives-row" id="intrus-hud-lives"></span>
+                <span class="type-size">
+                    <button type="button" onclick="changeZoom(-0.15)" aria-label="Réduire le texte"
+                        data-i18n-attr="aria-label:game.decrease_text_aria">A−</button>
+                    <button type="button" onclick="changeZoom(0.15)" aria-label="Agrandir le texte"
+                        data-i18n-attr="aria-label:game.increase_text_aria">A+</button>
+                </span>
+            </div>
+            <div class="bar-row">
+                <span class="progress-rail" id="intrus-progress-rail"><span class="progress-fill"
+                        id="intrus-progress-fill"></span></span>
+                <span class="bar-meta" id="intrus-hud-count">1 / 10</span>
+                <span class="bar-meta"><span id="intrus-hud-score">0</span> pts<span id="intrus-hud-combo"
+                        class="combo-chip hidden"></span></span>
+            </div>
+        </div>
+
+        <div class="quiz-body">
+            <div class="quiz-question-card">
+                <div class="quiz-kicker" id="intrus-kicker" data-i18n="intrus.kicker_periode">Lequel n’est pas de la
+                    même période ?</div>
+            </div>
+            <div class="quiz-options" id="intrus-options"></div>
+            <div class="simul-reveal hidden" id="intrus-reveal" aria-live="polite"></div>
+        </div>
+    </div>
+
     <div id="screen-simultaneity" class="hidden">
         <div class="game-bar">
             <div class="bar-row">
@@ -1300,6 +1479,7 @@
     <script src="js/geoMap.js"></script>
     <script src="js/mindMap.js"></script>
     <script src="js/simultaneity.js"></script>
+    <script src="js/gameModes.js"></script>
     <script src="js/app.js"></script>
 
     <!-- ENREGISTREMENT DU SERVICE WORKER PWA -->

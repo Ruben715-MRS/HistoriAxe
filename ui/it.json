@@ -207,7 +207,11 @@
     "score_label_prefix": "Punteggio: ",
     "score_label_suffix": " punti",
     "victory_simultaneity": "Bravo! Il mondo intero rimesso in orario!",
-    "victory_simultaneity_challenge": "Bravo! La vostra storia, rimessa in quella del mondo!"
+    "victory_simultaneity_challenge": "Bravo! La vostra storia, rimessa in quella del mondo!",
+    "victory_ordre": "Bravo! Tutto rimesso in ordine!",
+    "victory_blitz": "Tempo scaduto! {right} risposte giuste.",
+    "victory_curseur": "Bravo! Occhio preciso ogni volta!",
+    "victory_intrus": "Bravo! Non ve n'è sfuggito nemmeno uno!"
   },
   "daily": {
     "title_win": "🌍 Sfida del Giorno Superata!",
@@ -602,5 +606,47 @@
     "aria_group": "Lunghezza della partita",
     "all": "Tutto ({count})",
     "hint": "Partita di {count} eventi"
+  },
+  "ordre": {
+    "title": "Rimettere in ordine",
+    "desc": "3 vite. Cinque carte mescolate, senza date: ordinatele tutte insieme, dalla più antica alla più recente.",
+    "kicker": "Toccate le carte dalla più antica alla più recente",
+    "hint": "{placed} di {total} carte collocate",
+    "reset": "Ricominciare",
+    "card_free_aria": "Collocare « {titre} » nella posizione successiva",
+    "card_placed_aria": "« {titre} », posizione {rank}. Toccate per rimuoverla",
+    "reveal_perfect": "Ordine perfetto!",
+    "reveal_partial": "{correct} carte su {total} al posto giusto. L'ordine corretto:",
+    "not_enough": "Questo tema non ha {count} eventi con date diverse: ne servono almeno altrettanti."
+  },
+  "blitz": {
+    "title": "Blitz di 60 secondi",
+    "desc": "Niente vite, solo il cronometro. « X è anteriore a Y »: vero o falso, il più in fretta possibile.",
+    "before": "è anteriore a",
+    "true": "Vero",
+    "false": "Falso",
+    "tally": "{right} giuste · {wrong} sbagliate",
+    "not_enough": "Questo tema non ha due eventi con date diverse: il blitz non ha nulla da confrontare."
+  },
+  "curseur": {
+    "title": "Il cursore",
+    "desc": "3 vite. Fate scorrere il cursore sull'anno: più vi avvicinate, più segnate.",
+    "kicker": "In che anno, più o meno?",
+    "kicker_tolerance": "In che anno? (con ±{tolerance} anni di margine)",
+    "range_aria": "Anno stimato",
+    "validate": "Convalidare",
+    "verdict_exact": "Esatto! Era il {year}.",
+    "verdict_gap": "A {gap} anni — era il {year}.",
+    "not_enough": "Questo tema non ha abbastanza eventi datati per il cursore."
+  },
+  "intrus": {
+    "title": "L'intruso",
+    "desc": "3 vite. Quattro eventi, tre che stanno insieme: trovate quello che stona.",
+    "kicker_periode": "Quale non è dello stesso periodo?",
+    "kicker_axe": "Quale non segue lo stesso filo degli altri?",
+    "reveal_periode": "Gli altri tre sono contemporanei:",
+    "reveal_axe": "Gli altri tre appartengono a « {axe} »:",
+    "reveal_tag": "l'intruso",
+    "not_enough": "Questo tema non permette di comporre abbastanza domande sull'intruso."
   }
 }

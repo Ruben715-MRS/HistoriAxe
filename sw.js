@@ -43,6 +43,7 @@ const APP_SHELL_FILES = [
     './js/geoMap.js',
     './js/mindMap.js',
     './js/simultaneity.js',
+    './js/gameModes.js',
     './js/app.js',
     './ui/fr.json',
     './data/fr.json',

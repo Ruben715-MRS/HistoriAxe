@@ -307,6 +307,107 @@ moins ceux qu'une Sélection a écartés »). Il vit maintenant dans
 `getModePoolRaw` / `getSessionPool`, ce qui donne un seul endroit où la
 longueur de manche s'applique.
 
+## Quatre modes fabriqués depuis les seules dates
+
+`js/gameModes.js` réunit les générateurs de **Remise en ordre**, **Blitz**,
+**Le curseur** et **L'intrus**. Un seul module parce qu'ils partagent leur
+nature : aucun ne demande une ligne de contenu nouvelle, tous fabriquent
+leurs questions à partir des dates déjà présentes. Comme
+`js/simultaneity.js`, il ne touche ni au DOM ni à `window` et tourne donc
+sous `npm test` — l'écran et le score de chacun vivent, eux, dans
+`js/app.js`.
+
+Ce que chacun entraîne diffère, et c'est tout l'intérêt de les avoir côte à
+côte :
+
+| Mode | Ce qu'il demande | Ce qui le distingue |
+|---|---|---|
+| **Remise en ordre** | L'ordre relatif de 5 événements d'un coup | La frise n'en fait insérer qu'un dans une suite déjà triée |
+| **Blitz 60 s** | « X avant Y ? », le plus vite possible | Pas de vies : le chronomètre est la contrainte |
+| **Le curseur** | La date, estimée plutôt que sue | « Le fil du temps » exige l'année exacte, « Périodes » un siècle parmi quatre |
+| **L'intrus** | Reconnaître ce qui ne cadre pas | Aucune date affichée : c'est le sens de l'époque |
+
+### Remise en ordre
+
+Cinq cartes mélangées, **sans leurs dates**. L'interaction est le toucher
+seul, jamais le glisser-déposer : on touche les cartes du plus ancien au
+plus récent et un rang s'inscrit sur chacune ; retoucher une carte rangée la
+retire et décale les suivantes. Le glisser-déposer aurait été plus joli et
+inutilisable au clavier, pénible au doigt sur une liste qui défile, et cassé
+par les lecteurs d'écran — pour un gain nul, puisque l'ordre se dit aussi
+bien en touchant.
+
+La vie se perd au tout ou rien (comme Avant/Après et Périodes & Ères), mais
+le score suit le nombre de rangs justes : une manche ratée de peu ne vaut
+pas une manche ratée de tout. Le nombre de manches dépend des **dates
+distinctes** du vivier, pas de sa taille : un thème resserré comme
+« Régimes autoritaires » (72 événements sur 21 ans) n'en produit que deux ou
+trois, et c'est la réponse honnête.
+
+### Blitz 60 secondes
+
+Le format court qui manquait : le plus rapide jusqu'ici était le Défi du
+jour, dix cartes, et une partie de thème peut en faire soixante-douze.
+
+Pas de vies — une erreur coûte **trois secondes**, ce qui punit la réponse
+au hasard sans jamais interrompre la partie. La série de questions est
+**exactement moitié vraie, moitié fausse** : tirée à pile ou face, elle
+pencherait assez souvent pour qu'un joueur pressé gagne à répondre toujours
+la même chose. Et une partie de blitz ne se perd pas : elle se termine, le
+score dit ce qu'elle valait.
+
+C'est le seul des quatre à prendre le **vivier entier** plutôt qu'une manche
+(voir « Longueur de la manche ») : sa longueur est donnée par l'horloge, pas
+par un nombre de cartes, et le borner à dix ferait tourner les mêmes paires
+pendant une minute.
+
+### Le curseur
+
+L'échelle et la tolérance sont calculées sur le thème
+(`GameModes.sliderScaleFor`) : **±2 ans** sur un thème de vingt ans, **±60**
+sur un thème qui traverse l'Antiquité. La tolérance doit suivre ce que le
+thème demande de savoir. L'échelle déborde le vivier des deux côtés, sans
+quoi les événements extrêmes se devineraient en poussant le curseur à fond,
+et le curseur repart du milieu à chaque manche pour ne pas laisser d'indice.
+
+Le barème se mesure à la **tolérance**, jamais à la longueur de l'échelle :
+pile = 1, à la tolérance = 2/3, au-delà de trois fois = 0. Rapportée à
+l'échelle, une réponse fausse de trois siècles sur « Histoire de France »
+(6 600 ans couverts) gardait encore 96 % des points.
+
+### L'intrus
+
+Deux familles de questions, parce qu'un thème réunit ses événements de deux
+façons et qu'un mode qui n'en connaîtrait qu'une passerait à côté de la
+moitié de la base :
+
+- **période** — trois événements voisins dans le temps, un quatrième à
+  l'écart. L'écart exigé est un **multiple de l'étalement du trio**, jamais
+  une valeur absolue : un thème de vingt ans et un de trois millénaires
+  n'ont pas la même idée de « loin » ;
+- **axe** — trois événements du même fil thématique, un quatrième d'un
+  autre. Ne s'applique qu'aux thèmes dont les événements portent un axe
+  (85 % de la base).
+
+L'énoncé dit toujours de quelle famille il s'agit, sans quoi la question
+serait indécidable. Le révélé montre les dates que la question cachait et
+rappelle ce qui liait les trois autres — sans lui, le joueur qui se trompe
+n'apprendrait rien.
+
+### Une contrainte commune : l'échelle historique
+
+Les quatre modes **comparent** des dates, et une seule valeur hors échelle
+fausse tout ce qu'ils construisent. Sur « Histoire de France », trois
+événements préhistoriques étiraient l'échelle du Curseur de −486162 à
+38186, avec une tolérance de ±22601 ans — un curseur sur lequel tout le
+XXᵉ siècle tenait dans un pixel.
+
+Ces modes écartent donc les dates au-delà de ±10000 (même seuil que
+`js/app.js: LONG_YEAR_THRESHOLD` et que `js/simultaneity.js`). Mesuré :
+**50 événements sur 19 781** (0,25 %), répartis sur 13 thèmes, et **aucun
+thème ne descend sous son minimum jouable** en les retirant. Ils restent
+parfaitement jouables sur la frise et dans tous les autres modes.
+
 ## « Pendant ce temps, ailleurs… » (simultanéité)
 
 Tous les autres modes piochent dans **un seul thème**. On peut donc
@@ -439,8 +540,8 @@ et un `fetch` — c'est-à-dire de la quasi-totalité de l'interface.
 
 `npm run test:e2e` (Playwright, `e2e/`) comble ce trou en ouvrant un vrai
 navigateur sur le site servi tel qu'il l'est en production
-(`e2e/server.js`, un serveur statique sans dépendance). Huit parcours,
-45 tests, une minute :
+(`e2e/server.js`, un serveur statique sans dépendance). Neuf parcours,
+56 tests, une minute :
 
 - `e2e/modes.spec.js` — chaque mode de jeu se lance et répond à une
   première interaction. C'est la famille de régressions déjà vécue ici :
@@ -459,6 +560,14 @@ navigateur sur le site servi tel qu'il l'est en production
   dont l'ancre est issue — l'asymétrie sans laquelle « ailleurs » serait un
   mensonge. La génération elle-même, sans DOM, est couverte par `npm test`
   (`tests/simultaneity.test.js`).
+- `e2e/nouveaux-modes.spec.js` — les quatre modes fabriqués depuis les
+  seules dates : chacun se lance depuis sa carte et répond à une première
+  interaction, mais surtout ce qui doit rester caché le reste — aucune date
+  n'est affichée en Remise en ordre ni en Intrus, puisque les montrer
+  donnerait la réponse. Il vérifie aussi que l'horloge du Blitz s'arrête
+  quand on quitte l'écran, sans quoi elle terminerait une partie qui n'est
+  plus là. La fabrication des questions, sans DOM, est couverte par
+  `npm test` (`tests/gameModes.test.js`, 20 tests).
 - `e2e/manche.spec.js` — la longueur de la manche : le sélecteur propose les
   longueurs qui changent quelque chose, le choix agit réellement sur la
   partie lancée (10 ou 50 cartes, et non 72), il est retenu d'un thème à
