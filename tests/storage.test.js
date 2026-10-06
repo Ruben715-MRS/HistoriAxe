@@ -5,7 +5,8 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 const {
     getIsoWeekString, getLocalDateString, getDaysDifference, getTodayStringUTC,
-    DEFAULT_SETTINGS, ROUND_LENGTH_CHOICES, resolveRoundLength, roundLengthChoicesFor
+    DEFAULT_SETTINGS, ROUND_LENGTH_CHOICES, resolveRoundLength, roundLengthChoicesFor,
+    activeRoundLengthChoice
 } = require('../js/storage.js');
 
 // --- getIsoWeekString ---
@@ -105,13 +106,43 @@ test('le sélecteur ne propose que des longueurs qui changent quelque chose', ()
     assert.deepEqual(roundLengthChoicesFor(217), [10, 20, 50, 0]);
 });
 
-test('« 50 » n’apparaît jamais à 50 événements pile, seulement au-delà', () => {
-    // À 50 événements exactement, choisir « 50 » jouerait très exactement la
-    // même partie que « Tout » : la règle qui écarte déjà 10 et 20 dans ce
-    // cas s'applique pareil à 50, pour ne jamais présenter deux boutons
-    // strictement équivalents.
-    assert.deepEqual(roundLengthChoicesFor(50), [10, 20, 0]);
+test('« 50 » s’offre dès 50 événements, à 50 pile comprise', () => {
+    // Le seuil se lit « au moins 50 événements » : « 50 » est proposé à partir
+    // de 50 et non seulement au-delà. À 50 pile il joue la même partie que
+    // « Tout (50) » — redondance voulue, et limitée aux thèmes de cette taille.
+    assert.deepEqual(roundLengthChoicesFor(49), [10, 20, 0]);
+    assert.deepEqual(roundLengthChoicesFor(50), [10, 20, 50, 0]);
     assert.deepEqual(roundLengthChoicesFor(51), [10, 20, 50, 0]);
+});
+
+test('10 et 20 restent masqués à leur propre taille', () => {
+    // Contrairement à « 50 » : sur un thème de 20 événements (plus d'une
+    // centaine dans le pack français), « 20 » et « Tout (20) » seraient deux
+    // boutons identiques ; à 10, le sélecteur entier se cache.
+    assert.deepEqual(roundLengthChoicesFor(10), []);
+    assert.deepEqual(roundLengthChoicesFor(11), [10, 0]);
+    assert.deepEqual(roundLengthChoicesFor(20), [10, 0]);
+    assert.deepEqual(roundLengthChoicesFor(21), [10, 20, 0]);
+});
+
+test('un seul bouton est actif, même quand deux jouent la même partie', () => {
+    // Thème de 50 pile : « 50 » et « Tout (50) » sont tous deux affichés et
+    // désignent la même partie. On retient celui que le joueur a choisi.
+    const choix = roundLengthChoicesFor(50);
+    assert.equal(activeRoundLengthChoice(choix, 50, 50), 50);
+    assert.equal(activeRoundLengthChoice(choix, 0, 50), 0);
+    // Le réglage par défaut (20) ne fait pas confusion avec les deux autres.
+    assert.equal(activeRoundLengthChoice(choix, 20, 50), 20);
+});
+
+test('le bouton actif suit la taille effective quand le réglage est masqué', () => {
+    // Thème de 20 : « 20 » n'est pas proposé, c'est « Tout (20) » qui joue la
+    // partie réglée — il doit sortir actif.
+    assert.equal(activeRoundLengthChoice(roundLengthChoicesFor(20), 20, 20), 0);
+    // Thème de 40 : « 50 » est masqué, il joue le thème entier.
+    assert.equal(activeRoundLengthChoice(roundLengthChoicesFor(40), 50, 40), 0);
+    // Un réglage numérique hors liste ne correspond à aucun bouton : aucun actif.
+    assert.equal(activeRoundLengthChoice(roundLengthChoicesFor(217), 25, 217), undefined);
 });
 
 test('« Tout » ferme toujours la liste des choix', () => {

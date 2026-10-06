@@ -16,8 +16,8 @@ const { test, expect, openThemeCard, openThemeModes } = require('./fixtures');
 // toutes un sens.
 const THEME_FOURNI = 'thm_aut';
 // Exactement 50 événements, rattaché directement à sa catégorie : le cas
-// limite où « 50 » doit rester caché, puisqu'il jouerait très exactement la
-// même partie que « Tout ».
+// limite où « 50 » est proposé (le seuil se lit « au moins 50 ») alors qu'il
+// joue très exactement la même partie que « Tout (50) ».
 const THEME_PILE_50 = 'thm_rome';
 
 const picker = '#round-length';
@@ -40,16 +40,47 @@ test('le sélecteur propose les longueurs utiles et marque celle en cours', asyn
     await expect(page.locator(picker)).toContainText('20');
 });
 
-test('« 50 » n’apparaît pas sur un thème de 50 événements pile', async ({ page }) => {
-    // À 50 événements exactement, « 50 » et « Tout » joueraient la même
-    // partie : même règle que « 20 » sur un thème de 18, déjà couverte par
-    // le test précédent — ici sur un vrai thème plutôt que sur la fonction
-    // pure (voir tests/storage.test.js pour celle-ci).
+test('« 50 » s’offre dès 50 événements, sur un thème de 50 pile', async ({ page }) => {
+    // Le seuil se lit « au moins 50 événements » : « 50 » est proposé à 50 pile,
+    // où il joue la même partie que « Tout (50) » — redondance voulue. Ici sur
+    // un vrai thème plutôt que sur la fonction pure (voir
+    // tests/storage.test.js pour celle-ci).
     await openThemeModes(page, THEME_PILE_50);
     await expect(page.locator(picker)).toBeVisible();
-    await expect(page.locator(boutons)).toHaveCount(3);
+    await expect(page.locator(boutons)).toHaveCount(4);
+    await expect(page.locator(boutons).filter({ hasText: /^50$/ })).toHaveCount(1);
     await expect(page.locator(boutons).last()).toContainText('50');
-    await expect(page.locator(boutons).filter({ hasText: /^50$/ })).toHaveCount(0);
+});
+
+test('à 50 pile, « 50 » et « Tout » ne sont jamais actifs en même temps', async ({ page }) => {
+    // Les deux jouent la même partie : en comparant les seules tailles
+    // effectives, les deux boutons s'allumeraient ensemble. C'est le choix du
+    // joueur qui décide lequel l'est.
+    await openThemeModes(page, THEME_PILE_50);
+    const cinquante = page.locator(boutons).filter({ hasText: /^50$/ });
+    const tout = page.locator(boutons).last();
+
+    await cinquante.click();
+    await expect(page.locator(`${boutons}.active`)).toHaveCount(1);
+    await expect(cinquante).toHaveClass(/active/);
+    await expect(cinquante).toHaveAttribute('aria-pressed', 'true');
+    await expect(tout).toHaveAttribute('aria-pressed', 'false');
+
+    await tout.click();
+    await expect(page.locator(`${boutons}.active`)).toHaveCount(1);
+    await expect(tout).toHaveClass(/active/);
+    await expect(tout).toHaveAttribute('aria-pressed', 'true');
+    await expect(cinquante).toHaveAttribute('aria-pressed', 'false');
+});
+
+test('à 50 pile, choisir 50 joue bien les 50 événements', async ({ page }) => {
+    await openThemeModes(page, THEME_PILE_50);
+    await page.locator(boutons).filter({ hasText: /^50$/ }).click();
+    await page.locator('#mode-card-classic').click();
+    await page.waitForSelector('#screen-game:not(.hidden)');
+
+    await expect(page.locator('#hud-count')).toHaveText('1 / 50');
+    expect(await page.evaluate(() => totalEvents)).toBe(50);
 });
 
 test('choisir 50 lance bien une partie de 50, pas de 72', async ({ page }) => {

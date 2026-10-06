@@ -285,11 +285,16 @@ Trois précisions qui expliquent le code :
   ⭐ Incontournables compris — « 20 » disparaît dès que l'axe choisi n'a que
   14 événements — et **s'efface entièrement** sous 11, où les quatre choix
   joueraient la même partie.
-- Chaque longueur n'apparaît que sur un thème **strictement plus grand**
-  qu'elle, jamais à l'égalité exacte : sur un thème de 50 événements pile,
-  « 50 » disparaît (il jouerait exactement la même partie que « Tout »),
-  tout comme « 20 » disparaît déjà à 20 pile. La règle est générique
-  (`roundLengthChoicesFor`) et vaudra pour toute longueur ajoutée plus tard.
+- « 10 » et « 20 » n'apparaissent que sur un thème **strictement plus grand**
+  qu'elles : à 20 pile, « 20 » et « Tout (20) » joueraient la même partie, et
+  121 thèmes du pack français ont exactement 20 événements — deux boutons
+  identiques partout. **« 50 » fait exception** : son seuil se lit « au
+  moins 50 événements », il est donc proposé dès 50, y compris à 50 pile (29
+  thèmes), où il joue la même partie que « Tout (50) ». La redondance y est
+  voulue ; un seul des deux boutons est alors actif, celui que le joueur a
+  choisi (`activeRoundLengthChoice`). La règle vit dans
+  `roundLengthChoicesFor` : toute longueur ajoutée plus tard suit la règle
+  stricte, sauf à figurer dans `ROUND_LENGTH_INCLUSIVE`.
 - **La Découverte garde le thème entier** : c'est une consultation, et une
   frise amputée n'a pas de sens. Les Défis (jour, hebdomadaire,
   simultanéité) et la Révision ont chacun leur propre longueur et ne sont
@@ -677,7 +682,7 @@ et un `fetch` — c'est-à-dire de la quasi-totalité de l'interface.
 `npm run test:e2e` (Playwright, `e2e/`) comble ce trou en ouvrant un vrai
 navigateur sur le site servi tel qu'il l'est en production
 (`e2e/server.js`, un serveur statique sans dépendance). Dix parcours,
-73 tests, moins de deux minutes :
+75 tests, moins de deux minutes :
 
 - `e2e/modes.spec.js` — chaque mode de jeu se lance et répond à une
   première interaction. C'est la famille de régressions déjà vécue ici :
@@ -714,8 +719,9 @@ navigateur sur le site servi tel qu'il l'est en production
   longueurs qui changent quelque chose, le choix agit réellement sur la
   partie lancée (10 ou 50 cartes, et non 72), il est retenu d'un thème à
   l'autre, la Découverte y échappe, un axe trop étroit fait disparaître le
-  sélecteur, et « 50 » reste caché sur un thème de 50 événements pile —
-  pile parce que ce cas exact existe dans le pack français (`thm_rome`).
+  sélecteur, et « 50 » est bien proposé sur un thème de 50 événements pile
+  (`thm_rome`, où il joue la même partie que « Tout ») sans que les deux
+  boutons soient actifs ensemble.
 - `e2e/defi-simultaneite.spec.js` — le Défi de simultanéité : verrouillé et
   explicite tant que l'historique est trop mince, puis 10 questions dont
   toutes les ancres sortent bien du SRS du joueur, un tirage stable d'une

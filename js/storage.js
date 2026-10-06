@@ -51,12 +51,20 @@ const DEFAULT_SETTINGS = {
 };
 
 // Longueurs proposées, dans l'ordre d'affichage. 0 = le thème entier, et
-// ferme toujours la liste. Chaque valeur n'apparaît que sur un thème assez
-// grand pour qu'elle diffère de « Tout » (voir roundLengthChoicesFor) : 50
-// ne s'affiche donc qu'à partir de 51 événements, jamais à 50 pile, où elle
-// jouerait exactement la même partie que « Tout » — même règle que 10 et 20,
-// qui disparaissent déjà dans ce cas.
+// ferme toujours la liste. Une valeur n'apparaît que sur un thème assez grand
+// (voir roundLengthChoicesFor).
 const ROUND_LENGTH_CHOICES = [10, 20, 50, 0];
+
+// Les longueurs proposées dès que le thème en compte AUTANT (au moins N) ; les
+// autres exigent un thème STRICTEMENT plus grand.
+//
+// La règle stricte évite deux boutons équivalents : sur un thème de 20
+// événements, « 20 » et « Tout (20) » joueraient la même partie — et plus
+// d'une centaine de thèmes du pack français ont exactement 20 événements.
+// « 50 » fait exception parce que son seuil se lit « au moins 50 événements » :
+// il est proposé à 50 pile, où il joue la même partie que « Tout (50) ». La
+// redondance y est voulue, et ne touche que les thèmes de cette taille exacte.
+const ROUND_LENGTH_INCLUSIVE = [50];
 
 // Combien d'événements retenir, pour un réglage et un vivier donnés.
 // Toujours borné par le vivier : demander 20 sur un thème de 12 en joue 12,
@@ -76,14 +84,30 @@ function resolveRoundLength(setting, poolSize) {
     return Math.min(asked, size);
 }
 
-// Longueurs qui ont un sens pour un vivier donné : celles strictement
-// inférieures à sa taille, plus « Tout ». Un thème de 8 événements n'a rien à
-// choisir — toutes les options y joueraient les 8 — et le sélecteur se cache
-// alors plutôt que d'afficher trois boutons équivalents.
+// Longueurs qui ont un sens pour un vivier donné, plus « Tout » : celles
+// strictement inférieures à sa taille, ou égales pour ROUND_LENGTH_INCLUSIVE.
+// Un thème de 8 événements n'a rien à choisir — toutes les options y joueraient
+// les 8 — et le sélecteur se cache alors plutôt que d'afficher des boutons
+// équivalents.
 function roundLengthChoicesFor(poolSize) {
     const size = Math.max(0, poolSize || 0);
-    const useful = ROUND_LENGTH_CHOICES.filter(n => n > 0 && n < size);
+    const useful = ROUND_LENGTH_CHOICES.filter(n => n > 0
+        && (ROUND_LENGTH_INCLUSIVE.includes(n) ? n <= size : n < size));
     return useful.length ? useful.concat(0) : [];
+}
+
+// Le bouton à marquer actif parmi ceux qu'affiche le sélecteur. On compare les
+// tailles effectives et non les réglages bruts : « 20 » et « Tout » désignent
+// la même partie sur un thème de 20, où seul « Tout » est proposé.
+//
+// Quand deux boutons affichés jouent la même partie — « 50 » et « Tout (50) »
+// sur un thème de 50 pile — on retient celui que le joueur a réellement
+// choisi : en marquer deux actifs n'aurait aucun sens. Renvoie undefined si
+// aucun bouton ne correspond (réglage numérique hors liste, par exemple).
+function activeRoundLengthChoice(choices, setting, poolSize) {
+    const current = resolveRoundLength(setting, poolSize);
+    const same = choices.filter(c => resolveRoundLength(c, poolSize) === current);
+    return same.includes(setting) ? setting : same[0];
 }
 
 // --- RÉGLAGES ---
@@ -527,6 +551,7 @@ function resetAllGameData() {
 if (typeof module === 'object' && typeof module.exports === 'object') {
     module.exports = {
         getIsoWeekString, getLocalDateString, getDaysDifference, getTodayStringUTC,
-        DEFAULT_SETTINGS, ROUND_LENGTH_CHOICES, resolveRoundLength, roundLengthChoicesFor
+        DEFAULT_SETTINGS, ROUND_LENGTH_CHOICES, resolveRoundLength, roundLengthChoicesFor,
+        activeRoundLengthChoice
     };
 }

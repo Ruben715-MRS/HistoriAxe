@@ -1424,15 +1424,15 @@ function renderRoundLengthPicker() {
     if (!choices.length) return;
 
     const current = resolveRoundLength(appSettings.roundLength, poolSize);
+    // Un seul bouton actif, même quand deux jouent la même partie (« 50 » et
+    // « Tout » sur un thème de 50 pile) : voir activeRoundLengthChoice.
+    const activeChoice = activeRoundLengthChoice(choices, appSettings.roundLength, poolSize);
     choices.forEach(choice => {
         const btn = document.createElement('button');
         btn.type = 'button';
         btn.className = 'round-length-btn';
         btn.innerText = choice === 0 ? t('rounds.all', { count: poolSize }) : String(choice);
-        // Comparer les tailles effectives et non les réglages bruts : « 20 »
-        // et « Tout » désignent la même partie sur un thème de 20, et deux
-        // boutons actifs à la fois n'auraient aucun sens.
-        const active = resolveRoundLength(choice, poolSize) === current;
+        const active = choice === activeChoice;
         btn.classList.toggle('active', active);
         btn.setAttribute('aria-pressed', active ? 'true' : 'false');
         btn.onclick = () => {
