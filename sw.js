@@ -12,9 +12,9 @@
 // 'install' recharge tout depuis le réseau. Un pack de langue ou un texte
 // d'UI modifié qui ne s'affiche pas malgré un déploiement réussi est
 // généralement le signe que l'un de ces deux numéros n'a pas été incrémenté.
-const CACHE_VERSION = '1.4.3';
+const CACHE_VERSION = '1.4.4';
 const APP_SHELL_CACHE = `historiaxe-shell-v${CACHE_VERSION}`;
-const DATA_CACHE = 'historiaxe-data-v1.0.10';
+const DATA_CACHE = 'historiaxe-data-v1.0.11';
 
 // Tailwind (css/tailwind.generated.css) et les polices Inter / Material
 // Symbols (css/fonts.css + assets/fonts/*) sont désormais compilées et
