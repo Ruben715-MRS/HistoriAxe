@@ -451,8 +451,9 @@ l'identifiant du thème, jamais du nom de sa catégorie — qui change d'une
 langue à l'autre (même précaution que `js/geoMap.js: isGeoEligible`). Voir
 `Simultaneity.themeTag` : pays connu (`assets/geo/theme-country-map.json`,
 déjà là pour le Mode Carte), sinon convention `psn_<iso2>_` des programmes
-scolaires nationaux ou `pan_<iso2>` des panthéons nationaux (voir
-« Personnages illustres »), sinon position dans l'arbre (indices, pas noms).
+scolaires nationaux ou `pan_<iso2>` du panthéon d'un pays (voir
+« Personnages illustres » ; l'événement d'un panthéon de bloc porte son propre
+`pays`), sinon position dans l'arbre (indices, pas noms).
 
 ### Quatre contraintes, toutes mesurées sur les données
 
@@ -526,33 +527,74 @@ redonne exactement le même tirage — c'est ce que vérifie
 `e2e/defi-simultaneite.spec.js`, avec son pendant sans DOM dans
 `tests/simultaneity.test.js`.
 
-## Personnages illustres : biographies, panthéons nationaux et portraits
+## Personnages illustres : biographies, panthéons et portraits
 
 « Biographies » n'est plus une catégorie à part : c'est la première des deux
-sous-catégories de **Personnages illustres**, l'autre étant **Panthéons
-nationaux**. Elles ne posent pas la même question :
+sous-catégories de **Personnages illustres**, l'autre étant **Panthéons**. Elles
+ne posent pas la même question :
 
 | | Un thème, c'est | Une date, c'est | On le joue par |
 |---|---|---|---|
 | **Biographies** | une vie (360 thèmes, en 12 domaines) | une étape de cette vie | étape de la vie |
-| **Panthéons nationaux** | un pays (la France, pour l'instant) | la naissance d'un personnage | domaine |
+| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, l'Amérique hispanique) | la naissance d'un personnage | domaine |
 
 Le déplacement ne coûte aucune migration : les 360 thèmes gardent leurs
 identifiants, et rien de ce que le joueur a sauvegardé (favoris, révision,
 SRS, scores) ne retient une position dans l'arbre — tout passe par des
 identifiants de thème ou d'événement.
 
-### Panthéons nationaux
+### Panthéons
 
 Un thème par pays, nommé « Grandes figures de… » et identifié `pan_<iso2>`
-(`pan_fr`). Le nom d'un pays seul (« France ») serait ambigu dès qu'on sort de
-l'arborescence — favoris, historique, bouton « Jouer sur ce thème » du Défi du
-jour — où il voisinerait avec « Histoire de France ».
+(`pan_fr`), ou par **bloc** de pays (voir plus bas). Le nom d'un pays seul
+(« France ») serait ambigu dès qu'on sort de l'arborescence — favoris,
+historique, bouton « Jouer sur ce thème » du Défi du jour — où il voisinerait
+avec « Histoire de France ».
 
 Chaque événement est **la naissance d'un personnage**, daté de son année de
 naissance, titré « Naissance de X ». Le titre dit ce que la date représente,
 ce qu'un simple « Victor Hugo — 1802 » ne ferait pas hors du thème (Défi du
 jour, Révision, Blitz).
+
+### Pays et blocs : « un personnage ne figure que dans un seul thème »
+
+Un thème par pays marche tant que les pays ne partagent pas leurs figures.
+En Amérique hispanique, ils les partagent presque toutes : Bolívar est
+vénézuélien, mais aussi colombien, équatorien, péruvien et bolivien ; San
+Martín, argentin, chilien et péruvien. Vingt panthéons nationaux auraient
+répété les mêmes vingt noms. D'où une règle, tenue **entre** tous les
+panthéons : **un personnage ne figure que dans un seul thème** — et, quand
+des pays ont une histoire commune, un thème **de région** plutôt qu'un par pays.
+
+| | Pays | Bloc |
+|---|---|---|
+| Identifiant | `pan_<iso2>` : deux lettres (`pan_fr`) | `pan_<code>` : trois lettres ou plus (`pan_hispam`) — jamais de collision avec un code de pays |
+| `pays` sur chaque événement | interdit (le thème le dit déjà) | obligatoire : code ISO à deux lettres (`"pays": "VE"`) |
+| Exemples | France ; plus tard Allemagne, Brésil… | Amérique hispanique ; plus tard Maghreb, Machrek |
+
+Ce que le champ `pays` d'un événement change :
+
+- **la fiche** affiche le drapeau et le nom du pays sous la date (`renderModalCountry`,
+  qui réutilise `isoToFlagEmoji` et `countryDisplayName` du Mode Carte :
+  `Intl.DisplayNames`, aucune table de noms à maintenir) ;
+- **« Pendant ce temps, ailleurs… »** : l'étiquette de lieu de l'événement est
+  son pays (`Simultaneity.eventTag`), faute de quoi un événement vénézuélien
+  passerait pour « ailleurs » face à la naissance de Bolívar à Caracas ;
+- **la recherche** (`motsCles` du thème, ci-dessous) n'en dépend pas.
+
+Le thème d'un bloc porte aussi des `motsCles` : les noms de ses pays (et des
+mots comme « Amérique latine »), que le nom du thème ne dit pas. La recherche de
+thèmes (`onThemeSearchInput`) les parcourt, si bien que « mexique » mène à
+« Grandes figures d'Amérique hispanique ».
+
+**Départager un personnage entre deux pays** : celui qui l'honore le plus, pas
+celui de l'état civil. Camus (né en Algérie) et Marie Curie (née à Varsovie)
+restent en France ; Che Guevara est rangé en Argentine, où il est né, la fiche
+disant ce que Cuba lui doit. Les cas disputés sont écrits comme tels dans la
+description (Atahualpa : Quito ou Cuzco).
+
+**Seules des personnalités disparues** : le format de la phrase d'ouverture
+exige une année de décès, et un panthéon de vivants se démodera.
 
 **Six axes, les mêmes pour tous les pays.** La palette n'a que huit couleurs
 (`AXIS_PALETTE`), et six laissent de la marge. Littérature et philosophie sont
@@ -589,22 +631,30 @@ Les règles de rédaction, vérifiées par script et par test (voir plus bas) :
   comparées une à une à la phrase d'ouverture de l'article Wikipédia.
 - **⭐ Incontournables** (`essentiel`) : 20 sur 60 pour la France.
 
-Quantités visées, dont seule la première est écrite : 60 personnages pour la
-France, 40 pour les grands pays, 30 pour les autres. À 6 axes, 30 donne
-environ 5 par axe — le minimum pour qu'un axe joué seul reste un jeu.
+Quantités visées : 60 personnages pour la France, 80 à 100 pour l'Amérique
+hispanique (une vingtaine de pays, de 2 à 14 figures chacun), une soixantaine
+pour le Maghreb, 40 pour les grands pays, 30 pour les autres. À 6 axes, 30
+donne environ 5 par axe — le minimum pour qu'un axe joué seul reste un jeu.
 
-### Un fichier source par pays, un script qui l'écrit dans `data/fr.json`
+### Un fichier source par panthéon, un script qui l'écrit dans `data/fr.json`
 
-`scripts/pantheon/<pays>.json` est **la seule source de vérité** du thème.
-`python3 scripts/build_pantheon.py fr` le valide puis le reporte dans
-`data/fr.json` (qui se réécrit à l'octet près : le diff ne montre que le
-thème). `--check` valide sans écrire, `--verify` vérifie que `data/fr.json`
-est à jour — et `tests/pantheon.test.js` le lance, si bien que retoucher le
-thème à la main dans `fr.json` fait échouer `npm test`.
+`scripts/pantheon/<code>.json` (`fr`, `hispam`…) est **la seule source de
+vérité** du thème : `code` (le nom du fichier), `nom` (le nom de rangement,
+« France », « Amérique hispanique » — les panthéons se rangent par lui, pas par
+le nom du thème, que « de », « des » et « du » fausseraient), `theme`
+(`id`, `nom`, `difficulte`, `motsCles`), `axes`, `personnages`, et pour un bloc
+la liste `pays`. `python3 scripts/build_pantheon.py fr` le valide puis le
+reporte dans `data/fr.json` (qui se réécrit à l'octet près : le diff ne montre
+que le thème). `--check` valide sans écrire, `--verify` vérifie que
+`data/fr.json` est à jour — et `tests/pantheon.test.js` le lance, si bien que
+retoucher le thème à la main dans `fr.json` fait échouer `npm test`.
 
-Le constructeur applique les règles ci-dessus *avant* d'écrire ; les mêmes,
-côté JavaScript, sont reprises par `tests/data-schema.test.js` pour qu'une
-régression venue d'ailleurs soit attrapée elle aussi.
+Le constructeur applique les règles ci-dessus *avant* d'écrire, et celle qui
+vaut entre thèmes — un personnage, un seul thème, par article Wikipédia et par
+biographie ; il prévient quand un pays pèse trop peu (moins de 2) ou trop (plus
+de 14) dans un bloc. Les mêmes règles, côté JavaScript, sont reprises par
+`tests/data-schema.test.js` et `tests/pantheon.test.js` pour qu'une régression
+venue d'ailleurs soit attrapée elle aussi.
 
 ### Portraits
 
@@ -697,8 +747,10 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
   « Biographies », devenue une sous-catégorie qui porte elle-même des
   sous-catégories.
 - **Les images des tuiles** : « Personnages illustres » reprend celle des
-  anciennes Biographies ; « Panthéons nationaux » ne doit pas tomber sous la
-  règle des mythologies (`panth`), qui lui donnerait la mauvaise image.
+  anciennes Biographies ; « Panthéons » ne doit pas tomber sous la règle des
+  mythologies (`panth`), qui lui donnerait la mauvaise image — d'où une
+  égalité stricte sur le nom, qui laisse « Mythologies et panthéons antiques »
+  à la sienne.
 - **Le Mode Carte n'a rien eu à changer** : il ne retient que les thèmes
   listés dans `assets/geo/theme-country-map.json`, où aucun panthéon ne figure
   — heureusement, puisqu'il affiche la description pendant la question, et
@@ -706,32 +758,39 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
   cette absence.
 - **« Pendant ce temps, ailleurs… »** : `pan_<iso2>` compte comme le pays
   (sinon une naissance française répondrait, « ailleurs », à une ancre
-  française), et les panthéons sont exclus du vivier de *réponses* même
-  marqués ⭐. Des naissances sont d'excellentes ancres, jamais des réponses.
+  française) ; un panthéon de bloc, lui, n'a pas de pays et ses événements
+  portent le leur ; et tous les panthéons — pays ou blocs — sont exclus du
+  vivier de *réponses* même marqués ⭐. Des naissances sont d'excellentes
+  ancres, jamais des réponses.
 
-### Ajouter un pays
+### Ajouter un pays ou un bloc
 
-1. Copier `scripts/pantheon/fr.json`, y mettre le pays, ses personnages (une
-   naissance chacun, six axes, trois phrases), et le nom de fichier Commons de
-   chaque portrait.
-2. `python3 scripts/fetch_portraits.py <iso2>`, puis écrire les légendes
+1. Copier `scripts/pantheon/fr.json` (un pays) ou `hispam.json` (un bloc), y
+   mettre le panthéon, ses personnages (une naissance chacun, six axes, trois
+   phrases, un `pays` pour un bloc), et le nom de fichier Commons de chaque
+   portrait. Vérifier chaque année de naissance et de décès sur l'article
+   Wikipédia du personnage, et qu'il n'est dans aucun autre panthéon.
+2. `python3 scripts/fetch_portraits.py <code>`, puis écrire les légendes
    (et `recadrage` quand le visage est petit dans l'image).
-3. `python3 scripts/build_pantheon.py <iso2>`.
+3. `python3 scripts/build_pantheon.py <code>`.
 4. Incrémenter `CACHE_VERSION` et `DATA_CACHE` dans `sw.js` : `data/fr.json` est
    servi cache-first.
 5. `npm test` et `npm run test:e2e`.
 
 ### Ce qui n'est pas fait
 
-- **Les autres pays** : seule la France est écrite. Les suivants se feront par
-  lots, avec la liste des personnages à valider avant la rédaction.
+- **Les autres panthéons** : seule la France est écrite. Viennent ensuite
+  l'Amérique hispanique (le premier bloc), le Maghreb, puis le Machrek (sans
+  Israël ni les figures juives, qui auront leur propre thème), le Brésil à
+  part, puis les autres pays — chaque liste de personnages validée avant la
+  rédaction.
 - **Les portraits des 360 Biographies** : le champ `image` les accepte déjà,
   il reste à les récupérer.
 - **Les portraits dans les autres modes de jeu** (Quiz, Périodes, Fil du
   temps…) : ils n'apparaissent que dans la frise et la fiche.
 - **Hors-ligne**, un portrait jamais vu n'est pas disponible (voir « Cache »).
-- **La tuile « Panthéons nationaux »** réutilise l'image du globe : une image
-  dédiée serait préférable.
+- **La tuile « Panthéons »** réutilise l'image du globe : une image dédiée
+  serait préférable.
 - **Sportifs et entrepreneurs** n'ont pas d'axe dans les panthéons : ils sont
   couverts par les Biographies.
 
@@ -1040,7 +1099,7 @@ navigateur sur le site servi tel qu'il l'est en production
   bouton vers la biographie —, la pastille de chaque repère de la frise, la
   vignette de la carte « À placer », l'absence du bouton en pleine partie, et
   l'absence de tout portrait sur un thème qui n'en a pas. Éprouvé par
-  mutation : remettre la note au sommet seul, ou rendre « Panthéons nationaux »
+  mutation : remettre la note au sommet seul, ou rendre « Panthéons »
   à la règle des mythologies, fait échouer le test qui la garde.
 - `e2e/shuffle.spec.js` — le seul parcours qui ne clique rien : il fait
   tourner `js/app.js: shuffleArray` 200 000 fois et vérifie que la

@@ -1,10 +1,14 @@
-// Panthéons nationaux (Personnages illustres) et portraits : ce que les tests de
-// schéma (data-schema.test.js) ne couvrent pas — les liens entre les fichiers.
+// Panthéons (Personnages illustres) et portraits : ce que les tests de schéma
+// (data-schema.test.js) ne couvrent pas — les liens entre les fichiers, et entre
+// les thèmes.
 //
 // Chaque test garde une décision de conception dont la rupture serait
 // silencieuse :
 //  - le Mode Carte n'a jamais le droit d'ouvrir un panthéon (il affiche la
 //    description pendant la question) ;
+//  - un personnage ne figure que dans UN panthéon : c'est la raison d'être des
+//    thèmes de région (« Amérique hispanique », « Maghreb »), et une règle que
+//    seule la lecture de tous les thèmes ensemble peut vérifier ;
 //  - les portraits vivent dans un cache du service worker que le ménage des
 //    mises à jour ne doit pas vider ;
 //  - data/fr.json reflète scripts/pantheon/<pays>.json : retoucher le thème à
@@ -30,7 +34,7 @@ function walkThemes(nodes, visit) {
     }
 }
 
-test('aucun panthéon national n’est dans la carte des pays du Mode Carte', () => {
+test('aucun panthéon n’est dans la carte des pays du Mode Carte', () => {
     // js/geoMap.js: collectGeoPool ne retient QUE les thèmes listés dans
     // theme-country-map.json. Y ajouter pan_fr ferait apparaître des questions
     // « où est née cette personne ? » dont la description donne la réponse
@@ -39,6 +43,66 @@ test('aucun panthéon national n’est dans la carte des pays du Mode Carte', ()
     const geoMap = readJson('assets', 'geo', 'theme-country-map.json');
     const pantheons = Object.keys(geoMap).filter((id) => /^pan_/.test(id));
     assert.deepEqual(pantheons, []);
+});
+
+function pantheonThemes() {
+    const doc = readJson('data', 'fr.json');
+    const category = doc.categories.find((c) => c.nom === 'Personnages illustres');
+    assert.ok(category, 'catégorie « Personnages illustres » absente');
+    const section = category.subcategories.find((c) => c.nom === 'Panthéons');
+    assert.ok(section, 'sous-catégorie « Panthéons » absente');
+    const all = [];
+    walkThemes(doc.categories, (theme) => { if (/^pan_/.test(theme.id)) all.push(theme); });
+    return { section, all };
+}
+
+test('les panthéons vivent tous dans « Personnages illustres > Panthéons », et seuls', () => {
+    const { section, all } = pantheonThemes();
+    assert.deepEqual(section.themes.map((t) => t.id).sort(), all.map((t) => t.id).sort(),
+        'un thème pan_… hors de sa sous-catégorie, ou un intrus dans la sous-catégorie');
+    assert.ok(section.themes.length >= 1, 'aucun panthéon dans la sous-catégorie');
+});
+
+test('un personnage ne figure que dans un seul panthéon', () => {
+    // La règle de départ : « un personnage ne doit pas se retrouver dans deux
+    // thèmes différents ». Trois clés pour la tenir, car la même personne peut
+    // être écrite de deux façons : son article Wikipédia, sa biographie, et le
+    // titre de sa fiche (« Naissance de Simón Bolívar »).
+    const { all } = pantheonThemes();
+    const seen = { wikipedia: new Map(), biographie: new Map(), titre: new Map() };
+    const dupes = [];
+    for (const theme of all) {
+        for (const evt of theme.events) {
+            for (const [key, value] of [['wikipedia', evt.wikipedia], ['biographie', evt.biographie], ['titre', evt.titre]]) {
+                if (!value) continue;
+                const previous = seen[key].get(value);
+                if (previous) dupes.push(`${evt.id} et ${previous} (même ${key} : ${value})`);
+                else seen[key].set(value, evt.id);
+            }
+        }
+    }
+    assert.deepEqual(dupes, []);
+});
+
+test('les panthéons se rangent par le nom de leur source (« France », « Amérique hispanique »)', () => {
+    // Pas par le nom du thème : « Grandes figures des États-Unis » viendrait
+    // après « …de France » (« de » < « des » < « du »), alors que États-Unis
+    // se range avec les E. Le script de construction trie sur la source ;
+    // ceci garde le résultat.
+    const dir = path.join(root, 'scripts', 'pantheon');
+    const names = {};
+    for (const file of fs.readdirSync(dir).filter((f) => f.endsWith('.json'))) {
+        const source = readJson('scripts', 'pantheon', file);
+        assert.equal(source.code, path.basename(file, '.json'), `${file}: « code » doit être le nom du fichier`);
+        names[`pan_${source.code}`] = source.nom;
+    }
+    const { section } = pantheonThemes();
+    const key = (text) => text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    const expected = section.themes.map((t) => t.id)
+        .sort((a, b) => (key(names[a]) < key(names[b]) ? -1 : key(names[a]) > key(names[b]) ? 1 : 0));
+    assert.deepEqual(section.themes.map((t) => t.id), expected);
+    assert.deepEqual(section.themes.map((t) => t.id).filter((id) => !names[id]), [],
+        'un panthéon sans source dans scripts/pantheon/');
 });
 
 test('chaque portrait du dossier est cité par un événement, et inversement', () => {

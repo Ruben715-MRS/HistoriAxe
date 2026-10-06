@@ -1818,9 +1818,11 @@ function initSubcategories() {
         const nomLower = sub.nom.toLowerCase();
 
         // Mappings for available images
-        // « Personnages illustres » d'abord : « Panthéons nationaux » contient
-        // « panth », que la règle des mythologies (plus bas) lui volerait.
-        if (nomLower.includes('panthéons nationaux') || nomLower.includes('pantheons nationaux')) bgImg = 'assets/images/sub_themes_generaux.jpg';
+        // « Personnages illustres » d'abord : « Panthéons » contient « panth »,
+        // que la règle des mythologies (plus bas) lui volerait. Égalité stricte,
+        // et non `includes` : « Mythologies et panthéons antiques » doit garder
+        // sa propre image.
+        if (nomLower === 'panthéons' || nomLower === 'pantheons') bgImg = 'assets/images/sub_themes_generaux.jpg';
         else if (nomLower === 'biographies') bgImg = 'assets/images/cat_biographies.jpg';
         else if (nomLower.includes('europe')) bgImg = 'assets/images/sub_europe.jpg';
         else if (nomLower.includes('amérique')) bgImg = 'assets/images/sub_ameriques.jpg';
@@ -1993,9 +1995,13 @@ function onThemeSearchInput(rawValue) {
         return;
     }
 
+    // `motsCles` : des mots que le nom du thème ne contient pas mais que l'on
+    // tape pour le trouver — les pays d'un panthéon de région (« mexique » doit
+    // mener à « Grandes figures d'Amérique hispanique »).
     const matches = getAllThemesWithPath().filter(item =>
         normalizeSearchText(item.theme.nom).includes(query) ||
-        normalizeSearchText(item.pathNames.join(' ')).includes(query)
+        normalizeSearchText(item.pathNames.join(' ')).includes(query) ||
+        (item.theme.motsCles || []).some(mot => normalizeSearchText(mot).includes(query))
     );
     renderThemeSearchResults(matches);
 }
@@ -5370,6 +5376,24 @@ function createPortraitThumb(evt, className) {
     return img;
 }
 
+// Pays d'un événement (champ facultatif `pays`, code ISO à deux lettres) : les
+// panthéons de région, comme « Amérique hispanique », rassemblent des figures de
+// pays différents, et la fiche dit lequel. Drapeau en emoji et nom localisé par
+// le navigateur (voir js/geoMap.js) — aucune table à maintenir. Masqué sans
+// `pays`, ou si le code n'est pas deux lettres.
+function renderModalCountry(evt) {
+    const el = document.getElementById('modal-pays');
+    if (!el) return;
+    const iso = evt && typeof evt.pays === 'string' && /^[A-Za-z]{2}$/.test(evt.pays) ? evt.pays.toUpperCase() : '';
+    if (!iso || typeof isoToFlagEmoji !== 'function' || typeof countryDisplayName !== 'function') {
+        el.classList.add('hidden');
+        el.textContent = '';
+        return;
+    }
+    el.textContent = `${isoToFlagEmoji(iso)} ${countryDisplayName(iso)}`;
+    el.classList.remove('hidden');
+}
+
 // Portrait, légende et crédit de la fiche. Le crédit (auteur, licence, lien
 // vers la page de l'œuvre sur Wikimedia Commons) n'est pas facultatif : c'est
 // la condition des licences CC BY et CC BY-SA, et la moindre des politesses
@@ -5475,6 +5499,7 @@ function openModal(evt, context = null) {
     const duration = formatEventDuration(evt);
     const dateStr = formatEventDate(evt);
     document.getElementById('modal-date').innerText = duration ? `${dateStr} (${t('periodes.duration_label', { val: duration })})` : dateStr;
+    renderModalCountry(evt);
     document.getElementById('modal-desc').innerText = evt.description;
     document.getElementById('modal-wiki').href = evt.wikipedia;
     renderModalPortrait(evt);

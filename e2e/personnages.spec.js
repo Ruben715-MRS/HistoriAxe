@@ -2,14 +2,14 @@
 // portraits.
 //
 // « Biographies » n'est plus une catégorie mais la première des deux
-// sous-catégories de « Personnages illustres », l'autre étant « Panthéons
-// nationaux » (un thème par pays, une naissance par personnage, un portrait
+// sous-catégories de « Personnages illustres », l'autre étant « Panthéons »
+// (un thème par pays ou par région, une naissance par personnage, un portrait
 // par naissance). Ce parcours vérifie ce que les tests unitaires ne voient pas :
 //  - la navigation à trois étages, et la note de CHAQUE étage — elle ne
 //    s'affichait qu'au sommet, ce qui aurait fait disparaître celle de
 //    « Biographies » ;
-//  - l'image de chaque tuile : « Panthéons nationaux » contient « panth », que
-//    la règle des mythologies lui aurait volée ;
+//  - l'image de chaque tuile : « Panthéons » contient « panth », que la règle
+//    des mythologies lui aurait volée ;
 //  - le portrait, sa légende et son crédit dans la fiche, la pastille dans la
 //    frise, la vignette sur la carte « À placer » ;
 //  - le bouton « Voir sa biographie », présent en consultation, absent en
@@ -60,12 +60,12 @@ test('Personnages illustres : deux sous-catégories, chacune avec sa note et son
     await page.locator('#cat-grid > div').nth(index).click();
     expect(await visibleScreen(page)).toBe('screen-subcategories');
     await expect(page.locator('#subcategory-screen-title')).toHaveText('Personnages illustres');
-    await expect(page.locator('#subcategory-note-text')).toContainText('Panthéons nationaux');
-    await expect(page.locator('#subcategories-container h4')).toHaveText(['Biographies', 'Panthéons nationaux']);
+    await expect(page.locator('#subcategory-note-text')).toContainText('« Panthéons » fait l\'inverse');
+    await expect(page.locator('#subcategories-container h4')).toHaveText(['Biographies', 'Panthéons']);
     await expect(fondDeTuile(page, 'Biographies')).toHaveAttribute('style', /cat_biographies\.jpg/);
     // Et non l'image des mythologies, que « panth » aurait attirée.
-    await expect(fondDeTuile(page, 'Panthéons nationaux')).toHaveAttribute('style', /sub_themes_generaux\.jpg/);
-    await expect(fondDeTuile(page, 'Panthéons nationaux')).not.toHaveAttribute('style', /sub_mythologies\.jpg/);
+    await expect(fondDeTuile(page, 'Panthéons')).toHaveAttribute('style', /sub_themes_generaux\.jpg/);
+    await expect(fondDeTuile(page, 'Panthéons')).not.toHaveAttribute('style', /sub_mythologies\.jpg/);
 
     // Biographies : toujours ses douze domaines, et sa propre note.
     await page.locator('#subcategories-container h4', { hasText: 'Biographies' }).click();
@@ -84,10 +84,10 @@ test('Personnages illustres : deux sous-catégories, chacune avec sa note et son
     await expect(page.locator('#subcategory-note')).toBeVisible();
     await expect(page.locator('#subcategory-note-text')).toContainText('Deux façons');
 
-    // Panthéons nationaux : un thème par pays, avec sa note.
-    await page.locator('#subcategories-container h4', { hasText: 'Panthéons nationaux' }).click();
+    // Panthéons : un thème par pays ou par région, avec sa note.
+    await page.locator('#subcategories-container h4', { hasText: 'Panthéons' }).click();
     expect(await visibleScreen(page)).toBe('screen-themes');
-    await expect(page.locator('#theme-screen-title')).toHaveText('Panthéons nationaux');
+    await expect(page.locator('#theme-screen-title')).toHaveText('Panthéons');
     await expect(page.locator('#theme-screen-note-text')).toContainText('né dans les frontières actuelles');
     await expect(page.locator('#themes-container .data-card-title')).toHaveText(['Grandes figures de France']);
 });

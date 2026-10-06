@@ -1,19 +1,20 @@
 #!/usr/bin/env python3
-"""Récupère les portraits d'un panthéon national depuis Wikimedia Commons.
+"""Récupère les portraits d'un panthéon depuis Wikimedia Commons.
 
     python3 scripts/fetch_portraits.py fr                 # les portraits pas encore résolus
     python3 scripts/fetch_portraits.py fr --only hugo,sand
     python3 scripts/fetch_portraits.py fr --force         # tout re-télécharger et re-vérifier
     python3 scripts/fetch_portraits.py fr --check         # hors réseau : contrôle l'existant
+    python3 scripts/fetch_portraits.py hispam             # un panthéon de région : même chose
 
-Entrée et sortie : scripts/pantheon/<pays>.json. Chaque personnage y porte un
+Entrée et sortie : scripts/pantheon/<code>.json (`fr`, `hispam`…). Chaque personnage y porte un
 `portrait` : {fichier, legende, recadrage?, largeur?, auteur?, licence?}. Seuls
 `fichier` (nom du fichier sur Commons) et `legende` (écrite à la main, voir
 plus bas) sont à fournir ; `recadrage` ([x0, y0, x1, y1], en fractions de
 l'image) serre le cadre sur le visage, et `largeur` impose 500 ou 960 px si
 Commons refuse l'une des deux pour un fichier donné ; ce script remplit `auteur` et `licence` d'après la page du
-fichier, et écrit assets/portraits/pan_<pays>_<slug>.jpg (320 × 400).
-Puis `python3 scripts/build_pantheon.py <pays>` reporte le tout dans data/fr.json.
+fichier, et écrit assets/portraits/pan_<code>_<slug>.jpg (320 × 400).
+Puis `python3 scripts/build_pantheon.py <code>` reporte le tout dans data/fr.json.
 
 Pourquoi lire la page du fichier plutôt que d'écrire la licence à la main : une
 licence mal recopiée, c'est un crédit faux dans l'application. Le script lit
@@ -167,11 +168,11 @@ def make_portrait(data, recadrage):
     return im.resize((OUT_W, OUT_H), Image.LANCZOS)
 
 
-def check_offline(src, iso):
+def check_offline(src, code):
     problems = []
     for p in src['personnages']:
         portrait = p.get('portrait') or {}
-        event_id = f"pan_{iso}_{p['slug']}"
+        event_id = f"pan_{code}_{p['slug']}"
         path = os.path.join(PORTRAIT_DIR, event_id + '.jpg')
         if not portrait.get('licence'):
             problems.append(f"{p['slug']}: licence non résolue")
@@ -193,18 +194,18 @@ def check_offline(src, iso):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument('pays')
+    parser.add_argument('code', help='code du panthéon : fr, hispam… (fichier scripts/pantheon/<code>.json)')
     parser.add_argument('--only', help='slugs séparés par des virgules')
     parser.add_argument('--force', action='store_true')
     parser.add_argument('--check', action='store_true')
     args = parser.parse_args()
 
-    src_path = os.path.join(ROOT, 'scripts', 'pantheon', f'{args.pays}.json')
+    src_path = os.path.join(ROOT, 'scripts', 'pantheon', f'{args.code}.json')
     with open(src_path, encoding='utf-8') as f:
         src = json.load(f)
 
     if args.check:
-        problems = check_offline(src, args.pays)
+        problems = check_offline(src, args.code)
         for line in problems:
             print('  -', line)
         print(f'{len(src["personnages"]) - len({q.split(":")[0] for q in problems})} portraits en règle, {len(problems)} problème(s)')
@@ -219,7 +220,7 @@ def main():
         portrait = p.get('portrait')
         if not portrait or not portrait.get('fichier'):
             continue
-        event_id = f"pan_{args.pays}_{p['slug']}"
+        event_id = f"pan_{args.code}_{p['slug']}"
         out = os.path.join(PORTRAIT_DIR, event_id + '.jpg')
         if not args.force and portrait.get('licence') and os.path.exists(out):
             continue

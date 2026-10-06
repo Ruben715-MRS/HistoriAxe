@@ -66,9 +66,10 @@
 // que js/geoMap.js: isGeoEligible, et pour la même raison : data/en.json
 // n'a pas d'équivalent à « Histoires nationales »).
 //
-// Voir themeTag() pour les trois règles. Les panthéons nationaux (`pan_<iso2>`,
-// des listes de naissances) sont des ancres, jamais des réponses : voir
-// PANTHEON_THEME.
+// Voir themeTag() pour les trois règles. Les panthéons (`pan_<iso2>` pour un
+// pays, `pan_<bloc>` pour une région, des listes de naissances) sont des
+// ancres, jamais des réponses : voir PANTHEON_THEME. Dans un bloc, c'est
+// l'événement qui porte son pays : voir eventTag().
 
 (function (root, factory) {
     if (typeof module === 'object' && typeof module.exports === 'object') {
@@ -149,15 +150,18 @@
         return shared / Math.min(ka.length, kb.length) >= TITLE_OVERLAP_MAX;
     }
 
-    // Thèmes de Personnages illustres > Panthéons nationaux : `pan_<iso2>`,
-    // un par pays (pan_fr…). Ce sont des listes de NAISSANCES. D'excellentes
-    // ANCRES — « qui voyait le jour en 1802 ? » — mais jamais des RÉPONSES :
-    // « Naissance de Victor Hugo » n'est pas un événement qui se passait
-    // « ailleurs », et marquer des ⭐ dans un panthéon (utile pour jouer ses
-    // seuls incontournables) suffirait sinon à l'introduire dans le vivier. Même
-    // statut que les Biographies, qui n'y échappent aujourd'hui que parce
+    // Thèmes de Personnages illustres > Panthéons : `pan_<iso2>` pour un pays
+    // (pan_fr…), `pan_<bloc>` — trois lettres ou plus — pour une région qui
+    // rassemble plusieurs pays (pan_hispam…). Ce sont des listes de NAISSANCES.
+    // D'excellentes ANCRES — « qui voyait le jour en 1802 ? » — mais jamais des
+    // RÉPONSES : « Naissance de Victor Hugo » n'est pas un événement qui se
+    // passait « ailleurs », et marquer des ⭐ dans un panthéon (utile pour jouer
+    // ses seuls incontournables) suffirait sinon à l'introduire dans le vivier.
+    // Même statut que les Biographies, qui n'y échappent aujourd'hui que parce
     // qu'elles n'ont aucun `essentiel` : ici l'exclusion est dite, pas déduite.
-    var PANTHEON_THEME = /^pan_([a-z]{2})$/;
+    var PANTHEON_THEME = /^pan_[a-z]{2,}$/;
+    // Le panthéon d'UN pays : deux lettres, exactement. Un bloc n'a pas de pays.
+    var PANTHEON_COUNTRY = /^pan_([a-z]{2})$/;
 
     // Étiquette de lieu/domaine d'un thème — c'est elle qui définit le
     // « ailleurs » : deux événements ne peuvent se répondre que si leurs
@@ -166,10 +170,12 @@
     //   1. le thème a un pays connu (assets/geo/theme-country-map.json, déjà
     //      là pour le Mode Carte) → ce pays ;
     //   2. son identifiant suit la convention `psn_<iso2>_…` des programmes
-    //      scolaires nationaux, ou `pan_<iso2>` des panthéons nationaux
+    //      scolaires nationaux, ou `pan_<iso2>` du panthéon d'un pays
     //      (Personnages illustres) → ce pays, ce qui évite d'opposer
     //      « Programmes scolaires > Allemagne » à « Histoire de l'Allemagne »,
     //      ou « Grandes figures de France » à « Histoire de France » ;
+    //      (le panthéon d'un BLOC, `pan_hispam`, n'a pas de pays : chacun de ses
+    //      événements porte le sien, voir eventTag) ;
     //   3. sinon → sa position dans l'arbre (indices, pas noms : voir
     //      l'en-tête). « Culture générale > Sciences » et « Culture générale >
     //      Arts » deviennent deux domaines distincts, ce qui est le bon
@@ -184,9 +190,20 @@
     function themeTag(themeId, pathIndices, countryByTheme) {
         var iso = countryByTheme && countryByTheme[themeId];
         if (iso) return 'pays:' + String(iso).toUpperCase();
-        var m = /^psn_([a-z]{2})_/.exec(themeId || '') || PANTHEON_THEME.exec(themeId || '');
+        var m = /^psn_([a-z]{2})_/.exec(themeId || '') || PANTHEON_COUNTRY.exec(themeId || '');
         if (m) return 'pays:' + m[1].toUpperCase();
         return 'branche:' + (pathIndices || []).join('.');
+    }
+
+    // Étiquette d'UN événement : son pays propre (`pays`, code ISO à deux
+    // lettres — les figures d'un bloc comme « Amérique hispanique » vivent dans
+    // des pays différents), à défaut celle de son thème. Sans cela, toute la
+    // région porterait la même étiquette de branche, et un événement vénézuélien
+    // passerait pour « ailleurs » face à la naissance de Bolívar à Caracas : une
+    // réponse que le joueur aurait raison de contester.
+    function eventTag(evt, themeTagValue) {
+        var iso = evt && typeof evt.pays === 'string' && /^[A-Za-z]{2}$/.test(evt.pays) ? evt.pays : '';
+        return iso ? 'pays:' + iso.toUpperCase() : themeTagValue;
     }
 
     // Parcourt la base et renvoie { answers, byYear } : le vivier dans
@@ -247,7 +264,7 @@
                             titre: evt.titre,
                             date: evt.date,
                             axe: evt.axe || '',
-                            tag: tag,
+                            tag: eventTag(evt, tag),
                             themeId: theme.id,
                             themeName: theme.nom || ''
                         });
@@ -291,7 +308,7 @@
                         // présent dans plusieurs thèmes (6 % de la base) garde
                         // une seule étiquette, ce qui suffit à l'écarter de
                         // ses propres réponses.
-                        if (evt && index[evt.id] === undefined) index[evt.id] = tag;
+                        if (evt && index[evt.id] === undefined) index[evt.id] = eventTag(evt, tag);
                     });
                 });
             })(category, [ci]);
@@ -430,6 +447,7 @@
         normalizeTitle: normalizeTitle,
         titlesTooClose: titlesTooClose,
         themeTag: themeTag,
+        eventTag: eventTag,
         buildAnswerPool: buildAnswerPool,
         buildTagIndex: buildTagIndex,
         contemporariesOf: contemporariesOf,

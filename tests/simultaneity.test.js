@@ -120,7 +120,7 @@ test('themeTag : la convention psn_<iso>_ des programmes scolaires donne le pays
     assert.equal(S.themeTag('psn_de_t1', [3, 2], {}), S.themeTag('thm_de', [2, 0], { thm_de: 'DE' }));
 });
 
-test('themeTag : la convention pan_<iso> des panthéons nationaux donne le pays', () => {
+test('themeTag : la convention pan_<iso> du panthéon d’un pays donne le pays', () => {
     // « Grandes figures de France » doit être le MÊME pays que « Histoire de
     // France » : sans cela, une naissance française y répondrait, « ailleurs »,
     // à une ancre française.
@@ -128,6 +128,22 @@ test('themeTag : la convention pan_<iso> des panthéons nationaux donne le pays'
     assert.equal(S.themeTag('pan_fr', [1, 1, 0], {}), S.themeTag('thm_fr', [2, 0], { thm_fr: 'FR' }));
     // Le motif est strict : `pan_` puis deux lettres, rien d'autre.
     assert.equal(S.themeTag('pan_france', [1, 1], {}), 'branche:1.1');
+});
+
+test('themeTag : le panthéon d’un bloc de pays n’a pas de pays à lui', () => {
+    // `pan_hispam` rassemble une vingtaine de pays : en choisir un serait faux
+    // pour presque tous. Ses événements portent chacun le leur (voir eventTag).
+    assert.equal(S.themeTag('pan_hispam', [1, 1, 1], {}), 'branche:1.1.1');
+});
+
+test('eventTag : le pays propre d’un événement prime sur l’étiquette de son thème', () => {
+    assert.equal(S.eventTag({ pays: 'VE' }, 'branche:1.1.1'), 'pays:VE');
+    assert.equal(S.eventTag({ pays: 've' }, 'branche:1.1.1'), 'pays:VE');
+    assert.equal(S.eventTag({}, 'branche:1.1.1'), 'branche:1.1.1');
+    assert.equal(S.eventTag(null, 'pays:FR'), 'pays:FR');
+    // Un code à deux lettres, rien d'autre : un nom de pays ne ferait pas une étiquette.
+    assert.equal(S.eventTag({ pays: 'Venezuela' }, 'branche:1.1.1'), 'branche:1.1.1');
+    assert.equal(S.eventTag({ pays: '' }, 'pays:FR'), 'pays:FR');
 });
 
 test('themeTag : sinon, la position dans l’arbre — jamais le nom de la catégorie', () => {
@@ -166,7 +182,7 @@ test('le vivier écarte les catégories plates, faute de « lieu » exploitable'
         'un thème de catégorie sans sous-catégories ne peut pas définir un « ailleurs »');
 });
 
-test('le vivier écarte les panthéons nationaux, même marqués ⭐ : une naissance n’est pas une réponse', () => {
+test('le vivier écarte les panthéons, même marqués ⭐ : une naissance n’est pas une réponse', () => {
     // « Naissance de Victor Hugo » n'est pas un événement qui se passait
     // « ailleurs ». Et marquer des ⭐ dans un panthéon (utile pour ne jouer que
     // ses incontournables) suffirait sinon à l'introduire dans le vivier.
@@ -180,6 +196,37 @@ test('le vivier écarte les panthéons nationaux, même marqués ⭐ : une naiss
     // …mais elle reste une ANCRE valable, étiquetée du pays de son panthéon.
     const index = S.buildTagIndex(bdd, { countryByTheme: MINI_COUNTRIES });
     assert.equal(index.p1, 'pays:XX');
+});
+
+test('un panthéon de bloc est écarté du vivier, et chacune de ses ancres garde SON pays', () => {
+    const bdd = miniBdd();
+    bdd[0].subcategories[1].themes.push({
+        id: 'pan_hispam', nom: 'Grandes figures d’Amérique hispanique', essentiel: ['h1', 'h2'],
+        events: [
+            { id: 'h1', date: 1783, titre: 'Naissance de Simón Bolívar', pays: 'VE' },
+            { id: 'h2', date: 1879, titre: 'Naissance d’Emiliano Zapata', pays: 'MX' },
+            { id: 'h3', date: 1900, titre: 'Naissance sans pays' }
+        ]
+    });
+    const pool = S.buildAnswerPool(bdd, { countryByTheme: MINI_COUNTRIES });
+    assert.ok(!pool.answers.some(a => /^h\d$/.test(a.id)), 'un panthéon de bloc ne fournit aucune réponse');
+    const index = S.buildTagIndex(bdd, { countryByTheme: MINI_COUNTRIES });
+    assert.equal(index.h1, 'pays:VE');
+    assert.equal(index.h2, 'pays:MX');
+    // Sans pays, l'événement retombe sur l'étiquette de son thème (sa branche).
+    assert.match(index.h3, /^branche:/);
+});
+
+test('l’étiquette d’un événement à pays propre vaut aussi dans le vivier', () => {
+    // Même événement, même étiquette, qu'on le lise comme ancre ou comme réponse.
+    const bdd = miniBdd();
+    bdd[0].subcategories[0].themes[0].events[0].pays = 'BE';
+    const pool = S.buildAnswerPool(bdd, { countryByTheme: MINI_COUNTRIES });
+    const index = S.buildTagIndex(bdd, { countryByTheme: MINI_COUNTRIES });
+    const answer = pool.answers.find(a => a.id === 'fr1');
+    assert.ok(answer, 'fr1 est un ⭐ du mini pack');
+    assert.equal(answer.tag, 'pays:BE');
+    assert.equal(index.fr1, 'pays:BE');
 });
 
 test('le vivier écarte les dates hors échelle historique', () => {
@@ -306,8 +353,8 @@ test('aucune réponse du pack français ne sort de l’échelle historique', () 
     assert.deepEqual(hors, [], 'des dates non grégoriennes ont fui dans le vivier');
 });
 
-test('aucune réponse du pack français ne vient d’un panthéon national', () => {
-    const intrus = realPool.answers.filter(a => /^pan_[a-z]{2}$/.test(a.themeId));
+test('aucune réponse du pack français ne vient d’un panthéon (pays ou bloc)', () => {
+    const intrus = realPool.answers.filter(a => /^pan_[a-z]{2,}$/.test(a.themeId));
     assert.deepEqual(intrus.map(a => a.id), []);
 });
 

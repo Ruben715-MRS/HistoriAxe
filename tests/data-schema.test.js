@@ -20,12 +20,16 @@ const localeFiles = fs.readdirSync(dataDir).filter((f) => f.endsWith('.json'));
 
 assert.ok(localeFiles.length > 0, 'aucun fichier data/*.json trouvé');
 
-// --- Portraits (champ facultatif `image` d'un événement) et panthéons nationaux ----
-// Voir README, « Portraits » et « Panthéons nationaux ». Les règles vivent ici
+// --- Portraits (champ facultatif `image` d'un événement) et panthéons ----
+// Voir README, « Portraits » et « Panthéons ». Les règles vivent ici
 // parce qu'une erreur y est silencieuse : un crédit faux, une année de
 // naissance qui n'est pas celle de l'événement, un portrait qui n'existe pas
 // ne se voient qu'en ouvrant la bonne fiche.
-const PANTHEON_ID = /^pan_[a-z]{2}$/;
+// `pan_fr` : le panthéon d'un pays (deux lettres). `pan_hispam` : celui d'un BLOC
+// de pays (trois lettres ou plus), dont chaque événement porte son `pays`.
+const PANTHEON_ID = /^pan_[a-z]{2,}$/;
+const PANTHEON_COUNTRY_ID = /^pan_[a-z]{2}$/;
+const ISO_COUNTRY = /^[A-Z]{2}$/;
 // Même motif que js/app.js: PORTRAIT_SRC_PATTERN : ce que le jeu accepte d'afficher.
 const PORTRAIT_SRC = /^assets\/portraits\/[A-Za-z0-9_.-]+\.jpg$/;
 // Licences libres seulement (voir scripts/fetch_portraits.py) : jamais « NC »
@@ -98,10 +102,19 @@ for (const file of localeFiles) {
         // qui les applique avant d'écrire, et dont data/fr.json doit rester le reflet).
         function checkPantheon(theme) {
             const where = `${file}: panthéon "${theme.id}"`;
+            const isBloc = !PANTHEON_COUNTRY_ID.test(theme.id);
             assert.ok(Array.isArray(theme.axeOrder) && theme.axeOrder.length >= 2, `${where}: axeOrder manquant`);
             const used = new Set();
             for (const evt of theme.events) {
                 assert.ok(evt.id.startsWith(theme.id + '_'), `${where}: l'id "${evt.id}" doit commencer par ${theme.id}_`);
+                // Un bloc rassemble des pays : chaque figure dit le sien. Un pays n'en a
+                // pas besoin — son thème le dit déjà, et un `pays` y serait une redite
+                // qui pourrait se contredire.
+                if (isBloc) {
+                    assert.match(String(evt.pays), ISO_COUNTRY, `${where}: "${evt.id}" — un panthéon de bloc donne le pays de chaque figure (code ISO à deux lettres)`);
+                } else {
+                    assert.equal(evt.pays, undefined, `${where}: "${evt.id}" — « pays » est réservé aux panthéons de bloc`);
+                }
                 assert.match(evt.titre, /^Naissance d/, `${where}: "${evt.id}" — le titre dit une naissance`);
                 assert.ok(theme.axeOrder.includes(evt.axe), `${where}: "${evt.id}" a un axe inconnu « ${evt.axe} »`);
                 used.add(evt.axe);
@@ -186,6 +199,12 @@ for (const file of localeFiles) {
                     seenThemeIds.add(theme.id);
                     themesById.set(theme.id, theme);
                     assert.ok(Array.isArray(theme.events) && theme.events.length > 0, `${file}: thème "${theme.id}" sans événements (${here})`);
+                    // Mots de recherche facultatifs (les pays d'un panthéon de bloc, que le nom du thème ne dit pas).
+                    if (theme.motsCles !== undefined) {
+                        assert.ok(Array.isArray(theme.motsCles) && theme.motsCles.length > 0
+                            && theme.motsCles.every((m) => typeof m === 'string' && m.trim().length > 0),
+                        `${file}: thème "${theme.id}" — « motsCles » doit être une liste de mots non vides`);
+                    }
 
                     const seenEventIds = new Set();
                     for (const evt of theme.events) {
@@ -195,6 +214,7 @@ for (const file of localeFiles) {
                         seenEventIds.add(evt.id);
                         assert.ok(typeof evt.date === 'number' && Number.isFinite(evt.date), `${file}: événement "${evt.id}" a une "date" invalide`);
                         assert.ok(typeof evt.titre === 'string' && evt.titre.length > 0, `${file}: événement "${evt.id}" sans "titre"`);
+                        if (evt.pays !== undefined) assert.match(String(evt.pays), ISO_COUNTRY, `${file}: événement "${evt.id}" — « pays » est un code ISO à deux lettres majuscules`);
                         if (evt.image !== undefined) checkImage(evt);
                         if (evt.biographie !== undefined) biographyRefs.push({ theme, evt });
                     }
