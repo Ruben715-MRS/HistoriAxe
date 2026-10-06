@@ -89,10 +89,10 @@ test('Personnages illustres : deux sous-catégories, chacune avec sa note et son
     expect(await visibleScreen(page)).toBe('screen-themes');
     await expect(page.locator('#theme-screen-title')).toHaveText('Panthéons');
     await expect(page.locator('#theme-screen-note-text')).toContainText('né dans les frontières actuelles');
-    // Un bloc de pays (l'Amérique hispanique) se range par son nom de source, « Amérique… »,
-    // avant « France » — et non par « Grandes figures d'… » / « … de ».
+    // Panthéons de pays et de blocs se rangent par leur nom de source — « Amérique hispanique »,
+    // « France », « Maghreb » — et non par « Grandes figures d'… » / « … de » / « … du ».
     await expect(page.locator('#themes-container .data-card-title'))
-        .toHaveText(["Grandes figures d'Amérique hispanique", 'Grandes figures de France']);
+        .toHaveText(["Grandes figures d'Amérique hispanique", 'Grandes figures de France', 'Grandes figures du Maghreb']);
 });
 
 test('la fiche d’un personnage montre son portrait, sa légende, son crédit et sa biographie', async ({ page }) => {
@@ -179,6 +179,54 @@ test('la recherche par nom de pays — sans accent — mène au panthéon de la 
     await page.waitForSelector('#screen-axes:not(.hidden), #screen-modes:not(.hidden)');
     if (await visibleScreen(page) === 'screen-axes') {
         await expect(page.locator('#axes-subtitle')).toContainText("Amérique hispanique");
+    }
+});
+
+test('le Maghreb : chacune de ses figures a son portrait et son pays, de l’Algérie à la Mauritanie', async ({ page }) => {
+    await openThemeById(page, 'pan_maghreb');
+    await page.locator('#mode-card-discovery').click();
+    await expect(page.locator('#screen-game')).toBeVisible();
+    const nombre = await page.evaluate(() => getCurrentTheme().events.length);
+    expect(nombre).toBeGreaterThanOrEqual(50);
+    expect(nombre).toBeLessThanOrEqual(70);
+    // « Que chaque personnage ait un portrait » : une pastille par repère, pas une de moins.
+    await expect(page.locator('#timeline .entry')).toHaveCount(nombre);
+    await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
+
+    // Les cinq pays du bloc, chacun par une de ses figures — la Libye et la Mauritanie,
+    // les moins fournies, comprises.
+    const figures = [
+        ["Naissance d'Ibn Khaldun", '🇹🇳', 'Tunisie'],
+        ["Naissance d'Abd el-Kader", '🇩🇿', 'Algérie'],
+        ['Naissance de Mohammed V', '🇲🇦', 'Maroc'],
+        ['Naissance de Septime Sévère', '🇱🇾', 'Libye'],
+        ['Naissance de Moktar Ould Daddah', '🇲🇷', 'Mauritanie'],
+    ];
+    for (const [titre, drapeau, pays] of figures) {
+        await page.locator('#timeline .entry', { hasText: titre }).click();
+        await expect(page.locator('#modal-details')).toBeVisible();
+        await expect(page.locator('#modal-pays')).toContainText(drapeau);
+        await expect(page.locator('#modal-pays')).toContainText(pays);
+        // Le portrait a réellement chargé, au bon format.
+        const portrait = page.locator('#modal-portrait-img');
+        await expect.poll(() => portrait.evaluate(img => img.complete ? img.naturalWidth : 0)).toBe(320);
+        await page.locator('#modal-details .close-btn').click();
+        await expect(page.locator('#modal-details')).toBeHidden();
+    }
+
+    // Ibn Khaldun a aussi sa biographie (comme Hannibal et Ibn Battûta) : le bouton y mène.
+    await page.locator('#timeline .entry', { hasText: "Naissance d'Ibn Khaldun" }).click();
+    await expect(page.locator('#modal-bio-btn')).toBeVisible();
+});
+
+test('la recherche — « tunisie », « libye », « mauritanie » — mène au panthéon du Maghreb', async ({ page }) => {
+    await page.locator('#screen-home').click();
+    for (const mot of ['tunisie', 'libye', 'mauritanie']) {
+        await page.locator('#theme-search-input').fill(mot);
+        // Aucun de ces pays n'est dans le nom du thème : ils sont dans ses mots-clés.
+        const resultat = page.locator('#theme-search-results .search-result-item', { hasText: 'Grandes figures du Maghreb' });
+        await expect(resultat, `« ${mot} » doit mener au Maghreb`).toHaveCount(1);
+        await expect(resultat.locator('.search-result-path')).toContainText('Personnages illustres › Panthéons');
     }
 });
 

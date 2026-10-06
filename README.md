@@ -536,7 +536,7 @@ ne posent pas la même question :
 | | Un thème, c'est | Une date, c'est | On le joue par |
 |---|---|---|---|
 | **Biographies** | une vie (360 thèmes, en 12 domaines) | une étape de cette vie | étape de la vie |
-| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, l'Amérique hispanique) | la naissance d'un personnage | domaine |
+| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, l'Amérique hispanique, le Maghreb) | la naissance d'un personnage | domaine |
 
 Le déplacement ne coûte aucune migration : les 360 thèmes gardent leurs
 identifiants, et rien de ce que le joueur a sauvegardé (favoris, révision,
@@ -570,7 +570,7 @@ des pays ont une histoire commune, un thème **de région** plutôt qu'un par pa
 |---|---|---|
 | Identifiant | `pan_<iso2>` : deux lettres (`pan_fr`) | `pan_<code>` : trois lettres ou plus (`pan_hispam`) — jamais de collision avec un code de pays |
 | `pays` sur chaque événement | interdit (le thème le dit déjà) | obligatoire : code ISO à deux lettres (`"pays": "VE"`) |
-| Exemples | France ; plus tard Allemagne, Brésil… | Amérique hispanique ; plus tard Maghreb, Machrek |
+| Exemples | France ; plus tard Allemagne, Brésil… | Amérique hispanique, Maghreb ; plus tard Machrek |
 
 Ce que le champ `pays` d'un événement change :
 
@@ -632,8 +632,8 @@ Les règles de rédaction, vérifiées par script et par test (voir plus bas) :
 - **⭐ Incontournables** (`essentiel`) : 20 sur 60 pour la France.
 
 Quantités visées : 60 personnages pour la France, 80 à 100 pour l'Amérique
-hispanique (dix-neuf pays, de 1 à 19 figures chacun), une soixantaine
-pour le Maghreb, 40 pour les grands pays, 30 pour les autres. À 6 axes, 30
+hispanique (dix-neuf pays, de 1 à 19 figures chacun), 58 pour le Maghreb
+(cinq pays, de 1 à 21), 40 pour les grands pays, 30 pour les autres. À 6 axes, 30
 donne environ 5 par axe — le minimum pour qu'un axe joué seul reste un jeu.
 
 ### Le premier bloc : l'Amérique hispanique
@@ -654,8 +654,8 @@ Les choix qui ne vont pas de soi :
   place dans une région qu'unit l'espagnol.
 - **Le Mexique pèse près d'un cinquième** (19 sur 97), l'Argentine suit avec
   14 : un bloc se tient à la population et au rôle historique, pas à
-  l'égalité des pays. Le constructeur ne prévient qu'au-delà de 20 figures par
-  pays.
+  l'égalité des pays. Le constructeur ne prévient que lorsqu'un pays dépasse
+  40 % du bloc.
 - **Six figures d'avant la Conquête ou de ses premières années** (Pakal,
   Nezahualcóyotl, Moctezuma II, Cuauhtémoc, Pachacútec, Atahualpa) et trois
   chefs de la résistance indienne (Lautaro, Túpac Amaru II, Túpac Katari) :
@@ -696,6 +696,68 @@ de Hostos, envisagé pour Porto Rico, n'a pas d'article en français vers lequel
 renvoyer. Si une image convenable apparaît pour l'un d'eux, il se réintègre en
 ajoutant sa fiche à `scripts/pantheon/hispam.json`.
 
+### Le deuxième bloc : le Maghreb
+
+`pan_maghreb`, « Grandes figures du Maghreb » : **58 personnages de cinq pays** —
+Algérie 21, Maroc 16, Tunisie 16, Libye 4 et Mauritanie 1 — de Hannibal
+(247 av. J.-C.) à Tahar Djaout (1953). Par axe : 18 Littérature et pensée, 17
+Chefs d'État et dirigeants, 9 Guerres et résistances, 9 Musique et spectacle, 3
+Sciences et découvertes, 2 Beaux-arts (les deux axes les plus minces : la
+plupart des peintres et des savants envisagés n'avaient pas de portrait libre) ;
+22 ⭐ et 3 biographies liées (Hannibal, Ibn Khaldun, Ibn Battûta).
+
+Les choix qui ne vont pas de soi :
+
+- **Cinq pays, comme l'Union du Maghreb arabe.** La Libye et la Mauritanie,
+  qui n'auraient jamais eu assez de figures pour un thème à elles, restent dans
+  le bloc : quatre Libyens (Septime Sévère, Omar al-Mokhtar, Idris Ier,
+  Kadhafi) et un Mauritanien (Moktar Ould Daddah). Les mots-clés du thème
+  portent les cinq noms de pays, si bien que « tunisie », « libye » ou
+  « mauritanie » mènent au Maghreb dans la recherche. L'Algérie, la plus
+  fournie, pèse 36 % du bloc, sous le seuil de 40 % du constructeur.
+- **Huit figures de l'Antiquité**, rangées dans le pays actuel de leur lieu de
+  naissance : les Carthaginois (Hannibal, Térence, Tertullien) en Tunisie, les
+  Numides et l'Afrique romaine de l'ouest (Massinissa, Jugurtha, Apulée,
+  Augustin) en Algérie, Septime Sévère, de Leptis Magna, en Libye. Juba II, dont
+  la vie enjambe l'ère chrétienne (le format de date ne sait pas l'écrire), et
+  Tariq ibn Ziyad (« né au VIIe siècle ») n'y sont pas.
+- **Des dirigeants contestés** — Hassan II, Boumédiène, Bourguiba, Kadhafi —
+  figurent dans le bloc comme Castro ou Perón dans le bloc hispanique : leur
+  fiche dit ce qu'on leur reproche (les « années de plomb », le parti unique, des
+  attentats attribués au régime de Kadhafi), sans l'éluder.
+- **Les figures juives n'entrent que si le Maghreb les honore lui-même** — la
+  règle posée pour ce bloc. Deux y sont : Edmond Amran El Maleh (Prix national
+  du mérite, la plus haute distinction culturelle officielle du Maroc, en 1996)
+  et Habiba Msika (un film et des hommages en Tunisie). Examinés et laissés pour
+  une prochaine passe : Cheikh Raymond, Reinette l'Oranaise, Salim Halali,
+  Albert Memmi, Abraham Serfaty, dont la réception au Maghreb même demande une
+  vérification propre, cas par cas, que cette première version n'a pas faite ;
+  Samy Elmaghribi (aucun portrait libre) et Zohra al-Fassia (pas d'année de
+  naissance établie).
+- **Un personnage, un seul thème.** Camus, né en Algérie, reste en France.
+  Ma El Aïnin, Dimi Mint Abba, Abdelkébir Khatibi, Chaïbia, Ibn al-Banna et
+  Baya, faute d'image libre, n'ont pas été retenus, ni Yahia Turki, né à
+  Constantinople.
+- **Pas de vivants**, et ni sportifs ni entrepreneurs, comme ailleurs.
+
+### Ce que les images ont changé au Maghreb
+
+Chaque personnage devait avoir son portrait : les cinq figures de la liste
+validée qui n'en avaient pas de libre ont été remplacées, dans le même pays et
+presque dans le même axe, de sorte que les 21 Algériens, 16 Marocains, 16
+Tunisiens, 4 Libyens et 1 Mauritanien du départ sont restés.
+
+| Retiré | Pourquoi | Remplacé par |
+|---|---|---|
+| Youssef ben Tachfine (Maroc, dirigeants) | seulement des pièces, un tombeau et un manuscrit | Allal El Fassi (Maroc, dirigeants) |
+| Houcine Slaoui (Maroc, musique) | la seule image libre est une photographie de musiciens de 2012, où rien n'atteste qu'il figure | Abdelwahab Doukkali (Maroc, musique) |
+| Mohamed Choukri (Maroc, littérature) | aucune photographie libre de lui | Abdelkrim Ghallab (Maroc, littérature) |
+| Aly Ben Salem (Tunisie, beaux-arts) | une similigravure tirée d'un dictionnaire suédois d'artistes, trop grossière à 320 px | Saliha (Tunisie, musique) |
+| Mouloud Mammeri (Algérie, littérature) | seulement de minuscules images libres (189 × 315 et 225 × 316 px) | Tahar Djaout (Algérie, littérature) |
+
+Si une image convenable apparaît pour l'un d'eux, il se réintègre en ajoutant sa
+fiche à `scripts/pantheon/maghreb.json`.
+
 ### Un fichier source par panthéon, un script qui l'écrit dans `data/fr.json`
 
 `scripts/pantheon/<code>.json` (`fr`, `hispam`…) est **la seule source de
@@ -712,9 +774,11 @@ retoucher le thème à la main dans `fr.json` fait échouer `npm test`.
 Le constructeur applique les règles ci-dessus *avant* d'écrire, et celle qui
 vaut entre thèmes — un personnage, un seul thème, par article Wikipédia et par
 biographie ; il refuse un pays déclaré sans aucune figure et prévient quand un
-pays pèse trop (plus de 20) dans un bloc. Les mêmes règles, côté JavaScript,
-sont reprises par `tests/data-schema.test.js` et `tests/pantheon.test.js` pour
-qu'une régression venue d'ailleurs soit attrapée elle aussi.
+pays pèse trop (plus de 40 % du bloc : un seuil relatif, parce que vingt
+figures d'un même pays ne pèsent pas pareil dans un bloc de 97 et dans un bloc
+de 30). Les mêmes règles, côté JavaScript, sont reprises par
+`tests/data-schema.test.js` et `tests/pantheon.test.js` pour qu'une régression
+venue d'ailleurs soit attrapée elle aussi.
 
 ### Portraits
 
@@ -760,7 +824,7 @@ protégée aux États-Unis (loi URAA). Pour cette raison, les portraits de Piaf
 des images dont la licence est explicite (Piaf en 1962, archives néerlandaises,
 CC0 ; Lumière vers 1890). Répartition finale : France, 53 domaine public, 4 CC0,
 3 CC BY ou CC BY-SA ; Amérique hispanique, 75 domaine public, 2 CC0, 8 CC BY,
-12 CC BY-SA. En France, trois portraits du XXe siècle reposent sur un
+12 CC BY-SA ; Maghreb, 36 domaine public, 5 CC0, 3 CC BY, 14 CC BY-SA. En France, trois portraits du XXe siècle reposent sur un
 raisonnement plus fin que « ancien », à relire si l'on veut être plus strict :
 
 - **Jean Moulin** (Harcourt, 1937) : œuvre collective, dont le délai français de
@@ -813,6 +877,41 @@ Un portrait est à part : celui de **Juan Santamaría**, héros national du Cost
 Rica, qui est la photographie de sa statue (1891) par un contributeur, sous
 licence CC BY-SA 4.0, faute de portrait libre ; la légende le dit.
 
+Le Maghreb en compte dix-huit, d'une autre nature. Peu de photographes
+identifiés ont versé leurs clichés du XXe siècle sous licence libre, et ceux des
+figures politiques et militaires sont des portraits de presse, d'identité ou
+d'administration, d'auteur inconnu : leur « domaine public » repose sur le droit
+du pays d'origine, rarement sur un raisonnement américain. C'est le prix de
+l'exigence « un portrait pour chaque personnage », acceptée telle quelle :
+
+- **Quinze photographies à une seule balise nationale** — « PD-Algeria »
+  (Ben M'hidi), « PD-Algeria-photo-except » (Rimitti, Ben Badis, Boumédiène),
+  « PD-Tunisia » (Hached, Haddad, Ben Mrad, Ben Cheikh, Moncef Bey, Jouini,
+  Msika, Bourguiba, Saliha, Chebbi), « PD-Morocco » et « PD-Poland » (Allal El
+  Fassi : un cliché d'environ 1935, venu des archives numériques nationales
+  polonaises). Toutes d'auteur inconnu, sauf Bourguiba (Habib Osman, années
+  1960). Elles sont libres dans leur pays ; aucune ne porte la balise
+  « PD-1996 », celle qui dit qu'une image l'était déjà au 1er janvier 1996 et
+  que le rétablissement américain ne l'a donc pas touchée. Deux autres la
+  portent (El Anka, 1955 ; Idris Ier), et Omar al-Mokhtar est dans un cas
+  voisin : « PD-Libya », une photographie d'avant 1931 légendée en italien, donc
+  libre aux États-Unis si, comme tout l'indique, elle a paru avant cette date.
+- **Deux licences posées par un tiers** : Messali Hadj (CC0 apposé en 2024 sur
+  une photographie parue dans *El Ouma* en 1934 : libre en France, mais peut-être
+  encore protégée aux États-Unis jusqu'en 2029) et Kateb Yacine (CC BY-SA 2.0
+  pour une photographie du salon du livre d'Alger de septembre 1962, dont la page
+  donne pour auteur le téléverseur lui-même).
+- **Une statue**, faute de tout portrait : Fatima al-Fihriya, photographiée au
+  musée de Jordanie (CC BY-SA 4.0 pour la photographie ; les droits de la
+  sculpture ne sont pas documentés). La légende le dit.
+
+Les quarante autres reposent sur des bases plus solides : œuvres anciennes,
+quatre clichés des archives néerlandaises (Ferhat Abbas, Ben Bella, Mohammed V,
+Ben Barka, CC0), une photographie de la marine américaine (Kadhafi), deux de la
+Commission européenne (Hassan II, Ould Daddah, CC BY 4.0) et des licences CC de
+photographes, d'institutions ou de contributeurs qui se déclarent auteurs de
+leur cliché.
+
 Un portrait sous licence CC BY ou CC BY-SA porte dans la fiche son auteur, le
 **lien vers le texte de la licence**, la mention « image recadrée » et le lien
 vers la page de l'œuvre : c'est ce que ces licences exigent.
@@ -833,8 +932,10 @@ laisse encore 320 px utiles après recadrage (le chiffre est inscrit dans
 le fichier source). Vingt images n'y parviennent pas, leur source étant plus
 étroite (184 px utiles pour Posada, le plus bas ; 214 pour Lam, 220 pour
 Pakal) : elles sont agrandies, donc un peu molles sur un écran à haute
-densité, mais passables à la taille d'affichage (160 × 200 px). `--check`
-contrôle sans réseau (existence, dimensions, licence).
+densité, mais passables à la taille d'affichage (160 × 200 px). Le Maghreb en
+compte six (230 px utiles pour Ibn Battûta, le plus bas ; 252 pour Kateb Yacine,
+256 pour Omar al-Mokhtar, puis 281, 306 et 312 pour Haddad, Msika et Chraïbi).
+`--check` contrôle sans réseau (existence, dimensions, licence).
 
 **Le script refuse ce qui est signalé sur Commons** : une page de fichier qui
 porte un bandeau de suppression (« nominated for deletion », « speedy
@@ -847,7 +948,8 @@ faute de licence établie), remplacés l'un par une photographie de 1933 aux
 deux balises, l'autre par un cliché de 1959 de la Bibliothèque du Congrès.
 
 **Poids** : JPEG de 320 × 400, 25 Ko en moyenne (62 au plus), soit 1,5 Mo pour
-les 60 de la France et 2,5 Mo pour les 97 de l'Amérique hispanique — de
+les 60 de la France, 2,5 Mo pour les 97 de l'Amérique hispanique et 1,7 Mo
+pour les 58 du Maghreb — de
 l'ordre de 20 Mo pour 800 portraits, quand `assets/` en pèse déjà 38. Le WebP
 gagnerait environ un tiers, mais la cible iOS actuelle (13, voir
 `ios/App/Podfile`) ne le lit pas : il attendra la migration vers Capacitor 7
@@ -901,10 +1003,10 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
 
 ### Ce qui n'est pas fait
 
-- **Les autres panthéons** : la France et l'Amérique hispanique sont écrites.
-  Viennent ensuite le Maghreb (seul d'abord), puis le Machrek (sans Israël ni
-  les figures juives, qui auront leur propre thème), le Brésil à part, puis
-  les autres pays — chaque liste de personnages validée avant la rédaction.
+- **Les autres panthéons** : la France, l'Amérique hispanique et le Maghreb sont
+  écrits. Viennent ensuite le Machrek (sans Israël ni les figures juives, qui
+  auront leur propre thème), le Brésil à part, puis les autres pays — chaque
+  liste de personnages validée avant la rédaction.
 - **Des figures de l'Amérique hispanique écartées faute de portrait libre**,
   à réintégrer si une image convenable apparaît : voir « Ce que les images
   ont écarté » plus haut.

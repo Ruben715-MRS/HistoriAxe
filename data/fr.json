@@ -2,8 +2,8 @@
   "version": "1.0.0",
   "lang": "fr",
   "name": "Français (Intégral)",
-  "totalThemes": 797,
-  "totalEvents": 19937,
+  "totalThemes": 798,
+  "totalEvents": 19995,
   "categories": [
     {
       "nom": "Culture générale",
@@ -93591,6 +93591,991 @@
                 "pan_fr_degaulle",
                 "pan_fr_moulin",
                 "pan_fr_piaf"
+              ]
+            },
+            {
+              "id": "pan_maghreb",
+              "nom": "Grandes figures du Maghreb",
+              "difficulte": "Intermédiaire",
+              "motsCles": [
+                "Afrique du Nord",
+                "Maghrébin",
+                "Maghreb arabe",
+                "Berbère",
+                "Amazigh",
+                "Arabophone",
+                "Maroc",
+                "Algérie",
+                "Tunisie",
+                "Libye",
+                "Mauritanie",
+                "Carthage",
+                "Numidie"
+              ],
+              "events": [
+                {
+                  "id": "pan_maghreb_hannibal",
+                  "axe": "Guerres et résistances",
+                  "date": -247,
+                  "titre": "Naissance d'Hannibal Barca",
+                  "description": "Hannibal Barca (247-183 av. J.-C.) est un général et homme d'État carthaginois, fils d'Hamilcar Barca, considéré comme l'un des plus grands stratèges de l'histoire. Parti d'Espagne en 218 av. J.-C. avec une armée et des éléphants, il franchit les Alpes pour attaquer Rome en Italie même et remporte ses plus grandes victoires à la Trébie, au lac Trasimène puis à Cannes en 216 av. J.-C., sans pouvoir toutefois prendre la ville. Rappelé en Afrique, vaincu à Zama en 202 av. J.-C. par Scipion l'Africain, il finit réfugié en Bithynie, où il s'empoisonne vers 183 av. J.-C. pour ne pas être livré aux Romains.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Hannibal_Barca",
+                  "pays": "TN",
+                  "biographie": "bio_hannibal",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_hannibal.jpg",
+                    "legende": "Hannibal, buste romain découvert à Capoue en 1667 (musée archéologique de Naples), traditionnellement identifié comme le sien",
+                    "auteur": "Fratelli Alinari",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Hannibal_Barca_bust_from_Capua_photo.jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_massinissa",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": -238,
+                  "titre": "Naissance de Massinissa",
+                  "description": "Massinissa (vers 238-148 av. J.-C.) est le premier grand roi de Numidie, né chez les Massyles, tribu berbère de l'est de l'Algérie actuelle. D'abord allié de Carthage contre Rome en Espagne, il passe vers 206 av. J.-C. dans le camp de Scipion l'Africain et, à la tête de sa cavalerie, contribue à la victoire de Zama en 202 av. J.-C., qui lui vaut le royaume de son rival Syphax et l'unité des Numides. Maître pendant plus d'un demi-siècle d'un royaume dont Cirta, l'actuelle Constantine, est la capitale, il encourage l'agriculture et frappe monnaie, et ses empiétements sur le territoire de Carthage précipitent la troisième guerre punique, qui éclate un an avant sa mort.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Massinissa",
+                  "pays": "DZ",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_massinissa.jpg",
+                    "legende": "Massinissa, camée de Benedetto Pistrucci (XIXe siècle) : un portrait imaginé près de deux mille ans après sa mort",
+                    "auteur": "Benedetto Pistrucci",
+                    "licence": "CC BY 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Massinissa-cam-e-Florence(1).jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_terence",
+                  "axe": "Littérature et pensée",
+                  "date": -190,
+                  "titre": "Naissance de Térence",
+                  "description": "Térence (vers 190-159 av. J.-C.) est un poète comique latin, né à Carthage et arrivé à Rome comme esclave du sénateur Terentius Lucanus, qui l'éduque et l'affranchit. Il adapte les comédies grecques de Ménandre dans six pièces qui nous sont toutes parvenues, de L'Andrienne, en 166 av. J.-C., aux Adelphes, dont la langue pure et la finesse psychologique ont fait un modèle pour les auteurs de théâtre venus après lui. C'est dans l'une d'elles qu'on lit le vers devenu proverbe : « Je suis homme, et rien de ce qui est humain ne m'est étranger ».",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/T%C3%A9rence",
+                  "pays": "TN",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_terence.jpg",
+                    "legende": "Térence, médaillon d'un manuscrit carolingien de ses comédies (IXe siècle, Bibliothèque vaticane)",
+                    "auteur": "Enlumineur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Portrait_of_Terence_from_Vaticana,_Vat._lat.jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_jugurtha",
+                  "axe": "Guerres et résistances",
+                  "date": -160,
+                  "titre": "Naissance de Jugurtha",
+                  "description": "Jugurtha (vers 160-104 av. J.-C.) est un roi de Numidie, petit-fils de Massinissa, que son oncle Micipsa adopte à côté de ses propres fils. Après avoir fait éliminer ses cohéritiers et massacré à Cirta, en 112 av. J.-C., la communauté d'affaires italienne qui y soutenait son rival Adherbal, il affronte Rome dans une guerre de six ans, de 111 à 105 av. J.-C., où des sénateurs se laissent acheter, scandale que raconte Salluste dans La Guerre de Jugurtha. Livré à Sylla par son beau-père Bocchus, roi de Maurétanie, il est exhibé au triomphe de Marius en 104 av. J.-C., puis meurt de faim dans les geôles de Rome.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jugurtha",
+                  "pays": "DZ",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_jugurtha.jpg",
+                    "legende": "Jugurtha, peinture d'Augusto Müller (vers 1842) : une image imaginée près de deux mille ans après sa mort",
+                    "auteur": "Augusto Müller",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Augusto_M%C3%BCller_-_Jugurta.jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_apulee",
+                  "axe": "Littérature et pensée",
+                  "date": 125,
+                  "titre": "Naissance d'Apulée",
+                  "description": "Apulée (vers 125-vers 180) est un écrivain, orateur et philosophe platonicien de langue latine, né à Madaure, dans le nord-est de l'Algérie actuelle, et formé à Carthage et à Athènes. Accusé de magie à Sabratha après son mariage avec la riche veuve Pudentilla, il se défend lui-même dans l'Apologie, un plaidoyer brillant qui lui évite la condamnation. Il doit surtout sa gloire aux Métamorphoses, dites aussi L'Âne d'or, seul roman latin parvenu entier jusqu'à nous, où s'insère le conte d'Amour et Psyché.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Apul%C3%A9e",
+                  "pays": "DZ",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_apulee.jpg",
+                    "legende": "Écrivain de l'Antiquité tardive, parfois identifié à Apulée (ou à Lactance), peinture de plafond restaurée, Trèves (vers 330) : l'identification reste incertaine",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ancient_philosopher_(probably_Apuleius_or_Lactantius)_on_late_antique_ceiling_painting_from_Trier.jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_septimesevere",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 146,
+                  "titre": "Naissance de Septime Sévère",
+                  "description": "Septime Sévère (146-211) est un empereur romain, né à Leptis Magna, dans l'actuelle Libye, et le premier à venir d'Afrique. Proclamé par ses légions en 193, au terme d'une guerre civile qui l'oppose à Pescennius Niger puis à Clodius Albinus, il fonde la dynastie des Sévères, augmente la solde de l'armée et pousse jusqu'à Ctésiphon, capitale des Parthes. Soucieux de sa ville natale, qu'il couvre de monuments et d'un arc de triomphe, il meurt à York en 211, au cours d'une campagne en Bretagne, laissant l'empire à ses fils Caracalla et Géta.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Septime_S%C3%A9v%C3%A8re",
+                  "pays": "LY",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_septimesevere.jpg",
+                    "legende": "Septime Sévère, buste de marbre (Glyptothèque de Munich)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Septimius_Severus_Glyptothek_Munich_357.jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_tertullien",
+                  "axe": "Littérature et pensée",
+                  "date": 155,
+                  "titre": "Naissance de Tertullien",
+                  "description": "Tertullien (vers 155-vers 220) est un écrivain chrétien de langue latine, né à Carthage dans une famille païenne et formé au droit, qui se convertit à la fin du IIe siècle. Dans l'Apologétique, il défend ses coreligionnaires contre les persécutions, avec la formule restée célèbre selon laquelle « le sang des martyrs est une semence de chrétiens », et il forge en latin une grande partie du vocabulaire théologique chrétien, dont le mot trinité. Séduit à la fin de sa vie par le montanisme, mouvement rigoriste jugé hérétique, il demeure l'un des premiers grands auteurs de la littérature chrétienne d'expression latine.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Tertullien",
+                  "pays": "TN",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_tertullien.jpg",
+                    "legende": "Tertullien, gravure ancienne : un portrait imaginaire",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Tertullian.jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_augustin",
+                  "axe": "Littérature et pensée",
+                  "date": 354,
+                  "titre": "Naissance d'Augustin d'Hippone",
+                  "description": "Augustin d'Hippone (354-430) est un philosophe et théologien chrétien d'Afrique romaine, né à Thagaste, aujourd'hui Souk Ahras en Algérie, d'un père païen et d'une mère chrétienne, Monique. Professeur de rhétorique à Carthage, à Rome puis à Milan, séduit un temps par le manichéisme, il se convertit en 386 et devient à partir de 395 évêque d'Hippone, l'actuelle Annaba, où il meurt en 430 pendant le siège de la ville par les Vandales. Ses Confessions, première grande autobiographie spirituelle de l'Occident, et La Cité de Dieu, écrite après le sac de Rome de 410, ont marqué toute la pensée occidentale, et l'Église catholique le compte parmi ses docteurs.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Augustin_d%27Hippone",
+                  "pays": "DZ",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_augustin.jpg",
+                    "legende": "Augustin d'Hippone, portrait de Philippe de Champaigne (vers 1645-1650) : une image imaginée douze siècles après sa mort",
+                    "auteur": "Philippe de Champaigne",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Saint_Augustine_by_Philippe_de_Champaigne.jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_dihya",
+                  "axe": "Guerres et résistances",
+                  "date": 675,
+                  "titre": "Naissance de Dihya",
+                  "description": "Dihya (vers 675-703) est une reine guerrière berbère de l'Aurès, dans l'est de l'Algérie actuelle, que les Arabes ont surnommée la Kahina, « la devineresse ». Elle prend la tête de la résistance berbère à la conquête arabe de l'Afrique du Nord, bat vers 698 l'armée du général Hassan ibn al-Nu'man, qui doit se replier en Cyrénaïque, et gouverne l'Ifriqiya pendant cinq ans selon les chroniqueurs. Vaincue lors du retour de Hassan, elle meurt les armes à la main en 703, et sa vie, connue par des récits arabes tardifs, mêle depuis histoire et légende.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Dihya",
+                  "pays": "DZ",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_dihya.jpg",
+                    "legende": "Femme berbère, tableau d'Émile Vernet-Lecomte (1870), souvent utilisé pour évoquer Dihya : une image imaginaire, non un portrait",
+                    "auteur": "Émile Vernet-Lecomte",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Dihya_Berber_Queen_of_the_Aur%C3%A8s_by_Vernet-Lecomte.jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_fihriya",
+                  "axe": "Littérature et pensée",
+                  "date": 800,
+                  "titre": "Naissance de Fatima al-Fihriya",
+                  "description": "Fatima al-Fihriya (vers 800-880) est une femme pieuse et fortunée d'origine kairouanaise, née à Kairouan, en Tunisie, qui s'installe à Fès avec sa famille. Selon la tradition, elle consacre son héritage à la fondation, en 859, de la mosquée Al Quaraouiyine, dont l'école devient l'une des plus grandes institutions d'enseignement de l'Occident musulman. Son nom reste attaché à ce qui est présenté comme la plus ancienne université encore en activité au monde, même si les sources qui la concernent sont tardives et que son rôle exact reste débattu.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Fatima_al-Fihriya",
+                  "pays": "MA",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_fihriya.jpg",
+                    "legende": "Statue de Fatima al-Fihriya au musée de Jordanie, à Amman : une représentation moderne, aucun portrait d'elle ne nous est parvenu",
+                    "auteur": "Anass Sedrati",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Fatima_Fihria_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_constantin",
+                  "axe": "Sciences et découvertes",
+                  "date": 1020,
+                  "titre": "Naissance de Constantin l'Africain",
+                  "description": "Constantin l'Africain (1020-1087) est un médecin né à Carthage, devenu moine au Mont-Cassin, qui a fait connaître à l'Occident latin la médecine arabe. Arrivé en Italie du Sud dans la seconde moitié du XIe siècle, il traduit de l'arabe en latin des traités majeurs, comme le Pantegni, tiré d'Ali ibn Abbas al-Majusi, et le Viaticum, adapté du Viatique du voyageur d'Ibn al-Jazzar, médecin de Kairouan. Ses traductions, longtemps lues comme des œuvres originales, ouvrent la période la plus brillante de l'école de médecine de Salerne et nourrissent l'enseignement médical européen pendant des siècles.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Constantin_l%27Africain",
+                  "pays": "TN",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_constantin.jpg",
+                    "legende": "Constantin l'Africain examinant l'urine d'un malade, miniature médiévale (XIVe siècle)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Konstantinderafrikaner.jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_ibntumart",
+                  "axe": "Littérature et pensée",
+                  "date": 1080,
+                  "titre": "Naissance d'Ibn Tûmart",
+                  "description": "Ibn Tûmart (vers 1080-1130) est un théologien et réformateur berbère de la tribu des Masmouda, né dans l'Anti-Atlas, qui a étudié à Cordoue et en Orient. De retour au Maghreb, il dénonce le rigorisme et l'anthropomorphisme reprochés aux Almoravides, se proclame mahdi, « l'homme guidé », et prêche l'unicité absolue de Dieu, le tawhid, d'où le nom d'Almohades donné à ses partisans, les Muwahhidun. Retranché à Tinmel, dans le Haut Atlas, il y organise une communauté armée qui lui survit, et son compagnon Abd al-Mumin fonde à sa suite l'empire almohade.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ibn_T%C3%BBmart",
+                  "pays": "MA",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_ibntumart.jpg",
+                    "legende": "Ibn Tûmart, gravure espagnole de Joan Serra y Pausas (1891) : une image imaginée plus de sept siècles après sa mort",
+                    "auteur": "Joan Serra y Pausas",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Spanish_engraving_depicting_Ibn_Tumart.jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_ibnbattuta",
+                  "axe": "Sciences et découvertes",
+                  "date": 1304,
+                  "titre": "Naissance d'Ibn Battûta",
+                  "description": "Ibn Battûta (1304-1368) est un juriste et voyageur berbère, né à Tanger, qui a laissé le récit de l'un des plus longs périples de l'histoire. Parti en 1325 pour le pèlerinage de La Mecque, il parcourt en près de trente ans une grande partie du monde connu : l'Égypte, la Perse, l'Asie centrale, l'Inde, où il est juge à Delhi, la Chine, l'Afrique orientale et le Mali. Dicté à Fès au lettré andalou Ibn Juzayy, son récit, la Rihla, passe pour avoir couvert plus de cent mille kilomètres, et reste une source majeure sur le monde musulman du XIVe siècle.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ibn_Batt%C3%BBta",
+                  "pays": "MA",
+                  "biographie": "bio_ibnbattuta",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_ibnbattuta.jpg",
+                    "legende": "Ibn Battûta en Égypte, gravure de Léon Benett pour Découverte de la Terre de Jules Verne (1878) : une scène imaginée",
+                    "auteur": "Léon Benett",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Handmade_oil_painting_reproduction_of_Ibn_Battuta_in_Egypt,_a_painting_by_Hippolyte_Leon_Benett..jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_ibnkhaldun",
+                  "axe": "Littérature et pensée",
+                  "date": 1332,
+                  "titre": "Naissance d'Ibn Khaldun",
+                  "description": "Ibn Khaldun (1332-1406) est un historien, philosophe et homme d'État né à Tunis dans une famille andalouse, souvent présenté comme un précurseur de la sociologie et de l'économie. Après une carrière mouvementée de conseiller et de diplomate à Fès, à Grenade et à Béjaïa, il se retire dans un château d'Algérie, où il rédige en 1377 la Muqaddima, introduction à son Histoire universelle, dans laquelle il explique la montée et la chute des dynasties par la cohésion des groupes, l'asabiyya. Devenu juge au Caire, il rencontre Tamerlan devant Damas en 1401 et meurt en 1406, laissant une œuvre que l'Occident n'a redécouverte qu'au XIXe siècle.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ibn_Khaldoun",
+                  "pays": "TN",
+                  "biographie": "bio_ibnkhaldun",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_ibnkhaldun.jpg",
+                    "legende": "Ibn Khaldoun, dessin imaginaire de Khalil Gibran (1917), plus de cinq siècles après sa mort",
+                    "auteur": "Khalil Gibran",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ibn_Khald%C5%ABn_by_Khalil_Gibran.png"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_almansour",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1549,
+                  "titre": "Naissance d'Ahmed al-Mansour",
+                  "description": "Ahmed al-Mansour (1549-1603) est le sixième sultan de la dynastie saadienne du Maroc, surnommé « le Victorieux » et « le Doré », né à Fès. Il accède au trône en 1578, au lendemain de la bataille des Trois Rois, où son frère Abd al-Malik et le roi du Portugal Sébastien ont trouvé la mort, et la rançon des prisonniers portugais finance son palais d'El Badi à Marrakech. Il se tourne ensuite vers le sud : ses troupes, armées de mousquets, battent en 1591 l'empire songhaï à Tondibi, et la conquête de Tombouctou et de Gao lui ouvre l'accès à l'or du Soudan, avant que la peste n'emporte le souverain en 1603.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ahmed_al-Mansour",
+                  "pays": "MA",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_almansour.jpg",
+                    "legende": "Ahmed al-Mansour, gravure d'André Thevet (1584) légendée « Cherif roi de Fez et de Marroc » : un portrait possible, de son vivant",
+                    "auteur": "André Thevet",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:AhmadAl-MansurbyAndr%C3%A9Thevet.png"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_moulayismail",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1645,
+                  "titre": "Naissance de Moulay Ismaïl",
+                  "description": "Moulay Ismaïl (vers 1645-1727) est un sultan alaouite du Maroc, né à Sijilmassa et souverain pendant cinquante-cinq ans, de 1672 à sa mort. Il réunifie le pays en soumettant les tribus et les prétendants rivaux, s'appuie sur une armée d'esclaves-soldats, la garde noire des Abid al-Bukhari, chasse les Anglais de Tanger en 1684 et les Espagnols de Larache en 1689, et fait de Meknès une capitale impériale hérissée de remparts et de palais. Il noue avec Louis XIV des relations diplomatiques qui lui valent, dit-on, de demander la main d'une fille du roi, et reste dans la mémoire comme l'un des souverains les plus puissants, et les plus redoutés, de l'histoire du Maroc.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Isma%C3%AFl_ben_Ch%C3%A9rif",
+                  "pays": "MA",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_moulayismail.jpg",
+                    "legende": "Moulay Ismaïl, gravure du récit de Germain Moüette, ancien captif au Maroc (1683), publiée de son vivant",
+                    "auteur": "Germain Moüette",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ismail_Ibn_Sharif.jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_abdelkader",
+                  "axe": "Guerres et résistances",
+                  "date": 1808,
+                  "titre": "Naissance d'Abd el-Kader",
+                  "description": "Abd el-Kader (1808-1883) est un chef religieux, militaire et lettré algérien, fondateur de l'État moderne d'Algérie. Proclamé émir à vingt-quatre ans, en 1832, il organise à partir de Tagdemt un État doté d'une armée régulière et mène jusqu'en 1847 la résistance à la conquête française, avec laquelle il signe les traités Desmichels en 1834 et de la Tafna en 1837, avant de se rendre à Lamoricière. Interné en France de 1847 à 1852, libéré par Napoléon III, il s'installe à Damas, où il protège en 1860 des milliers de chrétiens lors des massacres de Syrie ; ses restes ont été rapatriés en Algérie en 1966.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Abdelkader_(%C3%A9mir)",
+                  "pays": "DZ",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_abdelkader.jpg",
+                    "legende": "Abd el-Kader, photographie d'Étienne Carjat (1865)",
+                    "auteur": "Étienne Carjat",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Abd_al-Qadir.jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_lallafatma",
+                  "axe": "Guerres et résistances",
+                  "date": 1830,
+                  "titre": "Naissance de Lalla Fatma N'Soumer",
+                  "description": "Lalla Fatma N'Soumer (1830-1863) est une figure de la résistance kabyle à la conquête française de l'Algérie, née à Ouerdja dans une famille de marabouts. Respectée pour sa piété et son éloquence, elle rejoint le chérif Boubaghla et entraîne les villageois du Djurdjura dans plusieurs combats, jusqu'à l'écrasement de l'insurrection par le maréchal Randon à Icheriden en 1857. Capturée peu après, elle meurt en captivité à Tablat en 1863, à trente-trois ans, et reste l'un des symboles féminins de la lutte algérienne, que l'on a surnommée la Jeanne d'Arc du Djurdjura.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Fatma_N%27Soumer",
+                  "pays": "DZ",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_lallafatma.jpg",
+                    "legende": "Femme kabyle, gravure de Félix Philippoteaux (1850), parfois reprise pour illustrer Lalla Fatma N'Soumer : une image générique, non un portrait d'elle",
+                    "auteur": "Félix Philippoteaux",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Portrait-Fatma_N%27Soumer_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_mokhtar",
+                  "axe": "Guerres et résistances",
+                  "date": 1858,
+                  "titre": "Naissance d'Omar al-Mokhtar",
+                  "description": "Omar al-Mokhtar (1858-1931) est un maître d'école coranique et chef de guerre libyen, né en Cyrénaïque et connu sous le nom de « Lion du désert ». Après avoir combattu les Français au Tchad, il dirige pendant vingt ans, à partir de 1911, la guérilla senoussie contre la conquête italienne, tenant les maquis du Djebel Akhdar jusqu'à ce que Graziani ferme la frontière égyptienne et déporte la population dans des camps. Capturé en septembre 1931, il est pendu à Soluch devant des milliers de détenus rassemblés, et son nom est devenu en Libye et dans le monde arabe un symbole de la résistance à l'occupation.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Omar_al-Mokhtar",
+                  "pays": "LY",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_mokhtar.jpg",
+                    "legende": "Omar al-Mokhtar, photographie d'époque légendée en italien « Ecco il Santone » (avant 1931)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Omar_Mukhtar-%D8%B9%D9%85%D8%B1_%D8%A7%D9%84%D9%85%D8%AE%D8%AA%D8%A7%D8%B12.jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_moncefbey",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1881,
+                  "titre": "Naissance de Moncef Bey",
+                  "description": "Moncef Bey (1881-1948) est le bey de Tunis de 1942 à 1943, né à Tunis, souverain nationaliste dont la mémoire reste très populaire en Tunisie. Monté sur le trône en juin 1942, en pleine guerre, il réclame des réformes au résident général, proclame la neutralité de la Tunisie et refuse d'appliquer à ses sujets juifs de nouvelles mesures discriminatoires, notamment le port de l'étoile jaune. Destitué en mai 1943 par le général Giraud, qui le soupçonne de sympathies pour l'Axe, il est exilé à Pau, où il meurt en 1948.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Moncef_Bey",
+                  "pays": "TN",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_moncefbey.jpg",
+                    "legende": "Moncef Bey, photographie des années 1940",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Moncef_bey.jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_abdelkrim",
+                  "axe": "Guerres et résistances",
+                  "date": 1882,
+                  "titre": "Naissance d'Abdelkrim el-Khattabi",
+                  "description": "Abdelkrim el-Khattabi (vers 1882-1963) est un chef de guerre et homme politique marocain, né à Ajdir, dans le Rif, ancien magistrat au service de l'administration espagnole. À la tête des tribus rifaines, il anéantit l'armée espagnole à Anoual en juillet 1921, proclame la République du Rif et tient en échec l'Espagne puis la France, qui doivent s'allier et engager des centaines de milliers d'hommes pour le vaincre en 1926. Exilé à La Réunion puis en Égypte, d'où il anime le Comité de libération du Maghreb arabe, il meurt au Caire en 1963, et sa guérilla a inspiré de nombreux mouvements anticoloniaux.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Abdelkrim_el-Khattabi",
+                  "pays": "MA",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_abdelkrim.jpg",
+                    "legende": "Abdelkrim el-Khattabi, photographie de José María Díaz Casariego lors d'un entretien avec le journaliste Luis de Oteyza (8 janvier 1925)",
+                    "auteur": "José María Díaz Casariego",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mohammed_Abd_al-Karim_(1882%E2%80%931963)_Presidente_de_la_Republica_del_Rif_1921%E2%80%931927.jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_benbadis",
+                  "axe": "Littérature et pensée",
+                  "date": 1889,
+                  "titre": "Naissance d'Abdelhamid Ben Badis",
+                  "description": "Abdelhamid Ben Badis (1889-1940) est un théologien et réformateur algérien, né à Constantine dans une famille de notables, qui a étudié à la mosquée Zitouna de Tunis. En 1931, il fonde l'Association des oulémas musulmans algériens, qui ouvre des écoles pour enseigner l'arabe et un islam réformiste, et publie des journaux, dont Ech-Chihab. Sa formule, « L'islam est notre religion, l'arabe est notre langue, l'Algérie est notre patrie », résume l'identité qu'il oppose à l'assimilation coloniale, et fait de lui l'un des pères de la nation algérienne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Abdelhamid_Ben_Badis",
+                  "pays": "DZ",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_benbadis.jpg",
+                    "legende": "Abdelhamid Ben Badis, photographie des années 1930 (restaurée)",
+                    "auteur": "Auteur inconnu (restauration : Riad Salih)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%D8%B9%D8%A8%D8%AF-%D8%A7%D9%84%D8%AD%D9%85%D9%8A%D8%AF-%D8%A5%D8%A8%D9%86-%D8%A8%D8%A7%D8%AF%D9%8A%D8%B3.jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_idris1",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1889,
+                  "titre": "Naissance d'Idris Ier",
+                  "description": "Idris Ier (1889-1983) est le premier et seul roi de la Libye indépendante, né à Al-Jaghboub, en Cyrénaïque, petit-fils du fondateur de la confrérie des Senoussis. Chef de la confrérie dès 1916, il la représente depuis son exil en Égypte pendant l'occupation italienne, devient émir de Cyrénaïque en 1949, puis proclame à Benghazi, le 24 décembre 1951, l'indépendance du royaume uni de Libye, qui réunit la Cyrénaïque, la Tripolitaine et le Fezzan. Sous son règne, la découverte du pétrole en 1959 transforme un pays pauvre en producteur majeur, mais il est renversé en 1969 par le coup d'État de Kadhafi et meurt en exil au Caire en 1983.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Idris_Ier_(roi_de_Libye)",
+                  "pays": "LY",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_idris1.jpg",
+                    "legende": "Idris Ier, photographie des années 1960 parue sur la couverture d'un magazine libyen",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:King_Idris_I_of_Libya_1960%27s.jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_messali",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1898,
+                  "titre": "Naissance de Messali Hadj",
+                  "description": "Messali Hadj (1898-1974) est un homme politique algérien, né à Tlemcen, que l'on considère comme le père du nationalisme algérien. Fondateur de l'Étoile nord-africaine en 1926 à Paris, puis du Parti du peuple algérien en 1937 et du Mouvement pour le triomphe des libertés démocratiques en 1946, il est le premier à réclamer ouvertement l'indépendance, sous un drapeau vert et blanc cousu par sa femme Émilie Busquant. Dépassé en 1954 par le Front de libération nationale, qu'il combat avec son Mouvement national algérien, il meurt en exil en France en 1974, et l'aéroport de Tlemcen porte aujourd'hui son nom.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Messali_Hadj",
+                  "pays": "DZ",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_messali.jpg",
+                    "legende": "Messali Hadj, photographie parue dans le journal El Ouma en 1934",
+                    "auteur": "Journal El Ouma",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Messali_Hadj_1934.jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_ferhatabbas",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1899,
+                  "titre": "Naissance de Ferhat Abbas",
+                  "description": "Ferhat Abbas (1899-1985) est un homme politique algérien, pharmacien de formation, né à Taher, près de Jijel. D'abord partisan d'une Algérie égale et associée à la France, il rédige en 1943 le Manifeste du peuple algérien, fonde l'Union démocratique du manifeste algérien en 1946, puis rejoint le Front de libération nationale en 1956 et préside de 1958 à 1961 le Gouvernement provisoire de la République algérienne. Premier président de l'Assemblée nationale constituante de l'Algérie indépendante, il démissionne en 1963 pour protester contre l'autoritarisme du régime de Ben Bella, et meurt en 1985 après plusieurs années d'assignation à résidence.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ferhat_Abbas",
+                  "pays": "DZ",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_ferhatabbas.jpg",
+                    "legende": "Ferhat Abbas, photographie d'Anefo (13 octobre 1959)",
+                    "auteur": "Anefo (Nationaal Archief)",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ferhat_Abbas_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_haddad",
+                  "axe": "Littérature et pensée",
+                  "date": 1899,
+                  "titre": "Naissance de Tahar Haddad",
+                  "description": "Tahar Haddad (1899-1935) est un intellectuel, syndicaliste et réformateur tunisien, né à Tunis, formé à la mosquée Zitouna. Cofondateur du premier syndicat tunisien en 1924, il publie en 1930 Notre femme dans la législation islamique et la société, où il plaide pour l'instruction des femmes et leur émancipation juridique et sociale, ce qui lui vaut l'hostilité des milieux conservateurs et l'interdiction de poursuivre ses études de droit. Mort de tuberculose dans l'isolement, il voit ses idées reprises après l'indépendance dans le Code du statut personnel promulgué en 1956.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Tahar_Haddad",
+                  "pays": "TN",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_haddad.jpg",
+                    "legende": "Tahar Haddad, photographie d'avant 1936",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Tahar_Haddad.jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_bourguiba",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1903,
+                  "titre": "Naissance d'Habib Bourguiba",
+                  "description": "Habib Bourguiba (1903-2000) est un homme d'État tunisien, né à Monastir, avocat de formation, premier président de la République tunisienne. Fondateur du Néo-Destour en 1934, emprisonné et exilé à plusieurs reprises, il négocie l'autonomie interne puis obtient l'indépendance en 1956, et proclame la République en 1957. Au pouvoir jusqu'en 1987, il fait promulguer dès 1956 le Code du statut personnel, qui abolit la polygamie et donne aux femmes de nouveaux droits, et généralise l'école, mais installe un régime de parti unique et se fait proclamer président à vie, avant d'être écarté par Ben Ali pour raison de santé.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Habib_Bourguiba",
+                  "pays": "TN",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_bourguiba.jpg",
+                    "legende": "Habib Bourguiba, photographie des années 1960",
+                    "auteur": "Habib Osman",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Habib_Bourguiba_Portrait.jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_msika",
+                  "axe": "Musique et spectacle",
+                  "date": 1903,
+                  "titre": "Naissance d'Habiba Msika",
+                  "description": "Habiba Msika (1903-1930) est une chanteuse, danseuse et comédienne tunisienne, née à Tunis dans une famille juive modeste du quartier juif de la ville. Devenue dans les années 1920 une véritable célébrité, elle provoque une émeute en 1925 en jouant Roméo et Juliette au théâtre, puis est arrêtée en 1928 après une pièce patriotique où elle paraît enroulée dans le drapeau tunisien. Assassinée à moins de trente ans par un ancien amant, qui l'asperge d'essence et la brûle, elle reste dans la mémoire tunisienne comme une artiste d'avant-garde, à qui un film et plusieurs hommages ont été consacrés.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Habiba_Msika",
+                  "pays": "TN",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_msika.jpg",
+                    "legende": "Habiba Msika, photographie des années 1920 (colorisée)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Habiba_Msika.jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_elanka",
+                  "axe": "Musique et spectacle",
+                  "date": 1907,
+                  "titre": "Naissance d'El Hadj M'Hamed El Anka",
+                  "description": "El Hadj M'Hamed El Anka (1907-1978) est un chanteur et musicien algérien, de son vrai nom Mohamed Idir Halo, né dans la Casbah d'Alger et considéré comme le maître du chaâbi, la musique populaire de la capitale. Remarqué enfant par le cheikh Mustapha Nador, il connaît ses premiers grands succès en 1928, fait redessiner la mandoline en mandole par le luthier Jean Bellido et interprète dans près de cent trente disques quelque trois cent soixante poèmes du melhoun. Professeur de chaâbi au conservatoire d'Alger à partir de 1955, il est enterré au cimetière d'El Kettar et reste la référence de tous les chanteurs du genre.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Hadj_El_Anka",
+                  "pays": "DZ",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_elanka.jpg",
+                    "legende": "El Hadj M'Hamed El Anka, photographie de 1955",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:El_Hadj_M%27hamed_El_Anka.jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_bencheikh",
+                  "axe": "Sciences et découvertes",
+                  "date": 1909,
+                  "titre": "Naissance de Tawhida Ben Cheikh",
+                  "description": "Tawhida Ben Cheikh (1909-2010) est une médecin tunisienne, née à Tunis, première musulmane de Tunisie à décrocher le baccalauréat, en 1928, puis première femme médecin du monde arabe. Diplômée de la faculté de médecine de Paris en 1936, elle exerce comme pédiatre puis comme gynécologue à l'hôpital Charles-Nicolle de Tunis, où elle crée en 1963 un service de planning familial, qu'elle dirige à partir de 1970. Centenaire, honorée en 2020 d'un billet de dix dinars à son effigie, elle reste une figure de l'émancipation des femmes tunisiennes.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Tawhida_Ben_Cheikh",
+                  "pays": "TN",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_bencheikh.jpg",
+                    "legende": "Tawhida Ben Cheikh, photographie prise à son retour de Paris, en 1936",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Tawhida_Ben_Cheikh,_1936.jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_chebbi",
+                  "axe": "Littérature et pensée",
+                  "date": 1909,
+                  "titre": "Naissance d'Abou el Kacem Chebbi",
+                  "description": "Abou el Kacem Chebbi (1909-1934) est un poète tunisien d'expression arabe, né à Tozeur et mort à vingt-cinq ans. Formé à l'université Zitouna de Tunis, il fait scandale en 1929 par une conférence sur l'imagination poétique chez les Arabes, où il bouscule la tradition, et laisse un recueil, Les Chants de la vie, publié au Caire en 1955. Les deux premiers vers de son poème La Volonté de vivre figurent dans l'hymne national tunisien et sont devenus, en 2011, un mot d'ordre des soulèvements arabes.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Abou_el_Kacem_Chebbi",
+                  "pays": "TN",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_chebbi.jpg",
+                    "legende": "Abou el Kacem Chebbi, photographie de sa jeunesse (avant 1928)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Aboul_Kacem_Chebbi.jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_jouini",
+                  "axe": "Musique et spectacle",
+                  "date": 1909,
+                  "titre": "Naissance d'Hédi Jouini",
+                  "description": "Hédi Jouini (1909-1990) est un chanteur, joueur de oud et compositeur tunisien, né à Tunis. Après des débuts dans les troupes de la médina, il entre à la Radio de Tunis dès son ouverture en 1938, où il donne un concert hebdomadaire, et compose près de mille soixante-dix chansons et cinquante-six opérettes, dont plusieurs airs sont devenus des classiques de la chanson tunisienne. Élevé en 1966 au grade d'officier de l'ordre de la République par le président Bourguiba, il reste l'une des grandes figures de la musique tunisienne du XXe siècle.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/H%C3%A9di_Jouini",
+                  "pays": "TN",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_jouini.jpg",
+                    "legende": "Hédi Jouini, photographie vers 1950 (détourée)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Hedi_Jouini.png"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_mohammed5",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1909,
+                  "titre": "Naissance de Mohammed V",
+                  "description": "Mohammed V (1909-1961) est un sultan puis roi du Maroc, né à Fès, qui conduit son pays à l'indépendance. Monté sur le trône en 1927, il se rapproche du mouvement nationaliste après la Seconde Guerre mondiale, et son refus de céder aux exigences du protectorat français lui vaut d'être destitué et exilé en Corse puis à Madagascar en août 1953. Son retour triomphal en novembre 1955 ouvre la voie à l'indépendance de 1956, et il prend le titre de roi en 1957, avant de mourir en 1961, laissant le trône à son fils Hassan II.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mohammed_V_(roi_du_Maroc)",
+                  "pays": "MA",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_mohammed5.jpg",
+                    "legende": "Mohammed V, photographie d'Anefo (août 1953)",
+                    "auteur": "Anefo (Nationaal Archief)",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mohammed_V_(1953).jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_allalfassi",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1910,
+                  "titre": "Naissance d'Allal El Fassi",
+                  "description": "Allal El Fassi (1910-1974) est un homme politique et lettré marocain, né à Fès et formé à l'université Al Quaraouiyine, figure emblématique du nationalisme marocain. Banni par le protectorat français, il passe neuf ans en exil au Gabon, jusqu'en 1946, devient l'un des dirigeants du parti de l'Istiqlal, fondé en décembre 1943, puis s'installe au Caire en 1947, où il forme avec Abdelkrim el-Khattabi le Comité de libération du Maghreb arabe. Rentré au Maroc en août 1956, il préside l'Istiqlal à partir de 1960, est ministre d'État chargé des Affaires islamiques de 1961 à 1963 et meurt à Bucarest en 1974, à la tête d'une délégation de son parti.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Allal_El_Fassi",
+                  "pays": "MA",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_allalfassi.jpg",
+                    "legende": "Allal El Fassi, photographie d'un auteur inconnu (vers 1935)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Allal_al-Fassi.jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_benmrad",
+                  "axe": "Littérature et pensée",
+                  "date": 1913,
+                  "titre": "Naissance de Bchira Ben Mrad",
+                  "description": "Bchira Ben Mrad (1913-1993) est une militante féministe et nationaliste tunisienne, fille du cheikh al-islam Mohamed Salah Ben Mrad et issue d'une grande famille de lettrés religieux. En 1936, à vingt-trois ans, elle fonde l'Union musulmane des femmes de Tunisie, première organisation féminine du pays, qui défend l'éducation des filles et soutient le Néo-Destour dans sa lutte pour l'indépendance. Son mouvement est dissous après l'indépendance, et c'est seulement en 1989, quatre ans avant sa mort, que l'État tunisien l'honore en la faisant commandeur de l'ordre de l'Indépendance.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bchira_Ben_Mrad",
+                  "pays": "TN",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_benmrad.jpg",
+                    "legende": "Bchira Ben Mrad, photographie des années 1930",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Bchira_Ben_Mrad_tunisian_activist.jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_hached",
+                  "axe": "Guerres et résistances",
+                  "date": 1914,
+                  "titre": "Naissance de Farhat Hached",
+                  "description": "Farhat Hached (1914-1952) est un syndicaliste et nationaliste tunisien, né aux îles Kerkennah. Fondateur en 1946 de l'Union générale tunisienne du travail, dont il est le premier secrétaire général, il en fait en quelques années une organisation de cent vingt mille adhérents qui soutient la lutte pour l'indépendance, et prend la tête de la résistance après l'arrestation de Bourguiba en janvier 1952. Assassiné le 5 décembre 1952 près de Radès par la Main rouge, organisation clandestine française, il devient un martyr de la cause nationale, parfois surnommé le Jean Moulin tunisien.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Farhat_Hached",
+                  "pays": "TN",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_hached.jpg",
+                    "legende": "Farhat Hached, photographie d'avant 1952",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Farhat_Hached_02.jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_saliha",
+                  "axe": "Musique et spectacle",
+                  "date": 1914,
+                  "titre": "Naissance de Saliha",
+                  "description": "Saliha (1914-1958) est une chanteuse tunisienne, de son vrai nom Salouha Ben Ibrahim Ben Abdelhafidh, née à Nebeur, dans le nord-ouest du pays, d'un père venu de Souk Ahras, en Algérie. Remarquée pour sa voix dès 1927 à Tunis, elle ne paraît sur scène qu'en 1938, au concert inaugural de Radio Tunis, puis rejoint La Rachidia, association de musique tunisienne, dont Khemaïs Tarnane, Mohamed Triki et Salah El Mahdi composent pour elle. Morte à quarante-quatre ans, le 26 novembre 1958, seize jours après son dernier concert, elle a des funérailles qui rassemblent près de vingt mille personnes, et un timbre à son effigie est émis en 1998.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Saliha",
+                  "pays": "TN",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_saliha.jpg",
+                    "legende": "Saliha, photographie d'avant 1958",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Saliha.jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_benbella",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1916,
+                  "titre": "Naissance d'Ahmed Ben Bella",
+                  "description": "Ahmed Ben Bella (1916-2012) est un homme d'État algérien, né à Maghnia, près de Tlemcen, ancien soldat de l'armée française décoré pendant la Seconde Guerre mondiale. Un des neuf chefs historiques du Front de libération nationale, il est arrêté en 1956 quand l'armée française détourne l'avion qui le mène à Tunis, et reste emprisonné jusqu'à l'indépendance de 1962. Premier président de la République algérienne de 1963 à 1965, partisan d'un socialisme autogestionnaire et d'un non-alignement actif, il est renversé par Boumédiène, reste détenu ou assigné à résidence jusqu'en 1980, et ne revient en Algérie qu'en 1990.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ahmed_Ben_Bella",
+                  "pays": "DZ",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_benbella.jpg",
+                    "legende": "Ahmed Ben Bella, photographie d'Anefo (14 novembre 1961)",
+                    "auteur": "Anefo (Nationaal Archief)",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ben_Bella,_Bestanddeelnr_913-1763.jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_elmaleh",
+                  "axe": "Littérature et pensée",
+                  "date": 1917,
+                  "titre": "Naissance d'Edmond Amran El Maleh",
+                  "description": "Edmond Amran El Maleh (1917-2010) est un écrivain et journaliste marocain, né à Safi dans une famille juive, militant communiste de l'indépendance du Maroc. Établi à Paris à partir de 1965 comme professeur de philosophie et journaliste, il se met à écrire à plus de soixante ans et publie notamment Parcours immobile en 1980 puis Mille ans, un jour en 1986, romans de mémoire sur la présence juive au Maroc. Opposé au sionisme, il reçoit en 1996 le Prix national du mérite, la plus haute distinction culturelle et littéraire du Maroc, et revient y vivre à la fin des années 1990.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Edmond_Amran_El_Maleh",
+                  "pays": "MA",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_elmaleh.jpg",
+                    "legende": "Edmond Amran El Maleh à Asilah, photographie de Saâd Tazi (2010)",
+                    "auteur": "Saâd Tazi",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Edmond_Amran_ElMaleh_by_Saad_Tazi.jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_ghallab",
+                  "axe": "Littérature et pensée",
+                  "date": 1919,
+                  "titre": "Naissance d'Abdelkrim Ghallab",
+                  "description": "Abdelkrim Ghallab (1919-2017) est un écrivain, journaliste et homme politique marocain d'expression arabe, né à Fès et mort à El Jadida. Formé à l'université Al Quaraouiyine puis à celle du Caire, militant de l'Istiqlal, il est arrêté en décembre 1952 sur décision du résident général français, puis dirige de 1960 à 2004 Al-Alam, le quotidien du parti. Son roman Dafannā al-māḍī, paru en 1966 et salué comme représentatif du « réalisme nationaliste », est un jalon du roman marocain d'expression arabe.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Abdelkrim_Ghallab",
+                  "pays": "MA",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_ghallab.jpg",
+                    "legende": "Abdelkrim Ghallab, photographie",
+                    "auteur": "Ghaad",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Abdelkrim_Ghallab.jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_benbarka",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1920,
+                  "titre": "Naissance de Mehdi Ben Barka",
+                  "description": "Mehdi Ben Barka (1920-1965) est un homme politique marocain, mathématicien de formation, né à Rabat. Cofondateur du parti de l'Istiqlal, puis de l'Union nationale des forces populaires, il devient dans les années 1960 le principal opposant socialiste à Hassan II et l'une des voix du tiers-monde, chargé de préparer la conférence de la Tricontinentale prévue à La Havane en 1966. Enlevé à Paris le 29 octobre 1965, devant la brasserie Lipp, par des policiers français agissant avec des agents marocains, il ne reparaît jamais, et l'affaire Ben Barka reste l'un des grands mystères politiques de l'après-guerre.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mehdi_Ben_Barka",
+                  "pays": "MA",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_benbarka.jpg",
+                    "legende": "Mehdi Ben Barka, photographie d'Anefo (1965)",
+                    "auteur": "Anefo (Nationaal Archief)",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mehdi_Ben_Barka_Anefo.jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_benmhidi",
+                  "axe": "Guerres et résistances",
+                  "date": 1923,
+                  "titre": "Naissance de Larbi Ben M'hidi",
+                  "description": "Larbi Ben M'hidi (1923-1957) est un chef de la guerre d'indépendance algérienne, né à Aïn M'lila, dans l'est du pays, et surnommé El Hakim, « le sage ». L'un des six chefs qui préparent l'insurrection du 1er novembre 1954, il commande la zone d'Oranie puis dirige à Alger le comité de coordination du Front de libération nationale pendant la bataille d'Alger. Arrêté par les parachutistes en février 1957, il est exécuté en secret le 4 mars, et le général Aussaresses a reconnu en 2001 avoir ordonné sa mort, maquillée en suicide.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Larbi_Ben_M%27hidi",
+                  "pays": "DZ",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_benmhidi.jpg",
+                    "legende": "Larbi Ben M'hidi, photographie des années 1950 (restaurée)",
+                    "auteur": "Auteur inconnu (restauration : Riad Salih)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Larbi_ben_M%27hidi.jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_rimitti",
+                  "axe": "Musique et spectacle",
+                  "date": 1923,
+                  "titre": "Naissance de Cheikha Rimitti",
+                  "description": "Cheikha Rimitti (1923-2006) est une chanteuse algérienne, de son vrai nom Sadia Bedief, née à Tessala, près de Sidi Bel Abbès, et surnommée la « mère du raï ». Orpheline très jeune, elle chante dès les années 1940 dans les fêtes et les cabarets de l'Ouest algérien, parmi les premières femmes à le faire comme les hommes, sur flûte gasba et tambour galal, avec des textes crus sur l'amour, l'alcool et la condition des femmes, ce qui lui vaut la censure dès son succès de 1954, Charrak gatta. Installée à Paris en 1978, elle touche un nouveau public dans les années 1990 et meurt en 2006, deux jours après un concert au Zénith.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Cheikha_Remitti",
+                  "pays": "DZ",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_rimitti.jpg",
+                    "legende": "Cheikha Rimitti, photographie de 1984",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%D8%A7%D9%84%D8%B4%D9%8A%D8%AE%D8%A9-%D8%B1%D9%8A%D9%85%D9%8A%D8%AA%D9%8A.png"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_oulddaddah",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1924,
+                  "titre": "Naissance de Moktar Ould Daddah",
+                  "description": "Moktar Ould Daddah (1924-2003) est un homme d'État mauritanien, né à Boutilimit, avocat de formation, premier président de la Mauritanie indépendante. Il conduit le pays à l'indépendance, proclamée le 28 novembre 1960, instaure un régime de parti unique, quitte la zone franc en créant en 1973 la monnaie nationale, l'ouguiya, et nationalise la société minière qui assure l'essentiel des ressources du pays. Entraîné dans la guerre du Sahara occidental contre le Front Polisario, il est renversé par l'armée le 10 juillet 1978, puis emprisonné et exilé, notamment en France, et ne revient en Mauritanie qu'en 2001 avant de mourir à Paris en 2003.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Moktar_Ould_Daddah",
+                  "pays": "MR",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_oulddaddah.jpg",
+                    "legende": "Moktar Ould Daddah, photographie des Communautés européennes (21 février 1978)",
+                    "auteur": "Communautés européennes (Service audiovisuel)",
+                    "licence": "CC BY 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Moktar_Ould_Daddah_(I-008025,_cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_chraibi",
+                  "axe": "Littérature et pensée",
+                  "date": 1926,
+                  "titre": "Naissance de Driss Chraïbi",
+                  "description": "Driss Chraïbi (1926-2007) est un écrivain marocain de langue française, né à El Jadida, dont l'œuvre libère le roman maghrébin des conventions. Venu à Paris étudier la chimie, il publie en 1954 Le Passé simple, récit de la révolte d'un fils contre l'autorité d'un père tyrannique, qui fait scandale au Maroc et que l'on lit comme un manifeste de jeunesse. Auteur d'une vingtaine de romans, de Les Boucs à Une enquête au pays, il a aussi réalisé pendant quarante ans des émissions pour France Culture.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Driss_Chra%C3%AFbi",
+                  "pays": "MA",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_chraibi.jpg",
+                    "legende": "Driss Chraïbi, photographie de 2000",
+                    "auteur": "Ladyzee",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:ChraibiDriss.jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_cheriaa",
+                  "axe": "Musique et spectacle",
+                  "date": 1927,
+                  "titre": "Naissance de Tahar Cheriaa",
+                  "description": "Tahar Cheriaa (1927-2010) est un homme de cinéma tunisien, né à Sayada, qui fut l'un des artisans du cinéma africain et arabe. Animateur des ciné-clubs puis directeur du cinéma au ministère de l'Information, il fonde en 1966 les Journées cinématographiques de Carthage, le plus ancien festival de cinéma d'Afrique et du monde arabe. Emprisonné en 1969 après avoir contesté la mainmise des grandes sociétés américaines sur la distribution, il cofonde en 1970 la Fédération panafricaine des cinéastes avec Ousmane Sembène et mène une carrière d'expert à l'Unesco.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Tahar_Cheriaa",
+                  "pays": "TN",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_cheriaa.jpg",
+                    "legende": "Tahar Cheriaa à Sayada, photographie du 21 septembre 2008",
+                    "auteur": "Mohamed Radhouane Kerkeni (retouche : Habib M'Henni)",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Taher_Chriaa-edit1.JPG"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_hassan2",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1929,
+                  "titre": "Naissance de Hassan II",
+                  "description": "Hassan II (1929-1999) est roi du Maroc de 1961 à sa mort, né à Rabat, fils et successeur de Mohammed V. Monarque autoritaire, il échappe à deux tentatives de coup d'État en 1971 et 1972 et dirige une répression de l'opposition qui marque les « années de plomb », tout en ouvrant à partir des années 1990 le régime à l'alternance politique. Organisateur de la Marche verte de 1975 vers le Sahara occidental, il fait aussi du Maroc un allié de l'Occident et un médiateur au Proche-Orient, et laisse en mémorial la grande mosquée de Casablanca qui porte son nom.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Hassan_II",
+                  "pays": "MA",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_hassan2.jpg",
+                    "legende": "Hassan II, photographie de Christian Lambiotte (19 octobre 1983)",
+                    "auteur": "Christian Lambiotte",
+                    "licence": "CC BY 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Hassan_II_(1983).jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_katebyacine",
+                  "axe": "Littérature et pensée",
+                  "date": 1929,
+                  "titre": "Naissance de Kateb Yacine",
+                  "description": "Kateb Yacine (1929-1989) est un écrivain et dramaturge algérien de langue française, né à Zighoud Youcef, près de Constantine, et mort à Grenoble. Arrêté à quinze ans après la répression des manifestations de Sétif en mai 1945, expérience qui décide de sa vocation, il publie en 1956 Nedjma, roman éclaté et poétique qui fait de lui le plus célèbre écrivain de l'Algérie. À partir des années 1970, il renonce au français pour monter, en arabe dialectal, des pièces populaires qu'il joue devant les ouvriers et les villageois, dont Mohammed prends ta valise.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kateb_Yacine",
+                  "pays": "DZ",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_katebyacine.jpg",
+                    "legende": "Kateb Yacine, photographie prise au salon du livre d'Alger (septembre 1962)",
+                    "auteur": "harry0611",
+                    "licence": "CC BY-SA 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kaddour_M%27Hamsadji_avec_Kateb_Yacine_Crop.jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_khadda",
+                  "axe": "Beaux-arts",
+                  "date": 1930,
+                  "titre": "Naissance de Mohammed Khadda",
+                  "description": "Mohammed Khadda (1930-1991) est un peintre, sculpteur et graveur algérien, né à Mostaganem, et l'un des fondateurs de la peinture moderne en Algérie. Ouvrier imprimeur et autodidacte, lié d'amitié avec Abdallah Benanteur, il vit à Paris de 1953 à 1963 et élabore une abstraction nourrie de signes berbères et de calligraphie arabe, qu'il défend à son retour comme un art nouveau enraciné dans le pays. Membre fondateur de l'Union nationale des arts plastiques en 1964, il publie en 1972 Éléments pour un art nouveau, essai majeur sur l'art algérien, et meurt à Alger en 1991.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mohammed_Khadda",
+                  "pays": "DZ",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_khadda.jpg",
+                    "legende": "Mohammed Khadda, photographie de Michel-Georges Bernard (vers 1981)",
+                    "auteur": "Michel-Georges Bernard",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mohammed_Khadda.jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_benanteur",
+                  "axe": "Beaux-arts",
+                  "date": 1931,
+                  "titre": "Naissance d'Abdallah Benanteur",
+                  "description": "Abdallah Benanteur (1931-2017) est un peintre et graveur algérien, né à Mostaganem et installé en France dès 1953, qui compte parmi les figures de la peinture algérienne moderne. Formé aux beaux-arts d'Oran puis à l'académie de la Grande Chaumière, à Paris, il passe d'une peinture abstraite faite de signes à de vastes paysages non figuratifs et pratique la gravure à partir de 1959. Illustrateur de poètes, dont Jean Sénac, il fonde en 1965 la collection Charef, qui réunit en quarante ans quelque quinze cents ouvrages, et meurt à Ivry-sur-Seine en 2017.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Abdallah_Benanteur",
+                  "pays": "DZ",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_benanteur.jpg",
+                    "legende": "Abdallah Benanteur, photographie de Michel-Georges Bernard (vers 1992)",
+                    "auteur": "Michel-Georges Bernard",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Abdallah_Benanteur.jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_boumediene",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1932,
+                  "titre": "Naissance de Houari Boumédiène",
+                  "description": "Houari Boumédiène (1932-1978) est un colonel et homme d'État algérien, de son vrai nom Mohamed Boukharouba, né officiellement près de Guelma. Chef d'état-major de l'Armée de libération nationale en 1960, il renverse Ben Bella en 1965 et dirige le pays jusqu'à sa mort en 1978, d'abord à la tête d'un Conseil de la révolution, puis comme président, en menant une politique d'industrialisation, de révolution agraire et de nationalisation des hydrocarbures en 1971. Figure du non-alignement, il plaide à l'ONU en 1974 pour un nouvel ordre économique international, mais son régime reste un régime de parti unique et d'armée, où l'opposition est réprimée.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Houari_Boum%C3%A9dienne",
+                  "pays": "DZ",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_boumediene.jpg",
+                    "legende": "Houari Boumédiène, photographie de la fin des années 1970",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Houari_Boumediene%27s_Portrait.jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_djebar",
+                  "axe": "Littérature et pensée",
+                  "date": 1936,
+                  "titre": "Naissance d'Assia Djebar",
+                  "description": "Assia Djebar (1936-2015) est une romancière, historienne et cinéaste algérienne, née Fatima-Zohra Imalhayène à Cherchell. Publiée dès l'âge de vingt ans avec La Soif, elle donne voix aux femmes d'Algérie dans une œuvre, dont L'Amour, la fantasia et Vaste est la prison, qui mêle récit personnel, histoire de la conquête et mémoire de la guerre, et réalise aussi des films, dont La Nouba des femmes du mont Chenoua, primé à Venise en 1979. Élue en 2005 à l'Académie française, première personnalité du Maghreb à y siéger, elle est enterrée à Cherchell après sa mort à Paris.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Assia_Djebar",
+                  "pays": "DZ",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_djebar.jpg",
+                    "legende": "Assia Djebar, photographie de Michel-Georges Bernard (vers 1992)",
+                    "auteur": "Michel-Georges Bernard",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Assia_Djebar.jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_saddiki",
+                  "axe": "Musique et spectacle",
+                  "date": 1939,
+                  "titre": "Naissance de Taïeb Saddiki",
+                  "description": "Taïeb Saddiki (1939-2016) est un dramaturge, metteur en scène, comédien et cinéaste marocain, né à Essaouira, pionnier du théâtre marocain moderne. Formé en 1957 au Théâtre national populaire de Jean Vilar à Paris, il fonde en 1960 la troupe du Théâtre municipal de Casablanca, puis dirige à partir de 1964 le Théâtre national Mohammed-V de Rabat. Réalisateur du long métrage Zeft en 1984, chevalier puis commandeur des Arts et des Lettres, il fonde en 1997 l'Espace Tayeb Saddiki, au théâtre Mogador de Casablanca.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Tayeb_Saddiki",
+                  "pays": "MA",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_saddiki.jpg",
+                    "legende": "Taïeb Saddiki, photographie de 2004",
+                    "auteur": "Saltassine",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Tayeb_Saddiki.JPG"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_mernissi",
+                  "axe": "Littérature et pensée",
+                  "date": 1940,
+                  "titre": "Naissance de Fatima Mernissi",
+                  "description": "Fatima Mernissi (1940-2015) est une sociologue, écrivaine et féministe marocaine, née à Fès. Après des études à la Sorbonne et aux États-Unis, elle enseigne à l'université de Rabat et relit les textes de l'islam à la lumière de la condition des femmes, dans des essais comme Sexe, idéologie, islam ou Le Harem politique, qui lui valent un large écho dans le monde arabe et en Occident. Auteure aussi de Rêves de femmes, récit d'une enfance au harem, elle reçoit le prix Prince des Asturies de littérature en 2003 et le prix Érasme en 2004.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Fatima_Mernissi",
+                  "pays": "MA",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_mernissi.jpg",
+                    "legende": "Fatima Mernissi prononçant son discours de remerciement pour le prix Érasme (Pays-Bas, 2004)",
+                    "auteur": "Praemium Erasmianum Foundation",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Fatima_Mernissi_2004_Al_Azm_Mernissi_Soroush_Mernissi_cropped.tiff"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_doukkali",
+                  "axe": "Musique et spectacle",
+                  "date": 1941,
+                  "titre": "Naissance d'Abdelwahab Doukkali",
+                  "description": "Abdelwahab Doukkali (1941-2026) est un chanteur et compositeur marocain, né à Fès, qui joue du oud et chante aussi bien en arabe littéraire qu'en dialecte marocain. Après des débuts au théâtre et à la radio entre 1959 et 1962, il se produit en Algérie puis s'installe trois ans au Caire, où il connaît ses premiers succès publics, avant de rentrer au Maroc en 1965. Ses chansons, dont Kān yā mākān et Montparnasse, lui valent un public qui dépasse le Maghreb, et il signe aussi la musique du film Vaincre pour vivre, sorti en 1968.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Abdelwahab_Doukkali",
+                  "pays": "MA",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_doukkali.jpg",
+                    "legende": "Abdelwahab Doukkali au festival Mawazine, Rabat (2013)",
+                    "auteur": "M.Rais",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Abdelwahab_Doukali_5.jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_kadhafi",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1942,
+                  "titre": "Naissance de Mouammar Kadhafi",
+                  "description": "Mouammar Kadhafi (vers 1942-2011) est un officier et homme d'État libyen, né dans la région de Syrte, qui dirige la Libye de 1969 à 2011. Jeune officier de vingt-sept ans, il renverse le roi Idris Ier le 1er septembre 1969, évacue les bases étrangères, nationalise le pétrole et, après avoir exposé dans le Livre vert sa « troisième théorie universelle », proclame en 1977 la Jamahiriya, un régime qu'il présente comme le pouvoir direct des masses mais qui reste entièrement entre ses mains. Isolé pendant des années à la suite d'attentats attribués à son régime, puis réintégré sur la scène internationale en 2003-2004, il est renversé en 2011 par un soulèvement soutenu par une intervention militaire et meurt tué près de Syrte le 20 octobre.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mouammar_Kadhafi",
+                  "pays": "LY",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_kadhafi.jpg",
+                    "legende": "Mouammar Kadhafi au sommet de l'Union africaine, Addis-Abeba (2 février 2009), photographie de la marine américaine",
+                    "auteur": "Jesse B. Awalt (marine américaine)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Muammar_al-Gaddafi_at_the_AU_summit_(3x4).jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_idir",
+                  "axe": "Musique et spectacle",
+                  "date": 1945,
+                  "titre": "Naissance d'Idir",
+                  "description": "Idir (1945-2020) est un chanteur et compositeur kabyle, de son vrai nom Hamid Cheriet, né à Aït Lahcène, en Kabylie, qui a fait connaître la chanson berbère au monde entier. Son titre A Vava Inouva, enregistré en 1973 pour la radio algérienne et traduit en une quinzaine de langues, est le premier succès international d'un chant en tamazight, et son premier album paraît en 1976. Installé en France, ambassadeur de la culture amazighe, il met à l'honneur son héritage dans des albums comme Les Chasseurs de lumière ou Identités, et reste jusqu'à sa mort à Paris l'une des voix les plus aimées d'Afrique du Nord.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Idir",
+                  "pays": "DZ",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_idir.jpg",
+                    "legende": "Idir en concert à Bondy (21 juin 2008)",
+                    "auteur": "Suaudeau",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Idir_Bondy_France_21-06-2008_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_maghreb_djaout",
+                  "axe": "Littérature et pensée",
+                  "date": 1953,
+                  "titre": "Naissance de Tahar Djaout",
+                  "description": "Tahar Djaout (1953-1993) est un écrivain, poète et journaliste algérien d'expression française, né à Oulkhou, près d'Azeffoun, en Kabylie. Mathématicien de formation, il publie le recueil Solstice barbelé en 1975, puis des romans, dont L'Exproprié, Les Chercheurs d'os et Les Vigiles, prix Méditerranée, et, après avoir dirigé de 1980 à 1984 les pages culturelles d'Algérie-Actualité, il lance en janvier 1993 l'hebdomadaire Ruptures. Visé par un attentat le 26 mai 1993 à Baïnem, près d'Alger, il meurt le 2 juin, l'un des premiers intellectuels victimes de la décennie noire.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Tahar_Djaout",
+                  "pays": "DZ",
+                  "image": {
+                    "src": "assets/portraits/pan_maghreb_djaout.jpg",
+                    "legende": "Tahar Djaout, photographie de Michel-Georges Bernard (mai 1980)",
+                    "auteur": "Michel-Georges Bernard",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Tahar_Djaout_1980.jpg"
+                  }
+                }
+              ],
+              "axeOrder": [
+                "Chefs d'État et dirigeants",
+                "Guerres et résistances",
+                "Littérature et pensée",
+                "Beaux-arts",
+                "Musique et spectacle",
+                "Sciences et découvertes"
+              ],
+              "essentiel": [
+                "pan_maghreb_hannibal",
+                "pan_maghreb_massinissa",
+                "pan_maghreb_septimesevere",
+                "pan_maghreb_augustin",
+                "pan_maghreb_dihya",
+                "pan_maghreb_ibnbattuta",
+                "pan_maghreb_ibnkhaldun",
+                "pan_maghreb_moulayismail",
+                "pan_maghreb_abdelkader",
+                "pan_maghreb_mokhtar",
+                "pan_maghreb_abdelkrim",
+                "pan_maghreb_bourguiba",
+                "pan_maghreb_chebbi",
+                "pan_maghreb_mohammed5",
+                "pan_maghreb_benbella",
+                "pan_maghreb_hassan2",
+                "pan_maghreb_katebyacine",
+                "pan_maghreb_boumediene",
+                "pan_maghreb_djebar",
+                "pan_maghreb_mernissi",
+                "pan_maghreb_kadhafi",
+                "pan_maghreb_idir"
               ]
             }
           ]

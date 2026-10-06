@@ -45,11 +45,12 @@ BIOGRAPHIES = 'Biographies'
 PORTRAIT_DIR = 'assets/portraits'
 
 # Équilibre d'un bloc : les pays n'ont pas à y être représentés à égalité — le
-# Mexique pèse près d'un cinquième de l'Amérique hispanique — mais un panthéon dont
-# la moitié des figures viendrait d'un seul pays n'en serait plus un. Au-delà de
-# cette borne on prévient (sans bloquer) : c'est un jugement éditorial. Un pays
-# listé doit avoir au moins une figure (sinon il n'a rien à faire dans le bloc).
-MAX_PAR_PAYS = 20
+# Mexique pèse un cinquième de l'Amérique hispanique, l'Algérie plus d'un tiers du
+# Maghreb — mais un panthéon dont la moitié des figures viendrait d'un seul pays
+# n'en serait plus un. Au-delà de 40 % des figures on prévient (sans bloquer) :
+# c'est un jugement éditorial. Un pays listé doit avoir au moins une figure
+# (sinon il n'a rien à faire dans le bloc).
+MAX_PART_PAYS = 0.4
 
 # Première phrase : « Nom (1802-1885) est … » ; « vers » devant une année
 # incertaine ; « av. J.-C. » une fois, à la fin, valable pour les deux années.
@@ -208,8 +209,9 @@ def validate(src, code, bio_themes, other_pantheons, errors, warnings):
             count = per_country.get(iso, 0)
             if count == 0:
                 errors.append(f'pays {iso} déclaré sans aucun personnage')
-            elif count > MAX_PAR_PAYS:
-                warnings.append(f'{iso} : {count} personnages (> {MAX_PAR_PAYS}) — un pays pèse trop dans le bloc')
+            elif count > MAX_PART_PAYS * len(src['personnages']):
+                warnings.append(f"{iso} : {count} personnages sur {len(src['personnages'])} "
+                                f"(> {MAX_PART_PAYS:.0%}) — un pays pèse trop dans le bloc")
     return per_country
 
 
