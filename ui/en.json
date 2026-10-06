@@ -557,7 +557,8 @@
     "where_kicker": "Where did this event take place?",
     "correct_reveal": "✅ Correct answer: {flag} {name}",
     "wrong_reveal": "❌ It was: {flag} {name}",
-    "not_enough_events": "This area doesn't have enough geolocated events to play Map Mode."
+    "not_enough_events": "This area doesn't have enough geolocated events to play Map Mode.",
+    "pin_aria": "Option {n}: {country}"
   },
   "mindmap": {
     "picker_frise": "Timeline",
@@ -675,5 +676,8 @@
     "reveal_axe": "The other three belong to “{axe}”:",
     "reveal_tag": "the odd one",
     "not_enough": "This theme cannot produce enough odd-one-out questions."
+  },
+  "home": {
+    "start_aria": "Start"
   }
 }

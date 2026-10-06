@@ -530,7 +530,8 @@
     "where_kicker": "この出来事はどこで起きましたか?",
     "correct_reveal": "✅ 正解:{flag} {name}",
     "wrong_reveal": "❌ 正解は:{flag} {name}",
-    "not_enough_events": "このエリアにはマップモードをプレイするのに十分な位置情報付きの出来事がありません。"
+    "not_enough_events": "このエリアにはマップモードをプレイするのに十分な位置情報付きの出来事がありません。",
+    "pin_aria": "選択肢{n}:{country}"
   },
   "mindmap": {
     "picker_frise": "年表",
@@ -648,5 +649,8 @@
     "reveal_axe": "ほかの3つは「{axe}」に属します:",
     "reveal_tag": "仲間はずれ",
     "not_enough": "このテーマでは、仲間はずれの問題を十分に作れません。"
+  },
+  "home": {
+    "start_aria": "はじめる"
   }
 }

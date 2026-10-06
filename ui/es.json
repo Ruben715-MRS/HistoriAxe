@@ -530,7 +530,8 @@
     "where_kicker": "¿Dónde ocurrió este evento?",
     "correct_reveal": "✅ Respuesta correcta: {flag} {name}",
     "wrong_reveal": "❌ Era: {flag} {name}",
-    "not_enough_events": "Esta zona no tiene suficientes eventos geolocalizados para jugar en el Modo Mapa."
+    "not_enough_events": "Esta zona no tiene suficientes eventos geolocalizados para jugar en el Modo Mapa.",
+    "pin_aria": "Opción {n}: {country}"
   },
   "mindmap": {
     "picker_frise": "Cronología",
@@ -648,5 +649,8 @@
     "reveal_axe": "Los otros tres pertenecen a «{axe}»:",
     "reveal_tag": "el intruso",
     "not_enough": "Este tema no permite componer suficientes preguntas de intruso."
+  },
+  "home": {
+    "start_aria": "Empezar"
   }
 }

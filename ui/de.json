@@ -530,7 +530,8 @@
     "where_kicker": "Wo hat sich dieses Ereignis zugetragen?",
     "correct_reveal": "✅ Richtige Antwort: {flag} {name}",
     "wrong_reveal": "❌ Es war: {flag} {name}",
-    "not_enough_events": "Dieser Bereich enthält nicht genügend geolokalisierte Ereignisse für den Kartenmodus."
+    "not_enough_events": "Dieser Bereich enthält nicht genügend geolokalisierte Ereignisse für den Kartenmodus.",
+    "pin_aria": "Option {n}: {country}"
   },
   "mindmap": {
     "picker_frise": "Zeitleiste",
@@ -648,5 +649,8 @@
     "reveal_axe": "Die anderen drei gehören zu „{axe}“:",
     "reveal_tag": "der Ausreißer",
     "not_enough": "Aus diesem Thema lassen sich nicht genug Ausreißer-Fragen bilden."
+  },
+  "home": {
+    "start_aria": "Starten"
   }
 }

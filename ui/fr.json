@@ -560,7 +560,8 @@
     "where_kicker": "Où cet événement s'est-il déroulé ?",
     "correct_reveal": "✅ Bonne réponse : {flag} {name}",
     "wrong_reveal": "❌ C'était : {flag} {name}",
-    "not_enough_events": "Cette zone ne contient pas assez d'événements géolocalisés pour jouer en Mode Carte."
+    "not_enough_events": "Cette zone ne contient pas assez d'événements géolocalisés pour jouer en Mode Carte.",
+    "pin_aria": "Option {n} : {country}"
   },
   "mindmap": {
     "picker_frise": "Frise",
@@ -678,5 +679,8 @@
     "reveal_axe": "Les trois autres relèvent de « {axe} » :",
     "reveal_tag": "l'intrus",
     "not_enough": "Ce thème ne permet pas de composer assez de questions pour l'intrus."
+  },
+  "home": {
+    "start_aria": "Commencer"
   }
 }

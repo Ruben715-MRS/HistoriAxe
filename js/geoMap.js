@@ -336,6 +336,9 @@ function pickNextGeoRound() {
 
 function renderGeoLocatePhase() {
     isAnimating = false;
+    // Les pions viennent d'être reconstruits : le focus va à la carte-question
+    // (voir A11y.focusQuestion), pas à <body>.
+    A11y.focusQuestion('screen-carte');
     const round = geoCurrentRound;
 
     document.getElementById('geo-phase-kicker').innerText = t('carte.where_kicker');
@@ -362,7 +365,11 @@ function renderGeoLocatePhase() {
         btn.style.left = ((x - geoViewBox.x) / geoViewBox.w * 100) + '%';
         btn.style.top = ((y - geoViewBox.y) / geoViewBox.h * 100) + '%';
         btn.innerHTML = `<span class="geo-pin-number">${idx + 1}</span>`;
-        btn.setAttribute('aria-label', `Option ${idx + 1}`);
+        // Le nom du pays, et pas un simple « Option 2 » : pour qui ne voit pas la
+        // carte, c'est le seul moyen de savoir ce que désigne le pion. Ce n'est
+        // pas un indice de plus pour les autres — un aria-label ne s'affiche
+        // jamais, et la position sur la carte reste ce que voit le joueur.
+        btn.setAttribute('aria-label', t('carte.pin_aria', { n: idx + 1, country: countryDisplayName(iso2) }));
         btn.onclick = () => answerGeoLocate(iso2);
         pinsLayer.appendChild(btn);
     });
@@ -466,6 +473,7 @@ function answerGeoLocate(chosenIso2) {
 
 function renderGeoTimePhase() {
     isAnimating = false;
+    A11y.focusQuestion('screen-carte');
     const round = geoCurrentRound;
 
     document.getElementById('geo-map-phase').classList.add('hidden');
@@ -576,5 +584,6 @@ function buildGeoModeCard(node, label) {
         <div class="special-card-subtitle">${t('carte.mode_subtitle', { label })}</div>
     `;
     card.onclick = () => startGeoModeFromNode(node, label);
+    A11y.activatable(card);
     return card;
 }

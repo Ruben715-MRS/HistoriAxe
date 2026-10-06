@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>HistoriAxe - Mémorisation espacée de l'Histoire</title>
     <meta name="description"
         content="Mémorisez et révisez la chronologie de l'Histoire par répétition espacée (méthode SRS), avec classement mondial vérifié côté serveur.">
@@ -56,7 +56,8 @@
          téléphone (le plus étroit/large) est testé avant le format
          tablette de la même orientation. Repli sur accueil.jpg (~4:3,
          tablette paysage) pour tout le reste — desktop compris. -->
-    <div id="screen-home" onclick="showScreen('screen-categories')">
+    <div id="screen-home" onclick="showScreen('screen-categories')" role="button" tabindex="0"
+        aria-label="Commencer" data-i18n-attr="aria-label:home.start_aria">
         <picture>
             <source media="(orientation: portrait) and (max-aspect-ratio: 2/3)" srcset="splash_iphone_portrait.jpg">
             <source media="(orientation: portrait)" srcset="splash_ipad_portrait.jpg">
@@ -92,7 +93,8 @@
                 <input type="text" id="theme-search-input" class="search-bar-input" placeholder="Rechercher un thème…"
                     autocomplete="off" oninput="onThemeSearchInput(this.value)" aria-label="Rechercher un thème"
                     data-i18n-attr="placeholder:categories.search_placeholder;aria-label:categories.search_placeholder">
-                <span class="search-bar-clear hidden" id="theme-search-clear" onclick="clearThemeSearch()"
+                <span class="search-bar-clear hidden" id="theme-search-clear" onclick="clearThemeSearch()" role="button"
+                    tabindex="0"
                     title="Effacer" aria-label="Effacer la recherche"
                     data-i18n-attr="title:categories.search_clear_title;aria-label:categories.search_clear_title">✕</span>
             </div>
@@ -100,7 +102,8 @@
 
             <!-- Bannière de Grade & Progression XP -->
             <div class="player-rank-bar" onclick="openProfileModal()" title="Voir mon profil et mes trophées"
-                data-i18n-attr="title:categories.profile_btn_title">
+                role="button" tabindex="0" aria-label="Voir mon profil et mes trophées"
+                data-i18n-attr="title:categories.profile_btn_title;aria-label:categories.profile_btn_title">
                 <div class="player-rank-avatar" id="header-rank-avatar">📜</div>
                 <div class="player-rank-details">
                     <div class="player-rank-row">
@@ -165,7 +168,7 @@
 
             <div
                 style="margin-top: 30px; margin-bottom: 50px; display:flex; align-items:center; justify-content:center; gap:15px;">
-                <span class="reset-srs-btn reset-srs-link" id="reset-srs-btn-hub"
+                <span class="reset-srs-btn reset-srs-link" id="reset-srs-btn-hub" role="button" tabindex="0"
                     title="Réinitialiser le suivi de révision" data-i18n="revision.reset_srs"
                     data-i18n-attr="title:revision.reset_srs">⟲ Réinitialiser</span>
             </div>
@@ -264,7 +267,7 @@
                  propose un sommaire — elle déplie alors le choix ci-dessous
                  (voir js/mindMap.js: refreshDiscoveryPicker). -->
             <div class="discovery-block">
-                <div class="mode-card" id="mode-card-discovery" style="background-color: #2c3e50;"
+                <div role="button" tabindex="0" class="mode-card" id="mode-card-discovery" style="background-color: #2c3e50;"
                     onclick="openDiscoveryMode()">
                     <h3 data-i18n="modes.discovery.title">Découverte</h3>
                     <p data-i18n="modes.discovery.desc">Consultez la frise chronologique sans jouer.</p>
@@ -280,11 +283,11 @@
                     </button>
                 </div>
             </div>
-            <div class="mode-card" style="background-color: #34495e;" onclick="openSelectionMode()">
+            <div role="button" tabindex="0" class="mode-card" style="background-color: #34495e;" onclick="openSelectionMode()">
                 <h3 data-i18n="modes.selection.title">Sélection</h3>
                 <p data-i18n="modes.selection.desc">Choisissez les événements à conserver dans la partie.</p>
             </div>
-            <div class="mode-card" style="background-color: #34495e;" onclick="openAddEventModal()">
+            <div role="button" tabindex="0" class="mode-card" style="background-color: #34495e;" onclick="openAddEventModal()">
                 <h3 data-i18n="modes.add_event.title">Ajouter un événement</h3>
                 <p data-i18n="modes.add_event.desc">Créez vos événements pour ce thème.</p>
             </div>
@@ -293,19 +296,19 @@
         <hr class="mode-separator">
 
         <div class="grid-modes-square">
-            <div class="mode-card" id="mode-card-training" onclick="startActualGame('training')">
+            <div role="button" tabindex="0" class="mode-card" id="mode-card-training" onclick="startActualGame('training')">
                 <h3 data-i18n="modes.training.title">Entraînement</h3>
                 <p data-i18n="modes.training.desc">Aucune vie perdue. Jouez à votre rythme.</p>
             </div>
-            <div class="mode-card" id="mode-card-classic" onclick="startActualGame('classic')">
+            <div role="button" tabindex="0" class="mode-card" id="mode-card-classic" onclick="startActualGame('classic')">
                 <h3 data-i18n="modes.classic.title">Classique</h3>
                 <p data-i18n="modes.classic.desc">3 vies. Le mode de jeu standard.</p>
             </div>
-            <div class="mode-card" id="mode-card-chrono">
+            <div role="button" tabindex="0" class="mode-card" id="mode-card-chrono">
                 <h3 data-i18n="modes.chrono.title">Chrono</h3>
                 <p data-i18n="modes.chrono.desc">3 vies. Placez-les vite.</p>
             </div>
-            <div class="mode-card" id="mode-card-expert">
+            <div role="button" tabindex="0" class="mode-card" id="mode-card-expert">
                 <h3 data-i18n="modes.expert.title">Expert</h3>
                 <p data-i18n="modes.expert.desc">1 vie, chronométré.</p>
             </div>
@@ -314,56 +317,56 @@
         <hr class="mode-separator">
 
         <div class="grid-modes">
-            <div class="mode-card quiz-card" onclick="startQuizGame()">
+            <div role="button" tabindex="0" class="mode-card quiz-card" onclick="startQuizGame()">
                 <h3 data-i18n="modes.quiz.title">Quiz</h3>
                 <p data-i18n="modes.quiz.desc">Questions à choix multiples (QCM).</p>
             </div>
-            <div class="mode-card avap-card" onclick="startAvapGame()">
+            <div role="button" tabindex="0" class="mode-card avap-card" onclick="startAvapGame()">
                 <h3 data-i18n="modes.avantapres.title">Avant / Après</h3>
                 <p data-i18n="modes.avantapres.desc">3 vies. Entre deux événements sans dates, devinez lequel s'est
                     produit en premier.</p>
             </div>
-            <div class="mode-card periodes-card" onclick="startPeriodesGame()">
+            <div role="button" tabindex="0" class="mode-card periodes-card" onclick="startPeriodesGame()">
                 <h3 data-i18n="modes.periodes.title">Périodes & Ères</h3>
                 <p data-i18n="modes.periodes.desc">3 vies. Situez chaque événement dans son siècle, son époque ou ses
                     contemporains.</p>
             </div>
-            <div class="mode-card simul-card" id="mode-card-simultaneity" onclick="startSimultaneityGame()">
+            <div role="button" tabindex="0" class="mode-card simul-card" id="mode-card-simultaneity" onclick="startSimultaneityGame()">
                 <h3 data-i18n="simultaneity.title">Pendant ce temps, ailleurs…</h3>
                 <p data-i18n="simultaneity.desc">3 vies. Un événement du thème, et le monde autour : retrouvez ce qui
                     se passait ailleurs au même moment.</p>
             </div>
-            <div class="mode-card fil-card" onclick="startFilGame()">
+            <div role="button" tabindex="0" class="mode-card fil-card" onclick="startFilGame()">
                 <h3 data-i18n="modes.fil.title">Le fil du temps</h3>
                 <p data-i18n="modes.fil.desc">Du tout premier événement du thème jusqu'au dernier, dans l'ordre
                     chronologique : saisissez l'année exacte au clavier.</p>
             </div>
-            <div class="mode-card ecart-card" onclick="startEcartGame()">
+            <div role="button" tabindex="0" class="mode-card ecart-card" onclick="startEcartGame()">
                 <h3 data-i18n="modes.ecart.title">Trouve l'écart</h3>
                 <p data-i18n="modes.ecart.desc">3 vies. Devinez le nombre d'années entre deux événements : 5 essais, le
                     jeu vous dit si c'est plus ou moins.</p>
             </div>
-            <div class="mode-card ordre-card" id="mode-card-ordre" onclick="startOrdreGame()">
+            <div role="button" tabindex="0" class="mode-card ordre-card" id="mode-card-ordre" onclick="startOrdreGame()">
                 <h3 data-i18n="ordre.title">Remise en ordre</h3>
                 <p data-i18n="ordre.desc">3 vies. Cinq cartes mélangées, sans leurs dates : classez-les d'un coup du
                     plus ancien au plus récent.</p>
             </div>
-            <div class="mode-card blitz-card" id="mode-card-blitz" onclick="startBlitzGame()">
+            <div role="button" tabindex="0" class="mode-card blitz-card" id="mode-card-blitz" onclick="startBlitzGame()">
                 <h3 data-i18n="blitz.title">Blitz 60 secondes</h3>
                 <p data-i18n="blitz.desc">Pas de vies, juste le chrono. « X est antérieur à Y » : vrai ou faux, le
                     plus vite possible.</p>
             </div>
-            <div class="mode-card curseur-card" id="mode-card-curseur" onclick="startCurseurGame()">
+            <div role="button" tabindex="0" class="mode-card curseur-card" id="mode-card-curseur" onclick="startCurseurGame()">
                 <h3 data-i18n="curseur.title">Le curseur</h3>
                 <p data-i18n="curseur.desc">3 vies. Glissez le curseur sur l'année : plus vous tombez près, plus vous
                     marquez.</p>
             </div>
-            <div class="mode-card intrus-card" id="mode-card-intrus" onclick="startIntrusGame()">
+            <div role="button" tabindex="0" class="mode-card intrus-card" id="mode-card-intrus" onclick="startIntrusGame()">
                 <h3 data-i18n="intrus.title">L'intrus</h3>
                 <p data-i18n="intrus.desc">3 vies. Quatre événements, trois qui vont ensemble : trouvez celui qui
                     détonne.</p>
             </div>
-            <div class="mode-card multi-card" onclick="showMultiplayerSetup()">
+            <div role="button" tabindex="0" class="mode-card multi-card" onclick="showMultiplayerSetup()">
                 <h3 data-i18n="modes.multi.title">Multijoueurs</h3>
                 <p data-i18n="modes.multi.desc">À tour de rôle, élimination au bout de 2 erreurs.</p>
             </div>
@@ -530,7 +533,7 @@
         </div>
 
         <div class="quiz-body">
-            <div class="quiz-question-card">
+            <div class="quiz-question-card" data-focus-target>
                 <div class="quiz-kicker" id="quiz-kicker" data-i18n="game.quiz_event_to_year">En quelle année cet
                     événement a-t-il eu lieu ?</div>
                 <div class="quiz-prompt" id="quiz-prompt" data-i18n="nav.loading">Chargement…</div>
@@ -570,7 +573,7 @@
         </div>
 
         <div class="quiz-body">
-            <div class="quiz-question-card">
+            <div class="quiz-question-card" data-focus-target>
                 <div class="quiz-kicker" id="ordre-kicker" data-i18n="ordre.kicker">Touchez les cartes du plus ancien
                     au plus récent</div>
                 <div class="ordre-progress-hint" id="ordre-hint"></div>
@@ -695,7 +698,7 @@
         </div>
 
         <div class="quiz-body">
-            <div class="quiz-question-card">
+            <div class="quiz-question-card" data-focus-target>
                 <div class="quiz-kicker" id="intrus-kicker" data-i18n="intrus.kicker_periode">Lequel n’est pas de la
                     même période ?</div>
             </div>
@@ -727,7 +730,7 @@
         </div>
 
         <div class="quiz-body">
-            <div class="quiz-question-card simul-anchor-card">
+            <div class="quiz-question-card simul-anchor-card" data-focus-target>
                 <div class="quiz-kicker" id="simul-kicker" data-i18n="simultaneity.kicker">Lequel de ces événements
                     lui est contemporain ?</div>
                 <div class="simul-anchor-year" id="simul-anchor-year">—</div>
@@ -763,7 +766,7 @@
 
         <div class="geo-body">
             <div class="geo-scope-chip" id="geo-scope-label" data-i18n="carte.world_label">Monde</div>
-            <div class="quiz-question-card">
+            <div class="quiz-question-card" data-focus-target>
                 <div class="geo-phase-kicker" id="geo-phase-kicker" data-i18n="carte.where_kicker">Où cet événement
                     s'est-il déroulé ?</div>
                 <div class="geo-event-title" id="geo-event-title" data-i18n="nav.loading">Chargement…</div>
@@ -871,7 +874,7 @@
         </div>
 
         <div class="periodes-body">
-            <div class="periodes-question-card">
+            <div class="periodes-question-card" data-focus-target>
                 <div class="periodes-kicker" id="periodes-kicker" data-i18n="periodes.century_kicker">Tranche
                     chronologique & Siècle</div>
                 <div class="periodes-prompt" id="periodes-prompt" data-i18n="nav.loading">Chargement…</div>
@@ -1010,7 +1013,8 @@
     <!-- MODAL DÉTAILS -->
     <div id="modal-details" class="modal-overlay hidden">
         <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()">×</span>
+            <span class="close-btn" role="button" tabindex="0" aria-label="Fermer"
+                data-i18n-attr="aria-label:nav.close" onclick="closeModal()">×</span>
             <div class="modal-title" id="modal-titre">Titre de l'événement</div>
             <div id="modal-axe-badge-container" style="margin-top: 4px; margin-bottom: 8px;"></div>
             <div class="modal-date" id="modal-date">Date</div>
@@ -1028,7 +1032,8 @@
     <!-- MODAL RÉSULTATS — DÉFI DU JOUR : pseudo (20 caractères max) + classement mondial (backend api/scores.js + api/leaderboard.js) -->
     <div id="modal-daily-results" class="modal-overlay hidden">
         <div class="modal-content" style="max-width:420px; text-align:center;">
-            <span class="close-btn" onclick="closeDailyResultsModal()">×</span>
+            <span class="close-btn" role="button" tabindex="0" aria-label="Fermer"
+                data-i18n-attr="aria-label:nav.close" onclick="closeDailyResultsModal()">×</span>
             <div class="modal-title" id="daily-results-title">🌍 Défi du jour terminé !</div>
 
             <div class="daily-results-summary">
@@ -1073,7 +1078,8 @@
          telles quelles (mise en page identique), seuls les id changent. -->
     <div id="modal-weekly-results" class="modal-overlay hidden">
         <div class="modal-content" style="max-width:420px; text-align:center;">
-            <span class="close-btn" onclick="closeWeeklyChallengeResultsModal()">×</span>
+            <span class="close-btn" role="button" tabindex="0" aria-label="Fermer"
+                data-i18n-attr="aria-label:nav.close" onclick="closeWeeklyChallengeResultsModal()">×</span>
             <div class="modal-title" id="weekly-results-title">🌍 Défi hebdomadaire terminé !</div>
 
             <div class="daily-results-summary">
@@ -1110,7 +1116,8 @@
     <!-- MODAL CRÉER UN THÈME PERSONNALISÉ -->
     <div id="modal-add-theme" class="modal-overlay hidden" onclick="if(event.target===this)closeAddThemeModal()">
         <div class="modal-content" style="max-width:420px;">
-            <span class="close-btn" onclick="closeAddThemeModal()">×</span>
+            <span class="close-btn" role="button" tabindex="0" aria-label="Fermer"
+                data-i18n-attr="aria-label:nav.close" onclick="closeAddThemeModal()">×</span>
             <h2 style="font-size:20px; margin-bottom:20px; color:var(--text-dark);"
                 data-i18n="custom.create_theme_title">Créer un thème personnalisé</h2>
 
@@ -1133,7 +1140,8 @@
     <!-- MODAL AJOUTER UN ÉVÉNEMENT -->
     <div id="modal-add-event" class="modal-overlay hidden" onclick="if(event.target===this)closeAddEventModal()">
         <div class="modal-content" style="max-width:400px;">
-            <span class="close-btn" onclick="closeAddEventModal()">×</span>
+            <span class="close-btn" role="button" tabindex="0" aria-label="Fermer"
+                data-i18n-attr="aria-label:nav.close" onclick="closeAddEventModal()">×</span>
             <h2 style="font-size:20px; margin-bottom:20px; color:var(--text-dark);"
                 data-i18n="custom.create_event_title">Ajouter un événement</h2>
 
@@ -1168,7 +1176,8 @@
     <!-- MODAL PROFIL, GRADES & TROPHÉES -->
     <div id="modal-profile" class="modal-overlay hidden" onclick="if(event.target===this)closeProfileModal()">
         <div class="modal-content" style="max-width: 540px; max-height: 85vh; overflow-y: auto; padding: 24px;">
-            <span class="close-btn" onclick="closeProfileModal()">×</span>
+            <span class="close-btn" role="button" tabindex="0" aria-label="Fermer"
+                data-i18n-attr="aria-label:nav.close" onclick="closeProfileModal()">×</span>
 
             <div class="profile-hero">
                 <div class="profile-hero-icon" id="profile-hero-icon">📜</div>
@@ -1216,7 +1225,8 @@
     <!-- MODAL LIGUE HEBDOMADAIRE (voir js/league.js + api/league.js) -->
     <div id="modal-league" class="modal-overlay hidden" onclick="if(event.target===this)closeLeagueModal()">
         <div class="modal-content" style="max-width: 460px;">
-            <span class="close-btn" onclick="closeLeagueModal()">×</span>
+            <span class="close-btn" role="button" tabindex="0" aria-label="Fermer"
+                data-i18n-attr="aria-label:nav.close" onclick="closeLeagueModal()">×</span>
             <h2 style="font-size:20px; margin-bottom:5px; color:var(--text-dark);" data-i18n="league.title">🥇 Ta ligue
                 de la semaine</h2>
             <div class="league-week-hint" id="league-week-hint">Ton total cette semaine : <strong
@@ -1228,7 +1238,8 @@
     <!-- MODAL RÉCAP HEBDO / MENSUEL (voir js/recap.js) -->
     <div id="modal-recap" class="modal-overlay hidden" onclick="if(event.target===this)closeRecapModal()">
         <div class="modal-content" style="max-width: 460px; text-align:center;">
-            <span class="close-btn" onclick="closeRecapModal()">×</span>
+            <span class="close-btn" role="button" tabindex="0" aria-label="Fermer"
+                data-i18n-attr="aria-label:nav.close" onclick="closeRecapModal()">×</span>
             <div class="modal-title" id="recap-title">📊 Ton récap de la semaine</div>
             <div class="segmented" id="recap-period-tabs" style="margin: 16px auto 20px;">
                 <button type="button" data-value="week" data-i18n="recap.tab_week">Cette semaine</button>
@@ -1262,7 +1273,8 @@
     <!-- MODAL LEADERBOARD / SCORES -->
     <div id="modal-leaderboard" class="modal-overlay hidden">
         <div class="modal-content" style="max-width:500px;">
-            <span class="close-btn" onclick="closeLeaderboard()">×</span>
+            <span class="close-btn" role="button" tabindex="0" aria-label="Fermer"
+                data-i18n-attr="aria-label:nav.close" onclick="closeLeaderboard()">×</span>
             <h2 style="font-size:20px; margin-bottom:5px; color:var(--text-dark);" data-i18n="leaderboard.title">🏆
                 Historique des scores</h2>
             <p id="leaderboard-subtitle" style="font-size:14px; color:var(--muted-text); margin-bottom:20px;">Thème :
@@ -1275,7 +1287,8 @@
     <!-- MODAL EXPLICATIONS DU CALCUL DES POINTS -->
     <div id="modal-scoring-info" class="modal-overlay hidden">
         <div class="modal-content" style="max-width:580px;">
-            <span class="close-btn" onclick="closeScoringInfo()">×</span>
+            <span class="close-btn" role="button" tabindex="0" aria-label="Fermer"
+                data-i18n-attr="aria-label:nav.close" onclick="closeScoringInfo()">×</span>
             <h2 style="font-size:20px; margin-bottom:20px; color:var(--text-dark);" data-i18n="scoring.title">Comment
                 sont calculés les points ?</h2>
             <div class="scoring-info-body">
@@ -1375,7 +1388,8 @@
     <!-- MODAL RÉGLAGES -->
     <div id="modal-settings" class="modal-overlay hidden" onclick="if(event.target===this)closeSettings()">
         <div class="modal-content" style="max-width:420px;">
-            <span class="close-btn" onclick="closeSettings()">×</span>
+            <span class="close-btn" role="button" tabindex="0" aria-label="Fermer"
+                data-i18n-attr="aria-label:nav.close" onclick="closeSettings()">×</span>
             <h2 style="font-size:20px; margin-bottom:24px; color:var(--text-dark);" data-i18n="settings.title">Réglages
             </h2>
 
@@ -1464,6 +1478,7 @@
 
     <!-- MODULES JAVASCRIPT MODULAIRES HISTORIAXE -->
     <script src="js/storage.js"></script>
+    <script src="js/a11y.js"></script>
     <script src="js/audio.js"></script>
     <script src="js/onboarding.js"></script>
     <script src="js/notifications.js"></script>

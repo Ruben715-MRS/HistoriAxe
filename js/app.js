@@ -579,6 +579,11 @@ function openSelectionMode() {
         cb.type = 'checkbox';
         cb.value = e.id;
         cb.checked = selectedEventsIds.has(e.id);
+        // La case native EST le contrôle clavier de la ligne (la ligne n'a de
+        // clic que pour la souris, d'où `data-kbd-proxy`) : sans nom, un
+        // lecteur d'écran annonçait cinquante « case à cocher » identiques.
+        cb.setAttribute('aria-label', e.titre);
+        item.dataset.kbdProxy = 'checkbox';
         cb.onchange = () => {
             if (cb.checked) selectedEventsIds.add(e.id);
             else selectedEventsIds.delete(e.id);
@@ -601,6 +606,7 @@ function openSelectionMode() {
             delBtn.type = 'button';
             delBtn.className = 'selection-item-delete';
             delBtn.title = t('selection.delete_event_title');
+            delBtn.setAttribute('aria-label', `${t('selection.delete_event_title')} — ${e.titre}`);
             delBtn.innerHTML = '🗑️';
             delBtn.onclick = (event) => {
                 event.stopPropagation();
@@ -885,6 +891,7 @@ function renderProgressLeaf(node) {
     row.className = 'mastery-row';
     row.innerHTML = buildMasteryBarHtml(node.nom, node.stats, '');
     row.onclick = () => openThemeAt(node.ci, node.si, node.ti);
+    A11y.activatable(row);
     return row;
 }
 
@@ -1213,6 +1220,10 @@ function showScreen(screenId, direction) {
         // pour un thème qui propose un sommaire (voir js/mindMap.js).
         if (typeof refreshDiscoveryPicker === 'function') refreshDiscoveryPicker();
     }
+    // Le focus suit l'écran : sans cela, l'élément qu'on vient de choisir
+    // disparaît avec l'écran quitté, le focus retombe sur <body>, et Tab
+    // repart du haut du document au lieu du haut du nouvel écran.
+    A11y.focusScreen(targetScreen);
 }
 
 // Renvoie l'écran de destination après une partie/un retour, et quitte le mode
@@ -1427,7 +1438,7 @@ function renderRoundLengthPicker() {
         btn.onclick = () => {
             appSettings.roundLength = choice;
             settingsSave(appSettings);
-            renderRoundLengthPicker();
+            A11y.keepFocus(box, renderRoundLengthPicker);
         };
         box.appendChild(btn);
     });
@@ -1522,6 +1533,7 @@ function renderAxesScreen() {
             selectedAxes = new Set(currentThemeAxes);
             showScreen('screen-modes', 'forward');
         };
+        A11y.activatable(essentialCard);
         essentialZone.appendChild(essentialCard);
     }
     currentThemeAxes.forEach(axe => {
@@ -1541,8 +1553,14 @@ function renderAxesScreen() {
         card.onclick = () => {
             if (selectedAxes.has(axe)) { selectedAxes.delete(axe); }
             else { selectedAxes.add(axe); }
-            renderAxesScreen();
+            // Cocher un axe reconstruit toute la liste : le focus est rendu à la
+            // même position, sans quoi chaque case cochée renvoyait au haut de
+            // l'écran.
+            A11y.keepFocus(document.getElementById('screen-axes'), renderAxesScreen);
         };
+        // Un axe se coche et se décoche : c'est une case à cocher, pas un
+        // bouton — l'Espace la bascule (convention ARIA), pas Entrée.
+        A11y.activatable(card, { role: 'checkbox', checked: isSelected });
         container.appendChild(card);
     });
     const totalCount = theme.events.filter(e => selectedAxes.has(e.axe)).length;
@@ -1596,25 +1614,25 @@ function initCategories() {
     gridSection.style.marginTop = '24px';
     gridSection.innerHTML = `
                 <div class="grid grid-cols-4 gap-sm md:gap-md" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; text-align: center;">
-                    <div class="flex flex-col items-center gap-2" id="btn-favoris" style="cursor: pointer;">
+                    <div class="flex flex-col items-center gap-2" id="btn-favoris" style="cursor: pointer;" role="button" tabindex="0">
                         <div class="quick-action-circle rounded-full flex items-center justify-center transition-colors cursor-pointer group mx-auto" style="border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; background: var(--surface); border: 1px solid var(--border-soft); box-shadow: var(--card-shadow);">
                             <span style="font-size: 28px;">⭐</span>
                         </div>
                         <span class="quick-action-label" style="font-size: 13px; font-weight: 600;">${(typeof t === 'function' ? t('categories.special_favorites') : 'Favoris')} (${favCount})</span>
                     </div>
-                    <div class="flex flex-col items-center gap-2" id="btn-discover" style="cursor: pointer;">
+                    <div class="flex flex-col items-center gap-2" id="btn-discover" style="cursor: pointer;" role="button" tabindex="0">
                         <div class="quick-action-circle rounded-full flex items-center justify-center transition-colors cursor-pointer group mx-auto" style="border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; background: var(--surface); border: 1px solid var(--border-soft); box-shadow: var(--card-shadow);">
                             <span style="font-size: 28px;">🎲</span>
                         </div>
                         <span class="quick-action-label" style="font-size: 13px; font-weight: 600;">${(typeof t === 'function' ? t('categories.special_discover') : 'Hasard')}</span>
                     </div>
-                    <div class="flex flex-col items-center gap-2" id="btn-daily" style="cursor: pointer;">
+                    <div class="flex flex-col items-center gap-2" id="btn-daily" style="cursor: pointer;" role="button" tabindex="0" aria-expanded="false" aria-controls="challenge-picker">
                         <div class="quick-action-circle rounded-full flex items-center justify-center transition-colors cursor-pointer group mx-auto" style="border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; background: var(--surface); border: 1px solid var(--border-soft); box-shadow: var(--card-shadow);">
                             <span style="font-size: 28px;">🎯</span>
                         </div>
                         <span class="quick-action-label" style="font-size: 13px; font-weight: 600;">${(typeof t === 'function' ? t('categories.special_challenges') : 'Défis')}</span>
                     </div>
-                    <div class="flex flex-col items-center gap-2" id="btn-reviser" style="cursor: pointer;">
+                    <div class="flex flex-col items-center gap-2" id="btn-reviser" style="cursor: pointer;" role="button" tabindex="0">
                         <div class="quick-action-circle rounded-full flex items-center justify-center transition-colors cursor-pointer group mx-auto" style="border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; background: var(--surface); border: 1px solid var(--border-soft); box-shadow: var(--card-shadow);">
                             <span style="font-size: 28px;">🧠</span>
                         </div>
@@ -1649,7 +1667,10 @@ function initCategories() {
     const btnDay = gridSection.querySelector('#btn-daily');
     const challengePicker = gridSection.querySelector('#challenge-picker');
     if (btnDay && challengePicker) {
-        btnDay.onclick = () => challengePicker.classList.toggle('hidden');
+        btnDay.onclick = () => {
+            const nowOpen = challengePicker.classList.toggle('hidden') === false;
+            btnDay.setAttribute('aria-expanded', String(nowOpen));
+        };
     }
     const btnChallengeDaily = gridSection.querySelector('#btn-challenge-daily');
     if (btnChallengeDaily) btnChallengeDaily.onclick = () => startDailyChallenge();
@@ -1661,7 +1682,11 @@ function initCategories() {
     // Chrono/Expert, voir renderModeCard).
     const btnChallengeSimul = gridSection.querySelector('#btn-challenge-simul');
     if (btnChallengeSimul) {
-        btnChallengeSimul.classList.toggle('locked', !getSimultaneityChallengeStatus().unlocked);
+        const simulLocked = !getSimultaneityChallengeStatus().unlocked;
+        btnChallengeSimul.classList.toggle('locked', simulLocked);
+        // Toujours activable (le clic explique ce qui l'ouvrira), mais annoncé
+        // comme indisponible plutôt que comme un bouton ordinaire.
+        btnChallengeSimul.setAttribute('aria-disabled', String(simulLocked));
         btnChallengeSimul.onclick = () => startSimultaneityChallenge();
     }
     const btnRev = gridSection.querySelector('#btn-reviser');
@@ -1717,6 +1742,7 @@ function initCategories() {
                 showScreen('screen-subcategories', 'forward');
             }
         };
+        A11y.activatable(card);
         catGrid.appendChild(card);
     });
     applyStagger(catGrid);
@@ -1851,6 +1877,9 @@ function initSubcategories() {
                 showScreen(sub.subcategories ? 'screen-subcategories' : 'screen-themes', 'forward');
             }
         };
+        // Une carte sans thème ni sous-niveau n'ouvre rien : elle reste
+        // atteignable (on peut y lire son nom) mais se déclare indisponible.
+        A11y.activatable(card, { disabled: !canEnter });
         gridSection.appendChild(card);
     });
     applyStagger(gridSection);
@@ -1865,15 +1894,30 @@ function createThemeCard(theme, onOpen, opts = {}) {
     card.className = 'data-card';
     const fav = isFavorite(theme.id);
     const badgeHtml = opts.badge != null ? `<span class="data-card-badge">${opts.badge}</span>` : '';
-    const deleteHtml = theme.isCustom ? `<span class="data-card-delete" title="${t('themes.delete_theme_title')}">🗑️</span>` : '';
+    const deleteHtml = theme.isCustom ? `<span class="data-card-delete" role="button" tabindex="0" title="${t('themes.delete_theme_title')}">🗑️</span>` : '';
+    // Trois contrôles FRÈRES, et non une carte focalisable qui en contiendrait
+    // deux autres : un rôle `button` ne doit pas en contenir un second, les
+    // lecteurs d'écran n'exposent alors pas l'intérieur. Le titre est le
+    // contrôle principal (Entrée l'ouvre, le clic remonte à la carte), l'étoile
+    // et la corbeille les secondaires. La carte garde son clic à la souris et
+    // se déclare `data-kbd-proxy` : son équivalent clavier est son titre.
     card.innerHTML = `
-                <span class="data-card-title">${theme.nom}</span>
+                <span class="data-card-title" role="button" tabindex="0">${theme.nom}</span>
                 ${badgeHtml}
                 ${deleteHtml}
-                <span class="data-card-fav ${fav ? 'is-fav' : ''}" title="${fav ? t('themes.remove_favorite') : t('themes.add_favorite')}">${fav ? '★' : '☆'}</span>
-                <span class="data-card-icon">›</span>
+                <span class="data-card-fav ${fav ? 'is-fav' : ''}" role="button" tabindex="0" aria-pressed="${fav}" title="${fav ? t('themes.remove_favorite') : t('themes.add_favorite')}">${fav ? '★' : '☆'}</span>
+                <span class="data-card-icon" aria-hidden="true">›</span>
             `;
+    card.dataset.kbdProxy = 'title';
     card.onclick = onOpen;
+    // Étoile et corbeille répondent à « de quel thème ? » : dans une liste de
+    // cinquante cartes, « Ajouter aux favoris » seul ne dit rien. Posé par
+    // setAttribute et non dans le gabarit : un nom de thème personnalisé peut
+    // contenir un guillemet, qui casserait l'attribut.
+    const favLabel = isFav => `${isFav ? t('themes.remove_favorite') : t('themes.add_favorite')} — ${theme.nom}`;
+    card.querySelector('.data-card-fav').setAttribute('aria-label', favLabel(fav));
+    const delEl = card.querySelector('.data-card-delete');
+    if (delEl) delEl.setAttribute('aria-label', `${t('themes.delete_theme_title')} — ${theme.nom}`);
     if (theme.isCustom) {
         const delBtn = card.querySelector('.data-card-delete');
         if (delBtn) {
@@ -1894,6 +1938,8 @@ function createThemeCard(theme, onOpen, opts = {}) {
             favBtn.classList.toggle('is-fav', nowFav);
             favBtn.innerText = nowFav ? '★' : '☆';
             favBtn.title = nowFav ? t('themes.remove_favorite') : t('themes.add_favorite');
+            favBtn.setAttribute('aria-pressed', String(nowFav));
+            favBtn.setAttribute('aria-label', favLabel(nowFav));
         }
     };
     return card;
@@ -1971,6 +2017,7 @@ function renderThemeSearchResults(matches) {
             clearThemeSearch();
             openThemeAt(ci, si, ti);
         };
+        A11y.activatable(item);
         resultsBox.appendChild(item);
     });
 }
@@ -2049,6 +2096,7 @@ function initThemes() {
                     <div class="special-card-subtitle">${t('custom.new_theme_subtitle')}</div>
                 `;
         addCard.onclick = openAddThemeModal;
+        A11y.activatable(addCard);
         container.appendChild(addCard);
 
         if (themeList.length === 0) {
@@ -2118,7 +2166,7 @@ function renderFavoritesThemes(container) {
     matches.forEach(({ theme, ci, si, ti }) => {
         const card = createThemeCard(theme, () => {
             openThemeAt(ci, si, ti);
-        }, { onFavoriteToggle: () => renderFavoritesThemes(container) });
+        }, { onFavoriteToggle: () => A11y.keepFocus(container, () => renderFavoritesThemes(container)) });
         container.appendChild(card);
     });
     applyStagger(container);
@@ -2212,6 +2260,10 @@ function updateModeLocks() {
 function renderModeCard(cardId, mode, unlocked, title, description, lockMessage) {
     const card = document.getElementById(cardId);
     card.classList.toggle('locked', !unlocked);
+    // Verrouillée, la carte reste atteignable et activable (le clic explique ce
+    // qui la débloquera) mais s'annonce comme indisponible.
+    if (unlocked) card.removeAttribute('aria-disabled');
+    else card.setAttribute('aria-disabled', 'true');
     if (unlocked) {
         card.innerHTML = `<h3>${title}</h3><p>${description}</p>`;
         card.onclick = () => startActualGame(mode);
@@ -2502,7 +2554,10 @@ function renderQuizQuestion() {
     const optionsContainer = document.getElementById('quiz-options');
     optionsContainer.innerHTML = '';
 
-    if (document.activeElement) document.activeElement.blur();
+    // La carte-question reçoit le focus (et non plus un simple blur) : les
+    // options viennent d'être reconstruites, et Tab doit repartir de la
+    // question, pas du bouton « Quitter ».
+    A11y.focusQuestion('screen-quiz');
     optionsContainer.style.pointerEvents = 'none';
     requestAnimationFrame(() => {
         optionsContainer.style.pointerEvents = 'auto';
@@ -2836,7 +2891,7 @@ function renderSimultaneityQuestion() {
 
     const container = document.getElementById('simul-options');
     container.innerHTML = '';
-    if (document.activeElement) document.activeElement.blur();
+    A11y.focusQuestion('screen-simultaneity');
     container.style.pointerEvents = 'none';
     requestAnimationFrame(() => { container.style.pointerEvents = 'auto'; });
 
@@ -2995,6 +3050,7 @@ function renderOrdreRound() {
     isAnimating = false;
     ordreAttempt = [];
     questionStartTime = Date.now();
+    A11y.focusQuestion('screen-ordre');
 
     document.getElementById('ordre-reveal').classList.add('hidden');
     document.getElementById('ordre-reset-btn').classList.add('hidden');
@@ -3056,7 +3112,9 @@ function tapOrdreCard(eventId) {
     } else {
         ordreAttempt.push(eventId);
     }
-    renderOrdreCards();
+    // Chaque tap reconstruit les cinq cartes : sans cela le focus retombait sur
+    // <body> et il fallait retabuler depuis le haut après chaque carte.
+    A11y.keepFocus(document.getElementById('ordre-cards'), renderOrdreCards);
 
     if (ordreAttempt.length === ordreRounds[ordreIndex].cards.length) {
         answerOrdre();
@@ -3067,6 +3125,10 @@ function resetOrdreAttempt() {
     if (isAnimating) return;
     ordreAttempt = [];
     renderOrdreCards();
+    // Le bouton qui vient d'être actionné se masque avec le classement vide :
+    // le focus passe à la première carte plutôt que de se perdre.
+    const first = document.querySelector('#ordre-cards .ordre-card');
+    if (first) first.focus({ preventScroll: true });
 }
 
 function answerOrdre() {
@@ -3370,6 +3432,11 @@ function renderCurseurRound() {
     document.getElementById('curseur-kicker').innerText =
         t('curseur.kicker_tolerance', { tolerance: round.tolerance });
 
+    // Le focus va au curseur lui-même : c'est ce qu'on manipule, et le bouton
+    // « Valider » se désactive une fois la réponse donnée (le focus s'y
+    // perdait). Un <input type="range"> focalisé n'ouvre aucun clavier à l'écran.
+    range.focus({ preventScroll: true });
+
     document.getElementById('curseur-hud-count').innerText =
         `${curseurIndex + 1} / ${curseurRounds.length}`;
     document.getElementById('curseur-progress-fill').style.width =
@@ -3471,7 +3538,7 @@ function renderIntrusQuestion() {
 
     const container = document.getElementById('intrus-options');
     container.innerHTML = '';
-    if (document.activeElement) document.activeElement.blur();
+    A11y.focusQuestion('screen-intrus');
     container.style.pointerEvents = 'none';
     requestAnimationFrame(() => { container.style.pointerEvents = 'auto'; });
 
@@ -3886,6 +3953,7 @@ function renderPeriodesQuestion() {
     }
 
     isAnimating = false;
+    A11y.focusQuestion('screen-periodes');
     const q = periodesQuestions[periodesIndex];
 
     document.getElementById('periodes-kicker').innerText = q.kicker;
@@ -4623,15 +4691,21 @@ function toggleAxesLegendPin() {
 function renderTimeline() {
     const timeline = document.getElementById('timeline');
     const isPlaying = currentMode !== 'discovery';
-    timeline.className = isPlaying ? 'chrono playing' : 'chrono';
-    timeline.innerHTML = '';
+    // Chaque placement reconstruit toute la frise, ce qui détruisait le
+    // créneau qui avait le focus. On en retient la position : après un
+    // placement, le focus reste au voisinage de la carte posée, et l'on peut
+    // continuer à parcourir la frise de là plutôt que du haut de la page.
+    A11y.keepFocus(timeline, () => {
+        timeline.className = isPlaying ? 'chrono playing' : 'chrono';
+        timeline.innerHTML = '';
 
-    renderAxesLegend();
+        renderAxesLegend();
 
-    for (let i = 0; i <= placedEvents.length; i++) {
-        if (isPlaying) timeline.appendChild(buildSlot(i));
-        if (i < placedEvents.length) timeline.appendChild(buildEntry(placedEvents[i]));
-    }
+        for (let i = 0; i <= placedEvents.length; i++) {
+            if (isPlaying) timeline.appendChild(buildSlot(i));
+            if (i < placedEvents.length) timeline.appendChild(buildEntry(placedEvents[i]));
+        }
+    });
 }
 
 // Libellé de l'intervalle : « Avant 1789 », « Entre 1789 et 1848 », « Après 1981 »
@@ -4694,6 +4768,7 @@ function buildEntry(evt) {
             openModal(evt);
         }
     };
+    A11y.activatable(row);
     return row;
 }
 

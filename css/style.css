@@ -1100,7 +1100,12 @@ body {
     border: 1px solid var(--border-soft);
     border-radius: 9999px;
     font: inherit;
-    font-size: 15px;
+    /* 16 px et pas moins : sous ce seuil, iOS zoome dans la page à chaque
+       focus d'un champ. Cela ne se voyait pas tant que la balise viewport
+       interdisait le zoom (maximum-scale=1.0 le masquait) ; une fois le zoom
+       rendu aux utilisateurs, c'est ce qui l'aurait réactivé en pleine
+       saisie. Voir e2e/clavier.spec.js qui garde cette valeur. */
+    font-size: 16px;
     background: #ffffff !important;
     color: #141d23 !important;
 }
@@ -2868,6 +2873,12 @@ textarea.form-input {
 .fil-hint-btn:disabled {
     opacity: 0.4;
     cursor: not-allowed;
+}
+
+.ecart-chances-badge {
+    /* Simple compteur : il réutilise l'apparence de .fil-hint-btn mais n'a
+       aucun clic, et son curseur « main » promettait une action inexistante. */
+    cursor: default;
 }
 
 .fil-era-btn {
@@ -6187,4 +6198,109 @@ textarea {
     .mindmap-branch-body {
         padding: 0 14px 14px;
     }
+}
+
+
+/* =========================================================================
+   ACCESSIBILITÉ : FOCUS, TACTILE (voir js/a11y.js et e2e/clavier.spec.js)
+   ========================================================================= */
+
+/* Couleur de l'anneau de focus, une par thème : le bleu marine de l'app est
+   invisible sur fond sombre, et le jaune illisible sur fond clair. */
+:root {
+    --focus-ring: #0B57D0;
+}
+
+:root[data-theme="dark"] {
+    --focus-ring: #FFD54A;
+}
+
+/* Anneau pour le seul clavier (:focus-visible : un clic à la souris ou un tap
+   ne le déclenche pas). Décalé de 3 px pour se dessiner sur le fond de la
+   page et non sur la couleur de l'élément — c'est ce qui le garde lisible
+   autour d'une carte bleu marine comme d'une carte jaune. */
+:focus-visible {
+    outline: 3px solid var(--focus-ring);
+    outline-offset: 3px;
+}
+
+/* Tout ce qui est en tabindex="-1" — conteneurs d'écran, de modale, cartes-
+   questions — ne reçoit le focus que par programme (voir A11y.focusScreen et
+   A11y.focusQuestion) pour que Tab reparte du bon endroit : un anneau autour
+   d'une page entière n'aurait aucun sens. */
+[tabindex="-1"]:focus {
+    outline: none;
+}
+
+/* …sauf l'accueil, qui EST le bouton « Commencer » : son anneau se dessine
+   à l'intérieur de l'écran, faute de place autour. Un contour (outline) n'y
+   suffit pas : l'image de fond et son voile sont des enfants positionnés
+   (z-index 1 et 2), peints PAR-DESSUS le contour de leur parent, qui n'y
+   laissait qu'un liseré pâle. Un pseudo-élément placé au-dessus d'eux, doublé
+   d'un filet blanc des deux côtés, reste lisible sur toute l'image. */
+#screen-home:focus-visible {
+    outline: none;
+}
+
+#screen-home:focus-visible::after {
+    content: "";
+    position: absolute;
+    inset: 12px;
+    z-index: 10;
+    border: 4px solid var(--focus-ring);
+    border-radius: 20px;
+    box-shadow: 0 0 0 3px #fff, inset 0 0 0 3px #fff;
+    pointer-events: none;
+}
+
+/* Le champ de recherche supprimait son propre contour (outline: none) sans
+   rien mettre à la place : le focus y était invisible. On le rend à sa barre. */
+.search-bar:focus-within {
+    outline: 3px solid var(--focus-ring);
+    outline-offset: 2px;
+}
+
+.form-input:focus-visible {
+    outline: 3px solid var(--focus-ring);
+    outline-offset: 2px;
+}
+
+/* Carte-thème : le titre est le contrôle principal, l'étoile et la corbeille
+   des contrôles frères (voir js/app.js: createThemeCard). Sur un navigateur
+   qui sait :has(), l'anneau entoure la CARTE entière quand son titre a le
+   focus — un anneau autour du seul texte, posé sur le dégradé bleu, serait
+   illisible. Les autres reviennent à un contour blanc sur le dégradé. */
+.data-card-title:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+.data-card-fav:focus-visible,
+.data-card-delete:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+    border-radius: 6px;
+}
+
+@supports selector(:has(*)) {
+    .data-card-title:focus-visible {
+        outline: none;
+    }
+
+    .data-card:has(.data-card-title:focus-visible) {
+        outline: 3px solid var(--focus-ring);
+        outline-offset: 3px;
+    }
+}
+
+/* Zoom au double-tap : le zoom par pincement est rendu aux utilisateurs (la
+   balise viewport ne l'interdit plus), mais le double-tap, lui, se déclencherait
+   au milieu d'une partie — le Blitz enchaîne les taps en moins d'une demi-
+   seconde. `manipulation` supprime ce seul geste et garde le pincement. Même
+   liste que Bootstrap (reboot) ; le curseur de date en est exclu, qu'on fait
+   glisser plutôt que taper. */
+a, area, button, [role="button"], [role="checkbox"],
+input:not([type="range"]), label, select, summary, textarea {
+    touch-action: manipulation;
 }

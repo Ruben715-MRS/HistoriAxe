@@ -520,6 +520,142 @@ redonne exactement le même tirage — c'est ce que vérifie
 `e2e/defi-simultaneite.spec.js`, avec son pendant sans DOM dans
 `tests/simultaneity.test.js`.
 
+## Accessibilité : le clavier et le zoom
+
+Jusqu'ici l'app ne se jouait qu'au doigt ou à la souris. Un inventaire des
+écrans, fait en parcourant l'app dans un vrai navigateur (voir
+`e2e/clavier.spec.js`), comptait **59 éléments cliquables sans accès
+clavier** — à commencer par l'écran d'accueil tout entier, un
+`<div onclick>` : au clavier, on ne pouvait littéralement pas démarrer
+l'app. S'y ajoutaient l'absence de tout anneau de focus global, un champ de
+recherche dont le focus était supprimé (`outline: none`), aucune gestion du
+focus entre écrans ni dans les modales, et une balise viewport qui
+interdisait tout zoom (`user-scalable=no`, critère WCAG 1.4.4).
+
+### Le zoom
+
+La balise viewport n'interdit plus de zoomer. Retirer `maximum-scale=1.0` ne
+suffisait pas : il masquait en silence deux défauts, qu'il a fallu régler
+avant de le supprimer.
+
+- **Le zoom automatique d'iOS.** Sous 16 px, iOS zoome dans la page à chaque
+  focus d'un champ. Huit champs (tous les `.form-input`) étaient à 15 px :
+  le zoom se serait déclenché en pleine saisie d'un pseudo ou d'un thème.
+- **Le zoom au double-tap.** Le Blitz enchaîne les taps en moins d'une
+  demi-seconde. `touch-action: manipulation` supprime ce seul geste et garde
+  le pincement (même liste que le reboot de Bootstrap ; le curseur d'année
+  en est exclu, qu'on fait glisser).
+
+### Le clavier : `role="button"` + `tabindex="0"`, pas des `<button>`
+
+`js/a11y.js` rend activable au clavier tout ce qui se clique, avec un seul
+gestionnaire de touches global : Entrée active un bouton, l'Espace aussi (au
+relâchement, comme un vrai bouton) et bascule une case à cocher — jamais
+Entrée, qui ne coche pas une case selon la convention ARIA. Une touche
+maintenue enfoncée ne relance pas l'action.
+
+Le `<button>` natif serait préférable en principe, mais la quarantaine de
+sites concernés (cartes de mode, de catégorie, de thème, d'axe…) portent des
+styles propres : les convertir demandait de réinitialiser le rendu d'un
+bouton à chaque fois, avec un risque visuel réel pour un gain nul. Là où
+l'élément est déjà un vrai `<button>` (créneaux de la frise, options de quiz,
+pions de la carte), rien n'a changé.
+
+Trois conséquences de conception :
+
+- **Un `button` ne contient pas un autre `button`.** La carte-thème porte une
+  étoile de favori et, pour un thème personnalisé, une corbeille. Rendre la
+  carte focalisable aurait imbriqué trois contrôles : les lecteurs d'écran
+  n'exposent alors pas l'intérieur. Le **titre** est le contrôle principal,
+  l'étoile et la corbeille des contrôles frères, et la carte garde son clic à
+  la souris. Elle se déclare `data-kbd-proxy` : son équivalent clavier est
+  ailleurs. C'est aussi le cas d'une ligne de la Sélection, dont la case à
+  cocher native est le contrôle clavier.
+- **Un axe se coche : c'est un `role="checkbox"`** avec `aria-checked`, pas un
+  bouton. Une carte de mode **verrouillée** reste atteignable et activable
+  (son clic explique ce qui la débloquera) mais s'annonce `aria-disabled`.
+- **Les pions du Mode Carte se nomment par leur pays** (« Option 2 : Suisse »)
+  au lieu d'un « Option 2 » qui ne désigne rien pour qui ne voit pas la
+  carte. Ce n'est pas un indice de plus pour les autres : un `aria-label` ne
+  s'affiche jamais.
+
+### Le focus
+
+- **Entre écrans** (`A11y.focusScreen`, appelé par `showScreen`) : le focus
+  passe au conteneur du nouvel écran, faute de quoi l'élément choisi
+  disparaissait avec l'écran quitté, le focus retombait sur `<body>`, et Tab
+  repartait du haut du *document*. On focalise le conteneur plutôt que le
+  titre, qui se trouve souvent après un bouton de retour que Tab sauterait.
+  **Jamais avant une première action** : au chargement, `showScreen` vole sinon
+  le focus à l'accueil, et le premier Tab repart vers le navigateur.
+- **Dans les modales** : `role="dialog"` + `aria-modal`, focus piégé (Tab ne
+  sort jamais, dans les deux sens), Échap ferme la modale du dessus (celle au
+  z-index le plus haut — la confirmation, à 105, s'ouvre par-dessus les
+  autres), et le focus revient à l'élément qui l'avait ouverte. Le focus entre
+  sur le conteneur et non sur le premier champ, pour ne pas ouvrir le clavier
+  à l'écran sur mobile à chaque ouverture.
+- **À chaque question** (`A11y.focusQuestion`, balise `data-focus-target`) :
+  les options viennent d'être reconstruites, le bouton pressé n'existe plus.
+  Le focus va à la carte-question, pas à la première option : une touche
+  Entrée enfoncée trop longtemps ne doit pas répondre toute seule à la
+  question suivante.
+- **Après une reconstruction** (`A11y.keepFocus`) : cocher un axe, choisir une
+  longueur de manche, étoiler un favori, toucher une carte de la Remise en
+  ordre ou placer un repère sur la frise reconstruisent leur liste. Le focus
+  est rendu à la même *position*, sans quoi chaque geste renvoyait au haut de
+  l'écran.
+
+L'anneau de focus (`:focus-visible`, donc jamais au clic ni au toucher) a une
+couleur par thème : le bleu marine de l'app est invisible sur fond sombre, le
+jaune illisible sur fond clair. Il est décalé de 3 px pour se dessiner sur le
+fond de la page et non sur la couleur de l'élément. Deux cas particuliers :
+l'accueil, dont l'image de fond et son voile sont peints *par-dessus* le
+contour de leur parent (un pseudo-élément doublé d'un filet blanc les passe
+au-dessus), et la carte-thème, dont l'anneau entoure la carte entière quand
+son titre a le focus (`:has()`) plutôt que le seul texte posé sur le dégradé.
+
+### Les tests
+
+`tests/a11y.test.js` (28) couvre sans navigateur la logique de décision (quelle
+touche active quoi, où va le focus piégé, quelle modale est au-dessus) et des
+gardes sur les fichiers statiques : viewport, `role` + `tabindex` sur chaque
+élément cliquable de `index.html`, taille des champs, anneau de focus.
+
+`e2e/clavier.spec.js` (17) obéit à une règle : **ne jamais poser le focus à la
+main avant d'agir**. On appuie sur Tab, comme quelqu'un sans souris, jusqu'à
+tomber sur l'élément visé — un `locator.focus()` suivi d'Entrée prouverait que
+l'élément réagit à Entrée, pas qu'on peut l'atteindre, et c'est précisément
+l'atteignabilité qui manquait. Son parcours mène de l'accueil à une question
+de Quiz sans toucher la souris.
+
+Il embarque un détecteur de zones cliquables hors d'atteinte du clavier (tout
+ce qui a `cursor: pointer` ou un `onclick`) lancé sur une trentaine d'écrans,
+**et un test qui vérifie que ce détecteur détecte** : sans lui, un détecteur
+qui ne trouverait jamais rien passerait pour une app irréprochable. Les
+garde-fous ont par ailleurs été éprouvés par mutation — remettre
+`user-scalable=no`, repasser un champ à 15 px, retirer le `tabindex` de
+l'accueil, désactiver `focusScreen`, le piège à focus ou `keepFocus` : chacun
+fait échouer le test qui le garde, et lui seul.
+
+### Ce qui n'est pas fait
+
+Cette passe porte sur le clavier et le zoom. Restent, tels que l'audit les a
+mesurés :
+
+- **Contrastes insuffisants** (7 nœuds « serious » rien que sur l'écran des
+  catégories, d'après axe-core).
+- **Repères de page** : aucun landmark, aucun `<h1>`.
+- **Annonces aux lecteurs d'écran** : score, vies et retour juste/faux d'une
+  réponse ne sont pas dans une zone `aria-live` ; un changement d'écran
+  n'est pas annoncé.
+- **La frise au clavier est jouable, mais lente** : on parcourt les créneaux
+  un à un avec Tab, sans saut direct. Le focus reste au voisinage de la carte
+  posée, mais une frise de 200 repères demanderait une vraie navigation
+  (flèches, saut par siècle).
+- **« Le fil du temps » et « Trouve l'écart » n'acceptent pas encore la
+  saisie des chiffres au clavier physique** : le pavé numérique est à l'écran
+  (ses touches sont de vrais boutons, donc atteignables).
+
 ## Développement
 
 ```bash
@@ -540,8 +676,8 @@ et un `fetch` — c'est-à-dire de la quasi-totalité de l'interface.
 
 `npm run test:e2e` (Playwright, `e2e/`) comble ce trou en ouvrant un vrai
 navigateur sur le site servi tel qu'il l'est en production
-(`e2e/server.js`, un serveur statique sans dépendance). Neuf parcours,
-56 tests, une minute :
+(`e2e/server.js`, un serveur statique sans dépendance). Dix parcours,
+73 tests, moins de deux minutes :
 
 - `e2e/modes.spec.js` — chaque mode de jeu se lance et répond à une
   première interaction. C'est la famille de régressions déjà vécue ici :
@@ -560,6 +696,12 @@ navigateur sur le site servi tel qu'il l'est en production
   dont l'ancre est issue — l'asymétrie sans laquelle « ailleurs » serait un
   mensonge. La génération elle-même, sans DOM, est couverte par `npm test`
   (`tests/simultaneity.test.js`).
+- `e2e/clavier.spec.js` — l'app prise au clavier seul, et le zoom rendu : un
+  parcours de l'accueil à une question de Quiz où l'on n'appuie que sur Tab,
+  Entrée et Espace, les modales (focus piégé, Échap, retour du focus), les
+  cases à cocher d'axe, et un détecteur de zones cliquables hors d'atteinte du
+  clavier qui vérifie sa propre capacité à détecter. La logique de décision,
+  sans DOM, est couverte par `npm test` (`tests/a11y.test.js`, 28 tests).
 - `e2e/nouveaux-modes.spec.js` — les quatre modes fabriqués depuis les
   seules dates : chacun se lance depuis sa carte et répond à une première
   interaction, mais surtout ce qui doit rester caché le reste — aucune date

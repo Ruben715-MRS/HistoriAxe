@@ -130,7 +130,13 @@ test('Chrono et Expert restent verrouillés tant que le thème n’est pas entam
     // plutôt que de lancer une partie.
     for (const id of ['#mode-card-chrono', '#mode-card-expert']) {
         await expect(page.locator(id)).toHaveClass(/locked/);
-        await page.locator(id).click();
+        // Verrouillée, la carte s'annonce indisponible (aria-disabled) tout en
+        // restant activable : son clic explique ce qui la débloquera.
+        // Playwright tient un élément aria-disabled pour « non actionnable » et
+        // attendrait en vain, d'où `force` — c'est précisément ce comportement,
+        // un clic qui répond malgré l'état annoncé, qui est testé ici.
+        await expect(page.locator(id)).toHaveAttribute('aria-disabled', 'true');
+        await page.locator(id).click({ force: true });
         await expect(page.locator('#modal-confirm')).toBeVisible();
         await expect(page.locator('#confirm-message')).not.toBeEmpty();
         await page.locator('#confirm-ok-btn').click();

@@ -65,9 +65,14 @@ test('sans historique, le défi est visible mais verrouillé', async ({ page }) 
     // Visible et non caché : un mode qu'on ne voit pas ne donne envie de rien.
     await expect(bouton).toBeVisible();
     await expect(bouton).toHaveClass(/locked/);
+    // Annoncé indisponible aux lecteurs d'écran, mais toujours activable.
+    await expect(bouton).toHaveAttribute('aria-disabled', 'true');
 
     // Le clic explique ce qui l'ouvrira, plutôt que de ne rien faire.
-    await bouton.click();
+    // `force` : Playwright tient un élément aria-disabled pour « non
+    // actionnable » et attendrait en vain ; c'est justement le clic qui répond
+    // malgré l'état annoncé que ce test vérifie.
+    await bouton.click({ force: true });
     await expect(page.locator('#modal-confirm')).toBeVisible();
     await expect(page.locator('#modal-confirm')).toContainText('20');
     await expect(page.locator('#screen-simultaneity')).toBeHidden();
