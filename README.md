@@ -632,9 +632,69 @@ Les règles de rédaction, vérifiées par script et par test (voir plus bas) :
 - **⭐ Incontournables** (`essentiel`) : 20 sur 60 pour la France.
 
 Quantités visées : 60 personnages pour la France, 80 à 100 pour l'Amérique
-hispanique (une vingtaine de pays, de 2 à 14 figures chacun), une soixantaine
+hispanique (dix-neuf pays, de 1 à 19 figures chacun), une soixantaine
 pour le Maghreb, 40 pour les grands pays, 30 pour les autres. À 6 axes, 30
 donne environ 5 par axe — le minimum pour qu'un axe joué seul reste un jeu.
+
+### Le premier bloc : l'Amérique hispanique
+
+`pan_hispam`, « Grandes figures d'Amérique hispanique » : **97 personnages de
+19 pays** — Mexique 19, Argentine 14, Chili 8, Venezuela 8, Cuba 7, Pérou 7,
+Colombie 6, Uruguay 5, Équateur 4, Bolivie, Nicaragua et Paraguay 3 chacun,
+Costa Rica, Guatemala et Honduras 2 chacun, et un seul pour le Panama, le
+Salvador, la République dominicaine et Porto Rico. Par axe : 27 Guerres et
+résistances, 24 Littérature et pensée, 22 Chefs d'État, 10 Beaux-arts, 9
+Musique et spectacle, 5 Sciences et découvertes (l'axe le plus mince — voir
+plus bas pourquoi) ; 32 ⭐ et 17 biographies liées.
+
+Les choix qui ne vont pas de soi :
+
+- **« Hispanique », et non « latine »** : le Brésil, d'une autre langue et d'une
+  autre histoire, aura son propre thème ; Haïti ou le Belize n'ont pas leur
+  place dans une région qu'unit l'espagnol.
+- **Le Mexique pèse près d'un cinquième** (19 sur 97), l'Argentine suit avec
+  14 : un bloc se tient à la population et au rôle historique, pas à
+  l'égalité des pays. Le constructeur ne prévient qu'au-delà de 20 figures par
+  pays.
+- **Six figures d'avant la Conquête ou de ses premières années** (Pakal,
+  Nezahualcóyotl, Moctezuma II, Cuauhtémoc, Pachacútec, Atahualpa) et trois
+  chefs de la résistance indienne (Lautaro, Túpac Amaru II, Túpac Katari) :
+  les peuples d'avant l'Espagne ne sont pas un prologue. Leurs images sont
+  d'époque coloniale ou plus tardives, et les légendes le disent.
+- **Un personnage, un pays — celui qui l'honore le plus.** Che Guevara
+  (Rosario) et le pape François sont argentins, Carlos Gardel aussi (Toulouse
+  ou Tacuarembó : la querelle est écrite telle quelle dans sa fiche) ;
+  Bolívar est vénézuélien, bien que cinq pays le tiennent pour leur libérateur.
+- **Pas de vivants** (la phrase d'ouverture exige une année de décès), et ni
+  sportifs ni entrepreneurs, comme dans la France.
+
+### Ce que les images ont écarté
+
+La règle « libre aussi aux États-Unis » (plus bas) coûte plus cher en
+Amérique latine qu'en France : nombre de photographies du milieu du XXe siècle
+y avaient une durée de protection très courte (20 ans en Argentine et en
+Italie, 25 à Cuba, 25 à 50 ans en Finlande), ce qui les rend « domaine public »
+pour Commons — mais seules celles qui l'étaient déjà en 1996 l'étaient aussi aux
+États-Unis ; les autres y ont été rétablies. Faute d'image libre, **huit figures
+prévues ont été retirées** de la liste de départ (99 noms), et six autres
+les ont remplacées pour tenir les pays et les axes :
+
+| Retiré | Pourquoi | Remplacé par |
+|---|---|---|
+| Luis Federico Leloir, César Milstein | photographies argentines sans balise américaine, ou postérieures à 1975 | José Gregorio Hernández (Venezuela, sciences) |
+| Roberto Matta | seule une photographie de fresque murale, œuvre protégée, est sous licence libre | Claudio Arrau (Chili, musique) |
+| Jorge Eliécer Gaitán | photographies colombiennes de 1936 et de 1948, rétablies aux États-Unis | Antonio Nariño (Colombie) |
+| Julia de Burgos | seulement une photographie de statue | Ramón Emeterio Betances (Porto Rico) |
+| Jesús Soto | aucun portrait exploitable | Arturo Michelena (Venezuela, beaux-arts) |
+| Víctor Jara | la seule photographie solide est finlandaise, de 1969 : libre en Finlande, rétablie aux États-Unis | — (le Chili compte 8 figures) |
+| Jacobo Árbenz | portraits officiels guatémaltèques de 1951, dans le même cas | Justo Rufino Barrios (Guatemala) |
+
+Florentino Ameghino a aussi été écarté, pour un autre motif : sa naissance est
+disputée (Luján en 1854, ou Moneglia en 1853 selon sa propre lettre), et une
+date contestée n'a rien à faire dans une question de chronologie. Eugenio María
+de Hostos, envisagé pour Porto Rico, n'a pas d'article en français vers lequel
+renvoyer. Si une image convenable apparaît pour l'un d'eux, il se réintègre en
+ajoutant sa fiche à `scripts/pantheon/hispam.json`.
 
 ### Un fichier source par panthéon, un script qui l'écrit dans `data/fr.json`
 
@@ -651,10 +711,10 @@ retoucher le thème à la main dans `fr.json` fait échouer `npm test`.
 
 Le constructeur applique les règles ci-dessus *avant* d'écrire, et celle qui
 vaut entre thèmes — un personnage, un seul thème, par article Wikipédia et par
-biographie ; il prévient quand un pays pèse trop peu (moins de 2) ou trop (plus
-de 14) dans un bloc. Les mêmes règles, côté JavaScript, sont reprises par
-`tests/data-schema.test.js` et `tests/pantheon.test.js` pour qu'une régression
-venue d'ailleurs soit attrapée elle aussi.
+biographie ; il refuse un pays déclaré sans aucune figure et prévient quand un
+pays pèse trop (plus de 20) dans un bloc. Les mêmes règles, côté JavaScript,
+sont reprises par `tests/data-schema.test.js` et `tests/pantheon.test.js` pour
+qu'une régression venue d'ailleurs soit attrapée elle aussi.
 
 ### Portraits
 
@@ -698,9 +758,10 @@ partout : une photographie française publiée après 1930 peut être restée
 protégée aux États-Unis (loi URAA). Pour cette raison, les portraits de Piaf
 (photo de 1946 du studio Harcourt) et de Lumière (1948) ont été remplacés par
 des images dont la licence est explicite (Piaf en 1962, archives néerlandaises,
-CC0 ; Lumière vers 1890). Répartition finale : 53 domaine public, 4 CC0, 3 CC BY
-ou CC BY-SA. Trois portraits du XXe siècle reposent sur un raisonnement plus
-fin que « ancien », à relire si l'on veut être plus strict :
+CC0 ; Lumière vers 1890). Répartition finale : France, 53 domaine public, 4 CC0,
+3 CC BY ou CC BY-SA ; Amérique hispanique, 75 domaine public, 2 CC0, 8 CC BY,
+12 CC BY-SA. En France, trois portraits du XXe siècle reposent sur un
+raisonnement plus fin que « ancien », à relire si l'on veut être plus strict :
 
 - **Jean Moulin** (Harcourt, 1937) : œuvre collective, dont le délai français de
   50 ans était expiré avant 1996, donc non rétablie aux États-Unis ;
@@ -711,25 +772,86 @@ fin que « ancien », à relire si l'on veut être plus strict :
   américain de la collection du *World-Telegram*, même bibliothèque.
 
 (De Gaulle est une photographie de l'Office of War Information, œuvre du
-gouvernement fédéral américain.) Un portrait sous licence CC BY ou CC BY-SA
-porte dans la fiche son auteur, le **lien vers le texte de la licence**, la
-mention « image recadrée » et le lien vers la page de l'œuvre : c'est ce que
-ces licences exigent.
+gouvernement fédéral américain.)
 
-**Récupération** : `python3 scripts/fetch_portraits.py fr` lit auteur et
-licence sur la page HTML du fichier (les API de métadonnées sont fermées aux
-IP partagées des environnements en nuage, la page HTML ne l'est pas), télécharge
-la miniature, la recadre en 4:5 et l'écrit en 320 × 400. Une requête à la fois,
-une pause entre deux, un `User-Agent` qui dit qui on est, reprise après un 429.
-`recadrage` serre le cadre sur le visage ; `largeur` impose 500 ou 960 px si
-Commons refuse l'une des deux pour un fichier donné. `--check` contrôle sans
-réseau (existence, dimensions, licence).
+L'Amérique hispanique en compte vingt, parce que ses photographies du XXe
+siècle y sont libres par une durée nationale très courte bien plus souvent que
+par l'ancienneté. Les voici, pour qui voudrait être plus strict (les
+peintures, gravures et photographies d'avant 1931, les œuvres du gouvernement
+fédéral — Houssay, Gallegos, Chamorro, Torrijos — et les licences CC de
+photographes ou d'institutions identifiés n'appellent pas de réserve) :
+
+- **Quatorze photographies à deux balises, nationale et « États-Unis »** :
+  protection de 20 ans après la publication en Argentine (Gardel 1933, Storni,
+  Perón, Borges par Grete Stern en 1951, Cortázar 1967, Evita, Guayasamín et
+  Mercedes Sosa par Annemarie Heinrich, Piazzolla 1965, Violeta Parra 1973),
+  au Pérou (Vallejo 1929) et en Italie (Mgr Romero 1940) ; 25 ans en Espagne
+  pour une photographie simple (Carpentier 1955) ; en Suède, pour une
+  photographie d'avant 1976 sous le seuil d'originalité (Mistral 1945).
+  Chacune porte la balise qui dit qu'elle était déjà libre le 1er janvier
+  1996, donc que le rétablissement américain ne l'a pas touchée ; la date de
+  publication est celle que donne la page du fichier, que rien ici ne permet
+  de vérifier.
+- **Deux photographies cubaines** (Celia Cruz 1957, le Che le 2 juin 1959) :
+  le modèle cubain porte lui-même le raisonnement américain (publiée à Cuba
+  avant le 20 février 1972, sans les formalités américaines). L'auteur du Che
+  est inconnu, celui de Celia Cruz n'est donné qu'avec un « probablement ».
+- **Fidel Castro** (15 avril 1959) : collection *U.S. News & World Report* de
+  la Bibliothèque du Congrès, « aucune restriction connue » — le même
+  raisonnement que pour Matisse et Camus. Le don de la collection ne couvre
+  que les photographes salariés du magazine, et la page de ce cliché n'en
+  nomme aucun.
+- **Trois licences CC posées par un tiers**, plausibles mais invérifiables
+  d'ici : Wifredo Lam (CC BY 3.0, archives photographiques de José
+  Gómez-Sicre, dont se dit propriétaire l'utilisateur de Wikipédia en anglais
+  qui a versé le cliché), Lázaro Cárdenas (1934, CC BY 2.5, archive du
+  photographe Aurelio Escobar Castellanos, avec l'autorisation de ses
+  « titulaires moraux ») et Luis Barragán (1981, CC BY 3.0, par celui qui se
+  déclare l'auteur du cliché).
+
+Un portrait est à part : celui de **Juan Santamaría**, héros national du Costa
+Rica, qui est la photographie de sa statue (1891) par un contributeur, sous
+licence CC BY-SA 4.0, faute de portrait libre ; la légende le dit.
+
+Un portrait sous licence CC BY ou CC BY-SA porte dans la fiche son auteur, le
+**lien vers le texte de la licence**, la mention « image recadrée » et le lien
+vers la page de l'œuvre : c'est ce que ces licences exigent.
+
+**Récupération** : `python3 scripts/fetch_portraits.py fr` (ou `hispam`…) lit
+auteur et licence sur la page HTML du fichier (les API de métadonnées sont
+fermées aux IP partagées des environnements en nuage, la page HTML ne l'est
+pas), télécharge la miniature, la recadre en 4:5 et l'écrit en 320 × 400. Une
+requête à la fois, une pause entre deux, un `User-Agent` qui dit qui on est,
+reprise après un 429. `recadrage` serre le cadre sur le visage ; `largeur` fixe
+la miniature demandée à Commons : 330, 500, 960, 1280 ou 1920 px, les seules
+qu'il rend sans peine (`0` : le fichier original, pour une image plus étroite
+que 330 px) ; à défaut, 500 px, ou 960 avec un recadrage. Les miniatures
+déjà calculées par Commons (330 px surtout) arrivent d'un coup ; les autres,
+qu'il doit fabriquer, se font attendre de 5 à 30 secondes et déclenchent des
+429 — d'où, pour 97 images, le choix pour chacune de la plus petite largeur qui
+laisse encore 320 px utiles après recadrage (le chiffre est inscrit dans
+le fichier source). Vingt images n'y parviennent pas, leur source étant plus
+étroite (184 px utiles pour Posada, le plus bas ; 214 pour Lam, 220 pour
+Pakal) : elles sont agrandies, donc un peu molles sur un écran à haute
+densité, mais passables à la taille d'affichage (160 × 200 px). `--check`
+contrôle sans réseau (existence, dimensions, licence).
+
+**Le script refuse ce qui est signalé sur Commons** : une page de fichier qui
+porte un bandeau de suppression (« nominated for deletion », « speedy
+deletion », « copyright violation »…) est écartée, quelle que soit sa licence.
+Il a ainsi arrêté, à la récupération de l'Amérique hispanique, le portrait de
+Carlos Gardel (suppression demandée en mars 2026 : son auteur n'est pas
+inconnu, c'est José María Silva, et la photographie reste protégée en Uruguay)
+et celui de Fidel Castro pris par Mondadori (suppression demandée en mai 2026,
+faute de licence établie), remplacés l'un par une photographie de 1933 aux
+deux balises, l'autre par un cliché de 1959 de la Bibliothèque du Congrès.
 
 **Poids** : JPEG de 320 × 400, 25 Ko en moyenne (62 au plus), soit 1,5 Mo pour
-les 60 de la France — de l'ordre de 20 Mo pour 800 portraits, quand `assets/`
-en pèse déjà 36. Le WebP gagnerait environ un tiers, mais la cible iOS actuelle
-(13, voir `ios/App/Podfile`) ne le lit pas : il attendra la migration vers
-Capacitor 7 (iOS 14+) déjà évoquée plus haut.
+les 60 de la France et 2,5 Mo pour les 97 de l'Amérique hispanique — de
+l'ordre de 20 Mo pour 800 portraits, quand `assets/` en pèse déjà 38. Le WebP
+gagnerait environ un tiers, mais la cible iOS actuelle (13, voir
+`ios/App/Podfile`) ne le lit pas : il attendra la migration vers Capacitor 7
+(iOS 14+) déjà évoquée plus haut.
 
 **Cache** : `sw.js` range les portraits dans un cache à part
 (`historiaxe-portraits-v1`), que le ménage de `activate` épargne. Rangés avec
@@ -779,11 +901,13 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
 
 ### Ce qui n'est pas fait
 
-- **Les autres panthéons** : seule la France est écrite. Viennent ensuite
-  l'Amérique hispanique (le premier bloc), le Maghreb, puis le Machrek (sans
-  Israël ni les figures juives, qui auront leur propre thème), le Brésil à
-  part, puis les autres pays — chaque liste de personnages validée avant la
-  rédaction.
+- **Les autres panthéons** : la France et l'Amérique hispanique sont écrites.
+  Viennent ensuite le Maghreb (seul d'abord), puis le Machrek (sans Israël ni
+  les figures juives, qui auront leur propre thème), le Brésil à part, puis
+  les autres pays — chaque liste de personnages validée avant la rédaction.
+- **Des figures de l'Amérique hispanique écartées faute de portrait libre**,
+  à réintégrer si une image convenable apparaît : voir « Ce que les images
+  ont écarté » plus haut.
 - **Les portraits des 360 Biographies** : le champ `image` les accepte déjà,
   il reste à les récupérer.
 - **Les portraits dans les autres modes de jeu** (Quiz, Périodes, Fil du

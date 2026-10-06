@@ -89,7 +89,10 @@ test('Personnages illustres : deux sous-catégories, chacune avec sa note et son
     expect(await visibleScreen(page)).toBe('screen-themes');
     await expect(page.locator('#theme-screen-title')).toHaveText('Panthéons');
     await expect(page.locator('#theme-screen-note-text')).toContainText('né dans les frontières actuelles');
-    await expect(page.locator('#themes-container .data-card-title')).toHaveText(['Grandes figures de France']);
+    // Un bloc de pays (l'Amérique hispanique) se range par son nom de source, « Amérique… »,
+    // avant « France » — et non par « Grandes figures d'… » / « … de ».
+    await expect(page.locator('#themes-container .data-card-title'))
+        .toHaveText(["Grandes figures d'Amérique hispanique", 'Grandes figures de France']);
 });
 
 test('la fiche d’un personnage montre son portrait, sa légende, son crédit et sa biographie', async ({ page }) => {
@@ -103,6 +106,8 @@ test('la fiche d’un personnage montre son portrait, sa légende, son crédit e
 
     await page.locator('#timeline .entry', { hasText: 'Naissance de Victor Hugo' }).click();
     await expect(page.locator('#modal-details')).toBeVisible();
+    // Le panthéon d'un pays n'affiche pas de pays : son thème le dit déjà.
+    await expect(page.locator('#modal-pays')).toBeHidden();
 
     // L'image a réellement chargé, et au bon format.
     const portrait = page.locator('#modal-portrait-img');
@@ -133,6 +138,48 @@ test('un personnage sans biographie n’a pas de bouton « Voir sa biographie »
     await expect(page.locator('#modal-details')).toBeVisible();
     await expect(page.locator('#modal-portrait-img')).toBeVisible();
     await expect(page.locator('#modal-bio-row')).toBeHidden();
+});
+
+test('la fiche d’une figure d’Amérique hispanique indique son pays, drapeau compris', async ({ page }) => {
+    await openThemeById(page, 'pan_hispam');
+    await page.locator('#mode-card-discovery').click();
+    await expect(page.locator('#screen-game')).toBeVisible();
+    const nombre = await page.evaluate(() => getCurrentTheme().events.length);
+    expect(nombre).toBeGreaterThanOrEqual(80);
+    expect(nombre).toBeLessThanOrEqual(100);
+    await expect(page.locator('#timeline .entry')).toHaveCount(nombre);
+    await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
+
+    await page.locator('#timeline .entry', { hasText: 'Naissance de Simón Bolívar' }).click();
+    await expect(page.locator('#modal-details')).toBeVisible();
+    await expect(page.locator('#modal-pays')).toBeVisible();
+    await expect(page.locator('#modal-pays')).toContainText('🇻🇪');
+    await expect(page.locator('#modal-pays')).toContainText('Venezuela');
+    // Sa biographie existe : le bouton y mène, comme pour la France.
+    await expect(page.locator('#modal-bio-btn')).toBeVisible();
+
+    // Une autre figure, d'un autre pays du bloc : le libellé suit l'événement.
+    await page.locator('#modal-details .close-btn').click();
+    await expect(page.locator('#modal-details')).toBeHidden();
+    await page.locator('#timeline .entry', { hasText: "Naissance d'Emiliano Zapata" }).click();
+    await expect(page.locator('#modal-pays')).toContainText('🇲🇽');
+    await expect(page.locator('#modal-pays')).toContainText('Mexique');
+});
+
+test('la recherche par nom de pays — sans accent — mène au panthéon de la région', async ({ page }) => {
+    await page.locator('#screen-home').click();
+    // « Équateur » n'est pas dans le nom du thème : il est dans ses mots-clés.
+    await page.locator('#theme-search-input').fill('equateur');
+    const resultat = page.locator('#theme-search-results .search-result-item', { hasText: "Grandes figures d'Amérique hispanique" });
+    await expect(resultat).toHaveCount(1);
+    await expect(resultat.locator('.search-result-path')).toContainText('Personnages illustres › Panthéons');
+
+    await resultat.click();
+    // Un thème à axes s'ouvre sur l'écran de filtre.
+    await page.waitForSelector('#screen-axes:not(.hidden), #screen-modes:not(.hidden)');
+    if (await visibleScreen(page) === 'screen-axes') {
+        await expect(page.locator('#axes-subtitle')).toContainText("Amérique hispanique");
+    }
 });
 
 test('en partie, la carte « À placer » porte le portrait, et la fiche n’offre pas de quitter la partie', async ({ page }) => {

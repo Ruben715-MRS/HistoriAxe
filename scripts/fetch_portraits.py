@@ -7,14 +7,17 @@
     python3 scripts/fetch_portraits.py fr --check         # hors réseau : contrôle l'existant
     python3 scripts/fetch_portraits.py hispam             # un panthéon de région : même chose
 
-Entrée et sortie : scripts/pantheon/<code>.json (`fr`, `hispam`…). Chaque personnage y porte un
-`portrait` : {fichier, legende, recadrage?, largeur?, auteur?, licence?}. Seuls
-`fichier` (nom du fichier sur Commons) et `legende` (écrite à la main, voir
-plus bas) sont à fournir ; `recadrage` ([x0, y0, x1, y1], en fractions de
-l'image) serre le cadre sur le visage, et `largeur` impose 500 ou 960 px si
-Commons refuse l'une des deux pour un fichier donné ; ce script remplit `auteur` et `licence` d'après la page du
-fichier, et écrit assets/portraits/pan_<code>_<slug>.jpg (320 × 400).
-Puis `python3 scripts/build_pantheon.py <code>` reporte le tout dans data/fr.json.
+Entrée et sortie : scripts/pantheon/<code>.json (`fr`, `hispam`…). Chaque
+personnage y porte un `portrait` : {fichier, legende, recadrage?, largeur?,
+auteur?, licence?}. Seuls `fichier` (nom du fichier sur Commons) et `legende`
+(écrite à la main, voir plus bas) sont à fournir ; `recadrage` ([x0, y0, x1, y1],
+en fractions de l'image) serre le cadre sur le visage, et `largeur` impose la
+largeur de la miniature demandée à Commons (330, 500, 960, 1280 ou 1920 : les
+seules qu'il rend sans peine ; `0` = le fichier original, pour une image plus
+étroite que la plus petite miniature) ; ce script remplit `auteur` et `licence`
+d'après la page du fichier, et écrit assets/portraits/pan_<code>_<slug>.jpg
+(320 × 400). Puis `python3 scripts/build_pantheon.py <code>` reporte le tout dans
+data/fr.json.
 
 Pourquoi lire la page du fichier plutôt que d'écrire la licence à la main : une
 licence mal recopiée, c'est un crédit faux dans l'application. Le script lit
@@ -239,9 +242,12 @@ def main():
                 refused.append(p['slug'])
                 print('    -> REFUSÉ : licence absente, non libre ou fichier signalé')
                 continue
+            largeur = portrait.get('largeur')
+            if largeur is None:
+                largeur = 960 if portrait.get('recadrage') else 500
             data = fetch('https://commons.wikimedia.org/wiki/Special:FilePath/'
                          + urllib.parse.quote(portrait['fichier'].replace(' ', '_'), safe='_()-,.')
-                         + f"?width={portrait.get('largeur') or (960 if portrait.get('recadrage') else 500)}")
+                         + (f'?width={largeur}' if largeur else ''))
             make_portrait(data, portrait.get('recadrage')).save(out, 'JPEG', quality=82, optimize=True, progressive=True)
             portrait['licence'] = chosen
             if not portrait.get('auteur') and meta['auteur'] and len(meta['auteur']) <= 90:

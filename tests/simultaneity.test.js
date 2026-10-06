@@ -371,6 +371,26 @@ test('« Grandes figures de France » reste jouable comme ancre : une session en
     });
 });
 
+test('« Grandes figures d’Amérique hispanique » : chaque ancre porte le pays de son événement, et la session se joue', () => {
+    // Un panthéon de bloc n'a pas de pays : sans `pays` sur chaque événement, toute la
+    // région recevrait la même étiquette de branche, et un événement vénézuélien
+    // passerait pour « ailleurs » face à la naissance de Bolívar à Caracas.
+    const theme = allThemes().find(t => t.id === 'pan_hispam');
+    assert.ok(theme, 'thème pan_hispam absent du pack français');
+    const index = S.buildTagIndex(frData.categories, { countryByTheme: geoMap });
+    theme.events.forEach(e => assert.equal(index[e.id], 'pays:' + e.pays, `étiquette de ${e.id}`));
+    assert.ok(new Set(theme.events.map(e => index[e.id])).size >= 15,
+        'au moins quinze pays distincts parmi les ancres du bloc');
+    const anchors = theme.events.map(e => Object.assign({}, e, { tag: index[e.id], themeName: theme.nom }));
+    const session = S.buildSession(anchors, realPool, { rng: seededRng(11), count: S.SESSION_ROUNDS });
+    assert.equal(session.length, S.SESSION_ROUNDS);
+    session.forEach(q => {
+        assert.ok(!/^pan_/.test(q.correct.themeId), 'la bonne réponse ne peut pas venir d’un panthéon');
+        assert.notEqual(q.correct.tag, q.anchor.tag,
+            `« ${q.correct.titre} » vient du même pays que l’ancre « ${q.anchor.titre} » : ce n’est pas un « ailleurs »`);
+    });
+});
+
 test('les gros thèmes du pack français remplissent une session entière', () => {
     const rng = seededRng(2024);
     ['thm_fr', 'thm_usa', 'thm_aut'].forEach(id => {
