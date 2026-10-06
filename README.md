@@ -451,7 +451,8 @@ l'identifiant du thème, jamais du nom de sa catégorie — qui change d'une
 langue à l'autre (même précaution que `js/geoMap.js: isGeoEligible`). Voir
 `Simultaneity.themeTag` : pays connu (`assets/geo/theme-country-map.json`,
 déjà là pour le Mode Carte), sinon convention `psn_<iso2>_` des programmes
-scolaires nationaux, sinon position dans l'arbre (indices, pas noms).
+scolaires nationaux ou `pan_<iso2>` des panthéons nationaux (voir
+« Personnages illustres »), sinon position dans l'arbre (indices, pas noms).
 
 ### Quatre contraintes, toutes mesurées sur les données
 
@@ -524,6 +525,215 @@ restent identiques jusqu'au lendemain**. Relancer le défi dans la journée
 redonne exactement le même tirage — c'est ce que vérifie
 `e2e/defi-simultaneite.spec.js`, avec son pendant sans DOM dans
 `tests/simultaneity.test.js`.
+
+## Personnages illustres : biographies, panthéons nationaux et portraits
+
+« Biographies » n'est plus une catégorie à part : c'est la première des deux
+sous-catégories de **Personnages illustres**, l'autre étant **Panthéons
+nationaux**. Elles ne posent pas la même question :
+
+| | Un thème, c'est | Une date, c'est | On le joue par |
+|---|---|---|---|
+| **Biographies** | une vie (360 thèmes, en 12 domaines) | une étape de cette vie | étape de la vie |
+| **Panthéons nationaux** | un pays (la France, pour l'instant) | la naissance d'un personnage | domaine |
+
+Le déplacement ne coûte aucune migration : les 360 thèmes gardent leurs
+identifiants, et rien de ce que le joueur a sauvegardé (favoris, révision,
+SRS, scores) ne retient une position dans l'arbre — tout passe par des
+identifiants de thème ou d'événement.
+
+### Panthéons nationaux
+
+Un thème par pays, nommé « Grandes figures de… » et identifié `pan_<iso2>`
+(`pan_fr`). Le nom d'un pays seul (« France ») serait ambigu dès qu'on sort de
+l'arborescence — favoris, historique, bouton « Jouer sur ce thème » du Défi du
+jour — où il voisinerait avec « Histoire de France ».
+
+Chaque événement est **la naissance d'un personnage**, daté de son année de
+naissance, titré « Naissance de X ». Le titre dit ce que la date représente,
+ce qu'un simple « Victor Hugo — 1802 » ne ferait pas hors du thème (Défi du
+jour, Révision, Blitz).
+
+**Six axes, les mêmes pour tous les pays.** La palette n'a que huit couleurs
+(`AXIS_PALETTE`), et six laissent de la marge. Littérature et philosophie sont
+fusionnées, parce que leur frontière est floue (Voltaire, Rousseau, Camus) ;
+peinture et musique restent séparées, parce que la leur est nette.
+
+| Axe | Contenu | France |
+|---|---|---|
+| Chefs d'État et dirigeants | souverains, présidents, chefs de gouvernement | 12 |
+| Guerres et résistances | chefs militaires, résistants, héros d'indépendance, combats pour les droits | 8 |
+| Littérature et pensée | écrivains, poètes, philosophes | 15 |
+| Beaux-arts | peinture, sculpture, architecture | 9 |
+| Musique et spectacle | compositeurs, interprètes, cinéma, théâtre | 7 |
+| Sciences et découvertes | savants, inventeurs, explorateurs | 9 |
+
+Les règles de rédaction, vérifiées par script et par test (voir plus bas) :
+
+- **Un personnage, un axe** : sa dimension dominante, comme dans les
+  Biographies, dont le classement est repris. **Une exception assumée :
+  Napoléon**, rangé chez les Chefs d'État (il fut empereur) alors que sa
+  biographie le range chez les chefs militaires.
+- **« Illustre » ne veut pas dire « né dans les frontières actuelles »** :
+  Marie Curie, née à Varsovie, et Jean-Jacques Rousseau, né à Genève,
+  appartiennent au panthéon de la France qui les a adoptés. Le pays d'un
+  panthéon est celui qui honore, pas celui de l'état civil.
+- **Description en trois phrases**, la première « Nom (naissance-décès) est… »,
+  avec « vers » devant une année incertaine (Charlemagne, Hugues Capet) et
+  « av. J.-C. » une fois, à la fin : « Vercingétorix (vers 82-46 av. J.-C.) ».
+  **L'année entre parenthèses doit être celle de l'événement** : sur soixante
+  fiches, la faute de frappe est l'erreur la plus probable.
+- **Une personne ne naît pas deux fois.** Les 25 personnages qui ont aussi une
+  biographie (champ `biographie`, qui nourrit le bouton « Voir sa biographie »
+  de la fiche) doivent porter la *même* date. Les dates des soixante ont été
+  comparées une à une à la phrase d'ouverture de l'article Wikipédia.
+- **⭐ Incontournables** (`essentiel`) : 20 sur 60 pour la France.
+
+Quantités visées, dont seule la première est écrite : 60 personnages pour la
+France, 40 pour les grands pays, 30 pour les autres. À 6 axes, 30 donne
+environ 5 par axe — le minimum pour qu'un axe joué seul reste un jeu.
+
+### Un fichier source par pays, un script qui l'écrit dans `data/fr.json`
+
+`scripts/pantheon/<pays>.json` est **la seule source de vérité** du thème.
+`python3 scripts/build_pantheon.py fr` le valide puis le reporte dans
+`data/fr.json` (qui se réécrit à l'octet près : le diff ne montre que le
+thème). `--check` valide sans écrire, `--verify` vérifie que `data/fr.json`
+est à jour — et `tests/pantheon.test.js` le lance, si bien que retoucher le
+thème à la main dans `fr.json` fait échouer `npm test`.
+
+Le constructeur applique les règles ci-dessus *avant* d'écrire ; les mêmes,
+côté JavaScript, sont reprises par `tests/data-schema.test.js` pour qu'une
+régression venue d'ailleurs soit attrapée elle aussi.
+
+### Portraits
+
+Un événement peut porter un champ `image`, valable pour n'importe quelle
+catégorie (les Biographies pourront en recevoir sans nouveau code) :
+
+```json
+"image": {
+  "src": "assets/portraits/pan_fr_hugo.jpg",
+  "legende": "Victor Hugo, photographie de Nadar (vers 1884)",
+  "auteur": "Nadar",
+  "licence": "Domaine public",
+  "source": "https://commons.wikimedia.org/wiki/File:Victor_Hugo_001.jpg"
+}
+```
+
+**Où ils s'affichent** : dans la fiche (portrait, légende, crédit), en pastille
+ronde devant chaque repère de la frise, et en vignette sur la carte « À
+placer ». Une image qui ne charge pas s'efface d'elle-même (`setPortraitImg`) :
+la fiche reste complète sans elle.
+
+**La légende dit ce qu'on voit.** « Charlemagne, portrait imaginaire peint par
+Albrecht Dürer en 1512, sept siècles après sa mort » ; « Vercingétorix :
+statère d'électrum frappé à son nom ; la tête stylisée n'est pas un portrait ».
+Pour l'Antiquité et le haut Moyen Âge, aucun portrait authentique n'existe :
+l'écrire est une petite leçon de critique des sources.
+
+**Pourquoi héberger les images dans l'app plutôt que les charger depuis
+Wikipédia** : l'app doit rester jouable hors-ligne, chaque affichage enverrait
+l'adresse IP du joueur à un tiers que la politique de confidentialité ne
+prévoit pas (même raison que l'absence de télémétrie, plus haut), et Wikimedia
+limite sévèrement les requêtes.
+
+**Licences : libres seulement, et libres aussi aux États-Unis.** Domaine
+public, CC0, CC BY, CC BY-SA ; jamais « NC » (l'app est distribuée sur l'App
+Store) ni « ND » (les images sont recadrées, donc modifiées).
+`scripts/fetch_portraits.py` lit la licence sur la page du fichier Commons et
+refuse tout fichier hors liste ; `tests/data-schema.test.js` la revérifie.
+« Domaine public en France » ne suffit pas, parce que l'app est distribuée
+partout : une photographie française publiée après 1930 peut être restée
+protégée aux États-Unis (loi URAA). Pour cette raison, les portraits de Piaf
+(photo de 1946 du studio Harcourt) et de Lumière (1948) ont été remplacés par
+des images dont la licence est explicite (Piaf en 1962, archives néerlandaises,
+CC0 ; Lumière vers 1890). Répartition finale : 53 domaine public, 4 CC0, 3 CC BY
+ou CC BY-SA. Trois portraits du XXe siècle reposent sur un raisonnement plus
+fin que « ancien », à relire si l'on veut être plus strict :
+
+- **Jean Moulin** (Harcourt, 1937) : œuvre collective, dont le délai français de
+  50 ans était expiré avant 1996, donc non rétablie aux États-Unis ;
+  autorisation enregistrée chez Wikimedia (ticket VRTS).
+- **Henri Matisse** (Carl Van Vechten, 1933) : photographe américain, collection
+  de la Bibliothèque du Congrès, « aucune restriction connue ».
+- **Albert Camus** (United Press International, 1957) : cliché de presse
+  américain de la collection du *World-Telegram*, même bibliothèque.
+
+(De Gaulle est une photographie de l'Office of War Information, œuvre du
+gouvernement fédéral américain.) Un portrait sous licence CC BY ou CC BY-SA
+porte dans la fiche son auteur, le **lien vers le texte de la licence**, la
+mention « image recadrée » et le lien vers la page de l'œuvre : c'est ce que
+ces licences exigent.
+
+**Récupération** : `python3 scripts/fetch_portraits.py fr` lit auteur et
+licence sur la page HTML du fichier (les API de métadonnées sont fermées aux
+IP partagées des environnements en nuage, la page HTML ne l'est pas), télécharge
+la miniature, la recadre en 4:5 et l'écrit en 320 × 400. Une requête à la fois,
+une pause entre deux, un `User-Agent` qui dit qui on est, reprise après un 429.
+`recadrage` serre le cadre sur le visage ; `largeur` impose 500 ou 960 px si
+Commons refuse l'une des deux pour un fichier donné. `--check` contrôle sans
+réseau (existence, dimensions, licence).
+
+**Poids** : JPEG de 320 × 400, 25 Ko en moyenne (62 au plus), soit 1,5 Mo pour
+les 60 de la France — de l'ordre de 20 Mo pour 800 portraits, quand `assets/`
+en pèse déjà 36. Le WebP gagnerait environ un tiers, mais la cible iOS actuelle
+(13, voir `ios/App/Podfile`) ne le lit pas : il attendra la migration vers
+Capacitor 7 (iOS 14+) déjà évoquée plus haut.
+
+**Cache** : `sw.js` range les portraits dans un cache à part
+(`historiaxe-portraits-v1`), que le ménage de `activate` épargne. Rangés avec
+le reste, ils seraient jetés à *chaque* mise à jour de l'app puis retéléchargés
+un à un. Ils ne sont pas préchargés à l'installation (des centaines de
+fichiers, que la plupart des joueurs ne verront jamais) mais se mettent en
+cache à la première vue. Le revers est une règle de nommage : **un portrait
+n'est jamais remplacé sous le même nom de fichier** (cache-first, l'ancien
+resterait servi) — un portrait remplacé reçoit un nouveau nom.
+
+### Ce que ça touche ailleurs dans le code
+
+- **La note s'affiche à tous les niveaux** (`initSubcategories`). Elle ne
+  s'affichait qu'au sommet, ce qui aurait fait disparaître celle de
+  « Biographies », devenue une sous-catégorie qui porte elle-même des
+  sous-catégories.
+- **Les images des tuiles** : « Personnages illustres » reprend celle des
+  anciennes Biographies ; « Panthéons nationaux » ne doit pas tomber sous la
+  règle des mythologies (`panth`), qui lui donnerait la mauvaise image.
+- **Le Mode Carte n'a rien eu à changer** : il ne retient que les thèmes
+  listés dans `assets/geo/theme-country-map.json`, où aucun panthéon ne figure
+  — heureusement, puisqu'il affiche la description pendant la question, et
+  « (1802-1885) est un poète français » donnerait la réponse. Un test garde
+  cette absence.
+- **« Pendant ce temps, ailleurs… »** : `pan_<iso2>` compte comme le pays
+  (sinon une naissance française répondrait, « ailleurs », à une ancre
+  française), et les panthéons sont exclus du vivier de *réponses* même
+  marqués ⭐. Des naissances sont d'excellentes ancres, jamais des réponses.
+
+### Ajouter un pays
+
+1. Copier `scripts/pantheon/fr.json`, y mettre le pays, ses personnages (une
+   naissance chacun, six axes, trois phrases), et le nom de fichier Commons de
+   chaque portrait.
+2. `python3 scripts/fetch_portraits.py <iso2>`, puis écrire les légendes
+   (et `recadrage` quand le visage est petit dans l'image).
+3. `python3 scripts/build_pantheon.py <iso2>`.
+4. Incrémenter `CACHE_VERSION` et `DATA_CACHE` dans `sw.js` : `data/fr.json` est
+   servi cache-first.
+5. `npm test` et `npm run test:e2e`.
+
+### Ce qui n'est pas fait
+
+- **Les autres pays** : seule la France est écrite. Les suivants se feront par
+  lots, avec la liste des personnages à valider avant la rédaction.
+- **Les portraits des 360 Biographies** : le champ `image` les accepte déjà,
+  il reste à les récupérer.
+- **Les portraits dans les autres modes de jeu** (Quiz, Périodes, Fil du
+  temps…) : ils n'apparaissent que dans la frise et la fiche.
+- **Hors-ligne**, un portrait jamais vu n'est pas disponible (voir « Cache »).
+- **La tuile « Panthéons nationaux »** réutilise l'image du globe : une image
+  dédiée serait préférable.
+- **Sportifs et entrepreneurs** n'ont pas d'axe dans les panthéons : ils sont
+  couverts par les Biographies.
 
 ## Accessibilité : le clavier et le zoom
 
@@ -772,8 +982,8 @@ et un `fetch` — c'est-à-dire de la quasi-totalité de l'interface.
 
 `npm run test:e2e` (Playwright, `e2e/`) comble ce trou en ouvrant un vrai
 navigateur sur le site servi tel qu'il l'est en production
-(`e2e/server.js`, un serveur statique sans dépendance). Onze parcours,
-82 tests, environ trois minutes :
+(`e2e/server.js`, un serveur statique sans dépendance). Douze parcours,
+87 tests, environ trois minutes :
 
 - `e2e/modes.spec.js` — chaque mode de jeu se lance et répond à une
   première interaction. C'est la famille de régressions déjà vécue ici :
@@ -823,6 +1033,15 @@ navigateur sur le site servi tel qu'il l'est en production
   explicite tant que l'historique est trop mince, puis 10 questions dont
   toutes les ancres sortent bien du SRS du joueur, un tirage stable d'une
   partie à l'autre dans la journée, et aucun score rattaché à un thème.
+- `e2e/personnages.spec.js` — « Personnages illustres » : la navigation à
+  trois étages avec la note de *chaque* étage (boîte visible, pas seulement
+  son texte présent) et l'image de chaque tuile, puis la fiche d'un personnage
+  — portrait réellement chargé en 320 px, légende, crédit avec lien Commons,
+  bouton vers la biographie —, la pastille de chaque repère de la frise, la
+  vignette de la carte « À placer », l'absence du bouton en pleine partie, et
+  l'absence de tout portrait sur un thème qui n'en a pas. Éprouvé par
+  mutation : remettre la note au sommet seul, ou rendre « Panthéons nationaux »
+  à la règle des mythologies, fait échouer le test qui la garde.
 - `e2e/shuffle.spec.js` — le seul parcours qui ne clique rien : il fait
   tourner `js/app.js: shuffleArray` 200 000 fois et vérifie que la
   distribution reste uniforme. `sort(() => Math.random() - 0.5)`, longtemps

@@ -6366,3 +6366,81 @@ a, area, button, [role="button"], [role="checkbox"],
 input:not([type="range"]), label, select, summary, textarea {
     touch-action: manipulation;
 }
+
+/* =====================================================================
+   PORTRAITS — champ facultatif `image` d'un événement (voir README « Portraits »)
+   Les fichiers font 320 × 400 : affichés à moitié sur la fiche, ils restent
+   nets sur un écran 2x. Les variables (--muted-text, --rule, --border-soft)
+   sont celles du thème, si bien que le sombre et le zoom du texte suivent.
+   ===================================================================== */
+.modal-portrait {
+    margin: 0 auto 20px;
+    max-width: 240px;
+    text-align: center;
+}
+
+.modal-portrait-img {
+    display: block;
+    width: 160px;
+    height: 200px;
+    margin: 0 auto 10px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 14px;
+    background: var(--border-soft);
+    box-shadow: 0 6px 18px rgba(0, 26, 75, 0.16);
+}
+
+.modal-portrait figcaption {
+    font-size: 12px;
+    line-height: 1.45;
+    color: var(--muted-text);
+}
+
+.modal-portrait-caption {
+    display: block;
+}
+
+.modal-portrait-credit {
+    display: block;
+    margin-top: 3px;
+}
+
+.modal-portrait-credit a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.modal-bio-row {
+    margin-top: 16px;
+}
+
+.modal-bio-row .btn {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 14px;
+}
+
+/* Carte « À placer » : portrait de l'événement en main, avant la case de date. */
+.hand-portrait {
+    flex-shrink: 0;
+    width: calc(52px * var(--zoom-level));
+    height: calc(65px * var(--zoom-level));
+    object-fit: cover;
+    object-position: top;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Repère de la frise : pastille ronde avant le titre. */
+.entry-portrait {
+    flex-shrink: 0;
+    width: calc(40px * var(--zoom-level));
+    height: calc(40px * var(--zoom-level));
+    object-fit: cover;
+    object-position: top;
+    border-radius: 50%;
+    border: 1px solid var(--rule);
+    background: var(--border-soft);
+}

@@ -480,6 +480,9 @@
 
         <div class="hand" id="hand">
             <div class="hand-card">
+                <!-- Portrait de l'événement en main (champ facultatif `image`) : décoratif, la
+                     légende complète vit dans la fiche (modal-portrait). Masqué sans image. -->
+                <img id="hand-portrait" class="hand-portrait hidden" alt="" width="52" height="65" decoding="async">
                 <span class="hand-year" id="hand-year">?</span>
                 <span class="hand-text">
                     <span class="hand-kicker" id="hand-kicker" data-i18n="game.hand_kicker_default">À placer</span>
@@ -1018,9 +1021,23 @@
             <div class="modal-title" id="modal-titre">Titre de l'événement</div>
             <div id="modal-axe-badge-container" style="margin-top: 4px; margin-bottom: 8px;"></div>
             <div class="modal-date" id="modal-date">Date</div>
+            <!-- Portrait de l'événement (champ facultatif `image`, voir README « Portraits ») :
+                 la légende dit ce qu'on voit — photographie, peinture d'époque ou représentation
+                 posthume — et le crédit (auteur, licence, Wikimedia Commons) est obligatoire. -->
+            <figure id="modal-portrait" class="modal-portrait hidden">
+                <img id="modal-portrait-img" class="modal-portrait-img" alt="" width="160" height="200" decoding="async">
+                <figcaption>
+                    <span id="modal-portrait-caption" class="modal-portrait-caption"></span>
+                    <span id="modal-portrait-credit" class="modal-portrait-credit"></span>
+                </figcaption>
+            </figure>
             <div class="modal-desc" id="modal-desc">Description explicative.</div>
             <a href="#" target="_blank" class="modal-link" id="modal-wiki" data-i18n="modal.wiki_link">Voir sur
                 Wikipédia</a>
+            <div id="modal-bio-row" class="modal-bio-row hidden">
+                <button type="button" class="btn btn-secondary" id="modal-bio-btn"
+                    data-i18n="modal.biography_btn">Voir sa biographie</button>
+            </div>
             <div id="modal-theme-row" class="modal-theme-row hidden">
                 <button class="btn btn-secondary" id="modal-redraw-btn" data-i18n="modal.redraw_btn">🔀 Un autre
                     événement</button>

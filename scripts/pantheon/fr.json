@@ -1,0 +1,1044 @@
+{
+  "pays": "fr",
+  "paysNom": "France",
+  "theme": {
+    "id": "pan_fr",
+    "nom": "Grandes figures de France",
+    "difficulte": "Intermédiaire"
+  },
+  "axes": [
+    "Chefs d'État et dirigeants",
+    "Guerres et résistances",
+    "Littérature et pensée",
+    "Beaux-arts",
+    "Musique et spectacle",
+    "Sciences et découvertes"
+  ],
+  "personnages": [
+    {
+      "slug": "clovis",
+      "nom": "Clovis Ier",
+      "titre": "Naissance de Clovis",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 466,
+      "description": "Clovis Ier (466-511) est un roi des Francs, fondateur de la monarchie mérovingienne. Vainqueur du dernier représentant de Rome en Gaule à Soissons (486), puis des Wisigoths à Vouillé (507), il étend son royaume sur la majeure partie de la Gaule et fait de Paris sa capitale en 508. Son baptême à Reims par l'évêque Remi, daté traditionnellement de 496, le rallie à l'Église catholique et fonde l'alliance de la royauté et du christianisme qui marquera toute l'histoire de France.",
+      "wikipedia": "Clovis_Ier",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Jean_de_Tillet_-_Clovis_Ier_roy_crestien_-_Recueil_des_rois_de_France.jpg",
+        "licence": "Domaine public",
+        "auteur": "Jean du Tillet",
+        "recadrage": [
+          0.2,
+          0.05,
+          0.8,
+          0.5
+        ],
+        "legende": "Clovis, portrait imaginaire peint au XVIe siècle d'après son gisant (Recueil des rois de France)"
+      }
+    },
+    {
+      "slug": "charlemagne",
+      "nom": "Charlemagne",
+      "titre": "Naissance de Charlemagne",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 747,
+      "description": "Charlemagne (vers 747-814) est un roi des Francs devenu empereur d'Occident. Il soumet les Lombards (774) puis les Saxons, étend son royaume de l'Èbre à l'Elbe et reçoit la couronne impériale du pape Léon III à Rome, la nuit de Noël de l'an 800. Installé à Aix-la-Chapelle, il s'entoure de lettrés comme Alcuin, favorise les écoles et gouverne par des capitulaires, ce qui lui vaut de rester le « père de l'Europe », figure dont la France et l'Allemagne se réclament toutes deux.",
+      "wikipedia": "Charlemagne",
+      "biographie": "bio_charlemagne",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Charlemagne-by-Durer.jpg",
+        "licence": "Domaine public",
+        "auteur": "Albrecht Dürer",
+        "legende": "Charlemagne, portrait imaginaire peint par Albrecht Dürer en 1512, sept siècles après sa mort"
+      }
+    },
+    {
+      "slug": "huguescapet",
+      "nom": "Hugues Capet",
+      "titre": "Naissance d'Hugues Capet",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 940,
+      "description": "Hugues Capet (vers 940-996) est un roi des Francs, fondateur de la dynastie capétienne. Duc des Francs et puissant seigneur entre Seine et Loire, il est élu roi à Noyon en 987 par les grands du royaume, à la mort du dernier Carolingien, et sacré peu après. En faisant couronner son fils de son vivant, il installe l'hérédité du trône : ses descendants, Capétiens directs puis Valois, Bourbons et Orléans, régneront en France, avec des interruptions, jusqu'en 1848.",
+      "wikipedia": "Hugues_Capet",
+      "portrait": {
+        "fichier": "Médaillon_Hugues_Capet.jpg",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu",
+        "legende": "Hugues Capet, médaillon de profil du XVIIe siècle : aucun portrait de son temps n'existe"
+      }
+    },
+    {
+      "slug": "louis9",
+      "nom": "Saint Louis",
+      "titre": "Naissance de Saint Louis",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1214,
+      "description": "Saint Louis (1214-1270) est un roi de France capétien, le seul canonisé. Monté sur le trône à douze ans sous la régence de sa mère Blanche de Castille, il rend la justice, réforme la monnaie, fait élever la Sainte-Chapelle pour abriter la couronne d'épines et part deux fois en croisade, en 1248 et en 1270. Mort de maladie devant Tunis, il laisse l'image d'un roi juste et pieux dont le règne marque l'apogée de la monarchie capétienne et le prestige de la France en Europe.",
+      "wikipedia": "Louis_IX",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Saintlouis_(cropped).jpg",
+        "licence": "Domaine public",
+        "auteur": "Enlumineur anonyme",
+        "legende": "Saint Louis, miniature de la Bible moralisée de Tolède (XIIIe siècle)"
+      }
+    },
+    {
+      "slug": "francois1",
+      "nom": "François Ier",
+      "titre": "Naissance de François Ier",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1494,
+      "description": "François Ier (1494-1547) est un roi de France, souverain de la Renaissance. Vainqueur à Marignan en 1515, vaincu et capturé à Pavie en 1525, il impose le français comme langue de la justice par l'ordonnance de Villers-Cotterêts (1539) et fonde les lecteurs royaux, ancêtres du Collège de France. Mécène de Léonard de Vinci et bâtisseur de Chambord, il attire les artistes italiens en France et fait de sa cour un foyer de la Renaissance.",
+      "wikipedia": "François_Ier_(roi_de_France)",
+      "biographie": "bio_francois1er",
+      "portrait": {
+        "fichier": "François_Ier_Louvre.jpg",
+        "licence": "Domaine public",
+        "auteur": "Jean Clouet",
+        "legende": "François Ier, portrait par Jean Clouet (vers 1530)"
+      }
+    },
+    {
+      "slug": "henri4",
+      "nom": "Henri IV",
+      "titre": "Naissance d'Henri IV",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1553,
+      "description": "Henri IV (1553-1610) est un roi de Navarre devenu roi de France, premier souverain de la dynastie des Bourbons. Protestant converti au catholicisme en 1593, il met fin aux guerres de Religion par l'édit de Nantes (1598), qui accorde aux protestants la liberté de conscience et un culte encadré, puis relève le royaume avec son ministre Sully. Roi populaire, le « bon roi Henri » est assassiné par Ravaillac en 1610 : sa mémoire reste celle du souverain qui a rétabli la paix civile et la prospérité après près de quarante ans de guerres.",
+      "wikipedia": "Henri_IV_(roi_de_France)",
+      "portrait": {
+        "fichier": "Henri_IV_portant_la_croix_du_Saint-Esprit_-_Frans_Pourbus_le_Jeune.jpg",
+        "licence": "Domaine public",
+        "auteur": "Frans Pourbus le Jeune",
+        "legende": "Henri IV, portrait par Frans Pourbus le Jeune (avant 1622)"
+      }
+    },
+    {
+      "slug": "richelieu",
+      "nom": "Le cardinal de Richelieu",
+      "titre": "Naissance de Richelieu",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1585,
+      "description": "Le cardinal de Richelieu (1585-1642) est un homme d'Église et d'État, principal ministre de Louis XIII. Il brise les révoltes des grands et la puissance politique des protestants, avec le siège de La Rochelle (1628), généralise les intendants, bâtit une marine et, à partir de 1635, engage la France contre les Habsbourg dans la guerre de Trente Ans. Fondateur de l'Académie française (1635), il renforce l'autorité de l'État monarchique : ce modèle d'un pouvoir centralisé, administré par des agents du roi, façonnera durablement la France.",
+      "wikipedia": "Armand_Jean_du_Plessis_de_Richelieu",
+      "portrait": {
+        "fichier": "Cardinal_de_Richelieu.jpg",
+        "licence": "Domaine public",
+        "auteur": "Philippe de Champaigne",
+        "recadrage": [
+          0.2,
+          0.02,
+          0.95,
+          0.5
+        ],
+        "legende": "Le cardinal de Richelieu, portrait par Philippe de Champaigne (vers 1637)"
+      }
+    },
+    {
+      "slug": "louis14",
+      "nom": "Louis XIV",
+      "titre": "Naissance de Louis XIV",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1638,
+      "description": "Louis XIV (1638-1715) est un roi de France, surnommé le Roi-Soleil. Il gouverne seul à partir de 1661, installe la cour à Versailles, s'appuie sur Colbert pour développer le commerce et les manufactures, et mène de longues guerres qui agrandissent le royaume mais épuisent ses finances. Son règne de soixante-douze ans, le plus long de l'histoire de France, fait du royaume la première puissance d'Europe et donne son nom à un « Grand Siècle » rayonnant par ses lettres, ses arts et sa langue.",
+      "wikipedia": "Louis_XIV",
+      "biographie": "bio_louis14",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Louis_XIV_of_France.jpg",
+        "licence": "Domaine public",
+        "auteur": "Hyacinthe Rigaud",
+        "recadrage": [
+          0.1,
+          0.0,
+          0.9,
+          0.48
+        ],
+        "legende": "Louis XIV en costume de sacre, portrait par Hyacinthe Rigaud (1701)"
+      }
+    },
+    {
+      "slug": "napoleon",
+      "nom": "Napoléon Bonaparte",
+      "titre": "Naissance de Napoléon Bonaparte",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1769,
+      "description": "Napoléon Bonaparte (1769-1821) est un général devenu Premier consul puis empereur des Français sous le nom de Napoléon Ier. Maître du pouvoir après le coup d'État du 18 brumaire (1799), il reconstruit l'État avec la Banque de France, les préfets, les lycées et le Code civil (1804), avant de se faire sacrer empereur et de vaincre une grande partie de l'Europe, d'Austerlitz (1805) à Wagram (1809). Vaincu à Waterloo en 1815 et exilé à Sainte-Hélène, il laisse une œuvre administrative et juridique encore présente dans la France d'aujourd'hui, et une légende qui n'a cessé de nourrir les passions.",
+      "wikipedia": "Napoléon_Ier",
+      "biographie": "bio_napoleon",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Jacques-Louis_David_-_The_Emperor_Napoleon_in_His_Study_at_the_Tuileries_-_Google_Art_Project_2.jpg",
+        "licence": "Domaine public",
+        "auteur": "Jacques-Louis David",
+        "recadrage": [
+          0.1,
+          0.0,
+          0.8,
+          0.48
+        ],
+        "legende": "Napoléon Ier dans son cabinet de travail aux Tuileries, par Jacques-Louis David (1812)"
+      }
+    },
+    {
+      "slug": "ferry",
+      "nom": "Jules Ferry",
+      "titre": "Naissance de Jules Ferry",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1832,
+      "description": "Jules Ferry (1832-1893) est un homme d'État républicain, plusieurs fois ministre et président du Conseil. Ministre de l'Instruction publique, il fait voter en 1881 et 1882 les lois qui rendent l'école primaire gratuite, laïque et obligatoire, et mène aussi une politique d'expansion coloniale, en Tunisie puis au Tonkin, qui le rend très controversé. Renversé en 1885 après le revers de Lang Son, il reste le père de l'école républicaine : c'est à lui que la France doit l'idée d'une instruction commune pour tous les enfants, garçons et filles.",
+      "wikipedia": "Jules_Ferry",
+      "portrait": {
+        "fichier": "Julesferry.jpg",
+        "licence": "Domaine public",
+        "legende": "Jules Ferry, photographie du XIXe siècle",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "clemenceau",
+      "nom": "Georges Clemenceau",
+      "titre": "Naissance de Georges Clemenceau",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1841,
+      "description": "Georges Clemenceau (1841-1929) est un homme d'État radical, deux fois président du Conseil. Directeur de L'Aurore, il y publie en 1898 le « J'accuse…! » de Zola en faveur du capitaine Dreyfus ; rappelé au pouvoir en 1917, il mène la France jusqu'à la victoire de 1918 et préside la conférence de paix de Paris. Surnommé « le Tigre » puis « le Père la Victoire », il incarne la volonté de tenir pendant la Première Guerre mondiale et reste un symbole de la République combative.",
+      "wikipedia": "Georges_Clemenceau",
+      "portrait": {
+        "fichier": "Georges_Clemenceau_par_Nadar.jpg",
+        "licence": "Domaine public",
+        "auteur": "Paul Nadar",
+        "legende": "Georges Clemenceau, photographie de Paul Nadar (1904)"
+      }
+    },
+    {
+      "slug": "degaulle",
+      "nom": "Charles de Gaulle",
+      "titre": "Naissance de Charles de Gaulle",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1890,
+      "description": "Charles de Gaulle (1890-1970) est un général et homme d'État, fondateur de la Ve République. Refusant l'armistice, il lance de Londres l'appel du 18 juin 1940, dirige la France libre puis le gouvernement provisoire de 1944 à 1946, et revient au pouvoir en 1958 pour donner au pays les institutions de la Ve République. Président de 1959 à 1969, il met fin à la guerre d'Algérie (accords d'Évian, 1962), dote la France de l'arme nucléaire et d'une politique d'indépendance : il reste la grande figure politique de la France du XXe siècle.",
+      "wikipedia": "Charles_de_Gaulle",
+      "biographie": "bio_degaulle",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "De_Gaulle-OWI_(3x4_cropped)_(2).jpg",
+        "licence": "Domaine public",
+        "legende": "Charles de Gaulle, photographie de l'Office of War Information américain (vers 1942)",
+        "auteur": "Office of War Information (États-Unis)"
+      }
+    },
+    {
+      "slug": "vercingetorix",
+      "nom": "Vercingétorix",
+      "titre": "Naissance de Vercingétorix",
+      "axe": "Guerres et résistances",
+      "naissance": -82,
+      "description": "Vercingétorix (vers 82-46 av. J.-C.) est un chef arverne qui dirige en 52 av. J.-C. la coalition des peuples gaulois contre Jules César. Vainqueur des Romains à Gergovie, il est assiégé dans Alésia et doit se rendre ; emmené à Rome, il y est exécuté en 46 av. J.-C. après six ans de captivité. Longtemps oublié, il devient au XIXe siècle, sous Napoléon III puis sous la IIIe République, le premier héros de l'histoire nationale, symbole de la résistance à l'envahisseur.",
+      "wikipedia": "Vercingétorix",
+      "biographie": "bio_vercingetorix",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Vercingétorix_statère_Gallica_avers.jpg",
+        "licence": "Domaine public",
+        "auteur": "Monnaie arverne (BnF)",
+        "legende": "Vercingétorix : statère d'électrum frappé à son nom au Ier siècle av. J.-C. ; la tête stylisée n'est pas un portrait"
+      }
+    },
+    {
+      "slug": "jeannedarc",
+      "nom": "Jeanne d'Arc",
+      "titre": "Naissance de Jeanne d'Arc",
+      "axe": "Guerres et résistances",
+      "naissance": 1412,
+      "description": "Jeanne d'Arc (vers 1412-1431) est une jeune paysanne lorraine devenue chef de guerre pendant la guerre de Cent Ans. Persuadée d'être envoyée par Dieu, elle rejoint Charles VII en 1429, délivre Orléans assiégée par les Anglais puis le conduit au sacre de Reims ; capturée par les Bourguignons et livrée aux Anglais, elle est condamnée pour hérésie et brûlée vive à Rouen, vers dix-neuf ans. Réhabilitée en 1456, canonisée en 1920, elle devient une figure nationale que se disputent toutes les familles politiques, et la patronne de la France.",
+      "wikipedia": "Jeanne_d'Arc",
+      "biographie": "bio_jeannedarc",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Jeanne_d_Arc(1412-1431)_Miniaturmalerei_15_Jahrhundert.jpg",
+        "licence": "Domaine public",
+        "auteur": "Enlumineur anonyme (BnF)",
+        "legende": "Jeanne d'Arc, enluminure du XVe siècle : aucun portrait fidèle n'existe"
+      }
+    },
+    {
+      "slug": "vauban",
+      "nom": "Vauban",
+      "titre": "Naissance de Vauban",
+      "axe": "Guerres et résistances",
+      "naissance": 1633,
+      "description": "Vauban (1633-1707) est un maréchal de France et ingénieur militaire de Louis XIV. Il perfectionne l'attaque et la défense des places fortes, en améliore environ trois cents et en construit une trentaine, et dessine autour du royaume un « pré carré » de villes fortifiées, de Dunkerque à Briançon. Auteur aussi d'un projet d'impôt plus juste, la Dîme royale (1707), qui lui vaut la disgrâce, il laisse un réseau de fortifications dont douze sites sont inscrits au patrimoine mondial de l'UNESCO.",
+      "wikipedia": "Sébastien_Le_Prestre_de_Vauban",
+      "portrait": {
+        "fichier": "Vauban.jpg",
+        "licence": "Domaine public",
+        "auteur": "Hyacinthe Rigaud",
+        "legende": "Vauban, portrait dessiné par Hyacinthe Rigaud (après 1703)"
+      }
+    },
+    {
+      "slug": "olympe",
+      "nom": "Olympe de Gouges",
+      "titre": "Naissance d'Olympe de Gouges",
+      "axe": "Guerres et résistances",
+      "naissance": 1748,
+      "description": "Olympe de Gouges (1748-1793) est une femme de lettres et militante, autrice de la Déclaration des droits de la femme et de la citoyenne. Dramaturge, elle dénonce l'esclavage dans sa pièce Zamore et Mirza, jouée en 1789, réclame l'égalité politique des femmes en 1791 et s'oppose à la Terreur, ce qui la conduit devant le Tribunal révolutionnaire. Guillotinée en 1793, elle reste le symbole des premières revendications féministes de la Révolution : sa Déclaration affirme que « la femme naît libre et demeure égale à l'homme en droits ».",
+      "wikipedia": "Olympe_de_Gouges",
+      "biographie": "bio_olympe",
+      "portrait": {
+        "fichier": "Olympe_de_Gouges.png",
+        "licence": "Domaine public",
+        "auteur": "Alexandre Kucharski",
+        "legende": "Olympe de Gouges, portrait au pastel d'Alexandre Kucharski (XVIIIe siècle)"
+      }
+    },
+    {
+      "slug": "lafayette",
+      "nom": "La Fayette",
+      "titre": "Naissance de La Fayette",
+      "axe": "Guerres et résistances",
+      "naissance": 1757,
+      "description": "La Fayette (1757-1834) est un aristocrate, officier et homme politique, héros de l'indépendance américaine et de la Révolution française. Parti à dix-neuf ans combattre aux côtés de George Washington (1777), il contribue à la victoire de Yorktown, puis, en France, participe à la rédaction de la Déclaration des droits de l'homme et du citoyen (1789) et commande la Garde nationale. Surnommé le « héros des deux mondes », monarchiste libéral qui défend la liberté sous tous les régimes, il présente en 1830 Louis-Philippe au peuple de Paris, le drapeau tricolore à la main.",
+      "wikipedia": "Gilbert_du_Motier_de_La_Fayette",
+      "portrait": {
+        "fichier": "Gilbert_du_Motier_Marquis_de_Lafayette.jpg",
+        "licence": "Domaine public",
+        "auteur": "Joseph-Désiré Court",
+        "legende": "La Fayette, portrait par Joseph-Désiré Court (1834)"
+      }
+    },
+    {
+      "slug": "foch",
+      "nom": "Ferdinand Foch",
+      "titre": "Naissance de Ferdinand Foch",
+      "axe": "Guerres et résistances",
+      "naissance": 1851,
+      "description": "Ferdinand Foch (1851-1929) est un maréchal de France, commandant en chef des armées alliées en 1918. Professeur de stratégie à l'École de guerre avant 1914, il se distingue sur la Marne et sur l'Yser, puis est chargé en mars 1918 de coordonner les armées alliées sur le front de l'Ouest, dont il conduit la contre-offensive victorieuse. C'est devant lui que les plénipotentiaires allemands signent l'armistice du 11 novembre 1918, dans un wagon à Rethondes ; il reste le « maréchal de la victoire », honoré aussi comme maréchal britannique et polonais.",
+      "wikipedia": "Ferdinand_Foch",
+      "portrait": {
+        "fichier": "Ferdinand_Foch_by_Melcy,_1921.png",
+        "licence": "Domaine public",
+        "auteur": "Roger Melcy",
+        "recadrage": [
+          0.22,
+          0.12,
+          0.78,
+          0.7
+        ],
+        "legende": "Ferdinand Foch, photographie de Roger Melcy (1921)"
+      }
+    },
+    {
+      "slug": "moulin",
+      "nom": "Jean Moulin",
+      "titre": "Naissance de Jean Moulin",
+      "axe": "Guerres et résistances",
+      "naissance": 1899,
+      "description": "Jean Moulin (1899-1943) est un préfet devenu le chef de la Résistance intérieure française. Envoyé de Londres par de Gaulle, il est parachuté en Provence en janvier 1942, unifie les mouvements de résistance et préside en mai 1943 la première réunion du Conseil national de la Résistance, à Paris. Arrêté à Caluire en juin 1943 puis torturé, il meurt en juillet dans un train vers l'Allemagne ; ses cendres entrent au Panthéon en 1964, et il est devenu le symbole de la Résistance.",
+      "wikipedia": "Jean_Moulin",
+      "biographie": "bio_jeanmoulin",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Moulin_Harcourt_1937.jpg",
+        "licence": "Domaine public",
+        "auteur": "Studio Harcourt",
+        "legende": "Jean Moulin, photographie du studio Harcourt (1937)"
+      }
+    },
+    {
+      "slug": "veil",
+      "nom": "Simone Veil",
+      "titre": "Naissance de Simone Veil",
+      "axe": "Guerres et résistances",
+      "naissance": 1927,
+      "description": "Simone Veil (1927-2017) est une magistrate et femme d'État, rescapée de la Shoah. Déportée à Auschwitz à seize ans, elle devient ministre de la Santé, fait adopter en 1975 la loi qui légalise l'interruption volontaire de grossesse, puis préside le Parlement européen, élu pour la première fois au suffrage universel (1979-1982). Académicienne, entrée au Panthéon en 2018 avec son mari Antoine, elle incarne les droits des femmes, la mémoire de la Shoah et la construction européenne.",
+      "wikipedia": "Simone_Veil",
+      "biographie": "bio_simoneveil",
+      "portrait": {
+        "fichier": "Simone_Veil_(1984)_(cropped).jpg",
+        "legende": "Simone Veil, photographie de Rob Croes (1984)",
+        "auteur": "Rob Croes / Anefo (Nationaal Archief)",
+        "licence": "CC0 (domaine public)"
+      }
+    },
+    {
+      "slug": "montaigne",
+      "nom": "Michel de Montaigne",
+      "titre": "Naissance de Michel de Montaigne",
+      "axe": "Littérature et pensée",
+      "naissance": 1533,
+      "description": "Michel de Montaigne (1533-1592) est un écrivain et philosophe de la Renaissance, auteur des Essais. Ancien magistrat, il se retire en 1571 dans sa tour du Périgord pour écrire des Essais où il se prend lui-même pour sujet et invente un genre littéraire, puis il est maire de Bordeaux de 1581 à 1585. Sceptique et tolérant à l'époque des guerres de Religion, il laisse la devise « Que sais-je ? » et un humanisme qui fait de lui l'un des grands noms de la littérature française.",
+      "wikipedia": "Michel_de_Montaigne",
+      "biographie": "bio_montaigne",
+      "portrait": {
+        "fichier": "Montaigne-Dumonstier.jpg",
+        "licence": "Domaine public",
+        "auteur": "Anonyme",
+        "legende": "Michel de Montaigne, portrait attribué à Dumonstier (vers 1578)"
+      }
+    },
+    {
+      "slug": "descartes",
+      "nom": "René Descartes",
+      "titre": "Naissance de René Descartes",
+      "axe": "Littérature et pensée",
+      "naissance": 1596,
+      "description": "René Descartes (1596-1650) est un mathématicien, physicien et philosophe. Dans le Discours de la méthode (1637), il pose le doute comme point de départ et la formule « je pense, donc je suis » comme première certitude ; il invente aussi la géométrie analytique, qui repère un point par ses coordonnées. Installé aux Pays-Bas puis mort à Stockholm, à la cour de la reine Christine, il est considéré comme le fondateur de la philosophie moderne et marque durablement la pensée française.",
+      "wikipedia": "René_Descartes",
+      "biographie": "bio_descartes",
+      "portrait": {
+        "fichier": "Frans_Hals_-_Portret_van_René_Descartes.jpg",
+        "licence": "Domaine public",
+        "auteur": "D'après Frans Hals",
+        "legende": "René Descartes, portrait d'après Frans Hals (vers 1649)"
+      }
+    },
+    {
+      "slug": "lafontaine",
+      "nom": "Jean de La Fontaine",
+      "titre": "Naissance de Jean de La Fontaine",
+      "axe": "Littérature et pensée",
+      "naissance": 1621,
+      "description": "Jean de La Fontaine (1621-1695) est un poète, célèbre pour ses Fables. Inspiré d'Ésope et de Phèdre, il publie de 1668 à 1694 douze livres de fables en vers libres, comme « La Cigale et la Fourmi » ou « Le Corbeau et le Renard », où les animaux jouent la comédie humaine. Élu à l'Académie française en 1684, il glisse sous le divertissement une satire de la cour et du pouvoir ; ses Fables, apprises par cœur par des générations d'écoliers, comptent parmi les textes les plus connus de la littérature française.",
+      "wikipedia": "Jean_de_La_Fontaine",
+      "portrait": {
+        "fichier": "Jean_de_La_Fontaine.PNG",
+        "licence": "Domaine public",
+        "auteur": "Hyacinthe Rigaud",
+        "recadrage": [
+          0.24,
+          0.14,
+          0.76,
+          0.66
+        ],
+        "legende": "Jean de La Fontaine, portrait par Hyacinthe Rigaud (vers 1680)"
+      }
+    },
+    {
+      "slug": "moliere",
+      "nom": "Molière",
+      "titre": "Naissance de Molière",
+      "axe": "Littérature et pensée",
+      "naissance": 1622,
+      "description": "Molière (1622-1673) est un auteur et acteur de théâtre, maître de la comédie française. Chef de troupe protégé par Louis XIV, il écrit et joue Tartuffe, Dom Juan, Le Misanthrope, L'Avare ou Le Bourgeois gentilhomme, des comédies qui moquent l'hypocrisie, la vanité et l'avarice. Mort quelques heures après avoir joué Le Malade imaginaire, il est l'auteur le plus joué de la Comédie-Française, et le français s'appelle encore, par métonymie, la « langue de Molière ».",
+      "wikipedia": "Molière",
+      "biographie": "bio_moliere",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Molière_-_Nicolas_Mignard_(1658).jpg",
+        "licence": "Domaine public",
+        "auteur": "Nicolas Mignard",
+        "legende": "Molière dans le rôle de César, portrait par Nicolas Mignard (vers 1658)"
+      }
+    },
+    {
+      "slug": "voltaire",
+      "nom": "Voltaire",
+      "titre": "Naissance de Voltaire",
+      "axe": "Littérature et pensée",
+      "naissance": 1694,
+      "description": "Voltaire (1694-1778) est un écrivain et philosophe, figure majeure des Lumières. Auteur de tragédies, de Candide (1759) et du Traité sur la tolérance (1763), exilé en Angleterre puis installé à Ferney, il combat le fanatisme et l'injustice, notamment dans l'affaire Calas. Son esprit mordant et sa défense de la liberté de penser en font le symbole des Lumières ; ses cendres reposent au Panthéon depuis 1791.",
+      "wikipedia": "Voltaire",
+      "biographie": "bio_voltaire",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Atelier_de_Nicolas_de_Largillière,_portrait_de_Voltaire,_détail_(musée_Carnavalet)_-002.jpg",
+        "licence": "Domaine public",
+        "auteur": "Atelier de Nicolas de Largillière",
+        "legende": "Voltaire jeune, portrait de l'atelier de Nicolas de Largillière (vers 1720)"
+      }
+    },
+    {
+      "slug": "rousseau",
+      "nom": "Jean-Jacques Rousseau",
+      "titre": "Naissance de Jean-Jacques Rousseau",
+      "axe": "Littérature et pensée",
+      "naissance": 1712,
+      "description": "Jean-Jacques Rousseau (1712-1778) est un écrivain et philosophe genevois d'expression française. Auteur du Discours sur l'inégalité (1755), du Contrat social et d'Émile (1762), il affirme que l'homme naît bon et que la souveraineté appartient au peuple, et ses Confessions donnent à l'autobiographie moderne son modèle. Ses idées sur la liberté et l'égalité inspirent les révolutionnaires de 1789, qui le font entrer au Panthéon en 1794 : il est l'un des grands penseurs de la démocratie.",
+      "wikipedia": "Jean-Jacques_Rousseau",
+      "biographie": "bio_rousseau",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Jean-Jacques_Rousseau_(painted_portrait).jpg",
+        "licence": "Domaine public",
+        "auteur": "Maurice Quentin de La Tour",
+        "legende": "Jean-Jacques Rousseau, portrait par Maurice Quentin de La Tour (milieu du XVIIIe siècle)"
+      }
+    },
+    {
+      "slug": "hugo",
+      "nom": "Victor Hugo",
+      "titre": "Naissance de Victor Hugo",
+      "axe": "Littérature et pensée",
+      "naissance": 1802,
+      "description": "Victor Hugo (1802-1885) est un poète, romancier et dramaturge, chef de file du romantisme. Il signe Notre-Dame de Paris (1831), Les Contemplations (1856) et Les Misérables (1862), et combat la peine de mort comme la misère ; opposé au coup d'État de Napoléon III, il passe près de dix-neuf ans en exil, à Jersey puis à Guernesey. Rentré en 1870, sénateur de la IIIe République, il reçoit à sa mort des funérailles nationales suivies par des centaines de milliers de Parisiens, et repose au Panthéon.",
+      "wikipedia": "Victor_Hugo",
+      "biographie": "bio_victorhugo",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Victor_Hugo_001.jpg",
+        "licence": "Domaine public",
+        "auteur": "Nadar",
+        "legende": "Victor Hugo, photographie de Nadar (vers 1884)"
+      }
+    },
+    {
+      "slug": "sand",
+      "nom": "George Sand",
+      "titre": "Naissance de George Sand",
+      "axe": "Littérature et pensée",
+      "naissance": 1804,
+      "description": "George Sand (1804-1876) est une romancière et dramaturge, de son vrai nom Aurore Dupin. Elle publie plus d'une centaine d'ouvrages, des romans d'amour comme Indiana (1832) aux romans champêtres comme La Mare au diable (1846) ou La Petite Fadette (1849), et s'engage dans le combat républicain de 1848. Signant d'un nom d'homme, indépendante dans sa vie comme dans ses idées, elle s'impose dans un monde littéraire d'hommes : son œuvre et son château de Nohant, en Berry, font d'elle l'une des grandes figures du XIXe siècle.",
+      "wikipedia": "George_Sand",
+      "portrait": {
+        "fichier": "George_Sand.PNG",
+        "licence": "Domaine public",
+        "auteur": "Auguste Charpentier",
+        "recadrage": [
+          0.28,
+          0.1,
+          0.72,
+          0.55
+        ],
+        "largeur": 500,
+        "legende": "George Sand, portrait par Auguste Charpentier (1838)"
+      }
+    },
+    {
+      "slug": "baudelaire",
+      "nom": "Charles Baudelaire",
+      "titre": "Naissance de Charles Baudelaire",
+      "axe": "Littérature et pensée",
+      "naissance": 1821,
+      "description": "Charles Baudelaire (1821-1867) est un poète, critique d'art et traducteur d'Edgar Poe. Son recueil Les Fleurs du mal (1857) lui vaut un procès pour outrage à la morale publique : six poèmes sont condamnés, une censure qui ne sera levée qu'en 1949. En faisant de la ville, de la laideur et de l'ennui la matière de la poésie, et de la « modernité » un sujet d'art, il ouvre la voie à Verlaine, à Rimbaud et à toute la poésie moderne.",
+      "wikipedia": "Charles_Baudelaire",
+      "portrait": {
+        "fichier": "Étienne_Carjat,_Portrait_of_Charles_Baudelaire,_circa_1862.jpg",
+        "licence": "Domaine public",
+        "auteur": "Étienne Carjat",
+        "legende": "Charles Baudelaire, photographie d'Étienne Carjat (vers 1862)"
+      }
+    },
+    {
+      "slug": "zola",
+      "nom": "Émile Zola",
+      "titre": "Naissance d'Émile Zola",
+      "axe": "Littérature et pensée",
+      "naissance": 1840,
+      "description": "Émile Zola (1840-1902) est un écrivain et journaliste, chef de file du naturalisme. Auteur des vingt romans des Rougon-Macquart (1871-1893), dont L'Assommoir, Nana et Germinal, il peint la société du Second Empire, de la mine aux grands magasins, avec la rigueur d'un observateur. En 1898, sa lettre « J'accuse…! », publiée dans L'Aurore pour défendre le capitaine Dreyfus, l'oblige à fuir en Angleterre mais fait de lui le modèle de l'intellectuel engagé ; il repose au Panthéon.",
+      "wikipedia": "Émile_Zola",
+      "portrait": {
+        "fichier": "Émile_Zola_par_Paul_Nadar.jpg",
+        "recadrage": [
+          0.1,
+          0.1,
+          0.9,
+          0.78
+        ],
+        "licence": "Domaine public",
+        "auteur": "Paul Nadar",
+        "legende": "Émile Zola, photographie de Paul Nadar (vers 1898)"
+      }
+    },
+    {
+      "slug": "verne",
+      "nom": "Jules Verne",
+      "titre": "Naissance de Jules Verne",
+      "axe": "Littérature et pensée",
+      "naissance": 1828,
+      "description": "Jules Verne (1828-1905) est un écrivain, père du roman d'aventures scientifiques. Avec son éditeur Hetzel, il publie les « Voyages extraordinaires » : Voyage au centre de la Terre (1864), De la Terre à la Lune (1865), Vingt mille lieues sous les mers (1870) et Le Tour du monde en quatre-vingts jours (1872). Passionné de sciences et de techniques, il imagine sous-marins, voyages dans l'espace et grandes expéditions ; ses romans, traduits dans le monde entier, en font l'un des auteurs les plus traduits au monde.",
+      "wikipedia": "Jules_Verne",
+      "portrait": {
+        "fichier": "Félix_Nadar_1820-1910_portraits_Jules_Verne.jpg",
+        "licence": "Domaine public",
+        "auteur": "Nadar",
+        "legende": "Jules Verne, photographie de Nadar (vers 1878)"
+      }
+    },
+    {
+      "slug": "proust",
+      "nom": "Marcel Proust",
+      "titre": "Naissance de Marcel Proust",
+      "axe": "Littérature et pensée",
+      "naissance": 1871,
+      "description": "Marcel Proust (1871-1922) est un écrivain, auteur de À la recherche du temps perdu. Sa grande œuvre en sept volumes, publiée de 1913 à 1927, part de la saveur d'une madeleine trempée dans le thé pour retrouver, par la mémoire involontaire, l'enfance à Combray, les salons parisiens et la jalousie amoureuse. Écrite en grande partie dans une chambre tapissée de liège par un écrivain malade, cette œuvre monumentale renouvelle le roman et reste l'une des plus grandes de la littérature française.",
+      "wikipedia": "Marcel_Proust",
+      "biographie": "bio_proust",
+      "portrait": {
+        "fichier": "Otto_Wegener_Proust_vers_1895_bis.jpg",
+        "licence": "Domaine public",
+        "auteur": "Otto Wegener",
+        "recadrage": [
+          0.25,
+          0.0,
+          0.95,
+          0.5
+        ],
+        "legende": "Marcel Proust, photographie d'Otto Wegener (vers 1895)"
+      }
+    },
+    {
+      "slug": "exupery",
+      "nom": "Antoine de Saint-Exupéry",
+      "titre": "Naissance d'Antoine de Saint-Exupéry",
+      "axe": "Littérature et pensée",
+      "naissance": 1900,
+      "description": "Antoine de Saint-Exupéry (1900-1944) est un aviateur et écrivain. Pilote de l'Aéropostale puis pilote de guerre, il tire de son métier Courrier sud, Vol de nuit et Terre des hommes, avant d'écrire à New York Le Petit Prince (1943), conte poétique sur l'amitié, l'enfance et ce qui compte vraiment. Disparu en mission de reconnaissance au-dessus de la Méditerranée le 31 juillet 1944, il laisse l'un des livres français les plus traduits et les plus lus au monde.",
+      "wikipedia": "Antoine_de_Saint-Exupéry",
+      "portrait": {
+        "fichier": "Antoine_de_Saint-Euxpery_(1920).jpg",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu",
+        "legende": "Antoine de Saint-Exupéry, photographie vers 1920"
+      }
+    },
+    {
+      "slug": "camus",
+      "nom": "Albert Camus",
+      "titre": "Naissance d'Albert Camus",
+      "axe": "Littérature et pensée",
+      "naissance": 1913,
+      "description": "Albert Camus (1913-1960) est un écrivain, philosophe et journaliste né en Algérie, dans une famille modeste. Auteur de L'Étranger, du Mythe de Sisyphe (1942) et de La Peste (1947), il pense l'absurde de la condition humaine et la révolte contre l'injustice ; résistant, il dirige le journal Combat à la Libération. Prix Nobel de littérature en 1957, il meurt à quarante-six ans dans un accident de voiture et reste l'une des voix morales les plus écoutées du XXe siècle.",
+      "wikipedia": "Albert_Camus",
+      "biographie": "bio_camus",
+      "portrait": {
+        "fichier": "Albert_Camus,_gagnant_de_prix_Nobel,_portrait_en_buste,_posé_au_bureau,_faisant_face_à_gauche,_cigarette_de_tabagisme.jpg",
+        "licence": "Domaine public",
+        "auteur": "United Press International",
+        "legende": "Albert Camus, photographie de presse d'United Press International (1957)"
+      }
+    },
+    {
+      "slug": "beauvoir",
+      "nom": "Simone de Beauvoir",
+      "titre": "Naissance de Simone de Beauvoir",
+      "axe": "Littérature et pensée",
+      "naissance": 1908,
+      "description": "Simone de Beauvoir (1908-1986) est une philosophe, romancière et essayiste, figure de l'existentialisme et du féminisme. Compagne de Sartre, elle publie Le Deuxième Sexe (1949), où elle écrit : « On ne naît pas femme : on le devient », reçoit le prix Goncourt en 1954 pour Les Mandarins et signe le manifeste des 343 pour le droit à l'avortement (1971). Son analyse de la condition féminine fait d'elle l'une des grandes inspiratrices du féminisme du XXe siècle, en France et dans le monde.",
+      "wikipedia": "Simone_de_Beauvoir",
+      "biographie": "bio_beauvoir",
+      "portrait": {
+        "fichier": "Simone_de_Beauvoir2.png",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Moshe Milner",
+        "legende": "Simone de Beauvoir, photographie de Moshe Milner (1967)"
+      }
+    },
+    {
+      "slug": "poussin",
+      "nom": "Nicolas Poussin",
+      "titre": "Naissance de Nicolas Poussin",
+      "axe": "Beaux-arts",
+      "naissance": 1594,
+      "description": "Nicolas Poussin (1594-1665) est un peintre, chef de file du classicisme français. Installé presque toute sa vie à Rome, il peint des sujets antiques et bibliques, comme Les Bergers d'Arcadie, avec une composition rigoureuse où le dessin et la raison l'emportent sur la couleur. Appelé un temps à Paris par Louis XIII, il exerce une influence durable sur l'Académie royale de peinture et sur l'art français, qui voit en lui son maître du classicisme.",
+      "wikipedia": "Nicolas_Poussin",
+      "portrait": {
+        "fichier": "Nicolas_Poussin_078.jpg",
+        "licence": "Domaine public",
+        "auteur": "Nicolas Poussin",
+        "legende": "Nicolas Poussin, autoportrait (1650)"
+      }
+    },
+    {
+      "slug": "david",
+      "nom": "Jacques-Louis David",
+      "titre": "Naissance de Jacques-Louis David",
+      "axe": "Beaux-arts",
+      "naissance": 1748,
+      "description": "Jacques-Louis David (1748-1825) est un peintre, chef de file du néoclassicisme. Auteur du Serment des Horaces (1784) et de La Mort de Marat (1793), il met son art au service de la Révolution puis de Napoléon, dont il peint le sacre (1805-1807) et le passage des Alpes. Député à la Convention, il vote la mort de Louis XVI et doit finir sa vie en exil à Bruxelles ; son style, clair et inspiré de l'Antiquité, domine la peinture française autour de 1800.",
+      "wikipedia": "Jacques-Louis_David",
+      "portrait": {
+        "fichier": "David_Autoportrait-1794_-_restauration_2025.jpg",
+        "licence": "Domaine public",
+        "auteur": "Jacques-Louis David",
+        "legende": "Jacques-Louis David, autoportrait (1794)"
+      }
+    },
+    {
+      "slug": "delacroix",
+      "nom": "Eugène Delacroix",
+      "titre": "Naissance d'Eugène Delacroix",
+      "axe": "Beaux-arts",
+      "naissance": 1798,
+      "description": "Eugène Delacroix (1798-1863) est un peintre, chef de file du romantisme. Admirateur de Rubens et grand coloriste, il peint La Barque de Dante, Les Massacres de Scio et surtout La Liberté guidant le peuple (1830), née des Trois Glorieuses. Son voyage au Maroc en 1832 nourrit ses scènes orientales, et ses grands décors, au Palais-Bourbon et à Saint-Sulpice, comptent parmi les sommets de la peinture française du XIXe siècle.",
+      "wikipedia": "Eugène_Delacroix",
+      "portrait": {
+        "fichier": "Félix_Nadar_1820-1910_portraits_Eugène_Delacroix.jpg",
+        "licence": "Domaine public",
+        "auteur": "Nadar",
+        "legende": "Eugène Delacroix, photographie de Nadar (vers 1858)"
+      }
+    },
+    {
+      "slug": "violletleduc",
+      "nom": "Eugène Viollet-le-Duc",
+      "titre": "Naissance d'Eugène Viollet-le-Duc",
+      "axe": "Beaux-arts",
+      "naissance": 1814,
+      "description": "Eugène Viollet-le-Duc (1814-1879) est un architecte, restaurateur de monuments médiévaux. Chargé de la restauration de Notre-Dame de Paris à partir de 1844, il y ajoute la flèche (1859), et il redonne leur aspect à la cité de Carcassonne, au château de Pierrefonds ou à la basilique de Vézelay. Théoricien de l'architecture gothique, il fixe la doctrine de la restauration des monuments historiques en France ; sa flèche de Notre-Dame, détruite dans l'incendie de 2019, a été rebâtie d'après ses plans.",
+      "wikipedia": "Eugène_Viollet-le-Duc",
+      "portrait": {
+        "fichier": "Eugene_viollet_le_duc.jpg",
+        "licence": "Domaine public",
+        "auteur": "Nadar",
+        "legende": "Eugène Viollet-le-Duc, photographie de Nadar"
+      }
+    },
+    {
+      "slug": "monet",
+      "nom": "Claude Monet",
+      "titre": "Naissance de Claude Monet",
+      "axe": "Beaux-arts",
+      "naissance": 1840,
+      "description": "Claude Monet (1840-1926) est un peintre, l'un des fondateurs de l'impressionnisme. Son tableau Impression, soleil levant (1872) donne son nom au mouvement ; il peint ensuite en séries, les Meules, les Cathédrales de Rouen, puis les Nymphéas dans son jardin de Giverny, pour saisir les variations de la lumière. Il renouvelle la peinture de paysage en travaillant sur le motif, et ses Nymphéas, offerts à l'État, sont exposés au musée de l'Orangerie, à Paris.",
+      "wikipedia": "Claude_Monet",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Claude_Monet_1899_Nadar_crop.jpg",
+        "licence": "Domaine public",
+        "auteur": "Nadar",
+        "legende": "Claude Monet, photographie de Nadar (1899)"
+      }
+    },
+    {
+      "slug": "cezanne",
+      "nom": "Paul Cézanne",
+      "titre": "Naissance de Paul Cézanne",
+      "axe": "Beaux-arts",
+      "naissance": 1839,
+      "description": "Paul Cézanne (1839-1906) est un peintre provençal, précurseur de l'art moderne. Ami d'enfance de Zola, d'abord proche des impressionnistes, il s'installe à Aix-en-Provence et construit ses tableaux par la forme et la couleur : natures mortes, Joueurs de cartes, et des dizaines de vues de la montagne Sainte-Victoire. Peu reconnu de son vivant, il est salué après sa mort comme le « père de l'art moderne » : son travail sur la structure des volumes ouvre la voie au cubisme de Picasso et de Braque.",
+      "wikipedia": "Paul_Cézanne",
+      "portrait": {
+        "fichier": "Paul_Cézanne_O.I..jpg",
+        "licence": "Domaine public",
+        "recadrage": [
+          0.22,
+          0.2,
+          0.78,
+          0.8
+        ],
+        "largeur": 500,
+        "legende": "Paul Cézanne, photographie du XIXe siècle",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "rodin",
+      "nom": "Auguste Rodin",
+      "titre": "Naissance d'Auguste Rodin",
+      "axe": "Beaux-arts",
+      "naissance": 1840,
+      "description": "Auguste Rodin (1840-1917) est un sculpteur, considéré comme le père de la sculpture moderne. Auteur du Penseur, du Baiser et des Bourgeois de Calais, il modèle des corps tourmentés, laissés volontairement inachevés, et travaille toute sa vie à La Porte de l'Enfer, commandée en 1880. Sa liberté d'expression et son sens du mouvement libèrent la sculpture de l'académisme ; son atelier de Meudon et l'hôtel Biron, à Paris, devenus musée Rodin, conservent l'essentiel de son œuvre.",
+      "wikipedia": "Auguste_Rodin",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Auguste_Rodin_fotografato_da_Nadar_nel_1891.jpg",
+        "licence": "Domaine public",
+        "auteur": "Nadar",
+        "legende": "Auguste Rodin, photographie de Nadar (1891)"
+      }
+    },
+    {
+      "slug": "claudel",
+      "nom": "Camille Claudel",
+      "titre": "Naissance de Camille Claudel",
+      "axe": "Beaux-arts",
+      "naissance": 1864,
+      "description": "Camille Claudel (1864-1943) est une sculptrice, élève puis collaboratrice de Rodin. Auteure de La Valse, de L'Âge mûr et de Sakountala, elle invente un langage de formes très personnel, longtemps éclipsé par la gloire de Rodin, avec qui elle a travaillé et vécu une relation passionnée. Internée en 1913 dans un asile, où elle reste trente ans jusqu'à sa mort, elle est redécouverte à la fin du XXe siècle et reconnue comme l'une des grandes sculptrices françaises.",
+      "wikipedia": "Camille_Claudel",
+      "portrait": {
+        "fichier": "Camille_nette.jpg",
+        "licence": "CC BY-SA 4.0",
+        "auteur": "Plombelec",
+        "legende": "Camille Claudel jeune, photographie des années 1880 retouchée en 2020"
+      }
+    },
+    {
+      "slug": "matisse",
+      "nom": "Henri Matisse",
+      "titre": "Naissance d'Henri Matisse",
+      "axe": "Beaux-arts",
+      "naissance": 1869,
+      "description": "Henri Matisse (1869-1954) est un peintre, chef de file du fauvisme. Né dans le Nord, installé à Nice, il révolutionne l'usage de la couleur pure, comme dans La Danse, et termine sa vie en créant des « papiers découpés » et le décor de la chapelle de Vence. Rival et ami de Picasso, il compte parmi les deux grands maîtres de la peinture du XXe siècle, et ses œuvres sont conservées dans le monde entier, notamment au musée Matisse de Nice et du Cateau-Cambrésis.",
+      "wikipedia": "Henri_Matisse",
+      "portrait": {
+        "fichier": "Portrait_of_Henri_Matisse_1933_May_20.jpg",
+        "licence": "Domaine public",
+        "auteur": "Carl Van Vechten",
+        "legende": "Henri Matisse, photographie de Carl Van Vechten (1933)"
+      }
+    },
+    {
+      "slug": "rameau",
+      "nom": "Jean-Philippe Rameau",
+      "titre": "Naissance de Jean-Philippe Rameau",
+      "axe": "Musique et spectacle",
+      "naissance": 1683,
+      "description": "Jean-Philippe Rameau (1683-1764) est un compositeur et théoricien de la musique. Organiste puis maître de l'opéra français, il compose Les Indes galantes (1735), Castor et Pollux (1737) et de nombreuses pièces de clavecin, et écrit son Traité de l'harmonie (1722), qui fonde la théorie de la musique tonale. Compositeur de la cour de Louis XV, il domine la musique française du XVIIIe siècle et défend l'opéra français face à l'opéra italien lors de la querelle des Bouffons.",
+      "wikipedia": "Jean-Philippe_Rameau",
+      "portrait": {
+        "fichier": "Attribué_à_Joseph_Aved,_Portrait_de_Jean-Philippe_Rameau_(vers_1728)_-_001.jpg",
+        "licence": "Domaine public",
+        "auteur": "Joseph Aved (attribué)",
+        "legende": "Jean-Philippe Rameau, portrait attribué à Joseph Aved (vers 1728)"
+      }
+    },
+    {
+      "slug": "berlioz",
+      "nom": "Hector Berlioz",
+      "titre": "Naissance d'Hector Berlioz",
+      "axe": "Musique et spectacle",
+      "naissance": 1803,
+      "description": "Hector Berlioz (1803-1869) est un compositeur et chef d'orchestre romantique. Son orchestre immense et ses idées neuves éclatent dans la Symphonie fantastique (1830), puis dans Roméo et Juliette, La Damnation de Faust et l'opéra Les Troyens, et il rédige un traité d'orchestration (1844) qui fait référence. Longtemps plus applaudi à l'étranger qu'en France, il renouvelle l'art de l'orchestre et la musique à programme, et il est désormais reconnu comme l'un des plus grands compositeurs romantiques.",
+      "wikipedia": "Hector_Berlioz",
+      "portrait": {
+        "fichier": "Berlioz_d’après_Pierre_Petit.png",
+        "licence": "CC0 (domaine public)",
+        "auteur": "Pierre Petit",
+        "legende": "Hector Berlioz, d'après une photographie de Pierre Petit (1863)"
+      }
+    },
+    {
+      "slug": "bernhardt",
+      "nom": "Sarah Bernhardt",
+      "titre": "Naissance de Sarah Bernhardt",
+      "axe": "Musique et spectacle",
+      "naissance": 1844,
+      "description": "Sarah Bernhardt (1844-1923) est une comédienne, surnommée « la Divine ». Sociétaire de la Comédie-Française puis directrice de théâtre, elle triomphe dans Phèdre, La Dame aux camélias et L'Aiglon, joue aussi des rôles d'homme comme Hamlet et fait de longues tournées en Europe et en Amérique. Première grande vedette internationale du théâtre, elle poursuit sa carrière après l'amputation d'une jambe en 1915 et apparaît même au cinéma ; elle est devenue le symbole de l'actrice à la française.",
+      "wikipedia": "Sarah_Bernhardt",
+      "portrait": {
+        "fichier": "SarahBernhardt1880.jpg",
+        "licence": "Domaine public",
+        "auteur": "Napoleon Sarony",
+        "legende": "Sarah Bernhardt, photographie de Napoleon Sarony (1880)"
+      }
+    },
+    {
+      "slug": "debussy",
+      "nom": "Claude Debussy",
+      "titre": "Naissance de Claude Debussy",
+      "axe": "Musique et spectacle",
+      "naissance": 1862,
+      "description": "Claude Debussy (1862-1918) est un compositeur, figure majeure de la musique française. Il renouvelle l'harmonie et les timbres avec le Prélude à l'après-midi d'un faune (1894), l'opéra Pelléas et Mélisande (1902), La Mer et ses Préludes pour piano, des œuvres souvent rapprochées de l'impressionnisme, étiquette qu'il refusait. En libérant la musique des règles de la tradition, il ouvre la voie à la musique du XXe siècle, et son Clair de lune est l'une des pages pour piano les plus célèbres au monde.",
+      "wikipedia": "Claude_Debussy",
+      "portrait": {
+        "fichier": "Claude_Debussy_by_Atelier_Nadar.jpg",
+        "licence": "Domaine public",
+        "legende": "Claude Debussy, photographie de l'atelier Nadar (vers 1900)",
+        "auteur": "Atelier Nadar"
+      }
+    },
+    {
+      "slug": "lumiere",
+      "nom": "Louis Lumière",
+      "titre": "Naissance de Louis Lumière",
+      "axe": "Musique et spectacle",
+      "naissance": 1864,
+      "description": "Louis Lumière (1864-1948) est un ingénieur et industriel, inventeur du cinéma avec son frère Auguste. Les frères Lumière déposent en 1895 le brevet du Cinématographe, appareil qui filme et projette, et organisent à Paris, le 28 décembre 1895, la première séance publique payante, avec La Sortie de l'usine Lumière à Lyon et L'Arroseur arrosé. Pionniers aussi de la photographie en couleurs grâce à l'autochrome (1903), ils font de Lyon un berceau du cinéma, art qui deviendra l'un des principaux spectacles populaires du XXe siècle.",
+      "wikipedia": "Louis_Lumière",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Louis_Lumière_in_1890_ca.jpg",
+        "licence": "Domaine public",
+        "legende": "Louis Lumière, photographie vers 1890",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "piaf",
+      "nom": "Édith Piaf",
+      "titre": "Naissance d'Édith Piaf",
+      "axe": "Musique et spectacle",
+      "naissance": 1915,
+      "description": "Édith Piaf (1915-1963) est une chanteuse, surnommée « la Môme Piaf ». Née dans la misère à Belleville et repérée dans la rue par Louis Leplée, elle devient la grande voix de la chanson française avec La Vie en rose, Hymne à l'amour, Milord ou Non, je ne regrette rien, chantées sur la scène de l'Olympia. Elle lance de jeunes talents comme Yves Montand et Charles Aznavour, et sa voix, ses chansons de vie dure font d'elle l'une des artistes françaises les plus connues dans le monde, bien après sa mort à quarante-sept ans.",
+      "wikipedia": "Édith_Piaf",
+      "biographie": "bio_edithpiaf",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Edith_Piaf_zingt_in_ons_land,_Bestanddeelnr_914-6438_(cropped).jpg",
+        "recadrage": [
+          0.3,
+          0.0,
+          0.9,
+          1.0
+        ],
+        "licence": "CC0 (domaine public)",
+        "auteur": "Eric Koch / Anefo (Nationaal Archief)",
+        "legende": "Édith Piaf sur scène, photographie d'Eric Koch (1962)"
+      }
+    },
+    {
+      "slug": "aznavour",
+      "nom": "Charles Aznavour",
+      "titre": "Naissance de Charles Aznavour",
+      "axe": "Musique et spectacle",
+      "naissance": 1924,
+      "description": "Charles Aznavour (1924-2018) est un auteur-compositeur-interprète et acteur franco-arménien. Fils d'immigrés arméniens et lancé par Édith Piaf, il écrit et chante plus d'un millier de chansons, dont La Bohème, Hier encore, Emmenez-moi ou Les Comédiens, et joue dans plus de soixante films. Chantées dans plusieurs langues et vendues à plus de cent millions d'exemplaires, ses chansons font de lui l'un des chanteurs français les plus célèbres au monde, et il a aussi représenté l'Arménie comme ambassadeur et délégué auprès de l'ONU.",
+      "wikipedia": "Charles_Aznavour",
+      "portrait": {
+        "fichier": "2014.06.23._Charles_Aznavour_Fot_Mariusz_Kubik_01.jpg",
+        "licence": "CC BY 3.0",
+        "auteur": "Mariusz Kubik",
+        "legende": "Charles Aznavour, photographie de Mariusz Kubik (2014)"
+      }
+    },
+    {
+      "slug": "cartier",
+      "nom": "Jacques Cartier",
+      "titre": "Naissance de Jacques Cartier",
+      "axe": "Sciences et découvertes",
+      "naissance": 1491,
+      "description": "Jacques Cartier (vers 1491-1557) est un navigateur et explorateur breton. Envoyé par François Ier, il atteint en 1534 le golfe du Saint-Laurent, prend possession du pays en plantant une croix à Gaspé, puis remonte le fleuve jusqu'aux sites de Québec et de Montréal lors de son deuxième voyage (1535-1536). Il donne au pays le nom de « Canada », d'après un mot iroquoien qui désigne un village : ses voyages fondent les droits de la France sur la Nouvelle-France, à l'origine du Québec.",
+      "wikipedia": "Jacques_Cartier",
+      "portrait": {
+        "fichier": "Jacques_Cartier_1851-1852.png",
+        "licence": "Domaine public",
+        "auteur": "Théophile Hamel",
+        "legende": "Jacques Cartier, portrait imaginaire peint par Théophile Hamel vers 1844, près de trois siècles après sa mort"
+      }
+    },
+    {
+      "slug": "pascal",
+      "nom": "Blaise Pascal",
+      "titre": "Naissance de Blaise Pascal",
+      "axe": "Sciences et découvertes",
+      "naissance": 1623,
+      "description": "Blaise Pascal (1623-1662) est un mathématicien, physicien, inventeur et philosophe. Enfant prodige, il invente avant vingt ans la Pascaline, première machine à calculer, jette avec Fermat les bases du calcul des probabilités, démontre la pesanteur de l'air et énonce le principe qui porte son nom en hydrostatique. Converti à une foi intense en 1654, il écrit Les Provinciales et laisse inachevées ses Pensées, publiées après sa mort : mort à trente-neuf ans, il unit science et réflexion sur la condition humaine.",
+      "wikipedia": "Blaise_Pascal",
+      "portrait": {
+        "fichier": "Blaise_Pascal_Versailles.JPG",
+        "licence": "Domaine public",
+        "legende": "Blaise Pascal, portrait d'après François II Quesnel (vers 1690)",
+        "auteur": "Anonyme, d'après François II Quesnel"
+      }
+    },
+    {
+      "slug": "lavoisier",
+      "nom": "Antoine Lavoisier",
+      "titre": "Naissance d'Antoine Lavoisier",
+      "axe": "Sciences et découvertes",
+      "naissance": 1743,
+      "description": "Antoine Lavoisier (1743-1794) est un chimiste, considéré comme le père de la chimie moderne. Il montre que la combustion est une combinaison avec l'oxygène, que l'eau est composée d'hydrogène et d'oxygène, établit que la matière se conserve au cours des réactions et fonde avec d'autres savants la nomenclature chimique moderne. Fermier général, c'est-à-dire collecteur d'impôts de l'Ancien Régime, il est guillotiné en 1794 pendant la Terreur, alors qu'il avait déjà fondé la chimie moderne.",
+      "wikipedia": "Antoine_Lavoisier",
+      "biographie": "bio_lavoisier",
+      "portrait": {
+        "fichier": "David_-_Portrait_of_Monsieur_Lavoisier_(cropped).jpg",
+        "licence": "Domaine public",
+        "auteur": "Jacques-Louis David",
+        "legende": "Antoine Lavoisier, détail du portrait de Monsieur et Madame Lavoisier par Jacques-Louis David (1788)"
+      }
+    },
+    {
+      "slug": "champollion",
+      "nom": "Jean-François Champollion",
+      "titre": "Naissance de Jean-François Champollion",
+      "axe": "Sciences et découvertes",
+      "naissance": 1790,
+      "description": "Jean-François Champollion (1790-1832) est un linguiste et égyptologue, déchiffreur des hiéroglyphes. En comparant les trois écritures de la pierre de Rosette, découverte par l'expédition d'Égypte de Bonaparte, il comprend que les hiéroglyphes notent à la fois des sons et des idées, et annonce sa découverte en septembre 1822. Premier conservateur des collections égyptiennes du Louvre puis premier titulaire d'une chaire d'égyptologie au Collège de France, il fonde l'égyptologie et ouvre trois mille ans d'histoire de l'Égypte pharaonique, mort à quarante et un ans.",
+      "wikipedia": "Jean-François_Champollion",
+      "portrait": {
+        "fichier": "Jean-François_Champollion,_by_Léon_Cogniet.jpg",
+        "licence": "Domaine public",
+        "auteur": "Léon Cogniet",
+        "legende": "Jean-François Champollion, portrait par Léon Cogniet (1831)"
+      }
+    },
+    {
+      "slug": "braille",
+      "nom": "Louis Braille",
+      "titre": "Naissance de Louis Braille",
+      "axe": "Sciences et découvertes",
+      "naissance": 1809,
+      "description": "Louis Braille (1809-1852) est un enseignant et inventeur, aveugle depuis l'enfance, créateur de l'écriture braille. Blessé à l'œil par un outil à trois ans, aveugle à cinq ans, élève de l'Institution royale des jeunes aveugles de Paris, il met au point à quinze ans un alphabet de six points en relief, publié en 1829, qui permet de lire, d'écrire et même de noter la musique. D'abord ignoré, son système est adopté officiellement en 1854, deux ans après sa mort de tuberculose ; devenu universel, il sert à des millions de personnes dans le monde, et Louis Braille repose au Panthéon depuis 1952.",
+      "wikipedia": "Louis_Braille",
+      "portrait": {
+        "fichier": "Engraving_of_Louis_Braille_by_Henri_Thiriat_(cropped).jpg",
+        "licence": "Domaine public",
+        "auteur": "Henri Thiriat",
+        "recadrage": [
+          0.22,
+          0.15,
+          0.78,
+          0.68
+        ],
+        "legende": "Louis Braille, gravure d'Henri Thiriat (1887)"
+      }
+    },
+    {
+      "slug": "pasteur",
+      "nom": "Louis Pasteur",
+      "titre": "Naissance de Louis Pasteur",
+      "axe": "Sciences et découvertes",
+      "naissance": 1822,
+      "description": "Louis Pasteur (1822-1895) est un chimiste et biologiste, fondateur de la microbiologie. Il prouve le rôle des micro-organismes dans la fermentation et la maladie, réfute la génération spontanée, invente la pasteurisation et met au point des vaccins contre le charbon et la rage, testé en 1885 sur le jeune Joseph Meister. Fondateur de l'Institut Pasteur (1887), toujours centre mondial de recherche médicale, il est l'un des savants français les plus célèbres : ses découvertes ont sauvé d'innombrables vies.",
+      "wikipedia": "Louis_Pasteur",
+      "biographie": "bio_pasteur",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Louis_Pasteur_(1822_-_1895),_microbiologist_and_chemist_Wellcome_V0026980.jpg",
+        "licence": "Domaine public",
+        "auteur": "Paul Nadar",
+        "legende": "Louis Pasteur, photographie de Paul Nadar"
+      }
+    },
+    {
+      "slug": "eiffel",
+      "nom": "Gustave Eiffel",
+      "titre": "Naissance de Gustave Eiffel",
+      "axe": "Sciences et découvertes",
+      "naissance": 1832,
+      "description": "Gustave Eiffel (1832-1923) est un ingénieur et industriel, maître de l'architecture métallique. Constructeur de viaducs et de ponts, comme celui de Garabit, il conçoit l'ossature de la statue de la Liberté puis, pour l'Exposition universelle de 1889, la tour de 300 mètres qui porte son nom, bâtie en un peu plus de deux ans. Contesté par des artistes avant son inauguration, il devient avec sa tour le symbole de Paris et de la France ; il consacre ses dernières années à la météorologie et à l'aérodynamique, en bâtissant l'une des premières souffleries.",
+      "wikipedia": "Gustave_Eiffel",
+      "biographie": "bio_eiffel",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Gustave_Eiffel_1888_Nadar2.jpg",
+        "licence": "Domaine public",
+        "auteur": "Nadar",
+        "recadrage": [
+          0.1,
+          0.14,
+          0.9,
+          0.78
+        ],
+        "legende": "Gustave Eiffel, photographie de Nadar (1888)"
+      }
+    },
+    {
+      "slug": "curie",
+      "nom": "Marie Curie",
+      "titre": "Naissance de Marie Curie",
+      "axe": "Sciences et découvertes",
+      "naissance": 1867,
+      "description": "Marie Curie (1867-1934) est une physicienne et chimiste d'origine polonaise, naturalisée française. Avec son mari Pierre, elle découvre le polonium et le radium (1898) et crée le mot « radioactivité » ; elle reçoit le prix Nobel de physique en 1903, puis celui de chimie en 1911, seule personne distinguée dans deux sciences différentes. Première femme lauréate du Nobel, première femme professeure à la Sorbonne, elle organise les ambulances radiologiques de la Grande Guerre et entre au Panthéon en 1995, première femme honorée pour ses propres mérites.",
+      "wikipedia": "Marie_Curie",
+      "biographie": "bio_mariecurie",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Marie_Curie_c1920.jpg",
+        "licence": "Domaine public",
+        "auteur": "Henri Manuel",
+        "legende": "Marie Curie, photographie d'Henri Manuel (vers 1920)"
+      }
+    },
+    {
+      "slug": "cousteau",
+      "nom": "Jacques-Yves Cousteau",
+      "titre": "Naissance de Jacques-Yves Cousteau",
+      "axe": "Sciences et découvertes",
+      "naissance": 1910,
+      "description": "Jacques-Yves Cousteau (1910-1997) est un officier de marine, explorateur des océans et cinéaste. Il met au point avec Émile Gagnan le scaphandre autonome (1943), explore les mers à bord de la Calypso, et réalise Le Monde du silence, Palme d'or à Cannes en 1956 puis Oscar du meilleur documentaire en 1957. Ses films et ses émissions révèlent au grand public la beauté des fonds marins ; devenu l'un des premiers défenseurs de l'écologie, il fonde en 1973 la Cousteau Society pour protéger les océans.",
+      "wikipedia": "Jacques-Yves_Cousteau",
+      "biographie": "bio_cousteau",
+      "portrait": {
+        "fichier": "Cousteau1972_(cropped).jpg",
+        "licence": "CC0 (domaine public)",
+        "auteur": "Hans Peters / Anefo (Nationaal Archief)",
+        "legende": "Jacques-Yves Cousteau, photographie de Hans Peters (1972)"
+      }
+    }
+  ]
+}

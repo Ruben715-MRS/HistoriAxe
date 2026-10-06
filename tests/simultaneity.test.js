@@ -120,6 +120,16 @@ test('themeTag : la convention psn_<iso>_ des programmes scolaires donne le pays
     assert.equal(S.themeTag('psn_de_t1', [3, 2], {}), S.themeTag('thm_de', [2, 0], { thm_de: 'DE' }));
 });
 
+test('themeTag : la convention pan_<iso> des panthéons nationaux donne le pays', () => {
+    // « Grandes figures de France » doit être le MÊME pays que « Histoire de
+    // France » : sans cela, une naissance française y répondrait, « ailleurs »,
+    // à une ancre française.
+    assert.equal(S.themeTag('pan_fr', [1, 1, 0], {}), 'pays:FR');
+    assert.equal(S.themeTag('pan_fr', [1, 1, 0], {}), S.themeTag('thm_fr', [2, 0], { thm_fr: 'FR' }));
+    // Le motif est strict : `pan_` puis deux lettres, rien d'autre.
+    assert.equal(S.themeTag('pan_france', [1, 1], {}), 'branche:1.1');
+});
+
 test('themeTag : sinon, la position dans l’arbre — jamais le nom de la catégorie', () => {
     // Les noms de catégories sont traduits (data/en.json…), les indices non.
     assert.equal(S.themeTag('col_6e', [3, 0], {}), 'branche:3.0');
@@ -154,6 +164,22 @@ test('le vivier écarte les catégories plates, faute de « lieu » exploitable'
     const pool = MINI_POOL();
     assert.ok(!pool.answers.some(a => a.themeId === 'thm_capes'),
         'un thème de catégorie sans sous-catégories ne peut pas définir un « ailleurs »');
+});
+
+test('le vivier écarte les panthéons nationaux, même marqués ⭐ : une naissance n’est pas une réponse', () => {
+    // « Naissance de Victor Hugo » n'est pas un événement qui se passait
+    // « ailleurs ». Et marquer des ⭐ dans un panthéon (utile pour ne jouer que
+    // ses incontournables) suffirait sinon à l'introduire dans le vivier.
+    const bdd = miniBdd();
+    bdd[0].subcategories[1].themes.push({
+        id: 'pan_xx', nom: 'Grandes figures', essentiel: ['p1'],
+        events: [{ id: 'p1', date: 1802, titre: 'Naissance de Victor Hugo' }]
+    });
+    const pool = S.buildAnswerPool(bdd, { countryByTheme: MINI_COUNTRIES });
+    assert.ok(!pool.answers.some(a => a.id === 'p1'));
+    // …mais elle reste une ANCRE valable, étiquetée du pays de son panthéon.
+    const index = S.buildTagIndex(bdd, { countryByTheme: MINI_COUNTRIES });
+    assert.equal(index.p1, 'pays:XX');
 });
 
 test('le vivier écarte les dates hors échelle historique', () => {
@@ -278,6 +304,24 @@ test('aucune réponse du pack français ne sort de l’échelle historique', () 
     // passe par DailyEngine.EXCLUDED_THEME_IDS.
     const hors = realPool.answers.filter(a => Math.abs(a.date) >= 10000);
     assert.deepEqual(hors, [], 'des dates non grégoriennes ont fui dans le vivier');
+});
+
+test('aucune réponse du pack français ne vient d’un panthéon national', () => {
+    const intrus = realPool.answers.filter(a => /^pan_[a-z]{2}$/.test(a.themeId));
+    assert.deepEqual(intrus.map(a => a.id), []);
+});
+
+test('« Grandes figures de France » reste jouable comme ancre : une session entière', () => {
+    // Soixante naissances, de Vercingétorix à Aznavour : chaque ancre doit
+    // trouver des contemporains ailleurs, ce qui vérifie du même coup que
+    // pan_fr compte bien comme la France (et non comme une branche à part).
+    const theme = allThemes().find(t => t.id === 'pan_fr');
+    assert.ok(theme, 'thème pan_fr absent du pack français');
+    const session = S.buildSession(theme.events, realPool, { rng: seededRng(7), count: S.SESSION_ROUNDS });
+    assert.equal(session.length, S.SESSION_ROUNDS);
+    session.forEach(q => {
+        assert.ok(!/^pan_/.test(q.correct.themeId), 'la bonne réponse ne peut pas venir d’un panthéon');
+    });
 });
 
 test('les gros thèmes du pack français remplissent une session entière', () => {

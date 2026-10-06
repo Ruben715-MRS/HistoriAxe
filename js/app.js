@@ -1708,7 +1708,7 @@ function initCategories() {
     currentBdd.forEach((cat, index) => {
         let bgImg = 'assets/images/cat_culture_generale.jpg';
         if (cat.nom.toLowerCase().includes('culture')) bgImg = 'assets/images/cat_culture_generale.jpg';
-        if (cat.nom.toLowerCase().includes('bio')) bgImg = 'assets/images/cat_biographies.jpg';
+        if (cat.nom.toLowerCase().includes('bio') || cat.nom.toLowerCase().includes('illustres')) bgImg = 'assets/images/cat_biographies.jpg';
         if (cat.nom.toLowerCase().includes('nationale')) bgImg = 'assets/images/cat_histoires_nationales.jpg';
         if (cat.nom.toLowerCase().includes('programmes')) bgImg = 'assets/images/cat_programmes_scolaires.jpg';
         if (cat.nom.toLowerCase().includes('capes') || cat.nom.toLowerCase().includes('agrég')) bgImg = 'assets/images/cat_agregation.jpg';
@@ -1779,9 +1779,14 @@ function initSubcategories() {
     titleEl.style.textAlign = 'center';
     titleEl.style.marginBottom = '24px';
 
+    // La note est celle du nœud AFFICHÉ, à n'importe quelle profondeur : au
+    // sommet c'est celle de la catégorie (node === category), plus bas celle de
+    // la sous-catégorie ouverte. Elle ne se limitait autrefois qu'au sommet, ce
+    // qui aurait fait disparaître l'explication d'une sous-catégorie qui porte
+    // elle-même des sous-catégories (« Personnages illustres > Biographies »).
     const noteBox = document.getElementById('subcategory-note');
-    if (category.note && selectedSubcategoryIndex.length === 0) {
-        document.getElementById('subcategory-note-text').innerText = category.note;
+    if (node.note) {
+        document.getElementById('subcategory-note-text').innerText = node.note;
         noteBox.classList.remove('hidden');
     } else {
         noteBox.classList.add('hidden');
@@ -1813,7 +1818,11 @@ function initSubcategories() {
         const nomLower = sub.nom.toLowerCase();
 
         // Mappings for available images
-        if (nomLower.includes('europe')) bgImg = 'assets/images/sub_europe.jpg';
+        // « Personnages illustres » d'abord : « Panthéons nationaux » contient
+        // « panth », que la règle des mythologies (plus bas) lui volerait.
+        if (nomLower.includes('panthéons nationaux') || nomLower.includes('pantheons nationaux')) bgImg = 'assets/images/sub_themes_generaux.jpg';
+        else if (nomLower === 'biographies') bgImg = 'assets/images/cat_biographies.jpg';
+        else if (nomLower.includes('europe')) bgImg = 'assets/images/sub_europe.jpg';
         else if (nomLower.includes('amérique')) bgImg = 'assets/images/sub_ameriques.jpg';
         else if (nomLower.includes('asie')) bgImg = 'assets/images/sub_asie.jpg';
         else if (nomLower.includes('moyen-orient')) bgImg = 'assets/images/sub_moyen_orient.jpg';
@@ -4540,6 +4549,7 @@ function pickNextEvent() {
     document.getElementById('hand-title').innerHTML = challengeThemeName
         ? `${eventToPlace.titre} <em class="hand-title-theme">(${stripThemePeriodSuffix(challengeThemeName.nom)})</em>`
         : eventToPlace.titre;
+    setPortraitImg(document.getElementById('hand-portrait'), eventToPlace);
     renderTimeline();
 }
 
@@ -4754,6 +4764,12 @@ function buildEntry(evt) {
         axeHtml +
         (evt.missed ? `<span class="entry-flag">${t('game.missed_tag')}</span>` : '') +
         `</span><span class="entry-chevron" aria-hidden="true">›</span></span>`;
+    // Pastille de portrait avant le titre, pour les événements qui en ont un.
+    const thumb = createPortraitThumb(evt, 'entry-portrait');
+    if (thumb) {
+        const body = row.querySelector('.entry-body');
+        body.insertBefore(thumb, body.firstChild);
+    }
     row.onclick = () => {
         // Défis du jour/hebdomadaire : les événements viennent de thèmes
         // divers, donc on affiche la ligne « Jouer sur ce thème »
@@ -5304,6 +5320,139 @@ function quitGame() {
     });
 }
 
+// =====================================================================
+// PORTRAITS — champ facultatif `image` d'un événement
+// =====================================================================
+// { src, legende, auteur, licence, source } : voir README « Portraits ».
+// Les fichiers vivent dans assets/portraits/, que le service worker garde dans
+// un cache à part, épargné par le ménage des mises à jour (voir sw.js).
+//
+// Trois règles pour qu'une image ne puisse jamais abîmer un écran :
+//  - un chemin qui ne vient pas de assets/portraits/ n'est pas affiché : la
+//    donnée est de confiance, mais ce garde-fou coûte une ligne ;
+//  - une image qui ne charge pas (hors-ligne avant de l'avoir vue, fichier
+//    absent) s'efface d'elle-même au lieu de laisser l'icône « image cassée » ;
+//  - hors de la fiche, la pastille est décorative (alt vide) : le titre dit
+//    déjà de qui il s'agit, et la légende complète est dans la fiche.
+const PORTRAIT_SRC_PATTERN = /^assets\/portraits\/[A-Za-z0-9_.-]+\.jpg$/;
+
+function portraitOf(evt) {
+    const image = evt && evt.image;
+    return image && PORTRAIT_SRC_PATTERN.test(image.src || '') ? image : null;
+}
+
+// Pose (ou retire) le portrait d'un <img> déjà présent dans le HTML.
+function setPortraitImg(imgEl, evt) {
+    if (!imgEl) return;
+    const image = portraitOf(evt);
+    imgEl.onerror = null;
+    if (!image) {
+        imgEl.classList.add('hidden');
+        imgEl.removeAttribute('src');
+        return;
+    }
+    imgEl.onerror = () => imgEl.classList.add('hidden');
+    imgEl.src = image.src;
+    imgEl.classList.remove('hidden');
+}
+
+// Crée une pastille de portrait pour un repère de la frise ; null sans image.
+function createPortraitThumb(evt, className) {
+    const image = portraitOf(evt);
+    if (!image) return null;
+    const img = document.createElement('img');
+    img.className = className;
+    img.alt = '';
+    img.decoding = 'async';
+    img.loading = 'lazy';
+    img.addEventListener('error', () => img.remove(), { once: true });
+    img.src = image.src;
+    return img;
+}
+
+// Portrait, légende et crédit de la fiche. Le crédit (auteur, licence, lien
+// vers la page de l'œuvre sur Wikimedia Commons) n'est pas facultatif : c'est
+// la condition des licences CC BY et CC BY-SA, et la moindre des politesses
+// pour le domaine public. Il est bâti au DOM, jamais en HTML, parce que le nom
+// d'un auteur peut contenir n'importe quoi.
+function renderModalPortrait(evt) {
+    const figure = document.getElementById('modal-portrait');
+    const img = document.getElementById('modal-portrait-img');
+    if (!figure || !img) return;
+    const image = portraitOf(evt);
+    img.onerror = null;
+    if (!image) {
+        figure.classList.add('hidden');
+        img.removeAttribute('src');
+        return;
+    }
+    // Légende et crédit décrivent une image : si elle ne charge pas, ils
+    // partent avec elle plutôt que de rester orphelins.
+    img.onerror = () => figure.classList.add('hidden');
+    // alt vide : la légende juste dessous dit tout, la répéter ferait lire
+    // deux fois la même phrase aux lecteurs d'écran.
+    img.alt = '';
+    img.src = image.src;
+    document.getElementById('modal-portrait-caption').textContent = image.legende || '';
+    const credit = document.getElementById('modal-portrait-credit');
+    credit.textContent = '';
+    const addText = text => credit.appendChild(document.createTextNode(text));
+    const addLink = (text, href) => {
+        const link = document.createElement('a');
+        link.href = href;
+        link.target = '_blank';
+        link.rel = 'noopener';
+        link.textContent = text;
+        credit.appendChild(link);
+    };
+    if (image.auteur) addText(image.auteur + ' · ');
+    // Une licence CC se lie à son texte, et dit que l'image a été modifiée
+    // (elle est recadrée et réduite) : c'est ce qu'exigent CC BY et CC BY-SA.
+    // Le domaine public n'exige rien de tout cela.
+    const licenseUrl = portraitLicenseUrl(image.licence);
+    if (licenseUrl) addLink(image.licence, licenseUrl);
+    else if (image.licence) addText(image.licence);
+    if (/^CC BY/.test(image.licence || '')) addText(' · image recadrée');
+    addText(' · ');
+    if (/^https:\/\//.test(image.source || '')) addLink('Wikimedia Commons', image.source);
+    else addText('Wikimedia Commons');
+    figure.classList.remove('hidden');
+}
+
+// Adresse du texte d'une licence Creative Commons, d'après son libellé
+// (« CC BY-SA 3.0 », « CC BY 3.0 NL », « CC0 (domaine public) ») ; null pour
+// le domaine public, qui n'a pas de texte à lier.
+function portraitLicenseUrl(label) {
+    const cc = /^CC BY(-SA)? (\d\.\d)(?: ([A-Z]{2,3}))?$/.exec(label || '');
+    if (cc) return `https://creativecommons.org/licenses/by${cc[1] ? '-sa' : ''}/${cc[2]}/${cc[3] ? cc[3].toLowerCase() + '/' : ''}`;
+    if (/^CC0/.test(label || '')) return 'https://creativecommons.org/publicdomain/zero/1.0/';
+    return null;
+}
+
+// Bouton « Voir sa biographie » : seulement pour un événement qui renvoie à
+// un thème de la catégorie Biographies, et jamais pendant une partie de frise
+// — il ferait quitter la partie d'un tap. Le test est celui de quitGame() :
+// hors Découverte, l'écran de jeu visible veut dire « partie en cours ».
+function renderModalBiographyButton(evt) {
+    const row = document.getElementById('modal-bio-row');
+    const btn = document.getElementById('modal-bio-btn');
+    if (!row || !btn) return;
+    const gameScreen = document.getElementById('screen-game');
+    const gameRunning = !!gameScreen && !gameScreen.classList.contains('hidden') && currentMode !== 'discovery';
+    const target = (evt.biographie && !gameRunning)
+        ? getAllThemesWithPath().find(item => item.theme.id === evt.biographie)
+        : null;
+    row.classList.toggle('hidden', !target);
+    btn.onclick = target ? () => {
+        closeModal();
+        favoritesMode = false;
+        if (dailyChallengeMode || weeklyChallengeMode) stopTimer();
+        dailyChallengeMode = false;
+        weeklyChallengeMode = false;
+        openThemeAt(target.ci, target.si, target.ti);
+    } : null;
+}
+
 // MODAL
 // Le second paramètre (facultatif) n'est fourni que depuis « Découvrir un
 // événement au hasard » : il permet d'afficher un accès direct vers le thème
@@ -5328,6 +5477,8 @@ function openModal(evt, context = null) {
     document.getElementById('modal-date').innerText = duration ? `${dateStr} (${t('periodes.duration_label', { val: duration })})` : dateStr;
     document.getElementById('modal-desc').innerText = evt.description;
     document.getElementById('modal-wiki').href = evt.wikipedia;
+    renderModalPortrait(evt);
+    renderModalBiographyButton(evt);
 
     const themeRow = document.getElementById('modal-theme-row');
     const redrawBtn = document.getElementById('modal-redraw-btn');

@@ -66,7 +66,9 @@
 // que js/geoMap.js: isGeoEligible, et pour la même raison : data/en.json
 // n'a pas d'équivalent à « Histoires nationales »).
 //
-// Voir themeTag() pour les trois règles.
+// Voir themeTag() pour les trois règles. Les panthéons nationaux (`pan_<iso2>`,
+// des listes de naissances) sont des ancres, jamais des réponses : voir
+// PANTHEON_THEME.
 
 (function (root, factory) {
     if (typeof module === 'object' && typeof module.exports === 'object') {
@@ -147,6 +149,16 @@
         return shared / Math.min(ka.length, kb.length) >= TITLE_OVERLAP_MAX;
     }
 
+    // Thèmes de Personnages illustres > Panthéons nationaux : `pan_<iso2>`,
+    // un par pays (pan_fr…). Ce sont des listes de NAISSANCES. D'excellentes
+    // ANCRES — « qui voyait le jour en 1802 ? » — mais jamais des RÉPONSES :
+    // « Naissance de Victor Hugo » n'est pas un événement qui se passait
+    // « ailleurs », et marquer des ⭐ dans un panthéon (utile pour jouer ses
+    // seuls incontournables) suffirait sinon à l'introduire dans le vivier. Même
+    // statut que les Biographies, qui n'y échappent aujourd'hui que parce
+    // qu'elles n'ont aucun `essentiel` : ici l'exclusion est dite, pas déduite.
+    var PANTHEON_THEME = /^pan_([a-z]{2})$/;
+
     // Étiquette de lieu/domaine d'un thème — c'est elle qui définit le
     // « ailleurs » : deux événements ne peuvent se répondre que si leurs
     // étiquettes diffèrent.
@@ -154,8 +166,10 @@
     //   1. le thème a un pays connu (assets/geo/theme-country-map.json, déjà
     //      là pour le Mode Carte) → ce pays ;
     //   2. son identifiant suit la convention `psn_<iso2>_…` des programmes
-    //      scolaires nationaux → ce pays, ce qui évite d'opposer
-    //      « Programmes scolaires > Allemagne » à « Histoire de l'Allemagne » ;
+    //      scolaires nationaux, ou `pan_<iso2>` des panthéons nationaux
+    //      (Personnages illustres) → ce pays, ce qui évite d'opposer
+    //      « Programmes scolaires > Allemagne » à « Histoire de l'Allemagne »,
+    //      ou « Grandes figures de France » à « Histoire de France » ;
     //   3. sinon → sa position dans l'arbre (indices, pas noms : voir
     //      l'en-tête). « Culture générale > Sciences » et « Culture générale >
     //      Arts » deviennent deux domaines distincts, ce qui est le bon
@@ -170,7 +184,7 @@
     function themeTag(themeId, pathIndices, countryByTheme) {
         var iso = countryByTheme && countryByTheme[themeId];
         if (iso) return 'pays:' + String(iso).toUpperCase();
-        var m = /^psn_([a-z]{2})_/.exec(themeId || '');
+        var m = /^psn_([a-z]{2})_/.exec(themeId || '') || PANTHEON_THEME.exec(themeId || '');
         if (m) return 'pays:' + m[1].toUpperCase();
         return 'branche:' + (pathIndices || []).join('.');
     }
@@ -199,6 +213,7 @@
                 }
                 (node.themes || []).forEach(function (theme) {
                     if (!theme || excluded[theme.id]) return;
+                    if (PANTHEON_THEME.test(theme.id || '')) return;
                     var essential = theme.essentiel;
                     if (!essential || !essential.length) return;
                     var keep = {};

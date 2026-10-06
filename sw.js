@@ -12,9 +12,21 @@
 // 'install' recharge tout depuis le réseau. Un pack de langue ou un texte
 // d'UI modifié qui ne s'affiche pas malgré un déploiement réussi est
 // généralement le signe que l'un de ces deux numéros n'a pas été incrémenté.
-const CACHE_VERSION = '1.4.5';
+const CACHE_VERSION = '1.4.6';
 const APP_SHELL_CACHE = `historiaxe-shell-v${CACHE_VERSION}`;
-const DATA_CACHE = 'historiaxe-data-v1.0.12';
+const DATA_CACHE = 'historiaxe-data-v1.0.13';
+
+// Portraits des personnages (assets/portraits/*.jpg, champ `image` des
+// événements). Un cache À PART, et c'est tout l'objet : 'activate' purge tout
+// cache dont le nom n'est pas dans sa liste blanche, si bien que des portraits
+// rangés avec le reste seraient jetés à CHAQUE mise à jour de l'app — et
+// retéléchargés un par un (quelques dizaines de Ko pièce, des centaines de
+// portraits à terme). Ce nom-ci ne change pas avec CACHE_VERSION : il survit
+// aux mises à jour. Le revers est une règle de nommage : un portrait n'est
+// jamais remplacé sous le même nom de fichier (cache-first, donc l'ancien
+// resterait servi indéfiniment) ; un portrait remplacé reçoit un nouveau nom,
+// ou ce numéro passe à v2.
+const PORTRAIT_CACHE = 'historiaxe-portraits-v1';
 
 // Tailwind (css/tailwind.generated.css) et les polices Inter / Material
 // Symbols (css/fonts.css + assets/fonts/*) sont désormais compilées et
@@ -78,7 +90,7 @@ self.addEventListener('activate', (event) => {
         caches.keys().then((keys) => {
             return Promise.all(
                 keys.map((key) => {
-                    if (key !== APP_SHELL_CACHE && key !== DATA_CACHE) {
+                    if (key !== APP_SHELL_CACHE && key !== DATA_CACHE && key !== PORTRAIT_CACHE) {
                         console.log('[SW] Removing old cache:', key);
                         return caches.delete(key);
                     }
@@ -94,6 +106,29 @@ self.addEventListener('fetch', (event) => {
 
     // Ne pas intercepter les requêtes externes (Wikipédia, polices Google CDN si en ligne)
     if (url.origin !== self.location.origin) {
+        return;
+    }
+
+    // Portraits : cache-first dans leur cache dédié (voir PORTRAIT_CACHE). Ils
+    // ne sont pas préchargés à l'installation — des centaines de fichiers
+    // alourdiraient le premier lancement de ce que la plupart des joueurs ne
+    // verront jamais — mais se mettent en cache à la première vue. Hors-ligne
+    // et jamais vu, la requête échoue et l'app retire l'image (voir
+    // js/app.js: setPortraitImg) : la fiche reste complète, sans portrait.
+    if (url.pathname.includes('/assets/portraits/')) {
+        event.respondWith(
+            caches.open(PORTRAIT_CACHE).then((cache) =>
+                cache.match(event.request).then((cached) => {
+                    if (cached) return cached;
+                    return fetch(event.request).then((networkResponse) => {
+                        if (networkResponse && networkResponse.status === 200) {
+                            cache.put(event.request, networkResponse.clone());
+                        }
+                        return networkResponse;
+                    });
+                })
+            )
+        );
         return;
     }
 
