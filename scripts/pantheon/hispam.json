@@ -1,0 +1,1915 @@
+{
+  "code": "hispam",
+  "nom": "Amérique hispanique",
+  "pays": [
+    "AR",
+    "BO",
+    "CL",
+    "CO",
+    "CR",
+    "CU",
+    "DO",
+    "EC",
+    "GT",
+    "HN",
+    "MX",
+    "NI",
+    "PA",
+    "PE",
+    "PR",
+    "PY",
+    "SV",
+    "UY",
+    "VE"
+  ],
+  "theme": {
+    "id": "pan_hispam",
+    "nom": "Grandes figures d'Amérique hispanique",
+    "difficulte": "Intermédiaire",
+    "motsCles": [
+      "Amérique latine",
+      "Amérique du Sud",
+      "Amérique centrale",
+      "Caraïbes",
+      "Hispano-américain",
+      "Latino-américain",
+      "Hispanophone",
+      "Argentine",
+      "Bolivie",
+      "Chili",
+      "Colombie",
+      "Costa Rica",
+      "Cuba",
+      "République dominicaine",
+      "Équateur",
+      "Salvador",
+      "Guatemala",
+      "Honduras",
+      "Mexique",
+      "Nicaragua",
+      "Panama",
+      "Paraguay",
+      "Pérou",
+      "Porto Rico",
+      "Uruguay",
+      "Venezuela"
+    ]
+  },
+  "axes": [
+    "Chefs d'État et dirigeants",
+    "Guerres et résistances",
+    "Littérature et pensée",
+    "Beaux-arts",
+    "Musique et spectacle",
+    "Sciences et découvertes"
+  ],
+  "personnages": [
+    {
+      "slug": "pakal",
+      "nom": "Pakal le Grand",
+      "titre": "Naissance de Pakal le Grand",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 603,
+      "pays": "MX",
+      "description": "Pakal le Grand (603-683) est le plus célèbre souverain de Palenque, cité-État maya du Chiapas actuel, connu aussi sous le nom de K'inich Janaab' Pakal Ier. Monté sur le trône à douze ans, en 615, il règne soixante-huit ans, relève sa cité après ses défaites contre Calakmul et lance les constructions qui font encore la gloire du site, du Palais au temple des Inscriptions. Sa tombe, ouverte en 1952 au fond de ce temple par l'archéologue Alberto Ruz Lhuillier, a livré un masque funéraire de jade et un sarcophage sculpté qui comptent parmi les trésors de l'art maya.",
+      "wikipedia": "K'inich_Janaab'_Pakal_Ier",
+      "portrait": {
+        "fichier": "PacalII.jpg",
+        "auteur": "Auteur inconnu",
+        "legende": "Pakal le Grand, profil dessiné d'après l'art maya classique : une représentation stylisée, non un portrait",
+        "largeur": 0,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "pachacutec",
+      "nom": "Pachacútec",
+      "titre": "Naissance de Pachacútec",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1400,
+      "pays": "PE",
+      "description": "Pachacútec (vers 1400-1471) est le neuvième Sapa Inca et le premier empereur historique de l'Empire inca. Après sa victoire inespérée sur les Chancas à Yahuar Pampa, il prend le nom de Pachacútec, « celui qui bouleverse l'ordre du monde », réorganise l'État sur les plans administratif et religieux et lance l'expansion qui fait du royaume de Cuzco un empire, poursuivie par son fils Túpac Yupanqui puis par son petit-fils Huayna Cápac. Il fait élever ou reconstruire des monuments majeurs de l'architecture inca, du temple du Soleil à Cuzco à la forteresse de Sacsayhuamán, et le Machu Picchu aurait été sa retraite royale.",
+      "wikipedia": "Pachacutec",
+      "portrait": {
+        "fichier": "PachacutecIXinca.jpg",
+        "auteur": "École de Cuzco",
+        "legende": "Pachacútec, tableau de l'école de Cuzco (XVIIe siècle) : un portrait posthume, imaginé près de deux siècles après sa mort",
+        "largeur": 330,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "nezahualcoyotl",
+      "nom": "Nezahualcóyotl",
+      "titre": "Naissance de Nezahualcóyotl",
+      "axe": "Littérature et pensée",
+      "naissance": 1402,
+      "pays": "MX",
+      "description": "Nezahualcóyotl (1402-1472) est le tlatoani de Texcoco, cité acolhua de la vallée de Mexico, et l'une des figures majeures de la Mésoamérique postclassique. Prince exilé à seize ans après le meurtre de son père, il reprend sa cité avec l'aide de Tenochtitlan, fonde avec elle et Tlacopan la Triple Alliance aztèque, dont il est l'un des chefs, et fait de Texcoco un foyer de savoir, de poésie et d'architecture. Poète et philosophe, il compose des chants sur la brièveté de la vie et la beauté des fleurs, dont un poème figure sur les billets mexicains de cent pesos.",
+      "wikipedia": "Nezahualcoyotl",
+      "portrait": {
+        "fichier": "Nezahualcoyotl.jpg",
+        "auteur": "Anonyme (Codex Ixtlilxochitl)",
+        "legende": "Nezahualcóyotl, tel que le montre le Codex Ixtlilxochitl, au XVIe siècle (représentation posthume)",
+        "largeur": 330,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "moctezuma2",
+      "nom": "Moctezuma II",
+      "titre": "Naissance de Moctezuma II",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1466,
+      "pays": "MX",
+      "description": "Moctezuma II (vers 1466-1520) est le neuvième souverain (tlatoani) de Mexico-Tenochtitlan, à la tête de l'Empire aztèque de 1502 à 1520. Sous son règne l'empire atteint son apogée, mais le fossé se creuse entre nobles et roturiers ; en 1519 il reçoit dans sa capitale Hernán Cortés, dont les hommes le prennent bientôt en otage. Il meurt le 29 juin 1520, dans des circonstances controversées, au milieu du soulèvement de ses sujets, et la chute de Tenochtitlan en 1521 met fin à l'Empire aztèque.",
+      "wikipedia": "Moctezuma_II",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Fig1_Moctezuma_(Códice_Diego_Durán).jpg",
+        "auteur": "Diego Durán (Codex Durán)",
+        "legende": "Moctezuma II, illustration du Codex Durán (XVIe siècle) : une image d'époque coloniale, non un portrait fidèle",
+        "recadrage": [
+          0.0,
+          0.1,
+          0.475,
+          0.95
+        ],
+        "largeur": 0,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "cuauhtemoc",
+      "nom": "Cuauhtémoc",
+      "titre": "Naissance de Cuauhtémoc",
+      "axe": "Guerres et résistances",
+      "naissance": 1497,
+      "pays": "MX",
+      "description": "Cuauhtémoc (vers 1497-1525) est le dernier souverain (tlatoani) de Mexico-Tenochtitlan, fils d'Ahuitzotl et cousin de Moctezuma II. Devenu chef de la cité en 1520, il organise sa défense pendant soixante-quinze jours de siège, du 30 mai au 13 août 1521, avant d'être capturé par les Espagnols ; emmené par Cortés dans son expédition au Honduras, il est accusé de conspirer et pendu le 28 février 1525. Le Mexique indépendant a fait de lui le héros de la résistance à la Conquête : son nom, « aigle descendant », est resté un prénom courant.",
+      "wikipedia": "Cuauhtémoc",
+      "portrait": {
+        "fichier": "Leandro_Izaguirre_-_The_Torture_of_Cuauhtémoc_-_Google_Art_Project.jpg",
+        "auteur": "Leandro Izaguirre",
+        "recadrage": [
+          0.24,
+          0.29,
+          0.52,
+          0.816
+        ],
+        "legende": "Cuauhtémoc, détail du Supplice de Cuauhtémoc, peinture de Leandro Izaguirre (1893) : une scène d'histoire du XIXe siècle, non un portrait",
+        "largeur": 1280,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "atahualpa",
+      "nom": "Atahualpa",
+      "titre": "Naissance d'Atahualpa",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1500,
+      "pays": "PE",
+      "description": "Atahualpa (vers 1500-1533) est le dernier empereur de l'Empire inca indépendant, né à Quito, à Cuzco ou à Caranqui selon les sources. Maître du nord du royaume, il s'empare du trône de Cuzco après la guerre fratricide qui l'oppose à son demi-frère Huáscar, au moment même où débarque Francisco Pizarro, qui le capture par ruse à Cajamarca le 16 novembre 1532. Il offre pour sa liberté une énorme rançon d'or et d'argent, mais les Espagnols la reçoivent puis le condamnent pour trahison et le font exécuter par strangulation en 1533, ce qui anéantit l'Empire inca.",
+      "wikipedia": "Atahualpa",
+      "portrait": {
+        "fichier": "Atahualpa_Inca_XIV.png",
+        "auteur": "Anonyme",
+        "legende": "Atahualpa, portrait anonyme du XIXe siècle : aucun portrait contemporain n'existe",
+        "largeur": 330,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "lautaro",
+      "nom": "Lautaro",
+      "titre": "Naissance de Lautaro",
+      "axe": "Guerres et résistances",
+      "naissance": 1535,
+      "pays": "CL",
+      "description": "Lautaro (vers 1535-1557) est un chef de guerre (toqui) mapuche, le plus célèbre de ceux qui s'opposèrent aux Espagnols à leur arrivée au Chili. Capturé à onze ans par les hommes de Pedro de Valdivia, il s'enfuit au bout de six ans, met sa connaissance des techniques militaires espagnoles au service des siens, bat et fait tuer Valdivia à Tucapel en 1553, remporte la bataille de Marihueñu en 1554 et détruit Concepción. Trahi, il est surpris et tué dans son camp le 1er avril 1557 ; son nom est resté un prénom mapuche et le symbole de la résistance à la Conquête.",
+      "wikipedia": "Lautaro",
+      "portrait": {
+        "fichier": "Lautaro.jpg",
+        "auteur": "Fray Diego de Ocaña",
+        "recadrage": [
+          0.0,
+          0.0,
+          1.0,
+          0.7
+        ],
+        "legende": "Lautaro, dessin de fray Diego de Ocaña (vers 1605), près d'un demi-siècle après sa mort : une image d'époque coloniale, non un portrait",
+        "largeur": 330,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "garcilaso",
+      "nom": "Inca Garcilaso de la Vega",
+      "titre": "Naissance de l'Inca Garcilaso",
+      "axe": "Littérature et pensée",
+      "naissance": 1539,
+      "pays": "PE",
+      "description": "Inca Garcilaso de la Vega (1539-1616) est un chroniqueur et écrivain péruvien de langue espagnole, né à Cuzco d'un conquistador espagnol et d'une princesse inca. Il quitte le Pérou en 1560 pour l'Espagne, où il s'installe en Andalousie, et publie en 1609 les Commentaires royaux des Incas, histoire de ses ancêtres maternels et de la conquête du Pérou, qui fait de lui le premier grand écrivain péruvien. Mort à Cordoue en 1616, premier Latino-Américain à écrire sur l'Amérique depuis l'Europe, il reste le symbole du métissage entre les mondes inca et espagnol.",
+      "wikipedia": "Inca_Garcilaso_de_la_Vega",
+      "portrait": {
+        "fichier": "Inca_Garcilaso_1879.jpg",
+        "auteur": "Carlos Penoso",
+        "legende": "Inca Garcilaso de la Vega, portrait de fantaisie gravé par Carlos Penoso (1879)",
+        "largeur": 330,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "sorjuana",
+      "nom": "Sor Juana Inés de la Cruz",
+      "titre": "Naissance de Sor Juana",
+      "axe": "Littérature et pensée",
+      "naissance": 1648,
+      "pays": "MX",
+      "description": "Sor Juana Inés de la Cruz (vers 1648-1695) est une religieuse hiéronymite, poétesse et dramaturge de la Nouvelle-Espagne, née en 1648 ou en 1651 selon les sources. Enfant prodige qui dit avoir appris à lire à trois ans, elle prend le voile en 1669 pour pouvoir étudier, tient salon au parloir de son couvent et écrit sonnets, pièces de théâtre et le long poème philosophique Primero sueño ; sa Réponse à sœur Philothée (1691), lettre autobiographique, défend le droit des femmes au savoir. Elle ferme son salon en 1693, vend sa bibliothèque au profit des pauvres et meurt en 1695 pendant une épidémie ; son œuvre est l'une des plus emblématiques de la langue espagnole.",
+      "wikipedia": "Juana_Inés_de_la_Cruz",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Sor_Juana_by_Miguel_Cabrera.png",
+        "auteur": "Miguel Cabrera",
+        "legende": "Sor Juana Inés de la Cruz, portrait peint par Miguel Cabrera vers 1750, soit un demi-siècle après sa mort",
+        "recadrage": [
+          0.2,
+          0.2,
+          0.8,
+          0.736
+        ],
+        "largeur": 0,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "tupacamaru2",
+      "nom": "Túpac Amaru II",
+      "titre": "Naissance de Túpac Amaru II",
+      "axe": "Guerres et résistances",
+      "naissance": 1738,
+      "pays": "PE",
+      "description": "Túpac Amaru II (1738-1781) est un cacique métis, de son vrai nom José Gabriel Condorcanqui, qui prend en 1780 la tête de la plus importante révolte anticoloniale de l'Amérique espagnole au XVIIIe siècle. Se disant descendant du dernier empereur inca, exécuté par les Espagnols au XVIe siècle, il fait capturer et exécuter le corrégidor Antonio de Arriaga le 4 novembre 1780, soulève Indiens et métis et réclame la fin des abus des corrégidors et des travaux forcés de la mita. Vaincu puis supplicié à Cuzco le 18 mai 1781, il est devenu le symbole de la lutte indigène, et son nom a été repris par des mouvements de libération, comme les Tupamaros d'Uruguay.",
+      "wikipedia": "Túpac_Amaru_II",
+      "biographie": "bio_tupac",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "TupacAmaruII.jpg",
+        "auteur": "Auteur inconnu",
+        "legende": "Túpac Amaru II, portrait posthume",
+        "largeur": 0,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "espejo",
+      "nom": "Eugenio Espejo",
+      "titre": "Naissance d'Eugenio Espejo",
+      "axe": "Littérature et pensée",
+      "naissance": 1747,
+      "pays": "EC",
+      "description": "Eugenio Espejo (1747-1795) est un médecin, écrivain et journaliste métis de l'Équateur colonial, né à Quito, pionnier de l'hygiène publique. Médecin, avocat et bibliothécaire, il compose un traité sur les conditions sanitaires de Quito qui contient de remarquables intuitions sur les micro-organismes et la propagation des maladies, et fonde en 1792 le premier journal de la ville, qui diffuse les idées des Lumières. Ses satires contre l'ignorance et la corruption des autorités lui valent d'être persécuté et emprisonné peu avant sa mort, en 1795, et il est resté comme l'un des inspirateurs de l'indépendance de Quito.",
+      "wikipedia": "Eugenio_Espejo",
+      "portrait": {
+        "fichier": "Eugenio_Espejo_(por_Manuel_Salas_Alzamora).jpg",
+        "auteur": "Manuel Salas Alzamora",
+        "legende": "Eugenio Espejo, portrait de Manuel Salas Alzamora (vers 1920), plus d'un siècle après sa mort",
+        "largeur": 330,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "katari",
+      "nom": "Túpac Katari",
+      "titre": "Naissance de Túpac Katari",
+      "axe": "Guerres et résistances",
+      "naissance": 1750,
+      "pays": "BO",
+      "description": "Túpac Katari (vers 1750-1781) est un chef rebelle aymara, de son vrai nom Julián Apaza, qui dirige en 1781 dans le Haut-Pérou, l'actuelle Bolivie, un soulèvement indien contre la tutelle espagnole. Contrairement à Túpac Amaru II, dont la révolte a éclaté plus au nord, il n'est pas issu de l'aristocratie indienne mais d'une famille modeste, et il rassemble à la tête de plusieurs dizaines de milliers de combattants une armée presque entièrement aymara, qui met par deux fois, en vain, le siège devant La Paz. Battu par les troupes espagnoles, trahi puis capturé, il est mis à mort et démembré en novembre 1781, tandis que son épouse Bartolina Sisa et sa sœur Gregoria Apaza sont exécutées à leur tour, et il reste le symbole de la résistance indigène en Bolivie.",
+      "wikipedia": "Túpac_Katari",
+      "portrait": {
+        "fichier": "Tupac_Catari_(cropped).jpg",
+        "auteur": "Anonyme",
+        "recadrage": [
+          0.3,
+          0.02,
+          0.8,
+          0.67
+        ],
+        "legende": "Túpac Katari, aquarelle anonyme réalisée dans les années qui suivent sa mort (entre 1784 et 1806 environ)",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "miranda",
+      "nom": "Francisco de Miranda",
+      "titre": "Naissance de Francisco de Miranda",
+      "axe": "Guerres et résistances",
+      "naissance": 1750,
+      "pays": "VE",
+      "description": "Francisco de Miranda (1750-1816) est un militaire et homme d'État vénézuélien, héros de l'indépendance de son pays et surnommé « le Précurseur ». Ancien officier espagnol, il participe à la guerre d'indépendance américaine puis devient général de la Révolution française, ce qui vaut à son nom d'être gravé sous l'arc de triomphe de l'Étoile, à Paris, seul Latino-Américain à y figurer. Nommé généralissime et dictateur de la première République vénézuélienne en 1812, il capitule la même année, est livré aux Espagnols et meurt prisonnier à Cadix en 1816.",
+      "wikipedia": "Francisco_de_Miranda",
+      "portrait": {
+        "fichier": "Young_Francisco_De_Miranda_by_Georges_Rouget.jpg",
+        "auteur": "Georges Rouget",
+        "legende": "Francisco de Miranda jeune, portrait de Georges Rouget (1835), commandé par Louis-Philippe pour le musée de Versailles",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "hidalgo",
+      "nom": "Miguel Hidalgo",
+      "titre": "Naissance de Miguel Hidalgo",
+      "axe": "Guerres et résistances",
+      "naissance": 1753,
+      "pays": "MX",
+      "description": "Miguel Hidalgo (1753-1811) est un prêtre catholique mexicain, héros national et « père de l'indépendance du Mexique ». Curé de Dolores, il lance le 16 septembre 1810 le « cri de Dolores », appel qui soulève des milliers de paysans, indiens et métis, et ouvre la guerre d'indépendance ; battu au pont de Calderón en janvier 1811, il est capturé puis fusillé à Chihuahua le 30 juillet 1811. Sa cause, poursuivie par Morelos puis Vicente Guerrero, triomphe en 1821, et chaque 15 septembre au soir le président du Mexique rejoue son cri depuis le balcon du palais national.",
+      "wikipedia": "Miguel_Hidalgo_y_Costilla",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Don_Miguel_Hidalgo.jpg",
+        "auteur": "Auteur inconnu",
+        "legende": "Miguel Hidalgo, illustration de México a través de los siglos (1880)",
+        "recadrage": [
+          0.175,
+          0.07,
+          0.625,
+          0.468
+        ],
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "artigas",
+      "nom": "José Artigas",
+      "titre": "Naissance de José Artigas",
+      "axe": "Guerres et résistances",
+      "naissance": 1764,
+      "pays": "UY",
+      "description": "José Artigas (1764-1850) est un militaire et chef politique uruguayen, surnommé « le Protecteur des peuples libres » et considéré comme le père de la nation uruguayenne. Riche propriétaire proche des gauchos et des indigènes, d'abord officier au service de l'Espagne, il rejoint en 1811 la révolution du Río de la Plata, bat les Espagnols à Las Piedras, organise la Ligue des peuples libres et défend le fédéralisme et une réforme agraire en faveur des petits paysans. Vaincu par l'invasion portugaise puis abandonné par ses alliés, il s'exile en 1820 au Paraguay, où il vit encore trente ans, jusqu'à sa mort en 1850.",
+      "wikipedia": "José_Gervasio_Artigas",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Juan_Manuel_Blanes_-_Artigas_en_la_Ciudadela.jpg",
+        "auteur": "Juan Manuel Blanes",
+        "legende": "José Artigas à la porte de la Citadelle, tableau posthume de Juan Manuel Blanes (vers 1884)",
+        "recadrage": [
+          0.13,
+          0.15,
+          0.63,
+          0.54
+        ],
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "morelos",
+      "nom": "José María Morelos",
+      "titre": "Naissance de José María Morelos",
+      "axe": "Guerres et résistances",
+      "naissance": 1765,
+      "pays": "MX",
+      "description": "José María Morelos (1765-1815) est un prêtre et chef insurgé mexicain, ancien élève de Miguel Hidalgo. Devenu après la mort de celui-ci le chef militaire de la rébellion, il prend Oaxaca en 1812 et Acapulco en 1813, réunit le Congrès de Chilpancingo, qui déclare l'indépendance, et inspire la première Constitution du pays, promulguée à Apatzingán en 1814 ; ses « Sentiments de la Nation » réclament l'abolition de l'esclavage et des castes. Capturé, il est fusillé le 22 décembre 1815 à San Cristóbal Ecatepec, et sa ville natale, Valladolid, porte depuis 1828 le nom de Morelia en son honneur.",
+      "wikipedia": "José_María_Morelos",
+      "portrait": {
+        "fichier": "Morelos_por_autor_anónimo.jpg",
+        "auteur": "Anonyme (peintre mixtèque)",
+        "legende": "José María Morelos en capitaine général des armées du Sud, portrait d'un peintre mixtèque anonyme (1812)",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "narino",
+      "nom": "Antonio Nariño",
+      "titre": "Naissance d'Antonio Nariño",
+      "axe": "Guerres et résistances",
+      "naissance": 1765,
+      "pays": "CO",
+      "description": "Antonio Nariño (1765-1823) est un homme d'État, militaire et journaliste colombien, né à Bogota et mort à Villa de Leyva, l'un des précurseurs de l'indépendance de la Nouvelle-Grenade. Fonctionnaire de la Couronne nourri des Lumières, il fait imprimer en 1793 sa traduction de la Déclaration des droits de l'homme et du citoyen, ce qui lui vaut la prison et l'exil, puis, animateur du journal La Bagatela, il devient en 1811 président de l'État libre de Cundinamarca, où il défend un pouvoir central fort contre les fédéralistes. Capturé par les Espagnols en 1814 et détenu à Cadix jusqu'en 1820, il est élu vice-président de la Grande Colombie en 1821 et meurt de la tuberculose en 1823.",
+      "wikipedia": "Antonio_Nariño",
+      "portrait": {
+        "fichier": "Antonio_Nariño_por_José_María_Espinosa.jpg",
+        "auteur": "José María Espinosa",
+        "legende": "Antonio Nariño, portrait peint vers 1840 par José María Espinosa, près de vingt ans après sa mort",
+        "largeur": 330,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "francia",
+      "nom": "Gaspar Rodríguez de Francia",
+      "titre": "Naissance de Gaspar Rodríguez de Francia",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1766,
+      "pays": "PY",
+      "description": "Gaspar Rodríguez de Francia (1766-1840) est un homme d'État paraguayen, surnommé « El Supremo », premier dictateur du Paraguay indépendant. Acteur essentiel du rejet des prétentions de Buenos Aires et de l'indépendance de 1811, il s'empare du pouvoir et se fait attribuer par le congrès le titre de « dictateur suprême et perpétuel », qu'il garde jusqu'à sa mort ; il soumet le pays à un isolement rigoureux et loue pour une somme symbolique des terres aux paysans sans terre, les « estancias de la Patrie ». Son régime, qui a assuré l'indépendance et la cohésion d'un pays enclavé mais l'a privé de libertés, reste l'un des sujets les plus débattus de l'histoire paraguayenne.",
+      "wikipedia": "José_Gaspar_Rodríguez_de_Francia",
+      "portrait": {
+        "fichier": "Litografía,_GaspardeFrancia.jpg",
+        "auteur": "Auteur inconnu",
+        "recadrage": [
+          0.385,
+          0.22,
+          0.725,
+          0.53
+        ],
+        "largeur": 1280,
+        "legende": "José Gaspar Rodríguez de Francia, lithographie de 1838, de son vivant",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "caldas",
+      "nom": "Francisco José de Caldas",
+      "titre": "Naissance de Francisco José de Caldas",
+      "axe": "Sciences et découvertes",
+      "naissance": 1768,
+      "pays": "CO",
+      "description": "Francisco José de Caldas (1768-1816) est un scientifique et patriote colombien, né à Popayán et surnommé « le Sage ». Autodidacte devenu botaniste, astronome, ingénieur et journaliste, il invente l'hypsomètre, qui mesure l'altitude d'après la température d'ébullition de l'eau, dirige l'observatoire astronomique de Bogota et fait paraître le Semanario del Nuevo Reino de Granada, revue où paraissent les premiers travaux scientifiques de la colonie. Rallié à l'indépendance, il est capturé par les troupes de la Reconquête espagnole et fusillé à Bogota le 29 octobre 1816.",
+      "wikipedia": "Francisco_José_de_Caldas",
+      "portrait": {
+        "fichier": "Francisco_José_de_Caldas,_ca._1836.jpg",
+        "auteur": "José María Espinosa",
+        "legende": "Francisco José de Caldas, lithographie de José María Espinosa (vers 1836)",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "belgrano",
+      "nom": "Manuel Belgrano",
+      "titre": "Naissance de Manuel Belgrano",
+      "axe": "Guerres et résistances",
+      "naissance": 1770,
+      "pays": "AR",
+      "description": "Manuel Belgrano (1770-1820) est un avocat, économiste et général argentin, créateur du drapeau de l'Argentine. Formé en droit à Salamanque et nourri des Lumières, il est l'un des chefs de la révolution de Mai 1810 ; à la tête de l'armée du Nord, il remporte les batailles décisives de Tucumán (1812) et de Salta (1813), qui préservent l'indépendance argentine de la contre-offensive royaliste, mais s'incline à Vilcapugio et Ayohuma. Il fait hisser pour la première fois le drapeau bleu ciel et blanc en 1812, sur les rives du Paraná, et meurt dans la pauvreté le 20 juin 1820, date devenue le jour du Drapeau.",
+      "wikipedia": "Manuel_Belgrano",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Manuel_Belgrano.JPG",
+        "auteur": "François Casimir Carbonnier",
+        "legende": "Manuel Belgrano, portrait de François Casimir Carbonnier peint à Londres (1815)",
+        "recadrage": [
+          0.15,
+          0.06,
+          0.85,
+          0.642
+        ],
+        "largeur": 500,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "delvalle",
+      "nom": "José Cecilio del Valle",
+      "titre": "Naissance de José Cecilio del Valle",
+      "axe": "Littérature et pensée",
+      "naissance": 1777,
+      "pays": "HN",
+      "description": "José Cecilio del Valle (1777-1834) est un avocat, journaliste et intellectuel centraméricain, né à Choluteca, au Honduras, l'une des principales figures de l'indépendance de l'Amérique centrale. Collaborateur des autorités coloniales à Guatemala, il fonde en 1820 le journal El Amigo de la Patria, devient le chef de file du parti modéré face aux radicaux et rédige l'acte d'indépendance, signé le 15 septembre 1821. Député au Congrès du Mexique pendant l'annexion éphémère de l'Amérique centrale (1822-1823), puis dans la république fédérale, il meurt à Guatemala en 1834, à cinquante-six ans.",
+      "wikipedia": "José_Cecilio_del_Valle",
+      "portrait": {
+        "fichier": "José_Cecilio_del_Valle.jpg",
+        "auteur": "Auteur inconnu",
+        "legende": "José Cecilio del Valle, portrait ancien",
+        "largeur": 0,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "ohiggins",
+      "nom": "Bernardo O'Higgins",
+      "titre": "Naissance de Bernardo O'Higgins",
+      "axe": "Guerres et résistances",
+      "naissance": 1778,
+      "pays": "CL",
+      "description": "Bernardo O'Higgins (1778-1842) est un général et chef d'État chilien, l'un des pères de la patrie. Fils naturel d'un Irlandais au service de l'Espagne, Ambrosio O'Higgins, devenu vice-roi du Pérou, il rejoint San Martín, prend part à la traversée des Andes et à la victoire de Chacabuco en 1817, puis proclame l'indépendance du Chili en 1818, comme directeur suprême du nouvel État. Il fonde l'armée et la marine, abolit les titres de noblesse, puis se retire volontairement en 1823 pour éviter la guerre civile et meurt en exil à Lima en 1842.",
+      "wikipedia": "Bernardo_O'Higgins",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Retrato_de_Don_Bernardo_O'Higgins_(José_Gil_de_Castro,_1820).jpg",
+        "auteur": "José Gil de Castro",
+        "legende": "Bernardo O'Higgins, portrait de José Gil de Castro (1820)",
+        "recadrage": [
+          0.225,
+          0.0,
+          0.775,
+          0.47
+        ],
+        "largeur": 0,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "sanmartin",
+      "nom": "José de San Martín",
+      "titre": "Naissance de José de San Martín",
+      "axe": "Guerres et résistances",
+      "naissance": 1778,
+      "pays": "AR",
+      "description": "José de San Martín (1778-1850) est un général et homme d'État argentin, l'un des grands libérateurs de l'Amérique du Sud. Né à Yapeyú et formé dans l'armée espagnole, où il combat les troupes napoléoniennes, il rentre en 1812 dans sa terre natale, forme à Mendoza l'armée des Andes, qu'il conduit en 1817 par-delà la cordillère pour libérer le Chili (Chacabuco, Maipú), puis par la mer vers le Pérou, dont il proclame l'indépendance à Lima en 1821. Après son entrevue de Guayaquil avec Bolívar en 1822, il renonce à ses fonctions, finit sa vie en exil en Europe et meurt à Boulogne-sur-Mer en 1850 ; ses restes reposent aujourd'hui dans la cathédrale de Buenos Aires.",
+      "wikipedia": "José_de_San_Martín",
+      "biographie": "bio_sanmartin",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "José_de_San_Martín_(retrato,_c.1828).jpg",
+        "auteur": "Auteur incertain",
+        "legende": "José de San Martín, le portrait canonique, peint vers 1828",
+        "largeur": 330,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "azurduy",
+      "nom": "Juana Azurduy",
+      "titre": "Naissance de Juana Azurduy",
+      "axe": "Guerres et résistances",
+      "naissance": 1780,
+      "pays": "BO",
+      "description": "Juana Azurduy (1780-1862) est une cheffe de guérilla du Haut-Pérou, métisse, née à Chuquisaca, aujourd'hui Sucre, en Bolivie. Aux côtés de son mari Manuel Ascencio Padilla, elle se bat dans les guerres d'indépendance de la vice-royauté du Río de la Plata contre la monarchie espagnole et prend le commandement d'opérations qui aboutissent à la formation de la « républiquette » de la Laguna. Elle meurt à Sucre en 1862, bien après la victoire, et a été élevée à titre posthume au grade de générale en Argentine et de maréchale en Bolivie.",
+      "wikipedia": "Juana_Azurduy_de_Padilla",
+      "portrait": {
+        "fichier": "Juana_Azurduy.jpg",
+        "auteur": "Anonyme",
+        "legende": "Juana Azurduy, portrait anonyme de la fin du XIXe siècle",
+        "largeur": 330,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "bello",
+      "nom": "Andrés Bello",
+      "titre": "Naissance d'Andrés Bello",
+      "axe": "Littérature et pensée",
+      "naissance": 1781,
+      "pays": "VE",
+      "description": "Andrés Bello (1781-1865) est un écrivain, poète, philologue et juriste vénézuélien et chilien, l'un des plus grands humanistes d'Amérique du Sud. Ancien professeur de Simón Bolívar, il part avec lui en mission à Londres en 1810, y reste dix-neuf ans, puis s'installe au Chili en 1829, où il fonde et dirige l'université du Chili, publie sa Grammaire de la langue castillane et rédige le Code civil chilien, qui inspire la législation de nombreux pays hispano-américains. Poète de la nature américaine, avec son Ode à l'agriculture de la zone torride, il meurt à Santiago en 1865, honoré par le Chili comme par le Venezuela.",
+      "wikipedia": "Andrés_Bello",
+      "portrait": {
+        "fichier": "AndresBello.jpg",
+        "auteur": "Raymond Monvoisin",
+        "legende": "Andrés Bello, portrait de Raymond Monvoisin, peint au Chili entre 1843 et 1858",
+        "largeur": 330,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "bolivar",
+      "nom": "Simón Bolívar",
+      "titre": "Naissance de Simón Bolívar",
+      "axe": "Guerres et résistances",
+      "naissance": 1783,
+      "pays": "VE",
+      "description": "Simón Bolívar (1783-1830) est un général et homme d'État vénézuélien, surnommé « El Libertador », figure majeure de l'indépendance de l'Amérique du Sud. Né à Caracas dans une riche famille créole, il conduit avec ses lieutenants, comme Sucre, les campagnes qui libèrent le Venezuela, la Colombie, l'Équateur, le Pérou et la Bolivie, qui porte son nom, notamment par les victoires de Boyacá (1819) et d'Ayacucho (1824), et fonde en 1819 la Grande Colombie, qu'il rêve d'unir à toute l'Amérique hispanique. Déçu par les rivalités entre généraux et l'éclatement de son œuvre, il renonce au pouvoir et meurt de tuberculose près de Santa Marta, en Colombie, le 17 décembre 1830.",
+      "wikipedia": "Simón_Bolívar",
+      "biographie": "bio_bolivar",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Portrait_of_Simón_Bolívar_by_Arturo_Michelena.jpg",
+        "auteur": "Arturo Michelena",
+        "legende": "Simón Bolívar en tenue de campagne, portrait posthume d'Arturo Michelena (1895)",
+        "recadrage": [
+          0.22,
+          0.06,
+          0.82,
+          0.435
+        ],
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "morazan",
+      "nom": "Francisco Morazán",
+      "titre": "Naissance de Francisco Morazán",
+      "axe": "Guerres et résistances",
+      "naissance": 1792,
+      "pays": "HN",
+      "description": "Francisco Morazán (1792-1842) est un homme d'État et chef militaire d'Amérique centrale, né à Tegucigalpa, au Honduras, grande figure du libéralisme. Nourri de la pensée des Lumières, il est président de la République fédérale d'Amérique centrale de 1830 à 1839, avec une interruption, et chef d'État du Honduras, du Guatemala, du Salvador et du Costa Rica, tentant de maintenir l'union des pays issus de l'indépendance face aux conservateurs et à l'Église. Vaincu, il est fusillé à San José, au Costa Rica, le 15 septembre 1842, et reste le champion de l'unité centraméricaine.",
+      "wikipedia": "Francisco_Morazán",
+      "portrait": {
+        "fichier": "General_Francisco_Morazán.JPG",
+        "auteur": "Frederich Van Dolvetz",
+        "legende": "Francisco Morazán, portrait de profil publié en 1838",
+        "largeur": 0,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "santacruz",
+      "nom": "Andrés de Santa Cruz",
+      "titre": "Naissance d'Andrés de Santa Cruz",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1792,
+      "pays": "BO",
+      "description": "Andrés de Santa Cruz (1792-1865) est un militaire et homme d'État bolivien, maréchal du Pérou, de Bolivie et de Colombie. Né à La Paz d'une mère indigène et d'un père espagnol, d'abord officier royaliste puis rallié à San Martín, il combat à Pichincha et à Junín, devient président de la Bolivie, réorganise l'État et son droit, puis réunit le Pérou et la Bolivie en une Confédération dont il est le « Protecteur suprême » de 1836 à 1839. Battu par les troupes chiliennes à Yungay le 20 janvier 1839, il s'exile en Europe et meurt en France, près de Nantes, en 1865.",
+      "wikipedia": "Andrés_de_Santa_Cruz",
+      "portrait": {
+        "fichier": "Andrés_de_Santa_Cruz._Ugalde,_Manuel._c._1835,_Andrés_de_Santa_Cruz_collection,_La_Paz.png",
+        "auteur": "Manuel Ugalde",
+        "legende": "Andrés de Santa Cruz, portrait de Manuel Ugalde (vers 1835)",
+        "largeur": 330,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "santander",
+      "nom": "Francisco de Paula Santander",
+      "titre": "Naissance de Santander",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1792,
+      "pays": "CO",
+      "description": "Francisco de Paula Santander (1792-1840) est un militaire et homme d'État colombien, héros de l'indépendance, surnommé « l'Homme des lois ». Compagnon d'armes de Bolívar, dont il est le vice-président de la Grande Colombie, il organise l'administration, les finances et l'enseignement de la jeune République, mais s'oppose au Libertador, partisan d'un pouvoir fort, et est condamné à mort puis exilé après la conspiration de septembre 1828 contre Bolívar. Revenu en 1832, il est le premier président de la République de Nouvelle-Grenade, jusqu'en 1837, et meurt à Bogota en 1840.",
+      "wikipedia": "Francisco_de_Paula_Santander",
+      "portrait": {
+        "fichier": "Santander_by_Acevedo_Bernal.jpg",
+        "auteur": "Ricardo Acevedo Bernal",
+        "legende": "Francisco de Paula Santander, portrait de Ricardo Acevedo Bernal (1917), près d'un siècle après sa mort",
+        "largeur": 330,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "policarpa",
+      "nom": "Policarpa Salavarrieta",
+      "titre": "Naissance de Policarpa Salavarrieta",
+      "axe": "Guerres et résistances",
+      "naissance": 1795,
+      "pays": "CO",
+      "description": "Policarpa Salavarrieta (1795-1817) est une héroïne de la résistance colombienne, surnommée La Pola, face à la reconquête espagnole de la Nouvelle-Grenade. Couturière à Bogota, elle se rallie à la cause indépendantiste et devient espionne : elle recueille des informations dans les maisons de royalistes où elle coud, aide des soldats à déserter l'armée du roi et fait parvenir armes et provisions aux insurgés. Arrêtée, elle est fusillée sur la place publique de Bogota le 14 novembre 1817, à vingt-deux ans, et ses derniers mots, qui incitent le peuple à se révolter, ont fait d'elle une figure de l'indépendance ; le 14 novembre est devenu la journée de la femme colombienne.",
+      "wikipedia": "Policarpa_Salavarrieta",
+      "portrait": {
+        "fichier": "Policarpa_Salabarrieta.jpg",
+        "auteur": "José María Espinosa",
+        "legende": "Policarpa Salavarrieta, portrait posthume de José María Espinosa (1855)",
+        "largeur": 330,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "sucre",
+      "nom": "Antonio José de Sucre",
+      "titre": "Naissance d'Antonio José de Sucre",
+      "axe": "Guerres et résistances",
+      "naissance": 1795,
+      "pays": "VE",
+      "description": "Antonio José de Sucre (1795-1830) est un général et homme d'État sud-américain, né à Cumaná, au Venezuela, surnommé le « Grand Maréchal d'Ayacucho ». Lieutenant de confiance de Bolívar, il libère Quito par la victoire du Pichincha en 1822 puis remporte en 1824 la bataille d'Ayacucho, qui met fin à la domination espagnole sur le continent. Président de la Bolivie de 1825 à 1828, dont la capitale porte son nom, il est assassiné à trente-cinq ans, en 1830, dans la montagne de Berruecos, en Colombie.",
+      "wikipedia": "Antonio_José_de_Sucre",
+      "portrait": {
+        "fichier": "Martin_Tovar_y_Tovar_12.JPG",
+        "auteur": "Martín Tovar y Tovar",
+        "legende": "Antonio José de Sucre, portrait de Martín Tovar y Tovar (Capitole national, Caracas)",
+        "largeur": 330,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "saenz",
+      "nom": "Manuela Sáenz",
+      "titre": "Naissance de Manuela Sáenz",
+      "axe": "Guerres et résistances",
+      "naissance": 1797,
+      "pays": "EC",
+      "description": "Manuela Sáenz (1797-1856) est une patriote et révolutionnaire équatorienne, née à Quito, compagne de Simón Bolívar. Mariée en 1817 à un riche médecin anglais, elle entre dans la haute société de Lima et s'engage pour l'indépendance ; elle quitte son mari en 1822 et partage pendant huit ans la vie de Bolívar, dont elle déjoue en 1828, à Bogota, une tentative d'assassinat, ce qui lui vaut le surnom de « Libératrice du Libérateur ». Critiquée, ignorée et exilée après la mort de Bolívar, elle meurt à Paita, au Pérou, en 1856, et n'est reconnue que plus d'un siècle plus tard comme l'une des grandes héroïnes de l'indépendance.",
+      "wikipedia": "Manuela_Sáenz",
+      "portrait": {
+        "fichier": "Manuela_Saenz_1825.jpg",
+        "auteur": "Pedro Durante",
+        "legende": "Manuela Sáenz, portrait réalisé à Lima en 1825 par Pedro Durante",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "juarez",
+      "nom": "Benito Juárez",
+      "titre": "Naissance de Benito Juárez",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1806,
+      "pays": "MX",
+      "description": "Benito Juárez (1806-1872) est un avocat et homme d'État mexicain d'origine zapotèque, président de la République de 1858 à sa mort en 1872. Orphelin, berger puis séminariste et juriste, il mène le camp libéral pendant la guerre de la Réforme, au terme de laquelle l'Église est séparée de l'État, puis résiste à l'intervention française et à l'empire de Maximilien, que la République fait fusiller en 1867 à Querétaro. Symbole de la République laïque et de l'égalité devant la loi, cet enfant d'un peuple autochtone qui ne parlait pas espagnol avant douze ans est célébré comme « Benemérito de las Américas », et le Mexique commémore chaque année sa naissance du 21 mars.",
+      "wikipedia": "Benito_Juárez",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Benito_Juárez,_siglo_XIX,_óleo_sobre_tela.jpg",
+        "auteur": "José Escudero y Espronceda",
+        "legende": "Benito Juárez, portrait à l'huile de José Escudero y Espronceda (XIXe siècle)",
+        "recadrage": [
+          0.265,
+          0.14,
+          0.715,
+          0.536
+        ],
+        "largeur": 0,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "sarmiento",
+      "nom": "Domingo Faustino Sarmiento",
+      "titre": "Naissance de Sarmiento",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1811,
+      "pays": "AR",
+      "description": "Domingo Faustino Sarmiento (1811-1888) est un écrivain, éducateur et homme d'État argentin, septième président de la République de 1868 à 1874. Exilé au Chili sous la dictature de Rosas, il y écrit Facundo (1845), réquisitoire contre les caudillos qui oppose la « civilisation » à la « barbarie » et reste l'un des grands classiques de la littérature latino-américaine. Surnommé le maître d'école de l'Amérique latine, il fait de l'instruction publique sa grande cause, multiplie écoles et bibliothèques, et meurt à Asunción le 11 septembre 1888, date devenue en Argentine la journée de l'enseignant.",
+      "wikipedia": "Domingo_Faustino_Sarmiento",
+      "portrait": {
+        "fichier": "Sarmiento.jpg",
+        "auteur": "Auteur inconnu",
+        "legende": "Domingo Faustino Sarmiento, photographie de 1874",
+        "largeur": 0,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "duarte",
+      "nom": "Juan Pablo Duarte",
+      "titre": "Naissance de Juan Pablo Duarte",
+      "axe": "Guerres et résistances",
+      "naissance": 1813,
+      "pays": "DO",
+      "description": "Juan Pablo Duarte (1813-1876) est un indépendantiste dominicain, l'un des trois Pères de la Patrie et héros national de la République dominicaine. Opposé à l'occupation du pays par Haïti, il fonde le 16 juillet 1838 la société secrète La Trinitaria, qui prépare l'indépendance, proclamée le 27 février 1844 par Mella et Sánchez alors qu'il est lui-même en exil. Écarté du pouvoir par les caudillos, il meurt à Caracas en 1876, et son nom est donné aujourd'hui au plus haut sommet des Caraïbes.",
+      "wikipedia": "Juan_Pablo_Duarte",
+      "portrait": {
+        "fichier": "Juan_Pablo_Duarte_engraving_undated.jpg",
+        "auteur": "Graveur inconnu",
+        "recadrage": [
+          0.1,
+          0.08,
+          0.9,
+          0.92
+        ],
+        "legende": "Juan Pablo Duarte, gravure ancienne (vers 1876)",
+        "largeur": 0,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "betances",
+      "nom": "Ramón Emeterio Betances",
+      "titre": "Naissance de Ramón Emeterio Betances",
+      "axe": "Guerres et résistances",
+      "naissance": 1827,
+      "pays": "PR",
+      "description": "Ramón Emeterio Betances (1827-1898) est un médecin, écrivain et patriote portoricain, né à Cabo Rojo et mort à Neuilly, près de Paris, que son île nomme le « père de la patrie » (Padre de la Patria). Formé à Toulouse puis à la faculté de médecine de Paris, il y vit la révolution de 1848, rentre à Porto Rico en 1856, fonde un hôpital à Mayagüez pendant l'épidémie de choléra, gagne le surnom de « médecin des pauvres » et lutte avec Segundo Ruiz Belvis pour l'abolition de l'esclavage. Chef de file de l'indépendance portoricaine, inspirateur depuis l'exil du Grito de Lares, soulèvement avorté de 1868 contre l'Espagne, il mène ensuite en Europe, comme agent du Parti révolutionnaire cubain, le combat commun des deux îles, jusqu'à sa mort le 16 septembre 1898.",
+      "wikipedia": "Ramón_Emeterio_Betances",
+      "portrait": {
+        "fichier": "Ramon_Emeterio_Betances_sitting.jpg",
+        "auteur": "Auteur inconnu",
+        "legende": "Ramón Emeterio Betances, photographie ancienne (avant 1898)",
+        "recadrage": [
+          0.225,
+          0.08,
+          0.775,
+          0.624
+        ],
+        "largeur": 0,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "porfiriodiaz",
+      "nom": "Porfirio Díaz",
+      "titre": "Naissance de Porfirio Díaz",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1830,
+      "pays": "MX",
+      "description": "Porfirio Díaz (1830-1915) est un général et homme d'État mexicain, héros de la guerre contre l'intervention française. Maître du pays de 1876 à 1911, directement ou par l'intermédiaire de fidèles, il impose la paix et attire les capitaux étrangers qui bâtissent chemins de fer, ports, mines et puits de pétrole, mais ce « Porfiriato » est une dictature qui laisse la masse des paysans dans la misère. La révolution de 1910 le chasse du pouvoir en 1911 ; il meurt en exil à Paris en 1915 et repose au cimetière du Montparnasse.",
+      "wikipedia": "Porfirio_Díaz",
+      "biographie": "bio_porfiriodiaz",
+      "portrait": {
+        "fichier": "Porfirio_Díaz_en_uniforme.jpg",
+        "auteur": "Auteur inconnu",
+        "legende": "Porfirio Díaz en uniforme, portrait du XIXe siècle",
+        "recadrage": [
+          0.25,
+          0.1,
+          0.75,
+          0.506
+        ],
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "santamaria",
+      "nom": "Juan Santamaría",
+      "titre": "Naissance de Juan Santamaría",
+      "axe": "Guerres et résistances",
+      "naissance": 1831,
+      "pays": "CR",
+      "description": "Juan Santamaría (1831-1856) est le héros national du Costa Rica, un jeune tambour d'Alajuela, pauvre et fils d'une mère célibataire. Quand l'aventurier américain William Walker, maître du Nicaragua, menace d'envahir l'Amérique centrale pour y créer un empire esclavagiste, le président Mora appelle le Costa Rica aux armes ; à la bataille de Rivas, le 11 avril 1856, Santamaría s'avance seul vers l'auberge où se retranchent les hommes de Walker et y met le feu, avant d'être tué. Le 11 avril est un jour férié au Costa Rica, dont l'aéroport international porte son nom.",
+      "wikipedia": "Juan_Santamaría",
+      "portrait": {
+        "fichier": "Juan_Santamaría.jpg",
+        "auteur": "Manunuezp",
+        "recadrage": [
+          0.23,
+          0.0,
+          0.8,
+          1.0
+        ],
+        "legende": "Juan Santamaría, statue le représentant la torche à la main, photographie de Manunuezp (2019)",
+        "licence": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "slug": "finlay",
+      "nom": "Carlos Finlay",
+      "titre": "Naissance de Carlos Finlay",
+      "axe": "Sciences et découvertes",
+      "naissance": 1833,
+      "pays": "CU",
+      "description": "Carlos Finlay (1833-1915) est un médecin cubain, fils d'un ophtalmologiste écossais et d'une Française, considéré comme le fondateur de l'entomologie médicale. Il avance dès 1881, devant la Conférence sanitaire internationale de Washington, que la fièvre jaune est transmise par un moustique, hypothèse que la mission américaine de Walter Reed démontre à Cuba en 1900-1902. Grâce à la lutte contre les moustiques qui en découle, la maladie recule à La Havane comme dans la zone du canal de Panama, dont les travaux avaient été arrêtés, et Finlay meurt à La Havane en 1915, tardivement honoré pour sa découverte.",
+      "wikipedia": "Carlos_Finlay",
+      "portrait": {
+        "fichier": "Finlay_Carlos_1833-1915.jpg",
+        "auteur": "Auteur inconnu",
+        "legende": "Carlos Finlay, portrait ancien",
+        "largeur": 330,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "rufinobarrios",
+      "nom": "Justo Rufino Barrios",
+      "titre": "Naissance de Justo Rufino Barrios",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1835,
+      "pays": "GT",
+      "description": "Justo Rufino Barrios (1835-1885) est un général et homme d'État guatémaltèque, né à San Marcos et mort à Chalchuapa, au Salvador, chef de la révolution libérale de 1871 puis président du Guatemala de 1873 à sa mort. Il fait de l'État l'instrument d'une modernisation brutale : liberté de culte et expropriation des biens de l'Église, école primaire gratuite, obligatoire et laïque, université nationalisée, infrastructures modernisées et économie tout entière tournée vers l'exportation du café, au prix d'une dictature libérale qui muselle la presse et pousse à l'exil des intellectuels d'abord séduits, comme José Martí. Partisan acharné de la réunion des pays d'Amérique centrale en un seul État, il est tué le 2 avril 1885 à la bataille de Chalchuapa, en tentant de l'imposer par les armes.",
+      "wikipedia": "Justo_Rufino_Barrios",
+      "portrait": {
+        "fichier": "Justo_Rufino_Barrios.jpg",
+        "auteur": "W. T. Brigham",
+        "legende": "Justo Rufino Barrios, gravure publiée en 1887 dans un ouvrage de W. T. Brigham sur le Guatemala",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "alfaro",
+      "nom": "Eloy Alfaro",
+      "titre": "Naissance d'Eloy Alfaro",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1842,
+      "pays": "EC",
+      "description": "Eloy Alfaro (1842-1912) est un militaire, guérillero et homme d'État équatorien, principal dirigeant de l'Équateur de 1895 à 1911. Chef du Parti libéral, il prend le pouvoir en 1895 par la révolution libérale, qui sépare l'Église de l'État, instaure l'enseignement laïc, le mariage civil et le divorce, et lance la construction du chemin de fer entre Guayaquil et Quito. Renversé, emprisonné puis livré à une foule déchaînée, il est lynché à Quito le 28 janvier 1912, et sa mort violente en a fait le grand martyr du libéralisme équatorien.",
+      "wikipedia": "Eloy_Alfaro",
+      "portrait": {
+        "fichier": "Eloy_Alfaro2.jpg",
+        "auteur": "Auteur inconnu",
+        "legende": "Eloy Alfaro, portrait vers 1910",
+        "largeur": 330,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "maceo",
+      "nom": "Antonio Maceo",
+      "titre": "Naissance d'Antonio Maceo",
+      "axe": "Guerres et résistances",
+      "naissance": 1845,
+      "pays": "CU",
+      "description": "Antonio Maceo (1845-1896) est un général et héros de la lutte pour l'indépendance de Cuba, surnommé le « Titan de bronze ». Il participe à plus de neuf cents combats dans la guerre des Dix Ans (1868-1878), puis dans la guerre d'indépendance commencée en 1895, et passe pour l'un des meilleurs chefs de guérilla du XIXe siècle en Amérique latine ; en 1878, sa protestation de Baraguá refuse la paix de Zanjón, qui ne donne ni l'indépendance ni l'abolition de l'esclavage. Il meurt au combat le 7 décembre 1896 à Punta Brava, près de La Havane.",
+      "wikipedia": "Antonio_Maceo",
+      "portrait": {
+        "fichier": "Antonio_Maceo.jpg",
+        "auteur": "Auteur inconnu",
+        "legende": "Antonio Maceo, portrait photographique ancien",
+        "largeur": 330,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "posada",
+      "nom": "José Guadalupe Posada",
+      "titre": "Naissance de José Guadalupe Posada",
+      "axe": "Beaux-arts",
+      "naissance": 1852,
+      "pays": "MX",
+      "description": "José Guadalupe Posada (1852-1913) est un graveur, caricaturiste et illustrateur mexicain, né à Aguascalientes. Pendant quatre décennies, il livre aux journaux et aux feuilles populaires des milliers de gravures sur l'actualité, la politique et les faits divers, dont ses célèbres calaveras, squelettes railleurs qui se moquent des puissants et des vanités ; sa Calavera Garbancera, vers 1910, deviendra la « Catrina » de la fête des Morts. Mort dans la misère et enterré dans la fosse commune, il est redécouvert après la révolution par les muralistes, Diego Rivera en tête, qui voient en lui le précurseur de l'art populaire mexicain moderne.",
+      "wikipedia": "José_Guadalupe_Posada",
+      "portrait": {
+        "fichier": "JOSÉ_GUADALUPE_POSADA.jpg",
+        "auteur": "Auteur inconnu",
+        "recadrage": [
+          0.37,
+          0.16,
+          0.87,
+          0.62
+        ],
+        "legende": "José Guadalupe Posada, détail d'une photographie où il pose avec son fils (1913)",
+        "largeur": 0,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "carreno",
+      "nom": "Teresa Carreño",
+      "titre": "Naissance de Teresa Carreño",
+      "axe": "Musique et spectacle",
+      "naissance": 1853,
+      "pays": "VE",
+      "description": "Teresa Carreño (1853-1917) est une pianiste et compositrice vénézuélienne, née à Caracas, enfant prodige devenue l'une des plus grandes virtuoses de son temps. Élève de Louis Moreau Gottschalk, elle se produit dès 1862 aux États-Unis, joue devant Abraham Lincoln en 1863 et poursuit jusqu'en 1916 une carrière internationale qui la conduit dans les Amériques, en Europe, en Océanie et en Afrique, comme pianiste, compositrice, parfois cantatrice et cheffe d'orchestre. Morte à New York en 1917, elle a donné son nom au grand théâtre de Caracas, le Teatro Teresa Carreño, ouvert en 1983.",
+      "wikipedia": "Teresa_Carreño",
+      "portrait": {
+        "fichier": "Teresa_Carreño,_1916.jpg",
+        "auteur": "Julius Cornelius Schaarwächter",
+        "legende": "Teresa Carreño à Berlin, vers 1903, photographie de Julius Cornelius Schaarwächter",
+        "largeur": 330,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "marti",
+      "nom": "José Martí",
+      "titre": "Naissance de José Martí",
+      "axe": "Littérature et pensée",
+      "naissance": 1853,
+      "pays": "CU",
+      "description": "José Martí (1853-1895) est un poète, penseur et journaliste cubain, héros national de Cuba et « apôtre » de son indépendance. Auteur de vers simples (Ismaelillo, Versos sencillos), qui font de lui l'un des grands représentants du modernisme hispano-américain, il passe l'essentiel de sa vie en exil, notamment à New York, où il fonde en 1892 le Parti révolutionnaire cubain pour préparer la guerre contre l'Espagne, et il met en garde, dans Notre Amérique, contre l'appétit des États-Unis. Il meurt au combat, aux premiers jours de l'insurrection, à Dos Ríos le 19 mai 1895, et son nom est revendiqué aujourd'hui aussi bien par le régime cubain que par ses opposants.",
+      "wikipedia": "José_Martí",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "José_Martí_retrato_hecho_en_México_1875.jpg",
+        "auteur": "Valleto y Cía",
+        "legende": "José Martí à vingt-deux ans, photographie prise à Mexico (1875)",
+        "largeur": 330,
+        "licence": "CC0 (domaine public)"
+      }
+    },
+    {
+      "slug": "michelena",
+      "nom": "Arturo Michelena",
+      "titre": "Naissance d'Arturo Michelena",
+      "axe": "Beaux-arts",
+      "naissance": 1863,
+      "pays": "VE",
+      "description": "Arturo Michelena (1863-1898) est un peintre vénézuélien, né à Valencia et mort à Caracas à trente-cinq ans, spécialiste de la peinture d'histoire. Formé à Paris, à l'Académie Julian, auprès de Jean-Paul Laurens, il obtient au Salon des artistes français de 1887 une médaille de deuxième classe pour L'Enfant malade, tableau aussitôt acquis par la famille Astor, de New York. De retour à Caracas, il met son métier au service de l'histoire nationale avec Miranda à La Carraca (1896) et un portrait de Bolívar en 1895, avant que la tuberculose ne l'emporte en 1898.",
+      "wikipedia": "Arturo_Michelena",
+      "portrait": {
+        "fichier": "Arturo_Michelena1.jpg",
+        "auteur": "Auteur inconnu",
+        "legende": "Arturo Michelena, photographie d'avant 1898",
+        "largeur": 0,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "gregoriohernandez",
+      "nom": "José Gregorio Hernández",
+      "titre": "Naissance de José Gregorio Hernández",
+      "axe": "Sciences et découvertes",
+      "naissance": 1864,
+      "pays": "VE",
+      "description": "José Gregorio Hernández (1864-1919) est un médecin et scientifique vénézuélien, né à Isnotú et mort à Caracas, solidaire des plus pauvres et canonisé par l'Église catholique en 2025. Boursier de l'État, il se perfectionne à Paris dans le laboratoire d'histologie de Mathias Duval, puis à Berlin, et revient à Caracas en 1891 enseigner l'histologie, la bactériologie et la physiologie expérimentale à l'Université centrale, dont il équipe le laboratoire : il passe pour l'introducteur de la médecine expérimentale au Venezuela. Tertiaire franciscain d'une grande piété, il est renversé par une automobile à Caracas le 29 juin 1919, et la vénération populaire qui l'entoure depuis a fait de lui le saint des Vénézuéliens.",
+      "wikipedia": "José_Gregorio_Hernández",
+      "portrait": {
+        "fichier": "José_Gregorio_Hernández.jpg",
+        "auteur": "Auteur inconnu",
+        "recadrage": [
+          0.265,
+          0.02,
+          0.735,
+          0.413
+        ],
+        "legende": "José Gregorio Hernández, photographie ancienne (avant 1919)",
+        "largeur": 0,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "dario",
+      "nom": "Rubén Darío",
+      "titre": "Naissance de Rubén Darío",
+      "axe": "Littérature et pensée",
+      "naissance": 1867,
+      "pays": "NI",
+      "description": "Rubén Darío (1867-1916) est un poète nicaraguayen, fondateur du modernisme dans la langue hispano-américaine. Il lance le mouvement avec Azul (1888, publié au Chili), puis publie Proses profanes (1896) et Chants de vie et d'espérance (1905), renouvelant la métrique et le vocabulaire de la poésie en espagnol nourri de lectures françaises, de Victor Hugo à Verlaine, et d'un Paris dont il rêvait. Journaliste et diplomate voyageur, entre Buenos Aires, Paris et Madrid, il exerce sur les poètes de l'Amérique comme de l'Espagne une influence immense et meurt à León en 1916.",
+      "wikipedia": "Rubén_Darío",
+      "portrait": {
+        "fichier": "Rubén_Darío.jpg",
+        "auteur": "Auteur inconnu",
+        "legende": "Rubén Darío, photographie ancienne",
+        "largeur": 0,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "rodo",
+      "nom": "José Enrique Rodó",
+      "titre": "Naissance de José Enrique Rodó",
+      "axe": "Littérature et pensée",
+      "naissance": 1871,
+      "pays": "UY",
+      "description": "José Enrique Rodó (1871-1917) est un essayiste et homme politique uruguayen, l'une des grandes voix du modernisme hispano-américain. Dans Ariel (1900), essai adressé à la jeunesse du continent, il oppose à l'utilitarisme des États-Unis l'idéal d'une culture latino-américaine fondée sur l'esprit, la beauté et la tradition gréco-latine, ce qui lui vaut sur des générations d'intellectuels une influence immense, appelée l'« arielisme ». Député de Montevideo pendant trois mandats, il meurt à Palerme, en Italie, en 1917, à quarante-cinq ans.",
+      "wikipedia": "José_Enrique_Rodó",
+      "portrait": {
+        "fichier": "José_Enrique_Rodó_(Almanaque_Sudamericano_1898).jpg",
+        "auteur": "Casimiro Prieto Valdés",
+        "legende": "José Enrique Rodó, gravure de l'Almanaque Sudamericano (1898)",
+        "largeur": 330,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "torresgarcia",
+      "nom": "Joaquín Torres García",
+      "titre": "Naissance de Joaquín Torres García",
+      "axe": "Beaux-arts",
+      "naissance": 1874,
+      "pays": "UY",
+      "description": "Joaquín Torres García (1874-1949) est un peintre, sculpteur, écrivain et théoricien uruguayen d'origine catalane, considéré comme le père du constructivisme universel. Après plus de quarante ans passés en Europe, où il collabore avec Gaudí en 1903 à des vitraux pour la cathédrale de Palma et la Sagrada Família, puis fonde à Paris en 1929 le groupe Cercle et Carré, il rentre à Montevideo en 1934 et y crée le Taller Torres García, sorte de Bauhaus sud-américain qui forme toute une génération d'artistes. Sa célèbre carte de l'Amérique du Sud renversée, pointe vers le haut, résume son credo : « notre nord, c'est le Sud ».",
+      "wikipedia": "Joaquín_Torres_García",
+      "portrait": {
+        "fichier": "Ramon_Casas_-_MNAC-_Joaquín_Torres_García-_027317-D_026088.jpg",
+        "auteur": "Ramon Casas",
+        "legende": "Joaquín Torres García, dessin de Ramon Casas (musée national d'Art de Catalogne)",
+        "recadrage": [
+          0.2,
+          0.04,
+          0.95,
+          0.484
+        ],
+        "largeur": 500,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "villa",
+      "nom": "Pancho Villa",
+      "titre": "Naissance de Pancho Villa",
+      "axe": "Guerres et résistances",
+      "naissance": 1878,
+      "pays": "MX",
+      "description": "Pancho Villa (1878-1923) est un révolutionnaire mexicain, de son vrai nom José Doroteo Arango, d'abord hors-la-loi puis chef de la Division du Nord. Rallié en 1910 aux révolutionnaires qui renversent Porfirio Díaz, il lève en 1913 contre le général Huerta une armée qu'il transforme en force professionnelle et prend Torreón, mais il est battu par Obregón à Celaya en 1915 ; son raid de 1916 sur Columbus, au Nouveau-Mexique, déclenche une expédition américaine qui ne parvient pas à le capturer. Retiré dans l'hacienda de Canutillo après un accord avec le gouvernement en 1920, il est assassiné à Parral le 20 juillet 1923.",
+      "wikipedia": "Pancho_Villa",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Pancho_villa_horseback.jpg",
+        "auteur": "D. W. Hoffman",
+        "legende": "Pancho Villa à cheval, photographie de D. W. Hoffman, photographe d'El Paso (vers 1912)",
+        "recadrage": [
+          0.185,
+          0.05,
+          0.735,
+          0.607
+        ],
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "zapata",
+      "nom": "Emiliano Zapata",
+      "titre": "Naissance d'Emiliano Zapata",
+      "axe": "Guerres et résistances",
+      "naissance": 1879,
+      "pays": "MX",
+      "description": "Emiliano Zapata (1879-1919) est un chef paysan du Morelos, surnommé « le Caudillo du Sud » et l'un des principaux acteurs de la révolution mexicaine. Il prend les armes en 1911 contre Porfirio Díaz puis, déçu par le président Madero, publie le plan d'Ayala, qui réclame la restitution des terres aux villages, et mène une guérilla agraire sous le mot d'ordre « Terre et liberté ». Il est assassiné dans un guet-apens à Chinameca le 10 avril 1919 ; devenu le symbole de la cause paysanne, il a donné son nom, en 1994, à l'Armée zapatiste de libération nationale du Chiapas.",
+      "wikipedia": "Emiliano_Zapata",
+      "biographie": "bio_zapata",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Emiliano_Zapata.tiff",
+        "auteur": "Auteur inconnu",
+        "legende": "Emiliano Zapata, photographie dédicacée (vers 1915)",
+        "recadrage": [
+          0.3,
+          0.17,
+          0.85,
+          0.72
+        ],
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "gallegos",
+      "nom": "Rómulo Gallegos",
+      "titre": "Naissance de Rómulo Gallegos",
+      "axe": "Littérature et pensée",
+      "naissance": 1884,
+      "pays": "VE",
+      "description": "Rómulo Gallegos (1884-1969) est un romancier et homme d'État vénézuélien, considéré comme le meilleur représentant de la littérature vénézuélienne du XXe siècle. Instituteur devenu écrivain, il publie en 1929 Doña Bárbara, chef-d'œuvre qui oppose la civilisation à la barbarie dans les plaines du llano, et part en exil sous la dictature de Juan Vicente Gómez, avant de revenir au pays. Élu président de la République, il est renversé par un coup d'État militaire après neuf mois de mandat, en 1948, et son nom est devenu celui d'un des grands prix littéraires de langue espagnole, remporté notamment par Vargas Llosa, García Márquez et Bolaño.",
+      "wikipedia": "Rómulo_Gallegos",
+      "portrait": {
+        "fichier": "President_Romulo_Gallegos_lays_a_wreath_on_the_tomb_of_George_Washington_at_Mt._Vernon._-_NARA_-_199822.jpg",
+        "auteur": "Abbie Rowe",
+        "recadrage": [
+          0.13,
+          0.14,
+          0.45,
+          0.635
+        ],
+        "legende": "Rómulo Gallegos, président du Venezuela, dépose une gerbe sur la tombe de George Washington à Mount Vernon, photographie d'Abbie Rowe (2 juillet 1948)",
+        "largeur": 1280,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "barrios",
+      "nom": "Agustín Barrios Mangoré",
+      "titre": "Naissance d'Agustín Barrios Mangoré",
+      "axe": "Musique et spectacle",
+      "naissance": 1885,
+      "pays": "PY",
+      "description": "Agustín Barrios Mangoré (1885-1944) est un guitariste et compositeur paraguayen, né à San Juan Bautista de las Misiones. À partir de 1932 il se fait appeler « Nitsuga Mangoré », du nom d'un chef guarani de la résistance aux Espagnols, se produit parfois en costume indien et parcourt l'Amérique latine, composant environ trois cents œuvres pour la guitare classique, dont La Catedral, Julia Florida ou Un sueño en la floresta. Il meurt à San Salvador en 1944 et est aujourd'hui considéré comme l'un des plus grands guitaristes et compositeurs pour cet instrument.",
+      "wikipedia": "Agustín_Barrios_Mangoré",
+      "portrait": {
+        "fichier": "Agustín_Barrios_1910b.jpg",
+        "auteur": "Auteur inconnu",
+        "legende": "Agustín Barrios Mangoré avec sa guitare (1910)",
+        "largeur": 330,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "rivera",
+      "nom": "Diego Rivera",
+      "titre": "Naissance de Diego Rivera",
+      "axe": "Beaux-arts",
+      "naissance": 1886,
+      "pays": "MX",
+      "description": "Diego Rivera (1886-1957) est un peintre mexicain, le plus célèbre des muralistes. Formé à Mexico puis en Europe, où il passe plus de dix ans et fréquente à Paris les cubistes, il rentre au Mexique après la révolution et couvre de fresques les murs des bâtiments publics, dont le palais national, où l'Épopée du peuple mexicain (1929-1935) retrace l'histoire du pays. Ses fresques américaines — celles de Détroit, puis celle du Rockefeller Center, détruite en 1934 pour y avoir figuré Lénine — comme son mariage tumultueux avec Frida Kahlo l'ont rendu célèbre dans le monde entier.",
+      "wikipedia": "Diego_Rivera",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Diego_Rivera,_1910.jpg",
+        "auteur": "Auteur inconnu",
+        "legende": "Diego Rivera en 1910, à vingt-quatre ans",
+        "largeur": 330,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "houssay",
+      "nom": "Bernardo Houssay",
+      "titre": "Naissance de Bernardo Houssay",
+      "axe": "Sciences et découvertes",
+      "naissance": 1887,
+      "pays": "AR",
+      "description": "Bernardo Houssay (1887-1971) est un physiologiste argentin, premier scientifique sud-américain à recevoir un prix Nobel scientifique. Ses travaux sur le rôle de l'hypophyse et sur les glandes endocrines, qui montrent le lien entre les hormones hypophysaires et le diabète, lui valent en 1947 la moitié du prix Nobel de physiologie ou médecine. Fondateur de l'Institut de biologie et de médecine expérimentale de Buenos Aires, il a formé toute une école de chercheurs, dont Luis Federico Leloir.",
+      "wikipedia": "Bernardo_Houssay",
+      "biographie": "bio_bernardohoussay",
+      "portrait": {
+        "fichier": "Dr._Bernardo_Houssay_-_NLM_101442347.jpg",
+        "auteur": "J. W. McGuire (National Institutes of Health)",
+        "recadrage": [
+          0.3,
+          0.02,
+          0.85,
+          0.567
+        ],
+        "legende": "Bernardo Houssay au laboratoire, photographie de J. W. McGuire pour les National Institutes of Health américains (1949)",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "mistral",
+      "nom": "Gabriela Mistral",
+      "titre": "Naissance de Gabriela Mistral",
+      "axe": "Littérature et pensée",
+      "naissance": 1889,
+      "pays": "CL",
+      "description": "Gabriela Mistral (1889-1957) est une poétesse, enseignante et diplomate chilienne, née à Vicuña, première Latino-Américaine à recevoir le prix Nobel de littérature, en 1945. Institutrice de campagne, elle remporte en 1914 le prix des Jeux floraux avec ses Sonnets de la mort, puis publie Désolation (1922), Tendresse (1924) et Tala (1938), où l'amour, la mort, la maternité et la nature d'Amérique s'expriment dans une langue simple et tendue. Invitée en 1922 à organiser bibliothèques et écoles au Mexique, puis consule du Chili dans de nombreux pays, dont la France, l'Italie et l'Espagne, elle meurt à New York en 1957 et reste l'une des figures les plus honorées de la culture chilienne.",
+      "wikipedia": "Gabriela_Mistral",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Gabriela_Mistral_1945.jpg",
+        "auteur": "Anna Riwkin-Brick",
+        "legende": "Gabriela Mistral, photographie d'Anna Riwkin-Brick (1945)",
+        "largeur": 0,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "gardel",
+      "nom": "Carlos Gardel",
+      "titre": "Naissance de Carlos Gardel",
+      "axe": "Musique et spectacle",
+      "naissance": 1890,
+      "pays": "AR",
+      "description": "Carlos Gardel (1890-1935) est un chanteur, compositeur et acteur franco-argentin, la voix mythique du tango. Né à Toulouse selon la version la plus répandue — l'Uruguay le revendique à Tacuarembó —, il grandit à Buenos Aires, fait du tango chanté un genre populaire avec des titres comme Mi Buenos Aires querido, Por una cabeza ou El día que me quieras, et tourne des films à Paris et à New York. Il meurt le 24 juin 1935 dans un accident d'avion à Medellín, en pleine gloire, et son souvenir est resté si vivant qu'on dit en Argentine que « Gardel chante chaque jour mieux ».",
+      "wikipedia": "Carlos_Gardel",
+      "biographie": "bio_carlosgardel",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Carlos_gardel_en_su_casa_1933.jpg",
+        "auteur": "Auteur inconnu",
+        "legende": "Carlos Gardel chez lui, un disque à la main (1933)",
+        "largeur": 330,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "storni",
+      "nom": "Alfonsina Storni",
+      "titre": "Naissance d'Alfonsina Storni",
+      "axe": "Littérature et pensée",
+      "naissance": 1892,
+      "pays": "AR",
+      "description": "Alfonsina Storni (1892-1938) est une poétesse argentine, née dans le Tessin, en Suisse, et arrivée enfant en Argentine. Institutrice, journaliste et mère célibataire, elle publie, de La inquietud del rosal (1916) à Mascarilla y trébol (1938), des recueils qui disent avec une franchise nouvelle l'amour, la solitude et la condition des femmes, et elle compte parmi les voix majeures du postmodernisme hispano-américain. Malade d'un cancer, elle se jette à la mer à Mar del Plata le 25 octobre 1938 : sa mort a inspiré la célèbre chanson Alfonsina y el mar, popularisée par Mercedes Sosa.",
+      "wikipedia": "Alfonsina_Storni",
+      "portrait": {
+        "fichier": "AlfosinaStorni.jpg",
+        "auteur": "Auteur inconnu",
+        "legende": "Alfonsina Storni, portrait photographique (avant 1938)",
+        "largeur": 0,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "vallejo",
+      "nom": "César Vallejo",
+      "titre": "Naissance de César Vallejo",
+      "axe": "Littérature et pensée",
+      "naissance": 1892,
+      "pays": "PE",
+      "description": "César Vallejo (1892-1938) est un poète péruvien, né dans un village des Andes et mort à Paris, considéré comme l'un des plus grands poètes de langue espagnole. Auteur des Hérauts noirs (1919) puis de Trilce (1922), livre d'une audace radicale, il invente une langue nue et brisée qui dit la douleur, la pauvreté et la solidarité, et il écrit à Paris, où il vit à partir de 1923, ses Poèmes humains, publiés après sa mort. Soutien de la République espagnole, il meurt à Paris le 15 avril 1938, comme il l'avait annoncé dans l'un de ses poèmes les plus célèbres, « Pierre noire sur une pierre blanche » : « Je mourrai à Paris ».",
+      "wikipedia": "César_Vallejo",
+      "portrait": {
+        "fichier": "Cesar_vallejo_1929.jpg",
+        "auteur": "Juan Domingo Córdoba",
+        "legende": "César Vallejo dans le parc de Versailles (1929)",
+        "largeur": 330,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "cardenas",
+      "nom": "Lázaro Cárdenas",
+      "titre": "Naissance de Lázaro Cárdenas",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1895,
+      "pays": "MX",
+      "description": "Lázaro Cárdenas (1895-1970) est un général et homme d'État mexicain, président de 1934 à 1940. Il lance la plus grande réforme agraire d'Amérique latine, avec dix-huit millions d'hectares distribués à plus d'un million de familles, et nationalise en 1938 les compagnies pétrolières étrangères, ce qui donne naissance à Pemex. Allié de la République espagnole, il accueille près de quarante mille réfugiés après sa défaite, ainsi que Léon Trotski en 1937 ; son mandat reste pour beaucoup de Mexicains l'accomplissement social de la révolution.",
+      "wikipedia": "Lázaro_Cárdenas",
+      "portrait": {
+        "fichier": "Lazaro_cardenas2.jpg",
+        "auteur": "Aurelio Escobar Castellanos",
+        "legende": "Lázaro Cárdenas, photographie d'Aurelio Escobar Castellanos (1934)",
+        "largeur": 330,
+        "licence": "CC BY 2.5"
+      }
+    },
+    {
+      "slug": "peron",
+      "nom": "Juan Perón",
+      "titre": "Naissance de Juan Perón",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1895,
+      "pays": "AR",
+      "description": "Juan Perón (1895-1974) est un militaire et homme d'État argentin, trois fois président de la Nation et fondateur du péronisme. Colonel devenu secrétaire au Travail après le coup d'État de 1943, il s'assure l'appui des syndicats par des lois sociales et des conventions collectives, est élu président en 1946, avec son épouse Eva à ses côtés, et mène une politique nationaliste, industrialiste et autoritaire que l'armée renverse en 1955. Exilé pendant dix-huit ans, notamment en Espagne, il revient en 1973, est élu une troisième fois avec plus de 60 % des voix et meurt en fonction le 1er juillet 1974.",
+      "wikipedia": "Juan_Perón",
+      "biographie": "bio_juanperon",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Juan_Perón_postcard.jpg",
+        "auteur": "Photographe inconnu",
+        "legende": "Juan Perón, sur une carte postale d'avant 1963",
+        "largeur": 330,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "sandino",
+      "nom": "Augusto César Sandino",
+      "titre": "Naissance d'Augusto César Sandino",
+      "axe": "Guerres et résistances",
+      "naissance": 1895,
+      "pays": "NI",
+      "description": "Augusto César Sandino (1895-1934) est un chef de guérilla nicaraguayen qui lutte de 1927 à 1933 contre l'occupation du pays par les marines américains. Fils illégitime d'un propriétaire terrien et d'une paysanne, ancien ouvrier au Mexique, il mène depuis les montagnes du nord une guerre de harcèlement qui contraint les marines à quitter le Nicaragua début 1933, et devient un héros de l'anti-impérialisme. Invité à Managua pour négocier, il y est assassiné le 21 février 1934 par la Garde nationale du général Anastasio Somoza ; son nom a été repris par le Front sandiniste, qui renverse la dynastie Somoza en 1979.",
+      "wikipedia": "Augusto_Sandino",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Augusto_César_Sandino.jpg",
+        "auteur": "Auteur inconnu",
+        "legende": "Augusto César Sandino en juin 1929",
+        "largeur": 330,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "asturias",
+      "nom": "Miguel Ángel Asturias",
+      "titre": "Naissance de Miguel Ángel Asturias",
+      "axe": "Littérature et pensée",
+      "naissance": 1899,
+      "pays": "GT",
+      "description": "Miguel Ángel Asturias (1899-1974) est un écrivain et diplomate guatémaltèque, prix Nobel de littérature en 1967. Après des études de droit puis d'anthropologie à la Sorbonne, où il fréquente les milieux littéraires de Montparnasse, il s'impose avec les Légendes du Guatemala (1930), puis avec Monsieur le Président (1946), portrait d'un dictateur, et Hommes de maïs (1949), qui mêlent mythes mayas et dénonciation sociale. Exilé en Argentine de 1954 à 1961 après la chute d'Árbenz, il est ambassadeur à Paris de 1966 à 1970 et préside en 1970 le jury du festival de Cannes ; il meurt à Madrid en 1974.",
+      "wikipedia": "Miguel_Ángel_Asturias",
+      "portrait": {
+        "fichier": "Miguel_Angel_Asturias.jpg",
+        "auteur": "UNESCO / Dominique Roger",
+        "legende": "Miguel Ángel Asturias aux studios de l'Unesco (8 février 1968)",
+        "largeur": 330,
+        "licence": "CC BY-SA 3.0 IGO"
+      }
+    },
+    {
+      "slug": "borges",
+      "nom": "Jorge Luis Borges",
+      "titre": "Naissance de Jorge Luis Borges",
+      "axe": "Littérature et pensée",
+      "naissance": 1899,
+      "pays": "AR",
+      "description": "Jorge Luis Borges (1899-1986) est un écrivain argentin, né à Buenos Aires et mort à Genève. Poète, essayiste et surtout nouvelliste, auteur de Fictions (1944) et de L'Aleph (1949), il bâtit des récits brefs où se mêlent bibliothèques infinies, labyrinthes, miroirs et paradoxes philosophiques, qui font de lui un classique de la littérature mondiale. Directeur de la Bibliothèque nationale à partir de 1955, devenu presque aveugle, il reçoit le prix Cervantes en 1979 mais jamais le prix Nobel, malgré de nombreuses nominations.",
+      "wikipedia": "Jorge_Luis_Borges",
+      "biographie": "bio_borges",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Jorge_Luis_Borges_1951,_by_Grete_Stern_(full).jpg",
+        "auteur": "Grete Stern",
+        "legende": "Jorge Luis Borges, photographie de Grete Stern (1951)",
+        "largeur": 330,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "barragan",
+      "nom": "Luis Barragán",
+      "titre": "Naissance de Luis Barragán",
+      "axe": "Beaux-arts",
+      "naissance": 1902,
+      "pays": "MX",
+      "description": "Luis Barragán (1902-1988) est un architecte mexicain, né à Guadalajara. Ingénieur de formation et autodidacte en architecture, il crée à Mexico le quartier-jardin du Pedregal, les tours de Satélite, avec le sculpteur Mathias Goeritz, et des maisons aux murs nus et aux couleurs vives, où la lumière, l'eau et le silence composent ce qu'il appelle une « architecture émotionnelle ». Prix Pritzker en 1980, il a vu sa maison-atelier de Tacubaya inscrite en 2004 au patrimoine mondial de l'Unesco.",
+      "wikipedia": "Luis_Barragán",
+      "biographie": "bio_luisbarragan",
+      "portrait": {
+        "fichier": "Luis_Barragan_1981.jpg",
+        "auteur": "Fcarriedo",
+        "legende": "Luis Barragán en 1981, photographie de Fcarriedo",
+        "largeur": 330,
+        "licence": "CC BY 3.0"
+      }
+    },
+    {
+      "slug": "lam",
+      "nom": "Wifredo Lam",
+      "titre": "Naissance de Wifredo Lam",
+      "axe": "Beaux-arts",
+      "naissance": 1902,
+      "pays": "CU",
+      "description": "Wifredo Lam (1902-1982) est un peintre cubain, né à Sagua la Grande d'un père chinois et d'une mère d'origine congolaise et espagnole. Installé en Espagne de 1923 à 1938, puis à Paris, où Picasso le présente aux surréalistes, il rentre à Cuba en 1941 et peint La Jungle, exposée à New York en 1944 et achetée l'année suivante par le Museum of Modern Art, qui mêle modernisme occidental et symboles africains et caribéens. Ami d'Aimé Césaire et de Breton, il invente un langage métissé au service de la dignité des opprimés, et meurt à Boulogne-Billancourt en 1982.",
+      "wikipedia": "Wifredo_Lam",
+      "portrait": {
+        "fichier": "Wilfredo_Lam.jpg",
+        "auteur": "Mfoto (Wikipédia en anglais)",
+        "legende": "Wifredo Lam devant l'une de ses peintures",
+        "largeur": 0,
+        "licence": "CC BY 3.0"
+      }
+    },
+    {
+      "slug": "arrau",
+      "nom": "Claudio Arrau",
+      "titre": "Naissance de Claudio Arrau",
+      "axe": "Musique et spectacle",
+      "naissance": 1903,
+      "pays": "CL",
+      "description": "Claudio Arrau (1903-1991) est un pianiste chilien, né à Chillán et mort à Mürzzuschlag, en Autriche, enfant prodige devenu l'un des plus grands interprètes du XXe siècle. Grâce à une bourse, il part étudier à Berlin avec Martin Krause, l'un des derniers élèves de Liszt, remporte le Grand Prix de Genève en 1927 et donne à Berlin, en 1935-1936, l'intégrale de l'œuvre pour clavier de Bach en douze récitals. Interprète de Beethoven, de Liszt, de Chopin et de Schumann à la sonorité hors du commun, il a enregistré l'intégrale des sonates de Beethoven et de Mozart et reste l'un des artistes phares de la maison Philips.",
+      "wikipedia": "Claudio_Arrau",
+      "portrait": {
+        "fichier": "Claudio_Arrau_3_Allan_Warren.jpg",
+        "auteur": "Allan Warren",
+        "recadrage": [
+          0.08,
+          0.04,
+          0.92,
+          0.76
+        ],
+        "legende": "Claudio Arrau en 1974, photographie d'Allan Warren",
+        "largeur": 500,
+        "licence": "CC BY-SA 3.0"
+      }
+    },
+    {
+      "slug": "carpentier",
+      "nom": "Alejo Carpentier",
+      "titre": "Naissance d'Alejo Carpentier",
+      "axe": "Littérature et pensée",
+      "naissance": 1904,
+      "pays": "CU",
+      "description": "Alejo Carpentier (1904-1980) est un écrivain cubain et français, né à Lausanne, mais qui prétendait être né à La Havane, où il passe son enfance. Emprisonné en 1928 pour son engagement à gauche puis exilé à Paris, où il fréquente les surréalistes, il invente avec Le Royaume de ce monde (1949), dont le prologue décrit le « réel merveilleux » américain, ce que la critique appellera le réalisme magique, puis écrit Le Siècle des Lumières (1962). Prix Cervantes en 1977, il est de 1966 à sa mort attaché culturel de Cuba à Paris, où il meurt en 1980.",
+      "wikipedia": "Alejo_Carpentier",
+      "portrait": {
+        "fichier": "Alejo_Carpentier_c._1955.jpg",
+        "auteur": "Auteur inconnu (revue Ínsula)",
+        "legende": "Alejo Carpentier, portrait publié dans la revue Ínsula (octobre 1955)",
+        "largeur": 330,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "neruda",
+      "nom": "Pablo Neruda",
+      "titre": "Naissance de Pablo Neruda",
+      "axe": "Littérature et pensée",
+      "naissance": 1904,
+      "pays": "CL",
+      "description": "Pablo Neruda (1904-1973) est un poète, diplomate et homme politique chilien, prix Nobel de littérature en 1971. Auteur de Vingt poèmes d'amour et une chanson désespérée (1924), de Résidence sur la terre, puis du Chant général (1950), vaste épopée de l'Amérique latine, il célèbre l'amour, la nature et les peuples, et s'engage aux côtés de la République espagnole et du Parti communiste. Sénateur puis ambassadeur du Chili en France sous Allende, il meurt à Santiago le 23 septembre 1973, douze jours après le coup d'État de Pinochet.",
+      "wikipedia": "Pablo_Neruda",
+      "biographie": "bio_neruda",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Neruda_1971.png",
+        "auteur": "Archives de l'Académie suédoise",
+        "legende": "Pablo Neruda reçoit son prix Nobel de littérature à Stockholm (10 décembre 1971), photographie des archives de l'Académie suédoise",
+        "largeur": 330,
+        "licence": "CC BY 4.0"
+      }
+    },
+    {
+      "slug": "figueres",
+      "nom": "José Figueres Ferrer",
+      "titre": "Naissance de José Figueres Ferrer",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1906,
+      "pays": "CR",
+      "description": "José Figueres Ferrer (1906-1990) est un homme d'État costaricien, président de la République à trois reprises, de 1948 à 1949, de 1953 à 1958 et de 1970 à 1974. Fils d'immigrés catalans, il restaure en 1948 la démocratie par la force lors de la guerre civile costaricienne, préside la junte fondatrice de la Seconde République et fait adopter une constitution avancée, qui accorde le droit de vote aux femmes et aux Noirs. Il abolit l'armée en 1948, une première historique pour un État indépendant : le Costa Rica est depuis l'un des rares pays au monde sans forces armées permanentes.",
+      "wikipedia": "José_Figueres_Ferrer",
+      "portrait": {
+        "fichier": "De_president_van_Costa_Rica,_Don_Jose_Figueres_Ferrer,_bracht_een_bezoek_aan_Ams,_Bestanddeelnr_908-0446.jpg",
+        "auteur": "Joop van Bilsen (Anefo)",
+        "recadrage": [
+          0.32,
+          0.37,
+          0.48,
+          0.63
+        ],
+        "largeur": 1920,
+        "legende": "José Figueres Ferrer, président du Costa Rica, passe en revue la garde d'honneur à Amsterdam (4 octobre 1956)",
+        "licence": "CC0 (domaine public)"
+      }
+    },
+    {
+      "slug": "kahlo",
+      "nom": "Frida Kahlo",
+      "titre": "Naissance de Frida Kahlo",
+      "axe": "Beaux-arts",
+      "naissance": 1907,
+      "pays": "MX",
+      "description": "Frida Kahlo (1907-1954) est une peintre mexicaine, née à Coyoacán, qui se disait née en 1910 pour lier sa naissance à celle de la révolution. Atteinte de poliomyélite enfant, grièvement blessée à dix-huit ans dans un accident d'autobus, elle subit toute sa vie douleurs et opérations et se met à peindre pendant sa convalescence : ses autoportraits mêlent souffrance intime, culture mexicaine et symboles proches du surréalisme. Épouse de Diego Rivera, elle est devenue après sa mort l'une des artistes les plus célèbres au monde, icône du féminisme et de l'identité mexicaine, et sa « Maison bleue » de Coyoacán est un musée.",
+      "wikipedia": "Frida_Kahlo",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Frida_Kahlo,_by_Guillermo_Kahlo.jpg",
+        "auteur": "Guillermo Kahlo",
+        "legende": "Frida Kahlo, photographie de son père Guillermo Kahlo (16 octobre 1932)",
+        "largeur": 330,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "allende",
+      "nom": "Salvador Allende",
+      "titre": "Naissance de Salvador Allende",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1908,
+      "pays": "CL",
+      "description": "Salvador Allende (1908-1973) est un médecin et homme d'État chilien, président de la République de 1970 à sa mort. Candidat socialiste de l'Unité populaire, élu de justesse en 1970 avec 36,6 % des voix, il tente de mener la « voie chilienne vers le socialisme » par des moyens légaux — nationalisation du cuivre et des secteurs clés, réforme agraire — dans un pays polarisé et sous la pression des États-Unis. Il meurt le 11 septembre 1973 dans le palais de la Moneda bombardé, lors du coup d'État du général Pinochet, qui instaure une dictature de dix-sept ans.",
+      "wikipedia": "Salvador_Allende",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Salvador_Allende_Gossens-.jpg",
+        "auteur": "Biblioteca del Congreso Nacional de Chile",
+        "legende": "Salvador Allende, président du Chili (1970-1973), portrait officiel de la Bibliothèque du Congrès national du Chili",
+        "largeur": 0,
+        "licence": "CC BY 3.0 CL"
+      }
+    },
+    {
+      "slug": "cantinflas",
+      "nom": "Cantinflas",
+      "titre": "Naissance de Cantinflas",
+      "axe": "Musique et spectacle",
+      "naissance": 1911,
+      "pays": "MX",
+      "description": "Cantinflas (1911-1993) est un acteur comique mexicain, de son vrai nom Mario Moreno. Son personnage de pauvre hère au pantalon tombant, qui noie ses interlocuteurs sous un flot de paroles sans queue ni tête, domine le cinéma mexicain de l'âge d'or et fait de lui une vedette dans tout le monde hispanophone. Passepartout dans Le Tour du monde en quatre-vingts jours (1956), il reçoit un Golden Globe du meilleur acteur dans une comédie ; son nom a donné le verbe « cantinflear », parler beaucoup pour ne rien dire.",
+      "wikipedia": "Cantinflas",
+      "portrait": {
+        "fichier": "Mario_Moreno_-_Cantinflas-2.jpg",
+        "auteur": "Iberia",
+        "legende": "Cantinflas, photographie de la compagnie Iberia (3 novembre 1964)",
+        "licence": "CC BY 2.0"
+      }
+    },
+    {
+      "slug": "cortazar",
+      "nom": "Julio Cortázar",
+      "titre": "Naissance de Julio Cortázar",
+      "axe": "Littérature et pensée",
+      "naissance": 1914,
+      "pays": "AR",
+      "description": "Julio Cortázar (1914-1984) est un écrivain argentin, né à Bruxelles de parents argentins et mort à Paris. Maître de la nouvelle fantastique, auteur de Bestiaire et des Armes secrètes, il publie en 1963 Marelle, un roman qui se lit dans plusieurs ordres et qui compte parmi les œuvres majeures du « boom » latino-américain. Installé à Paris dès 1951, il y acquiert la nationalité française en 1981, tout en gardant la sienne, pour protester contre la dictature argentine.",
+      "wikipedia": "Julio_Cortázar",
+      "portrait": {
+        "fichier": "Cortázar.jpg",
+        "auteur": "Sara Facio",
+        "legende": "Julio Cortázar dans les jardins de l'Unesco à Paris, photographie de Sara Facio (1967)",
+        "largeur": 330,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "paz",
+      "nom": "Octavio Paz",
+      "titre": "Naissance d'Octavio Paz",
+      "axe": "Littérature et pensée",
+      "naissance": 1914,
+      "pays": "MX",
+      "description": "Octavio Paz (1914-1998) est un poète, essayiste et diplomate mexicain, prix Nobel de littérature en 1990. Auteur de recueils comme Liberté sur parole et Pierre de soleil (1957), et du Labyrinthe de la solitude (1950), essai fondateur sur l'identité mexicaine, il est ambassadeur du Mexique en Inde de 1962 à 1968, avant de démissionner en octobre 1968 pour protester contre la répression des étudiants à Tlatelolco. Fondateur de la revue Vuelta, il est l'un des plus grands poètes de langue espagnole du XXe siècle, que nourrissent le surréalisme, la pensée orientale et le passé précolombien.",
+      "wikipedia": "Octavio_Paz",
+      "biographie": "bio_octaviopaz",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Octavio_Paz_1984.jpg",
+        "auteur": "Rafael Doniz",
+        "legende": "Octavio Paz, photographie de Rafael Doniz (1984)",
+        "recadrage": [
+          0.2,
+          0.0,
+          0.8,
+          0.55
+        ],
+        "licence": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "slug": "roabastos",
+      "nom": "Augusto Roa Bastos",
+      "titre": "Naissance d'Augusto Roa Bastos",
+      "axe": "Littérature et pensée",
+      "naissance": 1917,
+      "pays": "PY",
+      "description": "Augusto Roa Bastos (1917-2005) est un écrivain paraguayen, prix Cervantes en 1989. Engagé à quinze ans comme infirmier volontaire dans la guerre du Chaco, il s'exile en Argentine devant la dictature, puis à Toulouse, où il enseigne le guarani et la littérature, et publie Fils d'homme (1960) et surtout Moi, le Suprême (1974), roman du dictateur Francia et monument de la littérature hispano-américaine. Il rentre au Paraguay après la chute de Stroessner et meurt à Asunción en 2005.",
+      "wikipedia": "Augusto_Roa_Bastos",
+      "portrait": {
+        "fichier": "Escritor_Augusto_R._Bastos.jpg",
+        "auteur": "FF MM",
+        "legende": "Augusto Roa Bastos",
+        "largeur": 330,
+        "licence": "CC BY-SA 3.0"
+      }
+    },
+    {
+      "slug": "romero",
+      "nom": "Óscar Romero",
+      "titre": "Naissance d'Óscar Romero",
+      "axe": "Guerres et résistances",
+      "naissance": 1917,
+      "pays": "SV",
+      "description": "Óscar Romero (1917-1980) est un archevêque catholique de San Salvador, défenseur des droits de l'homme, assassiné en martyr. Prélat plutôt conservateur à sa nomination en 1977, il change quand un escadron de la mort assassine son ami le jésuite Rutilio Grande, et dénonce dès lors dans ses homélies la répression de l'armée contre les paysans, à la veille de la guerre civile salvadorienne. Abattu en pleine messe le 24 mars 1980, il est canonisé le 14 octobre 2018 par le pape François, et les Églises d'Amérique latine le considèrent comme un saint patron des Amériques.",
+      "wikipedia": "Óscar_Romero",
+      "biographie": "bio_oscarromero",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Romero,_1940.jpg",
+        "auteur": "Archevêché de San Salvador",
+        "legende": "Óscar Romero, séminariste à Rome en 1940, trente-huit ans avant d'être archevêque de San Salvador",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "violetaparra",
+      "nom": "Violeta Parra",
+      "titre": "Naissance de Violeta Parra",
+      "axe": "Musique et spectacle",
+      "naissance": 1917,
+      "pays": "CL",
+      "description": "Violeta Parra (1917-1967) est une chanteuse, compositrice, poétesse et plasticienne chilienne, qui a remis à l'honneur la musique populaire et traditionnelle de son pays. Elle parcourt les campagnes pour recueillir les chants des paysans, devient la figure fondatrice de la « nueva canción » chilienne, réalise tapisseries et sculptures, qu'elle expose seule au musée du Louvre en 1964, première Sud-Américaine à y parvenir, et compose Gracias a la vida. Elle se donne la mort à Santiago le 5 février 1967, à quarante-neuf ans, et son œuvre inspire des générations d'artistes.",
+      "wikipedia": "Violeta_Parra",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Parra01f.PNG",
+        "auteur": "Revue argentine Panorama",
+        "legende": "Violeta Parra, photographie publiée par la revue argentine Panorama (1973)",
+        "largeur": 0,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "evita",
+      "nom": "Eva Perón",
+      "titre": "Naissance d'Eva Perón",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1919,
+      "pays": "AR",
+      "description": "Eva Perón (1919-1952) est une actrice et dirigeante politique argentine, dite Evita, épouse du président Juan Perón. Sans fonction officielle mais très influente, elle préside la Fondation Eva Perón, qui distribue écoles, hôpitaux, logements et aides aux plus pauvres, et obtient en 1947 le droit de vote des femmes, qu'elles exercent pour la première fois en 1951. Emportée par un cancer à trente-trois ans, le 26 juillet 1952, elle fait l'objet d'un culte populaire sans précédent, et sa dépouille embaumée connaîtra un long exil avant de reposer au cimetière de la Recoleta.",
+      "wikipedia": "Eva_Perón",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Evita_color.jpg",
+        "auteur": "Auteur inconnu",
+        "legende": "Eva Perón, portrait en couleurs",
+        "largeur": 330,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "guayasamin",
+      "nom": "Oswaldo Guayasamín",
+      "titre": "Naissance d'Oswaldo Guayasamín",
+      "axe": "Beaux-arts",
+      "naissance": 1919,
+      "pays": "EC",
+      "description": "Oswaldo Guayasamín (1919-1999) est un peintre équatorien, né à Quito d'un père amérindien et d'une mère métisse, maître de l'expressionnisme et du réalisme social. Marqué par le muraliste mexicain José Clemente Orozco, il consacre son œuvre à la misère, à l'exploitation, à la dictature et au racisme, avec des visages tordus et des mains immenses, du cycle Huacayñan, « le chemin des lamentations » (1944-1945), à l'Âge de la colère. Il conçoit aussi la Chapelle de l'Homme, monument à l'humanité qui ouvre à Quito après sa mort.",
+      "wikipedia": "Oswaldo_Guayasamín",
+      "portrait": {
+        "fichier": "Oswaldo_Guayasamín_by_Annemarie_Heinrich,_1949.jpg",
+        "auteur": "Annemarie Heinrich",
+        "legende": "Oswaldo Guayasamín, photographie d'Annemarie Heinrich (1949)",
+        "largeur": 330,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "piazzolla",
+      "nom": "Astor Piazzolla",
+      "titre": "Naissance d'Astor Piazzolla",
+      "axe": "Musique et spectacle",
+      "naissance": 1921,
+      "pays": "AR",
+      "description": "Astor Piazzolla (1921-1992) est un compositeur et bandonéoniste argentin, né à Mar del Plata, qui a renouvelé le tango. Élève à Paris de Nadia Boulanger, qui l'encourage à rester fidèle au bandonéon et au tango plutôt qu'à imiter les maîtres européens, il invente le « tango nuevo », nourri de jazz et de musique classique, avec des œuvres comme Adiós Nonino, Libertango ou les Quatre Saisons de Buenos Aires. Longtemps contesté par les puristes qui lui reprochaient de trahir la danse, il est devenu l'un des compositeurs argentins les plus joués dans le monde.",
+      "wikipedia": "Astor_Piazzolla",
+      "portrait": {
+        "fichier": "Piazzolla_en_primera_plana_1965.jpg",
+        "auteur": "Photographe inconnu (Primera Plana)",
+        "recadrage": [
+          0.0,
+          0.17,
+          0.58,
+          0.716
+        ],
+        "legende": "Astor Piazzolla en couverture de l'hebdomadaire argentin Primera Plana (mai 1965)",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "celiacruz",
+      "nom": "Celia Cruz",
+      "titre": "Naissance de Celia Cruz",
+      "axe": "Musique et spectacle",
+      "naissance": 1925,
+      "pays": "CU",
+      "description": "Celia Cruz (1925-2003) est une chanteuse cubaine, la « reine de la salsa », née dans un quartier pauvre de La Havane, qui ne voulut jamais révéler son année de naissance. Chanteuse de l'orchestre La Sonora Matancera de 1950 à 1965, qui la fait connaître dans toute l'Amérique hispanique et où elle trouve son cri fétiche, « ¡Azúcar! », elle quitte Cuba en 1960, au lendemain de la révolution, et s'installe aux États-Unis, où elle enregistre notamment avec Tito Puente. Sa voix puissante et ses perruques éclatantes ont fait d'elle l'ambassadrice de la musique latine dans le monde, jusqu'à sa mort à Fort Lee en 2003.",
+      "wikipedia": "Celia_Cruz",
+      "biographie": "bio_celiacruz",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Celia_Cruz_1957_color.jpg",
+        "auteur": "Ibrahim Arce (studio Narcy), probablement",
+        "legende": "Celia Cruz à La Havane, en 1957",
+        "largeur": 330,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "szyszlo",
+      "nom": "Fernando de Szyszlo",
+      "titre": "Naissance de Fernando de Szyszlo",
+      "axe": "Beaux-arts",
+      "naissance": 1925,
+      "pays": "PE",
+      "description": "Fernando de Szyszlo (1925-2017) est un peintre et sculpteur péruvien, figure clé de l'art abstrait en Amérique latine. Fils d'un physicien polonais installé au Pérou, il renonce à l'architecture pour la peinture, séjourne à Paris à partir de 1948, où il rencontre Octavio Paz et André Breton, et rapporte au Pérou un abstractionnisme qu'il nourrit de la mémoire des Andes, des mythes précolombiens et de la poésie. Ses toiles aux couleurs sombres et incandescentes sont aujourd'hui exposées dans de nombreux musées du monde, et il reste l'un des artistes les plus en vue du Pérou.",
+      "wikipedia": "Fernando_de_Szyszlo",
+      "portrait": {
+        "fichier": "Fernando_de_Szyszlo_2009.jpg",
+        "auteur": "Guillermo Arévalo Aucahuasi",
+        "legende": "Fernando de Szyszlo à l'université nationale d'ingénierie de Lima (2009)",
+        "largeur": 330,
+        "licence": "CC BY-SA 3.0"
+      }
+    },
+    {
+      "slug": "castro",
+      "nom": "Fidel Castro",
+      "titre": "Naissance de Fidel Castro",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1926,
+      "pays": "CU",
+      "description": "Fidel Castro (1926-2016) est un avocat, révolutionnaire et homme d'État cubain, qui dirige Cuba pendant près d'un demi-siècle. Après l'échec de l'attaque de la caserne de la Moncada en 1953 puis la guérilla de la Sierra Maestra, il renverse le dictateur Fulgencio Batista en janvier 1959, rallie Cuba au marxisme-léninisme et à l'Union soviétique, et fait face à l'hostilité des États-Unis, de la baie des Cochons en 1961 à la crise des missiles de 1962. Premier ministre puis président du Conseil d'État jusqu'en 2008, il cède le pouvoir à son frère Raúl et meurt à La Havane le 25 novembre 2016, laissant l'image d'un homme aussi admiré que contesté.",
+      "wikipedia": "Fidel_Castro",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Fidel_Castro_-_MATS_Terminal_Washington_1959_(cropped).jpg",
+        "auteur": "U.S. News & World Report (Bibliothèque du Congrès)",
+        "legende": "Fidel Castro à son arrivée à Washington (15 avril 1959), photographie de la collection du magazine U.S. News & World Report",
+        "recadrage": [
+          0.15,
+          0.04,
+          0.95,
+          0.74
+        ],
+        "largeur": 500,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "garciamarquez",
+      "nom": "Gabriel García Márquez",
+      "titre": "Naissance de Gabriel García Márquez",
+      "axe": "Littérature et pensée",
+      "naissance": 1927,
+      "pays": "CO",
+      "description": "Gabriel García Márquez (1927-2014) est un écrivain colombien, né à Aracataca et mort à Mexico, prix Nobel de littérature en 1982. Romancier, nouvelliste et journaliste surnommé « Gabo », il est l'auteur de Cent ans de solitude (1967), saga de la famille Buendía dans le village imaginaire de Macondo, qui a fait connaître au monde entier le « réalisme magique », mais aussi de Chronique d'une mort annoncée (1981) et de L'Amour aux temps du choléra (1985). Son œuvre, nourrie de ses souvenirs d'enfance, compose une chronique à la fois réaliste, épique et allégorique de l'Amérique latine et fait de lui l'un des écrivains les plus lus du XXe siècle.",
+      "wikipedia": "Gabriel_García_Márquez",
+      "biographie": "bio_garciamarquez",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Gabriel_Garcia_Marquez.jpg",
+        "auteur": "Jose Lara",
+        "legende": "Gabriel García Márquez en 2002",
+        "largeur": 330,
+        "licence": "CC BY-SA 2.0"
+      }
+    },
+    {
+      "slug": "che",
+      "nom": "Che Guevara",
+      "titre": "Naissance de Che Guevara",
+      "axe": "Guerres et résistances",
+      "naissance": 1928,
+      "pays": "AR",
+      "description": "Che Guevara (1928-1967) est un médecin devenu révolutionnaire marxiste, né à Rosario, en Argentine. Après un long voyage à moto à travers l'Amérique du Sud, il rejoint Fidel Castro au Mexique, combat dans la Sierra Maestra, entre à La Havane en janvier 1959 et exerce de hautes responsabilités à Cuba, notamment comme ministre de l'Industrie, avant de partir en 1965 tenter d'exporter la guérilla au Congo, puis en Bolivie. Capturé par l'armée bolivienne, il est exécuté le 9 octobre 1967 à La Higuera, et la photographie de Korda, « Guerrillero heroico », a fait de lui l'icône mondiale de la révolte.",
+      "wikipedia": "Che_Guevara",
+      "biographie": "bio_cheguevara",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Che_Guevara_June_2,_1959.jpg",
+        "auteur": "Auteur inconnu (Centre d'études Che Guevara, La Havane)",
+        "legende": "Che Guevara en tenue de campagne, à Cuba (2 juin 1959)",
+        "largeur": 330,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "chamorro",
+      "nom": "Violeta Chamorro",
+      "titre": "Naissance de Violeta Chamorro",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1929,
+      "pays": "NI",
+      "description": "Violeta Chamorro (1929-2025) est une femme d'État nicaraguayenne, présidente de la République de 1990 à 1996. Veuve de Pedro Joaquín Chamorro, directeur du journal d'opposition La Prensa, dont l'assassinat en 1978 déclenche l'insurrection contre Somoza, elle siège un temps dans la junte née de la révolution sandiniste puis passe dans l'opposition. Élue en 1990 à la tête d'une coalition anti-sandiniste, première femme présidente du Nicaragua, elle met fin à la guerre civile des Contras dans un pays ruiné et meurt à San José, au Costa Rica, le 14 juin 2025.",
+      "wikipedia": "Violeta_Barrios_de_Chamorro",
+      "portrait": {
+        "fichier": "Violeta_Chamorro_1993.jpg",
+        "auteur": "Maison-Blanche",
+        "legende": "Violeta Chamorro, photographie de la Maison-Blanche (30 novembre 1993)",
+        "largeur": 0,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "torrijos",
+      "nom": "Omar Torrijos",
+      "titre": "Naissance d'Omar Torrijos",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1929,
+      "pays": "PA",
+      "description": "Omar Torrijos (1929-1981) est un général et homme d'État panaméen, qui dirige le Panama de 1968 à sa mort en 1981 sans jamais porter officiellement le titre de président. Arrivé au pouvoir par un coup d'État militaire, il mène un combat nationaliste pour la souveraineté sur le canal et signe en 1977 avec le président américain Jimmy Carter les traités Torrijos-Carter, qui rendent au Panama le canal : les États-Unis le restituent le 31 décembre 1999. Il meurt dans un accident d'avion le 31 juillet 1981, que beaucoup de Panaméens attribuent à un attentat.",
+      "wikipedia": "Omar_Torrijos",
+      "portrait": {
+        "fichier": "Omar_Torrijos_1978.jpg",
+        "auteur": "Maison-Blanche",
+        "legende": "Omar Torrijos lors de la signature du traité du canal de Panama (juin 1978), photographie de la Maison-Blanche",
+        "largeur": 330,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "botero",
+      "nom": "Fernando Botero",
+      "titre": "Naissance de Fernando Botero",
+      "axe": "Beaux-arts",
+      "naissance": 1932,
+      "pays": "CO",
+      "description": "Fernando Botero (1932-2023) est un peintre et sculpteur colombien, né à Medellín et mort à Monaco. Célèbre pour ses personnages aux formes rondes et voluptueuses, inspirés de l'art précolombien et populaire, il se disait ironiquement « le plus colombien des artistes colombiens », remporte le premier prix du Salon des artistes colombiens en 1958 et s'installe à Paris en 1973, où il réalise ses premières sculptures. Ses bronzes monumentaux, exposés dans de nombreuses villes du monde, ont fait de lui l'un des artistes latino-américains les plus célèbres.",
+      "wikipedia": "Fernando_Botero",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Fernando_Botero_(2018).jpg",
+        "auteur": "Culturespaces",
+        "legende": "Fernando Botero en 2018",
+        "largeur": 330,
+        "licence": "CC BY 3.0"
+      }
+    },
+    {
+      "slug": "mujica",
+      "nom": "José Mujica",
+      "titre": "Naissance de José Mujica",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1935,
+      "pays": "UY",
+      "description": "José Mujica (1935-2025) est un homme d'État uruguayen, président de la République de 2010 à 2015, surnommé « Pepe ». Ancien guérillero du mouvement Tupamaros dans les années 1960-1970, détenu et torturé sous la dictature militaire jusqu'en 1985, il devient député, sénateur, ministre puis président, refuse les avantages de sa fonction et vit dans sa petite ferme, ce qui lui vaut d'être présenté comme le « président le plus pauvre du monde ». Son mandat voit la légalisation de l'avortement, du mariage entre personnes de même sexe et du cannabis ; il meurt d'un cancer de l'œsophage le 13 mai 2025.",
+      "wikipedia": "José_Mujica",
+      "portrait": {
+        "fichier": "13.07.2023_-_59º_Congresso_da_União_Nacional_dos_Estudantes_–_UNE_(53044654694)_(cropped2).jpg",
+        "auteur": "Palácio do Planalto",
+        "legende": "José Mujica en 2023, photographie du Palais du Planalto (Brésil)",
+        "largeur": 330,
+        "licence": "CC BY 2.0"
+      }
+    },
+    {
+      "slug": "sosa",
+      "nom": "Mercedes Sosa",
+      "titre": "Naissance de Mercedes Sosa",
+      "axe": "Musique et spectacle",
+      "naissance": 1935,
+      "pays": "AR",
+      "description": "Mercedes Sosa (1935-2009) est une chanteuse argentine, née à Tucumán, surnommée « La Negra » et « la voix de l'Amérique latine ». Figure du mouvement du « nuevo cancionero », qui renouvelle la chanson populaire, elle fait connaître dans toute l'Amérique latine des chants comme Gracias a la vida de Violeta Parra, et se fait la porte-voix des pauvres et des opprimés. Arrêtée lors d'un concert à La Plata en 1979, elle doit s'exiler à Paris puis à Madrid, et revient en 1982 chanter à Buenos Aires devant un public qui l'ovationne, à quelques mois de la chute du régime militaire.",
+      "wikipedia": "Mercedes_Sosa",
+      "portrait": {
+        "fichier": "Mercedes_Sosa,_by_Annemarie_Heinrich.jpg",
+        "auteur": "Annemarie Heinrich",
+        "legende": "Mercedes Sosa dans les années 1960, photographie d'Annemarie Heinrich",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "francois",
+      "nom": "Le pape François",
+      "titre": "Naissance du pape François",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1936,
+      "pays": "AR",
+      "description": "Le pape François (1936-2025) est un ecclésiastique argentin, né Jorge Mario Bergoglio à Buenos Aires, 266e pape de l'Église catholique. Jésuite, archevêque de Buenos Aires, il est élu le 13 mars 2013 après la renonciation de Benoît XVI, premier pape issu de la Compagnie de Jésus et premier pape non européen depuis plus de mille ans ; il fait de la miséricorde, des pauvres, des migrants et de la sauvegarde de la création, avec l'encyclique Laudato si', les axes de son pontificat. Il meurt au Vatican le 21 avril 2025, lundi de Pâques.",
+      "wikipedia": "François_(pape)",
+      "portrait": {
+        "fichier": "Pope_Francis_Korea_Haemi_Castle_19.jpg",
+        "auteur": "Korea.net (Jeon Han)",
+        "legende": "Le pape François lors de sa visite pastorale en Corée du Sud (août 2014)",
+        "largeur": 330,
+        "licence": "CC BY-SA 2.0"
+      }
+    },
+    {
+      "slug": "vargasllosa",
+      "nom": "Mario Vargas Llosa",
+      "titre": "Naissance de Mario Vargas Llosa",
+      "axe": "Littérature et pensée",
+      "naissance": 1936,
+      "pays": "PE",
+      "description": "Mario Vargas Llosa (1936-2025) est un écrivain péruvien naturalisé espagnol, né à Arequipa, prix Nobel de littérature en 2010. Auteur de La Ville et les chiens (1963), de La Maison verte, de La Guerre de la fin du monde ou de La Fête au Bouc (2000), il explore le pouvoir, la violence et la liberté de l'individu, et s'engage en politique : candidat libéral à la présidentielle péruvienne de 1990, il est battu au second tour par Alberto Fujimori. Élu en 2021 à l'Académie française, premier membre de la compagnie à n'avoir jamais écrit en français, il meurt à Lima le 13 avril 2025.",
+      "wikipedia": "Mario_Vargas_Llosa",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Vargas_Llosa_Madrid_2012.jpg",
+        "auteur": "Rodrigo Fernández",
+        "legende": "Mario Vargas Llosa au Cercle des beaux-arts de Madrid, lors de l'hommage à Tomas Tranströmer (octobre 2012)",
+        "largeur": 330,
+        "licence": "CC BY-SA 3.0"
+      }
+    },
+    {
+      "slug": "galeano",
+      "nom": "Eduardo Galeano",
+      "titre": "Naissance d'Eduardo Galeano",
+      "axe": "Littérature et pensée",
+      "naissance": 1940,
+      "pays": "UY",
+      "description": "Eduardo Galeano (1940-2015) est un écrivain, journaliste et dramaturge uruguayen, né à Montevideo, célèbre pour Les Veines ouvertes de l'Amérique latine (1971). Cet acte d'accusation contre l'exploitation du continent par les puissances étrangères, que les dictatures militaires interdisent, devient un classique de la pensée de gauche ; emprisonné après le coup d'État de 1973, Galeano s'exile en Argentine puis en Espagne et ne rentre en Uruguay qu'en 1985. Il publie aussi Mémoire du feu, grande fresque de l'histoire de l'Amérique faite de courts récits, et meurt à Montevideo en 2015.",
+      "wikipedia": "Eduardo_Galeano",
+      "portrait": {
+        "fichier": "Eduardo_Galeano_ltk_(cropped).jpg",
+        "auteur": "Donostia Kultura",
+        "legende": "Eduardo Galeano à l'université de Deusto (2012)",
+        "largeur": 330,
+        "licence": "CC BY-SA 2.0"
+      }
+    },
+    {
+      "slug": "molina",
+      "nom": "Mario Molina",
+      "titre": "Naissance de Mario Molina",
+      "axe": "Sciences et découvertes",
+      "naissance": 1943,
+      "pays": "MX",
+      "description": "Mario Molina (1943-2020) est un chimiste mexicain, prix Nobel de chimie en 1995. Avec Frank Sherwood Rowland, il démontre en 1974 que les chlorofluorocarbures (CFC) des aérosols et des réfrigérateurs détruisent la couche d'ozone, malgré les accusations de l'industrie ; le protocole de Montréal de 1987 interdit ensuite ces gaz. Professeur au MIT, il partage le Nobel avec Rowland et Paul Crutzen, puis consacre la suite de sa carrière au climat et à la qualité de l'air, notamment à Mexico, où il meurt en 2020.",
+      "wikipedia": "Mario_J._Molina",
+      "biographie": "bio_mariomolina",
+      "portrait": {
+        "fichier": "Mario_Molina_1c389_8387.jpg",
+        "auteur": "Janwikifoto",
+        "legende": "Mario Molina au symposium des lauréats du Nobel à Stockholm (2011)",
+        "largeur": 330,
+        "licence": "CC BY-SA 3.0"
+      }
+    },
+    {
+      "slug": "bolano",
+      "nom": "Roberto Bolaño",
+      "titre": "Naissance de Roberto Bolaño",
+      "axe": "Littérature et pensée",
+      "naissance": 1953,
+      "pays": "CL",
+      "description": "Roberto Bolaño (1953-2003) est un poète, romancier et nouvelliste chilien, né à Santiago et mort à Barcelone. Après une jeunesse errante entre le Chili, le Mexique et l'Espagne, il fonde à Mexico le mouvement poétique « infraréaliste », puis s'impose avec Les Détectives sauvages (1998, prix Rómulo Gallegos) et le monumental 2666, publié à titre posthume. Mort à cinquante ans d'une insuffisance hépatique, il est devenu en quelques années l'écrivain latino-américain le plus influent de sa génération.",
+      "wikipedia": "Roberto_Bolaño",
+      "portrait": {
+        "fichier": "Roberto_Bolaño_Ávalos.jpg",
+        "auteur": "Alexandrapociello",
+        "legende": "Roberto Bolaño, portrait au crayon d'Alexandrapociello (2014)",
+        "largeur": 330,
+        "licence": "CC BY-SA 3.0"
+      }
+    }
+  ]
+}

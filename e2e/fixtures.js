@@ -57,10 +57,16 @@ const test = base.test.extend({
         });
 
         await page.goto('/index.html');
-        // Le pack français (~14 Mo) est chargé de façon asynchrone. Cette
-        // attente ne garantit qu'un démarrage : les helpers qui visent un
+        // Le pack français (~14 Mo) est chargé de façon asynchrone. `bdd` n'est
+        // jamais vide au démarrage : app.js y range d'emblée la catégorie des
+        // thèmes personnalisés. Attendre « non vide » laissait donc un test
+        // cliquer sur l'accueil pendant le chargement du pack, et la fin de
+        // window.onload (showScreen('screen-home')) le ramenait à l'accueil :
+        // un test échouait dès que le pack tardait (démarrage à froid, machine
+        // chargée). On attend une catégorie du pack — la fin de
+        // l'initialisation suit dans la même tâche. Les helpers qui visent un
         // thème précis attendent ce thème (voir openThemeCard).
-        await page.waitForFunction(() => window.bdd && window.bdd.length > 0, null, { timeout: 45_000 });
+        await page.waitForFunction(() => window.bdd && window.bdd.some(c => !c.isCustomCategory), null, { timeout: 45_000 });
 
         await use(page);
 

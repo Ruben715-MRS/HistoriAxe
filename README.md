@@ -451,8 +451,9 @@ l'identifiant du thème, jamais du nom de sa catégorie — qui change d'une
 langue à l'autre (même précaution que `js/geoMap.js: isGeoEligible`). Voir
 `Simultaneity.themeTag` : pays connu (`assets/geo/theme-country-map.json`,
 déjà là pour le Mode Carte), sinon convention `psn_<iso2>_` des programmes
-scolaires nationaux ou `pan_<iso2>` des panthéons nationaux (voir
-« Personnages illustres »), sinon position dans l'arbre (indices, pas noms).
+scolaires nationaux ou `pan_<iso2>` du panthéon d'un pays (voir
+« Personnages illustres » ; l'événement d'un panthéon de bloc porte son propre
+`pays`), sinon position dans l'arbre (indices, pas noms).
 
 ### Quatre contraintes, toutes mesurées sur les données
 
@@ -526,33 +527,74 @@ redonne exactement le même tirage — c'est ce que vérifie
 `e2e/defi-simultaneite.spec.js`, avec son pendant sans DOM dans
 `tests/simultaneity.test.js`.
 
-## Personnages illustres : biographies, panthéons nationaux et portraits
+## Personnages illustres : biographies, panthéons et portraits
 
 « Biographies » n'est plus une catégorie à part : c'est la première des deux
-sous-catégories de **Personnages illustres**, l'autre étant **Panthéons
-nationaux**. Elles ne posent pas la même question :
+sous-catégories de **Personnages illustres**, l'autre étant **Panthéons**. Elles
+ne posent pas la même question :
 
 | | Un thème, c'est | Une date, c'est | On le joue par |
 |---|---|---|---|
 | **Biographies** | une vie (360 thèmes, en 12 domaines) | une étape de cette vie | étape de la vie |
-| **Panthéons nationaux** | un pays (la France, pour l'instant) | la naissance d'un personnage | domaine |
+| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, l'Amérique hispanique) | la naissance d'un personnage | domaine |
 
 Le déplacement ne coûte aucune migration : les 360 thèmes gardent leurs
 identifiants, et rien de ce que le joueur a sauvegardé (favoris, révision,
 SRS, scores) ne retient une position dans l'arbre — tout passe par des
 identifiants de thème ou d'événement.
 
-### Panthéons nationaux
+### Panthéons
 
 Un thème par pays, nommé « Grandes figures de… » et identifié `pan_<iso2>`
-(`pan_fr`). Le nom d'un pays seul (« France ») serait ambigu dès qu'on sort de
-l'arborescence — favoris, historique, bouton « Jouer sur ce thème » du Défi du
-jour — où il voisinerait avec « Histoire de France ».
+(`pan_fr`), ou par **bloc** de pays (voir plus bas). Le nom d'un pays seul
+(« France ») serait ambigu dès qu'on sort de l'arborescence — favoris,
+historique, bouton « Jouer sur ce thème » du Défi du jour — où il voisinerait
+avec « Histoire de France ».
 
 Chaque événement est **la naissance d'un personnage**, daté de son année de
 naissance, titré « Naissance de X ». Le titre dit ce que la date représente,
 ce qu'un simple « Victor Hugo — 1802 » ne ferait pas hors du thème (Défi du
 jour, Révision, Blitz).
+
+### Pays et blocs : « un personnage ne figure que dans un seul thème »
+
+Un thème par pays marche tant que les pays ne partagent pas leurs figures.
+En Amérique hispanique, ils les partagent presque toutes : Bolívar est
+vénézuélien, mais aussi colombien, équatorien, péruvien et bolivien ; San
+Martín, argentin, chilien et péruvien. Vingt panthéons nationaux auraient
+répété les mêmes vingt noms. D'où une règle, tenue **entre** tous les
+panthéons : **un personnage ne figure que dans un seul thème** — et, quand
+des pays ont une histoire commune, un thème **de région** plutôt qu'un par pays.
+
+| | Pays | Bloc |
+|---|---|---|
+| Identifiant | `pan_<iso2>` : deux lettres (`pan_fr`) | `pan_<code>` : trois lettres ou plus (`pan_hispam`) — jamais de collision avec un code de pays |
+| `pays` sur chaque événement | interdit (le thème le dit déjà) | obligatoire : code ISO à deux lettres (`"pays": "VE"`) |
+| Exemples | France ; plus tard Allemagne, Brésil… | Amérique hispanique ; plus tard Maghreb, Machrek |
+
+Ce que le champ `pays` d'un événement change :
+
+- **la fiche** affiche le drapeau et le nom du pays sous la date (`renderModalCountry`,
+  qui réutilise `isoToFlagEmoji` et `countryDisplayName` du Mode Carte :
+  `Intl.DisplayNames`, aucune table de noms à maintenir) ;
+- **« Pendant ce temps, ailleurs… »** : l'étiquette de lieu de l'événement est
+  son pays (`Simultaneity.eventTag`), faute de quoi un événement vénézuélien
+  passerait pour « ailleurs » face à la naissance de Bolívar à Caracas ;
+- **la recherche** (`motsCles` du thème, ci-dessous) n'en dépend pas.
+
+Le thème d'un bloc porte aussi des `motsCles` : les noms de ses pays (et des
+mots comme « Amérique latine »), que le nom du thème ne dit pas. La recherche de
+thèmes (`onThemeSearchInput`) les parcourt, si bien que « mexique » mène à
+« Grandes figures d'Amérique hispanique ».
+
+**Départager un personnage entre deux pays** : celui qui l'honore le plus, pas
+celui de l'état civil. Camus (né en Algérie) et Marie Curie (née à Varsovie)
+restent en France ; Che Guevara est rangé en Argentine, où il est né, la fiche
+disant ce que Cuba lui doit. Les cas disputés sont écrits comme tels dans la
+description (Atahualpa : Quito ou Cuzco).
+
+**Seules des personnalités disparues** : le format de la phrase d'ouverture
+exige une année de décès, et un panthéon de vivants se démodera.
 
 **Six axes, les mêmes pour tous les pays.** La palette n'a que huit couleurs
 (`AXIS_PALETTE`), et six laissent de la marge. Littérature et philosophie sont
@@ -589,22 +631,90 @@ Les règles de rédaction, vérifiées par script et par test (voir plus bas) :
   comparées une à une à la phrase d'ouverture de l'article Wikipédia.
 - **⭐ Incontournables** (`essentiel`) : 20 sur 60 pour la France.
 
-Quantités visées, dont seule la première est écrite : 60 personnages pour la
-France, 40 pour les grands pays, 30 pour les autres. À 6 axes, 30 donne
-environ 5 par axe — le minimum pour qu'un axe joué seul reste un jeu.
+Quantités visées : 60 personnages pour la France, 80 à 100 pour l'Amérique
+hispanique (dix-neuf pays, de 1 à 19 figures chacun), une soixantaine
+pour le Maghreb, 40 pour les grands pays, 30 pour les autres. À 6 axes, 30
+donne environ 5 par axe — le minimum pour qu'un axe joué seul reste un jeu.
 
-### Un fichier source par pays, un script qui l'écrit dans `data/fr.json`
+### Le premier bloc : l'Amérique hispanique
 
-`scripts/pantheon/<pays>.json` est **la seule source de vérité** du thème.
-`python3 scripts/build_pantheon.py fr` le valide puis le reporte dans
-`data/fr.json` (qui se réécrit à l'octet près : le diff ne montre que le
-thème). `--check` valide sans écrire, `--verify` vérifie que `data/fr.json`
-est à jour — et `tests/pantheon.test.js` le lance, si bien que retoucher le
-thème à la main dans `fr.json` fait échouer `npm test`.
+`pan_hispam`, « Grandes figures d'Amérique hispanique » : **97 personnages de
+19 pays** — Mexique 19, Argentine 14, Chili 8, Venezuela 8, Cuba 7, Pérou 7,
+Colombie 6, Uruguay 5, Équateur 4, Bolivie, Nicaragua et Paraguay 3 chacun,
+Costa Rica, Guatemala et Honduras 2 chacun, et un seul pour le Panama, le
+Salvador, la République dominicaine et Porto Rico. Par axe : 27 Guerres et
+résistances, 24 Littérature et pensée, 22 Chefs d'État, 10 Beaux-arts, 9
+Musique et spectacle, 5 Sciences et découvertes (l'axe le plus mince — voir
+plus bas pourquoi) ; 32 ⭐ et 17 biographies liées.
 
-Le constructeur applique les règles ci-dessus *avant* d'écrire ; les mêmes,
-côté JavaScript, sont reprises par `tests/data-schema.test.js` pour qu'une
-régression venue d'ailleurs soit attrapée elle aussi.
+Les choix qui ne vont pas de soi :
+
+- **« Hispanique », et non « latine »** : le Brésil, d'une autre langue et d'une
+  autre histoire, aura son propre thème ; Haïti ou le Belize n'ont pas leur
+  place dans une région qu'unit l'espagnol.
+- **Le Mexique pèse près d'un cinquième** (19 sur 97), l'Argentine suit avec
+  14 : un bloc se tient à la population et au rôle historique, pas à
+  l'égalité des pays. Le constructeur ne prévient qu'au-delà de 20 figures par
+  pays.
+- **Six figures d'avant la Conquête ou de ses premières années** (Pakal,
+  Nezahualcóyotl, Moctezuma II, Cuauhtémoc, Pachacútec, Atahualpa) et trois
+  chefs de la résistance indienne (Lautaro, Túpac Amaru II, Túpac Katari) :
+  les peuples d'avant l'Espagne ne sont pas un prologue. Leurs images sont
+  d'époque coloniale ou plus tardives, et les légendes le disent.
+- **Un personnage, un pays — celui qui l'honore le plus.** Che Guevara
+  (Rosario) et le pape François sont argentins, Carlos Gardel aussi (Toulouse
+  ou Tacuarembó : la querelle est écrite telle quelle dans sa fiche) ;
+  Bolívar est vénézuélien, bien que cinq pays le tiennent pour leur libérateur.
+- **Pas de vivants** (la phrase d'ouverture exige une année de décès), et ni
+  sportifs ni entrepreneurs, comme dans la France.
+
+### Ce que les images ont écarté
+
+La règle « libre aussi aux États-Unis » (plus bas) coûte plus cher en
+Amérique latine qu'en France : nombre de photographies du milieu du XXe siècle
+y avaient une durée de protection très courte (20 ans en Argentine et en
+Italie, 25 à Cuba, 25 à 50 ans en Finlande), ce qui les rend « domaine public »
+pour Commons — mais seules celles qui l'étaient déjà en 1996 l'étaient aussi aux
+États-Unis ; les autres y ont été rétablies. Faute d'image libre, **huit figures
+prévues ont été retirées** de la liste de départ (99 noms), et six autres
+les ont remplacées pour tenir les pays et les axes :
+
+| Retiré | Pourquoi | Remplacé par |
+|---|---|---|
+| Luis Federico Leloir, César Milstein | photographies argentines sans balise américaine, ou postérieures à 1975 | José Gregorio Hernández (Venezuela, sciences) |
+| Roberto Matta | seule une photographie de fresque murale, œuvre protégée, est sous licence libre | Claudio Arrau (Chili, musique) |
+| Jorge Eliécer Gaitán | photographies colombiennes de 1936 et de 1948, rétablies aux États-Unis | Antonio Nariño (Colombie) |
+| Julia de Burgos | seulement une photographie de statue | Ramón Emeterio Betances (Porto Rico) |
+| Jesús Soto | aucun portrait exploitable | Arturo Michelena (Venezuela, beaux-arts) |
+| Víctor Jara | la seule photographie solide est finlandaise, de 1969 : libre en Finlande, rétablie aux États-Unis | — (le Chili compte 8 figures) |
+| Jacobo Árbenz | portraits officiels guatémaltèques de 1951, dans le même cas | Justo Rufino Barrios (Guatemala) |
+
+Florentino Ameghino a aussi été écarté, pour un autre motif : sa naissance est
+disputée (Luján en 1854, ou Moneglia en 1853 selon sa propre lettre), et une
+date contestée n'a rien à faire dans une question de chronologie. Eugenio María
+de Hostos, envisagé pour Porto Rico, n'a pas d'article en français vers lequel
+renvoyer. Si une image convenable apparaît pour l'un d'eux, il se réintègre en
+ajoutant sa fiche à `scripts/pantheon/hispam.json`.
+
+### Un fichier source par panthéon, un script qui l'écrit dans `data/fr.json`
+
+`scripts/pantheon/<code>.json` (`fr`, `hispam`…) est **la seule source de
+vérité** du thème : `code` (le nom du fichier), `nom` (le nom de rangement,
+« France », « Amérique hispanique » — les panthéons se rangent par lui, pas par
+le nom du thème, que « de », « des » et « du » fausseraient), `theme`
+(`id`, `nom`, `difficulte`, `motsCles`), `axes`, `personnages`, et pour un bloc
+la liste `pays`. `python3 scripts/build_pantheon.py fr` le valide puis le
+reporte dans `data/fr.json` (qui se réécrit à l'octet près : le diff ne montre
+que le thème). `--check` valide sans écrire, `--verify` vérifie que
+`data/fr.json` est à jour — et `tests/pantheon.test.js` le lance, si bien que
+retoucher le thème à la main dans `fr.json` fait échouer `npm test`.
+
+Le constructeur applique les règles ci-dessus *avant* d'écrire, et celle qui
+vaut entre thèmes — un personnage, un seul thème, par article Wikipédia et par
+biographie ; il refuse un pays déclaré sans aucune figure et prévient quand un
+pays pèse trop (plus de 20) dans un bloc. Les mêmes règles, côté JavaScript,
+sont reprises par `tests/data-schema.test.js` et `tests/pantheon.test.js` pour
+qu'une régression venue d'ailleurs soit attrapée elle aussi.
 
 ### Portraits
 
@@ -648,9 +758,10 @@ partout : une photographie française publiée après 1930 peut être restée
 protégée aux États-Unis (loi URAA). Pour cette raison, les portraits de Piaf
 (photo de 1946 du studio Harcourt) et de Lumière (1948) ont été remplacés par
 des images dont la licence est explicite (Piaf en 1962, archives néerlandaises,
-CC0 ; Lumière vers 1890). Répartition finale : 53 domaine public, 4 CC0, 3 CC BY
-ou CC BY-SA. Trois portraits du XXe siècle reposent sur un raisonnement plus
-fin que « ancien », à relire si l'on veut être plus strict :
+CC0 ; Lumière vers 1890). Répartition finale : France, 53 domaine public, 4 CC0,
+3 CC BY ou CC BY-SA ; Amérique hispanique, 75 domaine public, 2 CC0, 8 CC BY,
+12 CC BY-SA. En France, trois portraits du XXe siècle reposent sur un
+raisonnement plus fin que « ancien », à relire si l'on veut être plus strict :
 
 - **Jean Moulin** (Harcourt, 1937) : œuvre collective, dont le délai français de
   50 ans était expiré avant 1996, donc non rétablie aux États-Unis ;
@@ -661,25 +772,86 @@ fin que « ancien », à relire si l'on veut être plus strict :
   américain de la collection du *World-Telegram*, même bibliothèque.
 
 (De Gaulle est une photographie de l'Office of War Information, œuvre du
-gouvernement fédéral américain.) Un portrait sous licence CC BY ou CC BY-SA
-porte dans la fiche son auteur, le **lien vers le texte de la licence**, la
-mention « image recadrée » et le lien vers la page de l'œuvre : c'est ce que
-ces licences exigent.
+gouvernement fédéral américain.)
 
-**Récupération** : `python3 scripts/fetch_portraits.py fr` lit auteur et
-licence sur la page HTML du fichier (les API de métadonnées sont fermées aux
-IP partagées des environnements en nuage, la page HTML ne l'est pas), télécharge
-la miniature, la recadre en 4:5 et l'écrit en 320 × 400. Une requête à la fois,
-une pause entre deux, un `User-Agent` qui dit qui on est, reprise après un 429.
-`recadrage` serre le cadre sur le visage ; `largeur` impose 500 ou 960 px si
-Commons refuse l'une des deux pour un fichier donné. `--check` contrôle sans
-réseau (existence, dimensions, licence).
+L'Amérique hispanique en compte vingt, parce que ses photographies du XXe
+siècle y sont libres par une durée nationale très courte bien plus souvent que
+par l'ancienneté. Les voici, pour qui voudrait être plus strict (les
+peintures, gravures et photographies d'avant 1931, les œuvres du gouvernement
+fédéral — Houssay, Gallegos, Chamorro, Torrijos — et les licences CC de
+photographes ou d'institutions identifiés n'appellent pas de réserve) :
+
+- **Quatorze photographies à deux balises, nationale et « États-Unis »** :
+  protection de 20 ans après la publication en Argentine (Gardel 1933, Storni,
+  Perón, Borges par Grete Stern en 1951, Cortázar 1967, Evita, Guayasamín et
+  Mercedes Sosa par Annemarie Heinrich, Piazzolla 1965, Violeta Parra 1973),
+  au Pérou (Vallejo 1929) et en Italie (Mgr Romero 1940) ; 25 ans en Espagne
+  pour une photographie simple (Carpentier 1955) ; en Suède, pour une
+  photographie d'avant 1976 sous le seuil d'originalité (Mistral 1945).
+  Chacune porte la balise qui dit qu'elle était déjà libre le 1er janvier
+  1996, donc que le rétablissement américain ne l'a pas touchée ; la date de
+  publication est celle que donne la page du fichier, que rien ici ne permet
+  de vérifier.
+- **Deux photographies cubaines** (Celia Cruz 1957, le Che le 2 juin 1959) :
+  le modèle cubain porte lui-même le raisonnement américain (publiée à Cuba
+  avant le 20 février 1972, sans les formalités américaines). L'auteur du Che
+  est inconnu, celui de Celia Cruz n'est donné qu'avec un « probablement ».
+- **Fidel Castro** (15 avril 1959) : collection *U.S. News & World Report* de
+  la Bibliothèque du Congrès, « aucune restriction connue » — le même
+  raisonnement que pour Matisse et Camus. Le don de la collection ne couvre
+  que les photographes salariés du magazine, et la page de ce cliché n'en
+  nomme aucun.
+- **Trois licences CC posées par un tiers**, plausibles mais invérifiables
+  d'ici : Wifredo Lam (CC BY 3.0, archives photographiques de José
+  Gómez-Sicre, dont se dit propriétaire l'utilisateur de Wikipédia en anglais
+  qui a versé le cliché), Lázaro Cárdenas (1934, CC BY 2.5, archive du
+  photographe Aurelio Escobar Castellanos, avec l'autorisation de ses
+  « titulaires moraux ») et Luis Barragán (1981, CC BY 3.0, par celui qui se
+  déclare l'auteur du cliché).
+
+Un portrait est à part : celui de **Juan Santamaría**, héros national du Costa
+Rica, qui est la photographie de sa statue (1891) par un contributeur, sous
+licence CC BY-SA 4.0, faute de portrait libre ; la légende le dit.
+
+Un portrait sous licence CC BY ou CC BY-SA porte dans la fiche son auteur, le
+**lien vers le texte de la licence**, la mention « image recadrée » et le lien
+vers la page de l'œuvre : c'est ce que ces licences exigent.
+
+**Récupération** : `python3 scripts/fetch_portraits.py fr` (ou `hispam`…) lit
+auteur et licence sur la page HTML du fichier (les API de métadonnées sont
+fermées aux IP partagées des environnements en nuage, la page HTML ne l'est
+pas), télécharge la miniature, la recadre en 4:5 et l'écrit en 320 × 400. Une
+requête à la fois, une pause entre deux, un `User-Agent` qui dit qui on est,
+reprise après un 429. `recadrage` serre le cadre sur le visage ; `largeur` fixe
+la miniature demandée à Commons : 330, 500, 960, 1280 ou 1920 px, les seules
+qu'il rend sans peine (`0` : le fichier original, pour une image plus étroite
+que 330 px) ; à défaut, 500 px, ou 960 avec un recadrage. Les miniatures
+déjà calculées par Commons (330 px surtout) arrivent d'un coup ; les autres,
+qu'il doit fabriquer, se font attendre de 5 à 30 secondes et déclenchent des
+429 — d'où, pour 97 images, le choix pour chacune de la plus petite largeur qui
+laisse encore 320 px utiles après recadrage (le chiffre est inscrit dans
+le fichier source). Vingt images n'y parviennent pas, leur source étant plus
+étroite (184 px utiles pour Posada, le plus bas ; 214 pour Lam, 220 pour
+Pakal) : elles sont agrandies, donc un peu molles sur un écran à haute
+densité, mais passables à la taille d'affichage (160 × 200 px). `--check`
+contrôle sans réseau (existence, dimensions, licence).
+
+**Le script refuse ce qui est signalé sur Commons** : une page de fichier qui
+porte un bandeau de suppression (« nominated for deletion », « speedy
+deletion », « copyright violation »…) est écartée, quelle que soit sa licence.
+Il a ainsi arrêté, à la récupération de l'Amérique hispanique, le portrait de
+Carlos Gardel (suppression demandée en mars 2026 : son auteur n'est pas
+inconnu, c'est José María Silva, et la photographie reste protégée en Uruguay)
+et celui de Fidel Castro pris par Mondadori (suppression demandée en mai 2026,
+faute de licence établie), remplacés l'un par une photographie de 1933 aux
+deux balises, l'autre par un cliché de 1959 de la Bibliothèque du Congrès.
 
 **Poids** : JPEG de 320 × 400, 25 Ko en moyenne (62 au plus), soit 1,5 Mo pour
-les 60 de la France — de l'ordre de 20 Mo pour 800 portraits, quand `assets/`
-en pèse déjà 36. Le WebP gagnerait environ un tiers, mais la cible iOS actuelle
-(13, voir `ios/App/Podfile`) ne le lit pas : il attendra la migration vers
-Capacitor 7 (iOS 14+) déjà évoquée plus haut.
+les 60 de la France et 2,5 Mo pour les 97 de l'Amérique hispanique — de
+l'ordre de 20 Mo pour 800 portraits, quand `assets/` en pèse déjà 38. Le WebP
+gagnerait environ un tiers, mais la cible iOS actuelle (13, voir
+`ios/App/Podfile`) ne le lit pas : il attendra la migration vers Capacitor 7
+(iOS 14+) déjà évoquée plus haut.
 
 **Cache** : `sw.js` range les portraits dans un cache à part
 (`historiaxe-portraits-v1`), que le ménage de `activate` épargne. Rangés avec
@@ -697,8 +869,10 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
   « Biographies », devenue une sous-catégorie qui porte elle-même des
   sous-catégories.
 - **Les images des tuiles** : « Personnages illustres » reprend celle des
-  anciennes Biographies ; « Panthéons nationaux » ne doit pas tomber sous la
-  règle des mythologies (`panth`), qui lui donnerait la mauvaise image.
+  anciennes Biographies ; « Panthéons » ne doit pas tomber sous la règle des
+  mythologies (`panth`), qui lui donnerait la mauvaise image — d'où une
+  égalité stricte sur le nom, qui laisse « Mythologies et panthéons antiques »
+  à la sienne.
 - **Le Mode Carte n'a rien eu à changer** : il ne retient que les thèmes
   listés dans `assets/geo/theme-country-map.json`, où aucun panthéon ne figure
   — heureusement, puisqu'il affiche la description pendant la question, et
@@ -706,32 +880,41 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
   cette absence.
 - **« Pendant ce temps, ailleurs… »** : `pan_<iso2>` compte comme le pays
   (sinon une naissance française répondrait, « ailleurs », à une ancre
-  française), et les panthéons sont exclus du vivier de *réponses* même
-  marqués ⭐. Des naissances sont d'excellentes ancres, jamais des réponses.
+  française) ; un panthéon de bloc, lui, n'a pas de pays et ses événements
+  portent le leur ; et tous les panthéons — pays ou blocs — sont exclus du
+  vivier de *réponses* même marqués ⭐. Des naissances sont d'excellentes
+  ancres, jamais des réponses.
 
-### Ajouter un pays
+### Ajouter un pays ou un bloc
 
-1. Copier `scripts/pantheon/fr.json`, y mettre le pays, ses personnages (une
-   naissance chacun, six axes, trois phrases), et le nom de fichier Commons de
-   chaque portrait.
-2. `python3 scripts/fetch_portraits.py <iso2>`, puis écrire les légendes
+1. Copier `scripts/pantheon/fr.json` (un pays) ou `hispam.json` (un bloc), y
+   mettre le panthéon, ses personnages (une naissance chacun, six axes, trois
+   phrases, un `pays` pour un bloc), et le nom de fichier Commons de chaque
+   portrait. Vérifier chaque année de naissance et de décès sur l'article
+   Wikipédia du personnage, et qu'il n'est dans aucun autre panthéon.
+2. `python3 scripts/fetch_portraits.py <code>`, puis écrire les légendes
    (et `recadrage` quand le visage est petit dans l'image).
-3. `python3 scripts/build_pantheon.py <iso2>`.
+3. `python3 scripts/build_pantheon.py <code>`.
 4. Incrémenter `CACHE_VERSION` et `DATA_CACHE` dans `sw.js` : `data/fr.json` est
    servi cache-first.
 5. `npm test` et `npm run test:e2e`.
 
 ### Ce qui n'est pas fait
 
-- **Les autres pays** : seule la France est écrite. Les suivants se feront par
-  lots, avec la liste des personnages à valider avant la rédaction.
+- **Les autres panthéons** : la France et l'Amérique hispanique sont écrites.
+  Viennent ensuite le Maghreb (seul d'abord), puis le Machrek (sans Israël ni
+  les figures juives, qui auront leur propre thème), le Brésil à part, puis
+  les autres pays — chaque liste de personnages validée avant la rédaction.
+- **Des figures de l'Amérique hispanique écartées faute de portrait libre**,
+  à réintégrer si une image convenable apparaît : voir « Ce que les images
+  ont écarté » plus haut.
 - **Les portraits des 360 Biographies** : le champ `image` les accepte déjà,
   il reste à les récupérer.
 - **Les portraits dans les autres modes de jeu** (Quiz, Périodes, Fil du
   temps…) : ils n'apparaissent que dans la frise et la fiche.
 - **Hors-ligne**, un portrait jamais vu n'est pas disponible (voir « Cache »).
-- **La tuile « Panthéons nationaux »** réutilise l'image du globe : une image
-  dédiée serait préférable.
+- **La tuile « Panthéons »** réutilise l'image du globe : une image dédiée
+  serait préférable.
 - **Sportifs et entrepreneurs** n'ont pas d'axe dans les panthéons : ils sont
   couverts par les Biographies.
 
@@ -1040,7 +1223,7 @@ navigateur sur le site servi tel qu'il l'est en production
   bouton vers la biographie —, la pastille de chaque repère de la frise, la
   vignette de la carte « À placer », l'absence du bouton en pleine partie, et
   l'absence de tout portrait sur un thème qui n'en a pas. Éprouvé par
-  mutation : remettre la note au sommet seul, ou rendre « Panthéons nationaux »
+  mutation : remettre la note au sommet seul, ou rendre « Panthéons »
   à la règle des mythologies, fait échouer le test qui la garde.
 - `e2e/shuffle.spec.js` — le seul parcours qui ne clique rien : il fait
   tourner `js/app.js: shuffleArray` 200 000 fois et vérifie que la

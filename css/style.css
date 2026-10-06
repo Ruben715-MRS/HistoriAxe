@@ -6411,6 +6411,15 @@ input:not([type="range"]), label, select, summary, textarea {
     text-decoration: underline;
 }
 
+/* Pays de la figure (panthéons de région) : une ligne discrète sous la date,
+   dont la marge négative défait en partie celle de .modal-date. Masquée par
+   `.hidden` quand l'événement n'a pas de pays — la marge disparaît avec elle. */
+.modal-pays {
+    margin: -14px 0 20px;
+    font-size: 14px;
+    color: var(--muted-text);
+}
+
 .modal-bio-row {
     margin-top: 16px;
 }
