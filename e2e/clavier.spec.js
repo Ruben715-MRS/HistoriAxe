@@ -17,6 +17,7 @@
 // est déjà couverte sans navigateur (tests/a11y.test.js).
 
 const { test, expect, openThemeModes } = require('./fixtures');
+const { attendreLePack, parcourirLesEcrans } = require('./ecrans');
 
 test.use({ viewport: { width: 390, height: 844 } });
 
@@ -52,14 +53,6 @@ async function tabJusqua(page, condition, { max = 80, retour = false } = {}) {
         if (trouve) return i;
     }
     throw new Error(`« ${condition} » est resté hors d'atteinte en ${max} Tab — dernier focus : ${await ouEstLeFocus(page)}`);
-}
-
-async function attendreLePack(page) {
-    await page.waitForFunction(
-        () => window.bdd && window.bdd.some(c => (c.themes || []).some(t => t.id === 'thm_aut')),
-        null,
-        { timeout: 45_000 }
-    );
 }
 
 // --- LE ZOOM ----------------------------------------------------------------
@@ -403,51 +396,11 @@ test('le détecteur détecte : un clic sans clavier est bien signalé', async ({
 });
 
 test('aucun écran de l’app n’a de zone cliquable hors d’atteinte du clavier', async ({ page }) => {
-    await attendreLePack(page);
     const trouvailles = new Map();
-    const noter = async etape => {
+    // Le parcours est partagé avec les contrastes (voir e2e/ecrans.js).
+    await parcourirLesEcrans(page, async etape => {
         (await page.evaluate(INVENTAIRE)).forEach(l => { if (!trouvailles.has(l)) trouvailles.set(l, etape); });
-    };
-
-    // Un historique, pour que le hub de révision et le Défi de simultanéité aient du contenu.
-    await page.evaluate(() => {
-        const srs = {}; let n = 0;
-        (function w(ns) { ns.forEach(x => { (x.themes || []).forEach(t => (t.events || []).forEach(e => { if (n < 40 && typeof e.date === 'number') { srs[e.id] = { box: 1, lastReviewed: Date.now(), failCount: 2, successCount: 0 }; n++; } })); if (x.subcategories) w(x.subcategories); }); })(window.bdd);
-        localStorage.setItem('historiaxe_srs_v1', JSON.stringify(srs));
     });
-
-    await noter('accueil');
-    await page.evaluate(() => showScreen('screen-categories')); await noter('catégories');
-    await page.locator('#btn-daily').click(); await noter('catégories + défis');
-    await page.locator('#theme-search-input').fill('rome');
-    await page.waitForTimeout(400); await noter('résultats de recherche');
-    await page.evaluate(() => clearThemeSearch());
-    await page.evaluate(() => showScreen('screen-revision-hub')); await noter('hub de révision');
-    await page.evaluate(() => switchRevisionHubTab('progress'));
-    await page.waitForTimeout(300); await noter('progression');
-    await page.evaluate(() => { const ci = bdd.findIndex(c => c.subcategories); selectedCategoryIndex = ci; selectedSubcategoryIndex = null; showScreen('screen-subcategories'); }); await noter('sous-catégories');
-    await page.evaluate(() => { const ci = bdd.findIndex(c => (c.themes || []).length); selectedCategoryIndex = ci; selectedSubcategoryIndex = null; showScreen('screen-themes'); }); await noter('thèmes');
-
-    await openThemeCard(page); await noter('axes');
-    await page.locator('#axes-continue-btn').click(); await noter('modes');
-    await page.evaluate(() => openSelectionMode()); await noter('sélection');
-    await page.evaluate(() => showScreen('screen-modes'));
-    await page.locator('#mode-card-classic').click(); await page.waitForSelector('#screen-game:not(.hidden)'); await noter('frise');
-    await page.evaluate(() => showScreen('screen-modes'));
-    for (const [carte, etape] of [['.quiz-card', 'quiz'], ['.periodes-card', 'périodes'], ['.avap-card', 'avant/après'],
-        ['.fil-card', 'fil du temps'], ['.ecart-card', 'écart'], ['#mode-card-simultaneity', 'simultanéité'],
-        ['#mode-card-ordre', 'remise en ordre'], ['#mode-card-curseur', 'curseur'], ['#mode-card-intrus', 'intrus']]) {
-        await page.locator(carte).click(); await noter(etape);
-        await page.evaluate(() => { currentMode = 'classic'; showScreen('screen-modes'); });
-    }
-    await page.evaluate(() => showScreen('screen-end')); await noter('fin de partie');
-    await page.evaluate(() => { openProfileModal(); }); await noter('profil');
-    await page.evaluate(() => closeProfileModal());
-    for (const ouvrir of ['openSettings()', 'openLeaderboard()', 'openAddThemeModal()', 'openAddEventModal()', 'openScoringInfo()']) {
-        await page.evaluate(code => { try { (new Function(code))(); } catch (e) { } }, ouvrir);
-        await noter('modale ' + ouvrir);
-        await page.evaluate(() => document.querySelectorAll('.modal-overlay').forEach(m => m.classList.add('hidden')));
-    }
 
     const restes = [...trouvailles.entries()].map(([l, etape]) => `${l}   (vu à l'étape « ${etape} »)`);
     expect(restes, 'ces zones se cliquent mais ne se prennent pas au clavier').toEqual([]);

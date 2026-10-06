@@ -634,7 +634,8 @@ l'atteignabilité qui manquait. Son parcours mène de l'accueil à une question
 de Quiz sans toucher la souris.
 
 Il embarque un détecteur de zones cliquables hors d'atteinte du clavier (tout
-ce qui a `cursor: pointer` ou un `onclick`) lancé sur une trentaine d'écrans,
+ce qui a `cursor: pointer` ou un `onclick`) lancé sur une trentaine d'écrans
+(le parcours, partagé avec les contrastes, vit dans `e2e/ecrans.js`),
 **et un test qui vérifie que ce détecteur détecte** : sans lui, un détecteur
 qui ne trouverait jamais rien passerait pour une app irréprochable. Les
 garde-fous ont par ailleurs été éprouvés par mutation — remettre
@@ -644,11 +645,9 @@ fait échouer le test qui le garde, et lui seul.
 
 ### Ce qui n'est pas fait
 
-Cette passe porte sur le clavier et le zoom. Restent, tels que l'audit les a
-mesurés :
+Cette passe porte sur le clavier et le zoom (les contrastes ont leur propre
+section, ci-dessous). Restent, tels que l'audit les a mesurés :
 
-- **Contrastes insuffisants** (7 nœuds « serious » rien que sur l'écran des
-  catégories, d'après axe-core).
 - **Repères de page** : aucun landmark, aucun `<h1>`.
 - **Annonces aux lecteurs d'écran** : score, vies et retour juste/faux d'une
   réponse ne sont pas dans une zone `aria-live` ; un changement d'écran
@@ -660,6 +659,98 @@ mesurés :
 - **« Le fil du temps » et « Trouve l'écart » n'acceptent pas encore la
   saisie des chiffres au clavier physique** : le pavé numérique est à l'écran
   (ses touches sont de vrais boutons, donc atteignables).
+
+## Accessibilité : les contrastes
+
+L'audit signalait des contrastes insuffisants (WCAG 1.4.3, niveau AA : 4,5:1
+pour le texte courant, 3:1 pour le grand texte). Le chiffre alors avancé —
+« 7 nœuds sur l'écran des catégories » — était inexact : il additionnait des
+échecs avérés (5 en thème clair, 1 en sombre) et des éléments qu'axe-core
+déclare « à vérifier » faute de pouvoir les juger. Mesuré proprement sur tout
+le parcours (une trentaine d'écrans et de modales, voir `e2e/ecrans.js`) :
+**114 textes distincts sous le seuil en thème clair, 12 en sombre**, plus neuf
+textes (six en sombre) posés sur une photo ou un dégradé, que l'outil ne sait
+pas évaluer.
+
+### Ce qui les causait
+
+Presque tout tenait à deux gris : `--muted-text` (`#888888`, soit 3,5:1 sur
+blanc et 3,2:1 sur le fond d'écran) et `--ink-soft` (`#7A848F`, 3,8:1) en
+expliquaient 108 sur 114 — un jeton utilisé soixante-dix fois, l'autre dix. Les
+six autres tenaient à trois règles isolées. Une fois ceux-là corrigés, le test
+des états de réponse (voir plus bas) en a trouvé d'autres, que le parcours ne
+montre pas : 12 en clair, 11 en sombre.
+
+### Ce qui a changé
+
+- **`--muted-text` : `#646464`.** Le bon gris se choisit sur le pire fond où le
+  texte se pose, pas sur le fond habituel : `#6B6B6B` passait partout sauf sur
+  la teinte verte ou rouge d'une réponse juste ou fausse (4,2:1). `#646464` :
+  5,9:1 sur blanc, 4,7:1 sur cette teinte.
+- **`--ink-soft` : `#66717D`** (5,0:1 sur blanc).
+- **Les modales passent de 78 % à 94 % d'opacité.** À 78 %, le panneau
+  laissait transparaître le voile sombre et n'était plus blanc mais gris
+  (`#E1E1E2` mesuré) : même avec le gris corrigé, le texte discret n'y
+  atteignait que 4,1:1 — il aurait fallu assombrir toute l'app pour ce seul
+  fond.
+- **Les cartes de catégorie, sur photo.** Leur voile était uniforme (50 % de
+  bleu marine) et le sous-titre — « 12 Sous-catégories », en bleu pâle —
+  plafonnait à 2,4:1 sur certaines photos. Un voile uniforme n'y suffit pas :
+  à 70 %, plus de la moitié des pixels derrière le texte restaient sous le
+  seuil, pour une image entièrement assombrie. Le voile est un dégradé, épais
+  en bas là où est le texte (90 %), léger en haut (40 %, donc plus de photo
+  qu'avant).
+- **Le rouge et le vert posés en texte ont leurs jetons** (`--danger-red-text`,
+  `--success-text`) ; les aplats et les filets gardent les leurs. Le rouge
+  `#BA1A1A` faisait 2,5:1 sur fond sombre — le commentaire du thème sombre le
+  jugeait pourtant « excellent » — et s'éclaircit donc (`#FF8A80`). Le vert
+  « juste » faisait 4,2:1 en clair et 2,8:1 en sombre, où rien ne le
+  redéfinissait : `#1A6E3A` en clair, `#5ED68A` en sombre.
+- **Les trophées verrouillés s'estompent par leur icône, plus par une opacité
+  sur toute la carte.** À 0,65, le texte qui dit comment débloquer le trophée
+  (« Réussir 5 thèmes de l'Antiquité ») tombait à 2:1 : l'information la plus
+  utile de la carte en était la moins lisible.
+- **Quatre règles isolées** : le badge « ⭐ essentiel » d'une carte d'axe
+  (ambre `#7A5A14`, et clair en sombre), la pastille de combo « ×1.1 » des
+  jeux (bleu marine sur fond sombre : 1,2:1, donc invisible), le badge
+  « Niv. 1 » en sombre (4,3:1), et le multiplicateur de série du profil
+  (3,5:1).
+
+### Le test
+
+`e2e/contrastes.spec.js` (7 tests) mesure de trois façons, parce qu'aucune ne
+suffit seule :
+
+- **axe-core**, sur tout le parcours, en thème clair puis sombre. Il calcule
+  le contraste de tout texte posé sur un aplat. C'est une dépendance de
+  développement (MPL-2.0), jamais livrée dans l'app. Il ne sait pas juger ce
+  qui est posé sur une photo ou un dégradé, et le range alors parmi les cas
+  « à vérifier » — ce que le test ignore.
+- **Un échantillonnage de pixels** pour ce reste : on masque le texte, on
+  photographie la zone qu'il occupait, et l'on compare chaque pixel à sa
+  couleur. 95 % des pixels doivent atteindre le seuil. C'est ce qui a montré
+  que le sous-titre des cartes de catégorie plafonnait à 3:1, là où axe se
+  contentait de dire « à vérifier ».
+- **Les états de réponse**, que le parcours n'affiche pas. Les atteindre en
+  jouant voudrait dire répondre faux exprès dans chaque mode : on pose donc
+  sur les vrais éléments les classes que le JS leur pose (`correct`, `wrong`…).
+  C'est le couple de couleurs de la règle CSS qui est mesuré, pas la logique du
+  jeu. Le « révélé » de la simultanéité et de l'intrus, lui, est construit par
+  le JS : on répond pour de bon.
+
+Un test vérifie que les mesures détectent (un texte pâle, un texte sur un
+dégradé qui finit presque blanc), et chaque correction a été éprouvée par
+mutation : remettre `#888888`, `#7A848F`, les modales à 78 %, le voile
+uniforme, un rouge ou un vert, ou l'opacité des trophées fait échouer le test
+qui la garde — quatorze mutations, quatorze attrapées.
+
+### Ce que le test ne voit pas
+
+- Le **Mode Carte**, la ligue, le récap, les classements et les résultats de
+  défi : le parcours n'ouvre pas ces écrans et ces modales.
+- Les **états de la frise** (repère raté, créneau faux).
+- Le **contraste des éléments qui ne sont pas du texte** (WCAG 1.4.11 : icônes,
+  bordures de champ), qui relève d'un autre critère.
 
 ## Développement
 
@@ -681,8 +772,8 @@ et un `fetch` — c'est-à-dire de la quasi-totalité de l'interface.
 
 `npm run test:e2e` (Playwright, `e2e/`) comble ce trou en ouvrant un vrai
 navigateur sur le site servi tel qu'il l'est en production
-(`e2e/server.js`, un serveur statique sans dépendance). Dix parcours,
-75 tests, moins de deux minutes :
+(`e2e/server.js`, un serveur statique sans dépendance). Onze parcours,
+82 tests, environ trois minutes :
 
 - `e2e/modes.spec.js` — chaque mode de jeu se lance et répond à une
   première interaction. C'est la famille de régressions déjà vécue ici :
@@ -707,6 +798,12 @@ navigateur sur le site servi tel qu'il l'est en production
   cases à cocher d'axe, et un détecteur de zones cliquables hors d'atteinte du
   clavier qui vérifie sa propre capacité à détecter. La logique de décision,
   sans DOM, est couverte par `npm test` (`tests/a11y.test.js`, 28 tests).
+- `e2e/contrastes.spec.js` — les contrastes de couleur (WCAG AA) : axe-core
+  sur tout le parcours en thème clair puis sombre, un échantillonnage de
+  pixels pour le texte posé sur une photo ou un dégradé, et les états de
+  réponse juste/faux. Il vérifie aussi que ses mesures détectent. Le
+  parcours des écrans qu'il partage avec `clavier.spec.js` vit dans
+  `e2e/ecrans.js`.
 - `e2e/nouveaux-modes.spec.js` — les quatre modes fabriqués depuis les
   seules dates : chacun se lance depuis sa carte et répond à une première
   interaction, mais surtout ce qui doit rester caché le reste — aucune date

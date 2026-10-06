@@ -4,6 +4,13 @@
     --text-dark: #141d23;
     --text-light: #ffffff;
     --danger-red: #ba1a1a;
+    /* Le rouge posé en TEXTE : identique en clair, éclairci en sombre (voir le
+               thème sombre plus bas). --danger-red reste celui des aplats et des filets. */
+    --danger-red-text: #ba1a1a;
+    /* Idem pour le vert « juste » : #1D7A41 faisait 4,2:1 sur sa teinte (posée sur
+               le fond d'écran) en clair, et 2,8:1 en sombre où rien ne le redéfinissait.
+               #1A6E3A : au moins 4,8:1 en clair ; un vert clair en sombre. */
+    --success-text: #1A6E3A;
     --favorite-yellow: #d4a017;
     --progress-green: #1e8e3e;
     --card-shadow: 0px 10px 30px rgba(0, 26, 75, 0.05);
@@ -18,7 +25,14 @@
     --surface: #FFFFFF;
     --surface-2: #ecf5fe;
     --card-bg: #FFFFFF;
-    --muted-text: #888888;
+    /* Texte discret (sous-titres, légendes, compteurs). #888888 plafonnait à
+               3,5:1 sur blanc et à 3,2:1 sur le fond d'écran, pour 4,5:1 exigés (WCAG
+               AA) : un jeton unique, utilisé 70 fois, qui faisait échouer la moitié de
+               l'app. #646464 donne 5,9:1 sur blanc, 5,4:1 sur #F2F4F7, 5,2:1 sur le
+               fond des cartes d'axe et 4,7:1 sur la teinte verte ou rouge d'une réponse
+               juste ou fausse — le pire fond où ce texte se pose, et ce qui exclut
+               #6B6B6B (4,2:1 là). Voir e2e/contrastes.spec.js. */
+    --muted-text: #646464;
     --border-soft: #E5E7EB;
     --btn-secondary-bg: #CCCCCC;
     --btn-secondary-text: #333333;
@@ -788,7 +802,7 @@ body {
 }
 
 .mastery-row-pct.band-low {
-    color: var(--danger-red);
+    color: var(--danger-red-text);
 }
 
 .mastery-row-pct.band-mid {
@@ -813,7 +827,7 @@ body {
 }
 
 .mastery-row-weak-badge {
-    color: var(--danger-red);
+    color: var(--danger-red-text);
     font-weight: 600;
 }
 
@@ -1177,6 +1191,12 @@ textarea.form-input {
     margin-left: 6px;
 }
 
+/* Le bleu marine de la marque, posé en texte sur une surface sombre : 1,2:1 —
+   la pastille « ×1.1 » des jeux y était invisible. Un bleu clair du même ton. */
+:root[data-theme="dark"] .combo-chip {
+    color: #A9C7E6;
+}
+
 .mode-lock-icon {
     font-size: 18px;
 }
@@ -1247,11 +1267,11 @@ textarea.form-input {
 }
 
 .daily-submit-feedback.success {
-    color: var(--progress-green);
+    color: var(--success-text);
 }
 
 .daily-submit-feedback.error {
-    color: var(--danger-red);
+    color: var(--danger-red-text);
 }
 
 .daily-duel-comparison {
@@ -1396,7 +1416,9 @@ textarea.form-input {
     --paper: #FBFAF7;
     --rule: #E6E3DC;
     --ink: #1F2933;
-    --ink-soft: #7A848F;
+    /* Encre secondaire de la frise et des jeux (compteurs, A−/A+, boutons de
+               réglage). #7A848F faisait 3,8:1 sur blanc ; #66717D en fait 5,0. */
+    --ink-soft: #66717D;
     --axis: #CBD2D9;
     --hand-bg: #263445;
     --amber: #B07520;
@@ -1655,7 +1677,7 @@ textarea.form-input {
     font-weight: 700;
     letter-spacing: 0.09em;
     text-transform: uppercase;
-    color: var(--danger-red);
+    color: var(--danger-red-text);
     border: 1px solid currentColor;
     border-radius: 3px;
     padding: 1px 5px;
@@ -1670,7 +1692,7 @@ textarea.form-input {
 }
 
 .entry-missed .entry-year {
-    color: var(--danger-red);
+    color: var(--danger-red-text);
 }
 
 /* En mode Découverte, aucun intervalle ne sépare les repères : on rétablit un filet */
@@ -1766,7 +1788,7 @@ textarea.form-input {
 }
 
 .slot-wrong .slot-label {
-    color: var(--danger-red);
+    color: var(--danger-red-text);
     font-weight: 700;
 }
 
@@ -2017,7 +2039,12 @@ textarea.form-input {
            au lieu d'un aplat opaque — c'est le rendu "premium" des maquettes Tailored
            Executive (cf. ui/historiaxe_*_tailored_style/code.html). */
 .modal-content {
-    background: var(--glass-bg);
+    /* 94 % d'opacité et non les 78 % du verre ordinaire : à 78 %, le panneau
+               laissait transparaître le voile sombre de la modale et n'était plus blanc
+               mais gris (#E1E1E2 mesuré), si bien que le texte discret y faisait 4,1:1.
+               À 94 %, le fond redevient quasi blanc, et le texte n'est plus tributaire de
+               ce qui passe derrière. */
+    background: color-mix(in srgb, var(--surface) 94%, transparent);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
     border: 1px solid var(--glass-border);
@@ -2215,13 +2242,13 @@ textarea.form-input {
 .quiz-option.correct {
     background: rgba(44, 168, 90, 0.14);
     border-color: #2CA85A;
-    color: #1D7A41;
+    color: var(--success-text);
 }
 
 .quiz-option.wrong {
     background: rgba(217, 83, 79, 0.12);
     border-color: var(--danger-red);
-    color: var(--danger-red);
+    color: var(--danger-red-text);
 }
 
 .quiz-option.disabled-5050 {
@@ -2362,7 +2389,7 @@ textarea.form-input {
 }
 
 .blitz-clock.urgent {
-    color: var(--danger-red);
+    color: var(--danger-red-text);
 }
 
 .blitz-rail .progress-fill {
@@ -2417,13 +2444,13 @@ textarea.form-input {
 .blitz-btn.correct {
     background: rgba(44, 168, 90, 0.18);
     border-color: #2CA85A;
-    color: #1D7A41;
+    color: var(--success-text);
 }
 
 .blitz-btn.wrong {
     background: rgba(186, 26, 26, 0.12);
     border-color: var(--danger-red);
-    color: var(--danger-red);
+    color: var(--danger-red-text);
 }
 
 .blitz-tally {
@@ -2525,12 +2552,12 @@ textarea.form-input {
 
 .curseur-verdict.is-good {
     background: rgba(44, 168, 90, 0.14);
-    color: #1D7A41;
+    color: var(--success-text);
 }
 
 .curseur-verdict.is-bad {
     background: rgba(186, 26, 26, 0.1);
-    color: var(--danger-red);
+    color: var(--danger-red-text);
 }
 
 /* === MODE « L'INTRUS » ===
@@ -2538,11 +2565,11 @@ textarea.form-input {
    révélé ; seule la ligne de l'intrus s'en distingue. */
 .simul-reveal-row.is-intrus .simul-reveal-year,
 .simul-reveal-row.is-intrus .simul-reveal-text strong {
-    color: var(--danger-red);
+    color: var(--danger-red-text);
 }
 
 .simul-reveal-row.is-intrus .simul-reveal-text small {
-    color: var(--danger-red);
+    color: var(--danger-red-text);
     font-weight: 600;
 }
 
@@ -2699,12 +2726,12 @@ textarea.form-input {
 
 .geo-reveal-label.is-correct {
     background: rgba(44, 168, 90, 0.14);
-    color: #1D7A41;
+    color: var(--success-text);
 }
 
 .geo-reveal-label.is-wrong {
     background: rgba(217, 83, 79, 0.12);
-    color: var(--danger-red);
+    color: var(--danger-red-text);
 }
 
 .geo-map-frame {
@@ -2846,13 +2873,13 @@ textarea.form-input {
 .fil-display-value.fil-feedback-correct {
     border-color: #2CA85A;
     background: rgba(44, 168, 90, 0.14);
-    color: #1D7A41;
+    color: var(--success-text);
 }
 
 .fil-display-value.fil-feedback-wrong {
     border-color: var(--danger-red);
     background: rgba(217, 83, 79, 0.12);
-    color: var(--danger-red);
+    color: var(--danger-red-text);
 }
 
 .fil-hint-btn {
@@ -2912,13 +2939,13 @@ textarea.form-input {
 
 .fil-answer-badge.badge-wrong {
     background: rgba(217, 83, 79, 0.12);
-    color: var(--danger-red);
+    color: var(--danger-red-text);
     border: 1px solid var(--danger-red);
 }
 
 .fil-answer-badge.badge-correct {
     background: rgba(44, 168, 90, 0.14);
-    color: #1D7A41;
+    color: var(--success-text);
     border: 1px solid #2CA85A;
 }
 
@@ -3073,21 +3100,21 @@ textarea.form-input {
 .periodes-option.correct {
     background: rgba(44, 168, 90, 0.14);
     border-color: #2CA85A;
-    color: #1D7A41;
+    color: var(--success-text);
 }
 
 .periodes-option.correct .periodes-option-main {
-    color: #1D7A41;
+    color: var(--success-text);
 }
 
 .periodes-option.wrong {
     background: rgba(217, 83, 79, 0.12);
     border-color: var(--danger-red);
-    color: var(--danger-red);
+    color: var(--danger-red-text);
 }
 
 .periodes-option.wrong .periodes-option-main {
-    color: var(--danger-red);
+    color: var(--danger-red-text);
 }
 
 /* MODE AVANT / APRÈS (deux événements sans date, deviner l'antériorité) */
@@ -3173,7 +3200,7 @@ textarea.form-input {
 }
 
 .avap-option.correct .avap-option-title {
-    color: #1D7A41;
+    color: var(--success-text);
 }
 
 .avap-option.wrong {
@@ -3182,7 +3209,7 @@ textarea.form-input {
 }
 
 .avap-option.wrong .avap-option-title {
-    color: var(--danger-red);
+    color: var(--danger-red-text);
 }
 
 .avap-vs {
@@ -3944,7 +3971,8 @@ textarea.form-input {
 }
 
 :root[data-theme="dark"] .player-rank-level-badge {
-    background: #2980b9;
+    /* #2980B9 donnait 4,3:1 au texte blanc de 11 px ; #2475AB, 5,0:1. */
+    background: #2475ab;
 }
 
 .player-rank-streak-badge {
@@ -4121,7 +4149,8 @@ textarea.form-input {
 .profile-streak-multiplier {
     background: linear-gradient(135deg, rgba(255, 107, 53, 0.12), rgba(247, 147, 30, 0.18));
     border: 1px solid rgba(247, 147, 30, 0.35);
-    color: #d35400;
+    /* #D35400 sur ce fond orangé pâle : 3,5:1. #A63F00 : 5,3:1, même famille. */
+    color: #a63f00;
     padding: 10px 14px;
     border-radius: 12px;
     font-size: 13px;
@@ -4158,8 +4187,17 @@ textarea.form-input {
     background: linear-gradient(135deg, rgba(212, 160, 23, 0.06), var(--surface));
 }
 
-.trophy-card.locked {
-    opacity: 0.65;
+/* Un trophée verrouillé s'estompe par son ICÔNE et son titre, pas par une
+           opacité sur toute la carte : à 0,65, le texte qui dit comment le débloquer
+           (« Réussir 5 thèmes de l'Antiquité ») tombait à 2:1 — l'information la plus
+           utile de la carte était la moins lisible. */
+.trophy-card.locked .trophy-icon {
+    opacity: 0.55;
+    filter: grayscale(1);
+}
+
+.trophy-card.locked .trophy-name {
+    color: var(--muted-text);
 }
 
 .trophy-icon {
@@ -4411,16 +4449,20 @@ textarea.form-input {
     opacity: 0.85;
 }
 
+/* Ambre foncé : l'ambre d'origine (#B8892E, puis #8C681E sur une carte
+           sélectionnée) faisait 3,2:1 sur blanc et 4,47:1 sur le fond d'une carte
+           d'axe — sous les 4,5:1 exigés pour un texte de 11 px. #7A5A14 : 6,4:1 sur
+           blanc, 5,6:1 sur la carte sélectionnée. En sombre, un ambre clair. */
 .axis-essentiel-badge {
     margin-left: 8px;
-    color: #b8892e;
+    color: #7a5a14;
     font-size: 11px;
     font-weight: 700;
     white-space: nowrap;
 }
 
-.axis-card.selected .axis-essentiel-badge {
-    color: #8c681e;
+:root[data-theme="dark"] .axis-essentiel-badge {
+    color: #d9a441;
 }
 
 :root[data-theme="dark"] .essentiel-card {
@@ -4773,10 +4815,15 @@ textarea.form-input {
 /* =====================================================================
            THÈME SOMBRE — activé via [data-theme="dark"] sur <html>
            Choix délibéré : on garde le même bleu de marque, le même rouge et le
-           même ambre dans les deux thèmes (ils gardent un excellent contraste
-           sur fond sombre) ; seuls le fond, les surfaces et les textes changent.
+           même ambre dans les deux thèmes ; seuls le fond, les surfaces et les
+           textes changent. Exception, mesurée : le rouge posé en TEXTE ne gardait
+           pas « un excellent contraste » sur fond sombre — #BA1A1A sur #1B212B
+           fait 2,5:1, pour 4,5:1 exigés. Il s'éclaircit donc (--danger-red-text) ;
+           les aplats et les filets rouges, eux, restent ceux du thème clair.
            ===================================================================== */
 :root[data-theme="dark"] {
+    --danger-red-text: #FF8A80;
+    --success-text: #5ED68A;
     --bg-color: #12161D;
     --text-dark: #F2F4F7;
     --card-shadow: 0 4px 16px rgba(0, 0, 0, 0.55);
@@ -4790,7 +4837,8 @@ textarea.form-input {
     --surface: #1B212B;
     --surface-2: #232A35;
     --card-bg: #1B212B;
-    --muted-text: #8B93A0;
+    /* #8B93A0 faisait 4,3:1 sur les cartes d'axe sélectionnées (#26303C). */
+    --muted-text: #9BA3B0;
     --border-soft: #2E3644;
     --btn-secondary-bg: #2B323D;
     --btn-secondary-text: #E7E9EC;
@@ -5635,7 +5683,7 @@ textarea.form-input {
 
 .btn-pack-action.btn-danger {
     background: rgba(231, 76, 60, 0.1);
-    color: var(--danger-red);
+    color: var(--danger-red-text);
     border-color: rgba(231, 76, 60, 0.3);
 }
 
@@ -6200,6 +6248,20 @@ textarea {
     }
 }
 
+
+/* Voile des cartes de catégorie et de sous-catégorie, posé sur leur photo
+   (voir js/app.js : initCategories et initSubcategories). Il était uniforme, à
+   50 % de bleu marine : le sous-titre (« 12 Sous-catégories », en bleu pâle)
+   tombait à 2,4:1 sur certaines photos, pour 4,5:1 exigés. Un voile uniforme
+   n'y changerait rien à moins d'assombrir toute l'image — 70 % laissaient
+   encore plus de la moitié des pixels sous le seuil. Le texte est en bas de
+   la carte : le voile s'y épaissit (90 %) et s'allège en haut (40 %, soit
+   plus de photo qu'avant). Mesuré pixel par pixel : voir e2e/contrastes.spec.js. */
+.category-card-veil {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 26, 75, 0.9) 0%, rgba(0, 26, 75, 0.4) 100%);
+}
 
 /* =========================================================================
    ACCESSIBILITÉ : FOCUS, TACTILE (voir js/a11y.js et e2e/clavier.spec.js)

@@ -1726,7 +1726,7 @@ function initCategories() {
 
         card.innerHTML = `
                     <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('${bgImg}'); background-color: var(--primary-blue, #001a4b); position: absolute; inset: 0;"></div>
-                    <div class="absolute inset-0 bg-primary/40 group-hover:bg-primary/30 transition-colors" style="background: rgba(0, 26, 75, 0.5); position: absolute; inset: 0;"></div>
+                    <div class="category-card-veil"></div>
                     <div class="absolute bottom-0 left-0 p-md w-full" style="position: absolute; bottom: 0; left: 0; padding: 16px;">
                         <h4 class="font-headline-md text-on-primary" style="color: white; font-weight: 700; font-size: 20px; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">${cat.nom}</h4>
                         <p class="font-label-sm text-primary-fixed-dim mt-xs" style="color: #b2c5ff; font-size: 12px; margin-top: 4px;">${cat.subcategories ? t('themes.subcategories_count', { count: cat.subcategories.length }) : (cat.isCustomCategory ? t('themes.your_themes') : t('themes.select_cta'))}</p>
@@ -1863,7 +1863,7 @@ function initSubcategories() {
         // Handle missing image loading fallback
         card.innerHTML = `
                     <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('${bgImg}'); background-color: var(--primary-blue); position: absolute; inset: 0;"></div>
-                    <div class="absolute inset-0 bg-primary/40 group-hover:bg-primary/30 transition-colors" style="background: rgba(0, 26, 75, 0.5); position: absolute; inset: 0;"></div>
+                    <div class="category-card-veil"></div>
                     <div class="absolute bottom-0 left-0 p-md w-full" style="position: absolute; bottom: 0; left: 0; padding: 16px;">
                         <h4 class="font-headline-md text-on-primary" style="color: white; font-weight: 700; font-size: 20px; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">${sub.nom}</h4>
                         <p class="font-label-sm text-primary-fixed-dim mt-xs" style="color: #b2c5ff; font-size: 12px; margin-top: 4px;">${textThemes}</p>
