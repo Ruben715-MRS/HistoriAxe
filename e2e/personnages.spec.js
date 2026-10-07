@@ -90,9 +90,10 @@ test('Personnages illustres : deux sous-catégories, chacune avec sa note et son
     await expect(page.locator('#theme-screen-title')).toHaveText('Panthéons');
     await expect(page.locator('#theme-screen-note-text')).toContainText('né dans les frontières actuelles');
     // Panthéons de pays et de blocs se rangent par leur nom de source — « Amérique hispanique »,
-    // « Égypte », « France », « Maghreb » — et non par « Grandes figures d'… » / « … de » / « … du ».
+    // « Égypte », « États-Unis », « France », « Maghreb » — et non par « Grandes figures d'… » / « … de » / « … des » / « … du ».
     await expect(page.locator('#themes-container .data-card-title'))
-        .toHaveText(["Grandes figures d'Amérique hispanique", "Grandes figures d'Égypte", 'Grandes figures de France', 'Grandes figures du Maghreb']);
+        .toHaveText(["Grandes figures d'Amérique hispanique", "Grandes figures d'Égypte", 'Grandes figures des États-Unis',
+            'Grandes figures de France', 'Grandes figures du Maghreb']);
 });
 
 test('la fiche d’un personnage montre son portrait, sa légende, son crédit et sa biographie', async ({ page }) => {
@@ -248,6 +249,47 @@ test('l’Égypte : chacune de ses figures a son portrait, et la fiche n’affic
     expect(avecBiographie).toBe(5);
     await page.locator('#timeline .entry', { hasText: 'Naissance de Naguib Mahfouz' }).click();
     await expect(page.locator('#modal-bio-btn')).toBeVisible();
+});
+
+test('les États-Unis : chacune de ses figures a son portrait, et la fiche n’affiche aucun pays', async ({ page }) => {
+    await openThemeById(page, 'pan_us');
+    await page.locator('#mode-card-discovery').click();
+    await expect(page.locator('#screen-game')).toBeVisible();
+    const nombre = await page.evaluate(() => getCurrentTheme().events.length);
+    expect(nombre).toBeGreaterThanOrEqual(115);
+    expect(nombre).toBeLessThanOrEqual(135);
+    // « Que chaque personnage ait un portrait » : une pastille par repère, pas une de moins.
+    await expect(page.locator('#timeline .entry')).toHaveCount(nombre);
+    await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
+
+    // Trois époques : un Père fondateur, une star d'Hollywood, un pionnier de l'informatique. Le
+    // panthéon d'un pays n'affiche pas de pays (son thème le dit déjà), et le portrait charge au bon format.
+    for (const titre of ['Naissance de Thomas Jefferson', 'Naissance de Marilyn Monroe', 'Naissance de Steve Jobs']) {
+        await page.locator('#timeline .entry', { hasText: titre }).click();
+        await expect(page.locator('#modal-details')).toBeVisible();
+        await expect(page.locator('#modal-pays')).toBeHidden();
+        const portrait = page.locator('#modal-portrait-img');
+        await expect.poll(() => portrait.evaluate(img => img.complete ? img.naturalWidth : 0)).toBe(320);
+        await expect(page.locator('#modal-portrait-caption')).not.toBeEmpty();
+        await page.locator('#modal-details .close-btn').click();
+        await expect(page.locator('#modal-details')).toBeHidden();
+    }
+
+    // Vingt-neuf figures ont aussi leur biographie dans l'appli : le bouton y mène.
+    const avecBiographie = await page.evaluate(() => getCurrentTheme().events.filter(e => e.biographie).length);
+    expect(avecBiographie).toBe(29);
+    await page.locator('#timeline .entry', { hasText: 'Naissance de Louis Armstrong' }).click();
+    await expect(page.locator('#modal-bio-btn')).toBeVisible();
+});
+
+test('la recherche — « etats-unis », « usa », « hollywood » — mène au panthéon des États-Unis', async ({ page }) => {
+    await page.locator('#screen-home').click();
+    for (const mot of ['etats-unis', 'usa', 'hollywood']) {
+        await page.locator('#theme-search-input').fill(mot);
+        const resultat = page.locator('#theme-search-results .search-result-item', { hasText: 'Grandes figures des États-Unis' });
+        await expect(resultat, `« ${mot} » doit mener aux États-Unis`).toHaveCount(1);
+        await expect(resultat.locator('.search-result-path')).toContainText('Personnages illustres › Panthéons');
+    }
 });
 
 test('la recherche — « egypte », « pharaon », « nil » — mène au panthéon de l’Égypte', async ({ page }) => {

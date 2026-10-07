@@ -2,8 +2,8 @@
   "version": "1.0.0",
   "lang": "fr",
   "name": "Français (Intégral)",
-  "totalThemes": 799,
-  "totalEvents": 20047,
+  "totalThemes": 800,
+  "totalEvents": 20171,
   "categories": [
     {
       "nom": "Culture générale",
@@ -93469,6 +93469,1948 @@
               ]
             },
             {
+              "id": "pan_us",
+              "nom": "Grandes figures des États-Unis",
+              "difficulte": "Intermédiaire",
+              "motsCles": [
+                "Américain",
+                "Américaine",
+                "USA",
+                "Amérique",
+                "Amérique du Nord",
+                "Maison-Blanche",
+                "Far West",
+                "Hollywood",
+                "Jazz",
+                "Droits civiques",
+                "Guerre de Sécession",
+                "Indépendance américaine"
+              ],
+              "events": [
+                {
+                  "id": "pan_us_pocahontas",
+                  "axe": "Guerres et résistances",
+                  "date": 1596,
+                  "titre": "Naissance de Pocahontas",
+                  "description": "Pocahontas (vers 1596-1617) est une Amérindienne de la confédération powhatan, fille du chef Wahunsunacock, dit Powhatan, née en Virginie à une date incertaine, vers 1596. Enlevée en 1613 par le capitaine anglais Samuel Argall, elle est baptisée sous le nom de Rebecca, épouse en avril 1614 le planteur de tabac John Rolfe, dont elle a un fils, puis se rend en Angleterre en 1616 pour y promouvoir la colonie de Virginie. Elle meurt à Gravesend en mars 1617, alors qu'elle repartait pour la Virginie, d'une maladie restée mal identifiée, et sa vie, où se mêlent faits et légendes, comme le sauvetage contesté de John Smith, est devenue l'un des mythes fondateurs des États-Unis.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Pocahontas",
+                  "image": {
+                    "src": "assets/portraits/pan_us_pocahontas.jpg",
+                    "legende": "Pocahontas (Matoaka, baptisée Rebecca), gravure de Simon van de Passe réalisée à Londres en 1616",
+                    "auteur": "Simon van de Passe",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Pocahontas_by_Simon_van_de_Passe_(1616).png"
+                  }
+                },
+                {
+                  "id": "pan_us_franklin",
+                  "axe": "Sciences et découvertes",
+                  "date": 1706,
+                  "titre": "Naissance de Benjamin Franklin",
+                  "description": "Benjamin Franklin (1706-1790) est un imprimeur, écrivain, inventeur et diplomate américain, né à Boston, fils d'un marchand de suif et de chandelles, et l'un des pères fondateurs des États-Unis. Établi à Philadelphie, il y fonde la première bibliothèque de prêt du pays, invente le paratonnerre, puis, entré en politique, participe à la rédaction de la déclaration d'indépendance, négocie en France l'alliance de 1778 et le traité de paix de 1783, et siège à la convention qui rédige la Constitution. Propriétaire d'esclaves domestiques, il devient en fin de vie un partisan de l'abolition, préside la Pennsylvania Abolition Society et meurt à Philadelphie en 1790, l'Assemblée nationale française décrétant trois jours de deuil.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Benjamin_Franklin",
+                  "biographie": "bio_benjaminfranklin",
+                  "image": {
+                    "src": "assets/portraits/pan_us_franklin.jpg",
+                    "legende": "Benjamin Franklin, portrait peint par David Martin (1767)",
+                    "auteur": "David Martin",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Benjamin_Franklin_1767.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_washington",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1732,
+                  "titre": "Naissance de George Washington",
+                  "description": "George Washington (1732-1799) est un militaire, planteur et homme d'État américain, né en Virginie, premier président des États-Unis. Commandant en chef de l'Armée continentale de 1775 à 1783, il mène les colonies à la victoire sur la Grande-Bretagne, préside en 1787 la convention de Philadelphie qui élabore la Constitution, puis, élu à l'unanimité, exerce deux mandats, de 1789 à 1797, avant de renoncer à un troisième. Propriétaire de 123 des 317 esclaves de Mount Vernon, il meurt le 14 décembre 1799 après avoir prévu dans son testament l'affranchissement des siens à la mort de son épouse, et la nation le célèbre comme le « Père de son pays » tandis que la capitale fédérale porte son nom.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/George_Washington",
+                  "biographie": "bio_washington",
+                  "image": {
+                    "src": "assets/portraits/pan_us_washington.jpg",
+                    "legende": "George Washington, portrait peint par Gilbert Stuart (1803)",
+                    "auteur": "Gilbert Stuart",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Gilbert_Stuart_Williamstown_Portrait_of_George_Washington.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_adams",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1735,
+                  "titre": "Naissance de John Adams",
+                  "description": "John Adams (1735-1826) est un avocat, diplomate et homme d'État américain, né à Braintree, dans le Massachusetts, premier vice-président puis deuxième président des États-Unis. Il défend en 1770 les soldats britanniques jugés après le massacre de Boston, joue un rôle clé dans l'adoption de la Déclaration d'indépendance en 1776, puis, président de 1797 à 1801, préserve la paix avec la France pendant la quasi-guerre, mais les lois de 1798 sur les étrangers et la sédition, qui répriment la critique du gouvernement, discréditent son parti. Battu par Jefferson en 1800, il se retire dans son État natal et meurt le 4 juillet 1826, le même jour que son ancien rival, cinquante ans après la Déclaration d'indépendance, alors que son fils John Quincy Adams préside le pays.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/John_Adams_(homme_d%27%C3%89tat)",
+                  "image": {
+                    "src": "assets/portraits/pan_us_adams.jpg",
+                    "legende": "John Adams, portrait peint par Gilbert Stuart (vers 1800-1815)",
+                    "auteur": "Gilbert Stuart",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Gilbert_Stuart,_John_Adams,_c._1800-1815,_NGA_42933.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_jefferson",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1743,
+                  "titre": "Naissance de Thomas Jefferson",
+                  "description": "Thomas Jefferson (1743-1826) est un philosophe politique, architecte et homme d'État américain, né en Virginie, troisième président des États-Unis. Principal rédacteur de la Déclaration d'indépendance en 1776, ambassadeur en France puis premier secrétaire d'État, il fait acheter la Louisiane en 1803, ce qui double la superficie du pays, et fonde l'université de Virginie. Il meurt à Monticello le 4 juillet 1826, cinquante ans jour pour jour après la Déclaration, et on lui reproche le contraste entre ses idéaux d'égalité et sa condition de planteur possédant plusieurs centaines d'esclaves, dont il n'affranchit que quelques-uns, ainsi que sa relation avec Sally Hemings, l'une de ses esclaves, dont il a très probablement eu plusieurs enfants.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Thomas_Jefferson",
+                  "image": {
+                    "src": "assets/portraits/pan_us_jefferson.jpg",
+                    "legende": "Thomas Jefferson, portrait officiel peint par Rembrandt Peale (1800)",
+                    "auteur": "Rembrandt Peale",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Official_Presidential_portrait_of_Thomas_Jefferson_(by_Rembrandt_Peale,_1800).jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_madison",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1751,
+                  "titre": "Naissance de James Madison",
+                  "description": "James Madison (1751-1836) est un théoricien politique et homme d'État américain, né en Virginie, quatrième président des États-Unis, surnommé le « père de la Constitution ». Auteur du plan de Virginie à la convention de Philadelphie en 1787, il rédige avec Alexander Hamilton et John Jay Le Fédéraliste, est à l'origine du Bill of Rights en 1789, puis préside le pays de 1809 à 1817 et affronte la guerre de 1812 contre la Grande-Bretagne, au cours de laquelle les Britanniques incendient Washington en 1814. Retiré à Montpelier, plantation où travaillent une centaine d'esclaves, il y meurt le 28 juin 1836, et l'on souligne aujourd'hui le contraste entre son rôle de champion des libertés individuelles et son statut de propriétaire d'esclaves.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/James_Madison",
+                  "image": {
+                    "src": "assets/portraits/pan_us_madison.jpg",
+                    "legende": "James Madison, portrait peint par John Vanderlyn (1816)",
+                    "auteur": "John Vanderlyn",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:James_Madison.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_hamilton",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1755,
+                  "titre": "Naissance d'Alexander Hamilton",
+                  "description": "Alexander Hamilton (1755-1804) est un homme d'État, juriste et financier américain, né à Charlestown, sur l'île de Nevis, en 1755 selon la date la plus admise, en 1757 selon d'autres sources. Aide de camp de George Washington pendant la guerre d'indépendance, l'un des auteurs du Fédéraliste en 1787 et 1788 et fondateur du Parti fédéraliste, il occupe de 1789 à 1795 le poste de premier secrétaire au Trésor, fait reprendre les dettes des États par l'Union et crée une banque nationale. Blessé le 11 juillet 1804 à Weehawken, dans le New Jersey, lors d'un duel au pistolet contre le vice-président Aaron Burr, il meurt le lendemain à New York, et ce Père fondateur, dont le portrait orne le billet de dix dollars, inspire depuis 2015 la comédie musicale Hamilton.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Alexander_Hamilton",
+                  "image": {
+                    "src": "assets/portraits/pan_us_hamilton.jpg",
+                    "legende": "Alexander Hamilton, portrait peint par John Trumbull (vers 1805)",
+                    "auteur": "John Trumbull",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Alexander_Hamilton_portrait_by_John_Trumbull_1806.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_jackson",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1767,
+                  "titre": "Naissance d'Andrew Jackson",
+                  "description": "Andrew Jackson (1767-1845) est un militaire, planteur esclavagiste et homme d'État américain, né aux confins des deux Carolines, septième président des États-Unis et premier issu du Parti démocrate. Héros de la guerre de 1812 grâce à sa victoire de La Nouvelle-Orléans en janvier 1815, président de 1829 à 1837, il incarne la « démocratie jacksonienne » et met son veto en 1832 au renouvellement de la Seconde Banque des États-Unis. Il meurt le 8 juin 1845 dans le Tennessee, et on lui reproche surtout l'Indian Removal Act de 1830, qui organise le déplacement forcé des Amérindiens à l'ouest du Mississippi et mène en 1838 à la Piste des larmes, où plus de 4 000 Cherokees meurent, ainsi que son esclavagisme, plus d'une centaine d'esclaves travaillant sur sa plantation.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Andrew_Jackson",
+                  "image": {
+                    "src": "assets/portraits/pan_us_jackson.jpg",
+                    "legende": "Andrew Jackson, portrait peint par Ralph Earl",
+                    "auteur": "Ralph E. W. Earl",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Andrew_jackson_head.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_tecumseh",
+                  "axe": "Guerres et résistances",
+                  "date": 1768,
+                  "titre": "Naissance de Tecumseh",
+                  "description": "Tecumseh (1768-1813) est un chef de guerre shawnee, né vers 1768 près de l'actuelle Springfield, dans l'Ohio, dont le père est tué en 1774 à la bataille de Point Pleasant. Avec son frère Tenskwatawa, dit le Prophète, il tente de fédérer les nations amérindiennes, du Canada à la Floride, pour résister à l'avancée des colons ; après l'échec de sa rencontre avec le gouverneur William Henry Harrison en 1810 et la défaite de son frère à Tippecanoe en novembre 1811, il s'allie aux Britanniques pendant la guerre de 1812. Il est tué le 5 octobre 1813 à la bataille de la rivière Thames, dans l'actuel Ontario, ce qui ruine son projet de confédération, et il demeure un symbole de la résistance amérindienne à l'expansion des États-Unis.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Tecumseh",
+                  "image": {
+                    "src": "assets/portraits/pan_us_tecumseh.jpg",
+                    "legende": "Tecumseh, représentation posthume : aquarelle attribuée à Owen Staples (1915), d'après une gravure de 1868",
+                    "auteur": "Owen Staples (attribué)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Tecumseh02.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_sequoyah",
+                  "axe": "Littérature et pensée",
+                  "date": 1770,
+                  "titre": "Naissance de Sequoyah",
+                  "description": "Sequoyah (vers 1770-1843) est un orfèvre cherokee, connu aussi sous le nom anglais de George Guess, né probablement à Tuskegee, dans l'est de l'actuel Tennessee, et inventeur du syllabaire cherokee. Après avoir assisté en 1809 à l'installation d'une imprimerie, il veut donner une écriture à sa langue, renonce à un signe par mot au profit d'un signe par syllabe, enseigne d'abord ce système à sa fille Ayokeh, malgré un entourage qui y voit de la sorcellerie, et l'achève en 1821. Adopté officiellement par la nation cherokee en 1825 et employé dès 1828 dans le Cherokee Phoenix, premier journal de la nation, ce syllabaire aurait inspiré une vingtaine d'autres systèmes d'écriture, et Sequoyah, mort en juillet ou août 1843, a donné son nom au séquoia.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sequoyah",
+                  "image": {
+                    "src": "assets/portraits/pan_us_sequoyah.jpg",
+                    "legende": "Sequoyah et le tableau de son syllabaire cherokee, lithographie de Lehman et Duval d'après Henry Inman (XIXe siècle)",
+                    "auteur": "Lehman et Duval (d'après Henry Inman)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Sequoyah.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_lewis",
+                  "axe": "Sciences et découvertes",
+                  "date": 1774,
+                  "titre": "Naissance de Meriwether Lewis",
+                  "description": "Meriwether Lewis (1774-1809) est un explorateur et officier américain, né en Virginie, près de Charlottesville, et secrétaire particulier du président Thomas Jefferson à partir de 1801. Avec William Clark, il dirige de 1804 à 1806 l'expédition qui, sur ordre de Jefferson, remonte le Missouri, franchit les Rocheuses, atteint le Pacifique et revient à Saint-Louis, puis il est nommé en 1807 gouverneur du territoire de Louisiane. Ses comptes de gouverneur étant contestés par le département de la Guerre, il meurt le 11 octobre 1809 de deux coups de pistolet sur la piste de Natchez, au Tennessee, alors qu'il se rend à Washington, ce que l'on attribue le plus souvent à un suicide, et plusieurs lieux, dont le comté de Lewis, portent son nom.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Meriwether_Lewis",
+                  "biographie": "bio_meriwetherlewis",
+                  "image": {
+                    "src": "assets/portraits/pan_us_lewis.jpg",
+                    "legende": "Meriwether Lewis, portrait peint par Charles Willson Peale (vers 1807)",
+                    "auteur": "Charles Willson Peale",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Meriwether_Lewis-Charles_Willson_Peale.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_sacagawea",
+                  "axe": "Guerres et résistances",
+                  "date": 1788,
+                  "titre": "Naissance de Sacagawea",
+                  "description": "Sacagawea (vers 1788-1812) est une Amérindienne shoshone, née aux alentours de 1788 dans l'actuel Idaho, enlevée vers douze ans par les Hidatsas, puis mariée au trappeur canadien-français Toussaint Charbonneau. Vers seize ans, elle accompagne comme interprète et guide, avec son fils Jean-Baptiste encore nourrisson, l'expédition de Lewis et Clark à travers l'Ouest, de 1804 à 1806, et facilite en août 1805 le contact avec les Shoshones, dont le chef est son frère Cameahwait. Le journal d'un marchand la dit morte d'une fièvre en 1812 à Fort Manuel Lisa, mais la date et le lieu de sa mort sont discutés, une tradition orale shoshone la faisant vivre jusqu'en 1884 ; héroïne nationale, elle figure depuis 2000 sur la pièce américaine d'un dollar.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sacagawea",
+                  "image": {
+                    "src": "assets/portraits/pan_us_sacagawea.jpg",
+                    "legende": "Sacagawea, détail d'une peinture murale d'Edgar Paxson (Capitole du Montana) : aucun portrait authentique n'existe",
+                    "auteur": "Edgar Samuel Paxson",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Detail_Lewis_%26_Clark_at_Three_Forks.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_morse",
+                  "axe": "Sciences et découvertes",
+                  "date": 1791,
+                  "titre": "Naissance de Samuel Morse",
+                  "description": "Samuel Morse (1791-1872) est un peintre et inventeur américain, né à Charlestown, dans le Massachusetts, connu pour le télégraphe électrique et le code qui portent son nom. Portraitiste et peintre de toiles historiques, il conçoit en 1832 l'idée d'un télégraphe électrique, s'y consacre à partir de 1837 avec Leonard Gale et Alfred Vail, auteur du code de points et de traits, obtient un brevet en 1840 et, grâce à une aide du Congrès, inaugure en 1844 la ligne de Washington à Baltimore. Il meurt à New York le 2 avril 1872, après avoir fait valider ses brevets par la Cour suprême, et son nom reste attaché au télégraphe, même si on lui reproche un tract de 1835 hostile aux catholiques, qui dénonce un prétendu complot papal.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Samuel_Morse",
+                  "image": {
+                    "src": "assets/portraits/pan_us_morse.jpg",
+                    "legende": "Samuel Morse, photographie de Mathew Brady (entre 1855 et 1865)",
+                    "auteur": "Mathew Brady",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Samuel_Morse_portrait.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_truth",
+                  "axe": "Guerres et résistances",
+                  "date": 1797,
+                  "titre": "Naissance de Sojourner Truth",
+                  "description": "Sojourner Truth (vers 1797-1883) est une prédicatrice américaine, abolitionniste et militante des droits des femmes, née esclave à Hurley, dans l'État de New York, probablement en 1797, sous le nom d'Isabella Baumfree. Enfuie en 1826, elle gagne en 1828 un procès pour récupérer son fils, vendu illégalement en Alabama, prend en 1843 le nom de Sojourner Truth après une révélation mystique, dicte son autobiographie, parue en 1850, et prononce en 1851, à Akron, dans l'Ohio, le discours resté célèbre sous le titre « Ain't I a Woman ? ». Elle soutient l'Union pendant la guerre de Sécession, puis les affranchis, et meurt le 26 novembre 1883 à Battle Creek, dans le Michigan ; avec Harriet Tubman, elle reste l'une des Afro-Américaines les plus célèbres du XIXe siècle.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sojourner_Truth",
+                  "image": {
+                    "src": "assets/portraits/pan_us_truth.jpg",
+                    "legende": "Sojourner Truth, photographie du Randall Studio (vers 1870)",
+                    "auteur": "Randall Studio",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Sojourner_Truth,_1870_(cropped,_restored).jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_johnbrown",
+                  "axe": "Guerres et résistances",
+                  "date": 1800,
+                  "titre": "Naissance de John Brown",
+                  "description": "John Brown (1800-1859) est un abolitionniste américain, né à Torrington, dans le Connecticut, qui appelle à l'insurrection armée pour mettre fin à l'esclavage. Parti en 1855 dans le Kansas avec plusieurs de ses fils, il y tue avec ses hommes, en 1856, cinq colons esclavagistes à coups de sabre à Pottawatomie, puis s'empare le 16 octobre 1859 de l'arsenal fédéral de Harpers Ferry, en Virginie, pour déclencher un soulèvement d'esclaves qui n'a pas lieu. Condamné pour meurtre et trahison envers la Virginie, il est pendu le 2 décembre 1859 à Charles Town, martyr de l'abolition pour les uns, fanatique et terroriste pour les autres, qui lui reprochent le sang versé à Pottawatomie, et son raid compte parmi les causes de la guerre de Sécession.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/John_Brown",
+                  "image": {
+                    "src": "assets/portraits/pan_us_johnbrown.jpg",
+                    "legende": "John Brown, daguerréotype d'Augustus Washington (1846-1847)",
+                    "auteur": "Augustus Washington",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:1846-47_John_Brown_by_Augustus_Washington_(without_frame).jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_emerson",
+                  "axe": "Littérature et pensée",
+                  "date": 1803,
+                  "titre": "Naissance de Ralph Waldo Emerson",
+                  "description": "Ralph Waldo Emerson (1803-1882) est un essayiste, philosophe et poète américain, né à Boston, fils d'un pasteur unitarien, et chef de file du mouvement transcendantaliste. Ordonné pasteur en 1829, il démissionne en 1832 après un désaccord avec l'Église sur la communion, s'installe à Concord en 1835, publie anonymement Nature en 1836, prononce en 1837 le discours The American Scholar, qui invite les Américains à créer leur propre style, libéré de l'Europe, puis fait paraître en 1841 un premier recueil d'essais, où figure La Confiance en soi. Surnommé le « Sage de Concord », il influence Thoreau et Whitman, puis Nietzsche et William James, et meurt à Concord le 27 avril 1882, des suites d'une pneumonie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ralph_Waldo_Emerson",
+                  "biographie": "bio_emerson",
+                  "image": {
+                    "src": "assets/portraits/pan_us_emerson.jpg",
+                    "legende": "Ralph Waldo Emerson, daguerréotype de Southworth et Hawes (vers 1857)",
+                    "auteur": "Southworth & Hawes",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ralph_Waldo_Emerson_ca1857.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_hawthorne",
+                  "axe": "Littérature et pensée",
+                  "date": 1804,
+                  "titre": "Naissance de Nathaniel Hawthorne",
+                  "description": "Nathaniel Hawthorne (1804-1864) est un romancier et nouvelliste américain, né à Salem, dans le Massachusetts, au sein d'une famille puritaine dont un ancêtre fut juge lors du procès des sorcières de la ville. Après des emplois aux douanes de Boston et de Salem et un séjour en 1841 à la communauté utopique de Brook Farm, il connaît un succès immédiat avec La Lettre écarlate en 1850, publie La Maison aux sept pignons en 1851 et Le Faune de marbre en 1860, et devient consul à Liverpool en 1853, après l'élection à la présidence de son ami Franklin Pierce. Il meurt dans son sommeil le 19 mai 1864 à Plymouth, dans le New Hampshire, lors d'un voyage avec Pierce, et reste connu pour ses nouvelles, qu'il appelait des contes, et pour ses quatre grands romans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Nathaniel_Hawthorne",
+                  "image": {
+                    "src": "assets/portraits/pan_us_hawthorne.jpg",
+                    "legende": "Nathaniel Hawthorne, portrait peint par Charles Osgood (1840)",
+                    "auteur": "Charles Osgood",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Nathaniel_Hawthorne.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_lee",
+                  "axe": "Guerres et résistances",
+                  "date": 1807,
+                  "titre": "Naissance de Robert E. Lee",
+                  "description": "Robert Lee (1807-1870) est un général américain, né en Virginie, diplômé de West Point et officier du génie dans l'armée des États-Unis pendant plus de trente ans. Quand la Virginie fait sécession en avril 1861 pour rejoindre une Confédération formée afin de défendre l'esclavage, il refuse un commandement dans l'Union et prend en 1862 la tête de l'armée de Virginie du Nord, victorieuse à Chancellorsville mais battue à Gettysburg, puis, général en chef en janvier 1865, se rend à Grant à Appomattox le 9 avril 1865. Président du Washington College après la guerre, il meurt à Lexington en 1870 ; lui-même esclavagiste, il est érigé en héros par le mythe de la « Cause perdue », qui minimise le rôle de l'esclavage dans la guerre, et nombre de ses statues sont retirées depuis 2020.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Robert_E._Lee",
+                  "image": {
+                    "src": "assets/portraits/pan_us_lee.jpg",
+                    "legende": "Robert E. Lee, photographie de Julian Vannerson (mars 1864)",
+                    "auteur": "Julian Vannerson",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Robert_Edward_Lee.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_davis",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1808,
+                  "titre": "Naissance de Jefferson Davis",
+                  "description": "Jefferson Davis (1808-1889) est un planteur esclavagiste et homme d'État américain, né dans le Kentucky, président des États confédérés d'Amérique, formés en 1861 par des États du Sud qui font sécession pour défendre l'esclavage. Sénateur du Mississippi et secrétaire à la Guerre des États-Unis, il dirige la Confédération pendant la guerre de Sécession sans pouvoir empêcher la défaite de 1865. Capturé en mai 1865 et accusé de trahison, il est libéré après deux ans sans procès et meurt à La Nouvelle-Orléans en 1889, et sa mémoire, longtemps honorée dans le Sud, est contestée depuis les années 2010, plusieurs de ses statues étant retirées ou renversées, notamment à Richmond en 2020.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jefferson_Davis",
+                  "image": {
+                    "src": "assets/portraits/pan_us_davis.jpg",
+                    "legende": "Jefferson Davis, alors sénateur, photographie de Mathew Brady (1859)",
+                    "auteur": "Mathew Brady",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:President-Jefferson-Davis.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_lincoln",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1809,
+                  "titre": "Naissance d'Abraham Lincoln",
+                  "description": "Abraham Lincoln (1809-1865) est un homme d'État américain, né dans le Kentucky, avocat autodidacte, seizième président des États-Unis et premier issu du Parti républicain. Élu en 1860, ce qui provoque la sécession d'États esclavagistes du Sud, il dirige l'Union pendant la guerre de Sécession, suspend l'habeas corpus, ce qui permet des détentions sans procès, proclame en 1863 l'émancipation des esclaves des États rebelles et prononce le discours de Gettysburg. Réélu en 1864, il est mortellement blessé le 14 avril 1865 au théâtre Ford de Washington par John Wilkes Booth, partisan confédéré, cinq jours après la reddition du général Robert Lee, et meurt le lendemain, laissant le souvenir du président qui a préservé l'Union et ouvert la voie à l'abolition de l'esclavage.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Abraham_Lincoln",
+                  "biographie": "bio_lincoln",
+                  "image": {
+                    "src": "assets/portraits/pan_us_lincoln.jpg",
+                    "legende": "Abraham Lincoln, photographie d'Alexander Gardner (8 novembre 1863)",
+                    "auteur": "Alexander Gardner",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Abraham_Lincoln_O-77_matte_collodion_print.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_poe",
+                  "axe": "Littérature et pensée",
+                  "date": 1809,
+                  "titre": "Naissance d'Edgar Allan Poe",
+                  "description": "Edgar Allan Poe (1809-1849) est un poète, romancier, nouvelliste et critique littéraire américain, né à Boston, orphelin très jeune et élevé à Richmond, en Virginie. Après des débuts de poète en 1827, il est rédacteur de revues à Richmond, à Philadelphie puis à New York, publie les Contes du grotesque et de l'arabesque en 1839 et triomphe avec Le Corbeau en 1845, tandis que ses contes lui valent d'être considéré comme l'inventeur du roman policier. Il meurt à Baltimore le 7 octobre 1849, à quarante ans, dans des circonstances mystérieuses, attribuées à l'alcool, au choléra ou à une maladie du cœur, et il est d'abord reconnu en France, notamment par Baudelaire et Mallarmé, qui le traduisent.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Edgar_Allan_Poe",
+                  "image": {
+                    "src": "assets/portraits/pan_us_poe.jpg",
+                    "legende": "Edgar Allan Poe, daguerréotype dit « Annie » (juin 1849, restauré)",
+                    "auteur": "Auteur inconnu (restauration : Yann Forget et Adam Cuerden)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Edgar_Allan_Poe,_circa_1849,_restored,_squared_off.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_stowe",
+                  "axe": "Littérature et pensée",
+                  "date": 1811,
+                  "titre": "Naissance de Harriet Beecher Stowe",
+                  "description": "Harriet Beecher Stowe (1811-1896) est une romancière, journaliste et militante abolitionniste américaine, née à Litchfield, dans le Connecticut, septième des onze enfants d'un pasteur presbytérien. Mariée en 1836 à un pasteur, Calvin Stowe, elle s'engage avec lui contre l'esclavage et publie en 1852 La Case de l'oncle Tom, roman vendu à 300 000 exemplaires dès la première année, qui nourrit la conscience publique et attise les tensions entre le Nord et le Sud, avant Dred, en 1856, moins bien accueilli. Elle écrit plus de vingt livres, meurt à Hartford le 1er juillet 1896 et reste surtout connue pour La Case de l'oncle Tom, dont la représentation des Noirs est aujourd'hui critiquée pour ses stéréotypes.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Harriet_Beecher_Stowe",
+                  "image": {
+                    "src": "assets/portraits/pan_us_stowe.jpg",
+                    "legende": "Harriet Beecher Stowe, photographie (vers 1870)",
+                    "auteur": "Auteur non précisé",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Beecher-Stowe.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_stanton",
+                  "axe": "Guerres et résistances",
+                  "date": 1815,
+                  "titre": "Naissance d'Elizabeth Cady Stanton",
+                  "description": "Elizabeth Cady Stanton (1815-1902) est une féministe, abolitionniste et suffragiste américaine, née à Johnstown, dans l'État de New York, fille d'un juge influent. Indignée, à Londres, en 1840, par la mise à l'écart des femmes déléguées de la Convention internationale contre l'esclavage, elle organise avec Lucretia Mott la Convention de Seneca Falls, les 19 et 20 juillet 1848, où elle fait adopter une déclaration réclamant notamment le droit de vote des femmes, puis fonde en 1869 avec Susan Anthony la National Woman Suffrage Association. Elle publie en 1895 et 1898 The Woman's Bible, qui critique les passages misogynes du texte biblique, et meurt à New York le 26 octobre 1902, avant l'adoption par le Congrès, en 1919, de l'amendement sur le droit de vote des femmes.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Elizabeth_Cady_Stanton",
+                  "image": {
+                    "src": "assets/portraits/pan_us_stanton.jpg",
+                    "legende": "Elizabeth Cady Stanton, portrait peint par Anna Klumpke (1889)",
+                    "auteur": "Anna Elizabeth Klumpke",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Elizabeth_Cady_Stanton,_1889.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_thoreau",
+                  "axe": "Littérature et pensée",
+                  "date": 1817,
+                  "titre": "Naissance d'Henry David Thoreau",
+                  "description": "Henry David Thoreau (1817-1862) est un philosophe, naturaliste et poète américain, né à Concord, dans le Massachusetts, proche de Ralph Waldo Emerson, et auteur d'un Journal tenu pendant plus de vingt ans. De 1845 à 1847, il vit dans une cabane qu'il a bâtie au bord de l'étang de Walden, expérience dont il tire Walden ou la Vie dans les bois, publié en 1854, et, après une nuit en prison en 1846 pour avoir refusé de payer l'impôt à un État qui admet l'esclavage et fait la guerre au Mexique, il écrit l'essai connu sous le titre La Désobéissance civile, paru en 1849. Mort de la tuberculose à Concord en 1862, il a inspiré Gandhi et Martin Luther King dans leurs combats, ainsi que de nombreux écologistes.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Henry_David_Thoreau",
+                  "image": {
+                    "src": "assets/portraits/pan_us_thoreau.jpg",
+                    "legende": "Henry David Thoreau, daguerréotype de Benjamin D. Maxham (18 juin 1856, restauré)",
+                    "auteur": "Benjamin D. Maxham",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Benjamin_D._Maxham_-_Henry_David_Thoreau_-_Restored.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_douglass",
+                  "axe": "Guerres et résistances",
+                  "date": 1818,
+                  "titre": "Naissance de Frederick Douglass",
+                  "description": "Frederick Douglass (1818-1895) est un orateur, écrivain et abolitionniste américain, né esclave dans le comté de Talbot, au Maryland, en 1818 selon lui, peut-être en 1817. Évadé en 1838, il devient un conférencier réputé et publie en 1845 son autobiographie, Récit de la vie de Frederick Douglass, un esclave américain ; après près de deux ans de tournée en Grande-Bretagne et en Irlande, où des amis achètent sa liberté, il fonde en 1847 le journal The North Star, puis réclame pendant la guerre de Sécession l'enrôlement de soldats noirs dans l'armée de l'Union. Marshal du district de Columbia puis représentant des États-Unis en Haïti après la guerre, il est en 1872 le premier Noir désigné, à son insu, candidat à la vice-présidence, et il meurt à Washington le 20 février 1895.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Frederick_Douglass",
+                  "biographie": "bio_fdouglass",
+                  "image": {
+                    "src": "assets/portraits/pan_us_douglass.jpg",
+                    "legende": "Frederick Douglass, photographie de George Kendall Warren (vers 1879)",
+                    "auteur": "George Kendall Warren",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Frederick_Douglass_(circa_1879).jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_melville",
+                  "axe": "Littérature et pensée",
+                  "date": 1819,
+                  "titre": "Naissance de Herman Melville",
+                  "description": "Herman Melville (1819-1891) est un romancier, essayiste et poète américain, né à New York, qui s'engage à vingt ans comme simple marin sur un navire marchand, embarque ensuite sur le baleinier Acushnet et déserte aux îles Marquises. Ses premiers récits, Taïpi en 1846 et Omoo en 1847, inspirés de ses voyages, lui valent le succès, mais Moby-Dick, en 1851, ne trouve pas son public, et il se tourne alors vers les nouvelles, dont Bartleby et Benito Cereno, puis vers la poésie, tout en travaillant comme inspecteur des douanes à New York à partir de 1866. Presque oublié à sa mort, en 1891, il est redécouvert dans les années 1920 grâce à Moby-Dick, et sa nouvelle Billy Budd, marin, laissée inachevée, paraît en 1924.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Herman_Melville",
+                  "image": {
+                    "src": "assets/portraits/pan_us_melville.jpg",
+                    "legende": "Herman Melville, portrait peint par Joseph Oriel Eaton (mai 1870)",
+                    "auteur": "Joseph Oriel Eaton",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Herman_Melville_by_Joseph_O_Eaton.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_whitman",
+                  "axe": "Littérature et pensée",
+                  "date": 1819,
+                  "titre": "Naissance de Walt Whitman",
+                  "description": "Walt Whitman (1819-1892) est un poète et journaliste américain, né à West Hills, sur Long Island, dans l'État de New York, et l'un des pères du vers libre. Apprenti imprimeur, puis instituteur sur Long Island et journaliste à New York, démocrate hostile à l'esclavage, il publie à compte d'auteur en 1855 la première édition de Feuilles d'herbe, recueil considéré comme son chef-d'œuvre et qu'il remaniera toute sa vie, et il se rend auprès des soldats blessés comme infirmier pendant la guerre de Sécession. Il meurt d'une pneumonie le 26 mars 1892 à Camden, dans le New Jersey, après avoir achevé la révision de son recueil, et passe, avec Emily Dickinson, pour l'un des deux piliers de la poésie américaine du XIXe siècle.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Walt_Whitman",
+                  "image": {
+                    "src": "assets/portraits/pan_us_whitman.jpg",
+                    "legende": "Walt Whitman, photographie de George Collins Cox (1887)",
+                    "auteur": "George Collins Cox",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Walt_Whitman_-_George_Collins_Cox.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_anthony",
+                  "axe": "Guerres et résistances",
+                  "date": 1820,
+                  "titre": "Naissance de Susan B. Anthony",
+                  "description": "Susan Anthony (1820-1906) est une militante américaine des droits des femmes, née à Adams, dans le Massachusetts, et l'une des principales artisanes de la lutte pour le suffrage féminin. Après avoir milité contre l'esclavage et pour la tempérance, elle fonde en 1868 l'hebdomadaire The Revolution, cofonde en 1869 avec Elizabeth Cady Stanton la National Woman Suffrage Association, donne pendant plus de quarante-cinq ans de 75 à 100 conférences par an, et est arrêtée puis condamnée pour avoir voté à l'élection présidentielle de 1872, ce que la loi interdisait aux femmes. Morte à Rochester le 13 mars 1906, quatorze ans avant l'adoption du dix-neuvième amendement qui accorde le droit de vote aux femmes, elle a son profil sur une pièce américaine d'un dollar.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Susan_B._Anthony",
+                  "biographie": "bio_sbanthony",
+                  "image": {
+                    "src": "assets/portraits/pan_us_anthony.jpg",
+                    "legende": "Susan B. Anthony, photographie de 1890",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:SB_Anthony_from_RoRaWW.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_grant",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1822,
+                  "titre": "Naissance d'Ulysses S. Grant",
+                  "description": "Ulysses Grant (1822-1885) est un général et homme d'État américain, né dans l'Ohio, commandant en chef des armées de l'Union à partir de 1864, puis dix-huitième président des États-Unis. Vainqueur de Vicksburg en juillet 1863, il reçoit en avril 1865 la reddition du général confédéré Robert Lee à Appomattox, puis, président de 1869 à 1877, soutient le quinzième amendement, qui interdit de refuser le droit de vote en raison de la race, et fait voter des lois contre le Ku Klux Klan. Son second mandat est terni par des scandales de corruption et par la crise de 1873, et il meurt le 23 juillet 1885 d'un cancer de la gorge, après avoir achevé ses Mémoires, et si son bilan présidentiel reste contrasté, son engagement pour les droits civiques est reconnu.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ulysses_S._Grant",
+                  "biographie": "bio_grant",
+                  "image": {
+                    "src": "assets/portraits/pan_us_grant.jpg",
+                    "legende": "Ulysses S. Grant, photographie de la collection Brady-Handy (entre 1870 et 1880)",
+                    "auteur": "Collection Brady-Handy (Library of Congress)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ulysses_S._Grant_1870-1880.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_redcloud",
+                  "axe": "Guerres et résistances",
+                  "date": 1822,
+                  "titre": "Naissance de Red Cloud",
+                  "description": "Red Cloud (1822-1909) est un chef lakota oglala, appelé Nuage rouge en français, né près de l'actuelle North Platte, dans le Nebraska, et devenu chef par sa seule bravoure, sans être fils de chef. De 1866 à 1868, il dirige la guerre qui porte son nom, menée contre l'armée américaine pour obtenir l'abandon des forts de la piste Bozeman, qui traverse le territoire sioux, et il obtient cet abandon, ainsi que la garantie d'une vaste réserve, par le traité de Fort Laramie de 1868. Installé dans la réserve dès 1873, il choisit ensuite la paix et ne prend part ni à la guerre de 1876 ni aux affrontements de 1890 et 1891, alors que les Sioux doivent céder l'essentiel de leur territoire en 1876 et en 1889, et il meurt à 87 ans, le 10 décembre 1909, à Pine Ridge, dans le Dakota du Sud.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Red_Cloud",
+                  "image": {
+                    "src": "assets/portraits/pan_us_redcloud.jpg",
+                    "legende": "Red Cloud, photographie en buste (1880)",
+                    "auteur": "Auteur inconnu (Library of Congress)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Red_Cloud,_half-length_portrait,_facing_front_LCCN96513705.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_tubman",
+                  "axe": "Guerres et résistances",
+                  "date": 1822,
+                  "titre": "Naissance de Harriet Tubman",
+                  "description": "Harriet Tubman (vers 1822-1913) est une abolitionniste américaine, née esclave dans le Maryland sous le nom d'Araminta Ross, vers 1822 (selon les estimations, entre 1820 et 1825). Évadée en 1849, elle retourne souvent dans le Maryland et conduit, selon ses propres estimations, environ soixante-dix esclaves vers la liberté par le Chemin de fer clandestin, ce qui lui vaut le surnom de « Moïse noire » ; pendant la guerre de Sécession, elle sert l'armée de l'Union comme infirmière, espionne et guide, notamment lors du raid de la rivière Combahee, en 1863. Installée ensuite à Auburn, dans l'État de New York, elle milite pour les droits des Afro-Américains et des femmes, y meurt le 10 mars 1913, et le Harriet Tubman Day, instauré en 1990, honore sa mémoire.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Harriet_Tubman",
+                  "biographie": "bio_tubman",
+                  "image": {
+                    "src": "assets/portraits/pan_us_tubman.jpg",
+                    "legende": "Harriet Tubman, photographie d'Horatio Seymour Squyer (vers 1885)",
+                    "auteur": "Horatio Seymour Squyer",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Harriet_Tubman_(circa_1885).jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_stonewall",
+                  "axe": "Guerres et résistances",
+                  "date": 1824,
+                  "titre": "Naissance de Stonewall Jackson",
+                  "description": "Stonewall Jackson (1824-1863) est un général confédéré, né à Clarksburg, en Virginie (aujourd'hui Virginie-Occidentale), de son vrai nom Thomas Jonathan Jackson. Professeur à l'Académie militaire de Virginie, il rejoint en 1861 la Confédération, née de la sécession des États du Sud pour défendre l'esclavage, gagne son surnom à la première bataille de Bull Run, mène la campagne de la vallée de Shenandoah en 1862 et commande un corps d'armée sous Robert Lee. Blessé par erreur par ses propres soldats à Chancellorsville le 2 mai 1863, amputé du bras gauche, il meurt d'une pneumonie le 10 mai ; lui-même propriétaire d'esclaves, il reste vénéré dans le Sud, mais sa statue de Richmond, érigée en 1919, est retirée en 2020 après la mort de George Floyd.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Stonewall_Jackson",
+                  "image": {
+                    "src": "assets/portraits/pan_us_stonewall.jpg",
+                    "legende": "Stonewall Jackson, photographie prise le 26 avril 1863, une semaine avant sa blessure mortelle à Chancellorsville",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Stonewall_Jackson.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_geronimo",
+                  "axe": "Guerres et résistances",
+                  "date": 1829,
+                  "titre": "Naissance de Geronimo",
+                  "description": "Geronimo (1829-1909) est un guerrier et homme-médecine apache chiricahua, de la bande des Bedonkohe, né en 1829 selon la date généralement admise, près de la rivière Gila, dans l'actuel Nouveau-Mexique, alors sous domination mexicaine. Après le meurtre de sa mère, de sa femme et de ses trois enfants par l'armée mexicaine en 1858, il mène des raids de représailles au Mexique, puis résiste aux États-Unis après la fermeture de la réserve chiricahua en 1876 et le transfert de son peuple à San Carlos, jusqu'à sa reddition au général Nelson Miles, le 4 septembre 1886. Gardé prisonnier de guerre en Floride puis à Fort Sill, en Oklahoma, il dicte ses mémoires en 1906, y meurt de pneumonie le 17 février 1909, et son nom reste un symbole de la résistance apache.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Geronimo",
+                  "image": {
+                    "src": "assets/portraits/pan_us_geronimo.jpg",
+                    "legende": "Geronimo avec son arc et sa flèche, photographie d'avant 1909",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Geronimo_agn_1913.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_dickinson",
+                  "axe": "Littérature et pensée",
+                  "date": 1830,
+                  "titre": "Naissance d'Emily Dickinson",
+                  "description": "Emily Dickinson (1830-1886) est une poétesse américaine, née dans une famille aisée d'Amherst, dans le Massachusetts, où elle vit presque recluse jusqu'à sa mort, connue pour ses vêtements blancs et ses amitiés surtout épistolaires. Elle écrit près de mille huit cents poèmes, aux vers très courts, sans titres et à la ponctuation inhabituelle, qui parlent surtout de la mort et de l'immortalité, mais moins d'une douzaine sont publiés de son vivant, et le plus souvent modifiés par les éditeurs. Sa sœur Lavinia découvre ses manuscrits après sa mort, un premier recueil, fortement remanié, paraît en 1890, et il faut attendre 1955 pour une édition complète et presque intacte, avant que la critique ne la reconnaisse comme une poétesse américaine majeure.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Emily_Dickinson",
+                  "image": {
+                    "src": "assets/portraits/pan_us_dickinson.jpg",
+                    "legende": "Emily Dickinson, daguerréotype de 1846-1847 (Amherst College), le seul portrait photographique reconnu de la poétesse",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Black-white_photograph_of_Emily_Dickinson2.png"
+                  }
+                },
+                {
+                  "id": "pan_us_sittingbull",
+                  "axe": "Guerres et résistances",
+                  "date": 1831,
+                  "titre": "Naissance de Sitting Bull",
+                  "description": "Sitting Bull (vers 1831-1890) est un chef et guide spirituel des Lakotas Hunkpapas, né à une date incertaine, sans doute dans l'actuel Dakota du Sud, et l'une des principales figures de la résistance amérindienne à l'armée américaine. Défenseur des terres lakotas, il réunit en 1876 Lakotas et Cheyennes en une vaste coalition dont les guerriers écrasent, le 25 juin, à Little Bighorn, le détachement du général Custer, puis il se réfugie au Canada avant de se rendre à Fort Buford en juillet 1881. Craignant qu'il ne quitte la réserve de Standing Rock avec les adeptes de la Danse des esprits, l'agent James McLaughlin le fait arrêter, et il est tué lors de cette arrestation, le 15 décembre 1890, par des policiers amérindiens.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sitting_Bull",
+                  "biographie": "bio_sittingbull",
+                  "image": {
+                    "src": "assets/portraits/pan_us_sittingbull.jpg",
+                    "legende": "Sitting Bull, photographie de David Francis Barry (1885)",
+                    "auteur": "David Francis Barry",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Sitting_Bull_1885_uncropped.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_whistler",
+                  "axe": "Beaux-arts",
+                  "date": 1834,
+                  "titre": "Naissance de James Abbott McNeill Whistler",
+                  "description": "James Abbott McNeill Whistler (1834-1903) est un peintre et graveur américain, né à Lowell, dans le Massachusetts, formé à Paris et installé à Londres à partir de 1859. Défenseur de l'art pour l'art, il donne à ses tableaux des titres empruntés à la musique, comme ses Nocturnes ou l'Arrangement en gris et noir, portrait de sa mère acheté par l'État français en 1891, et poursuit en 1878 le critique John Ruskin pour diffamation, procès gagné mais qui ne lui rapporte qu'un sou de dommages-intérêts. Contraint de déclarer faillite en 1879, il continue sa carrière jusqu'à sa mort à Londres, le 17 juillet 1903, et passe pour un précurseur de l'art abstrait et pour l'un des modèles du peintre Elstir, personnage de Marcel Proust.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/James_Abbott_McNeill_Whistler",
+                  "image": {
+                    "src": "assets/portraits/pan_us_whistler.jpg",
+                    "legende": "James McNeill Whistler, autoportrait « Arrangement en gris » (vers 1872)",
+                    "auteur": "James McNeill Whistler",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Whistler_Selbstportr%C3%A4t.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_twain",
+                  "axe": "Littérature et pensée",
+                  "date": 1835,
+                  "titre": "Naissance de Mark Twain",
+                  "description": "Mark Twain (1835-1910) est un écrivain et humoriste américain, de son vrai nom Samuel Langhorne Clemens, né à Florida, dans le Missouri, d'abord typographe, puis pilote sur le Mississippi, d'où vient son pseudonyme, et journaliste dans l'Ouest. Auteur dès 1869 du Voyage des innocents, il s'installe à Hartford, dans le Connecticut, après son mariage avec Olivia Langdon en 1870, et publie Les Aventures de Tom Sawyer en 1876, puis sa suite, Les Aventures de Huckleberry Finn, en 1884. Assombri par des ennuis d'argent et par la mort de sa femme et de deux de ses filles, il meurt d'une crise cardiaque à Redding, dans le Connecticut, le 21 avril 1910, au lendemain du passage de la comète de Halley, avec laquelle il avait prédit son départ.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mark_Twain",
+                  "biographie": "bio_marktwain",
+                  "image": {
+                    "src": "assets/portraits/pan_us_twain.jpg",
+                    "legende": "Mark Twain, photographie de Napoleon Sarony (1895)",
+                    "auteur": "Napoleon Sarony",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mark_Twain_Sarony.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_homer",
+                  "axe": "Beaux-arts",
+                  "date": 1836,
+                  "titre": "Naissance de Winslow Homer",
+                  "description": "Winslow Homer (1836-1910) est un peintre, graveur et illustrateur américain, né à Boston, en grande partie autodidacte, réputé pour ses marines et considéré comme l'une des figures prééminentes du réalisme américain. Apprenti chez un lithographe de Boston, devenu illustrateur, il est envoyé en 1861 par Harper's Weekly sur le front de Virginie, séjourne dix mois à Paris à partir de 1866, puis s'installe en 1883 à Prouts Neck, dans le Maine, où il peint à l'huile et à l'aquarelle ses marines. Il y vit en solitaire et meurt dans son atelier le 29 septembre 1910, à 74 ans, sans avoir eu d'élève mais en exerçant une influence sensible sur la peinture et l'illustration américaines.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Winslow_Homer",
+                  "image": {
+                    "src": "assets/portraits/pan_us_homer.jpg",
+                    "legende": "Winslow Homer, photographie de Napoleon Sarony (1880)",
+                    "auteur": "Napoleon Sarony",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Winslow_Homer_by_Sarony.jpeg"
+                  }
+                },
+                {
+                  "id": "pan_us_chiefjoseph",
+                  "axe": "Guerres et résistances",
+                  "date": 1840,
+                  "titre": "Naissance du chef Joseph",
+                  "description": "Chef Joseph (1840-1904) est un chef amérindien nez-percé, né dans la vallée de la Wallowa, dans l'actuel Oregon, qui dirige sa bande depuis la mort de son père, en 1871. En 1877, face à l'ordre de quitter leurs terres pour une réserve, il mène avec d'autres chefs la résistance de son peuple, puis une retraite de plus de 2 000 kilomètres vers le Canada, avec environ 750 personnes poursuivies par l'armée, avant de se rendre le 5 octobre en déclarant : « je ne combattrai plus jamais ». Les survivants sont envoyés dans le Territoire indien, l'actuel Oklahoma, où beaucoup meurent, et Joseph, dont les démarches pour retourner dans la vallée de la Wallowa échouent, meurt le 21 septembre 1904 sur la réserve de Colville, de tristesse selon le médecin.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Chef_Joseph",
+                  "image": {
+                    "src": "assets/portraits/pan_us_chiefjoseph.jpg",
+                    "legende": "Chef Joseph, photographie de novembre 1877 prise à Bismarck",
+                    "auteur": "Auteur incertain (probablement Orlando S. Goff)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Chief_Joseph-1877.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_crazyhorse",
+                  "axe": "Guerres et résistances",
+                  "date": 1840,
+                  "titre": "Naissance de Crazy Horse",
+                  "description": "Crazy Horse (vers 1840-1877) est un chef lakota oglala, né en un lieu incertain de l'actuel Dakota du Sud, qui résiste avec Sitting Bull aux militaires américains. Après avoir attiré en 1866, pendant la guerre de Red Cloud, le capitaine Fetterman et ses hommes dans une embuscade, il écrase avec Gall le détachement de Custer à Little Bighorn en juin 1876, puis se rend le 6 mai 1877, avec 889 Oglalas affamés, à Fort Robinson. Il y est mortellement blessé d'un coup de baïonnette le 5 septembre 1877, alors qu'on tente de l'emprisonner, dans des circonstances controversées ; enterré en un lieu tenu secret, sans photographie authentique connue, il reste un symbole de la résistance amérindienne, que célèbre depuis 1948 le monument de Crazy Horse, toujours inachevé.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Crazy_Horse_(chef_am%C3%A9rindien)",
+                  "image": {
+                    "src": "assets/portraits/pan_us_crazyhorse.jpg",
+                    "legende": "Crazy Horse (identification contestée), photographie de 1877 : aucun portrait authentique n'est connu",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Crazy_Horse_1877.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_henryjames",
+                  "axe": "Littérature et pensée",
+                  "date": 1843,
+                  "titre": "Naissance d'Henry James",
+                  "description": "Henry James (1843-1916) est un écrivain américain, né à New York, frère cadet du philosophe William James, et l'une des grandes figures du réalisme littéraire du XIXe siècle. Installé à Londres à partir de 1876, il publie des romans qui mettent en scène la rencontre de l'Amérique et de l'Europe, comme L'Américain en 1877 et Portrait de femme en 1881, ainsi que 112 nouvelles, dont Daisy Miller, Les Papiers d'Aspern et Le Tour d'écrou, publié en 1898. Déçu par la neutralité initiale des États-Unis dans la Première Guerre mondiale, il obtient la nationalité britannique en 1915 et meurt à Londres le 28 février 1916, laissant une œuvre dont l'usage du point de vue narratif et du monologue intérieur préfigure la littérature moderne du XXe siècle.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Henry_James",
+                  "image": {
+                    "src": "assets/portraits/pan_us_henryjames.jpg",
+                    "legende": "Henry James, photographie de profil (1905)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:HenryJamesPhotograph.png"
+                  }
+                },
+                {
+                  "id": "pan_us_cassatt",
+                  "axe": "Beaux-arts",
+                  "date": 1844,
+                  "titre": "Naissance de Mary Cassatt",
+                  "description": "Mary Cassatt (1844-1926) est une artiste peintre et graveuse américaine, née à Pittsburgh, en Pennsylvanie, installée principalement en France à partir des années 1870. Proche d'Edgar Degas, qui l'encourage à exposer avec les impressionnistes en 1879, elle peint surtout des portraits de femmes et d'enfants et des scènes de la vie quotidienne, et, marquée en 1890 par une exposition d'estampes japonaises, se consacre aussi à la gravure. Elle contribue à faire connaître l'impressionnisme auprès des collectionneurs américains, cesse de peindre en 1914 à cause de la cataracte et du diabète, devient aveugle en 1921 et meurt le 14 juin 1926 au Mesnil-Théribus, dans l'Oise, où elle est enterrée.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mary_Cassatt",
+                  "image": {
+                    "src": "assets/portraits/pan_us_cassatt.jpg",
+                    "legende": "Mary Cassatt, autoportrait (vers 1880)",
+                    "auteur": "Mary Cassatt",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mary_Stevenson_Cassatt_-_Mary_Cassatt_Self-Portrait_-_Google_Art_Project.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_edison",
+                  "axe": "Sciences et découvertes",
+                  "date": 1847,
+                  "titre": "Naissance de Thomas Edison",
+                  "description": "Thomas Edison (1847-1931) est un inventeur et industriel américain, né à Milan, dans l'Ohio, titulaire de 1 093 brevets américains et à l'origine de la General Electric. Ancien télégraphiste, il crée à Menlo Park, dans le New Jersey, un laboratoire de recherche industrielle, où son équipe met au point le phonographe en 1877 et perfectionne la lampe à incandescence en 1879, puis il fait construire à West Orange, en 1893, le Black Maria, premier studio de cinéma. Partisan du courant continu, il combat le courant alternatif de Nikola Tesla et de George Westinghouse par une campagne d'électrocutions publiques d'animaux, qui conduit à la chaise électrique, et il meurt à West Orange le 18 octobre 1931.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Thomas_Edison",
+                  "biographie": "bio_edison",
+                  "image": {
+                    "src": "assets/portraits/pan_us_edison.jpg",
+                    "legende": "Thomas Edison, photographie de Louis Bachrach (vers 1922)",
+                    "auteur": "Louis Bachrach (restauration : Michel Vuijlsteke)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Thomas_Edison2.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_wilson",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1856,
+                  "titre": "Naissance de Woodrow Wilson",
+                  "description": "Woodrow Wilson (1856-1924) est un universitaire et homme d'État américain, né à Staunton, en Virginie, vingt-huitième président des États-Unis de 1913 à 1921. Démocrate progressiste, il fait instaurer l'impôt fédéral sur le revenu et la Réserve fédérale, engage le pays dans la Première Guerre mondiale en avril 1917, puis propose en janvier 1918 les Quatorze points et une Société des Nations, qui lui vaut le prix Nobel de la paix en 1919, mais à laquelle les États-Unis n'adhèrent jamais. Frappé d'une attaque cérébrale en octobre 1919, il meurt à Washington en 1924, et on lui reproche d'avoir approuvé la ségrégation raciale dans l'administration fédérale, où des fonctionnaires noirs sont renvoyés, ce qui nourrit aujourd'hui une réévaluation de son héritage.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Woodrow_Wilson",
+                  "image": {
+                    "src": "assets/portraits/pan_us_wilson.jpg",
+                    "legende": "Woodrow Wilson, photographie de Harris & Ewing (1919)",
+                    "auteur": "Harris & Ewing",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Thomas_Woodrow_Wilson,_Harris_%26_Ewing_bw_photo_portrait,_1919.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_troosevelt",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1858,
+                  "titre": "Naissance de Theodore Roosevelt",
+                  "description": "Theodore Roosevelt (1858-1919) est un homme d'État américain, né à New York, vingt-sixième président des États-Unis de 1901 à 1909, devenu à 42 ans le plus jeune président investi après l'assassinat de William McKinley. Républicain progressiste, il poursuit les trusts, crée plusieurs parcs nationaux, reçoit en 1906 le prix Nobel de la paix pour sa médiation dans la guerre russo-japonaise et lance la construction du canal de Panama, après avoir soutenu en 1903 la sécession du Panama d'avec la Colombie. Il meurt dans son sommeil le 6 janvier 1919, et son effigie orne le mont Rushmore, mais sa politique du « gros bâton » en Amérique latine est qualifiée d'impérialiste et sa statue équestre devant le Musée américain d'histoire naturelle, jugée raciste, a été retirée en 2022.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Theodore_Roosevelt",
+                  "image": {
+                    "src": "assets/portraits/pan_us_troosevelt.jpg",
+                    "legende": "Theodore Roosevelt, photographie des frères Pach (1904)",
+                    "auteur": "Pach Brothers (restauration : Adam Cuerden)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Theodore_Roosevelt_by_the_Pach_Bros.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_carver",
+                  "axe": "Sciences et découvertes",
+                  "date": 1864,
+                  "titre": "Naissance de George Washington Carver",
+                  "description": "George Washington Carver (vers 1864-1943) est un botaniste, agronome et inventeur américain, né esclave près de Diamond Grove, dans le Missouri, à une date incertaine, entre 1861 et 1865 selon les sources. Engagé en 1896 par l'Institut de Tuskegee, en Alabama, il y dirige la recherche et conseille les fermiers du Sud, préconisant, pour restaurer les sols épuisés par le coton, la culture de légumineuses comme l'arachide, qui enrichissent la terre en azote. Décoré en 1923 de la médaille Spingarn, il meurt à Tuskegee le 5 janvier 1943 des suites d'une chute dans un escalier, et reste un symbole pour les organisations qui luttent contre la ségrégation, même si la légende lui attribue à tort l'invention du beurre de cacahuètes.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/George_Washington_Carver",
+                  "image": {
+                    "src": "assets/portraits/pan_us_carver.jpg",
+                    "legende": "George Washington Carver, photographie (vers 1910, restaurée)",
+                    "auteur": "Auteur non précisé (restauration : Adam Cuerden)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:George_Washington_Carver_c1910_-_Restoration.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_wilbur",
+                  "axe": "Sciences et découvertes",
+                  "date": 1867,
+                  "titre": "Naissance de Wilbur Wright",
+                  "description": "Wilbur Wright (1867-1912) est un ingénieur et pionnier de l'aviation américain, né à Millville, dans l'Indiana, frère aîné d'Orville, avec qui il tient un atelier de bicyclettes à Dayton, dans l'Ohio. Avec Orville, il met au point en 1902 le pilotage sur trois axes, puis réussit à Kitty Hawk, en Caroline du Nord, les premiers vols motorisés, le 17 décembre 1903, avant de s'illustrer en 1908 près du Mans, où ses records de durée imposent en France la maîtrise de son pilotage. Il meurt de la typhoïde à Dayton le 30 mai 1912, après avoir consacré avec son frère son énergie à protéger leur invention par le secret et les luttes de brevets, alors que leur appareil était devenu obsolète dès 1910.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Wilbur_Wright",
+                  "image": {
+                    "src": "assets/portraits/pan_us_wilbur.jpg",
+                    "legende": "Wilbur Wright, photographie de 1905",
+                    "auteur": "Orville et Wilbur Wright",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Wilbur_Wright.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_wright",
+                  "axe": "Beaux-arts",
+                  "date": 1867,
+                  "titre": "Naissance de Frank Lloyd Wright",
+                  "description": "Frank Lloyd Wright (1867-1959) est un architecte américain, né à Richland Center, dans le Wisconsin, auteur de plus de quatre cents projets réalisés, surtout des maisons. Formé à Chicago, notamment chez Adler et Sullivan, il devient à partir de 1897 le principal protagoniste du style Prairie, aux maisons basses et aux espaces ouverts, puis imagine les maisons usoniennes, petites habitations en harmonie avec leur site, et la Maison sur la cascade, en 1935. Il meurt à Phoenix, en Arizona, le 9 avril 1959, après une vie privée agitée, marquée en 1909 par le scandale de son départ en Europe avec la femme d'un client, et l'Institut des architectes américains le reconnaît en 1991 comme le plus grand architecte américain de l'histoire.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Frank_Lloyd_Wright",
+                  "biographie": "bio_franklloydwright",
+                  "image": {
+                    "src": "assets/portraits/pan_us_wright.jpg",
+                    "legende": "Frank Lloyd Wright, photographie (vers 1926)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Frank_Lloyd_Wright_LC-USZ62-36384.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_dubois",
+                  "axe": "Littérature et pensée",
+                  "date": 1868,
+                  "titre": "Naissance de W. E. B. Du Bois",
+                  "description": "William Edward Burghardt Du Bois (1868-1963) est un sociologue, historien et militant américain, né à Great Barrington, dans le Massachusetts, premier Afro-Américain docteur de l'université Harvard. Auteur des Âmes du peuple noir en 1903, il combat le compromis d'Atlanta, qui fait accepter aux Noirs du Sud la domination politique blanche, cofonde le Niagara Movement en 1905 puis la NAACP en 1909, dirige de 1910 à 1933 la revue de celle-ci, The Crisis, et publie en 1935 Black Reconstruction in America. Visé par le maccarthysme pour ses sympathies socialistes, il est jugé en 1951, sans être condamné, mais perd son passeport pendant huit ans, puis s'installe au Ghana en 1961 et y meurt, à Accra, le 27 août 1963, la veille de la Marche sur Washington.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/W._E._B._Du_Bois",
+                  "image": {
+                    "src": "assets/portraits/pan_us_dubois.jpg",
+                    "legende": "W. E. B. Du Bois, photographie de James E. Purdy (1907)",
+                    "auteur": "James E. Purdy",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:W.E.B._Du_Bois_by_James_E._Purdy,_1907.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_orville",
+                  "axe": "Sciences et découvertes",
+                  "date": 1871,
+                  "titre": "Naissance d'Orville Wright",
+                  "description": "Orville Wright (1871-1948) est un ingénieur et pionnier de l'aviation américain, né à Dayton, dans l'Ohio, cadet de Wilbur, avec qui il tient un atelier de bicyclettes. Le 17 décembre 1903, à Kitty Hawk, en Caroline du Nord, il pilote le premier des vols motorisés des deux frères, effectue en 1904 le premier vol en circuit fermé, puis, en 1908, est gravement blessé à Fort Myer, en Virginie, dans l'écrasement de son appareil, qui tue son passager, Thomas Selfridge. Resté seul après la mort de Wilbur en 1912, il vend en 1915 la Wright Company à des investisseurs de New York et meurt à Dayton le 30 janvier 1948, tandis que la priorité des deux frères reste parfois contestée au profit de pionniers comme Gustave Whitehead.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Orville_Wright",
+                  "image": {
+                    "src": "assets/portraits/pan_us_orville.jpg",
+                    "legende": "Orville Wright, photographie de 1905",
+                    "auteur": "Orville et Wilbur Wright",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Orville_Wright_1905-crop.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_hoover",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1874,
+                  "titre": "Naissance de Herbert Hoover",
+                  "description": "Herbert Hoover (1874-1964) est un ingénieur des mines et homme d'État américain, né à West Branch, dans l'Iowa, connu pour son action humanitaire en Belgique occupée pendant la Première Guerre mondiale. Secrétaire au Commerce de 1921 à 1928, il est élu 31e président des États-Unis en 1928, mais la Grande Dépression, qui fait passer le nombre de chômeurs de 6 à 13 millions en deux ans, domine son mandat et le fait battre par Franklin Roosevelt en 1932. On lui reproche d'avoir été incapable d'enrayer la crise et d'avoir entériné, en juillet 1932, la dispersion par l'armée des anciens combattants de la Bonus Army, venus réclamer leur prime, puis il passe plus de trente ans à restaurer son image avant de mourir à New York en 1964.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Herbert_Hoover",
+                  "image": {
+                    "src": "assets/portraits/pan_us_hoover.jpg",
+                    "legende": "Herbert Hoover, photographie d'Underwood & Underwood (1928)",
+                    "auteur": "Underwood & Underwood",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:President_Hoover_portrait.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_london",
+                  "axe": "Littérature et pensée",
+                  "date": 1876,
+                  "titre": "Naissance de Jack London",
+                  "description": "Jack London (1876-1916) est un écrivain américain et un militant socialiste, né John Griffith Chaney à San Francisco, dont les thèmes de prédilection sont l'aventure et la nature sauvage. Pilleur d'huîtres, marin, vagabond puis chercheur d'or au Klondike en 1897, il devient célèbre avec L'Appel de la forêt en 1903 et Croc-Blanc en 1906, entreprend en 1907 une croisière dans le Pacifique à bord de son navire, le Snark, et publie encore Le Talon de fer en 1908 et Martin Eden en 1909. Il meurt à quarante ans, le 22 novembre 1916, à Glen Ellen, en Californie, des suites d'une urémie, laissant plus de deux cents nouvelles, des romans animaliers toujours très lus et un reportage de 1904 sur la Corée que l'on critique pour ses préjugés racistes.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jack_London",
+                  "image": {
+                    "src": "assets/portraits/pan_us_london.jpg",
+                    "legende": "Jack London jeune, photographie publiée par L. C. Page and Company (1903)",
+                    "auteur": "L. C. Page and Company",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jack_London_young.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_keller",
+                  "axe": "Littérature et pensée",
+                  "date": 1880,
+                  "titre": "Naissance de Helen Keller",
+                  "description": "Helen Keller (1880-1968) est une auteure, conférencière et militante politique américaine, née à Tuscumbia, en Alabama, et devenue sourde et aveugle à un an et demi. Grâce à sa préceptrice Anne Sullivan, qui lui fait comprendre le mot « water » en l'écrivant dans sa main sous l'eau d'un puits, elle apprend à lire, à écrire et à parler, publie en 1903 son autobiographie, Sourde, muette, aveugle : histoire de ma vie, et devient en 1904 la première personne sourde et aveugle diplômée de l'université. Militante socialiste, pacifiste et féministe, membre des Industrial Workers of the World, elle fonde en 1915 l'organisation Helen Keller International et meurt en 1968 à Easton, dans le Connecticut ; sa vie a inspiré la pièce puis le film Miracle en Alabama.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Helen_Keller",
+                  "image": {
+                    "src": "assets/portraits/pan_us_keller.jpg",
+                    "legende": "Helen Keller, photographie de Bain News Service (1913)",
+                    "auteur": "Bain News Service",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Helen_Keller25.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_macarthur",
+                  "axe": "Guerres et résistances",
+                  "date": 1880,
+                  "titre": "Naissance de Douglas MacArthur",
+                  "description": "Douglas MacArthur (1880-1964) est un général américain, né à Little Rock, en Arkansas, chef d'état-major de l'armée à partir de 1930, qui joue un rôle de premier plan sur le théâtre Pacifique de la Seconde Guerre mondiale. Responsable de la défense des Philippines en 1941, il gagne l'Australie en 1942 en promettant de revenir, commande les forces alliées du Pacifique sud-ouest, débarque à Leyte en 1944, reçoit la reddition japonaise le 2 septembre 1945, puis dirige l'occupation du Japon jusqu'en 1951, où il impose de profondes réformes. Chef des forces des Nations unies en Corée dès 1950, il est relevé de son commandement par le président Truman le 11 avril 1951, après des désaccords publics sur la conduite de la guerre, et meurt en 1964, figure toujours controversée.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Douglas_MacArthur",
+                  "image": {
+                    "src": "assets/portraits/pan_us_macarthur.jpg",
+                    "legende": "Douglas MacArthur, photographie du 2 août 1945, probablement à Manille",
+                    "auteur": "Auteur non crédité (armée des États-Unis)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Douglas_MacArthur_smoking_his_corncob_pipe.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_marshall",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1880,
+                  "titre": "Naissance de George Marshall",
+                  "description": "George Marshall (1880-1959) est un général et homme d'État américain, né à Uniontown, en Pennsylvanie, formé au Virginia Military Institute, devenu chef d'état-major de l'armée de terre en 1939. Principal conseiller militaire de Franklin Roosevelt, il planifie le débarquement de Normandie sans en recevoir le commandement, devient en décembre 1944 le premier promu General of the Army, et Winston Churchill l'appelle « l'organisateur de la victoire ». Après une mission de médiation en Chine, il devient secrétaire d'État en 1947 et donne son nom au plan Marshall d'aide à la reconstruction de l'Europe, qui lui vaut en 1953 le prix Nobel de la paix, premier décerné à un chef militaire, et il meurt à Washington en 1959.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/George_C._Marshall",
+                  "image": {
+                    "src": "assets/portraits/pan_us_marshall.jpg",
+                    "legende": "George C. Marshall, portrait officiel de chef d'état-major de l'armée de terre (17 janvier 1940)",
+                    "auteur": "Marshall Foundation Archives",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Army_Chief_of_Staff_General_George_C._Marshall_official_Portrait.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_fdroosevelt",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1882,
+                  "titre": "Naissance de Franklin Delano Roosevelt",
+                  "description": "Franklin Delano Roosevelt (1882-1945) est un homme d'État américain, démocrate, né à Hyde Park, dans l'État de New York, 32e président des États-Unis de 1933 à sa mort et seul président élu quatre fois. Il lutte contre la Grande Dépression par le New Deal, qui réforme les banques et fonde la Social Security, puis, après l'attaque de Pearl Harbor en décembre 1941, conduit les États-Unis dans la Seconde Guerre mondiale et inspire la création de l'ONU. On lui reproche surtout le décret du 19 février 1942, qui conduit à interner dans des camps plus de 110 000 personnes d'origine japonaise, en majorité citoyens américains, et il meurt le 12 avril 1945 à Warm Springs, en Géorgie, peu après le début de son quatrième mandat.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Franklin_Delano_Roosevelt",
+                  "biographie": "bio_fdroosevelt",
+                  "image": {
+                    "src": "assets/portraits/pan_us_fdroosevelt.jpg",
+                    "legende": "Franklin D. Roosevelt, portrait de la campagne présidentielle de 1944, par Leon Perskie (21 août 1944)",
+                    "auteur": "FDR Presidential Library & Museum",
+                    "licence": "CC BY 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:1944_Official_Campaign_Portrait_session_(8145288140).jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_hopper",
+                  "axe": "Beaux-arts",
+                  "date": 1882,
+                  "titre": "Naissance d'Edward Hopper",
+                  "description": "Edward Hopper (1882-1967) est un peintre et graveur américain, né à Nyack, dans l'État de New York, considéré comme l'un des représentants du réalisme américain pour ses scènes de la vie quotidienne des classes moyennes. Après des séjours à Paris entre 1906 et 1910 et des années comme illustrateur, il s'impose avec la Maison au bord de la voie ferrée, en 1925, entrée au Museum of Modern Art dès 1930, puis avec Noctambules, en 1942, son œuvre la plus connue. Peintre de la solitude et de la mélancolie, il meurt le 15 mai 1967 dans son atelier près de Washington Square, à New York, et ses toiles ont inspiré cinéastes, écrivains et musiciens, dont Alfred Hitchcock pour la maison de Psychose.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Edward_Hopper",
+                  "image": {
+                    "src": "assets/portraits/pan_us_hopper.jpg",
+                    "legende": "Edward Hopper, photographie de Harris & Ewing (1937)",
+                    "auteur": "Harris & Ewing",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Edward_Hopper,_New_York_artist_LCCN2016871478_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_eleanor",
+                  "axe": "Guerres et résistances",
+                  "date": 1884,
+                  "titre": "Naissance d'Eleanor Roosevelt",
+                  "description": "Eleanor Roosevelt (1884-1962) est une figure politique, diplomate et militante américaine, née à New York, nièce du président Theodore Roosevelt et épouse de Franklin Roosevelt, dont elle est la Première dame des États-Unis de 1933 à 1945. Féministe engagée, elle défend les droits civiques et est la première à donner à ce rôle une dimension politique et médiatique, par ses conférences de presse, ses émissions de radio et sa chronique My Day, tenue de 1935 à sa mort. Veuve en 1945, elle est déléguée des États-Unis à l'ONU jusqu'en 1952 et préside la commission chargée de rédiger la Déclaration universelle des droits de l'homme, adoptée en 1948 ; morte le 7 novembre 1962, elle reçoit en 1968, à titre posthume, le prix des droits de l'homme des Nations unies.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Eleanor_Roosevelt",
+                  "image": {
+                    "src": "assets/portraits/pan_us_eleanor.jpg",
+                    "legende": "Eleanor Roosevelt aux Nations unies (vers 1946-1947)",
+                    "auteur": "FDR Presidential Library & Museum",
+                    "licence": "CC BY 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Eleanor_Roosevelt_at_the_United_Nations,_circa_1946-1947_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_truman",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1884,
+                  "titre": "Naissance de Harry Truman",
+                  "description": "Harry Truman (1884-1972) est un homme d'État américain, démocrate, né à Lamar, dans le Missouri, devenu 33e président des États-Unis à la mort de Franklin Roosevelt, le 12 avril 1945, et resté en fonction jusqu'en janvier 1953. Il autorise en août 1945 les bombardements atomiques d'Hiroshima et de Nagasaki, dont la justification reste débattue, puis énonce en 1947 la doctrine Truman d'endiguement du communisme, fait voter le plan Marshall et engage les États-Unis dans la guerre de Corée en 1950. Très impopulaire à son départ, à cause de l'impasse en Corée et de la corruption de son administration, il meurt à Kansas City en 1972, après que les historiens ont commencé à réhabiliter en partie sa présidence.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Harry_S._Truman",
+                  "image": {
+                    "src": "assets/portraits/pan_us_truman.jpg",
+                    "legende": "Harry S. Truman, portrait photographique (vers 1947)",
+                    "auteur": "National Archives and Records Administration",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:TRUMAN_58-766-06_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_patton",
+                  "axe": "Guerres et résistances",
+                  "date": 1885,
+                  "titre": "Naissance de George Patton",
+                  "description": "George Patton (1885-1945) est un général américain, né à San Marino, en Californie, dans une famille de tradition militaire, partisan de la guerre mécanisée. Il dirige le débarquement au Maroc en 1942, puis la 7e armée en Sicile, où il gifle en août 1943 deux soldats hospitalisés souffrant de troubles liés aux combats, ce qui provoque une controverse et l'oblige à présenter des excuses, avant de mener la 3e armée de la Normandie à la Lorraine en 1944 et de secourir Bastogne. Victime d'un accident de la route le 9 décembre 1945, en Allemagne occupée, il meurt à l'hôpital de Heidelberg le 21 décembre, et le film Patton, sorti en 1970, a contribué à faire de lui un héros populaire américain.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/George_Patton",
+                  "biographie": "bio_patton",
+                  "image": {
+                    "src": "assets/portraits/pan_us_patton.jpg",
+                    "legende": "George Patton, portrait photographique de Robert F. Cranston (1945, National Portrait Gallery)",
+                    "auteur": "Robert F. Cranston",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:General_George_Patton_by_Robert_F._Cranston,_Lee_Elkins,_and_Harry_Warnecke,_1945,_color_carbro_print,_from_the_National_Portrait_Gallery_-_NPG-NPG_95_404Patton-000002.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_okeeffe",
+                  "axe": "Beaux-arts",
+                  "date": 1887,
+                  "titre": "Naissance de Georgia O'Keeffe",
+                  "description": "Georgia O'Keeffe (1887-1986) est une peintre américaine, née dans une ferme de Sun Prairie, dans le Wisconsin, considérée comme l'une des principales peintres modernistes du XXe siècle. Révélée à New York par le photographe Alfred Stieglitz, qu'elle épouse en 1924, elle peint des gratte-ciel et des gros plans de fleurs proches de l'abstraction, puis s'installe définitivement au Nouveau-Mexique en 1949, dont les paysages et les crânes d'animaux deviennent ses sujets. Atteinte de troubles de la vue dès 1972, elle reçoit en 1977 la médaille présidentielle de la Liberté et meurt à Santa Fe le 6 mars 1986, à 98 ans, laissant environ neuf cents tableaux et un musée à son nom, inauguré à Santa Fe en 1997.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Georgia_O%27Keeffe",
+                  "image": {
+                    "src": "assets/portraits/pan_us_okeeffe.jpg",
+                    "legende": "Georgia O'Keeffe, photographie d'Alfred Stieglitz (1918)",
+                    "auteur": "Alfred Stieglitz",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:O%27Keeffe-(hands).jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_hubble",
+                  "axe": "Sciences et découvertes",
+                  "date": 1889,
+                  "titre": "Naissance d'Edwin Hubble",
+                  "description": "Edwin Hubble (1889-1953) est un astronome américain, né à Marshfield, dans le Missouri, qui travaille à l'observatoire du mont Wilson, en Californie. Avec le télescope Hooker, il identifie en 1923 et 1924 des céphéides dans des « nébuleuses spirales » et prouve qu'elles sont d'autres galaxies, puis établit en 1929, avec Milton Humason, la relation entre la distance des galaxies et leur vitesse d'éloignement, à l'origine de l'idée d'expansion de l'Univers. Il meurt le 28 septembre 1953 d'un accident vasculaire cérébral, et le télescope spatial Hubble porte son nom, mais la relation qu'il a établie s'appelle aujourd'hui loi de Hubble-Lemaître, car Georges Lemaître l'avait prédite dès 1927, ce qui a suscité une controverse.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Edwin_Hubble",
+                  "image": {
+                    "src": "assets/portraits/pan_us_hubble.jpg",
+                    "legende": "Edwin Hubble, photographie de Johan Hagemeyer (1931)",
+                    "auteur": "Johan Hagemeyer",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Studio_portrait_photograph_of_Edwin_Powell_Hubble_(cropped).JPG"
+                  }
+                },
+                {
+                  "id": "pan_us_eisenhower",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1890,
+                  "titre": "Naissance de Dwight D. Eisenhower",
+                  "description": "Dwight Eisenhower (1890-1969) est un général et homme d'État américain, né à Denison, au Texas, commandant suprême des forces alliées en Europe pendant la Seconde Guerre mondiale puis 34e président des États-Unis, de 1953 à 1961. Il commande le débarquement allié en Afrique du Nord en 1942 et planifie celui de Normandie en 1944, puis, élu en 1952 et réélu en 1956, supervise le cessez-le-feu en Corée et fait développer le réseau d'autoroutes inter-États. Il envoie en 1957 la 101e division aéroportée à Little Rock pour faire appliquer la déségrégation d'un lycée, et son discours d'adieu de janvier 1961 met en garde contre le « complexe militaro-industriel », avant sa mort à Washington en 1969.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Dwight_D._Eisenhower",
+                  "biographie": "bio_eisenhower",
+                  "image": {
+                    "src": "assets/portraits/pan_us_eisenhower.jpg",
+                    "legende": "Dwight D. Eisenhower, portrait officiel de la Maison-Blanche (29 mai 1959)",
+                    "auteur": "Maison-Blanche",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Dwight_D._Eisenhower,_official_photo_portrait,_May_29,_1959.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_manray",
+                  "axe": "Beaux-arts",
+                  "date": 1890,
+                  "titre": "Naissance de Man Ray",
+                  "description": "Man Ray (1890-1976) est un peintre, photographe et cinéaste américain, né Emmanuel Radnitsky à Philadelphie, dans une famille juive d'origine russe qui prend le nom de Ray en 1912. Acteur du dadaïsme à New York avec Marcel Duchamp, il rejoint Paris en 1921, où il s'associe aux surréalistes, perfectionne le photogramme et redécouvre, avec Lee Miller, la solarisation, tout en réalisant des portraits de l'avant-garde de Montparnasse et des films expérimentaux. Chassé de France par la guerre en 1940, inquiété pour ses origines juives, il vit à Hollywood puis revient à Paris, où il meurt le 18 novembre 1976.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Man_Ray",
+                  "image": {
+                    "src": "assets/portraits/pan_us_manray.jpg",
+                    "legende": "Man Ray, photographie de Carl Van Vechten (16 juin 1934, Paris)",
+                    "auteur": "Carl Van Vechten",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Man_Ray_Paris_1934.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_hurston",
+                  "axe": "Littérature et pensée",
+                  "date": 1891,
+                  "titre": "Naissance de Zora Neale Hurston",
+                  "description": "Zora Neale Hurston (1891-1960) est une romancière, anthropologue et folkloriste afro-américaine, née à Notasulga, en Alabama, mais élevée à Eatonville, en Floride, ville administrée par des Noirs. Élève de l'anthropologue Franz Boas à Barnard College, où elle est l'une des premières Afro-Américaines diplômées, elle recueille les récits populaires noirs du Sud et des Caraïbes, publie Jonah's Gourd Vine en 1934 puis, en 1937, Their Eyes Were Watching God, grand roman de la Renaissance de Harlem. Tombée dans l'oubli et la pauvreté, elle meurt en 1960 à Fort Pierce, en Floride, et repose dans une tombe anonyme, que l'écrivaine Alice Walker retrouve en 1973 avant de relancer, par un article de 1975, l'intérêt pour son œuvre.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Zora_Neale_Hurston",
+                  "image": {
+                    "src": "assets/portraits/pan_us_hurston.jpg",
+                    "legende": "Zora Neale Hurston, photographie (entre 1935 et 1943)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Hurston-Zora-Neale-LOC.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_rockwell",
+                  "axe": "Beaux-arts",
+                  "date": 1894,
+                  "titre": "Naissance de Norman Rockwell",
+                  "description": "Norman Rockwell (1894-1978) est un illustrateur américain, né à New York, célèbre pour avoir illustré de 1916 à 1963 les couvertures du magazine The Saturday Evening Post. Son style naturaliste et méticuleux y montre la vie quotidienne des Américains de l'entre-deux-guerres et de l'après-guerre ; pendant la Seconde Guerre mondiale, il peint la série Les Quatre Libertés, d'après un discours de Franklin Roosevelt, et il travaille de 1913 à 1976 pour les Boy Scouts of America. Dans la dernière partie de sa carrière, il aborde des sujets politiques et sociaux pour le magazine Look, comme la ségrégation raciale, et il meurt le 8 novembre 1978 à Stockbridge, dans le Massachusetts, où un musée conserve la plus grande partie de son œuvre.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Norman_Rockwell",
+                  "image": {
+                    "src": "assets/portraits/pan_us_rockwell.jpg",
+                    "legende": "Norman Rockwell, photographie d'Underwood & Underwood (1921)",
+                    "auteur": "Underwood & Underwood",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Rockwell-Norman-LOC.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_keaton",
+                  "axe": "Musique et spectacle",
+                  "date": 1895,
+                  "titre": "Naissance de Buster Keaton",
+                  "description": "Buster Keaton (1895-1966) est un acteur, réalisateur et cascadeur américain, né à Piqua, dans le Kansas, enfant du vaudeville qui monte sur scène avec ses parents dès 1900. Au temps du cinéma muet, ce comique au flegme légendaire, surnommé « l'homme qui ne rit jamais », signe dans les années 1920 des courts métrages comme La Maison démontable, puis des longs métrages comme Sherlock Junior en 1924, Le Mécano de la « General » en 1926 et L'Opérateur en 1928. Sa carrière décline après 1928, quand il perd son indépendance artistique en signant avec la Metro-Goldwyn-Mayer, qui le renvoie en 1933, mais ses films sont redécouverts, il reçoit un Oscar d'honneur en 1959 et il meurt d'un cancer du poumon en 1966.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Buster_Keaton",
+                  "image": {
+                    "src": "assets/portraits/pan_us_keaton.jpg",
+                    "legende": "Buster Keaton, photographie de Bain News Service (vers 1920)",
+                    "auteur": "Bain News Service",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Busterkeaton_edit.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_fitzgerald",
+                  "axe": "Littérature et pensée",
+                  "date": 1896,
+                  "titre": "Naissance de F. Scott Fitzgerald",
+                  "description": "Francis Scott Fitzgerald (1896-1940) est un romancier et nouvelliste américain, né à Saint Paul, dans le Minnesota, chef de file de la génération perdue et chroniqueur de l'ère du jazz. Son premier roman, L'Envers du paradis, paru en 1920, le rend célèbre et lui permet d'épouser Zelda Sayre ; installé en France, il publie Gatsby le Magnifique en 1925, puis Tendre est la nuit en 1934, tandis que l'alcoolisme et la maladie de Zelda assombrissent sa vie. Scénariste à Hollywood à partir de 1937, il y meurt d'une crise cardiaque en 1940, laissant inachevé Le Dernier Nabab, et Gatsby, peu vendu à sa parution, devient ensuite l'un des grands classiques américains.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/F._Scott_Fitzgerald",
+                  "image": {
+                    "src": "assets/portraits/pan_us_fitzgerald.jpg",
+                    "legende": "F. Scott Fitzgerald, photographie de Carl Van Vechten (4 juin 1937)",
+                    "auteur": "Carl Van Vechten",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Carl_van_Vechten_-_Francis_Scott_Fitzgerald_1937_Detail.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_earhart",
+                  "axe": "Sciences et découvertes",
+                  "date": 1897,
+                  "titre": "Naissance d'Amelia Earhart",
+                  "description": "Amelia Earhart (1897-1937) est une aviatrice américaine, née à Atchison, dans le Kansas, surnommée Lady Lindy, devenue célèbre par ses traversées de l'Atlantique. Première femme à traverser l'Atlantique en avion, comme passagère, en juin 1928, elle réalise seule la traversée le 20 mai 1932, de Terre-Neuve à l'Irlande du Nord, en moins de quinze heures, puis, en 1935, le premier vol en solitaire entre Hawaï et la Californie. Elle disparaît le 2 juillet 1937 au-dessus du Pacifique avec son navigateur Fred Noonan, lors d'une tentative de tour du monde, après avoir quitté Lae, en Nouvelle-Guinée, et elle est déclarée morte en 1939, sans que l'on ait jamais identifié l'épave de son avion avec certitude.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Amelia_Earhart",
+                  "image": {
+                    "src": "assets/portraits/pan_us_earhart.jpg",
+                    "legende": "Amelia Earhart, photographie de la NBC (5 mars 1935)",
+                    "auteur": "NBC",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Amelia_Earhart_1935.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_faulkner",
+                  "axe": "Littérature et pensée",
+                  "date": 1897,
+                  "titre": "Naissance de William Faulkner",
+                  "description": "William Faulkner (1897-1962) est un romancier et nouvelliste américain, né à New Albany, dans le Mississippi, qui situe l'essentiel de son œuvre dans le comté imaginaire de Yoknapatawpha, transposition de sa région natale. Il publie Le Bruit et la Fureur en 1929, Tandis que j'agonise en 1930, Sanctuaire en 1931, Lumière d'août en 1932 puis Absalon, Absalon ! en 1936, romans qui disent la déchéance du vieux Sud, rongé par l'esclavage, la ségrégation et la défaite de la guerre de Sécession, et travaille aussi comme scénariste à Hollywood. Prix Nobel de littérature en 1949, alors qu'il est encore relativement peu connu, il meurt en 1962 dans le Mississippi, après une chute de cheval, et passe pour l'un des plus grands écrivains américains.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/William_Faulkner",
+                  "image": {
+                    "src": "assets/portraits/pan_us_faulkner.jpg",
+                    "legende": "William Faulkner, photographie de Carl Van Vechten (11 décembre 1954)",
+                    "auteur": "Carl Van Vechten",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Carl_Van_Vechten_-_William_Faulkner_(greyscale_and_cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_calder",
+                  "axe": "Beaux-arts",
+                  "date": 1898,
+                  "titre": "Naissance d'Alexander Calder",
+                  "description": "Alexander Calder (1898-1976) est un sculpteur, peintre et scénographe américain, né à Lawnton, en Pennsylvanie, dans une famille de sculpteurs et de peintres, et ingénieur mécanicien de formation. Installé à Paris en 1926, il invente le Cirque de Calder, spectacle de fils de fer et de chiffons, puis les mobiles, baptisés ainsi par Marcel Duchamp en 1932, ces assemblages de formes animées par le mouvement de l'air, auxquels s'ajoutent ensuite les stabiles ; il quitte l'Europe en 1933 et aide pendant la guerre des artistes en exil à obtenir des visas pour les États-Unis. Consacré par une rétrospective au Museum of Modern Art en 1943, auteur de sculptures monumentales comme le Flamingo de Chicago, il meurt à New York le 11 novembre 1976.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Alexander_Calder",
+                  "image": {
+                    "src": "assets/portraits/pan_us_calder.jpg",
+                    "legende": "Alexander Calder, photographie de Carl Van Vechten (10 juillet 1947)",
+                    "auteur": "Carl Van Vechten",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Alexander_Calder_1947_-_Photo_by_Carl_Van_Vechten.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_gershwin",
+                  "axe": "Musique et spectacle",
+                  "date": 1898,
+                  "titre": "Naissance de George Gershwin",
+                  "description": "George Gershwin (1898-1937) est un compositeur américain, né à Brooklyn, à New York, dans une famille juive originaire de Saint-Pétersbourg, et il débute comme pianiste d'orchestre à Broadway. Avec son frère Ira, qui écrit la plupart des paroles de ses chansons, il fait triompher ses comédies musicales, puis, créateur du jazz symphonique, compose Rhapsody in Blue en 1924, le Concerto en fa en 1925, Un Américain à Paris en 1928 et l'opéra Porgy and Bess en 1935. Installé à Hollywood pour composer des musiques de film, il meurt à Los Angeles en 1937, à 38 ans, d'une tumeur cérébrale, et nombre de ses chansons sont devenues des standards du jazz.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/George_Gershwin",
+                  "image": {
+                    "src": "assets/portraits/pan_us_gershwin.jpg",
+                    "legende": "George Gershwin, photographie de Carl Van Vechten (28 mars 1937)",
+                    "auteur": "Carl Van Vechten",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:George_Gershwin_1937.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_bogart",
+                  "axe": "Musique et spectacle",
+                  "date": 1899,
+                  "titre": "Naissance de Humphrey Bogart",
+                  "description": "Humphrey Bogart (1899-1957) est un acteur américain, né à New York, fils d'un chirurgien et d'une illustratrice, qui joue dans dix-sept pièces à Broadway avant de passer au cinéma. Révélé en 1936 par La Forêt pétrifiée, il s'impose dans les années 1940 avec Le Faucon maltais, Casablanca, Le Port de l'angoisse et Le Grand Sommeil, les deux derniers tournés avec Lauren Bacall, qu'il épouse en 1945, puis obtient en 1952 l'Oscar du meilleur acteur pour L'Odyssée de l'African Queen. Atteint d'un cancer de l'œsophage, il meurt à Los Angeles en janvier 1957, à 57 ans, et l'American Film Institute le classe en 1999 comme la plus grande vedette masculine du cinéma hollywoodien.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Humphrey_Bogart",
+                  "image": {
+                    "src": "assets/portraits/pan_us_bogart.jpg",
+                    "legende": "Humphrey Bogart, photographie publicitaire de Warner Bros. (1940)",
+                    "auteur": "Warner Bros. (publiée par The Minneapolis Tribune)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Humphrey_Bogart_1940.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_ellington",
+                  "axe": "Musique et spectacle",
+                  "date": 1899,
+                  "titre": "Naissance de Duke Ellington",
+                  "description": "Duke Ellington (1899-1974) est un pianiste, compositeur et chef d'orchestre de jazz américain, né Edward Kennedy Ellington à Washington. À la tête d'un orchestre fondé en 1923, qui joue au Cotton Club de New York dès décembre 1927, il compose pour ses solistes des pièces comme Concerto for Cootie, collabore régulièrement avec Billy Strayhorn, son « alter ego », et fait des tournées sur plusieurs continents. Soutien du mouvement des droits civiques, il meurt à New York en 1974, laissant des titres devenus des standards du jazz, et il devient à titre posthume, en 2009, le premier Afro-Américain à figurer seul sur une pièce de monnaie américaine.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Duke_Ellington",
+                  "image": {
+                    "src": "assets/portraits/pan_us_ellington.jpg",
+                    "legende": "Duke Ellington, photographie publicitaire (1964)",
+                    "auteur": "Associated Booking Corporation",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Duke_Ellington_1964.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_hemingway",
+                  "axe": "Littérature et pensée",
+                  "date": 1899,
+                  "titre": "Naissance d'Ernest Hemingway",
+                  "description": "Ernest Hemingway (1899-1961) est un écrivain, journaliste et correspondant de guerre américain, né à Oak Park, dans l'Illinois, dont le style dépouillé, fait d'économie et de litote, a marqué le roman du XXe siècle. Blessé en 1918 comme ambulancier sur le front italien, il s'installe à Paris, fréquente la « génération perdue » et publie Le soleil se lève aussi en 1926, L'Adieu aux armes en 1929, Pour qui sonne le glas en 1940, puis Le Vieil Homme et la Mer en 1952, qui lui vaut le prix Pulitzer, avant le prix Nobel de littérature en 1954. Malade et dépressif, il se suicide en 1961 à Ketchum, dans l'Idaho, et Paris est une fête paraît à titre posthume en 1964.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ernest_Hemingway",
+                  "image": {
+                    "src": "assets/portraits/pan_us_hemingway.jpg",
+                    "legende": "Ernest Hemingway, photographie de Lloyd Arnold pour la jaquette de Pour qui sonne le glas (1939)",
+                    "auteur": "Lloyd Arnold",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:ErnestHemingway.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_armstrong",
+                  "axe": "Musique et spectacle",
+                  "date": 1901,
+                  "titre": "Naissance de Louis Armstrong",
+                  "description": "Louis Armstrong (1901-1971) est un trompettiste et chanteur de jazz afro-américain, né à La Nouvelle-Orléans, probablement le 4 août 1901, dans une famille noire pauvre. Engagé en 1922 à Chicago comme second trompettiste par King Oliver, il enregistre à partir de 1925 avec ses Hot Five et ses Hot Seven des classiques du jazz, fait de la trompette un instrument soliste du jazz, popularise le scat, forme au début des années 1950 le groupe des All Stars et connaît en 1964 son plus grand succès avec Hello, Dolly. Ambassadeur du jazz dans le monde entier pendant plus de quarante ans, il meurt à New York en 1971, à 69 ans, d'un arrêt cardiaque, et reste l'un des musiciens les plus influents de l'histoire du jazz.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Louis_Armstrong",
+                  "biographie": "bio_louisarmstrong",
+                  "image": {
+                    "src": "assets/portraits/pan_us_armstrong.jpg",
+                    "legende": "Louis Armstrong, photographie de William P. Gottlieb (entre 1938 et 1948)",
+                    "auteur": "William P. Gottlieb",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Louis_Armstrong,_between_1938_and_1948_(William_P._Gottlieb_09601).jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_disney",
+                  "axe": "Musique et spectacle",
+                  "date": 1901,
+                  "titre": "Naissance de Walt Disney",
+                  "description": "Walt Disney (1901-1966) est un producteur, réalisateur et animateur américain, pionnier du cinéma d'animation, né à Chicago et élevé dans le Missouri. Il fonde en 1923, avec son frère Roy, le Disney Brothers Studio, crée Mickey Mouse en 1928 avec Ub Iwerks, puis se lance dans le long métrage d'animation avec Blanche-Neige et les Sept Nains en 1937, suivi de Pinocchio, Fantasia, Dumbo et Bambi, et ouvre le parc Disneyland en 1955. Il meurt d'un cancer du poumon à Burbank en 1966, après avoir remporté 22 Oscars, un record pour une seule personne, mais on lui reproche notamment d'avoir dénoncé en 1947, devant la commission des activités antiaméricaines, trois anciens employés auxquels il prêtait des opinions communistes.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Walt_Disney",
+                  "biographie": "bio_disney",
+                  "image": {
+                    "src": "assets/portraits/pan_us_disney.jpg",
+                    "legende": "Walt Disney, photographie publicitaire des Boy Scouts of America (17 mai 1946)",
+                    "auteur": "Boy Scouts of America",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Walt_Disney_1946.JPG"
+                  }
+                },
+                {
+                  "id": "pan_us_hughes",
+                  "axe": "Littérature et pensée",
+                  "date": 1901,
+                  "titre": "Naissance de Langston Hughes",
+                  "description": "Langston Hughes (1901-1967) est un poète, romancier, nouvelliste et dramaturge américain, né à Joplin, dans le Missouri, et l'une des figures majeures de la Renaissance de Harlem. Nourrie de jazz et de blues, sa poésie des Noirs ordinaires paraît dans son premier recueil, The Weary Blues, en 1926, année où son essai The Negro Artist and the Racial Mountain, souvent lu comme un manifeste de l'art noir, est publié ; il écrit aussi le roman Not Without Laughter, en 1930, des pièces de théâtre et deux autobiographies. Il meurt d'un cancer à New York en 1967 et sa fierté noire est reprise par Léopold Sédar Senghor et Aimé Césaire, même si on lui reproche, à partir des années 1950, de ne pas avoir renouvelé son discours.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Langston_Hughes",
+                  "image": {
+                    "src": "assets/portraits/pan_us_hughes.jpg",
+                    "legende": "Langston Hughes, photographie de Carl Van Vechten (1936)",
+                    "auteur": "Carl Van Vechten",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:LangstonHughes_crop.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_ansel",
+                  "axe": "Beaux-arts",
+                  "date": 1902,
+                  "titre": "Naissance d'Ansel Adams",
+                  "description": "Ansel Adams (1902-1984) est un photographe et écologiste américain, né à San Francisco, connu pour ses photographies en noir et blanc de l'Ouest américain, et en particulier du parc national de Yosemite. Il publie sa première photographie, Monolith, the Face of Half Dome, en 1927, fonde le groupe f/64 avec Edward Weston et Imogen Cunningham, met au point avec Fred Archer le zone system, qui règle l'exposition et le contraste du tirage, et réalise en 1941 Moonrise, Hernandez, Nouveau-Mexique. Militant de la protection de la nature, il meurt le 22 avril 1984 à Monterey, en Californie, et une zone de nature sauvage, l'Ansel Adams Wilderness, porte son nom depuis 1985.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ansel_Adams",
+                  "image": {
+                    "src": "assets/portraits/pan_us_ansel.jpg",
+                    "legende": "Ansel Adams et son appareil photographique, photographie de J. Malcolm Greany (vers 1950)",
+                    "auteur": "J. Malcolm Greany",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ansel_Adams_and_camera.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_lindbergh",
+                  "axe": "Sciences et découvertes",
+                  "date": 1902,
+                  "titre": "Naissance de Charles Lindbergh",
+                  "description": "Charles Lindbergh (1902-1974) est un aviateur américain, né à Détroit, fils d'un membre du Congrès issu de l'immigration suédoise, surnommé « l'Aigle solitaire ». Il devient une légende en reliant New York à Paris sans escale et en solitaire, les 20 et 21 mai 1927, en trente-trois heures et demie à bord du Spirit of Saint Louis, puis fuit en Europe en 1935 après l'enlèvement et l'assassinat de son fils. Dirigeant du comité America First, partisan de la neutralité des États-Unis, on lui reproche sa sympathie affichée pour Hitler, une décoration allemande acceptée en 1938 et des propos jugés antisémites en 1941 ; il soutient pourtant l'effort de guerre après Pearl Harbor et meurt à Maui, à Hawaï, le 26 août 1974.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Charles_Lindbergh",
+                  "image": {
+                    "src": "assets/portraits/pan_us_lindbergh.jpg",
+                    "legende": "Charles Lindbergh, photographie de Harris & Ewing (vers 1927)",
+                    "auteur": "Harris & Ewing",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Col_Charles_Lindbergh,_original,_hec.21329.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_steinbeck",
+                  "axe": "Littérature et pensée",
+                  "date": 1902,
+                  "titre": "Naissance de John Steinbeck",
+                  "description": "John Steinbeck (1902-1968) est un écrivain et journaliste américain, né à Salinas, en Californie, dont l'œuvre se déroule surtout dans cet État, parmi les ouvriers agricoles et les petites gens frappés par la Grande Dépression. Après Tortilla Flat, en 1935, et Des souris et des hommes, en 1937, il publie en 1939 Les Raisins de la colère, prix Pulitzer, dont on lui reproche les idées jugées trop socialistes et qui est interdit dans plusieurs villes de Californie, puis À l'est d'Éden en 1952 ; le prix Nobel de littérature lui est décerné en 1962. Il meurt à New York en 1968, après avoir été accusé en 1967, à cause de ses reportages sur le Viêt Nam, de trahir son passé libéral ; ses romans restent très lus et enseignés.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/John_Steinbeck",
+                  "image": {
+                    "src": "assets/portraits/pan_us_steinbeck.jpg",
+                    "legende": "John Steinbeck, photographie parue en novembre 1939",
+                    "auteur": "McFadden Publications (photographe non crédité)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:John_Steinbeck_1939_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_oppenheimer",
+                  "axe": "Sciences et découvertes",
+                  "date": 1904,
+                  "titre": "Naissance de Robert Oppenheimer",
+                  "description": "Robert Oppenheimer (1904-1967) est un physicien américain, né à New York dans une famille aisée d'origine allemande, spécialiste de physique théorique et surnommé le « père de la bombe atomique ». Nommé en 1943 directeur scientifique du projet Manhattan, il dirige le laboratoire de Los Alamos, qui met au point les trois premières bombes atomiques, dont celle de l'essai Trinity en juillet 1945, puis, opposé à la bombe à hydrogène, voit son habilitation de sécurité révoquée en 1954, en plein maccarthysme. Réhabilité en 1963 par le prix Enrico-Fermi, il termine sa carrière à l'Institute for Advanced Study de Princeton, où il meurt d'un cancer de la gorge le 18 février 1967.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Robert_Oppenheimer",
+                  "image": {
+                    "src": "assets/portraits/pan_us_oppenheimer.jpg",
+                    "legende": "Robert Oppenheimer, photographie d'identité du laboratoire national de Los Alamos (années 1940)",
+                    "auteur": "Laboratoire national de Los Alamos",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Oppenheimer-j_r_ID_badge.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_ghopper",
+                  "axe": "Sciences et découvertes",
+                  "date": 1906,
+                  "titre": "Naissance de Grace Hopper",
+                  "description": "Grace Hopper (1906-1992) est une informaticienne, mathématicienne et officier de la marine américaine, née à New York, docteure en mathématiques de l'université Yale en 1934 et professeure au Vassar College. Engagée dans la marine en 1943, elle programme l'ordinateur Harvard Mark I dans l'équipe de Howard Aiken, conçoit en 1951 le premier compilateur, l'A-0 System, puis contribue en 1959 à la création du langage Cobol, proche de l'anglais. Promue contre-amiral, elle meurt le 1er janvier 1992 dans le comté d'Arlington, en Virginie, reçoit à titre posthume la médaille présidentielle de la Liberté en 2016, et un destroyer de la marine, l'USS Hopper, porte son nom.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Grace_Hopper",
+                  "image": {
+                    "src": "assets/portraits/pan_us_ghopper.jpg",
+                    "legende": "Grace Hopper, photographie de James S. Davis pour la marine américaine (20 janvier 1984)",
+                    "auteur": "James S. Davis (U.S. Navy)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Commodore_Grace_M._Hopper,_USN_(covered).jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_carson",
+                  "axe": "Sciences et découvertes",
+                  "date": 1907,
+                  "titre": "Naissance de Rachel Carson",
+                  "description": "Rachel Carson (1907-1964) est une biologiste marine, écrivaine et militante écologiste américaine, née à Springdale, en Pennsylvanie. Employée du Bureau des pêches des États-Unis, elle devient une écrivaine reconnue avec Cette mer qui nous entoure en 1951, puis alerte en 1962, dans Printemps silencieux, sur les dangers des pesticides de synthèse pour les oiseaux et pour l'être humain, ce qui lui vaut des attaques de l'industrie chimique mais inspire un mouvement populaire, l'interdiction du DDT et la création de l'Agence de protection de l'environnement en 1970. Atteinte d'un cancer, elle meurt le 14 avril 1964 à Silver Spring, dans le Maryland, et reçoit à titre posthume la médaille présidentielle de la Liberté.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Rachel_Carson",
+                  "image": {
+                    "src": "assets/portraits/pan_us_carson.jpg",
+                    "legende": "Rachel Carson, photographie officielle de l'U.S. Fish and Wildlife Service (années 1940)",
+                    "auteur": "U.S. Fish and Wildlife Service",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Rachel-Carson.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_hepburn",
+                  "axe": "Musique et spectacle",
+                  "date": 1907,
+                  "titre": "Naissance de Katharine Hepburn",
+                  "description": "Katharine Hepburn (1907-2003) est une actrice américaine, née à Hartford, dans le Connecticut, d'un père urologue et d'une mère suffragette, surnommée « Miss Kate » pour son caractère indépendant. Elle débute au cinéma en 1932 avec Héritage, de George Cukor, tourne neuf films avec Spencer Tracy, dont La Femme de l'année, partage l'affiche de L'Odyssée de l'African Queen avec Humphrey Bogart en 1951 et incarne Aliénor d'Aquitaine dans Le Lion en hiver. Classée en 1999 par l'American Film Institute plus grande star féminine du cinéma hollywoodien classique et lauréate de quatre Oscars de la meilleure actrice, un record jamais égalé, elle meurt en 2003 à Old Saybrook, dans le Connecticut, à 96 ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Katharine_Hepburn",
+                  "image": {
+                    "src": "assets/portraits/pan_us_hepburn.jpg",
+                    "legende": "Katharine Hepburn, photographie publicitaire de la Metro-Goldwyn-Mayer (1941)",
+                    "auteur": "Metro-Goldwyn-Mayer",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Katharine_Hepburn_promo_pic.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_lbj",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1908,
+                  "titre": "Naissance de Lyndon B. Johnson",
+                  "description": "Lyndon Johnson (1908-1973) était un homme d'État américain, démocrate, né à Stonewall, au Texas, sénateur puis vice-président de John Fitzgerald Kennedy, auquel il succède après son assassinat, le 22 novembre 1963, comme 36e président des États-Unis. Largement élu en 1964, il fait voter le Civil Rights Act de 1964 contre la ségrégation et le Voting Rights Act de 1965 sur le droit de vote des Afro-Américains, et lance la Grande Société, avec la guerre contre la pauvreté, Medicare et Medicaid. On lui reproche surtout l'escalade de la guerre du Viêt Nam, engagée après l'incident du golfe du Tonkin en 1964 et portée à 536 000 soldats en 1968, qui ruine sa popularité et le fait renoncer à se représenter, et il meurt au Texas en 1973.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Lyndon_B._Johnson",
+                  "image": {
+                    "src": "assets/portraits/pan_us_lbj.jpg",
+                    "legende": "Lyndon B. Johnson dans le Bureau ovale, photographie d'Arnold Newman (10 mars 1964)",
+                    "auteur": "Arnold Newman",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Lyndon_B._Johnson,_photo_portrait,_color_(3x4_cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_thurgood",
+                  "axe": "Guerres et résistances",
+                  "date": 1908,
+                  "titre": "Naissance de Thurgood Marshall",
+                  "description": "Thurgood Marshall (1908-1993) est un avocat et juge américain, né à Baltimore, dans le Maryland, qui devient l'une des grandes figures juridiques de la lutte contre la ségrégation raciale. Avocat de la NAACP, installé à plein temps à New York en 1936, il plaide de nombreuses affaires devant la Cour suprême, qui lui donne raison en 1954 dans l'affaire Brown contre Board of Education en déclarant la ségrégation inconstitutionnelle dans les écoles publiques. Nommé juge à la cour d'appel fédérale en 1961, avocat général des États-Unis en 1965, il devient en 1967, sur désignation de Lyndon Johnson, le premier juge afro-américain de la Cour suprême, où il siège jusqu'en 1991, puis meurt en 1993 ; plusieurs bâtiments judiciaires portent son nom.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Thurgood_Marshall",
+                  "image": {
+                    "src": "assets/portraits/pan_us_thurgood.jpg",
+                    "legende": "Thurgood Marshall, portrait officiel de la Cour suprême (1976)",
+                    "auteur": "Robert S. Oakes",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Thurgood-marshall-2.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_reagan",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1911,
+                  "titre": "Naissance de Ronald Reagan",
+                  "description": "Ronald Reagan (1911-2004) est un acteur et homme d'État américain, né à Tampico, dans l'Illinois, gouverneur de Californie de 1967 à 1975 puis 40e président des États-Unis, de 1981 à 1989. Il mène la Reaganomics, politique de l'offre fondée sur des baisses d'impôts, relance la course aux armements en décrivant l'URSS comme un « Empire du mal », puis négocie avec Mikhaïl Gorbatchev le traité INF de 1987, avant la fin de la guerre froide. Il meurt à Los Angeles en 2004, après dix ans de maladie d'Alzheimer, et on lui reproche les déficits, l'accroissement des inégalités, l'affaire Iran-Contra, vente secrète d'armes à l'Iran pour financer les Contras du Nicaragua malgré l'interdiction du Congrès, et une réaction tardive au sida.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ronald_Reagan",
+                  "image": {
+                    "src": "assets/portraits/pan_us_reagan.jpg",
+                    "legende": "Ronald Reagan, portrait officiel de la Maison-Blanche (7 février 1981)",
+                    "auteur": "Michael Evans",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Official_Portrait_of_President_Reagan_1981.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_williams",
+                  "axe": "Littérature et pensée",
+                  "date": 1911,
+                  "titre": "Naissance de Tennessee Williams",
+                  "description": "Tennessee Williams (1911-1983) est un dramaturge américain, né Thomas Lanier Williams à Columbus, dans le Mississippi, et l'un des auteurs de théâtre les plus importants des États-Unis au XXe siècle. Il connaît la célébrité à trente-quatre ans avec La Ménagerie de verre, créée en 1944, puis triomphe avec Un tramway nommé Désir en 1947, mis en scène par Elia Kazan avec Marlon Brando, et avec La Chatte sur un toit brûlant en 1955, deux pièces couronnées par le prix Pulitzer et portées à l'écran. Marqué par la folie de sa sœur Rose et miné par l'alcool et les médicaments, il voit son succès décliner à partir du milieu des années 1960 et il est retrouvé mort en 1983 dans un hôtel de New York, étouffé selon le médecin légiste par le bouchon d'un vaporisateur nasal.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Tennessee_Williams",
+                  "image": {
+                    "src": "assets/portraits/pan_us_williams.jpg",
+                    "legende": "Tennessee Williams, photographie d'Orlando Fernandez pour le New York World-Telegram (1965)",
+                    "auteur": "Orlando Fernandez",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Tennessee_Williams_NYWTS.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_pollock",
+                  "axe": "Beaux-arts",
+                  "date": 1912,
+                  "titre": "Naissance de Jackson Pollock",
+                  "description": "Jackson Pollock (1912-1956) est un peintre américain de l'expressionnisme abstrait, né à Cody, dans le Wyoming, et grandi en Californie et en Arizona. Marié en 1945 à la peintre Lee Krasner, qui joue un rôle décisif dans sa carrière, il s'installe à Springs, dans l'État de New York, où il pratique entre 1947 et 1950 le dripping, qui fait couler la peinture sur des toiles posées au sol, et le all-over, rendus célèbres par les photographies et les films de Hans Namuth. Alcoolique, il meurt dans un accident de voiture le 11 août 1956 à Springs, à quarante-quatre ans, et reste l'artiste qui a le plus contribué à faire de New York la capitale de l'art moderne après la Seconde Guerre mondiale.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jackson_Pollock",
+                  "image": {
+                    "src": "assets/portraits/pan_us_pollock.jpg",
+                    "legende": "Jackson Pollock, photographie de Hans Namuth (1951)",
+                    "auteur": "Hans Namuth",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jackson_Pollock_by_Hans_Namuth.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_nixon",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1913,
+                  "titre": "Naissance de Richard Nixon",
+                  "description": "Richard Nixon (1913-1994) est un homme d'État américain, républicain, né à Yorba Linda, en Californie, vice-président de Dwight Eisenhower puis 37e président des États-Unis, de 1969 à 1974. Il met fin à l'engagement américain au Viêt Nam en 1973 et à la conscription, ouvre le dialogue avec la Chine par son voyage de février 1972 et instaure la détente avec l'URSS. Le scandale du Watergate, né du cambriolage du siège du Parti démocrate en juin 1972 par des hommes liés à son équipe, lui vaut d'être accusé d'obstruction à la justice et d'abus de pouvoir, ce qui l'oblige à démissionner le 9 août 1974, seul président américain à l'avoir fait, puis il est gracié par Gerald Ford et meurt à New York en 1994.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Richard_Nixon",
+                  "image": {
+                    "src": "assets/portraits/pan_us_nixon.jpg",
+                    "legende": "Richard Nixon, portrait présidentiel (1er juin 1972)",
+                    "auteur": "Département de la Défense des États-Unis",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Richard_Nixon_presidential_portrait_(1).jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_parks",
+                  "axe": "Guerres et résistances",
+                  "date": 1913,
+                  "titre": "Naissance de Rosa Parks",
+                  "description": "Rosa Parks (1913-2005) est une Afro-Américaine née à Tuskegee, en Alabama, figure de la lutte contre la ségrégation raciale, que le Congrès américain a surnommée « mère du mouvement des droits civiques ». Le 1er décembre 1955, à Montgomery, elle refuse de céder sa place à un passager blanc dans un autobus et est arrêtée ; le boycott des bus lancé par Martin Luther King dure alors 380 jours, jusqu'à l'arrêt de la Cour suprême qui, le 13 novembre 1956, déclare la ségrégation dans les bus inconstitutionnelle. Installée à Détroit dès 1957, elle reçoit en 1996 la Médaille présidentielle de la Liberté et meurt le 24 octobre 2005 ; sa dépouille est exposée dans la rotonde du Capitole, honneur jamais rendu auparavant à une femme.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Rosa_Parks",
+                  "biographie": "bio_rosaparks",
+                  "image": {
+                    "src": "assets/portraits/pan_us_parks.jpg",
+                    "legende": "Rosa Parks à Washington (14 septembre 1996)",
+                    "auteur": "John Mathew Smith (celebrity-photos.com)",
+                    "licence": "CC BY-SA 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Rosa_Parks_1997.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_holiday",
+                  "axe": "Musique et spectacle",
+                  "date": 1915,
+                  "titre": "Naissance de Billie Holiday",
+                  "description": "Billie Holiday (1915-1959) est une chanteuse américaine de jazz et de blues, née Eleanora Fagan à Philadelphie, surnommée « Lady Day ». Découverte en 1933 par le producteur John Hammond, elle enregistre en 1935 avec Teddy Wilson et Benny Goodman, puis fait de Strange Fruit, poème d'Abel Meeropol sur le lynchage des Noirs dans le Sud, qu'elle chante dès 1939, le symbole de son engagement pour les droits civiques. Dépendante de la drogue et de l'alcool, condamnée à un an de prison en 1947, puis privée de sa carte de travail pour chanter dans les clubs, elle meurt à New York en 1959, à 44 ans, atteinte d'une cirrhose, et laisse environ 660 enregistrements.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Billie_Holiday",
+                  "image": {
+                    "src": "assets/portraits/pan_us_holiday.jpg",
+                    "legende": "Billie Holiday, photographie de William P. Gottlieb (février 1947)",
+                    "auteur": "William P. Gottlieb",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:(Portrait_of_Billie_Holiday_and_Mister,_Downbeat,_New_York,_N.Y.,_ca._Feb._1947)_(LOC)_(5020400274)_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_miller",
+                  "axe": "Littérature et pensée",
+                  "date": 1915,
+                  "titre": "Naissance d'Arthur Miller",
+                  "description": "Arthur Miller (1915-2005) est un dramaturge, écrivain et essayiste américain, né à Harlem, à New York, dans une famille juive d'origine polonaise ruinée par la Grande Dépression. Il connaît la gloire avec Mort d'un commis voyageur, créé en 1949 et couronné par le prix Pulitzer, qui met en cause le rêve américain, puis avec Les Sorcières de Salem, en 1953, allégorie du maccarthysme ; convoqué en 1956 devant la Commission des activités antiaméricaines, il est condamné en 1957 pour outrage au Congrès, pour avoir refusé de livrer des noms, avant l'annulation du jugement en 1958. Marié de 1956 à 1961 à Marilyn Monroe, pour qui il écrit Les Désaxés, il reçoit en 2002 le prix Prince des Asturies et meurt en 2005 à Roxbury, dans le Connecticut.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Arthur_Miller",
+                  "image": {
+                    "src": "assets/portraits/pan_us_miller.jpg",
+                    "legende": "Arthur Miller, photographie du Département d'État des États-Unis",
+                    "auteur": "Département d'État des États-Unis",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Arthur-miller.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_sinatra",
+                  "axe": "Musique et spectacle",
+                  "date": 1915,
+                  "titre": "Naissance de Frank Sinatra",
+                  "description": "Frank Sinatra (1915-1998) est un chanteur, acteur et producteur américain, né à Hoboken, dans le New Jersey, de parents immigrés italiens, surnommé « The Voice ». Chanteur des orchestres de Harry James puis de Tommy Dorsey, il remporte l'Oscar du meilleur second rôle pour Tant qu'il y aura des hommes, enregistre chez Capitol à partir de 1953, fonde en 1961 le label Reprise et connaît ses plus grands succès avec Strangers in the Night en 1966 et My Way en 1969. Membre du Rat Pack, il se produit à Las Vegas et en tournée jusqu'en 1995, puis meurt à Los Angeles en 1998, figure majeure de la musique américaine, mais une enquête a établi dans les années 1990 ses liens avec des chefs de la mafia italo-américaine.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Frank_Sinatra",
+                  "biographie": "bio_sinatra",
+                  "image": {
+                    "src": "assets/portraits/pan_us_sinatra.jpg",
+                    "legende": "Frank Sinatra, photographie de William P. Gottlieb (vers 1947)",
+                    "auteur": "William P. Gottlieb",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Frank_Sinatra_by_Gottlieb_c1947-_2.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_welles",
+                  "axe": "Musique et spectacle",
+                  "date": 1915,
+                  "titre": "Naissance d'Orson Welles",
+                  "description": "Orson Welles (1915-1985) est un acteur, réalisateur et producteur américain, né à Kenosha, dans le Wisconsin, homme de théâtre et de radio avant de passer au cinéma. Il se fait connaître en 1938 par son adaptation radiophonique de La Guerre des mondes, réalise en 1941 son premier long métrage, Citizen Kane, que les critiques tiennent pour l'un des films les plus importants du XXe siècle, puis, entre autres, La Splendeur des Amberson, La Dame de Shanghai et La Soif du mal. Tombé en disgrâce auprès des producteurs américains, il travaille longtemps en Europe, où il joue dans Le Troisième Homme et tourne Othello et Le Procès, laisse de nombreux films inachevés, reçoit un Oscar d'honneur en 1971 et meurt en 1985.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Orson_Welles",
+                  "image": {
+                    "src": "assets/portraits/pan_us_welles.jpg",
+                    "legende": "Orson Welles, photographie de Carl Van Vechten (1er mars 1937)",
+                    "auteur": "Carl Van Vechten",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Orson_Welles_1937.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_ellafitzgerald",
+                  "axe": "Musique et spectacle",
+                  "date": 1917,
+                  "titre": "Naissance d'Ella Fitzgerald",
+                  "description": "Ella Fitzgerald (1917-1996) est une chanteuse de jazz américaine, née à Newport News, en Virginie, et élevée près de New York, qui se distingue par une voix de trois octaves et par son art du scat. Orpheline en 1932, elle remporte en 1934 un concours d'amateurs à l'Apollo Theater de Harlem, devient célèbre avec A-Tisket, A-Tasket au sein de l'orchestre de Chick Webb, puis enregistre chez Verve, à partir de 1956, des « songbooks » consacrés à Cole Porter, Duke Ellington, George Gershwin ou Irving Berlin. Surnommée « la Première Dame de la chanson » et titulaire de quatorze Grammy Awards, amputée des deux jambes en 1993 à cause du diabète, elle meurt à Beverly Hills en 1996, à 79 ans, d'un accident vasculaire cérébral.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ella_Fitzgerald",
+                  "image": {
+                    "src": "assets/portraits/pan_us_ellafitzgerald.jpg",
+                    "legende": "Ella Fitzgerald, photographie de William P. Gottlieb (septembre 1947)",
+                    "auteur": "William P. Gottlieb",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ella_Fitzgerald_in_September_1947_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_kennedy",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1917,
+                  "titre": "Naissance de John Fitzgerald Kennedy",
+                  "description": "John Fitzgerald Kennedy (1917-1963) est un homme d'État américain, démocrate, né à Brookline, dans le Massachusetts, élu en 1960, à 43 ans, 35e président des États-Unis, le plus jeune jamais élu et le premier catholique. Il autorise en avril 1961 le débarquement raté de la baie des Cochons contre Fidel Castro, puis, lors de la crise des missiles de Cuba en octobre 1962, impose un blocus naval à l'île et obtient le retrait des missiles soviétiques. Il est assassiné à Dallas le 22 novembre 1963, à 46 ans, lors d'un déplacement électoral, et la commission Warren désigne Lee Harvey Oswald comme seul coupable, mais les circonstances du meurtre nourrissent encore enquêtes et théories du complot.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/John_Fitzgerald_Kennedy",
+                  "image": {
+                    "src": "assets/portraits/pan_us_kennedy.jpg",
+                    "legende": "John F. Kennedy dans le Bureau ovale, photographie de Cecil Stoughton (11 juillet 1963)",
+                    "auteur": "Cecil W. Stoughton",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:John_F._Kennedy,_White_House_color_photo_portrait.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_bernstein",
+                  "axe": "Musique et spectacle",
+                  "date": 1918,
+                  "titre": "Naissance de Leonard Bernstein",
+                  "description": "Leonard Bernstein (1918-1990) est un compositeur, chef d'orchestre et pianiste américain, né à Lawrence, dans le Massachusetts, de parents juifs ukrainiens. Formé à Harvard, il fait ses débuts en 1943 à l'Orchestre philharmonique de New York, dont il est chef assistant, en remplaçant au pied levé Bruno Walter lors d'un concert radiodiffusé, compose avec le chorégraphe Jerome Robbins le ballet Fancy Free en 1944 puis la comédie musicale West Side Story en 1957, et dirige le Philharmonique comme directeur musical de 1958 à 1969. Pédagogue, il présente à la télévision les Young People's Concerts, laisse trois symphonies et deux opéras, et meurt à New York en 1990, d'un cancer des poumons et d'une pneumonie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Leonard_Bernstein",
+                  "image": {
+                    "src": "assets/portraits/pan_us_bernstein.jpg",
+                    "legende": "Leonard Bernstein, photographie de Jack Mitchell (1er décembre 1977)",
+                    "auteur": "Jack Mitchell",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Leonard_Bernstein_by_Jack_Mitchell_(high_quality).jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_feynman",
+                  "axe": "Sciences et découvertes",
+                  "date": 1918,
+                  "titre": "Naissance de Richard Feynman",
+                  "description": "Richard Feynman (1918-1988) est un physicien américain, né à New York dans une famille juive d'origine polonaise et russe, l'un des plus influents de la seconde moitié du XXe siècle. Participant au projet Manhattan pendant la Seconde Guerre mondiale, il reformule la mécanique quantique par l'intégrale de chemin, invente les diagrammes qui portent son nom et partage en 1965 le prix Nobel de physique avec Sin-Itiro Tomonaga et Julian Schwinger pour l'électrodynamique quantique, avant d'enseigner au Caltech. Pédagogue drôle, auteur de Vous voulez rire, monsieur Feynman !, il se fait connaître du grand public en 1986 par son rôle dans la commission d'enquête sur l'accident de la navette Challenger, et meurt d'un cancer le 15 février 1988.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Richard_Feynman",
+                  "biographie": "bio_richardfeynman",
+                  "image": {
+                    "src": "assets/portraits/pan_us_feynman.jpg",
+                    "legende": "Richard Feynman, photographie de Tamiko Thiel (1984)",
+                    "auteur": "Tamiko Thiel",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:RichardFeynman-PaineMansionWoods1984_copyrightTamikoThiel_bw.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_parker",
+                  "axe": "Musique et spectacle",
+                  "date": 1920,
+                  "titre": "Naissance de Charlie Parker",
+                  "description": "Charlie Parker (1920-1955) est un saxophoniste alto de jazz américain surnommé Bird ou Yardbird, né à Kansas City, alors capitale du jazz, et l'un des fondateurs du bebop. Installé à New York en 1939, il invente avec Dizzy Gillespie, dans les années 1940, un jazz moderne fait de tempos rapides et d'improvisations sur la structure harmonique, et laisse des standards comme Ornithology, Billie's Bounce ou Yardbird Suite, enregistrés notamment avec un quintette où joue le jeune Miles Davis. Miné par l'héroïne et l'alcool, il meurt à New York le 12 mars 1955, à trente-quatre ans, et le club Birdland porte son nom en hommage.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Charlie_Parker",
+                  "image": {
+                    "src": "assets/portraits/pan_us_parker.jpg",
+                    "legende": "Charlie Parker, photographie de William P. Gottlieb au Three Deuces, à New York (août 1947)",
+                    "auteur": "William P. Gottlieb",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Charlie_Parker,_Tommy_Potter,_Miles_Davis,_Max_Roach_(Gottlieb_06941).jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_baldwin",
+                  "axe": "Littérature et pensée",
+                  "date": 1924,
+                  "titre": "Naissance de James Baldwin",
+                  "description": "James Baldwin (1924-1987) est un romancier, essayiste et dramaturge américain, né à Harlem, à New York, élevé par un beau-père pasteur et prédicateur lui-même dès l'adolescence. Installé à Paris en 1948 pour fuir le racisme et l'homophobie, il publie La Conversion en 1953, Chronique d'un pays natal en 1955 et La Chambre de Giovanni en 1956 ; de retour aux États-Unis de 1957 à 1970, proche de Malcolm X et de Martin Luther King, il s'engage pour les droits civiques et publie en 1963 La Prochaine Fois, le feu. Ses livres explorent les tensions raciales, sexuelles et sociales de l'Amérique ; il s'installe à Saint-Paul-de-Vence en 1970 et y meurt en 1987 d'un cancer de l'estomac.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/James_Baldwin_(%C3%A9crivain)",
+                  "image": {
+                    "src": "assets/portraits/pan_us_baldwin.jpg",
+                    "legende": "James Baldwin, photographie de Carl Van Vechten (1955)",
+                    "auteur": "Carl Van Vechten",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Portrait_of_James_Baldwin_LCCN2004662552.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_brando",
+                  "axe": "Musique et spectacle",
+                  "date": 1924,
+                  "titre": "Naissance de Marlon Brando",
+                  "description": "Marlon Brando (1924-2004) est un acteur, réalisateur et militant américain, né à Omaha, dans le Nebraska, formé à l'école de Stella Adler et à la méthode de Stanislavski. Révélé à Broadway en 1947 dans Un tramway nommé Désir, qu'il reprend à l'écran en 1951, il incarne le rebelle dans L'Équipée sauvage, gagne l'Oscar du meilleur acteur pour Sur les quais en 1955 puis pour Le Parrain en 1973, qu'il refuse pour protester contre le traitement des Amérindiens à Hollywood, et joue le colonel Kurtz dans Apocalypse Now en 1979. Réputé capricieux sur les plateaux, engagé pour les droits des Amérindiens et des Afro-Américains, il meurt à Los Angeles le 1er juillet 2004.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Marlon_Brando",
+                  "biographie": "bio_brando",
+                  "image": {
+                    "src": "assets/portraits/pan_us_brando.jpg",
+                    "legende": "Marlon Brando, photographie d'Edward Cronenweth (1955)",
+                    "auteur": "Edward Cronenweth",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Marlon_Brando_by_Edward_Cronenweth,_1955_(b_w).jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_carter",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1924,
+                  "titre": "Naissance de Jimmy Carter",
+                  "description": "Jimmy Carter (1924-2024) est un homme d'État américain, né à Plains, en Géorgie, fils de fermiers producteurs d'arachides, officier de marine puis gouverneur de Géorgie, 39e président des États-Unis de 1977 à 1981. En 1978, il négocie entre l'Égypte et Israël les accords de Camp David et place les droits de l'homme au cœur de sa diplomatie, mais la crise des otages de Téhéran, qui dure 444 jours, et la crise économique lui coûtent sa réélection face à Ronald Reagan en 1980. Il fonde en 1982 à Atlanta une fondation à son nom, s'engage comme médiateur et observateur d'élections, reçoit le prix Nobel de la paix en 2002 et meurt à Plains le 29 décembre 2024, à 100 ans, président américain ayant vécu le plus longtemps.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jimmy_Carter",
+                  "image": {
+                    "src": "assets/portraits/pan_us_carter.jpg",
+                    "legende": "Jimmy Carter, portrait officiel (1977)",
+                    "auteur": "Département de la Défense des États-Unis (Naval Photographic Center)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jimmy_Carter_Official_Portrait2_(3x4_cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_malcolmx",
+                  "axe": "Guerres et résistances",
+                  "date": 1925,
+                  "titre": "Naissance de Malcolm X",
+                  "description": "Malcolm X (1925-1965) est un orateur, prédicateur et militant afro-américain, né Malcolm Little à Omaha, dans le Nebraska. Condamné pour cambriolage en 1946, il découvre en prison la Nation of Islam, dont il devient le porte-parole et un défenseur du nationalisme noir, puis la quitte en mars 1964, fait en avril le pèlerinage de La Mecque, rejoint l'islam sunnite sous le nom de Mâlik al-Shabazz et fonde l'Organisation pour l'unité afro-américaine. Il est assassiné le 21 février 1965 à New York, lors d'un discours à l'Audubon Ballroom ; trois membres de la Nation of Islam sont condamnés en 1966, dont deux sont innocentés en 2021, tandis que les commanditaires restent inconnus, et il demeure une icône des mouvements afro-américains.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Malcolm_X",
+                  "image": {
+                    "src": "assets/portraits/pan_us_malcolmx.jpg",
+                    "legende": "Malcolm X, photographie d'Eddie Adams pour l'Associated Press (5 mars 1964)",
+                    "auteur": "Eddie Adams (Associated Press)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Malcolm_X_1964_press_photo.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_coltrane",
+                  "axe": "Musique et spectacle",
+                  "date": 1926,
+                  "titre": "Naissance de John Coltrane",
+                  "description": "John Coltrane (1926-1967) est un saxophoniste et compositeur de jazz américain, né à Hamlet, en Caroline du Nord, dans une famille où l'on chante à l'église. Entré en 1955 dans le quintette de Miles Davis, il enregistre Giant Steps en 1960, puis conduit le jazz d'avant-garde des années 1960, concevant sa musique comme une quête spirituelle, notamment dans A Love Supreme, enregistré en décembre 1964. Il meurt d'un cancer du foie le 17 juillet 1967 à Huntington, dans l'État de New York, à quarante ans, et il est tenu, après Charlie Parker, pour le saxophoniste le plus influent de l'histoire du jazz.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/John_Coltrane",
+                  "image": {
+                    "src": "assets/portraits/pan_us_coltrane.jpg",
+                    "legende": "John Coltrane à l'aéroport de Schiphol (26 octobre 1963)",
+                    "auteur": "Hugo van Gelderen (Anefo)",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:John_Coltrane_1963_cropped_ver2.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_milesdavis",
+                  "axe": "Musique et spectacle",
+                  "date": 1926,
+                  "titre": "Naissance de Miles Davis",
+                  "description": "Miles Davis (1926-1991) est un trompettiste et compositeur de jazz américain, né à Alton, dans l'Illinois, dans une famille aisée dont le père est chirurgien-dentiste. Venu à New York en 1944, il se forme au bebop auprès de Charlie Parker, puis renouvelle le jazz de décennie en décennie : Birth of the Cool, la musique d'Ascenseur pour l'échafaud de Louis Malle en 1957, Kind of Blue en 1959 avec John Coltrane et Bill Evans, puis le jazz fusion de Bitches Brew à la fin des années 1960. Ouvertement engagé contre le racisme et l'apartheid, il meurt à Santa Monica, en Californie, le 28 septembre 1991, et son dernier album, Doo-Bop, paraît en 1992.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Miles_Davis",
+                  "image": {
+                    "src": "assets/portraits/pan_us_milesdavis.jpg",
+                    "legende": "Miles Davis, photographie de William P. Gottlieb au Three Deuces, à New York (août 1947)",
+                    "auteur": "William P. Gottlieb",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Miles_Davis,_(Gottlieb_06851)_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_monroe",
+                  "axe": "Musique et spectacle",
+                  "date": 1926,
+                  "titre": "Naissance de Marilyn Monroe",
+                  "description": "Marilyn Monroe (1926-1962) est une actrice, mannequin et chanteuse américaine, née Norma Jeane Mortenson à Los Angeles. Engagée par la 20th Century Fox en 1946, elle devient au début des années 1950 une star et un sex-symbol avec Les hommes préfèrent les blondes en 1953, Sept ans de réflexion en 1955 et Certains l'aiment chaud en 1959, qui lui vaut un Golden Globe, alors que sa vie privée, marquée par ses mariages avec Joe DiMaggio puis Arthur Miller, reste instable. Elle meurt à trente-six ans à Los Angeles, dans la nuit du 4 au 5 août 1962, d'une overdose de barbituriques, « suicide probable » selon le médecin légiste, et demeure une icône de la culture populaire mondiale.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Marilyn_Monroe",
+                  "biographie": "bio_marilynmonroe",
+                  "image": {
+                    "src": "assets/portraits/pan_us_monroe.jpg",
+                    "legende": "Marilyn Monroe, photographie de Bert Parry (novembre 1953)",
+                    "auteur": "Bert Parry",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Monroecirca1953.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_chavez",
+                  "axe": "Guerres et résistances",
+                  "date": 1927,
+                  "titre": "Naissance de César Chávez",
+                  "description": "César Chávez (1927-1993) est un syndicaliste agricole américain d'origine mexicaine, né à Yuma, en Arizona. En 1962, il fonde à Delano, en Californie, la National Farm Workers Association, rejoint en 1965 les ouvriers philippins en grève dans les vignobles et, après un boycott du raisin, obtient en avril 1970 un contrat de travail de trois ans avec plusieurs propriétaires. Mort le 23 avril 1993 à San Luis, en Arizona, et décoré à titre posthume de la Médaille présidentielle de la Liberté en 1994, il est visé depuis mars 2026, après une enquête du New York Times, par des accusations de dizaines de viols et d'agressions sexuelles, dont certaines sur des mineures, qui ont conduit plusieurs États à annuler ou rebaptiser la journée portant son nom.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/C%C3%A9sar_Ch%C3%A1vez",
+                  "image": {
+                    "src": "assets/portraits/pan_us_chavez.jpg",
+                    "legende": "César Chávez à un rassemblement du syndicat United Farm Workers à Delano (juin 1972)",
+                    "auteur": "Joel Levine",
+                    "licence": "CC BY 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Cesar_chavez_crop2.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_angelou",
+                  "axe": "Littérature et pensée",
+                  "date": 1928,
+                  "titre": "Naissance de Maya Angelou",
+                  "description": "Maya Angelou (1928-2014) est une romancière, poète, actrice et militante afro-américaine, née Marguerite Annie Johnson à Saint-Louis, dans le Missouri, et élevée en partie à Stamps, dans l'Arkansas ségrégationniste. Danseuse et chanteuse de calypso, elle milite avec Martin Luther King et Malcolm X, vit en Égypte puis au Ghana, et publie en 1969 Je sais pourquoi chante l'oiseau en cage, premier des sept volumes de son autobiographie, où elle raconte son enfance marquée par la ségrégation et un traumatisme qui la rend muette pendant six ans. Elle lit en 1993 son poème On the Pulse of Morning à l'investiture du président Bill Clinton, reçoit en 2000 la National Medal of Arts et meurt en 2014 à Winston-Salem, en Caroline du Nord.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Maya_Angelou",
+                  "image": {
+                    "src": "assets/portraits/pan_us_angelou.jpg",
+                    "legende": "Maya Angelou au York College (4 février 2013)",
+                    "auteur": "York College ISLGP",
+                    "licence": "CC BY 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Maya_Angelou_visits_YCP_Feb_2013.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_kubrick",
+                  "axe": "Musique et spectacle",
+                  "date": 1928,
+                  "titre": "Naissance de Stanley Kubrick",
+                  "description": "Stanley Kubrick (1928-1999) est un réalisateur, scénariste, producteur et photographe américain, né à Manhattan et d'abord photographe pour le magazine Look. Après L'Ultime Razzia en 1956, Les Sentiers de la gloire en 1957 et Spartacus en 1960, il s'installe en Angleterre en 1961, d'où il garde un contrôle presque total sur ses films : Lolita, Docteur Folamour, 2001, l'Odyssée de l'espace en 1968, qui lui vaut son seul Oscar, pour les effets visuels, puis Orange mécanique, Shining ou Full Metal Jacket. Perfectionniste, il meurt le 7 mars 1999 dans son manoir de Childwickbury, quelques jours après avoir terminé Eyes Wide Shut, et il est considéré comme l'un des plus grands cinéastes de tous les temps.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Stanley_Kubrick",
+                  "image": {
+                    "src": "assets/portraits/pan_us_kubrick.jpg",
+                    "legende": "Stanley Kubrick, photographie publicitaire de Warner Bros. pour Orange mécanique (1971)",
+                    "auteur": "Warner Bros.",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Stanley_Kubrick_2.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_warhol",
+                  "axe": "Beaux-arts",
+                  "date": 1928,
+                  "titre": "Naissance d'Andy Warhol",
+                  "description": "Andy Warhol (1928-1987) est un artiste américain, né Andrew Warhola à Pittsburgh, en Pennsylvanie, de parents ruthènes venus d'un village de l'actuelle Slovaquie, et l'un des principaux représentants du pop art. Dessinateur publicitaire à New York dès 1949, il expose en 1961 ses premiers tableaux inspirés de la bande dessinée, puis transforme en art, par ses sérigraphies de boîtes de soupe Campbell's et de portraits de Marilyn Monroe, les images de la consommation et de la célébrité, tout en tournant des films d'avant-garde. Blessé en 1968 par un coup de feu de Valerie Solanas, il meurt à New York le 22 février 1987 et reste l'un des artistes les plus influents du XXe siècle, même si la valeur esthétique de son œuvre est controversée.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Andy_Warhol",
+                  "image": {
+                    "src": "assets/portraits/pan_us_warhol.jpg",
+                    "legende": "Andy Warhol et son teckel Archie, photographie de Jack Mitchell (1973)",
+                    "auteur": "Jack Mitchell",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Andy_Warhol_by_Jack_Mitchell.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_mlk",
+                  "axe": "Guerres et résistances",
+                  "date": 1929,
+                  "titre": "Naissance de Martin Luther King",
+                  "description": "Martin Luther King (1929-1968) est un pasteur baptiste afro-américain, né à Atlanta, en Géorgie, figure majeure du mouvement des droits civiques et de la non-violence. Il dirige à partir de 1955 le boycott des bus de Montgomery, mène les campagnes de Birmingham en 1963 et de Selma en 1965, prononce le 28 août 1963 devant le Lincoln Memorial son discours « I have a dream » et devient en 1964 le plus jeune lauréat du prix Nobel de la paix. Engagé en 1967 contre la guerre du Viêt Nam et contre la pauvreté, il est assassiné le 4 avril 1968 à Memphis, un crime officiellement attribué à James Earl Ray, dont la culpabilité et la participation à un complot restent débattues ; depuis 1986, le Martin Luther King Day est un jour férié aux États-Unis.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Martin_Luther_King",
+                  "biographie": "bio_mlk",
+                  "image": {
+                    "src": "assets/portraits/pan_us_mlk.jpg",
+                    "legende": "Martin Luther King lors d'une conférence de presse (26 mars 1964)",
+                    "auteur": "Marion S. Trikosko",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Martin_Luther_King_press_conference_01269u_edit.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_narmstrong",
+                  "axe": "Sciences et découvertes",
+                  "date": 1930,
+                  "titre": "Naissance de Neil Armstrong",
+                  "description": "Neil Armstrong (1930-2012) est un astronaute américain, pilote d'essai et aviateur de la marine, né à Wapakoneta, dans l'Ohio, devenu le premier homme à marcher sur la Lune. Pilote de chasse pendant la guerre de Corée, puis pilote d'essai, il réalise en 1966, à bord de Gemini 8, le premier amarrage de deux engins spatiaux, puis commande la mission Apollo 11 : le 20 juillet 1969, il pose le module lunaire et, avec Buzz Aldrin, descend sur la Lune en disant « C'est un petit pas pour l'homme, un bond de géant pour l'humanité ». Resté discret après son exploit, il enseigne l'aérospatiale à l'université de Cincinnati, siège aux commissions d'enquête sur Apollo 13 et sur Challenger, et meurt à Cincinnati le 25 août 2012.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Neil_Armstrong",
+                  "biographie": "bio_neilarmstrong",
+                  "image": {
+                    "src": "assets/portraits/pan_us_narmstrong.jpg",
+                    "legende": "Neil Armstrong en combinaison spatiale (1er juillet 1969)",
+                    "auteur": "NASA",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Neil_Armstrong_pose.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_dean",
+                  "axe": "Musique et spectacle",
+                  "date": 1931,
+                  "titre": "Naissance de James Dean",
+                  "description": "James Dean (1931-1955) est un acteur américain, né à Marion, dans l'Indiana, et élevé à Fairmount par un oncle et une tante après la mort de sa mère. Formé à l'Actors Studio et remarqué par Elia Kazan, il tient son premier grand rôle dans À l'est d'Éden en 1955, puis incarne l'adolescent rebelle Jim Stark dans La Fureur de vivre de Nicholas Ray, avant de tourner Géant. Passionné de courses automobiles, il meurt à vingt-quatre ans dans un accident de la route à Cholame, en Californie, le 30 septembre 1955, et reste le seul acteur nommé deux fois à l'Oscar du meilleur acteur à titre posthume.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/James_Dean",
+                  "image": {
+                    "src": "assets/portraits/pan_us_dean.jpg",
+                    "legende": "James Dean, photographie publicitaire de La Fureur de vivre (1955)",
+                    "auteur": "Warner Bros. (photographie publicitaire)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:James_Dean_in_Rebel_Without_a_Cause_(HQ).jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_morrison",
+                  "axe": "Littérature et pensée",
+                  "date": 1931,
+                  "titre": "Naissance de Toni Morrison",
+                  "description": "Toni Morrison (1931-2019) est une romancière, essayiste et éditrice américaine, née Chloe Ardelia Wofford à Lorain, dans l'Ohio, et longtemps professeure de littérature, notamment à Princeton. Après avoir fait publier chez Random House de nombreux auteurs afro-américains, elle publie L'Œil le plus bleu en 1970, Sula en 1973, Le Chant de Salomon en 1977, puis Beloved en 1987, inspiré de l'histoire de l'esclave Margaret Garner et couronné par le prix Pulitzer en 1988. Première Afro-Américaine à recevoir le prix Nobel de littérature, en 1993, elle meurt à New York en 2019, et ses romans, qui revisitent l'histoire des États-Unis du point de vue des laissés-pour-compte, sont devenus des classiques.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Toni_Morrison",
+                  "biographie": "bio_tonimorrison",
+                  "image": {
+                    "src": "assets/portraits/pan_us_morrison.jpg",
+                    "legende": "Toni Morrison à la bibliothèque Enoch Pratt de Baltimore (29 janvier 1998)",
+                    "auteur": "John Mathew Smith (celebrity-photos.com)",
+                    "licence": "CC BY-SA 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Toni_Morrison.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_sagan",
+                  "axe": "Sciences et découvertes",
+                  "date": 1934,
+                  "titre": "Naissance de Carl Sagan",
+                  "description": "Carl Sagan (1934-1996) est un astronome et vulgarisateur scientifique américain, né à Brooklyn dans une famille juive venue d'Europe orientale, docteur de l'université de Chicago en 1960 et professeur à l'université Cornell. Il participe à de nombreuses missions d'exploration du système solaire, conçoit les messages destinés à d'éventuels extraterrestres sur la plaque des sondes Pioneer et sur le disque d'or de Voyager, et anime la série télévisée Cosmos, diffusée dans le monde entier. Fondateur de l'exobiologie, partisan du programme SETI, sceptique militant, il alerte aussi sur l'hiver nucléaire et sur l'environnement, avant de mourir d'une pneumonie à Seattle le 20 décembre 1996, à soixante-deux ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Carl_Sagan",
+                  "image": {
+                    "src": "assets/portraits/pan_us_sagan.jpg",
+                    "legende": "Carl Sagan à la fondation de la Planetary Society (1980)",
+                    "auteur": "NASA/JPL",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Carl_Sagan_Planetary_Society.JPG"
+                  }
+                },
+                {
+                  "id": "pan_us_elvis",
+                  "axe": "Musique et spectacle",
+                  "date": 1935,
+                  "titre": "Naissance d'Elvis Presley",
+                  "description": "Elvis Presley (1935-1977) est un chanteur et acteur américain, né à Tupelo, dans le Mississippi, surnommé « le Roi du rock and roll ». Découvert en 1954 chez Sun Records, à Memphis, où il mêle country et rhythm and blues dans le rockabilly, il signe avec RCA fin 1955, scandalise une partie de l'Amérique par sa gestuelle, tourne dans de nombreux films à partir de 1956, puis relance sa carrière musicale avec l'émission télévisée de 1968 et ses concerts à Las Vegas, avant Aloha from Hawaii, diffusé en mondovision en 1973. Il meurt d'une crise cardiaque à Graceland, sa résidence de Memphis, le 16 août 1977, à quarante-deux ans, et reste l'un des artistes qui ont vendu le plus de disques.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Elvis_Presley",
+                  "biographie": "bio_elvis",
+                  "image": {
+                    "src": "assets/portraits/pan_us_elvis.jpg",
+                    "legende": "Elvis Presley, photographie promotionnelle du film Le Rock du bagne (1957)",
+                    "auteur": "Metro-Goldwyn-Mayer",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Elvis_Presley_promoting_Jailhouse_Rock.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_aretha",
+                  "axe": "Musique et spectacle",
+                  "date": 1942,
+                  "titre": "Naissance d'Aretha Franklin",
+                  "description": "Aretha Franklin (1942-2018) est une chanteuse, pianiste et compositrice américaine de soul, de gospel, de jazz et de rhythm and blues, née à Memphis, dans le Tennessee, fille d'un pasteur baptiste et surnommée « la Reine de la soul ». Révélée en 1967 par I Never Loved a Man (The Way I Love You), puis par Lady Soul en 1968, elle fait de Respect, de Think ou de (You Make Me Feel Like) A Natural Woman des hymnes féministes et des droits civiques, qu'elle soutient aux côtés de Martin Luther King. Première femme admise au Rock and Roll Hall of Fame, en 1987, titulaire de dix-huit Grammy Awards et de la médaille présidentielle de la Liberté, elle meurt à Détroit, dans le Michigan, le 16 août 2018.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Aretha_Franklin",
+                  "image": {
+                    "src": "assets/portraits/pan_us_aretha.jpg",
+                    "legende": "Aretha Franklin, photographie publicitaire d'Atlantic Records (17 février 1968)",
+                    "auteur": "Atlantic Records",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Aretha_Franklin_1968.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_hendrix",
+                  "axe": "Musique et spectacle",
+                  "date": 1942,
+                  "titre": "Naissance de Jimi Hendrix",
+                  "description": "Jimi Hendrix (1942-1970) est un guitariste, chanteur et auteur-compositeur américain, né Johnny Allen Hendrix à Seattle, dans l'État de Washington, d'ascendance africaine, européenne et amérindienne. Révélé à Londres en 1966, où il fonde The Jimi Hendrix Experience, il bouleverse en quatre ans de carrière le jeu de la guitare électrique, en exploitant l'amplification, l'effet Larsen, la fuzz et la pédale wah-wah, et marque les festivals de Monterey en 1967 puis de Woodstock en 1969. Il meurt à Londres le 18 septembre 1970, à vingt-sept ans, ce qui nourrit le mythe du Club des 27, et il passe pour l'un des plus grands guitaristes de l'histoire du rock.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jimi_Hendrix",
+                  "image": {
+                    "src": "assets/portraits/pan_us_hendrix.jpg",
+                    "legende": "Jimi Hendrix, photographie promotionnelle de la Jimi Hendrix Experience (vers 1968)",
+                    "auteur": "Warner/Reprise Records",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jimi_Hendrix_experience_1968_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_ride",
+                  "axe": "Sciences et découvertes",
+                  "date": 1951,
+                  "titre": "Naissance de Sally Ride",
+                  "description": "Sally Ride (1951-2012) est une astrophysicienne et astronaute américaine, née à Los Angeles, docteure en physique de l'université Stanford en 1978. Choisie la même année dans le premier groupe d'astronautes de la NASA à compter des femmes, elle devient en juin 1983, à trente-deux ans, la première Américaine dans l'espace, à bord de la navette Challenger lors de la mission STS-7, où elle manœuvre le bras robotique, puis vole de nouveau en 1984. Après avoir quitté la NASA en 1987, elle fait de la recherche en physique à l'université de Californie à San Diego, siège aux commissions d'enquête sur les accidents de Challenger et de Columbia, seule personne à participer aux deux, et meurt d'un cancer du pancréas le 23 juillet 2012 à La Jolla.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sally_Ride",
+                  "image": {
+                    "src": "assets/portraits/pan_us_ride.jpg",
+                    "legende": "Sally Ride, photographie de la NASA (1984)",
+                    "auteur": "NASA (retouche : Adam Cuerden)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Sally_Ride_in_1984.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_jobs",
+                  "axe": "Sciences et découvertes",
+                  "date": 1955,
+                  "titre": "Naissance de Steve Jobs",
+                  "description": "Steve Jobs (1955-2011) est un entrepreneur et inventeur américain, né à San Francisco, cofondateur d'Apple et pionnier de l'ordinateur personnel, du baladeur numérique, du smartphone et de la tablette tactile. Après avoir cofondé Apple en 1976 avec Steve Wozniak et Ronald Wayne et lancé le Macintosh en 1984, il est évincé en 1985, fonde NeXT, transforme en 1986 la division graphique de Lucasfilm en studios Pixar, puis revient en 1997 à la tête d'Apple, dont il supervise l'iMac, l'iPod, l'iPhone en 2007 et l'iPad en 2010. Atteint en 2003 d'un cancer du pancréas, qu'il tente d'abord de soigner par des méthodes sans fondement scientifique avant de se faire opérer en 2004, il meurt à Palo Alto le 5 octobre 2011, à cinquante-six ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Steve_Jobs",
+                  "biographie": "bio_jobs",
+                  "image": {
+                    "src": "assets/portraits/pan_us_jobs.jpg",
+                    "legende": "Steve Jobs à la Worldwide Developers Conference (7 juin 2010)",
+                    "auteur": "Matt Yohe (retouche : MetalGearLiquid)",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Steve_Jobs_Headshot_2010-CROP2.jpg"
+                  }
+                },
+                {
+                  "id": "pan_us_mjackson",
+                  "axe": "Musique et spectacle",
+                  "date": 1958,
+                  "titre": "Naissance de Michael Jackson",
+                  "description": "Michael Jackson (1958-2009) est un chanteur, auteur-compositeur, danseur et acteur américain, né à Gary, dans l'Indiana, huitième d'une famille de dix enfants et surnommé le « roi de la pop ». Révélé à onze ans avec les Jackson Five, il mène dès 1971 une carrière solo qui culmine avec Off the Wall en 1979, Thriller en 1982, l'album le plus vendu de l'histoire, puis Bad en 1987, et renouvelle le clip avec Billie Jean, Beat It ou Thriller, et la danse avec le moonwalk. Sa vie privée est ternie par des accusations d'agressions sexuelles sur mineur, en 1993 puis en 2003, qui ne débouchent sur aucune condamnation ; il meurt à Los Angeles le 25 juin 2009, à cinquante ans, d'une overdose de médicaments, son médecin Conrad Murray étant reconnu coupable d'homicide involontaire.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Michael_Jackson",
+                  "biographie": "bio_michaeljackson",
+                  "image": {
+                    "src": "assets/portraits/pan_us_mjackson.jpg",
+                    "legende": "Michael Jackson et ses Grammy Awards (28 février 1984), photographie d'United Press International",
+                    "auteur": "United Press International",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Michael_Jackson_with_Grammy_Awards_in_1984.jpg"
+                  }
+                }
+              ],
+              "axeOrder": [
+                "Chefs d'État et dirigeants",
+                "Guerres et résistances",
+                "Littérature et pensée",
+                "Beaux-arts",
+                "Musique et spectacle",
+                "Sciences et découvertes"
+              ],
+              "essentiel": [
+                "pan_us_pocahontas",
+                "pan_us_franklin",
+                "pan_us_washington",
+                "pan_us_jefferson",
+                "pan_us_lincoln",
+                "pan_us_poe",
+                "pan_us_douglass",
+                "pan_us_whitman",
+                "pan_us_tubman",
+                "pan_us_sittingbull",
+                "pan_us_twain",
+                "pan_us_edison",
+                "pan_us_troosevelt",
+                "pan_us_wilbur",
+                "pan_us_wright",
+                "pan_us_orville",
+                "pan_us_fdroosevelt",
+                "pan_us_eisenhower",
+                "pan_us_hemingway",
+                "pan_us_armstrong",
+                "pan_us_disney",
+                "pan_us_oppenheimer",
+                "pan_us_reagan",
+                "pan_us_pollock",
+                "pan_us_parks",
+                "pan_us_sinatra",
+                "pan_us_kennedy",
+                "pan_us_malcolmx",
+                "pan_us_monroe",
+                "pan_us_warhol",
+                "pan_us_mlk",
+                "pan_us_narmstrong",
+                "pan_us_morrison",
+                "pan_us_elvis",
+                "pan_us_hendrix",
+                "pan_us_jobs",
+                "pan_us_mjackson"
+              ]
+            },
+            {
               "id": "pan_fr",
               "nom": "Grandes figures de France",
               "difficulte": "Intermédiaire",
@@ -94301,6 +96243,22 @@
                     "auteur": "Auteur inconnu",
                     "licence": "Domaine public",
                     "source": "https://commons.wikimedia.org/wiki/File:Antoine_de_Saint-Euxpery_(1920).jpg"
+                  }
+                },
+                {
+                  "id": "pan_fr_baker",
+                  "axe": "Musique et spectacle",
+                  "date": 1906,
+                  "titre": "Naissance de Joséphine Baker",
+                  "description": "Joséphine Baker (1906-1975) est une danseuse, chanteuse et actrice américaine devenue française, née à Saint-Louis, dans le Missouri, dans une famille très pauvre. Révélée à Paris en 1925 par La Revue nègre, puis vedette des Folies Bergère, elle est naturalisée française en 1937, s'engage pendant la Seconde Guerre mondiale dans le renseignement et la France libre, ce qui lui vaut la Croix de guerre et la Légion d'honneur, puis prend la parole en 1963 à la marche sur Washington pour les droits civiques. Elle meurt à Paris en 1975, quelques jours après un spectacle fêtant ses cinquante ans de scène, et entre au Panthéon en 2021, première femme noire à y être honorée, par un cénotaphe puisqu'elle repose à Monaco.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jos%C3%A9phine_Baker",
+                  "biographie": "bio_jbaker",
+                  "image": {
+                    "src": "assets/portraits/pan_fr_baker.jpg",
+                    "legende": "Joséphine Baker, photographie d'Henri Manuel (années 1920)",
+                    "auteur": "Henri Manuel",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jos%C3%A9phine_Baker_-_photo_Henri_Manuel.jpg"
                   }
                 },
                 {
