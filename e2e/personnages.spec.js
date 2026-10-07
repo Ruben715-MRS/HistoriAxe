@@ -101,9 +101,9 @@ test('la fiche d’un personnage montre son portrait, sa légende, son crédit e
     await page.locator('#mode-card-discovery').click();
     await expect(page.locator('#screen-game')).toBeVisible();
 
-    // Soixante repères, chacun avec sa pastille : « un portrait pour chaque événement ».
-    await expect(page.locator('#timeline .entry')).toHaveCount(60);
-    await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(60);
+    // Soixante et un repères, chacun avec sa pastille : « un portrait pour chaque événement ».
+    await expect(page.locator('#timeline .entry')).toHaveCount(61);
+    await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(61);
 
     await page.locator('#timeline .entry', { hasText: 'Naissance de Victor Hugo' }).click();
     await expect(page.locator('#modal-details')).toBeVisible();
@@ -130,6 +130,20 @@ test('la fiche d’un personnage montre son portrait, sa légende, son crédit e
     // Une biographie a des axes (« Enfance et formation »…) : elle s'ouvre sur leur écran.
     await expect(page.locator('#screen-axes')).toBeVisible();
     await expect(page.locator('#axes-subtitle')).toContainText('Victor Hugo');
+});
+
+test('Joséphine Baker, née aux États-Unis et devenue française, est au panthéon de la France avec son portrait et sa biographie', async ({ page }) => {
+    // Le pays d'un panthéon est celui qui honore, pas celui de l'état civil : Baker est au Panthéon
+    // de Paris depuis 2021. Elle n'est donc pas dans « Grandes figures des États-Unis ».
+    await openThemeById(page, PANTHEON);
+    await page.locator('#mode-card-discovery').click();
+    await page.locator('#timeline .entry', { hasText: 'Naissance de Joséphine Baker' }).click();
+    await expect(page.locator('#modal-details')).toBeVisible();
+    await expect(page.locator('#modal-pays')).toBeHidden();
+    const portrait = page.locator('#modal-portrait-img');
+    await expect.poll(() => portrait.evaluate(img => img.complete ? img.naturalWidth : 0)).toBe(320);
+    await expect(page.locator('#modal-portrait-caption')).toContainText('Joséphine Baker');
+    await expect(page.locator('#modal-bio-btn')).toBeVisible();
 });
 
 test('un personnage sans biographie n’a pas de bouton « Voir sa biographie »', async ({ page }) => {

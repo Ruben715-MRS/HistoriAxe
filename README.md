@@ -536,7 +536,7 @@ ne posent pas la même question :
 | | Un thème, c'est | Une date, c'est | On le joue par |
 |---|---|---|---|
 | **Biographies** | une vie (360 thèmes, en 12 domaines) | une étape de cette vie | étape de la vie |
-| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, l'Égypte, l'Amérique hispanique, le Maghreb) | la naissance d'un personnage | domaine |
+| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, l'Égypte, les États-Unis, l'Amérique hispanique, le Maghreb) | la naissance d'un personnage | domaine |
 
 Le déplacement ne coûte aucune migration : les 360 thèmes gardent leurs
 identifiants, et rien de ce que le joueur a sauvegardé (favoris, révision,
@@ -570,7 +570,7 @@ des pays ont une histoire commune, un thème **de région** plutôt qu'un par pa
 |---|---|---|
 | Identifiant | `pan_<iso2>` : deux lettres (`pan_fr`) | `pan_<code>` : trois lettres ou plus (`pan_hispam`) — jamais de collision avec un code de pays |
 | `pays` sur chaque événement | interdit (le thème le dit déjà) | obligatoire : code ISO à deux lettres (`"pays": "VE"`) |
-| Exemples | France, Égypte ; plus tard Allemagne, Brésil… | Amérique hispanique, Maghreb ; plus tard Machrek |
+| Exemples | France, Égypte, États-Unis ; plus tard Allemagne, Brésil… | Amérique hispanique, Maghreb ; plus tard Machrek |
 
 Ce que le champ `pays` d'un événement change :
 
@@ -590,8 +590,10 @@ thèmes (`onThemeSearchInput`) les parcourt, si bien que « mexique » mène à
 **Départager un personnage entre deux pays** : celui qui l'honore le plus, pas
 celui de l'état civil. Camus (né en Algérie) et Marie Curie (née à Varsovie)
 restent en France ; Che Guevara est rangé en Argentine, où il est né, la fiche
-disant ce que Cuba lui doit. Les cas disputés sont écrits comme tels dans la
-description (Atahualpa : Quito ou Cuzco).
+disant ce que Cuba lui doit. Joséphine Baker, née à Saint-Louis (Missouri),
+naturalisée française en 1937 et entrée au Panthéon de Paris en 2021, est au
+panthéon de la France, non à celui des États-Unis. Les cas disputés sont écrits
+comme tels dans la description (Atahualpa : Quito ou Cuzco).
 
 **Seules des personnalités disparues** : le format de la phrase d'ouverture
 exige une année de décès, et un panthéon de vivants se démodera.
@@ -601,14 +603,14 @@ exige une année de décès, et un panthéon de vivants se démodera.
 fusionnées, parce que leur frontière est floue (Voltaire, Rousseau, Camus) ;
 peinture et musique restent séparées, parce que la leur est nette.
 
-| Axe | Contenu | France |
-|---|---|---|
-| Chefs d'État et dirigeants | souverains, présidents, chefs de gouvernement | 12 |
-| Guerres et résistances | chefs militaires, résistants, héros d'indépendance, combats pour les droits | 8 |
-| Littérature et pensée | écrivains, poètes, philosophes | 15 |
-| Beaux-arts | peinture, sculpture, architecture | 9 |
-| Musique et spectacle | compositeurs, interprètes, cinéma, théâtre | 7 |
-| Sciences et découvertes | savants, inventeurs, explorateurs | 9 |
+| Axe | Contenu | France | États-Unis |
+|---|---|---|---|
+| Chefs d'État et dirigeants | souverains, présidents, chefs de gouvernement | 12 | 21 |
+| Guerres et résistances | chefs militaires, résistants, héros d'indépendance, combats pour les droits | 8 | 24 |
+| Littérature et pensée | écrivains, poètes, philosophes | 15 | 25 |
+| Beaux-arts | peinture, sculpture, architecture | 9 | 12 |
+| Musique et spectacle | compositeurs, interprètes, cinéma, théâtre | 8 | 23 |
+| Sciences et découvertes | savants, inventeurs, explorateurs | 9 | 18 |
 
 Les règles de rédaction, vérifiées par script et par test (voir plus bas) :
 
@@ -625,13 +627,14 @@ Les règles de rédaction, vérifiées par script et par test (voir plus bas) :
   « av. J.-C. » une fois, à la fin : « Vercingétorix (vers 82-46 av. J.-C.) ».
   **L'année entre parenthèses doit être celle de l'événement** : sur soixante
   fiches, la faute de frappe est l'erreur la plus probable.
-- **Une personne ne naît pas deux fois.** Les 25 personnages qui ont aussi une
+- **Une personne ne naît pas deux fois.** Les 26 personnages qui ont aussi une
   biographie (champ `biographie`, qui nourrit le bouton « Voir sa biographie »
-  de la fiche) doivent porter la *même* date. Les dates des soixante ont été
+  de la fiche) doivent porter la *même* date. Les dates des soixante et une ont été
   comparées une à une à la phrase d'ouverture de l'article Wikipédia.
-- **⭐ Incontournables** (`essentiel`) : 20 sur 60 pour la France.
+- **⭐ Incontournables** (`essentiel`) : 20 sur 61 pour la France, 37 sur 123 pour les États-Unis.
 
-Quantités visées : 60 personnages pour la France, 52 pour l'Égypte, 80 à 100
+Quantités visées : 61 personnages pour la France, 52 pour l'Égypte, 123 pour les
+États-Unis (85 proposés, portés à 123 : « mieux vaut plus que moins »), 80 à 100
 pour l'Amérique hispanique (dix-neuf pays, de 1 à 19 figures chacun), 58 pour le
 Maghreb (cinq pays, de 1 à 21), 40 pour les grands pays, 30 pour les autres. À 6
 axes, 30 donne environ 5 par axe — le minimum pour qu'un axe joué seul reste un jeu.
@@ -823,6 +826,81 @@ Hypatie et Ibn al-Fârid, par des images imaginées des siècles plus tard (Just
 Gand en 1475 pour Ptolémée, Zurbarán pour Antoine, Alfred Seifert pour Hypatie,
 un dessin de Khalil Gibran en 1917 pour Ibn al-Fârid…).
 
+### Un pays à part : les États-Unis
+
+`pan_us`, « Grandes figures des États-Unis » : **123 personnages**, de Pocahontas
+(vers 1596) à Steve Jobs (1955). Par axe : 25 Littérature et pensée, 24 Guerres et
+résistances, 23 Musique et spectacle, 21 Chefs d'État et dirigeants, 18 Sciences et
+découvertes, 12 Beaux-arts ; 37 ⭐ et 29 biographies liées. La liste a été soumise
+puis validée décision par décision : 85 figures proposées, portées à 123 (« mieux
+vaut plus que moins »).
+
+Les choix qui ne vont pas de soi :
+
+- **Un pays, donc pas un bloc**, comme l'Égypte : `pan_us` (deux lettres), aucun
+  champ `pays`, aucun pays dans la fiche, et « Pendant ce temps, ailleurs… » le
+  compte comme les États-Unis, au même titre que `thm_usa` — l'« Histoire des
+  États-Unis », dont l'identifiant n'est pas `thm_us`, ce que dit la table de pays
+  (`assets/geo/theme-country-map.json`, où aucun panthéon ne figure). Le thème se
+  range par son nom de rangement, « États-Unis », entre l'Égypte et la France.
+- **Nés aux États-Unis, plus Hamilton** (né à Nevis, en 1755 selon la date la plus
+  admise, en 1757 selon d'autres sources : la fiche le dit). Einstein, Tesla, Bell,
+  Chaplin, Hitchcock, Kissinger et Carnegie restent à leur pays de naissance, et
+  Joséphine Baker, entrée au Panthéon de Paris, est dans celui de la France.
+- **Neuf Amérindiens** — Pocahontas, Tecumseh, Sequoyah, Sacagawea, Sitting Bull,
+  Red Cloud, Crazy Horse, Geronimo et le chef Joseph — sans exiger de portrait
+  authentique : des dessins ou des représentations illustrées connues sont
+  acceptés, et la légende dit ce qu'on voit (voir plus bas). Les années incertaines
+  portent « vers » (Pocahontas, Sequoyah, Sacagawea, Sojourner Truth, Harriet
+  Tubman, Sitting Bull, Crazy Horse, Carver) ; pour les autres, la date la plus
+  communément admise est retenue et l'incertitude est dite dans la fiche
+  (Hamilton, Tecumseh, Douglass, Geronimo).
+- **Des dirigeants contestés**, dont la fiche dit ce qu'on leur reproche :
+  l'esclavage (Washington, qui affranchit les siens par testament, Jefferson,
+  Madison, Jackson), l'Indian Removal Act et la Piste des larmes (Jackson), la
+  ségrégation dans l'administration fédérale (Wilson), l'internement des Américains
+  d'origine japonaise (Franklin Roosevelt), Hiroshima et Nagasaki (Truman), le
+  Watergate (Nixon), l'affaire Iran-Contra et le sida (Reagan), la Bonus Army
+  (Hoover), la guerre du Viêt Nam (Lyndon Johnson), le « gros bâton » (Theodore
+  Roosevelt). Même démarche pour Lindbergh (propos antisémites, décoration
+  allemande), Malcolm X, Disney (HUAC), Edison (guerre des courants) ou Sinatra.
+- **Des confédérés, avec leur contexte** : Jefferson Davis, Robert Lee et Stonewall
+  Jackson. Leur fiche dit que la sécession défendait l'esclavage, que tous trois
+  possédaient des esclaves, que la défaite de 1865 n'a pas fait taire le mythe de la
+  « Cause perdue » et que plusieurs de leurs statues ont été retirées.
+- **Des figures d'origine juive**, incluses comme américaines (Gershwin,
+  Bernstein, Kubrick, Oppenheimer, Feynman, Sagan, Man Ray, Arthur Miller) :
+  l'idée d'un thème juif à part est abandonnée.
+- **Des exceptions de rangement.** Eisenhower et Grant sont rangés chez les
+  Chefs d'État et dirigeants — leurs biographies en font des chefs militaires —,
+  MacArthur et Patton restant chez les militaires. Edison (Sciences), Disney
+  (Musique et spectacle) et Steve Jobs (Sciences : inventeur et pionnier de
+  l'informatique personnelle) sont rangés ailleurs que chez les « Entrepreneurs » de
+  leurs biographies, que les panthéons n'ont pas.
+- **César Chávez.** L'article de Wikipédia en français rapporte qu'une enquête du
+  *New York Times* de mars 2026 l'accuse de dizaines de viols et d'agressions
+  sexuelles, dont certaines sur des mineures, et que plusieurs États ont annulé ou
+  rebaptisé la journée portant son nom. La fiche le dit en toutes lettres, comme
+  une accusation ; sa présence est à rediscuter si elles sont confirmées.
+- **Pas de vivants**, et ni sportifs, ni entrepreneurs, ni religieux (Ali, Owens,
+  Ruth, Ford, Rockefeller, Gates, Joseph Smith, Billy Graham : ils ont leur
+  biographie).
+
+### Ce que les images disent aux États-Unis
+
+Les Amérindiens sont la part délicate. Pocahontas est montrée par la gravure de
+Simon van de Passe faite à Londres en 1616, Tecumseh par une aquarelle
+d'Owen Staples de 1915 d'après une gravure de 1868 (une représentation posthume),
+Sequoyah par une lithographie du XIXe siècle, Sacagawea par le détail d'une
+peinture murale d'Edgar Paxson — « aucun portrait authentique n'existe » — et
+Crazy Horse par une photographie de 1877 dont l'identification est contestée : la
+légende dit qu'aucun portrait authentique n'est connu. Sitting Bull, Red Cloud,
+Geronimo et le chef Joseph sont, eux, photographiés de leur vivant. Les
+peintures — les autoportraits de Whistler et de Cassatt, Washington par Stuart,
+Jefferson par Peale, Melville par Eaton… — côtoient des daguerréotypes (Poe,
+Thoreau, Emerson, Dickinson, John Brown) et, pour tout le XXe siècle, des
+photographies de presse ou de studio.
+
 ### Un fichier source par panthéon, un script qui l'écrit dans `data/fr.json`
 
 `scripts/pantheon/<code>.json` (`fr`, `hispam`…) est **la seule source de
@@ -887,10 +965,11 @@ partout : une photographie française publiée après 1930 peut être restée
 protégée aux États-Unis (loi URAA). Pour cette raison, les portraits de Piaf
 (photo de 1946 du studio Harcourt) et de Lumière (1948) ont été remplacés par
 des images dont la licence est explicite (Piaf en 1962, archives néerlandaises,
-CC0 ; Lumière vers 1890). Répartition finale : France, 53 domaine public, 4 CC0,
+CC0 ; Lumière vers 1890). Répartition finale : France, 54 domaine public, 4 CC0,
 3 CC BY ou CC BY-SA ; Amérique hispanique, 75 domaine public, 2 CC0, 8 CC BY,
 12 CC BY-SA ; Maghreb, 36 domaine public, 5 CC0, 3 CC BY, 14 CC BY-SA ; Égypte,
-34 domaine public, 5 CC0, 2 CC BY, 11 CC BY-SA. En France, trois portraits du XXe siècle reposent sur un
+34 domaine public, 5 CC0, 2 CC BY, 11 CC BY-SA ; États-Unis, 109 domaine public,
+3 CC0, 4 CC BY, 7 CC BY-SA. En France, trois portraits du XXe siècle reposent sur un
 raisonnement plus fin que « ancien », à relire si l'on veut être plus strict :
 
 - **Jean Moulin** (Harcourt, 1937) : œuvre collective, dont le délai français de
@@ -1013,6 +1092,49 @@ Plotin, Abdel Wahab, Mahfouz, Nasser, Idris, Saadawi, Sharif, Zewail, et
 Boutros-Ghali, dont le cliché des archives Anefo porte la licence néerlandaise
 « CC BY-SA 3.0 NL »).
 
+Les États-Unis en comptent trente-huit, d'une troisième nature : des
+photographies américaines du XXe siècle, libres non par l'ancienneté mais par
+défaut de formalités (jusqu'en 1989, la loi américaine exigeait une mention de
+copyright, et un renouvellement pour les œuvres publiées avant 1964) ou par le
+don d'une collection à la Bibliothèque du Congrès. Les voici, pour qui voudrait
+être plus strict (les œuvres anciennes, les photographies d'avant 1929, les
+œuvres du gouvernement fédéral — Eisenhower, Kennedy, Lyndon Johnson, Nixon,
+Carter, Reagan, Thurgood Marshall, MacArthur, Oppenheimer, Grace Hopper, Rachel
+Carson, Ansel Adams, Neil Armstrong, Sagan, Sally Ride, Arthur Miller — et les
+licences CC de photographes ou d'institutions identifiés n'appellent pas de
+réserve) :
+
+- **Vingt-deux photographies « PD US no notice » ou « PD US not renewed »**,
+  publiées sans mention de copyright ou dont le copyright n'a pas été renouvelé :
+  Truman (vers 1947), Malcolm X (Eddie Adams pour l'Associated Press, 1964), Zora
+  Neale Hurston, Hemingway (1939), Steinbeck (1939), Frank Lloyd Wright (vers
+  1926), Hopper (Harris & Ewing, 1937), Pollock (Hans Namuth, 1951), Ellington
+  (1964), Bogart (1940), Disney (1946), Katharine Hepburn (1941), Brando (1955),
+  Marilyn Monroe (1953), Kubrick (1971), James Dean (1955), Elvis Presley (1957),
+  Hendrix, Aretha Franklin (1968), Michael Jackson (United Press International,
+  1984), Hubble (1931) et Earhart (NBC, 1935). Beaucoup sont des photographies
+  publicitaires de studios ou de maisons de disques ; la page du fichier les dit
+  libres, ce que rien ici ne permet de vérifier.
+- **Seize photographies de collections de la Bibliothèque du Congrès, « aucune
+  restriction connue »** : huit de Carl Van Vechten (Fitzgerald, Faulkner,
+  Langston Hughes, Baldwin, Man Ray, Calder, Gershwin, Welles), six de William
+  Gottlieb (Armstrong, Billie Holiday, Sinatra, Ella Fitzgerald, Parker, Miles
+  Davis), une du *New York World-Telegram* (Tennessee Williams) et une de l'*U.S.
+  News & World Report* (Martin Luther King) — le même raisonnement que pour
+  Matisse et Camus en France.
+
+Les quatre-vingt-cinq autres reposent sur des bases plus solides : œuvres
+anciennes (peintures, gravures, daguerréotypes, photographies d'avant 1929, dont
+celles de la collection Bain, de Harris & Ewing ou d'Underwood & Underwood pour
+Keaton, Keller, Wilson, Hoover, Lindbergh ou Rockwell), œuvres du gouvernement
+fédéral, et quatorze licences CC ou CC0 de photographes ou d'institutions
+identifiés (le musée de la Galerie nationale d'art pour Adams, la National
+Portrait Gallery pour Patton, les archives Anefo pour Coltrane, la bibliothèque
+Roosevelt pour Franklin et Eleanor Roosevelt, la Marshall Foundation, Jack
+Mitchell pour Bernstein et Warhol, Tamiko Thiel pour Feynman, Matt Yohe pour
+Jobs, John Mathew Smith pour Rosa Parks et Toni Morrison, le York College pour
+Maya Angelou, Joel Levine pour César Chávez).
+
 Un portrait sous licence CC BY ou CC BY-SA porte dans la fiche son auteur, le
 **lien vers le texte de la licence**, la mention « image recadrée » et le lien
 vers la page de l'œuvre : c'est ce que ces licences exigent.
@@ -1043,7 +1165,10 @@ Commons : les originaux d'al-Manfaluti, d'al-Akkad et de Sayed Darwich (de 669 �
 860 px de large) ont été refusés à chaque reprise, en 429 avec `Retry-After: 600`,
 y compris après onze minutes sans la moindre requête, alors que les miniatures de
 500 px étaient servies sans difficulté ; ils sont donc des miniatures de 500 px.
-Le script n'attend pas dix minutes : il renonce après trois reprises (6, 12 puis
+Les États-Unis en comptent quatre (279 px utiles pour Sagan, le plus bas ; 282
+pour Crazy Horse, 311 pour Ella Fitzgerald, 317 pour Gershwin), et neuf images
+y sont demandées dans leur taille d'origine (`largeur: 0`), faute de miniature
+standard assez large pour le recadrage voulu. Le script n'attend pas dix minutes : il renonce après trois reprises (6, 12 puis
 24 s) et passe à l'image suivante. `--check` contrôle sans réseau (existence,
 dimensions, licence).
 
@@ -1058,8 +1183,9 @@ faute de licence établie), remplacés l'un par une photographie de 1933 aux
 deux balises, l'autre par un cliché de 1959 de la Bibliothèque du Congrès.
 
 **Poids** : JPEG de 320 × 400, 25 Ko en moyenne (62 au plus), soit 1,5 Mo pour
-les 60 de la France, 2,5 Mo pour les 97 de l'Amérique hispanique, 1,7 Mo
-pour les 58 du Maghreb et 1,4 Mo pour les 52 de l'Égypte — de
+les 61 de la France, 2,5 Mo pour les 97 de l'Amérique hispanique, 1,7 Mo
+pour les 58 du Maghreb, 1,4 Mo pour les 52 de l'Égypte et 2,7 Mo pour les 123
+des États-Unis — de
 l'ordre de 20 Mo pour 800 portraits, quand `assets/` en pèse déjà 38. Le WebP
 gagnerait environ un tiers, mais la cible iOS actuelle (13, voir
 `ios/App/Podfile`) ne le lit pas : il attendra la migration vers Capacitor 7
@@ -1113,11 +1239,15 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
 
 ### Ce qui n'est pas fait
 
-- **Les autres panthéons** : la France, l'Égypte, l'Amérique hispanique et le
-  Maghreb sont écrits. Viennent ensuite le Machrek (sans l'Égypte, qui a le sien,
-  ni Israël ni les figures juives, qui auront leur propre thème), le Brésil à
-  part, puis les autres pays — chaque liste de personnages validée avant la
-  rédaction.
+- **Les autres panthéons** : la France, l'Égypte, les États-Unis, l'Amérique
+  hispanique et le Maghreb sont écrits. Viennent ensuite le Machrek (sans l'Égypte,
+  qui a le sien ; le sort d'Israël et des figures juives reste à trancher, l'idée
+  d'un thème juif à part ayant été abandonnée), le Brésil à part, puis les autres
+  pays — chaque liste de personnages validée avant la rédaction.
+- **Des figures des États-Unis écartées faute d'image libre convenable**, à
+  réintégrer si l'une apparaît : John Rawls, Scott Joplin (un portrait de 200 px),
+  Linus Pauling et Claude Shannon (portraits trop étroits), Barbara McClintock,
+  Margaret Mead (licence) et Jean-Michel Basquiat (licence douteuse).
 - **Des figures de l'Égypte écartées faute d'image libre ou d'année de
   naissance**, à réintégrer si l'une apparaît : al-Maqrizi, al-Suyuti,
   al-Jabarti, Hassan al-Attar, et les pharaons sans naissance connue (voir « Un
@@ -1383,7 +1513,7 @@ et un `fetch` — c'est-à-dire de la quasi-totalité de l'interface.
 `npm run test:e2e` (Playwright, `e2e/`) comble ce trou en ouvrant un vrai
 navigateur sur le site servi tel qu'il l'est en production
 (`e2e/server.js`, un serveur statique sans dépendance). Douze parcours,
-93 tests, environ trois minutes :
+96 tests, environ trois minutes :
 
 - `e2e/modes.spec.js` — chaque mode de jeu se lance et répond à une
   première interaction. C'est la famille de régressions déjà vécue ici :
