@@ -536,7 +536,7 @@ ne posent pas la même question :
 | | Un thème, c'est | Une date, c'est | On le joue par |
 |---|---|---|---|
 | **Biographies** | une vie (360 thèmes, en 12 domaines) | une étape de cette vie | étape de la vie |
-| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, l'Amérique hispanique, le Maghreb) | la naissance d'un personnage | domaine |
+| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, l'Égypte, l'Amérique hispanique, le Maghreb) | la naissance d'un personnage | domaine |
 
 Le déplacement ne coûte aucune migration : les 360 thèmes gardent leurs
 identifiants, et rien de ce que le joueur a sauvegardé (favoris, révision,
@@ -570,7 +570,7 @@ des pays ont une histoire commune, un thème **de région** plutôt qu'un par pa
 |---|---|---|
 | Identifiant | `pan_<iso2>` : deux lettres (`pan_fr`) | `pan_<code>` : trois lettres ou plus (`pan_hispam`) — jamais de collision avec un code de pays |
 | `pays` sur chaque événement | interdit (le thème le dit déjà) | obligatoire : code ISO à deux lettres (`"pays": "VE"`) |
-| Exemples | France ; plus tard Allemagne, Brésil… | Amérique hispanique, Maghreb ; plus tard Machrek |
+| Exemples | France, Égypte ; plus tard Allemagne, Brésil… | Amérique hispanique, Maghreb ; plus tard Machrek |
 
 Ce que le champ `pays` d'un événement change :
 
@@ -631,10 +631,10 @@ Les règles de rédaction, vérifiées par script et par test (voir plus bas) :
   comparées une à une à la phrase d'ouverture de l'article Wikipédia.
 - **⭐ Incontournables** (`essentiel`) : 20 sur 60 pour la France.
 
-Quantités visées : 60 personnages pour la France, 80 à 100 pour l'Amérique
-hispanique (dix-neuf pays, de 1 à 19 figures chacun), 58 pour le Maghreb
-(cinq pays, de 1 à 21), 40 pour les grands pays, 30 pour les autres. À 6 axes, 30
-donne environ 5 par axe — le minimum pour qu'un axe joué seul reste un jeu.
+Quantités visées : 60 personnages pour la France, 52 pour l'Égypte, 80 à 100
+pour l'Amérique hispanique (dix-neuf pays, de 1 à 19 figures chacun), 58 pour le
+Maghreb (cinq pays, de 1 à 21), 40 pour les grands pays, 30 pour les autres. À 6
+axes, 30 donne environ 5 par axe — le minimum pour qu'un axe joué seul reste un jeu.
 
 ### Le premier bloc : l'Amérique hispanique
 
@@ -758,6 +758,71 @@ Tunisiens, 4 Libyens et 1 Mauritanien du départ sont restés.
 Si une image convenable apparaît pour l'un d'eux, il se réintègre en ajoutant sa
 fiche à `scripts/pantheon/maghreb.json`.
 
+### Un pays à part : l'Égypte
+
+`pan_eg`, « Grandes figures d'Égypte » : **52 personnages**, d'Imhotep (vers 2670
+av. J.-C.) à Ahmed Zewail (1946). Par axe : 17 Chefs d'État et dirigeants, 17
+Littérature et pensée, 7 Musique et spectacle, 4 Guerres et résistances, 4
+Sciences et découvertes, 3 Beaux-arts (un sculpteur, une peintre, un
+architecte) ; 21 ⭐ et 5 biographies liées (Imhotep, Cléopâtre, Oum Kalthoum,
+Hassan Fathy, Naguib Mahfouz).
+
+Les choix qui ne vont pas de soi :
+
+- **Un pays, donc pas un bloc — et séparé du Machrek.** Le thème s'appelle
+  `pan_eg` (deux lettres) : ses événements n'ont pas de champ `pays`, la fiche
+  n'affiche ni drapeau ni nom de pays, et « Pendant ce temps, ailleurs… » le
+  compte comme l'Égypte, au même titre que `thm_eg`, le thème « Histoire de
+  l'Égypte ». Mêlée aux 54 figures prévues du Machrek, l'Égypte aurait pesé 49 %
+  d'un bloc de 106 figures, soit bien plus que le seuil de 40 % du constructeur :
+  le Machrek viendra sans elle. Le thème se range par son nom de rangement,
+  « Égypte », entre l'Amérique hispanique et la France.
+- **Cinq millénaires, de très inégale densité.** Sept figures de l'Égypte
+  pharaonique et ptolémaïque (Imhotep, Hatchepsout, Akhenaton, Néfertiti,
+  Toutânkhamon, Ramsès II, Cléopâtre VII) ; six de l'Égypte romaine — cinq
+  savants et penseurs de langue grecque (Ptolémée, Origène, Plotin, Athanase,
+  Hypatie) et le père du monachisme chrétien, Antoine le Grand ; un seul poète
+  médiéval, Ibn al-Fârid (1181) ; puis trente-huit modernes, d'Ali Bey al-Kabir
+  (1728) à Zewail. Entre 1181 et 1728, le vide du Caire des Ayyoubides, des
+  Mamelouks et des Ottomans vient des images : al-Maqrizi et al-Suyuti n'ont de
+  libre que de la calligraphie, al-Jabarti qu'un portrait de 134 × 188 px, Hassan
+  al-Attar rien du tout.
+- **Les dates de l'Égypte ancienne portent « vers »** : celles de Wikipédia en
+  français, que les chronologies déplacent de quelques années. Les pharaons dont
+  on ne connaît aucune année de naissance (Khéops, Khéphren, Mykérinos, Djéser,
+  Sésostris III, Thoutmosis III) n'y sont pas : la phrase d'ouverture exige une
+  naissance.
+- **Les cinq biographies liées gardent la date de leur biographie** — Imhotep
+  vers 2670 av. J.-C., Cléopâtre vers 69, Oum Kalthoum « vers 1898 »
+  (Wikipédia hésite jusqu'en 1906), Fathy 1900, Mahfouz 1911 — et le bouton
+  « Voir sa biographie » les relie.
+- **Des dirigeants contestés** — Farouk, Naguib, Nasser, Sadate, Moubarak —
+  dont la fiche dit ce qui les a perdus ou ce qu'on leur reproche : la défaite de
+  1948 pour Farouk, la résidence surveillée jusqu'en 1970 pour Naguib, la guerre
+  des Six Jours pour Nasser, la paix avec Israël et l'assassinat pour Sadate,
+  l'état d'urgence et la révolution de 2011 pour Moubarak.
+- **« Illustre » ne veut pas dire « de souche égyptienne » ni « né dans les
+  frontières actuelles »** : Naguib naît à Khartoum, d'un père égyptien et d'une
+  mère soudanaise ; Cléopâtre VII, d'une dynastie macédonienne, est la première
+  de sa lignée à parler égyptien ; Omar Sharif sort d'une famille chrétienne du
+  Liban ; Ptolémée, Plotin et Hypatie écrivent en grec. Le pays d'un panthéon
+  est celui qui honore, pas celui de l'état civil.
+- **Pas de vivants**, et ni sportifs ni entrepreneurs, comme ailleurs.
+
+### Ce que les images disent en Égypte
+
+La légende dit ce qu'on voit, et l'Égypte en a le plus besoin. Six de ses
+figures antiques sont montrées par une sculpture ou un masque de leur temps :
+Hatchepsout agenouillée, le buste colossal de Ramsès II, un fragment d'Akhenaton,
+le buste de Néfertiti, le masque de Toutânkhamon, le buste de Cléopâtre VII
+conservé à Berlin — une sculpture tient lieu de portrait. Huit autres n'ont
+aucune image authentique : Imhotep, par une statuette de bronze de l'époque
+ptolémaïque, plus de deux millénaires après sa mort ; Plotin, par un buste
+d'Ostie que l'on identifie sans certitude ; Ptolémée, Origène, Athanase, Antoine,
+Hypatie et Ibn al-Fârid, par des images imaginées des siècles plus tard (Juste de
+Gand en 1475 pour Ptolémée, Zurbarán pour Antoine, Alfred Seifert pour Hypatie,
+un dessin de Khalil Gibran en 1917 pour Ibn al-Fârid…).
+
 ### Un fichier source par panthéon, un script qui l'écrit dans `data/fr.json`
 
 `scripts/pantheon/<code>.json` (`fr`, `hispam`…) est **la seule source de
@@ -824,7 +889,8 @@ protégée aux États-Unis (loi URAA). Pour cette raison, les portraits de Piaf
 des images dont la licence est explicite (Piaf en 1962, archives néerlandaises,
 CC0 ; Lumière vers 1890). Répartition finale : France, 53 domaine public, 4 CC0,
 3 CC BY ou CC BY-SA ; Amérique hispanique, 75 domaine public, 2 CC0, 8 CC BY,
-12 CC BY-SA ; Maghreb, 36 domaine public, 5 CC0, 3 CC BY, 14 CC BY-SA. En France, trois portraits du XXe siècle reposent sur un
+12 CC BY-SA ; Maghreb, 36 domaine public, 5 CC0, 3 CC BY, 14 CC BY-SA ; Égypte,
+34 domaine public, 5 CC0, 2 CC BY, 11 CC BY-SA. En France, trois portraits du XXe siècle reposent sur un
 raisonnement plus fin que « ancien », à relire si l'on veut être plus strict :
 
 - **Jean Moulin** (Harcourt, 1937) : œuvre collective, dont le délai français de
@@ -912,6 +978,41 @@ Commission européenne (Hassan II, Ould Daddah, CC BY 4.0) et des licences CC de
 photographes, d'institutions ou de contributeurs qui se déclarent auteurs de
 leur cliché.
 
+L'Égypte en compte quinze, de la même nature : des portraits de presse,
+d'ouvrage ou d'archive dont le « domaine public » repose sur le droit du pays
+d'origine, ou sur une licence qu'un tiers a posée :
+
+- **Douze images à la seule balise « PD-Egypt »**, aucune ne portant la balise
+  « PD-1996 » : deux portraits tirés de l'ouvrage biographique *Al-A'lam*
+  d'al-Zirikli (Rifa'a al-Tahtawi, antérieur à 1873 ; Sayed Darwich, antérieur à
+  1923), la photographie de Saad Zaghloul parue en 1926 (W. Hanselman), celle de
+  Qasim Amin (entre 1890 et 1908, collection Sakhr al-Khatib), celle de Mahmoud
+  Mokhtar parue dans *Rose al-Youssef* en 1930, celle de Tawfiq al-Hakim parue
+  dans *Al-Riyadh* en 1985, le portrait officiel de Mohamed Naguib (présidence
+  égyptienne, vers 1954) et cinq clichés d'auteur inconnu — Taha Hussein, Oum
+  Kalthoum (1938), Farouk Ier (1946), Faten Hamama (1962) et Inji Efflatoun.
+  Leur « domaine public » est celui de l'Égypte ; rien n'établit qu'il vaille aussi
+  aux États-Unis.
+- **Une photographie à balise tunisienne** : Abdel Halim Hafez, dans le journal
+  tunisien *Assabah* (1978), « PD-Tunisia » seule. Un chanteur égyptien sous le
+  droit d'un autre pays que le sien.
+- **Deux licences posées par un tiers**, plausibles mais invérifiables d'ici :
+  Hassan Fathy (CC BY-SA 3.0, pour un cliché que la page tire de l'« archive
+  personnelle de Dimitri Papadimos avec son fils Ioannis ») et Youssef Chahine
+  (CC0, pour une photographie de 1978 mise en ligne par Mblegacy et dont la page
+  dit elle-même « Photo Credit - Unknown »).
+
+Les trente-sept autres reposent sur des bases plus solides : dix-neuf images
+anciennes (œuvres d'art, gravures, photographies d'avant 1931, dont un cliché de
+la collection Bain de la Bibliothèque du Congrès pour Fouad Ier), quatre pièces
+de musée sous CC0 (le Metropolitan Museum pour Imhotep, Hatchepsout et
+Akhenaton, le Rijksmuseum pour Ali Bey), deux œuvres du gouvernement américain
+(Sadate par la CIA, Moubarak par le Département de la Défense) et douze licences
+CC de photographes ou d'artistes identifiés (Néfertiti, Toutânkhamon, Ramsès II,
+Plotin, Abdel Wahab, Mahfouz, Nasser, Idris, Saadawi, Sharif, Zewail, et
+Boutros-Ghali, dont le cliché des archives Anefo porte la licence néerlandaise
+« CC BY-SA 3.0 NL »).
+
 Un portrait sous licence CC BY ou CC BY-SA porte dans la fiche son auteur, le
 **lien vers le texte de la licence**, la mention « image recadrée » et le lien
 vers la page de l'œuvre : c'est ce que ces licences exigent.
@@ -934,8 +1035,17 @@ le fichier source). Vingt images n'y parviennent pas, leur source étant plus
 Pakal) : elles sont agrandies, donc un peu molles sur un écran à haute
 densité, mais passables à la taille d'affichage (160 × 200 px). Le Maghreb en
 compte six (230 px utiles pour Ibn Battûta, le plus bas ; 252 pour Kateb Yacine,
-256 pour Omar al-Mokhtar, puis 281, 306 et 312 pour Haddad, Msika et Chraïbi).
-`--check` contrôle sans réseau (existence, dimensions, licence).
+256 pour Omar al-Mokhtar, puis 281, 306 et 312 pour Haddad, Msika et Chraïbi),
+l'Égypte huit (221 pour al-Manfaluti, le plus bas ; 233 pour Taha Hussein, 271
+pour Sayed Darwich, 282 pour al-Akkad, 284 pour Farouk, 292 pour Mohamed Abduh,
+306 pour Hoda Charaoui et 312 pour Ahmed Chawqi). Trois de ces huit le doivent à
+Commons : les originaux d'al-Manfaluti, d'al-Akkad et de Sayed Darwich (de 669 à
+860 px de large) ont été refusés à chaque reprise, en 429 avec `Retry-After: 600`,
+y compris après onze minutes sans la moindre requête, alors que les miniatures de
+500 px étaient servies sans difficulté ; ils sont donc des miniatures de 500 px.
+Le script n'attend pas dix minutes : il renonce après trois reprises (6, 12 puis
+24 s) et passe à l'image suivante. `--check` contrôle sans réseau (existence,
+dimensions, licence).
 
 **Le script refuse ce qui est signalé sur Commons** : une page de fichier qui
 porte un bandeau de suppression (« nominated for deletion », « speedy
@@ -948,8 +1058,8 @@ faute de licence établie), remplacés l'un par une photographie de 1933 aux
 deux balises, l'autre par un cliché de 1959 de la Bibliothèque du Congrès.
 
 **Poids** : JPEG de 320 × 400, 25 Ko en moyenne (62 au plus), soit 1,5 Mo pour
-les 60 de la France, 2,5 Mo pour les 97 de l'Amérique hispanique et 1,7 Mo
-pour les 58 du Maghreb — de
+les 60 de la France, 2,5 Mo pour les 97 de l'Amérique hispanique, 1,7 Mo
+pour les 58 du Maghreb et 1,4 Mo pour les 52 de l'Égypte — de
 l'ordre de 20 Mo pour 800 portraits, quand `assets/` en pèse déjà 38. Le WebP
 gagnerait environ un tiers, mais la cible iOS actuelle (13, voir
 `ios/App/Podfile`) ne le lit pas : il attendra la migration vers Capacitor 7
@@ -1003,10 +1113,15 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
 
 ### Ce qui n'est pas fait
 
-- **Les autres panthéons** : la France, l'Amérique hispanique et le Maghreb sont
-  écrits. Viennent ensuite le Machrek (sans Israël ni les figures juives, qui
-  auront leur propre thème), le Brésil à part, puis les autres pays — chaque
-  liste de personnages validée avant la rédaction.
+- **Les autres panthéons** : la France, l'Égypte, l'Amérique hispanique et le
+  Maghreb sont écrits. Viennent ensuite le Machrek (sans l'Égypte, qui a le sien,
+  ni Israël ni les figures juives, qui auront leur propre thème), le Brésil à
+  part, puis les autres pays — chaque liste de personnages validée avant la
+  rédaction.
+- **Des figures de l'Égypte écartées faute d'image libre ou d'année de
+  naissance**, à réintégrer si l'une apparaît : al-Maqrizi, al-Suyuti,
+  al-Jabarti, Hassan al-Attar, et les pharaons sans naissance connue (voir « Un
+  pays à part : l'Égypte »).
 - **Des figures de l'Amérique hispanique écartées faute de portrait libre**,
   à réintégrer si une image convenable apparaît : voir « Ce que les images
   ont écarté » plus haut.
@@ -1268,7 +1383,7 @@ et un `fetch` — c'est-à-dire de la quasi-totalité de l'interface.
 `npm run test:e2e` (Playwright, `e2e/`) comble ce trou en ouvrant un vrai
 navigateur sur le site servi tel qu'il l'est en production
 (`e2e/server.js`, un serveur statique sans dépendance). Douze parcours,
-87 tests, environ trois minutes :
+93 tests, environ trois minutes :
 
 - `e2e/modes.spec.js` — chaque mode de jeu se lance et répond à une
   première interaction. C'est la famille de régressions déjà vécue ici :

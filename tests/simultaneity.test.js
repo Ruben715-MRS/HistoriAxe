@@ -126,6 +126,9 @@ test('themeTag : la convention pan_<iso> du panthéon d’un pays donne le pays'
     // à une ancre française.
     assert.equal(S.themeTag('pan_fr', [1, 1, 0], {}), 'pays:FR');
     assert.equal(S.themeTag('pan_fr', [1, 1, 0], {}), S.themeTag('thm_fr', [2, 0], { thm_fr: 'FR' }));
+    // Idem pour « Grandes figures d'Égypte » et « Histoire de l'Égypte ».
+    assert.equal(S.themeTag('pan_eg', [1, 1, 0], {}), 'pays:EG');
+    assert.equal(S.themeTag('pan_eg', [1, 1, 0], {}), S.themeTag('thm_eg', [2, 0], { thm_eg: 'EG' }));
     // Le motif est strict : `pan_` puis deux lettres, rien d'autre.
     assert.equal(S.themeTag('pan_france', [1, 1], {}), 'branche:1.1');
 });
@@ -399,6 +402,27 @@ test('« Grandes figures du Maghreb » : chaque ancre porte le pays de son évé
     // Cinq pays, dont deux (la Libye, la Mauritanie) n'ont que quelques figures : aucun ne
     // doit manquer parmi les ancres.
     verifierPantheonDeBloc('pan_maghreb', 13, 5);
+});
+
+test('« Grandes figures d’Égypte » : toutes les ancres sont l’Égypte, et la session se joue', () => {
+    // Le panthéon d'un pays n'a pas de `pays` par événement : c'est son thème qui porte
+    // l'étiquette (pan_eg → EG, comme « Histoire de l'Égypte »). Sans cela, une naissance
+    // égyptienne pourrait répondre « ailleurs » à une ancre égyptienne — et, pour les
+    // pharaons, l'Antiquité égyptienne n'aurait aucun contemporain étranger à proposer.
+    const theme = allThemes().find(t => t.id === 'pan_eg');
+    assert.ok(theme, 'thème pan_eg absent du pack français');
+    const index = S.buildTagIndex(frData.categories, { countryByTheme: geoMap });
+    theme.events.forEach(e => assert.equal(index[e.id], 'pays:EG', `étiquette de ${e.id}`));
+    const histoire = allThemes().find(t => t.id === 'thm_eg');
+    assert.equal(index[histoire.events[0].id], 'pays:EG', 'pan_eg doit être le même pays que thm_eg');
+    const anchors = theme.events.map(e => Object.assign({}, e, { tag: index[e.id], themeName: theme.nom }));
+    const session = S.buildSession(anchors, realPool, { rng: seededRng(5), count: S.SESSION_ROUNDS });
+    assert.equal(session.length, S.SESSION_ROUNDS);
+    session.forEach(q => {
+        assert.ok(!/^pan_/.test(q.correct.themeId), 'la bonne réponse ne peut pas venir d’un panthéon');
+        assert.notEqual(q.correct.tag, 'pays:EG',
+            `« ${q.correct.titre} » est égyptien : ce n’est pas un « ailleurs » pour « ${q.anchor.titre} »`);
+    });
 });
 
 test('les gros thèmes du pack français remplissent une session entière', () => {

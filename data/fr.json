@@ -2,8 +2,8 @@
   "version": "1.0.0",
   "lang": "fr",
   "name": "Français (Intégral)",
-  "totalThemes": 798,
-  "totalEvents": 19995,
+  "totalThemes": 799,
+  "totalEvents": 20047,
   "categories": [
     {
       "nom": "Culture générale",
@@ -92629,6 +92629,843 @@
                 "pan_hispam_che",
                 "pan_hispam_botero",
                 "pan_hispam_vargasllosa"
+              ]
+            },
+            {
+              "id": "pan_eg",
+              "nom": "Grandes figures d'Égypte",
+              "difficulte": "Intermédiaire",
+              "motsCles": [
+                "Égyptien",
+                "Égyptienne",
+                "Pharaon",
+                "Pharaons",
+                "Égypte ancienne",
+                "Égypte antique",
+                "Nil",
+                "Le Caire",
+                "Alexandrie",
+                "Monde arabe",
+                "Moyen-Orient",
+                "Nahda"
+              ],
+              "events": [
+                {
+                  "id": "pan_eg_imhotep",
+                  "axe": "Sciences et découvertes",
+                  "date": -2670,
+                  "titre": "Naissance d'Imhotep",
+                  "description": "Imhotep (vers 2670-vers 2580 av. J.-C.) est un haut dignitaire du pharaon Djéser, de la IIIe dynastie, chancelier du roi et « maître-artisan des sculpteurs et des maçons ». Il est réputé avoir conçu le complexe funéraire de Djéser à Saqqarah, première construction en pierre d'une telle ampleur, et la tradition lui attribue aussi des compositions littéraires et des textes de sagesse. Son souvenir grandit pendant deux millénaires : devenu « fils de Ptah » au plus tard sous la XIXe dynastie, il est vénéré à l'époque tardive comme un dieu guérisseur et le fondateur de la médecine égyptienne, que les Grecs rapprochent d'Asclépios.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Imhotep",
+                  "biographie": "bio_imhotep",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_imhotep.jpg",
+                    "legende": "Imhotep, statuette en bronze de l'époque ptolémaïque (Metropolitan Museum of Art) : une image posthume, réalisée plus de deux millénaires après sa mort",
+                    "auteur": "Metropolitan Museum of Art",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Statue_of_Seated_Imhotep_MET_DP240480.jpg"
+                  }
+                },
+                {
+                  "id": "pan_eg_hatchepsout",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": -1508,
+                  "titre": "Naissance d'Hatchepsout",
+                  "description": "Hatchepsout (vers 1508-vers 1457 av. J.-C.) est une reine de la XVIIIe dynastie devenue pharaon, fille de Thoutmôsis Ier et probablement née à Thèbes. Régente pour son beau-fils Thoutmôsis III après la mort de son époux Thoutmôsis II, elle se fait couronner roi quelques années plus tard et règne conjointement avec lui, sous la titulature et les attributs d'un souverain masculin. Son temple funéraire de Deir el-Bahari, à Thèbes, et l'expédition envoyée au pays de Pount marquent son règne, et l'égyptologue James Henry Breasted voit en elle la « première grande femme dont l'histoire ait gardé le nom ».",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Hatchepsout",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_hatchepsout.jpg",
+                    "legende": "Hatchepsout agenouillée, statue en granite de son règne (Metropolitan Museum of Art)",
+                    "auteur": "Metropolitan Museum of Art",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kneeling_statue_of_Hatshepsut_MET_23.3.1.jpg"
+                  }
+                },
+                {
+                  "id": "pan_eg_akhenaton",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": -1371,
+                  "titre": "Naissance d'Akhenaton",
+                  "description": "Akhenaton (vers 1371-vers 1338 av. J.-C.) est le dixième pharaon de la XVIIIe dynastie, fils d'Amenhotep III et de la reine Tiyi, d'abord appelé Amenhotep IV. Il impose le culte exclusif du disque solaire Aton, fait marteler le nom des anciens dieux et fonde en Moyenne-Égypte la cité d'Akhetaton, l'actuelle Amarna, où naît un art nouveau, naturaliste, qui montre le roi et sa famille dans leur intimité. Son œuvre ne lui survit pas, ses successeurs rétablissant le culte d'Amon, mais certains voient en lui l'inventeur du premier monothéisme connu.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Akhenaton",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_akhenaton.jpg",
+                    "legende": "Akhenaton, fragment de statue représentant son visage (Metropolitan Museum of Art)",
+                    "auteur": "Metropolitan Museum of Art",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Head_of_Akhenaten_MET_21.9.17_02.jpg"
+                  }
+                },
+                {
+                  "id": "pan_eg_nefertiti",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": -1370,
+                  "titre": "Naissance de Néfertiti",
+                  "description": "Néfertiti (vers 1370-vers 1333 av. J.-C.) est une reine d'Égypte, grande épouse royale d'Akhenaton, dont le nom signifie « la belle est venue ». Elle joue un rôle politique et religieux important dans la période amarnienne : à Karnak, ses représentations sont plus nombreuses que celles de son royal époux, et on la figure dans la pose traditionnelle du pharaon qui châtie les ennemis de l'Égypte. On ignore comment s'achève sa vie, mais son buste, attribué au sculpteur Thoutmôsis et conservé au Neues Museum de Berlin, est l'une des œuvres de l'Égypte antique les plus copiées.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/N%C3%A9fertiti",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_nefertiti.jpg",
+                    "legende": "Néfertiti, buste attribué au sculpteur Thoutmôsis (Neues Museum, Berlin)",
+                    "auteur": "Philip Pikart",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Nofretete_Neues_Museum.jpg"
+                  }
+                },
+                {
+                  "id": "pan_eg_toutankhamon",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": -1345,
+                  "titre": "Naissance de Toutânkhamon",
+                  "description": "Toutânkhamon (vers 1345-vers 1327 av. J.-C.) est le onzième pharaon de la XVIIIe dynastie, monté sur le trône à l'âge d'environ neuf ans et mort à dix-huit ou dix-neuf ans. Dans la troisième année de son règne, il se détourne du culte d'Aton imposé par Akhenaton, restaure la suprématie du dieu Amon et change son nom de Toutânkhaton en Toutânkhamon. Pharaon mineur pour ses contemporains, il doit sa célébrité à la découverte de sa tombe dans la Vallée des Rois par Howard Carter, le 4 novembre 1922, et au fabuleux trésor qu'elle renfermait, dont son masque funéraire en or.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Tout%C3%A2nkhamon",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_toutankhamon.jpg",
+                    "legende": "Toutânkhamon, masque funéraire en or (musée égyptien du Caire)",
+                    "auteur": "Bjørn Christian Tørrissen",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mask_of_Tutankhamun_2003-12-07.jpg"
+                  }
+                },
+                {
+                  "id": "pan_eg_ramses2",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": -1304,
+                  "titre": "Naissance de Ramsès II",
+                  "description": "Ramsès II (vers 1304-vers 1213 av. J.-C.) est le troisième pharaon de la XIXe dynastie, dit Ramsès le Grand ou Ozymandias, dont le règne de soixante-six ans est exceptionnel pour l'époque. Il affronte l'armée hittite à Qadesh, signe avec l'Empire hittite un traité de paix, assure la domination de l'Égypte sur la Nubie, où il élève les temples d'Abou Simbel, et fait graver son nom sur presque tous les temples du pays. Cette profusion de monuments et de statues à son image fait de lui le « pharaon bâtisseur », dont on retrouve la trace dans presque tous les musées d'égyptologie du monde.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Rams%C3%A8s_II",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_ramses2.jpg",
+                    "legende": "Ramsès II, buste colossal en granit provenant de son temple funéraire, le Ramesséum (British Museum)",
+                    "auteur": "Szilas",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Colossal_bust_of_Ramesses_II_in_the_British_Museum.jpg"
+                  }
+                },
+                {
+                  "id": "pan_eg_cleopatre7",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": -69,
+                  "titre": "Naissance de Cléopâtre VII",
+                  "description": "Cléopâtre VII (vers 69-30 av. J.-C.) est la dernière reine d'Égypte de la dynastie lagide, née à Alexandrie, et, contrairement à ses prédécesseurs, elle parle égyptien. Elle règne de 51 à 30 av. J.-C. avec ses frères-époux Ptolémée XIII puis Ptolémée XIV, et aux côtés du général romain Marc Antoine, après avoir été la compagne de Jules César, dont elle a un fils, Césarion. Vaincue avec Antoine à la bataille d'Actium, en 31 av. J.-C., elle se donne la mort à Alexandrie le 12 août 30, la version la plus courante évoquant la morsure d'un serpent venimeux, et l'Égypte devient une province romaine.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Cl%C3%A9op%C3%A2tre_VII",
+                  "biographie": "bio_cleopatre",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_cleopatre7.jpg",
+                    "legende": "Cléopâtre VII, buste en marbre trouvé sur la via Appia (Altes Museum, Berlin), considéré comme son portrait le plus vraisemblable",
+                    "auteur": "Anagoria",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:-0035_Altes_Museum_Portrait_Kleopatra_VII_anagoria.JPG"
+                  }
+                },
+                {
+                  "id": "pan_eg_ptolemee",
+                  "axe": "Sciences et découvertes",
+                  "date": 100,
+                  "titre": "Naissance de Claude Ptolémée",
+                  "description": "Claude Ptolémée (vers 100-vers 168) est un astronome, mathématicien et géographe de langue grecque, né en Égypte et installé à Alexandrie, dont la vie est mal connue. Son Almageste, seul traité complet d'astronomie antique parvenu jusqu'à nous, perfectionne les modèles de ses prédécesseurs en y ajoutant la notion d'équant, et sa Géographie rassemble les connaissances du monde gréco-romain. Transmises par les Arabes et les Byzantins, ses œuvres ont été une référence pendant plus de mille ans, et l'Occident a retrouvé grâce à elles la science grecque au Moyen Âge.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Claude_Ptol%C3%A9m%C3%A9e",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_ptolemee.jpg",
+                    "legende": "Claude Ptolémée avec une sphère armillaire, tableau de Juste de Gand (1475) : un portrait imaginaire, treize siècles après sa mort",
+                    "auteur": "Juste de Gand",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Claudio_Ptolomeo.png"
+                  }
+                },
+                {
+                  "id": "pan_eg_origene",
+                  "axe": "Littérature et pensée",
+                  "date": 185,
+                  "titre": "Naissance d'Origène",
+                  "description": "Origène (vers 185-vers 253) est un théologien chrétien de la période patristique, né à Alexandrie dans une famille chrétienne dont le père meurt martyr en 202, et considéré comme le père de l'exégèse biblique. À la tête de l'école d'Alexandrie dès 215, il rédige le traité des Principes, première synthèse de la science théologique, et les Hexaples, qui présentent sur six colonnes le texte hébreu de l'Ancien Testament et ses versions grecques. Emprisonné et torturé sous l'empereur Dèce en 250, il meurt peu après, probablement à Tyr, et reste, bien que reconnu comme l'un des Pères de l'Église, un auteur non canonisé en raison de certaines de ses thèses.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Orig%C3%A8ne",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_origene.jpg",
+                    "legende": "Origène, gravure de Guillaume Chaudière (1584) : un portrait imaginaire, plus de treize siècles après sa mort",
+                    "auteur": "Guillaume Chaudière",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Origen.jpg"
+                  }
+                },
+                {
+                  "id": "pan_eg_plotin",
+                  "axe": "Littérature et pensée",
+                  "date": 205,
+                  "titre": "Naissance de Plotin",
+                  "description": "Plotin (205-270) est un philosophe gréco-romain de l'Antiquité tardive, né à Lycopolis, en Haute-Égypte, et principal représentant du néoplatonisme. Il installe son école à Rome en 246, et son disciple Porphyre de Tyr réunit ses écrits en Ennéades, six groupes de neuf traités. Il y décrit un univers composé de trois réalités, l'Un, l'Intellect et l'Âme, et propose à l'homme une ascension spirituelle qui le conduit à s'unir à l'Un, une pensée qui a profondément marqué la théologie chrétienne, notamment Augustin d'Hippone.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Plotin",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_plotin.jpg",
+                    "legende": "Plotin, buste en marbre du musée d'Ostie, souvent identifié au philosophe sans certitude",
+                    "auteur": "Sailko",
+                    "licence": "CC BY 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Testa_di_plotino,_III_secolo,_dalla_domus_del_filosofo.JPG"
+                  }
+                },
+                {
+                  "id": "pan_eg_antoine",
+                  "axe": "Littérature et pensée",
+                  "date": 251,
+                  "titre": "Naissance d'Antoine le Grand",
+                  "description": "Antoine le Grand (vers 251-356) est un moine égyptien considéré comme le père du monachisme chrétien, né à Hérakléopolis Magna dans une famille d'agriculteurs chrétiens. Devenu orphelin, il distribue ses biens aux pauvres à vingt ans, vit en ermite, puis s'enfonce dans le désert, jusqu'à Pispir, où des disciples viennent se rassembler autour de lui. Sa vie nous est connue par le récit qu'en fait Athanase d'Alexandrie vers 360, et il serait mort à 105 ans, un 17 janvier, jour où catholiques et orthodoxes le fêtent encore.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Antoine_le_Grand",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_antoine.jpg",
+                    "legende": "Antoine le Grand, peinture de Francisco de Zurbarán (XVIIe siècle) : une image imaginée près de treize siècles après sa mort",
+                    "auteur": "Francisco de Zurbarán",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Anthony_Abbot_by_Zurbaran.jpeg"
+                  }
+                },
+                {
+                  "id": "pan_eg_athanase",
+                  "axe": "Littérature et pensée",
+                  "date": 296,
+                  "titre": "Naissance d'Athanase d'Alexandrie",
+                  "description": "Athanase d'Alexandrie (vers 296-373) est évêque d'Alexandrie de 328 à sa mort, né à Damanhour, près d'Alexandrie, dans une famille païenne. Diacre et secrétaire de l'évêque Alexandre, il assiste au concile de Nicée en 325, puis se bat sa vie durant pour imposer la divinité du Christ contre le parti d'Arius, ce qui lui vaut cinq exils en quarante-cinq ans d'épiscopat et le surnom d'« Athanase contre le monde ». Sa Vie d'Antoine, qui fait connaître l'ermite d'Égypte, devient un modèle pour le monachisme, et l'Église copte l'honore comme l'« Apostolique ».",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Athanase_d%27Alexandrie",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_athanase.jpg",
+                    "legende": "Athanase d'Alexandrie, icône de Sozopol (fin du XVIIe siècle) : une image imaginée plus de treize siècles après sa mort",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Saint-Athanasius-of-Alexandria-icon-Sozopol-Bulgaria-17century.jpg"
+                  }
+                },
+                {
+                  "id": "pan_eg_hypatie",
+                  "axe": "Sciences et découvertes",
+                  "date": 360,
+                  "titre": "Naissance d'Hypatie",
+                  "description": "Hypatie (vers 360-415) est une philosophe néoplatonicienne, astronome et mathématicienne grecque d'Alexandrie, à la tête de l'école néoplatonicienne de la ville. Professeure de renom, qui compte de nombreux élèves chrétiens, elle participe avec son père au commentaire de l'Almageste de Ptolémée et conseille le préfet Oreste, alors en conflit ouvert avec l'évêque Cyrille. Accusée d'entretenir ce conflit, elle est assassinée en mars 415 par une foule de moines chrétiens, et sa mort fait d'elle une « martyre de la philosophie », puis, au XXe siècle, une icône du féminisme.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Hypatie",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_hypatie.jpg",
+                    "legende": "Hypatie, tableau d'Alfred Seifert (avant 1892) : une image imaginée près de quinze siècles après sa mort",
+                    "auteur": "Alfred Seifert",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Alfred_Seifert_Hypatia.jpg"
+                  }
+                },
+                {
+                  "id": "pan_eg_ibnfarid",
+                  "axe": "Littérature et pensée",
+                  "date": 1181,
+                  "titre": "Naissance d'Ibn al-Fârid",
+                  "description": "Ibn al-Fârid (1181-1235) est un poète arabe né au Caire, fils d'un notaire, et l'un des plus grands poètes mystiques du soufisme. Après une scolarité dans une école de droit religieux, il fait des retraites dans les oasis et les collines proches de la ville, vit quelque temps à La Mecque et refuse d'écrire des chants de propagande politique. Son Poème bachique, où le vin figure l'ivresse spirituelle, et son Poème de la voie, où l'amour profane est une allégorie de l'amour mystique, lui valent le surnom de « sultan des amoureux ».",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Omar_Ibn_Al_Faridh",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_ibnfarid.jpg",
+                    "legende": "Ibn al-Fârid, dessin imaginaire de Khalil Gibran (1917), près de sept siècles après sa mort",
+                    "auteur": "Khalil Gibran",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ibn_al-Farid_by_Khalil_Gibran.png"
+                  }
+                },
+                {
+                  "id": "pan_eg_alibey",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1728,
+                  "titre": "Naissance d'Ali Bey al-Kabir",
+                  "description": "Ali Bey al-Kabir (1728-1773) est un chef mamelouk né en Abkhazie, vendu comme esclave dans l'Empire ottoman puis devenu mamelouk dans la province d'Égypte. À la tête de la maison Qazdughliya, il élimine entre 1767 et 1770 les autres beys, réduit les gouverneurs ottomans à un pouvoir nominal, fait battre monnaie à son nom et lance la conquête de la Syrie. Abandonné par son lieutenant Abû Dhahâb, chassé d'Égypte en 1772, il tente de reprendre le pouvoir avec l'aide de la Russie et meurt de ses blessures en 1773, l'Occident voyant en lui un champion de la liberté contre le despotisme ottoman.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ali_Bey_al-Kabir",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_alibey.jpg",
+                    "legende": "Ali Bey al-Kabir, eau-forte datée de 1773, l'année de sa mort (Rijksmuseum)",
+                    "auteur": "Rijksmuseum",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Portret_van_Ali_Bey_al-Kabir,_RP-P-OB-53.468.jpg"
+                  }
+                },
+                {
+                  "id": "pan_eg_mehemetali",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1769,
+                  "titre": "Naissance de Méhémet Ali",
+                  "description": "Méhémet Ali (vers 1769-1849) est un officier ottoman d'origine albanaise, né à Kavala, en Macédoine orientale, devenu gouverneur d'Égypte de 1804 à 1849 et généralement considéré comme le fondateur de l'Égypte moderne. Porté au pouvoir en 1805 par les notables égyptiens, il crée une armée de conscription, lance de grands travaux de canaux et de routes, fait de l'Égypte l'un des premiers producteurs mondiaux de coton, ouvre des écoles modernes, et conquiert la Nubie, où il fonde Khartoum, puis la Syrie grâce à son fils Ibrahim. Contraint en 1841 de rendre la Syrie et de démanteler ses monopoles, il est déposé en 1848 et meurt à Alexandrie en 1849, mais sa dynastie régnera sur l'Égypte jusqu'à la révolution de 1952.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/M%C3%A9h%C3%A9met_Ali",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_mehemetali.jpg",
+                    "legende": "Méhémet Ali, portrait peint par Auguste Couder (1841)",
+                    "auteur": "Auguste Couder",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:ModernEgypt,_Muhammad_Ali_by_Auguste_Couder,_BAP_17996.jpg"
+                  }
+                },
+                {
+                  "id": "pan_eg_ibrahimpacha",
+                  "axe": "Guerres et résistances",
+                  "date": 1789,
+                  "titre": "Naissance d'Ibrahim Pacha",
+                  "description": "Ibrahim Pacha (1789-1848) est un généralissime et homme d'État égyptien, né à Kavala, fils aîné de Méhémet Ali et principal bras armé de son père. Avec l'aide de l'officier français Sève, il réforme l'armée sur le modèle européen, anéantit la puissance wahhabite en prenant Dariya en 1818, met fin au siège de Missolonghi en 1826, pendant la guerre d'indépendance grecque, puis bat l'armée ottomane à Konya en 1832 et conquiert la Syrie. Il gouverne l'Égypte du 2 mars à sa mort, le 10 novembre 1848, quelques mois avant son père, et son fils Ismaïl sera khédive à partir de 1863.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ibrahim_Pacha",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_ibrahimpacha.jpg",
+                    "legende": "Ibrahim Pacha, lithographie de Charles Baugniet (1840)",
+                    "auteur": "Charles Baugniet",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ibrahim-Pacha,_PA06968.jpg"
+                  }
+                },
+                {
+                  "id": "pan_eg_tahtawi",
+                  "axe": "Littérature et pensée",
+                  "date": 1801,
+                  "titre": "Naissance de Rifa'a al-Tahtawi",
+                  "description": "Rifa'a al-Tahtawi (1801-1873) est un auteur et réformateur égyptien, né à Tahta, considéré comme l'un des pionniers de la Nahda, la « renaissance » arabe du XIXe siècle. Imam de la première mission d'étudiants envoyée en France par Méhémet Ali, il passe cinq ans à Paris, de 1826 à 1831, et en rapporte L'Or de Paris, publié en 1834, qui s'interroge sur la rencontre de la civilisation musulmane avec la modernité occidentale. De retour en Égypte, il fonde en 1835 l'École des langues, dont les élèves traduisent en arabe des ouvrages scientifiques européens, et dirige le Journal officiel puis le Bureau de traduction.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Rifa%27a_al-Tahtawi",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_tahtawi.jpg",
+                    "legende": "Rifa'a al-Tahtawi, portrait antérieur à 1873 reproduit dans l'ouvrage biographique Al-A'lam",
+                    "auteur": "Auteur inconnu (reproduit dans Al-A'lam, de Khayr al-Din al-Zirikli)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Rifa%27a_el-Tahtawi_-_Al-Alam,_V3,_P_62.jpg"
+                  }
+                },
+                {
+                  "id": "pan_eg_ismail",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1830,
+                  "titre": "Naissance d'Ismaïl Pacha",
+                  "description": "Ismaïl Pacha (1830-1895) est le wali puis khédive d'Égypte et du Soudan de 1863 à 1879, né au Caire, fils d'Ibrahim Pacha et petit-fils de Méhémet Ali. Formé à Paris, il prolonge la modernisation de son grand-père, prend en 1867 le titre de khédive, qui fait de lui un vassal très autonome du sultan, entreprend une politique de conquêtes et reçoit l'impératrice Eugénie à l'inauguration du canal de Suez, en 1869. Criblé de dettes par ses campagnes militaires et son goût du faste, il est renversé en 1879 sous la pression de l'Angleterre et de la France, et meurt en exil à Constantinople en 1895.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Isma%C3%AFl_Pacha",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_ismail.jpg",
+                    "legende": "Ismaïl Pacha, photographie de Gustave Le Gray (entre 1851 et 1860)",
+                    "auteur": "Gustave Le Gray",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Khedive_Isma%27il_Pasha.png"
+                  }
+                },
+                {
+                  "id": "pan_eg_urabi",
+                  "axe": "Guerres et résistances",
+                  "date": 1841,
+                  "titre": "Naissance d'Ahmed Urabi",
+                  "description": "Ahmed Urabi (vers 1841-1911) est un général et homme politique égyptien, né dans une famille de paysans aisés près de Zagazig, devenu l'un des premiers officiers d'origine égyptienne de l'armée. Porte-parole des militaires égyptiens face aux officiers turco-circassiens, il conduit en 1881 la première révolte nationaliste égyptienne contre le pouvoir du khédive puis contre l'influence européenne, et devient ministre en 1882. Vaincu par les Britanniques dans la guerre anglo-égyptienne de 1882, il passe dix-neuf ans en exil à Ceylan, puis rentre au Caire, où il meurt en 1911.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ahmed_Urabi",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_urabi.jpg",
+                    "legende": "Ahmed Urabi, gravure publiée dans la revue Světozor le 7 juillet 1882",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ahmed_Orabi_1882.png"
+                  }
+                },
+                {
+                  "id": "pan_eg_abduh",
+                  "axe": "Littérature et pensée",
+                  "date": 1849,
+                  "titre": "Naissance de Mohamed Abduh",
+                  "description": "Mohamed Abduh (1849-1905) est un théologien et journaliste égyptien, né dans une famille de fellahs de Basse-Égypte, fondateur avec Djemâl ad-Dîn al-Afghâni du mouvement moderniste islamique. Banni pour avoir participé à la révolte d'Urabi, il passe plus de six ans en exil, au Liban puis en France, où il édite avec Afghâni le journal Al-'Urwa al-Wuthqa, qui appelle les musulmans à se libérer de l'impérialisme européen et du despotisme. De retour en 1888, il entre dans la magistrature et devient Grand Mufti d'Égypte en 1899, et on le considère comme le père du réformisme égyptien, lui qui défend le rôle de la raison comme guide de la vraie foi.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mohamed_Abduh",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_abduh.jpg",
+                    "legende": "Mohamed Abduh, photographie ancienne",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Muhammad_Abduh.jpg"
+                  }
+                },
+                {
+                  "id": "pan_eg_zaghloul",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1858,
+                  "titre": "Naissance de Saad Zaghloul",
+                  "description": "Saad Zaghloul (vers 1858-1927) est un pacha et homme politique égyptien, issu d'une famille de fellahs du Delta, devenu avocat et magistrat puis ministre de l'Instruction publique en 1906 et de la Justice en 1912. Chef du parti Wafd et leader des nationalistes qui réclament l'indépendance dès 1918, il est déporté à Malte en 1919 : son expulsion déclenche la révolution de 1919, qui coûte la vie à plus de huit cents Égyptiens et oblige les Britanniques à le libérer. Arrêté de nouveau en 1921 et déporté à Aden puis aux Seychelles, il devient premier ministre en 1924 et meurt au Caire en 1927.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Saad_Zaghloul",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_zaghloul.jpg",
+                    "legende": "Saad Zaghloul, photographie de W. Hanselman publiée en 1926",
+                    "auteur": "W. Hanselman",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:ModernEgypt,_Saad_Zaghloul,_BAP_14785.jpg"
+                  }
+                },
+                {
+                  "id": "pan_eg_qasimamin",
+                  "axe": "Littérature et pensée",
+                  "date": 1865,
+                  "titre": "Naissance de Qasim Amin",
+                  "description": "Qasim Amin (1865-1908) est un magistrat et penseur égyptien, né à Alexandrie d'un père kurde et d'une mère issue de la famille de Méhémet Ali, considéré comme l'un des principaux pionniers du féminisme arabe. Après des études de droit au Caire puis en France, à Montpellier et à Paris, où il rencontre Afghâni et Mohamed Abduh, il devient juge au tribunal d'appel en 1892. Dans La Libération de la femme, publié en 1899, il affirme que l'éducation et l'autonomie des femmes sont des signes de modernité, et il lance en Égypte le débat sur le voile, que prolonge La Femme nouvelle, en 1900.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Qasim_Amin",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_qasimamin.jpg",
+                    "legende": "Qasim Amin, photographie prise entre 1890 et 1908",
+                    "auteur": "Collection Sakhr al-Khatib",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Qasim_Amin,_Egyptian_jurist.jpg"
+                  }
+                },
+                {
+                  "id": "pan_eg_chawqi",
+                  "axe": "Littérature et pensée",
+                  "date": 1868,
+                  "titre": "Naissance d'Ahmed Chawqi",
+                  "description": "Ahmed Chawqi (1868-1932) est un poète et dramaturge égyptien né au Caire dans une famille proche de la cour du khédive, surnommé « le prince des poètes ». Formé au droit à Montpellier puis à Paris, où Molière, Racine et La Fontaine l'influencent, il est exilé en Andalousie par les Britanniques de 1914 à 1920, puis écrit les premières pièces de théâtre poétique en arabe, dont La Mort de Cléopâtre, sa plus célèbre. Ses poèmes, réunis dans Ach-Chawqiyyat, lui valent d'être couronné prince des poètes par ses pairs en 1927.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ahmed_Chawqi",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_chawqi.jpg",
+                    "legende": "Ahmed Chawqi, photographie du début du XXe siècle",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ahmed_Shawqi_portrait.png"
+                  }
+                },
+                {
+                  "id": "pan_eg_fouad1",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1868,
+                  "titre": "Naissance de Fouad Ier",
+                  "description": "Fouad Ier (1868-1936) est le septième fils du khédive Ismaïl Pacha, né au Caire, qui règne sur l'Égypte de 1917 à sa mort. Sultan sous protectorat britannique, il prend le titre de roi d'Égypte le 15 mars 1922, après que le Royaume-Uni a reconnu l'indépendance du pays, et devient ainsi le premier souverain du royaume d'Égypte. La Constitution de 1923 lui laisse de vastes pouvoirs, dont il use en dissolvant fréquemment le Parlement, et son fils Farouk lui succède à sa mort, en 1936.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Fouad_Ier",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_fouad1.jpg",
+                    "legende": "Fouad Ier, photographie de Bain News Service (Library of Congress)",
+                    "auteur": "Bain News Service",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Fuad_I_of_Egypt.jpg"
+                  }
+                },
+                {
+                  "id": "pan_eg_hafezibrahim",
+                  "axe": "Littérature et pensée",
+                  "date": 1872,
+                  "titre": "Naissance de Hafez Ibrahim",
+                  "description": "Hafez Ibrahim (1872-1932) est un poète égyptien surnommé « le poète du Nil », né d'un père égyptien et d'une mère turque, orphelin à quatre ans. Sorti sous-lieutenant de l'Académie militaire en 1891, il sert cinq ans au Soudan sous les ordres de Kitchener, puis démissionne et dirige, de 1911 à sa mort, la section littéraire de Dâr al-Kutub, la Bibliothèque nationale égyptienne. Inspirateur, avec Ahmed Chawqi, de l'école néo-classique qui renouvelle la poésie arabe, il traduit aussi Les Misérables de Victor Hugo, en 1903.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Hafez_Ibrahim",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_hafezibrahim.jpg",
+                    "legende": "Hafez Ibrahim, photographie antérieure à 1931",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Hafez_Ibrahim2.jpg"
+                  }
+                },
+                {
+                  "id": "pan_eg_mustafakamil",
+                  "axe": "Guerres et résistances",
+                  "date": 1874,
+                  "titre": "Naissance de Mustafa Kamil",
+                  "description": "Mustafa Kamil (1874-1908) est un avocat, journaliste et militant nationaliste égyptien, né au Caire, fondateur du Parti national. Étudiant en droit au Caire puis à Paris, il fonde en 1900 le journal Al-Lewa'a, qui dénonce la domination anglaise et réclame la « pleine évacuation », puis lance en 1907 deux journaux, l'un francophone et l'autre anglophone, pour toucher les communautés étrangères. Son programme, « Les Égyptiens pour l'Égypte », acclamé à Alexandrie en octobre 1907, fait de lui une figure du nationalisme, et il meurt à trente-trois ans, le 10 février 1908.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mustafa_Kamil",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_mustafakamil.jpg",
+                    "legende": "Mustafa Kamil, photographie de studio publiée en 1911",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mustapha_Pasha_Kamil.png"
+                  }
+                },
+                {
+                  "id": "pan_eg_manfaluti",
+                  "axe": "Littérature et pensée",
+                  "date": 1876,
+                  "titre": "Naissance de Mustafa Lutfi al-Manfaluti",
+                  "description": "Mustafa Lutfi al-Manfaluti (1876-1924) est un romancier, nouvelliste et essayiste égyptien, né à Manfalut, en Haute-Égypte, et élève de Mohamed Abduh à Al-Azhar. Emprisonné six mois, étudiant encore, pour des poèmes critiques envers le khédive Abbas II et la colonisation britannique, il publie des essais, Les Regards, des nouvelles, Les Larmes, puis adapte en arabe des œuvres françaises comme Paul et Virginie ou Cyrano de Bergerac. Sa prose narrative moderne, libérée des règles de l'ancienne rhétorique, a fait entrer en Égypte les idées et le goût de la littérature occidentale, et il meurt au Caire en 1924.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Moustapha_Lutfi_al-Manfaluti",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_manfaluti.jpg",
+                    "legende": "Mustafa Lutfi al-Manfaluti, photographie du 15 novembre 1916",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mustafa_Lutfi_al-Manfaluti.jpg"
+                  }
+                },
+                {
+                  "id": "pan_eg_charaoui",
+                  "axe": "Guerres et résistances",
+                  "date": 1879,
+                  "titre": "Naissance de Hoda Charaoui",
+                  "description": "Hoda Charaoui (1879-1947) est l'une des pionnières du mouvement féministe égyptien et arabe, née à Minya, en Haute-Égypte, fille du président de la Chambre des députés. Élevée dans un harem, elle s'engage aux côtés de son mari dans le Wafd pendant la révolution de 1919 et préside en 1920 le Comité central des femmes wafdistes. De retour de la conférence de l'Alliance internationale pour le droit de vote des femmes, à Rome, elle refuse en 1923 de remettre son niqab au large d'Alexandrie, fonde l'Union féministe égyptienne, lance la revue L'Égyptienne et meurt au Caire en 1947.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Huda_Sharawi",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_charaoui.jpg",
+                    "legende": "Hoda Charaoui, photographie des années 1900",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Huda_Sha%27arawi1.jpg"
+                  }
+                },
+                {
+                  "id": "pan_eg_akkad",
+                  "axe": "Littérature et pensée",
+                  "date": 1889,
+                  "titre": "Naissance d'Abbas al-Akkad",
+                  "description": "Abbas al-Akkad (1889-1964) est un écrivain et philosophe égyptien, né à Assouan, autodidacte doté d'une vaste culture arabe et anglo-saxonne. Il fonde en 1923 le journal wafdiste Al-Balâgh, où il devient, pendant l'entre-deux-guerres, un polémiste défenseur des libertés. Poète, auteur d'un roman psychologique, Sara, publié en 1938, et d'essais de critique littéraire, il écrit aussi des biographies de figures de l'islam, dont celles d'Omar et d'Ali, avant de mourir au Caire en 1964.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Abbas_Mahmoud_Al-Akkad",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_akkad.jpg",
+                    "legende": "Abbas al-Akkad, photographie du début du XXe siècle, dans sa jeunesse",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Abbas_Mahmud_al-Aqqad.jpg"
+                  }
+                },
+                {
+                  "id": "pan_eg_tahahussein",
+                  "axe": "Littérature et pensée",
+                  "date": 1889,
+                  "titre": "Naissance de Taha Hussein",
+                  "description": "Taha Hussein (1889-1973) est un universitaire, romancier, essayiste et critique littéraire égyptien, né dans un village de Moyenne-Égypte et devenu aveugle à quatre ans, à la suite d'une conjonctivite mal soignée. Étudiant à Al-Azhar puis à l'université du Caire, il soutient en 1919 à la Sorbonne une thèse sur Ibn Khaldoun, puis modernise l'enseignement supérieur égyptien : doyen de la faculté des lettres en 1930, créateur de l'université d'Alexandrie en 1942, ministre de l'Éducation nationale de 1950 à 1952. Son autobiographie à la troisième personne, Les Jours, et son livre de 1926 sur la poésie pré-islamique lui valent une grande notoriété dans le monde arabe.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Taha_Hussein",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_tahahussein.jpg",
+                    "legende": "Taha Hussein, photographie d'un auteur inconnu",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:TahaHussein.jpg"
+                  }
+                },
+                {
+                  "id": "pan_eg_mokhtar",
+                  "axe": "Beaux-arts",
+                  "date": 1891,
+                  "titre": "Naissance de Mahmoud Mokhtar",
+                  "description": "Mahmoud Mokhtar (1891-1934) est un sculpteur égyptien, né à Mehallah El-Koubra, fils du maire du village de Tanbara. Diplômé de l'École des beaux-arts du Caire en 1911, il se perfectionne à Paris dans les ateliers d'Antoine Bourdelle puis de Jules Coutan, et s'engage avec Saad Zaghloul dans le nationalisme. En 1919, en pleine révolution, il sculpte Le Réveil de l'Égypte, qui, repris en format monumental et achevé en 1928, est inauguré devant la gare du Caire ; il meurt à quarante-deux ans, et un musée lui est consacré au Caire depuis 1962.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mahmoud_Mokhtar_(sculpteur)",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_mokhtar.jpg",
+                    "legende": "Mahmoud Mokhtar, photographie de 1930 parue dans le magazine Rose al-Youssef",
+                    "auteur": "Rose al-Youssef",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mahmoud_Mokhtar.jpg"
+                  }
+                },
+                {
+                  "id": "pan_eg_sayeddarwish",
+                  "axe": "Musique et spectacle",
+                  "date": 1892,
+                  "titre": "Naissance de Sayed Darwich",
+                  "description": "Sayed Darwich (1892-1923) est un chanteur et compositeur égyptien, né à Alexandrie et considéré comme le père de la musique égyptienne populaire. Remarqué après des études dans une école coranique, il fait des tournées dans plusieurs pays arabes, rejoint en 1916 la troupe de Georges Abyad et de Salama Hegazi, puis forme la sienne en 1921, et il met en musique Bilady, Bilady, Bilady, devenu l'hymne national de l'Égypte. Il compose parfois cinq pièces en un mois et meurt à trente et un ans, victime de la peste, le jour même du retour d'exil du leader nationaliste Saad Zaghloul.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sayed_Darwich",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_sayeddarwish.jpg",
+                    "legende": "Sayed Darwich, portrait antérieur à 1923 reproduit dans l'ouvrage biographique Al-A'lam",
+                    "auteur": "Auteur inconnu (reproduit dans Al-A'lam, de Khayr al-Din al-Zirikli)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Sayed_Darwish_-_Al-Alam,_V3,_P_227.jpg"
+                  }
+                },
+                {
+                  "id": "pan_eg_oumkalthoum",
+                  "axe": "Musique et spectacle",
+                  "date": 1898,
+                  "titre": "Naissance d'Oum Kalthoum",
+                  "description": "Oum Kalthoum (vers 1898-1975) est une chanteuse, musicienne et actrice égyptienne, née dans une famille pauvre d'un village du Delta, entre 1898 et 1906 selon les sources. Formée par son père, imam, elle chante d'abord déguisée en garçon, s'installe au Caire, signe en 1926 son premier contrat de disques et, à partir des années 1950, donne le premier jeudi de chaque mois un concert que tout le monde arabe écoute. Surnommée « l'Astre d'Orient » et considérée comme la plus grande chanteuse du monde arabe, elle triomphe à l'Olympia, à Paris, en 1967, et ses funérailles, au Caire en 1975, auraient rassemblé quatre millions de personnes.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Oum_Kalthoum",
+                  "biographie": "bio_oumkalthoum",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_oumkalthoum.jpg",
+                    "legende": "Oum Kalthoum, photographie de 1938",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Singer_Umm_Kulthum_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_eg_tawfiqhakim",
+                  "axe": "Littérature et pensée",
+                  "date": 1898,
+                  "titre": "Naissance de Tawfiq al-Hakim",
+                  "description": "Tawfiq al-Hakim (1898-1987) est un écrivain, dramaturge et essayiste égyptien, né dans la banlieue d'Alexandrie, pionnier du roman et du théâtre arabes modernes. Il puise son inspiration tantôt dans l'Égypte pharaonique, tantôt dans la Grèce antique ou dans la religion musulmane, et lance en 1933, avec Les Gens de la caverne, le « théâtre mental », un théâtre pensé d'abord pour la lecture et plein de signes et de symboles. Son œuvre, tour à tour portée aux nues et enterrée sous des échecs, a inspiré des générations d'écrivains arabes, et il meurt au Caire en 1987.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Tawfiq_al-Hakim",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_tawfiqhakim.jpg",
+                    "legende": "Tawfiq al-Hakim, photographie parue dans le journal Al-Riyadh (1985)",
+                    "auteur": "Journal Al-Riyadh",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Tawfiq_al-Hakim.jpg"
+                  }
+                },
+                {
+                  "id": "pan_eg_fathy",
+                  "axe": "Beaux-arts",
+                  "date": 1900,
+                  "titre": "Naissance de Hassan Fathy",
+                  "description": "Hassan Fathy (1900-1989) est un architecte égyptien, né à Alexandrie dans une riche famille de propriétaires et surnommé « l'architecte des pauvres ». Diplômé de l'École polytechnique de l'université du Caire en 1926, il réhabilite la brique de terre crue et les techniques nubiennes, comme les voûtes sans coffrage, face au béton armé, et il bâtit notamment à New Gourna, près de Louxor, en travaillant avec les habitants. Son livre Construire avec le peuple, publié en 1973, le fait connaître dans le monde entier, et il reçoit en 1980 le premier prix Nobel alternatif, ainsi que le prix Aga Khan d'architecture.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Hassan_Fathy",
+                  "biographie": "bio_hassanfathy",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_fathy.jpg",
+                    "legende": "Hassan Fathy au Caire, photographie antérieure à 1989",
+                    "auteur": "Archives personnelles de Dimitri Papadimos",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Hassan_Fathy_in_Cairo_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_eg_naguib",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1901,
+                  "titre": "Naissance de Mohamed Naguib",
+                  "description": "Mohamed Naguib (1901-1984) est un militaire et homme d'État égyptien, né à Khartoum d'un père égyptien et d'une mère soudanaise. Meneur du mouvement des Officiers libres, qui renverse le roi Farouk le 23 juillet 1952, il devient Premier ministre en septembre 1952 puis, le 18 juin 1953, le premier président de la République d'Égypte, à la fin de la monarchie. En désaccord avec Gamal Abdel Nasser, qui l'accuse d'être trop proche des Frères musulmans, il doit démissionner le 14 novembre 1954 et reste en résidence surveillée jusqu'à la mort de Nasser, en 1970.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mohammed_Naguib",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_naguib.jpg",
+                    "legende": "Mohamed Naguib, portrait officiel de la présidence égyptienne (vers 1954)",
+                    "auteur": "Présidence égyptienne",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Muhammad_Naguib.jpg"
+                  }
+                },
+                {
+                  "id": "pan_eg_abdelwahab",
+                  "axe": "Musique et spectacle",
+                  "date": 1902,
+                  "titre": "Naissance de Mohamed Abdel Wahab",
+                  "description": "Mohamed Abdel Wahab (vers 1902-1991) est un chanteur, compositeur et luthiste égyptien, surnommé « le musicien des générations », né au Caire dans une famille modeste. Formé à l'oud dans un club de musique orientale, il rencontre le poète Ahmed Chawqi, qui lui fait découvrir le répertoire symphonique occidental, et renouvelle la musique arabe en y introduisant la contrebasse, le violoncelle et des rythmes comme le tango ou la valse. Vedette du cinéma chantant dès les années 1930, il écrit à partir de 1964 pour Oum Kalthoum de longues chansons sentimentales, considérées comme des œuvres majeures de la musique arabe contemporaine, et meurt au Caire en 1991.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mohammed_Abdel_Wahab",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_abdelwahab.jpg",
+                    "legende": "Mohamed Abdel Wahab, portrait peint par Essam Azouz (2018)",
+                    "auteur": "Essam Azouz",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mohammed_Abdel_Wahab_%D9%85%D9%88%D8%B3%D9%8A%D9%82%D8%A7%D8%B1_%D8%A7%D9%84%D8%A3%D8%AC%D9%8A%D8%A7%D9%84_%D9%85%D8%AD%D9%85%D8%AF_%D8%B9%D8%A8%D8%AF_%D8%A7%D9%84%D9%88%D9%87%D8%A7%D8%A8.jpg"
+                  }
+                },
+                {
+                  "id": "pan_eg_mahfouz",
+                  "axe": "Littérature et pensée",
+                  "date": 1911,
+                  "titre": "Naissance de Naguib Mahfouz",
+                  "description": "Naguib Mahfouz (1911-2006) est un écrivain égyptien de langue arabe, né au Caire dans une famille de la petite bourgeoisie et lauréat du prix Nobel de littérature en 1988. Après de premiers romans situés dans l'Égypte pharaonique, il choisit le Caire contemporain et publie la Trilogie du Caire, saga de plus de mille cinq cents pages dont chaque roman porte le nom d'une rue de son enfance, parue en 1956 et 1957 et qui lui apporte enfin la reconnaissance. Son œuvre, qui se confond avec l'histoire du roman moderne dans le monde arabe, comprend aussi Les Enfants de notre quartier, publié en 1959, et il meurt au Caire en 2006.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Naguib_Mahfouz",
+                  "biographie": "bio_naguibmahfouz",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_mahfouz.jpg",
+                    "legende": "Naguib Mahfouz, photographie des années 1990",
+                    "auteur": "Misr2009 (retouche : Dsmurat)",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Necip_Mahfuz.jpg"
+                  }
+                },
+                {
+                  "id": "pan_eg_nasser",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1918,
+                  "titre": "Naissance de Gamal Abdel Nasser",
+                  "description": "Gamal Abdel Nasser (1918-1970) est un officier et homme d'État égyptien, né à Alexandrie, président de la République de 1956 à sa mort. Organisateur du renversement de la monarchie en 1952, il nationalise le canal de Suez en 1956, fait face à l'expédition franco-britannique et israélienne, puis forme en 1958 avec la Syrie la République arabe unie, qui ne dure que jusqu'en 1961. Son régime, socialiste et panarabe, qu'on appelle le nassérisme, est affaibli par la défaite de la guerre des Six Jours, en 1967, et il meurt d'une crise cardiaque en 1970, laissant le souvenir de l'un des dirigeants les plus influents du XXe siècle.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Gamal_Abdel_Nasser",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_nasser.jpg",
+                    "legende": "Gamal Abdel Nasser, photographie de Stevan Kragujević (Belgrade, 1962)",
+                    "auteur": "Stevan Kragujević",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Gamal_Abdel_Nasser_Portrait_1962_(3x4_cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_eg_sadate",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1918,
+                  "titre": "Naissance d'Anouar el-Sadate",
+                  "description": "Anouar el-Sadate (1918-1981) est un homme d'État égyptien, né dans une famille pauvre de treize enfants à Mît Aboul-Kom, dans le delta du Nil, qui préside l'Égypte de 1970 à son assassinat. Successeur de Nasser, il lance en octobre 1973 la guerre du Kippour contre Israël, puis se rend à Jérusalem en 1977 pour s'adresser à la Knesset et signe les accords de Camp David, qui lui valent en 1978 le prix Nobel de la paix, avec Menahem Begin. Cette paix avec Israël lui attire l'hostilité d'une partie du monde arabe et des islamistes, et il est assassiné au Caire le 6 octobre 1981, lors d'une parade militaire.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Anouar_el-Sadate",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_sadate.jpg",
+                    "legende": "Anouar el-Sadate, photographie de la CIA (4 janvier 1978)",
+                    "auteur": "Central Intelligence Agency",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Egyptian_President_Anwar_Sadat,_January_4,_1978_(10729707624).jpg"
+                  }
+                },
+                {
+                  "id": "pan_eg_farouk",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1920,
+                  "titre": "Naissance de Farouk Ier",
+                  "description": "Farouk Ier (1920-1965) est l'avant-dernier roi d'Égypte et le dixième souverain de la dynastie de Méhémet Ali, né au Caire. Il succède à son père Fouad Ier en 1936, à seize ans, et engage son pays aux côtés des Britanniques pendant la Seconde Guerre mondiale, à la suite de l'incident du palais d'Abdine, en 1942. Discrédité notamment par la défaite de la guerre de 1948 contre Israël, il est renversé par le coup d'État militaire du 23 juillet 1952, abdique en faveur de son fils Fouad II, âgé de six mois, et meurt en exil à Rome en 1965.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Farouk_(roi_d%27%C3%89gypte)",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_farouk.jpg",
+                    "legende": "Farouk Ier, photographie de 1946",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Farouk-King-.jpg"
+                  }
+                },
+                {
+                  "id": "pan_eg_boutrosghali",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1922,
+                  "titre": "Naissance de Boutros Boutros-Ghali",
+                  "description": "Boutros Boutros-Ghali (1922-2016) est un universitaire, juriste et diplomate égyptien, né au Caire dans une famille de la haute bourgeoisie copte, petit-fils d'un Premier ministre assassiné en 1910. Ministre d'État aux Affaires étrangères à partir de 1977, il est l'un des principaux négociateurs des accords de Camp David de 1978 et du traité de paix israélo-égyptien de 1979. Sixième secrétaire général des Nations unies de 1992 à 1996, auteur de l'Agenda pour la paix, évincé après un seul mandat sous la pression de l'administration Clinton, il devient ensuite le premier secrétaire général de la Francophonie, de 1997 à 2002.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Boutros_Boutros-Ghali",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_boutrosghali.jpg",
+                    "legende": "Boutros Boutros-Ghali, photographie d'Anefo (19 juin 1980)",
+                    "auteur": "Fernando Pereira (Anefo)",
+                    "licence": "CC BY-SA 3.0 NL",
+                    "source": "https://commons.wikimedia.org/wiki/File:Boutros_Boutros-Ghali_(1980).jpg"
+                  }
+                },
+                {
+                  "id": "pan_eg_efflatoun",
+                  "axe": "Beaux-arts",
+                  "date": 1924,
+                  "titre": "Naissance d'Inji Efflatoun",
+                  "description": "Inji Efflatoun (1924-1989) est une peintre égyptienne, militante marxiste et féministe, née au Caire dans une famille musulmane traditionnelle. Élève de Kamâl al-Tilmissâni, qui lui fait découvrir le surréalisme et le cubisme, elle rejoint le groupe Art et Liberté, fonde en 1945 une ligue de jeunes femmes de l'Université et des Instituts, puis expose à la Biennale de Venise en 1952. Arrêtée en 1959 lors de la répression des communistes par Nasser et libérée en 1963, elle se consacre ensuite à la peinture, dans un style plus léger, aux couleurs vives, qui montre surtout la campagne et ses habitants.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Inji_Efflatoun",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_efflatoun.jpg",
+                    "legende": "Inji Efflatoun, photographie de presse",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Inji_Aflatoun.jpg"
+                  }
+                },
+                {
+                  "id": "pan_eg_chahine",
+                  "axe": "Musique et spectacle",
+                  "date": 1926,
+                  "titre": "Naissance de Youssef Chahine",
+                  "description": "Youssef Chahine (1926-2008) est un réalisateur, scénariste et producteur égyptien de réputation internationale, né à Alexandrie dans une famille chrétienne melkite. Après des études de cinéma à Pasadena, il réalise Papa Amin, son premier film, sorti en 1950, présente Le Fils du Nil à Cannes en 1951, lance en 1954 la carrière d'Omar Sharif avec Le Démon du désert et s'impose avec Gare centrale, en 1958. Souvent confronté à la censure, il ne cesse de dénoncer la bêtise et l'intégrisme, et il laisse une quarantaine de films de fiction ou documentaires quand il meurt au Caire en 2008.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Youssef_Chahine",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_chahine.jpg",
+                    "legende": "Youssef Chahine lors d'un entretien en 1978, photographie d'un auteur inconnu",
+                    "auteur": "Auteur inconnu (mis en ligne par Mblegacy)",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Youssef_Chahine_1978.jpg"
+                  }
+                },
+                {
+                  "id": "pan_eg_idris",
+                  "axe": "Littérature et pensée",
+                  "date": 1927,
+                  "titre": "Naissance de Youssef Idris",
+                  "description": "Youssef Idris (1927-1991) est un nouvelliste et dramaturge égyptien, né dans le village de Biroum, dans le Delta, qui quitte la campagne pour Le Caire à l'adolescence. Étudiant en médecine, engagé dans les mouvements étudiants contre l'occupant britannique, il écrit ses premières nouvelles dans le courant du réalisme socialiste et devient surtout connu pour elles, mais aussi pour ses pièces, comme Les Farfours, en 1964. Au début des années 1960, il invite les auteurs à chercher un théâtre authentiquement arabe, inspiré du folklore et des maqâmât, avant de mourir à Londres en 1991.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Youssef_Idriss",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_idris.jpg",
+                    "legende": "Youssef Idris, dessin à l'encre d'Essam Azouz (2019)",
+                    "auteur": "Essam Azouz",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Yusuf_Idris_by_Essam_Azouz.jpg"
+                  }
+                },
+                {
+                  "id": "pan_eg_moubarak",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1928,
+                  "titre": "Naissance de Hosni Moubarak",
+                  "description": "Hosni Moubarak (1928-2020) est un officier de l'armée de l'air et homme d'État égyptien, né à Kafr-el-Meselha, dans le delta du Nil, vice-président de la République à partir de 1975. Il devient président le 14 octobre 1981, après l'assassinat d'Anouar el-Sadate, et dirige l'Égypte pendant près de trente ans, réélu à plusieurs reprises dans un régime autoritaire placé sous état d'urgence. Contraint à la démission par la révolution de 2011, emprisonné et condamné après son départ du pouvoir, il est libéré en 2017 et meurt en 2020.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Hosni_Moubarak",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_moubarak.jpg",
+                    "legende": "Hosni Moubarak, photographie du Département de la Défense américain (30 mars 2000)",
+                    "auteur": "R. D. Ward (Département de la Défense des États-Unis)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Hosni_Mubarak_2000.jpg"
+                  }
+                },
+                {
+                  "id": "pan_eg_abdelhalim",
+                  "axe": "Musique et spectacle",
+                  "date": 1929,
+                  "titre": "Naissance d'Abdel Halim Hafez",
+                  "description": "Abdel Halim Hafez (1929-1977) est un chanteur et acteur égyptien, né dans un village de la province d'Ach-Charqiya, surnommé « le rossignol brun », orphelin recueilli par son oncle au Caire. Entré à onze ans à l'institut de musique arabe, où il se distingue en interprétant les œuvres de Mohamed Abdel Wahab, il en sort diplômé de hautbois, puis rencontre son premier succès à la radio. Très populaire dans le monde arabe des années 1950 aux années 1970, héros de comédies musicales où il joue l'amoureux sensible et romantique, il apporte un nouveau souffle à l'art du tarab et meurt à Londres en 1977.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Abdel_Halim_Hafez",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_abdelhalim.jpg",
+                    "legende": "Abdel Halim Hafez, photographie parue dans le journal tunisien Assabah (1978)",
+                    "auteur": "Journal Assabah",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Abdel_Halim_Hafez-Egyptian_singer.jpg"
+                  }
+                },
+                {
+                  "id": "pan_eg_hamama",
+                  "axe": "Musique et spectacle",
+                  "date": 1931,
+                  "titre": "Naissance de Faten Hamama",
+                  "description": "Faten Hamama (1931-2015) est une actrice et vedette de cinéma égyptienne, née à Mansoura, fille d'un professeur de mathématiques, qui tourne son premier film à sept ans et enchaîne les rôles pendant près d'un demi-siècle. Star dès les années 1950, elle joue en 1954 dans Ciel d'enfer de Youssef Chahine, présenté à Cannes, et forme avec Omar Sharif, qu'elle épouse en 1955, le couple mythique du cinéma égyptien. Elle tourne des comédies romantiques mais aussi des films engagés, comme Je demande une solution, dont la polémique favorise la révision de la législation sur le divorce, et meurt au Caire en 2015.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Faten_Hamama",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_hamama.jpg",
+                    "legende": "Faten Hamama, photographie de 1962",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Faten_Hamama_1962.jpg"
+                  }
+                },
+                {
+                  "id": "pan_eg_saadawi",
+                  "axe": "Littérature et pensée",
+                  "date": 1931,
+                  "titre": "Naissance de Nawal El Saadawi",
+                  "description": "Nawal El Saadawi (1931-2021) est une écrivaine et psychiatre égyptienne, née à Kafr Tahla, dans le delta du Nil, figure de l'émancipation des femmes dans le monde arabe. Diplômée de médecine de l'université du Caire, elle publie en 1969 La Femme et le sexe, qui traite de sexualité, de religion et d'excision, et se fait révoquer du ministère de la Santé en 1972, puis elle est emprisonnée en 1981 pour s'être opposée à Sadate, expérience qu'elle raconte dans Mémoires de la prison des femmes. Poursuivie et contrainte à plusieurs reprises à l'exil pour ses écrits sur la condition des femmes et l'intégrisme religieux, fondatrice d'une association de solidarité des femmes arabes interdite en 1991, elle meurt au Caire en 2021.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Nawal_El_Saadawi",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_saadawi.jpg",
+                    "legende": "Nawal El Saadawi à la Foire du livre de Göteborg (2010)",
+                    "auteur": "Boberger",
+                    "licence": "CC BY 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Nawal_El_Saadawi_02.JPG"
+                  }
+                },
+                {
+                  "id": "pan_eg_sharif",
+                  "axe": "Musique et spectacle",
+                  "date": 1932,
+                  "titre": "Naissance d'Omar Sharif",
+                  "description": "Omar Sharif (1932-2015) est un acteur égyptien, né Michel Chalhoub à Alexandrie dans une famille chrétienne originaire de Zahlé, au Liban. Découvert en 1954 par Youssef Chahine, qui le fait débuter dans Le Démon du désert, il devient une vedette mondiale avec Lawrence d'Arabie, en 1962, qui lui vaut un Golden Globe et une nomination à l'Oscar, puis avec Le Docteur Jivago, en 1966. Acteur de productions américaines, britanniques, françaises et italiennes, récompensé du César du meilleur acteur en 2004 pour Monsieur Ibrahim et les fleurs du Coran, il était aussi un joueur de bridge de classe mondiale.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Omar_Sharif",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_sharif.jpg",
+                    "legende": "Omar Sharif à la Mostra de Venise (2009)",
+                    "auteur": "Nicolas Genin",
+                    "licence": "CC BY-SA 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Omar_Sharif_66%C3%A8me_Festival_de_Venise_(Mostra).jpg"
+                  }
+                },
+                {
+                  "id": "pan_eg_zewail",
+                  "axe": "Sciences et découvertes",
+                  "date": 1946,
+                  "titre": "Naissance d'Ahmed Zewail",
+                  "description": "Ahmed Zewail (1946-2016) est un chimiste et universitaire égyptien travaillant aux États-Unis, né à Damanhour. Formé à l'université d'Alexandrie puis à celle de Pennsylvanie, il devient en 1976 professeur au California Institute of Technology, où il montre, grâce à des flashs laser extrêmement brefs, comment les liaisons chimiques se font et se défont à l'échelle de quelques femtosecondes, un millionième de milliardième de seconde. Ces travaux, qui ouvrent de nouvelles perspectives en chimie, en biologie et en pharmacologie, lui valent le prix Nobel de chimie en 1999.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ahmed_Zewail",
+                  "image": {
+                    "src": "assets/portraits/pan_eg_zewail.jpg",
+                    "legende": "Ahmed Zewail avec la médaille d'or Othmer (2009)",
+                    "auteur": "Douglas A. Lockard",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ahmed_Zewail_HD2009_Othmer_Gold_Medal_portrait.JPG"
+                  }
+                }
+              ],
+              "axeOrder": [
+                "Chefs d'État et dirigeants",
+                "Guerres et résistances",
+                "Littérature et pensée",
+                "Beaux-arts",
+                "Musique et spectacle",
+                "Sciences et découvertes"
+              ],
+              "essentiel": [
+                "pan_eg_imhotep",
+                "pan_eg_hatchepsout",
+                "pan_eg_akhenaton",
+                "pan_eg_nefertiti",
+                "pan_eg_toutankhamon",
+                "pan_eg_ramses2",
+                "pan_eg_cleopatre7",
+                "pan_eg_hypatie",
+                "pan_eg_mehemetali",
+                "pan_eg_zaghloul",
+                "pan_eg_charaoui",
+                "pan_eg_tahahussein",
+                "pan_eg_oumkalthoum",
+                "pan_eg_mahfouz",
+                "pan_eg_nasser",
+                "pan_eg_sadate",
+                "pan_eg_boutrosghali",
+                "pan_eg_chahine",
+                "pan_eg_abdelhalim",
+                "pan_eg_sharif",
+                "pan_eg_zewail"
               ]
             },
             {

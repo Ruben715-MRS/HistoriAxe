@@ -90,9 +90,9 @@ test('Personnages illustres : deux sous-catégories, chacune avec sa note et son
     await expect(page.locator('#theme-screen-title')).toHaveText('Panthéons');
     await expect(page.locator('#theme-screen-note-text')).toContainText('né dans les frontières actuelles');
     // Panthéons de pays et de blocs se rangent par leur nom de source — « Amérique hispanique »,
-    // « France », « Maghreb » — et non par « Grandes figures d'… » / « … de » / « … du ».
+    // « Égypte », « France », « Maghreb » — et non par « Grandes figures d'… » / « … de » / « … du ».
     await expect(page.locator('#themes-container .data-card-title'))
-        .toHaveText(["Grandes figures d'Amérique hispanique", 'Grandes figures de France', 'Grandes figures du Maghreb']);
+        .toHaveText(["Grandes figures d'Amérique hispanique", "Grandes figures d'Égypte", 'Grandes figures de France', 'Grandes figures du Maghreb']);
 });
 
 test('la fiche d’un personnage montre son portrait, sa légende, son crédit et sa biographie', async ({ page }) => {
@@ -217,6 +217,47 @@ test('le Maghreb : chacune de ses figures a son portrait et son pays, de l’Alg
     // Ibn Khaldun a aussi sa biographie (comme Hannibal et Ibn Battûta) : le bouton y mène.
     await page.locator('#timeline .entry', { hasText: "Naissance d'Ibn Khaldun" }).click();
     await expect(page.locator('#modal-bio-btn')).toBeVisible();
+});
+
+test('l’Égypte : chacune de ses figures a son portrait, et la fiche n’affiche aucun pays', async ({ page }) => {
+    await openThemeById(page, 'pan_eg');
+    await page.locator('#mode-card-discovery').click();
+    await expect(page.locator('#screen-game')).toBeVisible();
+    const nombre = await page.evaluate(() => getCurrentTheme().events.length);
+    expect(nombre).toBeGreaterThanOrEqual(45);
+    expect(nombre).toBeLessThanOrEqual(60);
+    // « Que chaque personnage ait un portrait » : une pastille par repère, pas une de moins.
+    await expect(page.locator('#timeline .entry')).toHaveCount(nombre);
+    await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
+
+    // Trois époques : un pharaon, un vice-roi du XIXe siècle, un président du XXe. Le panthéon
+    // d'un pays n'affiche pas de pays (son thème le dit déjà), et le portrait charge au bon format.
+    for (const titre of ['Naissance de Ramsès II', 'Naissance de Méhémet Ali', 'Naissance de Gamal Abdel Nasser']) {
+        await page.locator('#timeline .entry', { hasText: titre }).click();
+        await expect(page.locator('#modal-details')).toBeVisible();
+        await expect(page.locator('#modal-pays')).toBeHidden();
+        const portrait = page.locator('#modal-portrait-img');
+        await expect.poll(() => portrait.evaluate(img => img.complete ? img.naturalWidth : 0)).toBe(320);
+        await expect(page.locator('#modal-portrait-caption')).not.toBeEmpty();
+        await page.locator('#modal-details .close-btn').click();
+        await expect(page.locator('#modal-details')).toBeHidden();
+    }
+
+    // Cinq figures ont aussi leur biographie dans l'appli : le bouton y mène.
+    const avecBiographie = await page.evaluate(() => getCurrentTheme().events.filter(e => e.biographie).length);
+    expect(avecBiographie).toBe(5);
+    await page.locator('#timeline .entry', { hasText: 'Naissance de Naguib Mahfouz' }).click();
+    await expect(page.locator('#modal-bio-btn')).toBeVisible();
+});
+
+test('la recherche — « egypte », « pharaon », « nil » — mène au panthéon de l’Égypte', async ({ page }) => {
+    await page.locator('#screen-home').click();
+    for (const mot of ['egypte', 'pharaon', 'nil']) {
+        await page.locator('#theme-search-input').fill(mot);
+        const resultat = page.locator('#theme-search-results .search-result-item', { hasText: "Grandes figures d'Égypte" });
+        await expect(resultat, `« ${mot} » doit mener à l'Égypte`).toHaveCount(1);
+        await expect(resultat.locator('.search-result-path')).toContainText('Personnages illustres › Panthéons');
+    }
 });
 
 test('la recherche — « tunisie », « libye », « mauritanie » — mène au panthéon du Maghreb', async ({ page }) => {
