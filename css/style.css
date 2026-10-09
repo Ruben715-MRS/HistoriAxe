@@ -6255,12 +6255,13 @@ textarea {
 }
 
 
-/* Voile des cartes de catégorie : supprimé pour laisser voir les photos ; la
-   lisibilité du texte repose sur son ombre portée (voir js/app.js). */
+/* Voile des cartes de catégorie : aplat uniforme (plus de dégradé qui masquait
+   le bas des photos). 40 % ne suffisait pas aux sous-titres (4,5:1), 55 %
+   frôlait le seuil : 60 % passe e2e/contrastes.spec.js. */
 .category-card-veil {
     position: absolute;
     inset: 0;
-    background: none;
+    background: rgba(0, 26, 75, 0.6);
 }
 
 /* =========================================================================
