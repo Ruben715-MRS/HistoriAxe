@@ -54,8 +54,11 @@ MAX_PART_PAYS = 0.4
 
 # Première phrase : « Nom (1802-1885) est … » ; « vers » devant une année
 # incertaine ; « av. J.-C. » une fois, à la fin, valable pour les deux années.
+# Une vie qui enjambe l'ère chrétienne (Auguste, Ovide) dit les deux : « 63 av.
+# J.-C.-14 ap. J.-C. » — « av. J.-C. » après l'année de naissance, « ap. J.-C. » à la fin.
 OPENING = re.compile(r'^(?P<nom>.+?) \((?P<dates>[^()]+)\) (?:est|était) ')
-DATES = re.compile(r'^(?:vers )?(?P<naissance>\d{1,4})-(?:vers )?(?P<deces>\d{1,4})(?P<av> av\. J\.-C\.)?$')
+DATES = re.compile(r'^(?:vers )?(?P<naissance>\d{1,4})(?P<av_naissance> av\. J\.-C\.)?-(?:vers )?(?P<deces>\d{1,4})'
+                   r'(?P<av> av\. J\.-C\.| ap\. J\.-C\.)?$')
 
 
 def birth_year(dates):
@@ -64,11 +67,12 @@ def birth_year(dates):
     if not m:
         return None
     year = int(m.group('naissance'))
-    return -year if m.group('av') else year
+    avant = m.group('av_naissance') or (m.group('av') or '').strip().startswith('av.')
+    return -year if avant else year
 
 
 def sentence_count(text):
-    protected = text.replace('av. J.-C.', 'av J-C')
+    protected = text.replace('av. J.-C.', 'av J-C').replace('ap. J.-C.', 'ap J-C')
     return len([s for s in re.split(r'(?<=[.!?])\s+(?=[A-ZÉÈÀÂÎ«])', protected.strip()) if s])
 
 

@@ -55,9 +55,9 @@ function jpegSize(buffer) {
     return null;
 }
 
-// Nombre de phrases : « av. J.-C. » ne termine pas la sienne.
+// Nombre de phrases : « av. J.-C. » et « ap. J.-C. » ne terminent pas la leur.
 function sentenceCount(text) {
-    const protectedText = text.replace(/av\. J\.-C\./g, 'av J-C');
+    const protectedText = text.replace(/av\. J\.-C\./g, 'av J-C').replace(/ap\. J\.-C\./g, 'ap J-C');
     return protectedText.trim().split(/(?<=[.!?])\s+(?=[A-ZÉÈÀÂÎ«])/).filter(Boolean).length;
 }
 
@@ -120,9 +120,11 @@ for (const file of localeFiles) {
                 used.add(evt.axe);
                 const opening = /^(.+?) \(([^()]+)\) (?:est|était) /.exec(evt.description);
                 assert.ok(opening, `${where}: "${evt.id}" — la description doit commencer par « Nom (naissance-décès) est… »`);
-                const years = /^(?:vers )?(\d{1,4})-(?:vers )?(\d{1,4})( av\. J\.-C\.)?$/.exec(opening[2]);
+                // « 82-46 av. J.-C. » : « av. J.-C. » une fois, à la fin, pour les deux années ;
+                // « 63 av. J.-C.-14 ap. J.-C. » : une vie qui enjambe l'ère chrétienne.
+                const years = /^(?:vers )?(\d{1,4})( av\. J\.-C\.)?-(?:vers )?(\d{1,4})( av\. J\.-C\.| ap\. J\.-C\.)?$/.exec(opening[2]);
                 assert.ok(years, `${where}: "${evt.id}" — dates illisibles « ${opening[2]} »`);
-                const born = years[3] ? -Number(years[1]) : Number(years[1]);
+                const born = (years[2] || (years[4] || '').trim().startsWith('av.')) ? -Number(years[1]) : Number(years[1]);
                 assert.equal(born, evt.date, `${where}: "${evt.id}" — la phrase d'ouverture dit ${born}, la date de l'événement ${evt.date}`);
                 assert.equal(sentenceCount(evt.description), 3, `${where}: "${evt.id}" — trois phrases attendues`);
                 assert.ok(evt.image, `${where}: "${evt.id}" sans portrait — chaque personnage a le sien`);
