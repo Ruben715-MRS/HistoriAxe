@@ -101,9 +101,9 @@ test('la fiche d’un personnage montre son portrait, sa légende, son crédit e
     await page.locator('#mode-card-discovery').click();
     await expect(page.locator('#screen-game')).toBeVisible();
 
-    // Soixante et un repères, chacun avec sa pastille : « un portrait pour chaque événement ».
-    await expect(page.locator('#timeline .entry')).toHaveCount(61);
-    await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(61);
+    // Soixante-huit repères, chacun avec sa pastille : « un portrait pour chaque événement ».
+    await expect(page.locator('#timeline .entry')).toHaveCount(68);
+    await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(68);
 
     await page.locator('#timeline .entry', { hasText: 'Naissance de Victor Hugo' }).click();
     await expect(page.locator('#modal-details')).toBeVisible();

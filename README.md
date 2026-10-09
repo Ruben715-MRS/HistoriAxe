@@ -598,10 +598,21 @@ comme tels dans la description (Atahualpa : Quito ou Cuzco).
 **Seules des personnalités disparues** : le format de la phrase d'ouverture
 exige une année de décès, et un panthéon de vivants se démodera.
 
-**Six axes, les mêmes pour tous les pays.** La palette n'a que huit couleurs
-(`AXIS_PALETTE`), et six laissent de la marge. Littérature et philosophie sont
-fusionnées, parce que leur frontière est floue (Voltaire, Rousseau, Camus) ;
-peinture et musique restent séparées, parce que la leur est nette.
+**Six axes communs, et un septième là où il se justifie.** La palette n'a que huit
+couleurs (`AXIS_PALETTE`) : six axes laissent de la marge, sept la gardent. Littérature
+et philosophie sont fusionnées, parce que leur frontière est floue (Voltaire,
+Rousseau, Camus) ; peinture et musique restent séparées, parce que la leur est nette.
+Les axes sont déclarés par panthéon (`axes`, dans `scripts/pantheon/<code>.json`) : rien
+n'oblige deux panthéons à les partager.
+
+Le septième, **« Économie et entreprise »** (fondateurs et dirigeants d'entreprises,
+banquiers, marchands), n'existe que pour la France et les États-Unis, où les
+entrepreneurs sont assez nombreux pour former un axe (sept et neuf figures).
+**Règle : un axe de plus n'est créé que s'il a au moins six figures et une histoire
+propre** ; l'Égypte, le Maghreb et l'Amérique hispanique n'en ont pas, faute de
+candidats évidents. Le sport n'a pas d'axe — deux à quatre figures par pays — mais il est
+accueilli dans « Musique, spectacle et sport », pour les sportifs de portée historique
+rangés selon ce qu'ils symbolisent.
 
 | Axe | Contenu | France | États-Unis |
 |---|---|---|---|
@@ -609,8 +620,9 @@ peinture et musique restent séparées, parce que la leur est nette.
 | Guerres et résistances | chefs militaires, résistants, héros d'indépendance, combats pour les droits | 8 | 24 |
 | Littérature et pensée | écrivains, poètes, philosophes | 15 | 25 |
 | Beaux-arts | peinture, sculpture, architecture | 9 | 12 |
-| Musique et spectacle | compositeurs, interprètes, cinéma, théâtre | 8 | 23 |
-| Sciences et découvertes | savants, inventeurs, explorateurs | 9 | 18 |
+| Musique, spectacle et sport | compositeurs, interprètes, cinéma, théâtre, sport | 8 | 22 |
+| Sciences, techniques et innovation | savants, ingénieurs, inventeurs, explorateurs | 9 | 16 |
+| Économie et entreprise | fondateurs d'entreprises, industriels, banquiers, marchands | 7 | 9 |
 
 Les règles de rédaction, vérifiées par script et par test (voir plus bas) :
 
@@ -629,12 +641,12 @@ Les règles de rédaction, vérifiées par script et par test (voir plus bas) :
   fiches, la faute de frappe est l'erreur la plus probable.
 - **Une personne ne naît pas deux fois.** Les 26 personnages qui ont aussi une
   biographie (champ `biographie`, qui nourrit le bouton « Voir sa biographie »
-  de la fiche) doivent porter la *même* date. Les dates des soixante et une ont été
+  de la fiche) doivent porter la *même* date. Les dates des soixante et une premières ont été
   comparées une à une à la phrase d'ouverture de l'article Wikipédia.
-- **⭐ Incontournables** (`essentiel`) : 20 sur 61 pour la France, 37 sur 123 pour les États-Unis.
+- **⭐ Incontournables** (`essentiel`) : 22 sur 68 pour la France, 39 sur 129 pour les États-Unis.
 
-Quantités visées : 61 personnages pour la France, 52 pour l'Égypte, 123 pour les
-États-Unis (85 proposés, portés à 123 : « mieux vaut plus que moins »), 80 à 100
+Quantités visées : 68 personnages pour la France, 52 pour l'Égypte, 129 pour les
+États-Unis (85 proposés, portés à 123 : « mieux vaut plus que moins », puis à 129 avec l'axe Économie et entreprise), 80 à 100
 pour l'Amérique hispanique (dix-neuf pays, de 1 à 19 figures chacun), 58 pour le
 Maghreb (cinq pays, de 1 à 21), 40 pour les grands pays, 30 pour les autres. À 6
 axes, 30 donne environ 5 par axe — le minimum pour qu'un axe joué seul reste un jeu.
@@ -647,7 +659,7 @@ Colombie 6, Uruguay 5, Équateur 4, Bolivie, Nicaragua et Paraguay 3 chacun,
 Costa Rica, Guatemala et Honduras 2 chacun, et un seul pour le Panama, le
 Salvador, la République dominicaine et Porto Rico. Par axe : 27 Guerres et
 résistances, 24 Littérature et pensée, 22 Chefs d'État, 10 Beaux-arts, 9
-Musique et spectacle, 5 Sciences et découvertes (l'axe le plus mince — voir
+Musique, spectacle et sport, 5 Sciences, techniques et innovation (l'axe le plus mince — voir
 plus bas pourquoi) ; 32 ⭐ et 17 biographies liées.
 
 Les choix qui ne vont pas de soi :
@@ -704,8 +716,8 @@ ajoutant sa fiche à `scripts/pantheon/hispam.json`.
 `pan_maghreb`, « Grandes figures du Maghreb » : **58 personnages de cinq pays** —
 Algérie 21, Maroc 16, Tunisie 16, Libye 4 et Mauritanie 1 — de Hannibal
 (247 av. J.-C.) à Tahar Djaout (1953). Par axe : 18 Littérature et pensée, 17
-Chefs d'État et dirigeants, 9 Guerres et résistances, 9 Musique et spectacle, 3
-Sciences et découvertes, 2 Beaux-arts (les deux axes les plus minces : la
+Chefs d'État et dirigeants, 9 Guerres et résistances, 9 Musique, spectacle et sport, 3
+Sciences, techniques et innovation, 2 Beaux-arts (les deux axes les plus minces : la
 plupart des peintres et des savants envisagés n'avaient pas de portrait libre) ;
 22 ⭐ et 3 biographies liées (Hannibal, Ibn Khaldun, Ibn Battûta).
 
@@ -765,8 +777,8 @@ fiche à `scripts/pantheon/maghreb.json`.
 
 `pan_eg`, « Grandes figures d'Égypte » : **52 personnages**, d'Imhotep (vers 2670
 av. J.-C.) à Ahmed Zewail (1946). Par axe : 17 Chefs d'État et dirigeants, 17
-Littérature et pensée, 7 Musique et spectacle, 4 Guerres et résistances, 4
-Sciences et découvertes, 3 Beaux-arts (un sculpteur, une peintre, un
+Littérature et pensée, 7 Musique, spectacle et sport, 4 Guerres et résistances, 4
+Sciences, techniques et innovation, 3 Beaux-arts (un sculpteur, une peintre, un
 architecte) ; 21 ⭐ et 5 biographies liées (Imhotep, Cléopâtre, Oum Kalthoum,
 Hassan Fathy, Naguib Mahfouz).
 
@@ -828,12 +840,14 @@ un dessin de Khalil Gibran en 1917 pour Ibn al-Fârid…).
 
 ### Un pays à part : les États-Unis
 
-`pan_us`, « Grandes figures des États-Unis » : **123 personnages**, de Pocahontas
+`pan_us`, « Grandes figures des États-Unis » : **129 personnages**, de Pocahontas
 (vers 1596) à Steve Jobs (1955). Par axe : 25 Littérature et pensée, 24 Guerres et
-résistances, 23 Musique et spectacle, 21 Chefs d'État et dirigeants, 18 Sciences et
-découvertes, 12 Beaux-arts ; 37 ⭐ et 29 biographies liées. La liste a été soumise
-puis validée décision par décision : 85 figures proposées, portées à 123 (« mieux
-vaut plus que moins »).
+résistances, 22 Musique, spectacle et sport, 21 Chefs d'État et dirigeants, 16
+Sciences, techniques et innovation, 12 Beaux-arts, 9 Économie et entreprise ; 39 ⭐ et
+29 biographies liées. La liste a été soumise puis validée décision par décision : 85
+figures proposées, portées à 123 (« mieux vaut plus que moins »), puis à 129 avec
+l'axe Économie et entreprise (Vanderbilt, Carnegie, Morgan, Rockefeller, Ford et
+Madam Walker, aux côtés d'Edison, de Disney et de Jobs, qui y ont été rangés).
 
 Les choix qui ne vont pas de soi :
 
@@ -873,10 +887,11 @@ Les choix qui ne vont pas de soi :
   l'idée d'un thème juif à part est abandonnée.
 - **Des exceptions de rangement.** Eisenhower et Grant sont rangés chez les
   Chefs d'État et dirigeants — leurs biographies en font des chefs militaires —,
-  MacArthur et Patton restant chez les militaires. Edison (Sciences), Disney
-  (Musique et spectacle) et Steve Jobs (Sciences : inventeur et pionnier de
-  l'informatique personnelle) sont rangés ailleurs que chez les « Entrepreneurs » de
-  leurs biographies, que les panthéons n'ont pas.
+  MacArthur et Patton restant chez les militaires. Edison, Disney et Steve
+  Jobs, inventeurs ou créateurs autant que chefs d'entreprise, sont rangés dans
+  « Économie et entreprise », l'axe que leurs biographies appellent « Entrepreneurs et magnats » ;
+  Eiffel et Louis Lumière, d'abord ingénieur et inventeur, restent dans « Sciences,
+  techniques et innovation » et « Musique, spectacle et sport ».
 - **César Chávez.** L'article de Wikipédia en français rapporte qu'une enquête du
   *New York Times* de mars 2026 l'accuse de dizaines de viols et d'agressions
   sexuelles, dont certaines sur des mineures, et que plusieurs États ont annulé ou
@@ -1182,9 +1197,9 @@ et celui de Fidel Castro pris par Mondadori (suppression demandée en mai 2026,
 faute de licence établie), remplacés l'un par une photographie de 1933 aux
 deux balises, l'autre par un cliché de 1959 de la Bibliothèque du Congrès.
 
-**Poids** : JPEG de 320 × 400, 25 Ko en moyenne (62 au plus), soit 1,5 Mo pour
-les 61 de la France, 2,5 Mo pour les 97 de l'Amérique hispanique, 1,7 Mo
-pour les 58 du Maghreb, 1,4 Mo pour les 52 de l'Égypte et 2,7 Mo pour les 123
+**Poids** : JPEG de 320 × 400, 25 Ko en moyenne (62 au plus), soit 1,8 Mo pour
+les 68 de la France, 2,5 Mo pour les 97 de l'Amérique hispanique, 1,7 Mo
+pour les 58 du Maghreb, 1,4 Mo pour les 52 de l'Égypte et 3,1 Mo pour les 129
 des États-Unis — de
 l'ordre de 20 Mo pour 800 portraits, quand `assets/` en pèse déjà 38. Le WebP
 gagnerait environ un tiers, mais la cible iOS actuelle (13, voir
@@ -1226,7 +1241,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
 ### Ajouter un pays ou un bloc
 
 1. Copier `scripts/pantheon/fr.json` (un pays) ou `hispam.json` (un bloc), y
-   mettre le panthéon, ses personnages (une naissance chacun, six axes, trois
+   mettre le panthéon, ses personnages (une naissance chacun, six ou sept axes, trois
    phrases, un `pays` pour un bloc), et le nom de fichier Commons de chaque
    portrait. Vérifier chaque année de naissance et de décès sur l'article
    Wikipédia du personnage, et qu'il n'est dans aucun autre panthéon.
