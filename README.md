@@ -536,7 +536,7 @@ ne posent pas la même question :
 | | Un thème, c'est | Une date, c'est | On le joue par |
 |---|---|---|---|
 | **Biographies** | une vie (360 thèmes, en 12 domaines) | une étape de cette vie | étape de la vie |
-| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, l'Égypte, les États-Unis, l'Amérique hispanique, le Maghreb) | la naissance d'un personnage | domaine |
+| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, l'Égypte, les États-Unis, l'Italie, l'Amérique hispanique, le Maghreb) | la naissance d'un personnage | domaine |
 
 Le déplacement ne coûte aucune migration : les 360 thèmes gardent leurs
 identifiants, et rien de ce que le joueur a sauvegardé (favoris, révision,
@@ -625,6 +625,8 @@ Les règles de rédaction, vérifiées par script et par test (voir plus bas) :
 - **Description en trois phrases**, la première « Nom (naissance-décès) est… »,
   avec « vers » devant une année incertaine (Charlemagne, Hugues Capet) et
   « av. J.-C. » une fois, à la fin : « Vercingétorix (vers 82-46 av. J.-C.) ».
+  Une vie qui enjambe l'ère chrétienne (Auguste, Ovide) dit les deux ères : « 63
+  av. J.-C.-14 ap. J.-C. » (voir plus bas, l'Italie).
   **L'année entre parenthèses doit être celle de l'événement** : sur soixante
   fiches, la faute de frappe est l'erreur la plus probable.
 - **Une personne ne naît pas deux fois.** Les 26 personnages qui ont aussi une
@@ -634,7 +636,8 @@ Les règles de rédaction, vérifiées par script et par test (voir plus bas) :
 - **⭐ Incontournables** (`essentiel`) : 20 sur 61 pour la France, 37 sur 123 pour les États-Unis.
 
 Quantités visées : 61 personnages pour la France, 52 pour l'Égypte, 123 pour les
-États-Unis (85 proposés, portés à 123 : « mieux vaut plus que moins »), 80 à 100
+États-Unis (85 proposés, portés à 123 : « mieux vaut plus que moins »), 127 pour
+l'Italie (126 proposés, plus Enzo Ferrari), 80 à 100
 pour l'Amérique hispanique (dix-neuf pays, de 1 à 19 figures chacun), 58 pour le
 Maghreb (cinq pays, de 1 à 21), 40 pour les grands pays, 30 pour les autres. À 6
 axes, 30 donne environ 5 par axe — le minimum pour qu'un axe joué seul reste un jeu.
@@ -901,6 +904,120 @@ Jefferson par Peale, Melville par Eaton… — côtoient des daguerréotypes (Po
 Thoreau, Emerson, Dickinson, John Brown) et, pour tout le XXe siècle, des
 photographies de presse ou de studio.
 
+### Un pays à part : l'Italie
+
+`pan_it`, « Grandes figures d'Italie » : **127 personnages**, d'Archimède (vers 287
+av. J.-C.) à Paolo Borsellino (1940). Par axe : 31 Littérature et pensée, 24
+Beaux-arts, 24 Musique et spectacle, 19 Sciences et découvertes, 18 Chefs d'État et
+dirigeants, 11 Guerres et résistances ; 42 ⭐ et 13 biographies liées (Scipion,
+César, Archimède, François d'Assise, Thomas d'Aquin, Dante, Brunelleschi, Léonard,
+Palladio, Marco Polo, Colomb, Vespucci, Galilée). La liste a été soumise puis validée
+sans retrait : 126 figures proposées, auxquelles s'ajoute Enzo Ferrari, à la demande.
+
+Les choix qui ne vont pas de soi :
+
+- **Un pays, donc pas un bloc**, comme l'Égypte et les États-Unis : `pan_it` (deux
+  lettres), aucun champ `pays`, aucun pays dans la fiche, et « Pendant ce temps,
+  ailleurs… » le compte comme l'Italie, au même titre que `thm_it`, l'« Histoire de
+  l'Italie » que la table de pays (`assets/geo/theme-country-map.json`) range sous
+  `IT`. Le thème se range par son nom de rangement, « Italie », entre la France et
+  le Maghreb.
+- **De la Rome antique à nos jours** : quatorze figures d'avant l'an mille
+  (Archimède, Scipion, Cicéron, César, Marc Antoine, Virgile, Horace, Auguste,
+  Ovide, Pline l'Ancien, Marc Aurèle, Boèce, Benoît de Nursie, Guido d'Arezzo).
+  Comme au Maghreb, les figures de l'Antiquité sont rangées dans le pays actuel de
+  leur lieu de naissance : Archimède, de Syracuse, est italien ; Hadrien et Trajan,
+  nés en Espagne, Constantin, né en Serbie, et Callas, née à New York, ne le sont pas.
+  Inversement, Garibaldi (né à Nice), Calvino (né à Cuba) et De Chirico (né à
+  Volos, en Grèce) figurent ici : c'est l'Italie qui les honore.
+- **Les papes et les saints sont dedans** : les papes (Jules II, Jean XXIII) chez
+  les Chefs d'État et dirigeants, les saints et les religieux (Benoît de Nursie,
+  François d'Assise, Thomas d'Aquin, Catherine de Sienne) en Littérature et pensée,
+  comme Antoine le Grand et Augustin pour l'Égypte et le Maghreb.
+- **Des dirigeants contestés**, dont la fiche dit ce qu'on leur reproche :
+  Mussolini (la dictature, les lois raciales de 1938, la guerre), Berlusconi (le
+  cumul du pouvoir politique et médiatique, ses procès, sa condamnation définitive
+  pour fraude fiscale en 2013), Giolitti (la conquête de la Libye), César Borgia (la
+  terreur en Romagne) et Colomb (les Taïnos réduits en esclavage, la destitution de
+  1500).
+- **Enzo Ferrari, exception à « ni sportifs ni entrepreneurs »**, ajouté sur
+  décision de l'éditeur pour son rôle dans le rayonnement culturel de l'Italie dans
+  le monde : il est rangé en Sciences et découvertes (constructeur et ingénieur),
+  comme Edison et Steve Jobs aux États-Unis. Giovanni Agnelli, Olivetti, Armani et
+  les sportifs restent exclus.
+- **Un format de date étendu.** Auguste (63 av. J.-C.-14 ap. J.-C.) et Ovide (43
+  av. J.-C.-17 ap. J.-C.) sont nés avant l'ère chrétienne et morts après, ce que la
+  règle « av. J.-C. une fois, à la fin » ne savait pas écrire — d'où l'absence de
+  Juba II au Maghreb. Le constructeur (`DATES` et `sentence_count` dans
+  `scripts/build_pantheon.py`) et le test de schéma (`tests/data-schema.test.js`) acceptent
+  désormais « 63 av. J.-C.-14 ap. J.-C. » : « av. J.-C. » après l'année de naissance,
+  « ap. J.-C. » à la fin ; la naissance reste négative, et « ap. J.-C. » est protégé
+  comme « av. J.-C. » dans le comptage des phrases.
+- **Des dates incertaines, dites comme telles** : « vers » devant Mathilde de
+  Toscane (1045 ou 1046), Benoît et Boèce (vers 480), Giotto (1266 ou 1267),
+  Fra Angelico (entre 1387 et 1400), Piero della Francesca (entre 1412 et 1420),
+  Giorgione (1477 ou 1478), Titien (1488-1490), Palestrina (1525 ou 1526),
+  Stradivari, Cabot, Fibonacci, Guido d'Arezzo et Artemisia Gentileschi pour sa mort.
+  Scipion (−236), François d'Assise (1181) et Colomb (1451) suivent leur biographie.
+- **Les années de décès ont été recoupées avec Wikipédia**, non lues sur Wikidata
+  seul : Wikidata donne 1794 pour Goldoni (mort le 6 février 1793) et 1758 pour
+  Canaletto (mort le 19 avril 1768), 525 pour Boèce (que l'article fait mourir en 524).
+- **Pas de vivants**, comme ailleurs.
+
+### Ce que les images disent en Italie
+
+Cent huit portraits reposent sur des bases solides : peintures, gravures, bustes et
+photographies d'avant 1931, licences CC posées par l'auteur ou par une institution
+(le Sénat de la République pour Pertini et Parri, l'ETH-Bibliothek de Zurich pour
+Magnani, le Parti populaire européen pour Berlusconi, la bibliothèque universitaire
+de Lund pour Levi-Montalcini, Olivier Strecker pour Morricone, Gorup de Besanez pour
+Mastroianni, Obbino pour Leone, Kingkongphoto pour Pavarotti), CC0 des archives
+néerlandaises (Eco et De Sica, Anefo ; Donizetti, Rijksmuseum), cliché du département
+américain de l'Énergie (Fermi). Beaucoup sont posthumes ou imaginaires, et la légende
+le dit : Dante par Botticelli, deux siècles après sa mort ; Horace, Pline l'Ancien et
+Fibonacci par des gravures imaginaires ; Marco Polo par une mosaïque de 1867 ; Boèce
+et Guido d'Arezzo par des miniatures ; Piero della Francesca par un bois gravé des
+*Vies* de Vasari. Les bustes antiques sont montrés pour ce qu'ils sont — celui que
+l'on prenait pour Scipion l'Africain, trouvé à Herculanum, serait un prêtre d'Isis ;
+Archimède est montré par un « portrait d'érudit » de Domenico Fetti, « peut-être
+Archimède » ; Virgile par une mosaïque romaine de Tunisie ; Brunelleschi par un
+visage que la tradition reconnaît dans une fresque de Masaccio.
+
+Dix-neuf images sont à relire, si l'on veut être plus strict :
+
+- **Treize photographies du XXe siècle à balise « PD-Italy »** : la loi italienne
+  protège vingt ans une « simple photographie », et Commons précise qu'une telle
+  image n'est libre aux États-Unis que si elle a été créée avant 1976 et publiée avant
+  1978, auquel cas elle porte aussi la balise « PD-1996 ». Six l'ont (Mussolini, De
+  Gasperi, Jean XXIII, Matteotti, Gramsci, Ferrari). Les sept autres n'ont que
+  la première : Aldo Moro (1955), Primo Levi (années 1950), Toscanini (1938), Pasolini
+  (1964), Totò (avant 1967) et Visconti (1972), dont la date est antérieure à 1976, et
+  **Enrico Berlinguer**, d'auteur et de date inconnus — le cliché le plus fragile de
+  la liste. (Pertini, dont la photographie du Sénat porte aussi cette balise, est
+  crédité de sa licence CC BY 3.0 IT, plus explicite.)
+- **Cinq photographies à une autre raison de l'être** : Roberto Rossellini (1951,
+  « publiée aux États-Unis entre 1931 et 1963 sans renouvellement du droit d'auteur »,
+  dit la balise, ce que rien ici ne permet de vérifier pour un cliché de presse pris à
+  Rome), Eugenio Montale (Kaj Hagman, 1965, « PD-Finland » : un cliché publié avant
+  1966, libre en Finlande aussi en 1996), Maria Montessori (« PD-anon », auteur
+  jamais révélé), et deux clichés de collections de la Bibliothèque du Congrès « sans
+  restriction connue » — Federico Fellini (*New York World-Telegram*, 1965) et Giorgio de
+  Chirico (Carl Van Vechten, 1936) —, même raisonnement que Matisse et Camus en France.
+- **Une licence CC posée par un tiers**, plausible mais invérifiable d'ici : Italo
+  Calvino (Johan Brun, Oslo, 1961, CC BY-SA 4.0).
+
+Deux autres sont d'une nature à part : les portraits de **Falcone et de Borsellino**
+sont des dessins au crayon de Luigi Oldani qui se déclare l'auteur (CC BY-SA 3.0),
+faute de photographie libre.
+
+Plusieurs images ont été **écartées** en route : la photographie de Falcone de 1984,
+proposée à la suppression sur Commons ; celle de Borsellino, déposée sous « fair use »
+(donc non libre) ; un mur peint à l'effigie de Berlinguer, qui n'est pas un portrait ;
+le présumé autoportrait de Piero della Francesca, pour sa taille (170 px) ; les statues
+de Giotto, de Donatello et de l'Arioste, remplacées par des portraits peints ; et une
+photographie de Cavour assis, trop petite dans son cadre, remplacée par le portrait de
+Hayez.
+
 ### Un fichier source par panthéon, un script qui l'écrit dans `data/fr.json`
 
 `scripts/pantheon/<code>.json` (`fr`, `hispam`…) est **la seule source de
@@ -969,7 +1086,7 @@ CC0 ; Lumière vers 1890). Répartition finale : France, 54 domaine public, 4 CC
 3 CC BY ou CC BY-SA ; Amérique hispanique, 75 domaine public, 2 CC0, 8 CC BY,
 12 CC BY-SA ; Maghreb, 36 domaine public, 5 CC0, 3 CC BY, 14 CC BY-SA ; Égypte,
 34 domaine public, 5 CC0, 2 CC BY, 11 CC BY-SA ; États-Unis, 109 domaine public,
-3 CC0, 4 CC BY, 7 CC BY-SA. En France, trois portraits du XXe siècle reposent sur un
+3 CC0, 4 CC BY, 7 CC BY-SA ; Italie, 102 domaine public, 3 CC0, 7 CC BY, 15 CC BY-SA. En France, trois portraits du XXe siècle reposent sur un
 raisonnement plus fin que « ancien », à relire si l'on veut être plus strict :
 
 - **Jean Moulin** (Harcourt, 1937) : œuvre collective, dont le délai français de
@@ -1239,8 +1356,8 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
 
 ### Ce qui n'est pas fait
 
-- **Les autres panthéons** : la France, l'Égypte, les États-Unis, l'Amérique
-  hispanique et le Maghreb sont écrits. Viennent ensuite le Machrek (sans l'Égypte,
+- **Les autres panthéons** : la France, l'Égypte, les États-Unis, l'Italie,
+  l'Amérique hispanique et le Maghreb sont écrits. Viennent ensuite le Machrek (sans l'Égypte,
   qui a le sien ; le sort d'Israël et des figures juives reste à trancher, l'idée
   d'un thème juif à part ayant été abandonnée), le Brésil à part, puis les autres
   pays — chaque liste de personnages validée avant la rédaction.
@@ -1248,6 +1365,13 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
   réintégrer si l'une apparaît : John Rawls, Scott Joplin (un portrait de 200 px),
   Linus Pauling et Claude Shannon (portraits trop étroits), Barbara McClintock,
   Margaret Mead (licence) et Jean-Michel Basquiat (licence douteuse).
+- **Des figures de l'Italie à améliorer** : Giovanni Falcone et Paolo Borsellino
+  n'ont, faute de photographie libre, qu'un portrait dessiné au crayon par Luigi
+  Oldani (CC BY-SA 3.0) ; Piero della Francesca est montré par un bois gravé des
+  *Vies* de Vasari, son présumé autoportrait en soldat endormi de la *Résurrection*
+  n'existant sur Commons qu'en 170 px ; Ferruccio Parri n'a que 200 px (photographie
+  du Sénat, la seule sous licence explicite). À remplacer si une meilleure image libre
+  apparaît.
 - **Des figures de l'Égypte écartées faute d'image libre ou d'année de
   naissance**, à réintégrer si l'une apparaît : al-Maqrizi, al-Suyuti,
   al-Jabarti, Hassan al-Attar, et les pharaons sans naissance connue (voir « Un

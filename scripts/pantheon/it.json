@@ -1,0 +1,2163 @@
+{
+  "code": "it",
+  "nom": "Italie",
+  "theme": {
+    "id": "pan_it",
+    "nom": "Grandes figures d'Italie",
+    "difficulte": "Intermédiaire",
+    "motsCles": [
+      "Italien",
+      "Italienne",
+      "Rome",
+      "Romain",
+      "Empire romain",
+      "Renaissance",
+      "Florence",
+      "Médicis",
+      "Venise",
+      "Vatican",
+      "Risorgimento",
+      "Opéra",
+      "Fascisme",
+      "Néoréalisme"
+    ]
+  },
+  "axes": [
+    "Chefs d'État et dirigeants",
+    "Guerres et résistances",
+    "Littérature et pensée",
+    "Beaux-arts",
+    "Musique et spectacle",
+    "Sciences et découvertes"
+  ],
+  "personnages": [
+    {
+      "slug": "cesar",
+      "nom": "Jules César",
+      "titre": "Naissance de Jules César",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": -100,
+      "description": "Jules César (100-44 av. J.-C.) est un général, homme d'État et écrivain romain, né à Rome dans la vieille famille patricienne des Julii. Consul en 59, il conquiert la Gaule entre 58 et 50, franchit le Rubicon en janvier 49 et bat Pompée à Pharsale, avant de réformer le calendrier et de se faire nommer dictateur à vie. Il est poignardé aux ides de mars 44 par des sénateurs conjurés, dont Brutus, et son fils adoptif Octave fonde l'Empire sur les ruines de la République.",
+      "wikipedia": "Jules_César",
+      "essentiel": true,
+      "biographie": "bio_cesar",
+      "portrait": {
+        "fichier": "Retrato de Julio César (26724093101) (cropped).jpg",
+        "legende": "Jules César, buste en marbre dit « portrait de Tusculum », daté de l'année de sa mort, 44 av. J.-C. (musée d'Antiquités de Turin)",
+        "auteur": "Ángel M. Felicísimo",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "auguste",
+      "nom": "Auguste",
+      "titre": "Naissance d'Auguste",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": -63,
+      "description": "Auguste (63 av. J.-C.-14 ap. J.-C.) est le premier empereur romain, né à Rome sous le nom de Caius Octavius, petit-neveu et fils adoptif de Jules César. Vainqueur d'Antoine et de Cléopâtre à Actium en 31, il reçoit en 27 le titre d'Auguste et règne jusqu'à sa mort en gardant les apparences de la République, tout en réorganisant l'armée, les provinces et l'administration. Son règne ouvre la longue « paix romaine » et un âge d'or des lettres latines avec Virgile, Horace et Tite-Live, et il meurt à Nola en août de l'an 14.",
+      "wikipedia": "Auguste",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Augustus of Prima Porta (inv. 2290).jpg",
+        "legende": "Auguste, statue de marbre dite « Auguste de Prima Porta », copie d'un bronze de son temps, découverte près de Rome en 1863 (musées du Vatican)",
+        "auteur": "Auteur inconnu",
+        "recadrage": [
+          0.27,
+          0.03,
+          0.82,
+          0.46
+        ],
+        "largeur": 960,
+        "licence": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "slug": "marcaurele",
+      "nom": "Marc Aurèle",
+      "titre": "Naissance de Marc Aurèle",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 121,
+      "description": "Marc Aurèle (121-180) est un empereur romain et philosophe stoïcien, né à Rome, adopté par Antonin le Pieux et dernier des « cinq bons empereurs ». Il règne de 161 à 180, d'abord avec Lucius Verus, et passe l'essentiel de son règne à défendre les frontières du Danube contre les Marcomans et les Quades, tandis qu'une épidémie, la peste antonine, ravage l'Empire. Sur les champs de bataille, il rédige en grec les Pensées pour moi-même, méditations stoïciennes, et meurt en 180, à Vindobona ou à Sirmium, laissant l'Empire à son fils Commode.",
+      "wikipedia": "Marc_Aurèle",
+      "portrait": {
+        "fichier": "Marcus Aurelius Louvre MR561 n02.jpg",
+        "legende": "Marc Aurèle, buste en marbre de l'époque antonine, découvert à Acqua Traversa près de Rome en 1674 (musée du Louvre)",
+        "auteur": "Auteur inconnu",
+        "licence": "CC BY 2.5"
+      }
+    },
+    {
+      "slug": "mathilde",
+      "nom": "Mathilde de Toscane",
+      "titre": "Naissance de Mathilde de Toscane",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1046,
+      "description": "Mathilde de Toscane (vers 1046-1115) est une princesse et margravine née à Mantoue, héritière de la maison de Canossa, l'une des plus puissantes d'Italie du Nord. Alliée fidèle de la papauté dans la querelle des Investitures, elle accueille en janvier 1077 dans son château de Canossa le pape Grégoire VII et l'empereur Henri IV, venu y obtenir la levée de son excommunication, puis soutient le pape par les armes. Elle meurt en 1115 à Bondeno di Roncore, ayant légué ses domaines au Saint-Siège, un héritage qui nourrira pendant des siècles les conflits entre papes et empereurs.",
+      "wikipedia": "Mathilde_de_Toscane",
+      "portrait": {
+        "fichier": "Matilde di Canossa.jpg",
+        "legende": "Mathilde de Toscane, portrait peint au XIXe siècle par Giuseppe Rivelli, copie d'un portrait du XVIe siècle attribué au Parmesan : aucun portrait de son vivant n'est connu",
+        "auteur": "Giuseppe Rivelli",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "frederic2",
+      "nom": "Frédéric II de Hohenstaufen",
+      "titre": "Naissance de Frédéric II",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1194,
+      "description": "Frédéric II de Hohenstaufen (1194-1250) est un empereur romain germanique et roi de Sicile, né à Jesi, dans les Marches, fils d'Henri VI et de Constance de Hauteville. Élevé en Sicile, il fonde en 1224 l'université de Naples, obtient Jérusalem sans combat par le traité de 1229 lors de la sixième croisade et promulgue en 1231 les constitutions de Melfi, tout en étant excommunié à plusieurs reprises par les papes. Lettré polyglotte, auteur d'un traité de fauconnerie, le De arte venandi cum avibus, il meurt à Castel Fiorentino en décembre 1250, et ses contemporains le surnomment « stupor mundi », l'étonnement du monde.",
+      "wikipedia": "Frédéric_II_(empereur_du_Saint-Empire)",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Frederick II and eagle.jpg",
+        "legende": "Frédéric II et son faucon, miniature du De arte venandi cum avibus, son traité de fauconnerie (manuscrit de la fin du XIIIe siècle, bibliothèque vaticane)",
+        "auteur": "Auteur inconnu",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "cosme",
+      "nom": "Cosme de Médicis",
+      "titre": "Naissance de Cosme de Médicis",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1389,
+      "description": "Cosme de Médicis (1389-1464) est un banquier et homme d'État florentin, dit l'Ancien, né à Florence, fondateur de la puissance de sa famille. À la tête de la banque des Médicis, la première d'Europe, il est exilé à Venise en 1433, rappelé dès 1434, et gouverne ensuite Florence dans l'ombre, sans titre, tout en finançant églises, bibliothèques et artistes et en protégeant Marsile Ficin et l'Académie platonicienne. Proclamé « père de la patrie » à sa mort à Careggi en 1464, il laisse à sa famille un pouvoir qu'elle conservera, avec des interruptions, jusqu'au XVIIIe siècle.",
+      "wikipedia": "Cosme_de_Médicis",
+      "portrait": {
+        "fichier": "Pontormo - Ritratto di Cosimo il Vecchio - Google Art Project.jpg",
+        "legende": "Cosme de Médicis, portrait posthume peint par Pontormo vers 1519-1520 (galerie des Offices)",
+        "auteur": "Pontormo",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "laurent",
+      "nom": "Laurent de Médicis",
+      "titre": "Naissance de Laurent de Médicis",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1449,
+      "description": "Laurent de Médicis (1449-1492) est un banquier, homme d'État et mécène florentin, dit le Magnifique, petit-fils de Cosme l'Ancien. À la tête de Florence dès 1469, il échappe en 1478 à la conjuration des Pazzi, où son frère Julien est assassiné, négocie en personne la paix avec Naples en 1480 et fait de sa cour le foyer de la Renaissance, protégeant Botticelli, Verrocchio, le jeune Michel-Ange et Politien, tout en écrivant lui-même des poèmes. Il meurt à Careggi en 1492, et la crise qui suit ouvre pour Florence l'expulsion des Médicis en 1494 et la prédication de Savonarole.",
+      "wikipedia": "Laurent_de_Médicis",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Bottega di Agnolo di Cosimo, detto il Bronzino (Firenze 1503-1572) - Ritratto di Lorenzo il Magnifico - 865 - Uffizi Gallery (cropped).jpg",
+        "legende": "Laurent de Médicis, portrait peint à titre posthume par l'atelier de Bronzino entre 1565 et 1569",
+        "auteur": "Atelier de Bronzino",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "jules2",
+      "nom": "Jules II",
+      "titre": "Naissance de Jules II",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1443,
+      "description": "Jules II (1443-1513) est un pape, né Giuliano della Rovere à Albissola, près de Savone, élu en 1503 et surnommé le « pape guerrier ». Il reconquiert Pérouse et Bologne en 1506, forme la Sainte-Ligue contre la France en 1511 et, protecteur des arts, commande à Bramante la reconstruction de la basilique Saint-Pierre, à Michel-Ange le plafond de la chapelle Sixtine et à Raphaël les chambres du Vatican. Il meurt à Rome en 1513, et le tombeau que Michel-Ange avait commencé pour lui ne sera achevé qu'en 1545, à Saint-Pierre-aux-Liens.",
+      "wikipedia": "Jules_II",
+      "portrait": {
+        "fichier": "Pope Julius II.jpg",
+        "legende": "Jules II, portrait peint par Raphaël en 1511",
+        "auteur": "Raphaël",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "victoremmanuel2",
+      "nom": "Victor-Emmanuel II",
+      "titre": "Naissance de Victor-Emmanuel II",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1820,
+      "description": "Victor-Emmanuel II (1820-1878) est le dernier roi de Sardaigne et le premier roi d'Italie, né à Turin dans la maison de Savoie. Monté sur le trône en 1849 après l'abdication de son père Charles-Albert, il conserve le régime constitutionnel malgré la défaite, soutient Cavour dans la guerre de 1859 contre l'Autriche, accueille les conquêtes de Garibaldi dans le sud et est proclamé roi d'Italie en mars 1861. Il fait de Rome la capitale en 1871 et meurt en 1878 au Quirinal, surnommé le « Re Galantuomo », le roi galant homme.",
+      "wikipedia": "Victor-Emmanuel_II",
+      "portrait": {
+        "fichier": "VictorEmmanuel2 (3).jpg",
+        "legende": "Victor-Emmanuel II, photographie d'Eugène Disdéri (vers 1861)",
+        "auteur": "Eugène Disdéri",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "cavour",
+      "nom": "Camillo Cavour",
+      "titre": "Naissance de Camillo Cavour",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1810,
+      "description": "Camillo Cavour (1810-1861) est un homme d'État piémontais, né à Turin, artisan de l'unité italienne. Président du Conseil du royaume de Sardaigne à partir de 1852, il modernise le Piémont, engage ses troupes en Crimée en 1855, obtient de Napoléon III l'alliance de Plombières puis la victoire sur l'Autriche en 1859, et organise les plébiscites qui rattachent l'Italie centrale puis, après l'expédition de Garibaldi, le Sud. Il fait proclamer le royaume d'Italie en mars 1861 et meurt à Turin le 6 juin, moins de trois mois plus tard, sans avoir vu Rome et Venise entrer dans le royaume.",
+      "wikipedia": "Camillo_Cavour",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Camillo Benso di Cavour 1864 by Francesco Hayez 041.jpg",
+        "legende": "Camillo Cavour, portrait posthume peint par Francesco Hayez en 1864, trois ans après sa mort",
+        "auteur": "Francesco Hayez",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "giolitti",
+      "nom": "Giovanni Giolitti",
+      "titre": "Naissance de Giovanni Giolitti",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1842,
+      "description": "Giovanni Giolitti (1842-1928) est un homme d'État libéral italien, né à Mondovì, en Piémont, cinq fois président du Conseil entre 1892 et 1921. Il domine la vie politique de l'« ère giolittienne » (1901-1914), mène une politique de réformes sociales, élargit en 1912 le droit de vote à la quasi-totalité des hommes et conquiert la Libye en 1911-1912, mais s'oppose en vain à l'entrée en guerre de l'Italie en 1915. Il croit pouvoir contenir le fascisme en s'alliant à lui aux élections de 1921, un calcul qui échoue, et meurt à Cavour, dans le Piémont, en 1928, resté jusqu'au bout opposé au régime.",
+      "wikipedia": "Giovanni_Giolitti",
+      "portrait": {
+        "fichier": "Giolitti2.jpg",
+        "legende": "Giovanni Giolitti, photographie (date inconnue)",
+        "auteur": "Auteur inconnu",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "mussolini",
+      "nom": "Benito Mussolini",
+      "titre": "Naissance de Benito Mussolini",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1883,
+      "description": "Benito Mussolini (1883-1945) est un journaliste et homme politique italien, né à Predappio, en Romagne, fondateur du fascisme et dirigeant de l'Italie de 1922 à 1943. Chef du gouvernement après la marche sur Rome d'octobre 1922, il instaure à partir de 1925 un régime à parti unique, conquiert l'Éthiopie en 1935-1936, s'allie à Hitler, promulgue en 1938 les lois raciales contre les Juifs et engage l'Italie dans la Seconde Guerre mondiale en juin 1940. Renversé en juillet 1943, délivré par les Allemands, il dirige la République sociale italienne dans le nord du pays et est fusillé par des partisans en avril 1945, près du lac de Côme.",
+      "wikipedia": "Benito_Mussolini",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Mussolini mezzobusto.jpg",
+        "legende": "Benito Mussolini, portrait publié dans le livre d'Adolf Dresler, Mussolini als Journalist (1939)",
+        "auteur": "Auteur inconnu",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "degasperi",
+      "nom": "Alcide De Gasperi",
+      "titre": "Naissance d'Alcide De Gasperi",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1881,
+      "description": "Alcide De Gasperi (1881-1954) est un homme d'État italien démocrate-chrétien, né à Pieve Tesino, dans le Trentin alors autrichien, et député à Vienne avant d'être italien. Opposant au fascisme, emprisonné en 1927, il dirige de 1945 à 1953 huit gouvernements successifs, obtient le plan Marshall, fait entrer l'Italie dans l'OTAN en 1949 et l'ancre à l'Ouest en battant le Front populaire aux élections de 1948. Européen convaincu, avec Schuman et Adenauer, il soutient la CECA et le projet de Communauté européenne de défense, et meurt à Sella di Valsugana en août 1954.",
+      "wikipedia": "Alcide_De_Gasperi",
+      "portrait": {
+        "fichier": "Alcide De Gasperi 2.jpg",
+        "legende": "Alcide De Gasperi dans son bureau, photographie de la présidence du Conseil des ministres (1947)",
+        "auteur": "Présidence du Conseil des ministres italien",
+        "recadrage": [
+          0.18,
+          0.08,
+          0.68,
+          0.57
+        ],
+        "largeur": 500,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "jean23",
+      "nom": "Jean XXIII",
+      "titre": "Naissance de Jean XXIII",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1881,
+      "description": "Jean XXIII (1881-1963) est le pape de 1958 à 1963, né Angelo Giuseppe Roncalli à Sotto il Monte, près de Bergame, élu à 76 ans comme pontife de transition. Ancien nonce en Bulgarie, en Turquie puis en France, et patriarche de Venise, il annonce en 1959 le concile Vatican II, qu'il ouvre en octobre 1962, et publie en 1963 l'encyclique Pacem in terris, adressée à tous les hommes de bonne volonté au lendemain de la crise de Cuba. Surnommé le « bon pape », il meurt à Rome en juin 1963, entre la première et la deuxième session du concile, et il est canonisé en 2014.",
+      "wikipedia": "Jean_XXIII",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Ioannes XXIII, by De Agostini, 1958–1963.jpg",
+        "legende": "Jean XXIII, portrait photographique de l'éditeur De Agostini (1958-1963)",
+        "auteur": "De Agostini Editore",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "moro",
+      "nom": "Aldo Moro",
+      "titre": "Naissance d'Aldo Moro",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1916,
+      "description": "Aldo Moro (1916-1978) est un homme d'État démocrate-chrétien italien, né à Maglie, dans les Pouilles, professeur de droit pénal. Cinq fois président du Conseil entre 1963 et 1976, il est l'artisan du centre gauche, qui ouvre le gouvernement aux socialistes, puis du « compromis historique » avec le Parti communiste d'Enrico Berlinguer. Enlevé par les Brigades rouges le 16 mars 1978, le jour où devait se former un gouvernement soutenu par les communistes, il est tenu captif 55 jours, et son corps est retrouvé le 9 mai dans le coffre d'une Renault 4, rue Caetani, à Rome.",
+      "wikipedia": "Aldo_Moro",
+      "portrait": {
+        "fichier": "Aldo Moro (1955).jpg",
+        "legende": "Aldo Moro, détail d'une photographie de 1955 où il siège aux côtés de Giorgio La Pira",
+        "auteur": "Auteur inconnu",
+        "recadrage": [
+          0.21,
+          0.05,
+          0.67,
+          0.9
+        ],
+        "largeur": 500,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "pertini",
+      "nom": "Sandro Pertini",
+      "titre": "Naissance de Sandro Pertini",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1896,
+      "description": "Sandro Pertini (1896-1990) est un homme politique socialiste italien, né à Stella, en Ligurie, président de la République de 1978 à 1985. Opposant au fascisme, condamné à de longues années de prison et de confinement, il est l'un des chefs de la Résistance, qui appelle à l'insurrection de Milan en avril 1945, puis préside la Chambre des députés de 1968 à 1976. Élu président en juillet 1978, deux mois après la mort d'Aldo Moro, il devient le chef de l'État le plus populaire de l'Italie d'après-guerre, et sa joie à la victoire de l'Italie au Mondial de football de 1982 reste dans les mémoires.",
+      "wikipedia": "Sandro_Pertini",
+      "portrait": {
+        "fichier": "Sandro Pertini senato hq.jpg",
+        "legende": "Sandro Pertini, portrait officiel du Sénat de la République (1948)",
+        "auteur": "Severino Crescente",
+        "licence": "CC BY 3.0 IT"
+      }
+    },
+    {
+      "slug": "berlinguer",
+      "nom": "Enrico Berlinguer",
+      "titre": "Naissance d'Enrico Berlinguer",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1922,
+      "description": "Enrico Berlinguer (1922-1984) est un homme politique communiste italien, né à Sassari, en Sardaigne, secrétaire général du Parti communiste italien de 1972 à sa mort. Il prend ses distances avec Moscou en théorisant l'« eurocommunisme », propose à la Démocratie chrétienne le « compromis historique » en 1973 et mène son parti à plus de 34 % des voix en 1976, son meilleur résultat. Frappé d'un malaise en plein meeting à Padoue en juin 1984, il meurt quelques jours plus tard, et une foule immense suit ses obsèques à Rome.",
+      "wikipedia": "Enrico_Berlinguer",
+      "portrait": {
+        "fichier": "Enrico Berlinguer.jpg",
+        "legende": "Enrico Berlinguer, photographie (auteur et date inconnus)",
+        "auteur": "Auteur inconnu",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "berlusconi",
+      "nom": "Silvio Berlusconi",
+      "titre": "Naissance de Silvio Berlusconi",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1936,
+      "description": "Silvio Berlusconi (1936-2023) est un entrepreneur de médias et homme politique italien, né à Milan, fondateur de Fininvest et de Mediaset puis du parti Forza Italia en 1994. Président du Conseil à trois reprises (1994-1995, 2001-2006 et 2008-2011), il domine la vie politique italienne pendant près de vingt ans, mais le cumul de son pouvoir politique et de son empire médiatique, ses conflits d'intérêts et ses nombreux procès, dont l'affaire « Rubygate », où il est finalement acquitté, nourrissent de vives critiques. Condamné définitivement en 2013 pour fraude fiscale, déchu de son mandat de sénateur, il revient au Sénat en 2022 et meurt à Milan en juin 2023.",
+      "wikipedia": "Silvio_Berlusconi",
+      "portrait": {
+        "fichier": "Silvio Berlusconi 2018.jpg",
+        "legende": "Silvio Berlusconi, photographie du Parti populaire européen (16 mai 2018)",
+        "auteur": "Parti populaire européen",
+        "licence": "CC BY 2.0"
+      }
+    },
+    {
+      "slug": "scipion",
+      "nom": "Scipion l'Africain",
+      "titre": "Naissance de Scipion l'Africain",
+      "axe": "Guerres et résistances",
+      "naissance": -236,
+      "description": "Scipion l'Africain (vers 236-183 av. J.-C.) est un général et homme d'État romain, né à Rome dans la famille patricienne des Cornelii Scipiones, vainqueur d'Hannibal. Il chasse les Carthaginois d'Espagne, prend Carthagène en 209, porte la guerre en Afrique et remporte en 202 la bataille de Zama, qui met fin à la deuxième guerre punique et lui vaut son surnom. Accusé de malversations par ses adversaires, dont Caton l'Ancien, après sa campagne contre Antiochos, il se retire à Literne, en Campanie, où il meurt en 183.",
+      "wikipedia": "Scipion_l'Africain",
+      "essentiel": true,
+      "biographie": "bio_scipion",
+      "portrait": {
+        "fichier": "Escipión africano.JPG",
+        "legende": "Buste en bronze de la villa des Papyrus d'Herculanum, traditionnellement identifié comme Scipion l'Africain mais représentant sans doute un prêtre d'Isis (musée archéologique national de Naples)",
+        "auteur": "Miguel Hermoso Cuesta",
+        "licence": "CC BY-SA 3.0"
+      }
+    },
+    {
+      "slug": "marcantoine",
+      "nom": "Marc Antoine",
+      "titre": "Naissance de Marc Antoine",
+      "axe": "Guerres et résistances",
+      "naissance": -83,
+      "description": "Marc Antoine (83-30 av. J.-C.) est un général et homme politique romain, né à Rome, lieutenant de Jules César et membre du second triumvirat. Après l'assassinat de César en 44 et la victoire de Philippes sur ses meurtriers en 42, il gouverne l'Orient, s'allie à Cléopâtre VII d'Égypte, dont il a trois enfants, et entre en conflit avec Octavien, qui l'emporte à Actium en 31. Vaincu, il se donne la mort à Alexandrie en août 30, quelques jours avant Cléopâtre, et l'Égypte devient une province romaine.",
+      "wikipedia": "Marc_Antoine",
+      "portrait": {
+        "fichier": "M Antonius.jpg",
+        "legende": "Marc Antoine, buste en marbre conservé aux musées du Vatican (photographie de 1899)",
+        "auteur": "Auteur inconnu",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "montefeltro",
+      "nom": "Frédéric III de Montefeltro",
+      "titre": "Naissance de Frédéric III de Montefeltro",
+      "axe": "Guerres et résistances",
+      "naissance": 1422,
+      "description": "Frédéric III de Montefeltro (1422-1482) est un condottiere et prince italien, né à Gubbio, comte puis premier duc d'Urbino. Capitaine réputé au service de Milan, de Florence, de Naples et du pape, il enrichit ses États par ses contrats militaires et fait de sa cour d'Urbino un modèle de la culture humaniste, avec son palais ducal, sa bibliothèque et des artistes comme Piero della Francesca. Il meurt de la fièvre en septembre 1482, pendant la guerre de Ferrare, et son profil au long nez, peint par Piero della Francesca, est resté l'un des portraits les plus connus de la Renaissance.",
+      "wikipedia": "Frédéric_III_de_Montefeltro",
+      "portrait": {
+        "fichier": "Federico da Montefeltro.jpg",
+        "legende": "Frédéric III de Montefeltro, volet du diptyque des ducs d'Urbino peint par Piero della Francesca (vers 1473-1475, galerie des Offices)",
+        "auteur": "Piero della Francesca",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "doria",
+      "nom": "Andrea Doria",
+      "titre": "Naissance d'Andrea Doria",
+      "axe": "Guerres et résistances",
+      "naissance": 1466,
+      "description": "Andrea Doria (1466-1560) est un amiral et condottiere génois, né à Oneglia, en Ligurie, qui fait de Gênes une république aristocratique alliée de l'Espagne. Après avoir servi le pape, Naples puis François Ier, il passe en 1528 au service de Charles Quint, chasse les Français de Gênes et fait adopter une constitution oligarchique qui durera plus de deux siècles. Chef de la flotte impériale, il combat les Barbaresques, est battu par Barberousse à Préveza en 1538 et meurt à Gênes en 1560, à 93 ans, sans avoir jamais voulu devenir doge.",
+      "wikipedia": "Andrea_Doria",
+      "portrait": {
+        "fichier": "Andrea Doria.jpg",
+        "legende": "Andrea Doria, portrait peint par Sebastiano del Piombo vers 1526 (palais Doria-Pamphilj, Rome)",
+        "auteur": "Sebastiano del Piombo",
+        "licence": "Domaine public",
+        "recadrage": [
+          0.18,
+          0.03,
+          0.78,
+          0.55
+        ],
+        "largeur": 500
+      }
+    },
+    {
+      "slug": "borgia",
+      "nom": "César Borgia",
+      "titre": "Naissance de César Borgia",
+      "axe": "Guerres et résistances",
+      "naissance": 1475,
+      "description": "César Borgia (1475-1507) est un cardinal devenu condottiere, fils du cardinal Rodrigue Borgia, futur pape Alexandre VI, duc de Valentinois et capitaine général de l'Église. Avec l'appui de son père et de Louis XII, il conquiert à partir de 1499 la Romagne, y fait régner l'ordre par la terreur et fait étrangler en décembre 1502 à Senigallia ses capitaines conjurés, un épisode que Machiavel observe sur place. Après la mort de son père en 1503 et l'élection de son ennemi Jules II, il perd ses États, est arrêté, puis tué en 1507 lors d'un siège en Navarre, et Machiavel en fait un modèle dans Le Prince.",
+      "wikipedia": "César_Borgia",
+      "portrait": {
+        "fichier": "Cesare Borgia, Duke of Valentinois.jpg",
+        "legende": "César Borgia, portrait du début du XVIe siècle, peut-être copie d'un original de Bartolomeo Veneto",
+        "auteur": "Auteur inconnu",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "mazzini",
+      "nom": "Giuseppe Mazzini",
+      "titre": "Naissance de Giuseppe Mazzini",
+      "axe": "Guerres et résistances",
+      "naissance": 1805,
+      "description": "Giuseppe Mazzini (1805-1872) est un patriote et penseur républicain italien, né à Gênes, partisan de l'unité de l'Italie faite par le peuple. Fondateur de la Jeune Italie en 1831, exilé à Marseille, à Londres et en Suisse, il inspire plusieurs insurrections manquées et dirige en 1849 la République romaine, que renversent les troupes françaises. Son républicanisme intransigeant le laisse en marge du royaume d'Italie de 1861, qu'il juge trop monarchique, et il meurt à Pise en 1872 sous un faux nom.",
+      "wikipedia": "Giuseppe_Mazzini",
+      "portrait": {
+        "fichier": "Giuseppe Mazzini.jpg",
+        "legende": "Giuseppe Mazzini, photographie (vers 1860)",
+        "auteur": "Auteur inconnu",
+        "recadrage": [
+          0.25,
+          0.1,
+          0.75,
+          0.61
+        ],
+        "largeur": 960,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "garibaldi",
+      "nom": "Giuseppe Garibaldi",
+      "titre": "Naissance de Giuseppe Garibaldi",
+      "axe": "Guerres et résistances",
+      "naissance": 1807,
+      "description": "Giuseppe Garibaldi (1807-1882) est un général et patriote italien, né à Nice, héros de l'unité italienne surnommé le « héros des deux mondes ». Après avoir combattu au Brésil et en Uruguay, il défend la République romaine en 1849, puis embarque à Quarto en mai 1860 avec mille volontaires, les Chemises rouges, conquiert la Sicile et le royaume de Naples et remet ses conquêtes à Victor-Emmanuel II à Teano en octobre. Retiré sur l'île de Caprera, il tente deux fois de prendre Rome, échoue à Aspromonte en 1862 et à Mentana en 1867, et meurt à Caprera en 1882.",
+      "wikipedia": "Giuseppe_Garibaldi",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Giuseppe Garibaldi 1861.jpg",
+        "legende": "Giuseppe Garibaldi, photographie en carte de visite prise à Naples en 1861",
+        "auteur": "Auteur inconnu",
+        "recadrage": [
+          0.08,
+          0.02,
+          0.68,
+          0.51
+        ],
+        "largeur": 960,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "matteotti",
+      "nom": "Giacomo Matteotti",
+      "titre": "Naissance de Giacomo Matteotti",
+      "axe": "Guerres et résistances",
+      "naissance": 1885,
+      "description": "Giacomo Matteotti (1885-1924) est un député socialiste italien, né à Fratta Polesine, en Vénétie, secrétaire du Parti socialiste unitaire. Le 30 mai 1924, il dénonce devant la Chambre les violences et les fraudes qui ont entaché les élections remportées par les fascistes le mois précédent. Enlevé à Rome le 10 juin par des squadristes, il est tué et son corps n'est retrouvé que deux mois plus tard, un crime que Mussolini assume politiquement dans son discours du 3 janvier 1925, ouvrant la dictature.",
+      "wikipedia": "Giacomo_Matteotti",
+      "portrait": {
+        "fichier": "Giacomo Matteotti.jpg",
+        "legende": "Giacomo Matteotti, photographie antérieure à 1924",
+        "auteur": "Auteur inconnu",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "parri",
+      "nom": "Ferruccio Parri",
+      "titre": "Naissance de Ferruccio Parri",
+      "axe": "Guerres et résistances",
+      "naissance": 1890,
+      "description": "Ferruccio Parri (1890-1981) est un résistant et homme politique italien, né à Pinerolo, dans le Piémont, ancien officier de la Première Guerre mondiale. Antifasciste, il aide en 1926 Filippo Turati à s'enfuir d'Italie avec Carlo Rosselli et Sandro Pertini, est l'un des fondateurs du Parti d'action et commande sous le nom de « Maurizio » les partisans du Corps des volontaires de la liberté. Président du Conseil de juin à décembre 1945, premier chef de gouvernement de l'Italie libérée, il devient ensuite sénateur à vie et meurt à Rome en 1981.",
+      "wikipedia": "Ferruccio_Parri",
+      "portrait": {
+        "fichier": "Ferruccio Parri Senato.jpg",
+        "legende": "Ferruccio Parri, photographie du Sénat de la République (2015, d'après un cliché d'archives)",
+        "auteur": "Sénat de la République italienne",
+        "licence": "CC BY 3.0 IT"
+      }
+    },
+    {
+      "slug": "falcone",
+      "nom": "Giovanni Falcone",
+      "titre": "Naissance de Giovanni Falcone",
+      "axe": "Guerres et résistances",
+      "naissance": 1939,
+      "description": "Giovanni Falcone (1939-1992) est un magistrat italien, né à Palerme, qui a mené la lutte judiciaire contre la mafia sicilienne, la Cosa nostra. Juge d'instruction, il forme avec Paolo Borsellino le pool antimafia de Palerme et prépare le « maxi-procès » de 1986-1987, où des centaines de mafieux sont condamnés, notamment grâce aux révélations du repenti Tommaso Buscetta. Directeur des affaires pénales au ministère de la Justice à Rome, il est tué avec sa femme et trois policiers le 23 mai 1992 par une bombe placée sous l'autoroute à Capaci, près de Palerme, un attentat qui soulève l'indignation de l'Italie.",
+      "wikipedia": "Giovanni_Falcone",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Giovanni Falcone (cropped).jpg",
+        "legende": "Giovanni Falcone, portrait dessiné au crayon par Luigi Oldani (2013) : aucune photographie libre n'existe",
+        "auteur": "Luigi Oldani",
+        "recadrage": [
+          0.2,
+          0.0,
+          1.0,
+          1.0
+        ],
+        "largeur": 960,
+        "licence": "CC BY-SA 3.0"
+      }
+    },
+    {
+      "slug": "borsellino",
+      "nom": "Paolo Borsellino",
+      "titre": "Naissance de Paolo Borsellino",
+      "axe": "Guerres et résistances",
+      "naissance": 1940,
+      "description": "Paolo Borsellino (1940-1992) est un magistrat italien, né à Palerme, ami d'enfance de Giovanni Falcone et comme lui l'un des juges de la lutte contre la Cosa nostra. Membre du pool antimafia de Palerme, il participe au « maxi-procès » de 1986-1987, devient procureur adjoint de Palerme et poursuit l'enquête après l'attentat qui tue Falcone le 23 mai 1992. Il est tué le 19 juillet 1992, avec cinq membres de son escorte, par une voiture piégée devant l'immeuble de sa mère, via D'Amelio, à Palerme, et le double assassinat provoque un durcissement de la lutte contre la mafia.",
+      "wikipedia": "Paolo_Borsellino",
+      "portrait": {
+        "fichier": "Paolo Borsellino.jpg",
+        "legende": "Paolo Borsellino, portrait dessiné au crayon par Luigi Oldani (2013) : aucune photographie libre n'existe",
+        "auteur": "Luigi Oldani",
+        "recadrage": [
+          0.19,
+          0.08,
+          0.81,
+          0.85
+        ],
+        "largeur": 960,
+        "licence": "CC BY-SA 3.0"
+      }
+    },
+    {
+      "slug": "ciceron",
+      "nom": "Cicéron",
+      "titre": "Naissance de Cicéron",
+      "axe": "Littérature et pensée",
+      "naissance": -106,
+      "description": "Cicéron (106-43 av. J.-C.) est un orateur, avocat, homme d'État et philosophe romain, né à Arpinum, dans le Latium. Consul en 63, il déjoue la conjuration de Catilina, puis combat Marc Antoine dans les Philippiques, et ses discours, ses traités de rhétorique et de philosophie, comme La République et Des devoirs, transmettent la pensée grecque au monde latin. Proscrit par les triumvirs, il est assassiné en décembre 43 près de Formies, et sa langue, ses lettres et ses discours deviennent pendant des siècles le modèle du latin classique.",
+      "wikipedia": "Cicéron",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Bust of Cicero (1st-cent. BC) - Palazzo Nuovo - Musei Capitolini - Rome 2016.jpg",
+        "legende": "Cicéron, buste en marbre du Ier siècle av. J.-C. (musées du Capitole, Rome)",
+        "auteur": "José Luiz",
+        "licence": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "slug": "virgile",
+      "nom": "Virgile",
+      "titre": "Naissance de Virgile",
+      "axe": "Littérature et pensée",
+      "naissance": -70,
+      "description": "Virgile (70-19 av. J.-C.) est un poète latin, né près de Mantoue, à Andes, fils d'un petit propriétaire. Protégé de Mécène et d'Auguste, il compose les Bucoliques, les Géorgiques, poème sur la vie des champs, et surtout l'Énéide, épopée en douze chants qui raconte les errances d'Énée, ancêtre des Romains, depuis la chute de Troie. Mort à Brindes en septembre de l'an 19, au retour de Grèce, il laisse l'Énéide inachevée et aurait voulu la détruire, mais Auguste en ordonne la publication, et Dante le choisit pour guide dans la Divine Comédie.",
+      "wikipedia": "Virgile",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Virgil Mosaic Bardo Museum Tunis.jpg",
+        "legende": "Virgile entre les muses Clio et Melpomène, mosaïque du IIIe siècle découverte à Hadrumète, l'actuelle Sousse (musée du Bardo, Tunis)",
+        "auteur": "David Bjorgen",
+        "recadrage": [
+          0.2,
+          0.14,
+          0.75,
+          0.85
+        ],
+        "largeur": 960,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "horace",
+      "nom": "Horace",
+      "titre": "Naissance d'Horace",
+      "axe": "Littérature et pensée",
+      "naissance": -65,
+      "description": "Horace (65-8 av. J.-C.) est un poète latin, né à Venouse, en Apulie, fils d'un affranchi qui lui donne une éducation à Rome puis à Athènes. Ancien partisan de Brutus à Philippes, gracié, il entre dans le cercle de Mécène, qui lui offre une ferme dans les monts Sabins, et compose les Satires, les Épodes, les Odes et l'Art poétique, dont des formules comme « carpe diem » sont devenues proverbiales. Il meurt à Rome en 8, quelques semaines après Mécène, et fait d'Auguste son héritier.",
+      "wikipedia": "Horace",
+      "portrait": {
+        "fichier": "Quintus Horatius Flaccus.jpg",
+        "legende": "Horace, portrait imaginaire : reproduction en noir et blanc d'une œuvre d'Anton von Werner, aucun portrait authentique n'étant connu",
+        "auteur": "Anton von Werner",
+        "recadrage": [
+          0.2,
+          0.3,
+          0.8,
+          0.68
+        ],
+        "largeur": 960,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "ovide",
+      "nom": "Ovide",
+      "titre": "Naissance d'Ovide",
+      "axe": "Littérature et pensée",
+      "naissance": -43,
+      "description": "Ovide (43 av. J.-C.-17 ap. J.-C.) est un poète latin, né à Sulmone, dans les Abruzzes, issu de l'ordre équestre et renonçant à une carrière publique pour la poésie. Auteur des Amours, de l'Art d'aimer et surtout des Métamorphoses, vaste récit de mythes en quinze livres, il est relégué en l'an 8 par Auguste à Tomes, sur la mer Noire, pour « un poème et une erreur » dont il n'a jamais précisé la cause. Il écrit en exil les Tristes et les Pontiques, supplie en vain d'être rappelé et meurt à Tomes, l'actuelle Constanța, en Roumanie, vers l'an 17, sans avoir revu Rome.",
+      "wikipedia": "Ovide",
+      "portrait": {
+        "fichier": "Ovid by an anonymous sculptor.jpg",
+        "legende": "Ovide, buste supposé du Ier siècle (galerie des Offices, Florence)",
+        "auteur": "Lucasaw",
+        "licence": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "slug": "boece",
+      "nom": "Boèce",
+      "titre": "Naissance de Boèce",
+      "axe": "Littérature et pensée",
+      "naissance": 480,
+      "description": "Boèce (vers 480-524) est un philosophe et homme d'État romain, né à Rome dans l'aristocratie et devenu ministre du roi ostrogoth Théodoric le Grand. Traducteur et commentateur d'Aristote en latin, il transmet à l'Occident médiéval une partie de la logique et de la pensée grecques, avant d'être accusé de trahison, emprisonné à Pavie et exécuté en 524. Dans sa prison, il écrit La Consolation de la philosophie, dialogue entre lui-même et la Philosophie, qui sera l'un des livres les plus lus du Moyen Âge, et l'Église le vénère comme martyr.",
+      "wikipedia": "Boèce",
+      "portrait": {
+        "fichier": "Boethius initial consolation philosophy.jpg",
+        "legende": "Boèce enseignant à ses élèves, lettrine d'un manuscrit italien de La Consolation de la philosophie (1385) : aucun portrait de son vivant n'est connu",
+        "auteur": "Auteur inconnu",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "benoit",
+      "nom": "Benoît de Nursie",
+      "titre": "Naissance de Benoît de Nursie",
+      "axe": "Littérature et pensée",
+      "naissance": 480,
+      "description": "Benoît de Nursie (vers 480-547) est un moine italien, né à Nursie, en Ombrie, dans une famille aisée, et le fondateur du monachisme occidental. Retiré dans une grotte à Subiaco, il fonde vers 529 l'abbaye du Mont-Cassin et rédige la Règle, qui organise la vie des moines autour de la prière, du travail et de l'obéissance, tandis que sa vie n'est connue que par les Dialogues de Grégoire le Grand. Il meurt au Mont-Cassin, et sa Règle, diffusée par les bénédictins dans toute l'Europe, devient la base de la vie monastique, ce qui vaut à Benoît d'être proclamé patron de l'Europe en 1964.",
+      "wikipedia": "Benoît_de_Nursie",
+      "portrait": {
+        "fichier": "Frari (Venice) - Sacristy - triptych by Giovanni Bellini - Saint Benedict of Nursia and Saint Mark.jpg",
+        "legende": "Saint Benoît, détail du triptyque de Giovanni Bellini (1488, sacristie de la basilique des Frari, Venise) : aucun portrait de son vivant n'existe",
+        "auteur": "Didier Descouens",
+        "recadrage": [
+          0.2,
+          0.06,
+          0.8,
+          0.53
+        ],
+        "largeur": 960,
+        "licence": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "slug": "francois",
+      "nom": "François d'Assise",
+      "titre": "Naissance de François d'Assise",
+      "axe": "Littérature et pensée",
+      "naissance": 1181,
+      "description": "François d'Assise (vers 1181-1226) est un frère et prédicateur italien, né à Assise, fils d'un riche marchand de drap. Après une jeunesse fastueuse et une conversion vers 1205, il renonce à ses biens, fonde l'ordre des Frères mineurs, approuvé oralement par Innocent III vers 1210, et prêche la pauvreté et l'amour de toute la création, dont le Cantique des créatures, l'un des premiers textes littéraires en italien, fait l'éloge. Il reçoit les stigmates en 1224 sur le mont Alverne, meurt à la Portioncule en octobre 1226 et est canonisé dès 1228, avant d'être proclamé patron de l'Italie en 1939.",
+      "wikipedia": "François_d'Assise",
+      "essentiel": true,
+      "biographie": "bio_francois",
+      "portrait": {
+        "fichier": "StFrancis part.jpg",
+        "legende": "Saint François, détail de la fresque de la grotte de Saint-Benoît à Subiaco, le plus ancien portrait connu du saint",
+        "auteur": "Parzi",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "thomas",
+      "nom": "Thomas d'Aquin",
+      "titre": "Naissance de Thomas d'Aquin",
+      "axe": "Littérature et pensée",
+      "naissance": 1225,
+      "description": "Thomas d'Aquin (vers 1225-1274) est un frère dominicain et théologien italien, né près d'Aquino, au château de Roccasecca, dans le royaume de Sicile, qui enseigne à Paris, à Rome et à Naples. Maître de la scolastique, il intègre la philosophie d'Aristote à la théologie chrétienne dans la Somme contre les Gentils et surtout dans la Somme théologique, restée inachevée. Il meurt en 1274 à l'abbaye de Fossanova, en se rendant au concile de Lyon, est canonisé en 1323 et proclamé docteur de l'Église en 1567, et sa pensée, le thomisme, devient une référence majeure de la théologie catholique.",
+      "wikipedia": "Thomas_d'Aquin",
+      "essentiel": true,
+      "biographie": "bio_aquin",
+      "portrait": {
+        "fichier": "St-thomas-aquinasFXD.jpg",
+        "legende": "Saint Thomas d'Aquin, détail du tableau de Carlo Crivelli peint en 1476 (National Gallery, Londres)",
+        "auteur": "Carlo Crivelli",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "dante",
+      "nom": "Dante Alighieri",
+      "titre": "Naissance de Dante Alighieri",
+      "axe": "Littérature et pensée",
+      "naissance": 1265,
+      "description": "Dante Alighieri (1265-1321) est un poète et homme politique florentin, né à Florence, père de la langue littéraire italienne. Auteur de la Vita nuova, qui célèbre son amour pour Béatrice, il participe à la vie politique de sa cité avant d'être condamné à l'exil en 1302 par les Guelfes noirs, rivaux de son parti, et d'errer de ville en ville jusqu'à la fin de sa vie. Il compose en exil la Divine Comédie, voyage à travers l'Enfer, le Purgatoire et le Paradis écrit en toscan et non en latin, et meurt à Ravenne en 1321.",
+      "wikipedia": "Dante_Alighieri",
+      "essentiel": true,
+      "biographie": "bio_dante",
+      "portrait": {
+        "fichier": "Portrait de Dante.jpg",
+        "legende": "Dante Alighieri, portrait peint vers 1495 par Sandro Botticelli, près de deux siècles après sa mort",
+        "auteur": "Sandro Botticelli",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "petrarque",
+      "nom": "Pétrarque",
+      "titre": "Naissance de Pétrarque",
+      "axe": "Littérature et pensée",
+      "naissance": 1304,
+      "description": "Pétrarque (1304-1374) est un poète et humaniste italien, né à Arezzo d'un notaire florentin exilé, qui passe une grande partie de sa vie en Provence et en Italie du Nord. Couronné poète au Capitole en 1341, il redécouvre des lettres de Cicéron, cherche à restaurer le latin classique et ouvre ainsi la voie à l'humanisme, tandis que son Canzoniere, 366 poèmes surtout dédiés à Laure, fixe la forme du sonnet. Il meurt à Arquà, près de Padoue, en juillet 1374, à la veille de ses 70 ans.",
+      "wikipedia": "Pétrarque",
+      "portrait": {
+        "fichier": "Altichiero, ritratto di Francesco Petrarca.jpg",
+        "legende": "Pétrarque, portrait peint par Altichiero vers 1370-1380, de son vivant ou peu après sa mort",
+        "auteur": "Altichiero",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "boccace",
+      "nom": "Boccace",
+      "titre": "Naissance de Boccace",
+      "axe": "Littérature et pensée",
+      "naissance": 1313,
+      "description": "Boccace (1313-1375) est un écrivain et humaniste italien, né à Certaldo, en Toscane, l'un des trois grands auteurs du Trecento avec Dante et Pétrarque. Auteur de poèmes, de romans et de traités érudits, il écrit entre 1349 et 1353 le Décaméron, recueil de cent nouvelles racontées par dix jeunes gens réfugiés à la campagne pendant la peste de 1348, qui fonde la prose narrative italienne. Ami de Pétrarque, il donne en 1373 à Florence les premières lectures publiques de la Divine Comédie et meurt à Certaldo en décembre 1375.",
+      "wikipedia": "Boccace",
+      "portrait": {
+        "fichier": "Boccaccio by Morghen.jpg",
+        "legende": "Boccace, gravure de Raffaello Morghen (vers 1822), d'après un portrait ancien",
+        "auteur": "Raffaello Morghen",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "catherine",
+      "nom": "Catherine de Sienne",
+      "titre": "Naissance de Catherine de Sienne",
+      "axe": "Littérature et pensée",
+      "naissance": 1347,
+      "description": "Catherine de Sienne (1347-1380) est une mystique et religieuse italienne, née à Sienne dans la très nombreuse famille d'un teinturier. Tertiaire dominicaine, elle soigne les pauvres et les malades, multiplie les lettres aux princes et aux papes, obtient en 1376 que Grégoire XI quitte Avignon pour Rome, puis soutient Urbain VI au début du Grand Schisme. Morte à Rome en 1380, à 33 ans, elle laisse le Dialogue de la divine providence et près de 400 lettres, est canonisée en 1461 et proclamée docteur de l'Église en 1970, l'une des deux premières femmes à recevoir ce titre.",
+      "wikipedia": "Catherine_de_Sienne",
+      "portrait": {
+        "fichier": "Santa Catalina de Siena, Pedro de Villegas Marmolejo.jpg",
+        "legende": "Catherine de Sienne, détail d'une peinture de Pedro de Villegas Marmolejo (XVIe siècle, musée des Beaux-Arts de Séville)",
+        "auteur": "Jl FilpoC",
+        "licence": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "slug": "pic",
+      "nom": "Pic de la Mirandole",
+      "titre": "Naissance de Pic de la Mirandole",
+      "axe": "Littérature et pensée",
+      "naissance": 1463,
+      "description": "Pic de la Mirandole (1463-1494) est un philosophe et humaniste italien, né à la Mirandole, près de Modène, prince d'une petite seigneurie. À 23 ans, il rédige neuf cents thèses qu'il propose de défendre à Rome, que le pape Innocent VIII fait condamner en partie, et écrit le Discours sur la dignité de l'homme, l'un des textes fondateurs de l'humanisme, qui fait de l'homme l'artisan libre de sa destinée. Protégé de Laurent de Médicis à Florence, lecteur de la kabbale hébraïque, il meurt à 31 ans, en novembre 1494, peut-être empoisonné, le jour même de l'entrée de Charles VIII dans la ville.",
+      "wikipedia": "Jean_Pic_de_la_Mirandole",
+      "portrait": {
+        "fichier": "Pico1.jpg",
+        "legende": "Pic de la Mirandole, portrait peint par Cristofano dell'Altissimo vers 1552-1568, d'après un original ancien (galerie des Offices)",
+        "auteur": "Cristofano dell'Altissimo",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "machiavel",
+      "nom": "Nicolas Machiavel",
+      "titre": "Naissance de Nicolas Machiavel",
+      "axe": "Littérature et pensée",
+      "naissance": 1469,
+      "description": "Nicolas Machiavel (1469-1527) est un diplomate, historien et penseur politique florentin, né à Florence, secrétaire de la République de 1498 à 1512. Chargé de missions auprès de Louis XII, de César Borgia et du pape, il rédige, après le retour des Médicis qui l'écartent et le font torturer, Le Prince en 1513 et les Discours sur la première décade de Tite-Live, et fonde l'analyse politique moderne en séparant l'action politique de la morale. Il meurt à Florence en 1527, sa pensée, souvent réduite à tort au « machiavélisme » de la ruse et de la force, ayant nourri des siècles de débats.",
+      "wikipedia": "Nicolas_Machiavel",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Portrait of Niccolò Machiavelli by Santi di Tito.jpg",
+        "legende": "Nicolas Machiavel, portrait peint par Santi di Tito dans la seconde moitié du XVIe siècle, après sa mort",
+        "auteur": "Santi di Tito",
+        "recadrage": [
+          0.2,
+          0.03,
+          0.8,
+          0.61
+        ],
+        "largeur": 960,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "arioste",
+      "nom": "L'Arioste",
+      "titre": "Naissance de l'Arioste",
+      "axe": "Littérature et pensée",
+      "naissance": 1474,
+      "description": "L'Arioste (1474-1533) est un poète italien, né à Reggio d'Émilie, au service des Este à Ferrare. Il y publie en 1516 le Roland furieux, épopée chevaleresque et ironique qui reprend l'histoire d'Orlando amoureux d'Angélique, et dont la version définitive, en quarante-six chants, paraît en 1532. Pour vivre, il est ambassadeur, gouverneur de province, auteur de comédies et de satires, et meurt à Ferrare en 1533 ; son poème inspirera Le Tasse, Spenser, Lully et Haendel.",
+      "wikipedia": "L'Arioste",
+      "portrait": {
+        "fichier": "Cristofano dell'altissimo, ludovico ariosto, ante 1568.JPG",
+        "legende": "L'Arioste, portrait peint par Cristofano dell'Altissimo avant 1568, d'après un original ancien (galerie des Offices)",
+        "auteur": "Cristofano dell'Altissimo",
+        "recadrage": [
+          0.1,
+          0.17,
+          0.85,
+          0.92
+        ],
+        "largeur": 960,
+        "licence": "CC BY-SA 3.0"
+      }
+    },
+    {
+      "slug": "tasse",
+      "nom": "Le Tasse",
+      "titre": "Naissance du Tasse",
+      "axe": "Littérature et pensée",
+      "naissance": 1544,
+      "description": "Le Tasse (1544-1595) est un poète italien, né à Sorrente, qui passe l'essentiel de sa vie à la cour des Este à Ferrare. Il y compose Aminta, pastorale jouée en 1573, et surtout La Jérusalem délivrée, poème épique sur la première croisade publié en 1581, que les doutes religieux et les critiques le poussent à remanier. Interné de 1579 à 1586 à l'hôpital Sainte-Anne pour troubles mentaux, il meurt à Rome en 1595, à la veille du couronnement au Capitole qui devait le consacrer, et sa légende nourrira les romantiques, de Goethe à Delacroix.",
+      "wikipedia": "Le_Tasse",
+      "portrait": {
+        "fichier": "Torquato Tasso, aged 22, by Jacopo da Ponte, called Jacopo Bassano (cropped).jpg",
+        "legende": "Le Tasse à 22 ans, portrait peint par Jacopo Bassano en 1566",
+        "auteur": "Jacopo Bassano",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "bruno",
+      "nom": "Giordano Bruno",
+      "titre": "Naissance de Giordano Bruno",
+      "axe": "Littérature et pensée",
+      "naissance": 1548,
+      "description": "Giordano Bruno (1548-1600) est un philosophe et frère dominicain italien, né à Nola, près de Naples, qui quitte son ordre et voyage en Europe, de Genève à Paris, Londres et Wittenberg. Défenseur de l'héliocentrisme de Copernic, il soutient que l'univers est infini et peuplé d'une infinité de mondes, idées qu'il expose dans Le Banquet des cendres et De l'infini, l'univers et les mondes. Livré à l'Inquisition à Venise en 1592, il refuse de se rétracter après des années de procès et est brûlé vif à Rome, au Campo de' Fiori, le 17 février 1600, devenant un symbole de la liberté de pensée.",
+      "wikipedia": "Giordano_Bruno",
+      "portrait": {
+        "fichier": "Portrait of Giordano Bruno in \"Opere\" Wellcome L0015152 (cropped).jpg",
+        "legende": "Giordano Bruno, gravure publiée dans ses Opere (collection Wellcome)",
+        "auteur": "Auteur inconnu",
+        "licence": "CC BY 4.0"
+      }
+    },
+    {
+      "slug": "goldoni",
+      "nom": "Carlo Goldoni",
+      "titre": "Naissance de Carlo Goldoni",
+      "axe": "Littérature et pensée",
+      "naissance": 1707,
+      "description": "Carlo Goldoni (1707-1793) est un dramaturge vénitien, né à Venise, réformateur de la comédie italienne. Après des études de droit, il remplace peu à peu les improvisations de la commedia dell'arte par des pièces écrites, aux personnages et aux dialogues proches de la vie, comme Le Serviteur de deux maîtres, Les Rustres ou La Locandiera. Il quitte Venise en 1762 pour Paris, y écrit pour la Comédie-Italienne, compose en français Le Bourru bienfaisant et meurt dans la gêne en février 1793, la veille du jour où la Convention rétablit sa pension.",
+      "wikipedia": "Carlo_Goldoni",
+      "portrait": {
+        "fichier": "Alessandro Longhi - Ritratto di Carlo Goldoni (c 1757) Ca Goldoni Venezia.jpg",
+        "legende": "Carlo Goldoni, portrait peint par Alessandro Longhi vers 1757 (Ca' Goldoni, Venise)",
+        "auteur": "Alessandro Longhi",
+        "licence": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "slug": "beccaria",
+      "nom": "Cesare Beccaria",
+      "titre": "Naissance de Cesare Beccaria",
+      "axe": "Littérature et pensée",
+      "naissance": 1738,
+      "description": "Cesare Beccaria (1738-1794) est un juriste, philosophe et économiste milanais des Lumières, né à Milan, marquis de la noblesse lombarde. Son traité Des délits et des peines, publié anonymement en 1764, condamne la torture et la peine de mort, réclame des peines proportionnées et la légalité des délits, et connaît un succès européen, que Voltaire contribue à répandre par un commentaire. Il enseigne l'économie à Milan, devient fonctionnaire de l'Empire autrichien et meurt dans sa ville en novembre 1794, son influence ayant conduit Léopold de Toscane à abolir la peine de mort en 1786.",
+      "wikipedia": "Cesare_Beccaria",
+      "portrait": {
+        "fichier": "Cesare Beccaria.jpg",
+        "legende": "Cesare Beccaria, portrait peint par Eliseo Sala après 1864, bien après sa mort",
+        "auteur": "Eliseo Sala",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "manzoni",
+      "nom": "Alessandro Manzoni",
+      "titre": "Naissance d'Alessandro Manzoni",
+      "axe": "Littérature et pensée",
+      "naissance": 1785,
+      "description": "Alessandro Manzoni (1785-1873) est un écrivain italien, né à Milan, petit-fils de Beccaria par sa mère, figure majeure du romantisme italien. Converti au catholicisme en 1810, il écrit des hymnes sacrés, des tragédies et l'ode Le Cinq mai sur la mort de Napoléon, puis Les Fiancés (I promessi sposi), roman historique publié en 1827 et révisé en 1840-1842, qui fixe l'italien moderne en adoptant le toscan parlé à Florence. Sénateur du royaume d'Italie, il meurt à Milan en mai 1873, et Verdi compose pour lui son Requiem.",
+      "wikipedia": "Alessandro_Manzoni",
+      "portrait": {
+        "fichier": "Francesco Hayez - Ritratto di Alessandro Manzoni.jpg",
+        "legende": "Alessandro Manzoni, portrait peint par Francesco Hayez en 1841",
+        "auteur": "Francesco Hayez",
+        "recadrage": [
+          0.2,
+          0.1,
+          0.75,
+          0.62
+        ],
+        "largeur": 960,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "leopardi",
+      "nom": "Giacomo Leopardi",
+      "titre": "Naissance de Giacomo Leopardi",
+      "axe": "Littérature et pensée",
+      "naissance": 1798,
+      "description": "Giacomo Leopardi (1798-1837) est un poète et penseur italien, né à Recanati, dans les Marches, d'une famille noble, qui passe sa jeunesse dans la riche bibliothèque de son père. Malade dès l'adolescence, il compose les Canti, dont L'Infini et À Silvia, et les Opérettes morales, où son pessimisme voit dans la nature une marâtre indifférente aux hommes, et il tient pendant des années le Zibaldone, journal de pensée de plus de quatre mille pages. Il meurt à Naples en juin 1837, à 38 ans, et son œuvre fait de lui l'un des plus grands poètes italiens du XIXe siècle.",
+      "wikipedia": "Giacomo_Leopardi",
+      "portrait": {
+        "fichier": "Giacomo Leopardi Morelli.jpg",
+        "legende": "Giacomo Leopardi, portrait peint par Domenico Morelli en 1845, huit ans après sa mort",
+        "auteur": "Domenico Morelli",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "collodi",
+      "nom": "Carlo Collodi",
+      "titre": "Naissance de Carlo Collodi",
+      "axe": "Littérature et pensée",
+      "naissance": 1826,
+      "description": "Carlo Collodi (1826-1890) est un écrivain et journaliste italien, né à Florence sous le nom de Carlo Lorenzini, qui a pris pour pseudonyme le nom du village de sa mère. Ancien volontaire de 1848 et fonctionnaire, il fonde des journaux satiriques, écrit des contes pour enfants et publie à partir de 1881 en feuilleton Les Aventures de Pinocchio, l'histoire d'une marionnette de bois qui devient un vrai garçon, parue en volume en 1883. Il meurt à Florence en octobre 1890, et Pinocchio, traduit dans plus de deux cents langues, est l'un des livres les plus traduits au monde.",
+      "wikipedia": "Carlo_Collodi",
+      "portrait": {
+        "fichier": "Carlo Collodi.jpg",
+        "legende": "Carlo Collodi, gravure d'après une photographie de Montabone (1890)",
+        "auteur": "Auteur inconnu",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "verga",
+      "nom": "Giovanni Verga",
+      "titre": "Naissance de Giovanni Verga",
+      "axe": "Littérature et pensée",
+      "naissance": 1840,
+      "description": "Giovanni Verga (1840-1922) est un écrivain italien, né à Catane, en Sicile, chef de file du vérisme, version italienne du naturalisme. Après des romans mondains écrits à Florence et à Milan, il revient à ses sources siciliennes avec les nouvelles de Vie des champs en 1880, puis ses chefs-d'œuvre, Les Malavoglia en 1881 et Mastro-don Gesualdo en 1889, qui peignent avec sobriété la misère et l'ambition des humbles. Nommé sénateur en 1920, il meurt à Catane en janvier 1922, et ses nouvelles ont inspiré l'opéra Cavalleria rusticana de Mascagni.",
+      "wikipedia": "Giovanni_Verga",
+      "portrait": {
+        "fichier": "Portrait of Giovanni Verga.jpg",
+        "legende": "Giovanni Verga, photographie (avant 1920)",
+        "auteur": "Auteur inconnu",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "pirandello",
+      "nom": "Luigi Pirandello",
+      "titre": "Naissance de Luigi Pirandello",
+      "axe": "Littérature et pensée",
+      "naissance": 1867,
+      "description": "Luigi Pirandello (1867-1936) est un dramaturge et romancier italien, né à Agrigente, en Sicile, prix Nobel de littérature en 1934. Après Feu Mathias Pascal en 1904, il renouvelle le théâtre avec Six personnages en quête d'auteur en 1921 et Henri IV en 1922, où il met en scène l'instabilité de l'identité, le jeu entre l'être et le paraître et le conflit entre la vie et la forme. Inscrit au parti fasciste en 1924 et directeur de sa propre troupe, il meurt à Rome en décembre 1936, après avoir exigé des obsèques sans cérémonie.",
+      "wikipedia": "Luigi_Pirandello",
+      "portrait": {
+        "fichier": "Luigi Pirandello 1932.jpg",
+        "legende": "Luigi Pirandello, photographie de l'agence Meurisse (1932)",
+        "auteur": "Agence de presse Meurisse",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "montessori",
+      "nom": "Maria Montessori",
+      "titre": "Naissance de Maria Montessori",
+      "axe": "Littérature et pensée",
+      "naissance": 1870,
+      "description": "Maria Montessori (1870-1952) est une médecin et pédagogue italienne, née à Chiaravalle, dans les Marches, l'une des premières femmes médecins d'Italie, diplômée de l'université de Rome en 1896. Chargée d'enfants déficients, puis ouvrant en 1907 à Rome la première « Maison des enfants » pour les petits des quartiers pauvres, elle met au point une pédagogie fondée sur la liberté de l'enfant, un matériel sensoriel adapté et l'autonomie, exposée dans L'Enfant et dans L'Esprit absorbant. Quittant l'Italie fasciste, elle vit en Espagne, aux Pays-Bas et en Inde, meurt à Noordwijk, aux Pays-Bas, en mai 1952, et ses écoles sont aujourd'hui présentes dans le monde entier.",
+      "wikipedia": "Maria_Montessori",
+      "portrait": {
+        "fichier": "Maria Montessori (portrait).jpg",
+        "legende": "Maria Montessori, photographie (date inconnue)",
+        "auteur": "Auteur inconnu",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "gramsci",
+      "nom": "Antonio Gramsci",
+      "titre": "Naissance d'Antonio Gramsci",
+      "axe": "Littérature et pensée",
+      "naissance": 1891,
+      "description": "Antonio Gramsci (1891-1937) est un philosophe, journaliste et homme politique communiste italien, né à Ales, en Sardaigne, l'un des fondateurs du Parti communiste d'Italie en 1921. Député en 1924, il est arrêté par le régime fasciste en novembre 1926 malgré son immunité, et le procureur demande d'« empêcher ce cerveau de fonctionner pendant vingt ans ». Condamné à plus de vingt ans de prison, il rédige dans sa cellule les Cahiers de prison, où il élabore le concept d'hégémonie culturelle, et meurt à Rome en avril 1937, quelques jours après sa libération, d'une hémorragie cérébrale.",
+      "wikipedia": "Antonio_Gramsci",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Gramsci.png",
+        "legende": "Antonio Gramsci, photographie prise vers l'âge de 30 ans, au début des années 1920",
+        "auteur": "Auteur inconnu",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "montale",
+      "nom": "Eugenio Montale",
+      "titre": "Naissance d'Eugenio Montale",
+      "axe": "Littérature et pensée",
+      "naissance": 1896,
+      "description": "Eugenio Montale (1896-1981) est un poète italien, né à Gênes, prix Nobel de littérature en 1975. Son premier recueil, Os de seiche (1925), exprime le « mal de vivre » dans une langue dépouillée, que prolongent Les Occasions (1939) et La Bufera (1956), tandis qu'il dirige le cabinet Vieusseux à Florence, écrit dans le Corriere della Sera et est nommé sénateur à vie en 1967. Hostile au fascisme, qui le fait renvoyer de la direction du cabinet en 1938, il meurt à Milan en septembre 1981, et sa poésie est l'une des plus importantes de l'Italie du XXe siècle.",
+      "wikipedia": "Eugenio_Montale",
+      "portrait": {
+        "fichier": "Eugenio Montale.jpg",
+        "legende": "Eugenio Montale, photographie de Kaj Hagman (1965)",
+        "auteur": "Kaj Hagman",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "levi",
+      "nom": "Primo Levi",
+      "titre": "Naissance de Primo Levi",
+      "axe": "Littérature et pensée",
+      "naissance": 1919,
+      "description": "Primo Levi (1919-1987) est un écrivain et chimiste italien, né à Turin, dans une famille juive. Résistant arrêté en 1943, déporté en 1944 à Auschwitz-Monowitz, où il survit grâce à sa qualification de chimiste, il raconte son expérience dans Si c'est un homme, publié en 1947 et devenu un classique, puis dans La Trêve et Les Naufragés et les Rescapés. Chimiste dans l'industrie jusqu'en 1977 et auteur de récits comme Le Système périodique, il meurt en avril 1987 à Turin, tombé de la cage d'escalier de son immeuble, une mort généralement considérée comme un suicide.",
+      "wikipedia": "Primo_Levi",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Primo Levi.jpg",
+        "legende": "Primo Levi, photographie des éditions Mondadori (années 1950)",
+        "auteur": "Mondadori",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "pasolini",
+      "nom": "Pier Paolo Pasolini",
+      "titre": "Naissance de Pier Paolo Pasolini",
+      "axe": "Littérature et pensée",
+      "naissance": 1922,
+      "description": "Pier Paolo Pasolini (1922-1975) est un écrivain, poète et cinéaste italien, né à Bologne, intellectuel provocateur et marxiste hétérodoxe. Auteur des romans Les Ragazzi et Une vie violente et du recueil Les Cendres de Gramsci, il devient réalisateur avec Accattone en 1961, puis tourne L'Évangile selon saint Matthieu en 1964, Théorème, Médée et Salò ou les 120 journées de Sodome en 1975, et publie des articles polémiques contre la société de consommation. Il est assassiné dans la nuit du 1er au 2 novembre 1975 sur la plage d'Ostie, un crime dont les circonstances restent discutées.",
+      "wikipedia": "Pier_Paolo_Pasolini",
+      "portrait": {
+        "fichier": "PierPaoloPasolini.jpg",
+        "legende": "Pier Paolo Pasolini pendant le tournage de L'Évangile selon saint Matthieu (1964)",
+        "auteur": "Auteur inconnu",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "calvino",
+      "nom": "Italo Calvino",
+      "titre": "Naissance d'Italo Calvino",
+      "axe": "Littérature et pensée",
+      "naissance": 1923,
+      "description": "Italo Calvino (1923-1985) est un écrivain italien, né à Santiago de las Vegas, à Cuba, de parents agronomes italiens, et élevé à Sanremo, en Ligurie. Ancien partisan, il publie Le Sentier des nids d'araignées en 1947, la trilogie des Nos ancêtres, les Cosmicomics, Les Villes invisibles en 1972 et Si par une nuit d'hiver un voyageur en 1979, mêlant fable, science et jeu avec la structure du récit, et rejoint l'Oulipo à Paris. Il meurt à Sienne en septembre 1985 d'une hémorragie cérébrale, laissant inachevées ses Leçons américaines.",
+      "wikipedia": "Italo_Calvino",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Italo-Calvino-i-Oslo 07-04-1961 Fotograf-Johan-Brun.jpg",
+        "legende": "Italo Calvino à Oslo, photographie de Johan Brun (7 avril 1961)",
+        "auteur": "Johan Brun",
+        "licence": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "slug": "eco",
+      "nom": "Umberto Eco",
+      "titre": "Naissance d'Umberto Eco",
+      "axe": "Littérature et pensée",
+      "naissance": 1932,
+      "description": "Umberto Eco (1932-2016) est un écrivain, sémiologue et philosophe italien, né à Alexandrie, dans le Piémont, professeur à l'université de Bologne. Auteur de travaux de sémiotique comme L'Œuvre ouverte et Lector in fabula, il connaît un succès mondial avec son premier roman, Le Nom de la rose, polar médiéval publié en 1980 et adapté au cinéma en 1986, puis avec Le Pendule de Foucault et Baudolino. Il meurt à Milan en février 2016, laissant une bibliothèque d'environ cinquante mille volumes.",
+      "wikipedia": "Umberto_Eco",
+      "portrait": {
+        "fichier": "Italiaanse schrijver Umberto Eco , kop, Bestanddeelnr 932-9758.jpg",
+        "legende": "Umberto Eco, photographie de Rob Bogaerts pour l'agence néerlandaise Anefo (22 mai 1984)",
+        "auteur": "Rob Bogaerts",
+        "licence": "CC0 (domaine public)"
+      }
+    },
+    {
+      "slug": "giotto",
+      "nom": "Giotto",
+      "titre": "Naissance de Giotto",
+      "axe": "Beaux-arts",
+      "naissance": 1267,
+      "description": "Giotto (vers 1267-1337) est un peintre, sculpteur et architecte florentin, né Giotto di Bondone à Colle di Vespignano, dans le Mugello, souvent considéré comme le fondateur de la peinture occidentale moderne. Il sort la peinture de la manière byzantine par des figures massives, un espace crédible et des émotions visibles, dans les fresques de la chapelle des Scrovegni à Padoue, peintes vers 1303-1305, et de la basilique d'Assise qui lui sont attribuées, ainsi que dans la chapelle Bardi à Santa Croce. Nommé en 1334 maître d'œuvre de la cathédrale de Florence, dont il dessine le campanile, il meurt à Florence en janvier 1337, et Dante comme Boccace célèbrent sa gloire.",
+      "wikipedia": "Giotto_di_Bondone",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "F0371 Louvre 5 maitres INV267 Giotto rwk.jpg",
+        "legende": "Giotto, détail du panneau des Cinq maîtres de la Renaissance florentine, peint au XVIe siècle par un maître florentin inconnu (musée du Louvre) : aucun portrait de son vivant n'existe",
+        "auteur": "Maître florentin inconnu",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "brunelleschi",
+      "nom": "Filippo Brunelleschi",
+      "titre": "Naissance de Filippo Brunelleschi",
+      "axe": "Beaux-arts",
+      "naissance": 1377,
+      "description": "Filippo Brunelleschi (1377-1446) est un architecte, sculpteur et ingénieur florentin, né à Florence, l'un des fondateurs de l'architecture de la Renaissance. Battu en 1401 par Ghiberti au concours des portes du baptistère, il se consacre à l'architecture, construit à partir de 1420 la coupole de Santa Maria del Fiore, sans cintre, et met au point la perspective linéaire, tout en élevant l'hôpital des Innocents, San Lorenzo et la chapelle des Pazzi. Il meurt à Florence en 1446 et est enterré dans la cathédrale, dont la coupole domine toujours la ville.",
+      "wikipedia": "Filippo_Brunelleschi",
+      "essentiel": true,
+      "biographie": "bio_brunelleschi",
+      "portrait": {
+        "fichier": "Masaccio, cappella brancacci, san pietro in cattedra. ritratto di filippo brunelleschi.jpg",
+        "legende": "Filippo Brunelleschi, visage identifié par la tradition dans la fresque de Masaccio Saint Pierre en chaire (chapelle Brancacci, vers 1423-1428)",
+        "auteur": "Masaccio",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "donatello",
+      "nom": "Donatello",
+      "titre": "Naissance de Donatello",
+      "axe": "Beaux-arts",
+      "naissance": 1386,
+      "description": "Donatello (vers 1386-1466) est un sculpteur florentin, né Donato di Niccolò di Betto Bardi à Florence, qui renouvelle la sculpture en retrouvant l'Antiquité. Son David de bronze, vers 1440, premier nu en ronde-bosse depuis l'Antiquité, le monument équestre du condottiere Gattamelata à Padoue, achevé en 1453, et ses reliefs à très faible saillie révolutionnent l'art de la Renaissance. Protégé de Cosme de Médicis, il meurt à Florence en décembre 1466 et est enterré dans la basilique San Lorenzo, près de son protecteur.",
+      "wikipedia": "Donatello",
+      "portrait": {
+        "fichier": "CF6262 Louvre 5 maitres de la Renaissance Donatello v2 rwk.jpg",
+        "legende": "Donatello, détail du panneau des Cinq maîtres de la Renaissance florentine, peint au XVIe siècle par un maître florentin inconnu (musée du Louvre)",
+        "auteur": "Mbzt",
+        "licence": "CC BY 4.0"
+      }
+    },
+    {
+      "slug": "fraangelico",
+      "nom": "Fra Angelico",
+      "titre": "Naissance de Fra Angelico",
+      "axe": "Beaux-arts",
+      "naissance": 1395,
+      "description": "Fra Angelico (vers 1395-1455) est un frère dominicain et peintre italien, né Guido di Pietro à Vicchio, dans le Mugello, que la tradition appelle l'« Angélique » pour la douceur de son art. Il décore de fresques le couvent San Marco de Florence, dont la célèbre Annonciation, entre 1438 et 1445, puis, appelé à Rome, la chapelle Niccoline du Vatican, avec des scènes de la vie de saint Étienne et de saint Laurent. Il meurt à Rome en 1455, est béatifié en 1982 par Jean-Paul II et proclamé en 1984 patron des artistes.",
+      "wikipedia": "Fra_Angelico",
+      "portrait": {
+        "fichier": "Fra Angelico portrait.jpg",
+        "legende": "Fra Angelico, portrait posthume de Luca Signorelli, détail des fresques de la cathédrale d'Orvieto (vers 1501)",
+        "auteur": "Luca Signorelli",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "piero",
+      "nom": "Piero della Francesca",
+      "titre": "Naissance de Piero della Francesca",
+      "axe": "Beaux-arts",
+      "naissance": 1415,
+      "description": "Piero della Francesca (vers 1415-1492) est un peintre et mathématicien italien, né à Borgo San Sepolcro, aujourd'hui Sansepolcro, en Toscane, l'un des maîtres de la Renaissance. Peintre de la lumière, de la géométrie et de la perspective, il laisse le cycle de fresques de la Légende de la Vraie Croix à Arezzo, vers 1452-1466, la Résurrection de Sansepolcro et le diptyque du duc d'Urbino, et rédige des traités sur la perspective et les solides réguliers. Presque aveugle à la fin de sa vie, il meurt à Sansepolcro en octobre 1492, et son art, longtemps oublié, n'est redécouvert qu'au XIXe puis au XXe siècle.",
+      "wikipedia": "Piero_della_Francesca",
+      "portrait": {
+        "fichier": "Delle vite de' più eccellenti pittori, scultori, et architetti (1648) (14799608033).jpg",
+        "legende": "Piero della Francesca, portrait gravé sur bois dans une édition des Vies de Vasari (1648) : aucun portrait authentique n'est connu",
+        "auteur": "Giorgio Vasari (bois gravé des Vies)",
+        "recadrage": [
+          0.29,
+          0.29,
+          0.71,
+          0.74
+        ],
+        "largeur": 960,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "mantegna",
+      "nom": "Andrea Mantegna",
+      "titre": "Naissance d'Andrea Mantegna",
+      "axe": "Beaux-arts",
+      "naissance": 1431,
+      "description": "Andrea Mantegna (vers 1431-1506) est un peintre et graveur italien, né à Isola di Carturo, près de Padoue, élève de Francesco Squarcione. Maître de la perspective et de la représentation de l'Antiquité, il peint à Padoue les fresques de la chapelle Ovetari puis, au service des Gonzague à Mantoue dès 1460, la Chambre des époux au palais ducal, et le Christ mort, vers 1480. Beau-frère de Giovanni Bellini, il meurt à Mantoue en 1506 après avoir peint pour Isabelle d'Este, et son art marque Dürer et la peinture de la Renaissance dans le nord de l'Italie.",
+      "wikipedia": "Andrea_Mantegna",
+      "portrait": {
+        "fichier": "Andrea Mantegna 049 detail possible self-portrait.jpg",
+        "legende": "Andrea Mantegna, détail de la Chambre des époux au palais ducal de Mantoue (1465-1466), probable autoportrait",
+        "auteur": "Andrea Mantegna",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "botticelli",
+      "nom": "Sandro Botticelli",
+      "titre": "Naissance de Sandro Botticelli",
+      "axe": "Beaux-arts",
+      "naissance": 1445,
+      "description": "Sandro Botticelli (1445-1510) est un peintre florentin, né Alessandro Filipepi à Florence, formé chez Filippo Lippi. Protégé des Médicis, il peint pour eux Le Printemps, vers 1480, et La Naissance de Vénus, vers 1485, deux œuvres mythologiques d'une grâce linéaire sans équivalent, puis participe en 1481-1482 à la décoration de la chapelle Sixtine. Marqué par les prédications de Savonarole, il se tourne vers une peinture religieuse plus austère et meurt à Florence en 1510, presque oublié, avant d'être redécouvert au XIXe siècle par les préraphaélites.",
+      "wikipedia": "Sandro_Botticelli",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Sandro Botticelli Self-portrait ca 1475.jpg",
+        "legende": "Sandro Botticelli, autoportrait dans L'Adoration des mages (vers 1475, galerie des Offices)",
+        "auteur": "Sandro Botticelli",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "leonard",
+      "nom": "Léonard de Vinci",
+      "titre": "Naissance de Léonard de Vinci",
+      "axe": "Beaux-arts",
+      "naissance": 1452,
+      "description": "Léonard de Vinci (1452-1519) est un peintre, ingénieur et savant florentin, né à Vinci, près de Florence, fils naturel d'un notaire. Formé chez Verrocchio, il travaille à Milan pour Ludovic Sforza, où il peint La Cène vers 1495-1498, puis à Florence, où il commence La Joconde vers 1503, tout en consignant dans des milliers de pages de carnets ses études d'anatomie, d'hydraulique, de botanique et de machines volantes. Invité en 1516 par François Ier, il s'installe au manoir du Clos Lucé, près d'Amboise, et y meurt en mai 1519, avec La Joconde, qui reste en France.",
+      "wikipedia": "Léonard_de_Vinci",
+      "essentiel": true,
+      "biographie": "bio_leonard",
+      "portrait": {
+        "fichier": "Francesco Melzi - Portrait of Leonardo.png",
+        "legende": "Léonard de Vinci, dessin à la sanguine attribué à son élève Francesco Melzi (vers 1515-1517)",
+        "auteur": "Francesco Melzi",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "giorgione",
+      "nom": "Giorgione",
+      "titre": "Naissance de Giorgione",
+      "axe": "Beaux-arts",
+      "naissance": 1477,
+      "description": "Giorgione (vers 1477-1510) est un peintre vénitien, né Giorgio da Castelfranco à Castelfranco Veneto ou à Vedelago, proche de Giovanni Bellini. Il invente une peinture poétique, faite de lumière, de paysages et d'un charme énigmatique, dans La Tempête, vers 1508, et dans La Vénus endormie, que Titien achèvera, et plusieurs attributions à son pinceau sont encore débattues. Il meurt à Venise en 1510 de la peste, à environ 33 ans, et son influence sur Titien et sur la peinture vénitienne est immense.",
+      "wikipedia": "Giorgione",
+      "portrait": {
+        "fichier": "Giorgione 059.jpg",
+        "legende": "Giorgione, présumé autoportrait en David (vers 1508, musée Herzog Anton Ulrich, Brunswick)",
+        "auteur": "Giorgione",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "michelange",
+      "nom": "Michel-Ange",
+      "titre": "Naissance de Michel-Ange",
+      "axe": "Beaux-arts",
+      "naissance": 1475,
+      "description": "Michel-Ange (1475-1564) est un sculpteur, peintre, architecte et poète florentin, né à Caprese, en Toscane, dont l'œuvre domine la Renaissance italienne. Il sculpte la Pietà de Saint-Pierre vers 1499 et le David en 1501-1504, peint de 1508 à 1512 le plafond de la chapelle Sixtine, puis de 1536 à 1541 le Jugement dernier, et dirige à partir de 1546 la construction de la basilique Saint-Pierre, dont il dessine la coupole. Mort à Rome en février 1564, à presque 89 ans, il est enterré à Florence, à Santa Croce, et ses sonnets, ses lettres et sa Vie, écrite par Vasari et par Condivi, ont fixé sa légende.",
+      "wikipedia": "Michel-Ange",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Michelangelo Daniele da Volterra (dettaglio).jpg",
+        "legende": "Michel-Ange, portrait attribué à Daniele da Volterra (vers 1545)",
+        "auteur": "Daniele da Volterra",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "raphael",
+      "nom": "Raphaël",
+      "titre": "Naissance de Raphaël",
+      "axe": "Beaux-arts",
+      "naissance": 1483,
+      "description": "Raphaël (1483-1520) est un peintre et architecte italien, né Raffaello Sanzio à Urbino, fils du peintre Giovanni Santi. Formé chez le Pérugin, il travaille à Florence puis à Rome, où il peint à partir de 1509 les fresques des chambres du Vatican, dont L'École d'Athènes, et de nombreuses Madones, et succède en 1514 à Bramante comme architecte de Saint-Pierre. Il meurt à Rome le 6 avril 1520, le jour de ses 37 ans selon Vasari, et est enterré au Panthéon, tandis que son art de la grâce et de l'harmonie reste le modèle du classicisme.",
+      "wikipedia": "Raphaël_(peintre)",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Raffaello Sanzio.jpg",
+        "legende": "Raphaël, autoportrait à 23 ans environ (vers 1506, galerie des Offices)",
+        "auteur": "Raphaël",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "titien",
+      "nom": "Titien",
+      "titre": "Naissance de Titien",
+      "axe": "Beaux-arts",
+      "naissance": 1488,
+      "description": "Titien (vers 1488-1576) est un peintre vénitien, né Tiziano Vecellio à Pieve di Cadore, dans les Dolomites, élève de Giovanni Bellini puis de Giorgione. Peintre officiel de la République de Venise, puis portraitiste de Charles Quint, de son fils Philippe II et de papes, il fait de la couleur et de la touche l'âme de sa peinture, de L'Assomption des Frari à La Vénus d'Urbin, et sa manière tardive, aux contours fondus, annonce la peinture moderne. Il meurt à Venise en août 1576 de la peste, presque nonagénaire, après avoir peint jusqu'à la fin, et sa Pietà reste inachevée.",
+      "wikipedia": "Titien",
+      "portrait": {
+        "fichier": "Vecellio di Gregorio Tiziano - autoritratto.jpg",
+        "legende": "Titien, autoportrait peint vers 1562 (musée du Prado, Madrid)",
+        "auteur": "Titien",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "cellini",
+      "nom": "Benvenuto Cellini",
+      "titre": "Naissance de Benvenuto Cellini",
+      "axe": "Beaux-arts",
+      "naissance": 1500,
+      "description": "Benvenuto Cellini (1500-1571) est un orfèvre, sculpteur et écrivain florentin, né à Florence, fils d'un musicien et facteur d'instruments. Au service des papes Clément VII et Paul III, puis de François Ier à Fontainebleau, il réalise la célèbre Salière de François Ier, vers 1543, et le Persée en bronze de la loggia dei Lanzi, achevé en 1554 pour Cosme Ier de Médicis, et rédige un traité d'orfèvrerie et de sculpture. Sa Vie, autobiographie aventureuse écrite à partir de 1558, où il raconte ses duels et ses emprisonnements, est un classique de la littérature italienne, et il meurt à Florence en février 1571.",
+      "wikipedia": "Benvenuto_Cellini",
+      "portrait": {
+        "fichier": "Cellini, Benvenuto ÖNB.jpg",
+        "legende": "Benvenuto Cellini, gravure du XVIIIe siècle d'après un portrait ancien, parue dans une série de portraits d'hommes illustres toscans (1766-1773)",
+        "auteur": "Giovanni Carlone",
+        "recadrage": [
+          0.19,
+          0.01,
+          0.79,
+          0.55
+        ],
+        "largeur": 960,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "palladio",
+      "nom": "Andrea Palladio",
+      "titre": "Naissance d'Andrea Palladio",
+      "axe": "Beaux-arts",
+      "naissance": 1508,
+      "description": "Andrea Palladio (1508-1580) est un architecte italien, né Andrea di Pietro della Gondola à Padoue, qui fait de Vicence et de la Vénétie un musée d'architecture. Formé comme tailleur de pierre, il adopte le nom de Palladio, que lui donne son protecteur Gian Giorgio Trissino, étudie les ruines romaines et construit la basilique de Vicence, la Villa Rotonda, vers 1567, et les églises de San Giorgio Maggiore et du Rédempteur à Venise, et ses Quatre Livres de l'architecture, publiés en 1570, diffusent son style. Mort en août 1580, il inspire jusqu'au XIXe siècle le palladianisme, de Londres à Saint-Pétersbourg et à la Virginie de Jefferson.",
+      "wikipedia": "Andrea_Palladio",
+      "biographie": "bio_palladio",
+      "portrait": {
+        "fichier": "Andrea Palladio2.jpeg",
+        "legende": "Andrea Palladio, portrait peint par Alessandro Maganza",
+        "auteur": "Alessandro Maganza",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "tintoret",
+      "nom": "Le Tintoret",
+      "titre": "Naissance du Tintoret",
+      "axe": "Beaux-arts",
+      "naissance": 1518,
+      "description": "Le Tintoret (1518-1594) est un peintre vénitien, né Jacopo Robusti à Venise, fils d'un teinturier, d'où son surnom. Rival de Titien, il peint avec une énergie dramatique, des diagonales fortes et des éclairages contrastés, de grandes toiles comme Le Miracle de l'esclave, en 1548, les cycles de la Scuola Grande di San Rocco, qu'il orne de 1564 à 1587, et Le Paradis du palais des Doges, l'une des plus vastes toiles du monde. Il meurt à Venise en mai 1594, et son atelier est repris par son fils Domenico.",
+      "wikipedia": "Le_Tintoret",
+      "portrait": {
+        "fichier": "Tintoretto - Self-Portrait as a Young Man, ca. 1548, CAI.103 (cropped).jpg",
+        "legende": "Le Tintoret, autoportrait en jeune homme (vers 1548)",
+        "auteur": "Le Tintoret",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "veronese",
+      "nom": "Paul Véronèse",
+      "titre": "Naissance de Paul Véronèse",
+      "axe": "Beaux-arts",
+      "naissance": 1528,
+      "description": "Paul Véronèse (1528-1588) est un peintre italien, né Paolo Caliari à Vérone, qui s'installe à Venise vers 1553 et devient, avec Titien et le Tintoret, l'un des trois grands maîtres de l'école vénitienne. Coloriste lumineux, il peint de somptueuses scènes de banquets et des plafonds au palais des Doges, à Saint-Sébastien et à la bibliothèque Marciana, et ses Noces de Cana, aujourd'hui au Louvre, mesurent près de dix mètres de large. Convoqué en 1573 devant l'Inquisition pour une Cène où figuraient des bouffons et des soldats allemands, il plaide la liberté des peintres et rebaptise la toile Le Repas chez Lévi, puis meurt à Venise en avril 1588.",
+      "wikipedia": "Paul_Véronèse",
+      "portrait": {
+        "fichier": "Paolo Veronese, 1528-1588 - Nationalmuseum - 39582.tif",
+        "legende": "Paul Véronèse, portrait d'après un original ancien, atelier de Georg Engelhard Schröder (Nationalmuseum, Stockholm)",
+        "auteur": "Atelier de Georg Engelhard Schröder",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "caravage",
+      "nom": "Le Caravage",
+      "titre": "Naissance du Caravage",
+      "axe": "Beaux-arts",
+      "naissance": 1571,
+      "description": "Le Caravage (1571-1610) est un peintre italien, né Michelangelo Merisi à Milan, qui doit son surnom au village lombard de Caravaggio, d'où venait sa famille. Rompant avec l'idéalisation de la Renaissance, il peint des scènes sacrées avec des modèles du peuple et un clair-obscur violent, de La Vocation de saint Matthieu, en 1599-1600, à La Mort de la Vierge, et influence toute la peinture baroque. Condamné à mort en 1606 pour avoir tué un homme à Rome, il fuit à Naples, à Malte et en Sicile, et meurt en juillet 1610 à Porto Ercole, en Toscane, à 38 ans.",
+      "wikipedia": "Le_Caravage",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Bild-Ottavio Leoni, Caravaggio.jpg",
+        "legende": "Le Caravage, dessin d'Ottavio Leoni (vers 1621)",
+        "auteur": "Ottavio Leoni",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "artemisia",
+      "nom": "Artemisia Gentileschi",
+      "titre": "Naissance d'Artemisia Gentileschi",
+      "axe": "Beaux-arts",
+      "naissance": 1593,
+      "description": "Artemisia Gentileschi (1593-vers 1656) est une peintre italienne, née à Rome, fille du peintre Orazio Gentileschi, et l'une des premières femmes admises à l'Académie du dessin de Florence, en 1616. Victime d'un viol commis en 1611 par le peintre Agostino Tassi, elle témoigne à son procès en 1612, et son art, de Judith décapitant Holopherne à Suzanne et les vieillards, donne à ses héroïnes bibliques la violence et la dignité d'un caravagisme au féminin. Active à Florence, à Rome, à Naples et brièvement à Londres, elle meurt à Naples vers 1656, et la critique féministe a rendu à son œuvre toute sa place.",
+      "wikipedia": "Artemisia_Gentileschi",
+      "portrait": {
+        "fichier": "Artemisia Gentileschi Selfportrait Martyr.jpg",
+        "legende": "Artemisia Gentileschi, autoportrait en martyre (1615)",
+        "auteur": "Artemisia Gentileschi",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "bernin",
+      "nom": "Le Bernin",
+      "titre": "Naissance du Bernin",
+      "axe": "Beaux-arts",
+      "naissance": 1598,
+      "description": "Le Bernin (1598-1680) est un sculpteur, architecte et peintre, né Gian Lorenzo Bernini à Naples d'un père sculpteur toscan, et le grand maître du baroque romain. Protégé de la famille Barberini et du pape Urbain VIII, il sculpte Apollon et Daphné et L'Extase de sainte Thérèse, couvre le maître-autel de Saint-Pierre de son baldaquin de bronze et dessine la colonnade de la place Saint-Pierre, ainsi que la fontaine des Quatre-Fleuves de la place Navone. Invité à Paris en 1665 par Louis XIV, il y voit refuser son projet pour le Louvre, puis meurt à Rome en 1680, ayant façonné le visage de la ville.",
+      "wikipedia": "Le_Bernin",
+      "portrait": {
+        "fichier": "Gian Lorenzo Bernini, self-portrait, c1623.jpg",
+        "legende": "Le Bernin, autoportrait de jeunesse (1623)",
+        "auteur": "Le Bernin",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "borromini",
+      "nom": "Francesco Borromini",
+      "titre": "Naissance de Francesco Borromini",
+      "axe": "Beaux-arts",
+      "naissance": 1599,
+      "description": "Francesco Borromini (1599-1667) est un architecte italien, né Francesco Castelli à Bissone, au bord du lac de Lugano, aujourd'hui en Suisse, et le rival du Bernin. Tailleur de pierre venu à Rome, il invente un baroque de courbes, de plans ondulés et de lumière avec San Carlino aux Quatre-Fontaines, vers 1638-1641, Sant'Ivo alla Sapienza, à la coupole en spirale, et le palais Spada, aux perspectives truquées. Instable et dépressif, il se suicide à Rome en août 1667 en se jetant sur son épée, mais ses recherches inspirent l'architecture du XVIIIe siècle, de Guarini à l'Europe centrale.",
+      "wikipedia": "Francesco_Borromini",
+      "portrait": {
+        "fichier": "Borromini.jpg",
+        "legende": "Francesco Borromini, portrait anonyme (vers 1630)",
+        "auteur": "Auteur inconnu",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "canaletto",
+      "nom": "Canaletto",
+      "titre": "Naissance de Canaletto",
+      "axe": "Beaux-arts",
+      "naissance": 1697,
+      "description": "Canaletto (1697-1768) est un peintre vénitien, né Giovanni Antonio Canal à Venise, fils d'un peintre de décors de théâtre, qui fait de la vue de ville un genre à part entière. Ses vedute, d'une lumière précise et d'une grande exactitude, montrent le Grand Canal, la place Saint-Marc et les fêtes de la lagune, et séduisent de riches voyageurs anglais, ce qui le conduit à Londres entre 1746 et 1755. Il meurt à Venise en avril 1768, et ses vues sont devenues l'image la plus connue de la Venise du XVIIIe siècle.",
+      "wikipedia": "Canaletto",
+      "portrait": {
+        "fichier": "Giovanni Antonio Canal.jpg",
+        "legende": "Canaletto, portrait gravé par Antonio Visentini (1754)",
+        "auteur": "Antonio Visentini",
+        "recadrage": [
+          0.23,
+          0.13,
+          0.78,
+          0.66
+        ],
+        "largeur": 960,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "canova",
+      "nom": "Antonio Canova",
+      "titre": "Naissance d'Antonio Canova",
+      "axe": "Beaux-arts",
+      "naissance": 1757,
+      "description": "Antonio Canova (1757-1822) est un sculpteur italien, né à Possagno, en Vénétie, le grand maître du néoclassicisme. Formé à Venise puis à Rome, il sculpte Psyché ranimée par le baiser de l'Amour, Les Trois Grâces et le tombeau de Clément XIV, et Napoléon le charge de statues, dont Pauline Borghèse en Vénus victorieuse. Il obtient en 1815 la restitution à l'Italie des œuvres prises par la France, devient marquis d'Ischia et meurt à Venise en octobre 1822.",
+      "wikipedia": "Antonio_Canova",
+      "portrait": {
+        "fichier": "Antonio Canova Selfportrait 1792.jpg",
+        "legende": "Antonio Canova, autoportrait (1790)",
+        "auteur": "Antonio Canova",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "modigliani",
+      "nom": "Amedeo Modigliani",
+      "titre": "Naissance d'Amedeo Modigliani",
+      "axe": "Beaux-arts",
+      "naissance": 1884,
+      "description": "Amedeo Modigliani (1884-1920) est un peintre et sculpteur italien, né à Livourne, d'une famille juive, qui s'installe à Paris en 1906 et fréquente Montparnasse. Il peint des portraits et des nus aux visages allongés, aux yeux en amande et au cou étiré, dans une manière inspirée par Brancusi et par l'art africain, et n'expose seul qu'une fois, en 1917, dans une galerie qui est fermée par la police pour indécence. Miné par la tuberculose, l'alcool et la misère, il meurt à Paris en janvier 1920, à 35 ans, et sa compagne Jeanne Hébuterne, enceinte, se donne la mort deux jours plus tard.",
+      "wikipedia": "Amedeo_Modigliani",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Amedeo Modigliani 1918 restored.jpg",
+        "legende": "Amedeo Modigliani à Nice, photographie (1918)",
+        "auteur": "Auteur inconnu",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "dechirico",
+      "nom": "Giorgio de Chirico",
+      "titre": "Naissance de Giorgio de Chirico",
+      "axe": "Beaux-arts",
+      "naissance": 1888,
+      "description": "Giorgio de Chirico (1888-1978) est un peintre italien, né à Volos, en Grèce, de parents italiens, fondateur de la peinture métaphysique. Installé à Paris en 1911, il peint des places désertes aux ombres longues, des arcades, des mannequins et des horloges, comme Mélancolie et mystère d'une rue, et inspire les surréalistes, avant de se détourner du modernisme pour revenir à une manière classique que les surréalistes lui reprochent. Il meurt à Rome en novembre 1978, après avoir fait de l'énigme et du silence les marques de son art.",
+      "wikipedia": "Giorgio_de_Chirico",
+      "portrait": {
+        "fichier": "Giorgio de Chirico (portrait).jpg",
+        "legende": "Giorgio de Chirico, photographie de Carl Van Vechten (5 décembre 1936)",
+        "auteur": "Carl Van Vechten",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "guido",
+      "nom": "Guido d'Arezzo",
+      "titre": "Naissance de Guido d'Arezzo",
+      "axe": "Musique et spectacle",
+      "naissance": 992,
+      "description": "Guido d'Arezzo (vers 992-vers 1050) est un moine bénédictin et théoricien de la musique italien, né en Italie du Nord, à Pomposa ou à Arezzo, selon les sources. Il invente la portée à lignes, qui permet de noter la hauteur exacte des sons, et la solmisation, qui nomme les notes de l'hexacorde par les syllabes ut, ré, mi, fa, sol, la, tirées d'un hymne à saint Jean, et son Micrologus, vers 1026, expose sa méthode. Appelé à Rome par le pape Jean XIX, il se retire ensuite à Arezzo, et la date de sa mort, après 1033, est incertaine, la tradition la plaçant vers 1050.",
+      "wikipedia": "Guido_d'Arezzo",
+      "portrait": {
+        "fichier": "Guido van Arezzo.jpg",
+        "legende": "Guido d'Arezzo, miniature médiévale (auteur inconnu)",
+        "auteur": "Auteur inconnu",
+        "recadrage": [
+          0.12,
+          0.08,
+          0.82,
+          0.67
+        ],
+        "largeur": 960,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "palestrina",
+      "nom": "Giovanni Pierluigi da Palestrina",
+      "titre": "Naissance de Palestrina",
+      "axe": "Musique et spectacle",
+      "naissance": 1525,
+      "description": "Giovanni Pierluigi da Palestrina (vers 1525-1594) est un compositeur italien de la Renaissance, né à Palestrina, près de Rome, dont il prend le nom. Maître de chapelle de Saint-Pierre et de Saint-Jean-de-Latran, il compose plus d'une centaine de messes, des motets et des madrigaux, dont la Messe du pape Marcel, que la légende dit avoir sauvé la polyphonie lors du concile de Trente, dans une écriture claire et mesurée qui devient le modèle de la musique sacrée catholique. Mort à Rome en février 1594, il reste le « prince de la musique », et son style, dit palestrinien, est encore enseigné aux compositeurs.",
+      "wikipedia": "Giovanni_Pierluigi_da_Palestrina",
+      "portrait": {
+        "fichier": "Giovanni Pierluigi da Palestrina.jpg",
+        "legende": "Palestrina, portrait peint (auteur inconnu)",
+        "auteur": "Auteur inconnu",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "monteverdi",
+      "nom": "Claudio Monteverdi",
+      "titre": "Naissance de Claudio Monteverdi",
+      "axe": "Musique et spectacle",
+      "naissance": 1567,
+      "description": "Claudio Monteverdi (1567-1643) est un compositeur italien, né à Crémone, qui fait la transition entre la Renaissance et le baroque. Au service des Gonzague à Mantoue, il y crée L'Orfeo en 1607, l'un des premiers grands opéras, et publie les Vêpres de la Vierge en 1610 ; devenu en 1613 maître de chapelle de la basilique Saint-Marc de Venise, il compose des madrigaux, des messes et ses derniers opéras, dont Le Couronnement de Poppée. Ordonné prêtre en 1632, il meurt à Venise en novembre 1643, et sa « seconde pratique », qui subordonne la musique au texte, a ouvert la voie de l'opéra.",
+      "wikipedia": "Claudio_Monteverdi",
+      "portrait": {
+        "fichier": "Bernardo Strozzi - Claudio Monteverdi (c.1630).jpg",
+        "legende": "Claudio Monteverdi, portrait peint par Bernardo Strozzi (vers 1630)",
+        "auteur": "Bernardo Strozzi",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "stradivari",
+      "nom": "Antonio Stradivari",
+      "titre": "Naissance d'Antonio Stradivari",
+      "axe": "Musique et spectacle",
+      "naissance": 1644,
+      "description": "Antonio Stradivari (vers 1644-1737) est un luthier italien, né à Crémone, élève présumé de Nicolò Amati, et le plus célèbre facteur de violons de l'histoire. Il signe du nom latin Stradivarius environ onze cents instruments, violons, altos, violoncelles et guitares, dont plus de six cents subsistent, à la sonorité recherchée par les plus grands solistes. Actif jusqu'à plus de 90 ans, il meurt à Crémone en décembre 1737, et ses violons, comme le « Messie », vendus à des prix records, restent une référence inégalée des luthiers.",
+      "wikipedia": "Antonio_Stradivari",
+      "portrait": {
+        "fichier": "Antonio stradivari.jpg",
+        "legende": "Antonio Stradivari examinant un instrument, estampe romantique du XIXe siècle (1860-1870)",
+        "auteur": "Viktor Bobrov",
+        "recadrage": [
+          0.46,
+          0.1,
+          0.91,
+          0.95
+        ],
+        "largeur": 960,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "vivaldi",
+      "nom": "Antonio Vivaldi",
+      "titre": "Naissance d'Antonio Vivaldi",
+      "axe": "Musique et spectacle",
+      "naissance": 1678,
+      "description": "Antonio Vivaldi (1678-1741) est un compositeur et violoniste italien, né à Venise, prêtre surnommé le « Prêtre roux » à cause de ses cheveux. Maître de violon puis de concert à l'Ospedale della Pietà, orphelinat pour jeunes filles, il écrit plus de cinq cents concertos et une cinquantaine d'opéras, dont Les Quatre Saisons, publiées en 1725, devenues l'une des œuvres les plus jouées du répertoire. Ruiné et oublié à la fin de sa vie, il meurt à Vienne en juillet 1741, et sa musique n'est redécouverte qu'au XXe siècle.",
+      "wikipedia": "Antonio_Vivaldi",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Onbekend - Antonio Vivaldi - Bologna Museo Internationale e biblioteca della musica di bologna 28-04-2012 9-21-050.jpg",
+        "legende": "Antonio Vivaldi, portrait anonyme (Musée international et bibliothèque de la musique, Bologne)",
+        "auteur": "Auteur inconnu",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "paganini",
+      "nom": "Niccolò Paganini",
+      "titre": "Naissance de Niccolò Paganini",
+      "axe": "Musique et spectacle",
+      "naissance": 1782,
+      "description": "Niccolò Paganini (1782-1840) est un violoniste et compositeur italien, né à Gênes, considéré comme le plus grand virtuose de son temps. Avec ses 24 Caprices, ses concertos et des techniques inouïes, doubles cordes, harmoniques, pizzicati de la main gauche, il fait sensation dans toute l'Europe, de Vienne à Paris et à Londres, et sa légende diabolique, nourrie par sa maigreur et son visage, ajoute à sa gloire et inspire Liszt et Schumann. Malade du larynx et des poumons, il meurt à Nice en mai 1840, l'Église refuse d'abord de l'inhumer, et son corps ne repose à Parme qu'en 1876.",
+      "wikipedia": "Niccolò_Paganini",
+      "portrait": {
+        "fichier": "NiccoloPaganini.jpeg",
+        "legende": "Niccolò Paganini, dessin de Jean-Auguste-Dominique Ingres (1819)",
+        "auteur": "Jean-Auguste-Dominique Ingres",
+        "recadrage": [
+          0.17,
+          0.02,
+          0.77,
+          0.6
+        ],
+        "largeur": 960,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "rossini",
+      "nom": "Gioachino Rossini",
+      "titre": "Naissance de Gioachino Rossini",
+      "axe": "Musique et spectacle",
+      "naissance": 1792,
+      "description": "Gioachino Rossini (1792-1868) est un compositeur italien, né à Pesaro, le maître de l'opéra italien du début du XIXe siècle. Auteur du Barbier de Séville en 1816, de La Cenerentola en 1817 et de Guillaume Tell en 1829, il domine la scène lyrique européenne, puis, à 37 ans, arrête l'opéra et ne compose plus que des œuvres sacrées et des pièces de salon, dont le Stabat Mater et la Petite Messe solennelle. Gourmet célèbre, qui laisse son nom à des plats comme le tournedos Rossini, il meurt à Passy en novembre 1868, après avoir fini sa vie à Paris.",
+      "wikipedia": "Gioachino_Rossini",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Composer Rossini G 1865 by Carjat.jpg",
+        "legende": "Gioachino Rossini, photographie d'Étienne Carjat (1865)",
+        "auteur": "Étienne Carjat",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "donizetti",
+      "nom": "Gaetano Donizetti",
+      "titre": "Naissance de Gaetano Donizetti",
+      "axe": "Musique et spectacle",
+      "naissance": 1797,
+      "description": "Gaetano Donizetti (1797-1848) est un compositeur italien, né à Bergame, l'un des maîtres du bel canto avec Rossini et Bellini. Auteur de plus de soixante-dix opéras, dont L'Élixir d'amour en 1832, Lucia di Lammermoor en 1835, La Fille du régiment en 1840 et Don Pasquale en 1843, il travaille à Naples, à Paris et à Vienne, où il est nommé maître de chapelle de la cour en 1842. Atteint d'une grave maladie nerveuse, interné en 1846 à Ivry, près de Paris, puis ramené à Bergame, il y meurt en avril 1848.",
+      "wikipedia": "Gaetano_Donizetti",
+      "portrait": {
+        "fichier": "Fotoreproductie van Gaetano Donizetti.png",
+        "legende": "Gaetano Donizetti, reproduction photographique d'un portrait d'Eugen Felix (vers 1868)",
+        "auteur": "Eugen Felix",
+        "licence": "CC0 (domaine public)"
+      }
+    },
+    {
+      "slug": "bellini",
+      "nom": "Vincenzo Bellini",
+      "titre": "Naissance de Vincenzo Bellini",
+      "axe": "Musique et spectacle",
+      "naissance": 1801,
+      "description": "Vincenzo Bellini (1801-1835) est un compositeur italien, né à Catane, en Sicile, maître du bel canto romantique malgré une carrière de dix ans. Formé à Naples, il connaît ses premiers triomphes à Milan avec Le Pirate en 1827, puis écrit La Somnambule et Norma, en 1831, dont l'air « Casta diva » est resté célèbre, et Les Puritains, créés à Paris en 1835. Il meurt à Puteaux, près de Paris, en septembre 1835, à 33 ans, et ses mélodies longues et pures ont marqué Chopin et Wagner.",
+      "wikipedia": "Vincenzo_Bellini",
+      "portrait": {
+        "fichier": "Lucchini-Bellini.jpg",
+        "legende": "Vincenzo Bellini, portrait peint par Pietro Luchini (avant 1835)",
+        "auteur": "Pietro Luchini",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "verdi",
+      "nom": "Giuseppe Verdi",
+      "titre": "Naissance de Giuseppe Verdi",
+      "axe": "Musique et spectacle",
+      "naissance": 1813,
+      "description": "Giuseppe Verdi (1813-1901) est un compositeur italien, né à Roncole, près de Busseto, dans le duché de Parme, fils d'un aubergiste, et le plus grand nom de l'opéra italien. Ses œuvres, de Nabucco en 1842, dont le chœur des esclaves devient un chant du Risorgimento, à Rigoletto, La Traviata, Le Trouvère et Aïda, puis Otello et Falstaff, mêlent l'intensité dramatique et des mélodies populaires, et son nom, devenu le sigle « Vittorio Emanuele Re d'Italia », sert de cri patriotique. Élu député en 1861 à la demande de Cavour, puis sénateur, il meurt à Milan en janvier 1901, et des centaines de milliers de personnes assistent à ses obsèques.",
+      "wikipedia": "Giuseppe_Verdi",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Giuseppe Verdi xilografia.jpg",
+        "legende": "Giuseppe Verdi, xylographie d'A. Cairoli et Ernesto Mancastroppa (1887)",
+        "auteur": "A. Cairoli et Ernesto Mancastroppa",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "duse",
+      "nom": "Eleonora Duse",
+      "titre": "Naissance d'Eleonora Duse",
+      "axe": "Musique et spectacle",
+      "naissance": 1858,
+      "description": "Eleonora Duse (1858-1924) est une actrice italienne, née à Vigevano, en Lombardie, dans une famille de comédiens ambulants, montée sur scène dès l'enfance. Admirée dans le monde entier, dans La Dame aux camélias, Les Revenants et Hedda Gabler, elle impose un jeu sobre et intérieur, à l'opposé de l'emphase de Sarah Bernhardt, et est l'interprète et la compagne de Gabriele D'Annunzio, dont elle joue La Ville morte. Retirée en 1909, revenue sur scène en 1921, elle meurt de pneumonie à Pittsburgh en avril 1924, en tournée aux États-Unis.",
+      "wikipedia": "Eleonora_Duse",
+      "portrait": {
+        "fichier": "Eleonora Duse (dall’ultima sua fotografia).jpg",
+        "legende": "Eleonora Duse, d'après sa dernière photographie (1897)",
+        "auteur": "Auteur inconnu",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "puccini",
+      "nom": "Giacomo Puccini",
+      "titre": "Naissance de Giacomo Puccini",
+      "axe": "Musique et spectacle",
+      "naissance": 1858,
+      "description": "Giacomo Puccini (1858-1924) est un compositeur italien, né à Lucques, en Toscane, issu d'une longue lignée de musiciens, et le dernier grand maître de l'opéra italien. Auteur de Manon Lescaut en 1893, de La Bohème en 1896, de Tosca en 1900, de Madame Butterfly en 1904 et de La Fanciulla del West en 1910, il renouvelle le drame lyrique par des mélodies intenses et une orchestration raffinée. Atteint d'un cancer de la gorge, il meurt à Bruxelles en novembre 1924, laissant Turandot inachevé, et Toscanini dirige la création de l'opéra en 1926 en s'arrêtant à l'endroit où le compositeur avait cessé d'écrire.",
+      "wikipedia": "Giacomo_Puccini",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "GiacomoPuccini.jpg",
+        "legende": "Giacomo Puccini, photographie de studio (date inconnue)",
+        "auteur": "Auteur inconnu",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "toscanini",
+      "nom": "Arturo Toscanini",
+      "titre": "Naissance d'Arturo Toscanini",
+      "axe": "Musique et spectacle",
+      "naissance": 1867,
+      "description": "Arturo Toscanini (1867-1957) est un chef d'orchestre italien, né à Parme, d'abord violoncelliste, qui devient le plus célèbre de son temps. Directeur de la Scala de Milan, du Metropolitan Opera de New York puis de l'orchestre philharmonique de New York, il dirige sans partition des créations comme Paillasse, La Bohème et Turandot, et exige une rigueur absolue. Antifasciste qui refuse de jouer l'hymne fasciste et quitte l'Italie, il fait à partir de 1937 de l'Orchestre symphonique de la NBC une institution de la radio américaine, et meurt à New York en janvier 1957.",
+      "wikipedia": "Arturo_Toscanini",
+      "portrait": {
+        "fichier": "Arturo Toscanini c1930.jpg",
+        "legende": "Arturo Toscanini, photographie des éditions Mondadori (1938)",
+        "auteur": "Mondadori",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "caruso",
+      "nom": "Enrico Caruso",
+      "titre": "Naissance d'Enrico Caruso",
+      "axe": "Musique et spectacle",
+      "naissance": 1873,
+      "description": "Enrico Caruso (1873-1921) est un ténor italien, né à Naples, dans une famille ouvrière nombreuse, qui devient la première grande vedette de l'enregistrement. Sa voix puissante, chaude et d'une grande ampleur, entendue à la Scala puis au Metropolitan Opera de New York de 1903 à 1920, lui vaut le surnom de « roi des ténors », et ses disques, à partir de 1902, comptent parmi les premiers de l'histoire à se vendre à plus d'un million d'exemplaires, avec Vesti la giubba. Atteint d'une pleurésie purulente, il meurt à Naples en août 1921, à 48 ans, et la ville lui rend de grandes funérailles.",
+      "wikipedia": "Enrico_Caruso",
+      "portrait": {
+        "fichier": "Enrico Caruso tenor.jpg",
+        "legende": "Enrico Caruso, photographie du studio Laveccha de Chicago (7 novembre 1910)",
+        "auteur": "Laveccha Studio",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "toto",
+      "nom": "Totò",
+      "titre": "Naissance de Totò",
+      "axe": "Musique et spectacle",
+      "naissance": 1898,
+      "description": "Totò (1898-1967) est un acteur et comique italien, né Antonio de Curtis à Naples, dans le quartier populaire de la Sanità, fils illégitime d'un marquis. Révélé par le théâtre de variétés, il tourne près de cent films, dont Gendarmes et voleurs, Miseria e nobiltà et Des oiseaux, petits et gros de Pasolini en 1966, et fait de ses grimaces, de sa gestuelle de pantin et de ses jeux de mots une figure inoubliable de la comédie italienne. Presque aveugle à la fin de sa vie, il meurt à Rome en avril 1967, et ses obsèques réunissent à Naples une foule immense.",
+      "wikipedia": "Totò",
+      "portrait": {
+        "fichier": "AntonioDeCurtisFoto.png",
+        "legende": "Totò, photographie (avant 1967)",
+        "auteur": "Auteur inconnu",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "desica",
+      "nom": "Vittorio De Sica",
+      "titre": "Naissance de Vittorio De Sica",
+      "axe": "Musique et spectacle",
+      "naissance": 1901,
+      "description": "Vittorio De Sica (1901-1974) est un acteur et réalisateur italien, né à Sora, dans le Latium, d'abord vedette de comédies sentimentales avant de devenir l'un des maîtres du néoréalisme. Avec le scénariste Cesare Zavattini, il réalise Sciuscia en 1946, Le Voleur de bicyclette en 1948 et Umberto D. en 1952, qui montrent la vie des humbles d'après-guerre, et reçoit quatre Oscars du film étranger, pour Sciuscia, Le Voleur de bicyclette, Hier, aujourd'hui, demain et Le Jardin des Finzi-Contini. Joueur passionné qui se ruine souvent, il meurt à Neuilly-sur-Seine en novembre 1974, après une opération.",
+      "wikipedia": "Vittorio_De_Sica",
+      "portrait": {
+        "fichier": "Vittorio De Sica - portrait.jpg",
+        "legende": "Vittorio De Sica à l'aéroport de Schiphol, photographie de Harry Pot pour l'agence néerlandaise Anefo (22 mars 1962)",
+        "auteur": "Harry Pot",
+        "licence": "CC0 (domaine public)"
+      }
+    },
+    {
+      "slug": "rossellini",
+      "nom": "Roberto Rossellini",
+      "titre": "Naissance de Roberto Rossellini",
+      "axe": "Musique et spectacle",
+      "naissance": 1906,
+      "description": "Roberto Rossellini (1906-1977) est un réalisateur italien, né à Rome, père du néoréalisme. Avec Rome, ville ouverte en 1945, Paisà en 1946 et Allemagne année zéro en 1948, il filme sur les lieux mêmes la libération, la guerre et la misère, avec des acteurs non professionnels, et impose son sens de la rue et de l'histoire. Marié à Ingrid Bergman, avec laquelle il tourne Stromboli, puis auteur de films historiques pour la télévision, comme La Prise de pouvoir par Louis XIV en 1966, il influence la Nouvelle Vague et meurt à Rome en juin 1977.",
+      "wikipedia": "Roberto_Rossellini",
+      "portrait": {
+        "fichier": "Roberto Rossellini.jpg",
+        "legende": "Roberto Rossellini, photographie de presse prise à Rome (1951)",
+        "auteur": "Auteur inconnu",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "visconti",
+      "nom": "Luchino Visconti",
+      "titre": "Naissance de Luchino Visconti",
+      "axe": "Musique et spectacle",
+      "naissance": 1906,
+      "description": "Luchino Visconti (1906-1976) est un réalisateur de cinéma, de théâtre et d'opéra italien, né à Milan, dans une famille de la haute aristocratie lombarde. Passé du néoréalisme, avec La terre tremble en 1948, à des fresques historiques comme Le Guépard en 1963, Palme d'or à Cannes, Les Damnés en 1969 et Mort à Venise en 1971, il met en scène la décadence des aristocraties avec un grand sens du décor. Ancien assistant de Jean Renoir, proche des communistes dans sa jeunesse, il meurt à Rome en mars 1976, après avoir tourné L'Innocent.",
+      "wikipedia": "Luchino_Visconti",
+      "portrait": {
+        "fichier": "Luchino Visconti 1972b.jpg",
+        "legende": "Luchino Visconti, photographie de Marisa Rastellini pour Mondadori (1972)",
+        "auteur": "Marisa Rastellini",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "magnani",
+      "nom": "Anna Magnani",
+      "titre": "Naissance d'Anna Magnani",
+      "axe": "Musique et spectacle",
+      "naissance": 1908,
+      "description": "Anna Magnani (1908-1973) est une actrice italienne, née à Rome, élevée par sa grand-mère dans un quartier populaire. Révélée par le théâtre de variétés puis par Rome, ville ouverte en 1945, où elle court derrière le camion en criant, scène devenue emblématique, elle incarne avec un tempérament entier des femmes du peuple, dans Mamma Roma et surtout dans La Rose tatouée, qui lui vaut l'Oscar de la meilleure actrice en 1956, le premier remporté par une Italienne. Surnommée la « Louve », elle meurt à Rome en septembre 1973 d'un cancer du pancréas, et ses obsèques rassemblent une foule immense.",
+      "wikipedia": "Anna_Magnani",
+      "portrait": {
+        "fichier": "Anna Magnani - portrait.tif",
+        "legende": "Anna Magnani dans son appartement du palais Altieri à Rome, photographie de Hans Krebs (1961)",
+        "auteur": "Hans Krebs",
+        "licence": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "slug": "fellini",
+      "nom": "Federico Fellini",
+      "titre": "Naissance de Federico Fellini",
+      "axe": "Musique et spectacle",
+      "naissance": 1920,
+      "description": "Federico Fellini (1920-1993) est un réalisateur italien, né à Rimini, sur la côte adriatique, dont le nom est devenu synonyme de monde onirique et baroque. Scénariste de Rossellini, il réalise La Strada en 1954, La Dolce Vita en 1960, Palme d'or à Cannes, Huit et demi en 1963 et Amarcord en 1973, mêlant souvenirs d'enfance, cirque, rêve et satire de la société, avec la musique de Nino Rota. Quatre fois oscarisé pour le meilleur film étranger et honoré d'un Oscar d'honneur en 1993, il meurt à Rome en octobre 1993, deux mois après un accident vasculaire cérébral.",
+      "wikipedia": "Federico_Fellini",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Federico Fellini NYWTS 2.jpg",
+        "legende": "Federico Fellini, photographie de Walter Albertin pour le New York World-Telegram (1965)",
+        "auteur": "Walter Albertin",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "mastroianni",
+      "nom": "Marcello Mastroianni",
+      "titre": "Naissance de Marcello Mastroianni",
+      "axe": "Musique et spectacle",
+      "naissance": 1924,
+      "description": "Marcello Mastroianni (1924-1996) est un acteur italien, né à Fontana Liri, dans le Latium, et l'un des visages du cinéma européen. Révélé par La Dolce Vita de Fellini en 1960, il incarne, dans Huit et demi, Divorce à l'italienne, Une journée particulière avec Sophia Loren et Les Yeux noirs, des hommes séduisants et doutants, et reçoit deux fois le prix d'interprétation masculine à Cannes, en 1970 et en 1987. Après une longue carrière en France aussi, où il vit avec Catherine Deneuve, il meurt à Paris en décembre 1996, et la fontaine de Trevi s'éteint en hommage à Rome.",
+      "wikipedia": "Marcello_Mastroianni",
+      "portrait": {
+        "fichier": "Marcello Mastroianni 02.jpg",
+        "legende": "Marcello Mastroianni à la Mostra de Venise, photographie de Gorup de Besanez (septembre 1990)",
+        "auteur": "Gorup de Besanez",
+        "licence": "CC BY-SA 3.0"
+      }
+    },
+    {
+      "slug": "morricone",
+      "nom": "Ennio Morricone",
+      "titre": "Naissance d'Ennio Morricone",
+      "axe": "Musique et spectacle",
+      "naissance": 1928,
+      "description": "Ennio Morricone (1928-2020) est un compositeur et chef d'orchestre italien, né à Rome, auteur de plus de cinq cents musiques de films et de séries. Il révèle son style avec Sergio Leone, dans Pour une poignée de dollars en 1964 et Il était une fois dans l'Ouest en 1968, puis compose pour Pasolini, Bertolucci, Malick ou Tarantino, avec Mission, Les Incorruptibles ou Cinema Paradiso, et reçoit un Oscar d'honneur en 2007 puis l'Oscar de la meilleure musique pour Les Huit Salopards en 2016. Il meurt à Rome en juillet 2020, des suites d'une chute qui lui avait fracturé le fémur.",
+      "wikipedia": "Ennio_Morricone",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Ennio Morricone Cannes 2007.jpg",
+        "legende": "Ennio Morricone au festival de Cannes, photographie d'Olivier Strecker (2007)",
+        "auteur": "Olivier Strecker",
+        "licence": "CC BY-SA 3.0"
+      }
+    },
+    {
+      "slug": "leone",
+      "nom": "Sergio Leone",
+      "titre": "Naissance de Sergio Leone",
+      "axe": "Musique et spectacle",
+      "naissance": 1929,
+      "description": "Sergio Leone (1929-1989) est un réalisateur italien, né à Rome, fils du cinéaste Vincenzo Leone, qui renouvelle le western avec le « western spaghetti ». Après Pour une poignée de dollars en 1964, Le Bon, la Brute et le Truand en 1966 et Il était une fois dans l'Ouest en 1968, il impose un style fait de gros plans, d'espaces immenses et de silences, porté par la musique d'Ennio Morricone. Il tourne en 1984 Il était une fois en Amérique, son dernier film, et meurt à Rome en avril 1989, alors qu'il préparait un film sur le siège de Leningrad.",
+      "wikipedia": "Sergio_Leone",
+      "portrait": {
+        "fichier": "Sergio Leone.jpg",
+        "legende": "Sergio Leone, photographie de Obbino (avant 1989)",
+        "auteur": "Obbino",
+        "licence": "CC BY 2.0"
+      }
+    },
+    {
+      "slug": "pavarotti",
+      "nom": "Luciano Pavarotti",
+      "titre": "Naissance de Luciano Pavarotti",
+      "axe": "Musique et spectacle",
+      "naissance": 1935,
+      "description": "Luciano Pavarotti (1935-2007) est un ténor italien, né à Modène, fils d'un boulanger, l'un des chanteurs d'opéra les plus célèbres du monde. Connu pour ses neuf contre-ut de La Fille du régiment à Covent Garden en 1966, il chante Verdi, Puccini et Donizetti et fait entrer l'opéra dans la culture populaire avec les concerts des Trois Ténors, aux côtés de Plácido Domingo et de José Carreras, à partir de 1990, et avec ses concerts Pavarotti and Friends. Atteint d'un cancer du pancréas, il meurt à Modène en septembre 2007, et des dizaines de milliers de personnes assistent à ses obsèques.",
+      "wikipedia": "Luciano_Pavarotti",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Luciano Pavarotti 2004.jpg",
+        "legende": "Luciano Pavarotti, photographie prise aux Kennedy Center Honors (2001)",
+        "auteur": "Kingkongphoto et www.celebrity-photos.com",
+        "licence": "CC BY-SA 2.0"
+      }
+    },
+    {
+      "slug": "archimede",
+      "nom": "Archimède",
+      "titre": "Naissance d'Archimède",
+      "axe": "Sciences et découvertes",
+      "naissance": -287,
+      "description": "Archimède (vers 287-212 av. J.-C.) est un savant grec de Sicile, né à Syracuse, mathématicien, physicien et ingénieur, l'un des plus grands de l'Antiquité. Il calcule le volume de la sphère, approche le nombre π, énonce la loi de la poussée qui porte son nom et celle du levier, et invente des machines de guerre, dont, selon la tradition, des miroirs ardents, qui retardent le siège de sa ville par les Romains. Syracuse tombe en 212 et il est tué par un soldat romain, malgré l'ordre du consul Marcellus de l'épargner, alors qu'il traçait des figures dans le sable.",
+      "wikipedia": "Archimède",
+      "essentiel": true,
+      "biographie": "bio_archimede",
+      "portrait": {
+        "fichier": "Retrato de un erudito (¿Arquímedes?), por Domenico Fetti.jpg",
+        "legende": "Portrait d'un érudit, peut-être Archimède, peint par Domenico Fetti vers 1620 : aucun portrait authentique n'existe",
+        "auteur": "Domenico Fetti",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "pline",
+      "nom": "Pline l'Ancien",
+      "titre": "Naissance de Pline l'Ancien",
+      "axe": "Sciences et découvertes",
+      "naissance": 23,
+      "description": "Pline l'Ancien (23-79) est un écrivain, naturaliste et officier romain, né à Côme, en Italie du Nord, ami de l'empereur Vespasien. Après une carrière militaire en Germanie et dans l'administration, il rassemble dans l'Histoire naturelle, en trente-sept livres, tout le savoir de son temps sur le monde, des animaux et des plantes aux minéraux, à la médecine et à l'art, tiré, dit-il, de deux mille volumes. Commandant de la flotte de Misène, il meurt en 79, selon la tradition asphyxié par les gaz de l'éruption du Vésuve en voulant secourir des habitants et observer le phénomène de près, comme le raconte son neveu Pline le Jeune.",
+      "wikipedia": "Pline_l'Ancien",
+      "portrait": {
+        "fichier": "Grande Illustrazione del Lombardo Veneto Vol 3 Plinio Secondo 300dpi.jpg",
+        "legende": "Pline l'Ancien, gravure imaginaire parue dans la Grande Illustrazione del Lombardo-Veneto (1859) : aucun portrait authentique n'existe",
+        "auteur": "Auteur inconnu",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "fibonacci",
+      "nom": "Fibonacci",
+      "titre": "Naissance de Fibonacci",
+      "axe": "Sciences et découvertes",
+      "naissance": 1170,
+      "description": "Fibonacci (vers 1170-vers 1250) est un mathématicien italien, connu aussi sous le nom de Léonard de Pise, né à Pise, qui grandit à Bougie, en Algérie, où son père dirige un comptoir commercial pisan. Dans le Liber abaci, en 1202, il introduit en Europe chrétienne les chiffres arabes, le zéro et le calcul positionnel, avec des problèmes de commerce, de change et de partage, dont celui des lapins, d'où naît la suite de Fibonacci, où chaque nombre est la somme des deux précédents. Protégé par Frédéric II, qui le reçoit à Pise, il meurt vers 1250, et la suite qui porte son nom, qu'il n'a pas étudiée pour elle-même, apparaît dans la nature, l'art et l'informatique.",
+      "wikipedia": "Leonardo_Fibonacci",
+      "portrait": {
+        "fichier": "Fibonacci5.jpg",
+        "legende": "Fibonacci, portrait imaginaire gravé : aucun portrait authentique n'existe (avant 1905)",
+        "auteur": "Auteur inconnu",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "marcopolo",
+      "nom": "Marco Polo",
+      "titre": "Naissance de Marco Polo",
+      "axe": "Sciences et découvertes",
+      "naissance": 1254,
+      "description": "Marco Polo (1254-1324) est un marchand et explorateur vénitien, né à Venise, fils de marchands qui avaient déjà gagné la Chine. Parti en 1271 avec son père et son oncle, il traverse l'Asie centrale, passe de longues années au service du grand khan Kubilai à Khanbalik, l'actuelle Pékin, et revient par mer en 1295 par Sumatra, la Perse et Trébizonde. Emprisonné à Gênes après la bataille de Curzola, il dicte en 1298 à Rustichello da Pisa Le Devisement du monde, récit de ses voyages dont le succès fait rêver l'Europe, et il meurt à Venise en janvier 1324.",
+      "wikipedia": "Marco_Polo",
+      "essentiel": true,
+      "biographie": "bio_marcopolo",
+      "portrait": {
+        "fichier": "Marco Polo Mosaic from Palazzo Tursi.jpg",
+        "legende": "Marco Polo, mosaïque de Salviati (1867) au palais Doria-Tursi de Gênes : une image imaginée plus de cinq siècles après sa mort",
+        "auteur": "Salviati",
+        "recadrage": [
+          0.28,
+          0.1,
+          0.78,
+          0.6
+        ],
+        "largeur": 960,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "colomb",
+      "nom": "Christophe Colomb",
+      "titre": "Naissance de Christophe Colomb",
+      "axe": "Sciences et découvertes",
+      "naissance": 1451,
+      "description": "Christophe Colomb (1451-1506) est un navigateur et explorateur italien, né dans la république de Gênes, qui entre au service des Rois catholiques. Persuadé de pouvoir atteindre les Indes en naviguant vers l'ouest, il part en 1492 de Palos avec trois navires et aborde le 12 octobre aux Bahamas, puis explore Cuba et Hispaniola, et effectue trois autres voyages jusqu'en 1504 qui font connaître l'Amérique à l'Europe. Gouverneur contesté, destitué et ramené enchaîné en Espagne en 1500 pour sa brutalité envers les colons et les Taïnos, dont il avait fait des esclaves, il meurt à Valladolid en mai 1506, sa mémoire restant l'objet de vifs débats sur la conquête et la colonisation.",
+      "wikipedia": "Christophe_Colomb",
+      "essentiel": true,
+      "biographie": "bio_colomb",
+      "portrait": {
+        "fichier": "Ridolfo del Ghirlandaio - Ritratto di Cristoforo Colombo (1520).jpg",
+        "legende": "Christophe Colomb, portrait posthume peint par Ridolfo del Ghirlandaio vers 1520",
+        "auteur": "Ridolfo del Ghirlandaio",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "cabot",
+      "nom": "Jean Cabot",
+      "titre": "Naissance de Jean Cabot",
+      "axe": "Sciences et découvertes",
+      "naissance": 1450,
+      "description": "Jean Cabot (vers 1450-vers 1498) est un navigateur italien, connu en italien sous le nom de Giovanni Caboto, né à Gênes ou à Gaète, devenu citoyen de Venise et établi à Bristol, au service du roi d'Angleterre Henri VII. Parti en mai 1497 sur le Matthew, il atteint en juin la côte de Terre-Neuve ou du Labrador, dont il prend possession au nom du roi, ce qui fonde plus tard les prétentions anglaises sur l'Amérique du Nord. Reparti en 1498 avec cinq navires pour retrouver le Japon, il disparaît en mer, et son fils Sébastien prolonge ses explorations.",
+      "wikipedia": "Jean_Cabot",
+      "portrait": {
+        "fichier": "JohnCabotPainting.jpg",
+        "legende": "Jean Cabot, portrait posthume peint par Giustino Menescardi (1762)",
+        "auteur": "Giustino Menescardi",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "vespucci",
+      "nom": "Amerigo Vespucci",
+      "titre": "Naissance d'Amerigo Vespucci",
+      "axe": "Sciences et découvertes",
+      "naissance": 1454,
+      "description": "Amerigo Vespucci (1454-1512) est un navigateur et cosmographe italien, né à Florence, employé de la banque des Médicis avant de s'établir à Séville. Il participe à des expéditions vers le Nouveau Monde à partir de 1499, au service de l'Espagne puis du Portugal, et est l'un des premiers à soutenir que les terres atteintes par Colomb ne sont pas l'Asie mais un continent nouveau, un « Mundus Novus », qu'il décrit dans ses lettres. Pilote major de la Casa de Contratación à Séville à partir de 1508, il meurt dans cette ville en février 1512, et le cartographe Waldseemüller donne son prénom au continent, America, sur sa carte de 1507.",
+      "wikipedia": "Amerigo_Vespucci",
+      "essentiel": true,
+      "biographie": "bio_vespucci",
+      "portrait": {
+        "fichier": "Amerigo Vespucci.jpg",
+        "legende": "Amerigo Vespucci, gravure ancienne",
+        "auteur": "Auteur inconnu",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "ricci",
+      "nom": "Matteo Ricci",
+      "titre": "Naissance de Matteo Ricci",
+      "axe": "Sciences et découvertes",
+      "naissance": 1552,
+      "description": "Matteo Ricci (1552-1610) est un jésuite et savant italien, né à Macerata, dans les Marches, missionnaire en Chine. Arrivé à Macao en 1582, il apprend le chinois, s'habille en lettré, s'installe à Nankin puis à Pékin en 1601 et présente à la cour des cadrans, des horloges, la géométrie d'Euclide et une carte du monde, que les Chinois accueillent avec curiosité, tandis qu'il traduit les classiques confucéens. Mort à Pékin en mai 1610, il est enterré dans la capitale avec l'accord de l'empereur, et sa méthode d'adaptation à la culture chinoise inspire la mission jésuite pendant plus d'un siècle.",
+      "wikipedia": "Matteo_Ricci",
+      "portrait": {
+        "fichier": "利玛窦像，游文辉绘.jpg",
+        "legende": "Matteo Ricci, portrait peint en 1610 par le frère jésuite chinois Emmanuel Pereira (You Wenhui)",
+        "auteur": "Emmanuel Pereira (You Wenhui)",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "galilee",
+      "nom": "Galilée",
+      "titre": "Naissance de Galilée",
+      "axe": "Sciences et découvertes",
+      "naissance": 1564,
+      "description": "Galilée (1564-1642) est un savant italien, né à Pise, mathématicien, physicien et astronome, père de la science moderne. Il énonce la loi de la chute des corps, perfectionne la lunette astronomique, découvre en 1610 les satellites de Jupiter, les phases de Vénus et les montagnes de la Lune, et défend le système de Copernic dans le Dialogue sur les deux grands systèmes du monde, publié en 1632. Condamné par l'Inquisition en 1633 et contraint d'abjurer, il finit sa vie assigné à résidence à Arcetri, près de Florence, où il meurt en janvier 1642, et l'Église ne reconnaît officiellement son erreur qu'en 1992.",
+      "wikipedia": "Galilée_(savant)",
+      "essentiel": true,
+      "biographie": "bio_galilee",
+      "portrait": {
+        "fichier": "Galileo.arp.300pix.jpg",
+        "legende": "Galilée, portrait peint par Justus Sustermans vers 1640",
+        "auteur": "Justus Sustermans",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "torricelli",
+      "nom": "Evangelista Torricelli",
+      "titre": "Naissance d'Evangelista Torricelli",
+      "axe": "Sciences et découvertes",
+      "naissance": 1608,
+      "description": "Evangelista Torricelli (1608-1647) est un physicien et mathématicien italien, né à Faenza, disciple de Galilée. Il invente en 1643 le baromètre à mercure, en observant qu'une colonne de mercure retournée dans un tube s'arrête à 76 centimètres et laisse un espace vide, le « vide de Torricelli », et en conclut que l'air pèse, ce qui ouvre la voie aux expériences de Pascal. Successeur de Galilée comme mathématicien du grand-duc de Toscane, il meurt à Florence en octobre 1647, à 39 ans, et le torr, unité de pression, porte son nom.",
+      "wikipedia": "Evangelista_Torricelli",
+      "portrait": {
+        "fichier": "Evangelista Torricelli by Lorenzo Lippi (circa 1647, Galleria Silvano Lodi & Due).jpg",
+        "legende": "Evangelista Torricelli, portrait peint par Lorenzo Lippi vers 1647",
+        "auteur": "Lorenzo Lippi",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "agnesi",
+      "nom": "Maria Gaetana Agnesi",
+      "titre": "Naissance de Maria Gaetana Agnesi",
+      "axe": "Sciences et découvertes",
+      "naissance": 1718,
+      "description": "Maria Gaetana Agnesi (1718-1799) est une mathématicienne italienne, née à Milan, enfant prodige qui parlait plusieurs langues dès l'âge de neuf ans. Elle publie en 1748 les Institutions analytiques, premier manuel complet de calcul différentiel et intégral, traduit en français et en anglais, où figure la courbe appelée la « sorcière d'Agnesi », née d'une erreur de traduction. Nommée en 1750 à une chaire de l'université de Bologne par le pape Benoît XIV, titre qu'elle n'exerce pas, elle consacre ses dernières années aux pauvres et meurt à Milan en janvier 1799.",
+      "wikipedia": "Maria_Gaetana_Agnesi",
+      "portrait": {
+        "fichier": "Maria Gaetana Agnesi.jpg",
+        "legende": "Maria Gaetana Agnesi, portrait probablement du XVIIIe siècle",
+        "auteur": "Auteur inconnu",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "galvani",
+      "nom": "Luigi Galvani",
+      "titre": "Naissance de Luigi Galvani",
+      "axe": "Sciences et découvertes",
+      "naissance": 1737,
+      "description": "Luigi Galvani (1737-1798) est un médecin et physicien italien, né à Bologne, professeur d'anatomie à l'université de sa ville. Vers 1780, il observe que les muscles d'une grenouille disséquée se contractent au contact d'un scalpel pendant qu'une étincelle jaillit près d'elle, puis qu'ils se contractent aussi au contact de deux métaux différents, et il en conclut à l'existence d'une « électricité animale ». Son interprétation est contestée par Volta, pour qui l'électricité vient des métaux, ce qui conduit à l'invention de la pile, et Galvani meurt à Bologne en décembre 1798, privé de sa chaire pour avoir refusé de prêter serment à la République cisalpine.",
+      "wikipedia": "Luigi_Galvani",
+      "portrait": {
+        "fichier": "Luigi galvani.jpg",
+        "legende": "Luigi Galvani, gravure ancienne",
+        "auteur": "Auteur inconnu",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "volta",
+      "nom": "Alessandro Volta",
+      "titre": "Naissance d'Alessandro Volta",
+      "axe": "Sciences et découvertes",
+      "naissance": 1745,
+      "description": "Alessandro Volta (1745-1827) est un physicien italien, né à Côme, professeur à l'université de Pavie. Il découvre le méthane en 1776, invente l'électrophore, puis, en 1800, la pile électrique, empilement de disques de zinc et de cuivre séparés par du carton imbibé de saumure, première source de courant continu, qu'il présente dans une lettre à la Royal Society. Honoré par Napoléon, qui le fait comte et sénateur du royaume d'Italie, il se retire à Côme et meurt en mars 1827, et l'unité de tension électrique, le volt, porte son nom.",
+      "wikipedia": "Alessandro_Volta",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Volta A.jpg",
+        "legende": "Alessandro Volta, gravure de Giovita Garavaglia (avant 1834)",
+        "auteur": "Giovita Garavaglia",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "avogadro",
+      "nom": "Amedeo Avogadro",
+      "titre": "Naissance d'Amedeo Avogadro",
+      "axe": "Sciences et découvertes",
+      "naissance": 1776,
+      "description": "Amedeo Avogadro (1776-1856) est un physicien et chimiste italien, né à Turin, comte de Quaregna et de Cerreto, d'abord magistrat. En 1811, il formule l'hypothèse que des volumes égaux de gaz, dans les mêmes conditions de température et de pression, contiennent le même nombre de molécules, ce qui permet de distinguer atomes et molécules, mais ses idées restent ignorées pendant un demi-siècle, jusqu'au congrès de Karlsruhe en 1860, où Cannizzaro les fait triompher. Professeur de physique à l'université de Turin, il meurt dans cette ville en juillet 1856, et la constante qui donne le nombre d'entités dans une mole, environ 6 × 10²³, porte son nom.",
+      "wikipedia": "Amedeo_Avogadro",
+      "portrait": {
+        "fichier": "Amadeo Avogadro.png",
+        "legende": "Amedeo Avogadro, portrait gravé (avant 1856)",
+        "auteur": "Auteur inconnu",
+        "recadrage": [
+          0.23,
+          0.1,
+          0.77,
+          0.66
+        ],
+        "largeur": 960,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "meucci",
+      "nom": "Antonio Meucci",
+      "titre": "Naissance d'Antonio Meucci",
+      "axe": "Sciences et découvertes",
+      "naissance": 1808,
+      "description": "Antonio Meucci (1808-1889) est un inventeur italien, né à Florence, qui émigre à Cuba en 1835, puis à New York en 1850, où il s'installe à Staten Island. Dès les années 1850, il met au point un appareil transmettant la voix par fil, qu'il appelle « telettrofono », et dépose en 1871 une demande provisoire de brevet, mais, ruiné, il ne peut la renouveler, et Alexander Graham Bell obtient en 1876 le brevet du téléphone. Il meurt à Staten Island en octobre 1889, pauvre et malade, avant la fin de son procès contre Bell, et le Congrès américain a reconnu en 2002 ses mérites dans l'invention du téléphone, dont la paternité reste débattue.",
+      "wikipedia": "Antonio_Meucci",
+      "portrait": {
+        "fichier": "Antonio Meucci.jpg",
+        "legende": "Antonio Meucci, photographie (1878)",
+        "auteur": "Auteur inconnu",
+        "recadrage": [
+          0.22,
+          0.05,
+          0.72,
+          0.57
+        ],
+        "largeur": 960,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "marconi",
+      "nom": "Guglielmo Marconi",
+      "titre": "Naissance de Guglielmo Marconi",
+      "axe": "Sciences et découvertes",
+      "naissance": 1874,
+      "description": "Guglielmo Marconi (1874-1937) est un physicien et entrepreneur italien, né à Bologne, d'une mère irlandaise, pionnier de la radio. Fort des travaux de Hertz, il met au point vers 1895 un système de télégraphie sans fil, le perfectionne en Angleterre, relie en 1901 la Cornouailles et Terre-Neuve par un signal transatlantique en morse, et reçoit en 1909 le prix Nobel de physique avec Ferdinand Braun. Sénateur et marquis, il adhère au fascisme, préside l'Académie d'Italie et meurt à Rome en juillet 1937, et les stations de radio du monde entier observent deux minutes de silence.",
+      "wikipedia": "Guglielmo_Marconi",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Guglielmo Marconi.jpg",
+        "legende": "Guglielmo Marconi, photographie des frères Pach (1908)",
+        "auteur": "Pach Brothers",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "fermi",
+      "nom": "Enrico Fermi",
+      "titre": "Naissance d'Enrico Fermi",
+      "axe": "Sciences et découvertes",
+      "naissance": 1901,
+      "description": "Enrico Fermi (1901-1954) est un physicien italien, né à Rome, l'un des plus grands du XXe siècle, à la fois théoricien et expérimentateur. Professeur à Rome, où il fonde l'école des « garçons de la via Panisperna », il obtient en 1938 le prix Nobel de physique pour ses travaux sur la radioactivité induite par les neutrons, puis, après la cérémonie de Stockholm, quitte l'Italie, dont les lois raciales menacent sa femme Laura, qui est juive, et émigre aux États-Unis. Il dirige à Chicago la première pile atomique, Chicago Pile-1, qui diverge le 2 décembre 1942, participe au projet Manhattan et meurt à Chicago en novembre 1954, d'un cancer, à 53 ans.",
+      "wikipedia": "Enrico_Fermi",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Enrico Fermi 1943-49.jpg",
+        "legende": "Enrico Fermi, photographie du département américain de l'Énergie (entre 1943 et 1949)",
+        "auteur": "Département de l'Énergie des États-Unis",
+        "recadrage": [
+          0.25,
+          0.0,
+          0.8,
+          0.56
+        ],
+        "largeur": 960,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "levimontalcini",
+      "nom": "Rita Levi-Montalcini",
+      "titre": "Naissance de Rita Levi-Montalcini",
+      "axe": "Sciences et découvertes",
+      "naissance": 1909,
+      "description": "Rita Levi-Montalcini (1909-2012) est une neurobiologiste italienne, née à Turin dans une famille juive, qui étudie la médecine malgré l'opposition de son père. Exclue de l'université par les lois raciales de 1938, elle poursuit ses recherches clandestinement, émigre aux États-Unis en 1947 et, à Saint-Louis, découvre le facteur de croissance nerveuse, le NGF, pour lequel elle reçoit en 1986 le prix Nobel de physiologie ou médecine avec Stanley Cohen. Nommée sénatrice à vie en 2001, elle meurt à Rome en décembre 2012, à 103 ans, après avoir dirigé jusqu'à la fin une fondation pour l'éducation des jeunes Africaines.",
+      "wikipedia": "Rita_Levi-Montalcini",
+      "portrait": {
+        "fichier": "Rita Levi-Montalcini (1986).png",
+        "legende": "Rita Levi-Montalcini en visite à Lund, photographie de Kurt Hagblom (12 décembre 1986)",
+        "auteur": "Kurt Hagblom",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "ferrari",
+      "nom": "Enzo Ferrari",
+      "titre": "Naissance d'Enzo Ferrari",
+      "axe": "Sciences et découvertes",
+      "naissance": 1898,
+      "description": "Enzo Ferrari (1898-1988) est un pilote, constructeur automobile et chef d'écurie italien, né à Modène, fondateur de la marque Ferrari. Pilote chez Alfa Romeo dans les années 1920, il crée en 1929 la Scuderia Ferrari, qui prépare et fait courir des Alfa Romeo, puis fonde en 1947 à Maranello la firme dont la première voiture, la 125 S, est financée par la vente de voitures de route, et qui domine bientôt les courses d'endurance et la Formule 1. Surnommé « il Commendatore », il dirige jusqu'à sa mort, en août 1988, l'entreprise dont le cheval cabré, repris de l'emblème de l'aviateur Francesco Baracca, est devenu un symbole du prestige industriel italien.",
+      "wikipedia": "Enzo_Ferrari",
+      "portrait": {
+        "fichier": "Enzo Ferrari Monza 1967.jpg",
+        "legende": "Enzo Ferrari à Monza, photographie de Rainer W. Schlegelmilch (septembre 1967)",
+        "auteur": "Rainer W. Schlegelmilch",
+        "licence": "Domaine public"
+      }
+    }
+  ]
+}
