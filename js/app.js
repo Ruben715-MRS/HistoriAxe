@@ -1729,7 +1729,7 @@ function initCategories() {
                     <div class="category-card-veil"></div>
                     <div class="absolute bottom-0 left-0 p-md w-full" style="position: absolute; bottom: 0; left: 0; padding: 16px;">
                         <h4 class="font-headline-md text-on-primary" style="color: white; font-weight: 700; font-size: 20px; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">${cat.nom}</h4>
-                        <p class="font-label-sm text-primary-fixed-dim mt-xs" style="color: #b2c5ff; font-size: 12px; margin-top: 4px;">${cat.subcategories ? t('themes.subcategories_count', { count: cat.subcategories.length }) : (cat.isCustomCategory ? t('themes.your_themes') : t('themes.select_cta'))}</p>
+                        <p class="font-label-sm text-primary-fixed-dim mt-xs" style="color: #fff; font-size: 12px; margin-top: 4px; text-shadow: 0 1px 4px rgba(0,0,0,0.7);">${cat.subcategories ? t('themes.subcategories_count', { count: cat.subcategories.length }) : (cat.isCustomCategory ? t('themes.your_themes') : t('themes.select_cta'))}</p>
                     </div>
                 `;
         card.onclick = () => {
@@ -1877,7 +1877,7 @@ function initSubcategories() {
                     <div class="category-card-veil"></div>
                     <div class="absolute bottom-0 left-0 p-md w-full" style="position: absolute; bottom: 0; left: 0; padding: 16px;">
                         <h4 class="font-headline-md text-on-primary" style="color: white; font-weight: 700; font-size: 20px; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">${sub.nom}</h4>
-                        <p class="font-label-sm text-primary-fixed-dim mt-xs" style="color: #b2c5ff; font-size: 12px; margin-top: 4px;">${textThemes}</p>
+                        <p class="font-label-sm text-primary-fixed-dim mt-xs" style="color: #fff; font-size: 12px; margin-top: 4px; text-shadow: 0 1px 4px rgba(0,0,0,0.7);">${textThemes}</p>
                     </div>
                 `;
 

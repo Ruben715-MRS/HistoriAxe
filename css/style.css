@@ -890,6 +890,12 @@ body {
     width: 100%;
     max-width: 800px;
     margin-bottom: 30px;
+    /* Toutes les cases ont la hauteur de la plus haute : grille régulière. */
+    grid-auto-rows: 1fr;
+}
+
+.grid-modes .mode-card {
+    min-height: 170px;
 }
 
 .mode-card {
@@ -961,7 +967,7 @@ body {
     background: linear-gradient(135deg, #1B4F72, #148F77);
 }
 
-.mode-card.ordre-card {
+.mode-card.ordre-mode-card {
     background: linear-gradient(135deg, #4A235A, #7D3C98);
 }
 
@@ -6249,18 +6255,12 @@ textarea {
 }
 
 
-/* Voile des cartes de catégorie et de sous-catégorie, posé sur leur photo
-   (voir js/app.js : initCategories et initSubcategories). Il était uniforme, à
-   50 % de bleu marine : le sous-titre (« 12 Sous-catégories », en bleu pâle)
-   tombait à 2,4:1 sur certaines photos, pour 4,5:1 exigés. Un voile uniforme
-   n'y changerait rien à moins d'assombrir toute l'image — 70 % laissaient
-   encore plus de la moitié des pixels sous le seuil. Le texte est en bas de
-   la carte : le voile s'y épaissit (90 %) et s'allège en haut (40 %, soit
-   plus de photo qu'avant). Mesuré pixel par pixel : voir e2e/contrastes.spec.js. */
+/* Voile des cartes de catégorie : supprimé pour laisser voir les photos ; la
+   lisibilité du texte repose sur son ombre portée (voir js/app.js). */
 .category-card-veil {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(0, 26, 75, 0.9) 0%, rgba(0, 26, 75, 0.4) 100%);
+    background: none;
 }
 
 /* =========================================================================
