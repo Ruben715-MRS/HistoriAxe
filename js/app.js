@@ -1178,6 +1178,7 @@ function showScreen(screenId, direction) {
     if (screenId === 'screen-themes') initThemes();
     if (screenId === 'screen-axes') initAxes();
     if (screenId === 'screen-revision-hub') initRevisionHub();
+    if (screenId === 'screen-gallery') initGallery();
 
     // Onboarding guidé (voir js/onboarding.js) : chaque bulle ne s'affiche
     // qu'une fois, et jamais si le tutoriel a été terminé/passé.
@@ -1894,6 +1895,13 @@ function initSubcategories() {
         gridSection.appendChild(card);
     });
     applyStagger(gridSection);
+
+    // Galerie des portraits (voir js/gallery.js) : sous la grille, et non dans
+    // elle, parce qu'elle n'est ni une sous-catégorie ni un mode de jeu. Elle
+    // n'apparaît qu'au niveau qui porte les « Panthéons ».
+    const pantheon = typeof findPantheonNode === 'function' ? findPantheonNode(node) : null;
+    const launcher = pantheon ? buildGalleryLauncher(pantheon) : null;
+    if (launcher) container.appendChild(launcher);
 }
 
 
@@ -5457,10 +5465,13 @@ function portraitLicenseUrl(label) {
 // un thème de la catégorie Biographies, et jamais pendant une partie de frise
 // — il ferait quitter la partie d'un tap. Le test est celui de quitGame() :
 // hors Découverte, l'écran de jeu visible veut dire « partie en cours ».
-function renderModalBiographyButton(evt) {
+function renderModalBiographyButton(evt, fromGallery = false) {
     const row = document.getElementById('modal-bio-row');
     const btn = document.getElementById('modal-bio-btn');
     if (!row || !btn) return;
+    // Depuis la galerie, le bouton dit ce qu'il fait vraiment : il mène au
+    // jeu, à côté de celui du panthéon.
+    btn.textContent = t(fromGallery ? 'gallery.play_biography' : 'modal.biography_btn');
     const gameScreen = document.getElementById('screen-game');
     const gameRunning = !!gameScreen && !gameScreen.classList.contains('hidden') && currentMode !== 'discovery';
     const target = (evt.biographie && !gameRunning)
@@ -5503,7 +5514,11 @@ function openModal(evt, context = null) {
     document.getElementById('modal-desc').innerText = evt.description;
     document.getElementById('modal-wiki').href = evt.wikipedia;
     renderModalPortrait(evt);
-    renderModalBiographyButton(evt);
+    const fromGallery = !!(context && context.fromGallery);
+    renderModalBiographyButton(evt, fromGallery);
+    // La galerie réunit ses deux boutons sous un même filet (voir CSS
+    // .modal-content.from-gallery).
+    document.querySelector('#modal-details .modal-content').classList.toggle('from-gallery', fromGallery);
 
     const themeRow = document.getElementById('modal-theme-row');
     const redrawBtn = document.getElementById('modal-redraw-btn');

@@ -556,6 +556,25 @@ naissance, titré « Naissance de X ». Le titre dit ce que la date représente,
 ce qu'un simple « Victor Hugo — 1802 » ne ferait pas hors du thème (Défi du
 jour, Révision, Blitz).
 
+### Galerie des portraits
+
+Sous les tuiles « Biographies » et « Panthéons », un bouton doré pleine largeur,
+« Galerie des portraits », qui n'est ni une sous-catégorie ni un mode de jeu
+(`js/gallery.js`). Il déplie deux choix, « Ordre alphabétique » et « Ordre
+chronologique », qui ouvrent un trombinoscope de **toutes les figures des
+panthéons qui ont un portrait** (`screen-gallery`) : une carte par personne
+(portrait, nom, drapeau, année de naissance), rangées par initiale ou par siècle
+de naissance, et une bascule en tête d'écran pour changer d'ordre sans revenir
+en arrière.
+
+Rien n'y est figé : la galerie se lit dans `bdd` à l'affichage. Un panthéon
+ajouté y entre de lui-même, et un pack de langue sans « Panthéons » n'affiche
+pas le bouton. Le nom vient du titre (« Naissance de X » → « X » ; « Naissance du
+Caravage » → « le Caravage », rangé à C), le drapeau du champ `pays` ou, à défaut,
+du code du thème (`pan_fr`). Un visage ouvre la fiche de sa naissance (`openModal`),
+qui porte alors deux boutons : « Jouer sur sa biographie » quand le personnage en a
+une, et « Jouer sur « Grandes figures de… » » pour son panthéon.
+
 ### Pays et blocs : « un personnage ne figure que dans un seul thème »
 
 Un thème par pays marche tant que les pays ne partagent pas leurs figures.

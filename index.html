@@ -222,6 +222,24 @@
         <div class="list-categories" id="subcategories-container"></div>
     </div>
 
+    <!-- ÉCRAN 2ter : GALERIE DES PORTRAITS (Personnages illustres, voir js/gallery.js) :
+         tous les personnages des Panthéons qui ont un portrait, par ordre alphabétique
+         ou chronologique. Un visage ouvre la fiche de sa naissance. -->
+    <div id="screen-gallery" class="list-screen hidden">
+        <button class="back-btn" onclick="backFromGallery()" aria-label="Retour"
+            data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title gallery-header-title" data-i18n="gallery.title">Galerie des portraits</h2>
+        <p class="gallery-subtitle" id="gallery-subtitle"></p>
+        <div class="gallery-order-toggle" id="gallery-order-toggle" role="group" aria-label="Ordre d'affichage"
+            data-i18n-attr="aria-label:gallery.order_group">
+            <button type="button" class="gallery-order-toggle-btn" data-order="alpha" aria-pressed="true"
+                data-i18n="gallery.order_alpha_short">A → Z</button>
+            <button type="button" class="gallery-order-toggle-btn" data-order="chrono" aria-pressed="false"
+                data-i18n="gallery.order_chrono_short">Par date de naissance</button>
+        </div>
+        <div id="gallery-container" class="gallery-container"></div>
+    </div>
+
     <!-- ÉCRAN 3 : THÈMES (Sous-sections) -->
     <div id="screen-themes" class="list-screen hidden">
         <button class="back-btn" onclick="backFromThemes()" aria-label="Retour"
@@ -1515,6 +1533,7 @@
     <script src="js/mindMap.js"></script>
     <script src="js/simultaneity.js"></script>
     <script src="js/gameModes.js"></script>
+    <script src="js/gallery.js"></script>
     <script src="js/app.js"></script>
 
     <!-- ENREGISTREMENT DU SERVICE WORKER PWA -->

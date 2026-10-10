@@ -620,7 +620,7 @@
     "wiki_link": "Voir sur Wikipédia",
     "redraw_btn": "🔀 Un autre événement",
     "play_theme_btn": "Jouer sur ce thème",
-    "play_theme_btn_named": "Jouer sur « {theme} »",
+    "play_theme_btn_named": "Jouer sur « {theme} »",
     "biography_btn": "Voir sa biographie"
   },
   "simultaneity": {
@@ -683,5 +683,17 @@
   },
   "home": {
     "start_aria": "Commencer"
+  },
+  "gallery": {
+    "title": "Galerie des portraits",
+    "launcher_sub": "{count} visages des Panthéons, à feuilleter",
+    "order_alpha": "Ordre alphabétique",
+    "order_chrono": "Ordre chronologique",
+    "order_alpha_short": "A → Z",
+    "order_chrono_short": "Par naissance",
+    "order_group": "Ordre d'affichage",
+    "count": "{count} portraits",
+    "empty": "Aucun portrait pour l'instant.",
+    "play_biography": "Jouer sur sa biographie"
   }
 }

@@ -292,9 +292,10 @@ test('les États-Unis : chacune de ses figures a son portrait, et la fiche n’a
         await expect(page.locator('#modal-details')).toBeHidden();
     }
 
-    // Vingt-neuf figures ont aussi leur biographie dans l'appli : le bouton y mène.
+    // Trente et une figures ont aussi leur biographie dans l'appli (Jesse Owens et Mohamed Ali
+    // compris) : le bouton y mène.
     const avecBiographie = await page.evaluate(() => getCurrentTheme().events.filter(e => e.biographie).length);
-    expect(avecBiographie).toBe(29);
+    expect(avecBiographie).toBe(31);
     await page.locator('#timeline .entry', { hasText: 'Naissance de Louis Armstrong' }).click();
     await expect(page.locator('#modal-bio-btn')).toBeVisible();
 });
@@ -492,4 +493,83 @@ test('un thème sans portrait n’affiche ni vignette ni figure', async ({ page 
     await expect(page.locator('#modal-details')).toBeVisible();
     await expect(page.locator('#modal-portrait')).toBeHidden();
     await expect(page.locator('#modal-bio-row')).toBeHidden();
+});
+
+// Galerie des portraits (js/gallery.js) : un bouton sous les deux tuiles, qui
+// déplie le choix de l'ordre ; un trombinoscope de toutes les figures à
+// portrait ; une fiche qui mène à la biographie et au panthéon du pays.
+test('la galerie des portraits : deux ordres, une fiche, et ses deux accès au jeu', async ({ page }) => {
+    await page.locator('#screen-home').click();
+    const index = await page.evaluate(() => bdd.findIndex(c => c.nom === 'Personnages illustres'));
+    await page.locator('#cat-grid > div').nth(index).click();
+    expect(await visibleScreen(page)).toBe('screen-subcategories');
+
+    // Le bouton se déplie sur les deux ordres, sans quitter l'écran.
+    const lanceur = page.locator('#btn-gallery');
+    await expect(lanceur).toContainText('Galerie des portraits');
+    await expect(page.locator('#gallery-order-picker')).toBeHidden();
+    await lanceur.click();
+    await expect(lanceur).toHaveAttribute('aria-expanded', 'true');
+    await expect(page.locator('#gallery-order-picker')).toBeVisible();
+    await page.locator('#gallery-order-picker button', { hasText: 'Ordre alphabétique' }).click();
+    expect(await visibleScreen(page)).toBe('screen-gallery');
+
+    // Toutes les figures à portrait des panthéons, une carte chacune.
+    const attendu = await page.evaluate(() => {
+        const pantheon = bdd.find(c => c.nom === 'Personnages illustres').subcategories.find(s => s.nom === 'Panthéons');
+        return pantheon.themes.reduce((n, theme) => n + theme.events.filter(e => e.image).length, 0);
+    });
+    expect(attendu).toBeGreaterThan(800);
+    await expect(page.locator('#gallery-container .gallery-card')).toHaveCount(attendu);
+    await expect(page.locator('#gallery-subtitle')).toHaveText(`${attendu} portraits`);
+    await expect(page.locator('.gallery-section-title').first()).toHaveText('A');
+
+    // Ordre chronologique : des siècles, du plus ancien au plus récent.
+    await page.locator('#gallery-order-toggle [data-order="chrono"]').click();
+    await expect(page.locator('#gallery-order-toggle [data-order="chrono"]')).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator('.gallery-section-title').first()).toContainText('av. J.-C.');
+    const dates = await page.evaluate(() => {
+        const parDate = new Map();
+        bdd.forEach(c => (function walk(n) { (n.themes || []).forEach(t => t.events.forEach(e => parDate.set(e.id, e.date))); (n.subcategories || []).forEach(walk); })(c));
+        return [...document.querySelectorAll('#gallery-container .gallery-card')].map(c => parDate.get(c.dataset.eventId));
+    });
+    expect(dates).toEqual([...dates].sort((a, b) => a - b));
+
+    // Un visage ouvre la fiche de sa naissance, avec ses deux boutons de jeu.
+    await page.locator('.gallery-card', { hasText: 'Victor Hugo' }).click();
+    await expect(page.locator('#modal-details')).toBeVisible();
+    await expect(page.locator('#modal-titre')).toHaveText('Naissance de Victor Hugo');
+    await expect(page.locator('#modal-bio-btn')).toHaveText('Jouer sur sa biographie');
+    await expect(page.locator('#modal-theme-btn')).toContainText('Grandes figures de France');
+    await expect(page.locator('#modal-redraw-btn')).toBeHidden();
+
+    // Sans biographie, il ne reste que le panthéon.
+    await page.locator('#modal-details .close-btn').click();
+    await page.locator('.gallery-card', { hasText: 'Jules Ferry' }).click();
+    await expect(page.locator('#modal-bio-row')).toBeHidden();
+    await expect(page.locator('#modal-theme-btn')).toBeVisible();
+
+    // Le panthéon du pays s'ouvre comme un thème.
+    await page.locator('#modal-theme-btn').click();
+    await expect(page.locator('#modal-details')).toBeHidden();
+    await page.waitForSelector('#screen-axes:not(.hidden), #screen-modes:not(.hidden)');
+    expect(await page.evaluate(() => getCurrentTheme().id)).toBe(PANTHEON);
+});
+
+test('le retour de la galerie ramène à « Personnages illustres », et la fiche ordinaire garde « Voir sa biographie »', async ({ page }) => {
+    await page.locator('#screen-home').click();
+    const index = await page.evaluate(() => bdd.findIndex(c => c.nom === 'Personnages illustres'));
+    await page.locator('#cat-grid > div').nth(index).click();
+    await page.locator('#btn-gallery').click();
+    await page.locator('#gallery-order-picker button', { hasText: 'Ordre chronologique' }).click();
+    await expect(page.locator('#gallery-order-toggle [data-order="chrono"]')).toHaveAttribute('aria-pressed', 'true');
+    await page.locator('#screen-gallery .back-btn').click();
+    expect(await visibleScreen(page)).toBe('screen-subcategories');
+    await expect(page.locator('#subcategory-screen-title')).toHaveText('Personnages illustres');
+
+    // Le libellé propre à la galerie ne déborde pas sur la fiche de la frise.
+    await openThemeById(page, PANTHEON);
+    await page.locator('#mode-card-discovery').click();
+    await page.locator('#timeline .entry', { hasText: 'Naissance de Victor Hugo' }).click();
+    await expect(page.locator('#modal-bio-btn')).toHaveText('Voir sa biographie');
 });

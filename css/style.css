@@ -6454,3 +6454,211 @@ input:not([type="range"]), label, select, summary, textarea {
     border: 1px solid var(--rule);
     background: var(--border-soft);
 }
+
+/* =====================================================================
+   GALERIE DES PORTRAITS (Personnages illustres, voir js/gallery.js)
+   ===================================================================== */
+
+/* Le bouton d'entrée, sous les tuiles « Biographies » et « Panthéons » :
+   pleine largeur et teinte de cadre doré, pour qu'on ne le prenne ni pour une
+   sous-catégorie ni pour un mode de jeu. Le texte blanc garde au moins
+   5,3:1 sur la teinte la plus claire du dégradé. */
+.gallery-launcher {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.gallery-launcher-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 20px;
+    border: 2px solid #C9A24A;
+    border-radius: 24px;
+    background: linear-gradient(135deg, #5C4210 0%, #85631F 100%);
+    color: #FFFFFF;
+    text-align: left;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(92, 66, 16, 0.25);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.gallery-launcher-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 34px rgba(92, 66, 16, 0.32);
+}
+
+.gallery-launcher-icon {
+    font-size: 30px;
+    line-height: 1;
+}
+
+.gallery-launcher-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.gallery-launcher-title {
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.gallery-launcher-sub {
+    font-size: 12.5px;
+}
+
+.gallery-launcher-chevron {
+    font-size: 26px;
+    transition: transform 0.2s;
+}
+
+.gallery-launcher-btn.is-open .gallery-launcher-chevron {
+    transform: rotate(90deg);
+}
+
+/* Les deux ordres, côte à côte sous le bouton (mêmes boutons que le choix des
+   défis, .challenge-picker-btn). */
+.gallery-order-picker {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.gallery-order-picker .challenge-picker-btn {
+    flex: 1 1 0;
+}
+
+/* L'écran : titre, décompte, bascule d'ordre, puis une section par initiale
+   ou par siècle. */
+.gallery-subtitle {
+    margin: -8px 0 14px;
+    font-size: 14px;
+    color: var(--muted-text);
+    text-align: center;
+}
+
+.gallery-order-toggle {
+    display: inline-flex;
+    padding: 4px;
+    margin-bottom: 18px;
+    border-radius: 999px;
+    background: var(--surface);
+    border: 1px solid var(--border-soft);
+    box-shadow: var(--card-shadow);
+}
+
+.gallery-order-toggle-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--text-dark);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.gallery-order-toggle-btn.active {
+    background: var(--primary-blue);
+    color: #FFFFFF;
+}
+
+:root[data-theme="dark"] .gallery-order-toggle-btn.active {
+    background: #85631F;
+}
+
+.gallery-container {
+    width: 100%;
+    max-width: 1100px;
+    padding-bottom: 80px;
+}
+
+.gallery-section-title {
+    margin: 18px 0 10px;
+    padding: 6px 4px;
+    color: var(--text-dark);
+    font-size: 18px;
+    font-weight: 700;
+    border-bottom: 1px solid var(--border-soft);
+}
+
+/* Trois colonnes sur un téléphone, quatre à six sur une tablette, comme une
+   planche de trombinoscope. */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 12px;
+}
+
+@media (min-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 16px;
+    }
+}
+
+.gallery-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 8px 12px;
+    border: 1px solid var(--border-soft);
+    border-radius: 16px;
+    background: var(--surface);
+    color: var(--text-dark);
+    box-shadow: var(--card-shadow);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.gallery-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--card-shadow-hover);
+}
+
+.gallery-card-frame {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--border-soft);
+}
+
+.gallery-card-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.gallery-card-name {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+}
+
+.gallery-card-meta {
+    font-size: 12px;
+    color: var(--muted-text);
+}
+
+/* Fiche ouverte depuis la galerie : « Jouer sur sa biographie » et « Jouer sur
+   le panthéon » forment un seul bloc sous un même filet. */
+.modal-content.from-gallery .modal-bio-row:not(.hidden) {
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border-soft);
+}
+
+.modal-content.from-gallery .modal-bio-row:not(.hidden) + .modal-theme-row {
+    margin-top: 10px;
+    padding-top: 0;
+    border-top: none;
+}
