@@ -2,16 +2,38 @@
 // === HISTORIAXE — GALERIE DES PORTRAITS (Personnages illustres) ===
 // =========================================================================
 // Une vitrine, pas un mode de jeu : tous les personnages des Panthéons qui ont
-// un portrait, en trombinoscope, rangés par ordre alphabétique ou par date de
-// naissance. Toucher un visage ouvre la fiche de sa naissance (openModal), avec
-// deux accès directs : sa biographie quand elle existe, et le panthéon de son
-// pays.
+// un portrait, en trombinoscope, rangés par ordre alphabétique, par nom de
+// famille ou par date de naissance, avec une recherche par nom et deux filtres
+// (pays, domaine). Toucher un visage ouvre la fiche de sa naissance (openModal),
+// d'où l'on passe au portrait suivant ou précédent sans la refermer, et d'où
+// deux accès directs mènent au jeu : sa biographie quand elle existe, et le
+// panthéon de son pays. Après une partie lancée de là, on revient à la galerie,
+// au même endroit, avec la même recherche.
 //
 // Rien n'est figé ici : la galerie se lit dans bdd au moment de l'afficher. Un
 // panthéon ajouté y entre de lui-même, et un pack de langue sans « Panthéons »
 // n'affiche simplement pas le bouton (voir findPantheonNode).
 
+const GALLERY_ORDERS = ['alpha', 'famille', 'chrono'];
+
 let galleryOrder = 'alpha';
+let galleryQuery = '';
+let galleryCountry = '';
+let galleryAxis = '';
+// Toutes les figures, et celles qui restent après recherche et filtres, dans
+// l'ordre où elles s'affichent : la fiche s'en sert pour passer à la voisine.
+let galleryEntries = [];
+let galleryVisible = [];
+let galleryModalIndex = -1;
+// Posés quand on quitte la galerie pour jouer (markGalleryLaunch), consommés au
+// retour (initGallery) : sans eux, revenir d'une partie ramenait en haut de la
+// liste, recherche effacée.
+let galleryReturnPending = false;
+let galleryScrollTop = 0;
+// Le niveau de l'arbre d'où l'on a ouvert la galerie. Lancer une partie (openThemeAt)
+// écrase la sélection de catégorie : sans ce repère, la galerie ne retrouvait plus son
+// nœud « Panthéons » au retour, et le bouton « ‹ » ne savait plus où ramener.
+let galleryScope = null;
 
 // La sous-catégorie « Panthéons » d'un nœud de l'arbre, ou null. Même test
 // d'égalité stricte que pour l'image de sa tuile (initSubcategories) :
@@ -44,6 +66,19 @@ function galleryCountryOf(evt, theme) {
     return m ? m[1].toUpperCase() : '';
 }
 
+// Sans accent ni casse : « Édith » se trouve en tapant « edith ». Même
+// normalisation que la recherche de thèmes ; dupliquée ici pour que ce fichier
+// se teste sans le reste de l'application.
+function galleryNormalize(str) {
+    return (str || '').toString().normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim();
+}
+
+// L'initiale d'un intertitre : la première lettre sans accent, ou « # ».
+function galleryInitial(text) {
+    const first = galleryNormalize(text).charAt(0).toUpperCase();
+    return /[A-Z]/.test(first) ? first : '#';
+}
+
 // Toutes les figures à portrait des panthéons de `pantheon`, avec de quoi
 // rouvrir leur thème (ci/si/ti, au format d'openThemeAt).
 function collectGalleryEntries(pantheon) {
@@ -54,25 +89,51 @@ function collectGalleryEntries(pantheon) {
         if (!ids.has(item.theme.id)) return;
         (item.theme.events || []).forEach(evt => {
             if (!portraitOf(evt) || typeof evt.date !== 'number') return;
-            entries.push(Object.assign({ evt, item, iso: galleryCountryOf(evt, item.theme) }, galleryNameOf(evt)));
+            const names = galleryNameOf(evt);
+            entries.push(Object.assign({
+                evt,
+                item,
+                iso: galleryCountryOf(evt, item.theme),
+                // Le nom de classement est écrit dans les données (voir
+                // scripts/pantheon_classement.py) ; à défaut, le nom lui-même.
+                classement: evt.classement || names.sortName,
+                haystack: galleryNormalize(`${evt.titre} ${evt.classement || ''}`)
+            }, names));
         });
     });
     return entries;
 }
 
-// Trie et regroupe : par initiale (sans accent) en ordre alphabétique, par
-// siècle de naissance en ordre chronologique.
-function sortGalleryEntries(entries, order) {
+// Recherche et filtres, sans toucher à l'ordre. Chaque mot tapé doit se trouver
+// dans le nom : « hugo victor » et « victor hugo » trouvent la même figure.
+function filterGalleryEntries(entries, { query = '', country = '', axis = '' } = {}) {
+    const words = galleryNormalize(query).split(/\s+/).filter(Boolean);
+    return entries.filter(entry =>
+        (!country || entry.iso === country)
+        && (!axis || entry.evt.axe === axis)
+        && words.every(word => entry.haystack.includes(word)));
+}
+
+// Comparateur d'un ordre : à égalité (deux Louis, deux Grimm), la date de
+// naissance départage — les rois se rangent ainsi dans l'ordre de leurs règnes.
+function compareGalleryEntries(order) {
     const collator = new Intl.Collator('fr', { sensitivity: 'base', numeric: true });
-    const byName = (a, b) => collator.compare(a.sortName, b.sortName);
-    const sorted = entries.slice().sort(order === 'chrono'
-        ? (a, b) => (a.evt.date - b.evt.date) || byName(a, b)
-        : byName);
+    const textOf = order === 'famille' ? (e => e.classement) : (e => e.sortName);
+    const byText = (a, b) => collator.compare(textOf(a), textOf(b)) || (a.evt.date - b.evt.date);
+    return order === 'chrono'
+        ? (a, b) => (a.evt.date - b.evt.date) || collator.compare(a.sortName, b.sortName)
+        : byText;
+}
+
+// Trie et regroupe : par initiale en ordre alphabétique et par nom de famille,
+// par siècle de naissance en ordre chronologique.
+function sortGalleryEntries(entries, order) {
+    const sorted = entries.slice().sort(compareGalleryEntries(order));
     const groups = [];
     sorted.forEach(entry => {
         const label = order === 'chrono'
             ? getCenturyLabel(entry.evt.date)
-            : (normalizeSearchText(entry.sortName).charAt(0).toUpperCase() || '#');
+            : galleryInitial(order === 'famille' ? entry.classement : entry.sortName);
         const last = groups[groups.length - 1];
         if (last && last.label === label) last.entries.push(entry);
         else groups.push({ label, entries: [entry] });
@@ -102,6 +163,10 @@ function buildGalleryLauncher(pantheon) {
                 <span class="challenge-picker-icon" aria-hidden="true">🔤</span>
                 <span></span>
             </button>
+            <button type="button" class="challenge-picker-btn" data-order="famille">
+                <span class="challenge-picker-icon" aria-hidden="true">👤</span>
+                <span></span>
+            </button>
             <button type="button" class="challenge-picker-btn" data-order="chrono">
                 <span class="challenge-picker-icon" aria-hidden="true">⏳</span>
                 <span></span>
@@ -110,9 +175,10 @@ function buildGalleryLauncher(pantheon) {
     `;
     wrap.querySelector('.gallery-launcher-title').textContent = t('gallery.title');
     wrap.querySelector('.gallery-launcher-sub').textContent = t('gallery.launcher_sub', { count });
-    const pickerBtns = wrap.querySelectorAll('.gallery-order-picker .challenge-picker-btn');
-    pickerBtns[0].lastElementChild.textContent = t('gallery.order_alpha');
-    pickerBtns[1].lastElementChild.textContent = t('gallery.order_chrono');
+    wrap.querySelectorAll('.gallery-order-picker .challenge-picker-btn').forEach(b => {
+        b.lastElementChild.textContent = t('gallery.order_' + b.dataset.order);
+        b.onclick = () => openGallery(b.dataset.order);
+    });
 
     const btn = wrap.querySelector('#btn-gallery');
     const picker = wrap.querySelector('#gallery-order-picker');
@@ -121,14 +187,18 @@ function buildGalleryLauncher(pantheon) {
         btn.setAttribute('aria-expanded', String(nowOpen));
         btn.classList.toggle('is-open', nowOpen);
     };
-    pickerBtns.forEach(b => {
-        b.onclick = () => openGallery(b.dataset.order);
-    });
     return wrap;
 }
 
+// Ouverture depuis le bouton : une galerie neuve, sans la recherche ni les
+// filtres d'une visite précédente.
 function openGallery(order) {
-    galleryOrder = order === 'chrono' ? 'chrono' : 'alpha';
+    galleryOrder = GALLERY_ORDERS.includes(order) ? order : 'alpha';
+    galleryQuery = '';
+    galleryCountry = '';
+    galleryAxis = '';
+    galleryReturnPending = false;
+    galleryScope = { ci: selectedCategoryIndex, si: Array.isArray(selectedSubcategoryIndex) ? [...selectedSubcategoryIndex] : [] };
     showScreen('screen-gallery', 'forward');
 }
 
@@ -140,38 +210,142 @@ function currentGalleryPantheon() {
     return findPantheonNode(resolveSubcategory(category, selectedSubcategoryIndex) || category);
 }
 
+// « 🇫🇷 France (68) » : le pays, avec le nombre de portraits qu'il apporte.
+function galleryCountryLabel(iso, count) {
+    const flag = typeof isoToFlagEmoji === 'function' ? isoToFlagEmoji(iso) + ' ' : '';
+    const name = typeof countryDisplayName === 'function' ? countryDisplayName(iso) : iso;
+    return `${flag}${name} (${count})`;
+}
+
+function fillGallerySelect(select, allLabel, options, current) {
+    select.textContent = '';
+    const all = document.createElement('option');
+    all.value = '';
+    all.textContent = allLabel;
+    select.appendChild(all);
+    options.forEach(({ value, label }) => {
+        const opt = document.createElement('option');
+        opt.value = value;
+        opt.textContent = label;
+        select.appendChild(opt);
+    });
+    select.value = options.some(o => o.value === current) ? current : '';
+    return select.value;
+}
+
+// Les deux listes déroulantes se déduisent des figures elles-mêmes, avec leur
+// effectif : un pays ou un domaine sans portrait n'y figure pas.
+function initGalleryFilters() {
+    const countries = new Map();
+    const axes = new Map();
+    galleryEntries.forEach(entry => {
+        if (entry.iso) countries.set(entry.iso, (countries.get(entry.iso) || 0) + 1);
+        if (entry.evt.axe) axes.set(entry.evt.axe, (axes.get(entry.evt.axe) || 0) + 1);
+    });
+    const collator = new Intl.Collator('fr', { sensitivity: 'base' });
+    const countryOptions = [...countries].map(([iso, n]) => ({ value: iso, label: galleryCountryLabel(iso, n) }))
+        .sort((a, b) => collator.compare(a.label.replace(/^\S+\s/, ''), b.label.replace(/^\S+\s/, '')));
+    const axisOptions = [...axes].map(([axe, n]) => ({ value: axe, label: `${axe} (${n})` }))
+        .sort((a, b) => collator.compare(a.label, b.label));
+
+    const countrySel = document.getElementById('gallery-filter-country');
+    const axisSel = document.getElementById('gallery-filter-axis');
+    galleryCountry = fillGallerySelect(countrySel, t('gallery.filter_country_all'), countryOptions, galleryCountry);
+    galleryAxis = fillGallerySelect(axisSel, t('gallery.filter_axis_all'), axisOptions, galleryAxis);
+    // Un seul pays (pack réduit) : le filtre n'aurait rien à choisir.
+    countrySel.parentElement.classList.toggle('hidden', countryOptions.length < 2);
+    countrySel.onchange = () => { galleryCountry = countrySel.value; renderGalleryGrid(); };
+    axisSel.onchange = () => { galleryAxis = axisSel.value; renderGalleryGrid(); };
+}
+
 function initGallery() {
     const container = document.getElementById('gallery-container');
-    const subtitle = document.getElementById('gallery-subtitle');
     if (!container) return;
+    const returning = galleryReturnPending;
+    galleryReturnPending = false;
+    // Rétablit la sélection que la partie a écrasée : le « ‹ » de la galerie ramène
+    // alors à « Personnages illustres », et non à la racine des catégories.
+    if (galleryScope) {
+        selectedCategoryIndex = galleryScope.ci;
+        selectedSubcategoryIndex = [...galleryScope.si];
+    }
+    galleryEntries = collectGalleryEntries(currentGalleryPantheon());
+    galleryModalIndex = -1;
+
+    initGalleryFilters();
+
+    const search = document.getElementById('gallery-search');
+    search.value = galleryQuery;
+    let timer = null;
+    search.oninput = () => {
+        galleryQuery = search.value;
+        clearTimeout(timer);
+        timer = setTimeout(renderGalleryGrid, 120);
+    };
+
+    document.querySelectorAll('#gallery-order-toggle [data-order]').forEach(b => {
+        b.onclick = () => {
+            if (galleryOrder === b.dataset.order) return;
+            galleryOrder = b.dataset.order;
+            renderGalleryGrid();
+            scrollGalleryTo(0);
+        };
+    });
+    document.getElementById('gallery-reset').onclick = () => {
+        galleryQuery = '';
+        galleryCountry = '';
+        galleryAxis = '';
+        search.value = '';
+        document.getElementById('gallery-filter-country').value = '';
+        document.getElementById('gallery-filter-axis').value = '';
+        renderGalleryGrid();
+    };
+
+    bindGalleryModalGestures();
+    renderGalleryGrid();
+    // Après showScreen, qui replace le focus et peut remonter la page : on
+    // attend la fin de la bascule avant de remettre la liste où on l'avait laissée.
+    requestAnimationFrame(() => scrollGalleryTo(returning ? galleryScrollTop : 0));
+}
+
+function scrollGalleryTo(top) {
+    const screen = document.getElementById('screen-gallery');
+    if (screen) screen.scrollTop = top;
+}
+
+// Dessine les intertitres et les cartes selon l'ordre, la recherche et les
+// filtres courants. Ne touche pas aux champs : la saisie garde son focus.
+function renderGalleryGrid() {
+    const container = document.getElementById('gallery-container');
+    const subtitle = document.getElementById('gallery-subtitle');
     container.innerHTML = '';
-    const entries = collectGalleryEntries(currentGalleryPantheon());
 
     document.querySelectorAll('#gallery-order-toggle [data-order]').forEach(b => {
         const active = b.dataset.order === galleryOrder;
         b.classList.toggle('active', active);
         b.setAttribute('aria-pressed', String(active));
-        b.onclick = () => {
-            if (galleryOrder === b.dataset.order) return;
-            galleryOrder = b.dataset.order;
-            initGallery();
-            const screen = document.getElementById('screen-gallery');
-            if (screen) screen.scrollTop = 0;
-            window.scrollTo(0, 0);
-        };
     });
-    subtitle.textContent = t('gallery.count', { count: entries.length });
 
-    if (entries.length === 0) {
+    const matching = filterGalleryEntries(galleryEntries, { query: galleryQuery, country: galleryCountry, axis: galleryAxis });
+    const groups = sortGalleryEntries(matching, galleryOrder);
+    galleryVisible = groups.flatMap(group => group.entries);
+
+    const filtered = !!(galleryQuery.trim() || galleryCountry || galleryAxis);
+    document.getElementById('gallery-reset').classList.toggle('hidden', !filtered);
+    subtitle.textContent = filtered
+        ? t(matching.length === 1 ? 'gallery.count_filtered_one' : 'gallery.count_filtered', { count: matching.length, total: galleryEntries.length })
+        : t('gallery.count', { count: galleryEntries.length });
+
+    if (matching.length === 0) {
         const empty = document.createElement('p');
         empty.className = 'empty-msg';
-        empty.textContent = t('gallery.empty');
+        empty.textContent = t(galleryEntries.length ? 'gallery.no_result' : 'gallery.empty');
         container.appendChild(empty);
         return;
     }
 
     const fragment = document.createDocumentFragment();
-    sortGalleryEntries(entries, galleryOrder).forEach(group => {
+    groups.forEach(group => {
         const section = document.createElement('section');
         section.className = 'gallery-section';
         const heading = document.createElement('h3');
@@ -228,8 +402,9 @@ function buildGalleryCard(entry) {
 }
 
 // La fiche d'une figure : sa naissance, son portrait crédité, puis les deux
-// accès directs (biographie, panthéon de son pays).
+// accès directs (biographie, panthéon de son pays) et le passage au voisin.
 function openGalleryPortrait(entry) {
+    galleryModalIndex = galleryVisible.indexOf(entry);
     const { item } = entry;
     openModal(entry.evt, {
         theme: item.theme,
@@ -239,6 +414,77 @@ function openGalleryPortrait(entry) {
         hideRedraw: true,
         fromGallery: true
     });
+    renderGalleryModalNav();
+}
+
+function renderGalleryModalNav() {
+    const prev = document.getElementById('modal-gallery-prev');
+    const next = document.getElementById('modal-gallery-next');
+    const pos = document.getElementById('modal-gallery-pos');
+    if (!prev || !next || !pos) return;
+    const total = galleryVisible.length;
+    prev.disabled = galleryModalIndex <= 0;
+    next.disabled = galleryModalIndex < 0 || galleryModalIndex >= total - 1;
+    pos.textContent = t('gallery.nav_position', { n: galleryModalIndex + 1, total });
+}
+
+// Passe au portrait voisin dans l'ordre affiché. S'arrête aux extrémités plutôt
+// que de boucler : on sait où l'on en est dans la liste.
+function stepGalleryPortrait(delta) {
+    const target = galleryVisible[galleryModalIndex + delta];
+    if (!target) return;
+    openGalleryPortrait(target);
+    const content = document.querySelector('#modal-details .modal-content');
+    if (content) content.scrollTop = 0;
+}
+
+function galleryModalOpen() {
+    const modal = document.getElementById('modal-details');
+    return !!modal && !modal.classList.contains('hidden')
+        && modal.querySelector('.modal-content').classList.contains('from-gallery');
+}
+
+let galleryGesturesBound = false;
+// Boutons, flèches du clavier et glissement horizontal font la même chose. Le
+// glissement ne compte que s'il est franchement horizontal : un défilement
+// vertical de la description ne doit pas tourner la page.
+function bindGalleryModalGestures() {
+    if (galleryGesturesBound) return;
+    galleryGesturesBound = true;
+    document.getElementById('modal-gallery-prev').onclick = () => stepGalleryPortrait(-1);
+    document.getElementById('modal-gallery-next').onclick = () => stepGalleryPortrait(1);
+
+    document.addEventListener('keydown', e => {
+        if (!galleryModalOpen() || e.defaultPrevented || e.altKey || e.ctrlKey || e.metaKey) return;
+        if (e.key === 'ArrowLeft') { e.preventDefault(); stepGalleryPortrait(-1); }
+        else if (e.key === 'ArrowRight') { e.preventDefault(); stepGalleryPortrait(1); }
+    });
+
+    const content = document.querySelector('#modal-details .modal-content');
+    let start = null;
+    content.addEventListener('touchstart', e => {
+        start = e.touches.length === 1 ? { x: e.touches[0].clientX, y: e.touches[0].clientY } : null;
+    }, { passive: true });
+    content.addEventListener('touchend', e => {
+        if (!start || !galleryModalOpen()) return;
+        const dx = e.changedTouches[0].clientX - start.x;
+        const dy = e.changedTouches[0].clientY - start.y;
+        start = null;
+        if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) stepGalleryPortrait(dx < 0 ? 1 : -1);
+    }, { passive: true });
+}
+
+// On quitte la galerie pour jouer (biographie ou panthéon de la fiche) : on
+// retient où l'on en était, pour y revenir à la fin de la partie.
+function markGalleryLaunch() {
+    const screen = document.getElementById('screen-gallery');
+    galleryScrollTop = screen ? screen.scrollTop : 0;
+    galleryReturnPending = true;
+}
+
+// Où retourner après une partie : la galerie si c'est d'elle qu'on est parti.
+function galleryReturnTarget(fallback) {
+    return galleryReturnPending ? 'screen-gallery' : fallback;
 }
 
 function backFromGallery() {
@@ -246,5 +492,8 @@ function backFromGallery() {
 }
 
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { galleryNameOf, galleryCountryOf, findPantheonNode };
+    module.exports = {
+        galleryNameOf, galleryCountryOf, findPantheonNode, galleryNormalize, galleryInitial,
+        filterGalleryEntries, compareGalleryEntries
+    };
 }

@@ -1173,6 +1173,11 @@ function showScreen(screenId, direction) {
         targetScreen.classList.add('screen-fade-in');
     }
 
+    // Le retour à la galerie ne vaut que pour la partie qui en est partie : rejoindre
+    // l'arbre des catégories l'efface, pour qu'une partie lancée de là n'y revienne pas.
+    if (['screen-home', 'screen-categories', 'screen-subcategories', 'screen-themes', 'screen-revision-hub'].includes(screenId)) {
+        galleryReturnPending = false;
+    }
     if (screenId === 'screen-categories') initCategories();
     if (screenId === 'screen-subcategories') initSubcategories();
     if (screenId === 'screen-themes') initThemes();
@@ -1245,7 +1250,8 @@ function screenAfterGame() {
     } else if (essentialFilterActive || axisFilterActive) {
         target = 'screen-axes';
     } else {
-        target = 'screen-themes';
+        // Une partie lancée depuis la galerie des portraits y revient (js/gallery.js).
+        target = galleryReturnTarget('screen-themes');
     }
     revisionMode = false;
     dailyChallengeMode = false;
@@ -5480,6 +5486,7 @@ function renderModalBiographyButton(evt, fromGallery = false) {
     row.classList.toggle('hidden', !target);
     btn.onclick = target ? () => {
         closeModal();
+        if (fromGallery) markGalleryLaunch();
         favoritesMode = false;
         if (dailyChallengeMode || weeklyChallengeMode) stopTimer();
         dailyChallengeMode = false;
@@ -5527,6 +5534,7 @@ function openModal(evt, context = null) {
         document.getElementById('modal-theme-btn').innerText = t('modal.play_theme_btn_named', { theme: context.theme.nom });
         document.getElementById('modal-theme-btn').onclick = () => {
             closeModal();
+            if (context.fromGallery) markGalleryLaunch();
             if (dailyChallengeMode || weeklyChallengeMode) stopTimer();
             favoritesMode = false;
             dailyChallengeMode = false;

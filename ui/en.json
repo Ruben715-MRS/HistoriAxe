@@ -685,12 +685,26 @@
     "title": "Portrait gallery",
     "launcher_sub": "{count} faces from the Pantheons to browse",
     "order_alpha": "Alphabetical order",
+    "order_famille": "By family name",
     "order_chrono": "Chronological order",
     "order_alpha_short": "A → Z",
-    "order_chrono_short": "By birth",
+    "order_famille_short": "Family name",
+    "order_chrono_short": "Birth",
     "order_group": "Display order",
     "count": "{count} portraits",
+    "count_filtered": "{count} of {total} portraits",
     "empty": "No portraits yet.",
-    "play_biography": "Play their biography"
+    "no_result": "No portrait matches. Try another name, or clear the filters.",
+    "play_biography": "Play their biography",
+    "search_placeholder": "Search for a person…",
+    "filter_country": "Country",
+    "filter_axis": "Field",
+    "filter_country_all": "All countries",
+    "filter_axis_all": "All fields",
+    "filter_reset": "Clear all",
+    "nav_prev": "Previous portrait",
+    "nav_next": "Next portrait",
+    "nav_position": "{n} of {total}",
+    "count_filtered_one": "1 of {total} portraits"
   }
 }

@@ -688,12 +688,26 @@
     "title": "Galerie des portraits",
     "launcher_sub": "{count} visages des Panthéons, à feuilleter",
     "order_alpha": "Ordre alphabétique",
+    "order_famille": "Par nom de famille",
     "order_chrono": "Ordre chronologique",
     "order_alpha_short": "A → Z",
-    "order_chrono_short": "Par naissance",
+    "order_famille_short": "Nom de famille",
+    "order_chrono_short": "Naissance",
     "order_group": "Ordre d'affichage",
     "count": "{count} portraits",
+    "count_filtered": "{count} portraits sur {total}",
     "empty": "Aucun portrait pour l'instant.",
-    "play_biography": "Jouer sur sa biographie"
+    "no_result": "Aucun portrait ne correspond. Essayez un autre nom, ou effacez les filtres.",
+    "play_biography": "Jouer sur sa biographie",
+    "search_placeholder": "Rechercher un personnage…",
+    "filter_country": "Pays",
+    "filter_axis": "Domaine",
+    "filter_country_all": "Tous les pays",
+    "filter_axis_all": "Tous les domaines",
+    "filter_reset": "Tout effacer",
+    "nav_prev": "Portrait précédent",
+    "nav_next": "Portrait suivant",
+    "nav_position": "{n} sur {total}",
+    "count_filtered_one": "1 portrait sur {total}"
   }
 }

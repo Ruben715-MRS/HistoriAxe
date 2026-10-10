@@ -658,12 +658,26 @@
     "title": "Galleria dei ritratti",
     "launcher_sub": "{count} volti dei Pantheon da sfogliare",
     "order_alpha": "Ordine alfabetico",
+    "order_famille": "Per cognome",
     "order_chrono": "Ordine cronologico",
     "order_alpha_short": "A → Z",
-    "order_chrono_short": "Per nascita",
+    "order_famille_short": "Cognome",
+    "order_chrono_short": "Nascita",
     "order_group": "Ordine di visualizzazione",
     "count": "{count} ritratti",
+    "count_filtered": "{count} ritratti su {total}",
     "empty": "Ancora nessun ritratto.",
-    "play_biography": "Gioca sulla biografia"
+    "no_result": "Nessun ritratto corrisponde. Provi un altro nome o cancelli i filtri.",
+    "play_biography": "Gioca sulla biografia",
+    "search_placeholder": "Cerca un personaggio…",
+    "filter_country": "Paese",
+    "filter_axis": "Ambito",
+    "filter_country_all": "Tutti i paesi",
+    "filter_axis_all": "Tutti gli ambiti",
+    "filter_reset": "Cancella tutto",
+    "nav_prev": "Ritratto precedente",
+    "nav_next": "Ritratto successivo",
+    "nav_position": "{n} di {total}",
+    "count_filtered_one": "1 ritratto su {total}"
   }
 }

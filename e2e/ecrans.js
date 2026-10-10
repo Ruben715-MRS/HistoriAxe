@@ -39,6 +39,13 @@ async function parcourirLesEcrans(page, surChaqueEcran) {
     await page.evaluate(() => switchRevisionHubTab('progress'));
     await page.waitForTimeout(300); await surChaqueEcran('progression');
     await page.evaluate(() => { const ci = bdd.findIndex(c => c.subcategories); selectedCategoryIndex = ci; selectedSubcategoryIndex = null; showScreen('screen-subcategories'); }); await surChaqueEcran('sous-catégories');
+    // Personnages illustres : le bouton de la galerie et ses trois ordres, la galerie, une fiche ouverte de là.
+    await page.evaluate(() => { selectedCategoryIndex = bdd.findIndex(c => c.nom === 'Personnages illustres'); selectedSubcategoryIndex = []; showScreen('screen-subcategories'); }); await surChaqueEcran('personnages illustres');
+    await page.locator('#btn-gallery').click(); await surChaqueEcran('galerie : choix de l’ordre');
+    await page.locator('#gallery-order-picker [data-order="famille"]').click();
+    await page.waitForSelector('#gallery-container .gallery-card'); await surChaqueEcran('galerie des portraits');
+    await page.locator('#gallery-container .gallery-card').first().click(); await surChaqueEcran('fiche ouverte depuis la galerie');
+    await page.locator('#modal-details .close-btn').click();
     await page.evaluate(() => { const ci = bdd.findIndex(c => (c.themes || []).length); selectedCategoryIndex = ci; selectedSubcategoryIndex = null; showScreen('screen-themes'); }); await surChaqueEcran('thèmes');
 
     await openThemeCard(page, 'thm_aut'); await surChaqueEcran('axes');

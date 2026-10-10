@@ -223,19 +223,40 @@
     </div>
 
     <!-- ÉCRAN 2ter : GALERIE DES PORTRAITS (Personnages illustres, voir js/gallery.js) :
-         tous les personnages des Panthéons qui ont un portrait, par ordre alphabétique
-         ou chronologique. Un visage ouvre la fiche de sa naissance. -->
+         tous les personnages des Panthéons qui ont un portrait, avec une recherche par nom,
+         trois ordres (alphabétique, nom de famille, chronologique) et deux filtres (pays,
+         domaine). Un visage ouvre la fiche de sa naissance. -->
     <div id="screen-gallery" class="list-screen hidden">
         <button class="back-btn" onclick="backFromGallery()" aria-label="Retour"
             data-i18n-attr="aria-label:nav.back">‹</button>
         <h2 class="header-title gallery-header-title" data-i18n="gallery.title">Galerie des portraits</h2>
         <p class="gallery-subtitle" id="gallery-subtitle"></p>
+        <div class="gallery-search search-bar">
+            <span class="search-bar-icon" aria-hidden="true">🔍</span>
+            <input type="search" id="gallery-search" class="search-bar-input" placeholder="Rechercher un personnage…"
+                autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Rechercher un personnage"
+                data-i18n-attr="placeholder:gallery.search_placeholder;aria-label:gallery.search_placeholder">
+        </div>
         <div class="gallery-order-toggle" id="gallery-order-toggle" role="group" aria-label="Ordre d'affichage"
             data-i18n-attr="aria-label:gallery.order_group">
             <button type="button" class="gallery-order-toggle-btn" data-order="alpha" aria-pressed="true"
                 data-i18n="gallery.order_alpha_short">A → Z</button>
+            <button type="button" class="gallery-order-toggle-btn" data-order="famille" aria-pressed="false"
+                data-i18n="gallery.order_famille_short">Nom de famille</button>
             <button type="button" class="gallery-order-toggle-btn" data-order="chrono" aria-pressed="false"
-                data-i18n="gallery.order_chrono_short">Par date de naissance</button>
+                data-i18n="gallery.order_chrono_short">Naissance</button>
+        </div>
+        <div class="gallery-filters">
+            <label class="gallery-filter">
+                <span class="gallery-filter-label" data-i18n="gallery.filter_country">Pays</span>
+                <select id="gallery-filter-country" class="gallery-select"></select>
+            </label>
+            <label class="gallery-filter">
+                <span class="gallery-filter-label" data-i18n="gallery.filter_axis">Domaine</span>
+                <select id="gallery-filter-axis" class="gallery-select"></select>
+            </label>
+            <button type="button" class="gallery-reset hidden" id="gallery-reset"
+                data-i18n="gallery.filter_reset">Tout effacer</button>
         </div>
         <div id="gallery-container" class="gallery-container"></div>
     </div>
@@ -255,7 +276,7 @@
     <!-- ÉCRAN 3bis : AXES THÉMATIQUES (filtre optionnel, si le thème en propose) -->
     <div id="screen-axes" class="list-screen hidden">
         <button class="back-btn"
-            onclick="axisFilterActive=false; essentialFilterActive=false; showScreen('screen-themes', 'back')"
+            onclick="axisFilterActive=false; essentialFilterActive=false; showScreen(galleryReturnTarget('screen-themes'), 'back')"
             aria-label="Retour aux thèmes" data-i18n-attr="aria-label:nav.back">‹</button>
         <h2 class="header-title" data-i18n="axes.title">Filtrer par axe thématique</h2>
         <div id="essentiel-zone"></div>
@@ -1036,6 +1057,15 @@
         <div class="modal-content">
             <span class="close-btn" role="button" tabindex="0" aria-label="Fermer"
                 data-i18n-attr="aria-label:nav.close" onclick="closeModal()">×</span>
+            <!-- Passage au portrait voisin, seulement quand la fiche s'ouvre depuis la galerie
+                 (voir js/gallery.js) : boutons, flèches du clavier et glissement font la même chose. -->
+            <div class="modal-gallery-nav" id="modal-gallery-nav">
+                <button type="button" class="modal-gallery-nav-btn" id="modal-gallery-prev" aria-label="Portrait précédent"
+                    data-i18n-attr="aria-label:gallery.nav_prev">‹</button>
+                <span class="modal-gallery-nav-pos" id="modal-gallery-pos" aria-live="polite"></span>
+                <button type="button" class="modal-gallery-nav-btn" id="modal-gallery-next" aria-label="Portrait suivant"
+                    data-i18n-attr="aria-label:gallery.nav_next">›</button>
+            </div>
             <div class="modal-title" id="modal-titre">Titre de l'événement</div>
             <div id="modal-axe-badge-container" style="margin-top: 4px; margin-bottom: 8px;"></div>
             <div class="modal-date" id="modal-date">Date</div>

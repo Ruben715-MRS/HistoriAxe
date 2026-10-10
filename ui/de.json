@@ -658,12 +658,26 @@
     "title": "Porträtgalerie",
     "launcher_sub": "{count} Gesichter aus den Pantheons zum Durchblättern",
     "order_alpha": "Alphabetisch",
+    "order_famille": "Nach Familienname",
     "order_chrono": "Chronologisch",
     "order_alpha_short": "A → Z",
-    "order_chrono_short": "Nach Geburt",
+    "order_famille_short": "Familienname",
+    "order_chrono_short": "Geburt",
     "order_group": "Reihenfolge",
     "count": "{count} Porträts",
+    "count_filtered": "{count} von {total} Porträts",
     "empty": "Noch keine Porträts.",
-    "play_biography": "Biografie spielen"
+    "no_result": "Kein Porträt passt. Versuchen Sie einen anderen Namen oder löschen Sie die Filter.",
+    "play_biography": "Biografie spielen",
+    "search_placeholder": "Person suchen…",
+    "filter_country": "Land",
+    "filter_axis": "Bereich",
+    "filter_country_all": "Alle Länder",
+    "filter_axis_all": "Alle Bereiche",
+    "filter_reset": "Alles löschen",
+    "nav_prev": "Vorheriges Porträt",
+    "nav_next": "Nächstes Porträt",
+    "nav_position": "{n} von {total}",
+    "count_filtered_one": "1 von {total} Porträts"
   }
 }

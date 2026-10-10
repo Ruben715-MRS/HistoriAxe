@@ -573,3 +573,202 @@ test('le retour de la galerie ramène à « Personnages illustres », et la fich
     await page.locator('#timeline .entry', { hasText: 'Naissance de Victor Hugo' }).click();
     await expect(page.locator('#modal-bio-btn')).toHaveText('Voir sa biographie');
 });
+
+// Remonte avec le « ‹ » de l'écran affiché jusqu'à la galerie. Le chemin ordinaire repasse
+// par l'écran des axes quand on l'a traversé (le retour des modes y ramène d'abord) : un
+// ou deux appuis, jamais davantage.
+async function remonterJusqueALaGalerie(page) {
+    for (let i = 0; i < 3 && await visibleScreen(page) !== 'screen-gallery'; i++) {
+        await page.locator(`#${await visibleScreen(page)} .back-btn`).click();
+    }
+    await expect(page.locator('#screen-gallery')).toBeVisible();
+}
+
+// Galerie : ouverture directe, pour les tests qui ne portent pas sur le bouton.
+async function ouvrirLaGalerie(page, ordre = 'alpha') {
+    await page.locator('#screen-home').click();
+    const index = await page.evaluate(() => bdd.findIndex(c => c.nom === 'Personnages illustres'));
+    await page.locator('#cat-grid > div').nth(index).click();
+    await page.locator('#btn-gallery').click();
+    await page.locator(`#gallery-order-picker [data-order="${ordre}"]`).click();
+    await expect(page.locator('#screen-gallery')).toBeVisible();
+    await expect(page.locator('#gallery-container .gallery-card').first()).toBeVisible();
+}
+
+test('« Par nom de famille » range Hugo à H, de Gaulle à G, et départage les rois par leur prénom', async ({ page }) => {
+    await ouvrirLaGalerie(page, 'famille');
+    await expect(page.locator('#gallery-order-toggle [data-order="famille"]')).toHaveAttribute('aria-pressed', 'true');
+    const initiales = await page.locator('.gallery-section-title').allTextContents();
+    expect(initiales[0]).toBe('A');
+    expect(initiales).toEqual([...initiales].sort((a, b) => a.localeCompare(b, 'fr')));
+    expect(initiales).not.toContain('#');
+    const sousInitiale = (lettre, nom) =>
+        page.locator('.gallery-section', { has: page.locator('.gallery-section-title', { hasText: new RegExp(`^${lettre}$`) }) })
+            .locator('.gallery-card', { hasText: nom });
+    await expect(sousInitiale('H', 'Victor Hugo')).toHaveCount(1);
+    await expect(sousInitiale('G', 'Charles de Gaulle')).toHaveCount(1);
+    await expect(sousInitiale('L', 'Louis XIV')).toHaveCount(1);
+    // Le tri alphabétique, lui, suit le nom tel qu'il est écrit : Hugo à V.
+    await page.locator('#gallery-order-toggle [data-order="alpha"]').click();
+    await expect(sousInitiale('V', 'Victor Hugo')).toHaveCount(1);
+});
+
+test('la recherche trouve un personnage sans accent ni ordre, et « Tout effacer » rend la galerie entière', async ({ page }) => {
+    await ouvrirLaGalerie(page);
+    const total = await page.locator('#gallery-container .gallery-card').count();
+    await expect(page.locator('#gallery-reset')).toBeHidden();
+
+    await page.locator('#gallery-search').fill('hugo victor');
+    await expect(page.locator('#gallery-container .gallery-card')).toHaveCount(1);
+    await expect(page.locator('#gallery-subtitle')).toHaveText(`1 portrait sur ${total}`);
+    await expect(page.locator('#gallery-reset')).toBeVisible();
+
+    await page.locator('#gallery-search').fill('edith');
+    await expect(page.locator('.gallery-card', { hasText: 'Édith Piaf' })).toHaveCount(1);
+
+    await page.locator('#gallery-search').fill('zzzzz');
+    await expect(page.locator('#gallery-container .gallery-card')).toHaveCount(0);
+    await expect(page.locator('#gallery-container .empty-msg')).toContainText('Aucun portrait ne correspond');
+
+    await page.locator('#gallery-reset').click();
+    await expect(page.locator('#gallery-search')).toHaveValue('');
+    await expect(page.locator('#gallery-container .gallery-card')).toHaveCount(total);
+    await expect(page.locator('#gallery-reset')).toBeHidden();
+});
+
+test('les filtres pays et domaine se combinent, et chaque option annonce son effectif', async ({ page }) => {
+    await ouvrirLaGalerie(page);
+    const total = await page.locator('#gallery-container .gallery-card').count();
+    const pays = page.locator('#gallery-filter-country');
+    const domaine = page.locator('#gallery-filter-axis');
+    await expect(pays.locator('option').first()).toHaveText('Tous les pays');
+    await expect(domaine.locator('option').first()).toHaveText('Tous les domaines');
+    // Sept domaines communs à tous les panthéons ; chaque pays d'un bloc a son entrée.
+    await expect(domaine.locator('option')).toHaveCount(8);
+    await expect(pays.locator('option', { hasText: 'France' })).toHaveText(/🇫🇷 France \(68\)/);
+    await expect(pays.locator('option', { hasText: 'Venezuela' })).toHaveCount(1);
+
+    await pays.selectOption({ label: '🇫🇷 France (68)' });
+    await expect(page.locator('#gallery-container .gallery-card')).toHaveCount(68);
+    await expect(page.locator('#gallery-subtitle')).toHaveText(`68 portraits sur ${total}`);
+
+    await domaine.selectOption({ label: 'Sciences, techniques et innovation (109)' });
+    const sciencesFrance = await page.locator('#gallery-container .gallery-card').count();
+    expect(sciencesFrance).toBeGreaterThan(3);
+    expect(sciencesFrance).toBeLessThan(30);
+    await page.locator('#gallery-search').fill('curie');
+    await expect(page.locator('#gallery-container .gallery-card')).toHaveCount(1);
+
+    await page.locator('#gallery-reset').click();
+    await expect(pays).toHaveValue('');
+    await expect(domaine).toHaveValue('');
+    await expect(page.locator('#gallery-container .gallery-card')).toHaveCount(total);
+});
+
+test('la fiche passe au portrait voisin : boutons, flèches du clavier, et rien au-delà des extrémités', async ({ page }) => {
+    await ouvrirLaGalerie(page, 'chrono');
+    const cartes = page.locator('#gallery-container .gallery-card');
+    const total = await cartes.count();
+    await cartes.first().click();
+    await expect(page.locator('#modal-details')).toBeVisible();
+    const premier = await page.locator('#modal-titre').textContent();
+    await expect(page.locator('#modal-gallery-pos')).toHaveText(`1 sur ${total}`);
+    // Au début de la liste, pas de portrait précédent.
+    await expect(page.locator('#modal-gallery-prev')).toBeDisabled();
+    await expect(page.locator('#modal-gallery-next')).toBeEnabled();
+
+    await page.locator('#modal-gallery-next').click();
+    await expect(page.locator('#modal-gallery-pos')).toHaveText(`2 sur ${total}`);
+    const second = await page.locator('#modal-titre').textContent();
+    expect(second).not.toBe(premier);
+    // Le portrait de la fiche a bien changé, et chargé.
+    const portrait = page.locator('#modal-portrait-img');
+    await expect.poll(() => portrait.evaluate(img => img.complete ? img.naturalWidth : 0)).toBe(320);
+
+    await page.keyboard.press('ArrowRight');
+    await expect(page.locator('#modal-gallery-pos')).toHaveText(`3 sur ${total}`);
+    await page.keyboard.press('ArrowLeft');
+    await page.keyboard.press('ArrowLeft');
+    await expect(page.locator('#modal-titre')).toHaveText(premier);
+    await page.keyboard.press('ArrowLeft');
+    await expect(page.locator('#modal-gallery-pos')).toHaveText(`1 sur ${total}`);
+
+    // La fiche suit l'ordre et les filtres affichés, pas la base entière.
+    await page.locator('#modal-details .close-btn').click();
+    await page.locator('#gallery-search').fill('curie');
+    await expect(cartes).toHaveCount(1);
+    await cartes.first().click();
+    await expect(page.locator('#modal-gallery-pos')).toHaveText('1 sur 1');
+    await expect(page.locator('#modal-gallery-prev')).toBeDisabled();
+    await expect(page.locator('#modal-gallery-next')).toBeDisabled();
+});
+
+test('la barre de passage entre portraits n’apparaît que sur une fiche ouverte depuis la galerie', async ({ page }) => {
+    await openThemeById(page, PANTHEON);
+    await page.locator('#mode-card-discovery').click();
+    await page.locator('#timeline .entry', { hasText: 'Naissance de Victor Hugo' }).click();
+    await expect(page.locator('#modal-details')).toBeVisible();
+    await expect(page.locator('#modal-gallery-nav')).toBeHidden();
+});
+
+test('après une partie lancée depuis la galerie, on y revient, au même endroit, avec la même recherche', async ({ page }) => {
+    await ouvrirLaGalerie(page, 'famille');
+    await page.locator('#gallery-search').fill('victor');
+    await expect(page.locator('#gallery-container .gallery-card', { hasText: 'Victor Hugo' })).toHaveCount(1);
+    await page.locator('#gallery-container .gallery-card', { hasText: 'Victor Hugo' }).click();
+    await expect(page.locator('#modal-bio-btn')).toHaveText('Jouer sur sa biographie');
+
+    // Biographie : écran des axes, puis retour.
+    await page.locator('#modal-bio-btn').click();
+    await expect(page.locator('#screen-axes')).toBeVisible();
+    await page.locator('#screen-axes .back-btn').click();
+    await expect(page.locator('#screen-gallery')).toBeVisible();
+    await expect(page.locator('#gallery-search')).toHaveValue('victor');
+    await expect(page.locator('#gallery-order-toggle [data-order="famille"]')).toHaveAttribute('aria-pressed', 'true');
+
+    // Panthéon : axes, modes, puis retour depuis l'écran des modes.
+    await page.locator('#gallery-container .gallery-card', { hasText: 'Victor Hugo' }).click();
+    await page.locator('#modal-theme-btn').click();
+    await page.waitForSelector('#screen-axes:not(.hidden), #screen-modes:not(.hidden)');
+    if (await visibleScreen(page) === 'screen-axes') await page.locator('#axes-continue-btn').click();
+    await expect(page.locator('#screen-modes')).toBeVisible();
+    await remonterJusqueALaGalerie(page);
+    // La partie a écrasé la sélection de catégorie : la galerie est pourtant pleine,
+    // et son « ‹ » ramène à « Personnages illustres ».
+    await expect(page.locator('#gallery-container .gallery-card', { hasText: 'Victor Hugo' })).toHaveCount(1);
+    await page.locator('#screen-gallery .back-btn').click();
+    await expect(page.locator('#subcategory-screen-title')).toHaveText('Personnages illustres');
+});
+
+test('le retour de la galerie ne survit pas à un détour par les catégories', async ({ page }) => {
+    await ouvrirLaGalerie(page);
+    await page.locator('#gallery-container .gallery-card', { hasText: 'Victor Hugo' }).click();
+    await page.locator('#modal-theme-btn').click();
+    await page.waitForSelector('#screen-axes:not(.hidden), #screen-modes:not(.hidden)');
+    // On repart par l'arbre des catégories : le retour à la galerie est oublié.
+    await page.evaluate(() => showScreen('screen-categories'));
+    await page.evaluate(() => { openThemeAt(...(() => { const t = getAllThemesWithPath().find(x => x.theme.id === 'pan_fr'); return [t.ci, t.si, t.ti]; })()); });
+    await page.waitForSelector('#screen-axes:not(.hidden), #screen-modes:not(.hidden)');
+    if (await visibleScreen(page) === 'screen-axes') await page.locator('#axes-continue-btn').click();
+    await page.locator('#screen-modes .back-btn').click();
+    // Là où le parcours ordinaire ramène (les axes, ou les thèmes) — mais pas la galerie.
+    expect(['screen-axes', 'screen-themes']).toContain(await visibleScreen(page));
+});
+
+test('revenir d’une partie remet la galerie à la hauteur où on l’avait laissée', async ({ page }) => {
+    await ouvrirLaGalerie(page);
+    await page.evaluate(() => { document.getElementById('screen-gallery').scrollTop = 4000; });
+    const avant = await page.evaluate(() => document.getElementById('screen-gallery').scrollTop);
+    expect(avant).toBeGreaterThan(2000);
+    // Une carte visible à cette hauteur.
+    const carte = await page.evaluateHandle(() =>
+        [...document.querySelectorAll('#gallery-container .gallery-card')]
+            .find(c => { const r = c.getBoundingClientRect(); return r.top > 150 && r.bottom < innerHeight; }));
+    await carte.asElement().click();
+    const bouton = page.locator('#modal-theme-btn');
+    await bouton.click();
+    await page.waitForSelector('#screen-axes:not(.hidden), #screen-modes:not(.hidden)');
+    if (await visibleScreen(page) === 'screen-axes') await page.locator('#axes-continue-btn').click();
+    await remonterJusqueALaGalerie(page);
+    await expect.poll(() => page.evaluate(() => document.getElementById('screen-gallery').scrollTop)).toBeGreaterThan(avant - 200);
+});

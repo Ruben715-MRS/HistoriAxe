@@ -658,12 +658,26 @@
     "title": "肖像ギャラリー",
     "launcher_sub": "殿堂の{count}人の肖像を眺める",
     "order_alpha": "名前順",
+    "order_famille": "姓の順",
     "order_chrono": "年代順",
     "order_alpha_short": "名前順",
-    "order_chrono_short": "生年順",
+    "order_famille_short": "姓の順",
+    "order_chrono_short": "生年",
     "order_group": "表示順",
     "count": "{count}枚の肖像",
+    "count_filtered": "{total}枚中{count}枚の肖像",
     "empty": "肖像はまだありません。",
-    "play_biography": "伝記でプレイ"
+    "no_result": "該当する肖像がありません。別の名前を試すか、絞り込みを解除してください。",
+    "play_biography": "伝記でプレイ",
+    "search_placeholder": "人物を検索…",
+    "filter_country": "国",
+    "filter_axis": "分野",
+    "filter_country_all": "すべての国",
+    "filter_axis_all": "すべての分野",
+    "filter_reset": "すべて解除",
+    "nav_prev": "前の肖像",
+    "nav_next": "次の肖像",
+    "nav_position": "{total}枚中{n}枚目",
+    "count_filtered_one": "{total}枚中1枚の肖像"
   }
 }

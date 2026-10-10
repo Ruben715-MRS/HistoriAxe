@@ -658,12 +658,26 @@
     "title": "Galería de retratos",
     "launcher_sub": "{count} rostros de los Panteones para hojear",
     "order_alpha": "Orden alfabético",
+    "order_famille": "Por apellido",
     "order_chrono": "Orden cronológico",
     "order_alpha_short": "A → Z",
-    "order_chrono_short": "Por nacimiento",
+    "order_famille_short": "Apellido",
+    "order_chrono_short": "Nacimiento",
     "order_group": "Orden de visualización",
     "count": "{count} retratos",
+    "count_filtered": "{count} de {total} retratos",
     "empty": "Aún no hay retratos.",
-    "play_biography": "Jugar su biografía"
+    "no_result": "Ningún retrato coincide. Pruebe otro nombre o borre los filtros.",
+    "play_biography": "Jugar su biografía",
+    "search_placeholder": "Buscar un personaje…",
+    "filter_country": "País",
+    "filter_axis": "Ámbito",
+    "filter_country_all": "Todos los países",
+    "filter_axis_all": "Todos los ámbitos",
+    "filter_reset": "Borrar todo",
+    "nav_prev": "Retrato anterior",
+    "nav_next": "Retrato siguiente",
+    "nav_position": "{n} de {total}",
+    "count_filtered_one": "1 de {total} retratos"
   }
 }

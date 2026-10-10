@@ -6662,3 +6662,106 @@ input:not([type="range"]), label, select, summary, textarea {
     padding-top: 0;
     border-top: none;
 }
+
+/* Galerie : recherche, filtres, passage d'un portrait à l'autre ---------- */
+.gallery-search {
+    width: 100%;
+    max-width: 520px;
+    margin-bottom: 14px;
+}
+
+.gallery-filters {
+    width: 100%;
+    max-width: 640px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 10px 12px;
+    margin-bottom: 8px;
+}
+
+.gallery-filter {
+    flex: 1 1 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
+.gallery-filter-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--muted-text);
+}
+
+/* 16 px : en dessous, Safari sur iPhone zoome la page à la prise de focus. */
+.gallery-select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border-soft);
+    border-radius: 12px;
+    background: var(--surface);
+    color: var(--text-dark);
+    font: inherit;
+    font-size: 16px;
+}
+
+.gallery-reset {
+    padding: 10px 14px;
+    border: none;
+    background: transparent;
+    color: var(--primary-blue);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+:root[data-theme="dark"] .gallery-reset {
+    color: #9DC1FF;
+}
+
+.gallery-order-picker {
+    flex-wrap: wrap;
+}
+
+.gallery-order-toggle-btn {
+    padding: 8px 12px;
+}
+
+.modal-gallery-nav {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin: 0 36px 10px 0;
+}
+
+.modal-content.from-gallery .modal-gallery-nav {
+    display: flex;
+}
+
+.modal-gallery-nav-btn {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--border-soft);
+    border-radius: 50%;
+    background: var(--surface);
+    color: var(--text-dark);
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.modal-gallery-nav-btn:disabled {
+    opacity: 0.35;
+    cursor: default;
+}
+
+.modal-gallery-nav-pos {
+    flex: 1;
+    text-align: center;
+    font-size: 13px;
+    color: var(--muted-text);
+}
