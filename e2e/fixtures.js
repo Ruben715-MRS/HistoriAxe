@@ -54,6 +54,17 @@ const test = base.test.extend({
             try {
                 localStorage.setItem('historiaxe_onboarding_v1', JSON.stringify({ completed: true, shownSteps: [] }));
             } catch (e) { /* stockage indisponible : le tutoriel s'affichera, tant pis */ }
+            // La question « collectionner les portraits ? » est posée à la première ouverture de
+            // « Personnages illustres » ; sa fenêtre intercepterait les clics des parcours qui n'en
+            // parlent pas. Ils partent donc d'un choix déjà fait (en couleur) — sauf s'il l'est
+            // déjà, pour qu'un rechargement ne défasse pas le choix d'un test.
+            try {
+                const settings = JSON.parse(localStorage.getItem('historiaxe_settings') || '{}');
+                if (!('portraitCollection' in settings)) {
+                    settings.portraitCollection = 'color';
+                    localStorage.setItem('historiaxe_settings', JSON.stringify(settings));
+                }
+            } catch (e) { /* idem */ }
         });
 
         await page.goto('/index.html');

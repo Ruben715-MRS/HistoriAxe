@@ -384,7 +384,11 @@
     "size_kb": "{val} KB",
     "pack_full_suffix": "フル版",
     "pack_demo_suffix": "限定コンテンツ",
-    "pack_demo_content": "{themes}テーマ • {events}件のイベント"
+    "pack_demo_content": "{themes}テーマ • {events}件のイベント",
+    "portraits_label": "ギャラリーの肖像",
+    "portraits_bw": "コレクション",
+    "portraits_color": "常にカラー",
+    "portraits_hint": "コレクションモードでは、ゲームで人物に出会うまで肖像は白黒のままです。"
   },
   "anecdote": {
     "did_you_know": "💡 ご存知でしたか？",
@@ -678,6 +682,20 @@
     "nav_prev": "前の肖像",
     "nav_next": "次の肖像",
     "nav_position": "{total}枚中{n}枚目",
-    "count_filtered_one": "{total}枚中1枚の肖像"
+    "count_filtered_one": "{total}枚中1枚の肖像",
+    "collection_count": "{total}枚中{unlocked}枚の肖像を解放",
+    "collection_on_btn": "🎞️ 肖像を集める",
+    "collection_off_btn": "すべてカラーで見る",
+    "locked_aria": "ゲームでまだ出会っていません",
+    "modal_locked": "🔒 ゲームでまだ出会っていません：その殿堂でプレイしてカラーを解放しましょう。"
+  },
+  "collection": {
+    "title": "肖像を集めますか？",
+    "intro": "ギャラリーの肖像は、プレイを重ねるうちに手に入れることができます。ゲームで人物に出会うまで白黒のままで、出会うとカラーになります。進行や競争なしに、ただ学びたい場合は、すべてカラーのままにしてください。",
+    "bw_title": "🎞️ 肖像を解放する",
+    "bw_sub": "ゲームで出会うまで白黒。コレクションカウンター付き。",
+    "color_title": "🎨 すべてカラーで見る",
+    "color_sub": "進行なし：すべての肖像をすぐに表示。",
+    "hint": "この選択はいつでも、ギャラリーまたは設定から変更できます。"
   }
 }

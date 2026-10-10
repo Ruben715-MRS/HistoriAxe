@@ -411,7 +411,11 @@
     "size_kb": "{val} KB",
     "pack_full_suffix": "Full",
     "pack_demo_suffix": "Limited content",
-    "pack_demo_content": "{themes} themes • {events} events"
+    "pack_demo_content": "{themes} themes • {events} events",
+    "portraits_label": "Gallery portraits",
+    "portraits_bw": "Collection",
+    "portraits_color": "Always in colour",
+    "portraits_hint": "In collection mode, a portrait stays black and white until you have met the person in a game."
   },
   "anecdote": {
     "did_you_know": "💡 Did You Know?",
@@ -705,6 +709,20 @@
     "nav_prev": "Previous portrait",
     "nav_next": "Next portrait",
     "nav_position": "{n} of {total}",
-    "count_filtered_one": "1 of {total} portraits"
+    "count_filtered_one": "1 of {total} portraits",
+    "collection_count": "{unlocked} / {total} portraits unlocked",
+    "collection_on_btn": "🎞️ Collect the portraits",
+    "collection_off_btn": "See everything in colour",
+    "locked_aria": "not yet met in a game",
+    "modal_locked": "🔒 Not met in a game yet: play on their pantheon to unlock them in colour."
+  },
+  "collection": {
+    "title": "Collect the portraits?",
+    "intro": "The gallery's portraits can be earned as you play: each stays black and white until you have met the person in a game, then turns to colour. Prefer to simply learn, with no progress or competition? Keep everything in colour.",
+    "bw_title": "🎞️ Unlock my portraits",
+    "bw_sub": "Black and white until you meet the person in a game, with a collection counter.",
+    "color_title": "🎨 See everything in colour",
+    "color_sub": "No progress: every portrait, right away.",
+    "hint": "You can change this at any time, in the gallery or in Settings."
   }
 }

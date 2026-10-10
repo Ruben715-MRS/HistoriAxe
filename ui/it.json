@@ -384,7 +384,11 @@
     "size_kb": "{val} KB",
     "pack_full_suffix": "Completo",
     "pack_demo_suffix": "Contenuto limitato",
-    "pack_demo_content": "{themes} temi • {events} eventi"
+    "pack_demo_content": "{themes} temi • {events} eventi",
+    "portraits_label": "Ritratti della galleria",
+    "portraits_bw": "Collezione",
+    "portraits_color": "Sempre a colori",
+    "portraits_hint": "In modalità collezione, un ritratto resta in bianco e nero finché non avete incontrato il personaggio in gioco."
   },
   "anecdote": {
     "did_you_know": "💡 Lo sapevi che…?",
@@ -678,6 +682,20 @@
     "nav_prev": "Ritratto precedente",
     "nav_next": "Ritratto successivo",
     "nav_position": "{n} di {total}",
-    "count_filtered_one": "1 ritratto su {total}"
+    "count_filtered_one": "1 ritratto su {total}",
+    "collection_count": "{unlocked} / {total} ritratti sbloccati",
+    "collection_on_btn": "🎞️ Collezionare i ritratti",
+    "collection_off_btn": "Vedere tutto a colori",
+    "locked_aria": "non ancora incontrato in gioco",
+    "modal_locked": "🔒 Non ancora incontrato in gioco: giocate sul suo pantheon per sbloccarlo a colori."
+  },
+  "collection": {
+    "title": "Collezionare i ritratti?",
+    "intro": "I ritratti della galleria si possono guadagnare giocando: ognuno resta in bianco e nero finché non avete incontrato il personaggio in gioco, poi diventa a colori. Preferite semplicemente istruirvi, senza progressione né competizione? Tenete tutto a colori.",
+    "bw_title": "🎞️ Sbloccare i miei ritratti",
+    "bw_sub": "Bianco e nero fino all'incontro in gioco, con un contatore di collezione.",
+    "color_title": "🎨 Vedere tutto a colori",
+    "color_sub": "Nessuna progressione: tutti i ritratti, subito.",
+    "hint": "Potete cambiare questa scelta in qualsiasi momento, nella galleria o nelle Impostazioni."
   }
 }

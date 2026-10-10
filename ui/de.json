@@ -384,7 +384,11 @@
     "size_kb": "{val} KB",
     "pack_full_suffix": "Vollständig",
     "pack_demo_suffix": "Eingeschränkter Inhalt",
-    "pack_demo_content": "{themes} Themen • {events} Ereignisse"
+    "pack_demo_content": "{themes} Themen • {events} Ereignisse",
+    "portraits_label": "Porträts der Galerie",
+    "portraits_bw": "Sammlung",
+    "portraits_color": "Immer in Farbe",
+    "portraits_hint": "Im Sammlungsmodus bleibt ein Porträt schwarz-weiß, bis Sie der Person im Spiel begegnet sind."
   },
   "anecdote": {
     "did_you_know": "💡 Wussten Sie schon?",
@@ -678,6 +682,20 @@
     "nav_prev": "Vorheriges Porträt",
     "nav_next": "Nächstes Porträt",
     "nav_position": "{n} von {total}",
-    "count_filtered_one": "1 von {total} Porträts"
+    "count_filtered_one": "1 von {total} Porträts",
+    "collection_count": "{unlocked} / {total} Porträts freigeschaltet",
+    "collection_on_btn": "🎞️ Porträts sammeln",
+    "collection_off_btn": "Alles in Farbe sehen",
+    "locked_aria": "noch nicht im Spiel begegnet",
+    "modal_locked": "🔒 Noch nicht im Spiel begegnet: Spielen Sie in seinem Pantheon, um es in Farbe freizuschalten."
+  },
+  "collection": {
+    "title": "Porträts sammeln?",
+    "intro": "Die Porträts der Galerie lassen sich im Lauf Ihrer Spiele freischalten: Jedes bleibt schwarz-weiß, bis Sie der Person im Spiel begegnet sind, und wird dann farbig. Sie möchten sich lieber einfach bilden, ohne Fortschritt und Wettbewerb? Behalten Sie alles in Farbe.",
+    "bw_title": "🎞️ Meine Porträts freischalten",
+    "bw_sub": "Schwarz-weiß, bis Sie der Person im Spiel begegnen, mit Sammlungszähler.",
+    "color_title": "🎨 Alles in Farbe sehen",
+    "color_sub": "Kein Fortschritt: alle Porträts sofort.",
+    "hint": "Sie können das jederzeit ändern, in der Galerie oder in den Einstellungen."
   }
 }

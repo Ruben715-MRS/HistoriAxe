@@ -414,7 +414,11 @@
     "size_kb": "{val} Ko",
     "pack_full_suffix": "Intégral",
     "pack_demo_suffix": "Contenu limité",
-    "pack_demo_content": "{themes} thèmes • {events} événements"
+    "pack_demo_content": "{themes} thèmes • {events} événements",
+    "portraits_label": "Portraits de la galerie",
+    "portraits_bw": "Collection",
+    "portraits_color": "Toujours en couleur",
+    "portraits_hint": "En mode collection, un portrait reste en noir et blanc tant que vous n'avez pas rencontré le personnage en jeu."
   },
   "anecdote": {
     "did_you_know": "💡 Le Saviez-vous ?",
@@ -708,6 +712,20 @@
     "nav_prev": "Portrait précédent",
     "nav_next": "Portrait suivant",
     "nav_position": "{n} sur {total}",
-    "count_filtered_one": "1 portrait sur {total}"
+    "count_filtered_one": "1 portrait sur {total}",
+    "collection_count": "{unlocked} / {total} portraits débloqués",
+    "collection_on_btn": "🎞️ Collectionner les portraits",
+    "collection_off_btn": "Tout voir en couleur",
+    "locked_aria": "pas encore rencontré en jeu",
+    "modal_locked": "🔒 Pas encore rencontré en jeu : jouez sur son panthéon pour le débloquer en couleur."
+  },
+  "collection": {
+    "title": "Collectionner les portraits ?",
+    "intro": "Les portraits de la galerie peuvent se gagner au fil de vos parties : chacun reste en noir et blanc tant que vous n'avez pas rencontré le personnage en jeu, puis passe en couleur. Vous préférez simplement vous instruire, sans progression ni compétition ? Gardez tout en couleur.",
+    "bw_title": "🎞️ Débloquer mes portraits",
+    "bw_sub": "Noir et blanc jusqu'à la rencontre en jeu, avec un compteur de collection.",
+    "color_title": "🎨 Tout voir en couleur",
+    "color_sub": "Aucune progression : tous les portraits, tout de suite.",
+    "hint": "Ce choix se change à tout moment, dans la galerie ou dans les Réglages."
   }
 }

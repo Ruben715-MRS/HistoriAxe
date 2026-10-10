@@ -100,6 +100,10 @@ function renderSettingsUI() {
     document.querySelectorAll('#settings-haptics button').forEach(btn => {
         btn.classList.toggle('active', (btn.dataset.value === 'on') === appSettings.haptics);
     });
+    document.querySelectorAll('#settings-portraits button').forEach(btn => {
+        // Tant que la question n'a pas été posée, les portraits sont en couleur.
+        btn.classList.toggle('active', btn.dataset.value === (appSettings.portraitCollection || 'color'));
+    });
     document.querySelectorAll('#settings-notifications button').forEach(btn => {
         btn.classList.toggle('active', (btn.dataset.value === 'on') === appSettings.notifications);
     });
@@ -137,6 +141,12 @@ function initSettingsControls() {
             appSettings.sound = (btn.dataset.value === 'on');
             settingsSave(appSettings);
             if (appSettings.sound) playCorrectSound(1.0);
+            renderSettingsUI();
+        };
+    });
+    document.querySelectorAll('#settings-portraits button').forEach(btn => {
+        btn.onclick = () => {
+            setPortraitCollection(btn.dataset.value);
             renderSettingsUI();
         };
     });
@@ -1747,6 +1757,9 @@ function initCategories() {
                 showScreen('screen-themes', 'forward');
             } else {
                 showScreen('screen-subcategories', 'forward');
+                // Première ouverture de « Personnages illustres » : on demande si les portraits
+                // se collectionnent (voir js/gallery.js).
+                maybeAskPortraitCollection(cat);
             }
         };
         A11y.activatable(card);
@@ -5525,7 +5538,10 @@ function openModal(evt, context = null) {
     renderModalBiographyButton(evt, fromGallery);
     // La galerie réunit ses deux boutons sous un même filet (voir CSS
     // .modal-content.from-gallery).
-    document.querySelector('#modal-details .modal-content').classList.toggle('from-gallery', fromGallery);
+    const modalContent = document.querySelector('#modal-details .modal-content');
+    modalContent.classList.toggle('from-gallery', fromGallery);
+    // Collection : un personnage pas encore rencontré garde son portrait en noir et blanc (voir js/gallery.js).
+    modalContent.classList.toggle('from-gallery-locked', fromGallery && !!context.locked);
 
     const themeRow = document.getElementById('modal-theme-row');
     const redrawBtn = document.getElementById('modal-redraw-btn');

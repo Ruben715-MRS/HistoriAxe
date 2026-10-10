@@ -16,7 +16,7 @@ const path = require('node:path');
 
 const {
     galleryNameOf, galleryCountryOf, findPantheonNode, galleryNormalize, galleryInitial,
-    filterGalleryEntries, compareGalleryEntries
+    filterGalleryEntries, compareGalleryEntries, galleryUnlockedCount
 } = require('../js/gallery.js');
 
 const fr = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data', 'fr.json'), 'utf8'));
@@ -113,4 +113,16 @@ test('les filtres par pays et par domaine se combinent avec la recherche', () =>
     assert.deepEqual(both.map(e => e.evt.titre), ['Naissance de Marie Curie']);
     // Un pays de bloc passe par le champ `pays` de l'événement.
     assert.ok(filterGalleryEntries(entries, { country: 'VE' }).some(e => e.evt.titre === 'Naissance de Simón Bolívar'));
+});
+
+test('un portrait est débloqué dès que le suivi de révision a une fiche pour son événement', () => {
+    const hugo = byTitle('Naissance de Victor Hugo');
+    const piaf = byTitle('Naissance d\'Édith Piaf');
+    assert.equal(galleryUnlockedCount(entries, {}), 0);
+    assert.equal(galleryUnlockedCount(entries, null), 0);
+    assert.equal(galleryUnlockedCount(entries, { [hugo.evt.id]: { box: 1 } }), 1);
+    // Une réponse ratée est aussi une rencontre : la fiche existe, à la boîte 1.
+    assert.equal(galleryUnlockedCount(entries, { [hugo.evt.id]: { box: 1, failCount: 3 }, [piaf.evt.id]: { box: 4 } }), 2);
+    // Une fiche pour un événement hors galerie (un thème d'histoire) ne compte pas.
+    assert.equal(galleryUnlockedCount(entries, { thm_aut_quelquechose: { box: 2 } }), 0);
 });

@@ -41,11 +41,19 @@ async function parcourirLesEcrans(page, surChaqueEcran) {
     await page.evaluate(() => { const ci = bdd.findIndex(c => c.subcategories); selectedCategoryIndex = ci; selectedSubcategoryIndex = null; showScreen('screen-subcategories'); }); await surChaqueEcran('sous-catégories');
     // Personnages illustres : le bouton de la galerie et ses trois ordres, la galerie, une fiche ouverte de là.
     await page.evaluate(() => { selectedCategoryIndex = bdd.findIndex(c => c.nom === 'Personnages illustres'); selectedSubcategoryIndex = []; showScreen('screen-subcategories'); }); await surChaqueEcran('personnages illustres');
+    await page.evaluate(() => document.getElementById('modal-collection').classList.remove('hidden')); await surChaqueEcran('choix de la collection de portraits');
+    await page.locator('#modal-collection .close-btn').click();
     await page.locator('#btn-gallery').click(); await surChaqueEcran('galerie : choix de l’ordre');
     await page.locator('#gallery-order-picker [data-order="famille"]').click();
     await page.waitForSelector('#gallery-container .gallery-card'); await surChaqueEcran('galerie des portraits');
     await page.locator('#gallery-container .gallery-card').first().click(); await surChaqueEcran('fiche ouverte depuis la galerie');
     await page.locator('#modal-details .close-btn').click();
+    // Mode collection : cartes en noir et blanc, compteur, fiche d'un personnage pas encore rencontré.
+    await page.evaluate(() => { appSettings.portraitCollection = 'bw'; settingsSave(appSettings); initGallery(); });
+    await surChaqueEcran('galerie en mode collection');
+    await page.locator('#gallery-container .gallery-card').first().click(); await surChaqueEcran('fiche d’un portrait à débloquer');
+    await page.locator('#modal-details .close-btn').click();
+    await page.evaluate(() => { appSettings.portraitCollection = 'color'; settingsSave(appSettings); });
     await page.evaluate(() => { const ci = bdd.findIndex(c => (c.themes || []).length); selectedCategoryIndex = ci; selectedSubcategoryIndex = null; showScreen('screen-themes'); }); await surChaqueEcran('thèmes');
 
     await openThemeCard(page, 'thm_aut'); await surChaqueEcran('axes');

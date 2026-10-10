@@ -47,7 +47,13 @@ const DEFAULT_SETTINGS = {
     // de la base étaient précisément les moins jouables. 20 passe au-dessus
     // de la médiane (la majorité des thèmes ne bouge donc pas) tout en
     // bornant les gros, et « Tout » reste à un tap sur l'écran des modes.
-    roundLength: 20
+    roundLength: 20,
+    // Portraits de la galerie (js/gallery.js) : 'bw' = en noir et blanc tant que le
+    // personnage n'a pas été rencontré en jeu, avec un compteur de collection ;
+    // 'color' = tous en couleur, sans progression. null = la question n'a pas encore
+    // été posée : elle l'est à la première ouverture de « Personnages illustres »,
+    // parce que certains joueurs veulent s'instruire sans progression ni compétition.
+    portraitCollection: null
 };
 
 // Longueurs proposées, dans l'ordre d'affichage. 0 = le thème entier, et

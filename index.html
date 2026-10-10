@@ -231,6 +231,18 @@
             data-i18n-attr="aria-label:nav.back">‹</button>
         <h2 class="header-title gallery-header-title" data-i18n="gallery.title">Galerie des portraits</h2>
         <p class="gallery-subtitle" id="gallery-subtitle"></p>
+        <!-- Collection (voir js/gallery.js) : compteur et barre de progression quand les portraits
+             se débloquent au fil des parties ; sinon, un simple accès pour l'activer. -->
+        <div class="gallery-collection" id="gallery-collection">
+            <div class="gallery-collection-meter hidden" id="gallery-collection-meter">
+                <span class="gallery-collection-count" id="gallery-collection-count"></span>
+                <div class="gallery-collection-bar" id="gallery-collection-bar" role="progressbar" aria-valuemin="0"
+                    aria-valuemax="100" aria-valuenow="0" aria-labelledby="gallery-collection-count">
+                    <span class="gallery-collection-fill" id="gallery-collection-fill"></span>
+                </div>
+            </div>
+            <button type="button" class="gallery-collection-toggle" id="gallery-collection-toggle"></button>
+        </div>
         <div class="gallery-search search-bar">
             <span class="search-bar-icon" aria-hidden="true">🔍</span>
             <input type="search" id="gallery-search" class="search-bar-input" placeholder="Rechercher un personnage…"
@@ -1082,6 +1094,8 @@
                     <span id="modal-portrait-credit" class="modal-portrait-credit"></span>
                 </figcaption>
             </figure>
+            <p class="modal-gallery-lock" id="modal-gallery-lock" data-i18n="gallery.modal_locked">🔒 Pas encore rencontré en
+                jeu : jouez sur son panthéon pour le débloquer en couleur.</p>
             <div class="modal-desc" id="modal-desc">Description explicative.</div>
             <a href="#" target="_blank" class="modal-link" id="modal-wiki" data-i18n="modal.wiki_link">Voir sur
                 Wikipédia</a>
@@ -1454,6 +1468,33 @@
     </div>
 
     <!-- MODAL RÉGLAGES -->
+    <!-- CHOIX DE LA COLLECTION DE PORTRAITS : posé une seule fois, à la première ouverture de « Personnages
+         illustres » (voir js/gallery.js: maybeAskPortraitCollection). Pas de fermeture par le fond : un
+         appui égaré ne doit pas décider à la place du joueur. La croix et Échap valent « tout en couleur ». -->
+    <div id="modal-collection" class="modal-overlay hidden">
+        <div class="modal-content" style="max-width:440px;">
+            <span class="close-btn" role="button" tabindex="0" aria-label="Fermer"
+                data-i18n-attr="aria-label:nav.close" onclick="chooseCollection('color')">×</span>
+            <h2 class="modal-title" data-i18n="collection.title">Collectionner les portraits ?</h2>
+            <p class="collection-intro" data-i18n="collection.intro">Les portraits de la galerie peuvent se gagner au
+                fil de vos parties : chacun reste en noir et blanc tant que vous n'avez pas rencontré le personnage
+                en jeu, puis passe en couleur. Vous préférez simplement vous instruire, sans progression ni
+                compétition ? Gardez tout en couleur.</p>
+            <button type="button" class="collection-choice" data-choice="bw" onclick="chooseCollection('bw')">
+                <span class="collection-choice-title" data-i18n="collection.bw_title">🎞️ Débloquer mes portraits</span>
+                <span class="collection-choice-sub" data-i18n="collection.bw_sub">Noir et blanc jusqu'à la rencontre en
+                    jeu, avec un compteur de collection.</span>
+            </button>
+            <button type="button" class="collection-choice" data-choice="color" onclick="chooseCollection('color')">
+                <span class="collection-choice-title" data-i18n="collection.color_title">🎨 Tout voir en couleur</span>
+                <span class="collection-choice-sub" data-i18n="collection.color_sub">Aucune progression : tous les
+                    portraits, tout de suite.</span>
+            </button>
+            <p class="settings-hint" data-i18n="collection.hint">Ce choix se change à tout moment, dans la galerie ou
+                dans les Réglages.</p>
+        </div>
+    </div>
+
     <div id="modal-settings" class="modal-overlay hidden" onclick="if(event.target===this)closeSettings()">
         <div class="modal-content" style="max-width:420px;">
             <span class="close-btn" role="button" tabindex="0" aria-label="Fermer"
@@ -1502,6 +1543,16 @@
                 </div>
                 <p class="settings-hint" data-i18n="settings.haptics_hint">Retours tactiles lors des interactions,
                     bonnes réponses et erreurs.</p>
+            </div>
+
+            <div class="settings-group">
+                <div class="settings-label" data-i18n="settings.portraits_label">Portraits de la galerie</div>
+                <div class="segmented" id="settings-portraits">
+                    <button type="button" data-value="bw" data-i18n="settings.portraits_bw">Collection</button>
+                    <button type="button" data-value="color" data-i18n="settings.portraits_color">Toujours en couleur</button>
+                </div>
+                <p class="settings-hint" data-i18n="settings.portraits_hint">En mode collection, un portrait reste en
+                    noir et blanc tant que vous n'avez pas rencontré le personnage en jeu.</p>
             </div>
 
             <div class="settings-group hidden" id="settings-group-notifications">

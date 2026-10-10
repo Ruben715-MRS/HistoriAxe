@@ -584,9 +584,14 @@ async function remonterJusqueALaGalerie(page) {
     await expect(page.locator('#screen-gallery')).toBeVisible();
 }
 
+// L'accueil se quitte d'un appui ; déjà quitté, on ne clique pas dans le vide.
+async function quitterLAccueil(page) {
+    if (await page.locator('#screen-home').isVisible()) await page.locator('#screen-home').click();
+}
+
 // Galerie : ouverture directe, pour les tests qui ne portent pas sur le bouton.
 async function ouvrirLaGalerie(page, ordre = 'alpha') {
-    await page.locator('#screen-home').click();
+    await quitterLAccueil(page);
     const index = await page.evaluate(() => bdd.findIndex(c => c.nom === 'Personnages illustres'));
     await page.locator('#cat-grid > div').nth(index).click();
     await page.locator('#btn-gallery').click();
@@ -771,4 +776,169 @@ test('revenir d’une partie remet la galerie à la hauteur où on l’avait lai
     if (await visibleScreen(page) === 'screen-axes') await page.locator('#axes-continue-btn').click();
     await remonterJusqueALaGalerie(page);
     await expect.poll(() => page.evaluate(() => document.getElementById('screen-gallery').scrollTop)).toBeGreaterThan(avant - 200);
+});
+
+
+// ---- Collection de portraits : noir et blanc jusqu'à la rencontre en jeu --------------------------
+
+// La première visite : la question n'a pas encore été posée (les tests partent d'un choix déjà fait,
+// voir e2e/fixtures.js).
+async function premiereVisite(page) {
+    await page.evaluate(() => { appSettings.portraitCollection = null; settingsSave(appSettings); });
+}
+
+async function ouvrirPersonnagesIllustres(page) {
+    await quitterLAccueil(page);
+    const index = await page.evaluate(() => bdd.findIndex(c => c.nom === 'Personnages illustres'));
+    await page.locator('#cat-grid > div').nth(index).click();
+}
+
+const reglage = page => page.evaluate(() => appSettings.portraitCollection);
+
+test('à la première ouverture de « Personnages illustres », on demande si les portraits se collectionnent — une seule fois', async ({ page }) => {
+    await quitterLAccueil(page);
+    await premiereVisite(page);
+    await ouvrirPersonnagesIllustres(page);
+    const fenetre = page.locator('#modal-collection');
+    await expect(fenetre).toBeVisible();
+    await expect(fenetre.locator('h2')).toHaveText('Collectionner les portraits ?');
+    await expect(fenetre.locator('.collection-choice')).toHaveText([/Débloquer mes portraits/, /Tout voir en couleur/]);
+    // Le texte dit que l'on peut s'instruire sans progression, et que le choix se change.
+    await expect(fenetre).toContainText('sans progression ni compétition');
+    await expect(fenetre).toContainText('se change à tout moment');
+
+    await fenetre.locator('[data-choice="bw"]').click();
+    await expect(fenetre).toBeHidden();
+    expect(await reglage(page)).toBe('bw');
+    // Le bouton de la galerie annonce l'avancement, dès le premier instant.
+    await expect(page.locator('#btn-gallery .gallery-launcher-sub')).toHaveText('0 / 838 portraits débloqués');
+
+    // On ne repose pas la question.
+    await page.locator('#screen-subcategories .back-btn').click();
+    await ouvrirPersonnagesIllustres(page);
+    await expect(page.locator('#screen-subcategories')).toBeVisible();
+    await expect(fenetre).toBeHidden();
+});
+
+test('la croix et Échap répondent « tout en couleur », sans que la question revienne', async ({ page }) => {
+    await quitterLAccueil(page);
+    await premiereVisite(page);
+    await ouvrirPersonnagesIllustres(page);
+    await expect(page.locator('#modal-collection')).toBeVisible();
+    await page.locator('#modal-collection .close-btn').click();
+    await expect(page.locator('#modal-collection')).toBeHidden();
+    expect(await reglage(page)).toBe('color');
+
+    await page.evaluate(() => { appSettings.portraitCollection = null; settingsSave(appSettings); });
+    await page.locator('#screen-subcategories .back-btn').click();
+    await ouvrirPersonnagesIllustres(page);
+    await expect(page.locator('#modal-collection')).toBeVisible();
+    await page.keyboard.press('Escape');
+    await expect(page.locator('#modal-collection')).toBeHidden();
+    expect(await reglage(page)).toBe('color');
+});
+
+test('la question n’est pas posée ailleurs que dans « Personnages illustres »', async ({ page }) => {
+    await page.locator('#screen-home').click();
+    await premiereVisite(page);
+    const autre = await page.evaluate(() => bdd.findIndex(c => c.subcategories && !c.subcategories.some(s => s.nom === 'Panthéons')));
+    expect(autre).toBeGreaterThanOrEqual(0);
+    await page.locator('#cat-grid > div').nth(autre).click();
+    await expect(page.locator('#modal-collection')).toBeHidden();
+    expect(await reglage(page)).toBeNull();
+});
+
+test('en mode collection, les portraits sont en noir et blanc jusqu’à la rencontre, et le compteur avance', async ({ page }) => {
+    await quitterLAccueil(page);
+    await page.evaluate(() => { appSettings.portraitCollection = 'bw'; settingsSave(appSettings); localStorage.removeItem('historiaxe_srs_v1'); });
+    await ouvrirLaGalerie(page);
+    const cartes = page.locator('#gallery-container .gallery-card');
+    const total = await cartes.count();
+    await expect(page.locator('#gallery-collection-count')).toHaveText(`0 / ${total} portraits débloqués`);
+    await expect(page.locator('#gallery-collection-bar')).toHaveAttribute('aria-valuenow', '0');
+    await expect(page.locator('#gallery-container .gallery-card.is-locked')).toHaveCount(total);
+    // Le noir et blanc est réel, pas seulement une classe.
+    const filtre = await cartes.first().locator('img').evaluate(img => getComputedStyle(img).filter);
+    expect(filtre).toContain('grayscale(1)');
+    await expect(cartes.first()).toHaveAttribute('aria-label', /pas encore rencontré en jeu/);
+
+    // Rencontrer Victor Hugo en jeu le débloque ; on revient à la galerie, qui se redessine.
+    await page.evaluate(() => {
+        const hugo = getAllThemesWithPath().flatMap(i => i.theme.events || []).find(e => e.titre === 'Naissance de Victor Hugo');
+        srsRecord(hugo.id, false); // une réponse ratée est aussi une rencontre
+        showScreen('screen-gallery');
+    });
+    await expect(page.locator('#gallery-collection-count')).toHaveText(`1 / ${total} portraits débloqués`);
+    await expect(page.locator('#gallery-container .gallery-card.is-locked')).toHaveCount(total - 1);
+    await expect(page.locator('.gallery-card', { hasText: 'Victor Hugo' })).not.toHaveClass(/is-locked/);
+    await expect(page.locator('.gallery-card', { hasText: 'Victor Hugo' })).not.toHaveAttribute('aria-label', /pas encore rencontré/);
+});
+
+test('la fiche d’un personnage pas encore rencontré garde son portrait en noir et blanc et dit comment le débloquer', async ({ page }) => {
+    await quitterLAccueil(page);
+    await page.evaluate(() => { appSettings.portraitCollection = 'bw'; settingsSave(appSettings); localStorage.removeItem('historiaxe_srs_v1'); });
+    await ouvrirLaGalerie(page);
+    await page.locator('.gallery-card', { hasText: 'Victor Hugo' }).click();
+    await expect(page.locator('#modal-gallery-lock')).toBeVisible();
+    await expect(page.locator('#modal-gallery-lock')).toContainText('Pas encore rencontré en jeu');
+    expect(await page.locator('#modal-portrait-img').evaluate(img => getComputedStyle(img).filter)).toContain('grayscale(1)');
+    // Les boutons de jeu restent : c'est ainsi qu'on le débloque.
+    await expect(page.locator('#modal-theme-btn')).toBeVisible();
+
+    // Une fois rencontré, la fiche est en couleur et la mention disparaît.
+    await page.locator('#modal-details .close-btn').click();
+    await page.evaluate(() => {
+        const hugo = getAllThemesWithPath().flatMap(i => i.theme.events || []).find(e => e.titre === 'Naissance de Victor Hugo');
+        srsRecord(hugo.id, true);
+    });
+    await page.locator('.gallery-card', { hasText: 'Victor Hugo' }).click();
+    await expect(page.locator('#modal-gallery-lock')).toBeHidden();
+    expect(await page.locator('#modal-portrait-img').evaluate(img => getComputedStyle(img).filter)).toBe('none');
+});
+
+test('hors mode collection, tout est en couleur et aucun compteur ne s’affiche', async ({ page }) => {
+    await ouvrirLaGalerie(page);
+    await expect(page.locator('#gallery-collection-meter')).toBeHidden();
+    await expect(page.locator('#gallery-container .gallery-card.is-locked')).toHaveCount(0);
+    await expect(page.locator('#gallery-collection-toggle')).toHaveText('🎞️ Collectionner les portraits');
+    await page.locator('.gallery-card').first().click();
+    await expect(page.locator('#modal-gallery-lock')).toBeHidden();
+});
+
+test('le réglage se change depuis la galerie et depuis les Réglages, et chacun suit l’autre', async ({ page }) => {
+    await ouvrirLaGalerie(page);
+    const total = await page.locator('#gallery-container .gallery-card').count();
+    await page.locator('#gallery-collection-toggle').click();
+    expect(await reglage(page)).toBe('bw');
+    await expect(page.locator('#gallery-collection-meter')).toBeVisible();
+    await expect(page.locator('#gallery-container .gallery-card.is-locked')).toHaveCount(total);
+    await expect(page.locator('#gallery-collection-toggle')).toHaveText('Tout voir en couleur');
+
+    await page.evaluate(() => openSettings());
+    await expect(page.locator('#settings-portraits button[data-value="bw"]')).toHaveClass(/active/);
+    await page.locator('#settings-portraits button[data-value="color"]').click();
+    expect(await reglage(page)).toBe('color');
+    await expect(page.locator('#settings-portraits button[data-value="color"]')).toHaveClass(/active/);
+    // La galerie, derrière la fenêtre, a suivi.
+    await expect(page.locator('#gallery-container .gallery-card.is-locked')).toHaveCount(0);
+    await expect(page.locator('#gallery-collection-meter')).toBeHidden();
+});
+
+test('une vraie partie débloque les portraits des personnages rencontrés', async ({ page }) => {
+    await quitterLAccueil(page);
+    await page.evaluate(() => { appSettings.portraitCollection = 'bw'; settingsSave(appSettings); localStorage.removeItem('historiaxe_srs_v1'); });
+    await openThemeById(page, PANTHEON);
+    await page.locator('.quiz-card').click();
+    await expect(page.locator('#screen-quiz')).toBeVisible();
+    await page.locator('#quiz-options .quiz-option').first().click();
+    const rencontres = await page.evaluate(() => Object.keys(srsLoad()).length);
+    expect(rencontres).toBeGreaterThanOrEqual(1);
+
+    // De retour à la galerie par le chemin de l'arbre, le compteur a avancé.
+    await page.evaluate(() => {
+        selectedCategoryIndex = bdd.findIndex(c => c.nom === 'Personnages illustres');
+        selectedSubcategoryIndex = [];
+        openGallery('alpha');
+    });
+    await expect(page.locator('#gallery-collection-count')).toHaveText(new RegExp(`^${rencontres} / \\d+ portraits débloqués$`));
 });

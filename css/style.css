@@ -6677,12 +6677,12 @@ input:not([type="range"]), label, select, summary, textarea {
     flex-wrap: wrap;
     align-items: flex-end;
     justify-content: center;
-    gap: 10px 12px;
-    margin-bottom: 8px;
+    gap: 8px 10px;
+    margin-bottom: 4px;
 }
 
 .gallery-filter {
-    flex: 1 1 200px;
+    flex: 1 1 140px;
     display: flex;
     flex-direction: column;
     gap: 4px;
@@ -6764,4 +6764,147 @@ input:not([type="range"]), label, select, summary, textarea {
     text-align: center;
     font-size: 13px;
     color: var(--muted-text);
+}
+
+/* Collection de portraits : noir et blanc jusqu'à la rencontre en jeu ------ */
+.gallery-card.is-locked .gallery-card-img {
+    filter: grayscale(1);
+    opacity: 0.88;
+}
+
+.gallery-collection {
+    width: 100%;
+    max-width: 520px;
+    margin-bottom: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.gallery-collection-meter {
+    width: 100%;
+}
+
+.gallery-collection-count {
+    display: block;
+    margin-bottom: 6px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.gallery-collection-bar {
+    height: 8px;
+    border-radius: 999px;
+    background: var(--border-soft);
+    overflow: hidden;
+}
+
+.gallery-collection-fill {
+    display: block;
+    height: 100%;
+    width: 0;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #C9A24A, #85631F);
+    transition: width 0.4s ease;
+}
+
+.gallery-collection-toggle {
+    padding: 6px 10px;
+    border: none;
+    background: transparent;
+    color: var(--primary-blue);
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+:root[data-theme="dark"] .gallery-collection-toggle {
+    color: #9DC1FF;
+}
+
+.collection-intro {
+    margin: 4px 0 6px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--text-dark);
+}
+
+.collection-choice {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+    margin-top: 10px;
+    padding: 14px 16px;
+    border: 2px solid var(--border-soft);
+    border-radius: 16px;
+    background: var(--surface);
+    color: var(--text-dark);
+    text-align: left;
+    cursor: pointer;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.collection-choice:hover {
+    border-color: #C9A24A;
+    transform: translateY(-1px);
+}
+
+.collection-choice-title {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.collection-choice-sub {
+    font-size: 13px;
+    line-height: 1.4;
+    color: var(--muted-text);
+}
+
+/* Fiche d'un personnage pas encore rencontré : portrait en noir et blanc, et la façon de le débloquer. */
+.modal-gallery-lock {
+    display: none;
+    margin: 4px 0 10px;
+    padding: 8px 12px;
+    border-radius: 12px;
+    background: var(--selected-tint);
+    color: var(--text-dark);
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.modal-content.from-gallery-locked .modal-gallery-lock {
+    display: block;
+}
+
+.modal-content.from-gallery-locked .modal-portrait-img {
+    filter: grayscale(1);
+}
+
+/* L'en-tête de la galerie reste bas : les visages sont ce qu'on vient voir, et sur un téléphone
+   chaque ligne de commandes repousse la première carte sous le pli. */
+.gallery-header-title {
+    font-size: 22px;
+    margin-top: 12px;
+    margin-bottom: 6px;
+}
+
+#screen-gallery .gallery-subtitle {
+    margin: 0 0 10px;
+}
+
+#screen-gallery .gallery-search {
+    margin-bottom: 10px;
+}
+
+#screen-gallery .gallery-order-toggle {
+    margin-bottom: 12px;
+}
+
+#screen-gallery .gallery-collection {
+    margin-bottom: 8px;
 }

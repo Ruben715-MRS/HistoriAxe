@@ -79,6 +79,18 @@ function galleryInitial(text) {
     return /[A-Z]/.test(first) ? first : '#';
 }
 
+// Collection : un portrait se débloque quand le personnage a été rencontré en jeu, c'est-à-dire
+// quand le suivi de révision (srsLoad) a une fiche pour son événement — la même définition que
+// « événements rencontrés » du Défi de simultanéité. Lire une fiche dans la galerie n'y compte pas.
+function galleryUnlockedCount(entries, srs) {
+    return entries.filter(entry => srs && srs[entry.evt.id]).length;
+}
+
+// 'bw' : portraits en noir et blanc jusqu'à la rencontre, avec un compteur ; sinon tout en couleur.
+function portraitCollectionOn() {
+    return typeof appSettings !== 'undefined' && appSettings.portraitCollection === 'bw';
+}
+
 // Toutes les figures à portrait des panthéons de `pantheon`, avec de quoi
 // rouvrir leur thème (ci/si/ti, au format d'openThemeAt).
 function collectGalleryEntries(pantheon) {
@@ -145,7 +157,8 @@ function sortGalleryEntries(entries, order) {
 // sous-catégories. Volontairement différent des tuiles (pleine largeur, teinte
 // dorée de cadre de musée) : ce n'est ni une catégorie ni un mode de jeu.
 function buildGalleryLauncher(pantheon) {
-    const count = collectGalleryEntries(pantheon).length;
+    const all = collectGalleryEntries(pantheon);
+    const count = all.length;
     if (count === 0) return null;
     const wrap = document.createElement('div');
     wrap.className = 'gallery-launcher';
@@ -174,7 +187,10 @@ function buildGalleryLauncher(pantheon) {
         </div>
     `;
     wrap.querySelector('.gallery-launcher-title').textContent = t('gallery.title');
-    wrap.querySelector('.gallery-launcher-sub').textContent = t('gallery.launcher_sub', { count });
+    // En mode collection, le bouton annonce l'avancement plutôt que le nombre de visages.
+    wrap.querySelector('.gallery-launcher-sub').textContent = portraitCollectionOn()
+        ? t('gallery.collection_count', { unlocked: galleryUnlockedCount(all, srsLoad()), total: count })
+        : t('gallery.launcher_sub', { count });
     wrap.querySelectorAll('.gallery-order-picker .challenge-picker-btn').forEach(b => {
         b.lastElementChild.textContent = t('gallery.order_' + b.dataset.order);
         b.onclick = () => openGallery(b.dataset.order);
@@ -273,6 +289,7 @@ function initGallery() {
     galleryModalIndex = -1;
 
     initGalleryFilters();
+    renderGalleryCollection();
 
     const search = document.getElementById('gallery-search');
     search.value = galleryQuery;
@@ -332,6 +349,9 @@ function renderGalleryGrid() {
 
     const filtered = !!(galleryQuery.trim() || galleryCountry || galleryAxis);
     document.getElementById('gallery-reset').classList.toggle('hidden', !filtered);
+    // En mode collection, le compteur « 30 / 838 portraits débloqués » dit déjà le total : le décompte
+    // ne reparaît que filtré (« 12 portraits sur 838 »).
+    subtitle.classList.toggle('hidden', !filtered && portraitCollectionOn());
     subtitle.textContent = filtered
         ? t(matching.length === 1 ? 'gallery.count_filtered_one' : 'gallery.count_filtered', { count: matching.length, total: galleryEntries.length })
         : t('gallery.count', { count: galleryEntries.length });
@@ -344,6 +364,8 @@ function renderGalleryGrid() {
         return;
     }
 
+    // En mode collection, une carte reste en noir et blanc tant que son personnage n'a pas été rencontré.
+    const srs = portraitCollectionOn() ? srsLoad() : null;
     const fragment = document.createDocumentFragment();
     groups.forEach(group => {
         const section = document.createElement('section');
@@ -354,7 +376,7 @@ function renderGalleryGrid() {
         section.appendChild(heading);
         const grid = document.createElement('div');
         grid.className = 'gallery-grid';
-        group.entries.forEach(entry => grid.appendChild(buildGalleryCard(entry)));
+        group.entries.forEach(entry => grid.appendChild(buildGalleryCard(entry, !!srs && !srs[entry.evt.id])));
         section.appendChild(grid);
         fragment.appendChild(section);
     });
@@ -364,10 +386,10 @@ function renderGalleryGrid() {
 // Une carte du trombinoscope : portrait, nom, drapeau et année de naissance.
 // Un vrai <button>, dont le nom accessible est celui de la figure ; le portrait
 // est décoratif (alt vide), comme la pastille de la frise.
-function buildGalleryCard(entry) {
+function buildGalleryCard(entry, locked = false) {
     const card = document.createElement('button');
     card.type = 'button';
-    card.className = 'gallery-card';
+    card.className = 'gallery-card' + (locked ? ' is-locked' : '');
     card.dataset.eventId = entry.evt.id || '';
 
     const frame = document.createElement('span');
@@ -396,7 +418,7 @@ function buildGalleryCard(entry) {
     if (entry.iso && typeof countryDisplayName === 'function') meta.title = countryDisplayName(entry.iso);
 
     card.append(frame, name, meta);
-    card.setAttribute('aria-label', `${entry.name}, ${formatEventDate(entry.evt)}`);
+    card.setAttribute('aria-label', `${entry.name}, ${formatEventDate(entry.evt)}${locked ? ', ' + t('gallery.locked_aria') : ''}`);
     card.onclick = () => openGalleryPortrait(entry);
     return card;
 }
@@ -412,7 +434,9 @@ function openGalleryPortrait(entry) {
         subcategoryIndex: item.si,
         themeIndex: item.ti,
         hideRedraw: true,
-        fromGallery: true
+        fromGallery: true,
+        // Pas encore rencontré en jeu : la fiche garde le portrait en noir et blanc et dit comment le débloquer.
+        locked: portraitCollectionOn() && !srsLoad()[entry.evt.id]
     });
     renderGalleryModalNav();
 }
@@ -487,6 +511,58 @@ function galleryReturnTarget(fallback) {
     return galleryReturnPending ? 'screen-gallery' : fallback;
 }
 
+// Bannière en tête de galerie : compteur et barre en mode collection, sinon un accès pour l'activer.
+function renderGalleryCollection() {
+    const on = portraitCollectionOn();
+    const meter = document.getElementById('gallery-collection-meter');
+    const toggle = document.getElementById('gallery-collection-toggle');
+    if (!meter || !toggle) return;
+    meter.classList.toggle('hidden', !on);
+    if (on) {
+        const unlocked = galleryUnlockedCount(galleryEntries, srsLoad());
+        const total = galleryEntries.length;
+        const pct = total ? Math.round(unlocked / total * 100) : 0;
+        document.getElementById('gallery-collection-count').textContent = t('gallery.collection_count', { unlocked, total });
+        document.getElementById('gallery-collection-fill').style.width = pct + '%';
+        document.getElementById('gallery-collection-bar').setAttribute('aria-valuenow', String(pct));
+    }
+    toggle.textContent = t(on ? 'gallery.collection_off_btn' : 'gallery.collection_on_btn');
+    toggle.onclick = () => setPortraitCollection(on ? 'color' : 'bw');
+}
+
+// Change le réglage (galerie, Réglages ou écran de première ouverture) et rafraîchit ce qui l'affiche.
+function setPortraitCollection(mode) {
+    appSettings.portraitCollection = mode === 'bw' ? 'bw' : 'color';
+    settingsSave(appSettings);
+    const visible = id => { const el = document.getElementById(id); return !!el && !el.classList.contains('hidden'); };
+    if (visible('screen-gallery')) {
+        renderGalleryCollection();
+        renderGalleryGrid();
+    }
+    // Le bouton de la galerie annonce l'avancement : on le redessine, sans quitter l'écran.
+    if (visible('screen-subcategories')) initSubcategories();
+}
+
+function closeCollectionChoice() {
+    document.getElementById('modal-collection').classList.add('hidden');
+}
+
+// Réponse à la question de première ouverture. La croix et Échap répondent « tout en couleur » :
+// on ne repose pas la question, et le réglage reste à portée de main.
+function chooseCollection(mode) {
+    closeCollectionChoice();
+    setPortraitCollection(mode);
+}
+
+// À la première ouverture de « Personnages illustres », avant tout autre geste : on demande si les
+// portraits se collectionnent. Une fois répondu — oui ou non — on ne le redemande jamais.
+function maybeAskPortraitCollection(category) {
+    if (appSettings.portraitCollection) return;
+    const pantheon = findPantheonNode(category);
+    if (!pantheon || collectGalleryEntries(pantheon).length === 0) return;
+    document.getElementById('modal-collection').classList.remove('hidden');
+}
+
 function backFromGallery() {
     showScreen('screen-subcategories', 'back');
 }
@@ -494,6 +570,6 @@ function backFromGallery() {
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
         galleryNameOf, galleryCountryOf, findPantheonNode, galleryNormalize, galleryInitial,
-        filterGalleryEntries, compareGalleryEntries
+        filterGalleryEntries, compareGalleryEntries, galleryUnlockedCount
     };
 }

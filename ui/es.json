@@ -384,7 +384,11 @@
     "size_kb": "{val} KB",
     "pack_full_suffix": "Completo",
     "pack_demo_suffix": "Contenido limitado",
-    "pack_demo_content": "{themes} temas • {events} eventos"
+    "pack_demo_content": "{themes} temas • {events} eventos",
+    "portraits_label": "Retratos de la galería",
+    "portraits_bw": "Colección",
+    "portraits_color": "Siempre en color",
+    "portraits_hint": "En modo colección, un retrato sigue en blanco y negro hasta que haya encontrado al personaje en el juego."
   },
   "anecdote": {
     "did_you_know": "💡 ¿Sabías que…?",
@@ -678,6 +682,20 @@
     "nav_prev": "Retrato anterior",
     "nav_next": "Retrato siguiente",
     "nav_position": "{n} de {total}",
-    "count_filtered_one": "1 de {total} retratos"
+    "count_filtered_one": "1 de {total} retratos",
+    "collection_count": "{unlocked} / {total} retratos desbloqueados",
+    "collection_on_btn": "🎞️ Coleccionar los retratos",
+    "collection_off_btn": "Verlo todo en color",
+    "locked_aria": "aún no encontrado en el juego",
+    "modal_locked": "🔒 Aún no encontrado en el juego: juegue en su panteón para desbloquearlo en color."
+  },
+  "collection": {
+    "title": "¿Coleccionar los retratos?",
+    "intro": "Los retratos de la galería pueden ganarse a lo largo de sus partidas: cada uno sigue en blanco y negro hasta que haya encontrado al personaje en el juego, y luego pasa a color. ¿Prefiere simplemente aprender, sin progreso ni competición? Mantenga todo en color.",
+    "bw_title": "🎞️ Desbloquear mis retratos",
+    "bw_sub": "Blanco y negro hasta encontrar al personaje en el juego, con un contador de colección.",
+    "color_title": "🎨 Verlo todo en color",
+    "color_sub": "Sin progreso: todos los retratos, ahora mismo.",
+    "hint": "Puede cambiar esta elección en cualquier momento, en la galería o en Ajustes."
   }
 }
