@@ -598,6 +598,16 @@ comme tels dans la description (Atahualpa : Quito ou Cuzco).
 **Seules des personnalités disparues** : le format de la phrase d'ouverture
 exige une année de décès, et un panthéon de vivants se démodera.
 
+**Les sportifs : une exception, pas une règle.** Un sportif n'entre au panthéon que
+si son nom dépasse le sport : il a porté l'image de son pays dans le monde (Maradona,
+Beckenbauer), marqué l'histoire (Owens aux Jeux de Berlin) ou posé un acte politique
+dont on se souvient (Ali refusant la guerre du Viêt Nam, Schmeling et Bartali face au
+nazisme et au fascisme). Les records seuls ne suffisent pas : ils restent aux
+Biographies. Le sportif est rangé en « Musique, spectacle et sport », et la règle des
+morts s'applique à lui comme aux autres : Tommie Smith et John Carlos, dont le poing
+levé à Mexico en 1968 serait un cas d'école, sont vivants et restent donc dehors. Lev Yachine (seul gardien Ballon d'or) attend un panthéon de la
+Russie.
+
 **Six axes communs, et un septième là où il se justifie.** La palette n'a que huit
 couleurs (`AXIS_PALETTE`) : six axes laissent de la marge, sept la gardent. Littérature
 et philosophie sont fusionnées, parce que leur frontière est floue (Voltaire,
@@ -611,9 +621,9 @@ Allemagne-Autriche-Suisse, où les entrepreneurs sont assez nombreux pour former
 (sept, neuf, dix et huit figures).
 **Règle : un axe de plus n'est créé que s'il a au moins six figures et une histoire
 propre** ; l'Égypte, l'Italie, le Maghreb et l'Amérique hispanique n'en ont pas, faute de
-candidats évidents. Le sport n'a pas d'axe — deux à quatre figures par pays — mais il est
+candidats évidents. Le sport n'a pas d'axe — une poignée de figures par pays — mais il est
 accueilli dans « Musique, spectacle et sport », pour les sportifs de portée historique
-rangés selon ce qu'ils symbolisent.
+(voir « Les sportifs : une exception, pas une règle »).
 
 | Axe | Contenu | France | États-Unis |
 |---|---|---|---|
@@ -660,14 +670,14 @@ axes, 30 donne environ 5 par axe — le minimum pour qu'un axe joué seul reste 
 
 ### Le premier bloc : l'Amérique hispanique
 
-`pan_hispam`, « Grandes figures d'Amérique hispanique » : **97 personnages de
-19 pays** — Mexique 19, Argentine 14, Chili 8, Venezuela 8, Cuba 7, Pérou 7,
+`pan_hispam`, « Grandes figures d'Amérique hispanique » : **99 personnages de
+19 pays** — Mexique 19, Argentine 15, Chili 8, Venezuela 8, Cuba 7, Pérou 7,
 Colombie 6, Uruguay 5, Équateur 4, Bolivie, Nicaragua et Paraguay 3 chacun,
-Costa Rica, Guatemala et Honduras 2 chacun, et un seul pour le Panama, le
-Salvador, la République dominicaine et Porto Rico. Par axe : 27 Guerres et
-résistances, 24 Littérature et pensée, 22 Chefs d'État, 10 Beaux-arts, 9
+Costa Rica, Guatemala, Honduras et Porto Rico 2 chacun, et un seul pour le Panama, le
+Salvador et la République dominicaine. Par axe : 27 Guerres et
+résistances, 24 Littérature et pensée, 22 Chefs d'État, 10 Beaux-arts, 11
 Musique, spectacle et sport, 5 Sciences, techniques et innovation (l'axe le plus mince — voir
-plus bas pourquoi) ; 32 ⭐ et 17 biographies liées.
+plus bas pourquoi) ; 32 ⭐ et 19 biographies liées.
 
 Les choix qui ne vont pas de soi :
 
@@ -687,8 +697,8 @@ Les choix qui ne vont pas de soi :
   (Rosario) et le pape François sont argentins, Carlos Gardel aussi (Toulouse
   ou Tacuarembó : la querelle est écrite telle quelle dans sa fiche) ;
   Bolívar est vénézuélien, bien que cinq pays le tiennent pour leur libérateur.
-- **Pas de vivants** (la phrase d'ouverture exige une année de décès), et ni
-  sportifs ni entrepreneurs, comme dans la France.
+- **Pas de vivants** (la phrase d'ouverture exige une année de décès), ni entrepreneurs ;
+  les sportifs seulement s'ils passent la règle des sportifs (Maradona, Clemente).
 
 ### Ce que les images ont écarté
 
@@ -760,7 +770,7 @@ Les choix qui ne vont pas de soi :
   Ma El Aïnin, Dimi Mint Abba, Abdelkébir Khatibi, Chaïbia, Ibn al-Banna et
   Baya, faute d'image libre, n'ont pas été retenus, ni Yahia Turki, né à
   Constantinople.
-- **Pas de vivants**, et ni sportifs ni entrepreneurs, comme ailleurs.
+- **Pas de vivants**, ni entrepreneurs ; sportifs seulement selon la règle des sportifs.
 
 ### Ce que les images ont changé au Maghreb
 
@@ -783,9 +793,9 @@ fiche à `scripts/pantheon/maghreb.json`.
 ### Le troisième bloc : Allemagne, Autriche et Suisse
 
 `pan_dach`, « Grandes figures d'Allemagne, d'Autriche et de Suisse » (code `dach`, comme
-Deutschland, Austria, Confoederatio Helvetica) : **149 personnages de trois pays** —
-Allemagne 85, Autriche 38, Suisse 26 — d'Arminius (vers 17 av. J.-C.) à Helmut Kohl
-(1930). Par axe : 39 Littérature et pensée, 24 Sciences, techniques et innovation, 23
+Deutschland, Austria, Confoederatio Helvetica) : **151 personnages de trois pays** —
+Allemagne 87, Autriche 38, Suisse 26 — d'Arminius (vers 17 av. J.-C.) à Helmut Kohl
+(1930). Par axe : 39 Littérature et pensée, 24 Sciences, techniques et innovation, 25
 Musique, spectacle et sport, 21 Chefs d'État et dirigeants, 21 Beaux-arts, 13 Guerres et
 résistances, 8 Économie et entreprise ; 56 ⭐ et 22 biographies liées (Luther, Kant,
 Hegel, Marx, Nietzsche, Goethe, Kafka, Bach, Mozart, Beethoven, Mendel, Einstein, Fugger,
@@ -839,8 +849,8 @@ Les choix qui ne vont pas de soi :
   gouvernement de 1970) et le général Guisan (sa rencontre avec Schellenberg).
 - **Les résistants allemands et autrichiens** : Stauffenberg, Bonhoeffer, Sophie Scholl,
   le paysan Franz Jägerstätter, seul de son village à voter contre l'Anschluss.
-- **Pas de vivants**, comme ailleurs, donc ni Merkel ni Federer. **Pas de sportifs** non plus
-  (Beckenbauer, Lauda, Schmeling) : ils restent aux Biographies. Hedy Lamarr, actrice et
+- **Pas de vivants**, comme ailleurs, donc ni Merkel ni Federer. **Deux sportifs** passent la
+  règle : Schmeling et Beckenbauer ; Lauda reste aux Biographies. Hedy Lamarr, actrice et
   inventrice, est rangée en « Musique, spectacle et sport ».
 
 ### Ce que les images disent en Allemagne, en Autriche et en Suisse
@@ -946,7 +956,7 @@ Les choix qui ne vont pas de soi :
   de sa lignée à parler égyptien ; Omar Sharif sort d'une famille chrétienne du
   Liban ; Ptolémée, Plotin et Hypatie écrivent en grec. Le pays d'un panthéon
   est celui qui honore, pas celui de l'état civil.
-- **Pas de vivants**, et ni sportifs ni entrepreneurs, comme ailleurs.
+- **Pas de vivants**, ni entrepreneurs ; sportifs seulement selon la règle des sportifs.
 
 ### Ce que les images disent en Égypte
 
@@ -964,11 +974,11 @@ un dessin de Khalil Gibran en 1917 pour Ibn al-Fârid…).
 
 ### Un pays à part : les États-Unis
 
-`pan_us`, « Grandes figures des États-Unis » : **129 personnages**, de Pocahontas
+`pan_us`, « Grandes figures des États-Unis » : **131 personnages**, de Pocahontas
 (vers 1596) à Steve Jobs (1955). Par axe : 25 Littérature et pensée, 24 Guerres et
-résistances, 22 Musique, spectacle et sport, 21 Chefs d'État et dirigeants, 16
+résistances, 24 Musique, spectacle et sport, 21 Chefs d'État et dirigeants, 16
 Sciences, techniques et innovation, 12 Beaux-arts, 9 Économie et entreprise ; 39 ⭐ et
-29 biographies liées. La liste a été soumise puis validée décision par décision : 85
+31 biographies liées. La liste a été soumise puis validée décision par décision : 85
 figures proposées, portées à 123 (« mieux vaut plus que moins »), puis à 129 avec
 l'axe Économie et entreprise (Vanderbilt, Carnegie, Morgan, Rockefeller, Ford et
 Madam Walker, aux côtés d'Edison, de Disney et de Jobs, qui y ont été rangés).
@@ -1021,9 +1031,9 @@ Les choix qui ne vont pas de soi :
   sexuelles, dont certaines sur des mineures, et que plusieurs États ont annulé ou
   rebaptisé la journée portant son nom. La fiche le dit en toutes lettres, comme
   une accusation ; sa présence est à rediscuter si elles sont confirmées.
-- **Pas de vivants**, et ni sportifs, ni entrepreneurs, ni religieux (Ali, Owens,
-  Ruth, Ford, Rockefeller, Gates, Joseph Smith, Billy Graham : ils ont leur
-  biographie).
+- **Pas de vivants**, ni entrepreneurs, ni religieux (Ford, Rockefeller, Gates, Joseph
+  Smith, Billy Graham : ils ont leur biographie). **Deux sportifs** passent la règle,
+  Owens et Ali ; Ruth reste aux Biographies.
 
 ### Ce que les images disent aux États-Unis
 
@@ -1042,9 +1052,9 @@ photographies de presse ou de studio.
 
 ### Un pays à part : l'Italie
 
-`pan_it`, « Grandes figures d'Italie » : **127 personnages**, d'Archimède (vers 287
+`pan_it`, « Grandes figures d'Italie » : **128 personnages**, d'Archimède (vers 287
 av. J.-C.) à Paolo Borsellino (1940). Par axe : 31 Littérature et pensée, 24
-Beaux-arts, 24 Musique, spectacle et sport, 19 Sciences, techniques et innovation, 18 Chefs d'État et
+Beaux-arts, 25 Musique, spectacle et sport, 19 Sciences, techniques et innovation, 18 Chefs d'État et
 dirigeants, 11 Guerres et résistances ; 42 ⭐ et 13 biographies liées (Scipion,
 César, Archimède, François d'Assise, Thomas d'Aquin, Dante, Brunelleschi, Léonard,
 Palladio, Marco Polo, Colomb, Vespucci, Galilée). La liste a été soumise puis validée
@@ -1076,11 +1086,12 @@ Les choix qui ne vont pas de soi :
   pour fraude fiscale en 2013), Giolitti (la conquête de la Libye), César Borgia (la
   terreur en Romagne) et Colomb (les Taïnos réduits en esclavage, la destitution de
   1500).
-- **Enzo Ferrari, exception à « ni sportifs ni entrepreneurs »**, ajouté sur
+- **Enzo Ferrari, exception à « pas d'entrepreneurs »**, ajouté sur
   décision de l'éditeur pour son rôle dans le rayonnement culturel de l'Italie dans
   le monde : il est rangé en Sciences, techniques et innovation (constructeur et ingénieur),
-  comme Edison et Steve Jobs aux États-Unis. Giovanni Agnelli, Olivetti, Armani et
-  les sportifs restent exclus.
+  comme Edison et Steve Jobs aux États-Unis. Giovanni Agnelli, Olivetti et Armani
+  restent exclus. **Gino Bartali** passe la règle des sportifs : il a sauvé des Juifs
+  pendant la guerre.
 - **Un format de date étendu.** Auguste (63 av. J.-C.-14 ap. J.-C.) et Ovide (43
   av. J.-C.-17 ap. J.-C.) sont nés avant l'ère chrétienne et morts après, ce que la
   règle « av. J.-C. une fois, à la fin » ne savait pas écrire — d'où l'absence de
@@ -1597,8 +1608,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
   les vingt et un candidats écartés (voir « Ce que les images ont changé en Allemagne, en
   Autriche et en Suisse ») ; les images d'Hitler, de Marlene Dietrich, d'Hedy Lamarr et de
   Ramuz (une photographie en pied, où le visage est petit), à remplacer par une image plus nette
-  si elle apparaît ; et le sort des sportifs de portée historique (Beckenbauer, Lauda,
-  Schmeling), aujourd'hui aux seules Biographies.
+  si elle apparaît ; et le sort de Lauda, aujourd'hui aux seules Biographies.
 - **Des figures des États-Unis écartées faute d'image libre convenable**, à
   réintégrer si l'une apparaît : John Rawls, Scott Joplin (un portrait de 200 px),
   Linus Pauling et Claude Shannon (portraits trop étroits), Barbara McClintock,
@@ -1625,7 +1635,8 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
 - **La tuile « Panthéons »** réutilise l'image du globe : une image dédiée
   serait préférable.
 - **Sportifs et entrepreneurs** n'ont pas d'axe dans les panthéons : ils sont
-  couverts par les Biographies.
+  couverts par les Biographies, sauf les sportifs de portée historique. **Yachine**
+  attend un panthéon de la Russie ; Smith et Carlos, qu'ils ne soient plus vivants.
 
 ## Accessibilité : le clavier et le zoom
 
