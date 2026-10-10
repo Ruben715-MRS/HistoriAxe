@@ -1,5 +1,5 @@
-// Les générateurs des quatre modes « Remise en ordre », « Blitz »,
-// « Curseur » et « Intrus » (js/gameModes.js).
+// Les générateurs des cinq modes « Remise en ordre », « Blitz »,
+// « Curseur », « Intrus » et « Qui est-ce ? » (js/gameModes.js).
 //
 // Comme pour js/simultaneity.js, toute la fabrication des questions vit dans
 // un module sans DOM : elle se vérifie donc ici, et pas seulement dans un
@@ -285,4 +285,104 @@ test('sur tout le pack français, aucun intrus n’appartient à son propre grou
         });
     });
     assert.ok(posees > 100, `échantillon trop maigre : ${posees} manches`);
+});
+
+
+// --- 5. QUI EST-CE ? ------------------------------------------------------
+
+const fs = require('node:fs');
+const path = require('node:path');
+
+function fig(id, nom, axe) {
+    return { id, axe, date: 1800, titre: 'Naissance de ' + nom, image: { src: `assets/portraits/${id}.jpg` } };
+}
+
+// Dix figures, deux domaines, aucun nom de famille en commun.
+function vivierWho() {
+    return [
+        fig('a1', 'Alice Martin', 'Arts'), fig('a2', 'Bruno Durand', 'Arts'), fig('a3', 'Claire Petit', 'Arts'),
+        fig('a4', 'Denis Moreau', 'Arts'), fig('a5', 'Émile Laurent', 'Arts'),
+        fig('s1', 'Fanny Leroy', 'Sciences'), fig('s2', 'Gilles Roux', 'Sciences'), fig('s3', 'Hélène Blanc', 'Sciences'),
+        fig('s4', 'Ivan Garnier', 'Sciences'), fig('s5', 'Julie Faure', 'Sciences')
+    ];
+}
+
+test('Qui est-ce ? : quatre noms distincts par portrait, dont la bonne réponse, une seule fois', () => {
+    const qs = G.buildWhoQuestions(vivierWho(), { rng: seededRng(7), count: 6 });
+    assert.equal(qs.length, 6);
+    qs.forEach(q => {
+        assert.equal(q.options.length, G.WHO_OPTIONS);
+        assert.equal(new Set(q.options.map(o => o.name)).size, G.WHO_OPTIONS, 'deux options au même nom');
+        assert.equal(q.options.filter(o => o.id === q.correctId).length, 1);
+        assert.equal(q.options.find(o => o.id === q.correctId).name, q.name);
+        assert.equal(q.name, G.whoNameOf(q.correct));
+    });
+    // Chaque figure ne sert qu'une fois de bonne réponse.
+    assert.equal(new Set(qs.map(q => q.correctId)).size, qs.length);
+});
+
+test('Qui est-ce ? : les mauvaises réponses préfèrent le domaine de la bonne', () => {
+    G.buildWhoQuestions(vivierWho(), { rng: seededRng(3), count: 10 }).forEach(q => {
+        const axes = q.options.map(o => vivierWho().find(e => e.id === o.id).axe);
+        assert.ok(axes.every(a => a === q.correct.axe), `${q.name} : un domaine différent parmi ${axes}`);
+    });
+});
+
+test('Qui est-ce ? : jamais deux noms de famille identiques dans une même question', () => {
+    const pool = vivierWho().concat([
+        fig('g1', 'Jacob Grimm', 'Arts'), fig('g2', 'Wilhelm Grimm', 'Arts'),
+        fig('l1', 'Louis XIV', 'Arts'), fig('l2', 'Louis XVI', 'Arts')
+    ]);
+    G.buildWhoQuestions(pool, { rng: seededRng(11), count: 14 }).forEach(q => {
+        const familles = q.options.map(o => {
+            const mots = o.name.split(' ');
+            return /^(Ier|Ire|[IVX]+)$/.test(mots[mots.length - 1]) ? mots[0] : mots[mots.length - 1];
+        });
+        assert.equal(new Set(familles).size, familles.length, `${q.name} : ${q.options.map(o => o.name).join(' / ')}`);
+    });
+});
+
+test('Qui est-ce ? : sans portrait ou sans assez de figures, pas de question', () => {
+    const sansImage = vivierWho().map(e => ({ id: e.id, titre: e.titre, axe: e.axe }));
+    assert.deepEqual(G.buildWhoQuestions(sansImage, { rng: seededRng(1) }), []);
+    assert.deepEqual(G.buildWhoQuestions(vivierWho().slice(0, 3), { rng: seededRng(1) }), []);
+    assert.deepEqual(G.buildWhoQuestions([], {}), []);
+    // Deux événements au même nom ne font qu'une figure.
+    const doublon = vivierWho().slice(0, 3).concat([fig('x', 'Alice Martin', 'Arts')]);
+    assert.equal(G.whoCandidates(doublon).length, 3);
+});
+
+test('Qui est-ce ? : le nom se tire du titre comme dans la galerie', () => {
+    assert.equal(G.whoNameOf({ titre: 'Naissance de Victor Hugo' }), 'Victor Hugo');
+    assert.equal(G.whoNameOf({ titre: "Naissance d'Édith Piaf" }), 'Édith Piaf');
+    assert.equal(G.whoNameOf({ titre: 'Naissance du Caravage' }), 'le Caravage');
+    assert.equal(G.whoNameOf({ titre: 'Autre chose' }), 'Autre chose');
+    // Même découpage que js/gallery.js, sur les 838 titres réels : deux copies d'une règle ne
+    // doivent pas s'écarter sans qu'un test le dise.
+    const { galleryNameOf } = require('../js/gallery.js');
+    const fr = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data', 'fr.json'), 'utf8'));
+    const illustres = fr.categories.find(c => c.nom === 'Personnages illustres');
+    const panth = illustres.subcategories.find(s => s.nom === 'Panthéons');
+    let n = 0;
+    panth.themes.forEach(theme => theme.events.forEach(e => {
+        assert.equal(G.whoNameOf(e), galleryNameOf(e).name, e.titre);
+        n++;
+    }));
+    assert.equal(n, 838);
+});
+
+test('Qui est-ce ? : sur le vrai pack, chaque panthéon donne dix questions bien formées', () => {
+    const fr = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data', 'fr.json'), 'utf8'));
+    const illustres = fr.categories.find(c => c.nom === 'Personnages illustres');
+    const panth = illustres.subcategories.find(s => s.nom === 'Panthéons');
+    panth.themes.forEach(theme => {
+        assert.ok(G.whoCandidates(theme.events).length >= G.WHO_MIN_PORTRAITS, theme.id);
+        const qs = G.buildWhoQuestions(theme.events, { rng: seededRng(5) });
+        assert.equal(qs.length, G.WHO_ROUNDS, theme.id);
+        qs.forEach(q => {
+            assert.equal(new Set(q.options.map(o => o.name)).size, G.WHO_OPTIONS, `${theme.id} : ${q.name}`);
+            assert.ok(q.correct.image.src, `${theme.id} : ${q.name} sans portrait`);
+            assert.ok(q.options.every(o => theme.events.some(e => e.id === o.id)), 'une option hors du thème');
+        });
+    });
 });

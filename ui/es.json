@@ -211,7 +211,8 @@
     "victory_ordre": "¡Bien hecho! ¡Todo en orden!",
     "victory_blitz": "¡Se acabó el tiempo! {right} respuestas correctas.",
     "victory_curseur": "¡Bien hecho! ¡Buen ojo siempre!",
-    "victory_intrus": "¡Bien hecho! ¡No se te escapó ninguno!"
+    "victory_intrus": "¡Bien hecho! ¡No se te escapó ninguno!",
+    "victory_whois": "¡Bravo! ¡Ningún rostro se le ha escapado!"
   },
   "daily": {
     "title_win": "🌍 ¡Desafío del Día Superado!",
@@ -697,5 +698,15 @@
     "color_title": "🎨 Verlo todo en color",
     "color_sub": "Sin progreso: todos los retratos, ahora mismo.",
     "hint": "Puede cambiar esta elección en cualquier momento, en la galería o en Ajustes."
+  },
+  "whois": {
+    "title": "¿Quién es?",
+    "desc": "3 vidas. Un retrato, cuatro nombres: descubra quién se esconde tras este rostro.",
+    "kicker": "¿Quién es?",
+    "portrait_alt": "Retrato de un personaje por identificar",
+    "not_enough": "Este tema no tiene suficientes retratos para este modo.",
+    "reveal_right": "¡Bien visto!",
+    "reveal_wrong": "Fallo, era…",
+    "continue": "Continuar ›"
   }
 }

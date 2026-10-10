@@ -518,7 +518,7 @@ function openLeaderboard() {
             'periodes': t('modes.periodes.title'), 'ecart': t('modes.ecart.title'),
             'carte': t('carte.mode_title'), 'simultaneity': t('simultaneity.title'),
             'ordre': t('ordre.title'), 'blitz': t('blitz.title'),
-            'curseur': t('curseur.title'), 'intrus': t('intrus.title')
+            'curseur': t('curseur.title'), 'intrus': t('intrus.title'), 'whois': t('whois.title')
         };
         let html = `<table class="leaderboard-table"><thead><tr><th>${t('leaderboard.col_mode')}</th><th>${t('leaderboard.col_score')}</th><th>${t('leaderboard.col_date')}</th></tr></thead><tbody>`;
         scores.forEach(s => {
@@ -1232,6 +1232,7 @@ function showScreen(screenId, direction) {
         }
         renderRoundLengthPicker();
         updateModeLocks();
+        updateWhoisCard();
         // Choix Frise / Sommaire sous « Découverte » : déplié seulement
         // pour un thème qui propose un sommaire (voir js/mindMap.js).
         if (typeof refreshDiscoveryPicker === 'function') refreshDiscoveryPicker();
@@ -1376,6 +1377,10 @@ function replayCurrentGame() {
     }
     if (currentMode === 'ecart') {
         startEcartGame();
+        return;
+    }
+    if (currentMode === 'whois') {
+        startWhoisGame();
         return;
     }
     if (revisionMode) {
@@ -3679,6 +3684,174 @@ function updateIntrusHUD() {
 }
 
 
+// === MODE « QUI EST-CE ? » ===
+// Un portrait, quatre noms. Les portraits viennent des panthéons (champ `image`) : le mode n'est donc
+// proposé que pour un thème dont assez de figures en ont un (voir updateWhoisCard).
+//
+// La légende de l'image dit qui c'est : elle n'apparaît qu'à la réponse. Le crédit (auteur, licence),
+// lui, reste sous le portrait pendant la question — c'est la condition des licences CC BY et CC BY-SA.
+//
+// Le révélé ne se referme pas tout seul : il porte la fiche de la personne (légende, dates, description),
+// qu'on ne lit pas en deux secondes. Rencontrer une figure ici la débloque dans la galerie, comme dans
+// n'importe quel autre mode (srsRecord).
+
+let whoQuestions = [];
+let whoIndex = 0;
+
+// La carte n'a de sens que si le thème a de quoi nourrir des questions sans mauvaise réponse devinable.
+function updateWhoisCard() {
+    const card = document.getElementById('mode-card-whois');
+    if (!card) return;
+    const enough = GameModes.whoCandidates(getModePoolRaw()).length >= GameModes.WHO_MIN_PORTRAITS;
+    card.classList.toggle('hidden', !enough);
+}
+
+function startWhoisGame() {
+    resetSessionHistory();
+    currentMode = 'whois';
+    const sourceEvents = getSessionPool();
+
+    whoQuestions = GameModes.buildWhoQuestions(sourceEvents);
+    if (whoQuestions.length < 3) {
+        alert(t('whois.not_enough'));
+        return;
+    }
+
+    whoIndex = 0;
+    lives = 3;
+    score = 0;
+    comboMultiplier = 1.0;
+    currentRoundSize = whoQuestions.length;
+    currentGameSpan = 1;
+
+    showScreen('screen-whois');
+    renderWhoQuestion();
+}
+
+function renderWhoQuestion() {
+    if (whoIndex >= whoQuestions.length) {
+        endGame(true);
+        return;
+    }
+    isAnimating = false;
+    questionStartTime = Date.now();
+
+    const q = whoQuestions[whoIndex];
+    const image = portraitOf(q.correct);
+    const img = document.getElementById('whois-portrait-img');
+    img.alt = t('whois.portrait_alt');
+    img.onerror = null;
+    img.src = image.src;
+    fillPortraitCredit(document.getElementById('whois-portrait-credit'), image);
+    document.getElementById('whois-reveal').classList.add('hidden');
+
+    const container = document.getElementById('whois-options');
+    container.innerHTML = '';
+    A11y.focusQuestion('screen-whois');
+    container.style.pointerEvents = 'none';
+    requestAnimationFrame(() => { container.style.pointerEvents = 'auto'; });
+
+    q.options.forEach(opt => {
+        const btn = document.createElement('button');
+        btn.className = 'quiz-option whois-option';
+        btn.dataset.eventId = opt.id;
+        btn.innerText = opt.name;
+        btn.onclick = () => answerWho(opt.id);
+        container.appendChild(btn);
+    });
+
+    document.getElementById('whois-hud-count').innerText = `${whoIndex + 1} / ${whoQuestions.length}`;
+    document.getElementById('whois-progress-fill').style.width =
+        Math.round(whoIndex / whoQuestions.length * 100) + '%';
+    updateWhoHUD();
+}
+
+function answerWho(chosenId) {
+    if (isAnimating) return;
+    isAnimating = true;
+
+    const q = whoQuestions[whoIndex];
+    const correct = chosenId === q.correctId;
+
+    awardPoints(correct ? 0 : 1, correct);
+    if (correct) { playCorrectSound(comboMultiplier); triggerHaptic('success'); }
+    else { playWrongSound(); triggerHaptic('error'); }
+    checkBadgeProgressOnAction(correct);
+    srsRecord(q.correctId, correct);
+    recordSessionStep(q.correct, correct, false);
+
+    document.querySelectorAll('#whois-options .whois-option').forEach(b => {
+        b.style.pointerEvents = 'none';
+        if (b.dataset.eventId === q.correctId) b.classList.add('correct');
+        else if (b.dataset.eventId === chosenId) b.classList.add('wrong');
+    });
+
+    if (!correct) lives -= 1;
+    updateWhoHUD();
+    renderWhoReveal(q, correct);
+}
+
+// La fiche de la personne : qui c'est, quand elle est née, ce qu'on voit sur l'image, ce qu'elle a fait.
+// « Continuer » est un vrai bouton, qui prend le focus : Entrée suffit pour enchaîner.
+function renderWhoReveal(q, correct) {
+    const reveal = document.getElementById('whois-reveal');
+    reveal.innerHTML = '';
+    const image = portraitOf(q.correct);
+
+    const verdict = document.createElement('div');
+    verdict.className = 'whois-reveal-verdict ' + (correct ? 'is-good' : 'is-bad');
+    verdict.innerText = t(correct ? 'whois.reveal_right' : 'whois.reveal_wrong');
+    reveal.appendChild(verdict);
+
+    const name = document.createElement('div');
+    name.className = 'whois-reveal-name';
+    name.innerText = q.name;
+    const born = document.createElement('small');
+    born.innerText = ` · ${formatEventDate(q.correct)}`;
+    name.appendChild(born);
+    reveal.appendChild(name);
+
+    if (image && image.legende) {
+        const caption = document.createElement('div');
+        caption.className = 'whois-reveal-caption';
+        caption.innerText = image.legende;
+        reveal.appendChild(caption);
+    }
+
+    const desc = document.createElement('p');
+    desc.className = 'whois-reveal-desc';
+    desc.innerText = q.correct.description || '';
+    reveal.appendChild(desc);
+
+    const next = document.createElement('button');
+    next.type = 'button';
+    next.className = 'btn whois-continue';
+    next.id = 'whois-continue';
+    next.innerText = t('whois.continue');
+    next.onclick = continueWho;
+    reveal.appendChild(next);
+
+    reveal.classList.remove('hidden');
+    next.focus({ preventScroll: true });
+    reveal.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+}
+
+function continueWho() {
+    if (!isAnimating) return;
+    whoIndex++;
+    if (lives <= 0) { endGame(false); return; }
+    renderWhoQuestion();
+}
+
+function updateWhoHUD() {
+    document.getElementById('whois-hud-score').innerText = score;
+    renderComboChip(document.getElementById('whois-hud-combo'), comboMultiplier);
+    let pips = '';
+    for (let i = 0; i < 3; i++) pips += `<span class="pip${i < lives ? '' : ' spent'}"></span>`;
+    document.getElementById('whois-hud-lives').innerHTML = pips;
+}
+
+
 // === MODE AVANT / APRÈS ===
 // Chaque question pioche un événement du pool et lui oppose un autre événement
 // à date distincte ; les deux sont affichés sans leur date et il faut désigner
@@ -5219,6 +5392,7 @@ function endGame(isWin) {
         if (currentMode === 'ordre') winTitle = t('end.victory_ordre');
         if (currentMode === 'curseur') winTitle = t('end.victory_curseur');
         if (currentMode === 'intrus') winTitle = t('end.victory_intrus');
+        if (currentMode === 'whois') winTitle = t('end.victory_whois');
         // Le Blitz ne se « gagne » pas : il se termine quand l'horloge tombe à
         // zéro, et c'est le nombre de bonnes réponses qui dit ce qu'il valait.
         if (currentMode === 'blitz') winTitle = t('end.victory_blitz', { right: blitzRight });
@@ -5421,6 +5595,33 @@ function renderModalCountry(evt) {
     el.classList.remove('hidden');
 }
 
+// Crédit d'un portrait (auteur, licence, lien vers la page de l'œuvre), construit au DOM : le nom d'un
+// auteur peut contenir n'importe quoi. Partagé par la fiche et par le mode « Qui est-ce ? », où le
+// crédit reste sous l'image pendant la question.
+function fillPortraitCredit(credit, image) {
+    credit.textContent = '';
+    const addText = text => credit.appendChild(document.createTextNode(text));
+    const addLink = (text, href) => {
+        const link = document.createElement('a');
+        link.href = href;
+        link.target = '_blank';
+        link.rel = 'noopener';
+        link.textContent = text;
+        credit.appendChild(link);
+    };
+    if (image.auteur) addText(image.auteur + ' · ');
+    // Une licence CC se lie à son texte, et dit que l'image a été modifiée
+    // (elle est recadrée et réduite) : c'est ce qu'exigent CC BY et CC BY-SA.
+    // Le domaine public n'exige rien de tout cela.
+    const licenseUrl = portraitLicenseUrl(image.licence);
+    if (licenseUrl) addLink(image.licence, licenseUrl);
+    else if (image.licence) addText(image.licence);
+    if (/^CC BY/.test(image.licence || '')) addText(' · image recadrée');
+    addText(' · ');
+    if (/^https:\/\//.test(image.source || '')) addLink('Wikimedia Commons', image.source);
+    else addText('Wikimedia Commons');
+}
+
 // Portrait, légende et crédit de la fiche. Le crédit (auteur, licence, lien
 // vers la page de l'œuvre sur Wikimedia Commons) n'est pas facultatif : c'est
 // la condition des licences CC BY et CC BY-SA, et la moindre des politesses
@@ -5445,28 +5646,7 @@ function renderModalPortrait(evt) {
     img.alt = '';
     img.src = image.src;
     document.getElementById('modal-portrait-caption').textContent = image.legende || '';
-    const credit = document.getElementById('modal-portrait-credit');
-    credit.textContent = '';
-    const addText = text => credit.appendChild(document.createTextNode(text));
-    const addLink = (text, href) => {
-        const link = document.createElement('a');
-        link.href = href;
-        link.target = '_blank';
-        link.rel = 'noopener';
-        link.textContent = text;
-        credit.appendChild(link);
-    };
-    if (image.auteur) addText(image.auteur + ' · ');
-    // Une licence CC se lie à son texte, et dit que l'image a été modifiée
-    // (elle est recadrée et réduite) : c'est ce qu'exigent CC BY et CC BY-SA.
-    // Le domaine public n'exige rien de tout cela.
-    const licenseUrl = portraitLicenseUrl(image.licence);
-    if (licenseUrl) addLink(image.licence, licenseUrl);
-    else if (image.licence) addText(image.licence);
-    if (/^CC BY/.test(image.licence || '')) addText(' · image recadrée');
-    addText(' · ');
-    if (/^https:\/\//.test(image.source || '')) addLink('Wikimedia Commons', image.source);
-    else addText('Wikimedia Commons');
+    fillPortraitCredit(document.getElementById('modal-portrait-credit'), image);
     figure.classList.remove('hidden');
 }
 

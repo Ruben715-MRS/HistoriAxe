@@ -215,7 +215,8 @@
     "victory_ordre": "Well done! All back in order!",
     "victory_blitz": "Time's up! {right} correct answers.",
     "victory_curseur": "Well done! A sharp eye every time!",
-    "victory_intrus": "Well done! Not one slipped past you!"
+    "victory_intrus": "Well done! Not one slipped past you!",
+    "victory_whois": "Well done! Not a single face got past you!"
   },
   "daily": {
     "title_win": "🌍 Daily Challenge Mastered!",
@@ -724,5 +725,15 @@
     "color_title": "🎨 See everything in colour",
     "color_sub": "No progress: every portrait, right away.",
     "hint": "You can change this at any time, in the gallery or in Settings."
+  },
+  "whois": {
+    "title": "Who is it?",
+    "desc": "3 lives. One portrait, four names: find who is behind this face.",
+    "kicker": "Who is it?",
+    "portrait_alt": "Portrait of a person to identify",
+    "not_enough": "This theme does not have enough portraits for this mode.",
+    "reveal_right": "Well spotted!",
+    "reveal_wrong": "Missed, it was…",
+    "continue": "Continue ›"
   }
 }

@@ -6908,3 +6908,92 @@ input:not([type="range"]), label, select, summary, textarea {
 #screen-gallery .gallery-collection {
     margin-bottom: 8px;
 }
+
+/* Mode « Qui est-ce ? » : un portrait, quatre noms ------------------------- */
+.mode-card.whois-card {
+    background: linear-gradient(135deg, #4A235A, #8E44AD);
+}
+
+.whois-question-card {
+    padding: 22px 20px 18px;
+}
+
+.whois-portrait {
+    margin: 4px auto 0;
+    max-width: 240px;
+}
+
+.whois-portrait-img {
+    display: block;
+    width: 200px;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    margin: 0 auto;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 14px;
+    background: var(--border-soft);
+    box-shadow: var(--card-shadow);
+}
+
+.whois-portrait-credit {
+    margin-top: 8px;
+}
+
+/* Le révélé : la fiche de la personne, qu'on lit à son rythme — d'où un vrai bouton « Continuer »
+   plutôt qu'une disparition au bout de deux secondes. Même carcasse que le révélé des autres modes. */
+.whois-reveal {
+    background: var(--surface);
+    border-radius: 14px;
+    border: 1px solid var(--border-soft);
+    padding: 18px 20px;
+    box-shadow: var(--card-shadow);
+    animation: simul-reveal-in 0.32s ease-out both;
+}
+
+.whois-reveal-verdict {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+}
+
+.whois-reveal-verdict.is-good {
+    color: var(--success-text);
+}
+
+.whois-reveal-verdict.is-bad {
+    color: var(--danger-red-text);
+}
+
+.whois-reveal-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.whois-reveal-name small {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--muted-text);
+}
+
+.whois-reveal-caption {
+    margin-top: 4px;
+    font-size: 13px;
+    font-style: italic;
+    color: var(--muted-text);
+}
+
+.whois-reveal-desc {
+    margin: 10px 0 16px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--text-dark);
+}
+
+.whois-continue {
+    width: 100%;
+}

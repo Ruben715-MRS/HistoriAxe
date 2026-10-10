@@ -1,10 +1,10 @@
 // =========================================================================
 // === HISTORIAXE — GÉNÉRATEURS DES MODES « REMISE EN ORDRE », « BLITZ »,
-// === « CURSEUR » ET « INTRUS »
+// === « CURSEUR », « INTRUS » ET « QUI EST-CE ? »
 // =========================================================================
 //
-// Quatre modes, un seul module, parce qu'ils partagent la même nature : des
-// questions FABRIQUÉES à partir des dates du thème, sans aucune donnée
+// Cinq modes, un seul module, parce qu'ils partagent la même nature : des
+// questions FABRIQUÉES à partir des données du thème, sans aucune donnée
 // supplémentaire à écrire. Ce que chacun entraîne diffère, et c'est tout
 // l'intérêt de les avoir côte à côte :
 //
@@ -15,7 +15,9 @@
 //   - Curseur : la date ABSOLUE, mais estimée plutôt que sue — on score à la
 //     proximité, là où « Le fil du temps » exige l'année exacte ;
 //   - Intrus : le sens de l'époque, c'est-à-dire reconnaître ce qui ne
-//     cadre pas, sans qu'aucune date ne soit affichée.
+//     cadre pas, sans qu'aucune date ne soit affichée ;
+//   - Qui est-ce ? : mettre un nom sur un visage — les portraits des
+//     panthéons, seul contenu de la base qui s'y prête.
 //
 // Comme js/simultaneity.js et js/dailyEngine.js, ce module ne touche ni au
 // DOM ni à `window` : il tourne sous `node --test` (voir
@@ -46,6 +48,12 @@
     var SLIDER_ROUNDS = 10;
     var INTRUS_ROUNDS = 10;
     var INTRUS_OPTIONS = 4;
+    // Qui est-ce ? : dix portraits, quatre noms. En dessous de WHO_MIN_PORTRAITS
+    // figures à portrait, le mode n'a pas de quoi tirer trois mauvaises réponses
+    // qui ne se devinent pas : il ne se propose pas (voir js/app.js: updateWhoisCard).
+    var WHO_ROUNDS = 10;
+    var WHO_OPTIONS = 4;
+    var WHO_MIN_PORTRAITS = 8;
 
     // Intrus « période » : l'écart minimal entre le trio et son intrus est
     // un MULTIPLE de l'étalement du trio, jamais une valeur absolue — un
@@ -402,6 +410,106 @@
         return out;
     }
 
+    // --- 5. QUI EST-CE ? -------------------------------------------------
+    //
+    // Un portrait, quatre noms. Les figures viennent des panthéons : ce sont les
+    // seuls événements à porter une image (champ `image`), et leur titre suit
+    // toujours « Naissance de X », dont on tire le nom — le même découpage que la
+    // galerie (js/gallery.js: galleryNameOf), vérifié identique par un test.
+    //
+    // Les mauvaises réponses sont tirées du MÊME vivier que la bonne : ce sont
+    // les noms que le joueur vient de croiser, et le seul moyen de n'avoir ni
+    // donnée à écrire, ni option qui détonne. Elles préfèrent le même domaine
+    // (un chanteur parmi des chanteurs : on ne se trompe pas sur le métier), et
+    // écartent un nom de famille déjà dans la question — deux Grimm, deux
+    // Roosevelt rendraient la réponse indécidable au visage.
+
+    // « Naissance de Victor Hugo » → « Victor Hugo » ; « Naissance du Caravage »
+    // → « le Caravage ». Un titre hors modèle reste entier.
+    function whoNameOf(evt) {
+        var titre = String((evt && evt.titre) || '').trim();
+        var m = /^Naissance (?:de |d'|d’)(.+)$/.exec(titre);
+        if (m) return m[1];
+        m = /^Naissance du (.+)$/.exec(titre);
+        if (m) return 'le ' + m[1];
+        return titre;
+    }
+
+    function hasPortrait(evt) {
+        return !!(evt && evt.image && typeof evt.image.src === 'string' && evt.image.src);
+    }
+
+    // Les figures dont on peut faire une question : un portrait, un nom, et un
+    // nom distinct — deux événements qui donneraient la même étiquette ne
+    // feraient qu'une seule bonne réponse possible.
+    function whoCandidates(events) {
+        var seen = {};
+        return (events || []).filter(function (e) {
+            if (!hasPortrait(e)) return false;
+            var name = whoNameOf(e);
+            if (!name || seen[name]) return false;
+            seen[name] = 1;
+            return true;
+        });
+    }
+
+    // Ce qui rapproche deux noms au point de les confondre au visage : le nom de famille
+    // (dernier mot de « Victor Hugo »), ou le prénom d'un souverain (« Louis XIV » et
+    // « Louis XVI » : leur dernier mot est un numéral, qui ne les distingue de personne).
+    function familyKey(name) {
+        var words = name.split(/\s+/);
+        var last = words[words.length - 1];
+        return (words.length > 1 && /^(?:Ier|Ire|[IVX]+)$/.test(last) ? words[0] : last).toLowerCase();
+    }
+
+    function buildWhoQuestion(candidates, correct, rng) {
+        var name = whoNameOf(correct);
+        var others = candidates.filter(function (e) { return e.id !== correct.id; });
+        // Pas de nom de famille partagé avec la bonne réponse ; à défaut de
+        // vivier assez large, on relâche cette règle plutôt que de renoncer.
+        var strict = others.filter(function (e) { return familyKey(whoNameOf(e)) !== familyKey(name); });
+        var pool = strict.length >= WHO_OPTIONS - 1 ? strict : others;
+        // Le même domaine d'abord, puis les autres.
+        var sameAxis = shuffle(pool.filter(function (e) { return e.axe && e.axe === correct.axe; }), rng);
+        var rest = shuffle(pool.filter(function (e) { return !(e.axe && e.axe === correct.axe); }), rng);
+        var wrong = [];
+        var lastWords = {};
+        sameAxis.concat(rest).forEach(function (e) {
+            if (wrong.length >= WHO_OPTIONS - 1) return;
+            var w = familyKey(whoNameOf(e));
+            if (lastWords[w]) return; // deux mauvaises réponses au même nom de famille : une seule suffit
+            lastWords[w] = 1;
+            wrong.push(e);
+        });
+        // Si cette dernière règle a trop réduit le choix, on complète sans elle.
+        if (wrong.length < WHO_OPTIONS - 1) {
+            sameAxis.concat(rest).forEach(function (e) {
+                if (wrong.length < WHO_OPTIONS - 1 && wrong.indexOf(e) === -1) wrong.push(e);
+            });
+        }
+        if (wrong.length < WHO_OPTIONS - 1) return null;
+        var options = shuffle([correct].concat(wrong), rng).map(function (e) {
+            return { id: e.id, name: whoNameOf(e) };
+        });
+        return { kind: 'who', correct: correct, name: name, correctId: correct.id, options: options };
+    }
+
+    function buildWhoQuestions(events, options) {
+        options = options || {};
+        var rng = options.rng || Math.random;
+        var count = options.count || WHO_ROUNDS;
+        var candidates = whoCandidates(events);
+        if (candidates.length < WHO_OPTIONS) return [];
+        // Chaque figure ne sert qu'une fois comme bonne réponse.
+        var out = [];
+        shuffle(candidates, rng).forEach(function (correct) {
+            if (out.length >= count) return;
+            var q = buildWhoQuestion(candidates, correct, rng);
+            if (q) out.push(q);
+        });
+        return out;
+    }
+
     return {
         HISTORICAL_YEAR_LIMIT: HISTORICAL_YEAR_LIMIT,
         ORDER_CARDS: ORDER_CARDS,
@@ -410,6 +518,9 @@
         SLIDER_ROUNDS: SLIDER_ROUNDS,
         INTRUS_ROUNDS: INTRUS_ROUNDS,
         INTRUS_OPTIONS: INTRUS_OPTIONS,
+        WHO_ROUNDS: WHO_ROUNDS,
+        WHO_OPTIONS: WHO_OPTIONS,
+        WHO_MIN_PORTRAITS: WHO_MIN_PORTRAITS,
 
         buildOrderRounds: buildOrderRounds,
         scoreOrderAttempt: scoreOrderAttempt,
@@ -423,6 +534,11 @@
 
         buildPeriodIntrus: buildPeriodIntrus,
         buildAxisIntrus: buildAxisIntrus,
-        buildIntrusQuestions: buildIntrusQuestions
+        buildIntrusQuestions: buildIntrusQuestions,
+
+        whoNameOf: whoNameOf,
+        whoCandidates: whoCandidates,
+        buildWhoQuestion: buildWhoQuestion,
+        buildWhoQuestions: buildWhoQuestions
     };
 });

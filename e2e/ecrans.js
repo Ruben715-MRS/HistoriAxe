@@ -68,6 +68,15 @@ async function parcourirLesEcrans(page, surChaqueEcran) {
         await page.locator(carte).click(); await surChaqueEcran(etape);
         await page.evaluate(() => { currentMode = 'classic'; showScreen('screen-modes'); });
     }
+    // Qui est-ce ? : un panthéon, son mode, la question, puis la fiche révélée.
+    await page.evaluate(() => { const t = getAllThemesWithPath().find(x => x.theme.id === 'pan_fr'); openThemeAt(t.ci, t.si, t.ti); });
+    await page.waitForSelector('#screen-axes:not(.hidden), #screen-modes:not(.hidden)');
+    if (await page.locator('#screen-axes').isVisible()) await page.locator('#axes-continue-btn').click();
+    await surChaqueEcran('modes d’un panthéon');
+    await page.locator('#mode-card-whois').click(); await surChaqueEcran('qui est-ce');
+    await page.locator('#whois-options .whois-option').first().click();
+    await page.waitForSelector('#whois-reveal:not(.hidden)'); await surChaqueEcran('qui est-ce : révélé');
+    await page.evaluate(() => { currentMode = 'classic'; showScreen('screen-modes'); });
     await page.evaluate(() => showScreen('screen-end')); await surChaqueEcran('fin de partie');
     await page.evaluate(() => { openProfileModal(); }); await surChaqueEcran('profil');
     await page.evaluate(() => closeProfileModal());

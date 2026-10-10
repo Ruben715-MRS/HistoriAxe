@@ -211,7 +211,8 @@
     "victory_ordre": "Bravo! Alles wieder in Reihenfolge!",
     "victory_blitz": "Zeit abgelaufen! {right} richtige Antworten.",
     "victory_curseur": "Bravo! Jedes Mal ein sicheres Auge!",
-    "victory_intrus": "Bravo! Keiner ist Ihnen entgangen!"
+    "victory_intrus": "Bravo! Keiner ist Ihnen entgangen!",
+    "victory_whois": "Bravo! Kein Gesicht ist Ihnen entgangen!"
   },
   "daily": {
     "title_win": "🌍 Tages-Herausforderung bestanden!",
@@ -697,5 +698,15 @@
     "color_title": "🎨 Alles in Farbe sehen",
     "color_sub": "Kein Fortschritt: alle Porträts sofort.",
     "hint": "Sie können das jederzeit ändern, in der Galerie oder in den Einstellungen."
+  },
+  "whois": {
+    "title": "Wer ist das?",
+    "desc": "3 Leben. Ein Porträt, vier Namen: Finden Sie heraus, wer hinter diesem Gesicht steckt.",
+    "kicker": "Wer ist das?",
+    "portrait_alt": "Porträt einer Persönlichkeit, die erkannt werden soll",
+    "not_enough": "Dieses Thema hat nicht genug Porträts für diesen Modus.",
+    "reveal_right": "Gut erkannt!",
+    "reveal_wrong": "Verfehlt, es war…",
+    "continue": "Weiter ›"
   }
 }

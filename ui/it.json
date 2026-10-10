@@ -211,7 +211,8 @@
     "victory_ordre": "Bravo! Tutto rimesso in ordine!",
     "victory_blitz": "Tempo scaduto! {right} risposte giuste.",
     "victory_curseur": "Bravo! Occhio preciso ogni volta!",
-    "victory_intrus": "Bravo! Non ve n'è sfuggito nemmeno uno!"
+    "victory_intrus": "Bravo! Non ve n'è sfuggito nemmeno uno!",
+    "victory_whois": "Bravo! Nessun volto vi è sfuggito!"
   },
   "daily": {
     "title_win": "🌍 Sfida del Giorno Superata!",
@@ -697,5 +698,15 @@
     "color_title": "🎨 Vedere tutto a colori",
     "color_sub": "Nessuna progressione: tutti i ritratti, subito.",
     "hint": "Potete cambiare questa scelta in qualsiasi momento, nella galleria o nelle Impostazioni."
+  },
+  "whois": {
+    "title": "Chi è?",
+    "desc": "3 vite. Un ritratto, quattro nomi: scoprite chi si nasconde dietro questo volto.",
+    "kicker": "Chi è?",
+    "portrait_alt": "Ritratto di un personaggio da identificare",
+    "not_enough": "Questo tema non ha abbastanza ritratti per questa modalità.",
+    "reveal_right": "Ben visto!",
+    "reveal_wrong": "Sbagliato, era…",
+    "continue": "Continua ›"
   }
 }

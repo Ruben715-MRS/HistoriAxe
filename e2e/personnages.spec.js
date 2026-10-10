@@ -19,7 +19,7 @@
 // l'assertion « console vierge » du socle (e2e/fixtures.js) attrape donc d'elle
 // seule un portrait manquant ou un chemin faux.
 
-const { test, expect, visibleScreen } = require('./fixtures');
+const { test, expect, visibleScreen, openThemeCard } = require('./fixtures');
 
 const PANTHEON = 'pan_fr';
 
@@ -941,4 +941,141 @@ test('une vraie partie débloque les portraits des personnages rencontrés', asy
         openGallery('alpha');
     });
     await expect(page.locator('#gallery-collection-count')).toHaveText(new RegExp(`^${rencontres} / \\d+ portraits débloqués$`));
+});
+
+// ---- Mode « Qui est-ce ? » : un portrait, quatre noms ----------------------------------------------
+
+async function lancerQuiEstCe(page, theme = PANTHEON) {
+    await openThemeById(page, theme);
+    await expect(page.locator('#mode-card-whois')).toBeVisible();
+    await page.locator('#mode-card-whois').click();
+    await expect(page.locator('#screen-whois')).toBeVisible();
+}
+
+// La bonne réponse de la question affichée, lue dans l'état du jeu : le test ne la devine pas.
+const bonneReponse = page => page.evaluate(() => whoQuestions[whoIndex].correctId);
+
+async function repondre(page, juste) {
+    const bonne = await bonneReponse(page);
+    const selecteur = juste ? `[data-event-id="${bonne}"]` : `:not([data-event-id="${bonne}"])`;
+    await page.locator(`#whois-options .whois-option${selecteur}`).first().click();
+}
+
+test('« Qui est-ce ? » n’est proposé que pour un thème dont les figures ont un portrait', async ({ page }) => {
+    await openThemeById(page, PANTHEON);
+    await expect(page.locator('#mode-card-whois')).toBeVisible();
+    await expect(page.locator('#mode-card-whois h3')).toHaveText('Qui est-ce ?');
+    // Un thème d'histoire n'a aucun portrait : la carte ne s'y propose pas.
+    await page.evaluate(() => showScreen('screen-categories'));
+    await openThemeCard(page, 'thm_aut');
+    await page.waitForSelector('#screen-axes:not(.hidden), #screen-modes:not(.hidden)');
+    if (await visibleScreen(page) === 'screen-axes') await page.locator('#axes-continue-btn').click();
+    await expect(page.locator('#screen-modes')).toBeVisible();
+    await expect(page.locator('#mode-card-whois')).toBeHidden();
+});
+
+test('« Qui est-ce ? » montre un portrait et son crédit, sans dire qui avant la réponse', async ({ page }) => {
+    await lancerQuiEstCe(page);
+    const portrait = page.locator('#whois-portrait-img');
+    await expect(portrait).toBeVisible();
+    await expect.poll(() => portrait.evaluate(img => img.complete ? img.naturalWidth : 0)).toBe(320);
+    await expect(portrait).toHaveAttribute('alt', /à identifier/);
+    // Quatre noms distincts, une barre de progression à 1 sur 10, trois vies.
+    const noms = await page.locator('#whois-options .whois-option').allTextContents();
+    expect(noms).toHaveLength(4);
+    expect(new Set(noms).size).toBe(4);
+    await expect(page.locator('#whois-hud-count')).toHaveText('1 / 10');
+    await expect(page.locator('#whois-hud-lives .pip')).toHaveCount(3);
+    await expect(page.locator('#whois-hud-lives .pip.spent')).toHaveCount(0);
+    // Le crédit est là (condition des licences CC), la légende — qui nomme la personne — n'y est pas encore.
+    await expect(page.locator('#whois-portrait-credit')).toContainText('Wikimedia Commons');
+    await expect(page.locator('#whois-portrait-credit a').first()).toHaveAttribute('rel', /noopener/);
+    await expect(page.locator('#whois-reveal')).toBeHidden();
+    const legende = await page.evaluate(() => portraitOf(whoQuestions[whoIndex].correct).legende);
+    await expect(page.locator('#screen-whois')).not.toContainText(legende);
+});
+
+test('« Qui est-ce ? » : une bonne réponse révèle la fiche et se poursuit au bouton « Continuer »', async ({ page }) => {
+    await lancerQuiEstCe(page);
+    const q = await page.evaluate(() => ({ nom: whoQuestions[whoIndex].name, id: whoQuestions[whoIndex].correctId,
+        legende: portraitOf(whoQuestions[whoIndex].correct).legende }));
+    await repondre(page, true);
+    await expect(page.locator(`#whois-options .whois-option[data-event-id="${q.id}"]`)).toHaveClass(/correct/);
+    await expect(page.locator('#whois-options .whois-option.wrong')).toHaveCount(0);
+    const reveal = page.locator('#whois-reveal');
+    await expect(reveal).toBeVisible();
+    await expect(reveal.locator('.whois-reveal-verdict')).toHaveText('Bien vu !');
+    await expect(reveal.locator('.whois-reveal-name')).toContainText(q.nom);
+    await expect(reveal.locator('.whois-reveal-caption')).toHaveText(q.legende);
+    await expect(reveal.locator('.whois-reveal-desc')).not.toBeEmpty();
+    await expect(page.locator('#whois-hud-lives .pip.spent')).toHaveCount(0);
+    // Ne se referme pas tout seul : le bouton a le focus, Entrée enchaîne.
+    await expect(page.locator('#whois-continue')).toBeFocused();
+    await page.waitForTimeout(3000);
+    await expect(reveal).toBeVisible();
+    await page.keyboard.press('Enter');
+    await expect(page.locator('#whois-hud-count')).toHaveText('2 / 10');
+    await expect(reveal).toBeHidden();
+    // Les réponses ne se cliquent pas deux fois pendant le révélé.
+    expect(await page.evaluate(() => whoIndex)).toBe(1);
+});
+
+test('« Qui est-ce ? » : une mauvaise réponse coûte une vie, et trois mènent à la fin de partie', async ({ page }) => {
+    await lancerQuiEstCe(page);
+    await repondre(page, false);
+    await expect(page.locator('#whois-options .whois-option.wrong')).toHaveCount(1);
+    await expect(page.locator('#whois-options .whois-option.correct')).toHaveCount(1);
+    await expect(page.locator('#whois-reveal .whois-reveal-verdict')).toContainText('Raté');
+    await expect(page.locator('#whois-hud-lives .pip.spent')).toHaveCount(1);
+    await page.locator('#whois-continue').click();
+    await repondre(page, false);
+    await page.locator('#whois-continue').click();
+    await repondre(page, false);
+    await expect(page.locator('#whois-hud-lives .pip.spent')).toHaveCount(3);
+    await page.locator('#whois-continue').click();
+    await expect(page.locator('#screen-end')).toBeVisible();
+    await expect(page.locator('#end-title')).toContainText('Game Over');
+    // « Rejouer » relance bien CE mode, et non la frise.
+    await page.locator('#screen-end button', { hasText: 'Rejouer' }).click();
+    await expect(page.locator('#screen-whois')).toBeVisible();
+    await expect(page.locator('#whois-hud-count')).toHaveText('1 / 10');
+});
+
+test('« Qui est-ce ? » : dix bonnes réponses gagnent la partie, et débloquent ces dix portraits', async ({ page }) => {
+    await quitterLAccueil(page);
+    await page.evaluate(() => { appSettings.portraitCollection = 'bw'; settingsSave(appSettings); localStorage.removeItem('historiaxe_srs_v1'); });
+    await lancerQuiEstCe(page);
+    const rencontres = [];
+    for (let i = 0; i < 10; i++) {
+        rencontres.push(await bonneReponse(page));
+        await repondre(page, true);
+        await page.locator('#whois-continue').click();
+    }
+    await expect(page.locator('#screen-end')).toBeVisible();
+    await expect(page.locator('#end-title')).toContainText('Pas un visage ne vous a échappé');
+    const debloques = await page.evaluate(ids => ids.filter(id => srsLoad()[id]).length, rencontres);
+    expect(debloques).toBe(10);
+    expect(new Set(rencontres).size).toBe(10);
+});
+
+test('« Qui est-ce ? » : quitter la partie ramène à l’écran d’où elle est partie', async ({ page }) => {
+    await lancerQuiEstCe(page);
+    await page.locator('#screen-whois .quit-btn').click();
+    await page.locator('#confirm-ok-btn').click();
+    // Là où le parcours ordinaire ramène après une partie (les axes, ou les thèmes).
+    expect(['screen-themes', 'screen-axes']).toContain(await visibleScreen(page));
+});
+
+test('« Qui est-ce ? » lancé depuis la galerie y ramène à la fin de la partie', async ({ page }) => {
+    await ouvrirLaGalerie(page);
+    await page.locator('#gallery-container .gallery-card', { hasText: 'Victor Hugo' }).click();
+    await page.locator('#modal-theme-btn').click();
+    await page.waitForSelector('#screen-axes:not(.hidden), #screen-modes:not(.hidden)');
+    if (await visibleScreen(page) === 'screen-axes') await page.locator('#axes-continue-btn').click();
+    await page.locator('#mode-card-whois').click();
+    await expect(page.locator('#screen-whois')).toBeVisible();
+    await page.locator('#screen-whois .quit-btn').click();
+    await page.locator('#confirm-ok-btn').click();
+    await remonterJusqueALaGalerie(page);
+    await expect(page.locator('#gallery-container .gallery-card', { hasText: 'Victor Hugo' })).toHaveCount(1);
 });
