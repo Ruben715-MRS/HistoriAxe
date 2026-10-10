@@ -90,12 +90,13 @@ test('Personnages illustres : deux sous-catégories, chacune avec sa note et son
     await expect(page.locator('#theme-screen-title')).toHaveText('Panthéons');
     await expect(page.locator('#theme-screen-note-text')).toContainText('né dans les frontières actuelles');
     // Panthéons de pays et de blocs se rangent par leur nom de source — « Allemagne, Autriche et Suisse »,
-    // « Amérique hispanique », « Égypte », « États-Unis », « France », « Italie », « Maghreb » — et non par
+    // « Amérique hispanique », « Égypte », « États-Unis », « France », « Italie », « Maghreb », « Royaume-Uni » — et non par
     // « Grandes figures d'… » / « … de » / « … des » / « … du ».
     await expect(page.locator('#themes-container .data-card-title'))
         .toHaveText(["Grandes figures d'Allemagne, d'Autriche et de Suisse", "Grandes figures d'Amérique hispanique",
             "Grandes figures d'Égypte", 'Grandes figures des États-Unis',
-            'Grandes figures de France', "Grandes figures d'Italie", 'Grandes figures du Maghreb']);
+            'Grandes figures de France', "Grandes figures d'Italie", 'Grandes figures du Maghreb',
+            'Grandes figures du Royaume-Uni']);
 });
 
 test('la fiche d’un personnage montre son portrait, sa légende, son crédit et sa biographie', async ({ page }) => {
@@ -362,6 +363,47 @@ test('la recherche — « egypte », « pharaon », « nil » — mène au panth
         await page.locator('#theme-search-input').fill(mot);
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: "Grandes figures d'Égypte" });
         await expect(resultat, `« ${mot} » doit mener à l'Égypte`).toHaveCount(1);
+        await expect(resultat.locator('.search-result-path')).toContainText('Personnages illustres › Panthéons');
+    }
+});
+
+test('le Royaume-Uni : chacune de ses figures a son portrait, de Boudicca à Amy Winehouse, et la fiche n’affiche aucun pays', async ({ page }) => {
+    await openThemeById(page, 'pan_gb');
+    await page.locator('#mode-card-discovery').click();
+    await expect(page.locator('#screen-game')).toBeVisible();
+    const nombre = await page.evaluate(() => getCurrentTheme().events.length);
+    expect(nombre).toBeGreaterThanOrEqual(140);
+    expect(nombre).toBeLessThanOrEqual(160);
+    // Une pastille par repère, pas une de moins.
+    await expect(page.locator('#timeline .entry')).toHaveCount(nombre);
+    await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
+
+    // Trois époques : un dramaturge de la Renaissance, un Premier ministre du XXe siècle, un mathématicien.
+    // Le panthéon d'un pays n'affiche pas de pays, et le portrait charge au bon format.
+    for (const titre of ['Naissance de William Shakespeare', 'Naissance de Winston Churchill', "Naissance d'Alan Turing"]) {
+        await page.locator('#timeline .entry', { hasText: titre }).click();
+        await expect(page.locator('#modal-details')).toBeVisible();
+        await expect(page.locator('#modal-pays')).toBeHidden();
+        const portrait = page.locator('#modal-portrait-img');
+        await expect.poll(() => portrait.evaluate(img => img.complete ? img.naturalWidth : 0)).toBe(320);
+        await expect(page.locator('#modal-portrait-caption')).not.toBeEmpty();
+        await page.locator('#modal-details .close-btn').click();
+        await expect(page.locator('#modal-details')).toBeHidden();
+    }
+
+    // Trente-trois figures ont aussi leur biographie dans l'appli : le bouton y mène.
+    const avecBiographie = await page.evaluate(() => getCurrentTheme().events.filter(e => e.biographie).length);
+    expect(avecBiographie).toBe(33);
+    await page.locator('#timeline .entry', { hasText: 'Naissance de Charles Darwin' }).click();
+    await expect(page.locator('#modal-bio-btn')).toBeVisible();
+});
+
+test('la recherche — « royaume-uni », « ecosse », « angleterre », « londres » — mène au panthéon du Royaume-Uni', async ({ page }) => {
+    await page.locator('#screen-home').click();
+    for (const mot of ['royaume-uni', 'ecosse', 'angleterre', 'londres']) {
+        await page.locator('#theme-search-input').fill(mot);
+        const resultat = page.locator('#theme-search-results .search-result-item', { hasText: 'Grandes figures du Royaume-Uni' });
+        await expect(resultat, `« ${mot} » doit mener au Royaume-Uni`).toHaveCount(1);
         await expect(resultat.locator('.search-result-path')).toContainText('Personnages illustres › Panthéons');
     }
 });

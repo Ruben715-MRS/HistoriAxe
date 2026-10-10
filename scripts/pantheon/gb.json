@@ -1,0 +1,2388 @@
+{
+  "code": "gb",
+  "nom": "Royaume-Uni",
+  "theme": {
+    "id": "pan_gb",
+    "nom": "Grandes figures du Royaume-Uni",
+    "difficulte": "Intermédiaire",
+    "motsCles": [
+      "Britannique",
+      "Anglais",
+      "Anglaise",
+      "Angleterre",
+      "Écosse",
+      "Écossais",
+      "Pays de Galles",
+      "Gallois",
+      "Irlande du Nord",
+      "Grande-Bretagne",
+      "Londres",
+      "Empire britannique",
+      "Révolution industrielle",
+      "Époque victorienne",
+      "Tudors",
+      "Shakespeare"
+    ]
+  },
+  "axes": [
+    "Chefs d'État et dirigeants",
+    "Guerres et résistances",
+    "Littérature et pensée",
+    "Beaux-arts",
+    "Musique, spectacle et sport",
+    "Sciences, techniques et innovation",
+    "Économie et entreprise"
+  ],
+  "personnages": [
+    {
+      "slug": "alfred",
+      "nom": "Alfred le Grand",
+      "titre": "Naissance d'Alfred le Grand",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 849,
+      "description": "Alfred le Grand (849-899) est un roi du Wessex, né à Wantage, qui règne de 871 à sa mort. Vainqueur des Danois de Guthrum à Edington en 878, il fortifie le royaume en bourgs, bâtit une flotte et fait traduire en anglais les textes qu'il juge nécessaires à l'éducation de ses sujets. Il est le seul roi d'Angleterre à porter le surnom de « Grand » et le fondateur du royaume anglais que ses successeurs étendront à toute l'Angleterre.",
+      "wikipedia": "Alfred_le_Grand",
+      "portrait": {
+        "fichier": "Statue d'Alfred le Grand à Winchester.jpg",
+        "legende": "Alfred le Grand, statue en bronze de Hamo Thornycroft (1901) à Winchester : aucun portrait authentique n'existe",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Odejea"
+      }
+    },
+    {
+      "slug": "guillaume",
+      "nom": "Guillaume le Conquérant",
+      "titre": "Naissance de Guillaume le Conquérant",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1028,
+      "description": "Guillaume le Conquérant (vers 1028-1087) est un duc de Normandie devenu roi d'Angleterre, né à Falaise et fils illégitime du duc Robert. Vainqueur du roi Harold à Hastings le 14 octobre 1066, il est couronné à Westminster à Noël, remplace l'aristocratie anglo-saxonne par ses compagnons normands et fait dresser le Domesday Book en 1086. Il meurt en 1087 près de Rouen, et la conquête normande change pour des siècles la langue, le droit et les liens de l'Angleterre avec le continent.",
+      "wikipedia": "Guillaume_le_Conquérant",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Bayeux Tapestry William.jpg",
+        "legende": "Guillaume le Conquérant, détail de la tapisserie de Bayeux, brodée dans les années 1070",
+        "licence": "Domaine public",
+        "auteur": "Myrabella"
+      }
+    },
+    {
+      "slug": "edouard1",
+      "nom": "Édouard Ier",
+      "titre": "Naissance d'Édouard Ier",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1239,
+      "description": "Édouard Ier (1239-1307) est un roi d'Angleterre, né à Westminster, qui règne de 1272 à sa mort. Il conquiert le pays de Galles après la mort de Llywelyn ap Gruffydd en 1282, fait bâtir des châteaux de pierre pour le tenir et, surnommé « Marteau des Écossais », mène des campagnes en Écosse qui ouvrent un siècle de guerres. Son Parlement de 1295, qui réunit nobles, clergé et représentants des comtés et des villes, fait date, mais il expulse aussi les Juifs du royaume en 1290.",
+      "wikipedia": "Édouard_Ier_(roi_d'Angleterre)",
+      "portrait": {
+        "fichier": "Edward I - Westminster Abbey Sedilia.jpg",
+        "legende": "Édouard Ier, effigie sculptée sur les sedilia de l'abbaye de Westminster, érigés sous son règne",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "henri8",
+      "nom": "Henri VIII",
+      "titre": "Naissance d'Henri VIII",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1491,
+      "description": "Henri VIII (1491-1547) est un roi d'Angleterre, né à Greenwich, qui règne de 1509 à sa mort. Faute d'obtenir du pape l'annulation de son mariage avec Catherine d'Aragon, il se fait proclamer chef suprême de l'Église d'Angleterre en 1534, dissout les monastères entre 1536 et 1540 et épouse six femmes, dont deux sont exécutées. Il réunit le pays de Galles à l'Angleterre en 1536 et laisse un royaume séparé de Rome, que ses trois enfants gouverneront tour à tour.",
+      "wikipedia": "Henri_VIII_d'Angleterre",
+      "essentiel": true,
+      "biographie": "bio_henri8",
+      "portrait": {
+        "fichier": "Enrique VIII de Inglaterra, por Hans Holbein el Joven.jpg",
+        "legende": "Henri VIII, peinture d'après Hans Holbein le Jeune (vers 1540)",
+        "auteur": "Hans Holbein le Jeune",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "elisabeth1",
+      "nom": "Élisabeth Ire",
+      "titre": "Naissance d'Élisabeth Ire",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1533,
+      "description": "Élisabeth Ire (1533-1603) est une reine d'Angleterre et d'Irlande, née à Greenwich, qui règne de 1558 à sa mort. Elle fixe en 1559 un compromis religieux qui fonde l'Église anglicane, fait exécuter sa cousine Marie Stuart en 1587 et voit sa flotte repousser l'Invincible Armada espagnole en 1588. Restée sans époux ni enfant, elle donne son nom à une époque de commerce lointain, de théâtre et de poésie, avec Shakespeare, Marlowe et Spenser.",
+      "wikipedia": "Élisabeth_Ire_(reine_d'Angleterre)",
+      "essentiel": true,
+      "biographie": "bio_elisabeth1",
+      "portrait": {
+        "fichier": "Elizabeth1England.jpg",
+        "legende": "Élisabeth Ire, « portrait à l'hermine », attribué à William Segar (vers 1585)",
+        "auteur": "William Segar (attribué)",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "mariestuart",
+      "nom": "Marie Stuart",
+      "titre": "Naissance de Marie Stuart",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1542,
+      "description": "Marie Stuart (1542-1587) est une reine d'Écosse, née à Linlithgow et couronnée à l'âge de neuf mois, élevée en France où elle épouse le futur François II. Rentrée en Écosse en 1561, elle épouse Lord Darnley, assassiné en 1567, puis Bothwell, et doit abdiquer ; réfugiée en Angleterre en 1568, elle y est retenue prisonnière dix-neuf ans par sa cousine Élisabeth Ire. Convaincue d'avoir approuvé un complot catholique, elle est décapitée à Fotheringhay le 8 février 1587, et son fils Jacques VI hérite de la couronne d'Angleterre.",
+      "wikipedia": "Marie_Stuart",
+      "portrait": {
+        "fichier": "François Clouet - Mary, Queen of Scots (1542-87) - Google Art Project.jpg",
+        "legende": "Marie Stuart, miniature de François Clouet, vers 1558-1560, au temps de son mariage avec François II",
+        "auteur": "François Clouet",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "jacques1",
+      "nom": "Jacques Ier",
+      "titre": "Naissance de Jacques Ier",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1566,
+      "description": "Jacques Ier (1566-1625) est un roi d'Écosse sous le nom de Jacques VI, né au château d'Édimbourg, puis d'Angleterre et d'Irlande à partir de 1603 ; il réunit ainsi les couronnes des deux royaumes. Il échappe en 1605 à la Conspiration des poudres, fait paraître en 1611 la traduction anglaise de la Bible qui porte son nom et défend la doctrine du droit divin des rois. Ses conflits avec le Parlement préparent ceux que son fils Charles Ier mènera jusqu'à la guerre civile.",
+      "wikipedia": "Jacques_Ier_d'Angleterre",
+      "portrait": {
+        "fichier": "James I of England by Daniel Mytens.jpg",
+        "legende": "Jacques Ier, portrait de Daniel Mytens (1621)",
+        "auteur": "Daniel Mytens",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "cromwell",
+      "nom": "Oliver Cromwell",
+      "titre": "Naissance d'Oliver Cromwell",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1599,
+      "description": "Oliver Cromwell (1599-1658) est un militaire et homme d'État anglais, né à Huntingdon, gentilhomme de campagne devenu député puritain. Chef de la cavalerie, puis de la New Model Army, il bat les troupes royales à Naseby en 1645, fait juger et exécuter Charles Ier en 1649 et gouverne comme lord-protecteur de 1653 à sa mort. Sa campagne d'Irlande de 1649-1650, avec les massacres de Drogheda et de Wexford, et la confiscation des terres qui suit lui valent encore la haine d'une partie des Irlandais, et son corps est exhumé et pendu à la Restauration.",
+      "wikipedia": "Oliver_Cromwell",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Oliver Cromwell by Samuel Cooper.jpg",
+        "legende": "Oliver Cromwell, d'après un original de Samuel Cooper (1656)",
+        "auteur": "Samuel Cooper (d'après)",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "walpole",
+      "nom": "Robert Walpole",
+      "titre": "Naissance de Robert Walpole",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1676,
+      "description": "Robert Walpole (1676-1745) est un homme d'État britannique, né à Houghton dans le Norfolk, que l'on tient pour le premier Premier ministre. Il rétablit le crédit public après l'effondrement de la Compagnie des mers du Sud en 1720 et dirige le gouvernement de 1721 à 1742, avec le soutien constant de George Ier puis de George II. Sa politique de paix et de bas impôts, comme l'usage qu'il fait des places et des pensions pour tenir le Parlement, vaut à son long ministère le nom d'« âge de Walpole ».",
+      "wikipedia": "Robert_Walpole",
+      "portrait": {
+        "fichier": "Robert-Walpole-1st-Earl-of-Orford.jpg",
+        "legende": "Robert Walpole, portrait de l'atelier de Jean-Baptiste van Loo (1740)",
+        "auteur": "Atelier de Jean-Baptiste van Loo",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "pitt",
+      "nom": "William Pitt le Jeune",
+      "titre": "Naissance de William Pitt le Jeune",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1759,
+      "description": "William Pitt le Jeune (1759-1806) est un homme d'État britannique, né à Hayes dans le Kent, fils de William Pitt l'Ancien, qui devient Premier ministre à vingt-quatre ans en décembre 1783. Il redresse les finances, fait voter l'Acte d'Union avec l'Irlande en 1800 et dirige la lutte contre la France révolutionnaire et napoléonienne, qui domine presque tout son second ministère de 1804 à sa mort. Épuisé, il meurt à quarante-six ans en janvier 1806, quelques semaines après la défaite d'Austerlitz.",
+      "wikipedia": "William_Pitt_le_Jeune",
+      "portrait": {
+        "fichier": "OlderPittThe Younger.jpg",
+        "legende": "William Pitt le Jeune, portrait de John Hoppner (après 1806)",
+        "auteur": "John Hoppner",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "disraeli",
+      "nom": "Benjamin Disraeli",
+      "titre": "Naissance de Benjamin Disraeli",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1804,
+      "description": "Benjamin Disraeli (1804-1881) est un romancier et homme d'État britannique, né à Londres dans une famille juive convertie à l'anglicanisme. Chef des conservateurs, Premier ministre en 1868 puis de 1874 à 1880, il fait voter la réforme électorale de 1867, rachète en 1875 les parts égyptiennes du canal de Suez et fait proclamer la reine Victoria impératrice des Indes en 1876. Son rival libéral Gladstone domine avec lui la politique de l'ère victorienne, et ses romans, comme Sybil, dénoncent la division du pays en « deux nations ».",
+      "wikipedia": "Benjamin_Disraeli",
+      "portrait": {
+        "fichier": "Benjamin Disraeli by Cornelius Jabez Hughes, 1878.jpg",
+        "legende": "Benjamin Disraeli, photographie de Cornelius Jabez Hughes, prise à Osborne le 22 juillet 1878",
+        "auteur": "Cornelius Jabez Hughes",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "gladstone",
+      "nom": "William Gladstone",
+      "titre": "Naissance de William Gladstone",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1809,
+      "description": "William Gladstone (1809-1898) est un homme d'État britannique, né à Liverpool, quatre fois Premier ministre entre 1868 et 1894 à la tête des libéraux. Il fait voter la loi sur l'enseignement de 1870, le vote secret en 1872 et la séparation de l'Église d'Irlande de l'État, puis tente en vain d'accorder l'autonomie à l'Irlande en 1886 et en 1893. Surnommé le « Grand Old Man », il a incarné pendant un demi-siècle, face à Disraeli, une politique d'économie et de conscience morale.",
+      "wikipedia": "William_Ewart_Gladstone",
+      "portrait": {
+        "fichier": "William Ewart Gladstone, 1892 (cropped).jpg",
+        "legende": "William Gladstone, photographie de Samuel Alexander Walker (1892)",
+        "auteur": "Samuel Alexander Walker",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "victoria",
+      "nom": "Victoria",
+      "titre": "Naissance de Victoria",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1819,
+      "description": "Victoria (1819-1901) est une reine du Royaume-Uni de Grande-Bretagne et d'Irlande, née au palais de Kensington, qui monte sur le trône en 1837 et devient impératrice des Indes en 1876. Son règne de soixante-trois ans, le plus long de son temps, voit l'industrialisation, l'Exposition universelle de 1851 voulue par son époux Albert et l'extension de l'Empire britannique sur tous les continents. Ses neuf enfants et petits-enfants s'allient aux familles royales d'Europe, ce qui lui vaut le surnom de « grand-mère de l'Europe ».",
+      "wikipedia": "Victoria_(reine_du_Royaume-Uni)",
+      "essentiel": true,
+      "biographie": "bio_victoria",
+      "portrait": {
+        "fichier": "Queen Victoria - Winterhalter 1859.jpg",
+        "legende": "La reine Victoria, portrait de Franz Xaver Winterhalter (1859)",
+        "auteur": "Franz Xaver Winterhalter",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "lloydgeorge",
+      "nom": "David Lloyd George",
+      "titre": "Naissance de David Lloyd George",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1863,
+      "description": "David Lloyd George (1863-1945) est un homme politique britannique, né à Manchester et élevé au pays de Galles, qui dirige le gouvernement de 1916 à 1922. Chancelier de l'Échiquier, il fait adopter en 1909 le « budget du peuple » et en 1911 les premières assurances sociales, puis conduit la Grande-Bretagne à la victoire de 1918 et négocie le traité de Versailles. Il reconnaît ensuite l'État libre d'Irlande en 1921, avant que sa coalition ne s'effondre en 1922 et ne lui ferme pour toujours les portes du pouvoir.",
+      "wikipedia": "David_Lloyd_George",
+      "portrait": {
+        "fichier": "David Lloyd George.jpg",
+        "legende": "David Lloyd George, photographie de l'agence Harris & Ewing (1919)",
+        "licence": "Domaine public",
+        "auteur": "Harris & Ewing"
+      }
+    },
+    {
+      "slug": "churchill",
+      "nom": "Winston Churchill",
+      "titre": "Naissance de Winston Churchill",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1874,
+      "description": "Winston Churchill (1874-1965) est un homme d'État et écrivain britannique, né au palais de Blenheim, deux fois Premier ministre, de 1940 à 1945 puis de 1951 à 1955. Appelé au pouvoir au moment de l'effondrement de la France, il refuse toute négociation avec Hitler, tient bon pendant la bataille d'Angleterre et s'allie à Roosevelt puis à Staline, avant de dénoncer le « rideau de fer » à Fulton en 1946. Prix Nobel de littérature en 1953, il reste contesté pour les Dardanelles en 1915, la famine du Bengale en 1943 et ses vues sur l'Empire.",
+      "wikipedia": "Winston_Churchill",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Sir Winston Churchill - 19086236948 (restored).jpg",
+        "legende": "Winston Churchill, photographie de Yousuf Karsh intitulée « Le lion rugissant » (30 décembre 1941)",
+        "licence": "Domaine public",
+        "auteur": "Yousuf Karsh"
+      }
+    },
+    {
+      "slug": "attlee",
+      "nom": "Clement Attlee",
+      "titre": "Naissance de Clement Attlee",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1883,
+      "description": "Clement Attlee (1883-1967) est un homme politique britannique, né à Putney, chef du Parti travailliste dès 1935 et vice-Premier ministre de Churchill pendant la guerre. Vainqueur surprise des élections de 1945, il est Premier ministre jusqu'en 1951 : son gouvernement crée le Service national de santé en 1948 avec Aneurin Bevan, nationalise le charbon, les chemins de fer et la Banque d'Angleterre, et accorde l'indépendance à l'Inde en 1947. Discret et efficace, il est resté le modèle de l'État-providence britannique d'après-guerre.",
+      "wikipedia": "Clement_Attlee",
+      "portrait": {
+        "fichier": "Person attlee2.jpg",
+        "legende": "Clement Attlee, photographie prise vers 1945, attribuée à Yousuf Karsh",
+        "licence": "Domaine public",
+        "auteur": "Attribué à Yousuf Karsh"
+      }
+    },
+    {
+      "slug": "thatcher",
+      "nom": "Margaret Thatcher",
+      "titre": "Naissance de Margaret Thatcher",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1925,
+      "description": "Margaret Thatcher (1925-2013) est une femme d'État britannique, née à Grantham, la première femme à diriger le gouvernement du Royaume-Uni, de 1979 à 1990. Chef du Parti conservateur, elle privatise des pans de l'industrie, affronte les mineurs en 1984-1985, remporte la guerre des Malouines en 1982 et s'entend avec Reagan comme avec Gorbatchev. Ses réformes divisent profondément le pays, et l'impopularité de la capitation, impôt local par tête, la contraint à démissionner en novembre 1990.",
+      "wikipedia": "Margaret_Thatcher",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Margaret Thatcher (1983).jpg",
+        "legende": "Margaret Thatcher, photographie de Rob Bogaerts (19 septembre 1983)",
+        "auteur": "Rob Bogaerts",
+        "licence": "CC0 (domaine public)"
+      }
+    },
+    {
+      "slug": "elizabeth2",
+      "nom": "Élisabeth II",
+      "titre": "Naissance d'Élisabeth II",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1926,
+      "description": "Élisabeth II (1926-2022) est une reine du Royaume-Uni et d'autres royaumes du Commonwealth, née à Londres, qui monte sur le trône en février 1952 et est couronnée en 1953. Son règne de soixante-dix ans, le plus long de l'histoire britannique, voit la décolonisation, l'adhésion puis la sortie de l'Europe, la transformation du Commonwealth et quinze Premiers ministres, de Churchill à Liz Truss. Elle meurt à Balmoral en septembre 2022, après des jubilés célébrés dans tout le pays.",
+      "wikipedia": "Élisabeth_II",
+      "essentiel": true,
+      "biographie": "bio_elizabeth2",
+      "portrait": {
+        "fichier": "Elizabeth II in Berlin 2015 (cropped).JPG",
+        "legende": "Élisabeth II, photographie prise à Berlin le 26 juin 2015",
+        "licence": "CC BY-SA 4.0",
+        "auteur": "PolizeiBerlin"
+      }
+    },
+    {
+      "slug": "boudicca",
+      "nom": "Boudicca",
+      "titre": "Naissance de Boudicca",
+      "axe": "Guerres et résistances",
+      "naissance": 30,
+      "description": "Boudicca (vers 30-vers 61) est une reine des Icènes, peuple de l'est de l'Angleterre actuelle, qui conduit la révolte la plus dangereuse contre la conquête romaine. Après la mort de son époux Prasutagus, les Romains annexent le royaume, la font fouetter et violent ses filles ; en 60 ou 61, elle détruit Camulodunum (Colchester), Londinium et Verulamium. Écrasée par le gouverneur Suetonius Paulinus, elle meurt peu après, d'un poison ou de maladie, et sa légende, connue par Tacite et Dion Cassius, est devenue un symbole de la résistance britannique.",
+      "wikipedia": "Boudicca",
+      "portrait": {
+        "fichier": "Boudiccastatue.jpg",
+        "legende": "Boudicca et ses filles, groupe en bronze de Thomas Thornycroft près de Westminster Pier, à Londres (1902) : aucun portrait authentique n'existe",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "A. Brady"
+      }
+    },
+    {
+      "slug": "wallace",
+      "nom": "William Wallace",
+      "titre": "Naissance de William Wallace",
+      "axe": "Guerres et résistances",
+      "naissance": 1270,
+      "description": "William Wallace (vers 1270-1305) est un chevalier écossais, né vers 1270, probablement dans le Renfrewshire, qui prend la tête de la résistance à l'occupation d'Édouard Ier. Il bat les Anglais à Stirling Bridge le 11 septembre 1297 avec Andrew Moray et devient gardien du royaume d'Écosse, avant d'être vaincu à Falkirk en 1298. Trahi et capturé en 1305, il est exécuté à Londres le 23 août, et sa vie, mal connue, est devenue la légende de l'indépendance écossaise.",
+      "wikipedia": "William_Wallace",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "William wallace.jpg",
+        "legende": "William Wallace, gravure posthume : aucun portrait de son vivant n'est connu",
+        "licence": "Domaine public",
+        "auteur": "Spisák Bence"
+      }
+    },
+    {
+      "slug": "bruce",
+      "nom": "Robert Bruce",
+      "titre": "Naissance de Robert Bruce",
+      "axe": "Guerres et résistances",
+      "naissance": 1274,
+      "description": "Robert Bruce (1274-1329) est un roi d'Écosse, issu d'une famille anglo-normande installée dans le pays, qui se fait couronner à Scone en 1306. Il reconquiert le royaume contre l'Angleterre, écrase l'armée d'Édouard II à Bannockburn le 24 juin 1314 et fait rédiger en 1320 la Déclaration d'Arbroath, où la noblesse écossaise affirme sa liberté. Le traité d'Édimbourg-Northampton reconnaît l'indépendance de l'Écosse en 1328 ; il meurt un an plus tard et son cœur est inhumé à Melrose.",
+      "wikipedia": "Robert_Ier_(roi_d'Écosse)",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "King Robert I of Scotland.jpg",
+        "legende": "Robert Bruce, reconstitution faciale d'après un moulage de son crâne : aucun portrait de son vivant n'est connu",
+        "licence": "CC BY-SA 4.0",
+        "auteur": "S.A.Farabi"
+      }
+    },
+    {
+      "slug": "henri5",
+      "nom": "Henri V",
+      "titre": "Naissance d'Henri V",
+      "axe": "Guerres et résistances",
+      "naissance": 1386,
+      "description": "Henri V (1386-1422) est un roi d'Angleterre, né à Monmouth, au pays de Galles, qui règne de 1413 à sa mort. Il reprend la guerre de Cent Ans, écrase la chevalerie française à Azincourt le 25 octobre 1415 et obtient par le traité de Troyes en 1420 d'être l'héritier de Charles VI, dont il épouse la fille Catherine. Mort de dysenterie à trente-cinq ans, à Vincennes, avant le roi de France, il laisse un fils de neuf mois et un royaume que Shakespeare a immortalisé.",
+      "wikipedia": "Henri_V_(roi_d'Angleterre)",
+      "portrait": {
+        "fichier": "King Henry V from NPG.jpg",
+        "legende": "Henri V, portrait de profil conservé à la National Portrait Gallery de Londres, peint au XVIe siècle d'après un original perdu",
+        "auteur": "Anonyme",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "fawkes",
+      "nom": "Guy Fawkes",
+      "titre": "Naissance de Guy Fawkes",
+      "axe": "Guerres et résistances",
+      "naissance": 1570,
+      "description": "Guy Fawkes (1570-1606) est un soldat catholique anglais, né à York, qui sert dans l'armée espagnole aux Pays-Bas avant de rejoindre la conspiration de Robert Catesby. Surpris dans la nuit du 4 au 5 novembre 1605 au milieu de trente-six barils de poudre placés sous le Parlement, qu'il devait faire sauter avec Jacques Ier, il avoue sous la torture et est exécuté le 31 janvier 1606. Chaque 5 novembre, l'Angleterre fête cet échec par des feux de joie, et son masque est devenu un symbole de contestation.",
+      "wikipedia": "Guy_Fawkes",
+      "portrait": {
+        "fichier": "Guy Fawkes (cropped).jpg",
+        "legende": "Guy Fawkes, détail d'une gravure d'époque des conjurés de la Conspiration des poudres, par Crispijn van de Passe l'Ancien (1605)",
+        "auteur": "Crispijn van de Passe l'Ancien",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "clive",
+      "nom": "Robert Clive",
+      "titre": "Naissance de Robert Clive",
+      "axe": "Guerres et résistances",
+      "naissance": 1725,
+      "description": "Robert Clive (1725-1774) est un officier britannique, né à Styche dans le Shropshire, entré à la Compagnie des Indes orientales comme commis. Vainqueur à Plassey le 23 juin 1757 du nabab du Bengale Siraj ud-Daulah, grâce à la trahison de son général Mir Jafar, il fait de la Compagnie la maîtresse du Bengale et en devient gouverneur. Enrichi par le pillage, accusé devant le Parlement en 1773, il se suicide en 1774, et ses statues sont aujourd'hui contestées en raison des famines et de l'exploitation qui suivirent.",
+      "wikipedia": "Robert_Clive",
+      "portrait": {
+        "fichier": "Robert Clive, 1st Baron Clive by Nathaniel Dance, (later Sir Nathaniel Dance-Holland, Bt).jpg",
+        "legende": "Robert Clive, portrait de Nathaniel Dance",
+        "auteur": "Nathaniel Dance",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "nelson",
+      "nom": "Horatio Nelson",
+      "titre": "Naissance d'Horatio Nelson",
+      "axe": "Guerres et résistances",
+      "naissance": 1758,
+      "description": "Horatio Nelson (1758-1805) est un amiral britannique, né à Burnham Thorpe dans le Norfolk, qui perd l'œil droit en Corse en 1794 puis le bras droit à Santa Cruz de Tenerife en 1797. Vainqueur de la flotte française à Aboukir en 1798 et des Danois à Copenhague en 1801, il détruit la flotte franco-espagnole à Trafalgar le 21 octobre 1805, mais y reçoit une balle mortelle. Cette victoire écarte pour longtemps toute menace d'invasion et fait de lui le héros national de la marine britannique.",
+      "wikipedia": "Horatio_Nelson",
+      "essentiel": true,
+      "biographie": "bio_nelson",
+      "portrait": {
+        "fichier": "HoratioNelson1.jpg",
+        "legende": "Horatio Nelson, portrait de Lemuel Francis Abbott (1799)",
+        "auteur": "Lemuel Francis Abbott",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "wilberforce",
+      "nom": "William Wilberforce",
+      "titre": "Naissance de William Wilberforce",
+      "axe": "Guerres et résistances",
+      "naissance": 1759,
+      "description": "William Wilberforce (1759-1833) est un homme politique britannique, né à Hull, député à vingt et un ans, converti à l'évangélisme en 1785. Pendant vingt ans, il porte au Parlement la campagne contre la traite des esclaves, qui aboutit à son interdiction dans l'Empire en 1807 avec le Slave Trade Act. Il meurt le 29 juillet 1833, trois jours après avoir appris que les Communes avaient adopté la loi qui abolit l'esclavage lui-même dans l'Empire britannique.",
+      "wikipedia": "William_Wilberforce",
+      "essentiel": true,
+      "biographie": "bio_wilberforce",
+      "portrait": {
+        "fichier": "William wilberforce.jpg",
+        "legende": "William Wilberforce, portrait d'Anton Hickel (1794)",
+        "auteur": "Anton Hickel",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "wellington",
+      "nom": "Arthur Wellesley",
+      "titre": "Naissance d'Arthur Wellesley",
+      "axe": "Guerres et résistances",
+      "naissance": 1769,
+      "description": "Arthur Wellesley (1769-1852) est un maréchal et homme d'État britannique, né à Dublin, premier duc de Wellington. Vainqueur des Marathes en Inde puis des Français dans la péninsule Ibérique, il bat Napoléon à Waterloo le 18 juin 1815 avec l'aide de l'armée prussienne de Blücher. Premier ministre de 1828 à 1830, il fait voter en 1829 l'émancipation des catholiques, malgré son conservatisme, et reste jusqu'à sa mort, en 1852, l'homme le plus honoré du royaume.",
+      "wikipedia": "Arthur_Wellesley_(1er_duc_de_Wellington)",
+      "essentiel": true,
+      "biographie": "bio_wellington",
+      "portrait": {
+        "fichier": "Sir Arthur Wellesley, 1st Duke of Wellington.jpg",
+        "legende": "Le duc de Wellington en uniforme de maréchal, portrait de Thomas Lawrence (vers 1815-1820)",
+        "auteur": "Thomas Lawrence",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "pankhurst",
+      "nom": "Emmeline Pankhurst",
+      "titre": "Naissance d'Emmeline Pankhurst",
+      "axe": "Guerres et résistances",
+      "naissance": 1858,
+      "description": "Emmeline Pankhurst (1858-1928) est une militante féministe britannique, née à Manchester, qui fonde en 1903 l'Union sociale et politique des femmes, dont la devise est « Des actes, pas des paroles ». Avec ses filles, elle organise des cortèges, des bris de vitres et des incendies, est emprisonnée à plusieurs reprises et entame la grève de la faim, que le gouvernement tente de briser par le gavage. Elle meurt en juin 1928, quelques semaines avant que le vote ne soit accordé aux femmes aux mêmes conditions qu'aux hommes.",
+      "wikipedia": "Emmeline_Pankhurst",
+      "essentiel": true,
+      "biographie": "bio_pankhurst",
+      "portrait": {
+        "fichier": "Emmeline Pankhurst, seated (1913).jpg",
+        "legende": "Emmeline Pankhurst, photographie du studio Matzene, à Chicago (novembre 1913)",
+        "licence": "Domaine public",
+        "auteur": "Matzene (Chicago), restauration : Adam Cuerden"
+      }
+    },
+    {
+      "slug": "cavell",
+      "nom": "Edith Cavell",
+      "titre": "Naissance d'Edith Cavell",
+      "axe": "Guerres et résistances",
+      "naissance": 1865,
+      "description": "Edith Cavell (1865-1915) est une infirmière britannique, née à Swardeston dans le Norfolk, directrice d'une école d'infirmières à Bruxelles. Pendant l'occupation allemande, elle aide environ deux cents soldats alliés à gagner les Pays-Bas ; arrêtée en août 1915, elle est fusillée le 12 octobre. Ses derniers mots, « Le patriotisme ne suffit pas », et l'émotion qui suit son exécution en font un symbole du courage civil dans toute l'Europe.",
+      "wikipedia": "Edith_Cavell",
+      "portrait": {
+        "fichier": "Edith Cavell.jpg",
+        "legende": "Edith Cavell, photographie d'avant 1915",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "davison",
+      "nom": "Emily Davison",
+      "titre": "Naissance d'Emily Davison",
+      "axe": "Guerres et résistances",
+      "naissance": 1872,
+      "description": "Emily Davison (1872-1913) est une suffragette britannique, née à Blackheath, diplômée d'Oxford et membre de l'Union sociale et politique des femmes. Emprisonnée neuf fois, gavée de force quarante-neuf fois, elle se jette le 4 juin 1913, pendant le Derby d'Epsom, devant le cheval du roi George V, et meurt quatre jours plus tard. Ses obsèques réunissent des milliers de femmes à Londres, et le geste, dont le sens exact reste discuté, a pesé sur l'opinion bien après sa mort.",
+      "wikipedia": "Emily_Davison",
+      "portrait": {
+        "fichier": "Emily Wilding Davison by Andrew William Dron.jpg",
+        "legende": "Emily Davison, photographie d'Andrew William Dron (vers 1910-1912), avec sa médaille de gréviste de la faim",
+        "licence": "Domaine public",
+        "auteur": "Andrew William Dron, restauration : Adam Cuerden"
+      }
+    },
+    {
+      "slug": "montgomery",
+      "nom": "Bernard Montgomery",
+      "titre": "Naissance de Bernard Montgomery",
+      "axe": "Guerres et résistances",
+      "naissance": 1887,
+      "description": "Bernard Montgomery (1887-1976) est un maréchal britannique, né à Kennington, qui commande la 8e armée à El-Alamein, victoire d'octobre et novembre 1942 sur Rommel, puis conduit les forces terrestres alliées lors du débarquement de Normandie. Prudent et méthodique, il échoue en septembre 1944 à Arnhem, mais reçoit le 4 mai 1945, sur la lande de Lunebourg, la reddition des armées allemandes du nord. Orgueilleux, très critiqué par ses homologues américains, il reste l'un des chefs les plus connus de la Seconde Guerre mondiale.",
+      "wikipedia": "Bernard_Law_Montgomery",
+      "portrait": {
+        "fichier": "Bernard Law Montgomery.jpg",
+        "legende": "Bernard Montgomery, photographie d'auteur inconnu",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "lawrence",
+      "nom": "Thomas Edward Lawrence",
+      "titre": "Naissance de Thomas Edward Lawrence",
+      "axe": "Guerres et résistances",
+      "naissance": 1888,
+      "description": "Thomas Edward Lawrence (1888-1935) est un archéologue et officier britannique, né à Tremadog, au pays de Galles, connu sous le nom de « Lawrence d'Arabie ». Officier de liaison auprès de l'émir Fayçal pendant la révolte arabe de 1916-1918, il participe à la prise d'Aqaba en 1917 et en tire le récit des Sept Piliers de la sagesse. Désabusé par le partage du Proche-Orient entre Londres et Paris, il s'engage sous un faux nom dans l'armée de l'air et meurt en 1935 d'un accident de moto dans le Dorset.",
+      "wikipedia": "Thomas_Edward_Lawrence",
+      "portrait": {
+        "fichier": "Te lawrence.jpg",
+        "legende": "Thomas Edward Lawrence, photographie de l'agence Harris & Ewing (1919)",
+        "licence": "Domaine public",
+        "auteur": "Harris & Ewing ( fl. 1905–1977)"
+      }
+    },
+    {
+      "slug": "becket",
+      "nom": "Thomas Becket",
+      "titre": "Naissance de Thomas Becket",
+      "axe": "Littérature et pensée",
+      "naissance": 1119,
+      "description": "Thomas Becket (1119-1170) est un archevêque de Cantorbéry, né à Londres dans une famille de marchands normands, d'abord chancelier et ami d'Henri II. Nommé archevêque en 1162, il défend contre le roi les droits de l'Église et rejette les Constitutions de Clarendon de 1164, ce qui lui vaut six ans d'exil en France. Rentré en Angleterre, il est assassiné dans sa cathédrale le 29 décembre 1170 par quatre chevaliers du roi ; canonisé en 1173, son tombeau devient le but des pèlerins que raconte Chaucer.",
+      "wikipedia": "Thomas_Becket",
+      "biographie": "bio_thomasbecket",
+      "portrait": {
+        "fichier": "Westlake Window, St Peter’s Berkhamsted 15 17 04 162000.jpeg",
+        "legende": "Thomas Becket, vitrail de Nathaniel Westlake à l'église Saint-Pierre de Berkhamsted : aucun portrait authentique n'existe",
+        "licence": "CC BY-SA 4.0",
+        "auteur": "Cnbrb"
+      }
+    },
+    {
+      "slug": "bede",
+      "nom": "Bède le Vénérable",
+      "titre": "Naissance de Bède le Vénérable",
+      "axe": "Littérature et pensée",
+      "naissance": 672,
+      "description": "Bède le Vénérable (vers 672-735) est un moine anglo-saxon de Northumbrie, qui passe presque toute sa vie au monastère de Wearmouth-Jarrow. Auteur de l'Histoire ecclésiastique du peuple anglais, achevée en 731, il est le premier historien à raconter la conversion et la formation de l'Angleterre et à dater ses faits à partir de l'incarnation du Christ, ce qui répand l'usage de l'ère chrétienne. Mort à Jarrow en 735, il est proclamé docteur de l'Église en 1899.",
+      "wikipedia": "Bède_le_Vénérable",
+      "portrait": {
+        "fichier": "Nuremberg Chronicle Venerable Bede.jpg",
+        "legende": "Bède le Vénérable, gravure de la Chronique de Nuremberg (1493) : aucun portrait authentique n'existe",
+        "licence": "Domaine public",
+        "auteur": "Atelier de Michael Wolgemut"
+      }
+    },
+    {
+      "slug": "chaucer",
+      "nom": "Geoffrey Chaucer",
+      "titre": "Naissance de Geoffrey Chaucer",
+      "axe": "Littérature et pensée",
+      "naissance": 1343,
+      "description": "Geoffrey Chaucer (vers 1343-1400) est un poète anglais, né à Londres dans une famille de marchands de vin, page à la cour, soldat, diplomate puis contrôleur des douanes. Son grand ouvrage, les Contes de Cantorbéry, commencé vers 1387 et resté inachevé, met en scène des pèlerins de toute condition ; il l'écrit en moyen anglais, et non en français ou en latin comme on le faisait à la cour. Mort en 1400, il est le premier poète inhumé au « coin des poètes » de l'abbaye de Westminster.",
+      "wikipedia": "Geoffrey_Chaucer",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Chaucer manuscrit portrait (détail).jpeg",
+        "legende": "Geoffrey Chaucer, enluminure de Thomas Hoccleve dans Le Gouvernement des princes (1412)",
+        "auteur": "Thomas Hoccleve",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "more",
+      "nom": "Thomas More",
+      "titre": "Naissance de Thomas More",
+      "axe": "Littérature et pensée",
+      "naissance": 1478,
+      "description": "Thomas More (1478-1535) est un juriste et humaniste anglais, né à Londres, ami d'Érasme et auteur de L'Utopie, publiée en 1516, qui invente le nom d'une île où règne une société idéale. Chancelier d'Angleterre de 1529 à 1532, il démissionne et refuse de reconnaître Henri VIII comme chef de l'Église d'Angleterre. Condamné pour trahison, il est décapité le 6 juillet 1535, canonisé en 1935 et devenu le modèle de la conscience qui résiste au pouvoir.",
+      "wikipedia": "Thomas_More",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Hans Holbein, the Younger - Sir Thomas More - Google Art Project.jpg",
+        "legende": "Thomas More, portrait de Hans Holbein le Jeune (1527)",
+        "auteur": "Hans Holbein le Jeune",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "bacon",
+      "nom": "Francis Bacon",
+      "titre": "Naissance de Francis Bacon",
+      "axe": "Littérature et pensée",
+      "naissance": 1561,
+      "description": "Francis Bacon (1561-1626) est un philosophe et homme d'État anglais, né à Londres, procureur général puis lord chancelier de Jacques Ier. Dans le Novum Organum de 1620, il propose de fonder la connaissance de la nature sur l'observation et l'expérience plutôt que sur l'autorité des Anciens, et imagine dans La Nouvelle Atlantide une société organisée par la science. Condamné en 1621 pour corruption, il se retire de la vie publique et meurt en 1626 d'un refroidissement pris, dit-on, en expérimentant la conservation par le froid.",
+      "wikipedia": "Francis_Bacon_(philosophe)",
+      "portrait": {
+        "fichier": "Francis Bacon.jpg",
+        "legende": "Francis Bacon, gravure d'après un portrait de Cornelis Drebbel",
+        "licence": "Domaine public",
+        "auteur": "Cornelis Drebbel (attribué)"
+      }
+    },
+    {
+      "slug": "marlowe",
+      "nom": "Christopher Marlowe",
+      "titre": "Naissance de Christopher Marlowe",
+      "axe": "Littérature et pensée",
+      "naissance": 1564,
+      "description": "Christopher Marlowe (1564-1593) est un dramaturge et poète anglais, né à Cantorbéry la même année que Shakespeare, étudiant à Cambridge. Il écrit pour la scène Tamerlan, Le Docteur Faust, Le Juif de Malte et Édouard II, et donne au vers blanc sa puissance dramatique avant Shakespeare. Soupçonné d'avoir espionné pour la Couronne et d'athéisme, il est tué dans une rixe de taverne à Deptford le 30 mai 1593, à vingt-neuf ans.",
+      "wikipedia": "Christopher_Marlowe",
+      "portrait": {
+        "fichier": "Christopher Marlowe.jpg",
+        "legende": "Un jeune homme de vingt et un ans, présumé Christopher Marlowe, portrait de 1585 : l'identification est incertaine",
+        "auteur": "Anonyme",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "shakespeare",
+      "nom": "William Shakespeare",
+      "titre": "Naissance de William Shakespeare",
+      "axe": "Littérature et pensée",
+      "naissance": 1564,
+      "description": "William Shakespeare (1564-1616) est un dramaturge et poète anglais, né à Stratford-upon-Avon, acteur et actionnaire de la troupe du Globe à Londres. Il écrit une trentaine de pièces, dont Roméo et Juliette, Hamlet, Othello, Le Roi Lear et Macbeth, et des sonnets, au service d'une langue qu'il enrichit de milliers de mots et d'expressions. Il meurt à Stratford en 1616 et ses pièces sont réunies en 1623 dans le First Folio, qui sauve dix-huit pièces jamais imprimées jusque-là.",
+      "wikipedia": "William_Shakespeare",
+      "essentiel": true,
+      "biographie": "bio_shakespeare",
+      "portrait": {
+        "fichier": "Shakespeare.jpg",
+        "legende": "William Shakespeare, portrait « de Chandos », attribué à John Taylor : l'identification reste débattue",
+        "auteur": "John Taylor (attribué)",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "hobbes",
+      "nom": "Thomas Hobbes",
+      "titre": "Naissance de Thomas Hobbes",
+      "axe": "Littérature et pensée",
+      "naissance": 1588,
+      "description": "Thomas Hobbes (1588-1679) est un philosophe anglais, né à Westport près de Malmesbury, qui disait avoir été mis au monde avant terme par la peur de l'Invincible Armada. Dans le Léviathan, publié en 1651 pendant la guerre civile, il décrit un état de nature où règne « la guerre de chacun contre chacun », dont les hommes ne sortent qu'en confiant leur sécurité à un souverain absolu. Matérialiste, accusé d'athéisme, il laisse l'une des premières théories du contrat social.",
+      "wikipedia": "Thomas_Hobbes",
+      "portrait": {
+        "fichier": "Thomas Hobbes (portrait).jpg",
+        "legende": "Thomas Hobbes, portrait de John Michael Wright",
+        "auteur": "John Michael Wright",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "milton",
+      "nom": "John Milton",
+      "titre": "Naissance de John Milton",
+      "axe": "Littérature et pensée",
+      "naissance": 1608,
+      "description": "John Milton (1608-1674) est un poète et polémiste anglais, né à Londres, secrétaire du Conseil d'État sous Cromwell et défenseur de l'exécution de Charles Ier. Dans l'Areopagitica de 1644, il plaide pour la liberté de la presse, puis, devenu aveugle vers 1652, il dicte le Paradis perdu, épopée en vers blancs publiée en 1667. Mort en 1674, il est le grand poète de la langue anglaise après Shakespeare, de Blake à Shelley.",
+      "wikipedia": "John_Milton",
+      "portrait": {
+        "fichier": "John Milton.jpg",
+        "legende": "John Milton, gravure",
+        "largeur": 330,
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "locke",
+      "nom": "John Locke",
+      "titre": "Naissance de John Locke",
+      "axe": "Littérature et pensée",
+      "naissance": 1632,
+      "description": "John Locke (1632-1704) est un philosophe anglais, né à Wrington dans le Somerset, médecin et conseiller du comte de Shaftesbury. Dans l'Essai sur l'entendement humain, il soutient que toutes nos idées viennent de l'expérience, et dans le Second Traité du gouvernement civil, que les hommes ont des droits naturels, à la vie, à la liberté et aux biens, que le pouvoir doit protéger. Ses idées inspirent les révolutions américaine et française, mais il fut aussi actionnaire de la Compagnie royale d'Afrique, engagée dans la traite des esclaves.",
+      "wikipedia": "John_Locke",
+      "essentiel": true,
+      "biographie": "bio_johnlocke",
+      "portrait": {
+        "fichier": "JohnLocke.png",
+        "legende": "John Locke, portrait de Godfrey Kneller (1697)",
+        "auteur": "Godfrey Kneller",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "defoe",
+      "nom": "Daniel Defoe",
+      "titre": "Naissance de Daniel Defoe",
+      "axe": "Littérature et pensée",
+      "naissance": 1660,
+      "description": "Daniel Defoe (vers 1660-1731) est un écrivain et journaliste anglais, né à Londres, marchand ruiné, pamphlétaire et agent secret. Mis au pilori en 1703 pour un pamphlet satirique contre les persécutions des dissidents religieux, il publie à près de soixante ans Robinson Crusoé, en 1719, puis Moll Flanders et le Journal de l'année de la peste. Il est souvent considéré comme l'un des pères du roman anglais, et son naufragé reste l'un des personnages les plus lus au monde.",
+      "wikipedia": "Daniel_Defoe",
+      "portrait": {
+        "fichier": "Daniel Defoe Kneller Style.jpg",
+        "legende": "Daniel Defoe, portrait dans le style de Godfrey Kneller (XVIIIe siècle)",
+        "auteur": "Anonyme",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "johnson",
+      "nom": "Samuel Johnson",
+      "titre": "Naissance de Samuel Johnson",
+      "axe": "Littérature et pensée",
+      "naissance": 1709,
+      "description": "Samuel Johnson (1709-1784) est un écrivain et lexicographe anglais, né à Lichfield, fils d'un libraire, qui monte à Londres sans diplôme. Il rédige presque seul le Dictionnaire de la langue anglaise, publié en 1755 après neuf ans de travail, puis une édition de Shakespeare et les Vies des poètes les plus éminents. Son compagnon James Boswell lui consacre en 1791 une biographie célèbre, qui fait de ses mots d'esprit, comme « Quand un homme est las de Londres, il est las de la vie », des proverbes.",
+      "wikipedia": "Samuel_Johnson",
+      "portrait": {
+        "fichier": "Samuel Johnson by Joshua Reynolds.jpg",
+        "legende": "Samuel Johnson, portrait de Joshua Reynolds (1772)",
+        "auteur": "Joshua Reynolds",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "wesley",
+      "nom": "John Wesley",
+      "titre": "Naissance de John Wesley",
+      "axe": "Littérature et pensée",
+      "naissance": 1703,
+      "description": "John Wesley (1703-1791) est un pasteur anglican anglais, né à Epworth dans le Lincolnshire, fondateur du méthodisme avec son frère Charles. Après une expérience spirituelle en 1738 à Aldersgate, il prêche en plein air aux mineurs et aux ouvriers, parcourt à cheval des dizaines de milliers de kilomètres chaque année et organise ses fidèles en sociétés. Opposé à l'esclavage, il meurt en 1791 sans avoir voulu quitter l'Église d'Angleterre, que ses disciples quittent peu après.",
+      "wikipedia": "John_Wesley",
+      "biographie": "bio_johnwesley",
+      "portrait": {
+        "fichier": "Portrait of John Wesley (by George Romney).jpg",
+        "legende": "John Wesley, portrait de George Romney (1788-1789)",
+        "auteur": "George Romney",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "hume",
+      "nom": "David Hume",
+      "titre": "Naissance de David Hume",
+      "axe": "Littérature et pensée",
+      "naissance": 1711,
+      "description": "David Hume (1711-1776) est un philosophe et historien écossais, né à Édimbourg, figure majeure des Lumières écossaises. Dans son Traité de la nature humaine, il soutient que la causalité n'est qu'une habitude de l'esprit, et dans ses essais il critique les miracles et la religion naturelle ; il publie aussi une Histoire d'Angleterre. Il a influencé Kant et Adam Smith, mais certains de ses écrits sur les peuples non européens sont aujourd'hui jugés racistes.",
+      "wikipedia": "David_Hume",
+      "portrait": {
+        "fichier": "Painting of David Hume.jpg",
+        "legende": "David Hume, portrait d'Allan Ramsay (1754)",
+        "auteur": "Allan Ramsay",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "smith",
+      "nom": "Adam Smith",
+      "titre": "Naissance d'Adam Smith",
+      "axe": "Littérature et pensée",
+      "naissance": 1723,
+      "description": "Adam Smith (1723-1790) est un philosophe et économiste écossais, né à Kirkcaldy, professeur de philosophie morale à Glasgow. Dans la Théorie des sentiments moraux, puis dans les Recherches sur la nature et les causes de la richesse des nations, publiées en 1776, il explique la prospérité par la division du travail et l'échange, que la « main invisible » du marché mettrait au service de tous. Ami de Hume, commissaire des douanes, il est tenu pour le fondateur de l'économie politique moderne.",
+      "wikipedia": "Adam_Smith",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "AdamSmith.jpg",
+        "legende": "Adam Smith, gravure d'après le médaillon de James Tassie (1787)",
+        "licence": "Domaine public",
+        "auteur": "Cadell et Davies (gravure, 1811)"
+      }
+    },
+    {
+      "slug": "paine",
+      "nom": "Thomas Paine",
+      "titre": "Naissance de Thomas Paine",
+      "axe": "Littérature et pensée",
+      "naissance": 1737,
+      "description": "Thomas Paine (1737-1809) est un écrivain et révolutionnaire anglais, né à Thetford dans le Norfolk, qui émigre en Amérique en 1774. Son pamphlet Le Sens commun, publié en janvier 1776, convainc des centaines de milliers de colons de réclamer l'indépendance, puis il répond à Burke en 1791 avec Les Droits de l'homme. Élu député à la Convention en France, emprisonné sous la Terreur, il meurt à New York en 1809, presque oublié, après avoir publié L'Âge de raison, sa critique de la religion révélée.",
+      "wikipedia": "Thomas_Paine",
+      "portrait": {
+        "fichier": "Laurent Dabos – Thomas Paine – Google Art Project.jpg",
+        "legende": "Thomas Paine, portrait de Laurent Dabos (1792)",
+        "auteur": "Laurent Dabos",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "blake",
+      "nom": "William Blake",
+      "titre": "Naissance de William Blake",
+      "axe": "Littérature et pensée",
+      "naissance": 1757,
+      "description": "William Blake (1757-1827) est un poète, graveur et peintre anglais, né à Londres, qui imprime lui-même ses livres enluminés. Il publie Chants d'innocence et d'expérience, Le Mariage du ciel et de l'enfer et le poème qui deviendra l'hymne Jerusalem, nourris de visions, de mysticisme et de révolte contre l'ordre établi. Presque inconnu de son vivant, il meurt pauvre en 1827 et sera redécouvert par les préraphaélites puis par tout le XXe siècle.",
+      "wikipedia": "William_Blake",
+      "portrait": {
+        "fichier": "William Blake by Thomas Phillips.jpg",
+        "legende": "William Blake, portrait de Thomas Phillips (1807)",
+        "auteur": "Thomas Phillips",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "burns",
+      "nom": "Robert Burns",
+      "titre": "Naissance de Robert Burns",
+      "axe": "Littérature et pensée",
+      "naissance": 1759,
+      "description": "Robert Burns (1759-1796) est un poète écossais, né à Alloway dans l'Ayrshire, fils de paysans et laboureur lui-même. Son recueil de poèmes en dialecte écossais, publié à Kilmarnock en 1786, lui vaut la gloire à Édimbourg ; on lui doit Tam o' Shanter, À une souris et le chant Auld Lang Syne. Mort à trente-sept ans, en 1796, il est le poète national de l'Écosse, que l'on fête chaque 25 janvier, jour de sa naissance.",
+      "wikipedia": "Robert_Burns",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "PG 1063Burns Naysmith.jpg",
+        "legende": "Robert Burns, portrait d'Alexander Nasmyth (1787)",
+        "auteur": "Alexander Nasmyth",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "wollstonecraft",
+      "nom": "Mary Wollstonecraft",
+      "titre": "Naissance de Mary Wollstonecraft",
+      "axe": "Littérature et pensée",
+      "naissance": 1759,
+      "description": "Mary Wollstonecraft (1759-1797) est une écrivaine et philosophe anglaise, née à Spitalfields, qui gagne sa vie comme institutrice et traductrice. Dans la Défense des droits de la femme, publiée en 1792, elle affirme que les femmes ne sont inférieures aux hommes que par leur éducation et réclame pour elles l'instruction et l'égalité civile. Elle meurt en septembre 1797, onze jours après avoir donné naissance à sa fille Mary, la future auteure de Frankenstein.",
+      "wikipedia": "Mary_Wollstonecraft",
+      "portrait": {
+        "fichier": "Mary Wollstonecraft by John Opie (c. 1797).jpg",
+        "legende": "Mary Wollstonecraft, portrait de John Opie (vers 1797)",
+        "auteur": "John Opie",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "wordsworth",
+      "nom": "William Wordsworth",
+      "titre": "Naissance de William Wordsworth",
+      "axe": "Littérature et pensée",
+      "naissance": 1770,
+      "description": "William Wordsworth (1770-1850) est un poète anglais, né à Cockermouth, dans la région des lacs du nord de l'Angleterre. Avec Coleridge, il publie en 1798 les Ballades lyriques, manifeste du romantisme qui choisit la langue de tous les jours et la nature pour sujets ; on lui doit aussi Les Jonquilles et le long poème autobiographique Le Prélude, publié après sa mort. Nommé poète lauréat en 1843, il meurt en 1850 à Rydal Mount.",
+      "wikipedia": "William_Wordsworth",
+      "portrait": {
+        "fichier": "Wordsworth on Helvellyn by Benjamin Robert Haydon.jpg",
+        "legende": "William Wordsworth, portrait de Benjamin Robert Haydon (1842)",
+        "auteur": "Benjamin Robert Haydon",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "scott",
+      "nom": "Walter Scott",
+      "titre": "Naissance de Walter Scott",
+      "axe": "Littérature et pensée",
+      "naissance": 1771,
+      "description": "Walter Scott (1771-1832) est un poète et romancier écossais, né à Édimbourg, avocat de formation. Avec Waverley, en 1814, puis Rob Roy et Ivanhoé, il invente le roman historique et fait de l'histoire de l'Écosse et du Moyen Âge un genre populaire dans toute l'Europe, de Balzac à Hugo. Ruiné en 1826 par la faillite de son éditeur, il écrit jusqu'à l'épuisement pour payer ses dettes et meurt à Abbotsford en 1832.",
+      "wikipedia": "Walter_Scott",
+      "portrait": {
+        "fichier": "Sir Henry Raeburn - Portrait of Sir Walter Scott.jpg",
+        "legende": "Walter Scott, portrait de Henry Raeburn (1822)",
+        "auteur": "Henry Raeburn",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "austen",
+      "nom": "Jane Austen",
+      "titre": "Naissance de Jane Austen",
+      "axe": "Littérature et pensée",
+      "naissance": 1775,
+      "description": "Jane Austen (1775-1817) est une romancière anglaise, née à Steventon dans le Hampshire, fille d'un pasteur. Elle publie anonymement Raison et Sentiments en 1811, Orgueil et Préjugés en 1813, puis Mansfield Park et Emma, où elle décrit avec ironie le mariage, l'argent et le rang dans la petite noblesse de campagne. Morte à quarante et un ans, à Winchester, elle n'est célébrée sous son nom qu'à titre posthume, et ses romans sont sans cesse adaptés.",
+      "wikipedia": "Jane_Austen",
+      "essentiel": true,
+      "biographie": "bio_janeausten",
+      "portrait": {
+        "fichier": "Jane Austen, from A Memoir of Jane Austen (1870).jpg",
+        "legende": "Jane Austen, gravure de 1870 d'après une aquarelle de James Andrews",
+        "auteur": "James Andrews (d'après)",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "byron",
+      "nom": "Lord Byron",
+      "titre": "Naissance de Lord Byron",
+      "axe": "Littérature et pensée",
+      "naissance": 1788,
+      "description": "Lord Byron (1788-1824) est un poète britannique, né à Londres, sixième baron Byron, qui devient célèbre du jour au lendemain en 1812 avec Le Pèlerinage de Childe Harold. Ses amours scandaleuses l'obligent à quitter l'Angleterre en 1816 ; en Suisse, chez lui à la villa Diodati, naît l'idée de Frankenstein, et il poursuit en Italie son Don Juan. Parti combattre pour l'indépendance de la Grèce, il meurt de fièvre à Missolonghi en 1824 et reste un héros national grec.",
+      "wikipedia": "George_Gordon_Byron",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Byron 1813 by Phillips.jpg",
+        "legende": "Lord Byron, portrait de Thomas Phillips (1813)",
+        "auteur": "Thomas Phillips",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "shelley",
+      "nom": "Percy Bysshe Shelley",
+      "titre": "Naissance de Percy Bysshe Shelley",
+      "axe": "Littérature et pensée",
+      "naissance": 1792,
+      "description": "Percy Bysshe Shelley (1792-1822) est un poète anglais, né à Field Place dans le Sussex, renvoyé d'Oxford en 1811 pour un pamphlet sur la nécessité de l'athéisme. Il fuit avec Mary Godwin en 1814, l'épouse en 1816 et écrit en Italie Ozymandias, Ode au vent d'ouest et Prométhée délivré, où il imagine un monde libéré de la tyrannie. Il se noie en juillet 1822 au large de Viareggio, à vingt-neuf ans, et ses amis brûlent son corps sur la plage.",
+      "wikipedia": "Percy_Bysshe_Shelley",
+      "portrait": {
+        "fichier": "Percy Bysshe Shelley by Alfred Clint.jpg",
+        "legende": "Percy Bysshe Shelley, portrait d'Alfred Clint d'après un original de 1819",
+        "auteur": "Alfred Clint (d'après)",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "keats",
+      "nom": "John Keats",
+      "titre": "Naissance de John Keats",
+      "axe": "Littérature et pensée",
+      "naissance": 1795,
+      "description": "John Keats (1795-1821) est un poète anglais, né à Londres, qui abandonne la chirurgie pour la poésie. En quelques années, il écrit Endymion, Hyperion et les grandes odes de 1819, dont Ode à un rossignol, Ode sur une urne grecque et À l'automne, où la beauté se mêle à la certitude de la mort. Atteint de tuberculose, il meurt à Rome en 1821, à vingt-cinq ans, et fait graver sur sa tombe : « Ci-gît celui dont le nom fut écrit sur l'eau ».",
+      "wikipedia": "John_Keats",
+      "portrait": {
+        "fichier": "John Keats by William Hilton.jpg",
+        "legende": "John Keats, portrait de William Hilton (vers 1822)",
+        "auteur": "William Hilton",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "maryshelley",
+      "nom": "Mary Shelley",
+      "titre": "Naissance de Mary Shelley",
+      "axe": "Littérature et pensée",
+      "naissance": 1797,
+      "description": "Mary Shelley (1797-1851) est une romancière britannique, née à Londres, fille de Mary Wollstonecraft et du philosophe William Godwin. À dix-huit ans, pendant l'été 1816 passé près de Genève avec Byron et Percy Shelley, elle conçoit Frankenstein ou le Prométhée moderne, publié anonymement en 1818, l'un des premiers grands romans de science-fiction. Veuve à vingt-quatre ans, elle publie aussi Le Dernier Homme et édite les œuvres de son mari.",
+      "wikipedia": "Mary_Shelley",
+      "portrait": {
+        "fichier": "Mary Wollstonecraft Shelley Rothwell.tif",
+        "legende": "Mary Shelley, portrait de Richard Rothwell (exposé en 1840)",
+        "auteur": "Richard Rothwell",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "mill",
+      "nom": "John Stuart Mill",
+      "titre": "Naissance de John Stuart Mill",
+      "axe": "Littérature et pensée",
+      "naissance": 1806,
+      "description": "John Stuart Mill (1806-1873) est un philosophe et économiste britannique, né à Londres, formé dès l'enfance par son père James Mill, qui lui fait apprendre le grec à trois ans. Dans De la liberté, publié en 1859, il défend la liberté individuelle, que la société ne peut limiter que pour empêcher de nuire à autrui, et dans L'Assujettissement des femmes, en 1869, l'égalité des sexes. Député en 1865, il propose en 1867 d'accorder le droit de vote aux femmes, et meurt à Avignon en 1873.",
+      "wikipedia": "John_Stuart_Mill",
+      "biographie": "bio_johnstuartmill",
+      "portrait": {
+        "fichier": "John Stuart Mill by London Stereoscopic Company, c1870.jpg",
+        "legende": "John Stuart Mill, photographie de la London Stereoscopic Company (vers 1870)",
+        "licence": "Domaine public",
+        "auteur": "London Stereoscopic Company"
+      }
+    },
+    {
+      "slug": "dickens",
+      "nom": "Charles Dickens",
+      "titre": "Naissance de Charles Dickens",
+      "axe": "Littérature et pensée",
+      "naissance": 1812,
+      "description": "Charles Dickens (1812-1870) est un romancier anglais, né à Portsmouth, qui travaille à douze ans dans une fabrique de cirage pendant que son père est en prison pour dettes. Publiés en feuilletons, ses romans, de Oliver Twist à David Copperfield, De grandes espérances et La Maison d'Âpre-Vent, peignent la misère, les tribunaux et les écoles de l'Angleterre victorienne, et son Conte de Noël, de 1843, a fixé l'image de la fête. Il meurt en 1870 et repose à l'abbaye de Westminster.",
+      "wikipedia": "Charles_Dickens",
+      "essentiel": true,
+      "biographie": "bio_charlesdickens",
+      "portrait": {
+        "fichier": "Dickens Gurney head.jpg",
+        "legende": "Charles Dickens, photographie de Jeremiah Gurney (1867-1868)",
+        "auteur": "Jeremiah Gurney",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "cbronte",
+      "nom": "Charlotte Brontë",
+      "titre": "Naissance de Charlotte Brontë",
+      "axe": "Littérature et pensée",
+      "naissance": 1816,
+      "description": "Charlotte Brontë (1816-1855) est une romancière anglaise, née à Thornton dans le Yorkshire, fille d'un pasteur et aînée des sœurs Brontë. Elle publie en 1847 sous le nom de Currer Bell Jane Eyre, histoire d'une jeune gouvernante indépendante et passionnée, puis Shirley et Villette. Elle survit à ses frères et sœurs, épouse en 1854 le pasteur Arthur Bell Nicholls et meurt l'année suivante à trente-huit ans.",
+      "wikipedia": "Charlotte_Brontë",
+      "portrait": {
+        "fichier": "Charlotte Bronte by George Richmond.jpg",
+        "legende": "Charlotte Brontë, dessin de George Richmond (1850)",
+        "auteur": "George Richmond",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "ebronte",
+      "nom": "Emily Brontë",
+      "titre": "Naissance d'Emily Brontë",
+      "axe": "Littérature et pensée",
+      "naissance": 1818,
+      "description": "Emily Brontë (1818-1848) est une romancière et poétesse anglaise, née à Thornton, qui vit presque toute sa vie au presbytère de Haworth, dans les landes du Yorkshire. Son unique roman, Les Hauts de Hurlevent, publié en 1847 sous le nom d'Ellis Bell, raconte la passion destructrice de Heathcliff et de Catherine, et déconcerte d'abord la critique. Elle meurt de tuberculose en décembre 1848, à trente ans, et le livre est depuis reconnu comme un chef-d'œuvre.",
+      "wikipedia": "Emily_Brontë",
+      "portrait": {
+        "fichier": "Emily Brontë by Patrick Branwell Brontë restored.jpg",
+        "legende": "Emily Brontë, portrait de son frère Branwell, détail d'un tableau des trois sœurs (vers 1834)",
+        "auteur": "Branwell Brontë",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "eliot",
+      "nom": "George Eliot",
+      "titre": "Naissance de George Eliot",
+      "axe": "Littérature et pensée",
+      "naissance": 1819,
+      "description": "George Eliot (1819-1880) est une romancière anglaise, née Mary Ann Evans à Chilvers Coton dans le Warwickshire, qui prend un nom d'homme pour être prise au sérieux. Traductrice et directrice de revue, elle écrit Adam Bede, Le Moulin sur la Floss, Silas Marner et surtout Middlemarch, publié en 1871-1872, vaste tableau d'une petite ville de province. Elle vit pendant vingt-quatre ans avec l'écrivain George Henry Lewes, ce qui lui vaut l'ostracisme de la bonne société.",
+      "wikipedia": "George_Eliot",
+      "portrait": {
+        "fichier": "George Eliot, por François D'Albert Durade.jpg",
+        "legende": "George Eliot à trente ans, portrait de François d'Albert Durade (1849)",
+        "auteur": "François d'Albert Durade",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "carroll",
+      "nom": "Lewis Carroll",
+      "titre": "Naissance de Lewis Carroll",
+      "axe": "Littérature et pensée",
+      "naissance": 1832,
+      "description": "Lewis Carroll (1832-1898) est un écrivain et mathématicien anglais, né Charles Dodgson à Daresbury dans le Cheshire, professeur à Christ Church, à Oxford. Il invente pour une petite fille, Alice Liddell, Alice au pays des merveilles, publié en 1865, puis De l'autre côté du miroir en 1871, qui jouent des mots et de la logique. Il fut aussi un photographe réputé, et ses livres, d'abord écrits pour des enfants, sont lus par tous les âges.",
+      "wikipedia": "Lewis_Carroll",
+      "portrait": {
+        "fichier": "LewisCarrollSelfPhoto.jpg",
+        "legende": "Lewis Carroll, autoportrait photographique (2 juin 1857)",
+        "auteur": "Lewis Carroll",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "hardy",
+      "nom": "Thomas Hardy",
+      "titre": "Naissance de Thomas Hardy",
+      "axe": "Littérature et pensée",
+      "naissance": 1840,
+      "description": "Thomas Hardy (1840-1928) est un romancier et poète anglais, né à Higher Bockhampton dans le Dorset, d'abord architecte. Ses romans du Wessex, dont Loin de la foule déchaînée, Tess d'Urberville et Jude l'Obscur, montrent des vies broyées par le hasard et les conventions sociales ; l'accueil scandalisé fait à Jude, en 1895, le pousse à renoncer au roman pour la poésie. À sa mort, en 1928, son cœur est enterré dans le Dorset et ses cendres à Westminster.",
+      "wikipedia": "Thomas_Hardy_(écrivain)",
+      "portrait": {
+        "fichier": "Thomashardy restored.jpg",
+        "legende": "Thomas Hardy, photographie de l'agence Bain News Service",
+        "licence": "Domaine public",
+        "auteur": "Bain News Service"
+      }
+    },
+    {
+      "slug": "doyle",
+      "nom": "Arthur Conan Doyle",
+      "titre": "Naissance d'Arthur Conan Doyle",
+      "axe": "Littérature et pensée",
+      "naissance": 1859,
+      "description": "Arthur Conan Doyle (1859-1930) est un écrivain britannique, né à Édimbourg, médecin de formation, qui crée en 1887 le détective Sherlock Holmes dans Une étude en rouge. Lassé de son héros, il le fait mourir en 1893 aux chutes du Reichenbach, mais le public réclame son retour et il le ressuscite en 1901. Il écrit aussi Le Monde perdu et, spirite convaincu après la Première Guerre mondiale, de nombreux textes sur la vie après la mort.",
+      "wikipedia": "Arthur_Conan_Doyle",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Conan doyle.jpg",
+        "legende": "Arthur Conan Doyle, photographie d'Arnold Genthe (1914)",
+        "auteur": "Arnold Genthe",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "kipling",
+      "nom": "Rudyard Kipling",
+      "titre": "Naissance de Rudyard Kipling",
+      "axe": "Littérature et pensée",
+      "naissance": 1865,
+      "description": "Rudyard Kipling (1865-1936) est un écrivain britannique, né à Bombay, qui publie Le Livre de la jungle en 1894, Kim en 1901 et les Histoires comme ça. Prix Nobel de littérature en 1907, à quarante et un ans, il est le plus jeune lauréat de l'histoire du prix et le premier de langue anglaise. Poète de l'Empire, auteur en 1899 du poème « Le fardeau de l'homme blanc », il est aujourd'hui discuté pour son impérialisme, et il perd son fils John à la bataille de Loos en 1915.",
+      "wikipedia": "Rudyard_Kipling",
+      "portrait": {
+        "fichier": "Kipling nd.jpg",
+        "legende": "Rudyard Kipling, photographie de l'agence Bain News Service",
+        "licence": "Domaine public",
+        "auteur": "Bain News Service"
+      }
+    },
+    {
+      "slug": "wells",
+      "nom": "Herbert George Wells",
+      "titre": "Naissance d'Herbert George Wells",
+      "axe": "Littérature et pensée",
+      "naissance": 1866,
+      "description": "Herbert George Wells (1866-1946) est un écrivain britannique, né à Bromley, fils de petits commerçants, boursier devenu biologiste. Il écrit La Machine à explorer le temps, L'Homme invisible, La Guerre des mondes et L'Île du docteur Moreau, qui font de lui l'un des pères de la science-fiction, puis une Histoire universelle en 1920. Socialiste et adepte d'un gouvernement mondial, il meurt à Londres en 1946.",
+      "wikipedia": "Herbert_George_Wells",
+      "portrait": {
+        "fichier": "H.G. Wells by Beresford.jpg",
+        "legende": "Herbert George Wells, photographie de George Charles Beresford (1920)",
+        "auteur": "George Charles Beresford",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "russell",
+      "nom": "Bertrand Russell",
+      "titre": "Naissance de Bertrand Russell",
+      "axe": "Littérature et pensée",
+      "naissance": 1872,
+      "description": "Bertrand Russell (1872-1970) est un philosophe, logicien et mathématicien britannique, né à Trellech au pays de Galles, petit-fils d'un Premier ministre. Auteur avec Whitehead des Principia Mathematica, il découvre en 1901 le paradoxe qui porte son nom et fonde la philosophie analytique ; il reçoit le prix Nobel de littérature en 1950. Pacifiste, emprisonné en 1918 puis, à quatre-vingt-neuf ans, en 1961 pour son combat contre l'arme nucléaire, il meurt en 1970 au pays de Galles.",
+      "wikipedia": "Bertrand_Russell",
+      "portrait": {
+        "fichier": "Bertrand Russell photo.jpg",
+        "legende": "Bertrand Russell, photographie du studio Bassano (1936)",
+        "licence": "Domaine public",
+        "auteur": "Bassano Ltd"
+      }
+    },
+    {
+      "slug": "woolf",
+      "nom": "Virginia Woolf",
+      "titre": "Naissance de Virginia Woolf",
+      "axe": "Littérature et pensée",
+      "naissance": 1882,
+      "description": "Virginia Woolf (1882-1941) est une romancière britannique, née Stephen à Londres, membre du groupe de Bloomsbury. Elle fonde avec son mari Leonard la maison d'édition Hogarth Press et publie Mrs Dalloway, La Promenade au phare, Orlando et Une chambre à soi, où elle écrit qu'une femme doit avoir de l'argent et une pièce à elle pour écrire. Souvent atteinte de dépression, elle se noie dans l'Ouse en mars 1941.",
+      "wikipedia": "Virginia_Woolf",
+      "essentiel": true,
+      "biographie": "bio_woolf",
+      "portrait": {
+        "fichier": "Virginia Woolf 1927.jpg",
+        "legende": "Virginia Woolf, photographie vers 1927",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "owen",
+      "nom": "Wilfred Owen",
+      "titre": "Naissance de Wilfred Owen",
+      "axe": "Littérature et pensée",
+      "naissance": 1893,
+      "description": "Wilfred Owen (1893-1918) est un poète britannique, né à Oswestry dans le Shropshire, engagé dans l'armée en 1915. Soigné pour une névrose de guerre à l'hôpital de Craiglockhart, où il rencontre Siegfried Sassoon, il écrit Dulce et Decorum est et Hymne pour une jeunesse condamnée, qui disent l'horreur des tranchées. Il tombe le 4 novembre 1918, une semaine avant l'armistice, à vingt-cinq ans, et la plupart de ses poèmes paraissent après sa mort.",
+      "wikipedia": "Wilfred_Owen",
+      "portrait": {
+        "fichier": "Wilfred Owen 2.png",
+        "legende": "Wilfred Owen, portrait publié dans l'édition de ses poèmes de 1920",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "tolkien",
+      "nom": "John Ronald Reuel Tolkien",
+      "titre": "Naissance de John Ronald Reuel Tolkien",
+      "axe": "Littérature et pensée",
+      "naissance": 1892,
+      "description": "John Ronald Reuel Tolkien (1892-1973) est un écrivain et philologue britannique, né à Bloemfontein, en Afrique du Sud, professeur de vieil anglais à Oxford. Il publie Le Hobbit en 1937 puis Le Seigneur des anneaux en 1954-1955, qui créent la Terre du Milieu, dotée de langues, de peuples et d'une histoire inventés. Ancien combattant de la Somme, ami de l'écrivain Lewis au sein des Inklings, il est le fondateur de la fantasy moderne, et il meurt à Bournemouth en 1973.",
+      "wikipedia": "J._R._R._Tolkien",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "J. R. R. Tolkien, ca. 1925.jpg",
+        "legende": "J. R. R. Tolkien, photographie de studio (vers 1925)",
+        "licence": "Domaine public",
+        "auteur": "Studio photographique inconnu"
+      }
+    },
+    {
+      "slug": "christie",
+      "nom": "Agatha Christie",
+      "titre": "Naissance d'Agatha Christie",
+      "axe": "Littérature et pensée",
+      "naissance": 1890,
+      "description": "Agatha Christie (1890-1976) est une romancière britannique, née à Torquay, qui crée Hercule Poirot dans La Mystérieuse Affaire de Styles en 1920, puis Miss Marple. Auteure de plus de soixante-dix romans policiers, dont Le Crime de l'Orient-Express et Dix Petits Nègres, elle est l'une des écrivaines les plus vendues de l'histoire, et sa pièce La Souricière est jouée à Londres sans interruption depuis 1952. Elle disparaît onze jours en 1926 et meurt en 1976.",
+      "wikipedia": "Agatha_Christie",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Agatha Christie in Nederland (detectiveschrijfster), bij aankomst op Schiphol me, Bestanddeelnr 916-8898 (cropped).jpg",
+        "legende": "Agatha Christie, photographie de Joop van Bilsen, archives Anefo (17 septembre 1964)",
+        "licence": "CC0 (domaine public)",
+        "auteur": "Joop van Bilsen (Anefo)"
+      }
+    },
+    {
+      "slug": "orwell",
+      "nom": "George Orwell",
+      "titre": "Naissance de George Orwell",
+      "axe": "Littérature et pensée",
+      "naissance": 1903,
+      "description": "George Orwell (1903-1950) est un écrivain britannique, né Eric Blair à Motihari, en Inde, ancien policier en Birmanie. Combattant en Espagne, il en tire Hommage à la Catalogne, puis dénonce le totalitarisme dans La Ferme des animaux, en 1945, et dans 1984, publié en 1949, qui invente « Big Brother » et la « novlangue ». Atteint de tuberculose, il meurt à Londres en janvier 1950, quelques mois après la parution de son dernier roman.",
+      "wikipedia": "George_Orwell",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "George Orwell press photo.jpg",
+        "legende": "George Orwell, photographie de sa carte de presse du syndicat des journalistes (1943)",
+        "licence": "Domaine public",
+        "auteur": "Syndicat national des journalistes (NUJ)"
+      }
+    },
+    {
+      "slug": "ruskin",
+      "nom": "John Ruskin",
+      "titre": "Naissance de John Ruskin",
+      "axe": "Littérature et pensée",
+      "naissance": 1819,
+      "description": "John Ruskin (1819-1900) est un critique d'art et penseur britannique, né à Londres, qui défend Turner et les préraphaélites dans Les Peintres modernes et exalte l'architecture gothique dans Les Pierres de Venise. Dans Unto This Last, en 1860, il critique l'économie politique et demande une société fondée sur le bien commun, ce qui inspire William Morris et Gandhi. Professeur à Oxford, sujet à des crises de folie, il meurt à Brantwood en 1900.",
+      "wikipedia": "John_Ruskin",
+      "portrait": {
+        "fichier": "John Ruskin 1863.jpg",
+        "legende": "John Ruskin, photographie de William Downey (1863)",
+        "auteur": "William Downey",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "jones",
+      "nom": "Inigo Jones",
+      "titre": "Naissance d'Inigo Jones",
+      "axe": "Beaux-arts",
+      "naissance": 1573,
+      "description": "Inigo Jones (1573-1652) est un architecte et dessinateur anglais, né à Londres, qui rapporte d'Italie le goût d'Andrea Palladio. Il bâtit pour la cour la Maison de la reine à Greenwich et la salle des banquets de Whitehall, trace la place de Covent Garden et conçoit les décors des mascarades de Ben Jonson. Royaliste, il est dépouillé de ses charges pendant la guerre civile et meurt en 1652, après avoir fait entrer le classicisme dans l'architecture anglaise.",
+      "wikipedia": "Inigo_Jones",
+      "portrait": {
+        "fichier": "PortraitInigoJones.jpg",
+        "legende": "Inigo Jones, portrait d'après Antoine van Dyck (XVIIIe siècle)",
+        "auteur": "D'après Antoine van Dyck",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "wren",
+      "nom": "Christopher Wren",
+      "titre": "Naissance de Christopher Wren",
+      "axe": "Beaux-arts",
+      "naissance": 1632,
+      "description": "Christopher Wren (1632-1723) est un architecte anglais, né à East Knoyle dans le Wiltshire, d'abord astronome et professeur à Oxford, et l'un des fondateurs de la Royal Society. Après le Grand Incendie de Londres de 1666, il dessine la reconstruction de la City, dont cinquante et une églises, et bâtit la cathédrale Saint-Paul, achevée en 1710 sous sa direction. Mort en 1723, il repose dans sa cathédrale, sous une inscription qui invite le visiteur à regarder autour de lui.",
+      "wikipedia": "Christopher_Wren",
+      "essentiel": true,
+      "biographie": "bio_christopherwren",
+      "portrait": {
+        "fichier": "Gravure représentant Christopher Wren.jpg",
+        "legende": "Christopher Wren, gravure de John Smith (1713)",
+        "auteur": "John Smith",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "hogarth",
+      "nom": "William Hogarth",
+      "titre": "Naissance de William Hogarth",
+      "axe": "Beaux-arts",
+      "naissance": 1697,
+      "description": "William Hogarth (1697-1764) est un peintre et graveur anglais, né à Londres, qui invente les « sujets moraux modernes », séries d'images racontant des destins en plusieurs scènes. Il peint et grave La Carrière d'une prostituée, La Carrière d'un libertin, Le Mariage à la mode et, en 1751, Gin Lane, qui dénonce les ravages de l'alcool à Londres. Il obtient en 1735 une loi qui protège les graveurs contre la copie et fonde un art satirique que suivront tous les caricaturistes britanniques.",
+      "wikipedia": "William_Hogarth",
+      "portrait": {
+        "fichier": "William Hogarth 006.jpg",
+        "legende": "William Hogarth, autoportrait avec son carlin, « Le peintre et son carlin » (1745)",
+        "auteur": "William Hogarth",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "reynolds",
+      "nom": "Joshua Reynolds",
+      "titre": "Naissance de Joshua Reynolds",
+      "axe": "Beaux-arts",
+      "naissance": 1723,
+      "description": "Joshua Reynolds (1723-1792) est un peintre anglais, né à Plympton dans le Devon, qui étudie en Italie et s'impose à Londres comme le portraitiste de l'élite. Premier président de la Royal Academy en 1768, il y prononce des Discours où il défend le « grand style » inspiré de Raphaël et de Michel-Ange ; on lui doit aussi Mrs Siddons en muse tragique. Anobli en 1769, il meurt en 1792 et est inhumé à Saint-Paul.",
+      "wikipedia": "Joshua_Reynolds",
+      "portrait": {
+        "fichier": "Self-portrait c.1747-9 by Joshua Reynolds (2).jpg",
+        "legende": "Joshua Reynolds, autoportrait (vers 1747-1749)",
+        "auteur": "Joshua Reynolds",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "gainsborough",
+      "nom": "Thomas Gainsborough",
+      "titre": "Naissance de Thomas Gainsborough",
+      "axe": "Beaux-arts",
+      "naissance": 1727,
+      "description": "Thomas Gainsborough (1727-1788) est un peintre anglais, né à Sudbury dans le Suffolk, qui débute par des paysages avant de s'imposer comme portraitiste à Bath puis à Londres. On lui doit M. et Mme Andrews, vers 1750, qui place un couple au milieu de ses terres, et Le Garçon bleu, vers 1770, qui touche par la douceur de sa lumière. Membre fondateur de la Royal Academy mais en désaccord avec elle, il meurt en 1788.",
+      "wikipedia": "Thomas_Gainsborough",
+      "portrait": {
+        "fichier": "Thomas Gainsborough by Thomas Gainsborough.jpg",
+        "legende": "Thomas Gainsborough, autoportrait (vers 1758-1759)",
+        "auteur": "Thomas Gainsborough",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "turner",
+      "nom": "William Turner",
+      "titre": "Naissance de William Turner",
+      "axe": "Beaux-arts",
+      "naissance": 1775,
+      "description": "William Turner (1775-1851) est un peintre anglais, né à Londres, qui entre à quatorze ans à la Royal Academy. Aquarelliste et peintre à l'huile, il dissout les formes dans la lumière, la tempête et la vapeur, comme dans Le Dernier Voyage du Téméraire, en 1839, ou Pluie, vapeur et vitesse, en 1844, ce qui annonce l'impressionnisme. Il lègue à la nation des milliers de toiles et de dessins, aujourd'hui conservés à la Tate.",
+      "wikipedia": "William_Turner",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Joseph Mallord William Turner auto-retrato.jpg",
+        "legende": "William Turner, autoportrait (vers 1799)",
+        "auteur": "William Turner",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "constable",
+      "nom": "John Constable",
+      "titre": "Naissance de John Constable",
+      "axe": "Beaux-arts",
+      "naissance": 1776,
+      "description": "John Constable (1776-1837) est un peintre anglais, né à East Bergholt dans le Suffolk, fils d'un meunier, qui peint presque toujours la campagne qu'il connaît, la vallée de la Stour. Son Chariot de foin, exposé en 1821, obtient en 1824 une médaille d'or à Paris, où il influence Delacroix et les peintres de Barbizon. Il fait des esquisses à l'huile d'après nature, entre à la Royal Academy à cinquante-deux ans et meurt en 1837.",
+      "wikipedia": "John_Constable",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "ConstableSelfPortrait.png",
+        "legende": "John Constable, autoportrait au crayon",
+        "licence": "Domaine public",
+        "auteur": "John Constable"
+      }
+    },
+    {
+      "slug": "rossetti",
+      "nom": "Dante Gabriel Rossetti",
+      "titre": "Naissance de Dante Gabriel Rossetti",
+      "axe": "Beaux-arts",
+      "naissance": 1828,
+      "description": "Dante Gabriel Rossetti (1828-1882) est un peintre et poète britannique, né à Londres dans une famille d'exilés italiens, qui fonde en 1848 la Confrérie préraphaélite avec Millais et Hunt. Il peint La Bien-Aimée et Beata Beatrix, d'après sa femme Elizabeth Siddal, morte d'une overdose de laudanum en 1862. Il avait enterré avec elle ses poèmes, qu'il fit exhumer en 1869 pour les publier, et il meurt en 1882.",
+      "wikipedia": "Dante_Gabriel_Rossetti",
+      "portrait": {
+        "fichier": "Hunt rossetti.jpg",
+        "legende": "Dante Gabriel Rossetti, portrait de William Holman Hunt (1882-1883)",
+        "auteur": "William Holman Hunt",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "millais",
+      "nom": "John Everett Millais",
+      "titre": "Naissance de John Everett Millais",
+      "axe": "Beaux-arts",
+      "naissance": 1829,
+      "description": "John Everett Millais (1829-1896) est un peintre britannique, né à Southampton, enfant prodige entré à onze ans à la Royal Academy et l'un des fondateurs de la Confrérie préraphaélite. Il peint en 1851-1852 Ophélie, d'un réalisme minutieux, puis des portraits mondains et Bubbles, repris dans une publicité de savon. Il épouse en 1855 Effie Gray, dont le mariage avec Ruskin avait été annulé, devient en 1896 président de la Royal Academy et meurt la même année.",
+      "wikipedia": "John_Everett_Millais",
+      "portrait": {
+        "fichier": "Millais - Self-Portrait.jpg",
+        "legende": "John Everett Millais, autoportrait (1880)",
+        "auteur": "John Everett Millais",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "morris",
+      "nom": "William Morris",
+      "titre": "Naissance de William Morris",
+      "axe": "Beaux-arts",
+      "naissance": 1834,
+      "description": "William Morris (1834-1896) est un artiste, écrivain et militant socialiste britannique, né à Walthamstow, figure du mouvement Arts and Crafts. Il fonde en 1861 l'entreprise Morris & Co, qui fabrique papiers peints, tissus et vitraux, publie à la presse Kelmscott des livres d'art et écrit le roman utopique Nouvelles de nulle part, en 1890. Il refuse la production industrielle de masse et plaide pour un travail artisanal et plaisant, ce qui inspire les designers du XXe siècle.",
+      "wikipedia": "William_Morris",
+      "portrait": {
+        "fichier": "Wmmorris3248.jpg",
+        "legende": "William Morris, photographie",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "mackintosh",
+      "nom": "Charles Rennie Mackintosh",
+      "titre": "Naissance de Charles Rennie Mackintosh",
+      "axe": "Beaux-arts",
+      "naissance": 1868,
+      "description": "Charles Rennie Mackintosh (1868-1928) est un architecte et designer écossais, né à Glasgow, chef de file du « Glasgow Style », variante écossaise de l'Art nouveau. Il construit l'École d'art de Glasgow, achevée en 1909, et la Hill House, et dessine pour Catherine Cranston les salons de thé Willow, jusqu'aux chaises. Mieux accueilli à Vienne qu'en Grande-Bretagne, il part vivre en France, où il peint des aquarelles, et meurt à Londres en 1928.",
+      "wikipedia": "Charles_Rennie_Mackintosh",
+      "portrait": {
+        "fichier": "Charles-Rennie-Mackintosh.jpg",
+        "legende": "Charles Rennie Mackintosh, photographie de James Craig Annan (vers 1900)",
+        "auteur": "James Craig Annan",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "moore",
+      "nom": "Henry Moore",
+      "titre": "Naissance d'Henry Moore",
+      "axe": "Beaux-arts",
+      "naissance": 1898,
+      "description": "Henry Moore (1898-1986) est un sculpteur britannique, né à Castleford dans le Yorkshire, ancien soldat de la Grande Guerre. Il taille et coule des figures allongées, des mères à l'enfant et des formes percées de trous, qui lient le corps humain au paysage, et fait pendant le Blitz des dessins de Londoniens abrités dans le métro. Son Figure couchée de l'Unesco, à Paris, date de 1958 ; il meurt en 1986 à Much Hadham, dans le Hertfordshire.",
+      "wikipedia": "Henry_Moore",
+      "portrait": {
+        "fichier": "Henry Moore 5 Allan Warren.jpg",
+        "legende": "Henry Moore dans son atelier, photographie d'Allan Warren (1973)",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Allan Warren"
+      }
+    },
+    {
+      "slug": "burnejones",
+      "nom": "Edward Burne-Jones",
+      "titre": "Naissance d'Edward Burne-Jones",
+      "axe": "Beaux-arts",
+      "naissance": 1833,
+      "description": "Edward Burne-Jones (1833-1898) est un peintre britannique, né à Birmingham, ami de William Morris et héritier de la Confrérie préraphaélite. Il peint des sujets médiévaux et mythologiques, comme Le Roi Cophétua et la mendiante, en 1884, ou la série de La Belle au bois dormant, et dessine pour Morris & Co des vitraux et des tapisseries. Créé baronnet en 1894, il meurt en 1898, et son art a influencé le symbolisme européen.",
+      "wikipedia": "Edward_Burne-Jones",
+      "portrait": {
+        "fichier": "Edward Burne-Jones Photogravure Hollyer.jpg",
+        "legende": "Edward Burne-Jones, photogravure de Frederick Hollyer (1900) d'après un portrait de son fils Philip",
+        "licence": "Domaine public",
+        "auteur": "Frederick Hollyer, d’après Philip Burne-Jones"
+      }
+    },
+    {
+      "slug": "paxton",
+      "nom": "Joseph Paxton",
+      "titre": "Naissance de Joseph Paxton",
+      "axe": "Beaux-arts",
+      "naissance": 1803,
+      "description": "Joseph Paxton (1803-1865) est un jardinier, architecte et homme politique britannique, né à Milton Bryan dans le Bedfordshire, qui dirige les jardins de Chatsworth pour le duc de Devonshire. Il y construit une immense serre, puis dessine le Crystal Palace, pavillon de l'Exposition universelle de 1851 à Londres, fait de fer et de verre préfabriqués et monté en quelques mois. Détruit par un incendie en 1936, ce bâtiment annonce l'architecture de métal du XXe siècle.",
+      "wikipedia": "Joseph_Paxton",
+      "portrait": {
+        "fichier": "Joseph Paxton by Octavius Oakley, c1850.jpg",
+        "legende": "Joseph Paxton, portrait d'Octavius Oakley (vers 1850)",
+        "auteur": "Octavius Oakley",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "westwood",
+      "nom": "Vivienne Westwood",
+      "titre": "Naissance de Vivienne Westwood",
+      "axe": "Beaux-arts",
+      "naissance": 1941,
+      "description": "Vivienne Westwood (1941-2022) est une créatrice de mode britannique, née à Glossop dans le Derbyshire, institutrice devenue figure du mouvement punk avec Malcolm McLaren, dont elle habille les Sex Pistols dans la boutique « SEX » de King's Road. Elle imagine ensuite les pirates, le tartan et les corsets de ses collections des années 1980 et 1990, qui mêlent l'histoire du costume à la provocation. Militante écologiste, faite dame en 2006, elle meurt à Londres en décembre 2022.",
+      "wikipedia": "Vivienne_Westwood",
+      "portrait": {
+        "fichier": "Vivienne Westwood Life Ball 2011 a (cropped).jpg",
+        "legende": "Vivienne Westwood, photographie prise au Life Ball de Vienne (21 mai 2011)",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Manfred Werner (Tsui)"
+      }
+    },
+    {
+      "slug": "tallis",
+      "nom": "Thomas Tallis",
+      "titre": "Naissance de Thomas Tallis",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1505,
+      "description": "Thomas Tallis (vers 1505-1585) est un compositeur anglais, né vers 1505, qui sert la chapelle royale sous quatre souverains, d'Henri VIII à Élisabeth Ire, malgré les changements de religion. Il écrit de la musique latine et anglaise pour l'Église, dont le motet Spem in alium, à quarante voix, vers 1570. Avec son élève William Byrd, il obtient en 1575 le monopole d'impression de la musique ; il meurt à Greenwich en 1585.",
+      "wikipedia": "Thomas_Tallis",
+      "portrait": {
+        "fichier": "Thomas Tallis.jpg",
+        "legende": "Thomas Tallis, gravure : aucun portrait de son vivant n'est connu",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "byrd",
+      "nom": "William Byrd",
+      "titre": "Naissance de William Byrd",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1540,
+      "description": "William Byrd (vers 1540-1623) est un compositeur anglais, né vers 1540, élève de Thomas Tallis et organiste de la chapelle royale. Catholique dans l'Angleterre protestante, il écrit pour la cour des pièces de clavier et de consort, et, pour ses coreligionnaires, des messes à voix réduites et les Gradualia, que l'on chante en cachette. Protégé par Élisabeth Ire malgré sa foi, il meurt en 1623 et reste l'un des plus grands musiciens de la Renaissance anglaise.",
+      "wikipedia": "William_Byrd_(compositeur)",
+      "portrait": {
+        "fichier": "William Byrd.jpg",
+        "legende": "William Byrd, gravure de Gerard van der Gucht d'après une peinture (XVIIIe siècle)",
+        "licence": "Domaine public",
+        "auteur": "Gerard van der Gucht, d’après Nicola Francesco Haym"
+      }
+    },
+    {
+      "slug": "purcell",
+      "nom": "Henry Purcell",
+      "titre": "Naissance d'Henry Purcell",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1659,
+      "description": "Henry Purcell (1659-1695) est un compositeur anglais, né à Londres, organiste de l'abbaye de Westminster à vingt ans. Il écrit Didon et Énée, vers 1689, premier grand opéra anglais, des « semi-opéras » comme King Arthur et The Fairy-Queen, de la musique d'église et les pages funèbres de la reine Marie en 1695. Mort à trente-six ans, il est enterré à Westminster et reste le plus grand compositeur anglais avant Elgar.",
+      "wikipedia": "Henry_Purcell",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Henry Purcell Closterman.jpg",
+        "legende": "Henry Purcell, portrait de l'atelier de John Closterman (vers 1695)",
+        "licence": "Domaine public",
+        "auteur": "Atelier de John Closterman"
+      }
+    },
+    {
+      "slug": "siddons",
+      "nom": "Sarah Siddons",
+      "titre": "Naissance de Sarah Siddons",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1755,
+      "description": "Sarah Siddons (1755-1831) est une actrice britannique, née à Brecon, au pays de Galles, issue d'une famille de comédiens ambulants. Après un échec à Londres, elle triomphe à Drury Lane en 1782 et s'impose comme la plus grande tragédienne de son temps, notamment en Lady Macbeth ; Reynolds la peint en « muse tragique » en 1784. Elle quitte la scène en 1812 et meurt en 1831.",
+      "wikipedia": "Sarah_Siddons",
+      "portrait": {
+        "fichier": "Thomas Gainsborough 015.jpg",
+        "legende": "Sarah Siddons, portrait de Thomas Gainsborough (1785)",
+        "auteur": "Thomas Gainsborough",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "grace",
+      "nom": "William Gilbert Grace",
+      "titre": "Naissance de William Gilbert Grace",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1848,
+      "description": "William Gilbert Grace (1848-1915) est un joueur de cricket anglais, né à Downend près de Bristol, médecin de profession. Entre 1865 et 1908, il marque plus de 54 000 points et prend près de 2 900 guichets, impose la technique du frappeur moderne et attire des foules qui n'auraient jamais regardé ce sport. Reconnaissable à sa grande barbe, il est la première vedette du sport britannique, et meurt en 1915 à Eltham, dans le Kent.",
+      "wikipedia": "W._G._Grace",
+      "portrait": {
+        "fichier": "WG Grace c1902.jpg",
+        "legende": "W. G. Grace, photographie de George Beldam (vers 1902)",
+        "auteur": "George Beldam",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "elgar",
+      "nom": "Edward Elgar",
+      "titre": "Naissance d'Edward Elgar",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1857,
+      "description": "Edward Elgar (1857-1934) est un compositeur britannique, né à Broadheath dans le Worcestershire, autodidacte, fils d'un facteur de pianos. Il se fait connaître avec les Variations Enigma, en 1899, puis avec Le Rêve de Gérontius, en 1900, et les marches Pomp and Circumstance, dont la première porte le chant « Land of Hope and Glory ». Son Concerto pour violoncelle, de 1919, évoque l'après-guerre ; maître de la musique du roi en 1924, il meurt en 1934.",
+      "wikipedia": "Edward_Elgar",
+      "portrait": {
+        "fichier": "Edward Elgar 1857 - 1934.jpg",
+        "legende": "Edward Elgar à sa table de travail, illustration de Modern Musicians de J. Cuthbert Hadden",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "vaughanwilliams",
+      "nom": "Ralph Vaughan Williams",
+      "titre": "Naissance de Ralph Vaughan Williams",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1872,
+      "description": "Ralph Vaughan Williams (1872-1958) est un compositeur britannique, né à Down Ampney dans le Gloucestershire, qui collecte les chants populaires anglais et dirige l'édition de l'English Hymnal. Il écrit neuf symphonies, la Fantaisie sur un thème de Thomas Tallis, en 1910, et La Alouette qui s'élève, en 1914, d'une lumière pastorale. Il redonne à la musique anglaise une voix propre après deux siècles de dépendance à l'Europe, et meurt en 1958.",
+      "wikipedia": "Ralph_Vaughan_Williams",
+      "portrait": {
+        "fichier": "Ralph Vaughan Williams 1913.jpeg",
+        "legende": "Ralph Vaughan Williams, photographie de 1913",
+        "licence": "Domaine public",
+        "auteur": "James Bacon and Sons, Leeds"
+      }
+    },
+    {
+      "slug": "chaplin",
+      "nom": "Charlie Chaplin",
+      "titre": "Naissance de Charlie Chaplin",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1889,
+      "description": "Charlie Chaplin (1889-1977) est un acteur et réalisateur britannique, né à Londres dans la pauvreté, qui passe du music-hall au cinéma aux États-Unis en 1914. Son personnage de Charlot, avec sa canne et son chapeau melon, domine Le Kid, La Ruée vers l'or, Les Lumières de la ville, Les Temps modernes et Le Dictateur, qui se moque de Hitler en 1940. Soupçonné de sympathies communistes, il se voit interdire le retour aux États-Unis en 1952 et s'installe en Suisse, où il meurt en 1977.",
+      "wikipedia": "Charlie_Chaplin",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Charlie Chaplin portrait Getty 1739411952.jpg",
+        "legende": "Charlie Chaplin, photographie du studio Strauss-Peyton (1921)",
+        "licence": "Domaine public",
+        "auteur": "Strauss-Peyton Studio"
+      }
+    },
+    {
+      "slug": "hitchcock",
+      "nom": "Alfred Hitchcock",
+      "titre": "Naissance d'Alfred Hitchcock",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1899,
+      "description": "Alfred Hitchcock (1899-1980) est un réalisateur britannique, né à Leytonstone, près de Londres, qui s'impose avec Les 39 Marches, en 1935, et Une femme disparaît, en 1938. Installé à Hollywood en 1939, il y tourne Rebecca, Fenêtre sur cour, Sueurs froides, La Mort aux trousses, Psychose et Les Oiseaux, et gagne le surnom de « maître du suspense ». Il apparaît dans chacun de ses films et meurt en 1980.",
+      "wikipedia": "Alfred_Hitchcock",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Hitchcock, Alfred 02.jpg",
+        "legende": "Alfred Hitchcock, photographie publicitaire de studio",
+        "licence": "Domaine public",
+        "auteur": "Ante Brkan"
+      }
+    },
+    {
+      "slug": "olivier",
+      "nom": "Laurence Olivier",
+      "titre": "Naissance de Laurence Olivier",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1907,
+      "description": "Laurence Olivier (1907-1989) est un acteur et réalisateur britannique, né à Dorking dans le Surrey, le plus grand comédien shakespearien de son temps. Il joue Hamlet, Richard III et Othello, tourne et réalise Henri V en 1944 puis Hamlet en 1948, qui obtient l'Oscar du meilleur film, et dirige le Théâtre national de 1963 à 1973. Premier acteur élevé à la pairie, en 1970, il meurt en 1989.",
+      "wikipedia": "Laurence_Olivier",
+      "portrait": {
+        "fichier": "Laurence Olivier - portrait.JPG",
+        "legende": "Laurence Olivier, photographie publicitaire de la MGM (1940)",
+        "licence": "Domaine public",
+        "auteur": "MGM"
+      }
+    },
+    {
+      "slug": "perry",
+      "nom": "Fred Perry",
+      "titre": "Naissance de Fred Perry",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1909,
+      "description": "Fred Perry (1909-1995) est un sportif britannique, né à Stockport, champion du monde de tennis de table en 1929 avant de se tourner vers le tennis. Il remporte Wimbledon trois fois de suite, de 1934 à 1936, huit tournois du Grand Chelem au total et la Coupe Davis ; aucun Britannique ne gagne plus Wimbledon avant Andy Murray, en 2013. Installé aux États-Unis, il crée en 1952 une marque de vêtements à la couronne de laurier et meurt en 1995.",
+      "wikipedia": "Fred_Perry",
+      "portrait": {
+        "fichier": "Fred Perry 01.jpg",
+        "legende": "Fred Perry, photographie de presse (12 septembre 1936)",
+        "licence": "Domaine public",
+        "auteur": "AFP / ACME Newspictures"
+      }
+    },
+    {
+      "slug": "leigh",
+      "nom": "Vivien Leigh",
+      "titre": "Naissance de Vivien Leigh",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1913,
+      "description": "Vivien Leigh (1913-1967) est une actrice britannique, née à Darjeeling, en Inde, qui se fait connaître à Londres avant de remporter le rôle de Scarlett O'Hara dans Autant en emporte le vent, en 1939. Elle obtient l'Oscar pour ce rôle puis, en 1951, pour celui de Blanche DuBois dans Un tramway nommé Désir, tout en jouant Shakespeare au théâtre avec son époux Laurence Olivier. Atteinte de troubles bipolaires et de tuberculose, elle meurt à Londres en 1967.",
+      "wikipedia": "Vivien_Leigh",
+      "portrait": {
+        "fichier": "Vivien Leigh Scarlet.jpg",
+        "legende": "Vivien Leigh en Scarlett O'Hara, photographie de 1941",
+        "licence": "Domaine public",
+        "auteur": "Fawcett Publications"
+      }
+    },
+    {
+      "slug": "britten",
+      "nom": "Benjamin Britten",
+      "titre": "Naissance de Benjamin Britten",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1913,
+      "description": "Benjamin Britten (1913-1976) est un compositeur britannique, né à Lowestoft dans le Suffolk, objecteur de conscience pendant la Seconde Guerre mondiale. Son opéra Peter Grimes, créé en 1945, ouvre l'opéra anglais au XXe siècle, suivi de Billy Budd et du Tour d'écrou, et son War Requiem est écrit en 1962 pour la nouvelle cathédrale de Coventry. Il fonde en 1948 le festival d'Aldeburgh avec le ténor Peter Pears, son compagnon, et meurt en 1976, peu après avoir été fait pair.",
+      "wikipedia": "Benjamin_Britten",
+      "portrait": {
+        "fichier": "Benjamin Britten, London Records 1968 publicity photo for Wikipedia.jpg",
+        "legende": "Benjamin Britten, photographie publicitaire (1968)",
+        "licence": "Domaine public",
+        "auteur": "Photographie publicitaire de London Records"
+      }
+    },
+    {
+      "slug": "guinness",
+      "nom": "Alec Guinness",
+      "titre": "Naissance d'Alec Guinness",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1914,
+      "description": "Alec Guinness (1914-2000) est un acteur britannique, né à Londres, qui débute au théâtre aux côtés de John Gielgud. Il joue huit rôles dans Noblesse oblige, en 1949, puis dans plusieurs comédies d'Ealing, remporte l'Oscar pour Le Pont de la rivière Kwaï, en 1957, et joue le prince Fayçal dans Lawrence d'Arabie. Le grand public le retrouve en 1977 sous les traits d'Obi-Wan Kenobi dans La Guerre des étoiles ; il meurt en 2000.",
+      "wikipedia": "Alec_Guinness",
+      "portrait": {
+        "fichier": "Sir Alec Guinness Allan Warren (2).jpg",
+        "legende": "Alec Guinness, photographie d'Allan Warren (1973)",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Allan Warren"
+      }
+    },
+    {
+      "slug": "lynn",
+      "nom": "Vera Lynn",
+      "titre": "Naissance de Vera Lynn",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1917,
+      "description": "Vera Lynn (1917-2020) est une chanteuse britannique, née à Londres sous le nom de Vera Welch, qui incarne le moral de l'armée et de la population pendant la Seconde Guerre mondiale. Ses chansons We'll Meet Again et The White Cliffs of Dover, que les soldats lui demandent partout, lui valent le surnom de « chérie des forces armées » ; elle les chante jusqu'en Birmanie en 1944. Faite dame en 1975, elle meurt en 2020 à cent trois ans.",
+      "wikipedia": "Vera_Lynn",
+      "portrait": {
+        "fichier": "Vera Lynn (1962).jpg",
+        "legende": "Vera Lynn, photographie d'Eric Koch, archives Anefo (29 septembre 1962)",
+        "licence": "CC BY-SA 3.0 NL",
+        "auteur": "Eric Koch (Anefo)"
+      }
+    },
+    {
+      "slug": "bannister",
+      "nom": "Roger Bannister",
+      "titre": "Naissance de Roger Bannister",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1929,
+      "description": "Roger Bannister (1929-2018) est un athlète et neurologue britannique, né à Harrow, qui devient le 6 mai 1954, sur la piste d'Iffley Road à Oxford, le premier homme à courir le mile en moins de quatre minutes, en 3 min 59 s 4. Son record, que l'on jugeait impossible, est battu moins de deux mois plus tard par l'Australien John Landy. Il renonce à la compétition la même année, devient médecin, préside le Conseil britannique des sports et meurt en 2018.",
+      "wikipedia": "Roger_Bannister",
+      "essentiel": true,
+      "biographie": "bio_rogerbannister",
+      "portrait": {
+        "fichier": "Roger Bannister 2.jpg",
+        "legende": "Roger Bannister en 2009, photographie de Pruneau",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Pruneau"
+      }
+    },
+    {
+      "slug": "moorebobby",
+      "nom": "Bobby Moore",
+      "titre": "Naissance de Bobby Moore",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1941,
+      "description": "Bobby Moore (1941-1993) est un footballeur anglais, né à Barking, capitaine de West Ham et de l'équipe d'Angleterre, qui soulève le 30 juillet 1966 à Wembley la Coupe du monde après la victoire 4-2 sur l'Allemagne. Défenseur élégant, il compte cent huit sélections et est accusé à tort en 1970, en Colombie, d'avoir volé un bracelet, ce qui ne l'empêche pas de jouer le Mondial de Mexico. Il meurt d'un cancer en 1993, à cinquante-et-un ans.",
+      "wikipedia": "Bobby_Moore",
+      "portrait": {
+        "fichier": "Bobby moore elgrafico 1970.jpg",
+        "legende": "Bobby Moore en 1970, photographie du magazine El Gráfico",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "lennon",
+      "nom": "John Lennon",
+      "titre": "Naissance de John Lennon",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1940,
+      "description": "John Lennon (1940-1980) est un chanteur et compositeur britannique, né à Liverpool, cofondateur des Beatles avec Paul McCartney en 1957. Il écrit avec lui la plupart de leurs chansons, de Please Please Me en 1963 à Sergeant Pepper en 1967, puis, après la séparation du groupe en 1970, Imagine, hymne pacifiste de 1971. Installé à New York avec Yoko Ono, il est assassiné devant son immeuble, le Dakota, le 8 décembre 1980.",
+      "wikipedia": "John_Lennon",
+      "essentiel": true,
+      "biographie": "bio_johnlennon",
+      "portrait": {
+        "fichier": "John Lennon, 1974 (cropped).jpg",
+        "legende": "John Lennon lors d'un entretien à Los Angeles, photographie de Tony Barnard (29 septembre 1974)",
+        "licence": "CC BY 4.0",
+        "auteur": "Tony Barnard (Los Angeles Times)"
+      }
+    },
+    {
+      "slug": "harrison",
+      "nom": "George Harrison",
+      "titre": "Naissance de George Harrison",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1943,
+      "description": "George Harrison (1943-2001) est un guitariste, chanteur et compositeur britannique, né à Liverpool, le « troisième Beatle ». Il écrit Here Comes the Sun et Something, fait découvrir au groupe la musique indienne avec le sitar de Ravi Shankar, publie en 1970 l'album All Things Must Pass et organise en 1971 le concert pour le Bangladesh, premier grand concert caritatif du rock. Il produit aussi des films, dont La Vie de Brian des Monty Python, et meurt d'un cancer en 2001.",
+      "wikipedia": "George_Harrison",
+      "portrait": {
+        "fichier": "George Harrison 1974 (cropped).jpg",
+        "legende": "George Harrison dans le Bureau ovale, photographie de David Hume Kennerly (13 décembre 1974)",
+        "licence": "Domaine public",
+        "auteur": "David Hume Kennerly"
+      }
+    },
+    {
+      "slug": "mercury",
+      "nom": "Freddie Mercury",
+      "titre": "Naissance de Freddie Mercury",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1946,
+      "description": "Freddie Mercury (1946-1991) est un chanteur britannique, né Farrokh Bulsara à Zanzibar dans une famille parsie, installé à Londres à dix-sept ans. Chanteur du groupe Queen à partir de 1970, il écrit Bohemian Rhapsody, en 1975, et incarne la scène par sa voix, son étendue et son goût du spectacle, jusqu'au concert de Live Aid en 1985. Il annonce sa maladie, le sida, le 23 novembre 1991 et meurt le lendemain.",
+      "wikipedia": "Freddie_Mercury",
+      "essentiel": true,
+      "biographie": "bio_freddiemercury",
+      "portrait": {
+        "fichier": "Freddie Mercury performing in New Haven, CT, November 1977.jpg",
+        "legende": "Freddie Mercury en concert à New Haven, photographie de Carl Lender (16 novembre 1977)",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Carl Lender"
+      }
+    },
+    {
+      "slug": "bowie",
+      "nom": "David Bowie",
+      "titre": "Naissance de David Bowie",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1947,
+      "description": "David Bowie (1947-2016) est un chanteur, compositeur et acteur britannique, né David Jones à Brixton, à Londres. Il se réinvente d'un disque à l'autre, de Space Oddity en 1969 à Ziggy Stardust en 1972, puis à la période berlinoise de Heroes en 1977 et au succès mondial de Let's Dance en 1983. Son dernier album, Blackstar, paraît le 8 janvier 2016, jour de ses soixante-neuf ans, et il meurt de cancer deux jours plus tard.",
+      "wikipedia": "David_Bowie",
+      "essentiel": true,
+      "biographie": "bio_bowie",
+      "portrait": {
+        "fichier": "David-Bowie Chicago 2002-08-08 photoby Adam-Bielawski-cropped.jpg",
+        "legende": "David Bowie en concert à Chicago, photographie d'Adam Bielawski (8 août 2002)",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Adam Bielawski"
+      }
+    },
+    {
+      "slug": "winehouse",
+      "nom": "Amy Winehouse",
+      "titre": "Naissance d'Amy Winehouse",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1983,
+      "description": "Amy Winehouse (1983-2011) est une chanteuse britannique, née à Londres, qui mêle le jazz et le soul dans ses albums Frank, en 2003, puis Back to Black, en 2006, dont le titre Rehab devient un tube mondial. Elle reçoit cinq Grammy Awards en 2008, mais ses addictions et ses démêlés avec la presse à scandale marquent ses dernières années. Elle est retrouvée morte à Londres le 23 juillet 2011, à vingt-sept ans, d'une intoxication à l'alcool.",
+      "wikipedia": "Amy_Winehouse",
+      "portrait": {
+        "fichier": "Amy Winehouse -Virgin Festival, Pimlico, Baltimore, Maryland-4August2007.jpg",
+        "legende": "Amy Winehouse au Virgin Festival de Baltimore, photographie de Gregory Gebhardt (4 août 2007)",
+        "licence": "CC BY 2.0",
+        "auteur": "Gregory Gebhardt"
+      }
+    },
+    {
+      "slug": "harvey",
+      "nom": "William Harvey",
+      "titre": "Naissance de William Harvey",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1578,
+      "description": "William Harvey (1578-1657) est un médecin anglais, né à Folkestone, qui soigne Jacques Ier puis Charles Ier. Dans son traité De Motu Cordis, publié en 1628, il démontre que le sang circule dans un circuit fermé, propulsé par le cœur, ce qui contredit la médecine de Galien enseignée depuis quinze siècles. Ses idées, d'abord combattues, s'imposent avant sa mort en 1657 et fondent la physiologie moderne.",
+      "wikipedia": "William_Harvey",
+      "portrait": {
+        "fichier": "William Harvey 2.jpg",
+        "legende": "William Harvey, portrait d'après Daniël Mijtens (vers 1627)",
+        "auteur": "D'après Daniël Mijtens",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "harrisonj",
+      "nom": "John Harrison",
+      "titre": "Naissance de John Harrison",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1693,
+      "description": "John Harrison (1693-1776) est un horloger anglais, né à Foulby dans le Yorkshire, charpentier et autodidacte. Pour répondre au concours de 1714 qui promet une fortune à qui saura mesurer la longitude en mer, il construit quatre chronomètres de marine, dont le H4 de 1759, qui ne perd que quelques secondes pendant un voyage jusqu'à la Jamaïque. Le Bureau des longitudes ne lui verse la récompense qu'en 1773, après l'intervention de George III, et il meurt en 1776.",
+      "wikipedia": "John_Harrison_(horloger)",
+      "portrait": {
+        "fichier": "John Harrison.jpg",
+        "legende": "John Harrison, portrait de Philippe-Joseph Tassaert (1768)",
+        "auteur": "Philippe-Joseph Tassaert",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "newton",
+      "nom": "Isaac Newton",
+      "titre": "Naissance d'Isaac Newton",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1642,
+      "description": "Isaac Newton (1642-1727) est un mathématicien, physicien et astronome anglais, né à Woolsthorpe dans le Lincolnshire, professeur à Cambridge. Dans les Principia, publiés en 1687, il énonce les lois du mouvement et la gravitation universelle, qui unissent la chute des corps et le mouvement des planètes, et il invente le calcul infinitésimal, en rivalité avec Leibniz ; son Optique de 1704 décompose la lumière blanche. Directeur de la Monnaie, président de la Royal Society, il est inhumé à l'abbaye de Westminster en 1727.",
+      "wikipedia": "Isaac_Newton",
+      "essentiel": true,
+      "biographie": "bio_newton",
+      "portrait": {
+        "fichier": "GodfreyKneller-IsaacNewton-1689.jpg",
+        "legende": "Isaac Newton, copie d'un portrait de Godfrey Kneller (1689)",
+        "auteur": "Godfrey Kneller",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "halley",
+      "nom": "Edmond Halley",
+      "titre": "Naissance d'Edmond Halley",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1656,
+      "description": "Edmond Halley (1656-1742) est un astronome anglais, né à Londres, qui dresse dès 1676-1678, depuis l'île de Sainte-Hélène, le premier catalogue d'étoiles du ciel austral. Il pousse Newton à écrire les Principia et en finance l'impression, puis calcule que les comètes observées en 1531, 1607 et 1682 n'en font qu'une et annonce son retour en 1758. La comète revient à Noël 1758, seize ans après sa mort en 1742, et porte son nom.",
+      "wikipedia": "Edmond_Halley",
+      "portrait": {
+        "fichier": "Halleold.jpg",
+        "legende": "Edmond Halley, portrait de Michael Dahl (vers 1736)",
+        "auteur": "Michael Dahl",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "cook",
+      "nom": "James Cook",
+      "titre": "Naissance de James Cook",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1728,
+      "description": "James Cook (1728-1779) est un navigateur et cartographe britannique, né à Marton dans le Yorkshire, fils d'un ouvrier agricole, entré dans la Royal Navy. Il observe le passage de Vénus à Tahiti en 1769, cartographie la Nouvelle-Zélande et la côte est de l'Australie, et franchit le premier le cercle polaire antarctique en 1773 ; il lutte contre le scorbut par l'hygiène et l'alimentation. Il est tué le 14 février 1779 à Hawaï, lors d'un affrontement, et l'on débat aujourd'hui des conséquences de ses voyages pour les peuples qu'il a rencontrés.",
+      "wikipedia": "James_Cook",
+      "essentiel": true,
+      "biographie": "bio_cook",
+      "portrait": {
+        "fichier": "Captainjamescookportrait.jpg",
+        "legende": "James Cook, portrait de Nathaniel Dance-Holland (1775)",
+        "auteur": "Nathaniel Dance-Holland",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "watt",
+      "nom": "James Watt",
+      "titre": "Naissance de James Watt",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1736,
+      "description": "James Watt (1736-1819) est un ingénieur écossais, né à Greenock, fabricant d'instruments à l'université de Glasgow. En 1765 il imagine de condenser la vapeur dans un cylindre séparé, ce qui améliore beaucoup la machine de Newcomen, et s'associe en 1775 avec le manufacturier Matthew Boulton pour produire ses machines à vapeur. Son nom est donné en 1882 à l'unité de puissance, le watt ; il meurt en 1819 à Heathfield, près de Birmingham.",
+      "wikipedia": "James_Watt",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Watt James von Breda.jpg",
+        "legende": "James Watt, portrait de Carl Frederik von Breda (1792)",
+        "auteur": "Carl Frederik von Breda",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "jenner",
+      "nom": "Edward Jenner",
+      "titre": "Naissance d'Edward Jenner",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1749,
+      "description": "Edward Jenner (1749-1823) est un médecin anglais, né à Berkeley dans le Gloucestershire. Ayant remarqué que les trayeuses atteintes de la vaccine, maladie bénigne des vaches, ne contractent pas la variole, il inocule en 1796 le virus à un enfant de huit ans, James Phipps, puis le met à l'épreuve de la variole. Il publie ses résultats en 1798, d'où le mot « vaccin », et la variole, déclarée éradiquée en 1980, est la première maladie humaine disparue grâce à la vaccination.",
+      "wikipedia": "Edward_Jenner",
+      "portrait": {
+        "fichier": "Edward Jenner by James Northcote.jpg",
+        "legende": "Edward Jenner, portrait de James Northcote (1803)",
+        "auteur": "James Northcote",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "davy",
+      "nom": "Humphry Davy",
+      "titre": "Naissance d'Humphry Davy",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1778,
+      "description": "Humphry Davy (1778-1829) est un chimiste anglais, né à Penzance en Cornouailles, professeur à la Royal Institution. Par électrolyse, il isole en 1807 le potassium et le sodium, puis le calcium, le baryum et le magnésium, et montre que le chlore est un corps simple ; il invente en 1815 la lampe de sûreté des mineurs. Président de la Royal Society, il découvre aussi le jeune Michael Faraday, et meurt à Genève en 1829.",
+      "wikipedia": "Humphry_Davy",
+      "portrait": {
+        "fichier": "Sir Humphry Davy, Bt by Thomas Phillips.jpg",
+        "legende": "Humphry Davy, portrait de Thomas Phillips (1821)",
+        "auteur": "Thomas Phillips",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "stephenson",
+      "nom": "George Stephenson",
+      "titre": "Naissance de George Stephenson",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1781,
+      "description": "George Stephenson (1781-1848) est un ingénieur anglais, né à Wylam dans le Northumberland, fils d'un mineur, qui apprend à lire à dix-huit ans. Il construit la locomotive Locomotion pour la première ligne publique de chemin de fer, entre Stockton et Darlington, en 1825, puis la Rocket, avec son fils Robert, qui gagne les épreuves de Rainhill en 1829. Son écartement de 1,435 mètre, utilisé sur la ligne Liverpool-Manchester, devient la norme de la plupart des chemins de fer du monde.",
+      "wikipedia": "George_Stephenson",
+      "portrait": {
+        "fichier": "George Stephenson.png",
+        "legende": "George Stephenson, gravure d'Auguste Perdonnet (1858)",
+        "auteur": "Auguste Perdonnet",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "faraday",
+      "nom": "Michael Faraday",
+      "titre": "Naissance de Michael Faraday",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1791,
+      "description": "Michael Faraday (1791-1867) est un physicien et chimiste britannique, né à Newington Butts près de Londres, fils de forgeron et relieur de métier, devenu assistant de Humphry Davy. Il découvre l'induction électromagnétique en 1831, ce qui ouvre la voie à la dynamo et au transformateur, énonce les lois de l'électrolyse et invente la notion de champ, que reprendra Maxwell. Modeste, il refuse la présidence de la Royal Society et un titre de chevalier, et organise les conférences de Noël pour les enfants.",
+      "wikipedia": "Michael_Faraday",
+      "essentiel": true,
+      "biographie": "bio_michaelfaraday",
+      "portrait": {
+        "fichier": "Michael Faraday 001.jpg",
+        "legende": "Michael Faraday, portrait de Thomas Phillips (1841-1842)",
+        "auteur": "Thomas Phillips",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "babbage",
+      "nom": "Charles Babbage",
+      "titre": "Naissance de Charles Babbage",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1791,
+      "description": "Charles Babbage (1791-1871) est un mathématicien et ingénieur britannique, né à Londres, professeur à Cambridge. Il conçoit la machine à différences, dont le gouvernement britannique finance la construction avant d'y renoncer, puis la machine analytique, en 1837, programmable par cartes perforées, qu'il ne réussit jamais à bâtir. Sa machine à différences n° 2, construite d'après ses plans en 1991 par le Science Museum, fonctionne parfaitement, et Ada Lovelace a travaillé sur la seconde.",
+      "wikipedia": "Charles_Babbage",
+      "portrait": {
+        "fichier": "Charles Babbage - 1860.jpg",
+        "legende": "Charles Babbage, photographie de 1860",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "anning",
+      "nom": "Mary Anning",
+      "titre": "Naissance de Mary Anning",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1799,
+      "description": "Mary Anning (1799-1847) est une collectionneuse de fossiles anglaise, née à Lyme Regis, dans le Dorset, fille d'un menuisier, qui récolte à douze ans avec son frère le premier squelette d'ichtyosaure complet. Elle trouve ensuite le premier plésiosaure, en 1823, et le premier ptérosaure d'Angleterre, en 1828, mais, femme et pauvre, elle est exclue de la Société géologique et ses découvertes sont publiées sous le nom d'autres savants. Morte d'un cancer du sein en 1847, elle est aujourd'hui reconnue comme une pionnière de la paléontologie.",
+      "wikipedia": "Mary_Anning",
+      "portrait": {
+        "fichier": "Mary Anning painting.jpg",
+        "legende": "Mary Anning avec son chien Tray, devant la falaise de Golden Cap, portrait d'avant 1842",
+        "licence": "Domaine public",
+        "auteur": "Mr Grey (d’après Crispin Tickell)"
+      }
+    },
+    {
+      "slug": "brunel",
+      "nom": "Isambard Kingdom Brunel",
+      "titre": "Naissance d'Isambard Kingdom Brunel",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1806,
+      "description": "Isambard Kingdom Brunel (1806-1859) est un ingénieur britannique, né à Portsmouth, fils de l'ingénieur français Marc Brunel. Il construit la Great Western Railway entre Londres et Bristol, avec le tunnel de Box, le pont suspendu de Clifton et les premiers grands navires à hélice en fer, le Great Britain, lancé en 1843, puis le Great Eastern. Sa voie large perd face à l'écartement de Stephenson, et il meurt en 1859, quelques jours après une attaque, à cinquante-trois ans.",
+      "wikipedia": "Isambard_Kingdom_Brunel",
+      "essentiel": true,
+      "biographie": "bio_brunel",
+      "portrait": {
+        "fichier": "IKBrunelChains.jpg",
+        "legende": "Isambard Kingdom Brunel devant les chaînes de lancement du Great Eastern, photographie de Robert Howlett (1857)",
+        "auteur": "Robert Howlett",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "darwin",
+      "nom": "Charles Darwin",
+      "titre": "Naissance de Charles Darwin",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1809,
+      "description": "Charles Darwin (1809-1882) est un naturaliste britannique, né à Shrewsbury, qui parcourt le monde de 1831 à 1836 à bord du Beagle et observe les pinsons et les tortues des Galápagos. Il conçoit la sélection naturelle, la présente en 1858 avec Alfred Russel Wallace à la Société linnéenne, puis publie De l'origine des espèces le 24 novembre 1859, suivi de La Filiation de l'homme en 1871. Mort en 1882 à Down House, il est inhumé à Westminster, près de Newton.",
+      "wikipedia": "Charles_Darwin",
+      "essentiel": true,
+      "biographie": "bio_darwin",
+      "portrait": {
+        "fichier": "Charles Darwin portrait.jpg",
+        "legende": "Charles Darwin, photographie d'Herbert Rose Barraud (1881)",
+        "auteur": "Herbert Rose Barraud",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "lovelace",
+      "nom": "Ada Lovelace",
+      "titre": "Naissance d'Ada Lovelace",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1815,
+      "description": "Ada Lovelace (1815-1852) est une mathématicienne britannique, née à Londres, fille du poète Lord Byron et d'Annabella Milbanke. En 1843, elle traduit un article sur la machine analytique de Charles Babbage et le complète de notes trois fois plus longues, qui contiennent un algorithme de calcul des nombres de Bernoulli, souvent présenté comme le premier programme informatique. Elle y imagine aussi qu'une telle machine pourrait composer de la musique, et meurt d'un cancer à trente-six ans.",
+      "wikipedia": "Ada_Lovelace",
+      "essentiel": true,
+      "biographie": "bio_adalovelace",
+      "portrait": {
+        "fichier": "Ada Byron daguerreotype by Antoine Claudet 1843 or 1850 - cropped.png",
+        "legende": "Ada Lovelace, daguerréotype d'Antoine Claudet (1843 ou 1850)",
+        "auteur": "Antoine Claudet",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "nightingale",
+      "nom": "Florence Nightingale",
+      "titre": "Naissance de Florence Nightingale",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1820,
+      "description": "Florence Nightingale (1820-1910) est une infirmière britannique, née à Florence, en Italie, d'une riche famille anglaise. Pendant la guerre de Crimée, en 1854-1856, elle réorganise les hôpitaux militaires de Scutari, fait baisser la mortalité par l'hygiène et gagne le surnom de « dame à la lampe ». Statisticienne, elle crée des diagrammes circulaires pour convaincre le gouvernement, fonde en 1860 l'école d'infirmières de l'hôpital Saint-Thomas et meurt en 1910.",
+      "wikipedia": "Florence_Nightingale",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Florence Nightingale.jpg",
+        "legende": "Florence Nightingale, portrait peint d'après une photographie (XIXe siècle)",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "wallacea",
+      "nom": "Alfred Russel Wallace",
+      "titre": "Naissance d'Alfred Russel Wallace",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1823,
+      "description": "Alfred Russel Wallace (1823-1913) est un naturaliste britannique, né à Usk, au pays de Galles, qui explore l'Amazonie puis, de 1854 à 1862, l'archipel malais. Malade à Ternate, il rédige en 1858 une théorie de la sélection naturelle qu'il envoie à Darwin, ce qui les conduit à présenter ensemble leurs idées, et il trace la ligne de Wallace qui sépare les faunes d'Asie et d'Australasie. Il publie L'Archipel malais et meurt en 1913, après avoir soutenu des idées spirites qui ont nui à sa réputation.",
+      "wikipedia": "Alfred_Russel_Wallace",
+      "portrait": {
+        "fichier": "Alfred-Russel-Wallace-c1895.jpg",
+        "legende": "Alfred Russel Wallace, photographie de la London Stereoscopic Company (vers 1895)",
+        "licence": "Domaine public",
+        "auteur": "London Stereoscopic Company"
+      }
+    },
+    {
+      "slug": "kelvin",
+      "nom": "Lord Kelvin",
+      "titre": "Naissance de Lord Kelvin",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1824,
+      "description": "Lord Kelvin (1824-1907) est un physicien britannique, né à Belfast sous le nom de William Thomson, professeur à Glasgow à vingt-deux ans. Il propose l'échelle de température absolue, dont l'unité porte son nom, formule le second principe de la thermodynamique et contribue à la pose du câble télégraphique transatlantique de 1866. Anobli en 1892, premier savant admis à la Chambre des lords, il meurt en 1907 et est inhumé près de Newton à Westminster.",
+      "wikipedia": "Lord_Kelvin",
+      "portrait": {
+        "fichier": "Lord Kelvin photograph.jpg",
+        "legende": "Lord Kelvin, photographie de Dickinson, Londres",
+        "licence": "Domaine public",
+        "auteur": "Dickinson, Londres"
+      }
+    },
+    {
+      "slug": "maxwell",
+      "nom": "James Clerk Maxwell",
+      "titre": "Naissance de James Clerk Maxwell",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1831,
+      "description": "James Clerk Maxwell (1831-1879) est un physicien écossais, né à Édimbourg, professeur à Aberdeen, à Londres puis à Cambridge. Ses équations de 1865 réunissent l'électricité, le magnétisme et la lumière dans une théorie unique des ondes électromagnétiques, et il réalise en 1861 la première photographie en couleurs. Premier directeur du laboratoire Cavendish, il meurt à quarante-huit ans en 1879, et Einstein dira que son œuvre a transformé la conception de la réalité physique.",
+      "wikipedia": "James_Clerk_Maxwell",
+      "biographie": "bio_maxwell",
+      "portrait": {
+        "fichier": "James-Clerk-Maxwell-1831-1879.jpg",
+        "legende": "James Clerk Maxwell, photographie (vers 1870)",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "livingstone",
+      "nom": "David Livingstone",
+      "titre": "Naissance de David Livingstone",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1813,
+      "description": "David Livingstone (1813-1873) est un missionnaire et explorateur écossais, né à Blantyre dans le Lanarkshire, qui travaille dès dix ans dans une filature de coton avant d'étudier la médecine. Il traverse l'Afrique australe d'ouest en est de 1853 à 1856, découvre les chutes Victoria et mène campagne contre la traite des esclaves en Afrique de l'Est. Retrouvé à Ujiji en 1871 par Henry Morton Stanley, avec la phrase « Dr Livingstone, I presume ? », il meurt en Zambie en 1873, et son rôle dans l'expansion coloniale est discuté.",
+      "wikipedia": "David_Livingstone",
+      "biographie": "bio_davidlivingstone",
+      "portrait": {
+        "fichier": "David Livingstone by Thomas Annan.jpg",
+        "legende": "David Livingstone, photographie de Thomas Annan (1864)",
+        "auteur": "Thomas Annan",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "bell",
+      "nom": "Alexander Graham Bell",
+      "titre": "Naissance d'Alexander Graham Bell",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1847,
+      "description": "Alexander Graham Bell (1847-1922) est un inventeur et professeur britannique, né à Édimbourg, spécialiste de l'éducation des sourds, émigré au Canada puis aux États-Unis. Il dépose le 7 mars 1876 le brevet du téléphone, trois jours avant le célèbre « Monsieur Watson, venez ici », et fonde en 1877 la Bell Telephone Company. Installé à Baddeck, en Nouvelle-Écosse, il se passionne ensuite pour l'aéronautique et les hydroptères, et meurt en 1922.",
+      "wikipedia": "Alexander_Graham_Bell",
+      "portrait": {
+        "fichier": "Alexander Graham Bell.jpg",
+        "legende": "Alexander Graham Bell, photographie du studio Moffett (vers 1914-1919)",
+        "licence": "Domaine public",
+        "auteur": "Moffett Studio"
+      }
+    },
+    {
+      "slug": "scottr",
+      "nom": "Robert Falcon Scott",
+      "titre": "Naissance de Robert Falcon Scott",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1868,
+      "description": "Robert Falcon Scott (1868-1912) est un officier de marine et explorateur britannique, né à Plymouth, qui commande l'expédition Discovery en Antarctique de 1901 à 1904. Lors de l'expédition Terra Nova, il atteint le pôle Sud le 17 janvier 1912, un mois après le Norvégien Roald Amundsen, et périt de froid et de faim avec ses quatre compagnons au retour, à une vingtaine de kilomètres seulement d'un dépôt de vivres. Son journal, retrouvé en novembre 1912, en fait un héros national, que les historiens jugent aujourd'hui avec plus de nuance.",
+      "wikipedia": "Robert_Falcon_Scott",
+      "portrait": {
+        "fichier": "Scott of the Antarctic crop.jpg",
+        "legende": "Robert Falcon Scott en tenue d'apparat, photographie de Maull & Fox (1905)",
+        "licence": "Domaine public",
+        "auteur": "Henry Maull et John Fox (Maull & Fox)"
+      }
+    },
+    {
+      "slug": "fleming",
+      "nom": "Alexander Fleming",
+      "titre": "Naissance d'Alexander Fleming",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1881,
+      "description": "Alexander Fleming (1881-1955) est un médecin et bactériologiste écossais, né à Darvel dans l'Ayrshire, qui travaille à l'hôpital Saint-Mary à Londres. En septembre 1928, il remarque qu'une moisissure, Penicillium notatum, a détruit les staphylocoques d'une boîte de culture, et publie sa découverte de la pénicilline en 1929. Florey et Chain en tirent un médicament pendant la guerre, et ils partagent avec lui le prix Nobel de 1945 ; il avertit dès lors du risque de résistance aux antibiotiques.",
+      "wikipedia": "Alexander_Fleming",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Alexander Fleming 1945.jpg",
+        "legende": "Alexander Fleming, photographie de la fondation Nobel (1945)",
+        "licence": "Domaine public",
+        "auteur": "Nobel Foundation"
+      }
+    },
+    {
+      "slug": "baird",
+      "nom": "John Logie Baird",
+      "titre": "Naissance de John Logie Baird",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1888,
+      "description": "John Logie Baird (1888-1946) est un ingénieur écossais, né à Helensburgh, qui présente à Londres, le 26 janvier 1926, la première démonstration publique de télévision. Son système mécanique à disque tournant permet d'envoyer une image à travers l'Atlantique en 1928, puis de transmettre en couleurs, et la BBC l'emploie à partir de 1929 ; il est supplanté en 1937 par le système électronique concurrent de Marconi-EMI. Il meurt en 1946 à Bexhill.",
+      "wikipedia": "John_Logie_Baird",
+      "portrait": {
+        "fichier": "John Logie Baird in 1917.jpg",
+        "legende": "John Logie Baird, photographie de 1917",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "turing",
+      "nom": "Alan Turing",
+      "titre": "Naissance d'Alan Turing",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1912,
+      "description": "Alan Turing (1912-1954) est un mathématicien britannique, né à Londres, qui définit en 1936 la machine de Turing, modèle de tout calcul possible. Pendant la guerre, il conçoit à Bletchley Park les « bombes » qui permettent de décrypter les messages de la machine Enigma de la marine allemande, puis imagine en 1950 le test qui porte son nom pour juger si une machine pense. Condamné en 1952 pour homosexualité, il meurt en 1954 d'un empoisonnement au cyanure, probablement un suicide, et reçoit en 2013 une grâce royale.",
+      "wikipedia": "Alan_Turing",
+      "essentiel": true,
+      "biographie": "bio_turing",
+      "portrait": {
+        "fichier": "Alan Turing (1912-1954) in 1936 at Princeton University.jpg",
+        "legende": "Alan Turing à Princeton, photographie de 1936",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "hodgkin",
+      "nom": "Dorothy Hodgkin",
+      "titre": "Naissance de Dorothy Hodgkin",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1910,
+      "description": "Dorothy Hodgkin (1910-1994) est une chimiste britannique, née au Caire de parents anglais, cristallographe à Oxford. Elle détermine par diffraction des rayons X la structure de la pénicilline en 1945, de la vitamine B12 en 1956 et de l'insuline en 1969, travail qui lui vaut le prix Nobel de chimie de 1964, seule Britannique à avoir reçu un Nobel scientifique. Militante pacifiste, elle préside le mouvement Pugwash et meurt en 1994.",
+      "wikipedia": "Dorothy_Hodgkin",
+      "portrait": {
+        "fichier": "Professor Dorothy Hodgkin.jpg",
+        "legende": "Dorothy Hodgkin en robe universitaire, photographie de l'université de Bristol",
+        "licence": "CC BY-SA 2.0",
+        "auteur": "University of Bristol"
+      }
+    },
+    {
+      "slug": "crick",
+      "nom": "Francis Crick",
+      "titre": "Naissance de Francis Crick",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1916,
+      "description": "Francis Crick (1916-2004) est un biologiste britannique, né à Weston Favell près de Northampton, d'abord physicien. Au laboratoire Cavendish de Cambridge, il propose avec l'Américain James Watson, en 1953, le modèle en double hélice de l'ADN, en s'appuyant notamment sur les clichés de diffraction de Rosalind Franklin. Prix Nobel de médecine en 1962 avec Watson et Maurice Wilkins, il se tourne ensuite vers l'étude du cerveau et meurt en 2004 en Californie.",
+      "wikipedia": "Francis_Crick",
+      "portrait": {
+        "fichier": "Francis Crick.png",
+        "legende": "Francis Crick, photographie de Marc Lieberman (2004)",
+        "licence": "CC BY 2.5",
+        "auteur": "Marc Lieberman"
+      }
+    },
+    {
+      "slug": "franklin",
+      "nom": "Rosalind Franklin",
+      "titre": "Naissance de Rosalind Franklin",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1920,
+      "description": "Rosalind Franklin (1920-1958) est une chimiste et cristallographe britannique, née à Londres, qui étudie la structure du charbon puis, au King's College, celle de l'ADN. Son cliché 51, pris en mai 1952, révèle la structure en hélice de la molécule, et les données de ses travaux sont utilisées par Watson et Crick pour leur modèle de 1953 sans qu'elle ait été consultée. Elle étudie ensuite des virus au Birkbeck College et meurt d'un cancer de l'ovaire à trente-sept ans, avant l'attribution du Nobel de 1962.",
+      "wikipedia": "Rosalind_Franklin",
+      "essentiel": true,
+      "biographie": "bio_rfranklin",
+      "portrait": {
+        "fichier": "Rosalind Franklin.jpg",
+        "legende": "Rosalind Franklin au microscope, photographie du laboratoire de biologie moléculaire du MRC (1955)",
+        "licence": "CC BY-SA 4.0",
+        "auteur": "MRC Laboratory of Molecular Biology"
+      }
+    },
+    {
+      "slug": "hawking",
+      "nom": "Stephen Hawking",
+      "titre": "Naissance de Stephen Hawking",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1942,
+      "description": "Stephen Hawking (1942-2018) est un physicien théoricien britannique, né à Oxford, atteint à vingt et un ans d'une sclérose latérale amyotrophique qui le paralyse peu à peu. Professeur de mathématiques à Cambridge, il démontre avec Roger Penrose l'existence de singularités dans l'espace-temps, puis découvre en 1974 que les trous noirs émettent un rayonnement, qui porte son nom. Son livre Une brève histoire du temps, publié en 1988, se vend à plus de dix millions d'exemplaires, et il meurt en 2018.",
+      "wikipedia": "Stephen_Hawking",
+      "essentiel": true,
+      "biographie": "bio_stephenhawking",
+      "portrait": {
+        "fichier": "Stephen Hawking.StarChild.jpg",
+        "legende": "Stephen Hawking, photographie de la NASA (vers 1980)",
+        "licence": "Domaine public",
+        "auteur": "NASA"
+      }
+    },
+    {
+      "slug": "gresham",
+      "nom": "Thomas Gresham",
+      "titre": "Naissance de Thomas Gresham",
+      "axe": "Économie et entreprise",
+      "naissance": 1519,
+      "description": "Thomas Gresham (vers 1519-1579) est un marchand et financier anglais, né à Londres dans une famille de drapiers. Agent de la Couronne à Anvers, il négocie des emprunts pour Henri VIII, Édouard VI et Élisabeth Ire, et fait construire à ses frais, en 1565-1571, la Bourse royale de Londres. On lui attribue la loi selon laquelle la mauvaise monnaie chasse la bonne, que l'on nomme ainsi après sa mort ; son testament fonde le Gresham College.",
+      "wikipedia": "Thomas_Gresham",
+      "portrait": {
+        "fichier": "Thomas Gresham, 1544.jpg",
+        "legende": "Thomas Gresham, portrait de l'école flamande (1544)",
+        "auteur": "École flamande",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "boulton",
+      "nom": "Matthew Boulton",
+      "titre": "Naissance de Matthew Boulton",
+      "axe": "Économie et entreprise",
+      "naissance": 1728,
+      "description": "Matthew Boulton (1728-1809) est un industriel et fabricant anglais, né à Birmingham, qui bâtit à Soho, en 1766, une des premières grandes manufactures d'Europe, avec plusieurs centaines d'ouvriers. Associé à James Watt à partir de 1775, il finance et vend les machines à vapeur du génie écossais, et fait frapper à la Soho Mint des pièces de qualité pour la Grande-Bretagne et ses colonies. Membre de la Lunar Society, qui réunit les savants des Midlands, il meurt en 1809.",
+      "wikipedia": "Matthew_Boulton_(industriel)",
+      "portrait": {
+        "fichier": "Matthew Boulton - Carl Frederik von Breda.jpg",
+        "legende": "Matthew Boulton, portrait de Carl Frederik von Breda",
+        "auteur": "Carl Frederik von Breda",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "wedgwood",
+      "nom": "Josiah Wedgwood",
+      "titre": "Naissance de Josiah Wedgwood",
+      "axe": "Économie et entreprise",
+      "naissance": 1730,
+      "description": "Josiah Wedgwood (1730-1795) est un potier et entrepreneur anglais, né à Burslem dans le Staffordshire, qui perfectionne la faïence crème, adoptée par la reine Charlotte, puis le jaspe. Il crée en 1769 l'usine d'Etruria, organise la division du travail, fait imprimer des catalogues et conçoit de véritables campagnes de vente, ce qui fait de lui un des fondateurs de l'industrie moderne. Il produit en 1787 le médaillon antiesclavagiste « Ne suis-je pas un homme et un frère ? » et est le grand-père de Charles Darwin.",
+      "wikipedia": "Josiah_Wedgwood_(1730-1795)",
+      "essentiel": true,
+      "biographie": "bio_josiahwedgwood",
+      "portrait": {
+        "fichier": "Portrait of Josiah Wedgwood gupjg13 4 ics8nad.tiff",
+        "legende": "Josiah Wedgwood, gravure publiée dans la correspondance de Joseph Priestley",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu (gravure)"
+      }
+    },
+    {
+      "slug": "arkwright",
+      "nom": "Richard Arkwright",
+      "titre": "Naissance de Richard Arkwright",
+      "axe": "Économie et entreprise",
+      "naissance": 1732,
+      "description": "Richard Arkwright (1732-1792) est un entrepreneur anglais, né à Preston, ancien barbier, qui brevète en 1769 un métier à filer le coton mû par l'eau, le water frame. Il ouvre en 1771 à Cromford, dans le Derbyshire, la première filature hydraulique de coton, qui emploie des centaines d'ouvriers dont de nombreux enfants, ce qui fait de lui le père du système de l'usine. Ses brevets sont annulés en 1785 ; il est anobli en 1786 et meurt en 1792, très riche.",
+      "wikipedia": "Richard_Arkwright",
+      "portrait": {
+        "fichier": "Arkwright Richard 1790.jpg",
+        "legende": "Richard Arkwright, portrait de Joseph Wright of Derby (vers 1790)",
+        "auteur": "Joseph Wright of Derby",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "cookt",
+      "nom": "Thomas Cook",
+      "titre": "Naissance de Thomas Cook",
+      "axe": "Économie et entreprise",
+      "naissance": 1808,
+      "description": "Thomas Cook (1808-1892) est un entrepreneur anglais, né à Melbourne dans le Derbyshire, ébéniste devenu prédicateur baptiste et militant de la tempérance. Il organise le 5 juillet 1841 un voyage en train pour cinq cent soixante-dix personnes entre Leicester et Loughborough, première excursion collective, puis des circuits sur le continent, des croisières sur le Nil et un tour du monde en 1872. Son entreprise, Thomas Cook & Son, est la première grande agence de voyages ; il meurt en 1892.",
+      "wikipedia": "Thomas_Cook",
+      "portrait": {
+        "fichier": "Portrait of Thomas Cook (4674343).jpg",
+        "legende": "Thomas Cook, photographie (vers 1880)",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "cadbury",
+      "nom": "George Cadbury",
+      "titre": "Naissance de George Cadbury",
+      "axe": "Économie et entreprise",
+      "naissance": 1839,
+      "description": "George Cadbury (1839-1922) est un industriel britannique, né à Birmingham, quaker, qui reprend avec son frère Richard l'entreprise familiale de cacao en 1861. Il la déplace en 1879 à Bournville, une usine entourée de jardins, puis fait bâtir en 1895 un village pour ses ouvriers, avec écoles, parcs et loyers modérés, et propose retraites et temps libre. Ses chocolats furent cependant produits en partie avec du cacao de plantations esclavagistes à São Tomé, ce qu'il a fini par admettre et combattre ; il meurt en 1922.",
+      "wikipedia": "George_Cadbury",
+      "portrait": {
+        "fichier": "George Cadbury1917.jpg",
+        "legende": "George Cadbury à soixante-dix-huit ans, photographie (vers 1917)",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "lipton",
+      "nom": "Thomas Lipton",
+      "titre": "Naissance de Thomas Lipton",
+      "axe": "Économie et entreprise",
+      "naissance": 1848,
+      "description": "Thomas Lipton (1848-1931) est un commerçant britannique, né à Glasgow de parents irlandais, qui ouvre à vingt-trois ans sa première épicerie et en possède plus de deux cents à la fin du siècle. Il achète en 1890 des plantations de thé à Ceylan et vend le thé « directement du jardin à la théière », sous sa marque jaune. Il tente cinq fois, sans jamais la gagner, de remporter la Coupe de l'America de voile, et est créé baronnet en 1902 ; il meurt en 1931.",
+      "wikipedia": "Thomas_Lipton",
+      "portrait": {
+        "fichier": "Thomas Johnstone Lipton.jpg",
+        "legende": "Thomas Lipton, photographie de 1909",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "lever",
+      "nom": "William Lever",
+      "titre": "Naissance de William Lever",
+      "axe": "Économie et entreprise",
+      "naissance": 1851,
+      "description": "William Lever (1851-1925) est un industriel britannique, né à Bolton, qui lance en 1884 le savon Sunlight, vendu en pains emballés et soutenu par une publicité intense. Il fonde la société Lever Brothers et construit à partir de 1888, sur la rive de la Mersey, le village-usine de Port Sunlight pour ses ouvriers ; l'entreprise devient Unilever en 1930. Ses plantations d'huile de palme au Congo belge reposaient sur le travail forcé ; devenu vicomte Leverhulme, il meurt en 1925.",
+      "wikipedia": "William_Lever",
+      "portrait": {
+        "fichier": "William Lever.jpg",
+        "legende": "William Lever, photographie",
+        "licence": "Domaine public",
+        "auteur": "Tagishsimon"
+      }
+    },
+    {
+      "slug": "royce",
+      "nom": "Henry Royce",
+      "titre": "Naissance d'Henry Royce",
+      "axe": "Économie et entreprise",
+      "naissance": 1863,
+      "description": "Henry Royce (1863-1933) est un ingénieur britannique, né à Alwalton près de Peterborough, qui construit d'abord des grues électriques à Manchester. Il rencontre en 1904 le vendeur d'automobiles Charles Rolls et fonde avec lui, en 1906, la société Rolls-Royce, dont la Silver Ghost de 1907 est présentée comme la meilleure voiture du monde. Il conçoit le moteur R des hydravions de course et, indirectement, le Merlin des Spitfire ; baronnet en 1930, il meurt en 1933.",
+      "wikipedia": "Henry_Royce",
+      "portrait": {
+        "fichier": "Henry Royce.jpg",
+        "legende": "Henry Royce, photographie",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "quant",
+      "nom": "Mary Quant",
+      "titre": "Naissance de Mary Quant",
+      "axe": "Économie et entreprise",
+      "naissance": 1930,
+      "description": "Mary Quant (1930-2023) est une créatrice de mode britannique, née à Blackheath, dans le sud de Londres, qui ouvre en 1955 la boutique Bazaar sur King's Road. Elle lance au milieu des années 1960 la minijupe et les shorts moulants, symboles du « Swinging London », et crée une ligne de maquillage et de vêtements bon marché diffusée en grand nombre. Faite dame en 2015, elle meurt en 2023 à quatre-vingt-treize ans.",
+      "wikipedia": "Mary_Quant",
+      "portrait": {
+        "fichier": "Mary Quant (1966) (cropped).jpg",
+        "legende": "Mary Quant à son arrivée à Schiphol, photographie de Jack de Nijs, archives Anefo (16 décembre 1966)",
+        "licence": "CC0 (domaine public)",
+        "auteur": "Jack de Nijs (Anefo)"
+      }
+    }
+  ]
+}

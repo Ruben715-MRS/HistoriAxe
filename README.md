@@ -536,7 +536,7 @@ ne posent pas la même question :
 | | Un thème, c'est | Une date, c'est | On le joue par |
 |---|---|---|---|
 | **Biographies** | une vie (360 thèmes, en 12 domaines) | une étape de cette vie | étape de la vie |
-| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, l'Égypte, les États-Unis, l'Italie, l'Amérique hispanique, le Maghreb, l'Allemagne, l'Autriche et la Suisse) | la naissance d'un personnage | domaine |
+| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, l'Égypte, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, l'Allemagne, l'Autriche et la Suisse) | la naissance d'un personnage | domaine |
 
 Le déplacement ne coûte aucune migration : les 360 thèmes gardent leurs
 identifiants, et rien de ce que le joueur a sauvegardé (favoris, révision,
@@ -570,7 +570,7 @@ des pays ont une histoire commune, un thème **de région** plutôt qu'un par pa
 |---|---|---|
 | Identifiant | `pan_<iso2>` : deux lettres (`pan_fr`) | `pan_<code>` : trois lettres ou plus (`pan_hispam`) — jamais de collision avec un code de pays |
 | `pays` sur chaque événement | interdit (le thème le dit déjà) | obligatoire : code ISO à deux lettres (`"pays": "VE"`) |
-| Exemples | France, Égypte, États-Unis, Italie ; plus tard Brésil… | Amérique hispanique, Maghreb, Allemagne-Autriche-Suisse ; plus tard Machrek |
+| Exemples | France, Égypte, États-Unis, Italie, Royaume-Uni ; plus tard Brésil… | Amérique hispanique, Maghreb, Allemagne-Autriche-Suisse ; plus tard Machrek |
 
 Ce que le champ `pays` d'un événement change :
 
@@ -606,9 +606,9 @@ Les axes sont déclarés par panthéon (`axes`, dans `scripts/pantheon/<code>.js
 n'oblige deux panthéons à les partager.
 
 Le septième, **« Économie et entreprise »** (fondateurs et dirigeants d'entreprises,
-banquiers, marchands), n'existe que pour la France, les États-Unis et le bloc
+banquiers, marchands), n'existe que pour la France, les États-Unis, le Royaume-Uni et le bloc
 Allemagne-Autriche-Suisse, où les entrepreneurs sont assez nombreux pour former un axe
-(sept, neuf et huit figures).
+(sept, neuf, dix et huit figures).
 **Règle : un axe de plus n'est créé que s'il a au moins six figures et une histoire
 propre** ; l'Égypte, l'Italie, le Maghreb et l'Amérique hispanique n'en ont pas, faute de
 candidats évidents. Le sport n'a pas d'axe — deux à quatre figures par pays — mais il est
@@ -647,14 +647,15 @@ Les règles de rédaction, vérifiées par script et par test (voir plus bas) :
   de la fiche) doivent porter la *même* date. Les dates des soixante et une premières ont été
   comparées une à une à la phrase d'ouverture de l'article Wikipédia.
 - **⭐ Incontournables** (`essentiel`) : 22 sur 68 pour la France, 39 sur 129 pour les États-Unis,
-  56 sur 149 pour l'Allemagne, l'Autriche et la Suisse.
+  56 sur 149 pour l'Allemagne, l'Autriche et la Suisse, 51 sur 151 pour le Royaume-Uni.
 
 Quantités visées : 68 personnages pour la France, 52 pour l'Égypte, 129 pour les
 États-Unis (85 proposés, portés à 123 : « mieux vaut plus que moins », puis à 129 avec l'axe Économie et entreprise), 127 pour
 l'Italie (126 proposés, plus Enzo Ferrari), 80 à 100
 pour l'Amérique hispanique (dix-neuf pays, de 1 à 19 figures chacun), 58 pour le
 Maghreb (cinq pays, de 1 à 21), 149 pour l'Allemagne, l'Autriche et la Suisse (170 candidats,
-21 coupés ; trois pays, de 26 à 85 figures), 40 pour les grands pays, 30 pour les autres. À 6
+21 coupés ; trois pays, de 26 à 85 figures), 151 pour le Royaume-Uni (194 candidats, 4 ajoutés, 47 écartés),
+40 pour les grands pays, 30 pour les autres. À 6
 axes, 30 donne environ 5 par axe — le minimum pour qu'un axe joué seul reste un jeu.
 
 ### Le premier bloc : l'Amérique hispanique
@@ -1153,6 +1154,100 @@ de Giotto, de Donatello et de l'Arioste, remplacées par des portraits peints ; 
 photographie de Cavour assis, trop petite dans son cadre, remplacée par le portrait de
 Hayez.
 
+### Un pays à part : le Royaume-Uni
+
+`pan_gb`, « Grandes figures du Royaume-Uni » : **151 personnages**, de Boudicca (vers 30)
+à Amy Winehouse (1983). Par axe : 43 Littérature et pensée, 29 Sciences, techniques et
+innovation, 22 Musique, spectacle et sport, 18 Chefs d'État et dirigeants, 15 Beaux-arts, 14
+Guerres et résistances, 10 Économie et entreprise ; 51 ⭐ et 33 biographies liées (Henri VIII,
+Élisabeth Ire, Victoria, Élisabeth II, Nelson, Wellington, Wilberforce, Pankhurst, Thomas
+Becket, Wesley, Locke, Mill, Shakespeare, Austen, Dickens, Woolf, Wren, Newton, Faraday,
+Darwin, Lovelace, Maxwell, Brunel, Cook, Livingstone, Turing, Rosalind Franklin, Hawking,
+Lennon, Mercury, Bowie, Bannister, Wedgwood). La liste a été soumise puis validée sans
+changement : 152 figures proposées, dont Haendel, retiré ensuite (voir plus bas).
+
+Les choix qui ne vont pas de soi :
+
+- **Un pays, donc pas un bloc**, comme l'Italie : `pan_gb` (deux lettres), aucun champ
+  `pays`, aucun pays dans la fiche, et « Pendant ce temps, ailleurs… » le compte comme le
+  Royaume-Uni, au même titre que `thm_gb`, l'« Histoire du Royaume-Uni » que la table de
+  pays (`assets/geo/theme-country-map.json`) range sous `GB`. Le thème se range par son nom
+  de rangement, « Royaume-Uni », après le Maghreb. Le code est `gb` (le code ISO du pays,
+  non `uk`).
+- **Les quatre nations dedans** : Wallace et Robert Bruce pour l'Écosse, Russell,
+  Siddons, Wallace (le naturaliste) et Lawrence pour le pays de Galles, Kelvin, né à Belfast,
+  pour l'Irlande du Nord. Les Irlandais de la République (Wilde, Swift, Shackleton) sont
+  laissés à un futur panthéon irlandais ; Wellington, né à Dublin sous la couronne
+  britannique, reste ici.
+- **Celui qui honore le plus.** Nés ailleurs, rangés ici : Guillaume le Conquérant (Falaise,
+  duc de Normandie devenu roi d'Angleterre), Kipling (Bombay), Orwell (Motihari), Tolkien
+  (Bloemfontein), Nightingale (Florence), Hodgkin (Le Caire), Mercury (Zanzibar). Nés ici,
+  restés ici, comme l'annonçait le panthéon des États-Unis : Chaplin, Hitchcock et Bell.
+  **Haendel**, né à Halle et naturalisé britannique en 1727, était dans la liste soumise ;
+  il est resté dans le panthéon de l'Allemagne, de l'Autriche et de la Suisse, qui l'avait
+  déjà (règle : un personnage, un seul thème). Carnegie, né à Dunfermline, reste de même
+  aux États-Unis.
+- **Un septième axe, « Économie et entreprise »** : dix figures de la révolution industrielle
+  et du commerce, de Gresham (1519) à Mary Quant (1930) — Boulton, Wedgwood, Arkwright,
+  Thomas Cook, Cadbury, Lipton, Lever, Royce —, au-dessus du seuil de six figures et d'une
+  histoire propre.
+- **Des dirigeants contestés**, dont la fiche dit ce qu'on leur reproche : Cromwell (Drogheda
+  et Wexford, l'exhumation de son corps), Churchill (les Dardanelles, la famine du Bengale), Thatcher
+  (les mineurs, la capitation), Clive (Plassey, la famine de 1770 au Bengale). De même Locke
+  (la Compagnie royale d'Afrique), Hume (des notes racistes), Kipling (« Le fardeau de l'homme
+  blanc »), Cadbury (le cacao de São Tomé), Lever (le travail forcé au Congo) et Livingstone
+  ou Cook, dont l'héritage colonial est discuté.
+- **Des saints et des religieux** : Becket, Bède et Wesley, rangés en Littérature et pensée
+  comme les saints de l'Italie.
+- **Des dates incertaines, dites comme telles** : « vers » devant Boudicca (vers 30), Bède
+  (vers 672), Guillaume le Conquérant (vers 1028), Wallace (vers 1270), Chaucer (vers 1343),
+  Gresham (vers 1519), Tallis (vers 1505), Byrd (vers 1540) et Defoe (vers 1660). Newton garde 1642, date julienne
+  de sa biographie. Becket, né en 1119 selon sa biographie (Wikipédia hésite entre 1118 et 1120), garde la date de celle-ci.
+- **Les noms à initiales sont écrits en toutes lettres** (Herbert George Wells, Thomas Edward
+  Lawrence, William Gilbert Grace, John Ronald Reuel Tolkien) : « H. G. Wells » casserait le
+  comptage des phrases, qui prend un point suivi d'une majuscule pour une fin de phrase.
+- **Pas de vivants**, comme ailleurs : Paul McCartney, Mick Jagger ou Charles III n'y sont
+  pas.
+
+La liste de départ comptait 194 candidats ; quatre y ont été ajoutés en route (Burne-Jones,
+Paxton, Westwood, Ruskin) pour remplacer des artistes sans image. **Dix ont été écartés faute
+d'image libre convenable** : Robert Hooke, dont aucun portrait authentique n'existe, Barbara
+Hepworth, L. S. Lowry, Lucian Freud, Francis Bacon le peintre, Zaha Hadid, Dylan Thomas, Anita
+Roddick, Laura Ashley et Owain Glyndŵr, qui n'a qu'un blason et un sceau dessiné. **Trente-six
+l'ont été pour tenir la taille** : George III, Richard Cœur de Lion, Peel, Marlborough, Gordon,
+Haig, Violette Szabo, Donne, Pope, Bentham, Coleridge, Tennyson, Keynes, Stevenson, C. S.
+Lewis, Roald Dahl, Roger Bacon, Telford, Joule, Lister, Priestley, Dalton, Lyell, Whittle,
+Higgs, Pugin, Beardsley, Lutyens, Holst, Sullivan, Garrick, Matthews, Clark, Fonteyn,
+Burberry et Robert Owen. Ils peuvent rejoindre `scripts/pantheon/gb.json` si on le souhaite,
+la plupart ayant un portrait libre déjà repéré.
+
+### Ce que les images disent au Royaume-Uni
+
+Cent trente et un portraits sont du domaine public, dont la quasi-totalité sont des peintures,
+des gravures et des photographies d'avant 1931. Beaucoup sont posthumes ou imaginaires, et la
+légende le dit : Alfred le Grand par la statue de Winchester ; Guillaume le Conquérant par
+la tapisserie de Bayeux ; Boudicca par le groupe en bronze de Londres ; Robert Bruce par une
+reconstitution faciale d'après son crâne ; Becket par un vitrail ; Bède par une gravure de
+la Chronique de Nuremberg ; Tallis, Marlowe et Shakespeare (portrait « de Chandos ») pour
+lesquels l'identification est incertaine ou le portrait posthume.
+
+Quinze images sont à relire, si l'on veut être plus strict :
+
+- **Treize photographies du XXe siècle à balise « Domaine public »**, dont la page de Commons
+  ne dit pas pourquoi : Churchill (le portrait de Yousuf Karsh de 1941, aux balises
+  « Domaine public » et « CC BY 2.0 » posées par un tiers), Attlee (« présumé Karsh »),
+  Montgomery (ni auteur ni date), Russell (Bassano, 1936), Olivier (MGM, 1940), Leigh (1941),
+  Perry (1936), Orwell (carte de presse de 1943), Britten (photographie publicitaire de 1968),
+  Bobby Moore (1970, auteur inconnu), Hitchcock (photographie de studio, sans date), Fleming
+  (fondation Nobel, 1945) et Turing (1936, auteur inconnu). Même raisonnement que Matisse et
+  Camus en France.
+- **Une licence CC posée par un tiers**, plausible mais invérifiable d'ici : Lennon (Tony Barnard,
+  *Los Angeles Times*, 1974, CC BY 4.0).
+- **Une photographie par une police** : Élisabeth II (police de Berlin, 2015, CC BY-SA 4.0).
+
+Wallace est la plus petite image (250 × 344 px, une gravure) ; Milton, déjà petit, est
+demandé à Commons en 330 px de large (`largeur`).
+
 ### Un fichier source par panthéon, un script qui l'écrit dans `data/fr.json`
 
 `scripts/pantheon/<code>.json` (`fr`, `hispam`…) est **la seule source de
@@ -1222,7 +1317,8 @@ CC0 ; Lumière vers 1890). Répartition finale : France, 54 domaine public, 4 CC
 3 CC BY ou CC BY-SA ; Amérique hispanique, 75 domaine public, 2 CC0, 8 CC BY,
 12 CC BY-SA ; Maghreb, 36 domaine public, 5 CC0, 3 CC BY, 14 CC BY-SA ; Égypte,
 34 domaine public, 5 CC0, 2 CC BY, 11 CC BY-SA ; États-Unis, 109 domaine public,
-3 CC0, 4 CC BY, 7 CC BY-SA ; Italie, 102 domaine public, 3 CC0, 7 CC BY, 15 CC BY-SA. En France, trois portraits du XXe siècle reposent sur un
+3 CC0, 4 CC BY, 7 CC BY-SA ; Italie, 102 domaine public, 3 CC0, 7 CC BY, 15 CC BY-SA ;
+Royaume-Uni, 131 domaine public, 3 CC0, 3 CC BY, 14 CC BY-SA. En France, trois portraits du XXe siècle reposent sur un
 raisonnement plus fin que « ancien », à relire si l'on veut être plus strict :
 
 - **Jean Moulin** (Harcourt, 1937) : œuvre collective, dont le délai français de
@@ -1492,8 +1588,8 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
 
 ### Ce qui n'est pas fait
 
-- **Les autres panthéons** : la France, l'Égypte, les États-Unis, l'Italie,
-  l'Amérique hispanique, le Maghreb et l'Allemagne-Autriche-Suisse sont écrits. Viennent ensuite le Machrek (sans l'Égypte,
+- **Les autres panthéons** : la France, l'Égypte, les États-Unis, l'Italie, le
+  Royaume-Uni, l'Amérique hispanique, le Maghreb et l'Allemagne-Autriche-Suisse sont écrits. Viennent ensuite le Machrek (sans l'Égypte,
   qui a le sien ; le sort d'Israël et des figures juives reste à trancher, l'idée
   d'un thème juif à part ayant été abandonnée), le Brésil à part, puis les autres
   pays — chaque liste de personnages validée avant la rédaction.
