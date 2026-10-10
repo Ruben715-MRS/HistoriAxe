@@ -408,6 +408,12 @@ test('« Grandes figures du Maghreb » : chaque ancre porte le pays de son évé
     verifierPantheonDeBloc('pan_maghreb', 13, 5);
 });
 
+test('« Grandes figures d’Allemagne, d’Autriche et de Suisse » : chaque ancre porte le pays de son événement, et la session se joue', () => {
+    // Trois pays : la Suisse (26 figures) et l'Autriche (38) ne doivent pas disparaître derrière
+    // l'Allemagne (85) parmi les ancres.
+    verifierPantheonDeBloc('pan_dach', 17, 3);
+});
+
 test('« Grandes figures d’Égypte » : toutes les ancres sont l’Égypte, et la session se joue', () => {
     // Le panthéon d'un pays n'a pas de `pays` par événement : c'est son thème qui porte
     // l'étiquette (pan_eg → EG, comme « Histoire de l'Égypte »). Sans cela, une naissance

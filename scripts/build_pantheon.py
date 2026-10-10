@@ -49,7 +49,10 @@ PORTRAIT_DIR = 'assets/portraits'
 # Maghreb — mais un panthéon dont la moitié des figures viendrait d'un seul pays
 # n'en serait plus un. Au-delà de 40 % des figures on prévient (sans bloquer) :
 # c'est un jugement éditorial. Un pays listé doit avoir au moins une figure
-# (sinon il n'a rien à faire dans le bloc).
+# (sinon il n'a rien à faire dans le bloc). Un bloc dont un pays pèse
+# réellement davantage (l'Allemagne, environ quatre cinquièmes des
+# germanophones) le déclare dans sa source par `partMaxPays` : le seuil est alors
+# un choix écrit, non un oubli.
 MAX_PART_PAYS = 0.4
 
 # Première phrase : « Nom (1802-1885) est … » ; « vers » devant une année
@@ -208,14 +211,20 @@ def validate(src, code, bio_themes, other_pantheons, errors, warnings):
     for axe in axes:
         if axe not in used:
             errors.append(f'axe « {axe} » sans aucun personnage')
+    if 'partMaxPays' in src and not bloc:
+        errors.append('« partMaxPays » est réservé aux blocs')
     if bloc:
+        limit = src.get('partMaxPays', MAX_PART_PAYS)
+        if isinstance(limit, bool) or not isinstance(limit, (int, float)) or not 0.4 <= limit < 1:
+            errors.append('« partMaxPays » doit être un nombre entre 0,4 et 1 (exclu) : la part maximale d\'un pays dans le bloc')
+            limit = MAX_PART_PAYS
         for iso in countries:
             count = per_country.get(iso, 0)
             if count == 0:
                 errors.append(f'pays {iso} déclaré sans aucun personnage')
-            elif count > MAX_PART_PAYS * len(src['personnages']):
+            elif count > limit * len(src['personnages']):
                 warnings.append(f"{iso} : {count} personnages sur {len(src['personnages'])} "
-                                f"(> {MAX_PART_PAYS:.0%}) — un pays pèse trop dans le bloc")
+                                f"(> {limit:.0%}) — un pays pèse trop dans le bloc")
     return per_country
 
 

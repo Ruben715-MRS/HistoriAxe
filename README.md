@@ -536,7 +536,7 @@ ne posent pas la même question :
 | | Un thème, c'est | Une date, c'est | On le joue par |
 |---|---|---|---|
 | **Biographies** | une vie (360 thèmes, en 12 domaines) | une étape de cette vie | étape de la vie |
-| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, l'Égypte, les États-Unis, l'Italie, l'Amérique hispanique, le Maghreb) | la naissance d'un personnage | domaine |
+| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, l'Égypte, les États-Unis, l'Italie, l'Amérique hispanique, le Maghreb, l'Allemagne, l'Autriche et la Suisse) | la naissance d'un personnage | domaine |
 
 Le déplacement ne coûte aucune migration : les 360 thèmes gardent leurs
 identifiants, et rien de ce que le joueur a sauvegardé (favoris, révision,
@@ -570,7 +570,7 @@ des pays ont une histoire commune, un thème **de région** plutôt qu'un par pa
 |---|---|---|
 | Identifiant | `pan_<iso2>` : deux lettres (`pan_fr`) | `pan_<code>` : trois lettres ou plus (`pan_hispam`) — jamais de collision avec un code de pays |
 | `pays` sur chaque événement | interdit (le thème le dit déjà) | obligatoire : code ISO à deux lettres (`"pays": "VE"`) |
-| Exemples | France, Égypte, États-Unis ; plus tard Allemagne, Brésil… | Amérique hispanique, Maghreb ; plus tard Machrek |
+| Exemples | France, Égypte, États-Unis, Italie ; plus tard Brésil… | Amérique hispanique, Maghreb, Allemagne-Autriche-Suisse ; plus tard Machrek |
 
 Ce que le champ `pays` d'un événement change :
 
@@ -606,10 +606,11 @@ Les axes sont déclarés par panthéon (`axes`, dans `scripts/pantheon/<code>.js
 n'oblige deux panthéons à les partager.
 
 Le septième, **« Économie et entreprise »** (fondateurs et dirigeants d'entreprises,
-banquiers, marchands), n'existe que pour la France et les États-Unis, où les
-entrepreneurs sont assez nombreux pour former un axe (sept et neuf figures).
+banquiers, marchands), n'existe que pour la France, les États-Unis et le bloc
+Allemagne-Autriche-Suisse, où les entrepreneurs sont assez nombreux pour former un axe
+(sept, neuf et huit figures).
 **Règle : un axe de plus n'est créé que s'il a au moins six figures et une histoire
-propre** ; l'Égypte, le Maghreb et l'Amérique hispanique n'en ont pas, faute de
+propre** ; l'Égypte, l'Italie, le Maghreb et l'Amérique hispanique n'en ont pas, faute de
 candidats évidents. Le sport n'a pas d'axe — deux à quatre figures par pays — mais il est
 accueilli dans « Musique, spectacle et sport », pour les sportifs de portée historique
 rangés selon ce qu'ils symbolisent.
@@ -645,13 +646,15 @@ Les règles de rédaction, vérifiées par script et par test (voir plus bas) :
   biographie (champ `biographie`, qui nourrit le bouton « Voir sa biographie »
   de la fiche) doivent porter la *même* date. Les dates des soixante et une premières ont été
   comparées une à une à la phrase d'ouverture de l'article Wikipédia.
-- **⭐ Incontournables** (`essentiel`) : 22 sur 68 pour la France, 39 sur 129 pour les États-Unis.
+- **⭐ Incontournables** (`essentiel`) : 22 sur 68 pour la France, 39 sur 129 pour les États-Unis,
+  56 sur 149 pour l'Allemagne, l'Autriche et la Suisse.
 
 Quantités visées : 68 personnages pour la France, 52 pour l'Égypte, 129 pour les
 États-Unis (85 proposés, portés à 123 : « mieux vaut plus que moins », puis à 129 avec l'axe Économie et entreprise), 127 pour
 l'Italie (126 proposés, plus Enzo Ferrari), 80 à 100
 pour l'Amérique hispanique (dix-neuf pays, de 1 à 19 figures chacun), 58 pour le
-Maghreb (cinq pays, de 1 à 21), 40 pour les grands pays, 30 pour les autres. À 6
+Maghreb (cinq pays, de 1 à 21), 149 pour l'Allemagne, l'Autriche et la Suisse (170 candidats,
+21 coupés ; trois pays, de 26 à 85 figures), 40 pour les grands pays, 30 pour les autres. À 6
 axes, 30 donne environ 5 par axe — le minimum pour qu'un axe joué seul reste un jeu.
 
 ### Le premier bloc : l'Amérique hispanique
@@ -775,6 +778,123 @@ Tunisiens, 4 Libyens et 1 Mauritanien du départ sont restés.
 
 Si une image convenable apparaît pour l'un d'eux, il se réintègre en ajoutant sa
 fiche à `scripts/pantheon/maghreb.json`.
+
+### Le troisième bloc : Allemagne, Autriche et Suisse
+
+`pan_dach`, « Grandes figures d'Allemagne, d'Autriche et de Suisse » (code `dach`, comme
+Deutschland, Austria, Confoederatio Helvetica) : **149 personnages de trois pays** —
+Allemagne 85, Autriche 38, Suisse 26 — d'Arminius (vers 17 av. J.-C.) à Helmut Kohl
+(1930). Par axe : 39 Littérature et pensée, 24 Sciences, techniques et innovation, 23
+Musique, spectacle et sport, 21 Chefs d'État et dirigeants, 21 Beaux-arts, 13 Guerres et
+résistances, 8 Économie et entreprise ; 56 ⭐ et 22 biographies liées (Luther, Kant,
+Hegel, Marx, Nietzsche, Goethe, Kafka, Bach, Mozart, Beethoven, Mendel, Einstein, Fugger,
+Gropius, Le Corbusier, Ramuz, Ansermet, Dufour, Dunant, H.-B. de Saussure, Rommel, Sophie
+Scholl). La liste (170 candidats, ramenés à 149 pour tenir l'équilibre des axes et des pays)
+a été soumise puis validée sans retrait.
+
+Les choix qui ne vont pas de soi :
+
+- **Un bloc, non trois thèmes.** Avant 1871 il n'y a ni Allemagne, ni Autriche, ni Suisse au
+  sens actuel, mais un Saint-Empire dont les figures passent d'un pays à l'autre : Mozart naît à
+  Salzbourg, Kafka à Prague, Hitler en Autriche mais gouverne l'Allemagne, Einstein naît à Ulm,
+  est suisse puis américain. Autriche et Suisse, seules, n'auraient jamais eu assez de figures
+  pour un thème à elles, comme la Libye et la Mauritanie au Maghreb.
+- **« Allemagne, Autriche et Suisse », non « monde germanophone ».** La Suisse n'est pas
+  que germanophone, et ses figures romandes (Dunant, Ramuz, Le Corbusier, Piaget, Saussure,
+  Ansermet) appartiennent au bloc. `pays` vaut `DE`, `AT` ou `CH` ; les mots-clés du thème portent
+  les trois noms, Habsbourg, Prusse, Bavière, Vienne, Berlin, Bauhaus…
+- **L'Allemagne pèse 57 %, et le seuil est écrit.** Au-delà de 40 % le constructeur
+  prévient ; l'Allemagne compte environ quatre cinquièmes des germanophones et ne peut guère
+  descendre sans léser ses figures. La source du bloc déclare donc `partMaxPays: 0.6` (nombre
+  entre 0,4 et 1, accepté pour les seuls blocs) : le seuil devient un choix écrit, non un
+  avertissement ignoré. L'Autriche (26 %) et la Suisse (17 %) sont, elles, au-dessus de
+  leur part dans la population.
+- **Le pays que le bloc donne à chacun, non l'état civil.** Les germanophones de Bohême et de
+  Moravie — Freud (Příbor), Kafka et Rilke (Prague), Mahler (Kaliště), Mendel (Hynčice),
+  Bertha von Suttner (Prague), Gödel (Brno) — sont rangés en Autriche, avec « alors en
+  Autriche-Hongrie » dans la fiche, plutôt que d'ajouter la Tchéquie à un bloc dont la
+  frontière est la langue et l'histoire des Habsbourg. Hesse, né à Calw et suisse depuis
+  1924, est en Allemagne ; Le Corbusier, né à La Chaux-de-Fonds et naturalisé français,
+  est en Suisse, comme Henri Nestlé, né à Francfort et installé à Vevey, et Guillaume-Henri
+  Dufour, né à Constance de parents genevois.
+- **Deux figures de l'Antiquité et du haut Moyen Âge seulement** : Arminius, qui anéantit
+  trois légions romaines en l'an 9, et Otton Ier (912), fondateur du Saint-Empire ; puis
+  Henri IV (1050), Hildegarde de Bingen (1098) et Barberousse (vers 1122). La plupart des
+  figures sont modernes : 17 d'avant 1500, 32 de 1500 à 1799, 100 de 1800 à nos jours.
+- **Charlemagne reste à la France** (« un personnage, un seul thème », et la France l'a), et
+  Charles Quint, né à Gand, n'est pas ici : il relève de l'Espagne ou de la Belgique.
+  Henri IV porte « du Saint-Empire » dans son nom pour ne pas être confondu avec le roi de
+  France, qui a sa fiche au panthéon de la France (la règle un-seul-thème compare aussi les titres).
+- **Hitler y est, comme Mussolini en Italie**, avec une fiche qui dit tout : la dictature,
+  la guerre, la Shoah, et que l'Allemagne et l'Autriche font de la mémoire de ses crimes un
+  devoir public, non un culte. Un panthéon allemand sans lui laisserait un trou dans
+  l'histoire que l'app raconte. Il est rangé en Allemagne : né à Braunau, il y a gouverné.
+- **Des figures contestées, avec leur contexte** : Guillaume II et Metternich, Rommel (la
+  légende du soldat « propre »), Karajan (membre du parti nazi dès 1933), Richard Strauss
+  (Chambre de musique du Reich), Orff, Wagner et Luther (leur antisémitisme), Krupp (l'armement
+  du Reich), Alfred Escher (la plantation familiale de Cuba, travaillée par des esclaves),
+  Jung (ses propos des années 1930), Robert Koch (ses essais sur des malades en Afrique
+  orientale), Günter Grass (la Waffen-SS, révélée en 2006), Kreisky (d'anciens nazis dans son
+  gouvernement de 1970) et le général Guisan (sa rencontre avec Schellenberg).
+- **Les résistants allemands et autrichiens** : Stauffenberg, Bonhoeffer, Sophie Scholl,
+  le paysan Franz Jägerstätter, seul de son village à voter contre l'Anschluss.
+- **Pas de vivants**, comme ailleurs, donc ni Merkel ni Federer. **Pas de sportifs** non plus
+  (Beckenbauer, Lauda, Schmeling) : ils restent aux Biographies. Hedy Lamarr, actrice et
+  inventrice, est rangée en « Musique, spectacle et sport ».
+
+### Ce que les images disent en Allemagne, en Autriche et en Suisse
+
+Cent vingt portraits sont du domaine public (peintures, gravures, photographies d'avant
+1931 ou de longue date), quatre en CC0 (le fonds d'archives néerlandais Anefo : Le Corbusier,
+Karajan, Tinguely et Max Ernst), vingt-cinq sous une licence CC BY ou CC BY-SA : les
+**Archives fédérales allemandes** (treize photographies, CC BY-SA 3.0 DE : Stresemann,
+Adenauer, Brandt, Rommel, Bonhoeffer, Brecht, Remarque, Böll, Lang, Weill, Planck, Piccard
+et Heisenberg ; celle de Hitler porte la même licence, sans provenance précisée), l'ETH
+Zurich (Frisch, Pauli), Elke Wetzig (Dürrenmatt), Lothar Wolleh (Beuys), le musée de
+Basse-Campagne (Guisan), Erling Mandelmann (Ansermet), Wolfgang Hunscher (Zuse), le Blaues
+Sofa (Grass), Christian Lambiotte (Kohl), le SPÖ (Kreisky) et DorianKBandy (Popper). La
+licence est lue sur la page Commons du fichier, non écrite à la main ; elle et l'auteur sont
+portés dans la fiche.
+
+Beaucoup sont posthumes ou conventionnelles, et la légende le dit : Arminius est montré par
+la statue du Hermannsdenkmal (1875) ; Otton Ier, Henri IV, Barberousse et Hildegarde par des
+miniatures médiévales ; Albert le Grand par une fresque de Tommaso da Modena (1352) ;
+Gutenberg et Paracelse par des gravures du XVIe siècle ; Nicolas de Flue par une image
+traditionnelle ; Mozart par le portrait peint par Barbara Krafft en 1819, vingt-huit ans après sa mort,
+d'après ses portraits de son vivant. Plusieurs images ont été **remplacées** en route :
+la photographie de Ramuz (d'abord le détail du billet de 200 francs, puis un cliché de la
+revue *Lettres* de 1945, recadré), celle de Max Ernst (d'abord une image sans auteur ni source
+sûrs, puis une photographie de presse d'Anefo, dont le bord noir de négatif est recadré),
+celle d'Otto Dix (d'abord un cliché de presse d'exposition où il est à peine visible ; Hugo
+Erfurth, vers 1929) et celle d'Ansermet (d'abord un cliché de presse en pied où le visage est
+minuscule ; Erling Mandelmann, 1965). Jung, Popper et Schönberg,
+d'abord refusés par le script (licences « PDM » ou « Attribution »), ont chacun une image libre.
+
+Images à relire, si l'on veut être plus strict : Hitler (la photographie de 1937, CC BY-SA
+3.0 DE, sans auteur connu), Marlene Dietrich et Hedy Lamarr (clichés de cinéma de 1951 et
+de 1944, dont la liberté de droits repose sur la balise de Commons) et Ramuz (un cliché de
+revue de 1945, « domaine public » sur la foi du fichier).
+
+### Ce que les images ont changé en Allemagne, en Autriche et en Suisse
+
+Un seul candidat a été écarté faute d'image convenable : **Falco**, dont la seule photographie
+libre est un cliché très pixelisé de 1986. Vingt autres, dont l'image existait, ont été
+retirés pour tenir l'équilibre des axes et des pays :
+
+| Retiré | Pourquoi |
+|---|---|
+| Helmut Schmidt | un cinquième chancelier fédéral : Adenauer, Brandt et Kohl portent le XXe siècle |
+| Radetzky, Moltke l'Ancien | généraux du XIXe siècle, redondants avec Blücher et Hofer |
+| Georg Elser | seulement un buste commémoratif comme portrait |
+| Engels, Heidegger | Marx suffit ; Heidegger, philosophe majeur, mais compromis avec le nazisme : à rediscuter |
+| Karl May, Hölderlin, Ingeborg Bachmann | littérature : l'axe, à 39 figures, était déjà le plus chargé |
+| Füssli, Kirchner, Hundertwasser | beaux-arts : trois noms de moindre portée internationale |
+| Carl Maria von Weber, F. W. Murnau | musique et cinéma |
+| Lilienthal, Hertz, Landsteiner, Konrad Lorenz | sciences : portraits corrects, noms moins incontournables |
+| Daimler, Ferdinand Porsche | Benz et Bosch couvrent l'automobile ; Porsche, compromis avec le nazisme |
+
+Si l'un d'eux doit revenir, sa fiche se rédige comme les autres dans
+`scripts/pantheon/dach.json` (le script `scripts/fetch_portraits.py dach` récupère son portrait).
 
 ### Un pays à part : l'Égypte
 
@@ -1051,7 +1171,8 @@ vaut entre thèmes — un personnage, un seul thème, par article Wikipédia et 
 biographie ; il refuse un pays déclaré sans aucune figure et prévient quand un
 pays pèse trop (plus de 40 % du bloc : un seuil relatif, parce que vingt
 figures d'un même pays ne pèsent pas pareil dans un bloc de 97 et dans un bloc
-de 30). Les mêmes règles, côté JavaScript, sont reprises par
+de 30 ; un bloc dont un pays pèse davantage déclare `partMaxPays`, comme celui de
+l'Allemagne, de l'Autriche et de la Suisse). Les mêmes règles, côté JavaScript, sont reprises par
 `tests/data-schema.test.js` et `tests/pantheon.test.js` pour qu'une régression
 venue d'ailleurs soit attrapée elle aussi.
 
@@ -1359,8 +1480,8 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
 
 1. Copier `scripts/pantheon/fr.json` (un pays) ou `hispam.json` (un bloc), y
    mettre le panthéon, ses personnages (une naissance chacun, six ou sept axes, trois
-   phrases, un `pays` pour un bloc), et le nom de fichier Commons de chaque
-   portrait. Vérifier chaque année de naissance et de décès sur l'article
+   phrases, un `pays` pour un bloc, et au besoin `partMaxPays`), et le nom de fichier
+   Commons de chaque portrait. Vérifier chaque année de naissance et de décès sur l'article
    Wikipédia du personnage, et qu'il n'est dans aucun autre panthéon.
 2. `python3 scripts/fetch_portraits.py <code>`, puis écrire les légendes
    (et `recadrage` quand le visage est petit dans l'image).
@@ -1372,10 +1493,16 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
 ### Ce qui n'est pas fait
 
 - **Les autres panthéons** : la France, l'Égypte, les États-Unis, l'Italie,
-  l'Amérique hispanique et le Maghreb sont écrits. Viennent ensuite le Machrek (sans l'Égypte,
+  l'Amérique hispanique, le Maghreb et l'Allemagne-Autriche-Suisse sont écrits. Viennent ensuite le Machrek (sans l'Égypte,
   qui a le sien ; le sort d'Israël et des figures juives reste à trancher, l'idée
   d'un thème juif à part ayant été abandonnée), le Brésil à part, puis les autres
   pays — chaque liste de personnages validée avant la rédaction.
+- **Des figures de l'Allemagne, de l'Autriche et de la Suisse à améliorer ou à rediscuter** :
+  les vingt et un candidats écartés (voir « Ce que les images ont changé en Allemagne, en
+  Autriche et en Suisse ») ; les images d'Hitler, de Marlene Dietrich, d'Hedy Lamarr et de
+  Ramuz (une photographie en pied, où le visage est petit), à remplacer par une image plus nette
+  si elle apparaît ; et le sort des sportifs de portée historique (Beckenbauer, Lauda,
+  Schmeling), aujourd'hui aux seules Biographies.
 - **Des figures des États-Unis écartées faute d'image libre convenable**, à
   réintégrer si l'une apparaît : John Rawls, Scott Joplin (un portrait de 200 px),
   Linus Pauling et Claude Shannon (portraits trop étroits), Barbara McClintock,

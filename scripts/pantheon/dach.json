@@ -1,0 +1,2533 @@
+{
+  "code": "dach",
+  "nom": "Allemagne, Autriche et Suisse",
+  "pays": [
+    "AT",
+    "CH",
+    "DE"
+  ],
+  "theme": {
+    "id": "pan_dach",
+    "nom": "Grandes figures d'Allemagne, d'Autriche et de Suisse",
+    "difficulte": "Intermédiaire",
+    "motsCles": [
+      "Allemagne",
+      "Allemand",
+      "Allemande",
+      "Autriche",
+      "Autrichien",
+      "Autrichienne",
+      "Suisse",
+      "Suisses",
+      "Germanophone",
+      "Germanique",
+      "Saint-Empire romain germanique",
+      "Habsbourg",
+      "Prusse",
+      "Bavière",
+      "Autriche-Hongrie",
+      "Vienne",
+      "Berlin",
+      "Reich",
+      "Weimar",
+      "Nazisme",
+      "Bauhaus",
+      "Réforme",
+      "Romantisme",
+      "Confédération helvétique"
+    ]
+  },
+  "axes": [
+    "Chefs d'État et dirigeants",
+    "Guerres et résistances",
+    "Littérature et pensée",
+    "Beaux-arts",
+    "Musique, spectacle et sport",
+    "Sciences, techniques et innovation",
+    "Économie et entreprise"
+  ],
+  "personnages": [
+    {
+      "slug": "otton1",
+      "nom": "Otton Ier",
+      "titre": "Naissance d'Otton Ier",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 912,
+      "pays": "DE",
+      "wikipedia": "Otton_Ier_(empereur_du_Saint-Empire)",
+      "portrait": {
+        "fichier": "Otto I Manuscriptum Mediolanense c 1200.jpg",
+        "licence": "Domaine public",
+        "auteur": "Auteurs de la chronique d'Otton de Freising (reproduction : AndreasPraefcke)",
+        "legende": "Otton Ier, enluminure de la chronique de l'évêque Otton de Freising (vers 1200), image posthume et conventionnelle"
+      },
+      "description": "Otton Ier (912-973) est le roi de Germanie dit le Grand, né à Wallhausen, en Saxe, que l'on considère comme le fondateur du Saint-Empire romain germanique. Vainqueur des Hongrois au Lechfeld en 955, il est couronné empereur à Rome par le pape Jean XII en 962 et s'appuie sur les évêques, qu'il dote de terres et de pouvoirs, pour gouverner son royaume. Le titre impérial qu'il relève passera à ses successeurs jusqu'à la dissolution de l'Empire en 1806.",
+      "essentiel": true
+    },
+    {
+      "slug": "henri4",
+      "nom": "Henri IV du Saint-Empire",
+      "titre": "Naissance d'Henri IV du Saint-Empire",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1050,
+      "pays": "DE",
+      "wikipedia": "Henri_IV_(empereur_du_Saint-Empire)",
+      "portrait": {
+        "fichier": "Heinrich 4 g.jpg",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu",
+        "legende": "Henri IV, miniature médiévale (vers 1105-1106), représentation conventionnelle plus que portrait"
+      },
+      "description": "Henri IV du Saint-Empire (1050-1106) est un empereur romain germanique, né vraisemblablement à Goslar, en Saxe, resté célèbre pour son affrontement avec le pape Grégoire VII, qui l'excommunie en 1076. Pour lever cette sentence, il attend trois jours en janvier 1077, pieds nus selon la tradition, devant le château de Canossa, où le pape le relève de sa peine. Déposé en 1105 par son propre fils, le futur Henri V, il meurt à Liège l'année suivante, et la querelle des Investitures ne s'achève qu'avec le concordat de Worms, en 1122."
+    },
+    {
+      "slug": "barberousse",
+      "nom": "Frédéric Barberousse",
+      "titre": "Naissance de Frédéric Barberousse",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1122,
+      "pays": "DE",
+      "wikipedia": "Frédéric_Barberousse",
+      "portrait": {
+        "fichier": "Barbarossa.jpg",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu",
+        "legende": "Frédéric Barberousse, enluminure de 1188, miniature médiévale et non portrait ressemblant"
+      },
+      "description": "Frédéric Barberousse (vers 1122-1190) est un empereur du Saint-Empire romain germanique, de la dynastie des Hohenstaufen, roi de Germanie en 1152 et couronné empereur à Rome en 1155. Il conduit six expéditions en Italie, où les villes de la Ligue lombarde le battent à Legnano en 1176, puis reconnaissent son autorité à la paix de Constance, en 1183. Parti pour la troisième croisade, il se noie en 1190 dans le Saleph, en Cilicie, et la légende fera de lui un empereur endormi sous le mont Kyffhäuser, qui reviendra un jour.",
+      "essentiel": true
+    },
+    {
+      "slug": "maximilien",
+      "nom": "Maximilien Ier",
+      "titre": "Naissance de Maximilien Ier",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1459,
+      "pays": "AT",
+      "wikipedia": "Maximilien_Ier_(empereur_du_Saint-Empire)",
+      "portrait": {
+        "fichier": "Albrecht Dürer - Portrait of Maximilian I - Google Art Project.jpg",
+        "licence": "Domaine public",
+        "auteur": "Albrecht Dürer",
+        "legende": "Maximilien Ier, portrait peint par Albrecht Dürer (1519), l'année de sa mort"
+      },
+      "description": "Maximilien Ier (1459-1519) est un empereur du Saint-Empire romain germanique de la maison de Habsbourg, né à Wiener Neustadt, surnommé le « dernier chevalier ». Par son mariage avec Marie de Bourgogne en 1477, puis par les unions de ses enfants avec les maisons d'Espagne, de Bohême et de Hongrie, il fait de sa dynastie la plus puissante d'Europe. Réformateur de l'Empire et protecteur de Dürer, il meurt à Wels en 1519 et laisse la couronne à son petit-fils, Charles Quint."
+    },
+    {
+      "slug": "frederic2",
+      "nom": "Frédéric II de Prusse",
+      "titre": "Naissance de Frédéric II de Prusse",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1712,
+      "pays": "DE",
+      "wikipedia": "Frédéric_II_(roi_de_Prusse)",
+      "portrait": {
+        "fichier": "Friedrich der Große (1781 or 1786) - Google Art Project.jpg",
+        "licence": "Domaine public",
+        "auteur": "Anton Graff",
+        "legende": "Frédéric II de Prusse, portrait peint par Anton Graff (entre 1781 et 1786)"
+      },
+      "description": "Frédéric II de Prusse (1712-1786) est le roi de Prusse dit Frédéric le Grand, né à Berlin et mort à Potsdam. Monté sur le trône en 1740, il conquiert la Silésie sur l'Autriche, résiste à une coalition de l'Europe pendant la guerre de Sept Ans et fait de la Prusse une grande puissance. Souverain « éclairé », ami de Voltaire, flûtiste et compositeur, il fait construire Sans-Souci et protège la liberté de culte, tout en gouvernant en monarque absolu.",
+      "essentiel": true
+    },
+    {
+      "slug": "mariethrese",
+      "nom": "Marie-Thérèse d'Autriche",
+      "titre": "Naissance de Marie-Thérèse d'Autriche",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1717,
+      "pays": "AT",
+      "wikipedia": "Marie-Thérèse_d'Autriche_(1717-1780)",
+      "portrait": {
+        "fichier": "Kaiserin Maria Theresia (HRR).jpg",
+        "licence": "Domaine public",
+        "auteur": "Martin van Meytens",
+        "legende": "Marie-Thérèse d'Autriche, portrait peint par Martin van Meytens (1759)"
+      },
+      "description": "Marie-Thérèse d'Autriche (1717-1780) est une archiduchesse d'Autriche, reine de Hongrie et de Bohême, née à Vienne, qui règne sur les États des Habsbourg de 1740 à sa mort. Contestée dès son avènement par la guerre de Succession d'Autriche, elle perd la Silésie au profit de Frédéric II mais sauve l'essentiel de son héritage, puis réforme l'armée, l'administration, les impôts et l'école, rendue obligatoire en 1774. Mère de seize enfants, dont Joseph II et Marie-Antoinette, elle fait élire empereur son mari, François de Lorraine, en 1745, tout en gardant elle-même le pouvoir.",
+      "essentiel": true
+    },
+    {
+      "slug": "joseph2",
+      "nom": "Joseph II",
+      "titre": "Naissance de Joseph II",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1741,
+      "pays": "AT",
+      "wikipedia": "Joseph_II_(empereur_du_Saint-Empire)",
+      "portrait": {
+        "fichier": "Anton von Maron 006.png",
+        "licence": "Domaine public",
+        "auteur": "Anton von Maron",
+        "legende": "Joseph II, portrait peint par Anton von Maron (1775)"
+      },
+      "description": "Joseph II (1741-1790) est un empereur du Saint-Empire romain germanique, fils de Marie-Thérèse, né à Vienne, empereur dès 1765 mais seul maître des États des Habsbourg à la mort de sa mère, en 1780. Souverain « éclairé », il publie l'édit de tolérance de 1781, abolit le servage, supprime des centaines de monastères et impose l'allemand dans l'administration. Ses réformes, imposées d'en haut, soulèvent la Hongrie et les Pays-Bas autrichiens, et il en révoque la plupart peu avant sa mort, en 1790."
+    },
+    {
+      "slug": "metternich",
+      "nom": "Klemens von Metternich",
+      "titre": "Naissance de Klemens von Metternich",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1773,
+      "pays": "AT",
+      "wikipedia": "Klemens_Wenzel_von_Metternich",
+      "portrait": {
+        "fichier": "Klemens von Metternich by Lawrence.jpg",
+        "licence": "Domaine public",
+        "auteur": "Thomas Lawrence",
+        "legende": "Klemens von Metternich, portrait peint par Thomas Lawrence (vers 1815)"
+      },
+      "description": "Klemens von Metternich (1773-1859) est un diplomate et homme d'État autrichien, né à Coblence, ministre des Affaires étrangères de l'empereur François Ier dès 1809, puis chancelier jusqu'en 1848. Organisateur du congrès de Vienne (1814-1815), il bâtit l'équilibre européen de la Restauration et en défend l'ordre contre les mouvements libéraux et nationaux, notamment par les décrets de Carlsbad de 1819. Chassé par la révolution de mars 1848, il s'exile à Londres puis revient à Vienne, où il meurt en 1859."
+    },
+    {
+      "slug": "bismarck",
+      "nom": "Otto von Bismarck",
+      "titre": "Naissance d'Otto von Bismarck",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1815,
+      "pays": "DE",
+      "wikipedia": "Otto_von_Bismarck",
+      "portrait": {
+        "fichier": "Bundesarchiv Bild 146-2005-0057, Otto von Bismarck.jpg",
+        "licence": "Domaine public",
+        "auteur": "Jacques Pilartz",
+        "legende": "Otto von Bismarck, photographie de Jacques Pilartz (31 août 1890)"
+      },
+      "description": "Otto von Bismarck (1815-1898) est un homme d'État prussien, né à Schönhausen, ministre-président de Prusse à partir de 1862 puis premier chancelier de l'Empire allemand, de 1871 à 1890. Il réalise l'unité de l'Allemagne « par le fer et par le sang » en trois guerres, contre le Danemark (1864), l'Autriche (1866) et la France (1870-1871), puis maintient la paix en Europe par un réseau d'alliances. À l'intérieur, il mène le Kulturkampf contre les catholiques, interdit les socialistes puis leur oppose les premières assurances sociales, avant d'être congédié par Guillaume II en 1890.",
+      "essentiel": true
+    },
+    {
+      "slug": "ludwig2",
+      "nom": "Louis II de Bavière",
+      "titre": "Naissance de Louis II de Bavière",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1845,
+      "pays": "DE",
+      "wikipedia": "Louis_II_(roi_de_Bavière)",
+      "portrait": {
+        "fichier": "Albert, Joseph - König Ludwig II. von Bayern (1845-1886) (Zeno Fotografie).jpg",
+        "licence": "Domaine public",
+        "auteur": "Josef Albert",
+        "legende": "Louis II de Bavière, photographie de Joseph Albert (vers 1864)"
+      },
+      "description": "Louis II de Bavière (1845-1886) est un roi de Bavière de 1864 à 1886, né au château de Nymphenburg, à Munich, surnommé le « roi fou » ou le « roi de conte de fées ». Admirateur et protecteur de Richard Wagner, il fait bâtir les châteaux de Neuschwanstein, de Linderhof et de Herrenchiemsee, au prix de lourdes dettes. Déclaré aliéné sans avoir été examiné et déposé en juin 1886, il est retrouvé noyé trois jours plus tard dans le lac de Starnberg avec son médecin, dans des circonstances qui n'ont jamais été élucidées."
+    },
+    {
+      "slug": "sissi",
+      "nom": "Élisabeth de Wittelsbach, dite Sissi",
+      "titre": "Naissance d'Élisabeth de Wittelsbach, dite Sissi",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1837,
+      "pays": "AT",
+      "wikipedia": "Élisabeth_de_Wittelsbach",
+      "portrait": {
+        "fichier": "Isabel da Áustria 1867.jpg",
+        "licence": "Domaine public",
+        "auteur": "Emil Rabending",
+        "legende": "Élisabeth de Wittelsbach, dite Sissi, photographie d'Emil Rabending (1867)"
+      },
+      "description": "Élisabeth de Wittelsbach, dite Sissi (1837-1898) est une princesse bavaroise, née à Munich, devenue impératrice d'Autriche et reine de Hongrie par son mariage avec François-Joseph en 1854. Mal à l'aise à la cour de Vienne, elle voyage sans relâche, se passionne pour la Hongrie, dont elle favorise le Compromis de 1867, et entretient sa légende de beauté par des régimes stricts. Éprouvée par la mort de son fils Rodolphe à Mayerling en 1889, elle est assassinée à Genève en 1898 par l'anarchiste italien Luigi Lucheni."
+    },
+    {
+      "slug": "francoisjoseph",
+      "nom": "François-Joseph Ier",
+      "titre": "Naissance de François-Joseph Ier",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1830,
+      "pays": "AT",
+      "wikipedia": "François-Joseph_Ier",
+      "portrait": {
+        "fichier": "Franz Joseph I of Austria.1910 (cropped).jpg",
+        "licence": "Domaine public",
+        "auteur": "Carl Pietzner",
+        "legende": "François-Joseph Ier, photographie de Carl Pietzner (1910)"
+      },
+      "description": "François-Joseph Ier (1830-1916) est un empereur d'Autriche et roi de Hongrie, né au château de Schönbrunn, à Vienne, qui règne près de soixante-huit ans, de 1848 à sa mort. Après la défaite de Sadowa en 1866, il accepte le Compromis de 1867, qui crée l'Autriche-Hongrie, mais il voit son fils Rodolphe se suicider en 1889 et sa femme Élisabeth être assassinée en 1898. L'ultimatum à la Serbie qui suit l'assassinat de son neveu et héritier, François-Ferdinand, à Sarajevo en juin 1914, précipite la Première Guerre mondiale, et il meurt en novembre 1916, deux ans avant la fin de son Empire.",
+      "essentiel": true
+    },
+    {
+      "slug": "guillaume2",
+      "nom": "Guillaume II",
+      "titre": "Naissance de Guillaume II",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1859,
+      "pays": "DE",
+      "wikipedia": "Guillaume_II_(empereur_allemand)",
+      "portrait": {
+        "fichier": "Kaiser Wilhelm II of Germany - 1902.jpg",
+        "licence": "Domaine public",
+        "auteur": "Atelier de Thomas Heinrich Voigt",
+        "legende": "Guillaume II, photographie du studio Voigt (1902)"
+      },
+      "description": "Guillaume II (1859-1941) est le dernier empereur allemand et roi de Prusse, né à Berlin, petit-fils de Guillaume Ier et de la reine Victoria. Monté sur le trône en 1888, il renvoie Bismarck en 1890, mène une « politique mondiale » et une course navale avec le Royaume-Uni, puis engage son pays dans la Première Guerre mondiale, où l'état-major de Hindenburg et de Ludendorff finit par gouverner à sa place. Contraint à l'abdication le 9 novembre 1918, il s'exile aux Pays-Bas, à Doorn, où il meurt en 1941 sans avoir été jugé."
+    },
+    {
+      "slug": "ebert",
+      "nom": "Friedrich Ebert",
+      "titre": "Naissance de Friedrich Ebert",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1871,
+      "pays": "DE",
+      "wikipedia": "Friedrich_Ebert",
+      "portrait": {
+        "fichier": "Friedrich Ebert LCCN2014711530 Trim.jpg",
+        "licence": "Domaine public",
+        "auteur": "Hermann Noack",
+        "legende": "Friedrich Ebert, photographie de Hermann Noack (1918-1919)"
+      },
+      "description": "Friedrich Ebert (1871-1925) est un homme politique social-démocrate allemand, né à Heidelberg, fils d'un tailleur, premier président du Reich de la République de Weimar. Devenu chancelier le 9 novembre 1918, quand l'empereur abdique, il fait écraser avec l'armée et les corps francs les soulèvements spartakistes de 1919, puis est élu président par l'Assemblée nationale. Président jusqu'à sa mort, en 1925, il affronte les putschs, l'hyperinflation de 1923 et l'occupation de la Ruhr, et recourt à l'article 48 de la Constitution pour sauver la République."
+    },
+    {
+      "slug": "stresemann",
+      "nom": "Gustav Stresemann",
+      "titre": "Naissance de Gustav Stresemann",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1878,
+      "pays": "DE",
+      "wikipedia": "Gustav_Stresemann",
+      "portrait": {
+        "fichier": "Bundesarchiv Bild 146-1989-040-27, Gustav Stresemann.jpg",
+        "licence": "CC BY-SA 3.0 DE",
+        "auteur": "Auteur inconnu (Bundesarchiv)",
+        "legende": "Gustav Stresemann, photographie (vers 1928-1929, Archives fédérales allemandes)"
+      },
+      "description": "Gustav Stresemann (1878-1929) est un homme d'État allemand, né à Berlin, chancelier pendant cent jours à l'été 1923, puis ministre des Affaires étrangères jusqu'à sa mort. Il met fin à la résistance passive dans la Ruhr, stabilise le mark, signe les accords de Locarno en 1925 et fait entrer l'Allemagne à la Société des Nations en 1926. Prix Nobel de la paix en 1926 avec Aristide Briand, il meurt en octobre 1929, trois semaines avant le krach de Wall Street, et la République de Weimar perd alors son meilleur défenseur."
+    },
+    {
+      "slug": "hitler",
+      "nom": "Adolf Hitler",
+      "titre": "Naissance d'Adolf Hitler",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1889,
+      "pays": "DE",
+      "wikipedia": "Adolf_Hitler",
+      "portrait": {
+        "fichier": "Adolf Hitler cropped restored 3x4.jpg",
+        "licence": "CC BY-SA 3.0 DE",
+        "auteur": "Auteur inconnu",
+        "legende": "Adolf Hitler, photographie du 20 avril 1937"
+      },
+      "description": "Adolf Hitler (1889-1945) est un homme politique allemand, né à Braunau am Inn, en Autriche-Hongrie, chef du parti nazi, chancelier du Reich en 1933 puis Führer d'un régime totalitaire, raciste et antisémite. Il instaure une dictature dès 1933, déclenche la Seconde Guerre mondiale en envahissant la Pologne en 1939 et fait organiser la Shoah, l'extermination de six millions de Juifs d'Europe. Il se suicide dans son bunker de Berlin le 30 avril 1945, laissant l'Europe en ruines ; l'Allemagne et l'Autriche ont fait de la mémoire de ses crimes un devoir public, et il figure ici comme figure de l'histoire, non comme figure honorée.",
+      "essentiel": true
+    },
+    {
+      "slug": "adenauer",
+      "nom": "Konrad Adenauer",
+      "titre": "Naissance de Konrad Adenauer",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1876,
+      "pays": "DE",
+      "wikipedia": "Konrad_Adenauer",
+      "portrait": {
+        "fichier": "Bundesarchiv B 145 Bild-F078072-0004, Konrad Adenauer.jpg",
+        "licence": "CC BY-SA 3.0 DE",
+        "auteur": "Katherine Young (Bundesarchiv)",
+        "legende": "Konrad Adenauer, photographie de Katherine Young (23 juin 1952, Archives fédérales allemandes)"
+      },
+      "description": "Konrad Adenauer (1876-1967) est un homme d'État allemand, né à Cologne, maire de sa ville de 1917 à 1933, écarté par les nazis, puis premier chancelier de la République fédérale d'Allemagne, de 1949 à 1963. À la tête de la CDU, il ancre l'Allemagne de l'Ouest dans l'Occident (Alliance atlantique, Communauté du charbon et de l'acier, Marché commun) et signe avec de Gaulle le traité de l'Élysée, en 1963, qui scelle la réconciliation franco-allemande. Chancelier de la reconstruction et du « miracle économique », il est aussi critiqué pour avoir laissé en poste d'anciens nazis et pour avoir écarté en 1952 l'offre soviétique d'une Allemagne unifiée mais neutre.",
+      "essentiel": true
+    },
+    {
+      "slug": "brandt",
+      "nom": "Willy Brandt",
+      "titre": "Naissance de Willy Brandt",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1913,
+      "pays": "DE",
+      "wikipedia": "Willy_Brandt",
+      "portrait": {
+        "fichier": "Bundesarchiv B 145 Bild-F057884-0009, Willy Brandt.jpg",
+        "licence": "CC BY-SA 3.0 DE",
+        "legende": "Willy Brandt, photographie du 5 mars 1980 (Archives fédérales allemandes)",
+        "auteur": "Engelbert Reineke (Bundesarchiv)"
+      },
+      "description": "Willy Brandt (1913-1992) est un homme politique social-démocrate allemand, né Herbert Frahm à Lübeck, maire de Berlin-Ouest au moment de la construction du Mur, puis chancelier fédéral de 1969 à 1974. Opposant à Hitler exilé en Norvège puis en Suède, il mène à partir de 1969 l'Ostpolitik, faite de traités avec Moscou et Varsovie et d'une reconnaissance de fait de la RDA, et s'agenouille en décembre 1970 devant le monument du ghetto de Varsovie. Prix Nobel de la paix en 1971, il démissionne en 1974 quand son collaborateur Günter Guillaume est démasqué comme espion de la Stasi.",
+      "essentiel": true
+    },
+    {
+      "slug": "kohl",
+      "nom": "Helmut Kohl",
+      "titre": "Naissance de Helmut Kohl",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1930,
+      "pays": "DE",
+      "wikipedia": "Helmut_Kohl",
+      "portrait": {
+        "fichier": "Helmut Kohl (1996).jpg",
+        "licence": "CC BY 4.0",
+        "legende": "Helmut Kohl, photographie du 15 mai 1996",
+        "auteur": "Christian Lambiotte"
+      },
+      "description": "Helmut Kohl (1930-2017) est un homme politique allemand, né à Ludwigshafen, chancelier fédéral de 1982 à 1998, l'un des plus longs mandats de la République fédérale. Chancelier de la réunification, il saisit l'occasion de la chute du Mur de Berlin en 1989, présente un plan en dix points et signe avec les quatre Alliés le traité qui rend l'Allemagne unie, le 3 octobre 1990. Avec François Mitterrand, il fait avancer le traité de Maastricht et l'euro ; il perd le pouvoir en 1998, et l'affaire des caisses noires de la CDU, révélée en 1999, ternit la fin de sa carrière.",
+      "essentiel": true
+    },
+    {
+      "slug": "renner",
+      "nom": "Karl Renner",
+      "titre": "Naissance de Karl Renner",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1870,
+      "pays": "AT",
+      "wikipedia": "Karl_Renner",
+      "portrait": {
+        "fichier": "Karl Renner 1920 by Theodor Bauer.jpg",
+        "licence": "Domaine public",
+        "auteur": "Theodor Bauer",
+        "legende": "Karl Renner, photographie de Theodor Bauer (1920)"
+      },
+      "description": "Karl Renner (1870-1950) est un homme politique social-démocrate autrichien, né à Unter-Tannowitz, en Moravie, fondateur de deux républiques. Chancelier de la jeune République d'Autriche de 1918 à 1920, il signe le traité de Saint-Germain-en-Laye, en 1919, qui consacre la fin de l'Autriche-Hongrie et interdit le rattachement du pays à l'Allemagne. En 1938, il approuve publiquement l'Anschluss ; en 1945, les Soviétiques lui confient un gouvernement provisoire, puis il est élu premier président de la Seconde République et meurt en fonction en 1950."
+    },
+    {
+      "slug": "kreisky",
+      "nom": "Bruno Kreisky",
+      "titre": "Naissance de Bruno Kreisky",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1911,
+      "pays": "AT",
+      "wikipedia": "Bruno_Kreisky",
+      "portrait": {
+        "fichier": "Bruno Kreisky 1983.jpg",
+        "licence": "CC BY-SA 2.0",
+        "auteur": "Votava (SPÖ Presse und Kommunikation)",
+        "legende": "Bruno Kreisky, photographie du service de presse du SPÖ (1983)"
+      },
+      "description": "Bruno Kreisky (1911-1990) est un homme politique social-démocrate autrichien, né à Vienne dans une famille juive aisée, chancelier de 1970 à 1983. Emprisonné en 1938 puis exilé en Suède, il revient comme diplomate, participe en 1955 à la négociation du traité d'État qui rend à l'Autriche sa souveraineté, puis gouverne avec la majorité absolue, par des réformes sociales et une réduction du temps de travail. Il fait de l'Autriche neutre un médiateur au Proche-Orient, en recevant Yasser Arafat en 1979, mais reste critiqué pour avoir fait entrer d'anciens nazis dans son premier gouvernement, en 1970."
+    },
+    {
+      "slug": "arminius",
+      "nom": "Arminius",
+      "titre": "Naissance d'Arminius",
+      "axe": "Guerres et résistances",
+      "naissance": -17,
+      "pays": "DE",
+      "wikipedia": "Arminius",
+      "portrait": {
+        "fichier": "Hermannsdenkmal statue.jpg",
+        "licence": "Domaine public",
+        "auteur": "Daniel Schwen",
+        "legende": "Arminius, dit Hermann, statue du Hermannsdenkmal d'Ernst von Bandel (1875) : aucun portrait authentique n'existe"
+      },
+      "description": "Arminius (vers 17 av. J.-C.-21 ap. J.-C.) est un chef germain de la tribu des Chérusques, ancien officier auxiliaire de l'armée romaine, devenu citoyen romain et chevalier. En l'an 9, il attire trois légions de Varus dans les forêts du nord de la Germanie et les anéantit à Teutobourg, ce qui met fin aux projets romains de conquête jusqu'à l'Elbe. Assassiné par des proches en 21, il devient au XIXe siècle, sous le nom de Hermann, un héros du nationalisme allemand, célébré par le Hermannsdenkmal inauguré en 1875.",
+      "essentiel": true
+    },
+    {
+      "slug": "muntzer",
+      "nom": "Thomas Müntzer",
+      "titre": "Naissance de Thomas Müntzer",
+      "axe": "Guerres et résistances",
+      "naissance": 1489,
+      "pays": "DE",
+      "wikipedia": "Thomas_Müntzer",
+      "portrait": {
+        "fichier": "Thomas Muentzer.jpg",
+        "licence": "Domaine public",
+        "auteur": "Christoffel van Sichem",
+        "legende": "Thomas Müntzer, gravure de Christoffel van Sichem (XVIe siècle), image posthume"
+      },
+      "description": "Thomas Müntzer (vers 1489-1525) est un théologien et prédicateur allemand, né à Stolberg, dans le Harz, d'abord proche de Luther avant de rompre avec lui. Annonçant l'avènement imminent du royaume de Dieu et de la justice pour les pauvres, il devient le chef spirituel des insurgés de la guerre des Paysans en Thuringe. Défait avec ses hommes par les princes à Frankenhausen en mai 1525, il est capturé, torturé et décapité à Mühlhausen, et Engels puis la RDA en feront un héros révolutionnaire."
+    },
+    {
+      "slug": "hofer",
+      "nom": "Andreas Hofer",
+      "titre": "Naissance d'Andreas Hofer",
+      "axe": "Guerres et résistances",
+      "naissance": 1767,
+      "pays": "AT",
+      "wikipedia": "Andreas_Hofer",
+      "portrait": {
+        "fichier": "Andreas hofer mit hut.jpg",
+        "licence": "Domaine public",
+        "auteur": "Franz von Defregger",
+        "legende": "Andreas Hofer, portrait peint par Franz von Defregger (milieu du XIXe siècle), représentation posthume"
+      },
+      "description": "Andreas Hofer (1767-1810) est un aubergiste et chef de la révolte tyrolienne contre la Bavière, alliée de Napoléon, né à Saint-Léonard-en-Passeier, dans le Tyrol du Sud actuel, en Italie. En 1809, il bat les troupes bavaroises et françaises au mont Isel, près d'Innsbruck, et gouverne brièvement le Tyrol au nom de l'empereur d'Autriche. Trahi, capturé puis fusillé à Mantoue en février 1810, il devient le héros du Tyrol, dont l'hymne régional, l'Andreas-Hofer-Lied, porte son nom."
+    },
+    {
+      "slug": "blucher",
+      "nom": "Gebhard Leberecht von Blücher",
+      "titre": "Naissance de Gebhard Leberecht von Blücher",
+      "axe": "Guerres et résistances",
+      "naissance": 1742,
+      "pays": "DE",
+      "wikipedia": "Gebhard_Leberecht_von_Blücher",
+      "portrait": {
+        "fichier": "Peter Edward Stroehling - Porträt Gebhard Leberecht von Blücher.jpg",
+        "licence": "Domaine public",
+        "legende": "Blücher, portrait peint par Peter Edward Stroehling (1814-1815)",
+        "auteur": "Peter Edward Stroehling"
+      },
+      "description": "Gebhard Leberecht von Blücher (1742-1819) est un maréchal prussien, né à Rostock, surnommé « Maréchal en avant » pour son audace. Chef de l'armée de Silésie, il contribue à battre Napoléon à Leipzig en 1813 et entre à Paris en 1814, puis, vaincu à Ligny le 16 juin 1815 mais reformant ses troupes, il arrive à Waterloo à la fin du jour du 18 juin et décide de la défaite de l'Empereur. Couvert d'honneurs, il meurt en 1819 en Silésie, et son nom reste en Prusse un symbole de la guerre de libération."
+    },
+    {
+      "slug": "dufour",
+      "nom": "Guillaume-Henri Dufour",
+      "titre": "Naissance de Guillaume-Henri Dufour",
+      "axe": "Guerres et résistances",
+      "naissance": 1787,
+      "pays": "CH",
+      "wikipedia": "Guillaume_Henri_Dufour",
+      "portrait": {
+        "fichier": "Henri dufour daguerreotype 1850.jpg",
+        "licence": "Domaine public",
+        "auteur": "Jean de Humnicki",
+        "legende": "Guillaume-Henri Dufour, daguerréotype de Jean de Humnicki (vers 1848)"
+      },
+      "description": "Guillaume-Henri Dufour (1787-1875) est un général et ingénieur suisse, né à Constance de parents genevois, ancien officier du génie de Napoléon, installé ensuite à Genève. En 1847, il commande l'armée de la Diète fédérale contre le Sonderbund catholique et achève la guerre civile en moins d'un mois, avec une centaine de morts, en défendant la modération envers les vaincus. Auteur de la première grande carte topographique de la Suisse, qui porte son nom, il préside la conférence internationale de 1863 qui fonde la Croix-Rouge.",
+      "biographie": "bio_dufour"
+    },
+    {
+      "slug": "dunant",
+      "nom": "Henry Dunant",
+      "titre": "Naissance d'Henry Dunant",
+      "axe": "Guerres et résistances",
+      "naissance": 1828,
+      "pays": "CH",
+      "wikipedia": "Henry_Dunant",
+      "portrait": {
+        "fichier": "Jean Henri Dunant.jpg",
+        "licence": "Domaine public",
+        "auteur": "Time Life Pictures",
+        "legende": "Henry Dunant, photographie (vers 1900)"
+      },
+      "description": "Henry Dunant (1828-1910) est un homme d'affaires et humaniste suisse, né à Genève, fondateur de la Croix-Rouge. Témoin de la bataille de Solférino en 1859, il publie en 1862 « Un souvenir de Solférino », où il demande des sociétés de secours volontaires et une convention protégeant les blessés, ce qui mène à la création du Comité international de la Croix-Rouge en 1863 et à la première convention de Genève en 1864. Ruiné par la faillite de ses affaires en 1867, il vit dans la misère puis dans un hospice de Heiden, mais reçoit en 1901 le premier prix Nobel de la paix, partagé avec Frédéric Passy.",
+      "essentiel": true,
+      "biographie": "bio_dunant"
+    },
+    {
+      "slug": "suttner",
+      "nom": "Bertha von Suttner",
+      "titre": "Naissance de Bertha von Suttner",
+      "axe": "Guerres et résistances",
+      "naissance": 1843,
+      "pays": "AT",
+      "wikipedia": "Bertha_von_Suttner",
+      "portrait": {
+        "fichier": "Bertha von Suttner nobel.jpg",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu",
+        "legende": "Bertha von Suttner, photographie publiée dans « Les Prix Nobel » (1907)"
+      },
+      "description": "Bertha von Suttner (1843-1914) est une écrivaine et pacifiste autrichienne, née comtesse Kinsky à Prague, première femme à recevoir le prix Nobel de la paix, en 1905. Son roman « Bas les armes ! » (1889) la rend célèbre dans toute l'Europe ; elle fonde en 1891 la Société autrichienne des amis de la paix et influence Alfred Nobel, dont elle a été brièvement la secrétaire, dans la création de son prix. Morte le 21 juin 1914, une semaine avant l'attentat de Sarajevo, elle n'a pas vu la guerre qu'elle avait tant combattue."
+    },
+    {
+      "slug": "rommel",
+      "nom": "Erwin Rommel",
+      "titre": "Naissance d'Erwin Rommel",
+      "axe": "Guerres et résistances",
+      "naissance": 1891,
+      "pays": "DE",
+      "wikipedia": "Erwin_Rommel",
+      "portrait": {
+        "fichier": "Bundesarchiv Bild 183-J16362, Erwin Rommel.jpg",
+        "licence": "CC BY-SA 3.0 DE",
+        "auteur": "Winkelmann (Bundesarchiv)",
+        "legende": "Erwin Rommel, photographie de décembre 1943 (Archives fédérales allemandes)"
+      },
+      "description": "Erwin Rommel (1891-1944) est un maréchal allemand, né à Heidenheim, en Wurtemberg, officier d'infanterie célèbre à Caporetto en 1917, puis général de panzers lors de la campagne de France en 1940. Surnommé « le Renard du désert », il commande l'Afrikakorps en Libye et en Égypte à partir de 1941 jusqu'à sa défaite à El-Alamein en 1942, puis le groupe d'armées chargé de défendre le mur de l'Atlantique en 1944. Soupçonné d'avoir connu le complot du 20 juillet 1944 contre Hitler, il est contraint au suicide le 14 octobre et reçoit des obsèques nationales ; sa légende de soldat « propre », forgée par la propagande puis par les Alliés, est aujourd'hui nuancée par les historiens.",
+      "essentiel": true,
+      "biographie": "bio_rommel"
+    },
+    {
+      "slug": "stauffenberg",
+      "nom": "Claus von Stauffenberg",
+      "titre": "Naissance de Claus von Stauffenberg",
+      "axe": "Guerres et résistances",
+      "naissance": 1907,
+      "pays": "DE",
+      "wikipedia": "Claus_von_Stauffenberg",
+      "portrait": {
+        "fichier": "Claus von Stauffenberg Portrait Photograph.jpg",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu",
+        "legende": "Claus von Stauffenberg, photographie de 1934"
+      },
+      "description": "Claus von Stauffenberg (1907-1944) est un colonel allemand, né à Jettingen, en Bavière, grièvement blessé en Tunisie en 1943, où il perd un œil, la main droite et deux doigts de la main gauche. Chef d'état-major de l'armée de réserve, il dépose le 20 juillet 1944 une bombe dans la salle de conférence de Hitler, à Rastenburg, avant de rentrer à Berlin organiser l'opération « Walkyrie ». Hitler ayant survécu, il est fusillé dans la nuit même dans la cour du Bendlerblock, à Berlin, et il est devenu pour l'Allemagne d'après-guerre le symbole de la résistance militaire au nazisme.",
+      "essentiel": true
+    },
+    {
+      "slug": "sophiescholl",
+      "nom": "Sophie Scholl",
+      "titre": "Naissance de Sophie Scholl",
+      "axe": "Guerres et résistances",
+      "naissance": 1921,
+      "pays": "DE",
+      "wikipedia": "Sophie_Scholl",
+      "portrait": {
+        "fichier": "Gestapo photo of Sophie Scholl taken after her capture on February 18, 1943-2.jpg",
+        "licence": "Domaine public",
+        "auteur": "Police allemande (Gestapo), auteur inconnu",
+        "legende": "Sophie Scholl, photographie d'identité judiciaire prise par la Gestapo après son arrestation (février 1943)"
+      },
+      "description": "Sophie Scholl (1921-1943) est une résistante allemande, née à Forchtenberg, étudiante en biologie et en philosophie à Munich, membre du groupe de la Rose blanche. Avec son frère Hans et leurs amis, elle rédige et distribue en 1942-1943 des tracts qui dénoncent les crimes nazis et appellent les Allemands à la révolte, et elle est arrêtée le 18 février 1943 à l'université de Munich en jetant des exemplaires du sixième tract. Condamnée à mort par le « tribunal du peuple » de Roland Freisler, elle est guillotinée le 22 février, à vingt et un ans, quelques heures après son procès, et son courage en fait l'une des figures les plus aimées de l'Allemagne actuelle.",
+      "essentiel": true,
+      "biographie": "bio_scholl"
+    },
+    {
+      "slug": "bonhoeffer",
+      "nom": "Dietrich Bonhoeffer",
+      "titre": "Naissance de Dietrich Bonhoeffer",
+      "axe": "Guerres et résistances",
+      "naissance": 1906,
+      "pays": "DE",
+      "wikipedia": "Dietrich_Bonhoeffer",
+      "portrait": {
+        "fichier": "Bundesarchiv Bild 146-1987-074-16, Dietrich Bonhoeffer.jpg",
+        "licence": "CC BY-SA 3.0 DE",
+        "auteur": "Auteur inconnu (Bundesarchiv)",
+        "legende": "Dietrich Bonhoeffer, photographie de 1939 (Archives fédérales allemandes)"
+      },
+      "description": "Dietrich Bonhoeffer (1906-1945) est un pasteur luthérien et théologien allemand, né à Breslau, aujourd'hui Wrocław, en Pologne. Il rejoint dès 1933 l'Église confessante, opposée à la mainmise nazie sur le protestantisme, dirige un séminaire clandestin de pasteurs et participe, avec des officiers de l'Abwehr, à la conspiration contre Hitler, notamment en aidant des Juifs à fuir en Suisse. Arrêté en 1943, il est pendu au camp de Flossenbürg le 9 avril 1945, deux semaines avant sa libération par les Américains, et ses lettres de prison, « Résistance et soumission », restent un classique de la théologie protestante."
+    },
+    {
+      "slug": "jagerstatter",
+      "nom": "Franz Jägerstätter",
+      "titre": "Naissance de Franz Jägerstätter",
+      "axe": "Guerres et résistances",
+      "naissance": 1907,
+      "pays": "AT",
+      "wikipedia": "Franz_Jägerstätter",
+      "portrait": {
+        "fichier": "Franz Jägerstätter ID photo.jpg",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu",
+        "legende": "Franz Jägerstätter, photographie d'identité (avant 1942)"
+      },
+      "description": "Franz Jägerstätter (1907-1943) est un paysan et sacristain autrichien, né à Sankt Radegund, en Haute-Autriche, seul habitant de son village à voter contre l'Anschluss en 1938. Père de trois filles, il refuse de prêter serment à Hitler et de combattre dans la Wehrmacht, convaincu que cette guerre est injuste, malgré les pressions de sa famille et de son évêque. Condamné à mort pour « sape de la force militaire », il est guillotiné à Brandebourg-sur-la-Havel le 9 août 1943, et l'Église catholique le béatifie en 2007 comme martyr de sa conscience."
+    },
+    {
+      "slug": "guisan",
+      "nom": "Henri Guisan",
+      "titre": "Naissance d'Henri Guisan",
+      "axe": "Guerres et résistances",
+      "naissance": 1874,
+      "pays": "CH",
+      "wikipedia": "Henri_Guisan",
+      "portrait": {
+        "fichier": "Guisan Visp 1942 D2.8916.jpg",
+        "licence": "CC BY-SA 4.0",
+        "legende": "Henri Guisan, photographie prise à Viège (1942)",
+        "auteur": "Theodor Strübin (Archäologie und Museum Baselland)"
+      },
+      "description": "Henri Guisan (1874-1960) est un général suisse, né à Mézières, dans le canton de Vaud, élu par l'Assemblée fédérale commandant en chef de l'armée en août 1939. Face à l'Allemagne nazie, il organise la défense du pays autour du Réduit national, un repli alpin dont les cols et les tunnels sont minés, et réunit ses officiers au Grütli le 25 juillet 1940 pour affirmer la volonté de résister. Immensément populaire, ce qui lui vaut des funérailles nationales à Lausanne en 1960, il est aussi critiqué pour sa rencontre secrète avec le chef du renseignement SS Walter Schellenberg, en 1943."
+    },
+    {
+      "slug": "hildegarde",
+      "nom": "Hildegarde de Bingen",
+      "titre": "Naissance de Hildegarde de Bingen",
+      "axe": "Littérature et pensée",
+      "naissance": 1098,
+      "pays": "DE",
+      "wikipedia": "Hildegarde_de_Bingen",
+      "portrait": {
+        "fichier": "Hildegard von Bingen.jpg",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu",
+        "legende": "Hildegarde de Bingen, miniature d'un manuscrit médiéval du « Scivias », représentation conventionnelle"
+      },
+      "description": "Hildegarde de Bingen (1098-1179) est une abbesse bénédictine allemande, née à Bermersheim, près d'Alzey, fondatrice du monastère du Rupertsberg, près de Bingen. Visionnaire, elle consigne ses visions dans le « Scivias », compose des chants liturgiques parmi les plus anciens dont on connaisse l'autrice et rédige des traités de médecine et d'histoire naturelle, tout en prêchant sur les places publiques, chose rare pour une femme. Reconnue sainte par le pape Benoît XVI en mai 2012, elle est proclamée docteur de l'Église en octobre de la même année.",
+      "essentiel": true
+    },
+    {
+      "slug": "albert",
+      "nom": "Albert le Grand",
+      "titre": "Naissance d'Albert le Grand",
+      "axe": "Littérature et pensée",
+      "naissance": 1200,
+      "pays": "DE",
+      "wikipedia": "Albert_le_Grand",
+      "portrait": {
+        "fichier": "AlbertusMagnus.jpg",
+        "licence": "Domaine public",
+        "auteur": "Tommaso da Modena",
+        "legende": "Albert le Grand, fresque de Tommaso da Modena (1352, Trévise)"
+      },
+      "description": "Albert le Grand (vers 1200-1280) est un dominicain, théologien et savant allemand, né à Lauingen, en Souabe, évêque de Ratisbonne pendant deux ans et maître de Thomas d'Aquin à Cologne. Il fait connaître Aristote à l'Occident latin en le commentant tout entier, et mêle à la philosophie des observations de naturaliste en botanique, en zoologie et en minéralogie, ce qui lui vaut le surnom de « docteur universel ». Canonisé et déclaré docteur de l'Église en 1931, il est le patron des savants des sciences de la nature depuis 1941, et son tombeau se trouve à Cologne, où il meurt en 1280."
+    },
+    {
+      "slug": "luther",
+      "nom": "Martin Luther",
+      "titre": "Naissance de Martin Luther",
+      "axe": "Littérature et pensée",
+      "naissance": 1483,
+      "pays": "DE",
+      "wikipedia": "Martin_Luther",
+      "portrait": {
+        "fichier": "Lucas Cranach d.Ä. - Martin Luther, 1528 (Veste Coburg).jpg",
+        "licence": "Domaine public",
+        "auteur": "Lucas Cranach l'Ancien",
+        "legende": "Martin Luther, portrait peint par Lucas Cranach l'Ancien (1528)"
+      },
+      "description": "Martin Luther (1483-1546) est un moine augustin, théologien et traducteur allemand, né à Eisleben, qui déclenche la Réforme protestante. Le 31 octobre 1517, il aurait affiché à Wittenberg ses quatre-vingt-quinze thèses contre les indulgences ; condamné par le pape puis mis au ban de l'Empire à la diète de Worms en 1521, il est caché à la Wartburg, où il traduit le Nouveau Testament en allemand. Sa Bible, achevée en 1534, fixe la langue allemande écrite, mais ses écrits contre les paysans révoltés en 1525 et contre les Juifs à la fin de sa vie, d'une violence extrême, ternissent sa mémoire.",
+      "essentiel": true,
+      "biographie": "bio_martinluther"
+    },
+    {
+      "slug": "zwingli",
+      "nom": "Ulrich Zwingli",
+      "titre": "Naissance d'Ulrich Zwingli",
+      "axe": "Littérature et pensée",
+      "naissance": 1484,
+      "pays": "CH",
+      "wikipedia": "Ulrich_Zwingli",
+      "portrait": {
+        "fichier": "Zwingli Hans Asper.jpeg",
+        "licence": "Domaine public",
+        "auteur": "Hans Asper",
+        "legende": "Ulrich Zwingli, portrait peint par Hans Asper (1549), posthume"
+      },
+      "description": "Ulrich Zwingli (1484-1531) est un prêtre et réformateur suisse, né à Wildhaus, dans le Toggenbourg, curé du Grossmünster de Zurich dès 1519. Il prêche contre les indulgences, le jeûne obligatoire et le célibat des prêtres, fait adopter la Réforme à Zurich en 1523 et rompt avec Luther sur la présence réelle du Christ dans la Cène, au colloque de Marbourg en 1529. Il meurt au combat contre les cantons catholiques à Kappel en octobre 1531 ; son corps est écartelé et brûlé, mais la Réforme suisse, que portera ensuite Calvin, lui survit."
+    },
+    {
+      "slug": "nicolasdeflue",
+      "nom": "Nicolas de Flue",
+      "titre": "Naissance de Nicolas de Flue",
+      "axe": "Littérature et pensée",
+      "naissance": 1417,
+      "pays": "CH",
+      "wikipedia": "Nicolas_de_Flüe",
+      "portrait": {
+        "fichier": "Nicholas-Flue.jpg",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu",
+        "legende": "Nicolas de Flue, image traditionnelle d'après les représentations anciennes : aucun portrait authentique n'existe"
+      },
+      "description": "Nicolas de Flue (1417-1487) est un ermite et mystique suisse, dit Bruder Klaus, né au Flüeli, près de Sarnen, paysan, soldat, juge et père de dix enfants. En 1467, avec l'accord de sa femme Dorothée, il quitte sa famille pour vivre dans la solitude du Ranft, où, selon la tradition, il se nourrit pendant près de vingt ans de la seule eucharistie. En 1481, son conseil aide à sauver la Confédération, divisée à la Diète de Stans, ce qui lui vaut le titre de patron de la Suisse, et il est canonisé en 1947."
+    },
+    {
+      "slug": "leibniz",
+      "nom": "Gottfried Wilhelm Leibniz",
+      "titre": "Naissance de Gottfried Wilhelm Leibniz",
+      "axe": "Littérature et pensée",
+      "naissance": 1646,
+      "pays": "DE",
+      "wikipedia": "Gottfried_Wilhelm_Leibniz",
+      "portrait": {
+        "fichier": "Christoph Bernhard Francke - Bildnis des Philosophen Leibniz (ca. 1695).jpg",
+        "licence": "Domaine public",
+        "legende": "Leibniz, portrait peint par Christoph Bernhard Francke (vers 1695)",
+        "auteur": "Christoph Bernhard Francke"
+      },
+      "description": "Gottfried Wilhelm Leibniz (1646-1716) est un philosophe, mathématicien et diplomate allemand, né à Leipzig, au service des ducs de Hanovre pendant quarante ans. Inventeur du calcul infinitésimal en même temps que Newton, qui lui en disputera la paternité, il met au point la numération binaire et une machine à calculer, et développe une philosophie des « monades » où ce monde est « le meilleur des mondes possibles ». Fondateur de l'Académie de Berlin en 1700, il meurt à Hanovre en 1716, presque oublié, et sa « Théodicée » sera moquée par Voltaire dans « Candide »."
+    },
+    {
+      "slug": "pestalozzi",
+      "nom": "Johann Heinrich Pestalozzi",
+      "titre": "Naissance de Johann Heinrich Pestalozzi",
+      "axe": "Littérature et pensée",
+      "naissance": 1746,
+      "pays": "CH",
+      "wikipedia": "Johann_Heinrich_Pestalozzi",
+      "portrait": {
+        "fichier": "Johann Heinrich Pestalozzi (Real Academia de Bellas Artes de San Fernando, Madrid).jpg",
+        "licence": "Domaine public",
+        "auteur": "Francisco Javier Ramos",
+        "legende": "Johann Heinrich Pestalozzi, portrait peint par Francisco Javier Ramos (vers 1806)"
+      },
+      "description": "Johann Heinrich Pestalozzi (1746-1827) est un pédagogue suisse, né à Zurich, qui se consacre à l'éducation des enfants pauvres après avoir échoué comme agriculteur. Dans son roman « Léonard et Gertrude » (1781) et dans ses écoles de Stans, de Burgdorf et d'Yverdon, il défend une éducation « de la tête, du cœur et de la main », qui part de l'intuition de l'enfant et respecte son rythme. Ses méthodes attirent des visiteurs de toute l'Europe et inspirent les écoles populaires du XIXe siècle, de la Prusse à la France, et il meurt en 1827 à Brugg."
+    },
+    {
+      "slug": "kant",
+      "nom": "Emmanuel Kant",
+      "titre": "Naissance d'Emmanuel Kant",
+      "axe": "Littérature et pensée",
+      "naissance": 1724,
+      "pays": "DE",
+      "wikipedia": "Emmanuel_Kant",
+      "portrait": {
+        "fichier": "Immanuel Kant - Gemaelde 2.jpg",
+        "licence": "Domaine public",
+        "auteur": "Johann Gottlieb Becker",
+        "legende": "Emmanuel Kant, portrait peint par Johann Gottlieb Becker (1768)"
+      },
+      "description": "Emmanuel Kant (1724-1804) est un philosophe allemand, né à Königsberg, en Prusse-Orientale, ville qu'il ne quitte presque jamais et où il enseigne à l'université pendant plus de quarante ans. Dans la « Critique de la raison pure » (1781), il montre ce que la raison humaine peut connaître et ce qui lui échappe, puis il fonde la morale sur l'impératif catégorique dans la « Critique de la raison pratique » (1788). Auteur de « Qu'est-ce que les Lumières ? » (1784) et d'un projet de « paix perpétuelle » (1795), il meurt en 1804 à Königsberg, aujourd'hui Kaliningrad, en Russie.",
+      "essentiel": true,
+      "biographie": "bio_kant"
+    },
+    {
+      "slug": "lessing",
+      "nom": "Gotthold Ephraim Lessing",
+      "titre": "Naissance de Gotthold Ephraim Lessing",
+      "axe": "Littérature et pensée",
+      "naissance": 1729,
+      "pays": "DE",
+      "wikipedia": "Gotthold_Ephraim_Lessing",
+      "portrait": {
+        "fichier": "Gotthold Ephraim Lessing Kunstsammlung Uni Leipzig.jpg",
+        "licence": "Domaine public",
+        "auteur": "Anton Graff",
+        "legende": "Lessing, portrait peint par Anton Graff (1771)"
+      },
+      "description": "Gotthold Ephraim Lessing (1729-1781) est un écrivain et critique allemand des Lumières, né à Kamenz, en Saxe, fils de pasteur. Auteur de « Minna von Barnhelm » (1767), d'« Emilia Galotti » (1772) et de « Nathan le Sage » (1779), pièce de tolérance religieuse où un Juif, un chrétien et un musulman se montrent également dignes, il fonde le théâtre allemand moderne. Bibliothécaire du duc à Wolfenbüttel, il écrit aussi « Laocoon » (1766), qui pose les limites de la poésie et de la peinture, et meurt à Brunswick en 1781."
+    },
+    {
+      "slug": "goethe",
+      "nom": "Johann Wolfgang von Goethe",
+      "titre": "Naissance de Johann Wolfgang von Goethe",
+      "axe": "Littérature et pensée",
+      "naissance": 1749,
+      "pays": "DE",
+      "wikipedia": "Johann_Wolfgang_von_Goethe",
+      "portrait": {
+        "fichier": "Goethe (Stieler 1828).jpg",
+        "licence": "Domaine public",
+        "auteur": "Joseph Karl Stieler",
+        "legende": "Goethe, portrait peint par Joseph Karl Stieler (1828)"
+      },
+      "description": "Johann Wolfgang von Goethe (1749-1832) est le plus grand écrivain de langue allemande, poète, romancier, dramaturge et savant, né à Francfort-sur-le-Main. Auteur des « Souffrances du jeune Werther » (1774), de « Wilhelm Meister » et de « Faust », dont la première partie paraît en 1808 et la seconde après sa mort, il dirige le théâtre de Weimar et siège au conseil du duc Charles-Auguste. Passionné par la botanique, l'optique et l'anatomie, il mène avec Schiller, de 1794 à 1805, le « classicisme de Weimar », et meurt dans cette ville en 1832.",
+      "essentiel": true,
+      "biographie": "bio_goethe"
+    },
+    {
+      "slug": "schiller",
+      "nom": "Friedrich von Schiller",
+      "titre": "Naissance de Friedrich von Schiller",
+      "axe": "Littérature et pensée",
+      "naissance": 1759,
+      "pays": "DE",
+      "wikipedia": "Friedrich_Schiller",
+      "portrait": {
+        "fichier": "Friedrich Schiller by Ludovike Simanowiz.jpg",
+        "licence": "Domaine public",
+        "auteur": "Ludovike Simanowiz",
+        "legende": "Schiller, portrait peint par Ludovike Simanowiz (1793-1794)"
+      },
+      "description": "Friedrich von Schiller (1759-1805) est un poète, dramaturge et historien allemand, né à Marbach, en Wurtemberg, médecin militaire de formation. Il s'impose à vingt-deux ans avec « Les Brigands » (1781), puis écrit « Don Carlos », « Wallenstein » et « Guillaume Tell » (1804), des drames où la liberté, la tyrannie et le devoir s'affrontent. Son « Ode à la joie » (1785) est mise en musique par Beethoven dans le finale de la Neuvième Symphonie, devenu hymne européen, et il meurt à Weimar en 1805, à quarante-cinq ans.",
+      "essentiel": true
+    },
+    {
+      "slug": "hegel",
+      "nom": "Georg Wilhelm Friedrich Hegel",
+      "titre": "Naissance de Georg Wilhelm Friedrich Hegel",
+      "axe": "Littérature et pensée",
+      "naissance": 1770,
+      "pays": "DE",
+      "wikipedia": "Georg_Wilhelm_Friedrich_Hegel",
+      "portrait": {
+        "fichier": "Hegel by Schlesinger.jpg",
+        "licence": "Domaine public",
+        "auteur": "Jakob Schlesinger",
+        "legende": "Hegel, portrait peint par Jakob Schlesinger (1831)"
+      },
+      "description": "Georg Wilhelm Friedrich Hegel (1770-1831) est un philosophe allemand, né à Stuttgart, professeur à Heidelberg puis à Berlin à partir de 1818, qui construit l'un des derniers grands systèmes de la philosophie. Dans la « Phénoménologie de l'esprit » (1807), écrite, dit-on, au moment où Napoléon entre à Iéna, puis dans la « Science de la logique » et les « Principes de la philosophie du droit », il pense l'histoire comme le devenir de la raison, dont la liberté est l'aboutissement. Sa dialectique, reprise par Marx puis contestée par Kierkegaard, domine la pensée du XIXe siècle, et il meurt à Berlin en 1831, probablement du choléra.",
+      "biographie": "bio_hegel"
+    },
+    {
+      "slug": "jgrimm",
+      "nom": "Jacob Grimm",
+      "titre": "Naissance de Jacob Grimm",
+      "axe": "Littérature et pensée",
+      "naissance": 1785,
+      "pays": "DE",
+      "wikipedia": "Jacob_Grimm",
+      "portrait": {
+        "fichier": "Jacob Grimm Friedlaender.png",
+        "licence": "Domaine public",
+        "auteur": "Siegmund Friedlaender",
+        "legende": "Jacob Grimm, portrait de Siegmund Friedlaender (1857)"
+      },
+      "description": "Jacob Grimm (1785-1863) est un philologue allemand, né à Hanau, fondateur des études sur la langue et la mythologie germaniques. Avec son frère Wilhelm, il recueille les « Contes de l'enfance et du foyer » (1812-1815), dont « Blanche-Neige », « Cendrillon » et « Le Petit Chaperon rouge », et il publie une « Grammaire allemande » où il formule la loi des mutations consonantiques, dite loi de Grimm. Chassé de Göttingen en 1837 avec six collègues pour avoir protesté contre la suspension de la Constitution du Hanovre, il commence avec Wilhelm un grand « Dictionnaire allemand » qui ne s'achèvera qu'en 1961.",
+      "essentiel": true
+    },
+    {
+      "slug": "wgrimm",
+      "nom": "Wilhelm Grimm",
+      "titre": "Naissance de Wilhelm Grimm",
+      "axe": "Littérature et pensée",
+      "naissance": 1786,
+      "pays": "DE",
+      "wikipedia": "Wilhelm_Grimm",
+      "portrait": {
+        "fichier": "Wilhelm Grimm Friedlaender.png",
+        "licence": "Domaine public",
+        "auteur": "Siegmund Friedlaender",
+        "legende": "Wilhelm Grimm, portrait de Siegmund Friedlaender (milieu du XIXe siècle)"
+      },
+      "description": "Wilhelm Grimm (1786-1859) est un philologue et écrivain allemand, né à Hanau, frère cadet de Jacob, de santé fragile, bibliothécaire à Cassel puis professeur à Göttingen et à Berlin. C'est lui qui donne aux contes recueillis avec son frère leur forme écrite définitive, plus simple et plus vivante, entre la première édition de 1812 et la septième de 1857. Avec Jacob, il est l'un des « Sept de Göttingen » congédiés en 1837, et il meurt à Berlin en 1859, quatre ans avant son frère."
+    },
+    {
+      "slug": "schopenhauer",
+      "nom": "Arthur Schopenhauer",
+      "titre": "Naissance d'Arthur Schopenhauer",
+      "axe": "Littérature et pensée",
+      "naissance": 1788,
+      "pays": "DE",
+      "wikipedia": "Arthur_Schopenhauer",
+      "portrait": {
+        "fichier": "Arthur Schopenhauer by J Schäfer, 1859b.jpg",
+        "licence": "Domaine public",
+        "auteur": "Johann Schäfer",
+        "legende": "Schopenhauer, photographie de Johann Schäfer (mars 1859)"
+      },
+      "description": "Arthur Schopenhauer (1788-1860) est un philosophe allemand, né à Dantzig, fils d'un riche négociant, qui vit longtemps de ses rentes à Francfort. Dans « Le Monde comme volonté et comme représentation » (1818), il fait de la volonté, aveugle et sans but, le fond du monde et de la souffrance humaine, et il y cherche un apaisement dans l'art, la compassion et le renoncement, sous l'influence du bouddhisme et des Upanishads. Ignoré pendant trente ans, après avoir en vain donné ses cours à Berlin à la même heure que Hegel, il devient célèbre vers 1851 et influence Nietzsche, Wagner, Freud et Tolstoï."
+    },
+    {
+      "slug": "heine",
+      "nom": "Heinrich Heine",
+      "titre": "Naissance de Heinrich Heine",
+      "axe": "Littérature et pensée",
+      "naissance": 1797,
+      "pays": "DE",
+      "wikipedia": "Heinrich_Heine",
+      "portrait": {
+        "fichier": "Heinrich Heine.PNG",
+        "licence": "Domaine public",
+        "auteur": "Moritz Daniel Oppenheim",
+        "legende": "Heinrich Heine, portrait peint par Moritz Daniel Oppenheim (1831)"
+      },
+      "description": "Heinrich Heine (1797-1856) est un poète et essayiste allemand, né à Düsseldorf dans une famille juive, converti au protestantisme en 1825, qui s'exile à Paris en 1831. Auteur du « Livre des chants » (1827), mis en musique par Schubert et Schumann, et du poème « Lorelei », il mêle lyrisme romantique et ironie dans ses récits de voyage et ses articles sur la France. Paralysé, il passe huit ans dans sa « tombe-matelas » avant de mourir à Paris en 1856, et les nazis brûlent ses livres en 1933, lui qui avait écrit : « Là où l'on brûle des livres, on finit par brûler des hommes »."
+    },
+    {
+      "slug": "marx",
+      "nom": "Karl Marx",
+      "titre": "Naissance de Karl Marx",
+      "axe": "Littérature et pensée",
+      "naissance": 1818,
+      "pays": "DE",
+      "wikipedia": "Karl_Marx",
+      "portrait": {
+        "fichier": "Karl Marx 001 restored.jpg",
+        "licence": "Domaine public",
+        "auteur": "John Jabez Edwin Mayall",
+        "legende": "Karl Marx, photographie de John Mayall (avant 1875)"
+      },
+      "description": "Karl Marx (1818-1883) est un philosophe, économiste et théoricien socialiste allemand, né à Trèves, docteur en philosophie, qui passe l'essentiel de sa vie d'exilé à Bruxelles, à Paris puis à Londres. Auteur avec Friedrich Engels du « Manifeste du parti communiste » (1848), puis du « Capital » (1867), il analyse l'histoire comme une lutte des classes et le capitalisme comme un système fondé sur l'exploitation du travail salarié. Sa pensée, le marxisme, inspire les mouvements ouvriers et les révolutions du XXe siècle, souvent au prix de régimes autoritaires qu'il n'avait pas prévus, et il meurt à Londres en 1883, apatride.",
+      "essentiel": true,
+      "biographie": "bio_marx"
+    },
+    {
+      "slug": "nietzsche",
+      "nom": "Friedrich Nietzsche",
+      "titre": "Naissance de Friedrich Nietzsche",
+      "axe": "Littérature et pensée",
+      "naissance": 1844,
+      "pays": "DE",
+      "wikipedia": "Friedrich_Nietzsche",
+      "portrait": {
+        "fichier": "Nietzsche187a.jpg",
+        "licence": "Domaine public",
+        "auteur": "Friedrich Hermann Hartmann",
+        "legende": "Nietzsche, photographie de Friedrich Hermann Hartmann (vers 1875)"
+      },
+      "description": "Friedrich Nietzsche (1844-1900) est un philosophe et philologue allemand, né à Röcken, en Saxe prussienne, professeur de philologie à Bâle dès vingt-quatre ans. Dans « Ainsi parlait Zarathoustra » (1883-1885), « Par-delà le bien et le mal » et « Généalogie de la morale », il proclame la « mort de Dieu », attaque la morale chrétienne et appelle à créer de nouvelles valeurs, avec l'idée du surhomme et de l'éternel retour. Effondré mentalement à Turin en janvier 1889, il passe ses dernières années chez sa mère puis sa sœur Elisabeth, qui falsifie ses écrits pour les rapprocher de l'antisémitisme, qu'il avait toujours rejeté, et il meurt à Weimar en 1900.",
+      "essentiel": true,
+      "biographie": "bio_nietzsche"
+    },
+    {
+      "slug": "spyri",
+      "nom": "Johanna Spyri",
+      "titre": "Naissance de Johanna Spyri",
+      "axe": "Littérature et pensée",
+      "naissance": 1827,
+      "pays": "CH",
+      "wikipedia": "Johanna_Spyri",
+      "portrait": {
+        "fichier": "Zentralbibliothek Zürich - Johanna Spyri - 000006279 2.tif",
+        "licence": "Domaine public",
+        "auteur": "Johannes Ganz",
+        "recadrage": [
+          0.2,
+          0.0,
+          0.8,
+          0.45
+        ],
+        "legende": "Johanna Spyri, photographie de Johannes Ganz (vers 1870-1879)"
+      },
+      "description": "Johanna Spyri (1827-1901) est une écrivaine suisse, née Heusser à Hirzel, au-dessus du lac de Zurich, fille d'un médecin, mariée à un avocat zurichois. Elle publie en 1880-1881 « Heidi », l'histoire d'une orpheline envoyée chez son grand-père dans les Alpes, qui devient l'un des livres pour enfants les plus lus du monde, traduit dans plus de cinquante langues. Adapté des dizaines de fois au cinéma et à la télévision, ce roman a fixé à l'étranger l'image de la Suisse alpine, alors que son autrice a passé l'essentiel de sa vie à Zurich."
+    },
+    {
+      "slug": "weber",
+      "nom": "Max Weber",
+      "titre": "Naissance de Max Weber",
+      "axe": "Littérature et pensée",
+      "naissance": 1864,
+      "pays": "DE",
+      "wikipedia": "Max_Weber",
+      "portrait": {
+        "fichier": "Max Weber 1894.jpg",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu",
+        "legende": "Max Weber, photographie de 1894"
+      },
+      "description": "Max Weber (1864-1920) est un sociologue, économiste et juriste allemand, né à Erfurt, professeur à Fribourg, à Heidelberg puis à Munich, l'un des fondateurs de la sociologie moderne. Dans « L'Éthique protestante et l'esprit du capitalisme » (1904-1905), il lie les valeurs du protestantisme ascétique à la naissance du capitalisme, et il définit l'État comme le détenteur du monopole de la violence légitime, dans « Le Savant et le politique » (1919). Il distingue trois types de domination légitime, traditionnelle, charismatique et légale-rationnelle, et meurt d'une pneumonie à Munich en 1920, laissant « Économie et société » inachevé."
+    },
+    {
+      "slug": "freud",
+      "nom": "Sigmund Freud",
+      "titre": "Naissance de Sigmund Freud",
+      "axe": "Littérature et pensée",
+      "naissance": 1856,
+      "pays": "AT",
+      "wikipedia": "Sigmund_Freud",
+      "portrait": {
+        "fichier": "Sigmund Freud, by Max Halberstadt (cropped).jpg",
+        "licence": "Domaine public",
+        "auteur": "Max Halberstadt",
+        "legende": "Sigmund Freud, photographie de Max Halberstadt (vers 1921)"
+      },
+      "description": "Sigmund Freud (1856-1939) est un médecin neurologue autrichien, né à Freiberg, en Moravie (aujourd'hui Příbor, en Tchéquie), qui passe presque toute sa vie à Vienne et y fonde la psychanalyse. Avec « L'Interprétation des rêves » (1899), ses études sur l'hystérie et sa théorie de la sexualité, il décrit l'inconscient, le refoulement, le complexe d'Œdipe et les trois instances du moi, du ça et du surmoi, et il invente une méthode de cure par la parole. Juif menacé après l'Anschluss de 1938, il s'exile à Londres, où il meurt en 1939 d'un cancer de la mâchoire, après avoir vu ses livres brûlés à Berlin en 1933 et ses quatre sœurs mourir dans les camps.",
+      "essentiel": true
+    },
+    {
+      "slug": "saussure",
+      "nom": "Ferdinand de Saussure",
+      "titre": "Naissance de Ferdinand de Saussure",
+      "axe": "Littérature et pensée",
+      "naissance": 1857,
+      "pays": "CH",
+      "wikipedia": "Ferdinand_de_Saussure",
+      "portrait": {
+        "fichier": "Ferdinand de Saussure by Jullien.png",
+        "licence": "Domaine public",
+        "legende": "Ferdinand de Saussure, photographie de Jullien (avant 1913)",
+        "auteur": "F. Jullien (Genève)"
+      },
+      "description": "Ferdinand de Saussure (1857-1913) est un linguiste suisse, né à Genève dans une famille de savants, professeur à Genève après avoir enseigné à Paris. Il publie à vingt et un ans un « Mémoire sur le système primitif des voyelles dans les langues indo-européennes », qui annonce la découverte des laryngales, puis donne à Genève, entre 1907 et 1911, trois cours de linguistique générale. Ses élèves les publient en 1916 sous le titre de « Cours de linguistique générale » : en y distinguant la langue et la parole, le signifiant et le signifié, il fonde le structuralisme, qui inspirera Lévi-Strauss, Barthes et Lacan."
+    },
+    {
+      "slug": "jung",
+      "nom": "Carl Gustav Jung",
+      "titre": "Naissance de Carl Gustav Jung",
+      "axe": "Littérature et pensée",
+      "naissance": 1875,
+      "pays": "CH",
+      "wikipedia": "Carl_Gustav_Jung",
+      "portrait": {
+        "fichier": "UBH Portr BS Jung CG 1875 6 (cropped).jpg",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu",
+        "legende": "Carl Gustav Jung, photographie (vers 1935, bibliothèque universitaire de Bâle)"
+      },
+      "description": "Carl Gustav Jung (1875-1961) est un psychiatre suisse, né à Kesswil, sur le lac de Constance, longtemps médecin à l'hôpital du Burghölzli à Zurich puis dans sa maison de Küsnacht. Disciple puis rival de Freud, avec qui il rompt en 1913, il fonde la « psychologie analytique », construite sur l'inconscient collectif, les archétypes, l'introversion et l'extraversion. Sa lecture des mythes, de l'alchimie et des religions, mais aussi ses propos ambigus sur la psychologie « germanique » dans les années 1930, restent discutés, et il meurt à Küsnacht en 1961.",
+      "essentiel": true
+    },
+    {
+      "slug": "rilke",
+      "nom": "Rainer Maria Rilke",
+      "titre": "Naissance de Rainer Maria Rilke",
+      "axe": "Littérature et pensée",
+      "naissance": 1875,
+      "pays": "AT",
+      "wikipedia": "Rainer_Maria_Rilke",
+      "portrait": {
+        "fichier": "Rainer Maria Rilke 1900.jpg",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu",
+        "legende": "Rainer Maria Rilke, photographie du 18 septembre 1900"
+      },
+      "description": "Rainer Maria Rilke (1875-1926) est un poète de langue allemande, né à Prague, alors en Autriche-Hongrie, qui passe sa vie à voyager entre la Russie, Paris, l'Italie et la Suisse. Secrétaire du sculpteur Auguste Rodin à Paris en 1905-1906, il écrit « Les Cahiers de Malte Laurids Brigge » (1910), les « Élégies de Duino » (1912-1922) et les « Sonnets à Orphée » (1922), qui renouvellent la poésie par leur méditation sur l'angoisse, l'amour et la mort. Installé à Muzot, dans le Valais, il meurt en 1926 d'une leucémie, à la clinique de Valmont, près de Montreux, et repose à Rarogne, sous une épitaphe de sa main sur la rose."
+    },
+    {
+      "slug": "thomasmann",
+      "nom": "Thomas Mann",
+      "titre": "Naissance de Thomas Mann",
+      "axe": "Littérature et pensée",
+      "naissance": 1875,
+      "pays": "DE",
+      "wikipedia": "Thomas_Mann",
+      "portrait": {
+        "fichier": "Thomas Mann 1929.jpg",
+        "licence": "Domaine public",
+        "auteur": "Fondation Nobel",
+        "legende": "Thomas Mann, photographie de la Fondation Nobel (1929)"
+      },
+      "description": "Thomas Mann (1875-1955) est un romancier allemand, né à Lübeck dans une famille de négociants, prix Nobel de littérature en 1929. Auteur des « Buddenbrook » (1901), de « La Mort à Venise » (1912), de « La Montagne magique » (1924) et du « Docteur Faustus » (1947), il peint la décadence de la bourgeoisie et la tentation de la mort. Opposant au nazisme, il quitte l'Allemagne en 1933, s'installe en Suisse puis aux États-Unis, dénonce Hitler dans des émissions radiodiffusées vers l'Allemagne et finit sa vie à Kilchberg, près de Zurich, en 1955.",
+      "essentiel": true
+    },
+    {
+      "slug": "ramuz",
+      "nom": "Charles Ferdinand Ramuz",
+      "titre": "Naissance de Charles Ferdinand Ramuz",
+      "axe": "Littérature et pensée",
+      "naissance": 1878,
+      "pays": "CH",
+      "wikipedia": "Charles_Ferdinand_Ramuz",
+      "portrait": {
+        "fichier": "C.F. Ramuz-cr.jpg",
+        "licence": "Domaine public",
+        "auteur": "Photographie non attribuée (revue « Lettres », 1945)",
+        "recadrage": [
+          0.25,
+          0.05,
+          0.85,
+          0.5
+        ],
+        "legende": "C. F. Ramuz, photographie parue dans la revue « Lettres » (1945)",
+        "largeur": 500
+      },
+      "description": "Charles Ferdinand Ramuz (1878-1947) est un écrivain suisse de langue française, né à Lausanne, qui vit à Paris de 1904 à 1914 avant de revenir dans le canton de Vaud. Dans « Aline » (1905), « Jean-Luc persécuté » (1909), « La Grande Peur dans la montagne » (1926) et « Derborence » (1934), il peint avec une langue simple, volontairement éloignée du français de Paris, des paysans, des vignerons et des montagnards face à la mort et au destin. Auteur du livret de « L'Histoire du soldat », mis en musique par Stravinsky en 1918, il meurt à Pully en 1947 et reste la grande figure de la littérature romande.",
+      "biographie": "bio_ramuz"
+    },
+    {
+      "slug": "hesse",
+      "nom": "Hermann Hesse",
+      "titre": "Naissance de Hermann Hesse",
+      "axe": "Littérature et pensée",
+      "naissance": 1877,
+      "pays": "DE",
+      "wikipedia": "Hermann_Hesse",
+      "portrait": {
+        "fichier": "Hermann Hesse 1927 Photo Gret Widmann.jpg",
+        "licence": "Domaine public",
+        "auteur": "Gret Widmann",
+        "legende": "Hermann Hesse, photographie de Gret Widmann (fin des années 1920)"
+      },
+      "description": "Hermann Hesse (1877-1962) est un écrivain et peintre allemand, né à Calw, en Wurtemberg, naturalisé suisse en 1924, prix Nobel de littérature en 1946. Auteur de « Peter Camenzind », de « Siddhartha » (1922), du « Loup des steppes » (1927) et du « Jeu des perles de verre » (1943), il y raconte la quête de soi, entre raison et instinct, et la sagesse de l'Orient. Pacifiste, hostile à la guerre de 1914 puis au nazisme, il vit à Montagnola, au Tessin, où il meurt en 1962 ; adopté dans les années 1960 par la contre-culture américaine, il compte parmi les écrivains de langue allemande les plus lus au monde."
+    },
+    {
+      "slug": "zweig",
+      "nom": "Stefan Zweig",
+      "titre": "Naissance de Stefan Zweig",
+      "axe": "Littérature et pensée",
+      "naissance": 1881,
+      "pays": "AT",
+      "wikipedia": "Stefan_Zweig",
+      "portrait": {
+        "fichier": "Zweig Setzer 1927.jpg",
+        "licence": "Domaine public",
+        "auteur": "Franz Xaver Setzer",
+        "legende": "Stefan Zweig, photographie de Franz Xaver Setzer (1927)"
+      },
+      "description": "Stefan Zweig (1881-1942) est un écrivain autrichien, né à Vienne dans une famille juive aisée, romancier, nouvelliste et biographe, l'un des auteurs de langue allemande les plus traduits de son temps. Auteur de « La Confusion des sentiments », de « Vingt-quatre heures de la vie d'une femme », de biographies de Marie-Antoinette et de Magellan et du « Joueur d'échecs », il évoque dans « Le Monde d'hier » (1942) la Vienne d'avant 1914. Pacifiste et cosmopolite, chassé par le nazisme, il s'exile à Londres, aux États-Unis puis au Brésil, où il se suicide avec sa femme Lotte, à Petrópolis, en février 1942, désespéré de voir l'Europe perdue."
+    },
+    {
+      "slug": "kafka",
+      "nom": "Franz Kafka",
+      "titre": "Naissance de Franz Kafka",
+      "axe": "Littérature et pensée",
+      "naissance": 1883,
+      "pays": "AT",
+      "wikipedia": "Franz_Kafka",
+      "portrait": {
+        "fichier": "Franz Kafka, 1923.jpg",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu",
+        "legende": "Franz Kafka, photographie (1923-1924)"
+      },
+      "description": "Franz Kafka (1883-1924) est un écrivain de langue allemande, né à Prague, alors en Autriche-Hongrie, dans une famille juive, juriste et employé d'une compagnie d'assurances ouvrières. Auteur de « La Métamorphose » (1915), du « Procès » et du « Château », romans où un individu écrasé par une autorité absurde se débat dans un monde sans issue, il ne publie de son vivant que quelques nouvelles. Mort de la tuberculose à Kierling, près de Vienne, en 1924, il avait demandé à son ami Max Brod de brûler ses manuscrits ; Brod les publie, et l'adjectif « kafkaïen » est entré dans la langue.",
+      "essentiel": true,
+      "biographie": "bio_kafka"
+    },
+    {
+      "slug": "wittgenstein",
+      "nom": "Ludwig Wittgenstein",
+      "titre": "Naissance de Ludwig Wittgenstein",
+      "axe": "Littérature et pensée",
+      "naissance": 1889,
+      "pays": "AT",
+      "wikipedia": "Ludwig_Wittgenstein",
+      "portrait": {
+        "fichier": "Ludwig Wittgenstein.jpg",
+        "licence": "Domaine public",
+        "auteur": "Moritz Nähr",
+        "legende": "Ludwig Wittgenstein, photographie de Moritz Nähr (1930)"
+      },
+      "description": "Ludwig Wittgenstein (1889-1951) est un philosophe autrichien, né à Vienne dans l'une des familles les plus riches de l'Empire, devenu britannique en 1939. Dans le « Tractatus logico-philosophicus » (1921), il estime avoir résolu les problèmes de la philosophie en montrant les limites du langage, puis il enseigne dans des écoles de village avant de revenir à Cambridge. Dans les « Recherches philosophiques », publiées après sa mort, il renonce à cette vision pour étudier les « jeux de langage », et il meurt à Cambridge en 1951, léguant une œuvre qui domine la philosophie du XXe siècle."
+    },
+    {
+      "slug": "piaget",
+      "nom": "Jean Piaget",
+      "titre": "Naissance de Jean Piaget",
+      "axe": "Littérature et pensée",
+      "naissance": 1896,
+      "pays": "CH",
+      "wikipedia": "Jean_Piaget",
+      "portrait": {
+        "fichier": "Jean Piaget in Ann Arbor.png",
+        "licence": "Domaine public",
+        "auteur": "Auteur non identifié (annuaire Ensian de l'université du Michigan)",
+        "legende": "Jean Piaget, photographie prise à Ann Arbor (1967 ou 1968)"
+      },
+      "description": "Jean Piaget (1896-1980) est un psychologue et biologiste suisse, né à Neuchâtel, docteur en sciences naturelles à vingt-deux ans, professeur à Genève. Observant ses propres enfants, il découvre que l'enfant ne pense pas comme un adulte en miniature et décrit quatre stades de son développement intellectuel, du stade sensori-moteur à celui des opérations formelles. Fondateur du Centre international d'épistémologie génétique à Genève et directeur du Bureau international d'éducation de 1929 à 1967, il meurt en 1980, et sa théorie a profondément marqué la pédagogie."
+    },
+    {
+      "slug": "brecht",
+      "nom": "Bertolt Brecht",
+      "titre": "Naissance de Bertolt Brecht",
+      "axe": "Littérature et pensée",
+      "naissance": 1898,
+      "pays": "DE",
+      "wikipedia": "Bertolt_Brecht",
+      "portrait": {
+        "fichier": "Bundesarchiv Bild 183-W0409-300, Bertolt Brecht.jpg",
+        "licence": "CC BY-SA 3.0 DE",
+        "auteur": "Jörg Kolbe (Bundesarchiv)",
+        "legende": "Bertolt Brecht, photographie de 1954 (Archives fédérales allemandes)"
+      },
+      "description": "Bertolt Brecht (1898-1956) est un dramaturge et poète allemand, né à Augsbourg, auteur de pièces qui veulent faire réfléchir plutôt qu'émouvoir, par ce qu'il appelle le « théâtre épique » et l'effet de distanciation. Il triomphe à Berlin en 1928 avec « L'Opéra de quat'sous », sur une musique de Kurt Weill, puis, exilé dès 1933 au Danemark, en Suède, en Finlande et aux États-Unis, écrit « Mère Courage et ses enfants », « La Vie de Galilée » et « Le Cercle de craie caucasien ». Revenu à Berlin-Est en 1949, il fonde avec sa femme Helene Weigel le Berliner Ensemble, en gardant un rapport ambigu avec le régime de la RDA, et il meurt en 1956."
+    },
+    {
+      "slug": "remarque",
+      "nom": "Erich Maria Remarque",
+      "titre": "Naissance d'Erich Maria Remarque",
+      "axe": "Littérature et pensée",
+      "naissance": 1898,
+      "pays": "DE",
+      "wikipedia": "Erich_Maria_Remarque",
+      "portrait": {
+        "fichier": "Bundesarchiv Bild 183-R04034, Erich Maria Remarque (cropped).jpg",
+        "licence": "CC BY-SA 3.0 DE",
+        "auteur": "Auteur inconnu (Bundesarchiv)",
+        "legende": "Erich Maria Remarque, photographie de 1929 (Archives fédérales allemandes)"
+      },
+      "description": "Erich Maria Remarque (1898-1970) est un écrivain allemand, né à Osnabrück, blessé au front en 1917 à dix-neuf ans. Son roman « À l'Ouest, rien de nouveau » (1929), où un jeune soldat raconte les tranchées de 1914-1918, se vend à plusieurs millions d'exemplaires et est porté à l'écran en 1930. Déchu de sa nationalité par les nazis, qui brûlent ses livres en 1933, il s'exile en Suisse puis aux États-Unis, écrit « Arc de triomphe » et « Un temps pour vivre, un temps pour mourir », et meurt à Locarno en 1970."
+    },
+    {
+      "slug": "popper",
+      "nom": "Karl Popper",
+      "titre": "Naissance de Karl Popper",
+      "axe": "Littérature et pensée",
+      "naissance": 1902,
+      "pays": "AT",
+      "wikipedia": "Karl_Popper",
+      "portrait": {
+        "fichier": "Photo of Karl Popper (cropped).jpg",
+        "licence": "CC BY-SA 4.0",
+        "auteur": "DorianKBandy",
+        "legende": "Karl Popper, photographie (vers 1980)"
+      },
+      "description": "Karl Popper (1902-1994) est un philosophe autrichien des sciences, né à Vienne, naturalisé britannique en 1945, qui enseigne à la London School of Economics. Dans « La Logique de la découverte scientifique » (1934), il soutient qu'une théorie n'est scientifique que si l'expérience peut la réfuter, ce qu'il appelle la « falsifiabilité », en opposition à l'induction et, selon lui, à la psychanalyse. Exilé en Nouvelle-Zélande pendant la guerre, il publie « La Société ouverte et ses ennemis » (1945), contre Platon, Hegel et Marx, et meurt à Londres en 1994."
+    },
+    {
+      "slug": "arendt",
+      "nom": "Hannah Arendt",
+      "titre": "Naissance de Hannah Arendt",
+      "axe": "Littérature et pensée",
+      "naissance": 1906,
+      "pays": "DE",
+      "wikipedia": "Hannah_Arendt",
+      "portrait": {
+        "fichier": "Hannah Arendt 1975 (cropped).jpg",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu",
+        "legende": "Hannah Arendt, photographie de 1975"
+      },
+      "description": "Hannah Arendt (1906-1975) est une philosophe et politologue allemande, née à Linden, près de Hanovre, dans une famille juive, élève de Heidegger et de Jaspers. Arrêtée par la Gestapo en 1933, elle fuit à Paris puis, après l'internement de Gurs en 1940, aux États-Unis, d'où elle publie « Les Origines du totalitarisme » (1951) et « Condition de l'homme moderne » (1958). En 1961, elle suit à Jérusalem le procès d'Adolf Eichmann et en tire la formule controversée de la « banalité du mal » ; elle meurt à New York en 1975."
+    },
+    {
+      "slug": "frisch",
+      "nom": "Max Frisch",
+      "titre": "Naissance de Max Frisch",
+      "axe": "Littérature et pensée",
+      "naissance": 1911,
+      "pays": "CH",
+      "wikipedia": "Max_Frisch",
+      "portrait": {
+        "fichier": "ETH-BIB-Max Frisch-Com C20-015-023-001.jpg",
+        "licence": "CC BY-SA 4.0",
+        "auteur": "Comet Photo AG (Zurich)",
+        "legende": "Max Frisch, photographie de Comet Photo AG (vers 1974, ETH-Bibliothek)"
+      },
+      "description": "Max Frisch (1911-1991) est un écrivain et architecte suisse, né à Zurich, qui construit une piscine publique avant de se consacrer à la littérature en 1955. Dans « Stiller » (1954), « Homo faber » (1957) et « Mon nom soit Gantenbein » (1964), il met en scène des hommes en quête de leur identité, et ses pièces, comme « Biedermann et les incendiaires » (1958) et « Andorra » (1961), dénoncent la lâcheté devant le fascisme. Critique de la Suisse, dont il raille l'étroitesse dans « Guillaume Tell pour l'école » (1971), il meurt à Zurich en 1991, après avoir publié un « Journal » qui reste un modèle du genre."
+    },
+    {
+      "slug": "boll",
+      "nom": "Heinrich Böll",
+      "titre": "Naissance de Heinrich Böll",
+      "axe": "Littérature et pensée",
+      "naissance": 1917,
+      "pays": "DE",
+      "wikipedia": "Heinrich_Böll",
+      "portrait": {
+        "fichier": "Bundesarchiv B 145 Bild-F062164-0004, Bonn, Heinrich Böll.jpg",
+        "licence": "CC BY-SA 3.0 DE",
+        "auteur": "Harald Hoffmann (Bundesarchiv)",
+        "legende": "Heinrich Böll, photographie de Harald Hoffmann (22 décembre 1981, Archives fédérales allemandes)"
+      },
+      "description": "Heinrich Böll (1917-1985) est un écrivain allemand, né à Cologne, soldat de la Wehrmacht pendant six ans, prix Nobel de littérature en 1972. Dans « Où étais-tu, Adam ? », « Billard à neuf heures et demie », « Portrait de groupe avec dame » et « L'Honneur perdu de Katharina Blum », il décrit l'Allemagne de la guerre et du miracle économique et prend le parti des humbles contre l'Église, l'État et la presse à sensation. Président du PEN club international de 1971 à 1974, il soutient des dissidents soviétiques, dont Soljenitsyne qu'il héberge en 1974, et meurt en 1985 dans l'Eifel."
+    },
+    {
+      "slug": "durrenmatt",
+      "nom": "Friedrich Dürrenmatt",
+      "titre": "Naissance de Friedrich Dürrenmatt",
+      "axe": "Littérature et pensée",
+      "naissance": 1921,
+      "pays": "CH",
+      "wikipedia": "Friedrich_Dürrenmatt",
+      "portrait": {
+        "fichier": "Friedrich duerrenmatt 19890427.jpg",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Elke Wetzig",
+        "legende": "Friedrich Dürrenmatt, photographie d'Elke Wetzig (27 avril 1989)"
+      },
+      "description": "Friedrich Dürrenmatt (1921-1990) est un écrivain et dramaturge suisse de langue allemande, né à Konolfingen, dans le canton de Berne, fils de pasteur, également peintre. Auteur des pièces « La Visite de la vieille dame » (1956) et « Les Physiciens » (1962), il y présente, en tragi-comédies grinçantes, un monde où la justice se vend et où le savant ne maîtrise plus ses découvertes. Auteur de romans policiers comme « Le Juge et son bourreau » (1950), il vit à Neuchâtel jusqu'à sa mort en 1990 et reste, avec Max Frisch, l'une des deux grandes voix de la littérature suisse d'après-guerre."
+    },
+    {
+      "slug": "grass",
+      "nom": "Günter Grass",
+      "titre": "Naissance de Günter Grass",
+      "axe": "Littérature et pensée",
+      "naissance": 1927,
+      "pays": "DE",
+      "wikipedia": "Günter_Grass",
+      "portrait": {
+        "fichier": "Günter Grass auf dem Blauen Sofa.jpg",
+        "licence": "CC BY 2.0",
+        "auteur": "Das Blaue Sofa (Berlin)",
+        "legende": "Günter Grass, photographie lors de l'émission « Das Blaue Sofa » (4 septembre 2006)"
+      },
+      "description": "Günter Grass (1927-2015) est un écrivain, sculpteur et dessinateur allemand, né à Dantzig, alors ville libre, prix Nobel de littérature en 1999. Son roman « Le Tambour » (1959), où le petit Oskar refuse de grandir pour ne pas entrer dans le monde des adultes sous le nazisme, ouvre la littérature allemande à la confrontation avec le passé. Social-démocrate engagé aux côtés de Willy Brandt, il révèle en 2006 avoir été, à dix-sept ans, soldat de la Waffen-SS à la fin de la guerre, ce qui suscite une polémique, et il meurt à Lübeck en 2015."
+    },
+    {
+      "slug": "durer",
+      "nom": "Albrecht Dürer",
+      "titre": "Naissance d'Albrecht Dürer",
+      "axe": "Beaux-arts",
+      "naissance": 1471,
+      "pays": "DE",
+      "wikipedia": "Albrecht_Dürer",
+      "portrait": {
+        "fichier": "Albrecht Dürer - 1500 self-portrait (High resolution and detail).jpg",
+        "licence": "Domaine public",
+        "auteur": "Albrecht Dürer",
+        "legende": "Albrecht Dürer, autoportrait peint en 1500 (Alte Pinakothek, Munich)"
+      },
+      "description": "Albrecht Dürer (1471-1528) est un peintre, graveur et théoricien allemand, né à Nuremberg, fils d'un orfèvre venu de Hongrie, qui voyage deux fois à Venise, en 1494 puis en 1505-1507. Auteur de gravures comme « Le Chevalier, la Mort et le Diable » (1513) et « Melencolia I » (1514), de retables et de portraits, il est l'un des premiers artistes à signer ses œuvres d'un monogramme et à multiplier les autoportraits, dont celui de 1500, où il se représente sous les traits du Christ. Il introduit la perspective et les proportions de la Renaissance italienne dans l'art allemand et meurt à Nuremberg en 1528, en laissant des traités de géométrie et de proportions.",
+      "essentiel": true
+    },
+    {
+      "slug": "cranach",
+      "nom": "Lucas Cranach l'Ancien",
+      "titre": "Naissance de Lucas Cranach l'Ancien",
+      "axe": "Beaux-arts",
+      "naissance": 1472,
+      "pays": "DE",
+      "wikipedia": "Lucas_Cranach_l'Ancien",
+      "portrait": {
+        "fichier": "Lucas Cranach d. Ä. 063.jpg",
+        "licence": "Domaine public",
+        "auteur": "Lucas Cranach le Jeune",
+        "legende": "Lucas Cranach l'Ancien, portrait peint par son fils Lucas Cranach le Jeune (1550)"
+      },
+      "description": "Lucas Cranach l'Ancien (1472-1553) est un peintre et graveur allemand, né à Kronach, en Franconie, dont il prend le nom, et peintre de la cour de Saxe à Wittenberg à partir de 1505. Ami de Luther, qu'il peint à de nombreuses reprises, il dirige un grand atelier qui diffuse les portraits des chefs de la Réforme et il illustre le Nouveau Testament de Luther en 1522. Auteur de nus mythologiques et de portraits d'une élégance singulière, fidèle à son prince Jean-Frédéric, qu'il suit en captivité à Augsbourg, il meurt à Weimar en 1553."
+    },
+    {
+      "slug": "holbein",
+      "nom": "Hans Holbein le Jeune",
+      "titre": "Naissance de Hans Holbein le Jeune",
+      "axe": "Beaux-arts",
+      "naissance": 1497,
+      "pays": "DE",
+      "wikipedia": "Hans_Holbein_le_Jeune",
+      "portrait": {
+        "fichier": "Hans Holbein the Younger, self-portrait.jpg",
+        "licence": "Domaine public",
+        "auteur": "Hans Holbein le Jeune",
+        "legende": "Hans Holbein le Jeune, autoportrait (vers 1542-1543)"
+      },
+      "description": "Hans Holbein le Jeune (1497-1543) est un peintre allemand, né à Augsbourg, installé à Bâle puis, à partir de 1532, à Londres, où il devient le peintre de la cour d'Henri VIII. Auteur du portrait d'Érasme (1523), des « Ambassadeurs » (1533) et des portraits de Thomas More, d'Anne de Clèves et d'Henri VIII, il donne des visages précis et sans flatterie aux grands de la Renaissance. Il dessine aussi une « Danse des morts » et des vitraux, et il meurt à Londres en 1543, vraisemblablement de la peste.",
+      "essentiel": true
+    },
+    {
+      "slug": "friedrich",
+      "nom": "Caspar David Friedrich",
+      "titre": "Naissance de Caspar David Friedrich",
+      "axe": "Beaux-arts",
+      "naissance": 1774,
+      "pays": "DE",
+      "wikipedia": "Caspar_David_Friedrich",
+      "portrait": {
+        "fichier": "Carl Johann Baehr - Bildnis des Malers Caspar David Friedrich.jpg",
+        "licence": "Domaine public",
+        "auteur": "Carl Johann Bähr",
+        "legende": "Caspar David Friedrich, portrait peint par Carl Johann Bähr (1836)"
+      },
+      "description": "Caspar David Friedrich (1774-1840) est un peintre allemand, né à Greifswald, sur la mer Baltique, installé à Dresde à partir de 1798, le plus grand paysagiste du romantisme allemand. Dans « Le Voyageur contemplant une mer de nuages » (1818), « Le Moine au bord de la mer » (1809) et « La Mer de glace » (1824), il place des figures de dos devant des paysages immenses et brumeux, qui expriment la solitude de l'homme devant la nature et Dieu. Victime d'une attaque en 1835, il peint moins et vit dans une misère croissante, oublié, jusqu'à sa mort en 1840, et il n'est redécouvert qu'au début du XXe siècle.",
+      "essentiel": true
+    },
+    {
+      "slug": "schinkel",
+      "nom": "Karl Friedrich Schinkel",
+      "titre": "Naissance de Karl Friedrich Schinkel",
+      "axe": "Beaux-arts",
+      "naissance": 1781,
+      "pays": "DE",
+      "wikipedia": "Karl_Friedrich_Schinkel",
+      "portrait": {
+        "fichier": "Schinkel1.jpg",
+        "licence": "Domaine public",
+        "auteur": "Carl Joseph Begas",
+        "legende": "Karl Friedrich Schinkel, portrait peint par Carl Joseph Begas (1826)"
+      },
+      "description": "Karl Friedrich Schinkel (1781-1841) est un architecte, urbaniste et peintre prussien, né à Neuruppin, au service du roi de Prusse, qui marque le visage de Berlin par son style néoclassique. Il construit la Neue Wache (1818), le théâtre royal sur le Gendarmenmarkt (1821), l'Altes Museum (1830) et l'école d'architecture, où il impose un classicisme inspiré de la Grèce ancienne, parfois mêlé de néogothique. Il dessine aussi des décors d'opéra, comme ceux de « La Flûte enchantée » (1816), exerce une grande influence sur l'architecture allemande, jusqu'à Mies van der Rohe, et meurt à Berlin en 1841."
+    },
+    {
+      "slug": "bocklin",
+      "nom": "Arnold Böcklin",
+      "titre": "Naissance d'Arnold Böcklin",
+      "axe": "Beaux-arts",
+      "naissance": 1827,
+      "pays": "CH",
+      "wikipedia": "Arnold_Böcklin",
+      "portrait": {
+        "fichier": "Arnold Böcklin (1827 - 1901), Selbstportrait (1873).jpg",
+        "licence": "Domaine public",
+        "auteur": "Arnold Böcklin",
+        "legende": "Arnold Böcklin, autoportrait (1873)"
+      },
+      "description": "Arnold Böcklin (1827-1901) est un peintre suisse, né à Bâle, formé à Düsseldorf, établi à Rome, à Florence et à Munich, qui meurt près de Florence. Il peint des paysages peuplés de créatures mythologiques, de sirènes, de centaures et de morts, dont l'« Île des morts » (1880), qui connaîtra cinq versions et inspirera Rachmaninov. Très admiré de son vivant, notamment en Allemagne, il annonce le symbolisme et influence Chirico et les surréalistes."
+    },
+    {
+      "slug": "wagnerotto",
+      "nom": "Otto Wagner",
+      "titre": "Naissance d'Otto Wagner",
+      "axe": "Beaux-arts",
+      "naissance": 1841,
+      "pays": "AT",
+      "wikipedia": "Otto_Wagner",
+      "portrait": {
+        "fichier": "Otto Wagner (1841–1918).jpg",
+        "licence": "Domaine public",
+        "legende": "Otto Wagner, portrait photographique (avant 1918)",
+        "auteur": "Auteur inconnu"
+      },
+      "description": "Otto Wagner (1841-1918) est un architecte et urbaniste autrichien, né à Penzing, près de Vienne, professeur à l'Académie des beaux-arts et maître de l'Art nouveau viennois. Constructeur des stations de métro de la Stadtbahn, de la Caisse d'épargne de la Poste (1904-1912) et de l'église Saint-Léopold am Steinhof (1907), il appelle dans « Architecture moderne » (1896) à une architecture qui serve les besoins de la vie moderne. Son refus du décor inutile et son goût du métal, du verre et de l'aluminium annoncent le fonctionnalisme, et ses élèves, comme Josef Hoffmann et Joseph Maria Olbrich, fondent la Sécession viennoise."
+    },
+    {
+      "slug": "hodler",
+      "nom": "Ferdinand Hodler",
+      "titre": "Naissance de Ferdinand Hodler",
+      "axe": "Beaux-arts",
+      "naissance": 1853,
+      "pays": "CH",
+      "wikipedia": "Ferdinand_Hodler",
+      "portrait": {
+        "fichier": "Hodler - Selbstbildnis mit Stehkragen - 1879.jpeg",
+        "licence": "Domaine public",
+        "auteur": "Ferdinand Hodler",
+        "legende": "Ferdinand Hodler, autoportrait (1879)"
+      },
+      "description": "Ferdinand Hodler (1853-1918) est un peintre suisse, né à Berne dans une famille pauvre, installé à Genève après des études d'art, qui devient le peintre national de la Suisse. Auteur de grandes compositions symbolistes comme « La Nuit » (1890) et « Le Jour » (1900), de paysages alpins, de scènes historiques et de portraits, il crée un style fait de symétrie, de contours nets et de couleurs franches qu'il nomme le « parallélisme ». Reconnu à Vienne et à Paris, il peint ses dernières œuvres sur la maladie et la mort de sa compagne Valentine Godé-Darel, et il meurt à Genève en 1918."
+    },
+    {
+      "slug": "klimt",
+      "nom": "Gustav Klimt",
+      "titre": "Naissance de Gustav Klimt",
+      "axe": "Beaux-arts",
+      "naissance": 1862,
+      "pays": "AT",
+      "wikipedia": "Gustav_Klimt",
+      "portrait": {
+        "fichier": "Klimt.jpg",
+        "licence": "Domaine public",
+        "auteur": "Josef Anton Trčka",
+        "legende": "Gustav Klimt, photographie de Josef Anton Trčka (1914)"
+      },
+      "description": "Gustav Klimt (1862-1918) est un peintre autrichien, né à Baumgarten, près de Vienne, fils d'un graveur sur or, et fondateur en 1897 de la Sécession viennoise. Auteur du « Baiser » (1908), de « Judith », de « Danaé » et des portraits d'Adèle Bloch-Bauer, il mêle l'or byzantin, l'érotisme et l'ornement pour peindre les femmes et la mort, et il décore le palais Stoclet à Bruxelles. La « Frise Beethoven » (1902) et ses tableaux pour l'université de Vienne, jugés scandaleux, le font attaquer par la critique, et il meurt à Vienne en février 1918 d'une attaque cérébrale.",
+      "essentiel": true
+    },
+    {
+      "slug": "kollwitz",
+      "nom": "Käthe Kollwitz",
+      "titre": "Naissance de Käthe Kollwitz",
+      "axe": "Beaux-arts",
+      "naissance": 1867,
+      "pays": "DE",
+      "wikipedia": "Käthe_Kollwitz",
+      "portrait": {
+        "fichier": "Käthe Kollwitz by Hugo Erfurth, 1927.jpg",
+        "licence": "Domaine public",
+        "auteur": "Hugo Erfurth",
+        "legende": "Käthe Kollwitz, photographie de Hugo Erfurth (1927)"
+      },
+      "description": "Käthe Kollwitz (1867-1945) est une artiste allemande, née à Königsberg, graveuse, dessinatrice et sculptrice, mariée à un médecin des pauvres de Berlin. Marquée par la mort de son fils Peter au front en 1914, elle consacre son œuvre à la misère, à la guerre et au deuil, avec des cycles de gravures comme « Les Tisserands » (1897-1898) et « La Guerre » (1922-1923), et la sculpture des « Parents en deuil ». Première femme élue à l'Académie des arts de Prusse, en 1919, exclue en 1933 pour son pacifisme, elle meurt à Moritzburg, près de Dresde, en avril 1945."
+    },
+    {
+      "slug": "klee",
+      "nom": "Paul Klee",
+      "titre": "Naissance de Paul Klee",
+      "axe": "Beaux-arts",
+      "naissance": 1879,
+      "pays": "CH",
+      "wikipedia": "Paul_Klee",
+      "portrait": {
+        "fichier": "Paul Klee 1911.jpg",
+        "licence": "Domaine public",
+        "auteur": "Alexander Eliasberg",
+        "legende": "Paul Klee, photographie d'Alexander Eliasberg (1911)"
+      },
+      "description": "Paul Klee (1879-1940) est un peintre suisse et allemand, né à Münchenbuchsee, près de Berne, fils d'un professeur de musique allemand, violoniste dans sa jeunesse. Marqué par un voyage en Tunisie en 1914, où il découvre la couleur, il peint de petits tableaux de signes, de lignes et de couleurs qui évoquent les rêves, la musique et l'enfance, et il enseigne au Bauhaus de 1921 à 1931. Chassé de l'académie de Düsseldorf par les nazis en 1933, qui qualifient son art de « dégénéré », il revient à Berne et y meurt en 1940, d'une sclérodermie, laissant près de dix mille œuvres.",
+      "essentiel": true
+    },
+    {
+      "slug": "gropius",
+      "nom": "Walter Gropius",
+      "titre": "Naissance de Walter Gropius",
+      "axe": "Beaux-arts",
+      "naissance": 1883,
+      "pays": "DE",
+      "wikipedia": "Walter_Gropius",
+      "portrait": {
+        "fichier": "WalterGropius-1919.jpg",
+        "licence": "Domaine public",
+        "legende": "Walter Gropius, photographie (vers 1919)",
+        "auteur": "Auteur inconnu"
+      },
+      "description": "Walter Gropius (1883-1969) est un architecte allemand, né à Berlin, fondateur en 1919 du Bauhaus à Weimar, école qui réunit l'art, l'artisanat et l'industrie. Auteur de l'usine Fagus (1911-1913) et du bâtiment du Bauhaus à Dessau (1925-1926), il prône des formes simples, des murs de verre et des matériaux industriels, pour un habitat accessible à tous. Il quitte l'Allemagne en 1934, pour Londres puis, en 1937, pour les États-Unis, où il enseigne à Harvard, forme des générations d'architectes américains et fonde le groupe The Architects Collaborative, et il meurt à Boston en 1969.",
+      "essentiel": true,
+      "biographie": "bio_gropius"
+    },
+    {
+      "slug": "mies",
+      "nom": "Ludwig Mies van der Rohe",
+      "titre": "Naissance de Ludwig Mies van der Rohe",
+      "axe": "Beaux-arts",
+      "naissance": 1886,
+      "pays": "DE",
+      "wikipedia": "Ludwig_Mies_van_der_Rohe",
+      "portrait": {
+        "fichier": "Hugo Erfurth - Portrait Ludwig Mies van der Rohe, 1934.jpg",
+        "licence": "Domaine public",
+        "auteur": "Hugo Erfurth",
+        "legende": "Ludwig Mies van der Rohe, photographie de Hugo Erfurth (1934)"
+      },
+      "description": "Ludwig Mies van der Rohe (1886-1969) est un architecte allemand, né à Aix-la-Chapelle, fils d'un tailleur de pierre, dernier directeur du Bauhaus, de 1930 à 1933. Auteur du pavillon allemand de l'exposition de Barcelone (1929), de la villa Tugendhat et de la formule « less is more », il invente une architecture de verre et d'acier, rigoureuse, dont le Seagram Building de New York (1958) est un modèle. Émigré aux États-Unis en 1938, il enseigne à Chicago, où ses tours de verre, comme les Lake Shore Drive Apartments, influencent les gratte-ciel du monde entier, et il meurt dans cette ville en 1969."
+    },
+    {
+      "slug": "kokoschka",
+      "nom": "Oskar Kokoschka",
+      "titre": "Naissance d'Oskar Kokoschka",
+      "axe": "Beaux-arts",
+      "naissance": 1886,
+      "pays": "AT",
+      "wikipedia": "Oskar_Kokoschka",
+      "portrait": {
+        "fichier": "Oskar Kokoschka by Hugo Erfurth 1919.jpg",
+        "licence": "Domaine public",
+        "auteur": "Hugo Erfurth",
+        "legende": "Oskar Kokoschka, photographie de Hugo Erfurth (1919)"
+      },
+      "description": "Oskar Kokoschka (1886-1980) est un peintre, dessinateur et écrivain autrichien, né à Pöchlarn, en Basse-Autriche, devenu britannique en 1947 et mort à Montreux, en Suisse. Portraitiste au trait nerveux et aux couleurs violentes, il est avec Schiele l'un des peintres scandaleux de la Vienne de 1910, et « La Fiancée du vent » (1914) est le monument de sa passion pour Alma Mahler. Qualifié de « dégénéré » par les nazis, il fuit à Prague puis à Londres, peint des paysages de toute l'Europe, de Prague à Venise, avant de s'installer à Villeneuve, sur le lac Léman."
+    },
+    {
+      "slug": "lecorbusier",
+      "nom": "Le Corbusier",
+      "titre": "Naissance de Le Corbusier",
+      "axe": "Beaux-arts",
+      "naissance": 1887,
+      "pays": "CH",
+      "wikipedia": "Le_Corbusier",
+      "portrait": {
+        "fichier": "Le Corbusier (1964).jpg",
+        "licence": "CC0 (domaine public)",
+        "auteur": "Joop van Bilsen (Anefo)",
+        "legende": "Le Corbusier, photographie de Joop van Bilsen (26 septembre 1964, Anefo)"
+      },
+      "description": "Le Corbusier (1887-1965) est un architecte, urbaniste et peintre suisse, de son vrai nom Charles-Édouard Jeanneret, né à La Chaux-de-Fonds, installé à Paris en 1917 et naturalisé français en 1930. Auteur de la villa Savoye (1931), de l'Unité d'habitation de Marseille (1952), de la chapelle de Ronchamp (1955) et du plan de Chandigarh en Inde, il théorise les « cinq points de l'architecture moderne » et « la maison, machine à habiter ». Défenseur d'un urbanisme radical qui sépare les fonctions de la ville, ce qui lui est reproché, il meurt noyé à Roquebrune-Cap-Martin en 1965, et dix-sept de ses œuvres sont classées au patrimoine mondial de l'UNESCO depuis 2016.",
+      "essentiel": true,
+      "biographie": "bio_lecorbusier"
+    },
+    {
+      "slug": "schiele",
+      "nom": "Egon Schiele",
+      "titre": "Naissance d'Egon Schiele",
+      "axe": "Beaux-arts",
+      "naissance": 1890,
+      "pays": "AT",
+      "wikipedia": "Egon_Schiele",
+      "portrait": {
+        "fichier": "Egon Schiele photo.jpg",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu",
+        "legende": "Egon Schiele, photographie d'auteur inconnu (1918)"
+      },
+      "description": "Egon Schiele (1890-1918) est un peintre et dessinateur autrichien, né à Tulln, élève de Klimt, devenu à vingt ans un maître de l'expressionnisme viennois. Auteur d'autoportraits tourmentés et de nus au trait sec, il choque son époque et, accusé de corruption de mineure, est emprisonné vingt-quatre jours en 1912 à Neulengbach, où l'un de ses dessins est brûlé par le juge. Il peint « La Mort et la Jeune Fille » et le portrait de sa femme Edith, enceinte, avant de mourir de la grippe espagnole à Vienne en octobre 1918, trois jours après elle, à vingt-huit ans."
+    },
+    {
+      "slug": "dix",
+      "nom": "Otto Dix",
+      "titre": "Naissance d'Otto Dix",
+      "axe": "Beaux-arts",
+      "naissance": 1891,
+      "pays": "DE",
+      "wikipedia": "Otto_Dix",
+      "portrait": {
+        "fichier": "Otto Dix by Hugo Erfurth, c. 1929.jpg",
+        "licence": "Domaine public",
+        "auteur": "Hugo Erfurth",
+        "legende": "Otto Dix, photographie de Hugo Erfurth (vers 1929)"
+      },
+      "description": "Otto Dix (1891-1969) est un peintre et graveur allemand, né à Gera, en Thuringe, volontaire en 1914, mitrailleur sur le front de l'Ouest et sur le front de l'Est jusqu'en 1918. Il en tire le cycle de gravures « La Guerre » (1924) et, dans la République de Weimar, des portraits sans complaisance de prostituées, de bourgeois et de mutilés, comme celui de la journaliste Sylvia von Harden (1926). Destitué de sa chaire de Dresde en 1933 par les nazis, qui exposent ses œuvres comme « art dégénéré », il se réfugie près du lac de Constance, est mobilisé en 1945 puis fait prisonnier, et meurt à Singen en 1969."
+    },
+    {
+      "slug": "ernst",
+      "nom": "Max Ernst",
+      "titre": "Naissance de Max Ernst",
+      "axe": "Beaux-arts",
+      "naissance": 1891,
+      "pays": "DE",
+      "wikipedia": "Max_Ernst",
+      "portrait": {
+        "fichier": "Kunstenaar Max Ernst overleden (kop), Bestanddeelnr 928-4975.jpg",
+        "licence": "CC0 (domaine public)",
+        "auteur": "Anefo",
+        "legende": "Max Ernst, photographie de presse de l'agence Anefo (1976)",
+        "recadrage": [
+          0.25,
+          0.206,
+          0.75,
+          0.71
+        ]
+      },
+      "description": "Max Ernst (1891-1976) est un peintre et sculpteur allemand, né à Brühl, près de Cologne, naturalisé américain puis français, cofondateur du dadaïsme à Cologne et l'une des grandes figures du surréalisme. Inventeur du frottage et du collage-roman, il peint « L'Éléphant Célèbes » (1921) et « La Toilette de la mariée », où se mêlent oiseaux, forêts pétrifiées et visions oniriques, et publie « La Femme 100 têtes » (1929). Interné comme étranger en France en 1939-1940 puis sauvé par Peggy Guggenheim, qui l'aide à gagner les États-Unis, il revient en France en 1953 et meurt à Paris en 1976."
+    },
+    {
+      "slug": "giacometti",
+      "nom": "Alberto Giacometti",
+      "titre": "Naissance d'Alberto Giacometti",
+      "axe": "Beaux-arts",
+      "naissance": 1901,
+      "pays": "CH",
+      "wikipedia": "Alberto_Giacometti",
+      "portrait": {
+        "fichier": "Emmy Andriesse - Alberto Giacometti (Ende 1940er PK-F-A.06801) cut.jpg",
+        "licence": "Domaine public",
+        "auteur": "Emmy Andriesse",
+        "legende": "Alberto Giacometti, photographie d'Emmy Andriesse (fin des années 1940)"
+      },
+      "description": "Alberto Giacometti (1901-1966) est un sculpteur et peintre suisse, né à Borgonovo, dans la vallée de Bregaglia (Grisons), fils du peintre Giovanni Giacometti, installé à Paris dès 1922. Proche des surréalistes dans les années 1930 (« La Boule suspendue », 1930), il rompt avec eux pour revenir à l'étude du modèle, et fait naître après la guerre des silhouettes étirées et filiformes, comme « L'Homme qui marche » et « La Place ». Ami de Sartre, de Genet et de Beckett, il travaille dans son atelier de la rue Hippolyte-Maindron jusqu'à sa mort à Coire en 1966, et ses bronzes comptent parmi les œuvres les plus chères jamais vendues aux enchères."
+    },
+    {
+      "slug": "beuys",
+      "nom": "Joseph Beuys",
+      "titre": "Naissance de Joseph Beuys",
+      "axe": "Beaux-arts",
+      "naissance": 1921,
+      "pays": "DE",
+      "wikipedia": "Joseph_Beuys",
+      "portrait": {
+        "fichier": "Joseph Beuys Filtz TV by Lothar Wolleh.jpg",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Lothar Wolleh",
+        "legende": "Joseph Beuys, photographie de Lothar Wolleh (1971)"
+      },
+      "description": "Joseph Beuys (1921-1986) est un artiste et théoricien allemand, né à Krefeld, pilote de la Luftwaffe pendant la guerre, puis professeur à l'Académie des beaux-arts de Düsseldorf de 1961 à 1972. Reconnaissable à son chapeau de feutre et à son gilet de pêcheur, il crée des sculptures de graisse et de feutre, des actions comme « Comment expliquer les tableaux à un lièvre mort » (1965) et élargit l'art à toute la société sous le nom de « sculpture sociale ». Cofondateur du parti des Verts, il lance à la Documenta de 1982 le projet de planter sept mille chênes à Cassel, qu'il ne verra pas achevé, et meurt à Düsseldorf en 1986."
+    },
+    {
+      "slug": "tinguely",
+      "nom": "Jean Tinguely",
+      "titre": "Naissance de Jean Tinguely",
+      "axe": "Beaux-arts",
+      "naissance": 1925,
+      "pays": "CH",
+      "wikipedia": "Jean_Tinguely",
+      "portrait": {
+        "fichier": "Portrait of Jean Tinguely, 1961.jpg",
+        "licence": "CC0 (domaine public)",
+        "auteur": "Jack de Nijs (Anefo)",
+        "legende": "Jean Tinguely, photographie de Jack de Nijs (8 mars 1961, Anefo)"
+      },
+      "description": "Jean Tinguely (1925-1991) est un sculpteur suisse, né à Fribourg, installé à Bâle puis à Paris, l'un des artistes du Nouveau Réalisme. Inventeur de machines qui bougent, de « méta-matics » qui dessinent et de sculptures qui se détruisent, comme « Hommage à New York » (1960), qui s'autodétruit au Museum of Modern Art, il se moque de la société industrielle avec humour et poésie. Avec sa compagne Niki de Saint Phalle, il réalise la fontaine Stravinsky à Paris (1983) et le Cyclop de Milly-la-Forêt, et il meurt à Berne en 1991."
+    },
+    {
+      "slug": "bach",
+      "nom": "Jean-Sébastien Bach",
+      "titre": "Naissance de Jean-Sébastien Bach",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1685,
+      "pays": "DE",
+      "wikipedia": "Jean-Sébastien_Bach",
+      "portrait": {
+        "fichier": "Johann Sebastian Bach.png",
+        "licence": "Domaine public",
+        "auteur": "Elias Gottlob Haussmann",
+        "legende": "Jean-Sébastien Bach, portrait peint par Elias Gottlob Haussmann (1748)"
+      },
+      "description": "Jean-Sébastien Bach (1685-1750) est un compositeur et organiste allemand, né à Eisenach, en Thuringe, issu d'une grande famille de musiciens, cantor de l'église Saint-Thomas de Leipzig de 1723 à sa mort. Auteur des « Concertos brandebourgeois », de la « Messe en si mineur », des « Passions » selon saint Jean et selon saint Matthieu, du « Clavier bien tempéré » et de plus de deux cents cantates conservées, il porte la polyphonie baroque à son sommet, jusqu'au contrepoint de « L'Art de la fugue ». Peu joué après sa mort, il est redécouvert en 1829 quand Mendelssohn dirige la « Passion selon saint Matthieu » à Berlin, et il devient l'un des maîtres de toute la musique occidentale.",
+      "essentiel": true,
+      "biographie": "bio_bach"
+    },
+    {
+      "slug": "haendel",
+      "nom": "Georg Friedrich Haendel",
+      "titre": "Naissance de Georg Friedrich Haendel",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1685,
+      "pays": "DE",
+      "wikipedia": "Georg_Friedrich_Haendel",
+      "portrait": {
+        "fichier": "George Frideric Handel by Balthasar Denner.jpg",
+        "licence": "Domaine public",
+        "auteur": "Attribué à Balthasar Denner",
+        "legende": "Georg Friedrich Haendel, portrait attribué à Balthasar Denner (vers 1726-1728)"
+      },
+      "description": "Georg Friedrich Haendel (1685-1759) est un compositeur allemand, né à Halle, devenu sujet britannique en 1727, qui fait carrière en Italie puis à Londres. Auteur d'opéras italiens, d'oratorios en anglais, dont « Le Messie » (1742), de la « Water Music » (1717) et des « Feux d'artifice royaux » (1749), il compose une musique solennelle et populaire, entendue aux fêtes de la cour. Maître de chapelle à Hanovre avant de s'installer en Angleterre, où l'électeur de Hanovre devient roi sous le nom de George Ier, il meurt à Londres en 1759 et repose à l'abbaye de Westminster.",
+      "essentiel": true
+    },
+    {
+      "slug": "haydn",
+      "nom": "Joseph Haydn",
+      "titre": "Naissance de Joseph Haydn",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1732,
+      "pays": "AT",
+      "wikipedia": "Joseph_Haydn",
+      "portrait": {
+        "fichier": "Joseph Haydn, målning av Thomas Hardy från 1792.jpg",
+        "licence": "Domaine public",
+        "legende": "Joseph Haydn, portrait peint par Thomas Hardy (1791-1792)",
+        "auteur": "Thomas Hardy"
+      },
+      "description": "Joseph Haydn (1732-1809) est un compositeur autrichien, né à Rohrau, en Basse-Autriche, fils d'un charron, maître de chapelle des princes Esterházy pendant près de trente ans. Considéré comme le père de la symphonie et du quatuor à cordes, il écrit plus de cent symphonies, dont les « Londoniennes », des quatuors, des oratorios comme « La Création » (1798), et la mélodie de l'hymne autrichien, devenue aussi celle de l'hymne allemand. Maître de Beethoven, ami et modèle de Mozart, il triomphe à Londres en 1791-1792 puis en 1794-1795, et meurt à Vienne en 1809, pendant le bombardement de la ville par Napoléon.",
+      "essentiel": true
+    },
+    {
+      "slug": "mozart",
+      "nom": "Wolfgang Amadeus Mozart",
+      "titre": "Naissance de Wolfgang Amadeus Mozart",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1756,
+      "pays": "AT",
+      "wikipedia": "Wolfgang_Amadeus_Mozart",
+      "portrait": {
+        "fichier": "Wolfgang-amadeus-mozart 1.jpg",
+        "licence": "Domaine public",
+        "auteur": "Barbara Krafft",
+        "legende": "Mozart, portrait peint par Barbara Krafft (1819), posthume d'après des portraits de son vivant"
+      },
+      "description": "Wolfgang Amadeus Mozart (1756-1791) est un compositeur autrichien, né à Salzbourg, enfant prodige qui joue devant les cours d'Europe dès l'âge de six ans et compose dès cinq ans. Installé à Vienne en 1781, il écrit « L'Enlèvement au sérail », « Les Noces de Figaro », « Don Giovanni », « Così fan tutte » et « La Flûte enchantée », vingt-sept concertos pour piano, quarante et une symphonies et un « Requiem » inachevé. Mort à trente-cinq ans, dans la gêne, et enterré dans une fosse commune à Vienne, il laisse plus de six cents œuvres, ce qui en fait l'un des plus grands génies de la musique.",
+      "essentiel": true,
+      "biographie": "bio_mozart"
+    },
+    {
+      "slug": "beethoven",
+      "nom": "Ludwig van Beethoven",
+      "titre": "Naissance de Ludwig van Beethoven",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1770,
+      "pays": "DE",
+      "wikipedia": "Ludwig_van_Beethoven",
+      "portrait": {
+        "fichier": "Beethoven.jpg",
+        "licence": "Domaine public",
+        "auteur": "Joseph Karl Stieler",
+        "legende": "Beethoven, portrait peint par Joseph Karl Stieler (1820)"
+      },
+      "description": "Ludwig van Beethoven (1770-1827) est un compositeur allemand, né à Bonn, installé à Vienne dès 1792, où il s'impose comme pianiste puis comme compositeur. Auteur de neuf symphonies, dont la Troisième, « Héroïque », la Cinquième et la Neuvième avec son « Ode à la joie », de trente-deux sonates pour piano, de seize quatuors à cordes et de l'opéra « Fidelio », il fait passer la musique du classicisme au romantisme. Atteint de surdité dès la trentaine, il compose ses dernières œuvres sans les entendre et meurt à Vienne en 1827, suivi par des milliers de Viennois.",
+      "essentiel": true,
+      "biographie": "bio_beethoven"
+    },
+    {
+      "slug": "schubert",
+      "nom": "Franz Schubert",
+      "titre": "Naissance de Franz Schubert",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1797,
+      "pays": "AT",
+      "wikipedia": "Franz_Schubert",
+      "portrait": {
+        "fichier": "Franz Schubert by Wilhelm August Rieder 1875.jpg",
+        "licence": "Domaine public",
+        "auteur": "Wilhelm August Rieder",
+        "legende": "Franz Schubert, portrait peint par Wilhelm August Rieder (1875), d'après son aquarelle de 1825"
+      },
+      "description": "Franz Schubert (1797-1828) est un compositeur autrichien, né à Vienne, fils d'un maître d'école, élève de Salieri, mort à trente et un ans. Le plus grand créateur du lied, il met en musique plus de six cents poèmes de Goethe, de Schiller, de Heine et de Müller, dont « Le Roi des aulnes », « La Jeune Fille et la Mort », « Marguerite au rouet », et deux cycles, « La Belle Meunière » et « Le Voyage d'hiver ». Auteur aussi de symphonies, dont l'« Inachevée » et la « Grande » en ut majeur, de sonates et de musique de chambre comme le quintette « La Truite », il vit modestement parmi ses amis, aux « schubertiades », et reste peu joué de son vivant.",
+      "essentiel": true
+    },
+    {
+      "slug": "mendelssohn",
+      "nom": "Felix Mendelssohn",
+      "titre": "Naissance de Felix Mendelssohn",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1809,
+      "pays": "DE",
+      "wikipedia": "Felix_Mendelssohn",
+      "portrait": {
+        "fichier": "Felix Mendelssohn Bartholdy by Eduard Magnus (1833).jpg",
+        "licence": "Domaine public",
+        "auteur": "Eduard Magnus",
+        "legende": "Felix Mendelssohn, portrait peint par Eduard Magnus (1833)"
+      },
+      "description": "Felix Mendelssohn (1809-1847) est un compositeur, pianiste et chef d'orchestre allemand, né à Hambourg dans une famille juive de banquiers, petit-fils du philosophe Moses Mendelssohn, converti au protestantisme. Prodige qui compose à dix-sept ans l'ouverture du « Songe d'une nuit d'été » (1826), il dirige en 1829 la « Passion selon saint Matthieu » de Bach, oubliée depuis un siècle, et la fait redécouvrir. Directeur du Gewandhaus de Leipzig à partir de 1835 et fondateur du conservatoire de la ville, il écrit les symphonies « Écossaise » et « Italienne », « Les Hébrides » et un concerto pour violon, et il meurt à trente-huit ans, en 1847 ; les nazis interdiront sa musique."
+    },
+    {
+      "slug": "rschumann",
+      "nom": "Robert Schumann",
+      "titre": "Naissance de Robert Schumann",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1810,
+      "pays": "DE",
+      "wikipedia": "Robert_Schumann",
+      "portrait": {
+        "fichier": "Robert-schumann.jpg",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu",
+        "legende": "Robert Schumann, portrait gravé (XIXe siècle)"
+      },
+      "description": "Robert Schumann (1810-1856) est un compositeur allemand, né à Zwickau, en Saxe, pianiste empêché de jouer par une blessure à la main, devenu critique musical et fondateur de la « Nouvelle Gazette de musique ». Auteur de « Scènes d'enfants », de « Carnaval », de « Kreisleriana », de lieder comme « Dichterliebe » et de symphonies, il épouse en 1840, après un procès contre son beau-père, la pianiste Clara Wieck, et accueille le jeune Brahms. Atteint de troubles mentaux, il tente de se jeter dans le Rhin en 1854 et meurt deux ans plus tard à l'asile d'Endenich, près de Bonn."
+    },
+    {
+      "slug": "wagner",
+      "nom": "Richard Wagner",
+      "titre": "Naissance de Richard Wagner",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1813,
+      "pays": "DE",
+      "wikipedia": "Richard_Wagner",
+      "portrait": {
+        "fichier": "RichardWagner.jpg",
+        "licence": "Domaine public",
+        "auteur": "Franz Hanfstaengl",
+        "legende": "Richard Wagner, photographie de Franz Hanfstaengl (1871)"
+      },
+      "description": "Richard Wagner (1813-1883) est un compositeur et dramaturge allemand, né à Leipzig, chef d'orchestre et théoricien de l'« œuvre d'art totale », dont il écrit lui-même les livrets. Auteur du « Vaisseau fantôme », de « Tannhäuser », de « Lohengrin », de « Tristan et Isolde », des « Maîtres chanteurs » et de « L'Anneau du Nibelung », il bouleverse l'harmonie et inaugure en 1876 son propre théâtre à Bayreuth. Protégé du roi Louis II de Bavière, il est aussi l'auteur d'un pamphlet antisémite, « Le Judaïsme dans la musique » (1850), et son œuvre fut récupérée par le nazisme, ce qui nourrit encore la controverse.",
+      "essentiel": true
+    },
+    {
+      "slug": "clara",
+      "nom": "Clara Schumann",
+      "titre": "Naissance de Clara Schumann",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1819,
+      "pays": "DE",
+      "wikipedia": "Clara_Schumann",
+      "portrait": {
+        "fichier": "Franz Hanfstaengl - Clara Schumann (1857).jpg",
+        "licence": "Domaine public",
+        "auteur": "Franz Hanfstaengl",
+        "legende": "Clara Schumann, photographie de Franz Hanfstaengl (1857)"
+      },
+      "description": "Clara Schumann (1819-1896) est une pianiste et compositrice allemande, née Wieck à Leipzig, fille du professeur de piano Friedrich Wieck, qui fait d'elle un prodige dès l'âge de neuf ans. Épouse de Robert Schumann en 1840, mère de huit enfants, elle fait connaître sa musique et celle de Brahms à toute l'Europe, dans une carrière de concertiste de plus de soixante ans, et compose un concerto pour piano et des lieder. Après la mort de son mari en 1856, elle enseigne au conservatoire de Francfort pendant quatorze ans et reste l'une des plus grandes pianistes du XIXe siècle ; elle meurt à Francfort en 1896."
+    },
+    {
+      "slug": "bruckner",
+      "nom": "Anton Bruckner",
+      "titre": "Naissance d'Anton Bruckner",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1824,
+      "pays": "AT",
+      "wikipedia": "Anton_Bruckner",
+      "portrait": {
+        "fichier": "Joseph Anton Bruckner (1868).jpg",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu",
+        "legende": "Anton Bruckner, photographie de 1868"
+      },
+      "description": "Anton Bruckner (1824-1896) est un compositeur autrichien, né à Ansfelden, en Haute-Autriche, fils d'un instituteur, organiste de l'abbaye de Saint-Florian puis de la cathédrale de Linz. Profondément pieux, il devient professeur au conservatoire de Vienne en 1868 et compose neuf symphonies numérotées, des messes et des motets, aux vastes constructions et aux cuivres solennels. Longtemps attaqué par les wagnériens, par les brahmsiens et par le critique Eduard Hanslick, il ne s'impose qu'avec la Septième, en 1884, et laisse sa Neuvième inachevée, dédiée « au bon Dieu », à sa mort en 1896."
+    },
+    {
+      "slug": "jstrauss",
+      "nom": "Johann Strauss fils",
+      "titre": "Naissance de Johann Strauss fils",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1825,
+      "pays": "AT",
+      "wikipedia": "Johann_Strauss_II",
+      "portrait": {
+        "fichier": "Johann Strauss II (3).jpg",
+        "licence": "Domaine public",
+        "auteur": "Fritz Luckhardt",
+        "legende": "Johann Strauss fils, photographie de Fritz Luckhardt (avant 1894)"
+      },
+      "description": "Johann Strauss fils (1825-1899) est un compositeur et chef d'orchestre autrichien, né à Vienne, surnommé le « roi de la valse ». Fils d'un autre Johann, qui le destinait à la banque, il fonde son orchestre en 1844 et compose « Le Beau Danube bleu » (1867), « Histoires de la forêt viennoise » (1868), « Vin, femmes et chants » et l'opérette « La Chauve-Souris » (1874). Il fait de la valse viennoise le symbole de la Vienne impériale, et son « Beau Danube bleu » est entendu chaque année au concert du Nouvel An de l'Orchestre philharmonique de Vienne."
+    },
+    {
+      "slug": "brahms",
+      "nom": "Johannes Brahms",
+      "titre": "Naissance de Johannes Brahms",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1833,
+      "pays": "DE",
+      "wikipedia": "Johannes_Brahms",
+      "portrait": {
+        "fichier": "JohannesBrahms.jpg",
+        "licence": "Domaine public",
+        "auteur": "C. Brasch (Berlin)",
+        "legende": "Johannes Brahms, photographie de C. Brasch (1889)"
+      },
+      "description": "Johannes Brahms (1833-1897) est un compositeur et pianiste allemand, né à Hambourg dans un quartier pauvre, installé à Vienne à partir de 1862, où il reste jusqu'à sa mort. Protégé par Robert et Clara Schumann, il écrit quatre symphonies, deux concertos pour piano, un concerto pour violon, des « Danses hongroises » et le « Requiem allemand » (1868), qui allient la rigueur de Bach et de Beethoven à l'émotion romantique. Défenseur de la musique « absolue » contre Wagner et Liszt, il laisse aussi des lieder, de la musique de chambre et les « Variations sur un thème de Haydn », et meurt à Vienne en 1897 d'un cancer.",
+      "essentiel": true
+    },
+    {
+      "slug": "mahler",
+      "nom": "Gustav Mahler",
+      "titre": "Naissance de Gustav Mahler",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1860,
+      "pays": "AT",
+      "wikipedia": "Gustav_Mahler",
+      "portrait": {
+        "fichier": "Photo of Gustav Mahler by Moritz Nähr 01.jpg",
+        "licence": "Domaine public",
+        "auteur": "Moritz Nähr",
+        "legende": "Gustav Mahler, photographie de Moritz Nähr (1907)"
+      },
+      "description": "Gustav Mahler (1860-1911) est un compositeur et chef d'orchestre autrichien, né à Kaliště, en Bohême, dans une famille juive de langue allemande, converti au catholicisme en 1897. Directeur de l'Opéra de Vienne de 1897 à 1907, puis du Metropolitan Opera et de l'Orchestre philharmonique de New York, il compose neuf symphonies achevées, de grandes dimensions, qui mêlent chants populaires, marches et angoisse, ainsi que des cycles de lieder comme « Les Chants des enfants morts ». Mort à Vienne en 1911, laissant sa Dixième Symphonie inachevée, interdit par les nazis puis redécouvert dans les années 1960, notamment par Leonard Bernstein, il avait dit : « Mon temps viendra ».",
+      "essentiel": true
+    },
+    {
+      "slug": "rstrauss",
+      "nom": "Richard Strauss",
+      "titre": "Naissance de Richard Strauss",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1864,
+      "pays": "DE",
+      "wikipedia": "Richard_Strauss",
+      "portrait": {
+        "fichier": "Strauss3.jpg",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu",
+        "legende": "Richard Strauss, photographie (début du XXe siècle)"
+      },
+      "description": "Richard Strauss (1864-1949) est un compositeur et chef d'orchestre allemand, né à Munich, fils d'un corniste de l'Opéra, sans lien de parenté avec la famille viennoise des Strauss. Auteur de poèmes symphoniques comme « Don Juan », « Ainsi parlait Zarathoustra » et « Till Eulenspiegel », puis d'opéras comme « Salomé » (1905), « Elektra », « Le Chevalier à la rose » (1911) et « Capriccio », il porte l'orchestre romantique à sa plus grande richesse. Président de la Chambre de musique du Reich de 1933 à 1935, il se compromet avec le régime nazi et doit passer par la dénazification, dont il sort blanchi en 1948, avant de mourir à Garmisch-Partenkirchen en 1949."
+    },
+    {
+      "slug": "schonberg",
+      "nom": "Arnold Schönberg",
+      "titre": "Naissance d'Arnold Schönberg",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1874,
+      "pays": "AT",
+      "wikipedia": "Arnold_Schönberg",
+      "portrait": {
+        "fichier": "Arnold Schonberg (i.e. Schoenberg), compositeur autrichien (CN) - btv1b53141950j.jpg",
+        "licence": "Domaine public",
+        "auteur": "Agence Rol",
+        "legende": "Arnold Schönberg, photographie de l'agence Rol (avant 1937)"
+      },
+      "description": "Arnold Schönberg (1874-1951) est un compositeur et peintre autrichien, né à Vienne, autodidacte, qui rompt avec la tonalité traditionnelle et crée l'atonalité, puis le dodécaphonisme. Auteur de « La Nuit transfigurée » (1899), de « Pierrot lunaire » (1912), de « Moïse et Aaron » et d'« Un survivant de Varsovie », il fonde avec ses élèves Alban Berg et Anton Webern la Seconde école de Vienne. Juif converti au protestantisme, il revient au judaïsme à Paris en 1933, fuit l'Allemagne nazie, enseigne à Los Angeles, où il meurt en 1951, et laisse un « Traité d'harmonie » (1911)."
+    },
+    {
+      "slug": "ansermet",
+      "nom": "Ernest Ansermet",
+      "titre": "Naissance d'Ernest Ansermet",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1883,
+      "pays": "CH",
+      "wikipedia": "Ernest_Ansermet",
+      "portrait": {
+        "fichier": "Ernest Ansermet (1965) by Erling Mandelmann.jpg",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Erling Mandelmann",
+        "legende": "Ernest Ansermet, photographie d'Erling Mandelmann (1965)"
+      },
+      "description": "Ernest Ansermet (1883-1969) est un chef d'orchestre suisse, né à Vevey, mathématicien de formation, professeur de mathématiques à Lausanne avant de se consacrer à la musique. Chef des Ballets russes de Diaghilev de 1915 à 1923, il dirige la création de « L'Histoire du soldat » de Stravinsky et de Ramuz (1918) et celle du « Tricorne » de Falla (1919). Fondateur de l'Orchestre de la Suisse romande à Genève en 1918, qu'il dirige pendant cinquante ans et dont il fait un orchestre réputé par ses disques, il écrit aussi « Les Fondements de la musique dans la conscience humaine » (1961) et meurt à Genève en 1969.",
+      "biographie": "bio_ernestansermet"
+    },
+    {
+      "slug": "lang",
+      "nom": "Fritz Lang",
+      "titre": "Naissance de Fritz Lang",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1890,
+      "pays": "AT",
+      "wikipedia": "Fritz_Lang",
+      "portrait": {
+        "fichier": "Fritz Lang (1929).jpg",
+        "licence": "CC BY-SA 3.0 DE",
+        "legende": "Fritz Lang, photographie (1929)",
+        "auteur": "Auteur inconnu (Bundesarchiv)"
+      },
+      "description": "Fritz Lang (1890-1976) est un cinéaste autrichien, né à Vienne, d'abord architecte et peintre, blessé sur le front en 1916, devenu l'un des maîtres du cinéma expressionniste allemand. Auteur des « Trois Lumières » (1921), des « Nibelungen » (1924), de « Metropolis » (1927), de « M le maudit » (1931) et du « Testament du docteur Mabuse » (1933), il invente la science-fiction cinématographique et le film policier sombre. Selon son propre récit, Goebbels lui propose en 1933 de diriger le cinéma nazi et il quitte Berlin le soir même ; il passe par Paris, tourne à Hollywood « Furie » (1936) et « Règlements de comptes » (1953), et meurt à Beverly Hills en 1976."
+    },
+    {
+      "slug": "orff",
+      "nom": "Carl Orff",
+      "titre": "Naissance de Carl Orff",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1895,
+      "pays": "DE",
+      "wikipedia": "Carl_Orff",
+      "portrait": {
+        "fichier": "Carl Orff profile view.jpg",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu",
+        "legende": "Carl Orff, photographie de profil (années 1970)"
+      },
+      "description": "Carl Orff (1895-1982) est un compositeur allemand, né à Munich, élevé dans une famille d'officiers, également pédagogue. Auteur de « Carmina Burana » (1937), cantate scénique sur des poèmes médiévaux, dont « O Fortuna » est devenu l'un des chœurs les plus connus du monde, il privilégie le rythme, les percussions et le chant. Créateur avec Gunild Keetman de l'Orff-Schulwerk, une pédagogie musicale fondée sur le corps et des instruments simples, il vit sous le nazisme sans être inquiété, ce qui reste discuté, et meurt à Munich en 1982."
+    },
+    {
+      "slug": "weill",
+      "nom": "Kurt Weill",
+      "titre": "Naissance de Kurt Weill",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1900,
+      "pays": "DE",
+      "wikipedia": "Kurt_Weill",
+      "portrait": {
+        "fichier": "Bundesarchiv Bild 146-2005-0119, Kurt Weill.jpg",
+        "licence": "CC BY-SA 3.0 DE",
+        "auteur": "Auteur inconnu (Bundesarchiv)",
+        "legende": "Kurt Weill, photographie de 1932 (Archives fédérales allemandes)"
+      },
+      "description": "Kurt Weill (1900-1950) est un compositeur allemand, né à Dessau, fils d'un chantre de la synagogue, élève de Busoni à Berlin. Avec Bertolt Brecht, il écrit « L'Opéra de quat'sous » (1928), immense succès avec la chanson « Mackie le Surineur », puis « Grandeur et décadence de la ville de Mahagonny » (1930), où la musique de cabaret et le jazz se mêlent à la satire sociale. Chassé par les nazis en 1933, il passe par Paris puis s'installe à New York, où il compose des comédies musicales pour Broadway, dont « Lady in the Dark », avec sa femme, la chanteuse Lotte Lenya, et meurt en 1950."
+    },
+    {
+      "slug": "dietrich",
+      "nom": "Marlene Dietrich",
+      "titre": "Naissance de Marlene Dietrich",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1901,
+      "pays": "DE",
+      "wikipedia": "Marlene_Dietrich",
+      "portrait": {
+        "fichier": "Marlene Dietrich in No Highway (1951) (Cropped).png",
+        "licence": "Domaine public",
+        "legende": "Marlene Dietrich, photographie de cinéma (1951)",
+        "auteur": "Twentieth Century Fox"
+      },
+      "description": "Marlene Dietrich (1901-1992) est une actrice et chanteuse allemande, née à Berlin, devenue américaine en 1939, l'une des grandes stars du cinéma du XXe siècle. Révélée par « L'Ange bleu » (1930) de Josef von Sternberg, où elle chante « Lola », elle part à Hollywood et tourne « Shanghai Express », « Morocco » et « La Femme et le Pantin », où elle impose son personnage de femme fatale en smoking. Opposée au nazisme, qui lui propose de revenir, elle chante pour les troupes américaines au front pendant la guerre, ce qui lui vaut la Médaille de la liberté et la Légion d'honneur ; mal accueillie en Allemagne après 1945, elle vit à Paris, où elle meurt en 1992.",
+      "essentiel": true
+    },
+    {
+      "slug": "karajan",
+      "nom": "Herbert von Karajan",
+      "titre": "Naissance de Herbert von Karajan",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1908,
+      "pays": "AT",
+      "wikipedia": "Herbert_von_Karajan",
+      "portrait": {
+        "fichier": "Herbert von Karajan 1963 (cropped).jpg",
+        "licence": "CC0 (domaine public)",
+        "auteur": "Joop van Bilsen (Anefo)",
+        "legende": "Herbert von Karajan, photographie de Joop van Bilsen (24 juin 1963, Anefo)"
+      },
+      "description": "Herbert von Karajan (1908-1989) est un chef d'orchestre autrichien, né à Salzbourg, directeur musical de l'Orchestre philharmonique de Berlin de 1955 à 1989, soit trente-quatre ans. Il enregistre des centaines de disques, en particulier de Beethoven, de Brahms et de Wagner, impose un style sonore lisse et somptueux et fonde en 1967 le festival de Pâques de Salzbourg. Membre du parti nazi dès 1933, il fait une carrière rapide sous le Reich et est blanchi en 1946, mais cette adhésion reste un sujet de controverse, et il meurt à Anif, près de Salzbourg, en 1989."
+    },
+    {
+      "slug": "lamarr",
+      "nom": "Hedy Lamarr",
+      "titre": "Naissance de Hedy Lamarr",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1914,
+      "pays": "AT",
+      "wikipedia": "Hedy_Lamarr",
+      "portrait": {
+        "fichier": "Hedy Lamarr in The Heavenly Body 1944.jpg",
+        "licence": "Domaine public",
+        "auteur": "MGM",
+        "legende": "Hedy Lamarr, photographie publicitaire pour « The Heavenly Body » (MGM, 1944)"
+      },
+      "description": "Hedy Lamarr (1914-2000) est une actrice et inventrice autrichienne, née Hedwig Kiesler à Vienne, devenue américaine en 1953, dont la beauté a fait une star d'Hollywood. Révélée par le film tchèque « Extase » (1933), elle fuit son mari, un industriel de l'armement proche de l'Axe, signe avec la MGM en 1938 et tourne « Samson et Dalila » (1949). Avec le compositeur George Antheil, elle met au point en 1941 un système de communication radio à sauts de fréquence, dont le principe est repris dans les technologies sans fil modernes ; ignorée à l'époque, elle reçoit à la fin de sa vie des prix pour cette invention et meurt en Floride en 2000."
+    },
+    {
+      "slug": "gutenberg",
+      "nom": "Johannes Gutenberg",
+      "titre": "Naissance de Johannes Gutenberg",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1400,
+      "pays": "DE",
+      "wikipedia": "Johannes_Gutenberg",
+      "portrait": {
+        "fichier": "Gutenberg.jpg",
+        "licence": "Domaine public",
+        "legende": "Johannes Gutenberg, gravure imaginaire du XVIe siècle : aucun portrait authentique n'existe",
+        "auteur": "Auteur inconnu"
+      },
+      "description": "Johannes Gutenberg (vers 1400-1468) est un orfèvre et imprimeur allemand, né à Mayence, installé à Strasbourg puis de nouveau à Mayence, que l'on considère comme l'inventeur de l'imprimerie à caractères mobiles en Europe. Associé au banquier Johann Fust, il met au point vers 1450 des caractères métalliques mobiles, une encre grasse et une presse, et imprime la « Bible à quarante-deux lignes », achevée vers 1455, dont une cinquantaine d'exemplaires subsistent. Ruiné par un procès contre Fust, qui lui fait perdre son atelier, il meurt à Mayence en 1468 sans grande gloire, et son invention bouleversera en quelques décennies la diffusion du savoir, de la Réforme à la Renaissance.",
+      "essentiel": true
+    },
+    {
+      "slug": "paracelse",
+      "nom": "Paracelse",
+      "titre": "Naissance de Paracelse",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1493,
+      "pays": "CH",
+      "wikipedia": "Paracelse",
+      "portrait": {
+        "fichier": "Philippus Theophrastus Paracelsus.jpg",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu",
+        "legende": "Paracelse, portrait d'après une gravure de 1540 (représentation posthume)"
+      },
+      "description": "Paracelse (vers 1493-1541) est un médecin, alchimiste et philosophe suisse, de son vrai nom Theophrast von Hohenheim, né à Einsiedeln, dans le canton de Schwytz, fils d'un médecin souabe. Il rompt avec les autorités de Galien et d'Avicenne, brûle leurs livres à Bâle en 1527, enseigne en allemand plutôt qu'en latin et cherche dans les minéraux et les métaux de nouveaux remèdes. Il affirme que « la dose fait le poison », principe fondateur de la toxicologie ; sa vie errante s'achève à Salzbourg en 1541, et la légende en a fait, à tort, un magicien."
+    },
+    {
+      "slug": "kepler",
+      "nom": "Johannes Kepler",
+      "titre": "Naissance de Johannes Kepler",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1571,
+      "pays": "DE",
+      "wikipedia": "Johannes_Kepler",
+      "portrait": {
+        "fichier": "JKepler.jpg",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu",
+        "legende": "Johannes Kepler, portrait peint (XVIIe siècle)"
+      },
+      "description": "Johannes Kepler (1571-1630) est un astronome et mathématicien allemand, né à Weil der Stadt, en Souabe, élève de Michael Maestlin à Tübingen, assistant de Tycho Brahe à Prague en 1600 puis mathématicien impérial de Rodolphe II. À partir des observations de Tycho Brahe sur Mars, il énonce les trois lois du mouvement des planètes (1609, 1619) : orbites elliptiques, aires égales en temps égaux, rapport des carrés des périodes aux cubes des distances. Auteur de l'« Astronomia nova » (1609), d'« Harmonices mundi » (1619) et des tables rudolphines, il doit défendre sa mère, accusée de sorcellerie en 1620-1621, et meurt à Ratisbonne en 1630.",
+      "essentiel": true
+    },
+    {
+      "slug": "euler",
+      "nom": "Leonhard Euler",
+      "titre": "Naissance de Leonhard Euler",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1707,
+      "pays": "CH",
+      "wikipedia": "Leonhard_Euler",
+      "portrait": {
+        "fichier": "Leonhard Euler 2.jpg",
+        "licence": "Domaine public",
+        "auteur": "Jakob Emanuel Handmann",
+        "legende": "Leonhard Euler, portrait peint par Jakob Emanuel Handmann (milieu du XVIIIe siècle)"
+      },
+      "description": "Leonhard Euler (1707-1783) est un mathématicien et physicien suisse, né à Bâle, élève de Johann Bernoulli, qui passe la plus grande partie de sa vie à Saint-Pétersbourg et à Berlin. Il publie plus de huit cents travaux, qui couvrent l'analyse, la théorie des nombres, la mécanique, l'optique et la théorie des graphes, avec le problème des sept ponts de Königsberg (1736), et il fixe la notation moderne des fonctions et des nombres e, i et π. Aveugle de l'œil droit dès 1738 puis presque entièrement aveugle à la fin de sa vie, il continue à dicter ses ouvrages et meurt à Saint-Pétersbourg en 1783."
+    },
+    {
+      "slug": "hbsaussure",
+      "nom": "Horace-Bénédict de Saussure",
+      "titre": "Naissance d'Horace-Bénédict de Saussure",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1740,
+      "pays": "CH",
+      "wikipedia": "Horace_Bénédict_de_Saussure",
+      "portrait": {
+        "fichier": "Horace-Bénédict de Saussure.jpg",
+        "licence": "Domaine public",
+        "auteur": "Jens Juel",
+        "legende": "Horace-Bénédict de Saussure, portrait peint par Jens Juel (1778)"
+      },
+      "description": "Horace-Bénédict de Saussure (1740-1799) est un naturaliste et géologue suisse, né à Conches, près de Genève, professeur de philosophie à l'Académie de Genève et l'un des fondateurs de l'alpinisme. Fasciné par le mont Blanc, dont il promet une récompense à qui en ferait la première ascension, il gravit lui-même le sommet en août 1787, un an après Balmat et Paccard, avec des instruments de mesure. Auteur des « Voyages dans les Alpes » (1779-1796), il y décrit les plis alpins et invente l'hygromètre à cheveu, avant de mourir à Genève en 1799.",
+      "biographie": "bio_horacesaussure"
+    },
+    {
+      "slug": "humboldt",
+      "nom": "Alexander von Humboldt",
+      "titre": "Naissance d'Alexander von Humboldt",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1769,
+      "pays": "DE",
+      "wikipedia": "Alexander_von_Humboldt",
+      "portrait": {
+        "fichier": "Stieler, Joseph Karl - Alexander von Humboldt - 1843.jpg",
+        "licence": "Domaine public",
+        "auteur": "Joseph Karl Stieler",
+        "legende": "Alexander von Humboldt, portrait peint par Joseph Karl Stieler (1843)"
+      },
+      "description": "Alexander von Humboldt (1769-1859) est un naturaliste, géographe et explorateur allemand, né à Berlin, frère du linguiste Wilhelm von Humboldt. De 1799 à 1804, il parcourt avec Aimé Bonpland l'Amérique espagnole, de l'Orénoque à l'Équateur, gravit le Chimborazo à plus de 5 800 mètres, étudie le courant froid qui porte son nom et rapporte des milliers de plantes inconnues. Auteur de « Cosmos » (1845-1862), qui présente la nature comme un tout où chaque élément est lié aux autres, il dénonce l'esclavage et le colonialisme espagnol, et meurt à Berlin en 1859 ; Darwin le tenait pour son modèle.",
+      "essentiel": true
+    },
+    {
+      "slug": "gauss",
+      "nom": "Carl Friedrich Gauss",
+      "titre": "Naissance de Carl Friedrich Gauss",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1777,
+      "pays": "DE",
+      "wikipedia": "Carl_Friedrich_Gauss",
+      "portrait": {
+        "fichier": "Carl Friedrich Gauss.jpg",
+        "licence": "Domaine public",
+        "auteur": "Gottlieb Biermann",
+        "legende": "Carl Friedrich Gauss, portrait de Gottlieb Biermann (1840)"
+      },
+      "description": "Carl Friedrich Gauss (1777-1855) est un mathématicien, astronome et physicien allemand, né à Brunswick dans une famille modeste, prodige de l'arithmétique qui calcule, dit-on, la somme des cent premiers nombres entiers à l'âge de dix ans. Auteur des « Disquisitiones arithmeticae » (1801), qui fondent la théorie moderne des nombres, il démontre le théorème fondamental de l'algèbre, invente la méthode des moindres carrés pour retrouver l'astéroïde Cérès et donne son nom à la loi normale. Directeur de l'observatoire de Göttingen, il travaille aussi sur le magnétisme et la géodésie, et il meurt à Göttingen en 1855, surnommé le « prince des mathématiciens ».",
+      "essentiel": true
+    },
+    {
+      "slug": "doppler",
+      "nom": "Christian Doppler",
+      "titre": "Naissance de Christian Doppler",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1803,
+      "pays": "AT",
+      "wikipedia": "Christian_Doppler",
+      "portrait": {
+        "fichier": "christian doppler.jpg",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu",
+        "legende": "Christian Doppler, portrait lithographié (XIXe siècle)"
+      },
+      "description": "Christian Doppler (1803-1853) est un mathématicien et physicien autrichien, né à Salzbourg dans une famille de tailleurs de pierre, professeur à Prague, à l'école des mines de Schemnitz puis à Vienne. En 1842, il décrit comment la fréquence d'une onde varie quand sa source ou son observateur se déplacent, ce que l'on appelle l'effet Doppler, confirmé en 1845 par Buys Ballot avec des musiciens dans un train. L'effet sert aujourd'hui à mesurer la vitesse des étoiles, des véhicules et du sang, et Doppler meurt de tuberculose à Venise en 1853, à quarante-neuf ans."
+    },
+    {
+      "slug": "mendel",
+      "nom": "Gregor Mendel",
+      "titre": "Naissance de Gregor Mendel",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1822,
+      "pays": "AT",
+      "wikipedia": "Gregor_Mendel",
+      "portrait": {
+        "fichier": "Gregor Mendel 2.jpg",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu",
+        "legende": "Gregor Mendel, photographie (vers 1862)"
+      },
+      "description": "Gregor Mendel (1822-1884) est un moine augustin et botaniste autrichien, né à Heinzendorf, en Silésie (aujourd'hui Hynčice, en Tchéquie), abbé du monastère de Brno, en Moravie. De 1856 à 1863, il cultive près de vingt-neuf mille pieds de pois dans le jardin de son abbaye et découvre les lois de la transmission des caractères héréditaires, avec des facteurs dominants et récessifs. Son mémoire, présenté en 1865 et publié en 1866, reste ignoré de ses contemporains ; redécouvert en 1900 par Hugo de Vries, Carl Correns et Erich von Tschermak, il fait de Mendel le père de la génétique.",
+      "essentiel": true,
+      "biographie": "bio_mendel"
+    },
+    {
+      "slug": "zeppelin",
+      "nom": "Ferdinand von Zeppelin",
+      "titre": "Naissance de Ferdinand von Zeppelin",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1838,
+      "pays": "DE",
+      "wikipedia": "Ferdinand_von_Zeppelin",
+      "portrait": {
+        "fichier": "Ferdinand von Zeppelin.jpg",
+        "licence": "Domaine public",
+        "legende": "Ferdinand von Zeppelin, photographie",
+        "auteur": "Auteur inconnu"
+      },
+      "description": "Ferdinand von Zeppelin (1838-1917) est un officier et inventeur allemand, né à Constance, comte, général de cavalerie, observateur dans la guerre de Sécession en 1863, où il monte en ballon. Après sa retraite en 1890, il consacre sa fortune au dirigeable rigide, le « zeppelin », dont le LZ 1 s'envole au-dessus du lac de Constance en 1900, et il ouvre en 1910 la première ligne aérienne commerciale de passagers, avec sa compagnie, la DELAG. Utilisés comme bombardiers pendant la Première Guerre mondiale, puis pour des traversées de l'Atlantique, les zeppelins disparaissent après l'incendie du « Hindenburg » en 1937, et leur inventeur meurt à Berlin en 1917."
+    },
+    {
+      "slug": "koch",
+      "nom": "Robert Koch",
+      "titre": "Naissance de Robert Koch",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1843,
+      "pays": "DE",
+      "wikipedia": "Robert_Koch",
+      "portrait": {
+        "fichier": "Robert Koch.jpg",
+        "licence": "Domaine public",
+        "legende": "Robert Koch, photographie",
+        "auteur": "Wilhelm Fechner"
+      },
+      "description": "Robert Koch (1843-1910) est un médecin et microbiologiste allemand, né à Clausthal, dans le Harz, médecin de campagne devenu l'un des fondateurs de la bactériologie. Il identifie en 1876 le bacille du charbon, en 1882 celui de la tuberculose et en 1883 le vibrion du choléra, et énonce avec Friedrich Loeffler les « postulats de Koch », qui relient un microbe à une maladie. Directeur de l'Institut des maladies infectieuses de Berlin, prix Nobel de médecine en 1905, il meurt à Baden-Baden en 1910 ; son échec à guérir la tuberculose par la tuberculine en 1890 et ses essais sur des malades en Afrique orientale allemande sont aujourd'hui discutés."
+    },
+    {
+      "slug": "boltzmann",
+      "nom": "Ludwig Boltzmann",
+      "titre": "Naissance de Ludwig Boltzmann",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1844,
+      "pays": "AT",
+      "wikipedia": "Ludwig_Boltzmann",
+      "portrait": {
+        "fichier": "Boltzmann-Ludwig.jpg",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu",
+        "legende": "Ludwig Boltzmann, photographie (1902)"
+      },
+      "description": "Ludwig Boltzmann (1844-1906) est un physicien autrichien, né à Vienne, professeur à Graz, à Vienne, à Munich et à Leipzig, l'un des fondateurs de la physique statistique. Il explique les propriétés des gaz par le mouvement d'atomes innombrables, relie l'entropie au nombre de configurations microscopiques par la formule S = k log W, gravée sur sa tombe de Vienne, et donne son nom à la constante de Boltzmann. Combattu par des savants hostiles à l'existence des atomes, comme Ernst Mach et Wilhelm Ostwald, il se suicide à Duino, près de Trieste, en 1906, quelques années avant que les expériences de Jean Perrin ne donnent raison aux atomistes."
+    },
+    {
+      "slug": "roentgen",
+      "nom": "Wilhelm Röntgen",
+      "titre": "Naissance de Wilhelm Röntgen",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1845,
+      "pays": "DE",
+      "wikipedia": "Wilhelm_Röntgen",
+      "portrait": {
+        "fichier": "Wilhelm Conrad Röntgen (1888-1900), 88374 p.jpg",
+        "licence": "Domaine public",
+        "auteur": "Erwin Hanfstaengl",
+        "legende": "Wilhelm Röntgen, photographie d'Erwin Hanfstaengl (entre 1888 et 1900)"
+      },
+      "description": "Wilhelm Röntgen (1845-1923) est un physicien allemand, né à Lennep, aujourd'hui Remscheid, formé à Zurich, professeur à l'université de Würzburg. Le 8 novembre 1895, en étudiant les tubes à décharge, il découvre un rayonnement invisible qui traverse les corps et impressionne une plaque photographique ; il l'appelle « rayons X » et publie en décembre la radiographie de la main de son épouse Anna Bertha. Premier prix Nobel de physique, en 1901, il refuse de breveter sa découverte pour qu'elle serve à tous, laisse son nom à une unité de rayonnement et meurt à Munich en 1923.",
+      "essentiel": true
+    },
+    {
+      "slug": "planck",
+      "nom": "Max Planck",
+      "titre": "Naissance de Max Planck",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1858,
+      "pays": "DE",
+      "wikipedia": "Max_Planck",
+      "portrait": {
+        "fichier": "Bundesarchiv Bild 183-R0116-504, Max Planck.jpg",
+        "licence": "CC BY-SA 3.0 DE",
+        "auteur": "Auteur inconnu (Bundesarchiv)",
+        "legende": "Max Planck, photographie (vers 1901, Archives fédérales allemandes)"
+      },
+      "description": "Max Planck (1858-1947) est un physicien allemand, né à Kiel, professeur à l'université de Berlin et secrétaire de l'Académie des sciences de Prusse. En 1900, pour expliquer le rayonnement du corps noir, il suppose que l'énergie est échangée par paquets, les quanta, proportionnels à la fréquence par une constante qui porte son nom, et il fonde ainsi la physique quantique. Prix Nobel de physique en 1918, il reste en Allemagne sous le nazisme, tente en vain de défendre ses collègues juifs auprès de Hitler, perd son fils Erwin, exécuté en 1945 après le complot du 20 juillet, et meurt à Göttingen en 1947.",
+      "essentiel": true
+    },
+    {
+      "slug": "meitner",
+      "nom": "Lise Meitner",
+      "titre": "Naissance de Lise Meitner",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1878,
+      "pays": "AT",
+      "wikipedia": "Lise_Meitner",
+      "portrait": {
+        "fichier": "Lise Meitner (1878-1968), lecturing at Catholic University, Washington, D.C., 1946.jpg",
+        "licence": "Domaine public",
+        "auteur": "Smithsonian Institution",
+        "legende": "Lise Meitner, photographie lors d'une conférence à l'université catholique de Washington (1946)"
+      },
+      "description": "Lise Meitner (1878-1968) est une physicienne autrichienne, née à Vienne, l'une des premières femmes docteurs en physique de l'université de Vienne (1906), qui travaille pendant trente ans à Berlin avec le chimiste Otto Hahn. Juive de naissance, elle fuit l'Allemagne en 1938 pour la Suède et explique en décembre 1938, avec son neveu Otto Frisch, la fission de l'uranium observée par Hahn, en y voyant la scission du noyau. Exclue du prix Nobel de chimie 1944, attribué à Hahn seul, elle refuse de travailler à la bombe atomique ; l'élément 109, le meitnérium, porte son nom depuis 1997, et elle meurt à Cambridge en 1968."
+    },
+    {
+      "slug": "einstein",
+      "nom": "Albert Einstein",
+      "titre": "Naissance d'Albert Einstein",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1879,
+      "pays": "DE",
+      "wikipedia": "Albert_Einstein",
+      "portrait": {
+        "fichier": "Einstein 1921 by F Schmutzer - restoration.jpg",
+        "licence": "Domaine public",
+        "auteur": "Ferdinand Schmutzer",
+        "legende": "Albert Einstein, photographie de Ferdinand Schmutzer (1921)"
+      },
+      "description": "Albert Einstein (1879-1955) est un physicien allemand, né à Ulm, citoyen suisse en 1901 puis américain en 1940, le plus célèbre savant du XXe siècle. En 1905, son « année miraculeuse », il publie quatre articles qui expliquent l'effet photoélectrique, le mouvement brownien et la relativité restreinte, avec l'équation E = mc² ; en 1915, il achève la relativité générale, confirmée par l'éclipse de 1919. Prix Nobel de physique en 1921, exilé en 1933 par l'Allemagne nazie, il s'installe à Princeton, signe en 1939 la lettre à Roosevelt sur la bombe atomique, s'engage pour la paix et les droits civiques, et meurt en 1955 sans avoir trouvé la théorie unifiée.",
+      "essentiel": true,
+      "biographie": "bio_einstein"
+    },
+    {
+      "slug": "hahn",
+      "nom": "Otto Hahn",
+      "titre": "Naissance d'Otto Hahn",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1879,
+      "pays": "DE",
+      "wikipedia": "Otto_Hahn",
+      "portrait": {
+        "fichier": "Otto Hahn (Nobel).jpg",
+        "licence": "Domaine public",
+        "auteur": "Fondation Nobel",
+        "legende": "Otto Hahn, photographie de la Fondation Nobel (1944)"
+      },
+      "description": "Otto Hahn (1879-1968) est un chimiste allemand, né à Francfort-sur-le-Main, pionnier de la radiochimie, qui travaille à Londres avec Ramsay puis à Berlin avec Lise Meitner. Avec Fritz Strassmann, il découvre en décembre 1938 que le noyau d'uranium bombardé de neutrons éclate en éléments plus légers, la fission nucléaire, que Lise Meitner et Otto Frisch interprètent aussitôt. Prix Nobel de chimie 1944, remis en 1946, il se dit horrifié par Hiroshima, signe en 1957 l'appel de Göttingen contre l'armement atomique de l'Allemagne, dirige la Société Max-Planck jusqu'en 1960 et meurt à Göttingen en 1968."
+    },
+    {
+      "slug": "noether",
+      "nom": "Emmy Noether",
+      "titre": "Naissance d'Emmy Noether",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1882,
+      "pays": "DE",
+      "wikipedia": "Emmy_Noether",
+      "portrait": {
+        "fichier": "Noether.jpg",
+        "licence": "Domaine public",
+        "legende": "Emmy Noether, photographie (avant 1910)",
+        "auteur": "Auteur inconnu"
+      },
+      "description": "Emmy Noether (1882-1935) est une mathématicienne allemande, née à Erlangen, fille du mathématicien Max Noether, longtemps privée de poste officiel à Göttingen parce qu'elle était une femme. Fondatrice de l'algèbre abstraite moderne, elle y étudie les anneaux et les idéaux, et démontre en 1918 son théorème selon lequel toute symétrie d'un système physique correspond à une loi de conservation, comme celle de l'énergie. Chassée de l'université par les nazis en 1933 parce que juive, elle émigre à Bryn Mawr, aux États-Unis, où elle meurt en 1935 ; Einstein la qualifie dans sa nécrologie de génie mathématique le plus créatif produit depuis que les femmes accèdent aux études supérieures."
+    },
+    {
+      "slug": "piccard",
+      "nom": "Auguste Piccard",
+      "titre": "Naissance d'Auguste Piccard",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1884,
+      "pays": "CH",
+      "wikipedia": "Auguste_Piccard",
+      "portrait": {
+        "fichier": "Bundesarchiv Bild 102-13738, Auguste Piccard.jpg",
+        "licence": "CC BY-SA 3.0 DE",
+        "auteur": "Auteur inconnu (Bundesarchiv)",
+        "legende": "Auguste Piccard, photographie d'août 1932 (Archives fédérales allemandes)"
+      },
+      "description": "Auguste Piccard (1884-1962) est un physicien et explorateur suisse, né à Bâle, professeur à Bruxelles, frère jumeau du chimiste Jean Piccard. Le 27 mai 1931, il s'élève avec un ballon stratosphérique à cabine pressurisée jusqu'à près de 16 000 mètres, puis fait un second vol en 1932, ce qui lui permet les premières observations de la haute atmosphère. Inventeur ensuite du bathyscaphe, un engin autonome pour les grandes profondeurs, qu'il fait descendre à 3 150 mètres en 1953, il voit son fils Jacques atteindre en 1960 le fond de la fosse des Mariannes, et il est l'un des modèles du professeur Tournesol, de Tintin."
+    },
+    {
+      "slug": "schrodinger",
+      "nom": "Erwin Schrödinger",
+      "titre": "Naissance d'Erwin Schrödinger",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1887,
+      "pays": "AT",
+      "wikipedia": "Erwin_Schrödinger",
+      "portrait": {
+        "fichier": "Erwin Schrödinger (1933).jpg",
+        "licence": "Domaine public",
+        "auteur": "Fondation Nobel",
+        "legende": "Erwin Schrödinger, photographie de la Fondation Nobel (1933)"
+      },
+      "description": "Erwin Schrödinger (1887-1961) est un physicien autrichien, né à Vienne, professeur à Zurich, à Berlin puis à Dublin, l'un des fondateurs de la mécanique quantique. En 1926, il publie l'équation qui porte son nom et décrit l'évolution de l'onde associée à une particule, ce qui lui vaut le prix Nobel de physique en 1933, avec Paul Dirac. Auteur en 1935 du paradoxe du chat, expérience de pensée où un animal serait à la fois vivant et mort, et d'un livre, « Qu'est-ce que la vie ? » (1944), qui inspire les futurs découvreurs de l'ADN, il quitte l'Allemagne nazie, s'installe à Dublin et revient mourir à Vienne en 1961.",
+      "essentiel": true
+    },
+    {
+      "slug": "heisenberg",
+      "nom": "Werner Heisenberg",
+      "titre": "Naissance de Werner Heisenberg",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1901,
+      "pays": "DE",
+      "wikipedia": "Werner_Heisenberg",
+      "portrait": {
+        "fichier": "Bundesarchiv Bild183-R57262, Werner Heisenberg.jpg",
+        "licence": "CC BY-SA 3.0 DE",
+        "auteur": "Auteur inconnu (Bundesarchiv)",
+        "legende": "Werner Heisenberg, photographie de 1933 (Archives fédérales allemandes)"
+      },
+      "description": "Werner Heisenberg (1901-1976) est un physicien allemand, né à Würzburg, l'un des fondateurs de la mécanique quantique, qui obtient le prix Nobel de physique en 1932, à trente et un ans. En 1927, il énonce le principe d'incertitude, selon lequel on ne peut connaître en même temps avec précision la position et la vitesse d'une particule, et il avait élaboré en 1925 la mécanique des matrices. Resté en Allemagne sous le nazisme, il dirige le programme nucléaire allemand pendant la guerre sans que celui-ci ne produise de bombe, ce que l'on a interprété tantôt comme un refus délibéré, tantôt comme un échec, et il meurt à Munich en 1976."
+    },
+    {
+      "slug": "pauli",
+      "nom": "Wolfgang Pauli",
+      "titre": "Naissance de Wolfgang Pauli",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1900,
+      "pays": "AT",
+      "wikipedia": "Wolfgang_Pauli",
+      "portrait": {
+        "fichier": "Wolfgang Pauli ETH-Bib Portr 01042.jpg",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Bettina Katzenstein (ETH Zurich)",
+        "legende": "Wolfgang Pauli, photographie de Bettina Katzenstein (ETH Zurich)"
+      },
+      "description": "Wolfgang Pauli (1900-1958) est un physicien autrichien, né à Vienne, filleul d'Ernst Mach, professeur à l'École polytechnique de Zurich, jeune prodige de la physique théorique. En 1925, il énonce le principe d'exclusion, selon lequel deux électrons d'un même atome ne peuvent occuper le même état quantique, et en 1930 il postule l'existence du neutrino, observé en 1956 ; il obtient le prix Nobel de physique en 1945. Critique mordant, surnommé la « conscience de la physique », il collabore avec Carl Gustav Jung sur la synchronicité et meurt à Zurich en 1958."
+    },
+    {
+      "slug": "godel",
+      "nom": "Kurt Gödel",
+      "titre": "Naissance de Kurt Gödel",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1906,
+      "pays": "AT",
+      "wikipedia": "Kurt_Gödel",
+      "portrait": {
+        "fichier": "Young Kurt Gödel as a student in 1925.jpg",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu",
+        "legende": "Kurt Gödel, photographie d'étudiant (entre 1924 et 1927)"
+      },
+      "description": "Kurt Gödel (1906-1978) est un logicien et mathématicien autrichien, né à Brünn (Brno, aujourd'hui en Tchéquie), étudiant à Vienne, proche du Cercle de Vienne et naturalisé américain en 1948. En 1931, à vingt-cinq ans, il démontre ses deux théorèmes d'incomplétude : dans tout système formel cohérent contenant l'arithmétique, il existe des énoncés vrais que l'on ne peut pas prouver, et le système ne peut pas prouver sa propre cohérence. Émigré à Princeton en 1940, ami d'Einstein, il y trouve une solution des équations de la relativité générale qui autorise les voyages dans le temps et, atteint de paranoïa, il meurt en 1978 de malnutrition, refusant toute nourriture par crainte d'être empoisonné."
+    },
+    {
+      "slug": "zuse",
+      "nom": "Konrad Zuse",
+      "titre": "Naissance de Konrad Zuse",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1910,
+      "pays": "DE",
+      "wikipedia": "Konrad_Zuse",
+      "portrait": {
+        "fichier": "Konrad Zuse (1992).jpg",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Wolfgang Hunscher",
+        "legende": "Konrad Zuse, photographie de Wolfgang Hunscher (juin 1992)"
+      },
+      "description": "Konrad Zuse (1910-1995) est un ingénieur et inventeur allemand, né à Berlin, qui construit chez ses parents, dans les années 1930, les premières machines à calculer programmables. Sa Z3, achevée en 1941, est le premier calculateur programmable entièrement automatique, fondé sur le système binaire et des relais électromécaniques, et il conçoit aussi le « Plankalkül », l'un des premiers langages de programmation. Détruite par un bombardement de Berlin en 1943, la Z3 est reconstituée dans les années 1960 ; Zuse fonde une entreprise qui vend des ordinateurs, se consacre ensuite à la peinture et meurt en 1995 près de Fulda."
+    },
+    {
+      "slug": "fugger",
+      "nom": "Jakob Fugger",
+      "titre": "Naissance de Jakob Fugger",
+      "axe": "Économie et entreprise",
+      "naissance": 1459,
+      "pays": "DE",
+      "wikipedia": "Jacob_Fugger",
+      "portrait": {
+        "fichier": "Albrecht Dürer 080.jpg",
+        "licence": "Domaine public",
+        "auteur": "Albrecht Dürer",
+        "legende": "Jakob Fugger, portrait peint par Albrecht Dürer (vers 1519)"
+      },
+      "description": "Jakob Fugger (1459-1525) est un marchand et banquier allemand, dit le Riche, né à Augsbourg, issu d'une famille de tisserands et de négociants, qui fait de la maison Fugger la première puissance financière d'Europe. Maître des mines d'argent et de cuivre du Tyrol et de Hongrie, il prête aux Habsbourg, finance l'élection de Charles Quint en 1519 et gère pour l'archevêque Albert de Brandebourg le produit des indulgences vendues en Allemagne. Fondateur en 1521 de la Fuggerei, la plus ancienne cité sociale du monde, créée à Augsbourg pour les pauvres et qui existe toujours, il meurt en 1525, parmi les hommes les plus riches de l'histoire.",
+      "essentiel": true,
+      "biographie": "bio_fugger"
+    },
+    {
+      "slug": "rothschild",
+      "nom": "Mayer Amschel Rothschild",
+      "titre": "Naissance de Mayer Amschel Rothschild",
+      "axe": "Économie et entreprise",
+      "naissance": 1744,
+      "pays": "DE",
+      "wikipedia": "Mayer_Amschel_Rothschild",
+      "portrait": {
+        "fichier": "Mayer Amschel Rothschild.jpg",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu",
+        "legende": "Mayer Amschel Rothschild, gravure (XIXe siècle), image posthume"
+      },
+      "description": "Mayer Amschel Rothschild (1744-1812) est un banquier allemand, né dans le ghetto de Francfort-sur-le-Main, où il commence comme négociant en monnaies et en antiquités avant de devenir le banquier du landgrave de Hesse-Cassel. Fondateur de la dynastie financière des Rothschild, il envoie ses cinq fils s'établir à Francfort, à Vienne, à Londres, à Naples et à Paris, et ce réseau familial finance les États, les guerres et les chemins de fer de l'Europe du XIXe siècle. Il meurt en 1812, et sa famille est restée, plus de deux siècles après, un symbole de la banque et un sujet d'innombrables fantasmes antisémites."
+    },
+    {
+      "slug": "nestle",
+      "nom": "Henri Nestlé",
+      "titre": "Naissance d'Henri Nestlé",
+      "axe": "Économie et entreprise",
+      "naissance": 1814,
+      "pays": "CH",
+      "wikipedia": "Henri_Nestlé",
+      "portrait": {
+        "fichier": "Henry Nestle.jpg",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu",
+        "legende": "Henri Nestlé, portrait (XIXe siècle)"
+      },
+      "description": "Henri Nestlé (1814-1890) est un pharmacien et industriel suisse d'origine allemande, né Heinrich Nestle à Francfort-sur-le-Main, installé à Vevey en 1839. En 1867, pour nourrir des nourrissons qui ne peuvent être allaités, il met au point une « farine lactée » à base de lait de vache, de farine et de sucre, qui sauve, selon la légende, un enfant condamné, et il crée la société qui porte son nom. Il vend l'entreprise en 1875, et son nom, symbolisé par un nid d'oiseau (« Nest » en allemand), devient l'une des plus grandes marques alimentaires du monde, tandis qu'il meurt à Glion, près de Montreux, en 1890."
+    },
+    {
+      "slug": "krupp",
+      "nom": "Alfred Krupp",
+      "titre": "Naissance d'Alfred Krupp",
+      "axe": "Économie et entreprise",
+      "naissance": 1812,
+      "pays": "DE",
+      "wikipedia": "Alfred_Krupp",
+      "portrait": {
+        "fichier": "Alfred Krupp.jpg",
+        "licence": "Domaine public",
+        "legende": "Alfred Krupp, photographie (XIXe siècle)",
+        "auteur": "Auteur inconnu"
+      },
+      "description": "Alfred Krupp (1812-1887) est un industriel allemand, né à Essen, qui reprend à quatorze ans la petite aciérie familiale à la mort de son père et en fait la plus grande entreprise sidérurgique d'Europe. Connu comme le « roi des canons », il fabrique des rails, des roues sans soudure, des tubes et des canons d'acier, et expose en 1851 à Londres un bloc d'acier fondu de deux tonnes. Patron paternaliste, qui bâtit logements, écoles et caisses de maladie pour ses ouvriers, il arme les armées de la Prusse, et ses successeurs seront, au XXe siècle, l'un des piliers de l'armement du Reich, ce qui vaudra à l'un d'eux une condamnation à Nuremberg."
+    },
+    {
+      "slug": "siemens",
+      "nom": "Werner von Siemens",
+      "titre": "Naissance de Werner von Siemens",
+      "axe": "Économie et entreprise",
+      "naissance": 1816,
+      "pays": "DE",
+      "wikipedia": "Werner_von_Siemens",
+      "portrait": {
+        "fichier": "Wvs 1885.jpg",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu",
+        "legende": "Werner von Siemens, photographie (1885)"
+      },
+      "description": "Werner von Siemens (1816-1892) est un ingénieur et industriel allemand, né à Lenthe, près de Hanovre, officier d'artillerie prussien devenu inventeur. Inventeur de la dynamo en 1866, du télégraphe à aiguille, du tramway électrique (1881) et de l'ascenseur électrique, il fonde en 1847, avec le mécanicien Johann Georg Halske, l'entreprise Siemens & Halske, devenue Siemens. Anobli en 1888, il pose aussi la ligne télégraphique indo-européenne et finance l'Institut physico-technique d'État, et son nom désigne aujourd'hui l'unité de conductance électrique, le siemens.",
+      "essentiel": true
+    },
+    {
+      "slug": "escher",
+      "nom": "Alfred Escher",
+      "titre": "Naissance d'Alfred Escher",
+      "axe": "Économie et entreprise",
+      "naissance": 1819,
+      "pays": "CH",
+      "wikipedia": "Alfred_Escher",
+      "portrait": {
+        "fichier": "ETH-BIB-Escher, Alfred (1819-1882)-Portrait-Portr 05342.tif (cropped).jpg",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu (ETH-Bibliothek)",
+        "legende": "Alfred Escher, photographie (vers 1875, ETH-Bibliothek)"
+      },
+      "description": "Alfred Escher (1819-1882) est un homme politique et entrepreneur suisse, né à Zurich dans une famille patricienne, conseiller national et président du Conseil national, qui domine la vie économique de son pays. Fondateur du Crédit suisse (1856), de l'École polytechnique fédérale de Zurich (1855), de la compagnie d'assurances Rentenanstalt (1857) et de la compagnie du Gothard, il est le principal promoteur du tunnel ferroviaire du Saint-Gothard. Ruiné par le dépassement des coûts du tunnel, il perd la direction du Gothard en 1878 et meurt à Zurich en 1882, quelques mois après l'inauguration ; son père avait investi dans une plantation de café à Cuba, où travaillaient des esclaves, ce qui lui est reproché aujourd'hui."
+    },
+    {
+      "slug": "benz",
+      "nom": "Carl Benz",
+      "titre": "Naissance de Carl Benz",
+      "axe": "Économie et entreprise",
+      "naissance": 1844,
+      "pays": "DE",
+      "wikipedia": "Carl_Benz",
+      "portrait": {
+        "fichier": "Carl Benz 1869.png",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu",
+        "legende": "Carl Benz, photographie de jeunesse (1869)"
+      },
+      "description": "Carl Benz (1844-1929) est un ingénieur et industriel allemand, né à Mühlburg, aujourd'hui quartier de Karlsruhe, fils d'un conducteur de locomotive et fondateur en 1883 de Benz & Cie à Mannheim. En 1886, il fait breveter la « Motorwagen », un tricycle à moteur à quatre temps que l'on considère comme la première automobile pratique. En août 1888, son épouse Bertha fait sans le prévenir le premier long trajet en automobile, de Mannheim à Pforzheim, soit une centaine de kilomètres ; l'entreprise de Benz fusionne en 1926 avec celle de Gottlieb Daimler pour donner Mercedes-Benz, et il meurt à Ladenburg en 1929.",
+      "essentiel": true
+    },
+    {
+      "slug": "bosch",
+      "nom": "Robert Bosch",
+      "titre": "Naissance de Robert Bosch",
+      "axe": "Économie et entreprise",
+      "naissance": 1861,
+      "pays": "DE",
+      "wikipedia": "Robert_Bosch",
+      "portrait": {
+        "fichier": "Robert Bosch, 1925.jpg",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu",
+        "legende": "Robert Bosch, photographie (vers 1925)"
+      },
+      "description": "Robert Bosch (1861-1942) est un industriel et inventeur allemand, né à Albeck, près d'Ulm, d'une famille d'aubergistes, mécanicien formé aux États-Unis, qui fonde à Stuttgart en 1886 un atelier de mécanique de précision et d'électricité. Sa magnéto à haute tension, mise au point en 1902, permet des moteurs à explosion fiables, et son entreprise devient le leader des équipementiers automobiles, des bougies et des injecteurs aux appareils ménagers. Patron social, partisan de la journée de huit heures dès 1906, il finance l'hôpital Robert-Bosch, la recherche médicale et l'entente franco-allemande, aide discrètement des Juifs à fuir le nazisme et meurt à Stuttgart en 1942 ; sa fondation reste propriétaire de l'essentiel de l'entreprise."
+    }
+  ],
+  "partMaxPays": 0.6
+}

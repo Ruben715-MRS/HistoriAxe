@@ -89,10 +89,12 @@ test('Personnages illustres : deux sous-catégories, chacune avec sa note et son
     expect(await visibleScreen(page)).toBe('screen-themes');
     await expect(page.locator('#theme-screen-title')).toHaveText('Panthéons');
     await expect(page.locator('#theme-screen-note-text')).toContainText('né dans les frontières actuelles');
-    // Panthéons de pays et de blocs se rangent par leur nom de source — « Amérique hispanique »,
-    // « Égypte », « États-Unis », « France », « Italie », « Maghreb » — et non par « Grandes figures d'… » / « … de » / « … des » / « … du ».
+    // Panthéons de pays et de blocs se rangent par leur nom de source — « Allemagne, Autriche et Suisse »,
+    // « Amérique hispanique », « Égypte », « États-Unis », « France », « Italie », « Maghreb » — et non par
+    // « Grandes figures d'… » / « … de » / « … des » / « … du ».
     await expect(page.locator('#themes-container .data-card-title'))
-        .toHaveText(["Grandes figures d'Amérique hispanique", "Grandes figures d'Égypte", 'Grandes figures des États-Unis',
+        .toHaveText(["Grandes figures d'Allemagne, d'Autriche et de Suisse", "Grandes figures d'Amérique hispanique",
+            "Grandes figures d'Égypte", 'Grandes figures des États-Unis',
             'Grandes figures de France', "Grandes figures d'Italie", 'Grandes figures du Maghreb']);
 });
 
@@ -360,6 +362,50 @@ test('la recherche — « egypte », « pharaon », « nil » — mène au panth
         await page.locator('#theme-search-input').fill(mot);
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: "Grandes figures d'Égypte" });
         await expect(resultat, `« ${mot} » doit mener à l'Égypte`).toHaveCount(1);
+        await expect(resultat.locator('.search-result-path')).toContainText('Personnages illustres › Panthéons');
+    }
+});
+
+test('l’Allemagne, l’Autriche et la Suisse : chacune de ses figures a son portrait et son pays', async ({ page }) => {
+    await openThemeById(page, 'pan_dach');
+    await page.locator('#mode-card-discovery').click();
+    await expect(page.locator('#screen-game')).toBeVisible();
+    const nombre = await page.evaluate(() => getCurrentTheme().events.length);
+    expect(nombre).toBeGreaterThanOrEqual(140);
+    expect(nombre).toBeLessThanOrEqual(160);
+    // Une pastille par repère, pas une de moins.
+    await expect(page.locator('#timeline .entry')).toHaveCount(nombre);
+    await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
+
+    // Les trois pays du bloc, chacun par une de ses figures. Mozart est né à Salzbourg (Autriche),
+    // Kafka à Prague (alors Autriche-Hongrie) : la fiche dit le pays que le bloc lui donne.
+    const figures = [
+        ['Naissance de Johann Wolfgang von Goethe', '🇩🇪', 'Allemagne'],
+        ['Naissance de Wolfgang Amadeus Mozart', '🇦🇹', 'Autriche'],
+        ['Naissance de Paul Klee', '🇨🇭', 'Suisse'],
+    ];
+    for (const [titre, drapeau, pays] of figures) {
+        await page.locator('#timeline .entry', { hasText: titre }).click();
+        await expect(page.locator('#modal-details')).toBeVisible();
+        await expect(page.locator('#modal-pays')).toContainText(drapeau);
+        await expect(page.locator('#modal-pays')).toContainText(pays);
+        const portrait = page.locator('#modal-portrait-img');
+        await expect.poll(() => portrait.evaluate(img => img.complete ? img.naturalWidth : 0)).toBe(320);
+        await page.locator('#modal-details .close-btn').click();
+        await expect(page.locator('#modal-details')).toBeHidden();
+    }
+
+    // Goethe a aussi sa biographie : le bouton y mène.
+    await page.locator('#timeline .entry', { hasText: 'Naissance de Johann Wolfgang von Goethe' }).click();
+    await expect(page.locator('#modal-bio-btn')).toBeVisible();
+});
+
+test('la recherche — « allemagne », « autriche », « suisse » — mène au panthéon de la sphère germanophone', async ({ page }) => {
+    await page.locator('#screen-home').click();
+    for (const mot of ['allemagne', 'autriche', 'suisse', 'habsbourg']) {
+        await page.locator('#theme-search-input').fill(mot);
+        const resultat = page.locator('#theme-search-results .search-result-item', { hasText: "Grandes figures d'Allemagne, d'Autriche et de Suisse" });
+        await expect(resultat, `« ${mot} » doit mener au panthéon d'Allemagne, d'Autriche et de Suisse`).toHaveCount(1);
         await expect(resultat.locator('.search-result-path')).toContainText('Personnages illustres › Panthéons');
     }
 });
