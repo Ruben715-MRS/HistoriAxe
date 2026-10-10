@@ -448,6 +448,16 @@ on ne lit pas trois phrases en deux secondes. Un vrai bouton « Continuer » pre
 Entrée suffit. Rencontrer une figure ici la débloque dans la collection, comme dans tout autre
 mode.
 
+### « Découvrir » : un événement ou un personnage
+
+Le bouton 🎲 déplie deux choix sous la grille, comme « Défis » (un seul volet ouvert à la fois) :
+**Événement**, le tirage d'avant, et **Personnage**, qui pioche une figure de la galerie des
+portraits (`discoverRandomPortrait`) et ouvre sa fiche avec les mêmes accès au jeu — sa biographie
+quand elle existe, son panthéon — et un bouton « Un autre personnage » qui repioche, jamais deux fois
+la même de suite. La fiche n'est pas celle de la galerie : ni barre de passage entre portraits, ni
+noir et blanc de la collection, puisqu'on découvre. Sans aucun portrait dans la base (pack sans
+panthéons), le bouton garde son comportement d'origine et pioche un événement directement.
+
 ### Le portrait du jour
 
 Un « Qui est-ce ? » d'**une seule question**, la même pour tous les joueurs d'un jour : un

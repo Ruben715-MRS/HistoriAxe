@@ -1301,6 +1301,31 @@ function discoverRandomEvent() {
     openModal(pick.event, pick);
 }
 
+// Les figures qu'on peut tirer au hasard : celles de la galerie des portraits (un portrait, une date).
+function getDiscoverablePortraits() {
+    return getPortraitDayPool().filter(evt => portraitOf(evt) && typeof evt.date === 'number');
+}
+
+let lastDiscoveredPortraitId = null;
+
+// Pioche un personnage au hasard parmi ceux de la galerie des portraits et ouvre sa fiche, avec les mêmes
+// accès que depuis la galerie : sa biographie quand elle existe, et son panthéon. Le bouton « Un autre
+// personnage » repioche (jamais deux fois de suite le même).
+function discoverRandomPortrait() {
+    const all = getDiscoverablePortraits();
+    if (all.length === 0) return;
+    let pick;
+    do { pick = all[Math.floor(Math.random() * all.length)]; }
+    while (all.length > 1 && pick.id === lastDiscoveredPortraitId);
+    lastDiscoveredPortraitId = pick.id;
+    const context = whoThemeContext(pick);
+    if (!context) return;
+    context.hideRedraw = false;
+    context.redraw = discoverRandomPortrait;
+    context.redrawLabel = 'modal.redraw_person_btn';
+    openModal(pick, context);
+}
+
 // Lance le Défi du jour : 10 événements tirés de façon identique pour tous les
 // joueurs du monde entier (voir generateDailyEvents), joués en mode Classique
 // chronométré (3 vies, temps affiché) pour alimenter le score du classement
@@ -1645,7 +1670,7 @@ function initCategories() {
                         </div>
                         <span class="quick-action-label" style="font-size: 13px; font-weight: 600;">${(typeof t === 'function' ? t('categories.special_favorites') : 'Favoris')} (${favCount})</span>
                     </div>
-                    <div class="flex flex-col items-center gap-2" id="btn-discover" style="cursor: pointer;" role="button" tabindex="0">
+                    <div class="flex flex-col items-center gap-2" id="btn-discover" style="cursor: pointer;" role="button" tabindex="0" aria-expanded="false" aria-controls="discover-picker">
                         <div class="quick-action-circle rounded-full flex items-center justify-center transition-colors cursor-pointer group mx-auto" style="border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; background: var(--surface); border: 1px solid var(--border-soft); box-shadow: var(--card-shadow);">
                             <span style="font-size: 28px;">🎲</span>
                         </div>
@@ -1663,6 +1688,16 @@ function initCategories() {
                         </div>
                         <span class="quick-action-label" style="font-size: 13px; font-weight: 600;">${(typeof t === 'function' ? t('categories.special_revision') : 'Réviser')} (${weakCount})</span>
                     </div>
+                </div>
+                <div class="challenge-picker hidden" id="discover-picker">
+                    <button type="button" class="challenge-picker-btn" id="btn-discover-event">
+                        <span class="challenge-picker-icon" aria-hidden="true">🕰️</span>
+                        <span>${t('categories.discover_event')}</span>
+                    </button>
+                    <button type="button" class="challenge-picker-btn" id="btn-discover-person">
+                        <span class="challenge-picker-icon" aria-hidden="true">👤</span>
+                        <span>${t('categories.discover_person')}</span>
+                    </button>
                 </div>
                 <div class="challenge-picker hidden" id="challenge-picker">
                     <button type="button" class="challenge-picker-btn" id="btn-challenge-daily">
@@ -1691,7 +1726,26 @@ function initCategories() {
     const btnFav = gridSection.querySelector('#btn-favoris');
     if (btnFav) btnFav.onclick = () => openFavorites();
     const btnDisc = gridSection.querySelector('#btn-discover');
-    if (btnDisc) btnDisc.onclick = () => discoverRandomEvent();
+    // « Découvrir » propose un événement ou un personnage, sous forme de deux boutons dépliés sous la grille
+    // (comme « Défis »). Sans aucun portrait dans la base (pack sans panthéons), il n'y a pas de choix à
+    // offrir : il pioche un événement directement, comme avant.
+    const discoverPicker = gridSection.querySelector('#discover-picker');
+    const challengePickerEl = gridSection.querySelector('#challenge-picker');
+    if (btnDisc && discoverPicker) {
+        btnDisc.onclick = () => {
+            if (getDiscoverablePortraits().length === 0) { discoverRandomEvent(); return; }
+            const nowOpen = discoverPicker.classList.toggle('hidden') === false;
+            btnDisc.setAttribute('aria-expanded', String(nowOpen));
+            // Un seul volet à la fois : « Défis » se referme.
+            if (nowOpen && challengePickerEl) {
+                challengePickerEl.classList.add('hidden');
+                const btnDaily = gridSection.querySelector('#btn-daily');
+                if (btnDaily) btnDaily.setAttribute('aria-expanded', 'false');
+            }
+        };
+        gridSection.querySelector('#btn-discover-event').onclick = () => discoverRandomEvent();
+        gridSection.querySelector('#btn-discover-person').onclick = () => discoverRandomPortrait();
+    }
     // Le bouton « Défis » ne lance plus directement le Défi du jour : il
     // déplie/replie un choix entre Défi du jour et Défi hebdomadaire, sous
     // forme de deux boutons côte à côte sous la grille (voir #challenge-picker
@@ -1702,6 +1756,10 @@ function initCategories() {
         btnDay.onclick = () => {
             const nowOpen = challengePicker.classList.toggle('hidden') === false;
             btnDay.setAttribute('aria-expanded', String(nowOpen));
+            if (nowOpen && discoverPicker) {
+                discoverPicker.classList.add('hidden');
+                if (btnDisc) btnDisc.setAttribute('aria-expanded', 'false');
+            }
         };
     }
     const btnChallengeDaily = gridSection.querySelector('#btn-challenge-daily');
@@ -5875,7 +5933,9 @@ function openModal(evt, context = null) {
             redrawBtn.classList.add('hidden');
         } else {
             redrawBtn.classList.remove('hidden');
-            redrawBtn.onclick = () => discoverRandomEvent();
+            // « Un autre événement » depuis un événement, « Un autre personnage » depuis un personnage.
+            redrawBtn.innerText = t(context.redrawLabel || 'modal.redraw_btn');
+            redrawBtn.onclick = () => (context.redraw || discoverRandomEvent)();
         }
     } else {
         themeRow.classList.add('hidden');

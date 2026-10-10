@@ -1220,3 +1220,105 @@ test('la pastille « biographie disponible » n’apparaît que sur les figures 
     const [a, b] = await Promise.all([hugo.boundingBox(), ferry.boundingBox()]);
     expect(Math.abs(a.width - b.width)).toBeLessThan(1);
 });
+
+// ---- « Découvrir » : un événement ou un personnage -----------------------------------------------------
+
+test('« Découvrir » propose deux boutons, « Événement » et « Personnage », et un seul volet à la fois', async ({ page }) => {
+    await quitterLAccueil(page);
+    const picker = page.locator('#discover-picker');
+    await expect(picker).toBeHidden();
+    await page.locator('#btn-discover').click();
+    await expect(picker).toBeVisible();
+    await expect(page.locator('#btn-discover')).toHaveAttribute('aria-expanded', 'true');
+    await expect(picker.locator('button > span:last-child')).toHaveText(['Événement', 'Personnage']);
+    // Ouvrir « Défis » referme « Découvrir », et inversement.
+    await page.locator('#btn-daily').click();
+    await expect(page.locator('#challenge-picker')).toBeVisible();
+    await expect(picker).toBeHidden();
+    await expect(page.locator('#btn-discover')).toHaveAttribute('aria-expanded', 'false');
+    await page.locator('#btn-discover').click();
+    await expect(picker).toBeVisible();
+    await expect(page.locator('#challenge-picker')).toBeHidden();
+    // Un second appui replie.
+    await page.locator('#btn-discover').click();
+    await expect(picker).toBeHidden();
+});
+
+test('« Découvrir » › « Personnage » ouvre la fiche d’une figure de la galerie, avec sa biographie et son panthéon', async ({ page }) => {
+    await quitterLAccueil(page);
+    await page.locator('#btn-discover').click();
+    await page.locator('#btn-discover-person').click();
+    await expect(page.locator('#modal-details')).toBeVisible();
+
+    // Une figure de la galerie : un portrait chargé, un titre « Naissance de… ».
+    const titre = await page.locator('#modal-titre').textContent();
+    expect(titre).toMatch(/^Naissance /);
+    const portrait = page.locator('#modal-portrait-img');
+    await expect(portrait).toBeVisible();
+    await expect.poll(() => portrait.evaluate(img => img.complete ? img.naturalWidth : 0)).toBe(320);
+    // Ce n'est pas la fiche de la galerie : ni barre de passage, ni noir et blanc.
+    await expect(page.locator('#modal-gallery-nav')).toBeHidden();
+    await expect(page.locator('#modal-gallery-lock')).toBeHidden();
+
+    // Le panthéon, toujours ; la biographie, quand elle existe — comme dans la galerie.
+    await expect(page.locator('#modal-theme-btn')).toContainText('Grandes figures');
+    const aBio = await page.evaluate(t => {
+        const panth = bdd.find(c => c.nom === 'Personnages illustres').subcategories.find(s => s.nom === 'Panthéons');
+        return !!panth.themes.flatMap(x => x.events).find(e => e.titre === t).biographie;
+    }, titre);
+    if (aBio) await expect(page.locator('#modal-bio-btn')).toBeVisible();
+    else await expect(page.locator('#modal-bio-row')).toBeHidden();
+
+    // « Un autre personnage » repioche, jamais le même, et reste dans les personnages.
+    await expect(page.locator('#modal-redraw-btn')).toHaveText('🔀 Un autre personnage');
+    for (let i = 0; i < 4; i++) {
+        const avant = await page.locator('#modal-titre').textContent();
+        await page.locator('#modal-redraw-btn').click();
+        const apres = await page.locator('#modal-titre').textContent();
+        expect(apres).not.toBe(avant);
+        expect(apres).toMatch(/^Naissance /);
+        await expect(page.locator('#modal-portrait-img')).toBeVisible();
+    }
+
+    // Le panthéon s'ouvre comme un thème.
+    await page.locator('#modal-theme-btn').click();
+    await expect(page.locator('#modal-details')).toBeHidden();
+    await page.waitForSelector('#screen-axes:not(.hidden), #screen-modes:not(.hidden)');
+    expect(await page.evaluate(() => getCurrentTheme().id)).toMatch(/^pan_/);
+});
+
+test('« Découvrir » › « Personnage » : la biographie mène au jeu, quand le personnage en a une', async ({ page }) => {
+    await quitterLAccueil(page);
+    // On tire jusqu'à une figure qui a sa biographie (152 sur 838).
+    await page.locator('#btn-discover').click();
+    await page.locator('#btn-discover-person').click();
+    for (let i = 0; i < 40 && !(await page.locator('#modal-bio-btn').isVisible()); i++) {
+        await page.locator('#modal-redraw-btn').click();
+    }
+    await expect(page.locator('#modal-bio-btn')).toBeVisible();
+    await expect(page.locator('#modal-bio-btn')).toHaveText('Voir sa biographie');
+    await page.locator('#modal-bio-btn').click();
+    await expect(page.locator('#modal-details')).toBeHidden();
+    await page.waitForSelector('#screen-axes:not(.hidden), #screen-modes:not(.hidden)');
+    expect(await page.evaluate(() => getCurrentTheme().id)).toMatch(/^bio_/);
+});
+
+test('« Découvrir » › « Événement » garde son comportement, et son bouton repioche un événement', async ({ page }) => {
+    await quitterLAccueil(page);
+    await page.locator('#btn-discover').click();
+    await page.locator('#btn-discover-event').click();
+    await expect(page.locator('#modal-details')).toBeVisible();
+    await expect(page.locator('#modal-redraw-btn')).toHaveText('🔀 Un autre événement');
+    // Revenir ensuite à un personnage ne laisse pas le libellé d'un événement.
+    await page.locator('#modal-details .close-btn').click();
+    await page.locator('#btn-discover-person').click();
+    await expect(page.locator('#modal-redraw-btn')).toHaveText('🔀 Un autre personnage');
+});
+
+test('sans aucun portrait dans la base, « Découvrir » pioche un événement directement', async ({ page }) => {
+    await quitterLAccueil(page);
+    await page.evaluate(() => { getDiscoverablePortraits = () => []; });
+    await page.locator('#btn-discover').click();
+    await expect(page.locator('#discover-picker')).toBeHidden();
+    await expect(page.locator('#modal-details')).toBeVisible();
+});
