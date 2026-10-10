@@ -159,6 +159,18 @@ def validate(src, code, bio_themes, other_pantheons, errors, warnings):
         for field in ('nom', 'titre', 'axe', 'naissance', 'description', 'wikipedia'):
             if field not in p:
                 errors.append(f'{who}: champ « {field} » manquant')
+        # Nom de classement (galerie « par nom de famille ») : « Hugo, Victor ». Il ne doit
+        # contenir que des mots du nom, sans en inventer : une faute de frappe y rangerait
+        # un personnage sous une initiale qui n'est pas la sienne. Les articles et
+        # particules peuvent manquer (« Le Tasse » → « Tasse ») ; voir scripts/pantheon_classement.py.
+        classement = p.get('classement')
+        if not isinstance(classement, str) or not classement.strip():
+            errors.append(f'{who}: champ « classement » manquant (python3 scripts/pantheon_classement.py --write)')
+        elif p.get('nom'):
+            known = set(re.findall(r'\w+', p['nom'].lower()))
+            extra = [w for w in re.findall(r'\w+', classement.lower()) if w not in known]
+            if extra:
+                errors.append(f'{who}: « classement » ({classement}) contient des mots absents du nom : {", ".join(extra)}')
         if errors and 'naissance' not in p:
             continue
         if p['axe'] not in axes:
@@ -256,6 +268,7 @@ def build_theme(src, code, warnings):
         }
         if bloc:
             event['pays'] = p['pays']
+        event['classement'] = p['classement']
         if p.get('biographie'):
             event['biographie'] = p['biographie']
         portrait = p.get('portrait')
