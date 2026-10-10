@@ -54,6 +54,8 @@
     var WHO_ROUNDS = 10;
     var WHO_OPTIONS = 4;
     var WHO_MIN_PORTRAITS = 8;
+    // Les mauvaises réponses se tirent parmi les WHO_NEAR figures les plus proches en date de la bonne.
+    var WHO_NEAR = 8;
 
     // Intrus « période » : l'écart minimal entre le trio et son intrus est
     // un MULTIPLE de l'étalement du trio, jamais une valeur absolue — un
@@ -439,13 +441,20 @@
         return !!(evt && evt.image && typeof evt.image.src === 'string' && evt.image.src);
     }
 
+    // Une image où le nom est écrit (une inscription peinte, un badge de combinaison, une légende dans la
+    // gravure) donne la réponse : `image.nomVisible` la retire du jeu. La galerie, elle, la garde — elle
+    // montre les visages avec leurs noms. Voir scripts/pantheon/*.json (portrait.nomVisible).
+    function nameIsHidden(evt) {
+        return !(evt.image && evt.image.nomVisible);
+    }
+
     // Les figures dont on peut faire une question : un portrait, un nom, et un
     // nom distinct — deux événements qui donneraient la même étiquette ne
     // feraient qu'une seule bonne réponse possible.
     function whoCandidates(events) {
         var seen = {};
         return (events || []).filter(function (e) {
-            if (!hasPortrait(e)) return false;
+            if (!hasPortrait(e) || !nameIsHidden(e)) return false;
             var name = whoNameOf(e);
             if (!name || seen[name]) return false;
             seen[name] = 1;
@@ -462,28 +471,41 @@
         return (words.length > 1 && /^(?:Ier|Ire|[IVX]+)$/.test(last) ? words[0] : last).toLowerCase();
     }
 
-    function buildWhoQuestion(candidates, correct, rng) {
+    // Les figures du vivier les plus proches en date de `date` : un portrait de la Renaissance ne doit pas
+    // côtoyer deux Romains, dont le costume suffirait à le désigner.
+    function nearestByDate(list, date, n) {
+        function gap(e) { return typeof e.date === 'number' ? Math.abs(e.date - date) : Infinity; }
+        return list.slice().sort(function (a, b) {
+            return (gap(a) - gap(b)) || (a.id < b.id ? -1 : (a.id > b.id ? 1 : 0));
+        }).slice(0, n);
+    }
+
+    function buildWhoQuestion(candidates, correct, rng, distractors) {
         var name = whoNameOf(correct);
-        var others = candidates.filter(function (e) { return e.id !== correct.id; });
+        // Les mauvaises réponses peuvent venir d'un vivier plus large que celui des bonnes (tout le thème,
+        // quand la manche n'en joue que vingt) : plus de noms proches de l'époque à tirer.
+        var others = (distractors || candidates).filter(function (e) { return e.id !== correct.id; });
         // Pas de nom de famille partagé avec la bonne réponse ; à défaut de
         // vivier assez large, on relâche cette règle plutôt que de renoncer.
         var strict = others.filter(function (e) { return familyKey(whoNameOf(e)) !== familyKey(name); });
         var pool = strict.length >= WHO_OPTIONS - 1 ? strict : others;
-        // Le même domaine d'abord, puis les autres.
-        var sameAxis = shuffle(pool.filter(function (e) { return e.axe && e.axe === correct.axe; }), rng);
-        var rest = shuffle(pool.filter(function (e) { return !(e.axe && e.axe === correct.axe); }), rng);
+        // Le même domaine d'abord, puis les autres ; dans chaque groupe, de préférence les contemporains.
+        var sameAxisAll = pool.filter(function (e) { return e.axe && e.axe === correct.axe; });
+        var restAll = pool.filter(function (e) { return !(e.axe && e.axe === correct.axe); });
+        var ordered = shuffle(nearestByDate(sameAxisAll, correct.date, WHO_NEAR), rng)
+            .concat(shuffle(nearestByDate(restAll, correct.date, WHO_NEAR), rng));
         var wrong = [];
-        var lastWords = {};
-        sameAxis.concat(rest).forEach(function (e) {
+        var families = {};
+        ordered.forEach(function (e) {
             if (wrong.length >= WHO_OPTIONS - 1) return;
             var w = familyKey(whoNameOf(e));
-            if (lastWords[w]) return; // deux mauvaises réponses au même nom de famille : une seule suffit
-            lastWords[w] = 1;
+            if (families[w]) return; // deux mauvaises réponses au même nom de famille : une seule suffit
+            families[w] = 1;
             wrong.push(e);
         });
-        // Si cette dernière règle a trop réduit le choix, on complète sans elle.
+        // Si ces règles ont trop réduit le choix, on complète sans elles.
         if (wrong.length < WHO_OPTIONS - 1) {
-            sameAxis.concat(rest).forEach(function (e) {
+            sameAxisAll.concat(restAll).forEach(function (e) {
                 if (wrong.length < WHO_OPTIONS - 1 && wrong.indexOf(e) === -1) wrong.push(e);
             });
         }
@@ -500,14 +522,29 @@
         var count = options.count || WHO_ROUNDS;
         var candidates = whoCandidates(events);
         if (candidates.length < WHO_OPTIONS) return [];
+        // `pool` : le vivier d'où viennent les mauvaises réponses, s'il est plus large que celui des bonnes.
+        var distractors = options.pool ? whoCandidates(options.pool) : candidates;
         // Chaque figure ne sert qu'une fois comme bonne réponse.
         var out = [];
         shuffle(candidates, rng).forEach(function (correct) {
             if (out.length >= count) return;
-            var q = buildWhoQuestion(candidates, correct, rng);
+            var q = buildWhoQuestion(candidates, correct, rng, distractors);
             if (q) out.push(q);
         });
         return out;
+    }
+
+    // Le portrait du jour : une seule question, la même pour tous les joueurs d'un même jour. Le tirage
+    // ne dépend que du générateur reçu (graine du jour, voir js/app.js: getPortraitDayQuestion) et pas
+    // de l'ordre des événements, qu'un changement de pack ou de langue peut bouleverser : on trie les
+    // candidats par identifiant avant de piocher.
+    function buildDailyWhoQuestion(events, rng) {
+        var candidates = whoCandidates(events).sort(function (a, b) {
+            return a.id < b.id ? -1 : (a.id > b.id ? 1 : 0);
+        });
+        if (candidates.length < WHO_OPTIONS) return null;
+        var correct = candidates[Math.floor(rng() * candidates.length)];
+        return buildWhoQuestion(candidates, correct, rng);
     }
 
     return {
@@ -539,6 +576,7 @@
         whoNameOf: whoNameOf,
         whoCandidates: whoCandidates,
         buildWhoQuestion: buildWhoQuestion,
-        buildWhoQuestions: buildWhoQuestions
+        buildWhoQuestions: buildWhoQuestions,
+        buildDailyWhoQuestion: buildDailyWhoQuestion
     };
 });

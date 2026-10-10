@@ -1079,3 +1079,144 @@ test('« Qui est-ce ? » lancé depuis la galerie y ramène à la fin de la part
     await remonterJusqueALaGalerie(page);
     await expect(page.locator('#gallery-container .gallery-card', { hasText: 'Victor Hugo' })).toHaveCount(1);
 });
+
+// ---- Portrait du jour, et repère « biographie disponible » -----------------------------------------
+
+async function ouvrirLesDefis(page) {
+    await quitterLAccueil(page);
+    await page.locator('#btn-daily').click();
+    await expect(page.locator('#challenge-picker')).toBeVisible();
+}
+
+test('le portrait du jour s’ajoute aux défis, avec son état du jour', async ({ page }) => {
+    await ouvrirLesDefis(page);
+    const bouton = page.locator('#btn-challenge-portrait');
+    await expect(bouton).toBeVisible();
+    await expect(bouton.locator('.portrait-day-title')).toHaveText('Portrait du jour');
+    await expect(page.locator('#portrait-day-status')).toHaveText('Un visage à trouver chaque jour');
+    // Les trois défis existants sont intacts.
+    await expect(page.locator('#btn-challenge-daily')).toBeVisible();
+    await expect(page.locator('#btn-challenge-weekly')).toBeVisible();
+    await expect(page.locator('#btn-challenge-simul')).toBeVisible();
+});
+
+test('le portrait du jour est le même pour tous : même portrait, mêmes options, même ordre', async ({ page }) => {
+    await ouvrirLesDefis(page);
+    await page.locator('#btn-challenge-portrait').click();
+    await expect(page.locator('#screen-whois')).toBeVisible();
+    const premiere = await page.evaluate(() => ({ id: whoQuestions[0].correctId, options: whoQuestions[0].options.map(o => o.id) }));
+    expect(premiere.options).toHaveLength(4);
+
+    // Un autre appareil, le même jour : on recharge tout.
+    await page.reload();
+    await page.waitForFunction(() => window.bdd && bdd.length > 0, null, { timeout: 45_000 });
+    await ouvrirLesDefis(page);
+    await page.locator('#btn-challenge-portrait').click();
+    const seconde = await page.evaluate(() => ({ id: whoQuestions[0].correctId, options: whoQuestions[0].options.map(o => o.id) }));
+    expect(seconde).toEqual(premiere);
+});
+
+test('le portrait du jour : une question, sans points ni vies ni écran de fin', async ({ page }) => {
+    await ouvrirLesDefis(page);
+    await page.locator('#btn-challenge-portrait').click();
+    await expect(page.locator('#whois-kicker')).toHaveText('Portrait du jour · Qui est-ce ?');
+    await expect(page.locator('#whois-portrait-img')).toBeVisible();
+    // Pas de vies ni de progression dans la barre du haut : le portrait du jour n'est pas classé.
+    await expect(page.locator('#whois-hud-lives')).toBeHidden();
+    await expect(page.locator('#whois-hud-count')).toBeHidden();
+    await expect(page.locator('#screen-whois .quit-btn')).toBeVisible();
+
+    await repondre(page, false);
+    await expect(page.locator('#whois-reveal .whois-reveal-verdict')).toContainText('Raté');
+    // Une mauvaise réponse ne coûte rien : ni vie, ni point.
+    expect(await page.evaluate(() => ({ lives, score }))).toEqual({ lives: 3, score: 0 });
+    await expect(page.locator('#whois-continue')).toHaveText('Retour aux défis');
+    // La figure est tout de même rencontrée : elle se débloque dans la collection.
+    expect(await page.evaluate(() => !!srsLoad()[whoQuestions[0].correctId])).toBe(true);
+
+    // La fiche complète, avec ses accès au jeu.
+    await page.locator('#whois-daily-card').click();
+    await expect(page.locator('#modal-details')).toBeVisible();
+    await expect(page.locator('#modal-titre')).toHaveText(/^Naissance /);
+    await expect(page.locator('#modal-theme-btn')).toBeVisible();
+    await page.locator('#modal-details .close-btn').click();
+
+    await page.locator('#whois-continue').click();
+    await expect(page.locator('#screen-categories')).toBeVisible();
+    expect(await page.evaluate(() => whoDailyMode)).toBe(false);
+});
+
+test('le portrait du jour, une fois répondu, se rouvre tel qu’on l’a laissé et ne se rejoue pas', async ({ page }) => {
+    await ouvrirLesDefis(page);
+    await page.locator('#btn-challenge-portrait').click();
+    await repondre(page, true);
+    const bonne = await bonneReponse(page);
+    await page.locator('#whois-continue').click();
+
+    await page.locator('#btn-daily').click();
+    await expect(page.locator('#portrait-day-status')).toHaveText('✔ Trouvé aujourd\'hui');
+    await page.locator('#btn-challenge-portrait').click();
+    // Déjà répondu : la fiche est là d'emblée, la bonne réponse marquée, plus rien à cliquer.
+    await expect(page.locator('#whois-reveal')).toBeVisible();
+    await expect(page.locator('#whois-reveal .whois-reveal-verdict')).toHaveText('Bien vu !');
+    await expect(page.locator(`#whois-options .whois-option[data-event-id="${bonne}"]`)).toHaveClass(/correct/);
+    await expect(page.locator('#whois-options .whois-option.wrong')).toHaveCount(0);
+    expect(await page.locator('#whois-options .whois-option').first().evaluate(b => getComputedStyle(b).pointerEvents)).toBe('none');
+});
+
+test('le portrait du jour raté propose de revoir la fiche, et son état ne vaut que pour le jour', async ({ page }) => {
+    await ouvrirLesDefis(page);
+    await page.locator('#btn-challenge-portrait').click();
+    await repondre(page, false);
+    await page.locator('#whois-continue').click();
+    await page.locator('#btn-daily').click();
+    await expect(page.locator('#portrait-day-status')).toHaveText('Revoir la fiche du jour');
+    // Hier : la réponse enregistrée ne compte plus.
+    await page.evaluate(() => { const s = portraitDayLoad(); s.date = '2020-01-01'; portraitDaySave(s); initCategories(); });
+    await page.locator('#btn-daily').click();
+    await expect(page.locator('#portrait-day-status')).toHaveText('Un visage à trouver chaque jour');
+});
+
+test('quitter le portrait du jour ne demande rien et ne l’enregistre pas', async ({ page }) => {
+    await ouvrirLesDefis(page);
+    await page.locator('#btn-challenge-portrait').click();
+    await page.locator('#screen-whois .quit-btn').click();
+    await expect(page.locator('#screen-categories')).toBeVisible();
+    await expect(page.locator('#modal-confirm')).toBeHidden();
+    expect(await page.evaluate(() => portraitDayLoad())).toBeNull();
+    // Une partie ordinaire de « Qui est-ce ? » ensuite n'hérite pas du mode du jour.
+    await openThemeById(page, PANTHEON);
+    await page.locator('#mode-card-whois').click();
+    await expect(page.locator('#whois-hud-lives')).toBeVisible();
+    await expect(page.locator('#whois-kicker')).toHaveText('Qui est-ce ?');
+});
+
+test('le Défi du jour classé ne change pas : le portrait du jour a sa propre graine', async ({ page }) => {
+    await quitterLAccueil(page);
+    const avant = await page.evaluate(() => generateDailyEvents().map(i => i.event.id));
+    await page.evaluate(() => { getPortraitDayQuestion(); });
+    const apres = await page.evaluate(() => generateDailyEvents().map(i => i.event.id));
+    expect(apres).toEqual(avant);
+    expect(avant).toHaveLength(10);
+});
+
+test('la pastille « biographie disponible » n’apparaît que sur les figures qui en ont une', async ({ page }) => {
+    await ouvrirLaGalerie(page);
+    // Calculé depuis les données brutes, pas depuis la galerie : il faut un thème de biographie qui existe.
+    const attendu = await page.evaluate(() => {
+        const ids = new Set(getAllThemesWithPath().map(i => i.theme.id));
+        const panth = bdd.find(c => c.nom === 'Personnages illustres').subcategories.find(s => s.nom === 'Panthéons');
+        return panth.themes.flatMap(t => t.events).filter(e => e.image && e.biographie && ids.has(e.biographie)).length;
+    });
+    expect(attendu).toBeGreaterThan(100);
+    await expect(page.locator('.gallery-card-bio')).toHaveCount(attendu);
+    // Victor Hugo en a une, Jules Ferry non — et leurs cartes ont la même taille.
+    const hugo = page.locator('.gallery-card', { hasText: 'Victor Hugo' });
+    const ferry = page.locator('.gallery-card', { hasText: 'Jules Ferry' });
+    await expect(hugo.locator('.gallery-card-bio')).toHaveCount(1);
+    await expect(ferry.locator('.gallery-card-bio')).toHaveCount(0);
+    await expect(hugo).toHaveAttribute('aria-label', /biographie disponible/);
+    await expect(ferry).not.toHaveAttribute('aria-label', /biographie/);
+    const [a, b] = await Promise.all([hugo.boundingBox(), ferry.boundingBox()]);
+    expect(Math.abs(a.width - b.width)).toBeLessThan(1);
+});

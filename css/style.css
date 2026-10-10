@@ -6939,6 +6939,9 @@ input:not([type="range"]), label, select, summary, textarea {
 
 .whois-portrait-credit {
     margin-top: 8px;
+    font-size: 12px;
+    line-height: 1.4;
+    color: var(--muted-text);
 }
 
 /* Le révélé : la fiche de la personne, qu'on lit à son rythme — d'où un vrai bouton « Continuer »
@@ -6996,4 +6999,64 @@ input:not([type="range"]), label, select, summary, textarea {
 
 .whois-continue {
     width: 100%;
+}
+
+.whois-continue + .whois-continue {
+    margin-top: 10px;
+}
+
+/* Portrait du jour : un « Qui est-ce ? » d'une question, non classé ----------------- */
+.challenge-picker-btn.portrait-day-btn {
+    flex: 1 1 100%;
+    flex-direction: row;
+    justify-content: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-color: #C9A24A;
+}
+
+.portrait-day-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 2px;
+}
+
+.portrait-day-title {
+    font-size: 14px;
+}
+
+.portrait-day-status {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted-text);
+}
+
+/* Ni vies, ni progression, ni points : la barre du haut ne garde que « Quitter » et la taille du texte. */
+#screen-whois.is-portrait-day .lives-row,
+#screen-whois.is-portrait-day .game-bar .bar-row + .bar-row {
+    display: none;
+}
+
+/* Repère « biographie disponible » : une pastille dans l'angle de la photo. Posée par-dessus, elle
+   n'ajoute rien à la carte — avec ou sans, le gabarit est le même. */
+.gallery-card-frame {
+    position: relative;
+}
+
+.gallery-card-bio {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+    font-size: 11px;
+    line-height: 1;
 }

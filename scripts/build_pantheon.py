@@ -288,6 +288,10 @@ def build_theme(src, code, warnings):
                     'source': 'https://commons.wikimedia.org/wiki/File:'
                               + quote(portrait['fichier'].replace(' ', '_'), safe="_()-,.!~*"),
                 }
+                # Le nom est écrit dans l'image (inscription peinte, badge, légende gravée) : elle
+                # montrerait la réponse dans « Qui est-ce ? », qui l'écarte. La galerie la garde.
+                if portrait.get('nomVisible'):
+                    event['image']['nomVisible'] = True
         else:
             warnings.append(f"{p['slug']}: aucun portrait prévu")
         events.append(event)

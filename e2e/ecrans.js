@@ -16,6 +16,13 @@ async function attendreLePack(page) {
     );
 }
 
+// Le révélé d'un mode apparaît par un fondu : le mesurer en route, c'est mesurer des couleurs à moitié
+// transparentes (un « #dc9ea0 » là où le texte est rouge). On attend donc la fin des animations.
+async function revelationPosee(page) {
+    await page.waitForSelector('#whois-reveal:not(.hidden)');
+    await page.evaluate(() => Promise.all(document.getAnimations().map(a => a.finished.catch(() => null))));
+}
+
 // Parcourt une trentaine d'écrans et de modales, et appelle
 // `surChaqueEcran(etape)` quand chacun est affiché. `etape` est un libellé
 // lisible, pour que l'échec d'un test dise OÙ regarder.
@@ -32,6 +39,10 @@ async function parcourirLesEcrans(page, surChaqueEcran) {
     await surChaqueEcran('accueil');
     await page.evaluate(() => showScreen('screen-categories')); await surChaqueEcran('catégories');
     await page.locator('#btn-daily').click(); await surChaqueEcran('catégories + défis');
+    await page.locator('#btn-challenge-portrait').click(); await surChaqueEcran('portrait du jour');
+    await page.locator('#whois-options .whois-option').first().click();
+    await revelationPosee(page); await surChaqueEcran('portrait du jour : révélé');
+    await page.locator('#whois-continue').click();
     await page.locator('#theme-search-input').fill('rome');
     await page.waitForTimeout(400); await surChaqueEcran('résultats de recherche');
     await page.evaluate(() => clearThemeSearch());
@@ -75,7 +86,7 @@ async function parcourirLesEcrans(page, surChaqueEcran) {
     await surChaqueEcran('modes d’un panthéon');
     await page.locator('#mode-card-whois').click(); await surChaqueEcran('qui est-ce');
     await page.locator('#whois-options .whois-option').first().click();
-    await page.waitForSelector('#whois-reveal:not(.hidden)'); await surChaqueEcran('qui est-ce : révélé');
+    await revelationPosee(page); await surChaqueEcran('qui est-ce : révélé');
     await page.evaluate(() => { currentMode = 'classic'; showScreen('screen-modes'); });
     await page.evaluate(() => showScreen('screen-end')); await surChaqueEcran('fin de partie');
     await page.evaluate(() => { openProfileModal(); }); await surChaqueEcran('profil');

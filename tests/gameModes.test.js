@@ -386,3 +386,100 @@ test('Qui est-ce ? : sur le vrai pack, chaque panthéon donne dix questions bien
         });
     });
 });
+
+test('Portrait du jour : même graine, même question — quel que soit l’ordre des événements', () => {
+    const D = require('../js/dailyEngine.js');
+    const rngDuJour = date => D.mulberry32(D.hashStringToSeed('historiaxe_portrait_' + date));
+    const fr = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data', 'fr.json'), 'utf8'));
+    const panth = fr.categories.find(c => c.nom === 'Personnages illustres').subcategories.find(s => s.nom === 'Panthéons');
+    const tous = panth.themes.flatMap(t => t.events);
+
+    const a = G.buildDailyWhoQuestion(tous, rngDuJour('2026-10-10'));
+    const b = G.buildDailyWhoQuestion(tous, rngDuJour('2026-10-10'));
+    assert.deepEqual(a.options, b.options);
+    assert.equal(a.correctId, b.correctId);
+    // Un autre ordre d'entrée (autre pack, autre langue) ne change pas le tirage.
+    const inverse = G.buildDailyWhoQuestion(tous.slice().reverse(), rngDuJour('2026-10-10'));
+    assert.equal(inverse.correctId, a.correctId);
+    assert.deepEqual(inverse.options.map(o => o.id), a.options.map(o => o.id));
+
+    // Les jours se suivent sans se ressembler : sur 60 jours, beaucoup de portraits différents.
+    const ids = new Set();
+    for (let j = 1; j <= 60; j++) {
+        const q = G.buildDailyWhoQuestion(tous, rngDuJour(`2026-11-${String(j).padStart(2, '0')}`));
+        assert.equal(q.options.length, G.WHO_OPTIONS);
+        assert.equal(new Set(q.options.map(o => o.name)).size, G.WHO_OPTIONS);
+        ids.add(q.correctId);
+    }
+    assert.ok(ids.size >= 45, `seulement ${ids.size} portraits différents en 60 jours`);
+});
+
+test('Portrait du jour : sans assez de portraits, pas de question', () => {
+    const D = require('../js/dailyEngine.js');
+    const rng = D.mulberry32(1);
+    assert.equal(G.buildDailyWhoQuestion([], rng), null);
+    assert.equal(G.buildDailyWhoQuestion(vivierWho().slice(0, 3), rng), null);
+});
+
+test('Qui est-ce ? : les mauvaises réponses sont des contemporains de la bonne', () => {
+    // Douze figures du même domaine, du XIe au XXe siècle : un portrait de la Renaissance ne doit pas
+    // côtoyer Ovide ou Cicéron, dont le costume suffirait à le désigner.
+    const siecles = [1050, 1150, 1250, 1350, 1450, 1500, 1520, 1550, 1600, 1700, 1850, 1950, 1980, 2000];
+    const pool = siecles.map((date, i) => Object.assign(fig('p' + i, `Personne${String.fromCharCode(65 + i)} Nom${String.fromCharCode(65 + i)}`, 'Arts'), { date }));
+    const correct = pool.find(e => e.date === 1520);
+    const proches = new Set(pool.slice().sort((a, b) => Math.abs(a.date - 1520) - Math.abs(b.date - 1520))
+        .filter(e => e.id !== correct.id).slice(0, 8).map(e => e.id));
+    for (let graine = 1; graine <= 30; graine++) {
+        const q = G.buildWhoQuestion(pool, correct, seededRng(graine), pool);
+        q.options.filter(o => o.id !== correct.id).forEach(o => {
+            assert.ok(proches.has(o.id), `graine ${graine} : ${o.name} (${pool.find(e => e.id === o.id).date}) est trop loin de 1520`);
+        });
+    }
+});
+
+test('Qui est-ce ? : les mauvaises réponses peuvent venir de tout le thème, pas seulement de la manche', () => {
+    const theme = Array.from({ length: 30 }, (_, i) => Object.assign(
+        fig('t' + i, `Prénom${String.fromCharCode(65 + i)} Famille${String.fromCharCode(65 + i)}`, 'Arts'), { date: 1500 + i * 10 }));
+    const manche = theme.slice(0, 5);
+    const qs = G.buildWhoQuestions(manche, { rng: seededRng(2), count: 5, pool: theme });
+    assert.equal(qs.length, 5);
+    const horsManche = qs.flatMap(q => q.options).filter(o => !manche.some(e => e.id === o.id));
+    assert.ok(horsManche.length > 0, 'aucune mauvaise réponse tirée hors de la manche');
+    qs.forEach(q => assert.ok(manche.some(e => e.id === q.correctId), 'une bonne réponse hors de la manche'));
+});
+
+test('Qui est-ce ? : un portrait dont l’image écrit le nom est écarté du jeu', () => {
+    const pool = vivierWho();
+    pool[0].image.nomVisible = true; // Alice Martin : inscription dans l'image
+    assert.equal(G.whoCandidates(pool).length, 9);
+    assert.ok(!G.whoCandidates(pool).some(e => e.id === 'a1'));
+    // Ni en bonne réponse, ni en mauvaise.
+    G.buildWhoQuestions(pool, { rng: seededRng(4), count: 9 }).forEach(q => {
+        assert.notEqual(q.correctId, 'a1');
+        assert.ok(!q.options.some(o => o.id === 'a1'));
+    });
+    // Le tirage du jour non plus.
+    for (let graine = 1; graine <= 40; graine++) {
+        const q = G.buildDailyWhoQuestion(pool, seededRng(graine));
+        assert.ok(!q.options.some(o => o.id === 'a1'));
+    }
+});
+
+test('Qui est-ce ? : sur le vrai pack, les portraits dont l’image écrit le nom sont écartés', () => {
+    const fr = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data', 'fr.json'), 'utf8'));
+    const panth = fr.categories.find(c => c.nom === 'Personnages illustres').subcategories.find(s => s.nom === 'Panthéons');
+    const tous = panth.themes.flatMap(t => t.events);
+    const marques = tous.filter(e => e.image.nomVisible);
+    assert.equal(marques.length, 19);
+    // Des cas connus : l'inscription peinte, la légende gravée, la monnaie à son nom.
+    ['Naissance de Pic de la Mirandole', 'Naissance de Charlemagne', 'Naissance de Johannes Kepler',
+        'Naissance de Vercingétorix', 'Naissance de William Harvey', 'Naissance de Neil Armstrong'].forEach(titre => {
+        const e = tous.find(x => x.titre === titre);
+        assert.ok(e && e.image.nomVisible, `${titre} devrait être marqué nomVisible`);
+    });
+    const jouables = new Set(G.whoCandidates(tous).map(e => e.id));
+    marques.forEach(e => assert.ok(!jouables.has(e.id), `${e.id} est marqué mais reste jouable`));
+    assert.equal(jouables.size, tous.length - marques.length);
+    // La galerie, elle, les garde : ils ont toujours leur portrait.
+    marques.forEach(e => assert.ok(e.image.src));
+});

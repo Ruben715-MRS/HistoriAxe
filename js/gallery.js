@@ -97,7 +97,11 @@ function collectGalleryEntries(pantheon) {
     if (!pantheon || !Array.isArray(pantheon.themes)) return [];
     const ids = new Set(pantheon.themes.map(theme => theme.id));
     const entries = [];
-    getAllThemesWithPath().forEach(item => {
+    const allItems = getAllThemesWithPath();
+    // Les thèmes de la catégorie Biographies : une figure n'a de biographie que si son lien en désigne un
+    // (même test que le bouton de la fiche, renderModalBiographyButton).
+    const themeIds = new Set(allItems.map(item => item.theme.id));
+    allItems.forEach(item => {
         if (!ids.has(item.theme.id)) return;
         (item.theme.events || []).forEach(evt => {
             if (!portraitOf(evt) || typeof evt.date !== 'number') return;
@@ -108,6 +112,7 @@ function collectGalleryEntries(pantheon) {
                 iso: galleryCountryOf(evt, item.theme),
                 // Le nom de classement est écrit dans les données (voir
                 // scripts/pantheon_classement.py) ; à défaut, le nom lui-même.
+                hasBio: !!evt.biographie && themeIds.has(evt.biographie),
                 classement: evt.classement || names.sortName,
                 haystack: galleryNormalize(`${evt.titre} ${evt.classement || ''}`)
             }, names));
@@ -406,6 +411,15 @@ function buildGalleryCard(entry, locked = false) {
     img.addEventListener('error', () => img.remove(), { once: true });
     img.src = portraitOf(entry.evt).src;
     frame.appendChild(img);
+    // Biographie disponible : une pastille dans l'angle de la photo, sans rien ajouter à la mise en
+    // page — une carte sans biographie garde exactement le même gabarit.
+    if (entry.hasBio) {
+        const bio = document.createElement('span');
+        bio.className = 'gallery-card-bio';
+        bio.setAttribute('aria-hidden', 'true');
+        bio.textContent = '📖';
+        frame.appendChild(bio);
+    }
 
     const name = document.createElement('span');
     name.className = 'gallery-card-name';
@@ -418,7 +432,7 @@ function buildGalleryCard(entry, locked = false) {
     if (entry.iso && typeof countryDisplayName === 'function') meta.title = countryDisplayName(entry.iso);
 
     card.append(frame, name, meta);
-    card.setAttribute('aria-label', `${entry.name}, ${formatEventDate(entry.evt)}${locked ? ', ' + t('gallery.locked_aria') : ''}`);
+    card.setAttribute('aria-label', `${entry.name}, ${formatEventDate(entry.evt)}${entry.hasBio ? ', ' + t('gallery.bio_aria') : ''}${locked ? ', ' + t('gallery.locked_aria') : ''}`);
     card.onclick = () => openGalleryPortrait(entry);
     return card;
 }

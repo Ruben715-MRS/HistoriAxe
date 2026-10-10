@@ -18,6 +18,10 @@ const PSEUDO_KEY = 'historiaxe_pseudo_v1';
 const ONBOARDING_KEY = 'historiaxe_onboarding_v1';
 const RECAP_LOG_KEY = 'historiaxe_recap_log_v1';
 const WEEKLY_XP_KEY = 'historiaxe_weekly_xp_v1';
+// Portrait du jour (voir js/app.js: startPortraitOfTheDay) : la réponse du joueur à celui d'aujourd'hui,
+// { date, chosenId, correct }. Propre à l'appareil et volontairement hors de SYNC_KEYS : c'est une
+// habitude du jour, pas une progression, et elle ne vaut que pour la date qu'elle porte.
+const PORTRAIT_DAY_KEY = 'historiaxe_portrait_day_v1';
 // Série de semaines consécutives au Défi hebdomadaire (voir
 // weeklyChallengeStreakRecordToday ci-dessous) — sans rapport avec
 // WEEKLY_XP_KEY (ligue hebdomadaire par XP cumulé, feature distincte).
@@ -129,6 +133,15 @@ function settingsSave(data) {
     try {
         localStorage.setItem(SETTINGS_KEY, JSON.stringify(data));
     } catch (e) {}
+}
+
+function portraitDayLoad() {
+    try { return JSON.parse(localStorage.getItem(PORTRAIT_DAY_KEY)) || null; }
+    catch (e) { return null; }
+}
+
+function portraitDaySave(data) {
+    try { localStorage.setItem(PORTRAIT_DAY_KEY, JSON.stringify(data)); } catch (e) {}
 }
 
 // --- SRS (RÉPÉTITION ESPACÉE / POINTS FAIBLES) ---

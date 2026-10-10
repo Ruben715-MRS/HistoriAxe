@@ -1188,6 +1188,9 @@ function showScreen(screenId, direction) {
     if (['screen-home', 'screen-categories', 'screen-subcategories', 'screen-themes', 'screen-revision-hub'].includes(screenId)) {
         galleryReturnPending = false;
     }
+    // Le portrait du jour n'existe que sur son écran : le quitter par n'importe quelle porte
+    // (fiche, galerie, accueil) l'oublie, pour qu'une partie ordinaire n'en hérite pas.
+    if (screenId !== 'screen-whois') endPortraitDayMode();
     if (screenId === 'screen-categories') initCategories();
     if (screenId === 'screen-subcategories') initSubcategories();
     if (screenId === 'screen-themes') initThemes();
@@ -1674,6 +1677,13 @@ function initCategories() {
                         <span class="challenge-picker-icon">🌍</span>
                         <span>${(typeof t === 'function' ? t('simultaneity.challenge_title') : 'Défi de simultanéité')}</span>
                     </button>
+                    <button type="button" class="challenge-picker-btn portrait-day-btn hidden" id="btn-challenge-portrait">
+                        <span class="challenge-picker-icon" aria-hidden="true">🖼️</span>
+                        <span class="portrait-day-text">
+                            <span class="portrait-day-title">${t('whois.daily_title')}</span>
+                            <small class="portrait-day-status" id="portrait-day-status"></small>
+                        </span>
+                    </button>
                 </div>
             `;
     container.appendChild(gridSection);
@@ -1710,6 +1720,12 @@ function initCategories() {
         // comme indisponible plutôt que comme un bouton ordinaire.
         btnChallengeSimul.setAttribute('aria-disabled', String(simulLocked));
         btnChallengeSimul.onclick = () => startSimultaneityChallenge();
+    }
+    // Portrait du jour : un compagnon non classé du Défi du jour, qui n'apparaît que si la base a des portraits.
+    const btnPortrait = gridSection.querySelector('#btn-challenge-portrait');
+    if (btnPortrait) {
+        btnPortrait.onclick = () => startPortraitOfTheDay();
+        refreshPortraitDayButton(btnPortrait);
     }
     const btnRev = gridSection.querySelector('#btn-reviser');
     if (btnRev) btnRev.onclick = () => showScreen('screen-revision-hub');
@@ -3697,6 +3713,8 @@ function updateIntrusHUD() {
 
 let whoQuestions = [];
 let whoIndex = 0;
+// Vrai pendant le portrait du jour : la même question pour tous, sans points ni vies ni écran de fin.
+let whoDailyMode = false;
 
 // La carte n'a de sens que si le thème a de quoi nourrir des questions sans mauvaise réponse devinable.
 function updateWhoisCard() {
@@ -3707,11 +3725,14 @@ function updateWhoisCard() {
 }
 
 function startWhoisGame() {
+    endPortraitDayMode();
     resetSessionHistory();
     currentMode = 'whois';
     const sourceEvents = getSessionPool();
 
-    whoQuestions = GameModes.buildWhoQuestions(sourceEvents);
+    // Les portraits à trouver viennent de la manche, les mauvaises réponses de tout le thème : davantage
+    // de noms proches de l'époque à proposer qu'avec les vingt seuls événements de la manche.
+    whoQuestions = GameModes.buildWhoQuestions(sourceEvents, { pool: getModePoolRaw() });
     if (whoQuestions.length < 3) {
         alert(t('whois.not_enough'));
         return;
@@ -3744,6 +3765,7 @@ function renderWhoQuestion() {
     img.src = image.src;
     fillPortraitCredit(document.getElementById('whois-portrait-credit'), image);
     document.getElementById('whois-reveal').classList.add('hidden');
+    document.getElementById('whois-kicker').innerText = t(whoDailyMode ? 'whois.daily_kicker' : 'whois.kicker');
 
     const container = document.getElementById('whois-options');
     container.innerHTML = '';
@@ -3773,21 +3795,33 @@ function answerWho(chosenId) {
     const q = whoQuestions[whoIndex];
     const correct = chosenId === q.correctId;
 
-    awardPoints(correct ? 0 : 1, correct);
     if (correct) { playCorrectSound(comboMultiplier); triggerHaptic('success'); }
     else { playWrongSound(); triggerHaptic('error'); }
-    checkBadgeProgressOnAction(correct);
+    // Rencontrer la figure la débloque dans la collection, au jour comme en partie.
     srsRecord(q.correctId, correct);
-    recordSessionStep(q.correct, correct, false);
 
+    if (whoDailyMode) {
+        // Ni points, ni vie, ni série : le portrait du jour n'est pas classé. On retient seulement
+        // la réponse, pour que le bouton des défis dise où l'on en est aujourd'hui.
+        portraitDaySave({ date: DailyEngine.getDailySeedString(), chosenId, correct });
+    } else {
+        awardPoints(correct ? 0 : 1, correct);
+        checkBadgeProgressOnAction(correct);
+        recordSessionStep(q.correct, correct, false);
+        if (!correct) lives -= 1;
+        updateWhoHUD();
+    }
+    showWhoAnswer(q, chosenId, correct);
+}
+
+// Ce que la réponse montre : options colorées, puis la fiche. Séparé d'answerWho pour que le
+// portrait du jour, déjà répondu, puisse se rouvrir tel qu'on l'a laissé sans rien recompter.
+function showWhoAnswer(q, chosenId, correct) {
     document.querySelectorAll('#whois-options .whois-option').forEach(b => {
         b.style.pointerEvents = 'none';
         if (b.dataset.eventId === q.correctId) b.classList.add('correct');
         else if (b.dataset.eventId === chosenId) b.classList.add('wrong');
     });
-
-    if (!correct) lives -= 1;
-    updateWhoHUD();
     renderWhoReveal(q, correct);
 }
 
@@ -3823,11 +3857,21 @@ function renderWhoReveal(q, correct) {
     desc.innerText = q.correct.description || '';
     reveal.appendChild(desc);
 
+    // Le portrait du jour se prolonge par la fiche complète — avec ses accès au jeu — puis se referme.
+    if (whoDailyMode) {
+        const card = document.createElement('button');
+        card.type = 'button';
+        card.className = 'btn btn-secondary whois-continue';
+        card.id = 'whois-daily-card';
+        card.innerText = t('whois.daily_card');
+        card.onclick = () => openModal(q.correct, whoThemeContext(q.correct));
+        reveal.appendChild(card);
+    }
     const next = document.createElement('button');
     next.type = 'button';
     next.className = 'btn whois-continue';
     next.id = 'whois-continue';
-    next.innerText = t('whois.continue');
+    next.innerText = t(whoDailyMode ? 'whois.daily_done' : 'whois.continue');
     next.onclick = continueWho;
     reveal.appendChild(next);
 
@@ -3838,6 +3882,10 @@ function renderWhoReveal(q, correct) {
 
 function continueWho() {
     if (!isAnimating) return;
+    if (whoDailyMode) {
+        showScreen('screen-categories', 'back');
+        return;
+    }
     whoIndex++;
     if (lives <= 0) { endGame(false); return; }
     renderWhoQuestion();
@@ -3849,6 +3897,84 @@ function updateWhoHUD() {
     let pips = '';
     for (let i = 0; i < 3; i++) pips += `<span class="pip${i < lives ? '' : ' spent'}"></span>`;
     document.getElementById('whois-hud-lives').innerHTML = pips;
+}
+
+
+// --- Portrait du jour ---
+// Un « Qui est-ce ? » d'une seule question, la même pour tous les joueurs d'un jour (graine du Défi du
+// jour, mais avec son propre préfixe : le tirage du Défi classé, que le serveur recalcule, n'en est
+// jamais touché). Non classé : ni points, ni vies, ni série, et pas d'écran de fin. Répondu, il se
+// rouvre tel qu'on l'a laissé — une seule réponse par jour.
+
+function endPortraitDayMode() {
+    whoDailyMode = false;
+    const screen = document.getElementById('screen-whois');
+    if (screen) screen.classList.remove('is-portrait-day');
+}
+
+// Toutes les figures à portrait des panthéons de la base.
+function getPortraitDayPool() {
+    const events = [];
+    bdd.forEach(category => {
+        const pantheon = findPantheonNode(category);
+        if (pantheon) pantheon.themes.forEach(theme => events.push(...(theme.events || [])));
+    });
+    return events;
+}
+
+function getPortraitDayQuestion() {
+    const seed = DailyEngine.hashStringToSeed('historiaxe_portrait_' + DailyEngine.getDailySeedString());
+    return GameModes.buildDailyWhoQuestion(getPortraitDayPool(), DailyEngine.mulberry32(seed));
+}
+
+// Le bouton des défis : caché sans portraits (pack sans panthéons), sinon il dit où l'on en est aujourd'hui.
+function refreshPortraitDayButton(btn) {
+    const enough = GameModes.whoCandidates(getPortraitDayPool()).length >= GameModes.WHO_MIN_PORTRAITS;
+    btn.classList.toggle('hidden', !enough);
+    if (!enough) return;
+    const saved = portraitDayLoad();
+    const answeredToday = !!saved && saved.date === DailyEngine.getDailySeedString();
+    const key = !answeredToday ? 'whois.daily_sub_new' : (saved.correct ? 'whois.daily_sub_right' : 'whois.daily_sub_wrong');
+    btn.querySelector('#portrait-day-status').innerText = t(key);
+}
+
+// Le contexte d'une fiche ouverte depuis une figure : son thème, pour le bouton « Jouer sur… ».
+function whoThemeContext(evt) {
+    const item = getAllThemesWithPath().find(x => (x.theme.events || []).some(e => e.id === evt.id));
+    if (!item) return null;
+    return { theme: item.theme, categoryIndex: item.ci, subcategoryIndex: item.si, themeIndex: item.ti, hideRedraw: true };
+}
+
+function startPortraitOfTheDay() {
+    const q = getPortraitDayQuestion();
+    if (!q) return;
+    resetSessionHistory();
+    currentMode = 'whois';
+    whoDailyMode = true;
+    revisionMode = false;
+    favoritesMode = false;
+    dailyChallengeMode = false;
+    weeklyChallengeMode = false;
+    simulChallengeMode = false;
+    axisFilterActive = false;
+    isSelectionActive = false;
+    whoQuestions = [q];
+    whoIndex = 0;
+    lives = 3;
+    score = 0;
+    comboMultiplier = 1.0;
+    currentRoundSize = 1;
+    currentGameSpan = 1;
+
+    document.getElementById('screen-whois').classList.add('is-portrait-day');
+    showScreen('screen-whois');
+    renderWhoQuestion();
+
+    const saved = portraitDayLoad();
+    if (saved && saved.date === DailyEngine.getDailySeedString()) {
+        isAnimating = true;
+        showWhoAnswer(q, saved.chosenId, !!saved.correct);
+    }
 }
 
 
@@ -5515,6 +5641,12 @@ function showConfirm(message, onConfirm, options = {}) {
 }
 
 function quitGame() {
+    // Le portrait du jour ne se joue pas à enjeu : on en sort sans confirmation, et la question reste à
+    // répondre — rien n'est enregistré avant la réponse.
+    if (whoDailyMode) {
+        showScreen('screen-categories', 'back');
+        return;
+    }
     if (currentMode === 'discovery') {
         showScreen(screenAfterGame());
         return;
