@@ -328,7 +328,7 @@ test('le Machrek : chacune de ses figures a son portrait et son pays, de l’Ira
         await expect(page.locator('#modal-details')).toBeHidden();
     }
 
-    // Saladin a aussi sa biographie (comme Harun al-Rashid et Ibn al-Haytham) : le bouton y mène.
+    // Saladin a aussi sa biographie (comme Ibn al-Haytham) : le bouton y mène.
     await page.locator('#timeline .entry', { hasText: 'Naissance de Saladin' }).click();
     await expect(page.locator('#modal-bio-btn')).toBeVisible();
 });
