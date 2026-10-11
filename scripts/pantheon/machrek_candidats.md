@@ -8,6 +8,7 @@ Document de travail, **à valider avant toute rédaction** (voir « Ajouter un p
 - **Années de naissance et de décès** d'après Wikidata, pas encore recoupées avec la phrase d'ouverture de l'article (règle du README).
 - **Image principale sur Commons** : taille, licence (liste du README : domaine public, CC0, CC BY, CC BY-SA) et modèles de licence, pour juger si elle est aussi libre aux États-Unis.
 - **Coup d'œil sur 133 portraits** (planches de vignettes) : l'image est-elle bien celle de la personne, ou une monnaie, une tombe, une calligraphie ?
+- **Recherche d'images** : l'API de Commons est fermée à cet environnement (429 en continu, même lentement) ; la recherche passe donc par les pages HTML, avec `scripts/search_portraits.py`.
 - **Non vérifié** : le dernier lot (Beaux-arts, sciences, Golfe : Karimeh Abbud, Shahbandar, Khalifa ben Zayed, Maktoum, Zaynab Fawwaz, Moussa Sadr, Ibn Butlan, al-Masudi) a été contrôlé par les métadonnées seulement, sans regarder l'image. Aucune année n'a été relue sur Wikipédia. `fetch_portraits.py` refera de toute façon le contrôle de licence page par page.
 
 ## Périmètre proposé
@@ -28,24 +29,24 @@ Document de travail, **à valider avant toute rédaction** (voir « Ajouter un p
 
 ## Les chiffres
 
-**98 candidats avec une image utilisable** (51 en A, 26 en B, 21 en C : voir plus bas).
+**106 candidats avec une image utilisable** (52 en A, 27 en B, 27 en C : voir plus bas).
 
 | Axe | Candidats |
 |---|---|
-| Chefs d'État et dirigeants | 43 |
-| Guerres et résistances | 11 |
-| Littérature et pensée | 32 |
+| Chefs d'État et dirigeants | 48 |
+| Guerres et résistances | 12 |
+| Littérature et pensée | 34 |
 | Beaux-arts | 2 |
 | Musique, spectacle et sport | 4 |
 | Sciences, techniques et innovation | 6 |
 
 | Pays | Candidats |
 |---|---|
-| Liban | 24 |
+| Liban | 25 |
 | Syrie | 22 |
-| Irak | 18 |
-| Palestine | 14 |
-| Arabie saoudite | 8 |
+| Irak | 20 |
+| Palestine | 15 |
+| Arabie saoudite | 12 |
 | Yémen | 3 |
 | Jordanie | 3 |
 | Koweït | 2 |
@@ -114,6 +115,11 @@ Les années sont celles de Wikidata ; **celles des personnages qui ont une biogr
 | Bachir Chehab II | Liban | 1767 – 1850 | 287 × 401, Public domain | C | 287 × 401 px |
 | Wasfi al-Tal | Jordanie | 1919 – 1971 | 550 × 439, Public domain | C | seule image : photographie de groupe |
 | Al-Ma'mun | Irak | 786 – 833 | 458 × 540, domaine public | C | miniature byzantine où il est assis sous un dais (légende grecque) ; à regarder de près avant de la retenir |
+| Harun al-Rashid | Irak | 763 – 809 | 1524 × 2730, domaine public | C | miniature persane du XVIe siècle, identification douteuse (un jeune archer) ; né à Rayy (Iran) ; biographie liée, date 763 |
+| Abou Bakr | Arabie saoudite | vers 573 – 634 | 1566 × 1300, domaine public (PD-1923) | C | miniature ottomane, vers 1585-1590 (Chester Beatty T 414, fol. 125v) ; né à La Mecque ; date à relire |
+| Omar ibn al-Khattab | Arabie saoudite | vers 584 – 644 | 1418 × 1300, domaine public | C | même série de miniatures ; né à La Mecque ; date à relire |
+| Othman ibn Affan | Arabie saoudite | vers 576 – 656 | 1538 × 1302, domaine public | C | même série de miniatures ; né à Taëf ou La Mecque ; date à relire |
+| Ali ibn Abi Talib | Arabie saoudite | vers 600 – 661 | 1340 × 1280, domaine public | C | même série de miniatures ; né à La Mecque ; date à relire ; sensible pour les chiites comme pour les sunnites : la fiche doit le dire sans prendre parti |
 
 ## Guerres et résistances
 
@@ -130,6 +136,7 @@ Les années sont celles de Wikidata ; **celles des personnages qui ont une biogr
 | Abou Jihad | Palestine | 1935 – 1988 | 500 × 643, Public domain | B | chef militaire du Fatah : figure contestée ; photographie avec un autre homme |
 | Youssef al-Azmeh | Syrie | 1884 – 1920 | 293 × 450, Public domain | C | 293 × 450 px |
 | Abdel Kader al-Husseini | Palestine | 1908 – 1948 | 296 × 448, Public domain | C | 296 × 448 px |
+| Saladin | Irak | 1137 – 1193 | 1353 × 1600, domaine public | C | gravure imaginaire de 1584 (British Museum) ; né à Tikrit, honoré aussi en Syrie et en Égypte ; biographie liée, date 1137. Autres choix : portrait imaginaire de Paolo Giovio (1575, 609 × 787), « Saladin le Victorieux » de Gustave Doré |
 
 ## Littérature et pensée
 
@@ -167,6 +174,8 @@ Les années sont celles de Wikidata ; **celles des personnages qui ont une biogr
 | Oussama Ibn Mounqidh | Syrie | 1095 – 1188 | 909 × 665, Public domain | C | dessin moderne |
 | Nazik al-Malaika | Irak | 1922 – 2007 | 960 × 1280, CC BY-SA 4.0 | C | statue |
 | Shireen Abu Akleh | Palestine | 1971 – 2022 | 3936 × 5511, CC BY-SA 4.0 | C | tuée en 2022 : très récente et très contestée, à trancher |
+| Khalil Gibran | Liban | 1883 – 1931 | 2626 × 3538, CC0 | A | photographie de Fred Holland Day, 1896 (Metropolitan Museum) ; il avait 13 ans : une photographie de 1898 du même atelier le montre plus âgé |
+| Ghassan Kanafani | Palestine | 1936 – 1972 | 995 × 1024, domaine public | B | modèle « PD-US-no_notice » sur une photographie libanaise des années 1960 : déclaration douteuse, à confirmer |
 
 ## Beaux-arts
 
@@ -195,16 +204,15 @@ Les années sont celles de Wikidata ; **celles des personnages qui ont une biogr
 | Ibn Butlan | Irak | 1001 – 1066 | 2630 × 2890, domaine public (miniature) | C | miniature du Tacuinum |
 | Taqi al-Din | Syrie | 1526 – 1580 | 1348 × 1965, Public domain | C | miniature de l’observatoire d’Istanbul, où il figure parmi d’autres |
 
-## Images à chercher à la main (importants, mais sans image convenable)
+## Images encore à chercher
 
-- **Hâroun ar-Rachîd** (Irak, Chefs d'État et dirigeants) : la miniature trouvée montre un jeune archer, pas le calife ; biographie liée, date 763 (né à Rayy, en Iran).
-- **Saladin** (Irak, Guerres et résistances) : seulement une monnaie ; biographie liée, date 1137. Un portrait de convention du XIXe siècle serait honnête s’il est légendé comme tel.
-- **Khalid ibn al-Walid** (Arabie saoudite, Guerres et résistances) : seul un dessin imaginaire, sous modèle « Not-PD-US » ; biographie liée, date 592.
-- **Khalil Gibran** (Liban, Littérature et pensée) : seule image trouvée : 274 × 379 px. La photographie de Fred Holland Day (1898) existe en grand format.
-- **Ghassan Kanafani** (Palestine, Littérature et pensée) : photographie sous modèle « Not-PD-US » (rétablie aux États-Unis).
-- **Zaha Hadid** (Irak, Beaux-arts) : photographie sous Free Art License, hors liste ; une image CC BY ou CC BY-SA est à chercher ; biographie liée, date 1950.
-- **Fairuz** (Liban, Musique, spectacle et sport) : EXCLUE : vivante (la règle du panthéon exige un décès). Sa biographie reste en Biographies.
-- **Asmahan** (Syrie, Musique, spectacle et sport) : photographie sous modèle « Not-PD-US ».
+Deuxième passe (pages HTML de Commons, `scripts/search_portraits.py`) : sept figures sont revenues dans les tableaux ci-dessus (Saladin, Harun al-Rashid, Gibran, les quatre premiers califes) et Kanafani est passé en B. Restent sans image convenable :
+
+- **Khalid ibn al-Walid** (Arabie saoudite, Guerres et résistances) : seuls des dessins modernes, dont les deux illustrations de 1935 portent un modèle « Not-PD-US » ; biographie liée, date 592.
+- **Zaha Hadid** (Irak, Beaux-arts) : les photographies trouvées sont sous Free Art License, hors liste, ou ne la montrent pas ; une image CC BY ou CC BY-SA est à chercher ; biographie liée, date 1950.
+- **Asmahan** (Syrie, Musique, spectacle et sport) : photographie sous modèle « Not-PD-US », les autres sont des photos de famille ou une affiche.
+- **Mahomet** : aucun portrait individuel libre. Les miniatures trouvées le montrent en groupe avec d'autres prophètes (Moïse, Jésus, au XVe siècle) ; on n'en tire pas une carte « Naissance de Mahomet ». À revoir seulement si une illustration isolée apparaît.
+- **Fairuz** (Liban) : EXCLUE : vivante (la règle du panthéon exige un décès). Sa biographie reste en Biographies.
 
 **Sans image libre trouvée** (aucun fichier principal sur la page française) : Hiram Ier de Tyr, Ibn Asakir, Abou al-Fida, Ibn al-Athir, Samir Kassir, Hanna Mina, Mohammed al-Maghout, Saadallah Wannous, Jabra Ibrahim Jabra, Ghazi Al-Gosaibi, Abdel Rahman Mounif, Mustafa Akkad, Ziriab, Salima Mourad, Mohammed ibn Saoud, Yaqout al-Hamawi, Thabit ibn Qurra, Georges Nasser, Saloua Raouda Choucair, Paul Guiragossian.
 
@@ -231,7 +239,7 @@ Huit figures de ce périmètre ont une biographie. Leur naissance doit porter **
 
 ## Suite proposée
 
-1. **Refaire la recherche d'illustrations** pour les figures sans image convenable, maintenant que les images imaginaires sont admises : Saladin, Harun al-Rashid, Khalid ibn al-Walid, Khalil Gibran, Zaha Hadid, Kanafani, Asmahan, et les premiers califes (Abou Bakr, Omar, Othman, Ali ; Mahomet à part). Cette passe n'a pas pu être menée : Commons bloquait les requêtes de cet environnement (réponse 429). À relancer plus tard.
-2. Retrouver les titres français des noms « introuvables » (Zénobie, Al-Mansur, Ahmad ibn Majid surtout).
-3. Confirmer le statut américain des images en B (c'est la partie qui a coûté le plus cher à l'Amérique hispanique).
+1. Terminer les images : Khalid, Zaha Hadid, Asmahan (voir plus haut), et regarder de près les miniatures des califes, de Harun et d'Al-Ma'mun, dont l'identification est la plus fragile.
+2. Retrouver les titres français des noms « introuvables » (Zénobie, Al-Mansur, Ahmad ibn Majid surtout), et relire les années sur Wikipédia : celles des quatre califes sont toutes approximatives.
+3. Confirmer le statut américain des images en B (c'est la partie qui a coûté le plus cher à l'Amérique hispanique). `scripts/search_portraits.py` donne une première indication (colonne « US »), pas une certitude.
 4. Constituer la liste définitive, sans chercher à remplir : suivre « Ajouter un pays ou un bloc » (`scripts/pantheon/machrek.json`, `scripts/pantheon_classement.py --write`, `scripts/fetch_portraits.py machrek`, `scripts/build_pantheon.py machrek`, version de `sw.js`, tests).

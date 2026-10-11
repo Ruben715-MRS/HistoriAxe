@@ -1936,12 +1936,13 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
   Chaque liste de personnages est validée avant la rédaction. Feuille de route, dans l'ordre
   où on les propose (un pays seul quand il a de quoi faire un thème, un bloc sinon) :
   1. **Le Machrek et la péninsule Arabique** (`pan_machrek`, sans l'Égypte, qui a le sien).
-     Une première liste de 98 candidats, avec images vérifiées, est dans
+     Une première liste de 106 candidats, avec images vérifiées, est dans
      `scripts/pantheon/machrek_candidats.md`. Les six questions posées sont tranchées (voir
      « Décisions prises » dans ce fichier) : le bloc garde les figures contestées et ne
-     complète aucun axe par des noms de remplissage ; il reste à refaire la recherche
-     d'illustrations (Saladin, Harun, premiers califes), à retrouver des titres français et à
-     confirmer le statut américain des images.
+     complète aucun axe par des noms de remplissage ; il reste trois images à trouver
+     (Khalid ibn al-Walid, Zaha Hadid, Asmahan), des titres français à retrouver et le statut
+     américain des images à confirmer. `scripts/search_portraits.py` cherche les portraits sur
+     Commons sans l'API, qui est fermée aux environnements en nuage.
   1 bis. **Israël et les figures juives : un thème à part**, décidé à la place de l'idée
      abandonnée plus haut d'une absence de thème juif. Nom et périmètre restent à définir
      (Israël seul, ou aussi les figures juives de la diaspora ?). Le Maghreb compte déjà deux
