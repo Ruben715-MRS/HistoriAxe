@@ -156,7 +156,7 @@ test('la France, de Philippe Auguste à Jean Monnet : cent quarante figures, des
 
     // Trois époques : un roi du Moyen Âge, un romancier du XIXe siècle, un physicien du XIXe siècle qui
     // partage son nom avec une autre figure du panthéon. Le portrait charge au bon format.
-    for (const titre of ['Naissance de Philippe Auguste', 'Naissance de Honoré de Balzac', 'Naissance de Pierre Curie']) {
+    for (const titre of ['Naissance de Philippe Auguste', "Naissance d'Honoré de Balzac", 'Naissance de Pierre Curie']) {
         await page.locator('#timeline .entry', { hasText: titre }).click();
         await expect(page.locator('#modal-details')).toBeVisible();
         await expect(page.locator('#modal-pays')).toBeHidden();
