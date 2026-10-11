@@ -1738,11 +1738,18 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
   Royaume-Uni, l'Amérique hispanique, le Maghreb et l'Allemagne-Autriche-Suisse sont écrits.
   Chaque liste de personnages est validée avant la rédaction. Feuille de route, dans l'ordre
   où on les propose (un pays seul quand il a de quoi faire un thème, un bloc sinon) :
-  1. **Le Machrek et la péninsule Arabique** (`pan_machrek`, sans l'Égypte, qui a le sien ;
-     le sort d'Israël et des figures juives reste à trancher, l'idée d'un thème juif à part
-     ayant été abandonnée). Une première liste de 97 candidats, avec images vérifiées, est dans
-     `scripts/pantheon/machrek_candidats.md` : elle attend six décisions et une passe d'images
-     sur les Beaux-arts, la musique et les sciences.
+  1. **Le Machrek et la péninsule Arabique** (`pan_machrek`, sans l'Égypte, qui a le sien).
+     Une première liste de candidats, avec images vérifiées, est dans
+     `scripts/pantheon/machrek_candidats.md`. Les six questions posées sont tranchées (voir
+     « Décisions prises » dans ce fichier) : le bloc garde les figures contestées et ne
+     complète aucun axe par des noms de remplissage ; il reste à retrouver des titres
+     français et à confirmer le statut américain des images.
+  1 bis. **Israël et les figures juives : un thème à part**, décidé à la place de l'idée
+     abandonnée plus haut d'une absence de thème juif. Nom et périmètre restent à définir
+     (Israël seul, ou aussi les figures juives de la diaspora ?). Le Maghreb compte déjà deux
+     figures juives (Edmond Amran El Maleh, Habiba Msika) et en a laissé cinq de côté
+     (Cheikh Raymond, Reinette l'Oranaise, Salim Halali, Albert Memmi, Abraham Serfaty) : la
+     règle « un personnage, un seul thème » dira où chacun va, au moment de choisir.
   2. **Pays seuls** : le Brésil (qui n'entre pas dans l'Amérique « hispanique »), la Chine, le
      Japon, la Russie (où attend Lev Yachine), l'Afrique du Sud, l'Australie, la Turquie, l'Iran.
   3. **Blocs** : l'Asie du Sud (Inde, Pakistan, Bangladesh, Sri Lanka, Népal ; l'Inde y dépasserait
