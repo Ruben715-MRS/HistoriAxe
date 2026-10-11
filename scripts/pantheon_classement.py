@@ -52,6 +52,8 @@ KEEP_AS_WRITTEN = {
     'Charles Quint', "Agustina d'Aragon", "Thérèse d'Avila", 'Isidore de Séville', 'Ibn Arabi',
     'Dominique de Guzmán', 'Ignace de Loyola', 'François Xavier', 'Jean de la Croix',
     'Garcilaso de la Vega', 'Lope de Vega', 'Tirso de Molina', 'Camarón de la Isla', 'Paco de Lucía',
+    # France : deux rois rangés par leur prénom.
+    'Philippe Auguste', 'Philippe le Bel',
 }
 
 # Écrits à la main : (nom de la source) → nom de classement.
@@ -144,6 +146,9 @@ EXCEPTIONS = {
     'Abbas ibn Firnas': 'Ibn Firnas, Abbas',
     'Le Cid': 'Cid',
     'Le Greco': 'Greco',
+    # France : un nom à particule majuscule, et un nom d'usage qui ne range pas sous le dernier mot.
+    'André Le Nôtre': 'Le Nôtre, André',
+    'Philippe Leclerc de Hauteclocque': 'Leclerc de Hauteclocque, Philippe',
 }
 
 
