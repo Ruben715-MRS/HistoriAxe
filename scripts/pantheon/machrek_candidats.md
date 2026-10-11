@@ -17,14 +17,14 @@ Document de travail, **à valider avant toute rédaction** (voir « Ajouter un p
 - **Hors périmètre** : l'Égypte (elle a son thème), la Turquie et l'Iran (thèmes à part), la Libye (déjà au Maghreb).
 - **Mots-clés de recherche** à prévoir : Proche-Orient, Moyen-Orient, Levant, Mésopotamie, Phénicie, Golfe, Arabie, Hedjaz, Palmyre, Babylone, Assyrie, Bagdad, Damas, Beyrouth, Jérusalem, et les noms des douze pays.
 
-## Décisions à prendre
+## Décisions prises
 
-1. **Israël et les figures juives** (déjà ouvert dans le README). Ce document n'en contient aucune. Règle possible, celle du Maghreb : n'y entrent que celles que le pays honore lui-même.
-2. **Mésopotamie, Phénicie et Syrie romaine** : huit figures de l'Antiquité sont ici (Hammurabi, Assurbanipal, Odénat, Philippe l'Arabe, Julia Domna, Héliogabale, Sévère Alexandre, Apollodore…). Comme pour Carthage au Maghreb, on les range dans le pays actuel du lieu de naissance. À confirmer.
-3. **Les premiers siècles de l'islam** : Mahomet et les quatre premiers califes n'ont aucun portrait et ne sont pas représentés ici. Mahomet a une biographie dans l'appli, mais pas de place dans un panthéon fait d'images de visages. Mu'awiya et Abd al-Malik ne sont montrés que par une monnaie : à garder ou non.
-4. **Figures très contestées** (Saddam Hussein, Hafez el-Assad, le Mufti de Jérusalem, Habache, Abou Jihad, Arafat, Béchir Gemayel) : la règle du README est de les inclure et de dire ce qu'on leur reproche (comme Castro, Perón, Kadhafi). Si on préfère ne pas en prendre certains, ils figurent en bas du tableau « Chefs d'État ».
-5. **Trop de chefs d'État** : 42 sur 97. Voir « Équilibre ».
-6. **Wahhab (Muhammad ibn Abd al-Wahhab)** : sa seule image libre est une calligraphie. Écarté d'office tant qu'on n'a pas mieux, ce qui est sans doute plus sage.
+1. **Israël et les figures juives : un thème à part.** Ce bloc n'en contient aucune. Nom et périmètre du thème restent à définir (voir le README).
+2. **Les figures de l'Antiquité** (Hammurabi, Assurbanipal, Odénat, Philippe l'Arabe, Julia Domna, Héliogabale, Sévère Alexandre, Apollodore) **sont gardées**, rangées dans le pays actuel de leur lieu de naissance, comme Carthage au Maghreb. Ce n'est pas parfait (Babylone n'est pas « l'Irak »), mais le champ `pays` est obligatoire dans un bloc, la fiche donne le nom du lieu d'époque, et c'est la seule règle qui ne demande pas de jugement cas par cas. Zénobie et Al-Mansur n'y entrent que si une date de naissance s'établit.
+3. **Pas de portrait, pas de carte, sauf illustration, même imaginaire.** Cela vaut pour Mahomet et les premiers califes comme pour tous : une miniature ou une gravure légendée comme telle suffit. Conséquence immédiate : la miniature byzantine d'Al-Ma'mun, que j'avais écartée, passe en statut C. Pour Mahomet, les miniatures qui existent montrent le plus souvent le visage voilé ; on les examinera au moment de la recherche d'images, sans rien promettre.
+4. **Les figures très contestées sont ajoutées**, avec leur fiche honnête (Saddam Hussein, Hafez el-Assad, le Mufti de Jérusalem, Habache, Abou Jihad, Arafat, Béchir Gemayel).
+5. **Pas de remplissage.** Les chefs d'État restent nombreux et les Beaux-arts minces : on ne coupe personne pour équilibrer, on n'ajoute personne qui n'aurait pas sa place. Les axes minces sont acceptés, comme au Maghreb (2 Beaux-arts, 3 Sciences).
+6. **Wahhab est écarté** : sa seule image libre est une calligraphie.
 
 ## Les chiffres
 
@@ -54,12 +54,10 @@ Document de travail, **à valider avant toute rédaction** (voir « Ajouter un p
 
 Le Liban pèse 24 % : sous le seuil de 40 % du constructeur.
 
-**Équilibre.** Le bloc serait un bloc de dirigeants et d'écrivains. Trois axes sont minces :
-- **Beaux-arts : 2** (Apollodore de Damas, Karimeh Abbud). Les peintres et sculpteurs libanais, irakiens et syriens (Choucair, Guiragossian, Jawad Selim, Moudarres, Farroukh) n'ont pas d'article en français, pas d'image libre, ou les deux. Zaha Hadid, qui aurait sa place ici, est en « à chercher ».
+**Équilibre.** Le bloc est un bloc de dirigeants et d'écrivains, et on l'accepte (décision 5). Les trois axes minces le sont pour des raisons d'images ou d'articles :
+- **Beaux-arts : 2** (Apollodore de Damas, Karimeh Abbud). Les peintres et sculpteurs libanais, irakiens et syriens n'ont pas d'article en français, pas d'image libre, ou les deux. Zaha Hadid, qui aurait sa place ici, est en « à chercher ».
 - **Musique, spectacle et sport : 4**. Fairuz est vivante (exclue par la règle), Asmahan et Wadih el-Safi sont à rechercher. Le sport n'a aucun candidat.
 - **Sciences : 6**, dont cinq en C (images imaginaires).
-Le Maghreb avait fonctionné avec 2 Beaux-arts et 3 Sciences : le précédent existe, mais la question de la règle « un axe de plus ne naît qu'avec six figures » se pose en sens inverse ici, pour savoir s'il faut garder six axes.
-**Les chefs d'État** (42) pourraient être ramenés à 28 environ en retirant les moins marquants : Ghazi Ier, Fayçal II, Ahmed Hassan al-Bakr, Ibrahim al-Hamdi, Ali Abdallah Saleh, Jaber al-Ahmad, Khalifa ben Zayed, Maktoum ben Rachid, Khaled ben Abdelaziz, Fouad Chéhab, Hussein de Jordanie ou Abdallah Ier (un seul des deux). Cela libérerait de la place pour les dix à douze artistes et savants à trouver.
 
 ## Légende des statuts
 
