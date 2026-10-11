@@ -2,8 +2,8 @@
   "version": "1.0.0",
   "lang": "fr",
   "name": "Français (Intégral)",
-  "totalThemes": 805,
-  "totalEvents": 20922,
+  "totalThemes": 806,
+  "totalEvents": 20984,
   "categories": [
     {
       "nom": "Culture générale",
@@ -90985,6 +90985,1139 @@
           "nom": "Panthéons",
           "note": "Un thème par pays, ou par grande région lorsque plusieurs pays partagent une même histoire (l'Amérique hispanique, par exemple) : les figures qu'il honore, rangées par date de naissance. Un personnage ne figure que dans un seul thème, et seules y entrent des personnalités disparues. « Illustre » ne veut pas dire « né dans les frontières actuelles » : Marie Curie, née à Varsovie, et Jean-Jacques Rousseau, né à Genève, appartiennent au panthéon de la France qui les a adoptés. Chaque personnage est classé dans son domaine dominant, comme dans les Biographies, et renvoie à sa biographie quand elle existe ; dans un thème de région, la fiche indique son pays. Les portraits viennent de Wikimedia Commons, sous licence libre, et leur auteur est crédité sous l'image ; quand aucun portrait authentique n'existe (l'Antiquité, le haut Moyen Âge, les civilisations précolombiennes), l'image est une représentation posthume, et la légende le dit.",
           "themes": [
+            {
+              "id": "pan_afriqueouest",
+              "nom": "Grandes figures d'Afrique de l'Ouest",
+              "difficulte": "Intermédiaire",
+              "motsCles": [
+                "Afrique de l'Ouest",
+                "Afrique occidentale",
+                "CEDEAO",
+                "Ouest-africain",
+                "Sahel",
+                "Afrique noire",
+                "Afrique subsaharienne",
+                "Bénin",
+                "Dahomey",
+                "Cap-Vert",
+                "Côte d'Ivoire",
+                "Gambie",
+                "Ghana",
+                "Gold Coast",
+                "Guinée",
+                "Guinée-Bissau",
+                "Libéria",
+                "Nigéria",
+                "Sénégal",
+                "Sierra Leone",
+                "Togo",
+                "Burkina Faso",
+                "Haute-Volta",
+                "Mali",
+                "Niger",
+                "Empire du Mali",
+                "Songhaï",
+                "Ashanti",
+                "Tombouctou"
+              ],
+              "events": [
+                {
+                  "id": "pan_afriqueouest_moussa",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1280,
+                  "titre": "Naissance de Mansa Moussa",
+                  "description": "Mansa Moussa (vers 1280-1337) est le dixième mansa, c'est-à-dire l'empereur, du Mali, au pouvoir de 1312 à sa mort. Il fait en 1324 un pèlerinage à La Mecque avec une caravane si riche en or qu'il en fait chuter le cours au Caire. Il fait construire des mosquées, à Tombouctou et à Gao, et fait du Mali un grand foyer de culture islamique.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mansa_Moussa",
+                  "pays": "ML",
+                  "classement": "Moussa, Mansa",
+                  "biographie": "bio_mansamoussa",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_moussa.jpg",
+                    "legende": "Mansa Moussa, miniature de l'Atlas catalan (1375) : une image imaginée, un demi-siècle après sa mort",
+                    "auteur": "Abraham Cresques",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kanga_Moussa_Atlas_Catalan.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_omar",
+                  "axe": "Guerres et résistances",
+                  "date": 1797,
+                  "titre": "Naissance d'Omar Tall",
+                  "description": "Omar Tall (vers 1797-1864) est un chef religieux et conquérant toucouleur, né à Halwar, dans le Fouta-Toro. Disciple de la confrérie tidjaniyya, il rentre en 1848 d'un pèlerinage à La Mecque et lance en 1852 un jihad qui lui donne un vaste empire entre le Sénégal et le Niger. Il résiste aux Français, prend Ségou en 1861 et meurt en 1864 dans les falaises de Bandiagara, en combattant une révolte.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/El_Hadj_Omar_Tall",
+                  "pays": "SN",
+                  "classement": "Tall, Omar",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_omar.jpg",
+                    "legende": "Omar Tall, représentation moderne",
+                    "auteur": "Abdeldabakh",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Cheikh_oumar_Tall.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_crowther",
+                  "axe": "Littérature et pensée",
+                  "date": 1809,
+                  "titre": "Naissance de Samuel Ajayi Crowther",
+                  "description": "Samuel Ajayi Crowther (vers 1809-1891) est un ecclésiastique et linguiste nigérian, né dans l'empire d'Oyo. Capturé et vendu comme esclave vers 1821, il est libéré par la marine britannique, devient pasteur et traduit la Bible en yoruba. Consacré évêque en 1864, il est le premier évêque anglican noir d'Afrique et meurt à Lagos en 1891.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Samuel_Ajayi_Crowther",
+                  "pays": "NG",
+                  "classement": "Crowther, Samuel Ajayi",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_crowther.jpg",
+                    "legende": "Samuel Ajayi Crowther, photographie de 1888",
+                    "auteur": "Anonyme",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Samuel_Adjai_Crowther_1888.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_roberts",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1809,
+                  "titre": "Naissance de Joseph Jenkins Roberts",
+                  "description": "Joseph Jenkins Roberts (1809-1876) est un marchand afro-américain, né en Virginie, qui émigre au Liberia en 1829. Gouverneur de la colonie, il proclame l'indépendance du pays en 1847 et en est le premier président, de 1848 à 1856. Il préside ensuite le Liberia College et meurt à Monrovia, la capitale qui porte le nom du président américain Monroe.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Joseph_Jenkins_Roberts",
+                  "pays": "LR",
+                  "classement": "Roberts, Joseph Jenkins",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_roberts.jpg",
+                    "legende": "Joseph Jenkins Roberts, daguerréotype de 1840-1850",
+                    "auteur": "Original daguerreotype by Augustus McCarty",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Joseph_Jenkins_Roberts_2.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_samory",
+                  "axe": "Guerres et résistances",
+                  "date": 1830,
+                  "titre": "Naissance de Samory Touré",
+                  "description": "Samory Touré (vers 1830-1900) est un chef de guerre malinké, fondateur de l'empire wassoulou en Afrique de l'Ouest. Pendant près de vingt ans, il résiste à la conquête française, en déplaçant son empire de l'est du Soudan vers la Côte d'Ivoire. Capturé en 1898, il est déporté au Gabon, où il meurt en 1900.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Samory_Tour%C3%A9",
+                  "pays": "GN",
+                  "classement": "Touré, Samory",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_samory.jpg",
+                    "legende": "Samory Touré, photographie ancienne",
+                    "auteur": "Almamy_Samory_Touré.jpg : user:Joker-x derivative work: Zenman ( talk )",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Almamy_Samory_Tour%C3%A9-2.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_blyden",
+                  "axe": "Littérature et pensée",
+                  "date": 1832,
+                  "titre": "Naissance d'Edward Wilmot Blyden",
+                  "description": "Edward Wilmot Blyden (1832-1912) est un intellectuel et diplomate libérien, né à Saint-Thomas, aux Antilles danoises. Installé au Liberia en 1851, il enseigne, devient ambassadeur et publie « Christianity, Islam and the Negro Race » (1887), considéré comme un texte fondateur du panafricanisme. Il meurt à Freetown, en Sierra Leone, en 1912.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Edward_Wilmot_Blyden",
+                  "pays": "LR",
+                  "classement": "Blyden, Edward Wilmot",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_blyden.jpg",
+                    "legende": "Edward Wilmot Blyden, photographie du XIXe siècle",
+                    "auteur": "Dalton and Lucy, Booksellers to the Queen",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Blyden_E_W_3c35638r.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_bureh",
+                  "axe": "Guerres et résistances",
+                  "date": 1840,
+                  "titre": "Naissance de Bai Bureh",
+                  "description": "Bai Bureh (vers 1840-1908) est un chef temné et stratège militaire sierra-léonais, né à Kasseh. En 1898, il mène la guerre de la Taxe des cases, soulèvement contre l'impôt que les Britanniques imposent sur les habitations, et tient tête à leurs troupes pendant plusieurs mois. Capturé, exilé en Gold Coast puis autorisé à rentrer en 1905, il meurt en 1908, devenu un héros national.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bai_Bureh",
+                  "pays": "SL",
+                  "classement": "Bureh, Bai",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_bureh.jpg",
+                    "legende": "Bai Bureh, photographie de 1898",
+                    "auteur": "Lieutenant Arthur Greer",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Bai_Bureh_(1898).jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_behanzin",
+                  "axe": "Guerres et résistances",
+                  "date": 1845,
+                  "titre": "Naissance de Béhanzin",
+                  "description": "Béhanzin (1845-1906) est le onzième roi d'Abomey, au Dahomey (actuel Bénin), monté sur le trône en 1890. Il résiste à la conquête française pendant les deux guerres du Dahomey et se rend en 1894 au général Dodds. Déporté à la Martinique puis à Alger, où il meurt, il reste le symbole de la résistance béninoise à la colonisation.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/B%C3%A9hanzin",
+                  "pays": "BJ",
+                  "classement": "Béhanzin",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_behanzin.jpg",
+                    "legende": "Béhanzin, photographie d'Alexandre d'Albéca, vers 1895",
+                    "auteur": "Alexandre d'Albéca (1858–1896) Description French explorer and geographer",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Behanzin-1895.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_alboury",
+                  "axe": "Guerres et résistances",
+                  "date": 1847,
+                  "titre": "Naissance d'Alboury Ndiaye",
+                  "description": "Alboury Ndiaye (vers 1847-1901) est le bourba, le roi, du Djolof, dans l'actuel Sénégal. Il refuse le protectorat que la France propose à son royaume et combat l'avancée coloniale, avant de se replier vers l'est, jusque dans l'actuel Niger. Il meurt en exil en 1901 et incarne la résistance du Sénégal à la conquête.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Alboury_Ndiaye",
+                  "pays": "SN",
+                  "classement": "Ndiaye, Alboury",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_alboury.jpg",
+                    "legende": "Alboury Ndiaye, tableau moderne qui le représente en guerrier",
+                    "auteur": "Malickbach2008",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Alboury_Ndiaye.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_bamba",
+                  "axe": "Littérature et pensée",
+                  "date": 1853,
+                  "titre": "Naissance d'Ahmadou Bamba",
+                  "description": "Ahmadou Bamba (1853-1927) est un maître soufi sénégalais, fondateur de la confrérie mouride, né près de Mbacké. Il prêche le travail, la prière et la non-violence, et les Français, qui craignent son influence, l'exilent au Gabon de 1895 à 1902, puis en Mauritanie. Fondateur de la ville de Touba, qui est devenue la ville sainte du mouridisme, il meurt à Diourbel en 1927.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ahmadou_Bamba",
+                  "pays": "SN",
+                  "classement": "Bamba, Ahmadou",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_bamba.jpg",
+                    "legende": "Ahmadou Bamba, photographie ancienne",
+                    "auteur": "Anonyme",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:AhmaduBamba.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_adelaide",
+                  "axe": "Littérature et pensée",
+                  "date": 1868,
+                  "titre": "Naissance d'Adelaide Casely-Hayford",
+                  "description": "Adelaide Casely-Hayford (1868-1960) est une enseignante, féministe et panafricaniste sierra-léonaise, née à Freetown. Elle fonde en 1923 à Freetown une école professionnelle pour jeunes filles, qui valorise la culture africaine. Mère de la poétesse Gladys Casely-Hayford, elle devient l'une des grandes voix de l'éducation des filles en Afrique de l'Ouest.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Adelaide_Casely-Hayford",
+                  "pays": "SL",
+                  "classement": "Casely-Hayford, Adelaide",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_adelaide.jpg",
+                    "legende": "Adelaide Casely-Hayford, photographie de 1903",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Adelaide_Casely-Hayford,_1903.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_diagne",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1872,
+                  "titre": "Naissance de Blaise Diagne",
+                  "description": "Blaise Diagne (1872-1934) est un homme politique sénégalais, né à Gorée, qui devient en 1914 le premier Africain noir élu député à l'Assemblée nationale française. En 1916, il fait voter la loi qui confirme la citoyenneté française des habitants des quatre communes du Sénégal. Chargé de recruter des tirailleurs en 1918, il reste contesté pour son rôle dans l'effort de guerre et meurt en France en 1934.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Blaise_Diagne",
+                  "pays": "SN",
+                  "classement": "Diagne, Blaise",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_diagne.jpg",
+                    "legende": "Blaise Diagne, photographie de 1921",
+                    "auteur": "Agence Meurisse (domaine public, voir fiche détaillée Gallica)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Blaise_Diagne-1921.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_tubman",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1895,
+                  "titre": "Naissance de William Tubman",
+                  "description": "William Tubman (1895-1971) est un avocat et homme d'État libérien, président du Liberia de 1944 à sa mort. Il ouvre le pays aux investissements étrangers dans une politique de la « porte ouverte » et étend le droit de vote aux femmes et aux populations de l'intérieur. Son règne de vingt-sept ans, marqué par le parti unique de fait, s'achève avec sa mort à Londres.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/William_Tubman",
+                  "pays": "LR",
+                  "classement": "Tubman, William",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_tubman.jpg",
+                    "legende": "William Tubman, photographie de 1943",
+                    "auteur": "Farm Security Administration - Office of War Information Photograph Collection",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:William_Tubman_1943.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_olympio",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1902,
+                  "titre": "Naissance de Sylvanus Olympio",
+                  "description": "Sylvanus Olympio (1902-1963) est un homme d'affaires et homme d'État togolais, premier président de la République togolaise. Il mène le Togo à l'indépendance en 1960 et en devient le premier président. Il est assassiné le 13 janvier 1963 devant l'ambassade des États-Unis à Lomé, lors d'un coup d'État où figure le sergent Eyadéma.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sylvanus_Olympio",
+                  "pays": "TG",
+                  "classement": "Olympio, Sylvanus",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_olympio.jpg",
+                    "legende": "Sylvanus Olympio, photographie ancienne",
+                    "auteur": "Ludwig Wegmann Description German photographer",
+                    "licence": "CC BY-SA 3.0 DE",
+                    "source": "https://commons.wikimedia.org/wiki/File:Sylvanus_Olympio.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_stevens",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1905,
+                  "titre": "Naissance de Siaka Stevens",
+                  "description": "Siaka Stevens (1905-1988) est un syndicaliste et homme d'État sierra-léonais, chef du parti All People's Congress. Premier ministre en 1967, puis en 1968 après un coup d'État, il devient président en 1971 et installe en 1978 le régime du parti unique. Il dirige le pays pendant près de vingt ans, dans un climat de corruption, avant de se retirer en 1985.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Siaka_Stevens",
+                  "pays": "SL",
+                  "classement": "Stevens, Siaka",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_stevens.jpg",
+                    "legende": "Siaka Stevens, photographie du 15 octobre 1979",
+                    "auteur": "European Communities, 1979 / EC - Audiovisual Service",
+                    "licence": "CC BY 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Siaka_Stevens_(I-002364,_cropped,_processing_version).jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_birago",
+                  "axe": "Littérature et pensée",
+                  "date": 1906,
+                  "titre": "Naissance de Birago Diop",
+                  "description": "Birago Diop (1906-1989) est un poète et conteur sénégalais, né à Dakar et vétérinaire de formation. Il consigne des contes traditionnels wolof dans « Les Contes d'Amadou Koumba » (1947) et écrit « Souffles », où l'on lit « Les morts ne sont pas morts ». Compagnon de route de la négritude, il est ambassadeur du Sénégal en Tunisie de 1960 à 1965.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Birago_Diop",
+                  "pays": "SN",
+                  "classement": "Diop, Birago",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_birago.jpg",
+                    "legende": "Birago Diop, croquis",
+                    "auteur": "Thierno I. Kane",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Birago_sketch_tik.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_hama",
+                  "axe": "Littérature et pensée",
+                  "date": 1906,
+                  "titre": "Naissance de Boubou Hama",
+                  "description": "Boubou Hama (1906-1982) est un écrivain, historien et homme politique nigérien. Président de l'Assemblée nationale du Niger de 1958 à 1974, il est l'un des fondateurs du pays. Auteur d'ouvrages sur l'histoire des Songhaï, il consacre sa vie à la sauvegarde de la tradition orale.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Boubou_Hama",
+                  "pays": "NE",
+                  "classement": "Hama, Boubou",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_hama.jpg",
+                    "legende": "Boubou Hama, photographie de 1961",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Boubou_Hama.png"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_senghor",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1906,
+                  "titre": "Naissance de Léopold Sédar Senghor",
+                  "description": "Léopold Sédar Senghor (1906-2001) est un poète et homme d'État sénégalais, né à Joal. Cofondateur avec Aimé Césaire et Léon-Gontran Damas du mouvement de la négritude, il est le premier président du Sénégal indépendant, de 1960 à 1980, et quitte volontairement le pouvoir. Premier Africain élu à l'Académie française, en 1983, il est mort à Verson, en Normandie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/L%C3%A9opold_S%C3%A9dar_Senghor",
+                  "pays": "SN",
+                  "classement": "Senghor, Léopold Sédar",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_senghor.jpg",
+                    "legende": "Léopold Sédar Senghor, photographie de Roger Pic, 1975",
+                    "auteur": "Roger Pic (1920–2001) Alternative names Birth name: Roger Lucien Pinard; Roger Pinard",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:L%C3%A9opold_Senghor,_Pic,_5.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_nkrumah",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1909,
+                  "titre": "Naissance de Kwame Nkrumah",
+                  "description": "Kwame Nkrumah (1909-1972) est un homme d'État ghanéen qui conduit la Gold Coast à l'indépendance en 1957, la première colonie d'Afrique subsaharienne à l'obtenir, et devient le premier chef du Ghana. Il est l'une des grandes voix du panafricanisme et participe en 1963 à la fondation de l'Organisation de l'unité africaine. Son régime se durcit en parti unique, et il est renversé par un coup d'État en 1966 : il meurt en exil, à Bucarest.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kwame_Nkrumah",
+                  "pays": "GH",
+                  "classement": "Nkrumah, Kwame",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_nkrumah.jpg",
+                    "legende": "Kwame Nkrumah à une rencontre avec Nasser au Caire, photographie de février 1966",
+                    "auteur": "Anefo",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Bespreking_Nhrumah-Nasser_over_Vietnam_te_Cairo,_Bestanddeelnr_918-8345.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_bello",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1910,
+                  "titre": "Naissance d'Ahmadu Bello",
+                  "description": "Ahmadu Bello (1910-1966) est un homme politique nigérian, descendant d'Usman dan Fodio, qui porte le titre de sardauna de Sokoto. Premier ministre de la région du Nord, la plus vaste et la plus peuplée du pays, il dirige le Northern People's Congress et pèse de tout son poids sur la politique fédérale. Il est tué lors du coup d'État militaire de janvier 1966.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ahmadu_Bello",
+                  "pays": "NG",
+                  "classement": "Bello, Ahmadu",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_bello.jpg",
+                    "legende": "Ahmadu Bello, Premier ministre de la région du Nord du Nigeria, photographie de 1960",
+                    "auteur": "doe-oakridge",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ahmadu_Bello_Premier_of_the_Northern_Region_of_Nigeria_1960_Oak_Ridge_(24578438519).jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_balewa",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1912,
+                  "titre": "Naissance d'Abubakar Tafawa Balewa",
+                  "description": "Abubakar Tafawa Balewa (1912-1966) est un enseignant et homme d'État nigérian, premier et unique Premier ministre de la fédération du Nigeria, de 1957 à 1966. Il conduit le pays à l'indépendance en 1960, dans une coalition entre le nord et l'est du pays, et défend la coopération entre les États africains. Il est tué lors du coup d'État de janvier 1966.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Abubakar_Tafawa_Balewa",
+                  "pays": "NG",
+                  "classement": "Balewa, Abubakar Tafawa",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_balewa.jpg",
+                    "legende": "Abubakar Tafawa Balewa, photographie de 1962",
+                    "auteur": "Abubakar",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Abubakar_Tafawa_Balewa_(1962).jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_grunitzky",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1913,
+                  "titre": "Naissance de Nicolas Grunitzky",
+                  "description": "Nicolas Grunitzky (1913-1969) est un homme d'État togolais, beau-frère de Sylvanus Olympio. Premier ministre du Togo sous tutelle française de 1956 à 1958, il revient au pouvoir après l'assassinat d'Olympio et préside la République de 1963 à 1967. Renversé par le colonel Eyadéma, il meurt à Paris en 1969.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Nicolas_Grunitzky",
+                  "pays": "TG",
+                  "classement": "Grunitzky, Nicolas",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_grunitzky.jpg",
+                    "legende": "Nicolas Grunitzky, photographie du 7 avril 1964",
+                    "auteur": "Moshe Pridan (Israel National Photo Collection)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Nicolas_Grunitzky_1964.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_tolbert",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1913,
+                  "titre": "Naissance de William Tolbert",
+                  "description": "William Tolbert (1913-1980) est un pasteur baptiste et homme d'État libérien, vice-président puis président du Liberia de 1971 à 1980. Il ouvre la vie politique, mais l'inflation et la hausse du prix du riz provoquent en 1979 des émeutes violentes. Il est tué lors du coup d'État du sergent Samuel Doe, le 12 avril 1980, qui met fin à plus d'un siècle de domination des Américano-Libériens.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/William_Tolbert",
+                  "pays": "LR",
+                  "classement": "Tolbert, William",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_tolbert.jpg",
+                    "legende": "William Tolbert, photographie du 3 avril 1978",
+                    "auteur": "Kightlinger, Jack E., Photographer",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:William_R._Tolbert,_Jr..JPG"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_modibo",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1915,
+                  "titre": "Naissance de Modibo Keïta",
+                  "description": "Modibo Keïta (1915-1977) est un instituteur et homme d'État malien, premier président de la République du Mali, de 1960 à 1968. Il engage le pays dans la voie d'un socialisme africain et crée en 1962 la monnaie malienne, hors de la zone franc. Renversé par le coup d'État de Moussa Traoré en 1968, il est emprisonné et meurt en détention.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Modibo_Ke%C3%AFta_(1915-1977)",
+                  "pays": "ML",
+                  "classement": "Keïta, Modibo",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_modibo.jpg",
+                    "legende": "Modibo Keïta, photographie du 13 septembre 1961",
+                    "auteur": "White house photographers",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Modibo_Keita_1961-09-13.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_dadie",
+                  "axe": "Littérature et pensée",
+                  "date": 1916,
+                  "titre": "Naissance de Bernard Binlin Dadié",
+                  "description": "Bernard Binlin Dadié (1916-2019) est un écrivain ivoirien, né à Assinie et mort centenaire à Abidjan. Auteur de « Climbié » (1956), de « Un nègre à Paris » (1959) et du recueil « Afrique debout ! », il milite tôt contre le colonialisme et est emprisonné à Grand-Bassam en 1949-1950. Ministre de la Culture de 1977 à 1986, il est l'une des grandes voix de la littérature d'Afrique de l'Ouest.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bernard_Binlin_Dadi%C3%A9",
+                  "pays": "CI",
+                  "classement": "Dadié, Bernard Binlin",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_dadie.jpg",
+                    "legende": "Bernard Dadié, photographie de juillet 2016",
+                    "auteur": "AHOSSAN Jean-Yves TANOH alias Bibi",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Bernard_Dadi%C3%A9.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_diori",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1916,
+                  "titre": "Naissance d'Hamani Diori",
+                  "description": "Hamani Diori (1916-1989) est un enseignant et homme d'État nigérien, premier président de la République du Niger, de 1960 à 1974. Il garde de très bons rapports avec la France et défend la francophonie, mais la sécheresse des années 1970 et la famine ébranlent son régime. Renversé par Seyni Kountché en 1974, il reste en détention jusqu'en 1980 et meurt à Rabat.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Hamani_Diori",
+                  "pays": "NE",
+                  "classement": "Diori, Hamani",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_diori.jpg",
+                    "legende": "Hamani Diori, photographie du 7 octobre 1968",
+                    "auteur": "Kroon, Ron / Anefo",
+                    "licence": "CC BY-SA 3.0 NL",
+                    "source": "https://commons.wikimedia.org/wiki/File:Hamani_Diori_1968b.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_maga",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1916,
+                  "titre": "Naissance d'Hubert Maga",
+                  "description": "Hubert Maga (1916-2000) est un instituteur devenu homme d'État béninois, président de la République du Dahomey de 1960 à 1963, puis du Conseil présidentiel de 1970 à 1972. Originaire de Parakou, dans le nord du pays, il forme avec Sourou Migan Apithy et Justin Ahomadegbé le trio dont la rivalité marque la vie politique du Dahomey. Renversé par un coup d'État en 1963, il revient au pouvoir en 1970 dans le cadre d'une présidence tournante à trois.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Hubert_Maga",
+                  "pays": "BJ",
+                  "classement": "Maga, Hubert",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_maga.jpg",
+                    "legende": "Hubert Maga sur le lac de Tibériade, photographie du 24 septembre 1961",
+                    "auteur": "State of Israel Press Office",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Hubert_Maga_(cropped)_on_September_24th,_1961.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_enwonwu",
+                  "axe": "Beaux-arts",
+                  "date": 1917,
+                  "titre": "Naissance de Ben Enwonwu",
+                  "description": "Ben Enwonwu (1917-1994) est un peintre et sculpteur nigérian, considéré comme le père de l'art moderne de son pays. Sa sculpture « Anyanwu », exposée au siège des Nations unies à New York, associe les formes de l'art igbo et le langage de la sculpture moderne. Il réalise en 1957 le portrait de la reine Élisabeth II et reçoit les honneurs de la couronne britannique.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ben_Enwonwu",
+                  "pays": "NG",
+                  "classement": "Enwonwu, Ben",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_enwonwu.jpg",
+                    "legende": "Ben Enwonwu sculptant un buste en 1957",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ben_Enonwu_working_on_a_sculpture_of_Ann_Gerrard_(1957).jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_yameogo",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1921,
+                  "titre": "Naissance de Maurice Yaméogo",
+                  "description": "Maurice Yaméogo (1921-1993) est un homme d'État voltaïque, premier président de la République de Haute-Volta, de 1960 à 1966. Il gouverne par un parti unique de fait et mène une politique d'austérité qui provoque en janvier 1966 un soulèvement populaire. Renversé par l'armée, il est condamné pour détournement de fonds et meurt à Ouagadougou.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Maurice_Yam%C3%A9ogo",
+                  "pays": "BF",
+                  "classement": "Yaméogo, Maurice",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_yameogo.jpg",
+                    "legende": "Maurice Yaméogo, photographie de 1960",
+                    "auteur": "unknown, Service de Presse et d'Information. France.",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Maurice_Yam%C3%A9ogo,_1960.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_kizerbo",
+                  "axe": "Littérature et pensée",
+                  "date": 1922,
+                  "titre": "Naissance de Joseph Ki-Zerbo",
+                  "description": "Joseph Ki-Zerbo (1922-2006) est un historien et homme politique burkinabè. Premier agrégé d'histoire d'Afrique noire, en 1956, il publie une « Histoire de l'Afrique noire » (1972) et participe à la rédaction de l'Histoire générale de l'Afrique de l'UNESCO. Opposant politique dans son pays, il meurt à Ouagadougou en 2006.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Joseph_Ki-Zerbo",
+                  "pays": "BF",
+                  "classement": "Ki-Zerbo, Joseph",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_kizerbo.jpg",
+                    "legende": "Statue de Joseph Ki-Zerbo à Ouagadougou",
+                    "auteur": "Yendifa",
+                    "licence": "CC BY 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Professeur_Joseph_Ki_Zerbo_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_sekou",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1922,
+                  "titre": "Naissance d'Ahmed Sékou Touré",
+                  "description": "Ahmed Sékou Touré (1922-1984) est un syndicaliste et homme d'État guinéen. En 1958, il fait voter à la Guinée le « non » au référendum du général de Gaulle, et mène son pays à l'indépendance en choisissant « la liberté dans la pauvreté plutôt que l'opulence dans l'esclavage ». Il en est le président jusqu'à sa mort, à la tête d'un régime de parti unique marqué par la répression, notamment au camp Boiro.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ahmed_S%C3%A9kou_Tour%C3%A9",
+                  "pays": "GN",
+                  "classement": "Touré, Ahmed Sékou",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_sekou.jpg",
+                    "legende": "Sékou Touré à la Maison-Blanche, photographie d'octobre 1962",
+                    "auteur": "Robert Knudsen, photographe de la Maison-Blanche (bibliothèque John F. Kennedy)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ahmed_Seko%C3%BA_in_1962_at_White_House_cropped.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_pereira",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1923,
+                  "titre": "Naissance d'Aristides Pereira",
+                  "description": "Aristides Pereira (1923-2011) est un homme d'État cap-verdien, cofondateur du PAIGC avec Amílcar Cabral. Premier président du Cap-Vert indépendant en 1975, il dirige le pays sous le régime du parti unique, puis accepte le multipartisme en 1990. Battu à l'élection de 1991, il passe le pouvoir sans heurt et meurt à Coimbra, au Portugal.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Aristides_Pereira",
+                  "pays": "CV",
+                  "classement": "Pereira, Aristides",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_pereira.jpg",
+                    "legende": "Aristides Pereira, photographie du 4 octobre 1983",
+                    "auteur": "SSGT Maria Briestline",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Aristide_Pereira_detail_DF-SC-84-10021.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_cabral",
+                  "axe": "Guerres et résistances",
+                  "date": 1924,
+                  "titre": "Naissance d'Amílcar Cabral",
+                  "description": "Amílcar Cabral (1924-1973) est un agronome, théoricien et homme politique de la Guinée-Bissau et du Cap-Vert, fondateur du PAIGC en 1956. Il dirige à partir de 1963 la guerre de libération contre le Portugal et développe une pensée de la décolonisation, résumée dans « L'arme de la théorie ». Assassiné à Conakry en janvier 1973, huit mois avant la proclamation unilatérale de l'indépendance, il est honoré aussi bien à Bissau qu'à Praia.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Am%C3%ADlcar_Cabral",
+                  "pays": "GW",
+                  "classement": "Cabral, Amílcar",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_cabral.jpg",
+                    "legende": "Buste d'Amílcar Cabral sur la place de Bafatá, sa ville natale, photographie de 2019",
+                    "auteur": "Jcornelius",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Main_square_in_Bafat%C3%A1_with_Am%C3%ADlcar_Cabral_bust,_Bafat%C3%A1,_Guinea-Bissau_2.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_jawara",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1924,
+                  "titre": "Naissance de Dawda Jawara",
+                  "description": "Dawda Jawara (1924-2019) est un vétérinaire devenu homme d'État gambien, Premier ministre en 1962 puis premier président de la République de Gambie, de 1970 à 1994. Anobli par la reine en 1966, il dirige le pays dans le cadre d'une démocratie parlementaire, rare en Afrique à cette époque. Renversé par un coup d'État mené par Yahya Jammeh en 1994, il part en exil et rentre en Gambie en 2002.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Dawda_Jawara",
+                  "pays": "GM",
+                  "classement": "Jawara, Dawda",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_jawara.jpg",
+                    "legende": "Dawda Jawara, photographie de 1979",
+                    "auteur": "Fernando Pereira / Anefo",
+                    "licence": "CC BY-SA 3.0 NL",
+                    "source": "https://commons.wikimedia.org/wiki/File:Dawda_Jawara_(1979).jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_nicol",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1924,
+                  "titre": "Naissance de Davidson Nicol",
+                  "description": "Davidson Nicol (1924-1994) est un médecin, scientifique et écrivain sierra-léonais, connu aussi sous le nom de plume d'Abioseh Nicol. Il devient le premier Africain élu fellow d'un collège de Cambridge, puis principal du Fourah Bay College et vice-chancelier de l'université de Sierra Leone. Ambassadeur de son pays auprès de l'ONU, il écrit nouvelles et poèmes et meurt à Cambridge en 1994.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Davidson_Nicol",
+                  "pays": "SL",
+                  "classement": "Nicol, Davidson",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_nicol.jpg",
+                    "legende": "Davidson Nicol étudiant, photographie ancienne",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Student_photograph_of_Davidson_Nicol.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_kourouma",
+                  "axe": "Littérature et pensée",
+                  "date": 1927,
+                  "titre": "Naissance d'Ahmadou Kourouma",
+                  "description": "Ahmadou Kourouma (1927-2003) est un écrivain ivoirien, né à Boundiali et mort en France. Son premier roman, « Les Soleils des indépendances » (1968), bouscule la langue française en y faisant entrer la syntaxe et l'imaginaire du malinké. Il obtient le prix Renaudot et le Goncourt des lycéens en 2000 pour « Allah n'est pas obligé ».",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ahmadou_Kourouma",
+                  "pays": "CI",
+                  "classement": "Kourouma, Ahmadou",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_kourouma.jpg",
+                    "legende": "Ahmadou Kourouma, photographie d'octobre 2000",
+                    "auteur": "Photographe de la Ville de Saint-Dié-des-Vosges (scan : Ji-Elle)",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ahmadou_Kourouma-FIG_2000_(3).jpeg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_ba",
+                  "axe": "Littérature et pensée",
+                  "date": 1929,
+                  "titre": "Naissance de Mariama Bâ",
+                  "description": "Mariama Bâ (1929-1981) est une écrivaine sénégalaise, née à Dakar. Son roman « Une si longue lettre » (1979), qui prend la forme d'une lettre d'une veuve à son amie, dénonce la polygamie et la condition des femmes. Il reçoit le prix Noma en 1980, et elle meurt à Dakar peu avant la parution de son second roman.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mariama_B%C3%A2",
+                  "pays": "SN",
+                  "classement": "Bâ, Mariama",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_ba.jpg",
+                    "legende": "Mariama Bâ à l'École normale de Rufisque",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mariama_B%C3%A2_%C3%A0_l%27%C3%89cole_normale_de_Rufisque.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_achebe",
+                  "axe": "Littérature et pensée",
+                  "date": 1930,
+                  "titre": "Naissance de Chinua Achebe",
+                  "description": "Chinua Achebe (1930-2013) est un romancier, essayiste et poète nigérian, né à Ogidi. Son roman « Le Monde s'effondre » (1958), qui raconte l'arrivée des Britanniques chez les Igbos, est l'un des livres les plus lus de la littérature africaine. Il reçoit le prix international Man Booker en 2007 et meurt à Boston en 2013.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Chinua_Achebe",
+                  "pays": "NG",
+                  "classement": "Achebe, Chinua",
+                  "biographie": "bio_achebe",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_achebe.jpg",
+                    "legende": "Chinua Achebe, photographie du 25 septembre 2008",
+                    "auteur": "Stuart C. Shapiro",
+                    "licence": "CC BY 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Chinua_Achebe,_2008_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_kountche",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1931,
+                  "titre": "Naissance de Seyni Kountché",
+                  "description": "Seyni Kountché (1931-1987) est un militaire et homme d'État nigérien, qui renverse Hamani Diori par un coup d'État en 1974. Il dirige le Niger pendant treize ans, dans un régime austère et autoritaire, qui profite de l'essor de l'uranium. Il meurt à Paris en 1987, après une maladie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Seyni_Kountch%C3%A9",
+                  "pays": "NE",
+                  "classement": "Kountché, Seyni",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_kountche.jpg",
+                    "legende": "Seyni Kountché, photographie de 1983",
+                    "auteur": "Seyni_Kountche_1983.jpg : Anjely at de.wikipedia derivative work: Tourbillon",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Seyni_Kountche_1983_cropped.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_nwapa",
+                  "axe": "Littérature et pensée",
+                  "date": 1931,
+                  "titre": "Naissance de Flora Nwapa",
+                  "description": "Flora Nwapa (1931-1993) est une romancière et éditrice nigériane, née à Oguta. Son roman « Efuru » (1966), histoire d'une commerçante igbo, est le premier roman en anglais publié par une Africaine. Elle fonde en 1977 sa maison d'édition, Tana Press, qui publie des livres pour enfants et des écrivaines.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Flora_Nwapa",
+                  "pays": "NG",
+                  "classement": "Nwapa, Flora",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_nwapa.jpg",
+                    "legende": "Flora Nwapa, portrait dessiné",
+                    "auteur": "ThePortraitLady",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Flora_Nwapa.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_kerekou",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1933,
+                  "titre": "Naissance de Mathieu Kérékou",
+                  "description": "Mathieu Kérékou (1933-2015) est un militaire et homme d'État béninois qui prend le pouvoir par un coup d'État en 1972. Il proclame en 1975 la République populaire du Bénin, d'orientation marxiste-léniniste, puis accepte en 1990 une conférence nationale qui rétablit le multipartisme. Battu à la présidentielle de 1991, il revient au pouvoir par les urnes en 1996 et reste en fonction jusqu'en 2006.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mathieu_K%C3%A9r%C3%A9kou",
+                  "pays": "BJ",
+                  "classement": "Kérékou, Mathieu",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_kerekou.jpg",
+                    "legende": "Mathieu Kérékou, photographie du 10 février 2006 à Cotonou",
+                    "auteur": "Ricardo Stuckert/ABr",
+                    "licence": "CC BY 3.0 BR",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mathieu_K%C3%A9r%C3%A9kou_2006Feb10_(cropped).JPG"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_bedie",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1934,
+                  "titre": "Naissance d'Henri Konan Bédié",
+                  "description": "Henri Konan Bédié (1934-2023) est un économiste et homme d'État ivoirien, président de la Côte d'Ivoire de 1993 à 1999. Président de l'Assemblée nationale, il succède à Houphouët-Boigny à sa mort et popularise le concept d'« ivoirité », qui divise le pays. Renversé par le coup d'État de décembre 1999, il reste une figure de la politique ivoirienne jusqu'à sa mort à Abidjan.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Henri_Konan_B%C3%A9di%C3%A9",
+                  "pays": "CI",
+                  "classement": "Bédié, Henri Konan",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_bedie.jpg",
+                    "legende": "Henri Konan Bédié, photographie officielle",
+                    "auteur": "Benoît Bourgeois / European Communities, 1997 / EC - Audiovisual Service",
+                    "licence": "CC BY 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Henri_Konan_B%C3%A9di%C3%A9_(P001954018AH).jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_eyadema",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1935,
+                  "titre": "Naissance de Gnassingbé Eyadéma",
+                  "description": "Gnassingbé Eyadéma (1935-2005) est un militaire et homme d'État togolais, né à Pya, dans le nord du pays. Auteur du coup d'État de janvier 1967, il dirige le Togo pendant trente-huit ans, dans un régime de parti unique puis, à partir de 1991, de multipartisme contesté. Il meurt dans l'avion qui le conduit en urgence à l'étranger, en février 2005, et son fils Faure Gnassingbé lui succède.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Gnassingb%C3%A9_Eyad%C3%A9ma",
+                  "pays": "TG",
+                  "classement": "Eyadéma, Gnassingbé",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_eyadema.jpg",
+                    "legende": "Gnassingbé Eyadéma, photographie du 26 octobre 1983",
+                    "auteur": "SrA Felicia Wilson",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Gnassingbe_Eyadema_detail1_DF-SC-84-10025.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_traore",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1936,
+                  "titre": "Naissance de Moussa Traoré",
+                  "description": "Moussa Traoré (1936-2020) est un militaire et homme d'État malien, qui renverse Modibo Keïta en 1968. Il dirige le Mali pendant vingt-trois ans, dans un régime de parti unique. Chassé du pouvoir en mars 1991 par un soulèvement populaire, il est condamné à mort, peine commuée, puis gracié en 2002.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Moussa_Traor%C3%A9",
+                  "pays": "ML",
+                  "classement": "Traoré, Moussa",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_traore.jpg",
+                    "legende": "Moussa Traoré, photographie du 12 avril 1989",
+                    "auteur": "Rob Bogaerts for Anefo",
+                    "licence": "CC BY-SA 3.0 NL",
+                    "source": "https://commons.wikimedia.org/wiki/File:Moussa_Traor%C3%A9_(1989)_crop.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_abiola",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1937,
+                  "titre": "Naissance de Moshood Abiola",
+                  "description": "Moshood Abiola (1937-1998) est un homme d'affaires et homme politique nigérian, d'origine yoruba, né à Abeokuta. Il remporte l'élection présidentielle du 12 juin 1993, la plus libre de l'histoire du pays, mais le régime militaire annule le scrutin. Proclamé président en 1994, il est arrêté et meurt en prison en 1998, un mois après le général Abacha.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Moshood_Abiola",
+                  "pays": "NG",
+                  "classement": "Abiola, Moshood",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_abiola.jpg",
+                    "legende": "Moshood Abiola, photographie ancienne",
+                    "auteur": "Unknown photographer",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:MoshoodAbiola.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_annan",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1938,
+                  "titre": "Naissance de Kofi Annan",
+                  "description": "Kofi Annan (1938-2018) est un diplomate ghanéen, né à Kumasi, premier Africain subsaharien secrétaire général de l'ONU, de 1997 à 2006. Il lance les Objectifs du millénaire pour le développement et reçoit le prix Nobel de la paix en 2001 avec l'Organisation des Nations unies. Il est ensuite l'envoyé spécial de l'ONU et de la Ligue arabe pour la Syrie et meurt à Berne, en Suisse.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kofi_Annan",
+                  "pays": "GH",
+                  "classement": "Annan, Kofi",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_annan.jpg",
+                    "legende": "Kofi Annan, photographie du 14 novembre 2003",
+                    "auteur": "Ricardo Stuckert/ABr",
+                    "licence": "CC BY 3.0 BR",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kofi_Annan.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_fela",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1938,
+                  "titre": "Naissance de Fela Kuti",
+                  "description": "Fela Kuti (1938-1997) est un chanteur, saxophoniste, chef d'orchestre et militant nigérian, né à Abeokuta. Il invente l'afrobeat, qui mêle jazz, funk et musiques yoruba, et fait de sa communauté, la Kalakuta Republic, un espace de contestation de la dictature militaire. Arrêté et battu à de nombreuses reprises, il meurt du sida en 1997, et plus d'un million de personnes suivent ses funérailles à Lagos.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Fela_Kuti",
+                  "pays": "NG",
+                  "classement": "Kuti, Fela",
+                  "biographie": "bio_felakuti",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_fela.jpg",
+                    "legende": "Fela Kuti, photographie de 1986",
+                    "auteur": "Distributed by Celluloid Records",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Fela_Kuti_circa_1986.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_kodjo",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1938,
+                  "titre": "Naissance d'Edem Kodjo",
+                  "description": "Edem Kodjo (1938-2020) est un homme politique, diplomate et essayiste togolais, né à Sokodé. Secrétaire général de l'Organisation de l'unité africaine de 1978 à 1983, il est Premier ministre du Togo en 1994-1996, puis en 2005-2006. Il publie un essai sur l'avenir du continent, « Et demain l'Afrique » (1985), et meurt en 2020.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Edem_Kodjo",
+                  "pays": "TG",
+                  "classement": "Kodjo, Edem",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_kodjo.jpg",
+                    "legende": "Edem Kodjo, photographie d'octobre 2011",
+                    "auteur": "Ji-Elle",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Edem_Kodjo-Festival_international_de_g%C3%A9ographie_2011.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_murtala",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1938,
+                  "titre": "Naissance de Murtala Mohammed",
+                  "description": "Murtala Mohammed (1938-1976) est un général et homme d'État nigérian, qui prend le pouvoir en 1975 à la faveur d'un coup d'État sans effusion de sang. En quelques mois, il purge l'administration, relance la décision de bâtir une nouvelle capitale à Abuja et soutient le MPLA en Angola. Il est assassiné lors d'une tentative de coup d'État, le 13 février 1976.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Murtala_Mohammed",
+                  "pays": "NG",
+                  "classement": "Mohammed, Murtala",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_murtala.jpg",
+                    "legende": "Murtala Mohammed, portrait officiel",
+                    "auteur": "Seven Ways Zaria",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Murtala_Mohammed.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_zaourou",
+                  "axe": "Littérature et pensée",
+                  "date": 1938,
+                  "titre": "Naissance de Bernard Zadi Zaourou",
+                  "description": "Bernard Zadi Zaourou (1938-2012) est un poète, dramaturge et universitaire ivoirien, né à Soubré. Il crée le « didiga », une esthétique théâtrale inspirée des veillées de chasseurs du pays bété, qui renouvelle la scène africaine. Engagé aussi en politique, il meurt à Abidjan en 2012.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bernard_Zadi_Zaourou",
+                  "pays": "CI",
+                  "classement": "Zaourou, Bernard Zadi",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_zaourou.jpg",
+                    "legende": "Bernard Zadi Zaourou, photographie de janvier 2009",
+                    "auteur": "Aman ADO",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Bernard_Zadi_Zaourou.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_farka",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1939,
+                  "titre": "Naissance d'Ali Farka Touré",
+                  "description": "Ali Farka Touré (1939-2006) est un musicien et chanteur malien, né à Kanau, l'une des grandes figures de la musique d'Afrique de l'Ouest. Il mêle les traditions songhaï, peule et tamasheq et le blues, et enregistre en 1994 « Talking Timbuktu » avec le guitariste américain Ry Cooder, qui lui vaut un Grammy Award. Maire de Niafunké, il reçoit un second Grammy en 2006, l'année de sa mort à Bamako.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ali_Farka_Tour%C3%A9",
+                  "pays": "ML",
+                  "classement": "Touré, Ali Farka",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_farka.jpg",
+                    "legende": "Ali Farka Touré, photographie de janvier 2006",
+                    "auteur": "Tagles",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ali_Farka_Toure.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_vieira",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1939,
+                  "titre": "Naissance de João Bernardo « Nino » Vieira",
+                  "description": "João Bernardo « Nino » Vieira (1939-2009) est un combattant de l'indépendance et homme d'État bissau-guinéen. Commandant du PAIGC pendant la guerre contre le Portugal, il renverse en 1980 Luís Cabral, premier président du pays, et dirige la Guinée-Bissau jusqu'à la guerre civile de 1998-1999. Réélu en 2005, il est assassiné en mars 2009 à Bissau.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jo%C3%A3o_Bernardo_Vieira",
+                  "pays": "GW",
+                  "classement": "Vieira, João Bernardo « Nino »",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_vieira.jpg",
+                    "legende": "João Bernardo Vieira, photographie du 29 septembre 1980",
+                    "auteur": "Rob Bogaerts for Anefo",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Guine_Bissau_,_Premier_Joao_Bernardo_Vieira_(kop),_Bestanddeelnr_931-0498.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_evora",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1941,
+                  "titre": "Naissance de Cesária Évora",
+                  "description": "Cesária Évora (1941-2011) est une chanteuse cap-verdienne, née à Mindelo, sur l'île de São Vicente. Surnommée la « diva aux pieds nus » parce qu'elle chantait déchaussée, elle fait connaître la morna et la coladeira dans le monde entier à partir de son album « Miss Perfumado » (1992). Elle reçoit un Grammy Award en 2004 pour « Voz d'Amor ».",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ces%C3%A1ria_%C3%89vora",
+                  "pays": "CV",
+                  "classement": "Évora, Cesária",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_evora.jpg",
+                    "legende": "Cesária Évora, photographie de 2008",
+                    "auteur": "Foto: Silvio Tanaka",
+                    "licence": "CC BY-SA 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ces%C3%A1ria_%C3%89vora_2008.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_alassane",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1942,
+                  "titre": "Naissance de Moustapha Alassane",
+                  "description": "Moustapha Alassane (1942-2015) est un réalisateur nigérien, d'abord mécanicien, pionnier du cinéma d'animation en Afrique. Son film « Le Retour d'un aventurier » (1966), un western tourné dans le Niger, est une comédie qui imite le genre américain. Il tourne aussi des films d'animation avec des marionnettes, et meurt à Ouagadougou en 2015.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Moustapha_Alassane",
+                  "pays": "NE",
+                  "classement": "Alassane, Moustapha",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_alassane.jpg",
+                    "legende": "Moustapha Alassane, photographie de mai 2011",
+                    "auteur": "Festival de Cine Africano FCAT",
+                    "licence": "CC BY-SA 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Moustapha_Alassane.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_ibk",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1945,
+                  "titre": "Naissance d'Ibrahim Boubacar Keïta",
+                  "description": "Ibrahim Boubacar Keïta (1945-2022) est un homme d'État malien, né à Koutiala et souvent désigné par ses initiales « IBK ». Président du Mali de 2013 à 2020, il affronte la crise du Nord et la progression des groupes armés. Renversé par un coup d'État en août 2020, il meurt à Bamako en janvier 2022.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ibrahim_Boubacar_Ke%C3%AFta",
+                  "pays": "ML",
+                  "classement": "Keïta, Ibrahim Boubacar",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_ibk.jpg",
+                    "legende": "Ibrahim Boubacar Keïta, photographie de décembre 2013",
+                    "auteur": "Photo Claude TRUONG-NGOC",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ibrahim_Boubacar_Ke%C3%AFta_par_Claude_Truong-Ngoc_d%C3%A9cembre_2013_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_djedje",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1947,
+                  "titre": "Naissance d'Ernesto Djédjé",
+                  "description": "Ernesto Djédjé (1947-1983) est un chanteur ivoirien, originaire du pays bété et né à Daloa. Surnommé le « roi du ziglibithy », il invente ce style qui marie rythmes bétés et orchestre moderne et devient l'idole de la jeunesse ivoirienne des années 1970. Il meurt en 1983, à 36 ans, alors qu'il est au sommet de sa popularité.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ernesto_Dj%C3%A9dj%C3%A9",
+                  "pays": "CI",
+                  "classement": "Djédjé, Ernesto",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_djedje.jpg",
+                    "legende": "Ernesto Djédjé, illustration le représentant en train de danser",
+                    "auteur": "Manouka",
+                    "licence": "CC BY 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ernesto_Dj%C3%A9dj%C3%A9_dansant.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_rawlings",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1947,
+                  "titre": "Naissance de Jerry Rawlings",
+                  "description": "Jerry Rawlings (1947-2020) est un aviateur et homme d'État ghanéen, qui prend le pouvoir une première fois par un coup d'État en 1979 et rend le pouvoir à un civil au bout de quelques mois. Il revient en 1981 par un second coup d'État et dirige le pays pendant près de vingt ans, d'abord à la tête d'un régime militaire, puis comme président élu en 1992 et 1996. Il quitte le pouvoir en 2001, à l'issue de son second mandat.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jerry_Rawlings",
+                  "pays": "GH",
+                  "classement": "Rawlings, Jerry",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_rawlings.jpg",
+                    "legende": "Jerry Rawlings, photographie du 7 février 2012",
+                    "auteur": "AMISOM Public Information",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jerry_Rawlings_visits_AMISOM_02_(6874167713)_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_att",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1948,
+                  "titre": "Naissance d'Amadou Toumani Touré",
+                  "description": "Amadou Toumani Touré (1948-2020) est un militaire et homme d'État malien, surnommé « ATT ». Chef de l'armée, il renverse Moussa Traoré en 1991 et remet le pouvoir aux civils en 1992, ce qui lui vaut le surnom de « soldat de la démocratie ». Élu président en 2002 et réélu en 2007, il est renversé par un coup d'État en mars 2012 et meurt à Istanbul.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Amadou_Toumani_Tour%C3%A9",
+                  "pays": "ML",
+                  "classement": "Touré, Amadou Toumani",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_att.jpg",
+                    "legende": "Amadou Toumani Touré, photographie d'avril 2010",
+                    "auteur": "LulaAmadouToure.jpg : Antonio Cruz/ABr derivative work: Missionary ( talk )",
+                    "licence": "CC BY 2.5 BR",
+                    "source": "https://commons.wikimedia.org/wiki/File:Amadou_Toure.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_sankara",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1949,
+                  "titre": "Naissance de Thomas Sankara",
+                  "description": "Thomas Sankara (1949-1987) est un capitaine et homme d'État burkinabè, qui prend le pouvoir en 1983 en Haute-Volta. Il rebaptise le pays Burkina Faso, « le pays des hommes intègres », et lance des campagnes de vaccination, de reboisement et de promotion des femmes. Il est assassiné le 15 octobre 1987, lors du coup d'État de son ancien compagnon Blaise Compaoré.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Thomas_Sankara",
+                  "pays": "BF",
+                  "classement": "Sankara, Thomas",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_sankara.jpg",
+                    "legende": "Thomas Sankara à Harlem, photographie de 1984",
+                    "auteur": "The Militant/ Ernest Harsch",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Thomas_Sankara_in_Harlem_(1984).png"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_kante",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1950,
+                  "titre": "Naissance de Mory Kanté",
+                  "description": "Mory Kanté (1950-2020) est un chanteur et joueur de kora guinéen, griot par sa famille. Remarqué à la tête du Rail Band, à Bamako, il connaît le succès mondial avec « Yéké yéké » (1987), l'un des premiers tubes africains à dépasser le million d'exemplaires en Europe. Il meurt à Conakry en 2020.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mory_Kant%C3%A9",
+                  "pays": "GN",
+                  "classement": "Kanté, Mory",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_kante.jpg",
+                    "legende": "Mory Kanté, photographie de décembre 2019",
+                    "auteur": "Aboubacarkhoraa",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mory_Kant%C3%A9.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_yala",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1953,
+                  "titre": "Naissance de Kumba Ialá",
+                  "description": "Kumba Ialá (1953-2020) est un homme d'État bissau-guinéen, d'ethnie balante, né à Bula. Élu président en 2000, il est le premier chef de l'État de la Guinée-Bissau issu d'un autre parti que le PAIGC. Renversé par un coup d'État en 2003, il reste jusqu'à sa mort en 2020 une figure de la politique bissau-guinéenne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kumba_Ial%C3%A1",
+                  "pays": "GW",
+                  "classement": "Ialá, Kumba",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_yala.jpg",
+                    "legende": "Kumba Ialá, photographie de campagne",
+                    "auteur": "Nammarci",
+                    "licence": "CC BY 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Koumbayala.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueouest_ouedraogo",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1954,
+                  "titre": "Naissance d'Idrissa Ouedraogo",
+                  "description": "Idrissa Ouedraogo (1954-2018) est un réalisateur burkinabè, né à Banfora. Son film « Yaaba » (1989) reçoit le prix de la critique internationale à Cannes, et « Tilaï » (1990) y obtient le Grand Prix du jury. Il réalise ensuite « Samba Traoré » (1992) et meurt à Ouagadougou en 2018.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Idrissa_Ouedraogo",
+                  "pays": "BF",
+                  "classement": "Ouedraogo, Idrissa",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueouest_ouedraogo.jpg",
+                    "legende": "Idrissa Ouedraogo, photographie de 2007",
+                    "auteur": "Cines del Sur Granada Film Festival from Spain",
+                    "licence": "CC BY-SA 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Idrissa_Ouedraogo_,_Cines_del_Sur_2007.jpg"
+                  }
+                }
+              ],
+              "axeOrder": [
+                "Chefs d'État et dirigeants",
+                "Guerres et résistances",
+                "Littérature et pensée",
+                "Beaux-arts",
+                "Musique, spectacle et sport",
+                "Sciences, techniques et innovation"
+              ],
+              "essentiel": [
+                "pan_afriqueouest_moussa",
+                "pan_afriqueouest_omar",
+                "pan_afriqueouest_roberts",
+                "pan_afriqueouest_samory",
+                "pan_afriqueouest_blyden",
+                "pan_afriqueouest_behanzin",
+                "pan_afriqueouest_bamba",
+                "pan_afriqueouest_diagne",
+                "pan_afriqueouest_tubman",
+                "pan_afriqueouest_olympio",
+                "pan_afriqueouest_senghor",
+                "pan_afriqueouest_nkrumah",
+                "pan_afriqueouest_bello",
+                "pan_afriqueouest_balewa",
+                "pan_afriqueouest_modibo",
+                "pan_afriqueouest_dadie",
+                "pan_afriqueouest_kizerbo",
+                "pan_afriqueouest_sekou",
+                "pan_afriqueouest_cabral",
+                "pan_afriqueouest_kourouma",
+                "pan_afriqueouest_achebe",
+                "pan_afriqueouest_kerekou",
+                "pan_afriqueouest_annan",
+                "pan_afriqueouest_fela",
+                "pan_afriqueouest_murtala",
+                "pan_afriqueouest_farka",
+                "pan_afriqueouest_evora",
+                "pan_afriqueouest_sankara"
+              ]
+            },
             {
               "id": "pan_dach",
               "nom": "Grandes figures d'Allemagne, d'Autriche et de Suisse",

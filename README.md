@@ -1083,6 +1083,47 @@ Les choix qui ne vont pas de soi :
   (photographie de 1940 des archives de l'armée finlandaise), Tove Jansson, Kekkonen, Virtanen
   (CC BY 4.0) et Kamprad (CC BY 2.0).
 
+### Le cinquième bloc : l'Afrique de l'Ouest
+
+`pan_afriqueouest`, « Grandes figures d'Afrique de l'Ouest » (code `afriqueouest`) : **62
+personnages de quinze pays** — Nigeria 9, Sénégal 7, Mali 6, Côte d'Ivoire 5, Burkina Faso 4,
+Libéria 4, Niger 4, Sierra Leone 4, Togo 4, Bénin 3, Ghana 3, Guinée 3, Guinée-Bissau 3, Cap-Vert 2,
+Gambie 1 — de Mansa Moussa (vers 1280) à Idrissa Ouedraogo (1954). Par axe : 34 Chefs d'État et
+dirigeants, 13 Littérature et pensée, 7 Musique, spectacle et sport, 6 Guerres et résistances,
+1 Beaux-arts, 1 Sciences, techniques et innovation ; 28 ⭐ et trois biographies liées (Mansa
+Moussa, Chinua Achebe, Fela Kuti).
+
+Les choix qui ne vont pas de soi :
+
+- **Le périmètre est celui des quinze membres historiques de la CEDEAO** : Bénin, Cap-Vert, Côte
+  d'Ivoire, Gambie, Ghana, Guinée, Guinée-Bissau, Libéria, Nigeria, Sénégal, Sierra Leone, Togo,
+  Burkina Faso, Mali et Niger. Le Burkina Faso, le Mali et le Niger ont quitté l'organisation en
+  janvier 2025 : ils restent dans le bloc, qui est un ensemble géographique et historique, non
+  l'organigramme d'une institution. Les `motsCles` du thème comptent « CEDEAO ». La Mauritanie,
+  qui avait quitté la CEDEAO en 2000, est déjà au Maghreb.
+- **Les images ont décidé de la taille.** Cent vingt-deux fiches ont été rédigées, dates relues sur
+  l'article Wikipédia ; seules 62 ont une image libre convenable (l'image principale de l'article,
+  sinon une recherche sur Commons). Le bloc est donc bien en deçà des 80 à 100 figures visées, et
+  les chefs d'État y pèsent plus de la moitié : ce sont eux que photographient les agences et
+  les archives publiques. Beaux-arts et Sciences n'ont qu'une figure chacune (Ben Enwonwu, Davidson Nicol).
+- **Dates incertaines.** Mansa Moussa (naissance vers 1280, mort 1332 ou 1337 selon les sources)
+  et Omar Tall (naissance entre 1794 et 1797) portent un « vers » ; Samory Touré aussi. Ghézo,
+  Osei Tutu, Alfa Yaya, Joseph Cinqué (Sengbe Pieh) et Ovonramwen ont été écartés faute d'année de naissance établie.
+- **Rangés là où on les honore** : Amílcar Cabral, né à Bafatá (Guinée-Bissau) de parents
+  capverdiens, est en Guinée-Bissau (le portrait est son buste de Bafatá, faute de photographie
+  libre) ; Edward Wilmot Blyden, né à Saint-Thomas, est libérien ; Adelaide Casely-Hayford est
+  sierra-léonaise. Que des morts : Abdou Diouf, Wole Soyinka, Alpha Condé ou Angélique Kidjo n'y entrent pas.
+- **Écartés faute d'image libre convenable**, à réintégrer si l'une apparaît : une soixantaine de
+  figures, dont Soundiata Keïta, Askia Mohammed, Félix Houphouët-Boigny (la seule photographie libre
+  est un cliché israélien de 1962 dont le statut américain n'est pas établi), Yaa Asantewaa, Nnamdi
+  Azikiwe, Usman dan Fodio, Ken Saro-Wiwa, Cheikh Anta Diop, Ousmane Sembène (sa seule photographie est
+  signalée « copyright violation » sur Commons), Lat Dior, Lamine Guèye et Amadou Hampâté Bâ. Leurs
+  fiches sont déjà rédigées dans `scripts/pantheon/afriqueouest_candidats.md`.
+- **Licences à revoir.** Le script lit la licence que Commons déclare, pas le statut américain :
+  à revérifier pour Amílcar Cabral (photographie d'un monument), Sékou Touré, Fela Kuti, Samory
+  Touré et les clichés d'archives de Bello, Eyadéma, Pereira (domaine public américain déclaré), ainsi que pour
+  les images d'Ernesto Djédjé, Flora Nwapa (illustrations) et Alboury Ndiaye (tableau).
+
 ### Un pays à part : l'Égypte
 
 `pan_eg`, « Grandes figures d'Égypte » : **52 personnages**, d'Imhotep (vers 2670
@@ -1969,7 +2010,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
 ### Ce qui n'est pas fait
 
 - **Les autres panthéons** : la France, l'Égypte, les États-Unis, l'Italie, le
-  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, l'Allemagne-Autriche-Suisse et la Scandinavie sont écrits.
+  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, l'Allemagne-Autriche-Suisse, la Scandinavie et l'Afrique de l'Ouest sont écrits.
   Chaque liste de personnages est validée avant la rédaction. Feuille de route, dans l'ordre
   où on les propose (un pays seul quand il a de quoi faire un thème, un bloc sinon) :
   1. **Le Machrek et la péninsule Arabique** (`pan_machrek`, sans l'Égypte, qui a le sien).

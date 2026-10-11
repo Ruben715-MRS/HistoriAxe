@@ -420,6 +420,12 @@ test('« Grandes figures de Scandinavie » : chaque ancre porte le pays de son �
     verifierPantheonDeBloc('pan_scandinavie', 19, 5);
 });
 
+test('« Grandes figures d’Afrique de l’Ouest » : chaque ancre porte le pays de son événement, et la session se joue', () => {
+    // Quinze pays, dont plusieurs (la Gambie, le Cap-Vert, la Guinée-Bissau) n'ont que quelques
+    // figures : le Nigeria et le Sénégal ne doivent pas les faire disparaître parmi les ancres.
+    verifierPantheonDeBloc('pan_afriqueouest', 23, 15);
+});
+
 test('« Grandes figures d’Égypte » : toutes les ancres sont l’Égypte, et la session se joue', () => {
     // Le panthéon d'un pays n'a pas de `pays` par événement : c'est son thème qui porte
     // l'étiquette (pan_eg → EG, comme « Histoire de l'Égypte »). Sans cela, une naissance
