@@ -90,14 +90,14 @@ test('Personnages illustres : deux sous-catégories, chacune avec sa note et son
     await expect(page.locator('#theme-screen-title')).toHaveText('Panthéons');
     await expect(page.locator('#theme-screen-note-text')).toContainText('né dans les frontières actuelles');
     // Panthéons de pays et de blocs se rangent par leur nom de source — « Allemagne, Autriche et Suisse »,
-    // « Amérique hispanique », « Égypte », « Espagne », « États-Unis », « France », « Italie », « Machrek et péninsule Arabique », « Maghreb », « Royaume-Uni » — et non par
+    // « Amérique hispanique », « Égypte », « Espagne », « États-Unis », « France », « Italie », « Machrek et péninsule Arabique », « Maghreb », « Royaume-Uni », « Scandinavie » — et non par
     // « Grandes figures d'… » / « … de » / « … des » / « … du ».
     await expect(page.locator('#themes-container .data-card-title'))
         .toHaveText(["Grandes figures d'Allemagne, d'Autriche et de Suisse", "Grandes figures d'Amérique hispanique",
             "Grandes figures d'Égypte", "Grandes figures d'Espagne", 'Grandes figures des États-Unis',
             'Grandes figures de France', "Grandes figures d'Italie",
             'Grandes figures du Machrek et de la péninsule Arabique', 'Grandes figures du Maghreb',
-            'Grandes figures du Royaume-Uni']);
+            'Grandes figures du Royaume-Uni', 'Grandes figures de Scandinavie']);
 });
 
 test('la fiche d’un personnage montre son portrait, sa légende, son crédit et sa biographie', async ({ page }) => {
@@ -796,8 +796,9 @@ test('les filtres pays et domaine se combinent, et chaque option annonce son eff
     const domaine = page.locator('#gallery-filter-axis');
     await expect(pays.locator('option').first()).toHaveText('Tous les pays');
     await expect(domaine.locator('option').first()).toHaveText('Tous les domaines');
-    // Sept domaines communs à tous les panthéons ; chaque pays d'un bloc a son entrée.
-    await expect(domaine.locator('option')).toHaveCount(8);
+    // Sept domaines communs à tous les panthéons, plus « Guerres, résistances et exploration » (la Scandinavie) ;
+    // chaque pays d'un bloc a son entrée.
+    await expect(domaine.locator('option')).toHaveCount(9);
     await expect(pays.locator('option', { hasText: 'France' })).toHaveText(/🇫🇷 France \(140\)/);
     await expect(pays.locator('option', { hasText: 'Venezuela' })).toHaveCount(1);
 
@@ -805,7 +806,9 @@ test('les filtres pays et domaine se combinent, et chaque option annonce son eff
     await expect(page.locator('#gallery-container .gallery-card')).toHaveCount(140);
     await expect(page.locator('#gallery-subtitle')).toHaveText(`140 portraits sur ${total}`);
 
-    await domaine.selectOption({ label: 'Sciences, techniques et innovation (138)' });
+    // L'effectif de l'option change à chaque nouveau panthéon : on la choisit par son nom.
+    const sciences = domaine.locator('option', { hasText: 'Sciences, techniques et innovation' });
+    await domaine.selectOption(await sciences.getAttribute('value'));
     const sciencesFrance = await page.locator('#gallery-container .gallery-card').count();
     expect(sciencesFrance).toBeGreaterThan(3);
     expect(sciencesFrance).toBeLessThan(30);
@@ -959,7 +962,7 @@ test('à la première ouverture de « Personnages illustres », on demande si le
     await expect(fenetre).toBeHidden();
     expect(await reglage(page)).toBe('bw');
     // Le bouton de la galerie annonce l'avancement, dès le premier instant.
-    await expect(page.locator('#btn-gallery .gallery-launcher-sub')).toHaveText('0 / 1056 portraits débloqués');
+    await expect(page.locator('#btn-gallery .gallery-launcher-sub')).toHaveText('0 / 1245 portraits débloqués');
 
     // On ne repose pas la question.
     await page.locator('#screen-subcategories .back-btn').click();
@@ -1437,7 +1440,7 @@ test('« Découvrir » › « Personnage » ouvre la fiche d’une figure de la 
 
 test('« Découvrir » › « Personnage » : la biographie mène au jeu, quand le personnage en a une', async ({ page }) => {
     await quitterLAccueil(page);
-    // On tire jusqu'à une figure qui a sa biographie (166 sur 1056).
+    // On tire jusqu'à une figure qui a sa biographie (166 sur 1142).
     await page.locator('#btn-discover').click();
     await page.locator('#btn-discover-person').click();
     for (let i = 0; i < 40 && !(await page.locator('#modal-bio-btn').isVisible()); i++) {

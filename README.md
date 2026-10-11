@@ -601,7 +601,7 @@ ne posent pas la même question :
 | | Un thème, c'est | Une date, c'est | On le joue par |
 |---|---|---|---|
 | **Biographies** | une vie (360 thèmes, en 12 domaines) | une étape de cette vie | étape de la vie |
-| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, l'Allemagne, l'Autriche et la Suisse) | la naissance d'un personnage | domaine |
+| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie) | la naissance d'un personnage | domaine |
 
 Le déplacement ne coûte aucune migration : les 360 thèmes gardent leurs
 identifiants, et rien de ce que le joueur a sauvegardé (favoris, révision,
@@ -707,7 +707,7 @@ des pays ont une histoire commune, un thème **de région** plutôt qu'un par pa
 |---|---|---|
 | Identifiant | `pan_<iso2>` : deux lettres (`pan_fr`) | `pan_<code>` : trois lettres ou plus (`pan_hispam`) — jamais de collision avec un code de pays |
 | `pays` sur chaque événement | interdit (le thème le dit déjà), sauf pour un **invité** d'un autre État (Monaco chez la France, voir « Les micro-États ») | obligatoire : code ISO à deux lettres (`"pays": "VE"`) |
-| Exemples | France, Égypte, Espagne, États-Unis, Italie, Royaume-Uni ; plus tard Brésil… | Amérique hispanique, Maghreb, Allemagne-Autriche-Suisse ; plus tard Machrek |
+| Exemples | France, Égypte, Espagne, États-Unis, Italie, Royaume-Uni ; plus tard Brésil… | Amérique hispanique, Maghreb, Machrek, Allemagne-Autriche-Suisse, Scandinavie |
 
 Ce que le champ `pays` d'un événement change :
 
@@ -803,6 +803,7 @@ l'Italie (126 proposés, plus Enzo Ferrari), 80 à 100
 pour l'Amérique hispanique (dix-neuf pays, de 1 à 19 figures chacun), 58 pour le
 Maghreb (cinq pays, de 1 à 21), 149 pour l'Allemagne, l'Autriche et la Suisse (170 candidats,
 21 coupés ; trois pays, de 26 à 85 figures), 151 pour le Royaume-Uni (194 candidats, 4 ajoutés, 47 écartés), 132 pour l'Espagne (132 proposés, tous retenus),
+103 pour le Machrek et la péninsule Arabique (182 noms testés, 106 avec une image libre, 3 en attente de leur portrait ; dix pays, de 1 à 25 figures),
 40 pour les grands pays, 30 pour les autres. À 6
 axes, 30 donne environ 5 par axe — le minimum pour qu'un axe joué seul reste un jeu.
 
@@ -1045,6 +1046,122 @@ retirés pour tenir l'équilibre des axes et des pays :
 
 Si l'un d'eux doit revenir, sa fiche se rédige comme les autres dans
 `scripts/pantheon/dach.json` (le script `scripts/fetch_portraits.py dach` récupère son portrait).
+
+### Le quatrième bloc : la Scandinavie
+
+`pan_scandinavie`, « Grandes figures de Scandinavie » (code `scandinavie`, trois lettres au moins
+pour un bloc) : **86 personnages de cinq pays** — Suède 28, Danemark 21, Norvège 17, Finlande 15,
+Islande 5 — de Leif Erikson (vers 970) à Olof Palme (1927). Par axe : 17 Chefs d'État et
+dirigeants, 17 Littérature et pensée, 13 Beaux-arts, 11 Guerres, résistances et exploration, 11
+Sciences, techniques et innovation, 10 Musique, spectacle et sport, 7 Économie et entreprise ;
+31 ⭐ et aucune biographie liée.
+
+Les choix qui ne vont pas de soi :
+
+- **Cinq pays, un bloc.** Danemark, Suède et Norvège ont été unis (Union de Kalmar, puis le
+  Danemark-Norvège, puis la Suède-Norvège de 1814 à 1905) ; la Finlande est restée suédoise jusqu'en
+  1809 ; l'Islande a été danoise jusqu'en 1944. Un pays par thème aurait laissé l'Islande à cinq
+  figures. Aucun pays ne dépasse 40 % (la Suède pèse 33 %) : pas de `partMaxPays`.
+- **Le pays est celui de la naissance.** Ludvig Holberg, né à Bergen, est norvégien dans ce
+  thème, bien qu'il ait écrit en danois ; Sigrid Undset, née au Danemark d'un père norvégien,
+  est norvégienne ; Tycho Brahe, né en Scanie (alors danoise), est danois ; Bernadotte, né à Pau,
+  est suédois (il règne à Stockholm) ; Adolf Erik Nordenskiöld, né à Helsinki, est finlandais
+  bien qu'il ait fait sa carrière en Suède ; Bertel Thorvaldsen, né à Copenhague d'un père
+  islandais, est danois ; Knud Rasmussen, né au Groenland, est danois.
+- **Un axe d'exploration.** « Guerres et résistances » devient « Guerres, résistances et
+  exploration » : Leif Erikson, Nansen, Amundsen, Béring, Rasmussen, Nordenskiöld et Heyerdahl
+  n'ont pas d'autre axe où entrer proprement.
+- **Que des morts.** La phrase d'ouverture exige les deux dates (« Nom (naissance-décès) est… ») :
+  Vigdís Finnbogadóttir, Björn Borg, Björk ou Greta Thunberg ne peuvent donc pas y entrer.
+- **Écartés.** Raoul Wallenberg (sa mort est datée de 1947 par Moscou, de 1952 par la Suède :
+  aucune date de décès ne s'impose pour la phrase d'ouverture), Harald Hardrada (le seul
+  fichier libre trouvé sur Commons est un détail de miniature de 350 × 339 px, illisible une
+  fois recadré ; Trygve Lie le remplace parmi les chefs norvégiens) et Jørn Utzon (aucun
+  portrait libre trouvé : Commons ne propose que sa maison, des plans et l'Opéra de Sydney).
+  Ils peuvent rejoindre `scripts/pantheon/scandinavie.json` si une bonne image se présente.
+- **Licences à revoir.** Le script lit la licence que Commons déclare (domaine public, CC BY,
+  CC BY-SA), pas le statut américain de l'image : à revérifier en priorité pour Mannerheim
+  (photographie de 1940 des archives de l'armée finlandaise), Tove Jansson, Kekkonen, Virtanen
+  (CC BY 4.0) et Kamprad (CC BY 2.0).
+
+### Le cinquième bloc : le Machrek et la péninsule Arabique
+
+`pan_machrek`, « Grandes figures du Machrek et de la péninsule Arabique » (code `machrek`) :
+**103 personnages de dix pays** — Liban 25, Syrie 21, Irak 19, Palestine 15, Arabie saoudite 12,
+Jordanie, Yémen 3 chacun, Émirats arabes unis et Koweït 2 chacun, Oman 1 — de Assurbanipal
+(vers 685 av. J.-C.) à Shireen Abu Akleh (1971). Par axe : 46 Chefs d'État et dirigeants, 33
+Littérature et pensée, 12 Guerres et résistances, 6 Sciences, techniques et innovation, 4
+Musique, spectacle et sport, 2 Beaux-arts ; 25 ⭐ et 2 biographies liées (Saladin et Ibn
+al-Haytham). Le Liban, le plus fourni, pèse 24 % du bloc, sous le seuil de 40 % du
+constructeur. Les mots-clés du thème portent les noms des pays, de Babylone à Bagdad, si bien
+que « irak », « liban » ou « yémen » mènent au Machrek dans la recherche.
+
+Les choix qui ne vont pas de soi :
+
+- **Le périmètre.** Douze pays étaient prévus : Liban, Syrie, Irak, Jordanie, Palestine,
+  Arabie saoudite, Yémen, Oman, Émirats, Koweït, Qatar et Bahreïn. Les deux derniers n'ont
+  aucune figure avec un portrait libre exploitable et ne sont donc pas dans la liste des
+  pays du bloc (le constructeur refuse un pays déclaré sans personnage). L'Égypte a son thème
+  (voir plus bas), la Libye est au Maghreb ; Israël et les figures juives auront **un thème à
+  part**, à définir : aucune n'est ici.
+- **L'Antiquité par pays actuel.** Huit figures d'avant l'islam — Assurbanipal et Hammurabi
+  (Irak), Odénat, Philippe l'Arabe, Julia Domna, Héliogabale et Apollodore de Damas (Syrie),
+  Sévère Alexandre (Liban) — sont rangées dans le pays actuel de leur lieu de naissance, comme
+  les Carthaginois au Maghreb. Ce n'est pas parfait (Babylone n'est pas « l'Irak »), mais le
+  champ `pays` est obligatoire dans un bloc et c'est la seule règle qui ne demande pas de
+  jugement cas par cas. Zénobie et Al-Mansur manquent : leur page française ne donne aucune
+  année de naissance, et la phrase d'ouverture en exige une. La naissance de Hammurabi
+  (« vers 1810 ») et d'Assurbanipal (« vers 685 ») est une estimation.
+- **Les premiers siècles de l'islam, sans portrait authentique.** Les quatre premiers
+  califes (Abou Bakr, Omar, Othman et Ali), ainsi que Mu'awiya et Abd al-Malik, sont là, mais **le
+  principe est : pas de portrait, pas de carte, sauf une illustration, même imaginaire,
+  légendée comme telle**. Les quatre premiers sont montrés par des miniatures ottomanes de
+  la fin du XVIe siècle, Mu'awiya et Abd al-Malik par des monnaies de leur règne. Mahomet n'y
+  est pas : aucune illustration libre ne le montre seul (les miniatures trouvées le réunissent
+  à d'autres prophètes), et il garde ses Biographies.
+- **Les figures très contestées sont dans le bloc**, avec une fiche qui dit ce qu'on leur
+  reproche, comme Castro ou Kadhafi : Saddam Hussein et Hafez el-Assad (la répression des
+  Kurdes et des chiites, Hama), le mufti de Jérusalem Mohammed Amin al-Husseini (sa rencontre
+  avec Hitler), Georges Habache et Abou Jihad, Yasser Arafat, Béchir Gemayel (Sabra et
+  Chatila ont suivi sa mort), Antoun Saadé, Moussa Sadr. Shireen Abu Akleh, tuée en 2022, est la
+  plus récente.
+- **Pas de remplissage.** Les chefs d'État sont presque la moitié du bloc et les Beaux-arts n'ont
+  que deux figures (Apollodore de Damas et la photographe Karimeh Abbud) : les peintres, sculpteurs
+  et architectes libanais, syriens et irakiens envisagés n'avaient pas d'article en français ou pas
+  d'image libre, et on n'a ajouté personne pour équilibrer. Même chose pour les sciences
+  (six figures, toutes médiévales sauf Taqi al-Din) et la musique (quatre).
+- **Des dates de Wikipédia, non de Wikidata.** Les deux divergent souvent : Moubarak Al-Sabah
+  est né vers 1837 (non 1844), Khaled d'Arabie saoudite en 1913 (non 1911), Farid El Atrache en 1910
+  (non 1917), Sabah en 1925 (non 1927), Al-Mutanabbi en 915, Michel Aflak en 1912 (la date de
+  1910 est un âge vieilli de deux ans), Zaki al-Arsouzi en 1900, et Youssef Karam est mort en 1889,
+  non en 1923. Les dates de Saladin (vers 1137) et d'Ibn al-Haytham (965) suivent celles de leur
+  biographie ; Wikipédia donne 1138 pour Saladin.
+- **Wahhab n'y est pas** : sa seule image libre est une calligraphie. Les premiers
+  noms envisagés mais retirés pour l'image sont dans `scripts/pantheon/machrek_candidats.md`.
+- **Trois fiches en attente d'un portrait**, écrites et valides, mais Wikimedia limitait les
+  requêtes de l'environnement qui téléchargeait les images : Harun al-Rashid (dont le fichier prévu
+  est refusé par `fetch_portraits.py`, qui détecte « fair use » sur sa page ; sa biographie existe,
+  date 763), Al-Ma'mun et Salah al-Din al-Bitar. Elles sont dans
+  `scripts/pantheon/machrek_en_attente.md`, avec la marche à suivre pour les remettre.
+
+### Ce que les images disent au Machrek
+
+Une bonne part des portraits du Machrek est imaginée ou indirecte, et la légende le dit.
+Les quatre premiers califes sont montrés par des miniatures ottomanes de 1585-1590 (manuscrit
+T 414 de la Chester Beatty Library), Saladin une gravure de 1584 du British Museum,
+Abou Nouwas, Al-Mutanabbi et Abou al-Alaa al-Maari des dessins de Khalil Gibran (1916-1917),
+Hammurabi un relief de la stèle de son Code, Assurbanipal un relief de chasse, Mu'awiya et
+Abd al-Malik des monnaies, Nazik al-Malaika et Al-Masudi des statues. Les empereurs
+syriens de Rome (Philippe l'Arabe, Julia Domna, Sévère Alexandre, Héliogabale) sont montrés
+par leurs bustes antiques, et Odénat par un buste de Palmyre dont l'identification est
+traditionnelle. Gibran, lui, est montré à treize ans, par une photographie de Fred Holland Day
+de 1896 (Metropolitan Museum), libre de droits et en grand format.
+
+Le statut américain des photographies du milieu du XXe siècle, souvent libres seulement selon
+la loi du pays d'origine (PD-Irak, PD-Syrie, PD-Arabie saoudite…), est celui qui a coûté huit
+figures à l'Amérique hispanique ; `scripts/search_portraits.py` en donne une première
+indication par fichier, pas une certitude. Khalid ibn al-Walid, Zaha Hadid et Asmahan restent
+sans image libre acceptable.
 
 ### Un pays à part : l'Égypte
 
@@ -1932,17 +2049,13 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
 ### Ce qui n'est pas fait
 
 - **Les autres panthéons** : la France, l'Égypte, les États-Unis, l'Italie, le
-  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb et l'Allemagne-Autriche-Suisse sont écrits.
+  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse et la Scandinavie sont écrits.
   Chaque liste de personnages est validée avant la rédaction. Feuille de route, dans l'ordre
   où on les propose (un pays seul quand il a de quoi faire un thème, un bloc sinon) :
-  1. **Le Machrek et la péninsule Arabique** (`pan_machrek`, sans l'Égypte, qui a le sien).
-     Une première liste de 106 candidats, avec images vérifiées, est dans
-     `scripts/pantheon/machrek_candidats.md`. Les six questions posées sont tranchées (voir
-     « Décisions prises » dans ce fichier) : le bloc garde les figures contestées et ne
-     complète aucun axe par des noms de remplissage ; il reste trois images à trouver
-     (Khalid ibn al-Walid, Zaha Hadid, Asmahan), des titres français à retrouver et le statut
-     américain des images à confirmer. `scripts/search_portraits.py` cherche les portraits sur
-     Commons sans l'API, qui est fermée aux environnements en nuage.
+  1. **Le Machrek est écrit** (voir « Le cinquième bloc »). Il reste : le portrait des trois
+     fiches en attente (`scripts/pantheon/machrek_en_attente.md`), une image pour Khalid ibn
+     al-Walid, Zaha Hadid et Asmahan, des titres français à retrouver (Zénobie, Al-Mansur, Ahmad
+     ibn Majid) et le statut américain des images à confirmer.
   1 bis. **Israël et les figures juives : un thème à part**, décidé à la place de l'idée
      abandonnée plus haut d'une absence de thème juif. Nom et périmètre restent à définir
      (Israël seul, ou aussi les figures juives de la diaspora ?). Le Maghreb compte déjà deux
@@ -1958,7 +2071,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
      Indien (sans l'Afrique du Sud), « Nouvelle-Zélande et Pacifique ».
   4. **L'Europe et les Amériques qui manquent** : le Portugal (qui reprendra Magellan et
      Viriathe, laissés de côté dans le panthéon de l'Espagne), la Grèce et Byzance, le Benelux,
-     la Scandinavie, la Pologne, l'Europe centrale, les Balkans, le Canada, les Caraïbes non
+     la Pologne, l'Europe centrale, les Balkans, le Canada, les Caraïbes non
      hispaniques.
 
   Les images décideront de la taille de chacun : pour l'Afrique subsaharienne et l'Asie du

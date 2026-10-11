@@ -75,7 +75,8 @@ function galleryNormalize(str) {
 
 // L'initiale d'un intertitre : la première lettre sans accent, ou « # ».
 function galleryInitial(text) {
-    const first = galleryNormalize(text).charAt(0).toUpperCase();
+    // « Ø » (Ørsted) ne se décompose pas en « O » + accent : on le range à la main avec les O.
+    const first = galleryNormalize(text).replace(/^ø/, 'o').charAt(0).toUpperCase();
     return /[A-Z]/.test(first) ? first : '#';
 }
 

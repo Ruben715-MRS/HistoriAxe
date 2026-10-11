@@ -62,6 +62,8 @@ KEEP_AS_WRITTEN = {
     'Khaled ben Abdelaziz Al Saoud', 'Fahd ben Abdelaziz Al Saoud', 'Abdallah ben Abdelaziz Al Saoud',
     'Qabus ibn Saïd', 'Khalifa ben Zayed Al Nahyane', 'Maktoum ben Rachid Al Maktoum', 'Hussein ben Ali',
     'Yahya Hamid ed-Din', 'Hussein de Jordanie', 'Abou Jihad',
+    # Scandinavie : souverains par leur prénom ou leur surnom, Islandais par leur prénom (patronymes).
+    'Canut le Grand', 'Christine de Suède', 'Harald Hardrada', 'Jón Sigurðsson', 'Jón Arason', 'Snorri Sturluson',
 }
 
 # Écrits à la main : (nom de la source) → nom de classement.
