@@ -34,7 +34,9 @@
     "profile_btn_aria": "Profil und Trophäen",
     "profile_btn_title": "Mein Profil und meine Trophäen ansehen",
     "settings_btn_aria": "Einstellungen",
-    "streak_badge_title": "Tägliche Serie: Je länger sie dauert, desto stärker wird dein XP-Gewinn multipliziert"
+    "streak_badge_title": "Tägliche Serie: Je länger sie dauert, desto stärker wird dein XP-Gewinn multipliziert",
+    "discover_event": "Ereignis",
+    "discover_person": "Persönlichkeit"
   },
   "subcategories": {
     "choose_region": "Wählen Sie eine Region / Unterkategorie",
@@ -211,7 +213,8 @@
     "victory_ordre": "Bravo! Alles wieder in Reihenfolge!",
     "victory_blitz": "Zeit abgelaufen! {right} richtige Antworten.",
     "victory_curseur": "Bravo! Jedes Mal ein sicheres Auge!",
-    "victory_intrus": "Bravo! Keiner ist Ihnen entgangen!"
+    "victory_intrus": "Bravo! Keiner ist Ihnen entgangen!",
+    "victory_whois": "Bravo! Kein Gesicht ist Ihnen entgangen!"
   },
   "daily": {
     "title_win": "🌍 Tages-Herausforderung bestanden!",
@@ -384,7 +387,11 @@
     "size_kb": "{val} KB",
     "pack_full_suffix": "Vollständig",
     "pack_demo_suffix": "Eingeschränkter Inhalt",
-    "pack_demo_content": "{themes} Themen • {events} Ereignisse"
+    "pack_demo_content": "{themes} Themen • {events} Ereignisse",
+    "portraits_label": "Porträts der Galerie",
+    "portraits_bw": "Sammlung",
+    "portraits_color": "Immer in Farbe",
+    "portraits_hint": "Im Sammlungsmodus bleibt ein Porträt schwarz-weiß, bis Sie der Person im Spiel begegnet sind."
   },
   "anecdote": {
     "did_you_know": "💡 Wussten Sie schon?",
@@ -591,7 +598,8 @@
     "redraw_btn": "🔀 Anderes Ereignis",
     "play_theme_btn": "Dieses Thema spielen",
     "play_theme_btn_named": "„{theme}“ spielen",
-    "biography_btn": "Zur Biografie"
+    "biography_btn": "Zur Biografie",
+    "redraw_person_btn": "🔀 Eine andere Persönlichkeit"
   },
   "simultaneity": {
     "title": "Zur gleichen Zeit, anderswo…",
@@ -653,5 +661,63 @@
   },
   "home": {
     "start_aria": "Starten"
+  },
+  "gallery": {
+    "title": "Porträtgalerie",
+    "launcher_sub": "{count} Gesichter aus den Pantheons zum Durchblättern",
+    "order_alpha": "Alphabetisch",
+    "order_famille": "Nach Familienname",
+    "order_chrono": "Chronologisch",
+    "order_alpha_short": "A → Z",
+    "order_famille_short": "Familienname",
+    "order_chrono_short": "Geburt",
+    "order_group": "Reihenfolge",
+    "count": "{count} Porträts",
+    "count_filtered": "{count} von {total} Porträts",
+    "empty": "Noch keine Porträts.",
+    "no_result": "Kein Porträt passt. Versuchen Sie einen anderen Namen oder löschen Sie die Filter.",
+    "play_biography": "Biografie spielen",
+    "search_placeholder": "Person suchen…",
+    "filter_country": "Land",
+    "filter_axis": "Bereich",
+    "filter_country_all": "Alle Länder",
+    "filter_axis_all": "Alle Bereiche",
+    "filter_reset": "Alles löschen",
+    "nav_prev": "Vorheriges Porträt",
+    "nav_next": "Nächstes Porträt",
+    "nav_position": "{n} von {total}",
+    "count_filtered_one": "1 von {total} Porträts",
+    "collection_count": "{unlocked} / {total} Porträts freigeschaltet",
+    "collection_on_btn": "🎞️ Porträts sammeln",
+    "collection_off_btn": "Alles in Farbe sehen",
+    "locked_aria": "noch nicht im Spiel begegnet",
+    "modal_locked": "🔒 Noch nicht im Spiel begegnet: Spielen Sie in seinem Pantheon, um es in Farbe freizuschalten.",
+    "bio_aria": "Biografie verfügbar"
+  },
+  "collection": {
+    "title": "Porträts sammeln?",
+    "intro": "Die Porträts der Galerie lassen sich im Lauf Ihrer Spiele freischalten: Jedes bleibt schwarz-weiß, bis Sie der Person im Spiel begegnet sind, und wird dann farbig. Sie möchten sich lieber einfach bilden, ohne Fortschritt und Wettbewerb? Behalten Sie alles in Farbe.",
+    "bw_title": "🎞️ Meine Porträts freischalten",
+    "bw_sub": "Schwarz-weiß, bis Sie der Person im Spiel begegnen, mit Sammlungszähler.",
+    "color_title": "🎨 Alles in Farbe sehen",
+    "color_sub": "Kein Fortschritt: alle Porträts sofort.",
+    "hint": "Sie können das jederzeit ändern, in der Galerie oder in den Einstellungen."
+  },
+  "whois": {
+    "title": "Wer ist das?",
+    "desc": "3 Leben. Ein Porträt, vier Namen: Finden Sie heraus, wer hinter diesem Gesicht steckt.",
+    "kicker": "Wer ist das?",
+    "portrait_alt": "Porträt einer Persönlichkeit, die erkannt werden soll",
+    "not_enough": "Dieses Thema hat nicht genug Porträts für diesen Modus.",
+    "reveal_right": "Gut erkannt!",
+    "reveal_wrong": "Verfehlt, es war…",
+    "continue": "Weiter ›",
+    "daily_title": "Porträt des Tages",
+    "daily_sub_new": "Jeden Tag ein Gesicht zu erraten",
+    "daily_sub_right": "✔ Heute erkannt",
+    "daily_sub_wrong": "Das heutige Profil noch einmal ansehen",
+    "daily_kicker": "Porträt des Tages · Wer ist das?",
+    "daily_card": "Vollständiges Profil ansehen",
+    "daily_done": "Zurück zu den Herausforderungen"
   }
 }

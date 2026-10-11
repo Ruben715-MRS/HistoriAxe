@@ -32,6 +32,7 @@
     {
       "slug": "imhotep",
       "nom": "Imhotep",
+      "classement": "Imhotep",
       "titre": "Naissance d'Imhotep",
       "axe": "Sciences, techniques et innovation",
       "naissance": -2670,
@@ -56,6 +57,7 @@
     {
       "slug": "hatchepsout",
       "nom": "Hatchepsout",
+      "classement": "Hatchepsout",
       "titre": "Naissance d'Hatchepsout",
       "axe": "Chefs d'État et dirigeants",
       "naissance": -1508,
@@ -79,6 +81,7 @@
     {
       "slug": "akhenaton",
       "nom": "Akhenaton",
+      "classement": "Akhenaton",
       "titre": "Naissance d'Akhenaton",
       "axe": "Chefs d'État et dirigeants",
       "naissance": -1371,
@@ -96,6 +99,7 @@
     {
       "slug": "nefertiti",
       "nom": "Néfertiti",
+      "classement": "Néfertiti",
       "titre": "Naissance de Néfertiti",
       "axe": "Chefs d'État et dirigeants",
       "naissance": -1370,
@@ -113,6 +117,7 @@
     {
       "slug": "toutankhamon",
       "nom": "Toutânkhamon",
+      "classement": "Toutânkhamon",
       "titre": "Naissance de Toutânkhamon",
       "axe": "Chefs d'État et dirigeants",
       "naissance": -1345,
@@ -130,6 +135,7 @@
     {
       "slug": "ramses2",
       "nom": "Ramsès II",
+      "classement": "Ramsès II",
       "titre": "Naissance de Ramsès II",
       "axe": "Chefs d'État et dirigeants",
       "naissance": -1304,
@@ -147,6 +153,7 @@
     {
       "slug": "cleopatre7",
       "nom": "Cléopâtre VII",
+      "classement": "Cléopâtre VII",
       "titre": "Naissance de Cléopâtre VII",
       "axe": "Chefs d'État et dirigeants",
       "naissance": -69,
@@ -165,6 +172,7 @@
     {
       "slug": "ptolemee",
       "nom": "Claude Ptolémée",
+      "classement": "Ptolémée, Claude",
       "titre": "Naissance de Claude Ptolémée",
       "axe": "Sciences, techniques et innovation",
       "naissance": 100,
@@ -181,6 +189,7 @@
     {
       "slug": "origene",
       "nom": "Origène",
+      "classement": "Origène",
       "titre": "Naissance d'Origène",
       "axe": "Littérature et pensée",
       "naissance": 185,
@@ -197,6 +206,7 @@
     {
       "slug": "plotin",
       "nom": "Plotin",
+      "classement": "Plotin",
       "titre": "Naissance de Plotin",
       "axe": "Littérature et pensée",
       "naissance": 205,
@@ -213,6 +223,7 @@
     {
       "slug": "antoine",
       "nom": "Antoine le Grand",
+      "classement": "Antoine le Grand",
       "titre": "Naissance d'Antoine le Grand",
       "axe": "Littérature et pensée",
       "naissance": 251,
@@ -235,6 +246,7 @@
     {
       "slug": "athanase",
       "nom": "Athanase d'Alexandrie",
+      "classement": "Athanase d'Alexandrie",
       "titre": "Naissance d'Athanase d'Alexandrie",
       "axe": "Littérature et pensée",
       "naissance": 296,
@@ -251,6 +263,7 @@
     {
       "slug": "hypatie",
       "nom": "Hypatie",
+      "classement": "Hypatie",
       "titre": "Naissance d'Hypatie",
       "axe": "Sciences, techniques et innovation",
       "naissance": 360,
@@ -274,6 +287,7 @@
     {
       "slug": "ibnfarid",
       "nom": "Ibn al-Fârid",
+      "classement": "Ibn al-Fârid",
       "titre": "Naissance d'Ibn al-Fârid",
       "axe": "Littérature et pensée",
       "naissance": 1181,
@@ -290,6 +304,7 @@
     {
       "slug": "alibey",
       "nom": "Ali Bey al-Kabir",
+      "classement": "Ali Bey al-Kabir",
       "titre": "Naissance d'Ali Bey al-Kabir",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1728,
@@ -300,12 +315,14 @@
         "legende": "Ali Bey al-Kabir, eau-forte datée de 1773, l'année de sa mort (Rijksmuseum)",
         "auteur": "Rijksmuseum",
         "largeur": 330,
-        "licence": "CC0 (domaine public)"
+        "licence": "CC0 (domaine public)",
+        "nomVisible": true
       }
     },
     {
       "slug": "mehemetali",
       "nom": "Méhémet Ali",
+      "classement": "Méhémet Ali",
       "titre": "Naissance de Méhémet Ali",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1769,
@@ -323,6 +340,7 @@
     {
       "slug": "ibrahimpacha",
       "nom": "Ibrahim Pacha",
+      "classement": "Ibrahim Pacha",
       "titre": "Naissance d'Ibrahim Pacha",
       "axe": "Guerres et résistances",
       "naissance": 1789,
@@ -345,6 +363,7 @@
     {
       "slug": "tahtawi",
       "nom": "Rifa'a al-Tahtawi",
+      "classement": "Tahtawi, Rifa'a al-",
       "titre": "Naissance de Rifa'a al-Tahtawi",
       "axe": "Littérature et pensée",
       "naissance": 1801,
@@ -361,6 +380,7 @@
     {
       "slug": "ismail",
       "nom": "Ismaïl Pacha",
+      "classement": "Ismaïl Pacha",
       "titre": "Naissance d'Ismaïl Pacha",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1830,
@@ -383,6 +403,7 @@
     {
       "slug": "urabi",
       "nom": "Ahmed Urabi",
+      "classement": "Urabi, Ahmed",
       "titre": "Naissance d'Ahmed Urabi",
       "axe": "Guerres et résistances",
       "naissance": 1841,
@@ -399,6 +420,7 @@
     {
       "slug": "abduh",
       "nom": "Mohamed Abduh",
+      "classement": "Abduh, Mohamed",
       "titre": "Naissance de Mohamed Abduh",
       "axe": "Littérature et pensée",
       "naissance": 1849,
@@ -421,6 +443,7 @@
     {
       "slug": "zaghloul",
       "nom": "Saad Zaghloul",
+      "classement": "Zaghloul, Saad",
       "titre": "Naissance de Saad Zaghloul",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1858,
@@ -438,6 +461,7 @@
     {
       "slug": "qasimamin",
       "nom": "Qasim Amin",
+      "classement": "Amin, Qasim",
       "titre": "Naissance de Qasim Amin",
       "axe": "Littérature et pensée",
       "naissance": 1865,
@@ -454,6 +478,7 @@
     {
       "slug": "fouad1",
       "nom": "Fouad Ier",
+      "classement": "Fouad Ier",
       "titre": "Naissance de Fouad Ier",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1868,
@@ -470,6 +495,7 @@
     {
       "slug": "chawqi",
       "nom": "Ahmed Chawqi",
+      "classement": "Chawqi, Ahmed",
       "titre": "Naissance d'Ahmed Chawqi",
       "axe": "Littérature et pensée",
       "naissance": 1868,
@@ -492,6 +518,7 @@
     {
       "slug": "hafezibrahim",
       "nom": "Hafez Ibrahim",
+      "classement": "Ibrahim, Hafez",
       "titre": "Naissance de Hafez Ibrahim",
       "axe": "Littérature et pensée",
       "naissance": 1872,
@@ -508,6 +535,7 @@
     {
       "slug": "mustafakamil",
       "nom": "Mustafa Kamil",
+      "classement": "Kamil, Mustafa",
       "titre": "Naissance de Mustafa Kamil",
       "axe": "Guerres et résistances",
       "naissance": 1874,
@@ -530,6 +558,7 @@
     {
       "slug": "manfaluti",
       "nom": "Mustafa Lutfi al-Manfaluti",
+      "classement": "Manfaluti, Mustafa Lutfi al-",
       "titre": "Naissance de Mustafa Lutfi al-Manfaluti",
       "axe": "Littérature et pensée",
       "naissance": 1876,
@@ -552,6 +581,7 @@
     {
       "slug": "charaoui",
       "nom": "Hoda Charaoui",
+      "classement": "Charaoui, Hoda",
       "titre": "Naissance de Hoda Charaoui",
       "axe": "Guerres et résistances",
       "naissance": 1879,
@@ -569,6 +599,7 @@
     {
       "slug": "tahahussein",
       "nom": "Taha Hussein",
+      "classement": "Hussein, Taha",
       "titre": "Naissance de Taha Hussein",
       "axe": "Littérature et pensée",
       "naissance": 1889,
@@ -586,6 +617,7 @@
     {
       "slug": "akkad",
       "nom": "Abbas al-Akkad",
+      "classement": "Akkad, Abbas al-",
       "titre": "Naissance d'Abbas al-Akkad",
       "axe": "Littérature et pensée",
       "naissance": 1889,
@@ -608,6 +640,7 @@
     {
       "slug": "mokhtar",
       "nom": "Mahmoud Mokhtar",
+      "classement": "Mokhtar, Mahmoud",
       "titre": "Naissance de Mahmoud Mokhtar",
       "axe": "Beaux-arts",
       "naissance": 1891,
@@ -624,6 +657,7 @@
     {
       "slug": "sayeddarwish",
       "nom": "Sayed Darwich",
+      "classement": "Darwich, Sayed",
       "titre": "Naissance de Sayed Darwich",
       "axe": "Musique, spectacle et sport",
       "naissance": 1892,
@@ -646,6 +680,7 @@
     {
       "slug": "tawfiqhakim",
       "nom": "Tawfiq al-Hakim",
+      "classement": "Hakim, Tawfiq al-",
       "titre": "Naissance de Tawfiq al-Hakim",
       "axe": "Littérature et pensée",
       "naissance": 1898,
@@ -662,6 +697,7 @@
     {
       "slug": "oumkalthoum",
       "nom": "Oum Kalthoum",
+      "classement": "Oum Kalthoum",
       "titre": "Naissance d'Oum Kalthoum",
       "axe": "Musique, spectacle et sport",
       "naissance": 1898,
@@ -680,6 +716,7 @@
     {
       "slug": "fathy",
       "nom": "Hassan Fathy",
+      "classement": "Fathy, Hassan",
       "titre": "Naissance de Hassan Fathy",
       "axe": "Beaux-arts",
       "naissance": 1900,
@@ -703,6 +740,7 @@
     {
       "slug": "naguib",
       "nom": "Mohamed Naguib",
+      "classement": "Naguib, Mohamed",
       "titre": "Naissance de Mohamed Naguib",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1901,
@@ -719,6 +757,7 @@
     {
       "slug": "abdelwahab",
       "nom": "Mohamed Abdel Wahab",
+      "classement": "Abdel Wahab, Mohamed",
       "titre": "Naissance de Mohamed Abdel Wahab",
       "axe": "Musique, spectacle et sport",
       "naissance": 1902,
@@ -735,6 +774,7 @@
     {
       "slug": "mahfouz",
       "nom": "Naguib Mahfouz",
+      "classement": "Mahfouz, Naguib",
       "titre": "Naissance de Naguib Mahfouz",
       "axe": "Littérature et pensée",
       "naissance": 1911,
@@ -753,6 +793,7 @@
     {
       "slug": "nasser",
       "nom": "Gamal Abdel Nasser",
+      "classement": "Nasser, Gamal Abdel",
       "titre": "Naissance de Gamal Abdel Nasser",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1918,
@@ -770,6 +811,7 @@
     {
       "slug": "sadate",
       "nom": "Anouar el-Sadate",
+      "classement": "Sadate, Anouar el-",
       "titre": "Naissance d'Anouar el-Sadate",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1918,
@@ -787,6 +829,7 @@
     {
       "slug": "farouk",
       "nom": "Farouk Ier",
+      "classement": "Farouk Ier",
       "titre": "Naissance de Farouk Ier",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1920,
@@ -809,6 +852,7 @@
     {
       "slug": "boutrosghali",
       "nom": "Boutros Boutros-Ghali",
+      "classement": "Boutros-Ghali, Boutros",
       "titre": "Naissance de Boutros Boutros-Ghali",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1922,
@@ -826,6 +870,7 @@
     {
       "slug": "efflatoun",
       "nom": "Inji Efflatoun",
+      "classement": "Efflatoun, Inji",
       "titre": "Naissance d'Inji Efflatoun",
       "axe": "Beaux-arts",
       "naissance": 1924,
@@ -842,6 +887,7 @@
     {
       "slug": "chahine",
       "nom": "Youssef Chahine",
+      "classement": "Chahine, Youssef",
       "titre": "Naissance de Youssef Chahine",
       "axe": "Musique, spectacle et sport",
       "naissance": 1926,
@@ -859,6 +905,7 @@
     {
       "slug": "idris",
       "nom": "Youssef Idris",
+      "classement": "Idris, Youssef",
       "titre": "Naissance de Youssef Idris",
       "axe": "Littérature et pensée",
       "naissance": 1927,
@@ -875,6 +922,7 @@
     {
       "slug": "moubarak",
       "nom": "Hosni Moubarak",
+      "classement": "Moubarak, Hosni",
       "titre": "Naissance de Hosni Moubarak",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1928,
@@ -891,6 +939,7 @@
     {
       "slug": "abdelhalim",
       "nom": "Abdel Halim Hafez",
+      "classement": "Hafez, Abdel Halim",
       "titre": "Naissance d'Abdel Halim Hafez",
       "axe": "Musique, spectacle et sport",
       "naissance": 1929,
@@ -908,6 +957,7 @@
     {
       "slug": "saadawi",
       "nom": "Nawal El Saadawi",
+      "classement": "El Saadawi, Nawal",
       "titre": "Naissance de Nawal El Saadawi",
       "axe": "Littérature et pensée",
       "naissance": 1931,
@@ -924,6 +974,7 @@
     {
       "slug": "hamama",
       "nom": "Faten Hamama",
+      "classement": "Hamama, Faten",
       "titre": "Naissance de Faten Hamama",
       "axe": "Musique, spectacle et sport",
       "naissance": 1931,
@@ -940,6 +991,7 @@
     {
       "slug": "sharif",
       "nom": "Omar Sharif",
+      "classement": "Sharif, Omar",
       "titre": "Naissance d'Omar Sharif",
       "axe": "Musique, spectacle et sport",
       "naissance": 1932,
@@ -957,6 +1009,7 @@
     {
       "slug": "zewail",
       "nom": "Ahmed Zewail",
+      "classement": "Zewail, Ahmed",
       "titre": "Naissance d'Ahmed Zewail",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1946,

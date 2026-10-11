@@ -34,7 +34,9 @@
     "profile_btn_aria": "Profilo e Trofei",
     "profile_btn_title": "Vedi il mio profilo e i miei trofei",
     "settings_btn_aria": "Impostazioni",
-    "streak_badge_title": "Serie quotidiana: più dura, più viene moltiplicato l'XP guadagnato"
+    "streak_badge_title": "Serie quotidiana: più dura, più viene moltiplicato l'XP guadagnato",
+    "discover_event": "Evento",
+    "discover_person": "Personaggio"
   },
   "subcategories": {
     "choose_region": "Scegli una Regione / Sottocategoria",
@@ -211,7 +213,8 @@
     "victory_ordre": "Bravo! Tutto rimesso in ordine!",
     "victory_blitz": "Tempo scaduto! {right} risposte giuste.",
     "victory_curseur": "Bravo! Occhio preciso ogni volta!",
-    "victory_intrus": "Bravo! Non ve n'è sfuggito nemmeno uno!"
+    "victory_intrus": "Bravo! Non ve n'è sfuggito nemmeno uno!",
+    "victory_whois": "Bravo! Nessun volto vi è sfuggito!"
   },
   "daily": {
     "title_win": "🌍 Sfida del Giorno Superata!",
@@ -384,7 +387,11 @@
     "size_kb": "{val} KB",
     "pack_full_suffix": "Completo",
     "pack_demo_suffix": "Contenuto limitato",
-    "pack_demo_content": "{themes} temi • {events} eventi"
+    "pack_demo_content": "{themes} temi • {events} eventi",
+    "portraits_label": "Ritratti della galleria",
+    "portraits_bw": "Collezione",
+    "portraits_color": "Sempre a colori",
+    "portraits_hint": "In modalità collezione, un ritratto resta in bianco e nero finché non avete incontrato il personaggio in gioco."
   },
   "anecdote": {
     "did_you_know": "💡 Lo sapevi che…?",
@@ -591,7 +598,8 @@
     "redraw_btn": "🔀 Un altro evento",
     "play_theme_btn": "Gioca questo tema",
     "play_theme_btn_named": "Gioca «{theme}»",
-    "biography_btn": "Vedi la biografia"
+    "biography_btn": "Vedi la biografia",
+    "redraw_person_btn": "🔀 Un altro personaggio"
   },
   "simultaneity": {
     "title": "Nel frattempo, altrove…",
@@ -653,5 +661,63 @@
   },
   "home": {
     "start_aria": "Inizia"
+  },
+  "gallery": {
+    "title": "Galleria dei ritratti",
+    "launcher_sub": "{count} volti dei Pantheon da sfogliare",
+    "order_alpha": "Ordine alfabetico",
+    "order_famille": "Per cognome",
+    "order_chrono": "Ordine cronologico",
+    "order_alpha_short": "A → Z",
+    "order_famille_short": "Cognome",
+    "order_chrono_short": "Nascita",
+    "order_group": "Ordine di visualizzazione",
+    "count": "{count} ritratti",
+    "count_filtered": "{count} ritratti su {total}",
+    "empty": "Ancora nessun ritratto.",
+    "no_result": "Nessun ritratto corrisponde. Provi un altro nome o cancelli i filtri.",
+    "play_biography": "Gioca sulla biografia",
+    "search_placeholder": "Cerca un personaggio…",
+    "filter_country": "Paese",
+    "filter_axis": "Ambito",
+    "filter_country_all": "Tutti i paesi",
+    "filter_axis_all": "Tutti gli ambiti",
+    "filter_reset": "Cancella tutto",
+    "nav_prev": "Ritratto precedente",
+    "nav_next": "Ritratto successivo",
+    "nav_position": "{n} di {total}",
+    "count_filtered_one": "1 ritratto su {total}",
+    "collection_count": "{unlocked} / {total} ritratti sbloccati",
+    "collection_on_btn": "🎞️ Collezionare i ritratti",
+    "collection_off_btn": "Vedere tutto a colori",
+    "locked_aria": "non ancora incontrato in gioco",
+    "modal_locked": "🔒 Non ancora incontrato in gioco: giocate sul suo pantheon per sbloccarlo a colori.",
+    "bio_aria": "biografia disponibile"
+  },
+  "collection": {
+    "title": "Collezionare i ritratti?",
+    "intro": "I ritratti della galleria si possono guadagnare giocando: ognuno resta in bianco e nero finché non avete incontrato il personaggio in gioco, poi diventa a colori. Preferite semplicemente istruirvi, senza progressione né competizione? Tenete tutto a colori.",
+    "bw_title": "🎞️ Sbloccare i miei ritratti",
+    "bw_sub": "Bianco e nero fino all'incontro in gioco, con un contatore di collezione.",
+    "color_title": "🎨 Vedere tutto a colori",
+    "color_sub": "Nessuna progressione: tutti i ritratti, subito.",
+    "hint": "Potete cambiare questa scelta in qualsiasi momento, nella galleria o nelle Impostazioni."
+  },
+  "whois": {
+    "title": "Chi è?",
+    "desc": "3 vite. Un ritratto, quattro nomi: scoprite chi si nasconde dietro questo volto.",
+    "kicker": "Chi è?",
+    "portrait_alt": "Ritratto di un personaggio da identificare",
+    "not_enough": "Questo tema non ha abbastanza ritratti per questa modalità.",
+    "reveal_right": "Ben visto!",
+    "reveal_wrong": "Sbagliato, era…",
+    "continue": "Continua ›",
+    "daily_title": "Ritratto del giorno",
+    "daily_sub_new": "Un volto da trovare ogni giorno",
+    "daily_sub_right": "✔ Trovato oggi",
+    "daily_sub_wrong": "Rivedi la scheda di oggi",
+    "daily_kicker": "Ritratto del giorno · Chi è?",
+    "daily_card": "Vedi la scheda completa",
+    "daily_done": "Torna alle sfide"
   }
 }

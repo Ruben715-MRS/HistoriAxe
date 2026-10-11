@@ -6454,3 +6454,609 @@ input:not([type="range"]), label, select, summary, textarea {
     border: 1px solid var(--rule);
     background: var(--border-soft);
 }
+
+/* =====================================================================
+   GALERIE DES PORTRAITS (Personnages illustres, voir js/gallery.js)
+   ===================================================================== */
+
+/* Le bouton d'entrée, sous les tuiles « Biographies » et « Panthéons » :
+   pleine largeur et teinte de cadre doré, pour qu'on ne le prenne ni pour une
+   sous-catégorie ni pour un mode de jeu. Le texte blanc garde au moins
+   5,3:1 sur la teinte la plus claire du dégradé. */
+.gallery-launcher {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.gallery-launcher-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 20px;
+    border: 2px solid #C9A24A;
+    border-radius: 24px;
+    background: linear-gradient(135deg, #5C4210 0%, #85631F 100%);
+    color: #FFFFFF;
+    text-align: left;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(92, 66, 16, 0.25);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.gallery-launcher-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 34px rgba(92, 66, 16, 0.32);
+}
+
+.gallery-launcher-icon {
+    font-size: 30px;
+    line-height: 1;
+}
+
+.gallery-launcher-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.gallery-launcher-title {
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.gallery-launcher-sub {
+    font-size: 12.5px;
+}
+
+.gallery-launcher-chevron {
+    font-size: 26px;
+    transition: transform 0.2s;
+}
+
+.gallery-launcher-btn.is-open .gallery-launcher-chevron {
+    transform: rotate(90deg);
+}
+
+/* Les deux ordres, côte à côte sous le bouton (mêmes boutons que le choix des
+   défis, .challenge-picker-btn). */
+.gallery-order-picker {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.gallery-order-picker .challenge-picker-btn {
+    flex: 1 1 0;
+}
+
+/* L'écran : titre, décompte, bascule d'ordre, puis une section par initiale
+   ou par siècle. */
+.gallery-subtitle {
+    margin: -8px 0 14px;
+    font-size: 14px;
+    color: var(--muted-text);
+    text-align: center;
+}
+
+.gallery-order-toggle {
+    display: inline-flex;
+    padding: 4px;
+    margin-bottom: 18px;
+    border-radius: 999px;
+    background: var(--surface);
+    border: 1px solid var(--border-soft);
+    box-shadow: var(--card-shadow);
+}
+
+.gallery-order-toggle-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--text-dark);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.gallery-order-toggle-btn.active {
+    background: var(--primary-blue);
+    color: #FFFFFF;
+}
+
+:root[data-theme="dark"] .gallery-order-toggle-btn.active {
+    background: #85631F;
+}
+
+.gallery-container {
+    width: 100%;
+    max-width: 1100px;
+    padding-bottom: 80px;
+}
+
+.gallery-section-title {
+    margin: 18px 0 10px;
+    padding: 6px 4px;
+    color: var(--text-dark);
+    font-size: 18px;
+    font-weight: 700;
+    border-bottom: 1px solid var(--border-soft);
+}
+
+/* Trois colonnes sur un téléphone, quatre à six sur une tablette, comme une
+   planche de trombinoscope. */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 12px;
+}
+
+@media (min-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 16px;
+    }
+}
+
+.gallery-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 8px 12px;
+    border: 1px solid var(--border-soft);
+    border-radius: 16px;
+    background: var(--surface);
+    color: var(--text-dark);
+    box-shadow: var(--card-shadow);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.gallery-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--card-shadow-hover);
+}
+
+.gallery-card-frame {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--border-soft);
+}
+
+.gallery-card-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.gallery-card-name {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+}
+
+.gallery-card-meta {
+    font-size: 12px;
+    color: var(--muted-text);
+}
+
+/* Fiche ouverte depuis la galerie : « Jouer sur sa biographie » et « Jouer sur
+   le panthéon » forment un seul bloc sous un même filet. */
+.modal-content.from-gallery .modal-bio-row:not(.hidden) {
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border-soft);
+}
+
+.modal-content.from-gallery .modal-bio-row:not(.hidden) + .modal-theme-row {
+    margin-top: 10px;
+    padding-top: 0;
+    border-top: none;
+}
+
+/* Galerie : recherche, filtres, passage d'un portrait à l'autre ---------- */
+.gallery-search {
+    width: 100%;
+    max-width: 520px;
+    margin-bottom: 14px;
+}
+
+.gallery-filters {
+    width: 100%;
+    max-width: 640px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 8px 10px;
+    margin-bottom: 4px;
+}
+
+.gallery-filter {
+    flex: 1 1 140px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
+.gallery-filter-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--muted-text);
+}
+
+/* 16 px : en dessous, Safari sur iPhone zoome la page à la prise de focus. */
+.gallery-select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border-soft);
+    border-radius: 12px;
+    background: var(--surface);
+    color: var(--text-dark);
+    font: inherit;
+    font-size: 16px;
+}
+
+.gallery-reset {
+    padding: 10px 14px;
+    border: none;
+    background: transparent;
+    color: var(--primary-blue);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+:root[data-theme="dark"] .gallery-reset {
+    color: #9DC1FF;
+}
+
+.gallery-order-picker {
+    flex-wrap: wrap;
+}
+
+.gallery-order-toggle-btn {
+    padding: 8px 12px;
+}
+
+.modal-gallery-nav {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin: 0 36px 10px 0;
+}
+
+.modal-content.from-gallery .modal-gallery-nav {
+    display: flex;
+}
+
+.modal-gallery-nav-btn {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--border-soft);
+    border-radius: 50%;
+    background: var(--surface);
+    color: var(--text-dark);
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.modal-gallery-nav-btn:disabled {
+    opacity: 0.35;
+    cursor: default;
+}
+
+.modal-gallery-nav-pos {
+    flex: 1;
+    text-align: center;
+    font-size: 13px;
+    color: var(--muted-text);
+}
+
+/* Collection de portraits : noir et blanc jusqu'à la rencontre en jeu ------ */
+.gallery-card.is-locked .gallery-card-img {
+    filter: grayscale(1);
+    opacity: 0.88;
+}
+
+.gallery-collection {
+    width: 100%;
+    max-width: 520px;
+    margin-bottom: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.gallery-collection-meter {
+    width: 100%;
+}
+
+.gallery-collection-count {
+    display: block;
+    margin-bottom: 6px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.gallery-collection-bar {
+    height: 8px;
+    border-radius: 999px;
+    background: var(--border-soft);
+    overflow: hidden;
+}
+
+.gallery-collection-fill {
+    display: block;
+    height: 100%;
+    width: 0;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #C9A24A, #85631F);
+    transition: width 0.4s ease;
+}
+
+.gallery-collection-toggle {
+    padding: 6px 10px;
+    border: none;
+    background: transparent;
+    color: var(--primary-blue);
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+:root[data-theme="dark"] .gallery-collection-toggle {
+    color: #9DC1FF;
+}
+
+.collection-intro {
+    margin: 4px 0 6px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--text-dark);
+}
+
+.collection-choice {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+    margin-top: 10px;
+    padding: 14px 16px;
+    border: 2px solid var(--border-soft);
+    border-radius: 16px;
+    background: var(--surface);
+    color: var(--text-dark);
+    text-align: left;
+    cursor: pointer;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.collection-choice:hover {
+    border-color: #C9A24A;
+    transform: translateY(-1px);
+}
+
+.collection-choice-title {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.collection-choice-sub {
+    font-size: 13px;
+    line-height: 1.4;
+    color: var(--muted-text);
+}
+
+/* Fiche d'un personnage pas encore rencontré : portrait en noir et blanc, et la façon de le débloquer. */
+.modal-gallery-lock {
+    display: none;
+    margin: 4px 0 10px;
+    padding: 8px 12px;
+    border-radius: 12px;
+    background: var(--selected-tint);
+    color: var(--text-dark);
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.modal-content.from-gallery-locked .modal-gallery-lock {
+    display: block;
+}
+
+.modal-content.from-gallery-locked .modal-portrait-img {
+    filter: grayscale(1);
+}
+
+/* L'en-tête de la galerie reste bas : les visages sont ce qu'on vient voir, et sur un téléphone
+   chaque ligne de commandes repousse la première carte sous le pli. */
+.gallery-header-title {
+    font-size: 22px;
+    margin-top: 12px;
+    margin-bottom: 6px;
+}
+
+#screen-gallery .gallery-subtitle {
+    margin: 0 0 10px;
+}
+
+#screen-gallery .gallery-search {
+    margin-bottom: 10px;
+}
+
+#screen-gallery .gallery-order-toggle {
+    margin-bottom: 12px;
+}
+
+#screen-gallery .gallery-collection {
+    margin-bottom: 8px;
+}
+
+/* Mode « Qui est-ce ? » : un portrait, quatre noms ------------------------- */
+.mode-card.whois-card {
+    background: linear-gradient(135deg, #4A235A, #8E44AD);
+}
+
+.whois-question-card {
+    padding: 22px 20px 18px;
+}
+
+.whois-portrait {
+    margin: 4px auto 0;
+    max-width: 240px;
+}
+
+.whois-portrait-img {
+    display: block;
+    width: 200px;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    margin: 0 auto;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 14px;
+    background: var(--border-soft);
+    box-shadow: var(--card-shadow);
+}
+
+.whois-portrait-credit {
+    margin-top: 8px;
+    font-size: 12px;
+    line-height: 1.4;
+    color: var(--muted-text);
+}
+
+/* Le révélé : la fiche de la personne, qu'on lit à son rythme — d'où un vrai bouton « Continuer »
+   plutôt qu'une disparition au bout de deux secondes. Même carcasse que le révélé des autres modes. */
+.whois-reveal {
+    background: var(--surface);
+    border-radius: 14px;
+    border: 1px solid var(--border-soft);
+    padding: 18px 20px;
+    box-shadow: var(--card-shadow);
+    animation: simul-reveal-in 0.32s ease-out both;
+}
+
+.whois-reveal-verdict {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+}
+
+.whois-reveal-verdict.is-good {
+    color: var(--success-text);
+}
+
+.whois-reveal-verdict.is-bad {
+    color: var(--danger-red-text);
+}
+
+.whois-reveal-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.whois-reveal-name small {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--muted-text);
+}
+
+.whois-reveal-caption {
+    margin-top: 4px;
+    font-size: 13px;
+    font-style: italic;
+    color: var(--muted-text);
+}
+
+.whois-reveal-desc {
+    margin: 10px 0 16px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--text-dark);
+}
+
+.whois-continue {
+    width: 100%;
+}
+
+.whois-continue + .whois-continue {
+    margin-top: 10px;
+}
+
+/* Portrait du jour : un « Qui est-ce ? » d'une question, non classé ----------------- */
+.challenge-picker-btn.portrait-day-btn {
+    flex: 1 1 100%;
+    flex-direction: row;
+    justify-content: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-color: #C9A24A;
+}
+
+.portrait-day-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 2px;
+}
+
+.portrait-day-title {
+    font-size: 14px;
+}
+
+.portrait-day-status {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted-text);
+}
+
+/* Ni vies, ni progression, ni points : la barre du haut ne garde que « Quitter » et la taille du texte. */
+#screen-whois.is-portrait-day .lives-row,
+#screen-whois.is-portrait-day .game-bar .bar-row + .bar-row {
+    display: none;
+}
+
+/* Repère « biographie disponible » : une pastille dans l'angle de la photo. Posée par-dessus, elle
+   n'ajoute rien à la carte — avec ou sans, le gabarit est le même. */
+.gallery-card-frame {
+    position: relative;
+}
+
+.gallery-card-bio {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+    font-size: 11px;
+    line-height: 1;
+}

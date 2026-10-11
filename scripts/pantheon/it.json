@@ -34,6 +34,7 @@
     {
       "slug": "cesar",
       "nom": "Jules César",
+      "classement": "César, Jules",
       "titre": "Naissance de Jules César",
       "axe": "Chefs d'État et dirigeants",
       "naissance": -100,
@@ -51,6 +52,7 @@
     {
       "slug": "auguste",
       "nom": "Auguste",
+      "classement": "Auguste",
       "titre": "Naissance d'Auguste",
       "axe": "Chefs d'État et dirigeants",
       "naissance": -63,
@@ -74,6 +76,7 @@
     {
       "slug": "marcaurele",
       "nom": "Marc Aurèle",
+      "classement": "Marc Aurèle",
       "titre": "Naissance de Marc Aurèle",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 121,
@@ -89,6 +92,7 @@
     {
       "slug": "mathilde",
       "nom": "Mathilde de Toscane",
+      "classement": "Mathilde de Toscane",
       "titre": "Naissance de Mathilde de Toscane",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1046,
@@ -104,6 +108,7 @@
     {
       "slug": "frederic2",
       "nom": "Frédéric II de Hohenstaufen",
+      "classement": "Frédéric II de Hohenstaufen",
       "titre": "Naissance de Frédéric II",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1194,
@@ -120,6 +125,7 @@
     {
       "slug": "cosme",
       "nom": "Cosme de Médicis",
+      "classement": "Médicis, Cosme de",
       "titre": "Naissance de Cosme de Médicis",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1389,
@@ -129,12 +135,14 @@
         "fichier": "Pontormo - Ritratto di Cosimo il Vecchio - Google Art Project.jpg",
         "legende": "Cosme de Médicis, portrait posthume peint par Pontormo vers 1519-1520 (galerie des Offices)",
         "auteur": "Pontormo",
-        "licence": "Domaine public"
+        "licence": "Domaine public",
+        "nomVisible": true
       }
     },
     {
       "slug": "laurent",
       "nom": "Laurent de Médicis",
+      "classement": "Médicis, Laurent de",
       "titre": "Naissance de Laurent de Médicis",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1449,
@@ -145,12 +153,14 @@
         "fichier": "Bottega di Agnolo di Cosimo, detto il Bronzino (Firenze 1503-1572) - Ritratto di Lorenzo il Magnifico - 865 - Uffizi Gallery (cropped).jpg",
         "legende": "Laurent de Médicis, portrait peint à titre posthume par l'atelier de Bronzino entre 1565 et 1569",
         "auteur": "Atelier de Bronzino",
-        "licence": "Domaine public"
+        "licence": "Domaine public",
+        "nomVisible": true
       }
     },
     {
       "slug": "jules2",
       "nom": "Jules II",
+      "classement": "Jules II",
       "titre": "Naissance de Jules II",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1443,
@@ -166,6 +176,7 @@
     {
       "slug": "victoremmanuel2",
       "nom": "Victor-Emmanuel II",
+      "classement": "Victor-Emmanuel II",
       "titre": "Naissance de Victor-Emmanuel II",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1820,
@@ -181,6 +192,7 @@
     {
       "slug": "cavour",
       "nom": "Camillo Cavour",
+      "classement": "Cavour, Camillo",
       "titre": "Naissance de Camillo Cavour",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1810,
@@ -197,6 +209,7 @@
     {
       "slug": "giolitti",
       "nom": "Giovanni Giolitti",
+      "classement": "Giolitti, Giovanni",
       "titre": "Naissance de Giovanni Giolitti",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1842,
@@ -212,6 +225,7 @@
     {
       "slug": "mussolini",
       "nom": "Benito Mussolini",
+      "classement": "Mussolini, Benito",
       "titre": "Naissance de Benito Mussolini",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1883,
@@ -228,6 +242,7 @@
     {
       "slug": "degasperi",
       "nom": "Alcide De Gasperi",
+      "classement": "De Gasperi, Alcide",
       "titre": "Naissance d'Alcide De Gasperi",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1881,
@@ -250,6 +265,7 @@
     {
       "slug": "jean23",
       "nom": "Jean XXIII",
+      "classement": "Jean XXIII",
       "titre": "Naissance de Jean XXIII",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1881,
@@ -266,6 +282,7 @@
     {
       "slug": "moro",
       "nom": "Aldo Moro",
+      "classement": "Moro, Aldo",
       "titre": "Naissance d'Aldo Moro",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1916,
@@ -288,6 +305,7 @@
     {
       "slug": "pertini",
       "nom": "Sandro Pertini",
+      "classement": "Pertini, Sandro",
       "titre": "Naissance de Sandro Pertini",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1896,
@@ -303,6 +321,7 @@
     {
       "slug": "berlinguer",
       "nom": "Enrico Berlinguer",
+      "classement": "Berlinguer, Enrico",
       "titre": "Naissance d'Enrico Berlinguer",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1922,
@@ -318,6 +337,7 @@
     {
       "slug": "berlusconi",
       "nom": "Silvio Berlusconi",
+      "classement": "Berlusconi, Silvio",
       "titre": "Naissance de Silvio Berlusconi",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1936,
@@ -333,6 +353,7 @@
     {
       "slug": "scipion",
       "nom": "Scipion l'Africain",
+      "classement": "Scipion l'Africain",
       "titre": "Naissance de Scipion l'Africain",
       "axe": "Guerres et résistances",
       "naissance": -236,
@@ -350,6 +371,7 @@
     {
       "slug": "marcantoine",
       "nom": "Marc Antoine",
+      "classement": "Antoine, Marc",
       "titre": "Naissance de Marc Antoine",
       "axe": "Guerres et résistances",
       "naissance": -83,
@@ -365,6 +387,7 @@
     {
       "slug": "montefeltro",
       "nom": "Frédéric III de Montefeltro",
+      "classement": "Frédéric III de Montefeltro",
       "titre": "Naissance de Frédéric III de Montefeltro",
       "axe": "Guerres et résistances",
       "naissance": 1422,
@@ -380,6 +403,7 @@
     {
       "slug": "doria",
       "nom": "Andrea Doria",
+      "classement": "Doria, Andrea",
       "titre": "Naissance d'Andrea Doria",
       "axe": "Guerres et résistances",
       "naissance": 1466,
@@ -402,6 +426,7 @@
     {
       "slug": "borgia",
       "nom": "César Borgia",
+      "classement": "Borgia, César",
       "titre": "Naissance de César Borgia",
       "axe": "Guerres et résistances",
       "naissance": 1475,
@@ -411,12 +436,14 @@
         "fichier": "Cesare Borgia, Duke of Valentinois.jpg",
         "legende": "César Borgia, portrait du début du XVIe siècle, peut-être copie d'un original de Bartolomeo Veneto",
         "auteur": "Auteur inconnu",
-        "licence": "Domaine public"
+        "licence": "Domaine public",
+        "nomVisible": true
       }
     },
     {
       "slug": "mazzini",
       "nom": "Giuseppe Mazzini",
+      "classement": "Mazzini, Giuseppe",
       "titre": "Naissance de Giuseppe Mazzini",
       "axe": "Guerres et résistances",
       "naissance": 1805,
@@ -439,6 +466,7 @@
     {
       "slug": "garibaldi",
       "nom": "Giuseppe Garibaldi",
+      "classement": "Garibaldi, Giuseppe",
       "titre": "Naissance de Giuseppe Garibaldi",
       "axe": "Guerres et résistances",
       "naissance": 1807,
@@ -462,6 +490,7 @@
     {
       "slug": "matteotti",
       "nom": "Giacomo Matteotti",
+      "classement": "Matteotti, Giacomo",
       "titre": "Naissance de Giacomo Matteotti",
       "axe": "Guerres et résistances",
       "naissance": 1885,
@@ -477,6 +506,7 @@
     {
       "slug": "parri",
       "nom": "Ferruccio Parri",
+      "classement": "Parri, Ferruccio",
       "titre": "Naissance de Ferruccio Parri",
       "axe": "Guerres et résistances",
       "naissance": 1890,
@@ -492,6 +522,7 @@
     {
       "slug": "falcone",
       "nom": "Giovanni Falcone",
+      "classement": "Falcone, Giovanni",
       "titre": "Naissance de Giovanni Falcone",
       "axe": "Guerres et résistances",
       "naissance": 1939,
@@ -515,6 +546,7 @@
     {
       "slug": "borsellino",
       "nom": "Paolo Borsellino",
+      "classement": "Borsellino, Paolo",
       "titre": "Naissance de Paolo Borsellino",
       "axe": "Guerres et résistances",
       "naissance": 1940,
@@ -537,6 +569,7 @@
     {
       "slug": "ciceron",
       "nom": "Cicéron",
+      "classement": "Cicéron",
       "titre": "Naissance de Cicéron",
       "axe": "Littérature et pensée",
       "naissance": -106,
@@ -553,6 +586,7 @@
     {
       "slug": "virgile",
       "nom": "Virgile",
+      "classement": "Virgile",
       "titre": "Naissance de Virgile",
       "axe": "Littérature et pensée",
       "naissance": -70,
@@ -576,6 +610,7 @@
     {
       "slug": "horace",
       "nom": "Horace",
+      "classement": "Horace",
       "titre": "Naissance d'Horace",
       "axe": "Littérature et pensée",
       "naissance": -65,
@@ -598,6 +633,7 @@
     {
       "slug": "ovide",
       "nom": "Ovide",
+      "classement": "Ovide",
       "titre": "Naissance d'Ovide",
       "axe": "Littérature et pensée",
       "naissance": -43,
@@ -613,6 +649,7 @@
     {
       "slug": "boece",
       "nom": "Boèce",
+      "classement": "Boèce",
       "titre": "Naissance de Boèce",
       "axe": "Littérature et pensée",
       "naissance": 480,
@@ -628,6 +665,7 @@
     {
       "slug": "benoit",
       "nom": "Benoît de Nursie",
+      "classement": "Benoît de Nursie",
       "titre": "Naissance de Benoît de Nursie",
       "axe": "Littérature et pensée",
       "naissance": 480,
@@ -650,6 +688,7 @@
     {
       "slug": "francois",
       "nom": "François d'Assise",
+      "classement": "François d'Assise",
       "titre": "Naissance de François d'Assise",
       "axe": "Littérature et pensée",
       "naissance": 1181,
@@ -667,6 +706,7 @@
     {
       "slug": "thomas",
       "nom": "Thomas d'Aquin",
+      "classement": "Thomas d'Aquin",
       "titre": "Naissance de Thomas d'Aquin",
       "axe": "Littérature et pensée",
       "naissance": 1225,
@@ -684,6 +724,7 @@
     {
       "slug": "dante",
       "nom": "Dante Alighieri",
+      "classement": "Alighieri, Dante",
       "titre": "Naissance de Dante Alighieri",
       "axe": "Littérature et pensée",
       "naissance": 1265,
@@ -701,6 +742,7 @@
     {
       "slug": "petrarque",
       "nom": "Pétrarque",
+      "classement": "Pétrarque",
       "titre": "Naissance de Pétrarque",
       "axe": "Littérature et pensée",
       "naissance": 1304,
@@ -716,6 +758,7 @@
     {
       "slug": "boccace",
       "nom": "Boccace",
+      "classement": "Boccace",
       "titre": "Naissance de Boccace",
       "axe": "Littérature et pensée",
       "naissance": 1313,
@@ -731,6 +774,7 @@
     {
       "slug": "catherine",
       "nom": "Catherine de Sienne",
+      "classement": "Catherine de Sienne",
       "titre": "Naissance de Catherine de Sienne",
       "axe": "Littérature et pensée",
       "naissance": 1347,
@@ -746,6 +790,7 @@
     {
       "slug": "pic",
       "nom": "Pic de la Mirandole",
+      "classement": "Pic de la Mirandole",
       "titre": "Naissance de Pic de la Mirandole",
       "axe": "Littérature et pensée",
       "naissance": 1463,
@@ -755,12 +800,14 @@
         "fichier": "Pico1.jpg",
         "legende": "Pic de la Mirandole, portrait peint par Cristofano dell'Altissimo vers 1552-1568, d'après un original ancien (galerie des Offices)",
         "auteur": "Cristofano dell'Altissimo",
-        "licence": "Domaine public"
+        "licence": "Domaine public",
+        "nomVisible": true
       }
     },
     {
       "slug": "machiavel",
       "nom": "Nicolas Machiavel",
+      "classement": "Machiavel, Nicolas",
       "titre": "Naissance de Nicolas Machiavel",
       "axe": "Littérature et pensée",
       "naissance": 1469,
@@ -784,6 +831,7 @@
     {
       "slug": "arioste",
       "nom": "L'Arioste",
+      "classement": "Arioste",
       "titre": "Naissance de l'Arioste",
       "axe": "Littérature et pensée",
       "naissance": 1474,
@@ -806,6 +854,7 @@
     {
       "slug": "tasse",
       "nom": "Le Tasse",
+      "classement": "Tasse",
       "titre": "Naissance du Tasse",
       "axe": "Littérature et pensée",
       "naissance": 1544,
@@ -821,6 +870,7 @@
     {
       "slug": "bruno",
       "nom": "Giordano Bruno",
+      "classement": "Bruno, Giordano",
       "titre": "Naissance de Giordano Bruno",
       "axe": "Littérature et pensée",
       "naissance": 1548,
@@ -836,6 +886,7 @@
     {
       "slug": "goldoni",
       "nom": "Carlo Goldoni",
+      "classement": "Goldoni, Carlo",
       "titre": "Naissance de Carlo Goldoni",
       "axe": "Littérature et pensée",
       "naissance": 1707,
@@ -851,6 +902,7 @@
     {
       "slug": "beccaria",
       "nom": "Cesare Beccaria",
+      "classement": "Beccaria, Cesare",
       "titre": "Naissance de Cesare Beccaria",
       "axe": "Littérature et pensée",
       "naissance": 1738,
@@ -866,6 +918,7 @@
     {
       "slug": "manzoni",
       "nom": "Alessandro Manzoni",
+      "classement": "Manzoni, Alessandro",
       "titre": "Naissance d'Alessandro Manzoni",
       "axe": "Littérature et pensée",
       "naissance": 1785,
@@ -888,6 +941,7 @@
     {
       "slug": "leopardi",
       "nom": "Giacomo Leopardi",
+      "classement": "Leopardi, Giacomo",
       "titre": "Naissance de Giacomo Leopardi",
       "axe": "Littérature et pensée",
       "naissance": 1798,
@@ -903,6 +957,7 @@
     {
       "slug": "collodi",
       "nom": "Carlo Collodi",
+      "classement": "Collodi, Carlo",
       "titre": "Naissance de Carlo Collodi",
       "axe": "Littérature et pensée",
       "naissance": 1826,
@@ -918,6 +973,7 @@
     {
       "slug": "verga",
       "nom": "Giovanni Verga",
+      "classement": "Verga, Giovanni",
       "titre": "Naissance de Giovanni Verga",
       "axe": "Littérature et pensée",
       "naissance": 1840,
@@ -933,6 +989,7 @@
     {
       "slug": "pirandello",
       "nom": "Luigi Pirandello",
+      "classement": "Pirandello, Luigi",
       "titre": "Naissance de Luigi Pirandello",
       "axe": "Littérature et pensée",
       "naissance": 1867,
@@ -948,6 +1005,7 @@
     {
       "slug": "montessori",
       "nom": "Maria Montessori",
+      "classement": "Montessori, Maria",
       "titre": "Naissance de Maria Montessori",
       "axe": "Littérature et pensée",
       "naissance": 1870,
@@ -963,6 +1021,7 @@
     {
       "slug": "gramsci",
       "nom": "Antonio Gramsci",
+      "classement": "Gramsci, Antonio",
       "titre": "Naissance d'Antonio Gramsci",
       "axe": "Littérature et pensée",
       "naissance": 1891,
@@ -979,6 +1038,7 @@
     {
       "slug": "montale",
       "nom": "Eugenio Montale",
+      "classement": "Montale, Eugenio",
       "titre": "Naissance d'Eugenio Montale",
       "axe": "Littérature et pensée",
       "naissance": 1896,
@@ -994,6 +1054,7 @@
     {
       "slug": "levi",
       "nom": "Primo Levi",
+      "classement": "Levi, Primo",
       "titre": "Naissance de Primo Levi",
       "axe": "Littérature et pensée",
       "naissance": 1919,
@@ -1010,6 +1071,7 @@
     {
       "slug": "pasolini",
       "nom": "Pier Paolo Pasolini",
+      "classement": "Pasolini, Pier Paolo",
       "titre": "Naissance de Pier Paolo Pasolini",
       "axe": "Littérature et pensée",
       "naissance": 1922,
@@ -1025,6 +1087,7 @@
     {
       "slug": "calvino",
       "nom": "Italo Calvino",
+      "classement": "Calvino, Italo",
       "titre": "Naissance d'Italo Calvino",
       "axe": "Littérature et pensée",
       "naissance": 1923,
@@ -1041,6 +1104,7 @@
     {
       "slug": "eco",
       "nom": "Umberto Eco",
+      "classement": "Eco, Umberto",
       "titre": "Naissance d'Umberto Eco",
       "axe": "Littérature et pensée",
       "naissance": 1932,
@@ -1056,6 +1120,7 @@
     {
       "slug": "giotto",
       "nom": "Giotto",
+      "classement": "Giotto",
       "titre": "Naissance de Giotto",
       "axe": "Beaux-arts",
       "naissance": 1267,
@@ -1072,6 +1137,7 @@
     {
       "slug": "brunelleschi",
       "nom": "Filippo Brunelleschi",
+      "classement": "Brunelleschi, Filippo",
       "titre": "Naissance de Filippo Brunelleschi",
       "axe": "Beaux-arts",
       "naissance": 1377,
@@ -1089,6 +1155,7 @@
     {
       "slug": "donatello",
       "nom": "Donatello",
+      "classement": "Donatello",
       "titre": "Naissance de Donatello",
       "axe": "Beaux-arts",
       "naissance": 1386,
@@ -1104,6 +1171,7 @@
     {
       "slug": "fraangelico",
       "nom": "Fra Angelico",
+      "classement": "Angelico, Fra",
       "titre": "Naissance de Fra Angelico",
       "axe": "Beaux-arts",
       "naissance": 1395,
@@ -1119,6 +1187,7 @@
     {
       "slug": "piero",
       "nom": "Piero della Francesca",
+      "classement": "Piero della Francesca",
       "titre": "Naissance de Piero della Francesca",
       "axe": "Beaux-arts",
       "naissance": 1415,
@@ -1141,6 +1210,7 @@
     {
       "slug": "mantegna",
       "nom": "Andrea Mantegna",
+      "classement": "Mantegna, Andrea",
       "titre": "Naissance d'Andrea Mantegna",
       "axe": "Beaux-arts",
       "naissance": 1431,
@@ -1156,6 +1226,7 @@
     {
       "slug": "botticelli",
       "nom": "Sandro Botticelli",
+      "classement": "Botticelli, Sandro",
       "titre": "Naissance de Sandro Botticelli",
       "axe": "Beaux-arts",
       "naissance": 1445,
@@ -1172,6 +1243,7 @@
     {
       "slug": "leonard",
       "nom": "Léonard de Vinci",
+      "classement": "Vinci, Léonard de",
       "titre": "Naissance de Léonard de Vinci",
       "axe": "Beaux-arts",
       "naissance": 1452,
@@ -1189,6 +1261,7 @@
     {
       "slug": "giorgione",
       "nom": "Giorgione",
+      "classement": "Giorgione",
       "titre": "Naissance de Giorgione",
       "axe": "Beaux-arts",
       "naissance": 1477,
@@ -1204,6 +1277,7 @@
     {
       "slug": "michelange",
       "nom": "Michel-Ange",
+      "classement": "Michel-Ange",
       "titre": "Naissance de Michel-Ange",
       "axe": "Beaux-arts",
       "naissance": 1475,
@@ -1220,6 +1294,7 @@
     {
       "slug": "raphael",
       "nom": "Raphaël",
+      "classement": "Raphaël",
       "titre": "Naissance de Raphaël",
       "axe": "Beaux-arts",
       "naissance": 1483,
@@ -1236,6 +1311,7 @@
     {
       "slug": "titien",
       "nom": "Titien",
+      "classement": "Titien",
       "titre": "Naissance de Titien",
       "axe": "Beaux-arts",
       "naissance": 1488,
@@ -1251,6 +1327,7 @@
     {
       "slug": "cellini",
       "nom": "Benvenuto Cellini",
+      "classement": "Cellini, Benvenuto",
       "titre": "Naissance de Benvenuto Cellini",
       "axe": "Beaux-arts",
       "naissance": 1500,
@@ -1273,6 +1350,7 @@
     {
       "slug": "palladio",
       "nom": "Andrea Palladio",
+      "classement": "Palladio, Andrea",
       "titre": "Naissance d'Andrea Palladio",
       "axe": "Beaux-arts",
       "naissance": 1508,
@@ -1289,6 +1367,7 @@
     {
       "slug": "tintoret",
       "nom": "Le Tintoret",
+      "classement": "Tintoret",
       "titre": "Naissance du Tintoret",
       "axe": "Beaux-arts",
       "naissance": 1518,
@@ -1304,6 +1383,7 @@
     {
       "slug": "veronese",
       "nom": "Paul Véronèse",
+      "classement": "Véronèse, Paul",
       "titre": "Naissance de Paul Véronèse",
       "axe": "Beaux-arts",
       "naissance": 1528,
@@ -1319,6 +1399,7 @@
     {
       "slug": "caravage",
       "nom": "Le Caravage",
+      "classement": "Caravage",
       "titre": "Naissance du Caravage",
       "axe": "Beaux-arts",
       "naissance": 1571,
@@ -1335,6 +1416,7 @@
     {
       "slug": "artemisia",
       "nom": "Artemisia Gentileschi",
+      "classement": "Gentileschi, Artemisia",
       "titre": "Naissance d'Artemisia Gentileschi",
       "axe": "Beaux-arts",
       "naissance": 1593,
@@ -1350,6 +1432,7 @@
     {
       "slug": "bernin",
       "nom": "Le Bernin",
+      "classement": "Bernin",
       "titre": "Naissance du Bernin",
       "axe": "Beaux-arts",
       "naissance": 1598,
@@ -1365,6 +1448,7 @@
     {
       "slug": "borromini",
       "nom": "Francesco Borromini",
+      "classement": "Borromini, Francesco",
       "titre": "Naissance de Francesco Borromini",
       "axe": "Beaux-arts",
       "naissance": 1599,
@@ -1380,6 +1464,7 @@
     {
       "slug": "canaletto",
       "nom": "Canaletto",
+      "classement": "Canaletto",
       "titre": "Naissance de Canaletto",
       "axe": "Beaux-arts",
       "naissance": 1697,
@@ -1402,6 +1487,7 @@
     {
       "slug": "canova",
       "nom": "Antonio Canova",
+      "classement": "Canova, Antonio",
       "titre": "Naissance d'Antonio Canova",
       "axe": "Beaux-arts",
       "naissance": 1757,
@@ -1417,6 +1503,7 @@
     {
       "slug": "modigliani",
       "nom": "Amedeo Modigliani",
+      "classement": "Modigliani, Amedeo",
       "titre": "Naissance d'Amedeo Modigliani",
       "axe": "Beaux-arts",
       "naissance": 1884,
@@ -1433,6 +1520,7 @@
     {
       "slug": "dechirico",
       "nom": "Giorgio de Chirico",
+      "classement": "Chirico, Giorgio de",
       "titre": "Naissance de Giorgio de Chirico",
       "axe": "Beaux-arts",
       "naissance": 1888,
@@ -1448,6 +1536,7 @@
     {
       "slug": "guido",
       "nom": "Guido d'Arezzo",
+      "classement": "Guido d'Arezzo",
       "titre": "Naissance de Guido d'Arezzo",
       "axe": "Musique, spectacle et sport",
       "naissance": 992,
@@ -1464,12 +1553,14 @@
           0.67
         ],
         "largeur": 960,
-        "licence": "Domaine public"
+        "licence": "Domaine public",
+        "nomVisible": true
       }
     },
     {
       "slug": "palestrina",
       "nom": "Giovanni Pierluigi da Palestrina",
+      "classement": "Palestrina, Giovanni Pierluigi da",
       "titre": "Naissance de Palestrina",
       "axe": "Musique, spectacle et sport",
       "naissance": 1525,
@@ -1485,6 +1576,7 @@
     {
       "slug": "monteverdi",
       "nom": "Claudio Monteverdi",
+      "classement": "Monteverdi, Claudio",
       "titre": "Naissance de Claudio Monteverdi",
       "axe": "Musique, spectacle et sport",
       "naissance": 1567,
@@ -1500,6 +1592,7 @@
     {
       "slug": "stradivari",
       "nom": "Antonio Stradivari",
+      "classement": "Stradivari, Antonio",
       "titre": "Naissance d'Antonio Stradivari",
       "axe": "Musique, spectacle et sport",
       "naissance": 1644,
@@ -1522,6 +1615,7 @@
     {
       "slug": "vivaldi",
       "nom": "Antonio Vivaldi",
+      "classement": "Vivaldi, Antonio",
       "titre": "Naissance d'Antonio Vivaldi",
       "axe": "Musique, spectacle et sport",
       "naissance": 1678,
@@ -1538,6 +1632,7 @@
     {
       "slug": "paganini",
       "nom": "Niccolò Paganini",
+      "classement": "Paganini, Niccolò",
       "titre": "Naissance de Niccolò Paganini",
       "axe": "Musique, spectacle et sport",
       "naissance": 1782,
@@ -1560,6 +1655,7 @@
     {
       "slug": "rossini",
       "nom": "Gioachino Rossini",
+      "classement": "Rossini, Gioachino",
       "titre": "Naissance de Gioachino Rossini",
       "axe": "Musique, spectacle et sport",
       "naissance": 1792,
@@ -1576,6 +1672,7 @@
     {
       "slug": "donizetti",
       "nom": "Gaetano Donizetti",
+      "classement": "Donizetti, Gaetano",
       "titre": "Naissance de Gaetano Donizetti",
       "axe": "Musique, spectacle et sport",
       "naissance": 1797,
@@ -1591,6 +1688,7 @@
     {
       "slug": "bellini",
       "nom": "Vincenzo Bellini",
+      "classement": "Bellini, Vincenzo",
       "titre": "Naissance de Vincenzo Bellini",
       "axe": "Musique, spectacle et sport",
       "naissance": 1801,
@@ -1606,6 +1704,7 @@
     {
       "slug": "verdi",
       "nom": "Giuseppe Verdi",
+      "classement": "Verdi, Giuseppe",
       "titre": "Naissance de Giuseppe Verdi",
       "axe": "Musique, spectacle et sport",
       "naissance": 1813,
@@ -1622,6 +1721,7 @@
     {
       "slug": "duse",
       "nom": "Eleonora Duse",
+      "classement": "Duse, Eleonora",
       "titre": "Naissance d'Eleonora Duse",
       "axe": "Musique, spectacle et sport",
       "naissance": 1858,
@@ -1637,6 +1737,7 @@
     {
       "slug": "puccini",
       "nom": "Giacomo Puccini",
+      "classement": "Puccini, Giacomo",
       "titre": "Naissance de Giacomo Puccini",
       "axe": "Musique, spectacle et sport",
       "naissance": 1858,
@@ -1653,6 +1754,7 @@
     {
       "slug": "toscanini",
       "nom": "Arturo Toscanini",
+      "classement": "Toscanini, Arturo",
       "titre": "Naissance d'Arturo Toscanini",
       "axe": "Musique, spectacle et sport",
       "naissance": 1867,
@@ -1668,6 +1770,7 @@
     {
       "slug": "caruso",
       "nom": "Enrico Caruso",
+      "classement": "Caruso, Enrico",
       "titre": "Naissance d'Enrico Caruso",
       "axe": "Musique, spectacle et sport",
       "naissance": 1873,
@@ -1683,6 +1786,7 @@
     {
       "slug": "toto",
       "nom": "Totò",
+      "classement": "Totò",
       "titre": "Naissance de Totò",
       "axe": "Musique, spectacle et sport",
       "naissance": 1898,
@@ -1698,6 +1802,7 @@
     {
       "slug": "desica",
       "nom": "Vittorio De Sica",
+      "classement": "De Sica, Vittorio",
       "titre": "Naissance de Vittorio De Sica",
       "axe": "Musique, spectacle et sport",
       "naissance": 1901,
@@ -1713,6 +1818,7 @@
     {
       "slug": "rossellini",
       "nom": "Roberto Rossellini",
+      "classement": "Rossellini, Roberto",
       "titre": "Naissance de Roberto Rossellini",
       "axe": "Musique, spectacle et sport",
       "naissance": 1906,
@@ -1728,6 +1834,7 @@
     {
       "slug": "visconti",
       "nom": "Luchino Visconti",
+      "classement": "Visconti, Luchino",
       "titre": "Naissance de Luchino Visconti",
       "axe": "Musique, spectacle et sport",
       "naissance": 1906,
@@ -1743,6 +1850,7 @@
     {
       "slug": "magnani",
       "nom": "Anna Magnani",
+      "classement": "Magnani, Anna",
       "titre": "Naissance d'Anna Magnani",
       "axe": "Musique, spectacle et sport",
       "naissance": 1908,
@@ -1758,6 +1866,7 @@
     {
       "slug": "fellini",
       "nom": "Federico Fellini",
+      "classement": "Fellini, Federico",
       "titre": "Naissance de Federico Fellini",
       "axe": "Musique, spectacle et sport",
       "naissance": 1920,
@@ -1774,6 +1883,7 @@
     {
       "slug": "mastroianni",
       "nom": "Marcello Mastroianni",
+      "classement": "Mastroianni, Marcello",
       "titre": "Naissance de Marcello Mastroianni",
       "axe": "Musique, spectacle et sport",
       "naissance": 1924,
@@ -1789,6 +1899,7 @@
     {
       "slug": "morricone",
       "nom": "Ennio Morricone",
+      "classement": "Morricone, Ennio",
       "titre": "Naissance d'Ennio Morricone",
       "axe": "Musique, spectacle et sport",
       "naissance": 1928,
@@ -1805,6 +1916,7 @@
     {
       "slug": "leone",
       "nom": "Sergio Leone",
+      "classement": "Leone, Sergio",
       "titre": "Naissance de Sergio Leone",
       "axe": "Musique, spectacle et sport",
       "naissance": 1929,
@@ -1820,6 +1932,7 @@
     {
       "slug": "pavarotti",
       "nom": "Luciano Pavarotti",
+      "classement": "Pavarotti, Luciano",
       "titre": "Naissance de Luciano Pavarotti",
       "axe": "Musique, spectacle et sport",
       "naissance": 1935,
@@ -1836,6 +1949,7 @@
     {
       "slug": "archimede",
       "nom": "Archimède",
+      "classement": "Archimède",
       "titre": "Naissance d'Archimède",
       "axe": "Sciences, techniques et innovation",
       "naissance": -287,
@@ -1853,6 +1967,7 @@
     {
       "slug": "pline",
       "nom": "Pline l'Ancien",
+      "classement": "Pline l'Ancien",
       "titre": "Naissance de Pline l'Ancien",
       "axe": "Sciences, techniques et innovation",
       "naissance": 23,
@@ -1862,12 +1977,14 @@
         "fichier": "Grande Illustrazione del Lombardo Veneto Vol 3 Plinio Secondo 300dpi.jpg",
         "legende": "Pline l'Ancien, gravure imaginaire parue dans la Grande Illustrazione del Lombardo-Veneto (1859) : aucun portrait authentique n'existe",
         "auteur": "Auteur inconnu",
-        "licence": "Domaine public"
+        "licence": "Domaine public",
+        "nomVisible": true
       }
     },
     {
       "slug": "fibonacci",
       "nom": "Fibonacci",
+      "classement": "Fibonacci",
       "titre": "Naissance de Fibonacci",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1170,
@@ -1883,6 +2000,7 @@
     {
       "slug": "marcopolo",
       "nom": "Marco Polo",
+      "classement": "Polo, Marco",
       "titre": "Naissance de Marco Polo",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1254,
@@ -1907,6 +2025,7 @@
     {
       "slug": "colomb",
       "nom": "Christophe Colomb",
+      "classement": "Colomb, Christophe",
       "titre": "Naissance de Christophe Colomb",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1451,
@@ -1924,6 +2043,7 @@
     {
       "slug": "cabot",
       "nom": "Jean Cabot",
+      "classement": "Cabot, Jean",
       "titre": "Naissance de Jean Cabot",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1450,
@@ -1933,12 +2053,14 @@
         "fichier": "JohnCabotPainting.jpg",
         "legende": "Jean Cabot, portrait posthume peint par Giustino Menescardi (1762)",
         "auteur": "Giustino Menescardi",
-        "licence": "Domaine public"
+        "licence": "Domaine public",
+        "nomVisible": true
       }
     },
     {
       "slug": "vespucci",
       "nom": "Amerigo Vespucci",
+      "classement": "Vespucci, Amerigo",
       "titre": "Naissance d'Amerigo Vespucci",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1454,
@@ -1956,6 +2078,7 @@
     {
       "slug": "ricci",
       "nom": "Matteo Ricci",
+      "classement": "Ricci, Matteo",
       "titre": "Naissance de Matteo Ricci",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1552,
@@ -1971,6 +2094,7 @@
     {
       "slug": "galilee",
       "nom": "Galilée",
+      "classement": "Galilée",
       "titre": "Naissance de Galilée",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1564,
@@ -1988,6 +2112,7 @@
     {
       "slug": "torricelli",
       "nom": "Evangelista Torricelli",
+      "classement": "Torricelli, Evangelista",
       "titre": "Naissance d'Evangelista Torricelli",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1608,
@@ -2003,6 +2128,7 @@
     {
       "slug": "agnesi",
       "nom": "Maria Gaetana Agnesi",
+      "classement": "Agnesi, Maria Gaetana",
       "titre": "Naissance de Maria Gaetana Agnesi",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1718,
@@ -2018,6 +2144,7 @@
     {
       "slug": "galvani",
       "nom": "Luigi Galvani",
+      "classement": "Galvani, Luigi",
       "titre": "Naissance de Luigi Galvani",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1737,
@@ -2033,6 +2160,7 @@
     {
       "slug": "volta",
       "nom": "Alessandro Volta",
+      "classement": "Volta, Alessandro",
       "titre": "Naissance d'Alessandro Volta",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1745,
@@ -2049,6 +2177,7 @@
     {
       "slug": "avogadro",
       "nom": "Amedeo Avogadro",
+      "classement": "Avogadro, Amedeo",
       "titre": "Naissance d'Amedeo Avogadro",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1776,
@@ -2071,6 +2200,7 @@
     {
       "slug": "meucci",
       "nom": "Antonio Meucci",
+      "classement": "Meucci, Antonio",
       "titre": "Naissance d'Antonio Meucci",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1808,
@@ -2093,6 +2223,7 @@
     {
       "slug": "marconi",
       "nom": "Guglielmo Marconi",
+      "classement": "Marconi, Guglielmo",
       "titre": "Naissance de Guglielmo Marconi",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1874,
@@ -2109,6 +2240,7 @@
     {
       "slug": "fermi",
       "nom": "Enrico Fermi",
+      "classement": "Fermi, Enrico",
       "titre": "Naissance d'Enrico Fermi",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1901,
@@ -2132,6 +2264,7 @@
     {
       "slug": "levimontalcini",
       "nom": "Rita Levi-Montalcini",
+      "classement": "Levi-Montalcini, Rita",
       "titre": "Naissance de Rita Levi-Montalcini",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1909,
@@ -2147,6 +2280,7 @@
     {
       "slug": "ferrari",
       "nom": "Enzo Ferrari",
+      "classement": "Ferrari, Enzo",
       "titre": "Naissance d'Enzo Ferrari",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1898,
@@ -2162,6 +2296,7 @@
     {
       "slug": "bartali",
       "nom": "Gino Bartali",
+      "classement": "Bartali, Gino",
       "titre": "Naissance de Gino Bartali",
       "axe": "Musique, spectacle et sport",
       "naissance": 1914,

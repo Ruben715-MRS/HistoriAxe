@@ -100,6 +100,10 @@ function renderSettingsUI() {
     document.querySelectorAll('#settings-haptics button').forEach(btn => {
         btn.classList.toggle('active', (btn.dataset.value === 'on') === appSettings.haptics);
     });
+    document.querySelectorAll('#settings-portraits button').forEach(btn => {
+        // Tant que la question n'a pas été posée, les portraits sont en couleur.
+        btn.classList.toggle('active', btn.dataset.value === (appSettings.portraitCollection || 'color'));
+    });
     document.querySelectorAll('#settings-notifications button').forEach(btn => {
         btn.classList.toggle('active', (btn.dataset.value === 'on') === appSettings.notifications);
     });
@@ -137,6 +141,12 @@ function initSettingsControls() {
             appSettings.sound = (btn.dataset.value === 'on');
             settingsSave(appSettings);
             if (appSettings.sound) playCorrectSound(1.0);
+            renderSettingsUI();
+        };
+    });
+    document.querySelectorAll('#settings-portraits button').forEach(btn => {
+        btn.onclick = () => {
+            setPortraitCollection(btn.dataset.value);
             renderSettingsUI();
         };
     });
@@ -508,7 +518,7 @@ function openLeaderboard() {
             'periodes': t('modes.periodes.title'), 'ecart': t('modes.ecart.title'),
             'carte': t('carte.mode_title'), 'simultaneity': t('simultaneity.title'),
             'ordre': t('ordre.title'), 'blitz': t('blitz.title'),
-            'curseur': t('curseur.title'), 'intrus': t('intrus.title')
+            'curseur': t('curseur.title'), 'intrus': t('intrus.title'), 'whois': t('whois.title')
         };
         let html = `<table class="leaderboard-table"><thead><tr><th>${t('leaderboard.col_mode')}</th><th>${t('leaderboard.col_score')}</th><th>${t('leaderboard.col_date')}</th></tr></thead><tbody>`;
         scores.forEach(s => {
@@ -1173,11 +1183,20 @@ function showScreen(screenId, direction) {
         targetScreen.classList.add('screen-fade-in');
     }
 
+    // Le retour à la galerie ne vaut que pour la partie qui en est partie : rejoindre
+    // l'arbre des catégories l'efface, pour qu'une partie lancée de là n'y revienne pas.
+    if (['screen-home', 'screen-categories', 'screen-subcategories', 'screen-themes', 'screen-revision-hub'].includes(screenId)) {
+        galleryReturnPending = false;
+    }
+    // Le portrait du jour n'existe que sur son écran : le quitter par n'importe quelle porte
+    // (fiche, galerie, accueil) l'oublie, pour qu'une partie ordinaire n'en hérite pas.
+    if (screenId !== 'screen-whois') endPortraitDayMode();
     if (screenId === 'screen-categories') initCategories();
     if (screenId === 'screen-subcategories') initSubcategories();
     if (screenId === 'screen-themes') initThemes();
     if (screenId === 'screen-axes') initAxes();
     if (screenId === 'screen-revision-hub') initRevisionHub();
+    if (screenId === 'screen-gallery') initGallery();
 
     // Onboarding guidé (voir js/onboarding.js) : chaque bulle ne s'affiche
     // qu'une fois, et jamais si le tutoriel a été terminé/passé.
@@ -1216,6 +1235,7 @@ function showScreen(screenId, direction) {
         }
         renderRoundLengthPicker();
         updateModeLocks();
+        updateWhoisCard();
         // Choix Frise / Sommaire sous « Découverte » : déplié seulement
         // pour un thème qui propose un sommaire (voir js/mindMap.js).
         if (typeof refreshDiscoveryPicker === 'function') refreshDiscoveryPicker();
@@ -1244,7 +1264,8 @@ function screenAfterGame() {
     } else if (essentialFilterActive || axisFilterActive) {
         target = 'screen-axes';
     } else {
-        target = 'screen-themes';
+        // Une partie lancée depuis la galerie des portraits y revient (js/gallery.js).
+        target = galleryReturnTarget('screen-themes');
     }
     revisionMode = false;
     dailyChallengeMode = false;
@@ -1278,6 +1299,31 @@ function discoverRandomEvent() {
     if (all.length === 0) return;
     const pick = all[Math.floor(Math.random() * all.length)];
     openModal(pick.event, pick);
+}
+
+// Les figures qu'on peut tirer au hasard : celles de la galerie des portraits (un portrait, une date).
+function getDiscoverablePortraits() {
+    return getPortraitDayPool().filter(evt => portraitOf(evt) && typeof evt.date === 'number');
+}
+
+let lastDiscoveredPortraitId = null;
+
+// Pioche un personnage au hasard parmi ceux de la galerie des portraits et ouvre sa fiche, avec les mêmes
+// accès que depuis la galerie : sa biographie quand elle existe, et son panthéon. Le bouton « Un autre
+// personnage » repioche (jamais deux fois de suite le même).
+function discoverRandomPortrait() {
+    const all = getDiscoverablePortraits();
+    if (all.length === 0) return;
+    let pick;
+    do { pick = all[Math.floor(Math.random() * all.length)]; }
+    while (all.length > 1 && pick.id === lastDiscoveredPortraitId);
+    lastDiscoveredPortraitId = pick.id;
+    const context = whoThemeContext(pick);
+    if (!context) return;
+    context.hideRedraw = false;
+    context.redraw = discoverRandomPortrait;
+    context.redrawLabel = 'modal.redraw_person_btn';
+    openModal(pick, context);
 }
 
 // Lance le Défi du jour : 10 événements tirés de façon identique pour tous les
@@ -1359,6 +1405,39 @@ function replayCurrentGame() {
     }
     if (currentMode === 'ecart') {
         startEcartGame();
+        return;
+    }
+    if (currentMode === 'whois') {
+        startWhoisGame();
+        return;
+    }
+    // Les modes qui ont leur propre écran : sans ces lignes, « Rejouer » les confiait à
+    // startActualGame, qui ouvre la frise quel que soit currentMode.
+    if (currentMode === 'intrus') {
+        startIntrusGame();
+        return;
+    }
+    if (currentMode === 'ordre') {
+        startOrdreGame();
+        return;
+    }
+    if (currentMode === 'curseur') {
+        startCurseurGame();
+        return;
+    }
+    if (currentMode === 'blitz') {
+        startBlitzGame();
+        return;
+    }
+    if (currentMode === 'simultaneity') {
+        // Le Défi de simultanéité (tiré de l'historique du joueur) et le mode d'un thème ont chacun leur lanceur.
+        if (isSimultaneityChallenge()) startSimultaneityChallenge();
+        else startSimultaneityGame();
+        return;
+    }
+    if (currentMode === 'carte') {
+        // Même zone, même écran de retour : celui du premier lancement, pas l'écran de fin d'où l'on rejoue.
+        if (geoLastNode) startGeoModeFromNode(geoLastNode, geoScopeLabel, geoReturnScreen);
         return;
     }
     if (revisionMode) {
@@ -1620,7 +1699,7 @@ function initCategories() {
                         </div>
                         <span class="quick-action-label" style="font-size: 13px; font-weight: 600;">${(typeof t === 'function' ? t('categories.special_favorites') : 'Favoris')} (${favCount})</span>
                     </div>
-                    <div class="flex flex-col items-center gap-2" id="btn-discover" style="cursor: pointer;" role="button" tabindex="0">
+                    <div class="flex flex-col items-center gap-2" id="btn-discover" style="cursor: pointer;" role="button" tabindex="0" aria-expanded="false" aria-controls="discover-picker">
                         <div class="quick-action-circle rounded-full flex items-center justify-center transition-colors cursor-pointer group mx-auto" style="border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; background: var(--surface); border: 1px solid var(--border-soft); box-shadow: var(--card-shadow);">
                             <span style="font-size: 28px;">🎲</span>
                         </div>
@@ -1639,6 +1718,16 @@ function initCategories() {
                         <span class="quick-action-label" style="font-size: 13px; font-weight: 600;">${(typeof t === 'function' ? t('categories.special_revision') : 'Réviser')} (${weakCount})</span>
                     </div>
                 </div>
+                <div class="challenge-picker hidden" id="discover-picker">
+                    <button type="button" class="challenge-picker-btn" id="btn-discover-event">
+                        <span class="challenge-picker-icon" aria-hidden="true">🕰️</span>
+                        <span>${t('categories.discover_event')}</span>
+                    </button>
+                    <button type="button" class="challenge-picker-btn" id="btn-discover-person">
+                        <span class="challenge-picker-icon" aria-hidden="true">👤</span>
+                        <span>${t('categories.discover_person')}</span>
+                    </button>
+                </div>
                 <div class="challenge-picker hidden" id="challenge-picker">
                     <button type="button" class="challenge-picker-btn" id="btn-challenge-daily">
                         <span class="challenge-picker-icon">☀️</span>
@@ -1652,6 +1741,13 @@ function initCategories() {
                         <span class="challenge-picker-icon">🌍</span>
                         <span>${(typeof t === 'function' ? t('simultaneity.challenge_title') : 'Défi de simultanéité')}</span>
                     </button>
+                    <button type="button" class="challenge-picker-btn portrait-day-btn hidden" id="btn-challenge-portrait">
+                        <span class="challenge-picker-icon" aria-hidden="true">🖼️</span>
+                        <span class="portrait-day-text">
+                            <span class="portrait-day-title">${t('whois.daily_title')}</span>
+                            <small class="portrait-day-status" id="portrait-day-status"></small>
+                        </span>
+                    </button>
                 </div>
             `;
     container.appendChild(gridSection);
@@ -1659,7 +1755,26 @@ function initCategories() {
     const btnFav = gridSection.querySelector('#btn-favoris');
     if (btnFav) btnFav.onclick = () => openFavorites();
     const btnDisc = gridSection.querySelector('#btn-discover');
-    if (btnDisc) btnDisc.onclick = () => discoverRandomEvent();
+    // « Découvrir » propose un événement ou un personnage, sous forme de deux boutons dépliés sous la grille
+    // (comme « Défis »). Sans aucun portrait dans la base (pack sans panthéons), il n'y a pas de choix à
+    // offrir : il pioche un événement directement, comme avant.
+    const discoverPicker = gridSection.querySelector('#discover-picker');
+    const challengePickerEl = gridSection.querySelector('#challenge-picker');
+    if (btnDisc && discoverPicker) {
+        btnDisc.onclick = () => {
+            if (getDiscoverablePortraits().length === 0) { discoverRandomEvent(); return; }
+            const nowOpen = discoverPicker.classList.toggle('hidden') === false;
+            btnDisc.setAttribute('aria-expanded', String(nowOpen));
+            // Un seul volet à la fois : « Défis » se referme.
+            if (nowOpen && challengePickerEl) {
+                challengePickerEl.classList.add('hidden');
+                const btnDaily = gridSection.querySelector('#btn-daily');
+                if (btnDaily) btnDaily.setAttribute('aria-expanded', 'false');
+            }
+        };
+        gridSection.querySelector('#btn-discover-event').onclick = () => discoverRandomEvent();
+        gridSection.querySelector('#btn-discover-person').onclick = () => discoverRandomPortrait();
+    }
     // Le bouton « Défis » ne lance plus directement le Défi du jour : il
     // déplie/replie un choix entre Défi du jour et Défi hebdomadaire, sous
     // forme de deux boutons côte à côte sous la grille (voir #challenge-picker
@@ -1670,6 +1785,10 @@ function initCategories() {
         btnDay.onclick = () => {
             const nowOpen = challengePicker.classList.toggle('hidden') === false;
             btnDay.setAttribute('aria-expanded', String(nowOpen));
+            if (nowOpen && discoverPicker) {
+                discoverPicker.classList.add('hidden');
+                if (btnDisc) btnDisc.setAttribute('aria-expanded', 'false');
+            }
         };
     }
     const btnChallengeDaily = gridSection.querySelector('#btn-challenge-daily');
@@ -1688,6 +1807,12 @@ function initCategories() {
         // comme indisponible plutôt que comme un bouton ordinaire.
         btnChallengeSimul.setAttribute('aria-disabled', String(simulLocked));
         btnChallengeSimul.onclick = () => startSimultaneityChallenge();
+    }
+    // Portrait du jour : un compagnon non classé du Défi du jour, qui n'apparaît que si la base a des portraits.
+    const btnPortrait = gridSection.querySelector('#btn-challenge-portrait');
+    if (btnPortrait) {
+        btnPortrait.onclick = () => startPortraitOfTheDay();
+        refreshPortraitDayButton(btnPortrait);
     }
     const btnRev = gridSection.querySelector('#btn-reviser');
     if (btnRev) btnRev.onclick = () => showScreen('screen-revision-hub');
@@ -1740,6 +1865,9 @@ function initCategories() {
                 showScreen('screen-themes', 'forward');
             } else {
                 showScreen('screen-subcategories', 'forward');
+                // Première ouverture de « Personnages illustres » : on demande si les portraits
+                // se collectionnent (voir js/gallery.js).
+                maybeAskPortraitCollection(cat);
             }
         };
         A11y.activatable(card);
@@ -1894,6 +2022,13 @@ function initSubcategories() {
         gridSection.appendChild(card);
     });
     applyStagger(gridSection);
+
+    // Galerie des portraits (voir js/gallery.js) : sous la grille, et non dans
+    // elle, parce qu'elle n'est ni une sous-catégorie ni un mode de jeu. Elle
+    // n'apparaît qu'au niveau qui porte les « Panthéons ».
+    const pantheon = typeof findPantheonNode === 'function' ? findPantheonNode(node) : null;
+    const launcher = pantheon ? buildGalleryLauncher(pantheon) : null;
+    if (launcher) container.appendChild(launcher);
 }
 
 
@@ -3652,6 +3787,284 @@ function updateIntrusHUD() {
 }
 
 
+// === MODE « QUI EST-CE ? » ===
+// Un portrait, quatre noms. Les portraits viennent des panthéons (champ `image`) : le mode n'est donc
+// proposé que pour un thème dont assez de figures en ont un (voir updateWhoisCard).
+//
+// La légende de l'image dit qui c'est : elle n'apparaît qu'à la réponse. Le crédit (auteur, licence),
+// lui, reste sous le portrait pendant la question — c'est la condition des licences CC BY et CC BY-SA.
+//
+// Le révélé ne se referme pas tout seul : il porte la fiche de la personne (légende, dates, description),
+// qu'on ne lit pas en deux secondes. Rencontrer une figure ici la débloque dans la galerie, comme dans
+// n'importe quel autre mode (srsRecord).
+
+let whoQuestions = [];
+let whoIndex = 0;
+// Vrai pendant le portrait du jour : la même question pour tous, sans points ni vies ni écran de fin.
+let whoDailyMode = false;
+
+// La carte n'a de sens que si le thème a de quoi nourrir des questions sans mauvaise réponse devinable.
+function updateWhoisCard() {
+    const card = document.getElementById('mode-card-whois');
+    if (!card) return;
+    const enough = GameModes.whoCandidates(getModePoolRaw()).length >= GameModes.WHO_MIN_PORTRAITS;
+    card.classList.toggle('hidden', !enough);
+}
+
+function startWhoisGame() {
+    endPortraitDayMode();
+    resetSessionHistory();
+    currentMode = 'whois';
+    const sourceEvents = getSessionPool();
+
+    // Les portraits à trouver viennent de la manche, les mauvaises réponses de tout le thème : davantage
+    // de noms proches de l'époque à proposer qu'avec les vingt seuls événements de la manche.
+    whoQuestions = GameModes.buildWhoQuestions(sourceEvents, { pool: getModePoolRaw() });
+    if (whoQuestions.length < 3) {
+        alert(t('whois.not_enough'));
+        return;
+    }
+
+    whoIndex = 0;
+    lives = 3;
+    score = 0;
+    comboMultiplier = 1.0;
+    currentRoundSize = whoQuestions.length;
+    currentGameSpan = 1;
+
+    showScreen('screen-whois');
+    renderWhoQuestion();
+}
+
+function renderWhoQuestion() {
+    if (whoIndex >= whoQuestions.length) {
+        endGame(true);
+        return;
+    }
+    isAnimating = false;
+    questionStartTime = Date.now();
+
+    const q = whoQuestions[whoIndex];
+    const image = portraitOf(q.correct);
+    const img = document.getElementById('whois-portrait-img');
+    img.alt = t('whois.portrait_alt');
+    img.onerror = null;
+    img.src = image.src;
+    fillPortraitCredit(document.getElementById('whois-portrait-credit'), image);
+    document.getElementById('whois-reveal').classList.add('hidden');
+    document.getElementById('whois-kicker').innerText = t(whoDailyMode ? 'whois.daily_kicker' : 'whois.kicker');
+
+    const container = document.getElementById('whois-options');
+    container.innerHTML = '';
+    A11y.focusQuestion('screen-whois');
+    container.style.pointerEvents = 'none';
+    requestAnimationFrame(() => { container.style.pointerEvents = 'auto'; });
+
+    q.options.forEach(opt => {
+        const btn = document.createElement('button');
+        btn.className = 'quiz-option whois-option';
+        btn.dataset.eventId = opt.id;
+        btn.innerText = opt.name;
+        btn.onclick = () => answerWho(opt.id);
+        container.appendChild(btn);
+    });
+
+    document.getElementById('whois-hud-count').innerText = `${whoIndex + 1} / ${whoQuestions.length}`;
+    document.getElementById('whois-progress-fill').style.width =
+        Math.round(whoIndex / whoQuestions.length * 100) + '%';
+    updateWhoHUD();
+}
+
+function answerWho(chosenId) {
+    if (isAnimating) return;
+    isAnimating = true;
+
+    const q = whoQuestions[whoIndex];
+    const correct = chosenId === q.correctId;
+
+    if (correct) { playCorrectSound(comboMultiplier); triggerHaptic('success'); }
+    else { playWrongSound(); triggerHaptic('error'); }
+    // Rencontrer la figure la débloque dans la collection, au jour comme en partie.
+    srsRecord(q.correctId, correct);
+
+    if (whoDailyMode) {
+        // Ni points, ni vie, ni série : le portrait du jour n'est pas classé. On retient seulement
+        // la réponse, pour que le bouton des défis dise où l'on en est aujourd'hui.
+        portraitDaySave({ date: DailyEngine.getDailySeedString(), chosenId, correct });
+    } else {
+        awardPoints(correct ? 0 : 1, correct);
+        checkBadgeProgressOnAction(correct);
+        recordSessionStep(q.correct, correct, false);
+        if (!correct) lives -= 1;
+        updateWhoHUD();
+    }
+    showWhoAnswer(q, chosenId, correct);
+}
+
+// Ce que la réponse montre : options colorées, puis la fiche. Séparé d'answerWho pour que le
+// portrait du jour, déjà répondu, puisse se rouvrir tel qu'on l'a laissé sans rien recompter.
+function showWhoAnswer(q, chosenId, correct) {
+    document.querySelectorAll('#whois-options .whois-option').forEach(b => {
+        b.style.pointerEvents = 'none';
+        if (b.dataset.eventId === q.correctId) b.classList.add('correct');
+        else if (b.dataset.eventId === chosenId) b.classList.add('wrong');
+    });
+    renderWhoReveal(q, correct);
+}
+
+// La fiche de la personne : qui c'est, quand elle est née, ce qu'on voit sur l'image, ce qu'elle a fait.
+// « Continuer » est un vrai bouton, qui prend le focus : Entrée suffit pour enchaîner.
+function renderWhoReveal(q, correct) {
+    const reveal = document.getElementById('whois-reveal');
+    reveal.innerHTML = '';
+    const image = portraitOf(q.correct);
+
+    const verdict = document.createElement('div');
+    verdict.className = 'whois-reveal-verdict ' + (correct ? 'is-good' : 'is-bad');
+    verdict.innerText = t(correct ? 'whois.reveal_right' : 'whois.reveal_wrong');
+    reveal.appendChild(verdict);
+
+    const name = document.createElement('div');
+    name.className = 'whois-reveal-name';
+    name.innerText = q.name;
+    const born = document.createElement('small');
+    born.innerText = ` · ${formatEventDate(q.correct)}`;
+    name.appendChild(born);
+    reveal.appendChild(name);
+
+    if (image && image.legende) {
+        const caption = document.createElement('div');
+        caption.className = 'whois-reveal-caption';
+        caption.innerText = image.legende;
+        reveal.appendChild(caption);
+    }
+
+    const desc = document.createElement('p');
+    desc.className = 'whois-reveal-desc';
+    desc.innerText = q.correct.description || '';
+    reveal.appendChild(desc);
+
+    // Le portrait du jour se prolonge par la fiche complète — avec ses accès au jeu — puis se referme.
+    if (whoDailyMode) {
+        const card = document.createElement('button');
+        card.type = 'button';
+        card.className = 'btn btn-secondary whois-continue';
+        card.id = 'whois-daily-card';
+        card.innerText = t('whois.daily_card');
+        card.onclick = () => openModal(q.correct, whoThemeContext(q.correct));
+        reveal.appendChild(card);
+    }
+    const next = document.createElement('button');
+    next.type = 'button';
+    next.className = 'btn whois-continue';
+    next.id = 'whois-continue';
+    next.innerText = t(whoDailyMode ? 'whois.daily_done' : 'whois.continue');
+    next.onclick = continueWho;
+    reveal.appendChild(next);
+
+    reveal.classList.remove('hidden');
+    next.focus({ preventScroll: true });
+    reveal.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+}
+
+function continueWho() {
+    if (!isAnimating) return;
+    if (whoDailyMode) {
+        showScreen('screen-categories', 'back');
+        return;
+    }
+    whoIndex++;
+    if (lives <= 0) { endGame(false); return; }
+    renderWhoQuestion();
+}
+
+function updateWhoHUD() {
+    document.getElementById('whois-hud-score').innerText = score;
+    renderComboChip(document.getElementById('whois-hud-combo'), comboMultiplier);
+    let pips = '';
+    for (let i = 0; i < 3; i++) pips += `<span class="pip${i < lives ? '' : ' spent'}"></span>`;
+    document.getElementById('whois-hud-lives').innerHTML = pips;
+}
+
+
+// --- Portrait du jour ---
+// Un « Qui est-ce ? » d'une seule question, la même pour tous les joueurs d'un jour (graine du Défi du
+// jour, mais avec son propre préfixe : le tirage du Défi classé, que le serveur recalcule, n'en est
+// jamais touché). Non classé : ni points, ni vies, ni série, et pas d'écran de fin. Répondu, il se
+// rouvre tel qu'on l'a laissé — une seule réponse par jour.
+
+function endPortraitDayMode() {
+    whoDailyMode = false;
+    const screen = document.getElementById('screen-whois');
+    if (screen) screen.classList.remove('is-portrait-day');
+}
+
+// Toutes les figures à portrait des panthéons de la base.
+function getPortraitDayPool() {
+    const events = [];
+    bdd.forEach(category => {
+        const pantheon = findPantheonNode(category);
+        if (pantheon) pantheon.themes.forEach(theme => events.push(...(theme.events || [])));
+    });
+    return events;
+}
+
+function getPortraitDayQuestion() {
+    const seed = DailyEngine.hashStringToSeed('historiaxe_portrait_' + DailyEngine.getDailySeedString());
+    return GameModes.buildDailyWhoQuestion(getPortraitDayPool(), DailyEngine.mulberry32(seed));
+}
+
+// Le bouton des défis : caché sans portraits (pack sans panthéons), sinon il dit où l'on en est aujourd'hui.
+function refreshPortraitDayButton(btn) {
+    const enough = GameModes.whoCandidates(getPortraitDayPool()).length >= GameModes.WHO_MIN_PORTRAITS;
+    btn.classList.toggle('hidden', !enough);
+    if (!enough) return;
+    const saved = portraitDayLoad();
+    const answeredToday = !!saved && saved.date === DailyEngine.getDailySeedString();
+    const key = !answeredToday ? 'whois.daily_sub_new' : (saved.correct ? 'whois.daily_sub_right' : 'whois.daily_sub_wrong');
+    btn.querySelector('#portrait-day-status').innerText = t(key);
+}
+
+// Le contexte d'une fiche ouverte depuis une figure : son thème, pour le bouton « Jouer sur… ».
+function whoThemeContext(evt) {
+    const item = getAllThemesWithPath().find(x => (x.theme.events || []).some(e => e.id === evt.id));
+    if (!item) return null;
+    return { theme: item.theme, categoryIndex: item.ci, subcategoryIndex: item.si, themeIndex: item.ti, hideRedraw: true };
+}
+
+function startPortraitOfTheDay() {
+    const q = getPortraitDayQuestion();
+    if (!q) return;
+    resetSessionHistory();
+    currentMode = 'whois';
+    whoDailyMode = true;
+    revisionMode = false;
+    favoritesMode = false;
+    dailyChallengeMode = false;
+    weeklyChallengeMode = false;
+    simulChallengeMode = false;
+    axisFilterActive = false;
+    isSelectionActive = false;
+    whoQuestions = [q];
+    whoIndex = 0;
+    lives = 3;
+    score = 0;
+    comboMultiplier = 1.0;
+    currentRoundSize = 1;
+    currentGameSpan = 1;
+
+    document.getElementById('screen-whois').classList.add('is-portrait-day');
+    showScreen('screen-whois');
+    renderWhoQuestion();
+
+    const saved = portraitDayLoad();
+    if (saved && saved.date === DailyEngine.getDailySeedString()) {
+        isAnimating = true;
+        showWhoAnswer(q, saved.chosenId, !!saved.correct);
+    }
+}
+
+
 // === MODE AVANT / APRÈS ===
 // Chaque question pioche un événement du pool et lui oppose un autre événement
 // à date distincte ; les deux sont affichés sans leur date et il faut désigner
@@ -5192,6 +5605,7 @@ function endGame(isWin) {
         if (currentMode === 'ordre') winTitle = t('end.victory_ordre');
         if (currentMode === 'curseur') winTitle = t('end.victory_curseur');
         if (currentMode === 'intrus') winTitle = t('end.victory_intrus');
+        if (currentMode === 'whois') winTitle = t('end.victory_whois');
         // Le Blitz ne se « gagne » pas : il se termine quand l'horloge tombe à
         // zéro, et c'est le nombre de bonnes réponses qui dit ce qu'il valait.
         if (currentMode === 'blitz') winTitle = t('end.victory_blitz', { right: blitzRight });
@@ -5314,6 +5728,12 @@ function showConfirm(message, onConfirm, options = {}) {
 }
 
 function quitGame() {
+    // Le portrait du jour ne se joue pas à enjeu : on en sort sans confirmation, et la question reste à
+    // répondre — rien n'est enregistré avant la réponse.
+    if (whoDailyMode) {
+        showScreen('screen-categories', 'back');
+        return;
+    }
     if (currentMode === 'discovery') {
         showScreen(screenAfterGame());
         return;
@@ -5394,6 +5814,33 @@ function renderModalCountry(evt) {
     el.classList.remove('hidden');
 }
 
+// Crédit d'un portrait (auteur, licence, lien vers la page de l'œuvre), construit au DOM : le nom d'un
+// auteur peut contenir n'importe quoi. Partagé par la fiche et par le mode « Qui est-ce ? », où le
+// crédit reste sous l'image pendant la question.
+function fillPortraitCredit(credit, image) {
+    credit.textContent = '';
+    const addText = text => credit.appendChild(document.createTextNode(text));
+    const addLink = (text, href) => {
+        const link = document.createElement('a');
+        link.href = href;
+        link.target = '_blank';
+        link.rel = 'noopener';
+        link.textContent = text;
+        credit.appendChild(link);
+    };
+    if (image.auteur) addText(image.auteur + ' · ');
+    // Une licence CC se lie à son texte, et dit que l'image a été modifiée
+    // (elle est recadrée et réduite) : c'est ce qu'exigent CC BY et CC BY-SA.
+    // Le domaine public n'exige rien de tout cela.
+    const licenseUrl = portraitLicenseUrl(image.licence);
+    if (licenseUrl) addLink(image.licence, licenseUrl);
+    else if (image.licence) addText(image.licence);
+    if (/^CC BY/.test(image.licence || '')) addText(' · image recadrée');
+    addText(' · ');
+    if (/^https:\/\//.test(image.source || '')) addLink('Wikimedia Commons', image.source);
+    else addText('Wikimedia Commons');
+}
+
 // Portrait, légende et crédit de la fiche. Le crédit (auteur, licence, lien
 // vers la page de l'œuvre sur Wikimedia Commons) n'est pas facultatif : c'est
 // la condition des licences CC BY et CC BY-SA, et la moindre des politesses
@@ -5418,28 +5865,7 @@ function renderModalPortrait(evt) {
     img.alt = '';
     img.src = image.src;
     document.getElementById('modal-portrait-caption').textContent = image.legende || '';
-    const credit = document.getElementById('modal-portrait-credit');
-    credit.textContent = '';
-    const addText = text => credit.appendChild(document.createTextNode(text));
-    const addLink = (text, href) => {
-        const link = document.createElement('a');
-        link.href = href;
-        link.target = '_blank';
-        link.rel = 'noopener';
-        link.textContent = text;
-        credit.appendChild(link);
-    };
-    if (image.auteur) addText(image.auteur + ' · ');
-    // Une licence CC se lie à son texte, et dit que l'image a été modifiée
-    // (elle est recadrée et réduite) : c'est ce qu'exigent CC BY et CC BY-SA.
-    // Le domaine public n'exige rien de tout cela.
-    const licenseUrl = portraitLicenseUrl(image.licence);
-    if (licenseUrl) addLink(image.licence, licenseUrl);
-    else if (image.licence) addText(image.licence);
-    if (/^CC BY/.test(image.licence || '')) addText(' · image recadrée');
-    addText(' · ');
-    if (/^https:\/\//.test(image.source || '')) addLink('Wikimedia Commons', image.source);
-    else addText('Wikimedia Commons');
+    fillPortraitCredit(document.getElementById('modal-portrait-credit'), image);
     figure.classList.remove('hidden');
 }
 
@@ -5457,10 +5883,13 @@ function portraitLicenseUrl(label) {
 // un thème de la catégorie Biographies, et jamais pendant une partie de frise
 // — il ferait quitter la partie d'un tap. Le test est celui de quitGame() :
 // hors Découverte, l'écran de jeu visible veut dire « partie en cours ».
-function renderModalBiographyButton(evt) {
+function renderModalBiographyButton(evt, fromGallery = false) {
     const row = document.getElementById('modal-bio-row');
     const btn = document.getElementById('modal-bio-btn');
     if (!row || !btn) return;
+    // Depuis la galerie, le bouton dit ce qu'il fait vraiment : il mène au
+    // jeu, à côté de celui du panthéon.
+    btn.textContent = t(fromGallery ? 'gallery.play_biography' : 'modal.biography_btn');
     const gameScreen = document.getElementById('screen-game');
     const gameRunning = !!gameScreen && !gameScreen.classList.contains('hidden') && currentMode !== 'discovery';
     const target = (evt.biographie && !gameRunning)
@@ -5469,6 +5898,7 @@ function renderModalBiographyButton(evt) {
     row.classList.toggle('hidden', !target);
     btn.onclick = target ? () => {
         closeModal();
+        if (fromGallery) markGalleryLaunch();
         favoritesMode = false;
         if (dailyChallengeMode || weeklyChallengeMode) stopTimer();
         dailyChallengeMode = false;
@@ -5503,7 +5933,14 @@ function openModal(evt, context = null) {
     document.getElementById('modal-desc').innerText = evt.description;
     document.getElementById('modal-wiki').href = evt.wikipedia;
     renderModalPortrait(evt);
-    renderModalBiographyButton(evt);
+    const fromGallery = !!(context && context.fromGallery);
+    renderModalBiographyButton(evt, fromGallery);
+    // La galerie réunit ses deux boutons sous un même filet (voir CSS
+    // .modal-content.from-gallery).
+    const modalContent = document.querySelector('#modal-details .modal-content');
+    modalContent.classList.toggle('from-gallery', fromGallery);
+    // Collection : un personnage pas encore rencontré garde son portrait en noir et blanc (voir js/gallery.js).
+    modalContent.classList.toggle('from-gallery-locked', fromGallery && !!context.locked);
 
     const themeRow = document.getElementById('modal-theme-row');
     const redrawBtn = document.getElementById('modal-redraw-btn');
@@ -5512,6 +5949,7 @@ function openModal(evt, context = null) {
         document.getElementById('modal-theme-btn').innerText = t('modal.play_theme_btn_named', { theme: context.theme.nom });
         document.getElementById('modal-theme-btn').onclick = () => {
             closeModal();
+            if (context.fromGallery) markGalleryLaunch();
             if (dailyChallengeMode || weeklyChallengeMode) stopTimer();
             favoritesMode = false;
             dailyChallengeMode = false;
@@ -5524,7 +5962,9 @@ function openModal(evt, context = null) {
             redrawBtn.classList.add('hidden');
         } else {
             redrawBtn.classList.remove('hidden');
-            redrawBtn.onclick = () => discoverRandomEvent();
+            // « Un autre événement » depuis un événement, « Un autre personnage » depuis un personnage.
+            redrawBtn.innerText = t(context.redrawLabel || 'modal.redraw_btn');
+            redrawBtn.onclick = () => (context.redraw || discoverRandomEvent)();
         }
     } else {
         themeRow.classList.add('hidden');

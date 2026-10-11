@@ -48,6 +48,9 @@ const GEO_ZOOM_MAX_COVERAGE = 0.92;
 
 // État de la partie en cours (mode 'carte' uniquement)
 let geoScopeLabel = '';
+// Le nœud de l'arbre d'où la partie est partie : « Rejouer » (js/app.js: replayCurrentGame) relance la
+// même zone, ce que le seul libellé ne permet pas.
+let geoLastNode = null;
 let geoReturnScreen = 'screen-themes';
 let geoSessionPool = [];   // [{ event, iso2, themeName }], un par round de la session
 let geoRoundIndex = 0;
@@ -265,8 +268,10 @@ function getCurrentVisibleScreenId() {
     return current ? current.id : 'screen-themes';
 }
 
-function startGeoModeFromNode(node, label) {
-    const fromScreen = getCurrentVisibleScreenId();
+// `returnScreen` (facultatif) : l'écran où ramènera la fin de partie. Au premier lancement c'est l'écran
+// affiché ; pour « Rejouer », qui part de l'écran de fin, c'est celui du lancement d'origine.
+function startGeoModeFromNode(node, label, returnScreen) {
+    const fromScreen = returnScreen || getCurrentVisibleScreenId();
     loadGeoAssets().then(ok => {
         if (!ok) {
             alert("Impossible de charger la carte du monde. Vérifiez votre connexion puis réessayez.");
@@ -284,6 +289,7 @@ function startGeoModeFromNode(node, label) {
         dailyChallengeMode = false;
         geoReturnScreen = fromScreen;
         geoScopeLabel = label;
+        geoLastNode = node;
 
         const shuffled = shuffleArray([...fullPool]);
         geoSessionPool = shuffled.slice(0, Math.min(GEO_SESSION_MAX_ROUNDS, shuffled.length));

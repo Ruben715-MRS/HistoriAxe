@@ -36,7 +36,9 @@
     "profile_btn_aria": "Profil et Trophées",
     "profile_btn_title": "Voir mon profil et mes trophées",
     "settings_btn_aria": "Réglages",
-    "streak_badge_title": "Série quotidienne : plus elle est longue, plus l'XP gagné est multiplié"
+    "streak_badge_title": "Série quotidienne : plus elle est longue, plus l'XP gagné est multiplié",
+    "discover_event": "Événement",
+    "discover_person": "Personnage"
   },
   "subcategories": {
     "choose_region": "Choisissez une région / sous-catégorie",
@@ -218,7 +220,8 @@
     "victory_ordre": "Bravo ! Tout remis dans l'ordre !",
     "victory_blitz": "Temps écoulé ! {right} bonnes réponses.",
     "victory_curseur": "Bravo ! L'œil juste à chaque fois !",
-    "victory_intrus": "Bravo ! Pas un intrus ne vous a échappé !"
+    "victory_intrus": "Bravo ! Pas un intrus ne vous a échappé !",
+    "victory_whois": "Bravo ! Pas un visage ne vous a échappé !"
   },
   "daily": {
     "title_win": "🌍 Défi du jour relevé !",
@@ -414,7 +417,11 @@
     "size_kb": "{val} Ko",
     "pack_full_suffix": "Intégral",
     "pack_demo_suffix": "Contenu limité",
-    "pack_demo_content": "{themes} thèmes • {events} événements"
+    "pack_demo_content": "{themes} thèmes • {events} événements",
+    "portraits_label": "Portraits de la galerie",
+    "portraits_bw": "Collection",
+    "portraits_color": "Toujours en couleur",
+    "portraits_hint": "En mode collection, un portrait reste en noir et blanc tant que vous n'avez pas rencontré le personnage en jeu."
   },
   "anecdote": {
     "did_you_know": "💡 Le Saviez-vous ?",
@@ -620,8 +627,9 @@
     "wiki_link": "Voir sur Wikipédia",
     "redraw_btn": "🔀 Un autre événement",
     "play_theme_btn": "Jouer sur ce thème",
-    "play_theme_btn_named": "Jouer sur « {theme} »",
-    "biography_btn": "Voir sa biographie"
+    "play_theme_btn_named": "Jouer sur « {theme} »",
+    "biography_btn": "Voir sa biographie",
+    "redraw_person_btn": "🔀 Un autre personnage"
   },
   "simultaneity": {
     "title": "Pendant ce temps, ailleurs…",
@@ -683,5 +691,63 @@
   },
   "home": {
     "start_aria": "Commencer"
+  },
+  "gallery": {
+    "title": "Galerie des portraits",
+    "launcher_sub": "{count} visages des Panthéons, à feuilleter",
+    "order_alpha": "Ordre alphabétique",
+    "order_famille": "Par nom de famille",
+    "order_chrono": "Ordre chronologique",
+    "order_alpha_short": "A → Z",
+    "order_famille_short": "Nom de famille",
+    "order_chrono_short": "Naissance",
+    "order_group": "Ordre d'affichage",
+    "count": "{count} portraits",
+    "count_filtered": "{count} portraits sur {total}",
+    "empty": "Aucun portrait pour l'instant.",
+    "no_result": "Aucun portrait ne correspond. Essayez un autre nom, ou effacez les filtres.",
+    "play_biography": "Jouer sur sa biographie",
+    "search_placeholder": "Rechercher un personnage…",
+    "filter_country": "Pays",
+    "filter_axis": "Domaine",
+    "filter_country_all": "Tous les pays",
+    "filter_axis_all": "Tous les domaines",
+    "filter_reset": "Tout effacer",
+    "nav_prev": "Portrait précédent",
+    "nav_next": "Portrait suivant",
+    "nav_position": "{n} sur {total}",
+    "count_filtered_one": "1 portrait sur {total}",
+    "collection_count": "{unlocked} / {total} portraits débloqués",
+    "collection_on_btn": "🎞️ Collectionner les portraits",
+    "collection_off_btn": "Tout voir en couleur",
+    "locked_aria": "pas encore rencontré en jeu",
+    "modal_locked": "🔒 Pas encore rencontré en jeu : jouez sur son panthéon pour le débloquer en couleur.",
+    "bio_aria": "biographie disponible"
+  },
+  "collection": {
+    "title": "Collectionner les portraits ?",
+    "intro": "Les portraits de la galerie peuvent se gagner au fil de vos parties : chacun reste en noir et blanc tant que vous n'avez pas rencontré le personnage en jeu, puis passe en couleur. Vous préférez simplement vous instruire, sans progression ni compétition ? Gardez tout en couleur.",
+    "bw_title": "🎞️ Débloquer mes portraits",
+    "bw_sub": "Noir et blanc jusqu'à la rencontre en jeu, avec un compteur de collection.",
+    "color_title": "🎨 Tout voir en couleur",
+    "color_sub": "Aucune progression : tous les portraits, tout de suite.",
+    "hint": "Ce choix se change à tout moment, dans la galerie ou dans les Réglages."
+  },
+  "whois": {
+    "title": "Qui est-ce ?",
+    "desc": "3 vies. Un portrait, quatre noms : retrouvez qui se cache derrière ce visage.",
+    "kicker": "Qui est-ce ?",
+    "portrait_alt": "Portrait d'une personnalité à identifier",
+    "not_enough": "Ce thème n'a pas assez de portraits pour ce mode.",
+    "reveal_right": "Bien vu !",
+    "reveal_wrong": "Raté, c'était…",
+    "continue": "Continuer ›",
+    "daily_title": "Portrait du jour",
+    "daily_sub_new": "Un visage à trouver chaque jour",
+    "daily_sub_right": "✔ Trouvé aujourd'hui",
+    "daily_sub_wrong": "Revoir la fiche du jour",
+    "daily_kicker": "Portrait du jour · Qui est-ce ?",
+    "daily_card": "Voir sa fiche complète",
+    "daily_done": "Retour aux défis"
   }
 }

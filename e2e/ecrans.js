@@ -16,6 +16,13 @@ async function attendreLePack(page) {
     );
 }
 
+// Le révélé d'un mode apparaît par un fondu : le mesurer en route, c'est mesurer des couleurs à moitié
+// transparentes (un « #dc9ea0 » là où le texte est rouge). On attend donc la fin des animations.
+async function revelationPosee(page) {
+    await page.waitForSelector('#whois-reveal:not(.hidden)');
+    await page.evaluate(() => Promise.all(document.getAnimations().map(a => a.finished.catch(() => null))));
+}
+
 // Parcourt une trentaine d'écrans et de modales, et appelle
 // `surChaqueEcran(etape)` quand chacun est affiché. `etape` est un libellé
 // lisible, pour que l'échec d'un test dise OÙ regarder.
@@ -32,6 +39,10 @@ async function parcourirLesEcrans(page, surChaqueEcran) {
     await surChaqueEcran('accueil');
     await page.evaluate(() => showScreen('screen-categories')); await surChaqueEcran('catégories');
     await page.locator('#btn-daily').click(); await surChaqueEcran('catégories + défis');
+    await page.locator('#btn-challenge-portrait').click(); await surChaqueEcran('portrait du jour');
+    await page.locator('#whois-options .whois-option').first().click();
+    await revelationPosee(page); await surChaqueEcran('portrait du jour : révélé');
+    await page.locator('#whois-continue').click();
     await page.locator('#theme-search-input').fill('rome');
     await page.waitForTimeout(400); await surChaqueEcran('résultats de recherche');
     await page.evaluate(() => clearThemeSearch());
@@ -39,6 +50,21 @@ async function parcourirLesEcrans(page, surChaqueEcran) {
     await page.evaluate(() => switchRevisionHubTab('progress'));
     await page.waitForTimeout(300); await surChaqueEcran('progression');
     await page.evaluate(() => { const ci = bdd.findIndex(c => c.subcategories); selectedCategoryIndex = ci; selectedSubcategoryIndex = null; showScreen('screen-subcategories'); }); await surChaqueEcran('sous-catégories');
+    // Personnages illustres : le bouton de la galerie et ses trois ordres, la galerie, une fiche ouverte de là.
+    await page.evaluate(() => { selectedCategoryIndex = bdd.findIndex(c => c.nom === 'Personnages illustres'); selectedSubcategoryIndex = []; showScreen('screen-subcategories'); }); await surChaqueEcran('personnages illustres');
+    await page.evaluate(() => document.getElementById('modal-collection').classList.remove('hidden')); await surChaqueEcran('choix de la collection de portraits');
+    await page.locator('#modal-collection .close-btn').click();
+    await page.locator('#btn-gallery').click(); await surChaqueEcran('galerie : choix de l’ordre');
+    await page.locator('#gallery-order-picker [data-order="famille"]').click();
+    await page.waitForSelector('#gallery-container .gallery-card'); await surChaqueEcran('galerie des portraits');
+    await page.locator('#gallery-container .gallery-card').first().click(); await surChaqueEcran('fiche ouverte depuis la galerie');
+    await page.locator('#modal-details .close-btn').click();
+    // Mode collection : cartes en noir et blanc, compteur, fiche d'un personnage pas encore rencontré.
+    await page.evaluate(() => { appSettings.portraitCollection = 'bw'; settingsSave(appSettings); initGallery(); });
+    await surChaqueEcran('galerie en mode collection');
+    await page.locator('#gallery-container .gallery-card').first().click(); await surChaqueEcran('fiche d’un portrait à débloquer');
+    await page.locator('#modal-details .close-btn').click();
+    await page.evaluate(() => { appSettings.portraitCollection = 'color'; settingsSave(appSettings); });
     await page.evaluate(() => { const ci = bdd.findIndex(c => (c.themes || []).length); selectedCategoryIndex = ci; selectedSubcategoryIndex = null; showScreen('screen-themes'); }); await surChaqueEcran('thèmes');
 
     await openThemeCard(page, 'thm_aut'); await surChaqueEcran('axes');
@@ -53,6 +79,15 @@ async function parcourirLesEcrans(page, surChaqueEcran) {
         await page.locator(carte).click(); await surChaqueEcran(etape);
         await page.evaluate(() => { currentMode = 'classic'; showScreen('screen-modes'); });
     }
+    // Qui est-ce ? : un panthéon, son mode, la question, puis la fiche révélée.
+    await page.evaluate(() => { const t = getAllThemesWithPath().find(x => x.theme.id === 'pan_fr'); openThemeAt(t.ci, t.si, t.ti); });
+    await page.waitForSelector('#screen-axes:not(.hidden), #screen-modes:not(.hidden)');
+    if (await page.locator('#screen-axes').isVisible()) await page.locator('#axes-continue-btn').click();
+    await surChaqueEcran('modes d’un panthéon');
+    await page.locator('#mode-card-whois').click(); await surChaqueEcran('qui est-ce');
+    await page.locator('#whois-options .whois-option').first().click();
+    await revelationPosee(page); await surChaqueEcran('qui est-ce : révélé');
+    await page.evaluate(() => { currentMode = 'classic'; showScreen('screen-modes'); });
     await page.evaluate(() => showScreen('screen-end')); await surChaqueEcran('fin de partie');
     await page.evaluate(() => { openProfileModal(); }); await surChaqueEcran('profil');
     await page.evaluate(() => closeProfileModal());

@@ -34,7 +34,9 @@
     "profile_btn_aria": "プロフィールとトロフィー",
     "profile_btn_title": "プロフィールとトロフィーを見る",
     "settings_btn_aria": "設定",
-    "streak_badge_title": "連続記録:続くほど獲得XPの倍率が上がります"
+    "streak_badge_title": "連続記録:続くほど獲得XPの倍率が上がります",
+    "discover_event": "出来事",
+    "discover_person": "人物"
   },
   "subcategories": {
     "choose_region": "地域・サブカテゴリーを選択",
@@ -211,7 +213,8 @@
     "victory_ordre": "お見事!すべて正しい順に並びました!",
     "victory_blitz": "時間切れ!正解{right}問。",
     "victory_curseur": "お見事!毎回するどい勘でした!",
-    "victory_intrus": "お見事!ひとつも見逃しませんでした!"
+    "victory_intrus": "お見事!ひとつも見逃しませんでした!",
+    "victory_whois": "お見事！見逃した顔はひとつもありません！"
   },
   "daily": {
     "title_win": "🌍 デイリーチャレンジ達成！",
@@ -384,7 +387,11 @@
     "size_kb": "{val} KB",
     "pack_full_suffix": "フル版",
     "pack_demo_suffix": "限定コンテンツ",
-    "pack_demo_content": "{themes}テーマ • {events}件のイベント"
+    "pack_demo_content": "{themes}テーマ • {events}件のイベント",
+    "portraits_label": "ギャラリーの肖像",
+    "portraits_bw": "コレクション",
+    "portraits_color": "常にカラー",
+    "portraits_hint": "コレクションモードでは、ゲームで人物に出会うまで肖像は白黒のままです。"
   },
   "anecdote": {
     "did_you_know": "💡 ご存知でしたか？",
@@ -591,7 +598,8 @@
     "redraw_btn": "🔀 別の出来事",
     "play_theme_btn": "このテーマをプレイ",
     "play_theme_btn_named": "「{theme}」をプレイ",
-    "biography_btn": "伝記を見る"
+    "biography_btn": "伝記を見る",
+    "redraw_person_btn": "🔀 別の人物"
   },
   "simultaneity": {
     "title": "その頃、世界では…",
@@ -653,5 +661,63 @@
   },
   "home": {
     "start_aria": "はじめる"
+  },
+  "gallery": {
+    "title": "肖像ギャラリー",
+    "launcher_sub": "殿堂の{count}人の肖像を眺める",
+    "order_alpha": "名前順",
+    "order_famille": "姓の順",
+    "order_chrono": "年代順",
+    "order_alpha_short": "名前順",
+    "order_famille_short": "姓の順",
+    "order_chrono_short": "生年",
+    "order_group": "表示順",
+    "count": "{count}枚の肖像",
+    "count_filtered": "{total}枚中{count}枚の肖像",
+    "empty": "肖像はまだありません。",
+    "no_result": "該当する肖像がありません。別の名前を試すか、絞り込みを解除してください。",
+    "play_biography": "伝記でプレイ",
+    "search_placeholder": "人物を検索…",
+    "filter_country": "国",
+    "filter_axis": "分野",
+    "filter_country_all": "すべての国",
+    "filter_axis_all": "すべての分野",
+    "filter_reset": "すべて解除",
+    "nav_prev": "前の肖像",
+    "nav_next": "次の肖像",
+    "nav_position": "{total}枚中{n}枚目",
+    "count_filtered_one": "{total}枚中1枚の肖像",
+    "collection_count": "{total}枚中{unlocked}枚の肖像を解放",
+    "collection_on_btn": "🎞️ 肖像を集める",
+    "collection_off_btn": "すべてカラーで見る",
+    "locked_aria": "ゲームでまだ出会っていません",
+    "modal_locked": "🔒 ゲームでまだ出会っていません：その殿堂でプレイしてカラーを解放しましょう。",
+    "bio_aria": "伝記あり"
+  },
+  "collection": {
+    "title": "肖像を集めますか？",
+    "intro": "ギャラリーの肖像は、プレイを重ねるうちに手に入れることができます。ゲームで人物に出会うまで白黒のままで、出会うとカラーになります。進行や競争なしに、ただ学びたい場合は、すべてカラーのままにしてください。",
+    "bw_title": "🎞️ 肖像を解放する",
+    "bw_sub": "ゲームで出会うまで白黒。コレクションカウンター付き。",
+    "color_title": "🎨 すべてカラーで見る",
+    "color_sub": "進行なし：すべての肖像をすぐに表示。",
+    "hint": "この選択はいつでも、ギャラリーまたは設定から変更できます。"
+  },
+  "whois": {
+    "title": "だれでしょう？",
+    "desc": "ライフ3つ。肖像1枚、名前4つ：この顔がだれなのかを当てましょう。",
+    "kicker": "だれでしょう？",
+    "portrait_alt": "見分ける人物の肖像",
+    "not_enough": "このテーマには、このモードに十分な肖像がありません。",
+    "reveal_right": "正解！",
+    "reveal_wrong": "残念、正解は…",
+    "continue": "続ける ›",
+    "daily_title": "今日の肖像",
+    "daily_sub_new": "毎日、見つける顔",
+    "daily_sub_right": "✔ 今日は正解",
+    "daily_sub_wrong": "今日の人物をもう一度見る",
+    "daily_kicker": "今日の肖像・だれでしょう？",
+    "daily_card": "詳しい情報を見る",
+    "daily_done": "チャレンジに戻る"
   }
 }

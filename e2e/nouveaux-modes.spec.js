@@ -216,3 +216,85 @@ test('désigner l’intrus le marque et déplie le révélé daté', async ({ pa
     await expect(reveal.locator('.simul-reveal-row.is-intrus')).toHaveCount(1);
     expect(await page.evaluate(() => lives)).toBe(3);
 });
+
+// --- REJOUER --------------------------------------------------------------
+//
+// « Rejouer », sur l'écran de fin, relance LE MODE QU'ON VIENT DE JOUER. Pour ces modes il relançait
+// la frise classique (replayCurrentGame ne les nommait pas, et startActualGame ouvre l'écran de la
+// frise quel que soit currentMode) : on appuyait sur « Rejouer » après un Intrus et l'on se retrouvait
+// à placer des cartes sur une frise.
+
+// Le récap hebdomadaire s'ouvre tout seul 1,2 s après le chargement, dès que l'historique n'est plus vide :
+// ici, la fin de partie en écrit un, et un mode lent à démarrer (la simultanéité) la fait passer avant le
+// minuteur — la fenêtre intercepte alors le clic sur « Rejouer ». On le déclare déjà montré cette semaine.
+async function sansRecap(page) {
+    await page.evaluate(() => markRecapShownThisWeek());
+}
+
+const MODES_REJOUABLES = [
+    ['L’intrus', '#mode-card-intrus', 'intrus', 'screen-intrus'],
+    ['Remise en ordre', '#mode-card-ordre', 'ordre', 'screen-ordre'],
+    ['Le curseur', '#mode-card-curseur', 'curseur', 'screen-curseur'],
+    ['Blitz', '#mode-card-blitz', 'blitz', 'screen-blitz'],
+    ['Pendant ce temps, ailleurs…', '#mode-card-simultaneity', 'simultaneity', 'screen-simultaneity'],
+];
+
+for (const [nom, carte, mode, ecran] of MODES_REJOUABLES) {
+    test(`« Rejouer » relance ${nom}, et non la frise`, async ({ page }) => {
+        await sansRecap(page);
+        await openThemeModes(page, THEME);
+        await page.locator(carte).click();
+        await expect(page.locator(`#${ecran}`)).toBeVisible();
+        // Fin de partie, comme après trois erreurs (le Blitz arrête alors sa propre horloge).
+        await page.evaluate(() => endGame(false));
+        await expect(page.locator('#screen-end')).toBeVisible();
+
+        await page.locator('#screen-end button', { hasText: 'Rejouer' }).click();
+        await expect(page.locator(`#${ecran}`)).toBeVisible();
+        await expect(page.locator('#screen-game')).toBeHidden();
+        expect(await page.evaluate(() => currentMode)).toBe(mode);
+        // Une partie neuve : le score est reparti de zéro, et les trois vies sont revenues — sauf au
+        // Blitz, qui n'en a pas : c'est l'horloge qui compte.
+        expect(await page.evaluate(() => score)).toBe(0);
+        if (mode !== 'blitz') expect(await page.evaluate(() => lives)).toBe(3);
+    });
+}
+
+test('« Rejouer » relance le Défi de simultanéité, pas une partie ordinaire', async ({ page }) => {
+    await sansRecap(page);
+    await openThemeModes(page, THEME);
+    // Un historique suffisant pour ouvrir le Défi : ses ancres viennent de ce qu'on a déjà rencontré.
+    await page.evaluate(() => {
+        const srs = {};
+        getAllEventsWithLocation().slice(0, 60).forEach(i => { srs[i.event.id] = { box: 2, lastReviewed: Date.now(), failCount: 0, successCount: 1 }; });
+        srsSave(srs);
+    });
+    await page.evaluate(() => startSimultaneityChallenge());
+    await expect(page.locator('#screen-simultaneity')).toBeVisible();
+    expect(await page.evaluate(() => isSimultaneityChallenge())).toBe(true);
+    await page.evaluate(() => endGame(false));
+    await page.locator('#screen-end button', { hasText: 'Rejouer' }).click();
+    await expect(page.locator('#screen-simultaneity')).toBeVisible();
+    expect(await page.evaluate(() => isSimultaneityChallenge())).toBe(true);
+});
+
+test('« Rejouer » relance le Mode Carte sur la même zone, et son retour reste celui d’origine', async ({ page }) => {
+    await sansRecap(page);
+    await openThemeModes(page, THEME);
+    await page.evaluate(() => loadGeoAssets());
+    await page.waitForFunction(() => typeof GEO_PINS !== 'undefined' && GEO_PINS && GEO_THEME_COUNTRY, null, { timeout: 20000 });
+    const zone = await page.evaluate(() => {
+        showScreen('screen-categories');
+        const ci = bdd.findIndex(c => c.nom && c.nom.indexOf('nationales') >= 0);
+        startGeoModeFromNode(bdd[ci], bdd[ci].nom);
+        return bdd[ci].nom;
+    });
+    await expect(page.locator('#screen-carte')).toBeVisible({ timeout: 10000 });
+    await page.evaluate(() => endGame(false));
+    await page.locator('#screen-end button', { hasText: 'Rejouer' }).click();
+    await expect(page.locator('#screen-carte')).toBeVisible({ timeout: 10000 });
+    await expect(page.locator('#geo-scope-label')).toHaveText(zone);
+    expect(await page.evaluate(() => currentMode)).toBe('carte');
+    // Le retour est celui du premier lancement (les catégories), non l'écran de fin d'où l'on a rejoué.
+    expect(await page.evaluate(() => geoReturnScreen)).toBe('screen-categories');
+});

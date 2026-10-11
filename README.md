@@ -413,6 +413,69 @@ Ces modes écartent donc les dates au-delà de ±10000 (même seuil que
 thème ne descend sous son minimum jouable** en les retirant. Ils restent
 parfaitement jouables sur la frise et dans tous les autres modes.
 
+## « Qui est-ce ? » et le portrait du jour
+
+Les portraits des panthéons permettent un mode que rien d'autre dans la base n'autorise :
+mettre un nom sur un visage. Un portrait, quatre noms, trois vies, dix portraits
+(`js/gameModes.js: buildWhoQuestions`, comme les quatre modes ci-dessus : aucune donnée à
+écrire). La carte n'apparaît que pour un thème dont au moins huit figures ont un portrait —
+un mode sans rien à montrer ne se propose pas.
+
+**Des mauvaises réponses qui ne se devinent pas.** Elles sont tirées du même thème que la
+bonne (tout le thème, et non les seuls vingt événements de la manche), avec trois règles :
+le même domaine d'abord (un chanteur parmi des chanteurs : on ne se trompe pas sur le
+métier) ; parmi les figures les plus proches en date, pour qu'un portrait de la Renaissance
+ne côtoie pas deux Romains dont le costume suffirait à le désigner ; et jamais deux noms de
+famille identiques dans une question — Jacob et Wilhelm Grimm, ou Louis XIV et Louis XVI,
+rendraient la réponse indécidable au visage.
+
+**Une image qui donne la réponse.** Certains portraits portent le nom écrit dans l'image :
+une inscription peinte (« IOAN PICVS e MIRANDVLA »), un badge de combinaison, une légende
+gravée. `portrait.nomVisible` (dans `scripts/pantheon/*.json`, reporté sur `image.nomVisible`)
+les écarte du mode et du portrait du jour ; la galerie les garde, puisqu'elle montre les
+visages avec leurs noms. Il y en a **19** aujourd'hui, repérés par reconnaissance de texte sur
+les 838 images puis vérifiés à l'œil (le texte lu à 320 × 400 est celui que le joueur peut
+lire aussi) : « Karolus magnus imperator » sur le Charlemagne de Dürer, « VERCINGETORIX » sur
+la monnaie, « Doctor William Harvey », « LE SEIGNEUR DE MONTAIGNE »… Un nouveau portrait se
+contrôle de la même façon, et la liste n'est pas une garantie : c'est un drapeau d'une ligne à poser
+dès qu'on en voit un.
+
+**Le révélé.** La légende de l'image, qui nomme la personne, n'apparaît qu'à la réponse ; le
+crédit (auteur, licence, Commons) reste sous le portrait pendant la question, condition des
+licences CC BY et CC BY-SA (`fillPortraitCredit`, partagé avec la fiche). Il porte la fiche de
+la personne — verdict, nom, année, légende, description — et **ne se referme pas tout seul** :
+on ne lit pas trois phrases en deux secondes. Un vrai bouton « Continuer » prend le focus,
+Entrée suffit. Rencontrer une figure ici la débloque dans la collection, comme dans tout autre
+mode.
+
+### « Découvrir » : un événement ou un personnage
+
+Le bouton 🎲 déplie deux choix sous la grille, comme « Défis » (un seul volet ouvert à la fois) :
+**Événement**, le tirage d'avant, et **Personnage**, qui pioche une figure de la galerie des
+portraits (`discoverRandomPortrait`) et ouvre sa fiche avec les mêmes accès au jeu — sa biographie
+quand elle existe, son panthéon — et un bouton « Un autre personnage » qui repioche, jamais deux fois
+la même de suite. La fiche n'est pas celle de la galerie : ni barre de passage entre portraits, ni
+noir et blanc de la collection, puisqu'on découvre. Sans aucun portrait dans la base (pack sans
+panthéons), le bouton garde son comportement d'origine et pioche un événement directement.
+
+### Le portrait du jour
+
+Un « Qui est-ce ? » d'**une seule question**, la même pour tous les joueurs d'un jour : un
+quatrième bouton sous « Défis », à côté du Défi du jour. Il est **non classé** — ni points,
+ni vies, ni série, ni écran de fin — et c'est structurel : le Défi du jour est classé, son
+tirage et son score sont recalculés par le serveur avec le même moteur
+(`js/dailyEngine.js`), et y mêler une question de portrait en fausserait l'équité. Le
+portrait du jour a donc **sa propre graine** (`historiaxe_portrait_` + la date du Défi, là où le
+Défi classé utilise `historiaxe_daily_`) ; un test vérifie que `generateDailyEvents()` ne
+bouge pas. Les candidats sont triés par identifiant avant le tirage : le résultat ne dépend
+ni de l'ordre des événements ni de l'appareil.
+
+Une seule réponse par jour : répondu, il se rouvre tel qu'on l'a laissé (options colorées,
+fiche affichée), et le bouton dit où l'on en est (« ✔ Trouvé aujourd'hui », « Revoir la fiche
+du jour »). La réponse est retenue sous `historiaxe_portrait_day_v1`, avec sa date, hors de
+`SYNC_KEYS` : une habitude du jour, pas une progression. Quitter sans répondre ne coûte rien
+et n'enregistre rien. La fiche complète, avec ses accès au jeu, est à un bouton.
+
 ## « Pendant ce temps, ailleurs… » (simultanéité)
 
 Tous les autres modes piochent dans **un seul thème**. On peut donc
@@ -555,6 +618,78 @@ Chaque événement est **la naissance d'un personnage**, daté de son année de
 naissance, titré « Naissance de X ». Le titre dit ce que la date représente,
 ce qu'un simple « Victor Hugo — 1802 » ne ferait pas hors du thème (Défi du
 jour, Révision, Blitz).
+
+### Galerie des portraits
+
+Sous les tuiles « Biographies » et « Panthéons », un bouton doré pleine largeur,
+« Galerie des portraits », qui n'est ni une sous-catégorie ni un mode de jeu
+(`js/gallery.js`). Il déplie trois choix — « Ordre alphabétique », « Par nom de
+famille » et « Ordre chronologique » — qui ouvrent un trombinoscope de **toutes
+les figures des panthéons qui ont un portrait** (`screen-gallery`) : une carte par
+personne (portrait, nom, drapeau, année de naissance), rangées par initiale ou par
+siècle de naissance.
+
+- **Trois ordres.** L'alphabétique suit le nom tel qu'on l'écrit (Victor Hugo à V,
+  « le Caravage » à C) ; « par nom de famille » suit le champ `classement` des
+  données (Hugo à H, de Gaulle à G, Louis XIV à L) ; le chronologique regroupe par
+  siècle de naissance. À nom égal, la date de naissance départage. Une bascule en
+  tête d'écran change d'ordre sans revenir en arrière.
+- **Recherche et filtres.** Une recherche par nom (sans accent, chaque mot dans
+  n'importe quel ordre : « hugo victor » trouve Victor Hugo), et deux listes — pays
+  et domaine — qui annoncent leur effectif (« France (68) »). « Tout effacer » les
+  remet à zéro, et le décompte devient « 12 portraits sur 838 ».
+- **La fiche.** Un visage ouvre la fiche de sa naissance (`openModal`), d'où l'on
+  passe au portrait voisin **dans l'ordre affiché** — boutons, flèches du clavier ou
+  glissement franchement horizontal, arrêt aux extrémités — et qui porte deux accès
+  au jeu : « Jouer sur sa biographie » quand le personnage en a une, et « Jouer sur
+  « Grandes figures de… » » pour son panthéon.
+- **Le retour.** Une partie lancée depuis la fiche ramène à la galerie, à la même
+  hauteur, avec la même recherche, le même ordre et les mêmes filtres. Le périmètre
+  de la galerie est retenu à part (`galleryScope`) : lancer une partie (`openThemeAt`)
+  écrase la sélection de catégorie, et la galerie, sans ce repère, s'affichait vide
+  au retour. Le retour ne survit pas à un détour par l'arbre des catégories
+  (`showScreen` l'efface).
+- **Une pastille 📖** dans l'angle de la photo signale une biographie disponible. Posée
+  par-dessus l'image, elle n'ajoute rien à la carte : avec ou sans, le gabarit est le
+  même.
+
+Rien n'y est figé : la galerie se lit dans `bdd` à l'affichage. Un panthéon ajouté y
+entre de lui-même, et un pack de langue sans « Panthéons » n'affiche pas le bouton. Le
+nom vient du titre (« Naissance de X » → « X » ; « Naissance du Caravage » → « le
+Caravage »), le drapeau du champ `pays` ou, à défaut, du code du thème (`pan_fr`).
+
+### Le nom de classement
+
+Le champ `classement` de chaque personnage (« Hugo, Victor », « Gaulle, Charles de »,
+« Louis XIV ») sert à trier « par nom de famille » et à choisir l'initiale d'un
+intertitre ; il ne s'affiche jamais. Aucune règle ne devine un nom de famille — « Léonard de
+Vinci », « Gabriel García Márquez », « Abd el-Kader », « Louis XIV » — d'où
+`scripts/pantheon_classement.py` : une règle générale (« Prénom Nom » → « Nom, Prénom »,
+particules minuscules à la fin) et une table d'exceptions relue nom par nom (souverains
+et saints rangés par prénom, noms arabes à article, surnoms, doubles noms espagnols).
+`build_pantheon.py` exige le champ et refuse un classement qui contient un mot absent du
+nom, pour qu'une faute de frappe ne range pas un personnage sous une mauvaise initiale.
+Un nouveau panthéon passe d'abord par `python3 scripts/pantheon_classement.py --write` ;
+ce qui sort étonnant s'ajoute aux exceptions.
+
+### Collection de portraits
+
+Les portraits peuvent se **débloquer** : en noir et blanc tant que le personnage n'a pas
+été rencontré en jeu, puis en couleur. « Rencontré » veut dire qu'une fiche existe pour son
+événement dans le suivi de révision (`srsLoad`) — quel que soit le mode, réponse juste ou
+ratée, la même définition que pour les événements « rencontrés » du Défi de simultanéité.
+Lire une fiche dans la galerie ne débloque rien. Un compteur « 30 / 838 portraits
+débloqués » et sa barre ouvrent la galerie, et le bouton de « Personnages illustres »
+annonce l'avancement.
+
+Rien de cela n'est imposé : certains joueurs veulent s'instruire sans progression ni
+compétition. Le réglage `portraitCollection` (`'bw'`, `'color'`, ou `null` tant que la question
+n'a pas été posée ; propre à l'appareil, comme l'apparence) se décide à la première ouverture
+de « Personnages illustres », par une fenêtre qui explique et propose « Débloquer mes
+portraits » ou « Tout voir en couleur ». La croix et Échap valent « en couleur », le fond ne
+ferme pas la fenêtre, et la question n'est jamais reposée. Le choix se change à tout moment,
+depuis la galerie ou depuis les Réglages. Les parcours de bout en bout partent d'un choix
+déjà fait (`e2e/fixtures.js`), sans quoi la fenêtre intercepterait leurs clics.
 
 ### Pays et blocs : « un personnage ne figure que dans un seul thème »
 
@@ -1265,8 +1400,8 @@ demandé à Commons en 330 px de large (`largeur`).
 vérité** du thème : `code` (le nom du fichier), `nom` (le nom de rangement,
 « France », « Amérique hispanique » — les panthéons se rangent par lui, pas par
 le nom du thème, que « de », « des » et « du » fausseraient), `theme`
-(`id`, `nom`, `difficulte`, `motsCles`), `axes`, `personnages`, et pour un bloc
-la liste `pays`. `python3 scripts/build_pantheon.py fr` le valide puis le
+(`id`, `nom`, `difficulte`, `motsCles`), `axes`, `personnages` (dont leur `classement`,
+voir plus haut), et pour un bloc la liste `pays`. `python3 scripts/build_pantheon.py fr` le valide puis le
 reporte dans `data/fr.json` (qui se réécrit à l'octet près : le diff ne montre
 que le thème). `--check` valide sans écrire, `--verify` vérifie que
 `data/fr.json` est à jour — et `tests/pantheon.test.js` le lance, si bien que

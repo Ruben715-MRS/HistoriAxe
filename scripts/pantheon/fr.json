@@ -19,6 +19,7 @@
     {
       "slug": "clovis",
       "nom": "Clovis Ier",
+      "classement": "Clovis Ier",
       "titre": "Naissance de Clovis",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 466,
@@ -41,6 +42,7 @@
     {
       "slug": "charlemagne",
       "nom": "Charlemagne",
+      "classement": "Charlemagne",
       "titre": "Naissance de Charlemagne",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 747,
@@ -52,12 +54,14 @@
         "fichier": "Charlemagne-by-Durer.jpg",
         "licence": "Domaine public",
         "auteur": "Albrecht Dürer",
-        "legende": "Charlemagne, portrait imaginaire peint par Albrecht Dürer en 1512, sept siècles après sa mort"
+        "legende": "Charlemagne, portrait imaginaire peint par Albrecht Dürer en 1512, sept siècles après sa mort",
+        "nomVisible": true
       }
     },
     {
       "slug": "huguescapet",
       "nom": "Hugues Capet",
+      "classement": "Hugues Capet",
       "titre": "Naissance d'Hugues Capet",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 940,
@@ -73,6 +77,7 @@
     {
       "slug": "louis9",
       "nom": "Saint Louis",
+      "classement": "Louis, saint",
       "titre": "Naissance de Saint Louis",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1214,
@@ -89,6 +94,7 @@
     {
       "slug": "francois1",
       "nom": "François Ier",
+      "classement": "François Ier",
       "titre": "Naissance de François Ier",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1494,
@@ -105,6 +111,7 @@
     {
       "slug": "henri4",
       "nom": "Henri IV",
+      "classement": "Henri IV",
       "titre": "Naissance d'Henri IV",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1553,
@@ -120,6 +127,7 @@
     {
       "slug": "richelieu",
       "nom": "Le cardinal de Richelieu",
+      "classement": "Richelieu, cardinal de",
       "titre": "Naissance de Richelieu",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1585,
@@ -141,6 +149,7 @@
     {
       "slug": "louis14",
       "nom": "Louis XIV",
+      "classement": "Louis XIV",
       "titre": "Naissance de Louis XIV",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1638,
@@ -164,6 +173,7 @@
     {
       "slug": "napoleon",
       "nom": "Napoléon Bonaparte",
+      "classement": "Bonaparte, Napoléon",
       "titre": "Naissance de Napoléon Bonaparte",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1769,
@@ -187,6 +197,7 @@
     {
       "slug": "ferry",
       "nom": "Jules Ferry",
+      "classement": "Ferry, Jules",
       "titre": "Naissance de Jules Ferry",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1832,
@@ -202,6 +213,7 @@
     {
       "slug": "clemenceau",
       "nom": "Georges Clemenceau",
+      "classement": "Clemenceau, Georges",
       "titre": "Naissance de Georges Clemenceau",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1841,
@@ -217,6 +229,7 @@
     {
       "slug": "degaulle",
       "nom": "Charles de Gaulle",
+      "classement": "Gaulle, Charles de",
       "titre": "Naissance de Charles de Gaulle",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1890,
@@ -234,6 +247,7 @@
     {
       "slug": "vercingetorix",
       "nom": "Vercingétorix",
+      "classement": "Vercingétorix",
       "titre": "Naissance de Vercingétorix",
       "axe": "Guerres et résistances",
       "naissance": -82,
@@ -245,12 +259,14 @@
         "fichier": "Vercingétorix_statère_Gallica_avers.jpg",
         "licence": "Domaine public",
         "auteur": "Monnaie arverne (BnF)",
-        "legende": "Vercingétorix : statère d'électrum frappé à son nom au Ier siècle av. J.-C. ; la tête stylisée n'est pas un portrait"
+        "legende": "Vercingétorix : statère d'électrum frappé à son nom au Ier siècle av. J.-C. ; la tête stylisée n'est pas un portrait",
+        "nomVisible": true
       }
     },
     {
       "slug": "jeannedarc",
       "nom": "Jeanne d'Arc",
+      "classement": "Jeanne d'Arc",
       "titre": "Naissance de Jeanne d'Arc",
       "axe": "Guerres et résistances",
       "naissance": 1412,
@@ -268,6 +284,7 @@
     {
       "slug": "vauban",
       "nom": "Vauban",
+      "classement": "Vauban",
       "titre": "Naissance de Vauban",
       "axe": "Guerres et résistances",
       "naissance": 1633,
@@ -283,6 +300,7 @@
     {
       "slug": "olympe",
       "nom": "Olympe de Gouges",
+      "classement": "Gouges, Olympe de",
       "titre": "Naissance d'Olympe de Gouges",
       "axe": "Guerres et résistances",
       "naissance": 1748,
@@ -299,6 +317,7 @@
     {
       "slug": "lafayette",
       "nom": "La Fayette",
+      "classement": "La Fayette",
       "titre": "Naissance de La Fayette",
       "axe": "Guerres et résistances",
       "naissance": 1757,
@@ -314,6 +333,7 @@
     {
       "slug": "foch",
       "nom": "Ferdinand Foch",
+      "classement": "Foch, Ferdinand",
       "titre": "Naissance de Ferdinand Foch",
       "axe": "Guerres et résistances",
       "naissance": 1851,
@@ -335,6 +355,7 @@
     {
       "slug": "moulin",
       "nom": "Jean Moulin",
+      "classement": "Moulin, Jean",
       "titre": "Naissance de Jean Moulin",
       "axe": "Guerres et résistances",
       "naissance": 1899,
@@ -352,6 +373,7 @@
     {
       "slug": "veil",
       "nom": "Simone Veil",
+      "classement": "Veil, Simone",
       "titre": "Naissance de Simone Veil",
       "axe": "Guerres et résistances",
       "naissance": 1927,
@@ -368,6 +390,7 @@
     {
       "slug": "montaigne",
       "nom": "Michel de Montaigne",
+      "classement": "Montaigne, Michel de",
       "titre": "Naissance de Michel de Montaigne",
       "axe": "Littérature et pensée",
       "naissance": 1533,
@@ -378,12 +401,14 @@
         "fichier": "Montaigne-Dumonstier.jpg",
         "licence": "Domaine public",
         "auteur": "Anonyme",
-        "legende": "Michel de Montaigne, portrait attribué à Dumonstier (vers 1578)"
+        "legende": "Michel de Montaigne, portrait attribué à Dumonstier (vers 1578)",
+        "nomVisible": true
       }
     },
     {
       "slug": "descartes",
       "nom": "René Descartes",
+      "classement": "Descartes, René",
       "titre": "Naissance de René Descartes",
       "axe": "Littérature et pensée",
       "naissance": 1596,
@@ -400,6 +425,7 @@
     {
       "slug": "lafontaine",
       "nom": "Jean de La Fontaine",
+      "classement": "La Fontaine, Jean de",
       "titre": "Naissance de Jean de La Fontaine",
       "axe": "Littérature et pensée",
       "naissance": 1621,
@@ -421,6 +447,7 @@
     {
       "slug": "moliere",
       "nom": "Molière",
+      "classement": "Molière",
       "titre": "Naissance de Molière",
       "axe": "Littérature et pensée",
       "naissance": 1622,
@@ -438,6 +465,7 @@
     {
       "slug": "voltaire",
       "nom": "Voltaire",
+      "classement": "Voltaire",
       "titre": "Naissance de Voltaire",
       "axe": "Littérature et pensée",
       "naissance": 1694,
@@ -455,6 +483,7 @@
     {
       "slug": "rousseau",
       "nom": "Jean-Jacques Rousseau",
+      "classement": "Rousseau, Jean-Jacques",
       "titre": "Naissance de Jean-Jacques Rousseau",
       "axe": "Littérature et pensée",
       "naissance": 1712,
@@ -472,6 +501,7 @@
     {
       "slug": "hugo",
       "nom": "Victor Hugo",
+      "classement": "Hugo, Victor",
       "titre": "Naissance de Victor Hugo",
       "axe": "Littérature et pensée",
       "naissance": 1802,
@@ -489,6 +519,7 @@
     {
       "slug": "sand",
       "nom": "George Sand",
+      "classement": "Sand, George",
       "titre": "Naissance de George Sand",
       "axe": "Littérature et pensée",
       "naissance": 1804,
@@ -511,6 +542,7 @@
     {
       "slug": "baudelaire",
       "nom": "Charles Baudelaire",
+      "classement": "Baudelaire, Charles",
       "titre": "Naissance de Charles Baudelaire",
       "axe": "Littérature et pensée",
       "naissance": 1821,
@@ -526,6 +558,7 @@
     {
       "slug": "zola",
       "nom": "Émile Zola",
+      "classement": "Zola, Émile",
       "titre": "Naissance d'Émile Zola",
       "axe": "Littérature et pensée",
       "naissance": 1840,
@@ -547,6 +580,7 @@
     {
       "slug": "verne",
       "nom": "Jules Verne",
+      "classement": "Verne, Jules",
       "titre": "Naissance de Jules Verne",
       "axe": "Littérature et pensée",
       "naissance": 1828,
@@ -562,6 +596,7 @@
     {
       "slug": "proust",
       "nom": "Marcel Proust",
+      "classement": "Proust, Marcel",
       "titre": "Naissance de Marcel Proust",
       "axe": "Littérature et pensée",
       "naissance": 1871,
@@ -584,6 +619,7 @@
     {
       "slug": "exupery",
       "nom": "Antoine de Saint-Exupéry",
+      "classement": "Saint-Exupéry, Antoine de",
       "titre": "Naissance d'Antoine de Saint-Exupéry",
       "axe": "Littérature et pensée",
       "naissance": 1900,
@@ -599,6 +635,7 @@
     {
       "slug": "camus",
       "nom": "Albert Camus",
+      "classement": "Camus, Albert",
       "titre": "Naissance d'Albert Camus",
       "axe": "Littérature et pensée",
       "naissance": 1913,
@@ -615,6 +652,7 @@
     {
       "slug": "beauvoir",
       "nom": "Simone de Beauvoir",
+      "classement": "Beauvoir, Simone de",
       "titre": "Naissance de Simone de Beauvoir",
       "axe": "Littérature et pensée",
       "naissance": 1908,
@@ -631,6 +669,7 @@
     {
       "slug": "poussin",
       "nom": "Nicolas Poussin",
+      "classement": "Poussin, Nicolas",
       "titre": "Naissance de Nicolas Poussin",
       "axe": "Beaux-arts",
       "naissance": 1594,
@@ -646,6 +685,7 @@
     {
       "slug": "david",
       "nom": "Jacques-Louis David",
+      "classement": "David, Jacques-Louis",
       "titre": "Naissance de Jacques-Louis David",
       "axe": "Beaux-arts",
       "naissance": 1748,
@@ -661,6 +701,7 @@
     {
       "slug": "delacroix",
       "nom": "Eugène Delacroix",
+      "classement": "Delacroix, Eugène",
       "titre": "Naissance d'Eugène Delacroix",
       "axe": "Beaux-arts",
       "naissance": 1798,
@@ -676,6 +717,7 @@
     {
       "slug": "violletleduc",
       "nom": "Eugène Viollet-le-Duc",
+      "classement": "Viollet-le-Duc, Eugène",
       "titre": "Naissance d'Eugène Viollet-le-Duc",
       "axe": "Beaux-arts",
       "naissance": 1814,
@@ -691,6 +733,7 @@
     {
       "slug": "monet",
       "nom": "Claude Monet",
+      "classement": "Monet, Claude",
       "titre": "Naissance de Claude Monet",
       "axe": "Beaux-arts",
       "naissance": 1840,
@@ -707,6 +750,7 @@
     {
       "slug": "cezanne",
       "nom": "Paul Cézanne",
+      "classement": "Cézanne, Paul",
       "titre": "Naissance de Paul Cézanne",
       "axe": "Beaux-arts",
       "naissance": 1839,
@@ -729,6 +773,7 @@
     {
       "slug": "rodin",
       "nom": "Auguste Rodin",
+      "classement": "Rodin, Auguste",
       "titre": "Naissance d'Auguste Rodin",
       "axe": "Beaux-arts",
       "naissance": 1840,
@@ -745,6 +790,7 @@
     {
       "slug": "claudel",
       "nom": "Camille Claudel",
+      "classement": "Claudel, Camille",
       "titre": "Naissance de Camille Claudel",
       "axe": "Beaux-arts",
       "naissance": 1864,
@@ -760,6 +806,7 @@
     {
       "slug": "matisse",
       "nom": "Henri Matisse",
+      "classement": "Matisse, Henri",
       "titre": "Naissance d'Henri Matisse",
       "axe": "Beaux-arts",
       "naissance": 1869,
@@ -775,6 +822,7 @@
     {
       "slug": "rameau",
       "nom": "Jean-Philippe Rameau",
+      "classement": "Rameau, Jean-Philippe",
       "titre": "Naissance de Jean-Philippe Rameau",
       "axe": "Musique, spectacle et sport",
       "naissance": 1683,
@@ -790,6 +838,7 @@
     {
       "slug": "berlioz",
       "nom": "Hector Berlioz",
+      "classement": "Berlioz, Hector",
       "titre": "Naissance d'Hector Berlioz",
       "axe": "Musique, spectacle et sport",
       "naissance": 1803,
@@ -805,6 +854,7 @@
     {
       "slug": "bernhardt",
       "nom": "Sarah Bernhardt",
+      "classement": "Bernhardt, Sarah",
       "titre": "Naissance de Sarah Bernhardt",
       "axe": "Musique, spectacle et sport",
       "naissance": 1844,
@@ -820,6 +870,7 @@
     {
       "slug": "debussy",
       "nom": "Claude Debussy",
+      "classement": "Debussy, Claude",
       "titre": "Naissance de Claude Debussy",
       "axe": "Musique, spectacle et sport",
       "naissance": 1862,
@@ -835,6 +886,7 @@
     {
       "slug": "lumiere",
       "nom": "Louis Lumière",
+      "classement": "Lumière, Louis",
       "titre": "Naissance de Louis Lumière",
       "axe": "Musique, spectacle et sport",
       "naissance": 1864,
@@ -851,6 +903,7 @@
     {
       "slug": "baker",
       "nom": "Joséphine Baker",
+      "classement": "Baker, Joséphine",
       "titre": "Naissance de Joséphine Baker",
       "axe": "Musique, spectacle et sport",
       "naissance": 1906,
@@ -874,6 +927,7 @@
     {
       "slug": "piaf",
       "nom": "Édith Piaf",
+      "classement": "Piaf, Édith",
       "titre": "Naissance d'Édith Piaf",
       "axe": "Musique, spectacle et sport",
       "naissance": 1915,
@@ -897,6 +951,7 @@
     {
       "slug": "aznavour",
       "nom": "Charles Aznavour",
+      "classement": "Aznavour, Charles",
       "titre": "Naissance de Charles Aznavour",
       "axe": "Musique, spectacle et sport",
       "naissance": 1924,
@@ -912,6 +967,7 @@
     {
       "slug": "cartier",
       "nom": "Jacques Cartier",
+      "classement": "Cartier, Jacques",
       "titre": "Naissance de Jacques Cartier",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1491,
@@ -927,6 +983,7 @@
     {
       "slug": "pascal",
       "nom": "Blaise Pascal",
+      "classement": "Pascal, Blaise",
       "titre": "Naissance de Blaise Pascal",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1623,
@@ -942,6 +999,7 @@
     {
       "slug": "lavoisier",
       "nom": "Antoine Lavoisier",
+      "classement": "Lavoisier, Antoine",
       "titre": "Naissance d'Antoine Lavoisier",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1743,
@@ -958,6 +1016,7 @@
     {
       "slug": "champollion",
       "nom": "Jean-François Champollion",
+      "classement": "Champollion, Jean-François",
       "titre": "Naissance de Jean-François Champollion",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1790,
@@ -973,6 +1032,7 @@
     {
       "slug": "braille",
       "nom": "Louis Braille",
+      "classement": "Braille, Louis",
       "titre": "Naissance de Louis Braille",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1809,
@@ -994,6 +1054,7 @@
     {
       "slug": "pasteur",
       "nom": "Louis Pasteur",
+      "classement": "Pasteur, Louis",
       "titre": "Naissance de Louis Pasteur",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1822,
@@ -1011,6 +1072,7 @@
     {
       "slug": "eiffel",
       "nom": "Gustave Eiffel",
+      "classement": "Eiffel, Gustave",
       "titre": "Naissance de Gustave Eiffel",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1832,
@@ -1034,6 +1096,7 @@
     {
       "slug": "curie",
       "nom": "Marie Curie",
+      "classement": "Curie, Marie",
       "titre": "Naissance de Marie Curie",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1867,
@@ -1051,6 +1114,7 @@
     {
       "slug": "cousteau",
       "nom": "Jacques-Yves Cousteau",
+      "classement": "Cousteau, Jacques-Yves",
       "titre": "Naissance de Jacques-Yves Cousteau",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1910,
@@ -1067,6 +1131,7 @@
     {
       "slug": "jacquescoeur",
       "nom": "Jacques Cœur",
+      "classement": "Cœur, Jacques",
       "titre": "Naissance de Jacques Cœur",
       "axe": "Économie et entreprise",
       "naissance": 1400,
@@ -1083,6 +1148,7 @@
     {
       "slug": "lesseps",
       "nom": "Ferdinand de Lesseps",
+      "classement": "Lesseps, Ferdinand de",
       "titre": "Naissance de Ferdinand de Lesseps",
       "axe": "Économie et entreprise",
       "naissance": 1805,
@@ -1098,6 +1164,7 @@
     {
       "slug": "vuitton",
       "nom": "Louis Vuitton",
+      "classement": "Vuitton, Louis",
       "titre": "Naissance de Louis Vuitton",
       "axe": "Économie et entreprise",
       "naissance": 1821,
@@ -1113,6 +1180,7 @@
     {
       "slug": "michelin",
       "nom": "André Michelin",
+      "classement": "Michelin, André",
       "titre": "Naissance d'André Michelin",
       "axe": "Économie et entreprise",
       "naissance": 1853,
@@ -1128,6 +1196,7 @@
     {
       "slug": "renault",
       "nom": "Louis Renault",
+      "classement": "Renault, Louis",
       "titre": "Naissance de Louis Renault",
       "axe": "Économie et entreprise",
       "naissance": 1877,
@@ -1143,6 +1212,7 @@
     {
       "slug": "citroen",
       "nom": "André Citroën",
+      "classement": "Citroën, André",
       "titre": "Naissance d'André Citroën",
       "axe": "Économie et entreprise",
       "naissance": 1878,
@@ -1158,6 +1228,7 @@
     {
       "slug": "chanel",
       "nom": "Coco Chanel",
+      "classement": "Chanel, Coco",
       "titre": "Naissance de Coco Chanel",
       "axe": "Économie et entreprise",
       "naissance": 1883,

@@ -36,7 +36,9 @@
     "profile_btn_aria": "Profile and Trophies",
     "profile_btn_title": "View my profile and trophies",
     "settings_btn_aria": "Settings",
-    "streak_badge_title": "Daily streak: the longer it lasts, the more XP you earn is multiplied"
+    "streak_badge_title": "Daily streak: the longer it lasts, the more XP you earn is multiplied",
+    "discover_event": "Event",
+    "discover_person": "Person"
   },
   "subcategories": {
     "choose_region": "Choose a Region / Subcategory",
@@ -215,7 +217,8 @@
     "victory_ordre": "Well done! All back in order!",
     "victory_blitz": "Time's up! {right} correct answers.",
     "victory_curseur": "Well done! A sharp eye every time!",
-    "victory_intrus": "Well done! Not one slipped past you!"
+    "victory_intrus": "Well done! Not one slipped past you!",
+    "victory_whois": "Well done! Not a single face got past you!"
   },
   "daily": {
     "title_win": "🌍 Daily Challenge Mastered!",
@@ -411,7 +414,11 @@
     "size_kb": "{val} KB",
     "pack_full_suffix": "Full",
     "pack_demo_suffix": "Limited content",
-    "pack_demo_content": "{themes} themes • {events} events"
+    "pack_demo_content": "{themes} themes • {events} events",
+    "portraits_label": "Gallery portraits",
+    "portraits_bw": "Collection",
+    "portraits_color": "Always in colour",
+    "portraits_hint": "In collection mode, a portrait stays black and white until you have met the person in a game."
   },
   "anecdote": {
     "did_you_know": "💡 Did You Know?",
@@ -618,7 +625,8 @@
     "redraw_btn": "🔀 Another event",
     "play_theme_btn": "Play this theme",
     "play_theme_btn_named": "Play «{theme}»",
-    "biography_btn": "Read the biography"
+    "biography_btn": "Read the biography",
+    "redraw_person_btn": "🔀 Another person"
   },
   "simultaneity": {
     "title": "Meanwhile, elsewhere…",
@@ -680,5 +688,63 @@
   },
   "home": {
     "start_aria": "Start"
+  },
+  "gallery": {
+    "title": "Portrait gallery",
+    "launcher_sub": "{count} faces from the Pantheons to browse",
+    "order_alpha": "Alphabetical order",
+    "order_famille": "By family name",
+    "order_chrono": "Chronological order",
+    "order_alpha_short": "A → Z",
+    "order_famille_short": "Family name",
+    "order_chrono_short": "Birth",
+    "order_group": "Display order",
+    "count": "{count} portraits",
+    "count_filtered": "{count} of {total} portraits",
+    "empty": "No portraits yet.",
+    "no_result": "No portrait matches. Try another name, or clear the filters.",
+    "play_biography": "Play their biography",
+    "search_placeholder": "Search for a person…",
+    "filter_country": "Country",
+    "filter_axis": "Field",
+    "filter_country_all": "All countries",
+    "filter_axis_all": "All fields",
+    "filter_reset": "Clear all",
+    "nav_prev": "Previous portrait",
+    "nav_next": "Next portrait",
+    "nav_position": "{n} of {total}",
+    "count_filtered_one": "1 of {total} portraits",
+    "collection_count": "{unlocked} / {total} portraits unlocked",
+    "collection_on_btn": "🎞️ Collect the portraits",
+    "collection_off_btn": "See everything in colour",
+    "locked_aria": "not yet met in a game",
+    "modal_locked": "🔒 Not met in a game yet: play on their pantheon to unlock them in colour.",
+    "bio_aria": "biography available"
+  },
+  "collection": {
+    "title": "Collect the portraits?",
+    "intro": "The gallery's portraits can be earned as you play: each stays black and white until you have met the person in a game, then turns to colour. Prefer to simply learn, with no progress or competition? Keep everything in colour.",
+    "bw_title": "🎞️ Unlock my portraits",
+    "bw_sub": "Black and white until you meet the person in a game, with a collection counter.",
+    "color_title": "🎨 See everything in colour",
+    "color_sub": "No progress: every portrait, right away.",
+    "hint": "You can change this at any time, in the gallery or in Settings."
+  },
+  "whois": {
+    "title": "Who is it?",
+    "desc": "3 lives. One portrait, four names: find who is behind this face.",
+    "kicker": "Who is it?",
+    "portrait_alt": "Portrait of a person to identify",
+    "not_enough": "This theme does not have enough portraits for this mode.",
+    "reveal_right": "Well spotted!",
+    "reveal_wrong": "Missed, it was…",
+    "continue": "Continue ›",
+    "daily_title": "Portrait of the day",
+    "daily_sub_new": "One face to find every day",
+    "daily_sub_right": "✔ Found today",
+    "daily_sub_wrong": "See today's profile again",
+    "daily_kicker": "Portrait of the day · Who is it?",
+    "daily_card": "See the full profile",
+    "daily_done": "Back to challenges"
   }
 }

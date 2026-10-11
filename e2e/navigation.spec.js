@@ -113,6 +113,7 @@ test('un thème mis en favori apparaît dans Favoris, et en sort', async ({ page
 test('« Hasard » ouvre la fiche d’un événement et propose son thème', async ({ page }) => {
     await page.locator('#screen-home').click();
     await page.locator('#btn-discover').click();
+    await page.locator('#btn-discover-event').click();
 
     await expect(page.locator('#modal-details')).toBeVisible();
     await expect(page.locator('#modal-titre')).not.toBeEmpty();

@@ -222,6 +222,57 @@
         <div class="list-categories" id="subcategories-container"></div>
     </div>
 
+    <!-- ÉCRAN 2ter : GALERIE DES PORTRAITS (Personnages illustres, voir js/gallery.js) :
+         tous les personnages des Panthéons qui ont un portrait, avec une recherche par nom,
+         trois ordres (alphabétique, nom de famille, chronologique) et deux filtres (pays,
+         domaine). Un visage ouvre la fiche de sa naissance. -->
+    <div id="screen-gallery" class="list-screen hidden">
+        <button class="back-btn" onclick="backFromGallery()" aria-label="Retour"
+            data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title gallery-header-title" data-i18n="gallery.title">Galerie des portraits</h2>
+        <p class="gallery-subtitle" id="gallery-subtitle"></p>
+        <!-- Collection (voir js/gallery.js) : compteur et barre de progression quand les portraits
+             se débloquent au fil des parties ; sinon, un simple accès pour l'activer. -->
+        <div class="gallery-collection" id="gallery-collection">
+            <div class="gallery-collection-meter hidden" id="gallery-collection-meter">
+                <span class="gallery-collection-count" id="gallery-collection-count"></span>
+                <div class="gallery-collection-bar" id="gallery-collection-bar" role="progressbar" aria-valuemin="0"
+                    aria-valuemax="100" aria-valuenow="0" aria-labelledby="gallery-collection-count">
+                    <span class="gallery-collection-fill" id="gallery-collection-fill"></span>
+                </div>
+            </div>
+            <button type="button" class="gallery-collection-toggle" id="gallery-collection-toggle"></button>
+        </div>
+        <div class="gallery-search search-bar">
+            <span class="search-bar-icon" aria-hidden="true">🔍</span>
+            <input type="search" id="gallery-search" class="search-bar-input" placeholder="Rechercher un personnage…"
+                autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Rechercher un personnage"
+                data-i18n-attr="placeholder:gallery.search_placeholder;aria-label:gallery.search_placeholder">
+        </div>
+        <div class="gallery-order-toggle" id="gallery-order-toggle" role="group" aria-label="Ordre d'affichage"
+            data-i18n-attr="aria-label:gallery.order_group">
+            <button type="button" class="gallery-order-toggle-btn" data-order="alpha" aria-pressed="true"
+                data-i18n="gallery.order_alpha_short">A → Z</button>
+            <button type="button" class="gallery-order-toggle-btn" data-order="famille" aria-pressed="false"
+                data-i18n="gallery.order_famille_short">Nom de famille</button>
+            <button type="button" class="gallery-order-toggle-btn" data-order="chrono" aria-pressed="false"
+                data-i18n="gallery.order_chrono_short">Naissance</button>
+        </div>
+        <div class="gallery-filters">
+            <label class="gallery-filter">
+                <span class="gallery-filter-label" data-i18n="gallery.filter_country">Pays</span>
+                <select id="gallery-filter-country" class="gallery-select"></select>
+            </label>
+            <label class="gallery-filter">
+                <span class="gallery-filter-label" data-i18n="gallery.filter_axis">Domaine</span>
+                <select id="gallery-filter-axis" class="gallery-select"></select>
+            </label>
+            <button type="button" class="gallery-reset hidden" id="gallery-reset"
+                data-i18n="gallery.filter_reset">Tout effacer</button>
+        </div>
+        <div id="gallery-container" class="gallery-container"></div>
+    </div>
+
     <!-- ÉCRAN 3 : THÈMES (Sous-sections) -->
     <div id="screen-themes" class="list-screen hidden">
         <button class="back-btn" onclick="backFromThemes()" aria-label="Retour"
@@ -237,7 +288,7 @@
     <!-- ÉCRAN 3bis : AXES THÉMATIQUES (filtre optionnel, si le thème en propose) -->
     <div id="screen-axes" class="list-screen hidden">
         <button class="back-btn"
-            onclick="axisFilterActive=false; essentialFilterActive=false; showScreen('screen-themes', 'back')"
+            onclick="axisFilterActive=false; essentialFilterActive=false; showScreen(galleryReturnTarget('screen-themes'), 'back')"
             aria-label="Retour aux thèmes" data-i18n-attr="aria-label:nav.back">‹</button>
         <h2 class="header-title" data-i18n="axes.title">Filtrer par axe thématique</h2>
         <div id="essentiel-zone"></div>
@@ -365,6 +416,12 @@
                 <h3 data-i18n="intrus.title">L'intrus</h3>
                 <p data-i18n="intrus.desc">3 vies. Quatre événements, trois qui vont ensemble : trouvez celui qui
                     détonne.</p>
+            </div>
+            <!-- Visible seulement pour un thème dont assez de figures ont un portrait (voir js/app.js:
+                 updateWhoisCard) : un mode qui n'a rien à montrer ne se propose pas. -->
+            <div role="button" tabindex="0" class="mode-card whois-card hidden" id="mode-card-whois" onclick="startWhoisGame()">
+                <h3 data-i18n="whois.title">Qui est-ce ?</h3>
+                <p data-i18n="whois.desc">3 vies. Un portrait, quatre noms : retrouvez qui se cache derrière ce visage.</p>
             </div>
             <div role="button" tabindex="0" class="mode-card multi-card" onclick="showMultiplayerSetup()">
                 <h3 data-i18n="modes.multi.title">Multijoueurs</h3>
@@ -710,6 +767,45 @@
         </div>
     </div>
 
+    <!-- ÉCRAN : QUI EST-CE ? (un portrait, quatre noms — voir js/gameModes.js: buildWhoQuestions) -->
+    <div id="screen-whois" class="hidden">
+        <div class="game-bar">
+            <div class="bar-row">
+                <button class="quit-btn" onclick="quitGame()">‹ <span data-i18n="nav.quit">Quitter</span></button>
+                <span class="bar-fill"></span>
+                <span class="lives-row" id="whois-hud-lives"></span>
+                <span class="type-size">
+                    <button type="button" onclick="changeZoom(-0.15)" aria-label="Réduire le texte"
+                        data-i18n-attr="aria-label:game.decrease_text_aria">A−</button>
+                    <button type="button" onclick="changeZoom(0.15)" aria-label="Agrandir le texte"
+                        data-i18n-attr="aria-label:game.increase_text_aria">A+</button>
+                </span>
+            </div>
+            <div class="bar-row">
+                <span class="progress-rail" id="whois-progress-rail"><span class="progress-fill"
+                        id="whois-progress-fill"></span></span>
+                <span class="bar-meta" id="whois-hud-count">1 / 10</span>
+                <span class="bar-meta"><span id="whois-hud-score">0</span> pts<span id="whois-hud-combo"
+                        class="combo-chip hidden"></span></span>
+            </div>
+        </div>
+
+        <div class="quiz-body">
+            <div class="quiz-question-card whois-question-card" data-focus-target>
+                <div class="quiz-kicker" id="whois-kicker" data-i18n="whois.kicker">Qui est-ce ?</div>
+                <!-- Le portrait EST la question : son texte alternatif le dit, et sa légende — qui nomme la
+                     personne — n'apparaît qu'à la réponse. Le crédit (auteur, licence) reste sous l'image :
+                     c'est la condition des licences CC BY et CC BY-SA. -->
+                <figure class="whois-portrait">
+                    <img id="whois-portrait-img" class="whois-portrait-img" alt="" width="200" height="250" decoding="async">
+                    <figcaption class="modal-portrait-credit whois-portrait-credit" id="whois-portrait-credit"></figcaption>
+                </figure>
+            </div>
+            <div class="quiz-options" id="whois-options"></div>
+            <div class="whois-reveal hidden" id="whois-reveal" aria-live="polite"></div>
+        </div>
+    </div>
+
     <div id="screen-simultaneity" class="hidden">
         <div class="game-bar">
             <div class="bar-row">
@@ -1018,6 +1114,15 @@
         <div class="modal-content">
             <span class="close-btn" role="button" tabindex="0" aria-label="Fermer"
                 data-i18n-attr="aria-label:nav.close" onclick="closeModal()">×</span>
+            <!-- Passage au portrait voisin, seulement quand la fiche s'ouvre depuis la galerie
+                 (voir js/gallery.js) : boutons, flèches du clavier et glissement font la même chose. -->
+            <div class="modal-gallery-nav" id="modal-gallery-nav">
+                <button type="button" class="modal-gallery-nav-btn" id="modal-gallery-prev" aria-label="Portrait précédent"
+                    data-i18n-attr="aria-label:gallery.nav_prev">‹</button>
+                <span class="modal-gallery-nav-pos" id="modal-gallery-pos" aria-live="polite"></span>
+                <button type="button" class="modal-gallery-nav-btn" id="modal-gallery-next" aria-label="Portrait suivant"
+                    data-i18n-attr="aria-label:gallery.nav_next">›</button>
+            </div>
             <div class="modal-title" id="modal-titre">Titre de l'événement</div>
             <div id="modal-axe-badge-container" style="margin-top: 4px; margin-bottom: 8px;"></div>
             <div class="modal-date" id="modal-date">Date</div>
@@ -1034,6 +1139,8 @@
                     <span id="modal-portrait-credit" class="modal-portrait-credit"></span>
                 </figcaption>
             </figure>
+            <p class="modal-gallery-lock" id="modal-gallery-lock" data-i18n="gallery.modal_locked">🔒 Pas encore rencontré en
+                jeu : jouez sur son panthéon pour le débloquer en couleur.</p>
             <div class="modal-desc" id="modal-desc">Description explicative.</div>
             <a href="#" target="_blank" class="modal-link" id="modal-wiki" data-i18n="modal.wiki_link">Voir sur
                 Wikipédia</a>
@@ -1406,6 +1513,33 @@
     </div>
 
     <!-- MODAL RÉGLAGES -->
+    <!-- CHOIX DE LA COLLECTION DE PORTRAITS : posé une seule fois, à la première ouverture de « Personnages
+         illustres » (voir js/gallery.js: maybeAskPortraitCollection). Pas de fermeture par le fond : un
+         appui égaré ne doit pas décider à la place du joueur. La croix et Échap valent « tout en couleur ». -->
+    <div id="modal-collection" class="modal-overlay hidden">
+        <div class="modal-content" style="max-width:440px;">
+            <span class="close-btn" role="button" tabindex="0" aria-label="Fermer"
+                data-i18n-attr="aria-label:nav.close" onclick="chooseCollection('color')">×</span>
+            <h2 class="modal-title" data-i18n="collection.title">Collectionner les portraits ?</h2>
+            <p class="collection-intro" data-i18n="collection.intro">Les portraits de la galerie peuvent se gagner au
+                fil de vos parties : chacun reste en noir et blanc tant que vous n'avez pas rencontré le personnage
+                en jeu, puis passe en couleur. Vous préférez simplement vous instruire, sans progression ni
+                compétition ? Gardez tout en couleur.</p>
+            <button type="button" class="collection-choice" data-choice="bw" onclick="chooseCollection('bw')">
+                <span class="collection-choice-title" data-i18n="collection.bw_title">🎞️ Débloquer mes portraits</span>
+                <span class="collection-choice-sub" data-i18n="collection.bw_sub">Noir et blanc jusqu'à la rencontre en
+                    jeu, avec un compteur de collection.</span>
+            </button>
+            <button type="button" class="collection-choice" data-choice="color" onclick="chooseCollection('color')">
+                <span class="collection-choice-title" data-i18n="collection.color_title">🎨 Tout voir en couleur</span>
+                <span class="collection-choice-sub" data-i18n="collection.color_sub">Aucune progression : tous les
+                    portraits, tout de suite.</span>
+            </button>
+            <p class="settings-hint" data-i18n="collection.hint">Ce choix se change à tout moment, dans la galerie ou
+                dans les Réglages.</p>
+        </div>
+    </div>
+
     <div id="modal-settings" class="modal-overlay hidden" onclick="if(event.target===this)closeSettings()">
         <div class="modal-content" style="max-width:420px;">
             <span class="close-btn" role="button" tabindex="0" aria-label="Fermer"
@@ -1454,6 +1588,16 @@
                 </div>
                 <p class="settings-hint" data-i18n="settings.haptics_hint">Retours tactiles lors des interactions,
                     bonnes réponses et erreurs.</p>
+            </div>
+
+            <div class="settings-group">
+                <div class="settings-label" data-i18n="settings.portraits_label">Portraits de la galerie</div>
+                <div class="segmented" id="settings-portraits">
+                    <button type="button" data-value="bw" data-i18n="settings.portraits_bw">Collection</button>
+                    <button type="button" data-value="color" data-i18n="settings.portraits_color">Toujours en couleur</button>
+                </div>
+                <p class="settings-hint" data-i18n="settings.portraits_hint">En mode collection, un portrait reste en
+                    noir et blanc tant que vous n'avez pas rencontré le personnage en jeu.</p>
             </div>
 
             <div class="settings-group hidden" id="settings-group-notifications">
@@ -1515,6 +1659,7 @@
     <script src="js/mindMap.js"></script>
     <script src="js/simultaneity.js"></script>
     <script src="js/gameModes.js"></script>
+    <script src="js/gallery.js"></script>
     <script src="js/app.js"></script>
 
     <!-- ENREGISTREMENT DU SERVICE WORKER PWA -->

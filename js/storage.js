@@ -18,6 +18,10 @@ const PSEUDO_KEY = 'historiaxe_pseudo_v1';
 const ONBOARDING_KEY = 'historiaxe_onboarding_v1';
 const RECAP_LOG_KEY = 'historiaxe_recap_log_v1';
 const WEEKLY_XP_KEY = 'historiaxe_weekly_xp_v1';
+// Portrait du jour (voir js/app.js: startPortraitOfTheDay) : la réponse du joueur à celui d'aujourd'hui,
+// { date, chosenId, correct }. Propre à l'appareil et volontairement hors de SYNC_KEYS : c'est une
+// habitude du jour, pas une progression, et elle ne vaut que pour la date qu'elle porte.
+const PORTRAIT_DAY_KEY = 'historiaxe_portrait_day_v1';
 // Série de semaines consécutives au Défi hebdomadaire (voir
 // weeklyChallengeStreakRecordToday ci-dessous) — sans rapport avec
 // WEEKLY_XP_KEY (ligue hebdomadaire par XP cumulé, feature distincte).
@@ -47,7 +51,13 @@ const DEFAULT_SETTINGS = {
     // de la base étaient précisément les moins jouables. 20 passe au-dessus
     // de la médiane (la majorité des thèmes ne bouge donc pas) tout en
     // bornant les gros, et « Tout » reste à un tap sur l'écran des modes.
-    roundLength: 20
+    roundLength: 20,
+    // Portraits de la galerie (js/gallery.js) : 'bw' = en noir et blanc tant que le
+    // personnage n'a pas été rencontré en jeu, avec un compteur de collection ;
+    // 'color' = tous en couleur, sans progression. null = la question n'a pas encore
+    // été posée : elle l'est à la première ouverture de « Personnages illustres »,
+    // parce que certains joueurs veulent s'instruire sans progression ni compétition.
+    portraitCollection: null
 };
 
 // Longueurs proposées, dans l'ordre d'affichage. 0 = le thème entier, et
@@ -123,6 +133,15 @@ function settingsSave(data) {
     try {
         localStorage.setItem(SETTINGS_KEY, JSON.stringify(data));
     } catch (e) {}
+}
+
+function portraitDayLoad() {
+    try { return JSON.parse(localStorage.getItem(PORTRAIT_DAY_KEY)) || null; }
+    catch (e) { return null; }
+}
+
+function portraitDaySave(data) {
+    try { localStorage.setItem(PORTRAIT_DAY_KEY, JSON.stringify(data)); } catch (e) {}
 }
 
 // --- SRS (RÉPÉTITION ESPACÉE / POINTS FAIBLES) ---

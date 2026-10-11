@@ -50,6 +50,7 @@
     {
       "slug": "otton1",
       "nom": "Otton Ier",
+      "classement": "Otton Ier",
       "titre": "Naissance d'Otton Ier",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 912,
@@ -67,6 +68,7 @@
     {
       "slug": "henri4",
       "nom": "Henri IV du Saint-Empire",
+      "classement": "Henri IV du Saint-Empire",
       "titre": "Naissance d'Henri IV du Saint-Empire",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1050,
@@ -83,6 +85,7 @@
     {
       "slug": "barberousse",
       "nom": "Frédéric Barberousse",
+      "classement": "Frédéric Barberousse",
       "titre": "Naissance de Frédéric Barberousse",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1122,
@@ -100,6 +103,7 @@
     {
       "slug": "maximilien",
       "nom": "Maximilien Ier",
+      "classement": "Maximilien Ier",
       "titre": "Naissance de Maximilien Ier",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1459,
@@ -109,13 +113,15 @@
         "fichier": "Albrecht Dürer - Portrait of Maximilian I - Google Art Project.jpg",
         "licence": "Domaine public",
         "auteur": "Albrecht Dürer",
-        "legende": "Maximilien Ier, portrait peint par Albrecht Dürer (1519), l'année de sa mort"
+        "legende": "Maximilien Ier, portrait peint par Albrecht Dürer (1519), l'année de sa mort",
+        "nomVisible": true
       },
       "description": "Maximilien Ier (1459-1519) est un empereur du Saint-Empire romain germanique de la maison de Habsbourg, né à Wiener Neustadt, surnommé le « dernier chevalier ». Par son mariage avec Marie de Bourgogne en 1477, puis par les unions de ses enfants avec les maisons d'Espagne, de Bohême et de Hongrie, il fait de sa dynastie la plus puissante d'Europe. Réformateur de l'Empire et protecteur de Dürer, il meurt à Wels en 1519 et laisse la couronne à son petit-fils, Charles Quint."
     },
     {
       "slug": "frederic2",
       "nom": "Frédéric II de Prusse",
+      "classement": "Frédéric II de Prusse",
       "titre": "Naissance de Frédéric II de Prusse",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1712,
@@ -133,6 +139,7 @@
     {
       "slug": "mariethrese",
       "nom": "Marie-Thérèse d'Autriche",
+      "classement": "Marie-Thérèse d'Autriche",
       "titre": "Naissance de Marie-Thérèse d'Autriche",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1717,
@@ -150,6 +157,7 @@
     {
       "slug": "joseph2",
       "nom": "Joseph II",
+      "classement": "Joseph II",
       "titre": "Naissance de Joseph II",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1741,
@@ -166,6 +174,7 @@
     {
       "slug": "metternich",
       "nom": "Klemens von Metternich",
+      "classement": "Metternich, Klemens von",
       "titre": "Naissance de Klemens von Metternich",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1773,
@@ -182,6 +191,7 @@
     {
       "slug": "bismarck",
       "nom": "Otto von Bismarck",
+      "classement": "Bismarck, Otto von",
       "titre": "Naissance d'Otto von Bismarck",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1815,
@@ -199,6 +209,7 @@
     {
       "slug": "ludwig2",
       "nom": "Louis II de Bavière",
+      "classement": "Louis II de Bavière",
       "titre": "Naissance de Louis II de Bavière",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1845,
@@ -215,6 +226,7 @@
     {
       "slug": "sissi",
       "nom": "Élisabeth de Wittelsbach, dite Sissi",
+      "classement": "Wittelsbach, Élisabeth de",
       "titre": "Naissance d'Élisabeth de Wittelsbach, dite Sissi",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1837,
@@ -231,6 +243,7 @@
     {
       "slug": "francoisjoseph",
       "nom": "François-Joseph Ier",
+      "classement": "François-Joseph Ier",
       "titre": "Naissance de François-Joseph Ier",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1830,
@@ -248,6 +261,7 @@
     {
       "slug": "guillaume2",
       "nom": "Guillaume II",
+      "classement": "Guillaume II",
       "titre": "Naissance de Guillaume II",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1859,
@@ -264,6 +278,7 @@
     {
       "slug": "ebert",
       "nom": "Friedrich Ebert",
+      "classement": "Ebert, Friedrich",
       "titre": "Naissance de Friedrich Ebert",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1871,
@@ -280,6 +295,7 @@
     {
       "slug": "stresemann",
       "nom": "Gustav Stresemann",
+      "classement": "Stresemann, Gustav",
       "titre": "Naissance de Gustav Stresemann",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1878,
@@ -296,6 +312,7 @@
     {
       "slug": "hitler",
       "nom": "Adolf Hitler",
+      "classement": "Hitler, Adolf",
       "titre": "Naissance d'Adolf Hitler",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1889,
@@ -313,6 +330,7 @@
     {
       "slug": "adenauer",
       "nom": "Konrad Adenauer",
+      "classement": "Adenauer, Konrad",
       "titre": "Naissance de Konrad Adenauer",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1876,
@@ -330,6 +348,7 @@
     {
       "slug": "brandt",
       "nom": "Willy Brandt",
+      "classement": "Brandt, Willy",
       "titre": "Naissance de Willy Brandt",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1913,
@@ -347,6 +366,7 @@
     {
       "slug": "kohl",
       "nom": "Helmut Kohl",
+      "classement": "Kohl, Helmut",
       "titre": "Naissance de Helmut Kohl",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1930,
@@ -364,6 +384,7 @@
     {
       "slug": "renner",
       "nom": "Karl Renner",
+      "classement": "Renner, Karl",
       "titre": "Naissance de Karl Renner",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1870,
@@ -380,6 +401,7 @@
     {
       "slug": "kreisky",
       "nom": "Bruno Kreisky",
+      "classement": "Kreisky, Bruno",
       "titre": "Naissance de Bruno Kreisky",
       "axe": "Chefs d'État et dirigeants",
       "naissance": 1911,
@@ -396,6 +418,7 @@
     {
       "slug": "arminius",
       "nom": "Arminius",
+      "classement": "Arminius",
       "titre": "Naissance d'Arminius",
       "axe": "Guerres et résistances",
       "naissance": -17,
@@ -413,6 +436,7 @@
     {
       "slug": "muntzer",
       "nom": "Thomas Müntzer",
+      "classement": "Müntzer, Thomas",
       "titre": "Naissance de Thomas Müntzer",
       "axe": "Guerres et résistances",
       "naissance": 1489,
@@ -429,6 +453,7 @@
     {
       "slug": "hofer",
       "nom": "Andreas Hofer",
+      "classement": "Hofer, Andreas",
       "titre": "Naissance d'Andreas Hofer",
       "axe": "Guerres et résistances",
       "naissance": 1767,
@@ -445,6 +470,7 @@
     {
       "slug": "blucher",
       "nom": "Gebhard Leberecht von Blücher",
+      "classement": "Blücher, Gebhard Leberecht von",
       "titre": "Naissance de Gebhard Leberecht von Blücher",
       "axe": "Guerres et résistances",
       "naissance": 1742,
@@ -461,6 +487,7 @@
     {
       "slug": "dufour",
       "nom": "Guillaume-Henri Dufour",
+      "classement": "Dufour, Guillaume-Henri",
       "titre": "Naissance de Guillaume-Henri Dufour",
       "axe": "Guerres et résistances",
       "naissance": 1787,
@@ -478,6 +505,7 @@
     {
       "slug": "dunant",
       "nom": "Henry Dunant",
+      "classement": "Dunant, Henry",
       "titre": "Naissance d'Henry Dunant",
       "axe": "Guerres et résistances",
       "naissance": 1828,
@@ -496,6 +524,7 @@
     {
       "slug": "suttner",
       "nom": "Bertha von Suttner",
+      "classement": "Suttner, Bertha von",
       "titre": "Naissance de Bertha von Suttner",
       "axe": "Guerres et résistances",
       "naissance": 1843,
@@ -512,6 +541,7 @@
     {
       "slug": "rommel",
       "nom": "Erwin Rommel",
+      "classement": "Rommel, Erwin",
       "titre": "Naissance d'Erwin Rommel",
       "axe": "Guerres et résistances",
       "naissance": 1891,
@@ -530,6 +560,7 @@
     {
       "slug": "stauffenberg",
       "nom": "Claus von Stauffenberg",
+      "classement": "Stauffenberg, Claus von",
       "titre": "Naissance de Claus von Stauffenberg",
       "axe": "Guerres et résistances",
       "naissance": 1907,
@@ -547,6 +578,7 @@
     {
       "slug": "sophiescholl",
       "nom": "Sophie Scholl",
+      "classement": "Scholl, Sophie",
       "titre": "Naissance de Sophie Scholl",
       "axe": "Guerres et résistances",
       "naissance": 1921,
@@ -565,6 +597,7 @@
     {
       "slug": "bonhoeffer",
       "nom": "Dietrich Bonhoeffer",
+      "classement": "Bonhoeffer, Dietrich",
       "titre": "Naissance de Dietrich Bonhoeffer",
       "axe": "Guerres et résistances",
       "naissance": 1906,
@@ -581,6 +614,7 @@
     {
       "slug": "jagerstatter",
       "nom": "Franz Jägerstätter",
+      "classement": "Jägerstätter, Franz",
       "titre": "Naissance de Franz Jägerstätter",
       "axe": "Guerres et résistances",
       "naissance": 1907,
@@ -597,6 +631,7 @@
     {
       "slug": "guisan",
       "nom": "Henri Guisan",
+      "classement": "Guisan, Henri",
       "titre": "Naissance d'Henri Guisan",
       "axe": "Guerres et résistances",
       "naissance": 1874,
@@ -613,6 +648,7 @@
     {
       "slug": "hildegarde",
       "nom": "Hildegarde de Bingen",
+      "classement": "Hildegarde de Bingen",
       "titre": "Naissance de Hildegarde de Bingen",
       "axe": "Littérature et pensée",
       "naissance": 1098,
@@ -630,6 +666,7 @@
     {
       "slug": "albert",
       "nom": "Albert le Grand",
+      "classement": "Albert le Grand",
       "titre": "Naissance d'Albert le Grand",
       "axe": "Littérature et pensée",
       "naissance": 1200,
@@ -646,6 +683,7 @@
     {
       "slug": "luther",
       "nom": "Martin Luther",
+      "classement": "Luther, Martin",
       "titre": "Naissance de Martin Luther",
       "axe": "Littérature et pensée",
       "naissance": 1483,
@@ -664,6 +702,7 @@
     {
       "slug": "zwingli",
       "nom": "Ulrich Zwingli",
+      "classement": "Zwingli, Ulrich",
       "titre": "Naissance d'Ulrich Zwingli",
       "axe": "Littérature et pensée",
       "naissance": 1484,
@@ -680,6 +719,7 @@
     {
       "slug": "nicolasdeflue",
       "nom": "Nicolas de Flue",
+      "classement": "Nicolas de Flue",
       "titre": "Naissance de Nicolas de Flue",
       "axe": "Littérature et pensée",
       "naissance": 1417,
@@ -696,6 +736,7 @@
     {
       "slug": "leibniz",
       "nom": "Gottfried Wilhelm Leibniz",
+      "classement": "Leibniz, Gottfried Wilhelm",
       "titre": "Naissance de Gottfried Wilhelm Leibniz",
       "axe": "Littérature et pensée",
       "naissance": 1646,
@@ -712,6 +753,7 @@
     {
       "slug": "pestalozzi",
       "nom": "Johann Heinrich Pestalozzi",
+      "classement": "Pestalozzi, Johann Heinrich",
       "titre": "Naissance de Johann Heinrich Pestalozzi",
       "axe": "Littérature et pensée",
       "naissance": 1746,
@@ -728,6 +770,7 @@
     {
       "slug": "kant",
       "nom": "Emmanuel Kant",
+      "classement": "Kant, Emmanuel",
       "titre": "Naissance d'Emmanuel Kant",
       "axe": "Littérature et pensée",
       "naissance": 1724,
@@ -746,6 +789,7 @@
     {
       "slug": "lessing",
       "nom": "Gotthold Ephraim Lessing",
+      "classement": "Lessing, Gotthold Ephraim",
       "titre": "Naissance de Gotthold Ephraim Lessing",
       "axe": "Littérature et pensée",
       "naissance": 1729,
@@ -762,6 +806,7 @@
     {
       "slug": "goethe",
       "nom": "Johann Wolfgang von Goethe",
+      "classement": "Goethe, Johann Wolfgang von",
       "titre": "Naissance de Johann Wolfgang von Goethe",
       "axe": "Littérature et pensée",
       "naissance": 1749,
@@ -780,6 +825,7 @@
     {
       "slug": "schiller",
       "nom": "Friedrich von Schiller",
+      "classement": "Schiller, Friedrich von",
       "titre": "Naissance de Friedrich von Schiller",
       "axe": "Littérature et pensée",
       "naissance": 1759,
@@ -797,6 +843,7 @@
     {
       "slug": "hegel",
       "nom": "Georg Wilhelm Friedrich Hegel",
+      "classement": "Hegel, Georg Wilhelm Friedrich",
       "titre": "Naissance de Georg Wilhelm Friedrich Hegel",
       "axe": "Littérature et pensée",
       "naissance": 1770,
@@ -814,6 +861,7 @@
     {
       "slug": "jgrimm",
       "nom": "Jacob Grimm",
+      "classement": "Grimm, Jacob",
       "titre": "Naissance de Jacob Grimm",
       "axe": "Littérature et pensée",
       "naissance": 1785,
@@ -831,6 +879,7 @@
     {
       "slug": "wgrimm",
       "nom": "Wilhelm Grimm",
+      "classement": "Grimm, Wilhelm",
       "titre": "Naissance de Wilhelm Grimm",
       "axe": "Littérature et pensée",
       "naissance": 1786,
@@ -847,6 +896,7 @@
     {
       "slug": "schopenhauer",
       "nom": "Arthur Schopenhauer",
+      "classement": "Schopenhauer, Arthur",
       "titre": "Naissance d'Arthur Schopenhauer",
       "axe": "Littérature et pensée",
       "naissance": 1788,
@@ -863,6 +913,7 @@
     {
       "slug": "heine",
       "nom": "Heinrich Heine",
+      "classement": "Heine, Heinrich",
       "titre": "Naissance de Heinrich Heine",
       "axe": "Littérature et pensée",
       "naissance": 1797,
@@ -879,6 +930,7 @@
     {
       "slug": "marx",
       "nom": "Karl Marx",
+      "classement": "Marx, Karl",
       "titre": "Naissance de Karl Marx",
       "axe": "Littérature et pensée",
       "naissance": 1818,
@@ -897,6 +949,7 @@
     {
       "slug": "nietzsche",
       "nom": "Friedrich Nietzsche",
+      "classement": "Nietzsche, Friedrich",
       "titre": "Naissance de Friedrich Nietzsche",
       "axe": "Littérature et pensée",
       "naissance": 1844,
@@ -915,6 +968,7 @@
     {
       "slug": "spyri",
       "nom": "Johanna Spyri",
+      "classement": "Spyri, Johanna",
       "titre": "Naissance de Johanna Spyri",
       "axe": "Littérature et pensée",
       "naissance": 1827,
@@ -937,6 +991,7 @@
     {
       "slug": "weber",
       "nom": "Max Weber",
+      "classement": "Weber, Max",
       "titre": "Naissance de Max Weber",
       "axe": "Littérature et pensée",
       "naissance": 1864,
@@ -953,6 +1008,7 @@
     {
       "slug": "freud",
       "nom": "Sigmund Freud",
+      "classement": "Freud, Sigmund",
       "titre": "Naissance de Sigmund Freud",
       "axe": "Littérature et pensée",
       "naissance": 1856,
@@ -970,6 +1026,7 @@
     {
       "slug": "saussure",
       "nom": "Ferdinand de Saussure",
+      "classement": "Saussure, Ferdinand de",
       "titre": "Naissance de Ferdinand de Saussure",
       "axe": "Littérature et pensée",
       "naissance": 1857,
@@ -986,6 +1043,7 @@
     {
       "slug": "jung",
       "nom": "Carl Gustav Jung",
+      "classement": "Jung, Carl Gustav",
       "titre": "Naissance de Carl Gustav Jung",
       "axe": "Littérature et pensée",
       "naissance": 1875,
@@ -1003,6 +1061,7 @@
     {
       "slug": "rilke",
       "nom": "Rainer Maria Rilke",
+      "classement": "Rilke, Rainer Maria",
       "titre": "Naissance de Rainer Maria Rilke",
       "axe": "Littérature et pensée",
       "naissance": 1875,
@@ -1019,6 +1078,7 @@
     {
       "slug": "thomasmann",
       "nom": "Thomas Mann",
+      "classement": "Mann, Thomas",
       "titre": "Naissance de Thomas Mann",
       "axe": "Littérature et pensée",
       "naissance": 1875,
@@ -1036,6 +1096,7 @@
     {
       "slug": "ramuz",
       "nom": "Charles Ferdinand Ramuz",
+      "classement": "Ramuz, Charles Ferdinand",
       "titre": "Naissance de Charles Ferdinand Ramuz",
       "axe": "Littérature et pensée",
       "naissance": 1878,
@@ -1060,6 +1121,7 @@
     {
       "slug": "hesse",
       "nom": "Hermann Hesse",
+      "classement": "Hesse, Hermann",
       "titre": "Naissance de Hermann Hesse",
       "axe": "Littérature et pensée",
       "naissance": 1877,
@@ -1076,6 +1138,7 @@
     {
       "slug": "zweig",
       "nom": "Stefan Zweig",
+      "classement": "Zweig, Stefan",
       "titre": "Naissance de Stefan Zweig",
       "axe": "Littérature et pensée",
       "naissance": 1881,
@@ -1092,6 +1155,7 @@
     {
       "slug": "kafka",
       "nom": "Franz Kafka",
+      "classement": "Kafka, Franz",
       "titre": "Naissance de Franz Kafka",
       "axe": "Littérature et pensée",
       "naissance": 1883,
@@ -1110,6 +1174,7 @@
     {
       "slug": "wittgenstein",
       "nom": "Ludwig Wittgenstein",
+      "classement": "Wittgenstein, Ludwig",
       "titre": "Naissance de Ludwig Wittgenstein",
       "axe": "Littérature et pensée",
       "naissance": 1889,
@@ -1126,6 +1191,7 @@
     {
       "slug": "piaget",
       "nom": "Jean Piaget",
+      "classement": "Piaget, Jean",
       "titre": "Naissance de Jean Piaget",
       "axe": "Littérature et pensée",
       "naissance": 1896,
@@ -1142,6 +1208,7 @@
     {
       "slug": "brecht",
       "nom": "Bertolt Brecht",
+      "classement": "Brecht, Bertolt",
       "titre": "Naissance de Bertolt Brecht",
       "axe": "Littérature et pensée",
       "naissance": 1898,
@@ -1158,6 +1225,7 @@
     {
       "slug": "remarque",
       "nom": "Erich Maria Remarque",
+      "classement": "Remarque, Erich Maria",
       "titre": "Naissance d'Erich Maria Remarque",
       "axe": "Littérature et pensée",
       "naissance": 1898,
@@ -1174,6 +1242,7 @@
     {
       "slug": "popper",
       "nom": "Karl Popper",
+      "classement": "Popper, Karl",
       "titre": "Naissance de Karl Popper",
       "axe": "Littérature et pensée",
       "naissance": 1902,
@@ -1190,6 +1259,7 @@
     {
       "slug": "arendt",
       "nom": "Hannah Arendt",
+      "classement": "Arendt, Hannah",
       "titre": "Naissance de Hannah Arendt",
       "axe": "Littérature et pensée",
       "naissance": 1906,
@@ -1206,6 +1276,7 @@
     {
       "slug": "frisch",
       "nom": "Max Frisch",
+      "classement": "Frisch, Max",
       "titre": "Naissance de Max Frisch",
       "axe": "Littérature et pensée",
       "naissance": 1911,
@@ -1222,6 +1293,7 @@
     {
       "slug": "boll",
       "nom": "Heinrich Böll",
+      "classement": "Böll, Heinrich",
       "titre": "Naissance de Heinrich Böll",
       "axe": "Littérature et pensée",
       "naissance": 1917,
@@ -1238,6 +1310,7 @@
     {
       "slug": "durrenmatt",
       "nom": "Friedrich Dürrenmatt",
+      "classement": "Dürrenmatt, Friedrich",
       "titre": "Naissance de Friedrich Dürrenmatt",
       "axe": "Littérature et pensée",
       "naissance": 1921,
@@ -1254,6 +1327,7 @@
     {
       "slug": "grass",
       "nom": "Günter Grass",
+      "classement": "Grass, Günter",
       "titre": "Naissance de Günter Grass",
       "axe": "Littérature et pensée",
       "naissance": 1927,
@@ -1270,6 +1344,7 @@
     {
       "slug": "durer",
       "nom": "Albrecht Dürer",
+      "classement": "Dürer, Albrecht",
       "titre": "Naissance d'Albrecht Dürer",
       "axe": "Beaux-arts",
       "naissance": 1471,
@@ -1287,6 +1362,7 @@
     {
       "slug": "cranach",
       "nom": "Lucas Cranach l'Ancien",
+      "classement": "Cranach l'Ancien, Lucas",
       "titre": "Naissance de Lucas Cranach l'Ancien",
       "axe": "Beaux-arts",
       "naissance": 1472,
@@ -1303,6 +1379,7 @@
     {
       "slug": "holbein",
       "nom": "Hans Holbein le Jeune",
+      "classement": "Holbein le Jeune, Hans",
       "titre": "Naissance de Hans Holbein le Jeune",
       "axe": "Beaux-arts",
       "naissance": 1497,
@@ -1312,7 +1389,8 @@
         "fichier": "Hans Holbein the Younger, self-portrait.jpg",
         "licence": "Domaine public",
         "auteur": "Hans Holbein le Jeune",
-        "legende": "Hans Holbein le Jeune, autoportrait (vers 1542-1543)"
+        "legende": "Hans Holbein le Jeune, autoportrait (vers 1542-1543)",
+        "nomVisible": true
       },
       "description": "Hans Holbein le Jeune (1497-1543) est un peintre allemand, né à Augsbourg, installé à Bâle puis, à partir de 1532, à Londres, où il devient le peintre de la cour d'Henri VIII. Auteur du portrait d'Érasme (1523), des « Ambassadeurs » (1533) et des portraits de Thomas More, d'Anne de Clèves et d'Henri VIII, il donne des visages précis et sans flatterie aux grands de la Renaissance. Il dessine aussi une « Danse des morts » et des vitraux, et il meurt à Londres en 1543, vraisemblablement de la peste.",
       "essentiel": true
@@ -1320,6 +1398,7 @@
     {
       "slug": "friedrich",
       "nom": "Caspar David Friedrich",
+      "classement": "Friedrich, Caspar David",
       "titre": "Naissance de Caspar David Friedrich",
       "axe": "Beaux-arts",
       "naissance": 1774,
@@ -1337,6 +1416,7 @@
     {
       "slug": "schinkel",
       "nom": "Karl Friedrich Schinkel",
+      "classement": "Schinkel, Karl Friedrich",
       "titre": "Naissance de Karl Friedrich Schinkel",
       "axe": "Beaux-arts",
       "naissance": 1781,
@@ -1353,6 +1433,7 @@
     {
       "slug": "bocklin",
       "nom": "Arnold Böcklin",
+      "classement": "Böcklin, Arnold",
       "titre": "Naissance d'Arnold Böcklin",
       "axe": "Beaux-arts",
       "naissance": 1827,
@@ -1369,6 +1450,7 @@
     {
       "slug": "wagnerotto",
       "nom": "Otto Wagner",
+      "classement": "Wagner, Otto",
       "titre": "Naissance d'Otto Wagner",
       "axe": "Beaux-arts",
       "naissance": 1841,
@@ -1385,6 +1467,7 @@
     {
       "slug": "hodler",
       "nom": "Ferdinand Hodler",
+      "classement": "Hodler, Ferdinand",
       "titre": "Naissance de Ferdinand Hodler",
       "axe": "Beaux-arts",
       "naissance": 1853,
@@ -1401,6 +1484,7 @@
     {
       "slug": "klimt",
       "nom": "Gustav Klimt",
+      "classement": "Klimt, Gustav",
       "titre": "Naissance de Gustav Klimt",
       "axe": "Beaux-arts",
       "naissance": 1862,
@@ -1418,6 +1502,7 @@
     {
       "slug": "kollwitz",
       "nom": "Käthe Kollwitz",
+      "classement": "Kollwitz, Käthe",
       "titre": "Naissance de Käthe Kollwitz",
       "axe": "Beaux-arts",
       "naissance": 1867,
@@ -1434,6 +1519,7 @@
     {
       "slug": "klee",
       "nom": "Paul Klee",
+      "classement": "Klee, Paul",
       "titre": "Naissance de Paul Klee",
       "axe": "Beaux-arts",
       "naissance": 1879,
@@ -1451,6 +1537,7 @@
     {
       "slug": "gropius",
       "nom": "Walter Gropius",
+      "classement": "Gropius, Walter",
       "titre": "Naissance de Walter Gropius",
       "axe": "Beaux-arts",
       "naissance": 1883,
@@ -1469,6 +1556,7 @@
     {
       "slug": "mies",
       "nom": "Ludwig Mies van der Rohe",
+      "classement": "Mies van der Rohe, Ludwig",
       "titre": "Naissance de Ludwig Mies van der Rohe",
       "axe": "Beaux-arts",
       "naissance": 1886,
@@ -1485,6 +1573,7 @@
     {
       "slug": "kokoschka",
       "nom": "Oskar Kokoschka",
+      "classement": "Kokoschka, Oskar",
       "titre": "Naissance d'Oskar Kokoschka",
       "axe": "Beaux-arts",
       "naissance": 1886,
@@ -1501,6 +1590,7 @@
     {
       "slug": "lecorbusier",
       "nom": "Le Corbusier",
+      "classement": "Le Corbusier",
       "titre": "Naissance de Le Corbusier",
       "axe": "Beaux-arts",
       "naissance": 1887,
@@ -1519,6 +1609,7 @@
     {
       "slug": "schiele",
       "nom": "Egon Schiele",
+      "classement": "Schiele, Egon",
       "titre": "Naissance d'Egon Schiele",
       "axe": "Beaux-arts",
       "naissance": 1890,
@@ -1535,6 +1626,7 @@
     {
       "slug": "dix",
       "nom": "Otto Dix",
+      "classement": "Dix, Otto",
       "titre": "Naissance d'Otto Dix",
       "axe": "Beaux-arts",
       "naissance": 1891,
@@ -1551,6 +1643,7 @@
     {
       "slug": "ernst",
       "nom": "Max Ernst",
+      "classement": "Ernst, Max",
       "titre": "Naissance de Max Ernst",
       "axe": "Beaux-arts",
       "naissance": 1891,
@@ -1573,6 +1666,7 @@
     {
       "slug": "giacometti",
       "nom": "Alberto Giacometti",
+      "classement": "Giacometti, Alberto",
       "titre": "Naissance d'Alberto Giacometti",
       "axe": "Beaux-arts",
       "naissance": 1901,
@@ -1589,6 +1683,7 @@
     {
       "slug": "beuys",
       "nom": "Joseph Beuys",
+      "classement": "Beuys, Joseph",
       "titre": "Naissance de Joseph Beuys",
       "axe": "Beaux-arts",
       "naissance": 1921,
@@ -1605,6 +1700,7 @@
     {
       "slug": "tinguely",
       "nom": "Jean Tinguely",
+      "classement": "Tinguely, Jean",
       "titre": "Naissance de Jean Tinguely",
       "axe": "Beaux-arts",
       "naissance": 1925,
@@ -1621,6 +1717,7 @@
     {
       "slug": "bach",
       "nom": "Jean-Sébastien Bach",
+      "classement": "Bach, Jean-Sébastien",
       "titre": "Naissance de Jean-Sébastien Bach",
       "axe": "Musique, spectacle et sport",
       "naissance": 1685,
@@ -1639,6 +1736,7 @@
     {
       "slug": "haendel",
       "nom": "Georg Friedrich Haendel",
+      "classement": "Haendel, Georg Friedrich",
       "titre": "Naissance de Georg Friedrich Haendel",
       "axe": "Musique, spectacle et sport",
       "naissance": 1685,
@@ -1656,6 +1754,7 @@
     {
       "slug": "haydn",
       "nom": "Joseph Haydn",
+      "classement": "Haydn, Joseph",
       "titre": "Naissance de Joseph Haydn",
       "axe": "Musique, spectacle et sport",
       "naissance": 1732,
@@ -1673,6 +1772,7 @@
     {
       "slug": "mozart",
       "nom": "Wolfgang Amadeus Mozart",
+      "classement": "Mozart, Wolfgang Amadeus",
       "titre": "Naissance de Wolfgang Amadeus Mozart",
       "axe": "Musique, spectacle et sport",
       "naissance": 1756,
@@ -1691,6 +1791,7 @@
     {
       "slug": "beethoven",
       "nom": "Ludwig van Beethoven",
+      "classement": "Beethoven, Ludwig van",
       "titre": "Naissance de Ludwig van Beethoven",
       "axe": "Musique, spectacle et sport",
       "naissance": 1770,
@@ -1709,6 +1810,7 @@
     {
       "slug": "schubert",
       "nom": "Franz Schubert",
+      "classement": "Schubert, Franz",
       "titre": "Naissance de Franz Schubert",
       "axe": "Musique, spectacle et sport",
       "naissance": 1797,
@@ -1726,6 +1828,7 @@
     {
       "slug": "mendelssohn",
       "nom": "Felix Mendelssohn",
+      "classement": "Mendelssohn, Felix",
       "titre": "Naissance de Felix Mendelssohn",
       "axe": "Musique, spectacle et sport",
       "naissance": 1809,
@@ -1742,6 +1845,7 @@
     {
       "slug": "rschumann",
       "nom": "Robert Schumann",
+      "classement": "Schumann, Robert",
       "titre": "Naissance de Robert Schumann",
       "axe": "Musique, spectacle et sport",
       "naissance": 1810,
@@ -1758,6 +1862,7 @@
     {
       "slug": "wagner",
       "nom": "Richard Wagner",
+      "classement": "Wagner, Richard",
       "titre": "Naissance de Richard Wagner",
       "axe": "Musique, spectacle et sport",
       "naissance": 1813,
@@ -1775,6 +1880,7 @@
     {
       "slug": "clara",
       "nom": "Clara Schumann",
+      "classement": "Schumann, Clara",
       "titre": "Naissance de Clara Schumann",
       "axe": "Musique, spectacle et sport",
       "naissance": 1819,
@@ -1791,6 +1897,7 @@
     {
       "slug": "bruckner",
       "nom": "Anton Bruckner",
+      "classement": "Bruckner, Anton",
       "titre": "Naissance d'Anton Bruckner",
       "axe": "Musique, spectacle et sport",
       "naissance": 1824,
@@ -1807,6 +1914,7 @@
     {
       "slug": "jstrauss",
       "nom": "Johann Strauss fils",
+      "classement": "Strauss fils, Johann",
       "titre": "Naissance de Johann Strauss fils",
       "axe": "Musique, spectacle et sport",
       "naissance": 1825,
@@ -1823,6 +1931,7 @@
     {
       "slug": "brahms",
       "nom": "Johannes Brahms",
+      "classement": "Brahms, Johannes",
       "titre": "Naissance de Johannes Brahms",
       "axe": "Musique, spectacle et sport",
       "naissance": 1833,
@@ -1840,6 +1949,7 @@
     {
       "slug": "mahler",
       "nom": "Gustav Mahler",
+      "classement": "Mahler, Gustav",
       "titre": "Naissance de Gustav Mahler",
       "axe": "Musique, spectacle et sport",
       "naissance": 1860,
@@ -1857,6 +1967,7 @@
     {
       "slug": "rstrauss",
       "nom": "Richard Strauss",
+      "classement": "Strauss, Richard",
       "titre": "Naissance de Richard Strauss",
       "axe": "Musique, spectacle et sport",
       "naissance": 1864,
@@ -1873,6 +1984,7 @@
     {
       "slug": "schonberg",
       "nom": "Arnold Schönberg",
+      "classement": "Schönberg, Arnold",
       "titre": "Naissance d'Arnold Schönberg",
       "axe": "Musique, spectacle et sport",
       "naissance": 1874,
@@ -1889,6 +2001,7 @@
     {
       "slug": "ansermet",
       "nom": "Ernest Ansermet",
+      "classement": "Ansermet, Ernest",
       "titre": "Naissance d'Ernest Ansermet",
       "axe": "Musique, spectacle et sport",
       "naissance": 1883,
@@ -1906,6 +2019,7 @@
     {
       "slug": "lang",
       "nom": "Fritz Lang",
+      "classement": "Lang, Fritz",
       "titre": "Naissance de Fritz Lang",
       "axe": "Musique, spectacle et sport",
       "naissance": 1890,
@@ -1922,6 +2036,7 @@
     {
       "slug": "orff",
       "nom": "Carl Orff",
+      "classement": "Orff, Carl",
       "titre": "Naissance de Carl Orff",
       "axe": "Musique, spectacle et sport",
       "naissance": 1895,
@@ -1938,6 +2053,7 @@
     {
       "slug": "weill",
       "nom": "Kurt Weill",
+      "classement": "Weill, Kurt",
       "titre": "Naissance de Kurt Weill",
       "axe": "Musique, spectacle et sport",
       "naissance": 1900,
@@ -1954,6 +2070,7 @@
     {
       "slug": "dietrich",
       "nom": "Marlene Dietrich",
+      "classement": "Dietrich, Marlene",
       "titre": "Naissance de Marlene Dietrich",
       "axe": "Musique, spectacle et sport",
       "naissance": 1901,
@@ -1971,6 +2088,7 @@
     {
       "slug": "karajan",
       "nom": "Herbert von Karajan",
+      "classement": "Karajan, Herbert von",
       "titre": "Naissance de Herbert von Karajan",
       "axe": "Musique, spectacle et sport",
       "naissance": 1908,
@@ -1987,6 +2105,7 @@
     {
       "slug": "lamarr",
       "nom": "Hedy Lamarr",
+      "classement": "Lamarr, Hedy",
       "titre": "Naissance de Hedy Lamarr",
       "axe": "Musique, spectacle et sport",
       "naissance": 1914,
@@ -2003,6 +2122,7 @@
     {
       "slug": "gutenberg",
       "nom": "Johannes Gutenberg",
+      "classement": "Gutenberg, Johannes",
       "titre": "Naissance de Johannes Gutenberg",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1400,
@@ -2020,6 +2140,7 @@
     {
       "slug": "paracelse",
       "nom": "Paracelse",
+      "classement": "Paracelse",
       "titre": "Naissance de Paracelse",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1493,
@@ -2036,6 +2157,7 @@
     {
       "slug": "kepler",
       "nom": "Johannes Kepler",
+      "classement": "Kepler, Johannes",
       "titre": "Naissance de Johannes Kepler",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1571,
@@ -2045,7 +2167,8 @@
         "fichier": "JKepler.jpg",
         "licence": "Domaine public",
         "auteur": "Auteur inconnu",
-        "legende": "Johannes Kepler, portrait peint (XVIIe siècle)"
+        "legende": "Johannes Kepler, portrait peint (XVIIe siècle)",
+        "nomVisible": true
       },
       "description": "Johannes Kepler (1571-1630) est un astronome et mathématicien allemand, né à Weil der Stadt, en Souabe, élève de Michael Maestlin à Tübingen, assistant de Tycho Brahe à Prague en 1600 puis mathématicien impérial de Rodolphe II. À partir des observations de Tycho Brahe sur Mars, il énonce les trois lois du mouvement des planètes (1609, 1619) : orbites elliptiques, aires égales en temps égaux, rapport des carrés des périodes aux cubes des distances. Auteur de l'« Astronomia nova » (1609), d'« Harmonices mundi » (1619) et des tables rudolphines, il doit défendre sa mère, accusée de sorcellerie en 1620-1621, et meurt à Ratisbonne en 1630.",
       "essentiel": true
@@ -2053,6 +2176,7 @@
     {
       "slug": "euler",
       "nom": "Leonhard Euler",
+      "classement": "Euler, Leonhard",
       "titre": "Naissance de Leonhard Euler",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1707,
@@ -2069,6 +2193,7 @@
     {
       "slug": "hbsaussure",
       "nom": "Horace-Bénédict de Saussure",
+      "classement": "Saussure, Horace-Bénédict de",
       "titre": "Naissance d'Horace-Bénédict de Saussure",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1740,
@@ -2086,6 +2211,7 @@
     {
       "slug": "humboldt",
       "nom": "Alexander von Humboldt",
+      "classement": "Humboldt, Alexander von",
       "titre": "Naissance d'Alexander von Humboldt",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1769,
@@ -2103,6 +2229,7 @@
     {
       "slug": "gauss",
       "nom": "Carl Friedrich Gauss",
+      "classement": "Gauss, Carl Friedrich",
       "titre": "Naissance de Carl Friedrich Gauss",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1777,
@@ -2120,6 +2247,7 @@
     {
       "slug": "doppler",
       "nom": "Christian Doppler",
+      "classement": "Doppler, Christian",
       "titre": "Naissance de Christian Doppler",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1803,
@@ -2136,6 +2264,7 @@
     {
       "slug": "mendel",
       "nom": "Gregor Mendel",
+      "classement": "Mendel, Gregor",
       "titre": "Naissance de Gregor Mendel",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1822,
@@ -2154,6 +2283,7 @@
     {
       "slug": "zeppelin",
       "nom": "Ferdinand von Zeppelin",
+      "classement": "Zeppelin, Ferdinand von",
       "titre": "Naissance de Ferdinand von Zeppelin",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1838,
@@ -2170,6 +2300,7 @@
     {
       "slug": "koch",
       "nom": "Robert Koch",
+      "classement": "Koch, Robert",
       "titre": "Naissance de Robert Koch",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1843,
@@ -2186,6 +2317,7 @@
     {
       "slug": "boltzmann",
       "nom": "Ludwig Boltzmann",
+      "classement": "Boltzmann, Ludwig",
       "titre": "Naissance de Ludwig Boltzmann",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1844,
@@ -2202,6 +2334,7 @@
     {
       "slug": "roentgen",
       "nom": "Wilhelm Röntgen",
+      "classement": "Röntgen, Wilhelm",
       "titre": "Naissance de Wilhelm Röntgen",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1845,
@@ -2219,6 +2352,7 @@
     {
       "slug": "planck",
       "nom": "Max Planck",
+      "classement": "Planck, Max",
       "titre": "Naissance de Max Planck",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1858,
@@ -2236,6 +2370,7 @@
     {
       "slug": "meitner",
       "nom": "Lise Meitner",
+      "classement": "Meitner, Lise",
       "titre": "Naissance de Lise Meitner",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1878,
@@ -2252,6 +2387,7 @@
     {
       "slug": "einstein",
       "nom": "Albert Einstein",
+      "classement": "Einstein, Albert",
       "titre": "Naissance d'Albert Einstein",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1879,
@@ -2270,6 +2406,7 @@
     {
       "slug": "hahn",
       "nom": "Otto Hahn",
+      "classement": "Hahn, Otto",
       "titre": "Naissance d'Otto Hahn",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1879,
@@ -2286,6 +2423,7 @@
     {
       "slug": "noether",
       "nom": "Emmy Noether",
+      "classement": "Noether, Emmy",
       "titre": "Naissance d'Emmy Noether",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1882,
@@ -2302,6 +2440,7 @@
     {
       "slug": "piccard",
       "nom": "Auguste Piccard",
+      "classement": "Piccard, Auguste",
       "titre": "Naissance d'Auguste Piccard",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1884,
@@ -2318,6 +2457,7 @@
     {
       "slug": "schrodinger",
       "nom": "Erwin Schrödinger",
+      "classement": "Schrödinger, Erwin",
       "titre": "Naissance d'Erwin Schrödinger",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1887,
@@ -2335,6 +2475,7 @@
     {
       "slug": "heisenberg",
       "nom": "Werner Heisenberg",
+      "classement": "Heisenberg, Werner",
       "titre": "Naissance de Werner Heisenberg",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1901,
@@ -2351,6 +2492,7 @@
     {
       "slug": "pauli",
       "nom": "Wolfgang Pauli",
+      "classement": "Pauli, Wolfgang",
       "titre": "Naissance de Wolfgang Pauli",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1900,
@@ -2367,6 +2509,7 @@
     {
       "slug": "godel",
       "nom": "Kurt Gödel",
+      "classement": "Gödel, Kurt",
       "titre": "Naissance de Kurt Gödel",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1906,
@@ -2383,6 +2526,7 @@
     {
       "slug": "zuse",
       "nom": "Konrad Zuse",
+      "classement": "Zuse, Konrad",
       "titre": "Naissance de Konrad Zuse",
       "axe": "Sciences, techniques et innovation",
       "naissance": 1910,
@@ -2399,6 +2543,7 @@
     {
       "slug": "fugger",
       "nom": "Jakob Fugger",
+      "classement": "Fugger, Jakob",
       "titre": "Naissance de Jakob Fugger",
       "axe": "Économie et entreprise",
       "naissance": 1459,
@@ -2417,6 +2562,7 @@
     {
       "slug": "rothschild",
       "nom": "Mayer Amschel Rothschild",
+      "classement": "Rothschild, Mayer Amschel",
       "titre": "Naissance de Mayer Amschel Rothschild",
       "axe": "Économie et entreprise",
       "naissance": 1744,
@@ -2433,6 +2579,7 @@
     {
       "slug": "nestle",
       "nom": "Henri Nestlé",
+      "classement": "Nestlé, Henri",
       "titre": "Naissance d'Henri Nestlé",
       "axe": "Économie et entreprise",
       "naissance": 1814,
@@ -2449,6 +2596,7 @@
     {
       "slug": "krupp",
       "nom": "Alfred Krupp",
+      "classement": "Krupp, Alfred",
       "titre": "Naissance d'Alfred Krupp",
       "axe": "Économie et entreprise",
       "naissance": 1812,
@@ -2465,6 +2613,7 @@
     {
       "slug": "siemens",
       "nom": "Werner von Siemens",
+      "classement": "Siemens, Werner von",
       "titre": "Naissance de Werner von Siemens",
       "axe": "Économie et entreprise",
       "naissance": 1816,
@@ -2482,6 +2631,7 @@
     {
       "slug": "escher",
       "nom": "Alfred Escher",
+      "classement": "Escher, Alfred",
       "titre": "Naissance d'Alfred Escher",
       "axe": "Économie et entreprise",
       "naissance": 1819,
@@ -2498,6 +2648,7 @@
     {
       "slug": "benz",
       "nom": "Carl Benz",
+      "classement": "Benz, Carl",
       "titre": "Naissance de Carl Benz",
       "axe": "Économie et entreprise",
       "naissance": 1844,
@@ -2515,6 +2666,7 @@
     {
       "slug": "bosch",
       "nom": "Robert Bosch",
+      "classement": "Bosch, Robert",
       "titre": "Naissance de Robert Bosch",
       "axe": "Économie et entreprise",
       "naissance": 1861,
@@ -2531,6 +2683,7 @@
     {
       "slug": "schmeling",
       "nom": "Max Schmeling",
+      "classement": "Schmeling, Max",
       "titre": "Naissance de Max Schmeling",
       "axe": "Musique, spectacle et sport",
       "naissance": 1905,
@@ -2547,6 +2700,7 @@
     {
       "slug": "beckenbauer",
       "nom": "Franz Beckenbauer",
+      "classement": "Beckenbauer, Franz",
       "titre": "Naissance de Franz Beckenbauer",
       "axe": "Musique, spectacle et sport",
       "naissance": 1945,
