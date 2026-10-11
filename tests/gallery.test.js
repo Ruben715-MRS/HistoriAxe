@@ -63,7 +63,7 @@ pantheon.themes.forEach(theme => theme.events.forEach(evt => {
 const byTitle = titre => entries.find(e => e.evt.titre === titre);
 
 test('chaque figure a un nom de classement qui commence par une lettre', () => {
-    assert.equal(entries.length, 838);
+    assert.equal(entries.length, 1056);
     entries.forEach(e => {
         assert.ok(e.evt.classement, `${e.evt.id} : pas de nom de classement`);
         assert.notEqual(galleryInitial(e.classement), '#', `${e.evt.id} : « ${e.classement} » ne commence pas par une lettre`);
@@ -109,7 +109,7 @@ test('les filtres par pays et par domaine se combinent avec la recherche', () =>
     assert.ok(fr.length >= 60 && fr.every(e => e.iso === 'FR'));
     const sciences = filterGalleryEntries(entries, { axis: 'Sciences, techniques et innovation' });
     assert.ok(sciences.length > 50 && sciences.every(e => e.evt.axe === 'Sciences, techniques et innovation'));
-    const both = filterGalleryEntries(entries, { country: 'FR', axis: 'Sciences, techniques et innovation', query: 'curie' });
+    const both = filterGalleryEntries(entries, { country: 'FR', axis: 'Sciences, techniques et innovation', query: 'marie curie' });
     assert.deepEqual(both.map(e => e.evt.titre), ['Naissance de Marie Curie']);
     // Un pays de bloc passe par le champ `pays` de l'événement.
     assert.ok(filterGalleryEntries(entries, { country: 'VE' }).some(e => e.evt.titre === 'Naissance de Simón Bolívar'));

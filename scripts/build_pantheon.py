@@ -11,7 +11,9 @@ le script remplace ce thème — il est la seule source de vérité de son conte
 ne pas le retoucher à la main dans fr.json.
 
 Deux sortes de panthéons, distinguées par la longueur du code :
-  - un PAYS a un code ISO à deux lettres (`fr` → `pan_fr`) ;
+  - un PAYS a un code ISO à deux lettres (`fr` → `pan_fr`) ; ses figures n'ont pas de
+    `pays`, sauf un INVITÉ d'un autre État rangé là où on l'honore le plus (Monaco dans
+    `pan_fr`), dont la fiche dit alors le pays ;
   - un BLOC rassemble plusieurs pays qui partagent une histoire (`hispam` →
     `pan_hispam`, plus tard `maghreb`) : trois lettres au moins, pour qu'aucun
     code de bloc n'entre jamais en collision avec un code de pays. Chaque
@@ -198,7 +200,12 @@ def validate(src, code, bio_themes, other_pantheons, errors, warnings):
             else:
                 per_country[p['pays']] = per_country.get(p['pays'], 0) + 1
         elif 'pays' in p:
-            errors.append(f'{who}: « pays » n\'a de sens que dans un bloc')
+            # Un INVITÉ : une figure d'un autre État rangée au panthéon du pays qui l'honore le
+            # plus (Monaco dans « Grandes figures de France »). Le pays ne sert alors qu'à le dire.
+            if not isinstance(p['pays'], str) or not re.fullmatch(r'[A-Z]{2}', p['pays']):
+                errors.append(f'{who}: « pays » doit être un code ISO à deux lettres majuscules')
+            elif p['pays'] == code.upper():
+                errors.append(f"{who}: « pays » ({p['pays']}) est celui du panthéon : seul un invité d'un autre État le porte")
         if p.get('biographie'):
             bio = bio_themes.get(p['biographie'])
             if bio is None:
@@ -266,7 +273,7 @@ def build_theme(src, code, warnings):
             'description': p['description'],
             'wikipedia': wikipedia_url(p['wikipedia']),
         }
-        if bloc:
+        if bloc or p.get('pays'):
             event['pays'] = p['pays']
         event['classement'] = p['classement']
         if p.get('biographie'):

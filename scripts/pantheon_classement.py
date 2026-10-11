@@ -48,6 +48,12 @@ KEEP_AS_WRITTEN = {
     'Benoît de Nursie', 'Catherine de Sienne', 'Pic de la Mirandole', 'Piero della Francesca',
     'Ali Bey al-Kabir', 'Albert le Grand', 'Alfred le Grand', 'Antoine le Grand', 'Guillaume le Conquérant',
     'Pakal le Grand', 'Bède le Vénérable',
+    # Espagne : saints et religieux par leur prénom, noms d'artiste, un nom d'usage.
+    'Charles Quint', "Agustina d'Aragon", "Thérèse d'Avila", 'Isidore de Séville', 'Ibn Arabi',
+    'Dominique de Guzmán', 'Ignace de Loyola', 'François Xavier', 'Jean de la Croix',
+    'Garcilaso de la Vega', 'Lope de Vega', 'Tirso de Molina', 'Camarón de la Isla', 'Paco de Lucía',
+    # France : deux rois rangés par leur prénom, une princesse de Monaco aussi.
+    'Philippe Auguste', 'Philippe le Bel', 'Charlotte de Monaco',
 }
 
 # Écrits à la main : (nom de la source) → nom de classement.
@@ -120,6 +126,29 @@ EXCEPTIONS = {
     'Le Bernin': 'Bernin',
     "L'Arioste": 'Arioste',
     'Paul Véronèse': 'Véronèse, Paul',
+    # Espagne : le nom de famille est souvent double (« Pérez Galdós »), et on range sous le premier.
+    'Antonio Cánovas del Castillo': 'Cánovas del Castillo, Antonio',
+    'Pablo Iglesias Posse': 'Iglesias Posse, Pablo',
+    'Gonzalo Fernández de Córdoba': 'Fernández de Córdoba, Gonzalo',
+    'Bartolomé de las Casas': 'Las Casas, Bartolomé de',
+    "Don Juan d'Autriche": "Juan d'Autriche, don",
+    'Pedro Calderón de la Barca': 'Calderón de la Barca, Pedro',
+    'Benito Pérez Galdós': 'Pérez Galdós, Benito',
+    'Emilia Pardo Bazán': 'Pardo Bazán, Emilia',
+    'José Ortega y Gasset': 'Ortega y Gasset, José',
+    'Federico García Lorca': 'García Lorca, Federico',
+    'Carmen Martín Gaite': 'Martín Gaite, Carmen',
+    'Luis García Berlanga': 'García Berlanga, Luis',
+    'Vasco Núñez de Balboa': 'Núñez de Balboa, Vasco',
+    'Álvar Núñez Cabeza de Vaca': 'Cabeza de Vaca, Álvar Núñez',
+    'Santiago Ramón y Cajal': 'Ramón y Cajal, Santiago',
+    'Leonardo Torres Quevedo': 'Torres Quevedo, Leonardo',
+    'Abbas ibn Firnas': 'Ibn Firnas, Abbas',
+    'Le Cid': 'Cid',
+    'Le Greco': 'Greco',
+    # France : un nom à particule majuscule, et un nom d'usage qui ne range pas sous le dernier mot.
+    'André Le Nôtre': 'Le Nôtre, André',
+    'Philippe Leclerc de Hauteclocque': 'Leclerc de Hauteclocque, Philippe',
 }
 
 
