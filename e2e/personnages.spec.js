@@ -89,15 +89,15 @@ test('Personnages illustres : deux sous-catégories, chacune avec sa note et son
     expect(await visibleScreen(page)).toBe('screen-themes');
     await expect(page.locator('#theme-screen-title')).toHaveText('Panthéons');
     await expect(page.locator('#theme-screen-note-text')).toContainText('né dans les frontières actuelles');
-    // Panthéons de pays et de blocs se rangent par leur nom de source — « Allemagne, Autriche et Suisse »,
-    // « Amérique hispanique », « Égypte », « Espagne », « États-Unis », « France », « Italie », « Machrek et péninsule Arabique », « Maghreb », « Royaume-Uni », « Scandinavie » — et non par
+    // Panthéons de pays et de blocs se rangent par leur nom de source — « Afrique de l'Ouest », « Allemagne, Autriche et Suisse »,
+    // « Amérique hispanique », « Égypte », « Espagne », « États-Unis », « France », « Italie », « Machrek et péninsule Arabique », « Maghreb », « Royaume-Uni », « Scandinavie », « Sous-continent indien » — et non par
     // « Grandes figures d'… » / « … de » / « … des » / « … du ».
     await expect(page.locator('#themes-container .data-card-title'))
-        .toHaveText(["Grandes figures d'Allemagne, d'Autriche et de Suisse", "Grandes figures d'Amérique hispanique",
+        .toHaveText(["Grandes figures d'Afrique de l'Ouest", "Grandes figures d'Allemagne, d'Autriche et de Suisse", "Grandes figures d'Amérique hispanique",
             "Grandes figures d'Égypte", "Grandes figures d'Espagne", 'Grandes figures des États-Unis',
             'Grandes figures de France', "Grandes figures d'Italie",
             'Grandes figures du Machrek et de la péninsule Arabique', 'Grandes figures du Maghreb',
-            'Grandes figures du Royaume-Uni', 'Grandes figures de Scandinavie']);
+            'Grandes figures du Royaume-Uni', 'Grandes figures de Scandinavie', 'Grandes figures du sous-continent indien']);
 });
 
 test('la fiche d’un personnage montre son portrait, sa légende, son crédit et sa biographie', async ({ page }) => {
@@ -962,7 +962,7 @@ test('à la première ouverture de « Personnages illustres », on demande si le
     await expect(fenetre).toBeHidden();
     expect(await reglage(page)).toBe('bw');
     // Le bouton de la galerie annonce l'avancement, dès le premier instant.
-    await expect(page.locator('#btn-gallery .gallery-launcher-sub')).toHaveText('0 / 1307 portraits débloqués');
+    await expect(page.locator('#btn-gallery .gallery-launcher-sub')).toHaveText('0 / 1434 portraits débloqués');
 
     // On ne repose pas la question.
     await page.locator('#screen-subcategories .back-btn').click();
@@ -1440,7 +1440,7 @@ test('« Découvrir » › « Personnage » ouvre la fiche d’une figure de la 
 
 test('« Découvrir » › « Personnage » : la biographie mène au jeu, quand le personnage en a une', async ({ page }) => {
     await quitterLAccueil(page);
-    // On tire jusqu'à une figure qui a sa biographie (166 sur 1307).
+    // On tire jusqu'à une figure qui a sa biographie (181 sur 1434).
     await page.locator('#btn-discover').click();
     await page.locator('#btn-discover-person').click();
     for (let i = 0; i < 40 && !(await page.locator('#modal-bio-btn').isVisible()); i++) {
