@@ -104,9 +104,9 @@ test('la fiche d’un personnage montre son portrait, sa légende, son crédit e
     await page.locator('#mode-card-discovery').click();
     await expect(page.locator('#screen-game')).toBeVisible();
 
-    // Cent quarante repères, chacun avec sa pastille : « un portrait pour chaque événement ».
-    await expect(page.locator('#timeline .entry')).toHaveCount(140);
-    await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(140);
+    // Cent cinquante repères, chacun avec sa pastille : « un portrait pour chaque événement ».
+    await expect(page.locator('#timeline .entry')).toHaveCount(150);
+    await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(150);
 
     await page.locator('#timeline .entry', { hasText: 'Naissance de Victor Hugo' }).click();
     await expect(page.locator('#modal-details')).toBeVisible();
@@ -135,6 +135,33 @@ test('la fiche d’un personnage montre son portrait, sa légende, son crédit e
     await expect(page.locator('#axes-subtitle')).toContainText('Victor Hugo');
 });
 
+test('Monaco et le Liechtenstein sont invités : la fiche dit leur pays, la galerie les filtre à part', async ({ page }) => {
+    // Un panthéon de pays n'a pas de `pays`, sauf pour un invité d'un autre État : Monaco chez la France,
+    // le Liechtenstein chez l'Allemagne, l'Autriche et la Suisse. La fiche affiche alors le drapeau.
+    await openThemeById(page, PANTHEON);
+    await page.locator('#mode-card-discovery').click();
+    await page.locator('#timeline .entry', { hasText: 'Naissance de Grace Kelly' }).click();
+    await expect(page.locator('#modal-details')).toBeVisible();
+    await expect(page.locator('#modal-pays')).toBeVisible();
+    await expect(page.locator('#modal-pays')).toContainText('Monaco');
+    const portrait = page.locator('#modal-portrait-img');
+    await expect.poll(() => portrait.evaluate(img => img.complete ? img.naturalWidth : 0)).toBe(320);
+    await page.locator('#modal-details .close-btn').click();
+    // Les Français, eux, n'affichent aucun pays.
+    await page.locator('#timeline .entry', { hasText: 'Naissance de Victor Hugo' }).click();
+    await expect(page.locator('#modal-pays')).toBeHidden();
+    await page.locator('#modal-details .close-btn').click();
+
+});
+
+test('la galerie filtre Monaco et le Liechtenstein à part, et la France garde ses 140 figures', async ({ page }) => {
+    await ouvrirLaGalerie(page);
+    const pays = page.locator('#gallery-filter-country');
+    await expect(pays.locator('option', { hasText: 'Monaco' })).toHaveText(/🇲🇨 Monaco \(10\)/);
+    await expect(pays.locator('option', { hasText: 'Liechtenstein' })).toHaveText(/🇱🇮 Liechtenstein \(4\)/);
+    await expect(pays.locator('option', { hasText: 'France' })).toHaveText(/🇫🇷 France \(140\)/);
+});
+
 test('Joséphine Baker, née aux États-Unis et devenue française, est au panthéon de la France avec son portrait et sa biographie', async ({ page }) => {
     // Le pays d'un panthéon est celui qui honore, pas celui de l'état civil : Baker est au Panthéon
     // de Paris depuis 2021. Elle n'est donc pas dans « Grandes figures des États-Unis ».
@@ -149,7 +176,7 @@ test('Joséphine Baker, née aux États-Unis et devenue française, est au panth
     await expect(page.locator('#modal-bio-btn')).toBeVisible();
 });
 
-test('la France, de Philippe Auguste à Jean Monnet : cent quarante figures, des portraits qui chargent, vingt-neuf biographies', async ({ page }) => {
+test('la France, de Philippe Auguste à Jean Monnet : cent cinquante figures dont dix de Monaco, des portraits qui chargent, vingt-neuf biographies', async ({ page }) => {
     await openThemeById(page, PANTHEON);
     await page.locator('#mode-card-discovery').click();
     await expect(page.locator('#screen-game')).toBeVisible();
@@ -724,7 +751,7 @@ test('les filtres pays et domaine se combinent, et chaque option annonce son eff
     await expect(page.locator('#gallery-container .gallery-card')).toHaveCount(140);
     await expect(page.locator('#gallery-subtitle')).toHaveText(`140 portraits sur ${total}`);
 
-    await domaine.selectOption({ label: 'Sciences, techniques et innovation (137)' });
+    await domaine.selectOption({ label: 'Sciences, techniques et innovation (138)' });
     const sciencesFrance = await page.locator('#gallery-container .gallery-card').count();
     expect(sciencesFrance).toBeGreaterThan(3);
     expect(sciencesFrance).toBeLessThan(30);
@@ -878,7 +905,7 @@ test('à la première ouverture de « Personnages illustres », on demande si le
     await expect(fenetre).toBeHidden();
     expect(await reglage(page)).toBe('bw');
     // Le bouton de la galerie annonce l'avancement, dès le premier instant.
-    await expect(page.locator('#btn-gallery .gallery-launcher-sub')).toHaveText('0 / 1042 portraits débloqués');
+    await expect(page.locator('#btn-gallery .gallery-launcher-sub')).toHaveText('0 / 1056 portraits débloqués');
 
     // On ne repose pas la question.
     await page.locator('#screen-subcategories .back-btn').click();
@@ -1356,7 +1383,7 @@ test('« Découvrir » › « Personnage » ouvre la fiche d’une figure de la 
 
 test('« Découvrir » › « Personnage » : la biographie mène au jeu, quand le personnage en a une', async ({ page }) => {
     await quitterLAccueil(page);
-    // On tire jusqu'à une figure qui a sa biographie (166 sur 1042).
+    // On tire jusqu'à une figure qui a sa biographie (166 sur 1056).
     await page.locator('#btn-discover').click();
     await page.locator('#btn-discover-person').click();
     for (let i = 0; i < 40 && !(await page.locator('#modal-bio-btn').isVisible()); i++) {

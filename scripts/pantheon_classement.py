@@ -52,8 +52,8 @@ KEEP_AS_WRITTEN = {
     'Charles Quint', "Agustina d'Aragon", "Thérèse d'Avila", 'Isidore de Séville', 'Ibn Arabi',
     'Dominique de Guzmán', 'Ignace de Loyola', 'François Xavier', 'Jean de la Croix',
     'Garcilaso de la Vega', 'Lope de Vega', 'Tirso de Molina', 'Camarón de la Isla', 'Paco de Lucía',
-    # France : deux rois rangés par leur prénom.
-    'Philippe Auguste', 'Philippe le Bel',
+    # France : deux rois rangés par leur prénom, une princesse de Monaco aussi.
+    'Philippe Auguste', 'Philippe le Bel', 'Charlotte de Monaco',
 }
 
 # Écrits à la main : (nom de la source) → nom de classement.
