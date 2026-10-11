@@ -1411,6 +1411,35 @@ function replayCurrentGame() {
         startWhoisGame();
         return;
     }
+    // Les modes qui ont leur propre écran : sans ces lignes, « Rejouer » les confiait à
+    // startActualGame, qui ouvre la frise quel que soit currentMode.
+    if (currentMode === 'intrus') {
+        startIntrusGame();
+        return;
+    }
+    if (currentMode === 'ordre') {
+        startOrdreGame();
+        return;
+    }
+    if (currentMode === 'curseur') {
+        startCurseurGame();
+        return;
+    }
+    if (currentMode === 'blitz') {
+        startBlitzGame();
+        return;
+    }
+    if (currentMode === 'simultaneity') {
+        // Le Défi de simultanéité (tiré de l'historique du joueur) et le mode d'un thème ont chacun leur lanceur.
+        if (isSimultaneityChallenge()) startSimultaneityChallenge();
+        else startSimultaneityGame();
+        return;
+    }
+    if (currentMode === 'carte') {
+        // Même zone, même écran de retour : celui du premier lancement, pas l'écran de fin d'où l'on rejoue.
+        if (geoLastNode) startGeoModeFromNode(geoLastNode, geoScopeLabel, geoReturnScreen);
+        return;
+    }
     if (revisionMode) {
         const weak = getWeakEvents().map(item => item.event);
         revisionEvents = shuffleArray(weak).slice(0, revisionRequestedSize || weak.length);
