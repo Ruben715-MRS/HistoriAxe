@@ -601,7 +601,7 @@ ne posent pas la même question :
 | | Un thème, c'est | Une date, c'est | On le joue par |
 |---|---|---|---|
 | **Biographies** | une vie (360 thèmes, en 12 domaines) | une étape de cette vie | étape de la vie |
-| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie) | la naissance d'un personnage | domaine |
+| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, Israël) | la naissance d'un personnage | domaine |
 
 Le déplacement ne coûte aucune migration : les 360 thèmes gardent leurs
 identifiants, et rien de ce que le joueur a sauvegardé (favoris, révision,
@@ -707,7 +707,7 @@ des pays ont une histoire commune, un thème **de région** plutôt qu'un par pa
 |---|---|---|
 | Identifiant | `pan_<iso2>` : deux lettres (`pan_fr`) | `pan_<code>` : trois lettres ou plus (`pan_hispam`) — jamais de collision avec un code de pays |
 | `pays` sur chaque événement | interdit (le thème le dit déjà), sauf pour un **invité** d'un autre État (Monaco chez la France, voir « Les micro-États ») | obligatoire : code ISO à deux lettres (`"pays": "VE"`) |
-| Exemples | France, Égypte, Espagne, États-Unis, Italie, Royaume-Uni ; plus tard Brésil… | Amérique hispanique, Maghreb, Machrek, Allemagne-Autriche-Suisse, Scandinavie |
+| Exemples | France, Égypte, Espagne, États-Unis, Italie, Royaume-Uni, Israël ; plus tard Brésil… | Amérique hispanique, Maghreb, Machrek, Allemagne-Autriche-Suisse, Scandinavie |
 
 Ce que le champ `pays` d'un événement change :
 
@@ -804,6 +804,7 @@ pour l'Amérique hispanique (dix-neuf pays, de 1 à 19 figures chacun), 58 pour 
 Maghreb (cinq pays, de 1 à 21), 149 pour l'Allemagne, l'Autriche et la Suisse (170 candidats,
 21 coupés ; trois pays, de 26 à 85 figures), 151 pour le Royaume-Uni (194 candidats, 4 ajoutés, 47 écartés), 132 pour l'Espagne (132 proposés, tous retenus),
 103 pour le Machrek et la péninsule Arabique (182 noms testés, 106 avec une image libre, 3 en attente de leur portrait ; dix pays, de 1 à 25 figures),
+78 pour Israël (88 fiches rédigées, dix mises en attente faute d'image libre),
 40 pour les grands pays, 30 pour les autres. À 6
 axes, 30 donne environ 5 par axe — le minimum pour qu'un axe joué seul reste un jeu.
 
@@ -1143,8 +1144,8 @@ Les choix qui ne vont pas de soi :
   Arabie saoudite, Yémen, Oman, Émirats, Koweït, Qatar et Bahreïn. Les deux derniers n'ont
   aucune figure avec un portrait libre exploitable et ne sont donc pas dans la liste des
   pays du bloc (le constructeur refuse un pays déclaré sans personnage). L'Égypte a son thème
-  (voir plus bas), la Libye est au Maghreb ; Israël et les figures juives auront **un thème à
-  part**, à définir : aucune n'est ici.
+  (voir plus bas), la Libye est au Maghreb ; Israël a **son thème** (voir « Un pays à part : Israël »),
+  les figures juives de la diaspora restent dans le panthéon de leur pays.
 - **L'Antiquité par pays actuel.** Huit figures d'avant l'islam — Assurbanipal et Hammurabi
   (Irak), Odénat, Philippe l'Arabe, Julia Domna, Héliogabale et Apollodore de Damas (Syrie),
   Sévère Alexandre (Liban) — sont rangées dans le pays actuel de leur lieu de naissance, comme
@@ -1203,6 +1204,46 @@ la loi du pays d'origine (PD-Irak, PD-Syrie, PD-Arabie saoudite…), est celui q
 figures à l'Amérique hispanique ; `scripts/search_portraits.py` en donne une première
 indication par fichier, pas une certitude. Khalid ibn al-Walid, Zaha Hadid et Asmahan restent
 sans image libre acceptable.
+
+### Un pays à part : Israël
+
+`pan_il`, « Grandes figures d'Israël » : **78 personnages**, de David (vers 1040 av. J.-C.) à
+Ilan Ramon (1954). Par axe : 23 Littérature et pensée, 20 Chefs d'État et dirigeants, 11 Guerres et
+résistances, 9 Musique, spectacle et sport, 8 Sciences, techniques et innovation, 7 Beaux-arts ;
+26 ⭐ ; aucune biographie liée.
+
+Les choix qui ne vont pas de soi :
+
+- **Le critère est la vie en Israël, pas le judaïsme.** Y entrent les citoyens israéliens et
+  ceux qui ont réellement vécu en Terre d'Israël : Ben Gourion (né à Płońsk), Golda Meir (Kiev),
+  Buber (Vienne), Scholem (Berlin). Un Juif qui n'y a pas vécu reste dans le thème de son pays :
+  Einstein, Freud, Kafka, Arendt (Allemagne, Autriche, Suisse), Maïmonide (Espagne). La règle « un
+  personnage, un seul thème » joue comme ailleurs ; il n'y a pas de thème juif de la diaspora.
+- **Une exception : Theodor Herzl**, né à Budapest, mort en 1904 sans avoir vécu en Terre
+  d'Israël, entre comme sioniste par excellence ; sa fiche le dit.
+- **L'Antiquité, quatre figures** : David, Hérode Ier le Grand, Flavius Josèphe (né à Jérusalem) et
+  Rabbi Akiva ; les figures bibliques ou chrétiennes (Moïse, Jésus) restent aux thèmes religieux.
+  Joseph Caro et Isaac Louria, deux maîtres de Safed, sont les seuls médiévaux. Les dates antiques
+  portent « vers ».
+- **Les citoyens arabes d'Israël restent au Machrek** (Émile Habibi, Samih al-Qasim, rangés `PS`),
+  pour ne pas défaire un panthéon écrit ; le Yishouv d'avant 1948 est ici.
+- **Des figures contestées**, dont la fiche dit pourquoi : Avraham Stern (héros pour les uns,
+  terroriste pour les autres), Ariel Sharon (Sabra et Chatila), Ezer Weizman (la fin de sa présidence).
+- **Dates discutées** : Zalman Shazar 1885 et Agnon 1887 suivent l'article Wikipédia en français ;
+  d'autres sources donnent 1889 et 1888.
+- **Pas de vivants** ; pas de sportif. Mordechaï Gur, Eliyahu Golomb et Arieh Sharon n'ont pas
+  d'article en français et n'y sont pas.
+- **Dix fiches en attente d'une image libre**, rédigées dans `scripts/pantheon/il_candidats.md` :
+  Zalman Shazar, Léa Goldberg, Nathan Alterman, Eli Cohen, Yonatan Netanyahou, Mickey Marcus,
+  Reuven Rubin, Uziel Gal, Simcha Blass et Isaac Louria.
+
+Le statut américain a décidé des images : les clichés du Bureau de presse israélien postérieurs à
+1946 ne sont libres que selon la loi israélienne, et leur statut américain est douteux ; ils sont
+écartés au profit de CC BY, CC BY-SA, CC0 (Nationaal Archief, collections de la Bibliothèque nationale
+d'Israël) ou de photographies d'avant 1931. David, Hérode, Rabbi Akiva et Joseph Caro sont montrés
+par des images imaginées (statue de l'Escorial, gravures, carte postale), et la légende le dit ;
+Hannah Szenes par une photographie d'enfance. Le portrait de Meir Ariel n'a pas pu être recadré :
+Wikimedia limitait les téléchargements.
 
 ### Un pays à part : l'Égypte
 
@@ -2090,19 +2131,17 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
 ### Ce qui n'est pas fait
 
 - **Les autres panthéons** : la France, l'Égypte, les États-Unis, l'Italie, le
-  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie et l'Afrique de l'Ouest sont écrits.
+  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest et Israël sont écrits.
   Chaque liste de personnages est validée avant la rédaction. Feuille de route, dans l'ordre
   où on les propose (un pays seul quand il a de quoi faire un thème, un bloc sinon) :
   1. **Le Machrek est écrit** (voir « Le cinquième bloc »). Il reste : le portrait des trois
      fiches en attente (`scripts/pantheon/machrek_en_attente.md`), une image pour Khalid ibn
      al-Walid, Zaha Hadid et Asmahan, des titres français à retrouver (Zénobie, Al-Mansur, Ahmad
      ibn Majid) et le statut américain des images à confirmer.
-  1 bis. **Israël et les figures juives : un thème à part**, décidé à la place de l'idée
-     abandonnée plus haut d'une absence de thème juif. Nom et périmètre restent à définir
-     (Israël seul, ou aussi les figures juives de la diaspora ?). Le Maghreb compte déjà deux
-     figures juives (Edmond Amran El Maleh, Habiba Msika) et en a laissé cinq de côté
-     (Cheikh Raymond, Reinette l'Oranaise, Salim Halali, Albert Memmi, Abraham Serfaty) : la
-     règle « un personnage, un seul thème » dira où chacun va, au moment de choisir.
+  1 bis. **Israël est écrit** (voir « Un pays à part : Israël »). Pas de thème juif de la diaspora : la
+     règle « un personnage, un seul thème » range chacun dans son pays. Le Maghreb compte deux
+     figures juives (Edmond Amran El Maleh, Habiba Msika) et en a laissé cinq de côté (Cheikh
+     Raymond, Reinette l'Oranaise, Salim Halali, Albert Memmi, Abraham Serfaty).
   2. **Pays seuls** : le Brésil (qui n'entre pas dans l'Amérique « hispanique »), la Chine, le
      Japon, la Russie (où attend Lev Yachine), l'Afrique du Sud, l'Australie, la Turquie, l'Iran.
   3. **Blocs** : l'Asie du Sud (Inde, Pakistan, Bangladesh, Sri Lanka, Népal ; l'Inde y dépasserait

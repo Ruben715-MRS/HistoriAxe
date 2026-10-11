@@ -453,6 +453,28 @@ test('« Grandes figures d’Égypte » : toutes les ancres sont l’Égypte, et
     });
 });
 
+test('« Grandes figures d’Israël » : toutes les ancres sont Israël, et la session se joue', () => {
+    // Même règle que pour l'Égypte : `pan_il` est le panthéon d'un PAYS, donc ses événements n'ont
+    // pas de `pays` et c'est le thème qui porte l'étiquette — la même que « Histoire de l'État
+    // d'Israël » (`thm_isr`). Sans cela, la naissance d'un Israélien pourrait répondre « ailleurs »
+    // à l'ancre d'un autre Israélien, et les rois de l'Antiquité n'auraient aucun contemporain
+    // étranger à proposer.
+    const theme = allThemes().find(t => t.id === 'pan_il');
+    assert.ok(theme, 'thème pan_il absent du pack français');
+    const index = S.buildTagIndex(frData.categories, { countryByTheme: geoMap });
+    theme.events.forEach(e => assert.equal(index[e.id], 'pays:IL', `étiquette de ${e.id}`));
+    const histoire = allThemes().find(t => t.id === 'thm_isr');
+    assert.equal(index[histoire.events[0].id], 'pays:IL', 'pan_il doit être le même pays que thm_isr');
+    const anchors = theme.events.map(e => Object.assign({}, e, { tag: index[e.id], themeName: theme.nom }));
+    const session = S.buildSession(anchors, realPool, { rng: seededRng(5), count: S.SESSION_ROUNDS });
+    assert.equal(session.length, S.SESSION_ROUNDS);
+    session.forEach(q => {
+        assert.ok(!/^pan_/.test(q.correct.themeId), 'la bonne réponse ne peut pas venir d’un panthéon');
+        assert.notEqual(q.correct.tag, 'pays:IL',
+            `« ${q.correct.titre} » est israélien : ce n’est pas un « ailleurs » pour « ${q.anchor.titre} »`);
+    });
+});
+
 test('« Grandes figures des États-Unis » : toutes les ancres sont les États-Unis, et la session se joue', () => {
     // Même règle que pour l'Égypte : `pan_us` est le panthéon d'un PAYS, donc ses événements n'ont
     // pas de `pays` et c'est le thème qui porte l'étiquette — la même que « Histoire des États-Unis »

@@ -962,7 +962,7 @@ test('à la première ouverture de « Personnages illustres », on demande si le
     await expect(fenetre).toBeHidden();
     expect(await reglage(page)).toBe('bw');
     // Le bouton de la galerie annonce l'avancement, dès le premier instant.
-    await expect(page.locator('#btn-gallery .gallery-launcher-sub')).toHaveText('0 / 1307 portraits débloqués');
+    await expect(page.locator('#btn-gallery .gallery-launcher-sub')).toHaveText('0 / 1385 portraits débloqués');
 
     // On ne repose pas la question.
     await page.locator('#screen-subcategories .back-btn').click();
@@ -1440,7 +1440,7 @@ test('« Découvrir » › « Personnage » ouvre la fiche d’une figure de la 
 
 test('« Découvrir » › « Personnage » : la biographie mène au jeu, quand le personnage en a une', async ({ page }) => {
     await quitterLAccueil(page);
-    // On tire jusqu'à une figure qui a sa biographie (166 sur 1307).
+    // On tire jusqu'à une figure qui a sa biographie (166 sur 1385).
     await page.locator('#btn-discover').click();
     await page.locator('#btn-discover-person').click();
     for (let i = 0; i < 40 && !(await page.locator('#modal-bio-btn').isVisible()); i++) {

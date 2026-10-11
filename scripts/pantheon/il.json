@@ -1,0 +1,1373 @@
+{
+  "code": "il",
+  "nom": "Israël",
+  "theme": {
+    "id": "pan_il",
+    "nom": "Grandes figures d'Israël",
+    "difficulte": "Intermédiaire",
+    "motsCles": [
+      "Israélien",
+      "Israélienne",
+      "Sionisme",
+      "Sioniste",
+      "Terre d'Israël",
+      "Palestine mandataire",
+      "Yishouv",
+      "Royaume d'Israël",
+      "Judée",
+      "Tel Aviv",
+      "Jérusalem",
+      "Haïfa",
+      "Galilée",
+      "Knesset",
+      "Kibboutz",
+      "Hébreu",
+      "Moyen-Orient",
+      "Proche-Orient"
+    ]
+  },
+  "axes": [
+    "Chefs d'État et dirigeants",
+    "Guerres et résistances",
+    "Littérature et pensée",
+    "Beaux-arts",
+    "Musique, spectacle et sport",
+    "Sciences, techniques et innovation"
+  ],
+  "personnages": [
+    {
+      "slug": "david",
+      "nom": "David",
+      "classement": "David",
+      "titre": "Naissance de David",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": -1040,
+      "description": "David (vers 1040-vers 970 av. J.-C.) est le deuxième roi d'Israël selon la Bible hébraïque, successeur de Saül, qui fait de Jérusalem sa capitale. Son règne, d'une quarantaine d'années selon la tradition, est celui de l'unification des tribus et des victoires sur les Philistins, dont le combat contre Goliath est resté le symbole. Les historiens débattent de l'étendue de son royaume, mais une inscription du IXe siècle av. J.-C. trouvée à Tel Dan mentionne une « maison de David ».",
+      "wikipedia": "David_(roi_d'Israël)",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Statue king David San Lorenzo del Escorial Spain.jpg",
+        "legende": "David, statue du roi à la basilique de l'Escorial (Espagne), XVIe siècle : une image imaginée, près de trois millénaires après sa mort",
+        "nomVisible": true,
+        "licence": "CC0 (domaine public)",
+        "auteur": "Jebulon"
+      }
+    },
+    {
+      "slug": "herode",
+      "nom": "Hérode Ier le Grand",
+      "classement": "Hérode Ier le Grand",
+      "titre": "Naissance d'Hérode Ier le Grand",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": -73,
+      "description": "Hérode Ier le Grand (vers 73-4 av. J.-C.) est un roi de Judée d'origine iduméenne, allié de Rome, qui règne de 37 jusqu'à sa mort. Il reconstruit le Temple de Jérusalem sur une échelle monumentale et bâtit les forteresses de Massada et d'Hérodion ainsi que le port de Césarée. Sa mémoire, assombrie par la répression et par le « massacre des innocents » que rapporte l'Évangile de Matthieu, reste très disputée.",
+      "wikipedia": "Hérode_Ier_le_Grand",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "HerodtheGreat2.jpg",
+        "legende": "Hérode Ier le Grand, gravure ancienne d'auteur inconnu : une image imaginée, deux millénaires après sa mort",
+        "auteur": "Auteur inconnu",
+        "nomVisible": true,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "josephe",
+      "nom": "Flavius Josèphe",
+      "classement": "Josèphe, Flavius",
+      "titre": "Naissance de Flavius Josèphe",
+      "axe": "Littérature et pensée",
+      "naissance": 37,
+      "description": "Flavius Josèphe (37-vers 100) est un historien juif, né à Jérusalem dans une famille de prêtres. Commandant en Galilée au début de la grande révolte contre Rome, il se rend aux Romains en 67 et s'installe à Rome sous la protection de Vespasien. Sa « Guerre des Juifs » et ses « Antiquités judaïques » restent la principale source sur la Judée du Ier siècle, le siège de Jérusalem et la chute de Massada.",
+      "wikipedia": "Flavius_Josèphe",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Josephusbust.jpg",
+        "legende": "Flavius Josèphe, buste romain du Ier siècle sans inscription, traditionnellement identifié à lui",
+        "auteur": "Auteur inconnu",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "akiva",
+      "nom": "Rabbi Akiva",
+      "classement": "Akiva, Rabbi",
+      "titre": "Naissance de Rabbi Akiva",
+      "axe": "Littérature et pensée",
+      "naissance": 50,
+      "description": "Rabbi Akiva (vers 50-135) est un maître de la Mishna, installé à Bnei Brak, qui structure la loi orale dont naîtra le Talmud. Berger devenu érudit à l'âge adulte selon la tradition, il forme des milliers de disciples et passe pour avoir salué en Bar Kokhba le messie, lors de la révolte contre Rome de 132-135. Arrêté par les Romains, il est exécuté à Césarée, et la tradition dit qu'il meurt en récitant le Chema Israël.",
+      "wikipedia": "Rabbi_Akiva",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Akiva.png",
+        "legende": "Rabbi Akiva, gravure imaginaire de 1568 : une image sans valeur de portrait, quatorze siècles après sa mort",
+        "auteur": "Auteur inconnu",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "karo",
+      "nom": "Joseph Caro",
+      "classement": "Caro, Joseph",
+      "titre": "Naissance de Joseph Caro",
+      "axe": "Littérature et pensée",
+      "naissance": 1488,
+      "description": "Joseph Caro (1488-1575) est un rabbin et législateur juif, né à Tolède et emmené enfant sur les routes de l'exil après l'expulsion de 1492. Installé à Safed, en Galilée, à partir de 1536, il rédige le « Beit Yosef », puis le « Shoulhan Aroukh » (1565), code de la loi juive qui fait encore autorité chez les pratiquants. Il meurt à Safed, dont il a fait l'un des grands foyers du savoir juif.",
+      "wikipedia": "Joseph_Karo",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Postcard portrait of Joseph Karo by Meir Kunstadt, early 1900s.jpg",
+        "legende": "Joseph Caro, portrait imaginaire en carte postale de Meir Kunstadt, début du XXe siècle",
+        "auteur": "Meir Kunstadt",
+        "nomVisible": true,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "ahadhaam",
+      "nom": "Ahad Ha'am",
+      "classement": "Ha'am, Ahad",
+      "titre": "Naissance d'Ahad Ha'am",
+      "axe": "Littérature et pensée",
+      "naissance": 1856,
+      "description": "Ahad Ha'am (1856-1927) est un essayiste et penseur sioniste, né à Skvyra, en Ukraine, théoricien du sionisme culturel. Il oppose au projet d'État de Herzl l'idée d'un centre spirituel juif en Palestine, qui renouvellerait la culture hébraïque et la ferait rayonner dans la diaspora. Installé à Tel Aviv en 1922, il y meurt en 1927, et plusieurs rues d'Israël portent son nom.",
+      "wikipedia": "Ahad_Ha'Am",
+      "portrait": {
+        "fichier": "Ahad Haam.jpg",
+        "legende": "Ahad Ha'am, photographie sans date",
+        "auteur": "Auteur inconnu",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "benyehouda",
+      "nom": "Eliezer Ben-Yehouda",
+      "classement": "Ben-Yehouda, Eliezer",
+      "titre": "Naissance d'Eliezer Ben-Yehouda",
+      "axe": "Littérature et pensée",
+      "naissance": 1858,
+      "description": "Eliezer Ben-Yehouda (1858-1922) est un lexicographe, né dans l'Empire russe, qui s'installe à Jérusalem en 1881 avec le projet de faire de l'hébreu une langue parlée au quotidien. Il impose cette idée par l'exemple : son fils est le premier enfant dont l'hébreu soit la langue maternelle depuis l'Antiquité, et il crée des centaines de mots nouveaux. Son « Dictionnaire complet de l'hébreu ancien et moderne », achevé après sa mort, compte dix-sept volumes.",
+      "wikipedia": "Éliézer_Ben-Yehoudah",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Eliezer Ben-Yehuda.1905 (cropped).jpg",
+        "legende": "Eliezer Ben-Yehouda, photographie de 1905",
+        "auteur": "Fonds national juif",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "herzl",
+      "nom": "Theodor Herzl",
+      "classement": "Herzl, Theodor",
+      "titre": "Naissance de Theodor Herzl",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1860,
+      "description": "Theodor Herzl (1860-1904) est un journaliste et écrivain austro-hongrois, né à Budapest, qui fonde le sionisme politique. Frappé par l'affaire Dreyfus, qu'il couvre à Paris, il publie « L'État des Juifs » en 1896 et réunit en 1897 à Bâle le premier Congrès sioniste. Il n'a jamais vécu en Terre d'Israël, et ne figure ici que par exception, comme père du sionisme : ses restes sont transférés en 1949 sur le mont Herzl, à Jérusalem.",
+      "wikipedia": "Theodor_Herzl",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Theodor Herzl.jpg",
+        "legende": "Theodor Herzl, photographie de Carl Pietzner, 2 janvier 1897",
+        "auteur": "Carl Pietzner",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "szold",
+      "nom": "Henrietta Szold",
+      "classement": "Szold, Henrietta",
+      "titre": "Naissance d'Henrietta Szold",
+      "axe": "Guerres et résistances",
+      "naissance": 1860,
+      "description": "Henrietta Szold (1860-1945) est une éducatrice et dirigeante sioniste américaine, née à Baltimore, fondatrice de l'organisation féminine Hadassah en 1912. Installée à Jérusalem en 1920, elle y bâtit les services d'infirmières et d'hygiène publique de l'organisation, puis dirige à partir de 1933 l'Aliyah des jeunes. Cette organisation met à l'abri des milliers d'enfants juifs d'Europe, et Henrietta Szold meurt à Jérusalem en 1945.",
+      "wikipedia": "Henrietta_Szold",
+      "portrait": {
+        "fichier": "Henrietta Szold.jpg",
+        "legende": "Henrietta Szold, photographie de 1940",
+        "licence": "CC BY 3.0",
+        "auteur": "Alexander Ganan"
+      }
+    },
+    {
+      "slug": "dizengoff",
+      "nom": "Meir Dizengoff",
+      "classement": "Dizengoff, Meir",
+      "titre": "Naissance de Meir Dizengoff",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1861,
+      "description": "Meir Dizengoff (1861-1936) est un homme politique sioniste, né en Bessarabie, premier maire de Tel Aviv. Il fait partie des fondateurs, en 1909, du quartier d'Ahuzat Bayit, devenu Tel Aviv, et dirige la ville de 1921 à 1925 puis de 1928 à sa mort. Il en fait le grand centre urbain du Yishouv, et son nom reste celui de la place et de la rue les plus connues de la ville.",
+      "wikipedia": "Meïr_Dizengoff",
+      "portrait": {
+        "fichier": "Meir Dizengoff.jpg",
+        "legende": "Meir Dizengoff, photographie du 1er décembre 1910",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "kook",
+      "nom": "Abraham Isaac Kook",
+      "classement": "Kook, Abraham Isaac",
+      "titre": "Naissance d'Abraham Isaac Kook",
+      "axe": "Littérature et pensée",
+      "naissance": 1865,
+      "description": "Abraham Isaac Kook (1865-1935) est un rabbin et penseur, né en Lettonie, premier grand-rabbin ashkénaze de la Palestine mandataire. Installé à Jaffa en 1904 puis à Jérusalem, il fonde en 1924 la yeshiva Merkaz HaRav et donne une signification religieuse au sionisme laïc, vu comme une étape de la rédemption. Sa pensée est à l'origine du sionisme religieux.",
+      "wikipedia": "Abraham_Isaac_Kook",
+      "portrait": {
+        "fichier": "Abraham Isaac Kook 1924.jpg",
+        "legende": "Abraham Isaac Kook, photographie du 15 avril 1924",
+        "licence": "Domaine public",
+        "auteur": "National Photo Company"
+      }
+    },
+    {
+      "slug": "schatz",
+      "nom": "Boris Schatz",
+      "classement": "Schatz, Boris",
+      "titre": "Naissance de Boris Schatz",
+      "axe": "Beaux-arts",
+      "naissance": 1867,
+      "description": "Boris Schatz (1867-1932) est un sculpteur, né à Varniai, en Lituanie, et fondateur en 1906, à Jérusalem, de l'école Bezalel. Il y réunit des artisans et des artistes pour créer un art juif nouveau, à la jonction de l'Orient et de l'Europe. L'académie Bezalel, qui garde son nom, reste la grande école d'art d'Israël.",
+      "wikipedia": "Boris_Schatz",
+      "portrait": {
+        "fichier": "Boris schatz - 001.jpg",
+        "legende": "Boris Schatz, photographie d'avant 1933",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu (Schatz House)"
+      }
+    },
+    {
+      "slug": "bialik",
+      "nom": "Haïm Nahman Bialik",
+      "classement": "Bialik, Haïm Nahman",
+      "titre": "Naissance de Haïm Nahman Bialik",
+      "axe": "Littérature et pensée",
+      "naissance": 1873,
+      "description": "Haïm Nahman Bialik (1873-1934) est un poète, né en Volhynie, considéré comme le poète national de la renaissance de l'hébreu. Son poème « Dans la ville du massacre » (1903), écrit après le pogrom de Kichinev, pousse la jeunesse juive à l'autodéfense. Installé à Tel Aviv en 1924, il meurt à Vienne en 1934, où il se faisait soigner, et sa maison de Tel Aviv est aujourd'hui un musée.",
+      "wikipedia": "Haïm_Nahman_Bialik",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Hayyim Nahman Bialik 1923.jpg",
+        "legende": "Haïm Nahman Bialik, photographie du 2 mai 1923",
+        "licence": "Domaine public",
+        "auteur": "Avraham Soskin"
+      }
+    },
+    {
+      "slug": "weizmann",
+      "nom": "Chaim Weizmann",
+      "classement": "Weizmann, Chaim",
+      "titre": "Naissance de Chaim Weizmann",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1874,
+      "description": "Chaim Weizmann (1874-1952) est un chimiste et dirigeant sioniste, né près de Pinsk, dans l'actuelle Biélorussie, et premier président de l'État d'Israël de 1949 à sa mort. Établi en Angleterre, il met au point un procédé de fermentation qui sert l'effort de guerre britannique en 1914-1918 et gagne ainsi l'influence qui aide à obtenir la déclaration Balfour de 1917. Il fonde à Rehovot l'institut de recherche qui porte aujourd'hui son nom.",
+      "wikipedia": "Chaim_Weizmann",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Flickr - Government Press Office (GPO) - President Chaim Weizmann.jpg",
+        "legende": "Chaim Weizmann, photographie de Hugo Mendelson, 26 mars 1949",
+        "auteur": "Hugo Mendelson",
+        "licence": "CC BY-SA 3.0"
+      }
+    },
+    {
+      "slug": "tchernichovsky",
+      "nom": "Shaul Tchernichovsky",
+      "classement": "Tchernichovsky, Shaul",
+      "titre": "Naissance de Shaul Tchernichovsky",
+      "axe": "Littérature et pensée",
+      "naissance": 1875,
+      "description": "Shaul Tchernichovsky (1875-1943) est un poète et médecin, né dans le sud de l'Ukraine, considéré avec Bialik comme l'un des deux grands poètes de la renaissance hébraïque. Il traduit en hébreu l'Iliade, l'Odyssée, l'épopée de Gilgamesh et le Kalevala, et chante dans ses poèmes la nature, la vie et la beauté. Il s'installe en Palestine en 1931 et meurt à Jérusalem en 1943.",
+      "wikipedia": "Shaul_Tchernichovsky",
+      "portrait": {
+        "fichier": "Shaul Tchernichovsky 1927.jpg",
+        "legende": "Shaul Tchernichovsky, photographie de 1927",
+        "auteur": "Š. Bajeris",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "aaronsohn",
+      "nom": "Aaron Aaronsohn",
+      "classement": "Aaronsohn, Aaron",
+      "titre": "Naissance d'Aaron Aaronsohn",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1876,
+      "description": "Aaron Aaronsohn (1876-1919) est un agronome et espion sioniste, né à Bacău, en Roumanie, et installé enfant à Zikhron Yaakov. Il découvre en 1906, en Galilée, le blé amidonnier sauvage, ancêtre de blés cultivés, et fonde une station expérimentale à Athlit. Chef du réseau Nili qui renseigne les Britanniques pendant la Première Guerre mondiale, il meurt dans un accident d'avion au-dessus de la Manche en 1919.",
+      "wikipedia": "Aaron_Aaronsohn",
+      "portrait": {
+        "fichier": "Aaron Aaronsohn 1876-1919.jpg",
+        "legende": "Aaron Aaronsohn, photographie d'avant 1919",
+        "auteur": "Auteur inconnu",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "ruppin",
+      "nom": "Arthur Ruppin",
+      "classement": "Ruppin, Arthur",
+      "titre": "Naissance d'Arthur Ruppin",
+      "axe": "Littérature et pensée",
+      "naissance": 1876,
+      "description": "Arthur Ruppin (1876-1943) est un sociologue et responsable sioniste, né à Rawicz, en Prusse. Installé à Jaffa en 1908 pour y diriger le Bureau de Palestine de l'Organisation sioniste, il organise l'achat des terres et fonde en 1909 le premier kibboutz, Degania. Professeur de sociologie à l'Université hébraïque, il est resté dans la mémoire comme le père de la colonisation juive moderne.",
+      "wikipedia": "Arthur_Ruppin",
+      "portrait": {
+        "fichier": "Arthur Ruppin. 1915.jpg",
+        "legende": "Arthur Ruppin, photographie de 1915",
+        "auteur": "Auteur inconnu (Fonds national juif)",
+        "largeur": 330,
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "buber",
+      "nom": "Martin Buber",
+      "classement": "Buber, Martin",
+      "titre": "Naissance de Martin Buber",
+      "axe": "Littérature et pensée",
+      "naissance": 1878,
+      "description": "Martin Buber (1878-1965) est un philosophe, né à Vienne, auteur de « Je et Tu » (1923). Penseur du dialogue et du hassidisme, il quitte l'Allemagne nazie en 1938 pour Jérusalem, où il enseigne la philosophie sociale à l'Université hébraïque. Il y défend l'idée d'un État binational judéo-arabe et y meurt en 1965.",
+      "wikipedia": "Martin_Buber",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Martin Buber 1963.jpg",
+        "legende": "Martin Buber, photographie de Joop van Bilsen, 2 juillet 1963",
+        "auteur": "Joop van Bilsen (Anefo)",
+        "licence": "CC BY-SA 3.0 NL"
+      }
+    },
+    {
+      "slug": "rutenberg",
+      "nom": "Pinhas Rutenberg",
+      "classement": "Rutenberg, Pinhas",
+      "titre": "Naissance de Pinhas Rutenberg",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1879,
+      "description": "Pinhas Rutenberg (1879-1942) est un ingénieur et homme d'affaires sioniste, né à Romny, en Ukraine, ancien révolutionnaire russe. Arrivé en Palestine en 1919, il fonde la Palestine Electric Corporation, qui électrifie le pays, et construit la centrale hydroélectrique de Naharayim, sur le Jourdain, inaugurée en 1932. Il préside le Conseil national juif à la fin de sa vie.",
+      "wikipedia": "Pinhas_Rutenberg",
+      "portrait": {
+        "fichier": "Pinhas Rutenberg 1941-1923.jpg",
+        "legende": "Pinhas Rutenberg, photographie des années 1923-1941",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Employé de la Compagnie d'électricité d'Israël"
+      }
+    },
+    {
+      "slug": "jabotinsky",
+      "nom": "Zeev Jabotinsky",
+      "classement": "Jabotinsky, Zeev",
+      "titre": "Naissance de Zeev Jabotinsky",
+      "axe": "Guerres et résistances",
+      "naissance": 1880,
+      "description": "Zeev Jabotinsky (1880-1940) est un écrivain, orateur et dirigeant sioniste, né à Odessa, fondateur du sionisme révisionniste. Il obtient la création de la Légion juive dans l'armée britannique, organise l'autodéfense de Jérusalem lors des émeutes de 1920 et fonde en 1925 l'Union des sionistes révisionnistes. Mort à New York en 1940, il est enterré en Israël, sur le mont Herzl, en 1964.",
+      "wikipedia": "Vladimir_Jabotinsky",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Zeev Jabotinsky portrait.png",
+        "legende": "Zeev Jabotinsky, photographie du milieu des années 1930",
+        "auteur": "Auteur inconnu",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "trumpeldor",
+      "nom": "Joseph Trumpeldor",
+      "classement": "Trumpeldor, Joseph",
+      "titre": "Naissance de Joseph Trumpeldor",
+      "axe": "Guerres et résistances",
+      "naissance": 1880,
+      "description": "Joseph Trumpeldor (1880-1920) est un officier et pionnier sioniste, né à Piatigorsk, en Russie, qui perd un bras dans la guerre russo-japonaise de 1904-1905. Il fonde avec Jabotinsky le Corps des muletiers de Sion pendant la Première Guerre mondiale, puis organise la défense des colonies de Haute-Galilée. Il est tué le 1er mars 1920 à Tel Haï, et la phrase qu'on lui prête, « Il est bon de mourir pour son pays », en fait un héros national.",
+      "wikipedia": "Joseph_Trumpeldor",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Joseph Trumpeldor.jpg",
+        "legende": "Joseph Trumpeldor, photographie prise vers 1904-1905, pendant la guerre russo-japonaise",
+        "auteur": "Auteur inconnu",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "brenner",
+      "nom": "Yosef Haïm Brenner",
+      "classement": "Brenner, Yosef Haïm",
+      "titre": "Naissance de Yosef Haïm Brenner",
+      "axe": "Littérature et pensée",
+      "naissance": 1881,
+      "description": "Yosef Haïm Brenner (1881-1921) est un écrivain, né en Ukraine, l'un des pères du roman hébraïque moderne. Installé en Palestine en 1909, il y publie des récits sur les désillusions des jeunes pionniers et sur la solitude de l'exil. Il est assassiné lors des émeutes de Jaffa, en mai 1921.",
+      "wikipedia": "Yossef_Haïm_Brenner",
+      "portrait": {
+        "fichier": "Y. H. Brenner.jpg",
+        "legende": "Yosef Haïm Brenner, photographie de 1910",
+        "auteur": "Auteur inconnu",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "benzvi",
+      "nom": "Yitzhak Ben-Zvi",
+      "classement": "Ben-Zvi, Yitzhak",
+      "titre": "Naissance de Yitzhak Ben-Zvi",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1884,
+      "description": "Yitzhak Ben-Zvi (1884-1963) est un historien et homme d'État israélien, né à Poltava, en Ukraine, et deuxième président de l'État d'Israël de 1952 à sa mort. Compagnon de Ben Gourion dès les années 1900, il est l'un des fondateurs du mouvement ouvrier sioniste Poale Sion et un spécialiste des communautés juives d'Orient. L'institut Yad Ben-Zvi, qu'il crée à Jérusalem, perpétue ses recherches.",
+      "wikipedia": "Yitzhak_Ben-Zvi",
+      "portrait": {
+        "fichier": "Yitzhak Ben-Zvi (997008136494005171).jpg",
+        "legende": "Yitzhak Ben-Zvi, photographie de Benno Rothenberg, 1948",
+        "auteur": "Benno Rothenberg",
+        "licence": "CC BY 4.0",
+        "recadrage": [
+          0.37,
+          0.2,
+          0.67,
+          0.56
+        ]
+      }
+    },
+    {
+      "slug": "bengourion",
+      "nom": "David Ben Gourion",
+      "classement": "Gourion, David Ben",
+      "titre": "Naissance de David Ben Gourion",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1886,
+      "description": "David Ben Gourion (1886-1973) est le principal fondateur de l'État d'Israël, né David Grün à Płońsk, en Pologne, et installé en Palestine en 1906. À la tête de l'Agence juive et du parti Mapaï, il proclame l'indépendance le 14 mai 1948 à Tel Aviv, puis dirige le gouvernement de 1948 à 1954 et de 1955 à 1963. Retiré au kibboutz de Sdé Boker, dans le Néguev, il y est enterré.",
+      "wikipedia": "David_Ben_Gourion",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "David Ben-Gurion, Bestanddeelnr 255-4213.jpg",
+        "legende": "David Ben Gourion, photographie de Willem van de Poll, 1964 (Nationaal Archief)",
+        "auteur": "Willem van de Poll",
+        "licence": "CC0 (domaine public)"
+      }
+    },
+    {
+      "slug": "agnon",
+      "nom": "Shmuel Yosef Agnon",
+      "classement": "Agnon, Shmuel Yosef",
+      "titre": "Naissance de Shmuel Yosef Agnon",
+      "axe": "Littérature et pensée",
+      "naissance": 1887,
+      "description": "Shmuel Yosef Agnon (1887-1970) est un écrivain de langue hébraïque, né à Buczacz, en Galicie, qui s'installe à Jaffa en 1908 puis à Jérusalem. Auteur d'« Une histoire simple » (1935) et d'« Hier, avant-hier » (1945), il peint le monde juif d'Europe orientale et sa disparition. Il reçoit en 1966, avec Nelly Sachs, le prix Nobel de littérature, premier décerné à un écrivain de langue hébraïque.",
+      "wikipedia": "Samuel_Joseph_Agnon",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Shmuel Yosef Agnon Portrait 1921.jpg",
+        "legende": "Shmuel Yosef Agnon, photographie de 1921",
+        "auteur": "Auteur inconnu",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "sukenik",
+      "nom": "Eleazar Sukenik",
+      "classement": "Sukenik, Eleazar",
+      "titre": "Naissance d'Eleazar Sukenik",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1889,
+      "description": "Eleazar Sukenik (1889-1953) est un archéologue israélien, né à Białystok, professeur à l'Université hébraïque de Jérusalem. Il acquiert en 1947, auprès d'antiquaires de Bethléem, les premiers manuscrits de la mer Morte, dont il comprend l'importance. Père de Yigaël Yadin, qui poursuit son œuvre, il meurt à Jérusalem en 1953.",
+      "wikipedia": "Eleazar_Sukenik",
+      "portrait": {
+        "fichier": "EL Sukenik 1951.jpg",
+        "legende": "Eleazar Sukenik, photographie de 1951",
+        "licence": "CC BY 3.0",
+        "auteur": "Département d'archéologie de l'Université hébraïque",
+        "recadrage": [
+          0.28,
+          0.0,
+          0.73,
+          0.77
+        ]
+      }
+    },
+    {
+      "slug": "rachel",
+      "nom": "Rachel Bluwstein",
+      "classement": "Bluwstein, Rachel",
+      "titre": "Naissance de Rachel Bluwstein",
+      "axe": "Littérature et pensée",
+      "naissance": 1890,
+      "description": "Rachel Bluwstein (1890-1931) est une poétesse de langue hébraïque, connue sous son seul prénom, née à Saratov, en Russie, arrivée en Palestine en 1909. Elle travaille dans une ferme-école près du lac de Tibériade, étudie l'agronomie en France, puis écrit des poèmes simples et poignants, dont plusieurs sont devenus des chansons populaires. Atteinte de tuberculose, elle meurt à Tel Aviv à 40 ans, et son portrait a figuré sur le billet de 20 shekels.",
+      "wikipedia": "Rachel_Blaustein",
+      "portrait": {
+        "fichier": "RachelBluwstein.jpg",
+        "legende": "Rachel Bluwstein, photographie sans date",
+        "auteur": "Auteur inconnu",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "sadeh",
+      "nom": "Yitzhak Sadeh",
+      "classement": "Sadeh, Yitzhak",
+      "titre": "Naissance de Yitzhak Sadeh",
+      "axe": "Guerres et résistances",
+      "naissance": 1890,
+      "description": "Yitzhak Sadeh (1890-1952) est un général israélien, né à Lublin, ancien officier de l'armée russe. Premier commandant du Palmach, troupe d'élite de la Haganah qu'il fonde en 1941, il y forme une génération de chefs, dont Yigal Allon et Yitzhak Rabin. Pendant la guerre de 1948, il commande la première brigade blindée de l'armée israélienne.",
+      "wikipedia": "Yitzhak_Sadeh",
+      "portrait": {
+        "fichier": "Yitzhak Sadeh (997009857430705171).jpg",
+        "legende": "Yitzhak Sadeh, photographie de Benno Rothenberg, 1947-1949",
+        "auteur": "Benno Rothenberg",
+        "licence": "CC BY 4.0"
+      }
+    },
+    {
+      "slug": "saraha",
+      "nom": "Sarah Aaronsohn",
+      "classement": "Aaronsohn, Sarah",
+      "titre": "Naissance de Sarah Aaronsohn",
+      "axe": "Guerres et résistances",
+      "naissance": 1890,
+      "description": "Sarah Aaronsohn (1890-1917) est une espionne juive de Palestine ottomane, née à Zikhron Yaakov, sœur de l'agronome Aaron Aaronsohn. Elle dirige sur place le réseau Nili, qui renseigne les Britanniques sur l'armée ottomane pendant la Première Guerre mondiale. Arrêtée et torturée en octobre 1917, elle se donne la mort pour ne pas parler, et le réseau disparaît avec elle.",
+      "wikipedia": "Sara_Aharonson",
+      "portrait": {
+        "fichier": "Sarah Aaharonson.JPG",
+        "legende": "Sarah Aaronsohn, photographie d'avant 1917",
+        "auteur": "Auteur inconnu",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "sharett",
+      "nom": "Moshe Sharett",
+      "classement": "Sharett, Moshe",
+      "titre": "Naissance de Moshe Sharett",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1894,
+      "description": "Moshe Sharett (1894-1965) est un homme d'État israélien, né à Kherson, en Ukraine, et premier ministre des Affaires étrangères du pays, de 1948 à 1956. Il est brièvement Premier ministre, de 1954 à 1955, entre deux mandats de Ben Gourion, dont il incarne l'aile modérée. Partisan de la négociation avec les voisins arabes, il s'oppose aux représailles militaires voulues par Ben Gourion et Dayan, et quitte le gouvernement en 1956.",
+      "wikipedia": "Moshé_Sharett",
+      "portrait": {
+        "fichier": "Moshe Sharett (oud-premier Israel) op Schiphol, Moshe Sharett (kop), Bestanddeelnr 915-9559.jpg",
+        "legende": "Moshe Sharett, photographie de Jack de Nijs à l'aéroport de Schiphol, 17 janvier 1964",
+        "auteur": "Jack de Nijs (Anefo)",
+        "licence": "CC0 (domaine public)",
+        "recadrage": [
+          0.44,
+          0.05,
+          0.84,
+          0.55
+        ]
+      }
+    },
+    {
+      "slug": "ticho",
+      "nom": "Anna Ticho",
+      "classement": "Ticho, Anna",
+      "titre": "Naissance d'Anna Ticho",
+      "axe": "Beaux-arts",
+      "naissance": 1894,
+      "description": "Anna Ticho (1894-1980) est une dessinatrice, née à Brno, installée à Jérusalem en 1912, où elle épouse l'ophtalmologue Avraham Ticho. Ses fusains et ses encres des collines de Judée et des paysages de la ville font d'elle l'une des grandes artistes de Jérusalem. La maison Ticho, devenue musée, abrite aujourd'hui ses dessins.",
+      "wikipedia": "Anna_Ticho",
+      "portrait": {
+        "fichier": "Anna Ticho.jpg",
+        "legende": "Anna Ticho, photographie de 1978",
+        "largeur": 0,
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Stanley I. Batkin"
+      }
+    },
+    {
+      "slug": "eshkol",
+      "nom": "Levi Eshkol",
+      "classement": "Eshkol, Levi",
+      "titre": "Naissance de Levi Eshkol",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1895,
+      "description": "Levi Eshkol (1895-1969) est un homme d'État israélien, né dans l'Empire russe, en actuelle Ukraine, Premier ministre de 1963 à sa mort. Ministre des Finances de 1952 à 1963, il façonne l'économie du jeune État, notamment par l'aqueduc national qui amène l'eau du nord au Néguev. Il dirige le gouvernement d'union nationale de la guerre des Six Jours, où Moshe Dayan entre à la Défense et Menahem Begin au gouvernement.",
+      "wikipedia": "Levi_Eshkol",
+      "portrait": {
+        "fichier": "Portrait of prime minister Levy Eshkol. August 1963. D699-070.jpg",
+        "legende": "Levi Eshkol, photographie du 12 août 1963",
+        "licence": "CC BY-SA 4.0",
+        "auteur": "David Eldan"
+      }
+    },
+    {
+      "slug": "janco",
+      "nom": "Marcel Janco",
+      "classement": "Janco, Marcel",
+      "titre": "Naissance de Marcel Janco",
+      "axe": "Beaux-arts",
+      "naissance": 1895,
+      "description": "Marcel Janco (1895-1984) est un peintre, architecte et théoricien d'origine roumaine, né à Bucarest, cofondateur du mouvement Dada à Zurich en 1916. Installé en Palestine en 1941, il fonde en 1953 le village d'artistes d'Ein Hod, près de Haïfa. Il reçoit le prix Israël de peinture en 1967.",
+      "wikipedia": "Marcel_Janco",
+      "portrait": {
+        "fichier": "Marcel Janco (Portrait).jpg",
+        "legende": "Marcel Janco, photographie de 1980",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Stanley I. Batkin"
+      }
+    },
+    {
+      "slug": "ardon",
+      "nom": "Mordecai Ardon",
+      "classement": "Ardon, Mordecai",
+      "titre": "Naissance de Mordecai Ardon",
+      "axe": "Beaux-arts",
+      "naissance": 1896,
+      "description": "Mordecai Ardon (1896-1992) est un peintre israélien, né Max Bronstein en Pologne, élève du Bauhaus à Weimar de Paul Klee et de Kandinsky. Réfugié à Jérusalem en 1933, il dirige l'école Bezalel de 1940 à 1952. Il réalise les grands vitraux de la Bibliothèque nationale d'Israël, à Jérusalem, et reçoit le prix Israël en 1963.",
+      "wikipedia": "Mordecai_Ardon",
+      "portrait": {
+        "fichier": "Mordecai Ardon.jpg",
+        "legende": "Mordecai Ardon, photographie de 1977",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Stanley I. Batkin"
+      }
+    },
+    {
+      "slug": "benhaim",
+      "nom": "Paul Ben-Haim",
+      "classement": "Ben-Haim, Paul",
+      "titre": "Naissance de Paul Ben-Haim",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1897,
+      "description": "Paul Ben-Haim (1897-1984) est un compositeur né à Munich sous le nom de Paul Frankenburger, qui émigre à Tel Aviv en 1933 et y change son nom. Il y développe un style qui mêle l'écriture occidentale et les mélodies des communautés juives d'Orient. Il reçoit en 1957 le premier prix Israël de musique.",
+      "wikipedia": "Paul_Ben-Haim",
+      "portrait": {
+        "fichier": "Paul-Ben-Haim 0001.jpg",
+        "legende": "Paul Ben-Haim, photographie sans date",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Bibliothèque nationale d’Israël"
+      }
+    },
+    {
+      "slug": "scholem",
+      "nom": "Gershom Scholem",
+      "classement": "Scholem, Gershom",
+      "titre": "Naissance de Gershom Scholem",
+      "axe": "Littérature et pensée",
+      "naissance": 1897,
+      "description": "Gershom Scholem (1897-1982) est un historien et philosophe, né à Berlin, qui s'installe à Jérusalem en 1923. Professeur à l'Université hébraïque, il fait de l'étude de la kabbale une discipline scientifique, notamment avec « Les Grands Courants de la mystique juive » (1941). Ami de Walter Benjamin, dont il a défendu l'œuvre, il est aussi resté célèbre pour son échange avec Hannah Arendt sur le procès Eichmann.",
+      "wikipedia": "Gershom_Scholem",
+      "portrait": {
+        "fichier": "Gershom Scholem 1935 (cropped).jpg",
+        "legende": "Gershom Scholem, photographie de 1935",
+        "auteur": "Auteur inconnu",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "gutman",
+      "nom": "Nahoum Gutman",
+      "classement": "Gutman, Nahoum",
+      "titre": "Naissance de Nahoum Gutman",
+      "axe": "Beaux-arts",
+      "naissance": 1898,
+      "description": "Nahoum Gutman (1898-1980) est un peintre, illustrateur et écrivain, né en Bessarabie et arrivé enfant à Jaffa en 1905. Ses tableaux évoquent la vie des premiers habitants de Tel Aviv et la douceur des paysages de Jaffa. Illustrateur de livres pour enfants, il a laissé à Tel Aviv un musée à son nom.",
+      "wikipedia": "Nahum_Gutman",
+      "portrait": {
+        "fichier": "Dan Hadani collection (990044438640205171).jpg",
+        "legende": "Nahoum Gutman, photographie de 1969 (collection Dan Hadani)",
+        "licence": "CC BY 4.0",
+        "auteur": "Photographe de l’IPPA (collection Dan Hadani)",
+        "recadrage": [
+          0.28,
+          0.15,
+          0.78,
+          0.53
+        ]
+      }
+    },
+    {
+      "slug": "meir",
+      "nom": "Golda Meir",
+      "classement": "Meir, Golda",
+      "titre": "Naissance de Golda Meir",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1898,
+      "description": "Golda Meir (1898-1978) est une femme d'État israélienne, née à Kiev et formée à Milwaukee, aux États-Unis, avant de s'installer en Palestine en 1921. Signataire de la déclaration d'indépendance, ministre du Travail puis des Affaires étrangères, elle devient en 1969 la première femme Premier ministre d'Israël. La surprise de la guerre du Kippour, en octobre 1973, ébranle son autorité, et elle démissionne en 1974.",
+      "wikipedia": "Golda_Meir",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Golda Meir 03265u-2.jpg",
+        "legende": "Golda Meir, photographie du 1er mars 1973",
+        "licence": "Domaine public",
+        "auteur": "Marion S. Trikosko"
+      }
+    },
+    {
+      "slug": "leibowitz",
+      "nom": "Yeshayahu Leibowitz",
+      "classement": "Leibowitz, Yeshayahu",
+      "titre": "Naissance de Yeshayahu Leibowitz",
+      "axe": "Littérature et pensée",
+      "naissance": 1903,
+      "description": "Yeshayahu Leibowitz (1903-1994) est un philosophe, chimiste et médecin israélien, né à Riga. Juif pratiquant strict, il sépare la foi de la politique et refuse de donner une valeur religieuse à l'État d'Israël, ce qui fait de lui un critique de l'occupation des territoires conquis en 1967. Ses articles et ses émissions radiophoniques, à la vigueur déconcertante, en font l'un des intellectuels les plus discutés de son temps.",
+      "wikipedia": "Yeshayahou_Leibowitz",
+      "portrait": {
+        "fichier": "Yeshayahu Leibowitz.jpg",
+        "legende": "Yeshayahu Leibowitz, photographie sans date",
+        "licence": "CC BY-SA 2.5",
+        "auteur": "Bracha L. Ettinger"
+      }
+    },
+    {
+      "slug": "stern",
+      "nom": "Avraham Stern",
+      "classement": "Stern, Avraham",
+      "titre": "Naissance d'Avraham Stern",
+      "axe": "Guerres et résistances",
+      "naissance": 1907,
+      "description": "Avraham Stern (1907-1942) est un poète et militant sioniste, né à Suwałki, en Pologne, fondateur du Lehi, que les Britanniques appellent le « groupe Stern ». Scission de l'Irgoun en 1940, le Lehi poursuit la lutte armée contre le Mandat britannique malgré la guerre, ce qui vaut à Stern d'être traqué par la police. Arrêté et abattu à Tel Aviv en février 1942, il reste une figure controversée, héros pour les uns, terroriste pour les autres.",
+      "wikipedia": "Avraham_Stern",
+      "portrait": {
+        "fichier": "Avraham Stern.jpg",
+        "legende": "Avraham Stern, photographie sans date, antérieure à 1942",
+        "auteur": "Auteur inconnu",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "kollek",
+      "nom": "Teddy Kollek",
+      "classement": "Kollek, Teddy",
+      "titre": "Naissance de Teddy Kollek",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1911,
+      "description": "Teddy Kollek (1911-2007) est un homme politique israélien, né en Hongrie et élevé à Vienne, maire de Jérusalem de 1965 à 1993. Ancien collaborateur de Ben Gourion et cadre de l'Agence juive, il crée en 1966 la Fondation de Jérusalem, qui finance parcs, musées et équipements culturels, et reste associé à la réalisation du Musée d'Israël. Son long mandat, mené dans une ville disputée après 1967, fait de lui l'un des maires les plus connus du monde.",
+      "wikipedia": "Teddy_Kollek",
+      "portrait": {
+        "fichier": "Teddy Kollek during a Christmas eve cocktail party.jpg",
+        "legende": "Teddy Kollek, photographie du 24 décembre 1984",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Nati Harnik (Government Press Office)"
+      }
+    },
+    {
+      "slug": "begin",
+      "nom": "Menahem Begin",
+      "classement": "Begin, Menahem",
+      "titre": "Naissance de Menahem Begin",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1913,
+      "description": "Menahem Begin (1913-1992) est un homme d'État israélien, né à Brest-Litovsk et chef de l'organisation clandestine Irgoun à partir de 1943. Fondateur du Hérout puis du Likoud, il devient Premier ministre en 1977, mettant fin à près de trente ans de domination travailliste. Il signe avec l'Égyptien Anouar el-Sadate les accords de Camp David (1978) et le traité de paix de 1979, ce qui lui vaut le prix Nobel de la paix, partagé avec lui.",
+      "wikipedia": "Menahem_Begin",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Menachem Begin, Andrews AFB, 1978.JPG",
+        "legende": "Menahem Begin, photographie de l'armée de l'air américaine à la base d'Andrews, 1978",
+        "licence": "Domaine public",
+        "auteur": "US Air Force"
+      }
+    },
+    {
+      "slug": "dayan",
+      "nom": "Moshe Dayan",
+      "classement": "Dayan, Moshe",
+      "titre": "Naissance de Moshe Dayan",
+      "axe": "Guerres et résistances",
+      "naissance": 1915,
+      "description": "Moshe Dayan (1915-1981) est un général et homme d'État israélien, né au kibboutz de Degania, qui perd un œil en 1941 en combattant les troupes de Vichy au Liban. Chef d'état-major de 1953 à 1958, il dirige la campagne du Sinaï de 1956, puis il est ministre de la Défense de 1967 à 1974, pendant la guerre des Six Jours puis au moment de la surprise de la guerre du Kippour. Ministre des Affaires étrangères de Menahem Begin, il participe aux négociations avec l'Égypte avant de démissionner en 1979.",
+      "wikipedia": "Moshe_Dayan",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Mosche Dajan (cropped).jpg",
+        "legende": "Moshe Dayan, photographie du 16 février 1978",
+        "licence": "Domaine public",
+        "auteur": "Karl H. Schumacher (Maison-Blanche)"
+      }
+    },
+    {
+      "slug": "eban",
+      "nom": "Abba Eban",
+      "classement": "Eban, Abba",
+      "titre": "Naissance d'Abba Eban",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1915,
+      "description": "Abba Eban (1915-2002) est un diplomate israélien, né au Cap et formé à Cambridge, ambassadeur de son pays à l'ONU de 1949 à 1959 puis aux États-Unis. Orateur à l'élégance restée célèbre, il est ministre des Affaires étrangères de 1966 à 1974 et défend la position israélienne à la veille et au lendemain de la guerre des Six Jours. Il est aussi l'auteur d'une histoire du peuple juif, « Mon peuple » (1968).",
+      "wikipedia": "Abba_Eban",
+      "portrait": {
+        "fichier": "Aankomst Israelische minister van Buitenlandse Zaken Abba Eban op Schiphol, rech, Bestanddeelnr 921-1962.jpg",
+        "legende": "Abba Eban, photographie de Jack de Nijs à l'aéroport de Schiphol, 26 mars 1968",
+        "auteur": "Jack de Nijs (Anefo)",
+        "licence": "CC0 (domaine public)",
+        "recadrage": [
+          0.4,
+          0.02,
+          0.7,
+          0.59
+        ]
+      }
+    },
+    {
+      "slug": "shamir",
+      "nom": "Yitzhak Shamir",
+      "classement": "Shamir, Yitzhak",
+      "titre": "Naissance de Yitzhak Shamir",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1915,
+      "description": "Yitzhak Shamir (1915-2012) est un homme d'État israélien, né à Ruzhany, dans l'actuelle Biélorussie, et l'un des chefs de l'organisation clandestine Lehi dans les années 1940. Cadre du Mossad dans les années 1950 et 1960, il est Premier ministre de 1983 à 1984, puis de 1986 à 1992. Il dirige le pays pendant la première Intifada et la guerre du Golfe, et participe en 1991 à la conférence de Madrid.",
+      "wikipedia": "Yitzhak_Shamir",
+      "portrait": {
+        "fichier": "Yitzhak Shamir 1992 Dan Hadani Archive.jpg",
+        "legende": "Yitzhak Shamir, photographie du 7 janvier 1992 (collection Dan Hadani)",
+        "licence": "CC BY 4.0",
+        "auteur": "Yolene Haik"
+      }
+    },
+    {
+      "slug": "katzir",
+      "nom": "Ephraïm Katzir",
+      "classement": "Katzir, Ephraïm",
+      "titre": "Naissance d'Ephraïm Katzir",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1916,
+      "description": "Ephraïm Katzir (1916-2009) est un biophysicien et homme d'État israélien, né à Kiev. Spécialiste des protéines, pionnier des enzymes immobilisées, il travaille à l'Institut Weizmann, à Rehovot. Il est le quatrième président d'Israël de 1973 à 1978, après la guerre du Kippour.",
+      "wikipedia": "Ephraïm_Katzir",
+      "portrait": {
+        "fichier": "Ephraim Katzir visited the Tel Aviv Wax Museum (cropped).jpg",
+        "legende": "Ephraïm Katzir, photographie du 21 décembre 1978",
+        "licence": "CC BY 4.0",
+        "auteur": "Gotfried Danny (collection Dan Hadani)"
+      }
+    },
+    {
+      "slug": "yadin",
+      "nom": "Yigaël Yadin",
+      "classement": "Yadin, Yigaël",
+      "titre": "Naissance de Yigaël Yadin",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1917,
+      "description": "Yigaël Yadin (1917-1984) est un archéologue et général israélien, né à Jérusalem, fils d'Eleazar Sukenik. Chef des opérations puis chef d'état-major pendant la guerre de 1948, il quitte l'armée en 1952 pour se consacrer à l'archéologie et dirige les fouilles de Hazor et de Massada. Vice-Premier ministre de Menahem Begin de 1977 à 1981, il a aussi acquis en 1954 les autres manuscrits de la mer Morte.",
+      "wikipedia": "Yigaël_Yadin",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Yigael Yadin, Chief of General Staff.jpg",
+        "legende": "Yigaël Yadin, chef d'état-major, photographie du porte-parole de Tsahal, 1949-1952",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Porte-parole de Tsahal"
+      }
+    },
+    {
+      "slug": "allon",
+      "nom": "Yigal Allon",
+      "classement": "Allon, Yigal",
+      "titre": "Naissance de Yigal Allon",
+      "axe": "Guerres et résistances",
+      "naissance": 1918,
+      "description": "Yigal Allon (1918-1980) est un général et homme politique israélien, né à Kfar Tabor, en Galilée, commandant du Palmach de 1945 à 1948. Chef des opérations victorieuses du sud et de la Galilée pendant la guerre de 1948, notamment contre l'armée égyptienne dans le Néguev, il est tenu à l'écart de l'état-major par Ben Gourion. Vice-Premier ministre puis ministre des Affaires étrangères, il laisse son nom au « plan Allon » de 1967, qui propose un partage de la Cisjordanie.",
+      "wikipedia": "Yigal_Allon",
+      "portrait": {
+        "fichier": "Former Foreign Minister Yigal Allon (FL62594966).jpg",
+        "legende": "Yigal Allon, photographie de 1978",
+        "licence": "CC BY 4.0",
+        "auteur": "Photographe de l’IPPA",
+        "recadrage": [
+          0.22,
+          0.1,
+          0.72,
+          0.53
+        ]
+      }
+    },
+    {
+      "slug": "herzog",
+      "nom": "Chaim Herzog",
+      "classement": "Herzog, Chaim",
+      "titre": "Naissance de Chaim Herzog",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1918,
+      "description": "Chaim Herzog (1918-1997) est un général, diplomate et homme d'État israélien, né à Belfast, fils du grand-rabbin d'Irlande, devenu grand-rabbin d'Israël. Chef des renseignements militaires, puis ambassadeur à l'ONU, où il répond en 1975 à la résolution qui assimile le sionisme au racisme, il est le sixième président d'Israël, de 1983 à 1993. Son fils Isaac Herzog est devenu à son tour président du pays en 2021.",
+      "wikipedia": "Chaim_Herzog",
+      "portrait": {
+        "fichier": "Chaim Herzog (00370035).jpg",
+        "legende": "Chaim Herzog, photographie de 1981-1983",
+        "licence": "CC BY-SA 4.0",
+        "auteur": "Photographe de la Knesset"
+      }
+    },
+    {
+      "slug": "ovadia",
+      "nom": "Ovadia Yosef",
+      "classement": "Yosef, Ovadia",
+      "titre": "Naissance d'Ovadia Yosef",
+      "axe": "Littérature et pensée",
+      "naissance": 1920,
+      "description": "Ovadia Yosef (1920-2013) est un rabbin, né à Bagdad, grand-rabbin séfarade d'Israël de 1973 à 1983. Grand juriste de la loi juive, il redonne aux traditions séfarades un statut d'égal face à l'autorité ashkénaze. Il inspire en 1984 la création du parti Shas, dont il reste jusqu'à sa mort le guide spirituel.",
+      "wikipedia": "Ovadia_Yosef",
+      "portrait": {
+        "fichier": "Ovadya Yosef.jpg",
+        "legende": "Ovadia Yosef, photographie du 31 décembre 2006",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Michaeli"
+      }
+    },
+    {
+      "slug": "navon",
+      "nom": "Yitzhak Navon",
+      "classement": "Navon, Yitzhak",
+      "titre": "Naissance de Yitzhak Navon",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1921,
+      "description": "Yitzhak Navon (1921-2015) est un homme d'État et écrivain israélien, né à Jérusalem dans une famille séfarade, cinquième président de l'État d'Israël de 1978 à 1983. Ancien secrétaire de Ben Gourion, il est le premier président issu des communautés séfarades et se rend en Égypte en 1980, après le traité de paix. Auteur de la comédie musicale « Bustan Sephardi » (1970), il est aussi ministre de l'Éducation de 1984 à 1990.",
+      "wikipedia": "Yitzhak_Navon",
+      "portrait": {
+        "fichier": "Yitzhak Navon 1.jpg",
+        "legende": "Yitzhak Navon, photographie de 2010",
+        "licence": "CC BY 3.0",
+        "auteur": "Wierzba"
+      }
+    },
+    {
+      "slug": "szenes",
+      "nom": "Hannah Szenes",
+      "classement": "Szenes, Hannah",
+      "titre": "Naissance d'Hannah Szenes",
+      "axe": "Guerres et résistances",
+      "naissance": 1921,
+      "description": "Hannah Szenes (1921-1944) est une poétesse et résistante juive hongroise, née à Budapest, qui émigre en Palestine en 1939 et s'installe au kibboutz Sdot Yam. Engagée dans l'armée britannique, elle est parachutée en Yougoslavie en mars 1944 pour aider les Juifs de Hongrie, mais elle est arrêtée à la frontière hongroise. Fusillée à Budapest le 7 novembre 1944, à 23 ans, elle est devenue en Israël une héroïne nationale.",
+      "wikipedia": "Hannah_Szenes",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "PikiWiki Israel 7713 Hannah Senesh and her brother.jpg",
+        "legende": "Hannah Szenes, enfant, avec son frère György, photographie vers 1933",
+        "auteur": "Auteur inconnu",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "rabin",
+      "nom": "Yitzhak Rabin",
+      "classement": "Rabin, Yitzhak",
+      "titre": "Naissance de Yitzhak Rabin",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1922,
+      "description": "Yitzhak Rabin (1922-1995) est un général et homme d'État israélien, né à Jérusalem, chef d'état-major de Tsahal pendant la guerre des Six Jours. Premier ministre de 1974 à 1977 puis de 1992 à 1995, il conclut en 1993 les accords d'Oslo avec Yasser Arafat, ce qui lui vaut le prix Nobel de la paix 1994, partagé avec Shimon Peres et Arafat. Il est assassiné le 4 novembre 1995 à Tel Aviv par un extrémiste israélien opposé au processus de paix.",
+      "wikipedia": "Yitzhak_Rabin",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Flickr - Israel Defense Forces - Life of Lt. Gen. Yitzhak Rabin, 7th IDF Chief of Staff in photos (11).jpg",
+        "legende": "Yitzhak Rabin, photographie d'archives de l'armée israélienne",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Yaakov Saar"
+      }
+    },
+    {
+      "slug": "avnery",
+      "nom": "Uri Avnery",
+      "classement": "Avnery, Uri",
+      "titre": "Naissance d'Uri Avnery",
+      "axe": "Guerres et résistances",
+      "naissance": 1923,
+      "description": "Uri Avnery (1923-2018) est un journaliste, écrivain et militant pacifiste israélien, né en Allemagne et arrivé en Palestine en 1933. Ancien combattant de l'Irgoun, puis de l'armée israélienne en 1948, il dirige l'hebdomadaire « Haolam Hazeh » et siège à la Knesset. Partisan de deux États, il rencontre Yasser Arafat à Beyrouth en 1982 et fonde en 1993 le mouvement Gush Shalom.",
+      "wikipedia": "Uri_Avnery",
+      "portrait": {
+        "fichier": "UriAvnery.jpg",
+        "legende": "Uri Avnery, photographie publiée en 2006",
+        "licence": "Domaine public",
+        "auteur": "Uri Avnery"
+      }
+    },
+    {
+      "slug": "damari",
+      "nom": "Shoshana Damari",
+      "classement": "Damari, Shoshana",
+      "titre": "Naissance de Shoshana Damari",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1923,
+      "description": "Shoshana Damari (1923-2006) est une chanteuse israélienne, née au Yémen et arrivée enfant dans la Palestine mandataire. Surnommée la « reine de la chanson hébraïque », elle chante pour les soldats pendant la guerre de 1948. Elle reçoit le prix Israël en 1988.",
+      "wikipedia": "Shoshana_Damari",
+      "portrait": {
+        "fichier": "Birthday celebration for singer Shoshana Damari organized by Galei Tzahal (FL61650661).jpg",
+        "legende": "Shoshana Damari, photographie de 1971",
+        "licence": "CC BY 4.0",
+        "auteur": "Photographe de l’IPPA",
+        "recadrage": [
+          0.15,
+          0.08,
+          0.65,
+          0.47
+        ]
+      }
+    },
+    {
+      "slug": "peres",
+      "nom": "Shimon Peres",
+      "classement": "Peres, Shimon",
+      "titre": "Naissance de Shimon Peres",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1923,
+      "description": "Shimon Peres (1923-2016) est un homme d'État israélien, né à Wiszniew, dans l'actuelle Biélorussie. Collaborateur de Ben Gourion au ministère de la Défense dans les années 1950, il est Premier ministre par intérim en 1977, de 1984 à 1986 et en 1995-1996, puis neuvième président d'Israël de 2007 à 2014. L'un des artisans des accords d'Oslo, il reçoit le prix Nobel de la paix en 1994 avec Yitzhak Rabin et Yasser Arafat.",
+      "wikipedia": "Shimon_Peres",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Shimon Peres - portrait photograh - 1996 (full).jpg",
+        "legende": "Shimon Peres, photographie du 2 mai 1996",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Avi Ohayon"
+      }
+    },
+    {
+      "slug": "amichai",
+      "nom": "Yehuda Amichai",
+      "classement": "Amichai, Yehuda",
+      "titre": "Naissance de Yehuda Amichai",
+      "axe": "Littérature et pensée",
+      "naissance": 1924,
+      "description": "Yehuda Amichai (1924-2000) est un poète de langue hébraïque, né à Würzburg, en Allemagne, qui émigre avec sa famille en Palestine en 1936. Ancien combattant de la Brigade juive de l'armée britannique puis du Palmach, il écrit une poésie à la langue simple, nourrie de Jérusalem, d'amour et de guerre. Il est l'un des poètes israéliens les plus traduits dans le monde.",
+      "wikipedia": "Yehuda_Amichaï",
+      "portrait": {
+        "fichier": "Yehuda Amichai 1987.jpg",
+        "legende": "Yehuda Amichai, photographie du 5 juin 1987",
+        "auteur": "Yehiam Gal",
+        "licence": "CC BY 4.0"
+      }
+    },
+    {
+      "slug": "eweizman",
+      "nom": "Ezer Weizman",
+      "classement": "Weizman, Ezer",
+      "titre": "Naissance d'Ezer Weizman",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1924,
+      "description": "Ezer Weizman (1924-2005) est un général et homme d'État israélien, né à Tel Aviv, neveu du premier président Chaim Weizmann. Commandant de l'armée de l'air de 1958 à 1966, il est ministre de la Défense de Menahem Begin pendant les négociations de Camp David, puis septième président d'Israël, de 1993 à 2000. Il démissionne de cette fonction avant la fin de son second mandat, à la suite d'une affaire de dons financiers.",
+      "wikipedia": "Ezer_Weizman",
+      "portrait": {
+        "fichier": "Ezer Weizman 9.jpg",
+        "legende": "Ezer Weizman, photographie d'avant 2005",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Magazine de l’armée de l’air israélienne"
+      }
+    },
+    {
+      "slug": "kishon",
+      "nom": "Ephraïm Kishon",
+      "classement": "Kishon, Ephraïm",
+      "titre": "Naissance d'Ephraïm Kishon",
+      "axe": "Littérature et pensée",
+      "naissance": 1924,
+      "description": "Ephraïm Kishon (1924-2005) est un écrivain humoriste, dramaturge et cinéaste israélien, né à Budapest, survivant de plusieurs camps nazis. Arrivé en Israël en 1949, il y devient le satiriste le plus lu et publie des centaines de chroniques, avec un succès particulier en Allemagne. Il reçoit le prix Israël en 2002 pour l'ensemble de son œuvre et meurt en Suisse.",
+      "wikipedia": "Ephraim_Kishon",
+      "portrait": {
+        "fichier": "Ephraim Kishon 6.jpg",
+        "legende": "Ephraïm Kishon, photographie vers 1994",
+        "licence": "CC BY-SA 4.0",
+        "auteur": "Nachoom Assis"
+      }
+    },
+    {
+      "slug": "neeman",
+      "nom": "Yuval Ne'eman",
+      "classement": "Ne'eman, Yuval",
+      "titre": "Naissance de Yuval Ne'eman",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1925,
+      "description": "Yuval Ne'eman (1925-2006) est un physicien et militaire israélien, né à Tel Aviv. En 1961, il propose indépendamment de Murray Gell-Mann la classification des particules élémentaires dite de la « voie octuple », qui permet de prédire l'existence d'une particule, l'oméga moins, découverte en 1964. Fondateur de l'Agence spatiale israélienne, il est aussi député et ministre de la Science.",
+      "wikipedia": "Yuval_Ne'eman",
+      "portrait": {
+        "fichier": "Yuval neeman (cropped).jpg",
+        "legende": "Yuval Ne'eman, photographie de 2003",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Kobi Kalmanovitz"
+      }
+    },
+    {
+      "slug": "aloni",
+      "nom": "Shulamit Aloni",
+      "classement": "Aloni, Shulamit",
+      "titre": "Naissance de Shulamit Aloni",
+      "axe": "Guerres et résistances",
+      "naissance": 1928,
+      "description": "Shulamit Aloni (1928-2014) est une avocate et femme politique israélienne, née à Tel Aviv, fondatrice en 1973 du Ratz, le Mouvement pour les droits civiques et la paix. Députée à la Knesset pendant plus de vingt ans, elle est ministre de l'Éducation dans le gouvernement de Yitzhak Rabin, en 1992-1993. Voix influente de la gauche laïque, elle combat le monopole du rabbinat sur le mariage et le divorce, et défend les droits des femmes et des Palestiniens.",
+      "wikipedia": "Shulamit_Aloni",
+      "portrait": {
+        "fichier": "Shulamit Aloni portrait.jpg",
+        "legende": "Shulamit Aloni, photographie sans date",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Udi Aloni (album de famille)"
+      }
+    },
+    {
+      "slug": "sharon",
+      "nom": "Ariel Sharon",
+      "classement": "Sharon, Ariel",
+      "titre": "Naissance d'Ariel Sharon",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1928,
+      "description": "Ariel Sharon (1928-2014) est un général et homme d'État israélien, né à Kfar Malal, fondateur de l'unité 101 en 1953 et héros de la traversée du canal de Suez en 1973. Ministre de la Défense pendant la guerre du Liban de 1982, il est écarté de ce poste après la commission Kahan, qui lui reproche de ne pas avoir prévu ni empêché les massacres de Sabra et Chatila. Premier ministre de 2001 à 2006, il fait évacuer la bande de Gaza en 2005, avant d'être terrassé par une attaque cérébrale qui le laisse dans le coma jusqu'à sa mort.",
+      "wikipedia": "Ariel_Sharon",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Ariel Sharon official portrait 2001.webp",
+        "legende": "Ariel Sharon, portrait officiel du 8 mars 2001",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Avi Ohayon"
+      }
+    },
+    {
+      "slug": "golan",
+      "nom": "Menahem Golan",
+      "classement": "Golan, Menahem",
+      "titre": "Naissance de Menahem Golan",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1929,
+      "description": "Menahem Golan (1929-2014) est un réalisateur et producteur israélien, né à Tibériade. Son film « Opération Thunderbolt » (1977), sur le raid d'Entebbe, est nommé à l'Oscar du meilleur film étranger. Avec son cousin Yoram Globus, il dirige ensuite aux États-Unis la société Cannon Films, qui produit des films d'action des années 1980.",
+      "wikipedia": "Menahem_Golan",
+      "portrait": {
+        "fichier": "Menahem Golan started shooting a new musical with Yehoram Gaon, Kazablan (FL45969630).jpg",
+        "legende": "Menahem Golan, photographie du 25 mars 1973, au début du tournage de « Kazablan »",
+        "licence": "CC BY 4.0",
+        "auteur": "Photographe de l’IPPA",
+        "recadrage": [
+          0.12,
+          0.1,
+          0.62,
+          0.56
+        ]
+      }
+    },
+    {
+      "slug": "karavan",
+      "nom": "Dani Karavan",
+      "classement": "Karavan, Dani",
+      "titre": "Naissance de Dani Karavan",
+      "axe": "Beaux-arts",
+      "naissance": 1930,
+      "description": "Dani Karavan (1930-2021) est un sculpteur israélien, né à Tel Aviv, auteur du grand relief de la Knesset (1966-1969). Il crée « Passages », hommage à Walter Benjamin, à Portbou, en Espagne (1994), ainsi que l'Axe majeur de Cergy-Pontoise, en France. Ses œuvres monumentales, conçues pour un lieu précis, sont installées dans le monde entier.",
+      "wikipedia": "Dani_Karavan",
+      "portrait": {
+        "fichier": "Dani Karavan.jpg",
+        "legende": "Dani Karavan, photographie de 1979",
+        "largeur": 330,
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Stanley I. Batkin"
+      }
+    },
+    {
+      "slug": "shemer",
+      "nom": "Naomi Shemer",
+      "classement": "Shemer, Naomi",
+      "titre": "Naissance de Naomi Shemer",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1930,
+      "description": "Naomi Shemer (1930-2004) est une auteure-compositrice-interprète israélienne, née au kibboutz Kinneret. Sa chanson « Jérusalem d'or », créée en mai 1967 par Shuli Natan, devient après la guerre des Six Jours l'hymne officieux de la réunification de la ville. Elle reçoit le prix Israël en 1983.",
+      "wikipedia": "Naomi_Shemer",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Naomi Shemer D507-159 (cropped).jpg",
+        "legende": "Naomi Shemer, photographie du 18 avril 1983",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Yaakov Saar"
+      }
+    },
+    {
+      "slug": "appelfeld",
+      "nom": "Aharon Appelfeld",
+      "classement": "Appelfeld, Aharon",
+      "titre": "Naissance d'Aharon Appelfeld",
+      "axe": "Littérature et pensée",
+      "naissance": 1932,
+      "description": "Aharon Appelfeld (1932-2018) est un écrivain israélien, né près de Czernowitz, dans l'actuelle Ukraine. Enfant, il survit au ghetto et à la fuite, puis émigre en Palestine en 1946. Auteur de « Badenheim, ville de plaisance » (1975) et d'« Histoire d'une vie » (1999), il évoque dans ses romans l'Europe juive à la veille de l'extermination.",
+      "wikipedia": "Aharon_Appelfeld",
+      "portrait": {
+        "fichier": "Aharon Appelfeld, Aharon Appelfeld, Rencontre et entretien Marc Rettel-003.jpg",
+        "legende": "Aharon Appelfeld, photographie du 22 mai 2014",
+        "licence": "CC BY-SA 3.0 LU",
+        "auteur": "Jwh"
+      }
+    },
+    {
+      "slug": "kadishman",
+      "nom": "Menashe Kadishman",
+      "classement": "Kadishman, Menashe",
+      "titre": "Naissance de Menashe Kadishman",
+      "axe": "Beaux-arts",
+      "naissance": 1932,
+      "description": "Menashe Kadishman (1932-2015) est un sculpteur et peintre israélien, né à Tel Aviv, formé à Londres. Il est célèbre pour ses moutons peints et pour « Shalekhet » (« Feuilles mortes »), installation de dix mille visages d'acier, inaugurée en 2001 au Musée juif de Berlin. Il y rend hommage aux victimes de la guerre et de la violence.",
+      "wikipedia": "Menashe_Kadishman",
+      "portrait": {
+        "fichier": "Menashe Kadishman.jpg",
+        "legende": "Menashe Kadishman, photographie de 1979",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Stanley I. Batkin"
+      }
+    },
+    {
+      "slug": "kahneman",
+      "nom": "Daniel Kahneman",
+      "classement": "Kahneman, Daniel",
+      "titre": "Naissance de Daniel Kahneman",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1934,
+      "description": "Daniel Kahneman (1934-2024) est un psychologue israélo-américain, né à Tel Aviv, élevé en France pendant l'Occupation puis revenu en Palestine en 1948. Enseignant à l'Université hébraïque de Jérusalem, il élabore avec Amos Tversky la théorie des perspectives (1979), fondement de l'économie comportementale. Il reçoit en 2002 le prix Nobel d'économie et publie en 2011 le best-seller « Thinking, Fast and Slow ».",
+      "wikipedia": "Daniel_Kahneman",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Daniel Kahneman (3283955327) (cropped).jpg",
+        "legende": "Daniel Kahneman, photographie du 27 janvier 2009",
+        "licence": "CC BY-SA 2.0",
+        "auteur": "nrkbeta"
+      }
+    },
+    {
+      "slug": "topol",
+      "nom": "Chaim Topol",
+      "classement": "Topol, Chaim",
+      "titre": "Naissance de Chaim Topol",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1935,
+      "description": "Chaim Topol (1935-2023) est un acteur israélien, né à Tel Aviv. Révélé par « Sallah Shabati » (1964) d'Ephraïm Kishon, il incarne ensuite Tevye le laitier dans « Un violon sur le toit », à Londres puis au cinéma (1971), rôle qui lui vaut une nomination à l'Oscar du meilleur acteur. Il joue aussi dans « Rien que pour vos yeux » (1981) et reste associé à son personnage de Tevye jusqu'à sa mort.",
+      "wikipedia": "Chaim_Topol",
+      "portrait": {
+        "fichier": "Chaim Topol (1971).jpg",
+        "legende": "Chaim Topol, photographie de Rob C. Croes, 21 octobre 1971",
+        "auteur": "Rob C. Croes (Anefo)",
+        "licence": "CC0 (domaine public)"
+      }
+    },
+    {
+      "slug": "ravikovitch",
+      "nom": "Dahlia Ravikovitch",
+      "classement": "Ravikovitch, Dahlia",
+      "titre": "Naissance de Dahlia Ravikovitch",
+      "axe": "Littérature et pensée",
+      "naissance": 1936,
+      "description": "Dahlia Ravikovitch (1936-2005) est une poétesse, traductrice et militante pacifiste israélienne, née à Ramat Gan. Elle publie son premier recueil en 1959 et s'impose comme l'une des plus grandes voix de la poésie hébraïque, avant de s'engager contre la guerre du Liban et l'occupation. Elle meurt à Tel Aviv en 2005.",
+      "wikipedia": "Dahlia_Rabikovitch",
+      "portrait": {
+        "fichier": "Dahlia Ravikovitch D329-013 (cropped).jpg",
+        "legende": "Dahlia Ravikovitch, photographie du 30 mars 1997",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Einat Anker"
+      }
+    },
+    {
+      "slug": "yehoshua",
+      "nom": "Avraham Yehoshua",
+      "classement": "Yehoshua, Avraham",
+      "titre": "Naissance d'Avraham Yehoshua",
+      "axe": "Littérature et pensée",
+      "naissance": 1936,
+      "description": "Avraham Yehoshua (1936-2022) est un romancier, dramaturge et essayiste israélien, né à Jérusalem dans une famille séfarade. Auteur de « L'Amant » (1977) et de « Monsieur Mani » (1990), il peint avec ironie la société israélienne et ses tensions. Professeur à l'université de Haïfa, il défend un règlement avec les Palestiniens et meurt à Tel Aviv en 2022.",
+      "wikipedia": "A._B._Yehoshua",
+      "portrait": {
+        "fichier": "Abraham Jehoshua.jpg",
+        "legende": "Avraham Yehoshua, photographie du 18 juin 2009",
+        "licence": "CC BY-SA 2.5",
+        "auteur": "Mordechai Karniel"
+      }
+    },
+    {
+      "slug": "arikeinstein",
+      "nom": "Arik Einstein",
+      "classement": "Einstein, Arik",
+      "titre": "Naissance d'Arik Einstein",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1939,
+      "description": "Arik Einstein (1939-2013) est un chanteur et acteur israélien, né à Tel Aviv, considéré comme le père du rock hébraïque. Sa voix douce accompagne cinq décennies de la vie israélienne, à travers des chansons restées dans toutes les mémoires. Sa mort, en novembre 2013, provoque un deuil national.",
+      "wikipedia": "Arik_Einstein",
+      "portrait": {
+        "fichier": "Arik Einstein D499-097 taken by Israel Government Press Office.jpg",
+        "legende": "Arik Einstein, photographie du 4 novembre 1979",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Yaakov Saar"
+      }
+    },
+    {
+      "slug": "oz",
+      "nom": "Amos Oz",
+      "classement": "Oz, Amos",
+      "titre": "Naissance d'Amos Oz",
+      "axe": "Littérature et pensée",
+      "naissance": 1939,
+      "description": "Amos Oz (1939-2018) est un écrivain israélien, né à Jérusalem, dont les romans sont traduits dans une quarantaine de langues. « Mon Michaël » (1968) l'a fait connaître, et son autobiographie « Une histoire d'amour et de ténèbres » (2002) raconte l'enfance dans la Jérusalem du Mandat et le suicide de sa mère. Cofondateur du mouvement La Paix maintenant, il plaide pendant des décennies pour deux États.",
+      "wikipedia": "Amos_Oz",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Amos oz675.jpg",
+        "legende": "Amos Oz, photographie du 21 septembre 2005",
+        "licence": "CC BY 3.0",
+        "auteur": "Michiel Hendryckx"
+      }
+    },
+    {
+      "slug": "ariel",
+      "nom": "Meir Ariel",
+      "classement": "Ariel, Meir",
+      "titre": "Naissance de Meir Ariel",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1942,
+      "description": "Meir Ariel (1942-1999) est un auteur-compositeur-interprète israélien, né au kibboutz Mishmarot. Ses chansons, d'une langue riche en jeux de mots, mêlent poésie, humour et critique de la société et de la guerre. Il est devenu l'un des songwriters les plus aimés d'Israël.",
+      "wikipedia": "Meir_Ariel",
+      "portrait": {
+        "fichier": "Meirarielbarefoot.jpg",
+        "legende": "Meir Ariel, photographie sans date",
+        "licence": "CC BY-SA 4.0",
+        "auteur": "Yotamie1996",
+        "recadrage": [
+          0.25,
+          0.03,
+          0.75,
+          0.52
+        ]
+      }
+    },
+    {
+      "slug": "levin",
+      "nom": "Hanokh Levin",
+      "classement": "Levin, Hanokh",
+      "titre": "Naissance d'Hanokh Levin",
+      "axe": "Littérature et pensée",
+      "naissance": 1943,
+      "description": "Hanokh Levin (1943-1999) est un dramaturge, poète et metteur en scène israélien, né à Tel Aviv. Sa pièce satirique « La Reine de la baignoire » (1970), sur la guerre d'usure, provoque un scandale et est retirée de l'affiche après quelques représentations. Auteur de plus de cinquante pièces, il meurt d'un cancer en 1999, à 55 ans.",
+      "wikipedia": "Hanoch_Levin",
+      "portrait": {
+        "fichier": "Dan Hadani collection (990040196520205171).jpg",
+        "legende": "Hanokh Levin, photographie du 14 octobre 1982 (collection Dan Hadani)",
+        "licence": "CC BY 4.0",
+        "auteur": "Dan Hadani"
+      }
+    },
+    {
+      "slug": "ramon",
+      "nom": "Ilan Ramon",
+      "classement": "Ramon, Ilan",
+      "titre": "Naissance d'Ilan Ramon",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1954,
+      "description": "Ilan Ramon (1954-2003) est un colonel de l'armée de l'air israélienne et astronaute, né à Ramat Gan, pilote de F-16 qui participe en 1981 à l'attaque de la centrale nucléaire irakienne d'Osirak. Premier Israélien dans l'espace, il embarque en 2003 sur la navette Columbia pour la mission STS-107. Il meurt avec ses six coéquipiers lors de la désintégration de la navette, au retour, le 1er février 2003.",
+      "wikipedia": "Ilan_Ramon",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Ilan Ramon, NASA photo portrait in orange suit.jpg",
+        "legende": "Ilan Ramon, portrait officiel de la NASA, novembre 2001",
+        "licence": "Domaine public",
+        "auteur": "NASA"
+      }
+    },
+    {
+      "slug": "argov",
+      "nom": "Zohar Argov",
+      "classement": "Argov, Zohar",
+      "titre": "Naissance de Zohar Argov",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1955,
+      "description": "Zohar Argov (1955-1987) est un chanteur israélien né à Rishon LeZion dans une famille juive yéménite. Il devient le « roi de la musique orientale » (mizrahit) avec l'album « Haperach Begani » (1980), diffusé d'abord par des cassettes, hors des circuits officiels. Il meurt à 32 ans, en détention, en 1987, et sa musique est aujourd'hui célébrée dans tout le pays.",
+      "wikipedia": "Zohar_Argov",
+      "portrait": {
+        "fichier": "Zohar Argov.png",
+        "legende": "Zohar Argov, photographie d'avant 1987",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Bamahane (Matankic)"
+      }
+    },
+    {
+      "slug": "haza",
+      "nom": "Ofra Haza",
+      "classement": "Haza, Ofra",
+      "titre": "Naissance d'Ofra Haza",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1957,
+      "description": "Ofra Haza (1957-2000) est une chanteuse israélienne, née à Tel Aviv dans une famille juive yéménite. Deuxième de l'Eurovision en 1983 avec « Hi », elle connaît un succès international en 1988 avec « Im Nin'alu », qui reprend un poème yéménite du XVIIe siècle. Elle meurt à 42 ans, à Ramat Gan, en février 2000.",
+      "wikipedia": "Ofra_Haza",
+      "portrait": {
+        "fichier": "Ofra Haza (Cutout).jpg",
+        "legende": "Ofra Haza, photographie vers 1994",
+        "licence": "CC BY-SA 4.0",
+        "auteur": "Nachoom Assis"
+      }
+    }
+  ]
+}
