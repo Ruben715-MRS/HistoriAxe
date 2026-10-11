@@ -1,6 +1,8 @@
 # Machrek et péninsule Arabique : liste de candidats
 
-Document de travail, **à valider avant toute rédaction** (voir « Ajouter un pays ou un bloc » dans le README). Il ne contient pas de panthéon : aucune fiche n'est écrite, aucun portrait n'est téléchargé dans `assets/`.
+> **État** : le thème `pan_machrek` est construit (103 figures ; voir le README, « Le cinquième bloc »). Ce document garde la mémoire des choix et des candidats écartés ou en attente (`scripts/pantheon/machrek_en_attente.md`). Les tableaux ci-dessous décrivent la liste de candidats (106 avec image) avant la rédaction.
+
+Document de travail, validé puis réalisé (voir « Ajouter un pays ou un bloc » dans le README). Le panthéon lui-même est dans `machrek.json`.
 
 ## Ce qui a été vérifié, et ce qui ne l'a pas été
 
