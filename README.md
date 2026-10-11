@@ -1735,10 +1735,28 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
 ### Ce qui n'est pas fait
 
 - **Les autres panthéons** : la France, l'Égypte, les États-Unis, l'Italie, le
-  Royaume-Uni, l'Amérique hispanique, le Maghreb et l'Allemagne-Autriche-Suisse sont écrits. Viennent ensuite le Machrek (sans l'Égypte,
-  qui a le sien ; le sort d'Israël et des figures juives reste à trancher, l'idée
-  d'un thème juif à part ayant été abandonnée), le Brésil à part, puis les autres
-  pays — chaque liste de personnages validée avant la rédaction.
+  Royaume-Uni, l'Amérique hispanique, le Maghreb et l'Allemagne-Autriche-Suisse sont écrits.
+  Chaque liste de personnages est validée avant la rédaction. Feuille de route, dans l'ordre
+  où on les propose (un pays seul quand il a de quoi faire un thème, un bloc sinon) :
+  1. **Le Machrek et la péninsule Arabique** (`pan_machrek`, sans l'Égypte, qui a le sien ;
+     le sort d'Israël et des figures juives reste à trancher, l'idée d'un thème juif à part
+     ayant été abandonnée). Une première liste de 97 candidats, avec images vérifiées, est dans
+     `scripts/pantheon/machrek_candidats.md` : elle attend six décisions et une passe d'images
+     sur les Beaux-arts, la musique et les sciences.
+  2. **Pays seuls** : le Brésil (qui n'entre pas dans l'Amérique « hispanique »), la Chine, le
+     Japon, la Russie (où attend Lev Yachine), l'Afrique du Sud, l'Australie, la Turquie, l'Iran.
+  3. **Blocs** : l'Asie du Sud (Inde, Pakistan, Bangladesh, Sri Lanka, Népal ; l'Inde y dépasserait
+     largement les 40 %, d'où une exception à poser ou un thème « Inde » à part), l'Asie du
+     Sud-Est, l'Asie centrale et la Mongolie, le Caucase, la Corée (`KR`/`KP`), l'Afrique de
+     l'Ouest, l'Afrique centrale, l'Afrique de l'Est et la Corne, l'Afrique australe et l'océan
+     Indien (sans l'Afrique du Sud), « Nouvelle-Zélande et Pacifique ».
+  4. **L'Europe et les Amériques qui manquent** : Espagne, Portugal, Grèce et Byzance, Benelux,
+     Scandinavie, Pologne, Europe centrale, Balkans, Canada, Caraïbes non hispaniques.
+
+  Les images décideront de la taille de chacun : pour l'Afrique subsaharienne et l'Asie du
+  Sud-Est, on vérifiera les portraits sur Commons **avant** de valider la liste. Les figures
+  disputées entre deux thèmes (Avicenne et al-Biruni, Rûmî, Babur, Kubilai Khan, Bruce Lee,
+  Eusébio) se règlent par la règle « celui qui l'honore le plus ».
 - **Des figures de l'Allemagne, de l'Autriche et de la Suisse à améliorer ou à rediscuter** :
   les vingt et un candidats écartés (voir « Ce que les images ont changé en Allemagne, en
   Autriche et en Suisse ») ; les images d'Hitler, de Marlene Dietrich, d'Hedy Lamarr et de
