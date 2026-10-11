@@ -1459,7 +1459,8 @@ Les choix qui ne vont pas de soi :
   (« Les sportifs : une exception, pas une règle ») veut qu'un nom dépasse le sport et que les
   records seuls ne suffisent pas. Belmonte la passe sans peine, Ballesteros plus difficilement, et
   Nieto, dont le titre est surtout un record, serait le premier à en sortir si l'on veut
-  appliquer la règle strictement : il n'a pas encore de biographie dans l'appli.
+  appliquer la règle strictement : il n'a pas encore de biographie dans l'appli. **Les trois
+  sont gardés** : la question a été posée, et tranchée en leur faveur.
 - **Les titres** : « Le Cid » et « Le Greco » donnent « Naissance du Cid » et « Naissance du
   Greco », comme « du Tasse » en Italie.
 
@@ -1474,7 +1475,7 @@ dirham faute de portrait, Ibn Arabi et Ibn Firnas, qui n'ont qu'un dessin modern
 est un « portrait présumé » (chevalier d'Alcántara anonyme, vers 1550), et le Greco un
 « autoportrait présumé ».
 
-Onze images restent faibles, par manque de portrait libre convenable : le dirham d'Abd
+Onze images restent faibles, et sont gardées, par manque de portrait libre convenable : le dirham d'Abd
 al-Rahman III et le dessin moderne d'Ibn Firnas, six statues (le Cid, Lulle dans sa niche,
 Agustina d'Aragon, Berlanga, Nebrija, Berruguete), deux bustes (Almanzor et Rodrigo) et une
 photographie de sport (Ballesteros, en plein swing). Sept sont recadrées
@@ -1483,7 +1484,7 @@ Wikimedia refusant à plusieurs reprises les miniatures de 500 px de trois fichi
 (Companys, Berruguete et Peral), ceux-ci sont demandés à une autre largeur standard
 (`largeur` : 960 pour Companys, 330 pour Berruguete et Peral, d'où des images moins nettes).
 
-Dix-huit images sont à relire, si l'on veut être plus strict :
+Dix-huit images sont à relire, si l'on veut être plus strict ; elles sont gardées telles quelles :
 
 - **Dix-sept photographies du XXe siècle à balise « Domaine public »**, dont la page de
   Commons ne dit pas toujours pourquoi (auteur inconnu ou lointain, publication dans la
