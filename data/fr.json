@@ -2,8 +2,8 @@
   "version": "1.0.0",
   "lang": "fr",
   "name": "Français (Intégral)",
-  "totalThemes": 803,
-  "totalEvents": 20618,
+  "totalThemes": 804,
+  "totalEvents": 20750,
   "categories": [
     {
       "nom": "Culture générale",
@@ -96344,6 +96344,2209 @@
                 "pan_eg_abdelhalim",
                 "pan_eg_sharif",
                 "pan_eg_zewail"
+              ]
+            },
+            {
+              "id": "pan_es",
+              "nom": "Grandes figures d'Espagne",
+              "difficulte": "Intermédiaire",
+              "motsCles": [
+                "Espagnol",
+                "Espagnole",
+                "Madrid",
+                "Castille",
+                "Catalogne",
+                "Catalan",
+                "Andalousie",
+                "Pays basque",
+                "Basque",
+                "Galice",
+                "Galicien",
+                "Al-Andalus",
+                "Reconquista",
+                "Siècle d'or",
+                "Conquistadors",
+                "Guerre civile espagnole",
+                "Franquisme",
+                "Hispanie"
+              ],
+              "events": [
+                {
+                  "id": "pan_es_seneque",
+                  "axe": "Littérature et pensée",
+                  "date": -4,
+                  "titre": "Naissance de Sénèque",
+                  "description": "Sénèque (vers 4 av. J.-C.-65 ap. J.-C.) est un philosophe stoïcien, dramaturge et homme d'État romain, né à Cordoue, en Bétique. Précepteur puis conseiller de Néron, il écrit les Lettres à Lucilius, des traités sur la colère, la brièveté de la vie et le bonheur, et des tragédies qui inspireront le théâtre classique, tandis que sa fortune et ses compromissions avec le pouvoir lui valent des critiques. Accusé d'avoir pris part à la conjuration de Pison, il reçoit de Néron l'ordre de se tuer et s'ouvre les veines en 65.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/S%C3%A9n%C3%A8que",
+                  "classement": "Sénèque",
+                  "image": {
+                    "src": "assets/portraits/pan_es_seneque.jpg",
+                    "legende": "Sénèque, buste d'un double hermès avec Socrate, IIIe siècle apr. J.-C. (Antikensammlung, Berlin)",
+                    "auteur": "Calidius",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Duble_herma_of_Socrates_and_Seneca_Antikensammlung_Berlin_07.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_martial",
+                  "axe": "Littérature et pensée",
+                  "date": 40,
+                  "titre": "Naissance de Martial",
+                  "description": "Martial (vers 40-vers 104) est un poète latin, né à Bilbilis, en Tarraconaise, près de l'actuelle Calatayud. Installé à Rome vers 64, il y vit modestement de la protection de riches patrons et publie des Épigrammes, courtes pièces satiriques qui peignent avec verve la vie de la capitale, ses parasites, ses médecins et ses poètes. Il retourne vers 98 à Bilbilis, où il meurt peu après, et son esprit mordant en a fait le modèle de l'épigramme.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Martial_(po%C3%A8te)",
+                  "classement": "Martial",
+                  "image": {
+                    "src": "assets/portraits/pan_es_martial.jpg",
+                    "legende": "Martial, profil imaginaire d'après une gravure ancienne sur pierre : aucun portrait authentique n'est conservé",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Martialis.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_trajan",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 53,
+                  "titre": "Naissance de Trajan",
+                  "description": "Trajan (53-117) est un empereur romain, né à Italica, en Bétique, près de l'actuelle Séville : le premier empereur venu des provinces. Adopté par Nerva en 97 et maître de l'Empire l'année suivante, il conquiert la Dacie en 101-106 puis la Mésopotamie, porte Rome à sa plus grande étendue et finance routes, ports et forums avec le butin dacien. Il meurt à Sélinonte, en Cilicie, en août 117, et son successeur Hadrien, lui aussi d'origine espagnole, renonce aux conquêtes au-delà de l'Euphrate.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Trajan",
+                  "classement": "Trajan",
+                  "image": {
+                    "src": "assets/portraits/pan_es_trajan.jpg",
+                    "legende": "Trajan, buste en marbre à la couronne civique, vers 100 apr. J.-C. (Glyptothèque de Munich)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Traianus_Glyptothek_Munich_72.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_hadrien",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 76,
+                  "titre": "Naissance d'Hadrien",
+                  "description": "Hadrien (76-138) est un empereur romain, né en janvier 76 d'une famille d'Italica, en Bétique, selon la plupart des sources (d'autres le font naître à Rome). Cousin et pupille de Trajan, empereur en 117, il renonce aux conquêtes au-delà de l'Euphrate, fixe les frontières, dont le mur qui porte son nom en Bretagne, et passe une grande partie de son règne à parcourir l'Empire. Admirateur de la Grèce, il fait reconstruire le Panthéon de Rome et bâtit sa villa de Tivoli, écrase la révolte juive de Bar Kokhba en 135 et meurt à Baïes en 138.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Hadrien",
+                  "classement": "Hadrien",
+                  "image": {
+                    "src": "assets/portraits/pan_es_hadrien.jpg",
+                    "legende": "Hadrien, tête colossale en marbre, IIe siècle (musée archéologique national de Venise)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:(Venice)_Ancient_Roman_busts_in_the_Museo_archeologico_nazionale_-_Colossal_head_of_Hadrian.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_theodose",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 347,
+                  "titre": "Naissance de Théodose Ier",
+                  "description": "Théodose Ier (347-395) est un empereur romain, dit le Grand, né à Cauca, en Hispanie, fils d'un général. Proclamé empereur d'Orient en 379 par Gratien après le désastre d'Andrinople, il installe les Goths comme fédérés, fait du christianisme nicéen la religion de l'Empire par l'édit de Thessalonique en 380, puis interdit les cultes païens. Dernier empereur à gouverner l'Empire réuni, après sa victoire sur l'usurpateur Eugène en 394, il meurt à Milan en janvier 395 et le partage entre ses fils Arcadius et Honorius.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Th%C3%A9odose_Ier",
+                  "classement": "Théodose Ier",
+                  "image": {
+                    "src": "assets/portraits/pan_es_theodose.jpg",
+                    "legende": "Théodose Ier, détail du missorium de Théodose, plat d'argent offert en 388 pour ses dix ans de règne (Real Academia de la Historia, Madrid)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Missorium_of_Theodosius_I_(detail).png"
+                  }
+                },
+                {
+                  "id": "pan_es_isidore",
+                  "axe": "Littérature et pensée",
+                  "date": 560,
+                  "titre": "Naissance d'Isidore de Séville",
+                  "description": "Isidore de Séville (vers 560-636) est un évêque et savant wisigoth, né à Carthagène ou à Séville, frère de Léandre qu'il remplace comme archevêque de Séville vers 600. Ses Étymologies, encyclopédie en vingt livres qui compile le savoir antique, restent l'un des ouvrages les plus lus du Moyen Âge, et il préside en 633 le IVe concile de Tolède. Docteur de l'Église depuis 1722, il meurt à Séville en 636.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Isidore_de_S%C3%A9ville",
+                  "classement": "Isidore de Séville",
+                  "image": {
+                    "src": "assets/portraits/pan_es_isidore.jpg",
+                    "legende": "Isidore de Séville, peinture de Bartolomé Esteban Murillo, 1655 (cathédrale de Séville), plus de mille ans après sa mort",
+                    "auteur": "Bartolomé Esteban Murillo",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Isidor_von_Sevilla.jpeg"
+                  }
+                },
+                {
+                  "id": "pan_es_pelage",
+                  "axe": "Guerres et résistances",
+                  "date": 685,
+                  "titre": "Naissance de Pélage",
+                  "description": "Pélage (vers 685-737) est un noble wisigoth et le premier roi des Asturies, de naissance incertaine, probablement dans le nord de la péninsule. Chef de la révolte des Asturiens contre les gouverneurs musulmans, il remporte vers 722 la bataille de Covadonga, souvent présentée comme le début de la Reconquista, et fonde le petit royaume dont naîtront ceux de León et de Castille. Les sources sont tardives et légendaires, l'ampleur de cette victoire est discutée par les historiens, et il meurt en 737 à Cangas de Onís.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/P%C3%A9lage_le_Conqu%C3%A9rant",
+                  "classement": "Pélage",
+                  "image": {
+                    "src": "assets/portraits/pan_es_pelage.jpg",
+                    "legende": "Pélage, portrait imaginaire de Luis de Madrazo, vers 1855 (Prado, Madrid), peint plus de onze siècles après sa mort",
+                    "auteur": "Luis de Madrazo",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Don_Pelayo,_rey_de_Asturias_(Museo_del_Prado).jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_ibnfirnas",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 810,
+                  "titre": "Naissance d'Abbas ibn Firnas",
+                  "description": "Abbas ibn Firnas (810-887) est un savant andalou, né à Takurunna, près de Ronda, polymathe à la cour de Cordoue. Poète, astronome, constructeur d'une clepsydre et d'une sphère armillaire, il aurait aussi tenté de voler vers 875, depuis une colline près de Cordoue, avec des ailes de soie et de plumes. Le récit de ce vol, rapporté plus de cinq siècles plus tard, est discuté par les historiens, et il meurt à Cordoue en 887.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Abbas_ibn_Firnas",
+                  "classement": "Ibn Firnas, Abbas",
+                  "image": {
+                    "src": "assets/portraits/pan_es_ibnfirnas.jpg",
+                    "legende": "Abbas ibn Firnas, dessin moderne exposé au Muncyt (photographie d'Eulogia Merle, 2011) : aucun portrait contemporain n'existe",
+                    "auteur": "Eulogia Merle",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Armen_Firman_Abb%C3%A1s_Ibn_Firn%C3%A1s_(MUNCYT,_Eulogia_Merle).jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_abderraman3",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 891,
+                  "titre": "Naissance d'Abd al-Rahman III",
+                  "description": "Abd al-Rahman III (891-961) est un émir puis calife omeyyade de Cordoue, né dans la capitale d'al-Andalus et petit-fils de l'émir Abdallah. Monté sur le trône en 912, dans un émirat ravagé par les révoltes, il rétablit son autorité, bâtit une flotte et une armée puissantes et prend en 929 le titre de calife, pour rivaliser avec les Fatimides d'Afrique du Nord et les Abbassides de Bagdad. Son règne marque l'apogée de Cordoue, dont il fait la ville la plus brillante de l'Occident, et il fait construire la cité palatiale de Madinat al-Zahra, près de laquelle il meurt en 961.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Abd_al-Rahman_III",
+                  "classement": "Abd al-Rahman III",
+                  "image": {
+                    "src": "assets/portraits/pan_es_abderraman3.jpg",
+                    "legende": "Dirham d'argent frappé sous le califat d'Abd al-Rahman III, Xe siècle : aucun portrait de lui n'est conservé",
+                    "auteur": "Rowanwindwhistler",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:AtaiforDeGuadalajara-9100538_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_zahrawi",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 936,
+                  "titre": "Naissance d'Abulcasis",
+                  "description": "Abulcasis (vers 936-1013) est un médecin et chirurgien, en arabe Abu al-Qasim al-Zahrawi, né près de Cordoue, à Madinat al-Zahra, médecin des califes omeyyades. Son encyclopédie médicale, le Kitab al-Tasrif, achevée vers l'an 1000, consacre à la chirurgie un traité illustré de plus de deux cents instruments, de la cautérisation à la ligature des artères, que traduit Gérard de Crémone au XIIe siècle et qui sert aux universités européennes pendant des siècles. Les sources sur sa vie sont rares, et il meurt vers 1013, peut-être pendant les troubles qui ruinent Madinat al-Zahra.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Abu_Al-Qasim",
+                  "classement": "Abulcasis",
+                  "image": {
+                    "src": "assets/portraits/pan_es_zahrawi.jpg",
+                    "legende": "Abulcasis soignant un malade, peinture d'Ernest Board (1877-1934), imaginée près de neuf siècles après sa mort",
+                    "auteur": "Ernest Board",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Al-Zahrawi-cropped.png"
+                  }
+                },
+                {
+                  "id": "pan_es_almanzor",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 938,
+                  "titre": "Naissance d'Almanzor",
+                  "description": "Almanzor (938-1002) est un chef militaire et homme d'État d'al-Andalus, de son nom Ibn Abi Amir, né à Algésiras ou à Torrox, selon les sources, dans une famille de petits notables. Ministre du calife Hicham II qu'il tient à l'écart du pouvoir, il gouverne de fait Cordoue à partir de 978 et mène une cinquantaine de campagnes contre les royaumes chrétiens, jusqu'à saccager Barcelone en 985 et Saint-Jacques-de-Compostelle en 997. Il meurt à Medinaceli en 1002 et, moins de trente ans plus tard, le califat de Cordoue s'effondre.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Almanzor",
+                  "classement": "Almanzor",
+                  "image": {
+                    "src": "assets/portraits/pan_es_almanzor.jpg",
+                    "legende": "Almanzor, buste moderne dans le village de Calatañazor, où la tradition place sa défaite de 1002 (photographie de 2016)",
+                    "auteur": "Discasto",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Busto_de_Almanzor_(26_de_marzo_de_2016,_Calata%C3%B1azor)_01.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_cid",
+                  "axe": "Guerres et résistances",
+                  "date": 1043,
+                  "titre": "Naissance du Cid",
+                  "description": "Le Cid (vers 1043-1099) est un chevalier castillan, de son nom Rodrigo Díaz de Vivar, né à Vivar, près de Burgos, surnommé El Cid (« le seigneur » en arabe) et le Campeador. Exilé par le roi Alphonse VI, il se met au service des émirs de Saragosse, puis conquiert Valence en 1094, qu'il gouverne en prince indépendant en battant plusieurs fois les Almoravides. Il meurt à Valence en 1099 ; chanté dans le Cantar de mio Cid et dans la tragédie de Corneille, ce guerrier a servi des princes musulmans autant que chrétiens.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Rodrigo_D%C3%ADaz_de_Vivar",
+                  "classement": "Cid",
+                  "biographie": "bio_elcid",
+                  "image": {
+                    "src": "assets/portraits/pan_es_cid.jpg",
+                    "legende": "Le Cid, statue équestre d'Anna Hyatt Huntington au parc Balboa de San Diego, réplique de celle de Séville (photographie de 2006)",
+                    "auteur": "Stan Shebs",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Detalle_de_la_estatua_el_Cid_(Parque_de_Balboa).jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_averroes",
+                  "axe": "Littérature et pensée",
+                  "date": 1126,
+                  "titre": "Naissance d'Averroès",
+                  "description": "Averroès (1126-1198) est un philosophe, juriste et médecin andalou, en arabe Ibn Rushd, né à Cordoue dans une famille de juges. Il rédige des commentaires d'Aristote, qui lui valent le nom de « Commentateur » dans l'Occident latin, défend l'accord de la philosophie et de la loi religieuse dans le Discours décisif et répond à Ghazali dans L'Incohérence de l'incohérence. Disgracié vers 1195 par le calife almohade, qui fait brûler ses livres avant de le réhabiliter, il meurt à Marrakech en 1198 ; son influence sur la scolastique est immense.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Averro%C3%A8s",
+                  "classement": "Averroès",
+                  "biographie": "bio_averroes",
+                  "image": {
+                    "src": "assets/portraits/pan_es_averroes.jpg",
+                    "legende": "Averroès, détail d'une fresque d'Andrea di Bonaiuto, vers 1366 (Santa Maria Novella, Florence) : une image imaginée près de deux siècles après sa mort",
+                    "auteur": "Andrea di Bonaiuto",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:AverroesColor.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_maimonide",
+                  "axe": "Littérature et pensée",
+                  "date": 1138,
+                  "titre": "Naissance de Maïmonide",
+                  "description": "Maïmonide (1138-1204) est un rabbin, philosophe et médecin, de son nom hébreu Moïse ben Maïmon, né à Cordoue, en Espagne musulmane. Chassé par les persécutions almohades, il s'installe à Fès, puis en Égypte, devient médecin à la cour de Saladin au Caire et rédige la Mishné Torah, code de la loi juive, et le Guide des égarés, qui cherche à concilier la foi et la raison. Sa pensée marque la tradition juive, mais aussi Thomas d'Aquin et la scolastique chrétienne, et il meurt au Caire en 1204.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mo%C3%AFse_Ma%C3%AFmonide",
+                  "classement": "Maïmonide",
+                  "biographie": "bio_maimonide",
+                  "image": {
+                    "src": "assets/portraits/pan_es_maimonide.jpg",
+                    "legende": "Maïmonide, bas-relief en marbre de Brenda Putnam, 1950, dans la salle de la Chambre des représentants des États-Unis (Capitole, Washington)",
+                    "auteur": "Brenda Putnam",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Maimonides_bas-relief_in_the_U.S._House_of_Representatives_chamber_cropped.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_ibnarabi",
+                  "axe": "Littérature et pensée",
+                  "date": 1165,
+                  "titre": "Naissance d'Ibn Arabi",
+                  "description": "Ibn Arabi (1165-1240) est un mystique et penseur soufi, né à Murcie. Après une jeunesse à Séville, il voyage à La Mecque, en Anatolie et à Damas et compose les Révélations mecquoises et Les Gemmes de la sagesse, où il fait de l'unité de l'être la pierre de la pensée soufie ; ses disciples l'appellent « le plus grand maître », certains juristes rigoristes le condamnent. Il meurt à Damas en 1240, où son tombeau reste un lieu de pèlerinage.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ibn_Arabi",
+                  "classement": "Ibn Arabi",
+                  "image": {
+                    "src": "assets/portraits/pan_es_ibnarabi.jpg",
+                    "legende": "Ibn Arabi, dessin de source inconnue : aucun portrait contemporain n'est conservé",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ibn_Arabi.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_dominique",
+                  "axe": "Littérature et pensée",
+                  "date": 1170,
+                  "titre": "Naissance de Dominique de Guzmán",
+                  "description": "Dominique de Guzmán (vers 1170-1221) est un prêtre castillan, né à Caleruega, près de Burgos, fondateur de l'ordre des Prêcheurs, dits dominicains. Chanoine d'Osma, il prêche en Languedoc contre les cathares à partir de 1206, par la parole et l'exemple de pauvreté plutôt que par les armes, fonde à Toulouse en 1215 une communauté que le pape Honorius III approuve en 1216, et envoie ses frères dans les universités. Il meurt à Bologne en 1221 et est canonisé en 1234 ; son ordre sera plus tard chargé de l'Inquisition.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Dominique_de_Guzm%C3%A1n",
+                  "classement": "Dominique de Guzmán",
+                  "image": {
+                    "src": "assets/portraits/pan_es_dominique.jpg",
+                    "legende": "Saint Dominique, détail d'une fresque de Fra Angelico, vers 1437-1446 (couvent San Marco, Florence), deux siècles après sa mort",
+                    "auteur": "Fra Angelico",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Fra_Angelico_052.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_ferdinand3",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1201,
+                  "titre": "Naissance de Ferdinand III de Castille",
+                  "description": "Ferdinand III de Castille (1201-1252) est un roi de Castille et de León, dit saint Ferdinand, fils d'Alphonse IX de León et de Bérengère de Castille. Roi de Castille dès 1217 et de León en 1230, il réunit définitivement les deux couronnes, puis conquiert la vallée du Guadalquivir : Cordoue en 1236, Jaén en 1246 et Séville en 1248, ne laissant aux musulmans que le royaume de Grenade, qui devient son tributaire. Il meurt à Séville en 1252, son fils Alphonse X lui succède et il est canonisé en 1671.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ferdinand_III_(roi_de_Castille)",
+                  "classement": "Ferdinand III de Castille",
+                  "image": {
+                    "src": "assets/portraits/pan_es_ferdinand3.jpg",
+                    "legende": "Ferdinand III de Castille, miniature du Tumbo A de la cathédrale de Saint-Jacques-de-Compostelle, XIIIe siècle",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Fernando_III_de_Castilla_02.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_jacques1",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1208,
+                  "titre": "Naissance de Jacques Ier d'Aragon",
+                  "description": "Jacques Ier d'Aragon (1208-1276) est un roi d'Aragon, dit le Conquérant, né à Montpellier, fils de Pierre II tué à Muret en 1213, et élevé par les Templiers. Il conquiert les Baléares (1229-1235) puis le royaume de Valence (1232-1245), fixe par le traité de Corbeil de 1258 la frontière avec la France en renonçant à ses droits sur le Languedoc, et fait rédiger en catalan sa chronique, le Llibre dels fets. Il meurt à Alzira, dans le royaume de Valence, en 1276, et repose au monastère de Poblet.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jacques_Ier_(roi_d%27Aragon)",
+                  "classement": "Jacques Ier d'Aragon",
+                  "image": {
+                    "src": "assets/portraits/pan_es_jacques1.jpg",
+                    "legende": "Jacques Ier d'Aragon, portrait de Gonçal Peris Sarrià et Jaume Mateu, vers 1427 (Palais de la Généralité de Valence)",
+                    "auteur": "Gonçal Peris Sarrià et Jaume Mateu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jaume_Mateu_-_James_I_the_Conqueror_-_Google_Art_Project.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_alphonse10",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1221,
+                  "titre": "Naissance d'Alphonse X de Castille",
+                  "description": "Alphonse X de Castille (1221-1284) est un roi de Castille et de León, dit le Sage, né à Burgos, fils de Ferdinand III. Élu en 1257 empereur du Saint-Empire par une partie des princes allemands sans jamais s'y faire reconnaître, il anime à Tolède une école de traducteurs et fait rédiger en castillan les Sept Parties, code de lois, les Tables alphonsines d'astronomie et les Cantigas de Santa Maria. Son règne s'achève dans la guerre civile : son fils Sanche se révolte en 1282, et il meurt à Séville en 1284.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Alphonse_X",
+                  "classement": "Alphonse X de Castille",
+                  "image": {
+                    "src": "assets/portraits/pan_es_alphonse10.jpg",
+                    "legende": "Alphonse X le Sage, miniature du Libro de los juegos (livre des jeux), 1283 (monastère de l'Escurial)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Alfonso_X_el_Sabio_en_El_libro_de_los_juegos.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_lulle",
+                  "axe": "Littérature et pensée",
+                  "date": 1232,
+                  "titre": "Naissance de Raymond Lulle",
+                  "description": "Raymond Lulle (vers 1232-1315) est un philosophe, poète et missionnaire, en catalan Ramon Llull, né à Palma de Majorque. Après une vie de cour, il se convertit vers 1263, fonde à Miramar une école de langues pour missionnaires et rédige en catalan, en latin et en arabe plus de deux cents ouvrages, dont le roman Blanquerna et l'Ars magna, système combinatoire censé démontrer la vérité chrétienne et annonciateur de la logique formelle. Il voyage jusqu'à Tunis et Bougie pour convertir les musulmans et meurt en 1315, probablement en mer au retour d'un dernier voyage.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Raymond_Lulle",
+                  "classement": "Lulle, Raymond",
+                  "image": {
+                    "src": "assets/portraits/pan_es_lulle.jpg",
+                    "legende": "Raymond Lulle, statue dans une niche, à Majorque (photographie de 2008)",
+                    "auteur": "Miquel Cabot",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Llull3.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_cisneros",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1436,
+                  "titre": "Naissance de Francisco Jiménez de Cisneros",
+                  "description": "Francisco Jiménez de Cisneros (1436-1517) est un cardinal et homme d'État castillan, né à Torrelaguna, franciscain devenu confesseur d'Isabelle la Catholique puis archevêque de Tolède en 1495. Il réforme le clergé, fonde l'université d'Alcalá de Henares et fait imprimer la Bible polyglotte complutense, mais ordonne aussi les conversions forcées de Grenade, qui provoquent la révolte de 1499, et organise l'expédition d'Oran en 1509. Régent de Castille à la mort de Ferdinand en 1516, il gouverne jusqu'à l'arrivée du futur Charles Quint et meurt à Roa en novembre 1517.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Francisco_Jim%C3%A9nez_de_Cisneros",
+                  "classement": "Cisneros, Francisco Jiménez de",
+                  "image": {
+                    "src": "assets/portraits/pan_es_cisneros.jpg",
+                    "legende": "Le cardinal Cisneros, portrait d'Eugenio Cajés, 1604",
+                    "auteur": "Eugenio Caxés",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Francisco_Jim%C3%A9nez_de_Cisneros_(Eugenio_Caj%C3%A9s_1604)_retrato_al_%C3%B3leo_sobre_lienzo.png"
+                  }
+                },
+                {
+                  "id": "pan_es_nebrija",
+                  "axe": "Littérature et pensée",
+                  "date": 1444,
+                  "titre": "Naissance d'Antonio de Nebrija",
+                  "description": "Antonio de Nebrija (vers 1444-1522) est un humaniste et grammairien, né à Lebrija, près de Séville. Professeur à Salamanque puis à Alcalá, il publie en 1492 la Gramática de la lengua castellana, première grammaire d'une langue romane, qu'il présente à la reine Isabelle comme « compagne de l'empire », et compose un dictionnaire latin-espagnol. Il défend l'étude du latin fondée sur les textes classiques contre l'enseignement médiéval et meurt à Alcalá de Henares en 1522.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Antonio_de_Nebrija",
+                  "classement": "Nebrija, Antonio de",
+                  "image": {
+                    "src": "assets/portraits/pan_es_nebrija.jpg",
+                    "legende": "Antonio de Nebrija, statue d'A. Nogués devant la Bibliothèque nationale d'Espagne, Madrid (photographie de 2006)",
+                    "auteur": "Luis García (Zaqarbal)",
+                    "licence": "CC BY-SA 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Antonio_de_Nebrija_(A._Nogu%C3%A9s)_Madrid_01.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_isabelle1",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1451,
+                  "titre": "Naissance d'Isabelle Ire de Castille",
+                  "description": "Isabelle Ire de Castille (1451-1504) est une reine de Castille et de León, dite la Catholique, née à Madrigal de las Altas Torres. Reine en 1474 après une guerre de succession contre Jeanne la Beltraneja, mariée à Ferdinand d'Aragon en 1469, elle mène avec lui la conquête de Grenade, achevée en 1492, finance le voyage de Christophe Colomb, instaure l'Inquisition espagnole et expulse les juifs en 1492. Elle meurt à Medina del Campo en 1504, laissant la Castille à sa fille Jeanne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Isabelle_la_Catholique",
+                  "classement": "Isabelle Ire de Castille",
+                  "biographie": "bio_isabelle1castille",
+                  "image": {
+                    "src": "assets/portraits/pan_es_isabelle1.jpg",
+                    "legende": "Isabelle la Catholique, portrait de Luis de Madrazo, vers 1848, d'après les images d'époque",
+                    "auteur": "Luis de Madrazo",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Isabel_I_of_Castile.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_ferdinand2",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1452,
+                  "titre": "Naissance de Ferdinand II d'Aragon",
+                  "description": "Ferdinand II d'Aragon (1452-1516) est un roi d'Aragon, dit le Catholique, né à Sos, dans le nord de l'Aragon, et époux d'Isabelle de Castille. Roi d'Aragon en 1479, il règne avec elle sur deux couronnes encore distinctes, achève la conquête de Grenade en 1492, instaure l'Inquisition, puis conquiert le royaume de Naples en 1504 et la Navarre en 1512. Veuf, il gouverne la Castille comme régent pour sa fille Jeanne et meurt à Madrigalejo en janvier 1516, laissant à son petit-fils Charles un ensemble qui deviendra l'Espagne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ferdinand_le_Catholique",
+                  "classement": "Ferdinand II d'Aragon",
+                  "image": {
+                    "src": "assets/portraits/pan_es_ferdinand2.jpg",
+                    "legende": "Ferdinand II d'Aragon, portrait de Michel Sittow, fin du XVe siècle",
+                    "auteur": "Michel Sittow",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Michel_Sittow_004.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_grancapitan",
+                  "axe": "Guerres et résistances",
+                  "date": 1453,
+                  "titre": "Naissance de Gonzalo Fernández de Córdoba",
+                  "description": "Gonzalo Fernández de Córdoba (1453-1515) est un chef de guerre castillan, dit le Grand Capitaine, né à Montilla, près de Cordoue. Vétéran de la guerre de Grenade, il commande l'armée espagnole en Italie, bat les Français à Cérignole et au Garigliano en 1503 et conquiert le royaume de Naples pour Ferdinand le Catholique, en réorganisant l'infanterie en unités mêlant piquiers et arquebusiers, ancêtres des tercios. Devenu vice-roi de Naples, il tombe en disgrâce auprès d'un roi soupçonneux, se retire en Andalousie et meurt à Grenade en 1515.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Gonzalo_Fern%C3%A1ndez_de_C%C3%B3rdoba",
+                  "classement": "Fernández de Córdoba, Gonzalo",
+                  "image": {
+                    "src": "assets/portraits/pan_es_grancapitan.jpg",
+                    "legende": "Gonzalo Fernández de Córdoba, gravure de Wolfgang Kilian, XVIIe siècle (bibliothèque de la cour de Waldeck, Arolsen)",
+                    "auteur": "Wolfgang Kilian",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Arolsen_Klebeband_01_409_2.jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_es_rojas",
+                  "axe": "Littérature et pensée",
+                  "date": 1470,
+                  "titre": "Naissance de Fernando de Rojas",
+                  "description": "Fernando de Rojas (vers 1470-1541) est un écrivain, né à La Puebla de Montalbán, près de Tolède, dans une famille de juifs convertis. Étudiant en droit à Salamanque, il publie anonymement en 1499 La Célestine, tragicomédie de Calixte et Mélibée, qui met en scène une entremetteuse et marque le passage du Moyen Âge à la littérature de la Renaissance. Devenu avocat puis alcalde de Talavera de la Reina, il y meurt en 1541, riche d'une bibliothèque, mais sans avoir jamais signé d'autre œuvre.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Fernando_de_Rojas",
+                  "classement": "Rojas, Fernando de",
+                  "image": {
+                    "src": "assets/portraits/pan_es_rojas.jpg",
+                    "legende": "Fernando de Rojas, portrait de son époque, vers 1530, d'auteur inconnu, reproduit dans un livre",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Fernando-de-Rojas.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_balboa",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1475,
+                  "titre": "Naissance de Vasco Núñez de Balboa",
+                  "description": "Vasco Núñez de Balboa (1475-1519) est un conquistador, né à Jerez de los Caballeros, en Estrémadure. Fuyant ses créanciers caché dans un tonneau, il rejoint le Darién, devient gouverneur de la colonie et traverse l'isthme de Panamá en septembre 1513, découvrant la « mer du Sud », le Pacifique, dont il prend possession au nom du roi. Rival du gouverneur Pedrarias Dávila, il est accusé de trahison et décapité à Acla en janvier 1519.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Vasco_N%C3%BA%C3%B1ez_de_Balboa",
+                  "classement": "Núñez de Balboa, Vasco",
+                  "biographie": "bio_nunezdebalboa",
+                  "image": {
+                    "src": "assets/portraits/pan_es_balboa.jpg",
+                    "legende": "Vasco Núñez de Balboa, gravure d'après un portrait de l'époque, publiée en 1906 (Frederick A. Ober)",
+                    "auteur": "Frederick A. Ober",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Balboa.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_pizarro",
+                  "axe": "Guerres et résistances",
+                  "date": 1475,
+                  "titre": "Naissance de Francisco Pizarro",
+                  "description": "Francisco Pizarro (vers 1475-1541) est un conquistador, né à Trujillo, en Estrémadure, fils naturel d'un capitaine. Avec Diego de Almagro, il part à la conquête du Pérou en 1531, capture l'Inca Atahualpa à Cajamarca en 1532, le fait exécuter malgré la rançon payée et fonde Lima en 1535. Brouillé avec Almagro, dont les troupes sont vaincues et le chef exécuté en 1538, il est assassiné à Lima par des partisans d'Almagro en juin 1541.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Francisco_Pizarro",
+                  "classement": "Pizarro, Francisco",
+                  "image": {
+                    "src": "assets/portraits/pan_es_pizarro.jpg",
+                    "legende": "Francisco Pizarro, portrait d'un peintre inconnu, probablement antérieur à 1900",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Portrait_of_Francisco_Pizarro_(cropped).png"
+                  }
+                },
+                {
+                  "id": "pan_es_lascasas",
+                  "axe": "Guerres et résistances",
+                  "date": 1484,
+                  "titre": "Naissance de Bartolomé de las Casas",
+                  "description": "Bartolomé de las Casas (1484-1566) est un frère dominicain et chroniqueur, né à Séville. Colon puis prêtre à Cuba, il renonce à son encomienda en 1514 et consacre sa vie à défendre les Indiens : il obtient les Lois nouvelles de 1542 contre leur esclavage et dénonce les crimes de la conquête dans sa Très brève relation de la destruction des Indes. Cette description, reprise par la « légende noire », est jugée exagérée par certains historiens, et il a un temps proposé d'importer des esclaves africains, ce qu'il a ensuite regretté ; il meurt à Madrid en 1566.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bartolom%C3%A9_de_las_Casas",
+                  "classement": "Las Casas, Bartolomé de",
+                  "image": {
+                    "src": "assets/portraits/pan_es_lascasas.jpg",
+                    "legende": "Bartolomé de las Casas, portrait anonyme du XVIe siècle",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Fray_Bartolom%C3%A9_de_las_Casas.jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_es_cortes",
+                  "axe": "Guerres et résistances",
+                  "date": 1485,
+                  "titre": "Naissance d'Hernán Cortés",
+                  "description": "Hernán Cortés (1485-1547) est un conquistador, né à Medellín, en Estrémadure. Parti de Cuba en 1519 avec quelques centaines d'hommes, il s'allie aux peuples ennemis des Aztèques, prend Tenochtitlan en 1521 après un siège de trois mois et fonde la Nouvelle-Espagne, dont il est gouverneur. La conquête s'accompagne de massacres, d'esclavage et d'épidémies qui ravagent les populations indiennes, et Cortés meurt près de Séville en 1547, disgracié à la cour.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Hern%C3%A1n_Cort%C3%A9s",
+                  "classement": "Cortés, Hernán",
+                  "image": {
+                    "src": "assets/portraits/pan_es_cortes.jpg",
+                    "legende": "Hernán Cortés, portrait anonyme du XVIIIe siècle",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Retrato_de_Hern%C3%A1n_Cort%C3%A9s.jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_es_elcano",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1486,
+                  "titre": "Naissance de Juan Sebastián Elcano",
+                  "description": "Juan Sebastián Elcano (1486-1526) est un navigateur basque, né à Getaria. Maître du navire Concepción dans l'expédition de Magellan en 1519, il prend le commandement du Victoria après la mort de Magellan aux Philippines en 1521 et ramène en septembre 1522, à Sanlúcar de Barrameda, dix-huit survivants, au terme du premier tour du monde. Charles Quint lui accorde un blason à la devise « Primus circumdedisti me » (« Tu m'as le premier entouré »), et il meurt en 1526 dans le Pacifique, lors d'une nouvelle expédition vers les Moluques.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Juan_Sebasti%C3%A1n_Elcano",
+                  "classement": "Elcano, Juan Sebastián",
+                  "image": {
+                    "src": "assets/portraits/pan_es_elcano.jpg",
+                    "legende": "Juan Sebastián Elcano, portrait gravé d'auteur inconnu, d'après une image ancienne",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Elcano.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_cabezadevaca",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1488,
+                  "titre": "Naissance d'Álvar Núñez Cabeza de Vaca",
+                  "description": "Álvar Núñez Cabeza de Vaca (vers 1488-vers 1559) est un explorateur, né à Jerez de la Frontera. Trésorier de l'expédition de Pánfilo de Narváez en Floride en 1527, il est l'un des quatre survivants du naufrage, puis traverse à pied, de 1528 à 1536, le sud de l'Amérique du Nord, du Texas au Mexique, devenu guérisseur et marchand chez les Indiens, et publie en 1542 sa Relation. Gouverneur du Río de la Plata, il y est arrêté par ses rivaux, renvoyé chargé de chaînes en Espagne et meurt vers 1559, probablement à Séville.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/%C3%81lvar_N%C3%BA%C3%B1ez_Cabeza_de_Vaca",
+                  "classement": "Cabeza de Vaca, Álvar Núñez",
+                  "image": {
+                    "src": "assets/portraits/pan_es_cabezadevaca.jpg",
+                    "legende": "Álvar Núñez Cabeza de Vaca, portrait d'auteur inconnu (image publiée en 2014)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Cabeza_de_Vaca_Portrait.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_berruguete",
+                  "axe": "Beaux-arts",
+                  "date": 1490,
+                  "titre": "Naissance d'Alonso Berruguete",
+                  "description": "Alonso Berruguete (vers 1490-1561) est un sculpteur et peintre, né à Paredes de Nava, en Castille, fils du peintre Pedro Berruguete. Formé en Italie, où il connaît l'art de Michel-Ange, il en rapporte à Valladolid un maniérisme tourmenté, aux figures étirées et agitées, visible dans le retable de San Benito et dans les stalles de la cathédrale de Tolède. Sculpteur de Charles Quint, il meurt à Tolède en 1561, et son art annonce le baroque.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Alonso_Berruguete",
+                  "classement": "Berruguete, Alonso",
+                  "image": {
+                    "src": "assets/portraits/pan_es_berruguete.jpg",
+                    "legende": "Alonso Berruguete, détail de sa statue par José Alcoverro devant la Bibliothèque nationale d'Espagne, Madrid (photographie de 2006)",
+                    "auteur": "Luis García (Zaqarbal)",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Alonso_Berruguete_(por_Jos%C3%A9_Alcoverro)_01b.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_loyola",
+                  "axe": "Littérature et pensée",
+                  "date": 1491,
+                  "titre": "Naissance d'Ignace de Loyola",
+                  "description": "Ignace de Loyola (1491-1556) est un prêtre et le fondateur de la Compagnie de Jésus, né au château de Loyola, dans le Guipuscoa. Officier basque blessé au siège de Pampelune en 1521, il se convertit pendant sa convalescence, écrit les Exercices spirituels, étudie à Paris, où il réunit ses premiers compagnons, dont François Xavier, et fonde avec eux la Compagnie de Jésus, approuvée en 1540. Supérieur général jusqu'à sa mort à Rome en 1556, il fait de l'ordre un instrument de la Contre-Réforme et de l'enseignement, avec des collèges dans toute l'Europe.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ignace_de_Loyola",
+                  "classement": "Ignace de Loyola",
+                  "biographie": "bio_ignacedeloyola",
+                  "image": {
+                    "src": "assets/portraits/pan_es_loyola.jpg",
+                    "legende": "Ignace de Loyola, portrait anonyme du XVIe siècle",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ignatius_Loyola.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_vives",
+                  "axe": "Littérature et pensée",
+                  "date": 1493,
+                  "titre": "Naissance de Juan Luis Vives",
+                  "description": "Juan Luis Vives (1493-1540) est un humaniste et philosophe, né à Valence dans une famille de juifs convertis dont plusieurs membres sont persécutés par l'Inquisition. Établi à Bruges, il enseigne à Louvain et à Oxford, critique la scolastique et publie en 1526 le De subventione pauperum, premier plan de secours aux pauvres financé par la ville, ainsi que le De anima et vita, précurseur de la psychologie. Ami d'Érasme, précepteur de la future Marie Tudor, il meurt à Bruges en 1540.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jean_Louis_Viv%C3%A8s",
+                  "classement": "Vives, Juan Luis",
+                  "image": {
+                    "src": "assets/portraits/pan_es_vives.jpg",
+                    "legende": "Juan Luis Vives, portrait du XVIIe siècle d'après un original plus ancien",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:LuisVives.jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_es_charlesquint",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1500,
+                  "titre": "Naissance de Charles Quint",
+                  "description": "Charles Quint (1500-1558) est un empereur romain germanique et roi d'Espagne sous le nom de Charles Ier, né à Gand, petit-fils de Maximilien d'Autriche et des Rois Catholiques. Héritier à la fois de la Castille, de l'Aragon, des Pays-Bas et de l'Autriche, élu empereur en 1519, il affronte François Ier en Italie, Luther et les princes protestants en Allemagne, et les Ottomans en Méditerranée, sans jamais unifier cet ensemble que l'or d'Amérique rend plus puissant mais pas plus solide. Il abdique en 1555-1556, partage ses États entre son fils Philippe II et son frère Ferdinand, et meurt au monastère de Yuste en 1558.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Charles_Quint",
+                  "classement": "Charles Quint",
+                  "image": {
+                    "src": "assets/portraits/pan_es_charlesquint.jpg",
+                    "legende": "Charles Quint, portrait de Juan Pantoja de la Cruz, vers 1605",
+                    "auteur": "Juan Pantoja de la Cruz",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Emperor_charles_v.png"
+                  }
+                },
+                {
+                  "id": "pan_es_garcilaso",
+                  "axe": "Littérature et pensée",
+                  "date": 1501,
+                  "titre": "Naissance de Garcilaso de la Vega",
+                  "description": "Garcilaso de la Vega (vers 1501-1536) est un poète et soldat, né à Tolède dans une famille de la haute noblesse. Courtisan et capitaine de Charles Quint, il fait campagne en Italie, où il découvre Pétrarque, et, avec son ami Juan Boscán, introduit en castillan le sonnet et le vers de onze syllabes à l'italienne, qui transforment la poésie espagnole ; ses églogues et ses sonnets, publiés en 1543 avec les œuvres de Boscán, restent un modèle. Blessé lors de l'assaut de la tour du Muy, en Provence, il meurt à Nice en octobre 1536.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Garcilaso_de_la_Vega_(po%C3%A8te)",
+                  "classement": "Garcilaso de la Vega",
+                  "image": {
+                    "src": "assets/portraits/pan_es_garcilaso.jpg",
+                    "legende": "Portrait d'un chevalier de l'ordre d'Alcántara, anonyme espagnol vers 1550, traditionnellement identifié à Garcilaso (Gemäldegalerie, Kassel)",
+                    "auteur": "Anonyme espagnol, vers 1550",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Retrato_de_hombre_con_la_cruz_de_caballero_de_Alc%C3%A1ntara.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_xavier",
+                  "axe": "Littérature et pensée",
+                  "date": 1506,
+                  "titre": "Naissance de François Xavier",
+                  "description": "François Xavier (1506-1552) est un missionnaire jésuite, né au château de Xavier, en Navarre. Compagnon d'Ignace de Loyola à Paris, il embarque en 1541 pour les Indes portugaises, prêche à Goa, au Malabar et aux Moluques, puis fonde la première mission du Japon en 1549 ; ses lettres décrivent l'Asie aux Européens, et il a aussi demandé l'envoi de l'Inquisition à Goa. Il meurt en 1552 sur l'île de Shangchuan, aux portes de la Chine, et est canonisé en 1622, en même temps qu'Ignace.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Fran%C3%A7ois_Xavier",
+                  "classement": "François Xavier",
+                  "image": {
+                    "src": "assets/portraits/pan_es_xavier.jpg",
+                    "legende": "Saint François Xavier, statue de l'église Saint-Guy de Český Krumlov, République tchèque (photographie de 2019)",
+                    "auteur": "Octave444",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Saint_Fran%C3%A7ois-Xavier_missionnaire.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_urdaneta",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1508,
+                  "titre": "Naissance d'Andrés de Urdaneta",
+                  "description": "Andrés de Urdaneta (1508-1568) est un navigateur et moine augustin, né à Ordizia, au Guipuscoa. Marin de l'expédition de Loaísa vers les Moluques en 1525, prisonnier des Portugais, il revient en Espagne en 1536 puis entre dans l'ordre augustin au Mexique, et découvre en 1565 la route de retour des Philippines vers le Mexique, le « tornaviaje », en remontant vers le nord pour profiter des vents d'ouest. Cette route, que suit le galion de Manille jusqu'en 1815, relie l'Asie à l'Amérique, et il meurt à Mexico en juin 1568.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Andr%C3%A9s_de_Urdaneta",
+                  "classement": "Urdaneta, Andrés de",
+                  "image": {
+                    "src": "assets/portraits/pan_es_urdaneta.jpg",
+                    "legende": "Andrés de Urdaneta, portrait peint du XIXe siècle, en habit d'augustin",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Andres_de_Urdaneta.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_servet",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1511,
+                  "titre": "Naissance de Michel Servet",
+                  "description": "Michel Servet (vers 1511-1553) est un médecin et théologien, né probablement à Villanueva de Sijena, en Aragon. Dans la Christianismi restitutio (1553), il décrit la circulation pulmonaire du sang et nie la Trinité, ce qui le fait condamner par les catholiques comme par Calvin. Arrêté à Genève, il est brûlé vif sur ordre du Conseil de la ville le 27 octobre 1553, et son bûcher devient un symbole de l'intolérance et de la liberté de conscience.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Michel_Servet",
+                  "classement": "Servet, Michel",
+                  "image": {
+                    "src": "assets/portraits/pan_es_servet.jpg",
+                    "legende": "Michel Servet, gravure de Christian Fritzsch, vers 1740, deux siècles après sa mort",
+                    "auteur": "Christian Fritzsch",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Michael_Servetus.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_therese",
+                  "axe": "Littérature et pensée",
+                  "date": 1515,
+                  "titre": "Naissance de Thérèse d'Avila",
+                  "description": "Thérèse d'Avila (1515-1582) est une carmélite et mystique, née à Ávila dans une famille de marchands d'origine juive convertie. Entrée au Carmel à vingt ans, elle réforme son ordre en fondant en 1562 le couvent Saint-Joseph, première maison des carmélites déchaussées, et écrit en castillan le Livre de la vie, le Chemin de la perfection et le Château intérieur, où elle décrit l'itinéraire de l'âme vers Dieu. Un temps inquiétée par l'Inquisition, elle meurt à Alba de Tormes en octobre 1582 et devient en 1970 l'une des deux premières femmes docteurs de l'Église.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Th%C3%A9r%C3%A8se_d%27Avila",
+                  "classement": "Thérèse d'Avila",
+                  "image": {
+                    "src": "assets/portraits/pan_es_therese.jpg",
+                    "legende": "Thérèse d'Avila, peinture de Pierre Paul Rubens, vers 1615",
+                    "auteur": "Pierre Paul Rubens",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_138.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_philippe2",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1527,
+                  "titre": "Naissance de Philippe II d'Espagne",
+                  "description": "Philippe II d'Espagne (1527-1598) est un roi d'Espagne, né à Valladolid, fils de Charles Quint. Roi en 1556, puis du Portugal en 1580, il gouverne depuis le monastère de l'Escurial un empire qui va des Amériques aux Philippines, remporte la victoire de Lépante avec la Sainte Ligue en 1571, mais perd les Provinces-Unies révoltées et l'Invincible Armada en 1588. Roi très catholique, soutien de l'Inquisition et de la répression aux Pays-Bas, il nourrit la « légende noire » de l'Espagne et meurt à l'Escurial en 1598, après plusieurs banqueroutes de l'État.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Philippe_II_(roi_d%27Espagne)",
+                  "classement": "Philippe II d'Espagne",
+                  "image": {
+                    "src": "assets/portraits/pan_es_philippe2.jpg",
+                    "legende": "Philippe II en armure, portrait de Titien, 1551 (Prado, Madrid)",
+                    "auteur": "Titien",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Philip_II.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_herrera",
+                  "axe": "Beaux-arts",
+                  "date": 1530,
+                  "titre": "Naissance de Juan de Herrera",
+                  "description": "Juan de Herrera (1530-1597) est un architecte et mathématicien, né à Roiz, en Cantabrie. Collaborateur puis successeur de Juan Bautista de Toledo, il achève le monastère de l'Escurial pour Philippe II, fixe un style d'une grande sobriété, dit « herrérien », et dessine la Lonja de Séville, aujourd'hui Archives des Indes. Il fonde aussi l'Académie de mathématiques de Madrid et meurt à Madrid en janvier 1597.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Juan_de_Herrera",
+                  "classement": "Herrera, Juan de",
+                  "image": {
+                    "src": "assets/portraits/pan_es_herrera.jpg",
+                    "legende": "Juan de Herrera, gravure de Mariano Brandi d'après un dessin de José Maea, 1791",
+                    "auteur": "Mariano Brandi, d'après José Maea",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Juan_de_Herrera.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_greco",
+                  "axe": "Beaux-arts",
+                  "date": 1541,
+                  "titre": "Naissance du Greco",
+                  "description": "Le Greco (1541-1614) est un peintre, de son nom Domínikos Theotokópoulos, né à Candie, en Crète, alors vénitienne. Formé aux icônes puis à Venise et à Rome, il s'installe à Tolède en 1577 et y peint L'Enterrement du comte d'Orgaz, des retables et des portraits aux figures allongées, aux couleurs acides et à la lumière étrange. Méconnu après sa mort, jugé bizarre, il est redécouvert au XXe siècle par les expressionnistes, et l'Espagne en a fait le peintre de Tolède, où il meurt en avril 1614.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Le_Greco",
+                  "classement": "Greco",
+                  "image": {
+                    "src": "assets/portraits/pan_es_greco.jpg",
+                    "legende": "Le Greco, autoportrait présumé, vers 1595-1600 (Metropolitan Museum of Art, New York)",
+                    "auteur": "Le Greco",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:El_Greco_-_Portrait_of_a_Man_-_WGA10554.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_jeancroix",
+                  "axe": "Littérature et pensée",
+                  "date": 1542,
+                  "titre": "Naissance de Jean de la Croix",
+                  "description": "Jean de la Croix (1542-1591) est un carme déchaussé et poète mystique, né à Fontiveros, près d'Ávila. Associé à Thérèse d'Avila dans la réforme du Carmel, il est emprisonné par ses frères à Tolède en 1577, s'évade au bout de neuf mois et compose en cellule les premières strophes du Cantique spirituel ; il écrit aussi la Montée du Carmel et la Nuit obscure. Ses poèmes comptent parmi les plus hauts de la langue espagnole, et il meurt à Úbeda en 1591, canonisé en 1726.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jean_de_la_Croix",
+                  "classement": "Jean de la Croix",
+                  "image": {
+                    "src": "assets/portraits/pan_es_jeancroix.jpg",
+                    "legende": "Jean de la Croix, portrait d'un artiste anonyme du XVIIe siècle",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Johncross5.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_cervantes",
+                  "axe": "Littérature et pensée",
+                  "date": 1547,
+                  "titre": "Naissance de Miguel de Cervantès",
+                  "description": "Miguel de Cervantès (1547-1616) est un romancier, dramaturge et poète, né à Alcalá de Henares. Soldat blessé à Lépante en 1571, captif cinq ans à Alger, puis commis sans fortune et emprisonné à Séville, il publie en 1605 la première partie de Don Quichotte, puis la seconde en 1615, et les Nouvelles exemplaires. Considéré comme le père du roman moderne, il meurt à Madrid en avril 1616, après avoir peu vendu et vécu pauvre.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Miguel_de_Cervantes",
+                  "classement": "Cervantès, Miguel de",
+                  "biographie": "bio_cervantes",
+                  "image": {
+                    "src": "assets/portraits/pan_es_cervantes.jpg",
+                    "legende": "Miguel de Cervantès, portrait attribué à Juan de Jáuregui, vers 1600, le plus souvent reproduit mais dont l'attribution et la ressemblance sont discutées (Real Academia Española, Madrid)",
+                    "auteur": "Attribué à Juan de Jáuregui",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Cervantes_J%C3%A1uregui.jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_es_donjuan",
+                  "axe": "Guerres et résistances",
+                  "date": 1547,
+                  "titre": "Naissance de Don Juan d'Autriche",
+                  "description": "Don Juan d'Autriche (1547-1578) est un prince et chef militaire, fils naturel de Charles Quint, né à Ratisbonne et reconnu par son demi-frère Philippe II. Il écrase la révolte des morisques des Alpujarras en 1570, puis commande la flotte de la Sainte Ligue qui détruit celle des Ottomans à Lépante le 7 octobre 1571. Gouverneur des Pays-Bas en 1576, il y échoue face aux rebelles et meurt du typhus près de Namur en octobre 1578.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Juan_d%27Autriche",
+                  "classement": "Juan d'Autriche, don",
+                  "image": {
+                    "src": "assets/portraits/pan_es_donjuan.jpg",
+                    "legende": "Don Juan d'Autriche, portrait d'Alonso Sánchez Coello, 1567 (Kunsthistorisches Museum, Vienne)",
+                    "auteur": "Alonso Sánchez Coello",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:John_of_Austria_portrait.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_victoria",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1548,
+                  "titre": "Naissance de Tomás Luis de Victoria",
+                  "description": "Tomás Luis de Victoria (vers 1548-1611) est un compositeur, né à Sanchidrián, près d'Ávila. Prêtre formé à Rome, où il a peut-être eu Palestrina pour maître, il écrit presque uniquement de la musique sacrée, messes, motets et surtout l'Officium defunctorum (1605), composé pour les funérailles de l'impératrice Marie d'une intensité sobre. Maître de chapelle du couvent des Descalzas Reales à Madrid, il y meurt en août 1611, dernier grand maître de la polyphonie de la Renaissance.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Tom%C3%A1s_Luis_de_Victoria",
+                  "classement": "Victoria, Tomás Luis de",
+                  "image": {
+                    "src": "assets/portraits/pan_es_victoria.jpg",
+                    "legende": "Tomás Luis de Victoria, portrait gravé du XVIe ou XVIIe siècle, d'auteur inconnu",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Tom%C3%A1s_Luis_de_Victoria.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_gongora",
+                  "axe": "Littérature et pensée",
+                  "date": 1561,
+                  "titre": "Naissance de Luis de Góngora",
+                  "description": "Luis de Góngora (1561-1627) est un poète, né à Cordoue, prêtre et chapelain du roi Philippe III. Il écrit des romances et des sonnets populaires et satiriques, puis, dans la Fable de Polyphème et Galatée et les Solitudes (1613-1614), un style très savant, hérissé de latinismes et de métaphores, que ses adversaires, Quevedo en tête, jugent obscur et que l'on nomme gongorisme. Oublié au XVIIIe siècle, il est redécouvert en 1927 par la « génération de 27 », à l'occasion du troisième centenaire de sa mort.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Luis_de_G%C3%B3ngora",
+                  "classement": "Góngora, Luis de",
+                  "image": {
+                    "src": "assets/portraits/pan_es_gongora.jpg",
+                    "legende": "Luis de Góngora, portrait de Diego Vélasquez, 1622 (Museum of Fine Arts, Boston)",
+                    "auteur": "Diego Vélasquez",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Diego_Rodr%C3%ADguez_de_Silva_y_Vel%C3%A1zquez_-_Luis_de_G%C3%B3ngora_y_Argote_-_Google_Art_Project.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_lope",
+                  "axe": "Littérature et pensée",
+                  "date": 1562,
+                  "titre": "Naissance de Lope de Vega",
+                  "description": "Lope de Vega (1562-1635) est un dramaturge et poète, né à Madrid. Il aurait écrit plus de mille pièces, dont plusieurs centaines nous sont parvenues, parmi lesquelles Fuenteovejuna et Le Chien du jardinier, et fixe dans son Art nouveau de faire des comédies (1609) la formule de la comedia nueva, qui mêle comique et tragique et domine le théâtre du Siècle d'or. Sa vie de duels, d'exil, d'amours scandaleuses et de prêtrise tardive nourrit sa légende, et il meurt à Madrid en 1635, honoré comme le « Phénix des esprits ».",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Lope_de_Vega",
+                  "classement": "Lope de Vega",
+                  "image": {
+                    "src": "assets/portraits/pan_es_lope.jpg",
+                    "legende": "Lope de Vega, portrait attribué à Eugenio Caxés, vers 1627, vêtu de la croix de Malte",
+                    "auteur": "Attribué à Eugenio Caxés",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:LopedeVega.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_tirso",
+                  "axe": "Littérature et pensée",
+                  "date": 1579,
+                  "titre": "Naissance de Tirso de Molina",
+                  "description": "Tirso de Molina (vers 1579-1648) est un dramaturge, nom de plume du frère mercédaire Gabriel Téllez, né à Madrid. Auteur de plusieurs centaines de pièces, il crée avec L'Abuseur de Séville le personnage de Don Juan, séducteur qui défie les lois divines et humaines, que reprendront Molière, Mozart et Byron. Sa liberté de ton lui vaut en 1625 une condamnation de la Junte de réformation, qui l'éloigne de Madrid, et il meurt à Almazán, en Vieille-Castille, en 1648.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Tirso_de_Molina",
+                  "classement": "Tirso de Molina",
+                  "image": {
+                    "src": "assets/portraits/pan_es_tirso.jpg",
+                    "legende": "Tirso de Molina, portrait du frère Antonio Manuel de Hartalejo, XVIIIe siècle (Bibliothèque nationale d'Espagne)",
+                    "auteur": "Antonio Manuel de Hartalejo",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Tirso_de_molina.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_quevedo",
+                  "axe": "Littérature et pensée",
+                  "date": 1580,
+                  "titre": "Naissance de Francisco de Quevedo",
+                  "description": "Francisco de Quevedo (1580-1645) est un poète et satiriste, né à Madrid. Auteur du roman picaresque El Buscón, des Songes et d'une poésie qui va de l'amour au désenchantement face au temps, il est le grand rival de Góngora et le maître du style conceptiste. Courtisan du comte-duc d'Olivares puis disgracié, il est emprisonné de 1639 à 1643 au couvent de San Marcos de León, d'où il sort ruiné et malade, et meurt à Villanueva de los Infantes en 1645.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Francisco_de_Quevedo",
+                  "classement": "Quevedo, Francisco de",
+                  "image": {
+                    "src": "assets/portraits/pan_es_quevedo.jpg",
+                    "legende": "Francisco de Quevedo, portrait attribué à Juan van der Hamen, d'après Vélasquez, milieu du XVIIe siècle",
+                    "auteur": "Attribué à Juan van der Hamen",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Quevedo_(copia_de_Vel%C3%A1zquez).jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_es_ribera",
+                  "axe": "Beaux-arts",
+                  "date": 1591,
+                  "titre": "Naissance de José de Ribera",
+                  "description": "José de Ribera (1591-1652) est un peintre, surnommé Lo Spagnoletto, né à Xàtiva, près de Valence. Installé à Naples dès 1616, alors sous la couronne d'Espagne, il y devient le peintre le plus réputé du vice-royaume, avec des scènes de martyres, des philosophes et des mendiants, dans une lumière caravagesque et un réalisme cru, comme Le Pied-bot (1642). Il influence toute l'école napolitaine et meurt à Naples en 1652.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jos%C3%A9_de_Ribera",
+                  "classement": "Ribera, José de",
+                  "image": {
+                    "src": "assets/portraits/pan_es_ribera.jpg",
+                    "legende": "José de Ribera, portrait de Giuseppe Macpherson, milieu du XVIIIe siècle, d'après un portrait ancien",
+                    "auteur": "Giuseppe Macpherson",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Giuseppe_Macpherson_-_Jusepe_de_Ribera.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_zurbaran",
+                  "axe": "Beaux-arts",
+                  "date": 1598,
+                  "titre": "Naissance de Francisco de Zurbarán",
+                  "description": "Francisco de Zurbarán (1598-1664) est un peintre, né à Fuente de Cantos, en Estrémadure. Maître d'un clair-obscur sévère, il peint pour les couvents de Séville, de Guadalupe et de Cadix des moines en extase et des saintes aux étoffes chatoyantes, dans une immobilité presque sculpturale. Éclipsé à Séville par Murillo, il part pour Madrid en 1658 et y meurt en 1664, presque oublié.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Francisco_de_Zurbar%C3%A1n",
+                  "classement": "Zurbarán, Francisco de",
+                  "image": {
+                    "src": "assets/portraits/pan_es_zurbaran.jpg",
+                    "legende": "Francisco de Zurbarán, détail de Saint Luc devant le Christ en croix, où l'on a voulu voir son autoportrait, 1635-1640 (Prado, Madrid)",
+                    "auteur": "Francisco de Zurbarán",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Francisco_de_Zurbar%C3%A1n_autoportrait.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_velazquez",
+                  "axe": "Beaux-arts",
+                  "date": 1599,
+                  "titre": "Naissance de Diego Vélasquez",
+                  "description": "Diego Vélasquez (1599-1660) est un peintre, né à Séville. Peintre du roi Philippe IV à partir de 1623, il réalise des portraits de la famille royale et de bouffons, des scènes de bataille comme La Reddition de Breda, et Les Ménines (1656), chef-d'œuvre où le peintre, les infantes et les spectateurs semblent se croiser dans un même regard. Chevalier de l'ordre de Santiago en 1659, il meurt à Madrid en août 1660, et son art, admiré de Manet, de Picasso et de Bacon, fait de lui le « peintre des peintres ».",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Diego_V%C3%A9lasquez",
+                  "classement": "Vélasquez, Diego",
+                  "image": {
+                    "src": "assets/portraits/pan_es_velazquez.jpg",
+                    "legende": "Diego Vélasquez, autoportrait, vers 1650 (musée des Beaux-Arts de Valence)",
+                    "auteur": "Diego Vélasquez",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Diego_Vel%C3%A1zquez_Autorretrato_45_x_38_cm_-_Colecci%C3%B3n_Real_Academia_de_Bellas_Artes_de_San_Carlos_-_Museo_de_Bellas_Artes_de_Valencia.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_calderon",
+                  "axe": "Littérature et pensée",
+                  "date": 1600,
+                  "titre": "Naissance de Pedro Calderón de la Barca",
+                  "description": "Pedro Calderón de la Barca (1600-1681) est un dramaturge, né à Madrid, devenu prêtre en 1651. Successeur de Lope de Vega comme maître du théâtre de cour, il écrit La Vie est un songe, Le Médecin de son honneur, Le Maire de Zalaméa, ainsi que des autos sacramentales, drames religieux joués à la Fête-Dieu, où il pose avec force le problème de la liberté et du destin. Il meurt à Madrid en 1681, et son œuvre inspire le romantisme allemand, de Goethe aux frères Schlegel.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Pedro_Calder%C3%B3n_de_la_Barca",
+                  "classement": "Calderón de la Barca, Pedro",
+                  "image": {
+                    "src": "assets/portraits/pan_es_calderon.jpg",
+                    "legende": "Pedro Calderón de la Barca, gravure de l'ouvrage Las Glorias nacionales, 1852 (bibliothèque de l'université de Séville)",
+                    "auteur": "Bibliothèque de l'université de Séville (Fondo Antiguo)",
+                    "licence": "CC BY 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Las_Glorias_Nacionales,_1852_%22D._Pedro_Calder%C3%B3n_de_la_Barca%22_(4013195639).jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_cano",
+                  "axe": "Beaux-arts",
+                  "date": 1601,
+                  "titre": "Naissance d'Alonso Cano",
+                  "description": "Alonso Cano (1601-1667) est un peintre, sculpteur et architecte, né à Grenade, formé à Séville, parfois appelé le « Michel-Ange espagnol ». Il peint pour la cour à Madrid, sculpte des Vierges d'une grâce douce et dessine la façade de la cathédrale de Grenade, chef-d'œuvre du baroque espagnol. Soupçonné du meurtre de sa femme en 1644, torturé puis acquitté, il devient chanoine de Grenade et meurt en 1667.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Alonso_Cano",
+                  "classement": "Cano, Alonso",
+                  "image": {
+                    "src": "assets/portraits/pan_es_cano.jpg",
+                    "legende": "Alonso Cano, gravure de José Vázquez d'après un dessin de José Maea, 1796",
+                    "auteur": "José Vázquez, d'après José Maea",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Alonso_Cano.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_gracian",
+                  "axe": "Littérature et pensée",
+                  "date": 1601,
+                  "titre": "Naissance de Baltasar Gracián",
+                  "description": "Baltasar Gracián (1601-1658) est un jésuite et écrivain, né à Belmonte de Gracián, en Aragon. Il publie L'Homme de cour (Oráculo manual y arte de prudencia) et L'Héros, aphorismes de sagesse pratique au style concis, puis le roman allégorique El Criticón, tableau amer de la vie humaine ; Schopenhauer traduira L'Homme de cour en allemand et en fera l'éloge. Sanctionné par ses supérieurs pour avoir publié sans autorisation, il est privé de sa chaire et meurt à Tarazona en 1658.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Baltasar_Graci%C3%A1n",
+                  "classement": "Gracián, Baltasar",
+                  "image": {
+                    "src": "assets/portraits/pan_es_gracian.jpg",
+                    "legende": "Baltasar Gracián, portrait de Valentín Carderera, XIXe siècle, d'après un original ancien",
+                    "auteur": "Valentín Carderera",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Baltasar_Graci%C3%A1n_por_Carderera_peque%C3%B1a.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_murillo",
+                  "axe": "Beaux-arts",
+                  "date": 1617,
+                  "titre": "Naissance de Bartolomé Esteban Murillo",
+                  "description": "Bartolomé Esteban Murillo (1617-1682) est un peintre, né à Séville. Peintre de Vierges, d'Immaculées et de scènes religieuses d'une douceur dorée, mais aussi de petits mendiants et de gamins des rues, il est le peintre espagnol le plus admiré d'Europe au XVIIIe siècle, avant que Vélasquez ne lui soit préféré. Il tombe d'un échafaudage à Cadix en 1681, en peignant un retable, et meurt à Séville en avril 1682.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bartolom%C3%A9_Esteban_Murillo",
+                  "classement": "Murillo, Bartolomé Esteban",
+                  "image": {
+                    "src": "assets/portraits/pan_es_murillo.jpg",
+                    "legende": "Bartolomé Esteban Murillo, autoportrait, vers 1668-1670 (National Gallery, Londres)",
+                    "auteur": "Bartolomé Esteban Murillo",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Autorretrato_de_Murillo.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_lezo",
+                  "axe": "Guerres et résistances",
+                  "date": 1689,
+                  "titre": "Naissance de Blas de Lezo",
+                  "description": "Blas de Lezo (1689-1741) est un amiral basque, né à Pasaia, surnommé « Mediohombre » (« demi-homme ») après avoir perdu un œil, une jambe et l'usage d'un bras au combat. Il se bat pendant la guerre de Succession d'Espagne et contre les Barbaresques, puis défend Carthagène des Indes en 1741 : avec quelques milliers d'hommes il repousse la flotte britannique de l'amiral Vernon, bien plus nombreuse, pendant la guerre de l'oreille de Jenkins. Il meurt à Carthagène la même année, de maladie, et sa mémoire, longtemps oubliée, a été redécouverte en Espagne ces dernières années.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Blas_de_Lezo",
+                  "classement": "Lezo, Blas de",
+                  "image": {
+                    "src": "assets/portraits/pan_es_lezo.jpg",
+                    "legende": "Blas de Lezo, portrait anonyme du XVIIIe siècle, vers 1735 (Museo Naval, Madrid)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Don_Blas_de_Lezo_-Museo_Naval-.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_jorgejuan",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1713,
+                  "titre": "Naissance de Jorge Juan",
+                  "description": "Jorge Juan (1713-1773) est un marin et savant, né à Novelda, près d'Alicante. Avec Antonio de Ulloa, il participe à l'expédition géodésique de La Condamine au Pérou, qui mesure de 1735 à 1744 un arc de méridien près de l'équateur pour établir la forme de la Terre, et publie ses Observations astronomiques. Fondateur de l'Observatoire de Cadix, auteur d'un Examen maritime, il fait venir en secret des constructeurs navals anglais et meurt à Madrid en 1773.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jorge_Juan_y_Santacilia",
+                  "classement": "Juan, Jorge",
+                  "image": {
+                    "src": "assets/portraits/pan_es_jorgejuan.jpg",
+                    "legende": "Jorge Juan, portrait de Rafael Tejeo, 1828 (Museo Naval, Madrid)",
+                    "auteur": "Rafael Tejeo",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jorge_Juan_y_Santacilia.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_charles3",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1716,
+                  "titre": "Naissance de Charles III d'Espagne",
+                  "description": "Charles III d'Espagne (1716-1788) est un roi d'Espagne, né à Madrid, fils de Philippe V, qui a d'abord régné sur Naples et la Sicile. Roi d'Espagne en 1759, souverain éclairé entouré de ministres réformateurs comme Aranda et Floridablanca, il expulse les jésuites en 1767, ouvre le commerce avec l'Amérique, embellit Madrid et soutient les insurgés américains contre l'Angleterre. L'émeute d'Esquilache de 1766 contre ses réformes montre les limites de ce despotisme éclairé, et il meurt à Madrid en 1788.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Charles_III_(roi_d%27Espagne)",
+                  "classement": "Charles III d'Espagne",
+                  "image": {
+                    "src": "assets/portraits/pan_es_charles3.jpg",
+                    "legende": "Charles III, portrait d'Anton Raphael Mengs, 1767 (Prado, Madrid)",
+                    "auteur": "Anton Raphael Mengs",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Charles_III_of_Spain_high_resolution.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_mutis",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1732,
+                  "titre": "Naissance de José Celestino Mutis",
+                  "description": "José Celestino Mutis (1732-1808) est un médecin et botaniste, né à Cadix. Installé en 1760 en Nouvelle-Grenade, l'actuelle Colombie, comme médecin du vice-roi, il y devient prêtre, mathématicien et botaniste, et dirige à partir de 1783 l'Expédition botanique du royaume de Nouvelle-Grenade, où des dizaines d'artistes dessinent plus de six mille planches de plantes. Correspondant de Linné, maître de Caldas et de toute une génération de savants colombiens, il meurt à Bogotá en septembre 1808.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jos%C3%A9_Celestino_Bruno_Mutis_y_Bosio",
+                  "classement": "Mutis, José Celestino",
+                  "image": {
+                    "src": "assets/portraits/pan_es_mutis.jpg",
+                    "legende": "José Celestino Mutis, peinture de R. Cristóbal, 1930, d'après un portrait ancien",
+                    "auteur": "R. Cristóbal",
+                    "licence": "CC BY 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jos%C3%A9_Celestino_Mutis.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_jovellanos",
+                  "axe": "Littérature et pensée",
+                  "date": 1744,
+                  "titre": "Naissance de Gaspar Melchor de Jovellanos",
+                  "description": "Gaspar Melchor de Jovellanos (1744-1811) est un écrivain, juriste et homme d'État des Lumières espagnoles, né à Gijón. Magistrat à Séville et à Madrid, il rédige le Rapport sur la loi agraire (1795), qui réclame la liberté de l'agriculture et la fin des biens de mainmorte, écrit poèmes et pièces de théâtre et fonde l'Institut des Asturies. Ministre de la Justice de Charles IV, emprisonné à Majorque de 1801 à 1808, il rejoint la résistance contre Napoléon et meurt à Puerto de Vega, dans les Asturies, en novembre 1811.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Gaspar_Melchor_de_Jovellanos",
+                  "classement": "Jovellanos, Gaspar Melchor de",
+                  "image": {
+                    "src": "assets/portraits/pan_es_jovellanos.jpg",
+                    "legende": "Gaspar Melchor de Jovellanos, portrait de Francisco de Goya, 1798 (Prado, Madrid)",
+                    "auteur": "Francisco de Goya",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Francisco_de_Goya_y_Lucientes_-_Gaspar_Melchor_de_Jovellanos.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_galvez",
+                  "axe": "Guerres et résistances",
+                  "date": 1746,
+                  "titre": "Naissance de Bernardo de Gálvez",
+                  "description": "Bernardo de Gálvez (1746-1786) est un général et gouverneur espagnol, né à Macharaviaya, près de Malaga. Gouverneur de la Louisiane espagnole, il aide les insurgés américains en leur fournissant armes et poudre par le Mississippi, puis prend aux Britanniques Bâton-Rouge, Mobile et Pensacola entre 1779 et 1781, ce qui assure le flanc sud de la Révolution américaine. Vice-roi de Nouvelle-Espagne en 1785, il meurt de maladie à Mexico en 1786 ; les États-Unis l'ont fait citoyen d'honneur en 2014 et la ville de Galveston porte son nom.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bernardo_de_G%C3%A1lvez",
+                  "classement": "Gálvez, Bernardo de",
+                  "image": {
+                    "src": "assets/portraits/pan_es_galvez.jpg",
+                    "legende": "Bernardo de Gálvez, portrait de Mariano Salvador Maella, vers 1783-1784",
+                    "auteur": "Mariano Salvador Maella",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Bernardo_de_G%C3%A1lvez.png"
+                  }
+                },
+                {
+                  "id": "pan_es_goya",
+                  "axe": "Beaux-arts",
+                  "date": 1746,
+                  "titre": "Naissance de Francisco de Goya",
+                  "description": "Francisco de Goya (1746-1828) est un peintre et graveur, né à Fuendetodos, près de Saragosse. Peintre du roi, auteur de portraits de cour comme La Famille de Charles IV et de La Maja nue, il devient sourd en 1792 et change de manière, gravant les Caprices et les Désastres de la guerre, peignant Les Fusillements du 3 mai (1814), puis les « peintures noires » de la Maison du Sourd. Exilé à Bordeaux en 1824 sous le régime absolutiste de Ferdinand VII, il y meurt en avril 1828.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Francisco_de_Goya",
+                  "classement": "Goya, Francisco de",
+                  "image": {
+                    "src": "assets/portraits/pan_es_goya.jpg",
+                    "legende": "Francisco de Goya, portrait de Vicente López Portaña, 1826 (Prado, Madrid)",
+                    "auteur": "Vicente López Portaña",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Vicente_L%C3%B3pez_Porta%C3%B1a_-_el_pintor_Francisco_de_Goya.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_riego",
+                  "axe": "Guerres et résistances",
+                  "date": 1784,
+                  "titre": "Naissance de Rafael del Riego",
+                  "description": "Rafael del Riego (1784-1823) est un officier libéral, né à Tuña, dans les Asturies. Le 1er janvier 1820, à Las Cabezas de San Juan, il se soulève avec son bataillon contre Ferdinand VII et oblige le roi à rétablir la Constitution de Cadix, ce qui ouvre le « Triennat libéral », dont l'hymne de Riego devient le chant. Quand l'armée française des Cent mille fils de saint Louis rétablit l'absolutisme en 1823, il est capturé, jugé pour trahison et pendu à Madrid en novembre.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Rafael_del_Riego",
+                  "classement": "Riego, Rafael del",
+                  "image": {
+                    "src": "assets/portraits/pan_es_riego.jpg",
+                    "legende": "Rafael del Riego, portrait anonyme, vers 1820",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Rafael_Riego.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_agustina",
+                  "axe": "Guerres et résistances",
+                  "date": 1786,
+                  "titre": "Naissance d'Agustina d'Aragon",
+                  "description": "Agustina d'Aragon (1786-1857) est une héroïne de la guerre d'indépendance espagnole, née Agustina Zaragoza Domènech à Barcelone. Pendant le premier siège de Saragosse par les troupes napoléoniennes, en 1808, elle prend la place des artilleurs tués à la porte du Portillo et met elle-même le feu à un canon, ce qui ranime les défenseurs. Capturée en 1809 à la chute de la ville, elle s'évade, devient un symbole de la résistance espagnole, représentée par Goya dans les Désastres de la guerre, et meurt à Ceuta en 1857.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Agustina_d%27Aragon",
+                  "classement": "Agustina d'Aragon",
+                  "image": {
+                    "src": "assets/portraits/pan_es_agustina.jpg",
+                    "legende": "Agustina d'Aragon, monument de Saragosse la montrant près de son canon (photographie de 2015)",
+                    "auteur": "Francis Raher",
+                    "licence": "CC BY 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Conjunto_Hist%C3%B3rico_de_Zaragoza_-_P8156099.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_pineda",
+                  "axe": "Guerres et résistances",
+                  "date": 1804,
+                  "titre": "Naissance de Mariana Pineda",
+                  "description": "Mariana Pineda (1804-1831) est une héroïne libérale, née à Grenade. Veuve d'un officier libéral, elle fait broder un drapeau aux couleurs de la Constitution pour un soulèvement contre Ferdinand VII et est arrêtée en 1831 alors que l'étoffe est découverte chez elle. Condamnée à mort pour avoir refusé de dénoncer ses complices, elle est garrottée à Grenade le 26 mai 1831, à 26 ans, et devient une martyre de la liberté, héroïne d'une pièce de Federico García Lorca.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mariana_Pineda",
+                  "classement": "Pineda, Mariana",
+                  "image": {
+                    "src": "assets/portraits/pan_es_pineda.jpg",
+                    "legende": "Mariana Pineda tenant le drapeau pour lequel elle fut condamnée, portrait d'Isidoro Lozano, 1862",
+                    "auteur": "Isidoro Lozano",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mariana_Pineda.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_larra",
+                  "axe": "Littérature et pensée",
+                  "date": 1809,
+                  "titre": "Naissance de Mariano José de Larra",
+                  "description": "Mariano José de Larra (1809-1837) est un journaliste et écrivain romantique, qui signe souvent « Fígaro », né à Madrid. Dans des articles de mœurs comme « Revenez demain », il raille avec une ironie amère l'administration et les travers d'une Espagne qu'il juge arriérée ; il écrit aussi un drame, Macías, et un roman historique, Le Page de don Henri. Déçu en politique comme en amour, il se tire une balle dans la tête à Madrid en février 1837, à 27 ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mariano_Jos%C3%A9_de_Larra",
+                  "classement": "Larra, Mariano José de",
+                  "image": {
+                    "src": "assets/portraits/pan_es_larra.jpg",
+                    "legende": "Mariano José de Larra, portrait de José Gutiérrez de la Vega, vers 1835",
+                    "auteur": "José Gutiérrez de la Vega",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mariano_Jos%C3%A9_de_Larra,_por_Jos%C3%A9_Gutierrez_de_la_Vega.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_prim",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1814,
+                  "titre": "Naissance de Juan Prim",
+                  "description": "Juan Prim (1814-1870) est un général et homme d'État catalan, né à Reus. Chef du Parti progressiste, il dirige en 1868 le soulèvement de la « Gloriosa » qui chasse Isabelle II, devient chef du gouvernement et fait offrir le trône à Amédée de Savoie. Blessé dans un attentat le 27 décembre 1870 à Madrid, il meurt trois jours plus tard, le jour même de l'arrivée d'Amédée en Espagne, et l'enquête n'a jamais désigné de coupables certains.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Juan_Prim",
+                  "classement": "Prim, Juan",
+                  "image": {
+                    "src": "assets/portraits/pan_es_prim.jpg",
+                    "legende": "Le général Prim, portrait de Luis de Madrazo, 1870",
+                    "auteur": "Luis de Madrazo",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Prim_madrazo.jpeg"
+                  }
+                },
+                {
+                  "id": "pan_es_cerda",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1815,
+                  "titre": "Naissance d'Ildefons Cerdà",
+                  "description": "Ildefons Cerdà (1815-1876) est un ingénieur et urbaniste catalan, né à Centelles. Auteur du plan d'extension de Barcelone, l'Eixample, approuvé en 1860, il dessine une grille régulière d'îlots à angles biseautés, de rues larges et d'espaces verts, pensée pour la circulation, la lumière et l'égalité des habitants, et invente le mot « urbanisation » dans sa Théorie générale de l'urbanisation (1867). Son plan est altéré par les propriétaires et les promoteurs, il se ruine et meurt à Caldas de Besaya en août 1876, presque oublié.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ildefons_Cerd%C3%A0",
+                  "classement": "Cerdà, Ildefons",
+                  "image": {
+                    "src": "assets/portraits/pan_es_cerda.jpg",
+                    "legende": "Ildefons Cerdà, portrait de Ramon Martí Alsina, 1878",
+                    "auteur": "Ramon Martí Alsina",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ildefons_Cerd%C3%A1_(1878).jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_monturiol",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1819,
+                  "titre": "Naissance de Narcís Monturiol",
+                  "description": "Narcís Monturiol (1819-1885) est un inventeur et penseur utopiste catalan, né à Figueres. Socialiste, disciple d'Étienne Cabet, il construit le premier sous-marin à propulsion mécanique, l'Ictíneo, lancé à Barcelone en 1859, puis l'Ictíneo II, à propulsion chimique, dont les essais de 1864 atteignent 50 mètres de profondeur. Ruiné, il revient à l'industrie et meurt à Sant Martí de Provençals en septembre 1885.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Narc%C3%ADs_Monturiol_i_Estarriol",
+                  "classement": "Monturiol, Narcís",
+                  "image": {
+                    "src": "assets/portraits/pan_es_monturiol.jpg",
+                    "legende": "Narcís Monturiol, portrait conservé au Musée maritime de Barcelone",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:NarcisMonturiol.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_arenal",
+                  "axe": "Littérature et pensée",
+                  "date": 1820,
+                  "titre": "Naissance de Concepción Arenal",
+                  "description": "Concepción Arenal (1820-1893) est une penseuse et juriste, née à Ferrol. Elle assiste déguisée en homme à des cours de droit à l'université de Madrid, publie des essais sur la charité, la condition des femmes, la misère et l'état des prisons, et devient en 1863 visiteuse des prisons de femmes de La Corogne. Pionnière du féminisme espagnol et du droit pénal humaniste, elle réclame l'abolition de la peine de mort et meurt à Vigo en 1893.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Concepci%C3%B3n_Arenal",
+                  "classement": "Arenal, Concepción",
+                  "image": {
+                    "src": "assets/portraits/pan_es_arenal.jpg",
+                    "legende": "Concepción Arenal, photographie anonyme, avant 1893",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Concepcion_Arenal_1.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_canovas",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1828,
+                  "titre": "Naissance d'Antonio Cánovas del Castillo",
+                  "description": "Antonio Cánovas del Castillo (1828-1897) est un homme d'État et historien, né à Malaga. Artisan de la Restauration des Bourbons après la chute de la Première République, il rédige la Constitution de 1876 et organise avec le libéral Sagasta l'alternance pacifique des conservateurs et des libéraux, le « turno », fondée sur la fraude électorale et le pouvoir des caciques. Plusieurs fois président du Conseil, il est assassiné par l'anarchiste italien Michele Angiolillo, à Santa Águeda, en août 1897.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Antonio_C%C3%A1novas_del_Castillo",
+                  "classement": "Cánovas del Castillo, Antonio",
+                  "image": {
+                    "src": "assets/portraits/pan_es_canovas.jpg",
+                    "legende": "Antonio Cánovas del Castillo, photographie de Fernando Debás, vers 1890",
+                    "auteur": "Fernando Debás",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Antonio_C%C3%A1novas_del_Castillo_ret.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_becquer",
+                  "axe": "Littérature et pensée",
+                  "date": 1836,
+                  "titre": "Naissance de Gustavo Adolfo Bécquer",
+                  "description": "Gustavo Adolfo Bécquer (1836-1870) est un poète, né à Séville, orphelin de bonne heure, frère du peintre Valeriano. Ses Rimes, brèves strophes sur l'amour, le désespoir et la poésie, publiées à titre posthume en 1871, et ses Légendes, récits fantastiques, font de lui le grand poète du romantisme tardif et l'une des influences majeures des poètes du XXe siècle. Journaliste et censeur de romans pour vivre, il meurt à Madrid en décembre 1870, de la tuberculose, à 34 ans, trois mois après son frère.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Gustavo_Adolfo_B%C3%A9cquer",
+                  "classement": "Bécquer, Gustavo Adolfo",
+                  "image": {
+                    "src": "assets/portraits/pan_es_becquer.jpg",
+                    "legende": "Gustavo Adolfo Bécquer, portrait de son frère Valeriano Bécquer, 1862",
+                    "auteur": "Valeriano Bécquer",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Portrait_of_Gustavo_Adolfo_B%C3%A9cquer,_by_his_brother_Valeriano_(1862).jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_rosalia",
+                  "axe": "Littérature et pensée",
+                  "date": 1837,
+                  "titre": "Naissance de Rosalía de Castro",
+                  "description": "Rosalía de Castro (1837-1885) est une poétesse et romancière, née à Saint-Jacques-de-Compostelle. Avec Cantares gallegos (1863), premier grand livre de poèmes publié en galicien depuis le Moyen Âge, elle fait renaître cette langue littéraire, puis écrit en castillan À la rive du Sar (1884), poésie mélancolique du deuil et de l'exil. Mère de sept enfants, malade d'un cancer, elle meurt à Padrón en juillet 1885 ; le 17 mai, anniversaire de Cantares gallegos, est devenu en 1963 la Journée des lettres galiciennes, dont elle fut la première honorée.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Rosal%C3%ADa_de_Castro",
+                  "classement": "Castro, Rosalía de",
+                  "image": {
+                    "src": "assets/portraits/pan_es_rosalia.jpg",
+                    "legende": "Rosalía de Castro, photographie de Luis Sellier, vers 1880",
+                    "auteur": "Luis Sellier",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Rosal%C3%ADa_Castro_de_Murgu%C3%ADa_por_Luis_Sellier.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_galdos",
+                  "axe": "Littérature et pensée",
+                  "date": 1843,
+                  "titre": "Naissance de Benito Pérez Galdós",
+                  "description": "Benito Pérez Galdós (1843-1920) est un romancier et dramaturge, né à Las Palmas, aux Canaries. Installé à Madrid en 1862, il compose les quarante-six Épisodes nationaux, vaste fresque romanesque de l'Espagne du XIXe siècle, puis des romans de mœurs comme Fortunata et Jacinta et Miséricorde, qui l'imposent comme le plus grand romancier espagnol après Cervantès. Député libéral puis républicain, devenu aveugle à la fin de sa vie, il n'obtient jamais le prix Nobel malgré une campagne en 1912, et meurt à Madrid en janvier 1920.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Benito_P%C3%A9rez_Gald%C3%B3s",
+                  "classement": "Pérez Galdós, Benito",
+                  "image": {
+                    "src": "assets/portraits/pan_es_galdos.jpg",
+                    "legende": "Benito Pérez Galdós avec son chien dans la propriété familiale de Los Lirios, à Santander, photographie de Kaulak, entre 1900 et 1915",
+                    "auteur": "Kaulak",
+                    "licence": "CC BY 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Benito_Perez_Galdos_-_Kaulak_(4.3).jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_sarasate",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1844,
+                  "titre": "Naissance de Pablo de Sarasate",
+                  "description": "Pablo de Sarasate (1844-1908) est un violoniste et compositeur, né à Pampelune. Enfant prodige, formé au Conservatoire de Paris, il mène une carrière mondiale grâce à un son pur et à une technique très sûre, et inspire Lalo, Saint-Saëns, Bruch ou Wieniawski, qui lui dédient leurs œuvres. Ses propres pièces, comme les Airs bohémiens (1878), font de lui l'un des grands violonistes du XIXe siècle, et il meurt à Biarritz en septembre 1908.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Pablo_de_Sarasate",
+                  "classement": "Sarasate, Pablo de",
+                  "image": {
+                    "src": "assets/portraits/pan_es_sarasate.jpg",
+                    "legende": "Pablo de Sarasate au violon, photographie du XIXe siècle",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Sarasate.gif"
+                  }
+                },
+                {
+                  "id": "pan_es_iglesias",
+                  "axe": "Guerres et résistances",
+                  "date": 1850,
+                  "titre": "Naissance de Pablo Iglesias Posse",
+                  "description": "Pablo Iglesias Posse (1850-1925) est un typographe et homme politique, né à El Ferrol, fondateur du Parti socialiste ouvrier espagnol (PSOE) en 1879 et de l'Union générale des travailleurs (UGT) en 1888. Premier député socialiste espagnol en 1910, il défend la journée de huit heures et le droit de grève dans une Espagne encore très rurale, et dirige le journal El Socialista. Il meurt à Madrid en décembre 1925, sous la dictature de Primo de Rivera, et ses obsèques rassemblent une foule considérable.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Pablo_Iglesias_Posse",
+                  "classement": "Iglesias Posse, Pablo",
+                  "image": {
+                    "src": "assets/portraits/pan_es_iglesias.jpg",
+                    "legende": "Pablo Iglesias Posse, photographie anonyme, entre 1920 et 1925",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Pablo_Iglesias_Posse,_fundador_del_PSOE.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_pardobazan",
+                  "axe": "Littérature et pensée",
+                  "date": 1851,
+                  "titre": "Naissance d'Emilia Pardo Bazán",
+                  "description": "Emilia Pardo Bazán (1851-1921) est une romancière et critique, née à La Corogne, comtesse de Pardo Bazán. Avec Les Pazos d'Ulloa (1886) et La Mère nature, elle introduit en Espagne le naturalisme, en l'adaptant à la Galice rurale, et publie des essais féministes, des nouvelles et des chroniques. Trois fois candidate à l'Académie royale espagnole, elle en est refusée parce qu'elle est une femme ; nommée en 1916 à une chaire de littérature à l'université centrale, elle meurt à Madrid en 1921.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Emilia_Pardo_Baz%C3%A1n",
+                  "classement": "Pardo Bazán, Emilia",
+                  "image": {
+                    "src": "assets/portraits/pan_es_pardobazan.jpg",
+                    "legende": "Emilia Pardo Bazán, photographie de Luis Sellier, 1885",
+                    "auteur": "Luis Sellier",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Emilia_Pardo_Baz%C3%A1n_por_Luis_Sellier_1885.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_peral",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1851,
+                  "titre": "Naissance d'Isaac Peral",
+                  "description": "Isaac Peral (1851-1895) est un officier de marine et inventeur, né à Carthagène. Ingénieur autodidacte, il construit à Cadix le sous-marin à propulsion électrique qui porte son nom, lancé en septembre 1888, et réussit en 1889 des essais de tir de torpilles en plongée. La marine espagnole rejette son projet sans le financer ; déçu, il quitte la marine en 1891 et meurt à Berlin en mai 1895.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Isaac_Peral",
+                  "classement": "Peral, Isaac",
+                  "image": {
+                    "src": "assets/portraits/pan_es_peral.jpg",
+                    "legende": "Isaac Peral, dessin au crayon d'Isidro Fernández Fuertes, 1918 (Museo Naval, Madrid)",
+                    "auteur": "Isidro Fernández Fuertes",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Isaac_Peral_buena.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_cajal",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1852,
+                  "titre": "Naissance de Santiago Ramón y Cajal",
+                  "description": "Santiago Ramón y Cajal (1852-1934) est un histologiste et médecin, né à Petilla de Aragón, en Navarre. Grâce à une coloration de Golgi qu'il perfectionne, il démontre que le système nerveux est formé de cellules distinctes, les neurones, qui communiquent par contact, et décrit la structure fine du cerveau par des dessins d'une grande beauté. Prix Nobel de médecine en 1906 avec Camillo Golgi, qui défend l'idée inverse d'un réseau continu, il préside le Conseil des recherches scientifiques et meurt à Madrid en octobre 1934.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Santiago_Ram%C3%B3n_y_Cajal",
+                  "classement": "Ramón y Cajal, Santiago",
+                  "biographie": "bio_ramonycajal",
+                  "image": {
+                    "src": "assets/portraits/pan_es_cajal.jpg",
+                    "legende": "Santiago Ramón y Cajal, photographie de 1899 publiée par l'université Clark",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Santiago_Ram%C3%B3n_y_Cajal_(1852-1934)_portrait_(restored).jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_gaudi",
+                  "axe": "Beaux-arts",
+                  "date": 1852,
+                  "titre": "Naissance d'Antoni Gaudí",
+                  "description": "Antoni Gaudí (1852-1926) est un architecte catalan, né à Reus. Maître du modernisme catalan, il dessine à Barcelone la Casa Milà, la Casa Batlló, le parc Güell et la Sagrada Família, dont il dirige les travaux à partir de 1883 et qu'il laisse inachevée ; ses formes organiques, ses voûtes paraboliques et ses mosaïques de céramique s'inspirent de la nature. Renversé par un tramway en juin 1926 et pris pour un mendiant, il meurt trois jours plus tard à Barcelone et repose dans la crypte de la Sagrada Família.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Antoni_Gaud%C3%AD",
+                  "classement": "Gaudí, Antoni",
+                  "biographie": "bio_gaudi",
+                  "image": {
+                    "src": "assets/portraits/pan_es_gaudi.jpg",
+                    "legende": "Antoni Gaudí à 25 ans, photographie de Pau Audouard, 15 mars 1878",
+                    "auteur": "Pau Audouard",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Antoni_gaudi.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_torresquevedo",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1852,
+                  "titre": "Naissance de Leonardo Torres Quevedo",
+                  "description": "Leonardo Torres Quevedo (1852-1936) est un ingénieur et inventeur, né à Santa Cruz de Iguña, en Cantabrie. Il construit en 1916 le Spanish Aerocar, téléphérique encore en service au-dessus des chutes du Niagara, invente le Telekino, premier appareil de télécommande radio (1903), et conçoit l'Ajedrecista, automate capable de jouer des fins de parties d'échecs, ainsi que des machines à calculer. Associé étranger de l'Académie des sciences de Paris, il meurt à Madrid en décembre 1936.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Leonardo_Torres_Quevedo",
+                  "classement": "Torres Quevedo, Leonardo",
+                  "image": {
+                    "src": "assets/portraits/pan_es_torresquevedo.jpg",
+                    "legende": "Leonardo Torres Quevedo, autochrome d'Auguste Léon, 1er octobre 1921",
+                    "auteur": "Auguste Léon",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:1921_Leonardo_Torres_Quevedo.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_albeniz",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1860,
+                  "titre": "Naissance d'Isaac Albéniz",
+                  "description": "Isaac Albéniz (1860-1909) est un pianiste et compositeur, né à Camprodon, en Catalogne, enfant prodige. Après une jeunesse de pianiste voyageur, de l'Espagne aux Amériques, il étudie en Europe et compose pour piano la suite Iberia (1905-1909), douze pièces où le flamenco, la jota et l'impressionnisme se mêlent pour peindre l'Espagne. Il meurt à Cambo-les-Bains, dans le Pays basque français, en mai 1909, et Falla et Granados lui doivent beaucoup.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Isaac_Alb%C3%A9niz",
+                  "classement": "Albéniz, Isaac",
+                  "image": {
+                    "src": "assets/portraits/pan_es_albeniz.jpg",
+                    "legende": "Isaac Albéniz au piano, photographie ancienne",
+                    "auteur": "Marionaaragay",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Albeniz_i_Jack.jpeg"
+                  }
+                },
+                {
+                  "id": "pan_es_sorolla",
+                  "axe": "Beaux-arts",
+                  "date": 1863,
+                  "titre": "Naissance de Joaquín Sorolla",
+                  "description": "Joaquín Sorolla (1863-1923) est un peintre, né à Valence. Maître de la lumière méditerranéenne, il peint d'une touche rapide et lumineuse des scènes de plage, d'enfants sur le sable, de pêcheurs et de fêtes populaires, et connaît un succès international, de Paris à New York en 1909. Frappé d'hémiplégie en 1920 alors qu'il peignait un portrait, il meurt à Cercedilla en août 1923.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Joaqu%C3%ADn_Sorolla",
+                  "classement": "Sorolla, Joaquín",
+                  "image": {
+                    "src": "assets/portraits/pan_es_sorolla.jpg",
+                    "legende": "Joaquín Sorolla, photographie de Gertrude Käsebier, vers 1908",
+                    "auteur": "Gertrude Käsebier",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Joaquin_Sorolla_by_Gertrude_K%C3%A4sebier,_1908.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_unamuno",
+                  "axe": "Littérature et pensée",
+                  "date": 1864,
+                  "titre": "Naissance de Miguel de Unamuno",
+                  "description": "Miguel de Unamuno (1864-1936) est un écrivain et philosophe, né à Bilbao, professeur de grec puis recteur de l'université de Salamanque. Auteur de Du sentiment tragique de la vie, de Brouillard et de Saint Manuel le Bon, martyr, il écrit sur le conflit entre la foi et la raison et sur l'identité espagnole. Exilé sous la dictature de Primo de Rivera, il soutient d'abord le soulèvement de 1936, puis rompt avec les franquistes à Salamanque le 12 octobre 1936 : destitué et assigné à résidence, il meurt le 31 décembre.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Miguel_de_Unamuno",
+                  "classement": "Unamuno, Miguel de",
+                  "image": {
+                    "src": "assets/portraits/pan_es_unamuno.jpg",
+                    "legende": "Miguel de Unamuno, photographie de l'agence Meurisse, 1925 (Bibliothèque nationale de France)",
+                    "auteur": "Agence Meurisse",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Miguel_de_Unamuno_Meurisse_1925.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_valleinclan",
+                  "axe": "Littérature et pensée",
+                  "date": 1866,
+                  "titre": "Naissance de Ramón del Valle-Inclán",
+                  "description": "Ramón del Valle-Inclán (1866-1936) est un dramaturge, romancier et poète, né à Vilanova de Arousa, en Galice. Après les Sonates et un modernisme raffiné, il invente avec Lumières de bohème (1920) l'« esperpento », déformation grotesque de la réalité espagnole comme dans un miroir concave, et écrit la trilogie de la guerre carliste et Tyran Banderas. Figure de la bohème madrilène, amputé d'un bras après une querelle de 1899, il meurt à Saint-Jacques-de-Compostelle en janvier 1936.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ram%C3%B3n_Mar%C3%ADa_del_Valle-Incl%C3%A1n",
+                  "classement": "Valle-Inclán, Ramón del",
+                  "image": {
+                    "src": "assets/portraits/pan_es_valleinclan.jpg",
+                    "legende": "Ramón del Valle-Inclán, photographie de Pau Audouard, vers 1911",
+                    "auteur": "Pau Audouard",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ram%C3%B3n_Mar%C3%ADa_del_Valle_Incl%C3%A1n,_de_Audouard.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_granados",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1867,
+                  "titre": "Naissance d'Enrique Granados",
+                  "description": "Enrique Granados (1867-1916) est un compositeur et pianiste, né à Lérida. Marqué par le romantisme et par l'Espagne de Goya, il écrit pour piano les Goyescas (1911), suite inspirée des tableaux du peintre, dont il tire un opéra créé à New York en janvier 1916. Au retour, le paquebot Sussex qui traverse la Manche est torpillé par un sous-marin allemand le 24 mars 1916 ; il se jette à l'eau pour sauver sa femme, et ils se noient tous deux.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Enrique_Granados",
+                  "classement": "Granados, Enrique",
+                  "image": {
+                    "src": "assets/portraits/pan_es_granados.jpg",
+                    "legende": "Enrique Granados, photographie d'Antoni Esplugas, 1900",
+                    "auteur": "Antoni Esplugas",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Enric_Granados_1900.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_baroja",
+                  "axe": "Littérature et pensée",
+                  "date": 1872,
+                  "titre": "Naissance de Pío Baroja",
+                  "description": "Pío Baroja (1872-1956) est un romancier, né à Saint-Sébastien, médecin devenu écrivain et chef de file de la « génération de 98 ». Ses romans, comme L'Arbre de la science, Les Aventures de Zalacaín ou la trilogie La Lutte pour la vie, peignent d'un style sec les vagabonds, les révoltés et l'Espagne misérable, sous l'influence de Schopenhauer et de Nietzsche. Refusant tout dogme, il est inquiété par les deux camps en 1936 et se réfugie en France, avant de rentrer en Espagne en 1940 ; il meurt à Madrid en octobre 1956.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/P%C3%ADo_Baroja",
+                  "classement": "Baroja, Pío",
+                  "image": {
+                    "src": "assets/portraits/pan_es_baroja.jpg",
+                    "legende": "Pío Baroja, photographie parue avant 1920",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Portrait_of_P%C3%ADo_Baroja_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_machado",
+                  "axe": "Littérature et pensée",
+                  "date": 1875,
+                  "titre": "Naissance d'Antonio Machado",
+                  "description": "Antonio Machado (1875-1939) est un poète, né à Séville, professeur de français à Soria, à Baeza et à Ségovie. Son recueil Champs de Castille (1912) peint avec sobriété le paysage et l'âme de la Castille, et son personnage de Juan de Mairena exprime sa réflexion sur le temps et sur l'Espagne ; il est l'une des voix majeures de la génération de 98. Républicain fidèle, il franchit la frontière française à pied en janvier 1939 avec sa mère et meurt à Collioure le 22 février 1939.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Antonio_Machado",
+                  "classement": "Machado, Antonio",
+                  "image": {
+                    "src": "assets/portraits/pan_es_machado.jpg",
+                    "legende": "Antonio Machado, portrait à la sanguine de Leandro Oroz, 1925",
+                    "auteur": "Leandro Oroz",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Antonio_Machado_por_Leandro_Oroz_(1925).jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_casals",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1876,
+                  "titre": "Naissance de Pablo Casals",
+                  "description": "Pablo Casals (1876-1973) est un violoncelliste et chef d'orchestre, en catalan Pau Casals, né à El Vendrell, en Catalogne. Il fait connaître au public les Suites pour violoncelle seul de Bach, qu'il redécouvre à treize ans dans une librairie de Barcelone, et fonde en 1919 l'orchestre qui porte son nom. Il quitte l'Espagne en 1939, refuse de jouer dans les pays qui reconnaissent Franco, vit à Prades puis à Porto Rico, où il meurt en octobre 1973 ; son Chant des oiseaux, joué devant l'ONU en 1971, est devenu un symbole de paix.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Pablo_Casals",
+                  "classement": "Casals, Pablo",
+                  "image": {
+                    "src": "assets/portraits/pan_es_casals.jpg",
+                    "legende": "Pablo Casals et son violoncelle, photographie du Bain News Service, années 1910-1920",
+                    "auteur": "Bain News Service",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Pablocasals.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_falla",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1876,
+                  "titre": "Naissance de Manuel de Falla",
+                  "description": "Manuel de Falla (1876-1946) est un compositeur, né à Cadix. Après sept ans à Paris, où il côtoie Debussy et Ravel, il rentre en 1914 et compose L'Amour sorcier, les Nuits dans les jardins d'Espagne, le ballet Le Tricorne pour les Ballets russes et le Retable de maître Pierre, qui allient le folklore andalou et la modernité. Catholique fervent mais hostile à la guerre civile, il s'exile en Argentine en 1939 et meurt à Alta Gracia en novembre 1946.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Manuel_de_Falla",
+                  "classement": "Falla, Manuel de",
+                  "image": {
+                    "src": "assets/portraits/pan_es_falla.jpg",
+                    "legende": "Manuel de Falla, photographie d'auteur inconnu",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:ManuelDeFalla.JPG"
+                  }
+                },
+                {
+                  "id": "pan_es_gonzalez",
+                  "axe": "Beaux-arts",
+                  "date": 1876,
+                  "titre": "Naissance de Julio González",
+                  "description": "Julio González (1876-1942) est un sculpteur, né à Barcelone dans une famille d'orfèvres. Installé à Paris en 1900, il apprend à Picasso à souder le fer vers 1928 et invente avec lui la sculpture en fer soudé, qu'il pratique avec une grande économie de matière dans des œuvres comme La Montserrat (1937) et Le Cactus. Resté presque inconnu de son vivant, il meurt à Arcueil en mars 1942, et son influence s'étend à Chillida et à la sculpture abstraite.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Julio_Gonz%C3%A1lez",
+                  "classement": "González, Julio",
+                  "image": {
+                    "src": "assets/portraits/pan_es_gonzalez.jpg",
+                    "legende": "Julio González, autoportrait, vers 1920 (Museu Nacional d'Art de Catalunya, Barcelone)",
+                    "auteur": "Julio González",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:(Barcelona)_Autoretrat_-_Julio_Gonz%C3%A1lez_-_Museu_Nacional_d%27Art_de_Catalunya.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_azana",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1880,
+                  "titre": "Naissance de Manuel Azaña",
+                  "description": "Manuel Azaña (1880-1940) est un écrivain et homme d'État, né à Alcalá de Henares. Ministre de la Guerre puis chef du gouvernement du premier biennat de la Seconde République (1931-1933), il engage les réformes de l'armée, de l'enseignement et de l'autonomie catalane, puis devient président de la République en 1936. Il quitte l'Espagne à la chute de la Catalogne en 1939, démissionne de l'exil et meurt à Montauban en novembre 1940.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Manuel_Aza%C3%B1a",
+                  "classement": "Azaña, Manuel",
+                  "image": {
+                    "src": "assets/portraits/pan_es_azana.jpg",
+                    "legende": "Manuel Azaña, photographie de l'agence Meurisse, 1932 (Bibliothèque nationale de France)",
+                    "auteur": "Agence Meurisse",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Aza%C3%B1a_3.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_jrjimenez",
+                  "axe": "Littérature et pensée",
+                  "date": 1881,
+                  "titre": "Naissance de Juan Ramón Jiménez",
+                  "description": "Juan Ramón Jiménez (1881-1958) est un poète, né à Moguer, en Andalousie. Du symbolisme de ses débuts à une poésie « pure » et dépouillée, il publie Platero et moi (1914), prose poétique consacrée à un petit âne, puis des recueils comme Journal d'un poète jeune marié. Exilé à Cuba, aux États-Unis et à Porto Rico à partir de 1936, il reçoit le prix Nobel de littérature en 1956, trois jours avant la mort de sa femme Zenobia Camprubí, et meurt à San Juan en mai 1958.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Juan_Ram%C3%B3n_Jim%C3%A9nez",
+                  "classement": "Jiménez, Juan Ramón",
+                  "image": {
+                    "src": "assets/portraits/pan_es_jrjimenez.jpg",
+                    "legende": "Juan Ramón Jiménez, photographie parue dans Svenska Dagbladet, 1956",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:JRJimenez.JPG"
+                  }
+                },
+                {
+                  "id": "pan_es_picasso",
+                  "axe": "Beaux-arts",
+                  "date": 1881,
+                  "titre": "Naissance de Pablo Picasso",
+                  "description": "Pablo Picasso (1881-1973) est un peintre, sculpteur et graveur, né à Malaga. Installé en France en 1904, il crée avec Braque le cubisme à partir de 1907, peint Les Demoiselles d'Avignon puis Guernica (1937), en réaction au bombardement de la ville basque par l'aviation allemande, et ne cesse de se renouveler dans la céramique, la gravure et la sculpture. Hostile à Franco, il ne revient jamais en Espagne et meurt à Mougins en avril 1973.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Pablo_Picasso",
+                  "classement": "Picasso, Pablo",
+                  "image": {
+                    "src": "assets/portraits/pan_es_picasso.jpg",
+                    "legende": "Pablo Picasso, photographie publiée dans la revue argentine Vea y Lea, janvier 1962",
+                    "auteur": "Revista Vea y Lea",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Pablo_picasso_1.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_companys",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1882,
+                  "titre": "Naissance de Lluís Companys",
+                  "description": "Lluís Companys (1882-1940) est un avocat et homme politique catalan, né à El Tarròs. Président de la Généralité de Catalogne à partir de 1934, il proclame l'« État catalan » en octobre 1934, ce qui lui vaut la prison, puis, libéré en 1936, dirige la Catalogne pendant la guerre civile. Réfugié en France, il est arrêté par la Gestapo, livré à Franco et fusillé à Barcelone, au château de Montjuïc, le 15 octobre 1940.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Llu%C3%ADs_Companys",
+                  "classement": "Companys, Lluís",
+                  "image": {
+                    "src": "assets/portraits/pan_es_companys.jpg",
+                    "legende": "Lluís Companys, photographie anonyme, 1933-1934",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Lluis_Companys.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_ortega",
+                  "axe": "Littérature et pensée",
+                  "date": 1883,
+                  "titre": "Naissance de José Ortega y Gasset",
+                  "description": "José Ortega y Gasset (1883-1955) est un philosophe et essayiste, né à Madrid. Il formule dans les Méditations du Quichotte (1914) sa célèbre phrase « Je suis moi et ma circonstance », fonde la Revista de Occidente et publie La Révolte des masses (1930), où il analyse l'avènement de l'homme-masse et la crise de l'Europe. Député républicain en 1931, il quitte l'Espagne en 1936, revient en 1945, fonde l'Institut des humanités à Madrid et y meurt en 1955.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jos%C3%A9_Ortega_y_Gasset",
+                  "classement": "Ortega y Gasset, José",
+                  "biographie": "bio_ortegaygasset",
+                  "image": {
+                    "src": "assets/portraits/pan_es_ortega.jpg",
+                    "legende": "José Ortega y Gasset, photographie de presse des années 1920",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jose_Ortega_y_Gasset.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_gris",
+                  "axe": "Beaux-arts",
+                  "date": 1887,
+                  "titre": "Naissance de Juan Gris",
+                  "description": "Juan Gris (1887-1927) est un peintre, né à Madrid sous le nom de José Victoriano González-Pérez. Installé à Paris en 1906, au Bateau-Lavoir, près de Picasso, il devient avec Picasso et Braque l'un des trois grands cubistes et le théoricien du cubisme synthétique, avec des natures mortes rigoureuses aux plans rythmés et aux couleurs franches. Malade des reins, il meurt à Boulogne-sur-Seine en mai 1927, à 40 ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Juan_Gris",
+                  "classement": "Gris, Juan",
+                  "image": {
+                    "src": "assets/portraits/pan_es_gris.jpg",
+                    "legende": "Juan Gris, photographie publiée dans Les Peintres cubistes de Guillaume Apollinaire, 1913",
+                    "auteur": "Guillaume Apollinaire",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Juan_Gris,_portrait_photograph,_published_in_Les_Peintres_Cubistes,_1913.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_campoamor",
+                  "axe": "Guerres et résistances",
+                  "date": 1888,
+                  "titre": "Naissance de Clara Campoamor",
+                  "description": "Clara Campoamor (1888-1972) est une avocate et femme politique, née à Madrid dans une famille modeste, au travail dès l'âge de treize ans. Députée radicale en 1931, elle défend aux Cortès, contre une partie de la gauche, le droit de vote des femmes, adopté en octobre 1931 par 161 voix contre 121 ; elles votent pour la première fois en 1933. Brouillée avec son parti puis exilée pendant la guerre civile, elle meurt à Lausanne en 1972, sans avoir pu revenir vivre en Espagne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Clara_Campoamor",
+                  "classement": "Campoamor, Clara",
+                  "image": {
+                    "src": "assets/portraits/pan_es_campoamor.jpg",
+                    "legende": "Clara Campoamor, photographie de Virgilio Muro, 1930",
+                    "auteur": "Virgilio Muro",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Clara_Campoamor-2.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_belmonte",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1892,
+                  "titre": "Naissance de Juan Belmonte",
+                  "description": "Juan Belmonte (1892-1962) est un matador, né à Séville. De physique chétif, il révolutionne la tauromachie en toréant tout près du taureau, presque immobile, et forme avec Joselito une rivalité qui passionne l'Espagne des années 1910 et ouvre l'âge d'or du toreo. Ami d'écrivains, dont Hemingway, il se donne la mort à son domicile en avril 1962 ; la corrida, dont il fut l'un des plus grands noms, est aujourd'hui très contestée.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Juan_Belmonte",
+                  "classement": "Belmonte, Juan",
+                  "image": {
+                    "src": "assets/portraits/pan_es_belmonte.jpg",
+                    "legende": "Juan Belmonte, photographie de Julio Derrey, 1926",
+                    "auteur": "Julio Derrey",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Torero_Belmonte.JPG"
+                  }
+                },
+                {
+                  "id": "pan_es_franco",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1892,
+                  "titre": "Naissance de Francisco Franco",
+                  "description": "Francisco Franco (1892-1975) est un général et dictateur espagnol, né à El Ferrol. Chef du soulèvement militaire de juillet 1936, vainqueur de la guerre civile en 1939 avec l'aide de l'Allemagne nazie et de l'Italie fasciste, il dirige l'Espagne comme Caudillo pendant trente-six ans, après avoir fait fusiller des dizaines de milliers de républicains et emprisonner les autres, dans un régime sans partis ni libertés. Resté non belligérant pendant la Seconde Guerre mondiale, il ouvre l'économie à partir de 1959, désigne Juan Carlos comme successeur et meurt à Madrid le 20 novembre 1975.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Francisco_Franco",
+                  "classement": "Franco, Francisco",
+                  "image": {
+                    "src": "assets/portraits/pan_es_franco.jpg",
+                    "legende": "Francisco Franco, portrait officiel, auteur et date inconnus",
+                    "auteur": "Auteur inconnu",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:RETRATO_DEL_GRAL._FRANCISCO_FRANCO_BAHAMONDE_(adjusted_levels).jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_miro",
+                  "axe": "Beaux-arts",
+                  "date": 1893,
+                  "titre": "Naissance de Joan Miró",
+                  "description": "Joan Miró (1893-1983) est un peintre, sculpteur et céramiste catalan, né à Barcelone. Proche des surréalistes à Paris dès 1920, il invente un monde de signes, d'étoiles, d'oiseaux et de figures enfantines aux couleurs franches, dans La Ferme (1921-1922), les Constellations (1940-1941) et ses grandes céramiques murales. Hostile à Franco, il fait à sa ville la Fondation Joan Miró, inaugurée à Barcelone en 1975, et meurt à Palma de Majorque en décembre 1983.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Joan_Mir%C3%B3",
+                  "classement": "Miró, Joan",
+                  "image": {
+                    "src": "assets/portraits/pan_es_miro.jpg",
+                    "legende": "Joan Miró, photographie de Carl Van Vechten, Barcelone, 13 juin 1935",
+                    "auteur": "Carl Van Vechten",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Portrait_of_Joan_Miro,_Barcelona_1935_June_13.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_segovia",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1893,
+                  "titre": "Naissance d'Andrés Segovia",
+                  "description": "Andrés Segovia (1893-1987) est un guitariste, né à Linares, en Andalousie, autodidacte. Il impose la guitare classique dans les salles de concert, en transcrivant des œuvres de Bach, d'Albéniz ou de Granados, en commandant des pièces à Castelnuovo-Tedesco, à Villa-Lobos ou à Rodrigo, et en formant de grands guitaristes du XXe siècle. Installé en Uruguay puis aux États-Unis, il donne des concerts jusqu'à plus de quatre-vingt-dix ans et meurt à Madrid en juin 1987.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Andr%C3%A9s_Segovia",
+                  "classement": "Segovia, Andrés",
+                  "image": {
+                    "src": "assets/portraits/pan_es_segovia.jpg",
+                    "legende": "Andrés Segovia, photographie d'Erling Mandelmann, 1963",
+                    "auteur": "Erling Mandelmann",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Andr%C3%A9s_Segovia_(1963)_by_Erling_Mandelmann.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_cierva",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1895,
+                  "titre": "Naissance de Juan de la Cierva",
+                  "description": "Juan de la Cierva (1895-1936) est un ingénieur aéronautique, né à Murcie, fils d'un ministre d'Alphonse XIII. Il invente l'autogire, dont le rotor non motorisé tourne par la seule force du vent relatif, et son C.4 effectue en janvier 1923 le premier vol contrôlé d'un aéronef à voilure tournante. Installé en Angleterre, il fonde la Cierva Autogiro Company, dont les brevets inspirent l'hélicoptère, avait aidé à affréter l'avion qui mena Franco au Maroc en juillet 1936, et meurt à Croydon en décembre 1936, dans l'accident d'un avion de ligne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Juan_de_la_Cierva_y_Codorn%C3%ADu",
+                  "classement": "Cierva, Juan de la",
+                  "image": {
+                    "src": "assets/portraits/pan_es_cierva.jpg",
+                    "legende": "Juan de la Cierva sur l'aérodrome de Lasarte, 1930 (photographie de Pascual Marín)",
+                    "auteur": "Pascual Marín",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Juan_de_la_Cierva,_aer%C3%B3dromo_de_Lasarte,_1930.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_ibarruri",
+                  "axe": "Guerres et résistances",
+                  "date": 1895,
+                  "titre": "Naissance de Dolores Ibárruri",
+                  "description": "Dolores Ibárruri (1895-1989) est une dirigeante communiste, dite la Pasionaria, née à Gallarta, en Biscaye, dans une famille de mineurs. Députée en 1936, elle devient pendant la guerre civile la voix de la République, avec son « ¡No pasarán! » lancé à la radio en juillet 1936. Exilée à Moscou après la défaite de 1939, dont elle soutient longtemps la ligne stalinienne, elle ne rentre en Espagne qu'en 1977, après la légalisation du Parti communiste, est élue députée et meurt à Madrid en novembre 1989.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Dolores_Ib%C3%A1rruri",
+                  "classement": "Ibárruri, Dolores",
+                  "biographie": "bio_ibarruri",
+                  "image": {
+                    "src": "assets/portraits/pan_es_ibarruri.jpg",
+                    "legende": "Dolores Ibárruri à la fête du Parti communiste, Casa de Campo, Madrid, 1er octobre 1978 (photographie de Nemo)",
+                    "auteur": "Nemo",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Dolores002.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_durruti",
+                  "axe": "Guerres et résistances",
+                  "date": 1896,
+                  "titre": "Naissance de Buenaventura Durruti",
+                  "description": "Buenaventura Durruti (1896-1936) est un militant anarchiste, né à León, mécanicien et syndicaliste de la CNT. Dans les années 1920, il mène des attaques de banques et des actions armées pour financer le mouvement, au point d'être expulsé de plusieurs pays, puis forme à Barcelone, en juillet 1936, une colonne de miliciens qui part pour le front d'Aragon. Il est tué à Madrid en novembre 1936, d'une balle dont l'origine reste discutée, et sa mort donne lieu à des obsèques massives à Barcelone.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Buenaventura_Durruti",
+                  "classement": "Durruti, Buenaventura",
+                  "image": {
+                    "src": "assets/portraits/pan_es_durruti.jpg",
+                    "legende": "Buenaventura Durruti, photographie de 1936 (Archives nationales numériques polonaises)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jose_Buenaventura_Durruti_Dumange_1936.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_lorca",
+                  "axe": "Littérature et pensée",
+                  "date": 1898,
+                  "titre": "Naissance de Federico García Lorca",
+                  "description": "Federico García Lorca (1898-1936) est un poète et dramaturge, né à Fuente Vaqueros, près de Grenade. Membre de la génération de 27, il publie le Romancero gitan (1928) et Poète à New York, écrit les tragédies Noces de sang, Yerma et La Maison de Bernarda Alba, et dirige la compagnie de théâtre universitaire La Barraca. Arrêté par des phalangistes à Grenade en août 1936, quelques semaines après le début de la guerre civile, il est fusillé près de Víznar, et son corps n'a jamais été retrouvé.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Federico_Garc%C3%ADa_Lorca",
+                  "classement": "García Lorca, Federico",
+                  "image": {
+                    "src": "assets/portraits/pan_es_lorca.jpg",
+                    "legende": "Federico García Lorca, photographie prise à la Huerta de San Vicente, Grenade, 1932",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Federico_Garc%C3%ADa_Lorca._Huerta_de_San_Vicente,_Granada.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_bunuel",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1900,
+                  "titre": "Naissance de Luis Buñuel",
+                  "description": "Luis Buñuel (1900-1983) est un cinéaste, né à Calanda, en Aragon. Compagnon de Dalí et des surréalistes, il réalise Un chien andalou (1929) et L'Âge d'or, puis, en exil au Mexique, Los Olvidados (1950), Viridiana (1961), interdit par Franco, Belle de jour et Le Charme discret de la bourgeoisie, oscar du meilleur film étranger en 1973. Sa liberté de ton, son anticléricalisme et son humour noir en font un cinéaste unique ; il meurt à Mexico en juillet 1983.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Luis_Bu%C3%B1uel",
+                  "classement": "Buñuel, Luis",
+                  "image": {
+                    "src": "assets/portraits/pan_es_bunuel.jpg",
+                    "legende": "Luis Buñuel, photographie de 1968",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Luis_Bu%C3%B1uel.JPG"
+                  }
+                },
+                {
+                  "id": "pan_es_rodrigo",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1901,
+                  "titre": "Naissance de Joaquín Rodrigo",
+                  "description": "Joaquín Rodrigo (1901-1999) est un compositeur, né à Sagonte, aveugle depuis l'âge de trois ans. Il compose le Concerto d'Aranjuez pour guitare et orchestre, créé à Barcelone en 1940, dont l'adagio est l'une des musiques espagnoles les plus jouées au monde, ainsi que la Fantaisie pour un gentilhomme. Professeur à Madrid, marquis de los Jardines de Aranjuez en 1991, il meurt à Madrid en juillet 1999.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Joaqu%C3%ADn_Rodrigo",
+                  "classement": "Rodrigo, Joaquín",
+                  "image": {
+                    "src": "assets/portraits/pan_es_rodrigo.jpg",
+                    "legende": "Joaquín Rodrigo, buste sur un monument de Rosario, Argentine, avec une image de son épouse la pianiste Victoria Kamhi (photographie de 2008)",
+                    "auteur": "Mrexcel",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Joaquin_Rodrigo_en_Rosario.JPG",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_es_alberti",
+                  "axe": "Littérature et pensée",
+                  "date": 1902,
+                  "titre": "Naissance de Rafael Alberti",
+                  "description": "Rafael Alberti (1902-1999) est un poète et dramaturge, né à El Puerto de Santa María, d'abord peintre. Il reçoit le prix national de littérature en 1925 pour Marinero en tierra, et sa poésie va du néopopularisme andalou au surréalisme, puis à l'engagement politique. Communiste, exilé en Argentine puis à Rome après la défaite républicaine, il rentre en Espagne en 1977, est élu député, reçoit le prix Cervantès en 1983 et meurt à El Puerto de Santa María en 1999.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Rafael_Alberti",
+                  "classement": "Alberti, Rafael",
+                  "image": {
+                    "src": "assets/portraits/pan_es_alberti.jpg",
+                    "legende": "Rafael Alberti, photographie publiée en novembre 1968",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:RafaelAlberti01.JPG"
+                  }
+                },
+                {
+                  "id": "pan_es_dali",
+                  "axe": "Beaux-arts",
+                  "date": 1904,
+                  "titre": "Naissance de Salvador Dalí",
+                  "description": "Salvador Dalí (1904-1989) est un peintre, né à Figueres, en Catalogne. Figure majeure du surréalisme, il donne forme à ses rêves avec une précision de miniaturiste, comme dans La Persistance de la mémoire (1931), et se met en scène à coups de moustache et de provocations ; il écrit, dessine et travaille aussi avec Buñuel et Hitchcock. Exclu du groupe surréaliste, accusé de complaisance envers Franco et de commerce de son image, il fonde à Figueres son théâtre-musée en 1974 et y meurt en janvier 1989.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Salvador_Dal%C3%AD",
+                  "classement": "Dalí, Salvador",
+                  "image": {
+                    "src": "assets/portraits/pan_es_dali.jpg",
+                    "legende": "Salvador Dalí, photographie de Carl Van Vechten, 29 novembre 1939",
+                    "auteur": "Carl Van Vechten",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Salvador_Dal%C3%AD_1939.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_zambrano",
+                  "axe": "Littérature et pensée",
+                  "date": 1904,
+                  "titre": "Naissance de María Zambrano",
+                  "description": "María Zambrano (1904-1991) est une philosophe, née à Vélez-Málaga, élève d'Ortega y Gasset. Exilée en 1939 à Cuba, au Mexique, à Rome, en France puis en Suisse, elle élabore une « raison poétique » qui unit pensée et poésie, dans L'Homme et le Divin, Philosophie et Poésie et Claros del bosque. Rentrée en Espagne en 1984, elle reçoit en 1988 le prix Cervantès, premier décerné à une femme, et meurt à Madrid en 1991.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mar%C3%ADa_Zambrano",
+                  "classement": "Zambrano, María",
+                  "image": {
+                    "src": "assets/portraits/pan_es_zambrano.jpg",
+                    "legende": "María Zambrano, photographie vers 1930 (Fundación María Zambrano)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mar%C3%ADa-Zambrano-1-e1602071174321.png"
+                  }
+                },
+                {
+                  "id": "pan_es_ochoa",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1905,
+                  "titre": "Naissance de Severo Ochoa",
+                  "description": "Severo Ochoa (1905-1993) est un biochimiste, né à Luarca, dans les Asturies. Formé à Madrid, puis en Allemagne et en Angleterre, il quitte l'Espagne en 1936 et s'installe aux États-Unis, où il découvre en 1955 une enzyme qui permet de synthétiser de l'ARN en éprouvette. Prix Nobel de médecine en 1959 avec Arthur Kornberg, naturalisé américain, il revient à Madrid en 1985 et y meurt en novembre 1993.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Severo_Ochoa",
+                  "classement": "Ochoa, Severo",
+                  "image": {
+                    "src": "assets/portraits/pan_es_ochoa.jpg",
+                    "legende": "Severo Ochoa, photographie d'Irwin Gooen (université de New York), 29 septembre 1958",
+                    "auteur": "Irwin Gooen (université de New York)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Severo_Ochoa_1958.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_rodoreda",
+                  "axe": "Littérature et pensée",
+                  "date": 1908,
+                  "titre": "Naissance de Mercè Rodoreda",
+                  "description": "Mercè Rodoreda (1908-1983) est une romancière catalane, née à Barcelone. Exilée en 1939 en France puis à Genève, elle publie en 1962 La Place du Diamant, histoire d'une femme du peuple pendant la guerre civile, qui devient le roman catalan le plus traduit au monde ; suivent La Rue des Camélias et Le Miroir brisé. Revenue en Catalogne à la fin de sa vie, elle meurt à Gérone en 1983.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Merc%C3%A8_Rodoreda",
+                  "classement": "Rodoreda, Mercè",
+                  "image": {
+                    "src": "assets/portraits/pan_es_rodoreda.jpg",
+                    "legende": "Mercè Rodoreda, photographie de 1997 d'après un portrait de la famille de l'auteur de l'image",
+                    "auteur": "Vilallonga",
+                    "licence": "CC BY-SA 2.5",
+                    "source": "https://commons.wikimedia.org/wiki/File:Rodoreda.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_hernandez",
+                  "axe": "Littérature et pensée",
+                  "date": 1910,
+                  "titre": "Naissance de Miguel Hernández",
+                  "description": "Miguel Hernández (1910-1942) est un poète, né à Orihuela, ancien chevrier et autodidacte. Auteur d'El rayo que no cesa et des Berceuses de l'oignon, il s'engage dans l'armée républicaine, écrit en vers au front pour les soldats, puis est condamné à mort après la victoire de Franco, peine commuée en trente ans de prison. Malade de la tuberculose, il meurt en mars 1942 à la prison d'Alicante, à 31 ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Miguel_Hern%C3%A1ndez",
+                  "classement": "Hernández, Miguel",
+                  "image": {
+                    "src": "assets/portraits/pan_es_hernandez.jpg",
+                    "legende": "Miguel Hernández en prison, photographie de 1939 (UNED)",
+                    "auteur": "UNED (Universidad Nacional de Educación a Distancia)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Miguel_hernandez.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_cela",
+                  "axe": "Littérature et pensée",
+                  "date": 1916,
+                  "titre": "Naissance de Camilo José Cela",
+                  "description": "Camilo José Cela (1916-2002) est un écrivain, né à Iria Flavia, en Galice. Son roman La Famille de Pascal Duarte (1942) inaugure le « tremendismo », goût de la violence brute, et La Ruche (1951), publiée d'abord à Buenos Aires à cause de la censure, peint le Madrid de l'après-guerre. Prix Nobel de littérature en 1989, il a aussi été censeur sous Franco, ce qui lui a été reproché, et il meurt à Madrid en 2002.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Camilo_Jos%C3%A9_Cela",
+                  "classement": "Cela, Camilo José",
+                  "image": {
+                    "src": "assets/portraits/pan_es_cela.jpg",
+                    "legende": "Camilo José Cela, portrait de 1996 (photographie de Ricardo Asensio)",
+                    "auteur": "Ricardo Asensio",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Camilo_Jos%C3%A9_Cela_Madrid_1996.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_delibes",
+                  "axe": "Littérature et pensée",
+                  "date": 1920,
+                  "titre": "Naissance de Miguel Delibes",
+                  "description": "Miguel Delibes (1920-2010) est un romancier et journaliste, né à Valladolid, professeur de droit commercial et directeur du journal El Norte de Castilla. Ses romans, comme Le Chemin (1950), Les Rats, Cinq heures avec Mario ou La Feuille rouge, décrivent avec sensibilité la vie des campagnes castillanes, la solitude et la violence de l'Espagne franquiste, malgré la censure. Prix Cervantès en 1993, il meurt à Valladolid en mars 2010.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Miguel_Delibes",
+                  "classement": "Delibes, Miguel",
+                  "image": {
+                    "src": "assets/portraits/pan_es_delibes.jpg",
+                    "legende": "Miguel Delibes, photographie de 1998 (Fondation Miguel Delibes)",
+                    "auteur": "Fondation Miguel Delibes",
+                    "licence": "CC BY-SA 3.0 ES",
+                    "source": "https://commons.wikimedia.org/wiki/File:Miguel_Delibes_(1998)_-_1.tif"
+                  }
+                },
+                {
+                  "id": "pan_es_berlanga",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1921,
+                  "titre": "Naissance de Luis García Berlanga",
+                  "description": "Luis García Berlanga (1921-2010) est un cinéaste, né à Valence. Auteur de Bienvenue, Mister Marshall ! (1953), satire de l'Espagne rurale qui attend l'aide américaine, du Bourreau (1963), comédie noire contre la peine de mort, et de la trilogie de La Escopeta nacional, il fait de la comédie un moyen de critiquer la dictature sans être censuré. Il tourne son dernier film, Paris-Tombouctou, en 1999 et meurt à Madrid en novembre 2010.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Luis_Garc%C3%ADa_Berlanga",
+                  "classement": "García Berlanga, Luis",
+                  "image": {
+                    "src": "assets/portraits/pan_es_berlanga.jpg",
+                    "legende": "Luis García Berlanga, statue de Sos del Rey Católico, Saragosse (photographie de 2014)",
+                    "auteur": "Zarateman",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Sos_del_Rey_Cat%C3%B3lico_25.JPG"
+                  }
+                },
+                {
+                  "id": "pan_es_angeles",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1923,
+                  "titre": "Naissance de Victoria de los Ángeles",
+                  "description": "Victoria de los Ángeles (1923-2005) est une soprano, née à Barcelone. Après ses débuts au Liceu en 1945, elle triomphe à Covent Garden en 1950 et au Metropolitan Opera de New York en 1951, dans Mimì, Madame Butterfly, Manon, Marguerite de Faust, et surtout dans le lied et la mélodie, avec un timbre d'une grande pureté. Elle fait aussi connaître les chansons espagnoles et catalanes dans le monde entier et meurt à Barcelone en janvier 2005.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Victoria_de_los_%C3%81ngeles",
+                  "classement": "Ángeles, Victoria de los",
+                  "image": {
+                    "src": "assets/portraits/pan_es_angeles.jpg",
+                    "legende": "Victoria de los Ángeles, photographie d'Allan Warren, 1975",
+                    "auteur": "Herr uebermann",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Victoria_de_los_Angeles_Allan_warren.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_tapies",
+                  "axe": "Beaux-arts",
+                  "date": 1923,
+                  "titre": "Naissance d'Antoni Tàpies",
+                  "description": "Antoni Tàpies (1923-2012) est un peintre et sculpteur catalan, né à Barcelone. Cofondateur du groupe Dau al Set en 1948, il devient l'un des grands noms de l'art informel avec des tableaux de matière, mêlant sable, poussière de marbre, cordes et objets, où l'on lit des croix, des lettres et des signes. Opposant au franquisme, il crée à Barcelone la fondation qui porte son nom, en 1984, et y meurt en février 2012.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Antoni_T%C3%A0pies",
+                  "classement": "Tàpies, Antoni",
+                  "image": {
+                    "src": "assets/portraits/pan_es_tapies.jpg",
+                    "legende": "Antoni Tàpies dans son atelier de Barcelone, 2002 (photographie de Teresa Tàpies Domènech)",
+                    "auteur": "Teresa Tàpies Domènech",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Antoni_T%C3%A0pies_(1).jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_chillida",
+                  "axe": "Beaux-arts",
+                  "date": 1924,
+                  "titre": "Naissance d'Eduardo Chillida",
+                  "description": "Eduardo Chillida (1924-2002) est un sculpteur basque, né à Saint-Sébastien, ancien gardien de but de la Real Sociedad. Il travaille le fer, l'acier, le granit et l'albâtre avec une grande économie de formes, dans des séries comme Le Peigne du vent (1977), au pied du mont Igueldo, face à la mer, et L'Éloge de l'horizon, à Gijón. Il fonde le musée Chillida-Leku, près de Hernani, et meurt à Saint-Sébastien en août 2002.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Eduardo_Chillida",
+                  "classement": "Chillida, Eduardo",
+                  "image": {
+                    "src": "assets/portraits/pan_es_chillida.jpg",
+                    "legende": "Eduardo Chillida, photographie du fonds Marín (Paco Marí)",
+                    "auteur": "Paco Marí (fonds Marín)",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Eduardo_Txillida.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_martingaite",
+                  "axe": "Littérature et pensée",
+                  "date": 1925,
+                  "titre": "Naissance de Carmen Martín Gaite",
+                  "description": "Carmen Martín Gaite (1925-2000) est une romancière et essayiste, née à Salamanque. Prix Nadal en 1957 pour Entre visillos, elle explore la condition des femmes sous le franquisme, puis la mémoire et le dialogue dans La Chambre du fond (1978), qui lui vaut le prix national de littérature. Historienne des mœurs du XVIIIe siècle, prix national des lettres espagnoles en 1994, elle meurt à Madrid en juillet 2000.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Carmen_Mart%C3%ADn_Gaite",
+                  "classement": "Martín Gaite, Carmen",
+                  "image": {
+                    "src": "assets/portraits/pan_es_martingaite.jpg",
+                    "legende": "Carmen Martín Gaite, dessin (image publiée en 2014)",
+                    "auteur": "Alexandra Pociello",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Carmen_Mart%C3%ADn_Gaite.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_suarez",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1932,
+                  "titre": "Naissance d'Adolfo Suárez",
+                  "description": "Adolfo Suárez (1932-2014) est un homme d'État espagnol, né à Cebreros, ancien dirigeant du Mouvement national franquiste. Nommé chef du gouvernement par le roi Juan Carlos en juillet 1976, il fait voter la loi pour la réforme politique, légalise le Parti communiste en avril 1977, gagne les premières élections libres en juin 1977 et mène à bien la Constitution de 1978. Il démissionne en janvier 1981, quelques semaines avant la tentative de coup d'État du 23 février, et meurt à Madrid en 2014.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Adolfo_Su%C3%A1rez",
+                  "classement": "Suárez, Adolfo",
+                  "image": {
+                    "src": "assets/portraits/pan_es_suarez.jpg",
+                    "legende": "Adolfo Suárez, photographie du ministère de la Présidence du gouvernement espagnol, 30 mars 1979",
+                    "auteur": "Ministerio de la Presidencia (gouvernement d'Espagne)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Adolfo_Su%C3%A1rez_1979c_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_caballe",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1933,
+                  "titre": "Naissance de Montserrat Caballé",
+                  "description": "Montserrat Caballé (1933-2018) est une soprano, née à Barcelone dans une famille modeste. Remarquée à Bâle, elle triomphe en 1965 à Carnegie Hall dans Lucrezia Borgia, en remplaçant au pied levé Marilyn Horne, puis chante Verdi, Donizetti et Strauss sur les grandes scènes du monde, avec un art du pianissimo inégalé. Son duo Barcelona avec Freddie Mercury, devenu l'un des chants des Jeux olympiques de 1992, la fait connaître d'un autre public, et elle meurt à Barcelone en octobre 2018.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Montserrat_Caball%C3%A9",
+                  "classement": "Caballé, Montserrat",
+                  "image": {
+                    "src": "assets/portraits/pan_es_caballe.jpg",
+                    "legende": "Montserrat Caballé, photographie promotionnelle, vers 1969",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Montserrat_Caball%C3%A9_c._1969_(1).jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_salas",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1938,
+                  "titre": "Naissance de Margarita Salas",
+                  "description": "Margarita Salas (1938-2019) est une biochimiste, née à Canero, dans les Asturies. Elle travaille avec Severo Ochoa aux États-Unis, puis à Madrid, où elle étudie le virus bactériophage phi29, dont la polymérase copie l'ADN avec fidélité et sans amorce, ce qui permet d'amplifier de très petites quantités d'ADN en médecine légale ou en archéologie. Élue à l'Académie royale espagnole en 2003, elle meurt à Madrid en novembre 2019.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Margarita_Salas",
+                  "classement": "Salas, Margarita",
+                  "image": {
+                    "src": "assets/portraits/pan_es_salas.jpg",
+                    "legende": "Margarita Salas, photographie de juin 2019 (LaMèreVeille)",
+                    "auteur": "LaMèreVeille",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Margarita_Salas_Falgueras_062019.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_lucia",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1947,
+                  "titre": "Naissance de Paco de Lucía",
+                  "description": "Paco de Lucía (1947-2014) est un guitariste et compositeur, de son vrai nom Francisco Sánchez Gómez, né à Algésiras, en Andalousie. Il renouvelle le flamenco en y apportant la rumba, le jazz, le cajón péruvien et d'autres sonorités, dans Fuente y caudal (1973), Entre dos aguas, des concerts avec John McLaughlin et Al Di Meola, et son accompagnement du chanteur Camarón de la Isla. Prix Prince des Asturies en 2004, il meurt à Playa del Carmen, au Mexique, en février 2014.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Paco_de_Luc%C3%ADa",
+                  "classement": "Paco de Lucía",
+                  "image": {
+                    "src": "assets/portraits/pan_es_lucia.jpg",
+                    "legende": "Paco de Lucía au festival PLAI de Timișoara, septembre 2007 (photographie de Cornel Putan)",
+                    "auteur": "Cornel Putan",
+                    "licence": "CC BY 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Paco_de_Luc%C3%ADa_4.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_nieto",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1947,
+                  "titre": "Naissance d'Ángel Nieto",
+                  "description": "Ángel Nieto (1947-2017) est un pilote de moto, né à Zamora. Il remporte treize titres de champion du monde de vitesse, en 50 cm3 et en 125 cm3, entre 1969 et 1984, ce qui le place alors juste derrière Giacomo Agostini, et fait de la moto un sport populaire en Espagne. Surnommé « le 12+1 », il meurt à Ibiza en août 2017, des suites d'un accident de quad.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/%C3%81ngel_Nieto",
+                  "classement": "Nieto, Ángel",
+                  "image": {
+                    "src": "assets/portraits/pan_es_nieto.jpg",
+                    "legende": "Ángel Nieto sur sa Derbi 50 cm3 à Assen, 24 juin 1972 (photographie de Hans Peters)",
+                    "auteur": "Hans Peters (Anefo)",
+                    "licence": "CC BY-SA 3.0 NL",
+                    "source": "https://commons.wikimedia.org/wiki/File:%C3%81ngel_Nieto.jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_camaron",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1950,
+                  "titre": "Naissance de Camarón de la Isla",
+                  "description": "Camarón de la Isla (1950-1992) est un chanteur de flamenco, de son vrai nom José Monge Cruz, né à San Fernando, près de Cadix, dans une famille gitane. Avec la guitare de Paco de Lucía, il enregistre dix albums de 1969 à 1977, puis renouvelle le cante avec La leyenda del tiempo (1979), qui mêle flamenco, rock et sonorités arabes, et s'impose comme la voix la plus influente du genre. Rongé par la drogue puis par la maladie, il meurt à Badalone en juillet 1992, d'un cancer du poumon, à 41 ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Camar%C3%B3n_de_la_Isla",
+                  "classement": "Camarón de la Isla",
+                  "image": {
+                    "src": "assets/portraits/pan_es_camaron.jpg",
+                    "legende": "Camarón de la Isla, photographie de Pérez de León, 1969 (détail)",
+                    "auteur": "Pérez de León",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Camar%C3%B3n_De_La_Isla_(1969)_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_es_ballesteros",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1957,
+                  "titre": "Naissance de Severiano Ballesteros",
+                  "description": "Severiano Ballesteros (1957-2011) est un golfeur, né à Pedreña, en Cantabrie, dans une famille modeste, où il apprend à jouer avec un fer 3. Vainqueur de cinq tournois du Grand Chelem, dont trois British Open (1979, 1984, 1988) et deux Masters (1980, 1983), il fait de l'Europe un rival des Américains en Coupe Ryder, comme joueur puis comme capitaine, et incarne un golf d'audace et d'imagination. Atteint d'une tumeur au cerveau, il meurt à Pedreña en mai 2011.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Severiano_Ballesteros",
+                  "classement": "Ballesteros, Severiano",
+                  "image": {
+                    "src": "assets/portraits/pan_es_ballesteros.jpg",
+                    "legende": "Severiano Ballesteros au British Open, Royal Liverpool, 19 juillet 2006 (photographie de Peter from Liverpool)",
+                    "auteur": "Peter from Liverpool",
+                    "licence": "CC BY-SA 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Seve_Ballesteros_2006-07-19_(cropped).jpg"
+                  }
+                }
+              ],
+              "axeOrder": [
+                "Chefs d'État et dirigeants",
+                "Guerres et résistances",
+                "Littérature et pensée",
+                "Beaux-arts",
+                "Musique, spectacle et sport",
+                "Sciences, techniques et innovation"
+              ],
+              "essentiel": [
+                "pan_es_seneque",
+                "pan_es_trajan",
+                "pan_es_abderraman3",
+                "pan_es_cid",
+                "pan_es_averroes",
+                "pan_es_maimonide",
+                "pan_es_isabelle1",
+                "pan_es_ferdinand2",
+                "pan_es_pizarro",
+                "pan_es_lascasas",
+                "pan_es_cortes",
+                "pan_es_elcano",
+                "pan_es_loyola",
+                "pan_es_charlesquint",
+                "pan_es_therese",
+                "pan_es_philippe2",
+                "pan_es_greco",
+                "pan_es_cervantes",
+                "pan_es_lope",
+                "pan_es_velazquez",
+                "pan_es_calderon",
+                "pan_es_goya",
+                "pan_es_galdos",
+                "pan_es_cajal",
+                "pan_es_gaudi",
+                "pan_es_unamuno",
+                "pan_es_machado",
+                "pan_es_casals",
+                "pan_es_falla",
+                "pan_es_picasso",
+                "pan_es_franco",
+                "pan_es_ibarruri",
+                "pan_es_lorca",
+                "pan_es_bunuel",
+                "pan_es_dali",
+                "pan_es_ochoa"
               ]
             },
             {

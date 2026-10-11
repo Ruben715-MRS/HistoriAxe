@@ -63,7 +63,7 @@ pantheon.themes.forEach(theme => theme.events.forEach(evt => {
 const byTitle = titre => entries.find(e => e.evt.titre === titre);
 
 test('chaque figure a un nom de classement qui commence par une lettre', () => {
-    assert.equal(entries.length, 838);
+    assert.equal(entries.length, 970);
     entries.forEach(e => {
         assert.ok(e.evt.classement, `${e.evt.id} : pas de nom de classement`);
         assert.notEqual(galleryInitial(e.classement), '#', `${e.evt.id} : « ${e.classement} » ne commence pas par une lettre`);

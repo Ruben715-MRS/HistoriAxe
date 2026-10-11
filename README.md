@@ -433,8 +433,9 @@ rendraient la réponse indécidable au visage.
 une inscription peinte (« IOAN PICVS e MIRANDVLA »), un badge de combinaison, une légende
 gravée. `portrait.nomVisible` (dans `scripts/pantheon/*.json`, reporté sur `image.nomVisible`)
 les écarte du mode et du portrait du jour ; la galerie les garde, puisqu'elle montre les
-visages avec leurs noms. Il y en a **19** aujourd'hui, repérés par reconnaissance de texte sur
-les 838 images puis vérifiés à l'œil (le texte lu à 320 × 400 est celui que le joueur peut
+visages avec leurs noms. Il y en a **26** aujourd'hui : 19 repérés par reconnaissance de texte sur
+les 838 premières images, 7 pour l'Espagne (Cortés, Las Casas, Vives, Cervantès, Quevedo, le Gran
+Capitán et le socle de Rodrigo), repérés à l'œil faute d'outil de reconnaissance ; tous vérifiés à l'œil (le texte lu à 320 × 400 est celui que le joueur peut
 lire aussi) : « Karolus magnus imperator » sur le Charlemagne de Dürer, « VERCINGETORIX » sur
 la monnaie, « Doctor William Harvey », « LE SEIGNEUR DE MONTAIGNE »… Un nouveau portrait se
 contrôle de la même façon, et la liste n'est pas une garantie : c'est un drapeau d'une ligne à poser
@@ -599,7 +600,7 @@ ne posent pas la même question :
 | | Un thème, c'est | Une date, c'est | On le joue par |
 |---|---|---|---|
 | **Biographies** | une vie (360 thèmes, en 12 domaines) | une étape de cette vie | étape de la vie |
-| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, l'Égypte, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, l'Allemagne, l'Autriche et la Suisse) | la naissance d'un personnage | domaine |
+| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, l'Allemagne, l'Autriche et la Suisse) | la naissance d'un personnage | domaine |
 
 Le déplacement ne coûte aucune migration : les 360 thèmes gardent leurs
 identifiants, et rien de ce que le joueur a sauvegardé (favoris, révision,
@@ -637,7 +638,7 @@ siècle de naissance.
 - **Recherche et filtres.** Une recherche par nom (sans accent, chaque mot dans
   n'importe quel ordre : « hugo victor » trouve Victor Hugo), et deux listes — pays
   et domaine — qui annoncent leur effectif (« France (68) »). « Tout effacer » les
-  remet à zéro, et le décompte devient « 12 portraits sur 838 ».
+  remet à zéro, et le décompte devient « 12 portraits sur 970 ».
 - **La fiche.** Un visage ouvre la fiche de sa naissance (`openModal`), d'où l'on
   passe au portrait voisin **dans l'ordre affiché** — boutons, flèches du clavier ou
   glissement franchement horizontal, arrêt aux extrémités — et qui porte deux accès
@@ -678,7 +679,7 @@ Les portraits peuvent se **débloquer** : en noir et blanc tant que le personnag
 été rencontré en jeu, puis en couleur. « Rencontré » veut dire qu'une fiche existe pour son
 événement dans le suivi de révision (`srsLoad`) — quel que soit le mode, réponse juste ou
 ratée, la même définition que pour les événements « rencontrés » du Défi de simultanéité.
-Lire une fiche dans la galerie ne débloque rien. Un compteur « 30 / 838 portraits
+Lire une fiche dans la galerie ne débloque rien. Un compteur « 30 / 970 portraits
 débloqués » et sa barre ouvrent la galerie, et le bouton de « Personnages illustres »
 annonce l'avancement.
 
@@ -705,7 +706,7 @@ des pays ont une histoire commune, un thème **de région** plutôt qu'un par pa
 |---|---|---|
 | Identifiant | `pan_<iso2>` : deux lettres (`pan_fr`) | `pan_<code>` : trois lettres ou plus (`pan_hispam`) — jamais de collision avec un code de pays |
 | `pays` sur chaque événement | interdit (le thème le dit déjà) | obligatoire : code ISO à deux lettres (`"pays": "VE"`) |
-| Exemples | France, Égypte, États-Unis, Italie, Royaume-Uni ; plus tard Brésil… | Amérique hispanique, Maghreb, Allemagne-Autriche-Suisse ; plus tard Machrek |
+| Exemples | France, Égypte, Espagne, États-Unis, Italie, Royaume-Uni ; plus tard Brésil… | Amérique hispanique, Maghreb, Allemagne-Autriche-Suisse ; plus tard Machrek |
 
 Ce que le champ `pays` d'un événement change :
 
@@ -755,8 +756,8 @@ banquiers, marchands), n'existe que pour la France, les États-Unis, le Royaume-
 Allemagne-Autriche-Suisse, où les entrepreneurs sont assez nombreux pour former un axe
 (sept, neuf, dix et huit figures).
 **Règle : un axe de plus n'est créé que s'il a au moins six figures et une histoire
-propre** ; l'Égypte, l'Italie, le Maghreb et l'Amérique hispanique n'en ont pas, faute de
-candidats évidents. Le sport n'a pas d'axe — une poignée de figures par pays — mais il est
+propre** ; l'Égypte, l'Espagne, l'Italie, le Maghreb et l'Amérique hispanique n'en ont pas, faute de
+candidats évidents (pour l'Espagne, Güell, Comillas, Salamanca et March ne font pas six). Le sport n'a pas d'axe — une poignée de figures par pays — mais il est
 accueilli dans « Musique, spectacle et sport », pour les sportifs de portée historique
 (voir « Les sportifs : une exception, pas une règle »).
 
@@ -792,14 +793,14 @@ Les règles de rédaction, vérifiées par script et par test (voir plus bas) :
   de la fiche) doivent porter la *même* date. Les dates des soixante et une premières ont été
   comparées une à une à la phrase d'ouverture de l'article Wikipédia.
 - **⭐ Incontournables** (`essentiel`) : 22 sur 68 pour la France, 39 sur 129 pour les États-Unis,
-  56 sur 149 pour l'Allemagne, l'Autriche et la Suisse, 51 sur 151 pour le Royaume-Uni.
+  56 sur 149 pour l'Allemagne, l'Autriche et la Suisse, 51 sur 151 pour le Royaume-Uni, 36 sur 132 pour l'Espagne.
 
 Quantités visées : 68 personnages pour la France, 52 pour l'Égypte, 129 pour les
 États-Unis (85 proposés, portés à 123 : « mieux vaut plus que moins », puis à 129 avec l'axe Économie et entreprise), 127 pour
 l'Italie (126 proposés, plus Enzo Ferrari), 80 à 100
 pour l'Amérique hispanique (dix-neuf pays, de 1 à 19 figures chacun), 58 pour le
 Maghreb (cinq pays, de 1 à 21), 149 pour l'Allemagne, l'Autriche et la Suisse (170 candidats,
-21 coupés ; trois pays, de 26 à 85 figures), 151 pour le Royaume-Uni (194 candidats, 4 ajoutés, 47 écartés),
+21 coupés ; trois pays, de 26 à 85 figures), 151 pour le Royaume-Uni (194 candidats, 4 ajoutés, 47 écartés), 132 pour l'Espagne (132 proposés, tous retenus),
 40 pour les grands pays, 30 pour les autres. À 6
 axes, 30 donne environ 5 par axe — le minimum pour qu'un axe joué seul reste un jeu.
 
@@ -1394,6 +1395,109 @@ Quinze images sont à relire, si l'on veut être plus strict :
 Wallace est la plus petite image (250 × 344 px, une gravure) ; Milton, déjà petit, est
 demandé à Commons en 330 px de large (`largeur`).
 
+### Un pays à part : l'Espagne
+
+`pan_es`, « Grandes figures d'Espagne » : **132 personnages**, de Trajan (53) à Margarita
+Salas (1938). Par axe : 44 Littérature et pensée, 20 Chefs d'État et dirigeants, 18
+Beaux-arts, 17 Musique, spectacle et sport, 17 Sciences, techniques et innovation, 16 Guerres
+et résistances ; 36 ⭐ et 11 biographies liées (Isabelle Ire de Castille, le Cid, Ibárruri,
+Averroès, Maïmonide, Ignace de Loyola, Cervantès, Ortega y Gasset, Gaudí, Balboa, Ramón y
+Cajal). La liste a été soumise puis validée sans changement : 132 figures proposées, 132
+retenues.
+
+Les choix qui ne vont pas de soi :
+
+- **Un pays, donc pas un bloc**, comme l'Italie et le Royaume-Uni : `pan_es`, aucun champ
+  `pays`, aucun pays dans la fiche, et « Pendant ce temps, ailleurs… » le compte comme
+  l'Espagne, au même titre que `thm_es`, l'« Histoire de l'Espagne » que la table de pays
+  (`assets/geo/theme-country-map.json`) range sous `ES`. Le thème se range par son nom de
+  rangement, « Espagne », entre l'Égypte et les États-Unis.
+- **Six axes, pas de septième.** Güell, Comillas, Salamanca et Juan March, seuls candidats
+  d'un axe « Économie et entreprise », ne font pas six ; l'axe n'a pas été créé (règle : au
+  moins six figures et une histoire propre).
+- **Les nations de la péninsule dedans** : Catalans (Jacques Ier, Companys, Casals, Gaudí,
+  Miró, Dalí, Tàpies, Rodoreda, Caballé), Basques (Loyola, Elcano, Urdaneta, Lezo, Chillida,
+  Unamuno, Baroja) et Galiciens (Rosalía de Castro, Pardo Bazán, Valle-Inclán, Cela), comme
+  les quatre nations du Royaume-Uni. Le Portugal est laissé à un futur panthéon : Magellan
+  et Viriathe, que les deux pays se disputent, n'y sont pas non plus.
+- **Hispanie romaine et al-Andalus dedans.** Trajan, Hadrien, Théodose, Sénèque et Martial
+  d'un côté ; Abd al-Rahman III, Almanzor, Averroès, Maïmonide, Ibn Arabi, Abulcasis et Ibn
+  Firnas de l'autre : la péninsule n'est pas devenue espagnole en 1492.
+- **Celui qui honore le plus.** Nés ailleurs, rangés ici : Charles Quint (Gand), Jacques Ier
+  (Montpellier), Don Juan d'Autriche (Ratisbonne) et le Greco (Candie). Hadrien, né à Italica
+  selon l'article français et à Rome selon d'autres sources, le dit dans sa fiche. Maïmonide,
+  Ibn Arabi et Servet ont quitté la péninsule ; Casals, Picasso, Buñuel, Zambrano ou Ochoa
+  ont vécu en exil. Colomb, né à Gênes, reste au panthéon de l'Italie (un personnage, un seul
+  thème).
+- **Des conquistadors et des dirigeants contestés**, dont la fiche dit ce qu'on leur reproche :
+  Cortés (massacres, esclavage, épidémies), Pizarro (l'exécution d'Atahualpa malgré la
+  rançon), Las Casas (une description jugée exagérée, une proposition d'esclaves africains qu'il
+  a regrettée), Philippe II et Cisneros (l'Inquisition, les conversions forcées de Grenade),
+  Isabelle et Ferdinand (l'expulsion des juifs en 1492), Franco (trente-six ans de dictature,
+  des dizaines de milliers de fusillés), Cánovas (le « turno » et le pouvoir des caciques),
+  Cela (censeur sous Franco), Belmonte (la corrida) et Cierva, qui avait aidé à affréter
+  l'avion de Franco. François Xavier a demandé l'Inquisition à Goa ; Dominique, dont l'ordre
+  l'a ensuite exercée, n'est pas jugé sur elle.
+- **Des saints et des religieux** : Isidore, Dominique, Loyola, François Xavier, Thérèse
+  d'Avila et Jean de la Croix, rangés en Littérature et pensée comme ceux de l'Italie et du
+  Royaume-Uni.
+- **Des dates incertaines, dites comme telles** : « vers » devant Pélage (vers 685), le Cid
+  (vers 1043), Pizarro (vers 1475), Sénèque (vers 4 av. J.-C.), Martial (vers 40), Isidore (vers
+  560), Dominique (vers 1170), Lulle (vers 1232), Nebrija (vers 1444), Rojas (vers 1470),
+  Berruguete (vers 1490), Garcilaso (vers 1501), Tirso (vers 1579), Victoria (vers 1548),
+  Abulcasis (vers 936), Cabeza de Vaca (vers 1488) et Servet (vers 1511). Quand les sources
+  divergent, la date retenue est la plus consensuelle : Ferdinand III en 1201 (Wikipédia en
+  français ; 1199 ailleurs), Elcano en 1486 (et non 1476), Don Juan d'Autriche en 1547 (1545 ou
+  1547), Almanzor en 938, Lulle mort en 1315 (1316 ailleurs), Riego en 1784 (1785 sur certaines
+  images), Vives en 1493 (1492 sur Commons).
+- **Pas de vivants**, comme ailleurs : Nadal, Gasol, Plácido Domingo, Calatrava, Amancio
+  Ortega, Juan Carlos Ier et Felipe González n'y sont pas ; leurs biographies, quand l'appli en
+  a une (Domingo, Nadal, Gasol, Calatrava, Ortega), ne sont donc liées à aucune fiche.
+- **Trois sportifs, validés avant que la règle ne se resserre** : Belmonte (la tauromachie, et
+  l'amitié des écrivains), Ballesteros (le golf européen) et Ángel Nieto (treize titres mondiaux
+  de vitesse moto). La liste espagnole a été soumise et validée avec eux ; la règle des sportifs
+  (« Les sportifs : une exception, pas une règle ») veut qu'un nom dépasse le sport et que les
+  records seuls ne suffisent pas. Belmonte la passe sans peine, Ballesteros plus difficilement, et
+  Nieto, dont le titre est surtout un record, serait le premier à en sortir si l'on veut
+  appliquer la règle strictement : il n'a pas encore de biographie dans l'appli.
+- **Les titres** : « Le Cid » et « Le Greco » donnent « Naissance du Cid » et « Naissance du
+  Greco », comme « du Tasse » en Italie.
+
+### Ce que les images disent en Espagne
+
+Cent deux portraits sont du domaine public, 2 sont CC0, 5 CC BY et 23 CC BY-SA, la
+licence lue sur la page Commons. Beaucoup sont posthumes ou imaginaires, et la légende le
+dit : Pélage (peint en 1855), Isidore (par Murillo, mille ans après), Averroès (fresque
+florentine du XIVe siècle), Dominique (Fra Angelico), Abulcasis (peinture d'Ernest Board, début du XXe siècle),
+Martial (un profil gravé qui n'est pas un portrait), Abd al-Rahman III, représenté par un
+dirham faute de portrait, Ibn Arabi et Ibn Firnas, qui n'ont qu'un dessin moderne. Garcilaso
+est un « portrait présumé » (chevalier d'Alcántara anonyme, vers 1550), et le Greco un
+« autoportrait présumé ».
+
+Onze images restent faibles, par manque de portrait libre convenable : le dirham d'Abd
+al-Rahman III et le dessin moderne d'Ibn Firnas, six statues (le Cid, Lulle dans sa niche,
+Agustina d'Aragon, Berlanga, Nebrija, Berruguete), deux bustes (Almanzor et Rodrigo) et une
+photographie de sport (Ballesteros, en plein swing). Sept sont recadrées
+sur la figure (`recadrage` : Ballesteros, le Cid, Lulle, Galdós, Agustina, Berlanga, Rodrigo).
+Wikimedia refusant à plusieurs reprises les miniatures de 500 px de trois fichiers
+(Companys, Berruguete et Peral), ceux-ci sont demandés à une autre largeur standard
+(`largeur` : 960 pour Companys, 330 pour Berruguete et Peral, d'où des images moins nettes).
+
+Dix-huit images sont à relire, si l'on veut être plus strict :
+
+- **Dix-sept photographies du XXe siècle à balise « Domaine public »**, dont la page de
+  Commons ne dit pas toujours pourquoi (auteur inconnu ou lointain, publication dans la
+  presse) : Suárez (photographie officielle du Consejo de Ministros de 1979, signée du
+  ministère de la Présidence), Companys, Durruti, Iglesias, Baroja, Jiménez, Ortega, Alberti,
+  Zambrano, Hernández, Lorca, Buñuel, Falla, Caballé, Camarón, Picasso (revue argentine,
+  1962) et Ochoa (université de New York, 1958). Même raisonnement que Matisse et Camus en
+  France.
+- **Une photographie à licence CC0 posée sans auteur** : Franco (portrait officiel).
+
+Les crédits d'auteur ont été remis au propre à la main : le script ne reprend pas l'auteur
+que Commons rend trop long ou trop vague (« Unknown author Unknown author », listes de noms
+alternatifs), ce qui laissait dix-huit portraits sans crédit.
+
 ### Un fichier source par panthéon, un script qui l'écrit dans `data/fr.json`
 
 `scripts/pantheon/<code>.json` (`fr`, `hispam`…) est **la seule source de
@@ -1464,7 +1568,8 @@ CC0 ; Lumière vers 1890). Répartition finale : France, 54 domaine public, 4 CC
 12 CC BY-SA ; Maghreb, 36 domaine public, 5 CC0, 3 CC BY, 14 CC BY-SA ; Égypte,
 34 domaine public, 5 CC0, 2 CC BY, 11 CC BY-SA ; États-Unis, 109 domaine public,
 3 CC0, 4 CC BY, 7 CC BY-SA ; Italie, 102 domaine public, 3 CC0, 7 CC BY, 15 CC BY-SA ;
-Royaume-Uni, 131 domaine public, 3 CC0, 3 CC BY, 14 CC BY-SA. En France, trois portraits du XXe siècle reposent sur un
+Royaume-Uni, 131 domaine public, 3 CC0, 3 CC BY, 14 CC BY-SA ; Espagne, 102 domaine public, 2 CC0, 5 CC BY,
+23 CC BY-SA. En France, trois portraits du XXe siècle reposent sur un
 raisonnement plus fin que « ancien », à relire si l'on veut être plus strict :
 
 - **Jean Moulin** (Harcourt, 1937) : œuvre collective, dont le délai français de
@@ -1735,9 +1840,10 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
 ### Ce qui n'est pas fait
 
 - **Les autres panthéons** : la France, l'Égypte, les États-Unis, l'Italie, le
-  Royaume-Uni, l'Amérique hispanique, le Maghreb et l'Allemagne-Autriche-Suisse sont écrits. Viennent ensuite le Machrek (sans l'Égypte,
+  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb et l'Allemagne-Autriche-Suisse sont écrits. Viennent ensuite le Machrek (sans l'Égypte,
   qui a le sien ; le sort d'Israël et des figures juives reste à trancher, l'idée
-  d'un thème juif à part ayant été abandonnée), le Brésil à part, puis les autres
+  d'un thème juif à part ayant été abandonnée), le Brésil à part, le Portugal (qui reprendra
+  Magellan et Viriathe, laissés de côté ici), puis les autres
   pays — chaque liste de personnages validée avant la rédaction.
 - **Des figures de l'Allemagne, de l'Autriche et de la Suisse à améliorer ou à rediscuter** :
   les vingt et un candidats écartés (voir « Ce que les images ont changé en Allemagne, en
