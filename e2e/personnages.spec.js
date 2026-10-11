@@ -90,12 +90,13 @@ test('Personnages illustres : deux sous-catégories, chacune avec sa note et son
     await expect(page.locator('#theme-screen-title')).toHaveText('Panthéons');
     await expect(page.locator('#theme-screen-note-text')).toContainText('né dans les frontières actuelles');
     // Panthéons de pays et de blocs se rangent par leur nom de source — « Allemagne, Autriche et Suisse »,
-    // « Amérique hispanique », « Égypte », « Espagne », « États-Unis », « France », « Italie », « Maghreb », « Royaume-Uni » — et non par
+    // « Amérique hispanique », « Égypte », « Espagne », « États-Unis », « France », « Italie », « Machrek et péninsule Arabique », « Maghreb », « Royaume-Uni » — et non par
     // « Grandes figures d'… » / « … de » / « … des » / « … du ».
     await expect(page.locator('#themes-container .data-card-title'))
         .toHaveText(["Grandes figures d'Allemagne, d'Autriche et de Suisse", "Grandes figures d'Amérique hispanique",
             "Grandes figures d'Égypte", "Grandes figures d'Espagne", 'Grandes figures des États-Unis',
-            'Grandes figures de France', "Grandes figures d'Italie", 'Grandes figures du Maghreb',
+            'Grandes figures de France', "Grandes figures d'Italie",
+            'Grandes figures du Machrek et de la péninsule Arabique', 'Grandes figures du Maghreb',
             'Grandes figures du Royaume-Uni']);
 });
 
@@ -287,6 +288,48 @@ test('le Maghreb : chacune de ses figures a son portrait et son pays, de l’Alg
 
     // Ibn Khaldun a aussi sa biographie (comme Hannibal et Ibn Battûta) : le bouton y mène.
     await page.locator('#timeline .entry', { hasText: "Naissance d'Ibn Khaldun" }).click();
+    await expect(page.locator('#modal-bio-btn')).toBeVisible();
+});
+
+test('le Machrek : chacune de ses figures a son portrait et son pays, de l’Irak à la péninsule Arabique', async ({ page }) => {
+    await openThemeById(page, 'pan_machrek');
+    await page.locator('#mode-card-discovery').click();
+    await expect(page.locator('#screen-game')).toBeVisible();
+    const nombre = await page.evaluate(() => getCurrentTheme().events.length);
+    expect(nombre).toBeGreaterThanOrEqual(90);
+    expect(nombre).toBeLessThanOrEqual(120);
+    // « Que chaque personnage ait un portrait » : une pastille par repère, pas une de moins.
+    await expect(page.locator('#timeline .entry')).toHaveCount(nombre);
+    await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
+
+    // Les dix pays du bloc, chacun par une de ses figures — Oman, le Koweït et les Émirats,
+    // les moins fournis, compris.
+    const figures = [
+        ['Naissance de Saladin', '🇮🇶', 'Irak'],
+        ['Naissance de Fakhreddine II', '🇱🇧', 'Liban'],
+        ['Naissance de Hafez el-Assad', '🇸🇾', 'Syrie'],
+        ['Naissance de Mahmoud Darwich', '🇵🇸', 'Palestine'],
+        ["Naissance d'Ibn Saoud", '🇸🇦', 'Arabie saoudite'],
+        ['Naissance de Hussein de Jordanie', '🇯🇴', 'Jordanie'],
+        ['Naissance de Yahya Hamid ed-Din', '🇾🇪', 'Yémen'],
+        ['Naissance de Qabus ibn Saïd', '🇴🇲', 'Oman'],
+        ['Naissance de Moubarak Al-Sabah', '🇰🇼', 'Koweït'],
+        ['Naissance de Khalifa ben Zayed Al Nahyane', '🇦🇪'],
+    ];
+    for (const [titre, drapeau, pays] of figures) {
+        await page.locator('#timeline .entry', { hasText: titre }).click();
+        await expect(page.locator('#modal-details')).toBeVisible();
+        await expect(page.locator('#modal-pays')).toContainText(drapeau);
+        if (pays) await expect(page.locator('#modal-pays')).toContainText(pays);
+        // Le portrait a réellement chargé, au bon format.
+        const portrait = page.locator('#modal-portrait-img');
+        await expect.poll(() => portrait.evaluate(img => img.complete ? img.naturalWidth : 0)).toBe(320);
+        await page.locator('#modal-details .close-btn').click();
+        await expect(page.locator('#modal-details')).toBeHidden();
+    }
+
+    // Saladin a aussi sa biographie (comme Harun al-Rashid et Ibn al-Haytham) : le bouton y mène.
+    await page.locator('#timeline .entry', { hasText: 'Naissance de Saladin' }).click();
     await expect(page.locator('#modal-bio-btn')).toBeVisible();
 });
 
@@ -554,6 +597,17 @@ test('la recherche — « tunisie », « libye », « mauritanie » — mène au
         // Aucun de ces pays n'est dans le nom du thème : ils sont dans ses mots-clés.
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: 'Grandes figures du Maghreb' });
         await expect(resultat, `« ${mot} » doit mener au Maghreb`).toHaveCount(1);
+        await expect(resultat.locator('.search-result-path')).toContainText('Personnages illustres › Panthéons');
+    }
+});
+
+test('la recherche — « irak », « liban », « yémen » — mène au panthéon du Machrek', async ({ page }) => {
+    await page.locator('#screen-home').click();
+    for (const mot of ['irak', 'liban', 'yémen']) {
+        await page.locator('#theme-search-input').fill(mot);
+        // Aucun de ces pays n'est dans le nom du thème : ils sont dans ses mots-clés.
+        const resultat = page.locator('#theme-search-results .search-result-item', { hasText: 'Grandes figures du Machrek' });
+        await expect(resultat, `« ${mot} » doit mener au Machrek`).toHaveCount(1);
         await expect(resultat.locator('.search-result-path')).toContainText('Personnages illustres › Panthéons');
     }
 });

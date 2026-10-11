@@ -408,6 +408,12 @@ test('« Grandes figures du Maghreb » : chaque ancre porte le pays de son évé
     verifierPantheonDeBloc('pan_maghreb', 13, 5);
 });
 
+test('« Grandes figures du Machrek et de la péninsule Arabique » : chaque ancre porte le pays de son événement, et la session se joue', () => {
+    // Dix pays, dont plusieurs (Oman, les Émirats, le Koweït) n'ont qu'une ou deux figures : aucun
+    // ne doit manquer parmi les ancres, et le Liban (le plus fourni) ne doit pas tout couvrir.
+    verifierPantheonDeBloc('pan_machrek', 19, 10);
+});
+
 test('« Grandes figures d’Allemagne, d’Autriche et de Suisse » : chaque ancre porte le pays de son événement, et la session se joue', () => {
     // Trois pays : la Suisse (26 figures) et l'Autriche (38) ne doivent pas disparaître derrière
     // l'Allemagne (85) parmi les ancres.
