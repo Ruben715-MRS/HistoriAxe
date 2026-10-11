@@ -706,7 +706,7 @@ des pays ont une histoire commune, un thème **de région** plutôt qu'un par pa
 | | Pays | Bloc |
 |---|---|---|
 | Identifiant | `pan_<iso2>` : deux lettres (`pan_fr`) | `pan_<code>` : trois lettres ou plus (`pan_hispam`) — jamais de collision avec un code de pays |
-| `pays` sur chaque événement | interdit (le thème le dit déjà) | obligatoire : code ISO à deux lettres (`"pays": "VE"`) |
+| `pays` sur chaque événement | interdit (le thème le dit déjà), sauf pour un **invité** d'un autre État (Monaco chez la France, voir « Les micro-États ») | obligatoire : code ISO à deux lettres (`"pays": "VE"`) |
 | Exemples | France, Égypte, Espagne, États-Unis, Italie, Royaume-Uni ; plus tard Brésil… | Amérique hispanique, Maghreb, Allemagne-Autriche-Suisse ; plus tard Machrek |
 
 Ce que le champ `pays` d'un événement change :
@@ -764,12 +764,12 @@ accueilli dans « Musique, spectacle et sport », pour les sportifs de portée h
 
 | Axe | Contenu | France | États-Unis |
 |---|---|---|---|
-| Chefs d'État et dirigeants | souverains, présidents, chefs de gouvernement | 24 | 21 |
+| Chefs d'État et dirigeants | souverains, présidents, chefs de gouvernement | 32 | 21 |
 | Guerres et résistances | chefs militaires, résistants, héros d'indépendance, combats pour les droits | 18 | 24 |
 | Littérature et pensée | écrivains, poètes, philosophes | 30 | 25 |
 | Beaux-arts | peinture, sculpture, architecture | 19 | 12 |
-| Musique, spectacle et sport | compositeurs, interprètes, cinéma, théâtre, sport | 17 | 22 |
-| Sciences, techniques et innovation | savants, ingénieurs, inventeurs, explorateurs | 20 | 16 |
+| Musique, spectacle et sport | compositeurs, interprètes, cinéma, théâtre, sport | 18 | 22 |
+| Sciences, techniques et innovation | savants, ingénieurs, inventeurs, explorateurs | 21 | 16 |
 | Économie et entreprise | fondateurs d'entreprises, industriels, banquiers, marchands | 12 | 9 |
 
 Les règles de rédaction, vérifiées par script et par test (voir plus bas) :
@@ -794,10 +794,10 @@ Les règles de rédaction, vérifiées par script et par test (voir plus bas) :
   de la fiche) doivent porter la *même* date. Les dates des soixante et une premières ont été
   comparées une à une à la phrase d'ouverture de l'article Wikipédia, celles des 72 figures
   ajoutées ensuite (voir « La France, de 68 à 140 figures ») au résumé de leur article.
-- **⭐ Incontournables** (`essentiel`) : 34 sur 140 pour la France, 39 sur 129 pour les États-Unis,
+- **⭐ Incontournables** (`essentiel`) : 37 sur 150 pour la France, 39 sur 129 pour les États-Unis,
   56 sur 149 pour l'Allemagne, l'Autriche et la Suisse, 51 sur 151 pour le Royaume-Uni, 36 sur 132 pour l'Espagne.
 
-Quantités visées : 68 personnages pour la France (portés à 140, voir plus bas), 52 pour l'Égypte, 129 pour les
+Quantités visées : 68 personnages pour la France (portés à 150, voir plus bas), 52 pour l'Égypte, 129 pour les
 États-Unis (85 proposés, portés à 123 : « mieux vaut plus que moins », puis à 129 avec l'axe Économie et entreprise), 127 pour
 l'Italie (126 proposés, plus Enzo Ferrari), 80 à 100
 pour l'Amérique hispanique (dix-neuf pays, de 1 à 19 figures chacun), 58 pour le
@@ -931,8 +931,9 @@ fiche à `scripts/pantheon/maghreb.json`.
 ### Le troisième bloc : Allemagne, Autriche et Suisse
 
 `pan_dach`, « Grandes figures d'Allemagne, d'Autriche et de Suisse » (code `dach`, comme
-Deutschland, Austria, Confoederatio Helvetica) : **151 personnages de trois pays** —
-Allemagne 87, Autriche 38, Suisse 26 — d'Arminius (vers 17 av. J.-C.) à Helmut Kohl
+Deutschland, Austria, Confoederatio Helvetica) : **155 personnages de quatre pays** —
+Allemagne 87, Autriche 38, Suisse 26, Liechtenstein 4 (voir « Les micro-États », le titre du
+thème ne change pas) — d'Arminius (vers 17 av. J.-C.) à Helmut Kohl
 (1930). Par axe : 39 Littérature et pensée, 24 Sciences, techniques et innovation, 25
 Musique, spectacle et sport, 21 Chefs d'État et dirigeants, 21 Beaux-arts, 13 Guerres et
 résistances, 8 Économie et entreprise ; 56 ⭐ et 22 biographies liées (Luther, Kant,
@@ -1505,10 +1506,11 @@ alternatifs), ce qui laissait dix-huit portraits sans crédit.
 
 `pan_fr` était le plus mince des panthéons de pays, en comparaison de l'Italie (127),
 des États-Unis (129), de l'Espagne (132), de l'Allemagne-Autriche-Suisse (149) et du
-Royaume-Uni (151). Il passe de 68 à **140 personnages**, de Vercingétorix (vers 82 av. J.-C.) à
-Serge Gainsbourg (1928), avec 72 figures ajoutées. Par axe : 30 Littérature et pensée, 24
-Chefs d'État et dirigeants, 20 Sciences, techniques et innovation, 19 Beaux-arts, 18 Guerres et
-résistances, 17 Musique, spectacle et sport, 12 Économie et entreprise ; 34 ⭐ et 29 biographies
+Royaume-Uni (151). Il passe de 68 à **150 personnages**, de Vercingétorix (vers 82 av. J.-C.) à
+Serge Gainsbourg (1928) : 72 figures ajoutées, plus 10 invités de Monaco (voir « Les micro-États »).
+Par axe : 32 Chefs d'État et dirigeants, 30 Littérature et pensée, 21 Sciences, techniques et
+innovation, 19 Beaux-arts, 18 Guerres et résistances, 18 Musique, spectacle et sport, 12
+Économie et entreprise ; 37 ⭐ et 29 biographies
 liées (Sartre, Gainsbourg et Alexandra David-Néel s'ajoutent aux 26 d'avant).
 
 - **Les ajouts, par axe** : Philippe Auguste, Philippe le Bel, Louis XI, Colbert, Louis XVI,
@@ -1551,6 +1553,42 @@ pas son visage), la gravure d'Ambroise Paré, le portrait de Du Guesclin (peint 
 plus d'un siècle après sa mort) et Sartre, demandé en 330 px parce que Commons refuse les
 miniatures plus grandes de ce fichier. Pour Philippe le Bel, c'est le détail d'une miniature
 qui le montre avec sa famille.
+
+### Les micro-États
+
+Monaco, Saint-Marin, Andorre, le Liechtenstein et le Vatican n'ont pas un thème « micro-États »
+à eux : ce serait un thème par la taille, non par l'histoire (le Luxembourg est de même réservé à
+un futur « Benelux »), et il aurait compté une vingtaine de figures, presque toutes des princes, sous
+les 30 qu'on vise pour un petit pays. Chaque État est un **invité** du panthéon le plus proche,
+dont le titre ne change pas ; la fiche dit son pays (drapeau et nom sous la date), la galerie le
+filtre à part (« 🇲🇨 Monaco (10) »), et « Pendant ce temps, ailleurs… » le compte comme un autre
+pays que son hôte.
+
+- **Une règle assouplie** : un panthéon de pays n'avait pas de champ `pays`. Il l'accepte pour un
+  invité, jamais pour le pays du panthéon lui-même (`scripts/build_pantheon.py`,
+  `tests/data-schema.test.js`). Les sources `scripts/pantheon/<code>.json` ne changent pas de forme.
+- **Monaco (10)**, dans `pan_fr` : Honoré II (1597), Louis Ier (1642), Antoine Ier (1661), Honoré
+  III (1720), Charles III (1818), Albert Ier (1848), Louis II (1870), Charlotte (1898), Rainier III
+  (1923) et Grace Kelly (1929), américaine honorée à Monaco. Huit sont rangés en Chefs d'État (sept
+  souverains et Charlotte, héritière du trône), Albert Ier, souverain lui aussi, en Sciences pour
+  son œuvre d'océanographe, Grace Kelly en Musique, spectacle et sport. Honoré V, dont la fiche n'a pas pu être
+  établie avec certitude, est resté dehors ; Louis Notari, écrivain, n'a pas de portrait ; François
+  Grimaldi (Malizia) n'a pas d'année de naissance connue. Les titres portent « de Monaco »
+  (« Charles III de Monaco », « Louis II de Monaco ») pour ne pas se confondre avec Charles III
+  d'Espagne et Louis II de Bavière.
+- **Liechtenstein (4)**, dans `pan_dach`, dont la liste de pays gagne `LI` : Jean Ier (1760), Jean II
+  (1840), François-Joseph II (1906) et Josef Rheinberger (1839), le compositeur né à Vaduz. Les
+  princes sont presque tous nés en Autriche ou en Moravie, et vivaient à Vienne : le pays les
+  honore, il n'est pas leur lieu de naissance. Alois II et François Ier, sans fiche solide, sont restés
+  dehors. Le thème garde son titre « Allemagne, Autriche et Suisse » ; la recherche « liechtenstein »
+  ou « vaduz » y mène par ses `motsCles`.
+- **En attente : Saint-Marin et Andorre**, faute de portrait libre. Pour Saint-Marin : Bartolomeo
+  Borghesi (1781, numismate, né en Italie), Giovanni Battista Belluzzi (1506, architecte, sans portrait
+  sur Commons) ; saint Marin, légendaire, n'a pas de date de naissance fiable. Pour Andorre : Guillem
+  d'Areny-Plandolit (1822) et Francesc Cairat (1880), sans portrait libre vérifié. Ils rejoindraient
+  `pan_it` et `pan_es`.
+- **Vatican : aucune figure propre.** Les papes sont déjà rangés par leur nationalité (Jean XXIII
+  dans `pan_it`, François dans `pan_hispam`), et un pape italien n'est pas né au Vatican.
 
 ### Un fichier source par panthéon, un script qui l'écrit dans `data/fr.json`
 
@@ -1837,7 +1875,7 @@ faute de licence établie), remplacés l'un par une photographie de 1933 aux
 deux balises, l'autre par un cliché de 1959 de la Bibliothèque du Congrès.
 
 **Poids** : JPEG de 320 × 400, 25 Ko en moyenne (62 au plus), soit 1,8 Mo pour
-les 140 de la France, 2,5 Mo pour les 97 de l'Amérique hispanique, 1,7 Mo
+les 150 de la France, 2,5 Mo pour les 97 de l'Amérique hispanique, 1,7 Mo
 pour les 58 du Maghreb, 1,4 Mo pour les 52 de l'Égypte et 3,1 Mo pour les 129
 des États-Unis — de
 l'ordre de 20 Mo pour 800 portraits, quand `assets/` en pèse déjà 38. Le WebP

@@ -3,7 +3,7 @@
   "lang": "fr",
   "name": "Français (Intégral)",
   "totalThemes": 804,
-  "totalEvents": 20822,
+  "totalEvents": 20836,
   "categories": [
     {
       "nom": "Culture générale",
@@ -91013,7 +91013,10 @@
                 "Bauhaus",
                 "Réforme",
                 "Romantisme",
-                "Confédération helvétique"
+                "Confédération helvétique",
+                "Liechtenstein",
+                "Liechtensteinois",
+                "Vaduz"
               ],
               "events": [
                 {
@@ -91622,6 +91625,23 @@
                   }
                 },
                 {
+                  "id": "pan_dach_jean1liechtenstein",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1760,
+                  "titre": "Naissance de Jean Ier de Liechtenstein",
+                  "description": "Jean Ier de Liechtenstein (1760-1836) est un prince de Liechtenstein et un maréchal autrichien, qui règne de 1805 à 1836. Commandant de cavalerie à Austerlitz (1805), il négocie ensuite avec Napoléon l'armistice qui suit la défaite. Son règne voit la principauté devenir un État souverain dans la Confédération du Rhin (1806), puis entrer dans la Confédération germanique (1815).",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jean_Ier_de_Liechtenstein",
+                  "pays": "LI",
+                  "classement": "Jean Ier de Liechtenstein",
+                  "image": {
+                    "src": "assets/portraits/pan_dach_jean1liechtenstein.jpg",
+                    "legende": "Jean Ier de Liechtenstein, portrait peint par Johann Baptist von Lampi l'Ancien",
+                    "auteur": "Johann Baptist von Lampi",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Johann_Josef_I_von_Liechtenstein.jpg"
+                  }
+                },
+                {
                   "id": "pan_dach_hofer",
                   "axe": "Guerres et résistances",
                   "date": 1767,
@@ -92220,6 +92240,40 @@
                     "auteur": "Auteur inconnu",
                     "licence": "Domaine public",
                     "source": "https://commons.wikimedia.org/wiki/File:Ferdinand_von_Zeppelin.jpg"
+                  }
+                },
+                {
+                  "id": "pan_dach_rheinberger",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1839,
+                  "titre": "Naissance de Josef Rheinberger",
+                  "description": "Josef Rheinberger (1839-1901) est un compositeur, organiste et pédagogue né à Vaduz, que le Liechtenstein tient pour son plus grand musicien. Installé à Munich, il y enseigne la composition à l'Académie royale de musique, où il a pour élèves Engelbert Humperdinck, Ermanno Wolf-Ferrari et Horatio Parker. Son œuvre compte vingt sonates pour orgue, des messes et des cantates.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Josef_Rheinberger",
+                  "pays": "LI",
+                  "classement": "Rheinberger, Josef",
+                  "image": {
+                    "src": "assets/portraits/pan_dach_rheinberger.jpg",
+                    "legende": "Josef Rheinberger, photographie ancienne (années 1880)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Rheinberger.jpg"
+                  }
+                },
+                {
+                  "id": "pan_dach_jean2liechtenstein",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1840,
+                  "titre": "Naissance de Jean II de Liechtenstein",
+                  "description": "Jean II de Liechtenstein (1840-1929) est un prince de Liechtenstein, dit « le Bon », qui règne soixante et onze ans, de 1858 à 1929. Il accorde au pays sa constitution de 1862, et la principauté supprime son armée en 1868 pour rester neutre, un statut qu'elle garde depuis. Né en Moravie et vivant à Vienne, il voit après la Première Guerre mondiale le pays se tourner vers la Suisse, avec l'union douanière de 1923.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jean_II_de_Liechtenstein",
+                  "pays": "LI",
+                  "classement": "Jean II de Liechtenstein",
+                  "image": {
+                    "src": "assets/portraits/pan_dach_jean2liechtenstein.jpg",
+                    "legende": "Jean II de Liechtenstein, portrait peint par John Quincy Adams",
+                    "auteur": "John Quincy Adams",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:John_Quincy_Adams_-_Portr%C3%A4t_des_F%C3%BCrsten_Johann_II._von_Liechtenstein.jpg"
                   }
                 },
                 {
@@ -93316,6 +93370,23 @@
                     "auteur": "Auteur inconnu (Bundesarchiv)",
                     "licence": "CC BY-SA 3.0 DE",
                     "source": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_146-1987-074-16,_Dietrich_Bonhoeffer.jpg"
+                  }
+                },
+                {
+                  "id": "pan_dach_francoisjoseph2liechtenstein",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1906,
+                  "titre": "Naissance de François-Joseph II de Liechtenstein",
+                  "description": "François-Joseph II de Liechtenstein (1906-1989) est un prince de Liechtenstein, qui règne de 1938 à 1989 et le premier à vivre à demeure à Vaduz. Il conduit le pays, resté neutre pendant la guerre, hors de la pauvreté en misant sur l'industrie et la place financière. C'est sous son règne que les Liechtensteinoises obtiennent le droit de vote (1984), l'année où il confie le gouvernement à son fils Hans-Adam II.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Fran%C3%A7ois-Joseph_II_de_Liechtenstein",
+                  "pays": "LI",
+                  "classement": "François-Joseph II de Liechtenstein",
+                  "image": {
+                    "src": "assets/portraits/pan_dach_francoisjoseph2liechtenstein.jpg",
+                    "legende": "François-Joseph II de Liechtenstein, photographie de Tom Ordelman (1988)",
+                    "auteur": "Tom Ordelman",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Franz_Josef_II_von_und_zu_Liechtenstein.jpg"
                   }
                 },
                 {
@@ -100752,6 +100823,14 @@
               "id": "pan_fr",
               "nom": "Grandes figures de France",
               "difficulte": "Intermédiaire",
+              "motsCles": [
+                "Monaco",
+                "Monégasque",
+                "Monégasques",
+                "Principauté de Monaco",
+                "Monte-Carlo",
+                "Grimaldi"
+              ],
               "events": [
                 {
                   "id": "pan_fr_vercingetorix",
@@ -101117,6 +101196,23 @@
                   }
                 },
                 {
+                  "id": "pan_fr_honore2monaco",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1597,
+                  "titre": "Naissance d'Honoré II de Monaco",
+                  "description": "Honoré II de Monaco (1597-1662) est le premier seigneur de Monaco à porter le titre de prince, qu'il adopte en 1612. Protégé d'abord par l'Espagne, il change de camp : en 1641, le traité de Péronne place Monaco sous la protection du roi de France Louis XIII, qui le dédommage par le duché de Valentinois et d'autres seigneuries. Son long règne, qui dure plus d'un demi-siècle, fait entrer durablement la principauté dans l'orbite de la France.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Honor%C3%A9_II_(prince_de_Monaco)",
+                  "pays": "MC",
+                  "classement": "Honoré II de Monaco",
+                  "image": {
+                    "src": "assets/portraits/pan_fr_honore2monaco.jpg",
+                    "legende": "Honoré II de Monaco, portrait peint par Philippe de Champaigne (1651)",
+                    "auteur": "Philippe de Champaigne",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:HonoriusIIMonaco-1-.jpg"
+                  }
+                },
+                {
                   "id": "pan_fr_corneille",
                   "axe": "Littérature et pensée",
                   "date": 1606,
@@ -101312,6 +101408,40 @@
                   }
                 },
                 {
+                  "id": "pan_fr_louis1monaco",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1642,
+                  "titre": "Naissance de Louis Ier de Monaco",
+                  "description": "Louis Ier de Monaco (1642-1701) est un prince de Monaco, né dans la principauté, qui règne de 1662 à sa mort. Il épouse en 1660 Catherine-Charlotte de Gramont, fille d'un maréchal de France, ce qui renforce les liens de la principauté avec le royaume. Proche de Louis XIV, il est son ambassadeur à Rome de 1688 à 1698 et meurt dans cette ville en 1701.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Louis_Ier_(prince_de_Monaco)",
+                  "pays": "MC",
+                  "classement": "Louis Ier de Monaco",
+                  "image": {
+                    "src": "assets/portraits/pan_fr_louis1monaco.jpg",
+                    "legende": "Louis Ier de Monaco, portrait peint par François de Troy",
+                    "auteur": "François de Troy",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Portrait_Louis_I,_Prince_of_Monaco_by_an_unknown_artist.jpg"
+                  }
+                },
+                {
+                  "id": "pan_fr_antoine1monaco",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1661,
+                  "titre": "Naissance d'Antoine Ier de Monaco",
+                  "description": "Antoine Ier de Monaco (1661-1731) est un prince de Monaco, né à Paris et élevé à la cour de France. Il succède à son père en 1701 et entreprend de grands travaux au palais princier. Sa fille Louise-Hippolyte lui succède en 1731, et son mariage avec Jacques de Matignon fait passer la principauté à la maison de Goyon-Matignon.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Antoine_Ier_(prince_de_Monaco)",
+                  "pays": "MC",
+                  "classement": "Antoine Ier de Monaco",
+                  "image": {
+                    "src": "assets/portraits/pan_fr_antoine1monaco.jpg",
+                    "legende": "Antoine Ier de Monaco, portrait peint par Hyacinthe Rigaud (1706)",
+                    "auteur": "Hyacinthe Rigaud",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:1706_-_Antoine_I_Grimaldi_(Monaco).jpg"
+                  }
+                },
+                {
                   "id": "pan_fr_rameau",
                   "axe": "Musique, spectacle et sport",
                   "date": 1683,
@@ -101424,6 +101554,23 @@
                     "auteur": "Louis-Michel van Loo",
                     "licence": "Domaine public",
                     "source": "https://commons.wikimedia.org/wiki/File:Denis_Diderot_111.PNG"
+                  }
+                },
+                {
+                  "id": "pan_fr_honore3monaco",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1720,
+                  "titre": "Naissance d'Honoré III de Monaco",
+                  "description": "Honoré III de Monaco (1720-1795) est un prince de Monaco, né à Paris dans la maison de Goyon-Matignon. Il règne soixante ans, de 1733 à 1793, sous la protection de la France, et épouse en 1757 Marie-Catherine de Brignole. Il perd sa principauté en 1793, quand la Convention l'annexe à la France, et meurt dépossédé à Paris deux ans plus tard.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Honor%C3%A9_III_(prince_de_Monaco)",
+                  "pays": "MC",
+                  "classement": "Honoré III de Monaco",
+                  "image": {
+                    "src": "assets/portraits/pan_fr_honore3monaco.jpg",
+                    "legende": "Honoré III de Monaco jeune, portrait peint par Jean-Baptiste van Loo",
+                    "auteur": "Jean-Baptiste van Loo",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Honor%C3%A9_III,_Prince_of_Monaco_by_Jean_Baptiste_van_Loo.jpg"
                   }
                 },
                 {
@@ -101911,6 +102058,23 @@
                   }
                 },
                 {
+                  "id": "pan_fr_charles3monaco",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1818,
+                  "titre": "Naissance de Charles III de Monaco",
+                  "description": "Charles III de Monaco (1818-1889) est le prince qui fait de Monaco une station de jeux et de loisirs. Pour rétablir ses finances, après avoir cédé Menton et Roquebrune à la France en 1861, il accorde en 1863 le privilège des jeux à François Blanc, qui fonde le casino de Monte-Carlo, quartier qui porte son nom. Ces recettes permettent à la principauté de supprimer les impôts directs de ses habitants en 1869.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Charles_III_(prince_de_Monaco)",
+                  "pays": "MC",
+                  "classement": "Charles III de Monaco",
+                  "image": {
+                    "src": "assets/portraits/pan_fr_charles3monaco.jpg",
+                    "legende": "Charles III de Monaco, portrait peint par François-Auguste Biard",
+                    "auteur": "François-Auguste Biard",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:CharlesIIIMonaco.jpg"
+                  }
+                },
+                {
                   "id": "pan_fr_courbet",
                   "axe": "Beaux-arts",
                   "date": 1819,
@@ -102249,6 +102413,23 @@
                   }
                 },
                 {
+                  "id": "pan_fr_albert1monaco",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1848,
+                  "titre": "Naissance d'Albert Ier de Monaco",
+                  "description": "Albert Ier de Monaco (1848-1922) est un prince et océanographe, surnommé le « Prince savant ». Il explore l'Atlantique et l'Arctique à bord de ses yachts, l'Hirondelle puis la Princesse-Alice, fonde l'Institut océanographique de Paris (1906) et ouvre le musée océanographique de Monaco (1910). Prince régnant depuis 1889, il donne à Monaco sa première constitution en 1911.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Albert_Ier_(prince_de_Monaco)",
+                  "pays": "MC",
+                  "classement": "Albert Ier de Monaco",
+                  "image": {
+                    "src": "assets/portraits/pan_fr_albert1monaco.jpg",
+                    "legende": "Albert Ier de Monaco, photographie de J. B. E. Detaille (vers 1910)",
+                    "auteur": "J. B. E. Detaille",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Prince_Albert_I_of_Monaco_-_circa_1910.jpg"
+                  }
+                },
+                {
                   "id": "pan_fr_gauguin",
                   "axe": "Beaux-arts",
                   "date": 1848,
@@ -102539,6 +102720,23 @@
                   }
                 },
                 {
+                  "id": "pan_fr_louis2monaco",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1870,
+                  "titre": "Naissance de Louis II de Monaco",
+                  "description": "Louis II de Monaco (1870-1949) est un prince de Monaco, né à Baden-Baden et officier dans l'armée française. Il signe en 1918 un traité qui place la principauté sous la protection de la France, et son règne (1922-1949) voit naître le Grand Prix automobile de Monaco (1929). Pendant la Seconde Guerre mondiale, il tente de maintenir la neutralité de sa principauté, occupée par l'Italie puis par l'Allemagne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Louis_II_(prince_de_Monaco)",
+                  "pays": "MC",
+                  "classement": "Louis II de Monaco",
+                  "image": {
+                    "src": "assets/portraits/pan_fr_louis2monaco.jpg",
+                    "legende": "Louis II de Monaco en uniforme, photographie de Georges Detaille",
+                    "auteur": "Georges Detaille",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Prince_Louis_II_of_Monaco_05670r.jpg"
+                  }
+                },
+                {
                   "id": "pan_fr_proust",
                   "axe": "Littérature et pensée",
                   "date": 1871,
@@ -102730,6 +102928,23 @@
                     "auteur": "Georges Chevalier",
                     "licence": "CC BY 4.0",
                     "source": "https://commons.wikimedia.org/wiki/File:1930_Marcel_Dassault.jpg"
+                  }
+                },
+                {
+                  "id": "pan_fr_charlottemonaco",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1898,
+                  "titre": "Naissance de Charlotte de Monaco",
+                  "description": "Charlotte de Monaco (1898-1977) est une princesse monégasque, fille naturelle de Louis II, née à Constantine, en Algérie. Légitimée en 1919 et désignée héritière du trône, elle épouse en 1920 Pierre de Polignac, dont elle divorce en 1933. Elle renonce à ses droits en 1944 au profit de son fils Rainier, qui devient prince en 1949.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Charlotte_de_Monaco",
+                  "pays": "MC",
+                  "classement": "Charlotte de Monaco",
+                  "image": {
+                    "src": "assets/portraits/pan_fr_charlottemonaco.jpg",
+                    "legende": "Charlotte de Monaco, portrait peint par Philip de László (1928)",
+                    "auteur": "Philip de László",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Princess_Charlotte,_Duchess_of_Valentinois.jpg"
                   }
                 },
                 {
@@ -102964,6 +103179,23 @@
                   }
                 },
                 {
+                  "id": "pan_fr_rainier3monaco",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1923,
+                  "titre": "Naissance de Rainier III",
+                  "description": "Rainier III (1923-2005) est prince souverain de Monaco de 1949 à sa mort, après plus d'un demi-siècle de règne. Il épouse en 1956 l'actrice Grace Kelly, ce qui fait connaître la principauté dans le monde entier, et donne à Monaco en 1962 une constitution qui abolit la peine de mort. Il défend l'indépendance fiscale de la principauté face au général de Gaulle (1962-1963) et fait gagner du terrain sur la mer.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Rainier_III",
+                  "pays": "MC",
+                  "classement": "Rainier III",
+                  "image": {
+                    "src": "assets/portraits/pan_fr_rainier3monaco.jpg",
+                    "legende": "Rainier III, photographie de Robert Knudsen (Maison-Blanche, 1961)",
+                    "auteur": "Robert L. Knudsen",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Rainier_III_(JFKWHP-KN-C17888,_cropped).jpg"
+                  }
+                },
+                {
                   "id": "pan_fr_aznavour",
                   "axe": "Musique, spectacle et sport",
                   "date": 1924,
@@ -103011,6 +103243,23 @@
                     "auteur": "Claude TRUONG-NGOC",
                     "licence": "CC BY-SA 3.0",
                     "source": "https://commons.wikimedia.org/wiki/File:Serge_Gainsbourg_par_Claude_Truong-Ngoc_1981.jpg"
+                  }
+                },
+                {
+                  "id": "pan_fr_gracekelly",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1929,
+                  "titre": "Naissance de Grace Kelly",
+                  "description": "Grace Kelly (1929-1982) est une actrice américaine devenue princesse de Monaco. Interprète de Fenêtre sur cour et de La Main au collet pour Alfred Hitchcock, elle reçoit l'Oscar de la meilleure actrice en 1955 pour Une fille de la province. Elle quitte le cinéma en 1956 en épousant le prince Rainier III, s'engage pour la Croix-Rouge et les arts, et meurt dans un accident de voiture près de Monaco.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Grace_Kelly",
+                  "pays": "MC",
+                  "classement": "Kelly, Grace",
+                  "image": {
+                    "src": "assets/portraits/pan_fr_gracekelly.jpg",
+                    "legende": "Grace de Monaco en 1972, photographie de Hans Peters (Anefo)",
+                    "auteur": "Hans Peters (Anefo)",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Gracia_van_Monaco_(1972).jpg"
                   }
                 },
                 {
@@ -103066,6 +103315,7 @@
                 "pan_fr_monet",
                 "pan_fr_rodin",
                 "pan_fr_renoir",
+                "pan_fr_albert1monaco",
                 "pan_fr_dreyfus",
                 "pan_fr_jaures",
                 "pan_fr_lumiere",
@@ -103073,7 +103323,9 @@
                 "pan_fr_chanel",
                 "pan_fr_degaulle",
                 "pan_fr_moulin",
-                "pan_fr_piaf"
+                "pan_fr_piaf",
+                "pan_fr_rainier3monaco",
+                "pan_fr_gracekelly"
               ]
             },
             {
