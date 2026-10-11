@@ -28,11 +28,11 @@ Document de travail, **à valider avant toute rédaction** (voir « Ajouter un p
 
 ## Les chiffres
 
-**97 candidats avec une image utilisable** (51 en A, 26 en B, 20 en C : voir plus bas).
+**98 candidats avec une image utilisable** (51 en A, 26 en B, 21 en C : voir plus bas).
 
 | Axe | Candidats |
 |---|---|
-| Chefs d'État et dirigeants | 42 |
+| Chefs d'État et dirigeants | 43 |
 | Guerres et résistances | 11 |
 | Littérature et pensée | 32 |
 | Beaux-arts | 2 |
@@ -113,6 +113,7 @@ Les années sont celles de Wikidata ; **celles des personnages qui ont une biogr
 | Abd al-Malik ibn Marwan | Arabie saoudite | 646 – 705 | 1173 × 1161, Public domain | C | seulement un dinar d’or ; né à Médine |
 | Bachir Chehab II | Liban | 1767 – 1850 | 287 × 401, Public domain | C | 287 × 401 px |
 | Wasfi al-Tal | Jordanie | 1919 – 1971 | 550 × 439, Public domain | C | seule image : photographie de groupe |
+| Al-Ma'mun | Irak | 786 – 833 | 458 × 540, domaine public | C | miniature byzantine où il est assis sous un dais (légende grecque) ; à regarder de près avant de la retenir |
 
 ## Guerres et résistances
 
@@ -211,7 +212,7 @@ Les années sont celles de Wikidata ; **celles des personnages qui ont une biogr
 
 ## Écartés pour l'image
 
-Nabuchodonosor II (un cylindre inscrit), Al-Ma'mun (miniature d'un envoi d'ambassadeur), Nur ad-Din (164 × 194 px), Arwa al-Sulayhi (son mausolée), Muhammad ibn Abd al-Wahhab (une calligraphie), Choukri al-Kouwatli (photographie indienne de 1957, non libre aux États-Unis), Fares al-Khoury (251 px), Al-Jahiz (un timbre), Rabia al-Adawiyya (miniature d'une femme qui pile, pas elle ; biographie liée, date 717), Nadia Tuéni (une salle de conférences), Gebrane Tuéni (70 × 93 px), Fadwa Touqan (une plaque de rue), Ibrahim Touqan (230 px), Naji al-Ali (un graffiti), Louay Kayyali (aucune image), Rifat Chadirji, Etel Adnan, Assi Rahbani, Munir Bashir, Wadih el-Safi (images de moins de 270 px), Al-Kindi, Ibn al-Nafis (images de 200 px), Banou Moussa (un dessin d'appareil), Al-Muqaddasi (une vue de Jérusalem), Ahmed Zaki Yamani (161 px), Fayçal Ier d'Irak (« Not-PD-US-URAA »), Zayed ben Sultan et Rachid ben Saïd (images de 160 à 225 px), Abdallah al-Salim al-Sabah (« Not-PD-US »), Riad El Solh (244 px), Al-Hariri (miniature d'une scène), Hasan al-Basri (calligraphie), Mikhail Naimy (un mausolée), Sati al-Husri (262 px), Michael Atiyah et Michael DeBakey (hors périmètre : britannique et américain).
+Nabuchodonosor II (un cylindre inscrit), Nur ad-Din (164 × 194 px), Arwa al-Sulayhi (son mausolée), Muhammad ibn Abd al-Wahhab (une calligraphie), Choukri al-Kouwatli (photographie indienne de 1957, non libre aux États-Unis), Fares al-Khoury (251 px), Al-Jahiz (un timbre), Rabia al-Adawiyya (miniature d'une femme qui pile, pas elle ; biographie liée, date 717), Nadia Tuéni (une salle de conférences), Gebrane Tuéni (70 × 93 px), Fadwa Touqan (une plaque de rue), Ibrahim Touqan (230 px), Naji al-Ali (un graffiti), Louay Kayyali (aucune image), Rifat Chadirji, Etel Adnan, Assi Rahbani, Munir Bashir, Wadih el-Safi (images de moins de 270 px), Al-Kindi, Ibn al-Nafis (images de 200 px), Banou Moussa (un dessin d'appareil), Al-Muqaddasi (une vue de Jérusalem), Ahmed Zaki Yamani (161 px), Fayçal Ier d'Irak (« Not-PD-US-URAA »), Zayed ben Sultan et Rachid ben Saïd (images de 160 à 225 px), Abdallah al-Salim al-Sabah (« Not-PD-US »), Riad El Solh (244 px), Al-Hariri (miniature d'une scène), Hasan al-Basri (calligraphie), Mikhail Naimy (un mausolée), Sati al-Husri (262 px), Michael Atiyah et Michael DeBakey (hors périmètre : britannique et américain).
 
 ## Dates à aligner avec les biographies déjà dans l'appli
 
@@ -230,7 +231,7 @@ Huit figures de ce périmètre ont une biographie. Leur naissance doit porter **
 
 ## Suite proposée
 
-1. Trancher les six décisions ci-dessus.
-2. Retrouver les titres français des noms « introuvables » et refaire une passe d'images sur les axes minces (Beaux-arts, Musique, Sciences).
+1. **Refaire la recherche d'illustrations** pour les figures sans image convenable, maintenant que les images imaginaires sont admises : Saladin, Harun al-Rashid, Khalid ibn al-Walid, Khalil Gibran, Zaha Hadid, Kanafani, Asmahan, et les premiers califes (Abou Bakr, Omar, Othman, Ali ; Mahomet à part). Cette passe n'a pas pu être menée : Commons bloquait les requêtes de cet environnement (réponse 429). À relancer plus tard.
+2. Retrouver les titres français des noms « introuvables » (Zénobie, Al-Mansur, Ahmad ibn Majid surtout).
 3. Confirmer le statut américain des images en B (c'est la partie qui a coûté le plus cher à l'Amérique hispanique).
-4. Constituer la liste définitive (cible : 80 à 100), puis suivre « Ajouter un pays ou un bloc » : `scripts/pantheon/machrek.json`, `scripts/pantheon_classement.py --write`, `scripts/fetch_portraits.py machrek`, `scripts/build_pantheon.py machrek`, version de `sw.js`, tests.
+4. Constituer la liste définitive, sans chercher à remplir : suivre « Ajouter un pays ou un bloc » (`scripts/pantheon/machrek.json`, `scripts/pantheon_classement.py --write`, `scripts/fetch_portraits.py machrek`, `scripts/build_pantheon.py machrek`, version de `sw.js`, tests).
