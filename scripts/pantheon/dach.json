@@ -4,7 +4,8 @@
   "pays": [
     "AT",
     "CH",
-    "DE"
+    "DE",
+    "LI"
   ],
   "theme": {
     "id": "pan_dach",
@@ -34,7 +35,10 @@
       "Bauhaus",
       "Réforme",
       "Romantisme",
-      "Confédération helvétique"
+      "Confédération helvétique",
+      "Liechtenstein",
+      "Liechtensteinois",
+      "Vaduz"
     ]
   },
   "axes": [
@@ -2712,6 +2716,66 @@
         "legende": "Franz Beckenbauer, photographie de 1975",
         "licence": "Domaine public",
         "auteur": "Panini Group"
+      }
+    },
+    {
+      "slug": "jean1liechtenstein",
+      "nom": "Jean Ier de Liechtenstein",
+      "classement": "Jean Ier de Liechtenstein",
+      "titre": "Naissance de Jean Ier de Liechtenstein",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1760,
+      "pays": "LI",
+      "description": "Jean Ier de Liechtenstein (1760-1836) est un prince de Liechtenstein et un maréchal autrichien, qui règne de 1805 à 1836. Commandant de cavalerie à Austerlitz (1805), il négocie ensuite avec Napoléon l'armistice qui suit la défaite. Son règne voit la principauté devenir un État souverain dans la Confédération du Rhin (1806), puis entrer dans la Confédération germanique (1815).",
+      "wikipedia": "Jean_Ier_de_Liechtenstein",
+      "portrait": {
+        "fichier": "Johann_Josef_I_von_Liechtenstein.jpg",
+        "legende": ""
+      }
+    },
+    {
+      "slug": "jean2liechtenstein",
+      "nom": "Jean II de Liechtenstein",
+      "classement": "Jean II de Liechtenstein",
+      "titre": "Naissance de Jean II de Liechtenstein",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1840,
+      "pays": "LI",
+      "description": "Jean II de Liechtenstein (1840-1929) est un prince de Liechtenstein, dit « le Bon », qui règne soixante et onze ans, de 1858 à 1929. Il accorde au pays sa constitution de 1862, et la principauté supprime son armée en 1868 pour rester neutre, un statut qu'elle garde depuis. Né en Moravie et vivant à Vienne, il voit après la Première Guerre mondiale le pays se tourner vers la Suisse, avec l'union douanière de 1923.",
+      "wikipedia": "Jean_II_de_Liechtenstein",
+      "portrait": {
+        "fichier": "John_Quincy_Adams_-_Porträt_des_Fürsten_Johann_II._von_Liechtenstein.jpg",
+        "legende": ""
+      }
+    },
+    {
+      "slug": "francoisjoseph2liechtenstein",
+      "nom": "François-Joseph II de Liechtenstein",
+      "classement": "François-Joseph II de Liechtenstein",
+      "titre": "Naissance de François-Joseph II de Liechtenstein",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1906,
+      "pays": "LI",
+      "description": "François-Joseph II de Liechtenstein (1906-1989) est un prince de Liechtenstein, qui règne de 1938 à 1989 et le premier à vivre à demeure à Vaduz. Il conduit le pays, resté neutre pendant la guerre, hors de la pauvreté en misant sur l'industrie et la place financière. C'est sous son règne que les Liechtensteinoises obtiennent le droit de vote (1984), l'année où il confie le gouvernement à son fils Hans-Adam II.",
+      "wikipedia": "François-Joseph_II_de_Liechtenstein",
+      "portrait": {
+        "fichier": "Fürst_Franz_Josef_II..jpg",
+        "legende": ""
+      }
+    },
+    {
+      "slug": "rheinberger",
+      "nom": "Josef Rheinberger",
+      "classement": "Rheinberger, Josef",
+      "titre": "Naissance de Josef Rheinberger",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1839,
+      "pays": "LI",
+      "description": "Josef Rheinberger (1839-1901) est un compositeur, organiste et pédagogue né à Vaduz, que le Liechtenstein tient pour son plus grand musicien. Installé à Munich, il y enseigne la composition à l'Académie royale de musique, où il a pour élèves Engelbert Humperdinck, Ermanno Wolf-Ferrari et Horatio Parker. Son œuvre compte vingt sonates pour orgue, des messes et des cantates.",
+      "wikipedia": "Josef_Rheinberger",
+      "portrait": {
+        "fichier": "Rheinberger.jpg",
+        "legende": ""
       }
     }
   ],

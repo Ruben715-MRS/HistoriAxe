@@ -109,11 +109,14 @@ for (const file of localeFiles) {
                 assert.ok(evt.id.startsWith(theme.id + '_'), `${where}: l'id "${evt.id}" doit commencer par ${theme.id}_`);
                 // Un bloc rassemble des pays : chaque figure dit le sien. Un pays n'en a
                 // pas besoin — son thème le dit déjà, et un `pays` y serait une redite
-                // qui pourrait se contredire.
+                // qui pourrait se contredire (sauf pour un invité, voir plus bas).
                 if (isBloc) {
                     assert.match(String(evt.pays), ISO_COUNTRY, `${where}: "${evt.id}" — un panthéon de bloc donne le pays de chaque figure (code ISO à deux lettres)`);
-                } else {
-                    assert.equal(evt.pays, undefined, `${where}: "${evt.id}" — « pays » est réservé aux panthéons de bloc`);
+                } else if (evt.pays !== undefined) {
+                    // Seule exception : un invité d'un autre État (Monaco dans « Grandes figures de
+                    // France »), dont la fiche dit alors le pays. Jamais le pays du panthéon lui-même.
+                    assert.match(String(evt.pays), ISO_COUNTRY, `${where}: "${evt.id}" — « pays » est un code ISO à deux lettres majuscules`);
+                    assert.notEqual(evt.pays, theme.id.slice(4).toUpperCase(), `${where}: "${evt.id}" — « pays » d'un panthéon de pays ne désigne qu'un invité d'un autre État`);
                 }
                 assert.match(evt.titre, /^Naissance d/, `${where}: "${evt.id}" — le titre dit une naissance`);
                 assert.ok(theme.axeOrder.includes(evt.axe), `${where}: "${evt.id}" a un axe inconnu « ${evt.axe} »`);

@@ -4,7 +4,15 @@
   "theme": {
     "id": "pan_fr",
     "nom": "Grandes figures de France",
-    "difficulte": "Intermédiaire"
+    "difficulte": "Intermédiaire",
+    "motsCles": [
+      "Monaco",
+      "Monégasque",
+      "Monégasques",
+      "Principauté de Monaco",
+      "Monte-Carlo",
+      "Grimaldi"
+    ]
   },
   "axes": [
     "Chefs d'État et dirigeants",
@@ -2413,6 +2421,163 @@
         "legende": "Marcel Dassault, photographie de Georges Chevalier (1930)",
         "licence": "CC BY 4.0",
         "auteur": "Georges Chevalier"
+      }
+    },
+    {
+      "slug": "honore2monaco",
+      "nom": "Honoré II de Monaco",
+      "classement": "Honoré II de Monaco",
+      "titre": "Naissance d'Honoré II de Monaco",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1597,
+      "pays": "MC",
+      "description": "Honoré II de Monaco (1597-1662) est le premier seigneur de Monaco à porter le titre de prince, qu'il adopte en 1612. Protégé d'abord par l'Espagne, il change de camp : en 1641, le traité de Péronne place Monaco sous la protection du roi de France Louis XIII, qui le dédommage par le duché de Valentinois et d'autres seigneuries. Son long règne, qui dure plus d'un demi-siècle, fait entrer durablement la principauté dans l'orbite de la France.",
+      "wikipedia": "Honoré_II_(prince_de_Monaco)",
+      "portrait": {
+        "fichier": "HonoriusIIMonaco-1-.jpg",
+        "legende": "",
+        "licence": "Domaine public",
+        "auteur": "Philippe de Champaigne (1602–1674)"
+      }
+    },
+    {
+      "slug": "louis1monaco",
+      "nom": "Louis Ier de Monaco",
+      "classement": "Louis Ier de Monaco",
+      "titre": "Naissance de Louis Ier de Monaco",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1642,
+      "pays": "MC",
+      "description": "Louis Ier de Monaco (1642-1701) est un prince de Monaco, né dans la principauté, qui règne de 1662 à sa mort. Il épouse en 1660 Catherine-Charlotte de Gramont, fille d'un maréchal de France, ce qui renforce les liens de la principauté avec le royaume. Proche de Louis XIV, il est son ambassadeur à Rome de 1688 à 1698 et meurt dans cette ville en 1701.",
+      "wikipedia": "Louis_Ier_(prince_de_Monaco)",
+      "portrait": {
+        "fichier": "Portrait_Louis_I,_Prince_of_Monaco_by_an_unknown_artist.jpg",
+        "legende": "",
+        "licence": "Domaine public",
+        "auteur": "François de Troy (1645–1730)"
+      }
+    },
+    {
+      "slug": "antoine1monaco",
+      "nom": "Antoine Ier de Monaco",
+      "classement": "Antoine Ier de Monaco",
+      "titre": "Naissance d'Antoine Ier de Monaco",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1661,
+      "pays": "MC",
+      "description": "Antoine Ier de Monaco (1661-1731) est un prince de Monaco, né à Paris et élevé à la cour de France. Il succède à son père en 1701 et entreprend de grands travaux au palais princier. Sa fille Louise-Hippolyte lui succède en 1731, et son mariage avec Jacques de Matignon fait passer la principauté à la maison de Goyon-Matignon.",
+      "wikipedia": "Antoine_Ier_(prince_de_Monaco)",
+      "portrait": {
+        "fichier": "1706_-_Antoine_I_Grimaldi_(Monaco).jpg",
+        "legende": ""
+      }
+    },
+    {
+      "slug": "honore3monaco",
+      "nom": "Honoré III de Monaco",
+      "classement": "Honoré III de Monaco",
+      "titre": "Naissance d'Honoré III de Monaco",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1720,
+      "pays": "MC",
+      "description": "Honoré III de Monaco (1720-1795) est un prince de Monaco, né à Paris dans la maison de Goyon-Matignon. Il règne soixante ans, de 1733 à 1793, sous la protection de la France, et épouse en 1757 Marie-Catherine de Brignole. Il perd sa principauté en 1793, quand la Convention l'annexe à la France, et meurt dépossédé à Paris deux ans plus tard.",
+      "wikipedia": "Honoré_III_(prince_de_Monaco)",
+      "portrait": {
+        "fichier": "Honoré_III,_Prince_of_Monaco_by_Jean_Baptiste_van_Loo.jpg",
+        "legende": ""
+      }
+    },
+    {
+      "slug": "charles3monaco",
+      "nom": "Charles III de Monaco",
+      "classement": "Charles III de Monaco",
+      "titre": "Naissance de Charles III de Monaco",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1818,
+      "pays": "MC",
+      "description": "Charles III de Monaco (1818-1889) est le prince qui fait de Monaco une station de jeux et de loisirs. Pour rétablir ses finances, après avoir cédé Menton et Roquebrune à la France en 1861, il accorde en 1863 le privilège des jeux à François Blanc, qui fonde le casino de Monte-Carlo, quartier qui porte son nom. Ces recettes permettent à la principauté de supprimer les impôts directs de ses habitants en 1869.",
+      "wikipedia": "Charles_III_(prince_de_Monaco)",
+      "portrait": {
+        "fichier": "CharlesIIIMonaco.jpg",
+        "legende": ""
+      }
+    },
+    {
+      "slug": "albert1monaco",
+      "nom": "Albert Ier de Monaco",
+      "classement": "Albert Ier de Monaco",
+      "titre": "Naissance d'Albert Ier de Monaco",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1848,
+      "pays": "MC",
+      "description": "Albert Ier de Monaco (1848-1922) est un prince et océanographe, surnommé le « Prince savant ». Il explore l'Atlantique et l'Arctique à bord de ses yachts, l'Hirondelle puis la Princesse-Alice, fonde l'Institut océanographique de Paris (1906) et ouvre le musée océanographique de Monaco (1910). Prince régnant depuis 1889, il donne à Monaco sa première constitution en 1911.",
+      "wikipedia": "Albert_Ier_(prince_de_Monaco)",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Prince_Albert_I_of_Monaco_-_circa_1910.jpg",
+        "legende": ""
+      }
+    },
+    {
+      "slug": "louis2monaco",
+      "nom": "Louis II de Monaco",
+      "classement": "Louis II de Monaco",
+      "titre": "Naissance de Louis II de Monaco",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1870,
+      "pays": "MC",
+      "description": "Louis II de Monaco (1870-1949) est un prince de Monaco, né à Baden-Baden et officier dans l'armée française. Il signe en 1918 un traité qui place la principauté sous la protection de la France, et son règne (1922-1949) voit naître le Grand Prix automobile de Monaco (1929). Pendant la Seconde Guerre mondiale, il tente de maintenir la neutralité de sa principauté, occupée par l'Italie puis par l'Allemagne.",
+      "wikipedia": "Louis_II_(prince_de_Monaco)",
+      "portrait": {
+        "fichier": "Prince_Louis_II_of_Monaco_05670r.jpg",
+        "legende": ""
+      }
+    },
+    {
+      "slug": "charlottemonaco",
+      "nom": "Charlotte de Monaco",
+      "classement": "Charlotte de Monaco",
+      "titre": "Naissance de Charlotte de Monaco",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1898,
+      "pays": "MC",
+      "description": "Charlotte de Monaco (1898-1977) est une princesse monégasque, fille naturelle de Louis II, née à Constantine, en Algérie. Légitimée en 1919 et désignée héritière du trône, elle épouse en 1920 Pierre de Polignac, dont elle divorce en 1933. Elle renonce à ses droits en 1944 au profit de son fils Rainier, qui devient prince en 1949.",
+      "wikipedia": "Charlotte_de_Monaco",
+      "portrait": {
+        "fichier": "Princess_Charlotte,_Duchess_of_Valentinois.jpg",
+        "legende": ""
+      }
+    },
+    {
+      "slug": "rainier3monaco",
+      "nom": "Rainier III",
+      "classement": "Rainier III",
+      "titre": "Naissance de Rainier III",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1923,
+      "pays": "MC",
+      "description": "Rainier III (1923-2005) est prince souverain de Monaco de 1949 à sa mort, après plus d'un demi-siècle de règne. Il épouse en 1956 l'actrice Grace Kelly, ce qui fait connaître la principauté dans le monde entier, et donne à Monaco en 1962 une constitution qui abolit la peine de mort. Il défend l'indépendance fiscale de la principauté face au général de Gaulle (1962-1963) et fait gagner du terrain sur la mer.",
+      "wikipedia": "Rainier_III",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Rainier_III_(JFKWHP-KN-C17888,_cropped).jpg",
+        "legende": ""
+      }
+    },
+    {
+      "slug": "gracekelly",
+      "nom": "Grace Kelly",
+      "classement": "Kelly, Grace",
+      "titre": "Naissance de Grace Kelly",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1929,
+      "pays": "MC",
+      "description": "Grace Kelly (1929-1982) est une actrice américaine devenue princesse de Monaco. Interprète de Fenêtre sur cour et de La Main au collet pour Alfred Hitchcock, elle reçoit l'Oscar de la meilleure actrice en 1955 pour Une fille de la province. Elle quitte le cinéma en 1956 en épousant le prince Rainier III, s'engage pour la Croix-Rouge et les arts, et meurt dans un accident de voiture près de Monaco.",
+      "wikipedia": "Grace_Kelly",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Gracia_van_Monaco_(1972).jpg",
+        "legende": ""
       }
     }
   ]
