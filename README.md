@@ -1687,7 +1687,7 @@ gagnerait environ un tiers, mais la cible iOS actuelle (13, voir
 (iOS 14+) déjà évoquée plus haut.
 
 **Cache** : `sw.js` range les portraits dans un cache à part
-(`historiaxe-portraits-v1`), que le ménage de `activate` épargne. Rangés avec
+(`historiaxe-portraits-v2`), que le ménage de `activate` épargne. Rangés avec
 le reste, ils seraient jetés à *chaque* mise à jour de l'app puis retéléchargés
 un à un. Ils ne sont pas préchargés à l'installation (des centaines de
 fichiers, que la plupart des joueurs ne verront jamais) mais se mettent en
