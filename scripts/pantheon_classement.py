@@ -54,6 +54,8 @@ KEEP_AS_WRITTEN = {
     'Garcilaso de la Vega', 'Lope de Vega', 'Tirso de Molina', 'Camarón de la Isla', 'Paco de Lucía',
     # France : deux rois rangés par leur prénom, une princesse de Monaco aussi.
     'Philippe Auguste', 'Philippe le Bel', 'Charlotte de Monaco',
+    # Scandinavie : souverains par leur prénom ou leur surnom, Islandais par leur prénom (patronymes).
+    'Canut le Grand', 'Christine de Suède', 'Harald Hardrada', 'Jón Sigurðsson', 'Jón Arason', 'Snorri Sturluson',
 }
 
 # Écrits à la main : (nom de la source) → nom de classement.

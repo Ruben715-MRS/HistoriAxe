@@ -1046,6 +1046,43 @@ retirés pour tenir l'équilibre des axes et des pays :
 Si l'un d'eux doit revenir, sa fiche se rédige comme les autres dans
 `scripts/pantheon/dach.json` (le script `scripts/fetch_portraits.py dach` récupère son portrait).
 
+### Le quatrième bloc : la Scandinavie
+
+`pan_scandinavie`, « Grandes figures de Scandinavie » (code `scandinavie`, trois lettres au moins
+pour un bloc) : **86 personnages de cinq pays** — Suède 28, Danemark 21, Norvège 17, Finlande 15,
+Islande 5 — de Leif Erikson (vers 970) à Olof Palme (1927). Par axe : 17 Chefs d'État et
+dirigeants, 17 Littérature et pensée, 13 Beaux-arts, 11 Guerres, résistances et exploration, 11
+Sciences, techniques et innovation, 10 Musique, spectacle et sport, 7 Économie et entreprise ;
+31 ⭐ et aucune biographie liée.
+
+Les choix qui ne vont pas de soi :
+
+- **Cinq pays, un bloc.** Danemark, Suède et Norvège ont été unis (Union de Kalmar, puis le
+  Danemark-Norvège, puis la Suède-Norvège de 1814 à 1905) ; la Finlande est restée suédoise jusqu'en
+  1809 ; l'Islande a été danoise jusqu'en 1944. Un pays par thème aurait laissé l'Islande à cinq
+  figures. Aucun pays ne dépasse 40 % (la Suède pèse 33 %) : pas de `partMaxPays`.
+- **Le pays est celui de la naissance.** Ludvig Holberg, né à Bergen, est norvégien dans ce
+  thème, bien qu'il ait écrit en danois ; Sigrid Undset, née au Danemark d'un père norvégien,
+  est norvégienne ; Tycho Brahe, né en Scanie (alors danoise), est danois ; Bernadotte, né à Pau,
+  est suédois (il règne à Stockholm) ; Adolf Erik Nordenskiöld, né à Helsinki, est finlandais
+  bien qu'il ait fait sa carrière en Suède ; Bertel Thorvaldsen, né à Copenhague d'un père
+  islandais, est danois ; Knud Rasmussen, né au Groenland, est danois.
+- **Un axe d'exploration.** « Guerres et résistances » devient « Guerres, résistances et
+  exploration » : Leif Erikson, Nansen, Amundsen, Béring, Rasmussen, Nordenskiöld et Heyerdahl
+  n'ont pas d'autre axe où entrer proprement.
+- **Que des morts.** La phrase d'ouverture exige les deux dates (« Nom (naissance-décès) est… ») :
+  Vigdís Finnbogadóttir, Björn Borg, Björk ou Greta Thunberg ne peuvent donc pas y entrer.
+- **Écartés.** Raoul Wallenberg (sa mort est datée de 1947 par Moscou, de 1952 par la Suède :
+  aucune date de décès ne s'impose pour la phrase d'ouverture), Harald Hardrada (le seul
+  fichier libre trouvé sur Commons est un détail de miniature de 350 × 339 px, illisible une
+  fois recadré ; Trygve Lie le remplace parmi les chefs norvégiens) et Jørn Utzon (aucun
+  portrait libre trouvé : Commons ne propose que sa maison, des plans et l'Opéra de Sydney).
+  Ils peuvent rejoindre `scripts/pantheon/scandinavie.json` si une bonne image se présente.
+- **Licences à revoir.** Le script lit la licence que Commons déclare (domaine public, CC BY,
+  CC BY-SA), pas le statut américain de l'image : à revérifier en priorité pour Mannerheim
+  (photographie de 1940 des archives de l'armée finlandaise), Tove Jansson, Kekkonen, Virtanen
+  (CC BY 4.0) et Kamprad (CC BY 2.0).
+
 ### Un pays à part : l'Égypte
 
 `pan_eg`, « Grandes figures d'Égypte » : **52 personnages**, d'Imhotep (vers 2670
@@ -1932,7 +1969,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
 ### Ce qui n'est pas fait
 
 - **Les autres panthéons** : la France, l'Égypte, les États-Unis, l'Italie, le
-  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb et l'Allemagne-Autriche-Suisse sont écrits.
+  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, l'Allemagne-Autriche-Suisse et la Scandinavie sont écrits.
   Chaque liste de personnages est validée avant la rédaction. Feuille de route, dans l'ordre
   où on les propose (un pays seul quand il a de quoi faire un thème, un bloc sinon) :
   1. **Le Machrek et la péninsule Arabique** (`pan_machrek`, sans l'Égypte, qui a le sien).
@@ -1958,7 +1995,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
      Indien (sans l'Afrique du Sud), « Nouvelle-Zélande et Pacifique ».
   4. **L'Europe et les Amériques qui manquent** : le Portugal (qui reprendra Magellan et
      Viriathe, laissés de côté dans le panthéon de l'Espagne), la Grèce et Byzance, le Benelux,
-     la Scandinavie, la Pologne, l'Europe centrale, les Balkans, le Canada, les Caraïbes non
+     la Pologne, l'Europe centrale, les Balkans, le Canada, les Caraïbes non
      hispaniques.
 
   Les images décideront de la taille de chacun : pour l'Afrique subsaharienne et l'Asie du
