@@ -433,9 +433,10 @@ rendraient la réponse indécidable au visage.
 une inscription peinte (« IOAN PICVS e MIRANDVLA »), un badge de combinaison, une légende
 gravée. `portrait.nomVisible` (dans `scripts/pantheon/*.json`, reporté sur `image.nomVisible`)
 les écarte du mode et du portrait du jour ; la galerie les garde, puisqu'elle montre les
-visages avec leurs noms. Il y en a **26** aujourd'hui : 19 repérés par reconnaissance de texte sur
+visages avec leurs noms. Il y en a **30** aujourd'hui : 19 repérés par reconnaissance de texte sur
 les 838 premières images, 7 pour l'Espagne (Cortés, Las Casas, Vives, Cervantès, Quevedo, le Gran
-Capitán et le socle de Rodrigo), repérés à l'œil faute d'outil de reconnaissance ; tous vérifiés à l'œil (le texte lu à 320 × 400 est celui que le joueur peut
+Capitán et le socle de Rodrigo) et 4 pour la France (le sceau de Philippe Auguste, Du Guesclin, le
+médaillon de Montesquieu, le portrait de Racine), repérés à l'œil faute d'outil de reconnaissance ; tous vérifiés à l'œil (le texte lu à 320 × 400 est celui que le joueur peut
 lire aussi) : « Karolus magnus imperator » sur le Charlemagne de Dürer, « VERCINGETORIX » sur
 la monnaie, « Doctor William Harvey », « LE SEIGNEUR DE MONTAIGNE »… Un nouveau portrait se
 contrôle de la même façon, et la liste n'est pas une garantie : c'est un drapeau d'une ligne à poser
@@ -637,7 +638,7 @@ siècle de naissance.
   tête d'écran change d'ordre sans revenir en arrière.
 - **Recherche et filtres.** Une recherche par nom (sans accent, chaque mot dans
   n'importe quel ordre : « hugo victor » trouve Victor Hugo), et deux listes — pays
-  et domaine — qui annoncent leur effectif (« France (68) »). « Tout effacer » les
+  et domaine — qui annoncent leur effectif (« France (140) »). « Tout effacer » les
   remet à zéro, et le décompte devient « 12 portraits sur 970 ».
 - **La fiche.** Un visage ouvre la fiche de sa naissance (`openModal`), d'où l'on
   passe au portrait voisin **dans l'ordre affiché** — boutons, flèches du clavier ou
@@ -763,13 +764,13 @@ accueilli dans « Musique, spectacle et sport », pour les sportifs de portée h
 
 | Axe | Contenu | France | États-Unis |
 |---|---|---|---|
-| Chefs d'État et dirigeants | souverains, présidents, chefs de gouvernement | 12 | 21 |
-| Guerres et résistances | chefs militaires, résistants, héros d'indépendance, combats pour les droits | 8 | 24 |
-| Littérature et pensée | écrivains, poètes, philosophes | 15 | 25 |
-| Beaux-arts | peinture, sculpture, architecture | 9 | 12 |
-| Musique, spectacle et sport | compositeurs, interprètes, cinéma, théâtre, sport | 8 | 22 |
-| Sciences, techniques et innovation | savants, ingénieurs, inventeurs, explorateurs | 9 | 16 |
-| Économie et entreprise | fondateurs d'entreprises, industriels, banquiers, marchands | 7 | 9 |
+| Chefs d'État et dirigeants | souverains, présidents, chefs de gouvernement | 24 | 21 |
+| Guerres et résistances | chefs militaires, résistants, héros d'indépendance, combats pour les droits | 18 | 24 |
+| Littérature et pensée | écrivains, poètes, philosophes | 30 | 25 |
+| Beaux-arts | peinture, sculpture, architecture | 19 | 12 |
+| Musique, spectacle et sport | compositeurs, interprètes, cinéma, théâtre, sport | 17 | 22 |
+| Sciences, techniques et innovation | savants, ingénieurs, inventeurs, explorateurs | 20 | 16 |
+| Économie et entreprise | fondateurs d'entreprises, industriels, banquiers, marchands | 12 | 9 |
 
 Les règles de rédaction, vérifiées par script et par test (voir plus bas) :
 
@@ -788,14 +789,15 @@ Les règles de rédaction, vérifiées par script et par test (voir plus bas) :
   av. J.-C.-14 ap. J.-C. » (voir plus bas, l'Italie).
   **L'année entre parenthèses doit être celle de l'événement** : sur soixante
   fiches, la faute de frappe est l'erreur la plus probable.
-- **Une personne ne naît pas deux fois.** Les 26 personnages qui ont aussi une
+- **Une personne ne naît pas deux fois.** Les 29 personnages qui ont aussi une
   biographie (champ `biographie`, qui nourrit le bouton « Voir sa biographie »
   de la fiche) doivent porter la *même* date. Les dates des soixante et une premières ont été
-  comparées une à une à la phrase d'ouverture de l'article Wikipédia.
-- **⭐ Incontournables** (`essentiel`) : 22 sur 68 pour la France, 39 sur 129 pour les États-Unis,
+  comparées une à une à la phrase d'ouverture de l'article Wikipédia, celles des 72 figures
+  ajoutées ensuite (voir « La France, de 68 à 140 figures ») au résumé de leur article.
+- **⭐ Incontournables** (`essentiel`) : 34 sur 140 pour la France, 39 sur 129 pour les États-Unis,
   56 sur 149 pour l'Allemagne, l'Autriche et la Suisse, 51 sur 151 pour le Royaume-Uni, 36 sur 132 pour l'Espagne.
 
-Quantités visées : 68 personnages pour la France, 52 pour l'Égypte, 129 pour les
+Quantités visées : 68 personnages pour la France (portés à 140, voir plus bas), 52 pour l'Égypte, 129 pour les
 États-Unis (85 proposés, portés à 123 : « mieux vaut plus que moins », puis à 129 avec l'axe Économie et entreprise), 127 pour
 l'Italie (126 proposés, plus Enzo Ferrari), 80 à 100
 pour l'Amérique hispanique (dix-neuf pays, de 1 à 19 figures chacun), 58 pour le
@@ -1499,6 +1501,57 @@ Les crédits d'auteur ont été remis au propre à la main : le script ne repren
 que Commons rend trop long ou trop vague (« Unknown author Unknown author », listes de noms
 alternatifs), ce qui laissait dix-huit portraits sans crédit.
 
+### La France, de 68 à 140 figures
+
+`pan_fr` était le plus mince des panthéons de pays, en comparaison de l'Italie (127),
+des États-Unis (129), de l'Espagne (132), de l'Allemagne-Autriche-Suisse (149) et du
+Royaume-Uni (151). Il passe de 68 à **140 personnages**, de Vercingétorix (vers 82 av. J.-C.) à
+Serge Gainsbourg (1928), avec 72 figures ajoutées. Par axe : 30 Littérature et pensée, 24
+Chefs d'État et dirigeants, 20 Sciences, techniques et innovation, 19 Beaux-arts, 18 Guerres et
+résistances, 17 Musique, spectacle et sport, 12 Économie et entreprise ; 34 ⭐ et 29 biographies
+liées (Sartre, Gainsbourg et Alexandra David-Néel s'ajoutent aux 26 d'avant).
+
+- **Les ajouts, par axe** : Philippe Auguste, Philippe le Bel, Louis XI, Colbert, Louis XVI,
+  Talleyrand, Robespierre, Napoléon III, Gambetta, Jaurès, Blum, Mitterrand ; Du Guesclin, Bayard,
+  Turenne, Carnot, Louise Michel, Dreyfus, Marc Bloch, Leclerc, Germaine Tillion, Lucie Aubrac ;
+  Ronsard, Corneille, Madame de Sévigné, Racine, Montesquieu, Diderot, Beaumarchais, Chateaubriand,
+  Stendhal, Balzac, Dumas, Flaubert, Rimbaud, Colette, Sartre ; Le Nôtre, Watteau, Ingres, Courbet,
+  Manet, Degas, Renoir, Morisot, Gauguin, Toulouse-Lautrec ; Lully, Bizet, Méliès, Coubertin, Ravel,
+  Gabin, Brassens, Gainsbourg, Truffaut ; Paré, Champlain, Buffon, Laplace, Fourier, Ampère, Claude
+  Bernard, Poincaré, Pierre Curie, Blériot, Alexandra David-Néel ; Hermès, Boucicaut, Peugeot,
+  Monnet, Dassault.
+- **Sept axes, déjà là** : l'axe « Économie et entreprise » existait pour la France (douze figures
+  désormais), aucun axe n'a été créé.
+- **Ce qui a été écarté, et pourquoi.** Fermat (né entre 1601 et 1607 selon les sources) et Manouchian
+  (1906 ou 1909) : une date de naissance trop incertaine pour être celle de l'événement. Villon : le
+  format de la phrase d'ouverture exige une année de décès, et l'on ignore la sienne. Le
+  Corbusier, né en Suisse, est déjà au panthéon de l'Allemagne, de l'Autriche et de la Suisse (un
+  personnage, un seul thème).
+- **Nés ailleurs, rangés ici**, comme Marie Curie : Lully (Florence) et Thierry Hermès (Krefeld,
+  alors française) ; le pays d'un panthéon est celui qui honore.
+- **Des figures contestées, dont la fiche dit ce qu'on leur reproche** : Colbert (le Code noir,
+  préparé sous son ministère), Philippe le Bel (les Templiers), Turenne (le Palatinat), Napoléon
+  III (le coup d'État), Mitterrand (Vichy, Bousquet), Degas (l'affaire Dreyfus), Gauguin (ses
+  relations avec de très jeunes filles à Tahiti), Coubertin (la place des femmes et des peuples
+  colonisés).
+- **Des dates incertaines, dites comme telles** : « vers » devant Du Guesclin (vers 1320), Bayard
+  (vers 1474 : 1473 ou 1474 selon les sources), Paré (vers 1510) et Champlain (vers 1567 : entre
+  1567 et 1574 selon Wikipédia).
+- **Pas de vivants**, comme ailleurs : Zidane et Bernard Arnault, qui ont une biographie dans
+  l'appli, n'ont donc pas de fiche ici.
+- **Les rangements de la galerie** : Philippe Auguste et Philippe le Bel se rangent par leur
+  prénom, André Le Nôtre sous « Le Nôtre » et Leclerc de Hauteclocque sous « Leclerc ».
+
+**Portraits.** 72 JPEG de 320 × 400, 24 Ko en moyenne, 1,7 Mo en tout : 59 du domaine public, 3 CC0,
+5 CC BY et 5 CC BY-SA, la licence lue sur la page Commons. Quatre portraits écrivent le nom dans
+l'image et sont marqués `nomVisible` : le sceau de Philippe Auguste, Du Guesclin, Montesquieu et
+Racine. Les images les plus faibles : le **sceau** de Philippe Auguste (faute de portrait ancien
+sur Commons), la **gravure** où Champlain tire à l'arquebuse (un dessin de sa main, qui ne montre
+pas son visage), la gravure d'Ambroise Paré, le portrait de Du Guesclin (peint au XVIe siècle,
+plus d'un siècle après sa mort) et Sartre, demandé en 330 px parce que Commons refuse les
+miniatures plus grandes de ce fichier. Pour Philippe le Bel, c'est le détail d'une miniature
+qui le montre avec sa famille.
+
 ### Un fichier source par panthéon, un script qui l'écrit dans `data/fr.json`
 
 `scripts/pantheon/<code>.json` (`fr`, `hispam`…) est **la seule source de
@@ -1784,7 +1837,7 @@ faute de licence établie), remplacés l'un par une photographie de 1933 aux
 deux balises, l'autre par un cliché de 1959 de la Bibliothèque du Congrès.
 
 **Poids** : JPEG de 320 × 400, 25 Ko en moyenne (62 au plus), soit 1,8 Mo pour
-les 68 de la France, 2,5 Mo pour les 97 de l'Amérique hispanique, 1,7 Mo
+les 140 de la France, 2,5 Mo pour les 97 de l'Amérique hispanique, 1,7 Mo
 pour les 58 du Maghreb, 1,4 Mo pour les 52 de l'Égypte et 3,1 Mo pour les 129
 des États-Unis — de
 l'ordre de 20 Mo pour 800 portraits, quand `assets/` en pèse déjà 38. Le WebP

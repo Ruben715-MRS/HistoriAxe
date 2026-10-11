@@ -104,9 +104,9 @@ test('la fiche d’un personnage montre son portrait, sa légende, son crédit e
     await page.locator('#mode-card-discovery').click();
     await expect(page.locator('#screen-game')).toBeVisible();
 
-    // Soixante-huit repères, chacun avec sa pastille : « un portrait pour chaque événement ».
-    await expect(page.locator('#timeline .entry')).toHaveCount(68);
-    await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(68);
+    // Cent quarante repères, chacun avec sa pastille : « un portrait pour chaque événement ».
+    await expect(page.locator('#timeline .entry')).toHaveCount(140);
+    await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(140);
 
     await page.locator('#timeline .entry', { hasText: 'Naissance de Victor Hugo' }).click();
     await expect(page.locator('#modal-details')).toBeVisible();
@@ -146,6 +146,32 @@ test('Joséphine Baker, née aux États-Unis et devenue française, est au panth
     const portrait = page.locator('#modal-portrait-img');
     await expect.poll(() => portrait.evaluate(img => img.complete ? img.naturalWidth : 0)).toBe(320);
     await expect(page.locator('#modal-portrait-caption')).toContainText('Joséphine Baker');
+    await expect(page.locator('#modal-bio-btn')).toBeVisible();
+});
+
+test('la France, de Philippe Auguste à Jean Monnet : cent quarante figures, des portraits qui chargent, vingt-neuf biographies', async ({ page }) => {
+    await openThemeById(page, PANTHEON);
+    await page.locator('#mode-card-discovery').click();
+    await expect(page.locator('#screen-game')).toBeVisible();
+
+    // Trois époques : un roi du Moyen Âge, un romancier du XIXe siècle, un physicien du XIXe siècle qui
+    // partage son nom avec une autre figure du panthéon. Le portrait charge au bon format.
+    for (const titre of ['Naissance de Philippe Auguste', 'Naissance de Honoré de Balzac', 'Naissance de Pierre Curie']) {
+        await page.locator('#timeline .entry', { hasText: titre }).click();
+        await expect(page.locator('#modal-details')).toBeVisible();
+        await expect(page.locator('#modal-pays')).toBeHidden();
+        const portrait = page.locator('#modal-portrait-img');
+        await expect.poll(() => portrait.evaluate(img => img.complete ? img.naturalWidth : 0)).toBe(320);
+        await expect(page.locator('#modal-portrait-caption')).not.toBeEmpty();
+        await page.locator('#modal-details .close-btn').click();
+        await expect(page.locator('#modal-details')).toBeHidden();
+    }
+
+    // Vingt-neuf figures ont aussi leur biographie dans l'appli (les trois dernières : Sartre, Gainsbourg et
+    // Alexandra David-Néel) : le bouton y mène.
+    const avecBiographie = await page.evaluate(() => getCurrentTheme().events.filter(e => e.biographie).length);
+    expect(avecBiographie).toBe(29);
+    await page.locator('#timeline .entry', { hasText: 'Naissance de Jean-Paul Sartre' }).click();
     await expect(page.locator('#modal-bio-btn')).toBeVisible();
 });
 
@@ -691,18 +717,18 @@ test('les filtres pays et domaine se combinent, et chaque option annonce son eff
     await expect(domaine.locator('option').first()).toHaveText('Tous les domaines');
     // Sept domaines communs à tous les panthéons ; chaque pays d'un bloc a son entrée.
     await expect(domaine.locator('option')).toHaveCount(8);
-    await expect(pays.locator('option', { hasText: 'France' })).toHaveText(/🇫🇷 France \(68\)/);
+    await expect(pays.locator('option', { hasText: 'France' })).toHaveText(/🇫🇷 France \(140\)/);
     await expect(pays.locator('option', { hasText: 'Venezuela' })).toHaveCount(1);
 
-    await pays.selectOption({ label: '🇫🇷 France (68)' });
-    await expect(page.locator('#gallery-container .gallery-card')).toHaveCount(68);
-    await expect(page.locator('#gallery-subtitle')).toHaveText(`68 portraits sur ${total}`);
+    await pays.selectOption({ label: '🇫🇷 France (140)' });
+    await expect(page.locator('#gallery-container .gallery-card')).toHaveCount(140);
+    await expect(page.locator('#gallery-subtitle')).toHaveText(`140 portraits sur ${total}`);
 
-    await domaine.selectOption({ label: 'Sciences, techniques et innovation (126)' });
+    await domaine.selectOption({ label: 'Sciences, techniques et innovation (137)' });
     const sciencesFrance = await page.locator('#gallery-container .gallery-card').count();
     expect(sciencesFrance).toBeGreaterThan(3);
     expect(sciencesFrance).toBeLessThan(30);
-    await page.locator('#gallery-search').fill('curie');
+    await page.locator('#gallery-search').fill('marie curie');
     await expect(page.locator('#gallery-container .gallery-card')).toHaveCount(1);
 
     await page.locator('#gallery-reset').click();
@@ -741,7 +767,7 @@ test('la fiche passe au portrait voisin : boutons, flèches du clavier, et rien 
 
     // La fiche suit l'ordre et les filtres affichés, pas la base entière.
     await page.locator('#modal-details .close-btn').click();
-    await page.locator('#gallery-search').fill('curie');
+    await page.locator('#gallery-search').fill('marie curie');
     await expect(cartes).toHaveCount(1);
     await cartes.first().click();
     await expect(page.locator('#modal-gallery-pos')).toHaveText('1 sur 1');
@@ -852,7 +878,7 @@ test('à la première ouverture de « Personnages illustres », on demande si le
     await expect(fenetre).toBeHidden();
     expect(await reglage(page)).toBe('bw');
     // Le bouton de la galerie annonce l'avancement, dès le premier instant.
-    await expect(page.locator('#btn-gallery .gallery-launcher-sub')).toHaveText('0 / 970 portraits débloqués');
+    await expect(page.locator('#btn-gallery .gallery-launcher-sub')).toHaveText('0 / 1042 portraits débloqués');
 
     // On ne repose pas la question.
     await page.locator('#screen-subcategories .back-btn').click();
@@ -1330,7 +1356,7 @@ test('« Découvrir » › « Personnage » ouvre la fiche d’une figure de la 
 
 test('« Découvrir » › « Personnage » : la biographie mène au jeu, quand le personnage en a une', async ({ page }) => {
     await quitterLAccueil(page);
-    // On tire jusqu'à une figure qui a sa biographie (163 sur 970).
+    // On tire jusqu'à une figure qui a sa biographie (166 sur 1042).
     await page.locator('#btn-discover').click();
     await page.locator('#btn-discover-person').click();
     for (let i = 0; i < 40 && !(await page.locator('#modal-bio-btn').isVisible()); i++) {
