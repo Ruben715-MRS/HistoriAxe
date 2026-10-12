@@ -804,7 +804,7 @@ pour l'Amérique hispanique (dix-neuf pays, de 1 à 19 figures chacun), 58 pour 
 Maghreb (cinq pays, de 1 à 21), 149 pour l'Allemagne, l'Autriche et la Suisse (170 candidats,
 21 coupés ; trois pays, de 26 à 85 figures), 151 pour le Royaume-Uni (194 candidats, 4 ajoutés, 47 écartés), 132 pour l'Espagne (132 proposés, tous retenus),
 103 pour le Machrek et la péninsule Arabique (182 noms testés, 106 avec une image libre, 3 en attente de leur portrait ; dix pays, de 1 à 25 figures),
-78 pour Israël (88 fiches rédigées, dix mises en attente faute d'image libre),
+79 pour Israël (89 fiches rédigées, dix mises en attente faute d'image libre),
 40 pour les grands pays, 30 pour les autres. À 6
 axes, 30 donne environ 5 par axe — le minimum pour qu'un axe joué seul reste un jeu.
 
@@ -1207,10 +1207,10 @@ sans image libre acceptable.
 
 ### Un pays à part : Israël
 
-`pan_il`, « Grandes figures d'Israël » : **78 personnages**, de David (vers 1040 av. J.-C.) à
-Ilan Ramon (1954). Par axe : 23 Littérature et pensée, 20 Chefs d'État et dirigeants, 11 Guerres et
+`pan_il`, « Grandes figures d'Israël » : **79 personnages**, de David (vers 1040 av. J.-C.) à
+Ilan Ramon (1954). Par axe : 24 Littérature et pensée, 20 Chefs d'État et dirigeants, 11 Guerres et
 résistances, 9 Musique, spectacle et sport, 8 Sciences, techniques et innovation, 7 Beaux-arts ;
-26 ⭐ ; aucune biographie liée.
+27 ⭐ ; une biographie liée (Jésus de Nazareth).
 
 Les choix qui ne vont pas de soi :
 
@@ -1221,8 +1221,10 @@ Les choix qui ne vont pas de soi :
   personnage, un seul thème » joue comme ailleurs ; il n'y a pas de thème juif de la diaspora.
 - **Une exception : Theodor Herzl**, né à Budapest, mort en 1904 sans avoir vécu en Terre
   d'Israël, entre comme sioniste par excellence ; sa fiche le dit.
-- **L'Antiquité, quatre figures** : David, Hérode Ier le Grand, Flavius Josèphe (né à Jérusalem) et
-  Rabbi Akiva ; les figures bibliques ou chrétiennes (Moïse, Jésus) restent aux thèmes religieux.
+- **L'Antiquité, cinq figures** : David, Hérode Ier le Grand, Jésus de Nazareth, Flavius Josèphe (né à
+  Jérusalem) et Rabbi Akiva. Jésus, né en Judée et mort à Jérusalem, répond au critère de la vie en
+  Israël ; il garde la date de sa biographie (vers 4 av. J.-C.) et son bouton « Voir sa biographie ».
+  Moïse, dont la Terre promise n'est qu'un horizon, reste aux thèmes religieux.
   Joseph Caro et Isaac Louria, deux maîtres de Safed, sont les seuls médiévaux. Les dates antiques
   portent « vers ».
 - **Les citoyens arabes d'Israël restent au Machrek** (Émile Habibi, Samih al-Qasim, rangés `PS`),
@@ -1240,7 +1242,7 @@ Les choix qui ne vont pas de soi :
 Le statut américain a décidé des images : les clichés du Bureau de presse israélien postérieurs à
 1946 ne sont libres que selon la loi israélienne, et leur statut américain est douteux ; ils sont
 écartés au profit de CC BY, CC BY-SA, CC0 (Nationaal Archief, collections de la Bibliothèque nationale
-d'Israël) ou de photographies d'avant 1931. David, Hérode, Rabbi Akiva et Joseph Caro sont montrés
+d'Israël) ou de photographies d'avant 1931. David, Hérode, Jésus (icône du Sinaï du VIe siècle), Rabbi Akiva et Joseph Caro sont montrés
 par des images imaginées (statue de l'Escorial, gravures, carte postale), et la légende le dit ;
 Hannah Szenes par une photographie d'enfance. Le portrait de Meir Ariel n'a pas pu être recadré :
 Wikimedia limitait les téléchargements.

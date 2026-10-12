@@ -38,7 +38,7 @@ ARTICLES = ("Le ", "La ", "L'")
 # Rangés tels qu'écrits — par leur prénom ou leur surnom, ou parce que leur nom
 # n'en a pas (Ibn Khaldun), ou parce que l'usage les range ainsi (Jeanne d'Arc).
 KEEP_AS_WRITTEN = {
-    'Frédéric Barberousse', "Marie-Thérèse d'Autriche", 'Ibn al-Fârid', 'Méhémet Ali', 'Ibrahim Pacha',
+    'Jésus de Nazareth', 'Frédéric Barberousse', "Marie-Thérèse d'Autriche", 'Ibn al-Fârid', 'Méhémet Ali', 'Ibrahim Pacha',
     'Ismaïl Pacha', 'Hugues Capet', "Jeanne d'Arc", 'La Fayette', 'Marie Stuart', 'Marc Aurèle',
     "Scipion l'Africain", "François d'Assise", "Thomas d'Aquin", "Guido d'Arezzo", "Pline l'Ancien",
     'Hannibal Barca', 'Septime Sévère', "Augustin d'Hippone", "Athanase d'Alexandrie", 'Fatima al-Fihriya',

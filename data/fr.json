@@ -3,7 +3,7 @@
   "lang": "fr",
   "name": "Français (Intégral)",
   "totalThemes": 808,
-  "totalEvents": 21165,
+  "totalEvents": 21166,
   "categories": [
     {
       "nom": "Culture générale",
@@ -104521,6 +104521,23 @@
                   }
                 },
                 {
+                  "id": "pan_il_jesus",
+                  "axe": "Littérature et pensée",
+                  "date": -4,
+                  "titre": "Naissance de Jésus de Nazareth",
+                  "description": "Jésus de Nazareth (vers 4 av. J.-C.-vers 30 ap. J.-C.) est un prédicateur juif de Galilée, né selon les évangiles à Bethléem et élevé à Nazareth. Il prêche en Galilée et en Judée l'avènement du royaume de Dieu, réunit des disciples et est crucifié à Jérusalem sous le préfet romain Ponce Pilate. Ses disciples voient en lui le Christ ressuscité, et sa vie est à l'origine du christianisme, aujourd'hui la plus répandue des religions du monde.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/J%C3%A9sus_de_Nazareth",
+                  "classement": "Jésus de Nazareth",
+                  "biographie": "bio_jesus",
+                  "image": {
+                    "src": "assets/portraits/pan_il_jesus.jpg",
+                    "legende": "Le Christ Pantocrator, icône du VIe siècle conservée au monastère Sainte-Catherine du Sinaï : une image de convention, cinq siècles après sa mort",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Christ_Icon_Sinai_6th_century.jpg"
+                  }
+                },
+                {
                   "id": "pan_il_josephe",
                   "axe": "Littérature et pensée",
                   "date": 37,
@@ -105749,6 +105766,7 @@
               "essentiel": [
                 "pan_il_david",
                 "pan_il_herode",
+                "pan_il_jesus",
                 "pan_il_josephe",
                 "pan_il_akiva",
                 "pan_il_karo",
