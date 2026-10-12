@@ -592,6 +592,34 @@ test('la Grèce : chacune de ses figures a son portrait, de Solon à Vangelis, e
     await expect(page.locator('#modal-bio-btn')).toBeVisible();
 });
 
+test('la Russie : chacune de ses figures a son portrait, d’Ivan III à Alexeï Navalny, et la fiche n’affiche aucun pays', async ({ page }) => {
+    await openThemeById(page, 'pan_ru');
+    await page.locator('#mode-card-discovery').click();
+    await expect(page.locator('#screen-game')).toBeVisible();
+    const nombre = await page.evaluate(() => getCurrentTheme().events.length);
+    expect(nombre).toBe(135);
+    await expect(page.locator('#timeline .entry')).toHaveCount(nombre);
+    await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
+
+    // Trois époques : le grand-prince de Moscou, un poète du XIXe siècle, un cosmonaute.
+    for (const titre of ['Naissance d\'Ivan III', 'Naissance d\'Alexandre Pouchkine', 'Naissance de Youri Gagarine']) {
+        await page.locator('#timeline .entry', { hasText: titre }).click();
+        await expect(page.locator('#modal-details')).toBeVisible();
+        await expect(page.locator('#modal-pays')).toBeHidden();
+        const portrait = page.locator('#modal-portrait-img');
+        await expect.poll(() => portrait.evaluate(img => img.complete ? img.naturalWidth : 0)).toBe(320);
+        await expect(page.locator('#modal-portrait-caption')).not.toBeEmpty();
+        await page.locator('#modal-details .close-btn').click();
+        await expect(page.locator('#modal-details')).toBeHidden();
+    }
+
+    // Huit figures ont aussi leur biographie dans l'appli : le bouton y mène.
+    const avecBiographie = await page.evaluate(() => getCurrentTheme().events.filter(e => e.biographie).length);
+    expect(avecBiographie).toBe(8);
+    await page.locator('#timeline .entry', { hasText: 'Naissance de Pierre le Grand' }).click();
+    await expect(page.locator('#modal-bio-btn')).toBeVisible();
+});
+
 test('la recherche — « espagne », « castille », « catalogne », « madrid » — mène au panthéon de l’Espagne', async ({ page }) => {
     await page.locator('#screen-home').click();
     for (const mot of ['espagne', 'castille', 'catalogne', 'madrid']) {

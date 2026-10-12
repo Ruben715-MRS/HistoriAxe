@@ -1,0 +1,2424 @@
+{
+  "code": "ru",
+  "nom": "Russie",
+  "theme": {
+    "id": "pan_ru",
+    "nom": "Grandes figures de Russie",
+    "difficulte": "Intermédiaire",
+    "motsCles": [
+      "Russe",
+      "Russes",
+      "Russie",
+      "Empire russe",
+      "URSS",
+      "Union soviétique",
+      "Soviétique",
+      "Fédération de Russie",
+      "Moscou",
+      "Saint-Pétersbourg",
+      "Tsar",
+      "Tsars",
+      "Romanov",
+      "Kremlin",
+      "Sibérie"
+    ]
+  },
+  "axes": [
+    "Chefs d'État et dirigeants",
+    "Guerres et résistances",
+    "Littérature et pensée",
+    "Beaux-arts",
+    "Musique, spectacle et sport",
+    "Sciences, techniques et innovation"
+  ],
+  "personnages": [
+    {
+      "slug": "ivan3",
+      "nom": "Ivan III",
+      "classement": "Ivan III",
+      "titre": "Naissance d'Ivan III",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1440,
+      "description": "Ivan III (1440-1505) est un grand-prince de Moscou, surnommé le Grand, qui rassemble les terres russes autour de sa ville. Il annexe Novgorod en 1478, puis refuse en 1480 de payer le tribut à la Horde d'Or : la confrontation de l'Ougra met fin à plus de deux siècles de domination mongole. Marié à Sophie Paléologue, nièce du dernier empereur byzantin, il fait reconstruire le Kremlin par des architectes italiens, adopte l'aigle bicéphale et prend le titre de « souverain de toute la Russie ».",
+      "wikipedia": "Ivan_III",
+      "portrait": {
+        "fichier": "Ivan_III_of_Russia_3.jpg",
+        "legende": "Ivan III, miniature du Livre des titres du tsar (1672) : une image imaginée, plus de cent cinquante ans après sa mort",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu (Livre des titres du tsar, 1672)",
+        "recadrage": [
+          0.12,
+          0.22,
+          0.88,
+          0.8
+        ],
+        "nomVisible": true
+      }
+    },
+    {
+      "slug": "ivan4",
+      "nom": "Ivan le Terrible",
+      "classement": "Ivan le Terrible",
+      "titre": "Naissance d'Ivan le Terrible",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1530,
+      "description": "Ivan le Terrible (1530-1584) est le premier souverain couronné tsar de Russie, en 1547, après avoir régné comme grand-prince de Moscou depuis l'enfance. Il conquiert les khanats de Kazan en 1552 et d'Astrakhan en 1556, ouvrant la Volga et la route de la Sibérie, et fait élever la cathédrale Basile-le-Bienheureux sur la place Rouge. Sa terreur, avec l'opritchnina à partir de 1565 et le massacre de Novgorod en 1570, laisse le souvenir d'un règne cruel, et il tue en 1581 son fils aîné dans un accès de colère.",
+      "wikipedia": "Ivan_le_Terrible",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Ivan_grozny_frame.jpg",
+        "legende": "Ivan le Terrible, miniature du Livre des titres du tsar (1672) : une image posthume, près d'un siècle après sa mort",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu (Livre des titres du tsar, 1672)",
+        "recadrage": [
+          0.14,
+          0.08,
+          0.86,
+          0.66
+        ],
+        "nomVisible": true
+      }
+    },
+    {
+      "slug": "michel1",
+      "nom": "Michel Ier de Russie",
+      "classement": "Michel Ier de Russie",
+      "titre": "Naissance de Michel Ier de Russie",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1596,
+      "description": "Michel Ier de Russie (1596-1645) est le premier tsar de la dynastie des Romanov, élu en 1613 à seize ans par une assemblée de la terre, le Zemski sobor. Il met fin au Temps des troubles, signe la paix avec la Suède en 1617 et une trêve avec la Pologne en 1618, tandis que son père, le patriarche Philarète, gouverne à ses côtés à partir de 1619. Sa dynastie règne sur la Russie jusqu'à la révolution de 1917.",
+      "wikipedia": "Michel_Ier_(tsar_de_Russie)",
+      "portrait": {
+        "fichier": "Tsar_Mikhail_I_-cropped.JPG",
+        "legende": "Michel Ier, portrait posthume du XVIIe siècle",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "pierre1",
+      "nom": "Pierre le Grand",
+      "classement": "Pierre le Grand",
+      "titre": "Naissance de Pierre le Grand",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1672,
+      "description": "Pierre le Grand (1672-1725) est tsar de Russie dès 1682, puis premier empereur de toutes les Russies en 1721. Il bat Charles XII de Suède à Poltava en 1709, fonde Saint-Pétersbourg en 1703 et ouvre à son pays une fenêtre sur la Baltique. Voyageur en Europe de l'Ouest, il impose à la noblesse l'habit, le calendrier et l'administration occidentaux, et crée une marine et une armée modernes.",
+      "wikipedia": "Pierre_Ier_le_Grand",
+      "essentiel": true,
+      "biographie": "bio_pierrelegrand",
+      "portrait": {
+        "fichier": "Peter_der-Grosse_1838.jpg",
+        "legende": "Pierre le Grand, portrait posthume par Paul Delaroche (1838)",
+        "licence": "Domaine public",
+        "auteur": "Paul Delaroche (1797–1856)"
+      }
+    },
+    {
+      "slug": "elisabeth",
+      "nom": "Élisabeth Ire de Russie",
+      "classement": "Élisabeth Ire de Russie",
+      "titre": "Naissance d'Élisabeth Ire de Russie",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1709,
+      "description": "Élisabeth Ire de Russie (1709-1762) est une impératrice, fille de Pierre le Grand, montée sur le trône en 1741 par un coup d'État soutenu par la garde. Elle fonde l'université de Moscou en 1755, fait construire par Rastrelli le palais d'Hiver et le palais de Catherine, et engage la Russie dans la guerre de Sept Ans contre la Prusse de Frédéric II. Sans enfant, elle laisse le trône à son neveu Pierre III.",
+      "wikipedia": "Élisabeth_Ire_(impératrice_de_Russie)",
+      "portrait": {
+        "fichier": "Carle_Vanloo,_Portrait_de_l’impératrice_Élisabeth_Petrovna_(1760).jpg",
+        "legende": "Élisabeth Ire, portrait par Carle Van Loo (1760)",
+        "licence": "Domaine public",
+        "auteur": "Carle Van Loo (1705–1765)"
+      }
+    },
+    {
+      "slug": "catherine2",
+      "nom": "Catherine II de Russie",
+      "classement": "Catherine II de Russie",
+      "titre": "Naissance de Catherine II de Russie",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1729,
+      "description": "Catherine II de Russie (1729-1796) est une princesse allemande d'Anhalt-Zerbst devenue impératrice en 1762, après avoir renversé son mari Pierre III. Elle étend l'empire jusqu'à la mer Noire en annexant la Crimée en 1783, partage la Pologne avec la Prusse et l'Autriche et correspond avec Voltaire et Diderot. Despote qui se dit éclairée, elle réprime la révolte de Pougatchev en 1774 et renforce le servage.",
+      "wikipedia": "Catherine_II",
+      "essentiel": true,
+      "biographie": "bio_catherine2",
+      "portrait": {
+        "fichier": "Catherine_II_after_Roslin,_Rokotov_(1780s,_Kunsthistorisches_Museum).jpg",
+        "legende": "Catherine II, portrait d'après Alexander Roslin (années 1780)",
+        "licence": "Domaine public",
+        "auteur": "D'après Alexander Roslin (1718–1793)"
+      }
+    },
+    {
+      "slug": "potemkine",
+      "nom": "Grigori Potemkine",
+      "classement": "Potemkine, Grigori",
+      "titre": "Naissance de Grigori Potemkine",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1739,
+      "description": "Grigori Potemkine (1739-1791) est un prince, général et favori de Catherine II, probablement son époux secret à partir de 1774. Gouverneur de la Nouvelle-Russie, il fait annexer la Crimée en 1783, fonde Sébastopol et la flotte de la mer Noire, et conduit la guerre contre les Ottomans. Il meurt en 1791 sur la route d'Iași, et la légende de ses « villages Potemkine », décors prétendument dressés pour la tsarine en 1787, lui survit.",
+      "wikipedia": "Grigori_Potemkine",
+      "portrait": {
+        "fichier": "Princepotemkin.jpg",
+        "legende": "Potemkine, copie de 1847 d'après un portrait de Johann Baptist von Lampi (vers 1784)",
+        "licence": "Domaine public",
+        "auteur": "D'après Johann Baptist von Lampi l'Ancien (1751–1830)"
+      }
+    },
+    {
+      "slug": "alexandre1",
+      "nom": "Alexandre Ier de Russie",
+      "classement": "Alexandre Ier de Russie",
+      "titre": "Naissance d'Alexandre Ier de Russie",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1777,
+      "description": "Alexandre Ier de Russie (1777-1825) est un empereur, petit-fils de Catherine II, qui règne de 1801 à sa mort. Allié puis adversaire de Napoléon, il signe la paix de Tilsit en 1807, résiste à l'invasion de 1812 et entre à Paris en 1814 à la tête des coalisés. Au congrès de Vienne il obtient la Pologne, et il fonde en 1815 la Sainte-Alliance, qui réunit les trois monarchies conservatrices d'Europe.",
+      "wikipedia": "Alexandre_Ier_(empereur_de_Russie)",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "George_Dawe_(1781-1829)_-_Alexander_I,_Emperor_of_Russia_(1777-1825)_-_RCIN_400098_-_Royal_Collection.jpg",
+        "legende": "Alexandre Ier, portrait par George Dawe (vers 1820)",
+        "licence": "Domaine public",
+        "auteur": "George Dawe (1781–1829)",
+        "recadrage": [
+          0.28,
+          0.09,
+          0.74,
+          0.44
+        ]
+      }
+    },
+    {
+      "slug": "nicolas1",
+      "nom": "Nicolas Ier de Russie",
+      "classement": "Nicolas Ier de Russie",
+      "titre": "Naissance de Nicolas Ier de Russie",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1796,
+      "description": "Nicolas Ier de Russie (1796-1855) est un empereur qui monte sur le trône en 1825 et écrase aussitôt la révolte des décabristes. Son règne, fondé sur l'orthodoxie, l'autocratie et la nationalité, impose la censure et la police politique, et fait de la Russie le « gendarme de l'Europe » après l'écrasement de l'insurrection hongroise de 1849. Il engage la guerre de Crimée contre l'Empire ottoman, la France et le Royaume-Uni, et meurt en 1855 pendant le siège de Sébastopol.",
+      "wikipedia": "Nicolas_Ier_(empereur_de_Russie)",
+      "portrait": {
+        "fichier": "Franz_Krüger_-_Porträt_Nikolaus_I._von_Russland.jpg",
+        "legende": "Nicolas Ier, portrait par Franz Krüger (1835)",
+        "licence": "Domaine public",
+        "auteur": "Franz Krüger (1797–1857)",
+        "recadrage": [
+          0.28,
+          0.12,
+          0.74,
+          0.6
+        ]
+      }
+    },
+    {
+      "slug": "alexandre2",
+      "nom": "Alexandre II de Russie",
+      "classement": "Alexandre II de Russie",
+      "titre": "Naissance d'Alexandre II de Russie",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1818,
+      "description": "Alexandre II de Russie (1818-1881) est un empereur, surnommé le Tsar libérateur, qui règne de 1855 à son assassinat. Il abolit le servage en 1861, crée les assemblées locales, les zemstvos, réforme la justice et l'armée, et vend l'Alaska aux États-Unis en 1867. Visé par plusieurs attentats, il est tué à Saint-Pétersbourg le 13 mars 1881 par des membres du groupe terroriste Volonté du peuple.",
+      "wikipedia": "Alexandre_II_(empereur_de_Russie)",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Alexander_II_of_Russia_photo.jpg",
+        "legende": "Alexandre II, photographie attribuée à W. & D. Downey (vers 1874)",
+        "licence": "Domaine public",
+        "auteur": "Attribué à W. & D. Downey"
+      }
+    },
+    {
+      "slug": "alexandre3",
+      "nom": "Alexandre III de Russie",
+      "classement": "Alexandre III de Russie",
+      "titre": "Naissance d'Alexandre III de Russie",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1845,
+      "description": "Alexandre III de Russie (1845-1894) est un empereur, fils d'Alexandre II, qui monte sur le trône en 1881 après l'assassinat de son père. Il rompt avec les réformes, renforce la police et la russification, et durcit les mesures contre les juifs, notamment par les lois de mai 1882. Il scelle l'alliance franco-russe, conclue en 1892, et décide en 1891 la construction du Transsibérien.",
+      "wikipedia": "Alexandre_III_(empereur_de_Russie)",
+      "portrait": {
+        "fichier": "Tsar_Alexander_III_c._1885.jpg",
+        "legende": "Alexandre III, photographie de Sergueï Levitski (vers 1880)",
+        "licence": "Domaine public",
+        "auteur": "Sergueï Levitski (1819–1898)"
+      }
+    },
+    {
+      "slug": "nicolas2",
+      "nom": "Nicolas II",
+      "classement": "Nicolas II",
+      "titre": "Naissance de Nicolas II",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1868,
+      "description": "Nicolas II (1868-1918) est le dernier empereur de Russie, qui règne de 1894 à son abdication en mars 1917. Son règne voit la défaite contre le Japon en 1905, la révolution de 1905, la création de la Douma et l'entrée dans la Première Guerre mondiale. Arrêté après la révolution de février, il est fusillé avec sa famille à Iekaterinbourg dans la nuit du 16 au 17 juillet 1918.",
+      "wikipedia": "Nicolas_II",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Mikola_II_(cropped)-2.jpg",
+        "legende": "Nicolas II, photographie de 1912",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "witte",
+      "nom": "Serge Witte",
+      "classement": "Witte, Serge",
+      "titre": "Naissance de Serge Witte",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1849,
+      "description": "Serge Witte (1849-1915) est un homme d'État russe, né à Tiflis, ministre des Finances de 1892 à 1903. Il stabilise le rouble sur l'étalon-or en 1897, attire les capitaux étrangers et lance le Transsibérien, moteur de l'industrialisation. Il négocie la paix de Portsmouth avec le Japon en 1905 puis devient le premier président du Conseil des ministres, après avoir rédigé le manifeste d'octobre 1905.",
+      "wikipedia": "Serge_Witte",
+      "portrait": {
+        "fichier": "Sergei_Yulyevich_Witte_1905.jpeg",
+        "legende": "Serge Witte, président du Conseil, photographie de 1905",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "stolypine",
+      "nom": "Piotr Stolypine",
+      "classement": "Stolypine, Piotr",
+      "titre": "Naissance de Piotr Stolypine",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1862,
+      "description": "Piotr Stolypine (1862-1911) est un homme d'État russe, né à Dresde, président du Conseil de 1906 à 1911. Il écrase les troubles de 1905-1906 par des cours martiales, dont la corde du bourreau reste surnommée « cravate de Stolypine », et lance une réforme agraire qui permet aux paysans de quitter la commune rurale pour devenir propriétaires. Il est blessé par balle à l'opéra de Kiev par Dmitri Bogrov le 14 septembre 1911 et meurt quatre jours plus tard.",
+      "wikipedia": "Piotr_Stolypine",
+      "portrait": {
+        "fichier": "Pyotr_Stolypin_LOC_07327.jpg",
+        "legende": "Piotr Stolypine, photographie des années 1900",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu (Bibliothèque du Congrès)"
+      }
+    },
+    {
+      "slug": "kerenski",
+      "nom": "Alexandre Kerenski",
+      "classement": "Kerenski, Alexandre",
+      "titre": "Naissance d'Alexandre Kerenski",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1881,
+      "description": "Alexandre Kerenski (1881-1970) est un avocat et homme politique socialiste, né à Simbirsk, chef du gouvernement provisoire russe de juillet à novembre 1917. Il poursuit la guerre contre l'Allemagne et ne parvient ni à rétablir l'ordre ni à répondre à la demande de paix et de terre. Renversé par les bolcheviks en octobre, il s'exile en France puis aux États-Unis, où il meurt à New York.",
+      "wikipedia": "Alexandre_Kerenski",
+      "portrait": {
+        "fichier": "Alexander_Kerensky_LOC_24416.jpg",
+        "legende": "Alexandre Kerenski, photographie de 1917",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu (Bibliothèque du Congrès)"
+      }
+    },
+    {
+      "slug": "lenine",
+      "nom": "Lénine",
+      "classement": "Lénine",
+      "titre": "Naissance de Lénine",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1870,
+      "description": "Lénine (1870-1924) est le fondateur du parti bolchevik et le premier chef du gouvernement soviétique, né Vladimir Ilitch Oulianov à Simbirsk. Revenu de Suisse en avril 1917, il dirige la prise du pouvoir d'octobre, conclut la paix de Brest-Litovsk avec l'Allemagne et sort vainqueur de la guerre civile. Il crée l'URSS en 1922, après avoir lancé la Nouvelle Politique économique, et son corps repose depuis sa mort dans un mausolée de la place Rouge.",
+      "wikipedia": "Vladimir_Ilitch_Lénine",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Lenin_in_1920_(cropped).jpg",
+        "legende": "Lénine, photographie officielle d'avril 1920",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu (photographie officielle)"
+      }
+    },
+    {
+      "slug": "trotski",
+      "nom": "Léon Trotski",
+      "classement": "Trotski, Léon",
+      "titre": "Naissance de Léon Trotski",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1879,
+      "description": "Léon Trotski (1879-1940) est un révolutionnaire marxiste, né Lev Bronstein à Ianovka, dans l'actuelle Ukraine. Président du soviet de Petrograd, il organise l'insurrection d'octobre 1917 puis crée l'Armée rouge, qu'il mène à la victoire dans la guerre civile. Évincé par Staline, expulsé d'URSS en 1929 et fondateur de la IVe Internationale, il est assassiné à Mexico en août 1940 d'un coup de piolet.",
+      "wikipedia": "Léon_Trotski",
+      "portrait": {
+        "fichier": "Лев_Давидович_Троцкий.jpg",
+        "legende": "Trotski, photographie du début des années 1920",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "staline",
+      "nom": "Joseph Staline",
+      "classement": "Staline, Joseph",
+      "titre": "Naissance de Joseph Staline",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1878,
+      "description": "Joseph Staline (1878-1953) est le maître de l'Union soviétique de la fin des années 1920 à sa mort, né Iossif Djougachvili à Gori, en Géorgie. Secrétaire général du parti à partir de 1922, il impose la collectivisation et l'industrialisation forcées, déclenche la Grande Terreur de 1936-1938 et peuple le Goulag de millions de détenus. Vainqueur de l'Allemagne nazie en 1945 au prix de plus de vingt millions de morts soviétiques, il laisse une URSS devenue puissance mondiale.",
+      "wikipedia": "Joseph_Staline",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Teheran conference-1943.jpg",
+        "legende": "Staline à la conférence de Téhéran, photographie du Signal Corps américain (novembre 1943)",
+        "licence": "Domaine public",
+        "auteur": "Signal Corps de l'armée américaine",
+        "recadrage": [
+          0.03,
+          0.2,
+          0.29,
+          0.6
+        ]
+      }
+    },
+    {
+      "slug": "kollontai",
+      "nom": "Alexandra Kollontaï",
+      "classement": "Kollontaï, Alexandra",
+      "titre": "Naissance d'Alexandra Kollontaï",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1872,
+      "description": "Alexandra Kollontaï (1872-1952) est une révolutionnaire bolchevique, née à Saint-Pétersbourg, l'une des premières femmes ministres du monde comme commissaire du peuple à l'Assistance publique en 1917. Théoricienne de l'émancipation des femmes, elle défend le divorce, l'union libre et l'égalité devant la loi, avant d'être écartée par Staline de la direction du parti. Ambassadrice en Norvège, au Mexique puis en Suède, elle est souvent citée comme la première femme ambassadrice de l'époque moderne.",
+      "wikipedia": "Alexandra_Kollontaï",
+      "portrait": {
+        "fichier": "Alexandra_Kollontai.jpg",
+        "legende": "Alexandra Kollontaï, photographie de la collection Bain (Bibliothèque du Congrès)",
+        "licence": "Domaine public",
+        "auteur": "Bain News Service (Bibliothèque du Congrès)"
+      }
+    },
+    {
+      "slug": "khrouchtchev",
+      "nom": "Nikita Khrouchtchev",
+      "classement": "Khrouchtchev, Nikita",
+      "titre": "Naissance de Nikita Khrouchtchev",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1894,
+      "description": "Nikita Khrouchtchev (1894-1971) est le dirigeant de l'Union soviétique de 1953 à 1964, né à Kalinovka, dans la région de Koursk. Dans son rapport secret de 1956 au XXe congrès du parti, il dénonce les crimes de Staline, libère des centaines de milliers de prisonniers du Goulag et ouvre la déstalinisation. Il soutient le programme spatial qui met Spoutnik puis Gagarine en orbite, mais l'installation de missiles à Cuba en 1962 conduit le monde au bord de la guerre nucléaire, et ses pairs l'écartent du pouvoir en 1964.",
+      "wikipedia": "Nikita_Khrouchtchev",
+      "portrait": {
+        "fichier": "Nikita Khrushchev 1959.jpg",
+        "legende": "Khrouchtchev, photographie de septembre 1959 (archives néerlandaises)",
+        "licence": "CC0 (domaine public)",
+        "auteur": "Auteur inconnu (archives néerlandaises)",
+        "recadrage": [
+          0.2,
+          0.1,
+          0.9,
+          0.85
+        ]
+      }
+    },
+    {
+      "slug": "brejnev",
+      "nom": "Léonid Brejnev",
+      "classement": "Brejnev, Léonid",
+      "titre": "Naissance de Léonid Brejnev",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1906,
+      "description": "Léonid Brejnev (1906-1982) est le dirigeant de l'Union soviétique de 1964 à sa mort, né à Kamenskoïe, dans l'actuelle Ukraine. Il écrase le Printemps de Prague en 1968, justifie l'intervention par la « doctrine Brejnev », signe les accords d'Helsinki de 1975 et envoie l'armée soviétique en Afghanistan en 1979. Son long règne, fait de puissance militaire, de vieillissement des dirigeants et d'économie à bout de souffle, est appelé « l'époque de la stagnation ».",
+      "wikipedia": "Léonid_Brejnev",
+      "portrait": {
+        "fichier": "Leonid_Brezjnev,_leider_van_de_Sovjet-Unie,_Bestanddeelnr_925-6564.jpg",
+        "legende": "Brejnev, photographie de Vladimir Musaélian (9 juin 1972)",
+        "licence": "CC0 (domaine public)",
+        "auteur": "Vladimir Musaélian (1939–2020)"
+      }
+    },
+    {
+      "slug": "gorbatchev",
+      "nom": "Mikhaïl Gorbatchev",
+      "classement": "Gorbatchev, Mikhaïl",
+      "titre": "Naissance de Mikhaïl Gorbatchev",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1931,
+      "description": "Mikhaïl Gorbatchev (1931-2022) est le dernier dirigeant de l'Union soviétique, secrétaire général du parti de 1985 à 1991, né à Privolnoïe, dans la région de Stavropol. Il lance la perestroïka et la glasnost, signe avec Reagan le traité sur les missiles à portée intermédiaire en 1987, laisse s'effondrer les régimes communistes d'Europe de l'Est et reçoit le prix Nobel de la paix en 1990. Après le putsch manqué d'août 1991, il démissionne le 25 décembre, et l'URSS cesse d'exister.",
+      "wikipedia": "Mikhaïl_Gorbatchev",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "GorbachevMS.jpg",
+        "legende": "Gorbatchev, photographie de Lev Medvedev (24 octobre 1991)",
+        "licence": "CC BY-SA 4.0",
+        "auteur": "Lev Medvedev"
+      }
+    },
+    {
+      "slug": "eltsine",
+      "nom": "Boris Eltsine",
+      "classement": "Eltsine, Boris",
+      "titre": "Naissance de Boris Eltsine",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1931,
+      "description": "Boris Eltsine (1931-2007) est le premier président de la Fédération de Russie, élu en 1991 et réélu en 1996, né à Boutka, dans l'Oural. Monté sur un char devant la Maison-Blanche de Moscou pendant le putsch d'août 1991, il signe la dissolution de l'URSS, engage la privatisation de l'économie, bombarde le Parlement en 1993 et lance la première guerre de Tchétchénie. Il démissionne le 31 décembre 1999 en désignant Vladimir Poutine pour lui succéder.",
+      "wikipedia": "Boris_Eltsine",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Boris_Yeltsin_(3x4_cropped).jpg",
+        "legende": "Eltsine, portrait officiel (vers 1991-1994)",
+        "licence": "CC BY 4.0",
+        "auteur": "Service de presse de la présidence de la Fédération de Russie"
+      }
+    },
+    {
+      "slug": "nevski",
+      "nom": "Alexandre Nevski",
+      "classement": "Nevski, Alexandre",
+      "titre": "Naissance d'Alexandre Nevski",
+      "axe": "Guerres et résistances",
+      "naissance": 1220,
+      "description": "Alexandre Nevski (1220-1263) est un prince de Novgorod puis grand-prince de Vladimir, qui défend les terres russes contre les Suédois et les chevaliers teutoniques. Il bat les Suédois sur la Neva en 1240, d'où son surnom, puis les chevaliers de l'ordre Teutonique sur le lac Peïpous en 1242, lors de la bataille des Glaces. Soumis à la Horde d'Or pour préserver ses terres, il est canonisé par l'Église orthodoxe, et le film d'Eisenstein, en 1938, fait de lui un héros national.",
+      "wikipedia": "Alexandre_Nevski",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "AlexanderNevskyTitul.jpg",
+        "legende": "Alexandre Nevski, miniature du Livre des titres du tsar (1672) : une image imaginée, plus de quatre siècles après sa mort",
+        "licence": "Domaine public",
+        "auteur": "Artistes de l'Armurerie du Kremlin (1672)",
+        "recadrage": [
+          0.1,
+          0.2,
+          0.9,
+          0.78
+        ],
+        "nomVisible": true
+      }
+    },
+    {
+      "slug": "donskoi",
+      "nom": "Dimitri Donskoï",
+      "classement": "Donskoï, Dimitri",
+      "titre": "Naissance de Dimitri Donskoï",
+      "axe": "Guerres et résistances",
+      "naissance": 1350,
+      "description": "Dimitri Donskoï (1350-1389) est le grand-prince de Moscou qui, le 8 septembre 1380, bat l'armée de la Horde d'Or du khan Mamaï à Koulikovo, sur le Don, d'où son surnom. Cette victoire, la première grande bataille gagnée par les princes russes contre les Mongols, fait de Moscou le centre de la résistance russe. Deux ans plus tard, Toktamich incendie pourtant Moscou et rétablit le tribut, mais la victoire de Koulikovo reste dans la mémoire russe.",
+      "wikipedia": "Dimitri_Ier_Donskoï",
+      "portrait": {
+        "fichier": "1000_Donskoi.jpg",
+        "legende": "Dimitri Donskoï, détail du monument du Millénaire de la Russie à Novgorod (1862)",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Dar Veter",
+        "recadrage": [
+          0.2,
+          0.03,
+          0.8,
+          0.5
+        ]
+      }
+    },
+    {
+      "slug": "pojarski",
+      "nom": "Dmitri Pojarski",
+      "classement": "Pojarski, Dmitri",
+      "titre": "Naissance de Dmitri Pojarski",
+      "axe": "Guerres et résistances",
+      "naissance": 1577,
+      "description": "Dmitri Pojarski (1577-1642) est un prince et chef militaire russe, qui dirige avec le marchand Kouzma Minine l'armée de volontaires libérant Moscou de l'occupation polonaise en 1612. Cette victoire met fin au Temps des troubles et ouvre la voie à l'élection de Michel Romanov en 1613. Le monument à Minine et Pojarski, érigé sur la place Rouge en 1818, honore leur victoire.",
+      "wikipedia": "Dmitri_Pojarski",
+      "portrait": {
+        "fichier": "Boyarin_Dmitry_Mikhailovich_Pozharsky.png",
+        "legende": "Pojarski, gravure de G. A. Afanassiev (1821) : une image posthume",
+        "licence": "CC BY-SA 4.0",
+        "auteur": "G. A. Afanassiev (graveur)",
+        "recadrage": [
+          0.18,
+          0.06,
+          0.82,
+          0.62
+        ]
+      }
+    },
+    {
+      "slug": "razine",
+      "nom": "Stenka Razine",
+      "classement": "Razine, Stenka",
+      "titre": "Naissance de Stenka Razine",
+      "axe": "Guerres et résistances",
+      "naissance": 1630,
+      "description": "Stenka Razine (vers 1630-1671) est un cosaque du Don, chef de la grande révolte cosaque et paysanne de 1670-1671 contre le tsar Alexis Ier. Après des raids de pillage sur la Volga et la mer Caspienne, il prend Astrakhan, Tsaritsyne et Saratov et soulève des serfs et des peuples de la Volga, avant d'être battu près de Simbirsk. Livré par d'autres cosaques, il est écartelé à Moscou en 1671, et les chants populaires russes en font un héros de la liberté.",
+      "wikipedia": "Stenka_Razine",
+      "portrait": {
+        "fichier": "Stiepan_Riazin.jpg",
+        "legende": "Stenka Razine, portrait ancien",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu",
+        "recadrage": [
+          0.15,
+          0.05,
+          0.85,
+          0.62
+        ]
+      }
+    },
+    {
+      "slug": "pougatchev",
+      "nom": "Emelian Pougatchev",
+      "classement": "Pougatchev, Emelian",
+      "titre": "Naissance d'Emelian Pougatchev",
+      "axe": "Guerres et résistances",
+      "naissance": 1742,
+      "description": "Emelian Pougatchev (1742-1775) est un cosaque du Don qui se fait passer pour le tsar Pierre III et soulève en 1773 une immense révolte de cosaques, de serfs et de peuples de l'Oural et de la Volga contre Catherine II. Il pille plusieurs villes, dont Kazan en juillet 1774, et menace Moscou, avant d'être battu, trahi par ses proches et livré aux autorités. Décapité puis écartelé à Moscou en janvier 1775, il laisse à Pouchkine le sujet d'une Histoire de Pougatchev et de La Fille du capitaine.",
+      "wikipedia": "Emelian_Pougatchev",
+      "portrait": {
+        "fichier": "Yemelyan_Pugachev.jpg",
+        "legende": "Pougatchev, portrait à l'huile exécuté d'après nature (1774-1775)",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "souvorov",
+      "nom": "Alexandre Souvorov",
+      "classement": "Souvorov, Alexandre",
+      "titre": "Naissance d'Alexandre Souvorov",
+      "axe": "Guerres et résistances",
+      "naissance": 1730,
+      "description": "Alexandre Souvorov (1730-1800) est un généralissime russe, qui n'a perdu aucune bataille en plus de soixante combats. Vainqueur des Ottomans à Rymnik en 1789 et à Ismaïl en 1790, il écrase les Polonais à Praga en 1794, puis chasse les Français d'Italie du Nord en 1799, à la Trebbia et à Novi. Sa retraite par le Saint-Gothard et le Pont du Diable, en septembre 1799, lui vaut le titre de prince d'Italie et une place de premier rang dans la tradition militaire russe.",
+      "wikipedia": "Alexandre_Souvorov",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Suvorov_Alex_V.jpg",
+        "legende": "Souvorov, portrait anonyme (début des années 1830)",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "koutouzov",
+      "nom": "Mikhaïl Koutouzov",
+      "classement": "Koutouzov, Mikhaïl",
+      "titre": "Naissance de Mikhaïl Koutouzov",
+      "axe": "Guerres et résistances",
+      "naissance": 1745,
+      "description": "Mikhaïl Koutouzov (1745-1813) est un feld-maréchal russe, le vainqueur de l'invasion de 1812. Nommé commandant en chef en août, il livre à Borodino, le 7 septembre 1812, une bataille sans vainqueur net, abandonne Moscou puis harcèle la Grande Armée dans sa retraite jusqu'à sa destruction. Il meurt en avril 1813 à Bunzlau, en Silésie, en marche vers l'Allemagne, et la tradition russe lui doit son image de sauveur de la patrie.",
+      "wikipedia": "Mikhaïl_Koutouzov",
+      "essentiel": true,
+      "biographie": "bio_koutouzov",
+      "portrait": {
+        "fichier": "Kutuzov1.jpg",
+        "legende": "Koutouzov, portrait par Roman Volkov (1813)",
+        "licence": "Domaine public",
+        "auteur": "Roman Volkov"
+      }
+    },
+    {
+      "slug": "barclay",
+      "nom": "Michel Barclay de Tolly",
+      "classement": "Barclay de Tolly, Michel",
+      "titre": "Naissance de Michel Barclay de Tolly",
+      "axe": "Guerres et résistances",
+      "naissance": 1761,
+      "description": "Michel Barclay de Tolly (1761-1818) est un feld-maréchal russe issu de la noblesse balte d'origine écossaise, ministre de la Guerre en 1812. Conscient de l'infériorité numérique de son armée, il recule devant Napoléon en brûlant la terre, stratégie impopulaire qui prépare pourtant la perte de la Grande Armée, avant d'être remplacé par Koutouzov. Il reprend le commandement en 1813, remporte Leipzig avec les coalisés, entre à Paris et reçoit le titre de feld-maréchal en 1814.",
+      "wikipedia": "Michel_Barclay_de_Tolly",
+      "portrait": {
+        "fichier": "Barclay1829.jpg",
+        "legende": "Barclay de Tolly, détail d'un portrait de George Dawe (1829)",
+        "licence": "Domaine public",
+        "auteur": "D'après George Dawe"
+      }
+    },
+    {
+      "slug": "bagration",
+      "nom": "Piotr Bagration",
+      "classement": "Bagration, Piotr",
+      "titre": "Naissance de Piotr Bagration",
+      "axe": "Guerres et résistances",
+      "naissance": 1765,
+      "description": "Piotr Bagration (1765-1812) est un général russe issu d'une famille princière géorgienne, héros des guerres contre Napoléon. Compagnon de Souvorov en Italie et en Suisse, il se distingue à Austerlitz, à Eylau et en Finlande, puis commande en 1812 la deuxième armée de l'ouest. Mortellement blessé à Borodino, il meurt le 24 septembre 1812, et son nom est donné en 1944 à l'opération qui détruit le groupe d'armées Centre allemand en Biélorussie.",
+      "wikipedia": "Piotr_Ivanovitch_Bagration",
+      "portrait": {
+        "fichier": "Bagration_P_I.jpg",
+        "legende": "Bagration, portrait de l'atelier de George Dawe (1822-1823)",
+        "licence": "Domaine public",
+        "auteur": "Atelier de George Dawe (1781–1829)"
+      }
+    },
+    {
+      "slug": "nakhimov",
+      "nom": "Pavel Nakhimov",
+      "classement": "Nakhimov, Pavel",
+      "titre": "Naissance de Pavel Nakhimov",
+      "axe": "Guerres et résistances",
+      "naissance": 1802,
+      "description": "Pavel Nakhimov (1802-1855) est un amiral russe, vainqueur de la flotte ottomane à Sinope le 30 novembre 1853, dernière grande bataille navale à voile. Adjoint puis successeur de l'amiral Kornilov, il dirige la défense de Sébastopol pendant la guerre de Crimée, assiégée onze mois par les Français, les Britanniques et les Ottomans. Il est mortellement blessé par un tireur sur le bastion de Malakoff le 11 juillet 1855 et meurt le lendemain, et l'ordre soviétique qui porte son nom récompense les officiers de marine.",
+      "wikipedia": "Pavel_Nakhimov",
+      "portrait": {
+        "fichier": "Pavel_Nakhimov.jpg",
+        "legende": "Pavel Nakhimov, portrait d'époque",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "broussilov",
+      "nom": "Alexeï Broussilov",
+      "classement": "Broussilov, Alexeï",
+      "titre": "Naissance d'Alexeï Broussilov",
+      "axe": "Guerres et résistances",
+      "naissance": 1853,
+      "description": "Alexeï Broussilov (1853-1926) est un général russe, né à Tiflis, commandant du front sud-ouest pendant la Première Guerre mondiale. Son offensive de l'été 1916 en Galicie et en Volhynie, la plus meurtrière de la guerre pour l'Autriche-Hongrie, en brise l'armée et soulage les fronts italien et français, mais elle coûte aussi très cher aux Russes. Rallié aux bolcheviks pendant la guerre contre la Pologne en 1920, il meurt à Moscou en 1926.",
+      "wikipedia": "Alexeï_Broussilov",
+      "portrait": {
+        "fichier": "Brusilov,_Aleksey_Alekseyevich_(Niva_magazine,_1914).jpg",
+        "legende": "Broussilov, photographie parue dans la revue Niva (1914)",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu",
+        "recadrage": [
+          0.35,
+          0.03,
+          0.9,
+          0.45
+        ]
+      }
+    },
+    {
+      "slug": "koltchak",
+      "nom": "Alexandre Koltchak",
+      "classement": "Koltchak, Alexandre",
+      "titre": "Naissance d'Alexandre Koltchak",
+      "axe": "Guerres et résistances",
+      "naissance": 1874,
+      "description": "Alexandre Koltchak (1874-1920) est un amiral russe et explorateur de l'Arctique, commandant de la flotte de la mer Noire en 1916-1917. Après la révolution, il se proclame en 1918 « Chef suprême de la Russie » à Omsk et dirige les armées blanches de Sibérie contre les bolcheviks. Défait, livré à Irkoutsk, il est fusillé le 7 février 1920, et son destin divise encore les Russes.",
+      "wikipedia": "Alexandre_Koltchak",
+      "portrait": {
+        "fichier": "Aleksandr_Kolchak_(1874-1920).jpg",
+        "legende": "Koltchak, photographie (vers 1915)",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "toukhatchevski",
+      "nom": "Mikhaïl Toukhatchevski",
+      "classement": "Toukhatchevski, Mikhaïl",
+      "titre": "Naissance de Mikhaïl Toukhatchevski",
+      "axe": "Guerres et résistances",
+      "naissance": 1893,
+      "description": "Mikhaïl Toukhatchevski (1893-1937) est un maréchal de l'Union soviétique, ancien officier tsariste rallié aux bolcheviks. Commandant de l'Armée rouge pendant la guerre civile, vaincu devant Varsovie en 1920, il est le grand théoricien de la guerre mécanisée et de l'opération en profondeur. Accusé à tort de complot avec l'Allemagne, il est fusillé en juin 1937, ce qui ouvre la purge de l'armée.",
+      "wikipedia": "Mikhaïl_Toukhatchevski",
+      "portrait": {
+        "fichier": "Mikhail_Tukhachevsky.jpg",
+        "legende": "Toukhatchevski, photographie d'avant 1937",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "joukov",
+      "nom": "Gueorgui Joukov",
+      "classement": "Joukov, Gueorgui",
+      "titre": "Naissance de Gueorgui Joukov",
+      "axe": "Guerres et résistances",
+      "naissance": 1896,
+      "description": "Gueorgui Joukov (1896-1974) est le maréchal le plus célèbre de l'Union soviétique. Il défend Moscou en 1941, dirige les contre-offensives de Stalingrad, de Koursk et de Biélorussie, puis prend Berlin en mai 1945 et reçoit la capitulation allemande. Écarté par Staline, puis par Khrouchtchev après l'avoir soutenu en 1957, il meurt en 1974, et son image reste celle du vainqueur de 1945.",
+      "wikipedia": "Gueorgui_Joukov",
+      "essentiel": true,
+      "biographie": "bio_joukov",
+      "portrait": {
+        "fichier": "Георгий_Константинович_Жуков_в_военной_форме.jpg",
+        "legende": "Joukov, photographie des années 1960",
+        "licence": "CC BY 4.0",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "rokossovski",
+      "nom": "Constantin Rokossovski",
+      "classement": "Rokossovski, Constantin",
+      "titre": "Naissance de Constantin Rokossovski",
+      "axe": "Guerres et résistances",
+      "naissance": 1896,
+      "description": "Constantin Rokossovski (1896-1968) est un maréchal de l'Union soviétique, arrêté et torturé pendant la Grande Terreur avant d'être libéré en 1940. Commandant sur les fronts de Stalingrad, de Koursk et de Biélorussie, il dirige l'opération Bagration en 1944. Fait maréchal de Pologne en 1949, il est ministre de la Défense de la Pologne communiste jusqu'en 1956.",
+      "wikipedia": "Constantin_Rokossovski",
+      "portrait": {
+        "fichier": "Маршал_Советского_Союза_дважды_Герой_Советского_Союза_Константин_Константинович_Рокоссовский.jpg",
+        "legende": "Rokossovski, photographie de juin 1945",
+        "licence": "CC BY 4.0",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "koniev",
+      "nom": "Ivan Koniev",
+      "classement": "Koniev, Ivan",
+      "titre": "Naissance d'Ivan Koniev",
+      "axe": "Guerres et résistances",
+      "naissance": 1897,
+      "description": "Ivan Koniev (1897-1973) est un maréchal de l'Union soviétique, fils de paysans de la région de Vologda. Commandant des fronts de Koursk, d'Ukraine et de la Vistule-Oder, il libère Prague en mai 1945 et rivalise avec Joukov pour la prise de Berlin. Après la guerre, il est commandant en chef du pacte de Varsovie dès sa création en 1955 et dirige en 1956 l'intervention soviétique à Budapest.",
+      "wikipedia": "Ivan_Koniev",
+      "portrait": {
+        "fichier": "Ivan_Stepanovich_Konev.jpg",
+        "legende": "Koniev, photographie de 1945",
+        "licence": "CC BY 4.0",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "tchouikov",
+      "nom": "Vassili Tchouïkov",
+      "classement": "Tchouïkov, Vassili",
+      "titre": "Naissance de Vassili Tchouïkov",
+      "axe": "Guerres et résistances",
+      "naissance": 1900,
+      "description": "Vassili Tchouïkov (1900-1982) est un maréchal de l'Union soviétique, commandant de la 62e armée qui tient Stalingrad dans les ruines de la ville de septembre 1942 à février 1943. Fils de paysans, il adopte la tactique du combat rapproché, au corps à corps contre les Allemands, pour neutraliser leur supériorité aérienne et blindée. Il prend Berlin en 1945, où il reçoit la reddition de la ville, et il est enterré sur le kourgane Mamaïev, à Volgograd.",
+      "wikipedia": "Vassili_Tchouïkov",
+      "portrait": {
+        "fichier": "Chuikov._A._Mironov.jpg",
+        "legende": "Tchouïkov, portrait peint par Andreï Mironov (2018)",
+        "licence": "CC BY-SA 4.0",
+        "auteur": "Andreï Mironov"
+      }
+    },
+    {
+      "slug": "kosmodemianskaia",
+      "nom": "Zoïa Kosmodemianskaïa",
+      "classement": "Kosmodemianskaïa, Zoïa",
+      "titre": "Naissance de Zoïa Kosmodemianskaïa",
+      "axe": "Guerres et résistances",
+      "naissance": 1923,
+      "description": "Zoïa Kosmodemianskaïa (1923-1941) est une jeune partisane soviétique, étudiante de dix-huit ans, envoyée en novembre 1941 incendier des écuries dans un village occupé près de Moscou. Capturée, torturée puis pendue par les Allemands le 29 novembre 1941 à Petrichtchevo, elle ne livre aucun nom. Première femme à recevoir à titre posthume le titre de héros de l'Union soviétique pendant la guerre, elle devient une figure du culte patriotique soviétique.",
+      "wikipedia": "Zoïa_Kosmodemianskaïa",
+      "portrait": {
+        "fichier": "Zoya_Kosmodemyanskaya,_1941.png",
+        "legende": "Zoïa Kosmodemianskaïa, photographie (vers 1941)",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "zaitsev",
+      "nom": "Vassili Zaïtsev",
+      "classement": "Zaïtsev, Vassili",
+      "titre": "Naissance de Vassili Zaïtsev",
+      "axe": "Guerres et résistances",
+      "naissance": 1915,
+      "description": "Vassili Zaïtsev (1915-1991) est un tireur d'élite soviétique, berger de l'Oural devenu, avec 225 ennemis abattus, le plus célèbre sniper de Stalingrad. Engagé en septembre 1942 dans les combats de rues, il forme d'autres tireurs, les « zaïtsévets », et la légende lui prête un duel avec un tireur d'élite allemand dont l'existence est discutée. Héros de l'Union soviétique, mort à Kiev en décembre 1991, il est inhumé en 2006 sur le kourgane Mamaïev, à Volgograd, comme il l'avait demandé.",
+      "wikipedia": "Vassili_Zaïtsev",
+      "portrait": {
+        "fichier": "Vasili_Záitsev.jpg",
+        "legende": "Vassili Zaïtsev à Stalingrad, photographie de Gueorgui Zelma (décembre 1942)",
+        "licence": "CC BY 4.0",
+        "auteur": "Gueorgui Zelma",
+        "recadrage": [
+          0.42,
+          0.22,
+          0.86,
+          0.82
+        ]
+      }
+    },
+    {
+      "slug": "sakharov",
+      "nom": "Andreï Sakharov",
+      "classement": "Sakharov, Andreï",
+      "titre": "Naissance d'Andreï Sakharov",
+      "axe": "Guerres et résistances",
+      "naissance": 1921,
+      "description": "Andreï Sakharov (1921-1989) est un physicien soviétique, père de la bombe H soviétique, devenu le plus célèbre dissident de l'URSS. Après avoir dénoncé la course aux armements et défendu les droits de l'homme, il reçoit le prix Nobel de la paix en 1975 et est exilé à Gorki de 1980 à 1986 pour avoir condamné l'invasion de l'Afghanistan. Libéré par Gorbatchev, il siège en 1989 au Congrès des députés du peuple, où il réclame la fin du monopole du parti, et meurt à Moscou la même année.",
+      "wikipedia": "Andreï_Sakharov",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "RIAN_archive_25981_Academician_Sakharov.jpg",
+        "legende": "Sakharov, photographie de Vladimir Fedorenko (1er mars 1989)",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Vladimir Fedorenko",
+        "recadrage": [
+          0.0,
+          0.12,
+          0.6,
+          0.85
+        ]
+      }
+    },
+    {
+      "slug": "politkovskaia",
+      "nom": "Anna Politkovskaïa",
+      "classement": "Politkovskaïa, Anna",
+      "titre": "Naissance d'Anna Politkovskaïa",
+      "axe": "Guerres et résistances",
+      "naissance": 1958,
+      "description": "Anna Politkovskaïa (1958-2006) est une journaliste russe, née à New York de parents diplomates soviétiques, reporter à la Novaïa Gazeta. Elle couvre les guerres de Tchétchénie, dénonce les exactions de l'armée russe et des forces tchétchènes pro-russes, et est empoisonnée en 2004 dans un avion en route pour Beslan. Elle est abattue le 7 octobre 2006 dans l'ascenseur de son immeuble de Moscou, et cinq hommes sont condamnés en 2014 pour le meurtre, mais le commanditaire reste inconnu.",
+      "wikipedia": "Anna_Politkovskaïa",
+      "portrait": {
+        "fichier": "Anna_Politkovskaja_im_Gespräch_mit_Christhard_Läpple.jpg",
+        "legende": "Anna Politkovskaïa, photographie du 17 mars 2005 (émission du Blaues Sofa)",
+        "licence": "CC BY 2.0",
+        "auteur": "Blaues Sofa"
+      }
+    },
+    {
+      "slug": "navalny",
+      "nom": "Alexeï Navalny",
+      "classement": "Navalny, Alexeï",
+      "titre": "Naissance d'Alexeï Navalny",
+      "axe": "Guerres et résistances",
+      "naissance": 1976,
+      "description": "Alexeï Navalny (1976-2024) est un avocat et opposant russe, qui s'impose à partir de 2008 comme le principal adversaire de Vladimir Poutine par ses enquêtes sur la corruption de l'élite russe. Empoisonné au Novitchok en août 2020, soigné en Allemagne, il rentre à Moscou en janvier 2021, où il est arrêté puis condamné à de longues peines de prison. Il meurt le 16 février 2024 dans une colonie pénitentiaire du cercle polaire, à Kharp, et de nombreux dirigeants étrangers tiennent le pouvoir russe pour responsable de sa mort, ce que Moscou récuse.",
+      "wikipedia": "Alexeï_Navalny",
+      "portrait": {
+        "fichier": "Alexey_Navalny_2018_(cropped).png",
+        "legende": "Alexeï Navalny, photographie de 2018",
+        "licence": "CC BY 3.0",
+        "auteur": "Navalny's Team"
+      }
+    },
+    {
+      "slug": "derjavine",
+      "nom": "Gavrila Derjavine",
+      "classement": "Derjavine, Gavrila",
+      "titre": "Naissance de Gavrila Derjavine",
+      "axe": "Littérature et pensée",
+      "naissance": 1743,
+      "description": "Gavrila Derjavine (1743-1816) est le plus grand poète russe du XVIIIe siècle, né près de Kazan. Soldat puis haut fonctionnaire, gouverneur et ministre de la Justice, il mêle dans ses odes, dont « Félitsa » (1782) adressée à Catherine II, la louange du pouvoir et un ton personnel nouveau. En 1815, il écoute le jeune Pouchkine lui réciter ses vers au lycée de Tsarskoïe Selo, et la tradition veut qu'il y ait vu son successeur.",
+      "wikipedia": "Gavrila_Derjavine",
+      "portrait": {
+        "fichier": "Derzhavin_by_Borovikovsky_(1811,_Pushkin_museum).jpg",
+        "legende": "Derjavine, portrait par Vladimir Borovikovski (1811)",
+        "licence": "Domaine public",
+        "auteur": "Vladimir Borovikovski (1757–1825)"
+      }
+    },
+    {
+      "slug": "karamzine",
+      "nom": "Nikolaï Karamzine",
+      "classement": "Karamzine, Nikolaï",
+      "titre": "Naissance de Nikolaï Karamzine",
+      "axe": "Littérature et pensée",
+      "naissance": 1766,
+      "description": "Nikolaï Karamzine (1766-1826) est un écrivain et historien russe, né près de Simbirsk. Auteur de la nouvelle sentimentale Pauvre Lise (1792), il rapproche la langue littéraire de la langue parlée, avant de consacrer ses dernières années à l'Histoire de l'État russe, en douze volumes. Historiographe officiel d'Alexandre Ier, il y raconte la Russie des origines au Temps des troubles, et en fait un récit national lu de toute la société cultivée.",
+      "wikipedia": "Nikolaï_Karamzine",
+      "portrait": {
+        "fichier": "Karamzin_by_Tropinin_(1818,_Tretyakov_gallery).jpg",
+        "legende": "Karamzine, portrait par Vassili Tropinine (1818)",
+        "licence": "Domaine public",
+        "auteur": "Vassili Tropinine (1780–1857)"
+      }
+    },
+    {
+      "slug": "krylov",
+      "nom": "Ivan Krylov",
+      "classement": "Krylov, Ivan",
+      "titre": "Naissance d'Ivan Krylov",
+      "axe": "Littérature et pensée",
+      "naissance": 1769,
+      "description": "Ivan Krylov (1769-1844) est un fabuliste russe, né à Moscou, journaliste satirique dans sa jeunesse. À partir de 1809, il publie près de deux cents fables, inspirées d'Ésope et de La Fontaine mais situées dans la vie russe, dont « Le Corbeau et le Renard » et « Le Quatuor ». Leurs formules, devenues proverbes, font de lui l'un des auteurs les plus cités du russe, et sa statue orne le Jardin d'été, à Saint-Pétersbourg.",
+      "wikipedia": "Ivan_Krylov",
+      "portrait": {
+        "fichier": "Eggink-Portrait_of_Ivan_Krylov.jpg",
+        "legende": "Krylov, portrait par Ivan Eggink (1834)",
+        "licence": "Domaine public",
+        "auteur": "Ivan Eggink",
+        "recadrage": [
+          0.2,
+          0.05,
+          0.9,
+          0.5
+        ]
+      }
+    },
+    {
+      "slug": "joukovskipoete",
+      "nom": "Vassili Joukovski",
+      "classement": "Joukovski, Vassili",
+      "titre": "Naissance de Vassili Joukovski",
+      "axe": "Littérature et pensée",
+      "naissance": 1783,
+      "description": "Vassili Joukovski (1783-1852) est un poète russe, fils naturel d'un seigneur et d'une captive turque, pionnier du romantisme. Traducteur de Schiller, de Byron, de Goethe, de Walter Scott et de l'Odyssée, il donne à la poésie russe une langue musicale nouvelle. Précepteur du futur Alexandre II, il use de son crédit à la cour pour protéger Pouchkine et obtenir le rachat du poète Chevtchenko, libéré du servage en 1838.",
+      "wikipedia": "Vassili_Joukovski",
+      "portrait": {
+        "fichier": "Bryullov_portrait_of_Zhukovsky.jpg",
+        "legende": "Joukovski, portrait par Karl Brioullov (1837)",
+        "licence": "Domaine public",
+        "auteur": "Karl Brioullov (1799–1852)"
+      }
+    },
+    {
+      "slug": "pouchkine",
+      "nom": "Alexandre Pouchkine",
+      "classement": "Pouchkine, Alexandre",
+      "titre": "Naissance d'Alexandre Pouchkine",
+      "axe": "Littérature et pensée",
+      "naissance": 1799,
+      "description": "Alexandre Pouchkine (1799-1837) est le grand poète national russe, né à Moscou, fondateur de la langue littéraire moderne. Auteur du roman en vers Eugène Onéguine, du drame Boris Godounov, du Cavalier de bronze et de La Fille du capitaine, il compte parmi ses ancêtres Abraham Hannibal, d'origine africaine, filleul de Pierre le Grand. Exilé puis surveillé par le pouvoir, il est blessé dans un duel avec Georges d'Anthès le 8 février 1837 à Saint-Pétersbourg et meurt deux jours plus tard.",
+      "wikipedia": "Alexandre_Pouchkine",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "AleksandrPushkin.jpg",
+        "legende": "Pouchkine, portrait par Vassili Tropinine (1827)",
+        "licence": "Domaine public",
+        "auteur": "Vassili Tropinine (1780–1857)"
+      }
+    },
+    {
+      "slug": "gogol",
+      "nom": "Nicolas Gogol",
+      "classement": "Gogol, Nicolas",
+      "titre": "Naissance de Nicolas Gogol",
+      "axe": "Littérature et pensée",
+      "naissance": 1809,
+      "description": "Nicolas Gogol (1809-1852) est un écrivain de langue russe, né à Sorotchintsy, dans l'actuelle Ukraine, que les deux pays revendiquent. Auteur des nouvelles Le Manteau et Le Nez, de la comédie Le Revizor et du roman Les Âmes mortes (1842), il mêle satire sociale, fantastique et grotesque. Rongé par le mysticisme, il brûle en 1852 le second tome des Âmes mortes et meurt à Moscou quelques jours plus tard.",
+      "wikipedia": "Nicolas_Gogol",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "N.Gogol_by_F.Moller_(1840,_Tretyakov_gallery).jpg",
+        "legende": "Gogol, portrait par Fiodor Möller (début des années 1840)",
+        "licence": "Domaine public",
+        "auteur": "Fiodor Möller (1812–1874)"
+      }
+    },
+    {
+      "slug": "lermontov",
+      "nom": "Mikhaïl Lermontov",
+      "classement": "Lermontov, Mikhaïl",
+      "titre": "Naissance de Mikhaïl Lermontov",
+      "axe": "Littérature et pensée",
+      "naissance": 1814,
+      "description": "Mikhaïl Lermontov (1814-1841) est le poète romantique russe qui prend la suite de Pouchkine, né à Moscou. Auteur du poème « La Mort du poète » (1837), qui lui vaut l'exil au Caucase, du Démon et du roman Un héros de notre temps (1840), il dépeint un monde désenchanté et rebelle. Officier, il est tué en duel à Piatigorsk le 27 juillet 1841, à vingt-six ans.",
+      "wikipedia": "Mikhaïl_Lermontov",
+      "portrait": {
+        "fichier": "Mikhail_lermontov.jpg",
+        "legende": "Lermontov, portrait par Piotr Zabolotski (1837)",
+        "licence": "Domaine public",
+        "auteur": "Piotr Zabolotski (1803–1866)"
+      }
+    },
+    {
+      "slug": "gontcharov",
+      "nom": "Ivan Gontcharov",
+      "classement": "Gontcharov, Ivan",
+      "titre": "Naissance d'Ivan Gontcharov",
+      "axe": "Littérature et pensée",
+      "naissance": 1812,
+      "description": "Ivan Gontcharov (1812-1891) est un romancier russe, né à Simbirsk, fonctionnaire du ministère des Finances puis censeur. Son roman Oblomov (1859) met en scène un noble qui reste couché, incapable d'agir, et forge le mot « oblomovisme » pour désigner l'apathie. Il est aussi l'auteur d'Une histoire ordinaire (1847) et du Précipice (1869), et d'un récit de voyage autour du monde à bord de la frégate Pallada.",
+      "wikipedia": "Ivan_Gontcharov",
+      "portrait": {
+        "fichier": "Ivan_Goncharov.jpg",
+        "legende": "Gontcharov, photographie",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu",
+        "recadrage": [
+          0.1,
+          0.12,
+          0.9,
+          0.8
+        ]
+      }
+    },
+    {
+      "slug": "tourgueniev",
+      "nom": "Ivan Tourgueniev",
+      "classement": "Tourgueniev, Ivan",
+      "titre": "Naissance d'Ivan Tourgueniev",
+      "axe": "Littérature et pensée",
+      "naissance": 1818,
+      "description": "Ivan Tourgueniev (1818-1883) est un écrivain russe, né à Orel, qui vit une grande partie de sa vie en Allemagne et en France. Il se fait connaître avec les Récits d'un chasseur (1852), qui montrent la vie des serfs, puis publie Pères et fils (1862), qui popularise le mot « nihiliste ». Ami de Flaubert, de George Sand et de Zola, il meurt à Bougival, près de Paris, auprès de la cantatrice Pauline Viardot.",
+      "wikipedia": "Ivan_Tourgueniev",
+      "portrait": {
+        "fichier": "Turgenev_by_Repin.jpg",
+        "legende": "Tourgueniev, portrait par Ilia Répine (1874)",
+        "licence": "Domaine public",
+        "auteur": "Ilia Répine (1844–1930)",
+        "recadrage": [
+          0.15,
+          0.08,
+          0.85,
+          0.6
+        ]
+      }
+    },
+    {
+      "slug": "dostoievski",
+      "nom": "Fiodor Dostoïevski",
+      "classement": "Dostoïevski, Fiodor",
+      "titre": "Naissance de Fiodor Dostoïevski",
+      "axe": "Littérature et pensée",
+      "naissance": 1821,
+      "description": "Fiodor Dostoïevski (1821-1881) est un romancier russe, né à Moscou, condamné à mort en 1849 pour sa participation à un cercle socialiste, puis gracié devant le peloton et déporté en Sibérie. Auteur de Crime et Châtiment (1866), de L'Idiot, des Démons et des Frères Karamazov (1880), il explore la culpabilité, la liberté et la foi à travers des personnages en crise. Son œuvre marque durablement la littérature et la pensée du XXe siècle, de Nietzsche à Camus.",
+      "wikipedia": "Fiodor_Dostoïevski",
+      "essentiel": true,
+      "biographie": "bio_dosto",
+      "portrait": {
+        "fichier": "Dostoevsky_1879.jpg",
+        "legende": "Dostoïevski, photographie de Constantin Chapiro (1879)",
+        "licence": "Domaine public",
+        "auteur": "Constantin Chapiro (1839–1900)"
+      }
+    },
+    {
+      "slug": "tolstoi",
+      "nom": "Léon Tolstoï",
+      "classement": "Tolstoï, Léon",
+      "titre": "Naissance de Léon Tolstoï",
+      "axe": "Littérature et pensée",
+      "naissance": 1828,
+      "description": "Léon Tolstoï (1828-1910) est un romancier et penseur russe, né à Iasnaïa Poliana, issu d'une famille de la haute noblesse. Auteur de Guerre et Paix (1869) et d'Anna Karénine (1877), il traverse une crise morale puis prêche le christianisme non violent, qui inspire Gandhi. Excommunié par l'Église orthodoxe en 1901, il quitte sa famille en novembre 1910 et meurt à la gare d'Astapovo.",
+      "wikipedia": "Léon_Tolstoï",
+      "essentiel": true,
+      "biographie": "bio_tolstoi",
+      "portrait": {
+        "fichier": "L.N.Tolstoy_Prokudin-Gorsky.jpg",
+        "legende": "Tolstoï, photographie en couleurs de Sergueï Prokoudine-Gorski (23 mai 1908)",
+        "licence": "Domaine public",
+        "auteur": "Sergueï Prokoudine-Gorski (1863–1944)",
+        "recadrage": [
+          0.3,
+          0.14,
+          0.85,
+          0.5
+        ]
+      }
+    },
+    {
+      "slug": "tchekhov",
+      "nom": "Anton Tchekhov",
+      "classement": "Tchekhov, Anton",
+      "titre": "Naissance d'Anton Tchekhov",
+      "axe": "Littérature et pensée",
+      "naissance": 1860,
+      "description": "Anton Tchekhov (1860-1904) est un écrivain russe, né à Taganrog, médecin de formation et maître de la nouvelle. Ses pièces, La Mouette (1896), Oncle Vania, Les Trois Sœurs et La Cerisaie (1904), montées par Stanislavski au Théâtre d'art de Moscou, renouvellent le théâtre par leur jeu en demi-teintes. Malade de la tuberculose, il meurt à Badenweiler, en Allemagne, à quarante-quatre ans.",
+      "wikipedia": "Anton_Tchekhov",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Anton_Chekhov_with_bow-tie_sepia_image.jpg",
+        "legende": "Tchekhov à Yalta, photographie de 1900",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "herzen",
+      "nom": "Alexandre Herzen",
+      "classement": "Herzen, Alexandre",
+      "titre": "Naissance d'Alexandre Herzen",
+      "axe": "Littérature et pensée",
+      "naissance": 1812,
+      "description": "Alexandre Herzen (1812-1870) est un écrivain et penseur révolutionnaire russe, né à Moscou, pionnier du socialisme russe. Parti de Russie en 1847, il fonde à Londres la presse russe libre, avec la revue La Cloche (Kolokol), lue jusqu'au sommet de l'État, et publie Passé et méditations, chronique de son temps. Il meurt à Paris en 1870.",
+      "wikipedia": "Alexandre_Herzen",
+      "portrait": {
+        "fichier": "Personnalités_des_arts_et_des_lettres_-_Alexandre_Herzen.jpg",
+        "legende": "Herzen, photographie d'Étienne Carjat (vers 1865-1870)",
+        "licence": "Domaine public",
+        "auteur": "Étienne Carjat (1828–1906)",
+        "recadrage": [
+          0.25,
+          0.12,
+          0.75,
+          0.45
+        ]
+      }
+    },
+    {
+      "slug": "bakounine",
+      "nom": "Mikhaïl Bakounine",
+      "classement": "Bakounine, Mikhaïl",
+      "titre": "Naissance de Mikhaïl Bakounine",
+      "axe": "Littérature et pensée",
+      "naissance": 1814,
+      "description": "Mikhaïl Bakounine (1814-1876) est un révolutionnaire russe, né à Priamoukhino, dans une famille noble de la région de Tver, théoricien de l'anarchisme collectiviste. Participant aux révolutions de 1848 et au soulèvement de Lyon en 1870, emprisonné puis déporté en Sibérie, il s'évade vers le Japon et l'Amérique. Opposé à Marx au sein de la Première Internationale, qui l'exclut en 1872 au congrès de La Haye, il meurt à Berne en 1876.",
+      "wikipedia": "Mikhaïl_Bakounine",
+      "portrait": {
+        "fichier": "Bakunin.png",
+        "legende": "Bakounine, photographie de Nadar (vers 1860)",
+        "licence": "Domaine public",
+        "auteur": "Nadar (1820–1910)"
+      }
+    },
+    {
+      "slug": "tchernychevski",
+      "nom": "Nikolaï Tchernychevski",
+      "classement": "Tchernychevski, Nikolaï",
+      "titre": "Naissance de Nikolaï Tchernychevski",
+      "axe": "Littérature et pensée",
+      "naissance": 1828,
+      "description": "Nikolaï Tchernychevski (1828-1889) est un écrivain, critique et théoricien socialiste russe, né à Saratov. Rédacteur de la revue Le Contemporain, il publie en prison Que faire ? (1863), roman qui dépeint des « hommes nouveaux » révolutionnaires et sera lu par toute une génération, dont Lénine, qui en reprend le titre. Arrêté en 1862, condamné aux travaux forcés puis à l'exil en Sibérie, il n'est autorisé à revenir qu'en 1883.",
+      "wikipedia": "Nikolaï_Tchernychevski",
+      "portrait": {
+        "fichier": "Nikolay_Chernyshevsky2.jpg",
+        "legende": "Tchernychevski, photographie",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "kropotkine",
+      "nom": "Pierre Kropotkine",
+      "classement": "Kropotkine, Pierre",
+      "titre": "Naissance de Pierre Kropotkine",
+      "axe": "Littérature et pensée",
+      "naissance": 1842,
+      "description": "Pierre Kropotkine (1842-1921) est un géographe, naturaliste et théoricien anarchiste russe, prince issu de la plus haute noblesse, né à Moscou. Évadé en 1876 d'un hôpital-prison de Saint-Pétersbourg, il vit en exil en Suisse, en France puis en Angleterre, où il défend l'anarcho-communisme. Dans L'Entraide (1902), il soutient que la coopération est un facteur d'évolution aussi important que la compétition, et il rentre en Russie en 1917 et meurt à Dmitrov, près de Moscou.",
+      "wikipedia": "Pierre_Kropotkine",
+      "portrait": {
+        "fichier": "Atelier_Nadar_-_Pierre_Kropotkine.jpg",
+        "legende": "Kropotkine, photographie de l'atelier Nadar",
+        "licence": "Domaine public",
+        "auteur": "Nadar (1820–1910)"
+      }
+    },
+    {
+      "slug": "soloviev",
+      "nom": "Vladimir Soloviev",
+      "classement": "Soloviev, Vladimir",
+      "titre": "Naissance de Vladimir Soloviev",
+      "axe": "Littérature et pensée",
+      "naissance": 1853,
+      "description": "Vladimir Soloviev (1853-1900) est un philosophe et poète russe, né à Moscou, fils de l'historien Sergueï Soloviev. Fondateur de la philosophie religieuse russe, il défend l'unité de l'humanité et des Églises autour de la Sagesse divine, la Sophia, et critique le nationalisme. Ami de Dostoïevski, il est le maître de la génération symboliste, d'Alexandre Blok à Andreï Biély.",
+      "wikipedia": "Vladimir_Soloviev",
+      "portrait": {
+        "fichier": "VS_Solovyov.jpg",
+        "legende": "Vladimir Soloviev, photographie d'avant 1900",
+        "licence": "Domaine public",
+        "auteur": "S. Sdobnov"
+      }
+    },
+    {
+      "slug": "berdiaev",
+      "nom": "Nicolas Berdiaev",
+      "classement": "Berdiaev, Nicolas",
+      "titre": "Naissance de Nicolas Berdiaev",
+      "axe": "Littérature et pensée",
+      "naissance": 1874,
+      "description": "Nicolas Berdiaev (1874-1948) est un philosophe russe, né à Oboukhiv, près de Kiev, passé du marxisme à la philosophie religieuse et à l'existentialisme chrétien. Expulsé d'Union soviétique en 1922 sur le « bateau des philosophes », il s'installe à Paris, où il anime la revue La Voie et écrit Le Sens de l'histoire et De l'esclavage et de la liberté de l'homme. Il meurt à Clamart, en 1948, après avoir été l'une des voix de l'émigration russe.",
+      "wikipedia": "Nicolas_Berdiaev",
+      "portrait": {
+        "fichier": "NBerdyaev.jpg",
+        "legende": "Berdiaev, photographie du début du XXe siècle",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "gorki",
+      "nom": "Maxime Gorki",
+      "classement": "Gorki, Maxime",
+      "titre": "Naissance de Maxime Gorki",
+      "axe": "Littérature et pensée",
+      "naissance": 1868,
+      "description": "Maxime Gorki (1868-1936) est un écrivain russe, né Alexeï Pechkov à Nijni Novgorod, orphelin devenu vagabond puis romancier de la révolution. Auteur de la pièce Les Bas-fonds (1902) et du roman La Mère (1906), il est proche de Lénine, puis critique des bolcheviks, avant de rentrer d'Italie au début des années 1930. Il préside l'Union des écrivains soviétiques à partir de 1934 et passe pour le père du réalisme socialiste, avant de mourir dans des circonstances controversées.",
+      "wikipedia": "Maxime_Gorki",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Maxim Gorky LCCN2014682714.jpg",
+        "legende": "Maxime Gorki, photographie de Bain (11 avril 1906)",
+        "licence": "Domaine public",
+        "auteur": "Bain News Service",
+        "recadrage": [
+          0.3,
+          0.1,
+          0.75,
+          0.45
+        ]
+      }
+    },
+    {
+      "slug": "bounine",
+      "nom": "Ivan Bounine",
+      "classement": "Bounine, Ivan",
+      "titre": "Naissance d'Ivan Bounine",
+      "axe": "Littérature et pensée",
+      "naissance": 1870,
+      "description": "Ivan Bounine (1870-1953) est un écrivain russe, né à Voronej, poète et nouvelliste, l'un des derniers grands représentants du réalisme classique. Auteur du Village (1910) et de La Vie d'Arseniev, il émigre en France en 1920 après la révolution, qu'il condamne dans Jours maudits. Il est en 1933 le premier écrivain russe récompensé du prix Nobel de littérature, et il meurt à Paris en 1953.",
+      "wikipedia": "Ivan_Bounine",
+      "portrait": {
+        "fichier": "Ivan_Bunin_(sepia).jpg",
+        "legende": "Bounine, photographie de Gueorgui Troussov (vers 1900)",
+        "licence": "Domaine public",
+        "auteur": "Gueorgui Troussov"
+      }
+    },
+    {
+      "slug": "blok",
+      "nom": "Alexandre Blok",
+      "classement": "Blok, Alexandre",
+      "titre": "Naissance d'Alexandre Blok",
+      "axe": "Littérature et pensée",
+      "naissance": 1880,
+      "description": "Alexandre Blok (1880-1921) est un poète russe, né à Saint-Pétersbourg, le plus grand poète du symbolisme russe. Auteur des Vers à la Belle Dame (1904) et de L'Inconnue, il salue la révolution de 1917 dans son poème « Les Douze », où douze gardes rouges traversent Petrograd, précédés par le Christ. Désillusionné et épuisé, il meurt en 1921 à quarante ans.",
+      "wikipedia": "Alexandre_Blok",
+      "portrait": {
+        "fichier": "Alexander_Blok.jpeg",
+        "legende": "Alexandre Blok, photographie de 1903",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "essenine",
+      "nom": "Sergueï Essénine",
+      "classement": "Essénine, Sergueï",
+      "titre": "Naissance de Sergueï Essénine",
+      "axe": "Littérature et pensée",
+      "naissance": 1895,
+      "description": "Sergueï Essénine (1895-1925) est un poète russe, né à Konstantinovo, dans une famille paysanne de la région de Riazan, figure du « poète paysan ». Auteur de Pougatchev, de L'Homme noir et de poèmes sur la campagne russe, il épouse en 1922 la danseuse américaine Isadora Duncan, qui l'emmène en Europe et aux États-Unis. Rongé par l'alcool et la dépression, il est retrouvé mort, officiellement par suicide, à l'hôtel Angleterre de Leningrad le 28 décembre 1925, à trente ans.",
+      "wikipedia": "Sergueï_Essénine",
+      "portrait": {
+        "fichier": "Esenin_Moscow_1922.jpg",
+        "legende": "Essénine, photographie (vers 1922)",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "akhmatova",
+      "nom": "Anna Akhmatova",
+      "classement": "Akhmatova, Anna",
+      "titre": "Naissance d'Anna Akhmatova",
+      "axe": "Littérature et pensée",
+      "naissance": 1889,
+      "description": "Anna Akhmatova (1889-1966) est une poétesse russe, née près d'Odessa, dans l'actuelle Ukraine, figure de l'acméisme. Après Le Chapelet (1914), elle est réduite au silence par le régime stalinien, qui fusille son premier mari, Goumilev, en 1921, emprisonne son fils et la fait exclure en 1946 de l'Union des écrivains. Dans Requiem, écrit de 1935 à 1940 et publié à l'étranger en 1963, elle chante la douleur des mères de prisonniers de la Terreur, et elle meurt en 1966 à Domodedovo, près de Moscou.",
+      "wikipedia": "Anna_Akhmatova",
+      "portrait": {
+        "fichier": "Kuzma_Petrov-Vodkin._Portrait_of_Anna_Akhmatova._1922.jpg",
+        "legende": "Akhmatova, portrait par Kouzma Petrov-Vodkine (1922)",
+        "licence": "Domaine public",
+        "auteur": "Kouzma Petrov-Vodkine (1878–1939)"
+      }
+    },
+    {
+      "slug": "tsvetaieva",
+      "nom": "Marina Tsvetaïeva",
+      "classement": "Tsvetaïeva, Marina",
+      "titre": "Naissance de Marina Tsvetaïeva",
+      "axe": "Littérature et pensée",
+      "naissance": 1892,
+      "description": "Marina Tsvetaïeva (1892-1941) est une poétesse russe, née à Moscou, fille d'un professeur de lettres fondateur du musée des Beaux-Arts de la ville. Après la révolution, elle émigre à Berlin, Prague puis Paris, où elle vit dans la misère, et écrit des poèmes d'une langue très personnelle, ainsi que Le Poème de la fin. En 1939, elle rentre en URSS où son mari est fusillé et sa fille arrêtée, et elle se pend à Elabouga le 31 août 1941.",
+      "wikipedia": "Marina_Tsvetaïeva",
+      "portrait": {
+        "fichier": "Tsvetaeva.jpg",
+        "legende": "Marina Tsvetaïeva, photographie",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "mandelstam",
+      "nom": "Ossip Mandelstam",
+      "classement": "Mandelstam, Ossip",
+      "titre": "Naissance d'Ossip Mandelstam",
+      "axe": "Littérature et pensée",
+      "naissance": 1891,
+      "description": "Ossip Mandelstam (1891-1938) est un poète russe, né à Varsovie, figure de l'acméisme. Auteur de Pierre (1913) et de Tristia (1922), il écrit en 1933 une épigramme contre Staline, qui lui vaut l'arrestation en 1934, la déportation, puis en 1938 une nouvelle condamnation aux camps. Il meurt en décembre 1938 dans un camp de transit près de Vladivostok, et sa veuve Nadejda sauve son œuvre en l'apprenant par cœur.",
+      "wikipedia": "Ossip_Mandelstam",
+      "portrait": {
+        "fichier": "Mandelshtam17.jpg",
+        "legende": "Mandelstam, photographie des années 1930",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "pasternak",
+      "nom": "Boris Pasternak",
+      "classement": "Pasternak, Boris",
+      "titre": "Naissance de Boris Pasternak",
+      "axe": "Littérature et pensée",
+      "naissance": 1890,
+      "description": "Boris Pasternak (1890-1960) est un poète et romancier russe, né à Moscou, fils du peintre Leonid Pasternak. Après ses recueils et ses traductions de Shakespeare, il écrit Le Docteur Jivago, refusé en URSS et publié en Italie en 1957. Le prix Nobel de littérature qui lui est décerné en 1958 provoque une campagne contre lui et le contraint à le refuser, et il meurt à Peredelkino en 1960.",
+      "wikipedia": "Boris_Pasternak",
+      "portrait": {
+        "fichier": "Boris_Pasternak_1958_photo.jpg",
+        "legende": "Pasternak, photographie de Vladimir Savostianov (février 1958)",
+        "licence": "Domaine public",
+        "auteur": "Vladimir Savostianov (TASS)"
+      }
+    },
+    {
+      "slug": "boulgakov",
+      "nom": "Mikhaïl Boulgakov",
+      "classement": "Boulgakov, Mikhaïl",
+      "titre": "Naissance de Mikhaïl Boulgakov",
+      "axe": "Littérature et pensée",
+      "naissance": 1891,
+      "description": "Mikhaïl Boulgakov (1891-1940) est un écrivain russe, né à Kiev, dans l'actuelle Ukraine, médecin devenu dramaturge et romancier. Censuré sous Staline malgré la protection du dictateur, qui aimait sa pièce Les Jours des Tourbine, il écrit Le Maître et Marguerite de 1928 à sa mort, sans espoir de le voir publié. Le roman, qui mêle le diable à Moscou et l'histoire de Ponce Pilate, paraît en 1966-1967 et fait de lui un classique mondial.",
+      "wikipedia": "Mikhaïl_Boulgakov",
+      "portrait": {
+        "fichier": "Михаил-Булгаков.jpg",
+        "legende": "Boulgakov, photographie de Moïssei Nappelbaum (1928)",
+        "licence": "Domaine public",
+        "auteur": "Moïssei Nappelbaum"
+      }
+    },
+    {
+      "slug": "cholokhov",
+      "nom": "Mikhaïl Cholokhov",
+      "classement": "Cholokhov, Mikhaïl",
+      "titre": "Naissance de Mikhaïl Cholokhov",
+      "axe": "Littérature et pensée",
+      "naissance": 1905,
+      "description": "Mikhaïl Cholokhov (1905-1984) est un écrivain soviétique, né dans le pays des cosaques du Don, auteur du Don paisible. Ce vaste roman de la guerre et de la révolution chez les cosaques, publié de 1928 à 1940, lui vaut un immense succès, mais sa paternité, contestée dès l'origine, fait encore l'objet de controverses. Membre du parti et du Soviet suprême, il reçoit le prix Nobel de littérature en 1965 et meurt en 1984 dans sa maison de Vechenskaïa.",
+      "wikipedia": "Mikhaïl_Cholokhov",
+      "portrait": {
+        "fichier": "Михаил_Александрович_Шолохов.jpg",
+        "legende": "Cholokhov, photographie de 1938",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "soljenitsyne",
+      "nom": "Alexandre Soljenitsyne",
+      "classement": "Soljenitsyne, Alexandre",
+      "titre": "Naissance d'Alexandre Soljenitsyne",
+      "axe": "Littérature et pensée",
+      "naissance": 1918,
+      "description": "Alexandre Soljenitsyne (1918-2008) est un écrivain russe, né à Kislovodsk, ancien officier de l'Armée rouge, condamné en 1945 pour une critique de Staline. Déporté dans un camp, il en tire Une journée d'Ivan Denissovitch (1962), puis L'Archipel du Goulag (1973), qui révèle au monde l'ampleur du système concentrationnaire. Prix Nobel en 1970, expulsé d'URSS en 1974 et installé aux États-Unis, il rentre en Russie en 1994 et meurt à Moscou.",
+      "wikipedia": "Alexandre_Soljenitsyne",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Alexander_Solzhenitsyn_in_Moscow,_December_1998.jpg",
+        "legende": "Soljenitsyne, photographie de Iouri Abramotchkine (17 décembre 1998)",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Iouri Abramotchkine"
+      }
+    },
+    {
+      "slug": "brodsky",
+      "nom": "Joseph Brodsky",
+      "classement": "Brodsky, Joseph",
+      "titre": "Naissance de Joseph Brodsky",
+      "axe": "Littérature et pensée",
+      "naissance": 1940,
+      "description": "Joseph Brodsky (1940-1996) est un poète russe, né à Leningrad, autodidacte issu d'une famille juive. Condamné en 1964 pour « parasitisme social » à cinq ans de travaux forcés dans le Grand Nord, il est expulsé d'URSS en 1972 et s'installe aux États-Unis, où il enseigne et écrit aussi en anglais. Prix Nobel de littérature en 1987, poète lauréat des États-Unis en 1991, il meurt à New York et repose à Venise.",
+      "wikipedia": "Joseph_Brodsky",
+      "portrait": {
+        "fichier": "Joseph_Brodsky_1988.jpg",
+        "legende": "Brodsky, photographie du 31 octobre 1988 (Anefo)",
+        "licence": "CC BY-SA 3.0 NL",
+        "auteur": "R. C. Croes (Anefo)"
+      }
+    },
+    {
+      "slug": "chalamov",
+      "nom": "Varlam Chalamov",
+      "classement": "Chalamov, Varlam",
+      "titre": "Naissance de Varlam Chalamov",
+      "axe": "Littérature et pensée",
+      "naissance": 1907,
+      "description": "Varlam Chalamov (1907-1982) est un écrivain russe, né à Vologda, fils d'un prêtre orthodoxe, déporté à la Kolyma pour près de vingt ans. Arrêté en 1929 puis en 1937 pour « activité trotskiste », il y survit et en tire les Récits de la Kolyma, rédigés de 1954 à 1973, portrait glacial du Goulag sans consolation. Interdit en URSS et publié d'abord à l'étranger, il meurt dans un hospice de Moscou en 1982.",
+      "wikipedia": "Varlam_Chalamov",
+      "portrait": {
+        "fichier": "Varlam_Shalamov-NKVD_crooped.jpg",
+        "legende": "Varlam Chalamov, photographie d'identité du NKVD (1937)",
+        "licence": "Domaine public",
+        "auteur": "NKVD (photographie d'identité)"
+      }
+    },
+    {
+      "slug": "rastrelli",
+      "nom": "Bartolomeo Rastrelli",
+      "classement": "Rastrelli, Bartolomeo",
+      "titre": "Naissance de Bartolomeo Rastrelli",
+      "axe": "Beaux-arts",
+      "naissance": 1700,
+      "description": "Bartolomeo Rastrelli (1700-1771) est un architecte italien, né à Paris, fils d'un sculpteur florentin venu travailler en Russie sous Pierre le Grand. Premier architecte de la cour d'Élisabeth, il crée le style baroque russe : palais d'Hiver et couvent Smolny à Saint-Pétersbourg, palais Catherine à Tsarskoïe Selo, grand palais de Peterhof. Écarté à l'avènement de Catherine II, qui préfère le classicisme, il meurt à Saint-Pétersbourg en 1771.",
+      "wikipedia": "Bartolomeo_Rastrelli",
+      "portrait": {
+        "fichier": "Ротари_-_Портрет_архитектора_Бартоломео_Растрелли.jpg",
+        "legende": "Rastrelli, portrait par Pietro Rotari (avant 1762)",
+        "licence": "Domaine public",
+        "auteur": "Pietro Rotari (1707–1762)"
+      }
+    },
+    {
+      "slug": "briullov",
+      "nom": "Karl Brioullov",
+      "classement": "Brioullov, Karl",
+      "titre": "Naissance de Karl Brioullov",
+      "axe": "Beaux-arts",
+      "naissance": 1799,
+      "description": "Karl Brioullov (1799-1852) est un peintre russe, né à Saint-Pétersbourg, fils d'un ornemaniste d'origine huguenote française. Son tableau Le Dernier Jour de Pompéi, peint à Rome et montré à Milan, à Paris puis à Saint-Pétersbourg dans les années 1830, fait de lui l'un des maîtres du romantisme russe et lui vaut un triomphe européen. Portraitiste aussi, il aide à racheter le poète Chevtchenko du servage en 1838 et meurt à Manziana, près de Rome, en 1852.",
+      "wikipedia": "Karl_Brioullov",
+      "portrait": {
+        "fichier": "Brjullov.jpg",
+        "legende": "Brioullov, autoportrait (1848)",
+        "licence": "Domaine public",
+        "auteur": "Karl Brioullov (1799–1852)"
+      }
+    },
+    {
+      "slug": "aivazovski",
+      "nom": "Ivan Aïvazovski",
+      "classement": "Aïvazovski, Ivan",
+      "titre": "Naissance d'Ivan Aïvazovski",
+      "axe": "Beaux-arts",
+      "naissance": 1817,
+      "description": "Ivan Aïvazovski (1817-1900) est un peintre de marines russe d'origine arménienne, né à Théodosie, en Crimée. Peintre de l'état-major de la Marine dès 1844, il produit plus de six mille toiles consacrées à la mer, dont La Neuvième Vague (1850), icône de la peinture russe. Mécène de sa ville natale, où il fait ouvrir une galerie d'art en 1880, il y meurt en 1900.",
+      "wikipedia": "Ivan_Aïvazovski",
+      "portrait": {
+        "fichier": "Aivazovsky_-_Self-portrait_1874.jpg",
+        "legende": "Aïvazovski, autoportrait (1874)",
+        "licence": "Domaine public",
+        "auteur": "Ivan Aïvazovski (1817–1900)"
+      }
+    },
+    {
+      "slug": "kramskoi",
+      "nom": "Ivan Kramskoï",
+      "classement": "Kramskoï, Ivan",
+      "titre": "Naissance d'Ivan Kramskoï",
+      "axe": "Beaux-arts",
+      "naissance": 1837,
+      "description": "Ivan Kramskoï (1837-1887) est un peintre et critique russe, né à Ostrogojsk. Chef de file de la révolte de 1863 des élèves de l'Académie des beaux-arts de Saint-Pétersbourg, il fonde en 1870 l'association des Ambulants, qui exposent en province des scènes réalistes de la vie russe. Il peint Le Christ dans le désert (1872) et le portrait de Tolstoï, et meurt à son chevalet en 1887.",
+      "wikipedia": "Ivan_Kramskoï",
+      "portrait": {
+        "fichier": "Kramskoi_by_Repin.jpg",
+        "legende": "Kramskoï, portrait par Ilia Répine (1882)",
+        "licence": "Domaine public",
+        "auteur": "Ilia Répine (1844–1930)",
+        "recadrage": [
+          0.2,
+          0.05,
+          0.85,
+          0.55
+        ]
+      }
+    },
+    {
+      "slug": "repine",
+      "nom": "Ilia Répine",
+      "classement": "Répine, Ilia",
+      "titre": "Naissance d'Ilia Répine",
+      "axe": "Beaux-arts",
+      "naissance": 1844,
+      "description": "Ilia Répine (1844-1930) est un peintre russe, né à Tchougouïev, dans l'actuelle Ukraine, le maître du réalisme russe. Ses Haleurs de la Volga (1873), ses Cosaques zaporogues écrivant une lettre au sultan de Turquie et ses portraits de Tolstoï, de Moussorgski et de Pirogov en font le peintre le plus célébré de son temps. Installé à Kuokkala, en Finlande, après la révolution, il y meurt en 1930, mais l'URSS fait de lui un peintre national.",
+      "wikipedia": "Ilia_Répine",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Ilya_Repin_(1909).jpg",
+        "legende": "Répine, photographie de 1909",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu",
+        "recadrage": [
+          0.2,
+          0.17,
+          0.8,
+          0.62
+        ]
+      }
+    },
+    {
+      "slug": "sourikov",
+      "nom": "Vassili Sourikov",
+      "classement": "Sourikov, Vassili",
+      "titre": "Naissance de Vassili Sourikov",
+      "axe": "Beaux-arts",
+      "naissance": 1848,
+      "description": "Vassili Sourikov (1848-1916) est un peintre russe, né à Krasnoïarsk, dans une famille de cosaques de Sibérie. Peintre d'histoire, il met en scène le peuple dans La Matinée de l'exécution des streltsy (1881), La Boyarine Morozova (1887) et La Conquête de la Sibérie par Ermak (1895). Ses grandes toiles, aux foules animées, font de lui un des maîtres des Ambulants.",
+      "wikipedia": "Vassili_Sourikov",
+      "portrait": {
+        "fichier": "Vasily_Surikov_1909_(cropped).jpg",
+        "legende": "Sourikov, photographie de Karl Fischer (1909)",
+        "licence": "Domaine public",
+        "auteur": "Karl Fischer"
+      }
+    },
+    {
+      "slug": "vasnetsov",
+      "nom": "Viktor Vasnetsov",
+      "classement": "Vasnetsov, Viktor",
+      "titre": "Naissance de Viktor Vasnetsov",
+      "axe": "Beaux-arts",
+      "naissance": 1848,
+      "description": "Viktor Vasnetsov (1848-1926) est un peintre russe, né près de Viatka, fils de prêtre, qui puise dans les contes et les épopées. Ses Trois Bogatyrs (1898), Alionouchka (1881) et Ivan Tsarévitch sur le loup gris font revivre le Moyen Âge russe et le folklore, tandis qu'il décore la cathédrale Saint-Vladimir de Kiev. Il dessine aussi la façade de la galerie Tretiakov, à Moscou, dans un style néo-russe.",
+      "wikipedia": "Viktor_Vasnetsov",
+      "portrait": {
+        "fichier": "Wiktor_Michajlowitsch_Wassnezow_003.jpg",
+        "legende": "Viktor Vasnetsov, autoportrait (1873)",
+        "licence": "Domaine public",
+        "auteur": "Viktor Vasnetsov (1848–1926)"
+      }
+    },
+    {
+      "slug": "chichkine",
+      "nom": "Ivan Chichkine",
+      "classement": "Chichkine, Ivan",
+      "titre": "Naissance d'Ivan Chichkine",
+      "axe": "Beaux-arts",
+      "naissance": 1832,
+      "description": "Ivan Chichkine (1832-1898) est un peintre et graveur russe, né à Elabouga, le grand peintre de la forêt. Cofondateur des Ambulants, il peint avec une précision presque botanique les pins, les chênes et les sous-bois, dans Seigle (1878), Chênaie et Matinée dans une forêt de pins (1889), dont les oursons sont peints par Konstantin Savitski. Professeur à l'Académie, il meurt à Saint-Pétersbourg en 1898.",
+      "wikipedia": "Ivan_Chichkine",
+      "portrait": {
+        "fichier": "Ivan_Nikolayevich_Kramskoi_-_Portrait_of_Ivan_Ivanovich_Shishkin,_1873.jpg",
+        "legende": "Chichkine, portrait par Ivan Kramskoï (1873)",
+        "licence": "Domaine public",
+        "auteur": "Ivan Kramskoï (1837–1887)",
+        "recadrage": [
+          0.18,
+          0.08,
+          0.72,
+          0.4
+        ]
+      }
+    },
+    {
+      "slug": "levitan",
+      "nom": "Issaak Levitan",
+      "classement": "Levitan, Issaak",
+      "titre": "Naissance d'Issaak Levitan",
+      "axe": "Beaux-arts",
+      "naissance": 1860,
+      "description": "Issaak Levitan (1860-1900) est un peintre russe, né à Virbalis, aujourd'hui en Lituanie, d'une famille juive pauvre, grand paysagiste. Élève de Savrassov, il peint la Russie centrale dans Vladimirka (1892) et Au-dessus de l'éternel repos (1894), et donne à ses toiles un lyrisme mélancolique. Ami de Tchekhov, expulsé de Moscou comme juif en 1892, il meurt à Moscou en 1900, à quarante ans.",
+      "wikipedia": "Issaak_Levitan",
+      "portrait": {
+        "fichier": "Valentin_Alexandrovich_Serov_-_Portrait_of_the_Artist_Isaac_Levitan.jpg",
+        "legende": "Levitan, portrait par Valentin Serov (1893)",
+        "licence": "Domaine public",
+        "auteur": "Valentin Serov (1865–1911)"
+      }
+    },
+    {
+      "slug": "vroubel",
+      "nom": "Mikhaïl Vroubel",
+      "classement": "Vroubel, Mikhaïl",
+      "titre": "Naissance de Mikhaïl Vroubel",
+      "axe": "Beaux-arts",
+      "naissance": 1856,
+      "description": "Mikhaïl Vroubel (1856-1910) est un peintre russe, né à Omsk, figure du symbolisme et de l'Art nouveau russes. Auteur du cycle du Démon, d'après Lermontov, de La Princesse-Cygne (1900) et de céramiques et de décors pour l'opéra privé de Mamontov, il peint par aplats facettés, comme des mosaïques. Atteint d'une maladie mentale à partir de 1902, il devient aveugle et meurt à Saint-Pétersbourg en 1910.",
+      "wikipedia": "Mikhaïl_Vroubel",
+      "portrait": {
+        "fichier": "Vrubel_1900.jpg",
+        "legende": "Vroubel au travail, photographie du début des années 1900",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "serov",
+      "nom": "Valentin Serov",
+      "classement": "Serov, Valentin",
+      "titre": "Naissance de Valentin Serov",
+      "axe": "Beaux-arts",
+      "naissance": 1865,
+      "description": "Valentin Serov (1865-1911) est un peintre russe, né à Saint-Pétersbourg, fils du compositeur Alexandre Serov, le grand portraitiste de la fin de l'Empire. Il peint à vingt-deux ans La Fille aux pêches (1887) et plus tard les portraits de Nicolas II, de Maxime Gorki, de l'actrice Ida Rubinstein et de Chaliapine. Proche du Monde de l'art, il meurt à Moscou en 1911.",
+      "wikipedia": "Valentin_Serov",
+      "portrait": {
+        "fichier": "Valentin_Alexandrovich_Serov_-_Self-portrait.jpg",
+        "legende": "Valentin Serov, autoportrait (années 1880)",
+        "licence": "Domaine public",
+        "auteur": "Valentin Serov (1865–1911)"
+      }
+    },
+    {
+      "slug": "kandinsky",
+      "nom": "Vassily Kandinsky",
+      "classement": "Kandinsky, Vassily",
+      "titre": "Naissance de Vassily Kandinsky",
+      "axe": "Beaux-arts",
+      "naissance": 1866,
+      "description": "Vassily Kandinsky (1866-1944) est un peintre russe, né à Moscou, juriste de formation, l'un des pères de l'art abstrait. Il peint à Munich sa première aquarelle abstraite vers 1910, fonde en 1911 le Cavalier bleu avec Franz Marc, publie Du spirituel dans l'art et enseigne au Bauhaus de 1922 à 1933. Installé à Neuilly-sur-Seine, naturalisé français en 1939, il y meurt en 1944.",
+      "wikipedia": "Vassily_Kandinsky",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Wassily_kandinsky.jpg",
+        "legende": "Kandinsky, photographie",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "malevitch",
+      "nom": "Kasimir Malevitch",
+      "classement": "Malevitch, Kasimir",
+      "titre": "Naissance de Kasimir Malevitch",
+      "axe": "Beaux-arts",
+      "naissance": 1879,
+      "description": "Kasimir Malevitch (1879-1935) est un peintre russe, né à Kiev de parents polonais, fondateur du suprématisme, que revendiquent la Russie, l'Ukraine et la Pologne. Son Carré noir sur fond blanc, présenté en 1915 à l'exposition « 0,10 » de Petrograd, est l'une des œuvres majeures de l'abstraction. Rallié un temps à la révolution, il est écarté sous Staline, interdit d'exposer, et meurt en 1935 à Leningrad, enterré dans un cercueil dessiné par lui.",
+      "wikipedia": "Kasimir_Malevitch",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Casimir_Malevich_photo.jpg",
+        "legende": "Malevitch, photographie (vers 1925)",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "rodtchenko",
+      "nom": "Alexandre Rodtchenko",
+      "classement": "Rodtchenko, Alexandre",
+      "titre": "Naissance d'Alexandre Rodtchenko",
+      "axe": "Beaux-arts",
+      "naissance": 1891,
+      "description": "Alexandre Rodtchenko (1891-1956) est un artiste russe, né à Saint-Pétersbourg, peintre, sculpteur, graphiste et photographe, fondateur du constructivisme. Après ses monochromes de 1921, il invente un nouveau langage graphique, affiches et couvertures, avec Maïakovski, et photographie des angles audacieux de la vie soviétique. Accusé de formalisme sous Staline, il revient à la peinture et meurt à Moscou en 1956.",
+      "wikipedia": "Alexandre_Rodtchenko",
+      "portrait": {
+        "fichier": "1935-alexander_rodschenko.jpg",
+        "legende": "Rodtchenko, portrait par Isaak Brodski (1935)",
+        "licence": "Domaine public",
+        "auteur": "Isaak Brodski (1883–1939)",
+        "recadrage": [
+          0.3,
+          0.0,
+          1.0,
+          0.88
+        ]
+      }
+    },
+    {
+      "slug": "faberge",
+      "nom": "Pierre-Karl Fabergé",
+      "classement": "Fabergé, Pierre-Karl",
+      "titre": "Naissance de Pierre-Karl Fabergé",
+      "axe": "Beaux-arts",
+      "naissance": 1846,
+      "description": "Pierre-Karl Fabergé (1846-1920) est un joaillier russe d'origine huguenote française, né à Saint-Pétersbourg. Fournisseur de la cour impériale dès 1885, il crée pour les tsars Alexandre III et Nicolas II cinquante œufs de Pâques impériaux, bijoux d'or, d'émail et de pierres précieuses. Sa maison, nationalisée en 1918, le conduit à l'exil, et il meurt en Suisse en 1920.",
+      "wikipedia": "Pierre-Karl_Fabergé",
+      "portrait": {
+        "fichier": "Karl_Gustavovich_Faberge.jpg",
+        "legende": "Fabergé, photographie d'avant 1920",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "tretiakov",
+      "nom": "Pavel Tretiakov",
+      "classement": "Tretiakov, Pavel",
+      "titre": "Naissance de Pavel Tretiakov",
+      "axe": "Beaux-arts",
+      "naissance": 1832,
+      "description": "Pavel Tretiakov (1832-1898) est un marchand et collectionneur russe, né à Moscou dans une famille de commerçants du textile. Il rassemble pendant quarante ans les œuvres de peintres russes de son temps, dont Répine et les Ambulants, et fait don à la ville de Moscou de sa galerie en 1892, avec plus de 1 800 œuvres. La galerie Tretiakov, devenue le plus grand musée d'art russe, porte aujourd'hui son nom.",
+      "wikipedia": "Pavel_Tretiakov",
+      "portrait": {
+        "fichier": "Ilja_Jefimowitsch_Repin_-_Portrait_of_Pavel_Mikhaïlovitch_Trétiakov.jpg",
+        "legende": "Tretiakov, portrait par Ilia Répine (1883)",
+        "licence": "Domaine public",
+        "auteur": "Ilia Répine (1844–1930)",
+        "recadrage": [
+          0.15,
+          0.05,
+          0.9,
+          0.65
+        ]
+      }
+    },
+    {
+      "slug": "kustodiev",
+      "nom": "Boris Koustodiev",
+      "classement": "Koustodiev, Boris",
+      "titre": "Naissance de Boris Koustodiev",
+      "axe": "Beaux-arts",
+      "naissance": 1878,
+      "description": "Boris Koustodiev (1878-1927) est un peintre russe, né à Astrakhan, auteur de la Russie des marchands. Ses toiles de couleurs vives, comme La Marchande de thé (1918) et La Foire, célèbrent la vie des petites villes de province, le carnaval de la Maslenitsa et les belles Russes. Paralysé à partir de 1916, il continue de peindre depuis son fauteuil roulant jusqu'à sa mort, à Leningrad, en 1927.",
+      "wikipedia": "Boris_Koustodiev",
+      "portrait": {
+        "fichier": "Kustodiev_BM.jpg",
+        "legende": "Koustodiev, photographie de 1900",
+        "licence": "Domaine public",
+        "auteur": "V. Sergueïev"
+      }
+    },
+    {
+      "slug": "roerich",
+      "nom": "Nicolas Roerich",
+      "classement": "Roerich, Nicolas",
+      "titre": "Naissance de Nicolas Roerich",
+      "axe": "Beaux-arts",
+      "naissance": 1874,
+      "description": "Nicolas Roerich (1874-1947) est un peintre, décorateur et explorateur russe, né à Saint-Pétersbourg. Il imagine les décors et les costumes du Sacre du printemps de Stravinsky (1913) et peint la Russie païenne puis l'Himalaya, où il s'établit en 1928, dans la vallée de Kullu. Il lance un pacte de protection des biens culturels en temps de guerre, signé à Washington en 1935, et meurt en Inde en 1947.",
+      "wikipedia": "Nicolas_Roerich",
+      "portrait": {
+        "fichier": "N_Roerich.jpg",
+        "legende": "Roerich, photographie (années 1940)",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "glinka",
+      "nom": "Mikhaïl Glinka",
+      "classement": "Glinka, Mikhaïl",
+      "titre": "Naissance de Mikhaïl Glinka",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1804,
+      "description": "Mikhaïl Glinka (1804-1857) est un compositeur russe, né à Novospasskoïe, dans la région de Smolensk, considéré comme le père de la musique classique russe. Ses opéras La Vie pour le tsar (1836) puis Rouslan et Ludmila (1842) fondent une école nationale en s'appuyant sur le chant populaire, et ouvrent la voie au Groupe des Cinq. Après des voyages en Italie, à Paris et en Espagne, il meurt à Berlin en 1857.",
+      "wikipedia": "Mikhaïl_Glinka",
+      "portrait": {
+        "fichier": "Michail_Ivanovič_Glinka.jpg",
+        "legende": "Glinka, portrait",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "moussorgski",
+      "nom": "Modeste Moussorgski",
+      "classement": "Moussorgski, Modeste",
+      "titre": "Naissance de Modeste Moussorgski",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1839,
+      "description": "Modeste Moussorgski (1839-1881) est un compositeur russe, né à Karevo, membre du Groupe des Cinq. Son opéra Boris Godounov (1874), les Tableaux d'une exposition (1874) pour piano et Une nuit sur le mont Chauve offrent une musique réaliste, rude et très russe, qui annonce Debussy et Ravel. Fonctionnaire alcoolique, mort pauvre à Saint-Pétersbourg à quarante-deux ans, il laisse beaucoup d'œuvres inachevées, que Rimski-Korsakov remanie.",
+      "wikipedia": "Modeste_Moussorgski",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Modest_Musorgskiy,_1870.jpg",
+        "legende": "Moussorgski, portrait de 1870",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "borodine",
+      "nom": "Alexandre Borodine",
+      "classement": "Borodine, Alexandre",
+      "titre": "Naissance d'Alexandre Borodine",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1833,
+      "description": "Alexandre Borodine (1833-1887) est un compositeur et chimiste russe, né à Saint-Pétersbourg, fils naturel d'un prince géorgien. Professeur de chimie à l'académie de médecine et de chirurgie, il compose à ses heures perdues Le Prince Igor, dont les Danses polovtsiennes, ainsi que des symphonies et des quatuors. Membre du Groupe des Cinq, il meurt subitement lors d'un bal en 1887, laissant son opéra inachevé, que terminent Rimski-Korsakov et Glazounov.",
+      "wikipedia": "Alexandre_Borodine",
+      "portrait": {
+        "fichier": "Borodin.jpg",
+        "legende": "Borodine, photographie de 1865",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "rimski",
+      "nom": "Nikolaï Rimski-Korsakov",
+      "classement": "Rimski-Korsakov, Nikolaï",
+      "titre": "Naissance de Nikolaï Rimski-Korsakov",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1844,
+      "description": "Nikolaï Rimski-Korsakov (1844-1908) est un compositeur russe, né à Tikhvine, officier de marine devenu professeur au conservatoire de Saint-Pétersbourg. Maître de l'orchestration, auteur de Shéhérazade (1888) et du Coq d'or, il a pour élèves Stravinsky, Prokofiev et Respighi, et transmet au XXe siècle son art de la couleur orchestrale. Il fait aussi achever et orchestrer des œuvres de Moussorgski et de Borodine, et meurt à Lioubensk en 1908.",
+      "wikipedia": "Nikolaï_Rimski-Korsakov",
+      "portrait": {
+        "fichier": "Nikolai_A._Rimsky-Korsakov.jpg",
+        "legende": "Rimski-Korsakov, photographie de Karl Fischer (avant 1908)",
+        "licence": "Domaine public",
+        "auteur": "Karl Fischer"
+      }
+    },
+    {
+      "slug": "tchaikovski",
+      "nom": "Piotr Ilitch Tchaïkovski",
+      "classement": "Tchaïkovski, Piotr Ilitch",
+      "titre": "Naissance de Piotr Ilitch Tchaïkovski",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1840,
+      "description": "Piotr Ilitch Tchaïkovski (1840-1893) est un compositeur russe, né à Votkinsk, ancien juriste devenu professeur au conservatoire de Moscou. Auteur des ballets Le Lac des cygnes, La Belle au bois dormant et Casse-Noisette, de l'opéra Eugène Onéguine, de la Symphonie pathétique et du Concerto pour piano no 1, il écrit une musique d'une grande puissance mélodique. Il meurt à Saint-Pétersbourg en novembre 1893, quelques jours après la création de la Pathétique.",
+      "wikipedia": "Piotr_Ilitch_Tchaïkovski",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Tchaikowsky.jpg",
+        "legende": "Tchaïkovski, photographie de la collection Bain",
+        "licence": "Domaine public",
+        "auteur": "Bain News Service"
+      }
+    },
+    {
+      "slug": "rachmaninov",
+      "nom": "Sergueï Rachmaninov",
+      "classement": "Rachmaninov, Sergueï",
+      "titre": "Naissance de Sergueï Rachmaninov",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1873,
+      "description": "Sergueï Rachmaninov (1873-1943) est un compositeur, pianiste et chef d'orchestre russe, né à Semionovo, dans la région de Novgorod. Virtuose du piano, auteur du Concerto pour piano no 2 (1901), des Vêpres et de la Rhapsodie sur un thème de Paganini, il quitte la Russie en décembre 1917 et ne la reverra plus. Installé aux États-Unis, il y meurt en 1943 à Beverly Hills, et laisse une œuvre d'un lyrisme romantique tardif.",
+      "wikipedia": "Sergueï_Rachmaninov",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Sergei_Rachmaninoff_LOC_30160_cropped.jpg",
+        "legende": "Rachmaninov, photographie de la collection Bain",
+        "licence": "Domaine public",
+        "auteur": "Bain News Service",
+        "recadrage": [
+          0.3,
+          0.04,
+          0.85,
+          0.45
+        ]
+      }
+    },
+    {
+      "slug": "scriabine",
+      "nom": "Alexandre Scriabine",
+      "classement": "Scriabine, Alexandre",
+      "titre": "Naissance d'Alexandre Scriabine",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1872,
+      "description": "Alexandre Scriabine (1872-1915) est un compositeur et pianiste russe, né à Moscou, qui passe d'un romantisme proche de Chopin à un langage harmonique très personnel. Auteur du Poème de l'extase et de Prométhée (1910), partition qui prévoit un clavier à lumières, il associe sons et couleurs et rêve d'une œuvre totale, le Mystère. Mort à quarante-trois ans d'une septicémie, il laisse dix sonates pour piano.",
+      "wikipedia": "Alexandre_Scriabine",
+      "portrait": {
+        "fichier": "Skrjabin_Alexander.jpg",
+        "legende": "Scriabine, photographie",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "stravinsky",
+      "nom": "Igor Stravinsky",
+      "classement": "Stravinsky, Igor",
+      "titre": "Naissance d'Igor Stravinsky",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1882,
+      "description": "Igor Stravinsky (1882-1971) est un compositeur russe, né à Oranienbaum, près de Saint-Pétersbourg, élève de Rimski-Korsakov. Ses ballets pour les Ballets russes de Diaghilev, L'Oiseau de feu (1910), Petrouchka (1911) et surtout Le Sacre du printemps (1913), dont la création provoque un scandale à Paris, bouleversent le rythme et l'harmonie. Installé en France puis, en 1939, aux États-Unis, il en obtient la nationalité en 1945 et repose à Venise.",
+      "wikipedia": "Igor_Stravinsky",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Igor_Stravinsky_Essays.jpg",
+        "legende": "Stravinsky, photographie de Robert Regassi (1921)",
+        "licence": "Domaine public",
+        "auteur": "Robert Regassi"
+      }
+    },
+    {
+      "slug": "prokofiev",
+      "nom": "Sergueï Prokofiev",
+      "classement": "Prokofiev, Sergueï",
+      "titre": "Naissance de Sergueï Prokofiev",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1891,
+      "description": "Sergueï Prokofiev (1891-1953) est un compositeur russe, né à Sontsovka, dans l'actuelle Ukraine, pianiste virtuose. Auteur de Pierre et le Loup (1936), du ballet Roméo et Juliette, de l'opéra La Guerre et la Paix et de la musique du film Alexandre Nevski, il quitte la Russie en 1918, vit à Paris, et rentre définitivement en URSS en 1936. Il meurt à Moscou le 5 mars 1953, le jour même que Staline, et sa mort passe presque inaperçue.",
+      "wikipedia": "Sergueï_Prokofiev",
+      "portrait": {
+        "fichier": "Sergei_Prokofiev_circa_1918_over_Chair_Bain.jpg",
+        "legende": "Prokofiev, photographie de la collection Bain (vers 1918)",
+        "licence": "Domaine public",
+        "auteur": "Bain News Service"
+      }
+    },
+    {
+      "slug": "chostakovitch",
+      "nom": "Dmitri Chostakovitch",
+      "classement": "Chostakovitch, Dmitri",
+      "titre": "Naissance de Dmitri Chostakovitch",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1906,
+      "description": "Dmitri Chostakovitch (1906-1975) est un compositeur soviétique, né à Saint-Pétersbourg, auteur de quinze symphonies et de quinze quatuors. Son opéra Lady Macbeth du district de Mtsensk est condamné en 1936 dans la Pravda, et sa Septième Symphonie, dite « Leningrad » (1942), composée pendant le siège de la ville, devient un symbole de la résistance soviétique. Pris entre la peur de Staline et la gloire officielle, il traduit dans sa musique, notamment dans la Symphonie no 13 « Babi Yar », la douleur de son temps, et meurt à Moscou en 1975.",
+      "wikipedia": "Dmitri_Chostakovitch",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Dmitri_Shostakovich_credit_Deutsche_Fotothek_adjusted.jpg",
+        "legende": "Chostakovitch, photographie de Roger et Renate Rössing (28 juillet 1950)",
+        "licence": "CC BY-SA 3.0 DE",
+        "auteur": "Roger et Renate Rössing (Deutsche Fotothek)"
+      }
+    },
+    {
+      "slug": "chaliapine",
+      "nom": "Fédor Chaliapine",
+      "classement": "Chaliapine, Fédor",
+      "titre": "Naissance de Fédor Chaliapine",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1873,
+      "description": "Fédor Chaliapine (1873-1938) est un chanteur d'opéra russe, basse, né à Kazan, le plus célèbre de son temps. Il triomphe dans les rôles de Boris Godounov, d'Ivan le Terrible et de Méphistophélès, au Bolchoï, à la Scala, au Metropolitan Opera de New York et à Paris, avec une présence théâtrale exceptionnelle. Quittant la Russie en 1922, déchu de ses titres soviétiques en 1927, il meurt à Paris en 1938.",
+      "wikipedia": "Fédor_Chaliapine",
+      "portrait": {
+        "fichier": "Feodor_Chaliapin_signed.jpg",
+        "legende": "Chaliapine, photographie (avant 1930)",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu",
+        "recadrage": [
+          0.05,
+          0.04,
+          0.62,
+          0.52
+        ]
+      }
+    },
+    {
+      "slug": "rostropovitch",
+      "nom": "Mstislav Rostropovitch",
+      "classement": "Rostropovitch, Mstislav",
+      "titre": "Naissance de Mstislav Rostropovitch",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1927,
+      "description": "Mstislav Rostropovitch (1927-2007) est un violoncelliste et chef d'orchestre soviétique, né à Bakou, dans l'actuel Azerbaïdjan, élève de Chostakovitch et de Prokofiev. Virtuose adulé, il soutient Soljenitsyne et d'autres dissidents, ce qui lui vaut d'être déchu de sa nationalité en 1978. Il joue devant le mur de Berlin en novembre 1989, retrouve sa citoyenneté en 1990, se rend à Moscou en août 1991 pour défendre la Maison-Blanche aux côtés d'Eltsine, et meurt à Moscou en 2007.",
+      "wikipedia": "Mstislav_Rostropovitch",
+      "portrait": {
+        "fichier": "Mstislav_Rostropovich_1978.jpg",
+        "legende": "Rostropovitch à la Maison-Blanche, photographie du 17 septembre 1978",
+        "licence": "Domaine public",
+        "auteur": "Photographes de la Maison-Blanche",
+        "recadrage": [
+          0.3,
+          0.04,
+          0.95,
+          0.45
+        ]
+      }
+    },
+    {
+      "slug": "diaghilev",
+      "nom": "Serge de Diaghilev",
+      "classement": "Diaghilev, Serge de",
+      "titre": "Naissance de Serge de Diaghilev",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1872,
+      "description": "Serge de Diaghilev (1872-1929) est un imprésario russe, né à Selichtchi, dans la région de Novgorod, fondateur de la revue Le Monde de l'art. Il fait connaître en Occident la peinture russe, l'opéra russe puis, avec les Ballets russes fondés à Paris en 1909, des chorégraphes et des danseurs comme Fokine, Nijinski et Balanchine. Il commande des musiques à Stravinsky, Ravel, Debussy, Satie et Prokofiev, des décors à Picasso, Matisse et Braque, et meurt à Venise en 1929.",
+      "wikipedia": "Serge_de_Diaghilev",
+      "portrait": {
+        "fichier": "Sergei_Diaghilev_01.jpg",
+        "legende": "Diaghilev, photographie du 11 janvier 1916 (collection Bain)",
+        "licence": "Domaine public",
+        "auteur": "Bain News Service (Bibliothèque du Congrès)"
+      }
+    },
+    {
+      "slug": "noureev",
+      "nom": "Rudolf Noureev",
+      "classement": "Noureev, Rudolf",
+      "titre": "Naissance de Rudolf Noureev",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1938,
+      "description": "Rudolf Noureev (1938-1993) est un danseur et chorégraphe soviétique, né dans un train du Transsibérien près d'Irkoutsk, dans une famille tatare. Soliste du Kirov de Leningrad, il demande l'asile politique à l'aéroport du Bourget le 16 juin 1961, formant ensuite avec Margot Fonteyn un duo légendaire. Directeur de la danse de l'Opéra de Paris de 1983 à 1989, il meurt en 1993 du sida et repose au cimetière de Sainte-Geneviève-des-Bois.",
+      "wikipedia": "Rudolf_Noureev",
+      "portrait": {
+        "fichier": "Nureyev_Allan_Warren.jpg",
+        "legende": "Noureev, photographie d'Allan Warren (1973)",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Allan Warren"
+      }
+    },
+    {
+      "slug": "oulanova",
+      "nom": "Galina Oulanova",
+      "classement": "Oulanova, Galina",
+      "titre": "Naissance de Galina Oulanova",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1910,
+      "description": "Galina Oulanova (1910-1998) est une danseuse russe, née à Saint-Pétersbourg, la plus grande ballerine soviétique de l'époque de Staline. Étoile du Kirov puis du Bolchoï, elle danse en 1940 le rôle de Juliette dans le Roméo et Juliette de Prokofiev, et son interprétation de Giselle fait date. Après sa dernière apparition en 1962, elle forme à Moscou les danseurs du Bolchoï et meurt en 1998.",
+      "wikipedia": "Galina_Oulanova",
+      "portrait": {
+        "fichier": "Galina Ulanova 1968.jpg",
+        "legende": "Galina Oulanova, photographie de Jack de Nijs (5 février 1968, Anefo)",
+        "licence": "CC BY-SA 3.0 NL",
+        "auteur": "Jack de Nijs (Anefo)",
+        "recadrage": [
+          0.05,
+          0.05,
+          0.95,
+          0.8
+        ]
+      }
+    },
+    {
+      "slug": "stanislavski",
+      "nom": "Constantin Stanislavski",
+      "classement": "Stanislavski, Constantin",
+      "titre": "Naissance de Constantin Stanislavski",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1863,
+      "description": "Constantin Stanislavski (1863-1938) est un acteur, metteur en scène et pédagogue russe, né à Moscou dans une riche famille de marchands. Il fonde en 1898 avec Vladimir Nemirovitch-Dantchenko le Théâtre d'art de Moscou, où il monte les pièces de Tchekhov et de Gorki. Son « système », méthode de formation de l'acteur fondée sur la mémoire émotionnelle et l'action intérieure, inspire l'Actors Studio américain et tout le théâtre moderne.",
+      "wikipedia": "Constantin_Stanislavski",
+      "portrait": {
+        "fichier": "Constantin_Stanislavski.jpg",
+        "legende": "Stanislavski, photographie (vers 1900)",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "eisenstein",
+      "nom": "Sergueï Eisenstein",
+      "classement": "Eisenstein, Sergueï",
+      "titre": "Naissance de Sergueï Eisenstein",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1898,
+      "description": "Sergueï Eisenstein (1898-1948) est un cinéaste soviétique, né à Riga, théoricien du montage et pionnier du cinéma muet. Il réalise La Grève, Le Cuirassé Potemkine (1925), dont la scène de l'escalier d'Odessa est restée célèbre, puis Octobre, Alexandre Nevski (1938) et Ivan le Terrible (1944-1946). La seconde partie d'Ivan, jugée hostile à Staline, est interdite jusqu'en 1958, et il meurt à Moscou d'une crise cardiaque en 1948.",
+      "wikipedia": "Sergueï_Eisenstein",
+      "portrait": {
+        "fichier": "Sergei Eisenstein 03.jpg",
+        "legende": "Eisenstein, photographie (début des années 1920)",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu",
+        "recadrage": [
+          0.0,
+          0.0,
+          1.0,
+          0.75
+        ]
+      }
+    },
+    {
+      "slug": "tarkovski",
+      "nom": "Andreï Tarkovski",
+      "classement": "Tarkovski, Andreï",
+      "titre": "Naissance d'Andreï Tarkovski",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1932,
+      "description": "Andreï Tarkovski (1932-1986) est un cinéaste soviétique, né à Zavrajié, sur la Volga, fils du poète Arseni Tarkovski. Auteur de L'Enfance d'Ivan (1962), d'Andreï Roublev, de Solaris, du Miroir et de Stalker, il réalise une œuvre spirituelle, au rythme lent, souvent entravée par la censure. Quittant l'URSS en 1982 pour tourner Nostalghia en Italie, puis Le Sacrifice en Suède, il meurt d'un cancer du poumon à Paris en 1986.",
+      "wikipedia": "Andreï_Tarkovski",
+      "portrait": {
+        "fichier": "Andrei_Tarkovsky_by_Boris_Baldin.jpg",
+        "legende": "Tarkovski, photographie de Boris Baldin (automne 1980)",
+        "licence": "CC BY-SA 4.0",
+        "auteur": "Boris Baldin (1929–2005)"
+      }
+    },
+    {
+      "slug": "vyssotski",
+      "nom": "Vladimir Vyssotski",
+      "classement": "Vyssotski, Vladimir",
+      "titre": "Naissance de Vladimir Vyssotski",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1938,
+      "description": "Vladimir Vyssotski (1938-1980) est un chanteur, poète et acteur soviétique, né à Moscou, comédien du théâtre de la Taganka. Auteur de plus de sept cents chansons, sur la guerre, la prison, les montagnes et la vie quotidienne, il circule sur des cassettes malgré la méfiance du pouvoir. Marié à l'actrice française Marina Vlady, il meurt à Moscou le 25 juillet 1980, pendant les Jeux olympiques, et plus de cent mille personnes assistent à ses obsèques.",
+      "wikipedia": "Vladimir_Vyssotski",
+      "portrait": {
+        "fichier": "Владимир_Высоцкий_-_портрет_(cropped).jpg",
+        "legende": "Vyssotski, photographie",
+        "licence": "CC BY 4.0",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "tsoi",
+      "nom": "Viktor Tsoï",
+      "classement": "Tsoï, Viktor",
+      "titre": "Naissance de Viktor Tsoï",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1962,
+      "description": "Viktor Tsoï (1962-1990) est un chanteur et poète soviétique, né à Leningrad d'un père coréen et d'une mère russe, chef de file du rock russe. Chanteur du groupe Kino, auteur du disque Groupe sanguin (1988) et de l'album Une étoile nommée Soleil (1989), il devient la voix de la jeunesse de la perestroïka. Il meurt dans un accident de voiture en Lettonie le 15 août 1990, à vingt-huit ans, et un mur de la rue Arbat, à Moscou, devient un lieu de pèlerinage.",
+      "wikipedia": "Viktor_Tsoï",
+      "portrait": {
+        "fichier": "Victor_Tsoi_1986_cropped.jpg",
+        "legende": "Viktor Tsoï à Moscou, photographie d'Igor Moukhine (1986)",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Igor Moukhine",
+        "recadrage": [
+          0.05,
+          0.0,
+          0.85,
+          0.5
+        ]
+      }
+    },
+    {
+      "slug": "yachine",
+      "nom": "Lev Yachine",
+      "classement": "Yachine, Lev",
+      "titre": "Naissance de Lev Yachine",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1929,
+      "description": "Lev Yachine (1929-1990) est un gardien de but soviétique, né à Moscou, seul gardien de but de l'histoire à recevoir le Ballon d'or, en 1963. Toute sa carrière se passe au Dynamo Moscou, qu'il mène à cinq titres de champion d'URSS, et il remporte avec l'URSS les Jeux olympiques de 1956 et le premier Championnat d'Europe des nations, en 1960. Surnommé « l'Araignée noire » pour son maillot sombre, il est l'un des gardiens les plus célèbres de tous les temps, et reçoit le titre de héros du travail socialiste en 1990.",
+      "wikipedia": "Lev_Yachine",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Lev_Yashin.jpg",
+        "legende": "Lev Yachine, photographie de Ron Kroon (15 novembre 1965, Anefo)",
+        "licence": "CC BY-SA 3.0 NL",
+        "auteur": "Ron Kroon (Anefo)"
+      }
+    },
+    {
+      "slug": "lomonossov",
+      "nom": "Mikhaïl Lomonossov",
+      "classement": "Lomonossov, Mikhaïl",
+      "titre": "Naissance de Mikhaïl Lomonossov",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1711,
+      "description": "Mikhaïl Lomonossov (1711-1765) est un savant et poète russe, né près d'Arkhangelsk dans une famille de pêcheurs de la mer Blanche. Chimiste, physicien et grammairien, il formule la loi de la conservation de la matière, découvre l'atmosphère de Vénus en 1761 et jette les bases de la langue littéraire russe moderne. Il contribue à fonder l'université de Moscou en 1755, qui porte aujourd'hui son nom.",
+      "wikipedia": "Mikhaïl_Lomonossov",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "M.V._Lomonosov_by_L.Miropolskiy_after_G.C.Prenner_(1787,_RAN).jpg",
+        "legende": "Lomonossov, portrait de Leonti Miropolski (1787), d'après Georg Caspar Prenner",
+        "licence": "Domaine public",
+        "auteur": "Leonti Miropolski, d'après Georg Caspar Prenner"
+      }
+    },
+    {
+      "slug": "lobatchevski",
+      "nom": "Nikolaï Lobatchevski",
+      "classement": "Lobatchevski, Nikolaï",
+      "titre": "Naissance de Nikolaï Lobatchevski",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1792,
+      "description": "Nikolaï Lobatchevski (1792-1856) est un mathématicien russe, né à Nijni Novgorod, recteur de l'université de Kazan pendant dix-neuf ans. Il découvre une géométrie où le postulat des parallèles d'Euclide est faux, qu'il expose dès 1829, indépendamment de Bolyai et de Gauss, et qui ouvre la voie aux géométries non euclidiennes. Ignoré de son vivant, il meurt aveugle à Kazan en 1856, avant que Beltrami ne prouve en 1868 la cohérence de sa géométrie.",
+      "wikipedia": "Nikolaï_Ivanovitch_Lobatchevski",
+      "portrait": {
+        "fichier": "Lobachevsky_03_crop.jpg",
+        "legende": "Lobatchevski, portrait de Lev Krioukov (1839)",
+        "licence": "Domaine public",
+        "auteur": "Lev Krioukov (1783–1843)"
+      }
+    },
+    {
+      "slug": "tchebychev",
+      "nom": "Pafnouti Tchebychev",
+      "classement": "Tchebychev, Pafnouti",
+      "titre": "Naissance de Pafnouti Tchebychev",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1821,
+      "description": "Pafnouti Tchebychev (1821-1894) est un mathématicien russe, né près de Borovsk, dans la région de Kalouga, professeur à l'université de Saint-Pétersbourg. Fondateur de l'école de Saint-Pétersbourg, il démontre en 1850 un encadrement de la répartition des nombres premiers et donne son nom à des polynômes et à une inégalité de probabilités. Ses travaux ouvrent la voie à Markov et à Lyapounov, et à toute la théorie moderne des probabilités en Russie.",
+      "wikipedia": "Pafnouti_Tchebychev",
+      "portrait": {
+        "fichier": "M._Tchebycheef_-_btv1b53181332k_(cropped).jpg",
+        "legende": "Tchebychev, photographie de l'atelier Nadar (1875-1895)",
+        "licence": "Domaine public",
+        "auteur": "Atelier Nadar"
+      }
+    },
+    {
+      "slug": "pirogov",
+      "nom": "Nikolaï Pirogov",
+      "classement": "Pirogov, Nikolaï",
+      "titre": "Naissance de Nikolaï Pirogov",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1810,
+      "description": "Nikolaï Pirogov (1810-1881) est un chirurgien et pédagogue russe, né à Moscou, pionnier de la chirurgie de guerre. Il utilise l'anesthésie à l'éther sur le champ de bataille dès 1847, au Caucase, publie le premier atlas d'anatomie topographique et organise, pendant le siège de Sébastopol, le tri des blessés et l'emploi d'infirmières. Il meurt en 1881 à Vychnia, près de Vinnytsia, et son corps embaumé est conservé dans une crypte.",
+      "wikipedia": "Nikolaï_Pirogov",
+      "portrait": {
+        "fichier": "PGRS_2_071_Pirogov_-_crop.jpg",
+        "legende": "Pirogov, lithographie d'après photographie (années 1860)",
+        "licence": "Domaine public",
+        "auteur": "Piotr Borel (1829–1898)"
+      }
+    },
+    {
+      "slug": "mendeleiev",
+      "nom": "Dmitri Mendeleïev",
+      "classement": "Mendeleïev, Dmitri",
+      "titre": "Naissance de Dmitri Mendeleïev",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1834,
+      "description": "Dmitri Mendeleïev (1834-1907) est un chimiste russe, né à Tobolsk, le plus jeune d'une très nombreuse fratrie. Il publie en 1869 le tableau périodique des éléments, classés par masse atomique, où il laisse des cases vides pour des éléments encore inconnus dont il prévoit les propriétés, confirmées plus tard par la découverte du gallium, du scandium et du germanium. Professeur à Saint-Pétersbourg, il étudie aussi le pétrole et les mélanges d'eau et d'alcool.",
+      "wikipedia": "Dmitri_Mendeleïev",
+      "essentiel": true,
+      "biographie": "bio_mendeleiev",
+      "portrait": {
+        "fichier": "DIMendeleevCab.jpg",
+        "legende": "Mendeleïev, photographie de 1897",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "kovalevskaia",
+      "nom": "Sofia Kovalevskaïa",
+      "classement": "Kovalevskaïa, Sofia",
+      "titre": "Naissance de Sofia Kovalevskaïa",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1850,
+      "description": "Sofia Kovalevskaïa (1850-1891) est une mathématicienne russe, née à Moscou, qui doit se marier pour pouvoir étudier à l'étranger. Élève de Weierstrass à Berlin, docteur de l'université de Göttingen en 1874, elle devient en 1884 professeur de mathématiques à l'université de Stockholm, première femme à occuper une chaire dans le nord de l'Europe. Elle reçoit en 1888 le prix Bordin de l'Académie des sciences pour ses travaux sur la rotation d'un solide, avant de mourir de pneumonie à quarante et un ans.",
+      "wikipedia": "Sofia_Kovalevskaïa",
+      "portrait": {
+        "fichier": "Sofja_Wassiljewna_Kowalewskaja_1.jpg",
+        "legende": "Sofia Kovalevskaïa, photographie de 1888",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "pavlov",
+      "nom": "Ivan Pavlov",
+      "classement": "Pavlov, Ivan",
+      "titre": "Naissance d'Ivan Pavlov",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1849,
+      "description": "Ivan Pavlov (1849-1936) est un physiologiste russe, né à Riazan, fils de prêtre, professeur à l'Académie de médecine militaire de Saint-Pétersbourg. Ses travaux sur la digestion lui valent en 1904 le prix Nobel de physiologie ou médecine, puis il découvre le réflexe conditionné en observant la salivation des chiens au son d'un signal. Critique du pouvoir bolchevique mais protégé par Lénine, il dirige l'Institut de médecine expérimentale et meurt à Leningrad en 1936.",
+      "wikipedia": "Ivan_Pavlov",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Ivan_Petrovitch_Pavlov._Photograph_after_a_photograph_taken_Wellcome_V0027010.jpg",
+        "legende": "Ivan Pavlov, photographie d'après un cliché de 1934",
+        "licence": "CC BY 4.0",
+        "auteur": "Wellcome Collection"
+      }
+    },
+    {
+      "slug": "popov",
+      "nom": "Alexandre Popov",
+      "classement": "Popov, Alexandre",
+      "titre": "Naissance d'Alexandre Popov",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1859,
+      "description": "Alexandre Popov (1859-1906) est un physicien russe, né à Tourinskie Roudniki, dans l'Oural, professeur à l'école des torpilleurs de Cronstadt. Il présente en 1895 à la Société physico-chimique russe un récepteur radio capable de détecter les orages, et sa liaison radio de 1900 entre l'île de Hogland et le continent facilite le sauvetage de pêcheurs emportés sur la glace. La Russie le tient pour l'inventeur de la radio, que le monde attribue plutôt à Marconi, et il meurt à Saint-Pétersbourg en 1906.",
+      "wikipedia": "Alexandre_Popov_(physicien)",
+      "portrait": {
+        "fichier": "Alexander_Stepanovich_Popov.jpg",
+        "legende": "Popov, photographie d'avant 1906",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "tsiolkovski",
+      "nom": "Constantin Tsiolkovski",
+      "classement": "Tsiolkovski, Constantin",
+      "titre": "Naissance de Constantin Tsiolkovski",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1857,
+      "description": "Constantin Tsiolkovski (1857-1935) est un savant russe, né à Ijevskoïe, dans la région de Riazan, devenu presque sourd à dix ans et professeur de mathématiques dans un lycée de Kalouga. Il établit en 1903 l'équation fondamentale de la propulsion par fusée, étudie les fusées à étages et le carburant liquide, et imagine des stations orbitales. Père de l'astronautique, il aurait écrit que « la Terre est le berceau de l'humanité, mais on ne vit pas éternellement dans un berceau ».",
+      "wikipedia": "Constantin_Tsiolkovski",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Константин_Циолковский.jpg",
+        "legende": "Tsiolkovski, portrait de 1924",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "vernadski",
+      "nom": "Vladimir Vernadski",
+      "classement": "Vernadski, Vladimir",
+      "titre": "Naissance de Vladimir Vernadski",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1863,
+      "description": "Vladimir Vernadski (1863-1945) est un minéralogiste et géochimiste russe, né à Saint-Pétersbourg, fondateur de la géochimie. Dans La Biosphère (1926), il décrit la vie comme une force géologique de la planète et prépare le concept de noosphère, développé avec Teilhard de Chardin et Édouard Le Roy. Premier président de l'Académie ukrainienne des sciences en 1918, il meurt à Moscou en 1945.",
+      "wikipedia": "Vladimir_Vernadski",
+      "portrait": {
+        "fichier": "1934-V_I_Vernadsky.jpg",
+        "legende": "Vernadski, photographie de 1934",
+        "licence": "Domaine public",
+        "auteur": "Académie des sciences de l'URSS"
+      }
+    },
+    {
+      "slug": "joukovskiaviation",
+      "nom": "Nikolaï Joukovski",
+      "classement": "Joukovski, Nikolaï",
+      "titre": "Naissance de Nikolaï Joukovski",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1847,
+      "description": "Nikolaï Joukovski (1847-1921) est un physicien russe, né à Orekhovo, dans la région de Vladimir, professeur à l'université de Moscou et fondateur de l'aérodynamique moderne. Sa formule de 1906 sur la portance d'une aile, établie en même temps que Kutta, permet de calculer la force qui soulève un avion. Il fonde en 1918, avec ses élèves, l'Institut central d'aéro-hydrodynamique, le TsAGI, et Lénine le qualifie de « père de l'aviation russe ».",
+      "wikipedia": "Nikolaï_Joukovski",
+      "portrait": {
+        "fichier": "NikolaiYegorovichZhukovsky.jpg",
+        "legende": "Nikolaï Joukovski, photographie du 1er mars 1911",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "kapitsa",
+      "nom": "Piotr Kapitsa",
+      "classement": "Kapitsa, Piotr",
+      "titre": "Naissance de Piotr Kapitsa",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1894,
+      "description": "Piotr Kapitsa (1894-1984) est un physicien soviétique, né à Cronstadt, qui travaille douze ans à Cambridge avec Rutherford. Retenu en URSS en 1934, il dirige l'Institut des problèmes physiques de Moscou, découvre la superfluidité de l'hélium liquide en 1937 et reçoit le prix Nobel de physique en 1978. Il refuse de travailler à la bombe atomique, ce qui lui vaut huit ans d'assignation à résidence de 1946 à 1954.",
+      "wikipedia": "Piotr_Kapitsa",
+      "portrait": {
+        "fichier": "Pyotr_L_Kapitsa_Russian_physicist_1964.jpg",
+        "legende": "Kapitsa, photographie de Piotr Barącz (1964)",
+        "licence": "Domaine public",
+        "auteur": "Piotr Barącz"
+      }
+    },
+    {
+      "slug": "kolmogorov",
+      "nom": "Andreï Kolmogorov",
+      "classement": "Kolmogorov, Andreï",
+      "titre": "Naissance d'Andreï Kolmogorov",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1903,
+      "description": "Andreï Kolmogorov (1903-1987) est un mathématicien soviétique, né à Tambov, l'un des plus grands du XXe siècle. Il fonde en 1933 la théorie moderne des probabilités sur la théorie de la mesure et apporte des contributions majeures à la topologie, à la turbulence, à la mécanique classique et à la complexité algorithmique. Professeur à l'université de Moscou, il forme une école de mathématiciens exceptionnelle et meurt à Moscou en 1987.",
+      "wikipedia": "Andreï_Kolmogorov",
+      "portrait": {
+        "fichier": "Andrej_Nikolajewitsch_Kolmogorov.jpg",
+        "legende": "Kolmogorov, photographie de Konrad Jacobs",
+        "licence": "CC BY-SA 2.0 DE",
+        "auteur": "Konrad Jacobs"
+      }
+    },
+    {
+      "slug": "korolev",
+      "nom": "Sergueï Korolev",
+      "classement": "Korolev, Sergueï",
+      "titre": "Naissance de Sergueï Korolev",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1907,
+      "description": "Sergueï Korolev (1907-1966) est un ingénieur soviétique, né à Jytomyr, dans l'actuelle Ukraine, père du programme spatial soviétique. Arrêté en 1938 pendant la Grande Terreur et envoyé à la Kolyma, il est libéré et réhabilité, puis conçoit le missile R-7, avec lequel l'URSS lance Spoutnik en octobre 1957 et Gagarine en avril 1961. Gardé secret de son vivant sous le nom de « Constructeur en chef », il meurt à Moscou en janvier 1966 des suites d'une opération chirurgicale.",
+      "wikipedia": "Sergueï_Korolev",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Нина_и_Сергей_Королевы_(cropped).jpg",
+        "legende": "Sergueï Korolev avec son épouse Nina, photographie de famille",
+        "licence": "CC BY 4.0",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "tupolev",
+      "nom": "Andreï Tupolev",
+      "classement": "Tupolev, Andreï",
+      "titre": "Naissance d'Andreï Tupolev",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1888,
+      "description": "Andreï Tupolev (1888-1972) est un ingénieur aéronautique soviétique, né à Poustomazovo, près de Tver. Arrêté en 1937 pendant la Grande Terreur, il conçoit des avions dans une « charachka », bureau d'études du Goulag, avant d'être libéré en 1941. Son bureau d'études dessine des bombardiers comme le Tu-95 et des avions de ligne comme le Tu-104, le Tu-144, premier avion de ligne supersonique à voler, en 1968, et le Tu-154.",
+      "wikipedia": "Andreï_Tupolev",
+      "portrait": {
+        "fichier": "А.Н._Туполев_1944.jpg",
+        "legende": "Tupolev dans son bureau, photographie de 1944",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "kalachnikov",
+      "nom": "Mikhaïl Kalachnikov",
+      "classement": "Kalachnikov, Mikhaïl",
+      "titre": "Naissance de Mikhaïl Kalachnikov",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1919,
+      "description": "Mikhaïl Kalachnikov (1919-2013) est un ingénieur soviétique, né à Kourya, dans le territoire de l'Altaï, sergent blessé en 1941 devenu concepteur d'armes. Il dessine l'AK-47, adopté par l'armée soviétique en 1949, fusil d'assaut simple et fiable qui devient l'arme la plus répandue au monde. Sans toucher de droits sur son invention, il confie peu avant sa mort sa douleur d'être lié aux morts qu'elle a causées, et meurt à Ijevsk en 2013, à quatre-vingt-quatorze ans.",
+      "wikipedia": "Mikhaïl_Kalachnikov",
+      "portrait": {
+        "fichier": "Kalashnikov_Mikhail_(1).jpg",
+        "legende": "Kalachnikov, photographie du ministère russe de la Défense (2009-2013)",
+        "licence": "CC BY 4.0",
+        "auteur": "Ministère de la Défense de la Fédération de Russie"
+      }
+    },
+    {
+      "slug": "gagarine",
+      "nom": "Youri Gagarine",
+      "classement": "Gagarine, Youri",
+      "titre": "Naissance d'Youri Gagarine",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1934,
+      "description": "Youri Gagarine (1934-1968) est un cosmonaute soviétique, né à Klouchino, près de Smolensk, fils de kolkhoziens, devenu pilote de chasse. Le 12 avril 1961, à bord de Vostok 1, il est le premier homme dans l'espace et accomplit un tour de la Terre en 108 minutes. Héros de l'Union soviétique et célébrité mondiale, il meurt le 27 mars 1968 dans le crash d'un avion d'entraînement, près de Kirjatch, à trente-quatre ans.",
+      "wikipedia": "Youri_Gagarine",
+      "essentiel": true,
+      "biographie": "bio_gagarine",
+      "portrait": {
+        "fichier": "Yuri_Gagarin_(1961).jpg",
+        "legende": "Gagarine lors d'une conférence de presse en Finlande, photographie d'Arto Jousi (3 juillet 1961)",
+        "licence": "Domaine public",
+        "auteur": "Arto Jousi (Suomen valokuvataiteen museo)"
+      }
+    },
+    {
+      "slug": "leonov",
+      "nom": "Alexeï Leonov",
+      "classement": "Leonov, Alexeï",
+      "titre": "Naissance d'Alexeï Leonov",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1934,
+      "description": "Alexeï Leonov (1934-2019) est un cosmonaute soviétique, né à Listvianka, en Sibérie, et peintre. Le 18 mars 1965, lors de la mission Voskhod 2, il est le premier homme à sortir dans l'espace, pendant douze minutes ; son scaphandre gonflé l'empêche de rentrer et il doit le dégonfler. Il commande en 1975 le vaisseau Soyouz d'Apollo-Soyouz, première rencontre en orbite entre Soviétiques et Américains, et meurt à Moscou en 2019.",
+      "wikipedia": "Alexeï_Leonov",
+      "portrait": {
+        "fichier": "Alexei_Leonov.jpg",
+        "legende": "Alexeï Leonov, photographie de la NASA (avril 1974)",
+        "licence": "Domaine public",
+        "auteur": "NASA"
+      }
+    },
+    {
+      "slug": "vavilov",
+      "nom": "Nikolaï Vavilov",
+      "classement": "Vavilov, Nikolaï",
+      "titre": "Naissance de Nikolaï Vavilov",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1887,
+      "description": "Nikolaï Vavilov (1887-1943) est un botaniste et généticien soviétique, né à Moscou, frère du physicien Sergueï Vavilov. Il parcourt le monde pour collecter les plantes cultivées, établit les centres d'origine de l'agriculture et crée à Leningrad une banque de graines, l'une des plus riches du monde, que ses collaborateurs protègent du siège de la ville au prix de leur vie. Opposé à Lyssenko, arrêté en 1940 et condamné à mort, il meurt de faim en prison à Saratov en 1943.",
+      "wikipedia": "Nikolaï_Vavilov",
+      "portrait": {
+        "fichier": "Nikolai_Vavilov_NYWTS.jpg",
+        "legende": "Vavilov, photographie de presse du World Telegram (1933)",
+        "licence": "Domaine public",
+        "auteur": "Photographe du World Telegram"
+      }
+    },
+    {
+      "slug": "prjevalski",
+      "nom": "Nikolaï Prjevalski",
+      "classement": "Prjevalski, Nikolaï",
+      "titre": "Naissance de Nikolaï Prjevalski",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1839,
+      "description": "Nikolaï Prjevalski (1839-1888) est un explorateur et géographe russe, né à Kimborovo, près de Smolensk, officier. Il conduit quatre grandes expéditions en Mongolie, en Chine et au Tibet, décrit l'espèce de cheval sauvage qui porte son nom et rapporte des milliers de plantes et d'animaux inconnus en Europe. Il meurt de la typhoïde à Karakol, aujourd'hui au Kirghizistan, au départ d'une cinquième expédition, en 1888.",
+      "wikipedia": "Nikolaï_Prjevalski",
+      "portrait": {
+        "fichier": "Nikolay_Przhevalsky_photoportrait_and_signature.jpg",
+        "legende": "Prjevalski, photographie de 1888",
+        "licence": "Domaine public",
+        "auteur": "V. Klasen"
+      }
+    }
+  ]
+}

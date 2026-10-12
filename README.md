@@ -601,7 +601,7 @@ ne posent pas la même question :
 | | Un thème, c'est | Une date, c'est | On le joue par |
 |---|---|---|---|
 | **Biographies** | une vie (360 thèmes, en 12 domaines) | une étape de cette vie | étape de la vie |
-| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, le sous-continent indien, Israël, la Turquie) | la naissance d'un personnage | domaine |
+| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, le sous-continent indien, Israël, la Turquie, la Russie) | la naissance d'un personnage | domaine |
 
 Le déplacement ne coûte aucune migration : les 360 thèmes gardent leurs
 identifiants, et rien de ce que le joueur a sauvegardé (favoris, révision,
@@ -747,7 +747,7 @@ dont on se souvient (Ali refusant la guerre du Viêt Nam, Schmeling et Bartali f
 nazisme et au fascisme). Les records seuls ne suffisent pas : ils restent aux
 Biographies. Le sportif est rangé en « Musique, spectacle et sport », et la règle des
 morts s'applique à lui comme aux autres : Tommie Smith et John Carlos, dont le poing
-levé à Mexico en 1968 serait un cas d'école, sont vivants et restent donc dehors. Lev Yachine (seul gardien Ballon d'or) attend un panthéon de la
+levé à Mexico en 1968 serait un cas d'école, sont vivants et restent donc dehors. Lev Yachine (seul gardien Ballon d'or) est au panthéon de la
 Russie.
 
 **Six axes communs, et un septième là où il se justifie.** La palette n'a que huit
@@ -1989,6 +1989,41 @@ raisonnement que Matisse et Camus en France. Les crédits d'auteur trop vagues o
 main (« Auteur inconnu »). Le client de Commons refusant à plusieurs reprises la miniature de 500 px de
 Ba Jin, celui-ci est demandé en 960 px (`largeur`).
 
+### Un pays à part : la Russie
+
+`pan_ru`, « Grandes figures de Russie » (code `ru`, pays) : **135 personnages**, d'Alexandre Nevski (1220) à
+Alexeï Navalny (1976). Par axe : 31 Littérature et pensée, 23 Chefs d'État et dirigeants, 22 Guerres et
+résistances, 21 Musique, spectacle et sport, 20 Sciences, techniques et innovation, 18 Beaux-arts ; 37 ⭐ et
+8 biographies liées (Pierre le Grand, Catherine II, Koutouzov, Joukov, Dostoïevski, Tolstoï, Mendeleïev,
+Gagarine). 135 portraits : 108 du domaine public, 2 CC0, 11 CC BY et 14 CC BY-SA. Pas d'axe « Économie et
+entreprise » : les mécènes (Tretiakov) et le joaillier Fabergé sont rangés aux Beaux-arts.
+
+- **Un pays, pas un bloc** : `pan_ru`, aucun champ `pays`, et « Pendant ce temps, ailleurs… » le compte
+  comme `thm_ru` et `thm_urss`. La Biélorussie et l'Ukraine n'y sont pas associées : elles attendent leurs
+  propres thèmes (voir plus bas, « L'Europe et les Amériques qui manquent »).
+- **Le pays qui honore, pas l'état civil.** Sont ici des figures nées hors des frontières actuelles mais
+  honorées avant tout en Russie, et la fiche le dit : Trotski (Ianovka), Brejnev, Berdiaev, Boulgakov,
+  Akhmatova, Répine, Prokofiev et Korolev (Ukraine), Gogol et Malevitch (que l'Ukraine revendique aussi),
+  Mandelstam et Eisenstein (Pologne, Lettonie), Staline (Géorgie), Rostropovitch (Azerbaïdjan). Les exilés
+  (Kandinsky, Stravinsky, Rachmaninov, Brodsky, Soljenitsyne) y sont aussi : la Russie les honore.
+- **Les figures disputées sont écrites comme telles** : Navalny et Politkovskaïa y sont avec la mort de
+  l'un et le meurtre de l'autre ; Lénine, Staline, Trotski et Brejnev avec leurs crimes ou leurs échecs.
+- **Dates** : Staline est né en 1878 (le 21 décembre 1879 est la date officielle) ; Korolev en 1907 (12 janvier
+  grégorien, 30 décembre 1906 julien) ; Nevski vers 1220 ; Razine vers 1630. Les dates julien/grégorien des
+  articles de Wikipédia ne sont pas toujours convertis : on suit le calendrier grégorien.
+- **Écartés pour une date disputée** : Anna Pavlova (1881 ou 1882), Fiodor Ouchakov (1744 ou 1745),
+  Griboïedov (1790, 1794 ou 1795), Dmitri Levitski (1735 ou 1737).
+- **Écartés faute d'image libre aux États-Unis** : Maïakovski (la seule image libre porte une mention de
+  droits contestée), Plissetskaïa (la photographie libre est un cliché de 1974 sans auteur), Nabokov (la photographie
+  de 1973 n'est pas libre aux États-Unis, URAA) et Kourtchatov (cliché soviétique de 1948). Les clichés
+  soviétiques d'après 1930 « libres en Russie » ont été écartés pour des licences explicites (Staline :
+  Signal Corps américain, 1943 ; Khrouchtchev : archives néerlandaises, CC0).
+- **Les images** : les tsars Ivan III, Ivan IV et Alexandre Nevski sont montrés par des miniatures du Livre
+  des titres du tsar (1672), posthumes, qui écrivent le nom et sont marquées `nomVisible`. Donskoï est une
+  statue (monument du Millénaire de la Russie), Pojarski et Razine des gravures, Tchouïkov un portrait peint
+  en 2018, Oulanova une photographie de 1968 (Anefo) ; à remplacer si de meilleures images libres apparaissent.
+- **Pas de vivants** : Terechkova (qui a sa biographie), Poutine, Kasparov, Alla Pougatcheva et Anna Netrebko n'y sont pas.
+
 ### Un pays à part : la Grèce
 
 `pan_gr`, « Grandes figures de Grèce » : **82 personnages**, de Solon (vers 640 av. J.-C.) à Vangelis
@@ -2381,7 +2416,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
 ### Ce qui n'est pas fait
 
 - **Les autres panthéons** : la France, l'Égypte, les États-Unis, l'Italie, le
-  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest le sous-continent indien, Israël, la Chine, la Turquie et la Grèce sont écrits.
+  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest le sous-continent indien, Israël, la Chine, la Turquie, la Grèce et la Russie sont écrits.
   Chaque liste de personnages est validée avant la rédaction. Feuille de route, dans l'ordre
   où on les propose (un pays seul quand il a de quoi faire un thème, un bloc sinon) :
   1. **Le Machrek est écrit** (voir « Le cinquième bloc »). Il reste : le portrait des trois
@@ -2393,7 +2428,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
      figures juives (Edmond Amran El Maleh, Habiba Msika) et en a laissé cinq de côté (Cheikh
      Raymond, Reinette l'Oranaise, Salim Halali, Albert Memmi, Abraham Serfaty).
   2. **Pays seuls** : le Brésil (qui n'entre pas dans l'Amérique « hispanique »), le
-     Japon, la Russie (où attend Lev Yachine), l'Afrique du Sud, l'Australie, l'Iran. **La Turquie est écrite** (voir « Un pays à part : la Turquie »).
+     Japon, l'Afrique du Sud, l'Australie, l'Iran. **La Russie est écrite** (voir « Un pays à part : la Russie »). **La Turquie est écrite** (voir « Un pays à part : la Turquie »).
   3. **Blocs** : l'Asie du Sud-Est, l'Asie centrale et la Mongolie, le Caucase, la Corée (`KR`/`KP`), l'Afrique de
      l'Ouest, l'Afrique centrale, l'Afrique de l'Est et la Corne, l'Afrique australe et l'océan
      Indien (sans l'Afrique du Sud), « Nouvelle-Zélande et Pacifique ».
@@ -2438,7 +2473,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
   serait préférable.
 - **Sportifs et entrepreneurs** n'ont pas d'axe dans les panthéons : ils sont
   couverts par les Biographies, sauf les sportifs de portée historique. **Yachine**
-  attend un panthéon de la Russie ; Smith et Carlos, qu'ils ne soient plus vivants.
+  est au panthéon de la Russie ; Smith et Carlos attendent de ne plus être vivants.
 
 ## Accessibilité : le clavier et le zoom
 
