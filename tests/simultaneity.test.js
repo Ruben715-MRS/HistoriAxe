@@ -432,6 +432,12 @@ test('« Grandes figures d’Afrique de l’Ouest » : chaque ancre porte le pay
     verifierPantheonDeBloc('pan_afriqueouest', 23, 15);
 });
 
+test('« Grandes figures du sous-continent indien » : chaque ancre porte le pays de son événement, et la session se joue', () => {
+    // Sept pays, dont deux (le Bhoutan, les Maldives) n'ont que quelques figures : l'Inde, qui en
+    // compte plus de la moitié, ne doit pas les faire disparaître parmi les ancres.
+    verifierPantheonDeBloc('pan_indien', 29, 7);
+});
+
 test('« Grandes figures d’Égypte » : toutes les ancres sont l’Égypte, et la session se joue', () => {
     // Le panthéon d'un pays n'a pas de `pays` par événement : c'est son thème qui porte
     // l'étiquette (pan_eg → EG, comme « Histoire de l'Égypte »). Sans cela, une naissance

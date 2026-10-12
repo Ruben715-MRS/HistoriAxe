@@ -64,6 +64,15 @@ KEEP_AS_WRITTEN = {
     'Yahya Hamid ed-Din', 'Hussein de Jordanie', 'Abou Jihad',
     # Scandinavie : souverains par leur prénom ou leur surnom, Islandais par leur prénom (patronymes).
     'Canut le Grand', 'Christine de Suède', 'Harald Hardrada', 'Jón Sigurðsson', 'Jón Arason', 'Snorri Sturluson',
+    # Sous-continent indien : souverains, saints et maîtres rangés par leur nom d'usage, noms d'une seule
+    # famille ou sans nom de famille (Ranjit Singh, Guru Nanak), noms de cour et titres (Shah Jahan, Mère Teresa).
+    'Sher Shah Suri', 'Shah Jahan', 'Nur Jahan', 'Razia Sultana', 'Ranjit Singh', 'Tipû Sâhib', 'Maharana Pratap',
+    'Lakshmî Bâî', 'Mère Teresa', 'Adi Shankara', 'Chaitanya Mahaprabhu', 'Guru Nanak', 'Guru Gobind Singh',
+    'Ramana Maharshi', 'Sri Aurobindo', 'Drukpa Kunley', 'Pema Lingpa', 'Ngawang Namgyal', 'Lalon Shah',
+    'Prithvi Narayan Shah', 'Sri Vikrama Rajasinha', 'Siddhartha Gautama', 'Faiz Ahmed Faiz', 'Begum Rokeya',
+    'Ziaur Rahman', 'Tajuddin Ahmad', 'Zainul Abedin', 'Noor Jehan', 'Nusrat Fateh Ali Khan', 'Dilip Kumar',
+    'Milkha Singh', 'Raja Ravi Varma', 'Nek Chand', 'Pasang Lhamu Sherpa', 'Bhanubhakta Acharya',
+    'Abdul Ghaffar Khan', 'Liaquat Ali Khan', 'Allauddin Khan',
 }
 
 # Écrits à la main : (nom de la source) → nom de classement.
@@ -136,6 +145,9 @@ EXCEPTIONS = {
     'Le Bernin': 'Bernin',
     "L'Arioste": 'Arioste',
     'Paul Véronèse': 'Véronèse, Paul',
+    'Kazi Nazrul Islam': 'Nazrul Islam, Kazi',
+    'Sheikh Mujibur Rahman': 'Mujibur Rahman, Sheikh',
+    'Lala Lajpat Rai': 'Lajpat Rai, Lala',
     # Espagne : le nom de famille est souvent double (« Pérez Galdós »), et on range sous le premier.
     'Antonio Cánovas del Castillo': 'Cánovas del Castillo, Antonio',
     'Pablo Iglesias Posse': 'Iglesias Posse, Pablo',

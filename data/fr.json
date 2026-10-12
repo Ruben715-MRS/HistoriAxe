@@ -2,8 +2,8 @@
   "version": "1.0.0",
   "lang": "fr",
   "name": "Français (Intégral)",
-  "totalThemes": 808,
-  "totalEvents": 21170,
+  "totalThemes": 809,
+  "totalEvents": 21297,
   "categories": [
     {
       "nom": "Culture générale",
@@ -114956,6 +114956,2246 @@
                 "pan_scandinavie_ingmarbergman",
                 "pan_scandinavie_kamprad",
                 "pan_scandinavie_palme"
+              ]
+            },
+            {
+              "id": "pan_indien",
+              "nom": "Grandes figures du sous-continent indien",
+              "difficulte": "Intermédiaire",
+              "motsCles": [
+                "Sous-continent indien",
+                "Asie du Sud",
+                "Inde",
+                "Pakistan",
+                "Bangladesh",
+                "Népal",
+                "Bhoutan",
+                "Sri Lanka",
+                "Ceylan",
+                "Maldives",
+                "Hindoustan",
+                "Raj britannique",
+                "Empire moghol",
+                "Empire maurya",
+                "Bengale",
+                "Pendjab",
+                "Cachemire",
+                "Himalaya",
+                "Indes",
+                "Bollywood"
+              ],
+              "events": [
+                {
+                  "id": "pan_indien_mahavira",
+                  "axe": "Littérature et pensée",
+                  "date": -599,
+                  "titre": "Naissance de Mahavira",
+                  "description": "Mahavira (vers 599-527 av. J.-C.) est le vingt-quatrième et dernier tirthankara du jaïnisme, né dans le royaume de Vaishali, dans l'actuel Bihar, au sein d'une famille princière. Il quitte le palais à trente ans, pratique une ascèse extrême pendant douze ans, puis enseigne la non-violence, la non-possession et la vérité. Son enseignement, transmis par ses disciples, est à l'origine de la communauté jaïne ; les dates de sa vie varient selon les traditions.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mah%C4%81v%C4%ABra",
+                  "pays": "IN",
+                  "classement": "Mahavira",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_mahavira.jpg",
+                    "legende": "Mahavira, statue jaïne : une image de dévotion, sans portrait authentique",
+                    "auteur": "Dayodaya",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mahavir.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_bouddha",
+                  "axe": "Littérature et pensée",
+                  "date": -563,
+                  "titre": "Naissance de Siddhartha Gautama",
+                  "description": "Siddhartha Gautama (vers 563-vers 483 av. J.-C.) est le Bouddha, fondateur du bouddhisme, né à Lumbini, dans l'actuel Népal, dans le clan des Shakya. À vingt-neuf ans, il quitte son palais et sa famille ; après six ans d'ascèse, il atteint l'Éveil à Bodh Gaya et prêche à Sarnath son premier sermon. Il meurt à Kushinagar après quarante-cinq ans d'enseignement, et Lumbini est aujourd'hui inscrit au patrimoine mondial de l'Unesco.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Siddhartha_Gautama",
+                  "pays": "NP",
+                  "classement": "Siddhartha Gautama",
+                  "biographie": "bio_bouddha",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_bouddha.jpg",
+                    "legende": "Bouddha prêchant à Sarnath, statue du musée de Sarnath : une image sculptée, sans portrait authentique",
+                    "auteur": "Phramaha Thevaprabhat Wachirayanmethi",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Buddha_in_Sarnath_Museum_(Dhammajak_Mutra).jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_ashoka",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": -304,
+                  "titre": "Naissance d'Ashoka",
+                  "description": "Ashoka (vers 304-232 av. J.-C.) est le troisième empereur de la dynastie maurya, qui règne pendant une trentaine d'années sur presque tout le sous-continent indien. Horrifié par le massacre de la guerre du Kalinga, vers 261 av. J.-C., il se convertit au bouddhisme, renonce à la conquête et fait graver sur des rochers et des piliers des édits qui prônent le dharma, la tolérance et le respect de la vie. Il envoie des missions bouddhiques jusqu'à Ceylan et dans le monde hellénistique, et le chapiteau à quatre lions de son pilier de Sarnath est devenu l'emblème de l'Inde indépendante.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ashoka",
+                  "pays": "IN",
+                  "classement": "Ashoka",
+                  "biographie": "bio_ashoka",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_ashoka.jpg",
+                    "legende": "Ashoka sur son char, relief de la porte sud du Grand Stupa de Sanchi, des environs du Ier siècle av. J.-C. : une image sculptée deux siècles après sa mort, sans portrait authentique",
+                    "auteur": "Photo Dharma from Sadao, Thailand",
+                    "licence": "CC BY 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ashoka%27s_visit_to_the_Ramagrama_stupa_Sanchi_Stupa_1_Southern_gateway.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_aryabhata",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 476,
+                  "titre": "Naissance d'Aryabhata",
+                  "description": "Aryabhata (476-vers 550) est un mathématicien et astronome indien, né à Kusumapura (Pataliputra), auteur à vingt-trois ans de l'Aryabhatiya. Il donne une valeur approchée de pi (3,1416), explique les éclipses, affirme que la Terre tourne sur son axe et utilise une numération de position. Le premier satellite artificiel indien, lancé en 1975, porte son nom.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Aryabhata",
+                  "pays": "IN",
+                  "classement": "Aryabhata",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_aryabhata.jpg",
+                    "legende": "Aryabhata, statue moderne : une image imaginée, sans portrait authentique",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:2064_aryabhata-crp.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_shankara",
+                  "axe": "Littérature et pensée",
+                  "date": 788,
+                  "titre": "Naissance d'Adi Shankara",
+                  "description": "Adi Shankara (vers 788-vers 820) est un philosophe de l'Inde du Sud, né à Kaladi, au Kerala. Maître de l'advaita vedanta, selon lequel Brahman et l'âtman ne font qu'un, il commente les Upanishads, la Bhagavad-Gita et les Brahma-sutras. La tradition lui attribue la fondation de quatre monastères aux quatre coins de l'Inde et la réorganisation des ordres de moines, et le fait mourir à trente-deux ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Adi_Shankara",
+                  "pays": "IN",
+                  "classement": "Adi Shankara",
+                  "biographie": "bio_shankara",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_shankara.jpg",
+                    "legende": "Adi Shankara entouré de ses disciples, tableau de Raja Ravi Varma (vers 1904) : une image imaginée onze siècles après sa mort",
+                    "auteur": "Raja Ravi Varma (1848–1906)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Raja_Ravi_Varma_-_Sankaracharya.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_rajaraja",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 947,
+                  "titre": "Naissance de Rajaraja Ier",
+                  "description": "Rajaraja Ier (vers 947-1014) est un empereur de la dynastie chola, qui règne de 985 à 1014 depuis Thanjavur, dans le sud de la péninsule. Il conquiert le nord de Ceylan, les îles Maldives et une partie du Deccan, et fait de sa flotte la première puissance navale de l'océan Indien. Il fait bâtir le temple Brihadishvara de Thanjavur, achevé en 1010 et inscrit au patrimoine mondial de l'Unesco.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Rajaraja_Ier",
+                  "pays": "IN",
+                  "classement": "Rajaraja Ier",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_rajaraja.jpg",
+                    "legende": "Rajaraja Ier, détail de sa statue au temple Brihadishvara de Thanjavur : une image sculptée, sans portrait authentique",
+                    "auteur": "Venu62 (auteur présumé, Wikimedia Commons)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Raraja_detail.png"
+                  }
+                },
+                {
+                  "id": "pan_indien_ramanuja",
+                  "axe": "Littérature et pensée",
+                  "date": 1017,
+                  "titre": "Naissance de Ramanuja",
+                  "description": "Ramanuja (1017-1137) est un théologien du Vishishtadvaita, né à Sriperumbudur, au Tamil Nadu. Contre Shankara, il enseigne que Dieu, Vishnu, et les âmes sont distincts mais inséparables, et que la dévotion mène au salut ; son Sri Bhashya commente les Brahma-sutras. Selon la tradition, il aurait vécu cent vingt ans et ouvert aux basses castes l'accès au chant sacré des temples vishnouites.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ramanuja",
+                  "pays": "IN",
+                  "classement": "Ramanuja",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_ramanuja.jpg",
+                    "legende": "Ramanuja méditant sur sa philosophie du Dieu unique, illustration de Margaret Dovaston : une image imaginée plusieurs siècles après sa mort",
+                    "auteur": "Margaret Dovaston (1884–1954) Alternative names Marie Dovaston; Margaret Isabel Dovaston",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ramanuja_contemplating_his_philosophy_of_the_one_personal_god,_A.D._1100.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_basava",
+                  "axe": "Littérature et pensée",
+                  "date": 1134,
+                  "titre": "Naissance de Basava",
+                  "description": "Basava (1134-1196) est un philosophe et poète du Karnataka, ministre du roi Bijjala à Kalyana. Fondateur du mouvement lingayat, il rejette le système des castes, les rituels brahmaniques et la subordination des femmes, et compose des vachanas, poèmes en kannada. Sa « salle de l'expérience », l'Anubhava Mantapa, rassemblait des saints de toutes les castes, et les lingayats le vénèrent encore.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Basava",
+                  "pays": "IN",
+                  "classement": "Basava",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_basava.jpg",
+                    "legende": "Basava, statue : une sculpture moderne, sans portrait authentique",
+                    "auteur": "Vanished user at English Wikipedia",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Basava_statue_crop.png"
+                  }
+                },
+                {
+                  "id": "pan_indien_razia",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1205,
+                  "titre": "Naissance de Razia Sultana",
+                  "description": "Razia Sultana (vers 1205-1240) est la seule femme à avoir régné sur le sultanat de Delhi, de 1236 à 1240. Fille d'Iltutmish, désignée par lui pour lui succéder, elle monte sur le trône, renonce au voile pour siéger en public et nomme à des charges des Abyssins et des Hindous, ce qui dresse contre elle la noblesse turque. Renversée en 1240, elle meurt peu après en tentant de reprendre le trône, et plusieurs villes se disputent sa tombe.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sultan_Razia",
+                  "pays": "IN",
+                  "classement": "Razia Sultana",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_razia.jpg",
+                    "legende": "Razia Sultana à cheval, miniature indienne du XVIIIe siècle : une image peinte cinq siècles après sa mort",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Equestrian_miniature_painting_of_Razia_Sultana,_circa_18th_century.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_araniko",
+                  "axe": "Beaux-arts",
+                  "date": 1245,
+                  "titre": "Naissance d'Araniko",
+                  "description": "Araniko (1245-1306) est un architecte et sculpteur newar, né à Katmandou. Envoyé au Tibet en 1260 pour y bâtir un stupa d'or, il passe à la cour de Kubilai Khan, et construit la Pagode blanche de Pékin, achevée en 1279. Il dirige les artisans impériaux, et son style marque l'architecture bouddhique de la Chine.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Araniko",
+                  "pays": "NP",
+                  "classement": "Araniko",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_araniko.jpg",
+                    "legende": "Araniko, statue du temple Miaoying à Pékin : une sculpture moderne, sans portrait authentique",
+                    "auteur": "user:smartneddy",
+                    "licence": "CC BY-SA 2.5",
+                    "source": "https://commons.wikimedia.org/wiki/File:Statue_of_Araniko_in_Miaoying_Temple.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_amirkhusrau",
+                  "axe": "Littérature et pensée",
+                  "date": 1253,
+                  "titre": "Naissance d'Amir Khusrau",
+                  "description": "Amir Khusrau (1253-1325) est un poète et musicien né à Patiali, dans l'actuel Uttar Pradesh. Poète de cour de sept sultans de Delhi, il écrit en persan et en hindavi, et la tradition lui attribue la création du qawwali, du sitar et du tabla. Disciple du saint soufi Nizamuddin Auliya, il meurt à Delhi en 1325 et repose à ses côtés.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Amir_Khusrau",
+                  "pays": "IN",
+                  "classement": "Khusrau, Amir",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_amirkhusrau.jpg",
+                    "legende": "Amir Khusrau entouré de jeunes hommes, miniature d'un manuscrit de la fin du XVIIe siècle",
+                    "auteur": "Anonymous artist from Bokhara",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Amir_Khusro.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_kabir",
+                  "axe": "Littérature et pensée",
+                  "date": 1398,
+                  "titre": "Naissance de Kabir",
+                  "description": "Kabir (vers 1398-1518) est un poète et mystique de Bénarès, tisserand de condition modeste, probablement issu d'une famille de musulmans convertis. Il refuse l'idolâtrie et les dogmes des hindous comme des musulmans, prêche un Dieu unique sans forme, et ses dohas, couplets en hindi populaire, sont appris par cœur dans toute l'Inde du Nord. Une partie de ses vers entre dans le Guru Granth Sahib des sikhs, et la légende veut que hindous et musulmans se soient disputé son corps à sa mort.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kab%C3%AEr",
+                  "pays": "IN",
+                  "classement": "Kabir",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_kabir.jpg",
+                    "legende": "Kabir et un disciple, peinture indienne de 1825 : une image tracée plus de trois siècles après sa mort",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kabir004.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_pemalingpa",
+                  "axe": "Littérature et pensée",
+                  "date": 1450,
+                  "titre": "Naissance de Pema Lingpa",
+                  "description": "Pema Lingpa (1450-1521) est un maître bouddhiste, « découvreur de trésors » ou terton, né dans la vallée de Bumthang. Il révèle des textes cachés, les terma, et aurait plongé dans un lac en flammes d'où il serait ressorti avec un trésor sans que sa lampe ne s'éteigne. Maître de la tradition nyingma, il est l'ancêtre de plusieurs grandes familles du Bhoutan, dont la famille royale.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/P%C3%A9ma_Lingpa",
+                  "pays": "BT",
+                  "classement": "Pema Lingpa",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_pemalingpa.jpg",
+                    "legende": "Pema Lingpa, peinture : une image de dévotion, sans portrait authentique",
+                    "auteur": "treasuryoflives.org",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Pema_Lingpa.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_drukpakunley",
+                  "axe": "Littérature et pensée",
+                  "date": 1455,
+                  "titre": "Naissance de Drukpa Kunley",
+                  "description": "Drukpa Kunley (1455-1529) est un lama surnommé le « fou divin », né au Tibet et vénéré au Bhoutan. Il enseigne par la provocation, l'humour et les chants, et se moque des hypocrisies religieuses. Son temple de Chimi Lhakhang, à Punakha, et les phallus peints sur les maisons du Bhoutan perpétuent son souvenir.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Drukpa_Kunley",
+                  "pays": "BT",
+                  "classement": "Drukpa Kunley",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_drukpakunley.jpg",
+                    "legende": "Drukpa Kunley, peinture : une image de dévotion, sans portrait authentique",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Drukpa_Kunley.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_gurunanak",
+                  "axe": "Littérature et pensée",
+                  "date": 1469,
+                  "titre": "Naissance de Guru Nanak",
+                  "description": "Guru Nanak (1469-1539) est le fondateur du sikhisme, né à Talwandi (aujourd'hui Nankana Sahib, au Pakistan). Il enseigne un Dieu unique, Ik Onkar, rejette les castes, voyage jusqu'à La Mecque et fonde la communauté de Kartarpur, où l'on partage le repas du langar. Son lieu de naissance reste le plus grand lieu de pèlerinage sikh du Pakistan, et le couloir de Kartarpur, ouvert en 2019, permet aux Indiens d'y accéder sans visa.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Guru_Nanak",
+                  "pays": "IN",
+                  "classement": "Guru Nanak",
+                  "biographie": "bio_gurunanak",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_gurunanak.jpg",
+                    "legende": "Guru Nanak avec Bhai Bala et Bhai Mardana, peinture de style de Tanjore de la fin du XIXe siècle : une image imaginée plus de trois siècles après sa mort",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Sikh_Gurus_with_Bhai_Bala_and_Bhai_Mardana.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_babur",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1483,
+                  "titre": "Naissance de Babur",
+                  "description": "Babur (1483-1530) est le fondateur de la dynastie moghole, né à Andijan, dans la vallée de Ferghana (actuel Ouzbékistan), descendant de Tamerlan et de Gengis Khan. Chassé de son royaume d'Asie centrale, il prend Kaboul en 1504, bat le sultan de Delhi Ibrahim Lodi à Panipat en 1526 puis Rana Sanga à Khanwa en 1527, et fonde l'empire moghol. Auteur en turc djaghataï d'une autobiographie, le Baburnama, il est enterré à Kaboul ; héros fondateur pour les uns, conquérant étranger pour les autres, il est aussi honoré en Ouzbékistan.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Babur",
+                  "pays": "IN",
+                  "classement": "Babur",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_babur.jpg",
+                    "legende": "Babur, détail d'une miniature de l'album de Shah Jahan (vers 1650) : une image peinte plus d'un siècle après sa mort",
+                    "auteur": "c.1650",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Humayun_and_Babur_(Late_Shah_Jahan_Album)_Babur_detail.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_chaitanya",
+                  "axe": "Littérature et pensée",
+                  "date": 1486,
+                  "titre": "Naissance de Chaitanya Mahaprabhu",
+                  "description": "Chaitanya Mahaprabhu (1486-1534) est un mystique du Bengale, né à Nabadwip, fondateur du vishnouisme gaudiya. Il prêche le chant collectif des noms de Krishna, le sankirtana, dans les rues, et fait de la dévotion extatique la voie du salut. Ses disciples ont fait de Vrindavan un lieu de pèlerinage, et son courant a donné naissance au mouvement Hare Krishna, fondé en 1966.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Chaitanya_Mahaprabhu",
+                  "pays": "IN",
+                  "classement": "Chaitanya Mahaprabhu",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_chaitanya.jpg",
+                    "legende": "Chaitanya Mahaprabhu à Jagannath, peinture : une image de dévotion, sans portrait authentique",
+                    "auteur": "Self",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Chaitanya-Mahabrabhu-at-Jagannath.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_shershah",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1486,
+                  "titre": "Naissance de Sher Shah Suri",
+                  "description": "Sher Shah Suri (1486-1545) est le fondateur de l'empire Sûr, qui chasse les Moghols du nord de l'Inde, né à Sasaram, dans le Bihar. Après avoir battu Humayun à Chausa en 1539 et à Kannauj en 1540, il règne cinq ans, réorganise l'impôt foncier, introduit la roupie d'argent et fait aménager la Grand Trunk Road, du Bengale à l'Indus. Il meurt en 1545 devant la forteresse de Kalinjar, et ses réformes seront reprises par les Moghols restaurés, Akbar en tête.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sher_Shah_Suri",
+                  "pays": "IN",
+                  "classement": "Sher Shah Suri",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_shershah.jpg",
+                    "legende": "Sher Shah Suri, peinture des artistes de la cour d'Akbar tirée d'un manuscrit du Tarikh-i-Khandan-i-Timuriya (fin du XVIe siècle) : une image tracée après sa mort",
+                    "auteur": "Court painters of Mughal emperor Akbar",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Painting_of_Sher_Shah_Suri_(colored)_from_a_manuscript_of_Tarikh-i-Khandan-i-Timuriya,_prepared_by_the_court_painters_of_Mughal_emperor_Akbar,_circa_16th_century.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_mirabai",
+                  "axe": "Littérature et pensée",
+                  "date": 1498,
+                  "titre": "Naissance de Mirabai",
+                  "description": "Mirabai (vers 1498-vers 1547) est une poétesse et princesse rajpoute, dévote de Krishna. Mariée à un prince de Mewar, elle refuse la vie de cour et compose des bhajans qui chantent Krishna comme son véritable époux. Persécutée par sa belle-famille selon la tradition, elle finit sa vie à Dwarka, et ses chants, en braj et en rajasthani, restent parmi les plus chantés d'Inde.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Miraba%C3%AF",
+                  "pays": "IN",
+                  "classement": "Mirabai",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_mirabai.jpg",
+                    "legende": "Mirabai, peinture : une image de dévotion, sans portrait authentique",
+                    "auteur": "Onef9day",
+                    "licence": "CC BY 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Meerabai_painting.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_humayun",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1508,
+                  "titre": "Naissance de Humayun",
+                  "description": "Humayun (1508-1556) est le deuxième empereur moghol, né à Kaboul, fils de Babur. Chassé du trône par Sher Shah Suri en 1540, il erre quinze ans en exil, notamment à la cour safavide de Perse, avant de reprendre Delhi en 1555. Il meurt en 1556 d'une chute dans l'escalier de sa bibliothèque, et son tombeau de Delhi, premier grand mausolée moghol à jardin, a inspiré le Taj Mahal.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Hum%C3%A2y%C3%BBn",
+                  "pays": "IN",
+                  "classement": "Humayun",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_humayun.jpg",
+                    "legende": "Humayun, miniature indienne du XIXe siècle (vers 1875, Los Angeles County Museum of Art) : une image peinte trois siècles après sa mort",
+                    "auteur": "LACMA",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Emperor_Humayun.JPG"
+                  }
+                },
+                {
+                  "id": "pan_indien_pratap",
+                  "axe": "Guerres et résistances",
+                  "date": 1540,
+                  "titre": "Naissance de Maharana Pratap",
+                  "description": "Maharana Pratap (1540-1597) est rana de Mewar, né à Kumbhalgarh, au Rajasthan. Il refuse de se soumettre à Akbar, perd la bataille de Haldighati en 1576 mais poursuit une guerre de harcèlement dans les montagnes et reprend la plus grande partie de son royaume avant sa mort en 1597. Son refus de la soumission en a fait le symbole de la résistance rajpoute.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Maharana_Pratap",
+                  "pays": "IN",
+                  "classement": "Maharana Pratap",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_pratap.jpg",
+                    "legende": "Maharana Pratap, tableau de Raja Ravi Varma d'après une miniature : une image peinte trois siècles après sa mort",
+                    "auteur": "Raja Ravi Varma (1848–1906)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:RajaRaviVarma_MaharanaPratap.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_akbar",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1542,
+                  "titre": "Naissance d'Akbar",
+                  "description": "Akbar (1542-1605) est le troisième empereur moghol, né à Umarkot, dans le Sind (actuel Pakistan), monté sur le trône à treize ans en 1556. Il étend l'empire de Kaboul au Bengale et au Deccan, organise une administration centralisée fondée sur les mansabdars, abolit la jizya imposée aux non-musulmans en 1564 et épouse des princesses rajputes. Curieux de toutes les religions, il réunit les savants à l'Ibadat Khana et tente de fonder le Din-i Ilahi en 1582, et son règne passe pour l'âge d'or de la tolérance moghole.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Akbar",
+                  "pays": "IN",
+                  "classement": "Akbar",
+                  "biographie": "bio_akbar",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_akbar.jpg",
+                    "legende": "Akbar, miniature moghole : une image peinte par les artistes de sa cour",
+                    "auteur": "The original uploader was Nataraja at French Wikipedia .",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Akbar_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_jahangir",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1569,
+                  "titre": "Naissance de Jahangir",
+                  "description": "Jahangir (1569-1627) est le quatrième empereur moghol, fils d'Akbar, né près de Fatehpur Sikri, qui règne de 1605 à 1627. Amateur de peinture, de jardins et d'histoire naturelle, il protège les miniaturistes de son atelier et laisse un journal, le Jahangir-nama, tandis que l'influence de son épouse Nur Jahan marque son règne. Il fait mettre à mort le gourou sikh Arjan en 1606 et affronte la révolte de son fils Khusrau, puis celle de Khurram, le futur Shah Jahan.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jah%C3%A2ng%C3%AEr",
+                  "pays": "IN",
+                  "classement": "Jahangir",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_jahangir.jpg",
+                    "legende": "Jahangir, miniature d'Abu al-Hasan (1617) : un portrait peint à sa cour",
+                    "auteur": "Abu al-Hasan (1589–)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jahangircrop.jpeg"
+                  }
+                },
+                {
+                  "id": "pan_indien_nurjahan",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1577,
+                  "titre": "Naissance de Nur Jahan",
+                  "description": "Nur Jahan (1577-1645) est l'épouse de l'empereur Jahangir, née à Kandahar (actuel Afghanistan) dans une famille de nobles persans, et l'une des femmes les plus puissantes de l'Inde moghole. Veuve d'un gouverneur du Bengale, elle épouse Jahangir en 1611, fait frapper monnaie à son nom, signe des décrets et gouverne de fait quand la santé de l'empereur décline. Après la mort de Jahangir en 1627, elle est écartée du pouvoir par Shah Jahan, et le tombeau qu'elle a fait bâtir pour son père à Agra, Itimad-ud-Daula, prépare l'architecture du Taj Mahal.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/N%C3%BBr_Jah%C3%A2n",
+                  "pays": "IN",
+                  "classement": "Nur Jahan",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_nurjahan.jpg",
+                    "legende": "Portrait idéalisé de Nur Jahan, dessin de l'école de Kishangarh du XVIIIe siècle (Los Angeles County Museum of Art) : une image peinte un siècle après sa mort",
+                    "auteur": "Auteur inconnu (Los Angeles County Museum of Art)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Idealized_Portrait_of_the_Mughal_Empress_Nur_Jahan_(1577-1645)%3F_LACMA_M.81.271.7.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_shahjahan",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1592,
+                  "titre": "Naissance de Shah Jahan",
+                  "description": "Shah Jahan (1592-1666) est le cinquième empereur moghol, né à Lahore (actuel Pakistan), qui règne de 1628 à 1658. Bâtisseur, il fait élever le Taj Mahal à Agra pour son épouse Mumtaz Mahal, ainsi que le fort Rouge et la Jama Masjid de Delhi, et fonde Shahjahanabad, aujourd'hui la vieille ville de Delhi. Malade en 1657, il est renversé par son fils Aurangzeb au terme d'une guerre de succession et meurt prisonnier au fort d'Agra.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sh%C3%A2h_Jah%C3%A2n",
+                  "pays": "IN",
+                  "classement": "Shah Jahan",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_shahjahan.jpg",
+                    "legende": "Shah Jahan, détail d'un dessin moghol du XVIIe siècle (Walters Art Museum)",
+                    "auteur": "Auteur inconnu (Walters Art Museum)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Indian_-_Single_Leaf_of_a_Portrait_of_Shah_Jahan_-_Walters_W700_-_Detail.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_zhabdrung",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1594,
+                  "titre": "Naissance de Ngawang Namgyal",
+                  "description": "Ngawang Namgyal (1594-1651) est un lama, dit le Zhabdrung, né au Tibet, qui unifie le Bhoutan au XVIIe siècle. Fuyant le Tibet en 1616, il bâtit les dzongs, bat les armées tibétaines et fait rédiger un code de lois. Il se retire en 1651 dans une retraite longue, dont sa mort restera cachée pendant plus d'un demi-siècle.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Shabdrung_Ngawang_Namgyal",
+                  "pays": "BT",
+                  "classement": "Ngawang Namgyal",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_zhabdrung.jpg",
+                    "legende": "Le Zhabdrung Ngawang Namgyal, thangka d'entre 1800 et 1899 : une image peinte plus d'un siècle et demi après sa mort",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Shabdrung_rubin.png"
+                  }
+                },
+                {
+                  "id": "pan_indien_aurangzeb",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1618,
+                  "titre": "Naissance d'Aurangzeb",
+                  "description": "Aurangzeb (1618-1707) est le sixième empereur moghol, né à Dahod, dans le Gujarat, qui règne de 1658 à 1707. Son empire atteint sa plus grande étendue, de l'Afghanistan au sud du Deccan, après vingt-cinq ans de guerres contre les Marathes et les sultanats de Bijapur et de Golconde. Pieux et austère, il rétablit la jizya en 1679 et fait détruire des temples ; ces mesures et ses guerres épuisent l'empire, qui se disloque après sa mort, et il reste un souverain très controversé.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Aurangzeb",
+                  "pays": "IN",
+                  "classement": "Aurangzeb",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_aurangzeb.jpg",
+                    "legende": "Aurangzeb, miniature moghole d'environ 1655, d'un peintre anonyme",
+                    "auteur": "anonymous",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Aurangzeb.png"
+                  }
+                },
+                {
+                  "id": "pan_indien_shivaji",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1630,
+                  "titre": "Naissance de Shivaji",
+                  "description": "Shivaji (1630-1680) est le fondateur de l'empire marathe, né au fort de Shivneri, près de Pune. Chef de guerre habile à la guérilla de montagne, il arrache des forts au sultanat de Bijapur et aux Moghols, s'évade d'Agra en 1666 et se fait couronner chhatrapati à Raigad en 1674. Il laisse une marine et une administration de ministres, et il est devenu un héros du Maharashtra, souvent revendiqué par les mouvements politiques actuels.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Shivaji",
+                  "pays": "IN",
+                  "classement": "Shivaji",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_shivaji.jpg",
+                    "legende": "Shivaji, portrait indien de 1680-1687 (British Museum), peint de son vivant",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Shivaji_British_Museum.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_gobindsingh",
+                  "axe": "Littérature et pensée",
+                  "date": 1666,
+                  "titre": "Naissance de Guru Gobind Singh",
+                  "description": "Guru Gobind Singh (1666-1708) est le dixième et dernier gourou sikh, né à Patna. Il fonde en 1699 le Khalsa, communauté de sikhs initiés qui portent les cinq signes, et les nomme Singh ; il affronte les Moghols et les seigneurs de montagne. Avant sa mort, assassiné près de Nanded en 1708, il proclame que la succession passera au livre saint, le Guru Granth Sahib.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Guru_Gobind_Singh",
+                  "pays": "IN",
+                  "classement": "Guru Gobind Singh",
+                  "biographie": "bio_gobindsingh",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_gobindsingh.jpg",
+                    "legende": "Guru Gobind Singh, peinture indienne d'environ 1830 : une image tracée plus d'un siècle après sa mort",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Guru_Gobind_Singh.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_prithvinarayan",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1723,
+                  "titre": "Naissance de Prithvi Narayan Shah",
+                  "description": "Prithvi Narayan Shah (1723-1775) est le roi de Gorkha qui unifie le Népal, né à Gorkha. Après avoir conquis la vallée de Katmandou en 1768-1769, il rassemble les principautés de l'Himalaya central et fait de Katmandou la capitale de la dynastie Shah. Il tient le pays fermé aux étrangers et décrit le Népal comme « une igname entre deux rocs », la Chine et les Britanniques.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Prithvi_Narayan",
+                  "pays": "NP",
+                  "classement": "Prithvi Narayan Shah",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_prithvinarayan.jpg",
+                    "legende": "Prithvi Narayan Shah, portrait ancien",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Prithvi_Narayan_Shah.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_tipu",
+                  "axe": "Guerres et résistances",
+                  "date": 1750,
+                  "titre": "Naissance de Tipû Sâhib",
+                  "description": "Tipû Sâhib (1750-1799) est sultan de Mysore, fils de Haidar Ali, né à Devanahalli. Allié des Français, il tient tête aux Britanniques pendant deux guerres, fait usage de fusées de fer et envoie en 1788 des ambassadeurs à Louis XVI. Il meurt les armes à la main à la prise de Seringapatam en 1799 ; héros pour beaucoup, il est aussi critiqué pour ses persécutions de chrétiens et d'hindous au Kerala et au Kodagu.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Tip%C3%BB_S%C3%A2hib",
+                  "pays": "IN",
+                  "classement": "Tipû Sâhib",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_tipu.jpg",
+                    "legende": "Tipû Sâhib, portrait indien d'environ 1792 (British Library)",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Tipu_Sultan_BL.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_amarsingh",
+                  "axe": "Guerres et résistances",
+                  "date": 1751,
+                  "titre": "Naissance d'Amar Singh Thapa",
+                  "description": "Amar Singh Thapa (1751-1816) est un général népalais, héros de la guerre anglo-népalaise, né à Gorkha. Gouverneur de l'ouest du royaume, il défend le fort de Malaun contre les troupes britanniques en 1815 avant de devoir se rendre. Il signe la reddition qui prépare le traité de Sugauli en 1816 et meurt la même année.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Amar_Singh_Thapa",
+                  "pays": "NP",
+                  "classement": "Thapa, Amar Singh",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_amarsingh.jpg",
+                    "legende": "Amar Singh Thapa, portrait du XIXe siècle",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Amar_Singh_Thapa_Badakaji.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_rammohan",
+                  "axe": "Littérature et pensée",
+                  "date": 1772,
+                  "titre": "Naissance de Ram Mohan Roy",
+                  "description": "Ram Mohan Roy (1772-1833) est un réformateur bengali, né à Radhanagar. Il obtient des Britanniques l'abolition du sati en 1829, fonde la société du Brahmo Sabha en 1828 et défend la liberté de la presse et l'éducation à l'anglaise. Il meurt à Bristol en 1833, au cours d'un voyage en Angleterre où il plaidait la cause de l'empereur moghol.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A2m_Mohan_Roy",
+                  "pays": "IN",
+                  "classement": "Roy, Ram Mohan",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_rammohan.jpg",
+                    "legende": "Ram Mohan Roy, huile sur toile de Rembrandt Peale (1833), peinte à Londres pendant son séjour",
+                    "auteur": "Rembrandt Peale (1778–1860)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Portrait_of_Raja_Ram_Mohun_Roy,_1833.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_lalon",
+                  "axe": "Littérature et pensée",
+                  "date": 1774,
+                  "titre": "Naissance de Lalon Shah",
+                  "description": "Lalon Shah (vers 1774-1890) est un poète et mystique baul, né dans une région du Bengale oriental dont le lieu exact reste incertain. Il compose des chants qui rejettent les castes et les religions de naissance, et dont un refrain demande quelle est la caste de l'homme. Il meurt à Cheuriya, près de Kushtia, en 1890, à un âge supposé de plus d'un siècle, et la tradition baul est inscrite par l'Unesco depuis 2008.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Lalon",
+                  "pays": "BD",
+                  "classement": "Lalon Shah",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_lalon.jpg",
+                    "legende": "Lalon Shah, dessin de Jyotirindranath Tagore (1889), seul portrait fait de son vivant",
+                    "auteur": "Jyotirindranath Tagore (1849–1925)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Fakir_Lalon_Shah.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_bahadurshah",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1775,
+                  "titre": "Naissance de Bahadur Shah II",
+                  "description": "Bahadur Shah II (1775-1862) est le dernier empereur moghol, dit Zafar, né à Delhi, qui règne de 1837 à 1858 sur une ville seulement. Poète ourdou, il est proclamé empereur de l'Inde par les cipayes révoltés en mai 1857, mais son autorité reste symbolique. Jugé pour trahison par les Britanniques, qui font abattre ses fils, il est déporté à Rangoun, où il meurt en 1862.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bah%C3%A2dur_II",
+                  "pays": "IN",
+                  "classement": "Bahadur Shah II",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_bahadurshah.jpg",
+                    "legende": "Bahadur Shah II, portrait indien du XIXe siècle",
+                    "auteur": "Ágoston Schoefft (1809–1888)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Bahadur_Shah_II.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_bhimsenthapa",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1775,
+                  "titre": "Naissance de Bhimsen Thapa",
+                  "description": "Bhimsen Thapa (1775-1839) est Premier ministre du Népal pendant trente ans, de 1806 à 1837, né à Gorkha. Il gouverne au nom du roi mineur Rajendra, modernise l'armée et mène la guerre anglo-népalaise de 1814-1816, qui coûte au pays un tiers de son territoire. Chassé du pouvoir en 1837 et emprisonné sous des accusations d'empoisonnement, il se suicide en 1839.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bhimsen_Thapa",
+                  "pays": "NP",
+                  "classement": "Thapa, Bhimsen",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_bhimsenthapa.jpg",
+                    "legende": "Bhimsen Thapa, peinture du Musée national du Népal",
+                    "auteur": "Dirgha Man Citrakar",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Bhimsen-thapa-painting.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_ranjitsingh",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1780,
+                  "titre": "Naissance de Ranjit Singh",
+                  "description": "Ranjit Singh (1780-1839) est le fondateur de l'empire sikh du Pendjab, né à Gujranwala (actuel Pakistan), maharaja depuis 1801 et dit le « Lion du Pendjab ». Il unit les confédérations sikhes, prend Lahore en 1799, Multan en 1818, le Cachemire en 1819 et Peshawar en 1834, et modernise son armée avec des officiers européens. Il garde la paix avec les Britanniques sans jamais rien leur céder, mais son royaume ne lui survit que dix ans : il est annexé en 1849, après les guerres anglo-sikhes.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ranj%C3%AEt_Singh",
+                  "pays": "IN",
+                  "classement": "Ranjit Singh",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_ranjitsingh.jpg",
+                    "legende": "Ranjit Singh, aquarelle signée de Léopold Massard (1839), d'après un portrait fait de son vivant",
+                    "auteur": "Léopold Massard",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ranj%C3%AEt_Singh_by_Massard.png"
+                  }
+                },
+                {
+                  "id": "pan_indien_sriwickrama",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1780,
+                  "titre": "Naissance de Sri Vikrama Rajasinha",
+                  "description": "Sri Vikrama Rajasinha (1780-1832) est le dernier roi du royaume de Kandy, né à Madurai. Monté sur le trône en 1798, il affronte les Britanniques, qui se rendent maîtres de Kandy en 1815 grâce au ralliement de ses chefs. Déporté à Vellore, en Inde, il y meurt en 1832, et son règne marque la fin de la souveraineté de l'île.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sri_Vikrama_Rajasinha",
+                  "pays": "LK",
+                  "classement": "Sri Vikrama Rajasinha",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_sriwickrama.jpg",
+                    "legende": "Sri Vikrama Rajasinha, portrait du roi de Kandy",
+                    "auteur": "MediaJet",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:King_Sri_Vikrama_Rajasinha_(1780-1832).JPG"
+                  }
+                },
+                {
+                  "id": "pan_indien_ghalib",
+                  "axe": "Littérature et pensée",
+                  "date": 1797,
+                  "titre": "Naissance de Mirza Ghalib",
+                  "description": "Mirza Ghalib (1797-1869) est un poète né à Agra, qui écrit en persan et en ourdou. Il donne au ghazal ourdou une profondeur nouvelle et décrit dans ses lettres la prise de Delhi après la révolte de 1857. Pensionné par le dernier empereur moghol, ruiné après 1857, mort à Delhi en 1869, il est célébré par l'Inde comme par le Pakistan.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mirza_Ghalib",
+                  "pays": "IN",
+                  "classement": "Ghalib, Mirza",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_ghalib.jpg",
+                    "legende": "Mirza Ghalib, la seule photographie connue de lui (vers 1860-1869)",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mirza_Ghalib_photograph_3.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_bhanubhakta",
+                  "axe": "Littérature et pensée",
+                  "date": 1814,
+                  "titre": "Naissance de Bhanubhakta Acharya",
+                  "description": "Bhanubhakta Acharya (1814-1868) est le premier poète de langue népalaise, dit Adikavi, né à Tanahun. Il traduit le Ramayana de Valmiki en népalais, dans des vers simples que tout le monde peut comprendre. Sa langue vernaculaire fait de lui le fondateur de la littérature népalaise, et sa naissance est fêtée chaque année.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bhanubhakta_Acharya",
+                  "pays": "NP",
+                  "classement": "Bhanubhakta Acharya",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_bhanubhakta.jpg",
+                    "legende": "Bhanubhakta Acharya, statue de l'Académie du Népal à Katmandou : une sculpture, sans portrait authentique",
+                    "auteur": "Ganesh Paudel",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Bhanu_salik_Nepal_Academy4.JPG"
+                  }
+                },
+                {
+                  "id": "pan_indien_naoroji",
+                  "axe": "Guerres et résistances",
+                  "date": 1825,
+                  "titre": "Naissance de Dadabhai Naoroji",
+                  "description": "Dadabhai Naoroji (1825-1917) est un homme politique et économiste, surnommé le « Grand Old Man » de l'Inde, né à Bombay dans une famille parsie. Premier Indien élu à la Chambre des communes, en 1892, il démontre dans Poverty and Un-British Rule in India la « fuite de richesses » de l'Inde vers la Grande-Bretagne. Il préside le Congrès à trois reprises, en 1886, 1893 et 1906, et y proclame pour la première fois le mot swaraj.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Dadabhai_Naoroji",
+                  "pays": "IN",
+                  "classement": "Naoroji, Dadabhai",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_naoroji.jpg",
+                    "legende": "Dadabhai Naoroji, photographie de James Samuelson (1890)",
+                    "auteur": "SAMUELSON, James",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Dadabhai_Naoroji.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_lakshmibai",
+                  "axe": "Guerres et résistances",
+                  "date": 1828,
+                  "titre": "Naissance de Lakshmî Bâî",
+                  "description": "Lakshmî Bâî (1828-1858) est la rani de Jhansi et une héroïne de la révolte de 1857, née à Bénarès. Veuve du raja de Jhansi, elle voit les Britanniques annexer son royaume selon la « doctrine de l'extinction » et prend la tête de la révolte dans la région. Elle meurt au combat à Gwalior en juin 1858, à vingt-neuf ans, et reste l'héroïne de la première guerre d'indépendance.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Lakshm%C3%AE_B%C3%A2%C3%AE",
+                  "pays": "IN",
+                  "classement": "Lakshmî Bâî",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_lakshmibai.jpg",
+                    "legende": "Lakshmî Bâî, rani de Jhansi, portrait des années 1850",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Rani_of_jhansi.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_savitribai",
+                  "axe": "Guerres et résistances",
+                  "date": 1831,
+                  "titre": "Naissance de Savitribai Phule",
+                  "description": "Savitribai Phule (1831-1897) est une pionnière de l'éducation des filles, née à Naigaon, dans le Maharashtra. Avec son mari Jyotirao, elle ouvre en 1848 à Pune la première école pour filles du pays, malgré les pierres et la boue que lui jettent ses opposants, et fonde un refuge pour les veuves. Elle meurt de la peste en 1897, contractée en soignant des malades, et l'université de Pune porte son nom.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Savitribai_Phule",
+                  "pays": "IN",
+                  "classement": "Phule, Savitribai",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_savitribai.jpg",
+                    "legende": "Statue de Savitribai Phule à la Maharashtra Sadan de New Delhi : une sculpture, sans portrait authentique connu",
+                    "auteur": "आशीष भटनागर",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Savitribai_Phule_statue,_Maharashtra_sadan,_New_Delhi.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_ramakrishna",
+                  "axe": "Littérature et pensée",
+                  "date": 1836,
+                  "titre": "Naissance de Ramakrishna",
+                  "description": "Ramakrishna (1836-1886) est un mystique bengali, né à Kamarpukur et prêtre du temple de Dakshineswar, près de Calcutta. Il pratique successivement diverses voies hindoues, puis l'islam et le christianisme, et proclame que toutes mènent au même Dieu. Son disciple Vivekananda fonde en son nom la Ramakrishna Mission en 1897.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/R%C3%A2makrishna",
+                  "pays": "IN",
+                  "classement": "Ramakrishna",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_ramakrishna.jpg",
+                    "legende": "Ramakrishna, photographie prise en studio le 10 décembre 1881",
+                    "auteur": "Anonymous Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ramakrishna_at_studio.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_bankim",
+                  "axe": "Littérature et pensée",
+                  "date": 1838,
+                  "titre": "Naissance de Bankim Chandra Chatterjee",
+                  "description": "Bankim Chandra Chatterjee (1838-1894) est un romancier bengali, né à Naihati. Auteur d'Anandamath en 1882, roman où paraît le chant Vande Mataram, il est l'un des pères du roman indien moderne. Ce chant devint un cri de ralliement du mouvement nationaliste et, en 1950, le chant national de l'Inde, non sans contestation.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bankim_Chandra_Chatterji",
+                  "pays": "IN",
+                  "classement": "Chatterjee, Bankim Chandra",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_bankim.jpg",
+                    "legende": "Bankim Chandra Chatterjee, portrait d'avant 1894",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Bankimchandra_Chattapadhay.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_ravivarma",
+                  "axe": "Beaux-arts",
+                  "date": 1848,
+                  "titre": "Naissance de Raja Ravi Varma",
+                  "description": "Raja Ravi Varma (1848-1906) est un peintre né à Kilimanoor, au Kerala. Il fixe, par des lithographies en couleurs diffusées à des millions d'exemplaires, les images des dieux et des héroïnes des épopées, dans un style de peinture à l'huile d'inspiration européenne. Critiqué pour son académisme, il a défini l'iconographie populaire de l'hindouisme jusqu'à nos jours.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ravi_Varm%C3%A2",
+                  "pays": "IN",
+                  "classement": "Raja Ravi Varma",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_ravivarma.jpg",
+                    "legende": "Raja Ravi Varma, portrait d'environ 1900",
+                    "auteur": "Unknown artist Unknown artist",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Raja_Ravi_Varma.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_tilak",
+                  "axe": "Guerres et résistances",
+                  "date": 1856,
+                  "titre": "Naissance de Bal Gangadhar Tilak",
+                  "description": "Bal Gangadhar Tilak (1856-1920) est un dirigeant nationaliste du Maharashtra, né à Ratnagiri, surnommé Lokmanya. Il lance les fêtes publiques de Ganesh et de Shivaji pour mobiliser la population, publie les journaux Kesari et Mahratta et déclare : « Le swaraj est mon droit de naissance, et je l'obtiendrai ». Condamné à six ans de déportation en 1908, il meurt en 1920, et Gandhi dira qu'il fut « le fabricant de l'Inde moderne ».",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bal_Gangadhar_Tilak",
+                  "pays": "IN",
+                  "classement": "Tilak, Bal Gangadhar",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_tilak.jpg",
+                    "legende": "Bal Gangadhar Tilak, photographie ancienne",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Bal_Gangadhar_Tilak.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_jcbose",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1858,
+                  "titre": "Naissance de Jagadish Chandra Bose",
+                  "description": "Jagadish Chandra Bose (1858-1937) est un physicien, biologiste et inventeur, né à Mymensingh (actuel Bangladesh). Pionnier des ondes radio millimétriques, il démontre en public à Calcutta en 1895 la transmission sans fil, puis établit, grâce au crescographe, que les plantes réagissent aux stimulations. Il refuse de breveter ses travaux, fonde l'Institut Bose en 1917 et reste l'un des pères de la science indienne moderne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jagadish_Chandra_Bose",
+                  "pays": "IN",
+                  "classement": "Bose, Jagadish Chandra",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_jcbose.jpg",
+                    "legende": "Jagadish Chandra Bose, photographie prise à l'université de Calcutta",
+                    "auteur": "The Birth Centenary Committee, printed by P.C. Ray",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:J.C.Bose.JPG"
+                  }
+                },
+                {
+                  "id": "pan_indien_tagore",
+                  "axe": "Littérature et pensée",
+                  "date": 1861,
+                  "titre": "Naissance de Rabindranath Tagore",
+                  "description": "Rabindranath Tagore (1861-1941) est un poète, romancier, peintre et musicien du Bengale, né à Calcutta, premier non-Européen prix Nobel de littérature, en 1913. Auteur du Gitanjali, il écrit les hymnes nationaux de l'Inde et du Bangladesh et fonde l'université de Santiniketan. Il renonce en 1919 à son titre de chevalier après le massacre d'Amritsar.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Rabindranath_Tagore",
+                  "pays": "IN",
+                  "classement": "Tagore, Rabindranath",
+                  "biographie": "bio_tagore",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_tagore.jpg",
+                    "legende": "Rabindranath Tagore à Calcutta en 1909",
+                    "auteur": "Generalstabens litografiska anstalt",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Rabindranath_Tagore_in_1909.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_ugyen",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1862,
+                  "titre": "Naissance d'Ugyen Wangchuck",
+                  "description": "Ugyen Wangchuck (1862-1926) est le premier roi du Bhoutan, gouverneur de Trongsa. Vainqueur de la guerre civile, médiateur de l'expédition britannique à Lhassa en 1904, il est élu roi héréditaire en 1907. Il signe en 1910 le traité de Punakha avec les Britanniques, qui lui laisse l'autonomie intérieure.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ugyen_Wangchuck",
+                  "pays": "BT",
+                  "classement": "Wangchuck, Ugyen",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_ugyen.jpg",
+                    "legende": "Ugyen Wangchuck à Punakha en 1905 (photographie de John Claude White)",
+                    "auteur": "John Claude White",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ugyen_Wangchuk,_1905.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_vivekananda",
+                  "axe": "Littérature et pensée",
+                  "date": 1863,
+                  "titre": "Naissance de Vivekananda",
+                  "description": "Vivekananda (1863-1902) est le disciple de Ramakrishna et l'un des premiers maîtres indiens à enseigner en Occident, né Narendranath Datta à Calcutta. Son discours au Parlement des religions de Chicago, en 1893, commence par « Sœurs et frères d'Amérique » et fait connaître le vedanta aux États-Unis. Il fonde en 1897 la Ramakrishna Mission pour allier spiritualité et service social et meurt à trente-neuf ans ; son anniversaire, le 12 janvier, est la Journée nationale de la jeunesse en Inde.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Vivekananda",
+                  "pays": "IN",
+                  "classement": "Vivekananda",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_vivekananda.jpg",
+                    "legende": "Vivekananda, photographie de Chicago prise en septembre 1893 et signée de sa main",
+                    "auteur": "The original uploader was Dziewa at English Wikipedia .",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Swami_Vivekananda-1893-09-signed.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_lajpatrai",
+                  "axe": "Guerres et résistances",
+                  "date": 1865,
+                  "titre": "Naissance de Lala Lajpat Rai",
+                  "description": "Lala Lajpat Rai (1865-1928) est un dirigeant nationaliste né à Dhudike, surnommé le « Lion du Pendjab ». Membre du trio « Lal Bal Pal » avec Tilak et Bipin Chandra Pal, il fonde la Punjab National Bank et la Servants of the People Society. Blessé par la police lors d'une manifestation contre la commission Simon à Lahore, il meurt de ses blessures en novembre 1928, et Bhagat Singh venge sa mort.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Lala_Lajpat_Rai",
+                  "pays": "IN",
+                  "classement": "Lajpat Rai, Lala",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_lajpatrai.jpg",
+                    "legende": "Lala Lajpat Rai, photographie publiée dans Young India en février 1920",
+                    "auteur": "Young India",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Lala_Lajpat_Rai_photo_in_Young_India.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_gandhi",
+                  "axe": "Guerres et résistances",
+                  "date": 1869,
+                  "titre": "Naissance de Mahatma Gandhi",
+                  "description": "Mahatma Gandhi (1869-1948) est le dirigeant du mouvement d'indépendance de l'Inde, né à Porbandar, au Gujarat. Avocat formé à Londres, il invente en Afrique du Sud la résistance non violente, le satyagraha, avant de mener le Congrès : marche du sel en 1930, campagne « Quittez l'Inde » en 1942. Opposé à la partition, il est assassiné à Delhi le 30 janvier 1948 par un nationaliste hindou, Nathuram Godse, et reste une référence mondiale de la non-violence.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mohandas_Karamchand_Gandhi",
+                  "pays": "IN",
+                  "classement": "Gandhi, Mahatma",
+                  "biographie": "bio_gandhi",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_gandhi.jpg",
+                    "legende": "Gandhi souriant, photographie de Kanu Gandhi (août 1942)",
+                    "auteur": "Kanu Gandhi",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Gandhi_smiling,_August_1942.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_phalke",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1870,
+                  "titre": "Naissance de Dadasaheb Phalke",
+                  "description": "Dhundiraj Govind Phalke (1870-1944) est le « père du cinéma indien », dit Dadasaheb Phalke, né à Trimbak, dans le Maharashtra. Il réalise en 1913 Raja Harishchandra, premier long métrage de fiction indien, puis près d'une centaine de films. Le prix Dadasaheb Phalke, créé en 1969, est la plus haute distinction du cinéma indien.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Dhundiraj_Govind_Phalke",
+                  "pays": "IN",
+                  "classement": "Phalke, Dhundiraj Govind",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_phalke.jpg",
+                    "legende": "Dadasaheb Phalke, photographie des années 1930",
+                    "auteur": "Palaviprabhu at English Wikipedia",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Phalke.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_abanindranath",
+                  "axe": "Beaux-arts",
+                  "date": 1871,
+                  "titre": "Naissance d'Abanindranath Tagore",
+                  "description": "Abanindranath Tagore (1871-1951) est un peintre né à Calcutta, neveu de Rabindranath Tagore. Fondateur de l'école de peinture du Bengale, il rompt avec l'académisme européen en reprenant la miniature moghole et les fresques d'Ajanta, comme dans Bharat Mata en 1905. Directeur de l'école d'art de Calcutta, il forme Nandalal Bose et toute une génération de peintres.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Aban%C3%AEndran%C3%A2th_Tagore",
+                  "pays": "IN",
+                  "classement": "Tagore, Abanindranath",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_abanindranath.jpg",
+                    "legende": "Abanindranath Tagore, photographie ancienne",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Abanindranath_Tagore_photo.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_aurobindo",
+                  "axe": "Littérature et pensée",
+                  "date": 1872,
+                  "titre": "Naissance de Sri Aurobindo",
+                  "description": "Sri Aurobindo (1872-1950) est un philosophe, poète et dirigeant nationaliste, né Aurobindo Ghose à Calcutta. Formé à Cambridge, chef de la lutte pour l'indépendance au Bengale et emprisonné à Alipore en 1908, il se retire à Pondichéry, où il élabore un « yoga intégral ». Avec Mirra Alfassa, « la Mère », il y fonde un ashram en 1926, d'où naîtra la ville d'Auroville en 1968.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Aurobindo_Ghose",
+                  "pays": "IN",
+                  "classement": "Sri Aurobindo",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_aurobindo.jpg",
+                    "legende": "Sri Aurobindo, photographie d'environ 1900",
+                    "auteur": "Rudolf 1922",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Sri_aurobindo.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_patel",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1875,
+                  "titre": "Naissance de Vallabhbhai Patel",
+                  "description": "Vallabhbhai Patel (1875-1950) est un avocat et homme politique du Gujarat, vice-Premier ministre et ministre de l'Intérieur de l'Inde indépendante, né à Nadiad. Organisateur de la campagne de Bardoli en 1928, qui lui vaut le surnom de Sardar, « le chef », il intègre ensuite, par la négociation et parfois par la force comme à Hyderabad en 1948, plus de cinq cents États princiers à l'Union indienne. Surnommé « l'homme de fer de l'Inde », il meurt en 1950, et la Statue de l'Unité, haute de 182 mètres, inaugurée au Gujarat en 2018, est la plus haute du monde.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Vallabhbhai_Patel",
+                  "pays": "IN",
+                  "classement": "Patel, Vallabhbhai",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_patel.jpg",
+                    "legende": "Vallabhbhai Patel, photographie de 1930",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Vallabhbhai_Patel_1930.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_jinnah",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1876,
+                  "titre": "Naissance de Muhammad Ali Jinnah",
+                  "description": "Muhammad Ali Jinnah (1876-1948) est le fondateur du Pakistan, né à Karachi. Avocat formé à Londres, longtemps partisan de l'unité hindo-musulmane au sein du Congrès, il prend la tête de la Ligue musulmane et réclame, à partir de la résolution de Lahore de 1940, un État séparé pour les musulmans de l'Inde. Premier gouverneur général du Pakistan en août 1947, il meurt de la tuberculose en septembre 1948, et le pays l'honore sous le titre de Quaid-e-Azam, « le Grand Chef ».",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Muhammad_Ali_Jinnah",
+                  "pays": "PK",
+                  "classement": "Jinnah, Muhammad Ali",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_jinnah.jpg",
+                    "legende": "Muhammad Ali Jinnah, photographie d'environ 1945",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jinnah1945c.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_coomaraswamy",
+                  "axe": "Littérature et pensée",
+                  "date": 1877,
+                  "titre": "Naissance d'Ananda Coomaraswamy",
+                  "description": "Ananda Coomaraswamy (1877-1947) est un historien de l'art et philosophe, né à Colombo d'un père tamoul et d'une mère anglaise. Conservateur au Museum of Fine Arts de Boston, il défend l'art indien et la tradition par des ouvrages comme La Danse de Çiva, en 1918. Il meurt à Needham, dans le Massachusetts, en 1947.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ananda_Coomaraswamy",
+                  "pays": "LK",
+                  "classement": "Coomaraswamy, Ananda",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_coomaraswamy.jpg",
+                    "legende": "Ananda Coomaraswamy, photographie d'Alvin Langdon Coburn (1916)",
+                    "auteur": "Alvin Langdon Coburn (1882–1966)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Coomaraswamy.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_iqbal",
+                  "axe": "Littérature et pensée",
+                  "date": 1877,
+                  "titre": "Naissance de Muhammad Iqbal",
+                  "description": "Muhammad Iqbal (1877-1938) est un poète et philosophe, né à Sialkot, dans le Pendjab. Auteur en persan et en ourdou, notamment de Shikwa et d'Asrar-e-Khudi, il appelle à une renaissance de l'islam et propose en 1930 la création d'un État musulman dans le nord-ouest de l'Inde. Le Pakistan l'honore comme son poète national, Allama Iqbal, et il est aussi l'auteur du chant Saare Jahan Se Achha, très populaire en Inde.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mohamed_Iqbal",
+                  "pays": "PK",
+                  "classement": "Iqbal, Muhammad",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_iqbal.jpg",
+                    "legende": "Muhammad Iqbal, portrait d'Amrita Sher-Gil (avant 1938)",
+                    "auteur": "Amrita Sher-Gil (1913–1941)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Iqbal_2.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_ramana",
+                  "axe": "Littérature et pensée",
+                  "date": 1879,
+                  "titre": "Naissance de Ramana Maharshi",
+                  "description": "Ramana Maharshi (1879-1950) est un sage du Tamil Nadu, né à Tiruchuzhi. À seize ans, une expérience de mort imaginée le conduit à la montagne sacrée d'Arunachala, à Tiruvannamalai, où il vit en silence et enseigne la recherche du Soi par la question « Qui suis-je ? ». Indiens et Occidentaux affluent à son ashram jusqu'à sa mort d'un cancer, en 1950.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ramana_Maharshi",
+                  "pays": "IN",
+                  "classement": "Ramana Maharshi",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_ramana.jpg",
+                    "legende": "Ramana Maharshi, portrait de G. G. Welling (1948)",
+                    "auteur": "G. G. Welling",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Sri_Ramana_Maharshi_-_Portrait_-_G._G_Welling_-_1948.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_sarojini",
+                  "axe": "Littérature et pensée",
+                  "date": 1879,
+                  "titre": "Naissance de Sarojini Naidu",
+                  "description": "Sarojini Naidu (1879-1949) est une poétesse et militante, surnommée le « rossignol de l'Inde », née à Hyderabad. Première femme présidente du Congrès, en 1925, elle accompagne Gandhi à la marche du sel de Dharasana en 1930. Première gouverneure d'un État indien, l'Uttar Pradesh, en 1947, elle meurt à Lucknow en 1949.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sarojini_Naidu",
+                  "pays": "IN",
+                  "classement": "Naidu, Sarojini",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_sarojini.jpg",
+                    "legende": "Sarojini Naidu, photographie de 1912",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Sarojini_Naidu.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_bhashani",
+                  "axe": "Guerres et résistances",
+                  "date": 1880,
+                  "titre": "Naissance d'Abdul Hamid Khan Bhashani",
+                  "description": "Abdul Hamid Khan Bhashani (1880-1976) est un dirigeant paysan né à Dhangara, au Bengale, surnommé le « Maulana rouge ». Il fonde la Ligue Awami en 1949, la quitte en 1957 pour créer le Parti national Awami, plus à gauche, et défend les paysans et les ouvriers. Il appelle dès 1970 à l'indépendance du Bengale oriental et meurt à Dacca en 1976.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Maulana_Abdul_Hamid_Khan_Bhashani",
+                  "pays": "BD",
+                  "classement": "Bhashani, Abdul Hamid Khan",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_bhashani.jpg",
+                    "legende": "Abdul Hamid Khan Bhashani à La Havane, photographie ancienne",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Maulana_Bhasani_in_Havana,_Cuba.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_rokeya",
+                  "axe": "Littérature et pensée",
+                  "date": 1880,
+                  "titre": "Naissance de Begum Rokeya",
+                  "description": "Begum Rokeya (1880-1932) est une écrivaine née à Pairaband, dans le Rangpur, de son nom Rokeya Sakhawat Hussain, pionnière de l'émancipation des musulmanes. Auteure de la nouvelle utopique Sultana's Dream en 1905, elle fonde à Calcutta en 1911 l'école pour filles Sakhawat Memorial. Elle meurt le jour de ses cinquante-deux ans, le 9 décembre 1932, et cette date est célébrée au Bangladesh comme le Jour de Rokeya.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Rokeya_Sakhawat_Hussain",
+                  "pays": "BD",
+                  "classement": "Begum Rokeya",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_rokeya.jpg",
+                    "legende": "Begum Rokeya, photographie ancienne",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Begum_Rokeya.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_alauddin",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1881,
+                  "titre": "Naissance d'Allauddin Khan",
+                  "description": "Allauddin Khan (vers 1881-1972) est un multi-instrumentiste né à Shibpur, dans l'actuel Bangladesh, fondateur du gharana de Maihar. Maître de Ravi Shankar, d'Ali Akbar Khan et de Nikhil Banerjee, il dirige l'orchestre du maharaja de Maihar et forme des générations de musiciens. Il enseigne jusqu'à un âge très avancé, et sa date de naissance, 1862 selon lui, est généralement ramenée à 1881 environ.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Allauddin_Khan",
+                  "pays": "BD",
+                  "classement": "Allauddin Khan",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_alauddin.jpg",
+                    "legende": "Allauddin Khan, photographie de Rafiqul Islam",
+                    "auteur": "Prof. Rafiqul Islam",
+                    "licence": "CC BY 2.5",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ustad_Alauddin_Khan_Full_1_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_subramania",
+                  "axe": "Littérature et pensée",
+                  "date": 1882,
+                  "titre": "Naissance de Subramania Bharati",
+                  "description": "Subramania Bharati (1882-1921) est un poète tamoul, né à Ettayapuram. Patriote, il chante dans ses poèmes la liberté, l'égalité des castes et des sexes, et doit se réfugier à Pondichéry pour échapper aux Britanniques. Blessé par un éléphant de temple en 1921, il meurt à trente-huit ans et reste le grand poète du tamoul moderne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Subramanya_Bharathi",
+                  "pays": "IN",
+                  "classement": "Bharati, Subramania",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_subramania.jpg",
+                    "legende": "Subramania Bharati, photographie ancienne",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Subramanya_Bharathi.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_dssenanayake",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1884,
+                  "titre": "Naissance de Don Stephen Senanayake",
+                  "description": "Don Stephen Senanayake (1884-1952) est le premier Premier ministre de Ceylan indépendant, né à Botale. Négociateur de l'indépendance obtenue sans violence le 4 février 1948, il lance des programmes d'irrigation et de colonisation agricole dans le nord et l'est de l'île. Surnommé le « Père de la Nation », il meurt en 1952 d'une chute de cheval, et son fils Dudley lui succède.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Don_Stephen_Senanayake",
+                  "pays": "LK",
+                  "classement": "Senanayake, Don Stephen",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_dssenanayake.jpg",
+                    "legende": "Don Stephen Senanayake, portrait officiel d'environ 1934",
+                    "auteur": "Gouvernement de Ceylan (numérisation MediaJet)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Official_Photographic_Portrait_of_Don_Stephen_Senanayaka_(1884-1952).jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_rajendraprasad",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1884,
+                  "titre": "Naissance de Rajendra Prasad",
+                  "description": "Rajendra Prasad (1884-1963) est le premier président de la République indienne, de 1950 à 1962, né dans le Bihar. Avocat proche de Gandhi dès la campagne de Champaran en 1917, il préside l'Assemblée constituante qui rédige la Constitution de 1950. Il est le seul président de l'Inde à avoir accompli deux mandats complets.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Rajendra_Prasad",
+                  "pays": "IN",
+                  "classement": "Prasad, Rajendra",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_rajendraprasad.jpg",
+                    "legende": "Rajendra Prasad, photographie dédicacée en 1958 au Premier ministre néo-zélandais Walter Nash (Archives New Zealand)",
+                    "auteur": "Archives New Zealand from New Zealand",
+                    "licence": "CC BY-SA 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Rajendra_Prasad_(Indian_President),_signed_image_for_Walter_Nash_(NZ_Prime_Minister),_1958_(16017609534).jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_ramanujan",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1887,
+                  "titre": "Naissance de Srinivasa Ramanujan",
+                  "description": "Srinivasa Ramanujan (1887-1920) est un mathématicien autodidacte, né à Erode, dans le Tamil Nadu. Appelé à Cambridge en 1914 par Hardy après une lettre pleine de théorèmes, il laisse des milliers de formules sur les fonctions thêta, les partitions et les séries infinies. Atteint d'une maladie qui l'oblige à rentrer en Inde, il meurt à trente-deux ans, devenu un symbole du génie mathématique.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Srinivasa_Ramanujan",
+                  "pays": "IN",
+                  "classement": "Ramanujan, Srinivasa",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_ramanujan.jpg",
+                    "legende": "Srinivasa Ramanujan, photographie d'avant 1920",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Srinivasa_Ramanujan_-_OPC_-_1.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_cvraman",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1888,
+                  "titre": "Naissance de C. V. Raman",
+                  "description": "Chandrasekhara Venkata Raman (1888-1970) est un physicien né à Tiruchirappalli. Il découvre en 1928 la diffusion inélastique de la lumière, dite effet Raman, qui lui vaut le prix Nobel de physique en 1930, premier scientifique asiatique à le recevoir. Il fonde l'Institut de recherche Raman à Bangalore, et son effet est à la base d'une spectroscopie aujourd'hui répandue dans les laboratoires.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Chandrashekhara_Venkata_R%C3%A2man",
+                  "pays": "IN",
+                  "classement": "Raman, Chandrasekhara Venkata",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_cvraman.jpg",
+                    "legende": "Chandrasekhara Venkata Raman, photographie de la Fondation Nobel (1930)",
+                    "auteur": "Nobel Foundation",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Sir_CV_Raman.JPG"
+                  }
+                },
+                {
+                  "id": "pan_indien_radhakrishnan",
+                  "axe": "Littérature et pensée",
+                  "date": 1888,
+                  "titre": "Naissance de Sarvepalli Radhakrishnan",
+                  "description": "Sarvepalli Radhakrishnan (1888-1975) est un philosophe, second président de l'Inde de 1962 à 1967, né près de Tirutani, dans le Tamil Nadu. Professeur à Oxford et à Calcutta, il présente la pensée indienne à l'Occident, notamment le vedanta, dans des ouvrages comme Indian Philosophy. Son anniversaire, le 5 septembre, est devenu en Inde la Journée des enseignants.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sarvepalli_Radhakrishnan",
+                  "pays": "IN",
+                  "classement": "Radhakrishnan, Sarvepalli",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_radhakrishnan.jpg",
+                    "legende": "Sarvepalli Radhakrishnan, photographie offerte à Jacqueline Kennedy en 1962 (Maison-Blanche)",
+                    "auteur": "White House",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Photograph_of_Sarvepalli_Radhakrishnan_presented_to_First_Lady_Jacqueline_Kennedy_in_1962.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_nehru",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1889,
+                  "titre": "Naissance de Jawaharlal Nehru",
+                  "description": "Jawaharlal Nehru (1889-1964) est le premier Premier ministre de l'Inde indépendante, de 1947 à sa mort, né à Allahabad. Compagnon de Gandhi, plusieurs fois emprisonné par les Britanniques, il fait voter la Constitution laïque, lance les plans quinquennaux et l'industrialisation, et incarne le non-alignement avec Nasser et Tito. Sa politique est marquée par la défaite face à la Chine en 1962, et sa fille Indira Gandhi puis son petit-fils Rajiv lui succéderont à la tête du gouvernement.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jawaharlal_Nehru",
+                  "pays": "IN",
+                  "classement": "Nehru, Jawaharlal",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_nehru.jpg",
+                    "legende": "Jawaharlal Nehru lors d'une visite aux Pays-Bas en 1957 (Nationaal Archief, Anefo)",
+                    "auteur": "Behrens, Herbert / Anefo",
+                    "licence": "CC BY-SA 3.0 NL",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jawaharlal_Nehru_1957_crop.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_ghaffarkhan",
+                  "axe": "Guerres et résistances",
+                  "date": 1890,
+                  "titre": "Naissance d'Abdul Ghaffar Khan",
+                  "description": "Abdul Ghaffar Khan (1890-1988) est un dirigeant pachtoune, dit Bacha Khan, né à Utmanzai, dans l'actuel Khyber Pakhtunkhwa. Disciple de Gandhi, il fonde en 1929 les Khudai Khidmatgar, « serviteurs de Dieu » non violents, dits les Chemises rouges. Opposé à la partition, emprisonné pendant des années par les Britanniques puis par le Pakistan, il est enterré à Jalalabad, en Afghanistan, et reçoit le Bharat Ratna indien en 1987.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Khan_Abdul_Ghaffar_Khan",
+                  "pays": "PK",
+                  "classement": "Abdul Ghaffar Khan",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_ghaffarkhan.jpg",
+                    "legende": "Abdul Ghaffar Khan, photographie ancienne",
+                    "auteur": "British India",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Khan_Abdul_Ghaffar_Khan.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_lamartin",
+                  "axe": "Littérature et pensée",
+                  "date": 1890,
+                  "titre": "Naissance de Martin Wickramasinghe",
+                  "description": "Martin Wickramasinghe (1890-1976) est un romancier né à Koggala, dans le sud de l'île. Auteur de Gamperaliya en 1944, chronique de la chute d'une famille de notables de village, il fonde le roman cinghalais moderne. Journaliste et critique, il laisse aussi des essais sur la culture du pays.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Martin_Wickramasinghe",
+                  "pays": "LK",
+                  "classement": "Wickramasinghe, Martin",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_lamartin.jpg",
+                    "legende": "Martin Wickramasinghe, photographie d'avant 1970",
+                    "auteur": "Unknown",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Martin_Wickramasinghe.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_ambedkar",
+                  "axe": "Guerres et résistances",
+                  "date": 1891,
+                  "titre": "Naissance de B. R. Ambedkar",
+                  "description": "Bhimrao Ramji Ambedkar (1891-1956) est un juriste et économiste, principal rédacteur de la Constitution indienne, né dans une famille intouchable à Mhow. Docteur de Columbia et de Londres, il combat l'intouchabilité depuis la marche de Mahad en 1927, préside la commission de rédaction de la Constitution de 1950 et devient le premier ministre de la Justice du pays. Il se convertit au bouddhisme avec des centaines de milliers de fidèles en octobre 1956 et meurt quelques semaines plus tard, devenu une icône de la cause dalit.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bhimrao_Ramji_Ambedkar",
+                  "pays": "IN",
+                  "classement": "Ambedkar, Bhimrao Ramji",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_ambedkar.jpg",
+                    "legende": "Bhimrao Ramji Ambedkar, photographie des années 1950",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Dr._Bhimrao_Ambedkar.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_yogananda",
+                  "axe": "Littérature et pensée",
+                  "date": 1893,
+                  "titre": "Naissance de Paramahansa Yogananda",
+                  "description": "Paramahansa Yogananda (1893-1952) est un maître de yoga, né Mukunda Lal Ghosh à Gorakhpur, qui s'installe aux États-Unis en 1920. Il y fonde la Self-Realization Fellowship et fait connaître le kriya yoga par son Autobiographie d'un yogi, parue en 1946. Mort à Los Angeles en 1952, il reste l'un des maîtres indiens les plus lus en Occident.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Paramahansa_Yogananda",
+                  "pays": "IN",
+                  "classement": "Yogananda, Paramahansa",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_yogananda.jpg",
+                    "legende": "Paramahansa Yogananda, photographie de pose officielle (avant 1946)",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Paramahansa_Yogananda_Standard_Pose.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_snbose",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1894,
+                  "titre": "Naissance de Satyendranath Bose",
+                  "description": "Satyendranath Bose (1894-1974) est un physicien né à Calcutta. En 1924, il envoie à Einstein un article qui redémontre la loi de Planck par une statistique nouvelle ; Einstein le fait publier et le prolonge, d'où la statistique de Bose-Einstein. Le nom de boson, donné aux particules qui lui obéissent, lui rend hommage, mais il n'a jamais reçu de prix Nobel.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Satyendranath_Bose",
+                  "pays": "IN",
+                  "classement": "Bose, Satyendranath",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_snbose.jpg",
+                    "legende": "Satyendranath Bose à Paris en 1925",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:SatyenBose1925.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_krishnamurti",
+                  "axe": "Littérature et pensée",
+                  "date": 1895,
+                  "titre": "Naissance de Jiddu Krishnamurti",
+                  "description": "Jiddu Krishnamurti (1895-1986) est un penseur né à Madanapalle, dans l'actuel Andhra Pradesh. Présenté enfant par la Société théosophique comme le futur « instructeur du monde », il dissout en 1929 l'Ordre de l'Étoile qui lui était consacré et déclare que la vérité est « un pays sans chemin ». Il passe le reste de sa vie à donner des conférences et des dialogues dans le monde entier, refusant d'être un gourou.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jiddu_Krishnamurti",
+                  "pays": "IN",
+                  "classement": "Krishnamurti, Jiddu",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_krishnamurti.jpg",
+                    "legende": "Jiddu Krishnamurti, photographie des années 1920",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jiddu_Krishnamurti_01.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_liaquat",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1895,
+                  "titre": "Naissance de Liaquat Ali Khan",
+                  "description": "Liaquat Ali Khan (1895-1951) est le premier Premier ministre du Pakistan, de 1947 à 1951, né à Karnal, dans l'Inde britannique, et bras droit de Jinnah. Secrétaire de la Ligue musulmane, il fait voter en 1949 la Résolution des objectifs, qui fonde le Pakistan sur des principes islamiques, et signe avec Nehru le pacte de 1950 sur les minorités. Assassiné à Rawalpindi le 16 octobre 1951 par un Afghan abattu aussitôt, il laisse un meurtre dont le commanditaire n'a jamais été identifié.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Liaquat_Ali_Khan",
+                  "pays": "PK",
+                  "classement": "Liaquat Ali Khan",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_liaquat.jpg",
+                    "legende": "Liaquat Ali Khan, photographie de 1945",
+                    "auteur": "Unknown author Unknown author - but due to age, image in public domain",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Liaquat_Ali_Khan_1945.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_salimali",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1896,
+                  "titre": "Naissance de Sálim Ali",
+                  "description": "Sálim Ali (1896-1987) est un ornithologue né à Bombay, surnommé « l'homme-oiseau de l'Inde ». Auteur du Book of Indian Birds en 1941 et du Handbook of the Birds of India and Pakistan, il parcourt le pays pour inventorier ses espèces. Président de la Bombay Natural History Society, il plaide pour la protection du sanctuaire de Bharatpur et de la Silent Valley, au Kerala.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/S%C3%A1lim_Ali",
+                  "pays": "IN",
+                  "classement": "Ali, Sálim",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_salimali.jpg",
+                    "legende": "Sálim Ali, photographie de la Bombay Natural History Society",
+                    "auteur": "V. Santharam",
+                    "licence": "CC BY 2.5",
+                    "source": "https://commons.wikimedia.org/wiki/File:Salim_ali_mns.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_bose",
+                  "axe": "Guerres et résistances",
+                  "date": 1897,
+                  "titre": "Naissance de Subhas Chandra Bose",
+                  "description": "Subhas Chandra Bose (1897-1945) est un dirigeant nationaliste du Bengale, né à Cuttack. Président du Congrès en 1938, évincé par Gandhi, il s'évade d'Inde en 1941, cherche l'appui de l'Allemagne nazie puis du Japon et dirige l'Armée nationale indienne contre les Britanniques. Surnommé Netaji, il serait mort en août 1945 dans un accident d'avion à Taipei, ce que certains de ses partisans ont longtemps contesté, et son alliance avec l'Axe divise toujours.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Subhas_Chandra_Bose",
+                  "pays": "IN",
+                  "classement": "Bose, Subhas Chandra",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_bose.jpg",
+                    "legende": "Subhas Chandra Bose, photographie des années 1930",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Netaji_Subhas_Chandra_Bose.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_nazrul",
+                  "axe": "Littérature et pensée",
+                  "date": 1899,
+                  "titre": "Naissance de Kazi Nazrul Islam",
+                  "description": "Kazi Nazrul Islam (1899-1976) est un poète bengali né à Churulia, dans le Bengale-Occidental, poète national du Bangladesh. Surnommé le « poète rebelle » pour son poème Bidrohi en 1922, il chante la révolte, l'amour et l'égalité, et compose des milliers de chansons. Frappé par une maladie qui le prive de la parole dès 1942, il est emmené à Dacca en 1972 par le gouvernement du Bangladesh, qui en fait son poète national, et il y meurt en 1976.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kazi_Nazrul_Islam",
+                  "pays": "BD",
+                  "classement": "Nazrul Islam, Kazi",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_nazrul.jpg",
+                    "legende": "Kazi Nazrul Islam à Chittagong en 1926",
+                    "auteur": "Unknown photographer",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Nazrul.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_swrd",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1899,
+                  "titre": "Naissance de S. W. R. D. Bandaranaike",
+                  "description": "Solomon West Ridgeway Dias Bandaranaike (1899-1959) est Premier ministre de Ceylan de 1956 à 1959, né à Colombo. Il fait du cinghalais la seule langue officielle en 1956, ce qui provoque les émeutes de 1958 avec les Tamouls, et nationalise les ports et les transports. Il est assassiné en septembre 1959 par un moine bouddhiste, et sa veuve Sirimavo lui succède.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Solomon_Bandaranaike",
+                  "pays": "LK",
+                  "classement": "Bandaranaike, Solomon West Ridgeway Dias",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_swrd.jpg",
+                    "legende": "S. W. R. D. Bandaranaike, portrait officiel",
+                    "auteur": "Gouvernement de Ceylan (numérisation MediaJet)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Official_Photographic_Portrait_of_S.W.R.D.Bandaranayaka_(1899-1959).jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_jrdtata",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1904,
+                  "titre": "Naissance de J. R. D. Tata",
+                  "description": "Jehangir Ratanji Dadabhoy Tata (1904-1993) est un industriel et aviateur, né à Paris d'un père indien et d'une mère française, qui prend la tête du groupe Tata en 1938. Premier titulaire d'une licence de pilote en Inde, en 1929, il fonde en 1932 la compagnie aérienne qui deviendra Air India, et développe la sidérurgie, l'automobile et le conseil. Bharat Ratna en 1992, il meurt à Genève en 1993.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jehangir_Ratanji_Dadabhai_Tata",
+                  "pays": "IN",
+                  "classement": "Tata, Jehangir Ratanji Dadabhoy",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_jrdtata.jpg",
+                    "legende": "J. R. D. Tata en 1955",
+                    "auteur": "http://photodivision.gov.in/IntroPhotodetails.asp?thisPage=953",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:J.R.D._Tata_(1955).jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_jayewardene",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1906,
+                  "titre": "Naissance de Junius Richard Jayewardene",
+                  "description": "Junius Richard Jayewardene (1906-1996) est président du Sri Lanka de 1978 à 1989, né à Colombo. Il libéralise l'économie après sa victoire de 1977 et instaure la présidence exécutive en 1978. Le pogrom antitamoul de juillet 1983 déclenche la guerre civile, et l'accord indo-lankais de 1987 ne parvient pas à la mettre fin.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Junius_Richard_Jayewardene",
+                  "pays": "LK",
+                  "classement": "Jayewardene, Junius Richard",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_jayewardene.jpg",
+                    "legende": "Junius Richard Jayewardene, photographie d'environ 1980",
+                    "auteur": "Anuradha Dullewe Wijeyeratne",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Junius_Richard_Jayawardana_(1906-1996).jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_bhagatsingh",
+                  "axe": "Guerres et résistances",
+                  "date": 1907,
+                  "titre": "Naissance de Bhagat Singh",
+                  "description": "Bhagat Singh (1907-1931) est un révolutionnaire socialiste, né à Banga, dans le Pendjab (actuel Pakistan). Il participe à l'assassinat d'un officier de police à Lahore en 1928, lance une bombe sans victime dans l'Assemblée législative en 1929 et mène une grève de la faim en prison. Pendu à Lahore à vingt-trois ans, le 23 mars 1931, il est vénéré comme martyr en Inde, et sa mémoire est aussi honorée au Pakistan.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bhagat_Singh",
+                  "pays": "IN",
+                  "classement": "Singh, Bhagat",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_bhagatsingh.jpg",
+                    "legende": "Bhagat Singh, photographie d'avril 1929, à vingt et un ans",
+                    "auteur": "Unknown author Unknown author (Ramnath Photographers, Delhi)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Bhagat_Singh_1929.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_devkota",
+                  "axe": "Littérature et pensée",
+                  "date": 1909,
+                  "titre": "Naissance de Laxmi Prasad Devkota",
+                  "description": "Laxmi Prasad Devkota (1909-1959) est un poète né à Katmandou, surnommé le Mahakavi, le « grand poète ». Auteur du long poème Muna Madan en 1936, il écrit aussi des épopées et des pièces, et renouvelle la poésie népalaise. Il meurt d'un cancer en 1959, dans la pauvreté.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Laxmi_Prasad_Devkota",
+                  "pays": "NP",
+                  "classement": "Devkota, Laxmi Prasad",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_devkota.jpg",
+                    "legende": "Laxmi Prasad Devkota, photographie d'avant 1959",
+                    "auteur": "Madan Puraskar Pustakalaya",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Laxmi_Prasad_Devkota_3.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_amindidi",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1910,
+                  "titre": "Naissance de Mohamed Amin Didi",
+                  "description": "Mohamed Amin Didi (1910-1954) est le premier président de la première République des Maldives, en 1953, né à Malé. Réformateur, il proclame la République en janvier 1953 après huit siècles de sultanat. Renversé en août de la même année et exilé sur l'île de Vihamanaafushi, il y meurt en janvier 1954.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mohamed_Amin_Didi",
+                  "pays": "MV",
+                  "classement": "Didi, Mohamed Amin",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_amindidi.jpg",
+                    "legende": "Mohamed Amin Didi, photographie des années 1950",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mohamed_Amin.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_teresa",
+                  "axe": "Littérature et pensée",
+                  "date": 1910,
+                  "titre": "Naissance de Mère Teresa",
+                  "description": "Mère Teresa (1910-1997) est une religieuse catholique d'origine albanaise, née à Skopje, alors dans l'Empire ottoman, devenue indienne en 1951 et fondatrice des Missionnaires de la Charité. Installée à Calcutta en 1929, elle y fonde sa congrégation en 1950 et ouvre des foyers pour les mourants, les lépreux et les orphelins ; elle reçoit le prix Nobel de la paix en 1979. Canonisée par le pape François en 2016, elle est aussi critiquée, notamment pour les conditions de soin de ses foyers.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/M%C3%A8re_Teresa",
+                  "pays": "IN",
+                  "classement": "Mère Teresa",
+                  "biographie": "bio_teresa",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_teresa.jpg",
+                    "legende": "Mère Teresa, photographie de Manfredo Ferrari prise à Rome en décembre 1985",
+                    "auteur": "Manfredo Ferrari",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mutter_Teresa_von_Kalkutta.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_faiz",
+                  "axe": "Littérature et pensée",
+                  "date": 1911,
+                  "titre": "Naissance de Faiz Ahmed Faiz",
+                  "description": "Faiz Ahmed Faiz (1911-1984) est un poète né à Sialkot, dans le Pendjab. Communiste, emprisonné quatre ans après le complot de Rawalpindi de 1951, il renouvelle le ghazal ourdou en lui donnant des accents politiques et reçoit le prix Lénine de la paix en 1962. Exilé à Beyrouth sous Zia, il meurt à Lahore en 1984, et son poème Hum Dekhenge est devenu un chant de contestation dans toute la région.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Faiz_Ahmed_Faiz",
+                  "pays": "PK",
+                  "classement": "Faiz Ahmed Faiz",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_faiz.jpg",
+                    "legende": "Faiz Ahmed Faiz, photographie de 2013",
+                    "auteur": "Bpldxb Crop by Titodutta",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Faiz_Ahmed_Faiz_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_pritilata",
+                  "axe": "Guerres et résistances",
+                  "date": 1911,
+                  "titre": "Naissance de Pritilata Waddedar",
+                  "description": "Pritilata Waddedar (1911-1932) est une révolutionnaire née à Dhalghat, près de Chittagong. Institutrice, membre du groupe de Surya Sen, elle dirige en septembre 1932 l'attaque du club européen de Pahartali, déguisée en homme. Pour échapper à la capture, elle avale du cyanure : elle a vingt et un ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Pritilata_Waddedar",
+                  "pays": "BD",
+                  "classement": "Waddedar, Pritilata",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_pritilata.jpg",
+                    "legende": "Pritilata Waddedar, photographie d'archives",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Original_Archived_photo_of_Pritilata_Waddedar.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_amritashergil",
+                  "axe": "Beaux-arts",
+                  "date": 1913,
+                  "titre": "Naissance d'Amrita Sher-Gil",
+                  "description": "Amrita Sher-Gil (1913-1941) est une peintre née à Budapest d'un père sikh et d'une mère hongroise. Formée à Paris, elle rentre en Inde en 1934 et associe la couleur européenne à la tradition indienne dans des scènes de la vie des paysans. Elle meurt à Lahore en 1941, à vingt-huit ans, et ses toiles sont déclarées trésors nationaux de l'Inde.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Amrita_Sher-Gil",
+                  "pays": "IN",
+                  "classement": "Sher-Gil, Amrita",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_amritashergil.jpg",
+                    "legende": "Amrita Sher-Gil, photographie de 1936",
+                    "auteur": "Unknown author Unknown author probably Umrao Singh Sher-Gil (1870–1954)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Amrita_Sher-Gil_2.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_bpkoirala",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1914,
+                  "titre": "Naissance de B. P. Koirala",
+                  "description": "Bishweshwar Prasad Koirala (1914-1982) est le premier chef de gouvernement élu du Népal, de 1959 à 1960, né à Bénarès. Fondateur du Congrès népalais en 1950, il joue un rôle clé dans la chute des Rana en 1951 et remporte les élections de 1959. Emprisonné après le coup de force du roi Mahendra en 1960, puis exilé en Inde, il rentre en 1976 et écrit des romans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bishweshwar_Prasad_Koirala",
+                  "pays": "NP",
+                  "classement": "Koirala, Bishweshwar Prasad",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_bpkoirala.jpg",
+                    "legende": "B. P. Koirala à New Delhi en 1951",
+                    "auteur": "Zulufive",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Bp_koirala_delhi_1951.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_tenzing",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1914,
+                  "titre": "Naissance de Tensing Norgay",
+                  "description": "Tensing Norgay (1914-1986) est un alpiniste sherpa né dans la région de l'Everest, au Népal. Le 29 mai 1953, avec Edmund Hillary, il atteint le sommet de l'Everest pour la première fois. Installé à Darjeeling, directeur de l'Himalayan Mountaineering Institute, il reçoit la médaille George britannique en 1953.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Tensing_Norgay",
+                  "pays": "NP",
+                  "classement": "Norgay, Tensing",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_tenzing.jpg",
+                    "legende": "Tensing Norgay en 1953",
+                    "auteur": "original : OeiJamling Tenzing Norgay",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Tenzing_Norgay,_1953_-_2.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_zainul",
+                  "axe": "Beaux-arts",
+                  "date": 1914,
+                  "titre": "Naissance de Zainul Abedin",
+                  "description": "Zainul Abedin (1914-1976) est un peintre né à Kishoreganj. Ses dessins de la famine du Bengale de 1943 le font connaître dans toute l'Inde, et il fonde l'Institut d'art de Dacca en 1948. Il est considéré comme le père de l'art moderne au Bangladesh.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Zainul_Abedin",
+                  "pays": "BD",
+                  "classement": "Zainul Abedin",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_zainul.jpg",
+                    "legende": "Zainul Abedin, photographie",
+                    "auteur": "Prof. Rafiqul Islam",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Zainul_Abedin.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_husain",
+                  "axe": "Beaux-arts",
+                  "date": 1915,
+                  "titre": "Naissance de M. F. Husain",
+                  "description": "Maqbool Fida Husain (1915-2011) est un peintre né à Pandharpur, dans le Maharashtra, surnommé le « Picasso de l'Inde ». Il peint des chevaux et des scènes des épopées, travaille pieds nus et réalise aussi des films. Accusé d'avoir offensé les hindous par des nus de déesses, il s'exile à Doha puis à Londres, où il meurt en 2011.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Maqbool_Fida_Husain",
+                  "pays": "IN",
+                  "classement": "Husain, Maqbool Fida",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_husain.jpg",
+                    "legende": "Maqbool Fida Husain, photographie",
+                    "auteur": "Ayaz360 at en.wikipedia",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:MFHussain.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_bismillah",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1916,
+                  "titre": "Naissance de Bismillah Khan",
+                  "description": "Bismillah Khan (1916-2006) est un joueur de shehnai, né à Dumraon, dans le Bihar. Il fait du shehnai, hautbois des mariages et des temples, un instrument de concert, et joue à Delhi lors des cérémonies de l'indépendance en 1947. Fidèle à Bénarès et au Gange, il refuse de s'installer aux États-Unis et reçoit le Bharat Ratna en 2001.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bismillah_Khan",
+                  "pays": "IN",
+                  "classement": "Khan, Bismillah",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_bismillah.jpg",
+                    "legende": "Bismillah Khan en concert en 1964 (photographie de Robert Garfias)",
+                    "auteur": "Robert Garfias",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Bismillah_at_Concert1_(edited).jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_sirimavo",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1916,
+                  "titre": "Naissance de Sirimavo Bandaranaike",
+                  "description": "Sirimavo Bandaranaike (1916-2000) est la première femme Premier ministre au monde, en 1960, née à Ratnapura. Veuve de Solomon Bandaranaike, assassiné l'année précédente, elle dirige trois gouvernements, nationalise les banques et les plantations et fait du pays une république sous le nom de Sri Lanka en 1972. Sa politique favorise la majorité cinghalaise, et son gouvernement réprime l'insurrection du JVP en 1971.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sirimavo_Bandaranaike",
+                  "pays": "LK",
+                  "classement": "Bandaranaike, Sirimavo",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_sirimavo.jpg",
+                    "legende": "Sirimavo Bandaranaike, Première ministre de Ceylan, photographie d'United Press International (1960)",
+                    "auteur": "United Press International (UPI)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Sirimavo_Bandaranaike,_Prime_Minister_of_Ceylon_1960.PNG"
+                  }
+                },
+                {
+                  "id": "pan_indien_indira",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1917,
+                  "titre": "Naissance d'Indira Gandhi",
+                  "description": "Indira Gandhi (1917-1984) est Premier ministre de l'Inde de 1966 à 1977 puis de 1980 à 1984, fille de Nehru, née à Allahabad. Elle gagne la guerre de 1971 contre le Pakistan, qui voit naître le Bangladesh, nationalise les banques, lance la révolution verte et l'essai nucléaire de 1974. Elle proclame l'état d'urgence de 1975 à 1977, ordonne l'assaut du Temple d'or d'Amritsar en 1984 et est assassinée en octobre de la même année par deux de ses gardes du corps sikhs.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Indira_Gandhi",
+                  "pays": "IN",
+                  "classement": "Gandhi, Indira",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_indira.jpg",
+                    "legende": "Indira Gandhi lors d'une visite d'État aux États-Unis en 1982 (Maison-Blanche)",
+                    "auteur": "Maison-Blanche (White House Photographic Office)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Prime_Minister_Indira_Gandhi_in_the_US_enhanced.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_lester",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1919,
+                  "titre": "Naissance de Lester James Peries",
+                  "description": "Lester James Peries (1919-2018) est un cinéaste né à Dehiwala. Son film Rekava, en 1956, fait sortir le cinéma cinghalais du modèle indien en tournant en extérieur, avec des acteurs non professionnels, et il est présenté à Cannes. Il reste le grand nom du cinéma sri-lankais, avec Gamperaliya en 1963 et Nidhanaya en 1972.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Lester_James_Peries",
+                  "pays": "LK",
+                  "classement": "Peries, Lester James",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_lester.jpg",
+                    "legende": "Lester James Peries, photographie de 2010",
+                    "auteur": "Coolerking.dany",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Lester_1.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_mujib",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1920,
+                  "titre": "Naissance de Sheikh Mujibur Rahman",
+                  "description": "Sheikh Mujibur Rahman (1920-1975) est le père de l'indépendance du Bangladesh, dit Bangabandhu, né à Tungipara. Chef de la Ligue Awami, il lance les Six points en 1966 et remporte les élections de 1970 ; l'indépendance est proclamée en mars 1971 après la répression de l'armée pakistanaise, et il devient Premier ministre en janvier 1972. Il est assassiné avec presque toute sa famille le 15 août 1975, lors d'un coup d'État militaire.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sheikh_Mujibur_Rahman",
+                  "pays": "BD",
+                  "classement": "Mujibur Rahman, Sheikh",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_mujib.jpg",
+                    "legende": "Sheikh Mujibur Rahman dans les années 1950",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Sheikh_Mujibur_Rahman_in_1950.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_ravishankar",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1920,
+                  "titre": "Naissance de Ravi Shankar",
+                  "description": "Ravi Shankar (1920-2012) est un joueur de sitar et compositeur, né à Bénarès. Élève d'Allauddin Khan, il fait connaître la musique indienne à l'Occident par ses concerts avec Yehudi Menuhin, l'amitié de George Harrison, Woodstock en 1969 et le Concert pour le Bangladesh en 1971. Trois fois couronné aux Grammy Awards et titulaire du Bharat Ratna, il compose aussi la musique de la trilogie d'Apu de Satyajit Ray.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ravi_Shankar",
+                  "pays": "IN",
+                  "classement": "Shankar, Ravi",
+                  "biographie": "bio_ravishankar",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_ravishankar.jpg",
+                    "legende": "Ravi Shankar en concert à Delhi en 2009 (photographie d'Alexandra Ignatenko)",
+                    "auteur": "Alexandra Ignatenko",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ravi_Shankar_2009.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_narasimharao",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1921,
+                  "titre": "Naissance de P. V. Narasimha Rao",
+                  "description": "Pamulaparthi Venkata Narasimha Rao (1921-2004) est Premier ministre de l'Inde de 1991 à 1996, né dans l'actuel Telangana. Il nomme Manmohan Singh aux Finances et libéralise l'économie en 1991, alors que le pays est au bord de la faillite des paiements. Polyglotte et érudit, premier chef de gouvernement venu du Sud, il reste marqué par la destruction de la mosquée d'Ayodhya en 1992 et par des scandales de corruption.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Pamulaparthi_Venkata_Narasimha_Rao",
+                  "pays": "IN",
+                  "classement": "Rao, Pamulaparthi Venkata Narasimha",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_narasimharao.jpg",
+                    "legende": "P. V. Narasimha Rao à l'inauguration d'un salon national en 1992 (photographie de Biswarup Ganguly)",
+                    "auteur": "Biswarup Ganguly",
+                    "licence": "CC BY 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:P._V._Narasimha_Rao.JPG"
+                  }
+                },
+                {
+                  "id": "pan_indien_satyajitray",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1921,
+                  "titre": "Naissance de Satyajit Ray",
+                  "description": "Satyajit Ray (1921-1992) est un cinéaste né à Calcutta. Sa trilogie d'Apu, ouverte par La Complainte du sentier en 1955, révèle le cinéma indien au monde, et il tourne une trentaine de films, souvent en bengali, dont il compose la musique. Il reçoit un Oscar d'honneur en 1992, peu avant sa mort.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Satyajit_Ray",
+                  "pays": "IN",
+                  "classement": "Ray, Satyajit",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_satyajitray.jpg",
+                    "legende": "Satyajit Ray à New York en 1981 (photographie de Dinu Alam)",
+                    "auteur": "Dinu Alam Newyork",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Satyajit_Ray_in_New_York_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_dilipkumar",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1922,
+                  "titre": "Naissance de Dilip Kumar",
+                  "description": "Dilip Kumar (1922-2021) est un acteur du cinéma hindi, né Muhammad Yusuf Khan à Peshawar (actuel Pakistan). Star des années 1950, surnommé le « roi de la tragédie », il joue dans Devdas en 1955 et dans Mughal-e-Azam en 1960. Il meurt à Bombay en 2021 et a reçu à la fois le Padma Vibhushan indien et le Nishan-e-Imtiaz pakistanais.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Dilip_Kumar",
+                  "pays": "IN",
+                  "classement": "Dilip Kumar",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_dilipkumar.jpg",
+                    "legende": "Dilip Kumar en 2006",
+                    "auteur": "Webside at English Wikipedia",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Dilip_Kumar_2006.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_nekchand",
+                  "axe": "Beaux-arts",
+                  "date": 1924,
+                  "titre": "Naissance de Nek Chand",
+                  "description": "Nek Chand (1924-2015) est un sculpteur autodidacte, né à Berian Kalan, dans le Pendjab (actuel Pakistan). Inspecteur des routes à Chandigarh, il construit en secret, avec des objets de rebut, le Rock Garden, un jardin de sculptures. Découvert par les autorités en 1975, le jardin a échappé à la destruction et reçoit chaque année plusieurs millions de visiteurs.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Nek_Chand",
+                  "pays": "IN",
+                  "classement": "Nek Chand",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_nekchand.jpg",
+                    "legende": "Nek Chand dans son bureau du Rock Garden de Chandigarh (photographie de Gilles Probst, 2007)",
+                    "auteur": "Gilles Probst",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Nek_Chand_par_Gilles_Probst.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_premadasa",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1924,
+                  "titre": "Naissance de Ranasinghe Premadasa",
+                  "description": "Ranasinghe Premadasa (1924-1993) est président du Sri Lanka de 1989 à 1993, né à Colombo dans un milieu modeste. Il lance un programme de logement populaire et réprime durement l'insurrection du JVP en 1989-1990. Il est assassiné le 1er mai 1993 par un kamikaze des Tigres tamouls.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ranasinghe_Premadasa",
+                  "pays": "LK",
+                  "classement": "Premadasa, Ranasinghe",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_premadasa.jpg",
+                    "legende": "Ranasinghe Premadasa à Dacca (photographie de Lutfar Rahman Binu)",
+                    "auteur": "Md. Lutfar Rahman Binu",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ranasinghe_Premadasa.jpeg"
+                  }
+                },
+                {
+                  "id": "pan_indien_ziaulhaq",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1924,
+                  "titre": "Naissance de Muhammad Zia-ul-Haq",
+                  "description": "Muhammad Zia-ul-Haq (1924-1988) est un général né à Jalandhar, dans l'Inde britannique, président du Pakistan de 1978 à 1988. Auteur du coup d'État de juillet 1977, il fait pendre Bhutto, impose les peines islamiques et soutient les moudjahidine contre l'URSS en Afghanistan avec l'appui des États-Unis. Il meurt le 17 août 1988 dans l'explosion de son avion, dans des circonstances jamais élucidées.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Muhammad_Zia-ul-Haq",
+                  "pays": "PK",
+                  "classement": "Zia-ul-Haq, Muhammad",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_ziaulhaq.jpg",
+                    "legende": "Muhammad Zia-ul-Haq lors de sa visite d'État aux États-Unis en décembre 1982 (Maison-Blanche)",
+                    "auteur": "Maison-Blanche (White House Photographic Office)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:President_Mohammad_Zia_Ul_Haq.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_tajuddin",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1925,
+                  "titre": "Naissance de Tajuddin Ahmad",
+                  "description": "Tajuddin Ahmad (1925-1975) est le premier Premier ministre du Bangladesh, né à Dardaria, près de Dacca. Bras droit de Mujib, il dirige le gouvernement provisoire en exil, installé à Calcutta pendant la guerre de 1971. Écarté après l'indépendance, il est assassiné en prison le 3 novembre 1975, avec trois autres dirigeants.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Tajuddin_Ahmad",
+                  "pays": "BD",
+                  "classement": "Tajuddin Ahmad",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_tajuddin.jpg",
+                    "legende": "Tajuddin Ahmad en 1970, au milieu des dirigeants de la Ligue Awami",
+                    "auteur": "Unknown Unknown",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Tajuddin_Ahmad_in_1970_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_nasir",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1926,
+                  "titre": "Naissance d'Ibrahim Nasir",
+                  "description": "Ibrahim Nasir (1926-2008) est le premier président de la seconde République des Maldives, de 1968 à 1978, né à Malé. Premier ministre dès 1957, il négocie l'indépendance, acquise le 26 juillet 1965, puis abolit le sultanat. Il ouvre le pays au tourisme en 1972, mais s'exile à Singapour en 1978, accusé d'avoir détourné des fonds publics.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ibrahim_Nasir",
+                  "pays": "MV",
+                  "classement": "Nasir, Ibrahim",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_nasir.jpg",
+                    "legende": "Ibrahim Nasir, photographie officielle de la présidence",
+                    "auteur": "The President's Office of the Republic of Maldives",
+                    "licence": "CC BY 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ibrahim_Nasir.png"
+                  }
+                },
+                {
+                  "id": "pan_indien_noorjehan",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1926,
+                  "titre": "Naissance de Noor Jehan",
+                  "description": "Noor Jehan (1926-2000) est une chanteuse et actrice née à Kasur, dans le Pendjab. Star du cinéma hindi dans les années 1940, elle s'installe au Pakistan à la Partition et y devient la « reine de la mélodie », Malika-e-Tarannum. Elle chante des chants patriotiques pendant la guerre de 1965 et laisse des milliers de chansons.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Noor_Jehan",
+                  "pays": "PK",
+                  "classement": "Noor Jehan",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_noorjehan.jpg",
+                    "legende": "Noor Jehan dans le film Zeenat, photographie de 1945",
+                    "auteur": "FilmIndia",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Noor_Jehan_in_Zeenat.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_salam",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1926,
+                  "titre": "Naissance d'Abdus Salam",
+                  "description": "Abdus Salam (1926-1996) est un physicien né à Jhang, dans le Pendjab. Il partage le prix Nobel de physique 1979 avec Sheldon Glashow et Steven Weinberg pour l'unification des interactions faible et électromagnétique, premier Pakistanais nobélisé. Membre de la communauté ahmadie, déclarée non musulmane par le Pakistan en 1974, il quitte le pays et fonde à Trieste le Centre international de physique théorique.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Abdus_Salam",
+                  "pays": "PK",
+                  "classement": "Salam, Abdus",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_salam.jpg",
+                    "legende": "Abdus Salam à Amsterdam en 1987 (Nationaal Archief, Anefo)",
+                    "auteur": "Molendijk, Bart / Anefo",
+                    "licence": "CC BY-SA 3.0 NL",
+                    "source": "https://commons.wikimedia.org/wiki/File:Abdus_Salam_1987.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_doshi",
+                  "axe": "Beaux-arts",
+                  "date": 1927,
+                  "titre": "Naissance de Balkrishna Doshi",
+                  "description": "Balkrishna Doshi (1927-2023) est un architecte né à Pune, élève de Le Corbusier à Paris et à Chandigarh. Il construit l'Institut indien de gestion de Bangalore, l'atelier Sangath à Ahmedabad et le quartier d'Aranya à Indore. Il reçoit en 2018 le prix Pritzker, premier Indien à le recevoir.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Balkrishna_Vithaldas_Doshi",
+                  "pays": "IN",
+                  "classement": "Doshi, Balkrishna",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_doshi.jpg",
+                    "legende": "Balkrishna Doshi lors d'une convention de l'Institut indien des architectes en 2013",
+                    "auteur": "Sanyam Bahga",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Balkrishna_Doshi.JPG"
+                  }
+                },
+                {
+                  "id": "pan_indien_edhi",
+                  "axe": "Guerres et résistances",
+                  "date": 1928,
+                  "titre": "Naissance d'Abdul Sattar Edhi",
+                  "description": "Abdul Sattar Edhi (1928-2016) est un philanthrope né à Bantva, au Gujarat. Installé à Karachi, il fonde la Fondation Edhi, qui gère le plus grand réseau d'ambulances du pays, des orphelinats et des refuges pour femmes, tout en menant lui-même une vie très modeste. Surnommé « l'ange de la miséricorde », il meurt en 2016 et reçoit des funérailles nationales.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Abdul_Sattar_Edhi",
+                  "pays": "PK",
+                  "classement": "Edhi, Abdul Sattar",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_edhi.jpg",
+                    "legende": "Abdul Sattar Edhi en 2009",
+                    "auteur": "Hussain",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Abdul_Sattar_Edhi.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_zulfikar",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1928,
+                  "titre": "Naissance de Zulfikar Ali Bhutto",
+                  "description": "Zulfikar Ali Bhutto (1928-1979) est président puis Premier ministre du Pakistan, né à Larkana, dans le Sind. Fondateur du Parti du peuple pakistanais en 1967, il dirige le pays après la défaite de 1971 et la sécession du Bangladesh, nationalise l'industrie et lance le programme nucléaire militaire. Renversé par le général Zia en 1977 et condamné à mort pour complicité de meurtre à l'issue d'un procès longtemps jugé inéquitable, il est pendu à Rawalpindi le 4 avril 1979.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Zulfikar_Ali_Bhutto",
+                  "pays": "PK",
+                  "classement": "Bhutto, Zulfikar Ali",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_zulfikar.jpg",
+                    "legende": "Zulfikar Ali Bhutto, président du Pakistan, photographie d'environ 1971",
+                    "auteur": "Unknown photographer. Office of President Zulfikar Ali Bhutto.",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Z_A_Bhutto_(President_of_Pakistan).jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_lata",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1929,
+                  "titre": "Naissance de Lata Mangeshkar",
+                  "description": "Lata Mangeshkar (1929-2022) est une chanteuse née à Indore, la voix de play-back de milliers de films hindi. Pendant plus de soixante ans, elle prête sa voix à plusieurs générations d'actrices et chante en dizaines de langues. Son interprétation d'Aye Mere Watan Ke Logon devant Nehru en 1963, après la guerre avec la Chine, reste un chant patriotique, et elle reçoit le Bharat Ratna en 2001.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Lata_Mangeshkar",
+                  "pays": "IN",
+                  "classement": "Mangeshkar, Lata",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_lata.jpg",
+                    "legende": "Lata Mangeshkar, image d'une vidéo de 2008",
+                    "auteur": "Bollywood Hungama",
+                    "licence": "CC BY 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Lata_Mangeshkar_-_still_29065_crop.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_milkha",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1929,
+                  "titre": "Naissance de Milkha Singh",
+                  "description": "Milkha Singh (1929-2021) est un athlète né à Govindpura, dans le Pendjab (actuel Pakistan), surnommé le « Sikh volant ». Orphelin de la Partition de 1947, dont il garde le souvenir toute sa vie, il devient champion d'Asie du 400 mètres et termine quatrième aux Jeux de Rome en 1960, à quelques centièmes de la médaille. Le film Bhaag Milkha Bhaag a raconté sa vie en 2013.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Milkha_Singh",
+                  "pays": "IN",
+                  "classement": "Milkha Singh",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_milkha.jpg",
+                    "legende": "Milkha Singh au Chandigarh Golf Club en 2012 (photographie de Sanyam Bahga)",
+                    "auteur": "Sanyam Bahga",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Milkha_Singh.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_manmohan",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1932,
+                  "titre": "Naissance de Manmohan Singh",
+                  "description": "Manmohan Singh (1932-2024) est Premier ministre de l'Inde de 2004 à 2014, né à Gah, dans le Pendjab (actuel Pakistan). Économiste, ministre des Finances de Narasimha Rao, il met fin au « permit raj » en 1991 avant de diriger le gouvernement et de conclure l'accord sur le nucléaire civil avec les États-Unis en 2008. Premier sikh à ce poste, il est éclipsé par les scandales de corruption de son second mandat ; il meurt à Delhi le 26 décembre 2024.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Manmohan_Singh",
+                  "pays": "IN",
+                  "classement": "Singh, Manmohan",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_manmohan.jpg",
+                    "legende": "Manmohan Singh en 2009 (photographie de la Maison-Blanche)",
+                    "auteur": "The White House from Washington, DC. Official White House Photo by Pete Souza",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Manmohan_Singh_in_2009.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_aqkhan",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1936,
+                  "titre": "Naissance d'Abdul Qadeer Khan",
+                  "description": "Abdul Qadeer Khan (1936-2021) est un métallurgiste né à Bhopal, considéré comme le père de la bombe atomique pakistanaise. Employé d'une entreprise néerlandaise, il rapporte des plans de centrifugeuses et dirige à partir de 1976 les laboratoires de Kahuta, qui enrichissent l'uranium avant les essais de 1998. Il avoue en 2004 avoir vendu la technologie à l'Iran, à la Libye et à la Corée du Nord, ce qui lui vaut une assignation à résidence, mais il reste un héros pour une partie de l'opinion.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Abdul_Qadeer_Khan",
+                  "pays": "PK",
+                  "classement": "Khan, Abdul Qadeer",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_aqkhan.jpg",
+                    "legende": "Abdul Qadeer Khan en 2017",
+                    "auteur": "Waiza Rafique",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Abdul_Qadeer_Khan.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_ziaur",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1936,
+                  "titre": "Naissance de Ziaur Rahman",
+                  "description": "Ziaur Rahman (1936-1981) est un général né à Bagbari, dans le district de Bogra, qui proclame l'indépendance du Bangladesh à la radio de Chittagong dans la nuit du 26 au 27 mars 1971. Il prend le pouvoir après les coups d'État de 1975, est président de 1977 à 1981 et fonde le Parti nationaliste du Bangladesh. Il est assassiné à Chittagong en mai 1981 lors d'une tentative de coup d'État.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ziaur_Rahman",
+                  "pays": "BD",
+                  "classement": "Ziaur Rahman",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_ziaur.jpg",
+                    "legende": "Ziaur Rahman en 1979 à son arrivée à Schiphol (Nationaal Archief, Anefo)",
+                    "auteur": "Croes, Rob C. / Anefo",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ziaur_Rahman_1979.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_musharraf",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1943,
+                  "titre": "Naissance de Pervez Musharraf",
+                  "description": "Pervez Musharraf (1943-2023) est un général né à Delhi, président du Pakistan de 2001 à 2008. Chef d'état-major, il prend le pouvoir par un coup d'État en 1999 et s'aligne sur les États-Unis après les attentats du 11 septembre. Condamné à mort par contumace pour haute trahison en 2019, une peine ensuite annulée, il meurt en exil à Dubaï en février 2023.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Pervez_Musharraf",
+                  "pays": "PK",
+                  "classement": "Musharraf, Pervez",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_musharraf.jpg",
+                    "legende": "Pervez Musharraf au Forum économique mondial de Davos en 2008",
+                    "auteur": "World Economic Forum",
+                    "licence": "CC BY-SA 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Pervez_Musharraf_-_World_Economic_Forum_Annual_Meeting_Davos_-_2008_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_humayunahmed",
+                  "axe": "Littérature et pensée",
+                  "date": 1948,
+                  "titre": "Naissance de Humayun Ahmed",
+                  "description": "Humayun Ahmed (1948-2012) est un écrivain et cinéaste né à Netrokona. Auteur d'innombrables romans, pièces et séries télévisées, comme Kothao Keu Nei, il a marqué la culture populaire bengalie. Il meurt d'un cancer à New York en 2012.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Humayun_Ahmed",
+                  "pays": "BD",
+                  "classement": "Ahmed, Humayun",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_humayunahmed.jpg",
+                    "legende": "Humayun Ahmed, photographie de 2010",
+                    "auteur": "Faizul Latif Chowdhury",
+                    "licence": "CC BY 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Humayun_ahmed_gossip.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_nusrat",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1948,
+                  "titre": "Naissance de Nusrat Fateh Ali Khan",
+                  "description": "Nusrat Fateh Ali Khan (1948-1997) est un chanteur de qawwali né à Faisalabad. Issu d'une lignée de chanteurs, il porte cette musique soufie en Occident, notamment par ses collaborations avec Peter Gabriel et Eddie Vedder. Mort à Londres à quarante-huit ans, il laisse plus d'une centaine d'albums.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Nusrat_Fateh_Ali_Khan",
+                  "pays": "PK",
+                  "classement": "Nusrat Fateh Ali Khan",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_nusrat.jpg",
+                    "legende": "Nusrat Fateh Ali Khan, photographie de Thomas Rome",
+                    "auteur": "Thomas Rome",
+                    "licence": "CC BY 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Nusrat_Fateh_Ali_Khan_(1948-1997).jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_zakir",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1951,
+                  "titre": "Naissance de Zakir Hussain",
+                  "description": "Zakir Hussain (1951-2024) est un joueur de tabla né à Bombay, fils du maître Alla Rakha. Prodige à sept ans, il fonde avec John McLaughlin le groupe Shakti et collabore avec des musiciens du jazz et du rock du monde entier, ce qui lui vaut plusieurs Grammy Awards. Il meurt à San Francisco le 15 décembre 2024.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Zakir_Hussain_(musicien)",
+                  "pays": "IN",
+                  "classement": "Hussain, Zakir",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_zakir.jpg",
+                    "legende": "Zakir Hussain, photographie de Krupasindhu Muduli (2012)",
+                    "auteur": "Krupasindhu Muduli",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ustad_Zakir_Hussain_1.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_benazir",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1953,
+                  "titre": "Naissance de Benazir Bhutto",
+                  "description": "Benazir Bhutto (1953-2007) est la fille de Zulfikar Ali Bhutto, née à Karachi, et la première femme à diriger le gouvernement d'un pays musulman. Premier ministre de 1988 à 1990 puis de 1993 à 1996, elle est chaque fois écartée du pouvoir sur des accusations de corruption. Rentrée d'exil en octobre 2007, elle est assassinée à Rawalpindi le 27 décembre, à la sortie d'un meeting.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Benazir_Bhutto",
+                  "pays": "PK",
+                  "classement": "Bhutto, Benazir",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_benazir.jpg",
+                    "legende": "Benazir Bhutto à Dubaï en 2006 (photographie d'Oliver Mark)",
+                    "auteur": "Oliver Mark",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Oliver_Mark_-_Benazir_Bhutto,_Dubai_2006_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_pasanglhamu",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1961,
+                  "titre": "Naissance de Pasang Lhamu Sherpa",
+                  "description": "Pasang Lhamu Sherpa (1961-1993) est une alpiniste née à Lukla, dans la vallée du Khumbu. Elle est la première Népalaise à atteindre le sommet de l'Everest, le 22 avril 1993, après plusieurs tentatives. Elle meurt à la descente, et le Népal la proclame héroïne nationale.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Pasang_Lhamu_Sherpa",
+                  "pays": "NP",
+                  "classement": "Pasang Lhamu Sherpa",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_pasanglhamu.jpg",
+                    "legende": "Pasang Lhamu Sherpa, statue érigée à Katmandou (photographie de Krish Dulal) : une sculpture, sans portrait authentique",
+                    "auteur": "Krish Dulal",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Pasang.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indien_kalpana",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1962,
+                  "titre": "Naissance de Kalpana Chawla",
+                  "description": "Kalpana Chawla (1962-2003) est une astronaute née à Karnal, dans le Haryana, en 1962 selon la NASA (1961 selon son état civil). Première femme d'origine indienne dans l'espace, en 1997 à bord de Columbia, elle y retourne en 2003 comme spécialiste de mission. Elle meurt avec ses six équipiers lors de la désintégration de la navette le 1er février 2003, et un satellite météorologique indien porte son nom.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kalpana_Chawla",
+                  "pays": "IN",
+                  "classement": "Chawla, Kalpana",
+                  "image": {
+                    "src": "assets/portraits/pan_indien_kalpana.jpg",
+                    "legende": "Kalpana Chawla en combinaison orange, portrait officiel de la NASA",
+                    "auteur": "NASA",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kalpana_Chawla,_NASA_photo_portrait_in_orange_suit.jpg"
+                  }
+                }
+              ],
+              "axeOrder": [
+                "Chefs d'État et dirigeants",
+                "Guerres et résistances",
+                "Littérature et pensée",
+                "Beaux-arts",
+                "Musique, spectacle et sport",
+                "Sciences, techniques et innovation"
+              ],
+              "essentiel": [
+                "pan_indien_bouddha",
+                "pan_indien_ashoka",
+                "pan_indien_shankara",
+                "pan_indien_gurunanak",
+                "pan_indien_babur",
+                "pan_indien_akbar",
+                "pan_indien_shahjahan",
+                "pan_indien_shivaji",
+                "pan_indien_prithvinarayan",
+                "pan_indien_ghalib",
+                "pan_indien_lakshmibai",
+                "pan_indien_tagore",
+                "pan_indien_vivekananda",
+                "pan_indien_gandhi",
+                "pan_indien_patel",
+                "pan_indien_jinnah",
+                "pan_indien_iqbal",
+                "pan_indien_ramanujan",
+                "pan_indien_nehru",
+                "pan_indien_ambedkar",
+                "pan_indien_nazrul",
+                "pan_indien_bhagatsingh",
+                "pan_indien_teresa",
+                "pan_indien_sirimavo",
+                "pan_indien_indira",
+                "pan_indien_mujib",
+                "pan_indien_ravishankar",
+                "pan_indien_satyajitray",
+                "pan_indien_salam",
+                "pan_indien_lata",
+                "pan_indien_nusrat",
+                "pan_indien_benazir"
               ]
             }
           ]
