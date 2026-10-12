@@ -75,7 +75,8 @@ function galleryNormalize(str) {
 
 // L'initiale d'un intertitre : la première lettre sans accent, ou « # ».
 function galleryInitial(text) {
-    const first = galleryNormalize(text).charAt(0).toUpperCase();
+    // « Ø » (Ørsted) ne se décompose pas en « O » + accent : on le range à la main avec les O.
+    const first = galleryNormalize(text).replace(/^ø/, 'o').charAt(0).toUpperCase();
     return /[A-Z]/.test(first) ? first : '#';
 }
 
@@ -354,8 +355,8 @@ function renderGalleryGrid() {
 
     const filtered = !!(galleryQuery.trim() || galleryCountry || galleryAxis);
     document.getElementById('gallery-reset').classList.toggle('hidden', !filtered);
-    // En mode collection, le compteur « 30 / 1057 portraits débloqués » dit déjà le total : le décompte
-    // ne reparaît que filtré (« 12 portraits sur 1057 »).
+    // En mode collection, le compteur « 30 / 1518 portraits débloqués » dit déjà le total : le décompte
+    // ne reparaît que filtré (« 12 portraits sur 1518 »).
     subtitle.classList.toggle('hidden', !filtered && portraitCollectionOn());
     subtitle.textContent = filtered
         ? t(matching.length === 1 ? 'gallery.count_filtered_one' : 'gallery.count_filtered', { count: matching.length, total: galleryEntries.length })

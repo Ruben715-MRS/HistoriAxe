@@ -38,7 +38,7 @@ ARTICLES = ("Le ", "La ", "L'")
 # Rangés tels qu'écrits — par leur prénom ou leur surnom, ou parce que leur nom
 # n'en a pas (Ibn Khaldun), ou parce que l'usage les range ainsi (Jeanne d'Arc).
 KEEP_AS_WRITTEN = {
-    'Frédéric Barberousse', "Marie-Thérèse d'Autriche", 'Ibn al-Fârid', 'Méhémet Ali', 'Ibrahim Pacha',
+    'Jésus de Nazareth', 'Frédéric Barberousse', "Marie-Thérèse d'Autriche", 'Ibn al-Fârid', 'Méhémet Ali', 'Ibrahim Pacha',
     'Ismaïl Pacha', 'Hugues Capet', "Jeanne d'Arc", 'La Fayette', 'Marie Stuart', 'Marc Aurèle',
     "Scipion l'Africain", "François d'Assise", "Thomas d'Aquin", "Guido d'Arezzo", "Pline l'Ancien",
     'Hannibal Barca', 'Septime Sévère', "Augustin d'Hippone", "Athanase d'Alexandrie", 'Fatima al-Fihriya',
@@ -54,6 +54,25 @@ KEEP_AS_WRITTEN = {
     'Garcilaso de la Vega', 'Lope de Vega', 'Tirso de Molina', 'Camarón de la Isla', 'Paco de Lucía',
     # France : deux rois rangés par leur prénom, une princesse de Monaco aussi.
     'Philippe Auguste', 'Philippe le Bel', 'Charlotte de Monaco',
+    # Machrek : empereurs, califes et souverains rangés par leur nom d'usage ou leur prénom, noms à « ibn ».
+    "Philippe l'Arabe", 'Apollodore de Damas', 'Julia Domna', 'Sévère Alexandre', 'Abou Bakr', 'Othman ibn Affan',
+    'Omar ibn al-Khattab', 'Ali ibn Abi Talib', 'Abd al-Malik', 'Jean Damascène', 'Abou Nouwas', 'Harun al-Rashid',
+    'Hunayn ibn Ishaq', 'Qusta ibn Luqa', 'Ibn al-Haytham', 'Ibn Butlan', 'Taqi al-Din', 'Zahir al-Umar',
+    'Moubarak Al-Sabah', 'Jaber al-Ahmad al-Jaber al-Sabah', 'Ibn Saoud', 'Fayçal ben Abdelaziz Al Saoud',
+    'Khaled ben Abdelaziz Al Saoud', 'Fahd ben Abdelaziz Al Saoud', 'Abdallah ben Abdelaziz Al Saoud',
+    'Qabus ibn Saïd', 'Khalifa ben Zayed Al Nahyane', 'Maktoum ben Rachid Al Maktoum', 'Hussein ben Ali',
+    'Yahya Hamid ed-Din', 'Hussein de Jordanie', 'Abou Jihad',
+    # Scandinavie : souverains par leur prénom ou leur surnom, Islandais par leur prénom (patronymes).
+    'Canut le Grand', 'Christine de Suède', 'Harald Hardrada', 'Jón Sigurðsson', 'Jón Arason', 'Snorri Sturluson',
+    # Sous-continent indien : souverains, saints et maîtres rangés par leur nom d'usage, noms d'une seule
+    # famille ou sans nom de famille (Ranjit Singh, Guru Nanak), noms de cour et titres (Shah Jahan, Mère Teresa).
+    'Sher Shah Suri', 'Shah Jahan', 'Nur Jahan', 'Razia Sultana', 'Ranjit Singh', 'Tipû Sâhib', 'Maharana Pratap',
+    'Lakshmî Bâî', 'Mère Teresa', 'Adi Shankara', 'Chaitanya Mahaprabhu', 'Guru Nanak', 'Guru Gobind Singh',
+    'Ramana Maharshi', 'Sri Aurobindo', 'Drukpa Kunley', 'Pema Lingpa', 'Ngawang Namgyal', 'Lalon Shah',
+    'Prithvi Narayan Shah', 'Sri Vikrama Rajasinha', 'Siddhartha Gautama', 'Faiz Ahmed Faiz', 'Begum Rokeya',
+    'Ziaur Rahman', 'Tajuddin Ahmad', 'Zainul Abedin', 'Noor Jehan', 'Nusrat Fateh Ali Khan', 'Dilip Kumar',
+    'Milkha Singh', 'Raja Ravi Varma', 'Nek Chand', 'Pasang Lhamu Sherpa', 'Bhanubhakta Acharya',
+    'Abdul Ghaffar Khan', 'Liaquat Ali Khan', 'Allauddin Khan',
 }
 
 # Écrits à la main : (nom de la source) → nom de classement.
@@ -126,6 +145,9 @@ EXCEPTIONS = {
     'Le Bernin': 'Bernin',
     "L'Arioste": 'Arioste',
     'Paul Véronèse': 'Véronèse, Paul',
+    'Kazi Nazrul Islam': 'Nazrul Islam, Kazi',
+    'Sheikh Mujibur Rahman': 'Mujibur Rahman, Sheikh',
+    'Lala Lajpat Rai': 'Lajpat Rai, Lala',
     # Espagne : le nom de famille est souvent double (« Pérez Galdós »), et on range sous le premier.
     'Antonio Cánovas del Castillo': 'Cánovas del Castillo, Antonio',
     'Pablo Iglesias Posse': 'Iglesias Posse, Pablo',
@@ -149,6 +171,31 @@ EXCEPTIONS = {
     # France : un nom à particule majuscule, et un nom d'usage qui ne range pas sous le dernier mot.
     'André Le Nôtre': 'Le Nôtre, André',
     'Philippe Leclerc de Hauteclocque': 'Leclerc de Hauteclocque, Philippe',
+    # Machrek : noms arabes à article, rangés sous le nom sans l'article, l'article passant à la fin.
+    'Oussama Ibn Mounqidh': 'Ibn Mounqidh, Oussama',
+    'Abou al-Alaa al-Maari': 'Maari, Abou al-Alaa al-',
+    'Nassif al-Yazigi': 'Yazigi, Nassif al-',
+    'Boutros al-Boustani': 'Boustani, Boutros al-',
+    'Zaki al-Arsouzi': 'Arsouzi, Zaki al-',
+    'Salah al-Din al-Bitar': 'Bitar, Salah al-Din al-',
+    'Abd al-Rahman al-Kawakibi': 'Kawakibi, Abd al-Rahman al-',
+    'Muhammad Kurd Ali': 'Kurd Ali, Muhammad',
+    'Amin al-Rihani': 'Rihani, Amin al-',
+    'Izz al-Din al-Qassam': 'Qassam, Izz al-Din al-',
+    'Saleh al-Ali': 'Ali, Saleh al-',
+    'Youssef al-Azmeh': 'Azmeh, Youssef al-',
+    'Sultan al-Atrash': 'Atrash, Sultan al-',
+    'Mohammed Amin al-Husseini': 'Husseini, Mohammed Amin al-',
+    'Abdel Kader al-Husseini': 'Husseini, Abdel Kader al-',
+    'Ali al-Wardi': 'Wardi, Ali al-',
+    'Ahmed Hassan al-Bakr': 'Bakr, Ahmed Hassan al-',
+    'Wasfi al-Tal': 'Tal, Wasfi al-',
+    'Nazik al-Malaika': 'Malaika, Nazik al-',
+    'Badr Shakir al-Sayyab': 'Sayyab, Badr Shakir al-',
+    'Hafez el-Assad': 'Assad, Hafez el-',
+    'Ibrahim al-Hamdi': 'Hamdi, Ibrahim al-',
+    'Samih al-Qasim': 'Qasim, Samih al-',
+    'Shireen Abu Akleh': 'Abu Akleh, Shireen',
 }
 
 

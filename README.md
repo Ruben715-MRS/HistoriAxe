@@ -601,7 +601,7 @@ ne posent pas la même question :
 | | Un thème, c'est | Une date, c'est | On le joue par |
 |---|---|---|---|
 | **Biographies** | une vie (360 thèmes, en 12 domaines) | une étape de cette vie | étape de la vie |
-| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, l'Allemagne, l'Autriche et la Suisse) | la naissance d'un personnage | domaine |
+| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, le sous-continent indien, Israël) | la naissance d'un personnage | domaine |
 
 Le déplacement ne coûte aucune migration : les 360 thèmes gardent leurs
 identifiants, et rien de ce que le joueur a sauvegardé (favoris, révision,
@@ -707,7 +707,7 @@ des pays ont une histoire commune, un thème **de région** plutôt qu'un par pa
 |---|---|---|
 | Identifiant | `pan_<iso2>` : deux lettres (`pan_fr`) | `pan_<code>` : trois lettres ou plus (`pan_hispam`) — jamais de collision avec un code de pays |
 | `pays` sur chaque événement | interdit (le thème le dit déjà), sauf pour un **invité** d'un autre État (Monaco chez la France, voir « Les micro-États ») | obligatoire : code ISO à deux lettres (`"pays": "VE"`) |
-| Exemples | France, Égypte, Espagne, États-Unis, Italie, Royaume-Uni ; plus tard Brésil… | Amérique hispanique, Maghreb, Allemagne-Autriche-Suisse ; plus tard Machrek |
+| Exemples | France, Égypte, Espagne, États-Unis, Italie, Royaume-Uni, Israël ; plus tard Brésil… | Amérique hispanique, Maghreb, Machrek, Allemagne-Autriche-Suisse, Scandinavie |
 
 Ce que le champ `pays` d'un événement change :
 
@@ -803,6 +803,9 @@ l'Italie (126 proposés, plus Enzo Ferrari), 80 à 100
 pour l'Amérique hispanique (dix-neuf pays, de 1 à 19 figures chacun), 58 pour le
 Maghreb (cinq pays, de 1 à 21), 149 pour l'Allemagne, l'Autriche et la Suisse (170 candidats,
 21 coupés ; trois pays, de 26 à 85 figures), 151 pour le Royaume-Uni (194 candidats, 4 ajoutés, 47 écartés), 132 pour l'Espagne (132 proposés, tous retenus),
+103 pour le Machrek et la péninsule Arabique (182 noms testés, 106 avec une image libre, 3 en attente de leur portrait ; dix pays, de 1 à 25 figures),
+127 pour le sous-continent indien (262 noms testés, 129 fiches rédigées, 127 avec une image libre ; sept pays, de 2 à 77 figures),
+83 pour Israël (93 fiches rédigées, dix mises en attente faute d'image libre),
 40 pour les grands pays, 30 pour les autres. À 6
 axes, 30 donne environ 5 par axe — le minimum pour qu'un axe joué seul reste un jeu.
 
@@ -1045,6 +1048,290 @@ retirés pour tenir l'équilibre des axes et des pays :
 
 Si l'un d'eux doit revenir, sa fiche se rédige comme les autres dans
 `scripts/pantheon/dach.json` (le script `scripts/fetch_portraits.py dach` récupère son portrait).
+
+### Le quatrième bloc : la Scandinavie
+
+`pan_scandinavie`, « Grandes figures de Scandinavie » (code `scandinavie`, trois lettres au moins
+pour un bloc) : **86 personnages de cinq pays** — Suède 28, Danemark 21, Norvège 17, Finlande 15,
+Islande 5 — de Leif Erikson (vers 970) à Olof Palme (1927). Par axe : 17 Chefs d'État et
+dirigeants, 17 Littérature et pensée, 13 Beaux-arts, 11 Guerres, résistances et exploration, 11
+Sciences, techniques et innovation, 10 Musique, spectacle et sport, 7 Économie et entreprise ;
+31 ⭐ et aucune biographie liée.
+
+Les choix qui ne vont pas de soi :
+
+- **Cinq pays, un bloc.** Danemark, Suède et Norvège ont été unis (Union de Kalmar, puis le
+  Danemark-Norvège, puis la Suède-Norvège de 1814 à 1905) ; la Finlande est restée suédoise jusqu'en
+  1809 ; l'Islande a été danoise jusqu'en 1944. Un pays par thème aurait laissé l'Islande à cinq
+  figures. Aucun pays ne dépasse 40 % (la Suède pèse 33 %) : pas de `partMaxPays`.
+- **Le pays est celui de la naissance.** Ludvig Holberg, né à Bergen, est norvégien dans ce
+  thème, bien qu'il ait écrit en danois ; Sigrid Undset, née au Danemark d'un père norvégien,
+  est norvégienne ; Tycho Brahe, né en Scanie (alors danoise), est danois ; Bernadotte, né à Pau,
+  est suédois (il règne à Stockholm) ; Adolf Erik Nordenskiöld, né à Helsinki, est finlandais
+  bien qu'il ait fait sa carrière en Suède ; Bertel Thorvaldsen, né à Copenhague d'un père
+  islandais, est danois ; Knud Rasmussen, né au Groenland, est danois.
+- **Un axe d'exploration.** « Guerres et résistances » devient « Guerres, résistances et
+  exploration » : Leif Erikson, Nansen, Amundsen, Béring, Rasmussen, Nordenskiöld et Heyerdahl
+  n'ont pas d'autre axe où entrer proprement.
+- **Que des morts.** La phrase d'ouverture exige les deux dates (« Nom (naissance-décès) est… ») :
+  Vigdís Finnbogadóttir, Björn Borg, Björk ou Greta Thunberg ne peuvent donc pas y entrer.
+- **Écartés.** Raoul Wallenberg (sa mort est datée de 1947 par Moscou, de 1952 par la Suède :
+  aucune date de décès ne s'impose pour la phrase d'ouverture), Harald Hardrada (le seul
+  fichier libre trouvé sur Commons est un détail de miniature de 350 × 339 px, illisible une
+  fois recadré ; Trygve Lie le remplace parmi les chefs norvégiens) et Jørn Utzon (aucun
+  portrait libre trouvé : Commons ne propose que sa maison, des plans et l'Opéra de Sydney).
+  Ils peuvent rejoindre `scripts/pantheon/scandinavie.json` si une bonne image se présente.
+- **Licences à revoir.** Le script lit la licence que Commons déclare (domaine public, CC BY,
+  CC BY-SA), pas le statut américain de l'image : à revérifier en priorité pour Mannerheim
+  (photographie de 1940 des archives de l'armée finlandaise), Tove Jansson, Kekkonen, Virtanen
+  (CC BY 4.0) et Kamprad (CC BY 2.0).
+
+### Le cinquième bloc : l'Afrique de l'Ouest
+
+`pan_afriqueouest`, « Grandes figures d'Afrique de l'Ouest » (code `afriqueouest`) : **62
+personnages de quinze pays** — Nigeria 9, Sénégal 7, Mali 6, Côte d'Ivoire 5, Burkina Faso 4,
+Libéria 4, Niger 4, Sierra Leone 4, Togo 4, Bénin 3, Ghana 3, Guinée 3, Guinée-Bissau 3, Cap-Vert 2,
+Gambie 1 — de Mansa Moussa (vers 1280) à Idrissa Ouedraogo (1954). Par axe : 34 Chefs d'État et
+dirigeants, 13 Littérature et pensée, 7 Musique, spectacle et sport, 6 Guerres et résistances,
+1 Beaux-arts, 1 Sciences, techniques et innovation ; 28 ⭐ et trois biographies liées (Mansa
+Moussa, Chinua Achebe, Fela Kuti).
+
+Les choix qui ne vont pas de soi :
+
+- **Le périmètre est celui des quinze membres historiques de la CEDEAO** : Bénin, Cap-Vert, Côte
+  d'Ivoire, Gambie, Ghana, Guinée, Guinée-Bissau, Libéria, Nigeria, Sénégal, Sierra Leone, Togo,
+  Burkina Faso, Mali et Niger. Le Burkina Faso, le Mali et le Niger ont quitté l'organisation en
+  janvier 2025 : ils restent dans le bloc, qui est un ensemble géographique et historique, non
+  l'organigramme d'une institution. Les `motsCles` du thème comptent « CEDEAO ». La Mauritanie,
+  qui avait quitté la CEDEAO en 2000, est déjà au Maghreb.
+- **Les images ont décidé de la taille.** Cent vingt-deux fiches ont été rédigées, dates relues sur
+  l'article Wikipédia ; seules 62 ont une image libre convenable (l'image principale de l'article,
+  sinon une recherche sur Commons). Le bloc est donc bien en deçà des 80 à 100 figures visées, et
+  les chefs d'État y pèsent plus de la moitié : ce sont eux que photographient les agences et
+  les archives publiques. Beaux-arts et Sciences n'ont qu'une figure chacune (Ben Enwonwu, Davidson Nicol).
+- **Dates incertaines.** Mansa Moussa (naissance vers 1280, mort 1332 ou 1337 selon les sources)
+  et Omar Tall (naissance entre 1794 et 1797) portent un « vers » ; Samory Touré aussi. Ghézo,
+  Osei Tutu, Alfa Yaya, Joseph Cinqué (Sengbe Pieh) et Ovonramwen ont été écartés faute d'année de naissance établie.
+- **Rangés là où on les honore** : Amílcar Cabral, né à Bafatá (Guinée-Bissau) de parents
+  capverdiens, est en Guinée-Bissau (le portrait est son buste de Bafatá, faute de photographie
+  libre) ; Edward Wilmot Blyden, né à Saint-Thomas, est libérien ; Adelaide Casely-Hayford est
+  sierra-léonaise. Que des morts : Abdou Diouf, Wole Soyinka, Alpha Condé ou Angélique Kidjo n'y entrent pas.
+- **Écartés faute d'image libre convenable**, à réintégrer si l'une apparaît : une soixantaine de
+  figures, dont Soundiata Keïta, Askia Mohammed, Félix Houphouët-Boigny (la seule photographie libre
+  est un cliché israélien de 1962 dont le statut américain n'est pas établi), Yaa Asantewaa, Nnamdi
+  Azikiwe, Usman dan Fodio, Ken Saro-Wiwa, Cheikh Anta Diop, Ousmane Sembène (sa seule photographie est
+  signalée « copyright violation » sur Commons), Lat Dior, Lamine Guèye et Amadou Hampâté Bâ. Leurs
+  fiches sont déjà rédigées dans `scripts/pantheon/afriqueouest_candidats.md`.
+- **Licences à revoir.** Le script lit la licence que Commons déclare, pas le statut américain :
+  à revérifier pour Amílcar Cabral (photographie d'un monument), Sékou Touré, Fela Kuti, Samory
+  Touré et les clichés d'archives de Bello, Eyadéma, Pereira (domaine public américain déclaré), ainsi que pour
+  les images d'Ernesto Djédjé, Flora Nwapa (illustrations) et Alboury Ndiaye (tableau).
+
+### Le cinquième bloc : le Machrek et la péninsule Arabique
+
+`pan_machrek`, « Grandes figures du Machrek et de la péninsule Arabique » (code `machrek`) :
+**103 personnages de dix pays** — Liban 25, Syrie 21, Irak 19, Palestine 15, Arabie saoudite 12,
+Jordanie, Yémen 3 chacun, Émirats arabes unis et Koweït 2 chacun, Oman 1 — de Assurbanipal
+(vers 685 av. J.-C.) à Shireen Abu Akleh (1971). Par axe : 46 Chefs d'État et dirigeants, 33
+Littérature et pensée, 12 Guerres et résistances, 6 Sciences, techniques et innovation, 4
+Musique, spectacle et sport, 2 Beaux-arts ; 25 ⭐ et 2 biographies liées (Saladin et Ibn
+al-Haytham). Le Liban, le plus fourni, pèse 24 % du bloc, sous le seuil de 40 % du
+constructeur. Les mots-clés du thème portent les noms des pays, de Babylone à Bagdad, si bien
+que « irak », « liban » ou « yémen » mènent au Machrek dans la recherche.
+
+Les choix qui ne vont pas de soi :
+
+- **Le périmètre.** Douze pays étaient prévus : Liban, Syrie, Irak, Jordanie, Palestine,
+  Arabie saoudite, Yémen, Oman, Émirats, Koweït, Qatar et Bahreïn. Les deux derniers n'ont
+  aucune figure avec un portrait libre exploitable et ne sont donc pas dans la liste des
+  pays du bloc (le constructeur refuse un pays déclaré sans personnage). L'Égypte a son thème
+  (voir plus bas), la Libye est au Maghreb ; Israël a **son thème** (voir « Un pays à part : Israël »),
+  les figures juives de la diaspora restent dans le panthéon de leur pays.
+- **L'Antiquité par pays actuel.** Huit figures d'avant l'islam — Assurbanipal et Hammurabi
+  (Irak), Odénat, Philippe l'Arabe, Julia Domna, Héliogabale et Apollodore de Damas (Syrie),
+  Sévère Alexandre (Liban) — sont rangées dans le pays actuel de leur lieu de naissance, comme
+  les Carthaginois au Maghreb. Ce n'est pas parfait (Babylone n'est pas « l'Irak »), mais le
+  champ `pays` est obligatoire dans un bloc et c'est la seule règle qui ne demande pas de
+  jugement cas par cas. Zénobie et Al-Mansur manquent : leur page française ne donne aucune
+  année de naissance, et la phrase d'ouverture en exige une. La naissance de Hammurabi
+  (« vers 1810 ») et d'Assurbanipal (« vers 685 ») est une estimation.
+- **Les premiers siècles de l'islam, sans portrait authentique.** Les quatre premiers
+  califes (Abou Bakr, Omar, Othman et Ali), ainsi que Mu'awiya et Abd al-Malik, sont là, mais **le
+  principe est : pas de portrait, pas de carte, sauf une illustration, même imaginaire,
+  légendée comme telle**. Les quatre premiers sont montrés par des miniatures ottomanes de
+  la fin du XVIe siècle, Mu'awiya et Abd al-Malik par des monnaies de leur règne. Mahomet n'y
+  est pas : aucune illustration libre ne le montre seul (les miniatures trouvées le réunissent
+  à d'autres prophètes), et il garde ses Biographies.
+- **Les figures très contestées sont dans le bloc**, avec une fiche qui dit ce qu'on leur
+  reproche, comme Castro ou Kadhafi : Saddam Hussein et Hafez el-Assad (la répression des
+  Kurdes et des chiites, Hama), le mufti de Jérusalem Mohammed Amin al-Husseini (sa rencontre
+  avec Hitler), Georges Habache et Abou Jihad, Yasser Arafat, Béchir Gemayel (Sabra et
+  Chatila ont suivi sa mort), Antoun Saadé, Moussa Sadr. Shireen Abu Akleh, tuée en 2022, est la
+  plus récente.
+- **Pas de remplissage.** Les chefs d'État sont presque la moitié du bloc et les Beaux-arts n'ont
+  que deux figures (Apollodore de Damas et la photographe Karimeh Abbud) : les peintres, sculpteurs
+  et architectes libanais, syriens et irakiens envisagés n'avaient pas d'article en français ou pas
+  d'image libre, et on n'a ajouté personne pour équilibrer. Même chose pour les sciences
+  (six figures, toutes médiévales sauf Taqi al-Din) et la musique (quatre).
+- **Des dates de Wikipédia, non de Wikidata.** Les deux divergent souvent : Moubarak Al-Sabah
+  est né vers 1837 (non 1844), Khaled d'Arabie saoudite en 1913 (non 1911), Farid El Atrache en 1910
+  (non 1917), Sabah en 1925 (non 1927), Al-Mutanabbi en 915, Michel Aflak en 1912 (la date de
+  1910 est un âge vieilli de deux ans), Zaki al-Arsouzi en 1900, et Youssef Karam est mort en 1889,
+  non en 1923. Les dates de Saladin (vers 1137) et d'Ibn al-Haytham (965) suivent celles de leur
+  biographie ; Wikipédia donne 1138 pour Saladin.
+- **Wahhab n'y est pas** : sa seule image libre est une calligraphie. Les premiers
+  noms envisagés mais retirés pour l'image sont dans `scripts/pantheon/machrek_candidats.md`.
+- **Trois fiches en attente d'un portrait**, écrites et valides, mais Wikimedia limitait les
+  requêtes de l'environnement qui téléchargeait les images : Harun al-Rashid (dont le fichier prévu
+  est refusé par `fetch_portraits.py`, qui détecte « fair use » sur sa page ; sa biographie existe,
+  date 763), Al-Ma'mun et Salah al-Din al-Bitar. Elles sont dans
+  `scripts/pantheon/machrek_en_attente.md`, avec la marche à suivre pour les remettre.
+
+### Ce que les images disent au Machrek
+
+Une bonne part des portraits du Machrek est imaginée ou indirecte, et la légende le dit.
+Les quatre premiers califes sont montrés par des miniatures ottomanes de 1585-1590 (manuscrit
+T 414 de la Chester Beatty Library), Saladin une gravure de 1584 du British Museum,
+Abou Nouwas, Al-Mutanabbi et Abou al-Alaa al-Maari des dessins de Khalil Gibran (1916-1917),
+Hammurabi un relief de la stèle de son Code, Assurbanipal un relief de chasse, Mu'awiya et
+Abd al-Malik des monnaies, Nazik al-Malaika et Al-Masudi des statues. Les empereurs
+syriens de Rome (Philippe l'Arabe, Julia Domna, Sévère Alexandre, Héliogabale) sont montrés
+par leurs bustes antiques, et Odénat par un buste de Palmyre dont l'identification est
+traditionnelle. Gibran, lui, est montré à treize ans, par une photographie de Fred Holland Day
+de 1896 (Metropolitan Museum), libre de droits et en grand format.
+
+Le statut américain des photographies du milieu du XXe siècle, souvent libres seulement selon
+la loi du pays d'origine (PD-Irak, PD-Syrie, PD-Arabie saoudite…), est celui qui a coûté huit
+figures à l'Amérique hispanique ; `scripts/search_portraits.py` en donne une première
+indication par fichier, pas une certitude. Khalid ibn al-Walid, Zaha Hadid et Asmahan restent
+sans image libre acceptable.
+
+### Un pays à part : Israël
+
+`pan_il`, « Grandes figures d'Israël » : **83 personnages**, de David (vers 1040 av. J.-C.) à
+Ilan Ramon (1954). Par axe : 27 Littérature et pensée, 21 Chefs d'État et dirigeants, 11 Guerres et
+résistances, 9 Musique, spectacle et sport, 8 Sciences, techniques et innovation, 7 Beaux-arts ;
+29 ⭐ ; une biographie liée (Jésus de Nazareth).
+
+Les choix qui ne vont pas de soi :
+
+- **Le critère est la vie en Israël, pas le judaïsme.** Y entrent les citoyens israéliens et
+  ceux qui ont réellement vécu en Terre d'Israël : Ben Gourion (né à Płońsk), Golda Meir (Kiev),
+  Buber (Vienne), Scholem (Berlin). Un Juif qui n'y a pas vécu reste dans le thème de son pays :
+  Einstein, Freud, Kafka, Arendt (Allemagne, Autriche, Suisse), Maïmonide (Espagne). La règle « un
+  personnage, un seul thème » joue comme ailleurs ; il n'y a pas de thème juif de la diaspora.
+- **Une exception : Theodor Herzl**, né à Budapest, mort en 1904 sans avoir vécu en Terre
+  d'Israël, entre comme sioniste par excellence ; sa fiche le dit.
+- **Un thème de Terre d'Israël, géographique et culturel, non religieux.** Aucun thème religieux n'est
+  prévu : les figures du judaïsme, du christianisme et des croisades qui ont vécu en Terre d'Israël
+  y entrent, quand une année de naissance est établie. Jésus de Nazareth (né en Judée, mort à Jérusalem)
+  garde la date de sa biographie (vers 4 av. J.-C.) et son bouton « Voir sa biographie ». Antiquité :
+  David, Hérode Ier le Grand, Jésus, Flavius Josèphe (né à Jérusalem), Hillel l'Ancien (né à Babylone,
+  installé à Jérusalem) et Rabbi Akiva. Moyen Âge : Jérôme de Stridon (à Bethléem de 386 à 420), Joseph
+  Caro et Isaac Louria (Safed), Nahmanide (Jérusalem et Acre), Godefroy de Bouillon (Jérusalem, 1099-1100).
+  Les dates antiques portent « vers ».
+- **Écartés faute d'année de naissance sur Wikipédia en français** : Jean le Baptiste, Paul de Tarse,
+  Salomon, Judas Maccabée, Bar Kokhba. Faute d'image libre : Haïm Vital, Moïse Cordovero, Yohanan ben
+  Zakkaï (leurs fiches sont à écrire). Moïse, qui n'entre pas en Terre promise, reste hors du thème.
+- **Les citoyens arabes d'Israël restent au Machrek** (Émile Habibi, Samih al-Qasim, rangés `PS`),
+  pour ne pas défaire un panthéon écrit ; le Yishouv d'avant 1948 est ici.
+- **Des figures contestées**, dont la fiche dit pourquoi : Avraham Stern (héros pour les uns,
+  terroriste pour les autres), Ariel Sharon (Sabra et Chatila), Ezer Weizman (la fin de sa présidence).
+- **Dates discutées** : Zalman Shazar 1885 et Agnon 1887 suivent l'article Wikipédia en français ;
+  d'autres sources donnent 1889 et 1888.
+- **Pas de vivants** ; pas de sportif. Mordechaï Gur, Eliyahu Golomb et Arieh Sharon n'ont pas
+  d'article en français et n'y sont pas.
+- **Dix fiches en attente d'une image libre**, rédigées dans `scripts/pantheon/il_candidats.md` :
+  Zalman Shazar, Léa Goldberg, Nathan Alterman, Eli Cohen, Yonatan Netanyahou, Mickey Marcus,
+  Reuven Rubin, Uziel Gal, Simcha Blass et Isaac Louria.
+
+Le statut américain a décidé des images : les clichés du Bureau de presse israélien postérieurs à
+1946 ne sont libres que selon la loi israélienne, et leur statut américain est douteux ; ils sont
+écartés au profit de CC BY, CC BY-SA, CC0 (Nationaal Archief, collections de la Bibliothèque nationale
+d'Israël) ou de photographies d'avant 1931. David, Hérode, Jésus (icône du Sinaï du VIe siècle), Hillel (vitrail), Nahmanide, Jérôme, Godefroy, Rabbi Akiva et Joseph Caro sont montrés
+par des images imaginées (statue de l'Escorial, gravures, carte postale), et la légende le dit ;
+Hannah Szenes par une photographie d'enfance. Le portrait de Meir Ariel n'a pas pu être recadré :
+Wikimedia limitait les téléchargements.
+### Le sixième bloc : le sous-continent indien
+
+`pan_indien`, « Grandes figures du sous-continent indien » (code `indien`) : **127 personnages
+de sept pays** — Inde 77, Pakistan 14, Bangladesh 11, Népal 10, Sri Lanka 9, Bhoutan 4,
+Maldives 2 — d'Ashoka (vers 304 av. J.-C.) et du Bouddha (vers 563 av. J.-C.) à Zakir
+Hussain (1951). Par axe : 42 Chefs d'État et dirigeants, 37 Littérature et pensée, 16
+Guerres et résistances, 14 Musique, spectacle et sport, 10 Sciences, techniques et
+innovation, 8 Beaux-arts ; 32 ⭐ et 10 biographies liées (Ashoka, Akbar, Gandhi, Adi
+Shankara, Guru Nanak, Guru Gobind Singh, Mère Teresa, Tagore, Ravi Shankar et le Bouddha).
+Les mots-clés du thème portent les noms des sept pays, de l'Hindoustan, du Raj britannique et
+de l'Empire moghol.
+
+Les choix qui ne vont pas de soi :
+
+- **L'Inde pèse 61 %, et c'est voulu.** Le constructeur prévient au-delà de 40 % et refuse
+  qu'on le dépasse sans le dire (voir « L'Allemagne pèse 57 % »). Le bloc déclare donc
+  `partMaxPays: 0.65`. L'Inde a plus d'histoire à elle seule que les six autres pays ensemble
+  — un sous-continent de plus d'un milliard d'habitants, des empires, des religions nées
+  sur place — et les six autres n'ont pas de quoi la compenser : le Bhoutan et les Maldives
+  n'ont que quelques figures avec un portrait libre. L'Inde reste sous 65 %, ce qui oblige à
+  y décider si une figure de plus s'ajoute ou non.
+- **Le périmètre est celui des sept pays demandés.** L'Afghanistan, rangé dans « l'Asie du Sud »
+  de l'Histoire par pays, n'en fait pas partie, non plus que le Tibet. Les figures nées dans
+  un pays voisin sont rangées là où on les honore (voir plus bas).
+- **Là où on les honore, pas là où elles sont nées.** Beaucoup de figures sont nées avant
+  1947 dans une région devenue le Pakistan ou le Bangladesh : Guru Nanak (Nankana Sahib),
+  Akbar (Umarkot), Shah Jahan (Lahore), Ranjit Singh (Gujranwala), Bhagat Singh, Manmohan Singh,
+  Milkha Singh, Dilip Kumar, Nek Chand sont à l'Inde ; Jinnah, Iqbal, Ghaffar Khan, Edhi
+  ou Nusrat Fateh Ali Khan sont au Pakistan. Jagadish Chandra Bose (Mymensingh) est à l'Inde,
+  Allauddin Khan (Brahmanbaria), qui a aussi enseigné en Inde, au Bangladesh ; Zia-ul-Haq
+  (Jalandhar) et Musharraf (Delhi) au Pakistan. Les fiches le disent chaque fois.
+- **Mère Teresa est ici, pas dans un futur panthéon des Balkans.** Née à Skopje, elle a vécu
+  près de soixante-dix ans en Inde, dont elle a pris la nationalité en 1951 : l'Inde l'honore le
+  plus. Même règle que pour Joséphine Baker. Sa biographie liée garde la date de 1910.
+- **Babur est dans le bloc.** Né à Andijan, enterré à Kaboul, il est aussi honoré en Ouzbékistan
+  et c'est l'un des cas que la feuille de route réservait aux règles de partage entre deux
+  thèmes. Il est ici parce qu'il fonde l'empire moghol de l'Inde ; un futur thème d'Asie
+  centrale ne pourra donc pas le reprendre. Humayun (né à Kaboul) suit la même logique.
+- **Le Bouddha au Népal, Ashoka et Mahavira en Inde.** Siddhartha Gautama naît à Lumbini,
+  aujourd'hui au Népal, et le Bouddha y est rangé ; les dates de sa vie, comme celles de
+  Mahavira (vers 599-527 av. J.-C.), sont celles des traditions, avec « vers ».
+- **Les religieux vont à « Littérature et pensée »**, comme ailleurs : les gourous sikhs, les
+  maîtres de l'hindouisme, Mahavira, le Bouddha, Mère Teresa. Il n'y a pas d'axe « religion ».
+- **Pas d'axe « Économie et entreprise ».** Il en faut six figures et une histoire propre. Seuls
+  J. R. D. Tata et Ratan Tata avaient une image libre convenable, et deux ne font pas un axe :
+  J. R. D. Tata est rangé en Sciences, techniques et innovation, en tant que pionnier de
+  l'aviation, et Ratan Tata attend d'autres noms. Jamsetji Tata, Dhirubhai Ambani et G. D. Birla
+  n'ont aucune image utilisable.
+- **Pas de vivants** : Malala, Amartya Sen, Imran Khan, Sachin Tendulkar, Muttiah Muralitharan ou
+  Sheikh Hasina n'y entrent pas, ni Maumoon Abdul Gayoom, dont le portrait est libre. Les décès
+  récents (Manmohan Singh et Zakir Hussain, tous deux morts en 2024) sont admis.
+- **Sportifs : trois, au titre de la règle des sportifs** — Tensing Norgay (l'Everest, 1953), Pasang
+  Lhamu Sherpa (première Népalaise au sommet) et Milkha Singh (orphelin de la Partition, quatrième
+  aux Jeux de Rome). Dhyan Chand attend une image libre exploitable (il n'en existe qu'une de
+  211 pixels). Le cricket est absent, faute de figure disparue dont l'image soit libre.
+- **Figures contestées et controversées** : Aurangzeb, Tipu Sultan, Babur (l'empereur-conquérant),
+  Indira Gandhi (l'état d'urgence), Zia-ul-Haq, Abdul Qadeer Khan (la prolifération nucléaire),
+  J. R. Jayewardene (juillet 1983), Mère Teresa. Chaque fiche dit ce qu'on leur reproche.
+- **Dates retenues quand les sources divergent.** Shivaji est né en 1630 (1627 et 1631 selon les
+  sources), Prithvi Narayan Shah en 1723 (1722 selon d'autres), Ghalib en 1797 (décembre 1796 selon
+  Wikipédia en français), Allauddin Khan vers 1881 (1862 selon lui), Kalpana Chawla en 1962
+  (1961 à l'état civil), Mahavira vers 599, le Bouddha vers 563, Kabir vers 1398.
+- **Écartés faute d'image libre convenable**, à réintégrer si l'une apparaît : Jamsetji Tata,
+  Dhirubhai Ambani, Vikram Sarabhai, Kalam, Vajpayee, Mehboob Khan, Raj
+  Kapoor, Guru Dutt, Madhubala, Tansen, Bhaskara II, Faiz (le portrait retenu est une
+  photographie de 2013), Sadequain, Chughtai, Maududi, Fatima Jinnah, Ayub Khan, Vijayabahu Ier,
+  Parakramabahu Ier, Geoffrey Bawa, Walpola Rahula, Anagarika Dharmapala, Jung Bahadur Rana,
+  les rois Tribhuvan, Mahendra et Birendra du Népal, Jigme Wangchuck, Thakurufaanu (Maldives) et
+  des dizaines d'autres.
+- **Écartés faute d'article en français** : Saadat Hasan Manto, dont la fiche est prête et qui
+  n'a pas de page sur la Wikipédia francophone.
+- **Beaucoup de portraits sont imaginés ou indirects**, et la légende le dit : miniatures moghole,
+  statues (Mahavira, Basava, Aryabhata, Bhanubhakta, Araniko, Pasang Lhamu, Savitribai Phule,
+  Rajaraja Ier), reliefs (Ashoka à Sanchi), thangkas bhoutanais (Zhabdrung, Pema Lingpa, Drukpa
+  Kunley), gravures. Pour Lakshmî Bâî, le portrait des années 1850 est incertain.
+- **Licences à revoir.** Les photographies américaines de la Maison-Blanche (Indira Gandhi,
+  Zia-ul-Haq, Manmohan Singh) et les clichés de gouvernements (Ceylan, Inde) sont dits
+  publics ; le statut américain de celui de Zulfikar Ali Bhutto et de Jinnah n'est pas établi
+  (Commons ne le précise pas) ; Bhagat Singh, Ghaffar Khan, Liaquat Ali Khan, Tajuddin Ahmad
+  et Mujibur Rahman sont des photographies d'avant 1960, sans auteur connu.
 
 ### Un pays à part : l'Égypte
 
@@ -1938,11 +2225,31 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
 ### Ce qui n'est pas fait
 
 - **Les autres panthéons** : la France, l'Égypte, les États-Unis, l'Italie, le
-  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb et l'Allemagne-Autriche-Suisse sont écrits. Viennent ensuite le Machrek (sans l'Égypte,
-  qui a le sien ; le sort d'Israël et des figures juives reste à trancher, l'idée
-  d'un thème juif à part ayant été abandonnée), le Brésil à part, le Portugal (qui reprendra
-  Magellan et Viriathe, laissés de côté ici), puis les autres
-  pays — chaque liste de personnages validée avant la rédaction.
+  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest le sous-continent indien et Israël sont écrits.
+  Chaque liste de personnages est validée avant la rédaction. Feuille de route, dans l'ordre
+  où on les propose (un pays seul quand il a de quoi faire un thème, un bloc sinon) :
+  1. **Le Machrek est écrit** (voir « Le cinquième bloc »). Il reste : le portrait des trois
+     fiches en attente (`scripts/pantheon/machrek_en_attente.md`), une image pour Khalid ibn
+     al-Walid, Zaha Hadid et Asmahan, des titres français à retrouver (Zénobie, Al-Mansur, Ahmad
+     ibn Majid) et le statut américain des images à confirmer.
+  1 bis. **Israël est écrit** (voir « Un pays à part : Israël »). Pas de thème juif de la diaspora : la
+     règle « un personnage, un seul thème » range chacun dans son pays. Le Maghreb compte deux
+     figures juives (Edmond Amran El Maleh, Habiba Msika) et en a laissé cinq de côté (Cheikh
+     Raymond, Reinette l'Oranaise, Salim Halali, Albert Memmi, Abraham Serfaty).
+  2. **Pays seuls** : le Brésil (qui n'entre pas dans l'Amérique « hispanique »), la Chine, le
+     Japon, la Russie (où attend Lev Yachine), l'Afrique du Sud, l'Australie, la Turquie, l'Iran.
+  3. **Blocs** : l'Asie du Sud-Est, l'Asie centrale et la Mongolie, le Caucase, la Corée (`KR`/`KP`), l'Afrique de
+     l'Ouest, l'Afrique centrale, l'Afrique de l'Est et la Corne, l'Afrique australe et l'océan
+     Indien (sans l'Afrique du Sud), « Nouvelle-Zélande et Pacifique ».
+  4. **L'Europe et les Amériques qui manquent** : le Portugal (qui reprendra Magellan et
+     Viriathe, laissés de côté dans le panthéon de l'Espagne), la Grèce et Byzance, le Benelux,
+     la Pologne, l'Europe centrale, les Balkans, le Canada, les Caraïbes non
+     hispaniques.
+
+  Les images décideront de la taille de chacun : pour l'Afrique subsaharienne et l'Asie du
+  Sud-Est, on vérifiera les portraits sur Commons **avant** de valider la liste. Les figures
+  disputées entre deux thèmes (Avicenne et al-Biruni, Rûmî, Babur, Kubilai Khan, Bruce Lee,
+  Eusébio) se règlent par la règle « celui qui l'honore le plus ».
 - **Des figures de l'Allemagne, de l'Autriche et de la Suisse à améliorer ou à rediscuter** :
   les vingt et un candidats écartés (voir « Ce que les images ont changé en Allemagne, en
   Autriche et en Suisse ») ; les images d'Hitler, de Marlene Dietrich, d'Hedy Lamarr et de

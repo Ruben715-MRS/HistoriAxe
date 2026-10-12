@@ -89,14 +89,15 @@ test('Personnages illustres : deux sous-catégories, chacune avec sa note et son
     expect(await visibleScreen(page)).toBe('screen-themes');
     await expect(page.locator('#theme-screen-title')).toHaveText('Panthéons');
     await expect(page.locator('#theme-screen-note-text')).toContainText('né dans les frontières actuelles');
-    // Panthéons de pays et de blocs se rangent par leur nom de source — « Allemagne, Autriche et Suisse »,
-    // « Amérique hispanique », « Égypte », « Espagne », « États-Unis », « France », « Italie », « Maghreb », « Royaume-Uni » — et non par
+    // Panthéons de pays et de blocs se rangent par leur nom de source — « Afrique de l'Ouest », « Allemagne, Autriche et Suisse »,
+    // « Amérique hispanique », « Égypte », « Espagne », « États-Unis », « France », « Italie », « Machrek et péninsule Arabique », « Maghreb », « Royaume-Uni », « Scandinavie », « Sous-continent indien » — et non par
     // « Grandes figures d'… » / « … de » / « … des » / « … du ».
     await expect(page.locator('#themes-container .data-card-title'))
-        .toHaveText(["Grandes figures d'Allemagne, d'Autriche et de Suisse", "Grandes figures d'Amérique hispanique",
+        .toHaveText(["Grandes figures d'Afrique de l'Ouest", "Grandes figures d'Allemagne, d'Autriche et de Suisse", "Grandes figures d'Amérique hispanique",
             "Grandes figures d'Égypte", "Grandes figures d'Espagne", 'Grandes figures des États-Unis',
-            'Grandes figures de France', "Grandes figures d'Italie", 'Grandes figures du Maghreb',
-            'Grandes figures du Royaume-Uni']);
+            'Grandes figures de France', "Grandes figures d'Israël", "Grandes figures d'Italie",
+            'Grandes figures du Machrek et de la péninsule Arabique', 'Grandes figures du Maghreb',
+            'Grandes figures du Royaume-Uni', 'Grandes figures de Scandinavie', 'Grandes figures du sous-continent indien']);
 });
 
 test('la fiche d’un personnage montre son portrait, sa légende, son crédit et sa biographie', async ({ page }) => {
@@ -287,6 +288,48 @@ test('le Maghreb : chacune de ses figures a son portrait et son pays, de l’Alg
 
     // Ibn Khaldun a aussi sa biographie (comme Hannibal et Ibn Battûta) : le bouton y mène.
     await page.locator('#timeline .entry', { hasText: "Naissance d'Ibn Khaldun" }).click();
+    await expect(page.locator('#modal-bio-btn')).toBeVisible();
+});
+
+test('le Machrek : chacune de ses figures a son portrait et son pays, de l’Irak à la péninsule Arabique', async ({ page }) => {
+    await openThemeById(page, 'pan_machrek');
+    await page.locator('#mode-card-discovery').click();
+    await expect(page.locator('#screen-game')).toBeVisible();
+    const nombre = await page.evaluate(() => getCurrentTheme().events.length);
+    expect(nombre).toBeGreaterThanOrEqual(90);
+    expect(nombre).toBeLessThanOrEqual(120);
+    // « Que chaque personnage ait un portrait » : une pastille par repère, pas une de moins.
+    await expect(page.locator('#timeline .entry')).toHaveCount(nombre);
+    await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
+
+    // Les dix pays du bloc, chacun par une de ses figures — Oman, le Koweït et les Émirats,
+    // les moins fournis, compris.
+    const figures = [
+        ['Naissance de Saladin', '🇮🇶', 'Irak'],
+        ['Naissance de Fakhreddine II', '🇱🇧', 'Liban'],
+        ['Naissance de Hafez el-Assad', '🇸🇾', 'Syrie'],
+        ['Naissance de Mahmoud Darwich', '🇵🇸', 'Palestine'],
+        ["Naissance d'Ibn Saoud", '🇸🇦', 'Arabie saoudite'],
+        ['Naissance de Hussein de Jordanie', '🇯🇴', 'Jordanie'],
+        ['Naissance de Yahya Hamid ed-Din', '🇾🇪', 'Yémen'],
+        ['Naissance de Qabus ibn Saïd', '🇴🇲', 'Oman'],
+        ['Naissance de Moubarak Al-Sabah', '🇰🇼', 'Koweït'],
+        ['Naissance de Khalifa ben Zayed Al Nahyane', '🇦🇪'],
+    ];
+    for (const [titre, drapeau, pays] of figures) {
+        await page.locator('#timeline .entry', { hasText: titre }).click();
+        await expect(page.locator('#modal-details')).toBeVisible();
+        await expect(page.locator('#modal-pays')).toContainText(drapeau);
+        if (pays) await expect(page.locator('#modal-pays')).toContainText(pays);
+        // Le portrait a réellement chargé, au bon format.
+        const portrait = page.locator('#modal-portrait-img');
+        await expect.poll(() => portrait.evaluate(img => img.complete ? img.naturalWidth : 0)).toBe(320);
+        await page.locator('#modal-details .close-btn').click();
+        await expect(page.locator('#modal-details')).toBeHidden();
+    }
+
+    // Saladin a aussi sa biographie (comme Ibn al-Haytham) : le bouton y mène.
+    await page.locator('#timeline .entry', { hasText: 'Naissance de Saladin' }).click();
     await expect(page.locator('#modal-bio-btn')).toBeVisible();
 });
 
@@ -558,6 +601,17 @@ test('la recherche — « tunisie », « libye », « mauritanie » — mène au
     }
 });
 
+test('la recherche — « irak », « liban », « yémen » — mène au panthéon du Machrek', async ({ page }) => {
+    await page.locator('#screen-home').click();
+    for (const mot of ['irak', 'liban', 'yémen']) {
+        await page.locator('#theme-search-input').fill(mot);
+        // Aucun de ces pays n'est dans le nom du thème : ils sont dans ses mots-clés.
+        const resultat = page.locator('#theme-search-results .search-result-item', { hasText: 'Grandes figures du Machrek' });
+        await expect(resultat, `« ${mot} » doit mener au Machrek`).toHaveCount(1);
+        await expect(resultat.locator('.search-result-path')).toContainText('Personnages illustres › Panthéons');
+    }
+});
+
 test('en partie, la carte « À placer » porte le portrait, et la fiche n’offre pas de quitter la partie', async ({ page }) => {
     await openThemeById(page, PANTHEON);
     await page.locator('#mode-card-training').click();
@@ -742,8 +796,9 @@ test('les filtres pays et domaine se combinent, et chaque option annonce son eff
     const domaine = page.locator('#gallery-filter-axis');
     await expect(pays.locator('option').first()).toHaveText('Tous les pays');
     await expect(domaine.locator('option').first()).toHaveText('Tous les domaines');
-    // Sept domaines communs à tous les panthéons ; chaque pays d'un bloc a son entrée.
-    await expect(domaine.locator('option')).toHaveCount(8);
+    // Sept domaines communs à tous les panthéons, plus « Guerres, résistances et exploration » (la Scandinavie) ;
+    // chaque pays d'un bloc a son entrée.
+    await expect(domaine.locator('option')).toHaveCount(9);
     await expect(pays.locator('option', { hasText: 'France' })).toHaveText(/🇫🇷 France \(141\)/);
     await expect(pays.locator('option', { hasText: 'Venezuela' })).toHaveCount(1);
 
@@ -751,7 +806,9 @@ test('les filtres pays et domaine se combinent, et chaque option annonce son eff
     await expect(page.locator('#gallery-container .gallery-card')).toHaveCount(141);
     await expect(page.locator('#gallery-subtitle')).toHaveText(`141 portraits sur ${total}`);
 
-    await domaine.selectOption({ label: 'Sciences, techniques et innovation (138)' });
+    // L'effectif de l'option change à chaque nouveau panthéon : on la choisit par son nom.
+    const sciences = domaine.locator('option', { hasText: 'Sciences, techniques et innovation' });
+    await domaine.selectOption(await sciences.getAttribute('value'));
     const sciencesFrance = await page.locator('#gallery-container .gallery-card').count();
     expect(sciencesFrance).toBeGreaterThan(3);
     expect(sciencesFrance).toBeLessThan(30);
@@ -905,7 +962,7 @@ test('à la première ouverture de « Personnages illustres », on demande si le
     await expect(fenetre).toBeHidden();
     expect(await reglage(page)).toBe('bw');
     // Le bouton de la galerie annonce l'avancement, dès le premier instant.
-    await expect(page.locator('#btn-gallery .gallery-launcher-sub')).toHaveText('0 / 1057 portraits débloqués');
+    await expect(page.locator('#btn-gallery .gallery-launcher-sub')).toHaveText('0 / 1518 portraits débloqués');
 
     // On ne repose pas la question.
     await page.locator('#screen-subcategories .back-btn').click();
@@ -1383,7 +1440,7 @@ test('« Découvrir » › « Personnage » ouvre la fiche d’une figure de la 
 
 test('« Découvrir » › « Personnage » : la biographie mène au jeu, quand le personnage en a une', async ({ page }) => {
     await quitterLAccueil(page);
-    // On tire jusqu'à une figure qui a sa biographie (166 sur 1057).
+    // On tire jusqu'à une figure qui a sa biographie (182 sur 1518).
     await page.locator('#btn-discover').click();
     await page.locator('#btn-discover-person').click();
     for (let i = 0; i < 40 && !(await page.locator('#modal-bio-btn').isVisible()); i++) {
