@@ -601,7 +601,7 @@ ne posent pas la même question :
 | | Un thème, c'est | Une date, c'est | On le joue par |
 |---|---|---|---|
 | **Biographies** | une vie (360 thèmes, en 12 domaines) | une étape de cette vie | étape de la vie |
-| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, le sous-continent indien, Israël, la Turquie, la Russie) | la naissance d'un personnage | domaine |
+| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, le sous-continent indien, Israël, la Turquie, le Japon, la Russie) | la naissance d'un personnage | domaine |
 
 Le déplacement ne coûte aucune migration : les 360 thèmes gardent leurs
 identifiants, et rien de ce que le joueur a sauvegardé (favoris, révision,
@@ -1290,6 +1290,33 @@ six axes sont ceux de l'Égypte et d'Israël ; la Turquie n'a pas d'axe « Écon
   Naim Süleymanoğlu et Oktay Sinanoğlu (tombe). Roxelane est montrée par la « Sultana Rossa » de Titien,
   dont l'identification est incertaine ; Fahrelnissa Zeid par un cadrage de sa photographie de famille.
   À remplacer si de meilleures images libres apparaissent.
+
+### Un pays à part : le Japon
+
+`pan_jp`, « Grandes figures du Japon » (code `jp`, pays) : **88 personnages**, de Kūkai (774) à Sakamoto
+Ryūichi (1952). Par axe : 14 Chefs d'État et dirigeants, 11 Guerres et résistances, 25 Littérature et pensée,
+8 Beaux-arts, 13 Musique, spectacle et sport, 11 Sciences, techniques et innovation, 6 Économie et entreprise ;
+37 ⭐ et 3 biographies liées (Miyamoto Musashi, Murasaki Shikibu, Akio Morita). Les sept axes sont ceux de la France.
+
+- **Le nom de famille d'abord.** Oda Nobunaga, Natsume Sōseki, Kurosawa Akira : on range « par nom de famille »
+  sous l'initiale du premier mot (`scripts/pantheon_classement.py`). Les noms de plume ou d'artiste (Bashō,
+  Hokusai, Hiroshige, Utamaro, Foujita) se rangent tels qu'on les dit.
+- **Un seul thème.** Les shoguns, les samouraïs, les moines et les empereurs de l'ère Meiji entrent ici
+  comme les prix Nobel et les patrons d'entreprise. Tadao Ando (bio_ando) est vivant : il reste dans sa biographie.
+  Andō Momofuku, l'inventeur des nouilles instantanées, est un autre homme.
+- **Les cas disputés.** Takauji est montré par un portrait du Jōdo-ji dont l'identification est discutée ;
+  Minamoto no Yoritomo, Fujiwara no Michinaga et Yoshitsune par des images tardives. Saigō Takamori, qui ne
+  s'est jamais laissé photographier, est montré par le seul portrait tenu pour fidèle.
+- **Pas de vivants** : Miyazaki Hayao, Murakami Haruki, Kusama Yayoi et Sadaharu Ō attendent. Hirohito, dont le rôle dans la guerre reste débattu, est présenté par ses actes et ses dates.
+- **Les images** : beaucoup sont imaginées ou tardives (peintures, estampes, gravures, statue de Nichiren) et la
+  légende le dit : Yoritomo, Takauji, Tokimune, Yoshitsune, Shingen, Kenshin, Kuranosuke, Shōnagon, Murasaki,
+  Kūkai, Dōgen, Saikaku, Bashō, Seki, Michinaga. Les photographies sont presque toutes du domaine public ; Satō
+  Eisaku est sous CC BY 4.0, Ōe Kenzaburō et Issa (image) sous CC BY-SA, Sakamoto Ryūichi sous CC BY 2.0.
+- **Écartés faute d'image libre** : Shōtoku Taishi, Zeami, Sesshū, Hasegawa Tōhaku, Ogata Kōrin, Honda Ishirō
+  (réalisateur de Godzilla). **À ajouter** (image libre repérée, mais Wikimedia a refusé les téléchargements
+  de cette session, erreur 429) : Kuroda Seiki (`Kuroda Seiki.jpg`), Noguchi Hideyo (`Noguchi Hideyo.png`),
+  Matsushita Kōnosuke (`Konosuke Matsushita 01.jpg`) et Toyoda Kiichirō ; leurs fiches sont à reprendre dans
+  `scripts/pantheon/jp.json` (Kuroda, 1866 ; Noguchi, 1876 ; Matsushita, 1894 ; Toyoda, 1894).
 
 ### Le sixième bloc : le sous-continent indien
 
@@ -2416,7 +2443,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
 ### Ce qui n'est pas fait
 
 - **Les autres panthéons** : la France, l'Égypte, les États-Unis, l'Italie, le
-  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest le sous-continent indien, Israël, la Chine, la Turquie, la Grèce et la Russie sont écrits.
+  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce et la Russie sont écrits.
   Chaque liste de personnages est validée avant la rédaction. Feuille de route, dans l'ordre
   où on les propose (un pays seul quand il a de quoi faire un thème, un bloc sinon) :
   1. **Le Machrek est écrit** (voir « Le cinquième bloc »). Il reste : le portrait des trois
@@ -2427,8 +2454,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
      règle « un personnage, un seul thème » range chacun dans son pays. Le Maghreb compte deux
      figures juives (Edmond Amran El Maleh, Habiba Msika) et en a laissé cinq de côté (Cheikh
      Raymond, Reinette l'Oranaise, Salim Halali, Albert Memmi, Abraham Serfaty).
-  2. **Pays seuls** : le Brésil (qui n'entre pas dans l'Amérique « hispanique »), le
-     Japon, l'Afrique du Sud, l'Australie, l'Iran. **La Russie est écrite** (voir « Un pays à part : la Russie »). **La Turquie est écrite** (voir « Un pays à part : la Turquie »).
+  2. **Pays seuls** : le Brésil (qui n'entre pas dans l'Amérique « hispanique »), l'Afrique du Sud, l'Australie, l'Iran. **La Turquie** (voir « Un pays à part : la Turquie »), **le Japon** (voir « Un pays à part : le Japon ») et **la Russie** (voir « Un pays à part : la Russie ») sont écrits.
   3. **Blocs** : l'Asie du Sud-Est, l'Asie centrale et la Mongolie, le Caucase, la Corée (`KR`/`KP`), l'Afrique de
      l'Ouest, l'Afrique centrale, l'Afrique de l'Est et la Corne, l'Afrique australe et l'océan
      Indien (sans l'Afrique du Sud), « Nouvelle-Zélande et Pacifique ».

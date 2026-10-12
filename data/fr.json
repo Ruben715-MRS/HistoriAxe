@@ -2,8 +2,8 @@
   "version": "1.0.0",
   "lang": "fr",
   "name": "Français (Intégral)",
-  "totalThemes": 813,
-  "totalEvents": 21708,
+  "totalThemes": 814,
+  "totalEvents": 21796,
   "categories": [
     {
       "nom": "Culture générale",
@@ -111468,6 +111468,1490 @@
                 "pan_it_morricone",
                 "pan_it_pavarotti",
                 "pan_it_falcone"
+              ]
+            },
+            {
+              "id": "pan_jp",
+              "nom": "Grandes figures du Japon",
+              "difficulte": "Intermédiaire",
+              "motsCles": [
+                "Japon",
+                "Japonais",
+                "Japonaise",
+                "Tokyo",
+                "Kyoto",
+                "Edo",
+                "Heian",
+                "Kamakura",
+                "Muromachi",
+                "Meiji",
+                "Shogun",
+                "Shogunat",
+                "Samouraï",
+                "Empereur du Japon",
+                "Asie de l'Est",
+                "Extrême-Orient"
+              ],
+              "events": [
+                {
+                  "id": "pan_jp_kukai",
+                  "axe": "Littérature et pensée",
+                  "date": 774,
+                  "titre": "Naissance de Kūkai",
+                  "description": "Kūkai (774-835) est le moine, appelé après sa mort Kōbō Daishi, qui fonde au Japon l'école bouddhique Shingon. Parti en Chine en 804, il en rapporte les enseignements ésotériques et fonde en 816 le monastère du mont Kōya, aujourd'hui l'un des grands lieux saints du pays. On lui attribue aussi des inventions comme le syllabaire kana et un pèlerinage de quatre-vingt-huit temples sur l'île de Shikoku.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/K%C5%ABkai",
+                  "classement": "Kūkai",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_kukai.jpg",
+                    "legende": "Kūkai, portrait ancien : une image tardive, faite longtemps après sa mort",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kukai2.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_michinaga",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 966,
+                  "titre": "Naissance de Fujiwara no Michinaga",
+                  "description": "Fujiwara no Michinaga (966-1028) est un aristocrate de la cour de Heian, régent de fait de l'empire à l'apogée du clan Fujiwara. Il marie quatre de ses filles à des empereurs ou à des princes héritiers et gouverne le Japon par l'intermédiaire de ses petits-fils, qu'il place sur le trône. Son journal, le Midō kampakuki, et le Dit du Genji de Murasaki Shikibu, qui a vécu sous son patronage, restituent la splendeur de cette cour.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Fujiwara_no_Michinaga",
+                  "classement": "Fujiwara no Michinaga",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_michinaga.jpg",
+                    "legende": "Fujiwara no Michinaga, portrait ancien : une image tardive, faite longtemps après sa mort",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Fujiwara_no_Michinaga.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_shonagon",
+                  "axe": "Littérature et pensée",
+                  "date": 966,
+                  "titre": "Naissance de Sei Shōnagon",
+                  "description": "Sei Shōnagon (vers 966-vers 1025) est une dame de la cour de Heian, auteure du Makura no sōshi, « Notes de chevet ». Au service de l'impératrice Teishi, rivale de la fille de Michinaga, elle y consigne en listes, en souvenirs et en jugements piquants la vie de la cour, ses élégances et ses plaisirs. Son livre fonde au Japon le genre du zuihitsu, le « au fil du pinceau », et passe pour un chef-d'œuvre de la prose.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sei_Sh%C5%8Dnagon",
+                  "classement": "Sei Shōnagon",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_shonagon.jpg",
+                    "legende": "Sei Shōnagon, dessin au trait de l'époque d'Edo : une image imaginée, sept siècles après sa mort",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Sei_Shonagon.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_shikibu",
+                  "axe": "Littérature et pensée",
+                  "date": 973,
+                  "titre": "Naissance de Murasaki Shikibu",
+                  "description": "Murasaki Shikibu (vers 973-vers 1014) est une dame de la cour de Heian, auteure du Dit du Genji. Entrée au service de l'impératrice Shōshi vers 1005, elle y écrit ce roman très long, centré sur le prince Genji et sa descendance. Il est considéré comme le premier grand roman de l'histoire de la littérature, et il est lu depuis dix siècles.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Murasaki_Shikibu",
+                  "classement": "Murasaki Shikibu",
+                  "biographie": "bio_shikibu",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_shikibu.jpg",
+                    "legende": "Murasaki Shikibu écrivant le Dit du Genji, peinture de Tosa Mitsuoki, XVIIe siècle : une image imaginée, six siècles après sa mort",
+                    "auteur": "Tosa Mitsuoki (1617 - 1691)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Murasaki-Shikibu-composing-Genji-Monogatari.png"
+                  }
+                },
+                {
+                  "id": "pan_jp_yoritomo",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1147,
+                  "titre": "Naissance de Minamoto no Yoritomo",
+                  "description": "Minamoto no Yoritomo (1147-1199) est le fondateur du shogunat de Kamakura, premier gouvernement militaire du Japon. Après avoir vaincu les Taira à la guerre de Genpei, achevée en 1185, il installe son gouvernement à Kamakura et obtient de la cour, en 1192, le titre de shogun. Il place des gouverneurs militaires dans les provinces, et le pouvoir des guerriers durera près de sept siècles.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Minamoto_no_Yoritomo",
+                  "classement": "Minamoto no Yoritomo",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_yoritomo.jpg",
+                    "legende": "Minamoto no Yoritomo, portrait attribué à Fujiwara no Takanobu : la tradition le date de l'époque de Kamakura, mais son attribution est discutée",
+                    "auteur": "Fujiwara no Takanobu (1142–1205) Alternative names Fujiwara Takanobu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Minamoto_no_Yoritomo.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_yoshitsune",
+                  "axe": "Guerres et résistances",
+                  "date": 1159,
+                  "titre": "Naissance de Minamoto no Yoshitsune",
+                  "description": "Minamoto no Yoshitsune (1159-1189) est un chef de guerre du clan Minamoto, demi-frère cadet de Yoritomo. Il mène les armées de son frère à la victoire contre les Taira, notamment à Ichi-no-Tani en 1184 et à Dan-no-ura en 1185, où disparaît l'enfant empereur Antoku. Poursuivi par la jalousie de Yoritomo, il se donne la mort à Hiraizumi, et la figure du héros malheureux alimente jusqu'à aujourd'hui les récits, le théâtre kabuki et le nō.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Minamoto_no_Yoshitsune",
+                  "classement": "Minamoto no Yoshitsune",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_yoshitsune.jpg",
+                    "legende": "Minamoto no Yoshitsune, portrait ancien : une image tardive, faite longtemps après sa mort",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Minamoto_no_Yoshitsune.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_dogen",
+                  "axe": "Littérature et pensée",
+                  "date": 1200,
+                  "titre": "Naissance de Dōgen",
+                  "description": "Dōgen (1200-1253) est le moine qui fonde au Japon l'école Sōtō du zen. Parti en Chine en 1223, il y reçoit l'enseignement du maître Rujing et revient avec la pratique du zazen, la méditation assise, qui est l'essentiel du chemin. Il fonde en 1244 le temple Eihei-ji et écrit le Shōbōgenzō, « Trésor de l'œil de la vraie Loi », l'un des grands textes de la pensée japonaise.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/D%C5%8Dgen",
+                  "classement": "Dōgen",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_dogen.jpg",
+                    "legende": "Dōgen, portrait ancien",
+                    "auteur": "Shii",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Dogen.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_nichiren",
+                  "axe": "Littérature et pensée",
+                  "date": 1222,
+                  "titre": "Naissance de Nichiren",
+                  "description": "Nichiren (1222-1282) est un moine bouddhiste qui fonde au Japon l'école qui porte son nom. Il enseigne que le salut passe par la seule invocation du Sûtra du Lotus, par la formule « Namu Myōhō Renge Kyō », et critique violemment les autres écoles ainsi que le gouvernement de Kamakura. Plusieurs fois exilé, il annonce l'invasion mongole, et ses disciples forment encore aujourd'hui l'un des plus grands courants bouddhiques du Japon.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Nichiren",
+                  "classement": "Nichiren",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_nichiren.jpg",
+                    "legende": "Statue de Nichiren à Kyoto : on n'a pas de portrait de lui de son vivant",
+                    "auteur": "Chris Gladis from Kyoto, Japan",
+                    "licence": "CC BY 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Nichiren_statue_Japan.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_tokimune",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1251,
+                  "titre": "Naissance de Hōjō Tokimune",
+                  "description": "Hōjō Tokimune (1251-1284) est le huitième régent du shogunat de Kamakura, qui dirige le Japon à dix-sept ans. Il refuse de se soumettre à Kubilai Khan et fait exécuter ses ambassadeurs, puis repousse les invasions mongoles de 1274 et de 1281, aidé par des tempêtes que la tradition appelle kamikaze, « le vent divin ». Il soutient aussi le bouddhisme zen, dont il fait venir des moines de Chine.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/H%C5%8Dj%C5%8D_Tokimune",
+                  "classement": "Hōjō Tokimune",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_tokimune.jpg",
+                    "legende": "Hōjō Tokimune, gravure du XIXe siècle de Kikuchi Yōsai : une image imaginée, six siècles après sa mort",
+                    "auteur": "菊池容斎",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:H%C5%8Dj%C5%8D_Tokimune,Maekenkozitu.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_takauji",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1305,
+                  "titre": "Naissance d'Ashikaga Takauji",
+                  "description": "Ashikaga Takauji (1305-1358) est le fondateur du shogunat de Muromachi. Général du shogunat de Kamakura, il se retourne contre lui en 1333 pour l'empereur Go-Daigo, puis rompt avec l'empereur et installe un autre prince sur le trône à Kyoto. Nommé shogun en 1338, il laisse un pays divisé entre deux cours, celle du Nord et celle du Sud, pendant plus d'un demi-siècle.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ashikaga_Takauji",
+                  "classement": "Ashikaga Takauji",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_takauji.jpg",
+                    "legende": "Ashikaga Takauji, peinture ancienne du temple Jōdo-ji, dont l'identification du modèle est discutée",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ashikaga_Takauji_J%C5%8Ddo-ji.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_shingen",
+                  "axe": "Guerres et résistances",
+                  "date": 1521,
+                  "titre": "Naissance de Takeda Shingen",
+                  "description": "Takeda Shingen (1521-1573) est un seigneur de guerre de la province de Kai, surnommé le « tigre de Kai ». Rival d'Uesugi Kenshin, avec qui il se bat à cinq reprises à Kawanakajima entre 1553 et 1564, il fait de sa cavalerie la plus redoutée du Japon. Vainqueur de Tokugawa Ieyasu à Mikatagahara en 1572, il meurt l'année suivante, et son fils Katsuyori perd la bataille de Nagashino contre Nobunaga.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Takeda_Shingen",
+                  "classement": "Takeda Shingen",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_shingen.jpg",
+                    "legende": "Takeda Shingen, portrait ancien, peint après sa mort",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Takeda_Harunobu.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_rikyu",
+                  "axe": "Beaux-arts",
+                  "date": 1522,
+                  "titre": "Naissance de Sen no Rikyū",
+                  "description": "Sen no Rikyū (1522-1591) est le maître de thé qui a fixé les principes de la cérémonie du thé japonaise. Il enseigne le wabi-cha, un thé de simplicité et de rusticité, avec la maison de thé minuscule, les bols rugueux et les fleurs d'un seul brin. Au service de Nobunaga, puis de Hideyoshi, il est condamné par ce dernier à s'ouvrir le ventre en 1591, pour des raisons restées obscures.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sen_no_Riky%C5%AB",
+                  "classement": "Sen no Rikyū",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_rikyu.jpg",
+                    "legende": "Sen no Rikyū, portrait du peintre Hasegawa Tōhaku, sous une inscription du moine Shunoku Sōen",
+                    "auteur": "painted by 長谷川等伯, calligraphy by 春屋宗園",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Sen_no_Rikyu_JPN.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_kenshin",
+                  "axe": "Guerres et résistances",
+                  "date": 1530,
+                  "titre": "Naissance d'Uesugi Kenshin",
+                  "description": "Uesugi Kenshin (1530-1578) est un seigneur de guerre de la province d'Echigo, surnommé le « dragon d'Echigo ». Il affronte Takeda Shingen à Kawanakajima et se veut un guerrier d'honneur, dévot de Bishamonten, dieu bouddhique de la guerre. Prêt à marcher sur Nobunaga, il meurt brusquement en 1578, sans avoir pu mener cette campagne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Uesugi_Kenshin",
+                  "classement": "Uesugi Kenshin",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_kenshin.jpg",
+                    "legende": "Uesugi Kenshin, portrait du sanctuaire Uesugi, peint après sa mort",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Uesugi_Kenshin_Portrait_from_Uesugi_Shrine.png"
+                  }
+                },
+                {
+                  "id": "pan_jp_nobunaga",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1534,
+                  "titre": "Naissance d'Oda Nobunaga",
+                  "description": "Oda Nobunaga (1534-1582) est un seigneur de guerre de la province d'Owari, le premier des trois unificateurs du Japon. Vainqueur d'Imagawa Yoshimoto à Okehazama en 1560, puis de la cavalerie des Takeda à Nagashino en 1575 grâce à ses arquebusiers, il met fin au shogunat de Muromachi en 1573 et contrôle le centre du pays. Trahi par son général Akechi Mitsuhide, il se donne la mort au temple Honnō-ji en 1582.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Oda_Nobunaga",
+                  "classement": "Oda Nobunaga",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_nobunaga.jpg",
+                    "legende": "Oda Nobunaga, portrait de Kanō Sōshū, peintre de la fin du XVIe siècle",
+                    "auteur": "狩野宗秀 (Kanō Sōshū, 1551 - 1601)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Odanobunaga.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_hideyoshi",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1537,
+                  "titre": "Naissance de Toyotomi Hideyoshi",
+                  "description": "Toyotomi Hideyoshi (1537-1598) est un fils de paysan devenu régent du Japon, le deuxième des trois unificateurs. Successeur de Nobunaga, il achève l'unification du pays en 1590, fait faire un cadastre général, la « chasse aux sabres » qui désarme les paysans, et fige les classes sociales. Ses deux invasions de la Corée, en 1592 et en 1597, échouent, et sa mort y met fin.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Toyotomi_Hideyoshi",
+                  "classement": "Toyotomi Hideyoshi",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_hideyoshi.jpg",
+                    "legende": "Toyotomi Hideyoshi, portrait de Kanō Mitsunobu conservé au temple Kōdai-ji, peint vers 1598",
+                    "auteur": "Kanō Mitsunobu (狩野 光信, 1565–1608)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Toyotomi_Hideyoshi_c1598_Kodai-ji_Temple.png"
+                  }
+                },
+                {
+                  "id": "pan_jp_ieyasu",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1543,
+                  "titre": "Naissance de Tokugawa Ieyasu",
+                  "description": "Tokugawa Ieyasu (1543-1616) est le fondateur du shogunat d'Edo, le troisième des unificateurs du Japon. Vainqueur de la bataille de Sekigahara en 1600, il reçoit le titre de shogun en 1603 et installe son gouvernement à Edo, aujourd'hui Tokyo. Son régime, qui contrôle les seigneurs par l'obligation de résidence à Edo, maintient le pays en paix pendant plus de deux siècles et demi.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Tokugawa_Ieyasu",
+                  "classement": "Tokugawa Ieyasu",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_ieyasu.jpg",
+                    "legende": "Tokugawa Ieyasu, portrait de Kanō Tan'yū, peint au XVIIe siècle après sa mort",
+                    "auteur": "Kanō Tan'yū (1602–1674)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Tokugawa_Ieyasu2_full.JPG"
+                  }
+                },
+                {
+                  "id": "pan_jp_masamune",
+                  "axe": "Guerres et résistances",
+                  "date": 1567,
+                  "titre": "Naissance de Date Masamune",
+                  "description": "Date Masamune (1567-1636) est un seigneur de guerre du nord-est du Japon, surnommé le « dragon borgne » après avoir perdu un œil à la variole. Il se soumet à Hideyoshi en 1590, puis combat pour Ieyasu à Sekigahara et fonde le domaine de Sendai. En 1613, il envoie en Europe, par le Mexique, l'ambassade de Hasekura Tsunenaga, la première mission japonaise à Rome.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Date_Masamune",
+                  "classement": "Date Masamune",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_masamune.jpg",
+                    "legende": "Date Masamune, portrait de Kanō Yasunobu : selon la tradition, il a demandé à être peint avec ses deux yeux",
+                    "auteur": "日本語: 狩野安信 English: Kano Yasunobu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Date_Masamune.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_musashi",
+                  "axe": "Guerres et résistances",
+                  "date": 1584,
+                  "titre": "Naissance de Miyamoto Musashi",
+                  "description": "Miyamoto Musashi (1584-1645) est un rōnin célèbre pour avoir remporté, dit-on, plus de soixante duels. Inventeur du style à deux sabres, le Niten Ichi-ryū, il aurait vaincu en 1612 Sasaki Kojirō sur l'île de Ganryū, le plus fameux de ses combats. Il écrit à la fin de sa vie Le Livre des cinq anneaux, un traité de stratégie lu aujourd'hui bien au-delà des arts martiaux.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Miyamoto_Musashi",
+                  "classement": "Miyamoto Musashi",
+                  "biographie": "bio_musashi",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_musashi.jpg",
+                    "legende": "Miyamoto Musashi, portrait traditionnel de l'époque d'Edo : une image tardive, qu'on attribue parfois à Musashi lui-même",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Miyamoto_Musashi-Portrait-Edo-period.png"
+                  }
+                },
+                {
+                  "id": "pan_jp_saikaku",
+                  "axe": "Littérature et pensée",
+                  "date": 1642,
+                  "titre": "Naissance d'Ihara Saikaku",
+                  "description": "Ihara Saikaku (1642-1693) est un écrivain d'Osaka, d'abord poète de haïkaï, puis romancier du monde des marchands. Son Homme qui ne vécut que pour aimer, publié en 1682, ouvre la littérature « du monde flottant » (ukiyo-zōshi), et il peint ensuite l'argent et les marchands dans Nippon eitaigura. Il est avec Bashō et Chikamatsu l'un des trois grands noms de la culture de l'ère Genroku.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ihara_Saikaku",
+                  "classement": "Ihara Saikaku",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_saikaku.jpg",
+                    "legende": "Ihara Saikaku, portrait traditionnel qui lui est attribué",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ihara-Saikaku-Portrait.png"
+                  }
+                },
+                {
+                  "id": "pan_jp_seki",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1642,
+                  "titre": "Naissance de Seki Takakazu",
+                  "description": "Seki Takakazu (vers 1642-1708) est le plus grand mathématicien du Japon d'avant l'ère Meiji. Il met au point un calcul des équations par écriture sur le papier, le tenzan jutsu, découvre les déterminants dix ans avant Leibniz et obtient une valeur de pi précise à plusieurs décimales. Ses élèves forment l'école de calcul wasan, qui se développe pendant deux siècles sans contact avec l'Occident.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Seki_Takakazu",
+                  "classement": "Seki Takakazu",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_seki.jpg",
+                    "legende": "Seki Takakazu, portrait ancien de l'époque d'Edo : une image tardive",
+                    "auteur": "upload by AMorozov",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Seki.jpeg"
+                  }
+                },
+                {
+                  "id": "pan_jp_basho",
+                  "axe": "Littérature et pensée",
+                  "date": 1644,
+                  "titre": "Naissance de Matsuo Bashō",
+                  "description": "Matsuo Bashō (1644-1694) est un poète japonais, le plus grand maître du haïku, dont il fait un art à part entière. Il mène une vie de voyageur et dépeint ses étapes dans La Sente étroite du Nord, son œuvre la plus célèbre, achevée en 1694. Son poème de la grenouille qui saute dans un vieil étang, écrit en 1686, est connu de tous les Japonais.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Matsuo_Bash%C5%8D",
+                  "classement": "Matsuo Bashō",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_basho.jpg",
+                    "legende": "Matsuo Bashō, portrait du poète Yosa Buson, qui l'admirait, au XVIIIe siècle : une image faite après sa mort",
+                    "auteur": "unknown",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Basho_by_Buson.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_chikamatsu",
+                  "axe": "Littérature et pensée",
+                  "date": 1653,
+                  "titre": "Naissance de Chikamatsu Monzaemon",
+                  "description": "Chikamatsu Monzaemon (1653-1725) est le dramaturge qui élève le théâtre de marionnettes bunraku au rang de grand art. Auteur d'une centaine de pièces historiques et d'une vingtaine de « drames de la vie bourgeoise », il écrit en 1703 Les Amants suicidés de Sonezaki, tirée d'un fait divers qui fait courir Osaka. Ses pièces, où se heurtent le devoir et la passion, valent à leur auteur le surnom de « Shakespeare japonais ».",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Chikamatsu_Monzaemon",
+                  "classement": "Chikamatsu Monzaemon",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_chikamatsu.jpg",
+                    "legende": "Chikamatsu Monzaemon, portrait d'époque d'Edo, au bas d'un rouleau de calligraphie",
+                    "auteur": "Chikamatsu Monzaemon",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Chikamatsu_Monzaemon.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_kuranosuke",
+                  "axe": "Guerres et résistances",
+                  "date": 1659,
+                  "titre": "Naissance d'Ōishi Kuranosuke",
+                  "description": "Ōishi Kuranosuke (1659-1703) est le chef des quarante-sept rōnin du domaine d'Akō. Après la condamnation à mourir de leur seigneur Asano Naganori, en 1701, il attend près de deux ans avant de se venger du dignitaire Kira Yoshinaka à la fin de 1702. Quarante-six d'entre eux se donnent la mort sur ordre du shogunat en 1703, et cette histoire est devenue, avec le Chūshingura, le grand récit de la loyauté au Japon.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/%C5%8Cishi_Yoshio",
+                  "classement": "Ōishi Kuranosuke",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_kuranosuke.jpg",
+                    "legende": "Ōishi Kuranosuke, estampe du XIXe siècle le montrant en armure : une image imaginée, un siècle et demi après sa mort",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%C5%8Cishi_Yoshio.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_yoshimune",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1684,
+                  "titre": "Naissance de Tokugawa Yoshimune",
+                  "description": "Tokugawa Yoshimune (1684-1751) est le huitième shogun d'Edo, issu d'une branche collatérale de la famille. Il mène les réformes Kyōhō, fait lever les impôts plus efficacement, rétablit les finances du shogunat et crée une boîte à suggestions pour que les sujets lui écrivent. Il autorise aussi l'importation des livres occidentaux qui ne traitent pas de religion, ce qui ouvre la voie aux « études hollandaises ».",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Tokugawa_Yoshimune",
+                  "classement": "Tokugawa Yoshimune",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_yoshimune.jpg",
+                    "legende": "Tokugawa Yoshimune, portrait de Kanō Tadanobu, peintre officiel du shogunat au XVIIIe siècle",
+                    "auteur": "日本語: 狩野忠信 English: Kanō Tadanobu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Tokugawa_Yoshimune.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_jakuchu",
+                  "axe": "Beaux-arts",
+                  "date": 1716,
+                  "titre": "Naissance d'Itō Jakuchū",
+                  "description": "Itō Jakuchū (1716-1800) est un peintre de Kyoto, fils d'un marchand de légumes du marché de Nishiki. Après avoir confié son commerce à son frère à quarante ans, il se consacre à la peinture et réalise la Collection des êtres vivants en couleurs, trente rouleaux de coqs, de poissons et de fleurs d'une précision étonnante. L'œuvre, offerte à un temple, est aujourd'hui dans les collections impériales.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/It%C5%8D_Jakuch%C5%AB",
+                  "classement": "Itō Jakuchū",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_jakuchu.jpg",
+                    "legende": "Itō Jakuchū, portrait de Kubota Beisen, peint à la fin du XIXe siècle : une image tardive",
+                    "auteur": "Kubota Beisen (1852–1906)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Portrait_of_It%C5%8D_Jakuch%C5%AB_by_Kubota_Beisen.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_hiraga",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1728,
+                  "titre": "Naissance de Hiraga Gennai",
+                  "description": "Hiraga Gennai (1728-1780) est un savant touche-à-tout de l'époque d'Edo, à la fois botaniste, écrivain, peintre et inventeur. Il organise à Edo des expositions de produits naturels, lit les livres hollandais, et construit un générateur d'électricité statique, l'erekiteru. Mort en prison après avoir tué un homme dans un accès de colère, il illustre l'intérêt croissant des Japonais pour les sciences venues d'Europe.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Hiraga_Gennai",
+                  "classement": "Hiraga Gennai",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_hiraga.jpg",
+                    "legende": "Hiraga Gennai, portrait de l'époque d'Edo, par Kimura Momuō",
+                    "auteur": "木村黙老 / Momuō Kimura",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:A_Portrait_of_Ky%C5%ABkei_Hiraga.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_norinaga",
+                  "axe": "Littérature et pensée",
+                  "date": 1730,
+                  "titre": "Naissance de Motoori Norinaga",
+                  "description": "Motoori Norinaga (1730-1801) est un médecin de Matsusaka devenu le grand savant de l'école de « l'étude nationale » (kokugaku). Il consacre plus de trente ans à commenter le Kojiki, le plus ancien livre du Japon, et défend dans le Dit du Genji l'idée du mono no aware, la sensibilité devant la fragilité des choses. Il y cherche l'âme du Japon avant l'influence de la Chine, et ses idées nourriront plus tard le nationalisme.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Motoori_Norinaga",
+                  "classement": "Motoori Norinaga",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_norinaga.jpg",
+                    "legende": "Motoori Norinaga, autoportrait de 1790, à sa table de travail, sous un poème de sa main",
+                    "auteur": "Motoori Norinaga (1730–1801)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Motoori_Norinaga_self_portrait.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_genpaku",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1733,
+                  "titre": "Naissance de Sugita Genpaku",
+                  "description": "Sugita Genpaku (1733-1817) est un médecin d'Edo, figure majeure des « études hollandaises » (rangaku). Assistant à la dissection d'un condamné, en 1771, il constate que l'atlas d'anatomie néerlandais d'un auteur allemand, Kulmus, dit vrai, contre les traités chinois qu'il connaissait. Il en traduit avec ses amis le texte, publié en 1774 sous le titre Kaitai shinsho, « Nouveau livre d'anatomie ».",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Genpaku_Sugita",
+                  "classement": "Sugita Genpaku",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_genpaku.jpg",
+                    "legende": "Sugita Genpaku, portrait d'Ishikawa Tairō, peint à la fin du XVIIIe ou au début du XIXe siècle",
+                    "auteur": "Ishikawa Tairō (1762–1818) Description painter",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Sugita_Genpaku.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_ino",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1745,
+                  "titre": "Naissance d'Inō Tadataka",
+                  "description": "Inō Tadataka (1745-1818) est un géomètre qui a dressé la première carte moderne du Japon. Riche commerçant devenu astronome à cinquante ans, il parcourt à pied, de 1800 à 1816, toutes les côtes de l'archipel et mesure la longueur d'un degré de méridien. Sa carte, achevée par ses élèves en 1821, est d'une précision étonnante et sert encore au XIXe siècle de référence.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/In%C5%8D_Tadataka",
+                  "classement": "Inō Tadataka",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_ino.jpg",
+                    "legende": "Inō Tadataka, portrait d'Aoki Katsujirō, peint après sa mort",
+                    "auteur": "Aoki Katsujirō Alternative names Katsujirō Aoki",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ino_Tadataka.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_utamaro",
+                  "axe": "Beaux-arts",
+                  "date": 1753,
+                  "titre": "Naissance d'Utamaro",
+                  "description": "Utamaro (vers 1753-1806) est un maître de l'estampe ukiyo-e, célèbre pour ses portraits de femmes en buste (bijin-ga). Édité par Tsutaya Jūzaburō, il peint les belles du quartier de Yoshiwara, saisies dans leurs gestes et leurs expressions, avec des séries comme Les Douze Heures du Yoshiwara. Emprisonné quelques semaines en 1804 pour un portrait de Hideyoshi jugé irrévérencieux, il influence Degas, Manet et Toulouse-Lautrec.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kitagawa_Utamaro",
+                  "classement": "Utamaro",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_utamaro.jpg",
+                    "legende": "Utamaro, portrait attribué à son contemporain Chōbunsai Eishi",
+                    "auteur": "attributed to Chōbunsai Eishi (1756 - 1829)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kitagawa_Utamaro_portrait_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_hokusai",
+                  "axe": "Beaux-arts",
+                  "date": 1760,
+                  "titre": "Naissance d'Hokusai",
+                  "description": "Hokusai (1760-1849) est un peintre et graveur d'Edo, le plus célèbre des artistes japonais. Il publie à soixante-dix ans les Trente-six vues du mont Fuji, parmi lesquelles La Grande Vague de Kanagawa, et il remplit quinze volumes de croquis, les Manga. Il change plus de trente fois de nom au cours de sa vie, et dit à la fin qu'il aurait voulu vivre plus longtemps pour devenir un vrai peintre.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Hokusai",
+                  "classement": "Hokusai",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_hokusai.jpg",
+                    "legende": "Hokusai, portrait au trait attribué à Hokusai lui-même",
+                    "auteur": "Katsushika Hokusai (1760–1849)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Hokusai_portrait.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_issa",
+                  "axe": "Littérature et pensée",
+                  "date": 1763,
+                  "titre": "Naissance de Kobayashi Issa",
+                  "description": "Kobayashi Issa (1763-1828) est un poète de haïku né dans une famille de paysans de la province de Shinano. Orphelin de mère à trois ans, brouillé avec sa belle-famille, puis frappé par la mort de ses enfants, il écrit des vers où il parle avec tendresse des mouches, des grenouilles et des moineaux. Le Printemps de ma vie, journal de 1819, est sa grande œuvre, et ses quelque vingt mille haïkus font de lui l'un des quatre maîtres du genre.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kobayashi_Issa",
+                  "classement": "Kobayashi Issa",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_issa.jpg",
+                    "legende": "Kobayashi Issa, portrait d'un rouleau d'époque d'Edo conservé dans un temple",
+                    "auteur": "Yoshi Canopus",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kobayashi_Issa-Portrait.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_hiroshige",
+                  "axe": "Beaux-arts",
+                  "date": 1797,
+                  "titre": "Naissance d'Hiroshige",
+                  "description": "Hiroshige (1797-1858) est un maître de l'estampe, fils d'un pompier d'Edo, qui fait du paysage un genre majeur. Son voyage sur la route du Tōkaidō lui inspire en 1833-1834 les Cinquante-trois Stations du Tōkaidō, un succès considérable, puis il réalise les Cent Vues célèbres d'Edo. Van Gogh copie deux de ses estampes en 1887.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Hiroshige",
+                  "classement": "Hiroshige",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_hiroshige.jpg",
+                    "legende": "Hiroshige, portrait commémoratif d'Utagawa Kunisada, publié après sa mort en 1858",
+                    "auteur": "Utagawa Kunisada (1786–1865)",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Memorial_Portrait_of_Hiroshige,_by_Kunisada.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_saigo",
+                  "axe": "Guerres et résistances",
+                  "date": 1828,
+                  "titre": "Naissance de Saigō Takamori",
+                  "description": "Saigō Takamori (1828-1877) est un samouraï du domaine de Satsuma, l'un des « trois grands nobles » de la Restauration de Meiji. Il conduit les troupes qui renversent le shogunat en 1868 et reçoit la reddition d'Edo sans combat, puis siège au gouvernement du nouveau régime. Opposé à la fin des privilèges des samouraïs, il prend la tête de la rébellion de Satsuma en 1877 et se donne la mort à Shiroyama, mais le Japon en a fait un héros.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Saig%C5%8D_Takamori",
+                  "classement": "Saigō Takamori",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_saigo.jpg",
+                    "legende": "Saigō Takamori, portrait d'Ishikawa Shizumasa : le seul qui soit tenu pour fidèle, car Saigō ne s'est jamais laissé photographier",
+                    "auteur": "English: Ishikawa Shizumasa (1848-1925) 日本語: 石川静正（嘉永元年－大正14年）",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Saigo_Takamori_Portrait_by_Ishikawa_Shizumasa.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_shoin",
+                  "axe": "Littérature et pensée",
+                  "date": 1830,
+                  "titre": "Naissance de Yoshida Shōin",
+                  "description": "Yoshida Shōin (1830-1859) est un penseur et maître d'école du domaine de Chōshū. Après avoir tenté de monter à bord de l'escadre de Perry en 1854 pour partir à l'étranger, il enseigne à l'école Shōka Sonjuku à une génération de futurs dirigeants, dont Itō Hirobumi. Exécuté en 1859 pour avoir projeté d'assassiner un émissaire du shogun, il est regardé comme un martyr de la Restauration de Meiji.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Yoshida_Sh%C5%8Din",
+                  "classement": "Yoshida Shōin",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_shoin.jpg",
+                    "legende": "Yoshida Shōin, portrait publié au XXe siècle d'après les images du temps",
+                    "auteur": "published by 東洋文化協會 (The Eastern Culture Association)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Shoin_Yoshida.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_kondo",
+                  "axe": "Guerres et résistances",
+                  "date": 1834,
+                  "titre": "Naissance de Kondō Isami",
+                  "description": "Kondō Isami (1834-1868) est le commandant du Shinsengumi, la police de samouraïs qui défend le shogunat à Kyoto dans les années 1860. Fils de paysan adopté par un maître d'armes, il fait de ses hommes la terreur des partisans de l'empereur, notamment lors de l'incident d'Ikedaya en 1864. Vaincu dans la guerre de Boshin, il est décapité en 1868, et le Shinsengumi demeure un sujet constant de romans, de films et de mangas.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kond%C5%8D_Isami",
+                  "classement": "Kondō Isami",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_kondo.jpg",
+                    "legende": "Kondō Isami, photographie des années 1860",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kondo_Isami02.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_fukuzawa",
+                  "axe": "Littérature et pensée",
+                  "date": 1835,
+                  "titre": "Naissance de Fukuzawa Yukichi",
+                  "description": "Fukuzawa Yukichi (1835-1901) est un penseur et éducateur de l'ère Meiji, grand introducteur de l'Occident au Japon. Il visite les États-Unis et l'Europe dans les années 1860, publie en 1866 Conditions de l'Occident, et fonde en 1858 l'école devenue l'université Keiō. Son appel à « quitter l'Asie pour entrer en Europe », en 1885, résume l'effort de modernisation, et son visage est celui des billets de 10 000 yens.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Fukuzawa_Yukichi",
+                  "classement": "Fukuzawa Yukichi",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_fukuzawa.jpg",
+                    "legende": "Fukuzawa Yukichi, photographie des années 1860",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:FukuzawaYukichi.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_iwasaki",
+                  "axe": "Économie et entreprise",
+                  "date": 1835,
+                  "titre": "Naissance d'Iwasaki Yatarō",
+                  "description": "Iwasaki Yatarō (1835-1885) est le fondateur du groupe Mitsubishi. Né dans une famille de samouraïs pauvres de Tosa, il dirige à Osaka les affaires commerciales du domaine, puis reprend sa flotte en 1870 et fonde la compagnie maritime Mitsubishi. Il profite de la guerre de Taiwan, en 1874, et de la rébellion de Satsuma, en 1877, pour transporter les troupes du gouvernement et devient le premier armateur du pays.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Iwasaki_Yatar%C5%8D",
+                  "classement": "Iwasaki Yatarō",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_iwasaki.jpg",
+                    "legende": "Iwasaki Yatarō, photographie de 1874",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Yataro_Iwasaki_Portrait_Closeup_1874.png"
+                  }
+                },
+                {
+                  "id": "pan_jp_ryoma",
+                  "axe": "Guerres et résistances",
+                  "date": 1836,
+                  "titre": "Naissance de Sakamoto Ryōma",
+                  "description": "Sakamoto Ryōma (1836-1867) est un samouraï du domaine de Tosa, acteur discret de la chute du shogunat. Il négocie en 1866 l'alliance secrète entre les domaines rivaux de Satsuma et de Chōshū, qui rend possible la défaite des Tokugawa. Assassiné à Kyoto en 1867, à trente et un ans, quelques mois avant la Restauration de Meiji, il est l'un des personnages préférés des Japonais.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sakamoto_Ry%C5%8Dma",
+                  "classement": "Sakamoto Ryōma",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_ryoma.jpg",
+                    "legende": "Sakamoto Ryōma, photographie des années 1860",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Sakamoto_Ryoma.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_shibusawa",
+                  "axe": "Économie et entreprise",
+                  "date": 1840,
+                  "titre": "Naissance de Shibusawa Eiichi",
+                  "description": "Shibusawa Eiichi (1840-1931) est considéré comme le père du capitalisme japonais. Fils de paysan devenu samouraï, il visite l'Exposition universelle de Paris en 1867, entre au ministère des Finances, puis fonde en 1873 la première banque du Japon, la Daiichi Kokuritsu Ginkō. Il crée ou soutient plus de cinq cents entreprises, dont Tokyo Gas, des brasseries et des compagnies de chemin de fer, et prône l'union de la morale et de l'économie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Shibusawa_Eiichi",
+                  "classement": "Shibusawa Eiichi",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_shibusawa.jpg",
+                    "legende": "Shibusawa Eiichi, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Eiichi_Shibusawa.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_ito",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1841,
+                  "titre": "Naissance d'Itō Hirobumi",
+                  "description": "Itō Hirobumi (1841-1909) est le premier Premier ministre du Japon, en 1885, et quatre fois chef du gouvernement. Parti étudier à Londres en 1863, puis envoyé étudier les constitutions en Europe, il rédige la constitution de 1889, inspirée de la Prusse. Résident général en Corée, il est assassiné par un nationaliste coréen, An Jung-geun, à Harbin en 1909.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/It%C5%8D_Hirobumi",
+                  "classement": "Itō Hirobumi",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_ito.jpg",
+                    "legende": "Itō Hirobumi, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:IT%C5%8C_Hirobumi.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_togo",
+                  "axe": "Guerres et résistances",
+                  "date": 1848,
+                  "titre": "Naissance de Tōgō Heihachirō",
+                  "description": "Tōgō Heihachirō (1848-1934) est un amiral japonais formé à la marine britannique, nommé le « Nelson de l'Orient ». Il commande la flotte combinée japonaise dans la guerre russo-japonaise et détruit la flotte russe de la Baltique à Tsushima, les 27 et 28 mai 1905. Cette victoire navale, la première d'une puissance asiatique sur une puissance européenne dans l'ère moderne, a un retentissement mondial.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/T%C5%8Dg%C5%8D_Heihachir%C5%8D",
+                  "classement": "Tōgō Heihachirō",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_togo.jpg",
+                    "legende": "Tōgō Heihachirō en uniforme d'amiral, photographie du début du XXe siècle",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Togo_Heihachiro_in_uniform.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_meiji",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1852,
+                  "titre": "Naissance de Mutsuhito",
+                  "description": "Mutsuhito (1852-1912) est l'empereur du Japon qui a régné sous le nom d'ère Meiji, « gouvernement éclairé ». Monté sur le trône en 1867, il voit en 1868 le shogunat renversé et le pouvoir « restauré » à son nom, puis fait promulguer en 1889 la constitution de l'Empire du Japon. Sous son règne, le Japon bat la Chine en 1895 et la Russie en 1905, et devient une puissance industrielle et militaire.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mutsuhito",
+                  "classement": "Mutsuhito",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_meiji.jpg",
+                    "legende": "L'empereur Meiji, photographie en uniforme de cour de 1873",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mutsuhito-Emperor-Meiji-1873.png"
+                  }
+                },
+                {
+                  "id": "pan_jp_kitasato",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1853,
+                  "titre": "Naissance de Kitasato Shibasaburō",
+                  "description": "Kitasato Shibasaburō (1853-1931) est un bactériologiste japonais, élève de Robert Koch à Berlin. Il y cultive en 1889 le bacille du tétanos et met au point avec Emil von Behring, en 1890, une sérothérapie contre le tétanos et la diphtérie. Il découvre en 1894, à Hong Kong, le bacille de la peste, indépendamment d'Alexandre Yersin, et fonde l'Institut des maladies infectieuses de Tokyo.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kitasato_Shibasabur%C5%8D",
+                  "classement": "Kitasato Shibasaburō",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_kitasato.jpg",
+                    "legende": "Kitasato Shibasaburō, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kitasato_Shibasaburo.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_takamine",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1854,
+                  "titre": "Naissance de Takamine Jōkichi",
+                  "description": "Takamine Jōkichi (1854-1922) est un chimiste japonais installé aux États-Unis. Il isole en 1901 l'adrénaline, la première hormone obtenue sous forme pure, à partir des glandes surrénales, et la commercialise avec la firme Parke-Davis. Il découvre aussi la takadiastase, une enzyme digestive tirée d'un champignon, et contribue à fonder le centre de recherche Riken.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/J%C5%8Dkichi_Takamine",
+                  "classement": "Takamine Jōkichi",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_takamine.jpg",
+                    "legende": "Takamine Jōkichi, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jokichi_Takamine.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_hara",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1856,
+                  "titre": "Naissance de Hara Takashi",
+                  "description": "Hara Takashi (1856-1921) est le premier chef de gouvernement japonais à siéger à la Chambre des représentants, un « roturier » dans un régime dominé par les clans. Premier ministre de 1918 à 1921, à la tête du parti Seiyūkai, il étend le droit de vote, développe les écoles et les chemins de fer. Il est assassiné à la gare de Tokyo par un jeune cheminot nationaliste.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Hara_Takashi",
+                  "classement": "Hara Takashi",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_hara.jpg",
+                    "legende": "Hara Takashi, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Takashi_Hara_posing.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_kano",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1860,
+                  "titre": "Naissance de Kanō Jigorō",
+                  "description": "Kanō Jigorō (1860-1938) est le fondateur du judo. Il crée en 1882 son école, le Kōdōkan, en recueillant dans plusieurs écoles de jujutsu les techniques de projection et de contrôle les plus sûres, et en y ajoutant une éthique d'éducation. Premier Asiatique membre du Comité international olympique, il œuvre pour que Tokyo obtienne les Jeux de 1940, et meurt en mer en 1938 au retour d'une session du CIO.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kan%C5%8D_Jigor%C5%8D",
+                  "classement": "Kanō Jigorō",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_kano.jpg",
+                    "legende": "Kanō Jigorō, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Portrait_of_late_Mr._Kano.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_ogai",
+                  "axe": "Littérature et pensée",
+                  "date": 1862,
+                  "titre": "Naissance de Mori Ōgai",
+                  "description": "Mori Ōgai (1862-1922) est un médecin militaire, qui s'est aussi imposé comme l'un des grands écrivains de l'ère Meiji. Envoyé étudier la médecine en Allemagne de 1884 à 1888, il en rapporte La Danseuse, son premier récit, et traduit Goethe, Lessing et Andersen. Il consacre ses dernières années à des romans historiques sur le suicide du général Nogi et l'éthique des samouraïs.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mori_%C5%8Cgai",
+                  "classement": "Mori Ōgai",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_ogai.jpg",
+                    "legende": "Mori Ōgai dans l'atelier du sculpteur Takeishi Kozaburō, photographie de 1916",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mori_Ogai_in_the_atelier_of_Sculptor_Takeishi_Kozaburo_in_1916.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_okakura",
+                  "axe": "Beaux-arts",
+                  "date": 1863,
+                  "titre": "Naissance d'Okakura Kakuzō",
+                  "description": "Okakura Kakuzō (1863-1913) est un historien de l'art et un penseur japonais, élève d'Ernest Fenollosa. Il contribue à fonder en 1887 l'École des beaux-arts de Tokyo et défend la peinture japonaise face à l'engouement pour l'Occident. Directeur du département d'art asiatique du musée de Boston, il écrit en anglais Le Livre du thé, en 1906, qui présente la culture du thé à un public occidental.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Okakura_Kakuz%C5%8D",
+                  "classement": "Okakura Kakuzō",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_okakura.jpg",
+                    "legende": "Okakura Kakuzō, photographie de 1905 environ",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Okakura_Kakuzo_Portrait_c1905.png"
+                  }
+                },
+                {
+                  "id": "pan_jp_ikeda",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1864,
+                  "titre": "Naissance d'Ikeda Kikunae",
+                  "description": "Ikeda Kikunae (1864-1936) est un chimiste de l'université de Tokyo, qui découvre le goût umami. Il isole en 1908 le glutamate à partir d'une algue, le kombu, et démontre qu'il est à l'origine d'une saveur qui n'est ni sucrée, ni salée, ni acide, ni amère. Il en tire un brevet, qui donne naissance à l'assaisonnement Ajinomoto, et l'umami est reconnu comme cinquième saveur à la fin du XXe siècle.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kikunae_Ikeda",
+                  "classement": "Ikeda Kikunae",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_ikeda.jpg",
+                    "legende": "Ikeda Kikunae, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kikunae_Ikeda.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_nagaoka",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1865,
+                  "titre": "Naissance de Nagaoka Hantarō",
+                  "description": "Nagaoka Hantarō (1865-1950) est un physicien japonais, qui propose en 1904 un modèle de l'atome en forme de Saturne. Un noyau central massif est entouré d'un anneau d'électrons, ce qui anticipe le modèle de Rutherford de 1911, que ce dernier a reconnu. Premier président de l'université d'Osaka, il a formé toute une génération de physiciens japonais.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Hantar%C5%8D_Nagaoka",
+                  "classement": "Nagaoka Hantarō",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_nagaoka.jpg",
+                    "legende": "Nagaoka Hantarō, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Hantaro_Nagaoka.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_soseki",
+                  "axe": "Littérature et pensée",
+                  "date": 1867,
+                  "titre": "Naissance de Natsume Sōseki",
+                  "description": "Natsume Sōseki (1867-1916) est le romancier qui domine la littérature japonaise de l'ère Meiji. Professeur d'anglais, envoyé à Londres de 1900 à 1902, il publie en 1905 Je suis un chat, puis Botchan, Kokoro, en 1914, et ses romans de l'individu face à la société moderne. Son visage figurait sur les billets de 1 000 yens de 1984 à 2004.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Natsume_S%C5%8Dseki",
+                  "classement": "Natsume Sōseki",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_soseki.jpg",
+                    "legende": "Natsume Sōseki, photographie d'Ogawa Kazumasa",
+                    "auteur": "Ogawa Kazumasa (1860–1929)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Natsume_Soseki_photo.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_toyoda",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1867,
+                  "titre": "Naissance de Toyoda Sakichi",
+                  "description": "Toyoda Sakichi (1867-1930) est un inventeur japonais, fils de charpentier, surnommé le « roi des inventeurs » du Japon. Il perfectionne le métier à tisser, puis crée en 1924 un métier automatique qui s'arrête de lui-même quand un fil casse, un principe repris plus tard sous le nom de jidoka. La vente de ses brevets à la firme britannique Platt Brothers, en 1929, finance les débuts de l'automobile Toyota.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sakichi_Toyoda",
+                  "classement": "Toyoda Sakichi",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_toyoda.jpg",
+                    "legende": "Toyoda Sakichi jeune, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Toyoda_Sakichi.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_funakoshi",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1868,
+                  "titre": "Naissance de Funakoshi Gichin",
+                  "description": "Funakoshi Gichin (1868-1957) est un maître d'arts martiaux d'Okinawa, fondateur du karaté moderne. Instituteur, il présente en 1922 l'art d'Okinawa au Japon, lors d'une démonstration organisée par Kanō Jigorō, et s'installe à Tokyo. Il y crée le style Shōtōkan, du nom de sa plume de poète, et fait du karaté un art enseigné dans les universités.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Gichin_Funakoshi",
+                  "classement": "Funakoshi Gichin",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_funakoshi.jpg",
+                    "legende": "Funakoshi Gichin exécutant le kata Heian Nidan, photographie",
+                    "auteur": "Gichin Funakoshi",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Gichin_Funakoshi_-_Heian_Nidan_(2).png"
+                  }
+                },
+                {
+                  "id": "pan_jp_nishida",
+                  "axe": "Littérature et pensée",
+                  "date": 1870,
+                  "titre": "Naissance de Nishida Kitarō",
+                  "description": "Nishida Kitarō (1870-1945) est le fondateur de l'école de Kyoto, le premier grand philosophe du Japon moderne. Il fait paraître en 1911 Une étude sur le bien, puis élabore une philosophie du « lieu du néant absolu », qui rapproche la pensée occidentale et l'expérience du zen. Professeur à l'université de Kyoto, il y forme Tanabe et Nishitani, et reste la référence de la philosophie japonaise.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Nishida_Kitar%C5%8D",
+                  "classement": "Nishida Kitarō",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_nishida.jpg",
+                    "legende": "Nishida Kitarō, portrait photographique",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Portrait-of-Kitaro-Nishida.png"
+                  }
+                },
+                {
+                  "id": "pan_jp_suzuki",
+                  "axe": "Littérature et pensée",
+                  "date": 1870,
+                  "titre": "Naissance de Suzuki Daisetsu",
+                  "description": "Suzuki Daisetsu (1870-1966) est le bouddhiste qui a fait connaître le zen au monde, sous le nom de Daisetz Suzuki en Occident. Installé plusieurs années aux États-Unis, il y traduit et y écrit en anglais, notamment les Essais sur le bouddhisme zen, dès 1927. Ses livres et ses conférences marquent Jung, Heidegger et les poètes de la Beat Generation, et la vague de curiosité pour le zen après 1945.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Daisetz_Teitaro_Suzuki",
+                  "classement": "Suzuki Daisetsu",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_suzuki.jpg",
+                    "legende": "Suzuki Daisetsu, photographie de Shigeru Tamura",
+                    "auteur": "Shigeru Tamura (1909–1987)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Daisetsu_Teitar%C5%8D_Suzuki_photographed_by_Shigeru_Tamura.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_ichiyo",
+                  "axe": "Littérature et pensée",
+                  "date": 1872,
+                  "titre": "Naissance de Higuchi Ichiyō",
+                  "description": "Higuchi Ichiyō (1872-1896) est la première grande romancière japonaise de l'ère moderne. Après la mort de son père, qui laisse la famille ruinée, elle tient avec sa mère et sa sœur une petite boutique, dans le quartier des plaisirs de Yoshiwara, d'où elle tire ses sujets. Ses nouvelles Takekurabe et Nigorie, publiées en 1895-1896, la rendent célèbre avant sa mort de tuberculose à vingt-quatre ans, et son portrait orne les billets de 5 000 yens depuis 2004.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ichiy%C5%8D_Higuchi",
+                  "classement": "Higuchi Ichiyō",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_ichiyo.jpg",
+                    "legende": "Higuchi Ichiyō, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Higuchi_Ichiyou.png"
+                  }
+                },
+                {
+                  "id": "pan_jp_akiko",
+                  "axe": "Littérature et pensée",
+                  "date": 1878,
+                  "titre": "Naissance de Yosano Akiko",
+                  "description": "Yosano Akiko (1878-1942) est une poétesse de l'ère Meiji, qui renouvelle le tanka. Son recueil Cheveux emmêlés, publié en 1901, célèbre l'amour et le corps d'une femme avec une liberté qui scandalise. Mère de treize enfants, elle traduit aussi le Dit du Genji en japonais moderne, soutient l'éducation des femmes et prend position contre la guerre russo-japonaise dans un poème célèbre.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Akiko_Yosano",
+                  "classement": "Yosano Akiko",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_akiko.jpg",
+                    "legende": "Yosano Akiko, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:YOSANO_Akiko_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_yoshida",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1878,
+                  "titre": "Naissance de Yoshida Shigeru",
+                  "description": "Yoshida Shigeru (1878-1967) est un diplomate devenu Premier ministre, à cinq reprises entre 1946 et 1954. Il conduit le Japon de l'Occupation américaine au traité de San Francisco, signé en 1951, qui met fin à l'Occupation et lui rend sa souveraineté. La « doctrine Yoshida » fait de la reconstruction économique la priorité du pays, sous la protection militaire des États-Unis.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Yoshida_Shigeru",
+                  "classement": "Yoshida Shigeru",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_yoshida.jpg",
+                    "legende": "Yoshida Shigeru, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Shigeru_Yoshida_suit.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_ueshiba",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1883,
+                  "titre": "Naissance d'Ueshiba Morihei",
+                  "description": "Ueshiba Morihei (1883-1969) est le fondateur de l'aïkido, appelé « Ō-Sensei », le grand maître. Formé au jujutsu et au sabre, il passe par la ferveur religieuse de la secte Ōmoto et affirme que l'art martial doit conduire à la paix, non à la victoire. Il établit en 1942 à Tokyo l'Aikikai, qui rayonne dans le monde entier après la guerre.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Morihei_Ueshiba",
+                  "classement": "Ueshiba Morihei",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_ueshiba.jpg",
+                    "legende": "Ueshiba Morihei, photographie de 1939",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Morihei_Ueshiba_1939.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_yamamoto",
+                  "axe": "Guerres et résistances",
+                  "date": 1884,
+                  "titre": "Naissance de Yamamoto Isoroku",
+                  "description": "Yamamoto Isoroku (1884-1943) est l'amiral qui commande la flotte combinée japonaise au début de la guerre du Pacifique. Il conçoit l'attaque de Pearl Harbor du 7 décembre 1941, alors qu'il avait déconseillé la guerre contre les États-Unis, dont il connaissait la puissance industrielle. Vaincu à Midway en juin 1942, il est tué en avril 1943 lorsque des chasseurs américains abattent son avion au-dessus des Salomon.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Yamamoto_Isoroku",
+                  "classement": "Yamamoto Isoroku",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_yamamoto.jpg",
+                    "legende": "Yamamoto Isoroku, photographie en couleurs d'une revue illustrée japonaise de l'époque",
+                    "auteur": "The Advance in Nippon 画報 躍進之日本 (Gaho Yakushin no Nihon)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Yamamoto-Isoroku.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_foujita",
+                  "axe": "Beaux-arts",
+                  "date": 1886,
+                  "titre": "Naissance de Foujita",
+                  "description": "Foujita (1886-1968) est un peintre, de son nom japonais Fujita Tsuguharu, installé à Paris à partir de 1913, figure de l'École de Paris. Ami de Modigliani et de Picasso, il peint des nus d'un blanc laiteux et des chats, et sa renommée est immense dans les années 1920. Il se convertit au catholicisme en 1959 sous le nom de Léonard, en référence à Léonard de Vinci, et meurt en Suisse.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/L%C3%A9onard_Foujita",
+                  "classement": "Foujita",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_foujita.jpg",
+                    "legende": "Foujita, portrait dessiné : l'artiste s'y montre avec sa célèbre frange et ses lunettes rondes",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:L%C3%A9onard_Foujita.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_tanizaki",
+                  "axe": "Littérature et pensée",
+                  "date": 1886,
+                  "titre": "Naissance de Tanizaki Jun'ichirō",
+                  "description": "Tanizaki Jun'ichirō (1886-1965) est un romancier japonais, auteur d'une œuvre où se mêlent érotisme, tradition et modernité. Il écrit Un amour insensé en 1924-1925, Les Sœurs Makioka pendant la guerre, puis La Clé en 1956. Son essai Éloge de l'ombre, publié en 1933, est un classique de l'esthétique japonaise.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jun%27ichir%C5%8D_Tanizaki",
+                  "classement": "Tanizaki Jun'ichirō",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_tanizaki.jpg",
+                    "legende": "Tanizaki Jun'ichirō, photographie de 1913",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Junichiro_Tanizaki_1913.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_akutagawa",
+                  "axe": "Littérature et pensée",
+                  "date": 1892,
+                  "titre": "Naissance d'Akutagawa Ryūnosuke",
+                  "description": "Akutagawa Ryūnosuke (1892-1927) est l'un des grands auteurs de nouvelles du Japon moderne. Il tire de récits anciens des histoires comme Rashōmon et Dans le bosquet, que Kurosawa adaptera dans son film Rashōmon en 1950. Miné par l'angoisse et la peur de la folie, il met fin à ses jours à trente-cinq ans, et un prix littéraire important porte son nom depuis 1935.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ry%C5%ABnosuke_Akutagawa",
+                  "classement": "Akutagawa Ryūnosuke",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_akutagawa.jpg",
+                    "legende": "Akutagawa Ryūnosuke, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Akutagawa_Ryunosuke_photo2.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_kenji",
+                  "axe": "Littérature et pensée",
+                  "date": 1896,
+                  "titre": "Naissance de Miyazawa Kenji",
+                  "description": "Miyazawa Kenji (1896-1933) est un poète et conteur de la préfecture d'Iwate, dans le nord du Japon. Agronome et professeur d'agriculture, il aide les paysans pauvres et écrit des contes comme Train de nuit dans la Voie lactée, où se mêlent bouddhisme, science et compassion. Presque inconnu de son vivant, mort à trente-sept ans, il est aujourd'hui l'un des auteurs les plus lus du pays.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kenji_Miyazawa",
+                  "classement": "Miyazawa Kenji",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_kenji.jpg",
+                    "legende": "Miyazawa Kenji, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Miyazawa_Kenji.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_mizoguchi",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1898,
+                  "titre": "Naissance de Mizoguchi Kenji",
+                  "description": "Mizoguchi Kenji (1898-1956) est un cinéaste japonais, grand maître du plan-séquence et du portrait de femme. Il tourne Les Contes de la lune vague après la pluie en 1953, qui lui vaut un Lion d'argent à Venise, puis L'Intendant Sansho en 1954. Mort à cinquante-huit ans d'une leucémie alors qu'il préparait un nouveau film, il est tenu en Europe pour l'un des plus grands cinéastes de l'histoire.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kenji_Mizoguchi",
+                  "classement": "Mizoguchi Kenji",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_mizoguchi.jpg",
+                    "legende": "Mizoguchi Kenji, photographie des années 1950",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kenji_Mizoguchi_3.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_kawabata",
+                  "axe": "Littérature et pensée",
+                  "date": 1899,
+                  "titre": "Naissance de Kawabata Yasunari",
+                  "description": "Kawabata Yasunari (1899-1972) est un romancier japonais, orphelin dès l'enfance, grand maître d'une prose du silence et de l'allusion. Il est l'auteur de Pays de neige, publié de 1935 à 1948, du Maître de go et de Les Belles Endormies. Il reçoit en 1968 le prix Nobel de littérature, le premier attribué à un Japonais, et se donne la mort en 1972.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Yasunari_Kawabata",
+                  "classement": "Kawabata Yasunari",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_kawabata.jpg",
+                    "legende": "Kawabata Yasunari, photographie de 1938",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Yasunari_Kawabata_1938.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_hirohito",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1901,
+                  "titre": "Naissance de Hirohito",
+                  "description": "Hirohito (1901-1989) est l'empereur du Japon qui a régné sous le nom de Shōwa, de 1926 à sa mort, soit soixante-trois ans. Il règne pendant la guerre en Chine, puis la guerre du Pacifique, et son annonce de la capitulation à la radio le 15 août 1945 est la première fois que les Japonais entendent sa voix. Maintenu sur le trône par les Américains, il renonce en 1946 à son caractère divin et devient le symbole de l'État dans la constitution de 1947.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Hirohito",
+                  "classement": "Hirohito",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_hirohito.jpg",
+                    "legende": "Hirohito en grand uniforme, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Hirohito_in_dress_uniform_(cropped_2).jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_sato",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1901,
+                  "titre": "Naissance de Satō Eisaku",
+                  "description": "Satō Eisaku (1901-1975) est le Premier ministre japonais resté le plus longtemps en fonction, de 1964 à 1972. Il obtient des États-Unis la restitution d'Okinawa en 1972 et fait adopter les trois principes non nucléaires, qui interdisent au Japon de produire, de posséder et d'introduire des armes nucléaires. Il reçoit le prix Nobel de la paix en 1974, une décision que ses critiques jugent excessive.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Eisaku_Sat%C5%8D",
+                  "classement": "Satō Eisaku",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_sato.jpg",
+                    "legende": "Satō Eisaku, photographie officielle du 9 novembre 1964, le jour de son entrée en fonction",
+                    "auteur": "内閣官房内閣広報室",
+                    "licence": "CC BY 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Eisaku_Sato_19641109.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_ozu",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1903,
+                  "titre": "Naissance d'Ozu Yasujirō",
+                  "description": "Ozu Yasujirō (1903-1963) est un cinéaste japonais, qui filme avec la caméra basse, à hauteur de tatami. Ses films montrent des familles qui se défont, comme Printemps tardif, en 1949, ou Voyage à Tokyo, en 1953, souvent cité comme l'un des plus grands films jamais réalisés. Il meurt le jour de ses soixante ans, et sa tombe porte seulement le caractère « mu », le néant.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Yasujir%C5%8D_Ozu",
+                  "classement": "Ozu Yasujirō",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_ozu.jpg",
+                    "legende": "Ozu Yasujirō, photographie des années 1950",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Yasujiro_Ozu_01.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_hondasoichiro",
+                  "axe": "Économie et entreprise",
+                  "date": 1906,
+                  "titre": "Naissance d'Honda Sōichirō",
+                  "description": "Honda Sōichirō (1906-1991) est le fondateur de Honda Motor, un mécanicien autodidacte né dans une famille de forgerons. Il ouvre en 1948 la firme qui fabrique des motos, puis lance en 1958 la Super Cub, la moto la plus vendue de l'histoire, plus de cent millions d'exemplaires. Il se retire en 1973 de la direction, et la marque s'impose ensuite en Formule 1 dans les années 1980.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Soichiro_Honda",
+                  "classement": "Honda Sōichirō",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_hondasoichiro.jpg",
+                    "legende": "Honda Sōichirō, photographie de 1964",
+                    "auteur": "財界研究社、撮影者不明",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Honda_Souichiro_zaikai_1964.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_tomonaga",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1906,
+                  "titre": "Naissance de Tomonaga Shin'ichirō",
+                  "description": "Tomonaga Shin'ichirō (1906-1979) est un physicien japonais, qui poursuit ses travaux en pleine guerre, dans un Japon isolé. Il élabore en 1943 une théorie de l'électrodynamique quantique compatible avec la relativité, qui rend les calculs de la théorie finis. Il partage le prix Nobel de physique de 1965 avec Julian Schwinger et Richard Feynman.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Shin%27ichir%C5%8D_Tomonaga",
+                  "classement": "Tomonaga Shin'ichirō",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_tomonaga.jpg",
+                    "legende": "Tomonaga Shin'ichirō, photographie des archives de la Fondation Nobel",
+                    "auteur": "Nobel foundation",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Tomonaga.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_yukawa",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1907,
+                  "titre": "Naissance de Yukawa Hideki",
+                  "description": "Yukawa Hideki (1907-1981) est un physicien japonais, le premier de son pays à recevoir un prix Nobel. En 1935, il prédit l'existence du méson, une particule qui assure la cohésion du noyau atomique, découverte en 1947 dans les rayons cosmiques. Il reçoit en 1949 le prix Nobel de physique, et signe avec Einstein et Russell des appels pour le désarmement nucléaire.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Hideki_Yukawa",
+                  "classement": "Yukawa Hideki",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_yukawa.jpg",
+                    "legende": "Yukawa Hideki, photographie des archives de la Fondation Nobel",
+                    "auteur": "Nobel Foundation archive",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Yukawa.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_ibuka",
+                  "axe": "Économie et entreprise",
+                  "date": 1908,
+                  "titre": "Naissance d'Ibuka Masaru",
+                  "description": "Ibuka Masaru (1908-1997) est le cofondateur de Sony avec Akio Morita. Ingénieur, il fonde en 1946, dans un grand magasin de Tokyo en ruine, la Tokyo Tsūshin Kōgyō, qui devient Sony en 1958. Il demande à ses ingénieurs de mettre au point un lecteur stéréo portable pour écouter de la musique en avion, ce qui donne le Walkman.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Masaru_Ibuka",
+                  "classement": "Ibuka Masaru",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_ibuka.jpg",
+                    "legende": "Ibuka Masaru, photographie de 1964",
+                    "auteur": "財界研究社、撮影者不明",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ibuka_Masaru.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_dazai",
+                  "axe": "Littérature et pensée",
+                  "date": 1909,
+                  "titre": "Naissance de Dazai Osamu",
+                  "description": "Dazai Osamu (1909-1948) est un romancier de l'après-guerre, voix d'une génération désenchantée. Plusieurs fois sauvé de tentatives de suicide, il publie en 1947 Soleil couchant, puis en 1948 La Déchéance d'un homme, deux romans qui rencontrent un immense succès. Il se noie avec une compagne dans un canal de Tokyo en juin 1948, à trente-huit ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Osamu_Dazai",
+                  "classement": "Dazai Osamu",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_dazai.jpg",
+                    "legende": "Dazai Osamu, photographie de Shigeru Tamura",
+                    "auteur": "Shigeru Tamura (1909–1987)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Osamu_Dazai.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_ando",
+                  "axe": "Économie et entreprise",
+                  "date": 1910,
+                  "titre": "Naissance d'Andō Momofuku",
+                  "description": "Andō Momofuku (1910-2007) est l'inventeur des nouilles instantanées. Né à Taïwan, ruiné par la faillite d'une coopérative de crédit qu'il présidait, il met au point en 1958 à Osaka les nouilles précuites frites, le Chikin Ramen, après avoir vu la foule faire la queue devant des échoppes de ramen. En 1971, il lance le Cup Noodles, vendu dans un gobelet, qui conquiert le monde, et sa firme Nissin produit des milliards de portions par an.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Momofuku_And%C5%8D",
+                  "classement": "Andō Momofuku",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_ando.jpg",
+                    "legende": "Andō Momofuku, photographie de jeunesse",
+                    "auteur": "日本網",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%E5%AE%89%E8%97%A4%E7%99%BE%E7%A6%8F%E8%82%96%E5%83%8F.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_kurosawa",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1910,
+                  "titre": "Naissance de Kurosawa Akira",
+                  "description": "Kurosawa Akira (1910-1998) est un cinéaste japonais, le premier à faire connaître le cinéma de son pays à l'Occident. Son film Rashōmon reçoit le Lion d'or à Venise en 1951 et un Oscar, puis il tourne Les Sept Samouraïs en 1954, Le Château de l'araignée, en 1957, Ran, en 1985. Son travail influence les westerns, la science-fiction et le cinéma américain.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Akira_Kurosawa",
+                  "classement": "Kurosawa Akira",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_kurosawa.jpg",
+                    "legende": "Kurosawa Akira sur le tournage des Sept Samouraïs, photographie de 1953",
+                    "auteur": "映画の友 (Eiga no tomo)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Akirakurosawa-onthesetof7samurai-1953-page88.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_tange",
+                  "axe": "Beaux-arts",
+                  "date": 1913,
+                  "titre": "Naissance de Tange Kenzō",
+                  "description": "Tange Kenzō (1913-2005) est un architecte japonais, le plus important de l'après-guerre dans son pays. Il conçoit le Mémorial de la paix de Hiroshima, achevé en 1955, et les gymnases des Jeux olympiques de Tokyo de 1964, aux toits suspendus. Il reçoit en 1987 le prix Pritzker, le premier attribué à un Japonais, et dessine l'hôtel de ville de Tokyo, à Shinjuku, achevé en 1991.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kenz%C5%8D_Tange",
+                  "classement": "Tange Kenzō",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_tange.jpg",
+                    "legende": "Tange Kenzō, photographie de 1953 environ",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%E4%B8%B9%E4%B8%8B%E5%81%A5%E4%B8%89%E3%83%9D%E3%83%BC%E3%83%88%E3%83%AC%E3%83%BC%E3%83%88_ca.1953_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_harasetsuko",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1920,
+                  "titre": "Naissance de Hara Setsuko",
+                  "description": "Hara Setsuko (1920-2015) est une actrice japonaise, surnommée la « vierge éternelle » du cinéma. Elle tourne avec Ozu Printemps tardif, Été précoce et Voyage à Tokyo, qui la placent parmi les grandes actrices du cinéma japonais. Elle se retire du cinéma en 1963, à la mort d'Ozu, vit en recluse à Kamakura, et refuse jusqu'à la fin tout entretien.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Setsuko_Hara",
+                  "classement": "Hara Setsuko",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_harasetsuko.jpg",
+                    "legende": "Hara Setsuko dans Voyage à Tokyo, photographie de plateau de 1953",
+                    "auteur": "Shōchiku",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Setsuko_Hara_in_Tokyo_Story_(1953).jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_mifune",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1920,
+                  "titre": "Naissance de Mifune Toshirō",
+                  "description": "Mifune Toshirō (1920-1997) est le plus célèbre acteur japonais, né en Chine à Qingdao. Révélé par Kurosawa dans L'Ange ivre, en 1948, il joue dans seize de ses films, notamment Rashōmon, Les Sept Samouraïs, et Yojimbo, pour lequel il reçoit la Coupe Volpi à Venise en 1961. Son jeu de samouraï, vif et rugueux, fait de lui une figure du cinéma mondial.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Toshir%C5%8D_Mifune",
+                  "classement": "Mifune Toshirō",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_mifune.jpg",
+                    "legende": "Mifune Toshirō, photographie de 1954",
+                    "auteur": "映画世界社 (Eiga Sekai Publications, Inc.)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Toshiro_Mifune_1954_Scan10003_160913.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_morita",
+                  "axe": "Économie et entreprise",
+                  "date": 1921,
+                  "titre": "Naissance de Morita Akio",
+                  "description": "Morita Akio (1921-1999) est le cofondateur de Sony et son homme de marketing et de relations internationales. Avec Ibuka Masaru, il lance en 1955 la première radio à transistors du pays et en 1979 le Walkman, qui change la manière d'écouter la musique. Installé à New York en 1963 pour développer Sony America, il écrit Made in Japan, en 1986, et devient l'un des patrons les plus connus du monde.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Akio_Morita",
+                  "classement": "Morita Akio",
+                  "biographie": "bio_morita",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_morita.jpg",
+                    "legende": "Morita Akio, photographie de 1965",
+                    "auteur": "プレジデント社 撮影者不明",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Morita_Akio.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_mishima",
+                  "axe": "Littérature et pensée",
+                  "date": 1925,
+                  "titre": "Naissance de Mishima Yukio",
+                  "description": "Mishima Yukio (1925-1970) est un écrivain japonais de premier plan, auteur de Confession d'un masque, du Pavillon d'or et de la tétralogie La Mer de la fertilité. Il se passionne pour le culte de l'empereur et du corps, et crée en 1968 une milice privée, la Société du bouclier. Le 25 novembre 1970, après avoir tenté de soulever les soldats d'un camp militaire de Tokyo, il se donne la mort selon le rite du seppuku.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Yukio_Mishima",
+                  "classement": "Mishima Yukio",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_mishima.jpg",
+                    "legende": "Mishima Yukio, photographie de Ken Domon, 1955",
+                    "auteur": "Ken Domon (1909–1990)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Yukio_Mishima,_1955_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_tezuka",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1928,
+                  "titre": "Naissance de Tezuka Osamu",
+                  "description": "Tezuka Osamu (1928-1989) est un auteur de bande dessinée, médecin de formation, surnommé le « dieu du manga ». Il crée Astro Boy en 1952 et Le Roi Léo, puis Black Jack et Phénix, et le style aux grands yeux qui devient la marque du genre. Fondateur de Mushi Production, il produit en 1963 la première série télévisée d'animation japonaise, qui lance l'animé.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Osamu_Tezuka",
+                  "classement": "Tezuka Osamu",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_tezuka.jpg",
+                    "legende": "Tezuka Osamu, photographie de 1951",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Osamu_Tezuka_1951_Scan10008-2.JPG"
+                  }
+                },
+                {
+                  "id": "pan_jp_takemitsu",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1930,
+                  "titre": "Naissance de Takemitsu Tōru",
+                  "description": "Takemitsu Tōru (1930-1996) est un compositeur japonais autodidacte, le plus connu hors de son pays. Il marie les timbres des instruments traditionnels, biwa et shakuhachi, à l'orchestre occidental, comme dans November Steps, créé à New York en 1967. Il compose aussi la musique de plus de quatre-vingt-dix films, dont ceux de Kurosawa (Ran) et de Teshigahara (La Femme des sables).",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/T%C5%8Dru_Takemitsu",
+                  "classement": "Takemitsu Tōru",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_takemitsu.jpg",
+                    "legende": "Takemitsu Tōru, photographie de 1961",
+                    "auteur": "株式会社 新潮社 ( Shinchosha Publishing Co, Ltd.)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Toru_Takemitsu_Shinchosha_1961-7.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_oe",
+                  "axe": "Littérature et pensée",
+                  "date": 1935,
+                  "titre": "Naissance d'Ōe Kenzaburō",
+                  "description": "Ōe Kenzaburō (1935-2023) est un romancier japonais de l'après-guerre, né dans un village de l'île de Shikoku. Il publie en 1958 Gibier d'élevage, puis Une affaire personnelle, en 1964, après la naissance de son fils handicapé, et écrit sur Hiroshima. Il reçoit en 1994 le prix Nobel de littérature, qu'il accepte, tout en refusant l'ordre de la Culture que lui offrait l'empereur.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kenzabur%C5%8D_%C5%8Ce",
+                  "classement": "Ōe Kenzaburō",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_oe.jpg",
+                    "legende": "Ōe Kenzaburō au Salon du livre de Paris, photographie de 2012",
+                    "auteur": "Thesupermat",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Paris_-_Salon_du_livre_2012_-_Kenzabur%C5%8D_%C5%8Ce_-_003.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_misora",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1937,
+                  "titre": "Naissance de Misora Hibari",
+                  "description": "Misora Hibari (1937-1989) est la chanteuse la plus célèbre du Japon d'après-guerre, révélée dès l'enfance. Elle chante le enka avec une voix exceptionnelle, enregistre plus de mille chansons, dont Kawa no nagare no yō ni, en 1989, et joue dans plus de soixante films. À sa mort à cinquante-deux ans, des centaines de milliers de personnes s'assemblent à ses funérailles, et elle reçoit à titre posthume le prix d'honneur du peuple.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Hibari_Misora",
+                  "classement": "Misora Hibari",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_misora.jpg",
+                    "legende": "Misora Hibari, photographie de 1955",
+                    "auteur": "時事世界社 (Jiji Sekai-sha).",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Hibari_Misora_1955_Scan10013.jpg"
+                  }
+                },
+                {
+                  "id": "pan_jp_kyu",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1941,
+                  "titre": "Naissance de Sakamoto Kyū",
+                  "description": "Sakamoto Kyū (1941-1985) est un chanteur et acteur japonais, qui enregistre Ue o muite arukō (« Je marche en levant la tête ») en 1961. La chanson, rebaptisée Sukiyaki en Occident par un producteur britannique, atteint la première place du Billboard Hot 100 américain en 1963, un exploit encore unique pour un chanteur japonais. Il meurt à quarante-trois ans dans l'accident du vol 123 de Japan Airlines, le 12 août 1985.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ky%C5%AB_Sakamoto",
+                  "classement": "Sakamoto Kyū",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_kyu.jpg",
+                    "legende": "Sakamoto Kyū, photographie des années 1960",
+                    "auteur": "Kyu9",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kyu_sakamoto.png"
+                  }
+                },
+                {
+                  "id": "pan_jp_sakamoto",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1952,
+                  "titre": "Naissance de Sakamoto Ryūichi",
+                  "description": "Sakamoto Ryūichi (1952-2023) est un compositeur et pianiste japonais, qui s'est fait connaître en 1978 avec le groupe d'électro-pop Yellow Magic Orchestra. Il joue et compose pour Furyo, de Nagisa Ōshima, en 1983, puis écrit la musique du Dernier Empereur, de Bertolucci, qui lui vaut un Oscar en 1988. Atteint d'un cancer, il continue à composer et à publier jusqu'à sa mort, et son dernier album, 12, sort en janvier 2023.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ry%C5%ABichi_Sakamoto",
+                  "classement": "Sakamoto Ryūichi",
+                  "image": {
+                    "src": "assets/portraits/pan_jp_sakamoto.jpg",
+                    "legende": "Sakamoto Ryūichi, photographie de Joi Ito",
+                    "auteur": "Joi Ito",
+                    "licence": "CC BY 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:RyuichiSakamotoJI4_(cropped).jpg"
+                  }
+                }
+              ],
+              "axeOrder": [
+                "Chefs d'État et dirigeants",
+                "Guerres et résistances",
+                "Littérature et pensée",
+                "Beaux-arts",
+                "Musique, spectacle et sport",
+                "Sciences, techniques et innovation",
+                "Économie et entreprise"
+              ],
+              "essentiel": [
+                "pan_jp_kukai",
+                "pan_jp_shikibu",
+                "pan_jp_yoritomo",
+                "pan_jp_yoshitsune",
+                "pan_jp_dogen",
+                "pan_jp_rikyu",
+                "pan_jp_nobunaga",
+                "pan_jp_hideyoshi",
+                "pan_jp_ieyasu",
+                "pan_jp_musashi",
+                "pan_jp_basho",
+                "pan_jp_utamaro",
+                "pan_jp_hokusai",
+                "pan_jp_hiroshige",
+                "pan_jp_saigo",
+                "pan_jp_fukuzawa",
+                "pan_jp_shibusawa",
+                "pan_jp_togo",
+                "pan_jp_meiji",
+                "pan_jp_kitasato",
+                "pan_jp_kano",
+                "pan_jp_soseki",
+                "pan_jp_toyoda",
+                "pan_jp_yamamoto",
+                "pan_jp_foujita",
+                "pan_jp_akutagawa",
+                "pan_jp_kawabata",
+                "pan_jp_hirohito",
+                "pan_jp_ozu",
+                "pan_jp_hondasoichiro",
+                "pan_jp_yukawa",
+                "pan_jp_kurosawa",
+                "pan_jp_tange",
+                "pan_jp_morita",
+                "pan_jp_mishima",
+                "pan_jp_tezuka",
+                "pan_jp_misora"
               ]
             },
             {
