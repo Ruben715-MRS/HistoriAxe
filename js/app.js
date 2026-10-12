@@ -559,7 +559,7 @@ function deleteCustomTheme(themeId) {
         customCategory.themes = customCategory.themes.filter(t => t.id !== themeId);
         saveCustomThemesToStorage();
         initThemes();
-    });
+    }, { okLabel: t('nav.delete') });
 }
 
 function loadCustomEventsIntoBdd() {
@@ -728,7 +728,7 @@ function deleteCustomEvent(eventId) {
         }
 
         openSelectionMode();
-    });
+    }, { okLabel: t('nav.delete') });
 }
 
 function openSelectionMode() {
@@ -1125,7 +1125,7 @@ function resetRevisionTracking() {
         } else {
             initCategories();
         }
-    });
+    }, { okLabel: t('nav.reset') });
 }
 
 // VARIABLES GLOBALES
