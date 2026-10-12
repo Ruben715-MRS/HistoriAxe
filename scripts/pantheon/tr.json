@@ -1,0 +1,1071 @@
+{
+  "code": "tr",
+  "nom": "Turquie",
+  "theme": {
+    "id": "pan_tr",
+    "nom": "Grandes figures de Turquie",
+    "difficulte": "Intermédiaire",
+    "motsCles": [
+      "Turc",
+      "Turque",
+      "Turquie",
+      "Ottoman",
+      "Ottomane",
+      "Empire ottoman",
+      "Istanbul",
+      "Constantinople",
+      "Ankara",
+      "Anatolie",
+      "Seldjoukide",
+      "Sultan",
+      "Sultans",
+      "Tanzimat",
+      "Jeunes-Turcs",
+      "Moyen-Orient",
+      "Proche-Orient"
+    ]
+  },
+  "axes": [
+    "Chefs d'État et dirigeants",
+    "Guerres et résistances",
+    "Littérature et pensée",
+    "Beaux-arts",
+    "Musique, spectacle et sport",
+    "Sciences, techniques et innovation"
+  ],
+  "personnages": [
+    {
+      "slug": "alparslan",
+      "nom": "Alp Arslan",
+      "classement": "Alp Arslan",
+      "titre": "Naissance d'Alp Arslan",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1029,
+      "description": "Alp Arslan (vers 1029-1072) est le deuxième sultan seldjoukide, venu des steppes d'Asie centrale. Le 26 août 1071, à Manzikert, il écrase l'armée byzantine et capture l'empereur Romain IV Diogène, ce qui ouvre l'Anatolie aux tribus turkmènes. La Turquie date de cette victoire le début de sa présence en Anatolie, et il est assassiné l'année suivante lors d'une campagne en Asie centrale.",
+      "wikipedia": "Alp_Arslan",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Alp Arslan on throne Majma al-Tawarikh by Hafiz Abru (cropped).png",
+        "legende": "Alp Arslan, sur son trône, miniature d'un manuscrit persan du XVe siècle : une image imaginée, quatre siècles après sa mort",
+        "licence": "Domaine public",
+        "auteur": "Hafiz-i Abru"
+      }
+    },
+    {
+      "slug": "rumi",
+      "nom": "Rûmî",
+      "classement": "Rûmî",
+      "titre": "Naissance de Rûmî",
+      "axe": "Littérature et pensée",
+      "naissance": 1207,
+      "description": "Rûmî (1207-1273) est un poète mystique de langue persane, de son nom complet Djalâl ad-Dîn Rûmî, né à Balkh en Afghanistan actuel et mort à Konya. Chassé par les Mongols, il s'installe en Anatolie seldjoukide, où la rencontre de Shams de Tabriz bouleverse sa vie, et compose le « Masnavi » et le « Divan de Shams ». Ses disciples fondent l'ordre des derviches tourneurs, la Mevlevî, et son mausolée de Konya reste un lieu de pèlerinage, honoré en Turquie plus qu'ailleurs.",
+      "wikipedia": "Rûmî",
+      "essentiel": true,
+      "biographie": "bio_rumi",
+      "portrait": {
+        "fichier": "Rumi Vignette by User Chyah.jpg",
+        "legende": "Rûmî, miniature persane, XVIe siècle environ : une image imaginée, plus de trois siècles après sa mort",
+        "licence": "CC0 (domaine public)",
+        "auteur": "Chyah"
+      }
+    },
+    {
+      "slug": "yunusemre",
+      "nom": "Yunus Emre",
+      "classement": "Yunus Emre",
+      "titre": "Naissance de Yunus Emre",
+      "axe": "Littérature et pensée",
+      "naissance": 1238,
+      "description": "Yunus Emre (vers 1238-vers 1320) est un poète mystique de l'Anatolie turkmène, dont la vie n'est connue que par des légendes. Il écrit en turc, la langue du peuple, alors que les lettrés écrivent en persan et en arabe, et chante l'amour de Dieu et la fraternité des hommes sans distinction. Ses poèmes, transmis par le chant, font de lui le fondateur de la poésie turque, et l'UNESCO consacre l'année 1991 à sa mémoire.",
+      "wikipedia": "Yunus_Emre",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Statue of Yunus Emre, Eskişehir 05 (cropped).jpg",
+        "legende": "Yunus Emre, statue à Eskişehir, XXe siècle : l'image est imaginée, sept siècles après sa mort",
+        "licence": "CC BY-SA 4.0",
+        "auteur": "Zeynel Cebeci"
+      }
+    },
+    {
+      "slug": "osman",
+      "nom": "Osman Ier",
+      "classement": "Osman Ier",
+      "titre": "Naissance d'Osman Ier",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1258,
+      "description": "Osman Ier (vers 1258-1326) est le chef de guerre turkmène qui donne son nom à la dynastie ottomane. À la tête d'un petit émirat de frontière, à Söğüt, face à Byzance, il agrandit son territoire jusqu'aux portes de Bursa, que son fils Orhan prendra après sa mort. Les sources sont tardives et mêlées de légendes, mais la dynastie qu'il fonde régnera sur l'Anatolie, les Balkans et le monde arabe jusqu'en 1922.",
+      "wikipedia": "Osman_Ier",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Osman Gazi2.jpg",
+        "legende": "Osman Ier, portrait posthume d'un artiste ottoman : on ne connaît aucune image de son vivant",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
+      }
+    },
+    {
+      "slug": "bedreddin",
+      "nom": "Cheikh Bedreddin",
+      "classement": "Cheikh Bedreddin",
+      "titre": "Naissance de Cheikh Bedreddin",
+      "axe": "Guerres et résistances",
+      "naissance": 1359,
+      "description": "Cheikh Bedreddin (vers 1359-1416) est un juriste et mystique musulman, né à Simavne, à l'ouest d'Edirne. Après la défaite de Bayezid Ier devant Tamerlan, il prêche à Karaburun et à Deliorman la mise en commun des biens et l'égalité des fidèles de toutes religions. Son mouvement, soutenu par des paysans et des derviches, se révolte contre Mehmed Ier, et le cheikh est pendu à Serrès en 1416.",
+      "wikipedia": "Cheikh_Bedreddin",
+      "portrait": {
+        "fichier": "Sheikh Bedreddin Calligraphy.png",
+        "legende": "Cheikh Bedreddin, calligraphie ottomane : on ne connaît aucun portrait de lui",
+        "licence": "CC BY-SA 4.0",
+        "auteur": "باسم"
+      }
+    },
+    {
+      "slug": "mehmed2",
+      "nom": "Mehmed II",
+      "classement": "Mehmed II",
+      "titre": "Naissance de Mehmed II",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1432,
+      "description": "Mehmed II (1432-1481) est le septième sultan ottoman, dit Fatih, « le Conquérant ». Le 29 mai 1453, il prend Constantinople après un siège de cinquante-trois jours et met fin à l'Empire byzantin, ce qui fait de la ville sa capitale, Istanbul. Il s'entoure d'érudits grecs et italiens, fait bâtir le palais de Topkapı et commande à Gentile Bellini son portrait.",
+      "wikipedia": "Mehmed_II",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Bellini, Gentile - Sultan Mehmet II.jpg",
+        "legende": "Mehmed II, portrait par Gentile Bellini, peintre vénitien invité à sa cour en 1479-1480",
+        "licence": "Domaine public",
+        "auteur": "Gentile Bellini (1429–1507)"
+      }
+    },
+    {
+      "slug": "pirireis",
+      "nom": "Piri Reis",
+      "classement": "Piri Reis",
+      "titre": "Naissance de Piri Reis",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1470,
+      "description": "Piri Reis (vers 1470-1553) est un amiral et cartographe ottoman, né à Gallipoli, neveu du corsaire Kemal Reis. En 1513, il dresse une carte du monde, dont il subsiste un fragment qui représente l'Atlantique avec les côtes de l'Amérique, d'après des cartes de Christophe Colomb et d'autres sources. Il écrit aussi le « Kitab-ı Bahriye », un livre de navigation en Méditerranée, et il est exécuté au Caire en 1553 après avoir échoué à prendre Ormuz.",
+      "wikipedia": "Piri_Reis",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Pîrî Reis büstü.JPG",
+        "legende": "Piri Reis, buste de bronze à Istanbul, XXe siècle : image imaginée, aucun portrait d'époque n'est conservé",
+        "licence": "CC0 (domaine public)",
+        "auteur": "Cobija"
+      }
+    },
+    {
+      "slug": "selim1",
+      "nom": "Sélim Ier",
+      "classement": "Sélim Ier",
+      "titre": "Naissance de Sélim Ier",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1470,
+      "description": "Sélim Ier (1470-1520) est le neuvième sultan ottoman, surnommé Yavuz, « le Terrible ». Vainqueur des Séfévides en 1514 à Tchaldiran, puis des Mamelouks en 1516-1517, il conquiert la Syrie et l'Égypte et reçoit les villes saintes de La Mecque et de Médine. Son règne de huit ans double l'étendue de l'empire et place le sultan à la tête du monde sunnite.",
+      "wikipedia": "Sélim_Ier",
+      "portrait": {
+        "fichier": "Sultan Selim I enthroned, in Istanbul in 1514. Selīm-nāma, by Şūkrī-i Bitlisī, 1524 (National Library of Israel, Ms. Yah. Ar. 1116).jpg",
+        "legende": "Sélim Ier sur son trône, miniature du Selīm-nāma, chronique de son règne, 1524",
+        "licence": "Domaine public",
+        "auteur": "Shukri Bitlisi, 1524"
+      }
+    },
+    {
+      "slug": "barberousse",
+      "nom": "Khayr ad-Din Barberousse",
+      "classement": "Barberousse, Khayr ad-Din",
+      "titre": "Naissance de Khayr ad-Din Barberousse",
+      "axe": "Guerres et résistances",
+      "naissance": 1475,
+      "description": "Khayr ad-Din Barberousse (vers 1475-1546) est un corsaire né à Lesbos, devenu amiral de la flotte ottomane. Maître d'Alger qu'il place sous la protection du sultan, il bat la flotte de Charles Quint à Préveza en 1538, ce qui donne aux Ottomans la maîtrise de la Méditerranée pour trente ans. Il passe l'hiver 1543-1544 à Toulon, alors prêté à François Ier, et sa tombe se dresse à Beşiktaş, à Istanbul.",
+      "wikipedia": "Khayr_ad-Din_Barberousse",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Hayreddin Barbarossa 1530-60.jpg",
+        "legende": "Khayr ad-Din Barberousse, portrait du milieu du XVIe siècle"
+      }
+    },
+    {
+      "slug": "matrakci",
+      "nom": "Matrakçı Nasuh",
+      "classement": "Matrakçı Nasuh",
+      "titre": "Naissance de Matrakçı Nasuh",
+      "axe": "Beaux-arts",
+      "naissance": 1480,
+      "description": "Matrakçı Nasuh (vers 1480-1564) est un polymathe ottoman, né en Bosnie, à la fois mathématicien, historien, peintre et maître d'armes. Il accompagne Soliman en 1534-1536 dans la campagne d'Irak et peint les étapes du voyage dans le « Beyân-ı Menâzil », où chaque ville est dessinée avec ses bâtiments reconnaissables. Ces vues de Bagdad, de Tabriz ou d'Istanbul comptent parmi les premières cartes topographiques figurées de la peinture ottomane.",
+      "wikipedia": "Matrakçı_Nasuh",
+      "portrait": {
+        "fichier": "Soltaniyeh map by Matrakçı Nasuh, circa 1550.jpg",
+        "legende": "Soltaniyeh, miniature de Matrakçı Nasuh, vers 1537 : une œuvre de l'artiste, non son portrait, que l'on n'a pas conservé"
+      }
+    },
+    {
+      "slug": "turgutreis",
+      "nom": "Turgut Reis",
+      "classement": "Turgut Reis",
+      "titre": "Naissance de Turgut Reis",
+      "axe": "Guerres et résistances",
+      "naissance": 1485,
+      "description": "Turgut Reis (vers 1485-1565) est un corsaire né près de Bodrum, connu des Européens sous le nom de Dragut, qui devient amiral et gouverneur de Tripoli. Compagnon de Barberousse à Préveza, il bat la flotte chrétienne aux Gelves en 1560 et domine la Méditerranée centrale. Il est tué pendant le siège de Malte en 1565, où le grand maître La Valette lui résiste.",
+      "wikipedia": "Dragut",
+      "portrait": {
+        "fichier": "Istanbul Statue of Turgut Reis IMG 8583 2010 (cropped).jpg",
+        "legende": "Turgut Reis, statue à Istanbul : on n'a de lui aucun portrait certain de son vivant"
+      }
+    },
+    {
+      "slug": "sinan",
+      "nom": "Mimar Sinan",
+      "classement": "Sinan, Mimar",
+      "titre": "Naissance de Mimar Sinan",
+      "axe": "Beaux-arts",
+      "naissance": 1490,
+      "description": "Mimar Sinan (vers 1490-1588) est le plus grand architecte ottoman, né dans une famille chrétienne d'Anatolie et recruté enfant par la levée des garçons. Architecte en chef de l'empire de 1538 à sa mort, il dirige la construction de plus de trois cents édifices, dont la mosquée Süleymaniye à Istanbul, achevée en 1557, et la Selimiye d'Edirne, qu'il tenait pour son chef-d'œuvre. Mort à près de cent ans, il fixe pour des siècles le modèle de la mosquée à grande coupole.",
+      "wikipedia": "Sinan",
+      "essentiel": true,
+      "biographie": "bio_sinan",
+      "portrait": {
+        "fichier": "Mimar Sinan, architecte de Soliman le Magnifique.jpg",
+        "legende": "Mimar Sinan, portrait d'époque, XVIe siècle"
+      }
+    },
+    {
+      "slug": "soliman",
+      "nom": "Soliman le Magnifique",
+      "classement": "Soliman le Magnifique",
+      "titre": "Naissance de Soliman le Magnifique",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1494,
+      "description": "Soliman le Magnifique (1494-1566) est le dixième sultan ottoman, qui règne de 1520 à sa mort. Il prend Belgrade et Rhodes, écrase les Hongrois à Mohács en 1526 et assiège Vienne en 1529. Les Turcs l'appellent Kanuni, « le Législateur », pour la refonte des lois qu'il fait mener, et son règne est l'âge d'or de l'empire, des arts et de l'architecture de Sinan.",
+      "wikipedia": "Soliman_le_Magnifique",
+      "essentiel": true,
+      "biographie": "bio_soliman",
+      "portrait": {
+        "fichier": "Suleyman (enthroned, receiving Barbarossa in 1533). Süleymanname (1558).jpg",
+        "legende": "Soliman sur son trône, recevant Barberousse en 1533, miniature du Süleymanname, 1558"
+      }
+    },
+    {
+      "slug": "roxelane",
+      "nom": "Roxelane",
+      "classement": "Roxelane",
+      "titre": "Naissance de Roxelane",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1502,
+      "description": "Roxelane (vers 1502-1558) est l'épouse de Soliman le Magnifique, appelée aussi Hürrem Sultan, d'origine ruthène, sans doute née en Ukraine actuelle, enlevée par des Tatars de Crimée. Esclave du harem, elle obtient un mariage officiel avec le sultan, ce qu'aucune concubine n'avait connu, et elle compte parmi ses principaux conseillers. Elle finance des mosquées, des écoles et un hôpital à Istanbul et à Jérusalem, et sa rivalité avec le grand vizir Ibrahim Pacha marque le règne.",
+      "wikipedia": "Roxelane",
+      "portrait": {
+        "fichier": "Titian - Portrait of a Woman (La Sultana Rossa).jpg",
+        "legende": "« La Sultana Rossa », portrait peint par Titien vers 1515-1520 : on a longtemps cru y voir Roxelane, mais l'identification est incertaine"
+      }
+    },
+    {
+      "slug": "sokollu",
+      "nom": "Sokollu Mehmed Pacha",
+      "classement": "Sokollu Mehmed Pacha",
+      "titre": "Naissance de Sokollu Mehmed Pacha",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1506,
+      "description": "Sokollu Mehmed Pacha (vers 1506-1579) est un grand vizir ottoman d'origine serbe, né en Bosnie et recruté enfant par la levée des garçons chrétiens. Grand vizir de Soliman, puis de Sélim II et de Mourad III, il gouverne l'empire pendant quatorze ans et reconstruit la flotte après Lépante. Il fait rétablir le patriarcat orthodoxe de Peć, confié à son frère Makarije, et il est assassiné par un soldat en 1579.",
+      "wikipedia": "Sokollu_Mehmet_Pacha",
+      "portrait": {
+        "fichier": "Mehmed Sokolović (ca 1505-1579).png",
+        "legende": "Sokollu Mehmed Pacha, portrait d'époque, XVIe siècle"
+      }
+    },
+    {
+      "slug": "baki",
+      "nom": "Bâkî",
+      "classement": "Bâkî",
+      "titre": "Naissance de Bâkî",
+      "axe": "Littérature et pensée",
+      "naissance": 1526,
+      "description": "Bâkî (1526-1600) est un poète ottoman, de son nom Mahmud Abdülbâkî, né à Istanbul dans une famille modeste. Protégé de Soliman le Magnifique, qui le surnomme « le Sultan des poètes », il porte la poésie de cour de langue turque, le divan, à son sommet. Son élégie à la mort de Soliman, en 1566, et ses ghazels en font le poète classique le plus célébré, et on l'enseigne toujours dans les écoles.",
+      "wikipedia": "Bâkî",
+      "portrait": {
+        "fichier": "Mahmud Abdülbâkî.jpg",
+        "legende": "Bâkî, miniature ottomane, XVIe ou XVIIe siècle"
+      }
+    },
+    {
+      "slug": "kosem",
+      "nom": "Kösem Sultan",
+      "classement": "Kösem Sultan",
+      "titre": "Naissance de Kösem Sultan",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1589,
+      "description": "Kösem Sultan (vers 1589-1651) est l'épouse d'Ahmed Ier, puis la mère de deux sultans, Mourad IV et Ibrahim, qu'elle a vus monter sur le trône. Elle gouverne l'empire comme régente et valide sultane pendant plus de trente ans, avec une autorité que ses contemporains jugent sans précédent. Elle est étranglée en 1651 lors d'un coup de palais mené par la mère de son petit-fils Mehmed IV, et le « sultanat des femmes » s'achève avec elle.",
+      "wikipedia": "Kösem",
+      "portrait": {
+        "fichier": "Tomb of Mahpeyker Kösem Sultan.jpg",
+        "legende": "Le tombeau de Kösem Sultan à Istanbul : on n'a conservé de ses traits que des images tardives et incertaines"
+      }
+    },
+    {
+      "slug": "evliya",
+      "nom": "Evliya Çelebi",
+      "classement": "Evliya Çelebi",
+      "titre": "Naissance d'Evliya Çelebi",
+      "axe": "Littérature et pensée",
+      "naissance": 1611,
+      "description": "Evliya Çelebi (1611-vers 1685) est un voyageur ottoman, né à Istanbul dans une famille de la cour, qui a parcouru pendant quarante ans l'empire et ses voisins. Sa grande « Relation de voyage » en dix volumes décrit les villes, les coutumes, les langues et les légendes de l'Anatolie, des Balkans, du Caucase et de l'Égypte, avec un sens aigu de l'anecdote. Ses récits, parfois exagérés, restent une source de premier ordre pour la vie quotidienne dans l'empire.",
+      "wikipedia": "Evliya_Çelebi",
+      "portrait": {
+        "fichier": "Serafimovski - Evliya Çelebi.jpg",
+        "legende": "Evliya Çelebi, dessin de Serafimovski, XXe siècle : l'image est imaginée, aucun portrait d'époque n'existe"
+      }
+    },
+    {
+      "slug": "karamustafa",
+      "nom": "Kara Mustafa Pacha",
+      "classement": "Kara Mustafa Pacha",
+      "titre": "Naissance de Kara Mustafa Pacha",
+      "axe": "Guerres et résistances",
+      "naissance": 1634,
+      "description": "Kara Mustafa Pacha (vers 1634-1683) est un grand vizir ottoman, qui a gouverné l'empire pendant près de sept ans. À la tête d'une grande armée, il assiège Vienne en juillet 1683, mais l'armée de secours du roi de Pologne Jean III Sobieski le bat le 12 septembre au Kahlenberg. Mehmed IV le fait étrangler à Belgrade, et cette défaite ouvre aux Habsbourg la reconquête de la Hongrie.",
+      "wikipedia": "Kara_Mustafa",
+      "portrait": {
+        "fichier": "Kara Mustafa Pasha.jpg",
+        "legende": "Kara Mustafa Pacha, portrait gravé, XVIIe siècle"
+      }
+    },
+    {
+      "slug": "muteferrika",
+      "nom": "İbrahim Müteferrika",
+      "classement": "Müteferrika, İbrahim",
+      "titre": "Naissance d'İbrahim Müteferrika",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1674,
+      "description": "İbrahim Müteferrika (vers 1674-1745) est un imprimeur, diplomate et écrivain ottoman, né à Kolozsvár, en Transylvanie, converti à l'islam. Avec l'appui du sultan Ahmed III et du grand vizir, il ouvre à Istanbul en 1727 la première imprimerie en caractères arabes de l'empire, après avoir obtenu une fatwa favorable. Il y publie dix-sept ouvrages, dictionnaires, histoires et cartes, avant sa mort en 1745.",
+      "wikipedia": "İbrahim_Müteferrika",
+      "portrait": {
+        "fichier": "Grave of İbrahim Müteferrika1.jpg",
+        "legende": "Tombe d'İbrahim Müteferrika à Istanbul : aucun portrait de lui n'est conservé"
+      }
+    },
+    {
+      "slug": "nedim",
+      "nom": "Nedîm",
+      "classement": "Nedîm",
+      "titre": "Naissance de Nedîm",
+      "axe": "Littérature et pensée",
+      "naissance": 1681,
+      "description": "Nedîm (vers 1681-1730) est un poète ottoman, né à Istanbul, le grand poète de l'« ère des tulipes ». Sous le règne d'Ahmed III et le vizirat d'Ibrahim Pacha, il chante les plaisirs de la ville, les jardins du Bosphore, les fêtes et la beauté, dans une langue plus proche du turc parlé. Il meurt en 1730, lors de la révolte de Patrona Halil qui renverse le grand vizir, et on le tient pour le premier poète moderne de la littérature ottomane.",
+      "wikipedia": "Nedîm",
+      "portrait": {
+        "fichier": "Nedim (divan edb.şairi).JPG",
+        "legende": "Nedîm, portrait d'époque, XVIIIe siècle"
+      }
+    },
+    {
+      "slug": "dedeefendi",
+      "nom": "Dede Efendi",
+      "classement": "Dede Efendi",
+      "titre": "Naissance de Dede Efendi",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1778,
+      "description": "Dede Efendi (1778-1846) est un compositeur ottoman né à Istanbul, de son nom Hammâmizâde İsmâîl Dede. Formé dans le milieu des derviches mevlevis, il écrit des centaines de pièces de musique classique ottomane, dont des cérémonies mevlevies, des chants religieux et des compositions profanes. Ses œuvres sont encore jouées dans les concerts de musique classique turque, et sa tombe est un lieu de visite à Istanbul.",
+      "wikipedia": "Hammamizade_İsmail_Dede_Efendi",
+      "portrait": {
+        "fichier": "Hammâmizâde İsmâîl Dede Efendi .jpg",
+        "legende": "Hammâmizâde İsmâîl Dede Efendi, portrait ottoman du XIXe siècle"
+      }
+    },
+    {
+      "slug": "mahmud2",
+      "nom": "Mahmud II",
+      "classement": "Mahmud II",
+      "titre": "Naissance de Mahmud II",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1785,
+      "description": "Mahmud II (1785-1839) est le trentième sultan ottoman, qui règne de 1808 à sa mort. En 1826, il détruit dans le sang le corps des janissaires, qui bloquait toute réforme depuis deux siècles, et le remplace par une armée de type européen. Il crée des écoles, un journal officiel, un ministère de l'Intérieur et l'habit à l'européenne, et prépare ainsi les Tanzimat, malgré la perte de la Grèce et de l'Algérie.",
+      "wikipedia": "Mahmoud_II",
+      "portrait": {
+        "fichier": "Mahmud II.jpg",
+        "legende": "Mahmud II, portrait peint, vers 1830"
+      }
+    },
+    {
+      "slug": "midhat",
+      "nom": "Midhat Pacha",
+      "classement": "Midhat Pacha",
+      "titre": "Naissance de Midhat Pacha",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1822,
+      "description": "Midhat Pacha (1822-1884) est un haut fonctionnaire ottoman, gouverneur du Danube, de Bagdad puis de Syrie, grand vizir en 1872 et en 1876-1877. Principal auteur de la Constitution de 1876, la première de l'empire, il est exilé dès février 1877 par le sultan Abdülhamid II, qui la suspend. Jugé en 1881 pour la mort d'Abdülaziz, condamné puis banni à Taïf, il y est étranglé en 1884 et reste pour les Turcs le père de leur constitutionnalisme.",
+      "wikipedia": "Midhat_Pacha",
+      "portrait": {
+        "fichier": "Nadar - Portrait of Midhat Pasha.jpg",
+        "legende": "Midhat Pacha, photographie de Nadar, vers 1876"
+      }
+    },
+    {
+      "slug": "abdulmecid1",
+      "nom": "Abdülmecid Ier",
+      "classement": "Abdülmecid Ier",
+      "titre": "Naissance d'Abdülmecid Ier",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1823,
+      "description": "Abdülmecid Ier (1823-1861) est le trente-et-unième sultan ottoman, qui succède à son père Mahmud II en 1839. Il proclame les Tanzimat, « réorganisations », qui garantissent la vie, l'honneur et les biens de tous les sujets sans distinction de religion, et ouvrent la voie à un droit moderne. Il quitte Topkapı pour le palais de Dolmabahçe, et l'empire, ruiné par la guerre de Crimée, s'endette auprès des banques européennes.",
+      "wikipedia": "Abdülmecid_Ier",
+      "portrait": {
+        "fichier": "Sultan Abdülmecid - Google Art Project.jpg",
+        "legende": "Abdülmecid Ier, portrait peint, XIXe siècle"
+      }
+    },
+    {
+      "slug": "sinasi",
+      "nom": "Şinasi",
+      "classement": "Şinasi",
+      "titre": "Naissance de Şinasi",
+      "axe": "Littérature et pensée",
+      "naissance": 1826,
+      "description": "Şinasi (1826-1871) est un écrivain et journaliste ottoman, de son nom İbrahim Şinasi, formé à Paris, où il a découvert le théâtre et la littérature français. Il fonde en 1860 le premier journal privé en turc, « Tercüman-ı Ahval », puis « Tasvir-i Efkâr », et traduit La Fontaine et Racine. Sa pièce « Le Mariage d'un poète », écrite en 1859, est le premier texte de théâtre turc moderne, et on lui doit une langue plus simple et plus claire.",
+      "wikipedia": "İbrahim_Şinasi",
+      "portrait": {
+        "fichier": "Şinasi-1.2 V01-1.1 cropped and cleaned.jpg",
+        "legende": "İbrahim Şinasi, portrait gravé, XIXe siècle"
+      }
+    },
+    {
+      "slug": "namikkemal",
+      "nom": "Namık Kemal",
+      "classement": "Namık Kemal",
+      "titre": "Naissance de Namık Kemal",
+      "axe": "Littérature et pensée",
+      "naissance": 1840,
+      "description": "Namık Kemal (1840-1888) est un poète, dramaturge et journaliste ottoman, chef de file des Jeunes-Ottomans. Dans ses articles et sa pièce « Patrie ou Silistrie », jouée en 1873, il défend la patrie, la liberté et le gouvernement constitutionnel, ce qui lui vaut l'exil à Chypre sous Abdülhamid II. Il meurt à Chio en 1888, et les nationalistes turcs voient en lui le père de l'idée de patrie.",
+      "wikipedia": "Namık_Kemal",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Namık Kemal 1878-1.1R V01-1.2.jpg",
+        "legende": "Namık Kemal, photographie, vers 1878"
+      }
+    },
+    {
+      "slug": "abdulhamid2",
+      "nom": "Abdülhamid II",
+      "classement": "Abdülhamid II",
+      "titre": "Naissance d'Abdülhamid II",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1842,
+      "description": "Abdülhamid II (1842-1918) est le trente-quatrième sultan ottoman, qui règne de 1876 à 1909. Après avoir suspendu la Constitution en 1878, il gouverne trente ans en autocrate, appuyé sur la police et la censure, tout en modernisant l'empire : écoles, télégraphe, chemin de fer du Hedjaz. Les Jeunes-Turcs le contraignent à rétablir la Constitution en 1908 et le déposent en 1909, et les massacres d'Arméniens des années 1890 entachent son règne.",
+      "wikipedia": "Abdülhamid_II",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Portrait of Abdul Hamid II of the Ottoman Empire.jpg",
+        "legende": "Abdülhamid II, portrait, vers 1900"
+      }
+    },
+    {
+      "slug": "osmanhamdi",
+      "nom": "Osman Hamdi Bey",
+      "classement": "Osman Hamdi Bey",
+      "titre": "Naissance d'Osman Hamdi Bey",
+      "axe": "Beaux-arts",
+      "naissance": 1842,
+      "description": "Osman Hamdi Bey (1842-1910) est un peintre, archéologue et administrateur ottoman, formé à Paris auprès de Gérôme. Directeur du Musée impérial dès 1881, il fait voter la loi de 1884 qui interdit l'exportation des antiquités et fonde l'Académie des beaux-arts d'Istanbul en 1883. Il peint des scènes d'intérieur et de rue, dont « Le Dresseur de tortues » (1906), qui est devenu l'une des images les plus célèbres de la peinture turque.",
+      "wikipedia": "Osman_Hamdi_Bey",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Osman Hamdi Bey.jpg",
+        "legende": "Osman Hamdi Bey, photographie, vers 1900"
+      }
+    },
+    {
+      "slug": "nenehatun",
+      "nom": "Nene Hatun",
+      "classement": "Nene Hatun",
+      "titre": "Naissance de Nene Hatun",
+      "axe": "Guerres et résistances",
+      "naissance": 1857,
+      "description": "Nene Hatun (1857-1955) est une paysanne d'Erzurum devenue héroïne nationale. Pendant la guerre russo-turque de 1877-1878, lors du siège de la citadelle d'Aziziye, elle rejoint les défenseurs avec les femmes de la ville, une hache à la main. Son geste, rappelé dans les manuels scolaires, fait d'elle l'une des figures de la résistance populaire à la veille de la Turquie moderne.",
+      "wikipedia": "Nene_Hatun",
+      "portrait": {
+        "fichier": "Nene Hatun Heykeli (Erzurum Tabyalar).jpg",
+        "legende": "Nene Hatun, statue à Erzurum : aucune photographie sûre n'est conservée"
+      }
+    },
+    {
+      "slug": "fatmaaliye",
+      "nom": "Fatma Aliye",
+      "classement": "Fatma Aliye",
+      "titre": "Naissance de Fatma Aliye",
+      "axe": "Littérature et pensée",
+      "naissance": 1862,
+      "description": "Fatma Aliye (1862-1936) est la première romancière de la littérature turque, de son nom Fatma Aliye Topuz, fille de l'historien et juriste Ahmed Cevdet Pacha. Elle publie dès 1892 « Muhâdarât », puis plusieurs romans, d'abord sous un pseudonyme, avant d'oser signer de son nom. Elle écrit dans la presse féminine et défend l'éducation des femmes et leur droit de sortir de l'espace domestique.",
+      "wikipedia": "Fatma_Aliye_Topuz",
+      "portrait": {
+        "fichier": "Fatma Aliye Portrait (cropped).png",
+        "legende": "Fatma Aliye, portrait photographique, vers 1900"
+      }
+    },
+    {
+      "slug": "abdulmecid2",
+      "nom": "Abdülmecid II",
+      "classement": "Abdülmecid II",
+      "titre": "Naissance d'Abdülmecid II",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1868,
+      "description": "Abdülmecid II (1868-1944) est le dernier calife de l'islam sunnite, élu en 1922 par la Grande Assemblée nationale de Turquie après l'abolition du sultanat. Homme cultivé, qui peint, joue du piano et compose, il n'a ni pouvoir politique ni armée. Atatürk fait abolir le califat le 3 mars 1924, et il est expulsé la nuit même vers la Suisse, puis vit en exil à Nice, où il meurt en 1944.",
+      "wikipedia": "Abdülmecid_II",
+      "portrait": {
+        "fichier": "Abdulmecid efendi.jpg",
+        "legende": "Abdülmecid II, le dernier calife, photographie, vers 1920"
+      }
+    },
+    {
+      "slug": "mehmetakif",
+      "nom": "Mehmet Akif Ersoy",
+      "classement": "Ersoy, Mehmet Akif",
+      "titre": "Naissance de Mehmet Akif Ersoy",
+      "axe": "Littérature et pensée",
+      "naissance": 1873,
+      "description": "Mehmet Akif Ersoy (1873-1936) est un poète turc, né à Istanbul, auteur de l'hymne national, « İstiklâl Marşı ». Écrit en 1921, en pleine guerre d'indépendance, et adopté par l'Assemblée, il le dédie à l'armée et refuse la récompense officielle offerte. Déçu par la politique de laïcisation, il part vivre en Égypte en 1925, puis revient mourir à Istanbul en 1936.",
+      "wikipedia": "Mehmet_Akif_Ersoy",
+      "portrait": {
+        "fichier": "Mehmet akif.jpg",
+        "legende": "Mehmet Akif Ersoy, photographie"
+      }
+    },
+    {
+      "slug": "cakmak",
+      "nom": "Fevzi Çakmak",
+      "classement": "Çakmak, Fevzi",
+      "titre": "Naissance de Fevzi Çakmak",
+      "axe": "Guerres et résistances",
+      "naissance": 1876,
+      "description": "Fevzi Çakmak (1876-1950) est un maréchal turc, chef d'état-major de l'armée de 1921 à 1944. Il rejoint Atatürk à Ankara et, pendant la guerre d'indépendance, dirige l'état-major lors des victoires sur l'armée grecque, à Sakarya en 1921 puis à Dumlupınar en 1922. Maréchal dès 1921, il reste vingt-trois ans à son poste, et quitte l'armée en 1944.",
+      "wikipedia": "Fevzi_Çakmak",
+      "portrait": {
+        "fichier": "Mareşal Fevzi Çakmak.jpg",
+        "legende": "Fevzi Çakmak, portrait photographique en uniforme de maréchal"
+      }
+    },
+    {
+      "slug": "ziyagokalp",
+      "nom": "Ziya Gökalp",
+      "classement": "Gökalp, Ziya",
+      "titre": "Naissance de Ziya Gökalp",
+      "axe": "Littérature et pensée",
+      "naissance": 1876,
+      "description": "Ziya Gökalp (1876-1924) est un sociologue, poète et penseur turc, né à Diyarbakır. Formé à la sociologie de Durkheim, il fournit au mouvement jeune-turc une théorie du nationalisme turc, séparant la culture nationale de la civilisation de l'islam, et propose une Turquie laïque et moderne. Exilé à Malte par les Britanniques en 1919, il influence profondément Atatürk, et ses idées, dont le « turquisme », sont encore débattues.",
+      "wikipedia": "Ziya_Gökalp",
+      "portrait": {
+        "fichier": "Ziya Gykalp Malta 1920 1921.jpg",
+        "legende": "Ziya Gökalp, photographie prise à Malte, 1920-1921"
+      }
+    },
+    {
+      "slug": "saidnursi",
+      "nom": "Saïd Nursî",
+      "classement": "Nursî, Saïd",
+      "titre": "Naissance de Saïd Nursî",
+      "axe": "Littérature et pensée",
+      "naissance": 1877,
+      "description": "Saïd Nursî (1877-1960) est un théologien musulman kurde, né près de Bitlis, surnommé Bediüzzaman, « la merveille du temps ». Auteur du « Risale-i Nur », un commentaire du Coran écrit pour l'ère moderne, il défend une foi compatible avec la science et la non-violence. Exilé et emprisonné par la République, il est suivi par des millions de lecteurs, et son mouvement, les Nurcu, est l'un des plus importants de Turquie.",
+      "wikipedia": "Saïd_Nursî",
+      "portrait": {
+        "fichier": "Said Nursi passport photo 1918.jpg",
+        "legende": "Saïd Nursî, photographie de passeport, 1918"
+      }
+    },
+    {
+      "slug": "ataturk",
+      "nom": "Mustafa Kemal Atatürk",
+      "classement": "Atatürk, Mustafa Kemal",
+      "titre": "Naissance de Mustafa Kemal Atatürk",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1881,
+      "description": "Mustafa Kemal Atatürk (1881-1938) est le fondateur et le premier président de la République de Turquie. Héros de Gallipoli en 1915, il mène la guerre d'indépendance de 1919 à 1922 contre les armées d'occupation, puis proclame la République le 29 octobre 1923. Il abolit le califat, impose l'alphabet latin, l'école laïque, le code civil suisse et le droit de vote des femmes en 1934, et reçoit de l'Assemblée le nom d'Atatürk, « père des Turcs », en 1934.",
+      "wikipedia": "Mustafa_Kemal_Atatürk",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Ataturk1930s.jpg",
+        "legende": "Mustafa Kemal Atatürk, photographie des années 1930"
+      }
+    },
+    {
+      "slug": "enver",
+      "nom": "Enver Pacha",
+      "classement": "Enver Pacha",
+      "titre": "Naissance d'Enver Pacha",
+      "axe": "Guerres et résistances",
+      "naissance": 1881,
+      "description": "Enver Pacha (1881-1922) est un officier ottoman, l'un des chefs de la révolution des Jeunes-Turcs en 1908 et ministre de la Guerre à partir de 1914. Il entraîne l'empire dans la Première Guerre mondiale aux côtés de l'Allemagne et conduit en 1914-1915 l'offensive de Sarıkamış, désastre où périssent des dizaines de milliers de soldats. Membre du triumvirat qui gouverne le pays, il porte une part de responsabilité dans le génocide des Arméniens de 1915, et il meurt en Asie centrale en 1922 en combattant les bolcheviks.",
+      "wikipedia": "Enver_Pacha",
+      "portrait": {
+        "fichier": "Enver Pasha 1911.jpg",
+        "legende": "Enver Pacha, photographie, 1911"
+      }
+    },
+    {
+      "slug": "karabekir",
+      "nom": "Kâzım Karabekir",
+      "classement": "Karabekir, Kâzım",
+      "titre": "Naissance de Kâzım Karabekir",
+      "axe": "Guerres et résistances",
+      "naissance": 1882,
+      "description": "Kâzım Karabekir (1882-1948) est un général turc, commandant du front de l'Est de l'armée ottomane puis de l'armée de la Grande Assemblée. En 1920, il bat l'armée de la République d'Arménie et signe le traité de Gümrü, qui fixe la frontière orientale de la Turquie. Opposé à Atatürk, il fonde le Parti républicain progressiste en 1924, qui est interdit, et il est brièvement arrêté avant de revenir à la politique en 1939.",
+      "wikipedia": "Kâzım_Karabekir",
+      "portrait": {
+        "fichier": "Kiazim Karabekir Pasha with Djemaliye.jpg",
+        "legende": "Kâzım Karabekir, photographie en uniforme, vers 1920"
+      }
+    },
+    {
+      "slug": "bayar",
+      "nom": "Celâl Bayar",
+      "classement": "Bayar, Celâl",
+      "titre": "Naissance de Celâl Bayar",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1883,
+      "description": "Celâl Bayar (1883-1986) est un banquier et homme d'État turc, ministre de l'Économie d'Atatürk et Premier ministre en 1937-1939. Fondateur du Parti démocrate avec Adnan Menderes en 1946, il est élu président de la République en 1950 après la victoire de son parti, première alternance de l'histoire du pays. Condamné à mort après le coup d'État de 1960, puis gracié en raison de son âge, il meurt à cent trois ans.",
+      "wikipedia": "Celâl_Bayar",
+      "portrait": {
+        "fichier": "Mahmut Celâl Bayar.jpg",
+        "legende": "Celâl Bayar, portrait photographique"
+      }
+    },
+    {
+      "slug": "halideedib",
+      "nom": "Halide Edib Adıvar",
+      "classement": "Adıvar, Halide Edib",
+      "titre": "Naissance de Halide Edib Adıvar",
+      "axe": "Littérature et pensée",
+      "naissance": 1884,
+      "description": "Halide Edib Adıvar (1884-1964) est une romancière, féministe et femme politique turque, née à Istanbul. Pendant la guerre d'indépendance, elle rejoint l'armée d'Atatürk comme caporal puis sergent et mobilise l'opinion, après avoir harangué la foule contre l'occupation d'Izmir en 1919. Exilée de 1925 à 1939 après avoir critiqué le régime, elle écrit « La Fille de Smyrne » et revient enseigner la littérature anglaise à l'université d'Istanbul.",
+      "wikipedia": "Halide_Edib_Adıvar",
+      "portrait": {
+        "fichier": "Halide adivar.jpg",
+        "legende": "Halide Edib Adıvar, photographie"
+      }
+    },
+    {
+      "slug": "inonu",
+      "nom": "İsmet İnönü",
+      "classement": "İnönü, İsmet",
+      "titre": "Naissance d'İsmet İnönü",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1884,
+      "description": "İsmet İnönü (1884-1973) est un général et homme d'État turc, compagnon d'armes d'Atatürk, dont il est le Premier ministre presque sans interruption de 1923 à 1937. Vainqueur des batailles d'İnönü en 1921, d'où il tire son nom de famille, il négocie le traité de Lausanne en 1923. Deuxième président de la République de 1938 à 1950, il tient la Turquie hors de la Seconde Guerre mondiale et accepte le multipartisme en 1946, puis la défaite de son parti en 1950.",
+      "wikipedia": "İsmet_İnönü",
+      "portrait": {
+        "fichier": "Ismet Inonu portrait.jpg",
+        "legende": "İsmet İnönü, portrait photographique"
+      }
+    },
+    {
+      "slug": "hulusibehcet",
+      "nom": "Hulusi Behçet",
+      "classement": "Behçet, Hulusi",
+      "titre": "Naissance de Hulusi Behçet",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1889,
+      "description": "Hulusi Behçet (1889-1948) est un dermatologue turc, né à Istanbul, formé à Istanbul. En 1937, il décrit pour la première fois chez trois malades une maladie qui associe des ulcères à la bouche et aux organes génitaux, et une inflammation de l'œil, la maladie de Behçet. Professeur à l'université d'Istanbul, il donne son nom à la maladie, surtout répandue sur l'ancienne route de la soie.",
+      "wikipedia": "Hulusi_Behçet",
+      "portrait": {
+        "fichier": "Hulusi Behçet-3.jpg",
+        "legende": "Hulusi Behçet, photographie"
+      }
+    },
+    {
+      "slug": "seyit",
+      "nom": "Seyit Onbaşı",
+      "classement": "Seyit Onbaşı",
+      "titre": "Naissance de Seyit Onbaşı",
+      "axe": "Guerres et résistances",
+      "naissance": 1889,
+      "description": "Seyit Onbaşı (1889-1939) est un caporal d'artillerie de l'armée ottomane, né à Havran, de son vrai nom Seyit Çabuk. Le 18 mars 1915, lors de la bataille des Détroits, il porte seul sur son dos des obus de plus de deux cents kilos jusqu'à son canon de Çanakkale et touche le cuirassé britannique Ocean. Le geste devient le symbole de l'effort du soldat turc, et sa statue se dresse à Çanakkale.",
+      "wikipedia": "Seyit_Çabuk",
+      "portrait": {
+        "fichier": "Seyid Onbashi.jpg",
+        "legende": "Seyit Onbaşı, photographie vers 1915"
+      }
+    },
+    {
+      "slug": "veysel",
+      "nom": "Âşık Veysel",
+      "classement": "Âşık Veysel",
+      "titre": "Naissance d'Âşık Veysel",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1894,
+      "description": "Âşık Veysel (1894-1973) est un barde anatolien, né à Sivrialan, près de Sivas, devenu aveugle à sept ans après la variole. Il joue du saz, le luth à long manche, et chante en turc simple la vie des paysans, l'amour, la mort et la nature, sur des textes qui se transmettent de bouche en bouche. Les instituts de village l'accueillent pour enseigner son art, l'État lui verse une pension, et sa chanson « Uzun ince bir yoldayım » fait partie de la mémoire de chaque Turc.",
+      "wikipedia": "Âşık_Veysel",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Asik Veysel.jpg",
+        "legende": "Âşık Veysel, photographie, avec son saz"
+      }
+    },
+    {
+      "slug": "menderes",
+      "nom": "Adnan Menderes",
+      "classement": "Menderes, Adnan",
+      "titre": "Naissance d'Adnan Menderes",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1899,
+      "description": "Adnan Menderes (1899-1961) est un homme politique turc, Premier ministre de 1950 à 1960. Il met fin à vingt-sept ans de parti unique par la victoire du Parti démocrate aux élections de 1950, rétablit l'appel à la prière en arabe, et fait entrer la Turquie dans l'OTAN en 1952. Renversé par le coup d'État militaire du 27 mai 1960, il est condamné à mort et pendu le 17 septembre 1961, et sa réhabilitation devient un thème durable de la politique turque.",
+      "wikipedia": "Adnan_Menderes",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Adnan Menderes VI. Yasama Dönemi.jpg",
+        "legende": "Adnan Menderes, portrait photographique, années 1950"
+      }
+    },
+    {
+      "slug": "fahrelnissa",
+      "nom": "Fahrelnissa Zeid",
+      "classement": "Zeid, Fahrelnissa",
+      "titre": "Naissance de Fahrelnissa Zeid",
+      "axe": "Beaux-arts",
+      "naissance": 1901,
+      "description": "Fahrelnissa Zeid (1901-1991) est une peintre turque, née à Büyükada, sœur de l'écrivain Cevat Şakir Kabaağaçlı. Épouse d'un prince irakien, elle vit à Paris, à Londres et à Amman, et elle peint de grandes toiles abstraites, au graphisme éclatant, qui l'ont fait connaître comme figure de l'École de Paris. Elle expose à Londres, à Paris et à New York, et la Tate Modern lui consacre une rétrospective en 2017.",
+      "wikipedia": "Fahrelnissa_Zeid",
+      "portrait": {
+        "fichier": "Prince Zeid Al-Hussein family 1938.jpg",
+        "legende": "Fahrelnissa Zeid avec sa famille, photographie, 1938"
+      }
+    },
+    {
+      "slug": "tanpinar",
+      "nom": "Ahmet Hamdi Tanpınar",
+      "classement": "Tanpınar, Ahmet Hamdi",
+      "titre": "Naissance d'Ahmet Hamdi Tanpınar",
+      "axe": "Littérature et pensée",
+      "naissance": 1901,
+      "description": "Ahmet Hamdi Tanpınar (1901-1962) est un romancier, poète et essayiste turc, né à Istanbul. Dans « L'Institut de remise à l'heure », publié en 1962, il tourne en dérision la modernisation autoritaire de la Turquie et le goût des réformes administratives qui n'atteignent pas les esprits. Professeur de littérature à l'université d'Istanbul, il est devenu, après sa mort, un auteur-clef de la Turquie contemporaine.",
+      "wikipedia": "Ahmet_Hamdi_Tanpınar",
+      "portrait": {
+        "fichier": "Ahmet hamdi tanpinar.jpg",
+        "legende": "Ahmet Hamdi Tanpınar, photographie"
+      }
+    },
+    {
+      "slug": "nazimhikmet",
+      "nom": "Nâzım Hikmet",
+      "classement": "Hikmet, Nâzım",
+      "titre": "Naissance de Nâzım Hikmet",
+      "axe": "Littérature et pensée",
+      "naissance": 1902,
+      "description": "Nâzım Hikmet (1902-1963) est un poète et dramaturge turc, né à Salonique, qui renouvelle la poésie turque par le vers libre. Communiste, il passe plus de douze ans en prison entre 1938 et 1950, et sa libération est exigée par Picasso, Sartre et Neruda. Déchu de sa nationalité en 1951, il meurt en exil à Moscou en 1963, et la Turquie lui a rendu sa nationalité en 2009.",
+      "wikipedia": "Nâzım_Hikmet",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Nazim Hikmet.jpg",
+        "legende": "Nâzım Hikmet, photographie, vers 1950"
+      }
+    },
+    {
+      "slug": "fikretmoualla",
+      "nom": "Fikret Moualla",
+      "classement": "Moualla, Fikret",
+      "titre": "Naissance de Fikret Moualla",
+      "axe": "Beaux-arts",
+      "naissance": 1903,
+      "description": "Fikret Moualla (1903-1967) est un peintre turc, né à Istanbul, qui séjourne à Paris dès 1938 et y passe une grande partie de sa vie. Misérable et alcoolique, interné à plusieurs reprises, il peint à la gouache des scènes de café, de rue et de cabaret, aux couleurs vives et au trait nerveux. Longtemps ignoré, il est redécouvert après sa mort, et ses œuvres sont aujourd'hui recherchées en Turquie.",
+      "wikipedia": "Fikret_Moualla",
+      "portrait": {
+        "fichier": "Fikret mualla.jpg",
+        "legende": "Fikret Moualla, photographie"
+      }
+    },
+    {
+      "slug": "sabahattinali",
+      "nom": "Sabahattin Ali",
+      "classement": "Ali, Sabahattin",
+      "titre": "Naissance de Sabahattin Ali",
+      "axe": "Littérature et pensée",
+      "naissance": 1907,
+      "description": "Sabahattin Ali (1907-1948) est un écrivain turc, né dans l'Empire ottoman, à Eğridere, aujourd'hui en Bulgarie, auteur de nouvelles réalistes et du roman « Madonna au manteau de fourrure » (1943). Instituteur et traducteur, il est poursuivi à plusieurs reprises pour ses idées de gauche et ses articles, et emprisonné en 1932 et en 1944. Il est assassiné en 1948 près de la frontière bulgare, dans des conditions longtemps obscures, et son roman a été redécouvert dans les années 2010.",
+      "wikipedia": "Sabahattin_Ali",
+      "portrait": {
+        "fichier": "Sabahattin Ali, date and location unknown.jpg",
+        "legende": "Sabahattin Ali, photographie, date et lieu inconnus"
+      }
+    },
+    {
+      "slug": "cahitarf",
+      "nom": "Cahit Arf",
+      "classement": "Arf, Cahit",
+      "titre": "Naissance de Cahit Arf",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1910,
+      "description": "Cahit Arf (1910-1997) est un mathématicien turc, né à Selanik, dans l'Empire ottoman. Formé à Paris puis à Göttingen, il met en évidence en 1941 un invariant, l'« invariant d'Arf », qui porte son nom, et des anneaux de la théorie des nombres. Professeur à Istanbul puis à l'Université technique du Moyen-Orient d'Ankara, il forme les premiers mathématiciens du pays, et il figure sur le billet de dix lires turques.",
+      "wikipedia": "Cahit_Arf",
+      "portrait": {
+        "fichier": "Cahit Arf 10 lira.jpg",
+        "legende": "Cahit Arf, portrait sur un billet de dix lires turques"
+      }
+    },
+    {
+      "slug": "bedrirahmi",
+      "nom": "Bedri Rahmi Eyüboğlu",
+      "classement": "Eyüboğlu, Bedri Rahmi",
+      "titre": "Naissance de Bedri Rahmi Eyüboğlu",
+      "axe": "Beaux-arts",
+      "naissance": 1911,
+      "description": "Bedri Rahmi Eyüboğlu (1911-1975) est un peintre et poète turc, né à Görele, sur la mer Noire. Membre fondateur du Groupe D en 1933, il puise dans l'art populaire d'Anatolie, le tissage, la céramique et la broderie, pour inventer une peinture qui reste moderne, et réalise des mosaïques et des fresques monumentales. Professeur à l'Académie des beaux-arts d'Istanbul, il forme plusieurs générations d'artistes, et ses poèmes sont aussi appréciés que ses toiles.",
+      "wikipedia": "Bedri_Rahmi_Eyüboğlu",
+      "portrait": {
+        "fichier": "Бедри Рахми Еюбоглу.jpg",
+        "legende": "Bedri Rahmi Eyüboğlu, photographie"
+      }
+    },
+    {
+      "slug": "abidindino",
+      "nom": "Abidin Dino",
+      "classement": "Dino, Abidin",
+      "titre": "Naissance d'Abidin Dino",
+      "axe": "Beaux-arts",
+      "naissance": 1913,
+      "description": "Abidin Dino (1913-1993) est un peintre, dessinateur et cinéaste turc, né à Istanbul dans une famille cultivée. Proche des milieux de gauche, il s'installe à Paris en 1952, où il vit longtemps. Il illustre des livres de poètes, réalise des films, et ses dessins composent un témoignage vivant sur ses contemporains.",
+      "wikipedia": "Abidin_Dino",
+      "portrait": {
+        "fichier": "Abidin dino statue detail.jpg",
+        "legende": "Abidin Dino, détail de sa statue à Istanbul, XXe siècle"
+      }
+    },
+    {
+      "slug": "sabihagokcen",
+      "nom": "Sabiha Gökçen",
+      "classement": "Gökçen, Sabiha",
+      "titre": "Naissance de Sabiha Gökçen",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1913,
+      "description": "Sabiha Gökçen (1913-2001) est une aviatrice turque, née à Bursa, première pilote de chasse du monde. Fille adoptive d'Atatürk, formée à l'école d'aviation de l'armée à partir de 1935, elle accomplit de nombreux vols de démonstration, y compris à l'étranger, qui rendent célèbre son image. Elle devient inspectrice de l'aéronautique, et le second aéroport d'Istanbul porte son nom.",
+      "wikipedia": "Sabiha_Gökçen",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Sabiha gokcen2.jpg",
+        "legende": "Sabiha Gökçen en tenue de pilote, photographie des années 1930"
+      }
+    },
+    {
+      "slug": "orhanveli",
+      "nom": "Orhan Veli",
+      "classement": "Veli, Orhan",
+      "titre": "Naissance d'Orhan Veli",
+      "axe": "Littérature et pensée",
+      "naissance": 1914,
+      "description": "Orhan Veli (1914-1950) est un poète turc, de son nom Orhan Veli Kanık, né à Istanbul, fondateur du mouvement Garip, « l'étrange ». Avec Oktay Rifat et Melih Cevdet Anday, il rompt avec la poésie classique, abandonne la rime et le mètre, et choisit pour sujets les gens ordinaires, les rues et les objets du quotidien. Il meurt à trente-six ans d'une chute dans un trou de chantier, et il reste l'un des poètes les plus lus du pays.",
+      "wikipedia": "Orhan_Veli",
+      "portrait": {
+        "fichier": "Orhan Veli KANIK.jpg",
+        "legende": "Orhan Veli Kanık, photographie"
+      }
+    },
+    {
+      "slug": "aziznesin",
+      "nom": "Aziz Nesin",
+      "classement": "Nesin, Aziz",
+      "titre": "Naissance d'Aziz Nesin",
+      "axe": "Littérature et pensée",
+      "naissance": 1915,
+      "description": "Aziz Nesin (1915-1995) est un humoriste et écrivain turc, né à Heybeliada, auteur de plus de cent livres, dont des nouvelles satiriques. Plusieurs fois emprisonné pour ses opinions, il fonde une fondation pour les enfants pauvres et lègue ses droits d'auteur à des orphelins. Il survit en 1993 à l'incendie de l'hôtel Madımak à Sivas, où trente-cinq personnes périssent, parce qu'il avait publié des extraits des « Versets sataniques ».",
+      "wikipedia": "Aziz_Nesin",
+      "portrait": {
+        "fichier": "Aziz Nesin.jpg",
+        "legende": "Aziz Nesin, photographie"
+      }
+    },
+    {
+      "slug": "yasarkemal",
+      "nom": "Yaşar Kemal",
+      "classement": "Kemal, Yaşar",
+      "titre": "Naissance de Yaşar Kemal",
+      "axe": "Littérature et pensée",
+      "naissance": 1923,
+      "description": "Yaşar Kemal (1923-2015) est un romancier turc d'origine kurde, né près d'Osmaniye, dans la plaine de Çukurova. Son roman « Mèmed le Mince » (1955) raconte la révolte d'un paysan contre un seigneur local, et lui apporte une gloire internationale, avec une traduction en plus de quarante langues. Plusieurs fois emprisonné, il reçoit de nombreux prix à l'étranger et reste l'un des grands noms de la littérature turque.",
+      "wikipedia": "Yaşar_Kemal",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Yılmaz Büyükerşen Wax Museum (Yaşar Kemal).jpg",
+        "legende": "Yaşar Kemal, statue de cire du musée Yılmaz Büyükerşen à Eskişehir : image imaginée du romancier"
+      }
+    },
+    {
+      "slug": "demirel",
+      "nom": "Süleyman Demirel",
+      "classement": "Demirel, Süleyman",
+      "titre": "Naissance de Süleyman Demirel",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1924,
+      "description": "Süleyman Demirel (1924-2015) est un ingénieur et homme d'État turc, sept fois Premier ministre entre 1965 et 1993, puis président de la République de 1993 à 2000. Chassé du pouvoir par l'armée en 1971 et en 1980, il revient chaque fois après quelques années, ce qui lui vaut le surnom de « Baba », le père. Il laisse le souvenir de grands barrages et d'un parti de centre-droit populaire dans les campagnes.",
+      "wikipedia": "Süleyman_Demirel",
+      "portrait": {
+        "fichier": "Suleyman Demirel 1998 (cropped).jpg",
+        "legende": "Süleyman Demirel, photographie, 1998"
+      }
+    },
+    {
+      "slug": "ecevit",
+      "nom": "Bülent Ecevit",
+      "classement": "Ecevit, Bülent",
+      "titre": "Naissance de Bülent Ecevit",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1925,
+      "description": "Bülent Ecevit (1925-2006) est un homme d'État turc, poète et journaliste, qui dirige le Parti républicain du peuple et devient quatre fois Premier ministre entre 1974 et 2002. En juillet 1974, il ordonne le débarquement de l'armée turque à Chypre, après le coup d'État grec à Nicosie. Écarté par le coup d'État de 1980 et emprisonné, il revient à la tête du gouvernement en 1999, et il laisse aussi des traductions de poèmes de Tagore.",
+      "wikipedia": "Bülent_Ecevit",
+      "portrait": {
+        "fichier": "Bülent Ecevit-Davos 2000 cropped.jpg",
+        "legende": "Bülent Ecevit, photographie, Davos, 2000"
+      }
+    },
+    {
+      "slug": "erbakan",
+      "nom": "Necmettin Erbakan",
+      "classement": "Erbakan, Necmettin",
+      "titre": "Naissance de Necmettin Erbakan",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1926,
+      "description": "Necmettin Erbakan (1926-2011) est un ingénieur et homme politique turc, fondateur du courant politique islamiste dans le pays, le Millî Görüş. Vice-Premier ministre en 1974, il devient en 1996 le premier chef de gouvernement islamiste de l'histoire de la République. L'armée le pousse à la démission en 1997 par le « coup d'État postmoderne », son parti est interdit, et ses anciens disciples, dont Recep Tayyip Erdoğan, forment ensuite l'AKP.",
+      "wikipedia": "Necmettin_Erbakan",
+      "portrait": {
+        "fichier": "Necmettin Erbakan.jpg",
+        "legende": "Necmettin Erbakan, photographie"
+      }
+    },
+    {
+      "slug": "ozal",
+      "nom": "Turgut Özal",
+      "classement": "Özal, Turgut",
+      "titre": "Naissance de Turgut Özal",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1927,
+      "description": "Turgut Özal (1927-1993) est un ingénieur et économiste devenu Premier ministre de 1983 à 1989, puis président de la République de 1989 à sa mort. Après le coup d'État de 1980, il ouvre l'économie turque, libère les prix et les échanges, privatise des entreprises d'État, ce qui fait entrer la Turquie dans le marché mondial. Il soutient la coalition contre l'Irak en 1991 et se montre ouvert à un règlement politique de la question kurde, et il meurt brusquement en 1993.",
+      "wikipedia": "Turgut_Özal",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Turgut Özal as Turkish Prime Minister.jpg",
+        "legende": "Turgut Özal, photographie, années 1980"
+      }
+    },
+    {
+      "slug": "araguler",
+      "nom": "Ara Güler",
+      "classement": "Güler, Ara",
+      "titre": "Naissance d'Ara Güler",
+      "axe": "Beaux-arts",
+      "naissance": 1928,
+      "description": "Ara Güler (1928-2018) est un photographe turc d'origine arménienne, né à Istanbul, surnommé « l'œil d'Istanbul ». Membre de l'agence Magnum à partir de 1961, il photographie la ville, ses pêcheurs, ses quartiers populaires et ses dockers, comme les grandes personnalités du siècle : Churchill, Picasso, Dalí, Le Corbusier. Ses images d'Istanbul, prises avant les grandes transformations de la ville, sont aujourd'hui un fonds de mémoire.",
+      "wikipedia": "Ara_Güler",
+      "portrait": {
+        "fichier": "Ara Güler B&W.jpg",
+        "legende": "Ara Güler, photographie en noir et blanc"
+      }
+    },
+    {
+      "slug": "zekimuren",
+      "nom": "Zeki Müren",
+      "classement": "Müren, Zeki",
+      "titre": "Naissance de Zeki Müren",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1931,
+      "description": "Zeki Müren (1931-1996) est un chanteur, compositeur et acteur turc, né à Bursa, surnommé « le soleil de l'art ». Ses disques de musique classique turque et ses chansons, ses films et ses concerts ont fait de lui l'une des plus grandes stars du pays, entre 1950 et 1990. Excentrique et provocant dans ses costumes de scène, qui défiaient les normes de genre, il garde jusqu'à sa mort à Bodrum un public très large.",
+      "wikipedia": "Zeki_Müren",
+      "portrait": {
+        "fichier": "Zeki Müren cropped.jpg",
+        "legende": "Zeki Müren, photographie"
+      }
+    },
+    {
+      "slug": "oguzatay",
+      "nom": "Oğuz Atay",
+      "classement": "Atay, Oğuz",
+      "titre": "Naissance d'Oğuz Atay",
+      "axe": "Littérature et pensée",
+      "naissance": 1934,
+      "description": "Oğuz Atay (1934-1977) est un écrivain turc, né à İnebolu, ingénieur de formation, auteur du roman « Les Désaccordés » (« Tutunamayanlar »), publié en 1971-1972. Ce roman monumental, qui raconte le désarroi d'un intellectuel face à la société turque, est d'abord mal reçu, puis considéré comme une œuvre majeure. Mort à quarante-trois ans, il a eu une influence profonde sur toute une génération d'écrivains.",
+      "wikipedia": "Oğuz_Atay",
+      "portrait": {
+        "fichier": "Oguzataybust.png",
+        "legende": "Oğuz Atay, buste, XXe siècle"
+      }
+    },
+    {
+      "slug": "oktaysinanoglu",
+      "nom": "Oktay Sinanoğlu",
+      "classement": "Sinanoğlu, Oktay",
+      "titre": "Naissance d'Oktay Sinanoğlu",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1935,
+      "description": "Oktay Sinanoğlu (1935-2015) est un chimiste et physicien turc, né à Bari, en Italie, où son père était en poste. Professeur à l'université Yale à partir de 1963, il établit une théorie de l'effet des solvants et des interactions entre molécules, qui porte son nom. Rentré en Turquie, il devient un commentateur écouté du débat public, et ses prises de position lui valent des critiques vives.",
+      "wikipedia": "Oktay_Sinanoğlu",
+      "portrait": {
+        "fichier": "Oktay Sinanoğlu grave2.jpg",
+        "legende": "Tombe d'Oktay Sinanoğlu à Istanbul, XXIe siècle : on n'a pas retenu de photographie libre de son vivant"
+      }
+    },
+    {
+      "slug": "yilmazguney",
+      "nom": "Yılmaz Güney",
+      "classement": "Güney, Yılmaz",
+      "titre": "Naissance de Yılmaz Güney",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1937,
+      "description": "Yılmaz Güney (1937-1984) est un acteur, écrivain et cinéaste turc d'origine kurde, né près d'Adana. Vedette populaire des films d'action des années 1960, il devient réalisateur engagé, et son film « Yol », dont il écrit le scénario depuis la prison, reçoit la Palme d'or à Cannes en 1982, ex æquo. Évadé en 1981, déchu de sa nationalité en 1983, il meurt à Paris en 1984, à quarante-sept ans.",
+      "wikipedia": "Yılmaz_Güney",
+      "portrait": {
+        "fichier": "Yılmaz Güney.jpg",
+        "legende": "Yılmaz Güney, photographie"
+      }
+    },
+    {
+      "slug": "barismanco",
+      "nom": "Barış Manço",
+      "classement": "Manço, Barış",
+      "titre": "Naissance de Barış Manço",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1943,
+      "description": "Barış Manço (1943-1999) est un chanteur, compositeur et animateur turc, né à Istanbul, pionnier du rock anatolien. Avec son groupe Moğollar, puis en solo, il mêle le rock, la pop et les instruments traditionnels, dans des chansons comme « Dönence » ou « Gülpembe ». Son émission « 7'den 77'ye », où il parlait aux enfants comme aux adultes, en a fait une figure familière, et sa mort brutale en 1999 est ressentie comme un deuil national.",
+      "wikipedia": "Barış_Manço",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Barış Manço cropped.JPG",
+        "legende": "Barış Manço, photographie"
+      }
+    },
+    {
+      "slug": "cemkaraca",
+      "nom": "Cem Karaca",
+      "classement": "Karaca, Cem",
+      "titre": "Naissance de Cem Karaca",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1945,
+      "description": "Cem Karaca (1945-2004) est un chanteur et compositeur turc, né à Istanbul, l'une des grandes voix du rock anatolien. Avec ses groupes, il fait entendre dans les années 1970 des textes engagés sur la justice sociale, à l'heure où la violence politique ensanglante le pays. Déchu de sa nationalité en 1983 après plusieurs années d'exil en Allemagne, il rentre en Turquie en 1987 et sa voix puissante est restée celle de toute une génération.",
+      "wikipedia": "Cem_Karaca",
+      "portrait": {
+        "fichier": "2021 09 15 Moda Cem Karaca Heykeli.jpg",
+        "legende": "Cem Karaca, statue à Moda (Istanbul), XXIe siècle : image imaginée du chanteur"
+      }
+    },
+    {
+      "slug": "ahmetkaya",
+      "nom": "Ahmet Kaya",
+      "classement": "Kaya, Ahmet",
+      "titre": "Naissance d'Ahmet Kaya",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1957,
+      "description": "Ahmet Kaya (1957-2000) est un chanteur et compositeur turc d'origine kurde, né à Malatya, qui a connu un immense succès dans les années 1990. Ses chansons de protestation mêlent l'arabesque, le folk et la poésie, et rassemblent de très larges publics. En 1999, après avoir déclaré qu'il chanterait en kurde, il est attaqué à coups de couverts lors d'une cérémonie, doit s'exiler en France, et meurt à Paris en 2000.",
+      "wikipedia": "Ahmet_Kaya",
+      "portrait": {
+        "fichier": "Ahmet Kaya.jpg",
+        "legende": "Ahmet Kaya, photographie"
+      }
+    },
+    {
+      "slug": "naimsuleymanoglu",
+      "nom": "Naim Süleymanoğlu",
+      "classement": "Süleymanoğlu, Naim",
+      "titre": "Naissance de Naim Süleymanoğlu",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1967,
+      "description": "Naim Süleymanoğlu (1967-2017) est un haltérophile turc, né à Ptichar, en Bulgarie, dans la minorité turque. Surnommé « le Hercule de poche » pour sa petite taille, il passe en 1986 à l'Ouest, lors d'une compétition en Australie, après que la Bulgarie a imposé aux Turcs de changer de nom. Il remporte trois titres olympiques en 1988, 1992 et 1996, et devient le premier haltérophile à soulever trois fois son poids.",
+      "wikipedia": "Naim_Süleymanoğlu",
+      "portrait": {
+        "fichier": "Naim Süleymanoğlu mezar.jpg",
+        "legende": "Tombe de Naim Süleymanoğlu à Istanbul, XXIe siècle : on n'a pas retenu de photographie libre de son vivant"
+      }
+    }
+  ]
+}
