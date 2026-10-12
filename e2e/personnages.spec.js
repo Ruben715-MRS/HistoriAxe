@@ -90,12 +90,12 @@ test('Personnages illustres : deux sous-catégories, chacune avec sa note et son
     await expect(page.locator('#theme-screen-title')).toHaveText('Panthéons');
     await expect(page.locator('#theme-screen-note-text')).toContainText('né dans les frontières actuelles');
     // Panthéons de pays et de blocs se rangent par leur nom de source — « Afrique de l'Ouest », « Allemagne, Autriche et Suisse »,
-    // « Amérique hispanique », « Chine », « Égypte », « Espagne », « États-Unis », « France », « Grèce », « Italie », « Machrek et péninsule Arabique », « Maghreb », « Royaume-Uni », « Scandinavie », « Sous-continent indien », « Turquie » — et non par
+    // « Amérique hispanique », « Chine », « Égypte », « Espagne », « États-Unis », « France », « Grèce », « Italie », « Japon », « Machrek et péninsule Arabique », « Maghreb », « Royaume-Uni », « Scandinavie », « Sous-continent indien », « Turquie » — et non par
     // « Grandes figures d'… » / « … de » / « … des » / « … du ».
     await expect(page.locator('#themes-container .data-card-title'))
         .toHaveText(["Grandes figures d'Afrique de l'Ouest", "Grandes figures d'Allemagne, d'Autriche et de Suisse", "Grandes figures d'Amérique hispanique",
             'Grandes figures de Chine', "Grandes figures d'Égypte", "Grandes figures d'Espagne", 'Grandes figures des États-Unis',
-            'Grandes figures de France', 'Grandes figures de Grèce', "Grandes figures d'Israël", "Grandes figures d'Italie",
+            'Grandes figures de France', 'Grandes figures de Grèce', "Grandes figures d'Israël", "Grandes figures d'Italie", 'Grandes figures du Japon',
             'Grandes figures du Machrek et de la péninsule Arabique', 'Grandes figures du Maghreb',
             'Grandes figures du Royaume-Uni', 'Grandes figures de Scandinavie', 'Grandes figures du sous-continent indien', 'Grandes figures de Turquie']);
 });
