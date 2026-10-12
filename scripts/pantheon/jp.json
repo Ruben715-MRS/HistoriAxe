@@ -35,17 +35,6 @@
   ],
   "personnages": [
     {
-      "slug": "shotoku",
-      "nom": "Shōtoku Taishi",
-      "classement": "Shōtoku Taishi",
-      "titre": "Naissance de Shōtoku Taishi",
-      "axe": "Chefs d'État et dirigeants",
-      "naissance": 574,
-      "description": "Shōtoku Taishi (574-622) est le prince régent de l'impératrice Suiko, considéré comme le fondateur de l'État japonais. Il fait adopter en 603 un système de rangs de cour, puis en 604 une « constitution en dix-sept articles » inspirée du confucianisme et du bouddhisme, et envoie des ambassades à la cour des Sui. Il fait construire le temple Hōryū-ji, près de Nara, et le Japon l'honore comme le grand protecteur du bouddhisme.",
-      "wikipedia": "Shōtoku_(prince_du_Japon)",
-      "essentiel": true
-    },
-    {
       "slug": "michinaga",
       "nom": "Fujiwara no Michinaga",
       "classement": "Fujiwara no Michinaga",
@@ -55,8 +44,8 @@
       "description": "Fujiwara no Michinaga (966-1028) est un aristocrate de la cour de Heian, régent de fait de l'empire à l'apogée du clan Fujiwara. Il marie quatre de ses filles à des empereurs ou à des princes héritiers et gouverne le Japon par l'intermédiaire de ses petits-fils, qu'il place sur le trône. Son journal, le Midō kampakuki, et le Dit du Genji de Murasaki Shikibu, qui a vécu sous son patronage, restituent la splendeur de cette cour.",
       "wikipedia": "Fujiwara_no_Michinaga",
       "portrait": {
-        "fichier": "Fujiwaranomichinaga.jpg",
-        "legende": "À écrire"
+        "fichier": "Fujiwara no Michinaga.jpg",
+        "legende": "Fujiwara no Michinaga, portrait ancien : une image tardive, faite longtemps après sa mort"
       }
     },
     {
@@ -194,9 +183,9 @@
         "auteur": "Kanō Tan'yū (1602–1674)",
         "recadrage": [
           0.2,
-          0.263,
+          0.32,
           0.7,
-          0.577
+          0.634
         ],
         "largeur": 960
       }
@@ -244,7 +233,8 @@
           0.805,
           0.616
         ],
-        "largeur": 960
+        "largeur": 960,
+        "auteur": "Auteur inconnu"
       }
     },
     {
@@ -406,7 +396,11 @@
       "axe": "Guerres et résistances",
       "naissance": 1567,
       "description": "Date Masamune (1567-1636) est un seigneur de guerre du nord-est du Japon, surnommé le « dragon borgne » après avoir perdu un œil à la variole. Il se soumet à Hideyoshi en 1590, puis combat pour Ieyasu à Sekigahara et fonde le domaine de Sendai. En 1613, il envoie en Europe, par le Mexique, l'ambassade de Hasekura Tsunenaga, la première mission japonaise à Rome.",
-      "wikipedia": "Date_Masamune"
+      "wikipedia": "Date_Masamune",
+      "portrait": {
+        "fichier": "Date Masamune.jpg",
+        "legende": "Date Masamune, portrait de Kanō Yasunobu : selon la tradition, il a demandé à être peint avec ses deux yeux"
+      }
     },
     {
       "slug": "musashi",
@@ -558,7 +552,8 @@
       "essentiel": true,
       "portrait": {
         "fichier": "Kukai2.jpg",
-        "legende": "À écrire"
+        "legende": "À écrire",
+        "licence": "Domaine public"
       }
     },
     {
@@ -573,7 +568,8 @@
       "portrait": {
         "fichier": "Sei Shonagon.jpg",
         "legende": "Sei Shōnagon, dessin au trait de l'époque d'Edo : une image imaginée, sept siècles après sa mort",
-        "licence": "Domaine public"
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
       }
     },
     {
@@ -649,16 +645,6 @@
       }
     },
     {
-      "slug": "zeami",
-      "nom": "Zeami",
-      "classement": "Zeami",
-      "titre": "Naissance de Zeami",
-      "axe": "Littérature et pensée",
-      "naissance": 1363,
-      "description": "Zeami (vers 1363-vers 1443) est un acteur et dramaturge, le grand théoricien du théâtre nō. Remarqué dès l'enfance par le shogun Ashikaga Yoshimitsu, il écrit des dizaines de pièces, comme Atsumori ou Izutsu, et des traités, dont le Fūshikaden, qui énoncent l'idéal de la « fleur » et du yūgen, la beauté profonde et discrète. Exilé sur l'île de Sado vers 1434 sous un autre shogun, il laisse un art conservé presque tel quel depuis le XVe siècle.",
-      "wikipedia": "Zeami"
-    },
-    {
       "slug": "basho",
       "nom": "Matsuo Bashō",
       "classement": "Matsuo Bashō",
@@ -667,7 +653,11 @@
       "naissance": 1644,
       "description": "Matsuo Bashō (1644-1694) est un poète japonais, le plus grand maître du haïku, dont il fait un art à part entière. Il mène une vie de voyageur et dépeint ses étapes dans La Sente étroite du Nord, son œuvre la plus célèbre, achevée en 1694. Son poème de la grenouille qui saute dans un vieil étang, écrit en 1686, est connu de tous les Japonais.",
       "wikipedia": "Matsuo_Bashō",
-      "essentiel": true
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Basho by Buson.jpg",
+        "legende": "Matsuo Bashō, portrait du poète Yosa Buson, qui l'admirait, au XVIIIe siècle : une image faite après sa mort"
+      }
     },
     {
       "slug": "saikaku",
@@ -790,7 +780,8 @@
       "portrait": {
         "fichier": "FukuzawaYukichi.jpg",
         "legende": "Fukuzawa Yukichi, photographie des années 1860",
-        "licence": "Domaine public"
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
       }
     },
     {
@@ -1006,16 +997,6 @@
       }
     },
     {
-      "slug": "sesshu",
-      "nom": "Sesshū",
-      "classement": "Sesshū",
-      "titre": "Naissance de Sesshū",
-      "axe": "Beaux-arts",
-      "naissance": 1420,
-      "description": "Sesshū (1420-1506) est un moine zen et peintre, le plus grand maître de la peinture à l'encre du Japon. Il se rend en Chine en 1467 avec une ambassade, y étudie les peintres des Ming et en revient convaincu que les maîtres du pays sont les paysages eux-mêmes. Ses rouleaux, dont le Long Rouleau de paysages, conservé à Yamaguchi, sont classés trésors nationaux.",
-      "wikipedia": "Sesshū_Tōyō"
-    },
-    {
       "slug": "rikyu",
       "nom": "Sen no Rikyū",
       "classement": "Sen no Rikyū",
@@ -1038,26 +1019,6 @@
         ],
         "largeur": 960
       }
-    },
-    {
-      "slug": "tohaku",
-      "nom": "Hasegawa Tōhaku",
-      "classement": "Hasegawa Tōhaku",
-      "titre": "Naissance de Hasegawa Tōhaku",
-      "axe": "Beaux-arts",
-      "naissance": 1539,
-      "description": "Hasegawa Tōhaku (1539-1610) est un peintre venu de la province de Noto, fondateur de l'école Hasegawa. Il rivalise avec l'école Kanō dans les palais de Hideyoshi, puis peint les célèbres Pins, un paravent à l'encre où la brume efface les arbres. Cette œuvre, conservée au musée national de Tokyo, est classée trésor national.",
-      "wikipedia": "Hasegawa_Tōhaku"
-    },
-    {
-      "slug": "korin",
-      "nom": "Ogata Kōrin",
-      "classement": "Ogata Kōrin",
-      "titre": "Naissance d'Ogata Kōrin",
-      "axe": "Beaux-arts",
-      "naissance": 1658,
-      "description": "Ogata Kōrin (1658-1716) est un peintre et laqueur de Kyoto, le grand nom de l'école Rinpa. Fils d'un riche marchand de soieries, ruiné par ses dépenses, il peint les Iris et le célèbre paravent des Dieux du vent et du tonnerre, d'après Sōtatsu. Son style, fait d'aplats d'or, de formes stylisées et de motifs de la nature, influencera les artistes européens du XIXe siècle.",
-      "wikipedia": "Ogata_Kōrin"
     },
     {
       "slug": "jakuchu",
@@ -1250,10 +1211,10 @@
         "licence": "Domaine public",
         "auteur": "Gichin Funakoshi",
         "recadrage": [
-          0.03,
-          0,
-          0.73,
-          0.532
+          0.0,
+          0.0,
+          0.8,
+          0.57
         ],
         "largeur": 960
       }
@@ -1323,17 +1284,6 @@
         "licence": "Domaine public",
         "auteur": "映画の友 (Eiga no tomo)"
       }
-    },
-    {
-      "slug": "honda",
-      "nom": "Honda Ishirō",
-      "classement": "Honda Ishirō",
-      "titre": "Naissance d'Honda Ishirō",
-      "axe": "Musique, spectacle et sport",
-      "naissance": 1911,
-      "description": "Honda Ishirō (1911-1993) est le réalisateur de Godzilla, sorti en 1954. Ancien soldat, prisonnier de guerre en Chine, il y mêle la peur de la bombe atomique, la mémoire de Hiroshima et celle de l'essai américain de Bikini, qui avait irradié un navire de pêche japonais. Il tourne ensuite une vingtaine d'autres films de monstres, dont Rodan et Mothra, et fait du kaijū eiga un genre japonais.",
-      "wikipedia": "Ishirō_Honda",
-      "essentiel": true
     },
     {
       "slug": "mifune",
@@ -1526,7 +1476,11 @@
       "axe": "Sciences, techniques et innovation",
       "naissance": 1745,
       "description": "Inō Tadataka (1745-1818) est un géomètre qui a dressé la première carte moderne du Japon. Riche commerçant devenu astronome à cinquante ans, il parcourt à pied, de 1800 à 1816, toutes les côtes de l'archipel et mesure la longueur d'un degré de méridien. Sa carte, achevée par ses élèves en 1821, est d'une précision étonnante et sert encore au XIXe siècle de référence.",
-      "wikipedia": "Inō_Tadataka"
+      "wikipedia": "Inō_Tadataka",
+      "portrait": {
+        "fichier": "Ino Tadataka.jpg",
+        "legende": "Inō Tadataka, portrait d'Aoki Katsujirō, peint après sa mort"
+      }
     },
     {
       "slug": "kitasato",
