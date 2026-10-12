@@ -2118,8 +2118,8 @@ Pas d'axe « Économie et entreprise » : Rupert Murdoch et Nicole Kidman, qui o
   qu'elle serait « la dernière Tasmanienne ».
 - **Les figures disputées sont écrites comme telles** : Deakin et l'« Australie blanche », Hughes et la conscription,
   Lindsay et ses provocations, Preston et l'appropriation de motifs aborigènes.
-- **Dates** : Pemulwuy (vers 1750), Bennelong (vers 1764), Truganini (vers 1812), Barak (vers 1824), Kngwarreye
-  (vers 1910) : les articles disent « vers ». Ned Kelly est écarté, sa naissance étant donnée en 1854 ou 1855.
+- **Dates** : Pemulwuy (vers 1750), Bennelong (vers 1764), Truganini (vers 1812), Barak (vers 1824) :
+  les articles disent « vers ». Ned Kelly est écarté, sa naissance étant donnée en 1854 ou 1855.
 - **Pas de vivants** : Cate Blanchett, Kylie Minogue, Paul Keating, Evonne Goolagong, Cathy Freeman et Rod Laver n'y sont pas.
 - **Les images** : Dunlop, Chang, Judith Wright et Adam Lindsay Gordon sont montrés par une sculpture, et la légende le
   dit ; les peintures (Phillip, Chauvel, Streeton, Flinders, McCubbin, Bunny) sont des portraits d'époque ou des
