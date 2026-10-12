@@ -3,7 +3,7 @@
   "lang": "fr",
   "name": "Français (Intégral)",
   "totalThemes": 808,
-  "totalEvents": 21166,
+  "totalEvents": 21170,
   "categories": [
     {
       "nom": "Culture générale",
@@ -104521,6 +104521,22 @@
                   }
                 },
                 {
+                  "id": "pan_il_hillel",
+                  "axe": "Littérature et pensée",
+                  "date": -50,
+                  "titre": "Naissance d'Hillel l'Ancien",
+                  "description": "Hillel l'Ancien (vers 50 av. J.-C.-8 ap. J.-C.) est un maître juif né à Babylone, installé à Jérusalem vers l'âge de quarante ans pour y étudier auprès de Shemaya et d'Avtalion. Chef de l'école qui porte son nom, il s'oppose sur la loi à son rival Shammaï et retient presque toujours la position la plus indulgente. On lui prête la formule « Ne fais pas à autrui ce que tu détestes qu'on te fasse », qu'il aurait donnée pour résumer toute la Torah.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Hillel_Hazaken",
+                  "classement": "l'Ancien, Hillel",
+                  "image": {
+                    "src": "assets/portraits/pan_il_hillel.jpg",
+                    "legende": "Hillel l'Ancien, vitrail d'Ephraim Moses Lilien, début du XXe siècle : une image imaginée, dix-neuf siècles après sa mort",
+                    "auteur": "Ephraim Moses Lilien",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Hillel_Farbiges_Glasfenster.jpg"
+                  }
+                },
+                {
                   "id": "pan_il_jesus",
                   "axe": "Littérature et pensée",
                   "date": -4,
@@ -104567,6 +104583,55 @@
                     "auteur": "Auteur inconnu",
                     "licence": "Domaine public",
                     "source": "https://commons.wikimedia.org/wiki/File:Akiva.png"
+                  }
+                },
+                {
+                  "id": "pan_il_jerome",
+                  "axe": "Littérature et pensée",
+                  "date": 347,
+                  "titre": "Naissance de Jérôme de Stridon",
+                  "description": "Jérôme de Stridon (vers 347-420) est un moine et lettré chrétien, né à Stridon, en Dalmatie, l'un des quatre grands Pères de l'Église latine. Établi à Bethléem à partir de 386, il y dirige un monastère et traduit la Bible du grec et de l'hébreu en latin, dans la version connue sous le nom de Vulgate. Il meurt à Bethléem en 420 et reste le saint patron des traducteurs.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/J%C3%A9r%C3%B4me_de_Stridon",
+                  "classement": "Stridon, Jérôme de",
+                  "image": {
+                    "src": "assets/portraits/pan_il_jerome.jpg",
+                    "legende": "Jérôme de Stridon, gravure ancienne de la Wellcome Collection : une image imaginée, plus de dix siècles après sa mort",
+                    "auteur": "Wellcome Collection",
+                    "licence": "CC BY 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Saint_Jerome_Wellcome_V0032318.jpg"
+                  }
+                },
+                {
+                  "id": "pan_il_godefroy",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1058,
+                  "titre": "Naissance de Godefroy de Bouillon",
+                  "description": "Godefroy de Bouillon (vers 1058-1100) est un chevalier franc, duc de Basse-Lotharingie et l'un des chefs de la première croisade. Il entre dans Jérusalem en juillet 1099 et, élu à la tête de la ville, refuse selon la plupart des chroniqueurs le titre de roi pour celui d'avoué du Saint-Sépulcre. Il meurt à Jérusalem en juillet 1100, et son frère Baudouin lui succède comme premier roi de Jérusalem.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Godefroy_de_Bouillon",
+                  "classement": "Bouillon, Godefroy de",
+                  "image": {
+                    "src": "assets/portraits/pan_il_godefroy.jpg",
+                    "legende": "Godefroy de Bouillon, peinture de Jan August Hendrik Leys, vers 1864-1869 : une image imaginée, près de huit siècles après sa mort",
+                    "auteur": "Jan August Hendrik Leys",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Godfrey_of_Bouillon.png"
+                  }
+                },
+                {
+                  "id": "pan_il_nahmanide",
+                  "axe": "Littérature et pensée",
+                  "date": 1194,
+                  "titre": "Naissance de Nahmanide",
+                  "description": "Nahmanide (1194-1270) est un rabbin, talmudiste, kabbaliste et médecin, né à Gérone, en Catalogne. En 1263, il défend le judaïsme lors de la dispute de Barcelone face au converti Pablo Christiani, puis doit quitter l'Espagne. Il s'installe en 1267 à Jérusalem, où il relève la communauté et fonde une synagogue, et meurt à Acre en 1270.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Nahmanide",
+                  "classement": "Nahmanide",
+                  "image": {
+                    "src": "assets/portraits/pan_il_nahmanide.jpg",
+                    "legende": "Nahmanide, illustration moderne d'auteur inconnu, avec son acronyme « Ramban » en arrière-plan : une image imaginée, huit siècles après sa mort",
+                    "auteur": "Auteur inconnu",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Nahmanides_painting.jpg",
+                    "nomVisible": true
                   }
                 },
                 {
@@ -105766,9 +105831,11 @@
               "essentiel": [
                 "pan_il_david",
                 "pan_il_herode",
+                "pan_il_hillel",
                 "pan_il_jesus",
                 "pan_il_josephe",
                 "pan_il_akiva",
+                "pan_il_jerome",
                 "pan_il_karo",
                 "pan_il_benyehouda",
                 "pan_il_herzl",
