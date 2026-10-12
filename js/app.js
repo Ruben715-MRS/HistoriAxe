@@ -59,6 +59,50 @@ function applyAppearance() {
     document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
 }
 
+// Tablette, ordinateur, téléphone pliant déplié : les écrans dont le côté le
+// plus court dépasse 600 px. Un téléphone ordinaire (16:9 ou 9:16) reste en
+// dessous dans les deux sens — 430 px de large en portrait, environ 430 px de
+// haut en paysage — et garde donc la frise sur une ligne.
+const largeScreenQuery = window.matchMedia('(min-width: 600px) and (min-height: 600px)');
+
+// Disposition réellement appliquée en paysage : le réglage de l'utilisateur,
+// ramené à ce que l'écran et le mode de jeu permettent.
+//  - petit écran : toujours 'line' ;
+//  - serpentin : réservé à la Découverte, où il n'y a rien à placer ; en partie
+//    (les intervalles sont de largeurs variables, et le sens de lecture
+//    inversé une ligne sur deux y ferait se tromper de côté) il devient
+//    automatiquement 'wrap'.
+function effectiveLandscapeFlow() {
+    if (!largeScreenQuery.matches) return 'line';
+    const flow = appSettings.landscapeFlow;
+    if (flow === 'line') return 'line';
+    if (flow === 'snake') return currentMode === 'discovery' ? 'snake' : 'wrap';
+    return 'wrap';
+}
+
+// Une ligne par axe thématique : Découverte seulement (en partie, répartir les
+// intervalles par axe révélerait l'axe de la carte à placer et ferait choisir
+// un intervalle parmi ceux de la voie plutôt que de la frise), et seulement
+// pour un thème qui compte plusieurs axes.
+function landscapeByAxisActive() {
+    return effectiveLandscapeFlow() === 'wrap' && appSettings.landscapeByAxis === true &&
+        currentMode === 'discovery' && Array.isArray(currentThemeAxes) && currentThemeAxes.length > 1;
+}
+
+function applyLandscapeFlow() {
+    const flow = effectiveLandscapeFlow();
+    const root = document.documentElement;
+    root.setAttribute('data-landscape-flow', flow);
+    if (flow === 'line') root.removeAttribute('data-landscape-multi');
+    else root.setAttribute('data-landscape-multi', '');
+    return flow;
+}
+
+// Empreinte de la disposition appliquée à la dernière frise dessinée : la frise
+// n'est reconstruite que si elle change (la rotation ou le redimensionnement
+// d'une fenêtre déclenchent de nombreux événements, qui ne changent rien).
+let landscapeSignature = '';
+
 function applyOrientationLayout() {
     let isLandscape;
     if (appSettings.orientation === 'horizontal') isLandscape = true;
@@ -67,8 +111,16 @@ function applyOrientationLayout() {
     const layoutVal = isLandscape ? 'horizontal' : 'vertical';
     document.documentElement.setAttribute('data-layout', layoutVal);
     document.documentElement.setAttribute('data-timeline-layout', layoutVal);
-    document.documentElement.setAttribute('data-landscape-flow', appSettings.landscapeFlow === 'wrap' ? 'wrap' : 'line');
-    markTimelineRows();
+    applyLandscapeFlow();
+    const signature = effectiveLandscapeFlow() + '|' + landscapeByAxisActive();
+    const gameScreen = document.getElementById('screen-game');
+    const gameVisible = gameScreen && !gameScreen.classList.contains('hidden');
+    if (signature !== landscapeSignature && gameVisible && placedEvents && placedEvents.length > 0) {
+        renderTimeline();
+    } else {
+        markTimelineRows();
+    }
+    landscapeSignature = signature;
     if (typeof repositionEvents === 'function' && placedEvents && placedEvents.length > 0) {
         repositionEvents();
     }
@@ -87,39 +139,105 @@ try {
     window.addEventListener('orientationchange', () => {
         if (appSettings.orientation === 'auto') applyOrientationLayout();
     });
+    // Passer d'un petit à un grand écran (fenêtre redimensionnée, téléphone
+    // pliant ouvert) change la disposition permise, quel que soit le réglage
+    // d'orientation.
+    largeScreenQuery.addEventListener('change', () => {
+        applyOrientationLayout();
+        renderSettingsUI();
+    });
     // Les retours à la ligne de la frise changent avec la largeur, et ne se
     // mesurent qu'une fois l'écran de jeu affiché : on les recalcule dès que
-    // la frise change de taille, quelle qu'en soit la cause.
+    // le plateau change de taille. On observe le plateau (#board), pas la
+    // frise : markTimelineRows() ajuste la largeur de cette dernière, ce qui
+    // ferait boucler l'observateur.
     if (typeof ResizeObserver === 'function') {
-        const timelineEl = document.getElementById('timeline');
-        if (timelineEl) new ResizeObserver(() => markTimelineRows()).observe(timelineEl);
+        const boardEl = document.getElementById('board');
+        if (boardEl) new ResizeObserver(() => markTimelineRows()).observe(boardEl);
     }
 } catch (e) { }
 
-// Frise horizontale « Plusieurs lignes » : le navigateur répartit seul les
-// repères en lignes (flex-wrap), mais seul le JS sait où tombe chaque retour
-// à la ligne. On marque le dernier élément de chaque ligne (.row-end, l'axe
-// s'y termine par une flèche) et le premier de la suivante (.row-start, l'axe
-// y reprend par une flèche d'entrée), pour que l'œil suive la continuité.
+// Frise horizontale sur plusieurs lignes : le navigateur répartit seul les
+// repères en lignes (flex-wrap) ; seul le JS sait où tombe chaque retour à la
+// ligne, ou doit placer un serpentin. Ici on :
+//  - marque le dernier repère de chaque ligne (.row-end, l'axe s'y termine par
+//    une flèche) et le premier de la suivante (.row-start, l'axe y reprend en
+//    fondu), pour que l'œil suive la continuité ;
+//  - ajuste la largeur de la frise à sa ligne la plus large, pour que le bloc
+//    soit centré dans l'écran tout en gardant chaque ligne alignée à gauche ;
+//  - en serpentin, place chaque repère dans une grille (une ligne sur deux est
+//    inversée) et ajoute les demi-tours entre les lignes.
 function markTimelineRows() {
     const timeline = document.getElementById('timeline');
     if (!timeline) return;
-    const items = Array.from(timeline.children).filter(el => el.classList.contains('entry') || el.classList.contains('slot'));
-    items.forEach(el => el.classList.remove('row-start', 'row-end'));
+    const items = Array.from(timeline.querySelectorAll('.entry, .slot'));
+    items.forEach(el => {
+        el.classList.remove('row-start', 'row-end', 'row-rtl', 'snake-end');
+        el.style.gridRow = '';
+        el.style.gridColumn = '';
+    });
+    timeline.querySelectorAll('.snake-turn').forEach(n => n.remove());
+    timeline.style.removeProperty('--wrap-width');
+    timeline.style.removeProperty('--snake-cols');
     const root = document.documentElement;
-    if (root.getAttribute('data-layout') !== 'horizontal' || root.getAttribute('data-landscape-flow') !== 'wrap') return;
-    for (let i = 1; i < items.length; i++) {
-        if (items[i].offsetTop > items[i - 1].offsetTop + 4) {
-            items[i - 1].classList.add('row-end');
-            items[i].classList.add('row-start');
+    if (root.getAttribute('data-layout') !== 'horizontal' || !items.length) return;
+    const flow = root.getAttribute('data-landscape-flow');
+
+    if (flow === 'wrap') {
+        for (let i = 1; i < items.length; i++) {
+            if (items[i].parentElement === items[i - 1].parentElement &&
+                items[i].offsetTop > items[i - 1].offsetTop + 4) {
+                items[i - 1].classList.add('row-end');
+                items[i].classList.add('row-start');
+            }
         }
+        const left = timeline.getBoundingClientRect().left;
+        let widest = 0;
+        items.forEach(el => { widest = Math.max(widest, el.getBoundingClientRect().right - left); });
+        // +1 px : une largeur arrondie à la baisse ferait tomber le dernier
+        // repère de la ligne la plus large à la ligne.
+        if (widest > 0 && widest + 1 < timeline.clientWidth) {
+            timeline.style.setProperty('--wrap-width', Math.ceil(widest) + 1 + 'px');
+        }
+    } else if (flow === 'snake') {
+        // En Découverte il n'y a que des repères, tous de même largeur.
+        const cell = items[0].offsetWidth;
+        // Les demi-tours débordent de 26 px de chaque côté.
+        const cols = Math.max(1, Math.floor((timeline.clientWidth - 64) / cell));
+        timeline.style.setProperty('--snake-cols', cols);
+        if (cols < 2) return;
+        items.forEach((el, i) => {
+            const row = Math.floor(i / cols);
+            const col = i % cols;
+            el.style.gridRow = row + 1;
+            el.style.gridColumn = (row % 2 === 0 ? col : cols - 1 - col) + 1;
+            el.classList.toggle('row-rtl', row % 2 === 1);
+            if (col === cols - 1 && i < items.length - 1) {
+                el.classList.add('snake-end');
+                const turn = document.createElement('span');
+                turn.className = 'snake-turn';
+                turn.setAttribute('aria-hidden', 'true');
+                el.appendChild(turn);
+            }
+        });
     }
 }
 
 function renderSettingsUI() {
     document.querySelectorAll('#settings-landscape-flow button').forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.value === (appSettings.landscapeFlow || 'line'));
+        btn.classList.toggle('active', btn.dataset.value === (appSettings.landscapeFlow || 'wrap'));
     });
+    // Ces dispositions n'existent que sur tablette et ordinateur : sur un
+    // téléphone ordinaire le réglage serait un bouton qui ne fait rien.
+    const landscapeGroup = document.getElementById('settings-group-landscape');
+    if (landscapeGroup) landscapeGroup.classList.toggle('hidden', !largeScreenQuery.matches);
+    const byAxisOn = (appSettings.landscapeFlow || 'wrap') === 'wrap';
+    const byAxisRow = document.getElementById('settings-landscape-axis-row');
+    const byAxisHint = document.getElementById('settings-landscape-axis-hint');
+    if (byAxisRow) byAxisRow.classList.toggle('hidden', !byAxisOn);
+    if (byAxisHint) byAxisHint.classList.toggle('hidden', !byAxisOn);
+    const byAxisBox = document.getElementById('settings-landscape-by-axis');
+    if (byAxisBox) byAxisBox.checked = appSettings.landscapeByAxis === true;
     document.querySelectorAll('#settings-orientation button').forEach(btn => {
         btn.classList.toggle('active', btn.dataset.value === appSettings.orientation);
     });
@@ -160,6 +278,15 @@ function initSettingsControls() {
             renderSettingsUI();
         };
     });
+    const byAxisBox = document.getElementById('settings-landscape-by-axis');
+    if (byAxisBox) {
+        byAxisBox.onchange = () => {
+            appSettings.landscapeByAxis = byAxisBox.checked;
+            settingsSave(appSettings);
+            applyOrientationLayout();
+            renderSettingsUI();
+        };
+    }
     document.querySelectorAll('#settings-orientation button').forEach(btn => {
         btn.onclick = () => {
             appSettings.orientation = btn.dataset.value;
@@ -5127,7 +5254,13 @@ function renderAxesLegend() {
     if (currentMode === 'discovery' && currentThemeAxes && currentThemeAxes.length > 1) {
         const pinned = appSettings.axesLegendPinned !== false;
         const timeline = document.getElementById('timeline');
-        if (timeline) timeline.classList.toggle('axes-entry-badges-hidden', !pinned);
+        if (timeline) {
+            timeline.classList.toggle('axes-entry-badges-hidden', !pinned);
+            // La légende donne le sens des couleurs : sur grand écran, les
+            // repères n'ont alors plus besoin de leur étiquette d'axe (voir
+            // le liseré de couleur, css/style.css).
+            timeline.classList.add('axes-legend-visible');
+        }
         const badges = currentThemeAxes.map(axe => {
             const color = getAxisColor(axe);
             return `<span class="entry-axe-badge" data-axis="${color ? color.name : 'blue'}">${axe}</span>`;
@@ -5141,7 +5274,7 @@ function renderAxesLegend() {
         legendEl.classList.toggle('pinned', pinned);
     } else {
         const timeline = document.getElementById('timeline');
-        if (timeline) timeline.classList.remove('axes-entry-badges-hidden');
+        if (timeline) timeline.classList.remove('axes-entry-badges-hidden', 'axes-legend-visible');
         legendEl.classList.add('hidden');
     }
 }
@@ -5164,18 +5297,59 @@ function renderTimeline() {
     // créneau qui avait le focus. On en retient la position : après un
     // placement, le focus reste au voisinage de la carte posée, et l'on peut
     // continuer à parcourir la frise de là plutôt que du haut de la page.
+    // Le mode peut avoir changé depuis le dernier dessin (le serpentin et les
+    // voies par axe ne valent qu'en Découverte) : on met la disposition à jour.
+    applyLandscapeFlow();
+    const byAxis = landscapeByAxisActive();
+    landscapeSignature = effectiveLandscapeFlow() + '|' + byAxis;
     A11y.keepFocus(timeline, () => {
         timeline.className = isPlaying ? 'chrono playing' : 'chrono';
+        if (byAxis) timeline.classList.add('axis-lanes');
         timeline.innerHTML = '';
 
         renderAxesLegend();
 
+        if (byAxis) {
+            renderAxisLanes(timeline);
+            return;
+        }
         for (let i = 0; i <= placedEvents.length; i++) {
             if (isPlaying) timeline.appendChild(buildSlot(i));
             if (i < placedEvents.length) timeline.appendChild(buildEntry(placedEvents[i]));
         }
     });
     markTimelineRows();
+}
+
+// Une voie par axe thématique, dans l'ordre des axes du thème, chacune avec
+// ses événements en ordre chronologique ; ceux qui n'ont pas d'axe (ou un
+// axe hors liste) terminent dans une dernière voie sans couleur.
+function renderAxisLanes(timeline) {
+    const lanes = new Map(currentThemeAxes.map(axe => [axe, []]));
+    const others = [];
+    placedEvents.forEach(evt => (lanes.get(evt.axe) || others).push(evt));
+    const groups = [...lanes].filter(([, events]) => events.length).map(([axe, events]) => ({ axe, events }));
+    if (others.length) groups.push({ axe: null, events: others });
+    groups.forEach(({ axe, events }) => {
+        const label = axe || t('game.axes_lane_other');
+        const color = axe ? getAxisColor(axe) : null;
+        const lane = document.createElement('div');
+        lane.className = 'axis-lane';
+        lane.setAttribute('role', 'group');
+        lane.setAttribute('aria-label', label);
+        const head = document.createElement('div');
+        head.className = 'axis-lane-head';
+        const badge = document.createElement('span');
+        badge.className = 'entry-axe-badge axis-lane-badge';
+        badge.dataset.axis = color ? color.name : 'none';
+        badge.textContent = label;
+        head.appendChild(badge);
+        const row = document.createElement('div');
+        row.className = 'axis-lane-row';
+        events.forEach(evt => row.appendChild(buildEntry(evt)));
+        lane.append(head, row);
+        timeline.appendChild(lane);
+    });
 }
 
 // Libellé de l'intervalle : « Avant 1789 », « Entre 1789 et 1848 », « Après 1981 »
@@ -5208,6 +5382,10 @@ function buildEntry(evt) {
     if (evt.axe) {
         const color = getAxisColor(evt.axe);
         if (color) {
+            // Sur grand écran, la carte porte un liseré de cette couleur
+            // (voir « .entry[data-axis] » dans css/style.css).
+            row.dataset.axis = color.name;
+            row.style.setProperty('--axis-c', color.border);
             axeHtml = `<span class="entry-axe-badge" data-axis="${color.name}" title="${evt.axe}">${evt.axe}</span>`;
         }
     }

@@ -34,10 +34,16 @@ const SYNC_KEYS = [SRS_KEY, PROGRESS_KEY, FAVORITES_KEY, CUSTOM_THEMES_KEY, CUST
 
 const DEFAULT_SETTINGS = {
     orientation: 'auto',
-    // Frise horizontale : 'line' = une seule ligne qui défile de gauche à
-    // droite ; 'wrap' = retour à la ligne comme dans un texte, chaque ligne
-    // se lisant de gauche à droite et la frise défilant de haut en bas.
-    landscapeFlow: 'line',
+    // Disposition de la frise en paysage (voir effectiveLandscapeFlow, js/app.js) :
+    // 'line' = une seule ligne qui défile de gauche à droite ; 'wrap' = lignes
+    // multiples, la frise revient à la ligne comme un texte (toujours lue de gauche
+    // à droite) ; 'snake' = serpentin, une ligne sur deux se lit de droite à gauche
+    // (Découverte seulement). Les deux dernières ne s'appliquent qu'aux grands
+    // écrans (tablette, ordinateur, téléphone pliant) : un téléphone ordinaire
+    // reste sur une ligne, quel que soit ce réglage.
+    landscapeFlow: 'wrap',
+    // Avec 'wrap' : une ligne par axe thématique (Découverte, thèmes à plusieurs axes).
+    landscapeByAxis: false,
     appearance: 'auto',
     axesLegendPinned: true,
     sound: true,

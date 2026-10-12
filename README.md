@@ -2531,12 +2531,20 @@ et un `fetch` — c'est-à-dire de la quasi-totalité de l'interface.
 
 `npm run test:e2e` (Playwright, `e2e/`) comble ce trou en ouvrant un vrai
 navigateur sur le site servi tel qu'il l'est en production
-(`e2e/server.js`, un serveur statique sans dépendance). Douze parcours,
-96 tests, environ trois minutes :
+(`e2e/server.js`, un serveur statique sans dépendance). Treize parcours,
+103 tests, environ trois minutes :
 
 - `e2e/modes.spec.js` — chaque mode de jeu se lance et répond à une
   première interaction. C'est la famille de régressions déjà vécue ici :
   une fonction supprimée lors d'un refactor, un mode qui ne démarre plus.
+- `e2e/frise-paysage.spec.js` — la disposition de la frise en paysage
+  (Réglages → « Disposition en paysage ») : « Ligne », « Lignes multiples »
+  (par défaut) et « Serpentin », plus la case « Une ligne par axe
+  thématique ». Il vérifie les règles plus que le dessin : ces dispositions
+  n'existent que sur tablette et ordinateur (un téléphone, même en paysage,
+  garde une ligne et le réglage disparaît), le serpentin et les voies par axe
+  ne valent qu'en Découverte (une partie repasse en lignes multiples), et une
+  partie reste jouable en lignes multiples.
 - `e2e/axes.spec.js` — le filtre par axe thématique : changer de thème
   repart de tous les axes, revenir au même thème conserve la sélection.
 - `e2e/sommaire.spec.js` — le sommaire d'un thème : autant de branches

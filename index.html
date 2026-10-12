@@ -1559,13 +1559,19 @@
                 <p class="settings-hint" data-i18n="settings.orientation_hint">« Auto » suit la rotation de l'appareil :
                     portrait affiche la frise verticale, paysage l'affiche horizontale.</p>
             </div>
-            <div class="settings-group">
-                <div class="settings-label" data-i18n="settings.landscape_flow_label">Frise horizontale</div>
+            <div class="settings-group" id="settings-group-landscape">
+                <div class="settings-label" data-i18n="settings.landscape_flow_label">Disposition en paysage</div>
                 <div class="segmented" id="settings-landscape-flow">
-                    <button type="button" data-value="line" data-i18n="settings.landscape_flow_line">Une ligne</button>
-                    <button type="button" data-value="wrap" data-i18n="settings.landscape_flow_wrap">Plusieurs lignes</button>
+                    <button type="button" data-value="line" data-i18n="settings.landscape_flow_line">Ligne</button>
+                    <button type="button" data-value="wrap" data-i18n="settings.landscape_flow_wrap">Lignes multiples</button>
+                    <button type="button" data-value="snake" data-i18n="settings.landscape_flow_snake">Serpentin</button>
                 </div>
-                <p class="settings-hint" data-i18n="settings.landscape_flow_hint">« Plusieurs lignes » remplit l'écran : la frise revient à la ligne comme un texte et se lit toujours de gauche à droite.</p>
+                <label class="settings-check hidden" id="settings-landscape-axis-row" data-kbd-proxy>
+                    <input type="checkbox" id="settings-landscape-by-axis">
+                    <span data-i18n="settings.landscape_by_axis">Une ligne par axe thématique</span>
+                </label>
+                <p class="settings-hint" data-i18n="settings.landscape_flow_hint">Les dispositions « Lignes multiples » et « Serpentin » remplissent l'écran des tablettes et des ordinateurs ; sur un téléphone, la frise reste sur une ligne. Le serpentin n'existe qu'en Découverte : en partie, « Lignes multiples » s'applique automatiquement.</p>
+                <p class="settings-hint hidden" id="settings-landscape-axis-hint" data-i18n="settings.landscape_by_axis_hint">Disponible en Découverte, pour les thèmes qui comptent plusieurs axes. En partie, la frise reste en lignes multiples ordinaires.</p>
             </div>
             <div class="settings-group">
                 <div class="settings-label" data-i18n="settings.appearance_label">Apparence</div>
