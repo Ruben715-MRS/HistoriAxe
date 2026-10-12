@@ -735,6 +735,11 @@ comme tels dans la description (Atahualpa : Quito ou Cuzco).
 **Seules des personnalités disparues** : le format de la phrase d'ouverture
 exige une année de décès, et un panthéon de vivants se démodera.
 
+**Des dates avérées et une illustration** : la note d'information des Panthéons le dit au joueur. Une
+personnalité n'entre que si ses dates de naissance et de décès sont avérées, ou communément admises par
+des sources solides (d'où l'absence d'Homère, de Laozi ou d'Ésope), et si une illustration libre existe
+(d'où les figures écartées « faute d'image »).
+
 **Les sportifs : une exception, pas une règle.** Un sportif n'entre au panthéon que
 si son nom dépasse le sport : il a porté l'image de son pays dans le monde (Maradona,
 Beckenbauer), marqué l'histoire (Owens aux Jeux de Berlin) ou posé un acte politique
