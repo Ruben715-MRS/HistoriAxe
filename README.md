@@ -601,7 +601,7 @@ ne posent pas la même question :
 | | Un thème, c'est | Une date, c'est | On le joue par |
 |---|---|---|---|
 | **Biographies** | une vie (360 thèmes, en 12 domaines) | une étape de cette vie | étape de la vie |
-| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, le sous-continent indien, Israël, la Turquie, le Japon, la Russie) | la naissance d'un personnage | domaine |
+| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, le sous-continent indien, Israël, la Turquie, le Japon, la Russie, l'Australie) | la naissance d'un personnage | domaine |
 
 Le déplacement ne coûte aucune migration : les 360 thèmes gardent leurs
 identifiants, et rien de ce que le joueur a sauvegardé (favoris, révision,
@@ -2101,6 +2101,40 @@ Sappho (une jeune femme de Pompéi, qui n'est pas elle), Polyclète et Lysippe (
 leur visage), Mitropoulos (un dessin au crayon), Pléthon (un détail de fresque) et Plutarque (un buste
 moderne). L'image de Bouboulína est une lithographie de 1827.
 
+### Un pays à part : l'Australie
+
+`pan_au`, « Grandes figures d'Australie » (code `au`, pays) : **96 personnages**, d'Arthur Phillip (1738) à
+Heath Ledger (1979). Par axe : 22 Musique, spectacle et sport, 21 Sciences, techniques et innovation, 15 Guerres
+et résistances, 14 Chefs d'État et dirigeants, 12 Littérature et pensée, 12 Beaux-arts ; 24 ⭐ et 4 biographies
+liées (Menzies, Monash, Mary MacKillop, Patrick White). 96 portraits : 73 du domaine public, 8 CC BY et 15 CC BY-SA.
+Pas d'axe « Économie et entreprise » : Rupert Murdoch et Nicole Kidman, qui ont leur biographie, sont vivants.
+
+- **Un pays, pas un bloc** : `pan_au`, et « Pendant ce temps, ailleurs… » le compte comme `thm_au`. Les invités
+  d'un autre État portent leur `pays` et la fiche le dit : Phillip, Macquarie et Flinders (Royaume-Uni),
+  Leichhardt (Allemagne), Walter Burley Griffin (États-Unis). Les figures nées ailleurs mais devenues australiennes
+  (Parkes, Mawson, Nancy Wake, Bon Scott, Victor Chang, Seidler) n'ont pas de `pays` : la fiche dit où elles sont nées.
+- **Les Aborigènes et les insulaires du détroit de Torrès** : Pemulwuy, Bennelong, Truganini, William Barak,
+  Namatjira, Unaipon, Oodgeroo Noonuccal, Neville Bonner et Archie Roach. La fiche de Truganini corrige l'idée
+  qu'elle serait « la dernière Tasmanienne ».
+- **Les figures disputées sont écrites comme telles** : Deakin et l'« Australie blanche », Hughes et la conscription,
+  Lindsay et ses provocations, Preston et l'appropriation de motifs aborigènes.
+- **Dates** : Pemulwuy (vers 1750), Bennelong (vers 1764), Truganini (vers 1812), Barak (vers 1824), Kngwarreye
+  (vers 1910) : les articles disent « vers ». Ned Kelly est écarté, sa naissance étant donnée en 1854 ou 1855.
+- **Pas de vivants** : Cate Blanchett, Kylie Minogue, Paul Keating, Evonne Goolagong, Cathy Freeman et Rod Laver n'y sont pas.
+- **Les images** : Dunlop, Chang, Judith Wright et Adam Lindsay Gordon sont montrés par une sculpture, et la légende le
+  dit ; les peintures (Phillip, Chauvel, Streeton, Flinders, McCubbin, Bunny) sont des portraits d'époque ou des
+  autoportraits.
+- **Écartés faute d'image libre ou d'article en français** : Eddie Mabo (qui a sa biographie : seule une photographie
+  de monument est libre), Christina Stead, Colleen McCullough, Manning Clark, Fred Williams, Emily Kame Kngwarreye,
+  Clifford Possum Tjapaltjarri, Peter Sculthorpe, Fred Hollows, Charles Perkins, Vincent Lingiari, Jessie Street, Faith
+  Bandler, William Cooper, John Simpson Kirkpatrick, Hans Heysen, Margaret Olley, Henry Kendall, Robert Hughes, John
+  Bradfield. Lionel Rose (carte à collectionner) et Brett Whiteley (photo d'une galerie) sont écartés pour leur image.
+- **À ajouter** (fiches rédigées, image libre trouvée, mais Wikimedia a refusé les téléchargements de cette session,
+  erreur 429) : Les Murray, Marcus Clarke, Margaret Preston, Rupert Bunny, Frank Hurley et Shane Warne. Leurs fiches sont à
+  reprendre dans `scripts/pantheon/au.json` (Murray, 1938 ; Clarke, 1846 ; Preston, 1875 ; Bunny, 1864 ; Hurley, 1885 ;
+  Warne, 1969). Les portraits de Monash, Dunlop et Namatjira doivent être retéléchargés avec leur recadrage (déjà inscrit
+  dans la source) : `python3 scripts/fetch_portraits.py au --force --only monash,dunlop,namatjira`.
+
 ### Un fichier source par panthéon, un script qui l'écrit dans `data/fr.json`
 
 `scripts/pantheon/<code>.json` (`fr`, `hispam`…) est **la seule source de
@@ -2443,7 +2477,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
 ### Ce qui n'est pas fait
 
 - **Les autres panthéons** : la France, l'Égypte, les États-Unis, l'Italie, le
-  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce et la Russie sont écrits.
+  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie et l'Australie sont écrits.
   Chaque liste de personnages est validée avant la rédaction. Feuille de route, dans l'ordre
   où on les propose (un pays seul quand il a de quoi faire un thème, un bloc sinon) :
   1. **Le Machrek est écrit** (voir « Le cinquième bloc »). Il reste : le portrait des trois
@@ -2454,7 +2488,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
      règle « un personnage, un seul thème » range chacun dans son pays. Le Maghreb compte deux
      figures juives (Edmond Amran El Maleh, Habiba Msika) et en a laissé cinq de côté (Cheikh
      Raymond, Reinette l'Oranaise, Salim Halali, Albert Memmi, Abraham Serfaty).
-  2. **Pays seuls** : le Brésil (qui n'entre pas dans l'Amérique « hispanique »), l'Afrique du Sud, l'Australie, l'Iran. **La Turquie** (voir « Un pays à part : la Turquie »), **le Japon** (voir « Un pays à part : le Japon ») et **la Russie** (voir « Un pays à part : la Russie ») sont écrits.
+  2. **Pays seuls** : le Brésil (qui n'entre pas dans l'Amérique « hispanique »), l'Afrique du Sud, l'Iran. **La Turquie** (voir « Un pays à part : la Turquie »), **le Japon** (voir « Un pays à part : le Japon ») et **la Russie** (voir « Un pays à part : la Russie ») et **l'Australie** (voir « Un pays à part : l'Australie ») sont écrits.
   3. **Blocs** : l'Asie du Sud-Est, l'Asie centrale et la Mongolie, le Caucase, la Corée (`KR`/`KP`), l'Afrique de
      l'Ouest, l'Afrique centrale, l'Afrique de l'Est et la Corne, l'Afrique australe et l'océan
      Indien (sans l'Afrique du Sud), « Nouvelle-Zélande et Pacifique ».

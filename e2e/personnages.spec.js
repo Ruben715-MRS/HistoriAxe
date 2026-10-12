@@ -620,6 +620,40 @@ test('la Russie : chacune de ses figures a son portrait, d’Ivan III à Alexeï
     await expect(page.locator('#modal-bio-btn')).toBeVisible();
 });
 
+test('l’Australie : chacune de ses figures a son portrait, de Pemulwuy à Steve Irwin, et les invités disent leur pays', async ({ page }) => {
+    await openThemeById(page, 'pan_au');
+    await page.locator('#mode-card-discovery').click();
+    await expect(page.locator('#screen-game')).toBeVisible();
+    const nombre = await page.evaluate(() => getCurrentTheme().events.length);
+    expect(nombre).toBe(96);
+    await expect(page.locator('#timeline .entry')).toHaveCount(nombre);
+    await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
+
+    // Un Aborigène du XVIIIe siècle, un poète du bush, un sportif du XXe : la fiche n'affiche aucun pays.
+    for (const titre of ['Naissance de Pemulwuy', 'Naissance de Banjo Paterson', 'Naissance de Don Bradman']) {
+        await page.locator('#timeline .entry', { hasText: titre }).click();
+        await expect(page.locator('#modal-details')).toBeVisible();
+        await expect(page.locator('#modal-pays')).toBeHidden();
+        const portrait = page.locator('#modal-portrait-img');
+        await expect.poll(() => portrait.evaluate(img => img.complete ? img.naturalWidth : 0)).toBe(320);
+        await expect(page.locator('#modal-portrait-caption')).not.toBeEmpty();
+        await page.locator('#modal-details .close-btn').click();
+        await expect(page.locator('#modal-details')).toBeHidden();
+    }
+
+    // Un invité d'un autre État, rangé là où on l'honore le plus : Arthur Phillip, officier britannique.
+    await page.locator('#timeline .entry', { hasText: 'Naissance d\'Arthur Phillip' }).click();
+    await expect(page.locator('#modal-details')).toBeVisible();
+    await expect(page.locator('#modal-pays')).toBeVisible();
+    await page.locator('#modal-details .close-btn').click();
+
+    // Quatre figures ont aussi leur biographie dans l'appli : le bouton y mène.
+    const avecBiographie = await page.evaluate(() => getCurrentTheme().events.filter(e => e.biographie).length);
+    expect(avecBiographie).toBe(4);
+    await page.locator('#timeline .entry', { hasText: 'Naissance de Robert Menzies' }).click();
+    await expect(page.locator('#modal-bio-btn')).toBeVisible();
+});
+
 test('la recherche — « espagne », « castille », « catalogne », « madrid » — mène au panthéon de l’Espagne', async ({ page }) => {
     await page.locator('#screen-home').click();
     for (const mot of ['espagne', 'castille', 'catalogne', 'madrid']) {
