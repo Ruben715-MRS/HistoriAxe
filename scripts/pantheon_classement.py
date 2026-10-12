@@ -73,6 +73,9 @@ KEEP_AS_WRITTEN = {
     'Ziaur Rahman', 'Tajuddin Ahmad', 'Zainul Abedin', 'Noor Jehan', 'Nusrat Fateh Ali Khan', 'Dilip Kumar',
     'Milkha Singh', 'Raja Ravi Varma', 'Nek Chand', 'Pasang Lhamu Sherpa', 'Bhanubhakta Acharya',
     'Abdul Ghaffar Khan', 'Liaquat Ali Khan', 'Allauddin Khan',
+    # Chine : le nom de famille vient en premier (Mao Zedong, Li Bai), les noms de règne et de temple ne se coupent pas ;
+    # les noms de Hong Kong, de Taïwan et de la diaspora, écrits à l'occidentale, passent par EXCEPTIONS.
+    'Qin Shi Huang', 'Liu Bang', 'Han Wudi', 'Guangwu des Han', 'Liu Bei', 'Wendi des Sui', 'Taizong des Tang', 'Wu Zetian', 'Xuanzong des Tang', 'Taizu des Song', 'Kubilai Khan', 'Hongwu', 'Yongle', 'Kangxi', 'Qianlong', 'Cixi', 'Puyi', 'Sun Yat-sen', 'Tchang Kaï-chek', 'Mao Zedong', 'Zhou Enlai', 'Deng Xiaoping', 'Shang Yang', 'Wang Anshi', 'Li Hongzhang', 'Yuan Shikai', 'Sun Tzu', 'Xiang Yu', 'Ban Chao', 'Cao Cao', 'Zhuge Liang', 'Guan Yu', 'Yue Fei', 'Wen Tianxiang', 'Qi Jiguang', 'Zheng He', 'Koxinga', 'Lin Zexu', 'Hong Xiuquan', 'Zeng Guofan', 'Qiu Jin', 'Zhu De', 'Peng Dehuai', 'Zhang Xueliang', 'Mozi', 'Xunzi', 'Han Feizi', 'Qu Yuan', 'Sima Qian', 'Tao Yuanming', 'Li Bai', 'Du Fu', 'Wang Wei', 'Bai Juyi', 'Han Yu', 'Su Shi', 'Li Qingzhao', 'Zhu Xi', 'Wang Yangming', 'Luo Guanzhong', "Wu Cheng'en", 'Cao Xueqin', 'Pu Songling', 'Kang Youwei', 'Liang Qichao', 'Lu Xun', 'Hu Shi', 'Lao She', 'Ba Jin', 'Zhang Ailing', 'Jin Yong', 'Guo Moruo', 'Shen Congwen', 'Liu Xiaobo', 'Xuanzang', 'Huineng', 'Wang Xizhi', 'Gu Kaizhi', 'Yan Zhenqing', 'Huizong des Song', 'Mi Fu', 'Zhao Mengfu', 'Shen Zhou', 'Dong Qichang', 'Bada Shanren', 'Shitao', 'Zheng Banqiao', 'Qi Baishi', 'Xu Beihong', 'Zhang Daqian', 'Lin Fengmian', 'Wu Guanzhong', 'Liang Sicheng', 'Zao Wou-ki', 'Mei Lanfang', 'Ruan Lingyu', 'Nie Er', 'Xian Xinghai', 'Zhou Xuan', 'Abing', 'Cai Lun', 'Zhang Heng', 'Zu Chongzhi', 'Zhang Zhongjing', 'Hua Tuo', 'Yi Xing', 'Bi Sheng', 'Shen Kuo', 'Su Song', 'Guo Shoujing', 'Li Shizhen', 'Xu Guangqi', 'Zhan Tianyou', 'Qian Xuesen', 'Deng Jiaxian', 'Yuan Longping', 'Yang Chen-Ning', 'Hua Luogeng', 'Confucius', 'Zhuangzi', 'Mencius',
 }
 
 # Écrits à la main : (nom de la source) → nom de classement.
@@ -196,6 +199,13 @@ EXCEPTIONS = {
     'Ibrahim al-Hamdi': 'Hamdi, Ibrahim al-',
     'Samih al-Qasim': 'Qasim, Samih al-',
     'Shireen Abu Akleh': 'Abu Akleh, Shireen',
+    # Chine : noms écrits à l'occidentale (prénom d'abord).
+    'I. M. Pei': 'Pei, I. M.',
+    'Bruce Lee': 'Lee, Bruce',
+    'Teresa Teng': 'Teng, Teresa',
+    'Anita Mui': 'Mui, Anita',
+    'Leslie Cheung': 'Cheung, Leslie',
+    'Chien-Shiung Wu': 'Wu, Chien-Shiung',
 }
 
 

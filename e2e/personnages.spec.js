@@ -90,11 +90,11 @@ test('Personnages illustres : deux sous-catégories, chacune avec sa note et son
     await expect(page.locator('#theme-screen-title')).toHaveText('Panthéons');
     await expect(page.locator('#theme-screen-note-text')).toContainText('né dans les frontières actuelles');
     // Panthéons de pays et de blocs se rangent par leur nom de source — « Afrique de l'Ouest », « Allemagne, Autriche et Suisse »,
-    // « Amérique hispanique », « Égypte », « Espagne », « États-Unis », « France », « Italie », « Machrek et péninsule Arabique », « Maghreb », « Royaume-Uni », « Scandinavie », « Sous-continent indien » — et non par
+    // « Amérique hispanique », « Chine », « Égypte », « Espagne », « États-Unis », « France », « Italie », « Machrek et péninsule Arabique », « Maghreb », « Royaume-Uni », « Scandinavie », « Sous-continent indien » — et non par
     // « Grandes figures d'… » / « … de » / « … des » / « … du ».
     await expect(page.locator('#themes-container .data-card-title'))
         .toHaveText(["Grandes figures d'Afrique de l'Ouest", "Grandes figures d'Allemagne, d'Autriche et de Suisse", "Grandes figures d'Amérique hispanique",
-            "Grandes figures d'Égypte", "Grandes figures d'Espagne", 'Grandes figures des États-Unis',
+            'Grandes figures de Chine', "Grandes figures d'Égypte", "Grandes figures d'Espagne", 'Grandes figures des États-Unis',
             'Grandes figures de France', "Grandes figures d'Israël", "Grandes figures d'Italie",
             'Grandes figures du Machrek et de la péninsule Arabique', 'Grandes figures du Maghreb',
             'Grandes figures du Royaume-Uni', 'Grandes figures de Scandinavie', 'Grandes figures du sous-continent indien']);
@@ -536,6 +536,34 @@ test('l’Espagne : chacune de ses figures a son portrait, de Trajan à Margarit
     await expect(page.locator('#modal-bio-btn')).toBeVisible();
 });
 
+test('la Chine : chacune de ses figures a son portrait, de Qin Shi Huang à Yuan Longping, et la fiche n’affiche aucun pays', async ({ page }) => {
+    await openThemeById(page, 'pan_cn');
+    await page.locator('#mode-card-discovery').click();
+    await expect(page.locator('#screen-game')).toBeVisible();
+    const nombre = await page.evaluate(() => getCurrentTheme().events.length);
+    expect(nombre).toBe(122);
+    await expect(page.locator('#timeline .entry')).toHaveCount(nombre);
+    await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
+
+    // Trois époques : le Premier Empereur, un poète des Tang, un dirigeant du XXe siècle.
+    for (const titre of ['Naissance de Qin Shi Huang', 'Naissance de Li Bai', 'Naissance de Mao Zedong']) {
+        await page.locator('#timeline .entry', { hasText: titre }).click();
+        await expect(page.locator('#modal-details')).toBeVisible();
+        await expect(page.locator('#modal-pays')).toBeHidden();
+        const portrait = page.locator('#modal-portrait-img');
+        await expect.poll(() => portrait.evaluate(img => img.complete ? img.naturalWidth : 0)).toBe(320);
+        await expect(page.locator('#modal-portrait-caption')).not.toBeEmpty();
+        await page.locator('#modal-details .close-btn').click();
+        await expect(page.locator('#modal-details')).toBeHidden();
+    }
+
+    // Douze figures ont aussi leur biographie dans l'appli : le bouton y mène.
+    const avecBiographie = await page.evaluate(() => getCurrentTheme().events.filter(e => e.biographie).length);
+    expect(avecBiographie).toBe(12);
+    await page.locator('#timeline .entry', { hasText: 'Naissance de Confucius' }).click();
+    await expect(page.locator('#modal-bio-btn')).toBeVisible();
+});
+
 test('la recherche — « espagne », « castille », « catalogne », « madrid » — mène au panthéon de l’Espagne', async ({ page }) => {
     await page.locator('#screen-home').click();
     for (const mot of ['espagne', 'castille', 'catalogne', 'madrid']) {
@@ -962,7 +990,7 @@ test('à la première ouverture de « Personnages illustres », on demande si le
     await expect(fenetre).toBeHidden();
     expect(await reglage(page)).toBe('bw');
     // Le bouton de la galerie annonce l'avancement, dès le premier instant.
-    await expect(page.locator('#btn-gallery .gallery-launcher-sub')).toHaveText('0 / 1518 portraits débloqués');
+    await expect(page.locator('#btn-gallery .gallery-launcher-sub')).toHaveText('0 / 1640 portraits débloqués');
 
     // On ne repose pas la question.
     await page.locator('#screen-subcategories .back-btn').click();
@@ -1440,7 +1468,7 @@ test('« Découvrir » › « Personnage » ouvre la fiche d’une figure de la 
 
 test('« Découvrir » › « Personnage » : la biographie mène au jeu, quand le personnage en a une', async ({ page }) => {
     await quitterLAccueil(page);
-    // On tire jusqu'à une figure qui a sa biographie (182 sur 1518).
+    // On tire jusqu'à une figure qui a sa biographie (194 sur 1640).
     await page.locator('#btn-discover').click();
     await page.locator('#btn-discover-person').click();
     for (let i = 0; i < 40 && !(await page.locator('#modal-bio-btn').isVisible()); i++) {

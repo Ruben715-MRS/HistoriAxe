@@ -601,7 +601,7 @@ ne posent pas la même question :
 | | Un thème, c'est | Une date, c'est | On le joue par |
 |---|---|---|---|
 | **Biographies** | une vie (360 thèmes, en 12 domaines) | une étape de cette vie | étape de la vie |
-| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, le sous-continent indien, Israël) | la naissance d'un personnage | domaine |
+| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, le sous-continent indien, Israël) | la naissance d'un personnage | domaine |
 
 Le déplacement ne coûte aucune migration : les 360 thèmes gardent leurs
 identifiants, et rien de ce que le joueur a sauvegardé (favoris, révision,
@@ -1883,6 +1883,73 @@ pays que son hôte.
 - **Vatican : aucune figure propre.** Les papes sont déjà rangés par leur nationalité (Jean XXIII
   dans `pan_it`, François dans `pan_hispam`), et un pape italien n'est pas né au Vatican.
 
+### Un pays à part : la Chine
+
+`pan_cn`, « Grandes figures de Chine » : **122 personnages**, de Qin Shi Huang (259 av. J.-C.) à
+Yuan Longping (1930). Par axe : 34 Littérature et pensée, 26 Chefs d'État et dirigeants, 18
+Guerres et résistances, 17 Beaux-arts, 17 Sciences, techniques et innovation, 10 Musique,
+spectacle et sport ; 41 ⭐ et 12 biographies liées (Qin Shi Huang, Wu Zetian, Sun Tzu, Zhuge
+Liang, Zheng He, Confucius, Zhuangzi, Mencius, Lu Xun, Xuanzang, Bruce Lee, Zhang Heng).
+122 portraits : 96 du domaine public, 1 CC0, 7 CC BY et 18 CC BY-SA.
+
+Les choix qui ne vont pas de soi :
+
+- **Un pays, donc pas un bloc** : `pan_cn`, aucun champ `pays` pour les figures de Chine, et
+  « Pendant ce temps, ailleurs… » le compte comme `thm_cn`, l'« Histoire de la Chine ». Le thème
+  se range par « Chine », entre l'Amérique hispanique et l'Égypte. La RPC, la République de Chine
+  (Sun Yat-sen, Tchang Kaï-chek) et Hong Kong (Leslie Cheung, Anita Mui, Jin Yong) sont dedans.
+- **Deux invités.** Bruce Lee (né à San Francisco, `US`) et Teresa Teng (née à Taïwan, `TW`) portent
+  leur pays, comme Monaco dans le panthéon de la France ; ce champ est un repère technique, non une
+  position politique.
+- **Un nom chinois s'écrit famille d'abord** (Mao Zedong, Li Bai) et se range tel quel ; seuls les
+  noms écrits à l'occidentale (Bruce Lee, Teresa Teng, Anita Mui, Leslie Cheung) passent par les exceptions de
+  `scripts/pantheon_classement.py`. Les empereurs portent leur nom de règne ou de temple (Hongwu, Yongle,
+  Kangxi, Qianlong, Taizong des Tang) ; le nom de naissance est dans la fiche.
+- **Des dirigeants contestés**, dont la fiche dit ce qu'on leur reproche : Qin Shi Huang (autodafé,
+  tyrannie), Hongwu (purges), Cixi, Yuan Shikai (l'empire de 1915), Tchang Kaï-chek (la loi martiale à
+  Taïwan), Mao (le Grand Bond en avant, la Révolution culturelle), Deng (Tiananmen), Puyi (le Mandchoukouo).
+- **Kubilai Khan est ici**, en tant que fondateur de la dynastie Yuan ; Gengis Khan n'y est pas. Les
+  figures tibétaines (le dalaï-lama) sont laissées de côté, comme celles d'un futur panthéon de la Mongolie
+  et de l'Asie centrale : leur rattachement est disputé.
+- **Écartés faute d'image libre** : Liu Xiaobo (la biographie existe, mais aucune image libre
+  convenable), Chien-Shiung Wu (aucun portrait libre accepté), Yang Chen-Ning (auteur du portrait
+  inconnu : une licence CC BY-SA sans crédit possible), Zao Wou-ki (seule sa signature est libre ;
+  français naturalisé, il aurait été un invité `FR`). Laozi n'y est pas non plus : sa naissance est
+  légendaire et sa mort inconnue, que l'ouverture « Nom (naissance-décès) » ne sait pas dire.
+- **Pas de vivants.** Tu Youyou, Wang Shu, Jack Ma, Yao Ming, Mo Yan et Xi Jinping n'y sont pas ; leurs
+  biographies, quand l'appli en a une, ne sont liées à aucune fiche. I. M. Pei, de nationalité américaine,
+  n'y est pas non plus.
+- **Pas de sportif.** Aucun nom qui dépasse le sport n'a été retenu ; Yao Ming est vivant.
+- **Des dates incertaines, dites comme telles** : « vers » devant Liu Bang (256 ou 247 av. J.-C.), Sun
+  Tzu (544-496), Zhuangzi, Xunzi, Han Feizi, Shang Yang, Guan Yu, Gu Kaizhi, Luo Guanzhong, Cao Xueqin
+  (1715 ou 1724), Zhang Zhongjing, Hua Tuo, Cai Lun et Bi Sheng. Quand les sources divergent, la date est la
+  plus consensuelle : Li Bai en 701 (702 sur Wikipédia en français), Wang Xizhi en 303 (321 pour d'autres), Yan Zhenqing en 708 (709
+  ailleurs), Wen Tianxiang mort en 1283 (1282 selon le calendrier chinois), Zheng Banqiao mort en 1765, Shitao
+  (1641-vers 1720).
+- **Les titres** : « Naissance d'Abing » et « Naissance d'Anita Mui » prennent l'apostrophe ; « Naissance de Yue Fei » non.
+
+### Ce que les images disent en Chine
+
+Sur 122 portraits, très peu sont authentiques : pour tout ce qui précède la photographie, on a
+des portraits d'époques tardives ou imaginaires, et la légende le dit (« un portrait imaginaire »,
+« peint des siècles après sa mort »). Treize images écrivent le nom (inscription, dédicace, panneau) et sont
+marquées `nomVisible` : Liu Bang, Xuanzong, Xiang Yu, Cao Cao, Confucius, Mencius, Li Bai, Du Fu, Lu Xun,
+Cai Lun, Zhang Zhongjing, Guo Shoujing et Luo Guanzhong.
+
+Images faibles, gardées faute de mieux : Wu Zetian (la stèle sans inscription de son mausolée de Qianling,
+aucun portrait authentique n'existe), Wu Cheng'en (une page d'édition ancienne), Zhang Heng (une réplique
+de son sismoscope), Bi Sheng (un atelier reconstitué), Su Song (la reconstitution de son horloge),
+Leslie Cheung (une statue de cire), Anita Mui (une statue), et douze autres statues ou bustes (Shang Yang, Sun Tzu,
+Ban Chao, Zheng He, Qi Jiguang, Han Feizi, Li Qingzhao, Luo Guanzhong, Cao Xueqin, Zu Chongzhi, Yi Xing, Guo Shoujing).
+Wang Wei est un dessin vu de dos. Deux sont recadrés (Qian Xuesen, Deng Jiaxian).
+
+À relire, si l'on veut être plus strict : les photographies du XXe siècle à balise « Domaine public »
+de sources officielles ou de presse (Mao, Zhou Enlai, Zhu De, Peng Dehuai : agence Xinhua ; Deng, 1979 ;
+Zhang Xueliang, Zhang Daqian, Qi Baishi, Hu Shi, Lao She, Qian Xuesen, Teresa Teng, Bruce Lee) : même
+raisonnement que Matisse et Camus en France. Les crédits d'auteur trop vagues ont été remis au propre à la
+main (« Auteur inconnu »). Le client de Commons refusant à plusieurs reprises la miniature de 500 px de
+Ba Jin, celui-ci est demandé en 960 px (`largeur`).
+
 ### Un fichier source par panthéon, un script qui l'écrit dans `data/fr.json`
 
 `scripts/pantheon/<code>.json` (`fr`, `hispam`…) est **la seule source de
@@ -2225,7 +2292,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
 ### Ce qui n'est pas fait
 
 - **Les autres panthéons** : la France, l'Égypte, les États-Unis, l'Italie, le
-  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest le sous-continent indien et Israël sont écrits.
+  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest le sous-continent indien, Israël et la Chine sont écrits.
   Chaque liste de personnages est validée avant la rédaction. Feuille de route, dans l'ordre
   où on les propose (un pays seul quand il a de quoi faire un thème, un bloc sinon) :
   1. **Le Machrek est écrit** (voir « Le cinquième bloc »). Il reste : le portrait des trois
@@ -2236,7 +2303,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
      règle « un personnage, un seul thème » range chacun dans son pays. Le Maghreb compte deux
      figures juives (Edmond Amran El Maleh, Habiba Msika) et en a laissé cinq de côté (Cheikh
      Raymond, Reinette l'Oranaise, Salim Halali, Albert Memmi, Abraham Serfaty).
-  2. **Pays seuls** : le Brésil (qui n'entre pas dans l'Amérique « hispanique »), la Chine, le
+  2. **Pays seuls** : le Brésil (qui n'entre pas dans l'Amérique « hispanique »), le
      Japon, la Russie (où attend Lev Yachine), l'Afrique du Sud, l'Australie, la Turquie, l'Iran.
   3. **Blocs** : l'Asie du Sud-Est, l'Asie centrale et la Mongolie, le Caucase, la Corée (`KR`/`KP`), l'Afrique de
      l'Ouest, l'Afrique centrale, l'Afrique de l'Est et la Corne, l'Afrique australe et l'océan

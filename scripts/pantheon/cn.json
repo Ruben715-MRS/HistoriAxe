@@ -1,0 +1,2072 @@
+{
+  "code": "cn",
+  "nom": "Chine",
+  "theme": {
+    "id": "pan_cn",
+    "nom": "Grandes figures de Chine",
+    "difficulte": "Intermédiaire",
+    "motsCles": [
+      "Chine",
+      "Chinois",
+      "Chinoise",
+      "Pékin",
+      "Empire chinois",
+      "Dynastie Han",
+      "Dynastie Tang",
+      "Dynastie Song",
+      "Dynastie Ming",
+      "Dynastie Qing",
+      "Confucianisme",
+      "Taoïsme",
+      "Route de la soie",
+      "Grande Muraille",
+      "République populaire de Chine",
+      "Taïwan",
+      "Hong Kong",
+      "Mandarin"
+    ]
+  },
+  "axes": [
+    "Chefs d'État et dirigeants",
+    "Guerres et résistances",
+    "Littérature et pensée",
+    "Beaux-arts",
+    "Musique, spectacle et sport",
+    "Sciences, techniques et innovation"
+  ],
+  "personnages": [
+    {
+      "slug": "qinshihuang",
+      "nom": "Qin Shi Huang",
+      "classement": "Qin Shi Huang",
+      "titre": "Naissance de Qin Shi Huang",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": -259,
+      "description": "Qin Shi Huang (259-210 av. J.-C.) est le fondateur de l'empire chinois. Roi de Qin, il soumet les six autres royaumes en 221 av. J.-C. et prend le titre de Premier Empereur, puis unifie les écritures, les poids et mesures et les routes, et relie les murailles du nord. Sa tyrannie, l'autodafé des livres et l'armée de terre cuite de son mausolée de Xi'an en font à la fois un bâtisseur et un despote.",
+      "wikipedia": "Qin_Shi_Huang",
+      "essentiel": true,
+      "biographie": "bio_qinshihuang",
+      "portrait": {
+        "fichier": "Qinshihuang.jpg",
+        "legende": "Qin Shi Huang, représentation imaginaire : aucun portrait fait de son vivant n'existe",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "liubang",
+      "nom": "Liu Bang",
+      "classement": "Liu Bang",
+      "titre": "Naissance de Liu Bang",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": -256,
+      "description": "Liu Bang (vers 256-195 av. J.-C.) est le fondateur de la dynastie Han, connu comme l'empereur Gaozu. Fils de paysans et petit chef de village, il vainc son rival Xiang Yu en 202 av. J.-C. et reste le premier empereur d'origine populaire de l'histoire chinoise. Il adoucit les lois de Qin et pose les bases d'une dynastie qui dure quatre siècles et qui donne son nom au peuple han.",
+      "wikipedia": "Han_Gaozu",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Hangaozu.jpg",
+        "legende": "Liu Bang, empereur Gaozu des Han, portrait imaginaire gravé, avec l'inscription « Portrait de Gaozu des Han » : aucun portrait de son temps n'existe",
+        "licence": "Domaine public",
+        "auteur": "Miuki (Wikimedia Commons)",
+        "nomVisible": true
+      }
+    },
+    {
+      "slug": "hanwudi",
+      "nom": "Han Wudi",
+      "classement": "Han Wudi",
+      "titre": "Naissance de Han Wudi",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": -156,
+      "description": "Han Wudi (156-87 av. J.-C.) est le septième empereur de la dynastie Han, qui règne cinquante-quatre ans. Il fait du confucianisme la doctrine de l'État, étend l'empire jusqu'au Ferghana, à la Corée et au Vietnam, et envoie Zhang Qian chercher des alliés en Asie centrale, ce qui ouvre la route de la soie. Ses guerres contre les Xiongnu épuisent pourtant le trésor et la population.",
+      "wikipedia": "Han_Wudi",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Liu Che (Emperor Wu of Han).png",
+        "legende": "Han Wudi, portrait imaginaire peint longtemps après sa mort",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "guangwu",
+      "nom": "Guangwu des Han",
+      "classement": "Guangwu des Han",
+      "titre": "Naissance de Guangwu des Han",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": -5,
+      "description": "Guangwu des Han (5 av. J.-C.-57 ap. J.-C.) est le fondateur de la dynastie des Han orientaux, de son nom Liu Xiu. Descendant lointain de la famille impériale, il se révolte contre l'usurpateur Wang Mang, rétablit les Han en 25 et transporte la capitale à Luoyang. Il réduit les impôts, libère des esclaves et rend à l'empire une paix qui dure près de deux siècles.",
+      "wikipedia": "Han_Guang_Wudi",
+      "portrait": {
+        "fichier": "Han Guangwu Di.jpg",
+        "legende": "Guangwu des Han, détail du rouleau des Treize Empereurs attribué à Yan Liben (VIIe siècle), six siècles après sa mort : un portrait imaginaire",
+        "licence": "Domaine public",
+        "auteur": "Attribué à Yan Liben"
+      }
+    },
+    {
+      "slug": "liubei",
+      "nom": "Liu Bei",
+      "classement": "Liu Bei",
+      "titre": "Naissance de Liu Bei",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 161,
+      "description": "Liu Bei (161-223) est le fondateur du royaume de Shu Han, l'un des Trois Royaumes. Se réclamant de la famille impériale des Han, il lutte pendant des décennies sans territoire, s'allie à Guan Yu et à Zhang Fei par le serment du Jardin des pêchers, puis s'attache Zhuge Liang. Il règne sur le Sichuan à partir de 221 ; le Roman des Trois Royaumes en fait le modèle du souverain vertueux.",
+      "wikipedia": "Liu_Bei",
+      "portrait": {
+        "fichier": "Liu Bei Tang.jpg",
+        "legende": "Liu Bei, détail du rouleau des Treize Empereurs attribué à Yan Liben (VIIe siècle), quatre siècles après sa mort : un portrait imaginaire",
+        "licence": "Domaine public",
+        "auteur": "Attribué à Yan Liben"
+      }
+    },
+    {
+      "slug": "wendi",
+      "nom": "Wendi des Sui",
+      "classement": "Wendi des Sui",
+      "titre": "Naissance de Wendi des Sui",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 541,
+      "description": "Wendi des Sui (541-604) est le fondateur de la dynastie Sui, de son nom Yang Jian. Il réunifie la Chine en 589, après près de trois siècles de division, en conquérant les Chen du Sud. Il réorganise l'administration, crée les examens de recrutement des fonctionnaires et fait creuser les premiers tronçons du Grand Canal, avant de mourir sans doute assassiné par son fils.",
+      "wikipedia": "Sui_Wendi",
+      "portrait": {
+        "fichier": "Sui Wendi Tang.jpg",
+        "legende": "Wendi des Sui, détail du rouleau des Treize Empereurs attribué à Yan Liben (VIIe siècle), peint quelques décennies après sa mort",
+        "licence": "Domaine public",
+        "auteur": "Attribué à Yan Liben"
+      }
+    },
+    {
+      "slug": "taizong",
+      "nom": "Taizong des Tang",
+      "classement": "Taizong des Tang",
+      "titre": "Naissance de Taizong des Tang",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 598,
+      "description": "Taizong des Tang (598-649) est le deuxième empereur de la dynastie Tang, de son nom Li Shimin. Fils du fondateur de la dynastie, il s'empare du trône en 626 en faisant tuer ses frères lors de l'incident de la porte Xuanwu, puis règne vingt-trois ans. Entouré de ministres comme Wei Zheng, il codifie les lois, repousse les Turcs et fait de Chang'an la plus grande ville du monde, dans un règne resté un modèle de bon gouvernement.",
+      "wikipedia": "Tang_Taizong",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Tang Taizong (cropped).jpg",
+        "legende": "Taizong des Tang, portrait de cour tiré d'un album des empereurs, peint des siècles après sa mort",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "wuzetian",
+      "nom": "Wu Zetian",
+      "classement": "Wu Zetian",
+      "titre": "Naissance de Wu Zetian",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 624,
+      "description": "Wu Zetian (624-705) est la seule femme à avoir régné sous le titre d'empereur en Chine. Concubine de Taizong puis épouse de son fils Gaozong, elle gouverne de fait à partir de 660, fonde sa propre dynastie Zhou en 690 et règne jusqu'à sa déposition en 705. Elle élargit le recrutement des fonctionnaires par concours, soutient le bouddhisme, et sa réputation reste ternie par les purges qui ont écarté ses rivaux.",
+      "wikipedia": "Wu_Zetian",
+      "essentiel": true,
+      "biographie": "bio_wuzetian",
+      "portrait": {
+        "fichier": "Qianling.jpg",
+        "legende": "La stèle sans inscription du mausolée de Qianling, près de Xi'an, où Wu Zetian est enterrée avec son époux Gaozong : aucun portrait authentique d'elle n'existe",
+        "licence": "CC BY-SA 2.5",
+        "auteur": "国家公园网(GJGY.com)"
+      }
+    },
+    {
+      "slug": "xuanzong",
+      "nom": "Xuanzong des Tang",
+      "classement": "Xuanzong des Tang",
+      "titre": "Naissance de Xuanzong des Tang",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 685,
+      "description": "Xuanzong des Tang (685-762) est le sixième empereur de la dynastie Tang, de son nom Li Longji. Son long règne, de 712 à 756, porte l'empire à son apogée et accueille Li Bai, Du Fu et Wang Wei, mais il laisse le pouvoir à son ministre Li Linfu puis à Yang Guifei, sa favorite. La révolte d'An Lushan, en 755, l'oblige à fuir Chang'an et ruine la puissance des Tang.",
+      "wikipedia": "Tang_Xuanzong",
+      "portrait": {
+        "fichier": "Tang XianZong.jpg",
+        "legende": "Xuanzong des Tang, portrait de cour tiré d'un album des empereurs, peint des siècles après sa mort",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu",
+        "nomVisible": true
+      }
+    },
+    {
+      "slug": "taizu",
+      "nom": "Taizu des Song",
+      "classement": "Taizu des Song",
+      "titre": "Naissance de Taizu des Song",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 927,
+      "description": "Taizu des Song (927-976) est le fondateur de la dynastie Song, de son nom Zhao Kuangyin. Général des Zhou postérieurs, il est proclamé empereur par ses soldats en 960 et met fin à l'époque des Cinq Dynasties. Il place l'armée sous contrôle civil, soumet la plupart des États du sud et fait de la lettre, non de l'épée, le chemin des honneurs.",
+      "wikipedia": "Song_Taizu",
+      "portrait": {
+        "fichier": "Song Taizu.jpg",
+        "legende": "Taizu des Song, portrait de cour de la dynastie Song, conservé au Musée national du Palais de Taipei",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "kubilai",
+      "nom": "Kubilai Khan",
+      "classement": "Kubilai Khan",
+      "titre": "Naissance de Kubilai Khan",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1215,
+      "description": "Kubilai Khan (1215-1294) est le petit-fils de Gengis Khan, empereur mongol et fondateur de la dynastie chinoise des Yuan. Grand khan en 1260, il fait de Pékin sa capitale, conquiert le sud des Song en 1279 et réunifie la Chine après plus de trois siècles de division. Il lance ensuite deux invasions manquées du Japon et accueille à sa cour Marco Polo, qui fera sa légende en Europe.",
+      "wikipedia": "Kubilai_Khan",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "YuanEmperorAlbumKhubilaiPortrait.jpg",
+        "legende": "Kubilai Khan, portrait de l'album des empereurs de la dynastie Yuan, attribué à l'artiste népalais Araniko, de sa cour",
+        "licence": "Domaine public",
+        "auteur": "Attribué à Araniko"
+      }
+    },
+    {
+      "slug": "hongwu",
+      "nom": "Hongwu",
+      "classement": "Hongwu",
+      "titre": "Naissance de Hongwu",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1328,
+      "description": "Hongwu (1328-1398) est le fondateur de la dynastie Ming, de son nom Zhu Yuanzhang. Né dans une famille de paysans pauvres, devenu moine mendiant puis chef rebelle, il chasse les Mongols en 1368 et fait de Nankin sa capitale. Il rétablit l'agriculture et les examens, mais gouverne en despote, et ses purges coûtent la vie à des dizaines de milliers de fonctionnaires.",
+      "wikipedia": "Hongwu",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Portrait assis de l'empereur Ming Taizu.jpg",
+        "legende": "L'empereur Hongwu assis, portrait de cour de la dynastie Ming",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "yongle",
+      "nom": "Yongle",
+      "classement": "Yongle",
+      "titre": "Naissance de Yongle",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1360,
+      "description": "Yongle (1360-1424) est le troisième empereur de la dynastie Ming, de son nom Zhu Di. Quatrième fils du fondateur, il s'empare du trône de son neveu en 1402, déplace la capitale à Pékin et y fait bâtir la Cité interdite. Il fait compiler l'immense encyclopédie Yongle, mène plusieurs campagnes contre les Mongols et confie à Zheng He les voyages de la flotte du trésor.",
+      "wikipedia": "Ming_Yongle",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Portrait assis de l'empereur Ming Chengzu.jpg",
+        "legende": "L'empereur Yongle assis, portrait de cour de la dynastie Ming",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "kangxi",
+      "nom": "Kangxi",
+      "classement": "Kangxi",
+      "titre": "Naissance de Kangxi",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1654,
+      "description": "Kangxi (1654-1722) est le deuxième empereur mandchou de la dynastie Qing et le plus long règne de l'histoire de la Chine, soixante et un ans. Monté sur le trône à sept ans, il écarte le régent Oboi, écrase la révolte des Trois Feudataires en 1681, annexe Taïwan en 1683 et fixe la frontière avec la Russie par le traité de Nertchinsk. Lettré, il fait compiler un grand dictionnaire et s'entoure de jésuites, qui le tiennent pour un modèle de souverain éclairé.",
+      "wikipedia": "Kangxi",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Portrait of the Kangxi Emperor in Court Dress.jpg",
+        "legende": "L'empereur Kangxi en habit de cour, portrait peint par un artiste de la cour des Qing",
+        "licence": "Domaine public",
+        "auteur": "Peintre de la cour des Qing"
+      }
+    },
+    {
+      "slug": "qianlong",
+      "nom": "Qianlong",
+      "classement": "Qianlong",
+      "titre": "Naissance de Qianlong",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1711,
+      "description": "Qianlong (1711-1799) est le quatrième empereur de la dynastie Qing, qui règne soixante ans puis garde le pouvoir encore trois ans après son abdication. Son règne porte l'empire à sa plus grande étendue, avec la conquête du Xinjiang, et à son apogée culturel, avec la compilation de la bibliothèque impériale Siku quanshu. Il éconduit en 1793 l'ambassade britannique de Macartney, et la Chine commence à décliner dès sa fin de règne.",
+      "wikipedia": "Qianlong",
+      "portrait": {
+        "fichier": "乾隆皇帝老年肖像.jpg",
+        "legende": "L'empereur Qianlong âgé, portrait peint par un artiste impérial de la cour des Qing",
+        "licence": "Domaine public",
+        "auteur": "Peintre impérial des Qing"
+      }
+    },
+    {
+      "slug": "cixi",
+      "nom": "Cixi",
+      "classement": "Cixi",
+      "titre": "Naissance de Cixi",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1835,
+      "description": "Cixi (1835-1908) est une concubine devenue impératrice douairière, qui gouverne la Chine des Qing pendant près d'un demi-siècle, derrière trois empereurs successifs. Régente à partir de 1861, elle soutient la modernisation militaire, mais fait emprisonner l'empereur Guangxu en 1898 pour étouffer la réforme des Cent Jours, puis appuie les Boxers. Elle est la figure dont les historiens débattent le plus : conservatrice obstinée pour les uns, souveraine qui a tenu un empire en déclin pour les autres.",
+      "wikipedia": "Cixi",
+      "portrait": {
+        "fichier": "The Ci-Xi Imperial Dowager Empress (9.2).PNG",
+        "legende": "L'impératrice douairière Cixi, photographie de la cour, début du XXe siècle",
+        "licence": "Domaine public",
+        "auteur": "John Yu Shuinling"
+      }
+    },
+    {
+      "slug": "puyi",
+      "nom": "Puyi",
+      "classement": "Puyi",
+      "titre": "Naissance de Puyi",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1906,
+      "description": "Puyi (1906-1967) est le dernier empereur de Chine, sacré à deux ans sous le nom de Xuantong et contraint d'abdiquer en 1912. Il est brièvement rétabli en 1917, puis installé par les Japonais à la tête du Mandchoukouo en 1934, comme empereur fantoche. Prisonnier des Soviétiques puis rééduqué par la République populaire, il finit jardinier à Pékin, et son autobiographie inspire le film de Bertolucci.",
+      "wikipedia": "Puyi",
+      "portrait": {
+        "fichier": "Puyi-colorized.jpg",
+        "legende": "Puyi en uniforme, photographie ancienne colorisée",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Dmitriy Vasilyev (colorisation)"
+      }
+    },
+    {
+      "slug": "sunyatsen",
+      "nom": "Sun Yat-sen",
+      "classement": "Sun Yat-sen",
+      "titre": "Naissance de Sun Yat-sen",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1866,
+      "description": "Sun Yat-sen (1866-1925) est le fondateur de la République de Chine, révéré aujourd'hui à Pékin comme à Taipei. Médecin formé à Hong Kong, il organise des conspirations pendant des années, devient président provisoire en 1912 et fonde le Kuomintang. Il laisse les Trois principes du peuple, un programme de nationalisme, de démocratie et de bien-être du peuple.",
+      "wikipedia": "Sun_Yat-sen",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Sun Yat-sen 2.jpg",
+        "legende": "Sun Yat-sen, portrait en couleurs",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "chiang",
+      "nom": "Tchang Kaï-chek",
+      "classement": "Tchang Kaï-chek",
+      "titre": "Naissance de Tchang Kaï-chek",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1887,
+      "description": "Tchang Kaï-chek (1887-1975) est le chef du Kuomintang et le dirigeant de la République de Chine de 1928 à 1949. Il achève l'expédition du Nord, réprime les communistes à Shanghai en 1927, dirige la résistance contre le Japon puis perd la guerre civile contre Mao. Réfugié à Taïwan en 1949, il y gouverne en autocrate jusqu'à sa mort, dans un pays resté sous la loi martiale.",
+      "wikipedia": "Tchang_Kaï-chek",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Chiang Kai-shek in 1912.jpg",
+        "legende": "Tchang Kaï-chek en 1912, à vingt-cinq ans, photographie",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "mao",
+      "nom": "Mao Zedong",
+      "classement": "Mao Zedong",
+      "titre": "Naissance de Mao Zedong",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1893,
+      "description": "Mao Zedong (1893-1976) est le fondateur de la République populaire de Chine, qu'il proclame à Pékin le 1er octobre 1949. Cofondateur du Parti communiste, vainqueur de la guerre civile après la Longue Marche, il unifie le pays et lui rend son rang, mais le Grand Bond en avant provoque une famine qui fait des dizaines de millions de morts. La Révolution culturelle, qu'il lance en 1966, plonge le pays dans dix ans de violences.",
+      "wikipedia": "Mao_Zedong",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Wv-1-6b (page 1 crop) (full crop).jpg",
+        "legende": "Mao Zedong, photographie officielle de Hou Bo et Meng Qingbiao",
+        "licence": "Domaine public",
+        "auteur": "Hou Bo et Meng Qingbiao"
+      }
+    },
+    {
+      "slug": "zhouenlai",
+      "nom": "Zhou Enlai",
+      "classement": "Zhou Enlai",
+      "titre": "Naissance de Zhou Enlai",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1898,
+      "description": "Zhou Enlai (1898-1976) est le Premier ministre de la République populaire de Chine de 1949 à sa mort. Diplomate et administrateur du Parti, il négocie à Bandung en 1955, prépare la visite de Nixon de 1972 et protège certains cadres durant la Révolution culturelle. Resté loyal à Mao jusqu'au bout, il laisse l'image d'un dirigeant mesuré, dont la mort provoque en 1976 d'immenses manifestations de deuil.",
+      "wikipedia": "Zhou_Enlai",
+      "portrait": {
+        "fichier": "Zhou Enlai and Lin Doudou (cropped).jpg",
+        "legende": "Zhou Enlai, photographie en couleurs de Meng Zhaorui",
+        "licence": "Domaine public",
+        "auteur": "Meng Zhaorui"
+      }
+    },
+    {
+      "slug": "deng",
+      "nom": "Deng Xiaoping",
+      "classement": "Deng Xiaoping",
+      "titre": "Naissance de Deng Xiaoping",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1904,
+      "description": "Deng Xiaoping (1904-1997) est le dirigeant qui engage la Chine dans les réformes économiques à partir de 1978. Ancien de la Longue Marche, deux fois purgé sous Mao, il revient au pouvoir et ouvre le pays aux investissements étrangers, crée les zones économiques spéciales et démantèle les communes populaires. Il ordonne en 1989 la répression de la place Tiananmen, et la formule « un pays, deux systèmes » prépare le retour de Hong Kong.",
+      "wikipedia": "Deng_Xiaoping",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Deng Xiaoping at the arrival ceremony for the Vice Premier of China (cropped).jpg",
+        "legende": "Deng Xiaoping, photographie de 1979, recadrée",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "shangyang",
+      "nom": "Shang Yang",
+      "classement": "Shang Yang",
+      "titre": "Naissance de Shang Yang",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": -390,
+      "description": "Shang Yang (vers 390-338 av. J.-C.) est un homme d'État du royaume de Qin et l'un des maîtres de l'école légiste. Ministre du duc Xiao à partir de 361 av. J.-C., il abolit les privilèges héréditaires, récompense les exploits militaires, organise la population en groupes solidaires et soumet tous à la loi. Ses réformes font de Qin la grande puissance qui unifiera la Chine, mais il est écartelé après la mort de son protecteur.",
+      "wikipedia": "Shang_Yang",
+      "portrait": {
+        "fichier": "Statue of Shang Yang.jpg",
+        "legende": "Statue de Shang Yang : aucun portrait fait de son vivant n'existe",
+        "licence": "CC BY 2.5",
+        "auteur": "Taken by Fanghong"
+      }
+    },
+    {
+      "slug": "wanganshi",
+      "nom": "Wang Anshi",
+      "classement": "Wang Anshi",
+      "titre": "Naissance de Wang Anshi",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1021,
+      "description": "Wang Anshi (1021-1086) est un homme d'État et un lettré de la dynastie Song, auteur des « Nouvelles politiques » du règne de Shenzong. Chancelier à partir de 1069, il lance des prêts agricoles à faible taux, remplace la corvée par un impôt et réorganise la milice et le recrutement des fonctionnaires. Ses réformes divisent la cour en deux camps pendant plusieurs décennies, et il est aussi l'un des « huit grands maîtres » de la prose des Tang et des Song.",
+      "wikipedia": "Wang_Anshi",
+      "portrait": {
+        "fichier": "歷代聖賢名人像-29-宋丞相王荆公安石.jpg",
+        "legende": "Wang Anshi, portrait d'un recueil d'images de sages et de personnages célèbres de tous les temps",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "lihongzhang",
+      "nom": "Li Hongzhang",
+      "classement": "Li Hongzhang",
+      "titre": "Naissance de Li Hongzhang",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1823,
+      "description": "Li Hongzhang (1823-1901) est un haut fonctionnaire et diplomate chinois de la fin de la dynastie Qing. Il bat les Taiping avec l'armée de Huai, fonde les arsenaux et la marine du mouvement d'autorenforcement, puis mène presque seul la diplomatie de l'empire pendant trente ans. Il signe le traité de Shimonoseki en 1895 après la défaite contre le Japon et le protocole des Boxers en 1901, ce qui lui vaut d'être un héros pour les uns, un traître pour les autres.",
+      "wikipedia": "Li_Hongzhang",
+      "portrait": {
+        "fichier": "Li Hung Chang in 1896.jpg",
+        "legende": "Li Hongzhang en 1896, photographie de Russell & Sons",
+        "licence": "Domaine public",
+        "auteur": "Russell & Sons"
+      }
+    },
+    {
+      "slug": "yuanshikai",
+      "nom": "Yuan Shikai",
+      "classement": "Yuan Shikai",
+      "titre": "Naissance de Yuan Shikai",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1859,
+      "description": "Yuan Shikai (1859-1916) est un général et homme d'État chinois, premier président de la République de Chine après Sun Yat-sen. Maître de l'armée de Beiyang, il pousse la dynastie Qing à abdiquer en 1912 et gouverne en dictateur, dissolvant le Parlement en 1914. Il se fait proclamer empereur en 1915, un échec qui provoque la révolte des provinces et sa mort peu après, tandis que la Chine glisse vers le morcellement des seigneurs de la guerre.",
+      "wikipedia": "Yuan_Shikai",
+      "portrait": {
+        "fichier": "Yuan Shikai2.jpg",
+        "legende": "Yuan Shikai, photographie",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "suntzu",
+      "nom": "Sun Tzu",
+      "classement": "Sun Tzu",
+      "titre": "Naissance de Sun Tzu",
+      "axe": "Guerres et résistances",
+      "naissance": -544,
+      "description": "Sun Tzu (vers 544-vers 496 av. J.-C.) est le stratège attribué à L'Art de la guerre, le plus ancien traité militaire de Chine. Général au service du roi de Wu à la fin de la période des Printemps et Automnes, il aurait contribué aux victoires contre le royaume de Chu. Son livre, qui prône de vaincre sans combattre et de connaître l'adversaire comme soi-même, est lu aujourd'hui autant par les stratèges que par les chefs d'entreprise.",
+      "wikipedia": "Sun_Tzu",
+      "essentiel": true,
+      "biographie": "bio_suntzu",
+      "portrait": {
+        "fichier": "Enchoen27n3200.jpg",
+        "legende": "Statue de Sun Tzu : aucun portrait authentique n'existe, la figure est imaginaire",
+        "licence": "CC BY 2.5",
+        "auteur": "663highland"
+      }
+    },
+    {
+      "slug": "xiangyu",
+      "nom": "Xiang Yu",
+      "classement": "Xiang Yu",
+      "titre": "Naissance de Xiang Yu",
+      "axe": "Guerres et résistances",
+      "naissance": -232,
+      "description": "Xiang Yu (232-202 av. J.-C.) est un chef de guerre qui se proclame hégémon de Chu occidental après la chute de la dynastie Qin. Brillant combattant, il détruit les armées de Qin à Julu en 207 av. J.-C. puis se heurte à son ancien allié Liu Bang pendant la guerre Chu-Han. Vaincu à Gaixia en 202 av. J.-C., il se donne la mort au bord du fleuve Wu, devenu le héros tragique que raconte l'opéra de Pékin.",
+      "wikipedia": "Xiang_Yu",
+      "portrait": {
+        "fichier": "Xiang Yu.jpg",
+        "legende": "Xiang Yu, gravure de Shangguan Zhou (XVIIIe siècle), qui l'imagine avec l'inscription « hégémon de Chu occidental » : un portrait imaginaire",
+        "licence": "Domaine public",
+        "auteur": "Shangguan Zhou",
+        "nomVisible": true
+      }
+    },
+    {
+      "slug": "banchao",
+      "nom": "Ban Chao",
+      "classement": "Ban Chao",
+      "titre": "Naissance de Ban Chao",
+      "axe": "Guerres et résistances",
+      "naissance": 32,
+      "description": "Ban Chao (32-102) est un général de la dynastie des Han orientaux qui rétablit l'autorité chinoise sur le bassin du Tarim. Frère de l'historien Ban Gu, il quitte la plume pour l'épée et soumet pendant trente ans plus de cinquante royaumes d'Asie centrale avec de très faibles forces. Il envoie Gan Ying vers l'Occident et rouvre la route de la soie, jusqu'à son retour à Luoyang à soixante-dix ans.",
+      "wikipedia": "Ban_Chao",
+      "portrait": {
+        "fichier": "Statue commemorating Ban Chao, Kashgar.jpg",
+        "legende": "Statue commémorant Ban Chao à Kachgar, photographie",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "John Hill"
+      }
+    },
+    {
+      "slug": "caocao",
+      "nom": "Cao Cao",
+      "classement": "Cao Cao",
+      "titre": "Naissance de Cao Cao",
+      "axe": "Guerres et résistances",
+      "naissance": 155,
+      "description": "Cao Cao (155-220) est le chancelier des Han et le fondateur de fait du royaume de Wei, l'un des Trois Royaumes. Il tire parti de la déroute de la dynastie, tient l'empereur Xian sous sa tutelle et réunifie le nord de la Chine, avant d'être battu en 208 à la bataille de la Falaise rouge. Stratège, administrateur et poète, il est dans le Roman des Trois Royaumes le prototype du génie sans scrupules, une image que les historiens nuancent.",
+      "wikipedia": "Cao_Cao",
+      "portrait": {
+        "fichier": "Cao Cao scth.jpg",
+        "legende": "Cao Cao, gravure d'un recueil de portraits de Wang Qi (XVIe siècle), sous l'inscription « Portrait du grand ancêtre des Wei » : un portrait imaginaire",
+        "licence": "Domaine public",
+        "auteur": "Wang Qi",
+        "nomVisible": true
+      }
+    },
+    {
+      "slug": "zhugeliang",
+      "nom": "Zhuge Liang",
+      "classement": "Zhuge Liang",
+      "titre": "Naissance de Zhuge Liang",
+      "axe": "Guerres et résistances",
+      "naissance": 181,
+      "description": "Zhuge Liang (181-234) est le chancelier du royaume de Shu Han durant la période des Trois Royaumes. Conseiller de Liu Bei, il lui propose le plan de partager l'empire en trois et dirige ensuite le gouvernement du Sichuan avec rigueur. Il meurt en campagne en 234 pendant les expéditions contre Wei, et son nom reste synonyme de sagesse stratégique et de loyauté.",
+      "wikipedia": "Zhuge_Liang",
+      "essentiel": true,
+      "biographie": "bio_zhugeliang",
+      "portrait": {
+        "fichier": "明人绘 《诸葛亮像》（南薰殿本）.jpg",
+        "legende": "Zhuge Liang, portrait peint à l'époque Ming, longtemps après sa mort : un portrait imaginaire",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "guanyu",
+      "nom": "Guan Yu",
+      "classement": "Guan Yu",
+      "titre": "Naissance de Guan Yu",
+      "axe": "Guerres et résistances",
+      "naissance": 160,
+      "description": "Guan Yu (vers 160-220) est un général du royaume de Shu Han, l'un des compagnons de Liu Bei. Devenu célèbre par sa bravoure et sa fidélité, il défend la province de Jing contre Wei et Wu avant d'être capturé et exécuté par le royaume de Wu. Divinisé dès les Song, il est vénéré comme dieu de la guerre et de la loyauté sous le nom de Guandi, dans les temples de Chine et de la diaspora.",
+      "wikipedia": "Guan_Yu",
+      "portrait": {
+        "fichier": "Guanyu.jpg",
+        "legende": "Guan Yu, estampe japonaise d'Utagawa Kuniyoshi (XIXe siècle) : un portrait imaginaire",
+        "licence": "Domaine public",
+        "auteur": "Utagawa Kuniyoshi"
+      }
+    },
+    {
+      "slug": "yuefei",
+      "nom": "Yue Fei",
+      "classement": "Yue Fei",
+      "titre": "Naissance de Yue Fei",
+      "axe": "Guerres et résistances",
+      "naissance": 1103,
+      "description": "Yue Fei (1103-1142) est un général de la dynastie des Song du Sud, devenu le symbole de la loyauté patriotique. Simple soldat devenu chef d'armée, il repousse les Jin hors du Yangzi et reprend plusieurs villes du centre de la Chine. Rappelé par le chancelier Qin Hui, partisan de la paix, il est emprisonné puis mis à mort en 1142, et sa tombe de Hangzhou est un lieu de pèlerinage.",
+      "wikipedia": "Yue_Fei",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Yue Fei temple 12.jpg",
+        "legende": "Statue de Yue Fei dans son temple de Hangzhou, sous l'inscription « Rendez-moi mes fleuves et mes monts »",
+        "licence": "CC BY 3.0",
+        "auteur": "Peter Potrowl"
+      }
+    },
+    {
+      "slug": "wentianxiang",
+      "nom": "Wen Tianxiang",
+      "classement": "Wen Tianxiang",
+      "titre": "Naissance de Wen Tianxiang",
+      "axe": "Guerres et résistances",
+      "naissance": 1236,
+      "description": "Wen Tianxiang (1236-1283) est un lettré et un homme d'État de la fin de la dynastie Song, symbole de la loyauté au pays vaincu. Premier au concours de 1256, il lève une armée contre les Mongols puis devient chancelier alors que Lin'an tombe en 1276. Prisonnier de Kubilai Khan pendant plusieurs années, il refuse de servir les Yuan et choisit la mort, après avoir écrit le poème Zheng qi ge.",
+      "wikipedia": "Wen_Tianxiang",
+      "portrait": {
+        "fichier": "Wen Tianxiang.jpg",
+        "legende": "Wen Tianxiang, gravure ancienne : un portrait imaginaire",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "qijiguang",
+      "nom": "Qi Jiguang",
+      "classement": "Qi Jiguang",
+      "titre": "Naissance de Qi Jiguang",
+      "axe": "Guerres et résistances",
+      "naissance": 1528,
+      "description": "Qi Jiguang (1528-1588) est un général de la dynastie Ming qui combat les pirates japonais, les wokou, dans le sud-est de la Chine. Il forme dans le Zhejiang une armée de paysans et de mineurs, imagine la formation à neuf soldats dite du canard mandarin, et écrase les pillards dans les années 1560. Envoyé ensuite défendre la frontière du Nord, il fait renforcer la Grande Muraille, dont il fait bâtir les tours de guet.",
+      "wikipedia": "Qi_Jiguang",
+      "portrait": {
+        "fichier": "Qi jiguang.JPG",
+        "legende": "Statue de Qi Jiguang, photographie",
+        "licence": "Domaine public",
+        "auteur": "GnuDoyng"
+      }
+    },
+    {
+      "slug": "zhenghe",
+      "nom": "Zheng He",
+      "classement": "Zheng He",
+      "titre": "Naissance de Zheng He",
+      "axe": "Guerres et résistances",
+      "naissance": 1371,
+      "description": "Zheng He (1371-1433) est un amiral eunuque de la dynastie Ming, qui commande sept expéditions maritimes entre 1405 et 1433. Originaire du Yunnan et musulman, il conduit des flottes de plusieurs centaines de navires jusqu'en Inde, en Arabie et sur la côte de l'Afrique de l'Est. Ces voyages, brusquement abandonnés après sa mort, restent une démonstration de puissance maritime sans conquête territoriale.",
+      "wikipedia": "Zheng_He",
+      "essentiel": true,
+      "biographie": "bio_zhenghe",
+      "portrait": {
+        "fichier": "Zheng He.jpg",
+        "legende": "Statue de Zheng He à Malacca : aucun portrait authentique n'existe",
+        "licence": "CC BY-SA 2.0",
+        "auteur": "hassan saeed from Melaka, Malaysia"
+      }
+    },
+    {
+      "slug": "koxinga",
+      "nom": "Koxinga",
+      "classement": "Koxinga",
+      "titre": "Naissance de Koxinga",
+      "axe": "Guerres et résistances",
+      "naissance": 1624,
+      "description": "Koxinga (1624-1662) est un chef de guerre chinois, de son nom Zheng Chenggong, qui chasse les Hollandais de Taïwan en 1662. Né au Japon d'un père marchand chinois et d'une mère japonaise, il refuse de se soumettre aux Qing après la chute des Ming et tient la mer avec une flotte puissante. Mort quelques mois après sa victoire, il est vénéré à Taïwan comme un héros et comme un dieu, et reste une figure honorée à Pékin comme à Taipei.",
+      "wikipedia": "Koxinga",
+      "portrait": {
+        "fichier": "The Portrait of Koxinga.jpg",
+        "legende": "Koxinga, portrait ancien en habit de cour des Ming",
+        "licence": "Domaine public",
+        "auteur": "Anonymous Unknown author"
+      }
+    },
+    {
+      "slug": "linzexu",
+      "nom": "Lin Zexu",
+      "classement": "Lin Zexu",
+      "titre": "Naissance de Lin Zexu",
+      "axe": "Guerres et résistances",
+      "naissance": 1785,
+      "description": "Lin Zexu (1785-1850) est un haut fonctionnaire des Qing qui lance en 1839 la campagne contre le commerce de l'opium à Canton. Il fait détruire plus de vingt mille caisses d'opium britannique, un acte qui déclenche la première guerre de l'opium. Disgracié et exilé après la défaite, il reste dans la mémoire chinoise le premier à avoir résisté aux puissances étrangères.",
+      "wikipedia": "Lin_Zexu",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Portrait of Lin Zexu.jpeg",
+        "legende": "Lin Zexu, portrait du peintre cantonais Lam Qua (XIXe siècle)",
+        "licence": "Domaine public",
+        "auteur": "Lam Qua (Guan Qiaochang)"
+      }
+    },
+    {
+      "slug": "hongxiuquan",
+      "nom": "Hong Xiuquan",
+      "classement": "Hong Xiuquan",
+      "titre": "Naissance de Hong Xiuquan",
+      "axe": "Guerres et résistances",
+      "naissance": 1814,
+      "description": "Hong Xiuquan (1814-1864) est le chef de la révolte des Taiping, qui ravage la Chine de 1850 à 1864. Candidat malheureux aux examens, convaincu d'être le frère cadet de Jésus, il fonde le Royaume céleste de la grande paix et prend Nankin en 1853. La guerre qui s'ensuit fait des millions de morts, l'un des conflits les plus meurtriers de l'histoire, et il meurt à Nankin peu avant sa chute.",
+      "wikipedia": "Hong_Xiuquan",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Hong Xiuquan.jpg",
+        "legende": "Hong Xiuquan, lithographie du XIXe siècle de Ford & West",
+        "licence": "Domaine public",
+        "auteur": "Ford & West"
+      }
+    },
+    {
+      "slug": "zengguofan",
+      "nom": "Zeng Guofan",
+      "classement": "Zeng Guofan",
+      "titre": "Naissance de Zeng Guofan",
+      "axe": "Guerres et résistances",
+      "naissance": 1811,
+      "description": "Zeng Guofan (1811-1872) est un lettré et un général des Qing, vainqueur de la révolte des Taiping. Il lève l'armée du Hunan, un corps de volontaires fidèle à lui seul, et reprend Nankin en 1864 au prix de massacres. Il lance ensuite le mouvement d'autorenforcement qui modernise les arsenaux et envoie les premiers étudiants chinois en Amérique, et reste cité comme un modèle de rigueur morale.",
+      "wikipedia": "Zeng_Guofan",
+      "portrait": {
+        "fichier": "Tseng Kwo-Fan.tif",
+        "legende": "Zeng Guofan âgé, portrait photographique ancien",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "qiujin",
+      "nom": "Qiu Jin",
+      "classement": "Qiu Jin",
+      "titre": "Naissance de Qiu Jin",
+      "axe": "Guerres et résistances",
+      "naissance": 1875,
+      "description": "Qiu Jin (1875-1907) est une poétesse et une révolutionnaire, considérée comme la première féministe chinoise. Elle quitte son mari, étudie au Japon, adhère à la société révolutionnaire de Sun Yat-sen et dirige à Shaoxing une école qui forme des conjurés. Arrêtée avant un soulèvement contre les Qing, elle est décapitée à trente et un ans, et devient une martyre de la cause des femmes comme de la révolution.",
+      "wikipedia": "Qiu_Jin",
+      "portrait": {
+        "fichier": "Qiu jin.jpg",
+        "legende": "Qiu Jin, photographie, un poignard à la main",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "zhude",
+      "nom": "Zhu De",
+      "classement": "Zhu De",
+      "titre": "Naissance de Zhu De",
+      "axe": "Guerres et résistances",
+      "naissance": 1886,
+      "description": "Zhu De (1886-1976) est le fondateur de l'Armée rouge, le maréchal qui commande les forces communistes chinoises. Ancien seigneur de la guerre rallié au communisme, il rejoint Mao au Jinggangshan en 1928 et fait de la guérilla une armée régulière. Chef d'état-major de la Longue Marche et vainqueur de la guerre civile, il préside ensuite l'Assemblée nationale populaire jusqu'à sa mort.",
+      "wikipedia": "Zhu_De",
+      "portrait": {
+        "fichier": "Zhu De.jpg",
+        "legende": "Zhu De en maréchal, photographie de l'agence Xinhua prise par Qi Guanshan",
+        "licence": "Domaine public",
+        "auteur": "Qi Guanshan (Xinhua)"
+      }
+    },
+    {
+      "slug": "pengdehuai",
+      "nom": "Peng Dehuai",
+      "classement": "Peng Dehuai",
+      "titre": "Naissance de Peng Dehuai",
+      "axe": "Guerres et résistances",
+      "naissance": 1898,
+      "description": "Peng Dehuai (1898-1974) est un maréchal chinois, commandant des troupes chinoises en Corée, puis ministre de la Défense. Chef communiste de la Longue Marche, il lance en 1940 la campagne des Cent Régiments contre le Japon, puis conduit les Volontaires du peuple lors de la guerre de Corée. Il critique le Grand Bond en avant à la conférence de Lushan en 1959, ce qui lui vaut d'être destitué puis persécuté pendant la Révolution culturelle, jusqu'à sa mort en détention.",
+      "wikipedia": "Peng_Dehuai",
+      "portrait": {
+        "fichier": "General Peng Dehuai.jpg",
+        "legende": "Peng Dehuai en maréchal, photographie de l'agence Xinhua prise par Zheng Jingkang",
+        "licence": "Domaine public",
+        "auteur": "Zheng Jingkang (Xinhua)"
+      }
+    },
+    {
+      "slug": "zhangxueliang",
+      "nom": "Zhang Xueliang",
+      "classement": "Zhang Xueliang",
+      "titre": "Naissance de Zhang Xueliang",
+      "axe": "Guerres et résistances",
+      "naissance": 1901,
+      "description": "Zhang Xueliang (1901-2001) est un seigneur de la guerre de Mandchourie, passé à la postérité pour l'incident de Xi'an. Fils de Zhang Zuolin, assassiné par les Japonais en 1928, il se rallie au Kuomintang et perd la Mandchourie en 1931 sans combattre. En décembre 1936, il enlève Tchang Kaï-chek pour l'obliger à s'allier aux communistes contre le Japon, et reste assigné à résidence pendant plus d'un demi-siècle.",
+      "wikipedia": "Zhang_Xueliang",
+      "portrait": {
+        "fichier": "Chang Shueliang.jpg",
+        "legende": "Zhang Xueliang jeune, photographie ancienne",
+        "licence": "Domaine public",
+        "auteur": "Central Archive Press"
+      }
+    },
+    {
+      "slug": "confucius",
+      "nom": "Confucius",
+      "classement": "Confucius",
+      "titre": "Naissance de Confucius",
+      "axe": "Littérature et pensée",
+      "naissance": -551,
+      "description": "Confucius (551-479 av. J.-C.) est le penseur dont l'enseignement a façonné la civilisation chinoise pendant plus de deux mille ans. Né dans le petit État de Lu, il enseigne la piété filiale, le respect des rites et la vertu du gouvernant, et ses disciples consignent ses paroles dans les Entretiens. Érigé en maître de l'État sous les Han, il est tour à tour vénéré, attaqué sous Mao, puis réhabilité en Chine contemporaine.",
+      "wikipedia": "Confucius",
+      "essentiel": true,
+      "biographie": "bio_confucius",
+      "portrait": {
+        "fichier": "Konfuzius-1770.jpg",
+        "legende": "Confucius, image imaginaire avec l'inscription « le Saint accompli Confucius » : aucun portrait de son temps n'existe",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu",
+        "nomVisible": true
+      }
+    },
+    {
+      "slug": "zhuangzi",
+      "nom": "Zhuangzi",
+      "classement": "Zhuangzi",
+      "titre": "Naissance de Zhuangzi",
+      "axe": "Littérature et pensée",
+      "naissance": -369,
+      "description": "Zhuangzi (vers 369-vers 286 av. J.-C.) est le philosophe taoïste dont le livre du même nom est l'un des chefs-d'œuvre de la prose chinoise. Il prône l'union avec le cours des choses et la liberté de l'esprit, et ses paraboles, comme le rêve du papillon, mêlent humour et métaphysique. Son influence sur la poésie, la peinture et le bouddhisme chan est durable.",
+      "wikipedia": "Zhuangzi",
+      "biographie": "bio_zhuangzi",
+      "portrait": {
+        "fichier": "玄門十子圖 莊子.jpg",
+        "legende": "Zhuangzi, portrait imaginaire du rouleau des Dix Maîtres de l'école taoïste, par Hua Zili",
+        "licence": "Domaine public",
+        "auteur": "Hua Zili"
+      }
+    },
+    {
+      "slug": "mencius",
+      "nom": "Mencius",
+      "classement": "Mencius",
+      "titre": "Naissance de Mencius",
+      "axe": "Littérature et pensée",
+      "naissance": -372,
+      "description": "Mencius (372-289 av. J.-C.) est le principal continuateur de Confucius, que la tradition appelle le « second sage ». Il soutient que la nature humaine est naturellement bonne, que le prince doit gouverner par la bienveillance et que le peuple a le droit de renverser un tyran. Recueillies dans le livre qui porte son nom, ses idées deviennent un des Quatre Livres sur lesquels portent les examens impériaux.",
+      "wikipedia": "Mencius",
+      "biographie": "bio_mencius",
+      "portrait": {
+        "fichier": "Half Portraits of the Great Sage and Virtuous Men of Old - Meng Ke (孟軻).jpg",
+        "legende": "Mencius, demi-portrait imaginaire d'une série de sages, avec son nom inscrit",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu",
+        "nomVisible": true
+      }
+    },
+    {
+      "slug": "mozi",
+      "nom": "Mozi",
+      "classement": "Mozi",
+      "titre": "Naissance de Mozi",
+      "axe": "Littérature et pensée",
+      "naissance": -479,
+      "description": "Mozi (479-392 av. J.-C.) est un philosophe, fondateur de l'école moïste, rivale du confucianisme. Il prêche l'amour universel, sans les degrés de parenté de Confucius, condamne les guerres d'agression et rejette le luxe des rites funéraires. Son école, qui défend aussi les cités assiégées et réfléchit à la logique et à l'optique, disparaît après l'unification de Qin.",
+      "wikipedia": "Mozi",
+      "portrait": {
+        "fichier": "Философ Мо-Цзы.jpg",
+        "legende": "Mozi, portrait imaginaire peint par Vjacheslav Rublevskiy",
+        "licence": "CC0 (domaine public)",
+        "auteur": "Vjacheslav Rublevskiy"
+      }
+    },
+    {
+      "slug": "xunzi",
+      "nom": "Xunzi",
+      "classement": "Xunzi",
+      "titre": "Naissance de Xunzi",
+      "axe": "Littérature et pensée",
+      "naissance": -310,
+      "description": "Xunzi (vers 310-vers 235 av. J.-C.) est un philosophe confucianiste, qui affirme que la nature humaine est mauvaise et qu'il faut la redresser par l'éducation et les rites. Il enseigne à l'académie Jixia, dirige le district de Lanling et compte parmi ses élèves les légistes Han Feizi et Li Si. Sa pensée, plus réaliste que celle de Mencius, a longtemps été éclipsée, puis réévaluée par les historiens modernes.",
+      "wikipedia": "Xun_Zi",
+      "portrait": {
+        "fichier": "Portrait of Xun Zi.jpg",
+        "legende": "Xunzi, portrait imaginaire d'époque tardive",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "hanfeizi",
+      "nom": "Han Feizi",
+      "classement": "Han Feizi",
+      "titre": "Naissance de Han Feizi",
+      "axe": "Littérature et pensée",
+      "naissance": -280,
+      "description": "Han Feizi (vers 280-233 av. J.-C.) est un philosophe, le grand théoricien du légisme chinois. Prince de la maison de Han, élève de Xunzi, il rassemble dans un livre qui porte son nom les trois outils du souverain : la loi, la technique et l'autorité. Appelé à la cour de Qin par le futur Qin Shi Huang, il est emprisonné par Li Si, un ancien condisciple, et meurt en prison, mais ses idées nourriront l'empire de Qin.",
+      "wikipedia": "Han_Fei",
+      "portrait": {
+        "fichier": "Statue Of Han Fei.png",
+        "legende": "Statue de Han Fei, photographie : aucun portrait authentique n'existe",
+        "licence": "CC BY-SA 4.0",
+        "auteur": "Sabinowitz"
+      }
+    },
+    {
+      "slug": "quyuan",
+      "nom": "Qu Yuan",
+      "classement": "Qu Yuan",
+      "titre": "Naissance de Qu Yuan",
+      "axe": "Littérature et pensée",
+      "naissance": -340,
+      "description": "Qu Yuan (340-278 av. J.-C.) est le premier poète de Chine connu par son nom. Ministre du royaume de Chu, calomnié puis exilé par le roi, il compose le Lisao et d'autres poèmes des Chants de Chu, nourris de mythes et de chamanisme. Il se jette dans la rivière Miluo, selon la tradition, et la fête des bateaux-dragons commémore chaque année sa mort.",
+      "wikipedia": "Qu_Yuan",
+      "portrait": {
+        "fichier": "Qu Yuan Chen Hongshou 2.jpg",
+        "legende": "Qu Yuan, peint par Chen Hongshou (XVIIe siècle), près de deux mille ans après sa mort : un portrait imaginaire",
+        "licence": "Domaine public",
+        "auteur": "Chen Hongshou"
+      }
+    },
+    {
+      "slug": "simaqian",
+      "nom": "Sima Qian",
+      "classement": "Sima Qian",
+      "titre": "Naissance de Sima Qian",
+      "axe": "Littérature et pensée",
+      "naissance": -145,
+      "description": "Sima Qian (145-86 av. J.-C.) est l'historien de la dynastie Han, auteur des Mémoires historiques (Shiji). Il hérite de son père la charge de grand astrologue-archiviste et rédige une histoire de l'empire depuis l'Empereur Jaune jusqu'à son temps. Condamné à la castration pour avoir défendu un général disgracié, il survit pour terminer son œuvre, modèle de l'historiographie chinoise.",
+      "wikipedia": "Sima_Qian",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Sima Qian (painted portrait).jpg",
+        "legende": "Sima Qian, portrait imaginaire peint longtemps après sa mort",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "taoyuanming",
+      "nom": "Tao Yuanming",
+      "classement": "Tao Yuanming",
+      "titre": "Naissance de Tao Yuanming",
+      "axe": "Littérature et pensée",
+      "naissance": 365,
+      "description": "Tao Yuanming (365-427) est un poète de la période des Six Dynasties, resté célèbre pour avoir quitté la fonction publique. Après quelques années de postes subalternes, il renonce en 405 à son rang de préfet de Pengze, en disant qu'il ne plierait pas la taille pour cinq boisseaux de riz. Retiré dans ses champs, il chante le vin, la nature et la simplicité, et sa Source aux fleurs de pêcher invente l'utopie chinoise.",
+      "wikipedia": "Tao_Yuanming",
+      "portrait": {
+        "fichier": "Taoqian1.jpg",
+        "legende": "Tao Yuanming, peint par Chen Hongshou (XVIIe siècle) : un portrait imaginaire",
+        "licence": "Domaine public",
+        "auteur": "Chen Hongshou"
+      }
+    },
+    {
+      "slug": "libai",
+      "nom": "Li Bai",
+      "classement": "Li Bai",
+      "titre": "Naissance de Li Bai",
+      "axe": "Littérature et pensée",
+      "naissance": 701,
+      "description": "Li Bai (701-762) est l'un des deux plus grands poètes de la dynastie Tang, surnommé l'Immortel de la poésie. Voyageur et buveur, il séjourne à la cour de Xuanzong, avant d'en être écarté, et laisse un millier de poèmes d'une liberté et d'une imagination extraordinaires. Il meurt, dit la légende, en tentant d'attraper le reflet de la lune dans un fleuve.",
+      "wikipedia": "Li_Bai",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "李白.png",
+        "legende": "Li Bai, portrait imaginaire avec l'inscription « Li Bai, de l'Académie Hanlin des Tang »",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu",
+        "nomVisible": true
+      }
+    },
+    {
+      "slug": "dufu",
+      "nom": "Du Fu",
+      "classement": "Du Fu",
+      "titre": "Naissance de Du Fu",
+      "axe": "Littérature et pensée",
+      "naissance": 712,
+      "description": "Du Fu (712-770) est le poète considéré comme le plus grand de Chine avec Li Bai, surnommé le Saint de la poésie. Fonctionnaire raté, témoin de la révolte d'An Lushan, il dit dans ses poèmes la misère du peuple, la guerre et l'exil avec une précision qui en fait un historien de son temps. Mort pauvre sur un bateau, il a laissé quatorze cents poèmes, modèles pour des siècles de poètes.",
+      "wikipedia": "Du_Fu",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Dufu.jpg",
+        "legende": "Du Fu, portrait imaginaire d'époque tardive, avec une inscription",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu",
+        "nomVisible": true
+      }
+    },
+    {
+      "slug": "wangwei",
+      "nom": "Wang Wei",
+      "classement": "Wang Wei",
+      "titre": "Naissance de Wang Wei",
+      "axe": "Littérature et pensée",
+      "naissance": 701,
+      "description": "Wang Wei (701-761) est un poète, un peintre et un musicien de la dynastie Tang, connu pour ses paysages. Fonctionnaire brillant, il se retire sur ses terres de Wangchuan, où il vit en bouddhiste laïc et compose des poèmes d'une grande économie. Le critique Su Shi dira de son œuvre qu'il y a de la peinture dans ses poèmes et de la poésie dans ses peintures.",
+      "wikipedia": "Wang_Wei",
+      "portrait": {
+        "fichier": "Wang Wei.jpg",
+        "legende": "Wang Wei, dessin imaginaire d'époque tardive : le poète y est vu de dos",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "baijuyi",
+      "nom": "Bai Juyi",
+      "classement": "Bai Juyi",
+      "titre": "Naissance de Bai Juyi",
+      "axe": "Littérature et pensée",
+      "naissance": 772,
+      "description": "Bai Juyi (772-846) est un poète de la dynastie Tang, célèbre pour sa langue simple, qu'on disait comprise par une vieille paysanne. Fonctionnaire, parfois exilé, il écrit des poèmes de critique sociale, ainsi que le Chant des regrets éternels, qui raconte la tragédie de Yang Guifei. Ses vers sont lus dans toute l'Asie orientale, jusqu'au Japon, où la cour les recopie.",
+      "wikipedia": "Bai_Juyi",
+      "portrait": {
+        "fichier": "Bai Juyi by Chen Hongshou.jpg",
+        "legende": "Bai Juyi, peint par Chen Hongshou (XVIIe siècle) : un portrait imaginaire",
+        "licence": "Domaine public",
+        "auteur": "Chen Hongshou"
+      }
+    },
+    {
+      "slug": "hanyu",
+      "nom": "Han Yu",
+      "classement": "Han Yu",
+      "titre": "Naissance de Han Yu",
+      "axe": "Littérature et pensée",
+      "naissance": 768,
+      "description": "Han Yu (768-824) est un lettré, un prosateur et un poète de la dynastie Tang, tenu pour l'un des huit grands maîtres de la prose. Il réclame un retour à la prose ancienne contre le style parallèle alors à la mode, défend la tradition de Confucius et critique le bouddhisme. Exilé en 819 pour avoir protesté contre une cérémonie des reliques, il laisse une œuvre qui annonce le néoconfucianisme des Song.",
+      "wikipedia": "Han_Yu",
+      "portrait": {
+        "fichier": "Han Yu.jpg",
+        "legende": "Han Yu, gravure ancienne : un portrait imaginaire",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "sushi",
+      "nom": "Su Shi",
+      "classement": "Su Shi",
+      "titre": "Naissance de Su Shi",
+      "axe": "Littérature et pensée",
+      "naissance": 1037,
+      "description": "Su Shi (1037-1101) est un poète, un calligraphe, un peintre et un haut fonctionnaire de la dynastie Song, connu sous le nom de Su Dongpo. Opposant aux réformes de Wang Anshi, il connaît plusieurs exils, dont celui de Huangzhou, où il compose ses plus beaux textes, comme les Odes à la Falaise rouge. Gourmet et bon vivant, il donne son nom à un plat de porc braisé et reste l'un des lettrés les plus aimés de Chine.",
+      "wikipedia": "Su_Shi",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Su shi.jpg",
+        "legende": "Su Shi, portrait attribué à Zhao Mengfu, deux siècles après sa mort",
+        "licence": "Domaine public",
+        "auteur": "Attribué à Zhao Mengfu"
+      }
+    },
+    {
+      "slug": "liqingzhao",
+      "nom": "Li Qingzhao",
+      "classement": "Li Qingzhao",
+      "titre": "Naissance de Li Qingzhao",
+      "axe": "Littérature et pensée",
+      "naissance": 1084,
+      "description": "Li Qingzhao (1084-vers 1155) est la plus grande poétesse de la Chine ancienne. Épouse d'un collectionneur d'inscriptions, elle compose des poèmes lyriques sur la joie du couple, puis, chassée par l'invasion des Jin en 1127, sur le veuvage, l'exil et la perte. Ses poèmes ci, d'une sensibilité très moderne, sont appris par cœur dans les écoles chinoises.",
+      "wikipedia": "Li_Qingzhao",
+      "portrait": {
+        "fichier": "Li Qingzhao statue.JPG",
+        "legende": "Statue de Li Qingzhao, photographie : aucun portrait authentique n'existe",
+        "licence": "CC BY 3.0",
+        "auteur": "Gisling"
+      }
+    },
+    {
+      "slug": "zhuxi",
+      "nom": "Zhu Xi",
+      "classement": "Zhu Xi",
+      "titre": "Naissance de Zhu Xi",
+      "axe": "Littérature et pensée",
+      "naissance": 1130,
+      "description": "Zhu Xi (1130-1200) est le philosophe qui a donné sa forme définitive au néoconfucianisme. Il rassemble les Quatre Livres, les commente, et défend une pensée où le principe (li) ordonne la matière (qi), faisant de l'étude des choses la voie de la vertu. Son interprétation devient l'orthodoxie des examens impériaux de 1313 à 1905 et influence aussi la Corée, le Japon et le Vietnam.",
+      "wikipedia": "Zhu_Xi",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "唯一可靠的朱熹画像.jpg",
+        "legende": "Zhu Xi, frottis d'une gravure sur pierre, tenu pour le seul portrait fiable",
+        "licence": "CC BY-SA 4.0",
+        "auteur": "向史公哲曰"
+      }
+    },
+    {
+      "slug": "wangyangming",
+      "nom": "Wang Yangming",
+      "classement": "Wang Yangming",
+      "titre": "Naissance de Wang Yangming",
+      "axe": "Littérature et pensée",
+      "naissance": 1472,
+      "description": "Wang Yangming (1472-1529) est un philosophe et un général de la dynastie Ming, fondateur de l'école de l'esprit. Fonctionnaire disgracié et exilé au Guizhou, il y a l'illumination que le principe n'est pas dans les choses mais dans l'esprit, et affirme l'unité de la connaissance et de l'action. Sa pensée, qui rompt avec Zhu Xi, traverse la Corée et le Japon, où elle inspire aussi des réformateurs du XIXe siècle.",
+      "wikipedia": "Wang_Yangming",
+      "portrait": {
+        "fichier": "Wang Shoujen.jpg",
+        "legende": "Wang Yangming, gravure ancienne : un portrait imaginaire",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "luoguanzhong",
+      "nom": "Luo Guanzhong",
+      "classement": "Luo Guanzhong",
+      "titre": "Naissance de Luo Guanzhong",
+      "axe": "Littérature et pensée",
+      "naissance": 1330,
+      "description": "Luo Guanzhong (vers 1330-vers 1400) est l'auteur supposé du Roman des Trois Royaumes, l'un des quatre grands romans classiques chinois. On sait très peu de sa vie, sinon qu'il aurait vécu à la fin des Yuan et au début des Ming, et écrit aussi des pièces de théâtre. Son récit des guerres de la fin des Han, mêlant l'histoire et la légende, a fixé l'image de Cao Cao, de Liu Bei, de Zhuge Liang et de Guan Yu.",
+      "wikipedia": "Luo_Guanzhong",
+      "portrait": {
+        "fichier": "罗贯中 01.jpg",
+        "legende": "Statue de Luo Guanzhong, photographie : aucun portrait authentique n'existe",
+        "licence": "CC BY-SA 4.0",
+        "auteur": "魏庆贺 (Wei Qinghe)",
+        "nomVisible": true
+      }
+    },
+    {
+      "slug": "wuchengen",
+      "nom": "Wu Cheng'en",
+      "classement": "Wu Cheng'en",
+      "titre": "Naissance de Wu Cheng'en",
+      "axe": "Littérature et pensée",
+      "naissance": 1500,
+      "description": "Wu Cheng'en (1500-1582) est l'auteur supposé de La Pérégrination vers l'Ouest, roman de la dynastie Ming. Lettré qui échoue longtemps aux examens et se contente de petits postes, il adapte la légende du pèlerinage de Xuanzang vers l'Inde, avec le Roi Singe Sun Wukong en vedette. Entre satire, aventure et allégorie religieuse, ce récit est l'un des plus lus de Chine et un modèle pour la bande dessinée et le cinéma.",
+      "wikipedia": "Wu_Cheng'en",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Evl53201b pic.jpg",
+        "legende": "Page d'une édition ancienne de La Pérégrination vers l'Ouest : aucun portrait de Wu Cheng'en n'existe",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "caoxueqin",
+      "nom": "Cao Xueqin",
+      "classement": "Cao Xueqin",
+      "titre": "Naissance de Cao Xueqin",
+      "axe": "Littérature et pensée",
+      "naissance": 1715,
+      "description": "Cao Xueqin (vers 1715-1763) est l'auteur du Rêve du pavillon rouge, que beaucoup tiennent pour le plus grand roman chinois. Issu d'une riche famille de fonctionnaires tombée en disgrâce, il y transpose en partie son propre destin, celui d'un clan qui s'écroule. Mort en laissant l'œuvre inachevée, il a vu ses manuscrits circuler, avant qu'une version complétée ne paraisse en 1791, et l'étude du roman a donné naissance à une discipline, la « redologie ».",
+      "wikipedia": "Cao_Xueqin",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Statue of Cao Xueqin.JPG",
+        "legende": "Statue de Cao Xueqin, photographie : aucun portrait authentique n'existe",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "User:Yongxinge"
+      }
+    },
+    {
+      "slug": "pusongling",
+      "nom": "Pu Songling",
+      "classement": "Pu Songling",
+      "titre": "Naissance de Pu Songling",
+      "axe": "Littérature et pensée",
+      "naissance": 1640,
+      "description": "Pu Songling (1640-1715) est l'auteur des Contes extraordinaires du studio du Bavard, recueil de plus de quatre cents récits de fantômes, de renardes et de lettrés. Plusieurs fois recalé aux examens, il passe sa vie comme précepteur et recueille les histoires qu'on lui raconte dans une auberge au bord de la route. Ses contes, à la fois fantastiques et satiriques, ont nourri le théâtre, le cinéma et la tradition populaire.",
+      "wikipedia": "Pu_Songling",
+      "portrait": {
+        "fichier": "Pu Songling.jpg",
+        "legende": "Pu Songling âgé, portrait ancien peint",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "kangyouwei",
+      "nom": "Kang Youwei",
+      "classement": "Kang Youwei",
+      "titre": "Naissance de Kang Youwei",
+      "axe": "Littérature et pensée",
+      "naissance": 1858,
+      "description": "Kang Youwei (1858-1927) est un lettré et un réformateur, l'inspirateur de la réforme des Cent Jours de 1898. Il relit Confucius comme un réformateur et défend la monarchie constitutionnelle, et il convainc l'empereur Guangxu de lancer la réforme. Après son échec, il s'exile et plaide la restauration de l'empire, tout en publiant le Livre de la grande union, une utopie égalitaire.",
+      "wikipedia": "Kang_Youwei",
+      "portrait": {
+        "fichier": "Kang-youwei2-large.jpg",
+        "legende": "Kang Youwei, photographie ancienne",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "liangqichao",
+      "nom": "Liang Qichao",
+      "classement": "Liang Qichao",
+      "titre": "Naissance de Liang Qichao",
+      "axe": "Littérature et pensée",
+      "naissance": 1873,
+      "description": "Liang Qichao (1873-1929) est un journaliste, un penseur et un réformateur, disciple de Kang Youwei. Exilé au Japon après 1898, il fait connaître en chinois la pensée occidentale dans des revues lues par toute une génération. Rentré en Chine, ministre en 1917, il enseigne à l'université Tsinghua et rédige une œuvre immense sur l'histoire et le nationalisme.",
+      "wikipedia": "Liang_Qichao",
+      "portrait": {
+        "fichier": "Liang Qichao portrait.jpg",
+        "legende": "Liang Qichao, portrait photographique",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "luxun",
+      "nom": "Lu Xun",
+      "classement": "Lu Xun",
+      "titre": "Naissance de Lu Xun",
+      "axe": "Littérature et pensée",
+      "naissance": 1881,
+      "description": "Lu Xun (1881-1936) est le fondateur de la littérature chinoise moderne. Médecin devenu écrivain, il publie en 1918 Le Journal d'un fou et en 1921 La Véritable Histoire de Ah Q, satires de la société traditionnelle. Chef de file de la gauche littéraire, il refuse toute adhésion au Parti, et Mao le qualifiera de « commandant en chef de la révolution culturelle ».",
+      "wikipedia": "Lu_Xun",
+      "essentiel": true,
+      "biographie": "bio_luxun",
+      "portrait": {
+        "fichier": "LuXun1930.jpg",
+        "legende": "Lu Xun, photographie de septembre 1930 avec sa dédicace manuscrite",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu",
+        "nomVisible": true
+      }
+    },
+    {
+      "slug": "huishi",
+      "nom": "Hu Shi",
+      "classement": "Hu Shi",
+      "titre": "Naissance de Hu Shi",
+      "axe": "Littérature et pensée",
+      "naissance": 1891,
+      "description": "Hu Shi (1891-1962) est un philosophe et un écrivain, figure majeure du mouvement de la Nouvelle Culture. Élève de John Dewey à Columbia, il publie en 1917 un appel à écrire en langue vulgaire, le baihua, qui transforme la langue littéraire chinoise. Ambassadeur aux États-Unis pendant la guerre, puis président de l'Academia Sinica à Taïwan, il reste un libéral, attaché à la science et au doute.",
+      "wikipedia": "Hu_Shi",
+      "portrait": {
+        "fichier": "Hu Shih 1960 color (cropped).jpg",
+        "legende": "Hu Shi, photographie en couleurs vers 1960",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "laoshe",
+      "nom": "Lao She",
+      "classement": "Lao She",
+      "titre": "Naissance de Lao She",
+      "axe": "Littérature et pensée",
+      "naissance": 1899,
+      "description": "Lao She (1899-1966) est un romancier et un dramaturge de Pékin, auteur de Le Pousse-pousse et de La Maison de thé. Fils d'un soldat mandchou tué lors de la révolte des Boxers, il enseigne à Londres, écrit en langue vivante et en dialecte pékinois, et revient en Chine en 1949. Harcelé par les gardes rouges en 1966, il se noie dans le lac Taiping, en pleine Révolution culturelle.",
+      "wikipedia": "Lao_She",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Standard compressed lao-she.jpg",
+        "legende": "Lao She, photographie du studio Shelburne",
+        "licence": "Domaine public",
+        "auteur": "Shelburne Studios"
+      }
+    },
+    {
+      "slug": "bajin",
+      "nom": "Ba Jin",
+      "classement": "Ba Jin",
+      "titre": "Naissance de Ba Jin",
+      "axe": "Littérature et pensée",
+      "naissance": 1904,
+      "description": "Ba Jin (1904-2005) est un romancier, dont la trilogie Famille, Printemps, Automne dit le conflit de deux générations. Anarchiste dans sa jeunesse, formé en France, il choisit son nom de plume en pensant à Bakounine et à Kropotkine. Persécuté pendant la Révolution culturelle, il publie plus tard Pensées improvisées, un appel à l'examen de conscience et à la mémoire, et préside l'Association des écrivains jusqu'à sa mort.",
+      "wikipedia": "Ba_Jin",
+      "portrait": {
+        "fichier": "巴金1938.jpg",
+        "legende": "Ba Jin en 1938, photographie",
+        "largeur": 960,
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "zhangailing",
+      "nom": "Zhang Ailing",
+      "classement": "Zhang Ailing",
+      "titre": "Naissance de Zhang Ailing",
+      "axe": "Littérature et pensée",
+      "naissance": 1920,
+      "description": "Zhang Ailing (1920-1995) est une romancière née à Shanghai, connue en Occident sous le nom d'Eileen Chang. Auteure de nouvelles et de romans, elle décrit avec une ironie cruelle les amours et les illusions de la bourgeoisie shanghaïenne dans les années 1940. Installée à Hong Kong puis aux États-Unis après 1952, elle est devenue une des plus lues des écrivains chinois du XXe siècle.",
+      "wikipedia": "Eileen_Chang",
+      "portrait": {
+        "fichier": "1944年的张爱玲.jpg",
+        "legende": "Zhang Ailing en 1944, photographie",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "jinyong",
+      "nom": "Jin Yong",
+      "classement": "Jin Yong",
+      "titre": "Naissance de Jin Yong",
+      "axe": "Littérature et pensée",
+      "naissance": 1924,
+      "description": "Jin Yong (1924-2018) est un écrivain et un journaliste de Hong Kong, de son vrai nom Louis Cha, maître du roman de cape et d'épée. Fondateur du quotidien Ming Pao, il publie entre 1955 et 1972 quinze romans, dont La Légende des héros du condor, vendus à des dizaines de millions d'exemplaires. Adaptés à la télévision, au cinéma et en jeu vidéo, ils sont lus en Chine, à Taïwan et dans toute la diaspora.",
+      "wikipedia": "Jin_Yong",
+      "portrait": {
+        "fichier": "Jin Yong, July 2007.jpg",
+        "legende": "Jin Yong en juillet 2007, photographie lors d'une rencontre publique",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "user:S19991002"
+      }
+    },
+    {
+      "slug": "guomoruo",
+      "nom": "Guo Moruo",
+      "classement": "Guo Moruo",
+      "titre": "Naissance de Guo Moruo",
+      "axe": "Littérature et pensée",
+      "naissance": 1892,
+      "description": "Guo Moruo (1892-1978) est un poète, un dramaturge, un archéologue et un homme politique. Après des études au Japon, il publie en 1921 le recueil Les Déesses, puis rejoint le Parti communiste, et devient après 1949 président de l'Académie des sciences de Chine. Il a déchiffré les inscriptions sur os oraculaires, mais sa soumission au pouvoir, lors de la Révolution culturelle comme avant, lui est souvent reprochée.",
+      "wikipedia": "Guo_Moruo",
+      "portrait": {
+        "fichier": "郭开贞.jpg",
+        "legende": "Guo Moruo, photographie",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "shencongwen",
+      "nom": "Shen Congwen",
+      "classement": "Shen Congwen",
+      "titre": "Naissance de Shen Congwen",
+      "axe": "Littérature et pensée",
+      "naissance": 1902,
+      "description": "Shen Congwen (1902-1988) est un écrivain et un historien du costume, auteur du roman La Frontière et de nouvelles sur sa région du Hunan. Fils de militaire, il écrit une prose lyrique sur les paysans, les bateliers et les soldats du Xiangxi. Réduit au silence après 1949, il devient conservateur au Musée du Palais et rédige une histoire du costume chinois.",
+      "wikipedia": "Shen_Congwen",
+      "portrait": {
+        "fichier": "Shencongwen001.jpg",
+        "legende": "Shen Congwen, photographie ancienne devant un mur",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "xuanzang",
+      "nom": "Xuanzang",
+      "classement": "Xuanzang",
+      "titre": "Naissance de Xuanzang",
+      "axe": "Littérature et pensée",
+      "naissance": 602,
+      "description": "Xuanzang (602-664) est un moine bouddhiste chinois qui se rend en Inde pour en rapporter les textes. Parti en 629 malgré l'interdiction de l'empereur, il passe seize ans à étudier à Nalanda, puis rentre à Chang'an avec plus de six cents manuscrits. Il en traduit une grande partie et rédige le récit de ses voyages, source précieuse sur l'Inde du VIIe siècle, et devient le modèle du moine de La Pérégrination vers l'Ouest.",
+      "wikipedia": "Xuanzang",
+      "essentiel": true,
+      "biographie": "bio_xuanzang",
+      "portrait": {
+        "fichier": "Xuanzang w.jpg",
+        "legende": "Xuanzang, peinture ancienne : un portrait imaginaire",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "huineng",
+      "nom": "Huineng",
+      "classement": "Huineng",
+      "titre": "Naissance de Huineng",
+      "axe": "Littérature et pensée",
+      "naissance": 638,
+      "description": "Huineng (638-713) est le sixième patriarche du bouddhisme chan, le courant qui deviendra le zen au Japon. Fils d'un paysan, presque illettré, il reçoit la transmission du cinquième patriarche en prononçant un poème qui nie toute poussière sur le miroir de l'esprit. Le Sūtra de l'estrade, qui lui est attribué, enseigne l'éveil soudain et l'égalité de tous les êtres.",
+      "wikipedia": "Huineng",
+      "portrait": {
+        "fichier": "Huineng.jpg",
+        "legende": "Le corps momifié de Huineng, conservé au temple de Nanhua, photographie ancienne",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "wangxizhi",
+      "nom": "Wang Xizhi",
+      "classement": "Wang Xizhi",
+      "titre": "Naissance de Wang Xizhi",
+      "axe": "Beaux-arts",
+      "naissance": 303,
+      "description": "Wang Xizhi (303-361) est le calligraphe le plus célèbre de Chine, surnommé le Saint de la calligraphie. Issu d'une grande famille de Langya, fonctionnaire dans le sud, il fait évoluer l'écriture courante et l'écriture régulière vers leur forme classique. Sa Préface du pavillon des Orchidées, écrite lors d'une réunion de lettrés en 353, n'est connue que par des copies, car l'original aurait été enterré avec l'empereur Taizong.",
+      "wikipedia": "Wang_Xizhi",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Wang Hsichih.jpg",
+        "legende": "Wang Xizhi, gravure ancienne : un portrait imaginaire",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "gukaizhi",
+      "nom": "Gu Kaizhi",
+      "classement": "Gu Kaizhi",
+      "titre": "Naissance de Gu Kaizhi",
+      "axe": "Beaux-arts",
+      "naissance": 344,
+      "description": "Gu Kaizhi (vers 344-vers 406) est le plus ancien peintre chinois dont on connaisse des œuvres, par des copies. Lettré et peintre de cour, il est célèbre pour ses portraits et ses rouleaux, dont les Admonitions de la préceptrice de la cour, copiés sous les Tang. Dans ses écrits sur la peinture, il affirme que l'esprit compte plus que la ressemblance, un principe qui domine l'art chinois.",
+      "wikipedia": "Gu_Kaizhi",
+      "portrait": {
+        "fichier": "Gu Kaizhi.jpg",
+        "legende": "Gu Kaizhi, dessin ancien : un portrait imaginaire",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "yanzhenqing",
+      "nom": "Yan Zhenqing",
+      "classement": "Yan Zhenqing",
+      "titre": "Naissance de Yan Zhenqing",
+      "axe": "Beaux-arts",
+      "naissance": 708,
+      "description": "Yan Zhenqing (708-785) est un calligraphe, un lettré et un général de la dynastie Tang, resté célèbre pour son écriture régulière. Gouverneur de Pingyuan, il organise la résistance contre An Lushan, puis sert quatre empereurs. Chargé d'une mission de conciliation auprès d'un rebelle, il est étranglé en 785, et son style, ample et fort, devient avec Wang Xizhi la référence de tous les calligraphes.",
+      "wikipedia": "Yan_Zhenqing",
+      "portrait": {
+        "fichier": "颜鲁公.jpg",
+        "legende": "Yan Zhenqing, portrait peint longtemps après sa mort : un portrait imaginaire",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "huizong",
+      "nom": "Huizong des Song",
+      "classement": "Huizong des Song",
+      "titre": "Naissance de Huizong des Song",
+      "axe": "Beaux-arts",
+      "naissance": 1082,
+      "description": "Huizong des Song (1082-1135) est un empereur peintre et calligraphe, mais un souverain malheureux. Collectionneur passionné, il fonde une académie de peinture, compose des bambous et des oiseaux d'une grande finesse et invente l'écriture dite « à l'or mince ». Il perd sa capitale Kaifeng et le nord de la Chine, pris par les Jin en 1127, et meurt prisonnier en Mandchourie.",
+      "wikipedia": "Empereur_Huizong_des_Song",
+      "portrait": {
+        "fichier": "Seated Portrait of Emperor Song Huizong.tif",
+        "legende": "Huizong des Song, portrait de cour assis, conservé au Musée national du Palais de Taipei",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "mifu",
+      "nom": "Mi Fu",
+      "classement": "Mi Fu",
+      "titre": "Naissance de Mi Fu",
+      "axe": "Beaux-arts",
+      "naissance": 1051,
+      "description": "Mi Fu (1051-1107) est un calligraphe, un peintre et un collectionneur de la dynastie Song, l'un des quatre grands maîtres de l'époque. Excentrique, il vénère les pierres, se prosterne devant un rocher, et passe pour un connaisseur incomparable. Il invente des paysages de brume et de collines peintes à larges taches d'encre, qui inspirent des siècles de peintres.",
+      "wikipedia": "Mi_Fu",
+      "portrait": {
+        "fichier": "米芾.jpg",
+        "legende": "Mi Fu, portrait attribué au peintre Chao Buzhi, son contemporain",
+        "licence": "Domaine public",
+        "auteur": "Attribué à Chao Buzhi"
+      }
+    },
+    {
+      "slug": "zhaomengfu",
+      "nom": "Zhao Mengfu",
+      "classement": "Zhao Mengfu",
+      "titre": "Naissance de Zhao Mengfu",
+      "axe": "Beaux-arts",
+      "naissance": 1254,
+      "description": "Zhao Mengfu (1254-1322) est un peintre, un calligraphe et un fonctionnaire descendant de la famille impériale des Song. Il sert la dynastie mongole des Yuan, ce qui lui vaut le reproche de collaboration, et plaide pour un retour aux modèles des Tang. Son style, fondé sur l'imitation des anciens, ouvre la peinture de lettrés, et son épouse Guan Daosheng est elle-même peintre.",
+      "wikipedia": "Zhao_Mengfu",
+      "portrait": {
+        "fichier": "趙魏公小像.jpg",
+        "legende": "Zhao Mengfu, petit portrait peint par Yang Shuqian, un contemporain",
+        "licence": "Domaine public",
+        "auteur": "Yang Shuqian"
+      }
+    },
+    {
+      "slug": "shenzhou",
+      "nom": "Shen Zhou",
+      "classement": "Shen Zhou",
+      "titre": "Naissance de Shen Zhou",
+      "axe": "Beaux-arts",
+      "naissance": 1427,
+      "description": "Shen Zhou (1427-1509) est un peintre de l'école de Wu, à Suzhou, et le fondateur de la peinture de lettrés sous les Ming. Il refuse toute carrière officielle, vit de son art et s'appuie sur ses lectures et sur l'étude des maîtres des Yuan. Ses paysages, ses fleurs et ses rouleaux inspirent Wen Zhengming et Tang Yin, et font de Suzhou la capitale de la peinture.",
+      "wikipedia": "Shen_Zhou",
+      "portrait": {
+        "fichier": "Shen Zhou at age 80.Palace Museum Beijing.jpg",
+        "legende": "Shen Zhou à quatre-vingts ans, portrait ancien conservé au Musée du Palais de Pékin",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "dongqichang",
+      "nom": "Dong Qichang",
+      "classement": "Dong Qichang",
+      "titre": "Naissance de Dong Qichang",
+      "axe": "Beaux-arts",
+      "naissance": 1555,
+      "description": "Dong Qichang (1555-1636) est un peintre, un calligraphe et un théoricien de la dynastie Ming, qui a façonné la critique d'art chinoise. Haut fonctionnaire, il divise la peinture en deux écoles, celle des lettrés et celle des professionnels, et place la première au-dessus. Cette lecture de l'histoire de l'art, très discutée, a dominé le goût chinois pendant trois siècles.",
+      "wikipedia": "Dong_Qichang",
+      "portrait": {
+        "fichier": "董其昌.jpg",
+        "legende": "Dong Qichang, portrait en pied de la dynastie Qing",
+        "licence": "Domaine public",
+        "auteur": "Xu Zhang"
+      }
+    },
+    {
+      "slug": "badashanren",
+      "nom": "Bada Shanren",
+      "classement": "Bada Shanren",
+      "titre": "Naissance de Bada Shanren",
+      "axe": "Beaux-arts",
+      "naissance": 1626,
+      "description": "Bada Shanren (1626-1705) est un peintre descendant de la famille impériale Ming, de son vrai nom Zhu Da. Après la chute de la dynastie, il se fait moine puis feint la folie, et signe de noms qui évoquent le rire et le pleur. Ses oiseaux hérissés et ses poissons aux yeux ronds, d'une économie extrême, annoncent l'art moderne chinois.",
+      "wikipedia": "Zhu_Da",
+      "portrait": {
+        "fichier": "Bada Shanren - Lotus and Ducks - Google Art Project.jpg",
+        "legende": "« Lotus et canards », peinture de Bada Shanren : aucun portrait de lui n'est connu",
+        "licence": "Domaine public",
+        "auteur": "Bada Shanren"
+      }
+    },
+    {
+      "slug": "shitao",
+      "nom": "Shitao",
+      "classement": "Shitao",
+      "titre": "Naissance de Shitao",
+      "axe": "Beaux-arts",
+      "naissance": 1641,
+      "description": "Shitao (1641-vers 1720) est un peintre et un théoricien, lui aussi descendant de la famille impériale des Ming. Moine bouddhiste, il parcourt les montagnes de Chine, s'installe à Yangzhou et peint des paysages libres, loin de l'imitation des anciens. Son traité Propos sur la peinture du moine Citrouille amère affirme que la peinture naît de l'expérience personnelle du peintre.",
+      "wikipedia": "Shitao",
+      "portrait": {
+        "fichier": "Shitao-autoportrait.jpg",
+        "legende": "Shitao, autoportrait dans un paysage",
+        "licence": "Domaine public",
+        "auteur": "Shitao"
+      }
+    },
+    {
+      "slug": "zhengbanqiao",
+      "nom": "Zheng Banqiao",
+      "classement": "Zheng Banqiao",
+      "titre": "Naissance de Zheng Banqiao",
+      "axe": "Beaux-arts",
+      "naissance": 1693,
+      "description": "Zheng Banqiao (1693-1765) est un peintre, un calligraphe et un fonctionnaire, de son nom Zheng Xie, l'un des Huit Excentriques de Yangzhou. Magistrat intègre, il se brouille avec ses supérieurs pour avoir ouvert les greniers publics pendant une famine, et vit ensuite de sa peinture. Ses bambous et ses orchidées, accompagnés de sa calligraphie « en mosaïque », sont parmi les plus aimés de Chine.",
+      "wikipedia": "Zheng_Xie",
+      "portrait": {
+        "fichier": "Zheng Xie.png",
+        "legende": "Zheng Banqiao, portrait peint par Ye Yanlan (XIXe siècle)",
+        "licence": "Domaine public",
+        "auteur": "Ye Yanlan"
+      }
+    },
+    {
+      "slug": "qibaishi",
+      "nom": "Qi Baishi",
+      "classement": "Qi Baishi",
+      "titre": "Naissance de Qi Baishi",
+      "axe": "Beaux-arts",
+      "naissance": 1864,
+      "description": "Qi Baishi (1864-1957) est un peintre, d'origine paysanne, devenu l'un des grands maîtres de la peinture chinoise du XXe siècle. Charpentier puis sculpteur sur bois dans le Hunan, il apprend l'art du lettré par lui-même et vient à Pékin à plus de cinquante ans. Ses crevettes, ses crabes et ses fleurs, au trait vif et aux couleurs franches, se vendent aujourd'hui à des prix records.",
+      "wikipedia": "Qi_Baishi",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Qi Baishi (1956), by Zheng Jingkang.jpg",
+        "legende": "Qi Baishi en 1956, photographie de Zheng Jingkang",
+        "licence": "Domaine public",
+        "auteur": "Zheng Jingkang"
+      }
+    },
+    {
+      "slug": "xubeihong",
+      "nom": "Xu Beihong",
+      "classement": "Xu Beihong",
+      "titre": "Naissance de Xu Beihong",
+      "axe": "Beaux-arts",
+      "naissance": 1895,
+      "description": "Xu Beihong (1895-1953) est un peintre, un professeur et un directeur d'académie, célèbre pour ses chevaux à l'encre. Formé à Paris à l'École nationale supérieure des beaux-arts, il mêle l'art académique européen à la peinture chinoise et peint des toiles historiques, dont Yu Gong déplace les montagnes. Premier directeur de l'Académie centrale des beaux-arts de Pékin après 1949, il y forme des générations d'artistes.",
+      "wikipedia": "Xu_Beihong",
+      "portrait": {
+        "fichier": "XuBeihong.jpg",
+        "legende": "Xu Beihong, photographie",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "zhangdaqian",
+      "nom": "Zhang Daqian",
+      "classement": "Zhang Daqian",
+      "titre": "Naissance de Zhang Daqian",
+      "axe": "Beaux-arts",
+      "naissance": 1899,
+      "description": "Zhang Daqian (1899-1983) est un peintre, un collectionneur et un faussaire génial, l'un des artistes chinois les plus connus du XXe siècle. Il copie les maîtres anciens à la perfection, passe trois ans à copier les fresques des grottes de Dunhuang, puis invente un style d'encre éclaboussée. Exilé en 1949 au Brésil, aux États-Unis puis à Taïwan, il a fait connaître la peinture chinoise dans le monde.",
+      "wikipedia": "Chang_Dai-chien",
+      "portrait": {
+        "fichier": "196710張大千.jpg",
+        "legende": "Zhang Daqian en 1967, photographie du Central Daily News",
+        "licence": "Domaine public",
+        "auteur": "Central Daily News"
+      }
+    },
+    {
+      "slug": "linfengmian",
+      "nom": "Lin Fengmian",
+      "classement": "Lin Fengmian",
+      "titre": "Naissance de Lin Fengmian",
+      "axe": "Beaux-arts",
+      "naissance": 1900,
+      "description": "Lin Fengmian (1900-1991) est un peintre, un pionnier de l'art moderne chinois, formé à Dijon et à Paris. Premier directeur de l'académie de Hangzhou, il y mêle la tradition chinoise à Matisse et à Picasso, et forme Zao Wou-ki et Wu Guanzhong. Emprisonné pendant plus de quatre ans durant la Révolution culturelle, il détruit lui-même une partie de son œuvre, puis s'installe à Hong Kong.",
+      "wikipedia": "Lin_Fengmian",
+      "portrait": {
+        "fichier": "林風眠1234567.jpg",
+        "legende": "Lin Fengmian, photographie",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "wuguanzhong",
+      "nom": "Wu Guanzhong",
+      "classement": "Wu Guanzhong",
+      "titre": "Naissance de Wu Guanzhong",
+      "axe": "Beaux-arts",
+      "naissance": 1919,
+      "description": "Wu Guanzhong (1919-2010) est un peintre qui a lié la peinture à l'huile occidentale à l'esprit du paysage chinois. Formé à Paris, rentré en Chine en 1950, il est dénoncé pendant la Révolution culturelle pour son goût de la forme et de l'abstraction, et envoyé travailler aux champs. Sa défense de la beauté de la forme face à l'idéologie, notamment dans son essai sur la beauté de la forme, est devenue l'un des grands textes de l'art chinois.",
+      "wikipedia": "Wu_Guanzhong",
+      "portrait": {
+        "fichier": "Wuguanzhong01.jpg",
+        "legende": "Wu Guanzhong âgé, photographie prise en 2006",
+        "licence": "CC BY-SA 2.5",
+        "auteur": "smartneddy (Wikimedia Commons)"
+      }
+    },
+    {
+      "slug": "liangsicheng",
+      "nom": "Liang Sicheng",
+      "classement": "Liang Sicheng",
+      "titre": "Naissance de Liang Sicheng",
+      "axe": "Beaux-arts",
+      "naissance": 1901,
+      "description": "Liang Sicheng (1901-1972) est le fondateur de l'histoire de l'architecture chinoise, fils de Liang Qichao. Formé à l'université de Pennsylvanie, il relève avec son épouse Lin Huiyin des temples de bois du Shanxi, dont celui de Foguang, dans les années 1930. Il plaide en vain pour conserver les murailles de Pékin après 1949, et ce combat perdu fait de lui le symbole d'un patrimoine sacrifié.",
+      "wikipedia": "Liang_Sicheng",
+      "portrait": {
+        "fichier": "Liang Sicheng1.jpg",
+        "legende": "Liang Sicheng jeune, photographie",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "meilanfang",
+      "nom": "Mei Lanfang",
+      "classement": "Mei Lanfang",
+      "titre": "Naissance de Mei Lanfang",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1894,
+      "description": "Mei Lanfang (1894-1961) est le plus célèbre acteur de l'opéra de Pékin, spécialiste des rôles féminins. Issu d'une famille d'acteurs, il porte à son sommet l'art du dan, perfectionne le jeu, le chant et les costumes, et fait connaître l'opéra de Pékin au Japon, aux États-Unis et en Union soviétique. Pendant l'occupation japonaise, il laisse pousser sa moustache et refuse de jouer, un geste de résistance resté célèbre.",
+      "wikipedia": "Mei_Lanfang",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Mei Lanfang.jpg",
+        "legende": "Mei Lanfang, photographie",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "ruanlingyu",
+      "nom": "Ruan Lingyu",
+      "classement": "Ruan Lingyu",
+      "titre": "Naissance de Ruan Lingyu",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1910,
+      "description": "Ruan Lingyu (1910-1935) est l'actrice la plus célèbre du cinéma muet chinois, surnommée la Garbo de la Chine. Révélée à seize ans, elle tient le rôle principal de La Déesse en 1934, film sur une prostituée mère de famille, et de nombreux autres mélodrames. Harcelée par la presse à scandale après un procès, elle se suicide à vingt-quatre ans, et ses obsèques réunissent des dizaines de milliers de Shanghaïens.",
+      "wikipedia": "Ruan_Lingyu",
+      "portrait": {
+        "fichier": "Ruan Lingyu.png",
+        "legende": "Ruan Lingyu, photographie",
+        "licence": "Domaine public",
+        "auteur": "Chen Jiazhen"
+      }
+    },
+    {
+      "slug": "nieer",
+      "nom": "Nie Er",
+      "classement": "Nie Er",
+      "titre": "Naissance de Nie Er",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1912,
+      "description": "Nie Er (1912-1935) est le compositeur de la Marche des volontaires, devenue l'hymne national de la République populaire de Chine. Originaire du Yunnan, proche des communistes, il écrit pour le cinéma et les chorales ouvrières des chansons engagées, dont la Marche, composée pour un film de 1935. Il se noie la même année au Japon, à vingt-deux ans, et son chant devient l'emblème de la résistance à l'invasion japonaise.",
+      "wikipedia": "Nie_Er",
+      "portrait": {
+        "fichier": "Nieer.jpg",
+        "legende": "Nie Er, photographie",
+        "licence": "Domaine public",
+        "auteur": "Caihongxu (Wikipédia en chinois)"
+      }
+    },
+    {
+      "slug": "xianxinghai",
+      "nom": "Xian Xinghai",
+      "classement": "Xian Xinghai",
+      "titre": "Naissance de Xian Xinghai",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1905,
+      "description": "Xian Xinghai (1905-1945) est un compositeur, auteur de la Cantate du fleuve Jaune, grande œuvre de la musique chinoise. Né à Macao, il étudie à Paris auprès de Paul Dukas et de Vincent d'Indy, puis revient en Chine pendant la guerre. Il compose la Cantate à Yan'an en 1939, mêlant orchestre occidental et chants populaires, et meurt de tuberculose à Moscou.",
+      "wikipedia": "Sinn_Sing_Hoi",
+      "portrait": {
+        "fichier": "Xianxinghai.jpg",
+        "legende": "Xian Xinghai, photographie",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "teresateng",
+      "nom": "Teresa Teng",
+      "classement": "Teng, Teresa",
+      "titre": "Naissance de Teresa Teng",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1953,
+      "description": "Teresa Teng (1953-1995) est la chanteuse la plus populaire de Taïwan, dont la voix a conquis toute la Chine et l'Asie. Elle chante en mandarin, en japonais et en anglais, et sa chanson La Lune représente mon cœur la rend célèbre dans tout le monde chinois. Ses chansons, interdites un temps en République populaire, circulent sur cassettes, au point qu'on dit que Deng Xiaoping règne le jour et Teresa Teng la nuit.",
+      "wikipedia": "Teresa_Teng",
+      "pays": "TW",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Teresa Teng US.jpg",
+        "legende": "Teresa Teng, photographie prise aux États-Unis",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "leslie",
+      "nom": "Leslie Cheung",
+      "classement": "Cheung, Leslie",
+      "titre": "Naissance de Leslie Cheung",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1956,
+      "description": "Leslie Cheung (1956-2003) est un chanteur et un acteur de Hong Kong, figure majeure de la cantopop et du cinéma. Il tient les rôles principaux d'Adieu ma concubine, palme d'or à Cannes en 1993, et de Happy Together de Wong Kar-wai. Il se suicide en 2003 à quarante-six ans, et sa mort provoque un deuil immense dans le monde chinois.",
+      "wikipedia": "Leslie_Cheung",
+      "portrait": {
+        "fichier": "Leslie Cheung in Madame Tussauds Hong Kong (cropped).jpg",
+        "legende": "Leslie Cheung, statue de cire du musée Madame Tussauds de Hong Kong : une représentation, non un portrait",
+        "licence": "CC BY-SA 4.0",
+        "auteur": "倪少寅"
+      }
+    },
+    {
+      "slug": "brucelee",
+      "nom": "Bruce Lee",
+      "classement": "Lee, Bruce",
+      "titre": "Naissance de Bruce Lee",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1940,
+      "description": "Bruce Lee (1940-1973) est un acteur, un maître de kung-fu et un réalisateur, né à San Francisco et élevé à Hong Kong. Fondateur d'une école, le jeet kune do, il devient une vedette avec Big Boss et La Fureur de vaincre, puis avec Opération dragon, tourné à Hollywood. Mort à trente-deux ans à Hong Kong, il reste l'icône mondiale des arts martiaux et la plus grande figure chinoise du cinéma d'action.",
+      "wikipedia": "Bruce_Lee",
+      "pays": "US",
+      "essentiel": true,
+      "biographie": "bio_brucelee",
+      "portrait": {
+        "fichier": "Bruce Lee 1973.jpg",
+        "legende": "Bruce Lee en 1973, photographie promotionnelle de National General Pictures",
+        "licence": "Domaine public",
+        "auteur": "National General Pictures"
+      }
+    },
+    {
+      "slug": "animui",
+      "nom": "Anita Mui",
+      "classement": "Mui, Anita",
+      "titre": "Naissance d'Anita Mui",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1963,
+      "description": "Anita Mui (1963-2003) est une chanteuse et une actrice de Hong Kong, surnommée la Madonna asiatique. Révélée enfant lors d'un concours de chant, elle devient une reine de la cantopop et du cinéma dans les années 1980, avec des spectacles très mis en scène. Morte d'un cancer à quarante ans, elle reste l'une des artistes les plus aimées de Hong Kong.",
+      "wikipedia": "Anita_Mui",
+      "portrait": {
+        "fichier": "Avenue of Stars, Anita Mui (Ank Kumar) 03.jpg",
+        "legende": "Statue d'Anita Mui sur l'Avenue des Stars, à Hong Kong",
+        "licence": "CC BY-SA 4.0",
+        "auteur": "Ank Kumar"
+      }
+    },
+    {
+      "slug": "zhouxuan",
+      "nom": "Zhou Xuan",
+      "classement": "Zhou Xuan",
+      "titre": "Naissance de Zhou Xuan",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1918,
+      "description": "Zhou Xuan (1918-1957) est une chanteuse et une actrice de Shanghai, surnommée à son époque la Voix d'or. Révélée au cinéma dans Les Anges du boulevard, en 1937, elle chante Les Quatre Saisons et Quand reviendras-tu ?, qui font d'elle une idole des années 1940. Sa vie, marquée par la pauvreté, les mariages malheureux et l'internement psychiatrique, s'achève à Shanghai à trente-neuf ans.",
+      "wikipedia": "Zhou_Xuan",
+      "portrait": {
+        "fichier": "ZhouXuan1.jpg",
+        "legende": "Zhou Xuan, photographie",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "abing",
+      "nom": "Abing",
+      "classement": "Abing",
+      "titre": "Naissance d'Abing",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1893,
+      "description": "Abing (1893-1950) est un musicien aveugle de Wuxi, de son vrai nom Hua Yanjun, joueur d'erhu et de pipa. Fils d'un prêtre taoïste, devenu aveugle à l'âge adulte, il gagne sa vie en jouant dans les rues. Six morceaux, dont La lune se reflète dans la seconde source, ont été enregistrés en 1950, peu avant sa mort, et sont aujourd'hui des classiques.",
+      "wikipedia": "Abing",
+      "portrait": {
+        "fichier": "Abing.jpg",
+        "legende": "Abing, photographie ancienne, avec ses lunettes noires",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "cailun",
+      "nom": "Cai Lun",
+      "classement": "Cai Lun",
+      "titre": "Naissance de Cai Lun",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 50,
+      "description": "Cai Lun (vers 50-121) est un eunuque de la cour des Han orientaux, à qui la tradition attribue l'invention du papier. En 105, il présente à l'empereur Hedi un papier fabriqué à partir d'écorce, de chiffons et de filets de pêche, moins cher que la soie ou le bambou. Les fouilles ont montré que le papier existait avant lui, mais il en aurait perfectionné la fabrication, et son nom reste associé à la plus grande invention de Chine.",
+      "wikipedia": "Cai_Lun",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Cai-lun.jpg",
+        "legende": "Cai Lun, gravure ancienne, entouré de ses assistants : un portrait imaginaire",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu",
+        "nomVisible": true
+      }
+    },
+    {
+      "slug": "zhangheng",
+      "nom": "Zhang Heng",
+      "classement": "Zhang Heng",
+      "titre": "Naissance de Zhang Heng",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 78,
+      "description": "Zhang Heng (78-139) est un astronome, un mathématicien, un inventeur et un poète de la dynastie des Han orientaux. Grand astrologue de la cour, il construit une sphère armillaire actionnée par l'eau et, en 132, le premier sismographe connu, qui indique la direction d'un tremblement de terre lointain. Il propose aussi une valeur de π et décrit la Terre comme un jaune d'œuf dans le ciel.",
+      "wikipedia": "Zhang_Heng",
+      "essentiel": true,
+      "biographie": "bio_zhangheng",
+      "portrait": {
+        "fichier": "EastHanSeismograph.JPG",
+        "legende": "Réplique du sismoscope de Zhang Heng : aucun portrait de lui n'a été retenu",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "en:user: Kowloonese"
+      }
+    },
+    {
+      "slug": "zuchongzhi",
+      "nom": "Zu Chongzhi",
+      "classement": "Zu Chongzhi",
+      "titre": "Naissance de Zu Chongzhi",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 429,
+      "description": "Zu Chongzhi (429-500) est un mathématicien et un astronome de la période des dynasties du Sud. Il calcule la valeur de π avec sept décimales exactes, précision qu'on n'atteindra pas en Europe avant plus d'un millénaire. Il établit aussi un calendrier plus précis et conçoit des machines, dont un char à indiquer le sud et un bateau mû par des roues.",
+      "wikipedia": "Zu_Chongzhi",
+      "portrait": {
+        "fichier": "昆山亭林公园祖冲之像.jpg",
+        "legende": "Statue de Zu Chongzhi, parc Tinglin de Kunshan, photographie",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Gisling"
+      }
+    },
+    {
+      "slug": "zhangzhongjing",
+      "nom": "Zhang Zhongjing",
+      "classement": "Zhang Zhongjing",
+      "titre": "Naissance de Zhang Zhongjing",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 150,
+      "description": "Zhang Zhongjing (vers 150-vers 219) est un médecin de la fin des Han, auteur du Traité des maladies fébriles et divers. Administrateur du Changsha, il écrit son livre après que des épidémies ont tué une grande partie de sa famille. Fondé sur l'observation des signes et sur l'usage précis des plantes, son traité est devenu la base de la médecine chinoise classique.",
+      "wikipedia": "Zhang_Zhongjing",
+      "portrait": {
+        "fichier": "Chinese woodcut, Famous medical figures; Zhang Zhongjing Wellcome L0039319.jpg",
+        "legende": "Zhang Zhongjing, gravure sur bois d'une collection de portraits de médecins célèbres : un portrait imaginaire",
+        "licence": "CC BY 4.0",
+        "auteur": "Gan Bozong",
+        "nomVisible": true
+      }
+    },
+    {
+      "slug": "huatuo",
+      "nom": "Hua Tuo",
+      "classement": "Hua Tuo",
+      "titre": "Naissance de Hua Tuo",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 140,
+      "description": "Hua Tuo (vers 140-208) est un médecin de la fin des Han, considéré comme l'un des pères de la chirurgie chinoise. Il aurait employé un anesthésique à base de plantes, le mafeisan, et créé une gymnastique, les « jeux des cinq animaux ». Selon le Roman des Trois Royaumes, il est exécuté par Cao Cao, dont il refusait de devenir le médecin personnel.",
+      "wikipedia": "Hua_Tuo",
+      "portrait": {
+        "fichier": "HuaTuo.jpg",
+        "legende": "Hua Tuo, dessin ancien : un portrait imaginaire",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "yixing",
+      "nom": "Yi Xing",
+      "classement": "Yi Xing",
+      "titre": "Naissance de Yi Xing",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 683,
+      "description": "Yi Xing (683-727) est un moine bouddhiste, un astronome et un mathématicien de la dynastie Tang. Chargé de réformer le calendrier, il organise une grande campagne de mesures de la longueur de l'ombre du Soleil sur tout l'empire et réalise une horloge à eau mue par un mécanisme à échappement. Il découvre aussi que les positions des étoiles changent avec le temps, et son calendrier Dayan est adopté par l'empire.",
+      "wikipedia": "Yi_Xing",
+      "portrait": {
+        "fichier": "Beijing Ancient Observatory 20090715-22.jpg",
+        "legende": "Buste de Yi Xing, à l'ancien observatoire de Pékin",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Hans A. Rosbach"
+      }
+    },
+    {
+      "slug": "bisheng",
+      "nom": "Bi Sheng",
+      "classement": "Bi Sheng",
+      "titre": "Naissance de Bi Sheng",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 990,
+      "description": "Bi Sheng (vers 990-1051) est un artisan de la dynastie Song, inventeur de l'imprimerie à caractères mobiles. Vers 1040, il façonne des caractères en terre cuite, qu'il cuit et assemble sur une plaque, puis réutilise pour d'autres pages. Son invention, décrite par Shen Kuo, précède de quatre siècles celle de Gutenberg, mais le grand nombre de caractères chinois en limite alors l'usage.",
+      "wikipedia": "Bi_Sheng",
+      "portrait": {
+        "fichier": "Beijing.Musee imprimerie.caracteres mobiles.Bisheng.jpg",
+        "legende": "Reconstitution d'un atelier d'imprimerie à caractères mobiles dans le musée de l'imprimerie de Pékin, en hommage à Bi Sheng",
+        "licence": "CC BY-SA 4.0",
+        "auteur": "Popolon"
+      }
+    },
+    {
+      "slug": "shenkuo",
+      "nom": "Shen Kuo",
+      "classement": "Shen Kuo",
+      "titre": "Naissance de Shen Kuo",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1031,
+      "description": "Shen Kuo (1031-1095) est un savant et un haut fonctionnaire de la dynastie Song, auteur des Notes du ruisseau du rêve. Il y décrit la boussole à aiguille magnétique, le principe de l'érosion et du dépôt de limon, le climat du passé tiré de bambous fossiles, et l'imprimerie à caractères mobiles de Bi Sheng. Réformateur du calendrier et ingénieur militaire, il est l'un des plus grands esprits universels de Chine.",
+      "wikipedia": "Shen_Kuo",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Shen Kua.JPG",
+        "legende": "Shen Kuo, dessin moderne : un portrait imaginaire",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Wikimachine at English Wikipedia"
+      }
+    },
+    {
+      "slug": "susong",
+      "nom": "Su Song",
+      "classement": "Su Song",
+      "titre": "Naissance de Su Song",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1020,
+      "description": "Su Song (1020-1101) est un astronome, un ingénieur et un haut fonctionnaire de la dynastie Song. Il construit en 1092 à Kaifeng une tour d'horloge à eau haute de douze mètres, couronnée d'une sphère armillaire, qui compte parmi les premières à utiliser un mécanisme à échappement. Il laisse aussi un atlas du ciel et un traité de pharmacie, le Bencao tujing.",
+      "wikipedia": "Su_Song",
+      "portrait": {
+        "fichier": "SuSongClock1.JPG",
+        "legende": "Reconstitution de l'horloge astronomique de Su Song",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Original uploader was Kowloonese at en.wikipedia"
+      }
+    },
+    {
+      "slug": "guoshoujing",
+      "nom": "Guo Shoujing",
+      "classement": "Guo Shoujing",
+      "titre": "Naissance de Guo Shoujing",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1231,
+      "description": "Guo Shoujing (1231-1316) est un astronome, un mathématicien et un ingénieur hydraulique de la dynastie Yuan. Au service de Kubilai Khan, il construit des instruments, dont un gnomon géant, et élabore le calendrier Shoushi, d'une précision remarquable : il fixe l'année à 365,2425 jours, comme le calendrier grégorien trois siècles plus tard. Il dirige aussi la remise en état du Grand Canal vers Pékin.",
+      "wikipedia": "Guo_Shoujing",
+      "portrait": {
+        "fichier": "Guo Shoujing-beijing.JPG",
+        "legende": "Buste de Guo Shoujing, devant le musée qui porte son nom, à Pékin",
+        "licence": "CC BY 2.5",
+        "auteur": "Shizhao",
+        "nomVisible": true
+      }
+    },
+    {
+      "slug": "lishizhen",
+      "nom": "Li Shizhen",
+      "classement": "Li Shizhen",
+      "titre": "Naissance de Li Shizhen",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1518,
+      "description": "Li Shizhen (1518-1593) est un médecin et un naturaliste de la dynastie Ming, auteur du Bencao gangmu. Fils de médecin, il consacre près de trente ans à compiler un traité de plus de mille huit cents substances végétales, animales et minérales, avec près de onze mille prescriptions. Publié à titre posthume en 1596, cet ouvrage est traduit dans toute l'Asie, puis en Europe, et sert encore de référence à la médecine traditionnelle.",
+      "wikipedia": "Li_Shizhen",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Li Shizhen portrait.jpg",
+        "legende": "Li Shizhen, estampe ancienne : un portrait imaginaire",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "xuguangqi",
+      "nom": "Xu Guangqi",
+      "classement": "Xu Guangqi",
+      "titre": "Naissance de Xu Guangqi",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1562,
+      "description": "Xu Guangqi (1562-1633) est un haut fonctionnaire, un savant et un chrétien de la dynastie Ming, qui introduit la science européenne en Chine. Converti au catholicisme, il traduit avec le jésuite Matteo Ricci les six premiers livres des Éléments d'Euclide et réforme le calendrier. Il rédige aussi un grand traité sur l'agriculture, le Nongzheng quanshu, et devient ministre.",
+      "wikipedia": "Xu_Guangqi",
+      "portrait": {
+        "fichier": "徐光啟.jpg",
+        "legende": "Xu Guangqi, portrait ancien",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "zhantianyou",
+      "nom": "Zhan Tianyou",
+      "classement": "Zhan Tianyou",
+      "titre": "Naissance de Zhan Tianyou",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1861,
+      "description": "Zhan Tianyou (1861-1919) est l'ingénieur qu'on appelle le père des chemins de fer chinois. Parti à douze ans étudier aux États-Unis, diplômé de l'université Yale, il dirige la construction de la ligne Pékin-Zhangjiakou, achevée en 1909 sans ingénieur étranger. Son tracé, qui franchit la Grande Muraille par un tunnel et par une voie en zigzag, reste un chef-d'œuvre.",
+      "wikipedia": "Jeme_Tien_Yow",
+      "portrait": {
+        "fichier": "Zhangtianyoux.jpg",
+        "legende": "Zhan Tianyou, photographie du studio Tongsheng de Shanghai",
+        "licence": "Domaine public",
+        "auteur": "Studio Tongsheng, Shanghai"
+      }
+    },
+    {
+      "slug": "qianxuesen",
+      "nom": "Qian Xuesen",
+      "classement": "Qian Xuesen",
+      "titre": "Naissance de Qian Xuesen",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1911,
+      "description": "Qian Xuesen (1911-2009) est un ingénieur aérospatial, le père du programme spatial et des missiles chinois. Professeur au California Institute of Technology et cofondateur du Jet Propulsion Laboratory, il est soupçonné de sympathies communistes en 1950, assigné à résidence cinq ans, puis échangé contre des prisonniers américains. Rentré en Chine en 1955, il y dirige le programme de missiles balistiques, puis le lancement du premier satellite, Dongfanghong 1, en 1970.",
+      "wikipedia": "Qian_Xuesen",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Tsien Hsue-shen.jpg",
+        "legende": "Qian Xuesen au tableau noir, photographie ancienne",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu",
+        "recadrage": [
+          0,
+          0.0,
+          0.7,
+          0.85
+        ]
+      }
+    },
+    {
+      "slug": "dengjiaxian",
+      "nom": "Deng Jiaxian",
+      "classement": "Deng Jiaxian",
+      "titre": "Naissance de Deng Jiaxian",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1924,
+      "description": "Deng Jiaxian (1924-1986) est un physicien, l'un des principaux artisans de la bombe atomique et de la bombe à hydrogène chinoises. Docteur de l'université Purdue à vingt-six ans, il revient en Chine en 1950 et dirige la conception théorique de l'arme. Il disparaît des yeux du public pendant près de trente ans, et meurt d'un cancer attribué à l'irradiation.",
+      "wikipedia": "Deng_Jiaxian",
+      "portrait": {
+        "fichier": "鄧稼先普渡照片.jpg",
+        "legende": "Deng Jiaxian en tenue de docteur de l'université Purdue, photographie du 20 août 1950",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu",
+        "recadrage": [
+          0.1,
+          0.0,
+          0.85,
+          0.8
+        ]
+      }
+    },
+    {
+      "slug": "yuanlongping",
+      "nom": "Yuan Longping",
+      "classement": "Yuan Longping",
+      "titre": "Naissance de Yuan Longping",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1930,
+      "description": "Yuan Longping (1930-2021) est un agronome, le père du riz hybride, qui a contribué à nourrir la Chine et une partie du monde. Après avoir découvert en 1964 un plant de riz mâle stérile, il met au point à partir de 1973 des variétés dont le rendement est supérieur d'environ vingt pour cent. Cette technique a été étendue à des dizaines de pays en Asie, en Afrique et en Amérique.",
+      "wikipedia": "Yuan_Longping",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Yuan Longping at news conference (cropped).png",
+        "legende": "Yuan Longping lors d'une conférence de presse, photographie de l'agence China News Service",
+        "licence": "CC BY 3.0",
+        "auteur": "China News Service"
+      }
+    },
+    {
+      "slug": "hualuogeng",
+      "nom": "Hua Luogeng",
+      "classement": "Hua Luogeng",
+      "titre": "Naissance de Hua Luogeng",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1910,
+      "description": "Hua Luogeng (1910-1985) est un mathématicien autodidacte, fondateur de l'école chinoise de théorie des nombres. Sans diplôme, remarqué à vingt ans à cause d'un article sur les équations, il est invité à Cambridge par Hardy, puis enseigne à l'université de l'Illinois. Rentré en Chine en 1950, il applique les mathématiques à l'industrie et se déplace dans les usines pour diffuser la méthode d'optimisation.",
+      "wikipedia": "Hua_Luogeng",
+      "portrait": {
+        "fichier": "Hua Luogeng 1956.jpg",
+        "legende": "Hua Luogeng en 1956, photographie de Niu Weiyu",
+        "licence": "Domaine public",
+        "auteur": "Niu Weiyu"
+      }
+    }
+  ]
+}
