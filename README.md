@@ -601,7 +601,7 @@ ne posent pas la même question :
 | | Un thème, c'est | Une date, c'est | On le joue par |
 |---|---|---|---|
 | **Biographies** | une vie (360 thèmes, en 12 domaines) | une étape de cette vie | étape de la vie |
-| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie) | la naissance d'un personnage | domaine |
+| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, le sous-continent indien) | la naissance d'un personnage | domaine |
 
 Le déplacement ne coûte aucune migration : les 360 thèmes gardent leurs
 identifiants, et rien de ce que le joueur a sauvegardé (favoris, révision,
@@ -804,6 +804,7 @@ pour l'Amérique hispanique (dix-neuf pays, de 1 à 19 figures chacun), 58 pour 
 Maghreb (cinq pays, de 1 à 21), 149 pour l'Allemagne, l'Autriche et la Suisse (170 candidats,
 21 coupés ; trois pays, de 26 à 85 figures), 151 pour le Royaume-Uni (194 candidats, 4 ajoutés, 47 écartés), 132 pour l'Espagne (132 proposés, tous retenus),
 103 pour le Machrek et la péninsule Arabique (182 noms testés, 106 avec une image libre, 3 en attente de leur portrait ; dix pays, de 1 à 25 figures),
+127 pour le sous-continent indien (262 noms testés, 129 fiches rédigées, 127 avec une image libre ; sept pays, de 2 à 77 figures),
 40 pour les grands pays, 30 pour les autres. À 6
 axes, 30 donne environ 5 par axe — le minimum pour qu'un axe joué seul reste un jeu.
 
@@ -1203,6 +1204,87 @@ la loi du pays d'origine (PD-Irak, PD-Syrie, PD-Arabie saoudite…), est celui q
 figures à l'Amérique hispanique ; `scripts/search_portraits.py` en donne une première
 indication par fichier, pas une certitude. Khalid ibn al-Walid, Zaha Hadid et Asmahan restent
 sans image libre acceptable.
+
+### Le sixième bloc : le sous-continent indien
+
+`pan_indien`, « Grandes figures du sous-continent indien » (code `indien`) : **127 personnages
+de sept pays** — Inde 77, Pakistan 14, Bangladesh 11, Népal 10, Sri Lanka 9, Bhoutan 4,
+Maldives 2 — d'Ashoka (vers 304 av. J.-C.) et du Bouddha (vers 563 av. J.-C.) à Zakir
+Hussain (1951). Par axe : 42 Chefs d'État et dirigeants, 37 Littérature et pensée, 16
+Guerres et résistances, 14 Musique, spectacle et sport, 10 Sciences, techniques et
+innovation, 8 Beaux-arts ; 32 ⭐ et 10 biographies liées (Ashoka, Akbar, Gandhi, Adi
+Shankara, Guru Nanak, Guru Gobind Singh, Mère Teresa, Tagore, Ravi Shankar et le Bouddha).
+Les mots-clés du thème portent les noms des sept pays, de l'Hindoustan, du Raj britannique et
+de l'Empire moghol.
+
+Les choix qui ne vont pas de soi :
+
+- **L'Inde pèse 61 %, et c'est voulu.** Le constructeur prévient au-delà de 40 % et refuse
+  qu'on le dépasse sans le dire (voir « L'Allemagne pèse 57 % »). Le bloc déclare donc
+  `partMaxPays: 0.65`. L'Inde a plus d'histoire à elle seule que les six autres pays ensemble
+  — un sous-continent de plus d'un milliard d'habitants, des empires, des religions nées
+  sur place — et les six autres n'ont pas de quoi la compenser : le Bhoutan et les Maldives
+  n'ont que quelques figures avec un portrait libre. L'Inde reste sous 65 %, ce qui oblige à
+  y décider si une figure de plus s'ajoute ou non.
+- **Le périmètre est celui des sept pays demandés.** L'Afghanistan, rangé dans « l'Asie du Sud »
+  de l'Histoire par pays, n'en fait pas partie, non plus que le Tibet. Les figures nées dans
+  un pays voisin sont rangées là où on les honore (voir plus bas).
+- **Là où on les honore, pas là où elles sont nées.** Beaucoup de figures sont nées avant
+  1947 dans une région devenue le Pakistan ou le Bangladesh : Guru Nanak (Nankana Sahib),
+  Akbar (Umarkot), Shah Jahan (Lahore), Ranjit Singh (Gujranwala), Bhagat Singh, Manmohan Singh,
+  Milkha Singh, Dilip Kumar, Nek Chand sont à l'Inde ; Jinnah, Iqbal, Ghaffar Khan, Edhi
+  ou Nusrat Fateh Ali Khan sont au Pakistan. Jagadish Chandra Bose (Mymensingh) est à l'Inde,
+  Allauddin Khan (Brahmanbaria), qui a aussi enseigné en Inde, au Bangladesh ; Zia-ul-Haq
+  (Jalandhar) et Musharraf (Delhi) au Pakistan. Les fiches le disent chaque fois.
+- **Mère Teresa est ici, pas dans un futur panthéon des Balkans.** Née à Skopje, elle a vécu
+  près de soixante-dix ans en Inde, dont elle a pris la nationalité en 1951 : l'Inde l'honore le
+  plus. Même règle que pour Joséphine Baker. Sa biographie liée garde la date de 1910.
+- **Babur est dans le bloc.** Né à Andijan, enterré à Kaboul, il est aussi honoré en Ouzbékistan
+  et c'est l'un des cas que la feuille de route réservait aux règles de partage entre deux
+  thèmes. Il est ici parce qu'il fonde l'empire moghol de l'Inde ; un futur thème d'Asie
+  centrale ne pourra donc pas le reprendre. Humayun (né à Kaboul) suit la même logique.
+- **Le Bouddha au Népal, Ashoka et Mahavira en Inde.** Siddhartha Gautama naît à Lumbini,
+  aujourd'hui au Népal, et le Bouddha y est rangé ; les dates de sa vie, comme celles de
+  Mahavira (vers 599-527 av. J.-C.), sont celles des traditions, avec « vers ».
+- **Les religieux vont à « Littérature et pensée »**, comme ailleurs : les gourous sikhs, les
+  maîtres de l'hindouisme, Mahavira, le Bouddha, Mère Teresa. Il n'y a pas d'axe « religion ».
+- **Pas d'axe « Économie et entreprise ».** Il en faut six figures et une histoire propre. Seuls
+  J. R. D. Tata et Ratan Tata avaient une image libre convenable, et deux ne font pas un axe :
+  J. R. D. Tata est rangé en Sciences, techniques et innovation, en tant que pionnier de
+  l'aviation, et Ratan Tata attend d'autres noms. Jamsetji Tata, Dhirubhai Ambani et G. D. Birla
+  n'ont aucune image utilisable.
+- **Pas de vivants** : Malala, Amartya Sen, Imran Khan, Sachin Tendulkar, Muttiah Muralitharan ou
+  Sheikh Hasina n'y entrent pas, ni Maumoon Abdul Gayoom, dont le portrait est libre. Les décès
+  récents (Manmohan Singh et Zakir Hussain, tous deux morts en 2024) sont admis.
+- **Sportifs : trois, au titre de la règle des sportifs** — Tensing Norgay (l'Everest, 1953), Pasang
+  Lhamu Sherpa (première Népalaise au sommet) et Milkha Singh (orphelin de la Partition, quatrième
+  aux Jeux de Rome). Dhyan Chand attend une image libre exploitable (il n'en existe qu'une de
+  211 pixels). Le cricket est absent, faute de figure disparue dont l'image soit libre.
+- **Figures contestées et controversées** : Aurangzeb, Tipu Sultan, Babur (l'empereur-conquérant),
+  Indira Gandhi (l'état d'urgence), Zia-ul-Haq, Abdul Qadeer Khan (la prolifération nucléaire),
+  J. R. Jayewardene (juillet 1983), Mère Teresa. Chaque fiche dit ce qu'on leur reproche.
+- **Dates retenues quand les sources divergent.** Shivaji est né en 1630 (1627 et 1631 selon les
+  sources), Prithvi Narayan Shah en 1723 (1722 selon d'autres), Ghalib en 1797 (décembre 1796 selon
+  Wikipédia en français), Allauddin Khan vers 1881 (1862 selon lui), Kalpana Chawla en 1962
+  (1961 à l'état civil), Mahavira vers 599, le Bouddha vers 563, Kabir vers 1398.
+- **Écartés faute d'image libre convenable**, à réintégrer si l'une apparaît : Jamsetji Tata,
+  Dhirubhai Ambani, Vikram Sarabhai, Kalam, Vajpayee, Mehboob Khan, Raj
+  Kapoor, Guru Dutt, Madhubala, Tansen, Bhaskara II, Faiz (le portrait retenu est une
+  photographie de 2013), Sadequain, Chughtai, Maududi, Fatima Jinnah, Ayub Khan, Vijayabahu Ier,
+  Parakramabahu Ier, Geoffrey Bawa, Walpola Rahula, Anagarika Dharmapala, Jung Bahadur Rana,
+  les rois Tribhuvan, Mahendra et Birendra du Népal, Jigme Wangchuck, Thakurufaanu (Maldives) et
+  des dizaines d'autres.
+- **Écartés faute d'article en français** : Saadat Hasan Manto, dont la fiche est prête et qui
+  n'a pas de page sur la Wikipédia francophone.
+- **Beaucoup de portraits sont imaginés ou indirects**, et la légende le dit : miniatures moghole,
+  statues (Mahavira, Basava, Aryabhata, Bhanubhakta, Araniko, Pasang Lhamu, Savitribai Phule,
+  Rajaraja Ier), reliefs (Ashoka à Sanchi), thangkas bhoutanais (Zhabdrung, Pema Lingpa, Drukpa
+  Kunley), gravures. Pour Lakshmî Bâî, le portrait des années 1850 est incertain.
+- **Licences à revoir.** Les photographies américaines de la Maison-Blanche (Indira Gandhi,
+  Zia-ul-Haq, Manmohan Singh) et les clichés de gouvernements (Ceylan, Inde) sont dits
+  publics ; le statut américain de celui de Zulfikar Ali Bhutto et de Jinnah n'est pas établi
+  (Commons ne le précise pas) ; Bhagat Singh, Ghaffar Khan, Liaquat Ali Khan, Tajuddin Ahmad
+  et Mujibur Rahman sont des photographies d'avant 1960, sans auteur connu.
 
 ### Un pays à part : l'Égypte
 
@@ -2090,7 +2172,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
 ### Ce qui n'est pas fait
 
 - **Les autres panthéons** : la France, l'Égypte, les États-Unis, l'Italie, le
-  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie et l'Afrique de l'Ouest sont écrits.
+  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest et le sous-continent indien sont écrits.
   Chaque liste de personnages est validée avant la rédaction. Feuille de route, dans l'ordre
   où on les propose (un pays seul quand il a de quoi faire un thème, un bloc sinon) :
   1. **Le Machrek est écrit** (voir « Le cinquième bloc »). Il reste : le portrait des trois
@@ -2105,9 +2187,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
      règle « un personnage, un seul thème » dira où chacun va, au moment de choisir.
   2. **Pays seuls** : le Brésil (qui n'entre pas dans l'Amérique « hispanique »), la Chine, le
      Japon, la Russie (où attend Lev Yachine), l'Afrique du Sud, l'Australie, la Turquie, l'Iran.
-  3. **Blocs** : l'Asie du Sud (Inde, Pakistan, Bangladesh, Sri Lanka, Népal ; l'Inde y dépasserait
-     largement les 40 %, d'où une exception à poser ou un thème « Inde » à part), l'Asie du
-     Sud-Est, l'Asie centrale et la Mongolie, le Caucase, la Corée (`KR`/`KP`), l'Afrique de
+  3. **Blocs** : l'Asie du Sud-Est, l'Asie centrale et la Mongolie, le Caucase, la Corée (`KR`/`KP`), l'Afrique de
      l'Ouest, l'Afrique centrale, l'Afrique de l'Est et la Corne, l'Afrique australe et l'océan
      Indien (sans l'Afrique du Sud), « Nouvelle-Zélande et Pacifique ».
   4. **L'Europe et les Amériques qui manquent** : le Portugal (qui reprendra Magellan et
