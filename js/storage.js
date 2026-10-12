@@ -34,6 +34,10 @@ const SYNC_KEYS = [SRS_KEY, PROGRESS_KEY, FAVORITES_KEY, CUSTOM_THEMES_KEY, CUST
 
 const DEFAULT_SETTINGS = {
     orientation: 'auto',
+    // Frise horizontale : 'line' = une seule ligne qui défile de gauche à
+    // droite ; 'wrap' = retour à la ligne comme dans un texte, chaque ligne
+    // se lisant de gauche à droite et la frise défilant de haut en bas.
+    landscapeFlow: 'line',
     appearance: 'auto',
     axesLegendPinned: true,
     sound: true,

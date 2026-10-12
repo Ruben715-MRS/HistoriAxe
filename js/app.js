@@ -67,6 +67,8 @@ function applyOrientationLayout() {
     const layoutVal = isLandscape ? 'horizontal' : 'vertical';
     document.documentElement.setAttribute('data-layout', layoutVal);
     document.documentElement.setAttribute('data-timeline-layout', layoutVal);
+    document.documentElement.setAttribute('data-landscape-flow', appSettings.landscapeFlow === 'wrap' ? 'wrap' : 'line');
+    markTimelineRows();
     if (typeof repositionEvents === 'function' && placedEvents && placedEvents.length > 0) {
         repositionEvents();
     }
@@ -85,9 +87,39 @@ try {
     window.addEventListener('orientationchange', () => {
         if (appSettings.orientation === 'auto') applyOrientationLayout();
     });
+    // Les retours à la ligne de la frise changent avec la largeur, et ne se
+    // mesurent qu'une fois l'écran de jeu affiché : on les recalcule dès que
+    // la frise change de taille, quelle qu'en soit la cause.
+    if (typeof ResizeObserver === 'function') {
+        const timelineEl = document.getElementById('timeline');
+        if (timelineEl) new ResizeObserver(() => markTimelineRows()).observe(timelineEl);
+    }
 } catch (e) { }
 
+// Frise horizontale « Plusieurs lignes » : le navigateur répartit seul les
+// repères en lignes (flex-wrap), mais seul le JS sait où tombe chaque retour
+// à la ligne. On marque le dernier élément de chaque ligne (.row-end, l'axe
+// s'y termine par une flèche) et le premier de la suivante (.row-start, l'axe
+// y reprend par une flèche d'entrée), pour que l'œil suive la continuité.
+function markTimelineRows() {
+    const timeline = document.getElementById('timeline');
+    if (!timeline) return;
+    const items = Array.from(timeline.children).filter(el => el.classList.contains('entry') || el.classList.contains('slot'));
+    items.forEach(el => el.classList.remove('row-start', 'row-end'));
+    const root = document.documentElement;
+    if (root.getAttribute('data-layout') !== 'horizontal' || root.getAttribute('data-landscape-flow') !== 'wrap') return;
+    for (let i = 1; i < items.length; i++) {
+        if (items[i].offsetTop > items[i - 1].offsetTop + 4) {
+            items[i - 1].classList.add('row-end');
+            items[i].classList.add('row-start');
+        }
+    }
+}
+
 function renderSettingsUI() {
+    document.querySelectorAll('#settings-landscape-flow button').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.value === (appSettings.landscapeFlow || 'line'));
+    });
     document.querySelectorAll('#settings-orientation button').forEach(btn => {
         btn.classList.toggle('active', btn.dataset.value === appSettings.orientation);
     });
@@ -120,6 +152,14 @@ function renderSettingsUI() {
 }
 
 function initSettingsControls() {
+    document.querySelectorAll('#settings-landscape-flow button').forEach(btn => {
+        btn.onclick = () => {
+            appSettings.landscapeFlow = btn.dataset.value;
+            settingsSave(appSettings);
+            applyOrientationLayout();
+            renderSettingsUI();
+        };
+    });
     document.querySelectorAll('#settings-orientation button').forEach(btn => {
         btn.onclick = () => {
             appSettings.orientation = btn.dataset.value;
@@ -5135,6 +5175,7 @@ function renderTimeline() {
             if (i < placedEvents.length) timeline.appendChild(buildEntry(placedEvents[i]));
         }
     });
+    markTimelineRows();
 }
 
 // Libellé de l'intervalle : « Avant 1789 », « Entre 1789 et 1848 », « Après 1981 »
