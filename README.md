@@ -1950,6 +1950,56 @@ raisonnement que Matisse et Camus en France. Les crédits d'auteur trop vagues o
 main (« Auteur inconnu »). Le client de Commons refusant à plusieurs reprises la miniature de 500 px de
 Ba Jin, celui-ci est demandé en 960 px (`largeur`).
 
+### Un pays à part : la Grèce
+
+`pan_gr`, « Grandes figures de Grèce » : **82 personnages**, de Solon (vers 640 av. J.-C.) à Vangelis
+(1943). Par axe : 30 Littérature et pensée, 13 Chefs d'État et dirigeants, 12 Guerres et résistances,
+12 Musique, spectacle et sport, 9 Sciences, techniques et innovation, 6 Beaux-arts ; 40 ⭐ et 5
+biographies liées (Alexandre le Grand, Socrate, Platon, Aristote, Maria Callas). 82 portraits : 51 du
+domaine public, 1 CC0, 7 CC BY et 23 CC BY-SA.
+
+Les choix qui ne vont pas de soi :
+
+- **Un pays, donc pas un bloc** : `pan_gr`, aucun champ `pays`, et « Pendant ce temps, ailleurs… » le
+  compte comme `thm_gr`, l'« Histoire de la Grèce ». Le thème se range par « Grèce », entre la France
+  et Israël. Le panthéon est celui du monde grec, de l'Antiquité à nos jours : les figures nées en Asie
+  Mineure, en Égypte ou en Roumanie (Hérodote, Cavafy, Xenakis) y sont par leur culture grecque.
+- **Byzance est dedans, mais à petite dose** : Basile II, Alexis Ier Comnène, Constantin XI, Anne
+  Comnène et Pléthon. Justinien (né en Illyrie, de langue latine) reste aux Biographies.
+- **Homère n'y est pas** : sa fiche d'ouverture « Nom (naissance-décès) » ne sait pas dire une naissance
+  et une mort légendaires ; il garde sa biographie. Hésiode, Ésope, Euclide et Praxitèle sont dans le
+  même cas (dates inconnues ou trop incertaines pour la phrase d'ouverture).
+- **Pas de vivants** : Nana Mouskouri, Giánnis Antetokoúnmpo et Pýrros Dímas n'y sont pas. **Pas
+  d'entrepreneurs** : Onassis (qui a sa biographie) et Niarchos auraient demandé un septième axe, qui
+  n'a que deux figures ; la règle est d'en exiger six. **Un sportif** passe la règle, Spyrídon Loúis,
+  vainqueur du premier marathon olympique en 1896.
+- **Alexandre et Philippe de Macédoine** sont ici : Alexandre garde la date de sa biographie, et la
+  Macédoine antique est rattachée au monde grec ; l'État macédonien actuel n'a pas de panthéon.
+- **Des figures disputées ailleurs** : Archimède (Syracuse) est dans le panthéon de l'Italie, Hypatie
+  et Ptolémée dans celui de l'Égypte ; Castoriadis, naturalisé français, est ici car il se réclame de
+  la démocratie athénienne.
+- **Des dates incertaines, dites comme telles** : « vers » devant Solon, Thémistocle, Périclès,
+  Pyrrhus, Léonidas, Miltiade, Épaminondas, Sappho, Eschyle, Sophocle, Euripide, Aristophane,
+  Hérodote, Thucydide, Xénophon, Héraclite, Démocrite, Diogène, Zénon, Plutarque, Phidias, Polyclète,
+  Lysippe, Thalès, Anaximandre, Pythagore, Hippocrate, Aristarque, Hipparque, Basile II, Alexis Ier,
+  Pléthon, Anne Comnène (décès), Kanaris, Bótzaris et Rigas.
+- **Écartés faute d'image convenable** : Kostís Palamás (seule une toile de groupe est libre) et
+  Georgios Papanikolaou (le portrait libre est une silhouette lointaine). Dix-huit autres noms envisagés
+  attendent (Clisthène, Pisistrate, Myron, Praxitèle, Apelle, Ictinos, Hippodamos, Karamanlis, Ritsos,
+  Doxiadis, Tsitsanis, Velouchiótis, Melás, Diákos, Karaïskákis, Parthénis, Ghikas, Pikionis), dont
+  certains sans titre d'article trouvé ou sans image libre.
+
+### Ce que les images disent en Grèce
+
+Avant la photographie, très peu de portraits sont authentiques : les bustes de l'Antiquité sont
+des copies romaines d'originaux grecs perdus, posthumes, et la légende le dit. Plusieurs images sont de
+simples gravures du XIXe siècle (Thémistocle, Thalès) ou des représentations modernes (Épaminondas à
+Stowe, Héraclite et Démocrite par Torretti). Trois images écrivent le nom (socle d'Aristophane, médaillon
+d'Hipparque, page de titre d'Épictète) et sont marquées `nomVisible`. Faibles, gardées faute de mieux :
+Sappho (une jeune femme de Pompéi, qui n'est pas elle), Polyclète et Lysippe (une de leurs œuvres, non
+leur visage), Mitropoulos (un dessin au crayon), Pléthon (un détail de fresque) et Plutarque (un buste
+moderne). L'image de Bouboulína est une lithographie de 1827.
+
 ### Un fichier source par panthéon, un script qui l'écrit dans `data/fr.json`
 
 `scripts/pantheon/<code>.json` (`fr`, `hispam`…) est **la seule source de
@@ -2292,7 +2342,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
 ### Ce qui n'est pas fait
 
 - **Les autres panthéons** : la France, l'Égypte, les États-Unis, l'Italie, le
-  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest le sous-continent indien, Israël et la Chine sont écrits.
+  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest le sous-continent indien, Israël, la Chine et la Grèce sont écrits.
   Chaque liste de personnages est validée avant la rédaction. Feuille de route, dans l'ordre
   où on les propose (un pays seul quand il a de quoi faire un thème, un bloc sinon) :
   1. **Le Machrek est écrit** (voir « Le cinquième bloc »). Il reste : le portrait des trois
@@ -2309,7 +2359,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
      l'Ouest, l'Afrique centrale, l'Afrique de l'Est et la Corne, l'Afrique australe et l'océan
      Indien (sans l'Afrique du Sud), « Nouvelle-Zélande et Pacifique ».
   4. **L'Europe et les Amériques qui manquent** : le Portugal (qui reprendra Magellan et
-     Viriathe, laissés de côté dans le panthéon de l'Espagne), la Grèce et Byzance, le Benelux,
+     Viriathe, laissés de côté dans le panthéon de l'Espagne), Byzance (au-delà des cinq figures déjà au panthéon de la Grèce), le Benelux,
      la Pologne, l'Europe centrale, les Balkans, le Canada, les Caraïbes non
      hispaniques.
 

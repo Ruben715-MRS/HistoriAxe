@@ -355,8 +355,8 @@ function renderGalleryGrid() {
 
     const filtered = !!(galleryQuery.trim() || galleryCountry || galleryAxis);
     document.getElementById('gallery-reset').classList.toggle('hidden', !filtered);
-    // En mode collection, le compteur « 30 / 1640 portraits débloqués » dit déjà le total : le décompte
-    // ne reparaît que filtré (« 12 portraits sur 1640 »).
+    // En mode collection, le compteur « 30 / 1722 portraits débloqués » dit déjà le total : le décompte
+    // ne reparaît que filtré (« 12 portraits sur 1722 »).
     subtitle.classList.toggle('hidden', !filtered && portraitCollectionOn());
     subtitle.textContent = filtered
         ? t(matching.length === 1 ? 'gallery.count_filtered_one' : 'gallery.count_filtered', { count: matching.length, total: galleryEntries.length })

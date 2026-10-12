@@ -2,8 +2,8 @@
   "version": "1.0.0",
   "lang": "fr",
   "name": "Français (Intégral)",
-  "totalThemes": 810,
-  "totalEvents": 21420,
+  "totalThemes": 811,
+  "totalEvents": 21502,
   "categories": [
     {
       "nom": "Culture générale",
@@ -106533,6 +106533,1399 @@
                 "pan_fr_piaf",
                 "pan_fr_rainier3monaco",
                 "pan_fr_gracekelly"
+              ]
+            },
+            {
+              "id": "pan_gr",
+              "nom": "Grandes figures de Grèce",
+              "difficulte": "Intermédiaire",
+              "motsCles": [
+                "Grec",
+                "Grecque",
+                "Grèce",
+                "Athènes",
+                "Sparte",
+                "Grèce antique",
+                "Hellénisme",
+                "Byzance",
+                "Byzantin",
+                "Empire byzantin",
+                "Macédoine",
+                "Guerre d'indépendance grecque",
+                "Rébétiko",
+                "Philosophie grecque"
+              ],
+              "events": [
+                {
+                  "id": "pan_gr_solon",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": -640,
+                  "titre": "Naissance de Solon",
+                  "description": "Solon (vers 640-vers 558 av. J.-C.) est un homme d'État, législateur et poète athénien, compté parmi les Sept Sages de la Grèce. Choisi comme archonte vers 594 av. J.-C., il abolit la servitude pour dettes, divise les citoyens en classes selon leur fortune et ouvre aux plus pauvres l'assemblée et les tribunaux, jetant les bases de la démocratie athénienne. Il quitte ensuite Athènes pour dix ans afin qu'on ne lui demande pas de modifier ses lois, et ses poèmes, où il défend son œuvre, restent une source majeure sur son temps.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Solon",
+                  "classement": "Solon",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_solon.jpg",
+                    "legende": "Solon, buste en marbre, réplique romaine d'environ 90 apr. J.-C. d'un original grec d'environ 110 av. J.-C. : un portrait posthume, de plus de quatre siècles après sa mort",
+                    "auteur": "Sailko",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ignoto,_c.d._solone,_replica_del_90_dc_ca_da_orig._greco_del_110_ac._ca,_6143.JPG"
+                  }
+                },
+                {
+                  "id": "pan_gr_sappho",
+                  "axe": "Littérature et pensée",
+                  "date": -630,
+                  "titre": "Naissance de Sappho",
+                  "description": "Sappho (vers 630-vers 570 av. J.-C.) est une poétesse grecque de Lesbos, qui vécut à Mytilène et dirigea un cercle de jeunes femmes consacré au culte d'Aphrodite et des Muses. Ses poèmes, rassemblés par les érudits d'Alexandrie en neuf livres, ne nous sont parvenus que par fragments, à l'exception de l'« Ode à Aphrodite ». Les Anciens la surnommaient la « dixième Muse », et son nom comme l'adjectif « saphique » ont traversé les siècles.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sappho",
+                  "classement": "Sappho",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_sappho.jpg",
+                    "legende": "Jeune femme à la tablette et au stylet, fresque de Pompéi (Ier siècle) : on la nomme « Sappho », mais ce n'est pas son portrait, qui n'existe pas",
+                    "auteur": "anonymous master Alternative names unknown master; unnamed master",
+                    "licence": "CC BY 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:The_so-called_Sappho_portrait,_Pompeii_(AD_45-79).jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_thales",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": -625,
+                  "titre": "Naissance de Thalès de Milet",
+                  "description": "Thalès de Milet (vers 625-vers 548 av. J.-C.) est un philosophe et savant grec, né à Milet, en Ionie, compté parmi les Sept Sages. Il cherche l'origine de toute chose dans l'eau, ce qui fait de lui, pour Aristote, le premier philosophe, et passe pour avoir prévu l'éclipse de soleil de 585 av. J.-C. et mesuré la hauteur des pyramides d'Égypte par leur ombre. Le théorème de géométrie qui porte son nom lui est attribué par la tradition.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Thal%C3%A8s",
+                  "classement": "Milet, Thalès de",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_thales.jpg",
+                    "legende": "Thalès de Milet, gravure suédoise du XIXe siècle : un portrait imaginaire, aucun portrait authentique n'existe",
+                    "auteur": "Wilhelm Meyer (1844–1944)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Illustrerad_Verldshistoria_band_I_Ill_107.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_anaximandre",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": -610,
+                  "titre": "Naissance d'Anaximandre de Milet",
+                  "description": "Anaximandre de Milet (vers 610-vers 546 av. J.-C.) est un philosophe et savant grec, disciple de Thalès. Il voit dans l'« illimité » (l'apeiron) le principe de toutes choses, conçoit la Terre comme un corps libre dans l'espace, qui ne repose sur rien, et dresse, selon la tradition, la première carte du monde connu. Il introduit aussi en Grèce le cadran solaire à gnomon.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Anaximandre",
+                  "classement": "Milet, Anaximandre de",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_anaximandre.jpg",
+                    "legende": "Anaximandre, détail d'une fresque de la Renaissance : un portrait imaginaire, aucun portrait authentique n'existe",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Anaximander.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_pythagore",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": -580,
+                  "titre": "Naissance de Pythagore",
+                  "description": "Pythagore (vers 580-vers 495 av. J.-C.) est un philosophe et mathématicien grec, né à Samos, qui fonde à Crotone, en Italie du Sud, une communauté religieuse et savante. Pour lui, le nombre est le principe de toute chose ; il aurait découvert les rapports numériques qui régissent les accords musicaux, et le théorème sur le triangle rectangle porte son nom, bien qu'il fût connu avant lui. Sa vie est mal connue, mêlée de légendes, et ses disciples se sont dispersés après sa mort.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Pythagore",
+                  "classement": "Pythagore",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_pythagore.jpg",
+                    "legende": "Pythagore, buste en marbre, copie romaine (musées du Capitole, Rome) : un portrait posthume",
+                    "auteur": "The original uploader was Galilea at German Wikipedia .",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kapitolinischer_Pythagoras_adjusted.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_miltiade",
+                  "axe": "Guerres et résistances",
+                  "date": -555,
+                  "titre": "Naissance de Miltiade",
+                  "description": "Miltiade (vers 555-489 av. J.-C.) est un stratège athénien, ancien tyran de la Chersonèse de Thrace, qui connaît bien l'armée perse pour l'avoir servie. À la tête de l'armée athénienne, il remporte en 490 av. J.-C. la victoire de Marathon sur le corps expéditionnaire de Darius Ier, premier grand revers du monde perse en Grèce. Blessé l'année suivante lors d'une expédition manquée contre l'île de Paros, condamné à une lourde amende à son retour, il meurt en 489 av. J.-C. des suites de sa blessure.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Miltiade_le_Jeune",
+                  "classement": "Miltiade",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_miltiade.jpg",
+                    "legende": "Miltiade, buste, réplique romaine : un portrait imaginaire, aucun portrait authentique n'existe",
+                    "auteur": "Petar Milošević",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Miltiades_(Roman_replica).jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_heraclite",
+                  "axe": "Littérature et pensée",
+                  "date": -544,
+                  "titre": "Naissance d'Héraclite",
+                  "description": "Héraclite (vers 544-vers 480 av. J.-C.) est un philosophe grec présocratique, né à Éphèse, que ses formules obscures firent surnommer l'« Obscur ». Pour lui, tout est mouvement et lutte des contraires, et le monde est un feu toujours vivant, ordonné par le logos ; on lui prête la formule selon laquelle on ne se baigne jamais deux fois dans le même fleuve. Il n'est connu que par des fragments, cités par les auteurs postérieurs.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/H%C3%A9raclite",
+                  "classement": "Héraclite",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_heraclite.jpg",
+                    "legende": "Héraclite, statue en marbre de Giuseppe Torretti (1705), Ca' Rezzonico, Venise : une œuvre baroque, bien postérieure à sa vie",
+                    "auteur": "Giuseppe Torretto (–1743)",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ca%27_Rezzonico_-_Eraclito_1705_-_Giuseppe_Torretti.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_leonidas",
+                  "axe": "Guerres et résistances",
+                  "date": -540,
+                  "titre": "Naissance de Léonidas Ier de Sparte",
+                  "description": "Léonidas Ier de Sparte (vers 540-480 av. J.-C.) est un roi agiade de Sparte, qui règne de 489 à sa mort. En août 480, il tient le défilé des Thermopyles contre l'immense armée de Xerxès Ier avec trois cents Spartiates et quelques milliers d'alliés grecs. Trahi par un Grec, Éphialtès, qui révèle un sentier aux Perses, il renvoie la plupart des alliés et meurt au combat avec les siens, devenu le symbole du sacrifice pour la liberté.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/L%C3%A9onidas_Ier_de_Sparte",
+                  "classement": "Léonidas Ier de Sparte",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_leonidas.jpg",
+                    "legende": "Statue d'hoplite dite « Léonidas » (Ve siècle av. J.-C., musée archéologique de Sparte) : aucun portrait authentique du roi n'existe",
+                    "auteur": "George E. Koronaios",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Statue_of_a_hoplite,_known_as_%E2%80%9CLeonidas.%E2%80%9D_5th_cent._B.C.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_eschyle",
+                  "axe": "Littérature et pensée",
+                  "date": -525,
+                  "titre": "Naissance d'Eschyle",
+                  "description": "Eschyle (vers 525-456 av. J.-C.) est un dramaturge grec, né à Éleusis, en Attique, premier des trois grands poètes tragiques. Ancien combattant de Marathon, il introduit un deuxième acteur sur la scène et écrit « Les Perses » en 472 av. J.-C., seule tragédie historique conservée, puis l'« Orestie » en 458, seule trilogie qui nous soit parvenue en entier. Il meurt à Géla, en Sicile, en 456 av. J.-C.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Eschyle",
+                  "classement": "Eschyle",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_eschyle.jpg",
+                    "legende": "Eschyle, buste en marbre, copie romaine d'un original grec : un portrait posthume",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Aischylos_B%C3%BCste.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_themistocle",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": -524,
+                  "titre": "Naissance de Thémistocle",
+                  "description": "Thémistocle (vers 524-vers 459 av. J.-C.) est un homme d'État et stratège athénien, né à Phréarres, issu d'un milieu non aristocratique. Il fait employer l'argent du Laurion à la construction d'une puissante flotte de trières, et sa stratégie conduit à la victoire de Salamine en 480 av. J.-C., qui brise l'invasion perse. Ostracisé vers 471 puis accusé de trahison, il trouve refuge auprès du roi perse Artaxerxès Ier, qui lui confie la ville de Magnésie du Méandre, où il meurt.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Th%C3%A9mistocle",
+                  "classement": "Thémistocle",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_themistocle.jpg",
+                    "legende": "Thémistocle, gravure d'Evald Hansen (1875) pour l'« Illustrerad Verldshistoria » : une image imaginaire, aucun portrait authentique n'existe",
+                    "auteur": "Evald Hansen (1840–1920)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Illustrerad_Verldshistoria_band_I_Ill_116.png"
+                  }
+                },
+                {
+                  "id": "pan_gr_pindare",
+                  "axe": "Littérature et pensée",
+                  "date": -518,
+                  "titre": "Naissance de Pindare",
+                  "description": "Pindare (518-438 av. J.-C.) est un poète lyrique grec, né près de Thèbes, en Béotie. Il compose pour les vainqueurs des grands jeux (Olympiques, Pythiques, Néméens et Isthmiques) des odes triomphales, les épinicies, où la louange de l'athlète s'unit aux mythes et à la morale aristocratique. Selon la tradition, Alexandre le Grand épargna sa maison quand il détruisit Thèbes en 335 av. J.-C.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Pindare",
+                  "classement": "Pindare",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_pindare.jpg",
+                    "legende": "Pindare, buste en marbre, copie romaine : un portrait posthume",
+                    "auteur": "NikonZ7II",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Bust_of_Pindar.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_pericles",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": -495,
+                  "titre": "Naissance de Périclès",
+                  "description": "Périclès (vers 495-429 av. J.-C.) est un stratège, orateur et homme d'État athénien qui domine la vie politique de sa cité pendant plus de trente ans. Il approfondit la démocratie en rémunérant les fonctions publiques, consolide l'empire maritime d'Athènes et lance sur l'Acropole le chantier du Parthénon, confié à Phidias, Ictinos et Callicratès. Auteur de l'oraison funèbre des premiers morts de la guerre du Péloponnèse, il succombe à la peste en 429 av. J.-C., deux ans après le début du conflit.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/P%C3%A9ricl%C3%A8s",
+                  "classement": "Périclès",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_pericles.jpg",
+                    "legende": "Périclès, buste en marbre portant son nom, copie romaine d'après un original grec de Crésilas (vers 430 av. J.-C.), musée Pio-Clementino",
+                    "auteur": "Copy of Ktesilas",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Pericles_Pio-Clementino_Inv269.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_sophocle",
+                  "axe": "Littérature et pensée",
+                  "date": -495,
+                  "titre": "Naissance de Sophocle",
+                  "description": "Sophocle (vers 495-406 av. J.-C.) est un dramaturge grec, né à Colone, près d'Athènes, l'un des trois grands poètes tragiques. Il ajoute un troisième acteur sur la scène et remporte de nombreux concours, mais sept tragédies seulement nous sont parvenues, dont « Antigone » et « Œdipe roi ». Cette dernière, par la place qu'y tient la fatalité, a nourri toute la réflexion occidentale sur le destin et la faute.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sophocle",
+                  "classement": "Sophocle",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_sophocle.jpg",
+                    "legende": "Sophocle, buste en marbre, copie romaine d'un original grec : un portrait posthume",
+                    "auteur": "User Den fjättrade ankan on en.wikipedia",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Sophocles.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_phidias",
+                  "axe": "Beaux-arts",
+                  "date": -490,
+                  "titre": "Naissance de Phidias",
+                  "description": "Phidias (vers 490-vers 430 av. J.-C.) est un sculpteur athénien, le plus célèbre artiste du classicisme grec. Ami de Périclès, il dirige le décor du Parthénon et réalise l'« Athéna Parthénos », statue d'or et d'ivoire de l'Acropole, puis le « Zeus d'Olympie », compté parmi les Sept Merveilles du monde. Aucune de ses grandes statues ne nous est parvenue, et nous ne les connaissons que par des copies et des descriptions antiques.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Phidias",
+                  "classement": "Phidias",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_phidias.jpg",
+                    "legende": "Phidias, tête en marbre (Ny Carlsberg Glyptotek, Copenhague) : un portrait posthume, aucun portrait authentique n'existe",
+                    "auteur": "Yair-haklai",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:The_Sculptor_Phidias-Ny_Carlsberg_Glyptotek.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_polyclete",
+                  "axe": "Beaux-arts",
+                  "date": -490,
+                  "titre": "Naissance de Polyclète",
+                  "description": "Polyclète (vers 490-vers 420 av. J.-C.) est un sculpteur grec, originaire d'Argos, contemporain de Phidias. Il rédige un traité, le « Canon », et en donne l'illustration avec le « Doryphore », statue d'athlète dont les proportions sont fixées par un rapport de nombres. Son art du corps en équilibre, le contrapposto, a marqué toute la sculpture occidentale, et ses œuvres nous sont connues par des copies romaines.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Polycl%C3%A8te",
+                  "classement": "Polyclète",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_polyclete.jpg",
+                    "legende": "Le « Diadumène » de Polyclète, copie romaine (musée archéologique national d'Athènes) : une œuvre du sculpteur, non son portrait",
+                    "auteur": "sailko",
+                    "licence": "CC BY 2.5",
+                    "source": "https://commons.wikimedia.org/wiki/File:Diadumenos_in_National_Archaeological_Museum_in_Athens_01.JPG"
+                  }
+                },
+                {
+                  "id": "pan_gr_herodote",
+                  "axe": "Littérature et pensée",
+                  "date": -484,
+                  "titre": "Naissance d'Hérodote",
+                  "description": "Hérodote (vers 484-vers 425 av. J.-C.) est un historien et géographe grec, né à Halicarnasse, en Carie, que Cicéron nomme le « père de l'histoire ». Ses « Histoires », issues de longs voyages en Égypte, en Perse et jusqu'aux rives de la mer Noire, racontent les guerres médiques en les replaçant dans le vaste monde des peuples qu'il a visités. Installé à Thourioi, en Italie du Sud, il y meurt vers 425 av. J.-C.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/H%C3%A9rodote",
+                  "classement": "Hérodote",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_herodote.jpg",
+                    "legende": "Hérodote, buste en marbre, copie romaine (Palazzo Massimo, Rome)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Herodotus_Massimo_Inv124478.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_euripide",
+                  "axe": "Littérature et pensée",
+                  "date": -480,
+                  "titre": "Naissance d'Euripide",
+                  "description": "Euripide (vers 480-406 av. J.-C.) est un dramaturge grec, né, selon la tradition, à Salamine le jour de la bataille, le plus jeune des trois grands poètes tragiques. Auteur de « Médée », d'« Hippolyte », des « Troyennes » et des « Bacchantes », il met en scène des héros et surtout des femmes tourmentées, au plus près des passions humaines. Quittant Athènes vers 408 pour la cour du roi Archélaos de Macédoine, il y meurt en 406 av. J.-C. ; une vingtaine de ses pièces nous sont parvenues.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Euripide",
+                  "classement": "Euripide",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_euripide.jpg",
+                    "legende": "Euripide, buste en marbre, copie romaine d'un original grec : un portrait posthume",
+                    "auteur": "NikonZ7II",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Euripide.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_socrate",
+                  "axe": "Littérature et pensée",
+                  "date": -470,
+                  "titre": "Naissance de Socrate",
+                  "description": "Socrate (vers 470-399 av. J.-C.) est un philosophe athénien, né à Alopèce, qui n'a rien écrit et que nous connaissons surtout par Platon et Xénophon. Il interroge sans relâche ses concitoyens sur la vertu, la justice et le savoir, avec une méthode, l'ironie et la maïeutique, qui fait de lui l'un des fondateurs de la philosophie. Accusé d'impiété et de corrompre la jeunesse, il est condamné à mort en 399 av. J.-C. et boit la ciguë.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Socrate",
+                  "classement": "Socrate",
+                  "biographie": "bio_socrate",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_socrate.jpg",
+                    "legende": "Socrate, buste en marbre, copie romaine d'un original grec (musée du Louvre)",
+                    "auteur": "Copy of Lysippos (?)",
+                    "licence": "CC BY-SA 2.5",
+                    "source": "https://commons.wikimedia.org/wiki/File:Socrate_du_Louvre.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_democrite",
+                  "axe": "Littérature et pensée",
+                  "date": -460,
+                  "titre": "Naissance de Démocrite",
+                  "description": "Démocrite (vers 460-370 av. J.-C.) est un philosophe grec, né à Abdère, en Thrace, qui fonde avec Leucippe l'atomisme. Il conçoit le monde comme un assemblage d'atomes indivisibles se mouvant dans le vide, sans cause extérieure ni dessein divin, idée que reprendront Épicure et Lucrèce. La tradition en a fait le « philosophe rieur », et son œuvre abondante ne nous est parvenue que par fragments.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/D%C3%A9mocrite",
+                  "classement": "Démocrite",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_democrite.jpg",
+                    "legende": "Démocrite, statue en marbre de Giuseppe Torretti (1705), Ca' Rezzonico, Venise : une œuvre baroque, bien postérieure à sa vie",
+                    "auteur": "Giuseppe Torretto (–1743)",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ca%27_Rezzonico_-_Democrito_(1705)_-_Giuseppe_Torretti.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_hippocrate",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": -460,
+                  "titre": "Naissance d'Hippocrate",
+                  "description": "Hippocrate (vers 460-vers 377 av. J.-C.) est un médecin grec, né à Kos, considéré comme le père de la médecine. Il fonde la médecine sur l'observation du malade et la recherche des causes naturelles de la maladie plutôt que sur les dieux, et la tradition lui attribue le « Corpus hippocratique », dont le célèbre serment qui guide l'éthique médicale. Il meurt à Larissa, en Thessalie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Hippocrate",
+                  "classement": "Hippocrate",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_hippocrate.jpg",
+                    "legende": "Hippocrate, gravure d'après un tableau de Rubens (XVIIe siècle) : une image imaginaire",
+                    "auteur": "Paulus Pontius (1603–1658)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Hippocrates_rubens.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_thucydide",
+                  "axe": "Littérature et pensée",
+                  "date": -460,
+                  "titre": "Naissance de Thucydide",
+                  "description": "Thucydide (vers 460-vers 400 av. J.-C.) est un historien et stratège athénien. Atteint par la peste d'Athènes en 430, puis exilé après avoir échoué à défendre Amphipolis en 424, il consacre sa vie à écrire l'« Histoire de la guerre du Péloponnèse », qu'il laisse inachevée à la date de 411. Par sa recherche des causes, son souci des faits et son refus du merveilleux, il passe pour le fondateur de l'histoire politique.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Thucydide",
+                  "classement": "Thucydide",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_thucydide.jpg",
+                    "legende": "Thucydide, buste en marbre, copie romaine d'un original grec",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Thucydides-bust-cutout_ROM.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_alcibiade",
+                  "axe": "Guerres et résistances",
+                  "date": -450,
+                  "titre": "Naissance d'Alcibiade",
+                  "description": "Alcibiade (450-404 av. J.-C.) est un stratège athénien, pupille de Périclès et familier de Socrate. Il pousse Athènes à l'expédition de Sicile en 415 av. J.-C. puis, accusé de sacrilège, passe à Sparte et chez les Perses avant de revenir à Athènes, qu'il sert avec succès à Cyzique en 410. Écarté après un revers en 406, il se réfugie en Phrygie, où il est assassiné en 404 av. J.-C.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Alcibiade",
+                  "classement": "Alcibiade",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_alcibiade.jpg",
+                    "legende": "Alcibiade, buste en marbre, copie romaine (musées du Capitole, Rome)",
+                    "auteur": "Unknown artist Unknown artist",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Bust_Alcibiades_Musei_Capitolini_MC1160.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_aristophane",
+                  "axe": "Littérature et pensée",
+                  "date": -445,
+                  "titre": "Naissance d'Aristophane",
+                  "description": "Aristophane (vers 445-vers 385 av. J.-C.) est un poète comique athénien, le plus grand représentant de la comédie ancienne. Onze de ses pièces nous sont parvenues, dont « Les Nuées », « Les Guêpes », « Les Oiseaux », « Lysistrata » et « Les Grenouilles », où il raille les politiciens, les philosophes et la guerre. Ses comédies sont le principal témoignage vivant sur l'Athènes du Ve siècle av. J.-C.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Aristophane",
+                  "classement": "Aristophane",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_aristophane.jpg",
+                    "legende": "Aristophane, buste en marbre, copie romaine, sur un socle gravé de son nom",
+                    "auteur": "Original uploader was Torquemada at es.wikisource",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Aristofanes.jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_gr_xenophon",
+                  "axe": "Littérature et pensée",
+                  "date": -430,
+                  "titre": "Naissance de Xénophon",
+                  "description": "Xénophon (vers 430-vers 355 av. J.-C.) est un historien, militaire et écrivain athénien, disciple de Socrate. Engagé comme mercenaire auprès du prince perse Cyrus le Jeune, il ramène à travers l'Asie les Dix-Mille Grecs restés sans chef après la bataille de Counaxa, récit de son « Anabase ». Banni d'Athènes, il vit à Skillonte sous la protection de Sparte et laisse aussi les « Helléniques », la « Cyropédie » et les « Mémorables ».",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/X%C3%A9nophon",
+                  "classement": "Xénophon",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_xenophon.jpg",
+                    "legende": "Xénophon, buste en marbre, copie romaine : un portrait posthume",
+                    "auteur": "Unknown author Unknown author . Scan by User:Gabor",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Xenophon.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_platon",
+                  "axe": "Littérature et pensée",
+                  "date": -427,
+                  "titre": "Naissance de Platon",
+                  "description": "Platon (427-347 av. J.-C.) est un philosophe athénien, disciple de Socrate, qui fonde vers 387 av. J.-C. l'Académie, première grande école de l'Occident. Ses dialogues, dont « La République », « Le Banquet » et « Phédon », exposent la théorie des Idées, selon laquelle le monde sensible n'est que l'image d'une réalité intelligible, et sa réflexion sur la justice et la cité. Aristote fut son élève, et il est resté l'un des penseurs les plus influents de la culture occidentale.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Platon",
+                  "classement": "Platon",
+                  "biographie": "bio_platon",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_platon.jpg",
+                    "legende": "Platon, buste romain d'après un original grec (musée Pio-Clementino)",
+                    "auteur": "Unknown artist Unknown artist",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Plato_Pio-Clemetino_Inv305.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_epaminondas",
+                  "axe": "Guerres et résistances",
+                  "date": -418,
+                  "titre": "Naissance d'Épaminondas",
+                  "description": "Épaminondas (vers 418-362 av. J.-C.) est un général et homme d'État thébain, qui fait de Thèbes la première puissance de la Grèce. Il bat les Spartiates à Leuctres en 371 av. J.-C. en renforçant l'aile gauche de sa phalange d'une profondeur inédite, puis envahit le Péloponnèse, où il libère les hilotes de Messénie et contribue à fonder Messène et Mégalopolis. Il meurt à Mantinée en 362 av. J.-C., au sein d'une victoire qui ne sera pas suivie d'effet.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89paminondas",
+                  "classement": "Épaminondas",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_epaminondas.jpg",
+                    "legende": "Épaminondas, statue du temple de la Vertu antique, dans les jardins de Stowe (Buckinghamshire), XVIIIe siècle : une image imaginaire",
+                    "auteur": "Daderot",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Epaminondas_-_Temple_of_Ancient_Virtue,_Stowe_-_Buckinghamshire,_England_-_DSC07376_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_diogene",
+                  "axe": "Littérature et pensée",
+                  "date": -413,
+                  "titre": "Naissance de Diogène de Sinope",
+                  "description": "Diogène de Sinope (vers 413-vers 323 av. J.-C.) est un philosophe grec, fondateur de l'école cynique, né à Sinope, sur la mer Noire. Il vit, dit-on, dans un tonneau à Athènes, mendie, se moque des conventions et dit au conquérant Alexandre le Grand de s'ôter de son soleil. Chez lui la philosophie est un mode de vie fondé sur la liberté et l'indépendance ; il meurt à Corinthe vers 323 av. J.-C.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Diog%C3%A8ne_de_Sinope",
+                  "classement": "Sinope, Diogène de",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_diogene.jpg",
+                    "legende": "Diogène dans son tonneau, peinture de Jean-Léon Gérôme (1860) : une scène imaginée",
+                    "auteur": "Jean-Léon Gérôme (1824–1904)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jean-L%C3%A9on_G%C3%A9r%C3%B4me_-_Diogenes_-_Walters_37131.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_lysippe",
+                  "axe": "Beaux-arts",
+                  "date": -395,
+                  "titre": "Naissance de Lysippe",
+                  "description": "Lysippe (vers 395-vers 305 av. J.-C.) est un sculpteur et bronzier grec, né à Sicyone, dans le Péloponnèse. Portraitiste attitré d'Alexandre le Grand, il renouvelle les proportions du corps, plus élancé, à la tête plus petite, et laisse une œuvre immense, dont Pline attribue à Lysippe environ quinze cents statues. Elle ne nous est connue que par des copies romaines, comme l'« Apoxyomène ».",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Lysippe",
+                  "classement": "Lysippe",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_lysippe.jpg",
+                    "legende": "« Hermès au repos », copie romaine d'un bronze attribué à Lysippe (musée archéologique de Naples) : une œuvre du sculpteur, non son portrait",
+                    "auteur": "Ricardo André Frantz ( User:Tetraktys )",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:0002MAN-Hermes.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_aristote",
+                  "axe": "Littérature et pensée",
+                  "date": -384,
+                  "titre": "Naissance d'Aristote",
+                  "description": "Aristote (384-322 av. J.-C.) est un philosophe et savant grec, né à Stagire, qui passe vingt ans à l'Académie de Platon avant d'être le précepteur d'Alexandre le Grand. Fondateur du Lycée en 335 av. J.-C., il crée la logique et traite de la physique, de la biologie, de l'éthique, de la politique et de la poétique, et son œuvre domine la pensée médiévale, arabe comme latine. Il quitte Athènes en 323 pour Chalcis, en Eubée, où il meurt l'année suivante.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Aristote",
+                  "classement": "Aristote",
+                  "biographie": "bio_aristote",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_aristote.jpg",
+                    "legende": "Aristote, buste romain d'après un original grec (musée du Louvre)",
+                    "auteur": "After Lysippos (−390–−300)",
+                    "licence": "CC BY-SA 2.5",
+                    "source": "https://commons.wikimedia.org/wiki/File:Aristoteles_Louvre.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_demosthene",
+                  "axe": "Littérature et pensée",
+                  "date": -384,
+                  "titre": "Naissance de Démosthène",
+                  "description": "Démosthène (384-322 av. J.-C.) est un orateur et homme d'État athénien, qui devient le plus grand orateur de la Grèce après avoir surmonté, dit-on, un défaut de prononciation. Il consacre sa vie à dresser Athènes contre Philippe II de Macédoine, comme dans ses « Philippiques », et triomphe en 330 av. J.-C. de son rival Eschine dans le discours « Sur la Couronne ». Poursuivi par les Macédoniens après la révolte de la Grèce contre Antipater, il s'empoisonne en 322 av. J.-C. à Calaurie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/D%C3%A9mosth%C3%A8ne",
+                  "classement": "Démosthène",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_demosthene.jpg",
+                    "legende": "Démosthène, tête en marbre, copie romaine d'un original grec (musée du Louvre)",
+                    "auteur": "Polyeuctus ( fl. 280 BC date QS:P,–0280–00–00T00:00:00Z/9 ) Description sculptor",
+                    "licence": "CC BY 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:P1080058_Louvre_t%C3%AAte_de_D%C3%A9mosth%C3%A8ne_Ma237_rwk.JPG"
+                  }
+                },
+                {
+                  "id": "pan_gr_philippe",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": -382,
+                  "titre": "Naissance de Philippe II de Macédoine",
+                  "description": "Philippe II de Macédoine (382-336 av. J.-C.) est un roi de Macédoine de la dynastie des Argéades, qui règne de 359 à 336 av. J.-C. sur un royaume alors affaibli. Il réforme l'armée, dote sa phalange de la sarisse, longue pique, annexe la Thrace et la Chalcidique, puis impose sa domination aux cités grecques en battant Athènes et Thèbes à Chéronée en 338. Désigné chef de la ligue de Corinthe pour la guerre contre la Perse, il est assassiné à Aigai en 336 avant de l'avoir lancée, et laisse à son fils Alexandre une armée prête.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Philippe_II_(roi_de_Mac%C3%A9doine)",
+                  "classement": "Philippe II de Macédoine",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_philippe.jpg",
+                    "legende": "Philippe II de Macédoine, buste en marbre, copie romaine (Ny Carlsberg Glyptotek, Copenhague)",
+                    "auteur": "Unknown artist Unknown artist",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Philip_II_of_Macedon_Ny_Carlsberg_Glyptotek_IN2263.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_theophraste",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": -371,
+                  "titre": "Naissance de Théophraste",
+                  "description": "Théophraste (371-288 av. J.-C.) est un philosophe et naturaliste grec, né à Érésos, sur l'île de Lesbos, élève et ami d'Aristote, qu'il remplace à la tête du Lycée. Auteur de l'« Histoire des plantes » et des « Causes des plantes », il décrit et classe des centaines d'espèces, ce qui fait de lui le père de la botanique. Ses « Caractères », portraits de travers humains, inspireront La Bruyère.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Th%C3%A9ophraste",
+                  "classement": "Théophraste",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_theophraste.jpg",
+                    "legende": "Théophraste, statue du jardin botanique (Orto botanico) : une œuvre moderne, non un portrait authentique",
+                    "auteur": "Teofrasto_Orto_botanico_PA.jpg : tato grasso derivative work: Singinglemon ( talk )",
+                    "licence": "CC BY-SA 2.5",
+                    "source": "https://commons.wikimedia.org/wiki/File:Teofrasto_Orto_botanico_detail.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_alexandre",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": -356,
+                  "titre": "Naissance d'Alexandre le Grand",
+                  "description": "Alexandre le Grand (356-323 av. J.-C.) est un roi de Macédoine, né à Pella, fils de Philippe II et d'Olympias et élève d'Aristote. Roi à vingt ans, il conquiert en onze ans l'Empire perse, l'Égypte et l'Asie centrale jusqu'à l'Indus, par les victoires du Granique, d'Issos et de Gaugamèles, et fonde de nombreuses cités, dont Alexandrie. Il meurt à Babylone en 323 av. J.-C., à trente-deux ans ; ses généraux se partagent son empire, et l'héritage hellénistique répand la culture grecque jusqu'en Asie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Alexandre_le_Grand",
+                  "classement": "Grand, Alexandre le",
+                  "biographie": "bio_alexandre",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_alexandre.jpg",
+                    "legende": "Alexandre le Grand, tête en marbre trouvée à Alexandrie, IIIe siècle av. J.-C. (Ny Carlsberg Glyptotek, Copenhague)",
+                    "auteur": "Richard Mortel from Riyadh, Saudi Arabia",
+                    "licence": "CC BY 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Alexander_the_Great,_from_Alexandria,_Egypt,_3rd_cent._BCE,_Ny_Carlsberg_Glyptotek,_Copenhagen_(5)_(36375553176).jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_menandre",
+                  "axe": "Littérature et pensée",
+                  "date": -342,
+                  "titre": "Naissance de Ménandre",
+                  "description": "Ménandre (342-292 av. J.-C.) est un auteur comique athénien, disciple de Théophraste et chef de file de la Comédie nouvelle. Plus attentif aux intrigues familiales et aux caractères qu'à la satire politique, il écrit une centaine de pièces, qui inspireront Plaute et Térence et, à travers eux, la comédie européenne. On ne connaissait de lui que des fragments quand un papyrus retrouvé en 1952 livra « Le Misanthrope » (« Dyscolos »), seule comédie complète.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/M%C3%A9nandre",
+                  "classement": "Ménandre",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_menandre.jpg",
+                    "legende": "Ménandre, buste en marbre, copie romaine (musée Chiaramonti, Vatican)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Menander_Chiaramonti_Inv1453.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_epicure",
+                  "axe": "Littérature et pensée",
+                  "date": -341,
+                  "titre": "Naissance d'Épicure",
+                  "description": "Épicure (341-270 av. J.-C.) est un philosophe grec, né à Samos, qui fonde en 306 av. J.-C. à Athènes l'école du Jardin, ouverte aux femmes et aux esclaves. Sa philosophie, qui reprend l'atomisme de Démocrite, fait du plaisir, entendu comme l'absence de trouble de l'âme et de douleur du corps, le but d'une vie heureuse et délivre l'homme de la crainte des dieux et de la mort. Il meurt à Athènes en 270 av. J.-C. ; ses disciples, dont Lucrèce, prolongent sa pensée.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89picure",
+                  "classement": "Épicure",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_epicure.jpg",
+                    "legende": "Épicure, buste en marbre, copie romaine (British Museum)",
+                    "auteur": "Unknown artist Unknown artist",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Epikouros_BM_1843.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_zenon",
+                  "axe": "Littérature et pensée",
+                  "date": -334,
+                  "titre": "Naissance de Zénon de Kition",
+                  "description": "Zénon de Kition (vers 334-262 av. J.-C.) est un philosophe grec d'origine phénicienne, né à Kition, à Chypre. Installé à Athènes, il enseigne vers 301 av. J.-C. sous le « Portique peint » (Stoa Poikilè), d'où le nom de stoïcisme donné à son école. Pour lui, le sage vit en accord avec la nature et la raison, et reste maître de ses passions, doctrine qui marquera Sénèque, Épictète et Marc Aurèle.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Z%C3%A9non_de_Kition",
+                  "classement": "Kition, Zénon de",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_zenon.jpg",
+                    "legende": "Zénon de Kition, buste en marbre conservé à Naples, photographie de Paolo Monti (1969) : un portrait posthume",
+                    "auteur": "Paolo Monti (1908–1982)",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Paolo_Monti_-_Servizio_fotografico_(Napoli,_1969)_-_BEIC_6353768.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_pyrrhos",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": -319,
+                  "titre": "Naissance de Pyrrhus Ier",
+                  "description": "Pyrrhus Ier (vers 319-272 av. J.-C.) est un roi d'Épire de la dynastie des Éacides, apparenté à Alexandre le Grand par la famille d'Olympias. Appelé en Italie par Tarente, il bat les Romains à Héraclée en 280 et à Ausculum en 279 av. J.-C., mais au prix de pertes si lourdes que l'expression « victoire à la Pyrrhus » en est restée. Vaincu à Bénévent en 275, il revient en Grèce et meurt à Argos en 272, tué, dit-on, par une tuile jetée d'un toit.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Pyrrhus_Ier",
+                  "classement": "Pyrrhus Ier",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_pyrrhos.jpg",
+                    "legende": "Pyrrhus Ier, buste trouvé à la villa des Papyrus, à Herculanum, identifié comme le roi d'Épire",
+                    "auteur": "See sourced file for original author(s)",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Bust_of_Pyrrhus_of_Epirus_(Villa_of_the_Papyri,_Herculaneum).jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_aristarque",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": -310,
+                  "titre": "Naissance d'Aristarque de Samos",
+                  "description": "Aristarque de Samos (vers 310-vers 230 av. J.-C.) est un astronome et mathématicien grec, né à Samos. Son seul traité conservé, « Sur les grandeurs et les distances du Soleil et de la Lune », en estime les dimensions par la géométrie, et Archimède rapporte qu'il plaçait le Soleil immobile au centre du monde, la Terre tournant autour de lui, dix-huit siècles avant Copernic. Cette idée héliocentrique ne fut pas retenue par ses contemporains.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Aristarque_de_Samos",
+                  "classement": "Samos, Aristarque de",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_aristarque.jpg",
+                    "legende": "Aristarque de Samos, gravure de l'atlas de Cellarius (1646) : une image imaginaire",
+                    "auteur": "Unknown artist (17th century)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Aristarchus_van_Samos,_atlas_of_Cellarius_(1646).jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_hipparque",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": -190,
+                  "titre": "Naissance d'Hipparque",
+                  "description": "Hipparque (vers 190-vers 120 av. J.-C.) est un astronome, géographe et mathématicien grec, né à Nicée, en Bithynie, qui travaille surtout à Rhodes. Il établit un catalogue d'environ huit cents étoiles, découvre la précession des équinoxes, fixe la durée de l'année avec précision et invente la trigonométrie en dressant une table des cordes. Son œuvre est presque entièrement perdue, et on la connaît surtout par Ptolémée.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Hipparque_(astronome)",
+                  "classement": "Hipparque",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_hipparque.jpg",
+                    "legende": "Hipparque, médaillon gravé qui porte son nom : une image imaginaire",
+                    "auteur": "William Henry Smyth",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Head_of_Hipparchus_(cropped).jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_gr_plutarque",
+                  "axe": "Littérature et pensée",
+                  "date": 44,
+                  "titre": "Naissance de Plutarque",
+                  "description": "Plutarque (vers 44-vers 125) est un biographe, philosophe et moraliste grec, né à Chéronée, en Béotie, citoyen romain et prêtre d'Apollon à Delphes. Il écrit les « Vies parallèles », qui comparent deux à deux le destin d'hommes illustres de la Grèce et de Rome, et les « Œuvres morales ». Source majeure sur l'Antiquité, il a inspiré Shakespeare, Montaigne et Rousseau.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Plutarque",
+                  "classement": "Plutarque",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_plutarque.jpg",
+                    "legende": "Plutarque, buste moderne sur piédestal : aucun portrait authentique n'existe",
+                    "auteur": "Odysses",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Plutarch_of_Chaeronea-03.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_epictete",
+                  "axe": "Littérature et pensée",
+                  "date": 50,
+                  "titre": "Naissance d'Épictète",
+                  "description": "Épictète (50-vers 125) est un philosophe stoïcien grec, né esclave à Hiérapolis, en Phrygie, puis affranchi à Rome. Chassé de Rome vers 93 par un édit de Domitien, il ouvre une école à Nicopolis, en Épire, où il enseigne qu'il faut distinguer ce qui dépend de nous (nos jugements, nos désirs) de ce qui n'en dépend pas. Il n'a rien écrit lui-même : son élève Arrien a consigné les « Entretiens » et le « Manuel », que Marc Aurèle lira avec attention.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89pict%C3%A8te",
+                  "classement": "Épictète",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_epictete.jpg",
+                    "legende": "Épictète, gravure ovale de la page de titre des « Œuvres » de Sénèque (1605) : une image imaginaire, qui porte son nom",
+                    "auteur": "Theodoor Galle (1571–1633)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Epictetus_from_L._Annaei_Senecae_philosophi_Opera,_1605,_title_page_detail.png",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_gr_galien",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 129,
+                  "titre": "Naissance de Claude Galien",
+                  "description": "Claude Galien (129-vers 216) est un médecin et philosophe grec, né à Pergame, en Asie Mineure, médecin des gladiateurs puis de l'empereur Marc Aurèle à Rome. Disséquant des animaux, il fait progresser l'anatomie et la physiologie, et ses nombreux traités fixent pour quatorze siècles la doctrine médicale, en Orient comme en Occident. Les erreurs de son système, dont la théorie des humeurs, n'ont été corrigées qu'à la Renaissance, par Vésale et Harvey.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Claude_Galien",
+                  "classement": "Galien, Claude",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_galien.jpg",
+                    "legende": "Galien, gravure ancienne en médaillon : une image imaginaire",
+                    "auteur": "Georg Paul Busch (engraver)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Galenus.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_basile",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 958,
+                  "titre": "Naissance de Basile II",
+                  "description": "Basile II (vers 958-1025) est un empereur byzantin de la dynastie macédonienne, qui règne de 960 à 1025 et qu'on surnomme le Bulgaroctone, le « tueur de Bulgares ». Après avoir maté les révoltes des grands propriétaires d'Asie Mineure, il soumet la Bulgarie au terme de plus de trente ans de guerre et annexe une partie de l'Arménie. Il noue une alliance avec Vladimir de Kiev, qui lui envoie des guerriers, futurs membres de la garde varangienne, et reçoit le baptême ; à sa mort, l'empire est plus vaste qu'il ne l'avait été depuis des siècles.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Basile_II",
+                  "classement": "Basile II",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_basile.jpg",
+                    "legende": "Basile II, miniature byzantine du Psautier de Basile II (vers 1000), où l'empereur est représenté en triomphateur",
+                    "auteur": "from the Middle Ages, unknown",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Basilios_II.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_alexis",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1058,
+                  "titre": "Naissance d'Alexis Ier Comnène",
+                  "description": "Alexis Ier Comnène (vers 1058-1118) est un empereur byzantin, qui prend le pouvoir par un coup d'État en 1081 et règne jusqu'à sa mort. Il repousse les Normands de Robert Guiscard et les Petchénègues, rétablit les finances de l'empire et appelle l'Occident à l'aide contre les Turcs, appel qui contribue au lancement de la première croisade en 1096. Sa fille Anne Comnène a raconté son règne dans l'Alexiade.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Alexis_Ier_Comn%C3%A8ne",
+                  "classement": "Alexis Ier Comnène",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_alexis.jpg",
+                    "legende": "Alexis Ier Comnène, miniature byzantine du XIIe siècle : une représentation d'époque, mais non un portrait ressemblant",
+                    "auteur": "Alexios1komnenos.jpg : Unknown Unknown derivative work: Constantine ✍",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Alexios_I_Komnenos.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_annecomnene",
+                  "axe": "Littérature et pensée",
+                  "date": 1083,
+                  "titre": "Naissance d'Anne Comnène",
+                  "description": "Anne Comnène (1083-vers 1153) est une princesse et historienne byzantine, fille aînée de l'empereur Alexis Ier. Après l'échec d'un complot contre son frère Jean II, elle se retire dans un couvent de Constantinople, où elle rédige l'« Alexiade », histoire du règne de son père qui raconte la première croisade vue depuis Byzance. Elle est considérée comme la première femme historienne dont l'œuvre soit conservée.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Anne_Comn%C3%A8ne",
+                  "classement": "Comnène, Anne",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_annecomnene.jpg",
+                    "legende": "Anne Comnène, gravure : une représentation imaginaire, aucun portrait authentique n'existe",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Anna_Komnene_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_plethon",
+                  "axe": "Littérature et pensée",
+                  "date": 1355,
+                  "titre": "Naissance de Georges Gémiste Pléthon",
+                  "description": "Georges Gémiste Pléthon (vers 1355-1452) est un philosophe byzantin, né à Constantinople, qui enseigne à Mistra, dans le Péloponnèse, et qui se prend de passion pour Platon. Il accompagne l'empereur Jean VIII au concile de Florence en 1438-1439 et, selon la tradition, y inspire à Cosme de Médicis l'idée de la future Académie platonicienne, ce qui contribue à la diffusion de Platon dans l'Italie de la Renaissance. Le nom de Pléthon, qui évoque en grec « plénitude », fait écho à celui de Platon.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/G%C3%A9miste_Pl%C3%A9thon",
+                  "classement": "Pléthon, Georges Gémiste",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_plethon.jpg",
+                    "legende": "Pléthon, détail de la fresque de Benozzo Gozzoli à la chapelle des Mages (Florence), où l'on a cru le reconnaître (vers 1459)",
+                    "auteur": "Benozzo Gozzoli (1420–1497)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Benozzo_Gozzoli,_Pletone,_Cappella_dei_Magi.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_constantin",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1404,
+                  "titre": "Naissance de Constantin XI Paléologue",
+                  "description": "Constantin XI Paléologue (1404-1453) est le dernier empereur byzantin, couronné à Mistra en 1449. Il défend Constantinople avec quelque sept mille hommes contre l'armée du sultan Mehmed II, qui l'assiège au printemps de 1453, et refuse de quitter la ville. Elle tombe le 29 mai 1453 et il meurt au combat, ce qui met fin à l'Empire romain d'Orient et nourrit la légende de l'« empereur de marbre » qui reviendra.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Constantin_XI_Pal%C3%A9ologue",
+                  "classement": "Constantin XI Paléologue",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_constantin.jpg",
+                    "legende": "Constantin XI Paléologue, fresque : une représentation posthume, aucun portrait authentique n'existe",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Konstantinos_XI_Palaiologos_fresco.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_rigas",
+                  "axe": "Guerres et résistances",
+                  "date": 1757,
+                  "titre": "Naissance de Rigas Vélestinlis",
+                  "description": "Rigas Vélestinlis (vers 1757-1798) est un écrivain et patriote grec, né à Velestíno, en Thessalie, précurseur de la guerre d'indépendance. Installé à Vienne, il rédige une constitution pour une république balkanique où Grecs, Turcs, Slaves et autres peuples seraient égaux, et compose le Thourios, un chant de guerre révolutionnaire. Arrêté à Trieste en 1797 et livré aux autorités ottomanes, il est étranglé à Belgrade en juin 1798, et son nom est devenu un symbole de liberté.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Rigas",
+                  "classement": "Vélestinlis, Rigas",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_rigas.jpg",
+                    "legende": "Rigas Vélestinlis, portrait peint : une représentation de la tradition, non datée",
+                    "auteur": "Andreas Kriezis (1816–1880) Alternative names Ανδρέας Κριεζής",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Rigas_Feraios_01.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_miaoulis",
+                  "axe": "Guerres et résistances",
+                  "date": 1769,
+                  "titre": "Naissance d'Andréas Miaoúlis",
+                  "description": "Andréas Miaoúlis (1769-1835) est un amiral et homme politique grec, issu d'une famille de marins de l'île d'Hydra. Commandant de la flotte de Hydra pendant la guerre d'indépendance, il remporte plusieurs succès contre la marine ottomane et parvient à ravitailler Missolonghi assiégée. Il reste l'un des grands noms de la marine grecque et meurt à Athènes en 1835.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Andr%C3%A9as_Miao%C3%BAlis",
+                  "classement": "Miaoúlis, Andréas",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_miaoulis.jpg",
+                    "legende": "Andréas Miaoúlis, portrait à l'huile de Dionysios Tsokos (vers 1860)",
+                    "auteur": "Dionysios Tsokos (–1862)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Miaoylis-elaio.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_kolokotronis",
+                  "axe": "Guerres et résistances",
+                  "date": 1770,
+                  "titre": "Naissance de Théodoros Kolokotronis",
+                  "description": "Théodoros Kolokotronis (1770-1843) est un chef militaire et homme d'État grec, issu d'une famille de klephtes de Messénie. Chef des insurgés du Péloponnèse dès 1821, il prend Tripolitsa et anéantit à Dervénakia, en 1822, l'armée ottomane de Dramali, avant d'être emprisonné par les gouvernements rivaux de la révolution puis rappelé face à Ibrahim Pacha. Condamné à mort en 1834 sous la régence d'Othon, puis gracié, il meurt à Athènes en 1843 ; il reste le héros le plus populaire de la guerre d'indépendance.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/The%C3%B3doros_Kolokotr%C3%B3nis",
+                  "classement": "Kolokotronis, Théodoros",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_kolokotronis.jpg",
+                    "legende": "Théodoros Kolokotronis, portrait peint en tenue de guerre et casque, XIXe siècle",
+                    "auteur": "Dionysios Tsokos (–1862)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kolokotronis01.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_bouboulina",
+                  "axe": "Guerres et résistances",
+                  "date": 1771,
+                  "titre": "Naissance de Laskarína Bouboulína",
+                  "description": "Laskarína Bouboulína (1771-1825) est une armatrice et amirale grecque, née dans une prison de Constantinople, installée à Spetses, où elle devient une riche armatrice. Membre de la Filikí Etería, elle arme à ses frais des navires, dont l'Agamemnon, qu'elle fait construire, et mène elle-même ses équipages au blocus de Nauplie et de Monemvasia en 1821. Elle est tuée en 1825 à Spetses, au cours d'une querelle familiale, et reste l'une des figures féminines de la guerre d'indépendance.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Laskar%C3%ADna_Bouboul%C3%ADna",
+                  "classement": "Bouboulína, Laskarína",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_bouboulina.jpg",
+                    "legende": "Laskarína Bouboulína, lithographie d'Adam de Friedel (1827)",
+                    "auteur": "Adam de Friedel",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%CE%9B%CE%B1%CF%83%CE%BA%CE%B1%CF%81%CE%AF%CE%BD%CE%B1_%CE%9C%CF%80%CE%BF%CF%85%CE%BC%CF%80%CE%BF%CF%85%CE%BB%CE%AF%CE%BD.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_capodistrias",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1776,
+                  "titre": "Naissance de Jean Capodistrias",
+                  "description": "Jean Capodistrias (1776-1831) est un diplomate et homme d'État grec, né à Corfou, qui fut ministre des Affaires étrangères du tsar Alexandre Ier de Russie. Élu en 1827 premier gouverneur de la Grèce, il bâtit presque de rien une administration, une armée et un système d'écoles dans un pays ruiné par la guerre d'indépendance. Il est assassiné à Nauplie le 9 octobre 1831 par des membres de la famille Mavromichalis, dont il avait fait emprisonner le chef.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Io%C3%A1nnis_Kapod%C3%ADstrias",
+                  "classement": "Capodistrias, Jean",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_capodistrias.jpg",
+                    "legende": "Jean Capodistrias, portrait peint du XIXe siècle",
+                    "auteur": "Dionysios Tsokos (–1862)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kapodistrias2.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_botsaris",
+                  "axe": "Guerres et résistances",
+                  "date": 1788,
+                  "titre": "Naissance de Márkos Bótzaris",
+                  "description": "Márkos Bótzaris (vers 1788-1823) est un chef militaire souliote, issu d'une famille de guerriers de l'Épire. Au début de la guerre d'indépendance, il joue un rôle décisif dans la défense de Missolonghi, assiégée par les Ottomans à la fin de 1822. Tué le 21 août 1823 dans l'attaque de nuit du camp ottoman de Karpenísi, au milieu de sa victoire, il devient un héros célébré jusque chez les philhellènes d'Europe.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/M%C3%A1rkos_B%C3%B3tzaris",
+                  "classement": "Bótzaris, Márkos",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_botsaris.jpg",
+                    "legende": "Márkos Bótzaris, portrait peint du XIXe siècle",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:MarkosBotsaris.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_kanaris",
+                  "axe": "Guerres et résistances",
+                  "date": 1793,
+                  "titre": "Naissance de Konstantínos Kanáris",
+                  "description": "Konstantínos Kanáris (vers 1793-1877) est un marin et homme d'État grec, né à Psará. Chef de brûlots pendant la guerre d'indépendance, il incendie en juin 1822, devant Chios, le vaisseau amiral ottoman, en représailles du massacre de l'île, puis renouvelle ces exploits à Ténédos. Plusieurs fois Premier ministre après l'indépendance, il meurt à Athènes en 1877.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Konstant%C3%ADnos_Kan%C3%A1ris",
+                  "classement": "Kanáris, Konstantínos",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_kanaris.jpg",
+                    "legende": "Konstantínos Kanáris, photographie du XIXe siècle",
+                    "auteur": "Petros Moraites (1832–1905)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Konstantinos_Kanaris.png"
+                  }
+                },
+                {
+                  "id": "pan_gr_makriyannis",
+                  "axe": "Guerres et résistances",
+                  "date": 1797,
+                  "titre": "Naissance de Yánnis Makriyánnis",
+                  "description": "Yánnis Makriyánnis (1797-1864) est un chef militaire et écrivain grec, né à Avoriti, en Doride, qui n'apprit à lire qu'à plus de trente ans. Combattant de la guerre d'indépendance, il joue un rôle dans le soulèvement du 3 septembre 1843, qui oblige le roi Othon à accorder une constitution, puis est condamné à mort en 1852 et gracié. Ses Mémoires, écrits en grec populaire, sont un des textes majeurs de la littérature grecque du XIXe siècle ; il meurt à Athènes en 1864.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Y%C3%A1nnis_Makriy%C3%A1nnis",
+                  "classement": "Makriyánnis, Yánnis",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_makriyannis.jpg",
+                    "legende": "Yánnis Makriyánnis, portrait peint en costume de guerre, XIXe siècle",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Makrygiannis.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_solomos",
+                  "axe": "Littérature et pensée",
+                  "date": 1798,
+                  "titre": "Naissance de Dionýsios Solomós",
+                  "description": "Dionýsios Solomós (1798-1857) est un poète grec, né à Zante, dans les îles Ioniennes, considéré comme le poète national de la Grèce. En 1823, il écrit l'« Hymne à la liberté », dont les deux premières strophes sont devenues en 1865 l'hymne national grec. Il impose le grec parlé, le démotique, comme langue poétique, et vit une grande partie de sa vie à Corfou, où il meurt en 1857.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Dion%C3%BDsios_Solom%C3%B3s",
+                  "classement": "Solomós, Dionýsios",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_solomos.jpg",
+                    "legende": "Dionýsios Solomós, portrait peint",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Solomos_portrait_4.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_papadiamantis",
+                  "axe": "Littérature et pensée",
+                  "date": 1851,
+                  "titre": "Naissance d'Alexandre Papadiamándis",
+                  "description": "Alexandre Papadiamándis (1851-1911) est un écrivain grec, né à Skiathos, fils de prêtre, considéré comme l'un des plus grands prosateurs de la littérature grecque moderne. Vivant pauvrement à Athènes comme traducteur et journaliste, il écrit des romans et surtout des nouvelles, comme « La Meurtrière » (1903), où se mêlent la vie des îles, la foi orthodoxe et les tourments des humbles. Il revient mourir à Skiathos en 1911.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Alexandre_Papadiam%C3%A1ndis",
+                  "classement": "Papadiamándis, Alexandre",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_papadiamantis.jpg",
+                    "legende": "Alexandre Papadiamándis, photographie",
+                    "auteur": "Pavlos Nirbanas (1866–1937)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Papadiamantis_Aleksandros_by_Nirvanas.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_cavafy",
+                  "axe": "Littérature et pensée",
+                  "date": 1863,
+                  "titre": "Naissance de Constantin Cavafy",
+                  "description": "Constantin Cavafy (1863-1933) est un poète grec, né à Alexandrie, en Égypte, qui fut employé au ministère des Travaux publics pendant trente ans. Il n'a publié de son vivant que quelques recueils confidentiels, mais ses poèmes, dont « Ithaque » et « En attendant les barbares », mêlant histoire hellénistique, ironie et désir, l'ont rendu mondialement célèbre. Il meurt à Alexandrie le jour de ses soixante-dix ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Constantin_Cavafy",
+                  "classement": "Cavafy, Constantin",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_cavafy.jpg",
+                    "legende": "Constantin Cavafy, photographie vers 1900",
+                    "auteur": "user:Iustinus",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Constantine_Cavafy,_ca_1900.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_venizelos",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1864,
+                  "titre": "Naissance d'Elefthérios Venizélos",
+                  "description": "Elefthérios Venizélos (1864-1936) est un homme d'État grec, né à Mourniés, en Crète, qu'il conduit à l'union avec la Grèce en 1913. Premier ministre à plusieurs reprises à partir de 1910, il modernise l'État, mène la Grèce à la victoire dans les guerres balkaniques de 1912-1913 et la fait entrer dans la Grande Guerre aux côtés de l'Entente. La défaite de la campagne d'Asie Mineure, en 1922, met fin à son rêve d'une Grande Grèce ; il meurt en exil à Paris en 1936.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Elefth%C3%A9rios_Veniz%C3%A9los",
+                  "classement": "Venizélos, Elefthérios",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_venizelos.jpg",
+                    "legende": "Elefthérios Venizélos, photographie du début du XXe siècle",
+                    "auteur": "Photoprint copyrighted by Harris & Ewing (No known restrictions on publication)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%CE%95%CE%BB%CE%B5%CF%85%CE%B8%CE%AD%CF%81%CE%B9%CE%BF%CF%82_%CE%92%CE%B5%CE%BD%CE%B9%CE%B6%CE%AD%CE%BB%CE%BF%CF%82.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_metaxas",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1871,
+                  "titre": "Naissance d'Ioánnis Metaxás",
+                  "description": "Ioánnis Metaxás (1871-1941) est un officier et homme politique grec, né à Ithaque, qui instaure en 1936 un régime autoritaire, le « régime du 4-Août », avec l'accord du roi Georges II. Le 28 octobre 1940, il répond « Non » (« Óchi ») à l'ultimatum de l'Italie de Mussolini, jour devenu fête nationale de la Grèce, et son armée repousse l'invasion en Albanie. Il meurt le 29 janvier 1941 à Athènes, quelques semaines avant l'invasion allemande d'avril.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Io%C3%A1nnis_Metax%C3%A1s",
+                  "classement": "Metaxás, Ioánnis",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_metaxas.jpg",
+                    "legende": "Ioánnis Metaxás, photographie de 1937",
+                    "auteur": "The Archaeological Society at Athens / εν Aθήναις Aρχαιολογική Eταιρεία, 1937",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ioannis_Metaxas_1937.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_caratheodory",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1873,
+                  "titre": "Naissance de Constantin Carathéodory",
+                  "description": "Constantin Carathéodory (1873-1950) est un mathématicien grec, né à Berlin dans une famille grecque de diplomates et de lettrés. Ses travaux sur le calcul des variations, la théorie des fonctions et la théorie de la mesure comptent parmi les plus importants du XXe siècle, et il donne à la thermodynamique une formulation axiomatique. Chargé en 1920 de fonder l'université grecque de Smyrne, détruite avec la ville en 1922, il enseigne ensuite à Munich, où il meurt en 1950.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Constantin_Carath%C3%A9odory",
+                  "classement": "Carathéodory, Constantin",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_caratheodory.jpg",
+                    "legende": "Constantin Carathéodory, photographie",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Caratheodory_constantin.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_louis",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1873,
+                  "titre": "Naissance de Spyrídon Loúis",
+                  "description": "Spyrídon Loúis (1873-1940) est un athlète grec, né à Maroússi, près d'Athènes, vainqueur du premier marathon olympique, aux Jeux d'Athènes de 1896. Modeste porteur d'eau, il s'impose en un peu moins de trois heures, devant le stade comble et le roi Georges Ier, et offre à la Grèce sa seule victoire en athlétisme de ces Jeux. Il meurt à Maroússi en 1940, et le stade olympique d'Athènes porte aujourd'hui son nom.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Spyr%C3%ADdon_Lo%C3%BAis",
+                  "classement": "Loúis, Spyrídon",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_louis.jpg",
+                    "legende": "Spyrídon Loúis, photographie de 1896",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Spyridon_Louis_1896.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_kazantzakis",
+                  "axe": "Littérature et pensée",
+                  "date": 1883,
+                  "titre": "Naissance de Níkos Kazantzákis",
+                  "description": "Níkos Kazantzákis (1883-1957) est un écrivain grec, né à Héraklion, en Crète, romancier, poète et philosophe. Il est l'auteur d'« Alexis Zorba » (1946), de « La Dernière Tentation » (1955), que l'Église orthodoxe condamne, et d'une « Odyssée » de plus de trente mille vers. Candidat malheureux au prix Nobel en 1957, battu d'une voix par Albert Camus, il meurt à Fribourg-en-Brisgau et repose à Héraklion, sous l'épitaphe : « Je n'espère rien, je ne crains rien, je suis libre. »",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/N%C3%ADkos_Kazantz%C3%A1kis",
+                  "classement": "Kazantzákis, Níkos",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_kazantzakis.jpg",
+                    "legende": "Níkos Kazantzákis, photographie de 1904",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Nikos_Kazantzakis_1904.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_mitropoulos",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1896,
+                  "titre": "Naissance de Dimitri Mitropoulos",
+                  "description": "Dimitri Mitropoulos (1896-1960) est un chef d'orchestre, pianiste et compositeur grec, né à Athènes. Il fait sa carrière aux États-Unis, naturalisé américain en 1946, où il dirige l'Orchestre philharmonique de New York de 1949 à 1958 et fait redécouvrir la musique de Mahler. Il meurt à Milan en 1960, terrassé par un malaise pendant une répétition de la Troisième Symphonie de Mahler à la Scala.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Dimitri_Mitropoulos",
+                  "classement": "Mitropoulos, Dimitri",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_mitropoulos.jpg",
+                    "legende": "Dimitri Mitropoulos, dessin au crayon : faute de photographie libre, un portrait dessiné",
+                    "auteur": "Fournier-Pouyet",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Dimitri_Mitropoulos.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_seferis",
+                  "axe": "Littérature et pensée",
+                  "date": 1900,
+                  "titre": "Naissance de Georges Séféris",
+                  "description": "Georges Séféris (1900-1971) est un poète et diplomate grec, né à Urla, près de Smyrne, d'où sa famille fuit en 1914. Auteur de « Mythistorima » (1935) et de « Grive » (1947), il fait de la mémoire de la Grèce, ancienne et moderne, la matière d'une poésie dépouillée et symboliste. Il reçoit le prix Nobel de littérature en 1963, et sa déclaration de 1969 contre la dictature des colonels est restée un geste courageux ; il meurt à Athènes en 1971.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Georges_S%C3%A9f%C3%A9ris",
+                  "classement": "Séféris, Georges",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_seferis.jpg",
+                    "legende": "Georges Séféris, photographie de 1963",
+                    "auteur": "Nobel Foundation",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Giorgos_Seferis_1963.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_vamvakaris",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1905,
+                  "titre": "Naissance de Márkos Vamvakáris",
+                  "description": "Márkos Vamvakáris (1905-1972) est un compositeur, chanteur et joueur de bouzouki, né à Syros, qu'on surnomme le « patriarche du rébétiko ». Installé au Pirée, il fonde dans les années 1930 le quatuor du Pirée, qui fait entrer le bouzouki et les chansons des quartiers populaires dans la musique urbaine grecque. Il meurt à Athènes en 1972.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/M%C3%A1rkos_Vamvak%C3%A1ris",
+                  "classement": "Vamvakáris, Márkos",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_vamvakaris.jpg",
+                    "legende": "Márkos Vamvakáris, photographie de sa jeunesse",
+                    "auteur": "Unknown photographer",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Markos_Vamvakaris_rebetiko_musician_as_a_young_man.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_tsarouchis",
+                  "axe": "Beaux-arts",
+                  "date": 1910,
+                  "titre": "Naissance de Yannis Tsarouchis",
+                  "description": "Yannis Tsarouchis (1910-1989) est un peintre grec, né au Pirée. Formé à l'école des Beaux-Arts d'Athènes et chez Fotis Kontoglou, il renouvelle la peinture grecque en puisant à la fois dans l'icône byzantine, la peinture populaire du théâtre d'ombres et la sensualité de ses modèles, marins et soldats. Il crée aussi des décors et costumes pour le théâtre et l'opéra et meurt à Athènes en 1989.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Yannis_Tsarouchis",
+                  "classement": "Tsarouchis, Yannis",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_tsarouchis.jpg",
+                    "legende": "Yannis Tsarouchis, photographie",
+                    "auteur": "Yani papadimos",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:%CE%93%CE%B9%CE%AC%CE%BD%CE%BD%CE%B7%CF%82_%CE%A4%CF%83%CE%B1%CF%81%CE%BF%CF%8D%CF%87%CE%B7%CF%82.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_elytis",
+                  "axe": "Littérature et pensée",
+                  "date": 1911,
+                  "titre": "Naissance d'Odysséas Elýtis",
+                  "description": "Odysséas Elýtis (1911-1996) est un poète grec, né à Héraklion, en Crète, de son vrai nom Odysséas Alepoudhéllis. Chantre de la lumière, de la mer et de la liberté, il publie « Axion Esti » en 1959, mis en musique par Míkis Theodorákis, qui devient un hymne populaire. Il reçoit le prix Nobel de littérature en 1979 et meurt à Athènes en 1996.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Odyss%C3%A9as_El%C3%BDtis",
+                  "classement": "Elýtis, Odysséas",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_elytis.jpg",
+                    "legende": "Odysséas Elýtis, photographie de 1974",
+                    "auteur": "Unknown ( Mondadori Publishers )",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Odysseas_Elytis_1974.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_papandreou",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1919,
+                  "titre": "Naissance d'Andréas Papandréou",
+                  "description": "Andréas Papandréou (1919-1996) est un économiste et homme politique grec, né à Chios, fils de Georges Papandréou. Emprisonné puis exilé par les colonels en 1967, il fonde le PASOK en 1974, remporte les élections de 1981 et devient le premier chef de gouvernement socialiste de la Grèce, poste qu'il occupe de 1981 à 1989 puis de 1993 à 1996. Son gouvernement crée un système national de santé et élargit les droits des femmes, mais les scandales marquent la fin de son second mandat ; il meurt à Athènes en 1996.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Andr%C3%A9as_Papandr%C3%A9ou",
+                  "classement": "Papandréou, Andréas",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_papandreou.jpg",
+                    "legende": "Andréas Papandréou, photographie de 1968",
+                    "auteur": "Eric Koch for Anefo",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Andreas_Papandreou_(1968)_3.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_mercouri",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1920,
+                  "titre": "Naissance de Melina Mercouri",
+                  "description": "Melina Mercouri (1920-1994) est une actrice, chanteuse et femme politique grecque, née à Athènes. Elle obtient le prix d'interprétation féminine à Cannes en 1960 pour « Jamais le dimanche » de Jules Dassin, dont elle devient l'épouse, puis, déchue de sa nationalité par les colonels en 1967, s'engage contre la dictature. Ministre de la Culture de 1981 à 1989 et en 1993-1994, elle mène campagne pour le retour des marbres du Parthénon et propose les Capitales européennes de la culture ; elle meurt à New York en 1994.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Melina_Mercouri",
+                  "classement": "Mercouri, Melina",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_mercouri.jpg",
+                    "legende": "Melina Mercouri, photographie du Studio Harcourt (1951)",
+                    "auteur": "Studio Harcourt.",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:MelinaMercouri-StudioHarcourt-1951.png"
+                  }
+                },
+                {
+                  "id": "pan_gr_castoriadis",
+                  "axe": "Littérature et pensée",
+                  "date": 1922,
+                  "titre": "Naissance de Cornelius Castoriadis",
+                  "description": "Cornelius Castoriadis (1922-1997) est un philosophe, économiste et psychanalyste d'origine grecque, né à Constantinople, élevé à Athènes, où il milite dans la résistance, puis installé en France dès 1945. Cofondateur du groupe « Socialisme ou Barbarie » (1949), il critique à la fois le capitalisme et le communisme soviétique, et développe dans « L'Institution imaginaire de la société » (1975) l'idée d'une société qui s'invente elle-même. Il se réfère sans cesse à la démocratie athénienne, et meurt à Paris en 1997.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Cornelius_Castoriadis",
+                  "classement": "Castoriadis, Cornelius",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_castoriadis.jpg",
+                    "legende": "Cornelius Castoriadis, photographie",
+                    "auteur": "David Ames Curtis",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Cornelius_Castoriadis.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_glezos",
+                  "axe": "Guerres et résistances",
+                  "date": 1922,
+                  "titre": "Naissance de Manólis Glézos",
+                  "description": "Manólis Glézos (1922-2020) est un résistant et homme politique grec, né à Apiranthos, sur l'île de Naxos. Dans la nuit du 30 mai 1941, il arrache avec Apóstolos Sántas le drapeau nazi qui flottait sur l'Acropole d'Athènes, un geste de résistance resté célèbre. Arrêté plusieurs fois, condamné à mort après la guerre civile puis gracié sous la pression internationale, il siège encore au Parlement européen en 2014 et meurt à Athènes en 2020.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Man%C3%B3lis_Gl%C3%A9zos",
+                  "classement": "Glézos, Manólis",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_glezos.jpg",
+                    "legende": "Manólis Glézos, photographie",
+                    "auteur": "DTRocks",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Manolis_Glezos_with_LAE_3.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_xenakis",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1922,
+                  "titre": "Naissance d'Iannis Xenakis",
+                  "description": "Iannis Xenakis (1922-2001) est un compositeur, architecte et ingénieur d'origine grecque, né à Brăila, en Roumanie. Résistant, grièvement blessé à Athènes en 1944 et condamné à mort en Grèce, il se réfugie à Paris, où il travaille pour Le Corbusier et conçoit avec lui le Pavillon Philips de l'Exposition de Bruxelles en 1958. Ses compositions, de « Metastasis » (1954) à « Pléiades », fondées sur les mathématiques et le calcul, ont renouvelé la musique contemporaine ; il est naturalisé français en 1965 et meurt à Paris en 2001.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Iannis_Xenakis",
+                  "classement": "Xenakis, Iannis",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_xenakis.jpg",
+                    "legende": "Iannis Xenakis, photographie de 1975",
+                    "auteur": "The Friends of Xenakis ( permission link )",
+                    "licence": "CC BY 2.5",
+                    "source": "https://commons.wikimedia.org/wiki/File:Iannis_Xenakis_1975.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_callas",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1923,
+                  "titre": "Naissance de Maria Callas",
+                  "description": "Maria Callas (1923-1977) est une soprano d'origine grecque, née à New York de parents immigrés, qui fait ses études musicales au conservatoire d'Athènes. Débutant en Italie en 1947, elle impose à la Scala de Milan et dans le monde entier un art dramatique et vocal qui lui vaut le surnom de « La Divina », notamment dans « Norma », « La Traviata » et « Médée ». Après sa liaison avec Aristote Onassis et un déclin de sa voix, elle meurt à Paris en 1977.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Maria_Callas",
+                  "classement": "Callas, Maria",
+                  "biographie": "bio_callas",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_callas.jpg",
+                    "legende": "Maria Callas en 1958, photographie",
+                    "auteur": "CBS Television",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Maria_Callas_1958.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_hadjidakis",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1925,
+                  "titre": "Naissance de Mános Hadjidákis",
+                  "description": "Mános Hadjidákis (1925-1994) est un compositeur grec, né à Xánthi. Il est le premier Grec à obtenir l'Oscar de la meilleure chanson originale, en 1961, pour « Les Enfants du Pirée » du film « Jamais le dimanche » de Jules Dassin. Il fait entrer la musique populaire et les poèmes de Séféris, de Gatsos et d'Elýtis dans le répertoire savant, et meurt à Athènes en 1994.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/M%C3%A1nos_Hadjid%C3%A1kis",
+                  "classement": "Hadjidákis, Mános",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_hadjidakis.jpg",
+                    "legende": "Mános Hadjidákis, photographie de 1987",
+                    "auteur": "Nikos D. Karabelas",
+                    "licence": "CC BY 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Hatzidakis_Nicopolis_1987.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_takis",
+                  "axe": "Beaux-arts",
+                  "date": 1925,
+                  "titre": "Naissance de Takis",
+                  "description": "Takis (1925-2019) est un sculpteur grec, né à Athènes sous le nom de Panayótis Vassilákis, pionnier de l'art cinétique et de l'art magnétique. Installé à Paris dans les années 1950, il crée ses « Signaux », antennes de métal vibrant au vent, puis des œuvres mues par l'électromagnétisme. En 1969, il retire par protestation sa « Télé-sculpture » de l'exposition « The Machine » du Museum of Modern Art de New York ; il meurt à Athènes en 2019.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Takis",
+                  "classement": "Takis",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_takis.jpg",
+                    "legende": "Takis, photographie",
+                    "auteur": "ΚΕΤΕ",
+                    "licence": "CC BY-SA 3.0 GR",
+                    "source": "https://commons.wikimedia.org/wiki/File:Takis_2.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_theodorakis",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1925,
+                  "titre": "Naissance de Míkis Theodorákis",
+                  "description": "Míkis Theodorákis (1925-2021) est un compositeur et homme politique grec, né à Chios. Résistant pendant l'Occupation, il fait entrer la poésie de Séféris et d'Elýtis dans la chanson populaire et compose la musique de « Zorba le Grec » (1964) et de « Z » (1969). Arrêté par les colonels en 1967, il devient le symbole de la lutte contre la dictature, puis exerce plusieurs mandats de député ; il meurt à Athènes en 2021.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/M%C3%ADkis_Theodor%C3%A1kis",
+                  "classement": "Theodorákis, Míkis",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_theodorakis.jpg",
+                    "legende": "Míkis Theodorákis, photographie",
+                    "auteur": "Heinrich Klaffs",
+                    "licence": "CC BY-SA 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mikis_Theodorakis_Fabrik_070004.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_papas",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1929,
+                  "titre": "Naissance d'Irène Papas",
+                  "description": "Irène Papas (1929-2022) est une actrice et chanteuse grecque, née à Chiliomodi, en Corinthie. Elle joue au cinéma dans « Les Canons de Navarone » (1961), « Zorba le Grec » (1964) et « Z » (1969), et incarne au théâtre et à l'écran les grandes héroïnes de la tragédie grecque, comme « Électre », « Antigone » et « Les Troyennes ». Elle est morte en 2022.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ir%C3%A8ne_Papas",
+                  "classement": "Papas, Irène",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_papas.jpg",
+                    "legende": "Irène Papas, photographie de 1956",
+                    "auteur": "MGM",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Irene_Papas_1956.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_kazantzidis",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1931,
+                  "titre": "Naissance de Stélios Kazantzídis",
+                  "description": "Stélios Kazantzídis (1931-2001) est un chanteur grec, l'une des voix les plus aimées de la musique populaire grecque. Dans les années 1950 et 1960, ses chansons sur l'exil, la pauvreté et l'amour, dont beaucoup sont écrites par Apóstolos Kaldáras, l'imposent comme le chanteur de toute une génération de migrants. Il meurt à Athènes en 2001.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/St%C3%A9lios_Kazantz%C3%ADdis",
+                  "classement": "Kazantzídis, Stélios",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_kazantzidis.jpg",
+                    "legende": "Stélios Kazantzídis, photographie",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Stelios_Kazantzidis.png"
+                  }
+                },
+                {
+                  "id": "pan_gr_angelopoulos",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1935,
+                  "titre": "Naissance de Theo Angelopoulos",
+                  "description": "Theo Angelopoulos (1935-2012) est un cinéaste grec, né à Athènes. Auteur de films aux longs plans-séquences, comme « Le Voyage des comédiens » (1975), « Le Regard d'Ulysse » (1995) et « L'Éternité et un jour », Palme d'or du Festival de Cannes en 1998, il interroge l'histoire de la Grèce, l'exil et les frontières. Il meurt au Pirée en 2012, renversé par une moto pendant le tournage de son dernier film.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Theo_Angelopoulos",
+                  "classement": "Angelopoulos, Theo",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_angelopoulos.jpg",
+                    "legende": "Theo Angelopoulos, photographie du 26 avril 2009, à Athènes",
+                    "auteur": "George Laoutaris",
+                    "licence": "CC BY-SA 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Theodoros_Angelopoulos_Athens_26-4-2009-2.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_kounellis",
+                  "axe": "Beaux-arts",
+                  "date": 1936,
+                  "titre": "Naissance de Jannis Kounellis",
+                  "description": "Jannis Kounellis (1936-2017) est un plasticien grec, né au Pirée, installé à Rome dès 1956, et l'un des principaux artistes de l'arte povera. Utilisant des matériaux humbles (sacs de jute, charbon, feu, pierres) et même des animaux, il fait de l'installation un événement : en 1969, il expose douze chevaux vivants dans une galerie de Rome. Il meurt à Rome en 2017.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jannis_Kounellis",
+                  "classement": "Kounellis, Jannis",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_kounellis.jpg",
+                    "legende": "Jannis Kounellis, photographie",
+                    "auteur": "Gabuchan",
+                    "licence": "CC BY-SA 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:JannisKounellis.jpg"
+                  }
+                },
+                {
+                  "id": "pan_gr_vangelis",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1943,
+                  "titre": "Naissance de Vangelis",
+                  "description": "Vangelis (1943-2022) est un compositeur et musicien grec, de son vrai nom Evángelos Papathanassíou, né à Agria, pionnier de la musique électronique. Après le groupe Aphrodite's Child, il connaît le succès avec les bandes originales de « Chariots de feu », pour laquelle il obtient l'Oscar de la meilleure musique en 1982, et de « Blade Runner ». Il compose aussi « Mythodea » (2001), œuvre pour la sonde Mars Odyssey de la NASA, et meurt à Paris en 2022.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Vangelis",
+                  "classement": "Vangelis",
+                  "image": {
+                    "src": "assets/portraits/pan_gr_vangelis.jpg",
+                    "legende": "Vangelis, photographie du 26 juillet 2012",
+                    "auteur": "Ian Patterson",
+                    "licence": "CC BY 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Vangelis,_26_July_2012.jpg"
+                  }
+                }
+              ],
+              "axeOrder": [
+                "Chefs d'État et dirigeants",
+                "Guerres et résistances",
+                "Littérature et pensée",
+                "Beaux-arts",
+                "Musique, spectacle et sport",
+                "Sciences, techniques et innovation"
+              ],
+              "essentiel": [
+                "pan_gr_solon",
+                "pan_gr_sappho",
+                "pan_gr_thales",
+                "pan_gr_pythagore",
+                "pan_gr_leonidas",
+                "pan_gr_eschyle",
+                "pan_gr_themistocle",
+                "pan_gr_pericles",
+                "pan_gr_sophocle",
+                "pan_gr_phidias",
+                "pan_gr_herodote",
+                "pan_gr_euripide",
+                "pan_gr_socrate",
+                "pan_gr_hippocrate",
+                "pan_gr_thucydide",
+                "pan_gr_platon",
+                "pan_gr_diogene",
+                "pan_gr_aristote",
+                "pan_gr_demosthene",
+                "pan_gr_alexandre",
+                "pan_gr_epicure",
+                "pan_gr_galien",
+                "pan_gr_basile",
+                "pan_gr_constantin",
+                "pan_gr_kolokotronis",
+                "pan_gr_bouboulina",
+                "pan_gr_capodistrias",
+                "pan_gr_solomos",
+                "pan_gr_cavafy",
+                "pan_gr_venizelos",
+                "pan_gr_louis",
+                "pan_gr_kazantzakis",
+                "pan_gr_seferis",
+                "pan_gr_elytis",
+                "pan_gr_papandreou",
+                "pan_gr_mercouri",
+                "pan_gr_xenakis",
+                "pan_gr_callas",
+                "pan_gr_theodorakis",
+                "pan_gr_vangelis"
               ]
             },
             {
