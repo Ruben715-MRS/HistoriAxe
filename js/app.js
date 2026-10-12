@@ -3260,13 +3260,20 @@ function answerSimultaneity(chosen) {
     updateSimultaneityHUD();
     renderSimultaneityReveal(q);
 
-    // Plus long que les autres modes (1300 ms), et c'est délibéré : le
-    // révélé est la vraie récompense du mode, il lui faut le temps d'être lu.
-    setTimeout(() => {
+    // Pas de minuterie : le révélé est la vraie récompense du mode, le joueur
+    // le lit à son rythme et passe à la suite avec « Suivant ».
+    const nextBtn = document.createElement('button');
+    nextBtn.className = 'btn simul-next-btn';
+    nextBtn.innerText = t('nav.next');
+    nextBtn.onclick = () => {
+        nextBtn.onclick = null;
         simulIndex++;
         if (lives <= 0) { endGame(false); return; }
         renderSimultaneityQuestion();
-    }, 2600);
+    };
+    document.getElementById('simul-reveal').appendChild(nextBtn);
+    nextBtn.focus({ preventScroll: true });
+    nextBtn.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
 }
 
 // « En 1789, pendant que la Bastille tombait : … » — deux ou trois
