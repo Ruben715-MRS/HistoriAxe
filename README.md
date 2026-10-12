@@ -601,7 +601,7 @@ ne posent pas la même question :
 | | Un thème, c'est | Une date, c'est | On le joue par |
 |---|---|---|---|
 | **Biographies** | une vie (360 thèmes, en 12 domaines) | une étape de cette vie | étape de la vie |
-| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, le sous-continent indien, Israël) | la naissance d'un personnage | domaine |
+| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, le sous-continent indien, Israël, la Turquie) | la naissance d'un personnage | domaine |
 
 Le déplacement ne coûte aucune migration : les 360 thèmes gardent leurs
 identifiants, et rien de ce que le joueur a sauvegardé (favoris, révision,
@@ -1252,6 +1252,40 @@ d'Israël) ou de photographies d'avant 1931. David, Hérode, Jésus (icône du S
 par des images imaginées (statue de l'Escorial, gravures, carte postale), et la légende le dit ;
 Hannah Szenes par une photographie d'enfance. Le portrait de Meir Ariel n'a pas pu être recadré :
 Wikimedia limitait les téléchargements.
+### Un pays à part : la Turquie
+
+`pan_tr`, « Grandes figures de Turquie » (code `tr`, pays) : **71 personnages**, des Seldjoukides (Alp
+Arslan, né vers 1029) à Naim Süleymanoğlu (1967). Par axe : 21 Chefs d'État et dirigeants, 19
+Littérature et pensée, 9 Guerres et résistances, 8 Beaux-arts, 8 Musique, spectacle et sport, 6 Sciences,
+techniques et innovation ; 20 ⭐ et 3 biographies liées (Soliman le Magnifique, Rûmî, Mimar Sinan). Les
+six axes sont ceux de l'Égypte et d'Israël ; la Turquie n'a pas d'axe « Économie et entreprise ».
+
+- **Le pays de la République et de l'Empire ottoman.** Le panthéon honore ce que la Turquie honore :
+  les sultans, les grands vizirs et les corsaires de l'empire y entrent comme les présidents de la
+  République. Atatürk y a sa fiche, avec les pères de la guerre d'indépendance (İnönü, Çakmak,
+  Karabekir). Les Turcs d'avant 1934 n'avaient pas de nom de famille : on les range par leur nom d'usage
+  (`scripts/pantheon_classement.py`).
+- **Des figures disputées.** Rûmî, né à Balkh et mort à Konya, est rangé ici, où on l'honore le plus
+  (Konya, les Mevlevis) ; sa biographie reste liée. Taqi al-Din, né à Damas, est resté au Machrek, où
+  il était déjà. Saïd Nursî et Yaşar Kemal, Kurdes de Turquie, sont ici ; Ahmet Kaya et Yılmaz Güney aussi, avec
+  des fiches qui disent l'exil. Enver Pacha entre avec une fiche qui nomme sa part dans le génocide
+  des Arméniens de 1915 ; Talaat et Djemal n'y sont pas. Abdülhamid II est montré avec les massacres
+  des Arméniens de 1894-1896.
+- **Le sport : un seul cas.** Naim Süleymanoğlu, dont l'exil de 1986 et la négociation entre la Turquie
+  et la Bulgarie font l'événement politique.
+- **Pas de vivants** : Orhan Pamuk, Aziz Sancar, Sezen Aksu et Tarkan attendent. Les fiches pour
+  lesquelles Wikipédia en français n'a pas d'article ne sont pas écrites : Kemaleddin, Sedad Hakkı
+  Eldem, Cezeri, Şerafeddin Sabuncuoğlu, Feza Gürsey, Vecihi Hürkuş, Neşet Ertaş, Münir Nurettin Selçuk,
+  Itri. Faute d'image libre : Katip Çelebi, Sait Faik, Kemal Sunal, Müzeyyen Senar.
+- **Dates** : Mimar Sinan est né « vers 1490 » (sa biographie `bio_sinan`), non vers 1489 comme l'écrivent
+  d'autres sources ; Sabiha Gökçen, 1913 (d'autres sources donnent 1914).
+- **Les images** : beaucoup sont imaginées (miniatures, gravures, statues, tombes) et la légende le dit :
+  Osman, Rûmî, Yunus Emre, Piri Reis, Kösem, Evliya Çelebi, Sinan, Nedîm, Dede Efendi, Turgut Reis, Nene
+  Hatun, Müteferrika, Cem Karaca, Zeki Müren, Yaşar Kemal (statue de cire), Fikret Moualla, Oğuz Atay,
+  Naim Süleymanoğlu et Oktay Sinanoğlu (tombe). Roxelane est montrée par la « Sultana Rossa » de Titien,
+  dont l'identification est incertaine ; Fahrelnissa Zeid par un cadrage de sa photographie de famille.
+  À remplacer si de meilleures images libres apparaissent.
+
 ### Le sixième bloc : le sous-continent indien
 
 `pan_indien`, « Grandes figures du sous-continent indien » (code `indien`) : **127 personnages
@@ -2342,7 +2376,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
 ### Ce qui n'est pas fait
 
 - **Les autres panthéons** : la France, l'Égypte, les États-Unis, l'Italie, le
-  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest le sous-continent indien, Israël, la Chine et la Grèce sont écrits.
+  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest le sous-continent indien, Israël, la Chine, la Turquie et la Grèce sont écrits.
   Chaque liste de personnages est validée avant la rédaction. Feuille de route, dans l'ordre
   où on les propose (un pays seul quand il a de quoi faire un thème, un bloc sinon) :
   1. **Le Machrek est écrit** (voir « Le cinquième bloc »). Il reste : le portrait des trois
@@ -2354,7 +2388,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
      figures juives (Edmond Amran El Maleh, Habiba Msika) et en a laissé cinq de côté (Cheikh
      Raymond, Reinette l'Oranaise, Salim Halali, Albert Memmi, Abraham Serfaty).
   2. **Pays seuls** : le Brésil (qui n'entre pas dans l'Amérique « hispanique »), le
-     Japon, la Russie (où attend Lev Yachine), l'Afrique du Sud, l'Australie, la Turquie, l'Iran.
+     Japon, la Russie (où attend Lev Yachine), l'Afrique du Sud, l'Australie, l'Iran. **La Turquie est écrite** (voir « Un pays à part : la Turquie »).
   3. **Blocs** : l'Asie du Sud-Est, l'Asie centrale et la Mongolie, le Caucase, la Corée (`KR`/`KP`), l'Afrique de
      l'Ouest, l'Afrique centrale, l'Afrique de l'Est et la Corne, l'Afrique australe et l'océan
      Indien (sans l'Afrique du Sud), « Nouvelle-Zélande et Pacifique ».
