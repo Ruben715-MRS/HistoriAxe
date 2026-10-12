@@ -3262,18 +3262,27 @@ function answerSimultaneity(chosen) {
 
     // Pas de minuterie : le révélé est la vraie récompense du mode, le joueur
     // le lit à son rythme et passe à la suite avec « Suivant ».
-    const nextBtn = document.createElement('button');
-    nextBtn.className = 'btn simul-next-btn';
-    nextBtn.innerText = t('nav.next');
-    nextBtn.onclick = () => {
-        nextBtn.onclick = null;
+    appendRevealNextButton(document.getElementById('simul-reveal'), () => {
         simulIndex++;
         if (lives <= 0) { endGame(false); return; }
         renderSimultaneityQuestion();
+    });
+}
+
+// Bouton « Suivant » placé sous un bloc de révélation : les modes à révélé
+// (Simultanéité, Remise en ordre, Intrus) n'avancent pas seuls, le joueur lit
+// à son rythme.
+function appendRevealNextButton(reveal, onNext) {
+    const btn = document.createElement('button');
+    btn.className = 'btn simul-next-btn';
+    btn.innerText = t('nav.next');
+    btn.onclick = () => {
+        btn.onclick = null;
+        onNext();
     };
-    document.getElementById('simul-reveal').appendChild(nextBtn);
-    nextBtn.focus({ preventScroll: true });
-    nextBtn.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    reveal.appendChild(btn);
+    btn.focus({ preventScroll: true });
+    btn.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
 }
 
 // « En 1789, pendant que la Bastille tombait : … » — deux ou trois
@@ -3491,11 +3500,11 @@ function answerOrdre() {
     updateOrdreHUD();
     renderOrdreReveal(correctOrder, verdict);
 
-    setTimeout(() => {
+    appendRevealNextButton(document.getElementById('ordre-reveal'), () => {
         ordreIndex++;
         if (lives <= 0) { endGame(false); return; }
         renderOrdreRound();
-    }, verdict.perfect ? 1600 : 3000);
+    });
 }
 
 function renderOrdreReveal(correctOrder, verdict) {
@@ -3908,11 +3917,11 @@ function answerIntrus(chosenId) {
     updateIntrusHUD();
     renderIntrusReveal(q);
 
-    setTimeout(() => {
+    appendRevealNextButton(document.getElementById('intrus-reveal'), () => {
         intrusIndex++;
         if (lives <= 0) { endGame(false); return; }
         renderIntrusQuestion();
-    }, 2400);
+    });
 }
 
 // Le révélé montre les dates que la question cachait, et dit ce qui liait les
