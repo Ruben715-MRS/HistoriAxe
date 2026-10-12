@@ -3,7 +3,7 @@
   "lang": "fr",
   "name": "Français (Intégral)",
   "totalThemes": 804,
-  "totalEvents": 20836,
+  "totalEvents": 20837,
   "categories": [
     {
       "nom": "Culture générale",
@@ -102526,6 +102526,22 @@
                   }
                 },
                 {
+                  "id": "pan_fr_petain",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1856,
+                  "titre": "Naissance de Philippe Pétain",
+                  "description": "Philippe Pétain (1856-1951) est un maréchal de France, vainqueur de Verdun (1916), devenu chef de l'État français de 1940 à 1944. Après l'armistice de juin 1940, il instaure à Vichy un régime autoritaire qui abolit la République, promulgue dès octobre 1940 un statut des Juifs, collabore avec l'Allemagne nazie et participe à des déportations, comme la rafle du Vél' d'Hiv (1942). Condamné à mort en 1945, peine commuée en détention à perpétuité, il meurt à l'île d'Yeu en 1951.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Philippe_P%C3%A9tain",
+                  "classement": "Pétain, Philippe",
+                  "image": {
+                    "src": "assets/portraits/pan_fr_petain.jpg",
+                    "legende": "Philippe Pétain, portrait photographique officiel de l'époque de Vichy (1941)",
+                    "auteur": "Imprimerie Draeger",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:P%C3%A9tain_-_Portrait_photographique_1941.jpg"
+                  }
+                },
+                {
                   "id": "pan_fr_dreyfus",
                   "axe": "Guerres et résistances",
                   "date": 1859,
@@ -103316,6 +103332,7 @@
                 "pan_fr_rodin",
                 "pan_fr_renoir",
                 "pan_fr_albert1monaco",
+                "pan_fr_petain",
                 "pan_fr_dreyfus",
                 "pan_fr_jaures",
                 "pan_fr_lumiere",

@@ -764,7 +764,7 @@ accueilli dans « Musique, spectacle et sport », pour les sportifs de portée h
 
 | Axe | Contenu | France | États-Unis |
 |---|---|---|---|
-| Chefs d'État et dirigeants | souverains, présidents, chefs de gouvernement | 32 | 21 |
+| Chefs d'État et dirigeants | souverains, présidents, chefs de gouvernement | 33 | 21 |
 | Guerres et résistances | chefs militaires, résistants, héros d'indépendance, combats pour les droits | 18 | 24 |
 | Littérature et pensée | écrivains, poètes, philosophes | 30 | 25 |
 | Beaux-arts | peinture, sculpture, architecture | 19 | 12 |
@@ -794,10 +794,10 @@ Les règles de rédaction, vérifiées par script et par test (voir plus bas) :
   de la fiche) doivent porter la *même* date. Les dates des soixante et une premières ont été
   comparées une à une à la phrase d'ouverture de l'article Wikipédia, celles des 72 figures
   ajoutées ensuite (voir « La France, de 68 à 140 figures ») au résumé de leur article.
-- **⭐ Incontournables** (`essentiel`) : 37 sur 150 pour la France, 39 sur 129 pour les États-Unis,
+- **⭐ Incontournables** (`essentiel`) : 38 sur 151 pour la France, 39 sur 129 pour les États-Unis,
   56 sur 149 pour l'Allemagne, l'Autriche et la Suisse, 51 sur 151 pour le Royaume-Uni, 36 sur 132 pour l'Espagne.
 
-Quantités visées : 68 personnages pour la France (portés à 150, voir plus bas), 52 pour l'Égypte, 129 pour les
+Quantités visées : 68 personnages pour la France (portés à 151, voir plus bas), 52 pour l'Égypte, 129 pour les
 États-Unis (85 proposés, portés à 123 : « mieux vaut plus que moins », puis à 129 avec l'axe Économie et entreprise), 127 pour
 l'Italie (126 proposés, plus Enzo Ferrari), 80 à 100
 pour l'Amérique hispanique (dix-neuf pays, de 1 à 19 figures chacun), 58 pour le
@@ -1506,11 +1506,11 @@ alternatifs), ce qui laissait dix-huit portraits sans crédit.
 
 `pan_fr` était le plus mince des panthéons de pays, en comparaison de l'Italie (127),
 des États-Unis (129), de l'Espagne (132), de l'Allemagne-Autriche-Suisse (149) et du
-Royaume-Uni (151). Il passe de 68 à **150 personnages**, de Vercingétorix (vers 82 av. J.-C.) à
-Serge Gainsbourg (1928) : 72 figures ajoutées, plus 10 invités de Monaco (voir « Les micro-États »).
-Par axe : 32 Chefs d'État et dirigeants, 30 Littérature et pensée, 21 Sciences, techniques et
+Royaume-Uni (151). Il passe de 68 à **151 personnages**, de Vercingétorix (vers 82 av. J.-C.) à
+Serge Gainsbourg (1928) : 72 figures ajoutées, plus 10 invités de Monaco (voir « Les micro-États ») et Pétain.
+Par axe : 33 Chefs d'État et dirigeants, 30 Littérature et pensée, 21 Sciences, techniques et
 innovation, 19 Beaux-arts, 18 Guerres et résistances, 18 Musique, spectacle et sport, 12
-Économie et entreprise ; 37 ⭐ et 29 biographies
+Économie et entreprise ; 38 ⭐ et 29 biographies
 liées (Sartre, Gainsbourg et Alexandra David-Néel s'ajoutent aux 26 d'avant).
 
 - **Les ajouts, par axe** : Philippe Auguste, Philippe le Bel, Louis XI, Colbert, Louis XVI,
@@ -1531,6 +1531,12 @@ liées (Sartre, Gainsbourg et Alexandra David-Néel s'ajoutent aux 26 d'avant).
   personnage, un seul thème).
 - **Nés ailleurs, rangés ici**, comme Marie Curie : Lully (Florence) et Thierry Hermès (Krefeld,
   alors française) ; le pays d'un panthéon est celui qui honore.
+- **Pétain y est, comme Hitler, Mussolini et Franco dans leurs panthéons**, avec une fiche qui dit
+  tout : Verdun, puis Vichy, le statut des Juifs, la collaboration, la rafle du Vél' d'Hiv et la
+  condamnation de 1945. Un panthéon de la France sans lui laisserait un trou dans l'histoire que
+  l'app raconte ; il y figure comme figure de l'histoire, non comme figure honorée. Rangé en Chefs
+  d'État (comme Mussolini), marqué ⭐ ; son portrait est la photographie officielle de 1941, et la
+  légende le dit.
 - **Des figures contestées, dont la fiche dit ce qu'on leur reproche** : Colbert (le Code noir,
   préparé sous son ministère), Philippe le Bel (les Templiers), Turenne (le Palatinat), Napoléon
   III (le coup d'État), Mitterrand (Vichy, Bousquet), Degas (l'affaire Dreyfus), Gauguin (ses
@@ -1875,7 +1881,7 @@ faute de licence établie), remplacés l'un par une photographie de 1933 aux
 deux balises, l'autre par un cliché de 1959 de la Bibliothèque du Congrès.
 
 **Poids** : JPEG de 320 × 400, 25 Ko en moyenne (62 au plus), soit 1,8 Mo pour
-les 150 de la France, 2,5 Mo pour les 97 de l'Amérique hispanique, 1,7 Mo
+les 151 de la France, 2,5 Mo pour les 97 de l'Amérique hispanique, 1,7 Mo
 pour les 58 du Maghreb, 1,4 Mo pour les 52 de l'Égypte et 3,1 Mo pour les 129
 des États-Unis — de
 l'ordre de 20 Mo pour 800 portraits, quand `assets/` en pèse déjà 38. Le WebP
