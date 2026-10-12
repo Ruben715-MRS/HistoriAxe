@@ -1,0 +1,1620 @@
+{
+  "code": "au",
+  "nom": "Australie",
+  "theme": {
+    "id": "pan_au",
+    "nom": "Grandes figures d'Australie",
+    "difficulte": "Intermédiaire",
+    "motsCles": [
+      "Australien",
+      "Australienne",
+      "Australie",
+      "Sydney",
+      "Melbourne",
+      "Canberra",
+      "Aborigène",
+      "Aborigènes",
+      "Première Flotte",
+      "Fédération australienne",
+      "Anzac",
+      "Gallipoli",
+      "Outback",
+      "Heidelberg School",
+      "Temps du rêve",
+      "Terra nullius",
+      "Générations volées"
+    ]
+  },
+  "axes": [
+    "Chefs d'État et dirigeants",
+    "Guerres et résistances",
+    "Littérature et pensée",
+    "Beaux-arts",
+    "Musique, spectacle et sport",
+    "Sciences, techniques et innovation"
+  ],
+  "personnages": [
+    {
+      "slug": "phillip",
+      "nom": "Arthur Phillip",
+      "classement": "Phillip, Arthur",
+      "titre": "Naissance d'Arthur Phillip",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1738,
+      "description": "Arthur Phillip (1738-1814) est un officier de la Royal Navy né à Londres, premier gouverneur de la Nouvelle-Galles du Sud. Il conduit la Première Flotte, onze navires et environ 1 400 personnes dont plus de 700 condamnés, jusqu'à Port Jackson, où il fonde Sydney le 26 janvier 1788. Il tente d'abord de ménager les Eoras, capture Bennelong pour nouer le dialogue, et rentre en Angleterre en 1792, épuisé par la famine et la maladie qui frappent la jeune colonie.",
+      "wikipedia": "Arthur Phillip",
+      "essentiel": true,
+      "pays": "GB",
+      "portrait": {
+        "fichier": "ArthurPhilip.jpg",
+        "legende": "Arthur Phillip, portrait peint par Francis Wheatley en 1786",
+        "auteur": "Francis Wheatley",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "macquarie",
+      "nom": "Lachlan Macquarie",
+      "classement": "Macquarie, Lachlan",
+      "titre": "Naissance de Lachlan Macquarie",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1762,
+      "description": "Lachlan Macquarie (1762-1824) est un général et administrateur écossais né sur l'île d'Ulva, gouverneur de la Nouvelle-Galles du Sud de 1810 à 1821. Il fait de la colonie pénitentiaire une société en construction, avec des routes, des ponts et des bâtiments dessinés par l'architecte condamné Francis Greenway, et il accueille les anciens forçats dans la vie civile. Son nom reste attaché à celui du continent : il emploie le mot « Australie » dans ses dépêches dès 1817 et en recommande l'adoption officielle.",
+      "wikipedia": "Lachlan Macquarie",
+      "pays": "GB",
+      "portrait": {
+        "fichier": "Ln-Governor-Lachlan macquarie.jpg",
+        "legende": "Lachlan Macquarie, portrait à l'huile attribué à John Opie (entre 1805 et 1824 environ)",
+        "auteur": "John Opie (attribué)",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "parkes",
+      "nom": "Henry Parkes",
+      "classement": "Parkes, Henry",
+      "titre": "Naissance de Henry Parkes",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1815,
+      "description": "Henry Parkes (1815-1896) est un homme d'État australien né en Angleterre, cinq fois Premier ministre de la colonie de Nouvelle-Galles du Sud. Dans son discours de Tenterfield, en 1889, il appelle les colonies britanniques du continent à former une seule nation, ce qui lui vaut le surnom de « père de la Fédération ». Il meurt en 1896 sans voir naître le Commonwealth, proclamé le 1er janvier 1901.",
+      "wikipedia": "Henry Parkes",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Henryparkes.jpg",
+        "legende": "Henry Parkes, photographie d'auteur inconnu",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "barton",
+      "nom": "Edmund Barton",
+      "classement": "Barton, Edmund",
+      "titre": "Naissance d'Edmund Barton",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1849,
+      "description": "Edmund Barton (1849-1920) est un avocat et homme d'État australien né à Sydney, premier titulaire du poste de Premier ministre de l'Australie. Chef de file du mouvement fédéral dans les années 1890, il dirige le gouvernement du Commonwealth de 1901 à 1903. Il quitte alors la politique pour devenir l'un des trois premiers juges de la Haute Cour d'Australie, où il siège jusqu'à sa mort.",
+      "wikipedia": "Edmund Barton",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Edmund Barton - Swiss Studios (b&w).jpg",
+        "legende": "Edmund Barton, photographie des Swiss Studios (1902)",
+        "auteur": "Swiss Studios"
+      }
+    },
+    {
+      "slug": "deakin",
+      "nom": "Alfred Deakin",
+      "classement": "Deakin, Alfred",
+      "titre": "Naissance d'Alfred Deakin",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1856,
+      "description": "Alfred Deakin (1856-1919) est un avocat et homme d'État australien né à Melbourne, trois fois Premier ministre entre 1903 et 1910. Il fait adopter la protection douanière et les premières pensions de vieillesse, et pose les bases de la défense nationale. Défenseur de la politique de l'« Australie blanche », qui ferme le pays à l'immigration non européenne, il laisse un héritage que l'Australie d'aujourd'hui juge sévèrement.",
+      "wikipedia": "Alfred Deakin",
+      "portrait": {
+        "fichier": "Portrait of Alfred Deakin seated at his desk (cropped).jpg",
+        "legende": "Alfred Deakin à son bureau, photographie de 1905",
+        "auteur": "Bibliothèque nationale d'Australie"
+      }
+    },
+    {
+      "slug": "fisher",
+      "nom": "Andrew Fisher",
+      "classement": "Fisher, Andrew",
+      "titre": "Naissance d'Andrew Fisher",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1862,
+      "description": "Andrew Fisher (1862-1928) est un mineur devenu homme d'État travailliste, né en Écosse, trois fois Premier ministre de l'Australie entre 1908 et 1915. Ses gouvernements créent la Banque du Commonwealth, la marine australienne et l'impôt fédéral sur les terres, et lancent la construction de Canberra, baptisée en 1913. En 1914, il engage le pays dans la guerre en promettant de le défendre « jusqu'au dernier homme et au dernier shilling ».",
+      "wikipedia": "Andrew Fisher",
+      "portrait": {
+        "fichier": "Andrewfisher.jpg",
+        "legende": "Andrew Fisher, photographie d'époque",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "hughes",
+      "nom": "Billy Hughes",
+      "classement": "Hughes, Billy",
+      "titre": "Naissance de Billy Hughes",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1862,
+      "description": "Billy Hughes (1862-1952) est un homme politique australien né à Londres, Premier ministre de 1915 à 1923. À la conférence de la paix de Paris, en 1919, il défend les intérêts de l'Australie et fait échouer la proposition d'égalité raciale du Japon. Exclu du Parti travailliste après avoir voulu imposer la conscription par deux référendums perdus, en 1916 et en 1917, il finit sa longue carrière dans le camp conservateur.",
+      "wikipedia": "Billy Hughes",
+      "portrait": {
+        "fichier": "BillyHughes.png",
+        "legende": "Billy Hughes, photographie de D. Bernard & Co. (1902)",
+        "auteur": "D. Bernard & Co."
+      }
+    },
+    {
+      "slug": "curtin",
+      "nom": "John Curtin",
+      "classement": "Curtin, John",
+      "titre": "Naissance de John Curtin",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1885,
+      "description": "John Curtin (1885-1945) est un homme d'État travailliste né dans le Victoria, Premier ministre de l'Australie de 1941 à sa mort. Après la chute de Singapour, en 1942, il se tourne vers les États-Unis plutôt que vers Londres et rappelle les troupes australiennes du Moyen-Orient pour défendre le pays. Épuisé par la guerre, il meurt en fonctions le 5 juillet 1945, quelques semaines avant la capitulation du Japon.",
+      "wikipedia": "John Curtin",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "JohnCurtin.jpg",
+        "legende": "John Curtin, photographie prise entre 1941 et 1945",
+        "auteur": "Bibliothèque nationale d'Australie"
+      }
+    },
+    {
+      "slug": "chifley",
+      "nom": "Ben Chifley",
+      "classement": "Chifley, Ben",
+      "titre": "Naissance de Ben Chifley",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1885,
+      "description": "Ben Chifley (1885-1951) est un conducteur de locomotive devenu homme d'État travailliste, né à Bathurst, Premier ministre de 1945 à 1949. Son gouvernement lance l'immigration d'après-guerre, le grand programme hydroélectrique des Snowy Mountains et la compagnie aérienne publique Trans Australia Airlines. Battu en 1949 après avoir brisé une grève des mineurs et échoué à nationaliser les banques, il laisse le discours de la « lumière sur la colline », devenu une formule du travaillisme.",
+      "wikipedia": "Ben Chifley",
+      "portrait": {
+        "fichier": "Benchifley.jpg",
+        "legende": "Ben Chifley, photographie vers 1948",
+        "auteur": "Bibliothèque nationale d'Australie"
+      }
+    },
+    {
+      "slug": "menzies",
+      "nom": "Robert Menzies",
+      "classement": "Menzies, Robert",
+      "titre": "Naissance de Robert Menzies",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1894,
+      "description": "Robert Menzies (1894-1978) est un avocat et homme d'État libéral né à Jeparit, dans le Victoria, Premier ministre de l'Australie de 1939 à 1941 puis de 1949 à 1966. Il fonde le Parti libéral en 1944 et reste en fonctions plus de seize ans d'affilée, un record. Monarchiste fervent et admirateur de la Grande-Bretagne, il engage le pays aux côtés des États-Unis, notamment en envoyant des troupes au Viêt Nam en 1965.",
+      "wikipedia": "Robert Menzies",
+      "essentiel": true,
+      "biographie": "bio_menzies",
+      "portrait": {
+        "fichier": "Robert Menzies 1960 colour (cropped).jpg",
+        "legende": "Robert Menzies chez lui, à The Lodge, photographie en couleurs de 1960",
+        "auteur": "Australian News and Information Bureau"
+      }
+    },
+    {
+      "slug": "holt",
+      "nom": "Harold Holt",
+      "classement": "Holt, Harold",
+      "titre": "Naissance de Harold Holt",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1908,
+      "description": "Harold Holt (1908-1967) est un homme d'État libéral né à Sydney, Premier ministre de l'Australie de 1966 à 1967. Son gouvernement soutient la guerre du Viêt Nam aux côtés des États-Unis et organise le référendum de 1967, qui permet de compter les Aborigènes dans le recensement et de légiférer pour eux au niveau fédéral. Il disparaît le 17 décembre 1967 en se baignant à Cheviot Beach, près de Melbourne, et son corps n'est jamais retrouvé.",
+      "wikipedia": "Harold Holt",
+      "portrait": {
+        "fichier": "Harold Holt SEATO.jpg",
+        "legende": "Harold Holt au sommet de l'OTASE, photographie du 24 octobre 1966",
+        "auteur": "Frank Wolfe, Maison-Blanche"
+      }
+    },
+    {
+      "slug": "whitlam",
+      "nom": "Gough Whitlam",
+      "classement": "Whitlam, Gough",
+      "titre": "Naissance de Gough Whitlam",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1916,
+      "description": "Gough Whitlam (1916-2014) est un homme d'État travailliste né à Melbourne, Premier ministre de l'Australie de 1972 à 1975. Il retire les troupes du Viêt Nam, supprime la conscription, rend l'université gratuite, crée l'assurance maladie Medibank et reconnaît la République populaire de Chine. Privé de budget par le Sénat, il est destitué le 11 novembre 1975 par le gouverneur général John Kerr, un acte sans équivalent dans l'histoire du pays.",
+      "wikipedia": "Gough Whitlam",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Gough Whitlam headshot.jpg",
+        "legende": "Gough Whitlam, photographie de 1975",
+        "auteur": "Archives nationales d'Australie"
+      }
+    },
+    {
+      "slug": "fraser",
+      "nom": "Malcolm Fraser",
+      "classement": "Fraser, Malcolm",
+      "titre": "Naissance de Malcolm Fraser",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1930,
+      "description": "Malcolm Fraser (1930-2015) est un homme d'État libéral né à Melbourne, Premier ministre de l'Australie de 1975 à 1983. Arrivé au pouvoir après la destitution de Whitlam, il fait voter la loi qui reconnaît pour la première fois des droits fonciers aux Aborigènes du Territoire du Nord et accueille des milliers de réfugiés d'Indochine. Opposant à l'apartheid, puis au durcissement de la politique d'asile de son propre camp, il quitte le Parti libéral en 2009.",
+      "wikipedia": "Malcolm Fraser",
+      "portrait": {
+        "fichier": "Malcolm Fraser 1977 (cropped).jpg",
+        "legende": "Malcolm Fraser, portrait photographique de 1977",
+        "auteur": "Archives nationales d'Australie"
+      }
+    },
+    {
+      "slug": "hawke",
+      "nom": "Bob Hawke",
+      "classement": "Hawke, Bob",
+      "titre": "Naissance de Bob Hawke",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1929,
+      "description": "Bob Hawke (1929-2019) est un dirigeant syndical devenu homme d'État travailliste, né à Bordertown, Premier ministre de l'Australie de 1983 à 1991. Avec les syndicats il conclut l'Accord sur les prix et les revenus, fait flotter le dollar australien en 1983 et crée Medicare, le système public d'assurance maladie. Il reste le plus long Premier ministre travailliste, après avoir présidé la centrale syndicale ACTU de 1969 à 1980.",
+      "wikipedia": "Bob Hawke",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Hawke Bob BANNER.jpg",
+        "legende": "Bob Hawke, portrait officiel, date inconnue",
+        "auteur": "Commonwealth d'Australie"
+      }
+    },
+    {
+      "slug": "pemulwuy",
+      "nom": "Pemulwuy",
+      "classement": "Pemulwuy",
+      "titre": "Naissance de Pemulwuy",
+      "axe": "Guerres et résistances",
+      "naissance": 1750,
+      "description": "Pemulwuy (vers 1750-1802) est un guerrier du peuple bidjigal, né près de Botany Bay, chef de la résistance aborigène aux premiers colons de la région de Sydney. De 1790 à 1802, il mène des raids contre les fermes et les convois de la jeune colonie, ce qui conduit le gouverneur King à le déclarer hors-la-loi en 1801. Tué le 2 juin 1802 par des colons, sa tête est envoyée au naturaliste Joseph Banks, à Londres.",
+      "wikipedia": "Pemulwuy",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Pemulwuy aka Pimbloy.jpg",
+        "legende": "« Pimbloy, indigène de la Nouvelle-Hollande dans une pirogue », gravure de Samuel John Neele (1804) ; l'identification avec Pemulwuy est traditionnelle, sans certitude",
+        "auteur": "Samuel John Neele"
+      }
+    },
+    {
+      "slug": "bennelong",
+      "nom": "Bennelong",
+      "classement": "Bennelong",
+      "titre": "Naissance de Bennelong",
+      "axe": "Guerres et résistances",
+      "naissance": 1764,
+      "description": "Bennelong (vers 1764-1813) est un homme du peuple wangal, l'un des Eoras de la région de Port Jackson, devenu l'intermédiaire entre les Aborigènes et les premiers colons. Capturé en novembre 1789 sur ordre du gouverneur Phillip, il apprend l'anglais, vit parmi les Britanniques et part avec lui pour l'Angleterre en 1793, où il rencontre le roi George III. De retour en 1795, il se retrouve à l'écart des deux mondes, et la pointe de Sydney où s'élève l'Opéra porte son nom.",
+      "wikipedia": "Bennelong",
+      "portrait": {
+        "fichier": "Bennelong.jpg",
+        "legende": "Bennelong, portrait non daté signé « W. W. » : l'identification est probable, sans certitude",
+        "auteur": "Auteur inconnu (« W. W. »)"
+      }
+    },
+    {
+      "slug": "truganini",
+      "nom": "Truganini",
+      "classement": "Truganini",
+      "titre": "Naissance de Truganini",
+      "axe": "Guerres et résistances",
+      "naissance": 1812,
+      "description": "Truganini (vers 1812-1876) est une femme palawa de l'île de Bruny, en Tasmanie, qui accompagne le missionnaire George Augustus Robinson dans sa « mission amicale » de 1830 à 1834. Elle voit son peuple déporté sur l'île Flinders et décimé, et meurt à Hobart en 1876 en passant, à tort, pour la dernière Tasmanienne aborigène, alors que les descendants des Palawa sont toujours là. Son squelette, exposé au musée de Hobart de 1904 à 1947 puis conservé en réserve, n'est incinéré qu'en 1976 et ses cendres sont dispersées dans le chenal d'Entrecasteaux.",
+      "wikipedia": "Truganini",
+      "portrait": {
+        "fichier": "Trugannini 1866.jpg",
+        "legende": "Truganini, photographie de 1866",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "barak",
+      "nom": "William Barak",
+      "classement": "Barak, William",
+      "titre": "Naissance de William Barak",
+      "axe": "Guerres et résistances",
+      "naissance": 1824,
+      "description": "William Barak (vers 1824-1903) est le dernier ngurungaeta, ancien traditionnel, des Wurundjeri-willam, le clan sur les terres duquel Melbourne a été bâtie. Installé à la station de Coranderrk, il mène avec d'autres habitants la campagne qui obtient en 1881 une enquête parlementaire sur la gestion de la réserve et le maintien des Kulin sur leurs terres. Dessinateur et peintre de scènes cérémonielles à l'ocre et au crayon, il laisse aussi un témoignage visuel rare sur la culture kulin.",
+      "wikipedia": "William Barak",
+      "portrait": {
+        "fichier": "William Barak, 1902.jpg",
+        "legende": "William Barak, photographie de 1902, un an avant sa mort",
+        "auteur": "Johannes Heyes (attribué)"
+      }
+    },
+    {
+      "slug": "lalor",
+      "nom": "Peter Lalor",
+      "classement": "Lalor, Peter",
+      "titre": "Naissance de Peter Lalor",
+      "axe": "Guerres et résistances",
+      "naissance": 1827,
+      "description": "Peter Lalor (1827-1889) est un ingénieur et homme politique australo-irlandais né dans le comté de Laois, en Irlande. Chef des chercheurs d'or de Ballarat révoltés contre le permis de fouille, il est blessé au bras lors de l'attaque de la palissade d'Eureka le 3 décembre 1854, qui fait plus de vingt morts parmi les mineurs. Caché puis amnistié, il devient député puis, de 1880 à 1887, président de l'Assemblée législative du Victoria.",
+      "wikipedia": "Peter Lalor",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Peter Lalor.jpg",
+        "legende": "Peter Lalor, portrait de Ludwig Becker (1856)",
+        "auteur": "Ludwig Becker"
+      }
+    },
+    {
+      "slug": "monash",
+      "nom": "John Monash",
+      "classement": "Monash, John",
+      "titre": "Naissance de John Monash",
+      "axe": "Guerres et résistances",
+      "naissance": 1865,
+      "description": "John Monash (1865-1931) est un ingénieur et général australien né à Melbourne de parents juifs d'origine prussienne. Il commande la 3e division puis, à partir de mai 1918, le Corps australien, et prépare dans les moindres détails la victoire de Hamel du 4 juillet 1918, remportée en une heure et demie. Rentré en Australie, il dirige la commission de l'électricité du Victoria, et ses funérailles, en 1931, rassemblent une foule immense.",
+      "wikipedia": "John Monash",
+      "essentiel": true,
+      "biographie": "bio_monash",
+      "portrait": {
+        "fichier": "John Monash portrait 1918.jpg",
+        "legende": "John Monash, portrait photographique de 1918",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "chauvel",
+      "nom": "Harry Chauvel",
+      "classement": "Chauvel, Harry",
+      "titre": "Naissance de Harry Chauvel",
+      "axe": "Guerres et résistances",
+      "naissance": 1865,
+      "description": "Harry Chauvel (1865-1945) est un général australien né à Tabulam, en Nouvelle-Galles du Sud, commandant des troupes montées australiennes pendant la Première Guerre mondiale. À la tête du Corps monté du désert, en Palestine, il remporte la bataille de Beer-Sheva le 31 octobre 1917, où la charge de la 4e brigade de chevau-légers ouvre la voie à la prise de Jérusalem. Premier Australien promu au grade de général, il dirige l'état-major de l'armée de 1923 à 1930.",
+      "wikipedia": "Harry Chauvel",
+      "portrait": {
+        "fichier": "Lieutenant General Sir Harry Chauvel.jpg",
+        "legende": "Harry Chauvel, peinture de James Peter Quinn (1919)",
+        "auteur": "James Peter Quinn"
+      }
+    },
+    {
+      "slug": "jacka",
+      "nom": "Albert Jacka",
+      "classement": "Jacka, Albert",
+      "titre": "Naissance d'Albert Jacka",
+      "axe": "Guerres et résistances",
+      "naissance": 1893,
+      "description": "Albert Jacka (1893-1932) est un soldat australien né à Layard, dans le Victoria, premier Australien à recevoir la Victoria Cross de la Première Guerre mondiale. Il l'obtient à Gallipoli, à Courtney's Post, en mai 1915, en tuant plusieurs soldats turcs qui avaient pris une tranchée, puis gagne la Croix militaire avec barrette sur le front de l'Ouest, notamment à Pozières, en 1916. Il meurt à trente-huit ans, la santé ruinée par la guerre.",
+      "wikipedia": "Albert Jacka",
+      "portrait": {
+        "fichier": "Albert Jacka portrait A02868.jpg",
+        "legende": "Albert Jacka, portrait de studio vers 1920",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "dunlop",
+      "nom": "Weary Dunlop",
+      "classement": "Dunlop, Weary",
+      "titre": "Naissance de Weary Dunlop",
+      "axe": "Guerres et résistances",
+      "naissance": 1907,
+      "description": "Weary Dunlop (1907-1993) est un chirurgien australien né à Wangaratta, dans le Victoria, de son vrai nom Ernest Edward Dunlop. Prisonnier des Japonais à Java puis sur la voie ferrée Birmanie-Siam à partir de 1942, il commande ses hommes, opère sans matériel et s'interpose contre les brutalités des gardes. Devenu un symbole du courage des prisonniers de guerre, il reprend sa carrière après 1945 et plaide pour la réconciliation avec ses anciens geôliers.",
+      "wikipedia": "Edward Dunlop",
+      "portrait": {
+        "fichier": "Statue of Sir Edward 'Weary' Dunlop at the AWM 1.jpg",
+        "legende": "Statue de Weary Dunlop, œuvre de Peter Corlett, au Mémorial australien de la guerre, à Canberra : une sculpture, non un portrait",
+        "auteur": "Peter Ellis"
+      }
+    },
+    {
+      "slug": "wake",
+      "nom": "Nancy Wake",
+      "classement": "Wake, Nancy",
+      "titre": "Naissance de Nancy Wake",
+      "axe": "Guerres et résistances",
+      "naissance": 1912,
+      "description": "Nancy Wake (1912-2011) est une résistante née à Wellington, en Nouvelle-Zélande, élevée à Sydney puis devenue journaliste en Europe. Mariée à un industriel marseillais, elle aide à évacuer des prisonniers alliés puis rejoint les maquis d'Auvergne en 1944, d'où elle organise le ravitaillement et les parachutages d'armes pour des milliers de combattants. Surnommée « la Souris blanche » par la Gestapo, elle est l'une des femmes alliées les plus décorées de la guerre et finit ses jours à Londres.",
+      "wikipedia": "Nancy Wake",
+      "portrait": {
+        "fichier": "Nancy Wake (1945).jpg",
+        "legende": "Nancy Wake, portrait de studio de 1945",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "goldstein",
+      "nom": "Vida Goldstein",
+      "classement": "Goldstein, Vida",
+      "titre": "Naissance de Vida Goldstein",
+      "axe": "Guerres et résistances",
+      "naissance": 1869,
+      "description": "Vida Goldstein (1869-1949) est une féministe et femme politique née à Portland, dans le Victoria. Première femme du monde britannique à se présenter à un parlement national, au Sénat en 1903, elle ne sera jamais élue malgré cinq candidatures. Fondatrice de l'Association politique des femmes et de la revue The Woman Voter, elle mène aussi la campagne pacifiste contre la conscription en 1916 et 1917.",
+      "wikipedia": "Vida Goldstein",
+      "portrait": {
+        "fichier": "VidaGoldstein.jpg",
+        "legende": "Vida Goldstein, photographie d'époque",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "cowan",
+      "nom": "Edith Cowan",
+      "classement": "Cowan, Edith",
+      "titre": "Naissance d'Edith Cowan",
+      "axe": "Guerres et résistances",
+      "naissance": 1861,
+      "description": "Edith Cowan (1861-1932) est une réformatrice sociale née près de Geraldton, en Australie-Occidentale, militante de l'éducation, de la protection de l'enfance et du droit de vote des femmes. Élue en 1921 à l'Assemblée législative d'Australie-Occidentale, elle est la première femme députée d'un parlement australien. Elle y fait voter en 1923 une loi qui ouvre aux femmes l'accès aux professions juridiques, et son visage figure sur le billet de cinquante dollars.",
+      "wikipedia": "Edith Cowan",
+      "portrait": {
+        "fichier": "Edith Cowan 1900.jpg",
+        "legende": "Edith Cowan vers 1900, photographie restaurée par Adam Cuerden",
+        "auteur": "Auteur inconnu (restauration : Adam Cuerden)"
+      }
+    },
+    {
+      "slug": "chisholm",
+      "nom": "Caroline Chisholm",
+      "classement": "Chisholm, Caroline",
+      "titre": "Naissance de Caroline Chisholm",
+      "axe": "Guerres et résistances",
+      "naissance": 1808,
+      "description": "Caroline Chisholm (1808-1877) est une philanthrope née à Northampton, en Angleterre, installée à Sydney en 1838 avec son mari. Elle y accueille et place les jeunes immigrantes sans ressources, puis, de retour à Londres, fonde une société de colonisation familiale qui aide des milliers de familles à émigrer en Australie. Surnommée « l'amie des émigrants », elle témoigne devant la Chambre des lords en 1847 et figure sur l'ancien billet de cinq dollars.",
+      "wikipedia": "Caroline Chisholm",
+      "portrait": {
+        "fichier": "Caroline Chisholm.jpg",
+        "legende": "Caroline Chisholm, gravure sur bois publiée en 1853",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "spence",
+      "nom": "Catherine Helen Spence",
+      "classement": "Spence, Catherine Helen",
+      "titre": "Naissance de Catherine Helen Spence",
+      "axe": "Guerres et résistances",
+      "naissance": 1825,
+      "description": "Catherine Helen Spence (1825-1910) est une romancière, journaliste et réformatrice née à Melrose, en Écosse, émigrée à treize ans en Australie-Méridionale. Auteure de Clara Morison (1854), l'un des premiers romans australiens écrits par une femme, elle défend la représentation proportionnelle et le droit de vote des femmes. Candidate à la Convention fédérale en 1897, elle est la première Australienne à briguer un mandat politique.",
+      "wikipedia": "Catherine Helen Spence",
+      "portrait": {
+        "fichier": "Catherine Helen Spence - Bond & Co (cropped).jpg",
+        "legende": "Catherine Helen Spence, photographie de Bond & Co., années 1890",
+        "auteur": "Bond & Co., Adélaïde"
+      }
+    },
+    {
+      "slug": "mackillop",
+      "nom": "Mary MacKillop",
+      "classement": "MacKillop, Mary",
+      "titre": "Naissance de Mary MacKillop",
+      "axe": "Littérature et pensée",
+      "naissance": 1842,
+      "description": "Mary MacKillop (1842-1909) est une religieuse née à Melbourne, cofondatrice avec le prêtre Julian Tenison-Woods des Sœurs de Saint-Joseph du Sacré-Cœur, à Penola en 1866. Ses écoles gratuites pour les enfants pauvres des campagnes essaiment dans toute l'Australie, mais un conflit avec des évêques lui vaut d'être brièvement excommuniée en 1871. Béatifiée en 1995, elle est canonisée le 17 octobre 2010 et devient la première sainte australienne.",
+      "wikipedia": "Mary MacKillop",
+      "essentiel": true,
+      "biographie": "bio_marymackillop",
+      "portrait": {
+        "fichier": "Mary mackillop.jpg",
+        "legende": "Mary MacKillop tenant ses vœux perpétuels, photographie de 1869",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "mabo",
+      "nom": "Eddie Mabo",
+      "classement": "Mabo, Eddie",
+      "titre": "Naissance d'Eddie Mabo",
+      "axe": "Guerres et résistances",
+      "naissance": 1936,
+      "description": "Eddie Mabo (1936-1992) est un insulaire du détroit de Torrès, né sur l'île de Mer, aussi appelée Murray. Avec quatre autres habitants de Mer, il engage en 1982 une action en justice pour faire reconnaître leurs droits fonciers coutumiers. Il meurt en janvier 1992, cinq mois avant que la Haute Cour n'écarte, le 3 juin, le principe de terra nullius dans l'arrêt qui porte son nom, ouvrant la voie à la loi de 1993 sur les titres fonciers autochtones.",
+      "wikipedia": "Eddie Mabo",
+      "essentiel": true,
+      "biographie": "bio_mabo",
+      "portrait": {
+        "fichier": "Eddie Mabo Monument, Townsville, Queensland, Australia 01.jpg",
+        "legende": "Monument à Eddie Mabo, à Townsville : l'image montre un monument, aucun portrait libre n'étant disponible",
+        "auteur": "Ridiculopathy"
+      }
+    },
+    {
+      "slug": "bonner",
+      "nom": "Neville Bonner",
+      "classement": "Bonner, Neville",
+      "titre": "Naissance de Neville Bonner",
+      "axe": "Guerres et résistances",
+      "naissance": 1922,
+      "description": "Neville Bonner (1922-1999) est un homme politique jagera né sur l'île d'Ukerebagh, en Nouvelle-Galles du Sud. Désigné par le Parti libéral en 1971 pour pourvoir un siège vacant du Sénat, il devient le premier Aborigène du Parlement fédéral. Réélu à plusieurs reprises, il siège douze ans, défend l'égalité des droits et ouvre la voie aux élus aborigènes d'aujourd'hui.",
+      "wikipedia": "Neville Bonner",
+      "portrait": {
+        "fichier": "Neville Bonner 1979.jpg",
+        "legende": "Neville Bonner, sénateur, photographie de décembre 1979",
+        "auteur": "Archives nationales d'Australie"
+      }
+    },
+    {
+      "slug": "gordon",
+      "nom": "Adam Lindsay Gordon",
+      "classement": "Gordon, Adam Lindsay",
+      "titre": "Naissance d'Adam Lindsay Gordon",
+      "axe": "Littérature et pensée",
+      "naissance": 1833,
+      "description": "Adam Lindsay Gordon (1833-1870) est un poète, cavalier et homme politique né aux Açores de parents britanniques, émigré en Australie-Méridionale à vingt ans. Ses ballades, dont « How We Beat the Favourite » (1870), font entrer le cheval et la brousse dans la poésie australienne. Ruiné, il se donne la mort à trente-six ans, et son buste entre à l'abbaye de Westminster en 1934, premier poète australien ainsi honoré.",
+      "wikipedia": "Adam Lindsay Gordon",
+      "portrait": {
+        "fichier": "Adam Lindsay Gordon - Melbourne monument.jpg",
+        "legende": "Monument à Adam Lindsay Gordon, à Melbourne, œuvre de Paul Raphael Montford : une sculpture, non un portrait",
+        "auteur": "Paul Raphael Montford"
+      }
+    },
+    {
+      "slug": "lawson",
+      "nom": "Henry Lawson",
+      "classement": "Lawson, Henry",
+      "titre": "Naissance de Henry Lawson",
+      "axe": "Littérature et pensée",
+      "naissance": 1867,
+      "description": "Henry Lawson (1867-1922) est un écrivain et poète né à Grenfell, en Nouvelle-Galles du Sud, collaborateur du Bulletin de Sydney. Ses nouvelles de la brousse, comme « The Drover's Wife » (1892), disent avec sécheresse la solitude et la dureté des campagnes, loin du romantisme de Banjo Paterson. Rongé par l'alcool, il meurt à cinquante-cinq ans, et l'Australie lui offre des funérailles nationales.",
+      "wikipedia": "Henry Lawson",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Henry Lawson photograph 1902.jpg",
+        "legende": "Henry Lawson, photographie de 1902",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "paterson",
+      "nom": "Banjo Paterson",
+      "classement": "Paterson, Banjo",
+      "titre": "Naissance de Banjo Paterson",
+      "axe": "Littérature et pensée",
+      "naissance": 1864,
+      "description": "Banjo Paterson (1864-1941) est un poète, journaliste et avocat né près d'Orange, en Nouvelle-Galles du Sud, de son vrai nom Andrew Barton Paterson. Il écrit « The Man from Snowy River » (1890), dont le cavalier est devenu une figure du bush, et les paroles de « Waltzing Matilda » (1895), chant quasi national. Correspondant de guerre pendant la guerre des Boers, il figure sur le billet de dix dollars.",
+      "wikipedia": "Banjo Paterson",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Banjo Patterson.jpg",
+        "legende": "Banjo Paterson, photographie vers 1890",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "franklin",
+      "nom": "Miles Franklin",
+      "classement": "Franklin, Miles",
+      "titre": "Naissance de Miles Franklin",
+      "axe": "Littérature et pensée",
+      "naissance": 1879,
+      "description": "Miles Franklin (1879-1954) est une romancière née à Talbingo, en Nouvelle-Galles du Sud, de son vrai nom Stella Maria Sarah Miles Franklin. Son roman « My Brilliant Career » (1901), écrit à seize ans, raconte la révolte d'une jeune campagnarde qui refuse le mariage pour devenir écrivaine. Par testament, elle fonde le prix qui porte son nom, la plus prestigieuse récompense littéraire australienne, décernée depuis 1957.",
+      "wikipedia": "Miles Franklin",
+      "portrait": {
+        "fichier": "Miles franklin.jpg",
+        "legende": "Miles Franklin, photographie d'époque",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "white",
+      "nom": "Patrick White",
+      "classement": "White, Patrick",
+      "titre": "Naissance de Patrick White",
+      "axe": "Littérature et pensée",
+      "naissance": 1912,
+      "description": "Patrick White (1912-1990) est un romancier né à Londres de parents australiens, installé à Sydney après la guerre. Auteur de « Voss » (1957) et de « L'Œil du cyclone » (1973), il reçoit le prix Nobel de littérature en 1973, seul écrivain australien ainsi couronné. Il refuse ensuite les honneurs, dont le titre de chevalier, et consacre l'argent du Nobel à un prix qui récompense des écrivains méconnus.",
+      "wikipedia": "Patrick White",
+      "essentiel": true,
+      "biographie": "bio_patrickwhite",
+      "portrait": {
+        "fichier": "Patrick White writer.jpg",
+        "legende": "Patrick White, photographie vers 1940",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "wright",
+      "nom": "Judith Wright",
+      "classement": "Wright, Judith",
+      "titre": "Naissance de Judith Wright",
+      "axe": "Littérature et pensée",
+      "naissance": 1915,
+      "description": "Judith Wright (1915-2000) est une poétesse née à Armidale, en Nouvelle-Galles du Sud, dans une famille d'éleveurs. Ses recueils, de « The Moving Image » (1946) à « Phantom Dwelling » (1985), disent la beauté du pays et la violence de son appropriation. Militante écologiste, elle s'engage pour la défense de la Grande Barrière de corail et pour la reconnaissance des droits des Aborigènes.",
+      "wikipedia": "Judith Wright",
+      "portrait": {
+        "fichier": "Judith Wright bust, Garema Place.jpg",
+        "legende": "Buste de Judith Wright, place Garema, à Canberra : une sculpture, non un portrait",
+        "auteur": "Doug Butler"
+      }
+    },
+    {
+      "slug": "murray",
+      "nom": "Les Murray",
+      "classement": "Murray, Les",
+      "titre": "Naissance de Les Murray",
+      "axe": "Littérature et pensée",
+      "naissance": 1938,
+      "description": "Les Murray (1938-2019) est un poète né à Nabiac, en Nouvelle-Galles du Sud, fils d'un petit agriculteur. Son roman en vers « Fredy Neptune » (1998) raconte, par la voix d'un marin germano-australien, le XXe siècle des deux guerres. Il reçoit la Médaille d'or de la reine pour la poésie en 1998 et passe pour le plus grand poète australien de son temps.",
+      "wikipedia": "Leslie Murray",
+      "portrait": {
+        "fichier": "LesM.JPG",
+        "legende": "Les Murray, photographie de 2004",
+        "auteur": "Bjenks"
+      }
+    },
+    {
+      "slug": "mackellar",
+      "nom": "Dorothea Mackellar",
+      "classement": "Mackellar, Dorothea",
+      "titre": "Naissance de Dorothea Mackellar",
+      "axe": "Littérature et pensée",
+      "naissance": 1885,
+      "description": "Dorothea Mackellar (1885-1968) est une poétesse née à Sydney, dans une famille aisée. Écrit lors d'un séjour en Angleterre et publié en 1908, son poème « My Country » célèbre « un pays brûlé par le soleil », ses sécheresses et ses inondations. C'est l'un des poèmes les plus connus d'Australie, longtemps appris à l'école.",
+      "wikipedia": "Dorothea Mackellar",
+      "portrait": {
+        "fichier": "Dorothea Mackellar retouched.jpg",
+        "legende": "Dorothea Mackellar, photographie d'avant 1955",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "richardson",
+      "nom": "Henry Handel Richardson",
+      "classement": "Richardson, Henry Handel",
+      "titre": "Naissance de Henry Handel Richardson",
+      "axe": "Littérature et pensée",
+      "naissance": 1870,
+      "description": "Henry Handel Richardson (1870-1946) est le nom de plume de la romancière Ethel Richardson, née à Melbourne et partie étudier la musique à Leipzig en 1888. Fixée en Angleterre, elle choisit un nom d'homme pour être prise au sérieux et n'a revu l'Australie qu'en 1912. Sa trilogie « The Fortunes of Richard Mahony » (1917-1929), inspirée de la vie de son père médecin, est l'un des sommets du roman australien.",
+      "wikipedia": "Henry Handel Richardson",
+      "portrait": {
+        "fichier": "HHRichardson.jpg",
+        "legende": "Henry Handel Richardson, photographie de Howard Coster (1945)",
+        "auteur": "Howard Coster"
+      }
+    },
+    {
+      "slug": "slessor",
+      "nom": "Kenneth Slessor",
+      "classement": "Slessor, Kenneth",
+      "titre": "Naissance de Kenneth Slessor",
+      "axe": "Littérature et pensée",
+      "naissance": 1901,
+      "description": "Kenneth Slessor (1901-1971) est un poète et journaliste né à Orange, en Nouvelle-Galles du Sud. Son poème « Five Bells » (1939), élégie d'un ami noyé dans le port de Sydney, est l'un des textes majeurs de la poésie australienne moderne. Correspondant de guerre officiel de 1940 à 1944, il ne publie presque plus de poèmes ensuite.",
+      "wikipedia": "Kenneth Slessor",
+      "portrait": {
+        "fichier": "Kenneth Slessor, 1949 (cropped).jpg",
+        "legende": "Kenneth Slessor, photographie de 1949",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "unaipon",
+      "nom": "David Unaipon",
+      "classement": "Unaipon, David",
+      "titre": "Naissance de David Unaipon",
+      "axe": "Littérature et pensée",
+      "naissance": 1872,
+      "description": "David Unaipon (1872-1967) est un prédicateur, inventeur et écrivain ngarrindjeri, né à la mission de Point McLeay, en Australie-Méridionale. Il dépose en 1909 un brevet pour une tondeuse à moutons améliorée, et son recueil de légendes « Native Legends » (1929) est le premier livre publié par un Aborigène. Son portrait figure sur le billet de cinquante dollars.",
+      "wikipedia": "David Unaipon",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "David Unaipon.jpg",
+        "legende": "David Unaipon, portrait de 1924 tiré de son manuscrit « Legendary Tales of the Aborigines »",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "gilmore",
+      "nom": "Mary Gilmore",
+      "classement": "Gilmore, Mary",
+      "titre": "Naissance de Mary Gilmore",
+      "axe": "Littérature et pensée",
+      "naissance": 1865,
+      "description": "Mary Gilmore (1865-1962) est une poétesse et journaliste socialiste née près de Goulburn, en Nouvelle-Galles du Sud. Ancienne institutrice, elle participe à la colonie utopique de la Nouvelle-Australie, au Paraguay, avant de revenir à Sydney et de publier des recueils comme « Marri'd » (1910). Nommée dame en 1937, elle figure sur le billet de dix dollars.",
+      "wikipedia": "Mary Gilmore",
+      "portrait": {
+        "fichier": "StateLibQld 1 100448.jpg",
+        "legende": "Mary Gilmore, photographie de 1927",
+        "auteur": "Bibliothèque d'État du Queensland"
+      }
+    },
+    {
+      "slug": "clarke",
+      "nom": "Marcus Clarke",
+      "classement": "Clarke, Marcus",
+      "titre": "Naissance de Marcus Clarke",
+      "axe": "Littérature et pensée",
+      "naissance": 1846,
+      "description": "Marcus Clarke (1846-1881) est un romancier et journaliste né à Londres, émigré en Australie à dix-sept ans. Son roman « For the Term of His Natural Life » (1874), publié en feuilleton, décrit l'enfer des bagnes de Tasmanie et reste le grand roman du système pénitentiaire. Bohème et endetté, il meurt à trente-cinq ans.",
+      "wikipedia": "Marcus Clarke",
+      "portrait": {
+        "fichier": "Marcus Clarke.PNG",
+        "legende": "Marcus Clarke, photographie de 1874",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "roberts",
+      "nom": "Tom Roberts",
+      "classement": "Roberts, Tom",
+      "titre": "Naissance de Tom Roberts",
+      "axe": "Beaux-arts",
+      "naissance": 1856,
+      "description": "Tom Roberts (1856-1931) est un peintre né à Dorchester, en Angleterre, arrivé à Melbourne à treize ans. Chef de file de l'École de Heidelberg, il peint en plein air la vie de la brousse, comme dans « Shearing the Rushes » (1890). Chargé de peindre l'ouverture du premier Parlement fédéral, en 1901, il y consacre deux ans, et le « Big Picture » reste son œuvre la plus célèbre.",
+      "wikipedia": "Tom Roberts",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Tom Roberts.jpg",
+        "legende": "Tom Roberts, photographie d'avant 1925",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "mccubbin",
+      "nom": "Frederick McCubbin",
+      "classement": "McCubbin, Frederick",
+      "titre": "Naissance de Frederick McCubbin",
+      "axe": "Beaux-arts",
+      "naissance": 1855,
+      "description": "Frederick McCubbin (1855-1917) est un peintre né à Melbourne, fils d'un boulanger, l'un des maîtres de l'École de Heidelberg. Ses scènes de la brousse, comme « Down on His Luck » (1889) et le triptyque « The Pioneer » (1904), montrent la dure vie des colons dans une nature immense. Professeur à la National Gallery School de Melbourne pendant plus de vingt ans, il forme toute une génération d'artistes.",
+      "wikipedia": "Frederick McCubbin",
+      "portrait": {
+        "fichier": "Frederick McCubbin - Self-portrait, 1886.jpg",
+        "legende": "Frederick McCubbin, autoportrait peint en 1886",
+        "auteur": "Frederick McCubbin"
+      }
+    },
+    {
+      "slug": "streeton",
+      "nom": "Arthur Streeton",
+      "classement": "Streeton, Arthur",
+      "titre": "Naissance d'Arthur Streeton",
+      "axe": "Beaux-arts",
+      "naissance": 1867,
+      "description": "Arthur Streeton (1867-1943) est un peintre né à Duneed, dans le Victoria, lié à l'École de Heidelberg. Son « Golden Summer, Eaglemont » (1889) est l'un des paysages les plus célèbres de la peinture australienne. Parti pour l'Angleterre en 1897, il est peintre officiel de guerre pour l'Australie en France en 1918 et reçoit le titre de chevalier en 1937.",
+      "wikipedia": "Arthur Streeton",
+      "portrait": {
+        "fichier": "Arthur Streeton portrait (George Lambert).jpg",
+        "legende": "Arthur Streeton, portrait peint par George Lambert en 1917",
+        "auteur": "George W. Lambert"
+      }
+    },
+    {
+      "slug": "namatjira",
+      "nom": "Albert Namatjira",
+      "classement": "Namatjira, Albert",
+      "titre": "Naissance d'Albert Namatjira",
+      "axe": "Beaux-arts",
+      "naissance": 1902,
+      "description": "Albert Namatjira (1902-1959) est un peintre arrernte né à la mission luthérienne de Hermannsburg, dans le Territoire du Nord. Formé en 1934 par le peintre Rex Battarbee, il peint à l'aquarelle les paysages de l'Australie centrale, des monts MacDonnell notamment, avec un succès sans précédent pour un artiste aborigène. Reçu par la reine Élisabeth II en 1954, il est condamné en 1958 pour avoir donné de l'alcool à un proche, ce que la loi interdisait alors aux Aborigènes, et meurt l'année suivante.",
+      "wikipedia": "Albert Namatjira",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "AlbertNamatjira-1949-AliceSprings.jpg",
+        "legende": "Albert Namatjira à Alice Springs, photographie de 1949",
+        "auteur": "Joan Woodard"
+      }
+    },
+    {
+      "slug": "nolan",
+      "nom": "Sidney Nolan",
+      "classement": "Nolan, Sidney",
+      "titre": "Naissance de Sidney Nolan",
+      "axe": "Beaux-arts",
+      "naissance": 1917,
+      "description": "Sidney Nolan (1917-1992) est un peintre né à Melbourne, quitté très tôt par la scolarité et formé en autodidacte. Sa série consacrée au hors-la-loi Ned Kelly (1946-1947), où le bandit porte un casque d'armure noir percé d'une fente, est devenue une icône de l'art australien. Installé à Londres à partir de 1953, il peint aussi l'outback et les mythes antiques, et reçoit le titre de chevalier en 1981.",
+      "wikipedia": "Sidney Nolan",
+      "portrait": {
+        "fichier": "Portrait of Sidney Nolan.jpg",
+        "legende": "Sidney Nolan, photographie d'Albert Tucker (années 1940)",
+        "auteur": "Albert Tucker"
+      }
+    },
+    {
+      "slug": "boyd",
+      "nom": "Arthur Boyd",
+      "classement": "Boyd, Arthur",
+      "titre": "Naissance d'Arthur Boyd",
+      "axe": "Beaux-arts",
+      "naissance": 1920,
+      "description": "Arthur Boyd (1920-1999) est un peintre, graveur et céramiste né à Murrumbeena, près de Melbourne, dans une famille d'artistes. Ses séries de la « Mariée » (1957-1959), puis ses paysages de la rivière Shoalhaven, mêlent violence et mythe dans un expressionnisme sombre. En 1993, il fait don à la nation de son domaine de Bundanon, devenu un centre d'art.",
+      "wikipedia": "Arthur Boyd",
+      "portrait": {
+        "fichier": "Mary Boyd, John Perceval, Arthur Boyd in Arthur's studio June 43.jpg",
+        "legende": "Arthur Boyd (à droite) dans son atelier avec Mary Boyd et John Perceval, photographie d'Albert Tucker (1943)",
+        "auteur": "Albert Tucker"
+      }
+    },
+    {
+      "slug": "preston",
+      "nom": "Margaret Preston",
+      "classement": "Preston, Margaret",
+      "titre": "Naissance de Margaret Preston",
+      "axe": "Beaux-arts",
+      "naissance": 1875,
+      "description": "Margaret Preston (1875-1963) est une peintre et graveuse née à Adélaïde, formée en Allemagne et en France. Rentrée en Australie, elle défend un art authentiquement australien nourri des motifs aborigènes, dans des gravures sur bois de fleurs du bush aux couleurs franches. Cette appropriation de motifs aborigènes est aujourd'hui discutée.",
+      "wikipedia": "Margaret Preston",
+      "portrait": {
+        "fichier": "Margaret Preston Berowra 1936.jpg",
+        "legende": "Margaret Preston devant sa maison de Berowra, photographie de Harold Cazneaux (1936)",
+        "auteur": "Harold Cazneaux"
+      }
+    },
+    {
+      "slug": "cossington",
+      "nom": "Grace Cossington Smith",
+      "classement": "Smith, Grace Cossington",
+      "titre": "Naissance de Grace Cossington Smith",
+      "axe": "Beaux-arts",
+      "naissance": 1892,
+      "description": "Grace Cossington Smith (1892-1984) est une peintre née à Sydney, pionnière du modernisme australien. « The Sock Knitter » (1915), portrait de sa sœur, est considéré comme la première peinture post-impressionniste exposée en Australie. Elle peint toute sa vie les rues, les intérieurs et la lumière de Sydney, comme dans « The Bridge in-curve » (1930), consacré au chantier du Harbour Bridge.",
+      "wikipedia": "Grace Cossington Smith",
+      "portrait": {
+        "fichier": "Grace Cossington Smith Turramurra.jpg",
+        "legende": "Grace Cossington Smith devant sa maison de Turramurra, photographie vers 1915",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "drysdale",
+      "nom": "Russell Drysdale",
+      "classement": "Drysdale, Russell",
+      "titre": "Naissance de Russell Drysdale",
+      "axe": "Beaux-arts",
+      "naissance": 1912,
+      "description": "Russell Drysdale (1912-1981) est un peintre né à Bognor Regis, en Angleterre, arrivé en Australie à onze ans. Il peint les sécheresses et les villages isolés de l'outback, comme « Sofala » (1947), avec des silhouettes étirées et mélancoliques. Avec Nolan et Boyd, il compte parmi les peintres qui ont imposé l'outback comme image nationale.",
+      "wikipedia": "Russell Drysdale",
+      "portrait": {
+        "fichier": "Russell Drysdale Max Dupain 1945.jpg",
+        "legende": "Russell Drysdale avec des toiles, photographie de Max Dupain (1945)",
+        "auteur": "Max Dupain"
+      }
+    },
+    {
+      "slug": "dupain",
+      "nom": "Max Dupain",
+      "classement": "Dupain, Max",
+      "titre": "Naissance de Max Dupain",
+      "axe": "Beaux-arts",
+      "naissance": 1911,
+      "description": "Max Dupain (1911-1992) est un photographe né à Sydney, figure du modernisme australien. Son « Sunbaker » (1937), un nageur allongé sur le sable, est l'une des photographies les plus reproduites du pays. Photographe d'architecture, il fait aussi de la plage et de la vie quotidienne de Sydney ses sujets de prédilection.",
+      "wikipedia": "Max Dupain",
+      "portrait": {
+        "fichier": "Max dupain.jpg",
+        "legende": "Max Dupain, photographie d'époque",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "seidler",
+      "nom": "Harry Seidler",
+      "classement": "Seidler, Harry",
+      "titre": "Naissance de Harry Seidler",
+      "axe": "Beaux-arts",
+      "naissance": 1923,
+      "description": "Harry Seidler (1923-2006) est un architecte autrichien naturalisé australien, né à Vienne et formé aux États-Unis auprès de Walter Gropius et de Marcel Breuer. Sa Rose Seidler House (1950), à Sydney, introduit le modernisme dans l'architecture domestique australienne. Son Australia Square (1967), tour circulaire du centre de Sydney, change la silhouette de la ville.",
+      "wikipedia": "Harry Seidler",
+      "portrait": {
+        "fichier": "Harry Seidler by Dupain 1954 (cropped).jpg",
+        "legende": "Harry Seidler, photographie de Max Dupain (1954)",
+        "auteur": "Max Dupain"
+      }
+    },
+    {
+      "slug": "lindsay",
+      "nom": "Norman Lindsay",
+      "classement": "Lindsay, Norman",
+      "titre": "Naissance de Norman Lindsay",
+      "axe": "Beaux-arts",
+      "naissance": 1879,
+      "description": "Norman Lindsay (1879-1969) est un peintre, dessinateur et écrivain né à Creswick, dans le Victoria. Ses eaux-fortes de nus et de faunes provoquent le scandale, mais son livre pour enfants « The Magic Pudding » (1918) est un classique. Sa maison de Springwood, dans les Montagnes bleues, est aujourd'hui un musée.",
+      "wikipedia": "Norman Lindsay",
+      "portrait": {
+        "fichier": "Norman Lindsay 1931.jpg",
+        "legende": "Norman Lindsay, photographie de Harold Cazneaux (1931)",
+        "auteur": "Harold Cazneaux"
+      }
+    },
+    {
+      "slug": "bunny",
+      "nom": "Rupert Bunny",
+      "classement": "Bunny, Rupert",
+      "titre": "Naissance de Rupert Bunny",
+      "axe": "Beaux-arts",
+      "naissance": 1864,
+      "description": "Rupert Bunny (1864-1947) est un peintre né à Melbourne, installé en Europe pendant la plus grande partie de sa vie. À Paris, où il expose au Salon, il peint de grandes toiles symbolistes et mythologiques aux couleurs lumineuses. Chevalier de la Légion d'honneur, il rentre en Australie en 1933.",
+      "wikipedia": "Rupert Bunny",
+      "portrait": {
+        "fichier": "Bunny-selfFXD.jpg",
+        "legende": "Rupert Bunny, autoportrait peint en 1895",
+        "auteur": "Rupert Bunny"
+      }
+    },
+    {
+      "slug": "griffin",
+      "nom": "Walter Burley Griffin",
+      "classement": "Griffin, Walter Burley",
+      "titre": "Naissance de Walter Burley Griffin",
+      "axe": "Beaux-arts",
+      "naissance": 1876,
+      "description": "Walter Burley Griffin (1876-1937) est un architecte et paysagiste américain né à Maywood, dans l'Illinois, disciple de l'école de Prairie. Avec sa femme Marion Mahony Griffin, il remporte en 1912 le concours de la nouvelle capitale fédérale et dessine Canberra autour d'un lac artificiel et d'axes géométriques. En conflit avec l'administration, il quitte le chantier en 1920, travaille à Sydney et à Melbourne, puis à Lucknow, en Inde, où il meurt en 1937.",
+      "wikipedia": "Walter Burley Griffin",
+      "essentiel": true,
+      "pays": "US",
+      "portrait": {
+        "fichier": "Walter Burley Griffin 1912.jpg",
+        "legende": "Walter Burley Griffin à son bureau, photographie de 1912",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "hurley",
+      "nom": "Frank Hurley",
+      "classement": "Hurley, Frank",
+      "titre": "Naissance de Frank Hurley",
+      "axe": "Beaux-arts",
+      "naissance": 1885,
+      "description": "Frank Hurley (1885-1962) est un photographe et cinéaste né à Sydney, parti à treize ans de chez lui pour travailler sur les chemins de fer. Photographe des expéditions polaires de Mawson (1911-1914) et de Shackleton (1914-1917), il sauve ses plaques de verre quand l'Endurance est écrasée par les glaces et n'en garde que les meilleures. Il est aussi photographe officiel des armées australiennes pendant les deux guerres mondiales.",
+      "wikipedia": "Frank Hurley",
+      "portrait": {
+        "fichier": "FrankHurley.png",
+        "legende": "Frank Hurley à bord de l'Endurance, vers 1914",
+        "auteur": "Frank Hurley"
+      }
+    },
+    {
+      "slug": "melba",
+      "nom": "Nellie Melba",
+      "classement": "Melba, Nellie",
+      "titre": "Naissance de Nellie Melba",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1861,
+      "description": "Nellie Melba (1861-1931) est une soprano née Helen Porter Mitchell à Richmond, près de Melbourne, qui prend le nom de sa ville natale. Après ses débuts à Bruxelles en 1887, elle triomphe à Covent Garden puis au Metropolitan Opera de New York, et compte parmi les premières chanteuses célèbres à enregistrer des disques. Le cuisinier Auguste Escoffier crée en son honneur la pêche Melba.",
+      "wikipedia": "Nellie Melba",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Nellie Melba 1.jpg",
+        "legende": "Nellie Melba, photographie de B. J. Falk (1896)",
+        "auteur": "B. J. Falk"
+      }
+    },
+    {
+      "slug": "sutherland",
+      "nom": "Joan Sutherland",
+      "classement": "Sutherland, Joan",
+      "titre": "Naissance de Joan Sutherland",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1926,
+      "description": "Joan Sutherland (1926-2010) est une soprano née à Sydney, surnommée « La Stupenda ». Son interprétation de « Lucia di Lammermoor » à Covent Garden, en 1959, fait d'elle une star mondiale et relance le bel canto. Avec son mari, le chef d'orchestre Richard Bonynge, elle enregistre l'essentiel du répertoire belcantiste et fait ses adieux à la scène en 1990 à Sydney, dans « Les Huguenots ».",
+      "wikipedia": "Joan Sutherland",
+      "portrait": {
+        "fichier": "Dame Joan Sutherland colour Allan Warren.jpg",
+        "legende": "Joan Sutherland, photographie d'Allan Warren prise à New York (1975)",
+        "auteur": "Allan Warren"
+      }
+    },
+    {
+      "slug": "grainger",
+      "nom": "Percy Grainger",
+      "classement": "Grainger, Percy",
+      "titre": "Naissance de Percy Grainger",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1882,
+      "description": "Percy Grainger (1882-1961) est un compositeur et pianiste né à Brighton, près de Melbourne. Installé en Europe puis aux États-Unis, il collecte des chants populaires anglais au phonographe et en tire des pièces très jouées comme « Country Gardens » et « Shepherd's Hey ». Excentrique, il imagine une « musique libre », sans mesure ni tempérament, qu'il fait réaliser par des machines.",
+      "wikipedia": "Percy Grainger",
+      "portrait": {
+        "fichier": "Percy Grainger by Dupont (1915, 8, big).jpg",
+        "legende": "Percy Grainger, photographie du studio Aimé Dupont (1915)",
+        "auteur": "Studio Aimé Dupont"
+      }
+    },
+    {
+      "slug": "flynn",
+      "nom": "Errol Flynn",
+      "classement": "Flynn, Errol",
+      "titre": "Naissance d'Errol Flynn",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1909,
+      "description": "Errol Flynn (1909-1959) est un acteur né à Hobart, en Tasmanie. Révélé à Hollywood par « Capitaine Blood » (1935), il incarne ensuite Robin des Bois dans « Les Aventures de Robin des Bois » (1938), héros flamboyant du cinéma d'aventure. Sa vie dissipée, ses procès et son alcoolisme lui valent une réputation sulfureuse, et il meurt d'une crise cardiaque à Vancouver, à cinquante ans.",
+      "wikipedia": "Errol Flynn",
+      "portrait": {
+        "fichier": "Errol Flynn1.jpg",
+        "legende": "Errol Flynn, photographie vers 1940",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "ledger",
+      "nom": "Heath Ledger",
+      "classement": "Ledger, Heath",
+      "titre": "Naissance de Heath Ledger",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1979,
+      "description": "Heath Ledger (1979-2008) est un acteur né à Perth. Il se fait connaître dans « Dix Bonnes Raisons de te larguer » (1999) puis dans « Le Secret de Brokeback Mountain » (2005), qui lui vaut une nomination à l'Oscar. Mort d'une overdose accidentelle de médicaments à New York le 22 janvier 2008, à vingt-huit ans, il reçoit à titre posthume l'Oscar du meilleur second rôle pour le Joker de « The Dark Knight ».",
+      "wikipedia": "Heath Ledger",
+      "portrait": {
+        "fichier": "Heath Ledger.jpg",
+        "legende": "Heath Ledger, photographie de 2006",
+        "auteur": "Howie"
+      }
+    },
+    {
+      "slug": "hutchence",
+      "nom": "Michael Hutchence",
+      "classement": "Hutchence, Michael",
+      "titre": "Naissance de Michael Hutchence",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1960,
+      "description": "Michael Hutchence (1960-1997) est un chanteur né à Sydney, leader du groupe INXS. Avec l'album « Kick » (1987) et le tube « Need You Tonight », le groupe devient l'un des plus grands succès de la musique australienne. Il est retrouvé mort le 22 novembre 1997 dans une chambre d'hôtel de Sydney, à trente-sept ans.",
+      "wikipedia": "Michael Hutchence",
+      "portrait": {
+        "fichier": "Michael-hutchence-INXS-1986.jpg",
+        "legende": "Michael Hutchence, photographie d'août 1986, à San Francisco",
+        "auteur": "Andwhatsnext"
+      }
+    },
+    {
+      "slug": "scott",
+      "nom": "Bon Scott",
+      "classement": "Scott, Bon",
+      "titre": "Naissance de Bon Scott",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1946,
+      "description": "Bon Scott (1946-1980) est un chanteur né à Forfar, en Écosse, arrivé en Australie à six ans. Devenu en 1974 le chanteur d'AC/DC, groupe de hard rock formé à Sydney, il écrit des textes crus et ironiques, et l'album « Highway to Hell » (1979) est leur premier grand succès international. Il est retrouvé mort le 19 février 1980 à Londres après une nuit très arrosée, à trente-trois ans.",
+      "wikipedia": "Bon Scott",
+      "portrait": {
+        "fichier": "Grenoble79 01 (cropped).jpg",
+        "legende": "Bon Scott en concert à Grenoble, le 10 décembre 1979",
+        "auteur": "Elfast"
+      }
+    },
+    {
+      "slug": "reddy",
+      "nom": "Helen Reddy",
+      "classement": "Reddy, Helen",
+      "titre": "Naissance de Helen Reddy",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1941,
+      "description": "Helen Reddy (1941-2020) est une chanteuse née à Melbourne, issue d'une famille de music-hall. Établie aux États-Unis, elle écrit avec Ray Burton « I Am Woman » (1972), devenu l'hymne du féminisme des années 1970 et numéro un aux États-Unis. Elle reçoit le Grammy de la meilleure interprétation vocale féminine pop en 1973.",
+      "wikipedia": "Helen Reddy",
+      "portrait": {
+        "fichier": "Helen Reddy.jpg",
+        "legende": "Helen Reddy en concert, photographie de 2006",
+        "auteur": "Kevin Armstrong"
+      }
+    },
+    {
+      "slug": "roach",
+      "nom": "Archie Roach",
+      "classement": "Roach, Archie",
+      "titre": "Naissance d'Archie Roach",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1956,
+      "description": "Archie Roach (1956-2022) est un chanteur et auteur-compositeur gunditjmara, né à Mooroopna, dans le Victoria, arraché à sa famille à trois ans comme tant d'enfants des « Générations volées ». Sa chanson « Took the Children Away » (1990) fait connaître ce traumatisme à tout le pays et lui vaut d'être couronné aux ARIA Awards de 1991. Il devient l'une des voix les plus respectées de la musique aborigène.",
+      "wikipedia": "Archie Roach",
+      "portrait": {
+        "fichier": "Archie Roach.jpg",
+        "legende": "Archie Roach au festival WOMADelaide, en 2011",
+        "auteur": "Nichollas Harrison"
+      }
+    },
+    {
+      "slug": "durham",
+      "nom": "Judith Durham",
+      "classement": "Durham, Judith",
+      "titre": "Naissance de Judith Durham",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1943,
+      "description": "Judith Durham (1943-2022) est une chanteuse née à Melbourne, voix du groupe de folk The Seekers. Leur chanson « I'll Never Find Another You » (1964) atteint la première place des classements britanniques, une première pour un groupe australien, et « Georgy Girl » (1966) conquiert l'Amérique. Elle poursuit ensuite une carrière de chanteuse de jazz et de gospel.",
+      "wikipedia": "Judith Durham",
+      "portrait": {
+        "fichier": "Judith Durham Allan Warren.jpg",
+        "legende": "Judith Durham, photographie d'Allan Warren (1970)",
+        "auteur": "Allan Warren"
+      }
+    },
+    {
+      "slug": "bradman",
+      "nom": "Don Bradman",
+      "classement": "Bradman, Don",
+      "titre": "Naissance de Don Bradman",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1908,
+      "description": "Don Bradman (1908-2001) est un joueur de cricket né à Cootamundra, en Nouvelle-Galles du Sud. Sa moyenne de 99,94 points en matchs de test, sur vingt ans de carrière, n'a jamais été approchée, et il marque 974 points lors de la série des Ashes de 1930. Capitaine de l'équipe invaincue de 1948 en Angleterre, il est le sportif australien le plus célébré du XXe siècle et reçoit le titre de chevalier en 1949.",
+      "wikipedia": "Donald Bradman",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Bradman&Bat.jpg",
+        "legende": "Don Bradman avec sa batte, photographie de Sam Hood (Sydney, 1932)",
+        "auteur": "Sam Hood"
+      }
+    },
+    {
+      "slug": "trumper",
+      "nom": "Victor Trumper",
+      "classement": "Trumper, Victor",
+      "titre": "Naissance de Victor Trumper",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1877,
+      "description": "Victor Trumper (1877-1915) est un joueur de cricket né à Sydney, considéré comme le plus élégant batteur de son temps. En 1902, il marque un siècle avant le déjeuner dans un match de test à Old Trafford, exploit rare qui reste dans les mémoires. Il meurt à trente-sept ans d'une maladie des reins, et plus de vingt mille personnes assistent à ses obsèques à Sydney.",
+      "wikipedia": "Victor Trumper",
+      "portrait": {
+        "fichier": "Victor Trumper c1905.jpg",
+        "legende": "Victor Trumper, photographie de George Beldam vers 1905",
+        "auteur": "George Beldam"
+      }
+    },
+    {
+      "slug": "kellermann",
+      "nom": "Annette Kellermann",
+      "classement": "Kellermann, Annette",
+      "titre": "Naissance d'Annette Kellermann",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1886,
+      "description": "Annette Kellermann (1886-1975) est une nageuse et actrice née à Sydney, devenue vedette internationale du music-hall et du cinéma muet. Arrêtée à Boston en 1907 pour avoir porté un maillot d'une pièce sur la plage, elle contribue à imposer le maillot de bain féminin moderne. Elle popularise aussi la natation synchronisée et publie des livres sur la forme physique des femmes.",
+      "wikipedia": "Annette Kellermann",
+      "portrait": {
+        "fichier": "Annette Kellerman1.jpg",
+        "legende": "Annette Kellermann dans son maillot de bain, photographie du Bain News Service vers 1900",
+        "auteur": "Bain News Service"
+      }
+    },
+    {
+      "slug": "durack",
+      "nom": "Fanny Durack",
+      "classement": "Durack, Fanny",
+      "titre": "Naissance de Fanny Durack",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1889,
+      "description": "Fanny Durack (1889-1956) est une nageuse née à Sydney. Aux Jeux de Stockholm, en 1912, première épreuve féminine de natation aux Jeux olympiques, elle gagne le 100 mètres nage libre devant sa compatriote Mina Wylie. Elle bat de nombreux records du monde et est entrée à l'International Swimming Hall of Fame.",
+      "wikipedia": "Fanny Durack",
+      "portrait": {
+        "fichier": "Fanny Durack 2.jpg",
+        "legende": "Fanny Durack, photographie vers 1912",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "cuthbert",
+      "nom": "Betty Cuthbert",
+      "classement": "Cuthbert, Betty",
+      "titre": "Naissance de Betty Cuthbert",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1938,
+      "description": "Betty Cuthbert (1938-2017) est une athlète née à Sydney, surnommée « Golden Girl ». Aux Jeux de Melbourne, en 1956, à dix-huit ans, elle gagne le 100 mètres, le 200 mètres et le relais 4 × 100 mètres, puis, après une blessure et une retraite, le 400 mètres à Tokyo en 1964. Elle est la seule athlète à avoir gagné le 100, le 200 et le 400 mètres olympiques.",
+      "wikipedia": "Betty Cuthbert",
+      "portrait": {
+        "fichier": "Betty Cuthbert, c. 1950s, by Ted Hood.jpg",
+        "legende": "Betty Cuthbert, photographie de Ted Hood, années 1950",
+        "auteur": "Ted Hood"
+      }
+    },
+    {
+      "slug": "irwin",
+      "nom": "Steve Irwin",
+      "classement": "Irwin, Steve",
+      "titre": "Naissance de Steve Irwin",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1962,
+      "description": "Steve Irwin (1962-2006) est un animateur de télévision et un protecteur de la faune né à Essendon, près de Melbourne, surnommé le « chasseur de crocodiles ». Ses émissions, tournées avec son épouse Terri, font connaître dans le monde entier les animaux d'Australie et le zoo qu'il dirige dans le Queensland. Il est tué le 4 septembre 2006 par une raie venimeuse, lors d'un tournage sur la Grande Barrière de corail.",
+      "wikipedia": "Steve Irwin",
+      "portrait": {
+        "fichier": "Steve Irwin cropped.jpg",
+        "legende": "Steve Irwin, photographie de 2005",
+        "auteur": "Richard Giles"
+      }
+    },
+    {
+      "slug": "warne",
+      "nom": "Shane Warne",
+      "classement": "Warne, Shane",
+      "titre": "Naissance de Shane Warne",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1969,
+      "description": "Shane Warne (1969-2022) est un joueur de cricket né à Ferntree Gully, dans le Victoria, spécialiste du leg-spin. En 1993, sa première balle contre l'Angleterre aux Ashes, à Old Trafford, contourne la défense de Mike Gatting, et reste connue comme la « balle du siècle ». Il termine avec 708 guichets en matchs de test, un record à sa retraite en 2007, et meurt d'une crise cardiaque en Thaïlande à cinquante-deux ans.",
+      "wikipedia": "Shane Warne",
+      "portrait": {
+        "fichier": "Shane Warne 2011 cropped.jpg",
+        "legende": "Shane Warne, photographie de 2011",
+        "auteur": "Eva Rinaldi"
+      }
+    },
+    {
+      "slug": "humphries",
+      "nom": "Barry Humphries",
+      "classement": "Humphries, Barry",
+      "titre": "Naissance de Barry Humphries",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1934,
+      "description": "Barry Humphries (1934-2023) est un comédien né à Melbourne, créateur de personnages comiques dont Dame Edna Everage et Sir Les Patterson. Dame Edna, ménagère de Moonee Ponds devenue star mondiale, naît en 1955, et ses spectacles triomphent à Londres et à Broadway. Écrivain et peintre à ses heures, il incarne pour des générations la satire de la classe moyenne australienne.",
+      "wikipedia": "Barry Humphries",
+      "portrait": {
+        "fichier": "Barry Humphries July 2001.jpg",
+        "legende": "Barry Humphries, photographie de juillet 2001",
+        "auteur": "WTCA"
+      }
+    },
+    {
+      "slug": "dusty",
+      "nom": "Slim Dusty",
+      "classement": "Dusty, Slim",
+      "titre": "Naissance de Slim Dusty",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1927,
+      "description": "Slim Dusty (1927-2003) est un chanteur de country né à Kempsey, en Nouvelle-Galles du Sud, de son vrai nom David Kirkpatrick. Sa chanson « A Pub with No Beer » (1957) devient le premier disque d'or australien. Il enregistre plus de cent albums, et ses chansons sur la vie du bush lui valent le titre de « roi de la country australienne ».",
+      "wikipedia": "Slim Dusty",
+      "portrait": {
+        "fichier": "Slim Dusty with Golden Guitar.jpeg",
+        "legende": "Slim Dusty, photographie de 1988",
+        "auteur": "BackSpace Delete"
+      }
+    },
+    {
+      "slug": "okeefe",
+      "nom": "Johnny O'Keefe",
+      "classement": "O'Keefe, Johnny",
+      "titre": "Naissance de Johnny O'Keefe",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1935,
+      "description": "Johnny O'Keefe (1935-1978) est un chanteur de rock 'n' roll né à Sydney, surnommé « le Wild One ». Sa chanson « Wild One » (1958) est l'un des premiers succès du rock australien, et son émission « Six O'Clock Rock », lancée en 1959 à la télévision, impose le genre au grand public. Il meurt en 1978 à quarante-trois ans.",
+      "wikipedia": "Johnny O'Keefe",
+      "portrait": {
+        "fichier": "JohnnyOKeefe.jpg",
+        "legende": "Johnny O'Keefe en interview à la radio 4TO, en décembre 1969",
+        "auteur": "Bibliothèques de Townsville"
+      }
+    },
+    {
+      "slug": "brabham",
+      "nom": "Jack Brabham",
+      "classement": "Brabham, Jack",
+      "titre": "Naissance de Jack Brabham",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1926,
+      "description": "Jack Brabham (1926-2014) est un pilote automobile né à Hurstville, près de Sydney, sacré champion du monde de Formule 1 en 1959, 1960 et 1966. En 1966, il gagne sur une voiture portant son nom, ce que nul autre pilote n'a réussi dans l'histoire du championnat. Anobli en 1979, il court jusqu'à quarante-quatre ans.",
+      "wikipedia": "Jack Brabham",
+      "portrait": {
+        "fichier": "BrabhamJack1966B.jpg",
+        "legende": "Jack Brabham en 1966, photographie de Lothar Spurzem",
+        "auteur": "Lothar Spurzem"
+      }
+    },
+    {
+      "slug": "brock",
+      "nom": "Peter Brock",
+      "classement": "Brock, Peter",
+      "titre": "Naissance de Peter Brock",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1945,
+      "description": "Peter Brock (1945-2006) est un pilote automobile né à Richmond, près de Melbourne, surnommé « Peter Perfect » et « le roi de la montagne ». Il remporte neuf fois le Bathurst 1000, la grande course de voitures de tourisme du pays, au volant de Holden. Il est tué le 8 septembre 2006 lors d'un rallye en Australie-Occidentale, et reçoit des obsèques nationales.",
+      "wikipedia": "Peter Brock",
+      "portrait": {
+        "fichier": "Peter Brock autographs Bathurst 2005.jpg",
+        "legende": "Peter Brock signant des autographes à Bathurst, en 2005",
+        "auteur": "Benchill"
+      }
+    },
+    {
+      "slug": "anderson",
+      "nom": "Judith Anderson",
+      "classement": "Anderson, Judith",
+      "titre": "Naissance de Judith Anderson",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1897,
+      "description": "Judith Anderson (1897-1992) est une actrice née à Adélaïde, grande figure du théâtre américain. Sa « Médée » (1947) triomphe à Broadway, et elle est nominée à l'Oscar pour son rôle de l'inquiétante Mrs Danvers dans « Rebecca » (1940) d'Alfred Hitchcock. Elle reçoit le titre de dame en 1960.",
+      "wikipedia": "Judith Anderson",
+      "portrait": {
+        "fichier": "Judith Anderson.jpg",
+        "legende": "Judith Anderson, photographie promotionnelle",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "florey",
+      "nom": "Howard Florey",
+      "classement": "Florey, Howard",
+      "titre": "Naissance de Howard Florey",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1898,
+      "description": "Howard Florey (1898-1968) est un pharmacologue né à Adélaïde. Avec Ernst Chain, Norman Heatley et leur équipe d'Oxford, il met au point à partir de 1939 la purification et la production de la pénicilline, découverte par Fleming, qui sauve des milliers de blessés de la Seconde Guerre mondiale. Prix Nobel de physiologie ou médecine en 1945 avec Fleming et Chain, il devient baron et préside la Royal Society.",
+      "wikipedia": "Howard Walter Florey",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Howard Walter Florey 1945.jpg",
+        "legende": "Howard Florey, portrait de la Fondation Nobel (1945)",
+        "auteur": "Fondation Nobel"
+      }
+    },
+    {
+      "slug": "burnet",
+      "nom": "Frank Macfarlane Burnet",
+      "classement": "Burnet, Frank Macfarlane",
+      "titre": "Naissance de Frank Macfarlane Burnet",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1899,
+      "description": "Frank Macfarlane Burnet (1899-1985) est un virologue et immunologiste né à Traralgon, dans le Victoria. Il élabore la théorie de la sélection clonale, selon laquelle chaque lymphocyte porte un seul type d'anticorps, idée qui structure l'immunologie moderne. Prix Nobel de physiologie ou médecine en 1960 avec Peter Medawar pour leurs travaux sur la tolérance immunitaire, il dirige l'Institut Walter and Eliza Hall de Melbourne.",
+      "wikipedia": "Frank Macfarlane Burnet",
+      "portrait": {
+        "fichier": "Burnet in 1945.jpg",
+        "legende": "Frank Macfarlane Burnet, photographie de 1945",
+        "auteur": "N. Murray"
+      }
+    },
+    {
+      "slug": "eccles",
+      "nom": "John Eccles",
+      "classement": "Eccles, John",
+      "titre": "Naissance de John Eccles",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1903,
+      "description": "John Eccles (1903-1997) est un neurophysiologiste né à Melbourne. Il montre que les neurones communiquent par des synapses excitatrices et inhibitrices, et reçoit le prix Nobel de physiologie ou médecine en 1963 avec Alan Hodgkin et Andrew Huxley. Dualiste convaincu, il défend ensuite l'idée que l'esprit est distinct du cerveau.",
+      "wikipedia": "John Carew Eccles",
+      "portrait": {
+        "fichier": "Sir John Eccles Wellcome L0026812.jpg",
+        "legende": "John Eccles, photographie de la collection Wellcome",
+        "auteur": "Wellcome Collection"
+      }
+    },
+    {
+      "slug": "bragg",
+      "nom": "William Lawrence Bragg",
+      "classement": "Bragg, William Lawrence",
+      "titre": "Naissance de William Lawrence Bragg",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1890,
+      "description": "William Lawrence Bragg (1890-1971) est un physicien né à Adélaïde. Avec son père William Henry Bragg, il fonde la cristallographie aux rayons X en formulant en 1912 la loi qui porte leur nom, et ils reçoivent ensemble le prix Nobel de physique en 1915. À vingt-cinq ans, il reste le plus jeune lauréat scientifique de l'histoire des Nobel, et il dirige plus tard le laboratoire Cavendish de Cambridge.",
+      "wikipedia": "William Lawrence Bragg",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Wl-bragg.jpg",
+        "legende": "William Lawrence Bragg, portrait de la Fondation Nobel (1915)",
+        "auteur": "Fondation Nobel"
+      }
+    },
+    {
+      "slug": "mawson",
+      "nom": "Douglas Mawson",
+      "classement": "Mawson, Douglas",
+      "titre": "Naissance de Douglas Mawson",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1882,
+      "description": "Douglas Mawson (1882-1958) est un géologue et explorateur polaire né à Shipley, en Angleterre, arrivé enfant en Australie. Chef de l'expédition antarctique australasienne de 1911 à 1914, il rentre seul sur plus de cent cinquante kilomètres après la mort de ses deux compagnons, Ninnis et Mertz. Professeur à l'Université d'Adélaïde, il dirige encore l'expédition BANZARE (1929-1931) et figure sur l'ancien billet de cent dollars.",
+      "wikipedia": "Douglas Mawson",
+      "portrait": {
+        "fichier": "Sir Douglas Mawson circa 1916.jpg",
+        "legende": "Douglas Mawson vers 1916, photographie du Bain News Service",
+        "auteur": "Bain News Service"
+      }
+    },
+    {
+      "slug": "flinders",
+      "nom": "Matthew Flinders",
+      "classement": "Flinders, Matthew",
+      "titre": "Naissance de Matthew Flinders",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1774,
+      "description": "Matthew Flinders (1774-1814) est un navigateur et hydrographe britannique né à Donington, dans le Lincolnshire. Entre 1801 et 1803, il effectue à bord de l'Investigator le premier tour complet du continent, puis il est retenu six ans à l'île Maurice par les Français. Il meurt le 19 juillet 1814, au lendemain de la publication de son récit, où il préfère au nom de Nouvelle-Hollande celui d'Australie.",
+      "wikipedia": "Matthew Flinders",
+      "essentiel": true,
+      "pays": "GB",
+      "portrait": {
+        "fichier": "Toussaint Antoine DE CHAZAL DE Chamerel - Portrait of Captain Matthew Flinders, RN, 1774-1814 - Google Art Project.jpg",
+        "legende": "Matthew Flinders, portrait peint par Antoine Toussaint de Chazal à l'île Maurice (1806-1807)",
+        "auteur": "Antoine Toussaint de Chazal"
+      }
+    },
+    {
+      "slug": "leichhardt",
+      "nom": "Ludwig Leichhardt",
+      "classement": "Leichhardt, Ludwig",
+      "titre": "Naissance de Ludwig Leichhardt",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1813,
+      "description": "Ludwig Leichhardt (1813-1848) est un naturaliste et explorateur prussien né à Sabrodt, installé en Australie en 1842. Son expédition de 1844-1845 de la baie de Moreton à Port Essington, dans le Nord, ouvre de nouvelles terres aux éleveurs et fait connaître la flore et la faune. Il disparaît en 1848 avec toute son expédition en tentant de traverser le continent d'est en ouest, et son sort inspire à Patrick White le roman « Voss ».",
+      "wikipedia": "Ludwig Leichhardt",
+      "pays": "DE",
+      "portrait": {
+        "fichier": "Ludwig Leichhardt2.jpg",
+        "legende": "Ludwig Leichhardt, portrait d'époque",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "hume",
+      "nom": "Hamilton Hume",
+      "classement": "Hume, Hamilton",
+      "titre": "Naissance de Hamilton Hume",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1797,
+      "description": "Hamilton Hume (1797-1873) est un explorateur né à Parramatta, l'un des premiers grands explorateurs nés dans la colonie. En 1824, avec William Hovell, il relie Sydney à Port Phillip par voie terrestre, en découvrant le fleuve qui sera appelé Murray. Leur route ouvre le sud de la Nouvelle-Galles du Sud et le futur Victoria aux éleveurs.",
+      "wikipedia": "Hamilton Hume",
+      "portrait": {
+        "fichier": "Hamilton Hume.jpg",
+        "legende": "Hamilton Hume, photographie d'époque",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "stuart",
+      "nom": "John McDouall Stuart",
+      "classement": "Stuart, John McDouall",
+      "titre": "Naissance de John McDouall Stuart",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1815,
+      "description": "John McDouall Stuart (1815-1866) est un explorateur écossais né à Dysart, dans le Fife, émigré en Australie-Méridionale en 1839. Après plusieurs tentatives, il est en 1862 le premier Européen à traverser le continent du sud au nord, d'Adélaïde à la mer de Timor. La ligne télégraphique transcontinentale suit sa route, et il meurt à Londres en 1866, épuisé.",
+      "wikipedia": "John McDouall Stuart",
+      "portrait": {
+        "fichier": "John McDouall Stuart 2.jpg",
+        "legende": "John McDouall Stuart, portrait d'époque",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "sturt",
+      "nom": "Charles Sturt",
+      "classement": "Sturt, Charles",
+      "titre": "Naissance de Charles Sturt",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1795,
+      "description": "Charles Sturt (1795-1869) est un officier et explorateur britannique né en Inde. En 1829-1830, il descend le Murrumbidgee jusqu'au Murray et suit ce fleuve jusqu'à son embouchure, en Australie-Méridionale. Il conduit en 1844-1846 une expédition vers le centre du continent, où il se heurte au désert.",
+      "wikipedia": "Charles Sturt",
+      "portrait": {
+        "fichier": "Charles Sturt by John Michael Crossland lowres color.jpg",
+        "legende": "Charles Sturt, portrait de John Michael Crossland (1853)",
+        "auteur": "John Michael Crossland"
+      }
+    },
+    {
+      "slug": "kingsford",
+      "nom": "Charles Kingsford Smith",
+      "classement": "Smith, Charles Kingsford",
+      "titre": "Naissance de Charles Kingsford Smith",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1897,
+      "description": "Charles Kingsford Smith (1897-1935) est un aviateur né à Hamilton, près de Brisbane, ancien pilote de la Première Guerre mondiale. En 1928, aux commandes du trimoteur Southern Cross, il réussit avec trois coéquipiers la première traversée aérienne du Pacifique, de Californie en Australie, en trois étapes. Il disparaît en novembre 1935 au-dessus de la mer d'Andaman, lors d'un record entre l'Angleterre et l'Australie.",
+      "wikipedia": "Charles Kingsford Smith",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Charles Kingsford Smith 1932-06-20 (cropped).jpg",
+        "legende": "Charles Kingsford Smith, photographie du 20 juin 1932",
+        "auteur": "Fairfax Corporation"
+      }
+    },
+    {
+      "slug": "birdwalton",
+      "nom": "Nancy Bird Walton",
+      "classement": "Walton, Nancy Bird",
+      "titre": "Naissance de Nancy Bird Walton",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1915,
+      "description": "Nancy Bird Walton (1915-2009) est une aviatrice née à Kew, en Nouvelle-Galles du Sud. Brevetée à dix-neuf ans, elle devient en 1935 pilote d'ambulance aérienne dans l'outback pour le Royal Far West Children's Health Scheme. Elle fonde en 1950 l'Association des pilotes féminines d'Australie et la préside pendant des décennies.",
+      "wikipedia": "Nancy Bird Walton",
+      "portrait": {
+        "fichier": "Nancy Bird Walton - Russell Roberts.jpg",
+        "legende": "Nancy Bird Walton, photographie de Russell Roberts (années 1930)",
+        "auteur": "Russell Roberts"
+      }
+    },
+    {
+      "slug": "hinkler",
+      "nom": "Bert Hinkler",
+      "classement": "Hinkler, Bert",
+      "titre": "Naissance de Bert Hinkler",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1892,
+      "description": "Bert Hinkler (1892-1933) est un aviateur né à Bundaberg, dans le Queensland. En février 1928, il relie seul l'Angleterre à l'Australie en quinze jours, un record, à bord d'un petit Avro Avian. Il se tue en janvier 1933 dans l'Apennin toscan, lors d'une nouvelle tentative de liaison entre l'Angleterre et l'Australie.",
+      "wikipedia": "Bert Hinkler",
+      "portrait": {
+        "fichier": "Captain Bert Hinkler Set New Record Flight (1928 ACME press photo).jpg",
+        "legende": "Bert Hinkler à son arrivée à Sydney, photographie de presse de 1928",
+        "auteur": "ACME Newspictures"
+      }
+    },
+    {
+      "slug": "warren",
+      "nom": "David Warren",
+      "classement": "Warren, David",
+      "titre": "Naissance de David Warren",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1925,
+      "description": "David Warren (1925-2010) est un scientifique né sur l'île de Groote Eylandt, dans le Territoire du Nord. Chercheur aux laboratoires aéronautiques de Melbourne, il met au point en 1957 le premier prototype de boîte noire, un enregistreur des conversations et des paramètres de vol, après avoir enquêté sur les accidents du Comet. L'Australie est le premier pays à rendre ces enregistreurs obligatoires, en 1967.",
+      "wikipedia": "David Warren",
+      "portrait": {
+        "fichier": "Dave Warren with BlackBox Prototype.jpg",
+        "legende": "David Warren avec le prototype de la boîte noire",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "chang",
+      "nom": "Victor Chang",
+      "classement": "Chang, Victor",
+      "titre": "Naissance de Victor Chang",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1936,
+      "description": "Victor Chang (1936-1991) est un chirurgien cardiaque né à Shanghai, émigré en Australie à quinze ans. À l'hôpital St Vincent's de Sydney, il réalise des centaines de greffes du cœur et met au point une valve cardiaque artificielle. Il est assassiné le 4 juillet 1991 par deux hommes qui tentaient de lui extorquer de l'argent, et l'institut de recherche qui porte son nom est fondé en 1994.",
+      "wikipedia": "Victor Chang",
+      "portrait": {
+        "fichier": "Victor Chang bronze statue Klarfeld.JPG",
+        "legende": "Statue de Victor Chang devant l'institut qui porte son nom, à Sydney, œuvre de Linda Klarfeld : une sculpture, non un portrait",
+        "auteur": "Agesworth"
+      }
+    },
+    {
+      "slug": "kenny",
+      "nom": "Elizabeth Kenny",
+      "classement": "Kenny, Elizabeth",
+      "titre": "Naissance d'Elizabeth Kenny",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1880,
+      "description": "Elizabeth Kenny (1880-1952) est une infirmière autodidacte née à Warialda, en Nouvelle-Galles du Sud. Dans les années 1930, elle traite les victimes de la poliomyélite par la chaleur humide et la rééducation musculaire, contre l'immobilisation alors pratiquée. Ses méthodes, d'abord controversées, sont adoptées aux États-Unis, où son institut de Minneapolis forme des soignants du monde entier.",
+      "wikipedia": "Elizabeth Kenny",
+      "portrait": {
+        "fichier": "Elizabeth Kenny NYWTS.jpg",
+        "legende": "Elizabeth Kenny à bord du Queen Mary, photographie de 1950",
+        "auteur": "Al Ravenna, New York World-Telegram"
+      }
+    },
+    {
+      "slug": "hargrave",
+      "nom": "Lawrence Hargrave",
+      "classement": "Hargrave, Lawrence",
+      "titre": "Naissance de Lawrence Hargrave",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1850,
+      "description": "Lawrence Hargrave (1850-1915) est un ingénieur et inventeur né à Greenwich, en Angleterre, installé à Sydney en 1865. Il invente le cerf-volant à caissons en 1893 et, en 1894, est soulevé de cinq mètres à Stanwell Park, accroché à un train de quatre cerfs-volants. Refusant de breveter ses inventions pour que tous les utilisent, il inspire les pionniers de l'aviation en Europe.",
+      "wikipedia": "Lawrence Hargrave",
+      "portrait": {
+        "fichier": "Hargrave c1890 250@72dpi.jpg",
+        "legende": "Lawrence Hargrave, portrait vers 1890",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "hill",
+      "nom": "Dorothy Hill",
+      "classement": "Hill, Dorothy",
+      "titre": "Naissance de Dorothy Hill",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1907,
+      "description": "Dorothy Hill (1907-1997) est une géologue et paléontologue née à Brisbane, spécialiste des coraux fossiles. Première femme professeure titulaire d'une université australienne, à l'Université du Queensland en 1959, elle préside l'Académie australienne des sciences de 1970 à 1974, première femme à le faire. Elle avait servi dans la marine pendant la guerre.",
+      "wikipedia": "Dorothy Hill",
+      "portrait": {
+        "fichier": "Dorothy Hill, later in life, standing before a sandstone wall.jpg",
+        "legende": "Dorothy Hill devant un mur de grès, à l'Université du Queensland",
+        "auteur": "Université du Queensland"
+      }
+    },
+    {
+      "slug": "paynescott",
+      "nom": "Ruby Payne-Scott",
+      "classement": "Payne-Scott, Ruby",
+      "titre": "Naissance de Ruby Payne-Scott",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1912,
+      "description": "Ruby Payne-Scott (1912-1981) est une physicienne née à Grafton, en Nouvelle-Galles du Sud, première femme radioastronome du monde. Au CSIRO, elle travaille sur le radar pendant la guerre puis identifie plusieurs types de sursauts radio émis par le Soleil. Mariée en 1950, elle doit démissionner en 1951, quand elle attend un enfant, car la loi interdit alors aux femmes mariées d'occuper un poste permanent dans la fonction publique.",
+      "wikipedia": "Ruby Payne-Scott",
+      "portrait": {
+        "fichier": "Peter-hall.ruby.payne-scott.jpg",
+        "legende": "Ruby Payne-Scott jeune, photographie de son fils Peter Hall",
+        "auteur": "Peter Gavin Hall"
+      }
+    },
+    {
+      "slug": "warrenr",
+      "nom": "Robin Warren",
+      "classement": "Warren, Robin",
+      "titre": "Naissance de Robin Warren",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1937,
+      "description": "Robin Warren (1937-2024) est un anatomo-pathologiste né à Adélaïde. En 1979, à Perth, il observe dans l'estomac de certains malades une bactérie en spirale, Helicobacter pylori, que Barry Marshall et lui relient à l'ulcère. Leur découverte, longtemps rejetée, fait des ulcères une maladie traitée par antibiotiques et leur vaut le prix Nobel de physiologie ou médecine en 2005.",
+      "wikipedia": "Robin Warren",
+      "portrait": {
+        "fichier": "Robin Warren.jpg",
+        "legende": "Robin Warren, photographie de 2009",
+        "auteur": "Un ami d'Akshay Sharma"
+      }
+    },
+    {
+      "slug": "farrer",
+      "nom": "William Farrer",
+      "classement": "Farrer, William",
+      "titre": "Naissance de William Farrer",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1845,
+      "description": "William Farrer (1845-1906) est un agronome né à Docker, en Angleterre, installé en Nouvelle-Galles du Sud. Par croisements patients, il crée le blé « Federation », résistant à la rouille et adapté aux étés secs. Ses variétés font de l'Australie un grand exportateur de blé.",
+      "wikipedia": "William Farrer",
+      "portrait": {
+        "fichier": "William Farrer gnangarra PD pre 1906.jpg",
+        "legende": "William Farrer, photographie d'avant 1906",
+        "auteur": "Auteur inconnu"
+      }
+    }
+  ]
+}
