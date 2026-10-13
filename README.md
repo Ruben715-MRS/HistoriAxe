@@ -2103,10 +2103,10 @@ moderne). L'image de Bouboulína est une lithographie de 1827.
 
 ### Un pays à part : l'Australie
 
-`pan_au`, « Grandes figures d'Australie » (code `au`, pays) : **96 personnages**, d'Arthur Phillip (1738) à
+`pan_au`, « Grandes figures d'Australie » (code `au`, pays) : **99 personnages**, d'Arthur Phillip (1738) à
 Heath Ledger (1979). Par axe : 22 Musique, spectacle et sport, 21 Sciences, techniques et innovation, 15 Guerres
-et résistances, 14 Chefs d'État et dirigeants, 12 Littérature et pensée, 12 Beaux-arts ; 24 ⭐ et 4 biographies
-liées (Menzies, Monash, Mary MacKillop, Patrick White). 96 portraits : 73 du domaine public, 8 CC BY et 15 CC BY-SA.
+et résistances, 14 Chefs d'État et dirigeants, 14 Beaux-arts, 13 Littérature et pensée ; 24 ⭐ et 4 biographies
+liées (Menzies, Monash, Mary MacKillop, Patrick White). 99 portraits : 75 du domaine public, 9 CC BY et 15 CC BY-SA.
 Pas d'axe « Économie et entreprise » : Rupert Murdoch et Nicole Kidman, qui ont leur biographie, sont vivants.
 
 - **Un pays, pas un bloc** : `pan_au`, et « Pendant ce temps, ailleurs… » le compte comme `thm_au`. Les invités
@@ -2130,10 +2130,10 @@ Pas d'axe « Économie et entreprise » : Rupert Murdoch et Nicole Kidman, qui o
   Bandler, William Cooper, John Simpson Kirkpatrick, Hans Heysen, Margaret Olley, Henry Kendall, Robert Hughes, John
   Bradfield. Lionel Rose (carte à collectionner) et Brett Whiteley (photo d'une galerie) sont écartés pour leur image.
 - **À ajouter** (fiches rédigées, image libre trouvée, mais Wikimedia a refusé les téléchargements de cette session,
-  erreur 429) : Les Murray, Marcus Clarke, Margaret Preston, Rupert Bunny, Frank Hurley et Shane Warne. Leurs fiches sont à
-  reprendre dans `scripts/pantheon/au.json` (Murray, 1938 ; Clarke, 1846 ; Preston, 1875 ; Bunny, 1864 ; Hurley, 1885 ;
-  Warne, 1969). Les portraits de Monash, Dunlop et Namatjira doivent être retéléchargés avec leur recadrage (déjà inscrit
-  dans la source) : `python3 scripts/fetch_portraits.py au --force --only monash,dunlop,namatjira`.
+  erreur 429, pendant plus de deux heures) : Marcus Clarke (1846), Frank Hurley (1885) et Shane Warne (1969). Leurs fiches,
+  avec le nom du fichier Commons, la légende et l'auteur de chaque portrait, sont dans `scripts/pantheon/au_candidats.md`.
+  Le portrait de Weary Dunlop (une statue) doit être retéléchargé avec son recadrage, déjà inscrit dans la source :
+  `python3 scripts/fetch_portraits.py au --force --only dunlop`.
 
 ### Un fichier source par panthéon, un script qui l'écrit dans `data/fr.json`
 
