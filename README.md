@@ -601,7 +601,7 @@ ne posent pas la même question :
 | | Un thème, c'est | Une date, c'est | On le joue par |
 |---|---|---|---|
 | **Biographies** | une vie (360 thèmes, en 12 domaines) | une étape de cette vie | étape de la vie |
-| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, le sous-continent indien, Israël, la Turquie, le Japon, la Russie, l'Australie) | la naissance d'un personnage | domaine |
+| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, le sous-continent indien, Israël, la Turquie, le Japon, la Russie, l'Australie, le Canada, le Benelux) | la naissance d'un personnage | domaine |
 
 Le déplacement ne coûte aucune migration : les 360 thèmes gardent leurs
 identifiants, et rien de ce que le joueur a sauvegardé (favoris, révision,
@@ -2159,6 +2159,43 @@ Terry Fox (1958). Par axe :
 - **Écartés faute d'image libre** : Mordecai Richler (seule une pierre tombale est libre), William Logan (Wikimedia a
   refusé le téléchargement). Pas de portrait libre non plus pour Arthur Erickson, Norval Morrisseau ou Joyce Wieland.
 
+### Un bloc : le Benelux
+
+`pan_benelux`, « Grandes figures du Benelux » (code `benelux`, bloc) : **89 personnages de trois pays** — Belgique 38,
+Pays-Bas 38, Luxembourg 13 — de Jean l'Aveugle (1296) à Johan Cruyff (1947). Par axe : 21 Beaux-arts, 20 Sciences,
+techniques et innovation, 14 Littérature et pensée, 13 Chefs d'État et dirigeants, 9 Musique, spectacle et sport,
+6 Guerres et résistances, 6 Économie et entreprise ; 29 ⭐ et 11 biographies liées (Léopold II, Simenon, Horta, Brel,
+Solvay, Lemaître, Andrée De Jongh, Leman, de Gerlache, Damien de Veuster, Spinoza). 89 portraits : 76 du domaine
+public ou CC0, le reste sous licence CC BY ou CC BY-SA.
+
+- **Un seul bloc, non trois thèmes.** Les Pays-Bas bourguignons, puis espagnols, forment une seule entité jusqu'à la
+  révolte de 1568 ; le Nord s'en sépare ensuite, le Sud reste espagnol puis autrichien, et les deux sont réunis de 1815
+  à 1830 avant la Belgique indépendante. Jan van Eyck, Bruegel et Rubens appartiennent autant à l'un qu'à l'autre. Le
+  Luxembourg, seul, n'aurait jamais eu de quoi faire un thème. Chaque figure porte son `pays` (`BE`, `NL`, `LU`), d'où le
+  drapeau de la fiche et le compte de la Simultanéité.
+- **Un équilibre déclaré.** Belgique et Pays-Bas pèsent chacun 42,7 % du bloc, au-dessus du seuil de 40 % : la
+  source déclare `partMaxPays: 0.45`, c'est un choix écrit. Le Luxembourg, 13 figures sur 89, n'en a pas davantage :
+  son histoire d'avant 1815 est celle d'un comté dont les souverains règnent ailleurs (Jean l'Aveugle, roi de
+  Bohême).
+- **Nés ailleurs, rangés là où on les honore.** Rubens naît à Siegen (Allemagne) mais est anversois ; Guillaume le
+  Taciturne et Maurice de Nassau naissent à Dillenburg ; Léopold Ier naît à Cobourg ; Anne Frank naît à Francfort et
+  vit à Amsterdam ; Vondel naît à Cologne ; Einthoven à Semarang ; Pierre Werner à Saint-André, près de Lille ; Henri
+  Tudor près d'Echternach ; Robert Schuman à Luxembourg, d'une famille lorraine, avant d'être français : la fiche dit chaque fois
+  où ils sont nés. Frans Hals, né à Anvers de parents de Haarlem, est aux Pays-Bas ; Django Reinhardt, né à Liberchies, et
+  Audrey Hepburn, née à Ixelles, sont en Belgique et leur fiche dit où ils ont vécu.
+- **Déjà dans un autre panthéon, donc absent** : Charles Quint, né à Gand, est au panthéon de l'Espagne ; Descartes,
+  qui a vécu vingt ans aux Provinces-Unies, à celui de la France.
+- **Les figures disputées sont écrites comme telles** : Léopold II et le Congo, Jan Pieterszoon Coen et le massacre
+  de Banda, Mata Hari, condamnée sur des preuves minces.
+- **Dates** : Jan van Eyck, Bruegel, Hals, Bosch, Tasman et Érasme portent un « vers » : les sources donnent plusieurs
+  années ou aucune. Érasme est daté de vers 1466, avec 1467 et 1469 pour variantes.
+- **Pas de vivants** : Eddy Merckx, qui a sa biographie, n'y est pas.
+- **Les images** : Stevin est montré par une statue ; Vermeer par un détail de « L'Entremetteuse », que l'on tient pour son
+  seul autoportrait ; Bruegel, Bosch et Jean l'Aveugle par un dessin ; Mercator et Vésale par une gravure dont l'inscription
+  porte leur nom (`nomVisible` : « Qui est-ce ? » les écarte). Charlotte, Wilhelmine et Léopold Ier sont des portraits
+  officiels.
+- **Écarté faute d'image libre** : Peyo (la seule photographie trouvée porte un bandeau de contestation de licence).
+
 ### Un fichier source par panthéon, un script qui l'écrit dans `data/fr.json`
 
 `scripts/pantheon/<code>.json` (`fr`, `hispam`…) est **la seule source de
@@ -2501,7 +2538,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
 ### Ce qui n'est pas fait
 
 - **Les autres panthéons** : la France, l'Égypte, les États-Unis, l'Italie, le
-  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie, l'Australie et le Canada sont écrits.
+  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie, l'Australie, le Canada et le Benelux sont écrits.
   Chaque liste de personnages est validée avant la rédaction. Feuille de route, dans l'ordre
   où on les propose (un pays seul quand il a de quoi faire un thème, un bloc sinon) :
   1. **Le Machrek est écrit** (voir « Le cinquième bloc »). Il reste : le portrait des trois
@@ -2517,7 +2554,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
      l'Ouest, l'Afrique centrale, l'Afrique de l'Est et la Corne, l'Afrique australe et l'océan
      Indien (sans l'Afrique du Sud), « Nouvelle-Zélande et Pacifique ».
   4. **L'Europe et les Amériques qui manquent** : le Portugal (qui reprendra Magellan et
-     Viriathe, laissés de côté dans le panthéon de l'Espagne), Byzance (au-delà des cinq figures déjà au panthéon de la Grèce), le Benelux,
+     Viriathe, laissés de côté dans le panthéon de l'Espagne), Byzance (au-delà des cinq figures déjà au panthéon de la Grèce),
      la Pologne, l'Europe centrale, les Balkans, les Caraïbes non
      hispaniques.
 
