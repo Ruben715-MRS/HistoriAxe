@@ -89,6 +89,10 @@ KEEP_AS_WRITTEN = {
 
 # Écrits à la main : (nom de la source) → nom de classement.
 EXCEPTIONS = {
+    'Louis-Hippolyte La Fontaine': 'La Fontaine, Louis-Hippolyte',
+    "Pierre Le Moyne d'Iberville": "Iberville, Pierre Le Moyne d'",
+    "Marie de l'Incarnation": "Marie de l'Incarnation",
+    'La Bolduc': 'Bolduc, La',
     'Claude Ptolémée': 'Ptolémée, Claude',
     'Saint Louis': 'Louis, saint',
     'Jules César': 'César, Jules',
