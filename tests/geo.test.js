@@ -1,4 +1,4 @@
-// Géolocalisation des événements (data/geo.json, produit par scripts/geo/).
+// Géolocalisation des événements (assets/geo/events-geo.json, produit par scripts/geo/).
 //
 // Le fichier est généré par étapes (thème après thème) : le test valide ce qui
 // s'y trouve, quel que soit l'avancement, et refuse les erreurs qu'un pipeline
@@ -12,10 +12,10 @@ const path = require('node:path');
 
 const L = require('../js/linkedEvents.js');
 
-const GEO_PATH = path.join(__dirname, '..', 'data', 'geo.json');
+const GEO_PATH = path.join(__dirname, '..', 'assets', 'geo', 'events-geo.json');
 const FR_PATH = path.join(__dirname, '..', 'data', 'fr.json');
 const present = fs.existsSync(GEO_PATH);
-const skip = present ? false : 'data/geo.json absent (géolocalisation pas encore générée)';
+const skip = present ? false : 'assets/geo/events-geo.json absent (géolocalisation pas encore générée)';
 
 function loadEntries() {
     const bdd = JSON.parse(fs.readFileSync(FR_PATH, 'utf8'));
@@ -35,11 +35,12 @@ test('geo.json : format, coordonnées et précisions valides', { skip }, () => {
     const ids = Object.keys(geo.points);
     assert.ok(ids.length > 0);
     for (const id of ids) {
-        const [lat, lon, prec, label] = geo.points[id];
+        const [lat, lon, prec, label, flag] = geo.points[id];
         assert.ok(Number.isFinite(lat) && lat >= -90 && lat <= 90, `${id}: latitude ${lat}`);
         assert.ok(Number.isFinite(lon) && lon >= -180 && lon <= 180, `${id}: longitude ${lon}`);
         assert.ok(['s', 'v', 'z'].includes(prec), `${id}: précision ${prec}`);
         assert.ok(typeof label === 'string' && label.length > 0, `${id}: libellé vide`);
+        assert.ok(flag === 0 || flag === 1, `${id}: drapeau ${flag}`);
     }
 });
 

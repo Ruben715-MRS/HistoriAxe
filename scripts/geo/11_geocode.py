@@ -54,16 +54,22 @@ def main():
         r = query(a['place'], a['cc'], cache); via = 'place'
         if not r and a.get('alt') and a['alt'] != a['place']:
             r = query(a['alt'], a['cc'], cache); via = 'alt'
+        head = a['place'].split(',')[0].strip()
+        if not r and head not in (a['place'], a.get('alt')):
+            r = query(head, a['cc'], cache); via = 'alt'
         status = 'ok'
         if not r:
             status = 'failed'
         else:
-            limit = {'site': 15, 'ville': 60, 'zone': 800}[a['precision']]
+            # L'emprise d'une grande ville ou d'un domaine (Londres, Baïkonour) est vaste
+            # sans que le centre renvoyé soit faux ; on n'écarte qu'un résultat qui
+            # ressemble à une région entière (le pays est déjà verrouillé par countrycodes).
+            limit = {'site': 150, 'ville': 300, 'zone': 2500}[a['precision']]
             if r['diag'] > limit:
                 status = 'suspect-large'
             elif via == 'alt' and a['precision'] == 'site':
                 status = 'downgraded'
-        out[a['id']] = {'lat': r['lat'], 'lon': r['lon'], 'name': r['name'], 'diag': r['diag'], 'via': via, 'status': status} if r else {'status': status, 'via': via}
+        out[a['id']] = {'lat': r['lat'], 'lon': r['lon'], 'name': r['name'], 'diag': r['diag'], 'via': via, 'status': status, 'wide': r['diag'] > {'site': 15, 'ville': 60, 'zone': 800}[a['precision']]} if r else {'status': status, 'via': via}
         if n % 25 == 0:
             json.dump(cache, open(CACHE, 'w'), ensure_ascii=False)
             print(n, '/', len(todo), flush=True)

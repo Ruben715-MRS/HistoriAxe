@@ -19,6 +19,12 @@ nom de lieu, un pays, une précision ; un script géocode ensuite (Nominatim).
 - `zone` : une région/un pays/une île quand l'événement lui est vraiment lié (< ~600 km
   d'étendue) : "Corse". Ne sert pas au jeu, seulement à la carte de découverte.
 
+## Garde-fou : un lieu doit s'imposer
+- Un point n'a de sens que si le lieu est cité dans le titre ou la description, ou s'il
+  caractérise l'événement lui-même (bataille, édifice, expédition, fondation). Les
+  nominations, lois, ordonnances, décrets, élections, réformes, procès ou règnes dont le
+  texte ne nomme pas de lieu sont `none` : ne choisis pas la capitale « par défaut ».
+
 ## Quel lieu ?
 - Le lieu où l'événement s'est PASSÉ : bataille → champ de bataille ; construction →
   l'édifice ; œuvre → lieu de création ou de première présentation ; invention/découverte →
