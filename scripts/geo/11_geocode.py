@@ -20,12 +20,19 @@ def diag_km(bbox):
     return 2 * 6371 * math.asin(math.sqrt(a))
 
 
+# Territoires dont Nominatim range les lieux sous le pays de rattachement (ou l'inverse) :
+# on élargit la contrainte à la liste plutôt que de voir la requête échouer (Kourou en « GF »).
+CC_ALIASES = {'GF': 'fr,gf', 'MF': 'fr,mf,sx', 'BL': 'fr,bl', 'MQ': 'fr,mq', 'GP': 'fr,gp', 'PM': 'fr,pm', 'RE': 'fr,re', 'YT': 'fr,yt',
+              'NC': 'fr,nc', 'PF': 'fr,pf', 'WF': 'fr,wf', 'PR': 'us,pr', 'GU': 'us,gu', 'VI': 'us,vi', 'HK': 'hk,cn', 'MO': 'mo,cn',
+              'XK': 'xk,rs,al', 'TW': 'tw,cn', 'PS': 'ps,il', 'EH': 'eh,ma', 'GL': 'gl,dk', 'FO': 'fo,dk'}
+
+
 def query(q, cc, cache):
     key = f'{q}|{cc}'
     if key in cache:
         return cache[key]
     url = 'https://nominatim.openstreetmap.org/search?' + urllib.parse.urlencode(
-        {'q': q, 'format': 'jsonv2', 'limit': 1, 'accept-language': 'fr', 'countrycodes': cc.lower()})
+        {'q': q, 'format': 'jsonv2', 'limit': 1, 'accept-language': 'fr', 'countrycodes': CC_ALIASES.get(cc.upper(), cc.lower())})
     res = None
     for attempt in range(4):
         try:
