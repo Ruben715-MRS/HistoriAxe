@@ -2132,6 +2132,33 @@ textarea.form-input {
     text-decoration: underline;
 }
 
+/* Retour à la fiche précédente (après un saut par « Vu aussi dans… »). */
+.modal-back-btn {
+    display: block;
+    max-width: calc(100% - 48px);
+    margin: 0 0 12px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--primary-blue);
+    cursor: pointer;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.modal-back-btn:hover {
+    text-decoration: underline;
+}
+
+.modal-back-btn.hidden {
+    display: none;
+}
+
 /* « Vu aussi dans… » : le même fait, raconté par d'autres thèmes. */
 .modal-linked-row {
     margin-top: 16px;

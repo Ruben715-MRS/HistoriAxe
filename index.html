@@ -1114,6 +1114,9 @@
         <div class="modal-content">
             <span class="close-btn" role="button" tabindex="0" aria-label="Fermer"
                 data-i18n-attr="aria-label:nav.close" onclick="closeModal()">×</span>
+            <!-- Retour à la fiche précédente, seulement après un saut par « Vu aussi dans… »
+                 (voir renderModalBackButton dans js/app.js). -->
+            <button type="button" class="modal-back-btn hidden" id="modal-back-btn" onclick="modalBack()"></button>
             <!-- Passage au portrait voisin, seulement quand la fiche s'ouvre depuis la galerie
                  (voir js/gallery.js) : boutons, flèches du clavier et glissement font la même chose. -->
             <div class="modal-gallery-nav" id="modal-gallery-nav">

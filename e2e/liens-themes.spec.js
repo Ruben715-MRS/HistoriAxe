@@ -39,6 +39,21 @@ test('la fiche d\'un événement carrefour propose les autres thèmes, et le cli
     await expect(page.locator('#modal-theme-btn')).toContainText(themeLie);
     // De là, le lien repart vers le thème de départ.
     await expect(page.locator('#modal-linked-row')).toBeVisible();
+
+    // Historique : « Retour » rouvre la fiche quittée, puis disparaît.
+    const retour = page.locator('#modal-back-btn');
+    await expect(retour).toBeVisible();
+    await expect(retour).toContainText(titreAvant);
+    await retour.click();
+    await expect(page.locator('#modal-titre')).toHaveText(titreAvant);
+    await expect(retour).toBeHidden();
+
+    // Fermer la fiche vide l'historique : la fiche suivante repart de zéro.
+    await boutons.first().click();
+    await expect(retour).toBeVisible();
+    await page.locator('#modal-details .close-btn').click();
+    await ouvrirFiche(page, 'psn_ar_t5', 'Invasion argentine des îles Malouines');
+    await expect(retour).toBeHidden();
 });
 
 test('une fiche sans jumeau dans un autre thème n\'affiche pas « Vu aussi dans… »', async ({ page }) => {
