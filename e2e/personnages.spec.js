@@ -688,6 +688,34 @@ test('le Canada : chacune de ses figures a son portrait, de Kondiaronk à Hubert
     await expect(page.locator('#modal-bio-btn')).toBeVisible();
 });
 
+test('le Portugal : chacune de ses figures a son portrait, d\'Alphonse Ier à Mariano Gago, et deux ont leur biographie', async ({ page }) => {
+    await openThemeById(page, 'pan_pt');
+    await page.locator('#mode-card-discovery').click();
+    await expect(page.locator('#screen-game')).toBeVisible();
+    const nombre = await page.evaluate(() => getCurrentTheme().events.length);
+    expect(nombre).toBe(77);
+    await expect(page.locator('#timeline .entry')).toHaveCount(nombre);
+    await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
+
+    // Un roi, un poète, un footballeur : la fiche n'affiche aucun pays (le panthéon n'a pas d'invité).
+    for (const titre of ['Naissance de Manuel Ier de Portugal', 'Naissance de Fernando Pessoa', 'Naissance d\'Eusébio']) {
+        await page.locator('#timeline .entry', { hasText: titre }).click();
+        await expect(page.locator('#modal-details')).toBeVisible();
+        await expect(page.locator('#modal-pays')).toBeHidden();
+        const portrait = page.locator('#modal-portrait-img');
+        await expect.poll(() => portrait.evaluate(img => img.complete ? img.naturalWidth : 0)).toBe(320);
+        await expect(page.locator('#modal-portrait-caption')).not.toBeEmpty();
+        await page.locator('#modal-details .close-btn').click();
+        await expect(page.locator('#modal-details')).toBeHidden();
+    }
+
+    // Deux figures ont aussi leur biographie dans l'appli : le bouton y mène.
+    const avecBiographie = await page.evaluate(() => getCurrentTheme().events.filter(e => e.biographie).length);
+    expect(avecBiographie).toBe(2);
+    await page.locator('#timeline .entry', { hasText: 'Naissance de Vasco de Gama' }).click();
+    await expect(page.locator('#modal-bio-btn')).toBeVisible();
+});
+
 test('la recherche — « espagne », « castille », « catalogne », « madrid » — mène au panthéon de l’Espagne', async ({ page }) => {
     await page.locator('#screen-home').click();
     for (const mot of ['espagne', 'castille', 'catalogne', 'madrid']) {

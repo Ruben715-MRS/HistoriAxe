@@ -2,8 +2,8 @@
   "version": "1.0.0",
   "lang": "fr",
   "name": "Français (Intégral)",
-  "totalThemes": 816,
-  "totalEvents": 21965,
+  "totalThemes": 817,
+  "totalEvents": 22042,
   "categories": [
     {
       "nom": "Culture générale",
@@ -119032,6 +119032,1301 @@
                 "pan_maghreb_mernissi",
                 "pan_maghreb_kadhafi",
                 "pan_maghreb_idir"
+              ]
+            },
+            {
+              "id": "pan_pt",
+              "nom": "Grandes figures du Portugal",
+              "difficulte": "Intermédiaire",
+              "motsCles": [
+                "Portugais",
+                "Portugaise",
+                "Portugal",
+                "Lisbonne",
+                "Porto",
+                "Lusitanie",
+                "Découvertes portugaises",
+                "Empire portugais",
+                "Maison d'Aviz",
+                "Maison de Bragance",
+                "Estado Novo",
+                "Révolution des Œillets",
+                "Fado",
+                "Lusophonie"
+              ],
+              "events": [
+                {
+                  "id": "pan_pt_viriathe",
+                  "axe": "Guerres, résistances et exploration",
+                  "date": -180,
+                  "titre": "Naissance de Viriathe",
+                  "description": "Viriathe (vers 180-139 av. J.-C.) est un chef lusitanien qui tient tête aux Romains en Hispanie pendant huit ans. Il met en échec plusieurs armées romaines par la guérilla. Il est assassiné en 139 av. J.-C. par trois de ses proches, achetés par le consul Caepio, et devient un héros national au Portugal.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Viriate",
+                  "classement": "Viriathe",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_viriathe.jpg",
+                    "legende": "Viriathe, statue d'Eduardo Barrón (début du XXe siècle) : une image imaginaire, aucun portrait authentique n'existe",
+                    "auteur": "Eduardo Barrón (1858-1911)",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Viriato.JPG"
+                  }
+                },
+                {
+                  "id": "pan_pt_alphonse1",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1109,
+                  "titre": "Naissance d'Alphonse Ier de Portugal",
+                  "description": "Alphonse Ier de Portugal (vers 1109-1185) est le premier roi du Portugal, connu sous le nom d'Afonso Henriques. Fils du comte Henri de Bourgogne, il bat les Maures à Ourique en 1139, se proclame roi et fait reconnaître ce titre par le pape en 1179. Il conquiert Lisbonne en 1147 avec l'aide de croisés et fait du comté une monarchie indépendante.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Alphonse_Ier_(roi_de_Portugal)",
+                  "classement": "Alphonse Ier de Portugal",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_alphonse1.jpg",
+                    "legende": "Alphonse Ier, enluminure d'António de Holanda dans la « Genealogia dos Reis de Portugal » (1530-1534) : un portrait posthume, plus de trois siècles après sa mort",
+                    "auteur": "António de Holanda (1480-1571)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:D._Afonso_Henriques_-_The_Portuguese_Genealogy_(Genealogia_dos_Reis_de_Portugal).png"
+                  }
+                },
+                {
+                  "id": "pan_pt_antoine",
+                  "axe": "Littérature et pensée",
+                  "date": 1195,
+                  "titre": "Naissance d'Antoine de Padoue",
+                  "description": "Antoine de Padoue (1195-1231) est un franciscain portugais, né à Lisbonne sous le nom de Fernando de Bulhões. Prédicateur à l'éloquence réputée, il enseigne la théologie en Italie et en France, et meurt près de Padoue à trente-six ans. Canonisé dès 1232, moins d'un an après sa mort, il est l'un des saints les plus populaires du monde catholique.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Antoine_de_Padoue",
+                  "classement": "Antoine de Padoue",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_antoine.jpg",
+                    "legende": "Antoine de Padoue, peinture d'Alvise Vivarini (vers 1480) : une image posthume, deux siècles et demi après sa mort",
+                    "auteur": "Alvise Vivarini",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:(Venice)_Sant%27Antonio_da_Padova_by_Alvise_Vivarini_-_Correr_Museum.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pt_jean21",
+                  "axe": "Littérature et pensée",
+                  "date": 1215,
+                  "titre": "Naissance de Jean XXI",
+                  "description": "Jean XXI (vers 1215-1277) est un médecin, logicien et pape portugais, né à Lisbonne. Il est l'auteur des Summulae logicales, un traité de logique qui sert de manuel dans les universités pendant des siècles, et d'un recueil de médecine, le Thesaurus pauperum. Élu pape en 1276, il meurt à Viterbe en 1277, écrasé par l'effondrement du plafond de son palais, après huit mois de pontificat.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jean_XXI",
+                  "classement": "Jean XXI",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_jean21.jpg",
+                    "legende": "Jean XXI, portrait du XVIe siècle (galerie des archevêques de Braga) : une image posthume, avec son nom et une date inscrits",
+                    "auteur": "Peintre anonyme",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Papa_Jo%C3%A3o_XXI_-_Galeria_dos_Arcebispos_de_Braga.png",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_pt_denis",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1261,
+                  "titre": "Naissance de Denis Ier de Portugal",
+                  "description": "Denis Ier de Portugal (1261-1325) est un roi qui consolide le royaume, surnommé le Roi Laboureur et le Roi Poète. Il fait du portugais la langue de l'administration à la place du latin, fonde à Lisbonne en 1290 l'université qui s'installera à Coimbra, et signe en 1297 le traité d'Alcañices qui fixe la frontière avec la Castille. Il écrit aussi des chansons dans la tradition des troubadours et fait planter la pinède de Leiria.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Denis_Ier_de_Portugal",
+                  "classement": "Denis Ier de Portugal",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_denis.jpg",
+                    "legende": "Denis Ier, enluminure d'António de Holanda dans la « Genealogia dos Reis de Portugal » (1530-1534) : un portrait posthume, deux siècles après sa mort",
+                    "auteur": "António de Holanda (1480-1571)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:D._Dinis_I_de_Portugal_-_The_Portuguese_Genealogy_(Genealogia_dos_Reis_de_Portugal).png"
+                  }
+                },
+                {
+                  "id": "pan_pt_ines",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1325,
+                  "titre": "Naissance d'Inês de Castro",
+                  "description": "Inês de Castro (1325-1355) est une noble galicienne, dame d'honneur de l'épouse de l'infant Pierre de Portugal. Devenue la maîtresse de Pierre, elle est assassinée à Coimbra en 1355 sur ordre du roi Alphonse IV, qui craint l'influence des Castro. Devenu roi, Pierre Ier fait, selon la tradition, couronner sa dépouille et punir ses meurtriers, et l'histoire inspire Camões comme de nombreux auteurs.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/In%C3%A9s_de_Castro",
+                  "classement": "Castro, Inês de",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_ines.jpg",
+                    "legende": "Inês de Castro, gravure ancienne : une image imaginaire, aucun portrait de son temps n'est connu",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:8-_Rainha_D._In%C3%AAs_-_A_Morta.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pt_jean1",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1357,
+                  "titre": "Naissance de Jean Ier de Portugal",
+                  "description": "Jean Ier de Portugal (1357-1433) est le fondateur de la dynastie d'Aviz. Fils naturel du roi Pierre Ier, il est proclamé roi par les Cortes de Coimbra en 1385 et bat les Castillans à Aljubarrota avec le connétable Nuno Álvares Pereira. Il prend Ceuta en 1415, premier pas de l'expansion portugaise, et son mariage avec Philippa de Lancastre donne les fils de la « Génération illustre ».",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jean_Ier_(roi_de_Portugal)",
+                  "classement": "Jean Ier de Portugal",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_jean1.jpg",
+                    "legende": "Jean Ier, portrait anonyme du XVe siècle (Musée national d'art ancien, Lisbonne)",
+                    "auteur": "Auteur anonyme",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Anoniem_-_Koning_Johan_I_van_Portugal_(1450-1500)_-_Lissabon_Museu_Nacional_de_Arte_Antiga_19-10-2010_16-12-61.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pt_nunoalvares",
+                  "axe": "Guerres, résistances et exploration",
+                  "date": 1360,
+                  "titre": "Naissance de Nuno Álvares Pereira",
+                  "description": "Nuno Álvares Pereira (1360-1431) est un chevalier portugais, connétable du roi Jean Ier. Il remporte pour lui la bataille d'Atoleiros en 1384, puis celle d'Aljubarrota en 1385, qui assure l'indépendance du royaume face à la Castille. Devenu moine carme à la fin de sa vie, il est canonisé en 2009 par Benoît XVI.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Nuno_%C3%81lvares_Pereira",
+                  "classement": "Álvares Pereira, Nuno",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_nunoalvares.jpg",
+                    "legende": "Nuno Álvares Pereira, gravure de Charles Legrand (vers 1850) : un portrait imaginaire, plus de quatre siècles après sa mort",
+                    "auteur": "Charles Legrand",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:S%C3%A3o_nun%27alvares_pereira.jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_pt_henri",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1394,
+                  "titre": "Naissance de Henri le Navigateur",
+                  "description": "Henri le Navigateur (1394-1460) est un infant du Portugal, troisième fils du roi Jean Ier. Il participe à la prise de Ceuta en 1415 et finance, depuis l'Algarve, les voyages le long de la côte africaine, qui amènent les Portugais à Madère, aux Açores et au-delà du cap Bojador. Il n'a lui-même mené aucune expédition lointaine, et la légende d'une « école de navigation » à Sagres est largement postérieure à lui.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Henri_le_Navigateur",
+                  "classement": "Henri le Navigateur",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_henri.jpg",
+                    "legende": "Henri le Navigateur, miniature de la « Chronique de Guinée » de Gomes Eanes de Zurara (manuscrit de 1453)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Henry_the_Navigator_(Cronicas).jpg"
+                  }
+                },
+                {
+                  "id": "pan_pt_almeida",
+                  "axe": "Guerres, résistances et exploration",
+                  "date": 1450,
+                  "titre": "Naissance de Francisco de Almeida",
+                  "description": "Francisco de Almeida (vers 1450-1510) est un noble portugais, premier vice-roi des Indes portugaises à partir de 1505. Il vainc en 1509 la flotte alliée d'Égypte et de Gujarat à Diu, ce qui assure aux Portugais la maîtrise de l'océan Indien, et prône une domination par la mer plutôt que par la terre. Il est tué en 1510 par des Khoïkhoïs lors d'un affrontement près de la baie de la Table, sur le chemin du retour.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Francisco_de_Almeida",
+                  "classement": "Almeida, Francisco de",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_almeida.jpg",
+                    "legende": "Francisco de Almeida, portrait anonyme réalisé après 1545 : une image posthume",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Retrato_de_D._Francisco_de_Almeida_(ap%C3%B3s_1545)_-_Autor_desconhecido.png"
+                  }
+                },
+                {
+                  "id": "pan_pt_dias",
+                  "axe": "Guerres, résistances et exploration",
+                  "date": 1450,
+                  "titre": "Naissance de Bartolomeu Dias",
+                  "description": "Bartolomeu Dias (vers 1450-1500) est un navigateur portugais, premier Européen à doubler le cap de Bonne-Espérance. Envoyé par Jean II, il dépasse en 1488 l'extrémité sud de l'Afrique, puis son équipage épuisé l'oblige à rebrousser chemin à la hauteur de la baie d'Algoa. Il meurt en mai 1500 dans une tempête, au large du cap, pendant l'expédition de Cabral.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bartolomeu_Dias",
+                  "classement": "Dias, Bartolomeu",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_dias.jpg",
+                    "legende": "Bartolomeu Dias, statue de South Africa House à Londres : aucun portrait de son temps n'est connu",
+                    "auteur": "RedCoat, modifié par Biser Todorov",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Bartolomeu_Dias,_South_Africa_House_(cut).JPG"
+                  }
+                },
+                {
+                  "id": "pan_pt_diogocao",
+                  "axe": "Guerres, résistances et exploration",
+                  "date": 1452,
+                  "titre": "Naissance de Diogo Cão",
+                  "description": "Diogo Cão (1452-vers 1486) est un navigateur portugais envoyé par Jean II explorer la côte occidentale de l'Afrique. Il découvre l'embouchure du Congo vers 1482, y dresse un pilier de pierre aux armes du Portugal et remonte le fleuve. Lors d'un second voyage, il atteint la côte de l'actuelle Namibie, puis on perd sa trace vers 1486.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Diogo_C%C3%A3o",
+                  "classement": "Cão, Diogo",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_diogocao.jpg",
+                    "legende": "Diogo Cão, gravure de la Monnaie nationale portugaise : une image imaginaire, aucun portrait de son temps n'est connu",
+                    "auteur": "Monnaie nationale portugaise",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Diogo_C%C3%A3o.jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_pt_albuquerque",
+                  "axe": "Guerres, résistances et exploration",
+                  "date": 1453,
+                  "titre": "Naissance d'Afonso de Albuquerque",
+                  "description": "Afonso de Albuquerque (1453-1515) est un amiral et administrateur portugais, gouverneur de l'Inde portugaise à partir de 1509. Il prend Goa en 1510 et Malacca en 1511, et s'assure Ormuz, à l'entrée du golfe Persique, bâtissant ainsi un réseau de forteresses qui contrôle les routes de l'océan Indien. Il meurt en vue de Goa en décembre 1515, après avoir appris que le roi Manuel Ier venait de le remplacer.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Afonso_de_Albuquerque",
+                  "classement": "Albuquerque, Afonso de",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_albuquerque.jpg",
+                    "legende": "Afonso de Albuquerque, gravure de Johann Adolf Rossmässler (vers 1810) : un portrait imaginaire, près de trois siècles après sa mort",
+                    "auteur": "Johann Adolf Rossmässler (1770-1821)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Afonso_de_Albuquerque_2.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pt_jean2",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1455,
+                  "titre": "Naissance de Jean II de Portugal",
+                  "description": "Jean II de Portugal (1455-1495) est le roi qui brise le pouvoir de la haute noblesse, surnommé le Prince parfait. Il fait exécuter le duc de Bragance en 1483, refuse le projet de Christophe Colomb et envoie Bartolomeu Dias doubler le cap de Bonne-Espérance. Par le traité de Tordesillas, signé en 1494, il obtient de l'Espagne une ligne de partage du monde repoussée vers l'ouest.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jean_II_(roi_de_Portugal)",
+                  "classement": "Jean II de Portugal",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_jean2.jpg",
+                    "legende": "Jean II de Portugal, portrait anonyme du XVIe siècle, avec une inscription latine",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Dom_Joao_II_de_Portugal.jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_pt_pacheco",
+                  "axe": "Guerres, résistances et exploration",
+                  "date": 1460,
+                  "titre": "Naissance de Duarte Pacheco Pereira",
+                  "description": "Duarte Pacheco Pereira (vers 1460-1533) est un navigateur, cosmographe et soldat portugais. Négociateur du traité de Tordesillas en 1494, il écrit l'« Esmeraldo de situ orbis », description des côtes d'Afrique de l'Ouest, et défend en 1504 la place de Cochin contre le zamorin de Calicut. Selon une thèse débattue, il aurait reconnu les côtes du Brésil dès 1498.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Duarte_Pacheco_Pereira",
+                  "classement": "Pacheco Pereira, Duarte",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_pacheco.jpg",
+                    "legende": "Duarte Pacheco Pereira, portrait anonyme du XVIIe siècle conservé à l'École navale de Lisbonne : une image posthume",
+                    "auteur": "Auteur anonyme",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Duarte_Pacheco_Pereira_(Escola_Naval).jpg"
+                  }
+                },
+                {
+                  "id": "pan_pt_gilvicente",
+                  "axe": "Littérature et pensée",
+                  "date": 1465,
+                  "titre": "Naissance de Gil Vicente",
+                  "description": "Gil Vicente (vers 1465-vers 1537) est un dramaturge et poète portugais, considéré comme le père du théâtre portugais. Il écrit et met en scène, à la cour de Manuel Ier puis de Jean III, une cinquantaine de pièces qui mêlent farce, satire sociale et religiosité, dont l'« Auto da Barca do Inferno ». Il écrit aussi bien en portugais qu'en castillan, selon le public de la cour.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Gil_Vicente",
+                  "classement": "Vicente, Gil",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_gilvicente.jpg",
+                    "legende": "Gil Vicente écrivant, dessin moderne de Victor Couto (2009) : aucun portrait de son temps n'est connu",
+                    "auteur": "Victor Couto",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Imagem158_Gil_Vicente,_escrevendo._Sepia.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pt_cabral",
+                  "axe": "Guerres, résistances et exploration",
+                  "date": 1467,
+                  "titre": "Naissance de Pedro Álvares Cabral",
+                  "description": "Pedro Álvares Cabral (1467-vers 1520) est un navigateur portugais, commandant de la deuxième flotte envoyée aux Indes. Écarté de sa route par les vents, il touche en avril 1500 la côte du futur Brésil, qu'il revendique pour le roi Manuel Ier, puis poursuit vers Calicut. Le voyage coûte cher en hommes : il ne ramène que sept des treize navires partis.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Pedro_%C3%81lvares_Cabral",
+                  "classement": "Cabral, Pedro Álvares",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_cabral.jpg",
+                    "legende": "Pedro Álvares Cabral, gravure sur acier de l'American Bank Note Company (début du XIXe siècle) : un portrait imaginaire",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Pedro_%C3%81lvares_Cabral_-_steel_engraving_by_American_Bank_Note_Company.jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_pt_gama",
+                  "axe": "Guerres, résistances et exploration",
+                  "date": 1469,
+                  "titre": "Naissance de Vasco de Gama",
+                  "description": "Vasco de Gama (vers 1469-1524) est un navigateur portugais, premier Européen à gagner l'Inde par la mer. Parti de Lisbonne en 1497, il double le cap de Bonne-Espérance, remonte la côte orientale de l'Afrique et atteint Calicut en mai 1498, guidé à la fin par un pilote engagé en Afrique de l'Est. Nommé vice-roi des Indes en 1524, il meurt à Cochin quelques mois après son arrivée.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Vasco_de_Gama",
+                  "classement": "Gama, Vasco de",
+                  "biographie": "bio_gama",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_gama.jpg",
+                    "legende": "Vasco de Gama, peinture d'António Manuel da Fonseca (1838) : un portrait posthume",
+                    "auteur": "António Manuel da Fonseca (1796-1890)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Vasco_da_Gama_-_1838.png"
+                  }
+                },
+                {
+                  "id": "pan_pt_manuel1",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1469,
+                  "titre": "Naissance de Manuel Ier de Portugal",
+                  "description": "Manuel Ier de Portugal (1469-1521) est le roi qui règne quand le Portugal atteint les Indes et le Brésil, surnommé le Fortuné. Il envoie Vasco de Gama en 1497, Cabral en 1500 et Afonso de Albuquerque, et fait bâtir le monastère des Hiéronymites, chef-d'œuvre du style manuélin. Il impose en 1496-1497 l'expulsion ou la conversion forcée des juifs du royaume, un acte qui marque durablement son règne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Manuel_Ier_(roi_de_Portugal)",
+                  "classement": "Manuel Ier de Portugal",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_manuel1.jpg",
+                    "legende": "Manuel Ier, portrait anonyme de l'école portugaise (XVIIIe siècle) : une image posthume, avec son nom inscrit",
+                    "auteur": "École portugaise",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Retrato_de_dom_Manuel_I.jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_pt_magellan",
+                  "axe": "Guerres, résistances et exploration",
+                  "date": 1480,
+                  "titre": "Naissance de Fernand de Magellan",
+                  "description": "Fernand de Magellan (vers 1480-1521) est un navigateur portugais au service de l'Espagne. À la tête de l'expédition qui quitte Séville en 1519, il découvre le détroit qui porte son nom et traverse l'océan qu'il appelle Pacifique. Il est tué aux Philippines en avril 1521, et c'est Elcano qui achève le premier tour du monde.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Fernand_de_Magellan",
+                  "classement": "Magellan, Fernand de",
+                  "biographie": "bio_magellan",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_magellan.jpg",
+                    "legende": "Fernand de Magellan, portrait posthume (XVIe ou XVIIe siècle), avec une inscription latine sur le détroit qui porte son nom",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ferdinand_Magellan.jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_pt_samiranda",
+                  "axe": "Littérature et pensée",
+                  "date": 1481,
+                  "titre": "Naissance de Sá de Miranda",
+                  "description": "Sá de Miranda (1481-1558) est un poète portugais, né à Coimbra, qui introduit dans son pays les formes italiennes de la Renaissance. Revenu d'Italie en 1526, il apporte le sonnet et le vers de dix syllabes, qu'il emploie dans des églogues, des épîtres et des comédies. Retiré dans le Minho à partir de 1530 environ, il y écrit des satires de la vie de cour.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/S%C3%A1_de_Miranda",
+                  "classement": "Sá de Miranda",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_samiranda.jpg",
+                    "legende": "Sá de Miranda, portrait du XVIe siècle",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Francisco_de_S%C3%A1_de_Miranda.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pt_orta",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1501,
+                  "titre": "Naissance de Garcia de Orta",
+                  "description": "Garcia de Orta (1501-1568) est un médecin et naturaliste portugais, fils de juifs expulsés d'Espagne, installé à Goa à partir de 1534. Il publie en 1563 les Colloques sur les simples et les drogues de l'Inde, premier grand traité européen sur les plantes médicinales asiatiques, fondé sur l'observation. Sa sœur est brûlée par l'Inquisition en 1569, et ses propres restes sont exhumés et brûlés en 1580.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Garcia_de_Orta",
+                  "classement": "Orta, Garcia de",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_orta.jpg",
+                    "legende": "Garcia de Orta, statue : aucun portrait de son temps n'est connu, et le nom est gravé sur le socle",
+                    "auteur": "JotaCartas",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Garcia_de_Orta_-_estatua.jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_pt_goes",
+                  "axe": "Littérature et pensée",
+                  "date": 1502,
+                  "titre": "Naissance de Damião de Góis",
+                  "description": "Damião de Góis (1502-1574) est un humaniste et historien portugais, ami d'Érasme. Diplomate et voyageur dans toute l'Europe du Nord, il écrit la Chronique du roi Manuel Ier, publiée en 1566-1567. Jugé en 1571 par l'Inquisition, il est condamné à la prison et meurt peu après sa sortie, dans des circonstances mal élucidées.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Dami%C3%A3o_de_G%C3%B3is",
+                  "classement": "Góis, Damião de",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_goes.jpg",
+                    "legende": "Damião de Góis, portrait de l'école des Pays-Bas méridionaux (XVIe siècle), parfois attribué à Jan Gossaert",
+                    "auteur": "École des Pays-Bas méridionaux (XVIe siècle)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Dami%C3%A3o_de_G%C3%B3is.png"
+                  }
+                },
+                {
+                  "id": "pan_pt_nunes",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1502,
+                  "titre": "Naissance de Pedro Nunes",
+                  "description": "Pedro Nunes (1502-1578) est un mathématicien et cosmographe portugais, né à Alcácer do Sal. Professeur à l'université de Coimbra et cosmographe du royaume, il montre qu'une route à cap constant est une courbe, la loxodromie, et invente le nonius, instrument de mesure des angles. Ses calculs forment les pilotes des Découvertes à la navigation astronomique.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Pedro_Nunes",
+                  "classement": "Nunes, Pedro",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_nunes.jpg",
+                    "legende": "Pedro Nunes, gravure ancienne",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Pedro_Nunes_ritratto.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pt_mendespinto",
+                  "axe": "Littérature et pensée",
+                  "date": 1509,
+                  "titre": "Naissance de Fernão Mendes Pinto",
+                  "description": "Fernão Mendes Pinto (vers 1509-1583) est un aventurier et écrivain portugais, né dans la région de Coimbra. Pendant plus de vingt ans, il parcourt l'Asie, de l'Inde à la Chine et au Japon, qu'il aurait été l'un des premiers Européens à atteindre, en 1543. Sa Pérégrination, publiée après sa mort en 1614, mêle récit de voyage et fiction, au point qu'on a longtemps douté de sa véracité.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Fern%C3%A3o_Mendes_Pinto",
+                  "classement": "Mendes Pinto, Fernão",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_mendespinto.jpg",
+                    "legende": "Fernão Mendes Pinto, gravure ancienne : une image imaginaire",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Fernao_Mendes_Pinto.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pt_camoes",
+                  "axe": "Littérature et pensée",
+                  "date": 1525,
+                  "titre": "Naissance de Luís de Camões",
+                  "description": "Luís de Camões (vers 1525-1580) est un poète portugais, considéré comme le plus grand de sa langue. Soldat, il perd l'œil droit en combattant à Ceuta, puis passe de longues années en Inde et à Macao. Il publie en 1572 Les Lusiades, épopée nationale qui chante le voyage de Vasco de Gama, et meurt à Lisbonne en 1580.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Lu%C3%ADs_de_Cam%C3%B5es",
+                  "classement": "Camões, Luís de",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_camoes.jpg",
+                    "legende": "Luís de Camões, portrait de Fernão Gomes (vers 1577)",
+                    "auteur": "Fernão Gomes (1548-1612)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Cam%C3%B5es,_por_Fern%C3%A3o_Gomes.jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_pt_sebastien",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1554,
+                  "titre": "Naissance de Sébastien Ier de Portugal",
+                  "description": "Sébastien Ier de Portugal (1554-1578) est un roi surnommé le Désiré, né après la mort de son père. Obsédé par l'idée d'une croisade au Maroc, il lève une armée et meurt en 1578 à la bataille des Trois Rois, près de Ksar el-Kébir. Son corps n'ayant pas été identifié avec certitude, naît le « sébastianisme », l'attente de son retour, tandis que le trône passe au cardinal Henri puis à Philippe II d'Espagne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/S%C3%A9bastien_Ier",
+                  "classement": "Sébastien Ier de Portugal",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_sebastien.jpg",
+                    "legende": "Sébastien Ier, portrait de Cristóvão de Morais (1571)",
+                    "auteur": "Cristóvão de Morais",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Sebasti%C3%A3o_de_Portugal,_c._1571-1574_-_Crist%C3%B3v%C3%A3o_de_Morais_(Google_Art_Project).jpg"
+                  }
+                },
+                {
+                  "id": "pan_pt_jean4",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1604,
+                  "titre": "Naissance de Jean IV de Portugal",
+                  "description": "Jean IV de Portugal (1604-1656) est un duc de Bragance, fondateur de la dynastie qui porte ce nom. Acclamé roi le 1er décembre 1640, après soixante ans d'union avec l'Espagne, il ouvre la guerre de Restauration contre Madrid. Grand mélomane, il constitue une immense bibliothèque musicale, détruite en 1755 par le tremblement de terre de Lisbonne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jean_IV_(roi_de_Portugal)",
+                  "classement": "Jean IV de Portugal",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_jean4.jpg",
+                    "legende": "Jean IV de Portugal, alors duc de Bragance, portrait de l'atelier de Rubens (vers 1628)",
+                    "auteur": "Atelier de Rubens",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Portrait_of_John,_Duke_of_Braganza_c._1630_(The_Royal_Castle_in_Warsaw).png"
+                  }
+                },
+                {
+                  "id": "pan_pt_vieira",
+                  "axe": "Littérature et pensée",
+                  "date": 1608,
+                  "titre": "Naissance d'António Vieira",
+                  "description": "António Vieira (1608-1697) est un jésuite portugais, né à Lisbonne et élevé au Brésil, grand prédicateur de langue portugaise. Il défend les Indiens du Brésil contre leur esclavage, plaide pour les juifs convertis et est poursuivi par l'Inquisition. Ses sermons, où se mêlent éloquence baroque et critique sociale, en font l'un des classiques de la prose portugaise.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ant%C3%B3nio_Vieira",
+                  "classement": "Vieira, António",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_vieira.jpg",
+                    "legende": "António Vieira, portrait du début du XVIIIe siècle : une image posthume",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Padre_Ant%C3%B3nio_Vieira.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pt_josefa",
+                  "axe": "Beaux-arts",
+                  "date": 1630,
+                  "titre": "Naissance de Josefa de Óbidos",
+                  "description": "Josefa de Óbidos (1630-1684) est une peintre portugaise, née à Séville et installée à Óbidos. Elle réalise des natures mortes, des scènes religieuses et des portraits dans un style baroque aux couleurs chaudes. Elle est l'une des rares femmes de son siècle à vivre de sa peinture, et sans doute la peintre portugaise la plus célèbre de son temps.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Josefa_de_%C3%93bidos",
+                  "classement": "Josefa de Óbidos",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_josefa.jpg",
+                    "legende": "Scène de la Nativité, tableau de Josefa de Óbidos : on montre son œuvre, faute de portrait libre d'elle",
+                    "auteur": "Josefa de Óbidos (1630-1684)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:JosefaObidos1.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pt_catherine",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1638,
+                  "titre": "Naissance de Catherine de Bragance",
+                  "description": "Catherine de Bragance (1638-1705) est une infante du Portugal devenue reine d'Angleterre en épousant Charles II en 1662. Sa dot comprend Tanger et Bombay et scelle l'alliance anglo-portugaise, que le traité de Windsor de 1386 avait déjà fondée. Rentrée à Lisbonne en 1692, elle assure la régence du royaume en 1704, pendant la maladie de son frère Pierre II.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Catherine_de_Bragance",
+                  "classement": "Catherine de Bragance",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_catherine.jpg",
+                    "legende": "Catherine de Bragance, portrait de Peter Lely (vers 1663-1665)",
+                    "auteur": "Peter Lely (1618-1680)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Catherine_of_Braganza_-_Lely_1663-65.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pt_jean5",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1689,
+                  "titre": "Naissance de Jean V de Portugal",
+                  "description": "Jean V de Portugal (1689-1750) est un roi surnommé le Magnanime, qui règne sur un Portugal enrichi par l'or du Brésil. Il fait construire le palais-couvent de Mafra, la bibliothèque de l'université de Coimbra et l'aqueduc des Eaux-Libres de Lisbonne. Mécène fastueux, il obtient du pape le patriarcat de Lisbonne en 1716, puis pour ses successeurs le titre de « Roi très fidèle ».",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jean_V_(roi_de_Portugal)",
+                  "classement": "Jean V de Portugal",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_jean5.jpg",
+                    "legende": "Jean V de Portugal, portrait de Jean Ranc (1729)",
+                    "auteur": "Jean Ranc (1674-1735)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:D._Jo%C3%A3o_V_(1689-1750)_Hd.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pt_pombal",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1699,
+                  "titre": "Naissance du marquis de Pombal",
+                  "description": "Le marquis de Pombal (1699-1782) est le ministre tout-puissant du roi Joseph Ier, de son nom Sebastião José de Carvalho e Melo. Après le tremblement de terre de Lisbonne de 1755, il dirige la reconstruction de la Baixa selon un plan en damier, puis expulse les jésuites en 1759. Despote éclairé, il réforme l'enseignement et l'économie, mais réprime brutalement l'opposition, notamment la famille Távora, et tombe en disgrâce à la mort du roi.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sebasti%C3%A3o_Jos%C3%A9_de_Carvalho_e_Melo",
+                  "classement": "Pombal, marquis de",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_pombal.jpg",
+                    "legende": "Le marquis de Pombal, portrait anonyme du XVIIIe siècle",
+                    "auteur": "Auteur anonyme",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Retrato_do_Marques_de_Pombal.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pt_sequeira",
+                  "axe": "Beaux-arts",
+                  "date": 1768,
+                  "titre": "Naissance de Domingos Sequeira",
+                  "description": "Domingos Sequeira (1768-1837) est un peintre portugais, né à Lisbonne et mort à Rome. Premier peintre de la cour, il quitte le Portugal en 1823 pour un exil à Paris puis à Rome. Son Adoration des Mages, peinte en 1828, et ses nombreux dessins, qui annoncent le romantisme, en font le plus grand peintre portugais de son temps.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Domingos_Sequeira",
+                  "classement": "Sequeira, Domingos",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_sequeira.jpg",
+                    "legende": "Domingos Sequeira, autoportrait",
+                    "auteur": "Domingos Sequeira",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Domingos_Ant%C3%B3nio_Sequeira.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pt_garrett",
+                  "axe": "Littérature et pensée",
+                  "date": 1799,
+                  "titre": "Naissance d'Almeida Garrett",
+                  "description": "Almeida Garrett (1799-1854) est un écrivain et homme politique portugais, né à Porto, figure du romantisme. Libéral exilé en Angleterre et en France, il publie le poème Camões en 1825 puis fonde le Théâtre national, et ses Voyages dans mon pays, parus en 1846, donnent une place nouvelle à la langue parlée. Député et ministre, il meurt à Lisbonne en 1854.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Almeida_Garrett",
+                  "classement": "Almeida Garrett",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_garrett.jpg",
+                    "legende": "Almeida Garrett, portrait de Pedro Augusto Guglielmi (1844)",
+                    "auteur": "Pedro Augusto Guglielmi",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Almeida_Garrett_por_Guglielmi.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pt_herculano",
+                  "axe": "Littérature et pensée",
+                  "date": 1810,
+                  "titre": "Naissance d'Alexandre Herculano",
+                  "description": "Alexandre Herculano (1810-1877) est un historien, romancier et poète portugais, figure du romantisme. Libéral, il fonde l'histoire du Portugal sur les archives, avec son Histoire du Portugal publiée de 1846 à 1853, et introduit le roman historique avec Eurico le prêtre. Il se retire en 1867 à Vale de Lobos, à la campagne, pour y cultiver la terre loin de la vie politique.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Alexandre_Herculano",
+                  "classement": "Herculano, Alexandre",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_herculano.jpg",
+                    "legende": "Alexandre Herculano, portrait gravé ancien, signé au bas de l'image",
+                    "auteur": "José Rodrigues",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Alexandre_Herculano.jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_pt_severa",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1820,
+                  "titre": "Naissance de Maria Severa Onofriana",
+                  "description": "Maria Severa Onofriana (1820-1846) est une chanteuse portugaise, considérée comme la première grande fadiste. Née à Lisbonne, elle chante dans les tavernes de la Mouraria et vit une histoire d'amour avec le comte de Vimioso, qui entre dans la légende du fado. Morte de la tuberculose à vingt-six ans, elle devient le mythe fondateur de ce genre.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Maria_Severa_Onofriana",
+                  "classement": "Severa, Maria",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_severa.jpg",
+                    "legende": "Maria Severa, dessin de Francisco Augusto Metrass (avant 1861)",
+                    "auteur": "Francisco Augusto Metrass (1825-1861)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Maria_Severa_-_Fado-S%C3%A4ngerin.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pt_camilo",
+                  "axe": "Littérature et pensée",
+                  "date": 1825,
+                  "titre": "Naissance de Camilo Castelo Branco",
+                  "description": "Camilo Castelo Branco (1825-1890) est un romancier portugais, né à Lisbonne et orphelin de bonne heure. Il écrit plus de cent ouvrages, dont Amour de perdition en 1862, récit composé en prison après un procès pour adultère. Devenu presque aveugle, il se tue d'un coup de pistolet en 1890.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Camilo_Castelo_Branco",
+                  "classement": "Castelo Branco, Camilo",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_camilo.jpg",
+                    "legende": "Camilo Castelo Branco, photographie (1886)",
+                    "auteur": "Photographe inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Camilo_Castelo_Branco_Bohemia_do_Espirito.png"
+                  }
+                },
+                {
+                  "id": "pan_pt_antero",
+                  "axe": "Littérature et pensée",
+                  "date": 1842,
+                  "titre": "Naissance d'Antero de Quental",
+                  "description": "Antero de Quental (1842-1891) est un poète et penseur portugais, né à Ponta Delgada, aux Açores. Meneur de la « Question de Coimbra » contre le romantisme, il écrit des sonnets d'une grande intensité philosophique et défend un socialisme proche de celui de Proudhon. Dépressif, il se donne la mort en 1891 dans sa ville natale.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Antero_de_Quental",
+                  "classement": "Quental, Antero de",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_antero.jpg",
+                    "legende": "Antero de Quental vers 1887, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Antero_de_Quental_(ca._1887).jpg"
+                  }
+                },
+                {
+                  "id": "pan_pt_eca",
+                  "axe": "Littérature et pensée",
+                  "date": 1845,
+                  "titre": "Naissance d'Eça de Queiroz",
+                  "description": "Eça de Queiroz (1845-1900) est un romancier et diplomate portugais, chef de file du réalisme. Consul à La Havane, à Newcastle, à Bristol puis à Paris, il écrit Le Crime du père Amaro, Le Cousin Basile et Les Maia, qui disséquent la société portugaise. Son ironie et sa maîtrise de la langue en font l'un des grands romanciers européens du XIXe siècle.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/E%C3%A7a_de_Queiroz",
+                  "classement": "Queiroz, Eça de",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_eca.jpg",
+                    "legende": "Eça de Queiroz vers 1882, photographie",
+                    "auteur": "Photographia Contemporanea",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:E%C3%A7a_de_Queir%C3%B3s_c._1882.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pt_rafaelbordalo",
+                  "axe": "Beaux-arts",
+                  "date": 1846,
+                  "titre": "Naissance de Rafael Bordalo Pinheiro",
+                  "description": "Rafael Bordalo Pinheiro (1846-1905) est un dessinateur, caricaturiste et céramiste portugais, né à Lisbonne. Il crée en 1875 le personnage de Zé Povinho, incarnation du petit peuple portugais, et publie des journaux satiriques comme António Maria. Il fonde à Caldas da Rainha une fabrique de faïence aux formes naturalistes, toujours en activité.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Rafael_Bordalo_Pinheiro",
+                  "classement": "Bordalo Pinheiro, Rafael",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_rafaelbordalo.jpg",
+                    "legende": "Rafael Bordalo Pinheiro, photographie (avant 1905)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:RafaelBordaloPinheiro.png"
+                  }
+                },
+                {
+                  "id": "pan_pt_soaresdosreis",
+                  "axe": "Beaux-arts",
+                  "date": 1847,
+                  "titre": "Naissance d'António Soares dos Reis",
+                  "description": "António Soares dos Reis (1847-1889) est un sculpteur portugais, né à Vila Nova de Gaia. Formé à Paris et à Rome, il réalise en 1872 L'Exilé, chef-d'œuvre de la sculpture portugaise du XIXe siècle, qui montre un jeune homme saisi de nostalgie. Il se donne la mort en 1889, à quarante et un ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ant%C3%B3nio_Soares_dos_Reis",
+                  "classement": "Soares dos Reis, António",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_soaresdosreis.jpg",
+                    "legende": "António Soares dos Reis, statue à Vila Nova de Gaia",
+                    "auteur": "Manuel de Sousa",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Soares_dos_Reis_(VN_Gaia).JPG"
+                  }
+                },
+                {
+                  "id": "pan_pt_cesario",
+                  "axe": "Littérature et pensée",
+                  "date": 1855,
+                  "titre": "Naissance de Cesário Verde",
+                  "description": "Cesário Verde (1855-1886) est un poète portugais, né à Lisbonne. Fils de commerçant, il met dans ses poèmes la ville et la campagne en images précises, notamment dans « O Sentimento dum Ocidental ». Mort de la tuberculose à trente et un ans, il publie très peu de son vivant et n'est reconnu qu'après sa mort.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ces%C3%A1rio_Verde",
+                  "classement": "Verde, Cesário",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_cesario.jpg",
+                    "legende": "Cesário Verde, portrait de Columbano Bordalo Pinheiro",
+                    "auteur": "Columbano Bordalo Pinheiro (1857-1929)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Cesario_Verde.JPG"
+                  }
+                },
+                {
+                  "id": "pan_pt_malhoa",
+                  "axe": "Beaux-arts",
+                  "date": 1855,
+                  "titre": "Naissance de José Malhoa",
+                  "description": "José Malhoa (1855-1933) est un peintre naturaliste portugais, né à Caldas da Rainha. Membre du Grupo do Leão, il peint des scènes populaires et des portraits. Son tableau Le Fado, de 1910, est resté l'image d'une culture lisboète.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jos%C3%A9_Malhoa",
+                  "classement": "Malhoa, José",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_malhoa.jpg",
+                    "legende": "José Malhoa, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jose_malhoa.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pt_columbano",
+                  "axe": "Beaux-arts",
+                  "date": 1857,
+                  "titre": "Naissance de Columbano Bordalo Pinheiro",
+                  "description": "Columbano Bordalo Pinheiro (1857-1929) est un peintre portugais, frère de Rafael Bordalo Pinheiro. Formé à Paris, il peint des portraits d'une grande finesse psychologique, dont celui du Grupo do Leão en 1885. Il dirige à partir de 1914 le Musée national d'art contemporain de Lisbonne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Columbano_Bordalo_Pinheiro",
+                  "classement": "Bordalo Pinheiro, Columbano",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_columbano.jpg",
+                    "legende": "Columbano Bordalo Pinheiro, portrait ancien",
+                    "auteur": "Columbano Bordalo Pinheiro (1857-1929)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Columbano_Bordalo_Pinheiro_007.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pt_carlos1",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1863,
+                  "titre": "Naissance de Charles Ier de Portugal",
+                  "description": "Charles Ier de Portugal (1863-1908) est l'avant-dernier roi du Portugal. Passionné d'océanographie et de peinture, il mène lui-même des campagnes de mesures en mer, mais son règne est miné par l'ultimatum britannique de 1890, la faillite de l'État et l'essor républicain. Il est assassiné à Lisbonne le 1er février 1908, avec son fils aîné, par deux républicains.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Charles_Ier_(roi_de_Portugal)",
+                  "classement": "Charles Ier de Portugal",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_carlos1.jpg",
+                    "legende": "Charles Ier de Portugal, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:S.M.F._El-Rei_D._Carlos_I_de_Portugal_(cropped_2).jpg"
+                  }
+                },
+                {
+                  "id": "pan_pt_gagocoutinho",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1869,
+                  "titre": "Naissance de Gago Coutinho",
+                  "description": "Gago Coutinho (1869-1959) est un amiral, géographe et aviateur portugais, né à Lisbonne. Spécialiste de la navigation, il met au point avec Sacadura Cabral un sextant à horizon artificiel pour voler au-dessus de l'océan. En 1922, les deux aviateurs réalisent la première traversée aérienne de l'Atlantique Sud, de Lisbonne à Rio de Janeiro.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Gago_Coutinho",
+                  "classement": "Gago Coutinho",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_gagocoutinho.jpg",
+                    "legende": "Gago Coutinho, buste en bronze",
+                    "auteur": "Carlos Luis M C da Cruz",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Gago_coutinho.JPG"
+                  }
+                },
+                {
+                  "id": "pan_pt_afonsocosta",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1871,
+                  "titre": "Naissance d'Afonso Costa",
+                  "description": "Afonso Costa (1871-1937) est un juriste et homme politique républicain portugais, né à Seia. Ministre de la Justice du gouvernement provisoire de 1910, il fait voter la loi de séparation de l'Église et de l'État, puis dirige le gouvernement à plusieurs reprises, notamment au moment de l'entrée du Portugal dans la Première Guerre mondiale, en 1916. En exil depuis 1926, il meurt à Paris en 1937.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Afonso_Costa",
+                  "classement": "Costa, Afonso",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_afonsocosta.jpg",
+                    "legende": "Afonso Costa, photographie (1904)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Afonso_Costa.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pt_moniz",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1874,
+                  "titre": "Naissance d'Egas Moniz",
+                  "description": "Egas Moniz (1874-1955) est un neurologue et homme politique portugais, né à Avanca. Il met au point en 1927 l'angiographie cérébrale, qui rend visibles les vaisseaux du cerveau, puis la leucotomie préfrontale. Il reçoit pour cette dernière le prix Nobel de médecine en 1949, une distinction très critiquée depuis à cause des séquelles des lobotomies.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Egas_Moniz",
+                  "classement": "Egas Moniz",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_moniz.jpg",
+                    "legende": "Egas Moniz, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Moniz.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pt_sousamendes",
+                  "axe": "Guerres, résistances et exploration",
+                  "date": 1885,
+                  "titre": "Naissance d'Aristides de Sousa Mendes",
+                  "description": "Aristides de Sousa Mendes (1885-1954) est un diplomate portugais, consul à Bordeaux en 1940. Contre les ordres de Salazar, il signe en quelques jours plusieurs milliers de visas pour des réfugiés qui fuient l'avancée allemande, dont de nombreux juifs. Révoqué et ruiné, il meurt dans la pauvreté ; il est reconnu Juste parmi les nations en 1966 et réhabilité par le Parlement en 1988.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Aristides_de_Sousa_Mendes",
+                  "classement": "Sousa Mendes, Aristides de",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_sousamendes.jpg",
+                    "legende": "Aristides de Sousa Mendes en 1940, photographie",
+                    "auteur": "Photographe inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Aristides_de_Sousa_Mendes,_1940.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pt_amadeo",
+                  "axe": "Beaux-arts",
+                  "date": 1887,
+                  "titre": "Naissance d'Amadeo de Souza-Cardoso",
+                  "description": "Amadeo de Souza-Cardoso (1887-1918) est un peintre portugais, né près d'Amarante. Installé à Paris, ami de Modigliani, de Brancusi et des Delaunay, il mêle cubisme, futurisme et expressionnisme dans une œuvre qui fait de lui un artiste majeur de l'avant-garde européenne. Mort de la grippe espagnole à trente ans, il n'est reconnu que bien plus tard.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Amadeo_de_Souza-Cardoso",
+                  "classement": "Souza-Cardoso, Amadeo de",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_amadeo.jpg",
+                    "legende": "Une toile d'Amadeo de Souza-Cardoso (1914) : on montre son œuvre, faute de portrait libre de lui",
+                    "auteur": "Amadeo de Souza-Cardoso (1887-1918)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Amadeo_de_Souza-Cardoso-6.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pt_pessoa",
+                  "axe": "Littérature et pensée",
+                  "date": 1888,
+                  "titre": "Naissance de Fernando Pessoa",
+                  "description": "Fernando Pessoa (1888-1935) est un poète portugais né à Lisbonne et élevé en Afrique du Sud. Il écrit sous la signature de nombreux hétéronymes, dont Alberto Caeiro, Ricardo Reis et Álvaro de Campos, qu'il dote chacun d'une biographie et d'un style. Presque inconnu à sa mort, il laisse dans une malle des dizaines de milliers de feuillets, dont le Livre de l'intranquillité.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Fernando_Pessoa",
+                  "classement": "Pessoa, Fernando",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_pessoa.jpg",
+                    "legende": "Fernando Pessoa en 1914, photographie",
+                    "auteur": "S.A. e Maria José de Lencastre",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:216_2310-Fernando-Pessoa.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pt_salazar",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1889,
+                  "titre": "Naissance d'António de Oliveira Salazar",
+                  "description": "António de Oliveira Salazar (1889-1970) est un professeur d'économie devenu président du Conseil portugais. Ministre des Finances en 1928, il dirige le pays de 1932 à 1968 et institue l'Estado Novo, un régime autoritaire et corporatiste appuyé sur la censure et la police politique, la PIDE. Il maintient le Portugal hors de la Seconde Guerre mondiale, mais dans ses guerres coloniales, jusqu'à ce qu'une chute le laisse invalide en 1968.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ant%C3%B3nio_de_Oliveira_Salazar",
+                  "classement": "Salazar, António de Oliveira",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_salazar.jpg",
+                    "legende": "Salazar, portrait par Manuel Alves San Payo",
+                    "auteur": "Manuel Alves de San Payo (1890-1974)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ant%C3%B3nio_de_Oliveira_Salazar_portrait_(by_Manuel_Alves_San_Payo)_%E2%80%93_Lisboa.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pt_sacarneirom",
+                  "axe": "Littérature et pensée",
+                  "date": 1890,
+                  "titre": "Naissance de Mário de Sá-Carneiro",
+                  "description": "Mário de Sá-Carneiro (1890-1916) est un poète et romancier portugais, ami proche de Fernando Pessoa. Il fonde avec lui la revue Orpheu en 1915, manifeste du modernisme portugais, et écrit Dispersion et La Confession de Lucio. Installé à Paris, il s'y suicide au poison en 1916, à vingt-cinq ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/M%C3%A1rio_de_S%C3%A1-Carneiro",
+                  "classement": "Sá-Carneiro, Mário de",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_sacarneirom.jpg",
+                    "legende": "Mário de Sá-Carneiro, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:M%C3%A1rio_de_S%C3%A1-Carneiro.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pt_almada",
+                  "axe": "Beaux-arts",
+                  "date": 1893,
+                  "titre": "Naissance d'Almada Negreiros",
+                  "description": "Almada Negreiros (1893-1970) est un artiste portugais, né à São Tomé. Peintre, écrivain, dessinateur et danseur, il est l'un des fondateurs du modernisme portugais avec la revue Orpheu et signe le Manifeste anti-Dantas en 1915. Il réalise ensuite les fresques des gares maritimes de Lisbonne et le célèbre portrait de Fernando Pessoa, en 1954.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Almada_Negreiros",
+                  "classement": "Almada Negreiros",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_almada.jpg",
+                    "legende": "Almada Negreiros, photographie de Vitoriano Braga",
+                    "auteur": "Vitoriano Braga (1888-1940)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Almada_Negreiros_-_Vitoriano_Braga.png"
+                  }
+                },
+                {
+                  "id": "pan_pt_florbela",
+                  "axe": "Littérature et pensée",
+                  "date": 1894,
+                  "titre": "Naissance de Florbela Espanca",
+                  "description": "Florbela Espanca (1894-1930) est une poétesse portugaise, née à Vila Viçosa, en Alentejo. Autrice de sonnets sur le désir et la solitude, notamment Charneca em Flor, publié après sa mort, elle est l'une des premières femmes à étudier le droit à l'université de Lisbonne. Mariée trois fois, éprouvée par plusieurs tentatives de suicide, elle meurt en 1930 le jour de ses trente-six ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Florbela_Espanca",
+                  "classement": "Espanca, Florbela",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_florbela.jpg",
+                    "legende": "Florbela Espanca, photographie (avant 1930)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Picture_of_Florbela_Espanca.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pt_caetano",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1906,
+                  "titre": "Naissance de Marcelo Caetano",
+                  "description": "Marcelo Caetano (1906-1980) est un juriste et homme d'État portugais, successeur de Salazar à la présidence du Conseil en 1968. Il tente une libéralisation limitée mais poursuit les guerres coloniales, ce qui nourrit le mécontentement de l'armée. Renversé par la révolution des Œillets le 25 avril 1974, il part en exil au Brésil, où il meurt.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Marcelo_Caetano",
+                  "classement": "Caetano, Marcelo",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_caetano.jpg",
+                    "legende": "Marcelo Caetano, photographie d'Anefo (1968)",
+                    "auteur": "Anefo",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Prof._Marcello_Caetano,_minister-president_van_Portugal,_Bestanddeelnr_921-7402_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_pt_delgado",
+                  "axe": "Guerres, résistances et exploration",
+                  "date": 1906,
+                  "titre": "Naissance de Humberto Delgado",
+                  "description": "Humberto Delgado (1906-1965) est un général de l'aviation portugais, surnommé le « général sans peur ». Candidat de l'opposition à l'élection présidentielle de 1958, il est battu dans des conditions jugées frauduleuses, puis révoqué et forcé à l'exil. Il est assassiné en février 1965 près de la frontière espagnole par des agents de la PIDE.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Humberto_Delgado",
+                  "classement": "Delgado, Humberto",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_delgado.jpg",
+                    "legende": "Humberto Delgado, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:General_Humberto_Delgado_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_pt_lopesgraca",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1906,
+                  "titre": "Naissance de Fernando Lopes-Graça",
+                  "description": "Fernando Lopes-Graça (1906-1994) est un compositeur et musicologue portugais, né à Tomar. Il arrange des centaines de chansons populaires recueillies au fil de ses voyages et compose des œuvres pour piano et pour orchestre. Chassé du Conservatoire de Lisbonne en 1936 à cause de ses opinions politiques, il est plusieurs fois arrêté par la dictature.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Fernando_Lopes-Gra%C3%A7a",
+                  "classement": "Lopes-Graça, Fernando",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_lopesgraca.jpg",
+                    "legende": "Fernando Lopes-Graça, photographie des années 1950",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:O_Maestro_Fernando_Lopes-Gra%C3%A7a_(Funda%C3%A7%C3%A3o_M%C3%A1rio_Soares).png"
+                  }
+                },
+                {
+                  "id": "pan_pt_torga",
+                  "axe": "Littérature et pensée",
+                  "date": 1907,
+                  "titre": "Naissance de Miguel Torga",
+                  "description": "Miguel Torga (1907-1995) est un écrivain et médecin portugais, né dans le Trás-os-Montes. Poète, conteur et diariste, il est l'auteur des Contes de la montagne et d'un monumental Journal. Il refuse tout compromis avec la dictature, qui le censure et le fait brièvement emprisonner.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Miguel_Torga",
+                  "classement": "Torga, Miguel",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_torga.jpg",
+                    "legende": "Miguel Torga, dessin au crayon de Bottelho (2003)",
+                    "auteur": "Bottelho (1964-2014)",
+                    "licence": "CC BY 2.5",
+                    "source": "https://commons.wikimedia.org/wiki/File:Miguel_Torga_100anos.png"
+                  }
+                },
+                {
+                  "id": "pan_pt_oliveira",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1908,
+                  "titre": "Naissance de Manoel de Oliveira",
+                  "description": "Manoel de Oliveira (1908-2015) est un cinéaste portugais, né à Porto. Il tourne son premier film muet en 1931, Douro, travail fluvial, et poursuit sa carrière pendant plus de quatre-vingts ans, jusqu'à sa mort à 106 ans. Son cinéma, lent et littéraire, avec des films comme Le Soulier de satin ou Val Abraham, en fait le doyen des cinéastes du monde.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Manoel_de_Oliveira",
+                  "classement": "Oliveira, Manoel de",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_oliveira.jpg",
+                    "legende": "Manoel de Oliveira en 2008, photographie",
+                    "auteur": "Cécilia D.",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Manoel_de_Oliveira_3_juillet_2008.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pt_cunhal",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1913,
+                  "titre": "Naissance d'Álvaro Cunhal",
+                  "description": "Álvaro Cunhal (1913-2005) est un homme politique portugais, secrétaire général du Parti communiste portugais de 1961 à 1992. Emprisonné par la dictature, il s'évade de la forteresse de Peniche en 1960 et vit en exil à Moscou et à Prague. Revenu en 1974, ministre sans portefeuille, il pèse sur la révolution ; il est aussi romancier sous le pseudonyme de Manuel Tiago.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/%C3%81lvaro_Cunhal",
+                  "classement": "Cunhal, Álvaro",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_cunhal.jpg",
+                    "legende": "Álvaro Cunhal en 1980, photographie de Fernando Pereira (Anefo)",
+                    "auteur": "Fernando Pereira / Anefo",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Alvaro_Cunhal_(1980).jpg"
+                  }
+                },
+                {
+                  "id": "pan_pt_sophia",
+                  "axe": "Littérature et pensée",
+                  "date": 1919,
+                  "titre": "Naissance de Sophia de Mello Breyner Andresen",
+                  "description": "Sophia de Mello Breyner Andresen (1919-2004) est une poétesse portugaise née à Porto. Dans une poésie claire, nourrie de la lumière de la mer et de la Grèce antique, elle chante la beauté et la justice, et s'engage contre la dictature. Première femme à recevoir le prix Camões en 1999, elle repose au Panthéon national de Lisbonne depuis 2014.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sophia_de_Mello_Breyner_Andresen",
+                  "classement": "Mello Breyner Andresen, Sophia de",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_sophia.jpg",
+                    "legende": "Sophia de Mello Breyner Andresen, dessin au crayon de Bottelho",
+                    "auteur": "Bottelho (1964-2014)",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Sophia_Mello_Breyner_Andersen.png"
+                  }
+                },
+                {
+                  "id": "pan_pt_amalia",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1920,
+                  "titre": "Naissance d'Amália Rodrigues",
+                  "description": "Amália Rodrigues (1920-1999) est une chanteuse portugaise, née à Lisbonne et surnommée la « reine du fado ». Elle impose le fado dans le monde entier à partir des années 1950, à l'Olympia, au Brésil et aux États-Unis, en chantant aussi des poèmes de Camões. Sa mort est suivie de trois jours de deuil national, et elle repose au Panthéon national.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Am%C3%A1lia_Rodrigues",
+                  "classement": "Rodrigues, Amália",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_amalia.jpg",
+                    "legende": "Amália Rodrigues en 1956, pochette d'album",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Am%C3%A1lia_Rodrigues_(%27Fado_et_Flamenco%27,_Columbia,_1956),_cropped.png"
+                  }
+                },
+                {
+                  "id": "pan_pt_agustina",
+                  "axe": "Littérature et pensée",
+                  "date": 1922,
+                  "titre": "Naissance d'Agustina Bessa-Luís",
+                  "description": "Agustina Bessa-Luís (1922-2019) est une romancière portugaise, née à Amarante. Elle publie plus de cinquante livres, dont La Sibylle en 1954, qui la fait connaître, et écrit des scénarios pour le cinéaste Manoel de Oliveira. Elle reçoit le prix Camões en 2004.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Agustina_Bessa-Lu%C3%ADs",
+                  "classement": "Bessa-Luís, Agustina",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_agustina.jpg",
+                    "legende": "Agustina Bessa-Luís en 1969, image d'archives de la télévision portugaise (RTP)",
+                    "auteur": "Arquivos RTP",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Agustina_Bessa-Lu%C3%ADs_(Converg%C3%AAncia,_1969)_-_Arquivos_RTP.png"
+                  }
+                },
+                {
+                  "id": "pan_pt_saramago",
+                  "axe": "Littérature et pensée",
+                  "date": 1922,
+                  "titre": "Naissance de José Saramago",
+                  "description": "José Saramago (1922-2010) est un romancier portugais, prix Nobel de littérature en 1998. Longtemps ouvrier et journaliste, il s'impose après cinquante ans avec Le Dieu manchot, puis avec L'Aveuglement. Communiste, il quitte le Portugal pour les Canaries après la censure de son Évangile selon Jésus-Christ en 1992, et y meurt en 2010.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jos%C3%A9_Saramago",
+                  "classement": "Saramago, José",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_saramago.jpg",
+                    "legende": "José Saramago en 2008, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "CC BY 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:JSJoseSaramago.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pt_natalia",
+                  "axe": "Littérature et pensée",
+                  "date": 1923,
+                  "titre": "Naissance de Natália Correia",
+                  "description": "Natália Correia (1923-1993) est une poétesse, romancière et femme politique portugaise, née à Ponta Delgada, aux Açores. Grande animatrice de la vie littéraire de Lisbonne, elle est poursuivie sous la dictature pour son Anthologie de la poésie érotique et satirique. Elle siège au Parlement après 1974.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Nat%C3%A1lia_Correia",
+                  "classement": "Correia, Natália",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_natalia.jpg",
+                    "legende": "Natália Correia, portrait stylisé de Bottelho (2010)",
+                    "auteur": "Bottelho (1964-2014)",
+                    "licence": "CC BY-SA 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Nat%C3%A1lia_Correia.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pt_soares",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1924,
+                  "titre": "Naissance de Mário Soares",
+                  "description": "Mário Soares (1924-2017) est un avocat et homme d'État portugais, fondateur du Parti socialiste en 1973. Opposant à Salazar, emprisonné puis déporté à São Tomé, il revient après la révolution des Œillets, devient Premier ministre et négocie l'adhésion du Portugal à la Communauté européenne, signée en 1985. Président de la République de 1986 à 1996, il est le premier civil à occuper cette fonction depuis 1926.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/M%C3%A1rio_Soares",
+                  "classement": "Soares, Mário",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_soares.jpg",
+                    "legende": "Mário Soares en 1978, photographie de Claude Truong-Ngoc",
+                    "auteur": "Claude Truong-Ngoc",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:M%C3%A1rio_Soares_par_Claude_Truong-Ngoc_1978.png"
+                  }
+                },
+                {
+                  "id": "pan_pt_paredes",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1925,
+                  "titre": "Naissance de Carlos Paredes",
+                  "description": "Carlos Paredes (1925-2004) est un guitariste et compositeur portugais, né à Coimbra. Virtuose de la guitare portugaise, il élargit les possibilités de l'instrument bien au-delà de l'accompagnement du fado, notamment avec sa musique pour le film Les Vertes années, en 1963. Son jeu a marqué plusieurs générations de musiciens.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Carlos_Paredes",
+                  "classement": "Paredes, Carlos",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_paredes.jpg",
+                    "legende": "Carlos Paredes, portrait stylisé de Bottelho (2007)",
+                    "auteur": "Bottelho (1964-2014)",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Carlos_Paredes.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pt_zeca",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1929,
+                  "titre": "Naissance de Zeca Afonso",
+                  "description": "Zeca Afonso (1929-1987) est un chanteur et compositeur portugais, né à Aveiro. Opposant à Salazar, il met la musique populaire au service de chansons engagées, malgré la censure. Le 25 avril 1974, la radio diffuse sa chanson « Grândola, Vila Morena », signal de la révolution des Œillets.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Zeca_Afonso",
+                  "classement": "Afonso, Zeca",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_zeca.jpg",
+                    "legende": "Zeca Afonso, monument à Grândola",
+                    "auteur": "Paulo Juntas",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jos%C3%A9_Afonso_-_Monumento_em_Grandola1.JPG"
+                  }
+                },
+                {
+                  "id": "pan_pt_pintasilgo",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1930,
+                  "titre": "Naissance de Maria de Lourdes Pintasilgo",
+                  "description": "Maria de Lourdes Pintasilgo (1930-2004) est une ingénieure chimiste et femme politique portugaise. En 1979, elle devient la première femme Premier ministre du Portugal, à la tête d'un gouvernement de transition qui reste cinq mois en place. Catholique engagée et féministe, elle est candidate à l'élection présidentielle de 1986.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Maria_de_Lourdes_Pintasilgo",
+                  "classement": "Pintasilgo, Maria de Lourdes",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_pintasilgo.jpg",
+                    "legende": "Maria de Lourdes Pintasilgo en 1986, photographie de Roland Gerrits (Anefo)",
+                    "auteur": "Roland Gerrits / Anefo",
+                    "licence": "CC BY-SA 3.0 NL",
+                    "source": "https://commons.wikimedia.org/wiki/File:Maria_de_Lourdes_Pintasilgo_(1986)_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_pt_sacarneiro",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1934,
+                  "titre": "Naissance de Francisco Sá Carneiro",
+                  "description": "Francisco Sá Carneiro (1934-1980) est un avocat et homme politique portugais, fondateur du Parti social-démocrate en 1974. Député libéral sous Caetano, il devient Premier ministre en 1980 à la tête de l'Alliance démocratique. Il meurt le 4 décembre 1980 dans l'accident d'avion de Camarate, dont les causes restent débattues.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Francisco_S%C3%A1_Carneiro",
+                  "classement": "Sá Carneiro, Francisco",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_sacarneiro.jpg",
+                    "legende": "Francisco Sá Carneiro, photographie (1980)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Francisco_S%C3%A1_Carneiro.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pt_otelo",
+                  "axe": "Guerres, résistances et exploration",
+                  "date": 1936,
+                  "titre": "Naissance d'Otelo Saraiva de Carvalho",
+                  "description": "Otelo Saraiva de Carvalho (1936-2021) est un officier portugais né à Lourenço Marques, au Mozambique. Stratège du Mouvement des forces armées, il organise l'opération militaire du 25 avril 1974 qui renverse la dictature. Candidat à l'élection présidentielle de 1976, il est condamné en 1984 comme dirigeant présumé des FP-25, un groupe armé d'extrême gauche, puis libéré en 1989 et amnistié en 1996.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Otelo_Saraiva_de_Carvalho",
+                  "classement": "Saraiva de Carvalho, Otelo",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_otelo.jpg",
+                    "legende": "Otelo Saraiva de Carvalho en 1976, photographie de Manuel V. Botelho",
+                    "auteur": "Manuel V. Botelho",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Otelo_Saraiva_de_Carvalho_1976_b.tif"
+                  }
+                },
+                {
+                  "id": "pan_pt_carmo",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1939,
+                  "titre": "Naissance de Carlos do Carmo",
+                  "description": "Carlos do Carmo (1939-2021) est un chanteur portugais, né à Lisbonne. Fils d'une célèbre fadiste, il renouvelle le fado en y mettant les textes de poètes contemporains, comme dans l'album Um Homem na Cidade, en 1977. Il reçoit un Grammy latin pour l'ensemble de sa carrière en 2014.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Carlos_do_Carmo",
+                  "classement": "Carmo, Carlos do",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_carmo.jpg",
+                    "legende": "Carlos do Carmo en 2013, photographie de Manuel V. Botelho",
+                    "auteur": "Manuel V. Botelho",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Carlos_do_Carmo_2013.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pt_eusebio",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1942,
+                  "titre": "Naissance d'Eusébio",
+                  "description": "Eusébio (1942-2014) est un footballeur portugais, né à Lourenço Marques, au Mozambique. Avant-centre du Benfica, surnommé la « Panthère noire », il remporte le Ballon d'or en 1965 et termine meilleur buteur de la Coupe du monde 1966, où le Portugal prend la troisième place. Il meurt à Lisbonne en 2014 et repose au Panthéon national.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Eus%C3%A9bio",
+                  "classement": "Eusébio",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_eusebio.jpg",
+                    "legende": "Eusébio lisant dans sa chambre d'hôtel à Rotterdam en 1963, photographie d'Eric Koch (Anefo)",
+                    "auteur": "Eric Koch / Anefo",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Eus%C3%A9bio_op_hotelkamer_in_Rijn_Hotel_Rotterdam,_Bestanddeelnr_915-0219.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pt_salgueiromaia",
+                  "axe": "Guerres, résistances et exploration",
+                  "date": 1944,
+                  "titre": "Naissance de Salgueiro Maia",
+                  "description": "Salgueiro Maia (1944-1992) est un capitaine de cavalerie portugais, figure militaire de la révolution des Œillets. Le 25 avril 1974, il mène depuis Santarém la colonne qui occupe le Terreiro do Paço puis obtient la reddition de Marcelo Caetano, retranché dans la caserne du Carmo. Il refuse les postes politiques qu'on lui offre et meurt d'un cancer en 1992.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Salgueiro_Maia",
+                  "classement": "Maia, Salgueiro",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_salgueiromaia.jpg",
+                    "legende": "Salgueiro Maia debout dans une jeep, photographie de sa famille (Natércia Maia)",
+                    "auteur": "Natércia Maia",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Fernando_Jos%C3%A9_Salgueiro_Maia.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pt_gago",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1948,
+                  "titre": "Naissance de Mariano Gago",
+                  "description": "Mariano Gago (1948-2015) est un physicien et homme politique portugais, né à Lisbonne. Ministre de la Science et de la Technologie de 1995 à 2002, puis de la Science, de la Technologie et de l'Enseignement supérieur de 2005 à 2011, il fait du financement de la recherche et de la formation de chercheurs une priorité nationale. Ancien du CERN, il est l'un des artisans de l'ouverture scientifique du Portugal.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mariano_Gago",
+                  "classement": "Gago, Mariano",
+                  "image": {
+                    "src": "assets/portraits/pan_pt_gago.jpg",
+                    "legende": "Mariano Gago, photographie de Bert Seghers (2014)",
+                    "auteur": "Bert Seghers",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:JoseMarianoGago.jpg"
+                  }
+                }
+              ],
+              "axeOrder": [
+                "Chefs d'État et dirigeants",
+                "Guerres, résistances et exploration",
+                "Littérature et pensée",
+                "Beaux-arts",
+                "Musique, spectacle et sport",
+                "Sciences, techniques et innovation"
+              ],
+              "essentiel": [
+                "pan_pt_alphonse1",
+                "pan_pt_henri",
+                "pan_pt_dias",
+                "pan_pt_cabral",
+                "pan_pt_gama",
+                "pan_pt_manuel1",
+                "pan_pt_magellan",
+                "pan_pt_nunes",
+                "pan_pt_camoes",
+                "pan_pt_pombal",
+                "pan_pt_eca",
+                "pan_pt_moniz",
+                "pan_pt_pessoa",
+                "pan_pt_salazar",
+                "pan_pt_amalia",
+                "pan_pt_saramago",
+                "pan_pt_soares",
+                "pan_pt_eusebio"
               ]
             },
             {
