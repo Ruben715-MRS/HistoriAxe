@@ -2135,6 +2135,30 @@ Pas d'axe « Économie et entreprise » : Rupert Murdoch et Nicole Kidman, qui o
   Le portrait de Weary Dunlop (une statue) doit être retéléchargé avec son recadrage, déjà inscrit dans la source :
   `python3 scripts/fetch_portraits.py au --force --only dunlop`.
 
+### Un pays à part : le Canada
+
+`pan_ca`, « Grandes figures du Canada » (code `ca`, pays) : **118 personnages**, de Marie de l'Incarnation (1599) à
+Terry Fox (1958). Par axe :
+29 Chefs d'État et dirigeants, 24 Musique, spectacle et sport, 18 Littérature et pensée, 16 Guerres et résistances,
+16 Beaux-arts, 15 Sciences, techniques et innovation ; 16 ⭐ et 1 biographie liée (Pierre Elliott Trudeau).
+118 portraits : 95 du domaine public, le reste sous licence CC BY ou CC BY-SA.
+
+- **Un pays, pas un bloc** : `pan_ca`, et « Pendant ce temps, ailleurs… » le compte comme `thm_ca`. Deux invités d'un
+  autre État portent leur `pays` : Wolfe (Royaume-Uni) et Montcalm (France). Les fondateurs de la Nouvelle-France nés
+  en France (Mance, Maisonneuve, Laval, Talon, Frontenac) n'ont pas de `pays` : la fiche dit où ils sont nés.
+- **Les Premières Nations, les Métis et les Inuits** : Kondiaronk, Brant, Riel, Dumont, Poundmaker, Crowfoot,
+  Mistahimaskwa, Tom Longboat, Pauline Johnson, Tommy Prince, Kenojuak Ashevak.
+- **Les figures disputées sont écrites comme telles** : Macdonald et les pensionnats, Groulx et son antisémitisme,
+  Parizeau le soir du référendum de 1995, Alice Munro et ce que sa fille a révélé en 2024.
+- **Déjà dans un autre panthéon, donc absents** : Champlain et Jacques Cartier (France), Alexander Graham Bell
+  (Royaume-Uni), Tecumseh (États-Unis). Le panthéon de la France porte leur fiche.
+- **Dates** : Kondiaronk, Poundmaker, Crowfoot et Mistahimaskwa portent un « vers » : les articles ne donnent pas leur année exacte.
+- **Pas de vivants** : Céline Dion, qui a sa biographie, Wayne Gretzky, Margaret Atwood ou Joni Mitchell n'y sont pas.
+- **Les images** : Mance, Secord, Frye et Riopelle sont montrés par une statue, Frontenac par une sculpture, Hébert par
+  un dessin ; Kondiaronk n'a aucun portrait connu : on montre la marque du Rat qu'il a apposée au traité de 1701 (`nomVisible`) ; David Thompson est montré par un dessin moderne.
+- **Écartés faute d'image libre** : Mordecai Richler (seule une pierre tombale est libre), William Logan (Wikimedia a
+  refusé le téléchargement). Pas de portrait libre non plus pour Arthur Erickson, Norval Morrisseau ou Joyce Wieland.
+
 ### Un fichier source par panthéon, un script qui l'écrit dans `data/fr.json`
 
 `scripts/pantheon/<code>.json` (`fr`, `hispam`…) est **la seule source de
@@ -2477,7 +2501,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
 ### Ce qui n'est pas fait
 
 - **Les autres panthéons** : la France, l'Égypte, les États-Unis, l'Italie, le
-  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie et l'Australie sont écrits.
+  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie, l'Australie et le Canada sont écrits.
   Chaque liste de personnages est validée avant la rédaction. Feuille de route, dans l'ordre
   où on les propose (un pays seul quand il a de quoi faire un thème, un bloc sinon) :
   1. **Le Machrek est écrit** (voir « Le cinquième bloc »). Il reste : le portrait des trois
@@ -2494,7 +2518,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
      Indien (sans l'Afrique du Sud), « Nouvelle-Zélande et Pacifique ».
   4. **L'Europe et les Amériques qui manquent** : le Portugal (qui reprendra Magellan et
      Viriathe, laissés de côté dans le panthéon de l'Espagne), Byzance (au-delà des cinq figures déjà au panthéon de la Grèce), le Benelux,
-     la Pologne, l'Europe centrale, les Balkans, le Canada, les Caraïbes non
+     la Pologne, l'Europe centrale, les Balkans, les Caraïbes non
      hispaniques.
 
   Les images décideront de la taille de chacun : pour l'Afrique subsaharienne et l'Asie du

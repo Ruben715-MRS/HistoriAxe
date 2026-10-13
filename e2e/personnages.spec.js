@@ -654,6 +654,40 @@ test('l’Australie : chacune de ses figures a son portrait, de Pemulwuy à Stev
     await expect(page.locator('#modal-bio-btn')).toBeVisible();
 });
 
+test('le Canada : chacune de ses figures a son portrait, de Kondiaronk à Hubert Reeves, et les invités disent leur pays', async ({ page }) => {
+    await openThemeById(page, 'pan_ca');
+    await page.locator('#mode-card-discovery').click();
+    await expect(page.locator('#screen-game')).toBeVisible();
+    const nombre = await page.evaluate(() => getCurrentTheme().events.length);
+    expect(nombre).toBe(118);
+    await expect(page.locator('#timeline .entry')).toHaveCount(nombre);
+    await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
+
+    // Un chef métis, un poète, une patineuse : la fiche n'affiche aucun pays.
+    for (const titre of ['Naissance de Louis Riel', 'Naissance d\'Émile Nelligan', 'Naissance de Barbara Ann Scott']) {
+        await page.locator('#timeline .entry', { hasText: titre }).click();
+        await expect(page.locator('#modal-details')).toBeVisible();
+        await expect(page.locator('#modal-pays')).toBeHidden();
+        const portrait = page.locator('#modal-portrait-img');
+        await expect.poll(() => portrait.evaluate(img => img.complete ? img.naturalWidth : 0)).toBe(320);
+        await expect(page.locator('#modal-portrait-caption')).not.toBeEmpty();
+        await page.locator('#modal-details .close-btn').click();
+        await expect(page.locator('#modal-details')).toBeHidden();
+    }
+
+    // Un invité d'un autre État : James Wolfe, officier britannique.
+    await page.locator('#timeline .entry', { hasText: 'Naissance de James Wolfe' }).click();
+    await expect(page.locator('#modal-details')).toBeVisible();
+    await expect(page.locator('#modal-pays')).toBeVisible();
+    await page.locator('#modal-details .close-btn').click();
+
+    // Une figure a aussi sa biographie dans l'appli : le bouton y mène.
+    const avecBiographie = await page.evaluate(() => getCurrentTheme().events.filter(e => e.biographie).length);
+    expect(avecBiographie).toBe(1);
+    await page.locator('#timeline .entry', { hasText: 'Naissance de Pierre Elliott Trudeau' }).click();
+    await expect(page.locator('#modal-bio-btn')).toBeVisible();
+});
+
 test('la recherche — « espagne », « castille », « catalogne », « madrid » — mène au panthéon de l’Espagne', async ({ page }) => {
     await page.locator('#screen-home').click();
     for (const mot of ['espagne', 'castille', 'catalogne', 'madrid']) {

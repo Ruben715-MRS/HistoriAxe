@@ -34,23 +34,6 @@
   ],
   "personnages": [
     {
-      "slug": "champlain",
-      "nom": "Samuel de Champlain",
-      "classement": "Champlain, Samuel de",
-      "titre": "Naissance de Samuel de Champlain",
-      "axe": "Chefs d'État et dirigeants",
-      "naissance": 1574,
-      "description": "Samuel de Champlain (vers 1574-1635) est un explorateur et cartographe français né à Brouage, fondateur de Québec. Il y installe l'Habitation le 3 juillet 1608, noue des alliances avec les Innus, les Algonquins et les Hurons-Wendats et devient le premier gouverneur de la Nouvelle-France. Il meurt à Québec le 25 décembre 1635, après avoir fait de la vallée du Saint-Laurent le cœur d'une colonie.",
-      "wikipedia": "Samuel de Champlain",
-      "essentiel": true,
-      "portrait": {
-        "fichier": "Samchamprifle.jpg",
-        "legende": "Samuel de Champlain, portrait posthume : on ne connaît aucune image faite de son vivant",
-        "licence": "Domaine public",
-        "auteur": "Samuel de Champlain"
-      }
-    },
-    {
       "slug": "mance",
       "nom": "Jeanne Mance",
       "classement": "Mance, Jeanne",
@@ -61,7 +44,7 @@
       "wikipedia": "Jeanne Mance",
       "portrait": {
         "fichier": "JeanneManceHotelDieu.jpg",
-        "legende": "Jeanne Mance, portrait d'époque conservé à l'Hôtel-Dieu de Montréal",
+        "legende": "Statue de Jeanne Mance devant l'Hôtel-Dieu de Montréal : une sculpture, non un portrait d'époque",
         "licence": "CC BY-SA 3.0",
         "auteur": "Sculpture : Louis-Philippe Hébert / Photo : Jeangagnon"
       }
@@ -126,7 +109,8 @@
       "portrait": {
         "fichier": "Frontenac_par_Philippe_Hebert.png",
         "legende": "Louis de Buade de Frontenac, sculpture de Philippe Hébert : une œuvre d'artiste, non un portrait d'époque",
-        "licence": "Domaine public"
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
       }
     },
     {
@@ -142,7 +126,8 @@
         "fichier": "Grande_Paix_de_Montréal_07_LES_HURONS-WYANDOT-Marque-du-Rat.svg",
         "legende": "Marque de Kondiaronk au bas du traité de 1701 : on n'en connaît aucun portrait",
         "licence": "Domaine public",
-        "auteur": "Pierre5018"
+        "auteur": "Pierre5018",
+        "nomVisible": true
       }
     },
     {
@@ -221,7 +206,9 @@
       "essentiel": true,
       "portrait": {
         "fichier": "Macdonald1872.jpg",
-        "legende": "John Alexander Macdonald, photographie de 1872"
+        "legende": "John Alexander Macdonald, photographie de 1872",
+        "licence": "Domaine public",
+        "auteur": "William James Topley (1845–1930)"
       }
     },
     {
@@ -235,7 +222,9 @@
       "wikipedia": "George Brown",
       "portrait": {
         "fichier": "George_Brown.jpg",
-        "legende": "George Brown, photographie d'époque"
+        "legende": "George Brown, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "Hunter & Co."
       }
     },
     {
@@ -249,7 +238,9 @@
       "wikipedia": "Thomas D'Arcy McGee",
       "portrait": {
         "fichier": "ThomasDArcyMcGee.jpg",
-        "legende": "Thomas D'Arcy McGee, photographie d'époque"
+        "legende": "Thomas D'Arcy McGee, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "William Notman (1826–1891)"
       }
     },
     {
@@ -264,7 +255,9 @@
       "essentiel": true,
       "portrait": {
         "fichier": "The_Honourable_Sir_Wilfrid_Laurier_Photo_C_(HS85-10-16873)_-_medium_crop.jpg",
-        "legende": "Wilfrid Laurier, photographie d'époque"
+        "legende": "Wilfrid Laurier, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "William James Topley (1845–1930)"
       }
     },
     {
@@ -278,7 +271,9 @@
       "wikipedia": "Robert Borden",
       "portrait": {
         "fichier": "Sir_Robert_Borden,_in_the_1910’s_Sir_Robert_Borden,_dans_les_années_1910_(7196134714).jpg",
-        "legende": "Robert Borden, photographie des années 1910"
+        "legende": "Robert Borden, photographie des années 1910",
+        "licence": "CC BY 2.0",
+        "auteur": "Dupras & Colas"
       }
     },
     {
@@ -292,7 +287,9 @@
       "wikipedia": "Henri Bourassa",
       "portrait": {
         "fichier": "Henri_bourassa.jpg",
-        "legende": "Henri Bourassa, photographie d'époque"
+        "legende": "Henri Bourassa, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
       }
     },
     {
@@ -306,7 +303,9 @@
       "wikipedia": "William Lyon Mackenzie King",
       "portrait": {
         "fichier": "William_Lyon_Mackenzie_King_-_William_Lyon_Mackenzie_King_(25134761527).jpg",
-        "legende": "William Lyon Mackenzie King, photographie d'époque"
+        "legende": "William Lyon Mackenzie King, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "Canadian Government Motion Picture Bureau"
       }
     },
     {
@@ -320,7 +319,9 @@
       "wikipedia": "Louis Stephen Saint-Laurent",
       "portrait": {
         "fichier": "Louis_St._Laurent_portrait.jpg",
-        "legende": "Louis St-Laurent, portrait officiel"
+        "legende": "Louis St-Laurent, portrait officiel",
+        "licence": "Domaine public",
+        "auteur": "George Nakash (1892–1976)"
       }
     },
     {
@@ -334,7 +335,9 @@
       "wikipedia": "Lester B. Pearson",
       "portrait": {
         "fichier": "Lester_B._Pearson_(1963_ABC_press_photo).jpg",
-        "legende": "Lester Pearson, photographie de presse de 1963"
+        "legende": "Lester Pearson, photographie de presse de 1963",
+        "licence": "Domaine public",
+        "auteur": "ABC Television"
       }
     },
     {
@@ -347,8 +350,10 @@
       "description": "John Diefenbaker (1895-1979) est un avocat né à Neustadt, en Ontario, et élevé en Saskatchewan, Premier ministre de 1957 à 1963. Il fait adopter en 1960 la Déclaration canadienne des droits et accorde le droit de vote fédéral aux Autochtones sans condition. L'annulation du projet d'avion Avro Arrow en 1959 reste l'un des épisodes les plus débattus de son mandat.",
       "wikipedia": "John Diefenbaker",
       "portrait": {
-        "fichier": "John_Diefenbaker_portrait_(F1257_s1057_it2741).jpg",
-        "legende": "John Diefenbaker, portrait officiel"
+        "fichier": "John G. Diefenbaker (cropped).jpg",
+        "legende": "John Diefenbaker, photographie de 1957",
+        "licence": "Domaine public",
+        "auteur": "Gar Lunney (1920–2016) Description Canadian photographer and photojournalist"
       }
     },
     {
@@ -362,8 +367,10 @@
       "wikipedia": "Tommy Douglas",
       "essentiel": true,
       "portrait": {
-        "fichier": "Premier_Tommy_Douglas_(F1257_s1057_it2743).jpg",
-        "legende": "Tommy Douglas, portrait officiel du premier ministre de la Saskatchewan"
+        "fichier": "TommyDouglas-c1971-crop.jpg",
+        "legende": "Tommy Douglas, photographie vers 1971",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "TommyDouglas-c1971.jpg : Themightyquill derivative work: Wine Guy ( talk )"
       }
     },
     {
@@ -379,7 +386,9 @@
       "biographie": "bio_pierretrudeau",
       "portrait": {
         "fichier": "Prime_Minister_Pierre_Trudeau_1975_(UPI_press_photo)_(cropped).jpg",
-        "legende": "Pierre Elliott Trudeau, photographie de presse de 1975"
+        "legende": "Pierre Elliott Trudeau, photographie de presse de 1975",
+        "licence": "Domaine public",
+        "auteur": "United Press International"
       }
     },
     {
@@ -394,7 +403,9 @@
       "essentiel": true,
       "portrait": {
         "fichier": "René_Lévesque_1980.jpg",
-        "legende": "René Lévesque, photographie de 1980"
+        "legende": "René Lévesque, photographie de 1980",
+        "licence": "Domaine public",
+        "auteur": "United Press International"
       }
     },
     {
@@ -408,7 +419,9 @@
       "wikipedia": "Jacques Parizeau",
       "portrait": {
         "fichier": "Jacques_Parizeau_UL(recadré).jpg",
-        "legende": "Jacques Parizeau, photographie"
+        "legende": "Jacques Parizeau, photographie",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Khayman"
       }
     },
     {
@@ -422,7 +435,9 @@
       "wikipedia": "Nellie McClung",
       "portrait": {
         "fichier": "Nellie_McClung.jpg",
-        "legende": "Nellie McClung, photographie d'époque"
+        "legende": "Nellie McClung, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "Cyril Jessop"
       }
     },
     {
@@ -436,7 +451,9 @@
       "wikipedia": "Agnes Macphail",
       "portrait": {
         "fichier": "Agnes_Macphail_-_PA-165870.jpg",
-        "legende": "Agnes Macphail, photographie d'archives"
+        "legende": "Agnes Macphail, photographie d'archives",
+        "licence": "Domaine public",
+        "auteur": "Yousuf Karsh (1908–2002)"
       }
     },
     {
@@ -450,7 +467,9 @@
       "wikipedia": "Thérèse Casgrain",
       "portrait": {
         "fichier": "Thérèse_Forget_Casgrain.png",
-        "legende": "Thérèse Casgrain, photographie d'époque"
+        "legende": "Thérèse Casgrain, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "André Larose"
       }
     },
     {
@@ -464,7 +483,9 @@
       "wikipedia": "Viola Desmond",
       "portrait": {
         "fichier": "Viola_Desmond_Government_House.jpg",
-        "legende": "Viola Desmond, photographie"
+        "legende": "Viola Desmond, portrait peint",
+        "licence": "CC BY-SA 4.0",
+        "auteur": "LGNSComms"
       }
     },
     {
@@ -478,7 +499,9 @@
       "wikipedia": "Georges Vanier",
       "portrait": {
         "fichier": "Portrait_of_Governor_General_Georges_Vanier_(1965_UPI_press_photo).jpg",
-        "legende": "Georges Vanier, photographie de presse de 1965"
+        "legende": "Georges Vanier, photographie de presse de 1965",
+        "licence": "Domaine public",
+        "auteur": "United Press International"
       }
     },
     {
@@ -492,7 +515,9 @@
       "wikipedia": "Pierre Le Moyne d'Iberville",
       "portrait": {
         "fichier": "Portrait,_Pierre_Le_Moyne_d'Iberville,_Montréal_Archives.jpg",
-        "legende": "Pierre Le Moyne d'Iberville, portrait conservé aux Archives de Montréal"
+        "legende": "Pierre Le Moyne d'Iberville, portrait conservé aux Archives de Montréal",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
       }
     },
     {
@@ -507,7 +532,9 @@
       "pays": "GB",
       "portrait": {
         "fichier": "James_Wolfe.jpeg",
-        "legende": "James Wolfe, portrait d'époque"
+        "legende": "James Wolfe, portrait d'époque",
+        "licence": "Domaine public",
+        "auteur": "Attributed to Joseph Highmore (1692–1780)"
       }
     },
     {
@@ -522,7 +549,9 @@
       "pays": "FR",
       "portrait": {
         "fichier": "Portrait_of_Montcalm.JPG",
-        "legende": "Louis-Joseph de Montcalm, portrait d'époque"
+        "legende": "Louis-Joseph de Montcalm, portrait d'époque",
+        "licence": "Domaine public",
+        "auteur": "Théophile Hamel (1817–1870)"
       }
     },
     {
@@ -536,7 +565,9 @@
       "wikipedia": "Joseph Brant",
       "portrait": {
         "fichier": "Joseph_Brant_painting_by_George_Romney_1776.jpg",
-        "legende": "Joseph Brant, portrait peint par George Romney en 1776"
+        "legende": "Joseph Brant, portrait peint par George Romney en 1776",
+        "licence": "Domaine public",
+        "auteur": "George Romney (1734–1802)"
       }
     },
     {
@@ -550,7 +581,9 @@
       "wikipedia": "Isaac Brock",
       "portrait": {
         "fichier": "Isaac_Brock_portrait_1,_from_The_Story_of_Isaac_Brock_(1908)-2.png",
-        "legende": "Isaac Brock, portrait publié en 1908"
+        "legende": "Isaac Brock, portrait publié en 1908",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
       }
     },
     {
@@ -564,7 +597,9 @@
       "wikipedia": "Laura Secord",
       "portrait": {
         "fichier": "Laura_Secord_statue.jpg",
-        "legende": "Statue de Laura Secord : une sculpture, non un portrait"
+        "legende": "Statue de Laura Secord : une sculpture, non un portrait",
+        "licence": "Domaine public",
+        "auteur": "Digging.holes"
       }
     },
     {
@@ -578,7 +613,9 @@
       "wikipedia": "Charles de Salaberry",
       "portrait": {
         "fichier": "Charles-Michel_d'Irumberry_de_Salaberry_(1778-1829),_by_Anson_Dickinson,_1825,_watercolor_on_ivory_-_Château_Ramezay_-_Montreal,_Canada_-_DSC07496_(cropped).jpg",
-        "legende": "Charles de Salaberry, miniature peinte par Anson Dickinson en 1825"
+        "legende": "Charles de Salaberry, miniature peinte par Anson Dickinson en 1825",
+        "licence": "Domaine public",
+        "auteur": "Daderot"
       }
     },
     {
@@ -593,7 +630,9 @@
       "essentiel": true,
       "portrait": {
         "fichier": "Louis_Riel.jpg",
-        "legende": "Louis Riel, photographie d'époque"
+        "legende": "Louis Riel, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
       }
     },
     {
@@ -607,7 +646,9 @@
       "wikipedia": "Gabriel Dumont",
       "portrait": {
         "fichier": "GabrielDumont.jpg",
-        "legende": "Gabriel Dumont, photographie d'époque"
+        "legende": "Gabriel Dumont, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "The original uploader was JamesTeterenko at English Wikipedia ."
       }
     },
     {
@@ -621,7 +662,9 @@
       "wikipedia": "Poundmaker",
       "portrait": {
         "fichier": "Poundmaker.png",
-        "legende": "Poundmaker, photographie d'époque"
+        "legende": "Poundmaker, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "Prof. Buell, O.B."
       }
     },
     {
@@ -635,7 +678,9 @@
       "wikipedia": "Crowfoot",
       "portrait": {
         "fichier": "Chief_Crowfoot.jpg",
-        "legende": "Crowfoot, photographie d'époque"
+        "legende": "Crowfoot, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "Alex Ross"
       }
     },
     {
@@ -649,7 +694,9 @@
       "wikipedia": "Mistahimaskwa",
       "portrait": {
         "fichier": "Bigbear-blanket.jpg",
-        "legende": "Mistahimaskwa, photographie d'époque"
+        "legende": "Mistahimaskwa, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "O.B. Buell"
       }
     },
     {
@@ -663,7 +710,9 @@
       "wikipedia": "Arthur Currie",
       "portrait": {
         "fichier": "ArthurCurrie.jpg",
-        "legende": "Arthur Currie, photographie d'époque"
+        "legende": "Arthur Currie, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "Unknown photographer"
       }
     },
     {
@@ -677,7 +726,9 @@
       "wikipedia": "Billy Bishop",
       "portrait": {
         "fichier": "Billy_bishop.jpg",
-        "legende": "Billy Bishop, photographie d'époque"
+        "legende": "Billy Bishop, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "William Rider-Rider (1889–1979) Description British photographer"
       }
     },
     {
@@ -691,7 +742,9 @@
       "wikipedia": "Tommy Prince",
       "portrait": {
         "fichier": "Sergeant_Tommy_Prince_Private_Morris_Prince_Buckingham_Palace.jpg",
-        "legende": "Tommy Prince, photographie à Buckingham Palace"
+        "legende": "Tommy Prince, photographie à Buckingham Palace",
+        "licence": "Domaine public",
+        "auteur": "Christopher J. Woods - Canada. Dept. of National Defence"
       }
     },
     {
@@ -705,7 +758,9 @@
       "wikipedia": "Léo Major",
       "portrait": {
         "fichier": "Léo_Major.jpg",
-        "legende": "Léo Major, photographie d'époque"
+        "legende": "Léo Major, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
       }
     },
     {
@@ -719,7 +774,9 @@
       "wikipedia": "Marie de l'Incarnation",
       "portrait": {
         "fichier": "Portrait_de_Mère_Marie_de_l'Incarnation.jpg",
-        "legende": "Marie de l'Incarnation, portrait ancien"
+        "legende": "Marie de l'Incarnation, portrait ancien",
+        "licence": "Domaine public",
+        "auteur": "Hugues Pommier"
       }
     },
     {
@@ -733,7 +790,9 @@
       "wikipedia": "François-Xavier Garneau",
       "portrait": {
         "fichier": "Francois-Xavier_Garneau.jpg",
-        "legende": "François-Xavier Garneau, portrait du XIXe siècle"
+        "legende": "François-Xavier Garneau, portrait du XIXe siècle",
+        "licence": "Domaine public",
+        "auteur": "Shortt, Adam, 1859-1931"
       }
     },
     {
@@ -747,7 +806,9 @@
       "wikipedia": "Susanna Moodie",
       "portrait": {
         "fichier": "SusannahMoodie.jpeg",
-        "legende": "Susanna Moodie, portrait du XIXe siècle"
+        "legende": "Susanna Moodie, portrait du XIXe siècle",
+        "licence": "Domaine public",
+        "auteur": "Hephaestos at en.wikipedia"
       }
     },
     {
@@ -761,7 +822,9 @@
       "wikipedia": "Louis Fréchette",
       "portrait": {
         "fichier": "Louis-Honore_Frechette.jpg",
-        "legende": "Louis Fréchette, photographie d'époque"
+        "legende": "Louis Fréchette, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "Royal Society Portraits"
       }
     },
     {
@@ -775,7 +838,9 @@
       "wikipedia": "Émile Nelligan",
       "portrait": {
         "fichier": "Emile_Nelligan.JPG",
-        "legende": "Émile Nelligan, photographie d'époque"
+        "legende": "Émile Nelligan, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "Photo: Laprés & Lavergne Text: Charles Gill (1871-1918)"
       }
     },
     {
@@ -789,7 +854,9 @@
       "wikipedia": "Lucy Maud Montgomery",
       "portrait": {
         "fichier": "Lucy_Maud_Montgomery.JPG",
-        "legende": "Lucy Maud Montgomery, photographie d'époque"
+        "legende": "Lucy Maud Montgomery, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "Anonymous Unknown author"
       }
     },
     {
@@ -803,7 +870,9 @@
       "wikipedia": "Stephen Leacock",
       "portrait": {
         "fichier": "Stephen_Leacock.jpg",
-        "legende": "Stephen Leacock, photographie d'époque"
+        "legende": "Stephen Leacock, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "The Arts & Letters Club of Toronto"
       }
     },
     {
@@ -817,7 +886,9 @@
       "wikipedia": "Pauline Johnson",
       "portrait": {
         "fichier": "Tekahionwake_ca_1895.jpg",
-        "legende": "Pauline Johnson, photographie vers 1895"
+        "legende": "Pauline Johnson, photographie vers 1895",
+        "licence": "Domaine public",
+        "auteur": "Cochran"
       }
     },
     {
@@ -831,7 +902,9 @@
       "wikipedia": "John McCrae",
       "portrait": {
         "fichier": "John_McCrae_in_uniform_circa_1914.jpg",
-        "legende": "John McCrae en uniforme, photographie vers 1914"
+        "legende": "John McCrae en uniforme, photographie vers 1914",
+        "licence": "Domaine public",
+        "auteur": "William Notman and Son"
       }
     },
     {
@@ -845,7 +918,9 @@
       "wikipedia": "Gabrielle Roy",
       "portrait": {
         "fichier": "Gabrielle_Roy_portrait_photo,_1945.png",
-        "legende": "Gabrielle Roy, photographie de 1945"
+        "legende": "Gabrielle Roy, photographie de 1945",
+        "licence": "Domaine public",
+        "auteur": "Annette & Basil Zarov"
       }
     },
     {
@@ -859,7 +934,9 @@
       "wikipedia": "Anne Hébert",
       "portrait": {
         "fichier": "ANNE_HEBERT_écrivaine_poétesse_canadienne.jpg",
-        "legende": "Anne Hébert, photographie"
+        "legende": "Anne Hébert, dessin d'après une photographie",
+        "licence": "CC BY-SA 4.0",
+        "auteur": "Kaderousse"
       }
     },
     {
@@ -874,7 +951,9 @@
       "essentiel": true,
       "portrait": {
         "fichier": "Marshall_McLuhan.jpg",
-        "legende": "Marshall McLuhan, photographie"
+        "legende": "Marshall McLuhan, photographie",
+        "licence": "Domaine public",
+        "auteur": "Josephine Smith"
       }
     },
     {
@@ -888,7 +967,9 @@
       "wikipedia": "Northrop Frye",
       "portrait": {
         "fichier": "Northrop_Frye_statue.JPG",
-        "legende": "Statue de Northrop Frye : une sculpture, non un portrait"
+        "legende": "Statue de Northrop Frye : une sculpture, non un portrait",
+        "licence": "CC BY-SA 4.0",
+        "auteur": "Ashoola"
       }
     },
     {
@@ -902,7 +983,9 @@
       "wikipedia": "Harold Innis",
       "portrait": {
         "fichier": "Harold_Innis_public-domain_library_archives-canada.jpg",
-        "legende": "Harold Innis, photographie d'archives"
+        "legende": "Harold Innis, photographie d'archives",
+        "licence": "Domaine public",
+        "auteur": "H. James that is a pseudonym for William James Jr. according to City of Toroto Archive"
       }
     },
     {
@@ -916,7 +999,9 @@
       "wikipedia": "Jane Jacobs",
       "portrait": {
         "fichier": "Jane_Jacobs.jpg",
-        "legende": "Jane Jacobs, photographie"
+        "legende": "Jane Jacobs, photographie",
+        "licence": "Domaine public",
+        "auteur": "Phil Stanziola"
       }
     },
     {
@@ -931,21 +1016,9 @@
       "essentiel": true,
       "portrait": {
         "fichier": "Alice_Munro_2006_(cropped).jpg",
-        "legende": "Alice Munro, photographie de 2006"
-      }
-    },
-    {
-      "slug": "richler",
-      "nom": "Mordecai Richler",
-      "classement": "Richler, Mordecai",
-      "titre": "Naissance de Mordecai Richler",
-      "axe": "Littérature et pensée",
-      "naissance": 1931,
-      "description": "Mordecai Richler (1931-2001) est un écrivain né à Montréal, dans un quartier juif populaire. Ses romans, dont L'Apprentissage de Duddy Kravitz et Barney's Version, mêlent satire et nostalgie. Ses textes critiques sur le nationalisme québécois ont déclenché de vives polémiques.",
-      "wikipedia": "Mordecai Richler",
-      "portrait": {
-        "fichier": "Mordecai_Richler_(247419812).jpg",
-        "legende": "Mordecai Richler, photographie"
+        "legende": "Alice Munro, photographie de 2006",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "MacDowell"
       }
     },
     {
@@ -959,7 +1032,9 @@
       "wikipedia": "Lionel Groulx",
       "portrait": {
         "fichier": "Lionel_Groulx_1922.jpg",
-        "legende": "Lionel Groulx, photographie de 1922"
+        "legende": "Lionel Groulx, photographie de 1922",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
       }
     },
     {
@@ -973,7 +1048,9 @@
       "wikipedia": "Gaston Miron",
       "portrait": {
         "fichier": "Gaston_Miron.jpg",
-        "legende": "Gaston Miron, photographie"
+        "legende": "Gaston Miron, photographie",
+        "licence": "Domaine public",
+        "auteur": "Anonymous Unknown author"
       }
     },
     {
@@ -987,7 +1064,9 @@
       "wikipedia": "Cornelius Krieghoff",
       "portrait": {
         "fichier": "Cornelius_Krieghoff.jpg",
-        "legende": "Cornelius Krieghoff, photographie d'époque"
+        "legende": "Cornelius Krieghoff, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "M.O. Hammond"
       }
     },
     {
@@ -1001,7 +1080,9 @@
       "wikipedia": "Paul Kane",
       "portrait": {
         "fichier": "Paul_Kane_1860s.jpg",
-        "legende": "Paul Kane, photographie des années 1860"
+        "legende": "Paul Kane, photographie des années 1860",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
       }
     },
     {
@@ -1015,7 +1096,9 @@
       "wikipedia": "Ozias Leduc",
       "portrait": {
         "fichier": "Ozias_Leduc_mon_portrait_1899.jpg",
-        "legende": "Ozias Leduc, autoportrait de 1899"
+        "legende": "Ozias Leduc, autoportrait de 1899",
+        "licence": "Domaine public",
+        "auteur": "Ozias Leduc (1864–1955)"
       }
     },
     {
@@ -1029,7 +1112,9 @@
       "wikipedia": "Marc-Aurèle de Foy Suzor-Coté",
       "portrait": {
         "fichier": "Marc-Aurele_de_Foy_Suzor-Cote_-_Autoportrait_1894.jpg",
-        "legende": "Marc-Aurèle de Foy Suzor-Coté, autoportrait de 1894"
+        "legende": "Marc-Aurèle de Foy Suzor-Coté, autoportrait de 1894",
+        "licence": "Domaine public",
+        "auteur": "Marc-Aurèle de Foy Suzor-Coté (1869–1937)"
       }
     },
     {
@@ -1043,7 +1128,9 @@
       "wikipedia": "Tom Thomson",
       "portrait": {
         "fichier": "TomThomson23.jpg",
-        "legende": "Tom Thomson, photographie d'époque"
+        "legende": "Tom Thomson, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
       }
     },
     {
@@ -1057,7 +1144,9 @@
       "wikipedia": "Emily Carr",
       "portrait": {
         "fichier": "EmilyCarr.png",
-        "legende": "Emily Carr, photographie d'époque"
+        "legende": "Emily Carr à cheval, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
       }
     },
     {
@@ -1071,7 +1160,9 @@
       "wikipedia": "Lawren Harris",
       "portrait": {
         "fichier": "Lawren_Harris.JPG",
-        "legende": "Lawren Harris, photographie"
+        "legende": "Lawren Harris, photographie",
+        "licence": "Domaine public",
+        "auteur": "The original uploader was YUL89YYZ at English Wikipedia ."
       }
     },
     {
@@ -1085,7 +1176,9 @@
       "wikipedia": "Alexander Young Jackson",
       "portrait": {
         "fichier": "Alexander_Young_Jackson.jpg",
-        "legende": "Alexander Young Jackson, photographie"
+        "legende": "Alexander Young Jackson devant l'une de ses toiles, photographie",
+        "licence": "Domaine public",
+        "auteur": "National Film Board of Canada photographer"
       }
     },
     {
@@ -1100,7 +1193,9 @@
       "essentiel": true,
       "portrait": {
         "fichier": "Paul_Borduas.jpg",
-        "legende": "Paul-Émile Borduas, photographie"
+        "legende": "Paul-Émile Borduas dans son atelier, photographie",
+        "licence": "Domaine public",
+        "auteur": "Ronny Jaques (1910-2008)"
       }
     },
     {
@@ -1114,7 +1209,9 @@
       "wikipedia": "Jean Paul Riopelle",
       "portrait": {
         "fichier": "Jean-Paul_Riopelle.JPG",
-        "legende": "Jean Paul Riopelle, photographie"
+        "legende": "Statue de Jean Paul Riopelle : une sculpture, non un portrait",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Jeangagnon"
       }
     },
     {
@@ -1128,7 +1225,9 @@
       "wikipedia": "Alex Colville",
       "portrait": {
         "fichier": "AlexCovillewarartistyoung.jpg",
-        "legende": "Alex Colville, photographie du temps de la guerre"
+        "legende": "Alex Colville, photographie du temps de la guerre",
+        "licence": "Domaine public",
+        "auteur": "McCaughey, Hugh H."
       }
     },
     {
@@ -1142,7 +1241,9 @@
       "wikipedia": "Kenojuak Ashevak",
       "portrait": {
         "fichier": "Kenojuak_Ashevak_1_1997-05-09_cropped.jpg",
-        "legende": "Kenojuak Ashevak, photographie de 1997"
+        "legende": "Kenojuak Ashevak, photographie de 1997",
+        "licence": "CC BY-SA 2.5",
+        "auteur": "Ansgar Walk"
       }
     },
     {
@@ -1156,7 +1257,9 @@
       "wikipedia": "Michael Snow",
       "portrait": {
         "fichier": "Michael_Snow.jpg",
-        "legende": "Michael Snow, photographie"
+        "legende": "Michael Snow, photographie",
+        "licence": "CC BY 3.0",
+        "auteur": "ManArray"
       }
     },
     {
@@ -1170,7 +1273,9 @@
       "wikipedia": "Maud Lewis",
       "portrait": {
         "fichier": "Maud_Lewis.jpg",
-        "legende": "Maud Lewis, photographie"
+        "legende": "Maud Lewis devant l'une de ses peintures, photographie",
+        "licence": "CC BY 2.0",
+        "auteur": "Ron Cogswell"
       }
     },
     {
@@ -1184,7 +1289,9 @@
       "wikipedia": "William Notman",
       "portrait": {
         "fichier": "Self_portrait_of_William_Notman.jpg",
-        "legende": "William Notman, autoportrait"
+        "legende": "William Notman, autoportrait",
+        "licence": "Domaine public",
+        "auteur": "William Notman (1826–1891)"
       }
     },
     {
@@ -1198,7 +1305,9 @@
       "wikipedia": "Yousuf Karsh",
       "portrait": {
         "fichier": "Yousuf-Karsh.jpg",
-        "legende": "Yousuf Karsh, photographie"
+        "legende": "Yousuf Karsh devant son appareil, photographie",
+        "licence": "Domaine public",
+        "auteur": "Yousuf Karsh (1908–2002)"
       }
     },
     {
@@ -1212,7 +1321,9 @@
       "wikipedia": "Calixa Lavallée",
       "portrait": {
         "fichier": "Calixa_Lavallée.png",
-        "legende": "Calixa Lavallée, photographie d'époque"
+        "legende": "Calixa Lavallée, gravure d'époque",
+        "licence": "Domaine public",
+        "auteur": "L'Opinion publique Vol. 4, no 11"
       }
     },
     {
@@ -1226,7 +1337,9 @@
       "wikipedia": "La Bolduc",
       "portrait": {
         "fichier": "LaBolducPublicity.jpg",
-        "legende": "La Bolduc, photographie publicitaire"
+        "legende": "La Bolduc, photographie publicitaire",
+        "licence": "Domaine public",
+        "auteur": "Famous Studio, Montréal"
       }
     },
     {
@@ -1241,7 +1354,9 @@
       "essentiel": true,
       "portrait": {
         "fichier": "Félix_Leclerc.jpg",
-        "legende": "Félix Leclerc, photographie"
+        "legende": "Félix Leclerc, photographie",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
       }
     },
     {
@@ -1255,7 +1370,9 @@
       "wikipedia": "Oscar Peterson",
       "portrait": {
         "fichier": "Oscar_Peterson_-_1950.JPG",
-        "legende": "Oscar Peterson, photographie de 1950"
+        "legende": "Oscar Peterson, photographie de 1950",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
       }
     },
     {
@@ -1269,8 +1386,10 @@
       "wikipedia": "Glenn Gould",
       "essentiel": true,
       "portrait": {
-        "fichier": "Glenn_Gould_1.jpg",
-        "legende": "Glenn Gould, photographie"
+        "fichier": "Glenn Gould playing on CBC-TV concert.jpg",
+        "legende": "Glenn Gould au piano lors d'un concert télévisé de la CBC, janvier 1962",
+        "licence": "Domaine public",
+        "auteur": "Canadian Broadcasting Corporation"
       }
     },
     {
@@ -1284,7 +1403,9 @@
       "wikipedia": "Gordon Lightfoot",
       "portrait": {
         "fichier": "Gordon_Lightfoot.jpg",
-        "legende": "Gordon Lightfoot, photographie"
+        "legende": "Gordon Lightfoot, photographie",
+        "licence": "CC BY 3.0",
+        "auteur": "Original uploader was Piedmontstyle at en.wikipedia"
       }
     },
     {
@@ -1299,7 +1420,9 @@
       "essentiel": true,
       "portrait": {
         "fichier": "Leonard_Cohen,_1988_01.jpg",
-        "legende": "Leonard Cohen, photographie de 1988"
+        "legende": "Leonard Cohen, photographie de 1988",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Gorupdebesanez"
       }
     },
     {
@@ -1313,7 +1436,9 @@
       "wikipedia": "Maureen Forrester",
       "portrait": {
         "fichier": "Maureen_Forrester.jpg",
-        "legende": "Maureen Forrester, photographie"
+        "legende": "Maureen Forrester, photographie",
+        "licence": "Domaine public",
+        "auteur": "Carl Van Vechten (1880–1964)"
       }
     },
     {
@@ -1328,7 +1453,9 @@
       "essentiel": true,
       "portrait": {
         "fichier": "Mary_Pickford_cph.3c17995u.jpg",
-        "legende": "Mary Pickford, photographie d'époque"
+        "legende": "Mary Pickford, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "Rufus Porter Moody (1873–1922) Alternative names R. P. Moody; Rufus P. Moody"
       }
     },
     {
@@ -1342,7 +1469,9 @@
       "wikipedia": "Mack Sennett",
       "portrait": {
         "fichier": "Mack_Sennett_1916.jpg",
-        "legende": "Mack Sennett, photographie de 1916"
+        "legende": "Mack Sennett, photographie de 1916",
+        "licence": "Domaine public",
+        "auteur": "Fred Hartsook (1878-1930)"
       }
     },
     {
@@ -1356,7 +1485,9 @@
       "wikipedia": "Fay Wray",
       "portrait": {
         "fichier": "Wray,_Fay_01.jpg",
-        "legende": "Fay Wray, photographie d'époque"
+        "legende": "Fay Wray, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "Studio publicity still"
       }
     },
     {
@@ -1370,7 +1501,9 @@
       "wikipedia": "Christopher Plummer",
       "portrait": {
         "fichier": "Christopher_Plummer_2014.jpg",
-        "legende": "Christopher Plummer, photographie de 2014"
+        "legende": "Christopher Plummer, photographie de 2014",
+        "licence": "CC BY-SA 2.0",
+        "auteur": "MiamiFilmFestival"
       }
     },
     {
@@ -1384,7 +1517,9 @@
       "wikipedia": "John Candy",
       "portrait": {
         "fichier": "John_Candy.jpg",
-        "legende": "John Candy, photographie"
+        "legende": "John Candy, photographie",
+        "licence": "CC BY 2.5",
+        "auteur": "Mike F. Campbell"
       }
     },
     {
@@ -1398,7 +1533,9 @@
       "wikipedia": "Norman McLaren",
       "portrait": {
         "fichier": "Norman_McLaren_drawing_on_film_-_1944.jpg",
-        "legende": "Norman McLaren dessinant sur la pellicule, photographie de 1944"
+        "legende": "Norman McLaren dessinant sur la pellicule, photographie de 1944",
+        "licence": "Domaine public",
+        "auteur": "Jack Long/National Film Board of Canada"
       }
     },
     {
@@ -1412,7 +1549,9 @@
       "wikipedia": "James Naismith",
       "portrait": {
         "fichier": "James_Naismith_with_a_basketball.jpg",
-        "legende": "James Naismith avec un ballon de basket-ball, photographie d'époque"
+        "legende": "James Naismith avec un ballon de basket-ball, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "Evdcoldeportes ."
       }
     },
     {
@@ -1427,7 +1566,9 @@
       "essentiel": true,
       "portrait": {
         "fichier": "Maurice_richard_profile.jpg",
-        "legende": "Maurice Richard, photographie"
+        "legende": "Maurice Richard, photographie",
+        "licence": "Domaine public",
+        "auteur": "National Archives of Canada, Thomas Patrick Gorman fonds"
       }
     },
     {
@@ -1441,7 +1582,9 @@
       "wikipedia": "Gordie Howe",
       "portrait": {
         "fichier": "Gordie_Howe_Chex_card.jpg",
-        "legende": "Gordie Howe, carte à collectionner"
+        "legende": "Gordie Howe, carte à collectionner",
+        "licence": "Domaine public",
+        "auteur": "Ralston-Purina Company, makers of Chex cereals"
       }
     },
     {
@@ -1455,7 +1598,9 @@
       "wikipedia": "Jean Béliveau",
       "portrait": {
         "fichier": "Jean_Béliveau_2009.jpg",
-        "legende": "Jean Béliveau, photographie de 2009"
+        "legende": "Jean Béliveau, photographie de 2009",
+        "licence": "CC BY 2.0",
+        "auteur": "US Embassy Canada"
       }
     },
     {
@@ -1470,7 +1615,9 @@
       "essentiel": true,
       "portrait": {
         "fichier": "TerryFoxToronto19800712.JPG",
-        "legende": "Terry Fox pendant le Marathon de l'espoir, photographie de 1980"
+        "legende": "Terry Fox pendant le Marathon de l'espoir, photographie de 1980",
+        "licence": "Domaine public",
+        "auteur": "Jeremy Gilbert"
       }
     },
     {
@@ -1484,7 +1631,9 @@
       "wikipedia": "Barbara Ann Scott",
       "portrait": {
         "fichier": "Barbara-Ann_Scott.jpg",
-        "legende": "Barbara Ann Scott, photographie d'époque"
+        "legende": "Barbara Ann Scott, photographie d'époque",
+        "licence": "CC BY 2.0",
+        "auteur": "Fred Warrander"
       }
     },
     {
@@ -1498,7 +1647,9 @@
       "wikipedia": "Percy Williams",
       "portrait": {
         "fichier": "Percy_Williams_1928.jpg",
-        "legende": "Percy Williams, photographie de 1928"
+        "legende": "Percy Williams, photographie de 1928",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
       }
     },
     {
@@ -1512,7 +1663,9 @@
       "wikipedia": "Fanny Rosenfeld",
       "portrait": {
         "fichier": "Ethel_Smith_Fanny_Rosenfeld_1928_Olympics.jpg",
-        "legende": "Bobbie Rosenfeld, photographie de 1928"
+        "legende": "Bobbie Rosenfeld et Ethel Smith lors des Jeux olympiques de 1928, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
       }
     },
     {
@@ -1526,7 +1679,9 @@
       "wikipedia": "Ned Hanlan",
       "portrait": {
         "fichier": "Ned_Hanlan.jpg",
-        "legende": "Ned Hanlan, photographie d'époque"
+        "legende": "Ned Hanlan, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "Notman & Sandham"
       }
     },
     {
@@ -1540,23 +1695,9 @@
       "wikipedia": "Tom Longboat",
       "portrait": {
         "fichier": "T_Longboat,_the_Canadian_runner_Standing_(HS85-10-18314).jpg",
-        "legende": "Tom Longboat, photographie d'époque"
-      }
-    },
-    {
-      "slug": "jcartier",
-      "nom": "Jacques Cartier",
-      "classement": "Cartier, Jacques",
-      "titre": "Naissance de Jacques Cartier",
-      "axe": "Sciences, techniques et innovation",
-      "naissance": 1491,
-      "description": "Jacques Cartier (vers 1491-1557) est un navigateur breton né à Saint-Malo, qui explore pour François Ier le golfe du Saint-Laurent. En 1534, il plante une croix à Gaspé et prend possession du pays ; en 1535, il remonte le fleuve jusqu'à Stadaconé, aujourd'hui Québec, et Hochelaga, aujourd'hui Montréal. On lui doit le nom de Canada, tiré du mot iroquoien kanata, qui désigne un village.",
-      "wikipedia": "Jacques Cartier",
-      "essentiel": true,
-      "pays": "FR",
-      "portrait": {
-        "fichier": "Jacques_Cartier_1851-1852.jpg",
-        "legende": "Jacques Cartier, portrait imaginaire peint au XIXe siècle"
+        "legende": "Tom Longboat, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "Charles Aylett (1880–1942) Description Canadian photographer"
       }
     },
     {
@@ -1570,7 +1711,9 @@
       "wikipedia": "Alexander Mackenzie (explorateur)",
       "portrait": {
         "fichier": "Alexander_MacKenzie_by_Thomas_Lawrence_(c.1800).jpg",
-        "legende": "Alexander Mackenzie, portrait peint par Thomas Lawrence vers 1800"
+        "legende": "Alexander Mackenzie, portrait peint par Thomas Lawrence vers 1800",
+        "licence": "Domaine public",
+        "auteur": "Thomas Lawrence (1769–1830)"
       }
     },
     {
@@ -1584,7 +1727,9 @@
       "wikipedia": "Simon Fraser (explorateur)",
       "portrait": {
         "fichier": "Simon_Fraser2.jpg",
-        "legende": "Simon Fraser, portrait d'époque"
+        "legende": "Simon Fraser, portrait d'époque",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
       }
     },
     {
@@ -1598,7 +1743,9 @@
       "wikipedia": "David Thompson (explorateur)",
       "portrait": {
         "fichier": "David_Thompson_(explorer).jpg",
-        "legende": "David Thompson, portrait d'époque"
+        "legende": "David Thompson, dessin moderne : on ne connaît aucun portrait de lui",
+        "licence": "Domaine public",
+        "auteur": "US National Park Service?"
       }
     },
     {
@@ -1612,21 +1759,9 @@
       "wikipedia": "Abraham Gesner",
       "portrait": {
         "fichier": "Abraham_Gesner_Photo.png",
-        "legende": "Abraham Gesner, photographie d'époque"
-      }
-    },
-    {
-      "slug": "logan",
-      "nom": "William Logan",
-      "classement": "Logan, William",
-      "titre": "Naissance de William Logan",
-      "axe": "Sciences, techniques et innovation",
-      "naissance": 1798,
-      "description": "William Logan (1798-1875) est un géologue né à Montréal, fondateur et premier directeur de la Commission géologique du Canada en 1842. Il explore les roches du Bouclier canadien et définit le système laurentien. Le plus haut sommet du pays, le mont Logan, porte son nom.",
-      "wikipedia": "William Edmond Logan",
-      "portrait": {
-        "fichier": "William_Edmond_Logan.jpg",
-        "legende": "William Logan, photographie d'époque"
+        "legende": "Abraham Gesner, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
       }
     },
     {
@@ -1640,7 +1775,9 @@
       "wikipedia": "Sandford Fleming",
       "portrait": {
         "fichier": "Sir_Sandford_Fleming.jpg",
-        "legende": "Sandford Fleming, photographie d'époque"
+        "legende": "Sandford Fleming, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "John Wycliffe Lowes Forster (1850-1938)"
       }
     },
     {
@@ -1654,22 +1791,9 @@
       "wikipedia": "William Osler",
       "portrait": {
         "fichier": "Sir_William_Osler.jpg",
-        "legende": "William Osler, photographie d'époque"
-      }
-    },
-    {
-      "slug": "bell",
-      "nom": "Alexander Graham Bell",
-      "classement": "Bell, Alexander Graham",
-      "titre": "Naissance d'Alexander Graham Bell",
-      "axe": "Sciences, techniques et innovation",
-      "naissance": 1847,
-      "description": "Alexander Graham Bell (1847-1922) est un inventeur né à Édimbourg, en Écosse, installé au Canada en 1870. Il met au point le téléphone, dont il obtient le brevet en 1876, après les premiers essais menés à Brantford, en Ontario. Il poursuit ses recherches à Baddeck, en Nouvelle-Écosse, où il meurt en 1922.",
-      "wikipedia": "Alexander Graham Bell",
-      "essentiel": true,
-      "portrait": {
-        "fichier": "Alexander_Graham_Bell.jpg",
-        "legende": "Alexander Graham Bell, photographie d'époque"
+        "legende": "William Osler, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "The original uploader was YUL89YYZ at English Wikipedia ."
       }
     },
     {
@@ -1683,7 +1807,9 @@
       "wikipedia": "Reginald Fessenden",
       "portrait": {
         "fichier": "Fessenden.JPG",
-        "legende": "Reginald Fessenden, photographie d'époque"
+        "legende": "Reginald Fessenden, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "None listed"
       }
     },
     {
@@ -1697,8 +1823,10 @@
       "wikipedia": "Frederick Banting",
       "essentiel": true,
       "portrait": {
-        "fichier": "Fredrick_banting.jpg",
-        "legende": "Frederick Banting, photographie d'époque"
+        "fichier": "Frederick Banting 2.jpg",
+        "legende": "Frederick Banting, photographie d'époque",
+        "licence": "CC BY 4.0",
+        "auteur": "Unknown author Unknown author"
       }
     },
     {
@@ -1712,7 +1840,9 @@
       "wikipedia": "Maude Abbott",
       "portrait": {
         "fichier": "Maude_Abbott.jpg",
-        "legende": "Maude Abbott, photographie d'époque"
+        "legende": "Maude Abbott, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "Wm. Notman & Son"
       }
     },
     {
@@ -1726,7 +1856,9 @@
       "wikipedia": "Wilder Penfield",
       "portrait": {
         "fichier": "Wilder_Penfield.jpg",
-        "legende": "Wilder Penfield, photographie d'époque"
+        "legende": "Wilder Penfield, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
       }
     },
     {
@@ -1740,7 +1872,9 @@
       "wikipedia": "Hans Selye",
       "portrait": {
         "fichier": "Portrait_Hans_Selye.jpg",
-        "legende": "Hans Selye, photographie"
+        "legende": "Hans Selye, photographie",
+        "licence": "CC BY-SA 4.0",
+        "auteur": "Jean-Paul Rioux"
       }
     },
     {
@@ -1754,7 +1888,9 @@
       "wikipedia": "Joseph-Armand Bombardier",
       "portrait": {
         "fichier": "Armand_Bombardier.jpg",
-        "legende": "Joseph-Armand Bombardier, photographie d'époque"
+        "legende": "Joseph-Armand Bombardier, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
       }
     },
     {
@@ -1768,7 +1904,9 @@
       "wikipedia": "Willard Boyle",
       "portrait": {
         "fichier": "Nobel_Prize_2009-Press_Conference_KVA-23.jpg",
-        "legende": "Willard Boyle lors de la conférence de presse du prix Nobel en 2009"
+        "legende": "Willard Boyle lors de la conférence de presse du prix Nobel en 2009",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Prolineserver ( talk )"
       }
     },
     {
@@ -1782,7 +1920,9 @@
       "wikipedia": "Norman Bethune",
       "portrait": {
         "fichier": "Norman_Bethune_graduation_1922.jpg",
-        "legende": "Norman Bethune, photographie de 1922"
+        "legende": "Norman Bethune, photographie de 1922",
+        "licence": "Domaine public",
+        "auteur": "Credit: Library and Archives Canada/PA-160708 Copyright: Expired"
       }
     },
     {
@@ -1796,7 +1936,9 @@
       "wikipedia": "Hubert Reeves",
       "portrait": {
         "fichier": "Hubert_Reeves_Paris_2012.jpg",
-        "legende": "Hubert Reeves, photographie de 2012"
+        "legende": "Hubert Reeves, photographie de 2012",
+        "licence": "CC BY-SA 4.0",
+        "auteur": "Nicolas Richoffer"
       }
     }
   ]
