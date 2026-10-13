@@ -1114,6 +1114,9 @@
         <div class="modal-content">
             <span class="close-btn" role="button" tabindex="0" aria-label="Fermer"
                 data-i18n-attr="aria-label:nav.close" onclick="closeModal()">×</span>
+            <!-- Retour à la fiche précédente, seulement après un saut par « Vu aussi dans… »
+                 (voir renderModalBackButton dans js/app.js). -->
+            <button type="button" class="modal-back-btn hidden" id="modal-back-btn" onclick="modalBack()"></button>
             <!-- Passage au portrait voisin, seulement quand la fiche s'ouvre depuis la galerie
                  (voir js/gallery.js) : boutons, flèches du clavier et glissement font la même chose. -->
             <div class="modal-gallery-nav" id="modal-gallery-nav">
@@ -1144,6 +1147,12 @@
             <div class="modal-desc" id="modal-desc">Description explicative.</div>
             <a href="#" target="_blank" class="modal-link" id="modal-wiki" data-i18n="modal.wiki_link">Voir sur
                 Wikipédia</a>
+            <!-- « Vu aussi dans… » : le même fait raconté par d'autres thèmes (voir js/linkedEvents.js),
+                 posé par renderModalLinkedEvents. -->
+            <div id="modal-linked-row" class="modal-linked-row hidden">
+                <div class="modal-linked-label" id="modal-linked-label" data-i18n="modal.linked_label">Vu aussi dans…</div>
+                <div class="modal-linked-list" id="modal-linked-list"></div>
+            </div>
             <div id="modal-bio-row" class="modal-bio-row hidden">
                 <button type="button" class="btn btn-secondary" id="modal-bio-btn"
                     data-i18n="modal.biography_btn">Voir sa biographie</button>
@@ -1672,6 +1681,7 @@
     <script src="js/geoMap.js"></script>
     <script src="js/mindMap.js"></script>
     <script src="js/simultaneity.js"></script>
+    <script src="js/linkedEvents.js"></script>
     <script src="js/gameModes.js"></script>
     <script src="js/gallery.js"></script>
     <script src="js/app.js"></script>

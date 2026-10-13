@@ -2132,6 +2132,93 @@ textarea.form-input {
     text-decoration: underline;
 }
 
+/* Retour à la fiche précédente (après un saut par « Vu aussi dans… »). */
+.modal-back-btn {
+    display: block;
+    max-width: calc(100% - 48px);
+    margin: 0 0 12px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--primary-blue);
+    cursor: pointer;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.modal-back-btn:hover {
+    text-decoration: underline;
+}
+
+.modal-back-btn.hidden {
+    display: none;
+}
+
+/* « Vu aussi dans… » : le même fait, raconté par d'autres thèmes. */
+.modal-linked-row {
+    margin-top: 16px;
+}
+
+.modal-linked-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--muted-text);
+    margin-bottom: 8px;
+}
+
+.modal-linked-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.modal-linked-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    width: 100%;
+    padding: 10px 14px;
+    text-align: left;
+    background: transparent;
+    border: 1px solid var(--border-soft);
+    border-radius: 12px;
+    cursor: pointer;
+    font: inherit;
+    color: var(--ink-soft);
+}
+
+.modal-linked-btn:hover {
+    border-color: var(--primary-blue);
+}
+
+.modal-linked-theme {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--primary-blue);
+}
+
+.modal-linked-title {
+    font-size: 13px;
+}
+
+.modal-linked-more {
+    align-self: flex-start;
+    padding: 6px 12px;
+    background: transparent;
+    border: none;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--primary-blue);
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 /* Ligne d'actions additionnelle affichée uniquement quand la fiche est ouverte
            depuis « Découvrir un événement » : reroll et accès direct au thème d'origine. */
 .modal-theme-row {

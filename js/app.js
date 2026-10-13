@@ -6142,11 +6142,105 @@ function renderModalBiographyButton(evt, fromGallery = false) {
     } : null;
 }
 
+// « Vu aussi dans… » : les autres thèmes qui racontent le même fait (voir
+// js/linkedEvents.js). Un lien ouvre la fiche de l'événement dans ce thème-là —
+// avec son titre propre, qui dit l'angle choisi — et son accès « Jouer sur… ».
+// L'index se recalcule quand la base change (langue, thème ajouté).
+// Historique de la fiche : chaque saut par « Vu aussi dans… » empile la fiche
+// quittée, et le bouton « Retour » la rouvre. Toute autre ouverture de fiche,
+// et la fermeture, repartent d'un historique vide.
+let modalHistory = [];
+let currentModal = null;
+
+function modalBack() {
+    const previous = modalHistory.pop();
+    if (!previous) return;
+    openModal(previous.evt, previous.context, true);
+    const content = document.querySelector('#modal-details .modal-content');
+    if (content) content.scrollTop = 0;
+}
+
+function renderModalBackButton() {
+    const btn = document.getElementById('modal-back-btn');
+    if (!btn) return;
+    btn.classList.toggle('hidden', modalHistory.length === 0);
+    if (modalHistory.length > 0) {
+        const previous = modalHistory[modalHistory.length - 1];
+        btn.textContent = '← ' + t('nav.back') + ' : ' + previous.evt.titre;
+    }
+}
+
+let linkIndexCache = null;
+let linkIndexBdd = null;
+const LINKED_VISIBLE = 3;
+
+function getLinkIndex() {
+    if (!linkIndexCache || linkIndexBdd !== window.bdd) {
+        linkIndexCache = LinkedEvents.buildLinkIndex(getAllEventsWithLocation());
+        linkIndexBdd = window.bdd;
+    }
+    return linkIndexCache;
+}
+
+function renderModalLinkedEvents(evt) {
+    const row = document.getElementById('modal-linked-row');
+    const list = document.getElementById('modal-linked-list');
+    if (!row || !list) return;
+    list.innerHTML = '';
+    const links = (typeof LinkedEvents !== 'undefined') ? getLinkIndex().linksFor(evt) : [];
+    row.classList.toggle('hidden', links.length === 0);
+    if (links.length === 0) return;
+
+    function addLink(link) {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'modal-linked-btn';
+        btn.setAttribute('aria-label', t('modal.linked_open', { theme: link.theme.nom }));
+        const themeName = document.createElement('span');
+        themeName.className = 'modal-linked-theme';
+        themeName.textContent = link.theme.nom;
+        const title = document.createElement('span');
+        title.className = 'modal-linked-title';
+        title.textContent = link.event.titre;
+        btn.append(themeName, title);
+        btn.onclick = () => {
+            if (currentModal) modalHistory.push(currentModal);
+            openModal(link.event, {
+                theme: link.theme,
+                categoryIndex: link.categoryIndex,
+                subcategoryIndex: link.subcategoryIndex,
+                themeIndex: link.themeIndex,
+                hideRedraw: true
+            }, true);
+            const content = document.querySelector('#modal-details .modal-content');
+            if (content) content.scrollTop = 0;
+        };
+        list.appendChild(btn);
+    }
+
+    links.slice(0, LINKED_VISIBLE).forEach(addLink);
+    const rest = links.slice(LINKED_VISIBLE);
+    if (rest.length > 0) {
+        const more = document.createElement('button');
+        more.type = 'button';
+        more.className = 'modal-linked-more';
+        more.textContent = t('modal.linked_more', { n: rest.length });
+        more.onclick = () => {
+            more.remove();
+            rest.forEach(addLink);
+        };
+        list.appendChild(more);
+    }
+}
+
 // MODAL
 // Le second paramètre (facultatif) n'est fourni que depuis « Découvrir un
 // événement au hasard » : il permet d'afficher un accès direct vers le thème
 // d'origine de l'événement, ainsi qu'un bouton pour repiocher.
-function openModal(evt, context = null) {
+function openModal(evt, context = null, keepHistory = false) {
+    if (!keepHistory) modalHistory = [];
+    currentModal = { evt, context };
+    renderModalBackButton();
     document.getElementById('modal-titre').innerText = evt.titre;
 
     const badgeContainer = document.getElementById('modal-axe-badge-container');
@@ -6167,6 +6261,7 @@ function openModal(evt, context = null) {
     renderModalCountry(evt);
     document.getElementById('modal-desc').innerText = evt.description;
     document.getElementById('modal-wiki').href = evt.wikipedia;
+    renderModalLinkedEvents(evt);
     renderModalPortrait(evt);
     const fromGallery = !!(context && context.fromGallery);
     renderModalBiographyButton(evt, fromGallery);
@@ -6209,6 +6304,8 @@ function openModal(evt, context = null) {
 }
 
 function closeModal() {
+    modalHistory = [];
+    currentModal = null;
     document.getElementById('modal-details').classList.add('hidden');
 }
 
