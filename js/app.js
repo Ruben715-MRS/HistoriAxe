@@ -559,7 +559,7 @@ function deleteCustomTheme(themeId) {
         customCategory.themes = customCategory.themes.filter(t => t.id !== themeId);
         saveCustomThemesToStorage();
         initThemes();
-    });
+    }, { okLabel: t('nav.delete') });
 }
 
 function loadCustomEventsIntoBdd() {
@@ -728,7 +728,7 @@ function deleteCustomEvent(eventId) {
         }
 
         openSelectionMode();
-    });
+    }, { okLabel: t('nav.delete') });
 }
 
 function openSelectionMode() {
@@ -1125,7 +1125,7 @@ function resetRevisionTracking() {
         } else {
             initCategories();
         }
-    });
+    }, { okLabel: t('nav.reset') });
 }
 
 // VARIABLES GLOBALES
@@ -3260,13 +3260,29 @@ function answerSimultaneity(chosen) {
     updateSimultaneityHUD();
     renderSimultaneityReveal(q);
 
-    // Plus long que les autres modes (1300 ms), et c'est délibéré : le
-    // révélé est la vraie récompense du mode, il lui faut le temps d'être lu.
-    setTimeout(() => {
+    // Pas de minuterie : le révélé est la vraie récompense du mode, le joueur
+    // le lit à son rythme et passe à la suite avec « Suivant ».
+    appendRevealNextButton(document.getElementById('simul-reveal'), () => {
         simulIndex++;
         if (lives <= 0) { endGame(false); return; }
         renderSimultaneityQuestion();
-    }, 2600);
+    });
+}
+
+// Bouton « Suivant » placé sous un bloc de révélation : les modes à révélé
+// (Simultanéité, Remise en ordre, Intrus) n'avancent pas seuls, le joueur lit
+// à son rythme.
+function appendRevealNextButton(reveal, onNext) {
+    const btn = document.createElement('button');
+    btn.className = 'btn simul-next-btn';
+    btn.innerText = t('nav.next');
+    btn.onclick = () => {
+        btn.onclick = null;
+        onNext();
+    };
+    reveal.appendChild(btn);
+    btn.focus({ preventScroll: true });
+    btn.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
 }
 
 // « En 1789, pendant que la Bastille tombait : … » — deux ou trois
@@ -3484,11 +3500,11 @@ function answerOrdre() {
     updateOrdreHUD();
     renderOrdreReveal(correctOrder, verdict);
 
-    setTimeout(() => {
+    appendRevealNextButton(document.getElementById('ordre-reveal'), () => {
         ordreIndex++;
         if (lives <= 0) { endGame(false); return; }
         renderOrdreRound();
-    }, verdict.perfect ? 1600 : 3000);
+    });
 }
 
 function renderOrdreReveal(correctOrder, verdict) {
@@ -3901,11 +3917,11 @@ function answerIntrus(chosenId) {
     updateIntrusHUD();
     renderIntrusReveal(q);
 
-    setTimeout(() => {
+    appendRevealNextButton(document.getElementById('intrus-reveal'), () => {
         intrusIndex++;
         if (lives <= 0) { endGame(false); return; }
         renderIntrusQuestion();
-    }, 2400);
+    });
 }
 
 // Le révélé montre les dates que la question cachait, et dit ce qui liait les

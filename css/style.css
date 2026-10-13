@@ -2673,6 +2673,12 @@ textarea.form-input {
     font-size: 12px;
 }
 
+.simul-next-btn {
+    display: block;
+    margin: 16px auto 0;
+    min-width: 160px;
+}
+
 /* Mode Carte (localisation géographique puis temporelle — voir js/geoMap.js) */
 .geo-body {
     max-width: 720px;
