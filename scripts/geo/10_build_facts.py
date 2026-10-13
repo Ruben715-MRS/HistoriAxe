@@ -71,17 +71,25 @@ def build():
 
 if __name__ == '__main__':
     ap = argparse.ArgumentParser()
-    ap.add_argument('--themes'); ap.add_argument('--size', type=int, default=50); ap.add_argument('--prefix', default='b')
+    ap.add_argument('--themes'); ap.add_argument('--size', type=int, default=50); ap.add_argument('--prefix', default='b'); ap.add_argument('--rest', action='store_true', help='tous les faits pas encore annotés (work/annot), par catégorie puis thème')
     a = ap.parse_args()
     facts = build()
     os.makedirs(os.path.join(WORK, 'batches'), exist_ok=True)
     json.dump(facts, open(os.path.join(WORK, 'facts.json'), 'w'), ensure_ascii=False)
     print(len(facts), 'faits;', sum(len(f['members']) for f in facts), 'événements')
     print(collections.Counter(f['cat'] for f in facts))
-    if a.themes:
-        wanted = set(a.themes.split(','))
-        sel = [f for f in facts if f['id'].split(':')[0] in wanted]
-        sel.sort(key=lambda f: (f['id'].split(':')[0], f['date']))
+    if a.themes or a.rest:
+        if a.rest:
+            import glob
+            done = set()
+            for fn in glob.glob(os.path.join(WORK, 'annot', '*.json')):
+                done.update(x['id'] for x in json.load(open(fn)))
+            sel = [f for f in facts if f['id'] not in done]
+            sel.sort(key=lambda f: (CAT_RANK.get(f['cat'], 9), f['id'].split(':')[0], f['date']))
+        else:
+            wanted = set(a.themes.split(','))
+            sel = [f for f in facts if f['id'].split(':')[0] in wanted]
+            sel.sort(key=lambda f: (f['id'].split(':')[0], f['date']))
         for i in range(0, len(sel), a.size):
             chunk = sel[i:i + a.size]
             out = [{'id': f['id'], 'date': f['date'], 'titre': f['titre'], 'description': f['description'][:280],
