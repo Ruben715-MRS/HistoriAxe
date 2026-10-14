@@ -847,7 +847,7 @@ accueilli dans « Musique, spectacle et sport », pour les sportifs de portée h
 |---|---|---|---|
 | Chefs d'État et dirigeants | souverains, présidents, chefs de gouvernement | 33 | 21 |
 | Guerres et résistances | chefs militaires, résistants, héros d'indépendance, combats pour les droits | 18 | 24 |
-| Littérature et pensée | écrivains, poètes, philosophes | 30 | 25 |
+| Littérature et pensée | écrivains, poètes, philosophes | 31 | 25 |
 | Beaux-arts | peinture, sculpture, architecture | 19 | 12 |
 | Musique, spectacle et sport | compositeurs, interprètes, cinéma, théâtre, sport | 18 | 22 |
 | Sciences, techniques et innovation | savants, ingénieurs, inventeurs, explorateurs | 21 | 16 |
@@ -875,10 +875,10 @@ Les règles de rédaction, vérifiées par script et par test (voir plus bas) :
   de la fiche) doivent porter la *même* date. Les dates des soixante et une premières ont été
   comparées une à une à la phrase d'ouverture de l'article Wikipédia, celles des 72 figures
   ajoutées ensuite (voir « La France, de 68 à 140 figures ») au résumé de leur article.
-- **⭐ Incontournables** (`essentiel`) : 38 sur 151 pour la France, 39 sur 129 pour les États-Unis,
+- **⭐ Incontournables** (`essentiel`) : 39 sur 152 pour la France, 39 sur 129 pour les États-Unis,
   56 sur 149 pour l'Allemagne, l'Autriche et la Suisse, 51 sur 151 pour le Royaume-Uni, 36 sur 132 pour l'Espagne.
 
-Quantités visées : 68 personnages pour la France (portés à 151, voir plus bas), 52 pour l'Égypte, 129 pour les
+Quantités visées : 68 personnages pour la France (portés à 152, voir plus bas), 52 pour l'Égypte, 129 pour les
 États-Unis (85 proposés, portés à 123 : « mieux vaut plus que moins », puis à 129 avec l'axe Économie et entreprise), 127 pour
 l'Italie (126 proposés, plus Enzo Ferrari), 80 à 100
 pour l'Amérique hispanique (dix-neuf pays, de 1 à 19 figures chacun), 58 pour le
@@ -1935,11 +1935,11 @@ alternatifs), ce qui laissait dix-huit portraits sans crédit.
 
 `pan_fr` était le plus mince des panthéons de pays, en comparaison de l'Italie (127),
 des États-Unis (129), de l'Espagne (132), de l'Allemagne-Autriche-Suisse (149) et du
-Royaume-Uni (151). Il passe de 68 à **151 personnages**, de Vercingétorix (vers 82 av. J.-C.) à
-Serge Gainsbourg (1928) : 72 figures ajoutées, plus 10 invités de Monaco (voir « Les micro-États ») et Pétain.
-Par axe : 33 Chefs d'État et dirigeants, 30 Littérature et pensée, 21 Sciences, techniques et
+Royaume-Uni (151). Il passe de 68 à **152 personnages**, de Vercingétorix (vers 82 av. J.-C.) à
+Serge Gainsbourg (1928) : 72 figures ajoutées, plus 10 invités de Monaco (voir « Les micro-États ») , Pétain et Rachi.
+Par axe : 33 Chefs d'État et dirigeants, 31 Littérature et pensée, 21 Sciences, techniques et
 innovation, 19 Beaux-arts, 18 Guerres et résistances, 18 Musique, spectacle et sport, 12
-Économie et entreprise ; 38 ⭐ et 29 biographies
+Économie et entreprise ; 39 ⭐ et 29 biographies
 liées (Sartre, Gainsbourg et Alexandra David-Néel s'ajoutent aux 26 d'avant).
 
 - **Les ajouts, par axe** : Philippe Auguste, Philippe le Bel, Louis XI, Colbert, Louis XVI,
@@ -1966,6 +1966,13 @@ liées (Sartre, Gainsbourg et Alexandra David-Néel s'ajoutent aux 26 d'avant).
   l'app raconte ; il y figure comme figure de l'histoire, non comme figure honorée. Rangé en Chefs
   d'État (comme Mussolini), marqué ⭐ ; son portrait est la photographie officielle de 1941, et la
   légende le dit.
+- **Rachi y est, et non en Israël.** Né, enseignant et mort à Troyes, il n'a jamais vécu en Terre
+  d'Israël : selon le critère d'Israël (« un Juif qui n'y a pas vécu reste dans le thème de son pays »,
+  comme Maïmonide en Espagne), il appartient au panthéon de la France. Rangé en Littérature et
+  pensée, comme les autres commentateurs et religieux, marqué ⭐. Son année de naissance est dite
+  « vers 1040 » ; son portrait est une gravure sur bois imaginaire de 1539, et la légende le dit. Un
+  événement de même titre existe dans le thème d'histoire juive : les deux fiches partagent le même
+  point sur la carte (Troyes), comme l'exige la règle des faits liés.
 - **Des figures contestées, dont la fiche dit ce qu'on leur reproche** : Colbert (le Code noir,
   préparé sous son ministère), Philippe le Bel (les Templiers), Turenne (le Palatinat), Napoléon
   III (le coup d'État), Mitterrand (Vichy, Bousquet), Degas (l'affaire Dreyfus), Gauguin (ses
@@ -2599,7 +2606,7 @@ faute de licence établie), remplacés l'un par une photographie de 1933 aux
 deux balises, l'autre par un cliché de 1959 de la Bibliothèque du Congrès.
 
 **Poids** : JPEG de 320 × 400, 25 Ko en moyenne (62 au plus), soit 1,8 Mo pour
-les 151 de la France, 2,5 Mo pour les 97 de l'Amérique hispanique, 1,7 Mo
+les 152 de la France, 2,5 Mo pour les 97 de l'Amérique hispanique, 1,7 Mo
 pour les 58 du Maghreb, 1,4 Mo pour les 52 de l'Égypte et 3,1 Mo pour les 129
 des États-Unis — de
 l'ordre de 20 Mo pour 800 portraits, quand `assets/` en pèse déjà 38. Le WebP

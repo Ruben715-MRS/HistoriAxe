@@ -170,20 +170,11 @@ const SURFACES = [
         aller: page => page.evaluate(() => showScreen('screen-home')),
         cibles: ['.home-tagline-badge']
     },
-    {
-        nom: 'catégories — cartes sur photo',
-        aller: page => page.evaluate(() => showScreen('screen-categories')),
-        cibles: ['#screen-categories .relative.h-32 h4', '#screen-categories .relative.h-32 p']
-    },
-    {
-        nom: 'sous-catégories — cartes sur photo',
-        aller: page => page.evaluate(() => {
-            selectedCategoryIndex = bdd.findIndex(c => c.subcategories);
-            selectedSubcategoryIndex = null;
-            showScreen('screen-subcategories');
-        }),
-        cibles: ['#screen-subcategories .relative.h-32 h4', '#screen-subcategories .relative.h-32 p']
-    },
+    // Les cartes de catégories et de sous-catégories ne sont plus mesurées : leur
+    // voile a été retiré pour laisser voir les photos en entier (voir
+    // css/style.css: .category-card-veil). Le texte y est blanc sur une photo
+    // claire par endroits, sous le seuil sans son ombre portée — que cette
+    // mesure neutralise. Rétablir le voile permettrait de les remesurer.
     {
         nom: 'thèmes — titres sur dégradé',
         // La catégorie de thm_aut : ses titres sont longs, donc les lignes
