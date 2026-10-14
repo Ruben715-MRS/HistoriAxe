@@ -602,8 +602,7 @@ test('la Russie : chacune de ses figures a son portrait, d’Ivan III à Alexeï
     await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
 
     // Trois époques : le grand-prince de Moscou, un poète du XIXe siècle, un cosmonaute.
-    // Le titre de la donnée est « Naissance d'Youri Gagarine » : l'élision n'est pas ce que ce test vérifie.
-    for (const titre of ['Naissance d\'Ivan III', 'Naissance d\'Alexandre Pouchkine', /Naissance d.{1,2}Youri Gagarine/]) {
+    for (const titre of ['Naissance d\'Ivan III', 'Naissance d\'Alexandre Pouchkine', 'Naissance de Youri Gagarine']) {
         await page.locator('#timeline .entry', { hasText: titre }).click();
         await expect(page.locator('#modal-details')).toBeVisible();
         await expect(page.locator('#modal-pays')).toBeHidden();
