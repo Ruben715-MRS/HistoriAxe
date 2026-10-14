@@ -111,6 +111,9 @@ EVENTS = [
  ("cat31", AIR, 2014, "Destruction du vol MH17", "Vol_Malaysia_Airlines_17",
   "Le 17 juillet 2014, un Boeing 777 de Malaysia Airlines, qui reliait Amsterdam à Kuala Lumpur, est abattu au-dessus de l'est de l'Ukraine. Les 298 personnes à bord périssent. L'enquête internationale conclut qu'il a été touché par un missile sol-air Bouk tiré depuis un territoire contrôlé par des séparatistes prorusses.",
   48.13, 38.62, 's', "Hrabove, oblast de Donetsk", 0),
+ ("cat54", AIR, 2015, "Crash de l'A320 de Germanwings", "Vol_Germanwings_9525",
+  "Le 24 mars 2015, un Airbus A320 de Germanwings, qui reliait Barcelone à Düsseldorf, s'écrase dans le massif des Trois-Évêchés, dans les Alpes-de-Haute-Provence. Les 150 personnes à bord périssent : le copilote, Andreas Lubitz, avait enfermé le commandant hors du poste de pilotage et fait descendre volontairement l'appareil. Le drame conduit de nombreuses compagnies européennes à imposer la présence de deux personnes en permanence dans le poste de pilotage.",
+  44.27, 6.44, 's', "Massif des Trois-Évêchés, Alpes-de-Haute-Provence", 0),
  # ------------------------------------------------------------------ RAIL
  ("cat32", RAIL, 1842, "Catastrophe ferroviaire de Meudon", "Catastrophe_ferroviaire_de_Meudon",
   "Le 8 mai 1842, un train revenant de Versailles déraille à Meudon, dans la région parisienne, après la rupture de l'essieu de la locomotive. Les voitures, fermées à clef selon l'usage, prennent feu et une cinquantaine de voyageurs périssent, dont l'explorateur Dumont d'Urville. C'est la première grande catastrophe ferroviaire de France, et elle met fin à l'enfermement des voyageurs dans les compartiments.",
@@ -178,5 +181,5 @@ EVENTS = [
   44.4247, 8.8906, 's', "Viaduc Morandi, Gênes", 0),
 ]
 
-ESSENTIEL = ["cat2", "cat3", "cat5", "cat6", "cat12", "cat15", "cat17", "cat23", "cat25", "cat26", "cat53", "cat28", "cat29", "cat30",
+ESSENTIEL = ["cat2", "cat3", "cat5", "cat6", "cat12", "cat15", "cat17", "cat23", "cat25", "cat26", "cat53", "cat54", "cat28", "cat29", "cat30",
              "cat32", "cat35", "cat39", "cat42", "cat41", "cat44", "cat46", "cat47", "cat52", "cat48", "cat45", "cat22"]
