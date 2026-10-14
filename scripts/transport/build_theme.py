@@ -40,6 +40,7 @@ EXISTING_URLS = {
     'cat26': 'https://fr.wikipedia.org/wiki/Attentat_de_Lockerbie',
     'cat28': 'https://fr.wikipedia.org/wiki/Vol_Air_France_4590',
     'cat29': 'https://fr.wikipedia.org/wiki/Catastrophe_de_la_navette_spatiale_Columbia',
+    'cat53': 'https://fr.wikipedia.org/wiki/Vol_Fuerza_Aérea_Uruguaya_571',
     'cat47': 'https://fr.wikipedia.org/w/index.php?search=Incendie+du+tunnel+du+Mont-Blanc',
 }
 

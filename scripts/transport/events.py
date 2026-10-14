@@ -81,6 +81,9 @@ EVENTS = [
  ("cat22", AIR, 1967, "Incendie d'Apollo 1", "Apollo_1",
   "Le 27 janvier 1967, un incendie éclate dans la capsule d'Apollo 1 lors d'un essai au sol, sur la rampe de lancement de Cap Kennedy. Les trois astronautes, Grissom, White et Chaffee, périssent en quelques secondes dans une atmosphère d'oxygène pur. La capsule est entièrement repensée, et le programme Apollo reprend avec Apollo 7 en 1968.",
   28.522, -80.561, 's', "Complexe de lancement 34, Cap Kennedy", 0),
+ ("cat53", AIR, 1972, "Accident du vol Fuerza Aérea Uruguaya 571", "Vol_Fuerza_Aérea_Uruguaya_571",
+  "Le 13 octobre 1972, un avion de l'armée de l'air uruguayenne transportant une équipe de rugby et ses proches s'écrase dans la cordillère des Andes, à la frontière entre l'Argentine et le Chili. Sur les 45 personnes à bord, seize survivent soixante-douze jours dans le froid et la faim, malgré une avalanche qui en tue huit, et en sont réduits à se nourrir des corps des défunts. Deux d'entre eux, Nando Parrado et Roberto Canessa, marchent dix jours pour trouver de l'aide, et les rescapés sont sauvés les 22 et 23 décembre.",
+  -34.7667, -70.2833, 's', "Glacier des Larmes, cordillère des Andes", 0),
  ("cat23", AIR, 1977, "Collision de Tenerife", "Catastrophe_aérienne_de_Tenerife",
   "Le 27 mars 1977, deux Boeing 747, de KLM et de Pan Am, entrent en collision sur la piste de l'aéroport de Tenerife-Nord, aux Canaries, dans un épais brouillard. L'accident fait 583 morts, ce qui en fait le plus meurtrier de l'histoire de l'aviation. Il conduit à normaliser la phraséologie radio et à revoir le fonctionnement des équipages.",
   28.4827, -16.3415, 's', "Aéroport de Tenerife-Nord", 0),
@@ -175,5 +178,5 @@ EVENTS = [
   44.4247, 8.8906, 's', "Viaduc Morandi, Gênes", 0),
 ]
 
-ESSENTIEL = ["cat2", "cat3", "cat5", "cat6", "cat12", "cat15", "cat17", "cat23", "cat25", "cat26", "cat28", "cat29", "cat30",
+ESSENTIEL = ["cat2", "cat3", "cat5", "cat6", "cat12", "cat15", "cat17", "cat23", "cat25", "cat26", "cat53", "cat28", "cat29", "cat30",
              "cat32", "cat35", "cat39", "cat42", "cat41", "cat44", "cat46", "cat47", "cat52", "cat48", "cat45", "cat22"]
