@@ -601,7 +601,7 @@ ne posent pas la même question :
 | | Un thème, c'est | Une date, c'est | On le joue par |
 |---|---|---|---|
 | **Biographies** | une vie (360 thèmes, en 12 domaines) | une étape de cette vie | étape de la vie |
-| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, le sous-continent indien, Israël, la Turquie, le Japon, la Russie, l'Australie) | la naissance d'un personnage | domaine |
+| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, le sous-continent indien, Israël, la Turquie, le Japon, la Russie, l'Australie, le Canada, le Benelux, le Portugal) | la naissance d'un personnage | domaine |
 
 Le déplacement ne coûte aucune migration : les 360 thèmes gardent leurs
 identifiants, et rien de ce que le joueur a sauvegardé (favoris, révision,
@@ -1774,8 +1774,8 @@ Les choix qui ne vont pas de soi :
 - **Les nations de la péninsule dedans** : Catalans (Jacques Ier, Companys, Casals, Gaudí,
   Miró, Dalí, Tàpies, Rodoreda, Caballé), Basques (Loyola, Elcano, Urdaneta, Lezo, Chillida,
   Unamuno, Baroja) et Galiciens (Rosalía de Castro, Pardo Bazán, Valle-Inclán, Cela), comme
-  les quatre nations du Royaume-Uni. Le Portugal est laissé à un futur panthéon : Magellan
-  et Viriathe, que les deux pays se disputent, n'y sont pas non plus.
+  les quatre nations du Royaume-Uni. Le Portugal a son propre panthéon (voir « Un pays à part : le
+  Portugal ») : Magellan et Viriathe, que les deux pays se disputent, y sont, et pas ici.
 - **Hispanie romaine et al-Andalus dedans.** Trajan, Hadrien, Théodose, Sénèque et Martial
   d'un côté ; Abd al-Rahman III, Almanzor, Averroès, Maïmonide, Ibn Arabi, Abulcasis et Ibn
   Firnas de l'autre : la péninsule n'est pas devenue espagnole en 1492.
@@ -2135,6 +2135,109 @@ Pas d'axe « Économie et entreprise » : Rupert Murdoch et Nicole Kidman, qui o
   Le portrait de Weary Dunlop (une statue) doit être retéléchargé avec son recadrage, déjà inscrit dans la source :
   `python3 scripts/fetch_portraits.py au --force --only dunlop`.
 
+### Un pays à part : le Canada
+
+`pan_ca`, « Grandes figures du Canada » (code `ca`, pays) : **118 personnages**, de Marie de l'Incarnation (1599) à
+Terry Fox (1958). Par axe :
+29 Chefs d'État et dirigeants, 24 Musique, spectacle et sport, 18 Littérature et pensée, 16 Guerres et résistances,
+16 Beaux-arts, 15 Sciences, techniques et innovation ; 16 ⭐ et 1 biographie liée (Pierre Elliott Trudeau).
+118 portraits : 95 du domaine public, le reste sous licence CC BY ou CC BY-SA.
+
+- **Un pays, pas un bloc** : `pan_ca`, et « Pendant ce temps, ailleurs… » le compte comme `thm_ca`. Deux invités d'un
+  autre État portent leur `pays` : Wolfe (Royaume-Uni) et Montcalm (France). Les fondateurs de la Nouvelle-France nés
+  en France (Mance, Maisonneuve, Laval, Talon, Frontenac) n'ont pas de `pays` : la fiche dit où ils sont nés.
+- **Les Premières Nations, les Métis et les Inuits** : Kondiaronk, Brant, Riel, Dumont, Poundmaker, Crowfoot,
+  Mistahimaskwa, Tom Longboat, Pauline Johnson, Tommy Prince, Kenojuak Ashevak.
+- **Les figures disputées sont écrites comme telles** : Macdonald et les pensionnats, Groulx et son antisémitisme,
+  Parizeau le soir du référendum de 1995, Alice Munro et ce que sa fille a révélé en 2024.
+- **Déjà dans un autre panthéon, donc absents** : Champlain et Jacques Cartier (France), Alexander Graham Bell
+  (Royaume-Uni), Tecumseh (États-Unis). Le panthéon de la France porte leur fiche.
+- **Dates** : Kondiaronk, Poundmaker, Crowfoot et Mistahimaskwa portent un « vers » : les articles ne donnent pas leur année exacte.
+- **Pas de vivants** : Céline Dion, qui a sa biographie, Wayne Gretzky, Margaret Atwood ou Joni Mitchell n'y sont pas.
+- **Les images** : Mance, Secord, Frye et Riopelle sont montrés par une statue, Frontenac par une sculpture, Hébert par
+  un dessin ; Kondiaronk n'a aucun portrait connu : on montre la marque du Rat qu'il a apposée au traité de 1701 (`nomVisible`) ; David Thompson est montré par un dessin moderne.
+- **Écartés faute d'image libre** : Mordecai Richler (seule une pierre tombale est libre), William Logan (Wikimedia a
+  refusé le téléchargement). Pas de portrait libre non plus pour Arthur Erickson, Norval Morrisseau ou Joyce Wieland.
+
+### Un bloc : le Benelux
+
+`pan_benelux`, « Grandes figures du Benelux » (code `benelux`, bloc) : **89 personnages de trois pays** — Belgique 38,
+Pays-Bas 38, Luxembourg 13 — de Jean l'Aveugle (1296) à Johan Cruyff (1947). Par axe : 21 Beaux-arts, 20 Sciences,
+techniques et innovation, 14 Littérature et pensée, 13 Chefs d'État et dirigeants, 9 Musique, spectacle et sport,
+6 Guerres et résistances, 6 Économie et entreprise ; 29 ⭐ et 11 biographies liées (Léopold II, Simenon, Horta, Brel,
+Solvay, Lemaître, Andrée De Jongh, Leman, de Gerlache, Damien de Veuster, Spinoza). 89 portraits : 76 du domaine
+public ou CC0, le reste sous licence CC BY ou CC BY-SA.
+
+- **Un seul bloc, non trois thèmes.** Les Pays-Bas bourguignons, puis espagnols, forment une seule entité jusqu'à la
+  révolte de 1568 ; le Nord s'en sépare ensuite, le Sud reste espagnol puis autrichien, et les deux sont réunis de 1815
+  à 1830 avant la Belgique indépendante. Jan van Eyck, Bruegel et Rubens appartiennent autant à l'un qu'à l'autre. Le
+  Luxembourg, seul, n'aurait jamais eu de quoi faire un thème. Chaque figure porte son `pays` (`BE`, `NL`, `LU`), d'où le
+  drapeau de la fiche et le compte de la Simultanéité.
+- **Un équilibre déclaré.** Belgique et Pays-Bas pèsent chacun 42,7 % du bloc, au-dessus du seuil de 40 % : la
+  source déclare `partMaxPays: 0.45`, c'est un choix écrit. Le Luxembourg, 13 figures sur 89, n'en a pas davantage :
+  son histoire d'avant 1815 est celle d'un comté dont les souverains règnent ailleurs (Jean l'Aveugle, roi de
+  Bohême).
+- **Nés ailleurs, rangés là où on les honore.** Rubens naît à Siegen (Allemagne) mais est anversois ; Guillaume le
+  Taciturne et Maurice de Nassau naissent à Dillenburg ; Léopold Ier naît à Cobourg ; Anne Frank naît à Francfort et
+  vit à Amsterdam ; Vondel naît à Cologne ; Einthoven à Semarang ; Pierre Werner à Saint-André, près de Lille ; Henri
+  Tudor près d'Echternach ; Robert Schuman à Luxembourg, d'une famille lorraine, avant d'être français : la fiche dit chaque fois
+  où ils sont nés. Frans Hals, né à Anvers de parents de Haarlem, est aux Pays-Bas ; Django Reinhardt, né à Liberchies, et
+  Audrey Hepburn, née à Ixelles, sont en Belgique et leur fiche dit où ils ont vécu.
+- **Déjà dans un autre panthéon, donc absent** : Charles Quint, né à Gand, est au panthéon de l'Espagne ; Descartes,
+  qui a vécu vingt ans aux Provinces-Unies, à celui de la France.
+- **Les figures disputées sont écrites comme telles** : Léopold II et le Congo, Jan Pieterszoon Coen et le massacre
+  de Banda, Mata Hari, condamnée sur des preuves minces.
+- **Dates** : Jan van Eyck, Bruegel, Hals, Bosch, Tasman et Érasme portent un « vers » : les sources donnent plusieurs
+  années ou aucune. Érasme est daté de vers 1466, avec 1467 et 1469 pour variantes.
+- **Pas de vivants** : Eddy Merckx, qui a sa biographie, n'y est pas.
+- **Les images** : Stevin est montré par une statue ; Vermeer par un détail de « L'Entremetteuse », que l'on tient pour son
+  seul autoportrait ; Bruegel, Bosch et Jean l'Aveugle par un dessin ; Mercator et Vésale par une gravure dont l'inscription
+  porte leur nom (`nomVisible` : « Qui est-ce ? » les écarte). Charlotte, Wilhelmine et Léopold Ier sont des portraits
+  officiels.
+- **Écarté faute d'image libre** : Peyo (la seule photographie trouvée porte un bandeau de contestation de licence).
+
+### Un pays à part : le Portugal
+
+`pan_pt`, « Grandes figures du Portugal » (code `pt`, pays) : **77 personnages**, de Viriathe (vers 180 av. J.-C.) à
+Mariano Gago (1948). Par axe : 22 Littérature et pensée, 20 Chefs d'État et dirigeants, 14 Guerres, résistances et
+exploration, 8 Beaux-arts, 8 Musique, spectacle et sport, 5 Sciences, techniques et innovation ; 18 ⭐ et 2 biographies
+liées (Vasco de Gama, Magellan). 77 portraits : 57 du domaine public, 5 CC0 et 15 sous licence CC BY ou CC BY-SA.
+
+- **Un pays, pas un bloc** : `pan_pt`, aucun champ `pays` (pas d'invité), et « Pendant ce temps, ailleurs… » le compte
+  comme `thm_pt`, l'« Histoire du Portugal ». Le thème se range par « Portugal », entre le Maghreb et le Royaume-Uni.
+- **Un axe qui dit l'exploration** : « Guerres, résistances et exploration », comme la Scandinavie. Les Découvertes
+  (Henri le Navigateur, Dias, Gama, Cabral, Magellan, Albuquerque, Almeida, Diogo Cão, Duarte Pacheco Pereira) sont le
+  cœur du pays ; Henri le Navigateur et Manuel Ier sont rangés avec les chefs d'État, Mendes Pinto avec les écrivains.
+- **Magellan et Viriathe, enfin chez eux** : le panthéon de l'Espagne les avait laissés de côté. Magellan est au
+  service de l'Espagne et sa biographie reste liée (`bio_magellan`), comme celle de Gama ; Viriathe est lusitanien.
+- **Ceux qui sont nés ailleurs** : Eusébio et Otelo Saraiva de Carvalho au Mozambique, Almada Negreiros à São Tomé,
+  Inês de Castro en Galice, Josefa de Óbidos à Séville. Leur description le dit ; aucun n'est rangé comme invité
+  (pas de champ `pays`), puisque c'est le Portugal qui les honore le plus.
+- **Un régime et sa chute, sans complaisance** : Salazar et Caetano sont là avec ce que fut l'Estado Novo (censure,
+  PIDE, guerres coloniales) ; Delgado, Sousa Mendes, Cunhal, Soares, Zeca Afonso, Salgueiro Maia et Otelo sont ceux
+  qui l'ont combattu ou renversé. Otelo est dit tel qu'il fut, y compris sa condamnation de 1984.
+- **Dates** : « vers » devant Alphonse Ier, Viriathe, Almeida, Gama, Dias, Magellan, Diogo Cão, Pacheco Pereira,
+  Camões, Gil Vicente, Mendes Pinto et Jean XXI, que les sources ne donnent pas à l'année près. Gama et Magellan gardent
+  la date de leur biographie (1469, 1480).
+- **Pas de vivants** : Cristiano Ronaldo, José Mourinho, Mariza, Siza Vieira ou Joana Vasconcelos n'y sont pas.
+- **Les images** : plusieurs portraits sont des gravures, des enluminures ou des peintures posthumes, et leur légende le dit
+  (les rois d'Alphonse Ier à Jean Ier d'après la « Genealogia dos Reis de Portugal » de 1530-1534, Albuquerque,
+  Nuno Álvares Pereira, Cabral). Dias, Orta et Soares dos Reis sont montrés par une statue, Gago Coutinho par un
+  buste, Josefa de Óbidos et Amadeo de Souza-Cardoso par une de leurs œuvres (aucun portrait libre d'eux). Torga,
+  Sophia, Natália Correia et Carlos Paredes sont montrés par des portraits dessinés ou peints de Bottelho. Dix images
+  écrivent le nom (inscription latine sur Magellan, Jean II, Jean XXI et Manuel Ier, légende gravée sur Camões, Cabral,
+  Nuno Álvares Pereira, Diogo Cão et Orta, signature d'Herculano) et sont marquées `nomVisible`. Salgueiro Maia est
+  recadré dans une photographie de famille où il se tient debout dans une jeep.
+- **Écartés faute d'image libre ou sûre** : Paula Rego et Maria Helena Vieira da Silva (aucun portrait libre : le
+  seul est une image sous licence locale de Wikipédia), l'image d'Eusébio la plus connue (une vignette Panini de
+  1973, « Not-PD-US-URAA » : refusée, remplacée par une photographie d'Anefo de 1963), la photographie d'Amadeo de
+  Souza-Cardoso numérisée par la Gulbenkian (« No restrictions », hors liste). Le statut américain du portrait de
+  Lopes-Graça (« Fundação Mário Soares », années 1950, auteur inconnu) est à confirmer.
+- **Envisagés et pas faits** : Mouzinho de Albuquerque (la date de sa mort diffère selon les sources), Abel Salazar et
+  Ricardo Jorge (titres d'article à retrouver), Sidónio Pais, Jean III, Philippa de Lancastre, Vergílio Ferreira,
+  Eugénio de Andrade ; et les figures que le Brésil revendique autant (Pierre Ier, Bartolomeu de Gusmão), ou né à Goa
+  (Joseph Vaz).
+
 ### Un fichier source par panthéon, un script qui l'écrit dans `data/fr.json`
 
 `scripts/pantheon/<code>.json` (`fr`, `hispam`…) est **la seule source de
@@ -2477,7 +2580,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
 ### Ce qui n'est pas fait
 
 - **Les autres panthéons** : la France, l'Égypte, les États-Unis, l'Italie, le
-  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie et l'Australie sont écrits.
+  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie, l'Australie, le Canada, le Benelux et le Portugal sont écrits.
   Chaque liste de personnages est validée avant la rédaction. Feuille de route, dans l'ordre
   où on les propose (un pays seul quand il a de quoi faire un thème, un bloc sinon) :
   1. **Le Machrek est écrit** (voir « Le cinquième bloc »). Il reste : le portrait des trois
@@ -2492,9 +2595,9 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
   3. **Blocs** : l'Asie du Sud-Est, l'Asie centrale et la Mongolie, le Caucase, la Corée (`KR`/`KP`), l'Afrique de
      l'Ouest, l'Afrique centrale, l'Afrique de l'Est et la Corne, l'Afrique australe et l'océan
      Indien (sans l'Afrique du Sud), « Nouvelle-Zélande et Pacifique ».
-  4. **L'Europe et les Amériques qui manquent** : le Portugal (qui reprendra Magellan et
-     Viriathe, laissés de côté dans le panthéon de l'Espagne), Byzance (au-delà des cinq figures déjà au panthéon de la Grèce), le Benelux,
-     la Pologne, l'Europe centrale, les Balkans, le Canada, les Caraïbes non
+  4. **L'Europe et les Amériques qui manquent** : **le Portugal est écrit** (voir « Un pays à part : le Portugal »,
+     qui a repris Magellan et Viriathe), Byzance (au-delà des cinq figures déjà au panthéon de la Grèce),
+     la Pologne, l'Europe centrale, les Balkans, les Caraïbes non
      hispaniques.
 
   Les images décideront de la taille de chacun : pour l'Afrique subsaharienne et l'Asie du

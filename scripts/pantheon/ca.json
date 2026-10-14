@@ -1,0 +1,1945 @@
+{
+  "code": "ca",
+  "nom": "Canada",
+  "theme": {
+    "id": "pan_ca",
+    "nom": "Grandes figures du Canada",
+    "difficulte": "Intermédiaire",
+    "motsCles": [
+      "Canadien",
+      "Canadienne",
+      "Canada",
+      "Québécois",
+      "Québécoise",
+      "Québec",
+      "Nouvelle-France",
+      "Ottawa",
+      "Montréal",
+      "Toronto",
+      "Confédération canadienne",
+      "Premières Nations",
+      "Métis",
+      "Inuit",
+      "Groupe des Sept",
+      "Révolution tranquille"
+    ]
+  },
+  "axes": [
+    "Chefs d'État et dirigeants",
+    "Guerres et résistances",
+    "Littérature et pensée",
+    "Beaux-arts",
+    "Musique, spectacle et sport",
+    "Sciences, techniques et innovation"
+  ],
+  "personnages": [
+    {
+      "slug": "mance",
+      "nom": "Jeanne Mance",
+      "classement": "Mance, Jeanne",
+      "titre": "Naissance de Jeanne Mance",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1606,
+      "description": "Jeanne Mance (1606-1673) est une pionnière française née à Langres, cofondatrice de Montréal. Arrivée en 1642 avec Paul de Chomedey de Maisonneuve, elle fonde en 1645 l'Hôtel-Dieu de Montréal, le premier hôpital de la ville, qu'elle administre pendant près de trente ans. Elle est souvent présentée comme la première infirmière laïque d'Amérique du Nord.",
+      "wikipedia": "Jeanne Mance",
+      "portrait": {
+        "fichier": "JeanneManceHotelDieu.jpg",
+        "legende": "Statue de Jeanne Mance devant l'Hôtel-Dieu de Montréal : une sculpture, non un portrait d'époque",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Sculpture : Louis-Philippe Hébert / Photo : Jeangagnon"
+      }
+    },
+    {
+      "slug": "maisonneuve",
+      "nom": "Paul de Chomedey de Maisonneuve",
+      "classement": "Maisonneuve, Paul de Chomedey de",
+      "titre": "Naissance de Paul de Chomedey de Maisonneuve",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1612,
+      "description": "Paul de Chomedey de Maisonneuve (1612-1676) est un officier français né en Champagne, fondateur et premier gouverneur de Ville-Marie, devenue Montréal. Il y débarque le 17 mai 1642 avec une cinquantaine de colons et tient le poste face aux attaques iroquoises, notamment en 1651. Rappelé en France en 1665, il y meurt à Paris onze ans plus tard.",
+      "wikipedia": "Paul de Chomedey de Maisonneuve",
+      "portrait": {
+        "fichier": "Paul_Chomedey_de_Maisonneuve_-_Ozias_Leduc.jpg",
+        "legende": "Paul de Chomedey de Maisonneuve, portrait imaginaire peint par Ozias Leduc",
+        "licence": "Domaine public",
+        "auteur": "Ozias Leduc (1864–1955)"
+      }
+    },
+    {
+      "slug": "laval",
+      "nom": "François de Laval",
+      "classement": "Laval, François de",
+      "titre": "Naissance de François de Laval",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1623,
+      "description": "François de Laval (1623-1708) est un prélat français né à Montigny-sur-Avre, premier évêque de Québec. Nommé vicaire apostolique en 1658, il fonde le Séminaire de Québec en 1663 et fait ériger le diocèse en 1674, qu'il dirige jusqu'en 1688. Il s'oppose aux gouverneurs sur la vente d'alcool aux Autochtones et pèse sur l'organisation de la colonie.",
+      "wikipedia": "François de Laval",
+      "portrait": {
+        "fichier": "Portrait_of_Monseigneur_François_de_Laval,_Québec_city,_1700.jpg",
+        "legende": "François de Laval, portrait peint vers 1700",
+        "licence": "CC BY-SA 4.0",
+        "auteur": "Wilfredor Alternative names Wilfredor"
+      }
+    },
+    {
+      "slug": "talon",
+      "nom": "Jean Talon",
+      "classement": "Talon, Jean",
+      "titre": "Naissance de Jean Talon",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1626,
+      "description": "Jean Talon (1626-1694) est un administrateur français né à Châlons-en-Champagne, premier intendant de la Nouvelle-France. En poste de 1665 à 1668 puis de 1670 à 1672, il organise en 1666 le premier recensement nominatif d'Amérique du Nord et encourage la natalité en accueillant les Filles du roi. Il favorise aussi la brasserie, la construction navale et le défrichement.",
+      "wikipedia": "Jean Talon",
+      "portrait": {
+        "fichier": "Portrait_de_Jean_Talon_(éclaircie).jpg",
+        "legende": "Jean Talon, portrait peint au XVIIe siècle",
+        "licence": "Domaine public",
+        "auteur": "Claude François (1614–1685)"
+      }
+    },
+    {
+      "slug": "frontenac",
+      "nom": "Louis de Buade de Frontenac",
+      "classement": "Frontenac, Louis de Buade de",
+      "titre": "Naissance de Louis de Buade de Frontenac",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1622,
+      "description": "Louis de Buade de Frontenac (1622-1698) est un officier français né à Saint-Germain-en-Laye, deux fois gouverneur de la Nouvelle-France. En 1690, il refuse de capituler devant la flotte de l'Anglais William Phips en répondant qu'il n'a de réponse à faire que par la bouche de ses canons. Il conclut la Grande Paix de Montréal avec les nations autochtones peu avant sa mort à Québec.",
+      "wikipedia": "Louis de Buade de Frontenac",
+      "portrait": {
+        "fichier": "Frontenac_par_Philippe_Hebert.png",
+        "legende": "Louis de Buade de Frontenac, sculpture de Philippe Hébert : une œuvre d'artiste, non un portrait d'époque",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "kondiaronk",
+      "nom": "Kondiaronk",
+      "classement": "Kondiaronk",
+      "titre": "Naissance de Kondiaronk",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1625,
+      "description": "Kondiaronk (vers 1625-1701) est un chef wendat de la nation des Pétuns, aussi connu sous le nom de Le Rat. Orateur redouté, il joue un rôle central dans les négociations de la Grande Paix de Montréal, conclue en août 1701 entre la France et une quarantaine de nations autochtones. Il meurt de maladie en pleine négociation, et ses funérailles sont célébrées avec les honneurs militaires à Montréal.",
+      "wikipedia": "Kondiaronk",
+      "portrait": {
+        "fichier": "Grande_Paix_de_Montréal_07_LES_HURONS-WYANDOT-Marque-du-Rat.svg",
+        "legende": "Marque de Kondiaronk au bas du traité de 1701 : on n'en connaît aucun portrait",
+        "licence": "Domaine public",
+        "auteur": "Pierre5018",
+        "nomVisible": true
+      }
+    },
+    {
+      "slug": "papineau",
+      "nom": "Louis-Joseph Papineau",
+      "classement": "Papineau, Louis-Joseph",
+      "titre": "Naissance de Louis-Joseph Papineau",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1786,
+      "description": "Louis-Joseph Papineau (1786-1871) est un avocat et homme politique né à Montréal, chef du Parti patriote du Bas-Canada. Président de l'Assemblée, il fait adopter en 1834 les Quatre-vingt-douze Résolutions qui réclament un gouvernement responsable. Quand éclate la rébellion de 1837, il s'enfuit aux États-Unis puis en France, et ne rentre au pays qu'en 1845.",
+      "wikipedia": "Louis-Joseph Papineau",
+      "portrait": {
+        "fichier": "Louis-Joseph_Papineau.jpg",
+        "legende": "Louis-Joseph Papineau, portrait du XIXe siècle",
+        "licence": "Domaine public",
+        "auteur": "Thomas Coffin Doane (1814-1896)"
+      }
+    },
+    {
+      "slug": "baldwin",
+      "nom": "Robert Baldwin",
+      "classement": "Baldwin, Robert",
+      "titre": "Naissance de Robert Baldwin",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1804,
+      "description": "Robert Baldwin (1804-1858) est un avocat et réformateur né à York, aujourd'hui Toronto, figure du Haut-Canada. Allié de Louis-Hippolyte La Fontaine, il dirige avec lui le ministère de 1848 à 1851, le premier à gouverner devant une Assemblée élue plutôt que devant le gouverneur. Cette alliance entre anglophones et francophones reste un modèle de la politique canadienne.",
+      "wikipedia": "Robert Baldwin",
+      "portrait": {
+        "fichier": "RobertBaldwin23.jpg",
+        "legende": "Robert Baldwin, portrait du XIXe siècle",
+        "licence": "Domaine public",
+        "auteur": "Miscellaneous Collection/Library and Archives Canada/C-031493"
+      }
+    },
+    {
+      "slug": "lafontaine",
+      "nom": "Louis-Hippolyte La Fontaine",
+      "classement": "La Fontaine, Louis-Hippolyte",
+      "titre": "Naissance de Louis-Hippolyte La Fontaine",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1807,
+      "description": "Louis-Hippolyte La Fontaine (1807-1864) est un avocat né à Boucherville, chef des réformistes du Bas-Canada puis premier chef de gouvernement responsable de la province du Canada. Premier ministre en 1842-1843 puis de 1848 à 1851, il fait voter en 1849 l'indemnisation des victimes de la rébellion de 1837, malgré l'émeute qui incendie le Parlement à Montréal. Il obtient aussi que le français retrouve sa place à l'Assemblée.",
+      "wikipedia": "Louis-Hippolyte La Fontaine",
+      "portrait": {
+        "fichier": "Louis-Hippolyte_La_Fontaine_vers_1863.jpg",
+        "legende": "Louis-Hippolyte La Fontaine, photographie vers 1863",
+        "licence": "Domaine public",
+        "auteur": "Indéterminé"
+      }
+    },
+    {
+      "slug": "gecartier",
+      "nom": "George-Étienne Cartier",
+      "classement": "Cartier, George-Étienne",
+      "titre": "Naissance de George-Étienne Cartier",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1814,
+      "description": "George-Étienne Cartier (1814-1873) est un avocat et homme politique né à Saint-Antoine-sur-Richelieu, l'un des Pères de la Confédération. Co-premier ministre du Canada-Uni avec John Alexander Macdonald, il plaide pour une union fédérale qui protège le Québec, sa langue et son droit civil. Il fait entrer le Québec dans la Confédération de 1867 et meurt à Londres six ans plus tard.",
+      "wikipedia": "George-Étienne Cartier",
+      "portrait": {
+        "fichier": "George-Etienne_Cartier.jpg",
+        "legende": "George-Étienne Cartier, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "William Notman (1826–1891)"
+      }
+    },
+    {
+      "slug": "macdonald",
+      "nom": "John Alexander Macdonald",
+      "classement": "Macdonald, John Alexander",
+      "titre": "Naissance de John Alexander Macdonald",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1815,
+      "description": "John Alexander Macdonald (1815-1891) est un avocat né à Glasgow, premier Premier ministre du Canada de 1867 à 1873 puis de 1878 à sa mort. Principal artisan de la Confédération, il fait construire le chemin de fer transcontinental et étendre le pays jusqu'au Pacifique. Sa politique envers les peuples autochtones, marquée par les pensionnats, et la pendaison de Louis Riel font aujourd'hui l'objet d'un jugement très critique.",
+      "wikipedia": "John A. Macdonald",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Macdonald1872.jpg",
+        "legende": "John Alexander Macdonald, photographie de 1872",
+        "licence": "Domaine public",
+        "auteur": "William James Topley (1845–1930)"
+      }
+    },
+    {
+      "slug": "brown",
+      "nom": "George Brown",
+      "classement": "Brown, George",
+      "titre": "Naissance de George Brown",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1818,
+      "description": "George Brown (1818-1880) est un journaliste et homme politique né à Alloa, en Écosse, fondateur du quotidien The Globe de Toronto. Chef des réformistes du Haut-Canada, il réclame la représentation selon la population puis rejoint en 1864 la Grande Coalition qui prépare la Confédération. Il est blessé par balle en 1880 par un ancien employé du Globe et meurt de ses blessures.",
+      "wikipedia": "George Brown",
+      "portrait": {
+        "fichier": "George_Brown.jpg",
+        "legende": "George Brown, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "Hunter & Co."
+      }
+    },
+    {
+      "slug": "mcgee",
+      "nom": "Thomas D'Arcy McGee",
+      "classement": "McGee, Thomas D'Arcy",
+      "titre": "Naissance de Thomas D'Arcy McGee",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1825,
+      "description": "Thomas D'Arcy McGee (1825-1868) est un journaliste et poète né à Carlingford, en Irlande, l'un des Pères de la Confédération. Ancien militant de la Jeune Irlande, il devient un défenseur de l'union des colonies britanniques d'Amérique du Nord et de la tolérance entre catholiques et protestants. Il est assassiné à Ottawa le 7 avril 1868, sans doute par un sympathisant fenian.",
+      "wikipedia": "Thomas D'Arcy McGee",
+      "portrait": {
+        "fichier": "ThomasDArcyMcGee.jpg",
+        "legende": "Thomas D'Arcy McGee, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "William Notman (1826–1891)"
+      }
+    },
+    {
+      "slug": "laurier",
+      "nom": "Wilfrid Laurier",
+      "classement": "Laurier, Wilfrid",
+      "titre": "Naissance de Wilfrid Laurier",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1841,
+      "description": "Wilfrid Laurier (1841-1919) est un avocat né à Saint-Lin, au Québec, premier Canadien français à devenir Premier ministre, de 1896 à 1911. Il défend la conciliation entre anglophones et francophones et favorise l'essor de l'Ouest, où entrent l'Alberta et la Saskatchewan en 1905. Il perd le pouvoir en 1911 sur la question du libre-échange avec les États-Unis.",
+      "wikipedia": "Wilfrid Laurier",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "The_Honourable_Sir_Wilfrid_Laurier_Photo_C_(HS85-10-16873)_-_medium_crop.jpg",
+        "legende": "Wilfrid Laurier, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "William James Topley (1845–1930)"
+      }
+    },
+    {
+      "slug": "borden",
+      "nom": "Robert Borden",
+      "classement": "Borden, Robert",
+      "titre": "Naissance de Robert Borden",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1854,
+      "description": "Robert Borden (1854-1937) est un avocat né à Grand-Pré, en Nouvelle-Écosse, Premier ministre du Canada de 1911 à 1920. Il conduit le pays pendant la Première Guerre mondiale, impose la conscription en 1917 malgré la fracture avec le Québec, et obtient que le Canada signe seul le traité de Versailles. Cette reconnaissance prépare l'autonomie de ses relations extérieures.",
+      "wikipedia": "Robert Borden",
+      "portrait": {
+        "fichier": "Sir_Robert_Borden,_in_the_1910’s_Sir_Robert_Borden,_dans_les_années_1910_(7196134714).jpg",
+        "legende": "Robert Borden, photographie des années 1910",
+        "licence": "CC BY 2.0",
+        "auteur": "Dupras & Colas"
+      }
+    },
+    {
+      "slug": "bourassa",
+      "nom": "Henri Bourassa",
+      "classement": "Bourassa, Henri",
+      "titre": "Naissance d'Henri Bourassa",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1868,
+      "description": "Henri Bourassa (1868-1952) est un journaliste et homme politique né à Montréal, petit-fils de Louis-Joseph Papineau et figure du nationalisme canadien. Il combat la participation à la guerre des Boers puis la conscription de 1917, au nom d'un Canada bilingue et indépendant de Londres. Il fonde en 1910 le quotidien Le Devoir, qu'il dirige jusqu'en 1932.",
+      "wikipedia": "Henri Bourassa",
+      "portrait": {
+        "fichier": "Henri_bourassa.jpg",
+        "legende": "Henri Bourassa, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
+      }
+    },
+    {
+      "slug": "king",
+      "nom": "William Lyon Mackenzie King",
+      "classement": "King, William Lyon Mackenzie",
+      "titre": "Naissance de William Lyon Mackenzie King",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1874,
+      "description": "William Lyon Mackenzie King (1874-1950) est un homme politique né à Berlin, aujourd'hui Kitchener, en Ontario, Premier ministre pendant plus de vingt-et-un ans au total. À la tête du Parti libéral de 1919 à 1948, il gouverne en 1921-1930 puis de 1935 à 1948, dont toute la Seconde Guerre mondiale. Sa formule sur la conscription, nécessaire si besoin mais pas obligatoire, résume son art du compromis.",
+      "wikipedia": "William Lyon Mackenzie King",
+      "portrait": {
+        "fichier": "William_Lyon_Mackenzie_King_-_William_Lyon_Mackenzie_King_(25134761527).jpg",
+        "legende": "William Lyon Mackenzie King, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "Canadian Government Motion Picture Bureau"
+      }
+    },
+    {
+      "slug": "stlaurent",
+      "nom": "Louis St-Laurent",
+      "classement": "St-Laurent, Louis",
+      "titre": "Naissance de Louis St-Laurent",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1882,
+      "description": "Louis St-Laurent (1882-1973) est un avocat né à Compton, au Québec, Premier ministre du Canada de 1948 à 1957. Son gouvernement accueille Terre-Neuve dans la Confédération en 1949, joue un rôle dans la fondation de l'OTAN et lance la construction de la route transcanadienne. On le surnomme Oncle Louis pour son allure bonhomme.",
+      "wikipedia": "Louis Stephen Saint-Laurent",
+      "portrait": {
+        "fichier": "Louis_St._Laurent_portrait.jpg",
+        "legende": "Louis St-Laurent, portrait officiel",
+        "licence": "Domaine public",
+        "auteur": "George Nakash (1892–1976)"
+      }
+    },
+    {
+      "slug": "pearson",
+      "nom": "Lester Pearson",
+      "classement": "Pearson, Lester",
+      "titre": "Naissance de Lester Pearson",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1897,
+      "description": "Lester Pearson (1897-1972) est un diplomate né à Newtonbrook, en Ontario, Premier ministre de 1963 à 1968. Il reçoit le prix Nobel de la paix en 1957 pour avoir proposé une force de l'ONU lors de la crise de Suez. Son gouvernement minoritaire dote le pays du drapeau à la feuille d'érable en 1965, du régime de pensions et de l'assurance maladie.",
+      "wikipedia": "Lester B. Pearson",
+      "portrait": {
+        "fichier": "Lester_B._Pearson_(1963_ABC_press_photo).jpg",
+        "legende": "Lester Pearson, photographie de presse de 1963",
+        "licence": "Domaine public",
+        "auteur": "ABC Television"
+      }
+    },
+    {
+      "slug": "diefenbaker",
+      "nom": "John Diefenbaker",
+      "classement": "Diefenbaker, John",
+      "titre": "Naissance de John Diefenbaker",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1895,
+      "description": "John Diefenbaker (1895-1979) est un avocat né à Neustadt, en Ontario, et élevé en Saskatchewan, Premier ministre de 1957 à 1963. Il fait adopter en 1960 la Déclaration canadienne des droits et accorde le droit de vote fédéral aux Autochtones sans condition. L'annulation du projet d'avion Avro Arrow en 1959 reste l'un des épisodes les plus débattus de son mandat.",
+      "wikipedia": "John Diefenbaker",
+      "portrait": {
+        "fichier": "John G. Diefenbaker (cropped).jpg",
+        "legende": "John Diefenbaker, photographie de 1957",
+        "licence": "Domaine public",
+        "auteur": "Gar Lunney (1920–2016) Description Canadian photographer and photojournalist"
+      }
+    },
+    {
+      "slug": "douglas",
+      "nom": "Tommy Douglas",
+      "classement": "Douglas, Tommy",
+      "titre": "Naissance de Tommy Douglas",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1904,
+      "description": "Tommy Douglas (1904-1986) est un pasteur baptiste né à Falkirk, en Écosse, premier ministre socialiste de la Saskatchewan de 1944 à 1961. Il y met en place l'assurance hospitalisation puis l'assurance maladie universelle, qui inspire l'assurance maladie nationale du pays. Il est ensuite le premier chef du Nouveau Parti démocratique, et les Canadiens l'ont élu en 2004 plus grand d'entre eux.",
+      "wikipedia": "Tommy Douglas",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "TommyDouglas-c1971-crop.jpg",
+        "legende": "Tommy Douglas, photographie vers 1971",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "TommyDouglas-c1971.jpg : Themightyquill derivative work: Wine Guy ( talk )"
+      }
+    },
+    {
+      "slug": "trudeau",
+      "nom": "Pierre Elliott Trudeau",
+      "classement": "Trudeau, Pierre Elliott",
+      "titre": "Naissance de Pierre Elliott Trudeau",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1919,
+      "description": "Pierre Elliott Trudeau (1919-2000) est un juriste et homme d'État né à Outremont, Premier ministre du Canada de 1968 à 1979 puis de 1980 à 1984. Il fait adopter la Loi sur les langues officielles en 1969, recourt à la Loi sur les mesures de guerre lors de la crise d'Octobre 1970 et rapatrie en 1982 la Constitution avec une Charte des droits et libertés. Son action a profondément divisé le Québec, qu'il a toujours refusé de voir se séparer.",
+      "wikipedia": "Pierre Elliott Trudeau",
+      "essentiel": true,
+      "biographie": "bio_pierretrudeau",
+      "portrait": {
+        "fichier": "Prime_Minister_Pierre_Trudeau_1975_(UPI_press_photo)_(cropped).jpg",
+        "legende": "Pierre Elliott Trudeau, photographie de presse de 1975",
+        "licence": "Domaine public",
+        "auteur": "United Press International"
+      }
+    },
+    {
+      "slug": "levesque",
+      "nom": "René Lévesque",
+      "classement": "Lévesque, René",
+      "titre": "Naissance de René Lévesque",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1922,
+      "description": "René Lévesque (1922-1987) est un journaliste devenu homme politique, né à Campbellton, au Nouveau-Brunswick, et élevé en Gaspésie. Ministre libéral lors de la nationalisation de l'électricité en 1962-1963, il fonde en 1968 le Parti québécois et devient premier ministre du Québec de 1976 à 1985. Il perd le référendum de 1980 sur la souveraineté-association mais fait adopter la Charte de la langue française.",
+      "wikipedia": "René Lévesque",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "René_Lévesque_1980.jpg",
+        "legende": "René Lévesque, photographie de 1980",
+        "licence": "Domaine public",
+        "auteur": "United Press International"
+      }
+    },
+    {
+      "slug": "parizeau",
+      "nom": "Jacques Parizeau",
+      "classement": "Parizeau, Jacques",
+      "titre": "Naissance de Jacques Parizeau",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1930,
+      "description": "Jacques Parizeau (1930-2015) est un économiste né à Montréal, conseiller de la Révolution tranquille puis ministre des Finances du Parti québécois. Premier ministre du Québec de 1994 à 1996, il organise le référendum du 30 octobre 1995, perdu de justesse par le camp du Oui avec 49,4 % des voix. Il démissionne le lendemain après des propos sur l'argent et les votes ethniques qui suscitent une vive polémique.",
+      "wikipedia": "Jacques Parizeau",
+      "portrait": {
+        "fichier": "Jacques_Parizeau_UL(recadré).jpg",
+        "legende": "Jacques Parizeau, photographie",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Khayman"
+      }
+    },
+    {
+      "slug": "mcclung",
+      "nom": "Nellie McClung",
+      "classement": "McClung, Nellie",
+      "titre": "Naissance de Nellie McClung",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1873,
+      "description": "Nellie McClung (1873-1951) est une écrivaine et militante née à Chatsworth, en Ontario, installée dans l'Ouest. Figure du mouvement suffragiste, elle joue un rôle clé dans le vote des femmes au Manitoba en 1916, premier succès de ce genre au Canada. Avec les « Cinq Célèbres » elle obtient en 1929 que les femmes soient reconnues comme des personnes au sens de la loi.",
+      "wikipedia": "Nellie McClung",
+      "portrait": {
+        "fichier": "Nellie_McClung.jpg",
+        "legende": "Nellie McClung, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "Cyril Jessop"
+      }
+    },
+    {
+      "slug": "macphail",
+      "nom": "Agnes Macphail",
+      "classement": "Macphail, Agnes",
+      "titre": "Naissance d'Agnes Macphail",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1890,
+      "description": "Agnes Macphail (1890-1954) est une institutrice née dans le comté de Grey, en Ontario, première femme élue à la Chambre des communes en 1921. Députée progressiste jusqu'en 1940, elle défend les fermiers, la réforme des prisons et le pacifisme. Elle siège ensuite à l'Assemblée de l'Ontario, où elle contribue à l'adoption de l'égalité salariale.",
+      "wikipedia": "Agnes Macphail",
+      "portrait": {
+        "fichier": "Agnes_Macphail_-_PA-165870.jpg",
+        "legende": "Agnes Macphail, photographie d'archives",
+        "licence": "Domaine public",
+        "auteur": "Yousuf Karsh (1908–2002)"
+      }
+    },
+    {
+      "slug": "casgrain",
+      "nom": "Thérèse Casgrain",
+      "classement": "Casgrain, Thérèse",
+      "titre": "Naissance de Thérèse Casgrain",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1896,
+      "description": "Thérèse Casgrain (1896-1981) est une militante née à Montréal, figure du féminisme québécois. Elle mène pendant vingt ans la campagne pour le droit de vote des femmes, obtenu au Québec en 1940, bien après le reste du pays. Elle préside plus tard la Ligue des droits de la femme puis la Voix des femmes, avant de siéger au Sénat en 1970.",
+      "wikipedia": "Thérèse Casgrain",
+      "portrait": {
+        "fichier": "Thérèse_Forget_Casgrain.png",
+        "legende": "Thérèse Casgrain, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "André Larose"
+      }
+    },
+    {
+      "slug": "desmond",
+      "nom": "Viola Desmond",
+      "classement": "Desmond, Viola",
+      "titre": "Naissance de Viola Desmond",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1914,
+      "description": "Viola Desmond (1914-1965) est une femme d'affaires née à Halifax, pionnière de la lutte contre la ségrégation raciale. En 1946, elle refuse de quitter la section réservée aux Blancs du cinéma de New Glasgow, en Nouvelle-Écosse, et est condamnée à une amende. Pardonnée à titre posthume en 2010, elle est en 2018 la première Canadienne à figurer seule sur un billet de dix dollars.",
+      "wikipedia": "Viola Desmond",
+      "portrait": {
+        "fichier": "Viola_Desmond_Government_House.jpg",
+        "legende": "Viola Desmond, portrait peint",
+        "licence": "CC BY-SA 4.0",
+        "auteur": "LGNSComms"
+      }
+    },
+    {
+      "slug": "vanier",
+      "nom": "Georges Vanier",
+      "classement": "Vanier, Georges",
+      "titre": "Naissance de Georges Vanier",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1888,
+      "description": "Georges Vanier (1888-1967) est un officier et diplomate né à Montréal, premier Canadien français gouverneur général, de 1959 à 1967. Il perd une jambe à Chérisy en 1918, puis sert comme ambassadeur du Canada en France après 1944. Fervent défenseur de l'unité canadienne et de la famille, il laisse son nom à de nombreuses institutions.",
+      "wikipedia": "Georges Vanier",
+      "portrait": {
+        "fichier": "Portrait_of_Governor_General_Georges_Vanier_(1965_UPI_press_photo).jpg",
+        "legende": "Georges Vanier, photographie de presse de 1965",
+        "licence": "Domaine public",
+        "auteur": "United Press International"
+      }
+    },
+    {
+      "slug": "iberville",
+      "nom": "Pierre Le Moyne d'Iberville",
+      "classement": "Iberville, Pierre Le Moyne d'",
+      "titre": "Naissance de Pierre Le Moyne d'Iberville",
+      "axe": "Guerres et résistances",
+      "naissance": 1661,
+      "description": "Pierre Le Moyne d'Iberville (1661-1706) est un officier de marine né à Ville-Marie, aujourd'hui Montréal, l'un des plus grands hommes de guerre de la Nouvelle-France. Il s'empare des postes anglais de la baie d'Hudson, notamment en 1697, et remporte plusieurs victoires navales. Chargé de fonder la Louisiane, il y établit en 1699 les premiers postes français avant de mourir de fièvre à La Havane.",
+      "wikipedia": "Pierre Le Moyne d'Iberville",
+      "portrait": {
+        "fichier": "Portrait,_Pierre_Le_Moyne_d'Iberville,_Montréal_Archives.jpg",
+        "legende": "Pierre Le Moyne d'Iberville, portrait conservé aux Archives de Montréal",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
+      }
+    },
+    {
+      "slug": "wolfe",
+      "nom": "James Wolfe",
+      "classement": "Wolfe, James",
+      "titre": "Naissance de James Wolfe",
+      "axe": "Guerres et résistances",
+      "naissance": 1727,
+      "description": "James Wolfe (1727-1759) est un général britannique né à Westerham, dans le Kent, vainqueur de la bataille des plaines d'Abraham. Il commande en 1759 le siège de Québec et, le 13 septembre, bat l'armée du marquis de Montcalm sur les hauteurs de la ville. Il y meurt au combat, à trente-deux ans, et la victoire ouvre la voie à la conquête britannique de la Nouvelle-France.",
+      "wikipedia": "James Wolfe",
+      "pays": "GB",
+      "portrait": {
+        "fichier": "James_Wolfe.jpeg",
+        "legende": "James Wolfe, portrait d'époque",
+        "licence": "Domaine public",
+        "auteur": "Attributed to Joseph Highmore (1692–1780)"
+      }
+    },
+    {
+      "slug": "montcalm",
+      "nom": "Louis-Joseph de Montcalm",
+      "classement": "Montcalm, Louis-Joseph de",
+      "titre": "Naissance de Louis-Joseph de Montcalm",
+      "axe": "Guerres et résistances",
+      "naissance": 1712,
+      "description": "Louis-Joseph de Montcalm (1712-1759) est un officier français né au château de Candiac, près de Nîmes, commandant des troupes de la Nouvelle-France à partir de 1756. Il remporte les victoires d'Oswego, de Fort William Henry et de Carillon, avant de perdre la bataille des plaines d'Abraham. Blessé le 13 septembre 1759, il meurt le lendemain à Québec.",
+      "wikipedia": "Louis-Joseph de Montcalm",
+      "pays": "FR",
+      "portrait": {
+        "fichier": "Portrait_of_Montcalm.JPG",
+        "legende": "Louis-Joseph de Montcalm, portrait d'époque",
+        "licence": "Domaine public",
+        "auteur": "Théophile Hamel (1817–1870)"
+      }
+    },
+    {
+      "slug": "brant",
+      "nom": "Joseph Brant",
+      "classement": "Brant, Joseph",
+      "titre": "Naissance de Joseph Brant",
+      "axe": "Guerres et résistances",
+      "naissance": 1743,
+      "description": "Joseph Brant (1743-1807) est un chef de guerre mohawk, de son nom Thayendanegea, né dans la région de l'Ohio. Allié des Britanniques durant la guerre d'Indépendance américaine, il conduit après 1783 des loyalistes iroquois sur les terres de la rivière Grand, en Ontario, où naît la ville de Brantford. Il a aussi fait traduire des textes religieux en mohawk.",
+      "wikipedia": "Joseph Brant",
+      "portrait": {
+        "fichier": "Joseph_Brant_painting_by_George_Romney_1776.jpg",
+        "legende": "Joseph Brant, portrait peint par George Romney en 1776",
+        "licence": "Domaine public",
+        "auteur": "George Romney (1734–1802)"
+      }
+    },
+    {
+      "slug": "brock",
+      "nom": "Isaac Brock",
+      "classement": "Brock, Isaac",
+      "titre": "Naissance d'Isaac Brock",
+      "axe": "Guerres et résistances",
+      "naissance": 1769,
+      "description": "Isaac Brock (1769-1812) est un officier britannique né à Guernesey, commandant des forces du Haut-Canada au début de la guerre de 1812. Avec le chef shawnee Tecumseh et ses alliés, il prend Détroit en août 1812 sans presque combattre. Il est tué le 13 octobre à Queenston Heights, bataille gagnée par les siens, et devient le héros du Canada anglophone.",
+      "wikipedia": "Isaac Brock",
+      "portrait": {
+        "fichier": "Isaac_Brock_portrait_1,_from_The_Story_of_Isaac_Brock_(1908)-2.png",
+        "legende": "Isaac Brock, portrait publié en 1908",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "secord",
+      "nom": "Laura Secord",
+      "classement": "Secord, Laura",
+      "titre": "Naissance de Laura Secord",
+      "axe": "Guerres et résistances",
+      "naissance": 1775,
+      "description": "Laura Secord (1775-1868) est une habitante du Haut-Canada née à Great Barrington, dans le Massachusetts, devenue héroïne de la guerre de 1812. En juin 1813, elle parcourt une trentaine de kilomètres à pied pour avertir les Britanniques d'une attaque américaine. Leur victoire à Beaver Dams en découle, mais elle ne reçoit une reconnaissance officielle que bien plus tard.",
+      "wikipedia": "Laura Secord",
+      "portrait": {
+        "fichier": "Laura_Secord_statue.jpg",
+        "legende": "Statue de Laura Secord : une sculpture, non un portrait",
+        "licence": "Domaine public",
+        "auteur": "Digging.holes"
+      }
+    },
+    {
+      "slug": "salaberry",
+      "nom": "Charles-Michel de Salaberry",
+      "classement": "Salaberry, Charles-Michel de",
+      "titre": "Naissance de Charles-Michel de Salaberry",
+      "axe": "Guerres et résistances",
+      "naissance": 1778,
+      "description": "Charles-Michel de Salaberry (1778-1829) est un officier né à Beauport, près de Québec, héros de la guerre de 1812. Il commande les Voltigeurs canadiens et, le 26 octobre 1813, arrête à Châteauguay une armée américaine bien plus nombreuse. Cette victoire sauve Montréal et nourrit pendant longtemps la fierté des Canadiens français.",
+      "wikipedia": "Charles de Salaberry",
+      "portrait": {
+        "fichier": "Charles-Michel_d'Irumberry_de_Salaberry_(1778-1829),_by_Anson_Dickinson,_1825,_watercolor_on_ivory_-_Château_Ramezay_-_Montreal,_Canada_-_DSC07496_(cropped).jpg",
+        "legende": "Charles de Salaberry, miniature peinte par Anson Dickinson en 1825",
+        "licence": "Domaine public",
+        "auteur": "Daderot"
+      }
+    },
+    {
+      "slug": "riel",
+      "nom": "Louis Riel",
+      "classement": "Riel, Louis",
+      "titre": "Naissance de Louis Riel",
+      "axe": "Guerres et résistances",
+      "naissance": 1844,
+      "description": "Louis Riel (1844-1885) est un homme politique métis né à la Rivière-Rouge, chef de la résistance de son peuple dans l'Ouest. Il dirige le gouvernement provisoire de 1869-1870, qui obtient la création du Manitoba, puis la rébellion du Nord-Ouest de 1885. Condamné pour haute trahison, il est pendu à Regina le 16 novembre 1885, et sa mort divise longtemps francophones et anglophones.",
+      "wikipedia": "Louis Riel",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Louis_Riel.jpg",
+        "legende": "Louis Riel, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "dumont",
+      "nom": "Gabriel Dumont",
+      "classement": "Dumont, Gabriel",
+      "titre": "Naissance de Gabriel Dumont",
+      "axe": "Guerres et résistances",
+      "naissance": 1837,
+      "description": "Gabriel Dumont (1837-1906) est un chef métis né dans la région de la Rivière-Rouge, grand chasseur de bisons. Élu chef de la commune de Saint-Laurent en 1873, il rappelle Louis Riel du Montana en 1884 et dirige les combattants de Batoche. Vaincu en 1885, il s'exile aux États-Unis, participe au spectacle de Buffalo Bill, puis revient au Canada.",
+      "wikipedia": "Gabriel Dumont",
+      "portrait": {
+        "fichier": "GabrielDumont.jpg",
+        "legende": "Gabriel Dumont, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "The original uploader was JamesTeterenko at English Wikipedia ."
+      }
+    },
+    {
+      "slug": "poundmaker",
+      "nom": "Poundmaker",
+      "classement": "Poundmaker",
+      "titre": "Naissance de Poundmaker",
+      "axe": "Guerres et résistances",
+      "naissance": 1842,
+      "description": "Poundmaker (vers 1842-1886) est un chef cri des Plaines, de son nom Pîhtokahanapiwiyin, connu pour sa diplomatie. Après avoir signé le traité no 6 en 1876, il défend son peuple affamé, et ses guerriers battent la police montée à Cut Knife en 1885. Condamné pour trahison alors qu'il avait cherché à éviter la violence, il est libéré en 1886 et meurt quelques mois plus tard.",
+      "wikipedia": "Poundmaker",
+      "portrait": {
+        "fichier": "Poundmaker.png",
+        "legende": "Poundmaker, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "Prof. Buell, O.B."
+      }
+    },
+    {
+      "slug": "crowfoot",
+      "nom": "Crowfoot",
+      "classement": "Crowfoot",
+      "titre": "Naissance de Crowfoot",
+      "axe": "Guerres et résistances",
+      "naissance": 1830,
+      "description": "Crowfoot (vers 1830-1890) est un chef de la Confédération des Pieds-Noirs, Isapo-Muxika en langue blackfoot, né vers 1830. Il signe en 1877 le traité no 7, qui ouvre le sud de l'Alberta à la colonisation, en espérant protéger son peuple de la disparition des bisons. Pendant la rébellion de 1885, il refuse de rejoindre Louis Riel et maintient la paix.",
+      "wikipedia": "Crowfoot",
+      "portrait": {
+        "fichier": "Chief_Crowfoot.jpg",
+        "legende": "Crowfoot, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "Alex Ross"
+      }
+    },
+    {
+      "slug": "mistahimaskwa",
+      "nom": "Mistahimaskwa",
+      "classement": "Mistahimaskwa",
+      "titre": "Naissance de Mistahimaskwa",
+      "axe": "Guerres et résistances",
+      "naissance": 1825,
+      "description": "Mistahimaskwa (vers 1825-1888) est un chef cri des Plaines, connu sous le nom de Gros Ours ou Big Bear. Il refuse pendant six ans de signer le traité no 6 et réclame de meilleures conditions pour son peuple, frappé par la famine. Accusé à tort après les violences de Frog Lake en 1885, il purge deux ans de prison et meurt peu après sa libération.",
+      "wikipedia": "Mistahimaskwa",
+      "portrait": {
+        "fichier": "Bigbear-blanket.jpg",
+        "legende": "Mistahimaskwa, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "O.B. Buell"
+      }
+    },
+    {
+      "slug": "currie",
+      "nom": "Arthur Currie",
+      "classement": "Currie, Arthur",
+      "titre": "Naissance d'Arthur Currie",
+      "axe": "Guerres et résistances",
+      "naissance": 1875,
+      "description": "Arthur Currie (1875-1933) est un militaire né à Strathroy, en Ontario, premier Canadien à commander le Corps canadien durant la Première Guerre mondiale. Chef du Corps à partir de juin 1917, il remporte Passchendaele puis conduit les Cent-Jours jusqu'à Mons, où les Canadiens entrent le 11 novembre 1918. Il refuse de sacrifier inutilement ses hommes, ce qui le rend très populaire parmi eux.",
+      "wikipedia": "Arthur Currie",
+      "portrait": {
+        "fichier": "ArthurCurrie.jpg",
+        "legende": "Arthur Currie, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "Unknown photographer"
+      }
+    },
+    {
+      "slug": "bishop",
+      "nom": "Billy Bishop",
+      "classement": "Bishop, Billy",
+      "titre": "Naissance de Billy Bishop",
+      "axe": "Guerres et résistances",
+      "naissance": 1894,
+      "description": "Billy Bishop (1894-1956) est un aviateur né à Owen Sound, en Ontario, as canadien de la Première Guerre mondiale. Crédité de soixante-douze victoires aériennes, il reçoit la Victoria Cross en 1917 pour un raid solitaire contre un aérodrome allemand. Pendant la Seconde Guerre mondiale, il dirige le recrutement de l'Aviation royale canadienne.",
+      "wikipedia": "Billy Bishop",
+      "portrait": {
+        "fichier": "Billy_bishop.jpg",
+        "legende": "Billy Bishop, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "William Rider-Rider (1889–1979) Description British photographer"
+      }
+    },
+    {
+      "slug": "prince",
+      "nom": "Tommy Prince",
+      "classement": "Prince, Tommy",
+      "titre": "Naissance de Tommy Prince",
+      "axe": "Guerres et résistances",
+      "naissance": 1915,
+      "description": "Tommy Prince (1915-1977) est un soldat ojibwé né à Petersfield, au Manitoba, parmi les militaires autochtones les plus décorés du Canada. Éclaireur de la Première force de service spécial pendant la Seconde Guerre mondiale, il obtient la Médaille militaire et la Silver Star américaine. Il s'engage de nouveau en Corée, puis lutte pour les droits des anciens combattants autochtones.",
+      "wikipedia": "Tommy Prince",
+      "portrait": {
+        "fichier": "Sergeant_Tommy_Prince_Private_Morris_Prince_Buckingham_Palace.jpg",
+        "legende": "Tommy Prince, photographie à Buckingham Palace",
+        "licence": "Domaine public",
+        "auteur": "Christopher J. Woods - Canada. Dept. of National Defence"
+      }
+    },
+    {
+      "slug": "major",
+      "nom": "Léo Major",
+      "classement": "Major, Léo",
+      "titre": "Naissance de Léo Major",
+      "axe": "Guerres et résistances",
+      "naissance": 1921,
+      "description": "Léo Major (1921-2008) est un soldat québécois né à New Bedford, dans le Massachusetts, du Régiment de la Chaudière. Il perd un œil à la libération de la Normandie mais continue à servir : en avril 1945, il libère presque seul la ville néerlandaise de Zwolle. Il est l'un des rares soldats du Commonwealth à recevoir deux fois la Médaille de conduite distinguée.",
+      "wikipedia": "Léo Major",
+      "portrait": {
+        "fichier": "Léo_Major.jpg",
+        "legende": "Léo Major, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "marieincarnation",
+      "nom": "Marie de l'Incarnation",
+      "classement": "Marie de l'Incarnation",
+      "titre": "Naissance de Marie de l'Incarnation",
+      "axe": "Littérature et pensée",
+      "naissance": 1599,
+      "description": "Marie de l'Incarnation (1599-1672) est une religieuse ursuline née à Tours, arrivée à Québec en 1639. Elle y fonde le couvent des Ursulines, y enseigne les jeunes filles françaises et autochtones et apprend l'algonquin, le huron et l'iroquois. Ses milliers de lettres à son fils restées conservées sont un témoignage majeur sur la Nouvelle-France.",
+      "wikipedia": "Marie de l'Incarnation",
+      "portrait": {
+        "fichier": "Portrait_de_Mère_Marie_de_l'Incarnation.jpg",
+        "legende": "Marie de l'Incarnation, portrait ancien",
+        "licence": "Domaine public",
+        "auteur": "Hugues Pommier"
+      }
+    },
+    {
+      "slug": "garneau",
+      "nom": "François-Xavier Garneau",
+      "classement": "Garneau, François-Xavier",
+      "titre": "Naissance de François-Xavier Garneau",
+      "axe": "Littérature et pensée",
+      "naissance": 1809,
+      "description": "François-Xavier Garneau (1809-1866) est un notaire et historien né à Québec, premier grand historien canadien-français. Son Histoire du Canada, publiée de 1845 à 1848, répond au rapport Durham qui traitait les Canadiens français de peuple sans histoire. Il y construit un récit de résistance qui nourrit la conscience nationale québécoise.",
+      "wikipedia": "François-Xavier Garneau",
+      "portrait": {
+        "fichier": "Francois-Xavier_Garneau.jpg",
+        "legende": "François-Xavier Garneau, portrait du XIXe siècle",
+        "licence": "Domaine public",
+        "auteur": "Shortt, Adam, 1859-1931"
+      }
+    },
+    {
+      "slug": "moodie",
+      "nom": "Susanna Moodie",
+      "classement": "Moodie, Susanna",
+      "titre": "Naissance de Susanna Moodie",
+      "axe": "Littérature et pensée",
+      "naissance": 1803,
+      "description": "Susanna Moodie (1803-1885) est une écrivaine née dans le Suffolk, en Angleterre, qui émigre en 1832 en Ontario. Son livre Roughing It in the Bush, paru en 1852, décrit sans illusion la vie des pionniers dans la forêt. Il est devenu un classique de la littérature canadienne et a inspiré des auteurs comme Margaret Atwood.",
+      "wikipedia": "Susanna Moodie",
+      "portrait": {
+        "fichier": "SusannahMoodie.jpeg",
+        "legende": "Susanna Moodie, portrait du XIXe siècle",
+        "licence": "Domaine public",
+        "auteur": "Hephaestos at en.wikipedia"
+      }
+    },
+    {
+      "slug": "frechette",
+      "nom": "Louis Fréchette",
+      "classement": "Fréchette, Louis",
+      "titre": "Naissance de Louis Fréchette",
+      "axe": "Littérature et pensée",
+      "naissance": 1839,
+      "description": "Louis Fréchette (1839-1908) est un poète et homme politique né à Lévis, face à Québec, surnommé le poète national. Son recueil Les Fleurs boréales, couronné par l'Académie française en 1880, lui vaut un rayonnement international. Il est aussi l'auteur de contes populaires, et sa légende de la chasse-galerie est restée célèbre.",
+      "wikipedia": "Louis Fréchette",
+      "portrait": {
+        "fichier": "Louis-Honore_Frechette.jpg",
+        "legende": "Louis Fréchette, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "Royal Society Portraits"
+      }
+    },
+    {
+      "slug": "nelligan",
+      "nom": "Émile Nelligan",
+      "classement": "Nelligan, Émile",
+      "titre": "Naissance d'Émile Nelligan",
+      "axe": "Littérature et pensée",
+      "naissance": 1879,
+      "description": "Émile Nelligan (1879-1941) est un poète né à Montréal, d'un père irlandais et d'une mère canadienne-française, figure du symbolisme québécois. Il écrit en quelques années des poèmes comme Le Vaisseau d'or avant d'être interné à dix-neuf ans, en 1899, pour une maladie mentale. Il passe quarante-deux ans en institution, et ses vers gardent une place unique dans la mémoire collective.",
+      "wikipedia": "Émile Nelligan",
+      "portrait": {
+        "fichier": "Emile_Nelligan.JPG",
+        "legende": "Émile Nelligan, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "Photo: Laprés & Lavergne Text: Charles Gill (1871-1918)"
+      }
+    },
+    {
+      "slug": "montgomery",
+      "nom": "Lucy Maud Montgomery",
+      "classement": "Montgomery, Lucy Maud",
+      "titre": "Naissance de Lucy Maud Montgomery",
+      "axe": "Littérature et pensée",
+      "naissance": 1874,
+      "description": "Lucy Maud Montgomery (1874-1942) est une romancière née à Clifton, sur l'île du Prince-Édouard. Son roman Anne… la maison aux pignons verts, paru en 1908, connaît un immense succès et devient une série de huit livres. Traduit en des dizaines de langues, il a fait de l'île une destination de pèlerinage, surtout au Japon.",
+      "wikipedia": "Lucy Maud Montgomery",
+      "portrait": {
+        "fichier": "Lucy_Maud_Montgomery.JPG",
+        "legende": "Lucy Maud Montgomery, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "Anonymous Unknown author"
+      }
+    },
+    {
+      "slug": "leacock",
+      "nom": "Stephen Leacock",
+      "classement": "Leacock, Stephen",
+      "titre": "Naissance de Stephen Leacock",
+      "axe": "Littérature et pensée",
+      "naissance": 1869,
+      "description": "Stephen Leacock (1869-1944) est un économiste et humoriste né à Swanmore, en Angleterre, arrivé au Canada enfant. Professeur à l'Université McGill, il publie en 1912 Sunshine Sketches of a Little Town, portrait moqueur d'une petite ville de l'Ontario. Il est longtemps l'humoriste le plus lu du monde anglophone.",
+      "wikipedia": "Stephen Leacock",
+      "portrait": {
+        "fichier": "Stephen_Leacock.jpg",
+        "legende": "Stephen Leacock, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "The Arts & Letters Club of Toronto"
+      }
+    },
+    {
+      "slug": "johnson",
+      "nom": "Pauline Johnson",
+      "classement": "Johnson, Pauline",
+      "titre": "Naissance de Pauline Johnson",
+      "axe": "Littérature et pensée",
+      "naissance": 1861,
+      "description": "Pauline Johnson (1861-1913) est une poétesse mohawk et anglaise née dans la réserve des Six-Nations, en Ontario, connue sous le nom de Tekahionwake. Elle déclame ses poèmes sur scène, en costume traditionnel, au Canada, aux États-Unis et à Londres. Elle meurt à Vancouver, où elle est inhumée avec de grands honneurs.",
+      "wikipedia": "Pauline Johnson",
+      "portrait": {
+        "fichier": "Tekahionwake_ca_1895.jpg",
+        "legende": "Pauline Johnson, photographie vers 1895",
+        "licence": "Domaine public",
+        "auteur": "Cochran"
+      }
+    },
+    {
+      "slug": "mccrae",
+      "nom": "John McCrae",
+      "classement": "McCrae, John",
+      "titre": "Naissance de John McCrae",
+      "axe": "Littérature et pensée",
+      "naissance": 1872,
+      "description": "John McCrae (1872-1918) est un médecin militaire né à Guelph, en Ontario, auteur du poème In Flanders Fields. Il l'écrit en mai 1915 après la mort d'un ami lors de la deuxième bataille d'Ypres. Le coquelicot, évoqué dans ses vers, devient le symbole du souvenir ; il meurt de pneumonie à Wimereux en 1918.",
+      "wikipedia": "John McCrae",
+      "portrait": {
+        "fichier": "John_McCrae_in_uniform_circa_1914.jpg",
+        "legende": "John McCrae en uniforme, photographie vers 1914",
+        "licence": "Domaine public",
+        "auteur": "William Notman and Son"
+      }
+    },
+    {
+      "slug": "roy",
+      "nom": "Gabrielle Roy",
+      "classement": "Roy, Gabrielle",
+      "titre": "Naissance de Gabrielle Roy",
+      "axe": "Littérature et pensée",
+      "naissance": 1909,
+      "description": "Gabrielle Roy (1909-1983) est une romancière née à Saint-Boniface, au Manitoba. Son roman Bonheur d'occasion, paru en 1945, dépeint la misère d'un quartier ouvrier de Montréal et lui vaut le prix Femina en 1947, une première pour une Canadienne. Elle y revient sur la vie des minorités, dans La Petite Poule d'eau et Rue Deschambault.",
+      "wikipedia": "Gabrielle Roy",
+      "portrait": {
+        "fichier": "Gabrielle_Roy_portrait_photo,_1945.png",
+        "legende": "Gabrielle Roy, photographie de 1945",
+        "licence": "Domaine public",
+        "auteur": "Annette & Basil Zarov"
+      }
+    },
+    {
+      "slug": "hebert",
+      "nom": "Anne Hébert",
+      "classement": "Hébert, Anne",
+      "titre": "Naissance d'Anne Hébert",
+      "axe": "Littérature et pensée",
+      "naissance": 1916,
+      "description": "Anne Hébert (1916-2000) est une poétesse et romancière née à Sainte-Catherine-de-la-Jacques-Cartier, près de Québec. Elle publie Kamouraska en 1970, puis Les Fous de Bassan, qui obtient le prix Femina en 1982. Longtemps installée à Paris, elle impose une écriture sombre et tendue, entre poésie et violence.",
+      "wikipedia": "Anne Hébert",
+      "portrait": {
+        "fichier": "ANNE_HEBERT_écrivaine_poétesse_canadienne.jpg",
+        "legende": "Anne Hébert, dessin d'après une photographie",
+        "licence": "CC BY-SA 4.0",
+        "auteur": "Kaderousse"
+      }
+    },
+    {
+      "slug": "mcluhan",
+      "nom": "Marshall McLuhan",
+      "classement": "McLuhan, Marshall",
+      "titre": "Naissance de Marshall McLuhan",
+      "axe": "Littérature et pensée",
+      "naissance": 1911,
+      "description": "Marshall McLuhan (1911-1980) est un théoricien de la communication né à Edmonton, professeur à l'Université de Toronto. Son livre Understanding Media, paru en 1964, avance que « le médium, c'est le message » et popularise le « village global ». Il fait de la télévision et des médias électroniques un objet de pensée, et son influence dépasse largement les universités.",
+      "wikipedia": "Marshall McLuhan",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Marshall_McLuhan.jpg",
+        "legende": "Marshall McLuhan, photographie",
+        "licence": "Domaine public",
+        "auteur": "Josephine Smith"
+      }
+    },
+    {
+      "slug": "frye",
+      "nom": "Northrop Frye",
+      "classement": "Frye, Northrop",
+      "titre": "Naissance de Northrop Frye",
+      "axe": "Littérature et pensée",
+      "naissance": 1912,
+      "description": "Northrop Frye (1912-1991) est un critique littéraire né à Sherbrooke, au Québec, professeur à Toronto. Son Anatomie de la critique, parue en 1957, cherche des structures communes à toute la littérature et change l'étude des textes. Il est aussi un lecteur de la Bible, qu'il relie à l'imaginaire occidental.",
+      "wikipedia": "Northrop Frye",
+      "portrait": {
+        "fichier": "Northrop_Frye_statue.JPG",
+        "legende": "Statue de Northrop Frye : une sculpture, non un portrait",
+        "licence": "CC BY-SA 4.0",
+        "auteur": "Ashoola"
+      }
+    },
+    {
+      "slug": "innis",
+      "nom": "Harold Innis",
+      "classement": "Innis, Harold",
+      "titre": "Naissance de Harold Innis",
+      "axe": "Littérature et pensée",
+      "naissance": 1894,
+      "description": "Harold Innis (1894-1952) est un économiste né près d'Otterville, en Ontario, professeur à l'Université de Toronto. Il montre que l'histoire du pays s'est construite autour de produits de base, la fourrure, la morue, le bois, puis étudie le rôle des médias dans la durée des empires. Ses travaux ont influencé son collègue Marshall McLuhan.",
+      "wikipedia": "Harold Innis",
+      "portrait": {
+        "fichier": "Harold_Innis_public-domain_library_archives-canada.jpg",
+        "legende": "Harold Innis, photographie d'archives",
+        "licence": "Domaine public",
+        "auteur": "H. James that is a pseudonym for William James Jr. according to City of Toroto Archive"
+      }
+    },
+    {
+      "slug": "jacobs",
+      "nom": "Jane Jacobs",
+      "classement": "Jacobs, Jane",
+      "titre": "Naissance de Jane Jacobs",
+      "axe": "Littérature et pensée",
+      "naissance": 1916,
+      "description": "Jane Jacobs (1916-2006) est une urbaniste et essayiste née à Scranton, en Pennsylvanie, installée à Toronto en 1968. Son livre Déclin et survie des grandes villes américaines, paru en 1961, défend la rue vivante contre les autoroutes et l'urbanisme moderniste. À Toronto, elle contribue à faire abandonner le projet d'autoroute Spadina.",
+      "wikipedia": "Jane Jacobs",
+      "portrait": {
+        "fichier": "Jane_Jacobs.jpg",
+        "legende": "Jane Jacobs, photographie",
+        "licence": "Domaine public",
+        "auteur": "Phil Stanziola"
+      }
+    },
+    {
+      "slug": "munro",
+      "nom": "Alice Munro",
+      "classement": "Munro, Alice",
+      "titre": "Naissance d'Alice Munro",
+      "axe": "Littérature et pensée",
+      "naissance": 1931,
+      "description": "Alice Munro (1931-2024) est une nouvelliste née à Wingham, en Ontario, prix Nobel de littérature en 2013. Elle écrit des recueils comme La Danse des ombres heureuses ou Les Lunes de Jupiter, où la vie de petites villes ontariennes révèle des drames intimes. Après sa mort, sa fille a rendu public l'abus subi de la part du second mari de l'écrivaine, ce qui a assombri son héritage.",
+      "wikipedia": "Alice Munro",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Alice_Munro_2006_(cropped).jpg",
+        "legende": "Alice Munro, photographie de 2006",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "MacDowell"
+      }
+    },
+    {
+      "slug": "groulx",
+      "nom": "Lionel Groulx",
+      "classement": "Groulx, Lionel",
+      "titre": "Naissance de Lionel Groulx",
+      "axe": "Littérature et pensée",
+      "naissance": 1878,
+      "description": "Lionel Groulx (1878-1967) est un prêtre et historien né à Vaudreuil, principal penseur du nationalisme canadien-français de la première moitié du XXe siècle. Professeur à Montréal, il dirige la revue L'Action française et forme des générations d'historiens. Son nationalisme catholique, marqué par des propos antisémites, est aujourd'hui l'objet de débats.",
+      "wikipedia": "Lionel Groulx",
+      "portrait": {
+        "fichier": "Lionel_Groulx_1922.jpg",
+        "legende": "Lionel Groulx, photographie de 1922",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
+      }
+    },
+    {
+      "slug": "miron",
+      "nom": "Gaston Miron",
+      "classement": "Miron, Gaston",
+      "titre": "Naissance de Gaston Miron",
+      "axe": "Littérature et pensée",
+      "naissance": 1928,
+      "description": "Gaston Miron (1928-1996) est un poète et éditeur né à Sainte-Agathe-des-Monts, au Québec. Cofondateur des Éditions de l'Hexagone en 1953, il publie en 1970 L'Homme rapaillé, recueil écrit pendant des années, devenu un symbole de la quête d'identité du Québec. Ses vers ont été lus et chantés par des générations.",
+      "wikipedia": "Gaston Miron",
+      "portrait": {
+        "fichier": "Gaston_Miron.jpg",
+        "legende": "Gaston Miron, photographie",
+        "licence": "Domaine public",
+        "auteur": "Anonymous Unknown author"
+      }
+    },
+    {
+      "slug": "krieghoff",
+      "nom": "Cornelius Krieghoff",
+      "classement": "Krieghoff, Cornelius",
+      "titre": "Naissance de Cornelius Krieghoff",
+      "axe": "Beaux-arts",
+      "naissance": 1815,
+      "description": "Cornelius Krieghoff (1815-1872) est un peintre né à Amsterdam, installé au Québec en 1846. Il peint des scènes de la vie des habitants, des sorties en carriole aux paysages d'hiver, qui deviennent très populaires auprès de la bourgeoisie anglaise. Il est l'un des peintres canadiens les plus appréciés du XIXe siècle.",
+      "wikipedia": "Cornelius Krieghoff",
+      "portrait": {
+        "fichier": "Cornelius_Krieghoff.jpg",
+        "legende": "Cornelius Krieghoff, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "M.O. Hammond"
+      }
+    },
+    {
+      "slug": "kane",
+      "nom": "Paul Kane",
+      "classement": "Kane, Paul",
+      "titre": "Naissance de Paul Kane",
+      "axe": "Beaux-arts",
+      "naissance": 1810,
+      "description": "Paul Kane (1810-1871) est un peintre né à Mallow, en Irlande, arrivé enfant à Toronto. Entre 1845 et 1848, il traverse le continent jusqu'au Pacifique et rapporte des centaines d'esquisses des peuples autochtones. Son livre Wanderings of an Artist, paru en 1859, reste un témoignage précieux, même si ses tableaux idéalisent leurs sujets.",
+      "wikipedia": "Paul Kane",
+      "portrait": {
+        "fichier": "Paul_Kane_1860s.jpg",
+        "legende": "Paul Kane, photographie des années 1860",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
+      }
+    },
+    {
+      "slug": "leduc",
+      "nom": "Ozias Leduc",
+      "classement": "Leduc, Ozias",
+      "titre": "Naissance d'Ozias Leduc",
+      "axe": "Beaux-arts",
+      "naissance": 1864,
+      "description": "Ozias Leduc (1864-1955) est un peintre né à Mont-Saint-Hilaire, au Québec, l'un des plus importants de son histoire. Il décore une trentaine d'églises, au Québec et jusqu'en Nouvelle-Angleterre, et peint des natures mortes d'une grande sobriété. Il est le maître de Paul-Émile Borduas.",
+      "wikipedia": "Ozias Leduc",
+      "portrait": {
+        "fichier": "Ozias_Leduc_mon_portrait_1899.jpg",
+        "legende": "Ozias Leduc, autoportrait de 1899",
+        "licence": "Domaine public",
+        "auteur": "Ozias Leduc (1864–1955)"
+      }
+    },
+    {
+      "slug": "suzorcote",
+      "nom": "Marc-Aurèle de Foy Suzor-Coté",
+      "classement": "Suzor-Coté, Marc-Aurèle de Foy",
+      "titre": "Naissance de Marc-Aurèle de Foy Suzor-Coté",
+      "axe": "Beaux-arts",
+      "naissance": 1869,
+      "description": "Marc-Aurèle de Foy Suzor-Coté (1869-1937) est un peintre et sculpteur né à Arthabaska, au Québec. Formé à Paris, il rapporte l'impressionnisme dans ses paysages de neige, où la lumière devient l'objet du tableau. Il est aussi l'auteur de bronzes, et ses toiles figurent parmi les plus recherchées du pays.",
+      "wikipedia": "Marc-Aurèle de Foy Suzor-Coté",
+      "portrait": {
+        "fichier": "Marc-Aurele_de_Foy_Suzor-Cote_-_Autoportrait_1894.jpg",
+        "legende": "Marc-Aurèle de Foy Suzor-Coté, autoportrait de 1894",
+        "licence": "Domaine public",
+        "auteur": "Marc-Aurèle de Foy Suzor-Coté (1869–1937)"
+      }
+    },
+    {
+      "slug": "thomson",
+      "nom": "Tom Thomson",
+      "classement": "Thomson, Tom",
+      "titre": "Naissance de Tom Thomson",
+      "axe": "Beaux-arts",
+      "naissance": 1877,
+      "description": "Tom Thomson (1877-1917) est un peintre né à Claremont, en Ontario, mort noyé à trente-neuf ans dans le lac Canoe. Il peint en quelques années, notamment dans le parc Algonquin, des paysages sauvages comme Le Pin, qui inspirent les futurs membres du Groupe des Sept. Les circonstances de sa mort, jamais élucidées, entretiennent sa légende.",
+      "wikipedia": "Tom Thomson",
+      "portrait": {
+        "fichier": "TomThomson23.jpg",
+        "legende": "Tom Thomson, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
+      }
+    },
+    {
+      "slug": "carr",
+      "nom": "Emily Carr",
+      "classement": "Carr, Emily",
+      "titre": "Naissance d'Emily Carr",
+      "axe": "Beaux-arts",
+      "naissance": 1871,
+      "description": "Emily Carr (1871-1945) est une peintre et écrivaine née à Victoria, en Colombie-Britannique. Elle peint les villages et les totems des Haïdas et des Tlingits, puis les forêts de la côte, dans un style aux formes mouvantes. Son recueil Klee Wyck, paru en 1941, lui vaut le prix du Gouverneur général.",
+      "wikipedia": "Emily Carr",
+      "portrait": {
+        "fichier": "EmilyCarr.png",
+        "legende": "Emily Carr à cheval, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "harris",
+      "nom": "Lawren Harris",
+      "classement": "Harris, Lawren",
+      "titre": "Naissance de Lawren Harris",
+      "axe": "Beaux-arts",
+      "naissance": 1885,
+      "description": "Lawren Harris (1885-1970) est un peintre né à Brantford, en Ontario, cofondateur du Groupe des Sept en 1920. Il peint des montagnes et des rivages du Nord aux formes simplifiées et lumineuses, marquées par la théosophie. Son œuvre est devenue l'un des symboles de l'art canadien.",
+      "wikipedia": "Lawren Harris",
+      "portrait": {
+        "fichier": "Lawren_Harris.JPG",
+        "legende": "Lawren Harris, photographie",
+        "licence": "Domaine public",
+        "auteur": "The original uploader was YUL89YYZ at English Wikipedia ."
+      }
+    },
+    {
+      "slug": "ayjackson",
+      "nom": "Alexander Young Jackson",
+      "classement": "Jackson, Alexander Young",
+      "titre": "Naissance d'Alexander Young Jackson",
+      "axe": "Beaux-arts",
+      "naissance": 1882,
+      "description": "Alexander Young Jackson (1882-1974) est un peintre né à Montréal, membre fondateur du Groupe des Sept. Il y apporte sa peinture colorée et ses voyages jusque dans l'Arctique et au Québec rural. Il peint aussi pendant la Première Guerre mondiale, comme artiste de guerre.",
+      "wikipedia": "Alexander Young Jackson",
+      "portrait": {
+        "fichier": "Alexander_Young_Jackson.jpg",
+        "legende": "Alexander Young Jackson devant l'une de ses toiles, photographie",
+        "licence": "Domaine public",
+        "auteur": "National Film Board of Canada photographer"
+      }
+    },
+    {
+      "slug": "borduas",
+      "nom": "Paul-Émile Borduas",
+      "classement": "Borduas, Paul-Émile",
+      "titre": "Naissance de Paul-Émile Borduas",
+      "axe": "Beaux-arts",
+      "naissance": 1905,
+      "description": "Paul-Émile Borduas (1905-1960) est un peintre né à Mont-Saint-Hilaire, chef de file de l'art abstrait au Québec. En 1948, il publie le manifeste Refus global, qui rejette l'ordre religieux et social de la province et lui vaut d'être renvoyé de l'enseignement. Exilé à New York puis à Paris, il y meurt en 1960, et le manifeste est vu comme un prélude à la Révolution tranquille.",
+      "wikipedia": "Paul-Émile Borduas",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Paul_Borduas.jpg",
+        "legende": "Paul-Émile Borduas dans son atelier, photographie",
+        "licence": "Domaine public",
+        "auteur": "Ronny Jaques (1910-2008)"
+      }
+    },
+    {
+      "slug": "riopelle",
+      "nom": "Jean Paul Riopelle",
+      "classement": "Riopelle, Jean Paul",
+      "titre": "Naissance de Jean Paul Riopelle",
+      "axe": "Beaux-arts",
+      "naissance": 1923,
+      "description": "Jean Paul Riopelle (1923-2002) est un peintre et sculpteur né à Montréal, signataire du Refus global. Installé à Paris dès 1947, il applique la peinture au couteau en larges mosaïques de couleur, et son œuvre est reconnue comme l'une des plus grandes de l'abstraction. Il revient au Québec dans les années 1990.",
+      "wikipedia": "Jean Paul Riopelle",
+      "portrait": {
+        "fichier": "Jean-Paul_Riopelle.JPG",
+        "legende": "Statue de Jean Paul Riopelle : une sculpture, non un portrait",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Jeangagnon"
+      }
+    },
+    {
+      "slug": "colville",
+      "nom": "Alex Colville",
+      "classement": "Colville, Alex",
+      "titre": "Naissance d'Alex Colville",
+      "axe": "Beaux-arts",
+      "naissance": 1920,
+      "description": "Alex Colville (1920-2013) est un peintre né à Toronto, installé en Nouvelle-Écosse, figure du réalisme magique. Peintre officiel de l'armée canadienne en 1944-1945, il témoigne de la libération des camps. Ses scènes de la vie quotidienne, comme Cheval et train, ont une tension silencieuse qui les rend inoubliables.",
+      "wikipedia": "Alex Colville",
+      "portrait": {
+        "fichier": "AlexCovillewarartistyoung.jpg",
+        "legende": "Alex Colville, photographie du temps de la guerre",
+        "licence": "Domaine public",
+        "auteur": "McCaughey, Hugh H."
+      }
+    },
+    {
+      "slug": "kenojuak",
+      "nom": "Kenojuak Ashevak",
+      "classement": "Ashevak, Kenojuak",
+      "titre": "Naissance de Kenojuak Ashevak",
+      "axe": "Beaux-arts",
+      "naissance": 1927,
+      "description": "Kenojuak Ashevak (1927-2013) est une artiste inuite née à Ikirasaq, sur l'île de Baffin, figure de l'art inuit contemporain. Elle réalise à Cape Dorset des dessins et des estampes comme L'Enchanteresse hibou, que reproduit un timbre de 1970. Compagnon de l'Ordre du Canada, elle est reconnue comme l'une des grandes artistes du pays.",
+      "wikipedia": "Kenojuak Ashevak",
+      "portrait": {
+        "fichier": "Kenojuak_Ashevak_1_1997-05-09_cropped.jpg",
+        "legende": "Kenojuak Ashevak, photographie de 1997",
+        "licence": "CC BY-SA 2.5",
+        "auteur": "Ansgar Walk"
+      }
+    },
+    {
+      "slug": "snow",
+      "nom": "Michael Snow",
+      "classement": "Snow, Michael",
+      "titre": "Naissance de Michael Snow",
+      "axe": "Beaux-arts",
+      "naissance": 1928,
+      "description": "Michael Snow (1928-2023) est un artiste né à Toronto, à la fois peintre, cinéaste et musicien de jazz. Sa série de la Femme qui marche, commencée en 1961, orne l'espace public, et son film Wavelength, de 1967, est un jalon du cinéma expérimental. Il est l'une des figures canadiennes les plus influentes de l'art contemporain.",
+      "wikipedia": "Michael Snow",
+      "portrait": {
+        "fichier": "Michael_Snow.jpg",
+        "legende": "Michael Snow, photographie",
+        "licence": "CC BY 3.0",
+        "auteur": "ManArray"
+      }
+    },
+    {
+      "slug": "lewis",
+      "nom": "Maud Lewis",
+      "classement": "Lewis, Maud",
+      "titre": "Naissance de Maud Lewis",
+      "axe": "Beaux-arts",
+      "naissance": 1903,
+      "description": "Maud Lewis (1903-1970) est une peintre populaire née en Nouvelle-Écosse, atteinte d'arthrite dès l'enfance. Elle peint dans une maison minuscule, qu'elle décore aussi de fleurs, des scènes lumineuses de paysages et d'animaux qu'elle vend à des touristes. Son œuvre est devenue l'un des symboles de l'art populaire canadien.",
+      "wikipedia": "Maud Lewis",
+      "portrait": {
+        "fichier": "Maud_Lewis.jpg",
+        "legende": "Maud Lewis devant l'une de ses peintures, photographie",
+        "licence": "CC BY 2.0",
+        "auteur": "Ron Cogswell"
+      }
+    },
+    {
+      "slug": "notman",
+      "nom": "William Notman",
+      "classement": "Notman, William",
+      "titre": "Naissance de William Notman",
+      "axe": "Beaux-arts",
+      "naissance": 1826,
+      "description": "William Notman (1826-1891) est un photographe né à Paisley, en Écosse, installé à Montréal en 1856. Son studio réalise les portraits de milliers de Canadiens et des vues du Canada, comme celles du chantier du pont Victoria. Ses archives comptent des centaines de milliers de clichés, aujourd'hui conservés au Musée McCord.",
+      "wikipedia": "William Notman",
+      "portrait": {
+        "fichier": "Self_portrait_of_William_Notman.jpg",
+        "legende": "William Notman, autoportrait",
+        "licence": "Domaine public",
+        "auteur": "William Notman (1826–1891)"
+      }
+    },
+    {
+      "slug": "karsh",
+      "nom": "Yousuf Karsh",
+      "classement": "Karsh, Yousuf",
+      "titre": "Naissance de Yousuf Karsh",
+      "axe": "Beaux-arts",
+      "naissance": 1908,
+      "description": "Yousuf Karsh (1908-2002) est un photographe né à Mardin, dans l'Empire ottoman, d'origine arménienne, installé au Canada à seize ans. Son portrait de Winston Churchill en 1941, pris à Ottawa, le rend célèbre dans le monde entier. Il photographie ensuite des centaines de personnalités, des chefs d'État aux artistes.",
+      "wikipedia": "Yousuf Karsh",
+      "portrait": {
+        "fichier": "Yousuf-Karsh.jpg",
+        "legende": "Yousuf Karsh devant son appareil, photographie",
+        "licence": "Domaine public",
+        "auteur": "Yousuf Karsh (1908–2002)"
+      }
+    },
+    {
+      "slug": "lavallee",
+      "nom": "Calixa Lavallée",
+      "classement": "Lavallée, Calixa",
+      "titre": "Naissance de Calixa Lavallée",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1842,
+      "description": "Calixa Lavallée (1842-1891) est un compositeur né à Verchères, au Québec, auteur de la musique de l'hymne Ô Canada. Il la compose en 1880 sur un poème d'Adolphe-Basile Routhier, pour la fête nationale des Canadiens français à Québec. Il passe une partie de sa vie aux États-Unis et y meurt, à Boston, avant que l'hymne ne devienne officiel en 1980.",
+      "wikipedia": "Calixa Lavallée",
+      "portrait": {
+        "fichier": "Calixa_Lavallée.png",
+        "legende": "Calixa Lavallée, gravure d'époque",
+        "licence": "Domaine public",
+        "auteur": "L'Opinion publique Vol. 4, no 11"
+      }
+    },
+    {
+      "slug": "bolduc",
+      "nom": "La Bolduc",
+      "classement": "Bolduc, La",
+      "titre": "Naissance de La Bolduc",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1894,
+      "description": "La Bolduc (1894-1941) est une chanteuse et compositrice née à Newport, en Gaspésie, de son vrai nom Mary Travers. Elle chante en s'accompagnant au violon des chansons humoristiques, les turluttes, qui font rire le Québec pendant la Crise. Ses disques se vendent par dizaines de milliers avant sa mort d'un cancer à quarante-six ans.",
+      "wikipedia": "La Bolduc",
+      "portrait": {
+        "fichier": "LaBolducPublicity.jpg",
+        "legende": "La Bolduc, photographie publicitaire",
+        "licence": "Domaine public",
+        "auteur": "Famous Studio, Montréal"
+      }
+    },
+    {
+      "slug": "leclerc",
+      "nom": "Félix Leclerc",
+      "classement": "Leclerc, Félix",
+      "titre": "Naissance de Félix Leclerc",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1914,
+      "description": "Félix Leclerc (1914-1988) est un poète et chansonnier né à La Tuque, au Québec, père de la chanson québécoise. Il triomphe à Paris à partir de 1950 avec des chansons comme Le P'tit Bonheur, qui lui ouvrent la voie du succès en France. Il devient aussi l'une des voix du nationalisme québécois, notamment avec L'Alouette en colère.",
+      "wikipedia": "Félix Leclerc",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Félix_Leclerc.jpg",
+        "legende": "Félix Leclerc, photographie",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "peterson",
+      "nom": "Oscar Peterson",
+      "classement": "Peterson, Oscar",
+      "titre": "Naissance d'Oscar Peterson",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1925,
+      "description": "Oscar Peterson (1925-2007) est un pianiste de jazz né à Montréal, fils d'un cheminot immigré des Antilles. Virtuose, il enregistre des albums comme Night Train en 1962 et joue avec les plus grands, dont Ella Fitzgerald. Il est l'un des musiciens de jazz les plus récompensés de l'histoire.",
+      "wikipedia": "Oscar Peterson",
+      "portrait": {
+        "fichier": "Oscar_Peterson_-_1950.JPG",
+        "legende": "Oscar Peterson, photographie de 1950",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
+      }
+    },
+    {
+      "slug": "gould",
+      "nom": "Glenn Gould",
+      "classement": "Gould, Glenn",
+      "titre": "Naissance de Glenn Gould",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1932,
+      "description": "Glenn Gould (1932-1982) est un pianiste né à Toronto, interprète d'exception de Jean-Sébastien Bach. Son enregistrement des Variations Goldberg, en 1955, bouleverse la musique classique et ouvre sa carrière. Il se retire de la scène en 1964 pour se consacrer au disque et à la radio, et meurt à cinquante ans.",
+      "wikipedia": "Glenn Gould",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Glenn Gould playing on CBC-TV concert.jpg",
+        "legende": "Glenn Gould au piano lors d'un concert télévisé de la CBC, janvier 1962",
+        "licence": "Domaine public",
+        "auteur": "Canadian Broadcasting Corporation"
+      }
+    },
+    {
+      "slug": "lightfoot",
+      "nom": "Gordon Lightfoot",
+      "classement": "Lightfoot, Gordon",
+      "titre": "Naissance de Gordon Lightfoot",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1938,
+      "description": "Gordon Lightfoot (1938-2023) est un auteur-compositeur-interprète né à Orillia, en Ontario, figure du folk canadien. Sa chanson Canadian Railroad Trilogy, écrite pour le centenaire de 1967, évoque la construction du chemin de fer. The Wreck of the Edmund Fitzgerald, en 1976, raconte le naufrage d'un cargo sur le lac Supérieur.",
+      "wikipedia": "Gordon Lightfoot",
+      "portrait": {
+        "fichier": "Gordon_Lightfoot.jpg",
+        "legende": "Gordon Lightfoot, photographie",
+        "licence": "CC BY 3.0",
+        "auteur": "Original uploader was Piedmontstyle at en.wikipedia"
+      }
+    },
+    {
+      "slug": "cohen",
+      "nom": "Leonard Cohen",
+      "classement": "Cohen, Leonard",
+      "titre": "Naissance de Leonard Cohen",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1934,
+      "description": "Leonard Cohen (1934-2016) est un poète, romancier et chanteur né à Westmount, au Québec. Il devient célèbre avec des chansons comme Suzanne et Hallelujah, dont les paroles mêlent amour, religion et mélancolie. Il meurt à Los Angeles en 2016, peu après son dernier album.",
+      "wikipedia": "Leonard Cohen",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Leonard_Cohen,_1988_01.jpg",
+        "legende": "Leonard Cohen, photographie de 1988",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Gorupdebesanez"
+      }
+    },
+    {
+      "slug": "forrester",
+      "nom": "Maureen Forrester",
+      "classement": "Forrester, Maureen",
+      "titre": "Naissance de Maureen Forrester",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1930,
+      "description": "Maureen Forrester (1930-2010) est une contralto née à Montréal, grande voix du chant classique. Elle chante sous la direction de Bruno Walter et de Leonard Bernstein, notamment dans les symphonies de Mahler. Elle préside plus tard le Conseil des arts du Canada.",
+      "wikipedia": "Maureen Forrester",
+      "portrait": {
+        "fichier": "Maureen_Forrester.jpg",
+        "legende": "Maureen Forrester, photographie",
+        "licence": "Domaine public",
+        "auteur": "Carl Van Vechten (1880–1964)"
+      }
+    },
+    {
+      "slug": "pickford",
+      "nom": "Mary Pickford",
+      "classement": "Pickford, Mary",
+      "titre": "Naissance de Mary Pickford",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1892,
+      "description": "Mary Pickford (1892-1979) est une actrice née à Toronto, l'une des premières stars du cinéma muet. Surnommée la Petite Fiancée de l'Amérique, elle fonde en 1919 la société United Artists avec notamment Charlie Chaplin. Elle reçoit un Oscar en 1930 et cofonde l'Académie du cinéma.",
+      "wikipedia": "Mary Pickford",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Mary_Pickford_cph.3c17995u.jpg",
+        "legende": "Mary Pickford, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "Rufus Porter Moody (1873–1922) Alternative names R. P. Moody; Rufus P. Moody"
+      }
+    },
+    {
+      "slug": "sennett",
+      "nom": "Mack Sennett",
+      "classement": "Sennett, Mack",
+      "titre": "Naissance de Mack Sennett",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1880,
+      "description": "Mack Sennett (1880-1960) est un réalisateur né à Danville, au Québec, pionnier de la comédie burlesque à Hollywood. Fondateur de la société Keystone en 1912, il lance Charlie Chaplin et crée les célèbres Keystone Cops. Il reçoit un Oscar d'honneur en 1938.",
+      "wikipedia": "Mack Sennett",
+      "portrait": {
+        "fichier": "Mack_Sennett_1916.jpg",
+        "legende": "Mack Sennett, photographie de 1916",
+        "licence": "Domaine public",
+        "auteur": "Fred Hartsook (1878-1930)"
+      }
+    },
+    {
+      "slug": "wray",
+      "nom": "Fay Wray",
+      "classement": "Wray, Fay",
+      "titre": "Naissance de Fay Wray",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1907,
+      "description": "Fay Wray (1907-2004) est une actrice née à Cardston, en Alberta, devenue une star à Hollywood. Elle tient le rôle principal du film King Kong en 1933, dans les bras du gorille géant. Son cri est resté l'un des plus connus de l'histoire du cinéma.",
+      "wikipedia": "Fay Wray",
+      "portrait": {
+        "fichier": "Wray,_Fay_01.jpg",
+        "legende": "Fay Wray, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "Studio publicity still"
+      }
+    },
+    {
+      "slug": "plummer",
+      "nom": "Christopher Plummer",
+      "classement": "Plummer, Christopher",
+      "titre": "Naissance de Christopher Plummer",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1929,
+      "description": "Christopher Plummer (1929-2021) est un acteur né à Toronto, d'abord célèbre au théâtre shakespearien. Il joue le capitaine von Trapp dans La Mélodie du bonheur en 1965. Il reçoit à quatre-vingt-deux ans un Oscar pour Beginners, devenant le plus âgé lauréat d'un Oscar d'interprétation.",
+      "wikipedia": "Christopher Plummer",
+      "portrait": {
+        "fichier": "Christopher_Plummer_2014.jpg",
+        "legende": "Christopher Plummer, photographie de 2014",
+        "licence": "CC BY-SA 2.0",
+        "auteur": "MiamiFilmFestival"
+      }
+    },
+    {
+      "slug": "candy",
+      "nom": "John Candy",
+      "classement": "Candy, John",
+      "titre": "Naissance de John Candy",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1950,
+      "description": "John Candy (1950-1994) est un acteur comique né à Toronto, révélé par la série télévisée SCTV. Il joue dans des films comme Les Bleus de la police ou Planes, Trains and Automobiles. Il meurt d'une crise cardiaque en 1994, pendant un tournage au Mexique.",
+      "wikipedia": "John Candy",
+      "portrait": {
+        "fichier": "John_Candy.jpg",
+        "legende": "John Candy, photographie",
+        "licence": "CC BY 2.5",
+        "auteur": "Mike F. Campbell"
+      }
+    },
+    {
+      "slug": "mclaren",
+      "nom": "Norman McLaren",
+      "classement": "McLaren, Norman",
+      "titre": "Naissance de Norman McLaren",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1914,
+      "description": "Norman McLaren (1914-1987) est un cinéaste né à Stirling, en Écosse, pionnier du cinéma d'animation à l'Office national du film du Canada. Il dessine directement sur la pellicule et invente des techniques comme la pixilation. Son film Voisins reçoit l'Oscar du meilleur court métrage documentaire en 1953.",
+      "wikipedia": "Norman McLaren",
+      "portrait": {
+        "fichier": "Norman_McLaren_drawing_on_film_-_1944.jpg",
+        "legende": "Norman McLaren dessinant sur la pellicule, photographie de 1944",
+        "licence": "Domaine public",
+        "auteur": "Jack Long/National Film Board of Canada"
+      }
+    },
+    {
+      "slug": "naismith",
+      "nom": "James Naismith",
+      "classement": "Naismith, James",
+      "titre": "Naissance de James Naismith",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1861,
+      "description": "James Naismith (1861-1939) est un professeur d'éducation physique né à Almonte, en Ontario, inventeur du basket-ball. En décembre 1891, à Springfield, aux États-Unis, il propose un jeu de ballon avec deux paniers de pêches accrochés à un balcon. Son sport est aux Jeux olympiques depuis 1936.",
+      "wikipedia": "James Naismith",
+      "portrait": {
+        "fichier": "James_Naismith_with_a_basketball.jpg",
+        "legende": "James Naismith avec un ballon de basket-ball, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "Evdcoldeportes ."
+      }
+    },
+    {
+      "slug": "richard",
+      "nom": "Maurice Richard",
+      "classement": "Richard, Maurice",
+      "titre": "Naissance de Maurice Richard",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1921,
+      "description": "Maurice Richard (1921-2000) est un hockeyeur né à Montréal, surnommé le Rocket, joueur des Canadiens de 1942 à 1960. Il est le premier à marquer cinquante buts en cinquante matchs, en 1944-1945, et gagne huit fois la Coupe Stanley. Sa suspension en 1955 provoque l'émeute du Forum, vue comme un signe annonciateur de la Révolution tranquille.",
+      "wikipedia": "Maurice Richard",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Maurice_richard_profile.jpg",
+        "legende": "Maurice Richard, photographie",
+        "licence": "Domaine public",
+        "auteur": "National Archives of Canada, Thomas Patrick Gorman fonds"
+      }
+    },
+    {
+      "slug": "howe",
+      "nom": "Gordie Howe",
+      "classement": "Howe, Gordie",
+      "titre": "Naissance de Gordie Howe",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1928,
+      "description": "Gordie Howe (1928-2016) est un hockeyeur né à Floral, en Saskatchewan, surnommé Monsieur Hockey. Il joue vingt-cinq saisons aux Red Wings de Détroit, avec qui il gagne quatre Coupes Stanley, et dispute encore la ligue à plus de cinquante ans. Il détient longtemps le record de buts de la Ligue nationale.",
+      "wikipedia": "Gordie Howe",
+      "portrait": {
+        "fichier": "Gordie_Howe_Chex_card.jpg",
+        "legende": "Gordie Howe, carte à collectionner",
+        "licence": "Domaine public",
+        "auteur": "Ralston-Purina Company, makers of Chex cereals"
+      }
+    },
+    {
+      "slug": "beliveau",
+      "nom": "Jean Béliveau",
+      "classement": "Béliveau, Jean",
+      "titre": "Naissance de Jean Béliveau",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1931,
+      "description": "Jean Béliveau (1931-2014) est un hockeyeur né à Trois-Rivières, capitaine des Canadiens de Montréal. Il gagne dix Coupes Stanley comme joueur et sept autres en dirigeant, et incarne l'élégance dans le sport. Il refuse le poste de gouverneur général en 1994.",
+      "wikipedia": "Jean Béliveau",
+      "portrait": {
+        "fichier": "Jean_Béliveau_2009.jpg",
+        "legende": "Jean Béliveau, photographie de 2009",
+        "licence": "CC BY 2.0",
+        "auteur": "US Embassy Canada"
+      }
+    },
+    {
+      "slug": "fox",
+      "nom": "Terry Fox",
+      "classement": "Fox, Terry",
+      "titre": "Naissance de Terry Fox",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1958,
+      "description": "Terry Fox (1958-1981) est un athlète né à Winnipeg, amputé d'une jambe à dix-huit ans à cause d'un cancer. En 1980, il entame le Marathon de l'espoir, une traversée du pays à la course pour récolter des fonds. Contraint d'arrêter près de Thunder Bay après 5 373 kilomètres, il meurt en 1981 ; la course qui porte son nom a recueilli des centaines de millions de dollars.",
+      "wikipedia": "Terry Fox",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "TerryFoxToronto19800712.JPG",
+        "legende": "Terry Fox pendant le Marathon de l'espoir, photographie de 1980",
+        "licence": "Domaine public",
+        "auteur": "Jeremy Gilbert"
+      }
+    },
+    {
+      "slug": "scott",
+      "nom": "Barbara Ann Scott",
+      "classement": "Scott, Barbara Ann",
+      "titre": "Naissance de Barbara Ann Scott",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1928,
+      "description": "Barbara Ann Scott (1928-2012) est une patineuse artistique née à Ottawa, championne olympique en 1948 à Saint-Moritz. Elle gagne aussi les championnats du monde de 1947 et 1948. À son retour, la ville d'Ottawa lui offre une voiture, ce qui fait d'elle une héroïne nationale.",
+      "wikipedia": "Barbara Ann Scott",
+      "portrait": {
+        "fichier": "Barbara-Ann_Scott.jpg",
+        "legende": "Barbara Ann Scott, photographie d'époque",
+        "licence": "CC BY 2.0",
+        "auteur": "Fred Warrander"
+      }
+    },
+    {
+      "slug": "williams",
+      "nom": "Percy Williams",
+      "classement": "Williams, Percy",
+      "titre": "Naissance de Percy Williams",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1908,
+      "description": "Percy Williams (1908-1982) est un sprinteur né à Vancouver, double champion olympique en 1928. Il remporte à Amsterdam les 100 mètres et les 200 mètres, aux dépens des favoris américains. Il reste l'un des athlètes les plus célébrés de l'entre-deux-guerres.",
+      "wikipedia": "Percy Williams",
+      "portrait": {
+        "fichier": "Percy_Williams_1928.jpg",
+        "legende": "Percy Williams, photographie de 1928",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
+      }
+    },
+    {
+      "slug": "rosenfeld",
+      "nom": "Bobbie Rosenfeld",
+      "classement": "Rosenfeld, Bobbie",
+      "titre": "Naissance de Bobbie Rosenfeld",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1904,
+      "description": "Bobbie Rosenfeld (1904-1969) est une athlète née à Iekaterinoslav, dans l'Empire russe, arrivée enfant au Canada. Aux Jeux de 1928 à Amsterdam, elle gagne l'or au relais 4 × 100 mètres et l'argent au 100 mètres. Touchée par l'arthrite, elle devient ensuite journaliste sportive et ouvre la voie aux athlètes féminines.",
+      "wikipedia": "Fanny Rosenfeld",
+      "portrait": {
+        "fichier": "Ethel_Smith_Fanny_Rosenfeld_1928_Olympics.jpg",
+        "legende": "Bobbie Rosenfeld et Ethel Smith lors des Jeux olympiques de 1928, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
+      }
+    },
+    {
+      "slug": "hanlan",
+      "nom": "Ned Hanlan",
+      "classement": "Hanlan, Ned",
+      "titre": "Naissance de Ned Hanlan",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1855,
+      "description": "Ned Hanlan (1855-1908) est un rameur professionnel né à Toronto, champion du monde d'aviron en 1880. Il conserve son titre pendant plusieurs années et affronte des adversaires venus d'Angleterre ou d'Australie. Il est l'un des premiers grands sportifs canadiens.",
+      "wikipedia": "Ned Hanlan",
+      "portrait": {
+        "fichier": "Ned_Hanlan.jpg",
+        "legende": "Ned Hanlan, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "Notman & Sandham"
+      }
+    },
+    {
+      "slug": "longboat",
+      "nom": "Tom Longboat",
+      "classement": "Longboat, Tom",
+      "titre": "Naissance de Tom Longboat",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1887,
+      "description": "Tom Longboat (1887-1949) est un coureur de fond onondaga né dans la réserve des Six-Nations, en Ontario. Il remporte le marathon de Boston en 1907 en battant le record de l'épreuve. Soldat pendant la Première Guerre mondiale, il est un symbole du talent autochtone, malgré les préjugés qu'il subit.",
+      "wikipedia": "Tom Longboat",
+      "portrait": {
+        "fichier": "T_Longboat,_the_Canadian_runner_Standing_(HS85-10-18314).jpg",
+        "legende": "Tom Longboat, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "Charles Aylett (1880–1942) Description Canadian photographer"
+      }
+    },
+    {
+      "slug": "amackenzie",
+      "nom": "Alexander Mackenzie",
+      "classement": "Mackenzie, Alexander",
+      "titre": "Naissance d'Alexander Mackenzie",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1764,
+      "description": "Alexander Mackenzie (1764-1820) est un explorateur et marchand de fourrures né à Stornoway, en Écosse. En 1789, il descend le fleuve qui porte son nom jusqu'à l'océan Arctique ; en 1793, il est le premier Européen à traverser le continent au nord du Mexique jusqu'au Pacifique. Son récit de voyage paraît en 1801.",
+      "wikipedia": "Alexander Mackenzie (explorateur)",
+      "portrait": {
+        "fichier": "Alexander_MacKenzie_by_Thomas_Lawrence_(c.1800).jpg",
+        "legende": "Alexander Mackenzie, portrait peint par Thomas Lawrence vers 1800",
+        "licence": "Domaine public",
+        "auteur": "Thomas Lawrence (1769–1830)"
+      }
+    },
+    {
+      "slug": "fraser",
+      "nom": "Simon Fraser",
+      "classement": "Fraser, Simon",
+      "titre": "Naissance de Simon Fraser",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1776,
+      "description": "Simon Fraser (1776-1862) est un marchand de fourrures et explorateur né à Bennington, dans le Vermont, de parents loyalistes. En 1808, pour la Compagnie du Nord-Ouest, il descend le fleuve qui porte aujourd'hui son nom jusqu'à son embouchure. Il pensait avoir atteint la Columbia, et le trajet s'est révélé presque impraticable.",
+      "wikipedia": "Simon Fraser (explorateur)",
+      "portrait": {
+        "fichier": "Simon_Fraser2.jpg",
+        "legende": "Simon Fraser, portrait d'époque",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "thompson",
+      "nom": "David Thompson",
+      "classement": "Thompson, David",
+      "titre": "Naissance de David Thompson",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1770,
+      "description": "David Thompson (1770-1857) est un cartographe né à Westminster, à Londres, engagé enfant par la Compagnie de la Baie d'Hudson. Il parcourt à pied et en canot près de 80 000 kilomètres et dresse la carte d'un cinquième du continent. Mort pauvre et presque oublié, il est aujourd'hui considéré comme l'un des plus grands géographes de son temps.",
+      "wikipedia": "David Thompson (explorateur)",
+      "portrait": {
+        "fichier": "David_Thompson_(explorer).jpg",
+        "legende": "David Thompson, dessin moderne : on ne connaît aucun portrait de lui",
+        "licence": "Domaine public",
+        "auteur": "US National Park Service?"
+      }
+    },
+    {
+      "slug": "gesner",
+      "nom": "Abraham Gesner",
+      "classement": "Gesner, Abraham",
+      "titre": "Naissance d'Abraham Gesner",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1797,
+      "description": "Abraham Gesner (1797-1864) est un médecin et géologue né à Cornwallis, en Nouvelle-Écosse. Il invente le kérosène vers 1846, tiré du charbon, moins coûteux et moins fumeux que l'huile de baleine. Son procédé ouvre la voie à l'éclairage moderne et à l'industrie pétrolière.",
+      "wikipedia": "Abraham Gesner",
+      "portrait": {
+        "fichier": "Abraham_Gesner_Photo.png",
+        "legende": "Abraham Gesner, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
+      }
+    },
+    {
+      "slug": "fleming",
+      "nom": "Sandford Fleming",
+      "classement": "Fleming, Sandford",
+      "titre": "Naissance de Sandford Fleming",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1827,
+      "description": "Sandford Fleming (1827-1915) est un ingénieur né à Kirkcaldy, en Écosse, arrivé au Canada à dix-huit ans. Il dirige les relevés du chemin de fer transcontinental et propose en 1879 un temps universel découpé en fuseaux horaires. Cette idée sera adoptée au niveau international en 1884.",
+      "wikipedia": "Sandford Fleming",
+      "portrait": {
+        "fichier": "Sir_Sandford_Fleming.jpg",
+        "legende": "Sandford Fleming, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "John Wycliffe Lowes Forster (1850-1938)"
+      }
+    },
+    {
+      "slug": "osler",
+      "nom": "William Osler",
+      "classement": "Osler, William",
+      "titre": "Naissance de William Osler",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1849,
+      "description": "William Osler (1849-1919) est un médecin né à Bond Head, en Ontario, père de la médecine clinique moderne. Professeur à McGill, à Philadelphie, puis cofondateur de l'hôpital Johns Hopkins, il publie en 1892 un manuel qui fait référence pendant des décennies. Il insiste sur l'enseignement au chevet du malade, et finit sa carrière à Oxford.",
+      "wikipedia": "William Osler",
+      "portrait": {
+        "fichier": "Sir_William_Osler.jpg",
+        "legende": "William Osler, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "The original uploader was YUL89YYZ at English Wikipedia ."
+      }
+    },
+    {
+      "slug": "fessenden",
+      "nom": "Reginald Fessenden",
+      "classement": "Fessenden, Reginald",
+      "titre": "Naissance de Reginald Fessenden",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1866,
+      "description": "Reginald Fessenden (1866-1932) est un inventeur né à East Bolton, au Québec, pionnier de la radio. Dans la nuit du 24 décembre 1906, il diffuse depuis le Massachusetts la première émission de voix et de musique par ondes radio. Il laisse plus de deux cents brevets, et son rôle fut longtemps négligé.",
+      "wikipedia": "Reginald Fessenden",
+      "portrait": {
+        "fichier": "Fessenden.JPG",
+        "legende": "Reginald Fessenden, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "None listed"
+      }
+    },
+    {
+      "slug": "banting",
+      "nom": "Frederick Banting",
+      "classement": "Banting, Frederick",
+      "titre": "Naissance de Frederick Banting",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1891,
+      "description": "Frederick Banting (1891-1941) est un médecin né à Alliston, en Ontario, codécouvreur de l'insuline. Avec Charles Best, il isole l'hormone à Toronto en 1921, sous la direction de John Macleod ; l'insuline sauve la vie de milliers de diabétiques. Il reçoit le prix Nobel en 1923, partagé avec Macleod, et meurt dans un accident d'avion en 1941.",
+      "wikipedia": "Frederick Banting",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Frederick Banting 2.jpg",
+        "legende": "Frederick Banting, photographie d'époque",
+        "licence": "CC BY 4.0",
+        "auteur": "Unknown author Unknown author"
+      }
+    },
+    {
+      "slug": "abbott",
+      "nom": "Maude Abbott",
+      "classement": "Abbott, Maude",
+      "titre": "Naissance de Maude Abbott",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1869,
+      "description": "Maude Abbott (1869-1940) est une médecin née à Saint-André-Est, au Québec, spécialiste des malformations cardiaques congénitales. Conservatrice du musée médical de McGill, elle publie en 1936 un atlas de la discipline, qui fait autorité. Elle ouvre la voie à la chirurgie cardiaque pédiatrique.",
+      "wikipedia": "Maude Abbott",
+      "portrait": {
+        "fichier": "Maude_Abbott.jpg",
+        "legende": "Maude Abbott, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "Wm. Notman & Son"
+      }
+    },
+    {
+      "slug": "penfield",
+      "nom": "Wilder Penfield",
+      "classement": "Penfield, Wilder",
+      "titre": "Naissance de Wilder Penfield",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1891,
+      "description": "Wilder Penfield (1891-1976) est un neurochirurgien né à Spokane, dans l'État de Washington, installé à Montréal en 1928. Il fonde en 1934 l'Institut neurologique de Montréal et cartographie le cerveau humain en stimulant les zones du cortex chez des patients éveillés. Il met au point une technique de traitement de l'épilepsie.",
+      "wikipedia": "Wilder Penfield",
+      "portrait": {
+        "fichier": "Wilder_Penfield.jpg",
+        "legende": "Wilder Penfield, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "selye",
+      "nom": "Hans Selye",
+      "classement": "Selye, Hans",
+      "titre": "Naissance de Hans Selye",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1907,
+      "description": "Hans Selye (1907-1982) est un médecin né à Vienne, installé à Montréal en 1932. Il découvre le syndrome général d'adaptation et popularise le mot stress, pris en son sens médical. Il dirige l'Institut de médecine et de chirurgie expérimentales de l'Université de Montréal.",
+      "wikipedia": "Hans Selye",
+      "portrait": {
+        "fichier": "Portrait_Hans_Selye.jpg",
+        "legende": "Hans Selye, photographie",
+        "licence": "CC BY-SA 4.0",
+        "auteur": "Jean-Paul Rioux"
+      }
+    },
+    {
+      "slug": "bombardier",
+      "nom": "Joseph-Armand Bombardier",
+      "classement": "Bombardier, Joseph-Armand",
+      "titre": "Naissance de Joseph-Armand Bombardier",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1907,
+      "description": "Joseph-Armand Bombardier (1907-1964) est un inventeur né à Valcourt, au Québec, mécanicien de génie dès l'adolescence. Il met au point en 1937 l'autoneige, un véhicule à chenilles qui permet de circuler l'hiver, puis la motoneige Ski-Doo en 1959. Son entreprise est devenue un groupe industriel de dimension mondiale.",
+      "wikipedia": "Joseph-Armand Bombardier",
+      "portrait": {
+        "fichier": "Armand_Bombardier.jpg",
+        "legende": "Joseph-Armand Bombardier, photographie d'époque",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
+      }
+    },
+    {
+      "slug": "boyle",
+      "nom": "Willard Boyle",
+      "classement": "Boyle, Willard",
+      "titre": "Naissance de Willard Boyle",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1924,
+      "description": "Willard Boyle (1924-2011) est un physicien né à Amherst, en Nouvelle-Écosse, qui travaille aux laboratoires Bell aux États-Unis. Avec George Smith, il invente en 1969 le capteur CCD, qui sert de base aux appareils photo numériques. Ils partagent le prix Nobel de physique en 2009.",
+      "wikipedia": "Willard Boyle",
+      "portrait": {
+        "fichier": "Nobel_Prize_2009-Press_Conference_KVA-23.jpg",
+        "legende": "Willard Boyle lors de la conférence de presse du prix Nobel en 2009",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Prolineserver ( talk )"
+      }
+    },
+    {
+      "slug": "bethune",
+      "nom": "Norman Bethune",
+      "classement": "Bethune, Norman",
+      "titre": "Naissance de Norman Bethune",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1890,
+      "description": "Norman Bethune (1890-1939) est un médecin né à Gravenhurst, en Ontario, chirurgien thoracique de talent. Pendant la guerre civile espagnole, il organise à Madrid un service mobile de transfusion sanguine. Il part ensuite en Chine, où il soigne les soldats communistes et meurt d'une septicémie en 1939, devenant un héros national.",
+      "wikipedia": "Norman Bethune",
+      "portrait": {
+        "fichier": "Norman_Bethune_graduation_1922.jpg",
+        "legende": "Norman Bethune, photographie de 1922",
+        "licence": "Domaine public",
+        "auteur": "Credit: Library and Archives Canada/PA-160708 Copyright: Expired"
+      }
+    },
+    {
+      "slug": "reeves",
+      "nom": "Hubert Reeves",
+      "classement": "Reeves, Hubert",
+      "titre": "Naissance de Hubert Reeves",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1932,
+      "description": "Hubert Reeves (1932-2023) est un astrophysicien né à Montréal, installé en France depuis 1960. Spécialiste de la nucléosynthèse, il devient un grand vulgarisateur avec des livres comme Patience dans l'azur. Il consacre sa fin de vie à la défense de la biodiversité.",
+      "wikipedia": "Hubert Reeves",
+      "portrait": {
+        "fichier": "Hubert_Reeves_Paris_2012.jpg",
+        "legende": "Hubert Reeves, photographie de 2012",
+        "licence": "CC BY-SA 4.0",
+        "auteur": "Nicolas Richoffer"
+      }
+    }
+  ]
+}

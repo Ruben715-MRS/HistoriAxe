@@ -1,0 +1,1710 @@
+{
+  "code": "benelux",
+  "nom": "Belgique, Pays-Bas et Luxembourg",
+  "pays": [
+    "BE",
+    "LU",
+    "NL"
+  ],
+  "theme": {
+    "id": "pan_benelux",
+    "nom": "Grandes figures du Benelux",
+    "difficulte": "Intermédiaire",
+    "motsCles": [
+      "Benelux",
+      "Belgique",
+      "Belge",
+      "Belges",
+      "Pays-Bas",
+      "Néerlandais",
+      "Néerlandaise",
+      "Hollande",
+      "Hollandais",
+      "Luxembourg",
+      "Luxembourgeois",
+      "Luxembourgeoise",
+      "Flandre",
+      "Flamand",
+      "Wallonie",
+      "Wallon",
+      "Bruxelles",
+      "Amsterdam",
+      "La Haye",
+      "Anvers",
+      "Siècle d'or néerlandais",
+      "Provinces-Unies",
+      "Pays-Bas bourguignons",
+      "Maison d'Orange-Nassau",
+      "Art nouveau",
+      "Grand-Duché de Luxembourg"
+    ]
+  },
+  "axes": [
+    "Chefs d'État et dirigeants",
+    "Guerres et résistances",
+    "Littérature et pensée",
+    "Beaux-arts",
+    "Musique, spectacle et sport",
+    "Sciences, techniques et innovation",
+    "Économie et entreprise"
+  ],
+  "partMaxPays": 0.45,
+  "personnages": [
+    {
+      "slug": "vaneyck",
+      "nom": "Jan van Eyck",
+      "classement": "Eyck, Jan van",
+      "titre": "Naissance de Jan van Eyck",
+      "axe": "Beaux-arts",
+      "naissance": 1390,
+      "pays": "BE",
+      "description": "Jan van Eyck (vers 1390-1441) est un peintre flamand, au service de Philippe le Bon puis installé à Bruges. Il achève en 1432 à Gand le retable de l'Agneau mystique, commencé par son frère Hubert, et peint en 1434 le portrait des Époux Arnolfini. Sa maîtrise de la peinture à l'huile, qui rend les reflets, les étoffes et la lumière avec une précision inédite, fait de lui le grand maître des primitifs flamands.",
+      "wikipedia": "Jan van Eyck",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Jan van Eyck - Portrait of a Man (Self Portrait?) 1433.jpg",
+        "legende": "Jan van Eyck, « L'Homme au turban rouge », probable autoportrait, 1433",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Jan van Eyck (circa 1390 date QS:P,+1390–00–00T00:00:00Z/9,P1480,Q5727902 –1441)"
+      }
+    },
+    {
+      "slug": "rubens",
+      "nom": "Pierre Paul Rubens",
+      "classement": "Rubens, Pierre Paul",
+      "titre": "Naissance de Pierre Paul Rubens",
+      "axe": "Beaux-arts",
+      "naissance": 1577,
+      "pays": "BE",
+      "description": "Pierre Paul Rubens (1577-1640) est un peintre né à Siegen, en Westphalie, de parents anversois, et formé puis établi à Anvers. Diplomate autant que peintre, il dirige un immense atelier qui produit retables, portraits et cycles décoratifs, dont celui de Marie de Médicis pour le Luxembourg à Paris. Ses chairs lumineuses et ses compositions en mouvement font de lui le maître de la peinture baroque flamande.",
+      "wikipedia": "Pierre Paul Rubens",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Peter Paul Rubens - Self-portrait - RH.S.180 - Rubenshuis (after restoration).jpg",
+        "legende": "Pierre Paul Rubens, autoportrait, vers 1623-1630",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Peter Paul Rubens (1577–1640)"
+      }
+    },
+    {
+      "slug": "bruegel",
+      "nom": "Pieter Bruegel l'Ancien",
+      "classement": "l'Ancien, Pieter Bruegel",
+      "titre": "Naissance de Pieter Bruegel l'Ancien",
+      "axe": "Beaux-arts",
+      "naissance": 1525,
+      "pays": "BE",
+      "description": "Pieter Bruegel l'Ancien (vers 1525-1569) est un peintre des Pays-Bas méridionaux, né près de Breda ou de Bree, actif à Anvers puis à Bruxelles. Ses paysages des saisons, ses scènes de la vie paysanne et ses fresques morales, comme « La Tour de Babel » ou « Les Proverbes flamands », regardent le monde avec humour et gravité. Il laisse deux fils peintres, Pieter le Jeune et Jan, dit « de Velours ».",
+      "wikipedia": "Pieter Bruegel l'Ancien",
+      "portrait": {
+        "fichier": "Pieter Bruegel the Elder - The Painter and the Buyer, ca. 1566 - Google Art Project.jpg",
+        "legende": "Pieter Bruegel l'Ancien, détail du dessin « Le Peintre et l'Acheteur », vers 1566",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Pieter Brueghel the Elder (1526/1530–1569)"
+      }
+    },
+    {
+      "slug": "vandyck",
+      "nom": "Antoine van Dyck",
+      "classement": "Dyck, Antoine van",
+      "titre": "Naissance d'Antoine van Dyck",
+      "axe": "Beaux-arts",
+      "naissance": 1599,
+      "pays": "BE",
+      "description": "Antoine van Dyck (1599-1641) est un peintre né à Anvers, élève puis collaborateur de Rubens. Devenu en 1632 le peintre de Charles Ier d'Angleterre, il fixe pour deux siècles l'image du portrait aristocratique par l'élégance de ses poses et la douceur de ses coloris. Il meurt à Londres à quarante-deux ans, au sommet de sa gloire.",
+      "wikipedia": "Antoine van Dyck",
+      "portrait": {
+        "fichier": "Anthony van Dyck - Self-portrait with a Sunflower.jpg",
+        "legende": "Antoine van Dyck, « Autoportrait au tournesol », après 1633",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Anthony van Dyck (1599–1641)"
+      }
+    },
+    {
+      "slug": "mercator",
+      "nom": "Gérard Mercator",
+      "classement": "Mercator, Gérard",
+      "titre": "Naissance de Gérard Mercator",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1512,
+      "pays": "BE",
+      "description": "Gérard Mercator (1512-1594) est un cartographe né à Rupelmonde, en Flandre, établi à Louvain puis à Duisbourg. En 1569, il publie une carte du monde dont la projection conserve les angles, ce qui permet de tracer au compas une route de cap constant : elle devient la référence des marins. C'est aussi lui qui donne le nom d'« atlas » à un recueil de cartes.",
+      "wikipedia": "Gérard Mercator",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Gérard Mercator.jpg",
+        "legende": "Gérard Mercator, gravure de Frans Hogenberg, 1574",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Frans Hogenberg",
+        "nomVisible": true
+      }
+    },
+    {
+      "slug": "vesale",
+      "nom": "André Vésale",
+      "classement": "Vésale, André",
+      "titre": "Naissance d'André Vésale",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1514,
+      "pays": "BE",
+      "description": "André Vésale (1514-1564) est un médecin né à Bruxelles, professeur d'anatomie à Padoue. Il dissèque lui-même des cadavres et publie en 1543 « De humani corporis fabrica », un grand traité illustré qui corrige les erreurs de Galien et fonde l'anatomie moderne. Médecin de Charles Quint puis de Philippe II, il meurt en 1564 au retour d'un pèlerinage à Jérusalem, dans l'île de Zante.",
+      "wikipedia": "André Vésale",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Vesalius Fabrica portrait.jpg",
+        "legende": "André Vésale, gravure du « De humani corporis fabrica », 1543",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Attribué à Jan van Calcar",
+        "nomVisible": true
+      }
+    },
+    {
+      "slug": "stevin",
+      "nom": "Simon Stevin",
+      "classement": "Stevin, Simon",
+      "titre": "Naissance de Simon Stevin",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1548,
+      "pays": "BE",
+      "description": "Simon Stevin (1548-1620) est un mathématicien et ingénieur né à Bruges, qui passe sa vie dans les Provinces-Unies au service de Maurice de Nassau. Dans « La Thiende » en 1585, il expose l'usage des fractions décimales, et il établit les lois de l'hydrostatique. Il construit aussi un char à voile et organise l'armée de Maurice, dont il est l'ingénieur.",
+      "wikipedia": "Simon Stevin",
+      "portrait": {
+        "fichier": "Standbeeld van Simon Stevin door Louis Eugène Simonis (1810-1893) - Simon Stevinplein, Brugge.jpg",
+        "legende": "Statue de Simon Stevin par Louis-Eugène Simonis, à Bruges",
+        "largeur": 500,
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Ad Meskens"
+      }
+    },
+    {
+      "slug": "lassus",
+      "nom": "Roland de Lassus",
+      "classement": "Lassus, Roland de",
+      "titre": "Naissance de Roland de Lassus",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1532,
+      "pays": "BE",
+      "description": "Roland de Lassus (1532-1594) est un compositeur né à Mons, dans le Hainaut, qui voyage en Italie avant de s'installer en 1556 à la cour de Bavière, à Munich. Auteur de plus de deux mille œuvres, messes, motets, madrigaux et chansons, il est le dernier grand maître de la polyphonie de la Renaissance. Ses « Psaumes de la pénitence » comptent parmi les sommets de la musique sacrée.",
+      "wikipedia": "Roland de Lassus",
+      "portrait": {
+        "fichier": "Orlande de Lassus.jpg",
+        "legende": "Roland de Lassus, portrait de la fin du XVIe siècle",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "author"
+      }
+    },
+    {
+      "slug": "marie",
+      "nom": "Marie de Bourgogne",
+      "classement": "Bourgogne, Marie de",
+      "titre": "Naissance de Marie de Bourgogne",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1457,
+      "pays": "BE",
+      "description": "Marie de Bourgogne (1457-1482) est la fille de Charles le Téméraire, née à Bruxelles et héritière des États bourguignons à sa mort en 1477. Pressée par Louis XI, elle accorde aux États généraux le « Grand Privilège » avant d'épouser Maximilien de Habsbourg, ce qui fait passer les Pays-Bas à la maison d'Autriche. Elle meurt à vingt-cinq ans d'une chute de cheval, près de Bruges.",
+      "wikipedia": "Marie de Bourgogne",
+      "portrait": {
+        "fichier": "Mary of burgundy pocher.jpg",
+        "legende": "Marie de Bourgogne, portrait attribué à Michael Pacher, vers 1490",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Possibly Michael Pacher (1435–1498) Description German painter and sculptor"
+      }
+    },
+    {
+      "slug": "leopold1",
+      "nom": "Léopold Ier",
+      "classement": "Léopold Ier",
+      "titre": "Naissance de Léopold Ier",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1790,
+      "pays": "BE",
+      "description": "Léopold Ier (1790-1865) est un prince allemand de Saxe-Cobourg, né à Cobourg, devenu en 1831 le premier roi des Belges. Il consolide la jeune monarchie constitutionnelle face aux Pays-Bas, qui n'acceptent la séparation qu'en 1839, et marie sa fille Charlotte à Maximilien du Mexique. Veuf de la princesse héritière d'Angleterre, oncle de la reine Victoria, il tisse des liens dynastiques dans toute l'Europe.",
+      "wikipedia": "Léopold Ier (roi des Belges)",
+      "portrait": {
+        "fichier": "NICAISE Leopold ANV.jpg",
+        "legende": "Léopold Ier, portrait par Nicaise de Keyser, 1856",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Nicaise de Keyser (1813–1887)"
+      }
+    },
+    {
+      "slug": "leopold2",
+      "nom": "Léopold II",
+      "classement": "Léopold II",
+      "titre": "Naissance de Léopold II",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1835,
+      "pays": "BE",
+      "description": "Léopold II (1835-1909) est le deuxième roi des Belges, né à Bruxelles, qui règne de 1865 à sa mort. Il fait reconnaître en 1885 l'État indépendant du Congo, qu'il possède à titre personnel et où le travail forcé fait des millions de morts, avant que la Belgique n'en hérite en 1908 sous la pression internationale. Souverain bâtisseur, il lègue aussi à Bruxelles ses parcs, ses avenues et le Cinquantenaire.",
+      "wikipedia": "Léopold II (roi des Belges)",
+      "biographie": "bio_leopold2belgique",
+      "portrait": {
+        "fichier": "Leopold II, King of the Belgians by Alexander Bassano (1889).jpg",
+        "legende": "Léopold II, photographie d'Alexander Bassano, 1889",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Alexander Bassano (1829–1913)"
+      }
+    },
+    {
+      "slug": "albert1",
+      "nom": "Albert Ier",
+      "classement": "Albert Ier",
+      "titre": "Naissance d'Albert Ier",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1875,
+      "pays": "BE",
+      "description": "Albert Ier (1875-1934) est le troisième roi des Belges, né à Bruxelles, monté sur le trône en 1909. En 1914, il refuse le passage de l'armée allemande, commande lui-même l'armée belge et tient avec elle la dernière bande du territoire, derrière l'Yser, pendant toute la guerre. Surnommé le « roi chevalier », alpiniste passionné, il meurt en 1934 d'une chute à Marche-les-Dames.",
+      "wikipedia": "Albert Ier (roi des Belges)",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Albert I Koning der Belgen.jpg",
+        "legende": "Albert Ier, photographie du studio Pirou, 1915",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Studio of Eugène Pirou (1841–1909)"
+      }
+    },
+    {
+      "slug": "spaak",
+      "nom": "Paul-Henri Spaak",
+      "classement": "Spaak, Paul-Henri",
+      "titre": "Naissance de Paul-Henri Spaak",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1899,
+      "pays": "BE",
+      "description": "Paul-Henri Spaak (1899-1972) est un homme d'État socialiste né à Schaerbeek, plusieurs fois ministre des Affaires étrangères et Premier ministre de la Belgique. Président de la première Assemblée générale de l'ONU en 1946, il rédige en 1956 le rapport qui mène au traité de Rome de 1957 fondant la Communauté économique européenne. Il est secrétaire général de l'OTAN de 1957 à 1961.",
+      "wikipedia": "Paul-Henri Spaak",
+      "portrait": {
+        "fichier": "Bundesarchiv Bild 183-39998-0427, Paul-Henri Spaak.jpg",
+        "legende": "Paul-Henri Spaak, photographie de 1957",
+        "largeur": 500,
+        "licence": "CC BY-SA 3.0 DE",
+        "auteur": "Unknown author Unknown author"
+      }
+    },
+    {
+      "slug": "sax",
+      "nom": "Adolphe Sax",
+      "classement": "Sax, Adolphe",
+      "titre": "Naissance d'Adolphe Sax",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1814,
+      "pays": "BE",
+      "description": "Adolphe Sax (1814-1894) est un facteur d'instruments né à Dinant, fils d'un facteur lui-même, installé à Paris en 1842. Il invente dans les années 1840 le saxophone, déposé en 1846, ainsi que la famille des saxhorns qui équipe les fanfares et les harmonies. Il passe pourtant sa vie en procès avec ses concurrents et meurt pauvre en 1894.",
+      "wikipedia": "Adolphe Sax",
+      "portrait": {
+        "fichier": "Adolphe Sax.jpg",
+        "legende": "Adolphe Sax, photographie du XIXe siècle",
+        "largeur": 500,
+        "auteur": "Auteur inconnu",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "simenon",
+      "nom": "Georges Simenon",
+      "classement": "Simenon, Georges",
+      "titre": "Naissance de Georges Simenon",
+      "axe": "Littérature et pensée",
+      "naissance": 1903,
+      "pays": "BE",
+      "description": "Georges Simenon (1903-1989) est un écrivain né à Liège, d'une famille modeste, journaliste à seize ans à la « Gazette de Liège ». Il crée en 1931 le commissaire Maigret, héros de soixante-quinze romans, et écrit en plus des « romans durs » qui disent la solitude et la fatalité. Installé en Suisse à partir de 1957, il y meurt en 1989 ; il est l'un des écrivains de langue française les plus traduits.",
+      "wikipedia": "Georges Simenon",
+      "essentiel": true,
+      "biographie": "bio_georgessimenon",
+      "portrait": {
+        "fichier": "GeorgesSimenon-StudioHarcourt-1952.png",
+        "legende": "Georges Simenon, photographie du Studio Harcourt, 1952",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Studio Harcourt."
+      }
+    },
+    {
+      "slug": "herge",
+      "nom": "Hergé",
+      "classement": "Hergé",
+      "titre": "Naissance d'Hergé",
+      "axe": "Beaux-arts",
+      "naissance": 1907,
+      "pays": "BE",
+      "description": "Hergé (1907-1983) est le pseudonyme de Georges Remi, dessinateur né à Etterbeek, près de Bruxelles. Il crée en 1929 le reporter Tintin, héros de vingt-trois albums achevés qui fixent la « ligne claire » et font de la bande dessinée franco-belge un art majeur. Ses albums, de « Tintin au pays des Soviets » aux « Bijoux de la Castafiore », sont traduits dans plus de soixante-dix langues.",
+      "wikipedia": "Hergé",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Herge-Italie-1965-Linus.png",
+        "legende": "Hergé, photographie parue dans la revue italienne « Linus », 1965",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Anonyme, revue italienne Linus, publiée en 1965."
+      }
+    },
+    {
+      "slug": "magritte",
+      "nom": "René Magritte",
+      "classement": "Magritte, René",
+      "titre": "Naissance de René Magritte",
+      "axe": "Beaux-arts",
+      "naissance": 1898,
+      "pays": "BE",
+      "description": "René Magritte (1898-1967) est un peintre surréaliste né à Lessines, dans le Hainaut, installé à Bruxelles après un séjour à Paris. Dans « La Trahison des images » en 1929, il inscrit « Ceci n'est pas une pipe » sous une pipe peinte et interroge le lien entre les mots, les images et les choses. Son monde d'hommes en chapeau melon, de pommes géantes et de ciels peints sur des fenêtres a marqué toute la publicité et la peinture du XXe siècle.",
+      "wikipedia": "René Magritte",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "René Magritte in 1961.jpg",
+        "legende": "René Magritte, photographie de 1961",
+        "largeur": 500,
+        "licence": "CC0 (domaine public)",
+        "auteur": "Unknown author Unknown author Restored by Giovanni Cardinali"
+      }
+    },
+    {
+      "slug": "ensor",
+      "nom": "James Ensor",
+      "classement": "Ensor, James",
+      "titre": "Naissance de James Ensor",
+      "axe": "Beaux-arts",
+      "naissance": 1860,
+      "pays": "BE",
+      "description": "James Ensor (1860-1949) est un peintre né à Ostende, qui passe presque toute sa vie dans cette ville. Dans « L'Entrée du Christ à Bruxelles en 1889 », il peint une foule de masques et de squelettes qui annonce l'expressionnisme. Rejeté de son vivant, il est fait baron en 1929 et reste le grand peintre du carnaval et de la satire.",
+      "wikipedia": "James Ensor",
+      "portrait": {
+        "fichier": "Henry De Groux.James Ensor.JPG",
+        "legende": "James Ensor, portrait par Henry de Groux, 1907",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Henry de Groux (–1930)"
+      }
+    },
+    {
+      "slug": "horta",
+      "nom": "Victor Horta",
+      "classement": "Horta, Victor",
+      "titre": "Naissance de Victor Horta",
+      "axe": "Beaux-arts",
+      "naissance": 1861,
+      "pays": "BE",
+      "description": "Victor Horta (1861-1947) est un architecte né à Gand, installé à Bruxelles. Avec l'hôtel Tassel, construit en 1893, il pose les bases de l'Art nouveau : l'escalier, la structure de fer apparente et les lignes en fouet du décor y sont pensés ensemble. Ses maisons bruxelloises, comme la Maison du Peuple détruite en 1965, ont été inscrites en partie au patrimoine mondial de l'Unesco.",
+      "wikipedia": "Victor Horta",
+      "biographie": "bio_victorhorta",
+      "portrait": {
+        "fichier": "Victor Horta (cropped).jpg",
+        "legende": "Victor Horta, photographie vers 1900",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Gustave Deltour"
+      }
+    },
+    {
+      "slug": "vandevelde",
+      "nom": "Henry van de Velde",
+      "classement": "Velde, Henry van de",
+      "titre": "Naissance d'Henry van de Velde",
+      "axe": "Beaux-arts",
+      "naissance": 1863,
+      "pays": "BE",
+      "description": "Henry van de Velde (1863-1957) est un peintre, architecte et designer né à Anvers, qui renonce à la peinture pour les arts appliqués. Appelé à Weimar en 1902 par le grand-duc de Saxe, il y fonde l'école des arts et métiers dont le Bauhaus de Gropius sera l'héritier, et il bâtit le théâtre du Werkbund à Cologne. Il dessine aussi des intérieurs, des meubles et des couverts pour toute l'Europe.",
+      "wikipedia": "Henry van de Velde",
+      "portrait": {
+        "fichier": "Hugo Erfurth - Portrait Henry Van de Velde, 1908 (cropped).jpg",
+        "legende": "Henry van de Velde, photographie de Hugo Erfurth, 1908",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Hugo Erfurth (1874–1948)"
+      }
+    },
+    {
+      "slug": "verhaeren",
+      "nom": "Émile Verhaeren",
+      "classement": "Verhaeren, Émile",
+      "titre": "Naissance d'Émile Verhaeren",
+      "axe": "Littérature et pensée",
+      "naissance": 1855,
+      "pays": "BE",
+      "description": "Émile Verhaeren (1855-1916) est un poète flamand d'expression française, né à Sint-Amands, près d'Anvers. Dans « Les Villages illusoires » et « Les Villes tentaculaires », il chante la campagne qui meurt et la ville industrielle qui l'avale. Ami de Stefan Zweig, il meurt en 1916 broyé par un train en gare de Rouen, au cours d'une tournée de conférences.",
+      "wikipedia": "Émile Verhaeren",
+      "portrait": {
+        "fichier": "Emile Verhaeren01.jpg",
+        "legende": "Émile Verhaeren, portrait par Théo van Rysselberghe, 1915",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Théo van Rysselberghe (1862–1926)"
+      }
+    },
+    {
+      "slug": "maeterlinck",
+      "nom": "Maurice Maeterlinck",
+      "classement": "Maeterlinck, Maurice",
+      "titre": "Naissance de Maurice Maeterlinck",
+      "axe": "Littérature et pensée",
+      "naissance": 1862,
+      "pays": "BE",
+      "description": "Maurice Maeterlinck (1862-1949) est un dramaturge et poète né à Gand, dont les pièces symbolistes, comme « Pelléas et Mélisande » en 1892 et « L'Oiseau bleu » en 1908, font de l'attente et du silence un théâtre. Il reçoit le prix Nobel de littérature en 1911 et inspire à Debussy son opéra. Exilé aux États-Unis pendant la Seconde Guerre mondiale, il revient mourir à Nice en 1949.",
+      "wikipedia": "Maurice Maeterlinck",
+      "portrait": {
+        "fichier": "Maurice de Maeterlinck, crop.jpg",
+        "legende": "Maurice Maeterlinck, photographie de Charles Gerschel",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Charles Gerschel (1871–1948) Alternative names Ch. Gerschel; C. Gerschel"
+      }
+    },
+    {
+      "slug": "brel",
+      "nom": "Jacques Brel",
+      "classement": "Brel, Jacques",
+      "titre": "Naissance de Jacques Brel",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1929,
+      "pays": "BE",
+      "description": "Jacques Brel (1929-1978) est un auteur-compositeur-interprète né à Schaerbeek, près de Bruxelles. Avec « Ne me quitte pas », « Amsterdam » et « Le Plat Pays », il porte la chanson française à un niveau d'intensité théâtrale que personne n'a dépassé. Il abandonne la scène en 1966, joue au cinéma, puis part vivre aux îles Marquises, où il meurt en 1978.",
+      "wikipedia": "Jacques Brel",
+      "essentiel": true,
+      "biographie": "bio_jacquesbrel",
+      "portrait": {
+        "fichier": "Jacques Brel (1962).jpg",
+        "legende": "Jacques Brel dans une émission de télévision, 1962",
+        "largeur": 500,
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Jack de Nijs for Anefo"
+      }
+    },
+    {
+      "slug": "thielemans",
+      "nom": "Toots Thielemans",
+      "classement": "Thielemans, Toots",
+      "titre": "Naissance de Toots Thielemans",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1922,
+      "pays": "BE",
+      "description": "Toots Thielemans (1922-2016) est un harmoniciste et guitariste de jazz né à Bruxelles, qui s'installe aux États-Unis en 1951. Dans les années 1950, il joue avec Benny Goodman, George Shearing et Quincy Jones, et il fait de l'harmonica chromatique un instrument de jazz à part entière. Sa chanson « Bluesette », composée en 1961, est reprise dans le monde entier.",
+      "wikipedia": "Toots Thielemans",
+      "portrait": {
+        "fichier": "Toots thielemans.jpg",
+        "legende": "Toots Thielemans, photographie de 2006",
+        "largeur": 500,
+        "licence": "CC BY 2.5",
+        "auteur": "Ron van der Kolk"
+      }
+    },
+    {
+      "slug": "solvay",
+      "nom": "Ernest Solvay",
+      "classement": "Solvay, Ernest",
+      "titre": "Naissance d'Ernest Solvay",
+      "axe": "Économie et entreprise",
+      "naissance": 1838,
+      "pays": "BE",
+      "description": "Ernest Solvay (1838-1922) est un chimiste et industriel né à Rebecq, qui met au point en 1861 un procédé de fabrication de la soude à l'ammoniaque. Il fonde en 1863 une société qui devient l'un des premiers groupes chimiques du monde, et il consacre sa fortune à la science et à la politique sociale. Il réunit à Bruxelles en 1911 le premier congrès Solvay, où se retrouvent Planck, Curie, Einstein et Rutherford.",
+      "wikipedia": "Ernest Solvay",
+      "biographie": "bio_ernestsolvay",
+      "portrait": {
+        "fichier": "Ernest Solvay.jpg",
+        "legende": "Ernest Solvay, portrait",
+        "largeur": 500,
+        "auteur": "Auteur inconnu",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "lemaitre",
+      "nom": "Georges Lemaître",
+      "classement": "Lemaître, Georges",
+      "titre": "Naissance de Georges Lemaître",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1894,
+      "pays": "BE",
+      "description": "Georges Lemaître (1894-1966) est un prêtre et astrophysicien né à Charleroi, professeur à l'université de Louvain. En 1927, il propose, avant Hubble, que l'Univers soit en expansion, puis imagine en 1931 son origine dans un « atome primitif », ancêtre de la théorie du Big Bang. Il meurt à Louvain en 1966.",
+      "wikipedia": "Georges Lemaître",
+      "essentiel": true,
+      "biographie": "bio_georgeslemaitre",
+      "portrait": {
+        "fichier": "Lemaitre.jpg",
+        "legende": "Georges Lemaître, photographie de 1933",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "unknown photographer, probably a CalTech employee. Cropped by Artistosteles"
+      }
+    },
+    {
+      "slug": "gramme",
+      "nom": "Zénobe Gramme",
+      "classement": "Gramme, Zénobe",
+      "titre": "Naissance de Zénobe Gramme",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1826,
+      "pays": "BE",
+      "description": "Zénobe Gramme (1826-1901) est un inventeur né à Jehay-Bodegnée, près de Liège, menuisier devenu ouvrier chez un fabricant parisien de machines électriques. Il met au point en 1869 la première dynamo à courant continu utilisable dans l'industrie, qui ouvre la voie à l'électrification. Il meurt à Bois-Colombes, près de Paris, en 1901.",
+      "wikipedia": "Zénobe Gramme",
+      "portrait": {
+        "fichier": "Zénobe Gramme 1893.jpg",
+        "legende": "Zénobe Gramme, photographie de Nadar, 1893",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Nadar (1820–1910)"
+      }
+    },
+    {
+      "slug": "petit",
+      "nom": "Gabrielle Petit",
+      "classement": "Petit, Gabrielle",
+      "titre": "Naissance de Gabrielle Petit",
+      "axe": "Guerres et résistances",
+      "naissance": 1893,
+      "pays": "BE",
+      "description": "Gabrielle Petit (1893-1916) est une résistante née à Tournai, devenue pendant la Première Guerre mondiale agente de renseignement pour les Britanniques dans la Belgique occupée. Arrêtée en 1916, elle refuse de demander sa grâce et est fusillée à Bruxelles le 1er avril, à vingt-trois ans. Elle reste l'une des grandes figures de la résistance belge à l'occupation.",
+      "wikipedia": "Gabrielle Petit",
+      "portrait": {
+        "fichier": "Gabrielle Petit (cropped).jpg",
+        "legende": "Gabrielle Petit, photographie d'avant 1916",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "unknown"
+      }
+    },
+    {
+      "slug": "dejongh",
+      "nom": "Andrée De Jongh",
+      "classement": "Jongh, Andrée De",
+      "titre": "Naissance d'Andrée De Jongh",
+      "axe": "Guerres et résistances",
+      "naissance": 1916,
+      "pays": "BE",
+      "description": "Andrée De Jongh (1916-2007) est une résistante née à Schaerbeek, infirmière et fille d'instituteur. Dès 1941, elle fonde le réseau Comète, qui conduit à travers la France puis les Pyrénées plus de sept cents aviateurs alliés tombés en Belgique, et elle les guide elle-même. Arrêtée en 1943 et déportée à Ravensbrück, elle survit et reçoit après la guerre la médaille de la Liberté américaine.",
+      "wikipedia": "Andrée De Jongh",
+      "essentiel": true,
+      "biographie": "bio_dejongh",
+      "portrait": {
+        "fichier": "Civilian Bravery Awards during the Second World War HU55451.jpg",
+        "legende": "Andrée De Jongh, photographie, entre 1939 et 1945",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
+      }
+    },
+    {
+      "slug": "leman",
+      "nom": "Gérard Leman",
+      "classement": "Leman, Gérard",
+      "titre": "Naissance de Gérard Leman",
+      "axe": "Guerres et résistances",
+      "naissance": 1851,
+      "pays": "BE",
+      "description": "Gérard Leman (1851-1920) est un général né à Liège, commandant de la position fortifiée de Liège en 1914. Il tient les forts de la ville contre l'armée allemande et retarde son avance de près de deux semaines, ce qui laisse à la France et à la Belgique le temps de se préparer. Capturé dans les décombres du fort de Loncin, il reste prisonnier jusqu'en 1917.",
+      "wikipedia": "Gérard Leman",
+      "biographie": "bio_leman",
+      "portrait": {
+        "fichier": "Edmund C. Tarbell - General Georges Leman, Commander of the Fortified Town of Liege - 1923.6.19 - Smithsonian American Art Museum.jpg",
+        "legende": "Gérard Leman, portrait par Edmund Tarbell, 1919-1920",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Edmund Charles Tarbell (1862–1938)"
+      }
+    },
+    {
+      "slug": "gerlache",
+      "nom": "Adrien de Gerlache",
+      "classement": "Gerlache, Adrien de",
+      "titre": "Naissance d'Adrien de Gerlache",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1866,
+      "pays": "BE",
+      "description": "Adrien de Gerlache (1866-1934) est un officier de marine et explorateur né à Hasselt, qui dirige en 1897-1899 l'expédition de la « Belgica ». Le navire, pris dans les glaces de la mer de Bellingshausen, passe le premier hiver du continent antarctique et révèle la possibilité d'y survivre. À son bord se trouvent le médecin américain Cook et le jeune Norvégien Roald Amundsen.",
+      "wikipedia": "Adrien de Gerlache",
+      "biographie": "bio_adriendegerlache",
+      "portrait": {
+        "fichier": "Adrien de Gerlache.jpg",
+        "legende": "Adrien de Gerlache, photographie d'avant 1899",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
+      }
+    },
+    {
+      "slug": "baekeland",
+      "nom": "Leo Baekeland",
+      "classement": "Baekeland, Leo",
+      "titre": "Naissance de Leo Baekeland",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1863,
+      "pays": "BE",
+      "description": "Leo Baekeland (1863-1944) est un chimiste né à Gand, qui émigre aux États-Unis en 1889. Il y invente en 1907 la bakélite, première matière plastique entièrement synthétique, qui sert d'isolant électrique, de boîtier de radio ou de manche de poêle. Il avait fait fortune plus tôt avec le papier photographique Velox, vendu à Eastman en 1899.",
+      "wikipedia": "Leo Baekeland",
+      "portrait": {
+        "fichier": "Leo Hendrik Baekeland, 1916.jpg",
+        "legende": "Leo Baekeland, photographie de 1916",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
+      }
+    },
+    {
+      "slug": "nagelmackers",
+      "nom": "Georges Nagelmackers",
+      "classement": "Nagelmackers, Georges",
+      "titre": "Naissance de Georges Nagelmackers",
+      "axe": "Économie et entreprise",
+      "naissance": 1845,
+      "pays": "BE",
+      "description": "Georges Nagelmackers (1845-1905) est un ingénieur et entrepreneur né à Liège, fils de banquier. Inspiré par les wagons-lits américains de Pullman, il fonde en 1876 la Compagnie internationale des wagons-lits et lance en 1883 l'Orient-Express, train de luxe reliant Paris à l'Orient. Le nom du train est resté synonyme d'intrigue et de voyage.",
+      "wikipedia": "Georges Nagelmackers",
+      "portrait": {
+        "fichier": "Nagelmackers--w.jpg",
+        "legende": "Georges Nagelmackers, photographie",
+        "largeur": 500,
+        "auteur": "Nadar",
+        "licence": "CC BY-SA 3.0"
+      }
+    },
+    {
+      "slug": "django",
+      "nom": "Django Reinhardt",
+      "classement": "Reinhardt, Django",
+      "titre": "Naissance de Django Reinhardt",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1910,
+      "pays": "BE",
+      "description": "Django Reinhardt (1910-1953) est un guitariste de jazz d'origine manouche, né à Liberchies, dans le Hainaut, qui grandit dans les roulottes autour de Paris. Brûlé dans l'incendie de sa roulotte en 1928, il ne se sert plus que de deux doigts de la main gauche et invente pourtant un jeu fulgurant. Avec le violoniste Stéphane Grappelli, il fonde en 1934 le Quintette du Hot Club de France, premier grand groupe de jazz européen.",
+      "wikipedia": "Django Reinhardt",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "DjangoReinhardt-1939-Harcourt.png",
+        "legende": "Django Reinhardt, photographie du Studio Harcourt, 1939",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Studio Harcourt"
+      }
+    },
+    {
+      "slug": "hepburn",
+      "nom": "Audrey Hepburn",
+      "classement": "Hepburn, Audrey",
+      "titre": "Naissance d'Audrey Hepburn",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1929,
+      "pays": "BE",
+      "description": "Audrey Hepburn (1929-1993) est une actrice née à Ixelles, près de Bruxelles, d'un père britannique et d'une mère néerlandaise, et élevée en partie à Arnhem. Elle devient célèbre en 1953 avec « Vacances romaines », qui lui vaut l'Oscar, puis tient le rôle d'Holly Golightly dans « Diamants sur canapé ». Ambassadrice de bonne volonté de l'Unicef à partir de 1988, elle meurt en Suisse en 1993.",
+      "wikipedia": "Audrey Hepburn",
+      "portrait": {
+        "fichier": "AudreyKHepburn.jpg",
+        "legende": "Audrey Hepburn dans « Vacances romaines », photographie de Bud Fraker, 1953",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Bud Fraker (1916-2002)"
+      }
+    },
+    {
+      "slug": "quetelet",
+      "nom": "Adolphe Quetelet",
+      "classement": "Quetelet, Adolphe",
+      "titre": "Naissance d'Adolphe Quetelet",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1796,
+      "pays": "BE",
+      "description": "Adolphe Quetelet (1796-1874) est un astronome et statisticien né à Gand, directeur de l'Observatoire royal de Bruxelles. Il applique la statistique aux sociétés humaines et invente l'« homme moyen », ainsi que l'indice de masse corporelle qui porte son nom. Il organise en 1853 le premier congrès international de statistique, à Bruxelles.",
+      "wikipedia": "Adolphe Quetelet",
+      "portrait": {
+        "fichier": "Adolphe Quételet by Joseph-Arnold Demannez.jpg",
+        "legende": "Adolphe Quetelet, photographie de Joseph-Arnold Demannez",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Joseph-Arnold Demannez"
+      }
+    },
+    {
+      "slug": "damien",
+      "nom": "Damien de Veuster",
+      "classement": "Veuster, Damien de",
+      "titre": "Naissance de Damien de Veuster",
+      "axe": "Littérature et pensée",
+      "naissance": 1840,
+      "pays": "BE",
+      "description": "Damien de Veuster (1840-1889) est un prêtre catholique né à Tremelo, en Brabant, missionnaire aux îles Hawaï. En 1873, il s'installe à Molokai auprès des lépreux isolés sur la presqu'île de Kalaupapa, et leur construit des maisons, une église et un orphelinat. Atteint lui-même de la lèpre, il meurt en 1889 ; il est canonisé en 2009.",
+      "wikipedia": "Damien de Molokai",
+      "biographie": "bio_damiendeveuster",
+      "portrait": {
+        "fichier": "Father Damien in 1878, HSA.jpg",
+        "legende": "Damien de Veuster, photographie d'Henry Lyman Chase, 1878",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Henry Lyman Chase (1832–1901) Alternative names H. L. Chase"
+      }
+    },
+    {
+      "slug": "claus",
+      "nom": "Hugo Claus",
+      "classement": "Claus, Hugo",
+      "titre": "Naissance d'Hugo Claus",
+      "axe": "Littérature et pensée",
+      "naissance": 1929,
+      "pays": "BE",
+      "description": "Hugo Claus (1929-2008) est un écrivain flamand né à Bruges, poète, romancier, dramaturge et cinéaste. Son roman « Le Chagrin des Belges », paru en 1983, raconte une enfance flamande sous l'Occupation et les compromissions d'un pays divisé. Atteint de la maladie d'Alzheimer, il choisit l'euthanasie en 2008.",
+      "wikipedia": "Hugo Claus",
+      "portrait": {
+        "fichier": "Hugo Claus.jpg",
+        "legende": "Hugo Claus, photographie de 1961",
+        "largeur": 500,
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Polygoon Hollands Nieuws"
+      }
+    },
+    {
+      "slug": "guillaume",
+      "nom": "Guillaume le Taciturne",
+      "classement": "Taciturne, Guillaume le",
+      "titre": "Naissance de Guillaume le Taciturne",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1533,
+      "pays": "NL",
+      "description": "Guillaume le Taciturne (1533-1584) est un prince d'Orange né à Dillenburg, en Allemagne, et devenu l'un des principaux seigneurs des Pays-Bas de Charles Quint. Il prend en 1568 la tête de la révolte contre Philippe II d'Espagne, qui le met hors la loi en 1580. Il est assassiné à Delft en 1584 ; il reste le « père de la patrie » néerlandaise.",
+      "wikipedia": "Guillaume Ier d'Orange-Nassau",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "William I, Prince of Orange by Adriaen Thomasz. Key Rijksmuseum Amsterdam SK-A-3148.jpg",
+        "legende": "Guillaume le Taciturne, portrait d'Adriaen Thomasz. Key, 1579",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Adriaen Thomasz. Key (1544–1589)"
+      }
+    },
+    {
+      "slug": "maurice",
+      "nom": "Maurice de Nassau",
+      "classement": "Nassau, Maurice de",
+      "titre": "Naissance de Maurice de Nassau",
+      "axe": "Guerres et résistances",
+      "naissance": 1567,
+      "pays": "NL",
+      "description": "Maurice de Nassau (1567-1625) est le fils de Guillaume le Taciturne, né à Dillenburg, stathouder de Hollande et de Zélande dès 1585. Il réforme l'armée, perfectionne la discipline et les sièges, et remporte la victoire de Nieuport en 1600 sur les Espagnols. Il s'oppose à Johan van Oldenbarnevelt, dont il obtient la condamnation à mort en 1619.",
+      "wikipedia": "Maurice de Nassau",
+      "portrait": {
+        "fichier": "Ravesteyn Maurice of Nassau in gilded armor.jpg",
+        "legende": "Maurice de Nassau en armure dorée, d'après Jan van Ravesteyn, vers 1613-1620",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Manner of Jan van Ravesteyn (1572–1657)"
+      }
+    },
+    {
+      "slug": "dewitt",
+      "nom": "Johan de Witt",
+      "classement": "Witt, Johan de",
+      "titre": "Naissance de Johan de Witt",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1625,
+      "pays": "NL",
+      "description": "Johan de Witt (1625-1672) est un homme d'État né à Dordrecht, grand pensionnaire de Hollande de 1653 à 1672. Républicain, il écarte la maison d'Orange du pouvoir, conduit la paix avec l'Angleterre et mène la Hollande à son sommet commercial. Après l'invasion française de 1672, il est lynché par la foule à La Haye avec son frère Cornelis.",
+      "wikipedia": "Johan de Witt",
+      "portrait": {
+        "fichier": "Caspar Netscher - Johan de Witt.jpg",
+        "legende": "Johan de Witt, portrait par Caspar Netscher",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Caspar Netscher (circa 1639 date QS:P,+1639–00–00T00:00:00Z/9,P1480,Q5727902 –1684)"
+      }
+    },
+    {
+      "slug": "ruyter",
+      "nom": "Michiel de Ruyter",
+      "classement": "Ruyter, Michiel de",
+      "titre": "Naissance de Michiel de Ruyter",
+      "axe": "Guerres et résistances",
+      "naissance": 1607,
+      "pays": "NL",
+      "description": "Michiel de Ruyter (1607-1676) est un amiral né à Flessingue, entré enfant dans la marine marchande. Pendant les guerres anglo-néerlandaises, il remporte plusieurs batailles et mène en 1667 le raid sur la Medway, où il incendie la flotte anglaise à l'ancre. Blessé en Sicile en combattant les Français, il meurt à Syracuse en 1676.",
+      "wikipedia": "Michiel de Ruyter",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Bol, Michiel de Ruyter.jpg",
+        "legende": "Michiel de Ruyter, portrait par Ferdinand Bol, 1667",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Ferdinand Bol (1616–1680)"
+      }
+    },
+    {
+      "slug": "wilhelmine",
+      "nom": "Wilhelmine des Pays-Bas",
+      "classement": "Pays-Bas, Wilhelmine des",
+      "titre": "Naissance de Wilhelmine des Pays-Bas",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1880,
+      "pays": "NL",
+      "description": "Wilhelmine des Pays-Bas (1880-1962) est une reine née à La Haye, montée sur le trône à dix ans en 1890 et régnante jusqu'en 1948. En 1940, elle quitte le pays envahi pour Londres, d'où elle s'adresse à ses sujets par la radio. Son action pendant la guerre fait d'elle un symbole de la résistance néerlandaise.",
+      "wikipedia": "Wilhelmine des Pays-Bas",
+      "portrait": {
+        "fichier": "Wilhelmina of the Netherlands in 1936.jpg",
+        "legende": "Wilhelmine des Pays-Bas, portrait officiel, 1936",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
+      }
+    },
+    {
+      "slug": "thorbecke",
+      "nom": "Johan Rudolph Thorbecke",
+      "classement": "Thorbecke, Johan Rudolph",
+      "titre": "Naissance de Johan Rudolph Thorbecke",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1798,
+      "pays": "NL",
+      "description": "Johan Rudolph Thorbecke (1798-1872) est un juriste et homme d'État né à Zwolle, professeur à Leyde. En 1848, quand l'Europe se soulève, il rédige la nouvelle Constitution qui transforme le royaume en monarchie parlementaire, avec des ministres responsables devant le Parlement. Trois fois chef du gouvernement, il meurt à La Haye en 1872.",
+      "wikipedia": "Johan Rudolph Thorbecke",
+      "portrait": {
+        "fichier": "Portret van Johan Rudolf Thorbecke, RP-P-1894-A-18399.jpg",
+        "legende": "Johan Rudolph Thorbecke, portrait de 1866",
+        "largeur": 500,
+        "licence": "CC0 (domaine public)",
+        "auteur": "Rijksmuseum"
+      }
+    },
+    {
+      "slug": "grotius",
+      "nom": "Hugo Grotius",
+      "classement": "Grotius, Hugo",
+      "titre": "Naissance d'Hugo Grotius",
+      "axe": "Littérature et pensée",
+      "naissance": 1583,
+      "pays": "NL",
+      "description": "Hugo Grotius (1583-1645) est un juriste et humaniste né à Delft, prodige de l'érudition devenu avocat général de Hollande. Dans « Du droit de la guerre et de la paix » en 1625, il pose les bases du droit international, fondé sur la raison plutôt que sur la religion. Condamné à la prison à vie en 1619, il s'évade du château de Loevestein caché dans un coffre à livres.",
+      "wikipedia": "Hugo Grotius",
+      "portrait": {
+        "fichier": "Portret van Hugo de Groot (1583-1645) Rijksmuseum SK-A-581.jpeg",
+        "legende": "Hugo Grotius, portrait de l'atelier de Michiel van Mierevelt, 1631",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Workshop of Michiel Jansz. van Mierevelt (1566–1641)"
+      }
+    },
+    {
+      "slug": "erasme",
+      "nom": "Érasme",
+      "classement": "Érasme",
+      "titre": "Naissance d'Érasme",
+      "axe": "Littérature et pensée",
+      "naissance": 1466,
+      "pays": "NL",
+      "description": "Érasme (vers 1466-1536) est un humaniste né à Rotterdam, prêtre devenu le plus célèbre savant d'Europe. Dans « L'Éloge de la folie » en 1511, il se moque des moines et des théologiens, et il publie en 1516 la première édition imprimée du Nouveau Testament en grec. Ennemi de la violence, il refuse de choisir entre Rome et Luther et meurt à Bâle en 1536.",
+      "wikipedia": "Érasme",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Portrait of Erasmus by Hans Holbein d. J.-Kunstmuseum Basel.jpg",
+        "legende": "Érasme, portrait par Hans Holbein le Jeune, 1523",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Hans Holbein the Younger (1497/1498–1543)"
+      }
+    },
+    {
+      "slug": "spinoza",
+      "nom": "Baruch Spinoza",
+      "classement": "Spinoza, Baruch",
+      "titre": "Naissance de Baruch Spinoza",
+      "axe": "Littérature et pensée",
+      "naissance": 1632,
+      "pays": "NL",
+      "description": "Baruch Spinoza (1632-1677) est un philosophe né à Amsterdam dans une famille juive d'origine portugaise, exclu de la communauté en 1656. Dans l'« Éthique », publiée après sa mort, il pense Dieu et la Nature comme une seule substance et fait de la liberté la connaissance de la nécessité. Il vit de la taille des lentilles optiques et meurt à La Haye en 1677.",
+      "wikipedia": "Baruch Spinoza",
+      "essentiel": true,
+      "biographie": "bio_spinoza",
+      "portrait": {
+        "fichier": "Spinoza.jpg",
+        "legende": "Baruch Spinoza, portrait anonyme, vers 1665",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "anonymous"
+      }
+    },
+    {
+      "slug": "rembrandt",
+      "nom": "Rembrandt",
+      "classement": "Rembrandt",
+      "titre": "Naissance de Rembrandt",
+      "axe": "Beaux-arts",
+      "naissance": 1606,
+      "pays": "NL",
+      "description": "Rembrandt (1606-1669) est un peintre et graveur né à Leyde, installé à Amsterdam en 1631 où il connaît le succès avec « La Leçon d'anatomie du docteur Tulp ». Sa « Ronde de nuit » de 1642 et ses nombreux autoportraits font de lui le maître du clair-obscur et de l'introspection. Ruiné par ses dettes, il vit ses dernières années dans la pauvreté et meurt en 1669.",
+      "wikipedia": "Rembrandt",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Rembrandt van Rijn - Self-Portrait - Google Art Project.jpg",
+        "legende": "Rembrandt, autoportrait, 1659",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Rembrandt (1606–1669)"
+      }
+    },
+    {
+      "slug": "vermeer",
+      "nom": "Johannes Vermeer",
+      "classement": "Vermeer, Johannes",
+      "titre": "Naissance de Johannes Vermeer",
+      "axe": "Beaux-arts",
+      "naissance": 1632,
+      "pays": "NL",
+      "description": "Johannes Vermeer (1632-1675) est un peintre de Delft, baptisé dans cette ville en 1632, qui n'en bouge presque pas et laisse environ trente-cinq tableaux. Dans « La Laitière » et « La Jeune Fille à la perle », il saisit des scènes d'intérieur baignées d'une lumière froide et d'une précision exceptionnelle. Oublié après sa mort, il n'est redécouvert qu'au XIXe siècle.",
+      "wikipedia": "Johannes Vermeer",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Cropped version of Jan Vermeer van Delft 002.jpg",
+        "legende": "Johannes Vermeer, détail supposé autoportrait de « L'Entremetteuse », 1656",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Johannes Vermeer (1632–1675)"
+      }
+    },
+    {
+      "slug": "hals",
+      "nom": "Frans Hals",
+      "classement": "Hals, Frans",
+      "titre": "Naissance de Frans Hals",
+      "axe": "Beaux-arts",
+      "naissance": 1582,
+      "pays": "NL",
+      "description": "Frans Hals (vers 1582-1666) est un peintre né à Anvers, mais dont la famille s'installe à Haarlem, où il passe sa vie. Ses portraits individuels et de groupes, comme « Le Joyeux Buveur » ou les banquets de la garde civique, se distinguent par une touche large et rapide qui saisit l'expression d'un instant. Criblé de dettes dans sa vieillesse, il meurt à Haarlem en 1666.",
+      "wikipedia": "Frans Hals",
+      "portrait": {
+        "fichier": "After Frans Hals - Portrait of Frans Hals - Indianapolis.jpg",
+        "legende": "Frans Hals, portrait d'après Frans Hals, vers 1648-1650",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "After Frans Hals (1582/1583–1666)"
+      }
+    },
+    {
+      "slug": "bosch",
+      "nom": "Jérôme Bosch",
+      "classement": "Bosch, Jérôme",
+      "titre": "Naissance de Jérôme Bosch",
+      "axe": "Beaux-arts",
+      "naissance": 1450,
+      "pays": "NL",
+      "description": "Jérôme Bosch (vers 1450-1516) est un peintre né à Bois-le-Duc, dans le Brabant, dont le nom vient de sa ville. Dans « Le Jardin des délices », ses triptyques peuplent l'enfer et la terre de monstres et de créatures hybrides qui lui ont valu d'être célébré par les surréalistes quatre siècles plus tard. Son œuvre, qui allie la morale chrétienne à une imagination débridée, reste en partie énigmatique.",
+      "wikipedia": "Jérôme Bosch",
+      "portrait": {
+        "fichier": "Jheronimus Bosch.jpg",
+        "legende": "Jérôme Bosch, portrait attribué à Jacques Le Boucq, vers 1550",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Attribué à Jacques Le Boucq"
+      }
+    },
+    {
+      "slug": "vangogh",
+      "nom": "Vincent van Gogh",
+      "classement": "Gogh, Vincent van",
+      "titre": "Naissance de Vincent van Gogh",
+      "axe": "Beaux-arts",
+      "naissance": 1853,
+      "pays": "NL",
+      "description": "Vincent van Gogh (1853-1890) est un peintre né à Zundert, dans le Brabant, fils de pasteur, qui ne se met à peindre qu'à vingt-sept ans. En moins de dix ans, à Paris, à Arles et à Auvers-sur-Oise, il peint plus de huit cents tableaux, dont « Les Tournesols » et « La Nuit étoilée », d'une couleur et d'une touche inédites. Il se suicide en 1890 et ne vend presque rien de son vivant.",
+      "wikipedia": "Vincent van Gogh",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Self-Portrait with a Straw Hat (obverse- The Potato Peeler) MET ep67.187.70A.R.jpg",
+        "legende": "Vincent van Gogh, « Autoportrait au chapeau de paille », 1887",
+        "largeur": 500,
+        "licence": "CC0 (domaine public)",
+        "auteur": "Vincent van Gogh (1853–1890)"
+      }
+    },
+    {
+      "slug": "mondrian",
+      "nom": "Piet Mondrian",
+      "classement": "Mondrian, Piet",
+      "titre": "Naissance de Piet Mondrian",
+      "axe": "Beaux-arts",
+      "naissance": 1872,
+      "pays": "NL",
+      "description": "Piet Mondrian (1872-1944) est un peintre né à Amersfoort, qui passe du paysage à l'abstraction pure à Paris, puis à Londres et à New York. Avec le groupe De Stijl, il réduit sa peinture à des lignes noires et à des aplats de couleurs primaires, comme dans « Broadway Boogie Woogie ». Il meurt à New York en 1944.",
+      "wikipedia": "Piet Mondrian",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Piet Mondrian 2.jpg",
+        "legende": "Piet Mondrian, photographie parue dans « De Stijl », 1922",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Anonymous (photographer)"
+      }
+    },
+    {
+      "slug": "escher",
+      "nom": "Maurits Cornelis Escher",
+      "classement": "Escher, Maurits Cornelis",
+      "titre": "Naissance de Maurits Cornelis Escher",
+      "axe": "Beaux-arts",
+      "naissance": 1898,
+      "pays": "NL",
+      "description": "Maurits Cornelis Escher (1898-1972) est un graveur et dessinateur né à Leeuwarden, formé à Haarlem et longtemps installé en Italie. Ses estampes mêlent mathématique et illusion : pavages du plan, escaliers sans fin comme dans « Montée et descente », mains qui se dessinent l'une l'autre. Son œuvre séduit autant les mathématiciens que le grand public.",
+      "wikipedia": "Maurits Cornelis Escher",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Maurits Cornelis Escher.jpg",
+        "legende": "Maurits Cornelis Escher, photographie de 1971",
+        "largeur": 500,
+        "licence": "CC0 (domaine public)",
+        "auteur": "Hans Peters for Anefo"
+      }
+    },
+    {
+      "slug": "rietveld",
+      "nom": "Gerrit Rietveld",
+      "classement": "Rietveld, Gerrit",
+      "titre": "Naissance de Gerrit Rietveld",
+      "axe": "Beaux-arts",
+      "naissance": 1888,
+      "pays": "NL",
+      "description": "Gerrit Rietveld (1888-1964) est un architecte et designer né à Utrecht, ébéniste de formation, membre du groupe De Stijl. Sa chaise rouge et bleue de 1918 traduit en volume les principes de Mondrian, et la maison Schröder qu'il construit en 1924 à Utrecht est une œuvre phare de l'architecture moderne. Elle est inscrite au patrimoine mondial depuis 2000.",
+      "wikipedia": "Gerrit Rietveld",
+      "portrait": {
+        "fichier": "Gerrit Thomas Rietveld.jpg",
+        "legende": "Gerrit Rietveld, photographie de 1962",
+        "largeur": 500,
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Oscar at Dutch Wikipedia"
+      }
+    },
+    {
+      "slug": "bruna",
+      "nom": "Dick Bruna",
+      "classement": "Bruna, Dick",
+      "titre": "Naissance de Dick Bruna",
+      "axe": "Beaux-arts",
+      "naissance": 1927,
+      "pays": "NL",
+      "description": "Dick Bruna (1927-2017) est un dessinateur et graphiste né à Utrecht, fils d'un éditeur. Il crée en 1955 la petite lapine Miffy, « Nijntje » en néerlandais, héroïne de livres pour enfants aux traits simples et aux couleurs franches. Les albums, traduits en plus de cinquante langues, se sont vendus à des dizaines de millions d'exemplaires.",
+      "wikipedia": "Dick Bruna",
+      "portrait": {
+        "fichier": "Dick Bruna.jpg",
+        "legende": "Dick Bruna dans son atelier, photographie de 2007",
+        "largeur": 500,
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Dolph Kohnstamm"
+      }
+    },
+    {
+      "slug": "dekooning",
+      "nom": "Willem de Kooning",
+      "classement": "Kooning, Willem de",
+      "titre": "Naissance de Willem de Kooning",
+      "axe": "Beaux-arts",
+      "naissance": 1904,
+      "pays": "NL",
+      "description": "Willem de Kooning (1904-1997) est un peintre né à Rotterdam, qui émigre clandestinement aux États-Unis en 1926. Installé à New York, il devient avec Pollock l'une des figures de l'expressionnisme abstrait, et peint dans les années 1950 la série des « Woman » aux touches violentes. Il meurt en 1997 à Long Island.",
+      "wikipedia": "Willem de Kooning",
+      "portrait": {
+        "fichier": "Willem de Kooning (1968).jpg",
+        "legende": "Willem de Kooning, photographie de 1968",
+        "largeur": 500,
+        "licence": "CC0 (domaine public)",
+        "auteur": "Jack de Nijs for Anefo"
+      }
+    },
+    {
+      "slug": "huygens",
+      "nom": "Christiaan Huygens",
+      "classement": "Huygens, Christiaan",
+      "titre": "Naissance de Christiaan Huygens",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1629,
+      "pays": "NL",
+      "description": "Christiaan Huygens (1629-1695) est un physicien, mathématicien et astronome né à La Haye, fils du poète et diplomate Constantijn Huygens. Il découvre en 1655 la lune Titan et la vraie forme des anneaux de Saturne, construit la première horloge à pendule en 1656 et publie une théorie ondulatoire de la lumière. Membre de l'Académie royale des sciences de Paris, il y vit longtemps à l'appel de Colbert.",
+      "wikipedia": "Christiaan Huygens",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Christiaan Huygens-painting.jpeg",
+        "legende": "Christiaan Huygens, portrait par Caspar Netscher, 1671",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Caspar Netscher (circa 1639 date QS:P,+1639–00–00T00:00:00Z/9,P1480,Q5727902 –1684)"
+      }
+    },
+    {
+      "slug": "leeuwenhoek",
+      "nom": "Antoni van Leeuwenhoek",
+      "classement": "Leeuwenhoek, Antoni van",
+      "titre": "Naissance d'Antoni van Leeuwenhoek",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1632,
+      "pays": "NL",
+      "description": "Antoni van Leeuwenhoek (1632-1723) est un drapier né à Delft, qui fabrique lui-même des lentilles à très fort grossissement. Autodidacte, il observe les premiers micro-organismes en 1674-1676, qu'il nomme « animalcules », ainsi que les globules rouges et les spermatozoïdes. Ses lettres à la Royal Society de Londres font de lui le père de la microbiologie.",
+      "wikipedia": "Antoni van Leeuwenhoek",
+      "portrait": {
+        "fichier": "Portret van Antonie van Leeuwenhoek, RP-P-1903-A-23563.jpg",
+        "legende": "Antoni van Leeuwenhoek, portrait gravé",
+        "largeur": 500,
+        "licence": "CC0 (domaine public)",
+        "auteur": "Rijksmuseum"
+      }
+    },
+    {
+      "slug": "lorentz",
+      "nom": "Hendrik Lorentz",
+      "classement": "Lorentz, Hendrik",
+      "titre": "Naissance d'Hendrik Lorentz",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1853,
+      "pays": "NL",
+      "description": "Hendrik Lorentz (1853-1928) est un physicien né à Arnhem, professeur à Leyde, qui développe la théorie électronique de la matière. Il partage en 1902 le prix Nobel de physique avec Pieter Zeeman et formule les « transformations de Lorentz », que la relativité d'Einstein reprendra. Il préside en 1927 le congrès Solvay, un an avant sa mort à Haarlem.",
+      "wikipedia": "Hendrik Lorentz",
+      "portrait": {
+        "fichier": "H A Lorentz (Nobel).jpg",
+        "legende": "Hendrik Lorentz, photographie officielle du prix Nobel, 1902",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
+      }
+    },
+    {
+      "slug": "kamerlingh",
+      "nom": "Heike Kamerlingh Onnes",
+      "classement": "Onnes, Heike Kamerlingh",
+      "titre": "Naissance d'Heike Kamerlingh Onnes",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1853,
+      "pays": "NL",
+      "description": "Heike Kamerlingh Onnes (1853-1926) est un physicien né à Groningue, professeur à Leyde. En 1908, il liquéfie l'hélium, et en 1911 il découvre la supraconductivité du mercure refroidi à quelques degrés au-dessus du zéro absolu. Il reçoit le prix Nobel de physique en 1913.",
+      "wikipedia": "Heike Kamerlingh Onnes",
+      "portrait": {
+        "fichier": "Heike Kamerlingh Onnes, 1878.jpg",
+        "legende": "Heike Kamerlingh Onnes, photographie de 1878",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "vanderwaals",
+      "nom": "Johannes Diderik van der Waals",
+      "classement": "Waals, Johannes Diderik van der",
+      "titre": "Naissance de Johannes Diderik van der Waals",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1837,
+      "pays": "NL",
+      "description": "Johannes Diderik van der Waals (1837-1923) est un physicien né à Leyde, d'abord instituteur, qui passe ses diplômes en autodidacte. Sa thèse de 1873 propose une équation d'état qui décrit à la fois les gaz et les liquides, et introduit les forces entre molécules appelées depuis « forces de van der Waals ». Il reçoit le prix Nobel de physique en 1910.",
+      "wikipedia": "Johannes Diderik van der Waals",
+      "portrait": {
+        "fichier": "Van der Waals.jpg",
+        "legende": "Johannes Diderik van der Waals, photographie du prix Nobel",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Nobel foundation ?"
+      }
+    },
+    {
+      "slug": "einthoven",
+      "nom": "Willem Einthoven",
+      "classement": "Einthoven, Willem",
+      "titre": "Naissance de Willem Einthoven",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1860,
+      "pays": "NL",
+      "description": "Willem Einthoven (1860-1927) est un médecin et physiologiste né à Semarang, dans les Indes néerlandaises, professeur à Leyde. En 1901, il met au point le galvanomètre à corde, qui permet d'enregistrer les courants électriques du cœur, et fonde l'électrocardiographie. Il reçoit le prix Nobel de médecine en 1924.",
+      "wikipedia": "Willem Einthoven",
+      "portrait": {
+        "fichier": "Willem Einthoven.jpg",
+        "legende": "Willem Einthoven, photographie de 1906",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
+      }
+    },
+    {
+      "slug": "dijkstra",
+      "nom": "Edsger Dijkstra",
+      "classement": "Dijkstra, Edsger",
+      "titre": "Naissance d'Edsger Dijkstra",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1930,
+      "pays": "NL",
+      "description": "Edsger Dijkstra (1930-2002) est un informaticien né à Rotterdam, formé en physique théorique. En 1956, il invente l'algorithme qui trouve le plus court chemin dans un graphe, toujours utilisé dans les logiciels d'itinéraire, et il réfléchit à la programmation structurée. Il reçoit le prix Turing en 1972 et meurt à Nuenen en 2002.",
+      "wikipedia": "Edsger Dijkstra",
+      "portrait": {
+        "fichier": "Edsger Wybe Dijkstra.jpg",
+        "legende": "Edsger Dijkstra, photographie de 2002",
+        "largeur": 500,
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Hamilton Richards"
+      }
+    },
+    {
+      "slug": "tasman",
+      "nom": "Abel Tasman",
+      "classement": "Tasman, Abel",
+      "titre": "Naissance d'Abel Tasman",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1603,
+      "pays": "NL",
+      "description": "Abel Tasman (vers 1603-1659) est un navigateur né à Lutjegast, en Frise, au service de la Compagnie néerlandaise des Indes orientales. En 1642, il aperçoit la Tasmanie, qu'il appelle Terre de Van Diemen, puis la Nouvelle-Zélande, et il longe plus tard le nord de l'Australie. Il meurt à Batavia en 1659.",
+      "wikipedia": "Abel Tasman",
+      "portrait": {
+        "fichier": "AbelTasman.jpg",
+        "legende": "Abel Tasman, détail d'un tableau de Jacob Gerritsz. Cuyp, 1637",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Jacob Gerritsz. Cuyp (1594–1652) Alternative names Jacob Cuyp, Jacob Gerritsz. Kuijp",
+        "recadrage": [
+          0.42,
+          0.0,
+          0.98,
+          0.85
+        ]
+      }
+    },
+    {
+      "slug": "coen",
+      "nom": "Jan Pieterszoon Coen",
+      "classement": "Coen, Jan Pieterszoon",
+      "titre": "Naissance de Jan Pieterszoon Coen",
+      "axe": "Économie et entreprise",
+      "naissance": 1587,
+      "pays": "NL",
+      "description": "Jan Pieterszoon Coen (1587-1629) est un marchand né à Hoorn, gouverneur général des Indes orientales de la Compagnie néerlandaise. Il fonde en 1619 Batavia, l'actuelle Jakarta, qui devient la capitale de l'empire commercial néerlandais en Asie. Il ordonne en 1621 le massacre des habitants des îles de Banda pour s'assurer le monopole de la noix de muscade, ce qui explique que sa statue soit aujourd'hui contestée.",
+      "wikipedia": "Jan Pieterszoon Coen",
+      "portrait": {
+        "fichier": "Jan Pietersz Coen by Jacob Waben.jpg",
+        "legende": "Jan Pieterszoon Coen, portrait de Jacques Waben",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Jacques Waben"
+      }
+    },
+    {
+      "slug": "philips",
+      "nom": "Anton Philips",
+      "classement": "Philips, Anton",
+      "titre": "Naissance d'Anton Philips",
+      "axe": "Économie et entreprise",
+      "naissance": 1874,
+      "pays": "NL",
+      "description": "Anton Philips (1874-1951) est un industriel né à Zaltbommel, qui rejoint en 1895 l'entreprise de lampes électriques fondée par son frère Gerard à Eindhoven. Il en fait l'un des plus gros groupes électriques du monde, et lance la radio, la télévision et le rasoir électrique. Il fonde à Eindhoven une ville ouvrière modèle avec cités, écoles et un club de football.",
+      "wikipedia": "Anton Philips",
+      "portrait": {
+        "fichier": "Anton philips.jpg",
+        "legende": "Anton Philips, photographie de Franz Ziegler, entre 1922 et 1933",
+        "largeur": 500,
+        "licence": "CC0 (domaine public)",
+        "auteur": "Franz Ziegler (1893–1939)"
+      }
+    },
+    {
+      "slug": "tinbergen",
+      "nom": "Jan Tinbergen",
+      "classement": "Tinbergen, Jan",
+      "titre": "Naissance de Jan Tinbergen",
+      "axe": "Économie et entreprise",
+      "naissance": 1903,
+      "pays": "NL",
+      "description": "Jan Tinbergen (1903-1994) est un économiste né à La Haye, frère du zoologue Nikolaas Tinbergen. Il construit dans les années 1930 les premiers modèles économétriques d'une économie nationale, et dirige à La Haye le Bureau central de planification. Il reçoit en 1969, avec Ragnar Frisch, le premier prix de la Banque de Suède en sciences économiques.",
+      "wikipedia": "Jan Tinbergen",
+      "portrait": {
+        "fichier": "Jan Tinbergen 1982.jpg",
+        "legende": "Jan Tinbergen, photographie de 1982",
+        "largeur": 500,
+        "licence": "CC0 (domaine public)",
+        "auteur": "Anefo / Croes, R.C."
+      }
+    },
+    {
+      "slug": "vondel",
+      "nom": "Joost van den Vondel",
+      "classement": "Vondel, Joost van den",
+      "titre": "Naissance de Joost van den Vondel",
+      "axe": "Littérature et pensée",
+      "naissance": 1587,
+      "pays": "NL",
+      "description": "Joost van den Vondel (1587-1679) est un poète et dramaturge né à Cologne, de parents mennonites d'Anvers, installé à Amsterdam. Dans « Gijsbrecht van Aemstel » en 1637, il compose le grand drame de la fondation de la ville, et dans « Lucifer » en 1654 il dramatise la chute de l'ange rebelle. Il est considéré comme le plus grand poète du Siècle d'or.",
+      "wikipedia": "Joost van den Vondel",
+      "portrait": {
+        "fichier": "J vondel.jpg",
+        "legende": "Joost van den Vondel, portrait par Philips Koninck, 1665",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Philips Koninck (1619–1688)"
+      }
+    },
+    {
+      "slug": "multatuli",
+      "nom": "Multatuli",
+      "classement": "Multatuli",
+      "titre": "Naissance de Multatuli",
+      "axe": "Littérature et pensée",
+      "naissance": 1820,
+      "pays": "NL",
+      "description": "Multatuli (1820-1887) est le nom de plume d'Eduard Douwes Dekker, écrivain né à Amsterdam, fonctionnaire aux Indes orientales néerlandaises. Son roman « Max Havelaar » en 1860 dénonce l'exploitation de la population de Java par les colons et les chefs locaux. Il fait scandale aux Pays-Bas, et reste un classique de la littérature coloniale.",
+      "wikipedia": "Multatuli",
+      "portrait": {
+        "fichier": "Portret van de schrijver Multatuli (cropped).jpg",
+        "legende": "Multatuli, portrait de César Mitkiewicz, 1864",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "César Mitkiewicz (1836–1871)"
+      }
+    },
+    {
+      "slug": "huizinga",
+      "nom": "Johan Huizinga",
+      "classement": "Huizinga, Johan",
+      "titre": "Naissance de Johan Huizinga",
+      "axe": "Littérature et pensée",
+      "naissance": 1872,
+      "pays": "NL",
+      "description": "Johan Huizinga (1872-1945) est un historien né à Groningue, professeur à Leyde. « L'Automne du Moyen Âge » en 1919 décrit la civilisation de la Bourgogne comme celle d'un monde qui s'épuise, et « Homo ludens » en 1938 fait du jeu le fondement de la culture. Critique du nazisme, il est interné par les Allemands en 1942 et meurt à De Steeg quelques mois avant la Libération.",
+      "wikipedia": "Johan Huizinga",
+      "portrait": {
+        "fichier": "Johan-huizinga1.jpg",
+        "legende": "Johan Huizinga, photographie, entre 1930 et 1945",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Unknown photographer"
+      }
+    },
+    {
+      "slug": "annefrank",
+      "nom": "Anne Frank",
+      "classement": "Frank, Anne",
+      "titre": "Naissance d'Anne Frank",
+      "axe": "Littérature et pensée",
+      "naissance": 1929,
+      "pays": "NL",
+      "description": "Anne Frank (1929-1945) est une jeune fille née à Francfort, dans une famille juive qui s'installe à Amsterdam en 1934 pour fuir les nazis. De 1942 à 1944, elle se cache avec sa famille dans l'annexe d'un immeuble du Prinsengracht, où elle tient son journal. Arrêtée, déportée à Auschwitz puis à Bergen-Belsen, elle y meurt du typhus au début de 1945 ; son père, seul survivant, publie son journal en 1947.",
+      "wikipedia": "Anne Frank",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "AnneFrankSchoolPhoto.jpg",
+        "legende": "Anne Frank en 1940, à l'école Montessori d'Amsterdam",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Unknown photographer; Collectie Anne Frank Stichting Amsterdam"
+      }
+    },
+    {
+      "slug": "matahari",
+      "nom": "Mata Hari",
+      "classement": "Hari, Mata",
+      "titre": "Naissance de Mata Hari",
+      "axe": "Guerres et résistances",
+      "naissance": 1876,
+      "pays": "NL",
+      "description": "Mata Hari (1876-1917) est le nom de scène de Margaretha Zelle, danseuse née à Leeuwarden, qui s'impose à Paris dans les années 1900 par ses danses exotiques. Pendant la Première Guerre mondiale, elle est accusée d'espionnage pour l'Allemagne, jugée en 1917 et fusillée à Vincennes. Son procès, mené sur des preuves minces, nourrit sa légende de femme fatale.",
+      "wikipedia": "Mata Hari",
+      "portrait": {
+        "fichier": "Mata Hari 2.jpg",
+        "legende": "Mata Hari, carte postale de Lucien Walery, 1906",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Lucien Walery"
+      }
+    },
+    {
+      "slug": "cruyff",
+      "nom": "Johan Cruyff",
+      "classement": "Cruyff, Johan",
+      "titre": "Naissance de Johan Cruyff",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1947,
+      "pays": "NL",
+      "description": "Johan Cruyff (1947-2016) est un footballeur né à Amsterdam, joueur de l'Ajax puis du FC Barcelone. Il porte le numéro 14 et incarne le « football total » des Pays-Bas des années 1970, finaliste de la Coupe du monde en 1974 ; trois fois Ballon d'or, il est aussi l'inventeur d'une feinte qui porte son nom. Devenu entraîneur, il marque durablement le style du FC Barcelone avant de mourir en 2016.",
+      "wikipedia": "Johan Cruyff",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Johan Cruyff 1974c.jpg",
+        "legende": "Johan Cruyff, photographie de 1974",
+        "largeur": 500,
+        "licence": "CC0 (domaine public)",
+        "auteur": "Mieremet, Rob / Anefo"
+      }
+    },
+    {
+      "slug": "blankers",
+      "nom": "Fanny Blankers-Koen",
+      "classement": "Blankers-Koen, Fanny",
+      "titre": "Naissance de Fanny Blankers-Koen",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1918,
+      "pays": "NL",
+      "description": "Fanny Blankers-Koen (1918-2004) est une athlète née près de Baarn, mère de deux enfants quand elle participe aux Jeux olympiques de Londres en 1948. Elle y remporte quatre médailles d'or, sur 100 mètres, 200 mètres, 80 mètres haies et au relais 4 × 100 mètres, et est surnommée la « ménagère volante ». Elle est élue athlète féminine du siècle par la Fédération internationale d'athlétisme.",
+      "wikipedia": "Fanny Blankers-Koen",
+      "portrait": {
+        "fichier": "Fanny Blankers-Koen 1988.jpg",
+        "legende": "Fanny Blankers-Koen, photographie de 1988",
+        "largeur": 500,
+        "licence": "CC BY-SA 3.0 NL",
+        "auteur": "Anefo / Croes, R.C."
+      }
+    },
+    {
+      "slug": "jacobs",
+      "nom": "Aletta Jacobs",
+      "classement": "Jacobs, Aletta",
+      "titre": "Naissance d'Aletta Jacobs",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1854,
+      "pays": "NL",
+      "description": "Aletta Jacobs (1854-1929) est une médecin née à Sappemeer, première femme à fréquenter une université néerlandaise et à obtenir le titre de docteur en 1879. Installée à Amsterdam, elle ouvre en 1882 la première consultation de planning familial et défend le droit de vote des femmes, obtenu aux Pays-Bas en 1919. Pacifiste, elle préside en 1915 le congrès international des femmes à La Haye.",
+      "wikipedia": "Aletta Jacobs",
+      "portrait": {
+        "fichier": "Aletta Jacobs, 1895-1905.jpg",
+        "legende": "Aletta Jacobs, photographie de Max Büttinghausen, entre 1895 et 1905",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Max Büttinghausen"
+      }
+    },
+    {
+      "slug": "jean",
+      "nom": "Jean l'Aveugle",
+      "classement": "l'Aveugle, Jean",
+      "titre": "Naissance de Jean l'Aveugle",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1296,
+      "pays": "LU",
+      "description": "Jean l'Aveugle (1296-1346) est un comte de Luxembourg, né à Luxembourg et devenu en 1310 roi de Bohême par son mariage. Fils de l'empereur Henri VII, il voyage dans toute l'Europe, allié de la France, et fait élire son fils Charles empereur sous le nom de Charles IV. Devenu aveugle, il combat à la bataille de Crécy en 1346 : il fait attacher son cheval à ceux de ses chevaliers et meurt au combat.",
+      "wikipedia": "Jean Ier (roi de Bohême)",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Jean de Luxemembourg, Roi de Boheme dit \"l'Aveugle\".png",
+        "legende": "Jean l'Aveugle, portrait de Jacques Le Boucq, vers 1570",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Jacques Le Boucq"
+      }
+    },
+    {
+      "slug": "charlotte",
+      "nom": "Charlotte de Luxembourg",
+      "classement": "Luxembourg, Charlotte de",
+      "titre": "Naissance de Charlotte de Luxembourg",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1896,
+      "pays": "LU",
+      "description": "Charlotte de Luxembourg (1896-1985) est une grande-duchesse née au château de Berg, qui succède en 1919 à sa sœur Marie-Adélaïde. Chassée par l'invasion allemande de 1940, elle passe la guerre en exil à Londres et à Montréal, et adresse ses messages à son peuple par la BBC. Rentrée en 1944, elle règne jusqu'à son abdication en 1964 en faveur de son fils Jean.",
+      "wikipedia": "Charlotte (grande-duchesse de Luxembourg)",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Charlotte, Grand Duchess of Luxembourg.jpg",
+        "legende": "Charlotte de Luxembourg, photographie, vers 1942",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Arnott & Rogers, Montreal"
+      }
+    },
+    {
+      "slug": "schuman",
+      "nom": "Robert Schuman",
+      "classement": "Schuman, Robert",
+      "titre": "Naissance de Robert Schuman",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1886,
+      "pays": "LU",
+      "description": "Robert Schuman (1886-1963) est un homme d'État né à Luxembourg, dans le quartier de Clausen, d'une famille lorraine, et français depuis 1919. Ministre des Affaires étrangères, il présente le 9 mai 1950 la déclaration qui propose de placer la production de charbon et d'acier de la France et de l'Allemagne sous une autorité commune, première pierre de la construction européenne. Il préside le Parlement européen de 1958 à 1960.",
+      "wikipedia": "Robert Schuman",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Robert Schuman 1958.jpg",
+        "legende": "Robert Schuman, photographie de 1958",
+        "largeur": 500,
+        "licence": "CC BY 4.0",
+        "auteur": "European Commission"
+      }
+    },
+    {
+      "slug": "werner",
+      "nom": "Pierre Werner",
+      "classement": "Werner, Pierre",
+      "titre": "Naissance de Pierre Werner",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1913,
+      "pays": "LU",
+      "description": "Pierre Werner (1913-2002) est un homme politique né à Saint-André, près de Lille, de parents luxembourgeois. Premier ministre du Luxembourg de 1959 à 1974 puis de 1979 à 1984, il dirige en 1970 le comité qui rédige le plan Werner, premier projet d'union monétaire européenne. Son plan prépare l'euro, lancé trente ans plus tard.",
+      "wikipedia": "Pierre Werner",
+      "portrait": {
+        "fichier": "Pierre Werner 204g.jpg",
+        "legende": "Pierre Werner, photographie de Marcel Tockert",
+        "largeur": 500,
+        "licence": "CC BY-SA 3.0 LU",
+        "auteur": "Marcel Tockert"
+      }
+    },
+    {
+      "slug": "lippmann",
+      "nom": "Gabriel Lippmann",
+      "classement": "Lippmann, Gabriel",
+      "titre": "Naissance de Gabriel Lippmann",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1845,
+      "pays": "LU",
+      "description": "Gabriel Lippmann (1845-1921) est un physicien né à Hollerich, près de Luxembourg, qui fait carrière à Paris comme professeur à la Sorbonne. Il invente en 1891 la photographie en couleurs fondée sur l'interférence de la lumière, et reçoit pour cela le prix Nobel de physique en 1908. Il meurt en 1921 en mer, à bord du paquebot « France », au retour du Canada.",
+      "wikipedia": "Gabriel Lippmann",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Gabriel Lippmann2.jpg",
+        "legende": "Gabriel Lippmann, photographie du prix Nobel, 1908",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Nobel Foundation"
+      }
+    },
+    {
+      "slug": "steichen",
+      "nom": "Edward Steichen",
+      "classement": "Steichen, Edward",
+      "titre": "Naissance d'Edward Steichen",
+      "axe": "Beaux-arts",
+      "naissance": 1879,
+      "pays": "LU",
+      "description": "Edward Steichen (1879-1973) est un photographe né à Bivange, au Luxembourg, émigré avec ses parents aux États-Unis à l'âge de deux ans. Pictorialiste, collaborateur de Stieglitz, il photographie les célébrités pour « Vanity Fair » et dirige à partir de 1947 la photographie du Museum of Modern Art. Il organise en 1955 l'exposition « The Family of Man », qui voyage dans le monde entier.",
+      "wikipedia": "Edward Steichen",
+      "portrait": {
+        "fichier": "Edward Steichen.jpg",
+        "legende": "Edward Steichen, photographie de F. Holland Day, 1901",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "F. Holland Day (1864–1933)",
+        "recadrage": [
+          0.1,
+          0.04,
+          0.7,
+          0.45
+        ]
+      }
+    },
+    {
+      "slug": "tudor",
+      "nom": "Henri Tudor",
+      "classement": "Tudor, Henri",
+      "titre": "Naissance d'Henri Tudor",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1859,
+      "pays": "LU",
+      "description": "Henri Tudor (1859-1928) est un ingénieur et inventeur né à Ferschweiler, en Prusse, près de la frontière luxembourgeoise, et établi à Rosport, au Luxembourg. Il perfectionne dans les années 1880 l'accumulateur au plomb, qu'il fabrique et qu'il vend à toute l'Europe. Ses accumulateurs équipent les premières centrales et les premières voitures électriques.",
+      "wikipedia": "Henri Tudor",
+      "portrait": {
+        "fichier": "Portrait Henri Tudor 004.jpg",
+        "legende": "Henri Tudor, photographie de Théodore Pescatore, 1899",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Théodore Pescatore (1871-1931)"
+      }
+    },
+    {
+      "slug": "rodange",
+      "nom": "Michel Rodange",
+      "classement": "Rodange, Michel",
+      "titre": "Naissance de Michel Rodange",
+      "axe": "Littérature et pensée",
+      "naissance": 1827,
+      "pays": "LU",
+      "description": "Michel Rodange (1827-1876) est un écrivain né à Waldbillig, instituteur à Steinsel puis à Larochette. Son poème « Renert », publié en 1872, reprend en luxembourgeois le « Roman de Renart » pour se moquer de la société de son temps. Cette épopée satirique est considérée comme l'œuvre nationale de la littérature luxembourgeoise.",
+      "wikipedia": "Michel Rodange",
+      "portrait": {
+        "fichier": "Méchel-Rodange.jpg",
+        "legende": "Michel Rodange, illustration de l'édition de 1909 du « Renert »",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Franz Seimetz"
+      }
+    },
+    {
+      "slug": "lentz",
+      "nom": "Michel Lentz",
+      "classement": "Lentz, Michel",
+      "titre": "Naissance de Michel Lentz",
+      "axe": "Littérature et pensée",
+      "naissance": 1820,
+      "pays": "LU",
+      "description": "Michel Lentz (1820-1893) est un écrivain né à Luxembourg, auteur surtout de poèmes écrits en luxembourgeois. Il écrit en 1859 les paroles de « Ons Heemecht », chant qui devient l'hymne national du Luxembourg en 1895. Il meurt à Luxembourg en 1893.",
+      "wikipedia": "Michel Lentz",
+      "portrait": {
+        "fichier": "MichelLentzLuxembourg.jpg",
+        "legende": "Michel Lentz, portrait d'avant 1893",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
+      }
+    },
+    {
+      "slug": "wercollier",
+      "nom": "Lucien Wercollier",
+      "classement": "Wercollier, Lucien",
+      "titre": "Naissance de Lucien Wercollier",
+      "axe": "Beaux-arts",
+      "naissance": 1908,
+      "pays": "LU",
+      "description": "Lucien Wercollier (1908-2002) est un sculpteur né à Luxembourg, arrêté par l'occupant et incarcéré en septembre 1942 dans la prison du Grund. « Le Prisonnier politique » et le bronze monumental du cimetière de l'ancien camp de Hinzert comptent parmi ses œuvres les plus connues. Entre 1952 et 1955, il passe de la figuration à l'abstraction, sous l'influence de Brancusi et de Jean Arp.",
+      "wikipedia": "Lucien Wercollier",
+      "portrait": {
+        "fichier": "Lucien Wercollier cropped.jpg",
+        "legende": "Lucien Wercollier dans son atelier, vers 1995",
+        "largeur": 500,
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Jeffant at German Wikipedia ; cropped by Jwh"
+      }
+    },
+    {
+      "slug": "mayrisch",
+      "nom": "Émile Mayrisch",
+      "classement": "Mayrisch, Émile",
+      "titre": "Naissance d'Émile Mayrisch",
+      "axe": "Économie et entreprise",
+      "naissance": 1862,
+      "pays": "LU",
+      "description": "Émile Mayrisch (1862-1928) est un industriel né à Eich, qui fonde en 1911 l'Arbed, grand groupe sidérurgique luxembourgeois. Il fait de cette entreprise l'une des premières d'Europe et organise en 1926 l'Entente internationale de l'acier, entre la Belgique, la France, l'Allemagne et le Luxembourg. Ce cartel annonce par bien des aspects la future Communauté européenne du charbon et de l'acier.",
+      "wikipedia": "Émile Mayrisch",
+      "portrait": {
+        "fichier": "Théo van Rysselberghe - Portrait of Émile Mayrisch.jpg",
+        "legende": "Émile Mayrisch, portrait par Théo van Rysselberghe",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Théo van Rysselberghe (1862–1926)"
+      }
+    },
+    {
+      "slug": "gaul",
+      "nom": "Charly Gaul",
+      "classement": "Gaul, Charly",
+      "titre": "Naissance de Charly Gaul",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1932,
+      "pays": "LU",
+      "description": "Charly Gaul (1932-2005) est un cycliste né à Pfaffenthal, près de Luxembourg, surnommé l'« ange de la montagne » pour sa force en altitude. Il remporte le Tour de France en 1958, et deux fois le Tour d'Italie, en 1956 et 1959. Sa victoire du Giro de 1956, au col de Monte Bondone sous la neige et la pluie, reste la plus célèbre de sa carrière.",
+      "wikipedia": "Charly Gaul",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Charly Gaul, Neluxploeg 1959.jpg",
+        "legende": "Charly Gaul, photographie de 1959",
+        "largeur": 500,
+        "licence": "CC0 (domaine public)",
+        "auteur": "Unknown author Unknown author (ANeFo)"
+      }
+    },
+    {
+      "slug": "barthel",
+      "nom": "Josy Barthel",
+      "classement": "Barthel, Josy",
+      "titre": "Naissance de Josy Barthel",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1927,
+      "pays": "LU",
+      "description": "Josy Barthel (1927-1992) est un athlète né à Mamer, qui remporte en 1952 à Helsinki le 1 500 mètres des Jeux olympiques, par un sprint final, devant l'Américain Bob McMillen et l'Allemand Werner Lueg. L'orchestre n'ayant pas la partition de l'hymne luxembourgeois, la remise de la médaille se fait sans musique. Il préside ensuite la Fédération luxembourgeoise d'athlétisme puis le Comité olympique de son pays.",
+      "wikipedia": "Josy Barthel",
+      "portrait": {
+        "fichier": "Josy Barthel 1951.jpg",
+        "legende": "Josy Barthel, photographie vers 1951",
+        "largeur": 500,
+        "licence": "Domaine public",
+        "auteur": "Unknown author"
+      }
+    }
+  ]
+}
