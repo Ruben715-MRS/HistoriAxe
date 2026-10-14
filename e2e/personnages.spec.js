@@ -770,6 +770,49 @@ test('la recherche — « allemagne », « autriche », « suisse » — mène a
     }
 });
 
+test('le Benelux : chacune de ses figures a son portrait et son pays, et la recherche y mène', async ({ page }) => {
+    await openThemeById(page, 'pan_benelux');
+    await page.locator('#mode-card-discovery').click();
+    await expect(page.locator('#screen-game')).toBeVisible();
+    const nombre = await page.evaluate(() => getCurrentTheme().events.length);
+    expect(nombre).toBe(89);
+    // Une pastille par repère, pas une de moins.
+    await expect(page.locator('#timeline .entry')).toHaveCount(nombre);
+    await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
+
+    // Les trois pays du bloc, chacun par une de ses figures : Rubens est né à Siegen (Allemagne) mais
+    // le bloc le range en Belgique ; Anne Frank est née à Francfort mais vit et meurt aux Pays-Bas.
+    const figures = [
+        ['Naissance de Pierre Paul Rubens', '🇧🇪', 'Belgique'],
+        ['Naissance de Rembrandt', '🇳🇱', 'Pays-Bas'],
+        ['Naissance de Gabriel Lippmann', '🇱🇺', 'Luxembourg'],
+    ];
+    for (const [titre, drapeau, pays] of figures) {
+        await page.locator('#timeline .entry', { hasText: titre }).click();
+        await expect(page.locator('#modal-details')).toBeVisible();
+        await expect(page.locator('#modal-pays')).toContainText(drapeau);
+        await expect(page.locator('#modal-pays')).toContainText(pays);
+        const portrait = page.locator('#modal-portrait-img');
+        await expect.poll(() => portrait.evaluate(img => img.complete ? img.naturalWidth : 0)).toBe(320);
+        await page.locator('#modal-details .close-btn').click();
+        await expect(page.locator('#modal-details')).toBeHidden();
+    }
+
+    // Simenon a aussi sa biographie : le bouton y mène.
+    await page.locator('#timeline .entry', { hasText: 'Naissance de Georges Simenon' }).click();
+    await expect(page.locator('#modal-bio-btn')).toBeVisible();
+});
+
+test('la recherche — « belgique », « pays-bas », « luxembourg », « flandre » — mène au panthéon du Benelux', async ({ page }) => {
+    await page.locator('#screen-home').click();
+    for (const mot of ['benelux', 'belgique', 'pays-bas', 'luxembourg', 'flandre']) {
+        await page.locator('#theme-search-input').fill(mot);
+        const resultat = page.locator('#theme-search-results .search-result-item', { hasText: 'Grandes figures du Benelux' });
+        await expect(resultat, `« ${mot} » doit mener au panthéon du Benelux`).toHaveCount(1);
+        await expect(resultat.locator('.search-result-path')).toContainText('Personnages illustres › Panthéons');
+    }
+});
+
 test('la recherche — « tunisie », « libye », « mauritanie » — mène au panthéon du Maghreb', async ({ page }) => {
     await page.locator('#screen-home').click();
     for (const mot of ['tunisie', 'libye', 'mauritanie']) {

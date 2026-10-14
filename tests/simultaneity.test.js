@@ -426,6 +426,12 @@ test('« Grandes figures de Scandinavie » : chaque ancre porte le pays de son �
     verifierPantheonDeBloc('pan_scandinavie', 19, 5);
 });
 
+test('« Grandes figures du Benelux » : chaque ancre porte le pays de son événement, et la session se joue', () => {
+    // Trois pays : le Luxembourg (13 figures) ne doit pas disparaître derrière la Belgique (38) et les
+    // Pays-Bas (38) parmi les ancres.
+    verifierPantheonDeBloc('pan_benelux', 23, 3);
+});
+
 test('« Grandes figures d’Afrique de l’Ouest » : chaque ancre porte le pays de son événement, et la session se joue', () => {
     // Quinze pays, dont plusieurs (la Gambie, le Cap-Vert, la Guinée-Bissau) n'ont que quelques
     // figures : le Nigeria et le Sénégal ne doivent pas les faire disparaître parmi les ancres.
