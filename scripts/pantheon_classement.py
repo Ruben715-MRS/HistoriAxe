@@ -85,6 +85,12 @@ KEEP_AS_WRITTEN = {
     'Shōtoku Taishi', 'Fujiwara no Michinaga', 'Minamoto no Yoritomo', 'Hōjō Tokimune', 'Ashikaga Takauji', 'Oda Nobunaga', 'Toyotomi Hideyoshi', 'Tokugawa Ieyasu', 'Tokugawa Yoshimune', 'Mutsuhito', 'Itō Hirobumi', 'Hara Takashi', 'Hirohito', 'Yoshida Shigeru', 'Satō Eisaku', 'Minamoto no Yoshitsune', 'Takeda Shingen', 'Uesugi Kenshin', 'Date Masamune', 'Miyamoto Musashi', 'Ōishi Kuranosuke', 'Saigō Takamori', 'Sakamoto Ryōma', 'Kondō Isami', 'Tōgō Heihachirō', 'Yamamoto Isoroku', 'Kūkai', 'Sei Shōnagon', 'Murasaki Shikibu', 'Dōgen', 'Nichiren', 'Zeami', 'Matsuo Bashō', 'Ihara Saikaku', 'Chikamatsu Monzaemon', 'Motoori Norinaga', 'Kobayashi Issa', 'Yoshida Shōin', 'Fukuzawa Yukichi', 'Mori Ōgai', 'Natsume Sōseki', 'Higuchi Ichiyō', 'Nishida Kitarō', 'Suzuki Daisetsu', 'Yosano Akiko', "Tanizaki Jun'ichirō", 'Akutagawa Ryūnosuke', 'Miyazawa Kenji', 'Kawabata Yasunari', 'Dazai Osamu', 'Mishima Yukio', 'Ōe Kenzaburō', 'Sesshū', 'Sen no Rikyū', 'Hasegawa Tōhaku', 'Ogata Kōrin', 'Itō Jakuchū', 'Utamaro', 'Hokusai', 'Hiroshige', 'Kuroda Seiki', 'Okakura Kakuzō', 'Foujita', 'Tange Kenzō', 'Kanō Jigorō', 'Funakoshi Gichin', 'Ueshiba Morihei', 'Mizoguchi Kenji', 'Ozu Yasujirō', 'Kurosawa Akira', 'Honda Ishirō', 'Mifune Toshirō', 'Hara Setsuko', 'Tezuka Osamu', 'Takemitsu Tōru', 'Misora Hibari', 'Sakamoto Kyū', 'Sakamoto Ryūichi', 'Seki Takakazu', 'Hiraga Gennai', 'Sugita Genpaku', 'Inō Tadataka', 'Kitasato Shibasaburō', 'Takamine Jōkichi', 'Ikeda Kikunae', 'Nagaoka Hantarō', 'Toyoda Sakichi', 'Noguchi Hideyo', 'Yukawa Hideki', "Tomonaga Shin'ichirō", 'Iwasaki Yatarō', 'Shibusawa Eiichi', 'Matsushita Kōnosuke', 'Toyoda Kiichirō', 'Honda Sōichirō', 'Andō Momofuku', 'Ibuka Masaru', 'Morita Akio',
     # Russie : tsars rangés par leur prénom et leur surnom.
     'Ivan le Terrible', 'Pierre le Grand',
+    # Asie centrale et Afghanistan : khans, émirs et sultans rangés par leur nom d'usage (« Khan », « Beg », « Datka » sont des
+    # titres, non des noms de famille), souverains et savants médiévaux sans nom de famille, noms de scène.
+    'Abylaï Khan', 'Kenesary Khan', 'Mohammed Alim Khan', 'Dost Mohammad Khan', 'Wazir Akbar Khan', 'Abdur Rahman Khan',
+    'Amanullah Khan', 'Mohammed Daoud Khan', 'Ulugh Beg', 'Toghrul Beg', 'Ahmad Sanjar', 'Kurmanjan Datka',
+    'Magtymguly Pyragy', 'Yusuf Khass Hajib', 'Nasir Khusraw', 'Mahmoud de Ghazni', 'Husayn Bayqara', 'Ahmad Shah Durrani',
+    'Tamara Khanum', 'Hamza Hakimzade Niyazi', 'Meena Keshwar Kamal',
 }
 
 # Écrits à la main : (nom de la source) → nom de classement.
@@ -138,6 +144,7 @@ EXCEPTIONS = {
     'William Pitt le Jeune': 'Pitt le Jeune, William',
     'Ludwig Mies van der Rohe': 'Mies van der Rohe, Ludwig',
     'Mustafa Lutfi al-Manfaluti': 'Manfaluti, Mustafa Lutfi al-',
+    'Mohammad Zaher Shah': 'Zaher Shah, Mohammad',
     "Rifa'a al-Tahtawi": "Tahtawi, Rifa'a al-",
     'Abbas al-Akkad': 'Akkad, Abbas al-',
     'Tawfiq al-Hakim': 'Hakim, Tawfiq al-',

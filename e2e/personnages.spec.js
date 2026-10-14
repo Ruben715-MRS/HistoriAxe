@@ -717,6 +717,50 @@ test('le Portugal : chacune de ses figures a son portrait, d\'Alphonse Ier à Ma
     await expect(page.locator('#modal-bio-btn')).toBeVisible();
 });
 
+test('l\'Asie centrale : chacune de ses figures a son portrait et son pays, l\'Afghanistan comprise, et deux ont leur biographie', async ({ page }) => {
+    await openThemeById(page, 'pan_asiecentrale');
+    await page.locator('#mode-card-discovery').click();
+    await expect(page.locator('#screen-game')).toBeVisible();
+    const nombre = await page.evaluate(() => getCurrentTheme().events.length);
+    expect(nombre).toBe(65);
+    await expect(page.locator('#timeline .entry')).toHaveCount(nombre);
+    await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
+
+    // Trois pays du bloc, chacun par une de ses figures. Navoï est né à Hérat (Afghanistan) mais le bloc
+    // le range en Ouzbékistan, où on l'honore le plus : la fiche dit le pays que le bloc lui donne.
+    const figures = [
+        ['Naissance d\'Abaï Kounanbaïouly', '🇰🇿', 'Kazakhstan'],
+        ['Naissance d\'Alicher Navoï', '🇺🇿', 'Ouzbékistan'],
+        ['Naissance d\'Ahmad Shah Durrani', '🇦🇫', 'Afghanistan'],
+    ];
+    for (const [titre, drapeau, pays] of figures) {
+        await page.locator('#timeline .entry', { hasText: titre }).click();
+        await expect(page.locator('#modal-details')).toBeVisible();
+        await expect(page.locator('#modal-pays')).toContainText(drapeau);
+        await expect(page.locator('#modal-pays')).toContainText(pays);
+        const portrait = page.locator('#modal-portrait-img');
+        await expect.poll(() => portrait.evaluate(img => img.complete ? img.naturalWidth : 0)).toBe(320);
+        await page.locator('#modal-details .close-btn').click();
+        await expect(page.locator('#modal-details')).toBeHidden();
+    }
+
+    // Avicenne et Al-Khwârizmî ont aussi leur biographie : le bouton y mène.
+    const avecBiographie = await page.evaluate(() => getCurrentTheme().events.filter(e => e.biographie).length);
+    expect(avecBiographie).toBe(2);
+    await page.locator('#timeline .entry', { hasText: 'Naissance d\'Avicenne' }).click();
+    await expect(page.locator('#modal-bio-btn')).toBeVisible();
+});
+
+test('la recherche — « kazakhstan », « ouzbekistan », « tadjikistan », « afghanistan » — mène au panthéon d\'Asie centrale', async ({ page }) => {
+    await page.locator('#screen-home').click();
+    for (const mot of ['asie centrale', 'kazakhstan', 'ouzbekistan', 'kirghizistan', 'tadjikistan', 'turkmenistan', 'afghanistan']) {
+        await page.locator('#theme-search-input').fill(mot);
+        const resultat = page.locator('#theme-search-results .search-result-item', { hasText: 'Grandes figures d\'Asie centrale' });
+        await expect(resultat, `« ${mot} » doit mener au panthéon d'Asie centrale`).toHaveCount(1);
+        await expect(resultat.locator('.search-result-path')).toContainText('Personnages illustres › Panthéons');
+    }
+});
+
 test('la recherche — « espagne », « castille », « catalogne », « madrid » — mène au panthéon de l’Espagne', async ({ page }) => {
     await page.locator('#screen-home').click();
     for (const mot of ['espagne', 'castille', 'catalogne', 'madrid']) {
