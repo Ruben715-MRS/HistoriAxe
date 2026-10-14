@@ -764,7 +764,8 @@ function atlasSetCollapsed(collapsed, remember) {
         btn.title = t(key);
         btn.textContent = collapsed ? '›' : '‹';
     }
-    if (atlasMap) setTimeout(function () { atlasMap.resize(); }, 0);
+    // La carte suit la colonne pendant son glissement ; on la recale une fois celui-ci fini.
+    if (atlasMap) setTimeout(function () { atlasMap.resize(); }, 300);
 }
 
 function atlasIsWide() {

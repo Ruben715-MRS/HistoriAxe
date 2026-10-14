@@ -8000,3 +8000,29 @@ input:not([type="range"]), label, select, summary, textarea {
 #screen-atlas.atlas-side.atlas-collapsed .atlas-search {
     width: min(360px, calc(100% - 140px));
 }
+
+/* Le repli de la colonne glisse (0,25 s) : colonne, languette, carte et pastille bougent d'un seul tenant.
+   `visibility` ne bascule qu'à la fin du repli, pour que la colonne reste visible pendant qu'elle sort. */
+#screen-atlas.atlas-side .atlas-bottom {
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), visibility 0s linear 0s;
+}
+
+#screen-atlas.atlas-side.atlas-collapsed .atlas-bottom {
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), visibility 0s linear 0.25s;
+}
+
+#screen-atlas.atlas-side .atlas-panel-toggle,
+#screen-atlas.atlas-side #atlas-map.atlas-map,
+#screen-atlas.atlas-side .atlas-status {
+    transition: left 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #screen-atlas.atlas-side .atlas-bottom,
+    #screen-atlas.atlas-side.atlas-collapsed .atlas-bottom,
+    #screen-atlas.atlas-side .atlas-panel-toggle,
+    #screen-atlas.atlas-side #atlas-map.atlas-map,
+    #screen-atlas.atlas-side .atlas-status {
+        transition: none;
+    }
+}
