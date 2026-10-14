@@ -281,7 +281,7 @@ function atlasOnMapClick(e) {
     const cluster = hits.find(function (f) { return f.layer.id === 'atlas-clusters'; });
     if (cluster) {
         atlasMap.getSource('atlas-piles').getClusterExpansionZoom(cluster.properties.cluster_id).then(function (zoom) {
-            atlasMap.easeTo({ center: cluster.geometry.coordinates, zoom: zoom + 0.5 });
+            atlasMap.easeTo({ center: cluster.geometry.coordinates, zoom: zoom + 0.5, padding: atlasViewPadding() });
         });
         return;
     }
@@ -568,8 +568,8 @@ function atlasConsumeFocus() {
     const pk = atlasMemberPile.get(evt);
     const pile = pk && atlasModel.index.get(pk);
     if (!pile) return;
-    atlasMap.jumpTo({ center: pile.coords, zoom: pile.prec === 'z' ? 5 : 9 });
     atlasShowPiles([pk], evt);
+    atlasMap.jumpTo({ center: pile.coords, zoom: pile.prec === 'z' ? 5 : 9, padding: atlasViewPadding() });
 }
 
 
@@ -709,8 +709,9 @@ function atlasGoToEvent(hit) {
     atlasResetFilterForSearch();
     const pile = atlasModel.index.get(hit.pileKey);
     if (!pile || !atlasMap) return;
-    atlasMap.flyTo({ center: pile.coords, zoom: pile.prec === 'z' ? 5 : 9, essential: true });
+    // La feuille d'abord : elle rouvre la colonne repliée, dont le cadrage doit tenir compte.
     atlasShowPiles([hit.pileKey], hit.item.entry.event);
+    atlasMap.flyTo({ center: pile.coords, zoom: pile.prec === 'z' ? 5 : 9, padding: atlasViewPadding(), essential: true });
 }
 
 function atlasGoToPlace(pl) {
@@ -718,16 +719,18 @@ function atlasGoToPlace(pl) {
     document.getElementById('atlas-search-input').blur();
     atlasResetFilterForSearch();
     if (!atlasMap) return;
+    atlasShowPiles(pl.pileKeys);
     const coords = pl.pileKeys.map(function (k) { return atlasModel.index.get(k).coords; });
     if (coords.length === 1) {
-        atlasMap.flyTo({ center: coords[0], zoom: 9, essential: true });
+        atlasMap.flyTo({ center: coords[0], zoom: 9, padding: atlasViewPadding(), essential: true });
     } else {
         const b = coords.reduce(function (acc, c) {
             return [[Math.min(acc[0][0], c[0]), Math.min(acc[0][1], c[1])], [Math.max(acc[1][0], c[0]), Math.max(acc[1][1], c[1])]];
         }, [[coords[0][0], coords[0][1]], [coords[0][0], coords[0][1]]]);
-        atlasMap.fitBounds(b, { padding: 60, maxZoom: 9, essential: true });
+        const pad = atlasViewPadding();
+        pad.left += 60; pad.top += 60; pad.right += 60; pad.bottom += 60;
+        atlasMap.fitBounds(b, { padding: pad, maxZoom: 9, essential: true });
     }
-    atlasShowPiles(pl.pileKeys);
 }
 
 
@@ -764,8 +767,16 @@ function atlasSetCollapsed(collapsed, remember) {
         btn.title = t(key);
         btn.textContent = collapsed ? '›' : '‹';
     }
-    // La carte suit la colonne pendant son glissement ; on la recale une fois celui-ci fini.
-    if (atlasMap) setTimeout(function () { atlasMap.resize(); }, 300);
+}
+
+// La carte occupe tout l'écran, la colonne est posée dessus : pour cadrer un lieu dans la partie
+// visible, on déporte le cadrage d'autant (sans jamais redimensionner la carte, qui resterait
+// à trembler pendant le glissement de la colonne).
+function atlasViewPadding() {
+    const screen = document.getElementById('screen-atlas');
+    const col = document.getElementById('atlas-bottom');
+    const open = screen && screen.classList.contains('atlas-side') && !screen.classList.contains('atlas-collapsed');
+    return { top: 0, right: 0, bottom: 0, left: open && col ? col.offsetWidth : 0 };
 }
 
 function atlasIsWide() {
@@ -781,7 +792,6 @@ function atlasApplyLayout() {
     screen.classList.toggle('atlas-side', side);
     if (btn) btn.setAttribute('aria-pressed', String(side));
     if (side) atlasSetCollapsed(atlasCollapsedPref(), false);
-    if (was !== side && atlasMap) setTimeout(function () { atlasMap.resize(); }, 0);
 }
 
 function atlasBindLayout() {

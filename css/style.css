@@ -7896,13 +7896,9 @@ input:not([type="range"]), label, select, summary, textarea {
     }
 }
 
-/* Disposition « panneau latéral » : une colonne à gauche (filtres puis fiche), la carte occupe le reste. */
+/* Disposition « panneau latéral » : une colonne à gauche (filtres puis fiche) posée sur la carte plein écran. */
 #screen-atlas.atlas-side {
     --atlas-side-w: 380px;
-}
-
-#screen-atlas.atlas-side #atlas-map.atlas-map {
-    left: var(--atlas-side-w);
 }
 
 #screen-atlas.atlas-side .atlas-bottom {
@@ -7984,10 +7980,6 @@ input:not([type="range"]), label, select, summary, textarea {
     left: 0;
 }
 
-#screen-atlas.atlas-side.atlas-collapsed #atlas-map.atlas-map {
-    left: 0;
-}
-
 #screen-atlas.atlas-side.atlas-collapsed .atlas-bottom {
     transform: translateX(-100%);
     visibility: hidden;
@@ -8001,7 +7993,8 @@ input:not([type="range"]), label, select, summary, textarea {
     width: min(360px, calc(100% - 140px));
 }
 
-/* Le repli de la colonne glisse (0,25 s) : colonne, languette, carte et pastille bougent d'un seul tenant.
+/* Le repli de la colonne glisse (0,25 s) : colonne, languette et pastille bougent d'un seul tenant ; la carte, elle,
+   ne bouge pas (elle occupe tout l'écran sous la colonne) : la redimensionner à chaque image la faisait trembler.
    `visibility` ne bascule qu'à la fin du repli, pour que la colonne reste visible pendant qu'elle sort. */
 #screen-atlas.atlas-side .atlas-bottom {
     transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), visibility 0s linear 0s;
@@ -8012,7 +8005,6 @@ input:not([type="range"]), label, select, summary, textarea {
 }
 
 #screen-atlas.atlas-side .atlas-panel-toggle,
-#screen-atlas.atlas-side #atlas-map.atlas-map,
 #screen-atlas.atlas-side .atlas-status {
     transition: left 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -8021,7 +8013,6 @@ input:not([type="range"]), label, select, summary, textarea {
     #screen-atlas.atlas-side .atlas-bottom,
     #screen-atlas.atlas-side.atlas-collapsed .atlas-bottom,
     #screen-atlas.atlas-side .atlas-panel-toggle,
-    #screen-atlas.atlas-side #atlas-map.atlas-map,
     #screen-atlas.atlas-side .atlas-status {
         transition: none;
     }
