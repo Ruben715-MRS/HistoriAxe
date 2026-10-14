@@ -94,10 +94,11 @@ test('Personnages illustres : deux sous-catégories, chacune avec sa note et son
     // « Grandes figures d'… » / « … de » / « … des » / « … du ».
     await expect(page.locator('#themes-container .data-card-title'))
         .toHaveText(["Grandes figures d'Afrique de l'Ouest", "Grandes figures d'Allemagne, d'Autriche et de Suisse", "Grandes figures d'Amérique hispanique",
-            'Grandes figures de Chine', "Grandes figures d'Égypte", "Grandes figures d'Espagne", 'Grandes figures des États-Unis',
+            "Grandes figures d'Australie", 'Grandes figures du Benelux', 'Grandes figures du Canada', 'Grandes figures de Chine',
+            "Grandes figures d'Égypte", "Grandes figures d'Espagne", 'Grandes figures des États-Unis',
             'Grandes figures de France', 'Grandes figures de Grèce', "Grandes figures d'Israël", "Grandes figures d'Italie", 'Grandes figures du Japon',
-            'Grandes figures du Machrek et de la péninsule Arabique', 'Grandes figures du Maghreb',
-            'Grandes figures du Royaume-Uni', 'Grandes figures de Scandinavie', 'Grandes figures du sous-continent indien', 'Grandes figures de Turquie']);
+            'Grandes figures du Machrek et de la péninsule Arabique', 'Grandes figures du Maghreb', 'Grandes figures du Portugal',
+            'Grandes figures du Royaume-Uni', 'Grandes figures de Russie', 'Grandes figures de Scandinavie', 'Grandes figures du sous-continent indien', 'Grandes figures de Turquie']);
 });
 
 test('la fiche d’un personnage montre son portrait, sa légende, son crédit et sa biographie', async ({ page }) => {
@@ -105,9 +106,9 @@ test('la fiche d’un personnage montre son portrait, sa légende, son crédit e
     await page.locator('#mode-card-discovery').click();
     await expect(page.locator('#screen-game')).toBeVisible();
 
-    // Cent cinquante et un repères, chacun avec sa pastille : « un portrait pour chaque événement ».
-    await expect(page.locator('#timeline .entry')).toHaveCount(151);
-    await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(151);
+    // Cent cinquante-deux repères, chacun avec sa pastille : « un portrait pour chaque événement ».
+    await expect(page.locator('#timeline .entry')).toHaveCount(152);
+    await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(152);
 
     await page.locator('#timeline .entry', { hasText: 'Naissance de Victor Hugo' }).click();
     await expect(page.locator('#modal-details')).toBeVisible();
@@ -155,12 +156,12 @@ test('Monaco et le Liechtenstein sont invités : la fiche dit leur pays, la gale
 
 });
 
-test('la galerie filtre Monaco et le Liechtenstein à part, et la France garde ses 141 figures', async ({ page }) => {
+test('la galerie filtre Monaco et le Liechtenstein à part, et la France garde ses 143 figures (dont Montcalm, invité du Canada)', async ({ page }) => {
     await ouvrirLaGalerie(page);
     const pays = page.locator('#gallery-filter-country');
     await expect(pays.locator('option', { hasText: 'Monaco' })).toHaveText(/🇲🇨 Monaco \(10\)/);
     await expect(pays.locator('option', { hasText: 'Liechtenstein' })).toHaveText(/🇱🇮 Liechtenstein \(4\)/);
-    await expect(pays.locator('option', { hasText: 'France' })).toHaveText(/🇫🇷 France \(141\)/);
+    await expect(pays.locator('option', { hasText: 'France' })).toHaveText(/🇫🇷 France \(143\)/);
 });
 
 test('Joséphine Baker, née aux États-Unis et devenue française, est au panthéon de la France avec son portrait et sa biographie', async ({ page }) => {
@@ -177,7 +178,7 @@ test('Joséphine Baker, née aux États-Unis et devenue française, est au panth
     await expect(page.locator('#modal-bio-btn')).toBeVisible();
 });
 
-test('la France, de Philippe Auguste à Jean Monnet : cent cinquante et une figures dont dix de Monaco, des portraits qui chargent, vingt-neuf biographies', async ({ page }) => {
+test('la France, de Philippe Auguste à Jean Monnet : cent cinquante-deux figures dont dix de Monaco, des portraits qui chargent, vingt-neuf biographies', async ({ page }) => {
     await openThemeById(page, PANTHEON);
     await page.locator('#mode-card-discovery').click();
     await expect(page.locator('#screen-game')).toBeVisible();
@@ -602,7 +603,7 @@ test('la Russie : chacune de ses figures a son portrait, d’Ivan III à Alexeï
     await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
 
     // Trois époques : le grand-prince de Moscou, un poète du XIXe siècle, un cosmonaute.
-    for (const titre of ['Naissance d\'Ivan III', 'Naissance d\'Alexandre Pouchkine', 'Naissance de Youri Gagarine']) {
+    for (const titre of ['Naissance d\'Ivan III', 'Naissance d\'Alexandre Pouchkine', 'Naissance d\'Youri Gagarine']) {
         await page.locator('#timeline .entry', { hasText: titre }).click();
         await expect(page.locator('#modal-details')).toBeVisible();
         await expect(page.locator('#modal-pays')).toBeHidden();
@@ -1022,12 +1023,12 @@ test('les filtres pays et domaine se combinent, et chaque option annonce son eff
     // Sept domaines communs à tous les panthéons, plus « Guerres, résistances et exploration » (la Scandinavie) ;
     // chaque pays d'un bloc a son entrée.
     await expect(domaine.locator('option')).toHaveCount(9);
-    await expect(pays.locator('option', { hasText: 'France' })).toHaveText(/🇫🇷 France \(141\)/);
+    await expect(pays.locator('option', { hasText: 'France' })).toHaveText(/🇫🇷 France \(143\)/);
     await expect(pays.locator('option', { hasText: 'Venezuela' })).toHaveCount(1);
 
-    await pays.selectOption({ label: '🇫🇷 France (141)' });
-    await expect(page.locator('#gallery-container .gallery-card')).toHaveCount(141);
-    await expect(page.locator('#gallery-subtitle')).toHaveText(`141 portraits sur ${total}`);
+    await pays.selectOption({ label: '🇫🇷 France (143)' });
+    await expect(page.locator('#gallery-container .gallery-card')).toHaveCount(143);
+    await expect(page.locator('#gallery-subtitle')).toHaveText(`143 portraits sur ${total}`);
 
     // L'effectif de l'option change à chaque nouveau panthéon : on la choisit par son nom.
     const sciences = domaine.locator('option', { hasText: 'Sciences, techniques et innovation' });
@@ -1185,7 +1186,7 @@ test('à la première ouverture de « Personnages illustres », on demande si le
     await expect(fenetre).toBeHidden();
     expect(await reglage(page)).toBe('bw');
     // Le bouton de la galerie annonce l'avancement, dès le premier instant.
-    await expect(page.locator('#btn-gallery .gallery-launcher-sub')).toHaveText('0 / 1793 portraits débloqués');
+    await expect(page.locator('#btn-gallery .gallery-launcher-sub')).toHaveText('0 / 2400 portraits débloqués');
 
     // On ne repose pas la question.
     await page.locator('#screen-subcategories .back-btn').click();
@@ -1663,7 +1664,7 @@ test('« Découvrir » › « Personnage » ouvre la fiche d’une figure de la 
 
 test('« Découvrir » › « Personnage » : la biographie mène au jeu, quand le personnage en a une', async ({ page }) => {
     await quitterLAccueil(page);
-    // On tire jusqu'à une figure qui a sa biographie (202 sur 1793).
+    // On tire jusqu'à une figure qui a sa biographie (202 sur 2400).
     await page.locator('#btn-discover').click();
     await page.locator('#btn-discover-person').click();
     for (let i = 0; i < 40 && !(await page.locator('#modal-bio-btn').isVisible()); i++) {

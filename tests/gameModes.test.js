@@ -357,7 +357,7 @@ test('Qui est-ce ? : le nom se tire du titre comme dans la galerie', () => {
     assert.equal(G.whoNameOf({ titre: "Naissance d'Édith Piaf" }), 'Édith Piaf');
     assert.equal(G.whoNameOf({ titre: 'Naissance du Caravage' }), 'le Caravage');
     assert.equal(G.whoNameOf({ titre: 'Autre chose' }), 'Autre chose');
-    // Même découpage que js/gallery.js, sur les 2399 titres réels : deux copies d'une règle ne
+    // Même découpage que js/gallery.js, sur les 2400 titres réels : deux copies d'une règle ne
     // doivent pas s'écarter sans qu'un test le dise.
     const { galleryNameOf } = require('../js/gallery.js');
     const fr = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data', 'fr.json'), 'utf8'));
@@ -368,7 +368,7 @@ test('Qui est-ce ? : le nom se tire du titre comme dans la galerie', () => {
         assert.equal(G.whoNameOf(e), galleryNameOf(e).name, e.titre);
         n++;
     }));
-    assert.equal(n, 2399);
+    assert.equal(n, 2400);
 });
 
 test('Qui est-ce ? : sur le vrai pack, chaque panthéon donne dix questions bien formées', () => {

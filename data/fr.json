@@ -3,7 +3,7 @@
   "lang": "fr",
   "name": "Français (Intégral)",
   "totalThemes": 819,
-  "totalEvents": 22185,
+  "totalEvents": 22186,
   "categories": [
     {
       "nom": "Culture générale",
@@ -109378,6 +109378,22 @@
                   }
                 },
                 {
+                  "id": "pan_fr_rachi",
+                  "axe": "Littérature et pensée",
+                  "date": 1040,
+                  "titre": "Naissance de Rachi",
+                  "description": "Rachi (vers 1040-1105) est un rabbin et commentateur né à Troyes, en Champagne, dont le nom est formé des initiales de Rabbi Chlomo Yitzhaki. Ses commentaires de la Bible hébraïque et du Talmud, écrits dans un hébreu clair, restent la base de l'étude traditionnelle dans le monde juif, et ses gloses contiennent des milliers de mots en vieux français, précieux pour l'histoire de la langue. Formé à Mayence et à Worms, il fonde une école à Troyes, dont ses petits-fils, les tosafistes, prolongent l'enseignement.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Rachi",
+                  "classement": "Rachi",
+                  "image": {
+                    "src": "assets/portraits/pan_fr_rachi.jpg",
+                    "legende": "Rachi, gravure sur bois imaginaire de 1539",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Rashi_woodcut.jpg"
+                  }
+                },
+                {
                   "id": "pan_fr_philippeauguste",
                   "axe": "Chefs d'État et dirigeants",
                   "date": 1165,
@@ -111785,6 +111801,7 @@
                 "pan_fr_vercingetorix",
                 "pan_fr_clovis",
                 "pan_fr_charlemagne",
+                "pan_fr_rachi",
                 "pan_fr_louis9",
                 "pan_fr_jacquescoeur",
                 "pan_fr_jeannedarc",
