@@ -1,50 +1,35 @@
 // =========================================================================
 // === HISTORIAXE — MODULE MODE CARTE (LOCALISATION GÉOGRAPHIQUE) ===
 // =========================================================================
-// Nouveau mode de jeu : chaque événement est d'abord situé dans l'ESPACE
-// (un pays parmi 4 pions posés sur une carte du monde), puis dans le TEMPS
-// (une année parmi 4, comme en mode Quiz). Les deux notes se cumulent dans
-// le même score — c'est le double axe (temporel + spatial) qui donne son
-// nom à HistoriAxe.
+// Mode de jeu : chaque événement est d'abord situé dans l'ESPACE — on pose un
+// repère sur une carte sans noms, et les points dépendent de la distance — puis
+// dans le TEMPS (une année parmi 4, comme en mode Quiz). Les deux notes se
+// cumulent dans le même score : c'est le double axe (temporel + spatial) qui
+// donne son nom à HistoriAxe.
 //
-// Le pool d'événements est construit à la volée à partir de la catégorie
-// « Histoires nationales » : chaque thème de cette catégorie correspond à
-// UN pays (ex. thm_de → Allemagne), donc TOUS ses événements partagent ce
-// même pays. GEO_THEME_COUNTRY (assets/geo/theme-country-map.json) porte
-// cette correspondance thème → code ISO-3166-1 alpha-2 ; aucune donnée
-// géographique par événement n'est nécessaire.
+// D'où viennent les lieux. Plus de pays déduit du thème : chaque événement a SON
+// lieu (assets/geo/events-geo.json, produit par scripts/geo/ ; même fichier que
+// l'Atlas, voir js/atlas.js). Seuls les faits au lieu sûr — un site ou une ville,
+// sans drapeau « lieu discutable » — deviennent des questions, ce qui ouvre le
+// mode à tous les thèmes, pas seulement aux « Histoires nationales ». La logique
+// (distance, échelle, points, tirage) est dans js/geoPlace.js, qui se teste sans
+// navigateur ; ici, l'écran, la carte et le déroulé d'une manche.
 //
-// Assets embarqués localement (aucun tuile/CDN cartographique — l'app doit
-// rester jouable hors-ligne) :
-//   - assets/geo/world-basemap.svg   : silhouette des continents (dérivée
-//     de world-atlas@2/countries-110m, licence ISC), projection équirectangulaire,
-//     viewBox 1000×440.
-//   - assets/geo/country-pins.json   : { "FR": [x, y], ... } — position en
-//     pixels (même repère que la viewBox) du centroïde de chaque pays.
-//   - assets/geo/theme-country-map.json : { "thm_fr": "FR", ... }.
+// La carte est celle de l'Atlas (MapLibre, fond OpenStreetMap), dont on retire
+// tous les noms de lieux : ce serait la réponse. Il faut donc du réseau pour jouer.
+//
+// Ce qui reste de l'ancien mode : assets/geo/theme-country-map.json (thème → pays),
+// toujours lu par le Défi de simultanéité (voir js/simultaneity.js), et les petits
+// utilitaires de drapeaux et de noms de pays utilisés par les fiches.
 
-let GEO_PINS = null;
 let GEO_THEME_COUNTRY = null;
-let GEO_BASEMAP_MARKUP = null;
 let geoAssetsPromise = null;
 
-const GEO_MAP_VIEWBOX = { w: 1000, h: 440 };
 const GEO_SESSION_MAX_ROUNDS = 12;
-const GEO_SESSION_MIN_EVENTS = 4;
+const GEO_SESSION_MIN_EVENTS = 6;
+// Points d'un placement parfait, avant combo. Valeur inchangée depuis le mode à choix de pays : les
+// points d'expérience (XP) ne bougent donc pas.
 const GEO_LOCATE_BASE_POINTS = 80;
-// Nombre minimal de pays distincts dans le périmètre pour oser cadrer la carte
-// dessus : doit rester cohérent avec le seuil de repli de pickGeoCountryOptions
-// (candidates.length < 3, une fois le bon pays retiré, donc 4 pays au total)
-// sous lequel les distracteurs sont piochés dans le monde entier — un cadrage
-// serré les enverrait alors hors-champ.
-const GEO_ZOOM_MIN_COUNTRIES = 4;
-// Marge (en unités de la viewBox monde, 1000×440) ajoutée autour des pays du
-// périmètre avant recadrage, pour ne pas coller les pions au bord de l'écran.
-const GEO_ZOOM_PADDING = 60;
-// Au-delà de cette fraction de la largeur/hauteur du monde, le cadrage calculé
-// n'apporte plus un zoom perceptible : autant garder la vue complète plutôt
-// qu'un cadrage quasi identique mais légèrement décentré.
-const GEO_ZOOM_MAX_COVERAGE = 0.92;
 
 // État de la partie en cours (mode 'carte' uniquement)
 let geoScopeLabel = '';
@@ -52,32 +37,33 @@ let geoScopeLabel = '';
 // même zone, ce que le seul libellé ne permet pas.
 let geoLastNode = null;
 let geoReturnScreen = 'screen-themes';
-let geoSessionPool = [];   // [{ event, iso2, themeName }], un par round de la session
+let geoSessionPool = [];   // [{ event, entry, lat, lon, prec, label, place, themeName }], un par manche
 let geoRoundIndex = 0;
 let geoCurrentRound = null;
-// Zone (en unités de la viewBox monde) actuellement affichée sur la carte :
-// le monde entier par défaut, ou un rectangle recadré sur la sous-catégorie
-// régionale en cours (voir computeGeoRegion) — recalculée à chaque partie.
-let geoViewBox = { x: 0, y: 0, w: GEO_MAP_VIEWBOX.w, h: GEO_MAP_VIEWBOX.h };
+let geoScale = 500;        // échelle D (km) de la zone jouée, voir GeoPlace.scaleKm
+let geoBounds = null;      // [[ouest, sud], [est, nord]] où cadrer la carte au début de chaque manche
+let geoPhase = 'place';    // 'place' (on vise) → 'reveal' (le résultat) → 'time' (l'année)
+let geoGuess = null;       // { lat, lon } : le repère posé, pas encore validé
+let geoMap = null;
+let geoMapLoaded = false;
+let geoStylePromise = null;
+let geoGuessMarker = null;
+let geoAnswerMarker = null;
 
 // --- CHARGEMENT DES ASSETS (paresseux, une seule fois) ---
 function loadGeoAssets() {
-    if (GEO_PINS && GEO_THEME_COUNTRY && GEO_BASEMAP_MARKUP) return Promise.resolve(true);
+    if (GEO_THEME_COUNTRY) return Promise.resolve(true);
     if (geoAssetsPromise) return geoAssetsPromise;
-    geoAssetsPromise = Promise.all([
-        fetch('assets/geo/country-pins.json').then(r => r.ok ? r.json() : Promise.reject(r.status)),
-        fetch('assets/geo/theme-country-map.json').then(r => r.ok ? r.json() : Promise.reject(r.status)),
-        fetch('assets/geo/world-basemap.svg').then(r => r.ok ? r.text() : Promise.reject(r.status))
-    ]).then(([pins, themeMap, svgText]) => {
-        GEO_PINS = pins;
-        GEO_THEME_COUNTRY = themeMap;
-        GEO_BASEMAP_MARKUP = svgText;
-        return true;
-    }).catch(err => {
-        console.error('[GeoMap] Échec du chargement des assets de la carte :', err);
-        geoAssetsPromise = null; // permet de réessayer plus tard (ex. retour du réseau)
-        return false;
-    });
+    geoAssetsPromise = fetch('assets/geo/theme-country-map.json')
+        .then(r => r.ok ? r.json() : Promise.reject(r.status))
+        .then(themeMap => {
+            GEO_THEME_COUNTRY = themeMap;
+            return true;
+        }).catch(err => {
+            console.error('[GeoMap] Échec du chargement de la table thème → pays :', err);
+            geoAssetsPromise = null; // permet de réessayer plus tard (ex. retour du réseau)
+            return false;
+        });
     return geoAssetsPromise;
 }
 
@@ -101,123 +87,336 @@ function countryDisplayName(iso2) {
     }
 }
 
-// --- CONSTITUTION DU POOL D'ÉVÉNEMENTS GÉOLOCALISÉS ---
-// Parcourt récursivement un nœud de bdd (catégorie, sous-catégorie ou thème
-// isolé) et retient tous les événements datés dont le thème d'origine a une
-// correspondance pays connue (GEO_THEME_COUNTRY).
-function collectGeoPool(node) {
-    const pool = [];
+// --- LE VIVIER DE QUESTIONS D'UN NŒUD ---
+// Les thèmes d'un nœud de bdd (catégorie, sous-catégorie ou thème isolé).
+function geoThemesOf(node) {
+    const themes = [];
     (function walk(n) {
         if (!n) return;
-        if (n.subcategories) {
-            n.subcategories.forEach(walk);
-        } else if (n.themes) {
-            n.themes.forEach(theme => {
-                const iso2 = GEO_THEME_COUNTRY[theme.id];
-                if (!iso2 || !GEO_PINS[iso2]) return;
-                (theme.events || []).forEach(evt => {
-                    if (typeof evt.date !== 'number') return;
-                    pool.push({ event: evt, iso2, themeName: theme.nom });
-                });
-            });
-        }
+        if (n.subcategories) n.subcategories.forEach(walk);
+        else if (n.themes) n.themes.forEach(theme => themes.push(theme));
     })(node);
-    return pool;
+    return themes;
 }
 
-// --- CADRAGE DE LA CARTE SUR LE PÉRIMÈTRE JOUÉ ---
-// La home « monde entier » de Histoires nationales doit rester une carte du
-// monde, mais une sous-catégorie régionale (ex. Europe, Afrique de l'Ouest…)
-// doit recadrer la vue sur sa zone plutôt que de garder les pions sur une
-// mappemonde entière où ils sont minuscules et perdus. Calculé une fois par
-// pays distincts du périmètre (voir GEO_ZOOM_MIN_COUNTRIES : en dessous, les
-// distracteurs de pickGeoCountryOptions retombent sur le monde entier, donc
-// un cadrage serré les enverrait hors-champ) plutôt que codé en dur par nom
-// de continent, ce qui reste valable à n'importe quel niveau de la hiérarchie
-// régionale et indépendant de la langue.
-function computeGeoRegion(pool) {
-    const isoSet = new Set(pool.map(p => p.iso2));
-    if (isoSet.size < GEO_ZOOM_MIN_COUNTRIES) return null;
-
-    let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
-    isoSet.forEach(iso => {
-        const p = GEO_PINS[iso];
-        if (!p) return;
-        minX = Math.min(minX, p[0]); maxX = Math.max(maxX, p[0]);
-        minY = Math.min(minY, p[1]); maxY = Math.max(maxY, p[1]);
+function geoEntriesOf(node) {
+    const entries = [];
+    geoThemesOf(node).forEach((theme, themeIndex) => {
+        (theme.events || []).forEach(event => entries.push({ event, theme, themeIndex, categoryIndex: 0, subcategoryIndex: [] }));
     });
-    if (!isFinite(minX)) return null;
+    return entries;
+}
 
-    minX -= GEO_ZOOM_PADDING; maxX += GEO_ZOOM_PADDING;
-    minY -= GEO_ZOOM_PADDING; maxY += GEO_ZOOM_PADDING;
+function geoPointsReady() {
+    return (typeof atlasPoints !== 'undefined' && atlasPoints) ? atlasPoints : null;
+}
 
-    // Étend le côté le plus court pour respecter le ratio fixe du cadre
-    // (celui de la viewBox monde, voir .geo-map-frame en CSS), en conservant
-    // le centre de la zone calculée.
-    const targetRatio = GEO_MAP_VIEWBOX.w / GEO_MAP_VIEWBOX.h;
-    let w = maxX - minX, h = maxY - minY;
-    const cx = (minX + maxX) / 2, cy = (minY + maxY) / 2;
-    if (w / h > targetRatio) h = w / targetRatio;
-    else w = h * targetRatio;
-    minX = cx - w / 2; maxX = cx + w / 2;
-    minY = cy - h / 2; maxY = cy + h / 2;
+// --- CARTE SANS NOMS ---
+// Le style de l'Atlas, privé de ses couches de texte et d'icônes : il reste les côtes, les frontières,
+// les fleuves, le relief et, de près, les rues — sans un seul nom.
+function geoLoadStyle() {
+    if (!geoStylePromise) {
+        geoStylePromise = fetch(ATLAS_STYLE_URL)
+            .then(r => r.ok ? r.json() : Promise.reject(r.status))
+            .then(style => {
+                style.layers = style.layers.filter(layer => layer.type !== 'symbol');
+                return style;
+            }).catch(err => {
+                geoStylePromise = null;
+                throw err;
+            });
+    }
+    return geoStylePromise;
+}
 
-    // Zone déjà quasi aussi large/haute que le monde entier : le zoom serait
-    // imperceptible mais décentrerait la carte pour rien, autant garder la
-    // vue complète (repli sur null, interprété comme monde entier).
-    if (w >= GEO_MAP_VIEWBOX.w * GEO_ZOOM_MAX_COVERAGE || h >= GEO_MAP_VIEWBOX.h * GEO_ZOOM_MAX_COVERAGE) {
-        return null;
+function geoEnsureMap() {
+    if (geoMap) { geoMap.resize(); return; }
+    return geoLoadStyle().then(style => {
+        geoMap = new maplibregl.Map({
+            container: 'geo-map',
+            style: style,
+            bounds: geoBounds || [[-170, -55], [170, 70]],
+            fitBoundsOptions: { padding: 24 },
+            minZoom: 0.8,
+            maxZoom: 16,
+            attributionControl: { compact: true },
+            dragRotate: false,
+            pitchWithRotate: false
+        });
+        geoMap.touchZoomRotate.disableRotation();
+        geoMap.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
+        geoMap.on('click', geoOnMapClick);
+        geoMap.on('load', () => {
+            geoMapLoaded = true;
+            geoMap.addSource('geo-line', { type: 'geojson', data: { type: 'FeatureCollection', features: [] } });
+            geoMap.addLayer({
+                id: 'geo-line', type: 'line', source: 'geo-line',
+                paint: { 'line-color': '#26457f', 'line-width': 3, 'line-dasharray': [2, 1.5] }
+            });
+        });
+        // Au clavier : Entrée ou Espace pose le repère au centre de la carte (la mire s'affiche au focus,
+        // voir .geo-crosshair) ; les flèches et +/− déplacent et zooment la carte, nativement.
+        const container = document.getElementById('geo-map');
+        container.addEventListener('keydown', e => {
+            if ((e.key === 'Enter' || e.key === ' ') && e.target === container) {
+                e.preventDefault();
+                const c = geoMap.getCenter();
+                geoSetGuess(c.lat, c.lng);
+            }
+        });
+    });
+}
+
+function geoMarkerElement(kind) {
+    const el = document.createElement('div');
+    el.className = 'geo-pin geo-pin-' + kind;
+    el.setAttribute('aria-hidden', 'true');
+    return el;
+}
+
+function geoClearRoundVisuals() {
+    if (geoGuessMarker) { geoGuessMarker.remove(); geoGuessMarker = null; }
+    if (geoAnswerMarker) { geoAnswerMarker.remove(); geoAnswerMarker = null; }
+    if (geoMap && geoMapLoaded && geoMap.getSource('geo-line')) {
+        geoMap.getSource('geo-line').setData({ type: 'FeatureCollection', features: [] });
+    }
+}
+
+// --- CYCLE DE VIE DE LA PARTIE ---
+function getCurrentVisibleScreenId() {
+    const current = Array.from(document.querySelectorAll('body > div')).find(div =>
+        !div.classList.contains('hidden') &&
+        div.id && div.id.startsWith('screen-')
+    );
+    return current ? current.id : 'screen-themes';
+}
+
+// `returnScreen` (facultatif) : l'écran où ramènera la fin de partie. Au premier lancement c'est l'écran
+// affiché ; pour « Rejouer », qui part de l'écran de fin, c'est celui du lancement d'origine.
+function startGeoModeFromNode(node, label, returnScreen) {
+    const fromScreen = returnScreen || getCurrentVisibleScreenId();
+    Promise.all([loadGeoAssets(), atlasLoadGeo(), atlasLoadLibrary(), geoLoadStyle().then(() => true).catch(() => false)]).then(results => {
+        if (!results[1] || !results[2] || !results[3]) {
+            alert(t('carte.load_error'));
+            return;
+        }
+        const fullPool = GeoPlace.buildPool(geoEntriesOf(node), geoPointsReady());
+        if (fullPool.length < GEO_SESSION_MIN_EVENTS) {
+            alert(t('carte.not_enough_events'));
+            return;
+        }
+
+        resetSessionHistory();
+        currentMode = 'carte';
+        revisionMode = false;
+        dailyChallengeMode = false;
+        geoReturnScreen = fromScreen;
+        geoScopeLabel = label;
+        geoLastNode = node;
+
+        geoSessionPool = GeoPlace.pickSession(fullPool, GEO_SESSION_MAX_ROUNDS);
+        geoRoundIndex = 0;
+        score = 0;
+        lives = 3;
+        comboMultiplier = 1.0;
+        totalTimePlayed = 0;
+
+        const dates = geoSessionPool.map(item => item.event.date);
+        currentGameSpan = Math.max(1, Math.max(...dates) - Math.min(...dates));
+
+        // L'échelle et le cadrage viennent de TOUT le vivier du nœud, pas du seul échantillon de la partie :
+        // la zone visible et la sévérité du barème restent stables d'une manche à l'autre.
+        const coords = fullPool.map(p => [p.lat, p.lon]);
+        geoScale = GeoPlace.scaleKm(coords);
+        geoBounds = GeoPlace.boundsOf(coords);
+
+        document.getElementById('geo-scope-label').innerText = label;
+        showScreen('screen-carte');
+        const ready = geoEnsureMap();
+        // pickNextGeoRound n'attend pas la carte : elle se pose dès qu'elle est prête, et le jeu (points, vies,
+        // année) ne dépend que de la manche — voir submitGeoGuess.
+        pickNextGeoRound();
+        if (ready && ready.catch) ready.catch(() => alert(t('carte.load_error')));
+    });
+}
+
+function pickNextGeoRound() {
+    const item = geoSessionPool[geoRoundIndex];
+    geoCurrentRound = {
+        item,
+        correctYear: item.event.date,
+        timeOptions: pickGeoYearOptions(item.event.date, item.event.id),
+        geoCorrect: null,
+        timeCorrect: null,
+        guess: null,
+        distanceKm: null,
+        fraction: null,
+        verdict: null,
+        points: 0
+    };
+    renderGeoLocatePhase();
+    updateGeoHUD();
+}
+
+function renderGeoLocatePhase() {
+    isAnimating = false;
+    geoPhase = 'place';
+    geoGuess = null;
+    // Le focus va à la carte-question (voir A11y.focusQuestion), pas à <body>.
+    A11y.focusQuestion('screen-carte');
+    const round = geoCurrentRound;
+
+    const kicker = document.getElementById('geo-phase-kicker');
+    kicker.innerText = t('carte.where_kicker');
+    kicker.classList.remove('hidden');
+    document.getElementById('geo-event-title').innerText = round.item.event.titre;
+    document.getElementById('geo-event-desc').innerText = round.item.event.description || '';
+    document.getElementById('geo-reveal-label').classList.add('hidden');
+    document.getElementById('geo-time-phase').classList.add('hidden');
+    document.getElementById('geo-map-phase').classList.remove('hidden');
+
+    document.getElementById('geo-hint').innerText = t('carte.place_hint');
+    const validate = document.getElementById('geo-validate-btn');
+    validate.disabled = true;
+    validate.classList.remove('hidden');
+    validate.onclick = confirmGeoGuess;
+    const next = document.getElementById('geo-continue-btn');
+    next.classList.add('hidden');
+    next.onclick = continueAfterGeoReveal;
+    document.getElementById('geo-status').innerText = '';
+
+    geoClearRoundVisuals();
+    if (geoMap) {
+        geoMap.resize();
+        geoMap.fitBounds(geoBounds, { padding: 24, animate: false });
+    }
+}
+
+function geoOnMapClick(e) {
+    if (geoPhase !== 'place' || isAnimating) return;
+    geoSetGuess(e.lngLat.lat, e.lngLat.lng);
+}
+
+// Pose (ou déplace) le repère. Rien n'est joué tant qu'on ne valide pas : on peut le reprendre ou le glisser.
+function geoSetGuess(lat, lon) {
+    if (geoPhase !== 'place' || isAnimating) return;
+    geoGuess = { lat, lon };
+    if (geoMap) {
+        if (!geoGuessMarker) {
+            geoGuessMarker = new maplibregl.Marker({ element: geoMarkerElement('player'), draggable: true, anchor: 'bottom' })
+                .setLngLat([lon, lat]).addTo(geoMap);
+            geoGuessMarker.on('dragend', () => {
+                const p = geoGuessMarker.getLngLat();
+                geoGuess = { lat: p.lat, lon: p.lng };
+            });
+        } else {
+            geoGuessMarker.setLngLat([lon, lat]);
+        }
+    }
+    document.getElementById('geo-validate-btn').disabled = false;
+    document.getElementById('geo-status').innerText = t('carte.guess_placed');
+}
+
+function confirmGeoGuess() {
+    if (!geoGuess || geoPhase !== 'place') return;
+    answerGeoLocate(geoGuess.lat, geoGuess.lon);
+}
+
+// Pose et valide d'un coup : ce qu'appelle un test, ou toute entrée qui connaît déjà ses coordonnées.
+function submitGeoGuess(lat, lon) {
+    geoSetGuess(lat, lon);
+    confirmGeoGuess();
+}
+
+function geoFormatKm(km) {
+    const lang = (typeof i18n !== 'undefined' && i18n.currentLang) ? i18n.currentLang : 'fr';
+    if (km < 1) return t('carte.km_under_one');
+    if (km < 10) return km.toLocaleString(lang, { maximumFractionDigits: 1 });
+    return Math.round(km).toLocaleString(lang);
+}
+
+function answerGeoLocate(lat, lon) {
+    if (isAnimating) return;
+    isAnimating = true;
+    geoPhase = 'reveal';
+
+    const round = geoCurrentRound;
+    const item = round.item;
+    const km = GeoPlace.haversineKm([lat, lon], [item.lat, item.lon]);
+    const fraction = GeoPlace.scoreFraction(km, geoScale, item.prec);
+    const verdict = GeoPlace.verdict(fraction);
+    round.guess = { lat, lon };
+    round.distanceKm = km;
+    round.fraction = fraction;
+    round.verdict = verdict;
+    round.geoCorrect = verdict === 'great';
+
+    const pts = Math.round(GEO_LOCATE_BASE_POINTS * fraction * comboMultiplier);
+    round.points = pts;
+    score += pts;
+    if (verdict === 'great') {
+        comboMultiplier = Math.round((comboMultiplier + 0.1) * 10) / 10;
+        playCorrectSound(comboMultiplier);
+        triggerHaptic('success');
+    } else if (verdict === 'ok') {
+        playCorrectSound(1.0);
+    } else {
+        comboMultiplier = 1.0;
+        playWrongSound();
+        triggerHaptic('error');
+        lives -= 1;
     }
 
-    // Recadrage dans les bornes réelles du monde en translatant si besoin
-    // (sans réduire la taille déjà calculée) plutôt qu'en la coupant net.
-    if (minX < 0) { maxX -= minX; minX = 0; }
-    if (minY < 0) { maxY -= minY; minY = 0; }
-    if (maxX > GEO_MAP_VIEWBOX.w) { minX -= (maxX - GEO_MAP_VIEWBOX.w); maxX = GEO_MAP_VIEWBOX.w; }
-    if (maxY > GEO_MAP_VIEWBOX.h) { minY -= (maxY - GEO_MAP_VIEWBOX.h); maxY = GEO_MAP_VIEWBOX.h; }
-    // Filet de sécurité si la zone dépasse encore (cas limite où w/h approche
-    // la taille du monde sur un seul axe) : clamp final, quitte à légèrement
-    // déformer le ratio plutôt que de laisser des pions hors-viewBox.
-    minX = Math.max(0, minX); minY = Math.max(0, minY);
-    maxX = Math.min(GEO_MAP_VIEWBOX.w, maxX); maxY = Math.min(GEO_MAP_VIEWBOX.h, maxY);
+    geoShowReveal(round, lat, lon);
 
-    return { x: minX, y: minY, w: maxX - minX, h: maxY - minY };
+    const revealEl = document.getElementById('geo-reveal-label');
+    const place = item.label || item.themeName;
+    revealEl.innerText = fraction >= 0.995
+        ? t('carte.result_exact', { place, pts })
+        : t('carte.result', { place, km: geoFormatKm(km), pts });
+    revealEl.classList.remove('hidden');
+    revealEl.classList.toggle('is-correct', verdict === 'great');
+    revealEl.classList.toggle('is-ok', verdict === 'ok');
+    revealEl.classList.toggle('is-wrong', verdict === 'miss');
+    document.getElementById('geo-hint').innerText = '';
+    document.getElementById('geo-status').innerText = '';
+    document.getElementById('geo-validate-btn').classList.add('hidden');
+    const next = document.getElementById('geo-continue-btn');
+    next.classList.remove('hidden');
+    next.focus();
+
+    updateGeoHUD();
 }
 
-function geoPixelDistance(isoA, isoB) {
-    const a = GEO_PINS[isoA], b = GEO_PINS[isoB];
-    if (!a || !b) return Infinity;
-    return Math.hypot(a[0] - b[0], a[1] - b[1]);
-}
-
-// Trois distracteurs « à profil » plutôt que purement aléatoires : un pays
-// proche (piège), un de portée moyenne, un lointain (repère facile) — pour
-// que les 4 pions restent lisibles sur la carte et que la difficulté varie.
-function pickGeoCountryOptions(correctIso2, scopeIsoList) {
-    let candidates = [...new Set(scopeIsoList)].filter(c => c !== correctIso2 && GEO_PINS[c]);
-    if (candidates.length < 3) {
-        candidates = Object.keys(GEO_PINS).filter(c => c !== correctIso2);
+// Le bon endroit, le trait jusqu'au repère du joueur, et un cadrage qui montre les deux.
+function geoShowReveal(round, lat, lon) {
+    if (!geoMap) return;
+    const answer = [round.item.lon, round.item.lat];
+    if (geoAnswerMarker) geoAnswerMarker.remove();
+    geoAnswerMarker = new maplibregl.Marker({ element: geoMarkerElement('answer'), anchor: 'bottom' }).setLngLat(answer).addTo(geoMap);
+    if (geoGuessMarker) geoGuessMarker.setDraggable(false);
+    else geoGuessMarker = new maplibregl.Marker({ element: geoMarkerElement('player'), anchor: 'bottom' }).setLngLat([lon, lat]).addTo(geoMap);
+    if (geoMapLoaded && geoMap.getSource('geo-line')) {
+        geoMap.getSource('geo-line').setData({
+            type: 'Feature', properties: {}, geometry: { type: 'LineString', coordinates: [[lon, lat], answer] }
+        });
     }
-    const withDist = candidates
-        .map(c => ({ c, d: geoPixelDistance(correctIso2, c) }))
-        .sort((a, b) => a.d - b.d);
-    const n = withDist.length;
-    const pools = [
-        withDist.slice(0, Math.max(1, Math.floor(n * 0.25))),
-        withDist.slice(Math.floor(n * 0.25), Math.max(Math.floor(n * 0.25) + 1, Math.floor(n * 0.65))),
-        withDist.slice(Math.floor(n * 0.65))
-    ];
-    const picks = new Set();
-    pools.forEach(pool => {
-        if (pool.length === 0) return;
-        let choice, attempts = 0;
-        do { choice = pool[Math.floor(Math.random() * pool.length)].c; attempts++; }
-        while (picks.has(choice) && attempts < 10);
-        picks.add(choice);
-    });
-    let i = 0;
-    while (picks.size < 3 && i < withDist.length) { picks.add(withDist[i].c); i++; }
-    return shuffleArray([correctIso2, ...picks]);
+    const bounds = new maplibregl.LngLatBounds([lon, lat], [lon, lat]).extend(answer);
+    geoMap.fitBounds(bounds, { padding: { top: 70, bottom: 70, left: 50, right: 50 }, maxZoom: 13, duration: 800 });
+}
+
+function continueAfterGeoReveal() {
+    if (geoPhase !== 'reveal') return;
+    const round = geoCurrentRound;
+    if (lives <= 0) {
+        // Partie perdue : ne PAS relâcher isAnimating — l'écran va changer (endGame → screen-end) et plus
+        // aucune entrée sur cet écran ne doit pouvoir déclencher un nouveau round sur un `geoCurrentRound` obsolète.
+        finalizeGeoRound(round);
+        endGame(false);
+        return;
+    }
+    isAnimating = false;
+    renderGeoTimePhase();
 }
 
 // Distracteurs d'années : autres dates du pool de la session, également
@@ -259,230 +458,15 @@ function pickGeoYearOptions(correctYear, excludeEventId) {
     return shuffleArray([correctYear, ...picks]);
 }
 
-// --- CYCLE DE VIE DE LA PARTIE ---
-function getCurrentVisibleScreenId() {
-    const current = Array.from(document.querySelectorAll('body > div')).find(div =>
-        !div.classList.contains('hidden') &&
-        div.id && div.id.startsWith('screen-')
-    );
-    return current ? current.id : 'screen-themes';
-}
-
-// `returnScreen` (facultatif) : l'écran où ramènera la fin de partie. Au premier lancement c'est l'écran
-// affiché ; pour « Rejouer », qui part de l'écran de fin, c'est celui du lancement d'origine.
-function startGeoModeFromNode(node, label, returnScreen) {
-    const fromScreen = returnScreen || getCurrentVisibleScreenId();
-    loadGeoAssets().then(ok => {
-        if (!ok) {
-            alert("Impossible de charger la carte du monde. Vérifiez votre connexion puis réessayez.");
-            return;
-        }
-        const fullPool = collectGeoPool(node);
-        if (fullPool.length < GEO_SESSION_MIN_EVENTS) {
-            alert(t('carte.not_enough_events'));
-            return;
-        }
-
-        resetSessionHistory();
-        currentMode = 'carte';
-        revisionMode = false;
-        dailyChallengeMode = false;
-        geoReturnScreen = fromScreen;
-        geoScopeLabel = label;
-        geoLastNode = node;
-
-        const shuffled = shuffleArray([...fullPool]);
-        geoSessionPool = shuffled.slice(0, Math.min(GEO_SESSION_MAX_ROUNDS, shuffled.length));
-        geoRoundIndex = 0;
-        score = 0;
-        lives = 3;
-        comboMultiplier = 1.0;
-        totalTimePlayed = 0;
-
-        const dates = geoSessionPool.map(item => item.event.date);
-        currentGameSpan = Math.max(1, Math.max(...dates) - Math.min(...dates));
-
-        // Cadrage sur le périmètre régional (voir computeGeoRegion) plutôt que sur
-        // le seul échantillon de la session : la zone visible doit rester stable
-        // même si le tirage des 12 rounds ne couvre pas tous les pays du nœud.
-        geoViewBox = computeGeoRegion(fullPool) || { x: 0, y: 0, w: GEO_MAP_VIEWBOX.w, h: GEO_MAP_VIEWBOX.h };
-
-        document.getElementById('geo-scope-label').innerText = label;
-        const svgHolder = document.getElementById('geo-map-svg-holder');
-        if (svgHolder) {
-            svgHolder.innerHTML = GEO_BASEMAP_MARKUP;
-            const svgEl = svgHolder.querySelector('svg');
-            if (svgEl) svgEl.setAttribute('viewBox', `${geoViewBox.x} ${geoViewBox.y} ${geoViewBox.w} ${geoViewBox.h}`);
-        }
-
-        showScreen('screen-carte');
-        pickNextGeoRound();
-    });
-}
-
-function pickNextGeoRound() {
-    const item = geoSessionPool[geoRoundIndex];
-    const scopeIsoList = geoSessionPool.map(p => p.iso2);
-    const geoOptions = pickGeoCountryOptions(item.iso2, scopeIsoList);
-    const timeOptions = pickGeoYearOptions(item.event.date, item.event.id);
-
-    geoCurrentRound = {
-        item,
-        correctIso2: item.iso2,
-        geoOptions,
-        correctYear: item.event.date,
-        timeOptions,
-        geoCorrect: null,
-        timeCorrect: null
-    };
-
-    renderGeoLocatePhase();
-    updateGeoHUD();
-}
-
-function renderGeoLocatePhase() {
-    isAnimating = false;
-    // Les pions viennent d'être reconstruits : le focus va à la carte-question
-    // (voir A11y.focusQuestion), pas à <body>.
-    A11y.focusQuestion('screen-carte');
-    const round = geoCurrentRound;
-
-    document.getElementById('geo-phase-kicker').innerText = t('carte.where_kicker');
-    document.getElementById('geo-event-title').innerText = round.item.event.titre;
-    document.getElementById('geo-event-desc').innerText = round.item.event.description || '';
-    document.getElementById('geo-reveal-label').classList.add('hidden');
-
-    const timePhase = document.getElementById('geo-time-phase');
-    if (timePhase) timePhase.classList.add('hidden');
-    const mapPhase = document.getElementById('geo-map-phase');
-    if (mapPhase) mapPhase.classList.remove('hidden');
-
-    const pinsLayer = document.getElementById('geo-pins-layer');
-    pinsLayer.innerHTML = '';
-    const laidOut = layoutPinsAvoidingOverlap(round.geoOptions);
-    laidOut.forEach(({ iso2, x, y }, idx) => {
-        const btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'geo-pin-btn';
-        btn.dataset.iso = iso2;
-        // Position en % relatifs à la zone actuellement affichée (geoViewBox :
-        // le monde entier, ou la région recadrée — voir computeGeoRegion), pas
-        // au monde entier, sous peine de mal placer les pions une fois zoomé.
-        btn.style.left = ((x - geoViewBox.x) / geoViewBox.w * 100) + '%';
-        btn.style.top = ((y - geoViewBox.y) / geoViewBox.h * 100) + '%';
-        btn.innerHTML = `<span class="geo-pin-number">${idx + 1}</span>`;
-        // Le nom du pays, et pas un simple « Option 2 » : pour qui ne voit pas la
-        // carte, c'est le seul moyen de savoir ce que désigne le pion. Ce n'est
-        // pas un indice de plus pour les autres — un aria-label ne s'affiche
-        // jamais, et la position sur la carte reste ce que voit le joueur.
-        btn.setAttribute('aria-label', t('carte.pin_aria', { n: idx + 1, country: countryDisplayName(iso2) }));
-        btn.onclick = () => answerGeoLocate(iso2);
-        pinsLayer.appendChild(btn);
-    });
-}
-
-// Deux pays vraiment voisins (ex. Italie/Liechtenstein) ont des centroïdes si
-// proches que leurs pions se chevauchent sur une carte de la taille d'un
-// écran de téléphone — illisible et impossible à toucher précisément. On
-// garde la position réelle de chaque pion comme point de départ, puis on les
-// écarte les uns des autres par petites itérations (répulsion par paires)
-// jusqu'à respecter un espacement minimal, en unités de la viewBox (donc
-// indépendant de la largeur réellement affichée — voir aspect-ratio en CSS).
-function layoutPinsAvoidingOverlap(iso2List) {
-    const minDist = 70;
-    const margin = 30;
-    const pts = iso2List.map(iso2 => {
-        const [x, y] = GEO_PINS[iso2];
-        return { iso2, x, y };
-    });
-    for (let iter = 0; iter < 60; iter++) {
-        let moved = false;
-        for (let i = 0; i < pts.length; i++) {
-            for (let j = i + 1; j < pts.length; j++) {
-                const a = pts[i], b = pts[j];
-                let dx = b.x - a.x, dy = b.y - a.y;
-                let dist = Math.hypot(dx, dy);
-                if (dist < minDist) {
-                    moved = true;
-                    if (dist < 0.01) { dx = 1; dy = 0; dist = 1; }
-                    const push = (minDist - dist) / 2;
-                    const ux = dx / dist, uy = dy / dist;
-                    a.x -= ux * push; a.y -= uy * push;
-                    b.x += ux * push; b.y += uy * push;
-                }
-            }
-        }
-        if (!moved) break;
-    }
-    // Bornage dans la zone actuellement affichée (geoViewBox), pas dans le
-    // monde entier : une fois zoomé sur une région, border sur les bords du
-    // monde enverrait les pions hors du cadre visible.
-    pts.forEach(p => {
-        p.x = Math.min(geoViewBox.x + geoViewBox.w - margin, Math.max(geoViewBox.x + margin, p.x));
-        p.y = Math.min(geoViewBox.y + geoViewBox.h - margin, Math.max(geoViewBox.y + margin, p.y));
-    });
-    return pts;
-}
-
-function answerGeoLocate(chosenIso2) {
-    if (isAnimating) return;
-    isAnimating = true;
-
-    const round = geoCurrentRound;
-    const isCorrect = chosenIso2 === round.correctIso2;
-    round.geoCorrect = isCorrect;
-
-    if (isCorrect) {
-        const pts = Math.round(GEO_LOCATE_BASE_POINTS * comboMultiplier);
-        score += pts;
-        comboMultiplier = Math.round((comboMultiplier + 0.1) * 10) / 10;
-        playCorrectSound(comboMultiplier);
-        triggerHaptic('success');
-    } else {
-        comboMultiplier = 1.0;
-        playWrongSound();
-        triggerHaptic('error');
-        lives -= 1;
-    }
-
-    document.querySelectorAll('#geo-pins-layer .geo-pin-btn').forEach(b => {
-        b.disabled = true;
-        if (b.dataset.iso === round.correctIso2) b.classList.add('correct');
-        else if (b.dataset.iso === chosenIso2 && !isCorrect) b.classList.add('wrong');
-    });
-
-    const revealEl = document.getElementById('geo-reveal-label');
-    const flag = isoToFlagEmoji(round.correctIso2);
-    const name = countryDisplayName(round.correctIso2);
-    revealEl.innerHTML = isCorrect
-        ? t('carte.correct_reveal', { flag, name })
-        : t('carte.wrong_reveal', { flag, name });
-    revealEl.classList.remove('hidden');
-    revealEl.classList.toggle('is-correct', isCorrect);
-    revealEl.classList.toggle('is-wrong', !isCorrect);
-
-    updateGeoHUD();
-
-    setTimeout(() => {
-        if (lives <= 0) {
-            // Partie perdue : ne PAS relâcher isAnimating — l'écran va changer
-            // (endGame → screen-end) et plus aucune entrée sur cet écran ne doit
-            // pouvoir déclencher un nouveau round sur un `geoCurrentRound` obsolète.
-            finalizeGeoRound(round);
-            endGame(false);
-            return;
-        }
-        isAnimating = false;
-        renderGeoTimePhase();
-    }, 1300);
-}
-
 function renderGeoTimePhase() {
     isAnimating = false;
+    geoPhase = 'time';
     A11y.focusQuestion('screen-carte');
     const round = geoCurrentRound;
 
     document.getElementById('geo-map-phase').classList.add('hidden');
+    // La question « où ? » est close : elle ne doit pas rester au-dessus de « en quelle année ? ».
+    document.getElementById('geo-phase-kicker').classList.add('hidden');
     const timePhase = document.getElementById('geo-time-phase');
     timePhase.classList.remove('hidden');
     document.getElementById('geo-time-kicker').innerText = t('game.quiz_event_to_year');
@@ -524,9 +508,8 @@ function answerGeoTime(chosenYear) {
 
     setTimeout(() => {
         geoRoundIndex++;
-        // Idem : en cas de fin de partie, on ne relâche pas isAnimating (voir
-        // answerGeoLocate) — le prochain reset a lieu au round suivant, dans
-        // renderGeoLocatePhase(), qui ne s'exécute que si la partie continue.
+        // En cas de fin de partie, on ne relâche pas isAnimating : le prochain reset a lieu au round
+        // suivant, dans renderGeoLocatePhase(), qui ne s'exécute que si la partie continue.
         if (lives <= 0) { endGame(false); return; }
         if (geoRoundIndex >= geoSessionPool.length) { endGame(true); return; }
         pickNextGeoRound();
@@ -564,20 +547,20 @@ function updateGeoHUD() {
 
 // --- POINTS D'ENTRÉE (cartes spéciales injectées dans les écrans de
 // navigation existants — voir js/app.js: initSubcategories / initThemes) ---
-// Précharge dès le lancement de l'app (petits fichiers same-origin, mis en
-// cache par le service worker comme le reste) : au moment où le joueur
-// atteint un écran de sous-catégories/thèmes, GEO_THEME_COUNTRY est déjà
-// disponible pour décider si la carte « Mode Carte » doit y apparaître.
+// Précharge dès le lancement de l'app (petits fichiers same-origin, mis en cache par le service
+// worker comme le reste) : au moment où le joueur atteint un écran de sous-catégories/thèmes, la table
+// thème → pays est déjà là. Les points d'événements (800 Ko) arrivent dès le chargement de la page
+// plutôt que de l'Atlas : sans eux, isGeoEligible répond « non » et la carte du mode n'apparaît pas.
 loadGeoAssets();
+window.addEventListener('load', () => { if (typeof atlasLoadGeo === 'function') atlasLoadGeo(); });
 
-// Un nœud (catégorie, sous-catégorie ou thème isolé) est éligible au Mode
-// Carte s'il contient assez d'événements dont le thème d'origine a une
-// correspondance pays connue — indépendamment du nom de la catégorie, qui
-// varie selon la langue (voir data/en.json etc., des packs « démo » bien
-// plus courts qui n'ont pas d'équivalent à « Histoires nationales »).
+// Un nœud (catégorie, sous-catégorie ou thème isolé) est éligible au Mode Carte s'il contient assez
+// d'événements au lieu sûr — quel que soit le nom de la catégorie, qui varie selon la langue (voir
+// data/en.json etc., des packs « démo » sans points : le mode n'y est simplement pas proposé).
 function isGeoEligible(node) {
-    if (!GEO_THEME_COUNTRY || !GEO_PINS) return false;
-    return collectGeoPool(node).length >= GEO_SESSION_MIN_EVENTS;
+    const points = geoPointsReady();
+    if (!points) return false;
+    return GeoPlace.countReliable(geoThemesOf(node), points, GEO_SESSION_MIN_EVENTS) >= GEO_SESSION_MIN_EVENTS;
 }
 
 function buildGeoModeCard(node, label) {

@@ -1364,6 +1364,7 @@ function showScreen(screenId, direction) {
     if (screenId === 'screen-axes') initAxes();
     if (screenId === 'screen-revision-hub') initRevisionHub();
     if (screenId === 'screen-gallery') initGallery();
+    if (screenId === 'screen-atlas') initAtlas();
 
     // Onboarding guidé (voir js/onboarding.js) : chaque bulle ne s'affiche
     // qu'une fois, et jamais si le tutoriel a été terminé/passé.
@@ -1859,7 +1860,7 @@ function initCategories() {
     gridSection.className = 'w-full';
     gridSection.style.marginTop = '24px';
     gridSection.innerHTML = `
-                <div class="grid grid-cols-4 gap-sm md:gap-md" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; text-align: center;">
+                <div class="grid grid-cols-4 gap-sm md:gap-md" style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; text-align: center;">
                     <div class="flex flex-col items-center gap-2" id="btn-favoris" style="cursor: pointer;" role="button" tabindex="0">
                         <div class="quick-action-circle rounded-full flex items-center justify-center transition-colors cursor-pointer group mx-auto" style="border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; background: var(--surface); border: 1px solid var(--border-soft); box-shadow: var(--card-shadow);">
                             <span style="font-size: 28px;">⭐</span>
@@ -1883,6 +1884,12 @@ function initCategories() {
                             <span style="font-size: 28px;">🧠</span>
                         </div>
                         <span class="quick-action-label" style="font-size: 13px; font-weight: 600;">${(typeof t === 'function' ? t('categories.special_revision') : 'Réviser')} (${weakCount})</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-2" id="btn-atlas" style="cursor: pointer;" role="button" tabindex="0">
+                        <div class="quick-action-circle rounded-full flex items-center justify-center transition-colors cursor-pointer group mx-auto" style="border-radius: 50%; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; background: var(--surface); border: 1px solid var(--border-soft); box-shadow: var(--card-shadow);">
+                            <span style="font-size: 28px;">🗺️</span>
+                        </div>
+                        <span class="quick-action-label" style="font-size: 13px; font-weight: 600;">${(typeof t === 'function' ? t('categories.special_atlas') : 'Atlas')}</span>
                     </div>
                 </div>
                 <div class="challenge-picker hidden" id="discover-picker">
@@ -1919,6 +1926,8 @@ function initCategories() {
             `;
     container.appendChild(gridSection);
 
+    const btnAtlas = gridSection.querySelector('#btn-atlas');
+    if (btnAtlas) btnAtlas.onclick = () => showScreen('screen-atlas', 'forward');
     const btnFav = gridSection.querySelector('#btn-favoris');
     if (btnFav) btnFav.onclick = () => openFavorites();
     const btnDisc = gridSection.querySelector('#btn-discover');
@@ -6262,6 +6271,7 @@ function openModal(evt, context = null, keepHistory = false) {
     document.getElementById('modal-desc').innerText = evt.description;
     document.getElementById('modal-wiki').href = evt.wikipedia;
     renderModalLinkedEvents(evt);
+    if (typeof renderModalMapButton === 'function') renderModalMapButton(evt);
     renderModalPortrait(evt);
     const fromGallery = !!(context && context.fromGallery);
     renderModalBiographyButton(evt, fromGallery);

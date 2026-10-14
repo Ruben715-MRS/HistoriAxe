@@ -413,6 +413,71 @@ Ces modes écartent donc les dates au-delà de ±10000 (même seuil que
 thème ne descend sous son minimum jouable** en les retirant. Ils restent
 parfaitement jouables sur la frise et dans tous les autres modes.
 
+## L'Atlas : tous les événements sur une carte
+
+Une carte du monde qu'on zoome au doigt, avec tous les événements qui ont un lieu (un peu
+plus de la moitié de la base) : `js/atlas.js` (l'écran et la carte) et `js/atlasCore.js`
+(la logique, testable sans navigateur). On y entre par la cinquième action rapide de l'écran
+des catégories, ou par « 📍 Voir sur la carte » dans une fiche. Ce n'est pas un mode de jeu,
+c'est une vitrine, comme la galerie des portraits.
+
+**Les points** viennent de `assets/geo/events-geo.json` : `{ "thème:id": [lat, lon, "s|v|z",
+libellé, drapeau] }`. La précision dit ce qu'est le point : `s` un site (monument, champ de
+bataille), `v` une ville, `z` une zone (une région, pour la seule carte de découverte). Le drapeau
+vaut 1 quand le lieu est discutable (création ≠ lieu évoqué par le titre, emplacement
+disputé, déduit de mémoire) : l'Atlas le signale (« lieu approximatif »), et le futur mode de
+jeu les écartera. Le fichier est produit par `scripts/geo/` (voir son README) ; l'Atlas n'écrit rien
+dedans.
+
+**Un point par fait.** Un même fait figure souvent dans plusieurs thèmes (voir « Vu aussi dans… »,
+`js/linkedEvents.js`) : sur la carte il n'a qu'un point, et le toucher ouvre la fiche la plus
+pertinente du groupe (`AtlasCore.scoreEntry` : une description développée sans excès, un titre
+qui porte un seul fait, un thème généraliste — le même critère que le pipeline), d'où les boutons
+« Vu aussi dans… » mènent aux autres. **Une pile par lieu** : Paris porte plus de 300 événements
+au même endroit ; ils forment une pile (un point, un compteur) dont le toucher ouvre la liste,
+triée par date.
+
+**Filtres.** Les catégories (puces), l'époque (deux curseurs et cinq préréglages). Le curseur est
+gradué par tronçons égaux (−450 000, −10 000, −3 000, −500, 0, 500, 1000, 1500, 1800, 1900, 2030) :
+sur une échelle linéaire, 99 % de la course serait la préhistoire.
+
+**La carte.** MapLibre GL (`assets/vendor/maplibre-gl/`, BSD-3), chargé à l'ouverture de l'Atlas
+seulement ; fond vectoriel OpenStreetMap servi par OpenFreeMap (gratuit, sans clé, noms de lieux en
+français quand OSM les connaît). **Il faut du réseau pour le fond** ; hors-ligne, les points
+s'affichent sur fond uni. « © contributeurs OpenStreetMap » est porté par le contrôle de la carte
+et doit y rester : les points eux-mêmes sont dérivés d'OSM (Nominatim), donc soumis à l'ODbL.
+
+**Tests.** `tests/atlasCore.test.js` (fiche choisie, piles, filtres, échelle du temps, et sur la vraie
+base : un événement n'est que dans un fait, coordonnées valides) ; `tests/geo.test.js` (le fichier
+de points) ; `e2e/atlas.spec.js` (commandes, feuille, fiche, « Voir sur la carte »). La carte
+elle-même (WebGL, réseau) n'est pas exercée par les e2e.
+
+**Recherche.** Un champ en haut de l'Atlas cherche dans les titres et les noms de lieux (sans accents
+ni casse, mots dans n'importe quel ordre, dès 2 lettres), hors connexion puisque tout est dans le
+modèle déjà chargé. Les lieux sont regroupés par nom, puis viennent les événements (titre commençant par
+la requête d'abord). Choisir un résultat lève les filtres d'époque/catégorie qui le cacheraient, cadre la
+carte et ouvre la feuille ; Entrée prend le premier résultat, Échap efface. Logique : `searchAtlas` dans
+`js/atlasCore.js` (`tests/atlasCore.test.js`), écran dans `js/atlas.js` (`e2e/atlas.spec.js`).
+
+## Le Mode Carte : poser l'événement sur la carte
+
+Deux temps par question, comme avant : « Où ? » puis « Quand ? » (quatre dates, inchangé).
+Le « Où ? » se joue désormais sur une **carte sans aucun nom** (le fond OpenFreeMap de l'Atlas,
+dont on retire toutes les couches de texte) : on pose un repère, on valide, la carte montre le
+vrai lieu et la distance.
+
+- **Points** : 80 de base × `exp(−d / D)` × combo. `D` s'adapte à la zone jouée (étendue 5ᵉ‥95ᵉ
+  centile des lieux du thème ÷ 12, entre 25 et 2 500 km : environ 1 300 km pour le monde,
+  120 km pour la France). Tolérance avant pénalité : 1,5 km pour un site, 10 km pour une ville.
+  Aucun bonus de vitesse.
+- **Verdict** : très bon ≥ 60 % des points (le combo monte), raté < 25 % (le combo retombe, une
+  vie est perdue), entre les deux rien ne bouge.
+- **Questions** : seulement les faits au lieu sûr (site ou ville, sans drapeau « discutable »),
+  un par fait lié entre thèmes, deux au plus par lieu et par partie. Logique pure dans
+  `js/geoPlace.js` (`tests/geoPlace.test.js`), écran dans `js/geoMap.js` (`e2e/carte.spec.js`).
+- **Clavier** : la carte se pilote aux flèches ; Entrée pose le repère au centre.
+- Le mode exige le réseau (tuiles de la carte).
+
 ## « Qui est-ce ? » et le portrait du jour
 
 Les portraits des panthéons permettent un mode que rien d'autre dans la base n'autorise :

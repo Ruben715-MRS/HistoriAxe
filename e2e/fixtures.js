@@ -6,7 +6,11 @@
 //     statique des tests ; sans réponse, chaque appel best-effort du client
 //     laisse une erreur dans la console et polluerait l'assertion finale ;
 //  2. le tutoriel — ses bulles se superposent aux écrans et interceptent
-//     les clics des premiers pas.
+//     les clics des premiers pas ;
+//  3. le fond de carte (tuiles OpenStreetMap servies par OpenFreeMap) — le Mode Carte
+//     et l'Atlas le demandent au réseau ; les tests ne doivent dépendre ni d'internet ni
+//     d'un tiers. Il est remplacé par un style réduit à un aplat : la carte se charge, on y
+//     clique, rien d'autre.
 // La troisième, le service worker, est bloquée en amont par la
 // configuration (voir playwright.config.js: serviceWorkers).
 //
@@ -49,6 +53,11 @@ const test = base.test.extend({
             status: 200,
             contentType: 'application/json; charset=utf-8',
             body: '{}'
+        }));
+        await page.route(/tiles\.openfreemap\.org/, route => route.fulfill({
+            status: 200,
+            contentType: 'application/json; charset=utf-8',
+            body: JSON.stringify({ version: 8, sources: {}, layers: [{ id: 'fond', type: 'background', paint: { 'background-color': '#dbe9f5' } }] })
         }));
         await page.addInitScript(() => {
             try {

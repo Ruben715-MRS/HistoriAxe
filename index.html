@@ -273,6 +273,51 @@
         <div id="gallery-container" class="gallery-container"></div>
     </div>
 
+    <!-- ÉCRAN : ATLAS (carte de découverte, voir js/atlas.js et js/atlasCore.js) : tous les événements
+         qui ont un lieu, un point par fait, filtrables par catégorie et par époque. Toucher un point
+         (ou une pile de points au même endroit) ouvre la fiche. -->
+    <div id="screen-atlas" class="hidden">
+        <button class="back-btn" onclick="backFromAtlas()" aria-label="Retour"
+            data-i18n-attr="aria-label:nav.back">‹</button>
+        <div id="atlas-map" class="atlas-map" role="application" aria-label="Carte des événements"
+            data-i18n-attr="aria-label:atlas.map_label"></div>
+        <div class="atlas-search" id="atlas-search">
+            <input type="search" id="atlas-search-input" class="atlas-search-input" autocomplete="off"
+                autocapitalize="off" spellcheck="false" enterkeyhint="search" role="combobox"
+                aria-expanded="false" aria-controls="atlas-search-results" aria-autocomplete="list"
+                placeholder="Rechercher un événement ou un lieu" aria-label="Rechercher un événement ou un lieu"
+                data-i18n-attr="placeholder:atlas.search_placeholder;aria-label:atlas.search_placeholder">
+            <button type="button" class="atlas-search-clear hidden" id="atlas-search-clear" aria-label="Effacer la recherche"
+                data-i18n-attr="aria-label:atlas.search_clear">×</button>
+            <div class="atlas-search-results hidden" id="atlas-search-results" role="listbox"></div>
+        </div>
+        <div class="atlas-status" id="atlas-status" role="status" aria-live="polite"></div>
+        <div class="atlas-bottom">
+            <div class="atlas-sheet hidden" id="atlas-sheet" role="dialog" aria-label="Événements de ce lieu"
+                data-i18n-attr="aria-label:atlas.sheet_label">
+                <button type="button" class="atlas-sheet-close" id="atlas-sheet-close" aria-label="Fermer"
+                    data-i18n-attr="aria-label:nav.close">×</button>
+                <div class="atlas-sheet-body" id="atlas-sheet-body"></div>
+            </div>
+            <div class="atlas-controls">
+                <div class="atlas-controls-head">
+                    <span class="atlas-count" id="atlas-count"></span>
+                    <span class="atlas-years" id="atlas-years"></span>
+                </div>
+                <div class="atlas-chips" id="atlas-cats" role="group" aria-label="Catégories"
+                    data-i18n-attr="aria-label:atlas.cats_label"></div>
+                <div class="atlas-time">
+                    <input type="range" class="atlas-range" id="atlas-from" min="0" max="1000" value="0"
+                        aria-label="Époque : début" data-i18n-attr="aria-label:atlas.from_label">
+                    <input type="range" class="atlas-range" id="atlas-to" min="0" max="1000" value="1000"
+                        aria-label="Époque : fin" data-i18n-attr="aria-label:atlas.to_label">
+                </div>
+                <div class="atlas-chips" id="atlas-presets" role="group" aria-label="Époques"
+                    data-i18n-attr="aria-label:atlas.presets_label"></div>
+            </div>
+        </div>
+    </div>
+
     <!-- ÉCRAN 3 : THÈMES (Sous-sections) -->
     <div id="screen-themes" class="list-screen hidden">
         <button class="back-btn" onclick="backFromThemes()" aria-label="Retour"
@@ -864,7 +909,7 @@
         </div>
 
         <div class="geo-body">
-            <div class="geo-scope-chip" id="geo-scope-label" data-i18n="carte.world_label">Monde</div>
+            <div class="geo-scope-chip" id="geo-scope-label"></div>
             <div class="quiz-question-card" data-focus-target>
                 <div class="geo-phase-kicker" id="geo-phase-kicker" data-i18n="carte.where_kicker">Où cet événement
                     s'est-il déroulé ?</div>
@@ -875,9 +920,16 @@
             <div class="geo-reveal-label hidden" id="geo-reveal-label"></div>
 
             <div class="geo-map-phase" id="geo-map-phase">
+                <p class="geo-hint" id="geo-hint"></p>
                 <div class="geo-map-frame">
-                    <div class="geo-map-svg-holder" id="geo-map-svg-holder"></div>
-                    <div class="geo-pins-layer" id="geo-pins-layer"></div>
+                    <div id="geo-map" class="geo-map" tabindex="0" role="application" aria-label="Carte sans noms : placez l'événement"
+                        data-i18n-attr="aria-label:carte.map_label"></div>
+                    <div class="geo-crosshair" aria-hidden="true"></div>
+                </div>
+                <div class="geo-status" id="geo-status" role="status" aria-live="polite"></div>
+                <div class="geo-actions">
+                    <button type="button" class="btn" id="geo-validate-btn" disabled data-i18n="carte.validate">Valider</button>
+                    <button type="button" class="btn hidden" id="geo-continue-btn" data-i18n="carte.continue">Continuer</button>
                 </div>
             </div>
 
@@ -1152,6 +1204,10 @@
             <div id="modal-linked-row" class="modal-linked-row hidden">
                 <div class="modal-linked-label" id="modal-linked-label" data-i18n="modal.linked_label">Vu aussi dans…</div>
                 <div class="modal-linked-list" id="modal-linked-list"></div>
+            </div>
+            <div id="modal-map-row" class="modal-map-row hidden">
+                <button type="button" class="btn btn-secondary" id="modal-map-btn"
+                    data-i18n="atlas.see_on_map">📍 Voir sur la carte</button>
             </div>
             <div id="modal-bio-row" class="modal-bio-row hidden">
                 <button type="button" class="btn btn-secondary" id="modal-bio-btn"
@@ -1682,6 +1738,9 @@
     <script src="js/mindMap.js"></script>
     <script src="js/simultaneity.js"></script>
     <script src="js/linkedEvents.js"></script>
+    <script src="js/atlasCore.js"></script>
+    <script src="js/geoPlace.js"></script>
+    <script src="js/atlas.js"></script>
     <script src="js/gameModes.js"></script>
     <script src="js/gallery.js"></script>
     <script src="js/app.js"></script>
