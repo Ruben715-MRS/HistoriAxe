@@ -22,11 +22,28 @@ def main():
             annots[a['id']] = a
     geo = json.load(open(os.path.join(WORK, 'geocoded.json')))
     fx = os.path.join(WORK, 'fixes.json')
+    review = collections.defaultdict(list)
     if os.path.exists(fx):
-        geo.update(json.load(open(fx)))   # reprises de 14_fix_unplaced.py, prioritaires
+        # Reprises de 14_fix_unplaced.py, prioritaires. Pour un point DÉJÀ accepté, on ne le déplace pas de
+        # plus de 150 km : au-delà, la requête a probablement trouvé un homonyme (Saratoga, Californie
+        # pour la bataille de Saratoga, New York) ; on garde l'ancien et on le signale à la relecture.
+        import math
+        def hav(a, b, c, d):
+            p = math.pi / 180
+            x = math.sin((c - a) * p / 2) ** 2 + math.cos(a * p) * math.cos(c * p) * math.sin((d - b) * p / 2) ** 2
+            return 2 * 6371 * math.asin(math.sqrt(x))
+        for i, v in json.load(open(fx)).items():
+            old = geo.get(i)
+            if old and old.get('status') in ('ok', 'downgraded') and 'lat' in old and hav(old['lat'], old['lon'], v['lat'], v['lon']) > 150:
+                review['fix-rejected-far'].append({'id': i, 'old': old['name'], 'new': v['name']})
+                continue
+            geo[i] = v
+    mf = os.path.join(WORK, 'manual_fixes.json')
+    if os.path.exists(mf):
+        geo.update(json.load(open(mf)))   # corrections vérifiées à la main, sans garde de distance
     path = os.path.join(ROOT, 'assets', 'geo', 'events-geo.json')
     points = json.load(open(path))['points'] if os.path.exists(path) else {}
-    review = collections.defaultdict(list); n = 0
+    n = 0
     for fid, a in annots.items():
         if fid not in facts:
             review['unknown-fact'].append(fid); continue
