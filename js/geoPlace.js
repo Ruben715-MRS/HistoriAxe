@@ -140,6 +140,7 @@
         let n = 0;
         for (let i = 0; i < themes.length; i++) {
             const theme = themes[i];
+            if (AtlasCore.isExcludedTheme(theme.id)) continue;
             const events = theme.events || [];
             for (let j = 0; j < events.length; j++) {
                 const pt = points[theme.id + ':' + events[j].id];

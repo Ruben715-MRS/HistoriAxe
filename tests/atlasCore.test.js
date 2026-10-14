@@ -277,3 +277,19 @@ test('vraie base : on retrouve Verdun par son nom', { skip }, () => {
     assert.ok(res.events.length > 0);
     assert.ok(res.places.some(p => /verdun/i.test(p.label)));
 });
+
+test('l\'histoire juive en années hébraïques n\'est pas sur la carte, celle en années civiles si', () => {
+    const heb = entry('thm_histoire_juive_hebraique', ev('h1', 'Déclaration d\'indépendance d\'Israël', 5708));
+    const civ = entry('thm_histoire_juive_civile', ev('c1', 'Déclaration d\'indépendance d\'Israël', 1948));
+    const points = { 'thm_histoire_juive_hebraique:h1': [32.06, 34.77, 's', 'Tel-Aviv', 0], 'thm_histoire_juive_civile:c1': [32.06, 34.77, 's', 'Tel-Aviv', 0] };
+    const atlas = A.buildAtlas([heb, civ], points);
+    const items = [];
+    atlas.index.forEach(p => p.items.forEach(i => items.push(i)));
+    assert.equal(items.length, 1);
+    assert.equal(items[0].year, 1948);
+});
+
+test('vraie base : aucun événement de la carte n\'a une date postérieure à 2100', { skip }, () => {
+    const atlas = loadRealAtlas();
+    atlas.index.forEach(pile => pile.items.forEach(it => assert.ok(it.year <= 2100, `${it.key} : ${it.year}`)));
+});

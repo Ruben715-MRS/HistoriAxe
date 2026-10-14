@@ -45,6 +45,15 @@
         'Personnages illustres': 4
     };
 
+    // Thèmes absents de la carte. L'histoire juive en années hébraïques date en 5708, pas en 1948 :
+    // sur une frise du monde ses événements ne se placent pas (l'histoire juive en années civiles,
+    // elle, y figure). Même exclusion que js/dailyEngine.js.
+    const EXCLUDED_THEME_IDS = ['thm_histoire_juive_hebraique'];
+
+    function isExcludedTheme(themeId) {
+        return EXCLUDED_THEME_IDS.indexOf(themeId) !== -1;
+    }
+
     function entryKey(entry) {
         return entry.theme.id + ':' + entry.event.id;
     }
@@ -82,6 +91,7 @@
         const singles = [];
         entries.forEach(function (entry) {
             if (entry.category && entry.category.isCustomCategory) return;
+            if (isExcludedTheme(entry.theme.id)) return;
             const key = LinkedEvents.factKey(entry.event);
             if (!key) { singles.push([entry]); return; }
             if (!byKey.has(key)) byKey.set(key, []);
@@ -281,6 +291,8 @@
     }
 
     return {
+        isExcludedTheme: isExcludedTheme,
+        EXCLUDED_THEME_IDS: EXCLUDED_THEME_IDS,
         normalizeText: normalizeText,
         searchAtlas: searchAtlas,
         scoreEntry: scoreEntry,
