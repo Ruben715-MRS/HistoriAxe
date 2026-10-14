@@ -219,7 +219,70 @@
         return Math.round(year / step) * step;
     }
 
+    // --- RECHERCHE ----------------------------------------------------------
+    // On cherche dans le titre et dans le nom du lieu, sans tenir compte des accents, de la casse
+    // ni de la ponctuation ; tous les mots tapés doivent s'y trouver (dans n'importe quel ordre).
+    function normalizeText(text) {
+        return String(text || '').toLowerCase()
+            .replace(/œ/g, 'oe').replace(/æ/g, 'ae').replace(/ß/g, 'ss')
+            .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+            .replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
+    }
+
+    // Tire des mots d'une requête ; vide si elle est trop courte pour chercher.
+    function queryWords(query) {
+        const norm = normalizeText(query);
+        if (norm.length < 2) return [];
+        return norm.split(' ');
+    }
+
+    // Cherche dans une carte construite (buildAtlas().index).
+    //   → { places: [{ label, pileKeys, n }], events: [{ item, pileKey }] }
+    // Les lieux sont regroupés par nom ; les événements viennent après, triés par pertinence
+    // (titre commençant par la requête, puis mot entier, puis le reste), puis par date.
+    function searchAtlas(index, query, limits) {
+        const words = queryWords(query);
+        const maxPlaces = (limits && limits.places) || 5;
+        const maxEvents = (limits && limits.events) || 30;
+        const out = { places: [], events: [] };
+        if (words.length === 0) return out;
+        const joined = words.join(' ');
+        const placeMap = new Map();
+        const hits = [];
+        index.forEach(function (pile, pileKey) {
+            pile.items.forEach(function (item) {
+                const label = item.label || '';
+                const labelNorm = item._labelNorm || (item._labelNorm = normalizeText(label));
+                const titleNorm = item._titleNorm || (item._titleNorm = normalizeText(item.entry.event.titre));
+                if (label && words.every(function (w) { return labelNorm.indexOf(w) !== -1; })) {
+                    if (!placeMap.has(label)) placeMap.set(label, { label: label, norm: labelNorm, pileKeys: new Set(), n: 0 });
+                    const pl = placeMap.get(label);
+                    pl.pileKeys.add(pileKey);
+                    pl.n++;
+                }
+                const hay = titleNorm + ' ' + labelNorm;
+                if (!words.every(function (w) { return hay.indexOf(w) !== -1; })) return;
+                let rank = 2;
+                if (titleNorm.indexOf(joined) === 0) rank = 0;
+                else if ((' ' + titleNorm + ' ').indexOf(' ' + joined) !== -1) rank = 1;
+                hits.push({ item: item, pileKey: pileKey, rank: rank });
+            });
+        });
+        out.places = Array.from(placeMap.values()).sort(function (a, b) {
+            const as = a.norm.indexOf(joined) === 0 ? 0 : 1;
+            const bs = b.norm.indexOf(joined) === 0 ? 0 : 1;
+            return as - bs || b.n - a.n || a.label.localeCompare(b.label);
+        }).slice(0, maxPlaces).map(function (p) {
+            return { label: p.label, pileKeys: Array.from(p.pileKeys), n: p.n };
+        });
+        hits.sort(function (a, b) { return a.rank - b.rank || a.item.year - b.item.year; });
+        out.events = hits.slice(0, maxEvents).map(function (h) { return { item: h.item, pileKey: h.pileKey }; });
+        return out;
+    }
+
     return {
+        normalizeText: normalizeText,
+        searchAtlas: searchAtlas,
         scoreEntry: scoreEntry,
         pickRepresentative: pickRepresentative,
         groupFacts: groupFacts,

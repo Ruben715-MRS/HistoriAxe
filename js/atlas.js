@@ -122,6 +122,7 @@ window.addEventListener('load', function () { setTimeout(atlasPrefetch, 3000); }
 
 function initAtlas() {
     renderAtlasControls();
+    atlasBindSearch();
     closeAtlasSheet();
     atlasStatus(t('atlas.loading'));
     atlasEnsureData().then(function (ok) {
@@ -562,4 +563,162 @@ function atlasConsumeFocus() {
     if (!pile) return;
     atlasMap.jumpTo({ center: pile.coords, zoom: pile.prec === 'z' ? 5 : 9 });
     atlasShowPiles([pk], evt);
+}
+
+
+// --- RECHERCHE --------------------------------------------------------------
+// Un champ en haut de la carte : on tape un titre ou un nom de lieu, la liste propose des lieux
+// (regroupés par nom) puis des événements ; choisir l'un d'eux cadre la carte et ouvre la feuille.
+
+let atlasSearchBound = false;
+let atlasSearchTimer = null;
+let atlasSearchHits = [];   // actions des résultats affichés, dans l'ordre (Entrée prend la première)
+
+function atlasBindSearch() {
+    if (atlasSearchBound) return;
+    const input = document.getElementById('atlas-search-input');
+    const clear = document.getElementById('atlas-search-clear');
+    if (!input || !clear) return;
+    atlasSearchBound = true;
+    input.addEventListener('input', function () {
+        clear.classList.toggle('hidden', input.value === '');
+        clearTimeout(atlasSearchTimer);
+        atlasSearchTimer = setTimeout(atlasRunSearch, 120);
+    });
+    input.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+            if (input.value) atlasClearSearch(); else input.blur();
+            e.stopPropagation();
+        } else if (e.key === 'Enter') {
+            e.preventDefault();
+            clearTimeout(atlasSearchTimer);
+            atlasRunSearch();
+            if (atlasSearchHits.length) atlasSearchHits[0]();
+        }
+    });
+    clear.addEventListener('click', function () { atlasClearSearch(); input.focus(); });
+}
+
+function atlasClearSearch() {
+    const input = document.getElementById('atlas-search-input');
+    if (input) input.value = '';
+    const clear = document.getElementById('atlas-search-clear');
+    if (clear) clear.classList.add('hidden');
+    atlasHideSearchResults();
+}
+
+function atlasHideSearchResults() {
+    atlasSearchHits = [];
+    const box = document.getElementById('atlas-search-results');
+    const input = document.getElementById('atlas-search-input');
+    if (box) { box.classList.add('hidden'); box.innerHTML = ''; }
+    if (input) input.setAttribute('aria-expanded', 'false');
+}
+
+function atlasRunSearch() {
+    const input = document.getElementById('atlas-search-input');
+    const box = document.getElementById('atlas-search-results');
+    if (!input || !box) return;
+    const query = input.value;
+    atlasSearchHits = [];
+    box.innerHTML = '';
+    if (!atlasModel || query.trim().length < 2) { atlasHideSearchResults(); return; }
+    const res = AtlasCore.searchAtlas(atlasModel.index, query);
+    const section = function (titleKey) {
+        const h = document.createElement('div');
+        h.className = 'atlas-search-section';
+        h.textContent = t(titleKey);
+        box.appendChild(h);
+    };
+    const option = function (action) {
+        atlasSearchHits.push(action);
+        return function () { action(); };
+    };
+    if (res.places.length) {
+        section('atlas.search_places');
+        res.places.forEach(function (pl) {
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'atlas-search-item';
+            btn.setAttribute('role', 'option');
+            const name = document.createElement('span');
+            name.className = 'atlas-search-main';
+            name.textContent = '📍 ' + pl.label;
+            const n = document.createElement('span');
+            n.className = 'atlas-search-aside';
+            n.textContent = t('atlas.search_place_n', { n: pl.n.toLocaleString(i18n && i18n.currentLang ? i18n.currentLang : 'fr') });
+            btn.append(name, n);
+            btn.onclick = option(function () { atlasGoToPlace(pl); });
+            box.appendChild(btn);
+        });
+    }
+    if (res.events.length) {
+        section('atlas.search_events');
+        res.events.forEach(function (hit) {
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'atlas-search-item';
+            btn.setAttribute('role', 'option');
+            const year = document.createElement('span');
+            year.className = 'atlas-row-year';
+            year.textContent = atlasYearLabel(hit.item.year);
+            const title = document.createElement('span');
+            title.className = 'atlas-search-main';
+            title.textContent = hit.item.entry.event.titre;
+            btn.append(year, title);
+            if (hit.item.label) {
+                const where = document.createElement('span');
+                where.className = 'atlas-search-aside';
+                where.textContent = hit.item.label;
+                btn.appendChild(where);
+            }
+            btn.onclick = option(function () { atlasGoToEvent(hit); });
+            box.appendChild(btn);
+        });
+    }
+    if (!res.places.length && !res.events.length) {
+        const none = document.createElement('div');
+        none.className = 'atlas-search-none';
+        none.textContent = t('atlas.search_none');
+        box.appendChild(none);
+    }
+    box.classList.remove('hidden');
+    input.setAttribute('aria-expanded', 'true');
+}
+
+// Un résultat de recherche ne doit pas être caché par un filtre d'époque ou de catégorie.
+function atlasResetFilterForSearch() {
+    const touched = atlasFilter.from !== null || atlasFilter.to !== null || atlasFilter.cats;
+    if (!touched) return;
+    atlasFilter = { from: null, to: null, cats: null };
+    renderAtlasControls();
+    syncAtlasControls();
+    atlasRefresh();
+}
+
+function atlasGoToEvent(hit) {
+    atlasClearSearch();
+    document.getElementById('atlas-search-input').blur();
+    atlasResetFilterForSearch();
+    const pile = atlasModel.index.get(hit.pileKey);
+    if (!pile || !atlasMap) return;
+    atlasMap.flyTo({ center: pile.coords, zoom: pile.prec === 'z' ? 5 : 9, essential: true });
+    atlasShowPiles([hit.pileKey], hit.item.entry.event);
+}
+
+function atlasGoToPlace(pl) {
+    atlasClearSearch();
+    document.getElementById('atlas-search-input').blur();
+    atlasResetFilterForSearch();
+    if (!atlasMap) return;
+    const coords = pl.pileKeys.map(function (k) { return atlasModel.index.get(k).coords; });
+    if (coords.length === 1) {
+        atlasMap.flyTo({ center: coords[0], zoom: 9, essential: true });
+    } else {
+        const b = coords.reduce(function (acc, c) {
+            return [[Math.min(acc[0][0], c[0]), Math.min(acc[0][1], c[1])], [Math.max(acc[1][0], c[0]), Math.max(acc[1][1], c[1])]];
+        }, [[coords[0][0], coords[0][1]], [coords[0][0], coords[0][1]]]);
+        atlasMap.fitBounds(b, { padding: 60, maxZoom: 9, essential: true });
+    }
+    atlasShowPiles(pl.pileKeys);
 }

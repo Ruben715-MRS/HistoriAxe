@@ -281,6 +281,16 @@
             data-i18n-attr="aria-label:nav.back">‹</button>
         <div id="atlas-map" class="atlas-map" role="application" aria-label="Carte des événements"
             data-i18n-attr="aria-label:atlas.map_label"></div>
+        <div class="atlas-search" id="atlas-search">
+            <input type="search" id="atlas-search-input" class="atlas-search-input" autocomplete="off"
+                autocapitalize="off" spellcheck="false" enterkeyhint="search" role="combobox"
+                aria-expanded="false" aria-controls="atlas-search-results" aria-autocomplete="list"
+                placeholder="Rechercher un événement ou un lieu" aria-label="Rechercher un événement ou un lieu"
+                data-i18n-attr="placeholder:atlas.search_placeholder;aria-label:atlas.search_placeholder">
+            <button type="button" class="atlas-search-clear hidden" id="atlas-search-clear" aria-label="Effacer la recherche"
+                data-i18n-attr="aria-label:atlas.search_clear">×</button>
+            <div class="atlas-search-results hidden" id="atlas-search-results" role="listbox"></div>
+        </div>
         <div class="atlas-status" id="atlas-status" role="status" aria-live="polite"></div>
         <div class="atlas-bottom">
             <div class="atlas-sheet hidden" id="atlas-sheet" role="dialog" aria-label="Événements de ce lieu"

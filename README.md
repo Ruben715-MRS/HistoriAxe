@@ -452,6 +452,13 @@ base : un événement n'est que dans un fait, coordonnées valides) ; `tests/geo
 de points) ; `e2e/atlas.spec.js` (commandes, feuille, fiche, « Voir sur la carte »). La carte
 elle-même (WebGL, réseau) n'est pas exercée par les e2e.
 
+**Recherche.** Un champ en haut de l'Atlas cherche dans les titres et les noms de lieux (sans accents
+ni casse, mots dans n'importe quel ordre, dès 2 lettres), hors connexion puisque tout est dans le
+modèle déjà chargé. Les lieux sont regroupés par nom, puis viennent les événements (titre commençant par
+la requête d'abord). Choisir un résultat lève les filtres d'époque/catégorie qui le cacheraient, cadre la
+carte et ouvre la feuille ; Entrée prend le premier résultat, Échap efface. Logique : `searchAtlas` dans
+`js/atlasCore.js` (`tests/atlasCore.test.js`), écran dans `js/atlas.js` (`e2e/atlas.spec.js`).
+
 ## Le Mode Carte : poser l'événement sur la carte
 
 Deux temps par question, comme avant : « Où ? » puis « Quand ? » (quatre dates, inchangé).

@@ -230,3 +230,50 @@ test('vraie base : les faits liés entre thèmes n\'ont bien qu\'un point (Lasca
     // Un fait lié ouvre une seule fiche : son représentant est l'un de ses membres.
     multi.forEach(it => assert.ok(it.members.includes(it.entry)));
 });
+
+// ---------------------------------------------------------------- recherche
+
+function searchAtlasOf(specs) {
+    const entries = [];
+    const points = {};
+    specs.forEach(([id, titre, date, lat, lon, label]) => {
+        entries.push(entry('t' + id, ev(id, titre, date)));
+        points['t' + id + ':' + id] = [lat, lon, 'v', label, 0];
+    });
+    return A.buildAtlas(entries, points).index;
+}
+
+test('la recherche ignore accents, casse et ponctuation, et accepte les mots dans le désordre', () => {
+    assert.equal(A.normalizeText('Œuvre d’Été — Saint-Denis'), 'oeuvre d ete saint denis');
+    const index = searchAtlasOf([['a', 'Bataille de Verdun', 1916, 49.16, 5.38, 'Verdun']]);
+    assert.equal(A.searchAtlas(index, 'VERDUN bataille').events.length, 1);
+    assert.equal(A.searchAtlas(index, 'verdún').events.length, 1);
+    assert.equal(A.searchAtlas(index, 'marignan').events.length, 0);
+});
+
+test('une requête trop courte ne cherche rien', () => {
+    const index = searchAtlasOf([['a', 'Bataille de Verdun', 1916, 49.16, 5.38, 'Verdun']]);
+    assert.deepEqual(A.searchAtlas(index, 'v'), { places: [], events: [] });
+    assert.deepEqual(A.searchAtlas(index, '  '), { places: [], events: [] });
+});
+
+test('les lieux sont regroupés par nom ; le titre qui commence par la requête passe en premier', () => {
+    const index = searchAtlasOf([
+        ['a', 'Siège de Paris', 1870, 48.85, 2.35, 'Paris'],
+        ['b', 'Paris-Roubaix', 1896, 50.69, 3.17, 'Roubaix'],
+        ['c', 'Traité de Paris', 1763, 48.85, 2.35, 'Paris']
+    ]);
+    const res = A.searchAtlas(index, 'paris');
+    assert.equal(res.places.length, 1);
+    assert.equal(res.places[0].label, 'Paris');
+    assert.equal(res.places[0].n, 2);
+    assert.equal(res.events[0].item.entry.event.titre, 'Paris-Roubaix');
+    assert.equal(res.events.length, 3);
+});
+
+test('vraie base : on retrouve Verdun par son nom', { skip }, () => {
+    const atlas = loadRealAtlas();
+    const res = A.searchAtlas(atlas.index, 'verdun');
+    assert.ok(res.events.length > 0);
+    assert.ok(res.places.some(p => /verdun/i.test(p.label)));
+});

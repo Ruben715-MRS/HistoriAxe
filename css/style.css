@@ -7469,7 +7469,7 @@ input:not([type="range"]), label, select, summary, textarea {
 
 .atlas-status {
     position: absolute;
-    top: calc(env(safe-area-inset-top, 0px) + 18px);
+    top: calc(env(safe-area-inset-top, 0px) + 68px);
     left: 50%;
     transform: translateX(-50%);
     z-index: 40;
@@ -7759,4 +7759,113 @@ input:not([type="range"]), label, select, summary, textarea {
     #btn-atlas .quick-action-label {
         font-size: 12px !important;
     }
+}
+
+/* Recherche : un champ à droite du bouton retour, sa liste en dessous (au-dessus de la carte). */
+.atlas-search {
+    position: absolute;
+    top: calc(env(safe-area-inset-top, 0px) + 14px);
+    left: 66px;
+    right: 56px;
+    max-width: 520px;
+    z-index: 50;
+}
+
+.atlas-search-input {
+    width: 100%;
+    height: 42px;
+    box-sizing: border-box;
+    padding: 0 38px 0 16px;
+    border-radius: 9999px;
+    border: 1px solid var(--border-soft);
+    background: var(--surface);
+    color: var(--text-dark);
+    box-shadow: var(--card-shadow);
+    font-size: 16px;
+}
+
+.atlas-search-clear {
+    position: absolute;
+    top: 0;
+    right: 4px;
+    width: 38px;
+    height: 42px;
+    border: none;
+    background: transparent;
+    color: var(--text-dark);
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.atlas-search-results {
+    margin-top: 6px;
+    max-height: min(60vh, 420px);
+    overflow-y: auto;
+    background: var(--surface);
+    color: var(--text-dark);
+    border: 1px solid var(--border-soft);
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+}
+
+.atlas-search-section {
+    padding: 8px 14px 4px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    opacity: 0.65;
+}
+
+.atlas-search-item {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    width: 100%;
+    padding: 10px 14px;
+    border: none;
+    border-bottom: 1px solid var(--border-soft);
+    background: transparent;
+    color: var(--text-dark);
+    font-size: 14px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.atlas-search-item:hover,
+.atlas-search-item:focus-visible {
+    background: var(--surface-2);
+}
+
+.atlas-search-main {
+    flex: 1;
+    min-width: 0;
+}
+
+.atlas-search-aside {
+    flex: none;
+    max-width: 38%;
+    font-size: 12px;
+    opacity: 0.65;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.atlas-search-none {
+    padding: 14px;
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+.atlas-search-input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+    display: none;
+}
+
+.atlas-search-item .atlas-row-year {
+    flex: none;
+    min-width: 0;
+    width: 3.6em;
 }

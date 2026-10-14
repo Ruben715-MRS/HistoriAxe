@@ -105,3 +105,27 @@ test('retour : l\'Atlas ramène aux catégories', async ({ page }) => {
     await page.locator('#screen-atlas .back-btn').click();
     expect(await visibleScreen(page)).toBe('screen-categories');
 });
+
+test('la recherche propose des lieux et des événements, et choisir un résultat ouvre la feuille', async ({ page }) => {
+    await page.goto('/');
+    await ouvrirAtlas(page);
+    const input = page.locator('#atlas-search-input');
+    await input.fill('v');
+    await expect(page.locator('#atlas-search-results')).toBeHidden();
+    await input.fill('verdun');
+    await expect(page.locator('#atlas-search-results')).toBeVisible();
+    await expect(page.locator('.atlas-search-section').first()).toBeVisible();
+    expect(await page.locator('.atlas-search-item').count()).toBeGreaterThan(1);
+    // Un filtre d'époque qui cacherait le résultat est levé.
+    await page.locator('#atlas-presets [data-preset="ancient"]').click();
+    await page.locator('.atlas-search-item').last().click();
+    await expect(page.locator('#atlas-search-results')).toBeHidden();
+    await expect(page.locator('#atlas-sheet')).toBeVisible();
+    expect(await page.evaluate(() => [atlasFilter.from, atlasFilter.to])).toEqual([null, null]);
+    // Une requête sans résultat le dit, et « × » efface.
+    await input.fill('zzzzqx');
+    await expect(page.locator('.atlas-search-none')).toBeVisible();
+    await page.locator('#atlas-search-clear').click();
+    await expect(input).toHaveValue('');
+    await expect(page.locator('#atlas-search-results')).toBeHidden();
+});
