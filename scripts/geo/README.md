@@ -37,3 +37,11 @@ qu'on annote.
 - **Une règle « un lieu doit s'imposer »** : une nomination, une loi ou un règne dont le texte ne nomme pas de
   lieu n'a pas de point (sans elle, les lectures posent la capitale par défaut).
 - Environ 40 % des événements n'ont pas de point (mouvements, techniques, lois, idées) : voulu.
+
+## 15 — relier les fiches qui citent le même article
+
+`15_link_same_article.py` : une fiche dont le lien est une recherche Wikipédia (`…/w/index.php?search=X`) est le même
+fait que celles dont le lien est l'article X la même année, mais `js/linkedEvents.js` ne reconnaît un fait qu'à
+l'identité du lien. Le script remplace ces recherches par l'article (seulement quand l'article est cité par un *autre*
+thème : deux fiches d'un même thème peuvent être deux événements distincts) puis donne à chaque fait lié un seul point.
+`REJETS` liste les rapprochements écartés après lecture, `OVERRIDES` les points choisis à la main.
