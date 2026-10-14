@@ -7869,3 +7869,88 @@ input:not([type="range"]), label, select, summary, textarea {
     min-width: 0;
     width: 3.6em;
 }
+
+/* Le bouton de disposition n'a de sens que sur écran large. */
+.atlas-layout-btn {
+    display: none;
+    flex: none;
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--border-soft);
+    border-radius: 8px;
+    background: var(--surface-2);
+    color: var(--text-dark);
+    font-size: 16px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.atlas-layout-btn[aria-pressed="true"] {
+    background: var(--selected-tint);
+    border-color: var(--primary-blue);
+}
+
+@media (min-width: 900px) {
+    .atlas-layout-btn {
+        display: block;
+    }
+}
+
+/* Disposition « panneau latéral » : une colonne à gauche (filtres puis fiche), la carte occupe le reste. */
+#screen-atlas.atlas-side {
+    --atlas-side-w: 380px;
+}
+
+#screen-atlas.atlas-side #atlas-map.atlas-map {
+    left: var(--atlas-side-w);
+}
+
+#screen-atlas.atlas-side .atlas-bottom {
+    top: 0;
+    right: auto;
+    width: var(--atlas-side-w);
+    box-sizing: border-box;
+    padding: calc(env(safe-area-inset-top, 0px) + 68px) 0 0;
+    gap: 0;
+    background: var(--surface);
+    border-right: 1px solid var(--border-soft);
+    box-shadow: var(--card-shadow);
+    pointer-events: auto;
+    overflow: hidden;
+}
+
+#screen-atlas.atlas-side .atlas-controls,
+#screen-atlas.atlas-side .atlas-sheet {
+    max-width: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+#screen-atlas.atlas-side .atlas-controls {
+    order: 1;
+    flex: none;
+    border-bottom: 1px solid var(--border-soft);
+}
+
+#screen-atlas.atlas-side .atlas-sheet {
+    order: 2;
+    flex: 1 1 auto;
+    min-height: 0;
+    max-height: none;
+}
+
+#screen-atlas.atlas-side .atlas-sheet-body {
+    flex: 1 1 auto;
+    min-height: 0;
+}
+
+#screen-atlas.atlas-side .atlas-search {
+    right: auto;
+    width: calc(var(--atlas-side-w) - 78px);
+}
+
+#screen-atlas.atlas-side .atlas-status {
+    left: calc(50% + var(--atlas-side-w) / 2);
+    top: calc(env(safe-area-inset-top, 0px) + 18px);
+}

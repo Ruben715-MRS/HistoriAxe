@@ -459,6 +459,10 @@ la requête d'abord). Choisir un résultat lève les filtres d'époque/catégori
 carte et ouvre la feuille ; Entrée prend le premier résultat, Échap efface. Logique : `searchAtlas` dans
 `js/atlasCore.js` (`tests/atlasCore.test.js`), écran dans `js/atlas.js` (`e2e/atlas.spec.js`).
 
+**Disposition.** Sur écran large (≥ 900 px), la fiche et les filtres s'affichent dans une colonne à gauche
+(comme Google Maps) au lieu de masquer le centre de la carte ; le bouton ▤ de la colonne les remet en bas, et
+le choix est mémorisé (`historiaxe_atlas_layout`). Sur téléphone, toujours en bas.
+
 ## Le Mode Carte : poser l'événement sur la carte
 
 Deux temps par question, comme avant : « Où ? » puis « Quand ? » (quatre dates, inchangé).

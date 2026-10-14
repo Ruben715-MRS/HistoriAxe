@@ -123,6 +123,7 @@ window.addEventListener('load', function () { setTimeout(atlasPrefetch, 3000); }
 function initAtlas() {
     renderAtlasControls();
     atlasBindSearch();
+    atlasBindLayout();
     closeAtlasSheet();
     atlasStatus(t('atlas.loading'));
     atlasEnsureData().then(function (ok) {
@@ -721,4 +722,47 @@ function atlasGoToPlace(pl) {
         atlasMap.fitBounds(b, { padding: 60, maxZoom: 9, essential: true });
     }
     atlasShowPiles(pl.pileKeys);
+}
+
+
+// --- DISPOSITION : panneau latéral (écrans larges) ou feuille en bas -------------
+// Sur un écran large, la feuille et les filtres en bas masquent le centre de la carte : ils passent
+// par défaut dans une colonne à gauche, comme dans Google Maps. Le joueur peut rebasculer en bas ;
+// son choix est mémorisé. Sur téléphone (< 900 px) la colonne n'a pas la place : toujours en bas.
+
+const ATLAS_LAYOUT_KEY = 'historiaxe_atlas_layout';
+const ATLAS_SIDE_MIN_WIDTH = 900;
+let atlasLayoutBound = false;
+
+function atlasLayoutPref() {
+    try { return localStorage.getItem(ATLAS_LAYOUT_KEY) === 'bottom' ? 'bottom' : 'side'; } catch (e) { return 'side'; }
+}
+
+function atlasIsWide() {
+    return window.innerWidth >= ATLAS_SIDE_MIN_WIDTH;
+}
+
+function atlasApplyLayout() {
+    const screen = document.getElementById('screen-atlas');
+    const btn = document.getElementById('atlas-layout-btn');
+    if (!screen) return;
+    const side = atlasIsWide() && atlasLayoutPref() === 'side';
+    const was = screen.classList.contains('atlas-side');
+    screen.classList.toggle('atlas-side', side);
+    if (btn) btn.setAttribute('aria-pressed', String(side));
+    if (was !== side && atlasMap) setTimeout(function () { atlasMap.resize(); }, 0);
+}
+
+function atlasBindLayout() {
+    atlasApplyLayout();
+    if (atlasLayoutBound) return;
+    const btn = document.getElementById('atlas-layout-btn');
+    if (!btn) return;
+    atlasLayoutBound = true;
+    btn.addEventListener('click', function () {
+        const next = atlasLayoutPref() === 'side' ? 'bottom' : 'side';
+        try { localStorage.setItem(ATLAS_LAYOUT_KEY, next); } catch (e) { /* mémoire indisponible : le choix ne dure que cette fois */ }
+        atlasApplyLayout();
+    });
+    window.addEventListener('resize', atlasApplyLayout);
 }

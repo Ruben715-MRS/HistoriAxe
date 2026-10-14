@@ -129,3 +129,26 @@ test('la recherche propose des lieux et des événements, et choisir un résulta
     await expect(input).toHaveValue('');
     await expect(page.locator('#atlas-search-results')).toBeHidden();
 });
+
+test('sur écran large le panneau est latéral ; le bouton le remet en bas et le choix est mémorisé', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 800 });
+    await page.goto('/');
+    await ouvrirAtlas(page);
+    await expect(page.locator('#screen-atlas')).toHaveClass(/atlas-side/);
+    const colonne = await page.locator('.atlas-bottom').boundingBox();
+    expect(colonne.x).toBe(0);
+    expect(colonne.width).toBeLessThan(500);
+    await page.locator('#atlas-layout-btn').click();
+    await expect(page.locator('#screen-atlas')).not.toHaveClass(/atlas-side/);
+    await page.reload();
+    await ouvrirAtlas(page);
+    await expect(page.locator('#screen-atlas')).not.toHaveClass(/atlas-side/);
+});
+
+test('sur téléphone, la feuille reste en bas et le bouton de disposition est masqué', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 780 });
+    await page.goto('/');
+    await ouvrirAtlas(page);
+    await expect(page.locator('#screen-atlas')).not.toHaveClass(/atlas-side/);
+    await expect(page.locator('#atlas-layout-btn')).toBeHidden();
+});
