@@ -73,8 +73,16 @@
         return s;
     }
 
-    // La fiche à ouvrir pour un groupe : le meilleur score ; à égalité, l'ordre de la base.
+    // Fiches imposées : quand le score en désigne une qui ne représente pas bien le fait (le Débarquement
+    // tombait sur « Supériorité aérienne alliée en Normandie », fiche du thème de l'aviation), on nomme
+    // celle qui l'incarne. Clé « thème:id ».
+    const PREFERRED_KEYS = ['thm_bat:b52'];
+
+    // La fiche à ouvrir pour un groupe : la fiche imposée s'il y en a une, sinon le meilleur score ;
+    // à égalité, l'ordre de la base.
     function pickRepresentative(members) {
+        const imposed = members.find(function (m) { return PREFERRED_KEYS.indexOf(entryKey(m)) !== -1; });
+        if (imposed) return imposed;
         let best = null;
         let bestScore = -Infinity;
         members.forEach(function (m) {
@@ -291,6 +299,7 @@
     }
 
     return {
+        PREFERRED_KEYS: PREFERRED_KEYS,
         isExcludedTheme: isExcludedTheme,
         EXCLUDED_THEME_IDS: EXCLUDED_THEME_IDS,
         normalizeText: normalizeText,

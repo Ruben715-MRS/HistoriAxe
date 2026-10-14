@@ -293,3 +293,19 @@ test('vraie base : aucun événement de la carte n\'a une date postérieure à 2
     const atlas = loadRealAtlas();
     atlas.index.forEach(pile => pile.items.forEach(it => assert.ok(it.year <= 2100, `${it.key} : ${it.year}`)));
 });
+
+test('une fiche imposée l\'emporte sur le score (Débarquement : « Grandes batailles » et non l\'aviation)', () => {
+    const URL_D = 'https://fr.wikipedia.org/wiki/D%C3%A9barquement_de_Normandie';
+    const aero = entry('thm_aero', ev('ae134', 'Supériorité aérienne alliée en Normandie', 1944, URL_D, 'x'.repeat(350)));
+    const bat = entry('thm_bat', ev('b52', 'Débarquement allié en Normandie (Jour J)', 1944, URL_D, 'x'.repeat(700)), { category: { nom: 'Culture générale' } });
+    assert.ok(A.scoreEntry(aero) > A.scoreEntry(bat), 'le score seul choisirait la fiche de l\'aviation');
+    assert.equal(A.pickRepresentative([aero, bat]), bat);
+    assert.equal(A.pickRepresentative([bat, aero]), bat);
+});
+
+test('vraie base : les fiches imposées existent et sont bien membres de leur fait', { skip }, () => {
+    const atlas = loadRealAtlas();
+    const found = new Set();
+    atlas.index.forEach(pile => pile.items.forEach(it => { if (A.PREFERRED_KEYS.includes(it.key)) found.add(it.key); }));
+    assert.deepEqual([...found].sort(), [...A.PREFERRED_KEYS].sort());
+});
