@@ -37,6 +37,7 @@ def main():
             review['failed'].append({'id': fid, 'place': a['place'], 'cc': a['cc']}); continue
         prec = a['precision']
         if g['status'] == 'downgraded': prec = 'ville'
+        if g.get('forceZone'): prec = 'zone'
         if g['status'] == 'suspect-large':
             review['suspect-large'].append({'id': fid, 'place': a['place'], 'name': g['name'], 'diag': g['diag']}); continue
         for m in facts[fid]['members']:

@@ -24,7 +24,7 @@ def diag_km(bbox):
 # on élargit la contrainte à la liste plutôt que de voir la requête échouer (Kourou en « GF »).
 CC_ALIASES = {'GF': 'fr,gf', 'MF': 'fr,mf,sx', 'BL': 'fr,bl', 'MQ': 'fr,mq', 'GP': 'fr,gp', 'PM': 'fr,pm', 'RE': 'fr,re', 'YT': 'fr,yt',
               'NC': 'fr,nc', 'PF': 'fr,pf', 'WF': 'fr,wf', 'PR': 'us,pr', 'GU': 'us,gu', 'VI': 'us,vi', 'HK': 'hk,cn', 'MO': 'mo,cn',
-              'XK': 'xk,rs,al', 'TW': 'tw,cn', 'PS': 'ps,il', 'EH': 'eh,ma', 'GL': 'gl,dk', 'FO': 'fo,dk'}
+              'XK': 'xk,rs,al', 'TW': 'tw,cn', 'PS': 'ps,il', 'EH': 'eh,ma', 'GL': 'gl,dk', 'FO': 'fo,dk', 'MP': 'mp,us', 'UM': 'um,us', 'SJ': 'sj,no', 'GS': 'gs', 'AS': 'as,us'}
 
 
 def query(q, cc, cache):

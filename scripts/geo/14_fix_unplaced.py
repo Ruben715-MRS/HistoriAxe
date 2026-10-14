@@ -19,6 +19,30 @@ g11 = importlib.util.module_from_spec(spec); spec.loader.exec_module(g11)
 WORK = g11.WORK
 REGIONLIKE = {'state', 'province', 'region', 'county', 'state_district', 'country', 'continent', 'department', 'territory', 'archipelago', 'ocean', 'sea'}
 LIMITS = {'site': 150, 'ville': 400, 'zone': 12000}
+CITYLIKE = {'city', 'town', 'village', 'municipality', 'suburb', 'borough', 'city_district', 'hamlet', 'quarter', 'neighbourhood'}
+# Lieux que Nominatim ne trouve que sous un autre nom (variantes tentées après les requêtes standard).
+MANUAL = {
+    "Gesher Benot Ya'aqov": ['Gesher Benot Yaakov', 'Jisr Banat Yaqub', 'Rosh Pina'], 'Grotte de Sibudu, KwaZulu-Natal': ['Sibudu', 'Ballito'],
+    'Mont Saint-Élie, Alaska': ['Mount Saint Elias'], 'Ghadir Khumm': ['Rabigh', 'Al Juhfah'], 'Monastère de Ganden, Dagzê, Lhassa': ['Ganden Monastery', 'Ganden'],
+    'Temples de Dilwara, Mont Abu': ['Dilwara Temples', 'Mount Abu'], 'Tabennesi, Qena': ['Dendera', 'Qena'], 'Kahun, Fayoum': ['El-Lahun', 'Lahun'],
+    'El-Achmounein, Minya': ['El Ashmunein', 'Mallawi'], 'Dinshaway, Menoufia': ['Denshway', 'Dinshway'], 'Abousir, Gizeh': ['Abusir', 'Abu Sir'],
+    'Gondishapur, Khouzestan': ['Gundeshapur', 'Shahabad Dezful', 'Dezful'], 'Péninsule de Kii': ['Kii Peninsula', 'Wakayama'],
+    'Haut-Karabagh': ['Nagorno-Karabakh', 'Stepanakert', 'Khankendi'], 'Dimawe, South-East District': ['Dimawe', 'Gaborone'],
+    'Troizina, Argolide': ['Troizina', 'Troezen', 'Galatas'], 'Fort Kyk-Over-Al, Cuyuni-Mazaruni': ['Kyk-over-al', 'Bartica'],
+    'Rivière Chongchon': ['Chongchon River', 'Chongchon'], 'Gare de Harbin': ['Harbin Railway Station', 'Harbin'], 'Panmunjeom, zone démilitarisée coréenne': ['Panmunjom', 'Kaesong'],
+    'Courlande, Lettonie': ['Courland', 'Kurzeme'], 'Calakmul, Campeche': ['Calakmul', 'Xpujil'], 'Khalkhin Gol, Dornod': ['Khalkhin Gol', 'Khalkh Gol'],
+    'Klushino, Smolensk Oblast': ['Klushino', 'Gagarin'], 'Champ de Koulikovo, Monastyrchino, Oblast de Toula': ['Kulikovo Field', 'Monastyrshchino'],
+    'Monts Imatong': ['Imatong Mountains', 'Torit'], 'Parc historique de Sukhothaï, Sukhothai': ['Sukhothai Historical Park', 'Sukhothai'],
+    'Hô Chi Minh-Ville': ['Ho Chi Minh City', 'Thành phố Hồ Chí Minh'], "Vallée de l'Ouergha": ['Ouergha', 'Ouerrha', 'Ouezzane'], 'Kufra, Libye': ['Al Jawf', 'Kufra'],
+    'Béotie': ['Boeotia', 'Thèbes'], 'Ionie, Aydın': ['Ionia', 'Izmir'], 'Bithynie, Turquie': ['Bithynia', 'Bursa'], 'Ny-Alesund, Svalbard': ['Ny-Ålesund', 'Ny Alesund'],
+    'Ile aux Ours, Svalbard': ['Bjørnøya', 'Bear Island'], 'Désert de Judée': ['Judean Desert', 'Jericho'], 'Mont Thabor, Galilée': ['Mount Tabor', 'Har Tavor'],
+    'Lumbini': ['Lumbini', 'Bhairahawa'], 'Tiruchuzhi, Tamil Nadu': ['Thiruchuli', 'Virudhunagar'], 'Arqa, Akkar': ['Arqa', 'Halba'], 'Bqaakafra, Bcharré': ['Bqaa Kafra', 'Bsharri'],
+    'Al-Qurayya, Soueida': ['Qraya', 'As-Suwayda'], "Priamoukhino, oblast de Tver": ['Pryamukhino'], "Selichtchi, oblast de Novgorod": ['Selishche'],
+    "Semionovo, oblast de Novgorod": ['Semenovo'], "Poustomazovo, oblast de Tver": ['Pustomazovo'], "Kourya, kraï de l'Altaï": ['Kurya'], "Boutka, oblast de Sverdlovsk": ['Butka'],
+    'Kypinos, Evros': ['Kipoi', 'Ipsala'], 'Atoll Midway': ['Midway Atoll', 'Midway Islands'], 'Atoll de Midway': ['Midway Atoll', 'Midway Islands'],
+    'Saipan': ['Saipan', 'Garapan'], 'Îles Mariannes du Nord': ['Northern Mariana Islands', 'Saipan'], 'Svalbard': ['Svalbard', 'Longyearbyen'],
+    "Hôpital de l'université Keio, Shinjuku, Tokyo": ['Keio University Hospital', 'Shinjuku'], 'Mopti': ['Mopti', 'Sévaré'],
+}
 CACHE = os.path.join(WORK, 'fixes_cache.json')
 
 
@@ -51,9 +75,15 @@ def pick(results, precision):
     for r in results or []:
         if precision != 'zone' and r['type'] in REGIONLIKE:
             continue
-        if r['diag'] <= LIMITS[precision]:
+        # Une grande ville dont l'emprise englobe des îles lointaines (Tokyo) garde un centre juste.
+        lim = 3000 if (precision != 'zone' and r['type'] in CITYLIKE) else LIMITS[precision]
+        if r['diag'] <= lim:
             return r
     return None
+
+
+def first_region(results):
+    return next((r for r in results or [] if r['diag'] <= LIMITS['zone']), None)
 
 
 def resolve(a, cache):
@@ -64,6 +94,7 @@ def resolve(a, cache):
         attempts = [(a['place'], 'zone'), (a['alt'], 'zone'), (head, 'zone')]
     else:
         attempts = [(a['place'], a['precision']), (a['alt'], 'ville'), (head, 'ville')]
+    attempts += [(q, 'ville' if a['precision'] != 'zone' else 'zone') for q in MANUAL.get(a['place'], [])]
     seen = set()
     for q, prec in attempts:
         if not q or (q, prec) in seen:
@@ -73,6 +104,12 @@ def resolve(a, cache):
         if r:
             return {'lat': r['lat'], 'lon': r['lon'], 'name': r['name'], 'diag': r['diag'], 'via': 'place' if q == a['place'] else 'alt',
                     'status': 'ok' if prec == a['precision'] else 'downgraded', 'q': q, 'type': r['type']}
+    # Dernier recours : la région citée, en « zone » (repère de découverte, hors jeu).
+    for q in (a['alt'], head):
+        r = first_region(search(q, None if aq else cc, cache)) if q else None
+        if r:
+            return {'lat': r['lat'], 'lon': r['lon'], 'name': r['name'], 'diag': r['diag'], 'via': 'alt', 'status': 'downgraded', 'q': q,
+                    'type': r['type'], 'forceZone': True}
     return None
 
 
@@ -88,7 +125,7 @@ def main():
         a = ann[i]
         if g['status'] in ('failed', 'suspect-large'):
             todo[i] = a
-        elif a['precision'] in ('site', 'ville') and g.get('diag', 0) > 80:
+        elif a['precision'] in ('site', 'ville') and g.get('diag', 0) > 35:
             todo[i] = a
     fixes, memo = {}, {}
     for n, (i, a) in enumerate(todo.items()):
