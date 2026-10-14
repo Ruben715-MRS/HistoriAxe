@@ -190,7 +190,10 @@ function atlasEnsureMap() {
 function atlasLocalizeLabels() {
     const lang = (typeof i18n !== 'undefined' && i18n.currentLang) ? i18n.currentLang : 'fr';
     atlasMap.getStyle().layers.forEach(function (layer) {
-        if (layer.type === 'symbol' && layer.layout && layer.layout['text-field']) {
+        // Seuls les libellés qui affichent un nom : les écussons d'autoroute (« A6 », « E15 ») affichent
+        // la référence de la route, et la remplacer par un nom les laissait vides.
+        if (layer.type === 'symbol' && layer.layout && layer.layout['text-field']
+            && JSON.stringify(layer.layout['text-field']).indexOf('name') !== -1) {
             atlasMap.setLayoutProperty(layer.id, 'text-field',
                 ['coalesce', ['get', 'name:' + lang], ['get', 'name:latin'], ['get', 'name']]);
         }
