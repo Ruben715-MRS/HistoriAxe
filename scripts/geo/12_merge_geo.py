@@ -21,6 +21,9 @@ def main():
         for a in json.load(open(f)):
             annots[a['id']] = a
     geo = json.load(open(os.path.join(WORK, 'geocoded.json')))
+    fx = os.path.join(WORK, 'fixes.json')
+    if os.path.exists(fx):
+        geo.update(json.load(open(fx)))   # reprises de 14_fix_unplaced.py, prioritaires
     path = os.path.join(ROOT, 'assets', 'geo', 'events-geo.json')
     points = json.load(open(path))['points'] if os.path.exists(path) else {}
     review = collections.defaultdict(list); n = 0
