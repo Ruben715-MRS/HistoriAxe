@@ -49,6 +49,18 @@ async function parcourirLesEcrans(page, surChaqueEcran) {
     await page.evaluate(() => showScreen('screen-revision-hub')); await surChaqueEcran('hub de révision');
     await page.evaluate(() => switchRevisionHubTab('progress'));
     await page.waitForTimeout(300); await surChaqueEcran('progression');
+    // L'Atlas : l'écran, puis sa feuille d'événements ouverte sur la plus grosse pile de lieu précis. La carte
+    // (WebGL, fond réseau) n'est pas attendue : on ne regarde que les commandes que le DOM porte.
+    await page.evaluate(() => showScreen('screen-atlas'));
+    await page.waitForFunction(() => typeof atlasModel !== 'undefined' && atlasModel !== null, null, { timeout: 30_000 });
+    await surChaqueEcran('atlas');
+    await page.evaluate(() => {
+        let best = null;
+        atlasModel.index.forEach((pile, key) => { if (pile.prec !== 'z' && (!best || pile.items.length > best.items.length)) best = Object.assign({ key }, pile); });
+        atlasShowPiles([best.key]);
+    });
+    await surChaqueEcran('atlas : événements d\u2019un lieu');
+    await page.evaluate(() => { closeAtlasSheet(); showScreen('screen-categories'); });
     await page.evaluate(() => { const ci = bdd.findIndex(c => c.subcategories); selectedCategoryIndex = ci; selectedSubcategoryIndex = null; showScreen('screen-subcategories'); }); await surChaqueEcran('sous-catégories');
     // Personnages illustres : le bouton de la galerie et ses trois ordres, la galerie, une fiche ouverte de là.
     await page.evaluate(() => { selectedCategoryIndex = bdd.findIndex(c => c.nom === 'Personnages illustres'); selectedSubcategoryIndex = []; showScreen('screen-subcategories'); }); await surChaqueEcran('personnages illustres');

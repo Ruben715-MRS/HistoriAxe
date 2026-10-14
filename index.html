@@ -273,6 +273,41 @@
         <div id="gallery-container" class="gallery-container"></div>
     </div>
 
+    <!-- ÉCRAN : ATLAS (carte de découverte, voir js/atlas.js et js/atlasCore.js) : tous les événements
+         qui ont un lieu, un point par fait, filtrables par catégorie et par époque. Toucher un point
+         (ou une pile de points au même endroit) ouvre la fiche. -->
+    <div id="screen-atlas" class="hidden">
+        <button class="back-btn" onclick="backFromAtlas()" aria-label="Retour"
+            data-i18n-attr="aria-label:nav.back">‹</button>
+        <div id="atlas-map" class="atlas-map" role="application" aria-label="Carte des événements"
+            data-i18n-attr="aria-label:atlas.map_label"></div>
+        <div class="atlas-status" id="atlas-status" role="status" aria-live="polite"></div>
+        <div class="atlas-bottom">
+            <div class="atlas-sheet hidden" id="atlas-sheet" role="dialog" aria-label="Événements de ce lieu"
+                data-i18n-attr="aria-label:atlas.sheet_label">
+                <button type="button" class="atlas-sheet-close" id="atlas-sheet-close" aria-label="Fermer"
+                    data-i18n-attr="aria-label:nav.close">×</button>
+                <div class="atlas-sheet-body" id="atlas-sheet-body"></div>
+            </div>
+            <div class="atlas-controls">
+                <div class="atlas-controls-head">
+                    <span class="atlas-count" id="atlas-count"></span>
+                    <span class="atlas-years" id="atlas-years"></span>
+                </div>
+                <div class="atlas-chips" id="atlas-cats" role="group" aria-label="Catégories"
+                    data-i18n-attr="aria-label:atlas.cats_label"></div>
+                <div class="atlas-time">
+                    <input type="range" class="atlas-range" id="atlas-from" min="0" max="1000" value="0"
+                        aria-label="Époque : début" data-i18n-attr="aria-label:atlas.from_label">
+                    <input type="range" class="atlas-range" id="atlas-to" min="0" max="1000" value="1000"
+                        aria-label="Époque : fin" data-i18n-attr="aria-label:atlas.to_label">
+                </div>
+                <div class="atlas-chips" id="atlas-presets" role="group" aria-label="Époques"
+                    data-i18n-attr="aria-label:atlas.presets_label"></div>
+            </div>
+        </div>
+    </div>
+
     <!-- ÉCRAN 3 : THÈMES (Sous-sections) -->
     <div id="screen-themes" class="list-screen hidden">
         <button class="back-btn" onclick="backFromThemes()" aria-label="Retour"
@@ -1153,6 +1188,10 @@
                 <div class="modal-linked-label" id="modal-linked-label" data-i18n="modal.linked_label">Vu aussi dans…</div>
                 <div class="modal-linked-list" id="modal-linked-list"></div>
             </div>
+            <div id="modal-map-row" class="modal-map-row hidden">
+                <button type="button" class="btn btn-secondary" id="modal-map-btn"
+                    data-i18n="atlas.see_on_map">📍 Voir sur la carte</button>
+            </div>
             <div id="modal-bio-row" class="modal-bio-row hidden">
                 <button type="button" class="btn btn-secondary" id="modal-bio-btn"
                     data-i18n="modal.biography_btn">Voir sa biographie</button>
@@ -1682,6 +1721,8 @@
     <script src="js/mindMap.js"></script>
     <script src="js/simultaneity.js"></script>
     <script src="js/linkedEvents.js"></script>
+    <script src="js/atlasCore.js"></script>
+    <script src="js/atlas.js"></script>
     <script src="js/gameModes.js"></script>
     <script src="js/gallery.js"></script>
     <script src="js/app.js"></script>
