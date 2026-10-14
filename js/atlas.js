@@ -474,6 +474,9 @@ function atlasShowPiles(pileKeys, focusEvt) {
         }
     }
     sheet.classList.remove('hidden');
+    // Une sélection se lit dans la colonne : on la déplie si le joueur l'avait repliée.
+    const atlasScreen = document.getElementById('screen-atlas');
+    if (atlasScreen && atlasScreen.classList.contains('atlas-collapsed')) atlasSetCollapsed(false, false);
     body.scrollTop = 0;
     const focused = body.querySelector('.atlas-row-focus');
     if (focused) focused.scrollIntoView({ block: 'center' });
@@ -734,11 +737,34 @@ function atlasGoToPlace(pl) {
 // son choix est mémorisé. Sur téléphone (< 900 px) la colonne n'a pas la place : toujours en bas.
 
 const ATLAS_LAYOUT_KEY = 'historiaxe_atlas_layout';
+const ATLAS_COLLAPSED_KEY = 'historiaxe_atlas_collapsed';
 const ATLAS_SIDE_MIN_WIDTH = 900;
 let atlasLayoutBound = false;
 
 function atlasLayoutPref() {
     try { return localStorage.getItem(ATLAS_LAYOUT_KEY) === 'bottom' ? 'bottom' : 'side'; } catch (e) { return 'side'; }
+}
+
+function atlasCollapsedPref() {
+    try { return localStorage.getItem(ATLAS_COLLAPSED_KEY) === '1'; } catch (e) { return false; }
+}
+
+// Replie ou déplie la colonne de gauche. `remember` : c'est un geste du joueur, on s'en souvient ;
+// le dépliage automatique à la sélection d'un point, lui, ne change pas son choix.
+function atlasSetCollapsed(collapsed, remember) {
+    const screen = document.getElementById('screen-atlas');
+    if (!screen) return;
+    if (remember) { try { localStorage.setItem(ATLAS_COLLAPSED_KEY, collapsed ? '1' : '0'); } catch (e) { /* choix non mémorisé */ } }
+    screen.classList.toggle('atlas-collapsed', collapsed);
+    const btn = document.getElementById('atlas-panel-toggle');
+    if (btn) {
+        const key = collapsed ? 'atlas.panel_show' : 'atlas.panel_hide';
+        btn.setAttribute('aria-expanded', String(!collapsed));
+        btn.setAttribute('aria-label', t(key));
+        btn.title = t(key);
+        btn.textContent = collapsed ? '›' : '‹';
+    }
+    if (atlasMap) setTimeout(function () { atlasMap.resize(); }, 0);
 }
 
 function atlasIsWide() {
@@ -753,6 +779,7 @@ function atlasApplyLayout() {
     const was = screen.classList.contains('atlas-side');
     screen.classList.toggle('atlas-side', side);
     if (btn) btn.setAttribute('aria-pressed', String(side));
+    if (side) atlasSetCollapsed(atlasCollapsedPref(), false);
     if (was !== side && atlasMap) setTimeout(function () { atlasMap.resize(); }, 0);
 }
 
@@ -766,6 +793,10 @@ function atlasBindLayout() {
         const next = atlasLayoutPref() === 'side' ? 'bottom' : 'side';
         try { localStorage.setItem(ATLAS_LAYOUT_KEY, next); } catch (e) { /* mémoire indisponible : le choix ne dure que cette fois */ }
         atlasApplyLayout();
+    });
+    const toggle = document.getElementById('atlas-panel-toggle');
+    if (toggle) toggle.addEventListener('click', function () {
+        atlasSetCollapsed(!document.getElementById('screen-atlas').classList.contains('atlas-collapsed'), true);
     });
     window.addEventListener('resize', atlasApplyLayout);
 }

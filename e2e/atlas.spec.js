@@ -152,3 +152,27 @@ test('sur téléphone, la feuille reste en bas et le bouton de disposition est m
     await expect(page.locator('#screen-atlas')).not.toHaveClass(/atlas-side/);
     await expect(page.locator('#atlas-layout-btn')).toBeHidden();
 });
+
+test('la flèche replie la colonne de gauche ; sélectionner un lieu la rouvre', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 800 });
+    await page.goto('/');
+    await ouvrirAtlas(page);
+    const fleche = page.locator('#atlas-panel-toggle');
+    await expect(fleche).toBeVisible();
+    await fleche.click();
+    await expect(page.locator('#screen-atlas')).toHaveClass(/atlas-collapsed/);
+    await expect(page.locator('.atlas-bottom')).toBeHidden();
+    expect((await page.locator('#atlas-map').boundingBox()).x).toBe(0);
+    // Le choix est mémorisé.
+    await page.reload();
+    await ouvrirAtlas(page);
+    await expect(page.locator('#screen-atlas')).toHaveClass(/atlas-collapsed/);
+    // Une recherche aboutie rouvre la colonne pour y lire le résultat.
+    await page.locator('#atlas-search-input').fill('verdun');
+    await page.locator('.atlas-search-item').last().click();
+    await expect(page.locator('#screen-atlas')).not.toHaveClass(/atlas-collapsed/);
+    await expect(page.locator('#atlas-sheet')).toBeVisible();
+    // Et la flèche ne se montre pas en disposition « en bas ».
+    await page.locator('#atlas-layout-btn').click();
+    await expect(fleche).toBeHidden();
+});

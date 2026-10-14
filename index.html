@@ -281,6 +281,9 @@
             data-i18n-attr="aria-label:nav.back">‹</button>
         <div id="atlas-map" class="atlas-map" role="application" aria-label="Carte des événements"
             data-i18n-attr="aria-label:atlas.map_label"></div>
+        <button type="button" class="atlas-panel-toggle" id="atlas-panel-toggle" aria-expanded="true"
+            aria-controls="atlas-bottom" title="Masquer le panneau" aria-label="Masquer le panneau"
+            data-i18n-attr="title:atlas.panel_hide;aria-label:atlas.panel_hide">‹</button>
         <div class="atlas-search" id="atlas-search">
             <input type="search" id="atlas-search-input" class="atlas-search-input" autocomplete="off"
                 autocapitalize="off" spellcheck="false" enterkeyhint="search" role="combobox"
@@ -292,7 +295,7 @@
             <div class="atlas-search-results hidden" id="atlas-search-results" role="listbox"></div>
         </div>
         <div class="atlas-status" id="atlas-status" role="status" aria-live="polite"></div>
-        <div class="atlas-bottom">
+        <div class="atlas-bottom" id="atlas-bottom">
             <div class="atlas-sheet hidden" id="atlas-sheet" role="dialog" aria-label="Événements de ce lieu"
                 data-i18n-attr="aria-label:atlas.sheet_label">
                 <button type="button" class="atlas-sheet-close" id="atlas-sheet-close" aria-label="Fermer"

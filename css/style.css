@@ -7954,3 +7954,49 @@ input:not([type="range"]), label, select, summary, textarea {
     left: calc(50% + var(--atlas-side-w) / 2);
     top: calc(env(safe-area-inset-top, 0px) + 18px);
 }
+
+/* Flèche de repli de la colonne : une languette sur son bord droit (au bord de l'écran une fois repliée). */
+.atlas-panel-toggle {
+    display: none;
+    position: absolute;
+    top: calc(env(safe-area-inset-top, 0px) + 84px);
+    left: 380px;
+    z-index: 55;
+    width: 22px;
+    height: 56px;
+    padding: 0;
+    border: 1px solid var(--border-soft);
+    border-left: none;
+    border-radius: 0 12px 12px 0;
+    background: var(--surface);
+    color: var(--text-dark);
+    box-shadow: var(--card-shadow);
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+#screen-atlas.atlas-side .atlas-panel-toggle {
+    display: block;
+}
+
+#screen-atlas.atlas-side.atlas-collapsed .atlas-panel-toggle {
+    left: 0;
+}
+
+#screen-atlas.atlas-side.atlas-collapsed #atlas-map.atlas-map {
+    left: 0;
+}
+
+#screen-atlas.atlas-side.atlas-collapsed .atlas-bottom {
+    transform: translateX(-100%);
+    visibility: hidden;
+}
+
+#screen-atlas.atlas-side.atlas-collapsed .atlas-status {
+    left: 50%;
+}
+
+#screen-atlas.atlas-side.atlas-collapsed .atlas-search {
+    width: min(360px, calc(100% - 140px));
+}
