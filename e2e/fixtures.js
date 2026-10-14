@@ -127,7 +127,14 @@ async function openThemeCard(page, themeId) {
         selectedCategoryIndex = ci;
         selectedSubcategoryIndex = null;
         showScreen('screen-themes');
-        return bdd[ci].themes.findIndex(t => t.id === id);
+        // La liste commence parfois par des cartes qui ne sont pas des
+        // thèmes (Mode Carte dès que la catégorie est géolocalisable, carte
+        // « Nouveau thème » des catégories perso) : les thèmes sont toujours
+        // les dernières cartes, d'où ce décalage plutôt qu'un index brut.
+        const themes = getCurrentThemeList();
+        const decalage = document.querySelectorAll('#themes-container > div').length - themes.length;
+        const rang = themes.findIndex(t => t.id === id);
+        return rang < 0 ? -1 : decalage + rang;
     }, themeId);
 
     expect(index, `thème « ${themeId} » introuvable parmi les thèmes directs d'une catégorie`).toBeGreaterThanOrEqual(0);
