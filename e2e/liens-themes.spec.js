@@ -18,6 +18,19 @@ async function ouvrirFiche(page, themeId, titre) {
     expect(ok, `événement introuvable : ${themeId} / ${titre}`).toBe(true);
 }
 
+test('en mode sombre, le nom du thème lié est blanc et non bleu marine sur fond noir', async ({ page }) => {
+    // --primary-blue (#001a4b) est illisible sur le fond sombre de la fiche : la règle
+    // :root[data-theme="dark"] .modal-linked-theme le passe en blanc.
+    await page.evaluate(() => document.documentElement.setAttribute('data-theme', 'dark'));
+    await ouvrirFiche(page, 'psn_ar_t5', 'Invasion argentine des îles Malouines');
+    const nom = page.locator('#modal-linked-list .modal-linked-theme').first();
+    await expect(nom).toBeVisible();
+    await expect(nom).toHaveCSS('color', 'rgb(255, 255, 255)');
+    // En mode clair, il garde le bleu de la charte.
+    await page.evaluate(() => document.documentElement.setAttribute('data-theme', 'light'));
+    await expect(nom).toHaveCSS('color', 'rgb(0, 26, 75)');
+});
+
 test('la fiche d\'un événement carrefour propose les autres thèmes, et le clic y mène', async ({ page }) => {
     await ouvrirFiche(page, 'psn_ar_t5', 'Invasion argentine des îles Malouines');
     const themeOrigine = await page.evaluate(() => getAllThemesWithPath().find(i => i.theme.id === 'psn_ar_t5').theme.nom);

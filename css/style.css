@@ -2202,6 +2202,16 @@ textarea.form-input {
     color: var(--primary-blue);
 }
 
+/* En mode sombre, --primary-blue (#001a4b) se confond avec le fond de la fiche :
+   le nom du thème et la bordure au survol passent en blanc. */
+:root[data-theme="dark"] .modal-linked-theme {
+    color: #fff;
+}
+
+:root[data-theme="dark"] .modal-linked-btn:hover {
+    border-color: #fff;
+}
+
 .modal-linked-title {
     font-size: 13px;
 }
