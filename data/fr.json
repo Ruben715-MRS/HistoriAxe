@@ -2,8 +2,8 @@
   "version": "1.0.0",
   "lang": "fr",
   "name": "Français (Intégral)",
-  "totalThemes": 819,
-  "totalEvents": 22185,
+  "totalThemes": 820,
+  "totalEvents": 22250,
   "categories": [
     {
       "nom": "Culture générale",
@@ -96748,6 +96748,1192 @@
                 "pan_hispam_che",
                 "pan_hispam_botero",
                 "pan_hispam_vargasllosa"
+              ]
+            },
+            {
+              "id": "pan_asiecentrale",
+              "nom": "Grandes figures d'Asie centrale",
+              "difficulte": "Intermédiaire",
+              "motsCles": [
+                "Asie centrale",
+                "Kazakhstan",
+                "Kazakh",
+                "Kazakhe",
+                "Ouzbékistan",
+                "Ouzbek",
+                "Ouzbèke",
+                "Kirghizistan",
+                "Kirghize",
+                "Kirghiz",
+                "Tadjikistan",
+                "Tadjik",
+                "Tadjike",
+                "Turkménistan",
+                "Turkmène",
+                "Afghanistan",
+                "Afghan",
+                "Afghane",
+                "Transoxiane",
+                "Khorassan",
+                "Khârezm",
+                "Samarcande",
+                "Boukhara",
+                "Hérat",
+                "Kaboul",
+                "Turkestan",
+                "Steppe",
+                "Route de la soie",
+                "Timourides",
+                "Samanides",
+                "Seldjoukides",
+                "Ghaznévides"
+              ],
+              "events": [
+                {
+                  "id": "pan_asiecentrale_khwarizmi",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 780,
+                  "titre": "Naissance d'Al-Khwârizmî",
+                  "description": "Al-Khwârizmî (vers 780-vers 850) est un mathématicien, astronome et géographe, probablement né à Khiva dans le Khârezm, actif à la Maison de la sagesse de Bagdad. Son « Abrégé du calcul par la restauration et la comparaison », rédigé vers 820, donne son nom à l'algèbre et expose la résolution des équations du second degré, tandis que son traité sur le calcul indien fait connaître la numération décimale à l'Occident. Son nom latinisé, Algoritmi, est à l'origine du mot « algorithme ».",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Al-Khw%C3%A2rizm%C3%AE",
+                  "pays": "UZ",
+                  "classement": "Al-Khwârizmî",
+                  "biographie": "bio_alkhwarizmi",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_khwarizmi.jpg",
+                    "legende": "Al-Khwârizmî, portrait imaginaire sur un timbre soviétique de 1983",
+                    "auteur": "А. Адашев",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:1983_CPA_5426.jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_ismailsamani",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 849,
+                  "titre": "Naissance d'Ismaïl Samani",
+                  "description": "Ismaïl Samani (849-907) est un émir samanide de la Transoxiane, descendant d'une famille de notables de Balkh. Il fait de Boukhara sa capitale, bat en 900 le Saffaride Amr ibn al-Layth à Balkh et réunit sous son autorité la Transoxiane et le Khorassan. Son règne ouvre l'âge d'or de la culture persane d'Asie centrale, et le Tadjikistan lui a donné son nom pour sa monnaie, le somoni, comme pour son plus haut sommet.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ismail_Samani",
+                  "pays": "TJ",
+                  "classement": "Samani, Ismaïl",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_ismailsamani.jpg",
+                    "legende": "Ismaïl Samani, portrait imaginaire sur le billet de 100 somoni du Tadjikistan (1999)",
+                    "auteur": "Бонки миллии Тоҷикистон (National Bank of Tajikistan) (banknote), Steve Burke (photo)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:TajikistanP19-100Somoni-1999(2000)-donatedeh_f.jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_rudaki",
+                  "axe": "Littérature et pensée",
+                  "date": 859,
+                  "titre": "Naissance de Roudaki",
+                  "description": "Roudaki (vers 859-941) est un poète de langue persane, né dans le village de Panjroud, près de Pendjikent, actuel Tadjikistan. Poète de cour des Samanides à Boukhara, il est tenu pour le premier grand poète du persan moderne, dont il a fixé les formes, et seule une petite partie de son œuvre nous est parvenue. Tombé en disgrâce, il meurt selon la tradition pauvre et oublié dans son village natal, et le Tadjikistan en a fait son poète national, comme l'Iran l'honore parmi les siens.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Roudaki",
+                  "pays": "TJ",
+                  "classement": "Roudaki",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_rudaki.jpg",
+                    "legende": "Roudaki, portrait imaginaire par le miniaturiste iranien Hossein Behzad (1958)",
+                    "auteur": "Hossein Behzad (1894–1968)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Miniature_of_Rudaki_by_Hossein_Behzad.jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_farabi",
+                  "axe": "Littérature et pensée",
+                  "date": 872,
+                  "titre": "Naissance d'Al-Fârâbî",
+                  "description": "Al-Fârâbî (vers 872-950) est un philosophe et savant de langue arabe, né près de Farab en Transoxiane, dans l'actuel Kazakhstan, ou à Faryab selon d'autres sources. Surnommé le « second maître » après Aristote, il commente le Stagirite, fonde une philosophie politique inspirée de Platon avec « La Cité vertueuse » et rédige un grand traité de la musique. Il enseigne à Bagdad, vit à la cour d'Alep et meurt à Damas, et le Kazakhstan le compte parmi ses plus grands noms.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Al-F%C3%A2r%C3%A2b%C3%AE",
+                  "pays": "KZ",
+                  "classement": "Al-Fârâbî",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_farabi.jpg",
+                    "legende": "Al-Fârâbî, portrait imaginaire sur un timbre iranien : aucun portrait authentique n'est connu",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Iranian_Farabi.jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_mahmoudghazni",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 971,
+                  "titre": "Naissance de Mahmoud de Ghazni",
+                  "description": "Mahmoud de Ghazni (971-1030) est un sultan ghaznévide, fils de Soubouktigîn, né à Ghazni. Entre 998 et 1030, il fait de Ghazni la capitale d'un empire qui va de l'Iran oriental au Pendjab et conduit une série d'expéditions en Inde, dont le pillage du temple de Somnath en 1025. Mécène de savants comme al-Biruni et de poètes comme Ferdowsi, il reste une figure ambivalente, grand souverain pour les uns, pillard pour d'autres.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mahmoud_de_Ghazni",
+                  "pays": "AF",
+                  "classement": "Mahmoud de Ghazni",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_mahmoudghazni.jpg",
+                    "legende": "Mahmoud de Ghazni, représentation probablement idéalisée en roi sassanide, début du XIe siècle (musée de l'Ermitage)",
+                    "auteur": "11th century artist",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Likely_idealized_depiction_of_Sultan_Mahmud_of_Ghazni_in_the_pose_of_a_Sasanian_hero-king._Early_11th_century,_Hermitage_Museum,_St_Petersburg.jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_biruni",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 973,
+                  "titre": "Naissance d'Al-Biruni",
+                  "description": "Al-Biruni (973-1048) est un savant universel de langue arabe et persane, né à Kath, dans le Khârezm, actuel Ouzbékistan. Astronome, mathématicien et géographe, il calcule le rayon de la Terre avec une grande précision, discute sa rotation et décrit l'Inde dans son « Livre de l'Inde » après y avoir suivi Mahmoud de Ghazni. Il meurt à Ghazni en 1048, et l'Ouzbékistan l'honore comme l'un de ses plus grands savants.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Al-Biruni",
+                  "pays": "UZ",
+                  "classement": "Al-Biruni",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_biruni.jpg",
+                    "legende": "Al-Biruni, statue du pavillon des savants persans de l'ONU à Vienne",
+                    "auteur": "Yamaha5",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Persian_Scholar_pavilion_in_Viena_UN_(Biruni).jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_avicenne",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 980,
+                  "titre": "Naissance d'Avicenne",
+                  "description": "Avicenne (980-1037) est un médecin et philosophe de langue arabe et persane, né à Afshona, près de Boukhara. Son « Canon de la médecine » reste un manuel de référence en Orient comme en Occident jusqu'au XVIIe siècle, et son « Livre de la guérison » est une somme philosophique qui marque la pensée médiévale. Il meurt à Hamadan, et l'Ouzbékistan, le Tadjikistan et l'Iran se disputent son héritage, le panthéon le rangeant là où il est né.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Avicenne",
+                  "pays": "UZ",
+                  "classement": "Avicenne",
+                  "biographie": "bio_ibnsina",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_avicenne.jpg",
+                    "legende": "Avicenne, portrait imaginaire en médaillon persan",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Avicenna-miniatur.jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_toghrul",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 990,
+                  "titre": "Naissance de Toghrul Beg",
+                  "description": "Toghrul Beg (vers 990-1063) est le fondateur de l'empire seldjoukide, petit-fils de Seldjouk et chef d'un clan des Oghouzes turkmènes. Avec son frère Tchaghri Beg, il bat les Ghaznévides à Dandanakan en 1040, prend Nichapour, puis entre à Bagdad en 1055, où le calife abbasside lui décerne le titre de sultan. Il meurt sans fils en 1063, et son neveu Alp Arslan lui succède.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Toghrul-Beg",
+                  "pays": "TM",
+                  "classement": "Toghrul Beg",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_toghrul.jpg",
+                    "legende": "Toghrul Beg, portrait imaginaire sur un billet turkmène : aucun portrait authentique n'existe",
+                    "auteur": "Michel Bakni (1989–)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Tughril_portrait,_Turkmenistan_banknote_(2009).jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_nasirkhusraw",
+                  "axe": "Littérature et pensée",
+                  "date": 1004,
+                  "titre": "Naissance de Nasir Khusraw",
+                  "description": "Nasir Khusraw (1004-vers 1088) est un poète, philosophe et voyageur persan, né à Qobadiyan, près de Balkh. Après sept ans de voyage jusqu'à La Mecque et au Caire, d'où il rapporte le « Safarnama », il se convertit à l'ismaélisme fatimide et devient missionnaire au Khorassan. Exilé au Badakhchan, où il meurt, il est vénéré par les ismaéliens de part et d'autre de la frontière afghano-tadjike.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Nasir_Khusraw",
+                  "pays": "TJ",
+                  "classement": "Nasir Khusraw",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_nasirkhusraw.jpg",
+                    "legende": "Nasir Khusraw, portrait imaginaire sur un timbre du Tadjikistan émis en 2003",
+                    "auteur": "Post of Tajikistan",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Stamps_of_Tajikistan,_030-03.jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_ansari",
+                  "axe": "Littérature et pensée",
+                  "date": 1006,
+                  "titre": "Naissance d'Abdallah Ansari",
+                  "description": "Abdallah Ansari (1006-1089) est un mystique et poète de langue persane, né à Hérat. Maître hanbalite, il est l'auteur des « Étapes des itinérants », guide des cent stations de la voie spirituelle, et des « Classes des soufis », recueil de vies de saints. Surnommé le « vieux d'Hérat », il repose à Gazargah, près d'Hérat, dans l'un des sanctuaires les plus visités d'Afghanistan.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Khaw%C3%A2dj%C3%A2_Abdall%C3%A2h_Ans%C3%A2r%C3%AE",
+                  "pays": "AF",
+                  "classement": "Ansari, Abdallah",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_ansari.jpg",
+                    "legende": "Abdallah Ansari, portrait imaginaire sur un timbre du Tadjikistan émis en 2010",
+                    "auteur": "Post of Tajikistan",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Stamps_of_Tajikistan,_2010-09.jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_balasaguni",
+                  "axe": "Littérature et pensée",
+                  "date": 1019,
+                  "titre": "Naissance de Yusuf Khass Hajib",
+                  "description": "Yusuf Khass Hajib (vers 1019-vers 1077) est un poète et homme d'État qarakhanide, né à Balasagun, près de l'actuelle Tokmok au Kirghizistan, d'où son surnom de Balasaguni. Achevé vers 1069, son « Kutadgu Bilig », « La Science qui apporte le bonheur », est un grand miroir des princes écrit en turc qarakhanide, l'un des premiers monuments de la littérature turque islamique. Le prince de Kachgar, à qui il l'offre, le récompense du titre de khass hajib, « chambellan privé », qui est devenu son nom.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Yusuf_Khass_Hajib",
+                  "pays": "KG",
+                  "classement": "Yusuf Khass Hajib",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_balasaguni.jpg",
+                    "legende": "Yusuf Khass Hajib, portrait imaginaire sur un billet de 1000 soms kirghiz",
+                    "auteur": "The original uploader was Hux at English Wikipedia .",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Y%C5%ABsuf_Balasaguni_on_1000_som_note.jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_sandjar",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1085,
+                  "titre": "Naissance d'Ahmad Sanjar",
+                  "description": "Ahmad Sanjar (vers 1085-1157) est le dernier grand sultan seldjoukide, né à Sindjar et installé à Merv, aujourd'hui au Turkménistan. Maître du Khorassan et de la Transoxiane, il est vaincu en 1141 à Qatwan par les Kara-Khitaï, puis capturé en 1153 par des Oghouzes révoltés, qui le retiennent près de trois ans. Il meurt à Merv en 1157, et son mausolée, l'un des plus grands édifices seldjoukides, subsiste dans les ruines de la ville.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ahmad_Sanjar",
+                  "pays": "TM",
+                  "classement": "Ahmad Sanjar",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_sandjar.jpg",
+                    "legende": "Ahmad Sanjar, miniature persane de la « Jami al-tawarikh » de Rachid al-Din (vers 1315)",
+                    "auteur": "Rashid Al-Din",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ahmad_Sanjar.jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_yasawi",
+                  "axe": "Littérature et pensée",
+                  "date": 1093,
+                  "titre": "Naissance d'Ahmed Yasavi",
+                  "description": "Ahmed Yasavi (vers 1093-1166) est un poète et maître soufi de langue turque, né à Sayram et mort à Yasi, aujourd'hui Turkestan au Kazakhstan. Son recueil de poèmes mystiques, le « Divan-i Hikmet », compte parmi les premiers grands textes de la littérature turque d'Asie centrale. Fondateur de la confrérie yasaviyya, il repose dans un mausolée construit sous Tamerlan à Turkestan, inscrit à l'Unesco.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ahmed_Yasavi",
+                  "pays": "KZ",
+                  "classement": "Yasavi, Ahmed",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_yasawi.jpg",
+                    "legende": "Ahmed Yasavi et ses disciples, miniature moderne d'inspiration ancienne",
+                    "auteur": "Cihangir ASHUROV",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ahmad_Yasawi_miniature.png"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_tamerlan",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1336,
+                  "titre": "Naissance de Tamerlan",
+                  "description": "Tamerlan (1336-1405) est un conquérant turco-mongol, fondateur de la dynastie des Timourides, né près de Chakhrisabz. Maître de la Transoxiane dès 1370, il fait de Samarcande sa capitale, bat la Horde d'Or, prend Delhi en 1398, écrase le sultan ottoman Bayezid à Ankara en 1402 et meurt à Otrar alors qu'il marche sur la Chine. Il laisse un empire éphémère, des campagnes marquées par d'immenses massacres et l'éclat de Samarcande, et l'Ouzbékistan en a fait son héros national.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Tamerlan",
+                  "pays": "UZ",
+                  "classement": "Tamerlan",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_tamerlan.jpg",
+                    "legende": "Tamerlan, le plus ancien portrait connu, miniature d'une généalogie timouride (Samarcande, 1405-1409)",
+                    "auteur": "1405-1409 artist",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Timur_seated_(earliest_known_portrait),_Timurid_genealogy,_1405-1409,_Samarkand_(TSMK,_H2152).jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_ulughbeg",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1394,
+                  "titre": "Naissance d'Ulugh Beg",
+                  "description": "Ulugh Beg (1394-1449) est un prince timouride, petit-fils de Tamerlan, né à Sultaniya en Perse et souverain de Samarcande. Astronome, il y fait bâtir un grand observatoire et y établit un catalogue d'environ un millier d'étoiles, le « Zij-i Sultani », achevé en 1437 et resté une référence pendant des siècles. Renversé par son fils, il est assassiné en 1449, et sa madrasa du Registan subsiste à Samarcande.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ulugh_Beg",
+                  "pays": "UZ",
+                  "classement": "Ulugh Beg",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_ulughbeg.jpg",
+                    "legende": "Ulugh Beg, peinture timouride (vers 1425-1450)",
+                    "auteur": "Unknown artist Unknown artist",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ulugh_Beg,_Timurid_painting_1425-50.jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_jami",
+                  "axe": "Littérature et pensée",
+                  "date": 1414,
+                  "titre": "Naissance de Djâmî",
+                  "description": "Djâmî (1414-1492) est un poète, mystique et savant de langue persane, né à Kharjird, dans le Jam, au Khorassan, et installé à Hérat. Dernier grand poète classique du persan, il écrit les « Sept Trônes » (Haft awrang), dont « Yusuf et Zulaykha », et devient à Hérat un maître de la confrérie naqshbandiyya, sous la protection de son ami Alicher Navoï. Il meurt à Hérat en 1492, et l'Afghanistan, le Tadjikistan et l'Iran le comptent parmi leurs plus grands poètes.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Djami",
+                  "pays": "AF",
+                  "classement": "Djâmî",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_jami.jpg",
+                    "legende": "Djâmî tenant un astrolabe, miniature attribuée à Behzad (Hérat, 1494-1495, British Library)",
+                    "auteur": "Herat artist, 1494-1495",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jami,_holding_an_astrolabe_(portrait)._By_Behz%C3%A2d,_from_the_Romance_of_Alexander_by_Nez%C3%A2m%C3%AE._Manuscript_of_the_Khamseh_of_the_emir_%27Al%C3%AE_F%C3%A2rs%C3%AE_Barlas,_Herat_1494-1495%3B_British_Library,_Or._6810,_f_225_v.jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_baykara",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1438,
+                  "titre": "Naissance de Husayn Bayqara",
+                  "description": "Husayn Bayqara (1438-1506) est le dernier grand souverain timouride, sultan de Hérat de 1469 à sa mort et descendant de Tamerlan. Sous son règne, Hérat devient un foyer de culture où travaillent Djâmî, Alicher Navoï, son ministre et ami, et le peintre Behzad, tandis que lui-même écrit des vers en tchaghataï. Les Chaybanides s'emparent de Hérat dès 1507, un an après sa mort.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Husayn_Bayqara",
+                  "pays": "AF",
+                  "classement": "Husayn Bayqara",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_baykara.jpg",
+                    "legende": "Husayn Bayqara, miniature du « Golestan » de Saadi (Hérat, 1486)",
+                    "auteur": "Attributed to Shah Mozaffar, Golestan of Saadi 1486",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Husayn_Bayqarah_in_the_Golestan_of_Saadi,_1486.jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_navoi",
+                  "axe": "Littérature et pensée",
+                  "date": 1441,
+                  "titre": "Naissance d'Alicher Navoï",
+                  "description": "Alicher Navoï (1441-1501) est un poète et homme d'État timouride de langue tchaghataï, né et mort à Hérat. Ministre et ami du sultan Husayn Bayqara, il défend dans « Muhakamat al-lughatayn » la valeur du turc face au persan et compose sa « Khamsa » en tchaghataï. Considéré comme le fondateur de la langue littéraire ouzbèke, il est célébré en Ouzbékistan, où le grand théâtre de Tachkent et une région portent son nom.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Alicher_Navo%C3%AF",
+                  "pays": "UZ",
+                  "classement": "Navoï, Alicher",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_navoi.jpg",
+                    "legende": "Alicher Navoï devant le sultan Husayn Bayqara, miniature de Hérat (1486)",
+                    "auteur": "1486 artist, Herat",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Amir_Ali-Shir_Nava%27i_before_Sultan_Husayn_Bayqara_in_1486_Herat.jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_behzad",
+                  "axe": "Beaux-arts",
+                  "date": 1450,
+                  "titre": "Naissance de Behzad",
+                  "description": "Behzad (vers 1450-1535) est un maître de la miniature persane, né à Hérat et protégé d'Alicher Navoï. Chef de l'atelier de livres de Husayn Bayqara à Hérat, il illustre le « Bustan » de Saadi en 1488 et la « Khamsa » de Nizami en 1494-1495, avec un souci du détail et de la vie quotidienne qui renouvelle la peinture. Il passe sa fin de vie à Tabriz au service des Séfévides, et son style est resté le modèle de la miniature persane.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Behzad",
+                  "pays": "AF",
+                  "classement": "Behzad",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_behzad.jpg",
+                    "legende": "Miniature attribuée à Behzad : aucun portrait authentique du peintre n'est connu",
+                    "auteur": "Attribué à Behzad",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Bihzad.jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_shaybani",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1451,
+                  "titre": "Naissance de Muhammad Shaybani",
+                  "description": "Muhammad Shaybani (vers 1451-1510) est un khan ouzbek, descendant de Gengis Khan et fondateur de la dynastie chaybanide. Entre 1500 et 1507, il conquiert Samarcande, Boukhara, le Khârezm et Hérat, met fin à la domination timouride et chasse Babur de Transoxiane. Vaincu et tué à Merv en 1510 par le chah séfévide Ismaïl Ier, il aurait vu, selon la tradition, son crâne monté en coupe.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Muhammad_Shaybani",
+                  "pays": "UZ",
+                  "classement": "Shaybani, Muhammad",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_shaybani.jpg",
+                    "legende": "Muhammad Shaybani, miniature attribuée à Behzad (vers 1507)",
+                    "auteur": "Kamāl ud-Dīn Behzād (1450–1535)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Muhammad_Shaybani.jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_abylai",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1711,
+                  "titre": "Naissance d'Abylaï Khan",
+                  "description": "Abylaï Khan (1711-1781) est un souverain kazakh du Moyen Jüz, reconnu comme khan par les trois jüz. Il défend la steppe contre les Dzoungars puis joue entre la Russie et la Chine des Qing, avec lesquelles il passe tour à tour des alliances sans renoncer à l'autonomie de son peuple. Il reste dans la mémoire kazakhe le grand khan qui a réuni les Kazakhs, et son effigie figure sur les billets du pays.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Abyla%C3%AF_Khan",
+                  "pays": "KZ",
+                  "classement": "Abylaï Khan",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_abylai.jpg",
+                    "legende": "Abylaï Khan, effigie du billet de 100 tenge émis en 1993",
+                    "auteur": "Banque nationale du Kazakhstan",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kazakhstan-1993-Bill-100-Obverse.jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_durrani",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1722,
+                  "titre": "Naissance d'Ahmad Shah Durrani",
+                  "description": "Ahmad Shah Durrani (1722-1772) est le fondateur de l'État afghan moderne, né à Hérat selon la version la plus répandue. Élu roi à Kandahar en 1747, après l'assassinat de Nader Shah, il conquiert le Pendjab, le Cachemire et le Sind et écrase les Marathes à Panipat en 1761. Appelé en Afghanistan « Ahmad Shah Baba », le « père », il meurt à Kandahar en 1772.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ahmad_Shah_Durrani",
+                  "pays": "AF",
+                  "classement": "Ahmad Shah Durrani",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_durrani.jpg",
+                    "legende": "Ahmad Shah Durrani, miniature rapportée par le colonel Gentil (vers 1757)",
+                    "auteur": "Colonel Gentil",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Portrait_miniature_of_Ahmad_Shah_Durrani.jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_magtymguly",
+                  "axe": "Littérature et pensée",
+                  "date": 1724,
+                  "titre": "Naissance de Magtymguly Pyragy",
+                  "description": "Magtymguly Pyragy (vers 1724-1807) est un poète et penseur soufi turkmène, né dans la région de l'actuel Gorgan, en Iran. Instruit à Khiva et à Boukhara, il fait de ses vers, signés « Fraghi », « le séparé », le chant de l'unité des tribus turkmènes et de la quête spirituelle. Considéré comme le fondateur de la littérature turkmène écrite, il est le poète national du Turkménistan, dont le visage figure sur les billets.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Magtymguly_Pyragy",
+                  "pays": "TM",
+                  "classement": "Magtymguly Pyragy",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_magtymguly.jpg",
+                    "legende": "Magtymguly Pyragy, portrait imaginaire sur un timbre soviétique de 1959",
+                    "auteur": "Post of USSR",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:1959_CPA_2364.jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_nodira",
+                  "axe": "Littérature et pensée",
+                  "date": 1792,
+                  "titre": "Naissance de Nadira",
+                  "description": "Nadira (1792-1842) est une poétesse ouzbèke, épouse du khan de Kokand Omar Khan et mère de son successeur. Elle compose en tchaghataï et en persan, sous les pseudonymes de Nadira et de Kamila, et assure la régence du khanat pendant la minorité de son fils. Elle est exécutée en 1842 avec ses fils lors de la prise de Kokand par l'émir de Boukhara Nasrallah.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Nadira_(po%C3%A9tesse)",
+                  "pays": "UZ",
+                  "classement": "Nadira",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_nodira.jpg",
+                    "legende": "Nadira, portrait imaginaire peint par Chamsroï Khassanova (1945)",
+                    "auteur": "Shamsroi Khasanova (1917–1956)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Painting_of_Heroine_Nodira_by_Shamsroi_Khasanova.jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_dostmohammad",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1793,
+                  "titre": "Naissance de Dost Mohammad Khan",
+                  "description": "Dost Mohammad Khan (1793-1863) est un émir d'Afghanistan, né à Kandahar, fondateur de la dynastie des Barakzaï. Émir à Kaboul dès 1826, il est renversé en 1839 par les Britanniques, qui installent Shah Shuja, puis revient sur le trône en 1843 après leur désastre. Il reprend Hérat en 1863 et meurt peu après, ayant refait l'unité du pays.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Dost_Mohammad_Khan",
+                  "pays": "AF",
+                  "classement": "Dost Mohammad Khan",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_dostmohammad.jpg",
+                    "legende": "Dost Mohammad Khan, peinture d'un artiste de la Compagnie des Indes (1835)",
+                    "auteur": "British Company artist",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Dost_Mohammad_Khan_of_Afghanistan.jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_kenesary",
+                  "axe": "Guerres et résistances",
+                  "date": 1802,
+                  "titre": "Naissance de Kenesary Khan",
+                  "description": "Kenesary Khan (1802-1847) est un sultan kazakh, petit-fils d'Abylaï Khan, dernier khan des trois jüz. De 1837 à 1847, il conduit le soulèvement de la steppe contre l'avancée russe et la construction des forts. Repoussé vers le sud, il est tué en 1847 au Kirghizistan, et reste le héros de la résistance kazakhe.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kenesary_Khan",
+                  "pays": "KZ",
+                  "classement": "Kenesary Khan",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_kenesary.jpg",
+                    "legende": "Kenesary Khan, portrait imaginaire d'Abylkhan Kasteev (1935), sur un timbre du Kazakhstan",
+                    "auteur": "Post of Kazakhstan",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Stamp_of_Kazakhstan_kz630-1.jpg_(cropped).jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_kurmanjan",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1811,
+                  "titre": "Naissance de Kurmanjan Datka",
+                  "description": "Kurmanjan Datka (1811-1907) est une dirigeante kirghize, surnommée la « reine de l'Alaï », née à Och. Veuve d'Alimbek, assassiné en 1862, elle est reconnue par les khans de Boukhara et de Kokand comme dirigeante de l'Alaï et reçoit le titre de datka, puis persuade son peuple d'accepter en 1876 l'annexion de la région par l'Empire russe plutôt que de résister. Elle meurt à Och en 1907, à quatre-vingt-quinze ans, et le Kirghizistan en a fait l'une de ses grandes figures nationales.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kurmanjan_Datka",
+                  "pays": "KG",
+                  "classement": "Kurmanjan Datka",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_kurmanjan.jpg",
+                    "legende": "Kurmanjan Datka, portrait pris vers 1908",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kurmandjan.jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_akbarkhan",
+                  "axe": "Guerres et résistances",
+                  "date": 1816,
+                  "titre": "Naissance de Wazir Akbar Khan",
+                  "description": "Wazir Akbar Khan (1816-1847) est un prince afghan, fils de Dost Mohammad Khan et chef de la résistance aux Britanniques. Il conduit l'insurrection de Kaboul à la fin de 1841, tue le résident britannique Macnaghten, puis la retraite de l'armée britannique en janvier 1842 tourne au massacre, aux défilés de Gandamak. Il meurt à Jalalabad en 1847, et il est resté le héros de la première guerre anglo-afghane.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Wazir_Akbar_Khan",
+                  "pays": "AF",
+                  "classement": "Wazir Akbar Khan",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_akbarkhan.jpg",
+                    "legende": "Wazir Akbar Khan, dessin de Vincent Eyre (1842)",
+                    "auteur": "Vincent Eyre (1811–1881)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mohammad_Akbar_Khan.jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_kurmangazy",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1823,
+                  "titre": "Naissance de Kourmanghazy Saghyrbaïouly",
+                  "description": "Kourmanghazy Saghyrbaïouly (1823-1896) est un compositeur et joueur de dombra kazakh, né dans l'ouest de la steppe. Auteur de kuis comme « Saryarka » ou « Adaï », il met en musique la vie des nomades et les épreuves de son peuple sous la domination russe. Il meurt à Astrakhan, et ses pièces restent la base du répertoire de la dombra.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kourmanghazy_Saghyrba%C3%AFouly",
+                  "pays": "KZ",
+                  "classement": "Saghyrbaïouly, Kourmanghazy",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_kurmangazy.jpg",
+                    "legende": "Kourmanghazy Saghyrbaïouly, effigie d'un timbre du Kazakhstan émis en 1998",
+                    "auteur": "The original uploader was Wassily at Russian Wikipedia .",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kurmangazy_175.jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_valikhanov",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1835,
+                  "titre": "Naissance de Tchokan Valikhanov",
+                  "description": "Tchokan Valikhanov (1835-1865) est un explorateur, ethnographe et orientaliste kazakh, descendant de Gengis Khan et officier de l'armée russe. Envoyé à Kachgar en 1858-1859, il en rapporte la première description détaillée de la région, et recueille des légendes kirghizes, dont des passages de l'épopée de Manas. Mort de tuberculose à vingt-neuf ans, il est tenu pour le premier grand savant kazakh.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Tchokan_Valikhanov",
+                  "pays": "KZ",
+                  "classement": "Valikhanov, Tchokan",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_valikhanov.jpg",
+                    "legende": "Tchokan Valikhanov, photographie de N. Leïbine (1858)",
+                    "auteur": "Русский: Н. Лейбин English: N. Leybin",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Valikhanov_1859.jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_abdurrahman",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1844,
+                  "titre": "Naissance d'Abdur Rahman Khan",
+                  "description": "Abdur Rahman Khan (vers 1844-1901) est un émir d'Afghanistan de 1880 à 1901, surnommé l'« émir de fer ». Revenu d'exil en Asie centrale russe, il est reconnu par les Britanniques, qui gardent la haute main sur sa politique étrangère et fixent en 1893 la ligne Durand. Il bâtit un État centralisé et une armée régulière, au prix d'une répression féroce, notamment contre les Hazaras.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Abdur_Rahman_Khan",
+                  "pays": "AF",
+                  "classement": "Abdur Rahman Khan",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_abdurrahman.jpg",
+                    "legende": "Abdur Rahman Khan en uniforme d'apparat, portrait de Frank A. Martin (1907)",
+                    "auteur": "Frank A. Martin",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Amir_Abdur_Rahman_Khan_of_Afghanistan-cropped.jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_abai",
+                  "axe": "Littérature et pensée",
+                  "date": 1845,
+                  "titre": "Naissance d'Abaï Kounanbaïouly",
+                  "description": "Abaï Kounanbaïouly (1845-1904) est un poète, compositeur et penseur kazakh, né près de Semeï. Il traduit Pouchkine, Lermontov et Krylov, critique les mœurs de la steppe et appelle son peuple à s'instruire dans ses poèmes et ses « Paroles d'édification ». Fondateur de la littérature kazakhe moderne, il est le poète national du Kazakhstan.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Aba%C3%AF_Kounanba%C3%AFouly",
+                  "pays": "KZ",
+                  "classement": "Kounanbaïouly, Abaï",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_abai.jpg",
+                    "legende": "Abaï Kounanbaïouly, photographie de la fin du XIXe siècle",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Abai_Kunanbaev.jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_jambyl",
+                  "axe": "Littérature et pensée",
+                  "date": 1846,
+                  "titre": "Naissance de Jambyl Jabayev",
+                  "description": "Jambyl Jabayev (1846-1945) est un akyn kazakh, poète-chanteur improvisateur accompagné à la dombra, né dans le Semiretchié. Longtemps connu des seuls nomades, il devient dans les années 1930, à près de quatre-vingt-dix ans, un poète officiel de l'URSS et reçoit le prix Staline en 1941. Mort à quatre-vingt-dix-neuf ans, il a donné son nom à la ville de Taraz, appelée Djamboul de 1938 à 1997.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jamboul_Jabayev",
+                  "pays": "KZ",
+                  "classement": "Jabayev, Jambyl",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_jambyl.jpg",
+                    "legende": "Jambyl Jabayev, effigie d'un timbre soviétique de 1971 (d'après Anatoli Iar-Kravtchenko)",
+                    "auteur": "USSR Post",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:The_Soviet_Union_1971_CPA_4065_stamp_(Jambyl_Jabayev_(after_Anatoly_Yar-Kravchenko)).png",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_toktogul",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1864,
+                  "titre": "Naissance de Toktogul Satilganov",
+                  "description": "Toktogul Satilganov (1864-1933) est un akyn kirghize, poète et chanteur improvisateur accompagné au komuz, né dans la région de Djalal-Abad. Il chante les pauvres contre les riches et les représentants du pouvoir, ce qui lui vaut d'être exilé en Sibérie à la fin du XIXe siècle. Salué après 1917 comme le grand barde du pays, il a donné son nom à un barrage, à un lac de retenue et à une ville du Kirghizistan.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Toktogul_Satilganov",
+                  "pays": "KG",
+                  "classement": "Satilganov, Toktogul",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_toktogul.jpg",
+                    "legende": "Toktogul Satilganov, effigie d'un timbre du Kirghizistan émis en 2014",
+                    "auteur": "Kyrgyz Express Post",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Portrait_of_Toktogul_Satylganov_the_stamp_of_Kyrgyzstan_(2014).jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_tarzi",
+                  "axe": "Littérature et pensée",
+                  "date": 1865,
+                  "titre": "Naissance de Mahmoud Tarzi",
+                  "description": "Mahmoud Tarzi (1865-1933) est un journaliste, écrivain et homme d'État afghan, né à Ghazni. Rentré d'un long exil en Syrie et en Turquie, il fonde en 1911 « Siraj al-Akhbar », le premier grand journal afghan, qui diffuse les idées de réforme et de nationalisme. Beau-père et conseiller d'Amanullah Khan, ministre des Affaires étrangères puis chef de la légation d'Afghanistan à Paris, il meurt en exil à Istanbul.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mahmoud_Tarzi",
+                  "pays": "AF",
+                  "classement": "Tarzi, Mahmoud",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_tarzi.jpg",
+                    "legende": "Mahmoud Tarzi, photographie de 1920",
+                    "auteur": "Unknown author Unknown author , cropped by Officer",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mahmud_Tarzi_in_1920-cropped.jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_bokeikhanov",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1866,
+                  "titre": "Naissance d'Alikhan Boukeïkhanov",
+                  "description": "Alikhan Boukeïkhanov (1866-1937) est un homme d'État, journaliste et scientifique kazakh, formé à Saint-Pétersbourg. Élu à la première Douma en 1906, il fonde en 1917 le parti Alach et dirige l'autonomie d'Alach-Orda, premier gouvernement kazakh moderne. Arrêté sous Staline, il est fusillé à Moscou en 1937, puis réhabilité à la fin de l'ère soviétique.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Alikhan_Bouke%C3%AFkhanov",
+                  "pays": "KZ",
+                  "classement": "Boukeïkhanov, Alikhan",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_bokeikhanov.jpg",
+                    "legende": "Alikhan Boukeïkhanov, photographie de 1908",
+                    "auteur": "Unknown photographer",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Bukeykhanov.jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_imanov",
+                  "axe": "Guerres et résistances",
+                  "date": 1873,
+                  "titre": "Naissance d'Amangueldy Imanov",
+                  "description": "Amangueldy Imanov (1873-1919) est un chef de guerre kazakh, né dans la région de Tourgaï. En 1916, il dirige le soulèvement des Kazakhs contre la mobilisation des travailleurs pour le front, puis se range aux bolcheviks et combat pour le pouvoir soviétique en 1918-1919. Mort en 1919, il est devenu un héros national et le sujet d'un film soviétique de 1938.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Amangueldy_Imanov",
+                  "pays": "KZ",
+                  "classement": "Imanov, Amangueldy",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_imanov.jpg",
+                    "legende": "Amangueldy Imanov, effigie d'un timbre du Kazakhstan émis en 2023",
+                    "auteur": "Post of Kazakhstan",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Amangeldy_Imanov_2023_stamp_of_Kazakhstan.jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_ayni",
+                  "axe": "Littérature et pensée",
+                  "date": 1878,
+                  "titre": "Naissance de Sadriddin Aïni",
+                  "description": "Sadriddin Aïni (1878-1954) est un écrivain et érudit tadjik, né dans un village de l'émirat de Boukhara, dans l'actuel Ouzbékistan. Orphelin formé à Boukhara, il rejoint les réformateurs djadids et combat l'ordre de l'émir, puis devient, dans « Les Esclaves » et « Souvenirs de Boukhara », le romancier de la société d'avant la révolution. Considéré comme le père de la littérature tadjike moderne, il meurt à Douchanbé, et son visage figure sur le billet de cinq somoni.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sadriddin_Aini",
+                  "pays": "TJ",
+                  "classement": "Aïni, Sadriddin",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_ayni.jpg",
+                    "legende": "Sadriddin Aïni, effigie du billet de 5 somoni du Tadjikistan (1999)",
+                    "auteur": "Banque nationale du Tadjikistan",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:TajikistanP15-5Somoni-1999(2000)-donatedsb_f.jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_alimkhan",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1880,
+                  "titre": "Naissance de Mohammed Alim Khan",
+                  "description": "Mohammed Alim Khan (1880-1944) est le dernier émir de Boukhara, de la dynastie des Mangit, né dans sa capitale. Il règne de 1910 à 1920 sous protectorat russe et s'oppose aux réformateurs djadids, dont plusieurs sont arrêtés ou chassés. Délogé de Boukhara par l'Armée rouge de Frounzé en septembre 1920, il se réfugie en Afghanistan, où il meurt à Kaboul en 1944.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Alim_Khan",
+                  "pays": "UZ",
+                  "classement": "Mohammed Alim Khan",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_alimkhan.jpg",
+                    "legende": "Mohammed Alim Khan, photographie en couleurs de Sergueï Prokoudine-Gorski (1911)",
+                    "auteur": "Sergei Prokudin-Gorskii (1863–1944)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Prokudin-Gorskii-19.jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_fitrat",
+                  "axe": "Littérature et pensée",
+                  "date": 1886,
+                  "titre": "Naissance d'Abdurrauf Fitrat",
+                  "description": "Abdurrauf Fitrat (1886-1938) est un écrivain, dramaturge et réformateur ouzbek, né à Boukhara. Figure du mouvement djadid formée à Istanbul, il publie en 1911 le « Débat entre un professeur de Boukhara et un Européen » et plaide pour l'école moderne et la renaissance de la langue turque d'Asie centrale. Arrêté en 1937, il est fusillé en 1938 et sera réhabilité.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Abdurrauf_Fitrat",
+                  "pays": "UZ",
+                  "classement": "Fitrat, Abdurrauf",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_fitrat.jpg",
+                    "legende": "Abdurrauf Fitrat, effigie d'un timbre d'Ouzbékistan émis en 1996",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Uzbek_Abdurauf_Fitrat_stamp.jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_hamza",
+                  "axe": "Littérature et pensée",
+                  "date": 1889,
+                  "titre": "Naissance de Hamza Hakimzade Niyazi",
+                  "description": "Hamza Hakimzade Niyazi (1889-1929) est un poète, dramaturge et pédagogue ouzbek, né à Kokand. Il fonde des écoles nouvelles, écrit des chants et des pièces qui défendent l'instruction et l'émancipation des femmes, et passe pour l'un des pères du théâtre ouzbek moderne. Il est assassiné en 1929, dans la vallée de Ferghana, par des militants religieux hostiles à ses idées, et son nom est porté par le grand théâtre dramatique de Tachkent.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Hamza_Hakimzade_Niyazi",
+                  "pays": "UZ",
+                  "classement": "Hamza Hakimzade Niyazi",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_hamza.jpg",
+                    "legende": "Hamza Hakimzade Niyazi, photographie des années 1920",
+                    "auteur": ". Original uploader was GennadyL at ru.wikipedia",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Hamza_Niyazi.jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_amanullah",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1892,
+                  "titre": "Naissance d'Amanullah Khan",
+                  "description": "Amanullah Khan (1892-1960) est un émir puis roi d'Afghanistan de 1919 à 1929, né à Paghman. Après l'assassinat de son père, il proclame l'indépendance, la fait reconnaître par les Britanniques en 1919, puis promulgue une première constitution en 1923 et ouvre des écoles de garçons et de filles. Sa tournée européenne de 1927-1928 et ses réformes sociales soulèvent les conservateurs : il abdique en janvier 1929 et meurt en exil à Zurich.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Amanullah_Khan",
+                  "pays": "AF",
+                  "classement": "Amanullah Khan",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_amanullah.jpg",
+                    "legende": "Amanullah Khan, photographie d'avant 1930",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:King_Amanullah_Khan.jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_ryskulov",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1894,
+                  "titre": "Naissance de Tourar Ryskoulov",
+                  "description": "Tourar Ryskoulov (1894-1938) est un dirigeant communiste kazakh, né dans le Semiretchié. Rallié aux bolcheviks en 1917, il préside à partir de 1920 le Comité exécutif central de la république soviétique du Turkestan et défend l'idée d'une grande entité turque soviétique, ce qui lui sera reproché ensuite. Vice-président du Conseil des commissaires du peuple de la RSFSR, il est fusillé en 1938 pendant la Grande Terreur.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Tourar_Ryskoulouly_Ryskoulov",
+                  "pays": "KZ",
+                  "classement": "Ryskoulov, Tourar",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_ryskulov.jpg",
+                    "legende": "Tourar Ryskoulov, photographie d'avant 1938",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Turar_Ryskulov-1.jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_seifullin",
+                  "axe": "Littérature et pensée",
+                  "date": 1894,
+                  "titre": "Naissance de Saken Seïfoulline",
+                  "description": "Saken Seïfoulline (1894-1938) est un poète, écrivain et homme politique kazakh, né près d'Akmolinsk. Instituteur gagné à la révolution de 1917, il dirige un temps le gouvernement de la république kazakhe, met la littérature au service du nouveau pouvoir et laisse notamment le roman « Voie étroite, passage glissant », paru en 1927. Arrêté pendant la Grande Terreur, il est fusillé en 1938 puis réhabilité.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Saken_Se%C3%AFfoulline",
+                  "pays": "KZ",
+                  "classement": "Seïfoulline, Saken",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_seifullin.jpg",
+                    "legende": "Saken Seïfoulline, photographie de 1922",
+                    "auteur": "Unknown photographer",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Saken_Seifullin.jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_auezov",
+                  "axe": "Littérature et pensée",
+                  "date": 1897,
+                  "titre": "Naissance de Moukhtar Aouézov",
+                  "description": "Moukhtar Aouézov (1897-1961) est un écrivain et dramaturge kazakh, né près de Semeï. Son roman-fleuve « La Voie d'Abaï », consacré à la vie du poète, retrace la société kazakhe du XIXe siècle et le fait connaître dans toute l'Union soviétique, jusqu'au prix Lénine en 1959. Il est aussi l'auteur de la pièce « Enlik-Kebek », et le théâtre dramatique national d'Almaty porte son nom.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Moukhtar_Aou%C3%A9zov",
+                  "pays": "KZ",
+                  "classement": "Aouézov, Moukhtar",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_auezov.jpg",
+                    "legende": "Moukhtar Aouézov, effigie d'une pièce de 20 tenge émise en 1997 pour le centenaire de sa naissance",
+                    "auteur": "English: National Bank of the Republic of Kazakhstan Русский: Национальный банк Казахстана",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:KZ-1997-20tenge-Auezov.png",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_satpayev",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1899,
+                  "titre": "Naissance de Kanych Satpaïev",
+                  "description": "Kanych Satpaïev (1899-1964) est un géologue kazakh, fondateur de l'Académie des sciences du Kazakhstan. Ses prospections révèlent les richesses minières du pays, notamment le cuivre de Djezkazgan, devenu l'un des grands gisements de l'URSS. Premier président de l'Académie à sa création en 1946, il est célébré comme le père de la science kazakhe.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kanych_Satpa%C3%AFev",
+                  "pays": "KZ",
+                  "classement": "Satpaïev, Kanych",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_satpayev.jpg",
+                    "legende": "Kanych Satpaïev, photographie publiée dans la Kazakhstanskaïa Pravda en 1949",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kanysh_Satpayev_from_Kazakhstanskaya_Pravda_19_May_1949.jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_soraya",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1899,
+                  "titre": "Naissance de Soraya Tarzi",
+                  "description": "Soraya Tarzi (1899-1968) est une reine d'Afghanistan, née à Damas, épouse d'Amanullah Khan et fille de Mahmoud Tarzi. Éduquée dans l'exil syrien de sa famille, elle paraît publiquement sans voile, fonde une école de filles à Kaboul et accompagne le roi dans sa tournée européenne de 1927-1928. Elle quitte l'Afghanistan avec lui en 1929 et meurt à Rome en 1968.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Soraya_Tarzi",
+                  "pays": "AF",
+                  "classement": "Tarzi, Soraya",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_soraya.jpg",
+                    "legende": "Soraya Tarzi, photographie vers 1928",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Queen_Soraya_of_Afghanistan-cropped.jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_tchouikov",
+                  "axe": "Beaux-arts",
+                  "date": 1902,
+                  "titre": "Naissance de Semion Tchouïkov",
+                  "description": "Semion Tchouïkov (1902-1980) est un peintre soviétique, né à Pichpek, l'actuelle Bichkek. Fidèle au réalisme socialiste, il peint les paysages, les travaux et les visages de la Kirghizie, dont la « Fillette de la Kirghizie soviétique » de 1948, devenue l'une de ses toiles les plus connues. Surnommé le « père de l'art kirghiz », il forme une première génération de peintres du pays avant de mourir à Moscou.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Semion_Tchou%C3%AFkov",
+                  "pays": "KG",
+                  "classement": "Tchouïkov, Semion",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_tchouikov.jpg",
+                    "legende": "« Le Matin », toile de Semion Tchouïkov (1947) : aucun portrait libre du peintre",
+                    "auteur": "Semyon Chuikov",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Semyon_Chuikov_%E2%80%94_Morning_(1947).jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_tamarakhanum",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1906,
+                  "titre": "Naissance de Tamara Khanum",
+                  "description": "Tamara Khanum (1906-1991) est une danseuse et chanteuse ouzbèke d'origine arménienne, née à Marguilan, dans la vallée de Ferghana. Elle est la première artiste à paraître sans voile sur une scène ouzbèke, dans les années 1920, et fait connaître les chants et les danses d'Ouzbékistan dans tout le pays et à l'étranger. Artiste du peuple de l'URSS, elle est restée un symbole de l'émancipation des femmes d'Asie centrale.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Tamara_Khanum",
+                  "pays": "UZ",
+                  "classement": "Tamara Khanum",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_tamarakhanum.jpg",
+                    "legende": "Tamara Khanum, photographie des années 1930",
+                    "auteur": "Sergueï Strounnikov",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%D0%9F%D0%B5%D1%82%D1%80%D0%BE%D1%81%D1%8F%D0%BD_%D0%A2%D0%B0%D0%BC%D0%B0%D1%80%D0%B0_%D0%90%D1%80%D1%82%D0%B5%D0%BC%D0%BE%D0%B2%D0%BD%D0%B0.jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_daoud",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1909,
+                  "titre": "Naissance de Mohammed Daoud Khan",
+                  "description": "Mohammed Daoud Khan (1909-1978) est un prince afghan, cousin et beau-frère du roi Zaher Shah, né à Kaboul. Premier ministre de 1953 à 1963, il rapproche le pays de l'URSS et soutient la cause du Pachtounistan, ce qui provoque une crise avec le Pakistan, puis renverse la monarchie en 1973 et proclame la république. Il est tué avec sa famille en avril 1978, lors de la révolution de Saur.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mohammed_Daoud_Khan",
+                  "pays": "AF",
+                  "classement": "Mohammed Daoud Khan",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_daoud.jpg",
+                    "legende": "Mohammed Daoud Khan, photographie de James A. Cudney (avant 1978)",
+                    "auteur": "James A. Cudney",
+                    "licence": "CC BY 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Sardar_Mohammed_Daud.jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_momyshuly",
+                  "axe": "Guerres et résistances",
+                  "date": 1910,
+                  "titre": "Naissance de Bauyrzhan Momyshuly",
+                  "description": "Bauyrzhan Momyshuly (1910-1982) est un officier et écrivain kazakh, commandant dans la division Panfilov. Il se distingue dans la défense de Moscou à l'automne 1941, et le titre de héros de l'Union soviétique ne lui est décerné qu'en 1990, après sa mort. Auteur de « Moscou est derrière nous », il a inspiré à Alexandre Bek « La Route de Volokolamsk » et reste une figure nationale kazakhe.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bauyrzhan_Momyshuly",
+                  "pays": "KZ",
+                  "classement": "Momyshuly, Bauyrzhan",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_momyshuly.jpg",
+                    "legende": "Bauyrzhan Momyshuly, effigie d'un timbre du Kazakhstan émis en 2010",
+                    "auteur": "Post of Kazakhstan",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Stamps_of_Kazakhstan,_2010-16.jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_kunayev",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1912,
+                  "titre": "Naissance de Dinmoukhammed Kounaïev",
+                  "description": "Dinmoukhammed Kounaïev (1912-1993) est un dirigeant communiste kazakh, ingénieur des mines de formation et premier secrétaire du Parti communiste du Kazakhstan de 1964 à 1986. Proche de Brejnev, il dirige la république pendant plus de vingt ans et en fait un centre industriel et agricole de l'URSS. Son remplacement en décembre 1986 par un Russe, Gennadi Kolbine, déclenche à Alma-Ata les émeutes de Jeltoksan, premiers troubles nationalistes de l'ère Gorbatchev.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Dinmoukhammed_Kouna%C3%AFev",
+                  "pays": "KZ",
+                  "classement": "Kounaïev, Dinmoukhammed",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_kunayev.jpg",
+                    "legende": "Dinmoukhammed Kounaïev, photographie de 1952",
+                    "auteur": "unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kunayev.jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_halima",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1913,
+                  "titre": "Naissance d'Halima Nosirova",
+                  "description": "Halima Nosirova (1913-2003) est une chanteuse et actrice ouzbèke, née près de Kokand et élevée dans un orphelinat. Formée à Bakou puis au conservatoire de Moscou, elle chante au théâtre Hamza de Tachkent et devient l'interprète la plus aimée du répertoire classique ouzbek. Artiste du peuple de l'URSS, elle a marqué plusieurs générations de chanteurs d'Ouzbékistan.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Halima_Nosirova",
+                  "pays": "UZ",
+                  "classement": "Nosirova, Halima",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_halima.jpg",
+                    "legende": "Halima Nosirova, photographie de 1937",
+                    "auteur": "К. Сабельников (Союзфото/ТАСС)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Halima_Nosirova.jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_zahirshah",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1914,
+                  "titre": "Naissance de Mohammad Zaher Shah",
+                  "description": "Mohammad Zaher Shah (1914-2007) est le dernier roi d'Afghanistan, né à Kaboul. Roi de 1933 à 1973, il maintient la neutralité du pays pendant la guerre et fait adopter en 1964 la constitution la plus libérale de l'histoire afghane, qui ouvre la « décennie de la démocratie ». Renversé par son cousin Daoud en 1973, alors qu'il est en Italie, il rentre en 2002 et reçoit le titre de « père de la nation ».",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mohammad_Zaher_Shah",
+                  "pays": "AF",
+                  "classement": "Zaher Shah, Mohammad",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_zahirshah.jpg",
+                    "legende": "Mohammad Zaher Shah en 1963",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:King_Zahir_Shah_of_Afghanistan_in_1963.jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_osmonov",
+                  "axe": "Littérature et pensée",
+                  "date": 1915,
+                  "titre": "Naissance d'Alikul Osmonov",
+                  "description": "Alikul Osmonov (1915-1950) est un poète kirghiz, né à Kaptal-Aryk. Il renouvelle la littérature kirghize par une poésie lyrique et civique, écrite dans la langue du peuple. Mort à trente-cinq ans, il est l'un des fondateurs de la poésie kirghize moderne, et son visage figure sur le billet de deux cents soms.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Alikul_Osmonov",
+                  "pays": "KG",
+                  "classement": "Osmonov, Alikul",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_osmonov.jpg",
+                    "legende": "Alikul Osmonov, effigie d'un billet de 200 soms kirghiz",
+                    "auteur": "Banque nationale de la République kirghize",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Alykul_Osmonov_on_200_som_note.jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_rashidov",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1917,
+                  "titre": "Naissance de Charaf Rachidov",
+                  "description": "Charaf Rachidov (1917-1983) est un dirigeant communiste et écrivain ouzbek, né à Djizak. Premier secrétaire du Parti communiste d'Ouzbékistan de 1959 à sa mort, il conduit la reconstruction de Tachkent après le séisme de 1966 et fait du coton, « l'or blanc », le pilier de l'économie de la république. Après sa mort éclate le scandale du coton, une fraude massive sur les chiffres de production dont il est tenu pour le principal responsable.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Charaf_Rachidov",
+                  "pays": "UZ",
+                  "classement": "Rachidov, Charaf",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_rashidov.jpg",
+                    "legende": "Charaf Rachidov, photographie de 1944",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Sharof_Rashidov_in_1944.jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_taraki",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1917,
+                  "titre": "Naissance de Nour Mohammad Taraki",
+                  "description": "Nour Mohammad Taraki (1917-1979) est un écrivain et dirigeant communiste afghan, né à Ghazni. Fondateur du Parti démocratique populaire d'Afghanistan en 1965, il prend le pouvoir en avril 1978 et lance une réforme agraire et une campagne d'alphabétisation conduites sans ménagement, qui provoquent des soulèvements dans les campagnes. Renversé en septembre 1979 par son rival Hafizullah Amin, il est assassiné peu après, quelques semaines avant l'intervention soviétique de décembre.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Nour_Mohammad_Taraki",
+                  "pays": "AF",
+                  "classement": "Taraki, Nour Mohammad",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_taraki.jpg",
+                    "legende": "Nour Mohammad Taraki, photographie de l'Associated Press (mai 1978)",
+                    "auteur": "Associated Press",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Nur_Muhammad_Taraki.png"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_mametova",
+                  "axe": "Guerres et résistances",
+                  "date": 1922,
+                  "titre": "Naissance de Manchouk Mametova",
+                  "description": "Manchouk Mametova (1922-1943) est une mitrailleuse kazakhe de l'Armée rouge, née dans l'ouest du Kazakhstan. Engagée en 1942, elle est tuée en octobre 1943 près de Nevel, en couvrant avec sa mitrailleuse l'attaque de son régiment. Elle reçoit à titre posthume, en 1944, le titre de héros de l'Union soviétique, première femme d'Asie centrale à l'obtenir.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Manchouk_Mametova",
+                  "pays": "KZ",
+                  "classement": "Mametova, Manchouk",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_mametova.jpg",
+                    "legende": "Manchouk Mametova, photographie publiée par la Komsomolskaïa Pravda en 1944",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:M._Mametova,_Komsomolskaya_Pravda_image.jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_beishenalieva",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1926,
+                  "titre": "Naissance de Boubousara Beïchenalieva",
+                  "description": "Boubousara Beïchenalieva (1926-1973) est une danseuse de ballet kirghize, première grande ballerine de son pays. Formée à l'Académie de ballet Vaganova de Leningrad, elle danse les grands rôles du répertoire classique comme ceux des ballets inspirés du folklore kirghiz. Artiste du peuple de l'URSS, elle meurt en 1973 à Frounzé, et son portrait figure sur le billet de cinq soms.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bubusara_Beyshenalieva",
+                  "pays": "KG",
+                  "classement": "Beïchenalieva, Boubousara",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_beishenalieva.jpg",
+                    "legende": "Boubousara Beïchenalieva, effigie d'un billet de 5 soms kirghiz",
+                    "auteur": "Hux at en.wikipedia",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Bubusara_Beyshenalieva_on_5_som_note.jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_aitmatov",
+                  "axe": "Littérature et pensée",
+                  "date": 1928,
+                  "titre": "Naissance de Tchinguiz Aïtmatov",
+                  "description": "Tchinguiz Aïtmatov (1928-2008) est un écrivain kirghize qui écrit en kirghize et en russe, né dans la vallée du Talas. Son récit « Djamilia », traduit par Aragon, le fait connaître dans le monde, et « Le Jour dure plus d'un siècle » (1980) popularise le mot « mankourt », l'homme privé de mémoire. Ambassadeur du Kirghizistan auprès de l'Union européenne et du Benelux jusqu'à sa mort à Nuremberg, il reste la grande figure littéraire du pays.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Tchinguiz_A%C3%AFtmatov",
+                  "pays": "KG",
+                  "classement": "Aïtmatov, Tchinguiz",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_aitmatov.jpg",
+                    "legende": "Tchinguiz Aïtmatov, photographie",
+                    "auteur": "Auteur non crédité (Wikimedia Commons)",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Tschingis_Ajtmatow.jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_nabiyev",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1930,
+                  "titre": "Naissance de Rahmon Nabiev",
+                  "description": "Rahmon Nabiev (1930-1993) est un dirigeant communiste tadjik, premier secrétaire du Parti communiste du Tadjikistan de 1982 à 1985, puis écarté du pouvoir. Élu président en novembre 1991, il dirige le pays à l'indépendance dans un climat de tensions entre régions et entre pouvoir et opposition. Contraint de démissionner en septembre 1992, au début de la guerre civile qui fera des dizaines de milliers de morts, il meurt en 1993.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Rahmon_Nabiev",
+                  "pays": "TJ",
+                  "classement": "Nabiev, Rahmon",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_nabiyev.jpg",
+                    "legende": "Rahmon Nabiev, photographie de décembre 1991",
+                    "auteur": "EgemenMedia",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Rahmon_Nabiyev_1991-1992_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_karimov",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1938,
+                  "titre": "Naissance d'Islam Karimov",
+                  "description": "Islam Karimov (1938-2016) est un dirigeant ouzbek, né à Samarcande. Premier secrétaire du Parti communiste d'Ouzbékistan en 1989, il proclame l'indépendance en août 1991, est élu président en décembre et le reste jusqu'à sa mort en 2016. Son régime est autoritaire, l'opposition y est muselée, la torture dénoncée par l'ONU, et la répression de l'insurrection d'Andijan en mai 2005 a fait des centaines de morts selon les organisations de défense des droits humains.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Islam_Karimov",
+                  "pays": "UZ",
+                  "classement": "Karimov, Islam",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_karimov.jpg",
+                    "legende": "Islam Karimov en 2015",
+                    "auteur": "Russian Presidential Press and Information Office",
+                    "licence": "CC BY 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Karimov_Ufa.jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_niazov",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1940,
+                  "titre": "Naissance de Saparmourad Niazov",
+                  "description": "Saparmourad Niazov (1940-2006) est le dirigeant du Turkménistan de 1985 à sa mort, né près d'Achgabat. Premier secrétaire du Parti communiste turkmène à la fin de l'URSS, il devient président à l'indépendance, prend le titre de Turkmenbachi, « chef des Turkmènes », et se fait nommer président à vie en 1999. Son régime, marqué par un culte de la personnalité sans équivalent, le livre « Ruhnama » imposé à l'école et la répression de toute opposition, a aussi fait reconnaître par l'ONU la neutralité permanente du pays.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Saparmourad_Niazov",
+                  "pays": "TM",
+                  "classement": "Niazov, Saparmourad",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_niazov.jpg",
+                    "legende": "Saparmourad Niazov en février 1998",
+                    "auteur": "Danny Gys",
+                    "licence": "CC BY 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Nyyazov_in_February_1998.jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_najibullah",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1947,
+                  "titre": "Naissance de Mohammad Najibullah",
+                  "description": "Mohammad Najibullah (1947-1996) est le dernier président de la République démocratique d'Afghanistan, né à Gardez. Ancien chef du KhAD, la police secrète, auteur d'une politique de réconciliation nationale, il tient trois ans après le départ des Soviétiques en 1989, avant de démissionner en avril 1992. Réfugié dans les locaux de l'ONU à Kaboul, il est capturé par les talibans, torturé et pendu en septembre 1996.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mohammad_Najibullah",
+                  "pays": "AF",
+                  "classement": "Najibullah, Mohammad",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_najibullah.jpg",
+                    "legende": "Mohammad Najibullah en 1986",
+                    "auteur": "Alexandr Graschenkov / Александр Гращенков",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mohammad_Najibullah_1986.jpg"
+                  }
+                },
+                {
+                  "id": "pan_asiecentrale_meena",
+                  "axe": "Guerres et résistances",
+                  "date": 1956,
+                  "titre": "Naissance de Meena Keshwar Kamal",
+                  "description": "Meena Keshwar Kamal (1956-1987) est une poétesse et féministe afghane, née à Kaboul. Elle fonde en 1977 l'Association révolutionnaire des femmes d'Afghanistan, qui lutte pour l'instruction et les droits des femmes face à la monarchie, aux communistes puis aux islamistes, et tient une école et un dispensaire pour réfugiées au Pakistan. Elle est assassinée à Quetta en février 1987, à trente ans, et reste un symbole de la résistance des Afghanes.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Meena_Keshwar_Kamal",
+                  "pays": "AF",
+                  "classement": "Meena Keshwar Kamal",
+                  "image": {
+                    "src": "assets/portraits/pan_asiecentrale_meena.jpg",
+                    "legende": "Meena Keshwar Kamal prenant la parole en 1982",
+                    "auteur": "RAWA",
+                    "licence": "CC BY 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Meena_founder_of_RAWA_speaking_in_1982.jpg"
+                  }
+                }
+              ],
+              "axeOrder": [
+                "Chefs d'État et dirigeants",
+                "Guerres et résistances",
+                "Littérature et pensée",
+                "Beaux-arts",
+                "Musique, spectacle et sport",
+                "Sciences, techniques et innovation"
+              ],
+              "essentiel": [
+                "pan_asiecentrale_khwarizmi",
+                "pan_asiecentrale_ismailsamani",
+                "pan_asiecentrale_rudaki",
+                "pan_asiecentrale_farabi",
+                "pan_asiecentrale_mahmoudghazni",
+                "pan_asiecentrale_biruni",
+                "pan_asiecentrale_avicenne",
+                "pan_asiecentrale_tamerlan",
+                "pan_asiecentrale_ulughbeg",
+                "pan_asiecentrale_jami",
+                "pan_asiecentrale_navoi",
+                "pan_asiecentrale_behzad",
+                "pan_asiecentrale_durrani",
+                "pan_asiecentrale_magtymguly",
+                "pan_asiecentrale_abai",
+                "pan_asiecentrale_amanullah",
+                "pan_asiecentrale_aitmatov"
               ]
             },
             {

@@ -438,6 +438,12 @@ test('« Grandes figures d’Afrique de l’Ouest » : chaque ancre porte le pay
     verifierPantheonDeBloc('pan_afriqueouest', 23, 15);
 });
 
+test('« Grandes figures d’Asie centrale » : chaque ancre porte le pays de son événement, et la session se joue', () => {
+    // Six pays, dont deux (le Turkménistan, le Tadjikistan) n'ont que quelques figures : le
+    // Kazakhstan, l'Afghanistan et l'Ouzbékistan ne doivent pas les faire disparaître parmi les ancres.
+    verifierPantheonDeBloc('pan_asiecentrale', 31, 6);
+});
+
 test('« Grandes figures du sous-continent indien » : chaque ancre porte le pays de son événement, et la session se joue', () => {
     // Sept pays, dont deux (le Bhoutan, les Maldives) n'ont que quelques figures : l'Inde, qui en
     // compte plus de la moitié, ne doit pas les faire disparaître parmi les ancres.

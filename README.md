@@ -677,7 +677,7 @@ ne posent pas la même question :
 | | Un thème, c'est | Une date, c'est | On le joue par |
 |---|---|---|---|
 | **Biographies** | une vie (360 thèmes, en 12 domaines) | une étape de cette vie | étape de la vie |
-| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, le sous-continent indien, Israël, la Turquie, le Japon, la Russie, l'Australie, le Canada, le Benelux, le Portugal) | la naissance d'un personnage | domaine |
+| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, le sous-continent indien, Israël, la Turquie, le Japon, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan) | la naissance d'un personnage | domaine |
 
 Le déplacement ne coûte aucune migration : les 360 thèmes gardent leurs
 identifiants, et rien de ce que le joueur a sauvegardé (favoris, révision,
@@ -1416,7 +1416,8 @@ Les choix qui ne vont pas de soi :
   n'ont que quelques figures avec un portrait libre. L'Inde reste sous 65 %, ce qui oblige à
   y décider si une figure de plus s'ajoute ou non.
 - **Le périmètre est celui des sept pays demandés.** L'Afghanistan, rangé dans « l'Asie du Sud »
-  de l'Histoire par pays, n'en fait pas partie, non plus que le Tibet. Les figures nées dans
+  de l'Histoire par pays, n'en fait pas partie : il est au bloc d'Asie centrale (voir « Un bloc :
+  l'Asie centrale et l'Afghanistan »). Le Tibet non plus. Les figures nées dans
   un pays voisin sont rangées là où on les honore (voir plus bas).
 - **Là où on les honore, pas là où elles sont nées.** Beaucoup de figures sont nées avant
   1947 dans une région devenue le Pakistan ou le Bangladesh : Guru Nanak (Nankana Sahib),
@@ -2314,6 +2315,70 @@ liées (Vasco de Gama, Magellan). 77 portraits : 57 du domaine public, 5 CC0 et 
   Eugénio de Andrade ; et les figures que le Brésil revendique autant (Pierre Ier, Bartolomeu de Gusmão), ou né à Goa
   (Joseph Vaz).
 
+### Un bloc : l'Asie centrale et l'Afghanistan
+
+`pan_asiecentrale`, « Grandes figures d'Asie centrale » (code `asiecentrale`, bloc) : **65 personnages de six pays** —
+Afghanistan 17, Kazakhstan 17, Ouzbékistan 15, Kirghizistan 7, Tadjikistan 5, Turkménistan 4 — d'Al-Khwârizmî
+(vers 780) à Meena Keshwar Kamal (1956). Par axe : 26 Chefs d'État et dirigeants, 20 Littérature et pensée, 6 Guerres
+et résistances, 6 Sciences, techniques et innovation, 5 Musique, spectacle et sport, 2 Beaux-arts ; 17 ⭐ et 2
+biographies liées (Avicenne, Al-Khwarizmi). 65 portraits : 55 du domaine public, le reste sous licence CC0, CC BY ou
+CC BY-SA. Les mots-clés du thème portent les six pays, la Transoxiane, le Khorassan, le Khârezm, Samarcande, Boukhara,
+Hérat et les grandes dynasties (Timourides, Samanides, Seldjoukides, Ghaznévides).
+
+- **Pourquoi l'Afghanistan en fait partie.** La question s'est posée en construisant le bloc : l'Histoire par pays
+  range l'Afghanistan en « Asie du Sud », l'ONU aussi. Mais aucun autre panthéon ne le couvre (le bloc indien l'écarte
+  expressément), et c'est le pays d'Asie où Balkh, Ghazni, Hérat et la Bactriane font la même histoire que Samarcande ou
+  Boukhara : les Ghaznévides, les Timourides de Hérat, Navoï, Djâmî et Behzad circulent des deux côtés de la frontière.
+  Le laisser dehors aurait obligé à ranger Djâmî ou Mahmoud de Ghazni dans un thème où ils n'ont rien à faire, ou à
+  les perdre. Les cinq pays demandés (Kazakhstan, Ouzbékistan, Kirghizistan, Tadjikistan, Turkménistan) forment le
+  noyau ; l'Afghanistan s'y ajoute, et pèse 26 % du bloc, sous le seuil de 40 %.
+- **Un équilibre déclaré.** Le Kazakhstan, l'Afghanistan et l'Ouzbékistan représentent ensemble 75 % des figures ; le
+  Tadjikistan (5) et le Turkménistan (4) sont minces, faute d'articles en français et de portraits libres, non par choix.
+  Aucun pays ne dépasse le seuil de 40 % du constructeur. Les chefs
+  d'État pèsent 40 % du bloc (26 sur 65), davantage que dans les autres : ce sont souvent les seules figures dont on
+  trouve à la fois la date, l'article français et une image libre.
+- **Hors périmètre.** La Mongolie (Gengis Khan et sa descendance ont leur biographie, mais aucun panthéon), le
+  Xinjiang et les peuples turcs de Russie. Les figures de langue persane nées dans l'Iran actuel (Omar Khayyâm, Ferdowsi,
+  al-Razi, al-Ghazali) sont laissées à un futur panthéon de l'Iran, et celles déjà prises ailleurs le restent : Babur et
+  Humayun (sous-continent indien), Rûmî, né à Balkh, et Alp Arslan (Turquie).
+- **Là où on les honore, pas là où elles sont nées.** Alicher Navoï est né à Hérat (Afghanistan) mais l'Ouzbékistan en a fait
+  son poète national : il est ouzbek. Djâmî, né à Kharjird (Khorassan, aujourd'hui en Iran) et mort à Hérat, est afghan.
+  Goharshad, née à Samarcande, aurait été afghane aussi : faute de portrait elle est restée dehors. Avicenne, né à
+  Afshona près de Boukhara, est ouzbek, et le Tadjikistan comme l'Iran le revendiquent : la fiche le dit. Al-Fârâbî est kazakh
+  (né près de Farab, ou à Faryab en Afghanistan selon d'autres sources) ; Al-Biruni, né au Khârezm, ouzbek ; Ismaïl Samani,
+  tadjik, bien que né à Ferghana ; Tamara Khanum, d'origine arménienne, ouzbèke ; Semion Tchouïkov, né à Pichpek, kirghiz.
+- **Des figures contestées**, dont la fiche dit ce qu'on leur reproche : Tamerlan (massacres), Islam Karimov (Andijan),
+  Saparmourad Niazov (culte de la personnalité), Charaf Rachidov (le scandale du coton), Najibullah et Taraki (la
+  répression communiste), Mahmoud de Ghazni (le pillage de Somnath), Ahmad Shah Massoud étant absent faute d'image libre.
+- **Dates retenues quand les sources divergent.** Magtymguly est daté de vers 1724 (la date de l'Unesco et du
+  Turkménistan, l'infobox de Wikipédia dit vers 1733), Rudaki de vers 859 (858 selon d'autres), Kourmanghazy de 1823 (le
+  Kazakhstan fête 1818), Fitrat de 1886 (1885 en catégorie), Momyshuly de 1910 (1911 en catégorie), Al-Fârâbî de
+  vers 872. Cholpon (1893 ou 1897), Muhammad de Ghor (1144 ou 1149), Sher Ali Khan (1823 ou 1825) et
+  Nadia Anjuman (1980 ou 1981) ont été écartés pour cette raison.
+- **Des portraits souvent indirects**, et les légendes le disent : billets de banque (Abylaï, Aïni, Samani, Osmonov,
+  Beïchenalieva, Yusuf Khass Hajib), timbres (Magtymguly, Al-Khwârizmî, Al-Fârâbî, Fitrat, Kourmanghazy, Nasir Khusraw,
+  Ansari, Momyshuly, Imanov, Kenesary, Jambyl, Toktogul), une pièce (Aouézov), miniatures timourides et persanes (Tamerlan,
+  Ulugh Beg, Chaybani, Djâmî, Husayn Bayqara), une statue (Biruni), une peinture moderne (Nadira, Roudaki, Yasavi). Onze
+  portraits écrivent le nom de la personne et portent `nomVisible` : « Qui est-ce ? » les écarte. Behzad et Tchouïkov
+  sont montrés par une œuvre, faute de portrait libre de leur main ou de leur visage.
+- **Un téléchargement contraint.** Wikimedia refusait à cet environnement les miniatures de plus de 330 pixels (réponse 429
+  même à intervalle long) : dix-neuf portraits sont donc tirés d'une miniature de 330 pixels et recadrés au plus près, au
+  prix d'une définition plus basse pour les billets et les timbres. À refaire en 960 pixels depuis une autre adresse.
+- **Écartés faute d'article en français** : Isataï Taïmanov, Altynsarine, Baïtoursynov, Doulatov, Joumabaïev,
+  Aliya Moldagoulova, Qodiriy, Gafur Gulom, Oybek, Muqimiy, Behbudi, Kamal Khujandi, Bobodjan Gafourov, Mirzo Tursunzoda,
+  Nusratullo Makhsum, Tynystanov, Tokombaev, Moldo Kylych, Seydi, Kemine, Mollanepes, Azadi, Kerbabayev, Khalili.
+- **Écartés faute d'image libre convenable**, à réintégrer si l'une apparaît : Ahmad Shah Massoud (seules les
+  photographies du Parlement européen existent, sous une licence hors liste, et l'illustration disponible est sous
+  licence Art libre), Mirwais Hotak (un timbre de 1961 trop petit et refusé par Commons à cet environnement), Ahmad Zahir,
+  Zulfiya, Qahhor Mahkamov, Goharshad, Al-Boukhari, Naqshband et Zamakhshari (des calligraphies et des tombes seulement),
+  Sanaï.
+- **Écartés par choix** : six chefs d'État et chefs de guerre afghans (Habibullah Khan, Nadir Shah, Sher Ali
+  Khan, Hafizullah Amin, Habibullah Kalakani, Abdul Haq), pour ne pas faire de l'Afghanistan un thème de chefs d'État ;
+  Khushal Khattak, né dans le Pakistan actuel, que le Pakistan honore autant que l'Afghanistan.
+- **Géolocalisation** : seules les deux figures qui ont aussi une biographie (Avicenne, Al-Khwârizmî) ont un point dans
+  `assets/geo/events-geo.json`, repris de leur biographie (le test des faits liés l'exige). Les 63 autres naissances ne sont
+  pas encore placées sur l'Atlas.
+
 ### Un fichier source par panthéon, un script qui l'écrit dans `data/fr.json`
 
 `scripts/pantheon/<code>.json` (`fr`, `hispam`…) est **la seule source de
@@ -2656,7 +2721,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
 ### Ce qui n'est pas fait
 
 - **Les autres panthéons** : la France, l'Égypte, les États-Unis, l'Italie, le
-  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie, l'Australie, le Canada, le Benelux et le Portugal sont écrits.
+  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan sont écrits.
   Chaque liste de personnages est validée avant la rédaction. Feuille de route, dans l'ordre
   où on les propose (un pays seul quand il a de quoi faire un thème, un bloc sinon) :
   1. **Le Machrek est écrit** (voir « Le cinquième bloc »). Il reste : le portrait des trois
@@ -2668,7 +2733,8 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
      figures juives (Edmond Amran El Maleh, Habiba Msika) et en a laissé cinq de côté (Cheikh
      Raymond, Reinette l'Oranaise, Salim Halali, Albert Memmi, Abraham Serfaty).
   2. **Pays seuls** : le Brésil (qui n'entre pas dans l'Amérique « hispanique »), l'Afrique du Sud, l'Iran. **La Turquie** (voir « Un pays à part : la Turquie »), **le Japon** (voir « Un pays à part : le Japon ») et **la Russie** (voir « Un pays à part : la Russie ») et **l'Australie** (voir « Un pays à part : l'Australie ») sont écrits.
-  3. **Blocs** : l'Asie du Sud-Est, l'Asie centrale et la Mongolie, le Caucase, la Corée (`KR`/`KP`), l'Afrique de
+  3. **Blocs** : l'Asie du Sud-Est, la Mongolie (l'Asie centrale est écrite, voir « Un bloc : l'Asie centrale et
+     l'Afghanistan »), le Caucase, la Corée (`KR`/`KP`), l'Afrique de
      l'Ouest, l'Afrique centrale, l'Afrique de l'Est et la Corne, l'Afrique australe et l'océan
      Indien (sans l'Afrique du Sud), « Nouvelle-Zélande et Pacifique ».
   4. **L'Europe et les Amériques qui manquent** : **le Portugal est écrit** (voir « Un pays à part : le Portugal »,
