@@ -90,7 +90,7 @@ test('Personnages illustres : deux sous-catégories, chacune avec sa note et son
     await expect(page.locator('#theme-screen-title')).toHaveText('Panthéons');
     await expect(page.locator('#theme-screen-note-text')).toContainText('né dans les frontières actuelles');
     // Panthéons de pays et de blocs se rangent par leur nom de source — « Afrique de l'Ouest », « Allemagne, Autriche et Suisse »,
-    // « Amérique hispanique », « Chine », « Égypte », « Espagne », « États-Unis », « France », « Grèce », « Italie », « Japon », « Machrek et péninsule Arabique », « Maghreb », « Royaume-Uni », « Scandinavie », « Sous-continent indien », « Turquie » — et non par
+    // « Amérique hispanique », « Australie », « Benelux », « Canada », « Chine », « Égypte », « Espagne », « États-Unis », « France », « Grèce », « Italie », « Japon », « Machrek et péninsule Arabique », « Maghreb », « Portugal », « Royaume-Uni », « Russie », « Scandinavie », « Sous-continent indien », « Turquie » — et non par
     // « Grandes figures d'… » / « … de » / « … des » / « … du ».
     await expect(page.locator('#themes-container .data-card-title'))
         .toHaveText(["Grandes figures d'Afrique de l'Ouest", "Grandes figures d'Allemagne, d'Autriche et de Suisse", "Grandes figures d'Amérique hispanique",
@@ -603,7 +603,7 @@ test('la Russie : chacune de ses figures a son portrait, d’Ivan III à Alexeï
     await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
 
     // Trois époques : le grand-prince de Moscou, un poète du XIXe siècle, un cosmonaute.
-    for (const titre of ['Naissance d\'Ivan III', 'Naissance d\'Alexandre Pouchkine', 'Naissance d\'Youri Gagarine']) {
+    for (const titre of ['Naissance d\'Ivan III', 'Naissance d\'Alexandre Pouchkine', 'Naissance de Youri Gagarine']) {
         await page.locator('#timeline .entry', { hasText: titre }).click();
         await expect(page.locator('#modal-details')).toBeVisible();
         await expect(page.locator('#modal-pays')).toBeHidden();

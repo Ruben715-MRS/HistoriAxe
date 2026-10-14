@@ -67,9 +67,11 @@ test('la session enchaîne les questions et le compteur suit', async ({ page }) 
 
     await expect(page.locator('#simul-hud-count')).toHaveText('1 / 12');
     await page.locator('#simul-options .simul-option').first().click();
-    // Le révélé reste affiché un moment avant la question suivante (voir
-    // answerSimultaneity) : c'est un temps de lecture, pas une latence.
-    await expect(page.locator('#simul-hud-count')).toHaveText('2 / 12', { timeout: 6000 });
+    // Le révélé reste affiché jusqu'au clic sur « Suivant » (voir
+    // appendRevealNextButton) : le joueur lit à son rythme, rien n'avance seul.
+    await expect(page.locator('#simul-hud-count')).toHaveText('1 / 12');
+    await page.locator('#simul-reveal .simul-next-btn').click();
+    await expect(page.locator('#simul-hud-count')).toHaveText('2 / 12');
     await expect(page.locator('#simul-reveal')).toBeHidden();
     await expect(page.locator('#simul-options .simul-option')).toHaveCount(4);
 });
