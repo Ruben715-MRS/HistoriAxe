@@ -542,13 +542,18 @@
   },
   "carte": {
     "mode_title": "🗺️ Kartenmodus",
-    "mode_subtitle": "Verorte die Ereignisse von „{label}“ zuerst auf der Weltkarte, dann in der Zeit.",
-    "world_label": "Welt",
-    "where_kicker": "Wo hat sich dieses Ereignis zugetragen?",
-    "correct_reveal": "✅ Richtige Antwort: {flag} {name}",
-    "wrong_reveal": "❌ Es war: {flag} {name}",
+    "mode_subtitle": "Platzieren Sie die Ereignisse von „{label}“ auf einer Karte ohne Namen und datieren Sie sie dann.",
+    "where_kicker": "Wo fand dieses Ereignis statt?",
     "not_enough_events": "Dieser Bereich enthält nicht genügend geolokalisierte Ereignisse für den Kartenmodus.",
-    "pin_aria": "Option {n}: {country}"
+    "place_hint": "Tippen Sie auf die Karte, um Ihren Marker zu setzen (er lässt sich verschieben), und bestätigen Sie.",
+    "validate": "Bestätigen",
+    "continue": "Weiter",
+    "map_label": "Karte ohne Namen: Ereignis platzieren",
+    "guess_placed": "Marker gesetzt. Bestätigen oder verschieben.",
+    "result": "{place} · {km} km entfernt (+{pts} Pkt.)",
+    "result_exact": "Volltreffer: {place} (+{pts} Pkt.)",
+    "km_under_one": "unter 1",
+    "load_error": "Die Karte konnte nicht geladen werden. Prüfen Sie Ihre Verbindung und versuchen Sie es erneut."
   },
   "mindmap": {
     "picker_frise": "Zeitleiste",

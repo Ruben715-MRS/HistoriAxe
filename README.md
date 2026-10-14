@@ -452,6 +452,25 @@ base : un événement n'est que dans un fait, coordonnées valides) ; `tests/geo
 de points) ; `e2e/atlas.spec.js` (commandes, feuille, fiche, « Voir sur la carte »). La carte
 elle-même (WebGL, réseau) n'est pas exercée par les e2e.
 
+## Le Mode Carte : poser l'événement sur la carte
+
+Deux temps par question, comme avant : « Où ? » puis « Quand ? » (quatre dates, inchangé).
+Le « Où ? » se joue désormais sur une **carte sans aucun nom** (le fond OpenFreeMap de l'Atlas,
+dont on retire toutes les couches de texte) : on pose un repère, on valide, la carte montre le
+vrai lieu et la distance.
+
+- **Points** : 80 de base × `exp(−d / D)` × combo. `D` s'adapte à la zone jouée (étendue 5ᵉ‥95ᵉ
+  centile des lieux du thème ÷ 12, entre 25 et 2 500 km : environ 1 300 km pour le monde,
+  120 km pour la France). Tolérance avant pénalité : 1,5 km pour un site, 10 km pour une ville.
+  Aucun bonus de vitesse.
+- **Verdict** : très bon ≥ 60 % des points (le combo monte), raté < 25 % (le combo retombe, une
+  vie est perdue), entre les deux rien ne bouge.
+- **Questions** : seulement les faits au lieu sûr (site ou ville, sans drapeau « discutable »),
+  un par fait lié entre thèmes, deux au plus par lieu et par partie. Logique pure dans
+  `js/geoPlace.js` (`tests/geoPlace.test.js`), écran dans `js/geoMap.js` (`e2e/carte.spec.js`).
+- **Clavier** : la carte se pilote aux flèches ; Entrée pose le repère au centre.
+- Le mode exige le réseau (tuiles de la carte).
+
 ## « Qui est-ce ? » et le portrait du jour
 
 Les portraits des panthéons permettent un mode que rien d'autre dans la base n'autorise :

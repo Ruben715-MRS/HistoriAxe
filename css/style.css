@@ -2836,7 +2836,8 @@ textarea.form-input {
 .geo-map-frame {
     position: relative;
     width: 100%;
-    aspect-ratio: 1000 / 440;
+    /* Une carte à viser doit être grande : haute comme l'écran le permet, ni écrasée ni démesurée. */
+    height: clamp(260px, 42vh, 520px);
     background: #eaf3fb;
     border-radius: 16px;
     overflow: hidden;
@@ -2847,63 +2848,90 @@ textarea.form-input {
     background: #142033;
 }
 
-.geo-map-svg-holder,
-.geo-map-svg-holder svg {
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-
-.geo-land {
-    fill: #c7d6e3;
-}
-
-:root[data-theme="dark"] .geo-land {
-    fill: #2a3a52;
-}
-
-.geo-pins-layer {
+/* L'identifiant : maplibre-gl.css pose `.maplibregl-map { position: relative }` et, chargé plus tard,
+   l'emporterait sur une classe (voir #atlas-map). */
+#geo-map.geo-map {
     position: absolute;
     inset: 0;
 }
 
-.geo-pin-btn {
+/* Mire : la carte se vise au clavier en posant le repère en son centre (Entrée) ; elle n'apparaît
+   donc que lorsque la carte a le focus clavier. */
+.geo-crosshair {
+    display: none;
     position: absolute;
-    transform: translate(-50%, -50%);
-    width: 30px;
-    height: 30px;
+    left: 50%;
+    top: 50%;
+    width: 26px;
+    height: 26px;
+    margin: -13px 0 0 -13px;
+    pointer-events: none;
+    border: 2px solid var(--primary-blue);
     border-radius: 50%;
-    background: var(--primary-blue);
-    color: #fff;
-    border: 3px solid #fff;
-    box-shadow: 0 3px 8px rgba(0, 26, 75, 0.25);
-    font-weight: 800;
+    box-shadow: 0 0 0 2px #fff;
+}
+
+#geo-map:focus-visible+.geo-crosshair {
+    display: block;
+}
+
+.geo-hint {
+    margin: 0 0 8px;
     font-size: 14px;
-    cursor: pointer;
+    color: var(--muted-text);
+    text-align: center;
+    min-height: 1.4em;
+}
+
+.geo-status {
+    min-height: 1.4em;
+    margin-top: 8px;
+    font-size: 13px;
+    color: var(--muted-text);
+    text-align: center;
+}
+
+.geo-actions {
     display: flex;
-    align-items: center;
     justify-content: center;
-    transition: transform 0.15s, background 0.15s;
+    gap: 12px;
+    margin-top: 6px;
+    /* « Valider » et « Continuer » restent à portée du pouce même quand la carte dépasse l'écran. */
+    position: sticky;
+    bottom: 0;
+    z-index: 5;
+    padding: 10px 0 calc(env(safe-area-inset-bottom, 0px) + 10px);
+    background: linear-gradient(to bottom, rgba(242, 244, 247, 0), var(--bg-color) 45%);
 }
 
-.geo-pin-btn:hover {
-    transform: translate(-50%, -50%) scale(1.12);
-}
-
-.geo-pin-btn:disabled {
+.geo-actions .btn[disabled] {
+    opacity: 0.45;
     cursor: default;
 }
 
-.geo-pin-btn.correct {
+/* Les repères : une goutte posée par le joueur, une autre (verte) sur la bonne réponse. */
+.geo-pin {
+    width: 28px;
+    height: 28px;
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    border: 3px solid #ffffff;
+    box-shadow: 0 3px 8px rgba(0, 26, 75, 0.35);
+    cursor: grab;
+}
+
+.geo-pin-player {
+    background: #d1438a;
+}
+
+.geo-pin-answer {
     background: #2CA85A;
+    cursor: default;
 }
 
-.geo-pin-btn.wrong {
-    background: var(--danger-red);
-}
-
-.geo-pin-number {
-    pointer-events: none;
+.geo-reveal-label.is-ok {
+    background: var(--selected-tint);
+    color: var(--text-dark);
 }
 
 .geo-time-phase {
@@ -3857,14 +3885,6 @@ textarea.form-input {
     }
 }
 
-.geo-pin-btn.correct {
-    animation: geoPinCorrectPulse 0.5s ease-out;
-}
-
-.geo-pin-btn.wrong {
-    animation: geoPinWrongPulse 0.4s ease-in-out;
-}
-
 @media (prefers-reduced-motion: reduce) {
 
     .entry-correct-pulse,
@@ -3875,9 +3895,7 @@ textarea.form-input {
     .quiz-option.wrong,
     .avap-option.wrong,
     .periodes-option.wrong,
-    .fil-display-value.fil-feedback-wrong,
-    .geo-pin-btn.correct,
-    .geo-pin-btn.wrong {
+    .fil-display-value.fil-feedback-wrong {
         animation: none;
     }
 }

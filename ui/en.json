@@ -569,13 +569,18 @@
   },
   "carte": {
     "mode_title": "🗺️ Map Mode",
-    "mode_subtitle": "Locate the events of «{label}» on the world map, then in time.",
-    "world_label": "World",
+    "mode_subtitle": "Place the events of “{label}” on a map without names, then date them.",
     "where_kicker": "Where did this event take place?",
-    "correct_reveal": "✅ Correct answer: {flag} {name}",
-    "wrong_reveal": "❌ It was: {flag} {name}",
     "not_enough_events": "This area doesn't have enough geolocated events to play Map Mode.",
-    "pin_aria": "Option {n}: {country}"
+    "place_hint": "Tap the map to drop your marker (you can drag it), then confirm.",
+    "validate": "Confirm",
+    "continue": "Continue",
+    "map_label": "Map without names: place the event",
+    "guess_placed": "Marker placed. Confirm, or move it.",
+    "result": "{place} · {km} km away (+{pts} pts)",
+    "result_exact": "Spot on: {place} (+{pts} pts)",
+    "km_under_one": "under 1",
+    "load_error": "The map could not be loaded. Check your connection and try again."
   },
   "mindmap": {
     "picker_frise": "Timeline",

@@ -572,13 +572,18 @@
   },
   "carte": {
     "mode_title": "🗺️ Mode Carte",
-    "mode_subtitle": "Situez les événements de « {label} » sur la carte du monde, puis dans le temps.",
-    "world_label": "Monde",
+    "mode_subtitle": "Posez les événements de « {label} » sur une carte sans noms, puis datez-les.",
     "where_kicker": "Où cet événement s'est-il déroulé ?",
-    "correct_reveal": "✅ Bonne réponse : {flag} {name}",
-    "wrong_reveal": "❌ C'était : {flag} {name}",
     "not_enough_events": "Cette zone ne contient pas assez d'événements géolocalisés pour jouer en Mode Carte.",
-    "pin_aria": "Option {n} : {country}"
+    "place_hint": "Touchez la carte pour poser votre repère (vous pouvez le glisser), puis validez.",
+    "validate": "Valider",
+    "continue": "Continuer",
+    "map_label": "Carte sans noms : placez l'événement",
+    "guess_placed": "Repère posé. Validez, ou déplacez-le.",
+    "result": "{place} · à {km} km (+{pts} pts)",
+    "result_exact": "En plein dans le mille : {place} (+{pts} pts)",
+    "km_under_one": "moins d'1",
+    "load_error": "Impossible de charger la carte. Vérifiez votre connexion puis réessayez."
   },
   "mindmap": {
     "picker_frise": "Frise",

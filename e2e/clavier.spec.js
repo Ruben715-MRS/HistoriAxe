@@ -311,21 +311,27 @@ test('Le curseur : le focus est sur le curseur, qui se règle aux flèches', asy
     await expect(page.locator('#curseur-value')).toContainText(String(Number(avant) + 2));
 });
 
-test('Mode Carte : un pion se nomme par son pays', async ({ page }) => {
-    // Pour qui ne voit pas la carte, « Option 2 » ne désigne rien : le pays est
-    // le seul moyen de savoir ce que désigne le pion.
+test('Mode Carte : la carte se vise au clavier — Entrée pose le repère au centre, puis on valide', async ({ page }) => {
+    // Une carte se vise au doigt ou à la souris ; sans alternative, le mode serait fermé à qui ne
+    // les utilise pas. Au focus, la carte affiche une mire ; Entrée y pose le repère.
     await attendreLePack(page);
-    await page.evaluate(() => { loadGeoAssets().then(() => {}); });
-    await page.waitForFunction(() => typeof GEO_PINS !== 'undefined' && GEO_PINS && GEO_THEME_COUNTRY, null, { timeout: 20000 });
     await page.evaluate(() => {
         const ci = bdd.findIndex(c => c.nom && c.nom.indexOf('nationales') >= 0);
         startGeoModeFromNode(bdd[ci], bdd[ci].nom);
     });
-    await expect(page.locator('#geo-pins-layer .geo-pin-btn').first()).toBeVisible({ timeout: 10000 });
-    const noms = await page.locator('#geo-pins-layer .geo-pin-btn').evaluateAll(
-        els => els.map(e => e.getAttribute('aria-label')));
-    expect(noms.length).toBeGreaterThanOrEqual(4);
-    noms.forEach(n => expect(n, 'un pion doit nommer son pays').toMatch(/:| /));
+    await expect(page.locator('#screen-carte')).toBeVisible({ timeout: 20000 });
+    await page.waitForFunction(() => geoMap && geoMapLoaded, null, { timeout: 20000 });
+    await expect(page.locator('#geo-validate-btn')).toBeDisabled();
+
+    await page.locator('#geo-map').focus();
+    await expect(page.locator('.geo-crosshair')).toBeVisible();
+    await page.keyboard.press('Enter');
+    await expect(page.locator('#geo-status')).not.toHaveText('');
+    await expect(page.locator('#geo-validate-btn')).toBeEnabled();
+
+    await page.locator('#geo-validate-btn').click();
+    await expect(page.locator('#geo-reveal-label')).toBeVisible();
+    await expect(page.locator('#geo-continue-btn')).toBeFocused();
 });
 
 // --- LE DÉTECTEUR : TOUT CE QUI SE CLIQUE SE PREND AU CLAVIER ----------------------

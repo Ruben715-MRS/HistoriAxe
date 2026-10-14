@@ -278,9 +278,8 @@ test('les libellés accessibles existent dans les six packs', () => {
     ['fr', 'en', 'es', 'de', 'it', 'ja'].forEach(lang => {
         const d = JSON.parse(lire(`ui/${lang}.json`));
         assert.ok(d.home && d.home.start_aria, `${lang} : home.start_aria`);
-        assert.ok(d.carte && d.carte.pin_aria, `${lang} : carte.pin_aria`);
         assert.ok(d.nav && d.nav.close, `${lang} : nav.close`);
-        assert.match(d.carte.pin_aria, /\{n\}/, `${lang} : pin_aria doit porter le numéro`);
-        assert.match(d.carte.pin_aria, /\{country\}/, `${lang} : pin_aria doit porter le pays`);
+        // Mode Carte : la carte porte un nom, et ce qu'il faut faire pour la viser (voir js/geoMap.js).
+        ['map_label', 'place_hint', 'guess_placed'].forEach(k => assert.ok(d.carte && d.carte[k], `${lang} : carte.${k}`));
     });
 });

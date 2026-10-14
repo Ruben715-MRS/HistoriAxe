@@ -282,7 +282,7 @@ test('« Rejouer » relance le Mode Carte sur la même zone, et son retour reste
     await sansRecap(page);
     await openThemeModes(page, THEME);
     await page.evaluate(() => loadGeoAssets());
-    await page.waitForFunction(() => typeof GEO_PINS !== 'undefined' && GEO_PINS && GEO_THEME_COUNTRY, null, { timeout: 20000 });
+    await page.waitForFunction(() => GEO_THEME_COUNTRY && typeof atlasPoints !== 'undefined' && atlasPoints, null, { timeout: 20000 });
     const zone = await page.evaluate(() => {
         showScreen('screen-categories');
         const ci = bdd.findIndex(c => c.nom && c.nom.indexOf('nationales') >= 0);

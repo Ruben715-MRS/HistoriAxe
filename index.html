@@ -899,7 +899,7 @@
         </div>
 
         <div class="geo-body">
-            <div class="geo-scope-chip" id="geo-scope-label" data-i18n="carte.world_label">Monde</div>
+            <div class="geo-scope-chip" id="geo-scope-label"></div>
             <div class="quiz-question-card" data-focus-target>
                 <div class="geo-phase-kicker" id="geo-phase-kicker" data-i18n="carte.where_kicker">Où cet événement
                     s'est-il déroulé ?</div>
@@ -910,9 +910,16 @@
             <div class="geo-reveal-label hidden" id="geo-reveal-label"></div>
 
             <div class="geo-map-phase" id="geo-map-phase">
+                <p class="geo-hint" id="geo-hint"></p>
                 <div class="geo-map-frame">
-                    <div class="geo-map-svg-holder" id="geo-map-svg-holder"></div>
-                    <div class="geo-pins-layer" id="geo-pins-layer"></div>
+                    <div id="geo-map" class="geo-map" tabindex="0" role="application" aria-label="Carte sans noms : placez l'événement"
+                        data-i18n-attr="aria-label:carte.map_label"></div>
+                    <div class="geo-crosshair" aria-hidden="true"></div>
+                </div>
+                <div class="geo-status" id="geo-status" role="status" aria-live="polite"></div>
+                <div class="geo-actions">
+                    <button type="button" class="btn" id="geo-validate-btn" disabled data-i18n="carte.validate">Valider</button>
+                    <button type="button" class="btn hidden" id="geo-continue-btn" data-i18n="carte.continue">Continuer</button>
                 </div>
             </div>
 
@@ -1722,6 +1729,7 @@
     <script src="js/simultaneity.js"></script>
     <script src="js/linkedEvents.js"></script>
     <script src="js/atlasCore.js"></script>
+    <script src="js/geoPlace.js"></script>
     <script src="js/atlas.js"></script>
     <script src="js/gameModes.js"></script>
     <script src="js/gallery.js"></script>

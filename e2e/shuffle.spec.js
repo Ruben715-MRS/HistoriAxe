@@ -46,7 +46,7 @@ async function mesurerPositions(page, { taille, tirages }) {
 test('un QCM place la bonne réponse aussi souvent sur chaque option', async ({ page }) => {
     // Le cas des trois modes à choix multiples : 4 options, la bonne en tête
     // du tableau avant mélange (voir renderQuizQuestion, buildPeriodesQuestions,
-    // js/geoMap.js: pickGeoCountryOptions).
+    // js/geoMap.js: pickGeoYearOptions).
     const frequences = await mesurerPositions(page, { taille: 4, tirages: TIRAGES });
     const attendu = 25;
 

@@ -12,7 +12,7 @@
 // 'install' recharge tout depuis le réseau. Un pack de langue ou un texte
 // d'UI modifié qui ne s'affiche pas malgré un déploiement réussi est
 // généralement le signe que l'un de ces deux numéros n'a pas été incrémenté.
-const CACHE_VERSION = '1.4.50';
+const CACHE_VERSION = '1.4.51';
 const APP_SHELL_CACHE = `historiaxe-shell-v${CACHE_VERSION}`;
 const DATA_CACHE = 'historiaxe-data-v1.0.52';
 
@@ -58,6 +58,7 @@ const APP_SHELL_FILES = [
     './js/simultaneity.js',
     './js/linkedEvents.js',
     './js/atlasCore.js',
+    './js/geoPlace.js',
     './js/atlas.js',
     './js/gameModes.js',
     './js/gallery.js',
@@ -73,8 +74,6 @@ const APP_SHELL_FILES = [
     './splash_iphone_portrait.jpg',
     './splash_iphone_landscape.jpg',
     './splash_ipad_portrait.jpg',
-    './assets/geo/world-basemap.svg',
-    './assets/geo/country-pins.json',
     './assets/geo/theme-country-map.json'
 ];
 

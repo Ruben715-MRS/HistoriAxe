@@ -542,13 +542,18 @@
   },
   "carte": {
     "mode_title": "🗺️ Modo Mapa",
-    "mode_subtitle": "Ubica los eventos de «{label}» en el mapa del mundo y luego en el tiempo.",
-    "world_label": "Mundo",
-    "where_kicker": "¿Dónde ocurrió este evento?",
-    "correct_reveal": "✅ Respuesta correcta: {flag} {name}",
-    "wrong_reveal": "❌ Era: {flag} {name}",
+    "mode_subtitle": "Sitúa los acontecimientos de «{label}» en un mapa sin nombres y luego fecha cada uno.",
+    "where_kicker": "¿Dónde ocurrió este acontecimiento?",
     "not_enough_events": "Esta zona no tiene suficientes eventos geolocalizados para jugar en el Modo Mapa.",
-    "pin_aria": "Opción {n}: {country}"
+    "place_hint": "Toca el mapa para poner tu marcador (puedes arrastrarlo) y confirma.",
+    "validate": "Confirmar",
+    "continue": "Continuar",
+    "map_label": "Mapa sin nombres: sitúa el acontecimiento",
+    "guess_placed": "Marcador puesto. Confirma o muévelo.",
+    "result": "{place} · a {km} km (+{pts} pts)",
+    "result_exact": "¡En el blanco!: {place} (+{pts} pts)",
+    "km_under_one": "menos de 1",
+    "load_error": "No se pudo cargar el mapa. Comprueba tu conexión e inténtalo de nuevo."
   },
   "mindmap": {
     "picker_frise": "Cronología",

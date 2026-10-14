@@ -542,13 +542,18 @@
   },
   "carte": {
     "mode_title": "🗺️ マップモード",
-    "mode_subtitle": "「{label}」の出来事を世界地図上で、そして時系列で特定しましょう。",
-    "world_label": "世界",
-    "where_kicker": "この出来事はどこで起きましたか?",
-    "correct_reveal": "✅ 正解:{flag} {name}",
-    "wrong_reveal": "❌ 正解は:{flag} {name}",
+    "mode_subtitle": "「{label}」の出来事を地名のない地図に置き、そのあと年代を答えます。",
+    "where_kicker": "この出来事はどこで起きた？",
     "not_enough_events": "このエリアにはマップモードをプレイするのに十分な位置情報付きの出来事がありません。",
-    "pin_aria": "選択肢{n}:{country}"
+    "place_hint": "地図をタップしてマーカーを置き（ドラッグで動かせます）、決定してください。",
+    "validate": "決定",
+    "continue": "次へ",
+    "map_label": "地名のない地図：出来事の場所を置く",
+    "guess_placed": "マーカーを置きました。決定するか、動かしてください。",
+    "result": "{place} ・ {km} km 離れていました（+{pts} 点）",
+    "result_exact": "ぴったり：{place}（+{pts} 点）",
+    "km_under_one": "1 未満",
+    "load_error": "地図を読み込めませんでした。接続を確認してもう一度お試しください。"
   },
   "mindmap": {
     "picker_frise": "年表",
