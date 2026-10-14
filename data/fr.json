@@ -2,8 +2,8 @@
   "version": "1.0.0",
   "lang": "fr",
   "name": "Français (Intégral)",
-  "totalThemes": 818,
-  "totalEvents": 22131,
+  "totalThemes": 819,
+  "totalEvents": 22183,
   "categories": [
     {
       "nom": "Culture générale",
@@ -44361,6 +44361,462 @@
                 "gas_30",
                 "gas_31",
                 "gas_32"
+              ]
+            },
+            {
+              "id": "thm_catastrophes_transport",
+              "nom": "Grandes catastrophes de transport",
+              "difficulte": "Tous niveaux",
+              "axeOrder": [
+                "Catastrophes maritimes et fluviales",
+                "Catastrophes aériennes et spatiales",
+                "Catastrophes ferroviaires",
+                "Catastrophes routières et terrestres"
+              ],
+              "essentiel": [
+                "cat2",
+                "cat3",
+                "cat5",
+                "cat6",
+                "cat12",
+                "cat15",
+                "cat17",
+                "cat23",
+                "cat25",
+                "cat26",
+                "cat28",
+                "cat29",
+                "cat30",
+                "cat32",
+                "cat35",
+                "cat39",
+                "cat42",
+                "cat41",
+                "cat44",
+                "cat46",
+                "cat47",
+                "cat52",
+                "cat48",
+                "cat45",
+                "cat22"
+              ],
+              "events": [
+                {
+                  "id": "cat1",
+                  "axe": "Catastrophes maritimes et fluviales",
+                  "date": 1628,
+                  "titre": "Naufrage du Vasa dans le port de Stockholm",
+                  "description": "Le 10 août 1628, le Vasa, fleuron de la marine suédoise, quitte le quai pour son voyage inaugural. Instable à cause de sa conception, il chavire et coule après environ 1 300 mètres, sous les yeux de la foule. Renfloué en 1961, il est aujourd'hui exposé dans un musée de Stockholm, l'un des navires anciens les mieux conservés.",
+                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Vasa+%28navire%29"
+                },
+                {
+                  "id": "cat2",
+                  "axe": "Catastrophes maritimes et fluviales",
+                  "date": 1816,
+                  "titre": "Naufrage de la Méduse",
+                  "description": "Le 2 juillet 1816, la frégate française La Méduse s'échoue sur le banc d'Arguin, au large de la Mauritanie. Faute de canots pour tous, environ 150 personnes embarquent sur un radeau improvisé, dont une quinzaine seulement survivent après treize jours de dérive. L'affaire provoque un scandale politique sous la Restauration et inspire à Géricault son célèbre Radeau de la Méduse.",
+                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=M%C3%A9duse+%28fr%C3%A9gate%29"
+                },
+                {
+                  "id": "cat3",
+                  "axe": "Catastrophes maritimes et fluviales",
+                  "date": 1912,
+                  "titre": "Naufrage du Titanic",
+                  "description": "Dans la nuit du 14 au 15 avril 1912, le paquebot britannique Titanic heurte un iceberg lors de sa traversée inaugurale de Southampton à New York. Il coule en moins de trois heures, et plus de 1 500 des quelque 2 200 personnes à bord périssent, faute de canots en nombre suffisant. Le drame conduit à la première convention internationale sur la sauvegarde de la vie humaine en mer (SOLAS), adoptée en 1914.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Titanic"
+                },
+                {
+                  "id": "cat4",
+                  "axe": "Catastrophes maritimes et fluviales",
+                  "date": 1914,
+                  "titre": "Naufrage de l'Empress of Ireland",
+                  "description": "Le 29 mai 1914, dans le brouillard, le paquebot canadien Empress of Ireland est éventré par le charbonnier norvégien Storstad dans le fleuve Saint-Laurent. Il sombre en une quinzaine de minutes et plus de 1 000 personnes périssent. C'est la plus grave catastrophe maritime en temps de paix de l'histoire du Canada.",
+                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Empress+of+Ireland"
+                },
+                {
+                  "id": "cat5",
+                  "axe": "Catastrophes maritimes et fluviales",
+                  "date": 1915,
+                  "titre": "Torpillage du Lusitania",
+                  "description": "Le 7 mai 1915, le paquebot britannique Lusitania est torpillé par le sous-marin allemand U-20 au large de l'Irlande. Il coule en une vingtaine de minutes et près de 1 200 personnes périssent, dont de nombreux Américains. L'indignation qui s'ensuit contribue, avec d'autres griefs, à rapprocher les États-Unis de l'entrée en guerre en 1917.",
+                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Lusitania+%28paquebot%29"
+                },
+                {
+                  "id": "cat6",
+                  "axe": "Catastrophes maritimes et fluviales",
+                  "date": 1945,
+                  "titre": "Torpillage du Wilhelm Gustloff",
+                  "description": "Le 30 janvier 1945, le paquebot allemand Wilhelm Gustloff, chargé de réfugiés et de militaires qui fuient l'avancée soviétique, est torpillé par le sous-marin soviétique S-13 en mer Baltique. Il transportait sans doute plus de 10 000 personnes, et environ 9 000 périssent dans les eaux glacées. C'est la plus lourde perte humaine de l'histoire de la navigation pour un seul navire.",
+                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Wilhelm+Gustloff+%28navire%29"
+                },
+                {
+                  "id": "cat7",
+                  "axe": "Catastrophes maritimes et fluviales",
+                  "date": 1947,
+                  "titre": "Explosion du Grandcamp à Texas City",
+                  "description": "Le 16 avril 1947, le cargo français Grandcamp, chargé de nitrate d'ammonium, explose dans le port de Texas City, au Texas. Le souffle et les incendies en chaîne détruisent une grande partie du port et de la ville et tuent près de 600 personnes. C'est la pire catastrophe industrielle de l'histoire des États-Unis.",
+                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Catastrophe+de+Texas+City"
+                },
+                {
+                  "id": "cat8",
+                  "axe": "Catastrophes maritimes et fluviales",
+                  "date": 1978,
+                  "titre": "Marée noire de l'Amoco Cadiz",
+                  "description": "Le 16 mars 1978, le superpétrolier libérien Amoco Cadiz, privé de gouvernail à la suite d'une avarie, s'échoue sur les récifs de Portsall, en Bretagne. Ses plus de 220 000 tonnes de pétrole brut se répandent et souillent environ 360 kilomètres de côtes. Cette marée noire, alors la plus grave jamais connue, conduit à renforcer la surveillance du trafic en Manche.",
+                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Amoco+Cadiz"
+                },
+                {
+                  "id": "cat9",
+                  "axe": "Catastrophes maritimes et fluviales",
+                  "date": 1987,
+                  "titre": "Chavirement du Herald of Free Enterprise",
+                  "description": "Le 6 mars 1987, le ferry Herald of Free Enterprise chavire quelques minutes après avoir quitté le port belge de Zeebruges, la porte d'étrave restée ouverte. L'eau envahit le pont des véhicules et 193 personnes périssent. L'enquête met en cause l'organisation du bord et conduit à renforcer les règles de sécurité des transbordeurs.",
+                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Herald+of+Free+Enterprise"
+                },
+                {
+                  "id": "cat10",
+                  "axe": "Catastrophes maritimes et fluviales",
+                  "date": 1987,
+                  "titre": "Collision du Doña Paz et du Vector",
+                  "description": "Le 20 décembre 1987, le ferry philippin Doña Paz entre en collision avec le pétrolier Vector dans le détroit de Tablas. L'incendie du carburant embrase les deux navires, et le ferry, bien plus chargé que sa capacité officielle, coule avec plus de 4 000 morts selon les estimations. C'est la plus grave catastrophe maritime en temps de paix.",
+                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Do%C3%B1a+Paz"
+                },
+                {
+                  "id": "cat11",
+                  "axe": "Catastrophes maritimes et fluviales",
+                  "date": 1989,
+                  "titre": "Marée noire de l'Exxon Valdez",
+                  "description": "Le 24 mars 1989, le pétrolier Exxon Valdez s'échoue sur le récif de Bligh, dans le détroit du Prince-William, en Alaska. Il déverse environ quarante mille tonnes de brut sur un littoral d'une grande richesse écologique. La catastrophe conduit les États-Unis à adopter en 1990 l'Oil Pollution Act, qui impose progressivement la double coque aux pétroliers.",
+                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Marée+noire+de+l'Exxon+Valdez"
+                },
+                {
+                  "id": "cat12",
+                  "axe": "Catastrophes maritimes et fluviales",
+                  "date": 1994,
+                  "titre": "Naufrage de l'Estonia",
+                  "description": "Dans la nuit du 28 septembre 1994, le ferry Estonia sombre en mer Baltique, au large de la Finlande, par gros temps, après la rupture de sa visière d'étrave. Le navire coule en moins d'une heure et 852 personnes périssent, pour la plupart suédoises et estoniennes. C'est la plus grave catastrophe maritime survenue en temps de paix en Europe au XXe siècle.",
+                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=MS+Estonia"
+                },
+                {
+                  "id": "cat13",
+                  "axe": "Catastrophes maritimes et fluviales",
+                  "date": 1999,
+                  "titre": "Naufrage de l'Erika",
+                  "description": "Le 12 décembre 1999, le pétrolier maltais Erika, vieux de vingt-quatre ans, se brise en deux dans le golfe de Gascogne, au large de la Bretagne. Environ vingt mille tonnes de fioul lourd souillent quelque quatre cents kilomètres de côtes françaises. Le procès qui suit fait reconnaître le préjudice écologique, et l'Union européenne durcit ses règles de sécurité maritime.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Erika_(p%C3%A9trolier)"
+                },
+                {
+                  "id": "cat14",
+                  "axe": "Catastrophes maritimes et fluviales",
+                  "date": 2002,
+                  "titre": "Naufrage du Joola",
+                  "description": "Le 26 septembre 2002, le bac sénégalais Le Joola chavire au large de la Gambie, lors de la liaison entre Ziguinchor et Dakar. Surchargé bien au-delà de sa capacité officielle, il emporte dans la mort plus de 1 800 personnes, pour une soixantaine de rescapés. C'est l'un des pires naufrages de l'histoire hors conflit armé.",
+                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Le+Joola"
+                },
+                {
+                  "id": "cat15",
+                  "axe": "Catastrophes maritimes et fluviales",
+                  "date": 2012,
+                  "titre": "Naufrage du Costa Concordia",
+                  "description": "Le 13 janvier 2012, le paquebot de croisière Costa Concordia heurte un écueil près de l'île du Giglio, en Toscane, et s'échoue à proximité du port. L'évacuation désordonnée de plus de 4 200 personnes fait 32 victimes. Le commandant, Francesco Schettino, est condamné à seize ans de prison.",
+                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Costa+Concordia"
+                },
+                {
+                  "id": "cat16",
+                  "axe": "Catastrophes aériennes et spatiales",
+                  "date": 1930,
+                  "titre": "Écrasement du dirigeable R101",
+                  "description": "Le 5 octobre 1930, le dirigeable britannique R101, parti pour l'Inde, s'écrase près de Beauvais, en France. Son hydrogène s'enflamme et 48 des 54 personnes à bord périssent, dont le ministre de l'Air. L'accident met fin au programme britannique de dirigeables.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/R101_(dirigeable)"
+                },
+                {
+                  "id": "cat17",
+                  "axe": "Catastrophes aériennes et spatiales",
+                  "date": 1937,
+                  "titre": "Incendie du dirigeable Hindenburg",
+                  "description": "Le 6 mai 1937, le dirigeable allemand Hindenburg prend feu à l'atterrissage à Lakehurst, dans le New Jersey, au terme d'une traversée de l'Atlantique. Rempli d'hydrogène, il est détruit en quelques dizaines de secondes et 36 personnes périssent, à bord et au sol. Les images de l'accident ruinent la confiance du public dans les dirigeables de transport.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Catastrophe_de_Hindenburg"
+                },
+                {
+                  "id": "cat18",
+                  "axe": "Catastrophes aériennes et spatiales",
+                  "date": 1949,
+                  "titre": "Catastrophe aérienne de Superga",
+                  "description": "Le 4 mai 1949, l'avion qui ramène de Lisbonne l'équipe de football du Grande Torino s'écrase contre la colline de Superga, près de Turin. Les trente et une personnes à bord périssent, dont tous les joueurs du club, alors champion d'Italie en titre. Le drame frappe l'Italie entière.",
+                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Catastrophe+a%C3%A9rienne+de+Superga"
+                },
+                {
+                  "id": "cat19",
+                  "axe": "Catastrophes aériennes et spatiales",
+                  "date": 1956,
+                  "titre": "Collision aérienne du Grand Canyon",
+                  "description": "Le 30 juin 1956, deux avions de ligne, un DC-7 et un Super Constellation, entrent en collision au-dessus du Grand Canyon, aux États-Unis. Les 128 occupants périssent, dans ce qui est alors l'accident aérien le plus meurtrier de l'histoire. La catastrophe, survenue dans un espace sans contrôle radar, conduit à créer la Federal Aviation Agency en 1958.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Collision_aérienne_du_Grand_Canyon_de_1956"
+                },
+                {
+                  "id": "cat20",
+                  "axe": "Catastrophes aériennes et spatiales",
+                  "date": 1958,
+                  "titre": "Catastrophe aérienne de Munich",
+                  "description": "Le 6 février 1958, l'avion qui ramène l'équipe de Manchester United de Belgrade s'écrase au décollage à Munich, après une escale de ravitaillement. Vingt-trois des quarante-quatre personnes à bord périssent, dont huit joueurs des « Busby Babes ». Le club reconstruit son équipe et remporte la Coupe d'Europe dix ans plus tard.",
+                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Catastrophe+a%C3%A9rienne+de+Munich"
+                },
+                {
+                  "id": "cat21",
+                  "axe": "Catastrophes aériennes et spatiales",
+                  "date": 1960,
+                  "titre": "Catastrophe de Nedelin à Baïkonour",
+                  "description": "Le 24 octobre 1960, une fusée soviétique R-16 explose sur son pas de tir de Baïkonour, avant son premier essai. Le maréchal Mitrofan Nedelin, qui supervisait l'opération, figure parmi les très nombreuses victimes. L'URSS cache l'accident, présenté comme un accident d'avion, et ne le reconnaît qu'en 1989.",
+                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Catastrophe+de+Nedelin"
+                },
+                {
+                  "id": "cat22",
+                  "axe": "Catastrophes aériennes et spatiales",
+                  "date": 1967,
+                  "titre": "Incendie d'Apollo 1",
+                  "description": "Le 27 janvier 1967, un incendie éclate dans la capsule d'Apollo 1 lors d'un essai au sol, sur la rampe de lancement de Cap Kennedy. Les trois astronautes, Grissom, White et Chaffee, périssent en quelques secondes dans une atmosphère d'oxygène pur. La capsule est entièrement repensée, et le programme Apollo reprend avec Apollo 7 en 1968.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Apollo_1"
+                },
+                {
+                  "id": "cat23",
+                  "axe": "Catastrophes aériennes et spatiales",
+                  "date": 1977,
+                  "titre": "Collision de Tenerife",
+                  "description": "Le 27 mars 1977, deux Boeing 747, de KLM et de Pan Am, entrent en collision sur la piste de l'aéroport de Tenerife-Nord, aux Canaries, dans un épais brouillard. L'accident fait 583 morts, ce qui en fait le plus meurtrier de l'histoire de l'aviation. Il conduit à normaliser la phraséologie radio et à revoir le fonctionnement des équipages.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Catastrophe_aérienne_de_Tenerife"
+                },
+                {
+                  "id": "cat24",
+                  "axe": "Catastrophes aériennes et spatiales",
+                  "date": 1985,
+                  "titre": "Accident du vol Japan Airlines 123",
+                  "description": "Le 12 août 1985, un Boeing 747 de Japan Airlines, victime de la rupture d'une cloison arrière mal réparée, s'écrase dans une montagne du Japon. Quatre passagers seulement survivent parmi les 524 personnes à bord. C'est l'accident le plus meurtrier impliquant un seul avion.",
+                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Vol+Japan+Airlines+123"
+                },
+                {
+                  "id": "cat25",
+                  "axe": "Catastrophes aériennes et spatiales",
+                  "date": 1986,
+                  "titre": "Explosion de la navette Challenger",
+                  "description": "Le 28 janvier 1986, la navette spatiale américaine Challenger se désintègre soixante-treize secondes après son décollage de Cap Canaveral. Les sept astronautes, dont l'enseignante Christa McAuliffe, périssent. L'enquête met en cause un joint d'étanchéité défaillant par temps froid et les pratiques de décision de la NASA, dont les vols sont suspendus pendant près de trois ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Accident_de_la_navette_spatiale_Challenger"
+                },
+                {
+                  "id": "cat26",
+                  "axe": "Catastrophes aériennes et spatiales",
+                  "date": 1988,
+                  "titre": "Attentat de Lockerbie",
+                  "description": "Le 21 décembre 1988, un Boeing 747 de la Pan Am explose en vol à la suite d'un attentat à la bombe, et ses débris s'abattent sur le village écossais de Lockerbie. Les 259 personnes à bord et onze habitants au sol périssent. La Libye, mise en cause, est frappée de sanctions internationales avant d'assumer sa responsabilité en 2003.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Attentat_de_Lockerbie"
+                },
+                {
+                  "id": "cat27",
+                  "axe": "Catastrophes aériennes et spatiales",
+                  "date": 1996,
+                  "titre": "Explosion du vol TWA 800",
+                  "description": "Le 17 juillet 1996, un Boeing 747 de la TWA explose en vol au large de Long Island, peu après son décollage de New York. Les 230 personnes à bord périssent. L'enquête conclut à l'explosion du réservoir central de carburant, ce qui conduit à renforcer la sécurité des réservoirs d'avion.",
+                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Vol+TWA+800"
+                },
+                {
+                  "id": "cat28",
+                  "axe": "Catastrophes aériennes et spatiales",
+                  "date": 2000,
+                  "titre": "Accident du Concorde à Gonesse",
+                  "description": "Le 25 juillet 2000, un Concorde d'Air France prend feu au décollage de Roissy et s'écrase sur un hôtel de Gonesse. Les 109 personnes à bord et quatre au sol périssent. C'est l'unique accident mortel de l'histoire du Concorde, dont l'exploitation s'arrête définitivement en 2003.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Vol_Air_France_4590"
+                },
+                {
+                  "id": "cat29",
+                  "axe": "Catastrophes aériennes et spatiales",
+                  "date": 2003,
+                  "titre": "Désintégration de la navette Columbia",
+                  "description": "Le 1er février 2003, la navette spatiale Columbia se désintègre en rentrant dans l'atmosphère, à la fin de sa vingt-huitième mission. Les sept astronautes périssent. Un morceau de mousse isolante, détaché du réservoir au décollage, avait endommagé l'aile gauche, ce qui précipite la fin du programme des navettes, achevé en 2011.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Catastrophe_de_la_navette_spatiale_Columbia"
+                },
+                {
+                  "id": "cat30",
+                  "axe": "Catastrophes aériennes et spatiales",
+                  "date": 2009,
+                  "titre": "Disparition du vol Rio-Paris",
+                  "description": "Le 1er juin 2009, un Airbus A330 d'Air France, qui assurait la liaison Rio de Janeiro-Paris, disparaît au-dessus de l'océan Atlantique. Les 228 personnes à bord périssent. Les boîtes noires, retrouvées en 2011 par près de 4 000 mètres de fond, montrent un décrochage après le givrage des sondes de vitesse et une erreur de pilotage.",
+                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Vol+Air+France+447"
+                },
+                {
+                  "id": "cat31",
+                  "axe": "Catastrophes aériennes et spatiales",
+                  "date": 2014,
+                  "titre": "Destruction du vol MH17",
+                  "description": "Le 17 juillet 2014, un Boeing 777 de Malaysia Airlines, qui reliait Amsterdam à Kuala Lumpur, est abattu au-dessus de l'est de l'Ukraine. Les 298 personnes à bord périssent. L'enquête internationale conclut qu'il a été touché par un missile sol-air Bouk tiré depuis un territoire contrôlé par des séparatistes prorusses.",
+                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Vol+Malaysia+Airlines+17"
+                },
+                {
+                  "id": "cat32",
+                  "axe": "Catastrophes ferroviaires",
+                  "date": 1842,
+                  "titre": "Catastrophe ferroviaire de Meudon",
+                  "description": "Le 8 mai 1842, un train revenant de Versailles déraille à Meudon, dans la région parisienne, après la rupture de l'essieu de la locomotive. Les voitures, fermées à clef selon l'usage, prennent feu et une cinquantaine de voyageurs périssent, dont l'explorateur Dumont d'Urville. C'est la première grande catastrophe ferroviaire de France, et elle met fin à l'enfermement des voyageurs dans les compartiments.",
+                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Catastrophe+ferroviaire+de+Meudon"
+                },
+                {
+                  "id": "cat33",
+                  "axe": "Catastrophes ferroviaires",
+                  "date": 1895,
+                  "titre": "Accident de la gare Montparnasse",
+                  "description": "Le 22 octobre 1895, un train venant de Granville ne parvient pas à s'arrêter en gare Montparnasse, à Paris, traverse le mur du bâtiment et tombe sur la place de Rennes. Il n'y a qu'une seule victime, une passante, mais la photographie de la locomotive dressée sur le trottoir fait le tour du monde. L'image reste l'un des symboles des débuts du chemin de fer.",
+                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Accident+ferroviaire+de+la+gare+Montparnasse"
+                },
+                {
+                  "id": "cat34",
+                  "axe": "Catastrophes ferroviaires",
+                  "date": 1903,
+                  "titre": "Catastrophe du métro de Couronnes",
+                  "description": "Le 10 août 1903, un incendie dû à un court-circuit se déclare dans une rame du métro parisien et gagne la station Couronnes, dans l'obscurité et la fumée. Quatre-vingt-quatre personnes meurent asphyxiées, souvent bloquées devant des issues mal éclairées. L'accident entraîne des mesures de sécurité dans le métro, dont l'abandon des voitures en bois.",
+                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Catastrophe+du+m%C3%A9tro+de+Paris"
+                },
+                {
+                  "id": "cat35",
+                  "axe": "Catastrophes ferroviaires",
+                  "date": 1917,
+                  "titre": "Catastrophe de Saint-Michel-de-Maurienne",
+                  "description": "Le 12 décembre 1917, un train de permissionnaires revenant du front italien déraille à Saint-Michel-de-Maurienne, en Savoie, à cause de freins insuffisants dans la descente. Le convoi, très chargé, prend feu et plus de 400 soldats périssent. C'est la plus grave catastrophe ferroviaire de l'histoire de France, longtemps passée sous silence en temps de guerre.",
+                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Catastrophe+ferroviaire+de+Saint-Michel-de-Maurienne"
+                },
+                {
+                  "id": "cat36",
+                  "axe": "Catastrophes ferroviaires",
+                  "date": 1944,
+                  "titre": "Catastrophe ferroviaire de Balvano",
+                  "description": "Dans la nuit du 2 au 3 mars 1944, un train de marchandises, surchargé de passagers clandestins, s'immobilise dans un long tunnel près de Balvano, dans le sud de l'Italie. Les fumées de la locomotive à charbon asphyxient plus de 500 personnes. L'événement, alors tenu secret par les autorités militaires alliées, est l'une des pires catastrophes ferroviaires de l'histoire.",
+                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Catastrophe+ferroviaire+de+Balvano"
+                },
+                {
+                  "id": "cat37",
+                  "axe": "Catastrophes ferroviaires",
+                  "date": 1952,
+                  "titre": "Catastrophe de Harrow and Wealdstone",
+                  "description": "Le 8 octobre 1952, un express heurte à vive allure un train de banlieue arrêté en gare de Harrow and Wealdstone, près de Londres, puis un autre express arrive en sens inverse. L'accident fait 112 morts, ce qui en fait la plus grave catastrophe ferroviaire en temps de paix au Royaume-Uni. Il accélère l'installation du freinage automatique sur les trains britanniques.",
+                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Accident+ferroviaire+de+Harrow+and+Wealdstone"
+                },
+                {
+                  "id": "cat38",
+                  "axe": "Catastrophes ferroviaires",
+                  "date": 1988,
+                  "titre": "Accident ferroviaire de la gare de Lyon",
+                  "description": "Le 27 juin 1988, un train de banlieue arrivant de Melun ne parvient pas à s'arrêter en gare de Lyon, à Paris, et percute un train à l'arrêt. L'accident fait 56 morts et près de soixante blessés. Il révèle des défaillances dans la gestion du matériel et dans la formation du personnel.",
+                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Accident+ferroviaire+de+la+gare+de+Lyon"
+                },
+                {
+                  "id": "cat39",
+                  "axe": "Catastrophes ferroviaires",
+                  "date": 1998,
+                  "titre": "Accident ferroviaire d'Eschede",
+                  "description": "Le 3 juin 1998, un train à grande vitesse ICE déraille près d'Eschede, en Basse-Saxe, après la rupture d'une roue à bandage, et heurte un pont routier. L'ouvrage s'effondre sur les voitures et 101 personnes périssent. C'est la pire catastrophe de l'histoire de la grande vitesse ferroviaire, qui conduit à abandonner ce type de roues.",
+                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Accident+ferroviaire+d%27Eschede"
+                },
+                {
+                  "id": "cat40",
+                  "axe": "Catastrophes ferroviaires",
+                  "date": 1999,
+                  "titre": "Accident ferroviaire de Ladbroke Grove",
+                  "description": "Le 5 octobre 1999, un train franchit un signal fermé près de la gare de Paddington, à Londres, et heurte de plein fouet un express. Trente et une personnes périssent. L'enquête met en cause la visibilité des signaux et la formation des conducteurs, ce qui relance le débat sur la sécurité ferroviaire britannique.",
+                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Accident+ferroviaire+de+Ladbroke+Grove"
+                },
+                {
+                  "id": "cat41",
+                  "axe": "Catastrophes ferroviaires",
+                  "date": 2013,
+                  "titre": "Accident ferroviaire de Brétigny-sur-Orge",
+                  "description": "Le 12 juillet 2013, un train Intercités déraille en gare de Brétigny-sur-Orge, dans l'Essonne, à cause d'une éclisse mal fixée sur un aiguillage. Sept personnes périssent et plus de soixante-dix sont blessées. La SNCF et SNCF Réseau sont condamnées en 2022 pour un défaut de maintenance.",
+                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Accident+ferroviaire+de+Br%C3%A9tigny-sur-Orge"
+                },
+                {
+                  "id": "cat42",
+                  "axe": "Catastrophes ferroviaires",
+                  "date": 2013,
+                  "titre": "Catastrophe ferroviaire de Lac-Mégantic",
+                  "description": "Le 6 juillet 2013, un train de pétrole, stationné sans surveillance en pente, se met en mouvement et déraille au centre de Lac-Mégantic, au Québec. Les wagons-citernes explosent et incendient la ville : quarante-sept personnes périssent et le centre est détruit. L'accident révèle les risques du transport de pétrole par rail et conduit à renforcer la réglementation canadienne.",
+                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Catastrophe+ferroviaire+de+Lac-M%C3%A9gantic"
+                },
+                {
+                  "id": "cat43",
+                  "axe": "Catastrophes ferroviaires",
+                  "date": 2013,
+                  "titre": "Accident ferroviaire de Saint-Jacques-de-Compostelle",
+                  "description": "Le 24 juillet 2013, un train à grande vitesse déraille à l'entrée de Saint-Jacques-de-Compostelle, en Espagne, dans une courbe abordée à plus de deux fois la vitesse autorisée. L'accident fait 79 morts, à la veille des fêtes de la ville. Le conducteur est condamné pour homicides par imprudence.",
+                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Accident+ferroviaire+de+Saint-Jacques-de-Compostelle"
+                },
+                {
+                  "id": "cat44",
+                  "axe": "Catastrophes routières et terrestres",
+                  "date": 1940,
+                  "titre": "Effondrement du pont de Tacoma",
+                  "description": "Le 7 novembre 1940, le pont suspendu du détroit de Tacoma, dans l'État de Washington, s'effondre sous un vent modéré, quatre mois seulement après son ouverture. Sa déformation en torsion, filmée, devient l'une des séquences les plus célèbres de l'ingénierie. Aucun être humain n'est tué, et l'accident impose d'étudier l'aérodynamique des tabliers de pont.",
+                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Pont+du+d%C3%A9troit+de+Tacoma"
+                },
+                {
+                  "id": "cat45",
+                  "axe": "Catastrophes routières et terrestres",
+                  "date": 1978,
+                  "titre": "Catastrophe de Los Alfaques",
+                  "description": "Le 11 juillet 1978, un camion-citerne surchargé de propylène explose devant un camping de Los Alfaques, sur la côte espagnole. Le nuage de feu tue plus de deux cents personnes, surtout des vacanciers. C'est l'une des pires catastrophes de transport de matières dangereuses en Europe.",
+                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Catastrophe+de+Los+Alfaques"
+                },
+                {
+                  "id": "cat46",
+                  "axe": "Catastrophes routières et terrestres",
+                  "date": 1982,
+                  "titre": "Catastrophe de Beaune",
+                  "description": "Le 31 juillet 1982, un autocar d'enfants en route pour les vacances s'écrase sur l'autoroute A6 à Beaune, après une panne de freins, et prend feu. Cinquante-trois personnes périssent, dont 44 enfants. C'est la plus grave catastrophe routière de l'histoire de France.",
+                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Catastrophe+de+Beaune"
+                },
+                {
+                  "id": "cat47",
+                  "axe": "Catastrophes routières et terrestres",
+                  "date": 1999,
+                  "titre": "Incendie du tunnel du Mont-Blanc",
+                  "description": "Le 24 mars 1999, un camion prend feu dans le tunnel du Mont-Blanc, entre la France et l'Italie. L'incendie dure plus de cinquante heures et fait 39 victimes, piégées par la fumée. Le tunnel reste fermé trois ans et les règles de sécurité des tunnels routiers sont renforcées en Europe.",
+                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Incendie+du+tunnel+du+Mont-Blanc"
+                },
+                {
+                  "id": "cat48",
+                  "axe": "Catastrophes routières et terrestres",
+                  "date": 2000,
+                  "titre": "Incendie du funiculaire de Kaprun",
+                  "description": "Le 11 novembre 2000, un incendie se déclare dans le funiculaire de Kaprun, en Autriche, qui monte vers un glacier. Les passagers, bloqués dans le tunnel en pente, sont asphyxiés et 155 personnes périssent. Seules douze survivent, et les normes de sécurité des transports en tunnel sont revues.",
+                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Incendie+du+funiculaire+de+Kaprun"
+                },
+                {
+                  "id": "cat49",
+                  "axe": "Catastrophes routières et terrestres",
+                  "date": 2001,
+                  "titre": "Incendie du tunnel du Saint-Gothard",
+                  "description": "Le 24 octobre 2001, deux poids lourds se heurtent dans le tunnel routier du Saint-Gothard, en Suisse, et l'incendie qui s'ensuit emprisonne les usagers. Onze personnes périssent. Le tunnel est fermé deux mois, ce qui paralyse le trafic alpin et renforce l'exigence de sécurité des tunnels.",
+                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Accident+du+tunnel+routier+du+Saint-Gothard"
+                },
+                {
+                  "id": "cat50",
+                  "axe": "Catastrophes routières et terrestres",
+                  "date": 2003,
+                  "titre": "Incendie du métro de Daegu",
+                  "description": "Le 18 février 2003, un homme met volontairement le feu à une rame du métro de Daegu, en Corée du Sud, qui s'embrase, bientôt rejointe par une seconde. L'incendie fait 192 morts, asphyxiés dans les voitures et sur les quais. La Corée du Sud révise la sécurité contre l'incendie dans son métro.",
+                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Incendie+du+m%C3%A9tro+de+Daegu"
+                },
+                {
+                  "id": "cat51",
+                  "axe": "Catastrophes routières et terrestres",
+                  "date": 2015,
+                  "titre": "Catastrophe routière de Puisseguin",
+                  "description": "Le 23 octobre 2015, un autocar transportant des personnes âgées percute un camion à Puisseguin, en Gironde, et prend feu. Quarante-trois passagers périssent, ce qui en fait la plus grave catastrophe routière en France depuis 1982. L'incendie qui suit la collision, survenue sur une route départementale, empêche l'évacuation.",
+                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Accident+de+Puisseguin"
+                },
+                {
+                  "id": "cat52",
+                  "axe": "Catastrophes routières et terrestres",
+                  "date": 2018,
+                  "titre": "Effondrement du pont Morandi à Gênes",
+                  "description": "Le 14 août 2018, un tronçon du viaduc Morandi, qui surplombe la ville de Gênes, s'effondre en pleine journée sous un orage. Quarante-trois personnes périssent, dans leurs voitures ou sous le pont. L'enquête met en cause l'état d'entretien de l'ouvrage, et la concession autoroutière est au cœur d'un long scandale politique.",
+                  "wikipedia": "https://fr.wikipedia.org/w/index.php?search=Effondrement+du+pont+Morandi"
+                }
               ]
             }
           ]

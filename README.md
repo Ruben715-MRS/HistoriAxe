@@ -463,6 +463,13 @@ carte et ouvre la feuille ; Entrée prend le premier résultat, Échap efface. L
 (comme Google Maps) au lieu de masquer le centre de la carte ; le bouton ▤ de la colonne les remet en bas, et
 le choix est mémorisé (`historiaxe_atlas_layout`). Sur téléphone, toujours en bas.
 
+**Grandes catastrophes de transport** (`thm_catastrophes_transport`, catégorie « Société et Géopolitique ») :
+52 événements en quatre axes — maritimes et fluviales, aériennes et spatiales, ferroviaires, routières et
+terrestres. Les données et leurs points sont dans `scripts/transport/events.py` ; `python3
+scripts/transport/build_theme.py` les écrit dans `data/fr.json` et `assets/geo/events-geo.json` (relançable). Treize
+événements existaient déjà dans d'autres thèmes (aviation, espace, littoraux…) : ils reprennent leur lien Wikipédia,
+donc leur point et leur « Vu aussi dans… ». Les autres liens sont des recherches Wikipédia sur le titre de l'article.
+
 ## Le Mode Carte : poser l'événement sur la carte
 
 Deux temps par question, comme avant : « Où ? » puis « Quand ? » (quatre dates, inchangé).
