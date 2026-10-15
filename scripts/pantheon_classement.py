@@ -91,6 +91,10 @@ KEEP_AS_WRITTEN = {
     'Amanullah Khan', 'Mohammed Daoud Khan', 'Ulugh Beg', 'Toghrul Beg', 'Ahmad Sanjar', 'Kurmanjan Datka',
     'Magtymguly Pyragy', 'Yusuf Khass Hajib', 'Nasir Khusraw', 'Mahmoud de Ghazni', 'Husayn Bayqara', 'Ahmad Shah Durrani',
     'Tamara Khanum', 'Hamza Hakimzade Niyazi', 'Meena Keshwar Kamal',
+    # Nouvelle-Zélande et Pacifique : noms māori, hawaïens, tahitiens et samoans rangés sous leur premier mot
+    # (« Te » ou « Pa » font partie du nom, « Hika », « Oopa » ou « Ariki » ne sont pas des noms de famille).
+    'Pōtatau Te Wherowhero', 'Te Rauparaha', 'Hongi Hika', 'Te Kooti', 'Te Whiti o Rongomai', 'Te Puea Hērangi',
+    'Te Rangi Hīroa', "Emma d'Hawaï", 'Pouvanaa a Oopa', "Mata'afa Iosefo", 'Pa Tepaeru Terito Ariki',
 }
 
 # Écrits à la main : (nom de la source) → nom de classement.
@@ -162,6 +166,8 @@ EXCEPTIONS = {
     'Mehdi Ben Barka': 'Ben Barka, Mehdi',
     'Bchira Ben Mrad': 'Ben Mrad, Bchira',
     'Tawhida Ben Cheikh': 'Ben Cheikh, Tawhida',
+    # Nouvelle-Zélande et Pacifique : le mutin du Bounty, distinct du président américain (titres uniques entre panthéons).
+    'John Adams (Pitcairn)': 'Adams, John (Pitcairn)',
     'Allal El Fassi': 'El Fassi, Allal',
     'Moktar Ould Daddah': 'Ould Daddah, Moktar',
     'Abou el Kacem Chebbi': 'Chebbi, Abou el Kacem',

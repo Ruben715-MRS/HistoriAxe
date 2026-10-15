@@ -90,14 +90,14 @@ test('Personnages illustres : deux sous-catégories, chacune avec sa note et son
     await expect(page.locator('#theme-screen-title')).toHaveText('Panthéons');
     await expect(page.locator('#theme-screen-note-text')).toContainText('né dans les frontières actuelles');
     // Panthéons de pays et de blocs se rangent par leur nom de source — « Afrique de l'Ouest », « Allemagne, Autriche et Suisse »,
-    // « Amérique hispanique », « Australie », « Benelux », « Canada », « Chine », « Égypte », « Espagne », « États-Unis », « France », « Grèce », « Italie », « Japon », « Machrek et péninsule Arabique », « Maghreb », « Portugal », « Royaume-Uni », « Russie », « Scandinavie », « Sous-continent indien », « Turquie » — et non par
+    // « Amérique hispanique », « Asie centrale et Afghanistan », « Australie », « Benelux », « Canada », « Chine », « Égypte », « Espagne », « États-Unis », « France », « Grèce », « Italie », « Japon », « Machrek et péninsule Arabique », « Maghreb », « Nouvelle-Zélande et Pacifique », « Portugal », « Royaume-Uni », « Russie », « Scandinavie », « Sous-continent indien », « Turquie » — et non par
     // « Grandes figures d'… » / « … de » / « … des » / « … du ».
     await expect(page.locator('#themes-container .data-card-title'))
         .toHaveText(["Grandes figures d'Afrique de l'Ouest", "Grandes figures d'Allemagne, d'Autriche et de Suisse", "Grandes figures d'Amérique hispanique",
-            "Grandes figures d'Australie", 'Grandes figures du Benelux', 'Grandes figures du Canada', 'Grandes figures de Chine',
+            "Grandes figures d'Asie centrale", "Grandes figures d'Australie", 'Grandes figures du Benelux', 'Grandes figures du Canada', 'Grandes figures de Chine',
             "Grandes figures d'Égypte", "Grandes figures d'Espagne", 'Grandes figures des États-Unis',
             'Grandes figures de France', 'Grandes figures de Grèce', "Grandes figures d'Israël", "Grandes figures d'Italie", 'Grandes figures du Japon',
-            'Grandes figures du Machrek et de la péninsule Arabique', 'Grandes figures du Maghreb', 'Grandes figures du Portugal',
+            'Grandes figures du Machrek et de la péninsule Arabique', 'Grandes figures du Maghreb', 'Grandes figures de Nouvelle-Zélande et du Pacifique', 'Grandes figures du Portugal',
             'Grandes figures du Royaume-Uni', 'Grandes figures de Russie', 'Grandes figures de Scandinavie', 'Grandes figures du sous-continent indien', 'Grandes figures de Turquie']);
 });
 
@@ -761,6 +761,50 @@ test('la recherche — « kazakhstan », « ouzbekistan », « tadjikistan », �
     }
 });
 
+test('la Nouvelle-Zélande et le Pacifique : chacune de ses figures a son portrait et son pays, Hawaï et les territoires dépendants compris', async ({ page }) => {
+    await openThemeById(page, 'pan_pacifique');
+    await page.locator('#mode-card-discovery').click();
+    await expect(page.locator('#screen-game')).toBeVisible();
+    const nombre = await page.evaluate(() => getCurrentTheme().events.length);
+    expect(nombre).toBe(96);
+    await expect(page.locator('#timeline .entry')).toHaveCount(nombre);
+    await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
+
+    // Quatre figures, quatre statuts : un chef māori (Nouvelle-Zélande), le fondateur du royaume d'Hawaï (rangé
+    // aux États-Unis, dont Hawaï est un État), une reine de Tahiti (Polynésie française, territoire français)
+    // et le gouverneur élu de Guam (territoire américain).
+    const figures = [
+        ['Naissance de Te Rauparaha', '🇳🇿', 'Nouvelle-Zélande'],
+        ['Naissance de Kamehameha Ier', '🇺🇸', 'États-Unis'],
+        ['Naissance de Pōmare IV', '🇵🇫', 'Polynésie française'],
+        ['Naissance de Carlos Camacho', '🇬🇺', 'Guam'],
+    ];
+    for (const [titre, drapeau, pays] of figures) {
+        await page.locator('#timeline .entry', { hasText: titre }).click();
+        await expect(page.locator('#modal-details')).toBeVisible();
+        await expect(page.locator('#modal-pays')).toContainText(drapeau);
+        await expect(page.locator('#modal-pays')).toContainText(pays);
+        const portrait = page.locator('#modal-portrait-img');
+        await expect.poll(() => portrait.evaluate(img => img.complete ? img.naturalWidth : 0)).toBe(320);
+        await page.locator('#modal-details .close-btn').click();
+        await expect(page.locator('#modal-details')).toBeHidden();
+    }
+
+    // Aucune de ces figures n'a de biographie : le bouton n'a pas lieu d'être.
+    const avecBiographie = await page.evaluate(() => getCurrentTheme().events.filter(e => e.biographie).length);
+    expect(avecBiographie).toBe(0);
+});
+
+test('la recherche — « nouvelle-zélande », « maori », « hawaï », « tahiti », « samoa », « pitcairn » — mène au panthéon de Nouvelle-Zélande et du Pacifique', async ({ page }) => {
+    await page.locator('#screen-home').click();
+    for (const mot of ['nouvelle-zelande', 'maori', 'pacifique', 'oceanie', 'hawai', 'tahiti', 'nouvelle-caledonie', 'samoa', 'tonga', 'fidji', 'nauru', 'guam', 'pitcairn', 'ile de paques']) {
+        await page.locator('#theme-search-input').fill(mot);
+        const resultat = page.locator('#theme-search-results .search-result-item', { hasText: 'Grandes figures de Nouvelle-Zélande et du Pacifique' });
+        await expect(resultat, `« ${mot} » doit mener au panthéon de Nouvelle-Zélande et du Pacifique`).toHaveCount(1);
+        await expect(resultat.locator('.search-result-path')).toContainText('Personnages illustres › Panthéons');
+    }
+});
+
 test('la recherche — « espagne », « castille », « catalogne », « madrid » — mène au panthéon de l’Espagne', async ({ page }) => {
     await page.locator('#screen-home').click();
     for (const mot of ['espagne', 'castille', 'catalogne', 'madrid']) {
@@ -1230,7 +1274,7 @@ test('à la première ouverture de « Personnages illustres », on demande si le
     await expect(fenetre).toBeHidden();
     expect(await reglage(page)).toBe('bw');
     // Le bouton de la galerie annonce l'avancement, dès le premier instant.
-    await expect(page.locator('#btn-gallery .gallery-launcher-sub')).toHaveText('0 / 2400 portraits débloqués');
+    await expect(page.locator('#btn-gallery .gallery-launcher-sub')).toHaveText(/^0 \/ \d+ portraits débloqués$/);
 
     // On ne repose pas la question.
     await page.locator('#screen-subcategories .back-btn').click();

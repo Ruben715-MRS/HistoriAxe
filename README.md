@@ -677,7 +677,7 @@ ne posent pas la même question :
 | | Un thème, c'est | Une date, c'est | On le joue par |
 |---|---|---|---|
 | **Biographies** | une vie (360 thèmes, en 12 domaines) | une étape de cette vie | étape de la vie |
-| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, le sous-continent indien, Israël, la Turquie, le Japon, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan) | la naissance d'un personnage | domaine |
+| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, le sous-continent indien, Israël, la Turquie, le Japon, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique) | la naissance d'un personnage | domaine |
 
 Le déplacement ne coûte aucune migration : les 360 thèmes gardent leurs
 identifiants, et rien de ce que le joueur a sauvegardé (favoris, révision,
@@ -2386,6 +2386,95 @@ Hérat et les grandes dynasties (Timourides, Samanides, Seldjoukides, Ghaznévid
   `assets/geo/events-geo.json`, repris de leur biographie (le test des faits liés l'exige). Les 63 autres naissances ne sont
   pas encore placées sur l'Atlas.
 
+### Un bloc : la Nouvelle-Zélande et le Pacifique
+
+`pan_pacifique`, « Grandes figures de Nouvelle-Zélande et du Pacifique » (code `pacifique`, bloc) : **96 personnages de 22 pays et
+territoires** — Nouvelle-Zélande 51, Hawaï 9 (rangé aux États-Unis, voir plus bas), Polynésie française 5, Samoa 5, Fidji 3, Tonga 3,
+îles Cook 2, Micronésie 2, Nouvelle-Calédonie 2, Wallis-et-Futuna 2, et un chacun pour les Samoa américaines, la
+Papouasie-Nouvelle-Guinée, les îles Salomon, Nauru, les îles Marshall, les Palaos, Guam, les îles Mariannes du Nord, Pitcairn, Rapa Nui,
+Niue et Tuvalu — du navigateur Tupaia (vers 1725) au rugbyman Jonah Lomu (1975). Par axe : 46 Chefs d'État et dirigeants, 17 Guerres et
+résistances, 12 Littérature et pensée, 9 Sciences, techniques et innovation, 6 Beaux-arts, 6 Musique, spectacle et sport ; 23 ⭐, aucune
+biographie liée. 96 portraits (2,2 Mo) : 62 du domaine public, 2 CC0, 12 CC BY et 20 CC BY-SA. Les mots-clés du thème portent tous les noms de
+pays et de territoires, les adjectifs (néo-zélandais, māori, hawaïen, kanak), l'Océanie, la Polynésie, la Mélanésie, la Micronésie,
+Wellington, Auckland, Waitangi, Honolulu et Papeete.
+
+- **Plus de la moitié du bloc est néo-zélandaise, et c'est assumé.** 51 figures sur 96 (53 %), au-dessus du seuil de 40 % : la source
+  déclare `partMaxPays` à 0,55. Le Pacifique insulaire compte plus de vingt États et territoires, la plupart minuscules, dont
+  beaucoup n'ont que quelques personnages à la fois documentés (article en français, dates avérées) et illustrés par une image libre ;
+  la Nouvelle-Zélande a un siècle et demi d'histoire écrite et photographiée. Les chefs d'État et dirigeants pèsent 48 % du bloc
+  (46 sur 96), davantage que partout ailleurs : pour un micro-État, ce sont souvent les seules figures qui remplissent les trois
+  conditions.
+- **Tous les territoires, même dépendants.** Hawaï (un État américain), la Polynésie française, la Nouvelle-Calédonie et
+  Wallis-et-Futuna (France), les Samoa américaines, Guam et les Mariannes du Nord (États-Unis), Niue et les îles Cook (en libre
+  association avec la Nouvelle-Zélande), Pitcairn (Royaume-Uni) et Rapa Nui, l'île de Pâques (Chili), ont leur place au même titre que
+  les États indépendants. `pays` porte le code ISO du territoire (`PF`, `NC`, `WF`, `AS`, `GU`, `MP`, `NU`, `CK`, `PN`) ; l'île de
+  Pâques, qui n'en a pas, porte celui du Chili (`CL`).
+- **Hawaï est rangé aux États-Unis.** Aucun code ISO ne désigne Hawaï : ses neuf figures (Kamehameha Ier, Kamehameha III, Kalākaua,
+  Liliʻuokalani, Kaʻahumanu, Kaʻiulani, Emma, Duke Kahanamoku, Samuel Kamakau) portent `US`, si bien que leur fiche affiche
+  « États-Unis » sous la date, y compris pour des rois d'avant l'annexion de 1898 — la description le dit — et que la galerie les compte
+  avec celles du panthéon des États-Unis (son filtre de pays ne distingue pas les thèmes). Damien de Molokaʻi, apôtre des lépreux de
+  Molokaʻi, reste au panthéon du Benelux, dont il est un fils.
+- **Là où on les honore, pas là où ils sont nés.** Hobson (né à Waterford), Seddon (Lancashire), Vogel (Londres), Savage (Victoria),
+  Fraser (Écosse), Kate Sheppard (Liverpool), Haast (Bonn), Freyberg (Londres, élevé en Nouvelle-Zélande) et Robin Hyde (Le Cap) sont
+  ici ; Katherine Mansfield aussi, née à Wellington et morte en France, que l'article français dit « britannique d'origine
+  néo-zélandaise », comme Rutherford. Pierre Chanel, né dans l'Ain, est à Wallis-et-Futuna : il y est mort, et il est le saint patron de
+  l'Océanie. James Cook (Royaume-Uni), Gauguin (France), Tasman (Benelux) et Nancy Wake, née à Wellington (Australie), restent dans leur
+  panthéon. Maurice Wilkins et Harold Gillies, « britanniques d'origine néo-zélandaise » selon l'article français, sont laissés de
+  côté, comme Fred Hollows, que le panthéon de l'Australie a lui aussi écarté ; Eddie Mabo, qui a sa biographie, reste dehors faute d'image libre, comme dans le panthéon de l'Australie.
+- **Un homonyme à désambiguïser.** « Naissance de John Adams » est déjà le titre du deuxième président des États-Unis, et la règle
+  « un personnage, un seul thème » compare aussi les titres : le mutin du Bounty devenu patriarche de Pitcairn s'appelle ici « John
+  Adams (Pitcairn) », sous « Adams, John (Pitcairn) » dans le classement.
+- **Dates retenues quand les sources divergent.** Kamehameha Ier est daté de vers 1758, la date la plus citée (l'article français dit
+  vers 1736, Wikidata 1756 ou 1800), Te Rauparaha de vers 1768 (« années 1760 »), Tāwhiao de vers 1822 (Wikidata 1825), Te Kooti de
+  vers 1832 (date des sources anglophones ; le français dit vers 1820), Hōne Heke de vers 1807 (le français : vers 1790), Cakobau de vers
+  1815 (le français : vers 1817), Kate Sheppard de 1847 (le français : 1847 ou 1848), Māui Pōmare de 1875 (ou 1876), Te Rangi Hīroa de
+  1877 (1880 selon d'autres) et Nidoïsh Naisseline de 1945 (l'article français écrit 1947 en tête, mais 1945 dans son infobox, sa
+  catégorie et sur Wikidata).
+- **Écartés faute de date avérée** : Ataï (sa naissance n'est pas connue : le grand chef de l'insurrection kanak de 1878 manque donc
+  au panthéon), Makea Takau Ariki (1840 pour l'article français, 1845 pour Wikidata), Pōmare Ier (1742, 1743 ou 1753), Omai (1751 ou
+  1753), Bernard Narokobi (1937 ou vers 1941) et Jimmy Stevens (dans les années 1910, ou 1920).
+- **Écartés faute d'article en français** : Rewi Maniapoto, Rua Kenana, Wiremu Tamihana, Wiremu Rātana, Truby King, Archibald McIndoe,
+  Richard Pearse, Bill Hamilton, Allen Curnow, Gottfried Lindauer, Rewi Alley, Ettie Rout, Bernice Pauahi Bishop, Jonah Kūhiō
+  Kalanianaʻole, David Malo, Apolosi Nawai, Yali Singina, Paliau Maloat, Jacob Vouza et Antonio Won Pat.
+- **Écartés faute d'image libre convenable**, à réintégrer si l'une apparaît : Norman Kirk (la seule photographie de lui, de 1966, porte
+  un bandeau de suppression sur Commons), Jean-Marie Tjibaou, Epeli Hauʻofa, Israel Kamakawiwoʻole (seule sa signature est libre),
+  Beatrice Tinsley, Haunani-Kay Trask, Henri Hiro, Nidoïsh Naisseline, Merata Mita, Sylvia Ashton-Warner, Vincent Eri, John Guise,
+  Robert Rex, Toaripi Lauti, Yeiwéné Yeiwéné et Solomon Mamaloni ; Eddie Aikau (seule une plaque commémorative), Walter Lini (un profil
+  que le cadre coupe) et Burt Munro (sa moto, sans lui). Teatao Teannaki (Kiribati) et Faimalaga Luka (Tuvalu) n'ont que des
+  photographies sous une licence « Attribution » d'un site officiel taïwanais, hors de la liste.
+- **Des territoires sans figure.** Kiribati, Tokelau, l'île Norfolk et le Vanuatu n'ont aucun personnage : aucun des dirigeants
+  historiques de ces pays n'a à la fois une date de mort, un article en français et une image libre exploitable. Tuvalu n'est
+  représenté que par Ionatana Ionatana, dont la seule image libre mesure 100 × 130 pixels.
+- **Laissés de côté pour tenir l'équilibre**, avec leur image : Joseph Ward et Keith Holyoake (deux Premiers ministres de plus),
+  Kamehameha II, Lunalilo et Kapiʻolani (Hawaï compte déjà neuf figures), George Tupou II, Tupua Tamasese Lealofi IV, Bernard
+  Dowiyogo, Bailey Olter, Lazarus Salii, Roman Tmetuchl, Ricardo Bordallo, Penaia Ganilau et Josefa Iloilo (un ou deux chefs d'État
+  suffisent par territoire), Don Ho et Inia Te Wiata (dont l'article français ne dit presque rien), ainsi que les sportifs que
+  retiendrait le seul palmarès : Peter Snell, Arthur Lydiard, Colin Meads et Dave Gallaher.
+- **Les sportifs.** Jonah Lomu a porté l'image de son pays dans le monde, Jack Lovelock gagne à Berlin en 1936, Bruce McLaren laisse
+  l'écurie qui porte son nom, Peter Blake gagne la Coupe de l'America et meurt en défendant les océans, Duke Kahanamoku est le père du
+  surf moderne. Les rangs et les records seuls restent aux Biographies (voir « Les sportifs : une exception, pas une règle »).
+- **Des portraits souvent indirects**, et les légendes le disent : une aquarelle attribuée à Tupaia (un Māori échange une langouste
+  avec Joseph Banks), la statue de Pouvanaa a Oopa à Papeete, le buste d'Atamu Tekena à Hanga Roa, un graffiti d'Éloi Machoro
+  photographié à Thio (son nom y est écrit : `nomVisible`, donc écarté de « Qui est-ce ? »), des portraits posthumes (Kamehameha Ier
+  d'après Choris, Pierre Chanel jeune, Pōmare II gravé en 1830), des portraits peints (Hobson, Pōtatau Te Wherowhero, Te Rauparaha,
+  Hōne Heke, Tāwhiao) ou gravés dans la presse (Te Whiti, Titokowaru, Te Kooti), un dessin contemporain pour Colin McCahon.
+- **Statut américain des images.** Les pages de fichier ont été relues à la fin : 82 des 93 premières portent un modèle de licence
+  valable aux États-Unis (PD-1923, PD-1996, PD-old, PD-USGov ou une licence Creative Commons), et les trois suivantes (Hotere, Woollaston,
+  Blake) sont des CC BY ou CC BY-SA. Les onze autres sont à relire si l'on veut être plus strict : **six images à balise nationale
+  seule** (Keith Park, photographie de la Royal Air Force de 1940, « PD-UKGov » ; Jack Lovelock, photographie de 1936 du musée
+  olympique, « PD-anon-70-EU » ; Sālote Tupou III, « PD-Tonga » ; Lala Sukuna, « PD-Fiji » ; Amata Kabua, « PD-MH » ; Tosiwo Nakayama,
+  « PD-Micronesia »), **trois licences posées par l'auteur de la photographie** (CC BY-SA pour Keri Hulme et Déwé Gorodey, CC0 pour le graffiti de Machoro)
+  et **deux photographies d'avant 1931**, sans modèle américain (Kalākaua, vers 1882, et Kaʻiulani, 1897). Quatre portraits sont des
+  clichés du gouvernement américain des îles du Pacifique (Coleman, Remeliik, Camacho, Tenorio), sans réserve.
+- **Un téléchargement contraint.** Wikimedia refusait à cet environnement les fichiers originaux (429, même après de longues pauses) :
+  les portraits sont tirés de miniatures de 330 px, 500 px, 960 px ou 1920 px, jamais de l'original, sauf pour les images plus étroites
+  que 330 px. Huit sont agrandis depuis une source de moins de 290 pixels de large : Ionatana (100), Kulimoetoke (193), Lomu et Mau Piailug
+  (200), Nakayama (202), DeRoburt (233), Hodgkins (283) et Pa Tepaeru Terito Ariki (284). Hone Tuwhare est recadré dans la version non rognée de
+  l'image, pour avoir un visage net ; Whina Cooper dans une planche-contact de 5 409 × 1 293 px, sur la seule image où elle est
+  identifiable.
+- **Géolocalisation** : aucune des 96 naissances n'est placée sur l'Atlas, et aucune n'a sa biographie, donc le test des faits liés ne
+  l'exige pas.
+
 ### Un fichier source par panthéon, un script qui l'écrit dans `data/fr.json`
 
 `scripts/pantheon/<code>.json` (`fr`, `hispam`…) est **la seule source de
@@ -2728,7 +2817,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
 ### Ce qui n'est pas fait
 
 - **Les autres panthéons** : la France, l'Égypte, les États-Unis, l'Italie, le
-  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan sont écrits.
+  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique sont écrits.
   Chaque liste de personnages est validée avant la rédaction. Feuille de route, dans l'ordre
   où on les propose (un pays seul quand il a de quoi faire un thème, un bloc sinon) :
   1. **Le Machrek est écrit** (voir « Le cinquième bloc »). Il reste : le portrait des trois
@@ -2743,7 +2832,8 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
   3. **Blocs** : l'Asie du Sud-Est, la Mongolie (l'Asie centrale est écrite, voir « Un bloc : l'Asie centrale et
      l'Afghanistan »), le Caucase, la Corée (`KR`/`KP`), l'Afrique de
      l'Ouest, l'Afrique centrale, l'Afrique de l'Est et la Corne, l'Afrique australe et l'océan
-     Indien (sans l'Afrique du Sud), « Nouvelle-Zélande et Pacifique ».
+     Indien (sans l'Afrique du Sud). « Nouvelle-Zélande et Pacifique » est écrit (voir « Un bloc : la
+     Nouvelle-Zélande et le Pacifique »).
   4. **L'Europe et les Amériques qui manquent** : **le Portugal est écrit** (voir « Un pays à part : le Portugal »,
      qui a repris Magellan et Viriathe), Byzance (au-delà des cinq figures déjà au panthéon de la Grèce),
      la Pologne, l'Europe centrale, les Balkans, les Caraïbes non
