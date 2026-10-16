@@ -11,7 +11,7 @@ ne posent pas la même question :
 | | Un thème, c'est | Une date, c'est | On le joue par |
 |---|---|---|---|
 | **Biographies** | une vie (360 thèmes, en 12 domaines) | une étape de cette vie | étape de la vie |
-| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, le sous-continent indien, Israël, la Turquie, le Japon, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique) | la naissance d'un personnage | domaine |
+| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, le sous-continent indien, Israël, la Turquie, le Japon, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil) | la naissance d'un personnage | domaine |
 
 Le déplacement ne coûte aucune migration : les 360 thèmes gardent leurs
 identifiants, et rien de ce que le joueur a sauvegardé (favoris, révision,
@@ -117,7 +117,7 @@ des pays ont une histoire commune, un thème **de région** plutôt qu'un par pa
 |---|---|---|
 | Identifiant | `pan_<iso2>` : deux lettres (`pan_fr`) | `pan_<code>` : trois lettres ou plus (`pan_hispam`) — jamais de collision avec un code de pays |
 | `pays` sur chaque événement | interdit (le thème le dit déjà), sauf pour un **invité** d'un autre État (Monaco chez la France, voir « Les micro-États ») | obligatoire : code ISO à deux lettres (`"pays": "VE"`) |
-| Exemples | France, Égypte, Espagne, États-Unis, Italie, Royaume-Uni, Israël ; plus tard Brésil… | Amérique hispanique, Maghreb, Machrek, Allemagne-Autriche-Suisse, Scandinavie |
+| Exemples | France, Égypte, Espagne, États-Unis, Italie, Royaume-Uni, Israël, Portugal, Brésil | Amérique hispanique, Maghreb, Machrek, Allemagne-Autriche-Suisse, Scandinavie |
 
 Ce que le champ `pays` d'un événement change :
 
@@ -238,7 +238,7 @@ plus bas pourquoi) ; 32 ⭐ et 19 biographies liées.
 Les choix qui ne vont pas de soi :
 
 - **« Hispanique », et non « latine »** : le Brésil, d'une autre langue et d'une
-  autre histoire, aura son propre thème ; Haïti ou le Belize n'ont pas leur
+  autre histoire, a son propre thème (voir « Un pays à part : le Brésil ») ; Haïti ou le Belize n'ont pas leur
   place dans une région qu'unit l'espagnol.
 - **Le Mexique pèse près d'un cinquième** (19 sur 97), l'Argentine suit avec
   14 : un bloc se tient à la population et au rôle historique, pas à
@@ -1653,7 +1653,7 @@ liées (Vasco de Gama, Magellan). 77 portraits : 57 du domaine public, 5 CC0 et 
   Lopes-Graça (« Fundação Mário Soares », années 1950, auteur inconnu) est à confirmer.
 - **Envisagés et pas faits** : Mouzinho de Albuquerque (la date de sa mort diffère selon les sources), Abel Salazar et
   Ricardo Jorge (titres d'article à retrouver), Sidónio Pais, Jean III, Philippa de Lancastre, Vergílio Ferreira,
-  Eugénio de Andrade ; et les figures que le Brésil revendique autant (Pierre Ier, Bartolomeu de Gusmão), ou né à Goa
+  Eugénio de Andrade ; et les figures que le Brésil revendique autant (Pierre Ier, Bartolomeu de Gusmão : ils sont au panthéon du Brésil), ou né à Goa
   (Joseph Vaz).
 
 ### Un bloc : l'Asie centrale et l'Afghanistan
@@ -1814,6 +1814,80 @@ Waitangi, Honolulu et Papeete.
   identifiable.
 - **Géolocalisation** : aucune des 88 naissances n'est placée sur l'Atlas, et aucune n'a sa biographie, donc le test des faits liés ne
   l'exige pas.
+
+### Un pays à part : le Brésil
+
+`pan_br`, « Grandes figures du Brésil » (code `br`, pays) : **96 personnages**, de Gregório de Matos (1636) à Marielle Franco
+(1979). Par axe : 25 Littérature et pensée, 21 Musique, spectacle et sport, 17 Guerres et résistances, 14 Chefs d'État et
+dirigeants, 10 Sciences, techniques et innovation, 9 Beaux-arts ; 19 ⭐ et 3 biographies liées (Pelé, Senna, Niemeyer).
+96 portraits (2,3 Mo) : 73 du domaine public, 1 CC0, 8 CC BY et 14 CC BY-SA. Les mots-clés du thème portent le pays et ses
+adjectifs, les villes (Rio de Janeiro, São Paulo, Brasília, Salvador de Bahia), les régions (Nordeste, Sertão, Amazonie, Minas Gerais,
+Pernambouc), les grandes pages de l'histoire (Empire du Brésil, Estado Novo, Canudos, Palmares, Inconfidência mineira) et les genres qui
+disent le pays (samba, bossa nova, Tropicália, Cinema Novo, modernisme brésilien).
+
+- **Un pays, pas un bloc, et pas l'Amérique « hispanique ».** `pan_br`, aucun champ `pays` sauf une invitée, et « Pendant ce
+  temps, ailleurs… » le compte comme `thm_br`, l'« Histoire du Brésil ». Le thème se range par « Brésil », entre le Benelux et
+  le Canada. L'invitée est Marie-Léopoldine d'Autriche (`AT`), archiduchesse née à Vienne, première impératrice du Brésil, dont
+  la fiche affiche donc l'Autriche sous la date : c'est au Brésil qu'on l'honore, et elle compte pour le Brésil dans la
+  Simultanéité, comme le prévoit la règle des invités.
+- **Ceux que le Portugal avait laissés.** Pierre Ier, né près de Lisbonne et proclamateur de l'indépendance, et Bartolomeu de
+  Gusmão, né à Santos, avaient été écartés du panthéon du Portugal (« les figures que le Brésil revendique autant »). Cabral
+  et le père António Vieira, eux, restent portugais. Carmen Miranda, née à Marco de Canaveses et arrivée à Rio encore bébé, et Clarice Lispector, née en Ukraine, sont rangées ici comme les autres : leur fiche le dit dans la phrase, mais
+  elles n'ont pas de champ `pays`, puisque c'est le Brésil qui les honore le plus. Anita Garibaldi, née à Laguna, est brésilienne ;
+  l'Italie n'a que son mari.
+- **L'esclavage et la dictature, sans complaisance.** Zumbi, Isabelle du Brésil, Patrocínio, Nabuco, Rebouças et Castro Alves sont les
+  figures de l'abolition ; Vargas est là avec l'Estado Novo, Castelo Branco comme premier général du régime de 1964, Goulart,
+  Prestes, Marighella, Hélder Câmara, Paulo Freire et Marielle Franco comme ceux qui l'ont combattu, subi ou payé. Marighella est dit
+  tel qu'il fut, guérillero urbain. La fiche de Marielle Franco ne dit de l'enquête que ce qu'établissait la justice à la date de
+  rédaction : deux tueurs condamnés en 2024, des commanditaires issus du monde politique mis en cause.
+- **Un panthéon de culture, avec ses limites.** La littérature et la musique en font la moitié (25 + 21 sur 96) : le Brésil a une
+  histoire où la chanson, le roman et le football ont fait autant que les gouvernements pour dire le pays. Les Beaux-arts n'ont que
+  9 figures, faute d'images libres : Lúcio Costa, Hélio Oiticica, Lygia Clark et Di Cavalcanti, qui y auraient leur place, n'ont aucun portrait libre.
+- **Un septième axe ?** Non : « Économie et entreprise » exige six figures et une histoire propre (voir plus haut), et Mauá,
+  Matarazzo n'y suffisent pas.
+- **Où l'on range qui.** Rondon (explorateur, maréchal) est avec les Sciences ; Bertha Lutz (zoologiste, mais surtout cheffe du
+  mouvement pour le droit de vote des femmes) et Chico Mendes (syndicaliste et écologiste) avec les Guerres et résistances,
+  « combats pour les droits » ; Zilda Arns, pédiatre, avec les Sciences ; Vinicius de Moraes, poète et parolier, avec la musique.
+- **Les sportifs : trois.** Pelé et Garrincha ont porté l'image du pays dans le monde, Ayrton Senna aussi, et ses funérailles
+  nationales en 1994 disent ce qu'il fut. Éder Jofre, Maria Esther Bueno ou Adhemar Ferreira da Silva, dont les palmarès sont
+  grands mais restent dans le sport, sont laissés aux Biographies (voir « Les sportifs : une exception, pas une règle »).
+- **Pas de vivants** : Lula, Fernando Henrique Cardoso, Dilma Rousseff, Caetano Veloso, Gilberto Gil, Chico Buarque, Fernanda
+  Montenegro, Marta, Zico, Neymar n'y sont pas.
+- **Dates retenues quand les sources divergent.** Lampião est daté du 7 juin 1897 (d'autres sources disent 1898), Zumbi de 1655
+  (date traditionnelle : sa naissance n'est pas documentée), Antônio Conselheiro de 1830, Tiradentes de 1746, Gregório de Matos de
+  1636 et Bartolomeu de Gusmão du 18 décembre 1685 ; Castelo Branco naît en 1900, non en 1897 comme on le lit parfois.
+- **Écartés faute de date avérée** : Aleijadinho (né en 1730 ou 1738 selon les sources), Chica da Silva, Dandara, Elza Soares.
+- **Écartés faute d'article en français** : Frei Caneca, Luiz Gama, Roberto Landell de Moura.
+- **Écartés faute d'image libre convenable** : Josué de Castro (la seule photographie libre exploitable mesure 190 × 270 px, et
+  Wikimedia a refusé à cet environnement, à plusieurs reprises, de la servir : la fiche existait, elle est retirée avec lui), Sérgio Buarque de Holanda
+  (une photographie de 1957 dont la licence est posée par un tiers), Raul Seixas (seulement des photographies d'un hommage),
+  João Cabral de Melo Neto (seulement la statue de Recife), Lúcio Costa, Hélio Oiticica et Lygia Clark (seulement des vues d'expositions, ou une œuvre sous une licence posée par
+  l'importateur), Di Cavalcanti et Tomé de Sousa. Josué de Castro, Sérgio Buarque de Holanda, Cabral
+  de Melo Neto et Lúcio Costa peuvent rejoindre `scripts/pantheon/br.json` si une bonne image se présente.
+- **Laissés de côté pour tenir l'équilibre**, avec leur image : Eurico Gaspar Dutra (un président de plus) et Éder Jofre.
+- **Des portraits souvent indirects**, et les légendes le disent : un buste (Zumbi, à Brasília, avec sa plaque : `nomVisible`),
+  des portraits posthumes (Tiradentes par Oscar Pereira da Silva en 1922, Gusmão par Benedito Calixto en 1902, Maria Quitéria par
+  Failutti en 1920, José Bonifácio en lithographie de Sisson, dont la signature est écrite sous l'image : `nomVisible`), une gravure imaginaire
+  (Gregório de Matos), une illustration de presse de 1897 (Antônio Conselheiro, dont on ne connaît aucune photographie de son vivant :
+  l'image est recadrée sur le dessin, sans la légende imprimée), des peintures d'époque (Pierre Ier, Bento Gonçalves, Anita Garibaldi,
+  Marie-Léopoldine par Kreutzinger), un dessin (Darcy Ribeiro), un timbre (Adolfo Lutz, dont le nom est imprimé : `nomVisible`), le
+  photogramme d'un film hollywoodien (Carmen Miranda en 1941) et la photographie d'une fiche d'internement (Lima Barreto, en 1914).
+- **Statut américain des images.** Soixante-treize images relèvent du domaine public, une de la CC0, huit de licences CC BY et
+  quatorze de CC BY-SA. Parmi le domaine public, **vingt-sept ne portent qu'une balise de pays, ou aucune balise américaine**
+  (Pierre II, Kubitschek, Castelo Branco, Tiradentes, Bertha Lutz, Drummond de Andrade, Manuel Bandeira, Cecília Meireles, Graciliano
+  Ramos, Jorge Amado, Rachel de Queiroz, Nelson Rodrigues, Portinari, Jobim, Vinicius de Moraes, Elis Regina, Grande Otelo, Glauber
+  Rocha, Pelé, Garrincha, Oswaldo Cruz, Adolfo Lutz, Nise da Silveira, Guimarães Rosa, Pixinguinha, Luiz Gonzaga, César Lattes) : plusieurs
+  sont des photographies du fonds « Correio da Manhã » des Archives nationales du Brésil, des portraits officiels du gouvernement ou
+  des images d'avant 1931 ; à relire si l'on veut être plus strict.
+- **Un téléchargement contraint.** Wikimedia refusait souvent à cet environnement les fichiers originaux et les miniatures de largeur
+  non standard (429), et `Special:FilePath` ne rend pas une miniature plus large que l'original : 330, 500, 960 ou 1920 px pour les
+  images assez grandes, le fichier original (`largeur: 0`) pour les images plus étroites que 330 px. Huit portraits sont agrandis depuis une
+  source de moins de 290 pixels de large : Noel Rosa (196), Vital Brazil (197), Gregório de Matos (204), Villa-Lobos (219), Cruz e Sousa (251),
+  Lispector (276), Oswald de Andrade (277) et Euclides da Cunha (279). Dix portraits sont recadrés sur le visage dans une image plus
+  large ou plus haute (Isabelle, Rio Branco, Nabuco, Bertha Lutz, Chagas, Gusmão, Rondon, Lobato, Elis Regina, Garrincha), Luiz Gonzaga
+  dans une photographie de groupe où il tient son accordéon, Oswaldo Cruz dans un cadre ovale, Antônio Conselheiro dans une illustration.
+- **Géolocalisation** : trois naissances sont placées sur l'Atlas, reprises de leur biographie (Três Corações pour Pelé, São Paulo pour
+  Senna, Rio de Janeiro pour Niemeyer ; le test des faits liés l'exige). Les 93 autres ne le sont pas encore.
 
 ### Un fichier source par panthéon, un script qui l'écrit dans `data/fr.json`
 
@@ -2157,7 +2231,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
 ### Ce qui n'est pas fait
 
 - **Les autres panthéons** : la France, l'Égypte, les États-Unis, l'Italie, le
-  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique sont écrits.
+  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil sont écrits.
   Chaque liste de personnages est validée avant la rédaction. Feuille de route, dans l'ordre
   où on les propose (un pays seul quand il a de quoi faire un thème, un bloc sinon) :
   1. **Le Machrek est écrit** (voir « Le cinquième bloc »). Il reste : le portrait des trois
@@ -2168,7 +2242,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
      règle « un personnage, un seul thème » range chacun dans son pays. Le Maghreb compte deux
      figures juives (Edmond Amran El Maleh, Habiba Msika) et en a laissé cinq de côté (Cheikh
      Raymond, Reinette l'Oranaise, Salim Halali, Albert Memmi, Abraham Serfaty).
-  2. **Pays seuls** : le Brésil (qui n'entre pas dans l'Amérique « hispanique »), l'Afrique du Sud, l'Iran. **La Turquie** (voir « Un pays à part : la Turquie »), **le Japon** (voir « Un pays à part : le Japon ») et **la Russie** (voir « Un pays à part : la Russie ») et **l'Australie** (voir « Un pays à part : l'Australie ») sont écrits.
+  2. **Pays seuls** : l'Afrique du Sud, l'Iran. **Le Brésil** (qui n'entre pas dans l'Amérique « hispanique » ; voir « Un pays à part : le Brésil »), **la Turquie** (voir « Un pays à part : la Turquie »), **le Japon** (voir « Un pays à part : le Japon ») et **la Russie** (voir « Un pays à part : la Russie ») et **l'Australie** (voir « Un pays à part : l'Australie ») sont écrits.
   3. **Blocs** : l'Asie du Sud-Est, la Mongolie (l'Asie centrale est écrite, voir « Un bloc : l'Asie centrale et
      l'Afghanistan »), le Caucase, la Corée (`KR`/`KP`), l'Afrique de
      l'Ouest, l'Afrique centrale, l'Afrique de l'Est et la Corne, l'Afrique australe et l'océan

@@ -90,11 +90,11 @@ test('Personnages illustres : deux sous-catégories, chacune avec sa note et son
     await expect(page.locator('#theme-screen-title')).toHaveText('Panthéons');
     await expect(page.locator('#theme-screen-note-text')).toContainText('né dans les frontières actuelles');
     // Panthéons de pays et de blocs se rangent par leur nom de source — « Afrique de l'Ouest », « Allemagne, Autriche et Suisse »,
-    // « Amérique hispanique », « Asie centrale et Afghanistan », « Australie », « Benelux », « Canada », « Chine », « Égypte », « Espagne », « États-Unis », « France », « Grèce », « Italie », « Japon », « Machrek et péninsule Arabique », « Maghreb », « Nouvelle-Zélande et Pacifique », « Portugal », « Royaume-Uni », « Russie », « Scandinavie », « Sous-continent indien », « Turquie » — et non par
+    // « Amérique hispanique », « Asie centrale et Afghanistan », « Australie », « Benelux », « Brésil », « Canada », « Chine », « Égypte », « Espagne », « États-Unis », « France », « Grèce », « Italie », « Japon », « Machrek et péninsule Arabique », « Maghreb », « Nouvelle-Zélande et Pacifique », « Portugal », « Royaume-Uni », « Russie », « Scandinavie », « Sous-continent indien », « Turquie » — et non par
     // « Grandes figures d'… » / « … de » / « … des » / « … du ».
     await expect(page.locator('#themes-container .data-card-title'))
         .toHaveText(["Grandes figures d'Afrique de l'Ouest", "Grandes figures d'Allemagne, d'Autriche et de Suisse", "Grandes figures d'Amérique hispanique",
-            "Grandes figures d'Asie centrale", "Grandes figures d'Australie", 'Grandes figures du Benelux', 'Grandes figures du Canada', 'Grandes figures de Chine',
+            "Grandes figures d'Asie centrale", "Grandes figures d'Australie", 'Grandes figures du Benelux', 'Grandes figures du Brésil', 'Grandes figures du Canada', 'Grandes figures de Chine',
             "Grandes figures d'Égypte", "Grandes figures d'Espagne", 'Grandes figures des États-Unis',
             'Grandes figures de France', 'Grandes figures de Grèce', "Grandes figures d'Israël", "Grandes figures d'Italie", 'Grandes figures du Japon',
             'Grandes figures du Machrek et de la péninsule Arabique', 'Grandes figures du Maghreb', 'Grandes figures de Nouvelle-Zélande et du Pacifique', 'Grandes figures du Portugal',
@@ -800,6 +800,52 @@ test('la recherche — « nouvelle-zélande », « maori », « hawaï », « ta
         await page.locator('#theme-search-input').fill(mot);
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: 'Grandes figures de Nouvelle-Zélande et du Pacifique' });
         await expect(resultat, `« ${mot} » doit mener au panthéon de Nouvelle-Zélande et du Pacifique`).toHaveCount(1);
+        await expect(resultat.locator('.search-result-path')).toContainText('Personnages illustres › Panthéons');
+    }
+});
+
+test('le Brésil : chacune de ses figures a son portrait, de Zumbi à Marielle Franco, et trois ont leur biographie', async ({ page }) => {
+    await openThemeById(page, 'pan_br');
+    await page.locator('#mode-card-discovery').click();
+    await expect(page.locator('#screen-game')).toBeVisible();
+    const nombre = await page.evaluate(() => getCurrentTheme().events.length);
+    expect(nombre).toBe(96);
+    await expect(page.locator('#timeline .entry')).toHaveCount(nombre);
+    await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
+
+    // Un empereur, une romancière née en Ukraine, un footballeur : la fiche n'affiche aucun pays, le Brésil les honore tous.
+    for (const titre of ['Naissance de Pierre II du Brésil', 'Naissance de Clarice Lispector', 'Naissance de Garrincha']) {
+        await page.locator('#timeline .entry', { hasText: titre }).click();
+        await expect(page.locator('#modal-details')).toBeVisible();
+        await expect(page.locator('#modal-pays')).toBeHidden();
+        const portrait = page.locator('#modal-portrait-img');
+        await expect.poll(() => portrait.evaluate(img => img.complete ? img.naturalWidth : 0)).toBe(320);
+        await expect(page.locator('#modal-portrait-caption')).not.toBeEmpty();
+        await page.locator('#modal-details .close-btn').click();
+        await expect(page.locator('#modal-details')).toBeHidden();
+    }
+
+    // Une invitée : l'archiduchesse née à Vienne, impératrice du Brésil, garde son pays sous la date.
+    await page.locator('#timeline .entry', { hasText: 'Naissance de Marie-Léopoldine d\'Autriche' }).click();
+    await expect(page.locator('#modal-details')).toBeVisible();
+    await expect(page.locator('#modal-pays')).toContainText('🇦🇹');
+    await expect(page.locator('#modal-pays')).toContainText('Autriche');
+    await page.locator('#modal-details .close-btn').click();
+    await expect(page.locator('#modal-details')).toBeHidden();
+
+    // Trois figures ont aussi leur biographie dans l'appli : le bouton y mène.
+    const avecBiographie = await page.evaluate(() => getCurrentTheme().events.filter(e => e.biographie).length);
+    expect(avecBiographie).toBe(3);
+    await page.locator('#timeline .entry', { hasText: 'Naissance de Pelé' }).click();
+    await expect(page.locator('#modal-bio-btn')).toBeVisible();
+});
+
+test('la recherche — « brésil », « brasilia », « samba », « amazonie », « canudos » — mène au panthéon du Brésil', async ({ page }) => {
+    await page.locator('#screen-home').click();
+    for (const mot of ['bresil', 'bresilien', 'brasilia', 'samba', 'bossa nova', 'amazonie', 'canudos', 'palmares', 'salvador de bahia']) {
+        await page.locator('#theme-search-input').fill(mot);
+        const resultat = page.locator('#theme-search-results .search-result-item', { hasText: 'Grandes figures du Brésil' });
+        await expect(resultat, `« ${mot} » doit mener au panthéon du Brésil`).toHaveCount(1);
         await expect(resultat.locator('.search-result-path')).toContainText('Personnages illustres › Panthéons');
     }
 });

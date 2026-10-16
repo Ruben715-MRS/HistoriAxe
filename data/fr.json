@@ -2,8 +2,8 @@
   "version": "1.0.0",
   "lang": "fr",
   "name": "Français (Intégral)",
-  "totalThemes": 821,
-  "totalEvents": 22349,
+  "totalThemes": 822,
+  "totalEvents": 22445,
   "categories": [
     {
       "nom": "Culture générale",
@@ -101188,6 +101188,1619 @@
                 "pan_benelux_brel",
                 "pan_benelux_gaul",
                 "pan_benelux_cruyff"
+              ]
+            },
+            {
+              "id": "pan_br",
+              "nom": "Grandes figures du Brésil",
+              "difficulte": "Intermédiaire",
+              "motsCles": [
+                "Brésil",
+                "Brésilien",
+                "Brésilienne",
+                "Brésiliens",
+                "Brésiliennes",
+                "Brasil",
+                "Rio de Janeiro",
+                "São Paulo",
+                "Brasília",
+                "Salvador de Bahia",
+                "Bahia",
+                "Pernambouc",
+                "Minas Gerais",
+                "Amazonie",
+                "Nordeste",
+                "Sertão",
+                "Empire du Brésil",
+                "Brésil colonial",
+                "République brésilienne",
+                "Estado Novo",
+                "Dictature militaire brésilienne",
+                "Canudos",
+                "Palmares",
+                "Inconfidência mineira",
+                "Indépendance du Brésil",
+                "Lusophonie",
+                "Samba",
+                "Bossa nova",
+                "Tropicália",
+                "Carnaval de Rio",
+                "Cinema Novo",
+                "Modernisme brésilien"
+              ],
+              "events": [
+                {
+                  "id": "pan_br_matos",
+                  "axe": "Littérature et pensée",
+                  "date": 1636,
+                  "titre": "Naissance de Gregório de Matos",
+                  "description": "Gregório de Matos (1636-1696) est un poète baroque né à Salvador de Bahia, surnommé la « Bouche d'enfer » (« Boca do Inferno »). Formé en droit à Coimbra, il écrit des poèmes religieux et amoureux, mais surtout des satires où il attaque sans ménagement le gouverneur, le clergé et les riches marchands de Bahia. Déporté en Angola en 1694 pour ses vers, il meurt à Recife deux ans plus tard.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Greg%C3%B3rio_de_Matos",
+                  "classement": "Matos, Gregório de",
+                  "image": {
+                    "src": "assets/portraits/pan_br_matos.jpg",
+                    "legende": "Gregório de Matos, gravure du XIXe siècle de F. Briguiet : un portrait imaginé, plus de deux siècles après sa mort",
+                    "auteur": "F. Briguiet",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Greg%C3%B3rio_de_Matos.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_zumbi",
+                  "axe": "Guerres et résistances",
+                  "date": 1655,
+                  "titre": "Naissance de Zumbi dos Palmares",
+                  "description": "Zumbi dos Palmares (1655-1695) est le dernier chef du quilombo de Palmares, vaste communauté d'esclaves en fuite installée dans la serra da Barriga, dans l'actuel Alagoas. Né libre selon la tradition, capturé enfant puis élevé par un prêtre, il s'enfuit à quinze ans et prend la tête de Palmares en 1678, quand son oncle Ganga Zumba accepte la paix avec les Portugais. La forteresse tombe en 1694 ; il est tué le 20 novembre 1695, date devenue la Journée de la conscience noire.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Zumbi_dos_Palmares",
+                  "classement": "Zumbi dos Palmares",
+                  "image": {
+                    "src": "assets/portraits/pan_br_zumbi.jpg",
+                    "legende": "Buste de Zumbi dos Palmares, à Brasília : aucun portrait de lui n'existe, et c'est une sculpture, photographiée par Elza Fiúza en 2006",
+                    "auteur": "Elza Fiúza (Agência Brasil)",
+                    "licence": "CC BY 3.0 BR",
+                    "source": "https://commons.wikimedia.org/wiki/File:Zumbidospalmares.jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_br_gusmao",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1685,
+                  "titre": "Naissance de Bartolomeu de Gusmão",
+                  "description": "Bartolomeu de Gusmão (1685-1724) est un prêtre et inventeur né à Santos, qui étudie à Coimbra et vit à Lisbonne. Le 8 août 1709, il fait devant le roi Jean V, dans la Casa da Índia de Lisbonne, la démonstration d'un petit aérostat à air chaud, avant d'imaginer sa « passarola », qui ne vole jamais. Poursuivi par l'Inquisition, il s'enfuit en Espagne et meurt à Tolède à trente-huit ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bartolomeu_Louren%C3%A7o_de_Gusm%C3%A3o",
+                  "classement": "Gusmão, Bartolomeu de",
+                  "image": {
+                    "src": "assets/portraits/pan_br_gusmao.jpg",
+                    "legende": "Bartolomeu de Gusmão, portrait posthume peint par Benedito Calixto en 1902 : on ne connaît aucune image de lui de son vivant",
+                    "auteur": "Benedito Calixto (1853–1927)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Benedito_Calixto_de_Jesus_-_Retrato_do_Padre_Bartolomeu_Louren%C3%A7o_de_Gusm%C3%A3o,_Acervo_do_Museu_Paulista_da_USP.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_tiradentes",
+                  "axe": "Guerres et résistances",
+                  "date": 1746,
+                  "titre": "Naissance de Tiradentes",
+                  "description": "Tiradentes (1746-1792) est le surnom de Joaquim José da Silva Xavier, officier de cavalerie des Minas Gerais et aussi arracheur de dents. Il est l'un des meneurs de l'Inconfidência mineira, la conjuration de 1789 qui voulait proclamer une république indépendante du Portugal. Seul des conjurés à ne pas être gracié, il est pendu à Rio le 21 avril 1792, et la République en fait en 1890 un héros national dont le jour est férié.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Joaquim_Jos%C3%A9_da_Silva_Xavier",
+                  "classement": "Tiradentes",
+                  "image": {
+                    "src": "assets/portraits/pan_br_tiradentes.jpg",
+                    "legende": "Tiradentes, portrait posthume peint par Oscar Pereira da Silva en 1922 : on ne connaît aucune image de lui de son vivant",
+                    "auteur": "Oscar Pereira da Silva (1867–1939)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Oscar_Pereira_da_Silva_-_Retrato_de_Joaquim_Jos%C3%A9_da_Silva_Xavier_-_Tiradentes,_Acervo_do_Museu_Paulista_da_USP.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_bonifacio",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1763,
+                  "titre": "Naissance de José Bonifácio de Andrada e Silva",
+                  "description": "José Bonifácio de Andrada e Silva (1763-1838) est un naturaliste et homme d'État né à Santos, surnommé le « patriarche de l'Indépendance ». Minéralogiste formé en Europe, qui décrit en Suède plusieurs minéraux nouveaux dont la pétalite et le spodumène, il rentre au Brésil en 1819 et devient en 1822 le principal ministre de Pierre Ier, dont il prépare la rupture avec Lisbonne. Il plaide pour l'abolition de l'esclavage, mais, brouillé avec l'empereur, il est exilé en France de 1823 à 1829.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jos%C3%A9_Bonif%C3%A1cio_de_Andrada_e_Silva",
+                  "classement": "Andrada e Silva, José Bonifácio de",
+                  "image": {
+                    "src": "assets/portraits/pan_br_bonifacio.jpg",
+                    "legende": "José Bonifácio, lithographie de Sébastien Sisson, vers 1860 : un portrait posthume, plus de vingt ans après sa mort",
+                    "auteur": "S. A. Sisson",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jose_bonifacio_de_andrada_e_silva.jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_br_bentogoncalves",
+                  "axe": "Guerres et résistances",
+                  "date": 1788,
+                  "titre": "Naissance de Bento Gonçalves",
+                  "description": "Bento Gonçalves (1788-1847) est un éleveur et militaire né à Triunfo, dans le Rio Grande do Sul. Il prend en 1835 la tête de la révolution des Farrapos contre le pouvoir impérial, et la République du Rio Grande, proclamée en 1836, en fait son président. Prisonnier à Salvador, il s'évade en 1837 et poursuit la guerre jusqu'à la paix de 1845, qui garde la province dans l'Empire.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bento_Gon%C3%A7alves_da_Silva",
+                  "classement": "Gonçalves, Bento",
+                  "image": {
+                    "src": "assets/portraits/pan_br_bentogoncalves.jpg",
+                    "legende": "Bento Gonçalves, portrait peint à l'huile au XIXe siècle (musée Júlio de Castilhos, à Porto Alegre)",
+                    "auteur": "Ricardo André Frantz (photographie du tableau)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:MuseuJulio10.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_quiteria",
+                  "axe": "Guerres et résistances",
+                  "date": 1792,
+                  "titre": "Naissance de Maria Quitéria",
+                  "description": "Maria Quitéria (1792-1853) est une combattante née près de Feira de Santana, dans la Bahia. Pendant la guerre d'indépendance, elle s'engage en 1822 déguisée en homme, sous le nom de soldat Medeiros, dans le bataillon qui lutte contre les troupes portugaises à Salvador. Son courage lui vaut d'être décorée par Pierre Ier de l'ordre impérial de la Croix du Sud en 1823, et elle meurt aveugle à Salvador.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Maria_Quit%C3%A9ria",
+                  "classement": "Quitéria, Maria",
+                  "image": {
+                    "src": "assets/portraits/pan_br_quiteria.jpg",
+                    "legende": "Maria Quitéria, portrait peint par Domenico Failutti en 1920 : une image posthume, quarante ans après sa mort",
+                    "auteur": "Domenico Failutti",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Maria_Quit%C3%A9ria_de_Jesus_Medeiros.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_leopoldina",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1797,
+                  "titre": "Naissance de Marie-Léopoldine d'Autriche",
+                  "description": "Marie-Léopoldine d'Autriche (1797-1826) est une archiduchesse née à Vienne, fille de l'empereur François Ier, qui épouse en 1817 le prince héritier du Portugal et part pour Rio. Passionnée de sciences naturelles, elle emmène avec elle des savants allemands qui explorent le Brésil. Régente en l'absence de son époux, elle préside le conseil du 2 septembre 1822 et signe la lettre qui le presse de proclamer l'indépendance ; elle devient la première impératrice du Brésil et meurt à vingt-neuf ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Marie-L%C3%A9opoldine_d%27Autriche",
+                  "pays": "AT",
+                  "classement": "Marie-Léopoldine d'Autriche",
+                  "image": {
+                    "src": "assets/portraits/pan_br_leopoldina.jpg",
+                    "legende": "Marie-Léopoldine d'Autriche, portrait peint par Joseph Kreutzinger en 1815, deux ans avant son départ pour le Brésil",
+                    "auteur": "Joseph Kreutzinger (1757–1829)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Maria_Leopoldina_1815.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_pedro1",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1798,
+                  "titre": "Naissance de Pierre Ier du Brésil",
+                  "description": "Pierre Ier du Brésil (1798-1834) est le premier empereur du Brésil, né près de Lisbonne et fils du roi Jean VI de Portugal. Resté à Rio quand la cour regagne Lisbonne en 1821, il proclame l'indépendance le 7 septembre 1822 sur les rives de l'Ipiranga et est couronné empereur en décembre. Il abdique en 1831 en faveur de son fils Pierre II, se bat au Portugal pour placer sa fille Marie II sur le trône, et meurt à Queluz à trente-cinq ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Pierre_Ier_(empereur_du_Br%C3%A9sil)",
+                  "classement": "Pierre Ier du Brésil",
+                  "image": {
+                    "src": "assets/portraits/pan_br_pedro1.jpg",
+                    "legende": "Pierre Ier, portrait peint par Simplício Rodrigues de Sá, vers 1830",
+                    "auteur": "Simplício Rodrigues de Sá (1785–1839)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:DpedroI-brasil-full.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_caxias",
+                  "axe": "Guerres et résistances",
+                  "date": 1803,
+                  "titre": "Naissance du duc de Caxias",
+                  "description": "Le duc de Caxias (1803-1880) est un militaire et homme d'État né près de Rio de Janeiro, de son nom Luís Alves de Lima e Silva, patron de l'armée brésilienne. Il réprime la révolte de la Balaiada au Maranhão en 1841, négocie la paix de 1845 avec les Farrapos du Rio Grande do Sul, et commande les troupes alliées dans la guerre du Paraguay. Il préside aussi à trois reprises le Conseil des ministres de l'Empire.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Lu%C3%ADs_Alves_de_Lima_e_Silva",
+                  "classement": "Caxias, duc de",
+                  "image": {
+                    "src": "assets/portraits/pan_br_caxias.jpg",
+                    "legende": "Le duc de Caxias, photographie de l'atelier Goupil, 1878",
+                    "auteur": "Goupil",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Lu%C3%ADs_Alves_de_Lima_e_Silva.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_anita",
+                  "axe": "Guerres et résistances",
+                  "date": 1821,
+                  "titre": "Naissance d'Anita Garibaldi",
+                  "description": "Anita Garibaldi (1821-1849) est une combattante née à Laguna, dans l'actuel État de Santa Catarina, connue comme l'« héroïne des deux mondes ». À dix-huit ans, elle quitte son mari pour suivre Giuseppe Garibaldi, qu'elle rejoint dans les combats de la république Juliana, puis en Uruguay. Elle l'accompagne en Italie et meurt à vingt-sept ans, en août 1849, pendant la retraite qui suit la chute de la République romaine.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Anita_Garibaldi",
+                  "classement": "Garibaldi, Anita",
+                  "image": {
+                    "src": "assets/portraits/pan_br_anita.jpg",
+                    "legende": "Anita Garibaldi, portrait peint par Gaetano Gallino à Montevideo, en 1845",
+                    "auteur": "Gaetano Gallino (1804–1884)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Anita_Garibaldi_-_1839.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_dias",
+                  "axe": "Littérature et pensée",
+                  "date": 1823,
+                  "titre": "Naissance de Gonçalves Dias",
+                  "description": "Gonçalves Dias (1823-1864) est un poète né à Caxias, dans le Maranhão, fils d'un commerçant portugais et d'une métisse. Sa « Chanson de l'exil » (1843), écrite à Coimbra, qui commence par « Ma terre a des palmiers où chante le sabiá », est restée le poème le plus appris du pays. Chantre de l'indianisme romantique avec « I-Juca-Pirama » (1851), il se noie en 1864 au large du Maranhão, dans le naufrage du bateau qui le ramenait d'Europe.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Gon%C3%A7alves_Dias",
+                  "classement": "Gonçalves Dias",
+                  "image": {
+                    "src": "assets/portraits/pan_br_dias.jpg",
+                    "legende": "Gonçalves Dias, photographie vers 1855",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Gon%C3%A7alves_dias.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_pedro2",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1825,
+                  "titre": "Naissance de Pierre II du Brésil",
+                  "description": "Pierre II du Brésil (1825-1891) est le second et dernier empereur du Brésil, monté sur le trône à cinq ans en 1831 et déclaré majeur à quatorze ans. Lettré, polyglotte, protecteur des sciences et des arts, il règne près de cinquante ans sur un pays qui sort vainqueur de la guerre du Paraguay (1864-1870) et abolit l'esclavage en 1888, dernier État d'Amérique à le faire. Renversé par un coup d'État militaire le 15 novembre 1889, il part en exil et meurt à Paris deux ans plus tard.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Pierre_II_(empereur_du_Br%C3%A9sil)",
+                  "classement": "Pierre II du Brésil",
+                  "image": {
+                    "src": "assets/portraits/pan_br_pedro2.jpg",
+                    "legende": "Pierre II, photographie de Mathew Brady, 1876",
+                    "auteur": "Mathew Benjamin Brady (1822–1896)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Pedro_II_of_Brazil_-_Brady-Handy.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_deodoro",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1827,
+                  "titre": "Naissance de Deodoro da Fonseca",
+                  "description": "Deodoro da Fonseca (1827-1892) est un maréchal né dans l'Alagoas, entré à seize ans à l'école militaire et vétéran de la guerre du Paraguay. Le 15 novembre 1889, il prend la tête du coup d'État qui renverse Pierre II et proclame la République, dont il devient le premier président. Après avoir dissous le Congrès, il démissionne en novembre 1891 devant la révolte de la marine et meurt neuf mois plus tard.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Manuel_Deodoro_da_Fonseca",
+                  "classement": "Fonseca, Deodoro da",
+                  "image": {
+                    "src": "assets/portraits/pan_br_deodoro.jpg",
+                    "legende": "Deodoro da Fonseca, portrait photographique officiel de 1889",
+                    "auteur": "Governo do Brasil",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Deodoro_da_Fonseca_(1889).jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_alencar",
+                  "axe": "Littérature et pensée",
+                  "date": 1829,
+                  "titre": "Naissance de José de Alencar",
+                  "description": "José de Alencar (1829-1877) est un romancier et homme politique né près de Fortaleza, dans le Ceará, figure du romantisme brésilien. Avec « Le Guarani » (1857) et « Iracema » (1865), il cherche à fonder une littérature nationale sur le mythe de la rencontre entre Indiens et Portugais. Ministre de la Justice de 1868 à 1870, il meurt à Rio de Janeiro à quarante-huit ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jos%C3%A9_de_Alencar",
+                  "classement": "Alencar, José de",
+                  "image": {
+                    "src": "assets/portraits/pan_br_alencar.jpg",
+                    "legende": "José de Alencar, photographie non datée",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jos%C3%A9_de_Alencar.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_conselheiro",
+                  "axe": "Guerres et résistances",
+                  "date": 1830,
+                  "titre": "Naissance d'Antônio Conselheiro",
+                  "description": "Antônio Conselheiro (1830-1897) est un prédicateur itinérant né à Quixeramobim, dans le Ceará, qui parcourt pendant vingt ans l'arrière-pays du Nordeste. En 1893, il fonde en Bahia Belo Monte, dit Canudos, village de paysans pauvres qui compte en quelques années plus de dix mille habitants. La jeune République y envoie quatre expéditions militaires : il meurt en septembre 1897, et Canudos est rasé en octobre, un massacre qui inspire à Euclides da Cunha « Hautes terres ».",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ant%C3%B4nio_Conselheiro",
+                  "classement": "Conselheiro, Antônio",
+                  "image": {
+                    "src": "assets/portraits/pan_br_conselheiro.jpg",
+                    "legende": "Antônio Conselheiro, illustration du journal « O Frivolino », de Fortaleza, en 1897 : on ne connaît aucune photographie de lui vivant",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Uma_rara_ilustra%C3%A7%C3%A3o_de_Ant%C3%B4nio_Conselheiro_feita_no_ano_de_1897_pelo_jornal_cearense_O_Frivolino..png"
+                  }
+                },
+                {
+                  "id": "pan_br_meirelles",
+                  "axe": "Beaux-arts",
+                  "date": 1832,
+                  "titre": "Naissance de Victor Meirelles",
+                  "description": "Victor Meirelles (1832-1903) est un peintre né à Desterro, aujourd'hui Florianópolis, formé à Rome et à Paris grâce à une bourse de l'Empire. Sa « Première messe au Brésil » (1861), qui met en scène l'arrivée de Cabral, devient l'image fondatrice du pays, avec « Le Combat naval de Riachuelo » (1872). Il enseigne à l'Académie impériale des beaux-arts de Rio.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Victor_Meirelles",
+                  "classement": "Meirelles, Victor",
+                  "image": {
+                    "src": "assets/portraits/pan_br_meirelles.jpg",
+                    "legende": "Victor Meirelles, photographie de l'atelier Pacheco, années 1860",
+                    "auteur": "Atelier Pacheco, Rio de Janeiro",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Victor-Meirelles-de-Lima-by-Pacheco,-1860s.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_gomes",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1836,
+                  "titre": "Naissance de Carlos Gomes",
+                  "description": "Carlos Gomes (1836-1896) est un compositeur né à Campinas, dans l'État de São Paulo, le premier Brésilien à s'imposer sur les scènes d'opéra européennes. Boursier de Pierre II à Milan, il triomphe à la Scala en 1870 avec « Il Guarany », opéra italien sur un sujet indien tiré du roman de José de Alencar. Il meurt à Belém en 1896, et sa musique reste le symbole d'un art national à la fin de l'Empire.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ant%C3%B4nio_Carlos_Gomes",
+                  "classement": "Gomes, Carlos",
+                  "image": {
+                    "src": "assets/portraits/pan_br_gomes.jpg",
+                    "legende": "Carlos Gomes, photographie vers 1870",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ant%C3%B4nio_Carlos_Gomes,_c1870.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_reboucas",
+                  "axe": "Guerres et résistances",
+                  "date": 1838,
+                  "titre": "Naissance d'André Rebouças",
+                  "description": "André Rebouças (1838-1898) est un ingénieur et inventeur né à Cachoeira, dans la Bahia, descendant d'esclaves, qui construit les docks de Rio. Abolitionniste, il pense que la fin de l'esclavage doit s'accompagner d'une réforme agraire, et il est un ami proche de Pierre II. Fidèle à l'empereur, il le suit en exil en 1889 et meurt à Funchal, à Madère, dans des circonstances restées obscures.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Andr%C3%A9_Rebou%C3%A7as",
+                  "classement": "Rebouças, André",
+                  "image": {
+                    "src": "assets/portraits/pan_br_reboucas.jpg",
+                    "legende": "André Rebouças, photographie de 1871",
+                    "auteur": "Auteur inconnu",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Andr%C3%A9_Rebou%C3%A7as_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_machado",
+                  "axe": "Littérature et pensée",
+                  "date": 1839,
+                  "titre": "Naissance de Machado de Assis",
+                  "description": "Machado de Assis (1839-1908) est un écrivain né à Rio de Janeiro, fils d'un peintre en bâtiment descendant d'esclaves affranchis, devenu typographe puis fonctionnaire. Avec « Mémoires posthumes de Brás Cubas » (1881) et « Dom Casmurro » (1899), il fait du roman brésilien une ironie amère sur la société de son temps. Fondateur et premier président de l'Académie brésilienne des lettres en 1897, il est regardé comme le plus grand écrivain du pays.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Joaquim_Maria_Machado_de_Assis",
+                  "classement": "Machado de Assis",
+                  "image": {
+                    "src": "assets/portraits/pan_br_machado.jpg",
+                    "legende": "Machado de Assis à cinquante-sept ans, photographie vers 1896",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Machado_de_Assis_aos_57_anos.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_americo",
+                  "axe": "Beaux-arts",
+                  "date": 1843,
+                  "titre": "Naissance de Pedro Américo",
+                  "description": "Pedro Américo (1843-1905) est un peintre né à Areia, dans la Paraíba, élève de l'École des beaux-arts de Paris et protégé de Pierre II. Il signe de grandes toiles historiques, dont « La Bataille d'Avaí » (1877) et surtout « L'Indépendance ou la mort » (1888), l'image du cri de l'Ipiranga qui s'est gravée dans la mémoire nationale. Il meurt à Florence en 1905.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Pedro_Am%C3%A9rico",
+                  "classement": "Américo, Pedro",
+                  "image": {
+                    "src": "assets/portraits/pan_br_americo.jpg",
+                    "legende": "Pedro Américo, photographie de 1871",
+                    "auteur": "M. Nogueira da Silva",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Pedro_Am%C3%A9rico.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_riobranco",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1845,
+                  "titre": "Naissance du baron de Rio Branco",
+                  "description": "Le baron de Rio Branco (1845-1912) est un diplomate et historien né à Rio de Janeiro, de son nom José Maria da Silva Paranhos Júnior, fils du vicomte du même nom. Ministre des Affaires étrangères de 1902 à sa mort, il fixe par la négociation et l'arbitrage presque toutes les frontières du pays, dont le traité de Petrópolis (1903) qui donne l'Acre au Brésil. Les Brésiliens voient en lui le père de leur diplomatie, et son nom est celui de l'école des diplomates.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jos%C3%A9_Maria_da_Silva_Paranhos_J%C3%BAnior",
+                  "classement": "Rio Branco, baron de",
+                  "image": {
+                    "src": "assets/portraits/pan_br_riobranco.jpg",
+                    "legende": "Le baron de Rio Branco, photographie non datée",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Bar%C3%A3o_do_Rio_Branco_(fotografia).jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_isabel",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1846,
+                  "titre": "Naissance d'Isabelle du Brésil",
+                  "description": "Isabelle du Brésil (1846-1921) est la fille de Pierre II et l'héritière du trône impérial. Régente à trois reprises, elle signe le 13 mai 1888 la « loi d'Or », qui abolit l'esclavage sans indemniser les propriétaires et lui vaut le surnom de « la Rédemptrice ». L'empire tombe dix-huit mois plus tard ; elle vit en exil en France, où elle meurt au château d'Eu.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Isabelle_du_Br%C3%A9sil",
+                  "classement": "Isabelle du Brésil",
+                  "image": {
+                    "src": "assets/portraits/pan_br_isabel.jpg",
+                    "legende": "La princesse Isabelle en exil en France, photographie non datée",
+                    "auteur": "Auteur inconnu",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Princesa._D_Isabel_do_Brasil_no_ex%C3%ADlio.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_castroalves",
+                  "axe": "Littérature et pensée",
+                  "date": 1847,
+                  "titre": "Naissance de Castro Alves",
+                  "description": "Castro Alves (1847-1871) est un poète né dans la Bahia, surnommé le « poète des esclaves ». Ses poèmes, dont « Le Navire négrier » (1869), dénoncent la traite et l'esclavage avec une éloquence romantique qui marque toute une génération d'abolitionnistes. Blessé par accident à la jambe, qu'on lui ampute, il meurt de tuberculose à Salvador, à vingt-quatre ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Castro_Alves",
+                  "classement": "Castro Alves",
+                  "image": {
+                    "src": "assets/portraits/pan_br_castroalves.jpg",
+                    "legende": "Castro Alves, photographie d'Alberto Henschel, vers 1870",
+                    "auteur": "Alberto Henschel (1827–1882)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Alberto_Henschel_-_Castro_Alves.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_gonzaga",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1847,
+                  "titre": "Naissance de Chiquinha Gonzaga",
+                  "description": "Chiquinha Gonzaga (1847-1935) est une pianiste, compositrice et cheffe d'orchestre née à Rio de Janeiro, la première du Brésil. Mariée à seize ans à un homme choisi par son père, elle quitte son mari, ce qui fait scandale, et vit de ses leçons et de ses polkas, tangos et maxixes. Elle compose en 1899 « Ô abre-alas », première marche de carnaval, milite pour l'abolition et fonde la société des auteurs de théâtre.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Chiquinha_Gonzaga",
+                  "classement": "Gonzaga, Chiquinha",
+                  "image": {
+                    "src": "assets/portraits/pan_br_gonzaga.jpg",
+                    "legende": "Chiquinha Gonzaga à dix-huit ans, photographie de 1865",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Chiquinha_6a.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_nabuco",
+                  "axe": "Guerres et résistances",
+                  "date": 1849,
+                  "titre": "Naissance de Joaquim Nabuco",
+                  "description": "Joaquim Nabuco (1849-1910) est un diplomate, historien et député né à Recife, fils d'un sénateur. Chef de file de la campagne abolitionniste, il publie en 1883 « L'Abolitionnisme » et s'emploie à obtenir la fin de l'esclavage par la loi. Cofondateur de l'Académie brésilienne des lettres, il est le premier ambassadeur du Brésil à Washington, où il meurt en 1910.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Joaquim_Nabuco",
+                  "classement": "Nabuco, Joaquim",
+                  "image": {
+                    "src": "assets/portraits/pan_br_nabuco.jpg",
+                    "legende": "Joaquim Nabuco en uniforme diplomatique, photographie de James Lafayette, 1902",
+                    "auteur": "James Lafayette (1853–1923)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ambassador_joaquim_nabuco_in_court_dress.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_ruibarbosa",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1849,
+                  "titre": "Naissance de Rui Barbosa",
+                  "description": "Rui Barbosa (1849-1923) est un juriste, journaliste et homme politique né à Salvador de Bahia. Inspirateur de la Constitution républicaine de 1891, ministre des Finances du gouvernement provisoire, il défend l'abolition de l'esclavage et les libertés civiles. À la conférence de la paix de La Haye en 1907, son plaidoyer pour l'égalité des États lui vaut le surnom d'« Aigle de La Haye ».",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ruy_Barbosa_de_Oliveira",
+                  "classement": "Barbosa, Rui",
+                  "image": {
+                    "src": "assets/portraits/pan_br_ruibarbosa.jpg",
+                    "legende": "Rui Barbosa, photographie de F. Diaz, avant 1923",
+                    "auteur": "F. Diaz",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Rui_Barbosa.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_almeidajunior",
+                  "axe": "Beaux-arts",
+                  "date": 1850,
+                  "titre": "Naissance d'Almeida Júnior",
+                  "description": "Almeida Júnior (1850-1899) est un peintre né à Itu, dans l'État de São Paulo, formé à Rio puis à Paris. Il quitte les sujets académiques pour peindre des paysans de l'intérieur, comme dans « Caipira piquant du tabac » (1893), et fait de l'homme du peuple un sujet noble. Il est poignardé à Piracicaba en 1899 par un cousin, amant de sa femme, et reste l'un des fondateurs de la peinture brésilienne moderne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jos%C3%A9_Ferraz_de_Almeida_J%C3%BAnior",
+                  "classement": "Almeida Júnior",
+                  "image": {
+                    "src": "assets/portraits/pan_br_almeidajunior.jpg",
+                    "legende": "Almeida Júnior, autoportrait peint en 1878",
+                    "auteur": "José Ferraz de Almeida Júnior (–1899)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Almeida_Junior_-_Auto-retrato_-_AAPPA.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_patrocinio",
+                  "axe": "Guerres et résistances",
+                  "date": 1853,
+                  "titre": "Naissance de José do Patrocínio",
+                  "description": "José do Patrocínio (1853-1905) est un journaliste, pharmacien et orateur né à Campos dos Goytacazes, fils d'un prêtre et d'une esclave. Figure de l'abolitionnisme, il fonde la Confédération abolitionniste en 1883 et mène dans la presse, à Rio, la campagne qui précède la loi d'Or de 1888. Il reste fidèle à la princesse Isabelle, et meurt en 1905, ruiné, d'une hémorragie pulmonaire.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jos%C3%A9_do_Patroc%C3%ADnio",
+                  "classement": "Patrocínio, José do",
+                  "image": {
+                    "src": "assets/portraits/pan_br_patrocinio.jpg",
+                    "legende": "José do Patrocínio, photographie vers 1900",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jos%C3%A9_do_Patroc%C3%ADnio.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_lutz",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1855,
+                  "titre": "Naissance d'Adolfo Lutz",
+                  "description": "Adolfo Lutz (1855-1940) est un médecin et naturaliste né à Rio de Janeiro, de parents suisses, formé en Europe. Pionnier de la médecine tropicale, il étudie la lèpre à Hawaï, puis dirige à São Paulo l'institut bactériologique, qui porte aujourd'hui son nom. En 1901, il confirme le rôle des moustiques dans la transmission de la fièvre jaune, et il décrit de nombreuses espèces d'insectes et de batraciens.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Adolpho_Lutz",
+                  "classement": "Lutz, Adolfo",
+                  "image": {
+                    "src": "assets/portraits/pan_br_lutz.jpg",
+                    "legende": "Adolfo Lutz, sur un timbre brésilien de 1955",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Adolfo_Lutz_1955_Brazil_stamp.jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_br_cruzsousa",
+                  "axe": "Littérature et pensée",
+                  "date": 1861,
+                  "titre": "Naissance de Cruz e Sousa",
+                  "description": "Cruz e Sousa (1861-1898) est un poète noir né à Desterro, aujourd'hui Florianópolis, fils d'esclaves affranchis, surnommé le « Cygne noir ». Son recueil « Broquéis » (1893), qui introduit le symbolisme au Brésil, dit en vers musicaux la souffrance et la quête de pureté. Rejeté par la société blanche de son temps, il meurt de tuberculose à trente-six ans, et sa gloire est posthume.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jo%C3%A3o_da_Cruz_e_Sousa",
+                  "classement": "Cruz e Sousa",
+                  "image": {
+                    "src": "assets/portraits/pan_br_cruzsousa.jpg",
+                    "legende": "Cruz e Sousa, portrait peint vers 1898 par son ami Maurício Jobim",
+                    "auteur": "Maurício Jobim",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Cruz_e_Sousa.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_rondon",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1865,
+                  "titre": "Naissance de Cândido Rondon",
+                  "description": "Cândido Rondon (1865-1958) est un maréchal et explorateur né dans le Mato Grosso, descendant d'Indiens. À la tête de la commission des lignes télégraphiques, il relie entre 1907 et 1915 l'Amazonie au reste du pays, et il explore avec Theodore Roosevelt la « rivière du Doute » en 1913-1914. Fondateur du Service de protection des Indiens en 1910, il lance la formule « Mourir s'il le faut, tuer jamais », et son nom est celui d'un État, le Rondônia.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/C%C3%A2ndido_Rondon",
+                  "classement": "Rondon, Cândido",
+                  "image": {
+                    "src": "assets/portraits/pan_br_rondon.jpg",
+                    "legende": "Le maréchal Rondon en 1930, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Marechal_Rondon.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_vitalbrazil",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1865,
+                  "titre": "Naissance de Vital Brazil",
+                  "description": "Vital Brazil (1865-1950) est un médecin et chercheur né à Campanha, dans le Minas Gerais. Directeur de l'institut Butantan de São Paulo à partir de 1901, il étudie les serpents du Brésil et met au point des sérums spécifiques, découvrant que chaque venin demande un sérum particulier. Ce principe de la spécificité du sérum antivenimeux, qu'il établit en 1901-1914, a sauvé des milliers de vies et fait de Butantan un centre mondial de recherche.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Vital_Brazil",
+                  "classement": "Brazil, Vital",
+                  "image": {
+                    "src": "assets/portraits/pan_br_vitalbrazil.jpg",
+                    "legende": "Vital Brazil, photographie de 1892",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:VitalBrazil1892.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_cunha",
+                  "axe": "Littérature et pensée",
+                  "date": 1866,
+                  "titre": "Naissance d'Euclides da Cunha",
+                  "description": "Euclides da Cunha (1866-1909) est un ingénieur militaire, journaliste et écrivain né à Cantagalo, dans l'État de Rio de Janeiro. Envoyé par un journal de São Paulo suivre la guerre de Canudos en 1897, il en tire « Hautes terres » (1902), qui mêle reportage, géographie et sociologie pour dénoncer le massacre d'une population pauvre par la République. Il est abattu à Rio en 1909 par l'amant de sa femme.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Euclides_da_Cunha",
+                  "classement": "Cunha, Euclides da",
+                  "image": {
+                    "src": "assets/portraits/pan_br_cunha.jpg",
+                    "legende": "Euclides da Cunha, photographie vers 1900",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Euclides_da_Cunha.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_oswaldocruz",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1872,
+                  "titre": "Naissance d'Oswaldo Cruz",
+                  "description": "Oswaldo Cruz (1872-1917) est un médecin et bactériologiste né à São Luís do Paraitinga, dans l'État de São Paulo, formé à l'Institut Pasteur de Paris. Directeur de la santé publique, il fait éradiquer la fièvre jaune de Rio de Janeiro en 1903-1906 par la chasse aux moustiques, mais sa vaccination obligatoire contre la variole provoque en 1904 la « révolte du vaccin ». Il fonde l'institut de Manguinhos, qui porte aujourd'hui son nom.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Oswaldo_Cruz",
+                  "classement": "Cruz, Oswaldo",
+                  "image": {
+                    "src": "assets/portraits/pan_br_oswaldocruz.jpg",
+                    "legende": "Oswaldo Cruz, photographie non datée des archives de l'Agência Nacional",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Osvaldo_Gon%C3%A7alves_Cruz.tif"
+                  }
+                },
+                {
+                  "id": "pan_br_santosdumont",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1873,
+                  "titre": "Naissance d'Alberto Santos-Dumont",
+                  "description": "Alberto Santos-Dumont (1873-1932) est un aéronaute et inventeur né à Palmira, dans le Minas Gerais, fils d'un planteur de café, installé à Paris. Il construit des dirigeables, dont il fait le tour de la tour Eiffel en 1901, puis vole le 12 novembre 1906 à Bagatelle sur son « 14-bis », premier vol d'un avion homologué par l'Aéro-Club de France. Il publie les plans de sa « Demoiselle » sans brevet, et se donne la mort à Guarujá en 1932.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Alberto_Santos-Dumont",
+                  "classement": "Santos-Dumont, Alberto",
+                  "image": {
+                    "src": "assets/portraits/pan_br_santosdumont.jpg",
+                    "legende": "Alberto Santos-Dumont, photographie de Zaida Ben-Yusuf, 1902",
+                    "auteur": "Zaida Ben-Yusuf (1869–1933)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Alberto_Santos-Dumont_portrait.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_chagas",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1879,
+                  "titre": "Naissance de Carlos Chagas",
+                  "description": "Carlos Chagas (1879-1934) est un médecin et chercheur né à Oliveira, dans le Minas Gerais, élève d'Oswaldo Cruz. En 1909, à Lassance, il décrit une maladie jusque-là inconnue : son agent, le parasite Trypanosoma cruzi, son vecteur, la punaise « barbeiro », et sa clinique, la trypanosomiase américaine, qui prend son nom. Cette description complète d'une maladie par un seul chercheur est restée presque unique dans l'histoire de la médecine.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Carlos_Chagas",
+                  "classement": "Chagas, Carlos",
+                  "image": {
+                    "src": "assets/portraits/pan_br_chagas.jpg",
+                    "legende": "Carlos Chagas, photographie non datée",
+                    "auteur": "J. Pinto",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Carlos_chagas_2.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_lima",
+                  "axe": "Littérature et pensée",
+                  "date": 1881,
+                  "titre": "Naissance de Lima Barreto",
+                  "description": "Lima Barreto (1881-1922) est un écrivain noir né à Rio de Janeiro, petit-fils d'esclaves, fonctionnaire au ministère de la Guerre. Son roman « Triste fin de Policarpo Quaresma » (1915) raille avec tendresse le nationalisme naïf de la jeune République, et il dénonce le racisme dans « Souvenirs du greffier Isaías Caminha ». Alcoolique, interné deux fois en asile, il meurt à quarante et un ans, pauvre et presque oublié.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Afonso_Henriques_de_Lima_Barreto",
+                  "classement": "Lima Barreto",
+                  "image": {
+                    "src": "assets/portraits/pan_br_lima.jpg",
+                    "legende": "Lima Barreto, photographie de la fiche de son internement à l'hospice national des aliénés, en 1914",
+                    "auteur": "Photographe inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Retrato_de_Lima_Barreto,_da_ficha_de_interna%C3%A7%C3%A3o_no_Hosp%C3%ADcio_Nacional_de_Alienados.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_lobato",
+                  "axe": "Littérature et pensée",
+                  "date": 1882,
+                  "titre": "Naissance de Monteiro Lobato",
+                  "description": "Monteiro Lobato (1882-1948) est un écrivain et éditeur né à Taubaté, dans l'État de São Paulo, créateur de la littérature de jeunesse brésilienne. Son « Sítio do Picapau Amarelo » (1920-1947), ferme où vivent la petite Narizinho, la poupée Emília et le marquis de Rabicó, a formé des générations de lecteurs. Défenseur du pétrole national, emprisonné en 1941, il laisse aussi une œuvre dont les stéréotypes racistes sont aujourd'hui débattus.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Monteiro_Lobato",
+                  "classement": "Lobato, Monteiro",
+                  "image": {
+                    "src": "assets/portraits/pan_br_lobato.jpg",
+                    "legende": "Monteiro Lobato dans son bureau, photographie vers 1920",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Monteiro_Lobato.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_vargas",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1882,
+                  "titre": "Naissance de Getúlio Vargas",
+                  "description": "Getúlio Vargas (1882-1954) est un avocat et homme politique né à São Borja, dans le Rio Grande do Sul, qui domine la vie politique brésilienne pendant un quart de siècle. Arrivé au pouvoir par la révolution de 1930, il instaure en 1937 la dictature de l'Estado Novo, crée le salaire minimum et le code du travail, puis revient élu en 1951 et fonde Petrobras. Acculé par une crise politique, il se tire une balle dans le cœur le 24 août 1954, en laissant une lettre-testament.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Get%C3%BAlio_Vargas",
+                  "classement": "Vargas, Getúlio",
+                  "image": {
+                    "src": "assets/portraits/pan_br_vargas.jpg",
+                    "legende": "Getúlio Vargas à son arrivée au pouvoir, en 1930, portrait officiel",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Get%C3%BAlio_Vargas_-_1930.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_bandeira",
+                  "axe": "Littérature et pensée",
+                  "date": 1886,
+                  "titre": "Naissance de Manuel Bandeira",
+                  "description": "Manuel Bandeira (1886-1968) est un poète né à Recife, que la tuberculose condamne très jeune à une vie qu'il croit brève. Son poème « Les Crapauds », lu à la Semaine d'art moderne de 1922, se moque du Parnasse et devient l'un des textes du modernisme brésilien. Son « Vou-me embora pra Pasárgada », rêve d'un royaume où tout est possible, reste l'un des poèmes les plus aimés du pays.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Manuel_Bandeira",
+                  "classement": "Bandeira, Manuel",
+                  "image": {
+                    "src": "assets/portraits/pan_br_bandeira.jpg",
+                    "legende": "Manuel Bandeira, photographie du « Correio da Manhã », 1954 (recadrée, sans Drummond de Andrade)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Carlos_Drummond_de_Andrade_e_Manuel_Bandeira_(cropped).tif"
+                  }
+                },
+                {
+                  "id": "pan_br_tarsila",
+                  "axe": "Beaux-arts",
+                  "date": 1886,
+                  "titre": "Naissance de Tarsila do Amaral",
+                  "description": "Tarsila do Amaral (1886-1973) est une peintre née à Capivari, dans l'État de São Paulo, fille d'une riche famille de planteurs de café. Élève de Léger et de Lhote à Paris, elle revient au pays et peint « A Negra » (1923), puis « Abaporu » (1928), l'homme qui mange, offert à son mari Oswald de Andrade et à l'origine du mouvement anthropophage. Ses couleurs vives et ses formes rondes font d'elle l'icône du modernisme brésilien.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Tarsila_do_Amaral",
+                  "classement": "Amaral, Tarsila do",
+                  "image": {
+                    "src": "assets/portraits/pan_br_tarsila.jpg",
+                    "legende": "Tarsila do Amaral, photographie vers 1925",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Tarsila_do_Amaral,_ca._1925.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_villalobos",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1887,
+                  "titre": "Naissance d'Heitor Villa-Lobos",
+                  "description": "Heitor Villa-Lobos (1887-1959) est un compositeur et chef d'orchestre né à Rio de Janeiro, violoncelliste autodidacte qui joue d'abord dans les cafés et les cinémas. Ses « Choros » et ses « Bachianas brasileiras », où la forme de Bach rencontre le chant populaire du Brésil, font de lui le grand maître de la musique brésilienne du XXe siècle. Sous Vargas, il organise un immense chant choral dans les écoles du pays.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Heitor_Villa-Lobos",
+                  "classement": "Villa-Lobos, Heitor",
+                  "image": {
+                    "src": "assets/portraits/pan_br_villalobos.jpg",
+                    "legende": "Heitor Villa-Lobos, photographie vers 1922",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Heitor_Villa-Lobos_(c._1922).jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_malfatti",
+                  "axe": "Beaux-arts",
+                  "date": 1889,
+                  "titre": "Naissance d'Anita Malfatti",
+                  "description": "Anita Malfatti (1889-1964) est une peintre née à São Paulo, formée à Berlin puis à New York. Son exposition de 1917, première du genre au Brésil, est violemment attaquée par Monteiro Lobato dans un article intitulé « Paranoïa ou mystification ? », mais elle rassemble autour d'elle le futur groupe des modernistes. Avec « La Boba » (1916), elle ouvre la voie à la Semaine d'art moderne de 1922.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Anita_Malfatti",
+                  "classement": "Malfatti, Anita",
+                  "image": {
+                    "src": "assets/portraits/pan_br_malfatti.jpg",
+                    "legende": "Anita Malfatti à vingt-trois ans, photographie de 1912",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Anita_Malfatti_jovem_(1912).jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_oandrade",
+                  "axe": "Littérature et pensée",
+                  "date": 1890,
+                  "titre": "Naissance d'Oswald de Andrade",
+                  "description": "Oswald de Andrade (1890-1954) est un poète, romancier et essayiste né à São Paulo, l'un des meneurs du modernisme brésilien. Après la Semaine d'art moderne de 1922, il publie en 1924 le « Manifeste de la poésie Pau-Brasil », puis en 1928 le « Manifeste anthropophage », qui propose de « dévorer » les influences étrangères pour en faire une culture neuve. Provocateur et polémiste, il influence plus tard la Tropicália.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Oswald_de_Andrade",
+                  "classement": "Andrade, Oswald de",
+                  "image": {
+                    "src": "assets/portraits/pan_br_oandrade.jpg",
+                    "legende": "Oswald de Andrade, photographie vers 1920",
+                    "auteur": "Auréola",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Oswald_de_andrade_1920.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_graciliano",
+                  "axe": "Littérature et pensée",
+                  "date": 1892,
+                  "titre": "Naissance de Graciliano Ramos",
+                  "description": "Graciliano Ramos (1892-1953) est un écrivain né à Quebrangulo, dans l'Alagoas, maire de Palmeira dos Índios à la fin des années 1920. Ses romans « São Bernardo » (1934) et « Vies sèches » (1938), l'histoire d'une famille de paysans chassée par la sécheresse, sont des chefs-d'œuvre du roman du Nordeste. Emprisonné en 1936 sous Vargas, il en tire « Mémoires de prison », publiés après sa mort.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Graciliano_Ramos",
+                  "classement": "Ramos, Graciliano",
+                  "image": {
+                    "src": "assets/portraits/pan_br_graciliano.jpg",
+                    "legende": "Graciliano Ramos, photographie des années 1940 du « Correio da Manhã »",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Graciliano_Ramos,_1940.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_mandrade",
+                  "axe": "Littérature et pensée",
+                  "date": 1893,
+                  "titre": "Naissance de Mário de Andrade",
+                  "description": "Mário de Andrade (1893-1945) est un écrivain, musicologue et critique né à São Paulo, figure centrale du modernisme brésilien. Organisateur de la Semaine d'art moderne de 1922, il publie la même année « Pauliceia desvairada », puis « Macounaïma » (1928), roman-rhapsodie qui fait de son héros sans caractère le symbole du Brésil. Directeur de la culture de la ville de São Paulo en 1935, il inspire la sauvegarde du patrimoine du pays.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/M%C3%A1rio_de_Andrade",
+                  "classement": "Andrade, Mário de",
+                  "image": {
+                    "src": "assets/portraits/pan_br_mandrade.jpg",
+                    "legende": "Mário de Andrade, photographie de 1928",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mario_de_andrade_1928b.png"
+                  }
+                },
+                {
+                  "id": "pan_br_berthalutz",
+                  "axe": "Guerres et résistances",
+                  "date": 1894,
+                  "titre": "Naissance de Bertha Lutz",
+                  "description": "Bertha Lutz (1894-1976) est une zoologiste et féministe née à São Paulo, fille du bactériologiste Adolfo Lutz. Diplômée de la Sorbonne, spécialiste des grenouilles, elle fonde en 1922 la Fédération brésilienne pour le progrès féminin et mène la campagne qui aboutit au droit de vote des femmes, accordé en 1932. Elle est l'une des rares femmes à signer en 1945 la Charte des Nations unies, à San Francisco.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bertha_Lutz",
+                  "classement": "Lutz, Bertha",
+                  "image": {
+                    "src": "assets/portraits/pan_br_berthalutz.jpg",
+                    "legende": "Bertha Lutz, photographie du 27 avril 1925",
+                    "auteur": "Auteur inconnu (restauration d'Adam Cuerden)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Bertha_Lutz_1925.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_lampiao",
+                  "axe": "Guerres et résistances",
+                  "date": 1897,
+                  "titre": "Naissance de Lampião",
+                  "description": "Lampião (1897-1938) est un chef de bande né près de Serra Talhada, dans le Pernambouc, de son vrai nom Virgulino Ferreira da Silva. Pendant près de vingt ans, il dirige les cangaceiros, des bandits armés qui pillent villages et fazendas du sertão, et reste insaisissable pour la police. Abattu avec sa compagne Maria Bonita et neuf de ses hommes à Angicos, dans le Sergipe, le 28 juillet 1938, il est entré dans la légende du Nordeste.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Lampi%C3%A3o",
+                  "classement": "Lampião",
+                  "image": {
+                    "src": "assets/portraits/pan_br_lampiao.jpg",
+                    "legende": "Lampião, photographie attribuée à Benjamin Abrahão",
+                    "auteur": "Benjamin Abrahão Botto (1890–1938)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Virgulino_Ferreira_da_Silva_(Lampi%C3%A3o).jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_pixinguinha",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1897,
+                  "titre": "Naissance de Pixinguinha",
+                  "description": "Pixinguinha (1897-1973) est un flûtiste, saxophoniste et compositeur né à Rio de Janeiro, de son vrai nom Alfredo da Rocha Viana Filho, père du choro. Avec les « Oito Batutas », qui jouent à Paris en 1922, il fait entendre la musique populaire du Brésil en Europe, et il compose « Carinhoso », l'un des airs les plus aimés du pays. Arrangeur de génie, il est une référence de la samba et du choro.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Pixinguinha",
+                  "classement": "Pixinguinha",
+                  "image": {
+                    "src": "assets/portraits/pan_br_pixinguinha.jpg",
+                    "legende": "Pixinguinha jouant de l'harmonium, photographie de 1922",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Pixinguinha_tocando_harm%C3%B4nio.png"
+                  }
+                },
+                {
+                  "id": "pan_br_prestes",
+                  "axe": "Guerres et résistances",
+                  "date": 1898,
+                  "titre": "Naissance de Luís Carlos Prestes",
+                  "description": "Luís Carlos Prestes (1898-1990) est un militaire et dirigeant communiste né à Porto Alegre. De 1925 à 1927, il conduit la colonne Prestes, une longue marche de vingt-cinq mille kilomètres à travers le pays contre le pouvoir oligarchique, qui lui vaut le surnom de « Chevalier de l'espérance ». Chef du Parti communiste, condamné après le soulèvement de 1935, il passe neuf ans en prison, pendant que sa compagne Olga Benário est livrée à l'Allemagne nazie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Lu%C3%ADs_Carlos_Prestes",
+                  "classement": "Prestes, Luís Carlos",
+                  "image": {
+                    "src": "assets/portraits/pan_br_prestes.jpg",
+                    "legende": "Luís Carlos Prestes, photographie de 1936 (Archives fédérales allemandes)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "CC BY-SA 3.0 DE",
+                    "source": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-2006-0815-500,_Luis_Carlos_Prestes.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_castelobranco",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1900,
+                  "titre": "Naissance d'Humberto de Alencar Castelo Branco",
+                  "description": "Humberto de Alencar Castelo Branco (1900-1967) est un maréchal né à Fortaleza, ancien de la Force expéditionnaire brésilienne en Italie. Chef d'état-major de l'armée, il est élu président par le Congrès le 11 avril 1964, après le coup d'État, et devient le premier des généraux du régime militaire. Ses actes institutionnels dissolvent les partis et ouvrent la voie à vingt ans de dictature ; il meurt en 1967 dans une collision aérienne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Humberto_de_Alencar_Castelo_Branco",
+                  "classement": "Castelo Branco, Humberto de Alencar",
+                  "image": {
+                    "src": "assets/portraits/pan_br_castelobranco.jpg",
+                    "legende": "Castelo Branco, portrait photographique officiel de président, 1964",
+                    "auteur": "Governo do Brasil",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Humberto_Castelo_Branco,_presidente_do_Brasil,_1964.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_freyre",
+                  "axe": "Littérature et pensée",
+                  "date": 1900,
+                  "titre": "Naissance de Gilberto Freyre",
+                  "description": "Gilberto Freyre (1900-1987) est un sociologue et écrivain né à Recife, formé aux États-Unis, élève de Franz Boas. Son livre « Maîtres et esclaves » (1933) décrit la société patriarcale des plantations de sucre et fait du métissage un trait fondateur du Brésil. Cette image d'une « démocratie raciale » et sa défense du colonialisme portugais, le « lusotropicalisme », ont été depuis très critiquées.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Gilberto_Freyre",
+                  "classement": "Freyre, Gilberto",
+                  "image": {
+                    "src": "assets/portraits/pan_br_freyre.jpg",
+                    "legende": "Gilberto Freyre, photographie de 1945",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Gilberto_Freyre1.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_meireles",
+                  "axe": "Littérature et pensée",
+                  "date": 1901,
+                  "titre": "Naissance de Cecília Meireles",
+                  "description": "Cecília Meireles (1901-1964) est une poétesse, journaliste et enseignante née à Rio de Janeiro, orpheline dès l'enfance. Son recueil « Viagem » (1939) obtient le prix de l'Académie brésilienne, et le « Romanceiro de l'Inconfidência » (1953) raconte la conjuration de Tiradentes en vers inspirés des romances médiévales. Elle est l'une des voix majeures de la poésie brésilienne et une pionnière de l'éducation moderne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Cec%C3%ADlia_Meireles",
+                  "classement": "Meireles, Cecília",
+                  "image": {
+                    "src": "assets/portraits/pan_br_meireles.jpg",
+                    "legende": "Cecília Meireles, photographie non datée du « Correio da Manhã »",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Cec%C3%ADlia_Meireles,_sem_data.tif"
+                  }
+                },
+                {
+                  "id": "pan_br_drummond",
+                  "axe": "Littérature et pensée",
+                  "date": 1902,
+                  "titre": "Naissance de Carlos Drummond de Andrade",
+                  "description": "Carlos Drummond de Andrade (1902-1987) est un poète né à Itabira, dans le Minas Gerais, tenu pour le plus grand du Brésil au XXe siècle. Son poème « Au milieu du chemin », où revient une pierre qui barre la route, scandalise en 1928 avant de devenir célèbre ; « La Rose du peuple » (1945) mêle la guerre et la ville. Fonctionnaire et chroniqueur à Rio, il meurt douze jours après sa fille unique.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Carlos_Drummond_de_Andrade",
+                  "classement": "Drummond de Andrade, Carlos",
+                  "image": {
+                    "src": "assets/portraits/pan_br_drummond.jpg",
+                    "legende": "Carlos Drummond de Andrade, photographie du « Correio da Manhã », avril 1970",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Carlos_Drummond_de_Andrade,_1970.tif"
+                  }
+                },
+                {
+                  "id": "pan_br_kubitschek",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1902,
+                  "titre": "Naissance de Juscelino Kubitschek",
+                  "description": "Juscelino Kubitschek (1902-1976) est un médecin devenu homme politique, né à Diamantina dans le Minas Gerais, d'une mère d'origine tchèque. Président de 1956 à 1961 sur le programme « cinquante ans en cinq », il lance l'industrie automobile et fait sortir de terre la nouvelle capitale, Brasília, inaugurée le 21 avril 1960. Déchu de ses droits politiques par la dictature en 1964, il meurt en 1976 dans un accident de la route.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Juscelino_Kubitschek",
+                  "classement": "Kubitschek, Juscelino",
+                  "image": {
+                    "src": "assets/portraits/pan_br_kubitschek.jpg",
+                    "legende": "Juscelino Kubitschek, portrait photographique officiel de président, vers 1956",
+                    "auteur": "Governo do Brasil",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Juscelino_Kubitschek_in_1956.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_barroso",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1903,
+                  "titre": "Naissance d'Ary Barroso",
+                  "description": "Ary Barroso (1903-1964) est un compositeur, pianiste et commentateur sportif né à Ubá, dans le Minas Gerais. Il écrit en 1939 « Aquarela do Brasil », la samba-exaltação qui devient la chanson brésilienne la plus connue au monde, reprise par Walt Disney dans « Saludos Amigos » (1942). Il est aussi l'un des premiers grands commentateurs sportifs de la radio.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ary_Barroso",
+                  "classement": "Barroso, Ary",
+                  "image": {
+                    "src": "assets/portraits/pan_br_barroso.jpg",
+                    "legende": "Ary Barroso, photographie du 7 octobre 1939",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ary_Barroso_1939.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_portinari",
+                  "axe": "Beaux-arts",
+                  "date": 1903,
+                  "titre": "Naissance de Candido Portinari",
+                  "description": "Candido Portinari (1903-1962) est un peintre né à Brodowski, dans l'État de São Paulo, fils d'immigrés italiens, ouvriers dans une plantation de café. Auteur de scènes de la vie des travailleurs des plantations, comme « Café » (1935), il peint en 1952-1956 « Guerre et Paix », deux panneaux monumentaux offerts à l'ONU à New York. Communiste, il meurt à Rio en 1962, intoxiqué par les pigments au plomb dont il se servait.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Candido_Portinari",
+                  "classement": "Portinari, Candido",
+                  "image": {
+                    "src": "assets/portraits/pan_br_portinari.jpg",
+                    "legende": "Candido Portinari, photographie du « Correio da Manhã », 1962",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:C%C3%A2ndido_Portinari_(1962).jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_silveira",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1905,
+                  "titre": "Naissance de Nise da Silveira",
+                  "description": "Nise da Silveira (1905-1999) est une psychiatre née à Maceió, dans l'Alagoas, la seule femme de sa promotion de médecine, à Salvador. Emprisonnée en 1936 pour ses idées, elle refuse ensuite les électrochocs et la lobotomie, et ouvre en 1946 un atelier de peinture à l'hôpital de Engenho de Dentro. Ses patients y créent des milliers d'œuvres, rassemblées dans le Musée des images de l'inconscient (1952) ; elle est une figure majeure de la réforme psychiatrique.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Nise_da_Silveira",
+                  "classement": "Silveira, Nise da",
+                  "image": {
+                    "src": "assets/portraits/pan_br_silveira.jpg",
+                    "legende": "Nise da Silveira, photographie de juillet 1970",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Nise_da_Silveira.tif"
+                  }
+                },
+                {
+                  "id": "pan_br_niemeyer",
+                  "axe": "Beaux-arts",
+                  "date": 1907,
+                  "titre": "Naissance d'Oscar Niemeyer",
+                  "description": "Oscar Niemeyer (1907-2012) est un architecte né à Rio de Janeiro, qui invente un modernisme de courbes, inspiré, disait-il, des montagnes et des corps de femmes. Il dessine l'église de la Pampulha dans les années 1940, puis les bâtiments officiels de Brasília, de 1956 à 1960, avec l'urbaniste Lúcio Costa. Communiste, exilé à Paris sous la dictature, où il construit le siège du Parti communiste, il reçoit le prix Pritzker en 1988.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Oscar_Niemeyer",
+                  "classement": "Niemeyer, Oscar",
+                  "biographie": "bio_niemeyer",
+                  "image": {
+                    "src": "assets/portraits/pan_br_niemeyer.jpg",
+                    "legende": "Oscar Niemeyer, photographie de Roger Pic, 1977",
+                    "auteur": "Roger Pic (retouche de MrPanyGoff)",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Oscar_Niemeyer,_Pic,_9_-_edit.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_cartola",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1908,
+                  "titre": "Naissance de Cartola",
+                  "description": "Cartola (1908-1980) est un sambiste né à Rio de Janeiro, de son vrai nom Angenor de Oliveira, cofondateur en 1928 de l'école de samba Estação Primeira de Mangueira. Ouvrier maçon et gardien de voitures, il traverse de longues années d'oubli avant d'être redécouvert dans les années 1950. Il enregistre son premier disque à soixante-six ans, en 1974, et laisse des classiques comme « As rosas não falam ».",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Cartola",
+                  "classement": "Cartola",
+                  "image": {
+                    "src": "assets/portraits/pan_br_cartola.jpg",
+                    "legende": "Cartola, photographie de Cynthia Brito, septembre 1977",
+                    "auteur": "Cynthia Brito",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Cartola_por_Cynthia_Brito.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_rosa",
+                  "axe": "Littérature et pensée",
+                  "date": 1908,
+                  "titre": "Naissance de João Guimarães Rosa",
+                  "description": "João Guimarães Rosa (1908-1967) est un écrivain né à Cordisburgo, dans le Minas Gerais, médecin devenu diplomate. Son unique roman, « Diadorim » (« Grande Sertão : Veredas », 1956), monologue d'un ancien jagunço, invente une langue nourrie du parler du sertão et fait de l'arrière-pays brésilien un monde universel. Élu à l'Académie brésilienne des lettres en 1963, il y prend séance en 1967 et meurt trois jours plus tard.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jo%C3%A3o_Guimar%C3%A3es_Rosa",
+                  "classement": "Guimarães Rosa, João",
+                  "image": {
+                    "src": "assets/portraits/pan_br_rosa.jpg",
+                    "legende": "João Guimarães Rosa, photographie des années 1960",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Guimar%C3%A3es_Rosa,_anos_1960.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_burlemarx",
+                  "axe": "Beaux-arts",
+                  "date": 1909,
+                  "titre": "Naissance de Roberto Burle Marx",
+                  "description": "Roberto Burle Marx (1909-1994) est un paysagiste, peintre et botaniste né à São Paulo, qui invente le jardin moderne tropical. Collectionneur de plantes du Brésil, il dessine les jardins du ministère de l'Éducation à Rio, le front de mer de Copacabana (1970) et ceux de Brasília, souvent avec Niemeyer. Il redécouvre aussi des espèces de la forêt atlantique et lance le combat pour sa protection.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Roberto_Burle_Marx",
+                  "classement": "Burle Marx, Roberto",
+                  "image": {
+                    "src": "assets/portraits/pan_br_burlemarx.jpg",
+                    "legende": "Roberto Burle Marx, photographie de 1981",
+                    "auteur": "aroid",
+                    "licence": "CC BY 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Roberto_Burle_Marx_1981.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_camara",
+                  "axe": "Guerres et résistances",
+                  "date": 1909,
+                  "titre": "Naissance d'Hélder Câmara",
+                  "description": "Hélder Câmara (1909-1999) est un archevêque né à Fortaleza, surnommé l'« évêque des pauvres ». Fondateur de la conférence des évêques du Brésil et acteur du concile Vatican II, il devient en 1964 archevêque d'Olinda et Recife, au moment du coup d'État. Il dénonce la torture et la misère sous la dictature, qui l'empêche de s'exprimer dans la presse, et il reste une voix mondiale de la théologie de la libération.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/H%C3%A9lder_C%C3%A2mara",
+                  "classement": "Câmara, Hélder",
+                  "image": {
+                    "src": "assets/portraits/pan_br_camara.jpg",
+                    "legende": "Hélder Câmara célébrant la messe à Bois-le-Duc, aux Pays-Bas, photographie de Hans Peters (Anefo), 1974",
+                    "auteur": "Hans Peters for Anefo",
+                    "licence": "CC BY-SA 3.0 NL",
+                    "source": "https://commons.wikimedia.org/wiki/File:H%C3%A9lder_C%C3%A2mara_(1974).jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_miranda",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1909,
+                  "titre": "Naissance de Carmen Miranda",
+                  "description": "Carmen Miranda (1909-1955) est une chanteuse et actrice née au Portugal, arrivée à Rio avec sa famille encore bébé, et devenue la voix de la samba. Après le succès de « Taí » (1930), elle part pour Broadway puis Hollywood en 1939, où ses costumes de baiana et son chapeau de fruits en font l'une des actrices les mieux payées. Elle meurt à Beverly Hills à quarante-six ans, et le Brésil l'enterre avec des funérailles nationales.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Carmen_Miranda",
+                  "classement": "Miranda, Carmen",
+                  "image": {
+                    "src": "assets/portraits/pan_br_miranda.jpg",
+                    "legende": "Carmen Miranda dans un film hollywoodien de 1941 (« Week-End in Havana », de Walter Lang)",
+                    "auteur": "Auteur inconnu (20th Century Fox)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Carmen_Miranda_in_That_Night_in_Rio_(1941).jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_noelrosa",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1910,
+                  "titre": "Naissance de Noel Rosa",
+                  "description": "Noel Rosa (1910-1937) est un chanteur et compositeur né à Rio de Janeiro, dans le quartier de Vila Isabel, surnommé le « poète de la Vila ». Avec « Com que roupa ? » (1930) et « Conversa de botequim », il invente la samba urbaine et lui donne l'ironie et le langage du quotidien. Atteint de tuberculose, il meurt à vingt-six ans, après plus de deux cents chansons.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Noel_Rosa",
+                  "classement": "Rosa, Noel",
+                  "image": {
+                    "src": "assets/portraits/pan_br_noelrosa.jpg",
+                    "legende": "Noel Rosa, photographie non datée",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Noel_Rosa.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_queiroz",
+                  "axe": "Littérature et pensée",
+                  "date": 1910,
+                  "titre": "Naissance de Rachel de Queiroz",
+                  "description": "Rachel de Queiroz (1910-2003) est une romancière et journaliste née à Fortaleza, qui publie à dix-neuf ans « Le Quinze » (1930), roman de la grande sécheresse de 1915 dans le Ceará. Proche d'abord du Parti communiste, emprisonnée en 1937, elle écrit ensuite des chroniques et du théâtre. Première femme élue à l'Académie brésilienne des lettres, en 1977, elle reçoit le prix Camões en 1993.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Rachel_de_Queiroz",
+                  "classement": "Queiroz, Rachel de",
+                  "image": {
+                    "src": "assets/portraits/pan_br_queiroz.jpg",
+                    "legende": "Rachel de Queiroz, photographie du « Correio da Manhã », juin 1971",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Rachel_de_Queiroz,_1971.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_tancredo",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1910,
+                  "titre": "Naissance de Tancredo Neves",
+                  "description": "Tancredo Neves (1910-1985) est un avocat et homme politique né à São João del-Rei, dans le Minas Gerais. Premier ministre de João Goulart en 1961-1962, puis gouverneur de son État, il conduit l'opposition modérée à la fin de la dictature. Élu président le 15 janvier 1985 par le collège électoral, premier civil désigné depuis 1964, il tombe malade la veille de son investiture et meurt le 21 avril sans avoir gouverné.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Tancredo_Neves",
+                  "classement": "Neves, Tancredo",
+                  "image": {
+                    "src": "assets/portraits/pan_br_tancredo.jpg",
+                    "legende": "Tancredo Neves en 1983, alors gouverneur du Minas Gerais",
+                    "auteur": "Cidadão de Minas",
+                    "licence": "CC BY-SA 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Tancredo_Neves,_1983.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_marighella",
+                  "axe": "Guerres et résistances",
+                  "date": 1911,
+                  "titre": "Naissance de Carlos Marighella",
+                  "description": "Carlos Marighella (1911-1969) est un homme politique et guérillero né à Salvador de Bahia. Député communiste en 1946-1947, il rompt avec son parti en 1967 et fonde l'Action libératrice nationale, qui lutte par les armes contre la dictature, avec enlèvements et attaques de banques. Il écrit le « Minimanuel du guérillero urbain » et meurt le 4 novembre 1969, abattu par la police dans une embuscade à São Paulo.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Carlos_Marighella",
+                  "classement": "Marighella, Carlos",
+                  "image": {
+                    "src": "assets/portraits/pan_br_marighella.jpg",
+                    "legende": "Carlos Marighella, alors député fédéral, en 1946 ou 1947 (archives de l'État de Rio de Janeiro)",
+                    "auteur": "Arquivo Público do Estado do Rio de Janeiro (Aperj)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Marighella_foto3_deputado_46-47_apeerj_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_amado",
+                  "axe": "Littérature et pensée",
+                  "date": 1912,
+                  "titre": "Naissance de Jorge Amado",
+                  "description": "Jorge Amado (1912-2001) est un romancier né à Itabuna, dans la Bahia, communiste et député en 1946, dont l'œuvre est la plus traduite du Brésil. Il raconte les gamins des rues, les paysans du cacao et la vie populaire de Salvador, de « Capitaines des sables » (1937) à « Gabriela, girofle et cannelle » (1958) et « Dona Flor et ses deux maris » (1966). Il y célèbre le métissage et le candomblé, et il meurt à Salvador, sa ville.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jorge_Amado",
+                  "classement": "Amado, Jorge",
+                  "image": {
+                    "src": "assets/portraits/pan_br_amado.jpg",
+                    "legende": "Jorge Amado à New York en 1988, photographie de Bernard Gotfryd",
+                    "auteur": "Bernard Gotfryd (1924–2016)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jorge_Amado,_gtfy.00010.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_luizgonzaga",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1912,
+                  "titre": "Naissance de Luiz Gonzaga",
+                  "description": "Luiz Gonzaga (1912-1989) est un accordéoniste, chanteur et compositeur né à Exu, dans le Pernambouc, surnommé le « roi du baião ». Avec « Asa Branca » (1947), écrite avec Humberto Teixeira, hymne des migrants chassés par la sécheresse, il porte à Rio et dans tout le pays la musique du sertão. Il meurt à Recife en 1989, et sa maison d'Exu est devenue un musée.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Luiz_Gonzaga",
+                  "classement": "Gonzaga, Luiz",
+                  "image": {
+                    "src": "assets/portraits/pan_br_luizgonzaga.jpg",
+                    "legende": "Luiz Gonzaga, photographie des Archives nationales du Brésil",
+                    "auteur": "Archives nationales du Brésil",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Luiz_Gonzaga_Arquivo_Nacional_do_Brasil_Flickr.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_nrodrigues",
+                  "axe": "Littérature et pensée",
+                  "date": 1912,
+                  "titre": "Naissance de Nelson Rodrigues",
+                  "description": "Nelson Rodrigues (1912-1980) est un dramaturge, journaliste et chroniqueur né à Recife, rénovateur du théâtre brésilien. Sa pièce « Vestido de noiva » (1943), mise en scène par Ziembinski, inaugure le théâtre moderne du pays, et ses drames, dont « Toute nudité sera châtiée » (1965), exposent sans fard les obsessions de la petite bourgeoisie de Rio. Il est aussi un chroniqueur de football passionné et paradoxal.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/N%C3%A9lson_Rodr%C3%ADgues",
+                  "classement": "Rodrigues, Nelson",
+                  "image": {
+                    "src": "assets/portraits/pan_br_nrodrigues.jpg",
+                    "legende": "Nelson Rodrigues, photographie de 1971 du « Correio da Manhã »",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Nelson_Rodrigues_(1971).jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_vinicius",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1913,
+                  "titre": "Naissance de Vinicius de Moraes",
+                  "description": "Vinicius de Moraes (1913-1980) est un poète, parolier et diplomate né à Rio de Janeiro, surnommé le « petit poète ». Auteur de la pièce « Orfeu da Conceição » (1956), qui inspire le film « Orfeu Negro » (1959), il écrit les paroles de « Garota de Ipanema » et collabore avec Jobim, Toquinho et Baden Powell. Révoqué du service diplomatique par la dictature en 1969, il vit de la chanson.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Vin%C3%ADcius_de_Moraes",
+                  "classement": "Moraes, Vinicius de",
+                  "image": {
+                    "src": "assets/portraits/pan_br_vinicius.jpg",
+                    "legende": "Vinicius de Moraes, photographie de Ricardo Alfieri, 1970",
+                    "auteur": "Ricardo Alfieri",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Vinicius.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_caymmi",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1914,
+                  "titre": "Naissance de Dorival Caymmi",
+                  "description": "Dorival Caymmi (1914-2008) est un chanteur, compositeur et peintre né à Salvador de Bahia, qui arrive à Rio en 1938. Avec « O que é que a baiana tem ? » (1939), chanté par Carmen Miranda, il fait entendre au pays les chansons de pêcheurs et de la mer de Bahia, qu'il rassemble dans sa « Suite du pêcheur ». Son style très doux est un modèle pour la bossa nova.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Dorival_Caymmi",
+                  "classement": "Caymmi, Dorival",
+                  "image": {
+                    "src": "assets/portraits/pan_br_caymmi.jpg",
+                    "legende": "Dorival Caymmi, photographie de la « Revista da Semana » ou « Carioca », 11 décembre 1943",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Dorival_Caymmi_1943_rev_Carioca.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_grandeotelo",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1915,
+                  "titre": "Naissance de Grande Otelo",
+                  "description": "Grande Otelo (1915-1993) est un acteur et comique né à Uberlândia, dans le Minas Gerais, de son vrai nom Sebastião Bernardes de Souza Prata. Duo de Oscarito dans les comédies musicales « chanchadas » du studio Atlântida, des années 1940 aux années 1950, il devient la première grande vedette noire du cinéma brésilien. Il tient le rôle de Macunaíma enfant dans « Macunaíma » (1969), et il meurt en 1993 à Paris, où il se rend pour un hommage.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Grande_Otelo",
+                  "classement": "Grande Otelo",
+                  "image": {
+                    "src": "assets/portraits/pan_br_grandeotelo.jpg",
+                    "legende": "Grande Otelo, photographie du « Correio da Manhã », 1950",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Grande_Otelo_(1950).tif"
+                  }
+                },
+                {
+                  "id": "pan_br_guimaraes",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1916,
+                  "titre": "Naissance d'Ulysses Guimarães",
+                  "description": "Ulysses Guimarães (1916-1992) est un avocat et homme politique né à Rio Claro, dans l'État de São Paulo, figure de l'opposition à la dictature. Président du parti d'opposition, il mène en 1984 la campagne des « Diretas Já », qui réclame l'élection du président au suffrage direct. Président de l'Assemblée constituante, il promulgue le 5 octobre 1988 la Constitution « citoyenne », et meurt en 1992 dans un accident d'hélicoptère.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ulysses_Guimar%C3%A3es",
+                  "classement": "Guimarães, Ulysses",
+                  "image": {
+                    "src": "assets/portraits/pan_br_guimaraes.jpg",
+                    "legende": "Ulysses Guimarães dans un meeting des « Diretas Já », en 1984",
+                    "auteur": "Agência Brasil",
+                    "licence": "CC BY 3.0 BR",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ulysses_nas_Diretas_J%C3%A1.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_goulart",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1919,
+                  "titre": "Naissance de João Goulart",
+                  "description": "João Goulart (1919-1976) est un propriétaire terrien et homme politique né à São Borja, dit Jango, héritier politique de Vargas dont il fut ministre du Travail. Vice-président devenu président en 1961 après la démission de Jânio Quadros, il annonce en 1964 des « réformes de base », dont la réforme agraire. Renversé par le coup d'État militaire du 31 mars 1964, il meurt en exil en Argentine, en 1976, d'une crise cardiaque dont les circonstances restent discutées.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jo%C3%A3o_Goulart",
+                  "classement": "Goulart, João",
+                  "image": {
+                    "src": "assets/portraits/pan_br_goulart.jpg",
+                    "legende": "João Goulart, portrait officiel de 1961 offert au gouvernement des États-Unis",
+                    "auteur": "Gouvernement brésilien",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:MO_63.2240.2_-_Photograph_of_Jo%C3%A3o_Goulart_President_of_the_Republic_of_Brazil_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_lispector",
+                  "axe": "Littérature et pensée",
+                  "date": 1920,
+                  "titre": "Naissance de Clarice Lispector",
+                  "description": "Clarice Lispector (1920-1977) est une romancière née en Ukraine, arrivée à Recife en 1922 avec sa famille juive qui fuit les pogroms. Son premier roman, « Près du cœur sauvage » (1943), publié à vingt-trois ans, bouleverse le roman brésilien par son monologue intérieur, que prolongent « La Passion selon G.H. » (1964) et « L'Heure de l'étoile » (1977). Elle meurt à Rio la veille de son cinquante-septième anniversaire.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Clarice_Lispector",
+                  "classement": "Lispector, Clarice",
+                  "image": {
+                    "src": "assets/portraits/pan_br_lispector.jpg",
+                    "legende": "Clarice Lispector, photographie de Maureen Bisilliat, août 1969",
+                    "auteur": "Maureen Bisilliat",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Clarice_Lispector_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_freire",
+                  "axe": "Littérature et pensée",
+                  "date": 1921,
+                  "titre": "Naissance de Paulo Freire",
+                  "description": "Paulo Freire (1921-1997) est un pédagogue né à Recife, qui expérimente à Angicos, en 1963, une méthode d'alphabétisation des adultes partant des mots de leur vie quotidienne. Arrêté après le coup d'État de 1964, il passe seize ans en exil, notamment au Chili, où il écrit « Pédagogie des opprimés » (1968). Secrétaire à l'Éducation de São Paulo de 1989 à 1991, il est l'un des penseurs de l'éducation les plus lus au monde.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Paulo_Freire",
+                  "classement": "Freire, Paulo",
+                  "image": {
+                    "src": "assets/portraits/pan_br_freire.jpg",
+                    "legende": "Paulo Freire en 1977, photographie de Slobodan Dimitrov",
+                    "auteur": "Slobodan Dimitrov",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Paulo_Freire_1977.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_ribeiro",
+                  "axe": "Littérature et pensée",
+                  "date": 1922,
+                  "titre": "Naissance de Darcy Ribeiro",
+                  "description": "Darcy Ribeiro (1922-1997) est un anthropologue, écrivain et homme politique né à Montes Claros, dans le Minas Gerais, qui vit parmi les Indiens et fonde le Musée de l'Indien. Fondateur de l'université de Brasília en 1962, ministre de l'Éducation puis chef de cabinet de João Goulart, il passe douze ans en exil après le coup d'État de 1964. Sénateur, il publie « Le Peuple brésilien » (1995), vaste fresque de la formation du pays.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Darcy_Ribeiro",
+                  "classement": "Ribeiro, Darcy",
+                  "image": {
+                    "src": "assets/portraits/pan_br_ribeiro.jpg",
+                    "legende": "Darcy Ribeiro, portrait dessiné par André Koehne, 2006",
+                    "auteur": "André Koehne",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Darcy_Ribeiro.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_lattes",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1924,
+                  "titre": "Naissance de César Lattes",
+                  "description": "César Lattes (1924-2005) est un physicien né à Curitiba, fils d'immigrés italiens, formé à l'université de São Paulo. En 1947, à Bristol, avec Cecil Powell et Giuseppe Occhialini, il observe le méson pi, ou pion, particule qui explique la cohésion du noyau atomique ; il le produit ensuite artificiellement à Berkeley en 1948. Cofondateur du Centre brésilien de recherches physiques, il n'a pas partagé le prix Nobel attribué à Powell seul en 1950.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/C%C3%A9sar_Lattes",
+                  "classement": "Lattes, César",
+                  "image": {
+                    "src": "assets/portraits/pan_br_lattes.jpg",
+                    "legende": "César Lattes, photographie de 1954",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:C%C3%A9sar_Lattes_(crop_1).jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_msantos",
+                  "axe": "Littérature et pensée",
+                  "date": 1926,
+                  "titre": "Naissance de Milton Santos",
+                  "description": "Milton Santos (1926-2001) est un géographe né à Brotas de Macaúbas, dans la Bahia, l'un des plus influents de sa discipline. Emprisonné puis exilé après le coup d'État de 1964, il enseigne en France, au Canada, au Venezuela et aux États-Unis, avant de revenir à São Paulo en 1977. Il reçoit en 1994 le prix Vautrin-Lud, le « Nobel de la géographie », premier lauréat issu du monde en développement, et critique dans « Por uma outra globalização » (2000) la globalisation de son temps.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Milton_Santos",
+                  "classement": "Santos, Milton",
+                  "image": {
+                    "src": "assets/portraits/pan_br_msantos.jpg",
+                    "legende": "Milton Santos, image d'archives de TV Brasil",
+                    "auteur": "TV Brasil",
+                    "licence": "CC BY 3.0 BR",
+                    "source": "https://commons.wikimedia.org/wiki/File:Milton_Santos_(TV_Brasil).jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_jobim",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1927,
+                  "titre": "Naissance d'Antônio Carlos Jobim",
+                  "description": "Antônio Carlos Jobim (1927-1994) est un pianiste, compositeur et arrangeur né à Rio de Janeiro, dit Tom Jobim, l'un des pères de la bossa nova. Avec « Chega de saudade » (1958) puis « Garota de Ipanema » (1962), écrite avec Vinicius de Moraes, il invente une harmonie sophistiquée qui séduit le jazz et le monde entier. Son disque avec Frank Sinatra (1967) fait de lui le compositeur brésilien le plus joué à l'étranger.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ant%C3%B4nio_Carlos_Jobim",
+                  "classement": "Jobim, Antônio Carlos",
+                  "image": {
+                    "src": "assets/portraits/pan_br_jobim.jpg",
+                    "legende": "Tom Jobim, photographie du « Correio da Manhã », mars 1965",
+                    "auteur": "Auteur inconnu (restauration de PerfectSoundWhatever)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ant%C3%B4nio_Carlos_Jobim_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_suassuna",
+                  "axe": "Littérature et pensée",
+                  "date": 1927,
+                  "titre": "Naissance d'Ariano Suassuna",
+                  "description": "Ariano Suassuna (1927-2014) est un écrivain et dramaturge né à João Pessoa, dans la Paraíba, nourri de la culture populaire du sertão. Sa pièce « L'Auto de la Compadecida » (1955), farce médiévale transposée dans le Nordeste, est devenue un classique du théâtre brésilien, adapté au cinéma et à la télévision. Il lance dans les années 1970 le mouvement Armorial, qui veut une culture savante enracinée dans les traditions du Nordeste.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ariano_Suassuna",
+                  "classement": "Suassuna, Ariano",
+                  "image": {
+                    "src": "assets/portraits/pan_br_suassuna.jpg",
+                    "legende": "Ariano Suassuna, photographie de Wilson Dias (Agência Brasil), 2003",
+                    "auteur": "Wilson Dias (Agência Brasil)",
+                    "licence": "CC BY 3.0 BR",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ariano_Suassuna.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_joaogilberto",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1931,
+                  "titre": "Naissance de João Gilberto",
+                  "description": "João Gilberto (1931-2019) est un guitariste et chanteur né à Juazeiro, dans la Bahia, considéré comme le fondateur de la bossa nova. Avec son enregistrement de « Chega de saudade » en 1958, il invente une façon de jouer, où la voix murmurée suit un rythme de guitare syncopé, qui change la musique du pays. Son album « Getz/Gilberto » (1964), avec le saxophoniste américain Stan Getz, remporte le Grammy de l'album de l'année.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jo%C3%A3o_Gilberto",
+                  "classement": "Gilberto, João",
+                  "image": {
+                    "src": "assets/portraits/pan_br_joaogilberto.jpg",
+                    "legende": "João Gilberto, photographie de Tuca Vieira, 2006",
+                    "auteur": "Tuca Vieira",
+                    "licence": "CC BY-SA 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jo%C3%A3o_Gilberto.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_garrincha",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1933,
+                  "titre": "Naissance de Garrincha",
+                  "description": "Garrincha (1933-1983) est un footballeur né à Pau Grande, dans l'État de Rio de Janeiro, de son vrai nom Manuel Francisco dos Santos, aux jambes déformées dès l'enfance. Ailier droit de Botafogo, dribbleur génial, il est surnommé l'« Alegria do Povo » (« la joie du peuple »), et il porte le Brésil au titre mondial en 1958 et surtout en 1962, où il est le meilleur joueur du tournoi. Miné par l'alcool, il meurt pauvre à quarante-neuf ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Garrincha",
+                  "classement": "Garrincha",
+                  "image": {
+                    "src": "assets/portraits/pan_br_garrincha.jpg",
+                    "legende": "Garrincha pendant la Coupe du monde de 1962, photographie d'El Gráfico",
+                    "auteur": "El Gráfico",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:MFdSantos-Garrincha.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_arns",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1934,
+                  "titre": "Naissance de Zilda Arns",
+                  "description": "Zilda Arns (1934-2010) est une pédiatre et militante humanitaire née à Forquilhinha, dans l'État de Santa Catarina, sœur du cardinal Paulo Evaristo Arns. En 1983, elle fonde la Pastorale de l'enfance, réseau de bénévoles qui visite des familles pauvres pour lutter contre la mortalité infantile, avec des moyens très simples comme le sérum de réhydratation. Candidate au prix Nobel de la paix en 2006, elle meurt à Port-au-Prince, dans le séisme du 12 janvier 2010, en mission pour l'enfance.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Zilda_Arns",
+                  "classement": "Arns, Zilda",
+                  "image": {
+                    "src": "assets/portraits/pan_br_arns.jpg",
+                    "legende": "Zilda Arns, photographie de Wilson Dias (Agência Brasil), 2004",
+                    "auteur": "Wilson Dias (Agência Brasil)",
+                    "licence": "CC BY 3.0 BR",
+                    "source": "https://commons.wikimedia.org/wiki/File:Zilda_Arns.jpeg"
+                  }
+                },
+                {
+                  "id": "pan_br_glauber",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1939,
+                  "titre": "Naissance de Glauber Rocha",
+                  "description": "Glauber Rocha (1939-1981) est un cinéaste né à Vitória da Conquista, dans la Bahia, chef de file du Cinema Novo. Son manifeste « L'Esthétique de la faim » (1965) et ses films « Le Dieu noir et le Diable blond » (1964) et « Terre en transes » (1967) inventent un cinéma politique, violent et poétique. Prix de la mise en scène à Cannes en 1969, il meurt à quarante-deux ans, à Rio.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Glauber_Rocha",
+                  "classement": "Rocha, Glauber",
+                  "image": {
+                    "src": "assets/portraits/pan_br_glauber.jpg",
+                    "legende": "Glauber Rocha, photographie non datée du « Correio da Manhã »",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Glauber_Rocha,_sem_data.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_pele",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1940,
+                  "titre": "Naissance de Pelé",
+                  "description": "Pelé (1940-2022) est un footballeur né à Três Corações, dans le Minas Gerais, de son vrai nom Edson Arantes do Nascimento, surnommé le « Roi ». Il remporte trois Coupes du monde avec le Brésil, en 1958 à dix-sept ans, en 1962 et en 1970, et marque plus de mille buts en carrière, surtout avec le FC Santos. Après sa retraite, il devient ministre des Sports du Brésil et ambassadeur mondial du football.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Pel%C3%A9",
+                  "classement": "Pelé",
+                  "biographie": "bio_pele",
+                  "image": {
+                    "src": "assets/portraits/pan_br_pele.jpg",
+                    "legende": "Pelé sous le maillot du Brésil, photographie de 1970",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Pele_con_brasil_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_timmaia",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1942,
+                  "titre": "Naissance de Tim Maia",
+                  "description": "Tim Maia (1942-1998) est un chanteur et compositeur né à Rio de Janeiro, de son vrai nom Sebastião Rodrigues Maia, père de la soul brésilienne. Revenu en 1964 des États-Unis où il a découvert le rhythm and blues, il impose sa voix grave et sa liberté dans des disques comme « Racional » (1975), dédié à une secte. Tempérament excessif, il fonde son propre label et meurt à Niterói en 1998.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Tim_Maia",
+                  "classement": "Maia, Tim",
+                  "image": {
+                    "src": "assets/portraits/pan_br_timmaia.jpg",
+                    "legende": "Tim Maia, photographie de Sonia d'Almeida, novembre 1987",
+                    "auteur": "SONIA D'ALMEIDA",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:TIM_MAIA_SONIA_D%27ALMEIDA_1987.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_chicomendes",
+                  "axe": "Guerres et résistances",
+                  "date": 1944,
+                  "titre": "Naissance de Chico Mendes",
+                  "description": "Chico Mendes (1944-1988) est un syndicaliste et écologiste né à Xapuri, dans l'Acre, fils d'un saigneur d'hévéas. Dans les années 1970 et 1980, il organise les « empates », des barrages pacifiques des travailleurs devant les bulldozers des éleveurs qui rasent la forêt amazonienne. Il défend des réserves extractives où la forêt reste debout, et il est assassiné devant sa maison le 22 décembre 1988, un crime qui rend sa cause célèbre dans le monde entier.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Chico_Mendes",
+                  "classement": "Mendes, Chico",
+                  "image": {
+                    "src": "assets/portraits/pan_br_chicomendes.jpg",
+                    "legende": "Chico Mendes en 1988, photographie de Miranda Smith",
+                    "auteur": "Miranda Smith, Miranda Productions, Inc.",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Chico_Mendes_in_1988_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_salgado",
+                  "axe": "Beaux-arts",
+                  "date": 1944,
+                  "titre": "Naissance de Sebastião Salgado",
+                  "description": "Sebastião Salgado (1944-2025) est un photographe né à Aimorés, dans le Minas Gerais, qui renonce à une carrière d'économiste pour la photographie. Ses séries en noir et blanc, « La Main de l'homme » (1993) sur les travailleurs, « Exodes » (2000) sur les migrations, « Genesis » (2013) sur la nature intacte, sont parmi les plus célèbres du siècle. Avec sa femme Lélia, il replante la forêt atlantique de son enfance dans l'Institut Terra, et meurt à Paris en 2025.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sebasti%C3%A3o_Salgado",
+                  "classement": "Salgado, Sebastião",
+                  "image": {
+                    "src": "assets/portraits/pan_br_salgado.jpg",
+                    "legende": "Sebastião Salgado, photographie de Fernando Frazão (Agência Brasil), octobre 2016",
+                    "auteur": "Fernando Frazão (Agência Brasil)",
+                    "licence": "CC BY 3.0 BR",
+                    "source": "https://commons.wikimedia.org/wiki/File:Sebasti%C3%A3o_Salgado_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_elis",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1945,
+                  "titre": "Naissance d'Elis Regina",
+                  "description": "Elis Regina (1945-1982) est une chanteuse née à Porto Alegre, considérée comme la plus grande voix de la musique populaire brésilienne. Elle se révèle en 1965 avec « Arrastão » au festival de la télévision Excelsior, puis chante Milton Nascimento, Chico Buarque et Gilberto Gil. Son interprétation de « Como nossos pais » (1976) marque la résistance à la dictature ; elle meurt à trente-six ans d'une surdose.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Elis_Regina",
+                  "classement": "Elis Regina",
+                  "image": {
+                    "src": "assets/portraits/pan_br_elis.jpg",
+                    "legende": "Elis Regina lors d'un entretien, photographie de décembre 1979",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:ElisBA1979.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_ritalee",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1947,
+                  "titre": "Naissance de Rita Lee",
+                  "description": "Rita Lee (1947-2023) est une chanteuse et compositrice née à São Paulo, surnommée la « reine du rock brésilien ». Membre à dix-huit ans du groupe Os Mutantes, qui fonde le mouvement tropicaliste avec Caetano Veloso et Gilberto Gil, elle poursuit une carrière solo avec « Ovelha negra » (1975) et « Lança perfume ». Elle devient la plus populaire des rockeuses du pays.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Rita_Lee",
+                  "classement": "Lee, Rita",
+                  "image": {
+                    "src": "assets/portraits/pan_br_ritalee.jpg",
+                    "legende": "Rita Lee sur la scène du Credicard Hall à São Paulo, photographie d'Alexandre Cardoso, mars 2010",
+                    "auteur": "Alexandre Cardoso",
+                    "licence": "CC BY-SA 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Rita_Lee_-_Credicard_Hall_-_03-2010.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_senna",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1960,
+                  "titre": "Naissance d'Ayrton Senna",
+                  "description": "Ayrton Senna (1960-1994) est un pilote de Formule 1 né à São Paulo, triple champion du monde en 1988, 1990 et 1991, avec McLaren. Réputé pour sa vitesse en qualification et pour ses victoires sous la pluie, il rivalise avec Alain Prost et donne au Brésil des succès qui tiennent le pays en haleine. Il meurt à trente-quatre ans, le 1er mai 1994, dans un accident au Grand Prix de Saint-Marin, à Imola, et le pays lui offre des funérailles nationales.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ayrton_Senna",
+                  "classement": "Senna, Ayrton",
+                  "biographie": "bio_senna",
+                  "image": {
+                    "src": "assets/portraits/pan_br_senna.jpg",
+                    "legende": "Ayrton Senna, photographie de l'Instituto Ayrton Senna",
+                    "auteur": "Instituto Ayrton Senna",
+                    "licence": "CC BY 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ayrton_Senna_8_-_Cropped.jpg"
+                  }
+                },
+                {
+                  "id": "pan_br_marielle",
+                  "axe": "Guerres et résistances",
+                  "date": 1979,
+                  "titre": "Naissance de Marielle Franco",
+                  "description": "Marielle Franco (1979-2018) est une sociologue et femme politique née à Rio de Janeiro, dans le complexe de favelas de la Maré. Conseillère municipale de Rio depuis 2017, noire, lesbienne et issue d'une favela, elle dénonce les violences policières et défend les droits des femmes et des habitants des quartiers pauvres. Elle est assassinée dans sa voiture le 14 mars 2018, avec son chauffeur Anderson Gomes ; les deux tueurs sont condamnés en 2024, et l'enquête met alors en cause des commanditaires issus du monde politique.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Marielle_Franco",
+                  "classement": "Franco, Marielle",
+                  "image": {
+                    "src": "assets/portraits/pan_br_marielle.jpg",
+                    "legende": "Marielle Franco en 2016, photographie de Mídia Ninja",
+                    "auteur": "Mídia Ninja",
+                    "licence": "CC BY-SA 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Marielle_Franco.jpg"
+                  }
+                }
+              ],
+              "axeOrder": [
+                "Chefs d'État et dirigeants",
+                "Guerres et résistances",
+                "Littérature et pensée",
+                "Beaux-arts",
+                "Musique, spectacle et sport",
+                "Sciences, techniques et innovation"
+              ],
+              "essentiel": [
+                "pan_br_zumbi",
+                "pan_br_tiradentes",
+                "pan_br_pedro1",
+                "pan_br_pedro2",
+                "pan_br_machado",
+                "pan_br_santosdumont",
+                "pan_br_vargas",
+                "pan_br_tarsila",
+                "pan_br_villalobos",
+                "pan_br_drummond",
+                "pan_br_kubitschek",
+                "pan_br_portinari",
+                "pan_br_niemeyer",
+                "pan_br_amado",
+                "pan_br_freire",
+                "pan_br_jobim",
+                "pan_br_pele",
+                "pan_br_chicomendes",
+                "pan_br_senna"
               ]
             },
             {
