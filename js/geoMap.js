@@ -258,6 +258,16 @@ function pickNextGeoRound() {
     updateGeoHUD();
 }
 
+// La fiche d'un personnage s'ouvre sur « Nom (naissance-mort) est… » : cette parenthèse donne la réponse
+// à la question « en quelle année ? » qui suit la carte. On y remplace l'année de naissance par « ? ».
+const GEO_BIRTH_YEAR_PATTERN = /^([^()]{1,80}\()(?:vers )?\d+(?: av\. J\.-C\.)?(?=-)/;
+
+function geoDescription(evt) {
+    const desc = evt.description || '';
+    if (typeof portraitOf !== 'function' || !portraitOf(evt)) return desc;
+    return desc.replace(GEO_BIRTH_YEAR_PATTERN, '$1?');
+}
+
 function renderGeoLocatePhase() {
     isAnimating = false;
     geoPhase = 'place';
@@ -270,7 +280,7 @@ function renderGeoLocatePhase() {
     kicker.innerText = t('carte.where_kicker');
     kicker.classList.remove('hidden');
     document.getElementById('geo-event-title').innerText = round.item.event.titre;
-    document.getElementById('geo-event-desc').innerText = round.item.event.description || '';
+    document.getElementById('geo-event-desc').innerText = geoDescription(round.item.event);
     document.getElementById('geo-reveal-label').classList.add('hidden');
     document.getElementById('geo-time-phase').classList.add('hidden');
     document.getElementById('geo-map-phase').classList.remove('hidden');
