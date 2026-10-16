@@ -12,7 +12,7 @@
 // 'install' recharge tout depuis le réseau. Un pack de langue ou un texte
 // d'UI modifié qui ne s'affiche pas malgré un déploiement réussi est
 // généralement le signe que l'un de ces deux numéros n'a pas été incrémenté.
-const CACHE_VERSION = '1.4.79';
+const CACHE_VERSION = '1.4.80';
 const APP_SHELL_CACHE = `historiaxe-shell-v${CACHE_VERSION}`;
 const DATA_CACHE = 'historiaxe-data-v1.0.60';
 
@@ -50,7 +50,14 @@ const APP_SHELL_FILES = [
     './js/storage.js',
     './js/a11y.js',
     './js/audio.js',
+    './js/onboarding.js',
+    './js/notifications.js',
+    './js/recap.js',
+    './js/league.js',
+    './js/duels.js',
     './js/gamification.js',
+    './js/dailyEngine.js',
+    './js/apiClient.js',
     './js/daily.js',
     './js/weekly.js',
     './js/pack.js',
@@ -64,6 +71,30 @@ const APP_SHELL_FILES = [
     './js/atlas.js',
     './js/gameModes.js',
     './js/gallery.js',
+    './js/app/settings.js',
+    './js/app/dates.js',
+    './js/app/custom-content.js',
+    './js/app/selection-revision.js',
+    './js/app/state.js',
+    './js/app/navigation.js',
+    './js/app/axes-rounds.js',
+    './js/app/categories.js',
+    './js/app/themes-screens.js',
+    './js/app/game-start.js',
+    './js/modes/quiz.js',
+    './js/modes/simultaneity.js',
+    './js/modes/ordre.js',
+    './js/modes/blitz.js',
+    './js/modes/curseur.js',
+    './js/modes/intrus.js',
+    './js/modes/whois.js',
+    './js/modes/avap.js',
+    './js/modes/periodes.js',
+    './js/modes/fil.js',
+    './js/modes/ecart.js',
+    './js/app/frise.js',
+    './js/app/session-end.js',
+    './js/app/modal.js',
     './js/app.js',
     './ui/fr.json',
     './apple_icon.jpg',

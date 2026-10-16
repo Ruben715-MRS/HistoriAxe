@@ -140,13 +140,17 @@ qu'en partagé — les deux défis ne tournent jamais en même temps, mais des
   Plausible, Firebase Analytics...) engage la politique de confidentialité
   de l'app et mérite une décision produit, pas un ajout silencieux d'un
   service tiers qui recevrait des données de tous les joueurs.
-- **`js/app.js` (185 Ko, variables globales)** : une migration vers des
-  modules ES (`type="module"`, imports explicites) réduirait le risque de
-  régression du type "fonction supprimée par erreur lors d'un refactor"
-  (déjà vu dans l'historique du projet), mais doit se faire fichier par
-  fichier avec une suite de tests qui couvre chaque mode de jeu — pas en
-  un seul passage, sous peine d'introduire exactement ce genre de
-  régression.
+- **`js/app.js` (variables globales)** : l'ancien fichier de 6 500 lignes est
+  découpé en `js/app/*.js` (réglages, dates, contenu personnalisé, état,
+  navigation, écrans, frise, fin de partie, fiche) et `js/modes/*.js` (un fichier
+  par mode de jeu) ; `js/app.js` ne garde que la synchronisation cloud et
+  `window.onload`. C'est un découpage **mécanique** : tout reste global, les
+  fichiers se chargent dans l'ordre d'`index.html` (qui est celui de l'ancien
+  fichier) et `tests/scripts-shell.test.js` vérifie que chaque script existe, est
+  précaché par le service worker, et qu'aucun n’appelle à son chargement une
+  fonction définie plus loin. La migration vers des modules ES (imports
+  explicites) reste à faire, fichier par fichier, avec les tests de bout en bout
+  comme filet — le découpage en est l'étape préalable.
 
 ## Rétention — onboarding, notifications, série, ligues & duels
 
