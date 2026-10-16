@@ -3128,6 +3128,34 @@ qui la garde — quatorze mutations, quatorze attrapées.
 
 ## Développement
 
+### Pack de données découpé (`data/pack/`)
+
+`data/fr.json` reste la **source** (c'est lui que les scripts de contenu
+écrivent et que l'API serveur charge), mais l'app ne le télécharge plus : elle
+lit `data/pack/fr/`, produit par `npm run build:pack` (`scripts/build_pack.js`) :
+
+- `skeleton.json` (~5 Mo, ~0,9 Mo compressé) : tout l'arbre et tous les
+  événements **sans le texte des fiches** (`description`, 62 % du poids), qui est
+  remplacé par `dl`, sa longueur ;
+- `desc/<thème>.json` : les fiches d'**un** thème, chargées à l'ouverture d'une
+  fiche, d'une anecdote de fin de partie, d'une manche de Mode Carte… ;
+- `manifest.json` : les empreintes. Les URL portent `?v=<empreinte>`, si bien que
+  le service worker garde le squelette et les fiches indéfiniment (jamais
+  périmés) sans incrémenter `DATA_CACHE` à chaque ajout de contenu.
+
+Mesuré (Pixel 5 simulé) : données prêtes en 0,3 s au lieu de 1,2 s (1,1 s au lieu
+de 3,6 s avec un processeur ralenti ×4), 16 Mo de mémoire JS au lieu de 37 Mo.
+
+**Après avoir modifié `data/fr.json`, relancez `npm run build:pack` et commitez
+`data/pack/`** — `tests/pack.test.js` échoue sinon. Côté code, un événement d'un
+pack découpé n'a pas de `description` tant que `Pack.needsDescription(evt)` est
+vrai : tout écran qui affiche ce texte passe par `ensureDescriptions([...])`
+(`js/pack.js`), qui ne rejette jamais (hors ligne, la fiche reste sans texte).
+Après un premier lancement en ligne, les fiches sont aussi réchauffées en
+arrière-plan (connexion rapide uniquement) pour rester lisibles hors ligne. Les
+langues de démonstration, trop petites pour être découpées, gardent leur fichier
+unique ; l'app native n'embarque pas `data/fr.json`.
+
 ```bash
 npm install
 npm run build          # compile Tailwind (css/tailwind.generated.css) puis copie les fichiers statiques dans www/ (build iOS)

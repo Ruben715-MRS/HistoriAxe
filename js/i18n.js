@@ -9,7 +9,7 @@
 // pack de langue explicitement téléchargé avant une mise à jour de
 // ui/<lang>.json resterait bloqué sur son ancien contenu indéfiniment (ce
 // cache n'est jamais revalidé contre le réseau une fois rempli).
-const I18N_DATA_CACHE = 'historiaxe-data-v1.0.59';
+const I18N_DATA_CACHE = 'historiaxe-data-v1.0.60';
 
 // Le nom de chaque langue reste dans sa propre langue (autonyme) — convention
 // standard des sélecteurs de langue, ne dépend jamais de la langue active.
@@ -116,15 +116,23 @@ class I18nManager {
             this.uiStrings = uiData || this.fallbackStrings || DEFAULT_FR_FALLBACK_UI;
 
             // 2. Charger Data Content (BDD)
+            // Pack découpé (squelette + fiches à la demande, voir js/pack.js) quand la
+            // langue en a un ; sinon le fichier unique data/<lang>.json.
             try {
-                let dataRes = await fetch('data/' + lang + '.json');
-                if (!dataRes.ok) dataRes = await fetch('Data/' + lang + '.json');
-                if (dataRes.ok) {
-                    const dataJson = await dataRes.json();
-                    window.bdd = dataJson.categories || [];
+                if (typeof Pack !== 'undefined') Pack.reset();
+                const split = typeof Pack !== 'undefined' ? await Pack.load(lang) : null;
+                if (split) {
+                    window.bdd = split.categories || [];
+                } else {
+                    let dataRes = await fetch('data/' + lang + '.json');
+                    if (!dataRes.ok) dataRes = await fetch('Data/' + lang + '.json');
+                    if (dataRes.ok) {
+                        const dataJson = await dataRes.json();
+                        window.bdd = dataJson.categories || [];
+                    }
                 }
             } catch (err) {
-                console.error('Could not fetch data/' + lang + '.json:', err);
+                console.error('Could not load data pack ' + lang + ':', err);
             }
 
             if (typeof ensureCustomCategoryInBdd === 'function') ensureCustomCategoryInBdd();

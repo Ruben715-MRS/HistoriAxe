@@ -4,6 +4,7 @@
   "description": "HistoriAxe — Le Quiz Chronologique (PWA & iOS Native App)",
   "private": true,
   "scripts": {
+    "build:pack": "node scripts/build_pack.js",
     "build:css": "tailwindcss -i ./css/tailwind-input.css -o ./css/tailwind.generated.css --minify",
     "build:native": "npm run build:css && node scripts/build.js --native",
     "cap:sync": "npm run build:native && npx cap sync",

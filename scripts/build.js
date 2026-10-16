@@ -13,7 +13,17 @@ if (!fs.existsSync(wwwDir)) {
     fs.mkdirSync(wwwDir, { recursive: true });
 }
 
+// Fichiers de données que l'app n'a pas à embarquer : les packs découpés
+// (data/pack/, voir scripts/build_pack.js) remplacent le fichier unique des
+// langues volumineuses — 18,8 Mo de moins dans l'app native.
+const bundleSkip = new Set(
+    fs.existsSync(path.join(projectDir, 'data', 'pack'))
+        ? fs.readdirSync(path.join(projectDir, 'data', 'pack')).map((lang) => path.join(projectDir, 'data', lang + '.json'))
+        : []
+);
+
 function copyRecursiveSync(src, dest) {
+    if (bundleSkip.has(src)) return;
     const exists = fs.existsSync(src);
     const stats = exists && fs.statSync(src);
     const isDirectory = exists && stats.isDirectory();

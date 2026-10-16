@@ -4134,6 +4134,9 @@ function renderWhoReveal(q, correct) {
     const desc = document.createElement('p');
     desc.className = 'whois-reveal-desc';
     desc.innerText = q.correct.description || '';
+    if (q.correct.description === undefined) {
+        ensureDescriptions([q.correct]).then(() => { desc.innerText = q.correct.description || ''; });
+    }
     reveal.appendChild(desc);
 
     // Le portrait du jour se prolonge par la fiche complète — avec ses accès au jeu — puis se referme.
@@ -5930,8 +5933,12 @@ function endGame(isWin) {
     // Affichage de l'anecdote historique « Le Saviez-vous ? »
     const anecdoteContainer = document.getElementById('end-anecdote-container');
     if (anecdoteContainer && currentMode !== 'discovery' && sessionHistory.length > 0) {
-        const anecdote = pickSessionAnecdote(sessionHistory);
-        renderAnecdoteCard(anecdoteContainer, anecdote);
+        // Les fiches des événements joués sont chargées avant de choisir l'anecdote.
+        const playedEvents = sessionHistory.map(item => item.event).filter(Boolean);
+        anecdoteContainer.classList.add('hidden');
+        ensureDescriptions(playedEvents).then(() => {
+            renderAnecdoteCard(anecdoteContainer, pickSessionAnecdote(sessionHistory));
+        });
     } else if (anecdoteContainer) {
         anecdoteContainer.classList.add('hidden');
     }
@@ -6246,6 +6253,12 @@ function renderModalLinkedEvents(evt) {
     }
 }
 
+// Fiches d'un pack découpé (js/pack.js) : le texte arrive thème par thème. Sans pack découpé
+// (langue de démonstration, tests), tout est déjà là et la promesse est immédiate.
+function ensureDescriptions(events) {
+    return typeof Pack !== 'undefined' ? Pack.ensureDescriptions(events) : Promise.resolve();
+}
+
 // MODAL
 // Le second paramètre (facultatif) n'est fourni que depuis « Découvrir un
 // événement au hasard » : il permet d'afficher un accès direct vers le thème
@@ -6272,7 +6285,14 @@ function openModal(evt, context = null, keepHistory = false) {
     const dateStr = formatEventDate(evt);
     document.getElementById('modal-date').innerText = duration ? `${dateStr} (${t('periodes.duration_label', { val: duration })})` : dateStr;
     renderModalCountry(evt);
-    document.getElementById('modal-desc').innerText = evt.description;
+    document.getElementById('modal-desc').innerText = evt.description || '';
+    if (evt.description === undefined) {
+        // Pack découpé : la fiche s'ouvre tout de suite, le texte la rejoint dès qu'il est là
+        // (sauf si une autre fiche a pris la place entre-temps).
+        ensureDescriptions([evt]).then(() => {
+            if (currentModal && currentModal.evt === evt) document.getElementById('modal-desc').innerText = evt.description || '';
+        });
+    }
     document.getElementById('modal-wiki').href = evt.wikipedia;
     renderModalLinkedEvents(evt);
     if (typeof renderModalMapButton === 'function') renderModalMapButton(evt);
@@ -6413,6 +6433,17 @@ window.onload = async () => {
     }
 
     showScreen('screen-home');
+
+    // Hors-ligne : les fiches d'un pack découpé (js/pack.js) arrivent à la demande ; on réchauffe
+    // le cache en arrière-plan pour qu'elles restent lisibles sans réseau. Jamais sur données
+    // limitées ou connexion lente, et pas sous automatisation (tests).
+    if (typeof Pack !== 'undefined' && Pack.isSplit() && !navigator.webdriver) {
+        setTimeout(() => {
+            const c = navigator.connection;
+            const metered = c && (c.saveData || /(^|-)2g$/.test(c.effectiveType || ''));
+            if (navigator.onLine && !metered) Pack.prefetchAll({ concurrency: 2 });
+        }, 20000);
+    }
 
     // Récap hebdo/mensuel (voir js/recap.js) : proposé au plus une fois par
     // semaine ISO, jamais tant que l'onboarding n'est pas terminé. Léger

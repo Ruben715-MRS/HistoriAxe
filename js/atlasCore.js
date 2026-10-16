@@ -62,7 +62,8 @@
     function scoreEntry(entry) {
         const evt = entry.event;
         const titre = evt.titre || '';
-        const len = (evt.description || '').length;
+        // `dl` : longueur de la fiche quand son texte n'est pas encore chargé (pack découpé, js/pack.js).
+        const len = evt.description !== undefined ? evt.description.length : (evt.dl || 0);
         let s = len ? 3.0 - Math.abs(len - 350) / 150 : -3;
         [' et ', ', ', ' puis '].forEach(function (w) { if (titre.indexOf(w) !== -1) s -= 0.8; });
         s -= titre.length / 80;

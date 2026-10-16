@@ -215,6 +215,9 @@ function startGeoModeFromNode(node, label, returnScreen) {
         geoLastNode = node;
 
         geoSessionPool = GeoPlace.pickSession(fullPool, GEO_SESSION_MAX_ROUNDS);
+        // Le texte des fiches (énoncé, année de décès des leurres) vient d'un pack découpé : on le charge
+        // pour les seules manches de la partie.
+        const descriptionsReady = ensureDescriptions(geoSessionPool.map(item => item.event));
         geoRoundIndex = 0;
         score = 0;
         lives = 3;
@@ -235,7 +238,7 @@ function startGeoModeFromNode(node, label, returnScreen) {
         const ready = geoEnsureMap();
         // pickNextGeoRound n'attend pas la carte : elle se pose dès qu'elle est prête, et le jeu (points, vies,
         // année) ne dépend que de la manche — voir submitGeoGuess.
-        pickNextGeoRound();
+        descriptionsReady.then(pickNextGeoRound);
         if (ready && ready.catch) ready.catch(() => alert(t('carte.load_error')));
     });
 }
