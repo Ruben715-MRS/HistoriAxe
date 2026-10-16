@@ -3,8 +3,8 @@
   "lang": "fr",
   "app": {
     "title": "HistoriAxe",
-    "subtitle": "Mémorisation espacée de l'Histoire",
-    "tagline": "Mémorisation espacée · Classement mondial vérifié"
+    "subtitle": "Le quiz chronologique de l'Histoire",
+    "tagline": "Quiz chronologique · Classement mondial vérifié"
   },
   "nav": {
     "back": "Retour",
@@ -21,6 +21,7 @@
     "loading": "Chargement…"
   },
   "categories": {
+    "resume": "Reprendre",
     "search_placeholder": "Rechercher un thème…",
     "search_empty": "Aucun thème ne correspond à votre recherche.",
     "special_favorites": "Favoris",
@@ -71,6 +72,12 @@
     "continue_btn": "Continuer avec ces axes"
   },
   "modes": {
+    "play": "Jouer",
+    "play_sub": "Mode : {mode}",
+    "group_frise": "La frise",
+    "group_express": "Défis express",
+    "group_explore": "Explorer",
+    "group_tools": "Outils",
     "choose_mode": "Choisissez un mode de jeu",
     "essential_summary_subtitle": "⭐ Les Incontournables ({count} événements)",
     "discovery": {
@@ -239,6 +246,8 @@
     "submit_loading": "Envoi en cours…",
     "submit_success": "Score envoyé ! #{rank} sur {total} dans le monde.",
     "submit_error": "Impossible d'envoyer le score pour le moment. Réessayez.",
+    "replay_note": "Entraînement : seul ton premier essai du jour est classé ({score} pts).",
+    "submit_already": "Ton premier essai du jour était déjà classé : {score} pts, #{rank} sur {total} dans le monde.",
     "submit_offline": "Classement mondial indisponible hors connexion.",
     "leaderboard_title": "🏆 Classement du jour",
     "leaderboard_empty": "Aucun score envoyé pour l'instant. Soyez le premier !",
@@ -265,7 +274,14 @@
     "leaderboard_error": "Classement momentanément indisponible."
   },
   "revision": {
-    "hub_title": "Réviser mes points faibles",
+    "hub_title": "Réviser",
+    "tab_due": "À réviser",
+    "due_session_title": "📅 Session du jour",
+    "due_session_desc": "Les événements dont l'échéance de révision est arrivée, les plus fragiles d'abord. Réussis à temps, ils reviennent de plus en plus tard ; ratés, dès demain.",
+    "due_subtitle": "{count} événements à réviser aujourd'hui",
+    "due_subtitle_overdue": "{count} événements à réviser aujourd'hui, dont {overdue} en retard",
+    "due_empty": "Rien à réviser aujourd'hui. Les événements que vous jouez reviennent ici quand leur échéance arrive.",
+    "due_empty_tomorrow": "Rien à réviser aujourd'hui 🎉 — {count} événements arrivent à échéance demain.",
     "tab_weak": "Points faibles",
     "tab_progress": "Progression",
     "weak_empty": "Aucun point faible détecté pour l'instant. Les événements manqués lors de vos parties apparaîtront ici pour être retravaillés.",
@@ -378,6 +394,8 @@
     "hero_level_line": "Niveau {level} • {xp} XP"
   },
   "settings": {
+    "play_mode_label": "Mode du bouton « Jouer »",
+    "play_mode_hint": "Le bouton « Jouer » de l'écran des modes lance ce mode. Si le mode choisi n'est pas disponible sur un thème (Chrono ou Expert verrouillés, par exemple), c'est le mode Classique qui se lance.",
     "title": "Réglages",
     "orientation_label": "Orientation de la frise",
     "orientation_auto": "Auto",
@@ -549,7 +567,7 @@
   },
   "league": {
     "title": "🥇 Ta ligue de la semaine",
-    "week_hint": "Ton total cette semaine : {xp} XP. Le classement se réinitialise chaque semaine.",
+    "week_hint": "Ton XP de la semaine : {xp}. La ligue compte l'XP des parties du Défi du jour et du Défi hebdomadaire, rejouées et vérifiées par le serveur. Elle repart de zéro chaque lundi.",
     "offline": "Ligue indisponible hors connexion.",
     "loading": "Chargement…",
     "error": "Ligue momentanément indisponible.",
@@ -611,8 +629,8 @@
     "combo_desc": "Chaque bonne réponse d'affilée (sans indice) augmente le multiplicateur de +0,1 : ×1,0 → ×1,1 → ×1,2… jusqu'à ×5,0. La moindre erreur ou recours à un indice remet le multiplicateur à ×1,0.",
     "combo_example": "Exemple : 3 bonnes réponses d'affilée sans faute rapportent 100, puis 110, puis 120 points.",
     "proximity_title": "📐 Réponse inexacte : principe de proximité",
-    "proximity_desc": "Une erreur n'est pas sanctionnée par 0 point : l'écart en années avec la date réelle est comparé à l'étendue chronologique du thème pour récompenser la pertinence historique.",
-    "proximity_example": "Exemple : sur un thème de 100 ans, une erreur de 10 ans rapporte encore 90 points (100 × (1 − 10/100)) ; une erreur de 80 ans rapporte 20 points.",
+    "proximity_desc": "En frise, une erreur ne rapporte aucun point. Dans les autres modes qui le prévoient (Quiz, Le fil du temps, Le curseur), l'écart en années avec la date réelle est comparé à l'étendue chronologique pour récompenser la pertinence historique.",
+    "proximity_example": "Exemple (Quiz) : sur une étendue de 100 ans, une erreur de 10 ans rapporte encore 90 points (100 × (1 − 10/100)) ; une erreur de 80 ans rapporte 20 points.",
     "proximity_life_note": "Une vie est retirée à chaque erreur (sauf en Entraînement), quel que soit le nombre de points accordés.",
     "speed_title": "⚡ Bonus de rapidité (Chrono et Expert)",
     "speed_desc": "Sur les modes chronométrés Chrono et Expert, une bonne réponse donnée en moins de 3 secondes confère jusqu'à +50 points supplémentaires (dégressif jusqu'à 0 au-delà de 15 secondes).",

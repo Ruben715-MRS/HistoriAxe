@@ -9,11 +9,14 @@ const MAX_CLOCK_SKEW_DAYS = 1; // tolère un décalage d'horloge client raisonna
 
 // Renvoie les dates (dans l'ordre de jeu) des 10 événements du Défi du jour
 // pour `lang`, à la date `dateStr` (format YYYY-MM-DD, cf. getDailySeedString).
-function getDailyOrderedDates(lang, dateStr) {
+function getDailyOrderedItems(lang, dateStr) {
     const events = loadLangEvents(lang);
     if (events.length === 0) return [];
-    const picked = DailyEngine.pickDailyItems(events, dateStr, 10, (it) => it.date);
-    return picked.map((it) => it.date);
+    return DailyEngine.pickDailyItems(events, dateStr, 10, (it) => it.date);
+}
+
+function getDailyOrderedDates(lang, dateStr) {
+    return getDailyOrderedItems(lang, dateStr).map((it) => it.date);
 }
 
 // Le client envoie la date qu'il croit être "aujourd'hui" (son horloge locale,
@@ -34,4 +37,4 @@ function resolveChallengeDate(clientDateStr, refDate) {
     return today; // date farfelue : on retombe sur "aujourd'hui" côté serveur
 }
 
-module.exports = { getDailyOrderedDates, resolveChallengeDate };
+module.exports = { getDailyOrderedItems, getDailyOrderedDates, resolveChallengeDate };

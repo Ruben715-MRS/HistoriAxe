@@ -530,8 +530,12 @@ function atlasBuildCard(item) {
     }
     const desc = document.createElement('p');
     desc.className = 'atlas-card-desc';
-    const text = evt.description || '';
-    desc.textContent = text.length > 220 ? text.slice(0, 217).replace(/\s+\S*$/, '') + '…' : text;
+    const fillDesc = function () {
+        const text = evt.description || '';
+        desc.textContent = text.length > 220 ? text.slice(0, 217).replace(/\s+\S*$/, '') + '…' : text;
+    };
+    fillDesc();
+    if (evt.description === undefined) ensureDescriptions([evt]).then(fillDesc);
     card.appendChild(desc);
     const open = document.createElement('button');
     open.type = 'button';

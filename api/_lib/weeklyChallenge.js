@@ -14,11 +14,14 @@ const MAX_CLOCK_SKEW_WEEKS = 1; // tolère un décalage d'horloge client raisonn
 // Renvoie les dates (dans l'ordre de jeu) des 30 événements du Défi
 // hebdomadaire pour `lang`, à la semaine ISO `isoWeek` (format 'YYYY-Www',
 // cf. DailyEngine.getWeeklySeedString).
-function getWeeklyChallengeOrderedDates(lang, isoWeek) {
+function getWeeklyChallengeOrderedItems(lang, isoWeek) {
     const events = loadLangEvents(lang);
     if (events.length === 0) return [];
-    const picked = DailyEngine.pickDailyItems(events, isoWeek, WEEKLY_CHALLENGE_EVENT_COUNT, (it) => it.date, 'historiaxe_weekly_');
-    return picked.map((it) => it.date);
+    return DailyEngine.pickDailyItems(events, isoWeek, WEEKLY_CHALLENGE_EVENT_COUNT, (it) => it.date, 'historiaxe_weekly_');
+}
+
+function getWeeklyChallengeOrderedDates(lang, isoWeek) {
+    return getWeeklyChallengeOrderedItems(lang, isoWeek).map((it) => it.date);
 }
 
 // Le client envoie la semaine ISO qu'il croit être « la semaine en cours »
@@ -39,4 +42,4 @@ function resolveChallengeWeek(clientWeekStr, refDate) {
     return thisWeek; // semaine farfelue : on retombe sur « la semaine en cours » côté serveur
 }
 
-module.exports = { WEEKLY_CHALLENGE_EVENT_COUNT, getWeeklyChallengeOrderedDates, resolveChallengeWeek };
+module.exports = { WEEKLY_CHALLENGE_EVENT_COUNT, getWeeklyChallengeOrderedItems, getWeeklyChallengeOrderedDates, resolveChallengeWeek };

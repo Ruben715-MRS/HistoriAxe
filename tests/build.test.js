@@ -40,3 +40,21 @@ test('node scripts/build.js fonctionne quel que soit le répertoire courant', ()
 
     fs.rmSync(wwwDir, { recursive: true, force: true });
 });
+
+test('build natif : HISTORIAXE_API_BASE_URL est injectée dans www/ seulement, et exigée par --native', () => {
+    const env = { ...process.env, HISTORIAXE_API_BASE_URL: 'https://exemple.vercel.app/' };
+    execFileSync(process.execPath, [buildScript, '--native'], { cwd: os.tmpdir(), env });
+    const built = fs.readFileSync(path.join(wwwDir, 'js', 'apiClient.js'), 'utf8');
+    assert.ok(built.includes("var NATIVE_APP_API_BASE_URL = 'https://exemple.vercel.app';"), 'URL non injectée (ou barre finale conservée)');
+    const source = fs.readFileSync(path.join(repoRoot, 'js', 'apiClient.js'), 'utf8');
+    assert.ok(source.includes("var NATIVE_APP_API_BASE_URL = '';"), "le dépôt ne doit pas recevoir l'URL");
+
+    const without = { ...process.env };
+    delete without.HISTORIAXE_API_BASE_URL;
+    assert.throws(() => execFileSync(process.execPath, [buildScript, '--native'], { cwd: os.tmpdir(), env: without, stdio: 'pipe' }),
+        'un build --native sans URL doit échouer');
+    assert.throws(() => execFileSync(process.execPath, [buildScript], { cwd: os.tmpdir(), env: { ...without, HISTORIAXE_API_BASE_URL: 'http://x' }, stdio: 'pipe' }),
+        'une URL non https doit être refusée');
+
+    fs.rmSync(wwwDir, { recursive: true, force: true });
+});

@@ -21,7 +21,7 @@ const localeFiles = fs.readdirSync(dataDir).filter((f) => f.endsWith('.json'));
 assert.ok(localeFiles.length > 0, 'aucun fichier data/*.json trouvé');
 
 // --- Portraits (champ facultatif `image` d'un événement) et panthéons ----
-// Voir README, « Portraits » et « Panthéons ». Les règles vivent ici
+// Voir docs/personnages-illustres.md (« Portraits » et « Panthéons »). Les règles vivent ici
 // parce qu'une erreur y est silencieuse : un crédit faux, une année de
 // naissance qui n'est pas celle de l'événement, un portrait qui n'existe pas
 // ne se voient qu'en ouvrant la bonne fiche.
@@ -74,6 +74,9 @@ for (const file of localeFiles) {
         assert.ok(Array.isArray(doc.categories) && doc.categories.length > 0, `${file}: "categories" doit être un tableau non vide`);
 
         const seenThemeIds = new Set();
+        // Un id d'événement est unique dans TOUT le pack, pas seulement dans son thème :
+        // les points faibles, la révision et les défis retrouvent l'événement par son id.
+        const eventIdOwner = new Map();
         const themesById = new Map();
         const biographyRefs = [];
         let themeCount = 0;
@@ -219,6 +222,8 @@ for (const file of localeFiles) {
                         assert.ok(typeof evt.id === 'string' && evt.id.length > 0, `${file}: thème "${theme.id}" a un événement sans "id"`);
                         assert.ok(!seenEventIds.has(evt.id), `${file}: id d'événement dupliqué "${evt.id}" dans le thème "${theme.id}" (les points faibles/SRS sont indexés par cet id)`);
                         seenEventIds.add(evt.id);
+                        assert.ok(!eventIdOwner.has(evt.id), `${file}: id d'événement "${evt.id}" déjà utilisé par le thème "${eventIdOwner.get(evt.id)}" (et repris dans "${theme.id}")`);
+                        eventIdOwner.set(evt.id, theme.id);
                         assert.ok(typeof evt.date === 'number' && Number.isFinite(evt.date), `${file}: événement "${evt.id}" a une "date" invalide`);
                         assert.ok(typeof evt.titre === 'string' && evt.titre.length > 0, `${file}: événement "${evt.id}" sans "titre"`);
                         if (evt.pays !== undefined) assert.match(String(evt.pays), ISO_COUNTRY, `${file}: événement "${evt.id}" — « pays » est un code ISO à deux lettres majuscules`);

@@ -2,11 +2,14 @@
 // === HISTORIAXE — MOTEUR D'INTERNATIONALISATION (i18n & PACKS DE LANGUE) ===
 // =========================================================================
 
-// Bumpé en même temps que sw.js: DATA_CACHE (voir ce fichier) — sinon un
+// IDENTIQUE à sw.js: DATA_CACHE (tests/i18n-caches.test.js le vérifie). Le service
+// worker purge à l'activation tout cache dont le nom n'est pas dans sa liste
+// blanche : sous un autre nom, un pack téléchargé était effacé à chaque mise à
+// jour alors que l'app continuait de l'annoncer « installé ». Bumpé avec lui — sinon un
 // pack de langue explicitement téléchargé avant une mise à jour de
 // ui/<lang>.json resterait bloqué sur son ancien contenu indéfiniment (ce
 // cache n'est jamais revalidé contre le réseau une fois rempli).
-const I18N_DATA_CACHE = 'historiaxe-data-v1.0.5';
+const I18N_DATA_CACHE = 'historiaxe-data-v1.0.61';
 
 // Le nom de chaque langue reste dans sa propre langue (autonyme) — convention
 // standard des sélecteurs de langue, ne dépend jamais de la langue active.
@@ -15,7 +18,7 @@ const I18N_DATA_CACHE = 'historiaxe-data-v1.0.5';
 // themeCount/eventCount reflètent data/<lang>.json: totalThemes/totalEvents —
 // à mettre à jour si le contenu d'une langue est enrichi (voir tests/data-schema.test.js).
 const AVAILABLE_LANGUAGES = [
-    { code: 'fr', name: 'Français', flag: '🇫🇷', version: '1.0.0', sizeVal: '11.7', sizeUnit: 'mb', isDemo: false, isDefault: true, themeCount: 749, eventCount: 18997 },
+    { code: 'fr', name: 'Français', flag: '🇫🇷', version: '1.0.0', sizeVal: '18.8', sizeUnit: 'mb', isDemo: false, isDefault: true, themeCount: 822, eventCount: 22445 },
     { code: 'en', name: 'English', flag: '🇬🇧', version: '1.0.0', sizeVal: '9.3', sizeUnit: 'kb', isDemo: true, isDefault: false, themeCount: 2, eventCount: 20 },
     { code: 'es', name: 'Español', flag: '🇪🇸', version: '1.0.0', sizeVal: '5.1', sizeUnit: 'kb', isDemo: true, isDefault: false, themeCount: 2, eventCount: 10 },
     { code: 'de', name: 'Deutsch', flag: '🇩🇪', version: '1.0.0', sizeVal: '6.6', sizeUnit: 'kb', isDemo: true, isDefault: false, themeCount: 2, eventCount: 14 },
@@ -113,15 +116,23 @@ class I18nManager {
             this.uiStrings = uiData || this.fallbackStrings || DEFAULT_FR_FALLBACK_UI;
 
             // 2. Charger Data Content (BDD)
+            // Pack découpé (squelette + fiches à la demande, voir js/pack.js) quand la
+            // langue en a un ; sinon le fichier unique data/<lang>.json.
             try {
-                let dataRes = await fetch('data/' + lang + '.json');
-                if (!dataRes.ok) dataRes = await fetch('Data/' + lang + '.json');
-                if (dataRes.ok) {
-                    const dataJson = await dataRes.json();
-                    window.bdd = dataJson.categories || [];
+                if (typeof Pack !== 'undefined') Pack.reset();
+                const split = typeof Pack !== 'undefined' ? await Pack.load(lang) : null;
+                if (split) {
+                    window.bdd = split.categories || [];
+                } else {
+                    let dataRes = await fetch('data/' + lang + '.json');
+                    if (!dataRes.ok) dataRes = await fetch('Data/' + lang + '.json');
+                    if (dataRes.ok) {
+                        const dataJson = await dataRes.json();
+                        window.bdd = dataJson.categories || [];
+                    }
                 }
             } catch (err) {
-                console.error('Could not fetch data/' + lang + '.json:', err);
+                console.error('Could not load data pack ' + lang + ':', err);
             }
 
             if (typeof ensureCustomCategoryInBdd === 'function') ensureCustomCategoryInBdd();

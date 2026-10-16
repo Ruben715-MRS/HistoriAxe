@@ -12,9 +12,9 @@
 // 'install' recharge tout depuis le réseau. Un pack de langue ou un texte
 // d'UI modifié qui ne s'affiche pas malgré un déploiement réussi est
 // généralement le signe que l'un de ces deux numéros n'a pas été incrémenté.
-const CACHE_VERSION = '1.4.75';
+const CACHE_VERSION = '1.4.82';
 const APP_SHELL_CACHE = `historiaxe-shell-v${CACHE_VERSION}`;
-const DATA_CACHE = 'historiaxe-data-v1.0.58';
+const DATA_CACHE = 'historiaxe-data-v1.0.61';
 
 // Portraits des personnages (assets/portraits/*.jpg, champ `image` des
 // événements). Un cache À PART, et c'est tout l'objet : 'activate' purge tout
@@ -46,12 +46,21 @@ const APP_SHELL_FILES = [
     './css/fonts.css',
     './assets/fonts/inter-latin.woff2',
     './assets/fonts/material-symbols-outlined.woff2',
+    './js/srs.js',
     './js/storage.js',
     './js/a11y.js',
     './js/audio.js',
+    './js/onboarding.js',
+    './js/notifications.js',
+    './js/recap.js',
+    './js/league.js',
+    './js/duels.js',
     './js/gamification.js',
+    './js/dailyEngine.js',
+    './js/apiClient.js',
     './js/daily.js',
     './js/weekly.js',
+    './js/pack.js',
     './js/i18n.js',
     './js/geoMap.js',
     './js/mindMap.js',
@@ -62,9 +71,33 @@ const APP_SHELL_FILES = [
     './js/atlas.js',
     './js/gameModes.js',
     './js/gallery.js',
+    './js/app/settings.js',
+    './js/app/dates.js',
+    './js/app/custom-content.js',
+    './js/app/selection-revision.js',
+    './js/app/state.js',
+    './js/app/navigation.js',
+    './js/app/axes-rounds.js',
+    './js/app/categories.js',
+    './js/app/themes-screens.js',
+    './js/app/game-start.js',
+    './js/modes/quiz.js',
+    './js/modes/simultaneity.js',
+    './js/modes/ordre.js',
+    './js/modes/blitz.js',
+    './js/modes/curseur.js',
+    './js/modes/intrus.js',
+    './js/modes/whois.js',
+    './js/modes/avap.js',
+    './js/modes/periodes.js',
+    './js/modes/fil.js',
+    './js/modes/ecart.js',
+    './js/app/frise.js',
+    './js/app/session-end.js',
+    './js/app/modal.js',
+    './js/app/play-mode.js',
     './js/app.js',
     './ui/fr.json',
-    './data/fr.json',
     './apple_icon.jpg',
     './accueil.jpg',
     // Variantes d'écran d'accueil selon le format d'écran (voir index.html
@@ -81,11 +114,27 @@ const APP_SHELL_FILES = [
 self.addEventListener('install', (event) => {
     event.waitUntil(
         caches.open(APP_SHELL_CACHE).then((cache) => {
-            console.log('[SW] Pre-caching App Shell & French Pack');
+            console.log('[SW] Pre-caching App Shell');
             return cache.addAll(APP_SHELL_FILES);
-        }).then(() => self.skipWaiting())
+        }).then(precachePackSkeleton).then(() => self.skipWaiting())
     );
 });
+
+// Le squelette du pack français (voir js/pack.js) est précaché pour que le
+// premier lancement hors ligne fonctionne, comme l'était data/fr.json. Ses
+// URL portent l'empreinte du contenu : on lit donc le manifeste d'abord.
+// Best-effort : un échec ne doit pas empêcher d'installer l'app.
+function precachePackSkeleton() {
+    const manifestUrl = './data/pack/fr/manifest.json';
+    return fetch(manifestUrl, { cache: 'no-store' })
+        .then((res) => res.ok ? res.json() : null)
+        .then((manifest) => {
+            if (!manifest) return null;
+            const skeletonUrl = './data/pack/fr/skeleton.json?v=' + manifest.skeleton;
+            return caches.open(DATA_CACHE).then((cache) => cache.addAll([manifestUrl, skeletonUrl]));
+        })
+        .catch(() => { /* pack indisponible : l'app le demandera au réseau */ });
+}
 
 // --- ACTIVATION : Nettoyage des anciens caches obsolètes ---
 self.addEventListener('activate', (event) => {
@@ -131,6 +180,31 @@ self.addEventListener('fetch', (event) => {
                     });
                 })
             )
+        );
+        return;
+    }
+
+    // Packs découpés (data/pack/<lang>/…, voir js/pack.js) :
+    //  - manifest.json : RÉSEAU d'abord (il porte les empreintes de la version en
+    //    cours), cache en secours hors ligne ;
+    //  - squelette et fiches : leur URL contient l'empreinte (?v=…), donc
+    //    immuables — cache d'abord, sans jamais servir un contenu périmé, et sans
+    //    avoir à incrémenter DATA_CACHE à chaque ajout de contenu.
+    if (url.pathname.includes('/data/pack/')) {
+        const isManifest = url.pathname.endsWith('/manifest.json');
+        event.respondWith(
+            caches.open(DATA_CACHE).then((cache) => {
+                const fromNetwork = () => fetch(event.request).then((networkResponse) => {
+                    if (networkResponse && networkResponse.status === 200) {
+                        cache.put(event.request, networkResponse.clone());
+                    }
+                    return networkResponse;
+                });
+                if (isManifest) {
+                    return fromNetwork().catch(() => cache.match(event.request, { ignoreSearch: true }).then((cached) => cached || Response.error()));
+                }
+                return cache.match(event.request).then((cached) => cached || fromNetwork());
+            })
         );
         return;
     }

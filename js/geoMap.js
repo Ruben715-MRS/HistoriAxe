@@ -215,6 +215,9 @@ function startGeoModeFromNode(node, label, returnScreen) {
         geoLastNode = node;
 
         geoSessionPool = GeoPlace.pickSession(fullPool, GEO_SESSION_MAX_ROUNDS);
+        // Le texte des fiches (énoncé, année de décès des leurres) vient d'un pack découpé : on le charge
+        // pour les seules manches de la partie.
+        const descriptionsReady = ensureDescriptions(geoSessionPool.map(item => item.event));
         geoRoundIndex = 0;
         score = 0;
         lives = 3;
@@ -235,7 +238,7 @@ function startGeoModeFromNode(node, label, returnScreen) {
         const ready = geoEnsureMap();
         // pickNextGeoRound n'attend pas la carte : elle se pose dès qu'elle est prête, et le jeu (points, vies,
         // année) ne dépend que de la manche — voir submitGeoGuess.
-        pickNextGeoRound();
+        descriptionsReady.then(pickNextGeoRound);
         if (ready && ready.catch) ready.catch(() => alert(t('carte.load_error')));
     });
 }
@@ -245,7 +248,7 @@ function pickNextGeoRound() {
     geoCurrentRound = {
         item,
         correctYear: item.event.date,
-        timeOptions: pickGeoYearOptions(item.event.date, item.event.id),
+        timeOptions: pickGeoYearOptions(item.event.date, item.event.id, item.event),
         geoCorrect: null,
         timeCorrect: null,
         guess: null,
@@ -432,7 +435,42 @@ function continueAfterGeoReveal() {
 // Distracteurs d'années : autres dates du pool de la session, également
 // répartis proche/moyen/loin. Repli sur des décalages synthétiques si le
 // pool est trop pauvre en dates distinctes (thème très court).
-function pickGeoYearOptions(correctYear, excludeEventId) {
+// « Nom (naissance-mort) est… » : l'année de décès, ou null (pas de parenthèse, ou personne encore en vie
+// sans année donnée). « (1960-) » vaut l'année courante.
+const GEO_DEATH_YEAR_PATTERN = /^[^()]{1,80}\([^()]*?-(?:vers )?(\d+)?(?: (av)\. J\.-C\.)?\)/;
+
+function geoDeathYear(evt) {
+    const m = GEO_DEATH_YEAR_PATTERN.exec(evt.description || '');
+    if (!m) return null;
+    if (!m[1]) return new Date().getFullYear();
+    return m[2] ? -Number(m[1]) : Number(m[1]);
+}
+
+// Pour un personnage, les leurres de la date de naissance restent plausibles : des années de la même
+// fenêtre que la vraie, de 50 à 100 ans avant la mort, ou, si la naissance en sort (mort jeune ou très âgée), ±25 ans autour
+// d'elle sans dépasser la mort — sinon la seule année proche de la mort se désigne d'elle-même. null : on retombe sur le
+// tirage dans le pool de la session.
+function pickLifeYearOptions(birth, evt) {
+    if (typeof portraitOf !== 'function' || !portraitOf(evt)) return null;
+    const death = geoDeathYear(evt);
+    if (death === null || death < birth) return null;
+    const inWindow = birth >= death - 100 && birth <= death - 50;
+    const lo = inWindow ? death - 100 : birth - 25;
+    const hi = Math.min(death, inWindow ? death - 50 : birth + 25);
+    const gap = Math.max(4, Math.min(10, Math.floor((hi - lo) / 6)));
+    const picks = [];
+    for (let attempt = 0; attempt < 200 && picks.length < 3; attempt++) {
+        let y = lo + Math.floor(Math.random() * (hi - lo + 1));
+        if (y === 0) y = 1;
+        if (Math.abs(y - birth) < gap || picks.some(p => Math.abs(p - y) < gap)) continue;
+        picks.push(y);
+    }
+    return picks.length === 3 ? shuffleArray([birth, ...picks]) : null;
+}
+
+function pickGeoYearOptions(correctYear, excludeEventId, evt) {
+    const lifeOptions = evt ? pickLifeYearOptions(correctYear, evt) : null;
+    if (lifeOptions) return lifeOptions;
     const uniqYears = new Map();
     geoSessionPool.forEach(item => {
         if (item.event.id === excludeEventId) return;

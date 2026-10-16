@@ -128,20 +128,48 @@
     // ISO au même libellé produiraient... en pratique jamais le cas, les
     // deux formats de chaîne ne se recoupent pas, mais autant rester
     // explicite plutôt que de compter dessus).
-    function pickDailyItems(items, dateStr, count, getDate, seedPrefix) {
+    // FNV-1a puis finaliseur de MurmurHash3 : hashStringToSeed (ci-dessus) est
+    // linéaire, si bien que deux graines différant d'un caractère classaient les
+    // items exactement dans le même ordre — le tirage ne changeait pas d'un jour
+    // à l'autre.
+    function rankKey(str) {
+        var h = 0x811c9dc5;
+        for (var i = 0; i < str.length; i++) {
+            h ^= str.charCodeAt(i);
+            h = Math.imul(h, 0x01000193);
+        }
+        h ^= h >>> 16; h = Math.imul(h, 0x85ebca6b);
+        h ^= h >>> 13; h = Math.imul(h, 0xc2b2ae35);
+        h ^= h >>> 16;
+        return h >>> 0;
+    }
+
+    function defaultGetId(it, index) {
+        if (it && it.id != null) return String(it.id);
+        if (it && it.event && it.event.id != null) return String(it.event.id);
+        return String(index);
+    }
+
+    // Ordre du jour : chaque item est classé par un hachage de (graine + son
+    // id), et non plus par un mélange de toute la liste. Ajouter ou retirer
+    // des événements au contenu ne change alors le tirage que si un nouvel
+    // item « gagne » son rang — avec un mélange de la liste entière, le
+    // moindre ajout redistribuait tout, et un joueur dont le pack en cache
+    // était plus ancien jouait un défi que le serveur recalculait sur
+    // d'autres dates. L'ordre ne dépend plus de celui du tableau.
+    function pickDailyItems(items, dateStr, count, getDate, seedPrefix, getId) {
         count = count || 10;
         getDate = getDate || function (it) { return it.date; };
         seedPrefix = seedPrefix || 'historiaxe_daily_';
+        getId = getId || defaultGetId;
         if (!items || items.length === 0) return [];
 
-        var seed = hashStringToSeed(seedPrefix + dateStr);
-        var rng = mulberry32(seed);
-
-        var shuffled = items.slice();
-        for (var i = shuffled.length - 1; i > 0; i--) {
-            var j = Math.floor(rng() * (i + 1));
-            var tmp = shuffled[i]; shuffled[i] = shuffled[j]; shuffled[j] = tmp;
-        }
+        var ranked = items.map(function (it, idx) {
+            var id = getId(it, idx);
+            return { it: it, id: id, key: rankKey(seedPrefix + dateStr + '|' + id) };
+        });
+        ranked.sort(function (a, b) { return a.key - b.key || (a.id < b.id ? -1 : a.id > b.id ? 1 : 0); });
+        var shuffled = ranked.map(function (r) { return r.it; });
 
         var MAX_PER_CENTURY = 2;
         var picked = [];
@@ -201,10 +229,6 @@
         var placed = [deck.pop()];
         var pool = deck; // pool.pop() pioche la carte suivante, comme côté client
 
-        // Mirroir de : currentGameSpan calculé sur `eventsCopy` APRÈS le premier
-        // pop (donc sur les 9 dates restantes du pool, pas les 10 du tirage).
-        var span = Math.max(1, Math.max.apply(null, pool) - Math.min.apply(null, pool));
-
         var roundsTotal = pool.length;
         result.roundsTotal = roundsTotal;
 
@@ -255,9 +279,8 @@
                 combo = Math.round((combo + 0.1) * 10) / 10;
                 placed.splice(slotIndex, 0, dateToPlace);
             } else {
-                var ratio = Math.max(0, 1 - gap / span);
-                var wrongPts = Math.round(100 * ratio);
-                score += wrongPts;
+                // Une erreur ne rapporte rien (miroir de awardPoints avec
+                // noPartial dans js/app.js) : seule la vie et le combo bougent.
                 combo = 1.0;
                 lives -= 1;
 

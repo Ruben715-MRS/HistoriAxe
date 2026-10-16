@@ -25,6 +25,11 @@ const PORTRAIT_DAY_KEY = 'historiaxe_portrait_day_v1';
 // Série de semaines consécutives au Défi hebdomadaire (voir
 // weeklyChallengeStreakRecordToday ci-dessous) — sans rapport avec
 // WEEKLY_XP_KEY (ligue hebdomadaire par XP cumulé, feature distincte).
+// Dernier thème ouvert (« Reprendre » sur l'écran des catégories) : { themeId, at }. Une habitude de
+// l'appareil, hors de SYNC_KEYS comme PORTRAIT_DAY_KEY. Les groupes repliés de l'écran des modes
+// ({ express: true… }) suivent le même principe.
+const LAST_THEME_KEY = 'historiaxe_last_theme_v1';
+const MODES_GROUPS_KEY = 'historiaxe_modes_groups_v1';
 const WEEKLY_CHALLENGE_STREAK_KEY = 'historiaxe_weekly_challenge_streak_v1';
 
 // Clés dont le contenu est envoyé/reçu par la synchronisation cloud
@@ -62,6 +67,8 @@ const DEFAULT_SETTINGS = {
     // de la médiane (la majorité des thèmes ne bouge donc pas) tout en
     // bornant les gros, et « Tout » reste à un tap sur l'écran des modes.
     roundLength: 20,
+    // Mode que lance le bouton « Jouer » de l'écran des modes (voir js/app/play-mode.js) : un id de PLAY_MODES.
+    playMode: 'classic',
     // Portraits de la galerie (js/gallery.js) : 'bw' = en noir et blanc tant que le
     // personnage n'a pas été rencontré en jeu, avec un compteur de collection ;
     // 'color' = tous en couleur, sans progression. null = la question n'a pas encore
@@ -145,6 +152,24 @@ function settingsSave(data) {
     } catch (e) {}
 }
 
+function lastThemeLoad() {
+    try { return JSON.parse(localStorage.getItem(LAST_THEME_KEY)) || null; }
+    catch (e) { return null; }
+}
+
+function lastThemeSave(themeId) {
+    try { localStorage.setItem(LAST_THEME_KEY, JSON.stringify({ themeId: themeId, at: Date.now() })); } catch (e) {}
+}
+
+function modesGroupsLoad() {
+    try { return JSON.parse(localStorage.getItem(MODES_GROUPS_KEY)) || {}; }
+    catch (e) { return {}; }
+}
+
+function modesGroupsSave(data) {
+    try { localStorage.setItem(MODES_GROUPS_KEY, JSON.stringify(data)); } catch (e) {}
+}
+
 function portraitDayLoad() {
     try { return JSON.parse(localStorage.getItem(PORTRAIT_DAY_KEY)) || null; }
     catch (e) { return null; }
@@ -167,16 +192,8 @@ function srsSave(data) {
 function srsRecord(eventId, isSuccess) {
     if (!eventId) return;
     const data = srsLoad();
-    const current = data[eventId] || { box: 1, lastReviewed: 0, failCount: 0, successCount: 0 };
-    if (isSuccess) {
-        current.box = Math.min(5, (current.box || 1) + 1);
-        current.successCount = (current.successCount || 0) + 1;
-    } else {
-        current.box = 1;
-        current.failCount = (current.failCount || 0) + 1;
-    }
-    current.lastReviewed = Date.now();
-    data[eventId] = current;
+    // Boîtes à échéances (js/srs.js) : une réussite avant l'échéance ne change rien.
+    data[eventId] = SRS.applyResult(data[eventId], isSuccess, Date.now());
     srsSave(data);
 }
 
@@ -571,6 +588,7 @@ function resetAllGameData() {
     try { localStorage.removeItem(STREAK_KEY); } catch (e) {}
     try { localStorage.removeItem(WEEKLY_CHALLENGE_STREAK_KEY); } catch (e) {}
     try { localStorage.removeItem(GAMIFICATION_KEY); } catch (e) {}
+    try { localStorage.removeItem(LAST_THEME_KEY); } catch (e) {}
 }
 
 // Export CommonJS pour les tests unitaires (node --test tests/), même

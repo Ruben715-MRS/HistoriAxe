@@ -13,7 +13,8 @@
 const { ensureSchema, query } = require('./_lib/db');
 const { upsertPlayer, isValidDeviceId } = require('./_lib/players');
 const { SUPPORTED_LANGS } = require('./_lib/dataset');
-const { getWeeklyChallengeOrderedDates, resolveChallengeWeek, WEEKLY_CHALLENGE_EVENT_COUNT } = require('./_lib/weeklyChallenge');
+const { drawMatches, STALE_DRAW_MESSAGE } = require('./_lib/drawCheck');
+const { getWeeklyChallengeOrderedItems, resolveChallengeWeek, WEEKLY_CHALLENGE_EVENT_COUNT } = require('./_lib/weeklyChallenge');
 const DailyEngine = require('../js/dailyEngine.js');
 const { handlePreflight, readJsonBody, sendError } = require('./_lib/http');
 
@@ -48,9 +49,13 @@ module.exports = async (req, res) => {
         const player = await upsertPlayer(deviceId, pseudo);
         const challengeWeek = resolveChallengeWeek(typeof isoWeek === 'string' ? isoWeek : '', new Date());
 
-        const orderedDates = getWeeklyChallengeOrderedDates(lang, challengeWeek);
+        const orderedItems = getWeeklyChallengeOrderedItems(lang, challengeWeek);
+        const orderedDates = orderedItems.map((it) => it.date);
         if (orderedDates.length < 2) {
             return sendError(res, 500, "Base d'événements indisponible pour cette langue.");
+        }
+        if (!drawMatches(body.eventIds, orderedItems)) {
+            return sendError(res, 409, STALE_DRAW_MESSAGE);
         }
 
         const replay = DailyEngine.replayDailyGame(orderedDates, rounds);
