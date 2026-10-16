@@ -1,5 +1,14 @@
 // GET  /api/league?isoWeek=&deviceId=&limit=  → classement du groupe hebdo du joueur
-// POST /api/league { deviceId, pseudo?, isoWeek, xp }         → enregistre l'XP hebdo du joueur
+// POST /api/league { deviceId, pseudo?, isoWeek }  → enregistre le joueur (l'XP déclaré est ignoré)
+//
+// L'XP de la ligue n'est plus déclaré par l'appareil : il est CALCULÉ ICI, à
+// partir des seules parties que le serveur a rejouées lui-même — le Défi du
+// jour et le Défi hebdomadaire de la semaine (voir api/scores.js,
+// api/weeklyScores.js). L'XP local (tous modes confondus) n'est pas
+// vérifiable : le laisser compter revenait à classer qui envoyait le plus
+// grand nombre, plafonné à un million. Le principe affiché pour les défis —
+// « le serveur ne fait jamais confiance à un score, seulement aux actions » —
+// vaut désormais aussi pour la ligue.
 //
 // Ligue hebdomadaire "légère" : pas de table de cohortes, pas de tâche
 // planifiée, pas d'échelle de paliers (Bronze/Argent/...) persistée d'une
@@ -24,13 +33,44 @@ const { handlePreflight, readJsonBody, sendError } = require('./_lib/http');
 const LEAGUE_GROUPS = 300;
 const DEFAULT_LIMIT = 30;
 const MAX_LIMIT = 50;
-const MAX_WEEKLY_XP = 1000000; // Garde-fou large : pas de rejeu anti-triche ici (contrairement à /api/scores), juste une borne de sécurité.
 const ISO_WEEK_RE = /^\d{4}-W\d{2}$/;
 
 // Fragment SQL réutilisé pour le calcul du groupe : "w" doit être l'alias de
 // la ligne weekly_xp courante dans la requête où ce fragment est inséré.
 const GROUP_MATCH_SQL =
     'abs(hashtext(w.player_id::text || \':\' || $1)) % $2 = abs(hashtext($3::text || \':\' || $1)) % $2';
+
+// XP d'une partie de défi vérifiée : même barème que la fin de partie du
+// client (js/app.js: endGame) SANS les éléments invérifiables côté serveur
+// (multiplicateur de série, bonus « sans faute »). Les parties jugées
+// suspectes (temps de réaction impossibles) ne comptent pas.
+const CHALLENGE_XP_SQL = 'round(score * 0.5)::int + case when won then 50 else 0 end + 100';
+
+// Table virtuelle `w` (player_id, xp) : XP vérifié de la semaine ISO $1 ;
+// $5 et $6 sont le lundi et le dimanche de cette semaine.
+const VERIFIED_XP_CTE = `
+    with w as (
+        select player_id, sum(x)::int as xp from (
+            select player_id, ${CHALLENGE_XP_SQL} as x
+              from daily_scores
+             where challenge_date between $5::date and $6::date and not suspicious
+            union all
+            select player_id, ${CHALLENGE_XP_SQL} as x
+              from weekly_challenge_scores
+             where challenge_week = $1 and not suspicious
+        ) u group by player_id
+    )`;
+
+// Lundi et dimanche (YYYY-MM-DD) d'une semaine ISO « YYYY-Www ».
+function isoWeekBounds(isoWeek) {
+    const [y, w] = isoWeek.split('-W').map(Number);
+    const jan4 = new Date(Date.UTC(y, 0, 4));
+    const mondayOfWeek1 = new Date(jan4.getTime() - ((jan4.getUTCDay() + 6) % 7) * 86400000);
+    const monday = new Date(mondayOfWeek1.getTime() + (w - 1) * 7 * 86400000);
+    const sunday = new Date(monday.getTime() + 6 * 86400000);
+    const f = (d) => d.toISOString().slice(0, 10);
+    return [f(monday), f(sunday)];
+}
 
 function resolveIsoWeek(raw) {
     return typeof raw === 'string' && ISO_WEEK_RE.test(raw) ? raw : getIsoWeekString(new Date());
@@ -46,26 +86,13 @@ module.exports = async (req, res) => {
             const body = await readJsonBody(req);
             const { deviceId, pseudo } = body || {};
             const isoWeek = resolveIsoWeek(body && body.isoWeek);
-            const xp = Math.max(0, Math.min(MAX_WEEKLY_XP, Math.round(Number(body && body.xp)) || 0));
-
             if (!isValidDeviceId(deviceId)) {
                 return sendError(res, 400, 'deviceId invalide.');
             }
-
-            const player = await upsertPlayer(deviceId, pseudo);
-            // Le client envoie son total hebdo LOCAL (pas un delta) : GREATEST
-            // protège contre un appareil qui pousserait une valeur périmée après
-            // qu'un autre appareil du même joueur ait déjà synchronisé plus haut
-            // (même logique défensive que api/scores.js: on conflict ... where).
-            await query(
-                `insert into weekly_xp (player_id, iso_week, xp, updated_at)
-                 values ($1, $2, $3, now())
-                 on conflict (player_id, iso_week) do update
-                   set xp = greatest(weekly_xp.xp, excluded.xp), updated_at = now()`,
-                [player.id, isoWeek, xp]
-            );
-
-            return res.status(200).json({ isoWeek, xp });
+            // Enregistre seulement le joueur (pseudo) : l'XP déclaré est ignoré,
+            // les anciens clients qui l'envoient encore reçoivent donc une réponse valide.
+            await upsertPlayer(deviceId, pseudo);
+            return res.status(200).json({ isoWeek, xp: null, verified: true });
         }
 
         if (req.method === 'GET') {
@@ -83,35 +110,38 @@ module.exports = async (req, res) => {
                 return res.status(200).json({ isoWeek, groupSize: 0, entries: [], me: null });
             }
 
+            const [monday, sunday] = isoWeekBounds(isoWeek);
+            const params = [isoWeek, LEAGUE_GROUPS, me.id, limit, monday, sunday];
+
             // rank() over (...) : fonction fenêtre standard (comme dans
             // api/leaderboard.js), nécessaire pour classer les lignes du groupe.
             const { rows } = await query(
-                `select p.pseudo, w.xp,
-                        rank() over (order by w.xp desc) as rank
-                 from weekly_xp w
-                 join players p on p.id = w.player_id
-                 where w.iso_week = $1 and ${GROUP_MATCH_SQL}
+                `${VERIFIED_XP_CTE}
+                 select p.pseudo, w.xp, rank() over (order by w.xp desc) as rank
+                 from w join players p on p.id = w.player_id
+                 where ${GROUP_MATCH_SQL}
                  order by w.xp desc
                  limit $4`,
-                [isoWeek, LEAGUE_GROUPS, me.id, limit]
+                params
             );
             const entries = rows.map((r) => ({ rank: Number(r.rank), pseudo: r.pseudo, xp: r.xp }));
 
             const mineResult = await query(
-                `select w.xp,
-                        (select count(*)::int + 1 from weekly_xp w
-                          where w.iso_week = $1 and ${GROUP_MATCH_SQL} and w.xp > mine.xp) as rank
-                 from weekly_xp mine
-                 where mine.player_id = $3 and mine.iso_week = $1`,
-                [isoWeek, LEAGUE_GROUPS, me.id]
+                `${VERIFIED_XP_CTE}
+                 select mine.xp,
+                        (select count(*)::int + 1 from w where ${GROUP_MATCH_SQL} and w.xp > mine.xp) as rank
+                 from w mine
+                 where mine.player_id = $3 and $4::int > 0`,
+                params
             );
             const meEntry = mineResult.rows[0]
                 ? { rank: mineResult.rows[0].rank, pseudo: me.pseudo, xp: mineResult.rows[0].xp }
                 : null;
 
             const groupSizeResult = await query(
-                `select count(*)::int as total from weekly_xp w where w.iso_week = $1 and ${GROUP_MATCH_SQL}`,
-                [isoWeek, LEAGUE_GROUPS, me.id]
+                `${VERIFIED_XP_CTE}
+                 select count(*)::int as total from w where ${GROUP_MATCH_SQL} and $4::int > 0`,
+                params
             );
 
             return res.status(200).json({

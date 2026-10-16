@@ -157,14 +157,17 @@ function submitWeeklyChallengeScoreToServer(pseudo) {
         pseudo: pseudo || (typeof pseudoLoad === 'function' ? pseudoLoad() : '') || 'Anonyme',
         lang: currentDailyLang(),
         isoWeek: getWeeklyChallengeSeedString(),
-        rounds: (typeof weeklyChallengeRoundLog !== 'undefined' && Array.isArray(weeklyChallengeRoundLog)) ? weeklyChallengeRoundLog : []
+        rounds: (typeof weeklyChallengeRoundLog !== 'undefined' && Array.isArray(weeklyChallengeRoundLog)) ? weeklyChallengeRoundLog : [],
+        eventIds: weeklyChallengeEventsWithLocation.map(item => item.event.id)
     };
 
     HistoriAxeAPI.submitWeeklyChallengeScore(payload).then(res => {
         if (!res.ok) {
             if (feedbackEl) {
                 feedbackEl.className = 'daily-submit-feedback error';
-                feedbackEl.innerText = t('weekly.submit_error') || "Impossible d'envoyer le score pour le moment. Réessayez.";
+                feedbackEl.innerText = res.status === 409 && res.error
+                    ? res.error
+                    : (t('weekly.submit_error') || "Impossible d'envoyer le score pour le moment. Réessayez.");
             }
             if (submitBtn) {
                 submitBtn.disabled = false;

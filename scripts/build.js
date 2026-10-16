@@ -58,4 +58,35 @@ itemsToCopy.forEach(item => {
     }
 });
 
+// URL du backend pour l'app native. js/apiClient.js la lit dans
+// NATIVE_APP_API_BASE_URL, vide dans le dépôt : l'app Capacitor est servie
+// depuis un bundle local, où location.origin ne désigne pas le backend, et
+// sans cette URL classement, synchronisation, ligue et duels échouent en
+// silence. Elle est donc injectée dans la COPIE de www/ à la compilation
+// (variable HISTORIAXE_API_BASE_URL), jamais écrite dans le dépôt.
+// `--native` (scripts cap:*) refuse de construire sans elle ; le build web
+// (Vercel) n'en a pas besoin, la PWA appelle son propre domaine.
+const apiBase = (process.env.HISTORIAXE_API_BASE_URL || '').trim().replace(/\/+$/, '');
+const isNativeBuild = process.argv.includes('--native');
+if (apiBase) {
+    let validBase = false;
+    try { validBase = new URL(apiBase).protocol === 'https:' && !/['"\\\s]/.test(apiBase); } catch (e) { /* URL invalide */ }
+    if (!validBase) {
+        console.error('HISTORIAXE_API_BASE_URL doit être une URL en https (reçu : ' + apiBase + ')');
+        process.exit(1);
+    }
+    const clientPath = path.join(wwwDir, 'js', 'apiClient.js');
+    const source = fs.readFileSync(clientPath, 'utf8');
+    const marker = "var NATIVE_APP_API_BASE_URL = '';";
+    if (!source.includes(marker)) {
+        console.error('Marqueur NATIVE_APP_API_BASE_URL introuvable dans js/apiClient.js : injection impossible.');
+        process.exit(1);
+    }
+    fs.writeFileSync(clientPath, source.replace(marker, "var NATIVE_APP_API_BASE_URL = '" + apiBase + "';"));
+    console.log('✓ API native : ' + apiBase);
+} else if (isNativeBuild) {
+    console.error('Build natif : définissez HISTORIAXE_API_BASE_URL (adresse https de votre déploiement Vercel).');
+    process.exit(1);
+}
+
 console.log('Web bundle built successfully in www/!');

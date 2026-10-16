@@ -111,9 +111,6 @@ var HistoriAxeAPI = (function () {
                 isoWeek: opts.isoWeek, deviceId: opts.deviceId, limit: opts.limit
             }));
         },
-        submitWeeklyXp: function (deviceId, pseudo, isoWeek, xp) {
-            return request('POST', '/api/league', { deviceId: deviceId, pseudo: pseudo, isoWeek: isoWeek, xp: xp });
-        },
         createDuel: function (deviceId, pseudo, lang, date) {
             return request('POST', '/api/duels', { deviceId: deviceId, pseudo: pseudo, lang: lang, date: date });
         },

@@ -5952,7 +5952,6 @@ function endGame(isWin) {
     // SRS, favoris...) après chaque partie — voir syncPushProgress ci-dessus.
     if (currentMode !== 'discovery') {
         syncPushProgress();
-        if (typeof pushWeeklyLeagueXp === 'function') pushWeeklyLeagueXp();
     }
 }
 

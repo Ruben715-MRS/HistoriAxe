@@ -34,9 +34,13 @@ function renderLeagueRow(entry, isMe) {
 }
 
 function renderLeagueModal() {
-    const weeklyXp = weeklyXpLoad().xp;
+    // XP de la ligue = celui des défis que le serveur a rejoués (voir
+    // api/league.js) ; il s'affiche une fois la réponse reçue.
     const hintEl = document.getElementById('league-week-hint');
-    if (hintEl) hintEl.innerHTML = t('league.week_hint', { xp: `<strong id="league-my-xp">${weeklyXp}</strong>` });
+    const setHintXp = (xp) => {
+        if (hintEl) hintEl.innerHTML = t('league.week_hint', { xp: `<strong id="league-my-xp">${xp}</strong>` });
+    };
+    setHintXp('–');
 
     const container = document.getElementById('league-list-container');
     if (!container) return;
@@ -58,6 +62,7 @@ function renderLeagueModal() {
             container.innerHTML = `<div class="daily-leaderboard-empty">${t('league.error')}</div>`;
             return;
         }
+        setHintXp(res.data.me ? res.data.me.xp : 0);
         const entries = res.data.entries || [];
         if (entries.length === 0) {
             container.innerHTML = `<div class="daily-leaderboard-empty">${t('league.empty')}</div>`;
@@ -70,19 +75,4 @@ function renderLeagueModal() {
         }
         container.innerHTML = html;
     });
-}
-
-// Pousse le total d'XP hebdo local vers le backend (best-effort, comme
-// syncPushProgress dans js/app.js). Appelé en fin de partie — throttle
-// volontaire : pas un appel réseau à chaque awardXP() (voir
-// js/gamification.js: weeklyXpAdd, purement local).
-function pushWeeklyLeagueXp() {
-    if (typeof HistoriAxeAPI === 'undefined' || !HistoriAxeAPI.isConfigured()) return;
-    try {
-        const deviceId = getOrCreateDeviceId();
-        const pseudo = (typeof pseudoLoad === 'function' ? pseudoLoad() : '') || null;
-        const weekly = weeklyXpLoad();
-        if (weekly.xp <= 0) return;
-        HistoriAxeAPI.submitWeeklyXp(deviceId, pseudo, weekly.isoWeek, weekly.xp);
-    } catch (e) {}
 }

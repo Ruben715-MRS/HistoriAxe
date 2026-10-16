@@ -42,14 +42,18 @@ variable.
 La PWA web fonctionne sans réglage supplémentaire (elle appelle `/api/...`
 sur son propre domaine). L'app iOS/Android, elle, charge ses pages depuis un
 bundle local (`capacitor://localhost` / `https://localhost`) : il faut donc
-indiquer explicitement l'URL de votre déploiement Vercel avant de builder
-l'app native, dans `js/apiClient.js` :
+indiquer explicitement l'URL de votre déploiement Vercel au moment de builder
+l'app native, par une variable d'environnement (injectée dans la copie `www/`
+de `js/apiClient.js`, jamais écrite dans le dépôt) :
 
-```js
-var NATIVE_APP_API_BASE_URL = 'https://votre-projet.vercel.app';
+```sh
+HISTORIAXE_API_BASE_URL=https://votre-projet.vercel.app npm run cap:build:ios
 ```
 
-Puis `npm run cap:build:ios`.
+Sans cette variable, les scripts `cap:*` refusent de construire : l'app native
+ne pourrait joindre ni classement, ni synchronisation, ni ligue, ni duels.
+`capacitor.config.json` ne définit plus `server.iosScheme` : Capacitor réserve
+`capacitor://` à iOS et rejette `https` (WKWebView n'accepte pas ce schéma).
 
 **Privacy Manifest (obligatoire à la soumission App Store depuis 2024) :**
 `ios/App/App/PrivacyInfo.xcprivacy` est fourni (déclare les APIs "required
@@ -73,8 +77,17 @@ hebdomadaire), qui :
    langue donnée, à partir des vraies dates de `data/<lang>.json` ;
 2. rejoue la partie coup par coup avec `js/dailyEngine.js` (le même module
    que le client, partagé pour ne jamais diverger) ;
-3. enregistre le score ainsi recalculé, en ne conservant que le meilleur par
-   joueur/jour (ou semaine ISO)/langue.
+3. enregistre le score ainsi recalculé : pour le **Défi du jour, seul le
+   premier envoi compte** (`on conflict do nothing`) ; le client mémorise son
+   premier essai du jour (`js/daily.js: registerDailyAttempt`) et c'est
+   toujours celui-là qui est envoyé, même après avoir rejoué. Défi hebdomadaire :
+   le meilleur par joueur/semaine ISO/langue.
+
+Le client joint aussi les **ids du tirage** qu'il a joué (`eventIds`) ; si le
+serveur, avec son propre pack, en tire d'autres, il répond 409 plutôt que de
+rejouer le journal sur de mauvaises dates. Le tirage classe les événements par
+un hachage de (graine + id) (`DailyEngine.pickDailyItems`) : il ne dépend ni de
+l'ordre du pack ni, pour l'essentiel, des ajouts de contenu.
 
 Modifier le score en local (DevTools, JS altéré...) n'a donc aucun effet :
 le serveur ne fait jamais confiance à un score, seulement aux actions.
@@ -156,8 +169,11 @@ qu'en partagé — les deux défis ne tournent jamais en même temps, mais des
   actifs, comparaison à la période précédente. Entièrement local (journal
   compact dans `localStorage`, purgé au-delà de 35 jours), proposé
   automatiquement une fois par semaine ISO.
-- **Ligue hebdomadaire** (`api/league.js`, table `weekly_xp`) : classement
-  d'un groupe d'une trentaine de joueurs par XP gagné cette semaine. Le
+- **Ligue hebdomadaire** (`api/league.js`) : classement
+  d'un groupe d'une trentaine de joueurs par XP **vérifié** cette semaine — celui
+  des parties de Défi du jour et de Défi hebdomadaire que le serveur a rejouées
+  (l'XP local, invérifiable, n'est plus envoyé ; la table `weekly_xp` est
+  abandonnée). Le
   groupe est recalculé à la volée par hash déterministe
   (`player_id` + semaine ISO), sans job planifié ni table de cohortes — voir
   le commentaire en tête du fichier pour les limites connues de cette

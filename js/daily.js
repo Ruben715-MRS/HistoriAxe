@@ -43,6 +43,41 @@ function escapeHtml(str) {
         .replace(/'/g, '&#39;');
 }
 
+// Premier essai du jour, conservé sur l'appareil : c'est lui — et lui seul —
+// qui est envoyé au classement (le serveur ne garde d'ailleurs que le premier
+// envoi). Sans cela, on rejouerait le défi en connaissant déjà les dix dates
+// et l'on enverrait le meilleur essai.
+const DAILY_FIRST_ATTEMPT_KEY = 'historiaxe_daily_first_attempt_v1';
+
+function dailyAttemptLoad() {
+    try {
+        const rec = JSON.parse(localStorage.getItem(DAILY_FIRST_ATTEMPT_KEY));
+        if (rec && rec.date === getDailySeedString() && rec.lang === currentDailyLang()) return rec;
+    } catch (e) { }
+    return null;
+}
+
+function dailyDrawIds() {
+    return (typeof dailyChallengeEventsWithLocation !== 'undefined' ? dailyChallengeEventsWithLocation : [])
+        .map(item => item.event.id);
+}
+
+// Renvoie { record, isReplay } : enregistre l'essai en cours s'il est le premier du jour.
+function registerDailyAttempt() {
+    const existing = dailyAttemptLoad();
+    if (existing) return { record: existing, isReplay: true };
+    const record = {
+        date: getDailySeedString(),
+        lang: currentDailyLang(),
+        rounds: (typeof dailyRoundLog !== 'undefined' && Array.isArray(dailyRoundLog)) ? dailyRoundLog.slice() : [],
+        eventIds: dailyDrawIds(),
+        score: Math.round(score),
+        time: totalTimePlayed
+    };
+    try { localStorage.setItem(DAILY_FIRST_ATTEMPT_KEY, JSON.stringify(record)); } catch (e) { }
+    return { record, isReplay: false };
+}
+
 function openDailyResultsModal(isWin) {
     const modal = document.getElementById('modal-daily-results');
     if (!modal) return;
@@ -60,7 +95,13 @@ function openDailyResultsModal(isWin) {
     if (scoreEl) scoreEl.innerText = Math.round(score);
     if (timeEl) timeEl.innerText = `${formatDecimal(totalTimePlayed)} s`;
 
-    if (feedbackEl) { feedbackEl.innerText = ''; feedbackEl.className = 'daily-submit-feedback'; }
+    const attempt = registerDailyAttempt();
+    if (feedbackEl) {
+        feedbackEl.innerText = attempt.isReplay
+            ? (t('daily.replay_note', { score: attempt.record.score }) || `Seul ton premier essai du jour est classé (${attempt.record.score} pts).`)
+            : '';
+        feedbackEl.className = 'daily-submit-feedback';
+    }
     if (submitBtn) {
         submitBtn.disabled = false;
         submitBtn.classList.remove('hidden');
@@ -184,19 +225,25 @@ function submitDailyScoreToServer(pseudo) {
     }
 
     const deviceId = getOrCreateDeviceId();
+    const first = dailyAttemptLoad();
     const payload = {
         deviceId: deviceId,
         pseudo: pseudo || (typeof pseudoLoad === 'function' ? pseudoLoad() : '') || 'Anonyme',
         lang: currentDailyLang(),
         date: getDailySeedString(),
-        rounds: (typeof dailyRoundLog !== 'undefined' && Array.isArray(dailyRoundLog)) ? dailyRoundLog : []
+        // Toujours le premier essai du jour, même si l'on vient d'en rejouer un.
+        rounds: first ? first.rounds : [],
+        eventIds: first ? first.eventIds : []
     };
 
     HistoriAxeAPI.submitDailyScore(payload).then(res => {
         if (!res.ok) {
             if (feedbackEl) {
                 feedbackEl.className = 'daily-submit-feedback error';
-                feedbackEl.innerText = t('daily.submit_error') || "Impossible d'envoyer le score pour le moment. Réessayez.";
+                // 409 : le contenu de l'app ne correspond plus au tirage du serveur.
+                feedbackEl.innerText = res.status === 409 && res.error
+                    ? res.error
+                    : (t('daily.submit_error') || "Impossible d'envoyer le score pour le moment. Réessayez.");
             }
             if (submitBtn) {
                 submitBtn.disabled = false;
@@ -208,7 +255,9 @@ function submitDailyScoreToServer(pseudo) {
         const data = res.data;
         if (feedbackEl) {
             feedbackEl.className = 'daily-submit-feedback success';
-            feedbackEl.innerText = t('daily.submit_success', { rank: data.rank, total: data.totalPlayers })
+            feedbackEl.innerText = (data.alreadyRanked
+                ? t('daily.submit_already', { rank: data.rank, total: data.totalPlayers, score: data.bestScore })
+                : t('daily.submit_success', { rank: data.rank, total: data.totalPlayers }))
                 || `Score envoyé ! #${data.rank} sur ${data.totalPlayers} dans le monde.`;
         }
         if (submitBtn) submitBtn.classList.add('hidden');

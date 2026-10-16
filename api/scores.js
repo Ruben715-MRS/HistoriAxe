@@ -13,7 +13,8 @@
 const { ensureSchema, query } = require('./_lib/db');
 const { upsertPlayer, isValidDeviceId } = require('./_lib/players');
 const { SUPPORTED_LANGS } = require('./_lib/dataset');
-const { getDailyOrderedDates, resolveChallengeDate } = require('./_lib/dailyChallenge');
+const { getDailyOrderedItems, resolveChallengeDate } = require('./_lib/dailyChallenge');
+const { drawMatches, STALE_DRAW_MESSAGE } = require('./_lib/drawCheck');
 const DailyEngine = require('../js/dailyEngine.js');
 const { handlePreflight, readJsonBody, sendError } = require('./_lib/http');
 
@@ -48,43 +49,41 @@ module.exports = async (req, res) => {
         const player = await upsertPlayer(deviceId, pseudo);
         const challengeDate = resolveChallengeDate(typeof date === 'string' ? date : '', new Date());
 
-        const orderedDates = getDailyOrderedDates(lang, challengeDate);
+        const orderedItems = getDailyOrderedItems(lang, challengeDate);
+        const orderedDates = orderedItems.map((it) => it.date);
         if (orderedDates.length < 2) {
             return sendError(res, 500, "Base d'événements indisponible pour cette langue.");
+        }
+        if (!drawMatches(body.eventIds, orderedItems)) {
+            return sendError(res, 409, STALE_DRAW_MESSAGE);
         }
 
         const replay = DailyEngine.replayDailyGame(orderedDates, rounds);
 
-        const existing = await query(
-            'select score, time_seconds from daily_scores where player_id = $1 and challenge_date = $2 and lang = $3',
-            [player.id, challengeDate, lang]
-        );
-        const previousBest = existing.rows[0] || null;
-        const isNewBest = !previousBest
-            || replay.score > previousBest.score
-            || (replay.score === previousBest.score && replay.timeSeconds < Number(previousBest.time_seconds));
-
-        await query(
+        // Seul le PREMIER essai du jour est classé : sinon on rejoue le défi en
+        // connaissant déjà les dix dates, et le classement récompense la
+        // mémoire. `do nothing` rend l'envoi idempotent ; la réponse porte le
+        // score réellement conservé, qui peut être celui d'un essai antérieur.
+        const inserted = await query(
             `insert into daily_scores
                 (player_id, challenge_date, lang, score, time_seconds, rounds_played, rounds_total, won, suspicious, created_at, updated_at)
              values ($1,$2,$3,$4,$5,$6,$7,$8,$9, now(), now())
-             on conflict (player_id, challenge_date, lang) do update
-               set score = excluded.score,
-                   time_seconds = excluded.time_seconds,
-                   rounds_played = excluded.rounds_played,
-                   rounds_total = excluded.rounds_total,
-                   won = excluded.won,
-                   suspicious = excluded.suspicious,
-                   updated_at = now()
-               where excluded.score > daily_scores.score
-                  or (excluded.score = daily_scores.score and excluded.time_seconds < daily_scores.time_seconds)`,
+             on conflict (player_id, challenge_date, lang) do nothing
+             returning score`,
             [player.id, challengeDate, lang, replay.score, replay.timeSeconds, replay.roundsPlayed, replay.roundsTotal, replay.won, replay.suspicious]
         );
-
-        // Score effectivement conservé en base (le meilleur des deux), pour un
-        // rang toujours cohérent avec ce qui sera affiché dans le classement.
-        const bestScore = isNewBest ? replay.score : previousBest.score;
-        const bestTime = isNewBest ? replay.timeSeconds : Number(previousBest.time_seconds);
+        const alreadyRanked = inserted.rows.length === 0;
+        let bestScore = replay.score;
+        let bestTime = replay.timeSeconds;
+        if (alreadyRanked) {
+            const kept = await query(
+                'select score, time_seconds from daily_scores where player_id = $1 and challenge_date = $2 and lang = $3',
+                [player.id, challengeDate, lang]
+            );
+            bestScore = kept.rows[0].score;
+            bestTime = Number(kept.rows[0].time_seconds);
+        }
+        const isNewBest = !alreadyRanked;
 
         const rankResult = await query(
             `select count(*)::int + 1 as rank
@@ -107,6 +106,7 @@ module.exports = async (req, res) => {
             bestScore,
             bestTimeSeconds: bestTime,
             isNewBest,
+            alreadyRanked,
             rank: rankResult.rows[0].rank,
             totalPlayers: totalResult.rows[0].total,
             suspicious: replay.suspicious,

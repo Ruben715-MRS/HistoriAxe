@@ -3,8 +3,8 @@
   "lang": "fr",
   "app": {
     "title": "HistoriAxe",
-    "subtitle": "Mémorisation espacée de l'Histoire",
-    "tagline": "Mémorisation espacée · Classement mondial vérifié"
+    "subtitle": "Le quiz chronologique de l'Histoire",
+    "tagline": "Quiz chronologique · Classement mondial vérifié"
   },
   "nav": {
     "back": "Retour",
@@ -239,6 +239,8 @@
     "submit_loading": "Envoi en cours…",
     "submit_success": "Score envoyé ! #{rank} sur {total} dans le monde.",
     "submit_error": "Impossible d'envoyer le score pour le moment. Réessayez.",
+    "replay_note": "Entraînement : seul ton premier essai du jour est classé ({score} pts).",
+    "submit_already": "Ton premier essai du jour était déjà classé : {score} pts, #{rank} sur {total} dans le monde.",
     "submit_offline": "Classement mondial indisponible hors connexion.",
     "leaderboard_title": "🏆 Classement du jour",
     "leaderboard_empty": "Aucun score envoyé pour l'instant. Soyez le premier !",
@@ -549,7 +551,7 @@
   },
   "league": {
     "title": "🥇 Ta ligue de la semaine",
-    "week_hint": "Ton total cette semaine : {xp} XP. Le classement se réinitialise chaque semaine.",
+    "week_hint": "Ton XP de la semaine : {xp}. La ligue compte l'XP des parties du Défi du jour et du Défi hebdomadaire, rejouées et vérifiées par le serveur. Elle repart de zéro chaque lundi.",
     "offline": "Ligue indisponible hors connexion.",
     "loading": "Chargement…",
     "error": "Ligue momentanément indisponible.",

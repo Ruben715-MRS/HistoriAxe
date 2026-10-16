@@ -184,3 +184,30 @@ test('replayDailyGame détecte des temps de réponse suspects (triche probable)'
     const result = replayDailyGame(orderedDates, rounds);
     assert.equal(result.suspicious, true);
 });
+
+test('pickDailyItems : le tirage ne dépend pas de l\'ordre des items et résiste aux ajouts de contenu', () => {
+    const items = Array.from({ length: 400 }, (_, i) => ({ id: 'e' + i, date: 1000 + i * 3 }));
+    const base = pickDailyItems(items, '2026-03-10', 10).map((it) => it.id);
+    const reversed = pickDailyItems(items.slice().reverse(), '2026-03-10', 10).map((it) => it.id);
+    assert.deepEqual(reversed, base, 'même tirage quel que soit l\'ordre du tableau');
+    // Ajouter 5 % de contenu ne doit pas redistribuer tout le tirage (un mélange de la liste entière le faisait).
+    const grown = items.concat(Array.from({ length: 20 }, (_, i) => ({ id: 'n' + i, date: 1000 + i * 3 })));
+    const after = pickDailyItems(grown, '2026-03-10', 10).map((it) => it.id);
+    const kept = after.filter((id) => base.includes(id)).length;
+    assert.ok(kept >= 7, `${kept}/10 événements conservés après ajout de contenu`);
+});
+
+test('pickDailyItems : un item client {event:{id}} et un item serveur {id} tirent la même chose', () => {
+    const server = Array.from({ length: 80 }, (_, i) => ({ id: 'x' + i, date: 100 + i * 20 }));
+    const client = server.map((s) => ({ event: { id: s.id, date: s.date }, theme: {} }));
+    const a = pickDailyItems(server, '2026-04-01', 10).map((it) => it.id);
+    const b = pickDailyItems(client, '2026-04-01', 10, (it) => it.event.date).map((it) => it.event.id);
+    assert.deepEqual(a, b);
+});
+
+test('replayDailyGame : une erreur ne rapporte aucun point', () => {
+    // ancre = dernière date ; cartes jouées en partant de la fin du tirage
+    const dates = [1900, 1800, 1700, 1000]; // ancre 1000, puis 1700 (posée avant → faux), ...
+    const r = replayDailyGame(dates, [{ slotIndex: 0, elapsedMs: 5000 }]);
+    assert.equal(r.score, 0);
+});
