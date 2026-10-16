@@ -132,6 +132,11 @@ test('« Réviser » explique qu’il n’y a rien à réviser sur un profil neu
     await page.locator('#btn-reviser').click();
 
     expect(await visibleScreen(page)).toBe('screen-revision-hub');
+    // L'onglet « À réviser » s'ouvre en premier : rien n'est dû sur un profil neuf.
+    await expect(page.locator('#revision-due-empty')).toBeVisible();
+    await expect(page.locator('#revision-due-content')).toBeHidden();
+    // Pas de point faible non plus.
+    await page.locator('#revision-hub-tabs button[data-value="weak"]').click();
     await expect(page.locator('#revision-hub-empty')).toBeVisible();
     await expect(page.locator('#revision-hub-content')).toBeHidden();
 });

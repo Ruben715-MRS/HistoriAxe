@@ -271,6 +271,29 @@ l'`eventId` d'un repère — sont validées par `tests/data-schema.test.js` :
 une référence morte casse les tests au lieu de ne se voir qu'en dépliant la
 bonne branche au bon endroit de l'app.
 
+## Répétition espacée (« À réviser aujourd'hui »)
+
+Cinq boîtes de Leitner (`js/srs.js`) avec un intervalle chacune : **1, 3, 7, 14,
+30 jours**. Un événement réussi **à l'échéance** monte d'une boîte et ne revient
+qu'à la suivante ; raté, il retombe en boîte 1 et revient le lendemain. L'échéance
+se calcule (minuit local du jour de la dernière révision + l'intervalle) : l'entrée
+stockée garde sa forme `{ box, lastReviewed, failCount, successCount }`, les
+données déjà enregistrées restent valides, rien n'est migré.
+
+Avant ce changement, `lastReviewed` était écrit mais jamais lu : chaque réussite
+montait d'une boîte, si bien qu'on « maîtrisait » un événement en quatre bonnes
+réponses… en cinq minutes. **Une réussite avant l'échéance ne fait plus rien** (ni
+montée, ni report) : c'est le temps entre deux révisions qui fait la mémoire. La
+maîtrise affichée dans l'onglet Progression monte donc plus lentement, et c'est
+voulu.
+
+Côté écrans : « Réviser (n) » sur l'écran des catégories compte ce qui est **dû
+aujourd'hui** ; l'écran de révision s'ouvre sur l'onglet **À réviser** (session de
+10/20/30/50 événements, les plus fragiles puis les plus en retard d'abord ;
+« Rejouer » en tire la suite), à côté des onglets Points faibles (échecs récents,
+immédiatement rejouables) et Progression. Sans rien de dû, l'onglet annonce ce qui
+arrive demain. Pas de rappel par notification pour l'instant.
+
 ## L'écran des modes et « Reprendre »
 
 L'écran des modes d'un thème tenait 18 cartes sur 3 500 px : « Classique », le

@@ -274,7 +274,14 @@
     "leaderboard_error": "Classement momentanément indisponible."
   },
   "revision": {
-    "hub_title": "Réviser mes points faibles",
+    "hub_title": "Réviser",
+    "tab_due": "À réviser",
+    "due_session_title": "📅 Session du jour",
+    "due_session_desc": "Les événements dont l'échéance de révision est arrivée, les plus fragiles d'abord. Réussis à temps, ils reviennent de plus en plus tard ; ratés, dès demain.",
+    "due_subtitle": "{count} événements à réviser aujourd'hui",
+    "due_subtitle_overdue": "{count} événements à réviser aujourd'hui, dont {overdue} en retard",
+    "due_empty": "Rien à réviser aujourd'hui. Les événements que vous jouez reviennent ici quand leur échéance arrive.",
+    "due_empty_tomorrow": "Rien à réviser aujourd'hui 🎉 — {count} événements arrivent à échéance demain.",
     "tab_weak": "Points faibles",
     "tab_progress": "Progression",
     "weak_empty": "Aucun point faible détecté pour l'instant. Les événements manqués lors de vos parties apparaîtront ici pour être retravaillés.",

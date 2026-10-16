@@ -269,7 +269,14 @@
     "leaderboard_error": "Leaderboard temporarily unavailable."
   },
   "revision": {
-    "hub_title": "Review Weak Milestones",
+    "hub_title": "Review",
+    "tab_due": "Due today",
+    "due_session_title": "📅 Today's session",
+    "due_session_desc": "Events whose review date has come, weakest first. Answered right on time, they come back later and later; missed, they return tomorrow.",
+    "due_subtitle": "{count} events due today",
+    "due_subtitle_overdue": "{count} events due today, {overdue} of them overdue",
+    "due_empty": "Nothing to review today. Events you play come back here when they fall due.",
+    "due_empty_tomorrow": "Nothing to review today 🎉 — {count} events fall due tomorrow.",
     "tab_weak": "Weak Points",
     "tab_progress": "Mastery",
     "weak_empty": "No weak points detected yet. Events missed during games will appear here for targeted practice.",

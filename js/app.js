@@ -827,6 +827,24 @@ function saveSelectionAndReturn() {
 // Système de type Leitner à 5 boîtes, stocké dans le navigateur (localStorage).
 // Boîte 1 = tout juste manqué, boîte 5 = remaîtrisé (sort du lot des points faibles).
 
+// Événements dont l'échéance de révision est passée (js/srs.js), les plus urgents d'abord :
+// boîte basse, puis échéance la plus ancienne. Même forme d'éléments que getAllEventsWithLocation.
+function getDueEvents(now = Date.now()) {
+    const data = srsLoad();
+    return getAllEventsWithLocation()
+        .map(item => ({ item, entry: data[item.event.id] }))
+        .filter(x => x.entry && SRS.isDue(x.entry, now))
+        .sort(SRS.compareUrgency)
+        .map(x => x.item);
+}
+
+// { due, overdue, tomorrow } sur les seuls événements qui existent encore dans la base.
+function getDueSummary(now = Date.now()) {
+    const data = srsLoad();
+    const entries = getAllEventsWithLocation().map(item => data[item.event.id]).filter(Boolean);
+    return SRS.summarize(entries, now);
+}
+
 function getWeakEvents() {
     const data = srsLoad();
     return getAllEventsWithLocation().filter(item => {
@@ -889,7 +907,7 @@ function themeMasteryStats(theme, srs) {
         if (entry) {
             tested += 1;
             sumPct += (entry.box / 5) * 100;
-            if (entry.incorrect > 0 && entry.box < 5) weak += 1;
+            if (entry.failCount > 0 && entry.box < 5) weak += 1;
         }
     });
     return { total: theme.events.length, tested, weak, sumPct, themeCount: 1 };
@@ -1134,6 +1152,8 @@ let selectedSubcategoryIndex = null;
 let selectedThemeIndex = null;
 let currentMode = 'classic';
 let revisionMode = false;
+// Origine de la session de révision en cours : 'weak' (points faibles) ou 'due' (échéances).
+let revisionKind = 'weak';
 let revisionEvents = [];
 let revisionRequestedSize = 0;
 let dailyChallengeMode = false;
@@ -1444,7 +1464,19 @@ function screenAfterGame() {
 
 // Lance une session mélangée d'au plus n événements piochés parmi les points
 // faibles actuels. Si le stock est plus petit que n, on affiche simplement tout.
+// Session du jour : les événements arrivés à échéance (js/srs.js), les plus urgents d'abord.
+function launchDueRevision(n) {
+    const due = getDueEvents().map(item => item.event);
+    if (due.length === 0) return;
+    revisionKind = 'due';
+    revisionRequestedSize = n;
+    revisionMode = true;
+    revisionEvents = shuffleArray(due.slice(0, n));
+    showScreen('screen-modes');
+}
+
 function launchRandomRevision(n) {
+    revisionKind = 'weak';
     const weak = getWeakEvents().map(item => item.event);
     if (weak.length === 0) return;
     revisionRequestedSize = n;
@@ -1609,8 +1641,14 @@ function replayCurrentGame() {
         return;
     }
     if (revisionMode) {
-        const weak = getWeakEvents().map(item => item.event);
-        revisionEvents = shuffleArray(weak).slice(0, revisionRequestedSize || weak.length);
+        if (revisionKind === 'due') {
+            // Ce qui reste dû après la partie (les réussites ont repoussé les échéances) : on rejoue la suite.
+            const due = getDueEvents().map(item => item.event);
+            revisionEvents = shuffleArray(due.slice(0, revisionRequestedSize || due.length));
+        } else {
+            const weak = getWeakEvents().map(item => item.event);
+            revisionEvents = shuffleArray(weak).slice(0, revisionRequestedSize || weak.length);
+        }
     }
     startActualGame(currentMode);
 }
@@ -1852,7 +1890,8 @@ function initCategories() {
         return;
     }
 
-    const weakCount = (typeof getWeakEvents === 'function') ? getWeakEvents().length : 0;
+    // « Réviser (n) » : n = ce qui est dû AUJOURD'HUI (js/srs.js), pas la liste des points faibles.
+    const weakCount = (typeof getDueSummary === 'function') ? getDueSummary().due : 0;
     const favCount = (typeof favoritesLoad === 'function') ? favoritesLoad().length : 0;
 
     renderResumeCard(container);
@@ -2507,6 +2546,7 @@ function switchRevisionHubTab(tab) {
     document.querySelectorAll('#revision-hub-tabs button').forEach(btn => {
         btn.classList.toggle('active', btn.dataset.value === tab);
     });
+    document.getElementById('revision-hub-due-container').classList.toggle('hidden', tab !== 'due');
     document.getElementById('revision-hub-weak-container').classList.toggle('hidden', tab !== 'weak');
     document.getElementById('revision-hub-progress-container').classList.toggle('hidden', tab !== 'progress');
     if (tab === 'progress') initProgress();
@@ -2515,11 +2555,34 @@ function switchRevisionHubTab(tab) {
 // Écran de choix affiché après avoir sélectionné « Réviser mes points faibles » :
 // soit une session mélangée de taille choisie, soit la reprise d'un thème entier.
 // Comporte aussi l'onglet Progression (radar + barres de maîtrise par thème).
+// Onglet « À réviser » : ce qui est dû aujourd'hui, et à défaut ce qui arrive demain.
+function renderDueTab() {
+    const summary = getDueSummary();
+    const subtitle = document.getElementById('revision-due-subtitle');
+    const empty = document.getElementById('revision-due-empty');
+    const content = document.getElementById('revision-due-content');
+    if (summary.due === 0) {
+        subtitle.innerText = '';
+        empty.innerText = summary.tomorrow > 0
+            ? t('revision.due_empty_tomorrow', { count: summary.tomorrow })
+            : t('revision.due_empty');
+        empty.classList.remove('hidden');
+        content.classList.add('hidden');
+        return;
+    }
+    empty.classList.add('hidden');
+    content.classList.remove('hidden');
+    subtitle.innerText = summary.overdue > 0
+        ? t('revision.due_subtitle_overdue', { count: summary.due, overdue: summary.overdue })
+        : t('revision.due_subtitle', { count: summary.due });
+}
+
 function initRevisionHub() {
     document.querySelectorAll('#revision-hub-tabs button').forEach(btn => {
         btn.onclick = () => switchRevisionHubTab(btn.dataset.value);
     });
-    switchRevisionHubTab('weak');
+    switchRevisionHubTab('due');
+    renderDueTab();
 
     const weak = getWeakEvents();
     const weakThemes = getWeakThemes();

@@ -190,16 +190,8 @@ function srsSave(data) {
 function srsRecord(eventId, isSuccess) {
     if (!eventId) return;
     const data = srsLoad();
-    const current = data[eventId] || { box: 1, lastReviewed: 0, failCount: 0, successCount: 0 };
-    if (isSuccess) {
-        current.box = Math.min(5, (current.box || 1) + 1);
-        current.successCount = (current.successCount || 0) + 1;
-    } else {
-        current.box = 1;
-        current.failCount = (current.failCount || 0) + 1;
-    }
-    current.lastReviewed = Date.now();
-    data[eventId] = current;
+    // Boîtes à échéances (js/srs.js) : une réussite avant l'échéance ne change rien.
+    data[eventId] = SRS.applyResult(data[eventId], isSuccess, Date.now());
     srsSave(data);
 }
 

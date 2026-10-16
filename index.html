@@ -127,13 +127,33 @@
     <div id="screen-revision-hub" class="list-screen hidden">
         <button class="back-btn" onclick="showScreen('screen-categories')" aria-label="Retour aux catégories"
             data-i18n-attr="aria-label:nav.back">‹</button>
-        <h2 class="header-title" data-i18n="revision.hub_title">Réviser mes points faibles</h2>
+        <h2 class="header-title" data-i18n="revision.hub_title">Réviser</h2>
         <div class="segmented" id="revision-hub-tabs">
+            <button type="button" data-value="due" data-i18n="revision.tab_due">À réviser</button>
             <button type="button" data-value="weak" data-i18n="revision.tab_weak">Points faibles</button>
             <button type="button" data-value="progress" data-i18n="revision.tab_progress">Progression</button>
         </div>
 
-        <div id="revision-hub-weak-container">
+        <div id="revision-hub-due-container">
+            <p id="revision-due-subtitle" class="revision-hub-subtitle"></p>
+            <div id="revision-due-empty" class="empty-msg hidden"></div>
+            <div id="revision-due-content" class="revision-hub-content hidden">
+                <div class="revision-option-block">
+                    <h3 class="revision-option-title" data-i18n="revision.due_session_title">📅 Session du jour</h3>
+                    <p class="revision-option-desc" data-i18n="revision.due_session_desc">Les événements dont l'échéance de
+                        révision est arrivée, les plus fragiles d'abord. Réussis à temps, ils reviennent de plus en plus
+                        tard ; ratés, dès demain.</p>
+                    <div class="revision-quantity-row">
+                        <button class="btn quantity-btn" onclick="launchDueRevision(10)">10</button>
+                        <button class="btn quantity-btn" onclick="launchDueRevision(20)">20</button>
+                        <button class="btn quantity-btn" onclick="launchDueRevision(30)">30</button>
+                        <button class="btn quantity-btn" onclick="launchDueRevision(50)">50</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="revision-hub-weak-container" class="hidden">
             <p id="revision-hub-subtitle" class="revision-hub-subtitle"></p>
 
             <div id="revision-hub-empty" class="empty-msg hidden" data-i18n="revision.weak_empty">
@@ -1753,6 +1773,7 @@
     <div id="app-toast" class="toast-notification hidden"></div>
 
     <!-- MODULES JAVASCRIPT MODULAIRES HISTORIAXE -->
+    <script src="js/srs.js"></script>
     <script src="js/storage.js"></script>
     <script src="js/a11y.js"></script>
     <script src="js/audio.js"></script>

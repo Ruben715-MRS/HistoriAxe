@@ -12,7 +12,7 @@
 // 'install' recharge tout depuis le réseau. Un pack de langue ou un texte
 // d'UI modifié qui ne s'affiche pas malgré un déploiement réussi est
 // généralement le signe que l'un de ces deux numéros n'a pas été incrémenté.
-const CACHE_VERSION = '1.4.78';
+const CACHE_VERSION = '1.4.79';
 const APP_SHELL_CACHE = `historiaxe-shell-v${CACHE_VERSION}`;
 const DATA_CACHE = 'historiaxe-data-v1.0.60';
 
@@ -46,6 +46,7 @@ const APP_SHELL_FILES = [
     './css/fonts.css',
     './assets/fonts/inter-latin.woff2',
     './assets/fonts/material-symbols-outlined.woff2',
+    './js/srs.js',
     './js/storage.js',
     './js/a11y.js',
     './js/audio.js',
