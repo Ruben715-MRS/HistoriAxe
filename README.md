@@ -271,6 +271,25 @@ l'`eventId` d'un repère — sont validées par `tests/data-schema.test.js` :
 une référence morte casse les tests au lieu de ne se voir qu'en dépliant la
 bonne branche au bon endroit de l'app.
 
+## L'écran des modes et « Reprendre »
+
+L'écran des modes d'un thème tenait 18 cartes sur 3 500 px : « Classique », le
+mode principal, démarrait sous le pli (894 px pour un écran de 727). Il s'ouvre
+maintenant sur un grand bouton **Jouer** (partie classique, un tap), puis
+**La frise** (Entraînement, Classique, Chrono, Expert), puis trois groupes
+repliables — **Défis express** (Quiz, Blitz, Curseur, Intrus, Remise en ordre,
+Avant/Après, Périodes), **Explorer** (Découverte, Pendant ce temps, Qui est-ce ?,
+Fil du temps, Trouve l'écart), **Outils** (Sélection, Ajouter, Multijoueurs).
+Tout est déplié par défaut ; un groupe replié le reste d'une visite à l'autre
+(`MODES_GROUPS_KEY`, `initModesGroups`). Les identifiants `#mode-card-*` n'ont pas
+changé. Mesuré : 2 580 px au lieu de 3 540, « Classique » à 344 px.
+
+L'écran des catégories affiche une carte **Reprendre** vers le dernier thème
+ouvert (`lastThemeSave` dans `openThemeAt`, clé `LAST_THEME_KEY`, propre à
+l'appareil et hors synchronisation). Elle ouvre le thème là où on l'avait
+laissé : choix des axes s'il en a, sinon écran des modes. L'écran d'accueil
+(image à toucher) n'en porte pas : ce n'est qu'un seuil vers les catégories.
+
 ## Longueur de la manche
 
 Jusqu'ici, **une partie valait le thème entier**. Médiane de 18 événements,

@@ -364,121 +364,148 @@
         <div class="round-length hidden" id="round-length" role="group"
             aria-label="Longueur de la manche" data-i18n-attr="aria-label:rounds.aria_group"></div>
 
-        <div class="grid-modes">
-            <!-- Découverte : lance la frise directement, sauf pour un thème qui
-                 propose un sommaire — elle déplie alors le choix ci-dessous
-                 (voir js/mindMap.js: refreshDiscoveryPicker). -->
-            <div class="discovery-block">
-                <div role="button" tabindex="0" class="mode-card" id="mode-card-discovery" style="background-color: #2c3e50;"
-                    onclick="openDiscoveryMode()">
-                    <h3 data-i18n="modes.discovery.title">Découverte</h3>
-                    <p data-i18n="modes.discovery.desc">Consultez la frise chronologique sans jouer.</p>
+        <!-- Le geste principal d'abord : une partie classique du thème (ou de la sélection en
+             cours) en un tap. Le reste est rangé par intention ; chaque groupe se replie. -->
+        <div class="modes-play">
+            <button type="button" class="modes-play-btn" id="btn-modes-play" onclick="startActualGame('classic')">
+                <span class="modes-play-icon" aria-hidden="true">▶</span>
+                <span class="modes-play-text">
+                    <strong data-i18n="modes.play">Jouer</strong>
+                    <small data-i18n="modes.play_sub">Mode Classique · 3 vies</small>
+                </span>
+            </button>
+        </div>
+
+        <section class="modes-group modes-group-frise" id="modes-group-frise">
+            <h3 class="modes-group-title modes-group-static" data-i18n="modes.group_frise">La frise</h3>
+            <div class="grid-modes-square">
+                <div role="button" tabindex="0" class="mode-card" id="mode-card-training" onclick="startActualGame('training')">
+                    <h3 data-i18n="modes.training.title">Entraînement</h3>
+                    <p data-i18n="modes.training.desc">Aucune vie perdue. Jouez à votre rythme.</p>
                 </div>
-                <div class="mode-picker hidden" id="discovery-picker">
-                    <button type="button" class="mode-picker-btn" onclick="startActualGame('discovery')">
-                        <span class="mode-picker-icon">📜</span>
-                        <span data-i18n="mindmap.picker_frise">Frise</span>
-                    </button>
-                    <button type="button" class="mode-picker-btn" onclick="openMindMap()">
-                        <span class="mode-picker-icon">🗂️</span>
-                        <span data-i18n="mindmap.picker_summary">Sommaire</span>
-                    </button>
+                <div role="button" tabindex="0" class="mode-card" id="mode-card-classic" onclick="startActualGame('classic')">
+                    <h3 data-i18n="modes.classic.title">Classique</h3>
+                    <p data-i18n="modes.classic.desc">3 vies. Le mode de jeu standard.</p>
+                </div>
+                <div role="button" tabindex="0" class="mode-card" id="mode-card-chrono">
+                    <h3 data-i18n="modes.chrono.title">Chrono</h3>
+                    <p data-i18n="modes.chrono.desc">3 vies. Placez-les vite.</p>
+                </div>
+                <div role="button" tabindex="0" class="mode-card" id="mode-card-expert">
+                    <h3 data-i18n="modes.expert.title">Expert</h3>
+                    <p data-i18n="modes.expert.desc">1 vie, chronométré.</p>
                 </div>
             </div>
-            <div role="button" tabindex="0" class="mode-card" style="background-color: #34495e;" onclick="openSelectionMode()">
-                <h3 data-i18n="modes.selection.title">Sélection</h3>
-                <p data-i18n="modes.selection.desc">Choisissez les événements à conserver dans la partie.</p>
-            </div>
-            <div role="button" tabindex="0" class="mode-card" style="background-color: #34495e;" onclick="openAddEventModal()">
-                <h3 data-i18n="modes.add_event.title">Ajouter un événement</h3>
-                <p data-i18n="modes.add_event.desc">Créez vos événements pour ce thème.</p>
-            </div>
-        </div>
+        </section>
 
-        <hr class="mode-separator">
+        <section class="modes-group" id="modes-group-express" data-group="express">
+            <button type="button" class="modes-group-head" aria-expanded="true" aria-controls="modes-group-express-body">
+                <span class="modes-group-title" data-i18n="modes.group_express">Défis express</span>
+                <span class="modes-group-chevron" aria-hidden="true">▾</span>
+            </button>
+            <div class="modes-group-body grid-modes" id="modes-group-express-body">
+                <div role="button" tabindex="0" class="mode-card quiz-card" onclick="startQuizGame()">
+                    <h3 data-i18n="modes.quiz.title">Quiz</h3>
+                    <p data-i18n="modes.quiz.desc">Questions à choix multiples (QCM).</p>
+                </div>
+                <div role="button" tabindex="0" class="mode-card blitz-card" id="mode-card-blitz" onclick="startBlitzGame()">
+                    <h3 data-i18n="blitz.title">Blitz 60 secondes</h3>
+                    <p data-i18n="blitz.desc">Pas de vies, juste le chrono. « X est antérieur à Y » : vrai ou faux, le
+                        plus vite possible.</p>
+                </div>
+                <div role="button" tabindex="0" class="mode-card curseur-card" id="mode-card-curseur" onclick="startCurseurGame()">
+                    <h3 data-i18n="curseur.title">Le curseur</h3>
+                    <p data-i18n="curseur.desc">3 vies. Glissez le curseur sur l'année : plus vous tombez près, plus vous
+                        marquez.</p>
+                </div>
+                <div role="button" tabindex="0" class="mode-card intrus-card" id="mode-card-intrus" onclick="startIntrusGame()">
+                    <h3 data-i18n="intrus.title">L'intrus</h3>
+                    <p data-i18n="intrus.desc">3 vies. Quatre événements, trois qui vont ensemble : trouvez celui qui
+                        détonne.</p>
+                </div>
+                <div role="button" tabindex="0" class="mode-card ordre-mode-card" id="mode-card-ordre" onclick="startOrdreGame()">
+                    <h3 data-i18n="ordre.title">Remise en ordre</h3>
+                    <p data-i18n="ordre.desc">3 vies. Cinq cartes mélangées, sans leurs dates : classez-les d'un coup du
+                        plus ancien au plus récent.</p>
+                </div>
+                <div role="button" tabindex="0" class="mode-card avap-card" onclick="startAvapGame()">
+                    <h3 data-i18n="modes.avantapres.title">Avant / Après</h3>
+                    <p data-i18n="modes.avantapres.desc">3 vies. Entre deux événements sans dates, devinez lequel s'est
+                        produit en premier.</p>
+                </div>
+                <div role="button" tabindex="0" class="mode-card periodes-card" onclick="startPeriodesGame()">
+                    <h3 data-i18n="modes.periodes.title">Périodes & Ères</h3>
+                    <p data-i18n="modes.periodes.desc">3 vies. Situez chaque événement dans son siècle, son époque ou ses
+                        contemporains.</p>
+                </div>
+            </div>
+        </section>
 
-        <div class="grid-modes-square">
-            <div role="button" tabindex="0" class="mode-card" id="mode-card-training" onclick="startActualGame('training')">
-                <h3 data-i18n="modes.training.title">Entraînement</h3>
-                <p data-i18n="modes.training.desc">Aucune vie perdue. Jouez à votre rythme.</p>
+        <section class="modes-group" id="modes-group-explore" data-group="explore">
+            <button type="button" class="modes-group-head" aria-expanded="true" aria-controls="modes-group-explore-body">
+                <span class="modes-group-title" data-i18n="modes.group_explore">Explorer</span>
+                <span class="modes-group-chevron" aria-hidden="true">▾</span>
+            </button>
+            <div class="modes-group-body grid-modes" id="modes-group-explore-body">
+                <div class="discovery-block">
+                    <div role="button" tabindex="0" class="mode-card" id="mode-card-discovery" style="background-color: #2c3e50;"
+                        onclick="openDiscoveryMode()">
+                        <h3 data-i18n="modes.discovery.title">Découverte</h3>
+                        <p data-i18n="modes.discovery.desc">Consultez la frise chronologique sans jouer.</p>
+                    </div>
+                    <div class="mode-picker hidden" id="discovery-picker">
+                        <button type="button" class="mode-picker-btn" onclick="startActualGame('discovery')">
+                            <span class="mode-picker-icon">📜</span>
+                            <span data-i18n="mindmap.picker_frise">Frise</span>
+                        </button>
+                        <button type="button" class="mode-picker-btn" onclick="openMindMap()">
+                            <span class="mode-picker-icon">🗂️</span>
+                            <span data-i18n="mindmap.picker_summary">Sommaire</span>
+                        </button>
+                    </div>
+                </div>
+                <div role="button" tabindex="0" class="mode-card simul-card" id="mode-card-simultaneity" onclick="startSimultaneityGame()">
+                    <h3 data-i18n="simultaneity.title">Pendant ce temps, ailleurs…</h3>
+                    <p data-i18n="simultaneity.desc">3 vies. Un événement du thème, et le monde autour : retrouvez ce qui
+                        se passait ailleurs au même moment.</p>
+                </div>
+                <div role="button" tabindex="0" class="mode-card whois-card hidden" id="mode-card-whois" onclick="startWhoisGame()">
+                    <h3 data-i18n="whois.title">Qui est-ce ?</h3>
+                    <p data-i18n="whois.desc">3 vies. Un portrait, quatre noms : retrouvez qui se cache derrière ce visage.</p>
+                </div>
+                <div role="button" tabindex="0" class="mode-card fil-card" onclick="startFilGame()">
+                    <h3 data-i18n="modes.fil.title">Le fil du temps</h3>
+                    <p data-i18n="modes.fil.desc">Du tout premier événement du thème jusqu'au dernier, dans l'ordre
+                        chronologique : saisissez l'année exacte au clavier.</p>
+                </div>
+                <div role="button" tabindex="0" class="mode-card ecart-card" onclick="startEcartGame()">
+                    <h3 data-i18n="modes.ecart.title">Trouve l'écart</h3>
+                    <p data-i18n="modes.ecart.desc">3 vies. Devinez le nombre d'années entre deux événements : 5 essais, le
+                        jeu vous dit si c'est plus ou moins.</p>
+                </div>
             </div>
-            <div role="button" tabindex="0" class="mode-card" id="mode-card-classic" onclick="startActualGame('classic')">
-                <h3 data-i18n="modes.classic.title">Classique</h3>
-                <p data-i18n="modes.classic.desc">3 vies. Le mode de jeu standard.</p>
-            </div>
-            <div role="button" tabindex="0" class="mode-card" id="mode-card-chrono">
-                <h3 data-i18n="modes.chrono.title">Chrono</h3>
-                <p data-i18n="modes.chrono.desc">3 vies. Placez-les vite.</p>
-            </div>
-            <div role="button" tabindex="0" class="mode-card" id="mode-card-expert">
-                <h3 data-i18n="modes.expert.title">Expert</h3>
-                <p data-i18n="modes.expert.desc">1 vie, chronométré.</p>
-            </div>
-        </div>
+        </section>
 
-        <hr class="mode-separator">
-
-        <div class="grid-modes">
-            <div role="button" tabindex="0" class="mode-card quiz-card" onclick="startQuizGame()">
-                <h3 data-i18n="modes.quiz.title">Quiz</h3>
-                <p data-i18n="modes.quiz.desc">Questions à choix multiples (QCM).</p>
+        <section class="modes-group" id="modes-group-tools" data-group="tools">
+            <button type="button" class="modes-group-head" aria-expanded="true" aria-controls="modes-group-tools-body">
+                <span class="modes-group-title" data-i18n="modes.group_tools">Outils</span>
+                <span class="modes-group-chevron" aria-hidden="true">▾</span>
+            </button>
+            <div class="modes-group-body grid-modes" id="modes-group-tools-body">
+                <div role="button" tabindex="0" class="mode-card" style="background-color: #34495e;" onclick="openSelectionMode()">
+                    <h3 data-i18n="modes.selection.title">Sélection</h3>
+                    <p data-i18n="modes.selection.desc">Choisissez les événements à conserver dans la partie.</p>
+                </div>
+                <div role="button" tabindex="0" class="mode-card" style="background-color: #34495e;" onclick="openAddEventModal()">
+                    <h3 data-i18n="modes.add_event.title">Ajouter un événement</h3>
+                    <p data-i18n="modes.add_event.desc">Créez vos événements pour ce thème.</p>
+                </div>
+                <div role="button" tabindex="0" class="mode-card multi-card" onclick="showMultiplayerSetup()">
+                    <h3 data-i18n="modes.multi.title">Multijoueurs</h3>
+                    <p data-i18n="modes.multi.desc">À tour de rôle, élimination au bout de 2 erreurs.</p>
+                </div>
             </div>
-            <div role="button" tabindex="0" class="mode-card avap-card" onclick="startAvapGame()">
-                <h3 data-i18n="modes.avantapres.title">Avant / Après</h3>
-                <p data-i18n="modes.avantapres.desc">3 vies. Entre deux événements sans dates, devinez lequel s'est
-                    produit en premier.</p>
-            </div>
-            <div role="button" tabindex="0" class="mode-card periodes-card" onclick="startPeriodesGame()">
-                <h3 data-i18n="modes.periodes.title">Périodes & Ères</h3>
-                <p data-i18n="modes.periodes.desc">3 vies. Situez chaque événement dans son siècle, son époque ou ses
-                    contemporains.</p>
-            </div>
-            <div role="button" tabindex="0" class="mode-card simul-card" id="mode-card-simultaneity" onclick="startSimultaneityGame()">
-                <h3 data-i18n="simultaneity.title">Pendant ce temps, ailleurs…</h3>
-                <p data-i18n="simultaneity.desc">3 vies. Un événement du thème, et le monde autour : retrouvez ce qui
-                    se passait ailleurs au même moment.</p>
-            </div>
-            <div role="button" tabindex="0" class="mode-card fil-card" onclick="startFilGame()">
-                <h3 data-i18n="modes.fil.title">Le fil du temps</h3>
-                <p data-i18n="modes.fil.desc">Du tout premier événement du thème jusqu'au dernier, dans l'ordre
-                    chronologique : saisissez l'année exacte au clavier.</p>
-            </div>
-            <div role="button" tabindex="0" class="mode-card ecart-card" onclick="startEcartGame()">
-                <h3 data-i18n="modes.ecart.title">Trouve l'écart</h3>
-                <p data-i18n="modes.ecart.desc">3 vies. Devinez le nombre d'années entre deux événements : 5 essais, le
-                    jeu vous dit si c'est plus ou moins.</p>
-            </div>
-            <div role="button" tabindex="0" class="mode-card ordre-mode-card" id="mode-card-ordre" onclick="startOrdreGame()">
-                <h3 data-i18n="ordre.title">Remise en ordre</h3>
-                <p data-i18n="ordre.desc">3 vies. Cinq cartes mélangées, sans leurs dates : classez-les d'un coup du
-                    plus ancien au plus récent.</p>
-            </div>
-            <div role="button" tabindex="0" class="mode-card blitz-card" id="mode-card-blitz" onclick="startBlitzGame()">
-                <h3 data-i18n="blitz.title">Blitz 60 secondes</h3>
-                <p data-i18n="blitz.desc">Pas de vies, juste le chrono. « X est antérieur à Y » : vrai ou faux, le
-                    plus vite possible.</p>
-            </div>
-            <div role="button" tabindex="0" class="mode-card curseur-card" id="mode-card-curseur" onclick="startCurseurGame()">
-                <h3 data-i18n="curseur.title">Le curseur</h3>
-                <p data-i18n="curseur.desc">3 vies. Glissez le curseur sur l'année : plus vous tombez près, plus vous
-                    marquez.</p>
-            </div>
-            <div role="button" tabindex="0" class="mode-card intrus-card" id="mode-card-intrus" onclick="startIntrusGame()">
-                <h3 data-i18n="intrus.title">L'intrus</h3>
-                <p data-i18n="intrus.desc">3 vies. Quatre événements, trois qui vont ensemble : trouvez celui qui
-                    détonne.</p>
-            </div>
-            <!-- Visible seulement pour un thème dont assez de figures ont un portrait (voir js/app.js:
-                 updateWhoisCard) : un mode qui n'a rien à montrer ne se propose pas. -->
-            <div role="button" tabindex="0" class="mode-card whois-card hidden" id="mode-card-whois" onclick="startWhoisGame()">
-                <h3 data-i18n="whois.title">Qui est-ce ?</h3>
-                <p data-i18n="whois.desc">3 vies. Un portrait, quatre noms : retrouvez qui se cache derrière ce visage.</p>
-            </div>
-            <div role="button" tabindex="0" class="mode-card multi-card" onclick="showMultiplayerSetup()">
-                <h3 data-i18n="modes.multi.title">Multijoueurs</h3>
-                <p data-i18n="modes.multi.desc">À tour de rôle, élimination au bout de 2 erreurs.</p>
-            </div>
-        </div>
+        </section>
 
         <div style="margin-top: 30px; margin-bottom: 50px; display:flex; gap:15px; justify-content:center;">
             <button class="btn" style="background-color:#E67E22;" onclick="openLeaderboard()"

@@ -1855,6 +1855,8 @@ function initCategories() {
     const weakCount = (typeof getWeakEvents === 'function') ? getWeakEvents().length : 0;
     const favCount = (typeof favoritesLoad === 'function') ? favoritesLoad().length : 0;
 
+    renderResumeCard(container);
+
     // --- QUICK ACTION GRID ---
     const gridSection = document.createElement('section');
     gridSection.className = 'w-full';
@@ -2369,6 +2371,7 @@ function openThemeAt(ci, si, ti) {
     axisFilterActive = false;
     isSelectionActive = false;
     const theme = getCurrentThemeList()[ti];
+    lastThemeSave(theme.id);
     currentThemeAxes = [...new Set(theme.events.map(e => e.axe).filter(Boolean))];
     if (theme.axeOrder) {
         currentThemeAxes = theme.axeOrder.filter(a => currentThemeAxes.includes(a));
@@ -2553,6 +2556,52 @@ function initRevisionHub() {
 // un thème qui propose un sommaire : elle déplie alors le choix entre les
 // deux, juste en dessous (voir js/mindMap.js: refreshDiscoveryPicker, qui
 // renseigne data-available à chaque arrivée sur l'écran).
+// Groupes repliables de l'écran des modes (voir index.html : .modes-group). Ouverts par défaut :
+// tout reste visible tant que le joueur n'a rien replié, et son choix est retenu.
+function initModesGroups() {
+    const state = modesGroupsLoad();
+    document.querySelectorAll('.modes-group[data-group]').forEach(section => {
+        const key = section.dataset.group;
+        const head = section.querySelector('.modes-group-head');
+        const apply = collapsed => {
+            section.classList.toggle('collapsed', collapsed);
+            head.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+        };
+        apply(!!state[key]);
+        head.onclick = () => {
+            const collapsed = !section.classList.contains('collapsed');
+            apply(collapsed);
+            const saved = modesGroupsLoad();
+            saved[key] = collapsed;
+            modesGroupsSave(saved);
+        };
+    });
+}
+
+// « Reprendre » : un tap pour retrouver le dernier thème ouvert, au lieu de refaire six écrans.
+function renderResumeCard(container) {
+    const last = lastThemeLoad();
+    if (!last || !last.themeId) return;
+    const found = getAllThemesWithPath().find(item => item.theme.id === last.themeId);
+    if (!found) return;
+    const card = document.createElement('button');
+    card.type = 'button';
+    card.className = 'resume-card';
+    card.id = 'btn-resume';
+    const sub = found.pathNames.slice(1).join(' › ');
+    card.innerHTML = `
+        <span class="resume-card-icon" aria-hidden="true">▶</span>
+        <span class="resume-card-text">
+            <small class="resume-card-kicker">${t('categories.resume')}</small>
+            <strong class="resume-card-title"></strong>
+            <small class="resume-card-path"></small>
+        </span>`;
+    card.querySelector('.resume-card-title').textContent = found.theme.nom;
+    card.querySelector('.resume-card-path').textContent = sub;
+    card.onclick = () => openThemeAt(found.ci, found.si, found.ti);
+    container.appendChild(card);
+}
+
 function openDiscoveryMode() {
     const picker = document.getElementById('discovery-picker');
     if (picker && picker.dataset.available === 'yes') {
@@ -6398,6 +6447,7 @@ window.onload = async () => {
     applyAppearance();
     applyOrientationLayout();
     initSettingsControls();
+    initModesGroups();
     if (typeof initRecapControls === 'function') initRecapControls();
 
     // Initialisation i18n et chargement de la langue active

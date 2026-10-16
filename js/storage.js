@@ -25,6 +25,11 @@ const PORTRAIT_DAY_KEY = 'historiaxe_portrait_day_v1';
 // Série de semaines consécutives au Défi hebdomadaire (voir
 // weeklyChallengeStreakRecordToday ci-dessous) — sans rapport avec
 // WEEKLY_XP_KEY (ligue hebdomadaire par XP cumulé, feature distincte).
+// Dernier thème ouvert (« Reprendre » sur l'écran des catégories) : { themeId, at }. Une habitude de
+// l'appareil, hors de SYNC_KEYS comme PORTRAIT_DAY_KEY. Les groupes repliés de l'écran des modes
+// ({ express: true… }) suivent le même principe.
+const LAST_THEME_KEY = 'historiaxe_last_theme_v1';
+const MODES_GROUPS_KEY = 'historiaxe_modes_groups_v1';
 const WEEKLY_CHALLENGE_STREAK_KEY = 'historiaxe_weekly_challenge_streak_v1';
 
 // Clés dont le contenu est envoyé/reçu par la synchronisation cloud
@@ -143,6 +148,24 @@ function settingsSave(data) {
     try {
         localStorage.setItem(SETTINGS_KEY, JSON.stringify(data));
     } catch (e) {}
+}
+
+function lastThemeLoad() {
+    try { return JSON.parse(localStorage.getItem(LAST_THEME_KEY)) || null; }
+    catch (e) { return null; }
+}
+
+function lastThemeSave(themeId) {
+    try { localStorage.setItem(LAST_THEME_KEY, JSON.stringify({ themeId: themeId, at: Date.now() })); } catch (e) {}
+}
+
+function modesGroupsLoad() {
+    try { return JSON.parse(localStorage.getItem(MODES_GROUPS_KEY)) || {}; }
+    catch (e) { return {}; }
+}
+
+function modesGroupsSave(data) {
+    try { localStorage.setItem(MODES_GROUPS_KEY, JSON.stringify(data)); } catch (e) {}
 }
 
 function portraitDayLoad() {
@@ -571,6 +594,7 @@ function resetAllGameData() {
     try { localStorage.removeItem(STREAK_KEY); } catch (e) {}
     try { localStorage.removeItem(WEEKLY_CHALLENGE_STREAK_KEY); } catch (e) {}
     try { localStorage.removeItem(GAMIFICATION_KEY); } catch (e) {}
+    try { localStorage.removeItem(LAST_THEME_KEY); } catch (e) {}
 }
 
 // Export CommonJS pour les tests unitaires (node --test tests/), même

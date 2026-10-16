@@ -144,3 +144,48 @@ test('Chrono et Expert restent verrouillés tant que le thème n’est pas entam
         expect(await visibleScreen(page)).toBe('screen-modes');
     }
 });
+
+// --- Écran des modes : « Jouer » d'abord, puis des groupes ----------------
+
+test('« Jouer » est visible sans défiler et lance une partie classique', async ({ page }) => {
+    const bouton = page.locator('#btn-modes-play');
+    await expect(bouton).toBeInViewport();
+    // Le geste principal précède les groupes de modes.
+    const haut = await bouton.evaluate(el => el.getBoundingClientRect().top);
+    const classique = await page.locator('#mode-card-classic').evaluate(el => el.getBoundingClientRect().top);
+    expect(haut).toBeLessThan(classique);
+    await bouton.click();
+    await expect(page.locator('#screen-game')).toBeVisible();
+    await expect(page.locator('#timeline button.slot').first()).toBeVisible();
+});
+
+test('les groupes de modes se replient et le choix est retenu', async ({ page }) => {
+    const groupe = page.locator('#modes-group-express');
+    const tete = groupe.locator('.modes-group-head');
+    await expect(tete).toHaveAttribute('aria-expanded', 'true');
+    await expect(page.locator('#mode-card-blitz')).toBeVisible();
+
+    await tete.click();
+    await expect(tete).toHaveAttribute('aria-expanded', 'false');
+    await expect(page.locator('#mode-card-blitz')).toBeHidden();
+    // Les autres groupes ne bougent pas.
+    await expect(page.locator('#mode-card-discovery')).toBeVisible();
+
+    // Retenu d'une visite à l'autre.
+    await page.evaluate(() => { initModesGroups(); });
+    await expect(tete).toHaveAttribute('aria-expanded', 'false');
+
+    await tete.click();
+    await expect(page.locator('#mode-card-blitz')).toBeVisible();
+});
+
+test('« Reprendre » ramène au dernier thème ouvert', async ({ page }) => {
+    await page.evaluate(() => { showScreen('screen-categories'); initCategories(); });
+    const reprendre = page.locator('#btn-resume');
+    await expect(reprendre).toBeVisible();
+    await expect(reprendre).toContainText('Rome : République et Empire');
+    await reprendre.click();
+    // Rome a des axes : on arrive sur le choix des axes de CE thème.
+    expect(await visibleScreen(page)).toBe('screen-axes');
+    expect(await page.evaluate(() => getCurrentTheme().id)).toBe('thm_rome');
+});
