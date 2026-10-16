@@ -292,7 +292,8 @@ def build_theme(src, code, warnings):
                     'legende': portrait['legende'],
                     'auteur': portrait['auteur'],
                     'licence': portrait['licence'],
-                    'source': 'https://commons.wikimedia.org/wiki/File:'
+                    # Une image hors Commons (licence « Image non libre ») donne sa page d'origine.
+                    'source': portrait.get('source') or 'https://commons.wikimedia.org/wiki/File:'
                               + quote(portrait['fichier'].replace(' ', '_'), safe="_()-,.!~*"),
                 }
                 # Le nom est écrit dans l'image (inscription peinte, badge, légende gravée) : elle

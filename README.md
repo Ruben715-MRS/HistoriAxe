@@ -1543,7 +1543,7 @@ un dessin de Khalil Gibran en 1917 pour Ibn al-Fârid…).
 
 ### Un pays à part : les États-Unis
 
-`pan_us`, « Grandes figures des États-Unis » : **131 personnages**, de Pocahontas
+`pan_us`, « Grandes figures des États-Unis » : **141 personnages** (131 des États-Unis continentaux, plus les dix figures d'Hawaï, voir « Un bloc : la Nouvelle-Zélande et le Pacifique »), de Pocahontas
 (vers 1596) à Steve Jobs (1955). Par axe : 25 Littérature et pensée, 24 Guerres et
 résistances, 24 Musique, spectacle et sport, 21 Chefs d'État et dirigeants, 16
 Sciences, techniques et innovation, 12 Beaux-arts, 9 Économie et entreprise ; 39 ⭐ et
@@ -2388,32 +2388,31 @@ Hérat et les grandes dynasties (Timourides, Samanides, Seldjoukides, Ghaznévid
 
 ### Un bloc : la Nouvelle-Zélande et le Pacifique
 
-`pan_pacifique`, « Grandes figures de Nouvelle-Zélande et du Pacifique » (code `pacifique`, bloc) : **96 personnages de 22 pays et
-territoires** — Nouvelle-Zélande 51, Hawaï 9 (rangé aux États-Unis, voir plus bas), Polynésie française 5, Samoa 5, Fidji 3, Tonga 3,
-îles Cook 2, Micronésie 2, Nouvelle-Calédonie 2, Wallis-et-Futuna 2, et un chacun pour les Samoa américaines, la
-Papouasie-Nouvelle-Guinée, les îles Salomon, Nauru, les îles Marshall, les Palaos, Guam, les îles Mariannes du Nord, Pitcairn, Rapa Nui,
-Niue et Tuvalu — du navigateur Tupaia (vers 1725) au rugbyman Jonah Lomu (1975). Par axe : 46 Chefs d'État et dirigeants, 17 Guerres et
-résistances, 12 Littérature et pensée, 9 Sciences, techniques et innovation, 6 Beaux-arts, 6 Musique, spectacle et sport ; 23 ⭐, aucune
-biographie liée. 96 portraits (2,2 Mo) : 62 du domaine public, 2 CC0, 12 CC BY et 20 CC BY-SA. Les mots-clés du thème portent tous les noms de
-pays et de territoires, les adjectifs (néo-zélandais, māori, hawaïen, kanak), l'Océanie, la Polynésie, la Mélanésie, la Micronésie,
-Wellington, Auckland, Waitangi, Honolulu et Papeete.
+`pan_pacifique`, « Grandes figures de Nouvelle-Zélande et du Pacifique » (code `pacifique`, bloc) : **88 personnages de 21 pays et
+territoires** — Nouvelle-Zélande 51, Polynésie française 5, Samoa 5, Fidji 4, Tonga 3, îles Cook 2, Micronésie 2, Nouvelle-Calédonie 2,
+Wallis-et-Futuna 2, et un chacun pour les Samoa américaines, la Papouasie-Nouvelle-Guinée, les îles Salomon, Nauru, les îles Marshall,
+les Palaos, Guam, les îles Mariannes du Nord, Pitcairn, Rapa Nui, Niue et Tuvalu — du navigateur Tupaia (vers 1725) au rugbyman Jonah
+Lomu (1975). Par axe : 39 Chefs d'État et dirigeants, 17 Guerres et résistances, 12 Littérature et pensée, 9 Sciences, techniques et
+innovation, 6 Beaux-arts, 5 Musique, spectacle et sport ; 20 ⭐, aucune biographie liée. 88 portraits (2 Mo) : 53 du domaine public, 2 CC0,
+12 CC BY, 20 CC BY-SA et un « image non libre » (voir plus bas). Les mots-clés du thème portent tous les noms de pays et de territoires,
+les adjectifs (néo-zélandais, māori, hawaïen, kanak), l'Océanie, la Polynésie, la Mélanésie, la Micronésie, Wellington, Auckland,
+Waitangi, Honolulu et Papeete.
 
-- **Plus de la moitié du bloc est néo-zélandaise, et c'est assumé.** 51 figures sur 96 (53 %), au-dessus du seuil de 40 % : la source
-  déclare `partMaxPays` à 0,55. Le Pacifique insulaire compte plus de vingt États et territoires, la plupart minuscules, dont
-  beaucoup n'ont que quelques personnages à la fois documentés (article en français, dates avérées) et illustrés par une image libre ;
-  la Nouvelle-Zélande a un siècle et demi d'histoire écrite et photographiée. Les chefs d'État et dirigeants pèsent 48 % du bloc
-  (46 sur 96), davantage que partout ailleurs : pour un micro-État, ce sont souvent les seules figures qui remplissent les trois
-  conditions.
-- **Tous les territoires, même dépendants.** Hawaï (un État américain), la Polynésie française, la Nouvelle-Calédonie et
+- **Plus de la moitié du bloc est néo-zélandaise, et c'est assumé.** 51 figures sur 88 (58 %), au-dessus du seuil de 40 % : la source
+  déclare `partMaxPays` à 0,6. Le Pacifique insulaire compte plus de vingt États et territoires, la plupart minuscules, dont
+  beaucoup n'ont que quelques personnages à la fois documentés (article en français, dates avérées) et illustrés ; la
+  Nouvelle-Zélande a un siècle et demi d'histoire écrite et photographiée. Les chefs d'État et dirigeants pèsent 44 % du bloc
+  (39 sur 88) : pour un micro-État, ce sont souvent les seules figures qui remplissent les trois conditions.
+- **Tous les territoires, même dépendants.** la Polynésie française, la Nouvelle-Calédonie et
   Wallis-et-Futuna (France), les Samoa américaines, Guam et les Mariannes du Nord (États-Unis), Niue et les îles Cook (en libre
   association avec la Nouvelle-Zélande), Pitcairn (Royaume-Uni) et Rapa Nui, l'île de Pâques (Chili), ont leur place au même titre que
   les États indépendants. `pays` porte le code ISO du territoire (`PF`, `NC`, `WF`, `AS`, `GU`, `MP`, `NU`, `CK`, `PN`) ; l'île de
   Pâques, qui n'en a pas, porte celui du Chili (`CL`).
-- **Hawaï est rangé aux États-Unis.** Aucun code ISO ne désigne Hawaï : ses neuf figures (Kamehameha Ier, Kamehameha III, Kalākaua,
-  Liliʻuokalani, Kaʻahumanu, Kaʻiulani, Emma, Duke Kahanamoku, Samuel Kamakau) portent `US`, si bien que leur fiche affiche
-  « États-Unis » sous la date, y compris pour des rois d'avant l'annexion de 1898 — la description le dit — et que la galerie les compte
-  avec celles du panthéon des États-Unis (son filtre de pays ne distingue pas les thèmes). Damien de Molokaʻi, apôtre des lépreux de
-  Molokaʻi, reste au panthéon du Benelux, dont il est un fils.
+- **Hawaï est au panthéon des États-Unis.** Hawaï est un État américain, et aucun code ISO ne le désigne : ses dix figures (Kamehameha
+  Ier, Kamehameha III, Kalākaua, Liliʻuokalani, Kaʻahumanu, Kaʻiulani, Emma, Duke Kahanamoku, Samuel Kamakau, Israel
+  Kamakawiwoʻole) ont donc rejoint « Grandes figures des États-Unis » (`scripts/pantheon/us.json`), et leurs portraits sont des
+  `pan_us_…`. Les rois d'avant l'annexion de 1898 y sont avec leur royaume dans la description. Damien de Molokaʻi, apôtre des lépreux
+  de Molokaʻi, reste au panthéon du Benelux, dont il est un fils.
 - **Là où on les honore, pas là où ils sont nés.** Hobson (né à Waterford), Seddon (Lancashire), Vogel (Londres), Savage (Victoria),
   Fraser (Écosse), Kate Sheppard (Liverpool), Haast (Bonn), Freyberg (Londres, élevé en Nouvelle-Zélande) et Robin Hyde (Le Cap) sont
   ici ; Katherine Mansfield aussi, née à Wellington et morte en France, que l'article français dit « britannique d'origine
@@ -2437,8 +2436,7 @@ Wellington, Auckland, Waitangi, Honolulu et Papeete.
   Richard Pearse, Bill Hamilton, Allen Curnow, Gottfried Lindauer, Rewi Alley, Ettie Rout, Bernice Pauahi Bishop, Jonah Kūhiō
   Kalanianaʻole, David Malo, Apolosi Nawai, Yali Singina, Paliau Maloat, Jacob Vouza et Antonio Won Pat.
 - **Écartés faute d'image libre convenable**, à réintégrer si l'une apparaît : Norman Kirk (la seule photographie de lui, de 1966, porte
-  un bandeau de suppression sur Commons), Jean-Marie Tjibaou, Epeli Hauʻofa, Israel Kamakawiwoʻole (seule sa signature est libre),
-  Beatrice Tinsley, Haunani-Kay Trask, Henri Hiro, Nidoïsh Naisseline, Merata Mita, Sylvia Ashton-Warner, Vincent Eri, John Guise,
+  un bandeau de suppression sur Commons), Jean-Marie Tjibaou, Beatrice Tinsley, Haunani-Kay Trask, Henri Hiro, Nidoïsh Naisseline, Merata Mita, Sylvia Ashton-Warner, Vincent Eri, John Guise,
   Robert Rex, Toaripi Lauti, Yeiwéné Yeiwéné et Solomon Mamaloni ; Eddie Aikau (seule une plaque commémorative), Walter Lini (un profil
   que le cadre coupe) et Burt Munro (sa moto, sans lui). Teatao Teannaki (Kiribati) et Faimalaga Luka (Tuvalu) n'ont que des
   photographies sous une licence « Attribution » d'un site officiel taïwanais, hors de la liste.
@@ -2446,7 +2444,7 @@ Wellington, Auckland, Waitangi, Honolulu et Papeete.
   historiques de ces pays n'a à la fois une date de mort, un article en français et une image libre exploitable. Tuvalu n'est
   représenté que par Ionatana Ionatana, dont la seule image libre mesure 100 × 130 pixels.
 - **Laissés de côté pour tenir l'équilibre**, avec leur image : Joseph Ward et Keith Holyoake (deux Premiers ministres de plus),
-  Kamehameha II, Lunalilo et Kapiʻolani (Hawaï compte déjà neuf figures), George Tupou II, Tupua Tamasese Lealofi IV, Bernard
+  Kamehameha II, Lunalilo et Kapiʻolani (Hawaï est déjà bien fourni), George Tupou II, Tupua Tamasese Lealofi IV, Bernard
   Dowiyogo, Bailey Olter, Lazarus Salii, Roman Tmetuchl, Ricardo Bordallo, Penaia Ganilau et Josefa Iloilo (un ou deux chefs d'État
   suffisent par territoire), Don Ho et Inia Te Wiata (dont l'article français ne dit presque rien), ainsi que les sportifs que
   retiendrait le seul palmarès : Peter Snell, Arthur Lydiard, Colin Meads et Dave Gallaher.
@@ -2458,6 +2456,14 @@ Wellington, Auckland, Waitangi, Honolulu et Papeete.
   photographié à Thio (son nom y est écrit : `nomVisible`, donc écarté de « Qui est-ce ? »), des portraits posthumes (Kamehameha Ier
   d'après Choris, Pierre Chanel jeune, Pōmare II gravé en 1830), des portraits peints (Hobson, Pōtatau Te Wherowhero, Te Rauparaha,
   Hōne Heke, Tāwhiao) ou gravés dans la presse (Te Whiti, Titokowaru, Te Kooti), un dessin contemporain pour Colin McCahon.
+- **Une exception assumée : deux images non libres.** Epeli Hauʻofa et Israel Kamakawiwoʻole, trop importants pour être écartés,
+  n'avaient aucune image libre. Ils ont l'image qui laisse le plus de libertés : pour Hauʻofa, une photographie d'Ann Tarte (2006)
+  publiée par le site `kanivatonga.co.nz`, sans licence indiquée ; pour Iz, l'image promotionnelle de l'article anglais de Wikipédia,
+  téléversée en usage équitable (« fair use »), et donc absente de Commons. Leur licence s'écrit « Image non libre » dans les données
+  (`image.licence`), `image.source` renvoie à la page d'origine (et non à Commons), `fetch_portraits.py` les ignore, et le test de schéma
+  accepte cette seule exception. Ces droits ne sont pas ceux de l'App Store : **à remplacer dès qu'une image libre existe, ou à
+  faire valider** — c'est la réserve la plus lourde du bloc. Iz est au panthéon des États-Unis, Hauʻofa (fidjien d'origine tongienne,
+  né en Papouasie) à celui-ci, rangé aux Fidji.
 - **Statut américain des images.** Les pages de fichier ont été relues à la fin : 82 des 93 premières portent un modèle de licence
   valable aux États-Unis (PD-1923, PD-1996, PD-old, PD-USGov ou une licence Creative Commons), et les trois suivantes (Hotere, Woollaston,
   Blake) sont des CC BY ou CC BY-SA. Les onze autres sont à relire si l'on veut être plus strict : **six images à balise nationale
@@ -2472,7 +2478,7 @@ Wellington, Auckland, Waitangi, Honolulu et Papeete.
   (200), Nakayama (202), DeRoburt (233), Hodgkins (283) et Pa Tepaeru Terito Ariki (284). Hone Tuwhare est recadré dans la version non rognée de
   l'image, pour avoir un visage net ; Whina Cooper dans une planche-contact de 5 409 × 1 293 px, sur la seule image où elle est
   identifiable.
-- **Géolocalisation** : aucune des 96 naissances n'est placée sur l'Atlas, et aucune n'a sa biographie, donc le test des faits liés ne
+- **Géolocalisation** : aucune des 88 naissances n'est placée sur l'Atlas, et aucune n'a sa biographie, donc le test des faits liés ne
   l'exige pas.
 
 ### Un fichier source par panthéon, un script qui l'écrit dans `data/fr.json`

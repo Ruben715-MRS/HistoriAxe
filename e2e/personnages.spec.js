@@ -371,7 +371,7 @@ test('les États-Unis : chacune de ses figures a son portrait, et la fiche n’a
     await expect(page.locator('#screen-game')).toBeVisible();
     const nombre = await page.evaluate(() => getCurrentTheme().events.length);
     expect(nombre).toBeGreaterThanOrEqual(115);
-    expect(nombre).toBeLessThanOrEqual(135);
+    expect(nombre).toBeLessThanOrEqual(145);
     // « Que chaque personnage ait un portrait » : une pastille par repère, pas une de moins.
     await expect(page.locator('#timeline .entry')).toHaveCount(nombre);
     await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
@@ -766,16 +766,15 @@ test('la Nouvelle-Zélande et le Pacifique : chacune de ses figures a son portra
     await page.locator('#mode-card-discovery').click();
     await expect(page.locator('#screen-game')).toBeVisible();
     const nombre = await page.evaluate(() => getCurrentTheme().events.length);
-    expect(nombre).toBe(96);
+    expect(nombre).toBe(88);
     await expect(page.locator('#timeline .entry')).toHaveCount(nombre);
     await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
 
-    // Quatre figures, quatre statuts : un chef māori (Nouvelle-Zélande), le fondateur du royaume d'Hawaï (rangé
-    // aux États-Unis, dont Hawaï est un État), une reine de Tahiti (Polynésie française, territoire français)
-    // et le gouverneur élu de Guam (territoire américain).
+    // Quatre figures, quatre statuts : un chef māori (Nouvelle-Zélande), un chef d'État de Samoa indépendant,
+    // une reine de Tahiti (Polynésie française, territoire français) et le gouverneur élu de Guam (territoire américain).
     const figures = [
         ['Naissance de Te Rauparaha', '🇳🇿', 'Nouvelle-Zélande'],
-        ['Naissance de Kamehameha Ier', '🇺🇸', 'États-Unis'],
+        ['Naissance de Malietoa Tanumafili II', '🇼🇸', 'Samoa'],
         ['Naissance de Pōmare IV', '🇵🇫', 'Polynésie française'],
         ['Naissance de Carlos Camacho', '🇬🇺', 'Guam'],
     ];

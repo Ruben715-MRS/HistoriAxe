@@ -445,10 +445,10 @@ test('« Grandes figures d’Asie centrale » : chaque ancre porte le pays de so
 });
 
 test('« Grandes figures de Nouvelle-Zélande et du Pacifique » : chaque ancre porte le pays de son événement, et la session se joue', () => {
-    // Vingt-deux pays et territoires, dont la moitié n'ont qu'une figure (Nauru, Niue, Guam, les
-    // Mariannes du Nord, Pitcairn, Rapa Nui…) : la Nouvelle-Zélande, qui en compte presque la moitié,
-    // et Hawaï (étiqueté « États-Unis ») ne doivent pas les faire disparaître parmi les ancres.
-    verifierPantheonDeBloc('pan_pacifique', 37, 22);
+    // Vingt et un pays et territoires, dont la moitié n'ont qu'une figure (Nauru, Niue, Guam, les
+    // Mariannes du Nord, Pitcairn, Rapa Nui…) : la Nouvelle-Zélande, qui en compte plus de la moitié,
+    // ne doit pas les faire disparaître parmi les ancres (Hawaï est au panthéon des États-Unis).
+    verifierPantheonDeBloc('pan_pacifique', 37, 21);
 });
 
 test('« Grandes figures du sous-continent indien » : chaque ancre porte le pays de son événement, et la session se joue', () => {

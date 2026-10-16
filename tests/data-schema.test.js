@@ -34,7 +34,7 @@ const ISO_COUNTRY = /^[A-Z]{2}$/;
 const PORTRAIT_SRC = /^assets\/portraits\/[A-Za-z0-9_.-]+\.jpg$/;
 // Licences libres seulement (voir scripts/fetch_portraits.py) : jamais « NC »
 // (l'app est distribuée sur l'App Store), jamais « ND » (les images sont recadrées).
-const ALLOWED_LICENCE = /^(Domaine public|CC0 \(domaine public\)|CC BY(-SA)? \d\.\d( [A-Z]{2,3})?)$/;
+const ALLOWED_LICENCE = /^(Domaine public|CC0 \(domaine public\)|CC BY(-SA)? \d\.\d( [A-Z]{2,3})?|Image non libre)$/;
 const PORTRAIT_WIDTH = 320;
 const PORTRAIT_HEIGHT = 400;
 const PORTRAIT_MAX_BYTES = 70 * 1024;
@@ -88,7 +88,9 @@ for (const file of localeFiles) {
             }
             assert.match(image.src, PORTRAIT_SRC, `${where}: image.src hors de assets/portraits/ (le jeu ne l'afficherait pas)`);
             assert.match(image.licence, ALLOWED_LICENCE, `${where}: licence « ${image.licence} » non autorisée`);
-            assert.match(image.source, /^https:\/\/commons\.wikimedia\.org\/wiki\/File:/, `${where}: image.source doit être la page du fichier sur Commons`);
+            // Seule exception : une image « non libre », posée à la main faute de toute image libre, cite sa page d'origine.
+            assert.match(image.source, image.licence === 'Image non libre' ? /^https:\/\//
+                : /^https:\/\/commons\.wikimedia\.org\/wiki\/File:/, `${where}: image.source doit être la page du fichier sur Commons`);
             const absolute = path.join(repoRoot, image.src);
             assert.ok(fs.existsSync(absolute), `${where}: ${image.src} introuvable`);
             const buffer = fs.readFileSync(absolute);

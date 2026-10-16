@@ -57,6 +57,7 @@ UA = 'HistoriAxe-portraits/0.1 (+https://github.com/Ruben715-MRS/HistoriAxe)'
 OUT_W, OUT_H = 320, 400
 RATIO = OUT_W / OUT_H
 PAUSE = 2.0
+NON_LIBRE = 'Image non libre'   # exception assumée, hors Commons : voir le README
 
 # Mentions qui, sur la page d'un fichier, disent qu'il ne faut pas s'en servir.
 BAD_MARKERS = (
@@ -180,6 +181,10 @@ def check_offline(src, code):
         if not portrait.get('licence'):
             problems.append(f"{p['slug']}: licence non résolue")
             continue
+        if portrait['licence'] == NON_LIBRE:
+            if not portrait.get('source') or not os.path.exists(path):
+                problems.append(f"{p['slug']}: image non libre sans source ou sans fichier")
+            continue
         if not licence_label(portrait['licence'].replace('Domaine public', 'Public domain')
                              .replace(' (domaine public)', '')) and portrait['licence'] != 'Domaine public':
             problems.append(f"{p['slug']}: licence « {portrait['licence']} » non autorisée")
@@ -221,8 +226,8 @@ def main():
         if only and p['slug'] not in only:
             continue
         portrait = p.get('portrait')
-        if not portrait or not portrait.get('fichier'):
-            continue
+        if not portrait or not portrait.get('fichier') or portrait.get('source'):
+            continue    # image hors Commons : posée à la main, voir le README
         event_id = f"pan_{args.code}_{p['slug']}"
         out = os.path.join(PORTRAIT_DIR, event_id + '.jpg')
         if not args.force and portrait.get('licence') and os.path.exists(out):
