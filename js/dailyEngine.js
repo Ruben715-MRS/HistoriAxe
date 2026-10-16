@@ -201,10 +201,6 @@
         var placed = [deck.pop()];
         var pool = deck; // pool.pop() pioche la carte suivante, comme côté client
 
-        // Mirroir de : currentGameSpan calculé sur `eventsCopy` APRÈS le premier
-        // pop (donc sur les 9 dates restantes du pool, pas les 10 du tirage).
-        var span = Math.max(1, Math.max.apply(null, pool) - Math.min.apply(null, pool));
-
         var roundsTotal = pool.length;
         result.roundsTotal = roundsTotal;
 
@@ -255,9 +251,8 @@
                 combo = Math.round((combo + 0.1) * 10) / 10;
                 placed.splice(slotIndex, 0, dateToPlace);
             } else {
-                var ratio = Math.max(0, 1 - gap / span);
-                var wrongPts = Math.round(100 * ratio);
-                score += wrongPts;
+                // Une erreur ne rapporte rien (miroir de awardPoints avec
+                // noPartial dans js/app.js) : seule la vie et le combo bougent.
                 combo = 1.0;
                 lives -= 1;
 

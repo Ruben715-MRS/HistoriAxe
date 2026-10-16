@@ -5470,6 +5470,11 @@ function awardPoints(gap, isPerfect, opts = {}) {
     if (currentMode === 'training' || currentMode === 'discovery') return 0;
     const ratio = Math.max(0, 1 - gap / currentGameSpan);
     let pts = Math.round(100 * ratio * (isPerfect ? comboMultiplier : 1));
+    // Frise : une erreur ne rapporte rien, quel que soit l'écart (voir
+    // checkPlacement). Sur un thème très étendu, la proximité rapportait
+    // jusqu'à 95 points pour trois siècles d'erreur, presque autant qu'une
+    // bonne réponse.
+    if (opts.noPartial && !isPerfect) pts = 0;
     if (opts.speedBonus) pts += opts.speedBonus;
     if (opts.halved) pts = Math.round(pts / 2);
     if (currentMode === 'multi') {
@@ -5534,7 +5539,7 @@ function checkPlacement(index, slotElement) {
         }
     } else {
         isAnimating = true;
-        awardPoints(gap, false);
+        awardPoints(gap, false, { noPartial: true });
         playWrongSound();
         triggerHaptic('error');
         const handEl = document.getElementById('hand');
