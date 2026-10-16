@@ -21,7 +21,7 @@ const localeFiles = fs.readdirSync(dataDir).filter((f) => f.endsWith('.json'));
 assert.ok(localeFiles.length > 0, 'aucun fichier data/*.json trouvé');
 
 // --- Portraits (champ facultatif `image` d'un événement) et panthéons ----
-// Voir README, « Portraits » et « Panthéons ». Les règles vivent ici
+// Voir docs/personnages-illustres.md (« Portraits » et « Panthéons »). Les règles vivent ici
 // parce qu'une erreur y est silencieuse : un crédit faux, une année de
 // naissance qui n'est pas celle de l'événement, un portrait qui n'existe pas
 // ne se voient qu'en ouvrant la bonne fiche.

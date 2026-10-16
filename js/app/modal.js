@@ -4,7 +4,7 @@
 // =====================================================================
 // PORTRAITS — champ facultatif `image` d'un événement
 // =====================================================================
-// { src, legende, auteur, licence, source } : voir README « Portraits ».
+// { src, legende, auteur, licence, source } : voir docs/personnages-illustres.md « Portraits ».
 // Les fichiers vivent dans assets/portraits/, que le service worker garde dans
 // un cache à part, épargné par le ménage des mises à jour (voir sw.js).
 //

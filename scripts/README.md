@@ -1,0 +1,23 @@
+# scripts/
+
+Outils du projet. Ce qui est là sert encore ; le reste a été retiré (voir plus bas).
+
+| Fichier / dossier | Rôle |
+|---|---|
+| `build.js` | construit `www/` pour Capacitor / Vercel (`npm run build`) ; injecte `HISTORIAXE_API_BASE_URL` pour l'app native |
+| `build_pack.js` | découpe `data/fr.json` en `data/pack/fr/` (`npm run build:pack`) — à relancer après toute modification de `data/fr.json` |
+| `pantheon/` + `build_pantheon.py` + `pantheon_classement.py` | sources des panthéons (`<pays>.json`) et leur écriture dans `data/fr.json` |
+| `fetch_portraits.py`, `search_portraits.py` | collecte des portraits (Wikimedia) |
+| `geo/` | chaîne de géolocalisation des événements → `assets/geo/events-geo.json` (voir `geo/README.md`) |
+| `transport/` | génération du thème « Grandes catastrophes de transport » |
+
+## Ce qui a été retiré
+
+Un grand ménage a supprimé, du dossier courant (tout reste dans l'historique git, avant le
+commit « Nettoyage du dépôt ») : les lots JSON des campagnes de réécriture par lots
+(titres raccourcis, descriptions, ⭐ Incontournables, ordre des axes — `batches*/`, ~9 Mo),
+leurs scripts de préparation/fusion, les rapports et journaux, les échantillons, les scripts
+d'inspection et d'essai, et les scripts uniques de la racine (`add_events*.py`,
+`generate_sunni_shia*.py`, `check*.py`, `fix_app.py`, `bump_sw.py`) dont les résultats sont
+déjà dans `data/fr.json`. Pour en retrouver un : `git log --diff-filter=D --name-only -- scripts/`
+puis `git show <commit>^:scripts/<fichier>`.
