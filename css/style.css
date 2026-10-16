@@ -8237,3 +8237,16 @@ input:not([type="range"]), label, select, summary, textarea {
 .modes-group-frise .grid-modes-square .mode-card p {
     font-size: 13px;
 }
+
+/* Texte réservé aux lecteurs d'écran (zone d'annonces, voir A11y.announce) : hors écran mais lu. */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}

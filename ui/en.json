@@ -145,6 +145,14 @@
     "select_at_least_one": "You must select at least one event to play."
   },
   "game": {
+    "announce_correct": "Correct. {title}, {date}. Placed {slot}.",
+    "announce_wrong": "Missed. {title} dates from {date}: it belongs {direction}.",
+    "announce_higher": "higher on the timeline",
+    "announce_lower": "lower on the timeline",
+    "announce_lives": "{count} lives left.",
+    "announce_lives_one": "One life left.",
+    "announce_no_lives": "No lives left.",
+    "announce_next": "Card to place: {title}.",
     "score": "Score: {val}",
     "combo": "×{val}",
     "lives": "Lives",

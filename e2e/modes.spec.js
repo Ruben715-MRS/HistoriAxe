@@ -243,3 +243,40 @@ test('un mode favori verrouillé sur le thème retombe sur Classique, et le bout
     // Le choix du joueur, lui, n'a pas été touché.
     expect(await page.evaluate(() => appSettings.playMode)).toBe('chrono');
 });
+
+// --- Annonces aux lecteurs d'écran ------------------------------------------
+
+test('la frise annonce la carte à placer, puis le résultat de chaque placement', async ({ page }) => {
+    await page.locator('#mode-card-classic').click();
+    const zone = page.locator('#a11y-live');
+    // Une zone d'état polie et atomique, hors écran mais pas masquée (display:none ne serait pas lu).
+    await expect(zone).toHaveAttribute('role', 'status');
+    await expect(zone).toHaveAttribute('aria-live', 'polite');
+    await expect(zone).toContainText('Carte à placer :');
+    const premiere = await page.evaluate(() => eventToPlace.titre);
+    await expect(zone).toContainText(premiere);
+
+    // Un placement juste : on pose la carte dans le créneau où elle va.
+    const bon = await page.evaluate(() => {
+        let i = 0;
+        while (i < placedEvents.length && placedEvents[i].date < eventToPlace.date) i++;
+        return i;
+    });
+    await page.locator('#timeline button.slot').nth(bon).click();
+    await expect(zone).toContainText('Correct.');
+    await expect(zone).toContainText('Placé');
+    // …et, dans le même message, la carte suivante.
+    await expect(zone).toContainText('Carte à placer :');
+
+    // Un placement raté : le résultat, la direction et les vies restantes, tout de suite.
+    const faux = await page.evaluate(() => {
+        // Un créneau où la carte NE va PAS.
+        let ok = 0;
+        while (ok < placedEvents.length && placedEvents[ok].date < eventToPlace.date) ok++;
+        return ok === 0 ? placedEvents.length : 0;
+    });
+    await page.locator('#timeline button.slot').nth(faux).click();
+    await expect(zone).toContainText('Raté.');
+    await expect(zone).toContainText(/plus (haut|bas) dans la frise/);
+    await expect(zone).toContainText(/Il vous reste (2 vies|une vie)/);
+});

@@ -148,6 +148,14 @@
     "select_at_least_one": "Vous devez sélectionner au moins un événement pour jouer."
   },
   "game": {
+    "announce_correct": "Correct. {title}, {date}. Placé {slot}.",
+    "announce_wrong": "Raté. {title} date de {date} : il se place {direction}.",
+    "announce_higher": "plus haut dans la frise",
+    "announce_lower": "plus bas dans la frise",
+    "announce_lives": "Il vous reste {count} vies.",
+    "announce_lives_one": "Il vous reste une vie.",
+    "announce_no_lives": "Plus aucune vie.",
+    "announce_next": "Carte à placer : {title}.",
     "score": "Score : {val}",
     "combo": "×{val}",
     "lives": "Vies",

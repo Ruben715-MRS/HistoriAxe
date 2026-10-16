@@ -783,6 +783,16 @@ est dans **[docs/personnages-illustres.md](docs/personnages-illustres.md)**.
 
 ## Accessibilité : le clavier et le zoom
 
+**Annonces aux lecteurs d'écran.** `A11y.announce(texte)` (`js/a11y.js`) pose un texte dans
+une zone `role="status"` hors écran (`#a11y-live`, classe `.sr-only` — jamais
+`display:none`, qui ne serait pas lu). La frise s'en sert : à chaque placement, le
+résultat (« Correct. Brunelleschi couronne…, 1436. Placé entre 1419 et 1450. » ou
+« Raté. … il se place plus haut dans la frise. Il vous reste 2 vies. ») puis la carte
+suivante, **dans un seul message** — deux annonces rapprochées s'écrasent dans une
+zone unique. Un raté est annoncé tout de suite, la carte suivante 2,2 s plus tard. Les
+autres modes gardent leurs propres zones `aria-live` (réponses, révélations) ; ce
+canal-ci n'est branché que sur la frise.
+
 Jusqu'ici l'app ne se jouait qu'au doigt ou à la souris. Un inventaire des
 écrans, fait en parcourant l'app dans un vrai navigateur (voir
 `e2e/clavier.spec.js`), comptait **59 éléments cliquables sans accès

@@ -336,6 +336,31 @@
     function markInteracted() { interacted = true; }
 
     var started = false;
+    // Annonce un texte aux lecteurs d'écran, sans rien montrer : une zone `role="status"` unique, créée à
+    // la demande. Le texte est vidé puis reposé : sans cela, la même phrase répétée (deux « Correct. »
+    // d'affilée) ne serait pas relue.
+    var liveRegion = null;
+    var liveTimer = null;
+
+    function announce(text) {
+        if (typeof document === 'undefined' || !document.body || !text) return;
+        if (!liveRegion || !liveRegion.isConnected) {
+            liveRegion = document.getElementById('a11y-live');
+            if (!liveRegion) {
+                liveRegion = document.createElement('div');
+                liveRegion.id = 'a11y-live';
+                liveRegion.className = 'sr-only';
+                liveRegion.setAttribute('role', 'status');
+                liveRegion.setAttribute('aria-live', 'polite');
+                liveRegion.setAttribute('aria-atomic', 'true');
+                document.body.appendChild(liveRegion);
+            }
+        }
+        clearTimeout(liveTimer);
+        liveRegion.textContent = '';
+        liveTimer = setTimeout(function () { liveRegion.textContent = text; }, 60);
+    }
+
     function init() {
         if (started || typeof document === 'undefined') return;
         started = true;
@@ -356,6 +381,7 @@
         focusScreen: focusScreen,
         focusQuestion: focusQuestion,
         keepFocus: keepFocus,
+        announce: announce,
         init: init
     };
 });

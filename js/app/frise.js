@@ -27,9 +27,15 @@ function stripThemePeriodSuffix(nom) {
 }
 
 // LOGIQUE DE JEU
+// Résultat du placement qui vient d'être fait, à dire AVEC la carte suivante (un seul message : deux
+// annonces rapprochées s'écrasent l'une l'autre dans la zone `role="status"`).
+let pendingPlacementAnnouncement = '';
+
 function pickNextEvent() {
     playCardSlideSound();
     if (currentPool.length === 0) {
+        if (pendingPlacementAnnouncement) A11y.announce(pendingPlacementAnnouncement);
+        pendingPlacementAnnouncement = '';
         if (currentMode === 'multi') {
             endMultiplayerGame();
         } else {
@@ -39,6 +45,8 @@ function pickNextEvent() {
     }
     eventToPlace = currentPool.pop();
     questionStartTime = Date.now();
+    A11y.announce([pendingPlacementAnnouncement, t('game.announce_next', { title: eventToPlace.titre })].filter(Boolean).join(' '));
+    pendingPlacementAnnouncement = '';
     // L'événement en jeu reste « en main », épinglé en bas de l'écran, date masquée
     const hand = document.getElementById('hand');
     hand.classList.remove('hand-revealed');
@@ -429,12 +437,17 @@ function checkPlacement(index, slotElement) {
         checkBadgeProgressOnAction(true);
         recordSessionStep(eventToPlace, true, false);
         const placedId = eventToPlace.id;
+        // Annonce aux lecteurs d'écran (le créneau se lit avant que la carte ne le change).
+        const correctText = t('game.announce_correct', { title: eventToPlace.titre, date: formatYear(dateToPlace), slot: slotLabel(index) });
         placedEvents.splice(index, 0, eventToPlace);
         updateHUD();
         focusEntry(placedId, 'entry-new entry-correct-pulse');
         if (currentMode === 'multi') {
+            A11y.announce(correctText);
             setTimeout(() => nextMultiPlayerTurn(), 1000);
         } else {
+            // Une seule phrase : le résultat, puis la carte suivante (voir pickNextEvent).
+            pendingPlacementAnnouncement = correctText;
             pickNextEvent();
         }
     } else {
@@ -471,6 +484,18 @@ function checkPlacement(index, slotElement) {
 
         // L'intervalle choisi indique la direction de l'erreur
         const wrongKey = (correctIndex < index) ? 'game.slot_higher' : 'game.slot_lower';
+        // Annonce immédiate : la carte suivante n'arrive que 2,2 s plus tard (voir plus bas).
+        let wrongText = t('game.announce_wrong', {
+            title: eventToPlace.titre,
+            date: formatYear(dateToPlace),
+            direction: t(correctIndex < index ? 'game.announce_higher' : 'game.announce_lower')
+        });
+        const livesLeft = currentMode === 'multi' ? multiPlayers[currentMultiPlayerIndex].lives : lives;
+        if (isFinite(livesLeft)) {
+            wrongText += ' ' + (livesLeft <= 0 ? t('game.announce_no_lives')
+                : t(livesLeft === 1 ? 'game.announce_lives_one' : 'game.announce_lives', { count: livesLeft }));
+        }
+        A11y.announce(wrongText);
         slotElement.classList.add('slot-wrong');
         const labelEl = slotElement.querySelector('.slot-label');
         if (labelEl) labelEl.innerText = t(wrongKey, { date: formatYear(dateToPlace) });
