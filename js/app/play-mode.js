@@ -10,6 +10,7 @@ const PLAY_MODES = [
     { id: 'training', title: 'modes.training.title', start: () => startActualGame('training') },
     { id: 'chrono', title: 'modes.chrono.title', needs: 'chrono', start: () => startActualGame('chrono') },
     { id: 'expert', title: 'modes.expert.title', needs: 'expert', start: () => startActualGame('expert') },
+    { id: 'expedition', title: 'expedition.title', start: () => startExpedition() },
     { id: 'quiz', title: 'modes.quiz.title', start: () => startQuizGame() },
     { id: 'blitz', title: 'blitz.title', start: () => startBlitzGame() },
     { id: 'curseur', title: 'curseur.title', start: () => startCurseurGame() },

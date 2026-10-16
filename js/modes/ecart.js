@@ -15,14 +15,14 @@ function startEcartGame() {
         return;
     }
 
-    ecartQuestions = buildEcartQuestions(sourceEvents);
+    ecartQuestions = expeditionCap(buildEcartQuestions(sourceEvents), 'ecart');
     if (ecartQuestions.length === 0) {
         alert(t('modes.cannot_generate_dates'));
         return;
     }
 
     ecartIndex = 0;
-    lives = 3;
+    lives = startingLives();
     score = 0;
     comboMultiplier = 1.0;
 

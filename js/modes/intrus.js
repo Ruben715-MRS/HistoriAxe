@@ -18,14 +18,14 @@ function startIntrusGame() {
     currentMode = 'intrus';
     const sourceEvents = getSessionPool();
 
-    intrusQuestions = GameModes.buildIntrusQuestions(sourceEvents);
+    intrusQuestions = expeditionCap(GameModes.buildIntrusQuestions(sourceEvents), 'intrus');
     if (intrusQuestions.length < 3) {
         alert(t('intrus.not_enough'));
         return;
     }
 
     intrusIndex = 0;
-    lives = 3;
+    lives = startingLives();
     score = 0;
     comboMultiplier = 1.0;
     currentRoundSize = intrusQuestions.length;

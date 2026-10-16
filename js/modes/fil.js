@@ -15,9 +15,9 @@ function startFilGame() {
         return;
     }
 
-    filEvents = [...sourceEvents].sort((a, b) => a.date - b.date);
+    filEvents = expeditionCap([...sourceEvents], 'fil').sort((a, b) => a.date - b.date);
     filIndex = 0;
-    lives = 3;
+    lives = startingLives();
     score = 0;
     comboMultiplier = 1.0;
 

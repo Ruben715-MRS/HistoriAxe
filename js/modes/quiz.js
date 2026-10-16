@@ -13,9 +13,9 @@ function startQuizGame() {
         return;
     }
 
-    quizQuestions = buildQuizQuestions(sourceEvents);
+    quizQuestions = expeditionCap(buildQuizQuestions(sourceEvents), 'quiz');
     quizIndex = 0;
-    lives = 3;
+    lives = startingLives();
     score = 0;
     comboMultiplier = 1.0;
     quizFiftyLeft = 2;

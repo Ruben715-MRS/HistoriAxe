@@ -8250,3 +8250,124 @@ input:not([type="range"]), label, select, summary, textarea {
     white-space: nowrap;
     border: 0;
 }
+
+/* --- EXPÉDITION --- */
+.mode-card.expedition-card {
+    background: linear-gradient(135deg, #6b4400, #9a6200);
+}
+
+#screen-expedition {
+    align-items: center;
+}
+
+.expedition-track {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    max-width: 620px;
+    margin: 6px auto 18px;
+    padding: 0 16px;
+}
+
+.expedition-stage {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border: 1px solid var(--border-soft);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--text-dark);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.expedition-stage.is-current {
+    background: var(--primary-blue);
+    border-color: var(--primary-blue);
+    color: #fff;
+}
+
+.expedition-stage.is-done {
+    color: var(--muted-text);
+}
+
+.expedition-stage-icon {
+    min-width: 1.1em;
+    text-align: center;
+}
+
+.expedition-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 18px;
+}
+
+.expedition-score {
+    font-size: 16px;
+    color: var(--text-dark);
+}
+
+.expedition-next,
+.expedition-final {
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto 40px;
+    padding: 22px 20px;
+    border-radius: 16px;
+    background: var(--surface);
+    border: 1px solid var(--border-soft);
+    box-shadow: var(--card-shadow);
+    text-align: center;
+    color: var(--text-dark);
+}
+
+.expedition-next-kicker {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--muted-text);
+}
+
+.expedition-next-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 6px 0 8px;
+}
+
+.expedition-next-desc {
+    font-size: 14px;
+    color: var(--muted-text);
+    margin-bottom: 18px;
+}
+
+.expedition-go {
+    width: 100%;
+}
+
+.expedition-jokers {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.expedition-earned {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--success-text);
+}
+
+.expedition-final-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 16px;
+}

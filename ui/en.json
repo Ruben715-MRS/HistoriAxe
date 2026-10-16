@@ -835,5 +835,27 @@
     "mode_subtitle": "Place the events of “{label}” on the map, then estimate their year with the slider.",
     "year_kicker": "Roughly which year? (within ±{tolerance} years counts)",
     "share": "🧭 HistoriAxe — Chrono-Geo · {label}\n📍 {km} km · ⏳ {years} years on average\n🏆 Score: {score} points\n\nPlay HistoriAxe!"
+  },
+  "expedition": {
+    "title": "Expedition",
+    "desc": "8 challenges in a row, 3 lives for the whole run, and jokers earned along the way.",
+    "subtitle": "Challenge {n} of {total} · 3 lives for the whole run",
+    "stage_kicker": "Challenge {n} / {total}",
+    "go": "Start the challenge",
+    "quit_aria": "Leave the expedition",
+    "confirm_quit": "Abandon the expedition? The current run will be lost.",
+    "lives_aria": "{count} lives left",
+    "not_enough": "The theme needs at least {count} events to set off on an expedition.",
+    "joker_skip": "⏭ Skip the challenge ({count})",
+    "joker_life": "❤️ Regain a life ({count})",
+    "joker_earned_skip": "Joker earned: you can skip one challenge without penalty.",
+    "joker_earned_life": "Joker earned: you can regain a life.",
+    "won_title": "Expedition complete!",
+    "lost_title": "Expedition cut short",
+    "final_text": "{done} of {total} challenges passed ({skipped} skipped) · {score} points · {lives} lives left.",
+    "share_btn": "Share",
+    "replay": "New expedition",
+    "leave": "Back",
+    "share": "🧭 HistoriAxe — Expedition · {theme}\n{row}\n🏆 {score} points · ❤️ {lives}\n\nPlay HistoriAxe!"
   }
 }

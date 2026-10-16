@@ -95,7 +95,7 @@ function launchSimultaneitySession(questions) {
     currentRoundSize = questions.length;
     simulQuestions = questions;
     simulIndex = 0;
-    lives = 3;
+    lives = startingLives();
     score = 0;
     comboMultiplier = 1.0;
 

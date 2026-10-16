@@ -161,6 +161,10 @@ function endGame(isWin) {
     // l'écran de fin et rappellerait endGame à zéro.
     stopBlitzClock();
 
+    // Expédition : la fin d'une épreuve n'est pas la fin d'une partie — on rend la main au parcours
+    // (js/app/expedition.js), qui garde les vies et les points d'une épreuve à l'autre.
+    if (typeof expeditionOnStageEnd === 'function' && expeditionOnStageEnd(isWin)) return;
+
     if (isWin) { playVictorySound(); triggerHaptic('victory'); triggerConfetti(); } else { triggerHaptic('error'); }
 
     if (isWin && !revisionMode && !dailyChallengeMode && !weeklyChallengeMode && (currentMode === 'classic' || currentMode === 'chrono')) {
@@ -388,6 +392,8 @@ function quitGame() {
         resetPlacementAnimationState();
         stopTimer();
         multiGameActive = false;
+        // Quitter une épreuve d'Expédition abandonne tout le parcours et ramène à l'écran des modes.
+        if (typeof expeditionAbort === 'function' && expeditionAbort()) { showScreen('screen-modes', 'back'); return; }
         showScreen(screenAfterGame());
     });
 }

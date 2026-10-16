@@ -353,6 +353,31 @@ l'appareil et hors synchronisation). Elle ouvre le thème là où on l'avait
 laissé : choix des axes s'il en a, sinon écran des modes. L'écran d'accueil
 (image à toucher) n'en porte pas : ce n'est qu'un seuil vers les catégories.
 
+## L'Expédition : huit épreuves, trois vies pour tout le parcours
+
+Au lieu de choisir un mode parmi vingt, le joueur enchaîne **huit épreuves** sur le thème
+affiché (carte « Expédition » en tête des Défis express, ou comme mode favori du bouton
+Jouer) : deux faciles (Quiz, Avant/Après), trois moyennes (frise Classique, Périodes,
+Intrus), trois difficiles tirées parmi Curseur, Remise en ordre, Trouve l'écart et Fil du
+temps — jamais deux fois le même mode (`planExpeditionStages`). **Trois vies pour tout le
+parcours** : ce qu'on perd dans une épreuve manque à la suivante ; la dernière vie perdue
+interrompt l'expédition. Il faut au moins 12 événements dans le thème.
+
+Les modes sont de **vrais modes**, lancés par leurs fonctions d'origine ; `js/app/expedition.js`
+ne touche à aucun moteur sauf par trois points d'accroche : `startingLives()` (les vies au
+lancement d'une épreuve, au lieu d'un `3` écrit en dur dans chaque mode),
+`expeditionCap(liste, mode)` (une épreuve fait 2 à 6 questions, pas une partie entière) et
+`expeditionOnStageEnd(gagné)`, appelée au début d'`endGame` : la fin d'une épreuve rend la main
+au parcours, qui garde vies et points. Un mode qui manque de matière sur le thème (il le dit
+par une alerte) est détecté et l'épreuve passée sans pénalité. L'XP est versée une fois, à
+la fin du parcours.
+
+**Jokers**, gagnés après la 3ᵉ et la 6ᵉ épreuve : « passer l'épreuve » et « regagner une vie »
+(jamais au-delà de trois). Ils ne dépendent d'aucun moteur — c'est pourquoi les « révéler le
+siècle » et « changer la carte » imaginés au départ ne sont pas faits : chacun aurait demandé
+un branchement par mode. Quitter en pleine épreuve abandonne le parcours. Le partage donne
+une ligne de carrés (🟩 réussie, ⏭ passée, 🟥 échouée, ⬜ non atteinte).
+
 ## Longueur de la manche
 
 Jusqu'ici, **une partie valait le thème entier**. Médiane de 18 événements,

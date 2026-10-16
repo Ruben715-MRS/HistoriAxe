@@ -840,5 +840,27 @@
     "mode_subtitle": "Posez les événements de « {label} » sur la carte, puis estimez leur année au curseur.",
     "year_kicker": "En quelle année, à peu près ? (à ±{tolerance} ans près, la réponse compte)",
     "share": "🧭 HistoriAxe — Chrono-Géo · {label}\n📍 {km} km · ⏳ {years} ans en moyenne\n🏆 Score : {score} points\n\nJoue sur HistoriAxe !"
+  },
+  "expedition": {
+    "title": "Expédition",
+    "desc": "8 épreuves enchaînées, 3 vies pour tout le parcours, et des jokers gagnés en route.",
+    "subtitle": "Épreuve {n} sur {total} · 3 vies pour tout le parcours",
+    "stage_kicker": "Épreuve {n} / {total}",
+    "go": "Lancer l'épreuve",
+    "quit_aria": "Quitter l'expédition",
+    "confirm_quit": "Abandonner l'expédition ? Le parcours en cours sera perdu.",
+    "lives_aria": "{count} vies restantes",
+    "not_enough": "Il faut au moins {count} événements dans le thème pour partir en expédition.",
+    "joker_skip": "⏭ Passer l'épreuve ({count})",
+    "joker_life": "❤️ Regagner une vie ({count})",
+    "joker_earned_skip": "Joker gagné : vous pouvez passer une épreuve sans pénalité.",
+    "joker_earned_life": "Joker gagné : vous pouvez regagner une vie.",
+    "won_title": "Expédition réussie !",
+    "lost_title": "Expédition interrompue",
+    "final_text": "{done} épreuves réussies sur {total} (dont {skipped} passées) · {score} points · {lives} vies restantes.",
+    "share_btn": "Partager",
+    "replay": "Nouvelle expédition",
+    "leave": "Retour",
+    "share": "🧭 HistoriAxe — Expédition · {theme}\n{row}\n🏆 {score} points · ❤️ {lives}\n\nJoue sur HistoriAxe !"
   }
 }

@@ -124,7 +124,7 @@ function startActualGame(mode) {
         // garde le thème entier, une frise amputée n'ayant aucun sens.
         sourceEvents = getModePoolRaw();
     } else {
-        sourceEvents = getSessionPool();
+        sourceEvents = expeditionCap(getSessionPool(), 'classic');
     }
     if (sourceEvents.length === 0) {
         alert(t('modes.no_events_theme'));
@@ -159,7 +159,7 @@ function startActualGame(mode) {
     if (mode === 'training' || mode === 'discovery') lives = Infinity;
     else if (mode === 'expert') lives = 1;
     else if (mode === 'multi') lives = 2; // unused directly, but for safety
-    else lives = 3; // classic, chrono, daily, weekly
+    else lives = startingLives(); // classic, chrono, daily, weekly (3, ou ce qu'il reste en Expédition)
 
     score = 0;
     totalTimePlayed = 0;

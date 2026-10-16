@@ -113,7 +113,9 @@ async function mesurerSurFond(page, selecteur) {
     for (let i = 0; i < total; i++) {
         const el = page.locator(selecteur).nth(i);
         if (!(await el.isVisible())) continue;
-        await el.scrollIntoViewIfNeeded();
+        // Au centre de l'écran : « si besoin » laissait parfois le titre collé au bord haut, sous le bouton
+        // Retour (fixe), dont les pixels clairs faussaient la mesure — selon le nombre de cartes au-dessus.
+        await el.evaluate(node => node.scrollIntoView({ block: 'center' }));
 
         const info = await el.evaluate(node => {
             const cs = getComputedStyle(node);

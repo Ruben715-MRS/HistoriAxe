@@ -14,14 +14,14 @@ function startPeriodesGame() {
         return;
     }
 
-    periodesQuestions = buildPeriodesQuestions(sourceEvents);
+    periodesQuestions = expeditionCap(buildPeriodesQuestions(sourceEvents), 'periodes');
     if (periodesQuestions.length === 0) {
         alert(t('modes.cannot_generate'));
         return;
     }
 
     periodesIndex = 0;
-    lives = 3;
+    lives = startingLives();
     score = 0;
     comboMultiplier = 1.0;
 

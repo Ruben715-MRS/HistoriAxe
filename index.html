@@ -424,6 +424,10 @@
                 <span class="modes-group-chevron" aria-hidden="true">▾</span>
             </button>
             <div class="modes-group-body grid-modes" id="modes-group-express-body">
+                <div role="button" tabindex="0" class="mode-card expedition-card" id="mode-card-expedition" onclick="startExpedition()">
+                    <h3 data-i18n="expedition.title">Expédition</h3>
+                    <p data-i18n="expedition.desc">8 épreuves enchaînées, 3 vies pour tout le parcours, et des jokers gagnés en route.</p>
+                </div>
                 <div role="button" tabindex="0" class="mode-card quiz-card" onclick="startQuizGame()">
                     <h3 data-i18n="modes.quiz.title">Quiz</h3>
                     <p data-i18n="modes.quiz.desc">Questions à choix multiples (QCM).</p>
@@ -533,6 +537,39 @@
         </div>
     </div>
 
+
+    <!-- ÉCRAN : EXPÉDITION (huit épreuves tirées parmi les modes, vies communes — voir js/app/expedition.js) -->
+    <div id="screen-expedition" class="list-screen hidden">
+        <button class="back-btn" onclick="expeditionQuit()" aria-label="Quitter l'expédition"
+            data-i18n-attr="aria-label:expedition.quit_aria">‹</button>
+        <h2 class="header-title" data-i18n="expedition.title">Expédition</h2>
+        <p class="modes-header-subtitle" id="expedition-subtitle"></p>
+
+        <ol class="expedition-track" id="expedition-track"></ol>
+
+        <div class="expedition-status">
+            <span class="lives-row" id="expedition-lives" role="img"></span>
+            <span class="expedition-score"><strong id="expedition-score">0</strong> pts</span>
+        </div>
+
+        <div class="expedition-next" id="expedition-next">
+            <div class="expedition-next-kicker" id="expedition-next-kicker"></div>
+            <div class="expedition-next-title" id="expedition-next-title"></div>
+            <p class="expedition-next-desc" id="expedition-next-desc"></p>
+            <button type="button" class="btn expedition-go" id="expedition-go" onclick="expeditionGo()"></button>
+            <div class="expedition-jokers" id="expedition-jokers"></div>
+        </div>
+
+        <div class="expedition-final hidden" id="expedition-final">
+            <h3 id="expedition-final-title"></h3>
+            <p id="expedition-final-text"></p>
+            <div class="expedition-final-actions">
+                <button type="button" class="btn" id="expedition-share" onclick="expeditionShare()" data-i18n="expedition.share_btn">Partager</button>
+                <button type="button" class="btn" onclick="startExpedition()" data-i18n="expedition.replay">Nouvelle expédition</button>
+                <button type="button" class="btn" onclick="expeditionQuit()" data-i18n="expedition.leave">Retour</button>
+            </div>
+        </div>
+    </div>
 
     <!-- ÉCRAN 4bis : SOMMAIRE (fiche de synthèse dépliable, pour les thèmes
          qui en proposent une — voir js/mindMap.js) -->
@@ -1848,6 +1885,7 @@
     <script src="js/app/session-end.js"></script>
     <script src="js/app/modal.js"></script>
     <script src="js/app/play-mode.js"></script>
+    <script src="js/app/expedition.js"></script>
     <script src="js/app.js"></script>
 
     <!-- ENREGISTREMENT DU SERVICE WORKER PWA -->

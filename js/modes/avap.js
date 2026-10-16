@@ -15,14 +15,14 @@ function startAvapGame() {
         return;
     }
 
-    avapQuestions = buildAvapQuestions(sourceEvents);
+    avapQuestions = expeditionCap(buildAvapQuestions(sourceEvents), 'avantapres');
     if (avapQuestions.length === 0) {
         alert(t('modes.cannot_generate_dates'));
         return;
     }
 
     avapIndex = 0;
-    lives = 3;
+    lives = startingLives();
     score = 0;
     comboMultiplier = 1.0;
 

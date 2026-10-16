@@ -23,7 +23,7 @@ function startOrdreGame() {
     currentMode = 'ordre';
     const sourceEvents = getSessionPool();
 
-    ordreRounds = GameModes.buildOrderRounds(sourceEvents);
+    ordreRounds = expeditionCap(GameModes.buildOrderRounds(sourceEvents), 'ordre');
     if (!ordreRounds.length) {
         alert(t('ordre.not_enough', { count: GameModes.ORDER_CARDS }));
         return;
@@ -31,7 +31,7 @@ function startOrdreGame() {
 
     ordreIndex = 0;
     ordreAttempt = [];
-    lives = 3;
+    lives = startingLives();
     score = 0;
     comboMultiplier = 1.0;
     currentRoundSize = ordreRounds.length;

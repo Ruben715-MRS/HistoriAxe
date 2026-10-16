@@ -12,7 +12,7 @@
 // 'install' recharge tout depuis le réseau. Un pack de langue ou un texte
 // d'UI modifié qui ne s'affiche pas malgré un déploiement réussi est
 // généralement le signe que l'un de ces deux numéros n'a pas été incrémenté.
-const CACHE_VERSION = '1.4.84';
+const CACHE_VERSION = '1.4.85';
 const APP_SHELL_CACHE = `historiaxe-shell-v${CACHE_VERSION}`;
 const DATA_CACHE = 'historiaxe-data-v1.0.61';
 
@@ -96,6 +96,7 @@ const APP_SHELL_FILES = [
     './js/app/session-end.js',
     './js/app/modal.js',
     './js/app/play-mode.js',
+    './js/app/expedition.js',
     './js/app.js',
     './ui/fr.json',
     './apple_icon.jpg',

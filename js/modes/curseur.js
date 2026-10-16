@@ -23,13 +23,14 @@ function startCurseurGame() {
     curseurRounds = GameModes.buildSliderRounds(sourceEvents, {
         count: Math.min(GameModes.SLIDER_ROUNDS, sourceEvents.length)
     });
+    curseurRounds = expeditionCap(curseurRounds, 'curseur');
     if (curseurRounds.length < 3) {
         alert(t('curseur.not_enough'));
         return;
     }
 
     curseurIndex = 0;
-    lives = 3;
+    lives = startingLives();
     score = 0;
     comboMultiplier = 1.0;
     currentRoundSize = curseurRounds.length;
