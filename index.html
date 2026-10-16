@@ -387,11 +387,11 @@
         <!-- Le geste principal d'abord : une partie classique du thème (ou de la sélection en
              cours) en un tap. Le reste est rangé par intention ; chaque groupe se replie. -->
         <div class="modes-play">
-            <button type="button" class="modes-play-btn" id="btn-modes-play" onclick="startActualGame('classic')">
+            <button type="button" class="modes-play-btn" id="btn-modes-play" onclick="startFavoritePlayMode()">
                 <span class="modes-play-icon" aria-hidden="true">▶</span>
                 <span class="modes-play-text">
                     <strong data-i18n="modes.play">Jouer</strong>
-                    <small data-i18n="modes.play_sub">Mode Classique · 3 vies</small>
+                    <small id="modes-play-mode">Mode : Classique</small>
                 </span>
             </button>
         </div>
@@ -1732,6 +1732,14 @@
                     noir et blanc tant que vous n'avez pas rencontré le personnage en jeu.</p>
             </div>
 
+            <div class="settings-group">
+                <label class="settings-label" for="settings-play-mode" data-i18n="settings.play_mode_label">Mode du bouton « Jouer »</label>
+                <select id="settings-play-mode" class="form-input"></select>
+                <p class="settings-hint" data-i18n="settings.play_mode_hint">Le bouton « Jouer » de l'écran des modes lance ce
+                    mode. Si le mode choisi n'est pas disponible sur un thème (Chrono ou Expert verrouillés, par exemple),
+                    c'est le mode Classique qui se lance.</p>
+            </div>
+
             <div class="settings-group hidden" id="settings-group-notifications">
                 <div class="settings-label" data-i18n="settings.notifications_label">Notifications</div>
                 <div class="segmented" id="settings-notifications">
@@ -1822,6 +1830,7 @@
     <script src="js/app/frise.js"></script>
     <script src="js/app/session-end.js"></script>
     <script src="js/app/modal.js"></script>
+    <script src="js/app/play-mode.js"></script>
     <script src="js/app.js"></script>
 
     <!-- ENREGISTREMENT DU SERVICE WORKER PWA -->

@@ -71,7 +71,7 @@
   },
   "modes": {
     "play": "Play",
-    "play_sub": "Classic mode · 3 lives",
+    "play_sub": "Mode: {mode}",
     "group_frise": "The timeline",
     "group_express": "Quick challenges",
     "group_explore": "Explore",
@@ -389,6 +389,8 @@
     "hero_level_line": "Level {level} • {xp} XP"
   },
   "settings": {
+    "play_mode_label": "“Play” button mode",
+    "play_mode_hint": "The “Play” button on the modes screen launches this mode. If it isn't available on a theme (Chrono or Expert still locked, for instance), Classic mode starts instead.",
     "title": "Settings",
     "orientation_label": "Timeline Orientation",
     "orientation_auto": "Auto",

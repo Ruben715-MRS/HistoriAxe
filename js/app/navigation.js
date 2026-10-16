@@ -176,6 +176,7 @@ function showScreen(screenId, direction) {
         renderRoundLengthPicker();
         updateModeLocks();
         updateWhoisCard();
+        updatePlayButton();
         // Choix Frise / Sommaire sous « Découverte » : déplié seulement
         // pour un thème qui propose un sommaire (voir js/mindMap.js).
         if (typeof refreshDiscoveryPicker === 'function') refreshDiscoveryPicker();

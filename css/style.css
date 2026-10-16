@@ -8215,8 +8215,25 @@ input:not([type="range"]), label, select, summary, textarea {
     white-space: nowrap;
 }
 
-/* « La frise » : quatre cartes qui ne tiennent pas à elles seules un écran de téléphone. */
+/* « La frise » : mêmes cases que les autres groupes (deux colonnes sur toute la largeur du groupe, même
+   écart, même hauteur de carte) — et non plus quatre petits carrés centrés. */
+.modes-group-frise .grid-modes-square {
+    max-width: none;
+    margin: 0 0 18px;
+    gap: 12px;
+}
+
 .modes-group-frise .grid-modes-square .mode-card {
     aspect-ratio: auto;
-    min-height: 118px;
+    min-height: 0;
+    padding: 14px 16px;
+}
+
+.modes-group-frise .grid-modes-square .mode-card h3 {
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.modes-group-frise .grid-modes-square .mode-card p {
+    font-size: 13px;
 }

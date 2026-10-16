@@ -67,6 +67,8 @@ const DEFAULT_SETTINGS = {
     // de la médiane (la majorité des thèmes ne bouge donc pas) tout en
     // bornant les gros, et « Tout » reste à un tap sur l'écran des modes.
     roundLength: 20,
+    // Mode que lance le bouton « Jouer » de l'écran des modes (voir js/app/play-mode.js) : un id de PLAY_MODES.
+    playMode: 'classic',
     // Portraits de la galerie (js/gallery.js) : 'bw' = en noir et blanc tant que le
     // personnage n'a pas été rencontré en jeu, avec un compteur de collection ;
     // 'color' = tous en couleur, sans progression. null = la question n'a pas encore

@@ -189,3 +189,57 @@ test('« Reprendre » ramène au dernier thème ouvert', async ({ page }) => {
     expect(await visibleScreen(page)).toBe('screen-axes');
     expect(await page.evaluate(() => getCurrentTheme().id)).toBe('thm_rome');
 });
+
+// --- « La frise » : mêmes cases que les autres groupes ---------------------
+
+test('les cases de « La frise » ont la largeur de celles des autres groupes (grand écran)', async ({ page }) => {
+    await page.setViewportSize({ width: 1200, height: 900 });
+    const largeur = id => page.locator(id).evaluate(el => Math.round(el.getBoundingClientRect().width));
+    const quiz = await largeur('#mode-card-blitz');
+    for (const id of ['#mode-card-training', '#mode-card-classic', '#mode-card-chrono', '#mode-card-expert']) {
+        expect(Math.abs(await largeur(id) - quiz), id).toBeLessThanOrEqual(2);
+    }
+});
+
+// --- Mode favori du bouton « Jouer » ---------------------------------------
+
+async function choisirModeJouer(page, id) {
+    await page.evaluate(() => openSettings());
+    await page.locator('#settings-play-mode').selectOption(id);
+    await page.evaluate(() => closeSettings());
+}
+
+test('« Jouer » lance Classique tant que le joueur n’a rien choisi', async ({ page }) => {
+    await expect(page.locator('#modes-play-mode')).toHaveText('Mode : Classique');
+    expect(await page.evaluate(() => appSettings.playMode)).toBe('classic');
+});
+
+test('le mode choisi dans les Réglages est celui du bouton « Jouer », et il est retenu', async ({ page }) => {
+    await choisirModeJouer(page, 'quiz');
+    // Le libellé suit dès le retour sur l'écran des modes.
+    await page.evaluate(() => showScreen('screen-categories'));
+    await openThemeModes(page, THEME);
+    await expect(page.locator('#modes-play-mode')).toHaveText('Mode : Quiz');
+
+    // Retenu d'une session à l'autre.
+    await page.reload();
+    await page.waitForFunction(() => window.bdd && window.bdd.some(c => !c.isCustomCategory));
+    expect(await page.evaluate(() => JSON.parse(localStorage.getItem('historiaxe_settings')).playMode)).toBe('quiz');
+
+    await page.locator('#screen-home').click();
+    await openThemeModes(page, THEME);
+    await page.locator('#btn-modes-play').click();
+    await expect(page.locator('#screen-quiz')).toBeVisible();
+});
+
+test('un mode favori verrouillé sur le thème retombe sur Classique, et le bouton le dit', async ({ page }) => {
+    await choisirModeJouer(page, 'chrono');
+    await page.evaluate(() => { showScreen('screen-categories'); });
+    await openThemeModes(page, THEME);
+    await expect(page.locator('#modes-play-mode')).toHaveText('Mode : Classique');
+    await page.locator('#btn-modes-play').click();
+    await expect(page.locator('#screen-game')).toBeVisible();
+    expect(await page.evaluate(() => currentMode)).toBe('classic');
+    // Le choix du joueur, lui, n'a pas été touché.
+    expect(await page.evaluate(() => appSettings.playMode)).toBe('chrono');
+});

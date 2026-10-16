@@ -307,6 +307,12 @@ maintenant sur un grand bouton **Jouer** (partie classique, un tap), puis
 repliables — **Défis express** (Quiz, Blitz, Curseur, Intrus, Remise en ordre,
 Avant/Après, Périodes), **Explorer** (Découverte, Pendant ce temps, Qui est-ce ?,
 Fil du temps, Trouve l'écart), **Outils** (Sélection, Ajouter, Multijoueurs).
+Le bouton **Jouer** lance le **mode favori** du joueur — Réglages › « Mode du bouton
+Jouer », `appSettings.playMode`, retenu jusqu'à ce qu'il le change ; Classique par
+défaut (`js/app/play-mode.js: PLAY_MODES`). Un mode favori indisponible sur le thème
+affiché (Chrono ou Expert verrouillés, Qui est-ce ? sans assez de portraits) retombe
+sur Classique, et le libellé du bouton le dit. « La frise » reprend les cases des
+autres groupes (deux colonnes sur toute la largeur du groupe).
 Tout est déplié par défaut ; un groupe replié le reste d'une visite à l'autre
 (`MODES_GROUPS_KEY`, `initModesGroups`). Les identifiants `#mode-card-*` n'ont pas
 changé. Mesuré : 2 580 px au lieu de 3 540, « Classique » à 344 px.

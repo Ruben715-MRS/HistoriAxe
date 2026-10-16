@@ -267,6 +267,7 @@ function renderSettingsUI() {
         const supported = typeof HistoriAxeNotifications !== 'undefined' && HistoriAxeNotifications.isSupported();
         notifGroup.classList.toggle('hidden', !supported);
     }
+    renderPlayModeSetting();
     if (typeof i18n !== 'undefined' && typeof i18n.renderLanguagePacksSettingsUI === 'function') {
         i18n.renderLanguagePacksSettingsUI();
     }
@@ -320,6 +321,13 @@ function initSettingsControls() {
             renderSettingsUI();
         };
     });
+    const playModeSelect = document.getElementById('settings-play-mode');
+    if (playModeSelect) {
+        playModeSelect.onchange = () => {
+            appSettings.playMode = findPlayMode(playModeSelect.value).id;
+            settingsSave(appSettings);
+        };
+    }
     document.querySelectorAll('#settings-haptics button').forEach(btn => {
         btn.onclick = () => {
             appSettings.haptics = (btn.dataset.value === 'on');

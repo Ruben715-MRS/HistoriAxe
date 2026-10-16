@@ -73,7 +73,7 @@
   },
   "modes": {
     "play": "Jouer",
-    "play_sub": "Mode Classique · 3 vies",
+    "play_sub": "Mode : {mode}",
     "group_frise": "La frise",
     "group_express": "Défis express",
     "group_explore": "Explorer",
@@ -394,6 +394,8 @@
     "hero_level_line": "Niveau {level} • {xp} XP"
   },
   "settings": {
+    "play_mode_label": "Mode du bouton « Jouer »",
+    "play_mode_hint": "Le bouton « Jouer » de l'écran des modes lance ce mode. Si le mode choisi n'est pas disponible sur un thème (Chrono ou Expert verrouillés, par exemple), c'est le mode Classique qui se lance.",
     "title": "Réglages",
     "orientation_label": "Orientation de la frise",
     "orientation_auto": "Auto",
