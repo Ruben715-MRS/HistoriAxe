@@ -130,11 +130,15 @@ qu'en partagé — les deux défis ne tournent jamais en même temps, mais des
   (Swift Package Manager, `pod install`/Xcode) qui ne peut être vérifiée
   que sur un Mac avec Xcode — à faire et tester avant une soumission App
   Store.
-- **Compression des images** (`assets/`, ~34 Mo, essentiellement des JPEG
-  non optimisés) : un passage en WebP/AVIF réduirait sensiblement le poids
-  au téléchargement, un facteur de conversion sur l'App Store. Nécessite
-  un outil de conversion (`cwebp`/`sharp`) non disponible dans tous les
-  environnements et une vérification visuelle par image avant de committer.
+- **Images des tuiles : fait ; portraits : non.** Les images de catégories et de
+  sous-catégories (`assets/images/`) sont en WebP, 1 200 px au plus : 3,3 Mo au lieu
+  de 32 Mo (dont cinq doublons horodatés jamais référencés), vérifié par
+  `tests/assets-images.test.js`. Les 2 563 portraits (`assets/portraits/`, 62 Mo)
+  restent en JPEG : déjà petits (320×400, ~25 Ko), leur passage en WebP ne gagnerait
+  qu'environ 26 % (mesuré sur un échantillon) pour un chantier qui touche chaque
+  `image.src` de `data/fr.json`, le motif `PORTRAIT_SRC_PATTERN`, la règle de nommage
+  du cache de portraits et le script de collecte. `accueil.jpg` et les écrans de
+  lancement iOS restent en JPEG (le format exigé pour ces derniers).
 - **Télémétrie/monitoring** (crashs, rétention J1/J7/J30, thèmes qui
   plantent) : volontairement absent — le choix d'un prestataire (Sentry,
   Plausible, Firebase Analytics...) engage la politique de confidentialité

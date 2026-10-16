@@ -55,17 +55,17 @@ test('Personnages illustres : deux sous-catégories, chacune avec sa note et son
 
     // La tuile de la catégorie reprend l'image des anciennes Biographies.
     await expect(page.locator('#cat-grid > div').nth(index).locator('div[style*="background-image"]').first())
-        .toHaveAttribute('style', /cat_biographies\.jpg/);
+        .toHaveAttribute('style', /cat_biographies\.webp/);
 
     await page.locator('#cat-grid > div').nth(index).click();
     expect(await visibleScreen(page)).toBe('screen-subcategories');
     await expect(page.locator('#subcategory-screen-title')).toHaveText('Personnages illustres');
     await expect(page.locator('#subcategory-note-text')).toContainText('« Panthéons » fait l\'inverse');
     await expect(page.locator('#subcategories-container h4')).toHaveText(['Biographies', 'Panthéons']);
-    await expect(fondDeTuile(page, 'Biographies')).toHaveAttribute('style', /cat_biographies\.jpg/);
+    await expect(fondDeTuile(page, 'Biographies')).toHaveAttribute('style', /cat_biographies\.webp/);
     // Et non l'image des mythologies, que « panth » aurait attirée.
-    await expect(fondDeTuile(page, 'Panthéons')).toHaveAttribute('style', /sub_themes_generaux\.jpg/);
-    await expect(fondDeTuile(page, 'Panthéons')).not.toHaveAttribute('style', /sub_mythologies\.jpg/);
+    await expect(fondDeTuile(page, 'Panthéons')).toHaveAttribute('style', /sub_themes_generaux\.webp/);
+    await expect(fondDeTuile(page, 'Panthéons')).not.toHaveAttribute('style', /sub_mythologies\.webp/);
 
     // Biographies : toujours ses douze domaines, et sa propre note.
     await page.locator('#subcategories-container h4', { hasText: 'Biographies' }).click();

@@ -186,13 +186,13 @@ function initCategories() {
     container.appendChild(catSection);
 
     currentBdd.forEach((cat, index) => {
-        let bgImg = 'assets/images/cat_culture_generale.jpg';
-        if (cat.nom.toLowerCase().includes('culture')) bgImg = 'assets/images/cat_culture_generale.jpg';
-        if (cat.nom.toLowerCase().includes('bio') || cat.nom.toLowerCase().includes('illustres')) bgImg = 'assets/images/cat_biographies.jpg';
-        if (cat.nom.toLowerCase().includes('nationale')) bgImg = 'assets/images/cat_histoires_nationales.jpg';
-        if (cat.nom.toLowerCase().includes('programmes')) bgImg = 'assets/images/cat_programmes_scolaires.jpg';
-        if (cat.nom.toLowerCase().includes('capes') || cat.nom.toLowerCase().includes('agrég')) bgImg = 'assets/images/cat_agregation.jpg';
-        if (cat.isCustomCategory || cat.nom.toLowerCase().includes('personnalisé')) bgImg = 'assets/images/cat_themes_personnalises.jpg';
+        let bgImg = 'assets/images/cat_culture_generale.webp';
+        if (cat.nom.toLowerCase().includes('culture')) bgImg = 'assets/images/cat_culture_generale.webp';
+        if (cat.nom.toLowerCase().includes('bio') || cat.nom.toLowerCase().includes('illustres')) bgImg = 'assets/images/cat_biographies.webp';
+        if (cat.nom.toLowerCase().includes('nationale')) bgImg = 'assets/images/cat_histoires_nationales.webp';
+        if (cat.nom.toLowerCase().includes('programmes')) bgImg = 'assets/images/cat_programmes_scolaires.webp';
+        if (cat.nom.toLowerCase().includes('capes') || cat.nom.toLowerCase().includes('agrég')) bgImg = 'assets/images/cat_agregation.webp';
+        if (cat.isCustomCategory || cat.nom.toLowerCase().includes('personnalisé')) bgImg = 'assets/images/cat_themes_personnalises.webp';
 
         const card = document.createElement('div');
         card.className = 'relative h-32 md:h-40 rounded-[24px] overflow-hidden group cursor-pointer shadow-executive';
@@ -297,7 +297,7 @@ function initSubcategories() {
         const nbThemes = countThemesRecursive(sub);
         let textThemes = nbThemes === 0 ? t('themes.soon_available') : t('categories.themes_count', { count: nbThemes });
 
-        let bgImg = 'assets/images/cat_culture_generale.jpg'; // default fallback
+        let bgImg = 'assets/images/cat_culture_generale.webp'; // default fallback
         const nomLower = sub.nom.toLowerCase();
 
         // Mappings for available images
@@ -305,45 +305,45 @@ function initSubcategories() {
         // que la règle des mythologies (plus bas) lui volerait. Égalité stricte,
         // et non `includes` : « Mythologies et panthéons antiques » doit garder
         // sa propre image.
-        if (nomLower === 'panthéons' || nomLower === 'pantheons') bgImg = 'assets/images/sub_themes_generaux.jpg';
-        else if (nomLower === 'biographies') bgImg = 'assets/images/cat_biographies.jpg';
-        else if (nomLower.includes('europe')) bgImg = 'assets/images/sub_europe.jpg';
-        else if (nomLower.includes('amérique')) bgImg = 'assets/images/sub_ameriques.jpg';
-        else if (nomLower.includes('asie')) bgImg = 'assets/images/sub_asie.jpg';
-        else if (nomLower.includes('moyen-orient')) bgImg = 'assets/images/sub_moyen_orient.jpg';
-        else if (nomLower.includes('afrique')) bgImg = 'assets/images/sub_afrique.jpg';
-        else if (nomLower.includes('océanie')) bgImg = 'assets/images/sub_oceanie.jpg';
-        else if (nomLower.includes('empires')) bgImg = 'assets/images/sub_empires.jpg';
-        else if (nomLower.includes('sciences')) bgImg = 'assets/images/sub_sciences_techniques.jpg';
-        else if (nomLower.includes('arts') || nomLower.includes('spectacle')) bgImg = 'assets/images/sub_arts_litterature.jpg';
-        else if (nomLower.includes('juda')) bgImg = 'assets/images/sub_judaisme.jpg';
-        else if (nomLower.includes('islam')) bgImg = 'assets/images/sub_islam.jpg';
-        else if (nomLower.includes('christianisme')) bgImg = 'assets/images/sub_christianisme.jpg';
-        else if (nomLower.includes('hindouisme')) bgImg = 'assets/images/sub_hindouisme.jpg';
-        else if (nomLower.includes('bouddhisme')) bgImg = 'assets/images/sub_bouddhisme.jpg';
-        else if (nomLower.includes('panth')) bgImg = 'assets/images/sub_mythologies.jpg';
-        else if (nomLower.includes('grandes religions')) bgImg = 'assets/images/sub_grandes_religions.jpg';
-        else if (nomLower.includes('religions') || nomLower.includes('croyances')) bgImg = 'assets/images/sub_religions_croyances.jpg';
-        else if (nomLower.includes('société') || nomLower.includes('societe') || nomLower.includes('géopolitique') || nomLower.includes('geopolitique') || nomLower.includes('généraux')) bgImg = 'assets/images/sub_themes_generaux.jpg';
-        else if (nomLower.includes('rois, reines')) bgImg = 'assets/images/sub_rois_reines.jpg';
-        else if (nomLower.includes('chefs militaires')) bgImg = 'assets/images/sub_chefs_militaires.jpg';
-        else if (nomLower.includes('savants, scientifiques')) bgImg = 'assets/images/sub_savants_scientifiques.jpg';
-        else if (nomLower.includes('philosophes et penseurs')) bgImg = 'assets/images/sub_philosophes_penseurs.jpg';
-        else if (nomLower.includes('crivains et po')) bgImg = 'assets/images/sub_ecrivains_poetes.jpg';
-        else if (nomLower.includes('artistes et musiciens')) bgImg = 'assets/images/sub_artistes_musiciens.jpg';
-        else if (nomLower.includes('explorateurs et grands voyageurs')) bgImg = 'assets/images/sub_explorateurs_voyageurs.jpg';
-        else if (nomLower.includes('figures religieuses')) bgImg = 'assets/images/sub_figures_religieuses.jpg';
-        else if (nomLower.includes('militants, r')) bgImg = 'assets/images/sub_militants_resistants.jpg';
-        else if (nomLower.includes('acteurs, chanteurs')) bgImg = 'assets/images/sub_acteurs_chanteurs.jpg';
-        else if (nomLower.includes('architectes, designers')) bgImg = 'assets/images/sub_architectes_designers.jpg';
-        else if (nomLower.includes('entrepreneurs et magnats')) bgImg = 'assets/images/sub_entrepreneurs_magnats.jpg';
-        else if (nomLower.includes('sportifs et ath')) bgImg = 'assets/images/sub_sportifs_athletes.jpg';
-        else if (nomLower.includes('collège') || node.nom.toLowerCase().includes('collège')) bgImg = 'assets/images/sub_programmes_college.jpg';
-        else if (nomLower.includes('lycée') || node.nom.toLowerCase().includes('lycée')) bgImg = 'assets/images/sub_programmes_lycee.jpg';
-        else if (category.nom.toLowerCase().includes('scolaire')) bgImg = 'assets/images/cat_programmes_scolaires.jpg';
-        else if (category.nom.toLowerCase().includes('bio')) bgImg = 'assets/images/cat_biographies.jpg';
-        else if (category.nom.toLowerCase().includes('capes') || category.nom.toLowerCase().includes('agrég')) bgImg = 'assets/images/cat_agregation.jpg';
-        else if (category.nom.toLowerCase().includes('nationale')) bgImg = 'assets/images/cat_histoires_nationales.jpg';
+        if (nomLower === 'panthéons' || nomLower === 'pantheons') bgImg = 'assets/images/sub_themes_generaux.webp';
+        else if (nomLower === 'biographies') bgImg = 'assets/images/cat_biographies.webp';
+        else if (nomLower.includes('europe')) bgImg = 'assets/images/sub_europe.webp';
+        else if (nomLower.includes('amérique')) bgImg = 'assets/images/sub_ameriques.webp';
+        else if (nomLower.includes('asie')) bgImg = 'assets/images/sub_asie.webp';
+        else if (nomLower.includes('moyen-orient')) bgImg = 'assets/images/sub_moyen_orient.webp';
+        else if (nomLower.includes('afrique')) bgImg = 'assets/images/sub_afrique.webp';
+        else if (nomLower.includes('océanie')) bgImg = 'assets/images/sub_oceanie.webp';
+        else if (nomLower.includes('empires')) bgImg = 'assets/images/sub_empires.webp';
+        else if (nomLower.includes('sciences')) bgImg = 'assets/images/sub_sciences_techniques.webp';
+        else if (nomLower.includes('arts') || nomLower.includes('spectacle')) bgImg = 'assets/images/sub_arts_litterature.webp';
+        else if (nomLower.includes('juda')) bgImg = 'assets/images/sub_judaisme.webp';
+        else if (nomLower.includes('islam')) bgImg = 'assets/images/sub_islam.webp';
+        else if (nomLower.includes('christianisme')) bgImg = 'assets/images/sub_christianisme.webp';
+        else if (nomLower.includes('hindouisme')) bgImg = 'assets/images/sub_hindouisme.webp';
+        else if (nomLower.includes('bouddhisme')) bgImg = 'assets/images/sub_bouddhisme.webp';
+        else if (nomLower.includes('panth')) bgImg = 'assets/images/sub_mythologies.webp';
+        else if (nomLower.includes('grandes religions')) bgImg = 'assets/images/sub_grandes_religions.webp';
+        else if (nomLower.includes('religions') || nomLower.includes('croyances')) bgImg = 'assets/images/sub_religions_croyances.webp';
+        else if (nomLower.includes('société') || nomLower.includes('societe') || nomLower.includes('géopolitique') || nomLower.includes('geopolitique') || nomLower.includes('généraux')) bgImg = 'assets/images/sub_themes_generaux.webp';
+        else if (nomLower.includes('rois, reines')) bgImg = 'assets/images/sub_rois_reines.webp';
+        else if (nomLower.includes('chefs militaires')) bgImg = 'assets/images/sub_chefs_militaires.webp';
+        else if (nomLower.includes('savants, scientifiques')) bgImg = 'assets/images/sub_savants_scientifiques.webp';
+        else if (nomLower.includes('philosophes et penseurs')) bgImg = 'assets/images/sub_philosophes_penseurs.webp';
+        else if (nomLower.includes('crivains et po')) bgImg = 'assets/images/sub_ecrivains_poetes.webp';
+        else if (nomLower.includes('artistes et musiciens')) bgImg = 'assets/images/sub_artistes_musiciens.webp';
+        else if (nomLower.includes('explorateurs et grands voyageurs')) bgImg = 'assets/images/sub_explorateurs_voyageurs.webp';
+        else if (nomLower.includes('figures religieuses')) bgImg = 'assets/images/sub_figures_religieuses.webp';
+        else if (nomLower.includes('militants, r')) bgImg = 'assets/images/sub_militants_resistants.webp';
+        else if (nomLower.includes('acteurs, chanteurs')) bgImg = 'assets/images/sub_acteurs_chanteurs.webp';
+        else if (nomLower.includes('architectes, designers')) bgImg = 'assets/images/sub_architectes_designers.webp';
+        else if (nomLower.includes('entrepreneurs et magnats')) bgImg = 'assets/images/sub_entrepreneurs_magnats.webp';
+        else if (nomLower.includes('sportifs et ath')) bgImg = 'assets/images/sub_sportifs_athletes.webp';
+        else if (nomLower.includes('collège') || node.nom.toLowerCase().includes('collège')) bgImg = 'assets/images/sub_programmes_college.webp';
+        else if (nomLower.includes('lycée') || node.nom.toLowerCase().includes('lycée')) bgImg = 'assets/images/sub_programmes_lycee.webp';
+        else if (category.nom.toLowerCase().includes('scolaire')) bgImg = 'assets/images/cat_programmes_scolaires.webp';
+        else if (category.nom.toLowerCase().includes('bio')) bgImg = 'assets/images/cat_biographies.webp';
+        else if (category.nom.toLowerCase().includes('capes') || category.nom.toLowerCase().includes('agrég')) bgImg = 'assets/images/cat_agregation.webp';
+        else if (category.nom.toLowerCase().includes('nationale')) bgImg = 'assets/images/cat_histoires_nationales.webp';
 
         const card = document.createElement('div');
         card.className = 'relative h-32 md:h-40 rounded-[24px] overflow-hidden group cursor-pointer shadow-executive';
