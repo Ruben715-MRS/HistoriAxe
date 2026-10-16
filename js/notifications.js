@@ -24,6 +24,10 @@ var HistoriAxeNotifications = (function () {
         DAILY_AVAILABLE: 1002,
         WEEKLY_RECAP: 1003
     };
+    // Rappels « n événements à réviser » : un par jour à venir, ids 1010, 1011, 1012… (voir
+    // scheduleReviewReminders). REVIEW_SLOTS doit couvrir l'horizon de SRS.planReminders.
+    var REVIEW_BASE_ID = 1010;
+    var REVIEW_SLOTS = 3;
 
     function isSupported() {
         try {
@@ -167,6 +171,31 @@ var HistoriAxeNotifications = (function () {
         } catch (e) {}
     }
 
+    // --- Révisions à faire : « n événements à réviser » (js/srs.js: planReminders), ~18 h 30, pour
+    // chacun des prochains jours où assez d'événements arrivent à échéance. Reprogrammé à chaque
+    // reprise de l'app et fin de partie : le compte annoncé suit ce que le joueur a réellement fait.
+    function cancelReviewReminders() {
+        for (var i = 0; i < REVIEW_SLOTS; i++) cancel(REVIEW_BASE_ID + i);
+    }
+
+    function scheduleReviewReminders() {
+        cancelReviewReminders();
+        if (!isSupported() || !userEnabled()) return;
+        try {
+            if (typeof SRS === 'undefined' || typeof getSrsEntries !== 'function') return;
+            var plan = SRS.planReminders(getSrsEntries(), Date.now());
+            var tFn = (typeof t === 'function') ? t : function (key) { return key; };
+            plan.slice(0, REVIEW_SLOTS).forEach(function (item, i) {
+                scheduleOne({
+                    id: REVIEW_BASE_ID + i,
+                    title: tFn('notifications.review_title'),
+                    body: tFn('notifications.review_body', { count: item.count }),
+                    schedule: { at: item.at }
+                });
+            });
+        } catch (e) {}
+    }
+
     // --- Nudge duel : rappel ponctuel +24h après la création d'un duel (voir
     // js/apiClient.js: createDuel). Volontairement approximatif — sans push
     // serveur, impossible de confirmer en temps réel que l'adversaire a joué ;
@@ -197,6 +226,7 @@ var HistoriAxeNotifications = (function () {
             cancel(IDS.STREAK_REMINDER);
             cancel(IDS.DAILY_AVAILABLE);
             cancel(IDS.WEEKLY_RECAP);
+            cancelReviewReminders();
             return;
         }
         hasPermission().then(function (granted) {
@@ -204,6 +234,7 @@ var HistoriAxeNotifications = (function () {
             scheduleStreakReminder();
             scheduleDailyAvailable();
             scheduleWeeklyRecap();
+            scheduleReviewReminders();
         });
     }
 
@@ -217,6 +248,7 @@ var HistoriAxeNotifications = (function () {
                 scheduleStreakReminder();
                 scheduleDailyAvailable();
                 scheduleWeeklyRecap();
+                scheduleReviewReminders();
             }
             return granted;
         });
@@ -226,6 +258,7 @@ var HistoriAxeNotifications = (function () {
         cancel(IDS.STREAK_REMINDER);
         cancel(IDS.DAILY_AVAILABLE);
         cancel(IDS.WEEKLY_RECAP);
+        cancelReviewReminders();
     }
 
     return {
@@ -234,6 +267,7 @@ var HistoriAxeNotifications = (function () {
         enableAndSchedule: enableAndSchedule,
         refreshAll: refreshAll,
         scheduleStreakReminder: scheduleStreakReminder,
+        scheduleReviewReminders: scheduleReviewReminders,
         scheduleDuelNudge: scheduleDuelNudge,
         cancelAll: cancelAll
     };

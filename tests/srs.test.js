@@ -73,3 +73,26 @@ test('summarize : dû, en retard (avant ce matin), et ce qui arrive demain', () 
     ];
     assert.deepEqual(SRS.summarize(entries, now), { due: 2, overdue: 1, tomorrow: 1 });
 });
+
+test('planReminders : un rappel par jour à venir, avec le nombre dû CE jour-là, au-dessus du seuil', () => {
+    const now = at(2026, 3, 10, 9); // 9 h : le rappel de 18 h 30 d'aujourd'hui est encore à venir
+    // 6 événements dus ce matin (révisés le 9, boîte 1) ; 4 de plus dus le 11 (révisés le 10, boîte 1).
+    const entries = [
+        ...Array.from({ length: 6 }, () => ({ box: 1, lastReviewed: at(2026, 3, 9) })),
+        ...Array.from({ length: 4 }, () => ({ box: 1, lastReviewed: at(2026, 3, 10, 8) }))
+    ];
+    const plan = SRS.planReminders(entries, now);
+    assert.deepEqual(plan.map((p) => p.count), [6, 10, 10]);
+    assert.deepEqual(plan.map((p) => [p.at.getDate(), p.at.getHours(), p.at.getMinutes()]), [[10, 18, 30], [11, 18, 30], [12, 18, 30]]);
+});
+
+test('planReminders : rien sous le seuil, pas de rappel dans le passé, horizon de trois jours', () => {
+    const now = at(2026, 3, 10, 20); // 20 h : l'heure d'aujourd'hui est passée
+    const few = Array.from({ length: 4 }, () => ({ box: 1, lastReviewed: at(2026, 3, 1) }));
+    assert.deepEqual(SRS.planReminders(few, now), []);
+    const many = Array.from({ length: 12 }, () => ({ box: 1, lastReviewed: at(2026, 3, 1) }));
+    const plan = SRS.planReminders(many, now);
+    assert.equal(plan.length, 2, 'demain et après-demain seulement');
+    assert.ok(plan.every((p) => p.at.getTime() > now));
+    assert.equal(SRS.planReminders(many, now, { days: 7 }).length, 6);
+});

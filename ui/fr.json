@@ -444,7 +444,7 @@
     "notifications_label": "Notifications",
     "notifications_on": "Activées",
     "notifications_off": "Désactivées",
-    "notifications_hint": "Rappels pour garder ta série et ne pas manquer le Défi du jour. Disponible dans l'app iOS (pas sur le web).",
+    "notifications_hint": "Rappels pour garder ta série, ne pas manquer le Défi du jour et réviser les événements arrivés à échéance. Disponible dans l'app iOS (pas sur le web).",
     "onboarding_btn": "🧭 Revoir le tutoriel",
     "reset_hint": "Supprime définitivement vos favoris, tous vos thèmes et événements personnalisés créés, votre historique de révision (points faibles) et la progression de déverrouillage des modes Chrono/Expert. Vos réglages d'affichage (orientation, apparence) sont conservés.",
     "reset_confirm_full": "Cette action supprime définitivement vos thèmes favoris, l'intégralité de vos thèmes et événements personnalisés créés, tout l'historique de révision (points faibles, boîtes de mémorisation) et la progression de déverrouillage des modes Chrono/Expert. Cette action est irréversible. Voulez-vous continuer ?",
@@ -619,6 +619,8 @@
     "revise_axis": "Réviser cet axe : {axe}"
   },
   "notifications": {
+    "review_title": "🧠 Révisions du jour",
+    "review_body": "{count} événements à réviser aujourd'hui — cinq minutes suffisent.",
     "streak_title": "🔥 Ta série est en péril",
     "streak_body": "Ta série de {days} jours va se briser ce soir. Relève le Défi du jour pour la garder !",
     "daily_title": "🌍 Le Défi du jour est disponible",

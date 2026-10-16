@@ -98,7 +98,37 @@
         return out;
     }
 
+    // Rappels « n événements à réviser » à programmer sur l'appareil (js/notifications.js). Une
+    // notification locale a un texte FIGÉ à la programmation : on programme donc chaque jour à venir
+    // avec le nombre d'événements qui seront à échéance CE jour-là (dus au matin, si le joueur n'a
+    // rien révisé d'ici là). Chaque ouverture de l'app et chaque fin de partie reprogramme tout à partir
+    // de l'état réel : un compte devenu trop fort est corrigé dès que le joueur joue.
+    //
+    // Seuil (`min`) : pas de rappel pour trois événements. Horizon court (`days`, 3 par défaut) : un
+    // joueur qui n'ouvre plus l'app reçoit au plus trois rappels, pas une semaine de relances.
+    // Renvoie [{ at: Date, count }], jamais deux le même jour.
+    function planReminders(entries, now, options) {
+        var opts = options || {};
+        var hour = opts.hour == null ? 18 : opts.hour;
+        var minute = opts.minute == null ? 30 : opts.minute;
+        var days = opts.days || 3;
+        var min = opts.min || 5;
+        var plan = [];
+        for (var k = 0; k < days; k++) {
+            var morning = startOfLocalDay(now);
+            morning.setDate(morning.getDate() + k);
+            var at = new Date(morning.getTime());
+            at.setHours(hour, minute, 0, 0);
+            if (at.getTime() <= now) continue; // l'heure d'aujourd'hui est passée
+            var count = 0;
+            for (var i = 0; i < entries.length; i++) if (dueAt(entries[i]) <= morning.getTime()) count++;
+            if (count >= min) plan.push({ at: at, count: count });
+        }
+        return plan;
+    }
+
     return {
+        planReminders: planReminders,
         INTERVAL_DAYS: INTERVAL_DAYS, MAX_BOX: MAX_BOX,
         intervalDays: intervalDays, dueAt: dueAt, isDue: isDue,
         applyResult: applyResult, compareUrgency: compareUrgency, summarize: summarize

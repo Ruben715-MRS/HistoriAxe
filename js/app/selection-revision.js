@@ -134,11 +134,15 @@ function getDueEvents(now = Date.now()) {
         .map(x => x.item);
 }
 
+// Entrées SRS des seuls événements qui existent encore dans la base.
+function getSrsEntries() {
+    const data = srsLoad();
+    return getAllEventsWithLocation().map(item => data[item.event.id]).filter(Boolean);
+}
+
 // { due, overdue, tomorrow } sur les seuls événements qui existent encore dans la base.
 function getDueSummary(now = Date.now()) {
-    const data = srsLoad();
-    const entries = getAllEventsWithLocation().map(item => data[item.event.id]).filter(Boolean);
-    return SRS.summarize(entries, now);
+    return SRS.summarize(getSrsEntries(), now);
 }
 
 function getWeakEvents() {

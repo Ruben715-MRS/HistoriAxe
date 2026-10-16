@@ -315,7 +315,18 @@ aujourd'hui** ; l'écran de révision s'ouvre sur l'onglet **À réviser** (sess
 10/20/30/50 événements, les plus fragiles puis les plus en retard d'abord ;
 « Rejouer » en tire la suite), à côté des onglets Points faibles (échecs récents,
 immédiatement rejouables) et Progression. Sans rien de dû, l'onglet annonce ce qui
-arrive demain. Pas de rappel par notification pour l'instant.
+arrive demain.
+
+**Rappel « n événements à réviser »** (app iOS, `js/notifications.js`). Une
+notification locale a un texte figé à la programmation : `SRS.planReminders`
+calcule donc, pour chacun des **trois prochains jours**, combien d'événements seront à
+échéance ce jour-là (si le joueur n'a rien révisé d'ici là) et programme « 🧠 Révisions du
+jour — n événements à réviser aujourd'hui » à **18 h 30**, pour les jours où il y en a au
+moins **5**. Reprogrammé à chaque ouverture de l'app et à chaque fin de partie, si bien
+que le compte annoncé suit ce que le joueur a fait ; un joueur qui n'ouvre plus l'app
+reçoit au plus trois rappels, pas une semaine de relances. Ids 1010-1012, annulés avec
+les autres rappels quand le réglage Notifications est désactivé ; sans effet sur le web
+(voir « Rétention »). Le seuil, l'heure et l'horizon sont dans `SRS.planReminders`.
 
 ## L'écran des modes et « Reprendre »
 
