@@ -390,7 +390,7 @@ function replayCurrentGame() {
     }
     if (currentMode === 'carte') {
         // Même zone, même écran de retour : celui du premier lancement, pas l'écran de fin d'où l'on rejoue.
-        if (geoLastNode) startGeoModeFromNode(geoLastNode, geoScopeLabel, geoReturnScreen);
+        if (geoLastNode) startGeoModeFromNode(geoLastNode, geoScopeLabel, geoReturnScreen, geoYearVariant);
         return;
     }
     if (revisionMode) {

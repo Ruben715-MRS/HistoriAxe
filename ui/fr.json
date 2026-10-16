@@ -239,7 +239,8 @@
     "victory_blitz": "Temps écoulé ! {right} bonnes réponses.",
     "victory_curseur": "Bravo ! L'œil juste à chaque fois !",
     "victory_intrus": "Bravo ! Pas un intrus ne vous a échappé !",
-    "victory_whois": "Bravo ! Pas un visage ne vous a échappé !"
+    "victory_whois": "Bravo ! Pas un visage ne vous a échappé !",
+    "victory_chronogeo": "Bravo ! Espace et temps maîtrisés !"
   },
   "daily": {
     "title_win": "🌍 Défi du jour relevé !",
@@ -833,5 +834,11 @@
     "preset_medieval": "Moyen Âge",
     "preset_modern": "Temps modernes",
     "preset_contemporary": "Contemporain"
+  },
+  "chronogeo": {
+    "mode_title": "🧭 Chrono-Géo",
+    "mode_subtitle": "Posez les événements de « {label} » sur la carte, puis estimez leur année au curseur.",
+    "year_kicker": "En quelle année, à peu près ? (à ±{tolerance} ans près, la réponse compte)",
+    "share": "🧭 HistoriAxe — Chrono-Géo · {label}\n📍 {km} km · ⏳ {years} ans en moyenne\n🏆 Score : {score} points\n\nJoue sur HistoriAxe !"
   }
 }

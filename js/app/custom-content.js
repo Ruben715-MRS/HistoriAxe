@@ -242,7 +242,7 @@ function openLeaderboard() {
             'expert': t('modes.expert.title'), 'quiz': t('modes.quiz.title'),
             'avantapres': t('modes.avantapres.title'), 'fil': t('modes.fil.title'),
             'periodes': t('modes.periodes.title'), 'ecart': t('modes.ecart.title'),
-            'carte': t('carte.mode_title'), 'simultaneity': t('simultaneity.title'),
+            'carte': t('carte.mode_title'), 'chronogeo': t('chronogeo.mode_title'), 'simultaneity': t('simultaneity.title'),
             'ordre': t('ordre.title'), 'blitz': t('blitz.title'),
             'curseur': t('curseur.title'), 'intrus': t('intrus.title'), 'whois': t('whois.title')
         };

@@ -128,3 +128,74 @@ test('un fait lié entre plusieurs thèmes n\'est posé qu\'une fois dans une pa
     });
     expect(doublons).toBe(0);
 });
+
+// --- Chrono-Géo : la carte, puis l'année au curseur ---------------------------
+
+async function lancerChronoGeo(page) {
+    await page.waitForFunction(() => window.bdd && window.bdd.some(c => (c.themes || []).some(t => t.id === 'thm_fr') || (c.subcategories || []).length), null, { timeout: 45_000 });
+    await page.evaluate(() => {
+        let node = null;
+        (function walk(ns) { ns.forEach(x => { (x.themes || []).forEach(t => { if (t.id === 'thm_fr') node = { themes: [t] }; }); if (x.subcategories) walk(x.subcategories); }); })(bdd);
+        showScreen('screen-categories');
+        startGeoModeFromNode(node, 'Histoire de France', undefined, 'slider');
+    });
+    await expect(page.locator('#screen-carte')).toBeVisible({ timeout: 30_000 });
+    await page.waitForFunction(() => geoMap && geoMapLoaded && geoCurrentRound, null, { timeout: 30_000 });
+}
+
+test('Chrono-Géo : après la carte, l\'année s\'estime au curseur (pas de choix multiple)', async ({ page }) => {
+    await lancerChronoGeo(page);
+    expect(await page.evaluate(() => geoYearVariant)).toBe('slider');
+    await page.evaluate(() => { const r = geoCurrentRound.item; submitGeoGuess(r.lat, r.lon); });
+    await page.locator('#geo-continue-btn').click();
+    await expect(page.locator('#geo-slider-block')).toBeVisible();
+    await expect(page.locator('#geo-time-options')).toBeHidden();
+    await expect(page.locator('#geo-slider-range')).toBeEnabled();
+
+    // Pile sur l'année : verdict « exact », points du temps en plus de ceux de la carte (80 + 100 × combo).
+    await page.evaluate(() => {
+        const range = document.getElementById('geo-slider-range');
+        range.value = String(geoCurrentRound.correctYear);
+        range.dispatchEvent(new Event('input'));
+    });
+    await page.locator('#geo-slider-validate').click();
+    await expect(page.locator('#geo-slider-verdict')).toHaveClass(/is-good/);
+    const etat = await page.evaluate(() => ({ score, gap: geoCurrentRound.yearGap, within: geoCurrentRound.timeCorrect }));
+    expect(etat.gap).toBe(0);
+    expect(etat.within).toBe(true);
+    expect(etat.score).toBeGreaterThan(80); // carte parfaite + année exacte
+    // La manche suivante repart sur la carte, curseur masqué.
+    await expect(page.locator('#geo-map-phase')).toBeVisible({ timeout: 6000 });
+});
+
+test('Chrono-Géo : une année très fausse ne rapporte rien du côté du temps, et le partage dit « km / ans »', async ({ page }) => {
+    await lancerChronoGeo(page);
+    await page.evaluate(() => { const r = geoCurrentRound.item; submitGeoGuess(r.lat, r.lon); });
+    await page.locator('#geo-continue-btn').click();
+    const avant = await page.evaluate(() => score);
+    await page.evaluate(() => {
+        const range = document.getElementById('geo-slider-range');
+        // Le bout de l'échelle le plus éloigné de la bonne année.
+        const y = geoCurrentRound.correctYear;
+        range.value = String(Math.abs(geoSliderScale.max - y) > Math.abs(y - geoSliderScale.min) ? geoSliderScale.max : geoSliderScale.min);
+        range.dispatchEvent(new Event('input'));
+    });
+    await page.locator('#geo-slider-validate').click();
+    await expect(page.locator('#geo-slider-verdict')).toHaveClass(/is-bad/);
+    expect(await page.evaluate(() => score)).toBe(avant); // trois tolérances d'écart ou plus : 0 point
+    const partage = await page.evaluate(() => generateShareText(false));
+    expect(partage).toContain('Chrono-Géo');
+    expect(partage).toMatch(/📍 .+ km · ⏳ \d+ ans en moyenne/);
+});
+
+test('Chrono-Géo est proposé à côté du Mode Carte', async ({ page }) => {
+    await page.waitForFunction(() => typeof atlasPoints !== 'undefined' && atlasPoints, null, { timeout: 30_000 });
+    const cartes = await page.evaluate(() => {
+        let theme = null;
+        (function walk(ns) { ns.forEach(x => { (x.themes || []).forEach(t => { if (t.id === 'thm_fr') theme = t; }); if (x.subcategories) walk(x.subcategories); }); })(bdd);
+        const node = { themes: [theme], nom: 'France' };
+        return [buildGeoModeCard(node, 'France').innerText, buildChronoGeoCard(node, 'France').innerText];
+    });
+    expect(cartes[0]).toContain('Mode Carte');
+    expect(cartes[1]).toContain('Chrono-Géo');
+});

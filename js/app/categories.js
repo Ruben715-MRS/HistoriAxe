@@ -291,6 +291,7 @@ function initSubcategories() {
     // une sous-région) — c'est ce nœud qui devient le périmètre de la partie.
     if (typeof isGeoEligible === 'function' && isGeoEligible(node)) {
         gridSection.appendChild(buildGeoModeCard(node, node.nom));
+        gridSection.appendChild(buildChronoGeoCard(node, node.nom));
     }
 
     node.subcategories.forEach((sub, index) => {

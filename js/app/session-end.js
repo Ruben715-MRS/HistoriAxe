@@ -53,6 +53,12 @@ function generateShareText(isDaily) {
         const timeStr = totalTimePlayed ? ` | ⏱️ ${formatDecimal(totalTimePlayed)}s` : '';
         const streakStr = streak > 0 ? `\n🔥 Série : ${streak} jour${streak > 1 ? 's' : ''}` : '';
         return `⚔️ HistoriAxe — Défi du Jour (${dateFormatted})\n${grid}\n🏆 Score : ${score} pts${timeStr}${streakStr}\n\nRejoins le défi sur HistoriAxe !`;
+    } else if (currentMode === 'carte' && geoYearVariant === 'slider' && geoStats.length) {
+        // Chrono-Géo : l'espace et le temps en une ligne, ce qui se compare d'un joueur à l'autre.
+        const km = geoStats.reduce((sum, s) => sum + s.km, 0) / geoStats.length;
+        const gaps = geoStats.filter(s => s.gap !== null);
+        const years = gaps.length ? gaps.reduce((sum, s) => sum + s.gap, 0) / gaps.length : 0;
+        return t('chronogeo.share', { label: geoScopeLabel, km: geoFormatKm(km), years: Math.round(years), score });
     } else {
         const theme = getCurrentTheme();
         const themeName = theme ? theme.nom : 'Chronologie';
@@ -174,7 +180,7 @@ function endGame(isWin) {
     // on utilise donc un identifiant synthétique dérivé de la zone jouée.
     if (currentMode === 'carte') {
         const scopeSlug = normalizeSearchText(geoScopeLabel || 'monde').replace(/[^a-z0-9]+/g, '-');
-        saveScoreToLeaderboard('geo:' + scopeSlug, 'carte', score);
+        saveScoreToLeaderboard('geo:' + scopeSlug, geoYearVariant === 'slider' ? 'chronogeo' : 'carte', score);
     }
 
     // Enregistrement de la série quotidienne (Défi du jour toujours, ou
@@ -233,7 +239,7 @@ function endGame(isWin) {
         if (currentMode === 'fil') winTitle = t('end.victory_fil');
         if (currentMode === 'periodes') winTitle = t('end.victory_periodes');
         if (currentMode === 'ecart') winTitle = t('end.victory_ecart');
-        if (currentMode === 'carte') winTitle = t('end.victory_carte');
+        if (currentMode === 'carte') winTitle = t(geoYearVariant === 'slider' ? 'end.victory_chronogeo' : 'end.victory_carte');
         if (currentMode === 'simultaneity') {
             winTitle = isSimultaneityChallenge()
                 ? t('end.victory_simultaneity_challenge')

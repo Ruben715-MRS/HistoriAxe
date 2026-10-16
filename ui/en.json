@@ -236,7 +236,8 @@
     "victory_blitz": "Time's up! {right} correct answers.",
     "victory_curseur": "Well done! A sharp eye every time!",
     "victory_intrus": "Well done! Not one slipped past you!",
-    "victory_whois": "Well done! Not a single face got past you!"
+    "victory_whois": "Well done! Not a single face got past you!",
+    "victory_chronogeo": "Well done! Space and time mastered!"
   },
   "daily": {
     "title_win": "🌍 Daily Challenge Mastered!",
@@ -828,5 +829,11 @@
     "preset_medieval": "Middle Ages",
     "preset_modern": "Early modern",
     "preset_contemporary": "Contemporary"
+  },
+  "chronogeo": {
+    "mode_title": "🧭 Chrono-Geo",
+    "mode_subtitle": "Place the events of “{label}” on the map, then estimate their year with the slider.",
+    "year_kicker": "Roughly which year? (within ±{tolerance} years counts)",
+    "share": "🧭 HistoriAxe — Chrono-Geo · {label}\n📍 {km} km · ⏳ {years} years on average\n🏆 Score: {score} points\n\nPlay HistoriAxe!"
   }
 }

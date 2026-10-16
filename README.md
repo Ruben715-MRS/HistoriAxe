@@ -587,6 +587,19 @@ vrai lieu et la distance.
 - **Clavier** : la carte se pilote aux flèches ; Entrée pose le repère au centre.
 - Le mode exige le réseau (tuiles de la carte).
 
+### Chrono-Géo : la carte, puis l'année au curseur
+
+Une variante du Mode Carte, proposée juste sous lui (`buildChronoGeoCard`) : même
+vivier, même carte sans noms, même barème de distance, mais la question « quand ? » n'est
+plus un choix parmi quatre années — le joueur **estime l'année au curseur**, avec le
+barème et la tolérance du mode « Le curseur » (`GameModes.sliderScaleFor` /
+`scoreSliderGuess`, échelle calculée sur toute la zone). Les points de l'espace
+(80 × proximité) et du temps (100 × proximité) s'additionnent. Le partage tient en une
+ligne comparable d'un joueur à l'autre : « 📍 312 km · ⏳ 14 ans en moyenne ». C'est le
+même moteur (`js/geoMap.js`, `geoYearVariant = 'slider'`) : « Rejouer » garde la variante.
+Pas de défi quotidien associé : un classement vérifié demanderait au serveur de rejouer
+aussi la partie sur la carte.
+
 ## « Qui est-ce ? » et le portrait du jour
 
 Les portraits des panthéons permettent un mode que rien d'autre dans la base n'autorise :

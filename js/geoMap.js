@@ -42,6 +42,11 @@ let geoRoundIndex = 0;
 let geoCurrentRound = null;
 let geoScale = 500;        // échelle D (km) de la zone jouée, voir GeoPlace.scaleKm
 let geoBounds = null;      // [[ouest, sud], [est, nord]] où cadrer la carte au début de chaque manche
+// Variante de l'année : 'choice' (une parmi quatre, le Mode Carte) ou 'slider' (estimée au curseur : Chrono-Géo).
+// Le barème « distance » est le même ; seule la question « quand ? » change, et avec elle le partage.
+let geoYearVariant = 'choice';
+let geoSliderScale = null;  // { min, max, tolerance } de la zone, Chrono-Géo seulement
+let geoStats = [];          // [{ km, gap }] par manche terminée : moyennes du partage
 let geoPhase = 'place';    // 'place' (on vise) → 'reveal' (le résultat) → 'time' (l'année)
 let geoGuess = null;       // { lat, lon } : le repère posé, pas encore validé
 let geoMap = null;
@@ -193,7 +198,7 @@ function getCurrentVisibleScreenId() {
 
 // `returnScreen` (facultatif) : l'écran où ramènera la fin de partie. Au premier lancement c'est l'écran
 // affiché ; pour « Rejouer », qui part de l'écran de fin, c'est celui du lancement d'origine.
-function startGeoModeFromNode(node, label, returnScreen) {
+function startGeoModeFromNode(node, label, returnScreen, variant) {
     const fromScreen = returnScreen || getCurrentVisibleScreenId();
     Promise.all([loadGeoAssets(), atlasLoadGeo(), atlasLoadLibrary(), geoLoadStyle().then(() => true).catch(() => false)]).then(results => {
         if (!results[1] || !results[2] || !results[3]) {
@@ -213,6 +218,8 @@ function startGeoModeFromNode(node, label, returnScreen) {
         geoReturnScreen = fromScreen;
         geoScopeLabel = label;
         geoLastNode = node;
+        geoYearVariant = variant === 'slider' ? 'slider' : 'choice';
+        geoStats = [];
 
         geoSessionPool = GeoPlace.pickSession(fullPool, GEO_SESSION_MAX_ROUNDS);
         // Le texte des fiches (énoncé, année de décès des leurres) vient d'un pack découpé : on le charge
@@ -226,6 +233,14 @@ function startGeoModeFromNode(node, label, returnScreen) {
 
         const dates = geoSessionPool.map(item => item.event.date);
         currentGameSpan = Math.max(1, Math.max(...dates) - Math.min(...dates));
+        if (geoYearVariant === 'slider') {
+            // Même barème que « Le curseur » (voir js/modes/curseur.js) : trois fois la tolérance donne 0.
+            // L'échelle vient de TOUT le vivier du nœud, pas de l'échantillon : elle ne bouge pas d'une manche à l'autre.
+            geoSliderScale = GameModes.sliderScaleFor(fullPool.map(p => p.event));
+            currentGameSpan = Math.max(1, geoSliderScale.tolerance * 3);
+        } else {
+            geoSliderScale = null;
+        }
 
         // L'échelle et le cadrage viennent de TOUT le vivier du nœud, pas du seul échantillon de la partie :
         // la zone visible et la sévérité du barème restent stables d'une manche à l'autre.
@@ -517,7 +532,11 @@ function renderGeoTimePhase() {
     document.getElementById('geo-phase-kicker').classList.add('hidden');
     const timePhase = document.getElementById('geo-time-phase');
     timePhase.classList.remove('hidden');
-    document.getElementById('geo-time-kicker').innerText = t('game.quiz_event_to_year');
+    const slider = geoYearVariant === 'slider';
+    document.getElementById('geo-time-kicker').innerText = slider ? t('chronogeo.year_kicker', { tolerance: geoSliderScale.tolerance }) : t('game.quiz_event_to_year');
+    document.getElementById('geo-slider-block').classList.toggle('hidden', !slider);
+    document.getElementById('geo-time-options').classList.toggle('hidden', slider);
+    if (slider) { renderGeoSlider(); return; }
 
     const optionsContainer = document.getElementById('geo-time-options');
     optionsContainer.innerHTML = '';
@@ -529,6 +548,51 @@ function renderGeoTimePhase() {
         btn.onclick = () => answerGeoTime(year);
         optionsContainer.appendChild(btn);
     });
+}
+
+// Chrono-Géo : le curseur d'année (mêmes éléments et même geste que « Le curseur »).
+function renderGeoSlider() {
+    const range = document.getElementById('geo-slider-range');
+    range.min = String(geoSliderScale.min);
+    range.max = String(geoSliderScale.max);
+    // Il repart du milieu à chaque manche : le laisser où il était donnerait un indice.
+    const middle = Math.round((geoSliderScale.min + geoSliderScale.max) / 2);
+    range.value = String(middle);
+    range.disabled = false;
+    range.oninput = () => { document.getElementById('geo-slider-value').innerText = formatYear(Number(range.value)); };
+    document.getElementById('geo-slider-value').innerText = formatYear(middle);
+    document.getElementById('geo-slider-min').innerText = formatYear(geoSliderScale.min);
+    document.getElementById('geo-slider-max').innerText = formatYear(geoSliderScale.max);
+    document.getElementById('geo-slider-validate').disabled = false;
+    document.getElementById('geo-slider-verdict').classList.add('hidden');
+    range.focus({ preventScroll: true });
+}
+
+function answerGeoSlider() {
+    if (isAnimating) return;
+    isAnimating = true;
+    const round = geoCurrentRound;
+    const guess = Number(document.getElementById('geo-slider-range').value);
+    const verdict = GameModes.scoreSliderGuess(guess, { event: round.item.event, tolerance: geoSliderScale.tolerance });
+    round.timeCorrect = verdict.within;
+    round.yearGap = verdict.gap;
+
+    awardPoints(verdict.gap, verdict.within);
+    if (verdict.within) { playCorrectSound(comboMultiplier); triggerHaptic('success'); }
+    else { playWrongSound(); triggerHaptic('error'); }
+
+    document.getElementById('geo-slider-range').disabled = true;
+    document.getElementById('geo-slider-validate').disabled = true;
+    const box = document.getElementById('geo-slider-verdict');
+    box.className = 'curseur-verdict ' + (verdict.within ? 'is-good' : 'is-bad');
+    box.innerText = verdict.exact
+        ? t('curseur.verdict_exact', { year: formatYear(round.correctYear) })
+        : t('curseur.verdict_gap', { gap: verdict.gap, year: formatYear(round.correctYear) });
+    box.classList.remove('hidden');
+
+    finalizeGeoRound(round);
+    updateGeoHUD();
+    advanceAfterGeoTime(1900);
 }
 
 function answerGeoTime(chosenYear) {
@@ -554,6 +618,10 @@ function answerGeoTime(chosenYear) {
     finalizeGeoRound(round);
     updateGeoHUD();
 
+    advanceAfterGeoTime(1300);
+}
+
+function advanceAfterGeoTime(delayMs) {
     setTimeout(() => {
         geoRoundIndex++;
         // En cas de fin de partie, on ne relâche pas isAnimating : le prochain reset a lieu au round
@@ -561,7 +629,7 @@ function answerGeoTime(chosenYear) {
         if (lives <= 0) { endGame(false); return; }
         if (geoRoundIndex >= geoSessionPool.length) { endGame(true); return; }
         pickNextGeoRound();
-    }, 1300);
+    }, delayMs);
 }
 
 // Journalise le round (une seule fois, qu'il se termine par un abandon sur
@@ -570,6 +638,7 @@ function answerGeoTime(chosenYear) {
 function finalizeGeoRound(round) {
     if (round.__finalized) return;
     round.__finalized = true;
+    if (round.distanceKm !== null) geoStats.push({ km: round.distanceKm, gap: round.yearGap == null ? null : round.yearGap });
     const fullyCorrect = !!round.geoCorrect && !!round.timeCorrect;
     const isPartial = !!round.geoCorrect !== !!round.timeCorrect;
     checkBadgeProgressOnAction(fullyCorrect);
@@ -609,6 +678,21 @@ function isGeoEligible(node) {
     const points = geoPointsReady();
     if (!points) return false;
     return GeoPlace.countReliable(geoThemesOf(node), points, GEO_SESSION_MIN_EVENTS) >= GEO_SESSION_MIN_EVENTS;
+}
+
+// Chrono-Géo : le même parcours que le Mode Carte, mais l'année s'estime au curseur et le partage dit « 312 km / 14 ans ».
+function buildChronoGeoCard(node, label) {
+    const card = document.createElement('div');
+    card.className = 'special-card geo-mode-card chronogeo-mode-card';
+    card.style.background = 'linear-gradient(135deg, #5B3A9E, #8E5BD6)';
+    card.style.gridColumn = '1 / -1';
+    card.innerHTML = `
+        <div class="special-card-title">${t('chronogeo.mode_title')}</div>
+        <div class="special-card-subtitle">${t('chronogeo.mode_subtitle', { label })}</div>
+    `;
+    card.onclick = () => startGeoModeFromNode(node, label, undefined, 'slider');
+    A11y.activatable(card);
+    return card;
 }
 
 function buildGeoModeCard(node, label) {

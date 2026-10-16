@@ -990,6 +990,23 @@
                 <div class="quiz-kicker" id="geo-time-kicker" data-i18n="game.quiz_event_to_year">En quelle année cet
                     événement a-t-il eu lieu ?</div>
                 <div class="quiz-options" id="geo-time-options"></div>
+                <!-- Chrono-Géo : l'année s'estime au curseur (mêmes éléments que l'écran « Le curseur ») -->
+                <div class="geo-slider-block hidden" id="geo-slider-block">
+                    <div class="curseur-dial">
+                        <div class="curseur-value" id="geo-slider-value">—</div>
+                        <input type="range" class="curseur-range" id="geo-slider-range" min="0" max="100" step="1" value="50"
+                            aria-label="Année estimée" data-i18n-attr="aria-label:curseur.range_aria">
+                        <div class="curseur-bounds">
+                            <span id="geo-slider-min">—</span>
+                            <span id="geo-slider-max">—</span>
+                        </div>
+                    </div>
+                    <div class="curseur-actions">
+                        <button type="button" class="btn curseur-validate" id="geo-slider-validate"
+                            onclick="answerGeoSlider()" data-i18n="curseur.validate">Valider</button>
+                    </div>
+                    <div class="curseur-verdict hidden" id="geo-slider-verdict" aria-live="polite"></div>
+                </div>
             </div>
         </div>
     </div>

@@ -175,6 +175,7 @@ function initThemes() {
     // avant la liste de thèmes — contient assez d'événements géolocalisables.
     if (!category.isCustomCategory && typeof isGeoEligible === 'function' && isGeoEligible(node)) {
         container.appendChild(buildGeoModeCard(node, node.nom));
+        container.appendChild(buildChronoGeoCard(node, node.nom));
     }
 
     if (themeList.length === 0 && !category.isCustomCategory) {
