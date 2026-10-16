@@ -95,6 +95,10 @@ KEEP_AS_WRITTEN = {
     # (« Te » ou « Pa » font partie du nom, « Hika », « Oopa » ou « Ariki » ne sont pas des noms de famille).
     'Pōtatau Te Wherowhero', 'Te Rauparaha', 'Hongi Hika', 'Te Kooti', 'Te Whiti o Rongomai', 'Te Puea Hērangi',
     'Te Rangi Hīroa', "Emma d'Hawaï", 'Pouvanaa a Oopa', "Mata'afa Iosefo", 'Pa Tepaeru Terito Ariki',
+    # Brésil : un nom de plume ou d'usage que l'on range tel quel (« Machado de Assis », « Castro Alves »), des figures connues
+    # par leur seul prénom ou surnom, une impératrice et une princesse rangées par leur prénom.
+    'Isabelle du Brésil', "Marie-Léopoldine d'Autriche", 'Zumbi dos Palmares', 'Machado de Assis', 'Castro Alves',
+    'Gonçalves Dias', 'Lima Barreto', 'Cruz e Sousa', 'Almeida Júnior', 'Di Cavalcanti', 'Grande Otelo', 'Elis Regina',
 }
 
 # Écrits à la main : (nom de la source) → nom de classement.
@@ -168,6 +172,15 @@ EXCEPTIONS = {
     'Tawhida Ben Cheikh': 'Ben Cheikh, Tawhida',
     # Nouvelle-Zélande et Pacifique : le mutin du Bounty, distinct du président américain (titres uniques entre panthéons).
     'John Adams (Pitcairn)': 'Adams, John (Pitcairn)',
+    # Brésil : noms doubles rangés sous le premier (« Guimarães Rosa », « Burle Marx »), ceux d'un baron et d'un duc sous leur titre.
+    'José Bonifácio de Andrada e Silva': 'Andrada e Silva, José Bonifácio de',
+    'Humberto de Alencar Castelo Branco': 'Castelo Branco, Humberto de Alencar',
+    'Le baron de Rio Branco': 'Rio Branco, baron de',
+    'Le duc de Caxias': 'Caxias, duc de',
+    'Carlos Drummond de Andrade': 'Drummond de Andrade, Carlos',
+    'João Guimarães Rosa': 'Guimarães Rosa, João',
+    'João Cabral de Melo Neto': 'Melo Neto, João Cabral de',
+    'Roberto Burle Marx': 'Burle Marx, Roberto',
     'Allal El Fassi': 'El Fassi, Allal',
     'Moktar Ould Daddah': 'Ould Daddah, Moktar',
     'Abou el Kacem Chebbi': 'Chebbi, Abou el Kacem',
