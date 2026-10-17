@@ -67,7 +67,7 @@ HISTORIAXE_API_BASE_URL=https://votre-projet.vercel.app npm run cap:build:ios
 
 Sans cette variable, les scripts `cap:*` refusent de construire : l'app native
 ne pourrait joindre ni classement, ni synchronisation, ni ligue, ni duels.
-`capacitor.config.json` ne définit plus `server.iosScheme` : Capacitor réserve
+`capacitor.config.ts` ne définit plus `server.iosScheme` : Capacitor réserve
 `capacitor://` à iOS et rejette `https` (WKWebView n'accepte pas ce schéma).
 
 **Privacy Manifest (obligatoire à la soumission App Store depuis 2024) :**
