@@ -16,7 +16,7 @@ var HistoriAxeAPI = (function () {
     // plateforme), donc location.origin ne pointe PAS vers ce backend.
     // Renseignez ci-dessous l'URL de votre déploiement Vercel avant de
     // builder l'app native (voir README.md, section "Backend").
-    var NATIVE_APP_API_BASE_URL = ''; // ex : 'https://historiaxe.vercel.app'
+    var NATIVE_APP_API_BASE_URL = ''; // ex : 'https://histori-axe.vercel.app'
 
     function detectApiBase() {
         try {
