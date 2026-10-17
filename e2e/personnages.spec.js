@@ -850,12 +850,12 @@ test('la recherche — « brésil », « brasilia », « samba », « amazonie �
     }
 });
 
-test('l’Iran : chacune de ses figures a son portrait, de Darius Ier à Maryam Mirzakhani, et la fiche n’affiche aucun pays', async ({ page }) => {
+test('l’Iran : chacune de ses figures a son portrait, de Cyrus le Grand à Maryam Mirzakhani, et la fiche n’affiche aucun pays', async ({ page }) => {
     await openThemeById(page, 'pan_ir');
     await page.locator('#mode-card-discovery').click();
     await expect(page.locator('#screen-game')).toBeVisible();
     const nombre = await page.evaluate(() => getCurrentTheme().events.length);
-    expect(nombre).toBe(66);
+    expect(nombre).toBe(67);
     await expect(page.locator('#timeline .entry')).toHaveCount(nombre);
     await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
 

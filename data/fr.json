@@ -3,7 +3,7 @@
   "lang": "fr",
   "name": "Français (Intégral)",
   "totalThemes": 823,
-  "totalEvents": 22511,
+  "totalEvents": 22512,
   "categories": [
     {
       "nom": "Culture générale",
@@ -116251,6 +116251,22 @@
               ],
               "events": [
                 {
+                  "id": "pan_ir_cyrus",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": -580,
+                  "titre": "Naissance de Cyrus le Grand",
+                  "description": "Cyrus le Grand (vers 580-530 av. J.-C.) est le fondateur de l'Empire perse achéménide, roi de 559 à sa mort. Après avoir soumis les Mèdes, il conquiert le royaume de Lydie de Crésus, les cités grecques d'Asie Mineure puis Babylone en 539 av. J.-C., et autorise les déportés juifs à rentrer à Jérusalem, comme le dit le « cylindre de Cyrus ». Il meurt au combat, vers 530 av. J.-C., sur les marches orientales de l'empire, et son tombeau est à Pasargades.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Cyrus_II",
+                  "classement": "Grand, Cyrus le",
+                  "image": {
+                    "src": "assets/portraits/pan_ir_cyrus.jpg",
+                    "legende": "Relief du pilier de Pasargades, longtemps tenu pour une image de Cyrus : un génie ailé, sans valeur de portrait",
+                    "auteur": "Surenae",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Cyrus_II_(The_Great).jpg"
+                  }
+                },
+                {
                   "id": "pan_ir_darius",
                   "axe": "Chefs d'État et dirigeants",
                   "date": -550,
@@ -117318,6 +117334,7 @@
                 "Sciences, techniques et innovation"
               ],
               "essentiel": [
+                "pan_ir_cyrus",
                 "pan_ir_darius",
                 "pan_ir_razi",
                 "pan_ir_ferdowsi",

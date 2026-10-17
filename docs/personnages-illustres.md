@@ -1891,10 +1891,10 @@ disent le pays (samba, bossa nova, Tropicália, Cinema Novo, modernisme brésili
 
 ### Un pays à part : l'Iran
 
-`pan_ir`, « Grandes figures d'Iran » (code `ir`, pays) : **66 personnages**, de Darius Ier (vers 550 av. J.-C.) à Maryam Mirzakhani
-(1977). Par axe : 21 Littérature et pensée, 16 Chefs d'État et dirigeants, 14 Musique, spectacle et sport, 6 Guerres et
-résistances, 6 Sciences, techniques et innovation, 3 Beaux-arts ; 20 ⭐ et aucune biographie liée. 66 portraits (1,7 Mo) : 51 du
-domaine public, 1 CC0, 3 CC BY (2 en 4.0, 1 en 2.0) et 11 CC BY-SA. Huit figures sont nées avant l'an 1000, quinze entre 1000 et 1799,
+`pan_ir`, « Grandes figures d'Iran » (code `ir`, pays) : **67 personnages**, de Cyrus le Grand (vers 580 av. J.-C.) à Maryam Mirzakhani
+(1977). Par axe : 21 Littérature et pensée, 17 Chefs d'État et dirigeants, 14 Musique, spectacle et sport, 6 Guerres et
+résistances, 6 Sciences, techniques et innovation, 3 Beaux-arts ; 21 ⭐ et aucune biographie liée. 67 portraits (1,8 Mo) : 51 du
+domaine public, 1 CC0, 3 CC BY (2 en 4.0, 1 en 2.0) et 12 CC BY-SA. Neuf figures sont nées avant l'an 1000, quinze entre 1000 et 1799,
 quarante-trois depuis 1800 : l'Iran de la poésie classique est là, mais le XXe siècle pèse les deux tiers. Les mots-clés du thème portent le
 pays et ses adjectifs, la Perse, les villes (Téhéran, Ispahan, Chiraz, Tabriz, Machhad, Nichapour), les dynasties (achéménide, sassanide,
 séfévide, afcharide, zand, qadjar, Pahlavi) et les grandes pages de l'histoire (Révolution constitutionnelle, révolution blanche, révolution
@@ -1907,10 +1907,11 @@ islamique, République islamique, Mossadegh).
   Avicenne, Al-Biruni, Al-Khwârizmî, Djâmî, Behzad, Ismaïl Samani, Al-Fârâbî et Tamerlan en Asie centrale, Rûmî en Turquie, Babur et Akbar
   dans le sous-continent indien. Nezami, né à Ganja, et Jamal ad-Din al-Afghani, né à Asadabad et que l'Afghanistan revendique, sont laissés
   à de futurs blocs (le Caucase, l'Afghanistan) plutôt que disputés d'avance.
-- **Une date qui se discute n'entre pas.** Cyrus le Grand (né vers 600 ou en 576 av. J.-C. selon l'article), Zoroastre (« entre 1500 et 550
+- **Cyrus, daté de 580 av. J.-C.** Sa naissance se situe vers 600 ou en 576 av. J.-C. selon l'article français : « vers 580 » est un choix éditorial, à discuter. Son image est un relief de Pasargades, longtemps tenu pour le sien.
+- **Une date qui se discute n'entre pas.** Zoroastre (« entre 1500 et 550
   av. J.-C. »), Ardachir et Chapour Ier (naissance non renseignée), Mollâ Sadrâ (1571 ou 1572), Houshang Golshiri (1937 ou 1938), Delkash
   (1924 ou 1925), Monir Farmanfarmaian (1922, 1923 ou 1924) sont écartés, comme Ameghino en Amérique hispanique ; Hassan-i Sabbah, dont
-  la naissance varie selon les sources, aussi. Cyrus est le plus regrettable : sa fiche se réintègre dès qu'on accepte un « vers 590 ».
+  la naissance varie selon les sources, aussi.
   Quand les sources s'écartent d'une année seulement, la plus répandue est retenue et dite : Rouhollah Khomeini (1900, l'état civil ;
   la version officielle donne 1902), Forough Farrokhzad (5 janvier 1935, l'article français dit aussi le 29 décembre 1934), Sattar Khan (1866,
   l'article français donne 1868 dans ses catégories), Khosro Ier (« vers 501 »). Ali Akbar Dehkhoda est mort en 1956 — la fiche française
