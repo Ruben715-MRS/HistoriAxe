@@ -378,6 +378,40 @@ siècle » et « changer la carte » imaginés au départ ne sont pas faits : ch
 un branchement par mode. Quitter en pleine épreuve abandonne le parcours. Le partage donne
 une ligne de carrés (🟩 réussie, ⏭ passée, 🟥 échouée, ⬜ non atteinte).
 
+## Le Mode Classe : une séance en direct pour une classe
+
+L'enseignant choisit un thème (carte « Mode Classe » dans le groupe Outils de l'écran des
+modes), le nombre de cartes (10, 15 ou 20) et obtient un **code de 6 caractères**
+(`ABCDEFGHJKLMNPQRSTUVWXYZ23456789` : sans I, O, 0, 1, pour se dicter). Les élèves le
+saisissent (Défis › « Rejoindre une classe ») avec leur prénom, patientent dans le salon,
+puis **placent les mêmes cartes dans le même ordre** quand l'enseignant lance la séance. Son
+écran montre le classement et l'avancement de chacun en direct ; à la fin, **les cartes les
+plus ratées** de la classe — ce que l'enseignant va reprendre en cours.
+
+- **Pas de temps réel.** Une classe, c'est ~30 requêtes de quelques Ko toutes les 2,5 s sur
+  les fonctions Vercel existantes (`api/classroom.js`, une fonction de plus). Pas de websocket.
+- **Le score n'est jamais déclaré par l'élève.** Comme pour le Défi du jour, il envoie le
+  **journal cumulatif** de ses placements (renvoyé à chaque carte) et le serveur le rejoue
+  (`DailyEngine.replayDailyGame`, désormais avec `{ lives: Infinity }` et un détail carte par
+  carte) : mêmes règles que la frise, mais **sans élimination** — trois vies feraient sortir
+  des élèves en pleine séance. C'est aussi ce qui donne, carte par carte, qui a juste.
+- **Le paquet** est fixé par l'enseignant (ids dans l'ordre de jeu, le premier est l'ancre) ;
+  le serveur vérifie qu'ils existent. Un élève dont le pack ne les connaît pas est invité à
+  mettre l'app à jour plutôt que de jouer un autre paquet.
+- **Pas de compte, pas de donnée durable.** L'enseignant est reconnu à l'identifiant de son
+  appareil ; les élèves ne sont que des prénoms libres (nettoyés, 20 caractères, affichés comme du
+  texte et jamais comme du HTML), jamais renvoyés avec un identifiant ; une séance ne vit que
+  **deux jours** (purge à la création suivante) et compte au plus 60 élèves.
+- Tables `class_sessions` et `class_players` (créées par `ensureSchema`, voir aussi
+  `api/_lib/schema.sql`). Côté client : `js/classroom.js` (écran `#screen-class`, un seul écran,
+  des panneaux qui se relaient) et le mode `'class'` de la frise (`startActualGame`).
+- **Tests.** `tests/classroom.test.js` fait tourner les vrais endpoints sur **Postgres en
+  mémoire** (`pg-mem`, dépendance de développement) : création, salon, départ, rejeu, classement,
+  bilan, droits de l'enseignant, purge, plafond ; `e2e/classe.spec.js` vérifie l'interface contre un
+  faux serveur de séance.
+- **Pas fait** : pas d'export du bilan, pas de reprise d'une séance par un autre appareil de
+  l'enseignant, pas de mode « cours » avec correction projetée carte par carte.
+
 ## Longueur de la manche
 
 Jusqu'ici, **une partie valait le thème entier**. Médiane de 18 événements,

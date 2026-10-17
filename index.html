@@ -516,6 +516,10 @@
                 <span class="modes-group-chevron" aria-hidden="true">▾</span>
             </button>
             <div class="modes-group-body grid-modes" id="modes-group-tools-body">
+                <div role="button" tabindex="0" class="mode-card class-card" id="mode-card-class" onclick="openClassSetup()">
+                    <h3 data-i18n="classroom.title">Mode Classe</h3>
+                    <p data-i18n="classroom.desc">Enseignant : ouvrez une séance, les élèves placent les mêmes cartes en même temps sur leur téléphone.</p>
+                </div>
                 <div role="button" tabindex="0" class="mode-card" style="background-color: #34495e;" onclick="openSelectionMode()">
                     <h3 data-i18n="modes.selection.title">Sélection</h3>
                     <p data-i18n="modes.selection.desc">Choisissez les événements à conserver dans la partie.</p>
@@ -569,6 +573,57 @@
                 <button type="button" class="btn" onclick="expeditionQuit()" data-i18n="expedition.leave">Retour</button>
             </div>
         </div>
+    </div>
+
+    <!-- ÉCRAN : MODE CLASSE (séance en direct — voir js/classroom.js et api/classroom.js). Un seul écran, des
+         panneaux qui se relaient : réglage (enseignant), rejoindre (élève), salon, séance en direct / bilan. -->
+    <div id="screen-class" class="list-screen hidden">
+        <button class="back-btn" onclick="classLeave()" aria-label="Quitter la séance"
+            data-i18n-attr="aria-label:classroom.leave_aria">‹</button>
+        <h2 class="header-title" id="class-title" data-i18n="classroom.title">Mode Classe</h2>
+        <p class="modes-header-subtitle" id="class-subtitle"></p>
+
+        <section id="class-panel-setup" class="class-panel hidden">
+            <p class="class-help" data-i18n="classroom.setup_help">Les élèves placeront les mêmes cartes, dans le même ordre, chacun sur son téléphone. Combien de cartes ?</p>
+            <div class="round-length" id="class-size-picker" role="group" aria-label="Nombre de cartes"
+                data-i18n-attr="aria-label:classroom.size_aria"></div>
+            <button type="button" class="btn class-primary" id="class-create-btn" onclick="classCreate()" data-i18n="classroom.create">Ouvrir la séance</button>
+            <p class="class-error hidden" id="class-setup-error" role="alert"></p>
+        </section>
+
+        <section id="class-panel-join" class="class-panel hidden">
+            <label class="class-label" for="class-code-input" data-i18n="classroom.code_label">Code de la séance</label>
+            <input type="text" id="class-code-input" class="form-input class-code-input" maxlength="9" autocomplete="off"
+                autocapitalize="characters" spellcheck="false" inputmode="text" placeholder="ABC DEF">
+            <label class="class-label" for="class-name-input" data-i18n="classroom.name_label">Votre prénom</label>
+            <input type="text" id="class-name-input" class="form-input" maxlength="20" autocomplete="given-name">
+            <button type="button" class="btn class-primary" id="class-join-btn" onclick="classJoin()" data-i18n="classroom.join">Rejoindre</button>
+            <p class="class-error hidden" id="class-join-error" role="alert"></p>
+        </section>
+
+        <section id="class-panel-lobby" class="class-panel hidden">
+            <div id="class-code-block" class="class-code-block">
+                <div class="class-code-kicker" data-i18n="classroom.code_kicker">Code à saisir sur les téléphones</div>
+                <div class="class-code" id="class-code" role="img"></div>
+            </div>
+            <p class="class-help" id="class-lobby-hint"></p>
+            <p class="class-count" id="class-lobby-count" role="status"></p>
+            <ul class="class-players" id="class-lobby-players"></ul>
+            <button type="button" class="btn class-primary hidden" id="class-start-btn" onclick="classStart()" data-i18n="classroom.start">Lancer la séance</button>
+            <p class="class-error hidden" id="class-lobby-error" role="alert"></p>
+        </section>
+
+        <section id="class-panel-live" class="class-panel hidden">
+            <p class="class-status" id="class-live-status" role="status"></p>
+            <ol class="class-board" id="class-board"></ol>
+            <p class="class-error hidden" id="class-live-error" role="alert"></p>
+            <div class="class-recap hidden" id="class-recap">
+                <h3 data-i18n="classroom.recap_title">Cartes les plus ratées</h3>
+                <ol id="class-recap-list"></ol>
+            </div>
+            <button type="button" class="btn class-primary hidden" id="class-end-btn" onclick="classEnd()" data-i18n="classroom.end">Terminer la séance</button>
+            <button type="button" class="btn class-primary hidden" id="class-again-btn" onclick="classLeave()" data-i18n="classroom.leave">Quitter</button>
+        </section>
     </div>
 
     <!-- ÉCRAN 4bis : SOMMAIRE (fiche de synthèse dépliable, pour les thèmes
@@ -1886,6 +1941,7 @@
     <script src="js/app/modal.js"></script>
     <script src="js/app/play-mode.js"></script>
     <script src="js/app/expedition.js"></script>
+    <script src="js/classroom.js"></script>
     <script src="js/app.js"></script>
 
     <!-- ENREGISTREMENT DU SERVICE WORKER PWA -->

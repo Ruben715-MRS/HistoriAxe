@@ -110,7 +110,11 @@ function startActualGame(mode) {
     resetSessionHistory();
     currentMode = mode;
     let sourceEvents;
-    if (mode === 'daily') {
+    if (mode === 'class') {
+        // Mode Classe : le paquet de la séance, dans l'ordre de l'enseignant. Retourné parce que la suite
+        // pioche par la fin : la première carte du paquet devient l'ancre, puis les suivantes dans l'ordre.
+        sourceEvents = classDeckEvents().slice().reverse();
+    } else if (mode === 'daily') {
         // Défi du jour : 10 événements déjà tirés (et mélangés) de façon
         // déterministe par generateDailyEvents, indépendamment du thème
         // actuellement sélectionné dans le menu.
@@ -137,7 +141,7 @@ function startActualGame(mode) {
         placedEvents = eventsCopy;
         currentPool = [];
         totalEvents = placedEvents.length;
-    } else if (mode === 'daily' || mode === 'weekly') {
+    } else if (mode === 'daily' || mode === 'weekly' || mode === 'class') {
         // Ordre de pioche déjà mélangé de façon déterministe (même graine du
         // jour/de la semaine pour tous les joueurs) : surtout ne pas
         // re-mélanger avec Math.random ici, sous peine de casser l'équité du
@@ -156,7 +160,7 @@ function startActualGame(mode) {
         currentPool = eventsCopy;
     }
 
-    if (mode === 'training' || mode === 'discovery') lives = Infinity;
+    if (mode === 'training' || mode === 'discovery' || mode === 'class') lives = Infinity; // la classe ne s'élimine pas
     else if (mode === 'expert') lives = 1;
     else if (mode === 'multi') lives = 2; // unused directly, but for safety
     else lives = startingLives(); // classic, chrono, daily, weekly (3, ou ce qu'il reste en Expédition)
@@ -180,7 +184,7 @@ function startActualGame(mode) {
     progressRail.classList.remove('hidden');
     document.getElementById('hud-progress-fill').style.width = '0%';
 
-    if (mode === 'training' || mode === 'discovery') {
+    if (mode === 'training' || mode === 'discovery' || mode === 'class') {
         hudLives.classList.add('hidden');
         // Modes sans enjeu ni pression : pas de score affiché
         scoreContainer.classList.add('hidden');
@@ -193,7 +197,7 @@ function startActualGame(mode) {
         document.getElementById('hud-count').innerText = t('game.frise_complete', { n: totalEvents });
     }
 
-    if (mode === 'chrono' || mode === 'expert' || mode === 'daily' || mode === 'weekly') {
+    if (mode === 'chrono' || mode === 'expert' || mode === 'daily' || mode === 'weekly' || mode === 'class') {
         hudTimer.classList.remove('hidden');
         document.getElementById('hud-timer').innerText = "0,0";
         startTimer();

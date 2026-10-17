@@ -209,7 +209,10 @@
     // déposé la carte de cette manche ; elapsedMs le temps de réponse.
     //
     // Reproduit fidèlement checkPlacement()/awardPoints() de js/app.js.
-    function replayDailyGame(orderedDates, rounds) {
+    //
+    // options.lives : nombre de vies (3 par défaut ; Infinity pour une partie sans élimination, comme en
+    // classe — voir api/classroom.js). result.details : { correct } pour chaque manche jouée, dans l'ordre.
+    function replayDailyGame(orderedDates, rounds, options) {
         orderedDates = (orderedDates || []).map(Number).filter(function (d) { return isFinite(d); });
         rounds = Array.isArray(rounds) ? rounds : [];
 
@@ -219,7 +222,8 @@
             roundsTotal: 0,
             won: false,
             timeSeconds: 0,
-            suspicious: false
+            suspicious: false,
+            details: []
         };
 
         if (orderedDates.length < 2) return result;
@@ -234,7 +238,7 @@
 
         var score = 0;
         var combo = 1.0;
-        var lives = 3;
+        var lives = options && options.lives != null ? options.lives : 3;
         var timeSeconds = 0;
         var roundsPlayed = 0;
         var suspiciousRounds = 0;
@@ -270,6 +274,8 @@
                 var nextDate = placed[slotIndex];
                 if (dateToPlace > nextDate) { isCorrect = false; gap = Math.max(gap, dateToPlace - nextDate); }
             }
+
+            result.details.push({ correct: isCorrect });
 
             if (isCorrect) {
                 var elapsedSec = elapsedMs / 1000;

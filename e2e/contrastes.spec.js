@@ -108,6 +108,10 @@ async function ratiosDeLaCapture(page, png, fg, alpha) {
 // élément, le 5ᵉ centile du contraste (95 % des pixels derrière le texte font
 // au moins ce score) et le contraste exigé pour sa taille.
 async function mesurerSurFond(page, selecteur) {
+    // Les cartes d'une liste entrent en cascade (.stagger-in) : mesurées en cours d'apparition, elles sont à
+    // moitié transparentes et laissent voir le fond clair. Plus il y a de cartes au-dessus (le Mode Carte,
+    // Chrono-Géo…), plus la première carte de thème entre tard — on attend la fin de toutes les animations.
+    await page.evaluate(() => Promise.all(document.getAnimations().map(a => a.finished.catch(() => null))));
     const mesures = [];
     const total = await page.locator(selecteur).count();
     for (let i = 0; i < total; i++) {

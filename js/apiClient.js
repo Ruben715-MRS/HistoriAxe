@@ -134,6 +134,13 @@ var HistoriAxeAPI = (function () {
         pushProgress: function (deviceId, pseudo, data) {
             return request('POST', '/api/sync', { deviceId: deviceId, pseudo: pseudo, data: data });
         },
+        // Mode Classe (api/classroom.js) : action ∈ create | join | start | end | submit.
+        classroom: function (action, payload) {
+            return request('POST', '/api/classroom', Object.assign({ action: action }, payload));
+        },
+        getClassroom: function (code, deviceId) {
+            return request('GET', '/api/classroom' + qs({ code: code, deviceId: deviceId }));
+        },
         isConfigured: function () { return !!API_BASE; }
     };
 })();

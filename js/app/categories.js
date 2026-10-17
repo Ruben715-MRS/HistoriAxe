@@ -94,6 +94,10 @@ function initCategories() {
                         <span class="challenge-picker-icon">🌍</span>
                         <span>${(typeof t === 'function' ? t('simultaneity.challenge_title') : 'Défi de simultanéité')}</span>
                     </button>
+                    <button type="button" class="challenge-picker-btn" id="btn-challenge-class">
+                        <span class="challenge-picker-icon" aria-hidden="true">🏫</span>
+                        <span>${t('classroom.join_entry')}</span>
+                    </button>
                     <button type="button" class="challenge-picker-btn portrait-day-btn hidden" id="btn-challenge-portrait">
                         <span class="challenge-picker-icon" aria-hidden="true">🖼️</span>
                         <span class="portrait-day-text">
@@ -163,6 +167,8 @@ function initCategories() {
         btnChallengeSimul.setAttribute('aria-disabled', String(simulLocked));
         btnChallengeSimul.onclick = () => startSimultaneityChallenge();
     }
+    const btnChallengeClass = gridSection.querySelector('#btn-challenge-class');
+    if (btnChallengeClass) btnChallengeClass.onclick = () => openClassJoin();
     // Portrait du jour : un compagnon non classé du Défi du jour, qui n'apparaît que si la base a des portraits.
     const btnPortrait = gridSection.querySelector('#btn-challenge-portrait');
     if (btnPortrait) {

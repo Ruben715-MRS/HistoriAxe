@@ -106,3 +106,30 @@ create table if not exists duels (
 
 create index if not exists idx_duels_creator
     on duels (creator_player_id);
+
+-- Mode Classe (voir api/classroom.js) : une séance, ses élèves, le résultat de chaque carte.
+create table if not exists class_sessions (
+    code        text primary key,
+    teacher_id  uuid not null references players(id) on delete cascade,
+    lang        text not null,
+    theme_name  text not null,
+    event_ids   jsonb not null,
+    status      text not null default 'lobby',
+    created_at  timestamptz not null default now(),
+    started_at  timestamptz,
+    ended_at    timestamptz
+);
+
+create table if not exists class_players (
+    code        text not null references class_sessions(code) on delete cascade,
+    player_id   uuid not null references players(id) on delete cascade,
+    name        text not null,
+    score       integer not null default 0,
+    answered    smallint not null default 0,
+    correct     smallint not null default 0,
+    finished    boolean not null default false,
+    results     jsonb not null default '[]'::jsonb,
+    joined_at   timestamptz not null default now(),
+    updated_at  timestamptz not null default now(),
+    primary key (code, player_id)
+);

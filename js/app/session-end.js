@@ -164,6 +164,8 @@ function endGame(isWin) {
     // Expédition : la fin d'une épreuve n'est pas la fin d'une partie — on rend la main au parcours
     // (js/app/expedition.js), qui garde les vies et les points d'une épreuve à l'autre.
     if (typeof expeditionOnStageEnd === 'function' && expeditionOnStageEnd(isWin)) return;
+    // Mode Classe : la fin de la manche de l'élève n'est pas la fin de la séance (js/classroom.js).
+    if (typeof classOnGameEnd === 'function' && classOnGameEnd()) return;
 
     if (isWin) { playVictorySound(); triggerHaptic('victory'); triggerConfetti(); } else { triggerHaptic('error'); }
 
@@ -394,6 +396,8 @@ function quitGame() {
         multiGameActive = false;
         // Quitter une épreuve d'Expédition abandonne tout le parcours et ramène à l'écran des modes.
         if (typeof expeditionAbort === 'function' && expeditionAbort()) { showScreen('screen-modes', 'back'); return; }
+        // Quitter la manche d'une séance de classe : on sort de la séance (l'enseignant voit l'élève s'arrêter).
+        if (currentMode === 'class' && typeof classLeave === 'function') { classLeave(); return; }
         showScreen(screenAfterGame());
     });
 }

@@ -405,7 +405,11 @@ function checkPlacement(index, slotElement) {
     // le score affiché, qui sera envoyé au serveur pour validation (voir
     // startDailyChallenge/startWeeklyChallenge, submitDailyScoreToServer/
     // submitWeeklyChallengeScoreToServer dans daily.js/weekly.js).
-    if (currentMode === 'daily') {
+    if (currentMode === 'class') {
+        // Journal cumulatif, renvoyé à chaque carte : le serveur le rejoue (voir api/classroom.js).
+        classRoundLog.push({ slotIndex: index, elapsedMs: Date.now() - questionStartTime });
+        classSubmitProgress();
+    } else if (currentMode === 'daily') {
         dailyRoundLog.push({ slotIndex: index, elapsedMs: Date.now() - questionStartTime });
     } else if (currentMode === 'weekly') {
         weeklyChallengeRoundLog.push({ slotIndex: index, elapsedMs: Date.now() - questionStartTime });
@@ -425,7 +429,7 @@ function checkPlacement(index, slotElement) {
 
     if (isCorrect) {
         let speedBonus = 0;
-        if (currentMode === 'chrono' || currentMode === 'expert' || currentMode === 'daily' || currentMode === 'weekly') {
+        if (currentMode === 'chrono' || currentMode === 'expert' || currentMode === 'daily' || currentMode === 'weekly' || currentMode === 'class') {
             const elapsed = (Date.now() - questionStartTime) / 1000;
             speedBonus = Math.round(50 * Math.max(0, 1 - elapsed / 15));
         }
