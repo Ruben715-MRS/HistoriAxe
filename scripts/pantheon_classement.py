@@ -99,6 +99,10 @@ KEEP_AS_WRITTEN = {
     # par leur seul prénom ou surnom, une impératrice et une princesse rangées par leur prénom.
     'Isabelle du Brésil', "Marie-Léopoldine d'Autriche", 'Zumbi dos Palmares', 'Machado de Assis', 'Castro Alves',
     'Gonçalves Dias', 'Lima Barreto', 'Cruz e Sousa', 'Almeida Júnior', 'Di Cavalcanti', 'Grande Otelo', 'Elis Regina',
+    # Iran : souverains et ministres rangés par leur nom de règne ou d'usage (« Nader Chah », « Amir Kabir »), noms à particule arabe,
+    # titres honorifiques qui sont le nom (« Kamal-ol-Molk », « Sani ol-Molk »), le nom de guerre d'un chef de tribu.
+    "Ya'qub ibn al-Layth as-Saffar", 'Nizam al-Mulk', 'Karim Khan Zand', 'Agha Mohammad Khan', 'Amir Kabir', 'Nasseredin Chah',
+    'Reza Chah', 'Nader Chah', 'Abbas Mirza', 'Sattar Khan', 'Mirza Koutchak Khan', 'Taj es-Saltaneh', 'Sani ol-Molk', 'Kamal-ol-Molk',
 }
 
 # Écrits à la main : (nom de la source) → nom de classement.
@@ -181,6 +185,11 @@ EXCEPTIONS = {
     'João Guimarães Rosa': 'Guimarães Rosa, João',
     'João Cabral de Melo Neto': 'Melo Neto, João Cabral de',
     'Roberto Burle Marx': 'Burle Marx, Roberto',
+    # Iran : un titre honorifique devant le numéral de règne, des noms arabes à article rangés sous le nom.
+    'Chah Ismaïl Ier': 'Ismaïl Ier',
+    'Al-Ghazali': 'Ghazali, Al-',
+    'Al-Sufi': 'Sufi, Al-',
+    'Al-Kashi': 'Kashi, Al-',
     'Allal El Fassi': 'El Fassi, Allal',
     'Moktar Ould Daddah': 'Ould Daddah, Moktar',
     'Abou el Kacem Chebbi': 'Chebbi, Abou el Kacem',

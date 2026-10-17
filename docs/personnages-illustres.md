@@ -11,7 +11,7 @@ ne posent pas la même question :
 | | Un thème, c'est | Une date, c'est | On le joue par |
 |---|---|---|---|
 | **Biographies** | une vie (360 thèmes, en 12 domaines) | une étape de cette vie | étape de la vie |
-| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, le sous-continent indien, Israël, la Turquie, le Japon, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil) | la naissance d'un personnage | domaine |
+| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, le sous-continent indien, Israël, la Turquie, le Japon, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran) | la naissance d'un personnage | domaine |
 
 Le déplacement ne coûte aucune migration : les 360 thèmes gardent leurs
 identifiants, et rien de ce que le joueur a sauvegardé (favoris, révision,
@@ -117,7 +117,7 @@ des pays ont une histoire commune, un thème **de région** plutôt qu'un par pa
 |---|---|---|
 | Identifiant | `pan_<iso2>` : deux lettres (`pan_fr`) | `pan_<code>` : trois lettres ou plus (`pan_hispam`) — jamais de collision avec un code de pays |
 | `pays` sur chaque événement | interdit (le thème le dit déjà), sauf pour un **invité** d'un autre État (Monaco chez la France, voir « Les micro-États ») | obligatoire : code ISO à deux lettres (`"pays": "VE"`) |
-| Exemples | France, Égypte, Espagne, États-Unis, Italie, Royaume-Uni, Israël, Portugal, Brésil | Amérique hispanique, Maghreb, Machrek, Allemagne-Autriche-Suisse, Scandinavie |
+| Exemples | France, Égypte, Espagne, États-Unis, Italie, Royaume-Uni, Israël, Portugal, Brésil, Iran | Amérique hispanique, Maghreb, Machrek, Allemagne-Autriche-Suisse, Scandinavie |
 
 Ce que le champ `pays` d'un événement change :
 
@@ -1680,7 +1680,7 @@ Hérat et les grandes dynasties (Timourides, Samanides, Seldjoukides, Ghaznévid
   trouve à la fois la date, l'article français et une image libre.
 - **Hors périmètre.** La Mongolie (Gengis Khan et sa descendance ont leur biographie, mais aucun panthéon), le
   Xinjiang et les peuples turcs de Russie. Les figures de langue persane nées dans l'Iran actuel (Omar Khayyâm, Ferdowsi,
-  al-Razi, al-Ghazali) sont laissées à un futur panthéon de l'Iran, et celles déjà prises ailleurs le restent : Babur et
+  al-Razi, al-Ghazali) sont au panthéon de l'Iran (voir « Un pays à part : l'Iran »), et celles déjà prises ailleurs le restent : Babur et
   Humayun (sous-continent indien), Rûmî, né à Balkh, et Alp Arslan (Turquie).
 - **Là où on les honore, pas là où elles sont nées.** Alicher Navoï est né à Hérat (Afghanistan) mais l'Ouzbékistan en a fait
   son poète national : il est ouzbek. Djâmî, né à Kharjird (Khorassan, aujourd'hui en Iran) et mort à Hérat, est afghan.
@@ -1888,6 +1888,77 @@ disent le pays (samba, bossa nova, Tropicália, Cinema Novo, modernisme brésili
   dans une photographie de groupe où il tient son accordéon, Oswaldo Cruz dans un cadre ovale, Antônio Conselheiro dans une illustration.
 - **Géolocalisation** : trois naissances sont placées sur l'Atlas, reprises de leur biographie (Três Corações pour Pelé, São Paulo pour
   Senna, Rio de Janeiro pour Niemeyer ; le test des faits liés l'exige). Les 93 autres ne le sont pas encore.
+
+### Un pays à part : l'Iran
+
+`pan_ir`, « Grandes figures d'Iran » (code `ir`, pays) : **66 personnages**, de Darius Ier (vers 550 av. J.-C.) à Maryam Mirzakhani
+(1977). Par axe : 21 Littérature et pensée, 16 Chefs d'État et dirigeants, 14 Musique, spectacle et sport, 6 Guerres et
+résistances, 6 Sciences, techniques et innovation, 3 Beaux-arts ; 20 ⭐ et aucune biographie liée. 66 portraits (1,7 Mo) : 51 du
+domaine public, 1 CC0, 3 CC BY (2 en 4.0, 1 en 2.0) et 11 CC BY-SA. Huit figures sont nées avant l'an 1000, quinze entre 1000 et 1799,
+quarante-trois depuis 1800 : l'Iran de la poésie classique est là, mais le XXe siècle pèse les deux tiers. Les mots-clés du thème portent le
+pays et ses adjectifs, la Perse, les villes (Téhéran, Ispahan, Chiraz, Tabriz, Machhad, Nichapour), les dynasties (achéménide, sassanide,
+séfévide, afcharide, zand, qadjar, Pahlavi) et les grandes pages de l'histoire (Révolution constitutionnelle, révolution blanche, révolution
+islamique, République islamique, Mossadegh).
+
+- **Un pays, pas un bloc.** `pan_ir`, aucun champ `pays` — aucun invité d'un autre État — et « Pendant ce temps, ailleurs… » le compte
+  comme `thm_ir`, l'« Histoire de l'Iran ». Le thème se range par « Iran », entre la Grèce et Israël.
+- **Ce que l'Asie centrale avait laissé.** Le panthéon de l'Asie centrale avait réservé à « un futur panthéon de l'Iran » les figures de
+  langue persane nées dans l'Iran actuel : Omar Khayyâm, Ferdowsi, al-Razi et al-Ghazali sont ici. Ce qui est déjà pris ailleurs le reste :
+  Avicenne, Al-Biruni, Al-Khwârizmî, Djâmî, Behzad, Ismaïl Samani, Al-Fârâbî et Tamerlan en Asie centrale, Rûmî en Turquie, Babur et Akbar
+  dans le sous-continent indien. Nezami, né à Ganja, et Jamal ad-Din al-Afghani, né à Asadabad et que l'Afghanistan revendique, sont laissés
+  à de futurs blocs (le Caucase, l'Afghanistan) plutôt que disputés d'avance.
+- **Une date qui se discute n'entre pas.** Cyrus le Grand (né vers 600 ou en 576 av. J.-C. selon l'article), Zoroastre (« entre 1500 et 550
+  av. J.-C. »), Ardachir et Chapour Ier (naissance non renseignée), Mollâ Sadrâ (1571 ou 1572), Houshang Golshiri (1937 ou 1938), Delkash
+  (1924 ou 1925), Monir Farmanfarmaian (1922, 1923 ou 1924) sont écartés, comme Ameghino en Amérique hispanique ; Hassan-i Sabbah, dont
+  la naissance varie selon les sources, aussi. Cyrus est le plus regrettable : sa fiche se réintègre dès qu'on accepte un « vers 590 ».
+  Quand les sources s'écartent d'une année seulement, la plus répandue est retenue et dite : Rouhollah Khomeini (1900, l'état civil ;
+  la version officielle donne 1902), Forough Farrokhzad (5 janvier 1935, l'article français dit aussi le 29 décembre 1934), Sattar Khan (1866,
+  l'article français donne 1868 dans ses catégories), Khosro Ier (« vers 501 »). Ali Akbar Dehkhoda est mort en 1956 — la fiche française
+  de l'infobox dit 1959 par erreur.
+- **Pas de vivants.** Mahmoud Dowlatabadi, que l'article français donne vivant, Narges Mohammadi, Shirin Ebadi, Googoosh, Asghar Farhadi,
+  Mohammad Khatami n'y sont pas. Mahsa Amini (morte en 2022, née en 1999 selon l'article, en 2000 selon d'autres sources) et Neda
+  Agha-Soltan, dont les morts ont mobilisé le monde, ne sont pas retenues : la chronologie de leur naissance se discute, et le recul manque.
+  Qasem Soleimani, mort en 2020, est trop disputé pour qu'une fiche de trois phrases le tienne ; il n'a pas été cherché dans les images.
+- **L'histoire contemporaine, sans complaisance.** Les trois grands acteurs du XXe siècle, Reza Chah, Mohammad Reza Pahlavi et Khomeini,
+  sont dits tels qu'ils furent : la modernisation autoritaire et l'interdiction du voile (1936), la SAVAK et la « révolution blanche »,
+  puis la révolution islamique, le velayat-e faqih, les exécutions de prisonniers politiques de l'été 1988 et la fatwa contre Rushdie.
+  Mossadegh est renversé par un coup d'État que la CIA et le MI6 ont organisé. Nader Chah, qui pille Delhi, Agha Mohammad Khan, qui met
+  Tbilissi à sac, et Abbas Ier, qui déplace des Arméniens de force, ont leur ombre dans la fiche.
+- **Neuf femmes**, de la princesse Taj es-Saltaneh (1883) à la mathématicienne Maryam Mirzakhani (1977) : Bibi Khanoum Astarabadi, qui
+  ouvre en 1907 la première école de filles de Téhéran, la poétesse Parvin E'tesami, Forough Farrokhzad, la romancière Simin Daneshvar, les
+  chanteuses Qamar ol-Moluk Vaziri (première à chanter en public, sans voile, en 1924), Marzieh et Hayedeh. Beaucoup de figures sont
+  mortes hors d'Iran : Reza Chah à Johannesburg, Mohammad Reza Pahlavi au Caire, Hedayat et Kiarostami à Paris, Choubak à Berkeley, Golestan
+  dans le Sussex, Shariati à Southampton, Marzieh en France, Hayedeh aux États-Unis, Jamalzadeh et Hessabi à Genève.
+- **Où l'on range qui.** Omar Khayyam, mathématicien d'abord (algèbre, calendrier de Malik Chah) puis poète, est avec les Sciences ;
+  al-Ghazali, Sohrawardi et Tabari avec la pensée ; Nader Chah, chef de guerre avant d'être chah, avec les Guerres et résistances, comme
+  Abbas Mirza, Sattar Khan et Mirza Koutchak Khan ; Taj es-Saltaneh et Bibi Khanoum Astarabadi, « combats pour les droits », aussi. Kamal-ol-Molk,
+  Sani ol-Molk et Reza Abbassi sont les trois seuls Beaux-arts : l'axe le plus mince. Monir Farmanfarmaian (date incertaine) et Houshang Seyhoun (pas
+  d'article français) n'ont pas été retenus, et Bahman Mohassess n'a pas été examiné.
+- **Un seul sportif.** Gholamreza Takhti, champion olympique à Melbourne en 1956, dont la générosité et la mort à trente-sept ans, en 1968,
+  ont fait un symbole d'intégrité (voir « Les sportifs : une exception, pas une règle »).
+- **Écartés faute de date, d'article ou de portrait.** Al-Kashi (mathématicien de Kachan) a été retiré : aucun portrait libre, seulement des
+  pages de manuscrit ; Mahmoud Hessabi, physicien, l'a remplacé aux Sciences. Ali-Naqi Vaziri (fils de Bibi Khanoum) n'a pas d'article
+  français retrouvé, et Mollâ Sadrâ pas de date établie.
+- **Des portraits souvent indirects**, et les légendes le disent : deux reliefs achéménides (Darius Ier, Xerxès Ier à Persépolis,
+  celui-ci endommagé), un plat sassanide (Khosro Ier), deux statues (Ya'qub ibn al-Layth à Zabol, Omar Khayyam), un buste (Nizam al-Mulk),
+  des miniatures et dessins (Ismaïl Ier attribué à Behzad, Saadi en 1427, Ferdowsi en 1476-1486, Hafez, Sohrawardi, Reza Abbassi par Mo'in
+  Mosavver en 1673), une gravure sur bois de Dürer (Al-Sufi, sous le nom d'Azophi Arabus), un sceau calligraphique au nom de Tabari et un
+  timbre de 1976 au nom de Nasir ad-Din Tusi (tous deux `nomVisible`), un manuscrit d'Attar exposé à Berlin, des portraits posthumes (Agha
+  Mohammad Khan vers 1820, Nader Chah en 1774, Abbas Mirza en 1849) et une photographie colorisée en 2021 (Forough Farrokhzad). Cinq sont
+  recadrés dans une image plus large (Attar, Kiarostami, Hatami dans une photographie de couple, Al-Sufi dans la carte céleste, Mirzakhani),
+  et celle de Mirzakhani, agrandie depuis une source de 144 pixels de large, est la seule libre assez grande que Commons propose : elle reste floue.
+- **Statut américain des images : à relire.** Cinquante et un portraits sont du « domaine public », dont la plupart sont des photographies du XXe siècle
+  d'auteur inconnu (Foroughi, Reza Chah, Mossadegh, Khomeini, Shariati, Sepehri, Hayedeh, Fardin, Hatami, Takhti, Hessabi…) ou un
+  portrait officiel de 1973 (Mohammad Reza Pahlavi). Le script lit la licence que Commons déclare, non le statut américain, et ce dernier
+  n'a **pas été vérifié image par image** : Wikimedia répondait 429 à presque toutes les requêtes de cet environnement et le contrôle a été
+  abandonné au bout de cinq fichiers. D'après les modèles de Commons, les œuvres publiées en Iran n'y sont pas protégées aux États-Unis,
+  l'Iran n'étant pas partie aux conventions de Berne et de Genève, mais c'est à confirmer pour les photographies publiées hors d'Iran
+  (Mossadegh : International News Photos, 1951 ; Nasseredin Chah : Nadar). Les sept CC BY-SA 4.0 (Darius, Khosro, Ya'qub, Nizam al-Mulk,
+  Tabari, Kiarostami, Al-Sufi) viennent d'importateurs identifiés, sauf celle du plat de Khosro, une « œuvre personnelle » dont la page de
+  Commons ne donne pas le nom.
+- **Un téléchargement contraint.** Les miniatures de largeur non standard étaient refusées (429) : Dehkhoda, Saba, Entezami, Takhti
+  sont demandés en 330 px, Attar en 960 px, Xerxès, Kiarostami et Hatami en 500 px, Mirzakhani et Al-Sufi à la taille de l'original.
+- **Géolocalisation** : aucune figure n'est encore placée sur l'Atlas, faute de biographie liée (le test des faits liés ne l'exige pas).
 
 ### Un fichier source par panthéon, un script qui l'écrit dans `data/fr.json`
 
@@ -2231,7 +2302,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
 ### Ce qui n'est pas fait
 
 - **Les autres panthéons** : la France, l'Égypte, les États-Unis, l'Italie, le
-  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil sont écrits.
+  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran sont écrits.
   Chaque liste de personnages est validée avant la rédaction. Feuille de route, dans l'ordre
   où on les propose (un pays seul quand il a de quoi faire un thème, un bloc sinon) :
   1. **Le Machrek est écrit** (voir « Le cinquième bloc »). Il reste : le portrait des trois
@@ -2242,7 +2313,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
      règle « un personnage, un seul thème » range chacun dans son pays. Le Maghreb compte deux
      figures juives (Edmond Amran El Maleh, Habiba Msika) et en a laissé cinq de côté (Cheikh
      Raymond, Reinette l'Oranaise, Salim Halali, Albert Memmi, Abraham Serfaty).
-  2. **Pays seuls** : l'Afrique du Sud, l'Iran. **Le Brésil** (qui n'entre pas dans l'Amérique « hispanique » ; voir « Un pays à part : le Brésil »), **la Turquie** (voir « Un pays à part : la Turquie »), **le Japon** (voir « Un pays à part : le Japon ») et **la Russie** (voir « Un pays à part : la Russie ») et **l'Australie** (voir « Un pays à part : l'Australie ») sont écrits.
+  2. **Pays seuls** : l'Afrique du Sud. **L'Iran** (voir « Un pays à part : l'Iran »), **le Brésil** (qui n'entre pas dans l'Amérique « hispanique » ; voir « Un pays à part : le Brésil »), **la Turquie** (voir « Un pays à part : la Turquie »), **le Japon** (voir « Un pays à part : le Japon ») et **la Russie** (voir « Un pays à part : la Russie ») et **l'Australie** (voir « Un pays à part : l'Australie ») sont écrits.
   3. **Blocs** : l'Asie du Sud-Est, la Mongolie (l'Asie centrale est écrite, voir « Un bloc : l'Asie centrale et
      l'Afghanistan »), le Caucase, la Corée (`KR`/`KP`), l'Afrique de
      l'Ouest, l'Afrique centrale, l'Afrique de l'Est et la Corne, l'Afrique australe et l'océan
