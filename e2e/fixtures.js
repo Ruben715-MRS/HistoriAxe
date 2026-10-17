@@ -117,10 +117,22 @@ async function openThemeCard(page, themeId) {
     // le pack de langue ensuite. Attendre le thème visé, et non « bdd non
     // vide », évite de cliquer dans une liste encore incomplète.
     await page.waitForFunction(
-        id => window.bdd && window.bdd.some(c => (c.themes || []).some(t => t.id === id)),
+        id => window.bdd && getAllThemesWithPath().some(x => x.theme.id === id),
         themeId,
         { timeout: 45_000 }
     );
+
+    // Un thème rangé dans une sous-catégorie (Histoire des pays, etc.) n'a pas de liste directe à
+    // cliquer : on l'ouvre comme le fait la recherche de thèmes.
+    const direct = await page.evaluate(id => bdd.some(c => (c.themes || []).some(t => t.id === id)), themeId);
+    if (!direct) {
+        await page.evaluate(id => {
+            const t = getAllThemesWithPath().find(x => x.theme.id === id);
+            openThemeAt(t.ci, t.si, t.ti);
+        }, themeId);
+        await page.waitForSelector('#screen-axes:not(.hidden), #screen-modes:not(.hidden)');
+        return;
+    }
 
     const index = await page.evaluate(id => {
         const ci = bdd.findIndex(c => (c.themes || []).some(t => t.id === id));

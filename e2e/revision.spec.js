@@ -6,7 +6,7 @@ const { test, expect, visibleScreen, openThemeModes } = require('./fixtures');
 const JOUR = 24 * 3600 * 1000;
 
 test('« Réviser (n) » compte ce qui est dû aujourd’hui, et la session du jour le propose', async ({ page }) => {
-    await openThemeModes(page, 'thm_rome');
+    await openThemeModes(page, 'thm_be');
     // 12 événements à échéance (boîte 2, dernière révision il y a 10 jours), 5 pas encore.
     await page.evaluate(({ JOUR }) => {
         const ids = getCurrentTheme().events.map(e => e.id);
@@ -34,7 +34,7 @@ test('« Réviser (n) » compte ce qui est dû aujourd’hui, et la session du j
 });
 
 test('sans échéance, l’onglet dit quand reviendront les premiers événements', async ({ page }) => {
-    await openThemeModes(page, 'thm_rome');
+    await openThemeModes(page, 'thm_be');
     await page.evaluate(() => {
         const id = getCurrentTheme().events[0].id;
         // Révisé hier en boîte 2 (3 jours) : dû dans deux jours ; un autre, boîte 1 révisé aujourd’hui : demain.

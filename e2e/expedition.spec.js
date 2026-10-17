@@ -4,7 +4,7 @@
 const { test, expect, visibleScreen, openThemeModes } = require('./fixtures');
 
 test.beforeEach(async ({ page }) => {
-    await openThemeModes(page, 'thm_rome');
+    await openThemeModes(page, 'thm_be');
     await page.locator('#mode-card-expedition').click();
     await expect(page.locator('#screen-expedition')).toBeVisible();
 });

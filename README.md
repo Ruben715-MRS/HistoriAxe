@@ -215,9 +215,9 @@ n'est requise.
 
 Un thème peut porter, à côté de ses événements, un **sommaire**
 (`js/mindMap.js`, écran `#screen-mindmap`) : une fiche de révision en
-branches et sous-branches dépliables. Sommaires disponibles (CAPES &
-Agrégation) : « Les Amériques (1550-1660) » et « Vivre à la campagne en
-France (1815-1970) ».
+branches et sous-branches dépliables. Les 22 thèmes de la catégorie
+« CAPES & Agrégation » en ont un ; leurs sources, ce que le cadrage du jury en dit et les points
+à revérifier sont dans `docs/sommaires-capes-agregation.md`.
 
 Il se prend par la carte « Découverte » de l'écran des modes : pour un
 thème qui propose un sommaire, elle ne lance plus la frise au premier tap

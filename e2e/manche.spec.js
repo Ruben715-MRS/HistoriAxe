@@ -18,7 +18,7 @@ const THEME_FOURNI = 'thm_aut';
 // Exactement 50 événements, rattaché directement à sa catégorie : le cas
 // limite où « 50 » est proposé (le seuil se lit « au moins 50 ») alors qu'il
 // joue très exactement la même partie que « Tout (50) ».
-const THEME_PILE_50 = 'thm_rome';
+const THEME_PILE_50 = 'thm_be';
 
 const picker = '#round-length';
 const boutons = '#round-length .round-length-btn';
@@ -133,6 +133,8 @@ test('la Découverte garde le thème entier malgré la manche', async ({ page })
     await openThemeModes(page, THEME_FOURNI);
     await choisir(page, '10');
     await page.locator('#mode-card-discovery').click();
+    // thm_aut propose un sommaire : « Découverte » déplie le choix Frise / Sommaire.
+    await page.locator('#discovery-picker .mode-picker-btn').nth(0).click();
     await page.waitForSelector('#screen-game:not(.hidden)');
 
     const affiches = await page.evaluate(() => placedEvents.length);

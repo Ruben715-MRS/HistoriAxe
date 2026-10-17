@@ -9,7 +9,7 @@
 
 const { test, expect, openThemeModes } = require('./fixtures');
 
-const THEME = 'thm_rome';
+const THEME = 'thm_be';
 
 async function reglages(page, valeurs) {
     await page.evaluate(v => {

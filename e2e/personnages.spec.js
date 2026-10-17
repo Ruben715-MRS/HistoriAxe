@@ -1025,8 +1025,8 @@ test('en partie, la carte « À placer » porte le portrait, et la fiche n’off
 });
 
 test('un thème sans portrait n’affiche ni vignette ni figure', async ({ page }) => {
-    await page.waitForFunction(() => window.bdd && getAllThemesWithPath().some(x => x.theme.id === 'thm_rome'), null, { timeout: 45_000 });
-    await page.evaluate(() => { const t = getAllThemesWithPath().find(x => x.theme.id === 'thm_rome'); openThemeAt(t.ci, t.si, t.ti); });
+    await page.waitForFunction(() => window.bdd && getAllThemesWithPath().some(x => x.theme.id === 'thm_be'), null, { timeout: 45_000 });
+    await page.evaluate(() => { const t = getAllThemesWithPath().find(x => x.theme.id === 'thm_be'); openThemeAt(t.ci, t.si, t.ti); });
     await page.waitForSelector('#screen-axes:not(.hidden), #screen-modes:not(.hidden)');
     if (await visibleScreen(page) === 'screen-axes') await page.locator('#axes-continue-btn').click();
     await page.locator('#mode-card-discovery').click();

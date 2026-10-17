@@ -16,11 +16,10 @@
 
 const { test, expect, visibleScreen, openThemeModes } = require('./fixtures');
 
-// Thème de référence : « Rome : République et Empire », dans CAPES &
-// Agrégation. Choisi parce qu'il est stable (50 événements, des axes, pas
+// Thème de référence : « Histoire de la Belgique ». Choisi parce qu'il est stable (50 événements, des axes, pas
 // de sommaire — donc « Découverte » lance la frise directement) et qu'il
 // ne dépend pas des ajouts de contenu en cours dans les autres catégories.
-const THEME = 'thm_rome';
+const THEME = 'thm_be';
 
 test.beforeEach(async ({ page }) => {
     await openThemeModes(page, THEME);
@@ -183,11 +182,11 @@ test('« Reprendre » ramène au dernier thème ouvert', async ({ page }) => {
     await page.evaluate(() => { showScreen('screen-categories'); initCategories(); });
     const reprendre = page.locator('#btn-resume');
     await expect(reprendre).toBeVisible();
-    await expect(reprendre).toContainText('Rome : République et Empire');
+    await expect(reprendre).toContainText('Histoire de la Belgique');
     await reprendre.click();
-    // Rome a des axes : on arrive sur le choix des axes de CE thème.
+    // La Belgique a des axes : on arrive sur le choix des axes de CE thème.
     expect(await visibleScreen(page)).toBe('screen-axes');
-    expect(await page.evaluate(() => getCurrentTheme().id)).toBe('thm_rome');
+    expect(await page.evaluate(() => getCurrentTheme().id)).toBe('thm_be');
 });
 
 // --- « La frise » : mêmes cases que les autres groupes ---------------------

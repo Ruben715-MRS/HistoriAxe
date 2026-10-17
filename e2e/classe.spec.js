@@ -29,7 +29,7 @@ async function paquetDe8(page) {
 }
 
 test('enseignant : réglage, salon avec le code, départ, séance en direct, bilan', async ({ page }) => {
-    await openThemeModes(page, 'thm_rome');
+    await openThemeModes(page, 'thm_be');
     const etat = { courant: {}, reponses: { create: { body: { code: 'ABC234' } }, start: { body: { status: 'running' } }, end: { body: { status: 'ended' } } } };
     const appels = await fauxServeur(page, etat);
     const ids = await paquetDe8(page);
@@ -80,9 +80,9 @@ test('enseignant : réglage, salon avec le code, départ, séance en direct, bil
 });
 
 test('élève : rejoint, attend, joue le paquet de l\'enseignant sans élimination, voit son rang puis le bilan', async ({ page }) => {
-    await openThemeModes(page, 'thm_rome');
+    await openThemeModes(page, 'thm_be');
     const ids = await paquetDe8(page);
-    const etat = { courant: {}, reponses: { join: { body: { status: 'lobby', lang: 'fr', themeName: 'Rome', eventIds: ids } }, submit: { body: { score: 100, answered: 1, finished: false, rank: 1 } } } };
+    const etat = { courant: {}, reponses: { join: { body: { status: 'lobby', lang: 'fr', themeName: 'Belgique', eventIds: ids } }, submit: { body: { score: 100, answered: 1, finished: false, rank: 1 } } } };
     const appels = await fauxServeur(page, etat);
 
     await page.evaluate(() => { showScreen('screen-categories'); initCategories(); });
@@ -102,7 +102,7 @@ test('élève : rejoint, attend, joue le paquet de l\'enseignant sans éliminati
     await page.evaluate(() => { HistoriAxeAPI.classroom = window.__classroomReel; });
 
     // Un bon code : le salon, tant que l'enseignant n'a pas lancé.
-    etat.reponses.join = { body: { status: 'lobby', lang: 'fr', themeName: 'Rome', eventIds: ids } };
+    etat.reponses.join = { body: { status: 'lobby', lang: 'fr', themeName: 'Belgique', eventIds: ids } };
     etat.courant = { code: 'ABC234', status: 'lobby', total: 7, isTeacher: false, players: [{ rank: 1, name: 'Léa', score: 0, answered: 0, correct: 0, finished: false }] };
     await page.locator('#class-code-input').fill('abc 234');
     await page.locator('#class-join-btn').click();
@@ -153,7 +153,7 @@ test('élève : rejoint, attend, joue le paquet de l\'enseignant sans éliminati
 });
 
 test('un prénom saisi par un élève est affiché comme du texte, jamais comme du HTML', async ({ page }) => {
-    await openThemeModes(page, 'thm_rome');
+    await openThemeModes(page, 'thm_be');
     const etat = { courant: {}, reponses: { create: { body: { code: 'ABC234' } } } };
     await fauxServeur(page, etat);
     await page.locator('#mode-card-class').click();
@@ -166,9 +166,9 @@ test('un prénom saisi par un élève est affiché comme du texte, jamais comme 
 });
 
 test('un paquet qui contient un événement inconnu de ce pack n\'est pas joué', async ({ page }) => {
-    await openThemeModes(page, 'thm_rome');
+    await openThemeModes(page, 'thm_be');
     const ids = await paquetDe8(page);
-    const etat = { courant: {}, reponses: { join: { body: { status: 'running', lang: 'fr', themeName: 'Rome', eventIds: [...ids.slice(0, 7), 'evenement-inconnu'] } } } };
+    const etat = { courant: {}, reponses: { join: { body: { status: 'running', lang: 'fr', themeName: 'Belgique', eventIds: [...ids.slice(0, 7), 'evenement-inconnu'] } } } };
     await fauxServeur(page, etat);
     await page.evaluate(() => openClassJoin());
     await page.locator('#class-code-input').fill('ABC234');

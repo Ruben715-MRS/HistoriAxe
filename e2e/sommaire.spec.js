@@ -2,7 +2,7 @@
 //
 // Un sommaire est une fiche de synthèse en branches dépliables, rendue à
 // partir du champ `carteMentale` du pack de données (voir js/mindMap.js et
-// la section « Sommaires » du README). Deux thèmes en proposent un
+// la section « Sommaires » du README). Vingt-deux thèmes (CAPES & Agrégation) en proposent un
 // aujourd'hui ; les autres n'ont rien, et « Découverte » doit alors se
 // comporter comme avant.
 //
@@ -15,7 +15,7 @@
 const { test, expect, visibleScreen, openThemeModes } = require('./fixtures');
 
 const THEME_AVEC = 'thm_camp';  // Vivre à la campagne en France — 7 branches
-const THEME_SANS = 'thm_rome';  // Rome : République et Empire — aucun sommaire
+const THEME_SANS = 'thm_be';    // Histoire de la Belgique — aucun sommaire
 
 // Nombre de branches déclarées par la donnée du thème courant : l'écran
 // doit en afficher exactement autant. Lire la donnée plutôt que coder un
@@ -163,4 +163,23 @@ test('les mots-étiquettes d’une sous-branche sont rendus en pastilles', async
     });
     expect(attendus).toBeGreaterThan(0);
     await expect(page.locator('.mindmap-tags li')).toHaveCount(attendus);
+});
+
+test('les 22 sommaires CAPES & Agrégation s\'ouvrent, branche par branche, sans erreur', async ({ page }) => {
+    const ids = await page.evaluate(() => getAllThemesWithPath().filter(x => x.theme.carteMentale).map(x => x.theme.id));
+    expect(ids).toHaveLength(22);
+    for (const id of ids) {
+        const rendu = await page.evaluate((themeId) => {
+            const t = getAllThemesWithPath().find(x => x.theme.id === themeId);
+            openThemeAt(t.ci, t.si, t.ti);
+            openMindMap();
+            return {
+                attendu: t.theme.carteMentale.branches.length,
+                affichees: document.querySelectorAll('#mindmap-branches > *').length,
+                esprit: document.getElementById('mindmap-esprit').innerText.length
+            };
+        }, id);
+        expect(rendu.affichees, id).toBe(rendu.attendu);
+        expect(rendu.esprit, id).toBeGreaterThan(80);
+    }
 });
