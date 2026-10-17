@@ -14,7 +14,7 @@ function renderMultiplayerNameInputs() {
     for (let i = 1; i <= count; i++) {
         const existingInput = document.getElementById(`multi-name-${i}`);
         const defaultVal = existingInput ? existingInput.value : (multiPlayers && multiPlayers[i - 1] ? multiPlayers[i - 1].name : t('multiplayer.player_default_name', { n: i }));
-        container.innerHTML += `<input type="text" id="multi-name-${i}" placeholder="${t('multiplayer.player_name_placeholder', { n: i })}" value="${defaultVal}">`;
+        container.innerHTML += `<input type="text" id="multi-name-${i}" placeholder="${t('multiplayer.player_name_placeholder', { n: i })}" value="${escapeHtml(defaultVal)}">`;
     }
 }
 
@@ -85,7 +85,7 @@ function endMultiplayerGame() {
         const eliminatedText = p.eliminated ? ' <em>(Éliminé)</em>' : '';
         container.innerHTML += `
                     <div class="podium-row ${cls}">
-                        <span>${medal} ${p.name} ${eliminatedText}</span>
+                        <span>${medal} ${escapeHtml(p.name)} ${eliminatedText}</span>
                         <span>${p.score} pts</span>
                     </div>
                 `;

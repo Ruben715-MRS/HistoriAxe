@@ -13,7 +13,8 @@ let toastTimeout = null;
 function showToast(message, duration = 2800) {
     const toast = document.getElementById('app-toast');
     if (!toast) return;
-    toast.innerHTML = message;
+    // Texte seulement : un message peut contenir un nom saisi par un joueur (duel, classe…).
+    toast.textContent = message;
     toast.classList.remove('hidden', 'toast-hide');
     if (toastTimeout) clearTimeout(toastTimeout);
     toastTimeout = setTimeout(() => {
@@ -135,8 +136,9 @@ function renderAnecdoteCard(container, anecdoteEvt) {
         container.innerHTML = '';
         return;
     }
-    const wikiLink = anecdoteEvt.wikipedia
-        ? `<a href="${anecdoteEvt.wikipedia}" target="_blank" rel="noopener" class="anecdote-wiki-link">${t('anecdote.read_more_wiki')}</a>`
+    const wikiHref = safeHttpUrl(anecdoteEvt.wikipedia);
+    const wikiLink = wikiHref
+        ? `<a href="${escapeHtml(wikiHref)}" target="_blank" rel="noopener" class="anecdote-wiki-link">${t('anecdote.read_more_wiki')}</a>`
         : '';
     container.innerHTML = `
                 <div class="anecdote-card">
@@ -144,8 +146,8 @@ function renderAnecdoteCard(container, anecdoteEvt) {
                         <span class="anecdote-badge">${t('anecdote.did_you_know')}</span>
                         <span class="anecdote-date">${formatYear(anecdoteEvt.date)}</span>
                     </div>
-                    <div class="anecdote-event-title">${anecdoteEvt.titre}</div>
-                    <div class="anecdote-desc">${anecdoteEvt.description}</div>
+                    <div class="anecdote-event-title">${escapeHtml(anecdoteEvt.titre)}</div>
+                    <div class="anecdote-desc">${escapeHtml(anecdoteEvt.description)}</div>
                     ${wikiLink}
                 </div>
             `;

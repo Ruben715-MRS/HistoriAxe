@@ -34,15 +34,6 @@ function generateDailyEvents() {
     return DailyEngine.pickDailyItems(allWithLocation, seedStr, 10, item => item.event.date);
 }
 
-function escapeHtml(str) {
-    return String(str == null ? '' : str)
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#39;');
-}
-
 // Premier essai du jour, conservé sur l'appareil : c'est lui — et lui seul —
 // qui est envoyé au classement (le serveur ne garde d'ailleurs que le premier
 // envoi). Sans cela, on rejouerait le défi en connaissant déjà les dix dates

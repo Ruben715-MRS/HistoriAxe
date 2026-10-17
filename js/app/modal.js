@@ -273,7 +273,7 @@ function openModal(evt, context = null, keepHistory = false) {
     if (badgeContainer) {
         if (evt.axe) {
             const color = getAxisColor(evt.axe);
-            badgeContainer.innerHTML = `<span class="entry-axe-badge" data-axis="${color ? color.name : 'blue'}">${evt.axe}</span>`;
+            badgeContainer.innerHTML = `<span class="entry-axe-badge" data-axis="${color ? color.name : 'blue'}">${escapeHtml(evt.axe)}</span>`;
             badgeContainer.classList.remove('hidden');
         } else {
             badgeContainer.innerHTML = '';
@@ -293,7 +293,7 @@ function openModal(evt, context = null, keepHistory = false) {
             if (currentModal && currentModal.evt === evt) document.getElementById('modal-desc').innerText = evt.description || '';
         });
     }
-    document.getElementById('modal-wiki').href = evt.wikipedia;
+    document.getElementById('modal-wiki').href = safeHttpUrl(evt.wikipedia) || '#';
     renderModalLinkedEvents(evt);
     if (typeof renderModalMapButton === 'function') renderModalMapButton(evt);
     renderModalPortrait(evt);

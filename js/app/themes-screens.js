@@ -70,8 +70,8 @@ function renderThemeSearchResults(matches) {
         const item = document.createElement('div');
         item.className = 'search-result-item';
         item.innerHTML = `
-                    <span class="search-result-title">${theme.nom}</span>
-                    <span class="search-result-path">${pathNames.join(' › ')}</span>
+                    <span class="search-result-title">${escapeHtml(theme.nom)}</span>
+                    <span class="search-result-path">${escapeHtml(pathNames.join(' › '))}</span>
                 `;
         item.onclick = () => {
             clearThemeSearch();

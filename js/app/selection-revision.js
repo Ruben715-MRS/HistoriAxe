@@ -348,7 +348,7 @@ function renderProgressRadar(tree) {
         if (angleDeg > 15 && angleDeg < 165) anchor = 'start';
         else if (angleDeg > 195 && angleDeg < 345) anchor = 'end';
         const shortNom = node.nom.length > 16 ? node.nom.slice(0, 15) + '…' : node.nom;
-        labelsHtml += `<text x="${lx.toFixed(1)}" y="${(ly - 6).toFixed(1)}" text-anchor="${anchor}" class="radar-label">${shortNom}</text>`;
+        labelsHtml += `<text x="${lx.toFixed(1)}" y="${(ly - 6).toFixed(1)}" text-anchor="${anchor}" class="radar-label">${escapeHtml(shortNom)}</text>`;
         labelsHtml += `<text x="${lx.toFixed(1)}" y="${(ly + 8).toFixed(1)}" text-anchor="${anchor}" class="radar-label-pct">${pct === null ? t('mastery.radar_untested') : pct + '%'}</text>`;
     });
 
@@ -373,7 +373,7 @@ function buildMasteryBarHtml(name, stats, extraMetaHtml) {
     const weakMeta = stats.weak > 0 ? `<span class="mastery-row-weak-badge">⚠ ${stats.weak} points faibles</span>` : '';
     return `
                 <div class="mastery-row-top">
-                    <span class="mastery-row-name">${name}</span>
+                    <span class="mastery-row-name">${escapeHtml(name)}</span>
                     <span class="mastery-row-pct band-${band}">${pctLabel}</span>
                 </div>
                 <div class="mastery-bar-track"><div class="mastery-bar-fill band-${band}" style="width:${pct === null ? 0 : pct}%"></div></div>

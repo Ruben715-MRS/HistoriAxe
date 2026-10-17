@@ -1101,6 +1101,20 @@ qui la garde — quatorze mutations, quatorze attrapées.
 - Le **contraste des éléments qui ne sont pas du texte** (WCAG 1.4.11 : icônes,
   bordures de champ), qui relève d'un autre critère.
 
+## Échappement des textes insérés dans la page
+
+Presque tout l'affichage passe par des gabarits `innerHTML`. Tout texte qui peut venir d'un joueur — nom de thème ou titre d'événement personnalisés, prénom multijoueur, pseudo, lien Wikipédia d'un contenu importé — doit donc être **échappé** :
+
+- `escapeHtml(valeur)` (`js/escape.js`, chargé avant tous les autres scripts) neutralise `& < > " '`, y compris dans une valeur d'attribut (`value="${escapeHtml(x)}"`).
+- `safeHttpUrl(url)` ne laisse passer que `http:` / `https:` ; un `javascript:` donne une chaîne vide (`href = safeHttpUrl(u) || '#'`).
+- `showToast` et les zones de simple texte utilisent `textContent`.
+
+Les packs de données (`data/fr.json`, `ui/*.json`) ne contiennent ni balisage ni entité (vérifié par test) : échapper ne change donc rien à l'affichage du contenu officiel.
+
+Le garde-fou est `tests/escaping.test.js` : il balaie tous les gabarits de `js/**` et refuse une interpolation `${x.nom|titre|axe|name|pseudo|description|label…}` non échappée. Une valeur réellement constante se déclare par un commentaire `// html-safe: raison` sur la ligne précédente. `e2e/echappement.spec.js` vérifie en navigateur qu'un thème nommé `<img src=x onerror=…>` s'affiche en texte et n'exécute rien.
+
+Suite possible : une Content-Security-Policy, écartée pour l'instant (scripts inline, MapLibre, Capacitor).
+
 ## Développement
 
 ### Pack de données découpé (`data/pack/`)

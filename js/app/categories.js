@@ -214,7 +214,7 @@ function initCategories() {
                     <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('${bgImg}'); background-color: var(--primary-blue, #001a4b); position: absolute; inset: 0;"></div>
                     <div class="category-card-veil"></div>
                     <div class="absolute bottom-0 left-0 p-md w-full" style="position: absolute; bottom: 0; left: 0; padding: 16px;">
-                        <h4 class="font-headline-md text-on-primary" style="color: white; font-weight: 700; font-size: 20px; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">${cat.nom}</h4>
+                        <h4 class="font-headline-md text-on-primary" style="color: white; font-weight: 700; font-size: 20px; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">${escapeHtml(cat.nom)}</h4>
                         <p class="font-label-sm text-primary-fixed-dim mt-xs" style="color: #fff; font-size: 12px; margin-top: 4px; text-shadow: 0 1px 4px rgba(0,0,0,0.7);">${cat.subcategories ? t('themes.subcategories_count', { count: cat.subcategories.length }) : (cat.isCustomCategory ? t('themes.your_themes') : t('themes.select_cta'))}</p>
                     </div>
                 `;
@@ -366,7 +366,7 @@ function initSubcategories() {
                     <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('${bgImg}'); background-color: var(--primary-blue); position: absolute; inset: 0;"></div>
                     <div class="category-card-veil"></div>
                     <div class="absolute bottom-0 left-0 p-md w-full" style="position: absolute; bottom: 0; left: 0; padding: 16px;">
-                        <h4 class="font-headline-md text-on-primary" style="color: white; font-weight: 700; font-size: 20px; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">${sub.nom}</h4>
+                        <h4 class="font-headline-md text-on-primary" style="color: white; font-weight: 700; font-size: 20px; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">${escapeHtml(sub.nom)}</h4>
                         <p class="font-label-sm text-primary-fixed-dim mt-xs" style="color: #fff; font-size: 12px; margin-top: 4px; text-shadow: 0 1px 4px rgba(0,0,0,0.7);">${textThemes}</p>
                     </div>
                 `;
@@ -410,7 +410,7 @@ function createThemeCard(theme, onOpen, opts = {}) {
     // et la corbeille les secondaires. La carte garde son clic à la souris et
     // se déclare `data-kbd-proxy` : son équivalent clavier est son titre.
     card.innerHTML = `
-                <span class="data-card-title" role="button" tabindex="0">${theme.nom}</span>
+                <span class="data-card-title" role="button" tabindex="0">${escapeHtml(theme.nom)}</span>
                 ${badgeHtml}
                 ${deleteHtml}
                 <span class="data-card-fav ${fav ? 'is-fav' : ''}" role="button" tabindex="0" aria-pressed="${fav}" title="${fav ? t('themes.remove_favorite') : t('themes.add_favorite')}">${fav ? '★' : '☆'}</span>
@@ -422,6 +422,7 @@ function createThemeCard(theme, onOpen, opts = {}) {
     // cinquante cartes, « Ajouter aux favoris » seul ne dit rien. Posé par
     // setAttribute et non dans le gabarit : un nom de thème personnalisé peut
     // contenir un guillemet, qui casserait l'attribut.
+    // html-safe: libellé posé par setAttribute (jamais interprété comme du HTML)
     const favLabel = isFav => `${isFav ? t('themes.remove_favorite') : t('themes.add_favorite')} — ${theme.nom}`;
     card.querySelector('.data-card-fav').setAttribute('aria-label', favLabel(fav));
     const delEl = card.querySelector('.data-card-delete');

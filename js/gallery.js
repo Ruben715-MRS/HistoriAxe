@@ -115,6 +115,7 @@ function collectGalleryEntries(pantheon) {
                 // scripts/pantheon_classement.py) ; à défaut, le nom lui-même.
                 hasBio: !!evt.biographie && themeIds.has(evt.biographie),
                 classement: evt.classement || names.sortName,
+                // html-safe: texte de recherche, jamais affiché comme du HTML
                 haystack: galleryNormalize(`${evt.titre} ${evt.classement || ''}`)
             }, names));
         });

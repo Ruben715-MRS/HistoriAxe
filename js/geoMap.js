@@ -688,7 +688,7 @@ function buildChronoGeoCard(node, label) {
     card.style.gridColumn = '1 / -1';
     card.innerHTML = `
         <div class="special-card-title">${t('chronogeo.mode_title')}</div>
-        <div class="special-card-subtitle">${t('chronogeo.mode_subtitle', { label })}</div>
+        <div class="special-card-subtitle">${t('chronogeo.mode_subtitle', { label: escapeHtml(label) })}</div>
     `;
     card.onclick = () => startGeoModeFromNode(node, label, undefined, 'slider');
     A11y.activatable(card);
@@ -702,7 +702,7 @@ function buildGeoModeCard(node, label) {
     card.style.gridColumn = '1 / -1';
     card.innerHTML = `
         <div class="special-card-title">${t('carte.mode_title')}</div>
-        <div class="special-card-subtitle">${t('carte.mode_subtitle', { label })}</div>
+        <div class="special-card-subtitle">${t('carte.mode_subtitle', { label: escapeHtml(label) })}</div>
     `;
     card.onclick = () => startGeoModeFromNode(node, label);
     A11y.activatable(card);

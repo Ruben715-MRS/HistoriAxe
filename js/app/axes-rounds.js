@@ -182,7 +182,7 @@ function renderAxesScreen() {
             card.dataset.axis = color.name;
         }
         const essentialBadge = theme.essentiel ? `<span class="axis-essentiel-badge">⭐ ${essentialCount}</span>` : '';
-        card.innerHTML = `<h3>${axe}</h3><p>${t('categories.events_count', { count })} ${essentialBadge}</p>`;
+        card.innerHTML = `<h3>${escapeHtml(axe)}</h3><p>${t('categories.events_count', { count })} ${essentialBadge}</p>`;
         card.onclick = () => {
             if (selectedAxes.has(axe)) { selectedAxes.delete(axe); }
             else { selectedAxes.add(axe); }

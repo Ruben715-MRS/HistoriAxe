@@ -124,6 +124,7 @@ function buildPeriodesQuestions(events) {
                 questions.push({
                     kicker: t('periodes.contemporary_kicker'),
                     prompt: t('periodes.which_contemporary'),
+                    // html-safe: affiché par innerText
                     tag: `« ${evt.titre} » (${formatYear(evt.date)})`,
                     options: options,
                     correctEvt: evt
@@ -199,8 +200,8 @@ function renderPeriodesQuestion() {
         const btn = document.createElement('button');
         btn.type = 'button';
         btn.className = 'periodes-option';
-        btn.innerHTML = `<span class="periodes-option-main">${opt.main}</span>` +
-            (opt.sub ? `<span class="periodes-option-sub">${opt.sub}</span>` : '');
+        btn.innerHTML = `<span class="periodes-option-main">${escapeHtml(opt.main)}</span>` +
+            (opt.sub ? `<span class="periodes-option-sub">${escapeHtml(opt.sub)}</span>` : '');
         btn.onclick = () => answerPeriodes(opt, idx);
         optionsContainer.appendChild(btn);
     });

@@ -66,8 +66,8 @@ function pickNextEvent() {
         ? (challengeEventsWithLocation.find(item => item.event.id === eventToPlace.id) || {}).theme
         : null;
     document.getElementById('hand-title').innerHTML = challengeThemeName
-        ? `${eventToPlace.titre} <em class="hand-title-theme">(${stripThemePeriodSuffix(challengeThemeName.nom)})</em>`
-        : eventToPlace.titre;
+        ? `${escapeHtml(eventToPlace.titre)} <em class="hand-title-theme">(${escapeHtml(stripThemePeriodSuffix(challengeThemeName.nom))})</em>`
+        : escapeHtml(eventToPlace.titre);
     setPortraitImg(document.getElementById('hand-portrait'), eventToPlace);
     renderTimeline();
 }
@@ -151,7 +151,7 @@ function updateHUD() {
         document.getElementById('hud-score').innerText = cp.score;
         renderComboChip(document.getElementById('hud-combo'), cp.comboMultiplier);
 
-        let pips = `<span class="multi-player-hud">${cp.name}</span> `;
+        let pips = `<span class="multi-player-hud">${escapeHtml(cp.name)}</span> `;
         for (let i = 0; i < 2; i++) {
             pips += `<span class="pip${i < cp.lives ? '' : ' spent'}"></span>`;
         }
@@ -196,7 +196,7 @@ function renderAxesLegend() {
         }
         const badges = currentThemeAxes.map(axe => {
             const color = getAxisColor(axe);
-            return `<span class="entry-axe-badge" data-axis="${color ? color.name : 'blue'}">${axe}</span>`;
+            return `<span class="entry-axe-badge" data-axis="${color ? color.name : 'blue'}">${escapeHtml(axe)}</span>`;
         }).join('');
         const toggleLabel = pinned
             ? t('game.axes_legend_hide')
@@ -301,7 +301,7 @@ function buildSlot(index) {
     slot.className = 'slot';
     slot.setAttribute('aria-label', t('game.place_here_aria', { label }));
     slot.innerHTML = `<span class="slot-grid"><span></span><span class="slot-caret"></span>` +
-        `<span class="slot-body"><span class="slot-label">${label}</span></span></span>`;
+        `<span class="slot-body"><span class="slot-label">${escapeHtml(label)}</span></span></span>`;
     slot.onclick = () => checkPlacement(index, slot);
     return slot;
 }
@@ -319,7 +319,7 @@ function buildEntry(evt) {
             // (voir « .entry[data-axis] » dans css/style.css).
             row.dataset.axis = color.name;
             row.style.setProperty('--axis-c', color.border);
-            axeHtml = `<span class="entry-axe-badge" data-axis="${color.name}" title="${evt.axe}">${evt.axe}</span>`;
+            axeHtml = `<span class="entry-axe-badge" data-axis="${color.name}" title="${escapeHtml(evt.axe)}">${escapeHtml(evt.axe)}</span>`;
         }
     }
 
@@ -331,7 +331,7 @@ function buildEntry(evt) {
     const yearClass = 'entry-year' + (yearIsLong ? ' entry-year-long' : '');
     row.innerHTML = `<span class="${yearClass}">${dateText}</span>` +
         `<span class="entry-tick"></span>` +
-        `<span class="entry-body"><span class="entry-main"><span class="entry-title">${evt.titre}</span>` +
+        `<span class="entry-body"><span class="entry-main"><span class="entry-title">${escapeHtml(evt.titre)}</span>` +
         axeHtml +
         (evt.missed ? `<span class="entry-flag">${t('game.missed_tag')}</span>` : '') +
         `</span><span class="entry-chevron" aria-hidden="true">›</span></span>`;

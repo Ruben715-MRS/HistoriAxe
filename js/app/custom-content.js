@@ -250,8 +250,8 @@ function openLeaderboard() {
         scores.forEach(s => {
             // `rounds` est absent des scores enregistrés avant l'arrivée des
             // manches : on n'affiche rien plutôt que d'inventer une longueur.
-            const rounds = s.rounds ? `<small class="leaderboard-rounds">${t('rounds.hint', { count: s.rounds })}</small>` : '';
-            html += `<tr><td>${modeNames[s.mode] || s.mode}${rounds}</td><td class="leaderboard-score">${s.score}</td><td>${s.date}</td></tr>`;
+            const rounds = s.rounds ? `<small class="leaderboard-rounds">${t('rounds.hint', { count: escapeHtml(s.rounds) })}</small>` : '';
+            html += `<tr><td>${escapeHtml(modeNames[s.mode] || s.mode)}${rounds}</td><td class="leaderboard-score">${escapeHtml(s.score)}</td><td>${escapeHtml(s.date)}</td></tr>`;
         });
         html += '</tbody></table>';
         container.innerHTML = html;
