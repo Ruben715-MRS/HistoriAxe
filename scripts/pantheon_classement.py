@@ -108,6 +108,8 @@ KEEP_AS_WRITTEN = {
     'Mobutu Sese Seko', 'Grand Kallé', 'Docteur Nico', 'Pépé Kallé', 'Papa Wemba', "Pamelo Mounk'a", 'Tshala Muana', 'Tabu Ley Rochereau',
     'Lapiro de Mbanga', 'Kimpa Vita', 'Mandume ya Ndemufayo', 'Njinga Mbande', 'Alphonse Ier du Kongo', 'Mutara III Rudahigwa',
     'Yuhi V Musinga', 'Mwambutsa IV',
+    # Pays baltes : le surnom suit un nom unique (« Vytautas le Grand »), rangé au V comme Alfred le Grand au A.
+    'Vytautas le Grand',
 }
 
 # Écrits à la main : (nom de la source) → nom de classement.

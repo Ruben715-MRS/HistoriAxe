@@ -11,7 +11,7 @@ ne posent pas la même question :
 | | Un thème, c'est | Une date, c'est | On le joue par |
 |---|---|---|---|
 | **Biographies** | une vie (360 thèmes, en 12 domaines) | une étape de cette vie | étape de la vie |
-| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Turquie, le Japon, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran) | la naissance d'un personnage | domaine |
+| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Turquie, le Japon, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, l'Afrique centrale, les pays baltes) | la naissance d'un personnage | domaine |
 
 Le déplacement ne coûte aucune migration : les 360 thèmes gardent leurs
 identifiants, et rien de ce que le joueur a sauvegardé (favoris, révision,
@@ -2024,6 +2024,48 @@ la CEEAC, les villes (Kinshasa, Brazzaville, Léopoldville), le Kongo, les Grand
   demandé en 250 px, Mandume et Musinga en 330 px, Goumba à la taille de l'original.
 - **Géolocalisation** : aucune figure n'est encore placée sur l'Atlas, faute de biographie liée.
 
+### Un bloc : les pays baltes
+
+`pan_baltes`, « Grandes figures des pays baltes » (code `baltes`, bloc ; rangé sous « Pays baltes », entre la Nouvelle-Zélande et le Portugal) :
+**65 personnages de trois pays** — Estonie 23, Lituanie 23, Lettonie 19 — de Mindaugas (vers 1203) à Mariss Jansons (1943). Par axe : 24 Littérature et
+pensée, 12 Chefs d'État et dirigeants, 10 Musique, spectacle et sport, 10 Sciences, techniques et innovation, 6 Beaux-arts, 3 Guerres et résistances ;
+26 ⭐ et aucune biographie liée. 65 portraits : 48 du domaine public, 3 CC0, 6 CC BY et 8 CC BY-SA. Huit figures sont nées avant 1800 (les grands-ducs
+lituaniens, Donelaitis, Baer, Krusenstern, Bellingshausen), quarante-cinq entre 1800 et 1899, douze depuis 1900 : le panthéon est celui des
+« réveils nationaux » du XIXe siècle et de l'entre-deux-guerres. Les mots-clés du thème portent les trois pays et leurs noms historiques (Livonie,
+Courlande, Estland, Samogitie, Prusse-Orientale), les capitales, le grand-duché de Lituanie, les Allemands baltes, la « révolution chantante »
+et la chaîne balte, Kalevipoeg, les dainas et Lāčplēsis.
+
+- **Trois pays, pas de pays dominant** : aucun ne dépasse 36 % des figures. Le bloc suit les frontières actuelles, comme tous les panthéons :
+  Kristjan Jaak Peterson, poète estonien né à Riga, et Georg Ots, né à Petrograd, n'y sont donc pas ; Kārlis Zāle, sculpteur de la Lettonie né
+  à Mažeikiai, non plus. Donelaitis, né en Prusse-Orientale (région de Kaliningrad), y est rangé comme Kant l'est en Allemagne : la fiche le dit.
+- **Les Germano-Baltes comptent pour l'Estonie et la Lettonie** quand ils y sont nés : Baer, Krusenstern, Bellingshausen, Uexküll (Estonie),
+  Ostwald (Lettonie). Ils ont fait carrière dans l'Empire russe ou en Allemagne, et leur fiche le dit.
+- **Les figures disputées avec un autre pays n'y sont pas** : Sergueï Eisenstein (né à Riga) est au panthéon de la Russie ; Berlin, Rothko, Gary,
+  Levinas, Miłosz et Lipchitz, nés dans le pays mais rangés là où on les honore, sont dans `scripts/pantheon/baltes_candidats.md`. Gimbutas, Mekas
+  et Birkerts, qui se sont toujours dits lituaniens ou lettons, y sont.
+- **Des dates approchées, dites** : Mindaugas (vers 1203), Gediminas (vers 1275), Algirdas (vers 1296) et Vytautas (vers 1350) ; les dates disputées
+  (Heifetz, Jogaila, Tõnisson) écartent la figure.
+- **Que des morts**, et deux sportifs au titre de la règle des sportifs, des joueurs d'échecs : Paul Keres (cinq couronnes estoniennes à son effigie) et
+  Mikhaïl Tal (« magicien de Riga », champion du monde 1960).
+- **L'histoire du XXe siècle, sans complaisance** : Päts (le coup d'État de 1934), Ulmanis (celui de 1934, la déportation de 1940), Smetona (celui de
+  1926), Brazauskas (communiste devenu président), Nėris (poétesse ralliée à l'annexion de 1940, « mémoire disputée »), Žemaitis (chef des partisans
+  fusillé à Moscou), Šimaitė (Juste parmi les nations).
+- **Huit femmes** : Koidula, Marie Under, Aspazija, Žemaitė, Petkevičaitė-Bitė, Nėris, Šimaitė et Gimbutas.
+- **Onze fiches rédigées n'ont pas de portrait** : Wikimedia a répondu 429 à toute miniature, des heures durant, depuis cet environnement. Elles
+  sont gardées, avec le fichier Commons choisi, dans `scripts/pantheon/baltes_candidats.md` : Konstantin Päts et Eduard Vilde (Estonie), Andrejs
+  Pumpurs, Aleksandrs Čaks, Zenta Mauriņa, Jukums Vācietis, Vilhelms Purvītis et Gustav Klucis (Lettonie), Konstantinas Sirvydas, Vydūnas et Jonas
+  Jablonskis (Lituanie). **Päts, premier président de l'Estonie, est le manque le plus sensible** : à réintégrer en premier. Pumpurs a de plus été refusé
+  par le garde-fou de `fetch_portraits.py` (l'historique de la page évoque une ancienne image « non libre » ; la version actuelle est taguée domaine public).
+- **Des portraits souvent indirects**, et les légendes le disent : gravures imaginaires pour Mindaugas, Gediminas et Algirdas, détail du tableau de Matejko pour
+  Vytautas (aucun portrait d'époque), dessin posthume pour Donelaitis, portrait au crayon pour Barons, peintures pour Kreutzwald, Poska et Krusenstern,
+  dessin de Triik pour Tammsaare, statue pour Baumanis (recadrée). Tsander est photographié jeune, en uniforme, devant une porte : le visage est petit.
+  La photographie de Žemaitė est un détail d'un cliché de famille.
+- **Statut américain des images : à relire**, comme pour l'Afrique centrale : quarante-huit portraits sont du « domaine public », en majorité des photographies
+  d'auteur inconnu ; le script lit la licence que Commons déclare, non le statut américain, qui n'a pas été vérifié image par image.
+- **Un téléchargement contraint** : voir ci-dessus ; sur les 79 fiches écrites à l'origine, 65 ont leur portrait. Trois autres images ont été écartées à l'examen
+  (visage caché, bas-relief de pierre tombale, 184 × 250 pixels).
+- **Géolocalisation** : aucune figure n'est placée sur l'Atlas, faute de biographie liée.
+
 ### Un fichier source par panthéon, un script qui l'écrit dans `data/fr.json`
 
 `scripts/pantheon/<code>.json` (`fr`, `hispam`…) est **la seule source de
@@ -2366,7 +2408,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
 ### Ce qui n'est pas fait
 
 - **Les autres panthéons** : la France, l'Égypte, les États-Unis, l'Italie, le
-  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran sont écrits.
+  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les pays baltes sont écrits.
   Chaque liste de personnages est validée avant la rédaction. Feuille de route, dans l'ordre
   où on les propose (un pays seul quand il a de quoi faire un thème, un bloc sinon) :
   1. **Le Machrek est écrit** (voir « Le cinquième bloc »). Il reste : le portrait des trois
@@ -2382,7 +2424,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
      l'Afghanistan »), le Caucase, la Corée (`KR`/`KP`), l'Afrique de
      l'Ouest, l'Afrique de l'Est et la Corne, l'Afrique australe et l'océan
      Indien (sans l'Afrique du Sud). L'Afrique centrale est écrite (voir « Un bloc : l'Afrique centrale »). « Nouvelle-Zélande et Pacifique » est écrit (voir « Un bloc : la
-     Nouvelle-Zélande et le Pacifique »).
+     Nouvelle-Zélande et le Pacifique »). Les pays baltes sont écrits (voir « Un bloc : les pays baltes »).
   4. **L'Europe et les Amériques qui manquent** : **le Portugal est écrit** (voir « Un pays à part : le Portugal »,
      qui a repris Magellan et Viriathe), Byzance (au-delà des cinq figures déjà au panthéon de la Grèce),
      la Pologne, l'Europe centrale, les Balkans, les Caraïbes non

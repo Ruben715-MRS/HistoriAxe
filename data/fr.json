@@ -2,8 +2,8 @@
   "version": "1.0.0",
   "lang": "fr",
   "name": "Français (Intégral)",
-  "totalThemes": 824,
-  "totalEvents": 22589,
+  "totalThemes": 825,
+  "totalEvents": 22654,
   "categories": [
     {
       "nom": "Culture générale",
@@ -128222,6 +128222,1195 @@
                 "pan_pacifique_somare",
                 "pan_pacifique_lange",
                 "pan_pacifique_lomu"
+              ]
+            },
+            {
+              "id": "pan_baltes",
+              "nom": "Grandes figures des pays baltes",
+              "difficulte": "Intermédiaire",
+              "motsCles": [
+                "Pays baltes",
+                "États baltes",
+                "Baltique",
+                "Estonie",
+                "Lettonie",
+                "Lituanie",
+                "Estonien",
+                "Letton",
+                "Lituanien",
+                "Tallinn",
+                "Tartu",
+                "Riga",
+                "Vilnius",
+                "Kaunas",
+                "Livonie",
+                "Courlande",
+                "Estland",
+                "Samogitie",
+                "Prusse-Orientale",
+                "Grand-duché de Lituanie",
+                "Ordre teutonique",
+                "Ordre livonien",
+                "Allemands baltes",
+                "Germano-Baltes",
+                "Hanse",
+                "Éveil national",
+                "Réveil national",
+                "Révolution chantante",
+                "Chaîne balte",
+                "Festival de chant",
+                "Kalevipoeg",
+                "Dainas",
+                "Lāčplēsis",
+                "Pacte germano-soviétique",
+                "Occupation soviétique",
+                "Partisans baltes",
+                "Frères de la forêt",
+                "Union soviétique",
+                "URSS"
+              ],
+              "events": [
+                {
+                  "id": "pan_baltes_mindaugas",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1203,
+                  "titre": "Naissance de Mindaugas",
+                  "description": "Mindaugas (vers 1203-1263) est le fondateur de l'État lituanien et son seul roi, couronné en 1253. Grand-duc vers 1236, il unifie les tribus baltes face à l'Ordre livonien, se convertit au christianisme latin en 1251 et reçoit la couronne avec l'accord du pape. Revenu au paganisme vers 1261, il est assassiné en 1263 lors d'un complot mené par son neveu Treniota.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mindaugas",
+                  "pays": "LT",
+                  "classement": "Mindaugas",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_mindaugas.jpg",
+                    "legende": "Mindaugas, gravure imaginaire de Bernard Zaydler (1831) ; aucun portrait d'époque ne nous est parvenu",
+                    "auteur": "Bernard Zaydler",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mindaugas_1831_(117707054).jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_gediminas",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1275,
+                  "titre": "Naissance de Gediminas",
+                  "description": "Gediminas (vers 1275-1341) est grand-duc de Lituanie de 1316 à sa mort et le fondateur de la dynastie des Gediminides. Il étend ses États vers la Biélorussie et l'Ukraine actuelles, et ses lettres de 1323, qui invitent marchands et artisans, font de Vilnius la capitale du grand-duché. Ses descendants, les Jagellons, règnent sur la Lituanie et la Pologne jusqu'en 1572.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Gh%C3%A9dimin",
+                  "pays": "LT",
+                  "classement": "Gediminas",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_gediminas.jpg",
+                    "legende": "Gediminas, gravure imaginaire d'Alessandro Guagnini (1578) ; aucun portrait d'époque ne nous est parvenu",
+                    "auteur": "Alessandro Guagnini",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Giedzimin._%D0%93%D0%B5%D0%B4%D0%B7%D1%96%D0%BC%D1%96%D0%BD_(A._Guagnini,_1578).jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_algirdas",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1296,
+                  "titre": "Naissance d'Algirdas",
+                  "description": "Algirdas (vers 1296-1377) est grand-duc de Lituanie de 1345 à sa mort, fils de Gediminas et père de Jogaila. Pendant que son frère Kęstutis défend l'ouest contre les chevaliers Teutoniques, il étend la Lituanie vers l'est, bat les Tatars aux Eaux bleues en 1362 et menace Moscou en 1368, 1370 et 1372. Son État s'étend alors de la Baltique à la mer Noire.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Olgierd",
+                  "pays": "LT",
+                  "classement": "Algirdas",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_algirdas.jpg",
+                    "legende": "Algirdas, gravure imaginaire d'Alessandro Guagnini (1578) ; aucun portrait d'époque ne nous est parvenu",
+                    "auteur": "Alessandro Guagnini",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Algirdas_kunigaik%C5%A1tis.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_vytautas",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1350,
+                  "titre": "Naissance de Vytautas le Grand",
+                  "description": "Vytautas le Grand (vers 1350-1430) est grand-duc de Lituanie de 1392 à sa mort, cousin de Jogaila, roi de Pologne. Vainqueur avec lui des chevaliers Teutoniques à Grunwald (Žalgiris) en 1410, il règne sur un État qui va de la Baltique à la mer Noire. Il meurt à Trakai en 1430, peu avant la couronne royale qu'il espérait recevoir.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Vytautas_le_Grand",
+                  "pays": "LT",
+                  "classement": "Vytautas le Grand",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_vytautas.jpg",
+                    "legende": "Vytautas le Grand, détail de La Bataille de Grunwald, tableau de Jan Matejko (1878) ; aucun portrait d'époque ne nous est parvenu",
+                    "auteur": "Jan Matejko",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Vytautas_dydysis.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_donelaitis",
+                  "axe": "Littérature et pensée",
+                  "date": 1714,
+                  "titre": "Naissance de Kristijonas Donelaitis",
+                  "description": "Kristijonas Donelaitis (1714-1780) est un pasteur luthérien et poète lituanien, né en Prusse-Orientale, dans l'actuelle région de Kaliningrad. Pasteur d'un village de la Lituanie prussienne, il écrit en hexamètres Les Saisons (Metai), premier grand poème en lituanien, tableau de la vie des paysans. Publiée après sa mort, l'œuvre fait de lui le père de la poésie lituanienne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kristijonas_Donelaitis",
+                  "pays": "LT",
+                  "classement": "Donelaitis, Kristijonas",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_donelaitis.jpg",
+                    "legende": "Kristijonas Donelaitis, portrait dessiné posthume, reproduit par Hyrny (2012) ; aucun portrait authentique ne subsiste",
+                    "auteur": "Hyrny",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Donelajtis_podgl%C4%85d.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_krusenstern",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1770,
+                  "titre": "Naissance d'Adam Johann von Krusenstern",
+                  "description": "Adam Johann von Krusenstern (1770-1846) est un amiral et explorateur de l'Empire russe, issu de la noblesse germano-balte et né à Hagudi, dans l'Estonie actuelle. Il commande de 1803 à 1806 le premier tour du monde russe, à bord du Nadejda et de la Neva, et en rapporte un atlas du Pacifique. Il dirige ensuite le corps des cadets de la marine à Saint-Pétersbourg.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Johann_Adam_von_Krusenstern",
+                  "pays": "EE",
+                  "classement": "Krusenstern, Adam Johann von",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_krusenstern.jpg",
+                    "legende": "Adam Johann von Krusenstern, portrait peint (après 1838), auteur inconnu",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kruzenshtern_I_F.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_bellingshausen",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1778,
+                  "titre": "Naissance de Fabian Gottlieb von Bellingshausen",
+                  "description": "Fabian Gottlieb von Bellingshausen (1778-1852) est un officier de marine et explorateur de l'Empire russe, né sur l'île d'Ösel (Saaremaa), dans l'Estonie actuelle. À la tête des navires Vostok et Mirny, il fait de 1819 à 1821 le tour de l'Antarctique et compte parmi les premiers hommes à en apercevoir la côte, en janvier 1820. Devenu amiral, il gouverne le port de Cronstadt jusqu'à sa mort.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Fabian_Gottlieb_von_Bellingshausen",
+                  "pays": "EE",
+                  "classement": "Bellingshausen, Fabian Gottlieb von",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_bellingshausen.jpg",
+                    "legende": "Fabian Gottlieb von Bellingshausen, portrait du XIXe siècle",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Fabian_Gottlieb_von_Bellingshausen.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_baer",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1792,
+                  "titre": "Naissance de Karl Ernst von Baer",
+                  "description": "Karl Ernst von Baer (1792-1876) est un naturaliste germano-balte de l'Empire russe, né à Piibe, dans l'Estonie actuelle. Il découvre l'ovule des mammifères en 1827 et pose les lois de l'embryologie comparée, ce qui fait de lui le fondateur de l'embryologie moderne. Professeur à Königsberg puis à Saint-Pétersbourg, il explore aussi la Nouvelle-Zemble et la mer Caspienne, et il meurt à Dorpat (Tartu).",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Karl_Ernst_von_Baer",
+                  "pays": "EE",
+                  "classement": "Baer, Karl Ernst von",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_baer.jpg",
+                    "legende": "Karl Ernst von Baer, gravure du XIXe siècle tirée des Voyages de la Commission scientifique du Nord",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Voyages_de_la_Commission_scientifique_du_Nord,_en_Scandinavie,_en_Laponie,_au_Spitzberg_et_aux_Fer%C3%B6e_-_no-nb_digibok_2009040211001-118.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_kreutzwald",
+                  "axe": "Littérature et pensée",
+                  "date": 1803,
+                  "titre": "Naissance de Friedrich Reinhold Kreutzwald",
+                  "description": "Friedrich Reinhold Kreutzwald (1803-1882) est un écrivain et médecin estonien, né à Kadrina. Il compose à partir de récits populaires l'épopée Kalevipoeg, publiée de 1857 à 1861, qui donne à la nation estonienne en éveil son récit fondateur. Médecin à Võru pendant plus de quarante ans, il y écrit aussi des contes et des poèmes avant de mourir à Tartu.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Friedrich_Reinhold_Kreutzwald",
+                  "pays": "EE",
+                  "classement": "Kreutzwald, Friedrich Reinhold",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_kreutzwald.jpg",
+                    "legende": "Friedrich Reinhold Kreutzwald, portrait peint par Johann Köler (1864)",
+                    "auteur": "Johann Köler",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kreutzwald-k%C3%B6ler.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_mapu",
+                  "axe": "Littérature et pensée",
+                  "date": 1808,
+                  "titre": "Naissance d'Abraham Mapu",
+                  "description": "Abraham Mapu (1808-1867) est un écrivain et pédagogue juif lituanien, né à Slobodka, près de Kaunas. Il publie en 1853 L'Amour de Sion (Ahavat Tzion), premier roman en hébreu moderne, qui transpose dans la Judée antique les aspirations de ses contemporains. Considéré comme l'un des créateurs de la littérature hébraïque moderne, il meurt à Königsberg.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Avraham_Mapou",
+                  "pays": "LT",
+                  "classement": "Mapu, Abraham",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_mapu.jpg",
+                    "legende": "Abraham Mapu, portrait gravé (XIXe siècle)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Abraham_Mapu.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_jannsen",
+                  "axe": "Littérature et pensée",
+                  "date": 1819,
+                  "titre": "Naissance de Johann Voldemar Jannsen",
+                  "description": "Johann Voldemar Jannsen (1819-1890) est un journaliste et poète estonien, père de la poétesse Lydia Koidula. Il fonde en 1857 le premier journal en langue estonienne, le Perno Postimees, puis l'Eesti Postimees à Tartu, et organise en 1869 le premier festival de chant du pays. Il écrit les paroles de Mu isamaa, mu õnn ja rõõm, devenu l'hymne national de l'Estonie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Johann_Voldemar_Jannsen",
+                  "pays": "EE",
+                  "classement": "Jannsen, Johann Voldemar",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_jannsen.jpg",
+                    "legende": "Johann Voldemar Jannsen, portrait gravé par August Weger",
+                    "auteur": "August Weger",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jannsen.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_valdemars",
+                  "axe": "Littérature et pensée",
+                  "date": 1825,
+                  "titre": "Naissance de Krišjānis Valdemārs",
+                  "description": "Krišjānis Valdemārs (1825-1891) est un écrivain, publiciste et homme public letton, figure du premier éveil national. Il fonde à Saint-Pétersbourg le journal Pēterburgas Avīzes (1862), qui défend la langue et la dignité des Lettons, et crée en 1864 à Ainaži la première école de marine lettone. Il meurt à Moscou.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kri%C5%A1j%C4%81nis_Valdem%C4%81rs",
+                  "pays": "LV",
+                  "classement": "Valdemārs, Krišjānis",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_valdemars.jpg",
+                    "legende": "Krišjānis Valdemārs, photographie de Carl Schulz",
+                    "auteur": "Carl Schulz",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kri%C5%A1j%C4%81nis_Valdem%C4%81rs.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_barons",
+                  "axe": "Littérature et pensée",
+                  "date": 1835,
+                  "titre": "Naissance de Krišjānis Barons",
+                  "description": "Krišjānis Barons (1835-1923) est un folkloriste letton, surnommé le « père des dainas ». Il passe des décennies à collecter, classer et publier ces quatrains populaires, rassemblés de 1894 à 1915 dans les Latvju dainas, soit plus de deux cent mille textes. Son cabinet de dainas est inscrit depuis 2001 au registre Mémoire du monde de l'Unesco.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kri%C5%A1j%C4%81nis_Barons",
+                  "pays": "LV",
+                  "classement": "Barons, Krišjānis",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_barons.jpg",
+                    "legende": "Krišjānis Barons, portrait au crayon de M. Lapiņš",
+                    "auteur": "M. Lapiņš",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Krisjanis_Barons,_PA02741.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_baumanis",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1835,
+                  "titre": "Naissance de Kārlis Baumanis",
+                  "description": "Kārlis Baumanis (1835-1905) est un compositeur letton de l'Empire russe, dit Baumaņu Kārlis. Il écrit en 1873 la musique de Dievs, svētī Latviju (« Dieu, bénis la Lettonie »), chantée lors du premier festival de chant letton. Ce chant devient l'hymne national de la Lettonie indépendante, interdit sous l'occupation soviétique et rétabli en 1990.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/K%C4%81rlis_Baumanis",
+                  "pays": "LV",
+                  "classement": "Baumanis, Kārlis",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_baumanis.jpg",
+                    "legende": "Statue de Kārlis Baumanis à Limbaži, photographie de Dirk Godlinski (2011)",
+                    "auteur": "Dirk Godlinski",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Karlis_Baumanis_Denkmal_Limbazi.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_kronvalds",
+                  "axe": "Littérature et pensée",
+                  "date": 1837,
+                  "titre": "Naissance d'Atis Kronvalds",
+                  "description": "Atis Kronvalds (1837-1875) est un pédagogue, linguiste et écrivain letton, l'un des théoriciens de l'éveil national. Il forge des mots lettons nouveaux, publie des manuels et défend, dans Nationale Bestrebungen (1872), le droit des Lettons à l'égalité dans l'Empire russe. Il joue un rôle dans l'organisation du premier festival de chant letton, en 1873, puis meurt à 37 ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Atis_Kronvalds",
+                  "pays": "LV",
+                  "classement": "Kronvalds, Atis",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_kronvalds.jpg",
+                    "legende": "Atis Kronvalds, photographie ancienne, auteur inconnu",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:KronvaldsAtis.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_jakobson",
+                  "axe": "Littérature et pensée",
+                  "date": 1841,
+                  "titre": "Naissance de Carl Robert Jakobson",
+                  "description": "Carl Robert Jakobson (1841-1882) est un écrivain, journaliste et homme politique estonien, né à Tartu. Instituteur de formation, il prononce de 1868 à 1870 ses trois « discours patriotiques » et fonde en 1878 le journal Sakala, où il défend la langue estonienne, l'école et les droits des paysans. Épuisé par ses combats, il meurt à 40 ans, à Kurgja.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Carl_Robert_Jakobson",
+                  "pays": "EE",
+                  "classement": "Jakobson, Carl Robert",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_jakobson.jpg",
+                    "legende": "Carl Robert Jakobson, photographie d'auteur inconnu (XIXe siècle)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Carl_Robert_Jakobson.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_koidula",
+                  "axe": "Littérature et pensée",
+                  "date": 1843,
+                  "titre": "Naissance de Lydia Koidula",
+                  "description": "Lydia Koidula (1843-1886) est une poétesse et dramaturge estonienne, née Lydia Jannsen à Vändra. Ses poèmes patriotiques, réunis dès 1866 dans Vainulilled, comme Mu isamaa on minu arm, deviennent des chants du réveil national, et sa pièce Saaremaa onupoeg (1870) est considérée comme la première pièce de théâtre en estonien. Installée à Cronstadt après son mariage, elle y meurt à 42 ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Lydia_Koidula",
+                  "pays": "EE",
+                  "classement": "Koidula, Lydia",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_koidula.jpg",
+                    "legende": "Lydia Koidula, photographie d'auteur inconnu (années 1860)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Lydia_Koidula_A-37-3152.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_zemaite",
+                  "axe": "Littérature et pensée",
+                  "date": 1845,
+                  "titre": "Naissance de Žemaitė",
+                  "description": "Žemaitė (1845-1921) est une écrivaine lituanienne, de son vrai nom Julija Beniuševičiūtė-Žymantienė, née à Bukantė, en Samogitie. Autodidacte, elle publie ses premiers récits à près de cinquante ans, comme Marti (1894), tableaux réalistes de la vie des paysans et de la condition des femmes. Elle meurt à Marijampolė.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/%C5%BDemait%C4%97",
+                  "pays": "LT",
+                  "classement": "Žemaitė",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_zemaite.jpg",
+                    "legende": "Žemaitė, détail d'une photographie ancienne avec la famille Bulota, reproduit par Blowwhite (2024)",
+                    "auteur": "Blowwhite",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:%C5%BDemait%C4%97_su_A._ir_A._Bulotomis_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_basanavicius",
+                  "axe": "Littérature et pensée",
+                  "date": 1851,
+                  "titre": "Naissance de Jonas Basanavičius",
+                  "description": "Jonas Basanavičius (1851-1927) est un médecin et historien lituanien, patriarche du réveil national. Il fonde en 1883 le journal Aušra (« L'Aurore »), imprimé en Prusse-Orientale parce que la Russie interdit alors l'alphabet latin pour le lituanien. Membre du Conseil de Lituanie, il est le premier signataire de l'acte d'indépendance du 16 février 1918, et il meurt à Vilnius.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jonas_Basanavi%C4%8Dius",
+                  "pays": "LT",
+                  "classement": "Basanavičius, Jonas",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_basanavicius.jpg",
+                    "legende": "Jonas Basanavičius, photographie d'Aleksandras Jurašaitis (1905)",
+                    "auteur": "Aleksandras Jurašaitis",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jonas_Basanavicius_(1851-1927).jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_ostwald",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1853,
+                  "titre": "Naissance de Wilhelm Ostwald",
+                  "description": "Wilhelm Ostwald (1853-1932) est un chimiste germano-balte, né à Riga, l'un des fondateurs de la chimie physique. Il reçoit le prix Nobel de chimie de 1909 pour ses travaux sur la catalyse, l'équilibre chimique et la vitesse des réactions, et met au point le procédé industriel d'obtention de l'acide nitrique qui porte son nom. Professeur à Riga puis à Leipzig, il meurt à Großbothen, en Saxe.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Wilhelm_Ostwald",
+                  "pays": "LV",
+                  "classement": "Ostwald, Wilhelm",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_ostwald.jpg",
+                    "legende": "Wilhelm Ostwald, photographie de la Fondation Nobel (1909)",
+                    "auteur": "Nobel Foundation",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ostwald.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_adamson",
+                  "axe": "Beaux-arts",
+                  "date": 1855,
+                  "titre": "Naissance d'Amandus Adamson",
+                  "description": "Amandus Adamson (1855-1929) est un sculpteur estonien, né près de Paldiski et considéré comme le fondateur de la sculpture estonienne. Formé à Saint-Pétersbourg, il réalise le monument Russalka à Tallinn (1902), qui commémore le naufrage d'un navire de guerre russe en 1893, et de nombreux bustes et monuments. Il revient vivre à Paldiski après l'indépendance et y meurt.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Amandus_Adamson",
+                  "pays": "EE",
+                  "classement": "Adamson, Amandus",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_adamson.jpg",
+                    "legende": "Amandus Adamson, photographie de l'atelier Bulla (1914)",
+                    "auteur": "Atelier Bulla",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Amandus_Adamson_1914.jpeg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_kudirka",
+                  "axe": "Littérature et pensée",
+                  "date": 1858,
+                  "titre": "Naissance de Vincas Kudirka",
+                  "description": "Vincas Kudirka (1858-1899) est un médecin, écrivain et compositeur lituanien, né à Paežeriai. Il fonde en 1889 la revue Varpas (« La Cloche »), organe du mouvement national, et écrit en 1898 les paroles et la musique de Tautiška giesmė, l'hymne national de la Lituanie. Atteint de tuberculose, il meurt à 40 ans, à Naumiestis.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Vincas_Kudirka",
+                  "pays": "LT",
+                  "classement": "Kudirka, Vincas",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_kudirka.jpg",
+                    "legende": "Vincas Kudirka, photographie ancienne",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kudirka3.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_cakste",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1859,
+                  "titre": "Naissance de Jānis Čakste",
+                  "description": "Jānis Čakste (1859-1927) est un avocat et homme d'État letton, premier président de la République de Lettonie. Député à la première Douma russe en 1906, il préside le Conseil populaire de Lettonie en 1918 puis l'Assemblée constituante, et il est élu président en 1922, réélu en 1925. Il meurt en fonctions à Riga, en 1927.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/J%C4%81nis_%C4%8Cakste",
+                  "pays": "LV",
+                  "classement": "Čakste, Jānis",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_cakste.jpg",
+                    "legende": "Jānis Čakste, photographie du 8 mai 1926",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Janis_Cakste.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_petkeviciaite",
+                  "axe": "Littérature et pensée",
+                  "date": 1861,
+                  "titre": "Naissance de Gabrielė Petkevičaitė-Bitė",
+                  "description": "Gabrielė Petkevičaitė-Bitė (1861-1943) est une écrivaine, pédagogue et militante lituanienne, née à Puziniškis. Auteure du roman Ad astra (1900), elle est une figure du mouvement national et de l'émancipation des femmes. Élue en 1920 à l'Assemblée constituante, elle est l'une des premières femmes parlementaires du pays.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Gabriel%C4%97_Petkevi%C4%8Dait%C4%97-Bit%C4%97",
+                  "pays": "LT",
+                  "classement": "Petkevičaitė-Bitė, Gabrielė",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_petkeviciaite.jpg",
+                    "legende": "Gabrielė Petkevičaitė-Bitė, photographie d'environ 1935",
+                    "auteur": "Musée de littérature lituanienne Maironis",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Gabriel%C4%97_Petkevi%C4%8Dait%C4%97-Bit%C4%97_around_1935.jpeg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_maironis",
+                  "axe": "Littérature et pensée",
+                  "date": 1862,
+                  "titre": "Naissance de Maironis",
+                  "description": "Maironis (1862-1932) est un prêtre catholique et poète lituanien, de son vrai nom Jonas Mačiulis. Son recueil Pavasario balsai (Voix du printemps, 1895) fait de lui le grand poète romantique du réveil national, et plusieurs de ses poèmes sont devenus des chants populaires. Professeur à Kaunas, il meurt dans cette ville en 1932.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Maironis",
+                  "pays": "LT",
+                  "classement": "Maironis",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_maironis.jpg",
+                    "legende": "Maironis, photographie ancienne",
+                    "auteur": "andrius.v",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jonas_Maciulis-Maironis.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_blaumanis",
+                  "axe": "Littérature et pensée",
+                  "date": 1863,
+                  "titre": "Naissance de Rūdolfs Blaumanis",
+                  "description": "Rūdolfs Blaumanis (1863-1908) est un écrivain letton, né à Ērgļi. Maître de la nouvelle réaliste, il est aussi l'auteur de drames et de la comédie Skroderdienas Silmačos (1902), toujours jouée. Il meurt de tuberculose à 45 ans, à Punkaharju, en Finlande.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/R%C5%ABdolfs_Blaumanis",
+                  "pays": "LV",
+                  "classement": "Blaumanis, Rūdolfs",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_blaumanis.jpg",
+                    "legende": "Rūdolfs Blaumanis, photographie d'auteur inconnu (avant 1908)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:R_Blaumanis.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_vitols",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1863,
+                  "titre": "Naissance de Jāzeps Vītols",
+                  "description": "Jāzeps Vītols (1863-1948) est un compositeur et pédagogue letton, né à Valmiera, considéré comme le père de la musique classique lettone. Élève de Rimski-Korsakov, il enseigne au conservatoire de Saint-Pétersbourg avant de fonder en 1919 le Conservatoire de Lettonie, dont il est le premier recteur. Exilé en 1944, il meurt à Lübeck.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/J%C4%81zeps_V%C4%ABtols",
+                  "pays": "LV",
+                  "classement": "Vītols, Jāzeps",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_vitols.jpg",
+                    "legende": "Jāzeps Vītols, photographie ancienne (vers 1900)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:J%C4%81zepsV%C4%ABtols.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_walden",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1863,
+                  "titre": "Naissance de Paul Walden",
+                  "description": "Paul Walden (1863-1957) est un chimiste letton, né dans l'actuelle Lettonie, spécialiste de la stéréochimie. Il découvre en 1896 l'inversion de Walden, qui change la configuration d'une molécule lors d'une réaction, et synthétise en 1914 le premier liquide ionique stable à température ambiante. Professeur à l'Institut polytechnique de Riga, puis à Rostock, il meurt en Allemagne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Paul_Walden",
+                  "pays": "LV",
+                  "classement": "Walden, Paul",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_walden.jpg",
+                    "legende": "Paul Walden, photographie d'auteur inconnu (vers 1910)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Paul_Walden.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_liiv",
+                  "axe": "Littérature et pensée",
+                  "date": 1864,
+                  "titre": "Naissance de Juhan Liiv",
+                  "description": "Juhan Liiv (1864-1913) est un poète estonien, né à Alatskivi dans une famille de paysans pauvres. Ses vers brefs sur la nature et la patrie, d'une simplicité alors inédite, ne sont reconnus qu'après lui comme l'un des sommets de la poésie estonienne. Atteint de troubles mentaux, il vit dans la misère et meurt à 49 ans, à Luunja.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Juhan_Liiv",
+                  "pays": "EE",
+                  "classement": "Liiv, Juhan",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_liiv.jpg",
+                    "legende": "Juhan Liiv, photographie d'auteur inconnu",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Juhan_Liiv.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_uexkull",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1864,
+                  "titre": "Naissance de Jakob von Uexküll",
+                  "description": "Jakob von Uexküll (1864-1944) est un biologiste et philosophe germano-balte, né à Keblaste, dans l'Estonie actuelle. Il introduit la notion d'Umwelt, le monde propre que chaque espèce construit à partir de ses organes sensoriels, et fonde ainsi la biosémiotique. Dirigeant l'institut d'étude de l'environnement de l'université de Hambourg, il meurt à Capri.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jakob_von_Uexk%C3%BCll",
+                  "pays": "EE",
+                  "classement": "Uexküll, Jakob von",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_uexkull.jpg",
+                    "legende": "Jakob von Uexküll, photographie d'auteur inconnu",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Uex_photo_full.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_aspazija",
+                  "axe": "Littérature et pensée",
+                  "date": 1865,
+                  "titre": "Naissance d'Aspazija",
+                  "description": "Aspazija (1865-1943) est une poétesse et dramaturge lettone, de son vrai nom Elza Rozenberga, épouse de Rainis. Ses pièces, comme Vaidelote (1894) et Sidraba šķidrauts (1905), défendent la liberté de la femme et celle de la nation. Elle partage l'exil de Rainis en Suisse de 1905 à 1920 et meurt à Dubulti, pendant l'occupation allemande.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Aspazija",
+                  "pays": "LV",
+                  "classement": "Aspazija",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_aspazija.jpg",
+                    "legende": "Aspazija, photographie d'auteur inconnu",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Aspazija._unknown_author.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_rainis",
+                  "axe": "Littérature et pensée",
+                  "date": 1865,
+                  "titre": "Naissance de Rainis",
+                  "description": "Rainis (1865-1929) est un poète et dramaturge letton, de son vrai nom Jānis Pliekšāns, surnommé le « Goethe letton ». Exilé en Suisse après la révolution de 1905, il y écrit ses drames symboliques, dont Uguns un nakts (Feu et Nuit, 1905), devenus des classiques du théâtre letton. De retour en 1920, il dirige le Théâtre national, est ministre de l'Éducation et meurt à Jūrmala.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Rainis",
+                  "pays": "LV",
+                  "classement": "Rainis",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_rainis.jpg",
+                    "legende": "Rainis, photographie d'auteur inconnu (avant 1929)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Rainis.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_raud",
+                  "axe": "Beaux-arts",
+                  "date": 1865,
+                  "titre": "Naissance de Kristjan Raud",
+                  "description": "Kristjan Raud (1865-1943) est un peintre et illustrateur estonien, né à Kirikuküla, frère du peintre Paul Raud. Formé à Düsseldorf, Munich et Saint-Pétersbourg, il consacre une grande part de son œuvre aux illustrations de l'épopée Kalevipoeg, dont l'édition illustrée paraît en 1935. Figure de l'art national estonien, il meurt à Tallinn.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kristjan_Raud",
+                  "pays": "EE",
+                  "classement": "Raud, Kristjan",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_raud.jpg",
+                    "legende": "Kristjan Raud, photographie de 1930",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kristjan_Raud.JPG"
+                  }
+                },
+                {
+                  "id": "pan_baltes_grinius",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1866,
+                  "titre": "Naissance de Kazys Grinius",
+                  "description": "Kazys Grinius (1866-1950) est un médecin et homme d'État lituanien, né à Selema, deuxième président de la République en 1926. Premier ministre de 1920 à 1922, il gouverne à la tête d'une coalition démocratique avant d'être renversé, en décembre 1926, par le coup d'État de Smetona. Il meurt en exil à Chicago.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kazys_Grinius",
+                  "pays": "LT",
+                  "classement": "Grinius, Kazys",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_grinius.jpg",
+                    "legende": "Kazys Grinius, photographie de 1926",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kazys_Grinius.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_poska",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1866,
+                  "titre": "Naissance de Jaan Poska",
+                  "description": "Jaan Poska (1866-1920) est un juriste et homme politique estonien, né à Laiusevälja. Maire de Tallinn à partir de 1913, il obtient du gouvernement provisoire russe, en avril 1917, l'autonomie de la province d'Estonie, un pas décisif vers l'indépendance. Il dirige la délégation qui signe avec la Russie soviétique le traité de Tartu, en février 1920, et meurt un mois plus tard.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jaan_Poska",
+                  "pays": "EE",
+                  "classement": "Poska, Jaan",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_poska.jpg",
+                    "legende": "Jaan Poska, portrait peint par Paul Raud (1929)",
+                    "auteur": "Paul Raud",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jaan_Poska_portrait_by_Paul_Raud.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_rozentals",
+                  "axe": "Beaux-arts",
+                  "date": 1866,
+                  "titre": "Naissance de Jānis Rozentāls",
+                  "description": "Jānis Rozentāls (1866-1916) est un peintre letton, né à Saldus, l'un des fondateurs de la peinture lettone moderne. Formé à l'Académie des beaux-arts de Saint-Pétersbourg, il peint avec un réalisme coloré des portraits, des scènes de la vie des campagnes et des paysages. Il meurt à Helsinki, et le musée de Riga qui porte son nom et celui de l'écrivain Blaumanis entretient sa mémoire.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Janis_Rozent%C4%81ls",
+                  "pays": "LV",
+                  "classement": "Rozentāls, Jānis",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_rozentals.jpg",
+                    "legende": "Jānis Rozentāls, photographie du studio M. Lapiņš de Riga (années 1910)",
+                    "auteur": "Studio M. Lapiņš (Riga)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:2458_Janis_Rozentals.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_endzelins",
+                  "axe": "Littérature et pensée",
+                  "date": 1873,
+                  "titre": "Naissance de Jānis Endzelīns",
+                  "description": "Jānis Endzelīns (1873-1961) est un linguiste letton, fondateur de la philologie lettone moderne. Avec Kārlis Mīlenbahs, il publie le grand dictionnaire de la langue lettone (1923-1932), et il fixe la grammaire et l'orthographe de la langue standard. Professeur à l'université de Lettonie, spécialiste des langues baltes, il meurt à Koknese.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/J%C4%81nis_Endzel%C4%ABns",
+                  "pays": "LV",
+                  "classement": "Endzelīns, Jānis",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_endzelins.jpg",
+                    "legende": "Jānis Endzelīns, photographie du début du XXe siècle",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:J%C4%81nis_Endzel%C4%ABns.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_tobias",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1873,
+                  "titre": "Naissance de Rudolf Tobias",
+                  "description": "Rudolf Tobias (1873-1918) est un compositeur estonien, né à Käina, sur l'île de Hiiumaa. Formé au conservatoire de Saint-Pétersbourg, il écrit l'oratorio Des Jona Sendung, considéré comme la première grande œuvre symphonique et chorale estonienne. Il meurt de pneumonie à Berlin, en 1918, l'année de l'indépendance.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Rudolf_Tobias",
+                  "pays": "EE",
+                  "classement": "Tobias, Rudolf",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_tobias.jpg",
+                    "legende": "Rudolf Tobias, photographie d'auteur inconnu",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Rudolf_Tobias.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_smetona",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1874,
+                  "titre": "Naissance d'Antanas Smetona",
+                  "description": "Antanas Smetona (1874-1944) est un homme d'État lituanien, né à Užulėnis, premier président de la République en 1919-1920 puis de 1926 à 1940. Signataire de l'acte d'indépendance de 1918, il arrive au pouvoir par le coup d'État de décembre 1926 et gouverne ensuite de façon autoritaire. Il fuit devant l'annexion soviétique de 1940 et meurt dans un incendie à Cleveland.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Antanas_Smetona",
+                  "pays": "LT",
+                  "classement": "Smetona, Antanas",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_smetona.jpg",
+                    "legende": "Antanas Smetona, photographie du Musée national de Lituanie",
+                    "auteur": "Musée national de Lituanie",
+                    "licence": "CC BY-SA 2.5",
+                    "source": "https://commons.wikimedia.org/wiki/File:Antanas_Smetona_2.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_ciurlionis",
+                  "axe": "Beaux-arts",
+                  "date": 1875,
+                  "titre": "Naissance de Mikalojus Konstantinas Čiurlionis",
+                  "description": "Mikalojus Konstantinas Čiurlionis (1875-1911) est un peintre et compositeur lituanien, né à Varėna. Ses tableaux symbolistes, organisés en cycles comme la Sonate des étoiles, cherchent à traduire la musique en peinture, et il laisse aussi près de quatre cents œuvres musicales. Il meurt à 35 ans, près de Varsovie, et son œuvre fait de lui le grand artiste de la Lituanie moderne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mikalojus_Konstantinas_%C4%8Ciurlionis",
+                  "pays": "LT",
+                  "classement": "Čiurlionis, Mikalojus Konstantinas",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_ciurlionis.jpg",
+                    "legende": "Mikalojus Konstantinas Čiurlionis, photographie ancienne",
+                    "auteur": "S. Fleury",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mikalojus_Konstantinas_%C4%8Ciurlionis_photo_portrait.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_ulmanis",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1877,
+                  "titre": "Naissance de Kārlis Ulmanis",
+                  "description": "Kārlis Ulmanis (1877-1942) est un homme d'État letton, né à Bērze, agronome formé aux États-Unis. Premier ministre dès 1918 puis à plusieurs reprises, il instaure par le coup d'État de mai 1934 un régime autoritaire et devient président en 1936. Déporté en URSS après l'annexion de 1940, il meurt en prison à Krasnovodsk.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/K%C4%81rlis_Ulmanis",
+                  "pays": "LV",
+                  "classement": "Ulmanis, Kārlis",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_ulmanis.jpg",
+                    "legende": "Kārlis Ulmanis, photographie de la Bain News Service",
+                    "auteur": "Bain News Service",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:K._Ulmakis_LCCN2014712518_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_magi",
+                  "axe": "Beaux-arts",
+                  "date": 1878,
+                  "titre": "Naissance de Konrad Mägi",
+                  "description": "Konrad Mägi (1878-1925) est un peintre estonien, né près de Tartu, premier grand coloriste de l'art estonien. Formé à Saint-Pétersbourg et à Paris, il peint en couleurs vives des paysages d'Estonie et de Norvège, entre post-impressionnisme et fauvisme. Mort de tuberculose à 46 ans, il laisse une œuvre restreinte, devenue l'emblème de la peinture estonienne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Konrad_M%C3%A4gi",
+                  "pays": "EE",
+                  "classement": "Mägi, Konrad",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_magi.jpg",
+                    "legende": "Konrad Mägi, photographie de Jaan Riet (1914)",
+                    "auteur": "Jaan Riet",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Konrad_M%C3%A4gi.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_tammsaare",
+                  "axe": "Littérature et pensée",
+                  "date": 1878,
+                  "titre": "Naissance d'Anton Hansen Tammsaare",
+                  "description": "Anton Hansen Tammsaare (1878-1940) est un écrivain estonien, né à Vetepere, dans le Järvamaa. Son cycle romanesque Vérité et Justice (1926-1933), chronique d'une famille paysanne de la fin du XIXe siècle aux années 1920, est considéré comme l'œuvre majeure de la littérature estonienne. Il meurt à Tallinn quelques mois avant l'occupation soviétique.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Anton_Hansen_Tammsaare",
+                  "pays": "EE",
+                  "classement": "Tammsaare, Anton Hansen",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_tammsaare.jpg",
+                    "legende": "Anton Hansen Tammsaare, portrait dessiné par Nikolai Triik (1927)",
+                    "auteur": "Nikolai Triik",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Nikolai_Triik_TKM_1549B.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_kreve",
+                  "axe": "Littérature et pensée",
+                  "date": 1882,
+                  "titre": "Naissance de Vincas Krėvė-Mickevičius",
+                  "description": "Vincas Krėvė-Mickevičius (1882-1954) est un écrivain, philologue et homme politique lituanien, né en Dzūkija. Il se fait connaître par ses récits inspirés du folklore de sa région et par des drames historiques, comme Šarūnas (1911) et Skirgaila (1925). Professeur d'université, il quitte la Lituanie en 1944 et meurt en Pennsylvanie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Vincas_Kr%C4%97v%C4%97-Mickevi%C4%8Dius",
+                  "pays": "LT",
+                  "classement": "Krėvė-Mickevičius, Vincas",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_kreve.jpg",
+                    "legende": "Vincas Krėvė-Mickevičius, photographie d'Adomas Kliučinskis",
+                    "auteur": "Adomas Kliučinskis",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kr%C4%97v%C4%97Mickevi%C4%8DiusV.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_under",
+                  "axe": "Littérature et pensée",
+                  "date": 1883,
+                  "titre": "Naissance de Marie Under",
+                  "description": "Marie Under (1883-1980) est une poétesse estonienne, née à Reval (Tallinn). Ses premiers recueils, Sonetid (1917) puis Eelõitseng (1918), font d'elle la grande voix lyrique de l'Estonie indépendante, plusieurs fois proposée pour le prix Nobel de littérature. Elle fuit l'avance soviétique en 1944 et meurt en exil à Stockholm.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Marie_Under",
+                  "pays": "EE",
+                  "classement": "Under, Marie",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_under.jpg",
+                    "legende": "Marie Under, photographie de Max Meixner (vers 1903)",
+                    "auteur": "Max F. Meixner",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Marie_Under_circa_1903_by_Max_Meixner_of_Reval_(Tallinn).jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_laidoner",
+                  "axe": "Guerres et résistances",
+                  "date": 1884,
+                  "titre": "Naissance de Johan Laidoner",
+                  "description": "Johan Laidoner (1884-1953) est un général estonien, né près de Viiratsi. Ancien officier de l'armée impériale russe, il commande l'armée estonienne pendant la guerre d'indépendance (1918-1920), repousse l'Armée rouge et contribue à la victoire de Cēsis sur la Landeswehr balte, puis reste à sa tête jusqu'en 1940. Arrêté par les Soviétiques cette année-là, il meurt en captivité à Vladimir.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Johan_Laidoner",
+                  "pays": "EE",
+                  "classement": "Laidoner, Johan",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_laidoner.jpg",
+                    "legende": "Johan Laidoner, photographie du studio J. & P. Parikas (1920)",
+                    "auteur": "J. & P. Parikas",
+                    "licence": "CC BY 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Johan_Laidoner.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_eller",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1887,
+                  "titre": "Naissance de Heino Eller",
+                  "description": "Heino Eller (1887-1970) est un compositeur et pédagogue estonien, né à Tartu. Ses poèmes symphoniques, comme Koit et Videvik (Aube et Crépuscule), fondent un langage orchestral national. Professeur à Tartu puis à Tallinn, il forme plusieurs générations de compositeurs, dont Eduard Tubin et Arvo Pärt.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Heino_Eller",
+                  "pays": "EE",
+                  "classement": "Eller, Heino",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_eller.jpg",
+                    "legende": "Heino Eller, photographie d'auteur inconnu (années 1930)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Heino_Eller_1930s.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_meierovics",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1887,
+                  "titre": "Naissance de Zigfrīds Anna Meierovics",
+                  "description": "Zigfrīds Anna Meierovics (1887-1925) est un homme d'État letton, né à Durbe, premier ministre des Affaires étrangères de la Lettonie, de 1918 à 1925, et deux fois Premier ministre. Il obtient la reconnaissance internationale du pays en 1921 et son admission à la Société des Nations. Il meurt à 38 ans dans un accident de voiture, près de Tukums.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Zigfr%C4%ABds_Anna_Meierovics",
+                  "pays": "LV",
+                  "classement": "Meierovics, Zigfrīds Anna",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_meierovics.jpg",
+                    "legende": "Zigfrīds Anna Meierovics, photographie d'auteur inconnu (avant 1923)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Zigfrids-Anna-Meierovics.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_tsander",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1887,
+                  "titre": "Naissance de Friedrich Tsander",
+                  "description": "Friedrich Tsander (1887-1933) est un ingénieur de l'Empire russe d'origine lettone, né à Riga, pionnier de l'astronautique soviétique. Il imagine dès les années 1920 la voile solaire et conçoit un moteur-fusée à propergols liquides, avant de fonder en 1931 le Groupe d'étude de la propulsion par réaction avec Sergueï Korolev. Mort de maladie à Kislovodsk, il n'assiste pas aux premiers vols des fusées du groupe, en 1933.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Friedrich_Tsander",
+                  "pays": "LV",
+                  "classement": "Tsander, Friedrich",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_tsander.jpg",
+                    "legende": "Friedrich Tsander, photographie d'auteur inconnu",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Friedrich_Zander.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_opik",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1893,
+                  "titre": "Naissance d'Ernst Öpik",
+                  "description": "Ernst Öpik (1893-1985) est un astronome estonien, né à Kunda. Il estime en 1922 la distance de la galaxie d'Andromède à environ un million et demi d'années-lumière, et propose l'existence d'un réservoir lointain de comètes, aujourd'hui nommé nuage d'Öpik-Oort. Réfugié en 1944, il travaille à l'observatoire d'Armagh, en Irlande du Nord, où il meurt.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ernst_%C3%96pik",
+                  "pays": "EE",
+                  "classement": "Öpik, Ernst",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_opik.jpg",
+                    "legende": "Ernst Öpik, photographie d'auteur inconnu",
+                    "auteur": "Auteur non indiqué sur Commons",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:ErnstJuliusOpik.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_simaite",
+                  "axe": "Guerres et résistances",
+                  "date": 1894,
+                  "titre": "Naissance d'Ona Šimaitė",
+                  "description": "Ona Šimaitė (1894-1970) est une bibliothécaire lituanienne, née à Akmenė, Juste parmi les nations. Sous l'occupation allemande, elle utilise son poste à l'université de Vilnius pour entrer dans le ghetto, y porter vivres et documents et aider des Juifs à fuir. Arrêtée par la Gestapo en 1944 et déportée à Dachau, elle s'installe ensuite en France, où elle meurt.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ona_%C5%A0imait%C4%97",
+                  "pays": "LT",
+                  "classement": "Šimaitė, Ona",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_simaite.jpg",
+                    "legende": "Ona Šimaitė, photographie d'auteur inconnu",
+                    "auteur": "Auteur inconnu",
+                    "licence": "CC BY 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ona_%C5%A0imait%C4%97,_Vilnius_University_Librarian,_Righteous_Among_the_Nations.png"
+                  }
+                },
+                {
+                  "id": "pan_baltes_darius",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1896,
+                  "titre": "Naissance de Steponas Darius",
+                  "description": "Steponas Darius (1896-1933) est un aviateur lituanien, né à Rubiškė, ancien officier de l'armée lituanienne installé aux États-Unis. Avec Stasys Girėnas, il tente en juillet 1933 de relier New York à Kaunas sans escale à bord du Lituanica. Leur avion s'écrase en Allemagne après plus de 6 400 kilomètres, et les deux hommes sont devenus des héros nationaux.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Steponas_Darius",
+                  "pays": "LT",
+                  "classement": "Darius, Steponas",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_darius.jpg",
+                    "legende": "Steponas Darius, photographie de 1930",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:S.Darius.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_sruoga",
+                  "axe": "Littérature et pensée",
+                  "date": 1896,
+                  "titre": "Naissance de Balys Sruoga",
+                  "description": "Balys Sruoga (1896-1947) est un poète, dramaturge et critique lituanien, né à Baibokai. Arrêté par les Allemands en 1943, il survit au camp de concentration de Stutthof et en tire La Forêt des dieux (Dievų miškas), récit satirique et bouleversant publié après sa mort. Épuisé par sa détention, il meurt à Vilnius en 1947.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Balys_Sruoga",
+                  "pays": "LT",
+                  "classement": "Sruoga, Balys",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_sruoga.jpg",
+                    "legende": "Balys Sruoga, photographie d'Adomas Kliučinskis",
+                    "auteur": "Adomas Kliučinskis",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:SruogaBalys.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_neris",
+                  "axe": "Littérature et pensée",
+                  "date": 1904,
+                  "titre": "Naissance de Salomėja Nėris",
+                  "description": "Salomėja Nėris (1904-1945) est une poétesse lituanienne, de son vrai nom Salomėja Bačinskaitė, née à Kiršai. Son recueil Anksti rytą (1927) lui vaut une grande popularité, et sa poésie, d'abord lyrique, devient politique quand elle se rallie à l'annexion soviétique de 1940. Elle meurt à Moscou à 40 ans, laissant une œuvre admirée et une mémoire disputée.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Salom%C4%97ja_N%C4%97ris",
+                  "pays": "LT",
+                  "classement": "Nėris, Salomėja",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_neris.jpg",
+                    "legende": "Salomėja Nėris, photographie ancienne",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Neris_Salomeja.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_tubin",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1905,
+                  "titre": "Naissance d'Eduard Tubin",
+                  "description": "Eduard Tubin (1905-1982) est un compositeur et chef d'orchestre estonien, né à Torila. Il laisse dix symphonies, qui allient écriture moderne et inspiration du folklore estonien. Réfugié en Suède dès 1944, il y poursuit son œuvre et meurt à Stockholm.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Eduard_Tubin",
+                  "pays": "EE",
+                  "classement": "Tubin, Eduard",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_tubin.jpg",
+                    "legende": "Eduard Tubin, photographie de 1947",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Eduard_Tubin,_1947.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_zemaitis",
+                  "axe": "Guerres et résistances",
+                  "date": 1909,
+                  "titre": "Naissance de Jonas Žemaitis-Vytautas",
+                  "description": "Jonas Žemaitis-Vytautas (1909-1954) est un général lituanien, né à Palanga, dernier grand chef des partisans qui luttèrent contre l'occupation soviétique. Président du conseil du Mouvement de lutte pour la liberté de la Lituanie à partir de 1949, il est arrêté en 1953 et fusillé à Moscou en 1954. La Lituanie le reconnaît officiellement en 2009 comme chef de l'État de 1949 à 1954.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jonas_%C5%BDemaitis-Vytautas",
+                  "pays": "LT",
+                  "classement": "Žemaitis-Vytautas, Jonas",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_zemaitis.jpg",
+                    "legende": "Jonas Žemaitis-Vytautas, photographie de 1928",
+                    "auteur": "Henkt",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:JZemaitis.JPG"
+                  }
+                },
+                {
+                  "id": "pan_baltes_keres",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1916,
+                  "titre": "Naissance de Paul Keres",
+                  "description": "Paul Keres (1916-1975) est un joueur d'échecs estonien, né à Narva, l'un des meilleurs de sa génération sans avoir jamais été champion du monde. Il termine quatre fois deuxième ou ex æquo du tournoi des candidats (1953, 1956, 1959, 1962), et son visage figure sur le billet de cinq couronnes estoniennes. Mort à Helsinki au retour d'un tournoi, il a des funérailles nationales à Tallinn.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Paul_Keres",
+                  "pays": "EE",
+                  "classement": "Keres, Paul",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_keres.jpg",
+                    "legende": "Paul Keres, photographie d'Eric Koch pour l'agence Anefo, au tournoi d'échecs de Beverwijk (janvier 1969)",
+                    "auteur": "Eric Koch (Anefo)",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Hoogoven_Schaaktoernooi_Keres,_Bestanddeelnr_922-0145.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_gimbutas",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1921,
+                  "titre": "Naissance de Marija Gimbutas",
+                  "description": "Marija Gimbutas (1921-1994) est une archéologue américano-lituanienne, née à Vilnius. Elle propose en 1956 l'hypothèse kourgane, qui situe dans les steppes d'Eurasie l'origine des Indo-Européens, et enseigne à l'université de Californie à Los Angeles. Ses travaux ultérieurs sur la « Vieille Europe » néolithique et ses divinités féminines restent très discutés, et elle meurt à Los Angeles.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Marija_Gimbutas",
+                  "pays": "LT",
+                  "classement": "Gimbutas, Marija",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_gimbutas.jpg",
+                    "legende": "Marija Gimbutas, photographie de Monica Boirar (1993)",
+                    "auteur": "Monica Boirar",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Prof-Dr-Marija-Gimbutas-Copyright-Foto-Monica-Boirar-aka-Monica-Beurer.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_mekas",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1922,
+                  "titre": "Naissance de Jonas Mekas",
+                  "description": "Jonas Mekas (1922-2019) est un cinéaste, poète et critique lituanien, né à Semeniškiai. Déporté au travail forcé en Allemagne pendant la guerre, il s'installe à New York en 1949, où il fonde la revue Film Culture et les Anthology Film Archives, et devient le parrain du cinéma d'avant-garde américain. Ses films-journaux, comme Reminiscences of a Journey to Lithuania (1972), disent l'exil, et il meurt à Brooklyn.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jonas_Mekas",
+                  "pays": "LT",
+                  "classement": "Mekas, Jonas",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_mekas.jpg",
+                    "legende": "Jonas Mekas, photographie de Furiodetti",
+                    "auteur": "Furiodetti",
+                    "licence": "CC BY 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jonas_Mekas.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_birkerts",
+                  "axe": "Beaux-arts",
+                  "date": 1925,
+                  "titre": "Naissance de Gunnar Birkerts",
+                  "description": "Gunnar Birkerts (1925-2017) est un architecte letton puis américain, né à Riga. Réfugié en Allemagne en 1944 puis installé aux États-Unis en 1949, il construit notamment la Réserve fédérale de Minneapolis (1973) et le Corning Museum of Glass (1980). Il dessine aussi la Bibliothèque nationale de Lettonie, le « Château de lumière », inaugurée en 2014 à Riga, et meurt près de Boston.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Gunnar_Birkerts",
+                  "pays": "LV",
+                  "classement": "Birkerts, Gunnar",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_birkerts.jpg",
+                    "legende": "Gunnar Birkerts, photographie de l'université du Michigan (1968)",
+                    "auteur": "Université du Michigan (Taubman College)",
+                    "licence": "CC BY 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Gunnar_Birkerts,_Associate_Professor_of_Architecture_-_HS13349.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_meri",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1929,
+                  "titre": "Naissance de Lennart Meri",
+                  "description": "Lennart Meri (1929-2006) est un écrivain, cinéaste et homme d'État estonien, né et mort à Tallinn. Déporté enfant en Sibérie avec sa famille en 1941, il devient écrivain et réalisateur de documentaires sur les peuples finno-ougriens, puis dirige la diplomatie estonienne de 1990 à 1992. Président de la République de 1992 à 2001, il voit partir les troupes russes en 1994 et engage son pays vers l'OTAN et l'Union européenne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Lennart_Meri",
+                  "pays": "EE",
+                  "classement": "Meri, Lennart",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_meri.jpg",
+                    "legende": "Lennart Meri, photographie de Jaan Künnap (1999)",
+                    "auteur": "Jaan Künnap",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Lennart_Meri,_Raekoja_platsil_99_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_tormis",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1930,
+                  "titre": "Naissance de Veljo Tormis",
+                  "description": "Veljo Tormis (1930-2017) est un compositeur estonien, né à Kuusalu, l'un des plus grands maîtres de la musique chorale du XXe siècle. Il renouvelle le chant runique finno-ougrien dans ses cycles, comme les Chants du calendrier estonien (1967), et son cycle Raua needmine (La Malédiction du fer, 1972) est une mise en garde contre la guerre. Il meurt à Tallinn.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Veljo_Tormis",
+                  "pays": "EE",
+                  "classement": "Tormis, Veljo",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_tormis.jpg",
+                    "legende": "Veljo Tormis, photographie de Valju Aloel (2004)",
+                    "auteur": "Valju Aloel",
+                    "licence": "CC BY 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Veljo_Tormis.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_brazauskas",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1932,
+                  "titre": "Naissance d'Algirdas Brazauskas",
+                  "description": "Algirdas Brazauskas (1932-2010) est un homme d'État lituanien, né à Rokiškis. Dirigeant communiste, il détache en 1989 le Parti communiste de Lituanie de celui de l'URSS, puis devient président de la République de 1993 à 1998, quand les troupes russes quittent le pays. Premier ministre de 2001 à 2006, il conduit la Lituanie dans l'OTAN et l'Union européenne en 2004.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Algirdas_Brazauskas",
+                  "pays": "LT",
+                  "classement": "Brazauskas, Algirdas",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_brazauskas.jpg",
+                    "legende": "Algirdas Brazauskas, photographie de Magnus Fröderberg (2005)",
+                    "auteur": "Magnus Fröderberg",
+                    "licence": "CC BY 2.5 DK",
+                    "source": "https://commons.wikimedia.org/wiki/File:Algirdas_Mykkolas_Brazauskas,_Litauens_statsminster,_under_det_Nordiskt-Baltiska_statsministermotet_i_Reykjavik_2005-10-24.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_tal",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1936,
+                  "titre": "Naissance de Mikhaïl Tal",
+                  "description": "Mikhaïl Tal (1936-1992) est un joueur d'échecs letton, né à Riga, devenu soviétique avec l'annexion de son pays. Surnommé le « magicien de Riga » pour ses attaques fondées sur des sacrifices, il devient champion du monde en 1960 en battant Botvinnik, à 23 ans, le plus jeune alors, mais perd la revanche l'année suivante. Malade toute sa vie, il meurt à Moscou.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mikha%C3%AFl_Tal",
+                  "pays": "LV",
+                  "classement": "Tal, Mikhaïl",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_tal.jpg",
+                    "legende": "Mikhaïl Tal, photographie de Rob C. Croes pour l'agence Anefo (1982)",
+                    "auteur": "Rob C. Croes (Anefo)",
+                    "licence": "CC BY-SA 3.0 NL",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mikhail_Tal_1982.jpg"
+                  }
+                },
+                {
+                  "id": "pan_baltes_jansons",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1943,
+                  "titre": "Naissance de Mariss Jansons",
+                  "description": "Mariss Jansons (1943-2019) est un chef d'orchestre letton, né à Riga, fils du chef Arvīds Jansons. Directeur musical de l'Orchestre philharmonique d'Oslo (1979-2000), puis de l'Orchestre symphonique de la Radio bavaroise (2003-2019) et du Concertgebouw d'Amsterdam (2004-2015), il dirige aussi trois fois le concert du Nouvel An de Vienne. Il meurt à Saint-Pétersbourg, la ville où il a étudié.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mariss_Jansons",
+                  "pays": "LV",
+                  "classement": "Jansons, Mariss",
+                  "image": {
+                    "src": "assets/portraits/pan_baltes_jansons.jpg",
+                    "legende": "Mariss Jansons, photographie de Franz Johann Morgenbesser (2015)",
+                    "auteur": "Franz Johann Morgenbesser",
+                    "licence": "CC BY-SA 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:2015_Jansons_Mariss-0242_(18794705869)_(2)_(cropped).jpg"
+                  }
+                }
+              ],
+              "axeOrder": [
+                "Chefs d'État et dirigeants",
+                "Guerres et résistances",
+                "Littérature et pensée",
+                "Beaux-arts",
+                "Musique, spectacle et sport",
+                "Sciences, techniques et innovation"
+              ],
+              "essentiel": [
+                "pan_baltes_mindaugas",
+                "pan_baltes_gediminas",
+                "pan_baltes_vytautas",
+                "pan_baltes_donelaitis",
+                "pan_baltes_baer",
+                "pan_baltes_kreutzwald",
+                "pan_baltes_barons",
+                "pan_baltes_koidula",
+                "pan_baltes_basanavicius",
+                "pan_baltes_ostwald",
+                "pan_baltes_kudirka",
+                "pan_baltes_cakste",
+                "pan_baltes_maironis",
+                "pan_baltes_rainis",
+                "pan_baltes_rozentals",
+                "pan_baltes_smetona",
+                "pan_baltes_ciurlionis",
+                "pan_baltes_ulmanis",
+                "pan_baltes_magi",
+                "pan_baltes_tammsaare",
+                "pan_baltes_laidoner",
+                "pan_baltes_gimbutas",
+                "pan_baltes_meri",
+                "pan_baltes_tormis",
+                "pan_baltes_tal",
+                "pan_baltes_jansons"
               ]
             },
             {

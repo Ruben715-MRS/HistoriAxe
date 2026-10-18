@@ -444,6 +444,12 @@ test('« Grandes figures d’Afrique centrale » : chaque ancre porte le pays de
     verifierPantheonDeBloc('pan_afriquecentrale', 29, 11);
 });
 
+test('« Grandes figures des pays baltes » : chaque ancre porte le pays de son événement, et la session se joue', () => {
+    // Trois pays : la Lituanie, l'Estonie et la Lettonie pèsent chacune un tiers du bloc ; aucune ne doit
+    // manquer parmi les ancres.
+    verifierPantheonDeBloc('pan_baltes', 41, 3);
+});
+
 test('« Grandes figures d’Asie centrale » : chaque ancre porte le pays de son événement, et la session se joue', () => {
     // Six pays, dont deux (le Turkménistan, le Tadjikistan) n'ont que quelques figures : le
     // Kazakhstan, l'Afghanistan et l'Ouzbékistan ne doivent pas les faire disparaître parmi les ancres.
