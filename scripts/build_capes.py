@@ -16,6 +16,7 @@ Un fichier source :
       "theme": "thm_grc",
       "essentiel": ["grc1", ...],              # les ⭐ Incontournables
       "reperes": [{"texte": "Début du texte du repère", "eventId": "grc12"}],   # facultatif
+      "axes": ["Axe A", "Axe B"],              # facultatif : ordre des axes (peut en introduire de nouveaux)
       "events": [
         {"id", "axe", "date", "titre", "description", "wp" | "ws"},   # événement complet ("axe" : le texte,
                                                                       # ou son rang dans l'ordre des axes)
@@ -86,7 +87,7 @@ def load_source(name):
 def build_events(theme, src):
     """Événements du thème : ceux de data/fr.json recouverts par la source, plus les nouveaux."""
     existing = {e['id']: e for e in theme['events']}
-    axes = []
+    axes = list(src.get('axes', []))
     for e in theme['events']:
         if e['axe'] not in axes:
             axes.append(e['axe'])
@@ -129,7 +130,7 @@ def build_events(theme, src):
 
 def check_theme(theme, events, src, other_ids):
     errors = []
-    axes = {e['axe'] for e in theme['events']}
+    axes = {e['axe'] for e in theme['events']} | set(src.get('axes', []))
     ids = set()
     for e in events:
         where = f'{theme["id"]} « {e["id"]} » ({e["titre"]})'
