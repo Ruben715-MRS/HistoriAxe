@@ -7,6 +7,7 @@ Outils du projet. Ce qui est là sert encore ; le reste a été retiré (voir pl
 | `build.js` | construit `www/` pour Capacitor / Vercel (`npm run build`) ; injecte `HISTORIAXE_API_BASE_URL` pour l'app native |
 | `build_pack.js` | découpe `data/fr.json` en `data/pack/fr/` (`npm run build:pack`) — à relancer après toute modification de `data/fr.json` |
 | `pantheon/` + `build_pantheon.py` + `pantheon_classement.py` | sources des panthéons (`<pays>.json`) et leur écriture dans `data/fr.json` |
+| `nobel/` + `build_nobel.py` | sources du thème « Prix Nobel » (un fichier JSON par prix) et son écriture dans `data/fr.json` : `python3 scripts/build_nobel.py` (`--check` pour valider seulement) ; il déplace aussi les événements de prix qui vivaient dans d'autres thèmes de « Culture générale » |
 | `fetch_portraits.py`, `search_portraits.py` | collecte des portraits (Wikimedia) |
 | `geo/` | chaîne de géolocalisation des événements → `assets/geo/events-geo.json` (voir `geo/README.md`) |
 | `transport/` | génération du thème « Grandes catastrophes de transport » |
