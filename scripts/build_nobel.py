@@ -40,8 +40,8 @@ CATEGORY = 'Culture générale'
 WIKI = 'https://fr.wikipedia.org/wiki/'
 
 
-def load(name):
-    with open(os.path.join(SOURCES, name), encoding='utf8') as f:
+def load(name, folder=SOURCES):
+    with open(os.path.join(folder, name), encoding='utf8') as f:
         return json.load(f)
 
 
@@ -115,6 +115,9 @@ def main():
     args = parser.parse_args()
 
     config = load('theme.json')
+    shared = load('sous_categorie.json', os.path.join(ROOT, 'scripts', 'prix'))
+    config['sousCategorie'] = shared['nom']
+    config['note'] = shared['note']
     with open(DATA, encoding='utf8') as f:
         raw = f.read()
     data = json.loads(raw)
@@ -123,8 +126,11 @@ def main():
 
     category = next(c for c in data['categories'] if c['nom'] == CATEGORY)
     subs = category['subcategories']
-    # Repart d'un état sans le thème : le script est rejouable.
-    subs[:] = [s for s in subs if s['nom'] != config['sousCategorie']]
+    # Repart d'un état sans le thème : le script est rejouable. La sous-catégorie est partagée avec les autres
+    # thèmes de prix (scripts/build_prix.py) : seul le thème Nobel est remplacé.
+    sous = next((s for s in subs if s['nom'] == config['sousCategorie']), None)
+    if sous:
+        sous['themes'] = [t for t in sous['themes'] if t['id'] != config['theme']['id']]
 
     events, deplaces = build_events(config)
     themes = {t['id']: t for t in themes_of(data_root(data))}
@@ -165,7 +171,11 @@ def main():
     theme['events'] = events
     theme['axeOrder'] = config['axes']
     theme['essentiel'] = config['essentiel']
-    subs.append({'nom': config['sousCategorie'], 'note': config['note'], 'themes': [theme]})
+    if not sous:
+        sous = {'nom': config['sousCategorie'], 'note': config['note'], 'themes': []}
+        subs.append(sous)
+    sous['note'] = config['note']
+    sous['themes'].insert(0, theme)
 
     total_themes = sum(1 for c in data['categories'] for _ in themes_of(c))
     total_events = sum(len(t['events']) for c in data['categories'] for t in themes_of(c))

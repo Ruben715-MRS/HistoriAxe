@@ -23,7 +23,9 @@ test('Prix et récompenses : la note explique la règle de datation et le thème
     expect(await visibleScreen(page)).toBe('screen-themes');
     await expect(page.locator('#theme-screen-title')).toHaveText('Prix et récompenses');
     await expect(page.locator('#theme-screen-note-text')).toContainText('année du prix');
-    await expect(page.locator('#themes-container .data-card-title')).toHaveText(['Prix Nobel']);
+    // Les thèmes de prix, le Prix Nobel d'abord.
+    await expect(page.locator('#themes-container .data-card-title').first()).toHaveText('Prix Nobel');
+    expect(await page.locator('#themes-container .data-card-title').count()).toBeGreaterThanOrEqual(3);
 
     await openThemeCard(page, 'thm_nobel');
     await expect(page.locator('#screen-axes')).toBeVisible();

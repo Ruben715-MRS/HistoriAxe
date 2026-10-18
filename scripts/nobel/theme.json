@@ -1,12 +1,17 @@
 {
-  "sousCategorie": "Prix et récompenses",
-  "note": "Chaque événement est daté de l'année du prix, c'est-à-dire du millésime officiel de la fondation Nobel, et non de celle de la découverte : un prix peut être décerné l'année suivante (celui d'Einstein pour 1921 lui est remis en 1922) et couronne souvent un travail vieux de plusieurs décennies. La description dit ce que le lauréat a découvert ou accompli, et pourquoi cela a été jugé digne d'un prix. Ces thèmes datent donc la reconnaissance ; « Inventions et découvertes » et « Histoire de la Médecine et Santé » datent la découverte elle-même, et « Personnages illustres » raconte des vies. Le prix d'économie, créé en 1968 par la Banque de Suède « en mémoire d'Alfred Nobel », n'est pas l'un des cinq prix du testament, mais il est décerné avec eux.",
   "theme": {
     "id": "thm_nobel",
     "nom": "Prix Nobel",
     "difficulte": "Intermédiaire"
   },
-  "axes": ["Paix", "Littérature", "Physiologie ou médecine", "Physique", "Chimie", "Économie"],
+  "axes": [
+    "Paix",
+    "Littérature",
+    "Physiologie ou médecine",
+    "Physique",
+    "Chimie",
+    "Économie"
+  ],
   "fichiers": {
     "paix": "Paix",
     "litterature": "Littérature",
@@ -16,11 +21,44 @@
     "economie": "Économie"
   },
   "essentiel": [
-    "nobpa_01", "nobpa_02", "nobpa_11", "nobpa_17", "nobpa_26", "nobpa_30", "nobpa_37",
-    "litty56", "nobli_02", "litmo6", "litty55", "nobli_12", "litmo48", "litty57",
-    "med203", "nobme_02", "nobme_05", "nobme_09", "nobme_20", "nobme_23", "nobme_32",
-    "nobph_01", "nobph_03", "nobph_09", "nobph_10", "nobph_24", "nobph_26", "nobph_32", "nobph_50", "nobph_54",
-    "nobch_05", "nobch_07", "nobch_10", "med305", "med338", "inv399",
-    "nobec_01", "nobec_11", "nobec_20"
+    "nobpa_01",
+    "nobpa_02",
+    "nobpa_11",
+    "nobpa_17",
+    "nobpa_26",
+    "nobpa_30",
+    "nobpa_37",
+    "litty56",
+    "nobli_02",
+    "litmo6",
+    "litty55",
+    "nobli_12",
+    "litmo48",
+    "litty57",
+    "med203",
+    "nobme_02",
+    "nobme_05",
+    "nobme_09",
+    "nobme_20",
+    "nobme_23",
+    "nobme_32",
+    "nobph_01",
+    "nobph_03",
+    "nobph_09",
+    "nobph_10",
+    "nobph_24",
+    "nobph_26",
+    "nobph_32",
+    "nobph_50",
+    "nobph_54",
+    "nobch_05",
+    "nobch_07",
+    "nobch_10",
+    "med305",
+    "med338",
+    "inv399",
+    "nobec_01",
+    "nobec_11",
+    "nobec_20"
   ]
 }

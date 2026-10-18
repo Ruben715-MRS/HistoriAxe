@@ -2,8 +2,8 @@
   "version": "1.0.0",
   "lang": "fr",
   "name": "Français (Intégral)",
-  "totalThemes": 827,
-  "totalEvents": 23062,
+  "totalThemes": 829,
+  "totalEvents": 23183,
   "categories": [
     {
       "nom": "Culture générale",
@@ -44648,7 +44648,7 @@
         },
         {
           "nom": "Prix et récompenses",
-          "note": "Chaque événement est daté de l'année du prix, c'est-à-dire du millésime officiel de la fondation Nobel, et non de celle de la découverte : un prix peut être décerné l'année suivante (celui d'Einstein pour 1921 lui est remis en 1922) et couronne souvent un travail vieux de plusieurs décennies. La description dit ce que le lauréat a découvert ou accompli, et pourquoi cela a été jugé digne d'un prix. Ces thèmes datent donc la reconnaissance ; « Inventions et découvertes » et « Histoire de la Médecine et Santé » datent la découverte elle-même, et « Personnages illustres » raconte des vies. Le prix d'économie, créé en 1968 par la Banque de Suède « en mémoire d'Alfred Nobel », n'est pas l'un des cinq prix du testament, mais il est décerné avec eux.",
+          "note": "Chaque événement est daté de l'année du prix, c'est-à-dire de celle où il est décerné (la cérémonie, ou le millésime officiel de la fondation Nobel), et non de celle de l'œuvre ou de la découverte récompensée : un Oscar couronne un film de l'année précédente, et un Nobel un travail souvent vieux de plusieurs décennies. La description dit ce qui est récompensé et pourquoi cela a compté. Ces thèmes datent donc la reconnaissance ; les thèmes d'histoire du cinéma, de la littérature, des sciences, du sport ou de la musique datent l'œuvre ou l'exploit lui-même, et ceux des Personnages illustres racontent des vies. Le prix d'économie, créé en 1968 par la Banque de Suède « en mémoire d'Alfred Nobel », n'est pas l'un des cinq prix du testament, mais il est décerné avec eux.",
           "themes": [
             {
               "id": "thm_nobel",
@@ -46976,6 +46976,1036 @@
                 "nobec_01",
                 "nobec_11",
                 "nobec_20"
+              ]
+            },
+            {
+              "id": "thm_oscars",
+              "nom": "Les Oscars",
+              "difficulte": "Tous niveaux",
+              "events": [
+                {
+                  "id": "osc_01",
+                  "axe": "Meilleur film",
+                  "date": 1929,
+                  "titre": "Les Ailes, premier Oscar du meilleur film",
+                  "description": "Les Ailes, film muet sur des pilotes de la Première Guerre mondiale, remporte le premier Oscar du meilleur film lors de la toute première cérémonie, en mai 1929. Il reste l'un des deux seuls films muets couronnés, avec The Artist en 2012.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Les_Ailes_(film,_1927)"
+                },
+                {
+                  "id": "osc_30",
+                  "axe": "Interprétation",
+                  "date": 1929,
+                  "titre": "Janet Gaynor, première Oscar de la meilleure actrice",
+                  "description": "Janet Gaynor est la première lauréate de l'Oscar de la meilleure actrice, lors de la cérémonie inaugurale. L'Académie la récompense pour trois films à la fois, dont L'Heure suprême et L'Aurore, une pratique abandonnée dès l'année suivante.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Janet_Gaynor"
+                },
+                {
+                  "id": "osc_44",
+                  "axe": "Moments et records",
+                  "date": 1932,
+                  "titre": "Walt Disney remporte son premier Oscar",
+                  "description": "Walt Disney reçoit son premier Oscar pour Des arbres et des fleurs, premier dessin animé en trois bandes Technicolor, dans la catégorie du court métrage d'animation. Il accumulera vingt-deux statuettes en compétition, un record, et quatre en une soirée en 1954.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Walt_Disney"
+                },
+                {
+                  "id": "osc_02",
+                  "axe": "Meilleur film",
+                  "date": 1935,
+                  "titre": "New York-Miami et le grand chelem",
+                  "description": "Cette comédie de Frank Capra est le premier film à remporter les cinq grands Oscars : meilleur film, réalisateur, acteur, actrice et scénario. Il prouve qu'une comédie légère peut l'emporter face aux drames prestigieux.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/New_York-Miami"
+                },
+                {
+                  "id": "osc_20",
+                  "axe": "Réalisation",
+                  "date": 1939,
+                  "titre": "Capra, troisième Oscar en cinq ans",
+                  "description": "Frank Capra reçoit pour Vous ne l'emporterez pas avec vous son troisième Oscar de la meilleure réalisation en cinq ans, après New York-Miami et L'Extravagant Mr. Deeds. Ses comédies sociales, où l'homme ordinaire tient tête aux puissants, définissent alors le cinéma américain.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Frank_Capra"
+                },
+                {
+                  "id": "osc_03",
+                  "axe": "Meilleur film",
+                  "date": 1940,
+                  "titre": "Autant en emporte le vent, huit Oscars",
+                  "description": "Fresque de la guerre de Sécession en Technicolor, Autant en emporte le vent est le premier film en couleurs à recevoir l'Oscar du meilleur film, avec huit statuettes. Il est aussi le film de Hattie McDaniel, première Afro-Américaine récompensée.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Autant_en_emporte_le_vent_(film)"
+                },
+                {
+                  "id": "osc_31",
+                  "axe": "Interprétation",
+                  "date": 1940,
+                  "titre": "Hattie McDaniel, première Afro-Américaine primée",
+                  "description": "Hattie McDaniel reçoit l'Oscar du meilleur second rôle féminin pour Autant en emporte le vent, une première pour une personne noire. Cantonnée à des rôles de domestique, elle assiste à la cérémonie à une table à l'écart, ségrégation de l'hôtel oblige.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Hattie_McDaniel"
+                },
+                {
+                  "id": "osc_04",
+                  "axe": "Meilleur film",
+                  "date": 1951,
+                  "titre": "Ève et ses quatorze nominations",
+                  "description": "Le film de Joseph L. Mankiewicz, sur une jeune actrice ambitieuse qui évince une star de Broadway, reçoit un nombre record de quatorze nominations et remporte six Oscars, dont celui du meilleur film. Ce record ne sera égalé que par Titanic et La La Land.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/%C3%88ve_(film)"
+                },
+                {
+                  "id": "osc_21",
+                  "axe": "Réalisation",
+                  "date": 1953,
+                  "titre": "John Ford, quatrième Oscar de la réalisation",
+                  "description": "John Ford reçoit pour L'Homme tranquille son quatrième Oscar de la meilleure réalisation, après Le Mouchard, Les Raisins de la colère et Qu'elle était verte ma vallée. Ce total reste un record, que personne n'a égalé depuis.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/John_Ford"
+                },
+                {
+                  "id": "osc_45",
+                  "axe": "Moments et records",
+                  "date": 1957,
+                  "titre": "La Strada, premier Oscar du film en langue étrangère",
+                  "description": "La Strada, de Federico Fellini, histoire d'une saltimbanque naïve vendue à un forain brutal, est le premier film couronné dans la catégorie du film en langue étrangère, créée cette année-là. L'Académie ne récompensait jusque-là ces films que par des Oscars d'honneur.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/La_Strada"
+                },
+                {
+                  "id": "osc_05",
+                  "axe": "Meilleur film",
+                  "date": 1960,
+                  "titre": "Ben-Hur, onze Oscars",
+                  "description": "Le péplum de William Wyler, célèbre pour sa course de chars, remporte onze Oscars, un record qu'il partage encore avec Titanic et Le Seigneur des anneaux : Le Retour du roi. C'est le premier film à atteindre ce total, et son succès sauve le studio MGM.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ben-Hur_(film,_1959)"
+                },
+                {
+                  "id": "osc_22",
+                  "axe": "Réalisation",
+                  "date": 1962,
+                  "titre": "Robert Wise et Jerome Robbins, une réalisation à deux",
+                  "description": "Robert Wise et Jerome Robbins reçoivent ensemble l'Oscar de la meilleure réalisation pour West Side Story, transposition de Roméo et Juliette dans les rues de New York. Le film remporte dix Oscars, record pour une comédie musicale.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/West_Side_Story_(film,_1961)"
+                },
+                {
+                  "id": "osc_32",
+                  "axe": "Interprétation",
+                  "date": 1962,
+                  "titre": "Sophia Loren, première actrice primée pour un rôle non anglophone",
+                  "description": "Sophia Loren obtient l'Oscar de la meilleure actrice pour La Ciociara, de Vittorio De Sica, sur une mère et sa fille dans l'Italie en guerre. C'est la première interprétation dans une langue autre que l'anglais à être récompensée d'un Oscar.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sophia_Loren"
+                },
+                {
+                  "id": "osc_06",
+                  "axe": "Meilleur film",
+                  "date": 1963,
+                  "titre": "Lawrence d'Arabie et le grand spectacle",
+                  "description": "Le film de David Lean sur l'officier britannique T. E. Lawrence et la révolte arabe de 1916-1918 remporte sept Oscars, dont ceux du meilleur film et de la meilleure réalisation. Tourné en 70 mm dans le désert, il devient une référence du cinéma de grande ampleur.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Lawrence_d'Arabie_(film)"
+                },
+                {
+                  "id": "osc_33",
+                  "axe": "Interprétation",
+                  "date": 1964,
+                  "titre": "Sidney Poitier, premier acteur noir couronné",
+                  "description": "Sidney Poitier reçoit l'Oscar du meilleur acteur pour Le Lys des champs, où il joue un ouvrier qui aide des religieuses allemandes à bâtir une chapelle. Il est le premier acteur noir à remporter la statuette principale, à une époque de lutte pour les droits civiques.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sidney_Poitier"
+                },
+                {
+                  "id": "osc_34",
+                  "axe": "Interprétation",
+                  "date": 1969,
+                  "titre": "Hepburn et Streisand, un ex æquo rarissime",
+                  "description": "Katharine Hepburn, pour Le Lion en hiver, et Barbra Streisand, pour Funny Girl, se partagent l'Oscar de la meilleure actrice à égalité de voix. Hepburn en remportera quatre au total, un record pour une actrice dans cette catégorie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Katharine_Hepburn"
+                },
+                {
+                  "id": "osc_46",
+                  "axe": "Moments et records",
+                  "date": 1972,
+                  "titre": "Chaplin revient à Hollywood",
+                  "description": "Charlie Chaplin reçoit un Oscar d'honneur pour l'effet incalculable qu'il a eu sur le cinéma, vingt ans après avoir été empêché de rentrer aux États-Unis. Le public lui fait une ovation debout de douze minutes, la plus longue de l'histoire de la cérémonie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Charlie_Chaplin"
+                },
+                {
+                  "id": "osc_07",
+                  "axe": "Meilleur film",
+                  "date": 1973,
+                  "titre": "Le Parrain, trois Oscars",
+                  "description": "L'adaptation par Francis Ford Coppola du roman de Mario Puzo sur une famille mafieuse reçoit l'Oscar du meilleur film, celui du meilleur acteur pour Marlon Brando et celui du meilleur scénario adapté. Coppola, lui, n'est pas primé comme réalisateur.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Le_Parrain_(film)"
+                },
+                {
+                  "id": "osc_47",
+                  "axe": "Moments et records",
+                  "date": 1973,
+                  "titre": "Brando refuse son Oscar",
+                  "description": "Marlon Brando, désigné meilleur acteur pour Le Parrain, refuse la statuette et envoie à sa place Sacheen Littlefeather, qui dénonce la manière dont l'industrie représente les Amérindiens. L'épisode reste l'un des plus célèbres de l'histoire de la cérémonie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Marlon_Brando"
+                },
+                {
+                  "id": "osc_48",
+                  "axe": "Moments et records",
+                  "date": 1974,
+                  "titre": "Un streaker traverse la scène",
+                  "description": "Un homme nu traverse la scène en courant derrière le présentateur David Niven, qui lui adresse une repartie restée célèbre. L'épisode, qui a lieu pendant que Niven annonce la remise du prix du meilleur film, reste l'un des moments les plus insolites de la cérémonie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Oscars_du_cin%C3%A9ma"
+                },
+                {
+                  "id": "osc_08",
+                  "axe": "Meilleur film",
+                  "date": 1975,
+                  "titre": "Le Parrain 2, première suite couronnée",
+                  "description": "Le Parrain 2 est la première suite à recevoir l'Oscar du meilleur film, avec six statuettes dont celle de la meilleure réalisation pour Francis Ford Coppola. Il confirme que la suite d'un chef-d'œuvre peut aussi en être un.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Le_Parrain,_2e_partie"
+                },
+                {
+                  "id": "osc_09",
+                  "axe": "Meilleur film",
+                  "date": 1976,
+                  "titre": "Vol au-dessus d'un nid de coucou et les cinq grands Oscars",
+                  "description": "Le film de Miloš Forman, sur un détenu qui se fait interner dans un hôpital psychiatrique, remporte les cinq grands Oscars : film, réalisateur, acteur, actrice et scénario. Il est le deuxième à réussir ce grand chelem, quarante et un ans après New York-Miami.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Vol_au-dessus_d'un_nid_de_coucou_(film)"
+                },
+                {
+                  "id": "osc_35",
+                  "axe": "Interprétation",
+                  "date": 1977,
+                  "titre": "Peter Finch, premier Oscar d'interprétation posthume",
+                  "description": "Peter Finch reçoit l'Oscar du meilleur acteur pour Network, où il joue un présentateur télé qui hurle sa colère en direct. Il est mort avant la cérémonie, ce qui fait de lui le premier lauréat posthume d'un Oscar d'interprétation.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Peter_Finch"
+                },
+                {
+                  "id": "osc_36",
+                  "axe": "Interprétation",
+                  "date": 1990,
+                  "titre": "Jessica Tandy, plus âgée des lauréates",
+                  "description": "Jessica Tandy reçoit à 80 ans l'Oscar de la meilleure actrice pour Miss Daisy et son chauffeur, où elle joue une vieille dame du Sud ségrégationniste. Elle reste aujourd'hui la plus âgée des lauréates de cette catégorie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jessica_Tandy"
+                },
+                {
+                  "id": "osc_10",
+                  "axe": "Meilleur film",
+                  "date": 1992,
+                  "titre": "Le Silence des agneaux, un thriller couronné",
+                  "description": "Le thriller de Jonathan Demme, où une jeune agente du FBI traque un tueur avec l'aide du cannibale Hannibal Lecter, remporte les cinq grands Oscars. C'est le troisième film à réussir ce grand chelem, et le seul film d'épouvante à avoir reçu l'Oscar du meilleur film.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Le_Silence_des_agneaux_(film)"
+                },
+                {
+                  "id": "osc_11",
+                  "axe": "Meilleur film",
+                  "date": 1994,
+                  "titre": "La Liste de Schindler, enfin Spielberg",
+                  "description": "Le film en noir et blanc de Steven Spielberg sur Oskar Schindler, qui sauve plus d'un millier de Juifs en les employant dans ses usines, remporte sept Oscars dont ceux du meilleur film et de la meilleure réalisation. Spielberg reçoit enfin ses premières statuettes.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/La_Liste_de_Schindler"
+                },
+                {
+                  "id": "osc_12",
+                  "axe": "Meilleur film",
+                  "date": 1998,
+                  "titre": "Titanic, onze Oscars",
+                  "description": "Le film de James Cameron sur le naufrage du paquebot et la romance de Jack et Rose reçoit quatorze nominations et onze Oscars, égalant le record de Ben-Hur. Il devient aussi le film le plus rentable de l'histoire du cinéma à cette date.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Titanic_(film,_1997)"
+                },
+                {
+                  "id": "osc_37",
+                  "axe": "Interprétation",
+                  "date": 2002,
+                  "titre": "Halle Berry, première actrice noire couronnée",
+                  "description": "Halle Berry reçoit l'Oscar de la meilleure actrice pour À l'ombre de la haine, ce qui fait d'elle la première femme noire à remporter ce prix. Le même soir, Denzel Washington est couronné meilleur acteur et Sidney Poitier reçoit un Oscar d'honneur.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Halle_Berry"
+                },
+                {
+                  "id": "osc_49",
+                  "axe": "Moments et records",
+                  "date": 2002,
+                  "titre": "Création de l'Oscar du film d'animation",
+                  "description": "L'Académie décerne pour la première fois l'Oscar du meilleur film d'animation, créé pour reconnaître un genre qui s'était imposé auprès du public. Shrek, de DreamWorks, est le premier lauréat, devant Monstres et Cie et Jimmy Neutron.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Oscar_du_meilleur_film_d'animation"
+                },
+                {
+                  "id": "osc_23",
+                  "axe": "Réalisation",
+                  "date": 2003,
+                  "titre": "Polanski, Oscar de la réalisation sans pouvoir venir",
+                  "description": "Roman Polanski est récompensé pour Le Pianiste, adapté de l'histoire du musicien Władysław Szpilman dans le ghetto de Varsovie. Recherché par la justice américaine depuis 1978, il ne peut se rendre à la cérémonie, et une partie du public l'ovationne pourtant.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Roman_Polanski"
+                },
+                {
+                  "id": "osc_38",
+                  "axe": "Interprétation",
+                  "date": 2003,
+                  "titre": "Adrien Brody, plus jeune lauréat du meilleur acteur",
+                  "description": "Adrien Brody reçoit à 29 ans l'Oscar du meilleur acteur pour Le Pianiste, de Roman Polanski. Il est le plus jeune lauréat de cette catégorie, et sa surprise, qui le pousse à embrasser la présentatrice Halle Berry, fait le tour du monde.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Adrien_Brody"
+                },
+                {
+                  "id": "osc_13",
+                  "axe": "Meilleur film",
+                  "date": 2004,
+                  "titre": "Le Retour du roi et le grand chelem de la Terre du Milieu",
+                  "description": "Le dernier volet de la trilogie de Peter Jackson remporte onze Oscars sur onze nominations, sans aucune défaite, ce qui n'était arrivé à aucun autre film avec un tel nombre. Il couronne aussi, à travers lui, une trilogie de fantasy longtemps tenue à l'écart des récompenses.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Le_Seigneur_des_anneaux_%3A_Le_Retour_du_roi"
+                },
+                {
+                  "id": "osc_24",
+                  "axe": "Réalisation",
+                  "date": 2006,
+                  "titre": "Ang Lee, premier réalisateur asiatique couronné",
+                  "description": "Ang Lee reçoit pour Le Secret de Brokeback Mountain l'Oscar de la meilleure réalisation, une première pour un cinéaste asiatique. Son film, une histoire d'amour entre deux cow-boys, a pourtant perdu l'Oscar du meilleur film au profit de Collision.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ang_Lee"
+                },
+                {
+                  "id": "osc_25",
+                  "axe": "Réalisation",
+                  "date": 2010,
+                  "titre": "Kathryn Bigelow, première réalisatrice couronnée",
+                  "description": "Kathryn Bigelow devient la première femme à recevoir l'Oscar de la meilleure réalisation, pour Démineurs, sur une équipe de déminage en Irak. Elle l'emporte sur son ex-mari James Cameron, dont Avatar était le grand favori.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kathryn_Bigelow"
+                },
+                {
+                  "id": "osc_14",
+                  "axe": "Meilleur film",
+                  "date": 2012,
+                  "titre": "The Artist, premier film français couronné",
+                  "description": "Le film muet et en noir et blanc de Michel Hazanavicius, hommage au Hollywood de la fin des années 1920, remporte cinq Oscars dont celui du meilleur film. C'est la première œuvre française, et la seconde œuvre muette après Les Ailes, à recevoir cette récompense.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/The_Artist"
+                },
+                {
+                  "id": "osc_39",
+                  "axe": "Interprétation",
+                  "date": 2012,
+                  "titre": "Jean Dujardin, premier acteur français couronné",
+                  "description": "Jean Dujardin reçoit l'Oscar du meilleur acteur pour The Artist, où il joue une star du muet balayée par l'arrivée du parlant. Il est le premier Français à obtenir la statuette principale d'interprétation masculine.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jean_Dujardin"
+                },
+                {
+                  "id": "osc_40",
+                  "axe": "Interprétation",
+                  "date": 2012,
+                  "titre": "Meryl Streep, troisième Oscar",
+                  "description": "Meryl Streep reçoit un troisième Oscar, celui de la meilleure actrice, pour La Dame de fer, où elle incarne Margaret Thatcher. Elle détient le record du nombre de nominations, avec vingt et une, et reste l'actrice la plus nommée de l'histoire.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Meryl_Streep"
+                },
+                {
+                  "id": "osc_41",
+                  "axe": "Interprétation",
+                  "date": 2013,
+                  "titre": "Daniel Day-Lewis, troisième Oscar du meilleur acteur",
+                  "description": "Daniel Day-Lewis reçoit pour Lincoln un troisième Oscar du meilleur acteur, après Mon pied gauche et There Will Be Blood. Aucun autre interprète n'a atteint ce total dans cette catégorie, et sa méticulosité dans la préparation de ses rôles est restée légendaire.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Daniel_Day-Lewis"
+                },
+                {
+                  "id": "osc_26",
+                  "axe": "Réalisation",
+                  "date": 2016,
+                  "titre": "Iñárritu, deuxième Oscar de la réalisation consécutif",
+                  "description": "Alejandro González Iñárritu est récompensé pour The Revenant un an après Birdman, ce qui le met au rang des rares réalisateurs primés deux fois de suite. Avec Alfonso Cuarón et Guillermo del Toro, des Mexicains reçoivent alors cinq des six Oscars de la réalisation entre 2014 et 2019.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Alejandro_Gonz%C3%A1lez_I%C3%B1%C3%A1rritu"
+                },
+                {
+                  "id": "osc_42",
+                  "axe": "Interprétation",
+                  "date": 2016,
+                  "titre": "Leonardo DiCaprio, enfin l'Oscar",
+                  "description": "Leonardo DiCaprio reçoit enfin l'Oscar du meilleur acteur pour The Revenant, où il joue un trappeur laissé pour mort par ses compagnons. Il avait été nommé à plusieurs reprises sans l'emporter, et sa quête de la statuette était devenue un sujet de plaisanteries.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Leonardo_DiCaprio"
+                },
+                {
+                  "id": "osc_15",
+                  "axe": "Meilleur film",
+                  "date": 2017,
+                  "titre": "Moonlight et l'enveloppe erronée",
+                  "description": "Le film de Barry Jenkins, trois chapitres de la vie d'un jeune Noir homosexuel de Miami, est couronné après une erreur d'enveloppe en direct : La La Land est d'abord annoncé par méprise. Moonlight est le premier film à distribution entièrement noire et le premier à thème LGBT à gagner.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Moonlight_(film,_2016)"
+                },
+                {
+                  "id": "osc_16",
+                  "axe": "Meilleur film",
+                  "date": 2020,
+                  "titre": "Parasite, premier film non anglophone couronné",
+                  "description": "La satire sociale sud-coréenne de Bong Joon-ho, où une famille pauvre s'infiltre chez des riches, est le premier film en langue non anglaise à remporter l'Oscar du meilleur film. Il obtient quatre statuettes, dont celles de la meilleure réalisation et du meilleur film international.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Parasite_(film,_2019)"
+                },
+                {
+                  "id": "osc_27",
+                  "axe": "Réalisation",
+                  "date": 2021,
+                  "titre": "Chloé Zhao, deuxième réalisatrice couronnée",
+                  "description": "Chloé Zhao reçoit pour Nomadland l'Oscar de la meilleure réalisation, onze ans après Kathryn Bigelow. Elle est la première femme de couleur à l'obtenir, pour un film sur des travailleurs itinérants du Midwest américain, joué en partie par de vrais nomades.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Chlo%C3%A9_Zhao"
+                },
+                {
+                  "id": "osc_28",
+                  "axe": "Réalisation",
+                  "date": 2022,
+                  "titre": "Jane Campion, troisième réalisatrice couronnée",
+                  "description": "Jane Campion reçoit l'Oscar de la meilleure réalisation pour The Power of the Dog, un western psychologique situé dans le Montana des années 1920. Elle est la troisième femme à l'obtenir, après Kathryn Bigelow et Chloé Zhao, qui l'avait reçu l'année précédente.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jane_Campion"
+                },
+                {
+                  "id": "osc_50",
+                  "axe": "Moments et records",
+                  "date": 2022,
+                  "titre": "La gifle de la cérémonie",
+                  "description": "Will Smith monte sur scène et gifle Chris Rock, qui vient de plaisanter sur son épouse, puis reçoit quelques minutes plus tard l'Oscar du meilleur acteur pour La Méthode Williams. L'Académie lui interdit ensuite d'assister à la cérémonie pendant dix ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Will_Smith"
+                },
+                {
+                  "id": "osc_17",
+                  "axe": "Meilleur film",
+                  "date": 2023,
+                  "titre": "Everything Everywhere All at Once, sept Oscars",
+                  "description": "Le film de Daniel Kwan et Daniel Scheinert, une comédie d'aventures sur le multivers portée par une famille sino-américaine, remporte sept Oscars dont ceux du meilleur film et de la meilleure réalisation. Il consacre un cinéma de genre décalé, longtemps ignoré de l'Académie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Everything_Everywhere_All_at_Once"
+                },
+                {
+                  "id": "osc_43",
+                  "axe": "Interprétation",
+                  "date": 2023,
+                  "titre": "Michelle Yeoh, première actrice asiatique couronnée",
+                  "description": "Michelle Yeoh reçoit l'Oscar de la meilleure actrice pour Everything Everywhere All at Once, ce qui fait d'elle la première Asiatique à l'obtenir. Dans son discours, elle exhorte les femmes à ne jamais laisser personne dire qu'elles ont passé leur âge d'or.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Michelle_Yeoh"
+                },
+                {
+                  "id": "osc_18",
+                  "axe": "Meilleur film",
+                  "date": 2024,
+                  "titre": "Oppenheimer, sept Oscars",
+                  "description": "Le film de Christopher Nolan sur le physicien qui a dirigé le projet Manhattan remporte sept Oscars, dont celui du meilleur film, de la meilleure réalisation et du meilleur acteur pour Cillian Murphy. Nolan reçoit sa première statuette après plusieurs nominations.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Oppenheimer_(film)"
+                },
+                {
+                  "id": "osc_29",
+                  "axe": "Réalisation",
+                  "date": 2025,
+                  "titre": "Sean Baker, quatre Oscars en une nuit",
+                  "description": "Sean Baker remporte pour Anora quatre Oscars à lui seul, ceux du meilleur film, de la meilleure réalisation, du meilleur scénario original et du meilleur montage. Il égale ainsi le record de Walt Disney, en 1954.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sean_Baker"
+                },
+                {
+                  "id": "osc_19",
+                  "axe": "Meilleur film",
+                  "date": 2026,
+                  "titre": "Une bataille après l'autre, couronné à la 98e cérémonie",
+                  "description": "Le film de Paul Thomas Anderson remporte six Oscars, dont ceux du meilleur film et de la meilleure réalisation. Il l'emporte face à Sinners, de Ryan Coogler, qui détenait le record de seize nominations, et sa réalisation vaut au cinéaste sa première statuette.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Une_bataille_apr%C3%A8s_l'autre"
+                },
+                {
+                  "id": "osc_51",
+                  "axe": "Moments et records",
+                  "date": 2026,
+                  "titre": "Seize nominations pour Sinners",
+                  "description": "Sinners, film de vampires de Ryan Coogler situé dans le Mississippi des années 1930, établit un record avec seize nominations, battant les quatorze d'Ève, de Titanic et de La La Land. La cérémonie crée aussi un Oscar de la meilleure distribution.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sinners_(film)"
+                }
+              ],
+              "axeOrder": [
+                "Meilleur film",
+                "Réalisation",
+                "Interprétation",
+                "Moments et records"
+              ],
+              "essentiel": [
+                "osc_01",
+                "osc_02",
+                "osc_03",
+                "osc_06",
+                "osc_09",
+                "osc_12",
+                "osc_13",
+                "osc_15",
+                "osc_17",
+                "osc_20",
+                "osc_23",
+                "osc_27",
+                "osc_33",
+                "osc_35",
+                "osc_41",
+                "osc_44",
+                "osc_46"
+              ]
+            },
+            {
+              "id": "thm_festivals",
+              "nom": "Festivals et prix du cinéma",
+              "difficulte": "Tous niveaux",
+              "events": [
+                {
+                  "id": "fes_24",
+                  "axe": "Mostra de Venise",
+                  "date": 1932,
+                  "titre": "Naissance de la Mostra de Venise",
+                  "description": "La Biennale de Venise lance la première Exposition internationale d'art cinématographique, sur la terrasse d'un grand hôtel du Lido. C'est le premier festival de cinéma du monde, d'abord sans compétition, les premiers prix n'étant décernés qu'en 1934.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mostra_de_Venise"
+                },
+                {
+                  "id": "fes_01",
+                  "axe": "Festival de Cannes",
+                  "date": 1946,
+                  "titre": "Première édition du Festival de Cannes",
+                  "description": "Imaginé avant la guerre pour contrer la mainmise de Mussolini sur la Mostra de Venise, le Festival de Cannes se tient enfin en septembre 1946. Le Grand Prix est attribué à onze films à la fois, dont Le Poison et La Dernière Chance.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Festival_de_Cannes_1946"
+                },
+                {
+                  "id": "fes_25",
+                  "axe": "Mostra de Venise",
+                  "date": 1951,
+                  "titre": "Rashōmon ouvre le cinéma japonais au monde",
+                  "description": "Le film d'Akira Kurosawa, où quatre témoins racontent chacun une version différente d'un même crime, reçoit le Lion d'or alors que le cinéma japonais est presque inconnu en Occident. Il lance la reconnaissance internationale de l'école japonaise et sa structure fait date.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Rash%C5%8Dmon_(film,_1950)"
+                },
+                {
+                  "id": "fes_42",
+                  "axe": "Berlinale",
+                  "date": 1951,
+                  "titre": "Première Berlinale, vitrine du monde libre",
+                  "description": "Le festival de Berlin naît en juin 1951, en pleine guerre froide, comme vitrine du monde libre dans une ville coupée en deux et occupée par les Alliés. Les premiers Ours sont décernés dès cette édition.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Berlinale"
+                },
+                {
+                  "id": "fes_26",
+                  "axe": "Mostra de Venise",
+                  "date": 1952,
+                  "titre": "Jeux interdits, la guerre vue par des enfants",
+                  "description": "Le film de René Clément, où deux enfants construisent un cimetière pour animaux pendant l'exode de 1940, reçoit le Lion d'or. Il vaudra aussi un Oscar d'honneur en 1953, avant celui du meilleur film étranger créé en 1957.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jeux_interdits"
+                },
+                {
+                  "id": "fes_02",
+                  "axe": "Festival de Cannes",
+                  "date": 1953,
+                  "titre": "Le Salaire de la peur, couronné à Cannes et à Berlin",
+                  "description": "Le thriller de Henri-Georges Clouzot, sur des camionneurs chargés de convoyer de la nitroglycérine, reçoit le Grand Prix du Festival de Cannes puis l'Ours d'or de Berlin. Il reçoit ainsi, la même année, la plus haute distinction de ces deux festivals.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Le_Salaire_de_la_peur"
+                },
+                {
+                  "id": "fes_03",
+                  "axe": "Festival de Cannes",
+                  "date": 1955,
+                  "titre": "Marty, première Palme d'or",
+                  "description": "Le Grand Prix du festival prend le nom de Palme d'or, et Marty, de Delbert Mann, histoire d'un boucher du Bronx timide et sans fortune, en est le premier lauréat. Le film remportera aussi l'Oscar du meilleur film, un double succès réservé à de rares œuvres.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Marty_(film)"
+                },
+                {
+                  "id": "fes_04",
+                  "axe": "Festival de Cannes",
+                  "date": 1956,
+                  "titre": "Le Monde du silence, un documentaire couronné",
+                  "description": "Le film de Jacques-Yves Cousteau et Louis Malle, tourné sous la mer avec la caméra étanche de l'équipage de la Calypso, reçoit la Palme d'or. C'est le premier documentaire à la gagner, et il le restera jusqu'à Fahrenheit 9/11, quarante-huit ans plus tard.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Le_Monde_du_silence_(film)"
+                },
+                {
+                  "id": "fes_43",
+                  "axe": "Berlinale",
+                  "date": 1957,
+                  "titre": "Douze Hommes en colère, un huis clos couronné",
+                  "description": "Le premier film de Sidney Lumet, où un juré tient tête à onze autres pour éviter une condamnation hâtive, reçoit l'Ours d'or. Tourné presque entièrement dans une pièce unique, il devient un modèle de huis clos et un classique du film de procès.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Douze_Hommes_en_col%C3%A8re_(film)"
+                },
+                {
+                  "id": "fes_44",
+                  "axe": "Berlinale",
+                  "date": 1958,
+                  "titre": "Les Fraises sauvages, Bergman couronné",
+                  "description": "Le film d'Ingmar Bergman, où un vieux professeur fait le bilan de sa vie lors d'un voyage vers une remise de diplôme, reçoit l'Ours d'or. Il confirme le cinéaste suédois, après Le Septième Sceau, comme l'un des grands auteurs du cinéma européen.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Les_Fraises_sauvages"
+                },
+                {
+                  "id": "fes_05",
+                  "axe": "Festival de Cannes",
+                  "date": 1960,
+                  "titre": "La dolce vita, le scandale couronné",
+                  "description": "Le film de Federico Fellini, qui suit un journaliste mondain dans la Rome nocturne, reçoit la Palme d'or malgré un accueil houleux : l'Église le condamne et son réalisme crû choque l'Italie. Il invente le mot « paparazzi » à partir du nom d'un de ses personnages.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/La_dolce_vita"
+                },
+                {
+                  "id": "fes_06",
+                  "axe": "Festival de Cannes",
+                  "date": 1964,
+                  "titre": "Les Parapluies de Cherbourg, un film entièrement chanté",
+                  "description": "La comédie musicale de Jacques Demy, dont tous les dialogues sont chantés sur la musique de Michel Legrand, reçoit la Palme d'or. Elle lance la carrière de Catherine Deneuve, alors âgée de vingt ans, et montre que le film chanté peut aussi être un drame.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Les_Parapluies_de_Cherbourg"
+                },
+                {
+                  "id": "fes_27",
+                  "axe": "Mostra de Venise",
+                  "date": 1966,
+                  "titre": "La Bataille d'Alger, Lion d'or controversé",
+                  "description": "Le film de Gillo Pontecorvo, qui reconstitue avec des acteurs non professionnels la guerre d'Algérie, reçoit le Lion d'or. Sa sortie en France est retardée de plusieurs années, et son réalisme en fait un modèle d'étude pour des mouvements de guérilla.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/La_Bataille_d'Alger"
+                },
+                {
+                  "id": "fes_07",
+                  "axe": "Festival de Cannes",
+                  "date": 1968,
+                  "titre": "Mai 68 interrompt le Festival",
+                  "description": "Des cinéastes, dont François Truffaut et Jean-Luc Godard, font interrompre le festival en solidarité avec la grève générale qui paralyse la France. La compétition est arrêtée sans qu'aucune Palme d'or ne soit attribuée, un cas rarissime.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Festival_de_Cannes_1968"
+                },
+                {
+                  "id": "fes_28",
+                  "axe": "Mostra de Venise",
+                  "date": 1968,
+                  "titre": "Venise contestée, prix abolis jusqu'en 1980",
+                  "description": "Dans le sillage de Mai 68, le festival est contesté par des cinéastes qui refusent la compétition et le poids des institutions. Les prix sont supprimés à partir de 1969 et ne reviennent qu'en 1980, avec un Lion d'or décerné ex æquo à Gloria et à Atlantic City.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mostra_de_Venise"
+                },
+                {
+                  "id": "fes_45",
+                  "axe": "Berlinale",
+                  "date": 1970,
+                  "titre": "La Berlinale sans palmarès",
+                  "description": "Le film O.K., de Michael Verhoeven, évoque le viol et le meurtre d'une jeune Vietnamienne par des soldats américains, ce qui provoque une crise au sein du jury. Son président, George Stevens, démissionne, et le festival se termine sans qu'aucun Ours d'or ne soit décerné.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Berlinale"
+                },
+                {
+                  "id": "fes_08",
+                  "axe": "Festival de Cannes",
+                  "date": 1975,
+                  "titre": "Chronique des années de braise, le seul film africain primé",
+                  "description": "Le film du réalisateur algérien Mohammed Lakhdar-Hamina, fresque sur la colonisation et la guerre d'indépendance, reçoit la Palme d'or. C'est le seul film africain à l'avoir obtenue, et le premier film arabe.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Chronique_des_ann%C3%A9es_de_braise"
+                },
+                {
+                  "id": "fes_09",
+                  "axe": "Festival de Cannes",
+                  "date": 1976,
+                  "titre": "Taxi Driver, une Palme controversée",
+                  "description": "Le film de Martin Scorsese, portrait d'un chauffeur de taxi new-yorkais insomniaque et violent, reçoit la Palme d'or sous la présidence du dramaturge Tennessee Williams. Son dénouement très violent divise les critiques, avant qu'il ne devienne un classique.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Taxi_Driver"
+                },
+                {
+                  "id": "fes_58",
+                  "axe": "César",
+                  "date": 1976,
+                  "titre": "Première cérémonie des César",
+                  "description": "L'Académie des arts et techniques du cinéma remet les premiers César au Palais des congrès de Paris, sur le modèle des Oscars américains. Le Vieux Fusil, de Robert Enrico, reçoit le premier César du meilleur film.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/C%C3%A9sar_du_cin%C3%A9ma"
+                },
+                {
+                  "id": "fes_10",
+                  "axe": "Festival de Cannes",
+                  "date": 1979,
+                  "titre": "Apocalypse Now, une œuvre toujours en chantier",
+                  "description": "Francis Ford Coppola présente Apocalypse Now comme un « travail en cours » et reçoit la Palme d'or, partagée avec Le Tambour, de Volker Schlöndorff. C'est la seconde Palme de Coppola, cinq ans après Conversation secrète, pour un film au tournage chaotique aux Philippines.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Apocalypse_Now"
+                },
+                {
+                  "id": "fes_29",
+                  "axe": "Mostra de Venise",
+                  "date": 1980,
+                  "titre": "Gloria et Atlantic City, le retour du Lion d'or",
+                  "description": "Après onze ans de pause, le Lion d'or revient avec un ex æquo : Gloria, de John Cassavetes, et Atlantic City, de Louis Malle. Les deux films, thrillers urbains sur des protagonistes vieillissants, marquent la reprise d'un festival désormais tourné vers l'ensemble du cinéma mondial.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Gloria_(film,_1980)"
+                },
+                {
+                  "id": "fes_59",
+                  "axe": "César",
+                  "date": 1981,
+                  "titre": "Le Dernier Métro triomphe",
+                  "description": "Le film de François Truffaut, qui se déroule dans un théâtre parisien sous l'Occupation, remporte dix César, dont ceux du meilleur film et du meilleur réalisateur. Catherine Deneuve et Gérard Depardieu y tiennent les rôles principaux.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Le_Dernier_M%C3%A9tro"
+                },
+                {
+                  "id": "fes_11",
+                  "axe": "Festival de Cannes",
+                  "date": 1984,
+                  "titre": "Paris, Texas, la route de Wim Wenders",
+                  "description": "Le film de Wim Wenders, où un homme errant retrouve son jeune fils puis tente de retrouver la mère, reçoit la Palme d'or. Écrit par Sam Shepard et porté par la guitare de Ry Cooder, il reste l'un des grands films de la route.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Paris,_Texas"
+                },
+                {
+                  "id": "fes_60",
+                  "axe": "César",
+                  "date": 1986,
+                  "titre": "Trois Hommes et un couffin, un succès populaire couronné",
+                  "description": "La comédie de Coline Serreau, où trois célibataires se retrouvent avec un bébé abandonné, reçoit le César du meilleur film après avoir dépassé les dix millions d'entrées. Elle inspirera un remake américain, Trois Hommes et un bébé.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Trois_Hommes_et_un_couffin"
+                },
+                {
+                  "id": "fes_46",
+                  "axe": "Berlinale",
+                  "date": 1988,
+                  "titre": "Le Sorgho rouge, premier film de Zhang Yimou",
+                  "description": "Le premier long métrage de Zhang Yimou, saga d'une famille de producteurs d'alcool de sorgho pendant l'invasion japonaise, reçoit l'Ours d'or. Il est le premier film chinois à l'obtenir et lance la carrière de Gong Li, interprète principale.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Le_Sorgho_rouge_(film)"
+                },
+                {
+                  "id": "fes_30",
+                  "axe": "Mostra de Venise",
+                  "date": 1989,
+                  "titre": "La Cité des douleurs, premier Lion d'or taïwanais",
+                  "description": "Le film de Hou Hsiao-hsien, qui raconte une famille de Taïwan à partir de l'incident du 28 février 1947, reçoit le Lion d'or. Il est le premier film taïwanais à l'obtenir, et l'un des premiers à évoquer ouvertement un épisode longtemps interdit de l'histoire de l'île.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/La_Cit%C3%A9_des_douleurs"
+                },
+                {
+                  "id": "fes_47",
+                  "axe": "Berlinale",
+                  "date": 1989,
+                  "titre": "Rain Man, un Ours d'or hollywoodien",
+                  "description": "Le film de Barry Levinson, où un jeune égoïste découvre son frère autiste, reçoit l'Ours d'or, avant de gagner l'Oscar du meilleur film. Dustin Hoffman y joue un autiste savant, ce qui contribue à faire connaître le trouble au grand public.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Rain_Man"
+                },
+                {
+                  "id": "fes_61",
+                  "axe": "César",
+                  "date": 1991,
+                  "titre": "Cyrano de Bergerac, dix César",
+                  "description": "Le film de Jean-Paul Rappeneau, adapté de la pièce d'Edmond Rostand avec Gérard Depardieu, reçoit dix César, dont celui du meilleur film. Il avait valu à Depardieu le prix d'interprétation à Cannes l'année précédente.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Cyrano_de_Bergerac_(film,_1990)"
+                },
+                {
+                  "id": "fes_12",
+                  "axe": "Festival de Cannes",
+                  "date": 1993,
+                  "titre": "La Leçon de piano, première Palme d'or pour une femme",
+                  "description": "Jane Campion reçoit la Palme d'or pour La Leçon de piano, histoire d'une pianiste muette dans la Nouvelle-Zélande du XIXe siècle, à égalité avec Adieu ma concubine, de Chen Kaige. Elle est la première femme à obtenir cette récompense, qu'aucune autre n'aura avant 2021.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/La_Le%C3%A7on_de_piano_(film)"
+                },
+                {
+                  "id": "fes_13",
+                  "axe": "Festival de Cannes",
+                  "date": 1994,
+                  "titre": "Pulp Fiction, Tarantino sacré",
+                  "description": "Le deuxième film de Quentin Tarantino, aux récits entremêlés de truands de Los Angeles, reçoit la Palme d'or sous la présidence de Clint Eastwood. Il impose un style fait de dialogues bavards, de violence et de références pop, très imité depuis.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Pulp_Fiction"
+                },
+                {
+                  "id": "fes_48",
+                  "axe": "Berlinale",
+                  "date": 1996,
+                  "titre": "Ang Lee, deux fois Ours d'or",
+                  "description": "Ang Lee reçoit l'Ours d'or pour Raison et Sentiments, adapté de Jane Austen avec Emma Thompson et Kate Winslet, trois ans après Garçon d'honneur. Il est le seul réalisateur à avoir obtenu deux fois cette récompense.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Raison_et_Sentiments_(film,_1995)"
+                },
+                {
+                  "id": "fes_62",
+                  "axe": "César",
+                  "date": 1996,
+                  "titre": "La Haine, les banlieues à l'écran",
+                  "description": "Le film de Mathieu Kassovitz, tourné en noir et blanc sur vingt-quatre heures dans une cité de banlieue après une bavure policière, reçoit le César du meilleur film. Il révèle un cinéaste de moins de trente ans et fait de la banlieue un sujet national.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/La_Haine"
+                },
+                {
+                  "id": "fes_31",
+                  "axe": "Mostra de Venise",
+                  "date": 1997,
+                  "titre": "Hana-bi, la consécration de Takeshi Kitano",
+                  "description": "Le film de Takeshi Kitano, polar mélancolique sur un policier qui veille sa femme mourante, reçoit le Lion d'or. Takeshi Kitano, qui le réalise et y joue, a peint lui-même les tableaux montrés à l'écran ; le film le fait connaître en Occident comme cinéaste.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Hana-bi"
+                },
+                {
+                  "id": "fes_63",
+                  "axe": "César",
+                  "date": 2000,
+                  "titre": "Tonie Marshall, première réalisatrice couronnée",
+                  "description": "Tonie Marshall reçoit les César du meilleur film et de la meilleure réalisation pour Vénus Beauté (Institut), comédie sur un institut de beauté parisien. Elle est la première femme à obtenir le prix de la meilleure réalisation.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Tonie_Marshall"
+                },
+                {
+                  "id": "fes_49",
+                  "axe": "Berlinale",
+                  "date": 2002,
+                  "titre": "Le Voyage de Chihiro, un dessin animé couronné",
+                  "description": "Le film d'Hayao Miyazaki, sur une fillette emportée dans le monde des esprits, reçoit l'Ours d'or à égalité avec Bloody Sunday. C'est le premier film d'animation à obtenir cette récompense, avant de remporter l'Oscar du meilleur film d'animation.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Le_Voyage_de_Chihiro"
+                },
+                {
+                  "id": "fes_64",
+                  "axe": "César",
+                  "date": 2002,
+                  "titre": "Amélie Poulain, un conte parisien couronné",
+                  "description": "Le film de Jean-Pierre Jeunet, conte coloré sur une serveuse de Montmartre qui rend ses voisins heureux, reçoit le César du meilleur film. Il connaît un succès mondial et fait du quartier un lieu de pèlerinage.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Le_Fabuleux_Destin_d'Am%C3%A9lie_Poulain"
+                },
+                {
+                  "id": "fes_14",
+                  "axe": "Festival de Cannes",
+                  "date": 2004,
+                  "titre": "Fahrenheit 9/11, un pamphlet couronné",
+                  "description": "Le documentaire de Michael Moore sur George W. Bush et la guerre en Irak reçoit la Palme d'or, la première attribuée à un documentaire depuis 1956. Le jury présidé par Quentin Tarantino est accusé d'avoir fait un choix politique, ce que ses membres démentent.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Fahrenheit_9%2F11"
+                },
+                {
+                  "id": "fes_50",
+                  "axe": "Berlinale",
+                  "date": 2004,
+                  "titre": "Head-On, la vitalité du cinéma germano-turc",
+                  "description": "Le film de Fatih Akın, histoire d'amour violente entre deux Allemands d'origine turque à Hambourg, reçoit l'Ours d'or. Il impose un cinéaste de la deuxième génération d'immigrés et un cinéma qui parle de l'identité turque en Allemagne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Head-On"
+                },
+                {
+                  "id": "fes_32",
+                  "axe": "Mostra de Venise",
+                  "date": 2005,
+                  "titre": "Brokeback Mountain, Lion d'or d'Ang Lee",
+                  "description": "Ang Lee reçoit le Lion d'or pour Le Secret de Brokeback Mountain, histoire d'amour entre deux cow-boys dans le Wyoming. Il en reçoit un second pour Lust, Caution deux ans plus tard, et remportera aussi l'Oscar de la meilleure réalisation.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Le_Secret_de_Brokeback_Mountain"
+                },
+                {
+                  "id": "fes_15",
+                  "axe": "Festival de Cannes",
+                  "date": 2012,
+                  "titre": "Amour, deuxième Palme de Haneke",
+                  "description": "Michael Haneke reçoit sa seconde Palme d'or, trois ans après Le Ruban blanc, pour Amour, sur un couple de vieux musiciens confronté à la maladie. Le film remportera aussi l'Oscar du meilleur film en langue étrangère, et le cinéaste cite le rôle des deux interprètes, Jean-Louis Trintignant et Emmanuelle Riva.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Amour_(film,_2012)"
+                },
+                {
+                  "id": "fes_51",
+                  "axe": "Berlinale",
+                  "date": 2012,
+                  "titre": "César doit mourir, des détenus acteurs",
+                  "description": "Les frères Taviani reçoivent l'Ours d'or pour César doit mourir, tourné dans la prison de Rebibbia, à Rome, où des détenus jouent Jules César de Shakespeare. Le film mêle répétitions et vie carcérale dans un noir et blanc austère.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/C%C3%A9sar_doit_mourir"
+                },
+                {
+                  "id": "fes_65",
+                  "axe": "César",
+                  "date": 2012,
+                  "titre": "The Artist, un film muet couronné aux César",
+                  "description": "The Artist, de Michel Hazanavicius, remporte six César, dont celui du meilleur film, du meilleur réalisateur et du meilleur acteur pour Jean Dujardin. Le film en noir et blanc et sans paroles prépare ainsi son triomphe aux Oscars.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/The_Artist"
+                },
+                {
+                  "id": "fes_16",
+                  "axe": "Festival de Cannes",
+                  "date": 2013,
+                  "titre": "La Vie d'Adèle, une Palme partagée avec ses actrices",
+                  "description": "Sous la présidence de Steven Spielberg, le jury remet exceptionnellement la Palme d'or non seulement à Abdellatif Kechiche, mais aussi aux deux actrices, Adèle Exarchopoulos et Léa Seydoux. Le film, histoire d'amour entre deux jeunes femmes, est aussi controversé pour ses conditions de tournage.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/La_Vie_d'Ad%C3%A8le"
+                },
+                {
+                  "id": "fes_66",
+                  "axe": "César",
+                  "date": 2013,
+                  "titre": "Amour, du César à l'Oscar",
+                  "description": "Amour, de Michael Haneke, reçoit le César du meilleur film, ainsi que ceux de la meilleure actrice pour Emmanuelle Riva et du meilleur acteur pour Jean-Louis Trintignant. Palme d'or à Cannes en 2012, il est ensuite récompensé par l'Oscar du meilleur film en langue étrangère.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Amour_(film,_2012)"
+                },
+                {
+                  "id": "fes_52",
+                  "axe": "Berlinale",
+                  "date": 2015,
+                  "titre": "Taxi Téhéran, l'Ours d'or d'un cinéaste interdit",
+                  "description": "Jafar Panahi reçoit l'Ours d'or pour Taxi Téhéran, film tourné en secret dans un taxi qui sillonne la capitale, alors qu'il lui est interdit de filmer et de quitter l'Iran. Sa nièce reçoit le prix à sa place, ce qui fait de lui un symbole de la liberté de création.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Taxi_T%C3%A9h%C3%A9ran"
+                },
+                {
+                  "id": "fes_53",
+                  "axe": "Berlinale",
+                  "date": 2016,
+                  "titre": "Fuocoammare, Lampedusa à l'écran",
+                  "description": "Le documentaire de Gianfranco Rosi suit un enfant de Lampedusa et le travail d'un médecin qui accueille les migrants débarqués sur l'île, et reçoit l'Ours d'or. Rosi avait déjà reçu le Lion d'or en 2013, ce qui fait de lui un cinéaste rare à avoir gagné ces deux prix.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Fuocoammare,_par-del%C3%A0_Lampedusa"
+                },
+                {
+                  "id": "fes_33",
+                  "axe": "Mostra de Venise",
+                  "date": 2017,
+                  "titre": "La Forme de l'eau, le conte de Guillermo del Toro",
+                  "description": "Le film de Guillermo del Toro, histoire d'amour entre une femme de ménage muette et une créature amphibie dans l'Amérique de la guerre froide, reçoit le Lion d'or. Il obtiendra quatre Oscars, dont celui du meilleur film, six mois plus tard.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/La_Forme_de_l'eau"
+                },
+                {
+                  "id": "fes_34",
+                  "axe": "Mostra de Venise",
+                  "date": 2018,
+                  "titre": "Roma, premier Lion d'or d'une plateforme",
+                  "description": "Le film d'Alfonso Cuarón, chronique en noir et blanc d'une employée de maison dans le Mexico des années 1970, reçoit le Lion d'or. Produit par Netflix, il est le premier film d'une plateforme de streaming à gagner un grand festival, ce qui relance la discussion sur la salle.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Roma_(film,_2018)"
+                },
+                {
+                  "id": "fes_67",
+                  "axe": "César",
+                  "date": 2018,
+                  "titre": "120 Battements par minute, la lutte contre le sida",
+                  "description": "Le film de Robin Campillo, sur les militants d'Act Up Paris dans les années 1990, reçoit le César du meilleur film après le Grand Prix du jury à Cannes. Il rend hommage à un combat collectif contre l'indifférence face à l'épidémie de sida.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/120_battements_par_minute"
+                },
+                {
+                  "id": "fes_17",
+                  "axe": "Festival de Cannes",
+                  "date": 2019,
+                  "titre": "Parasite, première Palme d'or sud-coréenne",
+                  "description": "La satire sociale de Bong Joon-ho remporte la Palme d'or, la première pour un film sud-coréen, à l'unanimité du jury présidé par Alejandro González Iñárritu. Quelques mois plus tard, il recevra quatre Oscars, dont celui du meilleur film.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Parasite_(film,_2019)"
+                },
+                {
+                  "id": "fes_35",
+                  "axe": "Mostra de Venise",
+                  "date": 2019,
+                  "titre": "Joker, un film de super-héros couronné",
+                  "description": "Le film de Todd Phillips, étude d'un humoriste raté qui bascule dans la folie, reçoit le Lion d'or. Il est le premier film inspiré d'une bande dessinée de super-héros à obtenir cette récompense, avant de valoir un Oscar à Joaquin Phoenix.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Joker_(film,_2019)"
+                },
+                {
+                  "id": "fes_18",
+                  "axe": "Festival de Cannes",
+                  "date": 2020,
+                  "titre": "Cannes annulé par la pandémie",
+                  "description": "Pour la première fois depuis sa création, le festival n'a pas lieu à cause de la pandémie de Covid-19, qui interdit les grands rassemblements. Le comité publie à la place une sélection de films « labellisés Cannes 2020 », sans compétition ni Palme d'or.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Festival_de_Cannes_2020"
+                },
+                {
+                  "id": "fes_36",
+                  "axe": "Mostra de Venise",
+                  "date": 2020,
+                  "titre": "Nomadland, un Lion d'or sous masque",
+                  "description": "Le film de Chloé Zhao, sur une veuve du Midwest qui parcourt les États-Unis en camionnette, reçoit le Lion d'or lors d'une édition tenue avec des mesures sanitaires strictes. Il obtiendra ensuite trois Oscars, dont ceux du meilleur film et de la meilleure réalisation.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Nomadland"
+                },
+                {
+                  "id": "fes_54",
+                  "axe": "Berlinale",
+                  "date": 2020,
+                  "titre": "Le diable n'existe pas, Ours d'or de Rasoulof",
+                  "description": "Le film de Mohammad Rasoulof, quatre récits sur la peine de mort en Iran, reçoit l'Ours d'or alors que son auteur, condamné par la justice iranienne, ne peut quitter son pays. C'est sa fille qui reçoit le prix à Berlin.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Le_diable_n'existe_pas"
+                },
+                {
+                  "id": "fes_68",
+                  "axe": "César",
+                  "date": 2020,
+                  "titre": "J'accuse, et la sortie d'Adèle Haenel",
+                  "description": "Roman Polanski reçoit le César de la meilleure réalisation pour J'accuse, alors qu'il est accusé de viols par plusieurs femmes. L'actrice Adèle Haenel quitte la salle, suivie par d'autres, et le comité de l'Académie démissionne peu avant la cérémonie, qui reste comme un moment de rupture pour le cinéma français.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/45e_c%C3%A9r%C3%A9monie_des_C%C3%A9sar"
+                },
+                {
+                  "id": "fes_19",
+                  "axe": "Festival de Cannes",
+                  "date": 2021,
+                  "titre": "Titane, deuxième Palme d'or pour une femme",
+                  "description": "Julia Ducournau reçoit la Palme d'or pour Titane, un film de genre déroutant mêlant tueuse en série et fusion avec la machine. Elle est la deuxième femme à l'obtenir, vingt-huit ans après Jane Campion.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Titane_(film)"
+                },
+                {
+                  "id": "fes_37",
+                  "axe": "Mostra de Venise",
+                  "date": 2021,
+                  "titre": "L'Événement, un Lion d'or adapté d'Annie Ernaux",
+                  "description": "Le film d'Audrey Diwan, adapté du récit d'Annie Ernaux, raconte la quête d'une étudiante pour avorter dans la France de 1963, où c'était un crime. Il reçoit le Lion d'or un an avant que son auteure obtienne le prix Nobel de littérature.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/L'%C3%89v%C3%A9nement_(film)"
+                },
+                {
+                  "id": "fes_38",
+                  "axe": "Mostra de Venise",
+                  "date": 2022,
+                  "titre": "Laura Poitras, un documentaire couronné",
+                  "description": "Le documentaire de Laura Poitras sur la photographe Nan Goldin et son combat contre la famille Sackler, accusée d'avoir alimenté la crise des opioïdes, reçoit le Lion d'or. C'est le deuxième documentaire à obtenir la récompense, après Sacro GRA en 2013.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Toute_la_beaut%C3%A9_et_le_sang_vers%C3%A9"
+                },
+                {
+                  "id": "fes_20",
+                  "axe": "Festival de Cannes",
+                  "date": 2023,
+                  "titre": "Anatomie d'une chute, troisième Palme d'or féminine",
+                  "description": "Justine Triet reçoit la Palme d'or pour Anatomie d'une chute, un film de procès qui interroge la vérité d'un couple. Elle est la troisième femme à la remporter, et son discours critique la politique du gouvernement français envers la culture.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Anatomie_d'une_chute"
+                },
+                {
+                  "id": "fes_39",
+                  "axe": "Mostra de Venise",
+                  "date": 2023,
+                  "titre": "Pauvres Créatures, le conte de Lanthimos",
+                  "description": "Le film de Yórgos Lánthimos, relecture de Frankenstein où une jeune femme ressuscitée découvre le monde, reçoit le Lion d'or. Il vaudra à Emma Stone un second Oscar de la meilleure actrice.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Pauvres_Cr%C3%A9atures"
+                },
+                {
+                  "id": "fes_55",
+                  "axe": "Berlinale",
+                  "date": 2023,
+                  "titre": "Sur l'Adamant, un documentaire dans un hôpital sur la Seine",
+                  "description": "Le documentaire de Nicolas Philibert, tourné dans un centre de jour pour personnes souffrant de troubles psychiques installé sur une péniche amarrée à Paris, reçoit l'Ours d'or. Il est salué pour la douceur de son regard sur des patients que la société met à l'écart.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sur_l'Adamant"
+                },
+                {
+                  "id": "fes_21",
+                  "axe": "Festival de Cannes",
+                  "date": 2024,
+                  "titre": "Anora, le retour d'une Palme américaine",
+                  "description": "Sean Baker reçoit la Palme d'or pour Anora, comédie dramatique sur une danseuse new-yorkaise qui épouse le fils d'un oligarque russe. Elle est la première Palme américaine depuis The Tree of Life, de Terrence Malick, en 2011.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Anora_(film)"
+                },
+                {
+                  "id": "fes_40",
+                  "axe": "Mostra de Venise",
+                  "date": 2024,
+                  "titre": "La Chambre d'à côté, premier film anglophone d'Almodóvar",
+                  "description": "Pedro Almodóvar reçoit le Lion d'or pour La Chambre d'à côté, son premier long métrage en anglais, avec Tilda Swinton et Julianne Moore. Le film suit une femme atteinte d'un cancer qui demande à une amie de l'accompagner dans sa décision de mourir.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/La_Chambre_d'%C3%A0_c%C3%B4t%C3%A9"
+                },
+                {
+                  "id": "fes_56",
+                  "axe": "Berlinale",
+                  "date": 2024,
+                  "titre": "Dahomey, la restitution des trésors royaux",
+                  "description": "Le documentaire de Mati Diop suit le retour de vingt-six trésors royaux du Dahomey, restitués par la France au Bénin en 2021 après avoir été pillés lors de la conquête coloniale de 1892. Il reçoit l'Ours d'or et nourrit le débat sur la restitution des biens culturels.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Dahomey_(film)"
+                },
+                {
+                  "id": "fes_69",
+                  "axe": "César",
+                  "date": 2024,
+                  "titre": "Anatomie d'une chute, le César du meilleur film",
+                  "description": "Anatomie d'une chute, de Justine Triet, reçoit le César du meilleur film après la Palme d'or de Cannes, et Triet celui de la meilleure réalisation, après Tonie Marshall en 2000. Le film, qui interroge la vérité d'un couple à travers un procès, est porté par l'actrice allemande Sandra Hüller.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Anatomie_d'une_chute"
+                },
+                {
+                  "id": "fes_22",
+                  "axe": "Festival de Cannes",
+                  "date": 2025,
+                  "titre": "Jafar Panahi, Palme d'or après l'interdiction de tourner",
+                  "description": "Le cinéaste iranien Jafar Panahi reçoit la Palme d'or pour Un simple accident, qu'il a tourné clandestinement, malgré l'interdiction de filmer prononcée contre lui en 2010 et un séjour en prison en 2022 et 2023. Il est désormais l'un des rares cinéastes à avoir gagné les trois grands festivals.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Un_simple_accident"
+                },
+                {
+                  "id": "fes_41",
+                  "axe": "Mostra de Venise",
+                  "date": 2025,
+                  "titre": "Father Mother Sister Brother, Lion d'or de Jarmusch",
+                  "description": "Jim Jarmusch reçoit le Lion d'or pour Father Mother Sister Brother, film en trois récits sur les liens entre parents et enfants adultes dans trois pays. Il consacre un cinéaste indépendant américain connu pour son style sobre et ses silences.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Father_Mother_Sister_Brother"
+                },
+                {
+                  "id": "fes_23",
+                  "axe": "Festival de Cannes",
+                  "date": 2026,
+                  "titre": "Cristian Mungiu, deuxième Palme d'or",
+                  "description": "Le cinéaste roumain Cristian Mungiu remporte la Palme d'or pour Fjord, dix-neuf ans après avoir reçu la même récompense pour Quatre mois, trois semaines, deux jours. Il rejoint les rares réalisateurs à avoir été couronnés deux fois à Cannes.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Cristian_Mungiu"
+                },
+                {
+                  "id": "fes_57",
+                  "axe": "Berlinale",
+                  "date": 2026,
+                  "titre": "Yellow Letters, Ours d'or d'İlker Çatak",
+                  "description": "Le cinéaste allemand d'origine turque İlker Çatak reçoit l'Ours d'or pour Yellow Letters (Gelbe Briefe). Il était déjà connu pour La Salle des profs, nommé à l'Oscar du meilleur film international en 2024.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/%C4%B0lker_%C3%87atak"
+                },
+                {
+                  "id": "fes_70",
+                  "axe": "César",
+                  "date": 2026,
+                  "titre": "L'Attachement, le César de Carine Tardieu",
+                  "description": "L'Attachement, de Carine Tardieu, reçoit le César du meilleur film lors de la 51e cérémonie. Ce film est adapté d'un roman d'Alexandre Postel et centré sur les liens qui se nouent entre des voisins à la suite d'un drame.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/L'Attachement"
+                }
+              ],
+              "axeOrder": [
+                "Festival de Cannes",
+                "Mostra de Venise",
+                "Berlinale",
+                "César"
+              ],
+              "essentiel": [
+                "fes_01",
+                "fes_03",
+                "fes_04",
+                "fes_09",
+                "fes_12",
+                "fes_15",
+                "fes_18",
+                "fes_24",
+                "fes_28",
+                "fes_29",
+                "fes_38",
+                "fes_44",
+                "fes_46",
+                "fes_55",
+                "fes_56"
               ]
             }
           ]
