@@ -1,0 +1,1438 @@
+{
+  "code": "afriquecentrale",
+  "nom": "Afrique centrale",
+  "pays": [
+    "AO",
+    "BI",
+    "CD",
+    "CF",
+    "CG",
+    "CM",
+    "GA",
+    "GQ",
+    "RW",
+    "ST",
+    "TD"
+  ],
+  "partMaxPays": 0.4,
+  "theme": {
+    "id": "pan_afriquecentrale",
+    "nom": "Grandes figures d'Afrique centrale",
+    "difficulte": "Intermédiaire",
+    "motsCles": [
+      "Afrique centrale",
+      "Afrique équatoriale",
+      "CEEAC",
+      "Afrique noire",
+      "Afrique subsaharienne",
+      "Congo",
+      "Congo belge",
+      "Congo-Kinshasa",
+      "Congo-Brazzaville",
+      "Zaïre",
+      "RDC",
+      "Katanga",
+      "Kongo",
+      "Royaume du Kongo",
+      "Léopoldville",
+      "Kinshasa",
+      "Brazzaville",
+      "Cameroun",
+      "Gabon",
+      "Centrafrique",
+      "République centrafricaine",
+      "Oubangui-Chari",
+      "Tchad",
+      "Angola",
+      "Guinée équatoriale",
+      "Fernando Poo",
+      "São Tomé-et-Príncipe",
+      "Rwanda",
+      "Burundi",
+      "Ruanda-Urundi",
+      "Grands Lacs",
+      "Bassin du Congo",
+      "Françafrique",
+      "Rumba congolaise",
+      "Makossa",
+      "Soukous",
+      "Lumumba",
+      "Mobutu",
+      "Bokassa",
+      "Kimbangu"
+    ]
+  },
+  "axes": [
+    "Chefs d'État et dirigeants",
+    "Guerres et résistances",
+    "Littérature et pensée",
+    "Musique, spectacle et sport"
+  ],
+  "personnages": [
+    {
+      "slug": "lumumba",
+      "nom": "Patrice Lumumba",
+      "titre": "Naissance de Patrice Lumumba",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1925,
+      "pays": "CD",
+      "description": "Patrice Lumumba (1925-1961) est un homme d'État congolais, premier chef du gouvernement du Congo indépendant en juin 1960. L'un des fondateurs du Mouvement national congolais, il prononce le 30 juin 1960 un discours qui dénonce la colonisation belge devant le roi Baudouin. Révoqué en septembre par le président Kasa-Vubu, arrêté puis livré aux sécessionnistes du Katanga, il est assassiné en janvier 1961, et la Belgique reconnaît en 2001 une responsabilité morale dans sa mort.",
+      "wikipedia": "Patrice_Lumumba",
+      "essentiel": true,
+      "classement": "Lumumba, Patrice",
+      "portrait": {
+        "fichier": "Anefo 910-9740 De Congolese2.jpg",
+        "legende": "Patrice Lumumba, photographie de Harry Pot pour l'agence Anefo, lors de la table ronde de Bruxelles (janvier 1960)",
+        "auteur": "Harry Pot (agence Anefo, Nationaal Archief)",
+        "licence": "CC BY-SA 3.0 NL"
+      }
+    },
+    {
+      "slug": "mobutu",
+      "nom": "Mobutu Sese Seko",
+      "titre": "Naissance de Mobutu Sese Seko",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1930,
+      "pays": "CD",
+      "description": "Mobutu Sese Seko (1930-1997) est un militaire et homme d'État congolais, président du Congo, rebaptisé Zaïre en 1971, de 1965 à 1997. Arrivé au pouvoir par un coup d'État, il impose un parti unique, la politique d'« authenticité » qui change les noms des lieux et des personnes, et un régime personnel soutenu par les puissances occidentales dans la guerre froide. Il laisse un pays ruiné et une fortune détournée, avant d'être chassé par la rébellion de Laurent-Désiré Kabila et de mourir en exil au Maroc.",
+      "wikipedia": "Mobutu_Sese_Seko",
+      "essentiel": true,
+      "classement": "Mobutu Sese Seko",
+      "portrait": {
+        "fichier": "Mobutu.jpg",
+        "legende": "Mobutu Sese Seko, photographie de Frank Hall (1983)",
+        "auteur": "Frank Hall",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "kasavubu",
+      "nom": "Joseph Kasa-Vubu",
+      "titre": "Naissance de Joseph Kasa-Vubu",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1917,
+      "pays": "CD",
+      "description": "Joseph Kasa-Vubu (vers 1917-1969) est un homme d'État congolais, premier président de la République du Congo, de 1960 à 1965. Chef de l'Alliance des Bakongo, l'Abako, il défend d'abord l'autonomie de sa région avant l'indépendance, puis gouverne aux côtés de Lumumba, qu'il révoque en septembre 1960. Renversé par le général Mobutu en novembre 1965, il se retire dans le Bas-Congo, où il meurt en 1969.",
+      "wikipedia": "Joseph_Kasa-Vubu",
+      "classement": "Kasa-Vubu, Joseph",
+      "portrait": {
+        "fichier": "Joseph Kasa-Vubu at the Belgo-Congolese Round Table Conference.jpg",
+        "legende": "Joseph Kasa-Vubu à la table ronde de Bruxelles, photographie de l'agence Anefo (janvier 1960)",
+        "auteur": "unknown photographer / Anefo",
+        "licence": "CC0 (domaine public)"
+      }
+    },
+    {
+      "slug": "kabila",
+      "nom": "Laurent-Désiré Kabila",
+      "titre": "Naissance de Laurent-Désiré Kabila",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1939,
+      "pays": "CD",
+      "description": "Laurent-Désiré Kabila (1939-2001) est un chef rebelle et homme d'État congolais, président de la République démocratique du Congo de 1997 à 2001. Maquisard de l'est du pays depuis les années 1960, il prend la tête en 1996 de l'Alliance des forces démocratiques pour la libération du Congo, qui chasse Mobutu avec l'appui du Rwanda et de l'Ouganda. Brouillé avec ses alliés, ce qui déclenche la seconde guerre du Congo en 1998, il est assassiné par un de ses gardes du corps en janvier 2001.",
+      "wikipedia": "Laurent-Désiré_Kabila",
+      "classement": "Kabila, Laurent-Désiré",
+      "portrait": {
+        "fichier": "Visit of Laurent Désiré Kabila, President of the Democratic Republic of Congo, to the EC (cropped2).jpg",
+        "legende": "Laurent-Désiré Kabila, photographie d'Étienne Scholasse pour les Communautés européennes (novembre 1998)",
+        "auteur": "Etienne Scholasse, European Communities",
+        "licence": "CC BY 4.0"
+      }
+    },
+    {
+      "slug": "tshombe",
+      "nom": "Moïse Tshombé",
+      "titre": "Naissance de Moïse Tshombé",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1919,
+      "pays": "CD",
+      "description": "Moïse Tshombé (1919-1969) est un homme politique congolais, président de l'État sécessionniste du Katanga de 1960 à 1963. Soutenu par l'Union minière et par des mercenaires, il proclame la sécession onze jours après l'indépendance, et son État résiste aux Casques bleus jusqu'en 1963. Premier ministre du Congo en 1964-1965, il est ensuite condamné à mort par contumace, arrêté en 1967 après le détournement de son avion vers l'Algérie, et meurt en détention en 1969.",
+      "wikipedia": "Moïse_Tshombé",
+      "classement": "Tshombé, Moïse",
+      "portrait": {
+        "fichier": "26.2.63. Moïse Tshombe arrive à Toulouse (1963) - 53Fi5440 (cropped).jpg",
+        "legende": "Moïse Tshombé à son arrivée à Toulouse, photographie d'André Cros (26 février 1963)",
+        "auteur": "André Cros (1926–2021)",
+        "licence": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "slug": "gizenga",
+      "nom": "Antoine Gizenga",
+      "titre": "Naissance d'Antoine Gizenga",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1925,
+      "pays": "CD",
+      "description": "Antoine Gizenga (1925-2019) est un homme politique congolais, vice-Premier ministre de Patrice Lumumba en 1960. Après l'arrestation de celui-ci, il dirige à Stanleyville un gouvernement rival de celui de Léopoldville, qui se réclame de l'héritage de Lumumba jusqu'en 1962. Revenu en politique après de longues années d'exil et de prison, il est Premier ministre de Joseph Kabila de 2006 à 2008.",
+      "wikipedia": "Antoine_Gizenga",
+      "classement": "Gizenga, Antoine",
+      "portrait": {
+        "fichier": "Antoine Gizenga.jpg",
+        "legende": "Antoine Gizenga, photographie de Radio Okapi (2009)",
+        "auteur": "Radio Okapi",
+        "licence": "CC BY 2.0"
+      }
+    },
+    {
+      "slug": "kimbangu",
+      "nom": "Simon Kimbangu",
+      "titre": "Naissance de Simon Kimbangu",
+      "axe": "Littérature et pensée",
+      "naissance": 1887,
+      "pays": "CD",
+      "description": "Simon Kimbangu (1887-1951) est un prophète congolais, fondateur du kimbanguisme, mouvement chrétien né dans le Bas-Congo. À partir d'avril 1921, il prêche et guérit à Nkamba devant des foules si nombreuses que l'administration belge, inquiète, le fait arrêter et le condamne à mort, peine commuée en détention à perpétuité. Il meurt en prison à Élisabethville en 1951, et l'Église qu'il a inspirée, légalisée en 1959, est devenue l'une des plus importantes Églises indépendantes d'Afrique.",
+      "wikipedia": "Simon_Kimbangu",
+      "essentiel": true,
+      "classement": "Kimbangu, Simon",
+      "portrait": {
+        "fichier": "Simon Kibangu.jpg",
+        "legende": "Simon Kimbangu, photographie d'auteur inconnu (datée de 1919 par Wikimedia Commons)",
+        "auteur": "Unknown author Unknown author",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "farnana",
+      "nom": "Paul Panda Farnana",
+      "titre": "Naissance de Paul Panda Farnana",
+      "axe": "Guerres et résistances",
+      "naissance": 1888,
+      "pays": "CD",
+      "description": "Paul Panda Farnana (1888-1930) est un agronome, militant et panafricaniste congolais, l'une des figures précoces du nationalisme congolais. Diplômé d'horticulture et d'agriculture en Belgique en 1907, il fonde en 1919 l'Union congolaise et participe aux congrès panafricains de 1919 et de 1921. Il revient mourir en 1930 dans son village natal de Nzemba, près de Banana.",
+      "wikipedia": "Paul_Panda_Farnana",
+      "classement": "Farnana, Paul Panda",
+      "portrait": {
+        "fichier": "Paul panda (cropped).jpg",
+        "legende": "Paul Panda Farnana, photographie de Benjamin Couprie (1921)",
+        "largeur": 250,
+        "auteur": "Benjamin Couprie",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "monsengwo",
+      "nom": "Laurent Monsengwo Pasinya",
+      "titre": "Naissance de Laurent Monsengwo Pasinya",
+      "axe": "Littérature et pensée",
+      "naissance": 1939,
+      "pays": "CD",
+      "description": "Laurent Monsengwo Pasinya (1939-2021) est un cardinal et exégète congolais, archevêque de Kisangani puis de Kinshasa. Premier Africain docteur en Écriture sainte de l'Institut biblique pontifical de Rome, il préside en 1991-1992 la Conférence nationale souveraine, qui doit organiser la transition après trente ans de régime Mobutu. Cardinal en 2010 et membre du conseil de cardinaux conseillers du pape François, il appelle en 2017 les dirigeants congolais à respecter l'accord de la Saint-Sylvestre.",
+      "wikipedia": "Laurent_Monsengwo_Pasinya",
+      "classement": "Monsengwo Pasinya, Laurent",
+      "portrait": {
+        "fichier": "Procession of the Precious Blood of Jesus Christ-Bruges; Eretribune 2.JPG",
+        "legende": "Mgr Laurent Monsengwo Pasinya, alors archevêque de Kinshasa, lors de la procession du Saint-Sang à Bruges ; détail d'une photographie de Carolus (mai 2007)",
+        "recadrage": [
+          0.43,
+          0.1,
+          0.73,
+          0.55
+        ],
+        "largeur": 500,
+        "auteur": "Carolus 17:12, 19 May 2007 (UTC)",
+        "licence": "CC BY 2.5"
+      }
+    },
+    {
+      "slug": "anuarite",
+      "nom": "Marie-Clémentine Anuarite Nengapeta",
+      "titre": "Naissance de Marie-Clémentine Anuarite Nengapeta",
+      "axe": "Littérature et pensée",
+      "naissance": 1939,
+      "pays": "CD",
+      "description": "Marie-Clémentine Anuarite Nengapeta (1939-1964) est une religieuse congolaise de la congrégation des Sœurs de la Sainte-Famille. En 1964, pendant la rébellion simba, elle est capturée avec d'autres sœurs et tuée d'un coup de lance après avoir refusé les avances de leur chef. Béatifiée par Jean-Paul II à Kinshasa en 1985, elle est la première Congolaise élevée sur les autels.",
+      "wikipedia": "Marie-Clémentine_Anuarite_Nengapeta",
+      "classement": "Anuarite Nengapeta, Marie-Clémentine",
+      "portrait": {
+        "fichier": "Marie-Clémentine Anuarite Nengapeta.jpg",
+        "legende": "Sœur Marie-Clémentine Anuarite Nengapeta, photographie d'auteur inconnu (milieu du XXe siècle)",
+        "auteur": "Unknown author Unknown author",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "mutombo",
+      "nom": "Dikembe Mutombo",
+      "titre": "Naissance de Dikembe Mutombo",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1966,
+      "pays": "CD",
+      "description": "Dikembe Mutombo (1966-2024) est un joueur de basket-ball congolais, pivot en NBA de 1991 à 2009. Quatre fois meilleur défenseur de la saison, il est célèbre pour ses contres et son geste de l'index agité devant l'adversaire, et il entre au Hall of Fame en 2015. Il consacre une partie de sa fortune à la santé dans son pays, où il ouvre en 2007 à Kinshasa l'hôpital Biamba Marie Mutombo.",
+      "wikipedia": "Dikembe_Mutombo",
+      "classement": "Mutombo, Dikembe",
+      "portrait": {
+        "fichier": "Dikembe Mutombo at the Aspire4Sport Congress in Doha. crop.jpg",
+        "legende": "Dikembe Mutombo au congrès Aspire4Sport de Doha, photographie de Doha Stadium Plus Qatar (2012)",
+        "auteur": "Doha Stadium Plus Qatar",
+        "licence": "CC BY 2.0"
+      }
+    },
+    {
+      "slug": "kalle",
+      "nom": "Grand Kallé",
+      "titre": "Naissance de Grand Kallé",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1930,
+      "pays": "CD",
+      "description": "Grand Kallé (1930-1983) est un chanteur et chef d'orchestre congolais, de son vrai nom Joseph Kabasele, considéré comme le père de la musique congolaise moderne. À la tête de l'African Jazz, il fixe la rumba congolaise mêlée de cha-cha-cha et lance les carrières de Tabu Ley Rochereau, de Docteur Nico et de Manu Dibango. Sa chanson « Indépendance Cha Cha », créée en 1960 à Bruxelles pendant la table ronde sur l'avenir du Congo, devient l'hymne des indépendances africaines.",
+      "wikipedia": "Grand_Kallé",
+      "essentiel": true,
+      "classement": "Grand Kallé",
+      "portrait": {
+        "fichier": "Joseph Kabasele promotional photo.jpg",
+        "legende": "Le Grand Kallé, photographie promotionnelle du label Opika (entre 1949 et 1955)",
+        "auteur": "unknown, Opika Records",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "franco",
+      "nom": "Franco Luambo",
+      "titre": "Naissance de Franco Luambo",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1938,
+      "pays": "CD",
+      "description": "Franco Luambo (1938-1989) est un guitariste, chanteur et compositeur congolais, chef de l'orchestre TP OK Jazz. Surnommé le « sorcier de la guitare » et le « Grand Maître », il laisse un répertoire de plusieurs centaines de chansons qui imposent la rumba congolaise sur tout le continent. Ses textes satiriques lui valent la censure sous les Belges comme sous Mobutu, et il meurt en Belgique en 1989.",
+      "wikipedia": "Franco_Luambo",
+      "essentiel": true,
+      "classement": "Luambo, Franco",
+      "portrait": {
+        "fichier": "Franco Luambo Makiadi.jpg",
+        "legende": "Franco Luambo, photographie promotionnelle du label Ngoma (entre 1963 et 1968)",
+        "auteur": "unknown, Ngoma",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "wemba",
+      "nom": "Papa Wemba",
+      "titre": "Naissance de Papa Wemba",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1949,
+      "pays": "CD",
+      "description": "Papa Wemba (1949-2016) est un chanteur, compositeur et acteur congolais, cofondateur de Zaïko Langa Langa puis du groupe Viva La Musica. Sa voix de ténor et ses élégances de « sapeur », qui font de lui le « roi de la sape », portent la rumba congolaise et le soukous bien au-delà du continent africain. Il meurt en avril 2016 en plein concert, au festival FEMUA d'Abidjan.",
+      "wikipedia": "Papa_Wemba",
+      "essentiel": true,
+      "classement": "Papa Wemba",
+      "portrait": {
+        "fichier": "Papa Wemba.jpg",
+        "legende": "Papa Wemba, photographie de Radio Okapi (2009)",
+        "auteur": "Radio Okapi",
+        "licence": "CC BY 2.0"
+      }
+    },
+    {
+      "slug": "nico",
+      "nom": "Docteur Nico",
+      "titre": "Naissance de Docteur Nico",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1939,
+      "pays": "CD",
+      "description": "Docteur Nico (1939-1985) est un guitariste et compositeur congolais, de son vrai nom Nicolas Kasanda, l'un des pionniers du soukous. Membre de l'African Jazz du Grand Kallé dès l'adolescence, il invente un jeu en arpèges, le finger-picking congolais, qui fait de lui l'un des guitaristes les plus influents d'Afrique. Avec Tabu Ley Rochereau, il fonde en 1963 l'African Fiesta, puis s'éloigne de la scène au milieu des années 1970 et meurt à Bruxelles.",
+      "wikipedia": "Docteur_Nico",
+      "classement": "Docteur Nico",
+      "portrait": {
+        "fichier": "Docteur Nico.jpg",
+        "legende": "Docteur Nico, photographie promotionnelle du label Ngoma (entre 1963 et 1968)",
+        "auteur": "unknown, Ngoma",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "youlou",
+      "nom": "Fulbert Youlou",
+      "titre": "Naissance de Fulbert Youlou",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1917,
+      "pays": "CG",
+      "description": "Fulbert Youlou (1917-1972) est un prêtre devenu homme d'État congolais, premier président de la République du Congo, de 1960 à 1963. Fondateur de l'Union démocratique de défense des intérêts africains, maire de Brazzaville en 1956, il gouverne de façon de plus en plus autoritaire et impose un parti unique en 1963. Chassé du pouvoir par les « Trois Glorieuses », soulèvement populaire d'août 1963, il meurt en exil à Madrid en 1972.",
+      "wikipedia": "Fulbert_Youlou",
+      "classement": "Youlou, Fulbert",
+      "portrait": {
+        "fichier": "Fulbert Youlou (cropped).JPG",
+        "legende": "Fulbert Youlou, portrait officiel du ministère de l'Information de la République du Congo (vers 1959)",
+        "auteur": "Republic of the Congo, Ministry of Information",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "matswa",
+      "nom": "André Matswa",
+      "titre": "Naissance d'André Matswa",
+      "axe": "Guerres et résistances",
+      "naissance": 1899,
+      "pays": "CG",
+      "description": "André Matswa (1899-1942) est un militant congolais, fondateur du mouvement amicaliste. Installé à Paris dans les années 1920, il crée en 1926 l'Amicale des originaires de l'Afrique-Équatoriale française, qui réclame l'égalité des droits pour les Africains. Condamné aux travaux forcés par l'administration coloniale, il meurt en détention en 1942, et ses partisans, les matsouanistes, attendent longtemps son retour.",
+      "wikipedia": "André_Matswa",
+      "essentiel": true,
+      "classement": "Matswa, André",
+      "portrait": {
+        "fichier": "André Matswa.jpg",
+        "legende": "André Matswa, photographie des Archives nationales d'outre-mer (1935)",
+        "auteur": "Archives Nationales d'Outre Mer",
+        "licence": "CC0 (domaine public)"
+      }
+    },
+    {
+      "slug": "lissouba",
+      "nom": "Pascal Lissouba",
+      "titre": "Naissance de Pascal Lissouba",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1931,
+      "pays": "CG",
+      "description": "Pascal Lissouba (1931-2020) est un agronome et homme d'État congolais, Premier ministre de 1963 à 1966, puis premier président élu du Congo pluraliste, de 1992 à 1997. Son mandat s'achève dans la guerre civile de 1997, qui ramène au pouvoir Denis Sassou-Nguesso. Chassé de Brazzaville, il vit ensuite en exil jusqu'à sa mort en 2020.",
+      "wikipedia": "Pascal_Lissouba",
+      "classement": "Lissouba, Pascal",
+      "portrait": {
+        "fichier": "Visit of Pascal Lissouba, President of Congo, to the EC (cropped).jpg",
+        "legende": "Pascal Lissouba, photographie de Thierry Dauwe pour la Commission européenne (mai 1995)",
+        "auteur": "Thierry Dauwe, European Commission",
+        "licence": "CC BY 4.0"
+      }
+    },
+    {
+      "slug": "opangault",
+      "nom": "Jacques Opangault",
+      "titre": "Naissance de Jacques Opangault",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1907,
+      "pays": "CG",
+      "description": "Jacques Opangault (1907-1978) est un homme politique congolais, fondateur du Mouvement socialiste africain. Chef du gouvernement du Moyen-Congo en 1957, il est supplanté en novembre 1958 par Fulbert Youlou, dont la rivalité marque les débuts politiques du pays. Arrêté en 1959 après des émeutes, il devient ensuite ministre de Youlou, puis disparaît de la vie politique avant sa mort en 1978.",
+      "wikipedia": "Jacques_Opangault",
+      "classement": "Opangault, Jacques",
+      "portrait": {
+        "fichier": "Jacques Opangault 4111979.JPG",
+        "legende": "Jacques Opangault, photographie de la Bibliothèque du Congrès (collection de la Section africaine)",
+        "auteur": "Library of Congress, African Section, pamphlet collection",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "lopes",
+      "nom": "Henri Lopes",
+      "titre": "Naissance d'Henri Lopes",
+      "axe": "Littérature et pensée",
+      "naissance": 1937,
+      "pays": "CG",
+      "description": "Henri Lopes (1937-2023) est un écrivain et homme politique congolais, Premier ministre de 1973 à 1975. Auteur de Tribaliques en 1971 et du Pleurer-rire en 1982, satire d'un dictateur africain, il mêle l'humour à la critique du pouvoir et au métissage de la langue. Ambassadeur du Congo en France pendant de longues années, il meurt à Suresnes en 2023.",
+      "wikipedia": "Henri_Lopes",
+      "classement": "Lopes, Henri",
+      "portrait": {
+        "fichier": "Henri Lopes.jpg",
+        "legende": "Henri Lopes, photographie d'Yrial (2012)",
+        "auteur": "Yrial",
+        "licence": "CC BY-SA 3.0"
+      }
+    },
+    {
+      "slug": "pamelo",
+      "nom": "Pamelo Mounk'a",
+      "titre": "Naissance de Pamelo Mounk'a",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1945,
+      "pays": "CG",
+      "description": "Pamelo Mounk'a (1945-1996) est un chanteur, compositeur et arrangeur congolais, de son vrai nom André Bemba-Bingui, grande figure de la musique de Brazzaville. Né dans le quartier de Poto-Poto, passé par la chorale de la cathédrale et par les bars de la ville, il contribue au développement de la rumba congolaise, de la musique afro-cubaine et du soukous. Il meurt à Brazzaville en 1996.",
+      "wikipedia": "Pamélo_Mounka",
+      "classement": "Pamelo Mounk'a",
+      "portrait": {
+        "fichier": "Pamelo Mounk'a - Foire de Brazzaville (1973).jpg",
+        "legende": "Pamelo Mounk'a à la Foire de Brazzaville, photographie d'auteur inconnu (1973)",
+        "auteur": "Unknown author Unknown author",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "umnyobe",
+      "nom": "Ruben Um Nyobè",
+      "titre": "Naissance de Ruben Um Nyobè",
+      "axe": "Guerres et résistances",
+      "naissance": 1913,
+      "pays": "CM",
+      "description": "Ruben Um Nyobè (1913-1958) est un militant indépendantiste camerounais, secrétaire général de l'Union des populations du Cameroun à partir de 1948. Surnommé « Mpodol », le porte-parole, il plaide devant l'ONU en 1952 pour la réunification et l'indépendance du pays, puis prend le maquis quand l'UPC est interdite en 1955. Il est tué par l'armée française en septembre 1958, et sa mémoire reste longtemps proscrite au Cameroun.",
+      "wikipedia": "Ruben_Um_Nyobe",
+      "essentiel": true,
+      "classement": "Um Nyobè, Ruben",
+      "portrait": {
+        "fichier": "Ruben Um Nyobe.jpg",
+        "legende": "Ruben Um Nyobè, photographie officielle camerounaise (avant 1958)",
+        "auteur": "Official Cameroonian photograph",
+        "licence": "CC0 (domaine public)"
+      }
+    },
+    {
+      "slug": "ahidjo",
+      "nom": "Ahmadou Ahidjo",
+      "titre": "Naissance d'Ahmadou Ahidjo",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1924,
+      "pays": "CM",
+      "description": "Ahmadou Ahidjo (1924-1989) est un homme d'État camerounais, premier président de la République du Cameroun, de 1960 à 1982. Il impose un parti unique en 1966, puis un État unitaire en 1972, et gouverne par un pouvoir autoritaire qui écrase la rébellion de l'UPC. Il démissionne en 1982 au profit de Paul Biya, avec lequel il se brouille, et meurt en exil à Dakar en 1989.",
+      "wikipedia": "Ahmadou_Ahidjo",
+      "essentiel": true,
+      "classement": "Ahidjo, Ahmadou",
+      "portrait": {
+        "fichier": "AhmadouAhidjoNL1979-5.jpg",
+        "legende": "Ahmadou Ahidjo, photographie de 1979 attribuée à Rob Croes pour l'agence Anefo",
+        "auteur": "possibly Rob C. Croes (ANEFO)",
+        "licence": "CC BY 4.0"
+      }
+    },
+    {
+      "slug": "dmb",
+      "nom": "Rudolf Douala Manga Bell",
+      "titre": "Naissance de Rudolf Douala Manga Bell",
+      "axe": "Guerres et résistances",
+      "naissance": 1873,
+      "pays": "CM",
+      "description": "Rudolf Douala Manga Bell (1873-1914) est le roi du clan Bell du peuple douala, au Cameroun, pendant la période coloniale allemande. Éduqué en Allemagne, il prend la tête de la résistance contre l'expulsion des Douala de leurs terres ancestrales, qu'il défend par des pétitions jusqu'à Berlin. Accusé de trahison au début de la Première Guerre mondiale, il est pendu par les Allemands à Douala le 8 août 1914.",
+      "wikipedia": "Rudolf_Douala_Manga_Bell",
+      "classement": "Douala Manga Bell, Rudolf",
+      "portrait": {
+        "fichier": "Rudolf Manga.jpg",
+        "legende": "Rudolf Douala Manga Bell, photographie d'auteur inconnu (vers 1902)",
+        "auteur": "Unknown author Unknown author",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "mbida",
+      "nom": "André-Marie Mbida",
+      "titre": "Naissance d'André-Marie Mbida",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1914,
+      "pays": "CM",
+      "description": "André-Marie Mbida (1914-1980) est un homme d'État camerounais, premier Camerounais élu député à l'Assemblée nationale française et premier Premier ministre du Cameroun autonome, de 1957 à 1958. Opposé à l'UPC et à l'indépendance immédiate, il gouverne sous la tutelle de la France, qui l'écarte du pouvoir en février 1958. Devenu opposant à Ahidjo, il est emprisonné de 1962 à 1965 et meurt à Paris en 1980.",
+      "wikipedia": "André-Marie_Mbida",
+      "classement": "Mbida, André-Marie",
+      "portrait": {
+        "fichier": "Mbida discours crop.jpg",
+        "legende": "André-Marie Mbida prononçant un discours, photographie du Parti des démocrates camerounais (1957)",
+        "auteur": "Parti des Démocrates Camerounais (PDC)",
+        "licence": "CC BY-SA 3.0"
+      }
+    },
+    {
+      "slug": "foncha",
+      "nom": "John Ngu Foncha",
+      "titre": "Naissance de John Ngu Foncha",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1916,
+      "pays": "CM",
+      "description": "John Ngu Foncha (1916-1999) est un homme d'État camerounais, Premier ministre du Cameroun méridional britannique de 1959 à 1961. Il obtient par le plébiscite de 1961 le rattachement de sa région à la République du Cameroun, au sein d'une fédération dont il devient vice-président. Marginalisé quand le président Ahidjo supprime la fédération en 1972, il rompt avec le régime en 1990 en dénonçant le sort réservé aux anglophones.",
+      "wikipedia": "John_Ngu_Foncha",
+      "classement": "Foncha, John Ngu",
+      "portrait": {
+        "fichier": "John Ngu Foncha (1964).jpg",
+        "legende": "John Ngu Foncha, photographie de Harry Pot pour l'agence Anefo (mai 1964)",
+        "auteur": "Harry Pot (1929–1996)",
+        "licence": "CC BY-SA 3.0 NL"
+      }
+    },
+    {
+      "slug": "mongobeti",
+      "nom": "Mongo Beti",
+      "titre": "Naissance de Mongo Beti",
+      "axe": "Littérature et pensée",
+      "naissance": 1932,
+      "pays": "CM",
+      "description": "Mongo Beti (1932-2001) est un écrivain et essayiste camerounais, de son vrai nom Alexandre Biyidi Awala, auteur du Pauvre Christ de Bomba en 1956 et de Mission terminée en 1957. Ses romans dénoncent avec ironie la colonisation et la complicité des missionnaires, et son essai Main basse sur le Cameroun, censuré en France en 1972, attaque le régime d'Ahidjo. Exilé en France pendant plus de trente ans, il rentre au Cameroun en 1991, où il ouvre une librairie à Yaoundé avant de mourir à Douala.",
+      "wikipedia": "Mongo_Beti",
+      "essentiel": true,
+      "classement": "Beti, Mongo",
+      "portrait": {
+        "fichier": "Mongo Beti.jpg",
+        "legende": "Mongo Beti (1932-2001), portrait exposé, photographie de Stollama (2024)",
+        "nomVisible": true,
+        "auteur": "Stollama",
+        "licence": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "slug": "oyono",
+      "nom": "Ferdinand Oyono",
+      "titre": "Naissance de Ferdinand Oyono",
+      "axe": "Littérature et pensée",
+      "naissance": 1929,
+      "pays": "CM",
+      "description": "Ferdinand Oyono (1929-2010) est un écrivain, diplomate et homme politique camerounais. Il publie en 1956 Une vie de boy et Le Vieux Nègre et la médaille, deux romans satiriques qui montrent l'absurdité du système colonial à travers le regard d'un domestique et d'un vieux paysan, puis Chemin d'Europe en 1960. Devenu ambassadeur puis ministre d'État chargé de la Culture, il meurt à Yaoundé en 2010.",
+      "wikipedia": "Ferdinand_Oyono",
+      "classement": "Oyono, Ferdinand",
+      "portrait": {
+        "fichier": "Ferdinand Léopold Oyono, Cameroonian Minister of State in charge of Culture - 2004 (cropped).jpg",
+        "legende": "Ferdinand Oyono, ministre d'État chargé de la Culture, photographie de Christian Lambiotte pour les Communautés européennes (2004)",
+        "auteur": "Christian Lambiotte, Communautés européennes",
+        "licence": "CC BY 4.0"
+      }
+    },
+    {
+      "slug": "lapiro",
+      "nom": "Lapiro de Mbanga",
+      "titre": "Naissance de Lapiro de Mbanga",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1957,
+      "pays": "CM",
+      "description": "Lapiro de Mbanga (1957-2014) est un chanteur camerounais de la contestation sociale, de son vrai nom Lambo Pierre Roger. Il chante en pidgin-english les difficultés des petites gens, notamment dans Mimba We, et se moque du pouvoir de Paul Biya dans Constitution constipée. Condamné à trois ans de prison après les émeutes de 2008, il s'exile ensuite aux États-Unis, où il meurt en 2014.",
+      "wikipedia": "Lapiro_de_Mbanga",
+      "classement": "Lapiro de Mbanga",
+      "portrait": {
+        "fichier": "Lapiro De Mbanga.jpg",
+        "legende": "Lapiro de Mbanga, photographie de PatriceVigier (2011)",
+        "auteur": "PatriceVigier",
+        "licence": "CC BY 4.0"
+      }
+    },
+    {
+      "slug": "mba",
+      "nom": "Léon M'ba",
+      "titre": "Naissance de Léon M'ba",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1902,
+      "pays": "GA",
+      "description": "Léon M'ba (1902-1967) est un homme d'État gabonais, premier président de la République gabonaise, de 1961 à sa mort. Maire de Libreville en 1956, puis chef du gouvernement avant l'indépendance de 1960, il gouverne sous la forte influence de la France. Renversé par un coup d'État militaire en février 1964, il est rétabli deux jours plus tard par l'intervention de parachutistes français.",
+      "wikipedia": "Léon_Mba",
+      "classement": "M'ba, Léon",
+      "portrait": {
+        "fichier": "Léon M'ba 1964.jpg",
+        "legende": "Léon M'ba, photographie d'auteur inconnu (avril 1964)",
+        "auteur": "Unknown author Unknown author",
+        "licence": "CC BY-SA 3.0 NL"
+      }
+    },
+    {
+      "slug": "bongo",
+      "nom": "Omar Bongo Ondimba",
+      "titre": "Naissance d'Omar Bongo Ondimba",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1935,
+      "pays": "GA",
+      "description": "Omar Bongo Ondimba (1935-2009) est un homme d'État gabonais, né Albert-Bernard Bongo, président de la République de 1967 à sa mort, soit quarante et un ans de pouvoir. Converti à l'islam en 1973, il règne par le parti unique à partir de 1968, puis par un multipartisme encadré après 1990, grâce à la rente pétrolière et à ses liens étroits avec la France. Il laisse un pays riche en ressources mais très inégalitaire, et une fortune dont l'origine fait l'objet de procédures judiciaires en France.",
+      "wikipedia": "Omar_Bongo",
+      "essentiel": true,
+      "classement": "Bongo, Omar",
+      "portrait": {
+        "fichier": "Omar Bongo - 2005 (cropped).jpg",
+        "legende": "Omar Bongo Ondimba, photographie de Georges Boulougouris et d'Emma Udwin (2005)",
+        "auteur": "Georges Boulougouris, Emma Udwin",
+        "licence": "CC BY 4.0"
+      }
+    },
+    {
+      "slug": "aubame",
+      "nom": "Jean-Hilaire Aubame",
+      "titre": "Naissance de Jean-Hilaire Aubame",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1912,
+      "pays": "GA",
+      "description": "Jean-Hilaire Aubame (1912-1989) est un homme d'État gabonais, député du Gabon à l'Assemblée nationale française de 1946 à 1958. Principal rival de Léon M'ba, avec qui il gouverne un temps avant de rompre, il est désigné chef du gouvernement provisoire par les militaires qui renversent M'ba en février 1964. Condamné aux travaux forcés après le retour de M'ba, puis amnistié en 1972, il meurt à Libreville en 1989.",
+      "wikipedia": "Jean-Hilaire_Aubame",
+      "classement": "Aubame, Jean-Hilaire",
+      "portrait": {
+        "fichier": "Aubame.jpg",
+        "legende": "Jean-Hilaire Aubame, photographie de Fumey (1962)",
+        "auteur": "Fumey",
+        "licence": "CC BY-SA 3.0 DE"
+      }
+    },
+    {
+      "slug": "angelerawiri",
+      "nom": "Angèle Rawiri",
+      "titre": "Naissance d'Angèle Rawiri",
+      "axe": "Littérature et pensée",
+      "naissance": 1954,
+      "pays": "GA",
+      "description": "Angèle Rawiri (1954-2010) est une romancière gabonaise, l'une des premières femmes de lettres de son pays. Auteure d'Elonga en 1980, de G'amèrakano au carrefour en 1983 et de Fureurs et cris de femmes en 1989, elle décrit la condition des femmes écartelées entre la tradition et la modernité. Elle meurt à Puteaux en 2010.",
+      "wikipedia": "Angèle_Rawiri",
+      "classement": "Rawiri, Angèle",
+      "portrait": {
+        "fichier": "Angèle Rawiri.jpg",
+        "legende": "Angèle Rawiri, tirage photographique mis en ligne par ButterflyEAS86 (2024)",
+        "recadrage": [
+          0.15,
+          0.0,
+          0.75,
+          0.45
+        ],
+        "largeur": 500,
+        "auteur": "ButterflyEAS86",
+        "licence": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "slug": "boganda",
+      "nom": "Barthélemy Boganda",
+      "titre": "Naissance de Barthélemy Boganda",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1910,
+      "pays": "CF",
+      "description": "Barthélemy Boganda (1910-1959) est un prêtre catholique devenu homme d'État centrafricain, fondateur de la République centrafricaine. Premier député de l'Oubangui-Chari à l'Assemblée nationale française en 1946, il crée en 1949 le Mouvement d'évolution sociale de l'Afrique noire et rêve d'unir l'Afrique équatoriale dans des « États-Unis de l'Afrique latine ». Chef du premier gouvernement de la République en décembre 1958, il meurt en mars 1959 dans l'accident, jamais élucidé, de son avion.",
+      "wikipedia": "Barthélemy_Boganda",
+      "essentiel": true,
+      "classement": "Boganda, Barthélemy",
+      "portrait": {
+        "fichier": "Barthélemy Boganda in 1958.jpg",
+        "legende": "Barthélemy Boganda, photographie publiée dans Présence congolaise (1958)",
+        "auteur": "unknown, Présence Congolaise",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "dacko",
+      "nom": "David Dacko",
+      "titre": "Naissance de David Dacko",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1930,
+      "pays": "CF",
+      "description": "David Dacko (1930-2003) est un homme d'État centrafricain, premier président de la République centrafricaine, de 1960 à 1966. Neveu de Barthélemy Boganda, il instaure un parti unique avant d'être renversé le 1er janvier 1966 par son cousin Jean-Bedel Bokassa. Rétabli au pouvoir par la France en 1979, après la chute de l'empire de Bokassa, il est de nouveau écarté en 1981 par le général Kolingba.",
+      "wikipedia": "David_Dacko",
+      "classement": "Dacko, David",
+      "portrait": {
+        "fichier": "President-D-Dacko stamp.jpg",
+        "legende": "David Dacko, timbre de la République centrafricaine (1962)",
+        "auteur": "uncredited",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "bokassa",
+      "nom": "Jean-Bedel Bokassa",
+      "titre": "Naissance de Jean-Bedel Bokassa",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1921,
+      "pays": "CF",
+      "description": "Jean-Bedel Bokassa (1921-1996) est un officier et dictateur centrafricain, au pouvoir de 1966 à 1979. Après avoir renversé David Dacko, il se fait sacrer empereur en décembre 1977 dans une cérémonie fastueuse, tandis que son régime pratique la terreur, comme lors du massacre d'écoliers de 1979. Chassé par une intervention militaire française, il est condamné à mort par contumace en 1980, puis jugé à son retour d'exil en 1987, puis libéré en 1993, trois ans avant sa mort.",
+      "wikipedia": "Jean-Bedel_Bokassa",
+      "essentiel": true,
+      "classement": "Bokassa, Jean-Bedel",
+      "portrait": {
+        "fichier": "Bokassa colored.png",
+        "legende": "Jean-Bedel Bokassa en uniforme ; détail colorisé d'une photographie de sa visite en Roumanie (juillet 1970)",
+        "auteur": "Auteur inconnu (colorisation d'une photographie de 1970)",
+        "licence": "CC BY-SA 3.0"
+      }
+    },
+    {
+      "slug": "patasse",
+      "nom": "Ange-Félix Patassé",
+      "titre": "Naissance d'Ange-Félix Patassé",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1937,
+      "pays": "CF",
+      "description": "Ange-Félix Patassé (1937-2011) est un homme d'État centrafricain, Premier ministre de Bokassa de 1976 à 1978, puis premier président élu de la République centrafricaine pluraliste, de 1993 à 2003. Son mandat est marqué par les mutineries de 1996-1997, les interventions de forces étrangères et les tentatives de coup d'État. Renversé en mars 2003 par le général François Bozizé, il meurt en 2011 à Douala.",
+      "wikipedia": "Ange-Félix_Patassé",
+      "classement": "Patassé, Ange-Félix",
+      "portrait": {
+        "fichier": "Président Ange Felix Patassé.jpg",
+        "legende": "Ange-Félix Patassé, timbre de la République centrafricaine (1994)",
+        "auteur": "Daniel236",
+        "licence": "CC0 (domaine public)"
+      }
+    },
+    {
+      "slug": "domitien",
+      "nom": "Élisabeth Domitien",
+      "titre": "Naissance d'Élisabeth Domitien",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1925,
+      "pays": "CF",
+      "description": "Élisabeth Domitien (1925-2005) est une femme d'État centrafricaine, la première femme Première ministre de l'histoire de l'Afrique, de 1975 à 1976. Dirigeante de la branche féminine du parti unique, elle est nommée par Bokassa, qui la révoque en avril 1976. Elle meurt à Bimbo, près de Bangui, en 2005.",
+      "wikipedia": "Élisabeth_Domitien",
+      "classement": "Domitien, Élisabeth",
+      "portrait": {
+        "fichier": "Elisabeth Domitien.jpg",
+        "legende": "Élisabeth Domitien, photographie d'auteur inconnu (vers 1974)",
+        "auteur": "Unknown author Unknown author",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "tombalbaye",
+      "nom": "François Tombalbaye",
+      "titre": "Naissance de François Tombalbaye",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1918,
+      "pays": "TD",
+      "description": "François Tombalbaye (1918-1975) est un homme d'État tchadien, premier président de la République du Tchad, de 1960 à 1975. Instituteur et syndicaliste devenu chef du Parti progressiste tchadien, il impose un régime de parti unique dans lequel le Sud domine un Nord musulman qui se soulève : la rébellion du Front de libération nationale du Tchad naît en 1966. Il est tué en avril 1975 dans un coup d'État militaire à N'Djamena.",
+      "wikipedia": "François_Tombalbaye",
+      "classement": "Tombalbaye, François",
+      "portrait": {
+        "fichier": "François Tombalbaye p1959.jpg",
+        "legende": "François Tombalbaye, photographie de Moshe Pridan (1959)",
+        "auteur": "Moshe Pridan",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "habre",
+      "nom": "Hissène Habré",
+      "titre": "Naissance de Hissène Habré",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1942,
+      "pays": "TD",
+      "description": "Hissène Habré (1942-2021) est un chef rebelle et homme d'État tchadien, président de la République de 1982 à 1990. Il chasse Goukouni Oueddei de N'Djamena avec l'appui de la France et des États-Unis, puis repousse en 1987 l'armée libyenne dans la « guerre des Toyota », mais sa police politique pratique la torture et les exécutions à grande échelle. Renversé par Idriss Déby en 1990, exilé à Dakar, il est condamné en 2016 à la prison à perpétuité par un tribunal africain spécial.",
+      "wikipedia": "Hissène_Habré",
+      "essentiel": true,
+      "classement": "Habré, Hissène",
+      "portrait": {
+        "fichier": "President Hissène Habré of Chad.jpg",
+        "legende": "Hissène Habré en visite à la Maison-Blanche, photographie officielle américaine (juin 1987)",
+        "auteur": "Maison-Blanche (Reagan White House Photographs)",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "deby",
+      "nom": "Idriss Déby",
+      "titre": "Naissance d'Idriss Déby",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1952,
+      "pays": "TD",
+      "description": "Idriss Déby (1952-2021) est un officier et homme d'État tchadien, président de la République de 1990 à sa mort. Ancien chef d'état-major de Hissène Habré, il le renverse en décembre 1990, instaure le multipartisme et reste au pouvoir pendant trente ans en s'appuyant sur l'armée et sur la rente pétrolière. Il est tué en avril 2021 lors de combats contre des rebelles dans le nord du pays, au lendemain de l'annonce de sa réélection.",
+      "wikipedia": "Idriss_Déby",
+      "classement": "Déby, Idriss",
+      "portrait": {
+        "fichier": "Idriss Déby at the White House in 2014.jpg",
+        "legende": "Idriss Déby à la Maison-Blanche, photographie d'Amanda Lucidon (août 2014)",
+        "auteur": "Office of the White House (Amanda Lucidon)",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "kimpavita",
+      "nom": "Kimpa Vita",
+      "titre": "Naissance de Kimpa Vita",
+      "axe": "Guerres et résistances",
+      "naissance": 1684,
+      "pays": "AO",
+      "description": "Kimpa Vita (1684-1706) est une prophétesse du royaume du Kongo, baptisée Dona Béatrice, née à Mbanza-Kongo, dans l'actuel Angola. Se disant possédée par l'esprit de saint Antoine, elle prêche la réconciliation du royaume divisé par des guerres civiles et dénonce l'emprise des missionnaires européens, ce qui lui vaut des milliers de disciples. Capturée sur ordre du roi Pedro IV, elle est brûlée comme hérétique en 1706 et reste un symbole de la résistance culturelle du Kongo.",
+      "wikipedia": "Kimpa_Vita",
+      "essentiel": true,
+      "classement": "Kimpa Vita",
+      "portrait": {
+        "fichier": "Kimpa Vita ´s statue in Angola.jpg",
+        "legende": "Statue de Kimpa Vita, en Angola, photographie de Somebody040404 (2020) ; aucun portrait d'elle ne nous est parvenu",
+        "auteur": "Somebody040404",
+        "licence": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "slug": "mandume",
+      "nom": "Mandume ya Ndemufayo",
+      "titre": "Naissance de Mandume ya Ndemufayo",
+      "axe": "Guerres et résistances",
+      "naissance": 1894,
+      "pays": "AO",
+      "description": "Mandume ya Ndemufayo (1894-1917) est le dernier roi des Kwanyama, peuple ovambo du sud de l'Angola et du nord de la Namibie. Monté sur le trône vers 1911, il refuse de se soumettre aux Portugais comme aux Sud-Africains, qui se disputent son territoire. Il est tué en février 1917 dans un affrontement avec des troupes sud-africaines, à vingt-deux ans environ.",
+      "wikipedia": "Mandume_ya_Ndemufayo",
+      "classement": "Mandume ya Ndemufayo",
+      "portrait": {
+        "fichier": "Mandume ya Ndemufayo (before 1916).png",
+        "legende": "Mandume ya Ndemufayo, photographie d'auteur inconnu (avant 1916)",
+        "largeur": 330,
+        "auteur": "Unknown author Unknown author",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "neto",
+      "nom": "Agostinho Neto",
+      "titre": "Naissance d'Agostinho Neto",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1922,
+      "pays": "AO",
+      "description": "Agostinho Neto (1922-1979) est un médecin, poète et homme d'État angolais, président du Mouvement populaire de libération de l'Angola et premier président de la République populaire d'Angola en 1975. Auteur du recueil Sagrada Esperança, publié en 1974, il est emprisonné à plusieurs reprises par la police portugaise avant d'entrer dans la lutte armée. Soutenu par Cuba et l'Union soviétique pendant la guerre civile qui suit l'indépendance, il meurt à Moscou en 1979.",
+      "wikipedia": "Agostinho_Neto",
+      "essentiel": true,
+      "classement": "Neto, Agostinho",
+      "portrait": {
+        "fichier": "President MPLA, heer Neto door Den Uyl ontvangen premier Den Uyl en A Neto (r), Bestanddeelnr 927-8518 (cropped).jpg",
+        "legende": "Agostinho Neto, photographie de Rob Mieremet pour l'agence Anefo (avril 1975)",
+        "auteur": "Rob Mieremet / Anefo",
+        "licence": "CC0 (domaine public)"
+      }
+    },
+    {
+      "slug": "savimbi",
+      "nom": "Jonas Savimbi",
+      "titre": "Naissance de Jonas Savimbi",
+      "axe": "Guerres et résistances",
+      "naissance": 1934,
+      "pays": "AO",
+      "description": "Jonas Savimbi (1934-2002) est un chef rebelle angolais, fondateur de l'Union nationale pour l'indépendance totale de l'Angola en 1966. Après avoir combattu les Portugais, il mène contre le gouvernement du MPLA une guerre civile de vingt-sept ans, soutenue tour à tour par l'Afrique du Sud et les États-Unis, qui ravage le pays. Il est tué au combat en février 2002, ce qui permet la signature de la paix.",
+      "wikipedia": "Jonas_Savimbi",
+      "classement": "Savimbi, Jonas",
+      "portrait": {
+        "fichier": "Jonas Savimbi.jpg",
+        "legende": "Jonas Savimbi, photographie d'Ernmuhl (1989)",
+        "auteur": "Ernmuhl",
+        "licence": "CC BY-SA 3.0"
+      }
+    },
+    {
+      "slug": "dossantos",
+      "nom": "José Eduardo dos Santos",
+      "titre": "Naissance de José Eduardo dos Santos",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1942,
+      "pays": "AO",
+      "description": "José Eduardo dos Santos (1942-2022) est un homme d'État angolais, président de la République de 1979 à 2017. Successeur d'Agostinho Neto, il gouverne pendant la guerre civile, puis dirige la reconstruction du pays après la paix de 2002, grâce à la rente pétrolière. Son long règne est marqué par un fort autoritarisme et par l'enrichissement de son entourage, et il meurt à Barcelone en 2022.",
+      "wikipedia": "José_Eduardo_dos_Santos",
+      "classement": "Santos, José Eduardo dos",
+      "portrait": {
+        "fichier": "José Eduardo dos Santos-16062014-edit.jpg",
+        "legende": "José Eduardo dos Santos, photographie de Fabio Rodrigues Pozzebom pour l'Agência Brasil (juin 2014)",
+        "auteur": "Fabio Rodrigues Pozzebom/Agência Brasil",
+        "licence": "CC BY 3.0 BR"
+      }
+    },
+    {
+      "slug": "bastos",
+      "nom": "Waldemar Bastos",
+      "titre": "Naissance de Waldemar Bastos",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1954,
+      "pays": "AO",
+      "description": "Waldemar Bastos (1954-2020) est un chanteur et musicien angolais, né à Mbanza-Kongo, qui mêle les rythmes de l'Angola, le jazz et la musique brésilienne. Contraint de quitter son pays dans les années 1980, il s'installe au Portugal et connaît un succès international avec l'album Pretaluz en 1998. Il reste une voix de l'exil et de la nostalgie angolaise, jusqu'à sa mort à Lisbonne en 2020.",
+      "wikipedia": "Waldemar_Bastos",
+      "classement": "Bastos, Waldemar",
+      "portrait": {
+        "fichier": "Waldemar Bastos.jpg",
+        "legende": "Waldemar Bastos, image fournie par l'artiste (2018)",
+        "auteur": "Waldemar Bastos. (Courtesy image: Waldemar Bastos/Facebook)",
+        "licence": "CC0 (domaine public)"
+      }
+    },
+    {
+      "slug": "macias",
+      "nom": "Francisco Macías Nguema",
+      "titre": "Naissance de Francisco Macías Nguema",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1924,
+      "pays": "GQ",
+      "description": "Francisco Macías Nguema (1924-1979) est un homme d'État équatoguinéen, premier président de la Guinée équatoriale indépendante, de 1968 à 1979. Il instaure une dictature d'une extrême brutalité, avec exécutions, travail forcé et persécution des intellectuels, qui pousse à l'exil environ un tiers de la population. Renversé en août 1979 par son neveu Teodoro Obiang Nguema, il est jugé et fusillé en septembre.",
+      "wikipedia": "Francisco_Macías_Nguema",
+      "classement": "Macías Nguema, Francisco",
+      "portrait": {
+        "fichier": "Don Francisco Macias.jpg",
+        "legende": "Francisco Macías Nguema, photographie de l'agence Anefo (octobre 1968)",
+        "auteur": "Anefo",
+        "licence": "CC0 (domaine public)"
+      }
+    },
+    {
+      "slug": "ondo",
+      "nom": "Bonifacio Ondó Edu",
+      "titre": "Naissance de Bonifacio Ondó Edu",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1922,
+      "pays": "GQ",
+      "description": "Bonifacio Ondó Edu (1922-1969) est un homme politique équatoguinéen, premier chef du gouvernement autonome de la Guinée équatoriale, de 1964 à 1968. Fang originaire d'Evinayong, partisan d'une indépendance négociée avec l'Espagne, il est battu aux élections de 1968 par Francisco Macías Nguema. Arrêté en 1969, il meurt peu après aux mains du régime de Macías.",
+      "wikipedia": "Bonifacio_Ondo_Edu",
+      "classement": "Ondó Edu, Bonifacio",
+      "portrait": {
+        "fichier": "Bonifacio Ondo Edu.jpg",
+        "legende": "Bonifacio Ondó Edu, photographie de l'Archivo ABC (années 1960)",
+        "auteur": "Archivo ABC",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "alda",
+      "nom": "Alda do Espírito Santo",
+      "titre": "Naissance d'Alda do Espírito Santo",
+      "axe": "Littérature et pensée",
+      "naissance": 1926,
+      "pays": "ST",
+      "description": "Alda do Espírito Santo (1926-2010) est une poétesse et femme politique santoméenne, l'une des voix de l'indépendance de São Tomé-et-Príncipe. Son recueil É nosso o solo sagrado da terra, publié en 1978, célèbre la lutte contre la domination coloniale portugaise, et elle écrit les paroles de l'hymne national, « Indépendance totale ». Ministre puis présidente de l'Assemblée nationale après l'indépendance, elle meurt à Luanda en 2010.",
+      "wikipedia": "Alda_do_Espírito_Santo",
+      "essentiel": true,
+      "classement": "Espírito Santo, Alda do",
+      "portrait": {
+        "fichier": "Alda Neves da Graça do Espírito Santo.jpg",
+        "legende": "Alda do Espírito Santo, photographie du projet Women in African History (date inconnue)",
+        "auteur": "Women in African History (UNESCO)",
+        "licence": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "slug": "rudahigwa",
+      "nom": "Mutara III Rudahigwa",
+      "titre": "Naissance de Mutara III Rudahigwa",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1911,
+      "pays": "RW",
+      "description": "Mutara III Rudahigwa (1911-1959) est le mwami du Rwanda de 1931 à sa mort, avant-dernier souverain du royaume. Premier roi converti au christianisme, il réforme le royaume sous tutelle belge, abolit en 1954 le servage pastoral de l'ubuhake et réclame l'indépendance à la fin de sa vie. Il meurt en juillet 1959 à Bujumbura, dans des circonstances jamais éclaircies, quelques mois avant la « révolution sociale » de novembre.",
+      "wikipedia": "Mutara_III",
+      "essentiel": true,
+      "classement": "Mutara III Rudahigwa",
+      "portrait": {
+        "fichier": "Tutsi king Mutara.jpg",
+        "legende": "Mutara III Rudahigwa, de profil, photographie d'archives conservée par la Rwanda Library",
+        "auteur": "Rwanda Library",
+        "licence": "CC BY-SA 3.0"
+      }
+    },
+    {
+      "slug": "kayibanda",
+      "nom": "Grégoire Kayibanda",
+      "titre": "Naissance de Grégoire Kayibanda",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1924,
+      "pays": "RW",
+      "description": "Grégoire Kayibanda (1924-1976) est un homme d'État rwandais, premier président du Rwanda indépendant, de 1962 à 1973. Cofondateur du Parmehutu et coauteur du Manifeste des Bahutu, il conduit la « révolution sociale » de 1959 qui renverse la monarchie tutsi, tandis que les pogroms qui frappent les Tutsi poussent des dizaines de milliers de personnes à l'exil. Renversé par le général Habyarimana en juillet 1973, il meurt en détention en 1976.",
+      "wikipedia": "Grégoire_Kayibanda",
+      "classement": "Kayibanda, Grégoire",
+      "portrait": {
+        "fichier": "Grégoire Kayibanda (cropped).jpg",
+        "legende": "Grégoire Kayibanda, photographie d'Abbie Rowe pour la Maison-Blanche (septembre 1962)",
+        "auteur": "Abbie Rowe - White House Photographer",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "habyarimana",
+      "nom": "Juvénal Habyarimana",
+      "titre": "Naissance de Juvénal Habyarimana",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1937,
+      "pays": "RW",
+      "description": "Juvénal Habyarimana (1937-1994) est un militaire et homme d'État rwandais, président de la République de 1973 à sa mort. Arrivé au pouvoir par un coup d'État, il gouverne par le parti unique, le Mouvement révolutionnaire national pour le développement, et doit faire face à partir de 1990 à la guerre menée par le Front patriotique rwandais. Son avion est abattu au-dessus de Kigali le 6 avril 1994, attentat dont les auteurs restent débattus, et sa mort déclenche le génocide des Tutsi.",
+      "wikipedia": "Juvénal_Habyarimana",
+      "classement": "Habyarimana, Juvénal",
+      "portrait": {
+        "fichier": "Juvénal Habyarimana (1980).jpg",
+        "legende": "Juvénal Habyarimana, photographie officielle de la Maison-Blanche (septembre 1980)",
+        "auteur": "Photographie officielle de la Maison-Blanche",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "musinga",
+      "nom": "Yuhi V Musinga",
+      "titre": "Naissance de Yuhi V Musinga",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1883,
+      "pays": "RW",
+      "description": "Yuhi V Musinga (vers 1883-1944) est le mwami du Rwanda de 1896 à 1931, l'un des derniers souverains du royaume avant sa destitution. Il règne d'abord sous le protectorat allemand puis sous la tutelle belge, dont il combat les réformes et refuse la conversion au christianisme. Déposé par les Belges en 1931 au profit de son fils Mutara III, il meurt en exil à Moba, au Congo belge.",
+      "wikipedia": "Yuhi_V",
+      "classement": "Yuhi V Musinga",
+      "portrait": {
+        "fichier": "Musinga.jpg",
+        "legende": "Yuhi V Musinga entouré de dignitaires de sa cour, photographie d'auteur inconnu (vers 1910)",
+        "largeur": 330,
+        "auteur": "Unknown author Unknown author",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "rwagasore",
+      "nom": "Louis Rwagasore",
+      "titre": "Naissance de Louis Rwagasore",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1932,
+      "pays": "BI",
+      "description": "Louis Rwagasore (1932-1961) est un prince et homme politique burundais, fils du mwami Mwambutsa IV et héros de l'indépendance du Burundi. Fondateur de l'Union pour le progrès national en 1958, il rassemble Hutu et Tutsi derrière son parti et remporte les élections législatives de septembre 1961. Premier ministre pendant quelques semaines, il est assassiné le 13 octobre 1961 à Bujumbura, par un tueur engagé par des rivaux politiques.",
+      "wikipedia": "Louis_Rwagasore",
+      "essentiel": true,
+      "classement": "Rwagasore, Louis",
+      "portrait": {
+        "fichier": "BDI 1963 MiNr0044A pm B002.jpg",
+        "legende": "Le prince Louis Rwagasore sur un timbre du Burundi (1963)",
+        "nomVisible": true,
+        "auteur": "Postal administration of the Kingdom of Burundi",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "mwambutsa",
+      "nom": "Mwambutsa IV",
+      "titre": "Naissance de Mwambutsa IV",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1911,
+      "pays": "BI",
+      "description": "Mwambutsa IV (1911-1977) est le mwami du Burundi de 1915 à 1966, le roi du pays au moment de l'indépendance en 1962. Monté sur le trône enfant, il règne sous tutelle belge, puis conduit le pays à l'indépendance en 1962 sans parvenir à empêcher les tensions entre Hutu et Tutsi. Sa vie s'achève en exil à Genève, après sa déposition par son fils Ntare V en 1966.",
+      "wikipedia": "Mwambutsa_IV_Bangiricenge",
+      "classement": "Mwambutsa IV",
+      "portrait": {
+        "fichier": "Mwambutsa 1962.jpg",
+        "legende": "Mwambutsa IV, photographie de Fritz Cohen (décembre 1962)",
+        "auteur": "Fritz Cohen (1913–1981) Alternative names Fritz Cohn",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "ndadaye",
+      "nom": "Melchior Ndadaye",
+      "titre": "Naissance de Melchior Ndadaye",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1953,
+      "pays": "BI",
+      "description": "Melchior Ndadaye (1953-1993) est un homme d'État burundais, premier président hutu du Burundi, élu en juin 1993 à l'issue des premières élections libres du pays. Chef du Front pour la démocratie au Burundi, il tente d'ouvrir l'armée et l'administration à la majorité hutu. Il est assassiné par des militaires tutsi en octobre 1993, ce qui plonge le pays dans douze ans de guerre civile.",
+      "wikipedia": "Melchior_Ndadaye",
+      "classement": "Ndadaye, Melchior",
+      "portrait": {
+        "fichier": "Melchior Ndadaye.png",
+        "legende": "Melchior Ndadaye, photographie de la Radio-Télévision nationale du Burundi (1993)",
+        "auteur": "RTNB (Burundi National Radio and Television)",
+        "licence": "CC BY 3.0"
+      }
+    },
+    {
+      "slug": "ntaryamira",
+      "nom": "Cyprien Ntaryamira",
+      "titre": "Naissance de Cyprien Ntaryamira",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1955,
+      "pays": "BI",
+      "description": "Cyprien Ntaryamira (1955-1994) est un homme d'État burundais, président de la République de janvier à avril 1994. Hutu issu du Front pour la démocratie au Burundi, il est choisi par l'Assemblée nationale pour succéder à Melchior Ndadaye, assassiné quelques mois plus tôt. Il meurt le 6 avril 1994 dans l'attentat contre l'avion du président rwandais Habyarimana, dans lequel il est passager.",
+      "wikipedia": "Cyprien_Ntaryamira",
+      "classement": "Ntaryamira, Cyprien",
+      "portrait": {
+        "fichier": "Cyprien Ntaryamira at a FRODEBU rally.jpg",
+        "legende": "Cyprien Ntaryamira lors d'un meeting du Frodebu, photographie de la Radio-Télévision nationale du Burundi (1993)",
+        "auteur": "RTNB (Burundi National Radio and Television)",
+        "licence": "CC BY 3.0"
+      }
+    },
+    {
+      "slug": "micombero",
+      "nom": "Michel Micombero",
+      "titre": "Naissance de Michel Micombero",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1940,
+      "pays": "BI",
+      "description": "Michel Micombero (1940-1983) est un officier et homme d'État burundais, premier président de la République du Burundi, de 1966 à 1976. Il prend le pouvoir par un coup d'État qui renverse la monarchie, et son régime, dominé par les Tutsi, réprime en 1972 une insurrection hutu par des massacres qui font plus de cent mille morts. Renversé en 1976 par Jean-Baptiste Bagaza, il meurt en exil à Mogadiscio.",
+      "wikipedia": "Michel_Micombero",
+      "classement": "Micombero, Michel",
+      "portrait": {
+        "fichier": "Republic of Burundi 4th anniversary stamp 1970 (cropped).jpg",
+        "legende": "Michel Micombero, timbre du Burundi pour le quatrième anniversaire de la République (1970)",
+        "auteur": "Unknown author Unknown author",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "mulele",
+      "nom": "Pierre Mulele",
+      "titre": "Naissance de Pierre Mulele",
+      "axe": "Guerres et résistances",
+      "naissance": 1929,
+      "pays": "CD",
+      "description": "Pierre Mulele (1929-1968) est un homme politique congolais, ministre de l'Éducation nationale dans le gouvernement de Patrice Lumumba en 1960. Après l'assassinat de Lumumba, il se forme à la guérilla en Chine et lance en 1963 la rébellion du Kwilu, l'un des foyers de l'insurrection simba. Rentré de son exil de Brazzaville en 1968 sur la foi d'une promesse d'amnistie, il est arrêté, torturé et tué sur ordre de Mobutu.",
+      "wikipedia": "Pierre_Mulele",
+      "classement": "Mulele, Pierre",
+      "portrait": {
+        "fichier": "Campaign poster of Pierre Muele (circa 1960).jpg",
+        "legende": "Pierre Mulele, affiche de campagne (vers 1960)",
+        "nomVisible": true,
+        "auteur": "Unknown author Unknown author",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "tabuley",
+      "nom": "Tabu Ley Rochereau",
+      "titre": "Naissance de Tabu Ley Rochereau",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1940,
+      "pays": "CD",
+      "description": "Tabu Ley Rochereau (1940-2013) est un chanteur, compositeur et homme politique congolais, l'une des grandes voix de la rumba congolaise. Passé par l'African Jazz du Grand Kallé, il fonde en 1963 l'African Fiesta avec Docteur Nico, puis l'orchestre Afrisa International, et il est en 1970 le premier artiste africain à se produire à l'Olympia, à Paris. Rallié à la transition politique de son pays, il est nommé vice-gouverneur de Kinshasa en 2005 et meurt à Bruxelles en 2013.",
+      "wikipedia": "Tabu_Ley_Rochereau",
+      "essentiel": true,
+      "classement": "Tabu Ley Rochereau",
+      "portrait": {
+        "fichier": "Press photo of Tabu Ley Rochereau in San Francisco (1980).jpg",
+        "legende": "Tabu Ley Rochereau, photographie de presse de Philip Gould (1980)",
+        "auteur": "Philip Gould / The Rosebud Agency",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "pepekalle",
+      "nom": "Pépé Kallé",
+      "titre": "Naissance de Pépé Kallé",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1951,
+      "pays": "CD",
+      "description": "Pépé Kallé (1951-1998) est un chanteur congolais, de son vrai nom Jean-Baptiste Kabasele, connu comme « l'éléphant de la musique africaine » à cause de sa corpulence. Après avoir fondé l'orchestre Empire Bakuba, il impose dans les années 1970 et 1980 une rumba gaie et dansante, avec des spectacles très travaillés. Il meurt à Kinshasa en 1998, à quarante-six ans.",
+      "wikipedia": "Pepe_Kalle",
+      "classement": "Pépé Kallé",
+      "portrait": {
+        "fichier": "Pepe Kalle and Nyboma.jpg",
+        "legende": "Pépé Kallé (à droite) avec Nyboma, photographie d'auteur inconnu (1986)",
+        "recadrage": [
+          0.42,
+          0.0,
+          1.0,
+          0.95
+        ],
+        "largeur": 500,
+        "auteur": "Unknown author",
+        "licence": "CC0 (domaine public)"
+      }
+    },
+    {
+      "slug": "dibango",
+      "nom": "Manu Dibango",
+      "titre": "Naissance de Manu Dibango",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1933,
+      "pays": "CM",
+      "description": "Manu Dibango (1933-2020) est un saxophoniste, chanteur et compositeur camerounais, surnommé « Papa Groove ». Arrivé en France à quinze ans, il rejoint l'African Jazz du Grand Kallé en 1960, avant de connaître le succès mondial avec Soul Makossa en 1972, qui mêle jazz, funk et rythmes camerounais. Il meurt à Melun en mars 2020, des suites du Covid-19.",
+      "wikipedia": "Manu_Dibango",
+      "essentiel": true,
+      "classement": "Dibango, Manu",
+      "portrait": {
+        "fichier": "LesEscales2019ManuDibango 03 (cropped).jpg",
+        "legende": "Manu Dibango aux Escales de Saint-Nazaire, photographie de Selbymay (juillet 2019)",
+        "auteur": "Selbymay",
+        "licence": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "slug": "goumba",
+      "nom": "Abel Goumba",
+      "titre": "Naissance d'Abel Goumba",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1926,
+      "pays": "CF",
+      "description": "Abel Goumba (1926-2009) est un médecin et homme politique centrafricain, compagnon de Barthélemy Boganda. Chef du gouvernement en 1959 après la mort de Boganda, il est écarté par David Dacko et passe ensuite des décennies dans l'opposition, ce qui lui vaut la prison, l'exil et la surveillance de tous les régimes. Il redevient Premier ministre puis vice-président de la République de 2003 à 2005, et meurt à Bangui en 2009.",
+      "wikipedia": "Abel_Goumba",
+      "classement": "Goumba, Abel",
+      "portrait": {
+        "fichier": "AbelGoumba.png",
+        "legende": "Abel Goumba (au centre), photographie d'auteur inconnu (vers 1960)",
+        "recadrage": [
+          0.25,
+          0.05,
+          0.75,
+          0.65
+        ],
+        "largeur": 0,
+        "auteur": "Unknown author Unknown author",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "roberto",
+      "nom": "Holden Roberto",
+      "titre": "Naissance d'Holden Roberto",
+      "axe": "Guerres et résistances",
+      "naissance": 1923,
+      "pays": "AO",
+      "description": "Holden Roberto (1923-2007) est un homme politique angolais, l'un des pères de l'indépendance de l'Angola. Né à Mbanza-Kongo, il fonde dans les années 1950 un mouvement nationaliste bakongo qui devient en 1961 le Front national de libération de l'Angola, dont il est le chef. Écarté en 1975 par le MPLA d'Agostinho Neto, il vit en exil pendant seize ans, avant de revenir à Luanda en 1991 et de mourir en 2007.",
+      "wikipedia": "Holden_Roberto",
+      "classement": "Roberto, Holden",
+      "portrait": {
+        "fichier": "Holden Roberto.jpg",
+        "legende": "Holden Roberto, photographie de Rob Mieremet pour l'agence Anefo (octobre 1973)",
+        "auteur": "Mieremet, Rob / Anefo",
+        "licence": "CC BY-SA 3.0 NL"
+      }
+    },
+    {
+      "slug": "ngendandumwe",
+      "nom": "Pierre Ngendandumwe",
+      "titre": "Naissance de Pierre Ngendandumwe",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1930,
+      "pays": "BI",
+      "description": "Pierre Ngendandumwe (1930-1965) est un homme d'État burundais hutu, membre de l'Union pour le progrès national et Premier ministre à deux reprises. Compagnon du prince Rwagasore, diplômé de l'université Lovanium de Kinshasa, il dirige le gouvernement de 1963 à 1964, puis est rappelé en janvier 1965. Il est assassiné à Bujumbura le 15 janvier 1965, huit jours après sa nomination, ce qui précipite le pays dans les affrontements entre Hutu et Tutsi.",
+      "wikipedia": "Pierre_Ngendandumwe",
+      "classement": "Ngendandumwe, Pierre",
+      "portrait": {
+        "fichier": "Pierre Ngendandumwe cropped.jpg",
+        "legende": "Pierre Ngendandumwe, photographie de Marcelle Jamar pour la Commission européenne (juillet 1963)",
+        "auteur": "Marcelle Jamar, European Commission",
+        "licence": "CC BY 4.0"
+      }
+    },
+    {
+      "slug": "njinga",
+      "nom": "Njinga Mbande",
+      "titre": "Naissance de Njinga Mbande",
+      "axe": "Guerres et résistances",
+      "naissance": 1583,
+      "pays": "AO",
+      "description": "Njinga Mbande (vers 1583-1663) est une reine du Ndongo puis du Matamba, dans l'actuel Angola, baptisée Ana de Sousa. Diplomate de son frère auprès du gouverneur portugais de Luanda en 1622, elle mène ensuite pendant plus de trente ans une guerre contre les Portugais, notamment en s'alliant aux Hollandais lorsqu'ils prennent Luanda en 1641. Elle signe la paix en 1656 et meurt en 1663, devenue le symbole de la résistance africaine à la colonisation et à la traite négrière.",
+      "wikipedia": "Njinga_du_Ndongo_et_du_Matamba",
+      "essentiel": true,
+      "classement": "Njinga Mbande",
+      "portrait": {
+        "fichier": "Ann Zingha.jpg",
+        "legende": "Njinga, reine d'Angola, gravure coloriée d'Achille Devéria (années 1830) ; représentation imaginaire, faite deux siècles après sa mort",
+        "auteur": "Achille Devéria (1800–1857)",
+        "licence": "Domaine public"
+      }
+    },
+    {
+      "slug": "afonso",
+      "nom": "Alphonse Ier du Kongo",
+      "titre": "Naissance d'Alphonse Ier du Kongo",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1457,
+      "pays": "AO",
+      "description": "Alphonse Ier du Kongo (vers 1457-1543) est le roi du Kongo de 1509 à sa mort, né Nzinga Mvemba, et le deuxième souverain chrétien du royaume. Il fait du Kongo un partenaire du Portugal, envoie des jeunes en Europe, dont son fils Henrique, devenu évêque, et adopte l'écriture et la religion des Européens. En 1526, il écrit au roi João III pour dénoncer les marchands portugais qui vident son royaume de ses habitants par la traite des esclaves.",
+      "wikipedia": "Alphonse_Ier_(manikongo)",
+      "classement": "Alphonse Ier du Kongo",
+      "portrait": {
+        "fichier": "Manikongo.jpg",
+        "legende": "Un manikongo, roi du Kongo, illustration coloriée ; ce n'est pas un portrait d'Alphonse Ier",
+        "auteur": "Affricoll9",
+        "licence": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "slug": "pintodeandrade",
+      "nom": "Mário Pinto de Andrade",
+      "titre": "Naissance de Mário Pinto de Andrade",
+      "axe": "Littérature et pensée",
+      "naissance": 1928,
+      "pays": "AO",
+      "description": "Mário Pinto de Andrade (1928-1990) est un poète et homme politique angolais, l'un des fondateurs du Mouvement populaire de libération de l'Angola et son premier président, de 1960 à 1962. Étudiant à Lisbonne, où il fréquente Amílcar Cabral, puis à Paris, où il participe à Présence africaine, il publie en 1958 une anthologie de la poésie noire d'expression portugaise. Opposé à la direction d'Agostinho Neto, il quitte le mouvement en 1974 et meurt à Londres en 1990.",
+      "wikipedia": "Mário_Pinto_de_Andrade",
+      "classement": "Pinto de Andrade, Mário",
+      "portrait": {
+        "fichier": "Mariopandrade.jpg",
+        "legende": "Mário Pinto de Andrade, photographie mise en ligne en 2018",
+        "auteur": "Auteur non renseigné",
+        "licence": "CC BY-SA 2.5"
+      }
+    },
+    {
+      "slug": "simaro",
+      "nom": "Simaro Lutumba",
+      "titre": "Naissance de Simaro Lutumba",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1938,
+      "pays": "CD",
+      "description": "Simaro Lutumba (1938-2019) est un guitariste et auteur-compositeur congolais, de son vrai nom Simon Lutumba Ndomanueno, longtemps le poète du TP OK Jazz. Entré dans l'orchestre de Franco en 1961, il en écrit une grande partie des textes, qui comptent parmi les plus estimés de la rumba congolaise. Vice-président de l'orchestre pendant de nombreuses années, il meurt en 2019.",
+      "wikipedia": "Simaro_Lutumba",
+      "classement": "Lutumba, Simaro",
+      "portrait": {
+        "fichier": "SIMARO LUTUMBA.jpg",
+        "legende": "Buste de Simaro Lutumba, photographie de Tite koya",
+        "auteur": "Tite koya",
+        "licence": "CC BY-SA 4.0"
+      }
+    },
+    {
+      "slug": "mudimbe",
+      "nom": "Valentin-Yves Mudimbe",
+      "titre": "Naissance de Valentin-Yves Mudimbe",
+      "axe": "Littérature et pensée",
+      "naissance": 1941,
+      "pays": "CD",
+      "description": "Valentin-Yves Mudimbe (1941-2025) est un philosophe, romancier et poète congolais, né à Jadotville, aujourd'hui Likasi. Ancien novice bénédictin, docteur de l'université de Louvain en 1970, il enseigne ensuite aux États-Unis, où il publie The Invention of Africa en 1988, qui montre comment les savoirs occidentaux ont construit l'idée d'Afrique. Il est aussi l'auteur de romans comme Entre les eaux, en 1973, et meurt en Caroline du Nord.",
+      "wikipedia": "Valentin-Yves_Mudimbe",
+      "classement": "Mudimbe, Valentin-Yves",
+      "portrait": {
+        "fichier": "01 V. Y. Mudimbe 2013 (profile).jpeg",
+        "legende": "V. Y. Mudimbe, photographie d'Alice Ces (2013)",
+        "auteur": "ALICE CES",
+        "licence": "CC BY 3.0"
+      }
+    },
+    {
+      "slug": "bagaza",
+      "nom": "Jean-Baptiste Bagaza",
+      "titre": "Naissance de Jean-Baptiste Bagaza",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1946,
+      "pays": "BI",
+      "description": "Jean-Baptiste Bagaza (1946-2016) est un officier et homme d'État burundais, président de la République de 1976 à 1987. Arrivé au pouvoir par un coup d'État contre Michel Micombero, il mène une politique de développement mais gouverne par un régime dominé par les Tutsi et entre en conflit avec l'Église catholique. Renversé en 1987 par Pierre Buyoya, il connaît l'exil avant de mourir à Bruxelles en 2016.",
+      "wikipedia": "Jean-Baptiste_Bagaza",
+      "classement": "Bagaza, Jean-Baptiste",
+      "portrait": {
+        "fichier": "Jean Baptiste Bagaza - 1978.tiff",
+        "legende": "Jean-Baptiste Bagaza, photographie de Jean-Louis Debaize (mai 1978)",
+        "auteur": "Jean-Louis Debaize",
+        "licence": "CC BY 4.0"
+      }
+    },
+    {
+      "slug": "buyoya",
+      "nom": "Pierre Buyoya",
+      "titre": "Naissance de Pierre Buyoya",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1949,
+      "pays": "BI",
+      "description": "Pierre Buyoya (1949-2020) est un officier et homme d'État burundais, qui dirige deux fois le pays, de 1987 à 1993 puis de 1996 à 2003. Après avoir renversé Bagaza, il ouvre le pays au multipartisme et perd l'élection de 1993 face à Melchior Ndadaye, puis revient au pouvoir par un nouveau coup d'État en 1996 et signe en 2000 les accords d'Arusha. Haut représentant de l'Union africaine pour le Mali et le Sahel, il est condamné par la justice burundaise pour l'assassinat de Ndadaye quelques jours avant sa mort, en décembre 2020.",
+      "wikipedia": "Pierre_Buyoya",
+      "classement": "Buyoya, Pierre",
+      "portrait": {
+        "fichier": "Pierre Buyoya at Chatham House 2013 crop.jpg",
+        "legende": "Pierre Buyoya à Chatham House, photographie de Chatham House (mars 2013)",
+        "auteur": "Chatham House",
+        "licence": "CC BY 2.0"
+      }
+    },
+    {
+      "slug": "eboussi",
+      "nom": "Fabien Eboussi Boulaga",
+      "titre": "Naissance de Fabien Eboussi Boulaga",
+      "axe": "Littérature et pensée",
+      "naissance": 1934,
+      "pays": "CM",
+      "description": "Fabien Eboussi Boulaga (1934-2018) est un philosophe camerounais, ancien jésuite, l'un des grands penseurs africains de son temps. Auteur de La Crise du Muntu en 1977, qui critique l'idée d'une philosophie africaine figée dans la tradition, et de Christianisme sans fétiche en 1981, il défend une pensée fondée sur la liberté et la critique. Il enseigne à Yaoundé et à l'étranger, et publie en 1993 un livre sur les conférences nationales africaines.",
+      "wikipedia": "Fabien_Eboussi_Boulaga",
+      "classement": "Boulaga, Fabien Eboussi",
+      "portrait": {
+        "fichier": "Fabien Eboussi Boulaga 1974.jpg",
+        "legende": "Fabien Eboussi Boulaga, photographie de W. Punt pour l'agence Anefo (1974)",
+        "auteur": "W. Punt for Anefo",
+        "licence": "CC0 (domaine public)"
+      }
+    },
+    {
+      "slug": "marthemoumie",
+      "nom": "Marthe Ekemeyong Moumié",
+      "titre": "Naissance de Marthe Ekemeyong Moumié",
+      "axe": "Guerres et résistances",
+      "naissance": 1931,
+      "pays": "CM",
+      "description": "Marthe Ekemeyong Moumié (1931-2009) est une militante et écrivaine camerounaise, épouse de Félix-Roland Moumié, l'un des chefs de l'Union des populations du Cameroun. Membre de l'UPC dès 1950, elle cofonde en 1952 l'Union démocratique des femmes camerounaises, l'une des premières organisations féminines nationalistes du pays. Exilée en Guinée avec son mari, empoisonné à Genève en 1960, elle revient au Cameroun, où elle est assassinée à son domicile d'Ebolowa en janvier 2009.",
+      "wikipedia": "Marthe_Ekemeyong_Moumié",
+      "classement": "Moumié, Marthe Ekemeyong",
+      "portrait": {
+        "fichier": "Marthe Moumié.JPG",
+        "legende": "Marthe Ekemeyong Moumié, photographie mise en ligne par JeunesduNoun",
+        "auteur": "JeunesduNoun",
+        "licence": "CC BY-SA 3.0"
+      }
+    },
+    {
+      "slug": "ngouabi",
+      "nom": "Marien Ngouabi",
+      "titre": "Naissance de Marien Ngouabi",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1938,
+      "pays": "CG",
+      "description": "Marien Ngouabi (1938-1977) est un officier et homme d'État congolais, président de la République du Congo de 1968 à sa mort. Porté au pouvoir après la chute de Massamba-Débat, il proclame en 1970 la République populaire du Congo, fonde le Parti congolais du travail et fait du marxisme-léninisme l'idéologie de l'État. Il est assassiné à Brazzaville le 18 mars 1977, dans des circonstances qui n'ont jamais été totalement éclaircies.",
+      "wikipedia": "Marien_Ngouabi",
+      "classement": "Ngouabi, Marien",
+      "portrait": {
+        "fichier": "Marien Ngouabi Janvier 1970.png",
+        "legende": "Marien Ngouabi en janvier 1970, photographie mise en ligne par V13point4",
+        "auteur": "V13point4",
+        "licence": "CC0 (domaine public)"
+      }
+    },
+    {
+      "slug": "nsue",
+      "nom": "María Nsué Angüe",
+      "classement": "Nsué Angüe, María",
+      "titre": "Naissance de María Nsué Angüe",
+      "axe": "Littérature et pensée",
+      "naissance": 1945,
+      "pays": "GQ",
+      "description": "María Nsué Angüe (1945-2017) est une romancière, poétesse et femme politique équatoguinéenne, née à Ebebiyín. Installée en Espagne avec sa famille dès l'âge de huit ans, elle publie en 1985 Ekomo, premier roman publié par une femme de son pays, traduit en français en 1995. Elle écrit aussi des poèmes et des nouvelles, dont Mbaya, o la leyenda del sauce llorón en 1997, s'engage en politique et meurt en janvier 2017.",
+      "wikipedia": "María_Nsué_Angüe",
+      "portrait": {
+        "fichier": "María Nsué Angüe (cropped).jpg",
+        "legende": "María Nsué Angüe, photographie de « viajero por malabo » (2008)",
+        "licence": "CC BY-SA 2.0",
+        "auteur": "viajero por malabo"
+      }
+    }
+  ]
+}

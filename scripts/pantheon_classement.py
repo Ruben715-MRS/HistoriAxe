@@ -103,6 +103,11 @@ KEEP_AS_WRITTEN = {
     # titres honorifiques qui sont le nom (« Kamal-ol-Molk », « Sani ol-Molk »), le nom de guerre d'un chef de tribu.
     "Ya'qub ibn al-Layth as-Saffar", 'Nizam al-Mulk', 'Karim Khan Zand', 'Agha Mohammad Khan', 'Amir Kabir', 'Nasseredin Chah',
     'Reza Chah', 'Nader Chah', 'Abbas Mirza', 'Sattar Khan', 'Mirza Koutchak Khan', 'Taj es-Saltaneh', 'Sani ol-Molk', 'Kamal-ol-Molk',
+    # Afrique centrale : noms de scène et de règne (« Grand Kallé », « Docteur Nico », « Pépé Kallé », « Papa Wemba »), souverains rangés par leur
+    # nom de règne, noms en plusieurs mots dont le premier n'est pas un prénom (« Kimpa Vita », « Mandume ya Ndemufayo », « Njinga Mbande »).
+    'Mobutu Sese Seko', 'Grand Kallé', 'Docteur Nico', 'Pépé Kallé', 'Papa Wemba', "Pamelo Mounk'a", 'Tshala Muana', 'Tabu Ley Rochereau',
+    'Lapiro de Mbanga', 'Kimpa Vita', 'Mandume ya Ndemufayo', 'Njinga Mbande', 'Alphonse Ier du Kongo', 'Mutara III Rudahigwa',
+    'Yuhi V Musinga', 'Mwambutsa IV',
 }
 
 # Écrits à la main : (nom de la source) → nom de classement.
@@ -186,6 +191,17 @@ EXCEPTIONS = {
     'João Cabral de Melo Neto': 'Melo Neto, João Cabral de',
     'Roberto Burle Marx': 'Burle Marx, Roberto',
     # Iran : un titre honorifique devant le numéral de règne, des noms arabes à article rangés sous le nom.
+    # Afrique centrale : noms composés rangés sous leur premier élément (« Um Nyobè », « Douala Manga Bell », « Macías Nguema »).
+    'Ruben Um Nyobè': 'Um Nyobè, Ruben',
+    'Rudolf Douala Manga Bell': 'Douala Manga Bell, Rudolf',
+    'Omar Bongo Ondimba': 'Bongo, Omar',
+    'Laurent Monsengwo Pasinya': 'Monsengwo Pasinya, Laurent',
+    'Marie-Clémentine Anuarite Nengapeta': 'Anuarite Nengapeta, Marie-Clémentine',
+    'Francisco Macías Nguema': 'Macías Nguema, Francisco',
+    'Bonifacio Ondó Edu': 'Ondó Edu, Bonifacio',
+    'Alda do Espírito Santo': 'Espírito Santo, Alda do',
+    'Mário Pinto de Andrade': 'Pinto de Andrade, Mário',
+    'María Nsué Angüe': 'Nsué Angüe, María',
     'Chah Ismaïl Ier': 'Ismaïl Ier',
     'Al-Ghazali': 'Ghazali, Al-',
     'Al-Sufi': 'Sufi, Al-',

@@ -11,7 +11,7 @@ ne posent pas la même question :
 | | Un thème, c'est | Une date, c'est | On le joue par |
 |---|---|---|---|
 | **Biographies** | une vie (360 thèmes, en 12 domaines) | une étape de cette vie | étape de la vie |
-| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, le sous-continent indien, Israël, la Turquie, le Japon, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran) | la naissance d'un personnage | domaine |
+| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Turquie, le Japon, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran) | la naissance d'un personnage | domaine |
 
 Le déplacement ne coûte aucune migration : les 360 thèmes gardent leurs
 identifiants, et rien de ce que le joueur a sauvegardé (favoris, révision,
@@ -1961,6 +1961,69 @@ islamique, République islamique, Mossadegh).
   sont demandés en 330 px, Attar en 960 px, Xerxès, Kiarostami et Hatami en 500 px, Mirzakhani et Al-Sufi à la taille de l'original.
 - **Géolocalisation** : aucune figure n'est encore placée sur l'Atlas, faute de biographie liée (le test des faits liés ne l'exige pas).
 
+### Un bloc : l'Afrique centrale
+
+`pan_afriquecentrale`, « Grandes figures d'Afrique centrale » (code `afriquecentrale`, bloc) : **77 personnages de onze pays** —
+RDC 20, Cameroun 11, Angola 10, Burundi 8, Congo 7, Centrafrique 6, Gabon 4, Rwanda 4, Guinée équatoriale 3, Tchad 3,
+São Tomé-et-Príncipe 1 — d'Alphonse Ier du Kongo (vers 1457) à Dikembe Mutombo (1966). Par axe : 42 Chefs d'État et dirigeants,
+12 Littérature et pensée, 12 Musique, spectacle et sport, 11 Guerres et résistances ; 22 ⭐ et aucune biographie liée. 77 portraits :
+29 du domaine public, 10 CC0, 17 CC BY et 21 CC BY-SA. Trois figures sont nées avant 1800, six entre 1800 et 1899, soixante-huit depuis
+1900 : l'Afrique centrale des royaumes (Kongo, Ndongo, Rwanda, Burundi) y est, mais l'époque des indépendances pèse l'essentiel.
+Les mots-clés du thème portent les onze pays et leurs anciens noms (Zaïre, Congo belge, Oubangui-Chari, Fernando Poo, Ruanda-Urundi),
+la CEEAC, les villes (Kinshasa, Brazzaville, Léopoldville), le Kongo, les Grands Lacs, la rumba congolaise, le makossa et le soukous.
+
+- **Le périmètre est celui des onze membres de la CEEAC**, la Communauté économique des États de l'Afrique centrale, comme l'Afrique de
+  l'Ouest suit la CEDEAO : la RDC, le Congo, le Cameroun, le Gabon, la Centrafrique, le Tchad, l'Angola et la Guinée équatoriale
+  (la demande de départ), plus **São Tomé-et-Príncipe, le Rwanda et le Burundi**. Trois ajouts qui se défendent : ce sont des
+  membres de la CEEAC ; l'usage français range le Rwanda et le Burundi en « Afrique centrale » avec la RDC, dont ils ont partagé la
+  tutelle belge ; et São Tomé complète l'Afrique centrale des Nations unies. Ils pèsent 13 figures sur 77. Ils restent à la
+  discrétion de l'éditeur : le Rwanda et le Burundi pourraient rejoindre un bloc « Grands Lacs » ou « Afrique de l'Est », et l'Angola
+  un bloc « Afrique australe », comme le prévoit la feuille de route ci-dessous. Le Kenya, la Tanzanie, l'Ouganda et la Corne
+  restent à l'Afrique de l'Est.
+- **Aucun pays ne dépasse 40 %.** La RDC en pèse 26 %, ce qui reste sous le seuil de `partMaxPays` ; la demande de départ tolérait de
+  le dépasser. Les petits pays tiennent par une, deux ou trois figures (São Tomé : la poétesse Alda do Espírito Santo, qui a écrit
+  les paroles de l'hymne national).
+- **Rangés là où on les honore.** Alphonse Ier, Njinga et Kimpa Vita sont nés dans l'Angola actuel (Mbanza-Kongo, Kabasa) : ils y sont
+  rangés, bien que le royaume du Kongo déborde sur la RDC et le Congo, et leur fiche le dit. Henri Lopes, né à Léopoldville,
+  est congolais de Brazzaville, où il a été Premier ministre.
+- **Que des morts.** Paul Biya, Teodoro Obiang Nguema, Denis Sassou-Nguesso, Faustin-Archange Touadéra, Paul Kagame, Denis Mukwege
+  n'y sont pas, comme dans les autres panthéons. Mutombo (mort en 2024) et Mudimbe (2025) sont les plus récents.
+- **Les noms qu'il fallait trancher.** Une date qui se discute n'entre pas : Ibrahim Njoya, roi des Bamoun (né en 1860 ou en 1876
+  selon les sources), Kigeli IV Rwabugiri (1840 ou 1853) et Marguerite Barankitse (1956 ou 1957) sont écartés. Quand l'article
+  français donne une approximation, elle est dite : Kasa-Vubu (vers 1917), Njinga (vers 1583 ; l'article dit aussi 1581 dans le corps du texte),
+  Alphonse Ier (vers 1457), Musinga (vers 1883). André-Marie Mbida est daté de 1914, comme sur sa fiche française (d'autres sources
+  donnent 1917). Kimpa Vita est datée de 1684.
+- **L'histoire contemporaine, sans complaisance.** Mobutu (la kleptocratie), Bokassa (le massacre d'écoliers de 1979), Macías Nguema
+  (un tiers de la population en exil), Hissène Habré (condamné en 2016 à Dakar), Micombero (les massacres de 1972), Kayibanda et
+  Habyarimana (les violences contre les Tutsi et le génocide de 1994) sont dits tels qu'ils furent ; Lumumba est tué avec la
+  complicité de la Belgique, qui en reconnaît en 2001 une responsabilité morale ; Um Nyobè est abattu par l'armée française.
+- **Huit femmes.** Njinga et Kimpa Vita, les deux grandes figures de la résistance du XVIIe siècle ; Marthe Moumié, cofondatrice de
+  l'Union démocratique des femmes camerounaises ; Élisabeth Domitien, première femme Première ministre d'Afrique ; sœur Anuarite,
+  première Congolaise béatifiée ; les écrivaines Angèle Rawiri (Gabon), María Nsué Angüe (Guinée équatoriale) et Alda do Espírito Santo.
+  Agathe Uwilingiyimana, première Première ministre du Rwanda, a sa fiche rédigée mais pas d'image libre.
+- **Deux axes sont vides, donc retirés.** Aucun Beaux-arts (Bodys Isek Kingelez, Marcel Gotène, Pilipili Mulongoy n'ont pas d'image
+  libre) et aucune figure Sciences, techniques et innovation (le panthéon n'en a trouvé aucune avec une fiche et une image sûres) :
+  `axeOrder` ne compte que quatre axes. À reprendre si de telles figures apparaissent.
+- **Les images ont écarté plus de quarante figures**, parmi lesquelles Wendo Kolosoy (le père de la rumba), Félix-Roland Moumié,
+  Ernest Ouandié, Francis Bebey, Sony Labou Tansi, Tchicaya U Tam'si, Marc-Vivien Foé, André Kolingba, Félix Malloum,
+  Agathe Uwilingiyimana, Fred Rwigema, Alexis Kagame ; Tshala Muana n'a qu'une image de 168 × 216 pixels, que Commons ne sert qu'en
+  120 pixels de large. Les cinq fiches déjà rédigées et la liste des écartés sont dans `scripts/pantheon/afriquecentrale_candidats.md`.
+- **Des portraits souvent indirects**, et les légendes le disent : quatre timbres (Dacko, Patassé, Micombero, Rwagasore), deux affiches
+  (Mulele, Mongo Beti : le nom est écrit dans l'image, trois fiches sont `nomVisible`), une statue (Kimpa Vita : aucun portrait
+  d'elle n'existe), un buste (Simaro Lutumba), une gravure coloriée imaginaire (Njinga, par Achille Devéria) et une illustration de
+  manikongo qui n'est pas un portrait d'Alphonse Ier. Quatre photographies sont recadrées dans une image plus large (Goumba, Pépé
+  Kallé, Monsengwo, Angèle Rawiri) ; celle de Rawiri, un tirage ancien d'un cliché de famille, est la seule libre et reste médiocre.
+  La photographie de Musinga est un groupe de cour : le roi y est entouré de ses dignitaires. Celle de Simon Kimbangu est la
+  photographie que Commons date de 1919 : son identification reste celle de Commons.
+- **Statut américain des images : à relire.** Vingt-neuf portraits sont du « domaine public », dont la plupart sont des photographies
+  d'auteur inconnu ou d'archives (Franco, Docteur Nico et Grand Kallé : photographies promotionnelles de labels congolais des
+  années 1950-1960 ; Boganda, Youlou, Pamelo Mounk'a, Opangault, Matswa). Le script lit la licence que Commons déclare, non le statut
+  américain, et ce dernier n'a **pas été vérifié image par image** : Wikimedia répondait 429 à presque toutes les requêtes de cet
+  environnement. À confirmer pour ces photographies publiées en Afrique avant 1978 sans mention de droits.
+- **Un téléchargement contraint.** Les originaux sont refusés (429) et les miniatures de largeur non standard aussi : Farnana est
+  demandé en 250 px, Mandume et Musinga en 330 px, Goumba à la taille de l'original.
+- **Géolocalisation** : aucune figure n'est encore placée sur l'Atlas, faute de biographie liée.
+
 ### Un fichier source par panthéon, un script qui l'écrit dans `data/fr.json`
 
 `scripts/pantheon/<code>.json` (`fr`, `hispam`…) est **la seule source de
@@ -2303,7 +2366,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
 ### Ce qui n'est pas fait
 
 - **Les autres panthéons** : la France, l'Égypte, les États-Unis, l'Italie, le
-  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran sont écrits.
+  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran sont écrits.
   Chaque liste de personnages est validée avant la rédaction. Feuille de route, dans l'ordre
   où on les propose (un pays seul quand il a de quoi faire un thème, un bloc sinon) :
   1. **Le Machrek est écrit** (voir « Le cinquième bloc »). Il reste : le portrait des trois
@@ -2317,8 +2380,8 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
   2. **Pays seuls** : l'Afrique du Sud. **L'Iran** (voir « Un pays à part : l'Iran »), **le Brésil** (qui n'entre pas dans l'Amérique « hispanique » ; voir « Un pays à part : le Brésil »), **la Turquie** (voir « Un pays à part : la Turquie »), **le Japon** (voir « Un pays à part : le Japon ») et **la Russie** (voir « Un pays à part : la Russie ») et **l'Australie** (voir « Un pays à part : l'Australie ») sont écrits.
   3. **Blocs** : l'Asie du Sud-Est, la Mongolie (l'Asie centrale est écrite, voir « Un bloc : l'Asie centrale et
      l'Afghanistan »), le Caucase, la Corée (`KR`/`KP`), l'Afrique de
-     l'Ouest, l'Afrique centrale, l'Afrique de l'Est et la Corne, l'Afrique australe et l'océan
-     Indien (sans l'Afrique du Sud). « Nouvelle-Zélande et Pacifique » est écrit (voir « Un bloc : la
+     l'Ouest, l'Afrique de l'Est et la Corne, l'Afrique australe et l'océan
+     Indien (sans l'Afrique du Sud). L'Afrique centrale est écrite (voir « Un bloc : l'Afrique centrale »). « Nouvelle-Zélande et Pacifique » est écrit (voir « Un bloc : la
      Nouvelle-Zélande et le Pacifique »).
   4. **L'Europe et les Amériques qui manquent** : **le Portugal est écrit** (voir « Un pays à part : le Portugal »,
      qui a repris Magellan et Viriathe), Byzance (au-delà des cinq figures déjà au panthéon de la Grèce),

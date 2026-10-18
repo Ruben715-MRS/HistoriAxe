@@ -89,11 +89,11 @@ test('Personnages illustres : deux sous-catégories, chacune avec sa note et son
     expect(await visibleScreen(page)).toBe('screen-themes');
     await expect(page.locator('#theme-screen-title')).toHaveText('Panthéons');
     await expect(page.locator('#theme-screen-note-text')).toContainText('né dans les frontières actuelles');
-    // Panthéons de pays et de blocs se rangent par leur nom de source — « Afrique de l'Ouest », « Allemagne, Autriche et Suisse »,
+    // Panthéons de pays et de blocs se rangent par leur nom de source — « Afrique centrale », « Afrique de l'Ouest », « Allemagne, Autriche et Suisse »,
     // « Amérique hispanique », « Asie centrale et Afghanistan », « Australie », « Benelux », « Brésil », « Canada », « Chine », « Égypte », « Espagne », « États-Unis », « France », « Grèce », « Iran », « Israël », « Italie », « Japon », « Machrek et péninsule Arabique », « Maghreb », « Nouvelle-Zélande et Pacifique », « Portugal », « Royaume-Uni », « Russie », « Scandinavie », « Sous-continent indien », « Turquie » — et non par
     // « Grandes figures d'… » / « … de » / « … des » / « … du ».
     await expect(page.locator('#themes-container .data-card-title'))
-        .toHaveText(["Grandes figures d'Afrique de l'Ouest", "Grandes figures d'Allemagne, d'Autriche et de Suisse", "Grandes figures d'Amérique hispanique",
+        .toHaveText(["Grandes figures d'Afrique centrale", "Grandes figures d'Afrique de l'Ouest", "Grandes figures d'Allemagne, d'Autriche et de Suisse", "Grandes figures d'Amérique hispanique",
             "Grandes figures d'Asie centrale", "Grandes figures d'Australie", 'Grandes figures du Benelux', 'Grandes figures du Brésil', 'Grandes figures du Canada', 'Grandes figures de Chine',
             "Grandes figures d'Égypte", "Grandes figures d'Espagne", 'Grandes figures des États-Unis',
             'Grandes figures de France', 'Grandes figures de Grèce', "Grandes figures d'Iran", "Grandes figures d'Israël", "Grandes figures d'Italie", 'Grandes figures du Japon',
@@ -884,6 +884,51 @@ test('la recherche — « iran », « perse », « persépolis », « ispahan »
         await page.locator('#theme-search-input').fill(mot);
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: "Grandes figures d'Iran" });
         await expect(resultat, `« ${mot} » doit mener au panthéon de l'Iran`).toHaveCount(1);
+        await expect(resultat.locator('.search-result-path')).toContainText('Personnages illustres › Panthéons');
+    }
+});
+
+test('l’Afrique centrale : chacune de ses figures a son portrait et son pays, de Njinga à Papa Wemba, et aucune n’a de biographie', async ({ page }) => {
+    await openThemeById(page, 'pan_afriquecentrale');
+    await page.locator('#mode-card-discovery').click();
+    await expect(page.locator('#screen-game')).toBeVisible();
+    const nombre = await page.evaluate(() => getCurrentTheme().events.length);
+    expect(nombre).toBe(77);
+    await expect(page.locator('#timeline .entry')).toHaveCount(nombre);
+    await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
+
+    // Trois pays du bloc, chacun par une de ses figures : la fiche dit le pays que le bloc lui donne.
+    // Njinga est née dans l'Angola actuel, Kimpa Vita aussi, bien que le royaume du Kongo les déborde.
+    const figures = [
+        ['Naissance de Patrice Lumumba', '🇨🇩', ''],
+        ['Naissance de Njinga Mbande', '🇦🇴', 'Angola'],
+        ['Naissance de Mongo Beti', '🇨🇲', 'Cameroun'],
+    ];
+    for (const [titre, drapeau, pays] of figures) {
+        await page.locator('#timeline .entry', { hasText: titre }).click();
+        await expect(page.locator('#modal-details')).toBeVisible();
+        await expect(page.locator('#modal-pays')).toContainText(drapeau);
+        if (pays) await expect(page.locator('#modal-pays')).toContainText(pays);
+        const portrait = page.locator('#modal-portrait-img');
+        await expect.poll(() => portrait.evaluate(img => img.complete ? img.naturalWidth : 0)).toBe(320);
+        await expect(page.locator('#modal-portrait-caption')).not.toBeEmpty();
+        await page.locator('#modal-details .close-btn').click();
+        await expect(page.locator('#modal-details')).toBeHidden();
+    }
+
+    // Aucune figure n'a de biographie dans l'appli : pas de bouton « Voir sa biographie ».
+    const avecBiographie = await page.evaluate(() => getCurrentTheme().events.filter(e => e.biographie).length);
+    expect(avecBiographie).toBe(0);
+    await page.locator('#timeline .entry', { hasText: 'Naissance de Papa Wemba' }).click();
+    await expect(page.locator('#modal-bio-btn')).toBeHidden();
+});
+
+test('la recherche — « afrique centrale », « rdc », « zaire », « cameroun », « angola », « rwanda » — mène au panthéon de l’Afrique centrale', async ({ page }) => {
+    await page.locator('#screen-home').click();
+    for (const mot of ['afrique centrale', 'ceeac', 'rdc', 'zaire', 'brazzaville', 'cameroun', 'gabon', 'centrafrique', 'tchad', 'angola', 'guinee equatoriale', 'sao tome', 'rwanda', 'burundi']) {
+        await page.locator('#theme-search-input').fill(mot);
+        const resultat = page.locator('#theme-search-results .search-result-item', { hasText: "Grandes figures d'Afrique centrale" });
+        await expect(resultat, `« ${mot} » doit mener au panthéon de l'Afrique centrale`).toHaveCount(1);
         await expect(resultat.locator('.search-result-path')).toContainText('Personnages illustres › Panthéons');
     }
 });
