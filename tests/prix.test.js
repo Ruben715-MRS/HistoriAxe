@@ -60,6 +60,24 @@ test('les Oscars sont datés de la cérémonie, pas du film', () => {
     for (const [id, date] of Object.entries(dates)) assert.equal(byId(oscars, id).date, date, id);
 });
 
+test('les autres prix sont eux aussi datés de l\'année de la cérémonie', () => {
+    const repères = [
+        ['thm_festivals', 'fes_03', 1955], // première Palme d'or (Marty)
+        ['thm_festivals', 'fes_68', 2020], // César de J'accuse et sortie d'Adèle Haenel
+        ['thm_litteraires', 'plit_10', 1984], // Goncourt de L'Amant
+        ['thm_litteraires', 'plit_34', 2016], // Booker de Paul Beatty
+        ['thm_sciences_prix', 'psc_13', 2014], // première femme médaillée Fields
+        ['thm_ballon_dor', 'spo_25', 2020], // Ballon d'or non décerné
+        ['thm_musique_prix', 'mus_04', 1984], // Thriller, huit Grammy (films et disques de 1983)
+        ['thm_musique_prix', 'mus_44', 2026], // Dara et la première victoire bulgare
+    ];
+    for (const [themeId, id, date] of repères) {
+        const t = theme(themeId);
+        assert.ok(t, `${themeId} absent`);
+        assert.equal(byId(t, id).date, date, `${themeId} / ${id}`);
+    }
+});
+
 test('data/fr.json est à jour avec les sources des thèmes de prix (scripts/prix/*.json)', (t) => {
     const probe = spawnSync('python3', ['--version']);
     if (probe.error) {
