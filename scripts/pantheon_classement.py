@@ -112,18 +112,16 @@ KEEP_AS_WRITTEN = {
     'Vytautas le Grand',
     # Balkans : princes rangés par leur surnom (« Étienne le Grand », « Michel le Brave »), reine rangée par son titre, nom de règne (« Stefan Dušan »).
     'Étienne le Grand', 'Michel le Brave', 'Marie de Roumanie', 'Stefan Dušan',
+    # Indonésie : souverains rangés par leur nom de règne (« Gajah Mada », « Iskandar Muda », « Sultan Agung »), titres qui précèdent le nom
+    # (« Arung Palakka », « Raden Saleh », « Cut Nyak Dhien »), surnoms et noms de scène (« Bung Tomo », « Titiek Puspa », « Teguh Karya »),
+    # personnalités connues par leur seul nom, que l'indonésien ne scinde pas en prénom et nom de famille.
+    'Gajah Mada', 'Iskandar Muda', 'Sultan Agung', 'Tan Malaka', 'Cut Nyak Dhien', 'Untung Surapati', 'Arung Palakka', 'Bung Tomo',
+    'Munir Said Thalib', 'Pramoedya Ananta Toer', 'Sapardi Djoko Damono', 'Rasuna Said', 'Raden Saleh', 'Titiek Puspa', 'Ruhana Kuddus',
+    'Teguh Karya', 'Sumitro Djojohadikusumo',
 }
 
 # Écrits à la main : (nom de la source) → nom de classement.
 EXCEPTIONS = {
-    # Afrique du Sud : en afrikaans, la particule fait partie du nom de famille (« De Klerk », « Van Riebeeck »)
-    # et on range à la particule, contrairement au néerlandais de Belgique et des Pays-Bas.
-    'Frederik de Klerk': 'De Klerk, Frederik',
-    'Christiaan de Wet': 'De Wet, Christiaan',
-    'Jan van Riebeeck': 'Van Riebeeck, Jan',
-    'Anton van Wouw': 'Van Wouw, Anton',
-    'Hendrik van der Bijl': 'Van der Bijl, Hendrik',
-    'Alex La Guma': 'La Guma, Alex',
     # Portugal : noms composés (le dernier mot n'est pas toujours le nom de famille) et surnoms.
     'Henri le Navigateur': 'Henri le Navigateur',
     'Catherine de Bragance': 'Catherine de Bragance',
@@ -218,6 +216,9 @@ EXCEPTIONS = {
     'Al-Ghazali': 'Ghazali, Al-',
     'Al-Sufi': 'Sufi, Al-',
     'Al-Kashi': 'Kashi, Al-',
+    # Indonésie : un nom néerlandais à particule, un titre balinais devant le nom.
+    'Ernest Douwes Dekker': 'Douwes Dekker, Ernest',
+    'I Gusti Ngurah Rai': 'Ngurah Rai, I Gusti',
     'Allal El Fassi': 'El Fassi, Allal',
     'Moktar Ould Daddah': 'Ould Daddah, Moktar',
     'Abou el Kacem Chebbi': 'Chebbi, Abou el Kacem',
