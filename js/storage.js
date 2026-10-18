@@ -31,11 +31,14 @@ const PORTRAIT_DAY_KEY = 'historiaxe_portrait_day_v1';
 const LAST_THEME_KEY = 'historiaxe_last_theme_v1';
 const MODES_GROUPS_KEY = 'historiaxe_modes_groups_v1';
 const WEEKLY_CHALLENGE_STREAK_KEY = 'historiaxe_weekly_challenge_streak_v1';
+// Le Chemin du Temps : étoiles et meilleur score par niveau (js/pathCore.js: normalizeProgress).
+// Synchronisé : c'est de la progression, on ne la perd pas en changeant d'appareil.
+const PATH_PROGRESS_KEY = 'historiaxe_path_v1';
 
 // Clés dont le contenu est envoyé/reçu par la synchronisation cloud
 // (api/sync.js) — progression de jeu uniquement, jamais les préférences
 // d'affichage (SETTINGS_KEY), qui restent propres à chaque appareil.
-const SYNC_KEYS = [SRS_KEY, PROGRESS_KEY, FAVORITES_KEY, CUSTOM_THEMES_KEY, CUSTOM_EVENTS_KEY, STREAK_KEY, GAMIFICATION_KEY, WEEKLY_CHALLENGE_STREAK_KEY];
+const SYNC_KEYS = [SRS_KEY, PROGRESS_KEY, FAVORITES_KEY, CUSTOM_THEMES_KEY, CUSTOM_EVENTS_KEY, STREAK_KEY, GAMIFICATION_KEY, WEEKLY_CHALLENGE_STREAK_KEY, PATH_PROGRESS_KEY];
 
 const DEFAULT_SETTINGS = {
     orientation: 'auto',
@@ -202,6 +205,16 @@ function srsRecord(eventId, isSuccess) {
 // getAllEventsWithLocation() pour retrouver le thème d'origine de chaque
 // événement, une info que ce module (sans dépendance au reste de l'app) n'a
 // pas.
+
+// --- LE CHEMIN DU TEMPS ---
+function pathProgressLoad() {
+    try { return JSON.parse(localStorage.getItem(PATH_PROGRESS_KEY)) || null; }
+    catch (e) { return null; }
+}
+
+function pathProgressSave(data) {
+    try { localStorage.setItem(PATH_PROGRESS_KEY, JSON.stringify(data)); } catch (e) {}
+}
 
 // --- PROGRESSION & HISTORIQUE DES THEMES ---
 function progressLoad() {
@@ -587,6 +600,7 @@ function resetAllGameData() {
     try { localStorage.removeItem(LEADERBOARD_KEY); } catch (e) {}
     try { localStorage.removeItem(STREAK_KEY); } catch (e) {}
     try { localStorage.removeItem(WEEKLY_CHALLENGE_STREAK_KEY); } catch (e) {}
+    try { localStorage.removeItem(PATH_PROGRESS_KEY); } catch (e) {}
     try { localStorage.removeItem(GAMIFICATION_KEY); } catch (e) {}
     try { localStorage.removeItem(LAST_THEME_KEY); } catch (e) {}
 }

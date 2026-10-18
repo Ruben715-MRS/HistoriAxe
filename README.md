@@ -378,6 +378,70 @@ siècle » et « changer la carte » imaginés au départ ne sont pas faits : ch
 un branchement par mode. Quitter en pleine épreuve abandonne le parcours. Le partage donne
 une ligne de carrés (🟩 réussie, ⏭ passée, 🟥 échouée, ⬜ non atteinte).
 
+## Le Chemin du Temps : un parcours commun, niveau après niveau (prototype)
+
+Le jeu libre laisse tout choisir (834 thèmes, une vingtaine de modes) : il n'y a pas d'« étape
+suivante », donc pas de raison évidente de revenir demain. Le Chemin du Temps ajoute le contraire :
+**une carte unique, la même pour tous, qu'on gravit niveau après niveau** — le premier en bas, le boss du
+monde en haut, le chemin parcouru qui se colore en vert, le reste en pointillé. Il **complète** le jeu
+libre, il ne le remplace pas (carte « Chemin du Temps » en tête de l'écran des catégories).
+
+- **Un monde = une époque** (ici l'Antiquité, -800 → 476), **un niveau = une tranche de temps** (de 100 à
+  230 ans) : 10 niveaux de 12 repères, puis un **boss** de 20 repères qui reprend 2 repères de chaque niveau
+  (la révision du monde entier).
+- **Un niveau = une mini-expédition** de 3 épreuves (6 pour le boss), 3 vies pour tout le niveau. Les
+  épreuves sont de vrais modes (Quiz, Avant/Après, frise Classique, Périodes, Curseur, Remise en ordre) :
+  la difficulté monte d'un niveau à l'autre en changeant leur mélange. Pas d'Intrus : il s'appuie sur les
+  axes d'un seul thème.
+- **Étoiles** : ★ pour finir, ★★ avec deux vies gardées, ★★★ sans la moindre erreur. Elles ne redescendent
+  jamais en rejouant. Un niveau s'ouvre en réussissant le précédent (une étoile suffit) ; le **boss**
+  demande en plus 15 étoiles sur les 30 des dix niveaux (`bossStarsRequired`) — de quoi rejouer un peu sans
+  bloquer. Le boss offre une vie à mi-parcours (joker de l'Expédition).
+- **Récompense** : XP du niveau (`PathCore.levelXp` : fraction des points, prime de réussite et d'étoiles,
+  prime au premier passage, boss plus généreux), et la réussite d'un niveau **compte pour la série
+  quotidienne**.
+- **Contenu sans saisie à la main.** Les événements d'un niveau sont tirés des événements
+  « incontournables » des thèmes (`theme.essentiel`) qui tombent dans sa tranche de temps, **un par
+  tranche d'un douzième de la fenêtre** (répartition régulière), jamais deux à la même année, en préférant
+  les repères **connus** : un événement que plusieurs thèmes racontent (même année, même nom propre dans le
+  titre — `fame`) passe avant un événement cité par un seul thème. Le tirage est **déterministe** (hachage de
+  l'id de niveau et de l'id d'événement) : même niveau, mêmes repères, pour tous et à chaque visite — c'est
+  ce qui en fait une mission. Un événement ajouté au pack peut entrer dans un niveau sans toucher au code.
+  Le contenu du joueur et le thème exclu des défis (calendrier non grégorien) sont ignorés.
+
+### Où est quoi
+
+| Fichier | Rôle |
+|---|---|
+| `js/pathCore.js` | moteur **pur**, testé hors navigateur (`tests/path.test.js`) : définition des mondes et des niveaux (`WORLDS`), composition d'un niveau, étoiles, déblocage, XP |
+| `js/app/path.js` | l'écran `#screen-path` (carte SVG + pastilles, fiche d'un niveau), le lancement d'un niveau, la récompense (`pathOnLevelFinish`) |
+| `js/app/expedition.js` | réutilisé tel quel ; `startExpedition(plan)` lance un niveau (vivier imposé via `revisionMode`, comme la révision) |
+| `js/storage.js` | `PATH_PROGRESS_KEY` (`historiaxe_path_v1`), **synchronisée** dans le cloud (`SYNC_KEYS`, aucune modification de l'API) |
+| `ui/fr.json` | clés `path.*` (titres des niveaux : `path.worlds.<monde>.levels.<n>`) — **français seulement** : les autres langues retombent sur le français |
+| `e2e/chemin.spec.js` | la carte, un niveau joué, les étoiles, le déblocage, l'abandon, le boss, et que **chaque niveau démarre avec chacune de ses épreuves** sans alerte |
+
+### Ajouter un monde ou un niveau
+
+Ajouter une entrée à `PathCore.WORLDS` (tranches `from`/`to` qui se suivent sans trou — testé —, modes de
+chaque niveau, `bossStarsRequired`) et les titres dans `ui/fr.json` (`path.worlds.<id>`) : le test de
+contenu vérifie qu'ils existent. L'écran de la carte affiche tous les mondes de `WORLDS` à la suite ; le
+déblocage d'un monde par le précédent et le retrait du message « Le Moyen Âge arrive bientôt… » restent à
+faire (voir ci-dessous).
+
+### Limites assumées de ce prototype
+
+- **Un seul monde** (l'Antiquité) : il sert à juger le principe avant d'écrire les autres. Le « test de
+  passage » pour sauter un monde, les parcours nationaux et la frise personnelle qui grandit à chaque
+  niveau n'existent pas encore.
+- **Les titres des niveaux sont écrits à la main** (11 phrases) ; la composition des niveaux, elle, est
+  automatique. Une relecture historique du tirage (un repère obscur peut subsister dans une tranche pauvre en
+  événements connus) reste à faire.
+- **Français seulement** pour les textes ; sur un autre pack de langue, un niveau qui trouve moins de 8
+  événements refuse de se lancer (`PATH_MIN_EVENTS`).
+- **Aucune mesure de rétention** (voir « Télémétrie » plus haut) : on ne saura pas si le parcours retient
+  mieux que le jeu libre sans cela.
+- Les étoiles sont synchronisées en « dernière écriture gagne », comme le reste de la progression.
+
 ## Le Mode Classe : une séance en direct pour une classe
 
 L'enseignant choisit un thème (carte « Mode Classe » dans le groupe Outils de l'écran des

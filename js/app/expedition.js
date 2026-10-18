@@ -15,6 +15,12 @@
 // Les jokers se gagnent en route (après la 3e et la 6e épreuve) et ne dépendent d'aucun mode :
 // « passer l'épreuve » et « regagner une vie ». « Révéler le siècle » ou « changer la carte » auraient
 // demandé un branchement par moteur — voir README.
+//
+// Le Chemin du Temps (js/app/path.js) réutilise ce parcours tel quel : un NIVEAU est une expédition
+// courte lancée avec un « plan » — { levelId, title, stages: [modes], events, boss, world } — sur un
+// vivier d'événements imposé (la révision, voir `revisionMode`) au lieu du thème affiché. Trois
+// différences seulement, toutes testées sur `expedition.plan` : l'écran de sortie (la carte, pas les
+// modes), la récompense (étoiles et XP du niveau : `pathOnLevelFinish`) et les jokers.
 
 const EXPEDITION_MAX_LIVES = 3;
 // Questions par épreuve (cartes pour la frise, années pour le Fil du temps…).
@@ -84,14 +90,28 @@ function planExpeditionStages(rng) {
 }
 
 // --- Cycle de vie -----------------------------------------------------------
-function startExpedition() {
-    if (getModePoolRaw().length < EXPEDITION_MIN_EVENTS) {
+// Le palier de difficulté d'un mode (pour la couleur de l'épreuve sur le parcours).
+function expeditionTierOf(mode) {
+    const idx = EXPEDITION_TIERS.findIndex(tier => tier.modes.includes(mode));
+    return idx < 0 ? 1 : idx;
+}
+
+// Sans plan : l'Expédition du thème affiché. Avec un plan : un niveau du Chemin du Temps.
+function startExpedition(plan) {
+    // Appelée par un onclick, elle peut recevoir autre chose qu'un plan : on ne garde que le vrai.
+    if (!plan || !Array.isArray(plan.stages)) plan = null;
+    if (plan) {
+        revisionMode = true;
+        revisionEvents = plan.events.slice();
+    } else if (getModePoolRaw().length < EXPEDITION_MIN_EVENTS) {
         showConfirm(t('expedition.not_enough', { count: EXPEDITION_MIN_EVENTS }), null, { alertOnly: true });
         return;
     }
     resetSessionHistory();
     expedition = {
-        stages: planExpeditionStages().map(s => ({ ...s, result: null })),
+        plan,
+        stages: (plan ? plan.stages.map((mode, i) => ({ mode, tier: expeditionTierOf(mode) })) : planExpeditionStages())
+            .map(s => ({ ...s, result: null })),
         index: 0,
         lives: EXPEDITION_MAX_LIVES,
         total: 0,
@@ -145,9 +165,16 @@ function expeditionOnStageEnd(isWin) {
     return true;
 }
 
+// Jokers d'un parcours : ceux de l'Expédition ; un niveau ordinaire n'en a pas (trop court), un boss
+// offre une vie de plus à mi-parcours.
+function expeditionJokerAfter() {
+    if (!expedition.plan) return EXPEDITION_JOKER_AFTER;
+    return expedition.plan.boss ? { 3: 'life' } : {};
+}
+
 function advanceExpedition() {
     expedition.index += 1;
-    const joker = EXPEDITION_JOKER_AFTER[expedition.index];
+    const joker = expeditionJokerAfter()[expedition.index];
     if (joker) {
         expedition.jokers[joker] += 1;
         expedition.earned = joker;
@@ -177,27 +204,40 @@ function expeditionUseJoker(kind) {
 
 function expeditionFinish(won) {
     expedition.finished = { won };
-    // L'XP est versée une fois, à la fin du parcours (les épreuves n'en versent pas : voir endGame).
-    const done = expedition.stages.filter(s => s.result && s.result.ok).length;
-    let xp = Math.round(expedition.total * 0.5) + done * 10 + (won ? 150 : 0);
-    if (typeof awardXP === 'function') {
-        const info = awardXP(xp, 'Expédition');
-        if (typeof addRecapLogEntry === 'function') addRecapLogEntry(info ? info.xpAwarded : 0, won ? 1 : 0);
+    if (expedition.plan) {
+        // Un niveau du Chemin du Temps : étoiles, progression, XP (js/app/path.js).
+        if (typeof pathOnLevelFinish === 'function') pathOnLevelFinish(expedition, won);
+    } else {
+        // L'XP est versée une fois, à la fin du parcours (les épreuves n'en versent pas : voir endGame).
+        const done = expedition.stages.filter(s => s.result && s.result.ok).length;
+        let xp = Math.round(expedition.total * 0.5) + done * 10 + (won ? 150 : 0);
+        if (typeof awardXP === 'function') {
+            const info = awardXP(xp, 'Expédition');
+            if (typeof addRecapLogEntry === 'function') addRecapLogEntry(info ? info.xpAwarded : 0, won ? 1 : 0);
+        }
     }
     if (won) { playVictorySound(); triggerHaptic('victory'); triggerConfetti(); } else { triggerHaptic('error'); }
     showScreen('screen-expedition', 'forward');
     renderExpedition();
 }
 
-// Renvoie true si une expédition était en cours (et l'abandonne) : voir quitGame.
+// Si une expédition était en cours, l'abandonne et renvoie l'écran où revenir (les modes, ou la carte du
+// Chemin du Temps pour un niveau) ; sinon null : voir quitGame.
 function expeditionAbort() {
-    if (!expedition) return false;
+    if (!expedition) return null;
+    const fromPath = !!expedition.plan;
     expedition = null;
-    return true;
+    if (fromPath) {
+        // Le vivier du niveau n'est plus celui de la révision une fois le niveau quitté.
+        revisionMode = false;
+        revisionEvents = [];
+        return 'screen-path';
+    }
+    return 'screen-modes';
 }
 
 function expeditionQuit() {
-    const leave = () => { expeditionAbort(); showScreen('screen-modes', 'back'); };
+    const leave = () => { const exit = expeditionAbort() || 'screen-modes'; showScreen(exit, 'back'); if (exit === 'screen-path' && typeof renderPath === 'function') renderPath(); };
     if (!expedition || expedition.finished) { leave(); return; }
     showConfirm(t('expedition.confirm_quit'), leave);
 }
@@ -214,6 +254,7 @@ function renderExpedition() {
     if (!expedition) return;
     const total = expedition.stages.length;
     const finished = !!expedition.finished;
+    document.getElementById('expedition-title').innerText = expedition.plan ? expedition.plan.title : t('expedition.title');
     document.getElementById('expedition-subtitle').innerText = finished
         ? ''
         : t('expedition.subtitle', { n: Math.min(expedition.index + 1, total), total });
@@ -244,10 +285,35 @@ function renderExpedition() {
     if (finished) {
         const done = expedition.stages.filter(s => s.result && s.result.ok).length;
         const skipped = expedition.stages.filter(s => s.result && s.result.skipped).length;
-        document.getElementById('expedition-final-title').innerText = t(expedition.finished.won ? 'expedition.won_title' : 'expedition.lost_title');
+        const plan = expedition.plan;
+        document.getElementById('expedition-final-title').innerText = plan
+            ? t(expedition.finished.won ? (plan.boss ? 'path.boss_won' : 'path.level_won') : 'path.level_lost')
+            : t(expedition.finished.won ? 'expedition.won_title' : 'expedition.lost_title');
         document.getElementById('expedition-final-text').innerText = t('expedition.final_text', {
             done, total, skipped, score: expedition.total, lives: expedition.lives
         });
+        // Étoiles, XP et déblocage d'un niveau du Chemin du Temps.
+        const extra = document.getElementById('expedition-final-extra');
+        extra.classList.toggle('hidden', !plan);
+        if (plan) {
+            const f = expedition.finished;
+            const stars = f.stars || 0;
+            extra.innerHTML = '';
+            const starsEl = document.createElement('div');
+            starsEl.className = 'path-final-stars';
+            starsEl.setAttribute('role', 'img');
+            starsEl.setAttribute('aria-label', t('path.stars_aria', { count: stars, max: 3 }));
+            starsEl.innerText = '★'.repeat(stars) + '☆'.repeat(3 - stars);
+            extra.appendChild(starsEl);
+            const xpEl = document.createElement('p');
+            xpEl.innerText = t('path.final_xp', { xp: f.xp || 0 })
+                + (f.worldDone ? ' ' + t('path.world_done') : (f.nextId && f.firstClear ? ' ' + t('path.unlocked_next') : ''));
+            extra.appendChild(xpEl);
+        }
+        document.getElementById('expedition-next-level').classList.toggle('hidden', !(plan && expedition.finished.won && expedition.finished.nextId));
+        document.getElementById('expedition-share').classList.toggle('hidden', !!plan && !expedition.finished.won);
+        document.getElementById('expedition-replay').innerText = t(plan ? 'path.replay' : 'expedition.replay');
+        document.getElementById('expedition-leave').innerText = t(plan ? 'path.back_to_map' : 'expedition.leave');
         document.getElementById('expedition-share').focus();
         return;
     }
@@ -285,6 +351,12 @@ function renderExpedition() {
 
 // --- Partage ----------------------------------------------------------------
 function expeditionShareText() {
+    if (expedition.plan) {
+        return t('path.share', {
+            level: expedition.plan.title, stars: '★'.repeat(expedition.finished.stars || 0) + '☆'.repeat(3 - (expedition.finished.stars || 0)),
+            score: expedition.total
+        });
+    }
     const theme = getCurrentTheme();
     const row = expedition.stages.map(s => (s.result && s.result.skipped) ? '⏭' : (s.result && s.result.ok) ? '🟩' : s.result ? '🟥' : '⬜').join('');
     return t('expedition.share', {
@@ -305,4 +377,19 @@ async function expeditionShare() {
         }
     }
     copyToClipboardFallback(text);
+}
+
+// « Nouvelle expédition » ou, pour un niveau, « Rejouer le niveau » : même plan, même vivier.
+function expeditionReplay() {
+    const plan = expedition && expedition.plan;
+    if (plan && typeof pathStartLevel === 'function') { expedition = null; pathStartLevel(plan.levelId); return; }
+    startExpedition();
+}
+
+// « Niveau suivant » à la fin d'un niveau réussi.
+function expeditionNextLevel() {
+    const f = expedition && expedition.finished;
+    if (!f || !f.nextId || typeof pathStartLevel !== 'function') return;
+    expedition = null;
+    pathStartLevel(f.nextId);
 }

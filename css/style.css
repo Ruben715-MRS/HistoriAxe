@@ -8560,3 +8560,267 @@ input:not([type="range"]), label, select, summary, textarea {
     font-size: 13px;
     color: var(--muted-text);
 }
+
+/* --- LE CHEMIN DU TEMPS (carte des niveaux : js/app/path.js) --- */
+.resume-card.path-card .resume-card-icon {
+    background: linear-gradient(135deg, #6b4400, #9a6200);
+    padding-left: 0;
+    font-size: 20px;
+}
+
+#screen-path {
+    align-items: center;
+}
+
+.path-map {
+    width: 100%;
+    max-width: 420px;
+    /* De la place sous le dernier niveau pour que la fiche, posée en bas, ne le cache jamais. */
+    padding: 0 8px 240px;
+    box-sizing: border-box;
+}
+
+.path-world-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border: 1px solid var(--border-soft);
+    border-radius: 14px;
+    background: var(--surface);
+    color: var(--text-dark);
+    box-shadow: var(--card-shadow);
+}
+
+.path-world-icon {
+    font-size: 22px;
+}
+
+.path-world-title {
+    flex: 1;
+    margin: 0;
+    font-size: 17px;
+}
+
+.path-world-stars {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--muted-text);
+}
+
+.path-track {
+    position: relative;
+    width: 100%;
+}
+
+.path-lines {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    pointer-events: none;
+}
+
+.path-lines path {
+    fill: none;
+    stroke-linecap: round;
+}
+
+.path-line-todo {
+    stroke: var(--border-soft);
+    stroke-width: 5;
+    stroke-dasharray: 2 11;
+}
+
+.path-line-done {
+    stroke: var(--progress-green);
+    stroke-width: 7;
+}
+
+.path-node {
+    /* Le bouton a la taille de sa pastille (centrée sur le point du chemin par ses marges) : une vraie zone
+       à toucher, un vrai anneau de focus. */
+    position: absolute;
+    width: 56px;
+    height: 56px;
+    margin: -28px 0 0 -28px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: none;
+    cursor: pointer;
+    font: inherit;
+    color: var(--text-dark);
+}
+
+.path-node.is-boss {
+    width: 76px;
+    height: 76px;
+    margin: -38px 0 0 -38px;
+}
+
+.path-node-disc {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 21px;
+    font-weight: 800;
+    color: #fff;
+    background: var(--primary-blue);
+    border: 4px solid var(--surface);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+    transition: transform 0.15s;
+}
+
+.path-node:active .path-node-disc,
+.path-node.is-selected .path-node-disc {
+    transform: scale(1.1);
+}
+
+.path-node.is-done .path-node-disc {
+    background: var(--progress-green);
+}
+
+.path-node.is-locked .path-node-disc {
+    background: var(--locked-bg, #b8bfc9);
+    font-size: 18px;
+    box-shadow: none;
+}
+
+.path-node.is-boss .path-node-disc {
+    font-size: 32px;
+    background: linear-gradient(135deg, #6b4400, #b8892e);
+}
+
+.path-node.is-boss.is-locked .path-node-disc {
+    background: var(--locked-bg, #b8bfc9);
+}
+
+/* Le prochain niveau à jouer respire : c'est là qu'on regarde. */
+.path-node.is-next .path-node-disc {
+    box-shadow: 0 0 0 0 rgba(30, 142, 62, 0.55);
+    animation: path-pulse 1.8s ease-out infinite;
+}
+
+@keyframes path-pulse {
+    to { box-shadow: 0 0 0 16px rgba(30, 142, 62, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .path-node.is-next .path-node-disc { animation: none; box-shadow: 0 0 0 5px rgba(30, 142, 62, 0.4); }
+    .path-node-disc { transition: none; }
+}
+
+.path-node-stars {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 2px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    color: var(--favorite-yellow);
+    white-space: nowrap;
+    /* Les étoiles passent parfois sur le trait du chemin : un liseré de la couleur du fond les détache. */
+    text-shadow: 0 0 3px var(--bg-color), 0 0 3px var(--bg-color), 0 0 3px var(--bg-color);
+}
+
+.path-node-label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 128px;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--text-dark);
+}
+
+.path-node-label.to-right { left: 100%; margin-left: 12px; text-align: left; }
+.path-node-label.to-left { right: 100%; margin-right: 12px; text-align: right; }
+.path-node.is-boss .path-node-label { top: auto; bottom: 100%; left: 50%; right: auto; margin: 0 0 8px; width: 200px; transform: translateX(-50%); text-align: center; }
+.path-node.is-locked .path-node-label { color: var(--muted-text); font-weight: 600; }
+
+.path-soon {
+    margin: 22px 0 0;
+    text-align: center;
+    font-size: 14px;
+    color: var(--muted-text);
+}
+
+.path-sheet {
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    z-index: 70;
+    width: 100%;
+    max-width: 520px;
+    box-sizing: border-box;
+    padding: 20px 20px calc(env(safe-area-inset-bottom, 0px) + 20px);
+    border-radius: 20px 20px 0 0;
+    background: var(--surface);
+    color: var(--text-dark);
+    border: 1px solid var(--border-soft);
+    box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.25);
+    text-align: center;
+}
+
+.path-sheet-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 40px;
+    height: 40px;
+    border: 0;
+    border-radius: 50%;
+    background: none;
+    color: var(--muted-text);
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.path-sheet-title {
+    margin: 0 36px 4px;
+    font-size: 19px;
+}
+
+.path-sheet-range,
+.path-sheet-stages,
+.path-sheet-best,
+.path-sheet-lock {
+    margin: 4px 0;
+    font-size: 14px;
+    color: var(--muted-text);
+}
+
+.path-sheet-best {
+    color: var(--text-dark);
+    font-weight: 700;
+}
+
+.path-sheet-lock {
+    color: var(--danger-red-text);
+    font-weight: 600;
+}
+
+.path-sheet-play {
+    margin-top: 14px;
+    min-width: 200px;
+}
+
+.expedition-final-extra {
+    margin: 6px 0 0;
+}
+
+.path-final-stars {
+    font-size: 40px;
+    letter-spacing: 6px;
+    color: var(--favorite-yellow);
+}

@@ -397,7 +397,12 @@ function quitGame() {
         stopTimer();
         multiGameActive = false;
         // Quitter une épreuve d'Expédition abandonne tout le parcours et ramène à l'écran des modes.
-        if (typeof expeditionAbort === 'function' && expeditionAbort()) { showScreen('screen-modes', 'back'); return; }
+        const expeditionExit = typeof expeditionAbort === 'function' ? expeditionAbort() : null;
+        if (expeditionExit) {
+            showScreen(expeditionExit, 'back');
+            if (expeditionExit === 'screen-path' && typeof renderPath === 'function') renderPath();
+            return;
+        }
         // Quitter la manche d'une séance de classe : on sort de la séance (l'enseignant voit l'élève s'arrêter).
         if (currentMode === 'class' && typeof classLeave === 'function') { classLeave(); return; }
         showScreen(screenAfterGame());

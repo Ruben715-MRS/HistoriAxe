@@ -863,6 +863,52 @@
     "leave": "Retour",
     "share": "🧭 HistoriAxe — Expédition · {theme}\n{row}\n🏆 {score} points · ❤️ {lives}\n\nJoue sur HistoriAxe !"
   },
+  "path": {
+    "title": "Le Chemin du Temps",
+    "subtitle": "Antiquité · {stars} ★ sur {max}",
+    "card_next": "Niveau {n} · {title}",
+    "card_done": "Antiquité terminée — rejouez pour les 3 étoiles",
+    "coming_soon": "Le Moyen Âge arrive bientôt…",
+    "level_n": "Niveau {n}",
+    "range": "De {from} à {to}",
+    "boss_range": "Le boss : {count} repères de toute l'Antiquité.",
+    "best": "meilleur score {score}",
+    "play": "Jouer",
+    "replay": "Rejouer le niveau",
+    "next_level": "Niveau suivant",
+    "back_to_map": "Retour à la carte",
+    "node_aria": "Niveau {n} : {title}, {stars} étoiles sur 3",
+    "node_locked_aria": "Niveau {n} : {title}, verrouillé",
+    "locked_level": "Terminez le niveau précédent pour l'ouvrir.",
+    "locked_boss": "Réunissez {need} étoiles sur les dix niveaux pour affronter le boss (vous en avez {have}).",
+    "not_enough": "Ce niveau a besoin d'au moins {count} événements dans le pack chargé.",
+    "level_won": "Niveau réussi !",
+    "boss_won": "Boss vaincu !",
+    "level_lost": "Niveau raté — plus de vies",
+    "stars_aria": "{count} étoiles sur {max}",
+    "final_xp": "+{xp} XP.",
+    "unlocked_next": "Un nouveau niveau vous attend.",
+    "world_done": "L'Antiquité est à vous !",
+    "share": "🗺️ HistoriAxe — Le Chemin du Temps\n{level} {stars}\n🏆 {score} points\n\nJoue sur HistoriAxe !",
+    "worlds": {
+      "antiquite": {
+        "title": "L'Antiquité",
+        "boss": "L'épreuve de l'Antiquité",
+        "levels": {
+          "1": "Les cités naissantes",
+          "2": "Perses, sages et philosophes",
+          "3": "Le siècle de Périclès",
+          "4": "Alexandre le Grand",
+          "5": "Royaumes et premiers empires",
+          "6": "Rome conquiert la Méditerranée",
+          "7": "La chute de la République",
+          "8": "Auguste et la paix romaine",
+          "9": "L'apogée de l'Empire",
+          "10": "Crise, christianisme et chute de Rome"
+        }
+      }
+    }
+  },
   "classroom": {
     "title": "Mode Classe",
     "desc": "Enseignant : ouvrez une séance, les élèves placent les mêmes cartes en même temps sur leur téléphone.",
