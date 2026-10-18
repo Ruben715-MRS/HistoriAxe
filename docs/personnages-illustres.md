@@ -11,7 +11,7 @@ ne posent pas la même question :
 | | Un thème, c'est | Une date, c'est | On le joue par |
 |---|---|---|---|
 | **Biographies** | une vie (360 thèmes, en 12 domaines) | une étape de cette vie | étape de la vie |
-| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Turquie, le Japon, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran) | la naissance d'un personnage | domaine |
+| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Turquie, le Japon, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans) | la naissance d'un personnage | domaine |
 
 Le déplacement ne coûte aucune migration : les 360 thèmes gardent leurs
 identifiants, et rien de ce que le joueur a sauvegardé (favoris, révision,
@@ -2024,6 +2024,48 @@ la CEEAC, les villes (Kinshasa, Brazzaville, Léopoldville), le Kongo, les Grand
   demandé en 250 px, Mandume et Musinga en 330 px, Goumba à la taille de l'original.
 - **Géolocalisation** : aucune figure n'est encore placée sur l'Atlas, faute de biographie liée.
 
+### Un bloc : les Balkans
+
+`pan_balkans`, « Grandes figures des Balkans » (code `balkans`, bloc) : **148 personnages de dix pays** — Roumanie 37, Serbie 28,
+Croatie 25, Bulgarie 17, Albanie 11, Bosnie-Herzégovine 7, Moldavie 6, Macédoine du Nord 6, Kosovo 6, Monténégro 5 — de Dioclétien
+(vers 244) à Toše Proeski (1981). Par axe : 42 Chefs d'État et dirigeants, 42 Littérature et pensée, 22 Guerres et résistances,
+16 Sciences, techniques et innovation, 15 Musique, spectacle et sport, 11 Beaux-arts ; 44 ⭐ et une biographie liée (Nikola Tesla).
+148 portraits : 107 du domaine public, 6 CC0, 35 CC BY ou CC BY-SA ; 9 figures sont nées avant 1500, 12 de 1500 à 1799, 127 depuis 1800.
+
+- **Le périmètre est celui des pays colorés sur la carte de départ** : la Roumanie, la Moldavie, la Bulgarie, la Serbie, la Croatie,
+  la Bosnie-Herzégovine, le Monténégro, le Kosovo, l'Albanie et la Macédoine du Nord. **La Slovénie, grisée sur cette carte, n'y est pas** (elle
+  relèverait plutôt d'un bloc d'Europe centrale), ni la Grèce, qui a son panthéon. Le Kosovo porte le code `XK`, l'usage de l'Union
+  européenne : `Intl.DisplayNames` le nomme « Kosovo » et le drapeau 🇽🇰 s'affiche.
+- **Aucun pays ne dépasse 40 %** : la Roumanie en pèse 25 %. Le Monténégro, le Kosovo et la Moldavie tiennent par cinq ou six figures.
+- **Un personnage, un seul thème, et celui qui l'honore le plus.** Nikola Tesla, né en Croatie de parents serbes, est serbe (son urne est à
+  Belgrade, son nom est celui de l'aéroport) ; Tito, né à Kumrovec, est croate, la fiche disant ce qu'est la Yougoslavie ; Ivo Andrić,
+  né à Travnik, est bosniaque ; Gavrilo Princip, né en Bosnie, aussi ; Constantin Ier, né à Niš, est serbe, Dioclétien, né près de Salone, croate ;
+  Elias Canetti, né à Roussé, est bulgare ; Mircea Eliade, Cioran, Ionesco et Tzara, nés en Roumanie, sont roumains, bien qu'ils aient écrit en
+  France ; Dora Pejačević (née à Budapest) est croate. Mère Teresa, née à Skopje, reste au panthéon du sous-continent indien.
+- **Des dates disputées, et donc des figures absentes.** Karađorđe (1752, 1762 ou 1768), Petar Ier Petrović-Njegoš, Milunka Savić,
+  Ali Pacha de Janina, Dositej Obradović, saint Sava, Ivan Asen II : l'article français donne plusieurs années, et une date contestée n'a rien
+  à faire dans une question de chronologie. Étienne le Grand est gardé avec « vers 1433 » ; Dioclétien, Constantin Ier, Stefan Dušan, Tudor
+  Vladimirescu et Pjetër Bogdani aussi gardent leur « vers ».
+- **Des figures disputées entre deux pays, avec leur contexte.** Gotsé Deltchev (né à Koukouch, aujourd'hui en Grèce) et Damé Grouev sont rangés en
+  Macédoine du Nord ; la Bulgarie les revendique aussi, et la fiche le dit. Les figures albanaises du Kosovo (Rugova, Jashari, Demaçi, Boletini, Prishtina) sont rangées au Kosovo, Skanderbeg et Fan Noli (né dans
+  l'actuelle Turquie) en Albanie : on range là où l'État actuel honore le plus.
+- **L'histoire contemporaine, sans complaisance.** Ceaușescu (la Securitate, les privations), Antonescu (la Shoah), Milošević et Mihailović
+  (guerres de Yougoslavie, tchetniks), Tuđman (controverses sur la Bosnie), Hoxha (le régime le plus fermé d'Europe), Jivkov (la campagne contre
+  les Turcs de Bulgarie), Jashari (héros pour les Kosovars, terroriste pour Belgrade) et Princip (héros ou assassin, selon le côté) sont dits tels qu'ils
+  furent ; la fiche de Boris III distingue les Juifs bulgares des Juifs de Thrace et de Macédoine.
+- **Des portraits souvent indirects**, et les légendes le disent : cinq timbres (Kiš, Selimović, Bogdani, Palade, Predić), deux bustes (Dizdar,
+  Jashari), un buste de Krapina, une statue (Marulić), des portraits votifs et des fresques (Étienne le Grand, Brâncoveanu, Dušan, Lazar), des gravures
+  de presse et des tableaux posthumes (Zrinski, Vlad). Onze sont `nomVisible` : le nom y est écrit. Ceaușescu est montré à dix-huit ans, sur une
+  photographie d'identité judiciaire de 1936, seule image libre convenable.
+- **Statut américain des images : à relire.** Comme ailleurs, le script lit la licence que Commons déclare ; Celibidache, Ghiaurov, Christoff et Idromeno
+  (autoportrait) ont été écartés parce que Commons les dit rétablis aux États-Unis, et plusieurs photographies yougoslaves ou roumaines d'avant 1978
+  restent à confirmer.
+- **Les images ont écarté seize fiches rédigées**, dont Syméon Ier, Miroslav Krleža, Boris Christoff, Nicolaï Ghiaurov, Dražen Petrović, Blaže Koneski, Vlaho
+  Bukovac et Andrija Mohorovičić. Elles sont dans `scripts/pantheon/balkans_candidats.md`, avec la liste des figures examinées et laissées de côté.
+- **Un téléchargement contraint.** Wikimedia répondait 429 aux miniatures de grands originaux : onze portraits de petite taille sont demandés à 330 px ou à la
+  taille de l'original.
+- **Géolocalisation** : seul Tesla, qui a une biographie, est placé sur l'Atlas (Smiljan, comme sa biographie).
+
 ### Un fichier source par panthéon, un script qui l'écrit dans `data/fr.json`
 
 `scripts/pantheon/<code>.json` (`fr`, `hispam`…) est **la seule source de
@@ -2366,7 +2408,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
 ### Ce qui n'est pas fait
 
 - **Les autres panthéons** : la France, l'Égypte, les États-Unis, l'Italie, le
-  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran sont écrits.
+  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans sont écrits.
   Chaque liste de personnages est validée avant la rédaction. Feuille de route, dans l'ordre
   où on les propose (un pays seul quand il a de quoi faire un thème, un bloc sinon) :
   1. **Le Machrek est écrit** (voir « Le cinquième bloc »). Il reste : le portrait des trois
@@ -2385,7 +2427,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
      Nouvelle-Zélande et le Pacifique »).
   4. **L'Europe et les Amériques qui manquent** : **le Portugal est écrit** (voir « Un pays à part : le Portugal »,
      qui a repris Magellan et Viriathe), Byzance (au-delà des cinq figures déjà au panthéon de la Grèce),
-     la Pologne, l'Europe centrale, les Balkans, les Caraïbes non
+     la Pologne, l'Europe centrale, la Slovénie (hors du bloc des Balkans, voir « Un bloc : les Balkans »), les Caraïbes non
      hispaniques.
 
   Les images décideront de la taille de chacun : pour l'Afrique subsaharienne et l'Asie du

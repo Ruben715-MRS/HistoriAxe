@@ -2,8 +2,8 @@
   "version": "1.0.0",
   "lang": "fr",
   "name": "Français (Intégral)",
-  "totalThemes": 824,
-  "totalEvents": 22589,
+  "totalThemes": 825,
+  "totalEvents": 22737,
   "categories": [
     {
       "nom": "Culture générale",
@@ -100978,6 +100978,2637 @@
                 "pan_au_white",
                 "pan_au_whitlam",
                 "pan_au_hawke"
+              ]
+            },
+            {
+              "id": "pan_balkans",
+              "nom": "Grandes figures des Balkans",
+              "difficulte": "Intermédiaire",
+              "motsCles": [
+                "Balkans",
+                "Europe du Sud-Est",
+                "Péninsule balkanique",
+                "Yougoslavie",
+                "ex-Yougoslavie",
+                "Slaves du Sud",
+                "Roumanie",
+                "Bulgarie",
+                "Serbie",
+                "Croatie",
+                "Bosnie-Herzégovine",
+                "Bosnie",
+                "Monténégro",
+                "Kosovo",
+                "Albanie",
+                "Macédoine du Nord",
+                "Macédoine",
+                "Moldavie",
+                "Moldova",
+                "Bessarabie",
+                "Transylvanie",
+                "Valachie",
+                "Dobroudja",
+                "Dalmatie",
+                "Bucarest",
+                "Sofia",
+                "Belgrade",
+                "Zagreb",
+                "Sarajevo",
+                "Podgorica",
+                "Pristina",
+                "Tirana",
+                "Skopje",
+                "Chișinău",
+                "Empire ottoman",
+                "Austro-Hongrie",
+                "Dracula",
+                "Tito",
+                "Tesla",
+                "Skanderbeg"
+              ],
+              "events": [
+                {
+                  "id": "pan_balkans_diocletien",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 244,
+                  "titre": "Naissance de Dioclétien",
+                  "description": "Dioclétien (vers 244-vers 311) est un empereur romain, né en Dalmatie, près de Salone, dans une famille modeste. Au pouvoir de 284 à 305, il restaure l'autorité impériale en instituant la tétrarchie, fixe des prix maximaux par un édit et lance en 303 la dernière grande persécution contre les chrétiens. Il abdique en 305, fait exceptionnel, et se retire dans son palais de Split, aujourd'hui inscrit au patrimoine mondial.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Diocl%C3%A9tien",
+                  "pays": "HR",
+                  "classement": "Dioclétien",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_diocletien.jpg",
+                    "legende": "Dioclétien, buste de marbre",
+                    "auteur": "Jebulon",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Diocletien_Vaux1.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_constantin",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 272,
+                  "titre": "Naissance de Constantin Ier",
+                  "description": "Constantin Ier (vers 272-337) est un empereur romain, né à Naissus, l'actuelle Niš, dans une famille de militaires illyriens. Vainqueur de Maxence au pont Milvius en 312, il met fin à la persécution des chrétiens par l'édit de Milan, en 313, réunit le concile de Nicée en 325 et fonde Constantinople en 330. Seul maître de l'Empire à partir de 324, il se fait baptiser peu avant sa mort, et la Serbie célèbre en lui l'enfant de Niš.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Constantin_Ier_(empereur_romain)",
+                  "pays": "RS",
+                  "classement": "Constantin Ier",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_constantin.jpg",
+                    "legende": "Constantin Ier, tête colossale de marbre, musée du Capitole, Rome",
+                    "auteur": "Jean-Christophe BENOIST",
+                    "licence": "CC BY 2.5",
+                    "source": "https://commons.wikimedia.org/wiki/File:Rome-Capitole-StatueConstantin.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_dusan",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1308,
+                  "titre": "Naissance de Stefan Dušan",
+                  "description": "Stefan Dušan (vers 1308-1355) est un roi de Serbie, puis empereur des Serbes et des Grecs, surnommé Dušan le Puissant. Il conquiert la Macédoine, l'Épire et la Thessalie et fait de la Serbie la première puissance des Balkans, ce que consacre son couronnement impérial de 1346 à Skopje. Il promulgue en 1349 un code de lois, le Code de Dušan, et meurt en 1355 alors qu'il marchait sur Constantinople.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Stefan_Uro%C5%A1_IV_Du%C5%A1an",
+                  "pays": "RS",
+                  "classement": "Stefan Dušan",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_dusan.jpg",
+                    "legende": "Stefan Dušan, fresque du monastère de Lesnovo (XIVe siècle)",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Car_Du%C5%A1an,_Manastir_Lesnovo,_XIV_vek.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_lazar",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1329,
+                  "titre": "Naissance de Lazar Hrebeljanović",
+                  "description": "Lazar Hrebeljanović (1329-1389) est un prince serbe, qui règne sur la Serbie de 1371 à sa mort, à la suite de la dislocation de l'empire de Dušan. Il réunit autour de lui les seigneurs serbes et bosniaques pour arrêter l'avance du sultan Mourad Ier, et affronte les Ottomans le 15 (28) juin 1389 à Kosovo Polje. Tué lors de la bataille, il est canonisé par l'Église orthodoxe serbe, et la défaite devient le mythe fondateur de la mémoire nationale serbe.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Lazar_Hrebeljanovi%C4%87",
+                  "pays": "RS",
+                  "classement": "Hrebeljanović, Lazar",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_lazar.jpg",
+                    "legende": "Lazar Hrebeljanović, icône de la cathédrale de l'Archange, Moscou (XVIIe siècle)",
+                    "auteur": "Архангельский собор Московского кремля",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%BD%D1%8F%D0%B7%D1%8C_%D0%9B%D0%B0%D0%B7%D0%B0%D1%80%D1%8C_%D0%A1%D0%B5%D1%80%D0%B1%D1%81%D0%BA%D0%B8%D0%B9.png"
+                  }
+                },
+                {
+                  "id": "pan_balkans_skanderbeg",
+                  "axe": "Guerres et résistances",
+                  "date": 1405,
+                  "titre": "Naissance de Skanderbeg",
+                  "description": "Skanderbeg (1405-1468) est un seigneur albanais, de son vrai nom Gjergj Kastrioti, et le héros national de l'Albanie. Élevé à la cour ottomane, il quitte l'armée du sultan en 1443, reprend Kruja et fédère les princes albanais dans la Ligue de Lezhë en 1444. Il résiste à plusieurs grandes expéditions ottomanes jusqu'à sa mort en 1468, ce qui lui vaut l'admiration de l'Europe chrétienne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Skanderbeg",
+                  "pays": "AL",
+                  "classement": "Skanderbeg",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_skanderbeg.jpg",
+                    "legende": "Skanderbeg, portrait d'Antonio Maria Crespi (1613-1621), posthume",
+                    "auteur": "Antonio Maria Crespi Castoldi (1580–1630) Alternative names il Bustino",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Skanderbeg_by_Antonio_Maria_Crespi.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_vlad",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1431,
+                  "titre": "Naissance de Vlad III l'Empaleur",
+                  "description": "Vlad III l'Empaleur (1431-1476) est un prince de Valachie, qui règne à trois reprises entre 1448 et 1476. Il combat les Ottomans, tente en juin 1462 de surprendre de nuit le camp du sultan Mehmed II, et impose par la terreur, notamment par l'empalement, son autorité aux boyards et aux marchands saxons. Surnommé Drăculea, « fils du Dragon », il inspire au XIXe siècle le Dracula de Bram Stoker, bien que le roman n'ait que peu de rapports avec sa vie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Vlad_III_l%27Empaleur",
+                  "pays": "RO",
+                  "classement": "Vlad III l'Empaleur",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_vlad.jpg",
+                    "legende": "Vlad III l'Empaleur, portrait peint de la seconde moitié du XVIe siècle, d'après un original perdu",
+                    "auteur": "Anonymous Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Vlad_%C5%A2epe%C5%9F,_the_Impaler,_Prince_of_Wallachia_(1456-1462)_(died_1477).jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_stefan",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1433,
+                  "titre": "Naissance d'Étienne le Grand",
+                  "description": "Étienne le Grand (vers 1433-1504) est un prince de Moldavie, qui règne de 1457 à sa mort. Il repousse Hongrois, Polonais et Ottomans, dont il écrase l'armée à Vaslui en 1475, et couvre le pays d'églises et de monastères, parmi lesquels les églises peintes de Bucovine. Canonisé par l'Église orthodoxe roumaine en 1992, il reste la figure tutélaire de la Moldavie, des deux rives du Prut.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89tienne_III_(prince_de_Moldavie)",
+                  "pays": "RO",
+                  "classement": "Étienne le Grand",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_stefan.jpg",
+                    "legende": "Étienne le Grand, portrait votif de style byzantin, en saint et en prince de Moldavie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Stefan_cel_Mare.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_marulic",
+                  "axe": "Littérature et pensée",
+                  "date": 1450,
+                  "titre": "Naissance de Marko Marulić",
+                  "description": "Marko Marulić (1450-1524) est un poète et humaniste croate, né à Split. Il écrit en latin et en croate, et son poème Judita (1501), qui raconte l'histoire biblique de Judith, est la première grande œuvre en langue croate, ce qui lui vaut d'être appelé le père de la littérature croate. Son traité d'édification morale, De institutione bene vivendi, traduit dans de nombreuses langues, est lu dans toute l'Europe catholique.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Marko_Maruli%C4%87",
+                  "pays": "HR",
+                  "classement": "Marulić, Marko",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_marulic.jpg",
+                    "legende": "Marko Marulić, statue de Split",
+                    "auteur": "Dennis G. Jarvis",
+                    "licence": "CC BY-SA 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Croatia-01216_-_Marko_Maruli%C4%87_(9548667523).jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_clovio",
+                  "axe": "Beaux-arts",
+                  "date": 1498,
+                  "titre": "Naissance de Giulio Clovio",
+                  "description": "Giulio Clovio (1498-1578) est un enlumineur croate, appelé Julije Klović dans son pays, né à Grižane, près de Rijeka, et installé en Italie. Il travaille à Rome pour le cardinal Farnèse, dont il décore le Livre d'heures, un chef-d'œuvre de la miniature, et Giorgio Vasari le compare à Michel-Ange. Le Greco, qui le rencontre à Rome, lui rend hommage en le plaçant dans l'un de ses tableaux.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Giulio_Clovio",
+                  "pays": "HR",
+                  "classement": "Clovio, Giulio",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_clovio.jpg",
+                    "legende": "Giulio Clovio, portrait peint par le Greco (1571-1572)",
+                    "auteur": "El Greco (1541–1614)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mus%C3%A9e_de_Capodimonte_-_Le_Gr%C3%A9co,_portrait_de_Giulio_Clovio,_en_1571-573_-02.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_zrinski",
+                  "axe": "Guerres et résistances",
+                  "date": 1508,
+                  "titre": "Naissance de Nikola Šubić Zrinski",
+                  "description": "Nikola Šubić Zrinski (1508-1566) est un ban de Croatie, noble de haut rang et chef de guerre. En 1566, il défend la forteresse de Szigetvár, en Hongrie, avec un petit nombre d'hommes, contre l'armée de Soliman le Magnifique, qui y meurt avant la fin du siège. Il y trouve la mort lors d'une sortie désespérée, et la défense de Szigetvár devient un symbole de la résistance de la Croatie face à l'Empire ottoman.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Nikola_%C5%A0ubi%C4%87_Zrinski",
+                  "pays": "HR",
+                  "classement": "Zrinski, Nikola Šubić",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_zrinski.jpg",
+                    "legende": "Nikola Šubić Zrinski, tableau de Miklós Barabás (1842), posthume",
+                    "auteur": "Miklós Barabás (1810–1898)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Barabas-zrinyi.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_vrancic",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1551,
+                  "titre": "Naissance de Faust Vrančić",
+                  "description": "Faust Vrančić (1551-1617) est un évêque, juriste et inventeur croate, né à Šibenik. Il publie en 1595 un dictionnaire de cinq langues européennes et, vers 1615, les Machinae novae, un recueil de machines, où figure le Homo volans, un parachute carré dont il aurait fait l'essai. Il meurt à Venise en 1617.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Fausto_Veranzio",
+                  "pays": "HR",
+                  "classement": "Vrančić, Faust",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_vrancic.jpg",
+                    "legende": "Faust Vrančić, portrait peint (1605), avec son inscription",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Fausto_Verancio_1605.jpeg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_balkans_mihai",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1558,
+                  "titre": "Naissance de Michel le Brave",
+                  "description": "Michel le Brave (1558-1601) est un prince de Valachie, qui règne de 1593 à sa mort. Après avoir battu les Ottomans à Călugăreni en 1595, il réunit brièvement sous son autorité, en 1599 et 1600, la Valachie, la Transylvanie et la Moldavie. Cette union éphémère, qui s'achève par son assassinat sur ordre du général impérial Giorgio Basta, fera de lui, pour les nationalistes roumains du XIXe siècle, le précurseur de la Grande Roumanie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Michel_Ier_le_Brave",
+                  "pays": "RO",
+                  "classement": "Michel le Brave",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_mihai.jpg",
+                    "legende": "Michel le Brave, gravure d'Égide Sadeler (1600-1601), avec sa légende latine",
+                    "auteur": "Aegidius Sadeler (–1629)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:MihaiViteazul.jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_balkans_gundulic",
+                  "axe": "Littérature et pensée",
+                  "date": 1589,
+                  "titre": "Naissance d'Ivan Gundulić",
+                  "description": "Ivan Gundulić (1589-1638) est un poète baroque de la République de Raguse, l'actuelle Dubrovnik. Son épopée Osman, qui célèbre la victoire des Polonais sur les Ottomans à Khotin en 1621, est la plus grande œuvre de la littérature croate de son temps. Dans sa pièce Dubravka, un hymne à la liberté (« O lijepa, o draga, o slatka slobodo ») devient la devise de sa ville.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ivan_Gunduli%C4%87",
+                  "pays": "HR",
+                  "classement": "Gundulić, Ivan",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_gundulic.jpg",
+                    "legende": "Ivan Gundulić, portrait anonyme (1622-1630)",
+                    "auteur": "anonymous",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:De_Gondola.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_petarzrinski",
+                  "axe": "Guerres et résistances",
+                  "date": 1621,
+                  "titre": "Naissance de Petar Zrinski",
+                  "description": "Petar Zrinski (1621-1671) est un ban de Croatie, arrière-petit-fils de Nikola Šubić Zrinski. Mécontent de la paix conclue en 1664 avec les Ottomans par l'empereur Léopold Ier, il ourdit avec son beau-frère Fran Krsto Frankopan et des nobles hongrois une conjuration pour libérer leurs pays de la tutelle des Habsbourg. La conspiration échoue, et il est décapité à Wiener Neustadt en avril 1671.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Petar_Zrinski",
+                  "pays": "HR",
+                  "classement": "Zrinski, Petar",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_petarzrinski.jpg",
+                    "legende": "Petar Zrinski, gravure d'Elias Widemann (1650)",
+                    "auteur": "Elias Widemann (1619–1652) Description engraver",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Zr%C3%ADnyi_P%C3%A9ter_Widemann.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_bogdani",
+                  "axe": "Littérature et pensée",
+                  "date": 1630,
+                  "titre": "Naissance de Pjetër Bogdani",
+                  "description": "Pjetër Bogdani (vers 1630-1689) est un prélat catholique et écrivain albanais, né près de Prizren, au Kosovo, et archevêque de Skopje. Il publie en 1685 à Padoue la Cuneus Prophetarum (La Cohorte des prophètes), ouvrage de théologie et d'histoire écrit en albanais, l'un des textes fondateurs de la langue albanaise. Il meurt de la peste à Pristina en 1689.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Pjet%C3%ABr_Bogdani",
+                  "pays": "XK",
+                  "classement": "Bogdani, Pjetër",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_bogdani.jpg",
+                    "legende": "Pjetër Bogdani, timbre albanais de 1989",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Pjet%C3%ABr_Bogdani_1989_Albania_stamp.jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_balkans_brancoveanu",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1654,
+                  "titre": "Naissance de Constantin Brâncoveanu",
+                  "description": "Constantin Brâncoveanu (1654-1714) est un prince de Valachie, qui règne de 1688 à 1714. Mécène, il donne son nom à un style d'architecture et de décor, le style brâncovenesc, qui mêle traditions byzantines, ottomanes et Renaissance, et il fait imprimer des livres en roumain, en grec et en arabe. Accusé de trahison, il est décapité à Constantinople avec ses quatre fils, ce qui fait de lui un martyr canonisé par l'Église orthodoxe roumaine en 1992.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Constantin_II_Br%C3%A2ncoveanu",
+                  "pays": "RO",
+                  "classement": "Brâncoveanu, Constantin",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_brancoveanu.jpg",
+                    "legende": "Constantin Brâncoveanu, portrait votif peint au monastère de Hurezi (1709)",
+                    "auteur": "Dan Mihai Pitea",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:The_Votive_Portrait_of_Prince_Constantin_Br%C3%A2ncoveanu_with_Cyrillic_inscription_at_Horezu_Monastery_(1709).jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_balkans_cantemir",
+                  "axe": "Littérature et pensée",
+                  "date": 1673,
+                  "titre": "Naissance de Dimitrie Cantemir",
+                  "description": "Dimitrie Cantemir (1673-1723) est un prince de Moldavie et un érudit, membre de l'Académie de Berlin. Allié de Pierre le Grand pendant la campagne du Prut en 1711, il perd son trône et passe en Russie, où il écrit son Histoire de l'Empire ottoman, qui fait longtemps référence en Europe, et une Description de la Moldavie. Il est aussi compositeur de musique turque et auteur d'un traité de notation.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Dimitrie_Cantemir",
+                  "pays": "RO",
+                  "classement": "Cantemir, Dimitrie",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_cantemir.jpg",
+                    "legende": "Dimitrie Cantemir, gravure du XVIIIe siècle",
+                    "auteur": "Graveur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Dimitrie_Cantemir_-_Foto01.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_boskovic",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1711,
+                  "titre": "Naissance de Ruđer Bošković",
+                  "description": "Ruđer Bošković (1711-1787) est un jésuite, mathématicien, physicien et astronome de la République de Raguse. Sa Théorie de la philosophie naturelle (1758) décrit la matière comme formée de points sans étendue, reliés par des forces, une vision que l'on a rapprochée de la physique atomique. Il enseigne à Rome et à Pavie, fonde l'observatoire de Brera à Milan et dirige l'optique de la Marine en France.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Roger_Joseph_Boscovich",
+                  "pays": "HR",
+                  "classement": "Bošković, Ruđer",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_boskovic.jpg",
+                    "legende": "Ruđer Bošković, portrait peint",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Rudjer_Boskovic.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_milos",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1780,
+                  "titre": "Naissance de Miloš Obrenović",
+                  "description": "Miloš Obrenović (1780-1860) est un prince de Serbie, chef du deuxième soulèvement serbe de 1815. Par des négociations avec les Ottomans, il obtient l'autonomie de la Serbie, reconnue par le sultan en 1830, avec le titre de prince héréditaire, et gouverne le pays d'une main autoritaire. Contraint d'abdiquer en 1839 puis rappelé en 1858, il meurt à Belgrade en 1860.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Milo%C5%A1_Ier_Obrenovi%C4%87",
+                  "pays": "RS",
+                  "classement": "Obrenović, Miloš",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_milos.jpg",
+                    "legende": "Miloš Obrenović, portrait peint (1848)",
+                    "auteur": "Peintre inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Milo%C5%A1_Obrenovi%C4%87_1848.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_tudor",
+                  "axe": "Guerres et résistances",
+                  "date": 1780,
+                  "titre": "Naissance de Tudor Vladimirescu",
+                  "description": "Tudor Vladimirescu (vers 1780-1821) est un chef de milice roumain, meneur du soulèvement de Valachie de 1821. Ancien officier de l'armée russe, il lève des paysans en armes contre les boyards et les princes phanariotes, en proclamant sa fidélité au sultan et sa volonté de rétablir les droits du pays. Abandonné par les Russes et en rupture avec les hétairistes grecs, il est tué par ces derniers en juin 1821, et son mouvement marque la fin du régime des princes phanariotes.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Tudor_Vladimirescu",
+                  "pays": "RO",
+                  "classement": "Vladimirescu, Tudor",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_tudor.jpg",
+                    "legende": "Tudor Vladimirescu, tableau de Theodor Aman (vers 1874-1876), posthume",
+                    "auteur": "Theodor Aman (1831–1891)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Theodor_Aman_-_Tudor_Vladimirescu_(1).jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_vuk",
+                  "axe": "Littérature et pensée",
+                  "date": 1787,
+                  "titre": "Naissance de Vuk Karadžić",
+                  "description": "Vuk Karadžić (1787-1864) est un philologue serbe, qui réforme la langue et l'écriture de son peuple. Il publie en 1814 une grammaire, en 1818 un dictionnaire et recueille les chants et les contes populaires, en imposant le principe d'écrire comme on parle, qui fonde le serbe littéraire moderne. Il vit à Vienne et reçoit la reconnaissance de Jacob Grimm et de Goethe, avant de mourir en 1864.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Vuk_Stefanovi%C4%87_Karad%C5%BEi%C4%87",
+                  "pays": "RS",
+                  "classement": "Karadžić, Vuk",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_vuk.jpg",
+                    "legende": "Vuk Karadžić, portrait (années 1850)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:VukKaradzic.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_jelacic",
+                  "axe": "Guerres et résistances",
+                  "date": 1801,
+                  "titre": "Naissance de Josip Jelačić",
+                  "description": "Josip Jelačić (1801-1859) est un ban de Croatie et un général de l'armée autrichienne. Nommé en 1848, il abolit le servage en Croatie, mais reste fidèle à l'empereur et entre en guerre contre la Hongrie révolutionnaire. Sa statue équestre, dressée en 1866 sur la place principale de Zagreb, qui porte son nom, est retirée par les communistes en 1947 puis replacée en 1990.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Josip_Jela%C4%8Di%C4%87",
+                  "pays": "HR",
+                  "classement": "Jelačić, Josip",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_jelacic.jpg",
+                    "legende": "Josip Jelačić, portrait peint par Ivan Zasche",
+                    "auteur": "Ivan Zasche (1826-1863)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ban-josip-jelacic.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_gradascevic",
+                  "axe": "Guerres et résistances",
+                  "date": 1802,
+                  "titre": "Naissance d'Husein Gradaščević",
+                  "description": "Husein Gradaščević (1802-1834) est un capitaine de Gradačac, surnommé le « Dragon de Bosnie ». En 1831, il se met à la tête d'une révolte de la noblesse bosniaque contre les réformes du sultan Mahmud II, qui limitent ses privilèges, et bat l'armée du grand vizir au Kosovo. Vaincu en 1832, il se réfugie en Autriche, puis à Constantinople, où il meurt en 1834.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Husein_Grada%C5%A1%C4%8Devi%C4%87",
+                  "pays": "BA",
+                  "classement": "Gradaščević, Husein",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_gradascevic.jpg",
+                    "legende": "Husein Gradaščević, reproduction d'un portrait du XIXe siècle",
+                    "auteur": "Unknown/not disclosed",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Husein_Grada%C5%A1%C4%8Devi%C4%87.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_njegos",
+                  "axe": "Littérature et pensée",
+                  "date": 1813,
+                  "titre": "Naissance de Petar II Petrović-Njegoš",
+                  "description": "Petar II Petrović-Njegoš (1813-1851) est un prince-évêque du Monténégro, de 1830 à sa mort, et un poète. Il crée un sénat, tente de remplacer les vendettas par la justice, et écrit Le Laurier de la montagne (1847), épopée en vers sur la lutte contre les Ottomans, tenue pour l'œuvre majeure de la littérature serbo-monténégrine. Mort de la tuberculose à trente-huit ans, il repose dans un mausolée au sommet du mont Lovćen.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Petar_II_Petrovi%C4%87-Njego%C5%A1",
+                  "pays": "ME",
+                  "classement": "Petar II Petrović-Njegoš",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_njegos.jpg",
+                    "legende": "Petar II Petrović-Njegoš, portrait de Johann Böss (1847)",
+                    "auteur": "Johann Böss (1822–1887)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Petar_II_Petrovi%C4%87-Njego%C5%A1.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_mazuranic",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1814,
+                  "titre": "Naissance d'Ivan Mažuranić",
+                  "description": "Ivan Mažuranić (1814-1890) est un écrivain et homme d'État croate, ban de Croatie de 1873 à 1880. Il y mène de grandes réformes de la justice, de l'instruction publique et de l'administration, qui font de la Croatie un État moderne au sein de la Hongrie. Poète, il laisse aussi La Mort de Smail-aga Čengić (1846), épopée tenue pour un sommet de la poésie croate.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ivan_Ma%C5%BEurani%C4%87",
+                  "pays": "HR",
+                  "classement": "Mažuranić, Ivan",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_mazuranic.jpg",
+                    "legende": "Ivan Mažuranić, dessin (vers 1898-1900)",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ivan_Ma%C5%BEurani%C4%87_drawing_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_strossmayer",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1815,
+                  "titre": "Naissance de Josip Juraj Strossmayer",
+                  "description": "Josip Juraj Strossmayer (1815-1905) est un évêque catholique et homme politique croate, évêque de Đakovo de 1850 à sa mort. Partisan de la coopération entre les Slaves du Sud, il fonde l'Académie yougoslave des sciences et des arts en 1866 et l'université de Zagreb en 1874, et finance de nombreux artistes et écoles. Il s'oppose au dogme de l'infaillibilité pontificale au concile Vatican I.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Josip_Juraj_Strossmayer",
+                  "pays": "HR",
+                  "classement": "Strossmayer, Josip Juraj",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_strossmayer.jpg",
+                    "legende": "Josip Juraj Strossmayer, gravure",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Josip_Juraj_Strossmayer2.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_balcescu",
+                  "axe": "Guerres et résistances",
+                  "date": 1819,
+                  "titre": "Naissance de Nicolae Bălcescu",
+                  "description": "Nicolae Bălcescu (1819-1852) est un historien et révolutionnaire roumain, l'une des têtes de la révolution valaque de 1848. Il demande la libération des paysans et l'indépendance nationale, puis, en exil à Paris, travaille à son histoire du règne de Michel le Brave, qui fait de ce prince le héros de l'unité roumaine. Atteint de tuberculose, il meurt à Palerme à trente-trois ans, et la Roumanie rapatrie ses cendres en 1890.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Nicolae_B%C4%83lcescu",
+                  "pays": "RO",
+                  "classement": "Bălcescu, Nicolae",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_balcescu.jpg",
+                    "legende": "Nicolae Bălcescu, portrait de Gheorghe Tattarescu (1851)",
+                    "auteur": "Gheorghe Tattarescu (1820–1894)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Gheorghe_Tattarescu_-_Nicolae_Balcescu.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_cuza",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1820,
+                  "titre": "Naissance d'Alexandru Ioan Cuza",
+                  "description": "Alexandru Ioan Cuza (1820-1873) est un homme d'État roumain, élu prince de Moldavie puis de Valachie en janvier 1859, ce qui réalise de fait l'union des deux principautés. Il y mène des réformes décisives : sécularisation des biens des monastères, loi rurale de 1864, code civil, instruction primaire gratuite, université de Iași et de Bucarest. Contraint d'abdiquer en 1866 par une coalition de ses adversaires, il meurt en exil à Heidelberg en 1873.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Alexandre_Jean_Cuza",
+                  "pays": "RO",
+                  "classement": "Cuza, Alexandru Ioan",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_cuza.jpg",
+                    "legende": "Alexandru Ioan Cuza, photographie ancienne colorisée",
+                    "auteur": "Pydrooo",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Alexandru_Ioan_Cuza_colorizat.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_rakovski",
+                  "axe": "Guerres et résistances",
+                  "date": 1821,
+                  "titre": "Naissance de Gueorgui Rakovski",
+                  "description": "Gueorgui Rakovski (1821-1867) est un révolutionnaire et publiciste bulgare, né à Kotel. Exilé à Belgrade et à Bucarest, il y publie des journaux et prépare, en 1862, une légion de volontaires bulgares, ce qui en fait l'un des fondateurs du mouvement de libération nationale. Il laisse aussi un long poème, Le Voyageur de la forêt, avant de mourir de tuberculose à Bucarest en 1867.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Gu%C3%A9orgui_Rakovski",
+                  "pays": "BG",
+                  "classement": "Rakovski, Gueorgui",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_rakovski.jpg",
+                    "legende": "Gueorgui Rakovski, photographie",
+                    "auteur": "Georgi Danchov (1846–1908)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Georgi-Rakovski.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_starcevic",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1823,
+                  "titre": "Naissance d'Ante Starčević",
+                  "description": "Ante Starčević (1823-1896) est un homme politique et écrivain croate, fondateur du Parti du droit en 1861. Il défend le droit de la Croatie à un État indépendant au sein de l'empire des Habsbourg, rejette à la fois l'hégémonie hongroise et le projet yougoslave et se fait appeler « Père de la patrie ». Son nationalisme, repris par la suite par des courants extrémistes, reste discuté.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ante_Star%C4%8Devi%C4%87",
+                  "pays": "HR",
+                  "classement": "Starčević, Ante",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_starcevic.jpg",
+                    "legende": "Ante Starčević, photographie",
+                    "auteur": "Unknown Zagreb photographer",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ante_Star%C4%8Devi%C4%87_portrait.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_iancu",
+                  "axe": "Guerres et résistances",
+                  "date": 1824,
+                  "titre": "Naissance d'Avram Iancu",
+                  "description": "Avram Iancu (1824-1872) est un avocat et chef révolutionnaire roumain de Transylvanie, figure de la révolution de 1848-1849. À la tête des paysans roumains des monts Apuseni, il tient tête pendant près d'un an aux troupes hongroises, d'où son surnom de « roi des montagnes ». Déçu par la Vienne impériale qui ne tient pas ses promesses, il sombre dans la misère et la folie et meurt en 1872.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Avram_Iancu",
+                  "pays": "RO",
+                  "classement": "Iancu, Avram",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_iancu.jpg",
+                    "legende": "Avram Iancu, photographie (vers 1865)",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Avram_Iancu,_cca._1865.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_danilo",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1826,
+                  "titre": "Naissance de Danilo Ier de Monténégro",
+                  "description": "Danilo Ier de Monténégro (1826-1860) est un prince du Monténégro, qui règne de 1851 à sa mort. Il sépare le pouvoir temporel du pouvoir religieux en 1852, en devenant prince héréditaire à la place d'un prince-évêque, et promulgue un code de lois en 1855. Il est assassiné à Kotor en 1860 par un opposant.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Danilo_Petrovi%C4%87-Njego%C5%A1",
+                  "pays": "ME",
+                  "classement": "Danilo Ier de Monténégro",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_danilo.jpg",
+                    "legende": "Danilo Ier, portrait de Johann Böss (1855)",
+                    "auteur": "Johann Böss (1822–1887)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Danilo_Petrovi%C4%87_Njego%C5%A1.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_zajc",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1832,
+                  "titre": "Naissance d'Ivan Zajc",
+                  "description": "Ivan Zajc (1832-1914) est un compositeur et chef d'orchestre croate, né à Rijeka. Formé à Milan, actif à Vienne, il dirige l'opéra de Zagreb à partir de 1870 et compose plus de mille œuvres, dont l'opéra Nikola Šubić Zrinski (1876), où il met en musique le siège de Szigetvár. Cet opéra reste l'un des plus joués de Croatie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ivan_Zajc",
+                  "pays": "HR",
+                  "classement": "Zajc, Ivan",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_zajc.jpg",
+                    "legende": "Ivan Zajc, lithographie de Josef Mukařovský (1875), avec sa légende",
+                    "auteur": "Josef Mukařovský (1851–1921)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ivan_Zajc_1875_Mukarovsky.png",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_balkans_miljanov",
+                  "axe": "Guerres et résistances",
+                  "date": 1833,
+                  "titre": "Naissance de Marko Miljanov",
+                  "description": "Marko Miljanov (1833-1901) est un chef de guerre monténégrin, vojvoda du clan des Kuči. Il se distingue dans les guerres contre les Ottomans, notamment à Fundina en 1876, puis, tombé en disgrâce, il apprend à lire et à écrire à cinquante ans. Il laisse un recueil de récits, Exemples de courage et d'héroïsme, sur l'éthique des montagnards.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Marko_Miljanov",
+                  "pays": "ME",
+                  "classement": "Miljanov, Marko",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_miljanov.jpg",
+                    "legende": "Marko Miljanov, photographie du XIXe siècle",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Marko_Miljanov.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_creanga",
+                  "axe": "Littérature et pensée",
+                  "date": 1837,
+                  "titre": "Naissance d'Ion Creangă",
+                  "description": "Ion Creangă (1837-1889) est un écrivain roumain, ancien diacre devenu instituteur. Ami d'Eminescu et membre du cercle littéraire Junimea, il écrit des contes d'un humour truculent, comme Le Chevreau aux trois chevrettes, et surtout ses Souvenirs d'enfance, un récit de la vie villageoise en Moldavie. Sa langue, nourrie des proverbes et des tournures de la campagne, en fait un classique lu par chaque écolier roumain.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ion_Creang%C4%83",
+                  "pays": "RO",
+                  "classement": "Creangă, Ion",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_creanga.jpg",
+                    "legende": "Ion Creangă, photographie de l'atelier Heck, Iași (vers 1877)",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ion_Creanga-Foto03.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_levski",
+                  "axe": "Guerres et résistances",
+                  "date": 1837,
+                  "titre": "Naissance de Vassil Levski",
+                  "description": "Vassil Levski (1837-1873) est un révolutionnaire bulgare, surnommé « l'Apôtre de la liberté ». Il parcourt le pays pour créer un réseau de comités secrets, l'Organisation révolutionnaire intérieure, en vue d'un soulèvement national contre les Ottomans et d'une république bulgare. Arrêté, il est pendu à Sofia le 18 février 1873, et sa tombe, dont l'emplacement reste incertain, est devenue un lieu de mémoire.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Vassil_Levski",
+                  "pays": "BG",
+                  "classement": "Levski, Vassil",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_levski.jpg",
+                    "legende": "Vassil Levski, carte postale d'après sa photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:BASA-600K-1-1865-15-Vasil_Levski-retouched.jpeg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_grigorescu",
+                  "axe": "Beaux-arts",
+                  "date": 1838,
+                  "titre": "Naissance de Nicolae Grigorescu",
+                  "description": "Nicolae Grigorescu (1838-1907) est un peintre roumain, le premier à donner à la peinture roumaine une place européenne. Formé à Paris, il travaille à Barbizon avec les peintres de la nature, puis peint des paysannes et des paysages de son pays, et les épisodes de la guerre d'indépendance de 1877, dont il suit les combats comme peintre aux armées. Il meurt à Câmpina en 1907.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Nicolae_Grigorescu",
+                  "pays": "RO",
+                  "classement": "Grigorescu, Nicolae",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_grigorescu.jpg",
+                    "legende": "Nicolae Grigorescu, photographie (avant 1907)",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Nicolae_Grigorescu_-_Foto02.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_senoa",
+                  "axe": "Littérature et pensée",
+                  "date": 1838,
+                  "titre": "Naissance d'August Šenoa",
+                  "description": "August Šenoa (1838-1881) est un écrivain croate, né à Zagreb. Il fonde le roman historique croate avec L'Or de l'orfèvre (1871) et La Révolte des paysans (1877), qui racontent la vie de Zagreb et le soulèvement paysan de 1573. Dramaturge du Théâtre national et rédacteur de la revue Vienac, il meurt à quarante-trois ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/August_%C5%A0enoa",
+                  "pays": "HR",
+                  "classement": "Šenoa, August",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_senoa.jpg",
+                    "legende": "August Šenoa, photographie (1880)",
+                    "auteur": "unknown (date & author according to ISBN 9530603770 )",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:August_%C5%A0enoa.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_carol1",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1839,
+                  "titre": "Naissance de Carol Ier",
+                  "description": "Carol Ier (1839-1914) est un prince allemand de la maison de Hohenzollern-Sigmaringen, appelé en 1866 à régner sur la Roumanie, dont il devient le premier roi en 1881. Il fait voter la Constitution de 1866, conduit l'armée roumaine à Plevna en 1877 aux côtés des Russes et obtient l'indépendance du pays, reconnue au congrès de Berlin en 1878. Son règne de quarante-huit ans, le plus long de l'histoire roumaine, voit naître l'État roumain moderne, son armée et ses chemins de fer.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Carol_Ier",
+                  "pays": "RO",
+                  "classement": "Carol Ier",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_carol1.jpg",
+                    "legende": "Carol Ier, photographie (vers 1905-1914)",
+                    "auteur": "Unknown photographer",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Carol_I_of_Romania_edited.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_nikola",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1841,
+                  "titre": "Naissance de Nicolas Ier de Monténégro",
+                  "description": "Nicolas Ier de Monténégro (1841-1921) est un prince, puis roi, du Monténégro, qui règne de 1860 à 1918. Il obtient l'indépendance de son pays au congrès de Berlin en 1878, prend le titre de roi en 1910 et marie ses filles à des familles régnantes d'Europe, ce qui lui vaut le surnom de « beau-père de l'Europe ». Chassé en 1916 par l'Autriche-Hongrie, puis déposé en 1918 par l'assemblée de Podgorica, il meurt en exil à Antibes en 1921.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Nicolas_Ier_(roi_de_Mont%C3%A9n%C3%A9gro)",
+                  "pays": "ME",
+                  "classement": "Nicolas Ier de Monténégro",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_nikola.jpg",
+                    "legende": "Nicolas Ier de Monténégro, photographie de la Bain Collection (1911)",
+                    "auteur": "Bain News Service, publisher",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:King_Nicholas_of_Montenegro_(1911).jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_petar1",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1844,
+                  "titre": "Naissance de Pierre Ier de Serbie",
+                  "description": "Pierre Ier de Serbie (1844-1921) est un roi de Serbie, qui règne de 1903 à 1918 puis sur le royaume des Serbes, Croates et Slovènes jusqu'à sa mort. Il accède au trône après l'assassinat d'Alexandre Obrenović, restaure un régime parlementaire et mène la Serbie à la victoire dans les guerres balkaniques. Il suit son armée dans la retraite de 1915 à travers l'Albanie, et devient, en 1918, le premier roi du royaume des Serbes, Croates et Slovènes.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Pierre_Ier_(roi_de_Serbie)",
+                  "pays": "RS",
+                  "classement": "Pierre Ier de Serbie",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_petar1.jpg",
+                    "legende": "Pierre Ier de Serbie, photographie (1914)",
+                    "auteur": "Rotary Photographic Co.",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Peter_I_of_Serbia_(Rotary_Photo_7119_A)_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_qemali",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1844,
+                  "titre": "Naissance d'Ismail Qemali",
+                  "description": "Ismail Qemali (1844-1919) est un homme d'État albanais, né à Vlorë, ancien fonctionnaire et député ottoman. Il proclame à Vlorë, le 28 novembre 1912, l'indépendance de l'Albanie et préside le gouvernement provisoire. Contraint à la démission début 1914, il meurt en exil à Pérouse en 1919.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ismail_Qemali",
+                  "pays": "AL",
+                  "classement": "Qemali, Ismail",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_qemali.jpg",
+                    "legende": "Ismail Qemali, photographie (avant 1917)",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ismail_Kemal_Bey.png"
+                  }
+                },
+                {
+                  "id": "pan_balkans_pasic",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1845,
+                  "titre": "Naissance de Nikola Pašić",
+                  "description": "Nikola Pašić (1845-1926) est un homme d'État serbe, chef du Parti radical et plusieurs fois Premier ministre de la Serbie, puis du royaume des Serbes, Croates et Slovènes. Il mène la politique serbe pendant les guerres balkaniques et la Première Guerre mondiale, et signe en 1917 la déclaration de Corfou avec le Comité yougoslave. Son centralisme dresse contre lui les Croates, et il meurt à Belgrade en 1926.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Nikola_Pa%C5%A1i%C4%87",
+                  "pays": "RS",
+                  "classement": "Pašić, Nikola",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_pasic.jpg",
+                    "legende": "Nikola Pašić, photographie (1919)",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Nikola_Pasic_1.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_naim",
+                  "axe": "Littérature et pensée",
+                  "date": 1846,
+                  "titre": "Naissance de Naim Frashëri",
+                  "description": "Naim Frashëri (1846-1900) est un poète albanais, le poète national de l'Albanie, né à Frashër. Ses recueils, dont Les Troupeaux et les Champs (1886) et son épopée Histoire de Skanderbeg (1898), célèbrent la nature et le passé de l'Albanie et nourrissent le mouvement de la Renaissance nationale. Il meurt à Constantinople en 1900.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Naim_Frash%C3%ABri",
+                  "pays": "AL",
+                  "classement": "Frashëri, Naim",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_naim.jpg",
+                    "legende": "Naim Frashëri, photographie (avant 1900)",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Naim_Frash%C3%ABri.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_putnik",
+                  "axe": "Guerres et résistances",
+                  "date": 1847,
+                  "titre": "Naissance de Radomir Putnik",
+                  "description": "Radomir Putnik (1847-1917) est un maréchal serbe, chef d'état-major de l'armée pendant les guerres balkaniques et la Première Guerre mondiale. Il remporte les victoires de Kumanovo en 1912, de Cer en août 1914, puis de la Kolubara en décembre 1914, avant de diriger la retraite de l'armée serbe à travers l'Albanie à l'hiver 1915. Malade, il meurt à Nice en 1917.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Radomir_Putnik",
+                  "pays": "RS",
+                  "classement": "Putnik, Radomir",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_putnik.jpg",
+                    "legende": "Radomir Putnik, photographie de la Bain Collection",
+                    "auteur": "George Grantham Bain Collection (Library of Congress)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Radomir_Putnik.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_botev",
+                  "axe": "Guerres et résistances",
+                  "date": 1848,
+                  "titre": "Naissance de Hristo Botev",
+                  "description": "Hristo Botev (1848-1876) est un poète, journaliste et révolutionnaire bulgare. Ses poèmes, comme Hadji Dimitar, et ses articles d'exil, en Roumanie, appellent à la lutte armée contre les Ottomans. Il passe le Danube en mai 1876 à la tête d'une troupe de deux cents hommes, en pleine insurrection d'Avril, et meurt au combat dans les montagnes du nord de la Bulgarie, à vingt-huit ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Khristo_Botev",
+                  "pays": "BG",
+                  "classement": "Botev, Hristo",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_botev.jpg",
+                    "legende": "Hristo Botev, photographie (1875)",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:BASA-1271K-1-161-2-Hristo_Botev,_1875.JPG"
+                  }
+                },
+                {
+                  "id": "pan_balkans_eminescu",
+                  "axe": "Littérature et pensée",
+                  "date": 1850,
+                  "titre": "Naissance de Mihai Eminescu",
+                  "description": "Mihai Eminescu (1850-1889) est un poète romantique roumain, considéré comme le poète national de la Roumanie. Son poème Luceafărul (L'Étoile du soir), publié en 1883, et ses élégies sur le temps et l'amour fixent la langue littéraire roumaine, et il écrit aussi des articles politiques et des contes. Interné à plusieurs reprises, il meurt à trente-neuf ans à Bucarest, et ses vers restent les plus lus du pays.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mihai_Eminescu",
+                  "pays": "RO",
+                  "classement": "Eminescu, Mihai",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_eminescu.jpg",
+                    "legende": "Mihai Eminescu, photographie de Jan Tomas, Prague (1869)",
+                    "auteur": "Jan Tomas",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Eminescu.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_sami",
+                  "axe": "Littérature et pensée",
+                  "date": 1850,
+                  "titre": "Naissance de Sami Frashëri",
+                  "description": "Sami Frashëri (1850-1904) est un écrivain, lexicographe et penseur albanais, frère de Naim. Il publie, en turc, un dictionnaire encyclopédique, le Kamus al-A'lam, et un dictionnaire français-turc, et expose dans L'Albanie, ce qu'elle a été, ce qu'elle est, ce qu'elle sera (1899) le programme de l'autonomie albanaise. Il meurt à Constantinople en 1904.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sami_Frash%C3%ABri",
+                  "pays": "AL",
+                  "classement": "Frashëri, Sami",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_sami.jpg",
+                    "legende": "Sami Frashëri, photographie de jeunesse (années 1880)",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Sami_Frash%C3%ABri_(i_ri).jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_vazov",
+                  "axe": "Littérature et pensée",
+                  "date": 1850,
+                  "titre": "Naissance d'Ivan Vazov",
+                  "description": "Ivan Vazov (1850-1921) est un poète, romancier et dramaturge bulgare, considéré comme le « patriarche de la littérature bulgare ». Son roman Sous le joug (1894), situé pendant l'insurrection d'Avril 1876, est le plus lu et le plus traduit de la littérature de son pays, et ses poèmes chantent les héros de l'indépendance. Il reçoit des funérailles nationales à sa mort en 1921, et le Théâtre national de Sofia porte son nom.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ivan_Vazov",
+                  "pays": "BG",
+                  "classement": "Vazov, Ivan",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_vazov.jpg",
+                    "legende": "Ivan Vazov, photographie",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:BASA-937K-1-410-7-Ivan_Vazov_(cropped).JPG"
+                  }
+                },
+                {
+                  "id": "pan_balkans_caragiale",
+                  "axe": "Littérature et pensée",
+                  "date": 1852,
+                  "titre": "Naissance d'Ion Luca Caragiale",
+                  "description": "Ion Luca Caragiale (1852-1912) est un dramaturge et nouvelliste roumain, le plus grand auteur de théâtre de son pays. Sa comédie Une lettre perdue (1884), sur les intrigues d'une élection de province, et ses sketches du monde politique et des petits bourgeois de Bucarest, restent des satires toujours jouées. Fatigué de la polémique qui l'entoure, il s'installe en 1905 à Berlin, où il meurt en 1912.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ion_Luca_Caragiale",
+                  "pays": "RO",
+                  "classement": "Caragiale, Ion Luca",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_caragiale.jpg",
+                    "legende": "Ion Luca Caragiale, photographie de A. Duschek, Sinaia",
+                    "auteur": "A. Duschek - Sinaia",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ion_Luca_Caragiale_(1).jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_babes",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1854,
+                  "titre": "Naissance de Victor Babeș",
+                  "description": "Victor Babeș (1854-1926) est un médecin et bactériologiste roumain, fondateur de l'école de bactériologie de son pays. Il publie en 1885 avec André Cornil Les Bactéries, premier traité du genre, décrit la rage et identifie le parasite des bovins qui sera appelé Babesia. Directeur d'un institut de Bucarest, il est aussi l'un des fondateurs de la politique roumaine de santé publique.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Victor_Babe%C8%99",
+                  "pays": "RO",
+                  "classement": "Babeș, Victor",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_babes.jpg",
+                    "legende": "Victor Babeș, photographie",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Victor_Babes.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_misic",
+                  "axe": "Guerres et résistances",
+                  "date": 1855,
+                  "titre": "Naissance de Živojin Mišić",
+                  "description": "Živojin Mišić (1855-1921) est un maréchal serbe, né à Struganik. Commandant de la Première armée, il décide de la bataille de la Kolubara en décembre 1914, puis, en 1918, mène la percée du front de Salonique, qui amène la libération de la Serbie. Il meurt à Belgrade en 1921, et les Serbes le tiennent pour leur plus grand chef militaire.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/%C5%BDivojin_Mi%C5%A1i%C4%87",
+                  "pays": "RS",
+                  "classement": "Mišić, Živojin",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_misic.jpg",
+                    "legende": "Živojin Mišić, portrait peint par Uroš Predić (1919)",
+                    "auteur": "Uroš Predić (1857–1953)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Uro%C5%A1_Predi%C4%87_-_vojvoda_%C5%BDivojin_Mi%C5%A1i%C4%87,_1919.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_gorjanovic",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1856,
+                  "titre": "Naissance de Dragutin Gorjanović-Kramberger",
+                  "description": "Dragutin Gorjanović-Kramberger (1856-1936) est un géologue et paléontologue croate, né à Zagreb. Il découvre en 1899 à Krapina des centaines d'ossements de Néandertaliens, l'un des plus importants sites préhistoriques d'Europe, et les décrit dans un ouvrage de 1906. Il dirige le département de géologie et de paléontologie du Musée national de Zagreb.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Dragutin_Gorjanovi%C4%87-Kramberger",
+                  "pays": "HR",
+                  "classement": "Gorjanović-Kramberger, Dragutin",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_gorjanovic.jpg",
+                    "legende": "Dragutin Gorjanović-Kramberger, buste de Krapina",
+                    "auteur": "Divna Jaksic",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Krapina_-_Dragutin_Gorjanovic_Kramberger.jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_balkans_mokranjac",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1856,
+                  "titre": "Naissance de Stevan Stojanović Mokranjac",
+                  "description": "Stevan Stojanović Mokranjac (1856-1914) est un compositeur et ethnomusicologue serbe, né à Negotin. Fondateur de la musique chorale serbe moderne, il compose des Garlands (Rukoveti), qui harmonisent des chants populaires de tout l'espace yougoslave, et des œuvres sacrées orthodoxes. Il dirige la Société chorale de Belgrade et meurt à Skopje en 1914.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Stevan_Stojanovi%C4%87_Mokranjac",
+                  "pays": "RS",
+                  "classement": "Mokranjac, Stevan Stojanović",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_mokranjac.jpg",
+                    "legende": "Stevan Stojanović Mokranjac, photographie de Milan Jovanović (vers 1900)",
+                    "auteur": "Milan Jovanovic",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%D0%A1%D1%82%D0%B5%D0%B2%D0%B0%D0%BD_%D0%A1%D1%82%D0%BE%D1%98%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%9B_%D0%9C%D0%BE%D0%BA%D1%80%D0%B0%D1%9A%D0%B0%D1%86-%D0%9C%D0%B8%D0%BB%D0%B0%D0%BD_%D0%88%D0%BE%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%9B.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_tesla",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1856,
+                  "titre": "Naissance de Nikola Tesla",
+                  "description": "Nikola Tesla (1856-1943) est un inventeur et ingénieur serbe, né à Smiljan, dans l'actuelle Croatie, et naturalisé américain en 1891. Il met au point le moteur à induction et les systèmes de courants alternatifs polyphasés, que Westinghouse exploite, notamment avec la centrale des chutes du Niagara, et invente la bobine qui porte son nom. Mort seul à New York en 1943, il donne son nom à l'unité de mesure du champ magnétique, le tesla, et à l'aéroport de Belgrade.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Nikola_Tesla",
+                  "pays": "RS",
+                  "classement": "Tesla, Nikola",
+                  "biographie": "bio_tesla",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_tesla.jpg",
+                    "legende": "Nikola Tesla, photographie de Napoléon Sarony (vers 1890)",
+                    "auteur": "Napoleon Sarony (1821–1896)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Tesla_circa_1890.jpeg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_battenberg",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1857,
+                  "titre": "Naissance d'Alexandre Ier de Battenberg",
+                  "description": "Alexandre Ier de Battenberg (1857-1893) est un prince allemand, né à Vérone, devenu en 1879 le premier prince de la Bulgarie moderne. Il approuve en 1885 le rattachement de la Roumélie orientale à la principauté et conduit son armée à la victoire sur la Serbie à Slivnitsa. Enlevé en août 1886 par des officiers russophiles, il abdique peu après et meurt à Graz en 1893.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Alexandre_Ier_de_Bulgarie",
+                  "pays": "BG",
+                  "classement": "Alexandre Ier de Battenberg",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_battenberg.jpg",
+                    "legende": "Alexandre Ier de Battenberg, portrait de Dimitar Karastoyanov",
+                    "auteur": "Dimitar Karastoyanov (1856–1919)",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Alexander_I_of_Bulgaria_by_Dimitar_Karastoyanov.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_predic",
+                  "axe": "Beaux-arts",
+                  "date": 1857,
+                  "titre": "Naissance d'Uroš Predić",
+                  "description": "Uroš Predić (1857-1953) est un peintre serbe, né à Orlovat, dans le Banat. Formé à Vienne, il peint des scènes de la vie paysanne, des portraits et des sujets religieux, dont La Jeune Fille du Kosovo (1919), restée célèbre. Il vit à Belgrade, où il meurt en 1953, à quatre-vingt-quinze ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Uro%C5%A1_Predi%C4%87",
+                  "pays": "RS",
+                  "classement": "Predić, Uroš",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_predic.jpg",
+                    "legende": "Uroš Predić, timbre yougoslave de 1982 d'après son autoportrait",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Uro%C5%A1_Predi%C4%87_1982_Yugoslavia_stamp_BW.jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_balkans_pupin",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1858,
+                  "titre": "Naissance de Mihajlo Pupin",
+                  "description": "Mihajlo Pupin (1858-1935) est un physicien et inventeur serbe, né à Idvor, dans le Banat, et installé aux États-Unis en 1874. Professeur à l'université Columbia, il met au point la bobine de charge qui porte son nom et permet de transmettre la voix à longue distance par les lignes téléphoniques. Son autobiographie, From Immigrant to Inventor, obtient le prix Pulitzer en 1924.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Michael_Idvorsky_Pupin",
+                  "pays": "RS",
+                  "classement": "Pupin, Mihajlo",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_pupin.jpg",
+                    "legende": "Michael Pupin, gravure de presse (1901), avec sa légende",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Prof._Michael_I._Pupin.jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_balkans_paja",
+                  "axe": "Beaux-arts",
+                  "date": 1859,
+                  "titre": "Naissance de Paja Jovanović",
+                  "description": "Paja Jovanović (1859-1957) est un peintre serbe, né à Vršac. Formé à Vienne, où il s'installe, il peint de grands tableaux d'histoire, dont La Migration des Serbes (1896), et des portraits de la haute société, qui font de lui l'un des artistes les plus célèbres de l'Europe centrale de son temps. Il meurt à Vienne en 1957, à quatre-vingt-dix-huit ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Paja_Jovanovi%C4%87",
+                  "pays": "RS",
+                  "classement": "Jovanović, Paja",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_paja.jpg",
+                    "legende": "Paja Jovanović, photographie de Milan Jovanović",
+                    "auteur": "Milan Jovanović (1863–1944)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:PajaJovanovic.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_idromeno",
+                  "axe": "Beaux-arts",
+                  "date": 1860,
+                  "titre": "Naissance de Kolë Idromeno",
+                  "description": "Kolë Idromeno (1860-1939) est un peintre et architecte albanais, né à Shkodër. Il décore des églises et des demeures de sa ville, où il construit plusieurs édifices en style néoclassique, et peint des portraits et des scènes de la vie urbaine, dont Notre sœur. On le considère comme le fondateur de la peinture albanaise moderne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kol%C3%AB_Idromeno",
+                  "pays": "AL",
+                  "classement": "Idromeno, Kolë",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_idromeno.jpg",
+                    "legende": "Kolë Idromeno jeune, photographie de Mati Kodheli (années 1890)",
+                    "auteur": "Mati Kodheli",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kol%C3%AB_Idromeno_(i_ri).jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_ferdinandbg",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1861,
+                  "titre": "Naissance de Ferdinand Ier de Bulgarie",
+                  "description": "Ferdinand Ier de Bulgarie (1861-1948) est un prince de la maison de Saxe-Cobourg-Gotha, né à Vienne, qui règne sur la Bulgarie de 1887 à 1918. Il proclame en 1908 l'indépendance du pays et prend le titre de tsar, puis conduit la Bulgarie dans les guerres balkaniques et, aux côtés des Empires centraux, dans la Première Guerre mondiale. La défaite le force à abdiquer en faveur de son fils en 1918, et il meurt à Cobourg en 1948.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ferdinand_Ier_(roi_des_Bulgares)",
+                  "pays": "BG",
+                  "classement": "Ferdinand Ier de Bulgarie",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_ferdinandbg.jpg",
+                    "legende": "Ferdinand Ier de Bulgarie en uniforme, photographie (1912)",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Zar_Ferdinand_Bulgarien.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_boletini",
+                  "axe": "Guerres et résistances",
+                  "date": 1864,
+                  "titre": "Naissance d'Isa Boletini",
+                  "description": "Isa Boletini (1864-1916) est un chef de guerre albanais du Kosovo, né près de Mitrovica. Figure de la ligue de Peja, il mène les révoltes albanaises contre l'Empire ottoman en 1910 et en 1912, puis soutient le gouvernement d'Ismail Qemali, dont il est garde du corps. Il est tué en janvier 1916, à Podgorica, dans un affrontement avec des soldats monténégrins.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Isa_Boletini",
+                  "pays": "XK",
+                  "classement": "Boletini, Isa",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_boletini.jpg",
+                    "legende": "Isa Boletini, photographie de la mission militaire néerlandaise (1914)",
+                    "auteur": "Photographer of the Dutch Military Mission (1913)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Isa_Boletini,_Dutch_Military_Mission_(1914).jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_nusic",
+                  "axe": "Littérature et pensée",
+                  "date": 1864,
+                  "titre": "Naissance de Branislav Nušić",
+                  "description": "Branislav Nušić (1864-1938) est un dramaturge, humoriste et diplomate serbe, né à Belgrade. Ses comédies, dont Madame la ministre (1929) et Le Défunt (1937), et ses sketches satiriques sur la bureaucratie et la petite bourgeoisie balkanique restent parmi les pièces les plus jouées en Serbie. Il dirige le Théâtre national à Novi Sad et à Skopje, et meurt à Belgrade en 1938.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Branislav_Nu%C5%A1i%C4%87",
+                  "pays": "RS",
+                  "classement": "Nušić, Branislav",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_nusic.jpg",
+                    "legende": "Branislav Nušić, photographie de Milan Jovanović (1904)",
+                    "auteur": "Milan Jovanović (1863-1944)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Branislav_Nu%C5%A1i%C4%87_1904.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_cvijic",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1865,
+                  "titre": "Naissance de Jovan Cvijić",
+                  "description": "Jovan Cvijić (1865-1927) est un géographe et ethnologue serbe, né à Loznica. Fondateur de la géographie moderne en Serbie, il publie La Péninsule balkanique (1918), étude de géographie humaine qui fait référence, et conseille la délégation yougoslave à la conférence de la paix de 1919. Président de l'Académie serbe et recteur de l'université de Belgrade, il meurt en 1927.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jovan_Cviji%C4%87",
+                  "pays": "RS",
+                  "classement": "Cvijić, Jovan",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_cvijic.jpg",
+                    "legende": "Jovan Cvijić, photographie de Milan Jovanović (1911)",
+                    "auteur": "Milan Jovanović",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%D0%88%D0%BE%D0%B2%D0%B0%D0%BD_%D0%A6%D0%B2%D0%B8%D1%98%D0%B8%D1%9B,_%D0%B3%D0%B5%D0%BE%D0%B3%D1%80%D0%B0%D1%84_(1865-1927).jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_luchian",
+                  "axe": "Beaux-arts",
+                  "date": 1868,
+                  "titre": "Naissance de Ștefan Luchian",
+                  "description": "Ștefan Luchian (1868-1916) est un peintre roumain, l'un des plus grands coloristes de son pays. Formé à Munich et à Paris, il peint des fleurs, des portraits de paysannes et des scènes de la ville, dans une touche proche de l'impressionnisme. Frappé de paralysie à partir de 1900, il continue à peindre malgré la maladie, en attachant le pinceau à sa main, jusqu'à sa mort en 1916.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/%C8%98tefan_Luchian",
+                  "pays": "RO",
+                  "classement": "Luchian, Ștefan",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_luchian.jpg",
+                    "legende": "Ștefan Luchian, autoportrait (vers 1905-1907)",
+                    "auteur": "Ștefan Luchian (1868–1916)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Self-Portrait_Stefan_Luchian.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_santic",
+                  "axe": "Littérature et pensée",
+                  "date": 1868,
+                  "titre": "Naissance d'Aleksa Šantić",
+                  "description": "Aleksa Šantić (1868-1924) est un poète bosnien d'origine serbe, né à Mostar. Son poème Emina (1902), chant d'amour pour une jeune musulmane, et ses vers sur le pays, sur l'exil et sur la coexistence des peuples en font l'un des poètes les plus aimés de la Bosnie-Herzégovine. Il meurt à Mostar en 1924.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Aleksa_%C5%A0anti%C4%87",
+                  "pays": "BA",
+                  "classement": "Šantić, Aleksa",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_santic.jpg",
+                    "legende": "Aleksa Šantić, photographie (vers 1920)",
+                    "auteur": "Unknown photographer",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Aleksa_Santic_(cropped).JPG"
+                  }
+                },
+                {
+                  "id": "pan_balkans_fishta",
+                  "axe": "Littérature et pensée",
+                  "date": 1871,
+                  "titre": "Naissance de Gjergj Fishta",
+                  "description": "Gjergj Fishta (1871-1940) est un franciscain, poète et dramaturge albanais, né à Fishtë. Son épopée La Lyre des montagnes (Lahuta e Malcís), publiée entre 1905 et 1937, chante les luttes des montagnards du nord contre les Monténégrins et les Ottomans et le consacre poète national. Interdit sous le régime communiste, il meurt à Shkodër en 1940.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Gjergj_Fishta",
+                  "pays": "AL",
+                  "classement": "Fishta, Gjergj",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_fishta.jpg",
+                    "legende": "Gjergj Fishta, photographie (années 1930)",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Gjergj_Fishta_(portret).jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_gruev",
+                  "axe": "Guerres et résistances",
+                  "date": 1871,
+                  "titre": "Naissance de Damé Gruev",
+                  "description": "Damé Gruev (1871-1906) est un instituteur et révolutionnaire macédonien, né à Smilevo. Il est l'un des fondateurs, en 1893 à Thessalonique, de l'Organisation révolutionnaire intérieure macédono-andrinopolitaine, qui veut libérer la Macédoine de la domination ottomane. Il est tué en décembre 1906 dans un combat contre les troupes ottomanes.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Dam%C3%A9_Grouev",
+                  "pays": "MK",
+                  "classement": "Gruev, Damé",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_gruev.jpg",
+                    "legende": "Damé Grouev, photographie de Dimitar Karastoyanov (1905)",
+                    "auteur": "Dimitar Karastoyanov (1856–1919)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Dame_Gruev_by_Dimitar_Karastoyanov.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_radic",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1871,
+                  "titre": "Naissance de Stjepan Radić",
+                  "description": "Stjepan Radić (1871-1928) est un homme politique croate, fondateur du Parti paysan croate en 1904. Il s'oppose au centralisme serbe du royaume des Serbes, Croates et Slovènes, ce qui lui vaut la prison. Blessé par balle au Parlement de Belgrade le 20 juin 1928 par un député monténégrin, il meurt de ses blessures quelques semaines plus tard.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Stjepan_Radi%C4%87",
+                  "pays": "HR",
+                  "classement": "Radić, Stjepan",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_radic.jpg",
+                    "legende": "Stjepan Radić, photographie (1928)",
+                    "auteur": "o.Ang.",
+                    "licence": "CC BY-SA 3.0 DE",
+                    "source": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_183-2010-0420-502,_Stefan_Radic,_cropped.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_delcev",
+                  "axe": "Guerres et résistances",
+                  "date": 1872,
+                  "titre": "Naissance de Gotsé Deltchev",
+                  "description": "Gotsé Deltchev (1872-1903) est un révolutionnaire né à Koukouch, dans l'actuelle Grèce, et l'un des chefs de l'Organisation révolutionnaire intérieure macédono-andrinopolitaine. Il prône le mot d'ordre de la « liberté ou la mort » et prépare le soulèvement de la Saint-Élie de 1903. Il est tué par les troupes ottomanes en mai 1903, trois mois avant l'insurrection, et la Bulgarie comme la Macédoine du Nord le revendiquent comme un héros national.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Gots%C3%A9_Deltchev",
+                  "pays": "MK",
+                  "classement": "Deltchev, Gotsé",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_delcev.jpg",
+                    "legende": "Gotsé Deltchev, photographie d'Aleksandar Vladikov",
+                    "auteur": "Aleksandar Vladikov (1874–1942) Alternative names Български: Александър Владиков",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Gotze.jpeg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_vuia",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1872,
+                  "titre": "Naissance de Traian Vuia",
+                  "description": "Traian Vuia (1872-1950) est un inventeur et pionnier roumain de l'aviation, installé à Paris en 1902. Le 18 mars 1906 à Montesson, près de Paris, il décolle sur une douzaine de mètres à bord de son monoplan à moteur, sans rail ni catapulte, un bond qui le range parmi les premiers pilotes d'engins plus lourds que l'air. Il construit ensuite des hélicoptères et des moteurs à vapeur, et meurt à Bucarest en 1950.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Traian_Vuia",
+                  "pays": "RO",
+                  "classement": "Vuia, Traian",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_vuia.jpg",
+                    "legende": "Traian Vuia, photographie",
+                    "auteur": "not credited",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Traian_Vuia.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_matos",
+                  "axe": "Littérature et pensée",
+                  "date": 1873,
+                  "titre": "Naissance d'Antun Gustav Matoš",
+                  "description": "Antun Gustav Matoš (1873-1914) est un écrivain croate, né à Tovarnik. Nouvelliste, poète et critique, exilé à Belgrade et à Paris, il introduit dans la littérature croate le modernisme et un style d'une grande liberté, notamment dans ses chroniques. Il revient à Zagreb en 1908 et y meurt en 1914.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Antun_Gustav_Mato%C5%A1",
+                  "pays": "HR",
+                  "classement": "Matoš, Antun Gustav",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_matos.jpg",
+                    "legende": "Antun Gustav Matoš, photographie",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Antun_Gustav_Mato%C5%A1.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_nadezda",
+                  "axe": "Beaux-arts",
+                  "date": 1873,
+                  "titre": "Naissance de Nadežda Petrović",
+                  "description": "Nadežda Petrović (1873-1915) est une peintre serbe, née à Čačak, et la plus grande figure de la peinture serbe moderne. Formée à Munich, elle introduit dans son pays une peinture libre et colorée, proche du fauvisme, et expose avec le groupe Lada. Infirmière dans les hôpitaux de campagne pendant les guerres balkaniques et la Première Guerre mondiale, elle meurt du typhus à Valjevo en 1915.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Nade%C5%BEda_Petrovi%C4%87",
+                  "pays": "RS",
+                  "classement": "Petrović, Nadežda",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_nadezda.jpg",
+                    "legende": "Nadežda Petrović, photographie (1909)",
+                    "auteur": "Anonymous Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Nadezda_Petrovic.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_prishtina",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1873,
+                  "titre": "Naissance de Hasan Prishtina",
+                  "description": "Hasan Prishtina (1873-1933) est un homme politique albanais, né à Vushtrri, au Kosovo. Député du Parlement ottoman, chef de la révolte albanaise de 1912, il devient Premier ministre d'Albanie en 1921. Opposant à Zog, il est assassiné à Thessalonique en 1933.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Hasan_Prishtina",
+                  "pays": "XK",
+                  "classement": "Prishtina, Hasan",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_prishtina.jpg",
+                    "legende": "Hasan Prishtina, photographie de Kel Marubi (1921)",
+                    "auteur": "Kel Marubi (1870–1940)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Hasan_Prishtina_(portrait).jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_marie",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1875,
+                  "titre": "Naissance de Marie de Roumanie",
+                  "description": "Marie de Roumanie (1875-1938) est une princesse britannique devenue reine de Roumanie en 1914, petite-fille de la reine Victoria et du tsar Alexandre II. Infirmière dans les hôpitaux de campagne pendant la Première Guerre mondiale, elle plaide en 1919 à Paris, avec une grande énergie, la cause de la Grande Roumanie auprès des vainqueurs. Écrivaine à ses heures, elle laisse des mémoires et reste, pour les Roumains, la « reine-soldat ».",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Marie_de_Saxe-Cobourg-Gotha",
+                  "pays": "RO",
+                  "classement": "Marie de Roumanie",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_marie.jpg",
+                    "legende": "Marie de Roumanie, photographie (vers 1920-1925)",
+                    "auteur": "Unknown photographer",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Queen_Mary_of_Romania_2.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_brancusi",
+                  "axe": "Beaux-arts",
+                  "date": 1876,
+                  "titre": "Naissance de Constantin Brâncuși",
+                  "description": "Constantin Brâncuși (1876-1957) est un sculpteur roumain installé à Paris à partir de 1904, devenu français en 1952. Il dépouille la forme jusqu'à l'essentiel, dans Le Baiser (1907-1908), La Muse endormie, L'Oiseau dans l'espace et La Colonne sans fin, érigée en 1938 à Târgu Jiu, près de son village natal. Son atelier de l'impasse Ronsin est reconstitué au centre Pompidou, auquel il l'a légué.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Constantin_Br%C3%A2ncu%C8%99i",
+                  "pays": "RO",
+                  "classement": "Brâncuși, Constantin",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_brancusi.jpg",
+                    "legende": "Constantin Brâncuși, photographie d'Edward Steichen (1922)",
+                    "auteur": "Edward Steichen (1879–1973)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Edward_Steichen_-_Brancusi.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_yavorov",
+                  "axe": "Littérature et pensée",
+                  "date": 1878,
+                  "titre": "Naissance de Peyo Yavorov",
+                  "description": "Peyo Yavorov (1878-1914) est un poète bulgare, l'un des premiers représentants du symbolisme dans son pays. Révolutionnaire engagé en Macédoine, il écrit des poèmes de passion et d'angoisse, dont le recueil Insomnies (1907), avant que la mort de sa compagne ne le détruise. Il se suicide à Sofia en 1914.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Peyo_Yavorov",
+                  "pays": "BG",
+                  "classement": "Yavorov, Peyo",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_yavorov.jpg",
+                    "legende": "Peyo Yavorov, photographie d'Ivan Karastoyanov (1912)",
+                    "auteur": "Ivan Karastoyanov (1853–1922)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:BASA-373K-1-697-9-Peyo_Yavorov_(cropped,_enhanced).jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_milankovic",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1879,
+                  "titre": "Naissance de Milutin Milanković",
+                  "description": "Milutin Milanković (1879-1958) est un ingénieur, géophysicien et astronome serbe, né à Dalj, dans l'actuelle Croatie. Il calcule l'effet des variations de l'orbite terrestre sur le climat, dont les cycles de Milanković expliquent aujourd'hui les alternances de glaciations. Il propose aussi, en 1923, une réforme du calendrier julien, adoptée par plusieurs Églises orthodoxes.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Milutin_Milankovi%C4%87",
+                  "pays": "RS",
+                  "classement": "Milanković, Milutin",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_milankovic.jpg",
+                    "legende": "Milutin Milanković, photographie (années 1920)",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Milutin_Milankovi%C4%87_2.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_stamboliiski",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1879,
+                  "titre": "Naissance d'Alexandre Stamboliiski",
+                  "description": "Alexandre Stamboliiski (1879-1923) est un homme d'État bulgare, chef de l'Union agrarienne et Premier ministre de 1919 à 1923. Il impose une réforme agraire, le service du travail obligatoire et une politique de paix avec les voisins de la Bulgarie, ce qui dresse contre lui les officiers et les milieux urbains. Renversé par le coup d'État du 9 juin 1923, il est torturé et assassiné par des militants macédoniens.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Alexandre_Stamboliyski",
+                  "pays": "BG",
+                  "classement": "Stamboliiski, Alexandre",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_stamboliiski.jpg",
+                    "legende": "Alexandre Stamboliiski, photographie (années 1920)",
+                    "auteur": "User:BASA Спасимир",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:STAMBOLIYSKI2.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_yovkov",
+                  "axe": "Littérature et pensée",
+                  "date": 1880,
+                  "titre": "Naissance d'Yordan Yovkov",
+                  "description": "Yordan Yovkov (1880-1937) est un écrivain bulgare, né à Jeravna, dans les Balkans. Ses nouvelles et ses romans, comme Légendes du Vieux Balkan ou Soirées à l'auberge d'Antimovo, peignent avec une grande délicatesse les paysans de la Dobroudja, leurs rites et leur dignité. Diplomate à Bucarest, il meurt à Plovdiv en 1937.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Yordan_Yovkov",
+                  "pays": "BG",
+                  "classement": "Yovkov, Yordan",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_yovkov.jpg",
+                    "legende": "Yordan Yovkov, photographie",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:BASA-2128K-1-251-2-Yordan_Yovkov.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_enesco",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1881,
+                  "titre": "Naissance de George Enesco",
+                  "description": "George Enesco (1881-1955) est un violoniste, chef d'orchestre et compositeur roumain, élève de Fauré et de Massenet à Paris. Il écrit les Rhapsodies roumaines (1901-1902), plusieurs symphonies et l'opéra Œdipe, et enseigne le violon à Yehudi Menuhin. Exilé de fait après l'arrivée des communistes au pouvoir, il meurt à Paris en 1955 sans être revenu en Roumanie, où le principal festival de musique porte aujourd'hui son nom.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Georges_Enesco",
+                  "pays": "RO",
+                  "classement": "Enesco, George",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_enesco.jpg",
+                    "legende": "George Enesco, photographie (années 1920)",
+                    "auteur": "Unknown",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:George-Enesco_crop.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_antonescu",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1882,
+                  "titre": "Naissance d'Ion Antonescu",
+                  "description": "Ion Antonescu (1882-1946) est un maréchal et homme d'État roumain, dictateur du pays de 1940 à 1944 sous le titre de « Conducător ». Allié de l'Allemagne nazie, il engage la Roumanie contre l'URSS en 1941 et porte la responsabilité de massacres et de déportations de Juifs et de Roms, notamment à Iași et vers la Transnistrie. Renversé par le coup d'État du roi Michel le 23 août 1944, il est condamné à mort pour crimes de guerre et fusillé en 1946.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ion_Antonescu",
+                  "pays": "RO",
+                  "classement": "Antonescu, Ion",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_antonescu.jpg",
+                    "legende": "Ion Antonescu, photographie publiée en 1941",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ion_Antonescu_1941.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_dimitrov",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1882,
+                  "titre": "Naissance de Gueorgui Dimitrov",
+                  "description": "Gueorgui Dimitrov (1882-1949) est un dirigeant communiste bulgare, secrétaire général de l'Internationale communiste de 1935 à 1943. Accusé de l'incendie du Reichstag, il tient tête à Göring au procès de Leipzig en 1933 et est acquitté. Chef du gouvernement bulgare de 1946 à sa mort, il établit un régime communiste, et son corps embaumé repose jusqu'en 1990 dans un mausolée de Sofia.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Georgi_Dimitrov",
+                  "pays": "BG",
+                  "classement": "Dimitrov, Gueorgui",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_dimitrov.jpg",
+                    "legende": "Gueorgui Dimitrov, photographie (avant 1940)",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Georgi_Dimitrow.png"
+                  }
+                },
+                {
+                  "id": "pan_balkans_noli",
+                  "axe": "Littérature et pensée",
+                  "date": 1882,
+                  "titre": "Naissance de Fan Noli",
+                  "description": "Fan Noli (1882-1965) est un évêque orthodoxe, écrivain et homme d'État albanais, né dans l'actuelle Turquie. Il fonde en 1908 la première Église orthodoxe albanaise, à Boston, traduit Shakespeare, Ibsen et Cervantès en albanais, puis dirige le gouvernement de la révolution de juin 1924, renversé six mois plus tard. Il vit ensuite aux États-Unis, où il meurt en 1965.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Fan_Noli",
+                  "pays": "AL",
+                  "classement": "Noli, Fan",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_noli.jpg",
+                    "legende": "Fan Noli, photographie (vers 1924)",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Fan_Stilian_Noli.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_vlaicu",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1882,
+                  "titre": "Naissance d'Aurel Vlaicu",
+                  "description": "Aurel Vlaicu (1882-1913) est un ingénieur et aviateur roumain né en Transylvanie. Il construit lui-même ses avions, dont le Vlaicu I, avec lequel il vole en juin 1910 à Bucarest, puis le Vlaicu II, qui remporte des concours aériens en Europe centrale. Il meurt en septembre 1913 en tentant de franchir les Carpates, à Bănești, près de Câmpina, lors d'un accident.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Aurel_Vlaicu",
+                  "pays": "RO",
+                  "classement": "Vlaicu, Aurel",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_vlaicu.jpg",
+                    "legende": "Aurel Vlaicu, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Aurel_Vlaicu_-_Foto01.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_mestrovic",
+                  "axe": "Beaux-arts",
+                  "date": 1883,
+                  "titre": "Naissance d'Ivan Meštrović",
+                  "description": "Ivan Meštrović (1883-1962) est un sculpteur croate, né à Vrpolje. Formé à Vienne, il connaît le succès à Paris et à Rome avant la Première Guerre mondiale, puis réalise de nombreux monuments, dont le mausolée de la famille Račić à Cavtat, et son Grégoire de Nin à Split. Installé aux États-Unis après la Seconde Guerre mondiale, il y enseigne à l'université Notre-Dame, et la galerie qu'il fait don à Split conserve une grande part de son œuvre.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ivan_Me%C5%A1trovi%C4%87",
+                  "pays": "HR",
+                  "classement": "Meštrović, Ivan",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_mestrovic.jpg",
+                    "legende": "Ivan Meštrović, photographie de la Bain Collection",
+                    "auteur": "George Grantham Bain Collection (Library of Congress)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ivan_Me%C5%A1trovic.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_pejacevic",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1885,
+                  "titre": "Naissance de Dora Pejačević",
+                  "description": "Dora Pejačević (1885-1923) est une compositrice croate, née à Budapest dans une famille de comtes. Elle compose des lieder, de la musique de chambre et la Symphonie en fa dièse mineur (1917), la première symphonie croate, dans un style postromantique. Elle meurt à trente-sept ans à Munich, quelques jours après la naissance de son fils.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Dora_Peja%C4%8Devi%C4%87",
+                  "pays": "HR",
+                  "classement": "Pejačević, Dora",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_pejacevic.jpg",
+                    "legende": "Dora Pejačević, photographie (avant 1923)",
+                    "auteur": "Anonymous Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Dora_Peja%C4%8Devi%C4%87_(SOA_Praha)_cr.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_rebreanu",
+                  "axe": "Littérature et pensée",
+                  "date": 1885,
+                  "titre": "Naissance de Liviu Rebreanu",
+                  "description": "Liviu Rebreanu (1885-1944) est un romancier roumain né en Transylvanie, alors hongroise, et officier de l'armée austro-hongroise avant de passer en Roumanie. Son roman Ion (1920), qui décrit la faim de terre d'un paysan, et La Forêt des pendus (1922), inspiré par l'exécution de son frère, lui valent d'être considéré comme le fondateur du roman roumain moderne. Il dirige le Théâtre national de Bucarest et préside la Société des écrivains roumains.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Liviu_Rebreanu",
+                  "pays": "RO",
+                  "classement": "Rebreanu, Liviu",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_rebreanu.jpg",
+                    "legende": "Liviu Rebreanu, photographie",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Liviu_Rebreanu_(1)_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_coanda",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1886,
+                  "titre": "Naissance de Henri Coandă",
+                  "description": "Henri Coandă (1886-1972) est un ingénieur roumain, pionnier de l'aviation à Paris. Il présente en 1910 un avion à réaction dont il revendique l'invention, une revendication discutée, et découvre l'effet qui porte son nom, la tendance d'un jet de fluide à longer une paroi courbe. Il travaille ensuite en France, puis revient en Roumanie en 1969, où il dirige l'Institut de création scientifique et technique.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Henri_Coand%C4%83",
+                  "pays": "RO",
+                  "classement": "Coandă, Henri",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_coanda.jpg",
+                    "legende": "Henri Coandă jeune, photographie (1903)",
+                    "auteur": "Simiprof",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Henri_Coanda_young.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_ruzicka",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1887,
+                  "titre": "Naissance de Leopold Ružička",
+                  "description": "Leopold Ružička (1887-1976) est un chimiste d'origine croate, né à Vukovar et naturalisé suisse. Professeur à l'ETH de Zurich, il étudie les terpènes et les hormones sexuelles, réalise la synthèse de la testostérone et obtient en 1939 le prix Nobel de chimie, avec Adolf Butenandt. Il lègue sa collection de peintures hollandaises, qui est exposée à Zurich.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Lavoslav_Ru%C5%BEi%C4%8Dka",
+                  "pays": "HR",
+                  "classement": "Ružička, Leopold",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_ruzicka.jpg",
+                    "legende": "Leopold Ružička, photographie de Fr. Schmelhaus (1935)",
+                    "auteur": "Fr. Schmelhaus / ETH Zürich",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Leopold_Ruzicka_ETH-Bib_Portr_00239.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_alexandre1",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1888,
+                  "titre": "Naissance d'Alexandre Ier de Yougoslavie",
+                  "description": "Alexandre Ier de Yougoslavie (1888-1934) est un roi des Serbes, Croates et Slovènes puis de Yougoslavie, qui règne de 1921 à sa mort. Né à Cetinje, il commande l'armée serbe pendant la Première Guerre mondiale, puis établit en 1929 une dictature royale pour apaiser les tensions entre les peuples du pays, ce qui change le nom du royaume en Yougoslavie. Il est assassiné à Marseille le 9 octobre 1934, avec le ministre français Louis Barthou, par un indépendantiste macédonien allié aux oustachis croates.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Alexandre_Ier_(roi_de_Yougoslavie)",
+                  "pays": "RS",
+                  "classement": "Alexandre Ier de Yougoslavie",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_alexandre1.jpg",
+                    "legende": "Alexandre, prince régent des Serbes, Croates et Slovènes, photographie en couleurs des Archives de la Planète (1919)",
+                    "auteur": "Auguste Léon (1857–1942) Description French photographer",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Propri%C3%A9t%C3%A9_d%27_Albert_Kahn_,_Boulogne_,_France_S_.A_.R_Alexandre_,_Prince_R%C3%A9gent_du_Royaume_des_Serbes_,_Croates_et_Slov%C3%A8nes.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_mateevici",
+                  "axe": "Littérature et pensée",
+                  "date": 1888,
+                  "titre": "Naissance d'Alexei Mateevici",
+                  "description": "Alexei Mateevici (1888-1917) est un prêtre et poète bessarabien, né à Căinari. En 1917, il publie le poème Limba noastră (Notre langue), qui célèbre le roumain et devient, en 1994, les paroles de l'hymne national moldave. Il meurt du typhus à vingt-neuf ans, la même année.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Alexei_Mateevici",
+                  "pays": "MD",
+                  "classement": "Mateevici, Alexei",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_mateevici.jpg",
+                    "legende": "Alexei Mateevici, photographie",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Alexei_Mateevici_-_Foto02.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_andric",
+                  "axe": "Littérature et pensée",
+                  "date": 1892,
+                  "titre": "Naissance d'Ivo Andrić",
+                  "description": "Ivo Andrić (1892-1975) est un écrivain et diplomate yougoslave, né près de Travnik, en Bosnie, et lauréat du prix Nobel de littérature en 1961. Son roman Le Pont sur la Drina (1945), qui suit quatre siècles d'histoire d'une ville bosniaque, et La Chronique de Travnik disent la rencontre entre les communautés de Bosnie et les empires. Il meurt à Belgrade en 1975, et sa nationalité, bosniaque, serbe ou yougoslave, reste revendiquée par plusieurs pays.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ivo_Andri%C4%87",
+                  "pays": "BA",
+                  "classement": "Andrić, Ivo",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_andric.jpg",
+                    "legende": "Ivo Andrić, photographie de Stevan Kragujević (1961)",
+                    "auteur": "Stevan Kragujević (1922–2002)",
+                    "licence": "CC BY-SA 3.0 RS",
+                    "source": "https://commons.wikimedia.org/wiki/File:S._Kragujevic,_Ivo_Andric,_1961.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_tito",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1892,
+                  "titre": "Naissance de Josip Broz Tito",
+                  "description": "Josip Broz Tito (1892-1980) est un homme d'État yougoslave, né à Kumrovec, en Croatie, alors en Autriche-Hongrie. Chef des partisans pendant la Seconde Guerre mondiale, il gouverne la Yougoslavie communiste de 1945 à sa mort, rompt avec Staline en 1948 et fonde en 1961 le mouvement des pays non alignés. Son régime, qui impose le parti unique et emprisonne ses opposants, comme à Goli Otok, tient ensemble les peuples du pays, mais celui-ci éclate onze ans après sa mort.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Josip_Broz_Tito",
+                  "pays": "HR",
+                  "classement": "Tito, Josip Broz",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_tito.jpg",
+                    "legende": "Josip Broz Tito en uniforme, photographie (1961)",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Josip_Broz_Tito_uniform_portrait.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_bagriana",
+                  "axe": "Littérature et pensée",
+                  "date": 1893,
+                  "titre": "Naissance d'Elisaveta Bagriana",
+                  "description": "Elisaveta Bagriana (1893-1991) est une poétesse bulgare, née à Sofia. Son recueil L'Éternelle et la Sainte (1927) bouleverse la poésie bulgare par sa liberté de ton sur la vie des femmes, l'amour et la maternité. Candidate au prix Nobel de littérature, elle conserve une grande influence sous le régime communiste et meurt en 1991.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Elisaveta_Bagriana",
+                  "pays": "BG",
+                  "classement": "Bagriana, Elisaveta",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_bagriana.jpg",
+                    "legende": "Elisaveta Bagriana, photographie",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:BASA-65K-2-1498-1-Elisaveta_Bagryana.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_crnjanski",
+                  "axe": "Littérature et pensée",
+                  "date": 1893,
+                  "titre": "Naissance de Miloš Crnjanski",
+                  "description": "Miloš Crnjanski (1893-1977) est un écrivain et poète serbe, né à Csongrád, en Hongrie. Son roman Les Migrations (1929), qui suit des Serbes passés au service de l'Autriche au XVIIIe siècle, et son Roman de Londres (1971), écrit pendant son exil, en font l'un des grands prosateurs serbes. Ancien diplomate, il vit en exil à Londres après 1945 et rentre à Belgrade en 1965.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Milo%C5%A1_Crnjanski",
+                  "pays": "RS",
+                  "classement": "Crnjanski, Miloš",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_crnjanski.jpg",
+                    "legende": "Miloš Crnjanski, photographie (1914)",
+                    "auteur": "Ἐπαμεινώνδας",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Milo%C5%A1_Crnjanski_1914.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_mihailovic",
+                  "axe": "Guerres et résistances",
+                  "date": 1893,
+                  "titre": "Naissance de Draža Mihailović",
+                  "description": "Draža Mihailović (1893-1946) est un officier serbe, chef des tchetniks, un mouvement de résistance royaliste, pendant la Seconde Guerre mondiale. D'abord soutenu par les Alliés, il est abandonné au profit des partisans de Tito, avec qui il entre en guerre civile, et ses troupes collaborent localement avec l'occupant et commettent des massacres de civils musulmans et croates. Capturé en 1946, il est condamné à mort et fusillé, et sa mémoire reste l'un des sujets les plus disputés de l'histoire serbe.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Dra%C5%BEa_Mihailovi%C4%87",
+                  "pays": "RS",
+                  "classement": "Mihailović, Draža",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_mihailovic.jpg",
+                    "legende": "Draža Mihailović, photographie d'Aleksandar Simić (1943)",
+                    "auteur": "Aleksandar Simić (1923-2007) (remastered by Savasampion)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Draza_Mihailovic,1943.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_boris3",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1894,
+                  "titre": "Naissance de Boris III de Bulgarie",
+                  "description": "Boris III de Bulgarie (1894-1943) est un tsar des Bulgares, qui règne de 1918 à sa mort. Il rallie son pays à l'Axe en 1941 sans envoyer de troupes contre l'URSS, et refuse de livrer aux nazis les Juifs bulgares, qui échappent ainsi à la déportation, à la différence de ceux des territoires occupés de Thrace et de Macédoine. Il meurt brusquement en août 1943, peu après une entrevue avec Hitler, dans des circonstances encore débattues.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Boris_III",
+                  "pays": "BG",
+                  "classement": "Boris III de Bulgarie",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_boris3.jpg",
+                    "legende": "Boris III de Bulgarie, photographie de Dimitar Karastoyanov (1918-1919)",
+                    "auteur": "Dimitar Karastoyanov (1856–1919)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:BASA-3K-7-342-28-Boris_III_of_Bulgaria.jpeg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_princip",
+                  "axe": "Guerres et résistances",
+                  "date": 1894,
+                  "titre": "Naissance de Gavrilo Princip",
+                  "description": "Gavrilo Princip (1894-1918) est un jeune nationaliste serbe de Bosnie, membre du mouvement Jeune-Bosnie. Le 28 juin 1914, il tue à Sarajevo l'archiduc François-Ferdinand, héritier du trône d'Autriche-Hongrie, et son épouse Sophie, attentat qui précipite l'Europe dans la Première Guerre mondiale. Trop jeune pour être condamné à mort, il est condamné à vingt ans de prison et meurt de tuberculose à Terezín en avril 1918, et sa mémoire reste très disputée en Bosnie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Gavrilo_Princip",
+                  "pays": "BA",
+                  "classement": "Princip, Gavrilo",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_princip.jpg",
+                    "legende": "Gavrilo Princip dans sa cellule, photographie (2 juillet 1914)",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Gavrilo_Princip,_cell,_headshot,_bw_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_teodoroiu",
+                  "axe": "Guerres et résistances",
+                  "date": 1894,
+                  "titre": "Naissance d'Ecaterina Teodoroiu",
+                  "description": "Ecaterina Teodoroiu (1894-1917) est une combattante roumaine de la Première Guerre mondiale, infirmière devenue sous-lieutenante d'infanterie. Entrée au front après la mort de ses frères, elle est blessée à plusieurs reprises en Olténie et en Valachie, puis demande à retourner au combat. Elle est tuée à Mărășești en 1917, à vingt-trois ans, et reste en Roumanie l'« héroïne de Jiu ».",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ecaterina_Teodoroiu",
+                  "pays": "RO",
+                  "classement": "Teodoroiu, Ecaterina",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_teodoroiu.jpg",
+                    "legende": "Ecaterina Teodoroiu, photographie (1916 ou 1917)",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ecaterina_Teodoroiu_(1).jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_blaga",
+                  "axe": "Littérature et pensée",
+                  "date": 1895,
+                  "titre": "Naissance de Lucian Blaga",
+                  "description": "Lucian Blaga (1895-1961) est un poète, dramaturge et philosophe roumain de Transylvanie, également diplomate de 1926 à 1939. Il publie des recueils lyriques, comme Poèmes de la lumière, et une trilogie philosophique sur la connaissance, la culture et les valeurs, qui lui vaut le respect de son milieu. Écarté de l'université et publié à contrecœur par le régime communiste, il meurt à Cluj en 1961.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Lucian_Blaga",
+                  "pays": "RO",
+                  "classement": "Blaga, Lucian",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_blaga.jpg",
+                    "legende": "Lucian Blaga, photographie",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Lucian_Blaga_(1).jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_zog",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1895,
+                  "titre": "Naissance de Zog Ier",
+                  "description": "Zog Ier (1895-1961) est un homme d'État albanais, de son nom Ahmet Zogu, Premier ministre en 1922, président en 1925 puis roi des Albanais de 1928 à 1939. Il modernise l'État, mais s'appuie sur l'Italie de Mussolini, qui envahit le pays en avril 1939. Réfugié en Grande-Bretagne, puis en Égypte et en France, il meurt à Suresnes en 1961.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Zog_Ier",
+                  "pays": "AL",
+                  "classement": "Zog Ier",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_zog.jpg",
+                    "legende": "Zog Ier, photographie de la Bain Collection",
+                    "auteur": "Bain News Service, publisher.",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:King_Zog.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_nadjakov",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1896,
+                  "titre": "Naissance de Georgi Nadjakov",
+                  "description": "Georgi Nadjakov (1896-1981) est un physicien bulgare, né à Lovech, élève de Marie Curie et de Paul Langevin à Paris. Il découvre en 1937 que certains isolants éclairés sous un champ électrique conservent une polarisation durable, les photoélectrets, découverte qui prépare la xérographie. Il enseigne à l'université de Sofia et dirige l'Institut de physique de l'Académie bulgare des sciences.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Georgi_Nadjakov",
+                  "pays": "BG",
+                  "classement": "Nadjakov, Georgi",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_nadjakov.jpg",
+                    "legende": "Georgi Nadjakov, photographie (musée historique de Doupnitsa)",
+                    "auteur": "Historical Museum, Dupnitsa",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:%D0%93%D0%B5%D0%BE%D1%80%D0%B3%D0%B8_%D0%9D%D0%B0%D0%B4%D0%B6%D0%B0%D0%BA%D0%BE%D0%B2.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_tzara",
+                  "axe": "Littérature et pensée",
+                  "date": 1896,
+                  "titre": "Naissance de Tristan Tzara",
+                  "description": "Tristan Tzara (1896-1963) est un poète roumain d'expression française, de son vrai nom Samuel Rosenstock, fondateur du mouvement Dada. Il lance Dada à Zurich en 1916, au Cabaret Voltaire, et en publie le Manifeste en 1918, avant de rejoindre Paris, puis le surréalisme et le Parti communiste. Il meurt à Paris en 1963.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Tristan_Tzara",
+                  "pays": "RO",
+                  "classement": "Tzara, Tristan",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_tzara.jpg",
+                    "legende": "Tristan Tzara, photographie (1915)",
+                    "auteur": "original author: unknown; cropped and retouched by: Rlevente",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Tristan_Tzara.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_aslan",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1897,
+                  "titre": "Naissance d'Ana Aslan",
+                  "description": "Ana Aslan (1897-1988) est une médecin roumaine, pionnière de la gérontologie. Elle fonde à Bucarest en 1952 un institut de gériatrie, réputé le premier au monde, et met au point le Gerovital H3, présenté comme un traitement contre le vieillissement, qui lui vaut une renommée mondiale et une controverse durable sur son efficacité. Elle reçoit des patients célèbres du monde entier et dirige son institut jusqu'à sa mort en 1988.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ana_Aslan",
+                  "pays": "RO",
+                  "classement": "Aslan, Ana",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_aslan.jpg",
+                    "legende": "Ana Aslan, photographie de l'agence Anefo (1970)",
+                    "auteur": "Basch, [...] / Opdracht Anefo",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ana_Aslan_1970.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_vladiguerov",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1899,
+                  "titre": "Naissance de Pantcho Vladiguerov",
+                  "description": "Pantcho Vladiguerov (1899-1978) est un compositeur et pianiste bulgare, né à Zurich. Fondateur de la musique classique bulgare moderne, il écrit en 1922 la Rhapsodie Vardar, d'inspiration populaire, des concertos et des symphonies, et enseigne à Sofia. Il meurt en 1978, et plusieurs générations de musiciens bulgares ont été ses élèves.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Pantcho_Vladiguerov",
+                  "pays": "BG",
+                  "classement": "Vladiguerov, Pantcho",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_vladiguerov.jpg",
+                    "legende": "Pantcho Vladiguerov, photographie (1930-1944)",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:BASA-1271K-1-161-60-Pancho_Vladigerov.JPG"
+                  }
+                },
+                {
+                  "id": "pan_balkans_canetti",
+                  "axe": "Littérature et pensée",
+                  "date": 1905,
+                  "titre": "Naissance d'Elias Canetti",
+                  "description": "Elias Canetti (1905-1994) est un écrivain de langue allemande né à Roussé, en Bulgarie, dans une famille juive séfarade, et lauréat du prix Nobel de littérature en 1981. Son roman Auto-da-fé (1935) et son essai Masse et Puissance (1960) décrivent la folie des foules et le désir de domination, et il raconte son enfance bulgare dans le premier tome de ses souvenirs, Histoire d'une jeunesse. Installé à Londres puis à Zurich, il meurt en 1994.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Elias_Canetti",
+                  "pays": "BG",
+                  "classement": "Canetti, Elias",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_canetti.jpg",
+                    "legende": "Elias Canetti, photographie",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "CC BY-SA 3.0 NL",
+                    "source": "https://commons.wikimedia.org/wiki/File:Elias_Canetti_2.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_milanov",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1906,
+                  "titre": "Naissance de Zinka Milanov",
+                  "description": "Zinka Milanov (1906-1989) est une soprano croate, née à Zagreb. Elle chante au Metropolitan Opera de New York de 1937 à 1966, où elle est admirée pour la beauté et la puissance de sa voix dans Verdi et Puccini, surtout dans Aïda et Tosca. Elle enseigne ensuite le chant à New York, où elle meurt en 1989.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Zinka_Milanov",
+                  "pays": "HR",
+                  "classement": "Milanov, Zinka",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_milanov.jpg",
+                    "legende": "Zinka Milanov dans Tosca, photographie (1946)",
+                    "auteur": "Alix B. Williamson",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Zinka_Milanov_1946.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_prelog",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1906,
+                  "titre": "Naissance de Vladimir Prelog",
+                  "description": "Vladimir Prelog (1906-1998) est un chimiste d'origine croate, né à Sarajevo. Formé à Prague, enseignant à Zagreb puis à l'ETH de Zurich, il étudie la stéréochimie des molécules organiques, et reçoit en 1975 le prix Nobel de chimie avec John Cornforth. Il meurt à Zurich en 1998.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Vladimir_Prelog",
+                  "pays": "HR",
+                  "classement": "Prelog, Vladimir",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_prelog.jpg",
+                    "legende": "Vladimir Prelog, photographie de l'ETH Zurich",
+                    "auteur": "ETH Zürich",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Vladimir_Prelog_ETH-Bib_Portr_00214.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_eliade",
+                  "axe": "Littérature et pensée",
+                  "date": 1907,
+                  "titre": "Naissance de Mircea Eliade",
+                  "description": "Mircea Eliade (1907-1986) est un historien des religions, romancier et philosophe roumain, professeur à l'université de Chicago de 1956 à sa mort. Son Traité d'histoire des religions (1949) et Le Mythe de l'éternel retour (1949) renouvellent l'étude du sacré, et ses romans, dont Maitreyi, lui valent une renommée littéraire. Son engagement dans sa jeunesse auprès de la Garde de fer, mouvement fasciste, reste l'objet d'un débat jamais clos.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mircea_Eliade",
+                  "pays": "RO",
+                  "classement": "Eliade, Mircea",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_eliade.jpg",
+                    "legende": "Mircea Eliade jeune, photographie (1933)",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mircea_Eliade_young.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_hoxha",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1908,
+                  "titre": "Naissance d'Enver Hoxha",
+                  "description": "Enver Hoxha (1908-1985) est un dirigeant communiste albanais, qui gouverne le pays de 1944 à sa mort. Il rompt successivement avec la Yougoslavie en 1948, l'URSS en 1961 et la Chine en 1978, interdit toute religion en 1967 et fait couvrir le pays de bunkers. Son régime, l'un des plus fermés et des plus répressifs d'Europe, laisse une société isolée et appauvrie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Enver_Hoxha",
+                  "pays": "AL",
+                  "classement": "Hoxha, Enver",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_hoxha.jpg",
+                    "legende": "Enver Hoxha, portrait officiel de Petrit Kumi (1968)",
+                    "auteur": "Petrit Kumi",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Enver_Hoxha_(portret).jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_racin",
+                  "axe": "Littérature et pensée",
+                  "date": 1908,
+                  "titre": "Naissance de Kočo Racin",
+                  "description": "Kočo Racin (1908-1943) est un poète macédonien, né à Veles, militant communiste. Son seul recueil, Beli mugri (L'Aube blanche, 1939), le premier en macédonien moderne, est un chant sur la misère des ouvriers et des paysans. Il est tué en 1943, dans les rangs des partisans, à trente-quatre ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ko%C4%8Do_Racin",
+                  "pays": "MK",
+                  "classement": "Racin, Kočo",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_racin.jpg",
+                    "legende": "Kočo Racin, photographie",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ko%C4%8Do_Racin.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_ionesco",
+                  "axe": "Littérature et pensée",
+                  "date": 1909,
+                  "titre": "Naissance d'Eugène Ionesco",
+                  "description": "Eugène Ionesco (1909-1994) est un dramaturge français d'origine roumaine, né en Roumanie et élevé en partie en France. Avec La Cantatrice chauve (1950), La Leçon, Les Chaises puis Rhinocéros, il est l'un des maîtres du théâtre de l'absurde, qui montre le langage devenu vide et la montée du conformisme. Élu à l'Académie française en 1970, il meurt à Paris en 1994.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Eug%C3%A8ne_Ionesco",
+                  "pays": "RO",
+                  "classement": "Ionesco, Eugène",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_ionesco.jpg",
+                    "legende": "Eugène Ionesco, photographie de Gorupdebesanez (1993)",
+                    "auteur": "Gorupdebesanez",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Eugene_Ionesco_03.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_cebotari",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1910,
+                  "titre": "Naissance de Maria Cebotari",
+                  "description": "Maria Cebotari (1910-1949) est une soprano d'origine moldave, née à Chișinău. Elle chante à l'Opéra de Dresde, puis à Berlin et à Vienne, et son interprétation de Mozart, de Verdi et de Puccini, ainsi que des rôles au cinéma, la rendent célèbre dans toute l'Europe. Elle meurt à Vienne à trente-neuf ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Maria_Cebotari",
+                  "pays": "MD",
+                  "classement": "Cebotari, Maria",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_cebotari.jpg",
+                    "legende": "Maria Cebotari, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Maria_cebotari_pic.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_selimovic",
+                  "axe": "Littérature et pensée",
+                  "date": 1910,
+                  "titre": "Naissance de Meša Selimović",
+                  "description": "Meša Selimović (1910-1982) est un écrivain bosniaque, né à Tuzla. Son roman Le Derviche et la Mort (1966), qui raconte le destin d'un religieux dans la Bosnie ottomane, est l'un des plus grands de la littérature yougoslave. Il s'installe à Belgrade en 1971, et il y meurt en 1982.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Me%C5%A1a_Selimovi%C4%87",
+                  "pays": "BA",
+                  "classement": "Selimović, Meša",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_selimovic.jpg",
+                    "legende": "Meša Selimović, timbre serbe de 2010",
+                    "auteur": "Marina Kalezić",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:MesaSelimovic_Serbian_Literature_Great_Men_Stamps.jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_balkans_cioran",
+                  "axe": "Littérature et pensée",
+                  "date": 1911,
+                  "titre": "Naissance d'Emil Cioran",
+                  "description": "Emil Cioran (1911-1995) est un essayiste et philosophe roumain, installé en France en 1937 et écrivain de langue française à partir de 1949. Dans Précis de décomposition (1949), La Tentation d'exister (1956) et De l'inconvénient d'être né (1973), il écrit en aphorismes ironiques et désespérés sur l'insomnie, l'histoire et le suicide. Il refuse la plupart des prix littéraires et vit à Paris dans une discrète pauvreté, jusqu'à sa mort en 1995.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Emil_Cioran",
+                  "pays": "RO",
+                  "classement": "Cioran, Emil",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_cioran.jpg",
+                    "legende": "Emil Cioran, photographie d'une agence de presse (vers 1947)",
+                    "auteur": "Photographe de l'agence Keystone",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Cioran_in_Romania.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_djilas",
+                  "axe": "Littérature et pensée",
+                  "date": 1911,
+                  "titre": "Naissance de Milovan Djilas",
+                  "description": "Milovan Djilas (1911-1995) est un homme politique et écrivain monténégrin, compagnon de Tito pendant la guerre des partisans et l'un des dirigeants de la Yougoslavie communiste. Évincé en 1954 après avoir réclamé la démocratisation du parti, il publie à l'étranger La Nouvelle Classe (1957), qui dénonce la domination d'une bureaucratie privilégiée dans les régimes communistes. Condamné à la prison, il y reste près de neuf ans en tout, et meurt à Belgrade en 1995.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Milovan_Djilas",
+                  "pays": "ME",
+                  "classement": "Djilas, Milovan",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_djilas.jpg",
+                    "legende": "Milovan Đilas, photographie de Stevan Kragujević (1950)",
+                    "auteur": "Stevan Kragujević (1922–2002)",
+                    "licence": "CC BY-SA 3.0 RS",
+                    "source": "https://commons.wikimedia.org/wiki/File:Milovan_%C4%90ilas_(1950).jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_jivkov",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1911,
+                  "titre": "Naissance de Todor Jivkov",
+                  "description": "Todor Jivkov (1911-1998) est un homme d'État bulgare, dirigeant du Parti communiste de 1954 à 1989 et chef de l'État de 1971 à 1989, l'un des plus longs règnes du bloc de l'Est. Fidèle allié de Moscou, il fait de la Bulgarie un pays industrialisé et relativement prospère, mais mène à partir de 1984 une campagne de « bulgarisation » forcée de la minorité turque, qui pousse plus de trois cent mille personnes à l'exil. Forcé de démissionner le 10 novembre 1989, il est jugé pour détournement de fonds et meurt en 1998.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Todor_Jivkov",
+                  "pays": "BG",
+                  "classement": "Jivkov, Todor",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_jivkov.jpg",
+                    "legende": "Todor Jivkov, photographie de l'agence Anefo (1971)",
+                    "auteur": "Anefo",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Todor_Zhivkov_,_eerste_secretaris_Communistische_Partij_en_president_van_Bulgari,_Bestanddeelnr_924-8077_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_migjeni",
+                  "axe": "Littérature et pensée",
+                  "date": 1911,
+                  "titre": "Naissance de Migjeni",
+                  "description": "Migjeni (1911-1938) est un poète albanais, de son vrai nom Millosh Gjergj Nikolla, né à Shkodër. Ses Vers libres (1936), qui décrivent la misère du peuple albanais avec une colère nouvelle, rompent avec la poésie nationale romantique. Mort de la tuberculose en Italie à vingt-six ans, il est le grand poète de la modernité albanaise.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Migjeni",
+                  "pays": "AL",
+                  "classement": "Migjeni",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_migjeni.jpg",
+                    "legende": "Migjeni, photographie de Gegë Marubi (avant 1935)",
+                    "auteur": "Geg Marubi",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Migjeni_(portrait).jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_celibidache",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1912,
+                  "titre": "Naissance de Sergiu Celibidache",
+                  "description": "Sergiu Celibidache (1912-1996) est un chef d'orchestre roumain, né à Roman. Il dirige l'Orchestre philharmonique de Berlin de 1945 à 1952, après le départ de Furtwängler, puis l'Orchestre philharmonique de Munich de 1979 à 1996, qu'il porte à un niveau exceptionnel. Il refuse presque tous les enregistrements, convaincu que la musique ne vit que dans l'instant du concert, ce qui entretient sa légende.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sergiu_Celibidache",
+                  "pays": "RO",
+                  "classement": "Celibidache, Sergiu",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_celibidache.jpg",
+                    "legende": "Sergiu Celibidache, photographie de presse (1966)",
+                    "auteur": "Örebro Kuriren",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Sergiu_Celibidache_1966.png"
+                  }
+                },
+                {
+                  "id": "pan_balkans_palade",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1912,
+                  "titre": "Naissance de George Emil Palade",
+                  "description": "George Emil Palade (1912-2008) est un biologiste cellulaire roumain installé aux États-Unis en 1946, lauréat du prix Nobel de physiologie ou médecine en 1974 avec Albert Claude et Christian de Duve. Grâce à la microscopie électronique, il décrit les ribosomes et le fonctionnement de la sécrétion des protéines dans la cellule, et fonde la biologie cellulaire moderne. Il travaille à l'Institut Rockefeller, puis à Yale et à l'université de Californie à San Diego, et meurt en 2008.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/George_Emil_Palade",
+                  "pays": "RO",
+                  "classement": "Palade, George Emil",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_palade.jpg",
+                    "legende": "George Emil Palade, timbre roumain de 2016",
+                    "auteur": "Post of Romania",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:RO033-16.jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_balkans_tanase",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1913,
+                  "titre": "Naissance de Maria Tănase",
+                  "description": "Maria Tănase (1913-1963) est une chanteuse roumaine, la plus célèbre interprète de la musique populaire de son pays. À la voix grave et expressive, elle remporte un grand succès à l'Exposition universelle de Paris en 1937 et enregistre les chansons de village et de faubourg, comme Lume, lume. Elle meurt d'un cancer à cinquante ans, et sa voix reste une référence de la mémoire roumaine.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Maria_T%C4%83nase",
+                  "pays": "RO",
+                  "classement": "Tănase, Maria",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_tanase.jpg",
+                    "legende": "Maria Tănase, photographie de Willy Pragher",
+                    "auteur": "Willy Pragher",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Maria_T%C4%83nase_2.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_generalic",
+                  "axe": "Beaux-arts",
+                  "date": 1914,
+                  "titre": "Naissance d'Ivan Generalić",
+                  "description": "Ivan Generalić (1914-1992) est un peintre naïf croate, né à Hlebine. Paysan, il fonde avec Krsto Hegedušić l'école de Hlebine, dont les peintres représentent la vie du village, des paysages enneigés et des scènes de foire. Il devient l'un des maîtres de l'art naïf, présent dans de grandes expositions internationales.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ivan_Generali%C4%87",
+                  "pays": "HR",
+                  "classement": "Generalić, Ivan",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_generalic.jpg",
+                    "legende": "Ivan Generalić devant sa maison de Hlebine, photographie de Leon Petrosyan (1988)",
+                    "auteur": "Leon Petrosyan",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ivan_Generalic.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_dizdar",
+                  "axe": "Littérature et pensée",
+                  "date": 1917,
+                  "titre": "Naissance de Mak Dizdar",
+                  "description": "Mak Dizdar (1917-1971) est un poète bosniaque, né à Stolac. Son recueil Le Dormeur de pierre (1966) puise dans les inscriptions des stećci, ces pierres tombales médiévales de Bosnie, pour évoquer l'âme du pays. Il meurt à Sarajevo en 1971, et ses vers sont devenus un monument de la poésie des Balkans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mak_Dizdar",
+                  "pays": "BA",
+                  "classement": "Dizdar, Mak",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_dizdar.jpg",
+                    "legende": "Mak Dizdar, buste de Sarajevo",
+                    "auteur": "Niegodzisie",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mak_Dizdar,_bista,_Sarajevo.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_gligorov",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1917,
+                  "titre": "Naissance de Kiro Gligorov",
+                  "description": "Kiro Gligorov (1917-2012) est un homme d'État macédonien, né à Štip, premier président de la Macédoine indépendante, de 1991 à 1999. Ancien dirigeant économique de la Yougoslavie, il obtient en 1991 l'indépendance sans guerre, et défend la reconnaissance du pays malgré l'opposition de la Grèce, qui conteste son nom. Grièvement blessé dans un attentat à la voiture piégée en 1995, il meurt à Skopje en 2012.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kiro_Gligorov",
+                  "pays": "MK",
+                  "classement": "Gligorov, Kiro",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_gligorov.jpg",
+                    "legende": "Kiro Gligorov, photographie de la Commission européenne (1993)",
+                    "auteur": "European Commission",
+                    "licence": "CC BY 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%B8%D1%80%D0%BE_%D0%93%D0%BB%D0%B8%D0%B3%D0%BE%D1%80%D0%BE%D0%B2_03_(28-01-1993).jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_lipatti",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1917,
+                  "titre": "Naissance de Dinu Lipatti",
+                  "description": "Dinu Lipatti (1917-1950) est un pianiste et compositeur roumain, élève de Nadia Boulanger à Paris. Il enregistre des Valses de Chopin et des œuvres de Bach, et ses interprétations, d'une clarté et d'une sobriété extrêmes, en font une référence du piano au XXe siècle. Atteint de la maladie de Hodgkin, il donne en septembre 1950 à Besançon un dernier récital, resté légendaire, et meurt à trente-trois ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Dinu_Lipatti",
+                  "pays": "RO",
+                  "classement": "Lipatti, Dinu",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_lipatti.jpg",
+                    "legende": "Dinu Lipatti, photographie de Germaine Martin",
+                    "auteur": "Germaine Martin (see: Bibliothèque nationale de France )",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Dinu_Lipatti.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_ceausescu",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1918,
+                  "titre": "Naissance de Nicolae Ceaușescu",
+                  "description": "Nicolae Ceaușescu (1918-1989) est un homme d'État roumain, secrétaire général du Parti communiste en 1965 et chef de l'État de 1967 à 1989. Il se démarque de Moscou en condamnant l'invasion de la Tchécoslovaquie en 1968, avant d'instaurer un culte de la personnalité, de faire détruire une partie du centre historique de Bucarest et d'imposer au pays de dures privations pour rembourser la dette extérieure, sous la surveillance de la Securitate. Chassé par la révolution de décembre 1989, il est jugé en quelques heures et fusillé avec sa femme Elena le 25 décembre.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Nicolae_Ceau%C8%99escu",
+                  "pays": "RO",
+                  "classement": "Ceaușescu, Nicolae",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_ceausescu.jpg",
+                    "legende": "Nicolae Ceaușescu à dix-huit ans, photographie d'identité judiciaire de la police de Târgoviște (1936)",
+                    "auteur": "Târgovişte Police",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:008.Portret_Nicolae_Ceau%C8%99escu._(1936).jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_tudjman",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1922,
+                  "titre": "Naissance de Franjo Tuđman",
+                  "description": "Franjo Tuđman (1922-1999) est un historien, général et homme d'État croate, premier président de la Croatie indépendante, de 1990 à sa mort. Chef de l'Union démocratique croate, il proclame l'indépendance en 1991, mène la guerre contre la Serbie et les sécessionnistes serbes de Croatie et reprend en 1995 la quasi-totalité du territoire tenu par les sécessionnistes serbes. Son rôle dans la guerre de Bosnie, son nationalisme et sa politique à l'égard de la minorité serbe suscitent de vives controverses.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Franjo_Tu%C4%91man",
+                  "pays": "HR",
+                  "classement": "Tuđman, Franjo",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_tudjman.jpg",
+                    "legende": "Franjo Tuđman, photographie de Mark Reinstein (1995)",
+                    "auteur": "Mark Reinstein",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Franjo_Tudjman_1995.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_izetbegovic",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1925,
+                  "titre": "Naissance d'Alija Izetbegović",
+                  "description": "Alija Izetbegović (1925-2003) est un homme politique bosniaque, né à Bosanski Šamac. Condamné à quatorze ans de prison en 1983 pour sa Déclaration islamique et libéré en 1988, il fonde le Parti d'action démocratique et devient en 1990 le président de la Présidence de la Bosnie-Herzégovine. Il dirige le pays pendant la guerre de 1992-1995, signe les accords de Dayton en 1995 et meurt à Sarajevo en 2003.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Alija_Izetbegovi%C4%87",
+                  "pays": "BA",
+                  "classement": "Izetbegović, Alija",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_izetbegovic.jpg",
+                    "legende": "Alija Izetbegović, photographie de Helene C. Stikkel (1997)",
+                    "auteur": "Helene C. Stikkel Description American photographer",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Alija_Izetbegovic_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_druta",
+                  "axe": "Littérature et pensée",
+                  "date": 1928,
+                  "titre": "Naissance d'Ion Druță",
+                  "description": "Ion Druță (1928-2023) est un écrivain moldave, auteur de romans, de nouvelles et de pièces de théâtre. Ses récits sur la vie des villages de Bessarabie, comme Feuilles de nostalgie (1957) et Le Fardeau de notre bonté (1968), en font le prosateur le plus lu de la Moldavie soviétique. Figure respectée des lettres moldaves, il meurt en 2023, à quatre-vingt-quinze ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ion_Dru%C8%9B%C4%83",
+                  "pays": "MD",
+                  "classement": "Druță, Ion",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_druta.jpg",
+                    "legende": "Ion Druță, photographie (fin des années 1980)",
+                    "auteur": "Ion Chibzii from Chisinau. , Moldova.",
+                    "licence": "CC BY-SA 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ion_Druta_am_21._Februar_2011_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_pavic",
+                  "axe": "Littérature et pensée",
+                  "date": 1929,
+                  "titre": "Naissance de Milorad Pavić",
+                  "description": "Milorad Pavić (1929-2009) est un écrivain serbe, né à Belgrade, universitaire et poète. Son Dictionnaire khazar (1984), un roman en forme de dictionnaire que l'on lit dans l'ordre que l'on veut, le fait connaître dans le monde et est traduit dans de nombreuses langues. Il meurt à Belgrade en 2009.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Milorad_Pavi%C4%87",
+                  "pays": "RS",
+                  "classement": "Pavić, Milorad",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_pavic.jpg",
+                    "legende": "Milorad Pavić, photographie (2007)",
+                    "auteur": "The original uploader was Djordjes at Serbian Wikipedia .",
+                    "licence": "CC BY 2.5",
+                    "source": "https://commons.wikimedia.org/wiki/File:Milorad_Pavic.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_makavejev",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1932,
+                  "titre": "Naissance de Dušan Makavejev",
+                  "description": "Dušan Makavejev (1932-2019) est un cinéaste yougoslave, né à Belgrade, figure de la vague noire du cinéma yougoslave. Ses films, dont W.R. : Les Mystères de l'organisme (1971) et Sweet Movie (1974), mêlent documents, politique et sexualité dans un humour provocateur qui lui vaut des interdictions. Installé à l'étranger après 1974, il meurt à Belgrade en 2019.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Du%C5%A1an_Makavejev",
+                  "pays": "RS",
+                  "classement": "Makavejev, Dušan",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_makavejev.jpg",
+                    "legende": "Dušan Makavejev, photographie de 1989",
+                    "auteur": "Centar za medije \"Ranko Munitic\", Belgrade, Serbia",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Dusan_Makavejev,_TVNS_1989_(cropped_01).jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_bata",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1933,
+                  "titre": "Naissance de Bata Živojinović",
+                  "description": "Bata Živojinović (1933-2016) est un acteur serbe, né à Belgrade, le plus populaire du cinéma yougoslave. Il joue dans des dizaines de films, dont de grandes productions sur la guerre des partisans, comme La Bataille de la Neretva (1969), et dans des films de la « vague noire ». Il meurt à Belgrade en 2016.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bata_%C5%BDivojinovi%C4%87",
+                  "pays": "RS",
+                  "classement": "Živojinović, Bata",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_bata.jpg",
+                    "legende": "Bata Živojinović, photographie de 2008",
+                    "auteur": "The original uploader was Mstudiodf at Serbian Wikipedia .",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Velimir_Bata_%C5%BDivojinovi%C4%87_1.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_stanescu",
+                  "axe": "Littérature et pensée",
+                  "date": 1933,
+                  "titre": "Naissance de Nichita Stănescu",
+                  "description": "Nichita Stănescu (1933-1983) est un poète roumain, le plus grand de sa génération. Dans Onze élégies (1966) et ses recueils suivants, il renouvelle la poésie sous contrainte du réalisme socialiste, en faisant du mot lui-même l'objet de son lyrisme. Mort à Bucarest à cinquante ans, il reste le poète roumain le plus souvent cité.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Nichita_St%C4%83nescu",
+                  "pays": "RO",
+                  "classement": "Stănescu, Nichita",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_stanescu.jpg",
+                    "legende": "Nichita Stănescu, portrait peint par Paul Mecet",
+                    "auteur": "Paul Mecet Ciuciumiș",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Nichita_Stanescu_crop.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_christo",
+                  "axe": "Beaux-arts",
+                  "date": 1935,
+                  "titre": "Naissance de Christo",
+                  "description": "Christo (1935-2020) est un artiste d'origine bulgare, de son vrai nom Christo Javacheff, né à Gabrovo et installé à Paris en 1958, puis à New York. Avec sa femme Jeanne-Claude, il emballe des monuments et transforme des paysages, comme le Pont-Neuf à Paris en 1985 et le Reichstag à Berlin en 1995, en œuvres éphémères financées par la vente de ses dessins. Il meurt à New York en 2020, quelques mois avant l'emballage de l'Arc de triomphe, réalisé en 2021 d'après son projet.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Christo_et_Jeanne-Claude",
+                  "pays": "BG",
+                  "classement": "Christo",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_christo.jpg",
+                    "legende": "Christo, photographie de Martin Dürrschnabel",
+                    "auteur": "Martin Dürrschnabel",
+                    "licence": "CC BY-SA 2.5",
+                    "source": "https://commons.wikimedia.org/wiki/File:Christo_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_kis",
+                  "axe": "Littérature et pensée",
+                  "date": 1935,
+                  "titre": "Naissance de Danilo Kiš",
+                  "description": "Danilo Kiš (1935-1989) est un écrivain yougoslave de langue serbe, né à Subotica. Dans Un tombeau pour Boris Davidovitch (1976) et Sablier, il mêle documents et fiction pour dire la terreur stalinienne et la destruction des Juifs d'Europe centrale, dont son père a fait partie. Installé à Paris à partir de 1979, il y meurt en 1989.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Danilo_Ki%C5%A1",
+                  "pays": "RS",
+                  "classement": "Kiš, Danilo",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_kis.jpg",
+                    "legende": "Danilo Kiš, timbre du Monténégro (2010)",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Danilo_Ki%C5%A1_2010_Montenegro_stamp.jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_balkans_vieru",
+                  "axe": "Littérature et pensée",
+                  "date": 1935,
+                  "titre": "Naissance de Grigore Vieru",
+                  "description": "Grigore Vieru (1935-2009) est un poète moldave, né à Pererîta. Ses poèmes pour les enfants et sur la mère et la langue maternelle, comme Mama, sont chantés par toute la Moldavie, et sa défense du roumain dans les années 1980 en fait une figure du réveil national. Il meurt dans un accident de la route en 2009.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Grigore_Vieru",
+                  "pays": "MD",
+                  "classement": "Vieru, Grigore",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_vieru.jpg",
+                    "legende": "Grigore Vieru jeune, photographie (années 1960)",
+                    "auteur": "Ion Chibzii from Chisinau. , Moldova.",
+                    "licence": "CC BY-SA 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Young_Moldavian_poet_Grigore_Vieru_(60-ies)._(5798767541).jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_demaci",
+                  "axe": "Guerres et résistances",
+                  "date": 1936,
+                  "titre": "Naissance d'Adem Demaçi",
+                  "description": "Adem Demaçi (1936-2018) est un écrivain et militant politique kosovar, né à Pristina. Condamné à plusieurs reprises par le régime yougoslave pour avoir défendu les droits des Albanais, il passe vingt-huit ans en prison, ce qui lui vaut d'être appelé le « Mandela des Balkans ». Prix Sakharov en 1991, il est ensuite l'une des voix du Kosovo, sans cesser de critiquer ses dirigeants.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Adem_Dema%C3%A7i",
+                  "pays": "XK",
+                  "classement": "Demaçi, Adem",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_demaci.jpg",
+                    "legende": "Adem Demaçi, photographie (1991)",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Adem_Dema%C3%A7i_1991.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_kadare",
+                  "axe": "Littérature et pensée",
+                  "date": 1936,
+                  "titre": "Naissance d'Ismail Kadaré",
+                  "description": "Ismail Kadaré (1936-2024) est un écrivain albanais, né à Gjirokastër, le plus traduit de son pays. Ses romans, dont Le Général de l'armée morte (1963) et Chronique de la ville de pierre (1971), peignent l'histoire albanaise et la dictature d'Enver Hoxha avec un art de la parabole qui contourne la censure. Réfugié en France en 1990, il reçoit le Man Booker International en 2005 et le prix Prince des Asturies en 2009.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Isma%C3%AFl_Kadar%C3%A9",
+                  "pays": "AL",
+                  "classement": "Kadaré, Ismail",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_kadare.jpg",
+                    "legende": "Ismail Kadaré, photographie (années 1990)",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ismail_Kadare_(portret).jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_loteanu",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1936,
+                  "titre": "Naissance d'Emil Loteanu",
+                  "description": "Emil Loteanu (1936-2003) est un cinéaste et poète moldave, né à Clocușna, en Bessarabie. Ses films, dont Les Léoutars (1971) et Le Camp des Tsiganes monte au ciel (1976), mêlent musique, légendes et passions pour célébrer la culture des violonistes et des Tsiganes de son pays. Salué dans toute l'Union soviétique, il meurt à Moscou en 2003.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Emil_Loteanu",
+                  "pays": "MD",
+                  "classement": "Loteanu, Emil",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_loteanu.jpg",
+                    "legende": "Emil Loteanu, photographie",
+                    "auteur": "Asybaris01",
+                    "licence": "CC BY-SA 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Emil_Loteanu.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_snegur",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1940,
+                  "titre": "Naissance de Mircea Snegur",
+                  "description": "Mircea Snegur (1940-2023) est un homme d'État moldave, né à Trifănești, premier président de la République de Moldavie, de 1990 à 1997. Il proclame l'indépendance du pays le 27 août 1991, fait face à la guerre de Transnistrie en 1992 et mène une politique d'indépendance à l'égard de Moscou. Battu à l'élection présidentielle de 1996, il meurt en 2023 à quatre-vingt-trois ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mircea_Snegur",
+                  "pays": "MD",
+                  "classement": "Snegur, Mircea",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_snegur.jpg",
+                    "legende": "Mircea Snegur, photographie (1996)",
+                    "auteur": "Ion Chibzii",
+                    "licence": "CC BY-SA 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mircea_Snegur_1996_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_milosevic",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1941,
+                  "titre": "Naissance de Slobodan Milošević",
+                  "description": "Slobodan Milošević (1941-2006) est un homme d'État serbe, président de la Serbie de 1989 à 1997, puis de la République fédérale de Yougoslavie jusqu'en 2000. Il s'appuie sur le nationalisme serbe au moment de l'éclatement de la Yougoslavie, mène les guerres de Croatie, de Bosnie et du Kosovo et subit les bombardements de l'OTAN de 1999. Renversé en octobre 2000, il meurt en prison à La Haye en 2006, avant la fin de son procès pour crimes de guerre et génocide.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Slobodan_Milo%C5%A1evi%C4%87",
+                  "pays": "RS",
+                  "classement": "Milošević, Slobodan",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_milosevic.jpg",
+                    "legende": "Slobodan Milošević, photographie de Stevan Kragujević (1988)",
+                    "auteur": "Stevan Kragujević (1922–2002)",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Stevan_Kragujevi%C4%87,_Slobodan_Milo%C5%A1evi%C4%87,_portret.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_rugova",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1944,
+                  "titre": "Naissance d'Ibrahim Rugova",
+                  "description": "Ibrahim Rugova (1944-2006) est un écrivain et homme politique kosovar, surnommé le « Gandhi des Balkans ». Dirigeant de la Ligue démocratique du Kosovo, il prône dans les années 1990 la résistance non violente à la politique de Belgrade et organise des institutions parallèles albanaises, dont il est élu président en 1992. Premier président du Kosovo après la guerre, de 2002 à sa mort, il meurt d'un cancer du poumon en 2006.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ibrahim_Rugova",
+                  "pays": "XK",
+                  "classement": "Rugova, Ibrahim",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_rugova.jpg",
+                    "legende": "Ibrahim Rugova, photographie du Parti populaire européen (2004)",
+                    "auteur": "European People's Party",
+                    "licence": "CC BY 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ibrahim_Rugova_2004.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_djindjic",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1952,
+                  "titre": "Naissance de Zoran Djindjic",
+                  "description": "Zoran Djindjic (1952-2003) est un philosophe et homme d'État serbe, chef du Parti démocratique et maire de Belgrade en 1997. Principal artisan de la chute de Slobodan Milošević en octobre 2000, il devient Premier ministre de Serbie et fait livrer l'ancien président au Tribunal pénal international de La Haye en 2001. Il est assassiné par un tireur d'élite devant le siège du gouvernement, le 12 mars 2003, dans un complot mêlant le crime organisé et d'anciens membres des services de sécurité.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Zoran_%C4%90in%C4%91i%C4%87",
+                  "pays": "RS",
+                  "classement": "Djindjic, Zoran",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_djindjic.jpg",
+                    "legende": "Zoran Đinđić au Forum économique mondial de Davos (2003)",
+                    "auteur": "World Economic Forum from Cologny, Switzerland",
+                    "licence": "CC BY-SA 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Zoran_%C4%90in%C4%91i%C4%87,_Davos.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_balasevic",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1953,
+                  "titre": "Naissance de Đorđe Balašević",
+                  "description": "Đorđe Balašević (1953-2021) est un auteur-compositeur-interprète serbe, né à Novi Sad. Ses chansons narratives, tendres et ironiques, sur la vie des petites gens et la nostalgie de la Yougoslavie, lui valent un public dans tous les pays issus de l'ex-Yougoslavie. Il meurt de la Covid-19 en février 2021.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/%C4%90or%C4%91e_Bala%C5%A1evi%C4%87",
+                  "pays": "RS",
+                  "classement": "Balašević, Đorđe",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_balasevic.jpg",
+                    "legende": "Đorđe Balašević, photographie de 2010",
+                    "auteur": "romanski",
+                    "licence": "CC BY 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Djordje_Balasevic_DSC8494.jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_jashari",
+                  "axe": "Guerres et résistances",
+                  "date": 1955,
+                  "titre": "Naissance d'Adem Jashari",
+                  "description": "Adem Jashari (1955-1998) est un combattant kosovar, l'un des fondateurs de l'Armée de libération du Kosovo. Début mars 1998, les forces serbes assiègent sa maison à Prekaz, qu'il défend avec sa famille, et il y est tué avec plusieurs dizaines de ses proches. Ce massacre déclenche le soulèvement du Kosovo, et pour les Kosovars, Jashari est le « commandant légendaire », tandis que les Serbes voient en lui un chef terroriste.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Adem_Jashari",
+                  "pays": "XK",
+                  "classement": "Jashari, Adem",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_jashari.jpg",
+                    "legende": "Adem Jashari, buste de Tirana",
+                    "auteur": "Antidiskriminator",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Adem_Ja%C5%A1ari,_bista_u_Tirani.JPG"
+                  }
+                },
+                {
+                  "id": "pan_balkans_trajkovski",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1956,
+                  "titre": "Naissance de Boris Trajkovski",
+                  "description": "Boris Trajkovski (1956-2004) est un homme d'État macédonien, né à Strumica, président de la République de 1999 à sa mort. Pasteur méthodiste, il signe en août 2001, après sept mois de conflit avec les rebelles albanais, l'accord-cadre d'Ohrid, qui donne plus de droits à la minorité albanaise. Il meurt dans un accident d'avion en Bosnie-Herzégovine, en février 2004.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Boris_Trajkovski",
+                  "pays": "MK",
+                  "classement": "Trajkovski, Boris",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_trajkovski.jpg",
+                    "legende": "Boris Trajkovski, photographie de la Commission européenne (2002)",
+                    "auteur": "Christian Lambiotte / European Communities",
+                    "licence": "CC BY 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:%D0%91%D0%BE%D1%80%D0%B8%D1%81_%D0%A2%D1%80%D0%B0%D0%B9%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_(07-03-2002)_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_balkans_proeski",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1981,
+                  "titre": "Naissance de Toše Proeski",
+                  "description": "Toše Proeski (1981-2007) est un chanteur macédonien, né à Prilep. Sa voix et sa générosité le rendent immensément populaire dans les Balkans, où il vend des centaines de milliers de disques, et il représente son pays à l'Eurovision en 2004. Mort dans un accident de la route en Croatie à vingt-six ans, il laisse un deuil national.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/To%C5%A1e_Proeski",
+                  "pays": "MK",
+                  "classement": "Proeski, Toše",
+                  "image": {
+                    "src": "assets/portraits/pan_balkans_proeski.jpg",
+                    "legende": "Toše Proeski, lors de son dernier concert à Skopje (5 octobre 2007)",
+                    "auteur": "Kristijan006",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Toseproeskiskopje.jpg"
+                  }
+                }
+              ],
+              "axeOrder": [
+                "Chefs d'État et dirigeants",
+                "Guerres et résistances",
+                "Littérature et pensée",
+                "Beaux-arts",
+                "Musique, spectacle et sport",
+                "Sciences, techniques et innovation"
+              ],
+              "essentiel": [
+                "pan_balkans_constantin",
+                "pan_balkans_dusan",
+                "pan_balkans_lazar",
+                "pan_balkans_skanderbeg",
+                "pan_balkans_vlad",
+                "pan_balkans_stefan",
+                "pan_balkans_zrinski",
+                "pan_balkans_mihai",
+                "pan_balkans_boskovic",
+                "pan_balkans_vuk",
+                "pan_balkans_jelacic",
+                "pan_balkans_njegos",
+                "pan_balkans_cuza",
+                "pan_balkans_starcevic",
+                "pan_balkans_levski",
+                "pan_balkans_carol1",
+                "pan_balkans_nikola",
+                "pan_balkans_qemali",
+                "pan_balkans_botev",
+                "pan_balkans_eminescu",
+                "pan_balkans_vazov",
+                "pan_balkans_tesla",
+                "pan_balkans_pupin",
+                "pan_balkans_delcev",
+                "pan_balkans_brancusi",
+                "pan_balkans_enesco",
+                "pan_balkans_dimitrov",
+                "pan_balkans_noli",
+                "pan_balkans_mestrovic",
+                "pan_balkans_andric",
+                "pan_balkans_tito",
+                "pan_balkans_princip",
+                "pan_balkans_zog",
+                "pan_balkans_canetti",
+                "pan_balkans_eliade",
+                "pan_balkans_hoxha",
+                "pan_balkans_ionesco",
+                "pan_balkans_cioran",
+                "pan_balkans_ceausescu",
+                "pan_balkans_tudjman",
+                "pan_balkans_christo",
+                "pan_balkans_kadare",
+                "pan_balkans_milosevic",
+                "pan_balkans_rugova"
               ]
             },
             {

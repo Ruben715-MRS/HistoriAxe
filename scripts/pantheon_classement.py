@@ -108,6 +108,8 @@ KEEP_AS_WRITTEN = {
     'Mobutu Sese Seko', 'Grand Kallé', 'Docteur Nico', 'Pépé Kallé', 'Papa Wemba', "Pamelo Mounk'a", 'Tshala Muana', 'Tabu Ley Rochereau',
     'Lapiro de Mbanga', 'Kimpa Vita', 'Mandume ya Ndemufayo', 'Njinga Mbande', 'Alphonse Ier du Kongo', 'Mutara III Rudahigwa',
     'Yuhi V Musinga', 'Mwambutsa IV',
+    # Balkans : princes rangés par leur surnom (« Étienne le Grand », « Michel le Brave »), reine rangée par son titre, nom de règne (« Stefan Dušan »).
+    'Étienne le Grand', 'Michel le Brave', 'Marie de Roumanie', 'Stefan Dušan',
 }
 
 # Écrits à la main : (nom de la source) → nom de classement.

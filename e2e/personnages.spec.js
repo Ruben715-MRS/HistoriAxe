@@ -90,11 +90,11 @@ test('Personnages illustres : deux sous-catégories, chacune avec sa note et son
     await expect(page.locator('#theme-screen-title')).toHaveText('Panthéons');
     await expect(page.locator('#theme-screen-note-text')).toContainText('né dans les frontières actuelles');
     // Panthéons de pays et de blocs se rangent par leur nom de source — « Afrique centrale », « Afrique de l'Ouest », « Allemagne, Autriche et Suisse »,
-    // « Amérique hispanique », « Asie centrale et Afghanistan », « Australie », « Benelux », « Brésil », « Canada », « Chine », « Égypte », « Espagne », « États-Unis », « France », « Grèce », « Iran », « Israël », « Italie », « Japon », « Machrek et péninsule Arabique », « Maghreb », « Nouvelle-Zélande et Pacifique », « Portugal », « Royaume-Uni », « Russie », « Scandinavie », « Sous-continent indien », « Turquie » — et non par
+    // « Amérique hispanique », « Asie centrale et Afghanistan », « Australie », « Balkans », « Benelux », « Brésil », « Canada », « Chine », « Égypte », « Espagne », « États-Unis », « France », « Grèce », « Iran », « Israël », « Italie », « Japon », « Machrek et péninsule Arabique », « Maghreb », « Nouvelle-Zélande et Pacifique », « Portugal », « Royaume-Uni », « Russie », « Scandinavie », « Sous-continent indien », « Turquie » — et non par
     // « Grandes figures d'… » / « … de » / « … des » / « … du ».
     await expect(page.locator('#themes-container .data-card-title'))
         .toHaveText(["Grandes figures d'Afrique centrale", "Grandes figures d'Afrique de l'Ouest", "Grandes figures d'Allemagne, d'Autriche et de Suisse", "Grandes figures d'Amérique hispanique",
-            "Grandes figures d'Asie centrale", "Grandes figures d'Australie", 'Grandes figures du Benelux', 'Grandes figures du Brésil', 'Grandes figures du Canada', 'Grandes figures de Chine',
+            "Grandes figures d'Asie centrale", "Grandes figures d'Australie", 'Grandes figures des Balkans', 'Grandes figures du Benelux', 'Grandes figures du Brésil', 'Grandes figures du Canada', 'Grandes figures de Chine',
             "Grandes figures d'Égypte", "Grandes figures d'Espagne", 'Grandes figures des États-Unis',
             'Grandes figures de France', 'Grandes figures de Grèce', "Grandes figures d'Iran", "Grandes figures d'Israël", "Grandes figures d'Italie", 'Grandes figures du Japon',
             'Grandes figures du Machrek et de la péninsule Arabique', 'Grandes figures du Maghreb', 'Grandes figures de Nouvelle-Zélande et du Pacifique', 'Grandes figures du Portugal',
@@ -929,6 +929,52 @@ test('la recherche — « afrique centrale », « rdc », « zaire », « camero
         await page.locator('#theme-search-input').fill(mot);
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: "Grandes figures d'Afrique centrale" });
         await expect(resultat, `« ${mot} » doit mener au panthéon de l'Afrique centrale`).toHaveCount(1);
+        await expect(resultat.locator('.search-result-path')).toContainText('Personnages illustres › Panthéons');
+    }
+});
+
+test('les Balkans : chacune de ses figures a son portrait et son pays, d’Étienne le Grand à Toše Proeski, et seul Tesla a une biographie', async ({ page }) => {
+    await openThemeById(page, 'pan_balkans');
+    await page.locator('#mode-card-discovery').click();
+    await expect(page.locator('#screen-game')).toBeVisible();
+    const nombre = await page.evaluate(() => getCurrentTheme().events.length);
+    expect(nombre).toBe(148);
+    await expect(page.locator('#timeline .entry')).toHaveCount(nombre);
+    await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
+
+    // Quatre pays du bloc, chacun par une de ses figures : la fiche dit le pays que le bloc lui donne.
+    // Tito, né en Croatie, y est rangé ; le Kosovo n'a pas de code ISO officiel mais un drapeau et un nom.
+    const figures = [
+        ['Naissance de Josip Broz Tito', '🇭🇷', 'Croatie'],
+        ["Naissance d'Ismail Kadaré", '🇦🇱', 'Albanie'],
+        ["Naissance d'Ibrahim Rugova", '🇽🇰', 'Kosovo'],
+        ["Naissance d'Ivo Andrić", '🇧🇦', 'Bosnie'],
+    ];
+    for (const [titre, drapeau, pays] of figures) {
+        await page.locator('#timeline .entry', { hasText: titre }).click();
+        await expect(page.locator('#modal-details')).toBeVisible();
+        await expect(page.locator('#modal-pays')).toContainText(drapeau);
+        await expect(page.locator('#modal-pays')).toContainText(pays);
+        const portrait = page.locator('#modal-portrait-img');
+        await expect.poll(() => portrait.evaluate(img => img.complete ? img.naturalWidth : 0)).toBe(320);
+        await expect(page.locator('#modal-portrait-caption')).not.toBeEmpty();
+        await page.locator('#modal-details .close-btn').click();
+        await expect(page.locator('#modal-details')).toBeHidden();
+    }
+
+    // Une seule biographie liée : celle de Nikola Tesla.
+    const avecBiographie = await page.evaluate(() => getCurrentTheme().events.filter(e => e.biographie).map(e => e.titre));
+    expect(avecBiographie).toEqual(['Naissance de Nikola Tesla']);
+    await page.locator('#timeline .entry', { hasText: 'Naissance de Nikola Tesla' }).click();
+    await expect(page.locator('#modal-bio-btn')).toBeVisible();
+});
+
+test('la recherche — « balkans », « yougoslavie », « roumanie », « serbie », « kosovo », « moldavie » — mène au panthéon des Balkans', async ({ page }) => {
+    await page.locator('#screen-home').click();
+    for (const mot of ['balkans', 'yougoslavie', 'roumanie', 'bulgarie', 'serbie', 'croatie', 'bosnie', 'montenegro', 'kosovo', 'albanie', 'macedoine du nord', 'moldavie', 'moldova', 'transylvanie', 'dracula', 'tito']) {
+        await page.locator('#theme-search-input').fill(mot);
+        const resultat = page.locator('#theme-search-results .search-result-item', { hasText: 'Grandes figures des Balkans' });
+        await expect(resultat, `« ${mot} » doit mener au panthéon des Balkans`).toHaveCount(1);
         await expect(resultat.locator('.search-result-path')).toContainText('Personnages illustres › Panthéons');
     }
 });
