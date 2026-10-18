@@ -59,3 +59,35 @@ atteint en cours d'audit) :
 - `colafr` : étendue de la révolte malgache (1895-1906 ou 1904), femmes touchées par le travail forcé jusqu'en 1927 (rapport du jury) ;
 - `camp` : périodisations générales (radio, télévision, coopératives) ;
 - datations réellement discutées, laissées telles quelles dans la frise avec nuance dans la fiche : commémoration des défunts à Cluny (`eccl3`), Sorbonne (`feod20`), Halles de Paris (`feod16`), Compagnie de Jésus (`renh31`), 95 thèses (`renh21`), Grande Terreur (`aut70`), pentécosté d'Athènes (`grc61`), Édit de Milan.
+
+## Frise des thèmes (octobre 2026)
+
+La frise des 22 thèmes a été refondue : de 50-72 événements par thème à **93-119** (24 617 événements au total dans le
+pack, dont 1 166 ajoutés par cette refonte), avec 34 à 40 incontournables ⭐ par thème. Les sources sont dans
+`scripts/capes/` (format et règles dans son README) ; `scripts/build_capes.py` les écrit dans `data/fr.json`.
+
+- **Les événements cités dans les sommaires figurent dans la frise.** Pour chaque fiche, les faits datés des sommaires
+  (lois, batailles, publications, chiffres de seuil) qui n'avaient pas d'événement en ont reçu un ; les repères qui
+  n'avaient pas d'`eventId` (Potosí, Luanda et la Huronie dans `am` ; la Restauration et les chambres d'agriculture
+  dans `camp` ; l'invasion de la Pologne et la disparition de l'URSS dans `20s`) sont maintenant rattachés.
+- **Descriptions en trois phrases** : ce qu'est l'événement et son contexte, puis ce qui le rend déterminant pour la
+  question, sans formule du type « cet événement compte pour le concours ». La longueur est contrôlée (220 à 760
+  caractères).
+- **Datations ou titres corrigés au passage** : grande enquête agricole du Second Empire (1866, `camp10`), plan Freycinet
+  (1879), Pic de population rurale, Congrès panafricain de 1919 à la place d'une « Ligue pour la défense » non
+  identifiée (`cola23`), AEF 1908 (`cola7`), Grande Terreur 1937 (`aut70`), loi d'orientation de 1960 (`camp42`, qui
+  n'est pas la loi Pisani), monuments aux morts et Office du crédit agricole séparés (`camp27`, `camp57`).
+- **Un axe ajouté** : `thm_20s` a un axe « Crises, totalitarismes et marche à la guerre (1919-1939) », que son
+  sommaire traitait sans axe de frise.
+- **Pas de point dans l'Atlas** pour les nouveaux événements, sauf lorsqu'ils sont liés à une fiche déjà localisée.
+- **Liens Wikipédia** : les nouveaux événements pointent presque tous sur une recherche (`w/index.php?search=`), qui
+  mène à l'article quand le terme est exact et n'invente aucun titre d'article.
+
+### À revérifier dans la frise
+
+Écrits de mémoire, sans relecture contre une source : les chiffres de victimes et de seuils (Verdun, Somme, Srebrenica,
+Thiaroye, rue d'Isly, Oradour, Guernica), les chiffres de population des sommaires de `geopop`, le nombre d'exemplaires et
+de délégués de quelques conférences (`20s`, `colafr`), les épisodes récents de `amlat` (COP30 de Belém, accord
+Mercosur-Union européenne, port de Chancay) et les effectifs de `camp` (tracteurs, taux d'équipement en télévision,
+rappelés de 1956). Les points précis dont l'énoncé est plus fragile ont été formulés avec « environ » ou « selon les
+estimations ».
