@@ -14,8 +14,8 @@ Points communs à relire avant de s'en servir comme référence unique :
 | Thème | Statut | Cadrage consulté |
 |---|---|---|
 | `thm_grc` Travailler en Grèce ancienne | question d'agrégation 2026-2027 | programme agrégation 2026 (devenirenseignant.gouv.fr/media/16663) |
-| `thm_rome` Rome : République et Empire | intitulé maison | esprit de « Gouverner l'Empire romain de Trajan à 410 » ; la partie République est écrite sans cadrage officiel |
-| `thm_grccl` La Grèce classique | intitulé maison | lettre de cadrage ENS (histoire ancienne 2024) |
+| `thm_rome` Rome : République et Empire | libellé officiel du programme CAPES bac+3 2026 | pas de lettre détaillée ; esprit de « Gouverner l'Empire romain de Trajan à 410 » ; la partie République est écrite sans cadrage officiel |
+| `thm_grccl` La Grèce classique | libellé du programme CAPES bac+3 ; bornes de la lettre ENS 2024 (Solon 594 – Philippe II 336) | lettre de cadrage ENS (histoire ancienne 2024) |
 | `thm_traj` Gouverner l'Empire romain | question CAPES/CAFEP 2024-2027 (commune avec l'agrégation 284-410) | programme 2026-2027 (media/20531) |
 | `thm_medi` Méditerranée VIe-XIIIe | question CAPES bac+3 2026 | note de cadrage (libellé seul) |
 | `thm_emp` Gouvernement impérial VIIIe-XIe | question d'agrégation 2026 | note de cadrage 22 avril 2025 (media/16663) |
@@ -34,23 +34,28 @@ Points communs à relire avant de s'en servir comme référence unique :
 | `thm_geopop` Mondialisation, populations, territoires | intitulé maison | quatre entrées du programme CAPES bac+3 ; rapport du jury CAPES 2025 (généralités) |
 | `thm_amlat` Amérique latine | question CAPES 2026 (Caraïbes exclues ; remplacée par « Le Pacifique » en 2027) | programme 2026-2027 |
 
-## Écarts avec la frise (dates ou intitulés à corriger dans `data/fr.json`)
+## Audit factuel (octobre 2026)
 
-Les sommaires donnent la date juste dans le texte et n'utilisent pas ces événements comme repères.
-- `eccl` : Hirsau 1049 (réforme plutôt de la fin du XIe s.), commémoration des défunts à Cluny 1027 (tradition : vers 998), interdiction du mariage des prêtres 1059 (tournant : Latran I 1123 et II 1139).
-- `feod` : Lorris 1130 (charte de 1155), Lübeck 1146 (1143, refondée en 1159), serment de Lusignan 1023 (années 1020-1030).
-- `traj` : `traj50` Orose 411 (417-418), `traj12` 197 (provinces vers 195-198), `traj36` « accord de Marcianopolis » 376 (le traité de fédération est de 382), `traj27` solidus 312 (antérieur).
-- `medi` : `medi45` prise d'Almería 1148 (1147 ; Tortosa 1148).
-- `emp` : `emp67` couronnement d'Étienne Ier 998 (vers 1000-1001), `emp38` Charles Martel 714 (715-718).
-- `colafr` : `cola13` Kousséri 1899 (22 avril 1900), `cola17` Étoile nord-africaine 1929 (fondée en 1926), `cola7` AEF 1904 (organisée en 1910), `cola39` Houphouët-Boigny 1957 (ministre 1956-1959).
-- `amlat` : réserve Chico Mendes 1989 (décret de 1990), accord Mercosur-UE 2019 (accord de principe, non signature), dollarisation de l'Équateur 1999 (décidée en 2000).
-- `littor` : `litt42` Prestige 2003 (novembre 2002).
-- `geoeur` : retour de l'Alsace-Moselle 1919 (reprise militaire en novembre 1918).
-- `envgeo` : Watt 1784 (« perfectionnement » ; brevet de 1769), événement de 1913 au titre tronqué (conférence de Berne ?).
-- `geopop` : New York dépassée par Tokyo « dans les années 1960-1970 selon les séries » (frise : 1975).
-- `pacif` : Kiribati 2013 (achat finalisé en 2014), `pacf41` au libellé tronqué (convention de Montego Bay ?).
-- `rome` : aucune.
+Chaque sommaire a été relu affirmation par affirmation (dates, chiffres, noms, lieux, attributions) contre des sources
+(Wikipédia, Géoconfluences, Insee, ONU/FAO/HCR, Encyclopædia Universalis, textes de cadrage). Environ 370 corrections ont été
+faites dans les fiches ; ce qui n'a pu être confirmé a été **supprimé ou reformulé**, plutôt que gardé « de mémoire ».
+80 corrections ont aussi été apportées aux événements de la frise (`data/fr.json`) : dates (ex. Lorris 1155, Kousséri 1900,
+Prestige 2002, Chico Mendes 1990, Tokyo devant New York vers 1955…), titres devenus faux (ex. « Interdiction du mariage des
+prêtres » → « Condamnation du nicolaïsme par le synode du Latran »), descriptions inexactes. `cola7` (création de l'AEF) est
+daté 1908 (gouverneur général et quatre territoires), `cola9` garde 1910 (décret d'organisation).
 
-## Chiffres et faits à revérifier
+### Ce qui reste non confirmé par une source
 
-Ordres de grandeur donnés avec prudence : effectifs de citoyens athéniens, esclaves de Nicias et de Lysias (`grc`), 30 légions et 80 000 km de routes (`rome`), solidus 72 à la livre (`traj`), chiffres de la peste noire et de Paris vers 1300 (`feod`), dates des sièges de Constantinople (`medi`), bilans de Sétif, Thiaroye, Madagascar 1947 (`colafr`), électorat censitaire et bilan de la Commune (`19fr`), 280 millions de migrants, 730 millions de personnes sous-alimentées (`geopop`), CONADEP, exode vénézuélien (`amlat`), 47 morts de Xynthia, puissances des parcs éoliens (`littor`), 193 essais nucléaires, référendums calédoniens, reconnaissance de Taïwan (`pacif`), zone euro à 21 États et Schengen élargi (`geoeur`), ppm de CO2 et aires protégées (`envgeo`), 36 000 morts de la guerre civile finlandaise, 400 000 stérilisations, 680 000 exécutions de la Grande Terreur (`aut`), bilans des guerres mondiales et du Rwanda (`20s`).
+Conservé parce que cohérent avec la frise et l'usage courant, mais non revérifié une à une (le plafond de recherches a été
+atteint en cours d'audit) :
+- dates « de manuel » de la Révolution et de l'Empire, des guerres mondiales et des indépendances (`rev18`, `20s`) ;
+- dates et chiffres de l'entre-deux-guerres (`aut`) : République des conseils hongroise, putsch de Kapp, résultats électoraux de 1933, 400 000 stérilisations, 680 000 exécutions de la Grande Terreur (chiffre du NKVD), 11 % de Rex en 1936 ;
+- `geoeur` : lettres de cadrage de « La France » (2027) et « Frontières » (2023), dates des lois d'aménagement ;
+- `littor` : Concarneau, Boulogne, Trouville/Deauville, Fos, Côte d'Azur 1882, Le Havre détruit à plus de 80 %, La Grande-Motte 1970 ; puissance des parcs éoliens ;
+- `envgeo` : population mondiale, 17 % des terres protégées, Humboldt 1807 ;
+- `pacif` : thon, accord Chine–Salomon, populations des territoires français ;
+- `geopop` : part de la PAC, Frontex 2004, Dublin 1990, élargissements ; `SOFI 2026` et HCR fin 2025 ne sont attestés que par des synthèses ;
+- `amlat` : mégapoles (ONU 2018), organisations d'intégration, Belo Monte ; `am` : vice-royautés, Palmares, présides ;
+- `colafr` : étendue de la révolte malgache (1895-1906 ou 1904), femmes touchées par le travail forcé jusqu'en 1927 (rapport du jury) ;
+- `camp` : périodisations générales (radio, télévision, coopératives) ;
+- datations réellement discutées, laissées telles quelles dans la frise avec nuance dans la fiche : commémoration des défunts à Cluny (`eccl3`), Sorbonne (`feod20`), Halles de Paris (`feod16`), Compagnie de Jésus (`renh31`), 95 thèses (`renh21`), Grande Terreur (`aut70`), pentécosté d'Athènes (`grc61`), Édit de Milan.
