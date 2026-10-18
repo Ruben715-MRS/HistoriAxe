@@ -107,6 +107,9 @@ def build_events(theme, src):
             base['wikipedia'] = wiki_url(s['wp'])
         elif 'ws' in s:
             base['wikipedia'] = search_url(s['ws'])
+        for k in ('titre', 'description'):
+            if k in base:
+                base[k] = base[k].replace("'", '’')
         if isinstance(base.get('axe'), int):
             base['axe'] = axes[base['axe']]
         if new:
