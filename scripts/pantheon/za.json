@@ -1,0 +1,1042 @@
+{
+  "code": "za",
+  "nom": "Afrique du Sud",
+  "theme": {
+    "id": "pan_za",
+    "nom": "Grandes figures d'Afrique du Sud",
+    "difficulte": "Intermédiaire",
+    "motsCles": [
+      "Sud-Africain",
+      "Sud-Africaine",
+      "Afrique du Sud",
+      "Le Cap",
+      "Johannesburg",
+      "Pretoria",
+      "Durban",
+      "Soweto",
+      "Robben Island",
+      "Apartheid",
+      "ANC",
+      "Congrès national africain",
+      "Zoulou",
+      "Zoulous",
+      "Xhosa",
+      "Afrikaner",
+      "Afrikaners",
+      "Boers",
+      "Grand Trek",
+      "Voortrekkers",
+      "Rivonia",
+      "Sharpeville",
+      "Nation arc-en-ciel"
+    ]
+  },
+  "axes": [
+    "Chefs d'État et dirigeants",
+    "Guerres et résistances",
+    "Littérature et pensée",
+    "Beaux-arts",
+    "Musique, spectacle et sport",
+    "Sciences, techniques et innovation"
+  ],
+  "personnages": [
+    {
+      "slug": "vanriebeeck",
+      "nom": "Jan van Riebeeck",
+      "titre": "Naissance de Jan van Riebeeck",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1619,
+      "description": "Jan van Riebeeck (1619-1677) est un chirurgien et marchand néerlandais, né à Culemborg. Envoyé par la Compagnie néerlandaise des Indes orientales, il fonde en avril 1652 un poste de ravitaillement à la baie de la Table, qui deviendra Le Cap, première implantation européenne durable en Afrique du Sud. Il dirige la colonie jusqu'en 1662, une période qui amorce la dépossession des Khoïkhoï et fait de lui une figure très débattue.",
+      "wikipedia": "Jan van Riebeeck",
+      "essentiel": true,
+      "pays": "NL",
+      "portrait": {
+        "fichier": "Portret van Jan van Riebeeck (1619-77). Bevelhebber van Kaap de Goede Hoop en van Malacca en secretaris van de Hoge Regering van Batavia, SK-A-805.jpg",
+        "legende": "Jan van Riebeeck, portrait peint conservé au Rijksmuseum d'Amsterdam",
+        "auteur": "anonymous",
+        "licence": "CC0 (domaine public)"
+      },
+      "classement": "Van Riebeeck, Jan"
+    },
+    {
+      "slug": "sarah",
+      "nom": "Saartjie Baartman",
+      "titre": "Naissance de Saartjie Baartman",
+      "axe": "Guerres et résistances",
+      "naissance": 1789,
+      "description": "Saartjie Baartman (vers 1789-1815) est une jeune femme khoïkhoï née dans l'actuel Cap-Oriental. Emmenée à Londres en 1810 puis à Paris, elle est exhibée comme la « Vénus hottentote » à cause de ses formes, dans des spectacles qui nourrissent le racisme scientifique. Morte à Paris en 1815, elle est disséquée par Cuvier, son squelette est exposé au musée de l'Homme jusque dans les années 1970, et ses restes sont rendus à l'Afrique du Sud en 2002.",
+      "wikipedia": "Saartjie Baartman",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Saartjie Baartman (portrait).jpg",
+        "legende": "Saartjie Baartman, lithographie d'après un dessin pris à Paris en 1815",
+        "recadrage": [
+          0.24,
+          0.02,
+          0.78,
+          0.58
+        ],
+        "auteur": "Auteur inconnu",
+        "licence": "Domaine public"
+      },
+      "classement": "Baartman, Saartjie"
+    },
+    {
+      "slug": "chaka",
+      "nom": "Chaka",
+      "titre": "Naissance de Chaka",
+      "axe": "Guerres et résistances",
+      "naissance": 1787,
+      "description": "Chaka (1787-1828) est un roi zoulou, fils du chef Senzangakhona. Devenu chef vers 1816, il réorganise l'armée en régiments disciplinés, armés de la sagaie courte, et soumet par la guerre les clans voisins, ce qui bouleverse l'Afrique australe lors du mfecane. Il est assassiné en 1828 par ses demi-frères, dont Dingane.",
+      "wikipedia": "Chaka (roi zoulou)",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "KingShaka.jpg",
+        "legende": "Chaka, gravure d'après un dessin de James King, vers 1825",
+        "recadrage": [
+          0.15,
+          0.15,
+          0.55,
+          0.45
+        ],
+        "auteur": "James King",
+        "licence": "Domaine public"
+      },
+      "classement": "Chaka"
+    },
+    {
+      "slug": "pretorius",
+      "nom": "Andries Pretorius",
+      "titre": "Naissance d'Andries Pretorius",
+      "axe": "Guerres et résistances",
+      "naissance": 1798,
+      "description": "Andries Pretorius (1798-1853) est un général boer et chef voortrekker, né à Graaff-Reinet. Vainqueur des Zoulous de Dingane à Blood River, le 16 décembre 1838, il négocie ensuite avec les Britanniques la convention de la rivière Sand, qui reconnaît en 1852 l'indépendance des Boers du Transvaal. La ville de Pretoria porte son nom, donné par son fils Marthinus.",
+      "wikipedia": "Andries Pretorius",
+      "portrait": {
+        "fichier": "Andries Pretorius.jpg",
+        "legende": "Andries Pretorius, portrait du XIXe siècle",
+        "auteur": "Auteur inconnu",
+        "licence": "Domaine public"
+      },
+      "classement": "Pretorius, Andries"
+    },
+    {
+      "slug": "sekhukhune",
+      "nom": "Sekhukhune Ier",
+      "titre": "Naissance de Sekhukhune Ier",
+      "axe": "Guerres et résistances",
+      "naissance": 1814,
+      "description": "Sekhukhune Ier (vers 1814-1882) est le roi des Pedi, dans l'actuelle province du Limpopo. À la tête d'un royaume puissant, il résiste aux Boers de la République sud-africaine en 1876 puis aux Britanniques, et il est emprisonné à Pretoria après la défaite de 1879. Libéré en 1881, il est assassiné l'année suivante par son demi-frère Mampuru, dans un conflit de succession.",
+      "wikipedia": "Sekhukhune Ier",
+      "portrait": {
+        "fichier": "LL1882 pg008 SIKUKUNI.jpg",
+        "legende": "Sekhukhune, gravure de 1882",
+        "auteur": "Auteur inconnu",
+        "licence": "Domaine public"
+      },
+      "classement": "Sekhukhune Ier"
+    },
+    {
+      "slug": "cetshwayo",
+      "nom": "Cetshwayo",
+      "titre": "Naissance de Cetshwayo",
+      "axe": "Guerres et résistances",
+      "naissance": 1826,
+      "description": "Cetshwayo (vers 1826-1884) est le roi des Zoulous de 1873 à 1879. Le 22 janvier 1879, ses guerriers anéantissent une colonne britannique à Isandlwana, avant d'être vaincus à Ulundi le 4 juillet suivant. Capturé puis exilé, il est reçu à Londres par la reine Victoria en 1882, rétabli sur une partie de son royaume en 1883 et meurt l'année suivante.",
+      "wikipedia": "Cetshwayo kaMpande",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Cetshwayo ka Mpande.jpg",
+        "legende": "Cetshwayo, photographie d'Alexander Bassano",
+        "auteur": "\"Photographed by Alex. Bassano, 25, Old Bond Street\"",
+        "licence": "Domaine public"
+      },
+      "classement": "Cetshwayo"
+    },
+    {
+      "slug": "nongqawuse",
+      "nom": "Nongqawuse",
+      "titre": "Naissance de Nongqawuse",
+      "axe": "Guerres et résistances",
+      "naissance": 1841,
+      "description": "Nongqawuse (vers 1841-1898) est une jeune prophétesse xhosa du Cap-Oriental. En 1856, elle annonce que les ancêtres ressusciteront et chasseront les Britanniques si son peuple tue son bétail et détruit ses récoltes. Le massacre des troupeaux provoque une famine qui fait des dizaines de milliers de morts et ruine la puissance xhosa ; arrêtée par les Britanniques, elle meurt dans l'oubli en 1898.",
+      "wikipedia": "Nongqawuse",
+      "portrait": {
+        "fichier": "Nongqawuse (cropped).jpg",
+        "legende": "Nongqawuse, photographie",
+        "auteur": "Auteur inconnu",
+        "licence": "Domaine public"
+      },
+      "classement": "Nongqawuse"
+    },
+    {
+      "slug": "kruger",
+      "nom": "Paul Kruger",
+      "titre": "Naissance de Paul Kruger",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1825,
+      "description": "Paul Kruger (1825-1904) est un homme d'État boer, né à Bulhoek, dans la colonie du Cap. Président de la République sud-africaine (Transvaal) de 1883 à 1900, il refuse les revendications des uitlanders, ces mineurs étrangers attirés par l'or du Witwatersrand, et se retrouve en guerre contre l'Empire britannique en octobre 1899. Parti en Europe en 1900, il meurt en exil, en Suisse, en 1904.",
+      "wikipedia": "Paul Kruger",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Paul Kruger Cropped.png",
+        "legende": "Paul Kruger, photographie vers 1890",
+        "auteur": "Unknown author Unknown author",
+        "licence": "Domaine public"
+      },
+      "classement": "Kruger, Paul"
+    },
+    {
+      "slug": "rhodes",
+      "nom": "Cecil Rhodes",
+      "titre": "Naissance de Cecil Rhodes",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1853,
+      "description": "Cecil Rhodes (1853-1902) est un homme d'affaires et homme politique britannique, né à Bishop's Stortford. Fondateur de la De Beers en 1888 et Premier ministre de la colonie du Cap de 1890 à 1896, il bâtit sa fortune sur les diamants de Kimberley et rêve d'un empire britannique du Cap au Caire ; la Rhodésie porte son nom. Sa politique à l'égard des Africains et le raid Jameson de 1895-1896 le rendent aujourd'hui très contesté.",
+      "wikipedia": "Cecil Rhodes",
+      "essentiel": true,
+      "pays": "GB",
+      "portrait": {
+        "fichier": "Cecil Rhodes ww.jpg",
+        "legende": "Cecil Rhodes, photographie",
+        "auteur": "unattributed",
+        "licence": "Domaine public"
+      },
+      "classement": "Rhodes, Cecil"
+    },
+    {
+      "slug": "dewet",
+      "nom": "Christiaan de Wet",
+      "titre": "Naissance de Christiaan de Wet",
+      "axe": "Guerres et résistances",
+      "naissance": 1854,
+      "description": "Christiaan de Wet (1854-1922) est un général boer, né dans l'État libre d'Orange. Pendant la guerre des Boers, il s'illustre par une guérilla qui harcèle les troupes britanniques et leurs lignes de communication, notamment à Sannah's Post en 1900. Opposé à l'alliance avec le Royaume-Uni, il prend la tête de la rébellion afrikaner de 1914, avant de se retirer sur sa ferme.",
+      "wikipedia": "Christiaan de Wet",
+      "portrait": {
+        "fichier": "Christiaan de Wet.jpg",
+        "legende": "Christiaan de Wet, photographie parue dans l'encyclopédie militaire russe de Sytine",
+        "auteur": "« Военная энциклопедия И. Д. Сытина ». ( Санкт-Петербург ; 1912 год ).",
+        "licence": "Domaine public"
+      },
+      "classement": "De Wet, Christiaan"
+    },
+    {
+      "slug": "botha",
+      "nom": "Louis Botha",
+      "titre": "Naissance de Louis Botha",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1862,
+      "description": "Louis Botha (1862-1919) est un général boer et homme d'État, né à Greytown, dans le Natal. Commandant des forces du Transvaal pendant la guerre des Boers, il signe la paix de Vereeniging en 1902, puis devient en 1910 le premier Premier ministre de l'Union d'Afrique du Sud. Allié des Britanniques en 1914, il conquiert l'Afrique du Sud-Ouest allemande en 1915 et meurt en 1919, peu après la conférence de la paix de Paris.",
+      "wikipedia": "Louis Botha",
+      "portrait": {
+        "fichier": "General Louis Botha, Union of South Africa.jpg",
+        "legende": "Louis Botha, portrait paru dans la presse américaine en 1910",
+        "auteur": "Auteur inconnu",
+        "licence": "Domaine public"
+      },
+      "classement": "Botha, Louis"
+    },
+    {
+      "slug": "hertzog",
+      "nom": "Barry Hertzog",
+      "titre": "Naissance de Barry Hertzog",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1866,
+      "description": "Barry Hertzog (1866-1942) est un général boer et homme d'État, Premier ministre de l'Union d'Afrique du Sud de 1924 à 1939. Fondateur du Parti national en 1914, il défend l'afrikaans et l'autonomie du pays dans l'Empire britannique, et fait voter en 1936 la loi qui retire aux Noirs du Cap leur inscription sur les listes électorales communes. Il tombe en 1939 pour avoir refusé d'entrer en guerre aux côtés du Royaume-Uni.",
+      "wikipedia": "James B. Hertzog",
+      "portrait": {
+        "fichier": "JBM Hertzog - SA.jpg",
+        "legende": "Barry Hertzog, photographie du Bain News Service",
+        "auteur": "Bain News Service, publisher",
+        "licence": "Domaine public"
+      },
+      "classement": "Hertzog, Barry"
+    },
+    {
+      "slug": "smuts",
+      "nom": "Jan Smuts",
+      "titre": "Naissance de Jan Smuts",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1870,
+      "description": "Jan Smuts (1870-1950) est un général, juriste et philosophe, né à Riebeek West, dans la colonie du Cap. Adversaire des Britanniques pendant la guerre des Boers, il devient leur allié, Premier ministre de 1919 à 1924 puis de 1939 à 1948, et rédige le préambule de la charte des Nations unies en 1945. Il défend toutefois la ségrégation raciale, et sa défaite électorale de 1948 ouvre l'ère de l'apartheid.",
+      "wikipedia": "Jan Smuts",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Genl JC Smuts.jpg",
+        "legende": "Jan Smuts, photographie",
+        "auteur": "Unknown - Toesprake deur sy hoog-edeagbare JC Smuts",
+        "licence": "Domaine public"
+      },
+      "classement": "Smuts, Jan"
+    },
+    {
+      "slug": "verwoerd",
+      "nom": "Hendrik Verwoerd",
+      "titre": "Naissance de Hendrik Verwoerd",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1901,
+      "description": "Hendrik Verwoerd (1901-1966) est un homme politique sud-africain né à Amsterdam, arrivé dans le pays à deux ans. Ministre des Affaires indigènes de 1950 à 1958, puis Premier ministre de 1958 à 1966, il est le principal architecte de l'apartheid, qu'il organise en « développement séparé » avec les bantoustans. Il proclame la République en 1961 et meurt poignardé au Parlement du Cap en 1966 par Dimitri Tsafendas.",
+      "wikipedia": "Hendrik Verwoerd",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Zuid Afrikaanse premier dr. H. Verwoerd, Bestanddeelnr 911-1297 (cropped).jpg",
+        "legende": "Hendrik Verwoerd, photographie de l'agence Anefo",
+        "auteur": "Snikkers / Anefo",
+        "licence": "CC0 (domaine public)"
+      },
+      "classement": "Verwoerd, Hendrik"
+    },
+    {
+      "slug": "mandela",
+      "nom": "Nelson Mandela",
+      "titre": "Naissance de Nelson Mandela",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1918,
+      "description": "Nelson Mandela (1918-2013) est un homme d'État sud-africain, né à Mvezo, dans le Transkei. Avocat et dirigeant de l'ANC, il est condamné à la prison à vie au procès de Rivonia en 1964 et passe vingt-sept ans en détention, dont dix-huit à Robben Island. Libéré en 1990, prix Nobel de la paix en 1993 avec de Klerk, il devient en 1994 le premier président noir du pays et conduit la transition vers un régime multiracial.",
+      "wikipedia": "Nelson Mandela",
+      "essentiel": true,
+      "biographie": "bio_mandela",
+      "portrait": {
+        "fichier": "Nelson Mandela 1994.jpg",
+        "legende": "Nelson Mandela en 1994",
+        "auteur": "Kingkongphoto & www.celebrity-photos.com from Laurel",
+        "licence": "CC BY-SA 2.0"
+      },
+      "classement": "Mandela, Nelson"
+    },
+    {
+      "slug": "deklerk",
+      "nom": "Frederik de Klerk",
+      "titre": "Naissance de Frederik de Klerk",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1936,
+      "description": "Frederik de Klerk (1936-2021) est un avocat et homme d'État sud-africain, né à Johannesburg. Président de la République de 1989 à 1994, il lève en février 1990 l'interdiction de l'ANC, fait libérer Nelson Mandela et négocie avec lui la fin de l'apartheid. Ils partagent le prix Nobel de la paix en 1993, et il devient vice-président du gouvernement d'union nationale jusqu'en 1996.",
+      "wikipedia": "Frederik Willem de Klerk",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Frederik Willem de Klerk, 1990.jpg",
+        "legende": "Frederik de Klerk en 1990",
+        "auteur": "Walter Rutishauser, Photographer",
+        "licence": "CC BY-SA 4.0"
+      },
+      "classement": "De Klerk, Frederik"
+    },
+    {
+      "slug": "tutu",
+      "nom": "Desmond Tutu",
+      "titre": "Naissance de Desmond Tutu",
+      "axe": "Guerres et résistances",
+      "naissance": 1931,
+      "description": "Desmond Tutu (1931-2021) est un archevêque anglican sud-africain, né à Klerksdorp. Devenu archevêque du Cap en 1986, il est l'une des voix les plus écoutées contre l'apartheid, qu'il combat par la non-violence et en appelant aux sanctions internationales ; il reçoit le prix Nobel de la paix en 1984. Président de la Commission Vérité et Réconciliation à partir de 1996, il popularise l'expression « nation arc-en-ciel ».",
+      "wikipedia": "Desmond Tutu",
+      "essentiel": true,
+      "biographie": "bio_tutu",
+      "portrait": {
+        "fichier": "Archbishop-Tutu-medium.jpg",
+        "legende": "Desmond Tutu, photographie de Benny Gool",
+        "auteur": "Benny Gool",
+        "licence": "Domaine public"
+      },
+      "classement": "Tutu, Desmond"
+    },
+    {
+      "slug": "biko",
+      "nom": "Steve Biko",
+      "titre": "Naissance de Steve Biko",
+      "axe": "Guerres et résistances",
+      "naissance": 1946,
+      "description": "Steve Biko (1946-1977) est un militant sud-africain, fondateur du mouvement de la conscience noire. Étudiant en médecine, il crée en 1968 la South African Students' Organisation, qui veut libérer les Noirs du sentiment d'infériorité que leur inculque l'apartheid. Arrêté en août 1977, il meurt en détention le 12 septembre, des suites de coups reçus de la police.",
+      "wikipedia": "Steve Biko",
+      "essentiel": true,
+      "biographie": "bio_biko",
+      "portrait": {
+        "fichier": "Steve Biko on Flyer for Steve Biko Memorial at the Carver Cultural Center.jpg",
+        "legende": "Steve Biko, photographie parue sur une affiche commémorative",
+        "auteur": "Cape Argus Alternative names The Argus",
+        "licence": "Domaine public"
+      },
+      "classement": "Biko, Steve"
+    },
+    {
+      "slug": "lutuli",
+      "nom": "Albert Lutuli",
+      "titre": "Naissance d'Albert Lutuli",
+      "axe": "Guerres et résistances",
+      "naissance": 1898,
+      "description": "Albert Lutuli (vers 1898-1967) est un chef traditionnel zoulou et dirigeant de l'ANC, élu président du parti en 1952. Partisan de la non-violence, déchu de sa chefferie par le gouvernement puis assigné à résidence à Groutville, il reçoit en 1960 le prix Nobel de la paix, premier Africain à l'obtenir. Il meurt en 1967, happé par un train, dans des circonstances restées discutées.",
+      "wikipedia": "Albert Lutuli",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Albert Lutuli nobel.jpg",
+        "legende": "Albert Lutuli, portrait du prix Nobel de la paix 1960",
+        "auteur": "Auteur inconnu",
+        "licence": "Domaine public"
+      },
+      "classement": "Lutuli, Albert"
+    },
+    {
+      "slug": "sisulu",
+      "nom": "Walter Sisulu",
+      "titre": "Naissance de Walter Sisulu",
+      "axe": "Guerres et résistances",
+      "naissance": 1912,
+      "description": "Walter Sisulu (1912-2003) est un militant anti-apartheid, né à Engcobo, dans le Transkei. Secrétaire général de l'ANC à partir de 1949, il est le mentor de Nelson Mandela et l'un des organisateurs de la campagne de défiance de 1952. Condamné à perpétuité au procès de Rivonia en 1964, il passe plus de vingt-cinq ans en prison, à Robben Island puis à Pollsmoor, et est libéré en 1989.",
+      "wikipedia": "Walter Sisulu",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Walter Sisulu 1991 (cropped).jpg",
+        "legende": "Walter Sisulu en 1991",
+        "auteur": "Commonwealth of Learning (COL)",
+        "licence": "CC BY-SA 4.0"
+      },
+      "classement": "Sisulu, Walter"
+    },
+    {
+      "slug": "tambo",
+      "nom": "Oliver Tambo",
+      "titre": "Naissance d'Oliver Tambo",
+      "axe": "Guerres et résistances",
+      "naissance": 1917,
+      "description": "Oliver Tambo (1917-1993) est un avocat et dirigeant de l'ANC, né dans le Pondoland, dans l'actuel Cap-Oriental. Associé de Mandela dans le premier cabinet d'avocats noirs du pays, il part en exil en 1960 et dirige l'ANC depuis l'étranger pendant trente ans, jusqu'à une attaque cérébrale en 1989. Rentré en 1990, il meurt en 1993, un an avant l'élection qui porte son parti au pouvoir.",
+      "wikipedia": "Oliver Tambo",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Oliver Tambo (1981).jpg",
+        "legende": "Oliver Tambo en 1981, photographie de l'agence Anefo",
+        "auteur": "Rob Croes for Anefo",
+        "licence": "CC BY-SA 3.0 NL"
+      },
+      "classement": "Tambo, Oliver"
+    },
+    {
+      "slug": "mbeki",
+      "nom": "Govan Mbeki",
+      "titre": "Naissance de Govan Mbeki",
+      "axe": "Guerres et résistances",
+      "naissance": 1910,
+      "description": "Govan Mbeki (1910-2001) est un militant communiste et dirigeant de l'ANC, né dans le Transkei et père du futur président Thabo Mbeki. Journaliste et théoricien, membre de l'état-major de l'Umkhonto we Sizwe, il est condamné à la prison à vie au procès de Rivonia en 1964 et libéré en 1987. Il devient vice-président du Sénat en 1994.",
+      "wikipedia": "Govan Mbeki",
+      "portrait": {
+        "fichier": "Govanmbekimugshot.jpg",
+        "legende": "Govan Mbeki, photographie d'identité judiciaire de la police sud-africaine",
+        "recadrage": [
+          0.15,
+          0.0,
+          0.65,
+          0.3
+        ],
+        "auteur": "South African Police",
+        "licence": "Domaine public"
+      },
+      "classement": "Mbeki, Govan"
+    },
+    {
+      "slug": "kathrada",
+      "nom": "Ahmed Kathrada",
+      "titre": "Naissance d'Ahmed Kathrada",
+      "axe": "Guerres et résistances",
+      "naissance": 1929,
+      "description": "Ahmed Kathrada (1929-2017) est un militant anti-apartheid d'origine indienne, né à Schweizer-Reneke, dans le Transvaal. Compagnon de Mandela au procès de Rivonia, condamné à la prison à vie en 1964, il passe vingt-six ans en prison, dont dix-huit à Robben Island, et est libéré en 1989. Député de 1994 à 1999, il dirige ensuite une fondation qui porte son nom.",
+      "wikipedia": "Ahmed Kathrada",
+      "portrait": {
+        "fichier": "Kathrada coons crop.jpg",
+        "legende": "Ahmed Kathrada, photographie",
+        "largeur": 960,
+        "auteur": "Office of Senator Christopher Coons",
+        "licence": "Domaine public"
+      },
+      "classement": "Kathrada, Ahmed"
+    },
+    {
+      "slug": "sobukwe",
+      "nom": "Robert Sobukwe",
+      "titre": "Naissance de Robert Sobukwe",
+      "axe": "Guerres et résistances",
+      "naissance": 1924,
+      "description": "Robert Sobukwe (1924-1978) est un enseignant et militant, né à Graaff-Reinet. Dissident de l'ANC, il fonde en 1959 le Congrès panafricaniste d'Azanie, et lance en mars 1960 la campagne contre les laissez-passer, qui s'achève par le massacre de Sharpeville. Emprisonné puis maintenu en détention à Robben Island par une loi surnommée « clause Sobukwe », il meurt d'un cancer en 1978, sous surveillance.",
+      "wikipedia": "Robert Sobukwe",
+      "portrait": {
+        "fichier": "Robert Sobukwe & Benjamin Pogrund (cropped).jpg",
+        "legende": "Robert Sobukwe, photographie",
+        "auteur": "Unknown author Unknown author",
+        "licence": "Domaine public"
+      },
+      "classement": "Sobukwe, Robert"
+    },
+    {
+      "slug": "winnie",
+      "nom": "Winnie Madikizela-Mandela",
+      "titre": "Naissance de Winnie Madikizela-Mandela",
+      "axe": "Guerres et résistances",
+      "naissance": 1936,
+      "description": "Winnie Madikizela-Mandela (1936-2018) est une militante sud-africaine, née à Bizana, dans le Transkei. Épouse de Nelson Mandela, elle mène la lutte à l'intérieur du pays pendant ses vingt-sept ans de prison, subit arrestations et bannissement, puis se sépare de lui en 1992. Sa réputation est entachée par l'affaire Stompie Seipei, un adolescent enlevé en 1988 puis retrouvé mort, pour laquelle elle est condamnée en 1991 pour enlèvement.",
+      "wikipedia": "Winnie Mandela",
+      "portrait": {
+        "fichier": "Winnie Mandela00.jpg",
+        "legende": "Winnie Madikizela-Mandela, photographie",
+        "auteur": "Rotational",
+        "licence": "Domaine public"
+      },
+      "classement": "Madikizela-Mandela, Winnie"
+    },
+    {
+      "slug": "albertina",
+      "nom": "Albertina Sisulu",
+      "titre": "Naissance d'Albertina Sisulu",
+      "axe": "Guerres et résistances",
+      "naissance": 1918,
+      "description": "Albertina Sisulu (1918-2011) est une infirmière et militante anti-apartheid, née dans le Transkei. Cofondatrice de la Fédération des femmes sud-africaines en 1954, elle élève seule ses enfants pendant que son mari Walter est en prison, tout en étant elle-même arrêtée et bannie. Coprésidente du Front démocratique uni à sa création en 1983, puis députée, elle est surnommée « Ma Sisulu » par la population.",
+      "wikipedia": "Albertina Sisulu",
+      "portrait": {
+        "fichier": "Albertina Sisulu.jpg",
+        "legende": "Albertina Sisulu, photographie",
+        "recadrage": [
+          0.22,
+          0.02,
+          0.62,
+          0.34
+        ],
+        "auteur": "Dawidl at English Wikipedia",
+        "licence": "CC BY-SA 2.5"
+      },
+      "classement": "Sisulu, Albertina"
+    },
+    {
+      "slug": "first",
+      "nom": "Ruth First",
+      "titre": "Naissance de Ruth First",
+      "axe": "Guerres et résistances",
+      "naissance": 1925,
+      "description": "Ruth First (1925-1982) est une journaliste, universitaire et militante communiste, née à Johannesburg. Inculpée de haute trahison en 1956, détenue à l'isolement en 1963, elle part en exil en 1964, puis enseigne à l'université Eduardo-Mondlane de Maputo. Elle est tuée le 17 août 1982 par un colis piégé envoyé par la police de sécurité sud-africaine.",
+      "wikipedia": "Ruth First",
+      "portrait": {
+        "fichier": "RuthFirst.jpg",
+        "legende": "Ruth First, photographie d'identité vers 1960",
+        "largeur": 0,
+        "auteur": "passport photograph",
+        "licence": "Domaine public"
+      },
+      "classement": "First, Ruth"
+    },
+    {
+      "slug": "suzman",
+      "nom": "Helen Suzman",
+      "titre": "Naissance de Helen Suzman",
+      "axe": "Guerres et résistances",
+      "naissance": 1917,
+      "description": "Helen Suzman (1917-2009) est une femme politique libérale, née à Germiston. Députée de 1953 à 1989, elle est de 1961 à 1974 la seule élue de son parti au Parlement, d'où elle combat les lois de l'apartheid avec une ironie mordante. Elle visite Mandela à Robben Island en 1967 et plaide pour de meilleures conditions de détention des prisonniers politiques.",
+      "wikipedia": "Helen Suzman",
+      "portrait": {
+        "fichier": "HelenSuzman.jpg",
+        "legende": "Helen Suzman, photographie",
+        "auteur": "Unknown author Unknown author",
+        "licence": "Domaine public"
+      },
+      "classement": "Suzman, Helen"
+    },
+    {
+      "slug": "naude",
+      "nom": "Beyers Naudé",
+      "titre": "Naissance de Beyers Naudé",
+      "axe": "Guerres et résistances",
+      "naissance": 1915,
+      "description": "Beyers Naudé (1915-2004) est un pasteur de l'Église réformée néerlandaise, né à Roodepoort. Longtemps membre du Broederbond, la société secrète de l'élite afrikaner, il rompt avec elle en 1963 et fonde l'Institut chrétien, qui rassemble les chrétiens opposés à l'apartheid. Assigné à résidence de 1977 à 1984, il succède en 1985 à Desmond Tutu comme secrétaire général du Conseil sud-africain des Églises.",
+      "wikipedia": "Beyers Naudé",
+      "portrait": {
+        "fichier": "Christiaan Frederik Beyers Naudé (1972).jpg",
+        "legende": "Beyers Naudé en 1972, photographie de l'agence Anefo",
+        "auteur": "Bert Verhoeff for Anefo",
+        "licence": "CC BY-SA 3.0 NL"
+      },
+      "classement": "Naudé, Beyers"
+    },
+    {
+      "slug": "maxeke",
+      "nom": "Charlotte Maxeke",
+      "titre": "Naissance de Charlotte Maxeke",
+      "axe": "Guerres et résistances",
+      "naissance": 1871,
+      "description": "Charlotte Maxeke (1871-1939) est une enseignante et missionnaire, née près de Pietersburg. Première Sud-Africaine noire diplômée de l'université, à Wilberforce, dans l'Ohio, en 1901, elle organise en 1913 la première grande manifestation de femmes contre les laissez-passer à Bloemfontein. Elle fonde en 1918 la Ligue des femmes bantoues, ancêtre de la Ligue des femmes de l'ANC.",
+      "wikipedia": "Charlotte Maxeke",
+      "portrait": {
+        "fichier": "Charlotte Manye, Ohio, 1890s.jpg",
+        "legende": "Charlotte Maxeke, photographie de studio prise dans l'Ohio dans les années 1890",
+        "recadrage": [
+          0.23,
+          0.1,
+          0.6,
+          0.4
+        ],
+        "largeur": 500,
+        "auteur": "Kennedy",
+        "licence": "Domaine public"
+      },
+      "classement": "Maxeke, Charlotte"
+    },
+    {
+      "slug": "plaatje",
+      "nom": "Sol Plaatje",
+      "titre": "Naissance de Sol Plaatje",
+      "axe": "Littérature et pensée",
+      "naissance": 1876,
+      "description": "Sol Plaatje (1876-1932) est un écrivain, journaliste et militant, né près de Boshof, dans l'État libre d'Orange. Cofondateur et premier secrétaire général du Congrès national africain en 1912, il publie en 1916 « Native Life in South Africa », qui dénonce la loi de 1913 sur les terres des Africains. Il écrit aussi « Mhudi », l'un des premiers romans en anglais par un Noir sud-africain, et traduit Shakespeare en tswana.",
+      "wikipedia": "Solomon Plaatje",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Sol Plaatje 002.jpg",
+        "legende": "Sol Plaatje, photographie vers 1900",
+        "largeur": 0,
+        "auteur": "Anonymous Unknown author",
+        "licence": "Domaine public"
+      },
+      "classement": "Plaatje, Sol"
+    },
+    {
+      "slug": "sontonga",
+      "nom": "Enoch Sontonga",
+      "titre": "Naissance d'Enoch Sontonga",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1873,
+      "description": "Enoch Sontonga (vers 1873-1905) est un enseignant et compositeur méthodiste, né près d'Uitenhage. Il compose vers 1897 la mélodie et les premiers couplets de « Nkosi Sikelel' iAfrika » (« Dieu bénisse l'Afrique »), un cantique en xhosa. Devenu chant de ralliement de la lutte contre l'apartheid, il fait partie de l'hymne national de l'Afrique du Sud depuis 1997.",
+      "wikipedia": "Enoch Sontonga",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "EnochSontonga.jpg",
+        "legende": "Enoch Sontonga, photographie vers 1900",
+        "largeur": 0,
+        "auteur": "Unknown photographer",
+        "licence": "Domaine public"
+      },
+      "classement": "Sontonga, Enoch"
+    },
+    {
+      "slug": "schreiner",
+      "nom": "Olive Schreiner",
+      "titre": "Naissance d'Olive Schreiner",
+      "axe": "Littérature et pensée",
+      "naissance": 1855,
+      "description": "Olive Schreiner (1855-1920) est une romancière, essayiste et féministe, née à Wittebergen, dans la colonie du Cap. Sous le pseudonyme de Ralph Iron, elle publie en 1883 « The Story of an African Farm », considéré comme l'un des premiers romans féministes. Elle défend ensuite les droits des femmes dans « Woman and Labour » (1911) et s'oppose à la politique de Cecil Rhodes.",
+      "wikipedia": "Olive Schreiner",
+      "portrait": {
+        "fichier": "Olive Schreiner00.jpg",
+        "legende": "Olive Schreiner, photographie",
+        "auteur": "Unknown author Unknown author",
+        "licence": "Domaine public"
+      },
+      "classement": "Schreiner, Olive"
+    },
+    {
+      "slug": "marais",
+      "nom": "Eugène Marais",
+      "titre": "Naissance d'Eugène Marais",
+      "axe": "Littérature et pensée",
+      "naissance": 1871,
+      "description": "Eugène Marais (1871-1936) est un poète, avocat et naturaliste afrikaner, né à Pretoria. Il compose « Winternag » (1905), poème fondateur de la poésie en afrikaans, et observe des années durant les termites et les babouins, ce qui nourrit son livre sur « l'âme de la fourmi blanche ». Morphinomane, il se donne la mort d'un coup de fusil en 1936.",
+      "wikipedia": "Eugène Marais",
+      "portrait": {
+        "fichier": "Eugenemarais.jpg",
+        "legende": "Eugène Marais, photographie",
+        "auteur": "Auteur inconnu",
+        "licence": "Domaine public"
+      },
+      "classement": "Marais, Eugène"
+    },
+    {
+      "slug": "leipoldt",
+      "nom": "Louis Leipoldt",
+      "titre": "Naissance de Louis Leipoldt",
+      "axe": "Littérature et pensée",
+      "naissance": 1880,
+      "description": "Louis Leipoldt (1880-1947) est un médecin, pédiatre, journaliste et poète de langue afrikaans. Il est l'un des écrivains majeurs de sa génération, auteur de recueils comme « Oom Gert vertel » (1911) qui célèbrent la vie rurale du Cap. Il écrit aussi sur la cuisine de sa région, qu'il élève au rang de patrimoine.",
+      "wikipedia": "Louis Leipoldt",
+      "portrait": {
+        "fichier": "C Louis Leipoldt03.jpg",
+        "legende": "Louis Leipoldt, photographie",
+        "largeur": 330,
+        "auteur": "Unknown author Unknown author",
+        "licence": "Domaine public"
+      },
+      "classement": "Leipoldt, Louis"
+    },
+    {
+      "slug": "paton",
+      "nom": "Alan Paton",
+      "titre": "Naissance d'Alan Paton",
+      "axe": "Littérature et pensée",
+      "naissance": 1903,
+      "description": "Alan Paton (1903-1988) est un écrivain et homme politique libéral, né à Pietermaritzburg. Son roman « Pleure, ô pays bien-aimé » (1948) dénonce la ségrégation raciale à travers la quête d'un pasteur zoulou et connaît un succès mondial. Il fonde en 1953 le Parti libéral d'Afrique du Sud, qu'il préside jusqu'à sa dissolution en 1968.",
+      "wikipedia": "Alan Paton",
+      "portrait": {
+        "fichier": "Alan Paton.jpg",
+        "legende": "Alan Paton, photographie de studio",
+        "auteur": "Crown Studios The original uploader was Perijove at Swahili Wikipedia .",
+        "licence": "Domaine public"
+      },
+      "classement": "Paton, Alan"
+    },
+    {
+      "slug": "mphahlele",
+      "nom": "Es'kia Mphahlele",
+      "titre": "Naissance d'Es'kia Mphahlele",
+      "axe": "Littérature et pensée",
+      "naissance": 1919,
+      "description": "Es'kia Mphahlele (1919-2008) est un écrivain, enseignant et critique, né à Pretoria. Auteur de l'autobiographie « Down Second Avenue » (1959), il s'exile en 1957 et enseigne en Afrique et aux États-Unis avant de rentrer en 1977. Il est considéré comme le père de l'humanisme africain.",
+      "wikipedia": "Es'kia Mphahlele",
+      "portrait": {
+        "fichier": "Es'kia Mphahlele-borsbeeld, Pretoria.jpg",
+        "legende": "Es'kia Mphahlele, buste de bronze à Pretoria",
+        "recadrage": [
+          0.24,
+          0.0,
+          0.84,
+          0.62
+        ],
+        "auteur": "JMK",
+        "licence": "CC BY-SA 3.0"
+      },
+      "classement": "Mphahlele, Es'kia"
+    },
+    {
+      "slug": "gordimer",
+      "nom": "Nadine Gordimer",
+      "titre": "Naissance de Nadine Gordimer",
+      "axe": "Littérature et pensée",
+      "naissance": 1923,
+      "description": "Nadine Gordimer (1923-2014) est une romancière et nouvelliste sud-africaine, née à Springs. Ses romans, comme « Le Conservateur » (1974), qui reçoit le Booker Prize, analysent les clivages de la société sud-africaine, et elle obtient le prix Nobel de littérature en 1991. Militante contre la censure et l'apartheid, elle soutient l'ANC, alors interdit.",
+      "wikipedia": "Nadine Gordimer",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Nadine Gordimer 01.JPG",
+        "legende": "Nadine Gordimer, photographie",
+        "auteur": "Boberger . Photo: Bengt Oberger",
+        "licence": "CC BY 3.0"
+      },
+      "classement": "Gordimer, Nadine"
+    },
+    {
+      "slug": "jonker",
+      "nom": "Ingrid Jonker",
+      "titre": "Naissance d'Ingrid Jonker",
+      "axe": "Littérature et pensée",
+      "naissance": 1933,
+      "description": "Ingrid Jonker (1933-1965) est une poétesse de langue afrikaans, née à Douglas, dans la province du Cap. Son recueil « Rook en oker » (1963) la fait connaître, et son poème sur un enfant tué par les soldats à Nyanga est lu par Nelson Mandela en 1994 à l'ouverture du Parlement. Elle se noie volontairement dans l'océan en 1965.",
+      "wikipedia": "Ingrid Jonker",
+      "portrait": {
+        "fichier": "Ingrid Jonker 1956.jpg",
+        "legende": "Ingrid Jonker en 1956, photographie",
+        "recadrage": [
+          0.5,
+          0.0,
+          0.92,
+          0.6
+        ],
+        "auteur": "Unknown author Unknown author",
+        "licence": "Domaine public"
+      },
+      "classement": "Jonker, Ingrid"
+    },
+    {
+      "slug": "brink",
+      "nom": "André Brink",
+      "titre": "Naissance d'André Brink",
+      "axe": "Littérature et pensée",
+      "naissance": 1935,
+      "description": "André Brink (1935-2015) est un écrivain sud-africain d'expression afrikaans et anglaise, né à Vrede. Marqué par un séjour à Paris et par le massacre de Sharpeville, il se tourne contre l'apartheid, et ses romans en afrikaans sont censurés. « Une saison blanche et sèche » (1979) lui vaut le prix Médicis étranger en 1980.",
+      "wikipedia": "André Brink",
+      "portrait": {
+        "fichier": "André Brink Portrait.jpg",
+        "legende": "André Brink, photographie",
+        "auteur": "Seamus Kearney",
+        "licence": "CC BY-SA 3.0"
+      },
+      "classement": "Brink, André"
+    },
+    {
+      "slug": "vanwouw",
+      "nom": "Anton van Wouw",
+      "titre": "Naissance d'Anton van Wouw",
+      "axe": "Beaux-arts",
+      "naissance": 1862,
+      "description": "Anton van Wouw (1862-1945) est un sculpteur né à Driebergen, aux Pays-Bas, installé à Pretoria en 1890. Considéré comme le fondateur de la sculpture sud-africaine, il reçoit en 1900 sa première commande, la statue de Paul Kruger, qui se dresse aujourd'hui sur Church Square. Il sculpte aussi la femme voortrekker du Monument national aux femmes, à Bloemfontein.",
+      "wikipedia": "Anton van Wouw",
+      "portrait": {
+        "fichier": "Anton van Wouw.jpg",
+        "legende": "Anton van Wouw, photographie",
+        "largeur": 330,
+        "auteur": "Not mentioned in old quarterly publication for the arts and literature",
+        "licence": "CC0 (domaine public)"
+      },
+      "classement": "Van Wouw, Anton"
+    },
+    {
+      "slug": "laubser",
+      "nom": "Maggie Laubser",
+      "titre": "Naissance de Maggie Laubser",
+      "axe": "Beaux-arts",
+      "naissance": 1886,
+      "description": "Maggie Laubser (1886-1973) est une peintre née près de Malmesbury, dans le Swartland. De retour d'Europe, où elle a découvert l'expressionnisme, elle introduit ce courant en Afrique du Sud, d'abord accueilli avec scepticisme par la critique. Elle peint la vie rurale du Cap et est aujourd'hui reconnue comme une grande artiste du pays.",
+      "wikipedia": "Maggie Laubser",
+      "portrait": {
+        "fichier": "Maggie Laubser Self Portrait 1928.jpg",
+        "legende": "Maggie Laubser, autoportrait de 1928",
+        "largeur": 960,
+        "auteur": "Maggie Laubser (1886–1973)",
+        "licence": "Domaine public"
+      },
+      "classement": "Laubser, Maggie"
+    },
+    {
+      "slug": "sekoto",
+      "nom": "Gerard Sekoto",
+      "titre": "Naissance de Gerard Sekoto",
+      "axe": "Beaux-arts",
+      "naissance": 1913,
+      "description": "Gerard Sekoto (1913-1993) est un peintre et musicien né à la mission luthérienne de Botshabelo. Installé à Johannesburg en 1938, il peint la vie des townships et devient en 1940 le premier artiste noir dont une œuvre entre dans une collection de musée sud-africain. Exilé à Paris en 1947, il y vit jusqu'à sa mort, en 1993.",
+      "wikipedia": "Gerard Sekoto",
+      "portrait": {
+        "fichier": "Gerard Sekoto, Autoportrait.jpg",
+        "legende": "Gerard Sekoto, autoportrait peint vers 1947",
+        "recadrage": [
+          0.2,
+          0.18,
+          0.78,
+          0.78
+        ],
+        "auteur": "Gerard Sekoto",
+        "licence": "CC BY-SA 4.0"
+      },
+      "classement": "Sekoto, Gerard"
+    },
+    {
+      "slug": "linda",
+      "nom": "Solomon Linda",
+      "titre": "Naissance de Solomon Linda",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1909,
+      "description": "Solomon Linda (1909-1962) est un chanteur et compositeur zoulou, né près de Pomeroy, au Natal. Il enregistre à Johannesburg en 1939, avec les Evening Birds, la chanson « Mbube », reprise dans le monde entier sous le titre « The Lion Sleeps Tonight ». Il touche presque rien et meurt pauvre en 1962 ; sa famille obtient une compensation en 2006.",
+      "wikipedia": "Solomon Linda",
+      "portrait": {
+        "fichier": "Solomon-linda.jpg",
+        "legende": "Solomon Linda, photographie vers 1941",
+        "largeur": 0,
+        "auteur": "Unknown author Unknown author",
+        "licence": "Domaine public"
+      },
+      "classement": "Linda, Solomon"
+    },
+    {
+      "slug": "craven",
+      "nom": "Danie Craven",
+      "titre": "Naissance de Danie Craven",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1910,
+      "description": "Danie Craven (1910-1993) est un demi de mêlée des Springboks, né à Lindley, dans l'État libre d'Orange. On lui attribue l'invention de la passe plongée ; il devient ensuite entraîneur de l'équipe nationale puis président de la fédération sud-africaine de rugby. Il reste en fonction jusqu'à sa mort, pendant la fin de l'isolement sportif du pays.",
+      "wikipedia": "Danie Craven",
+      "portrait": {
+        "fichier": "Danie Craven statue.jpg",
+        "legende": "Danie Craven, statue",
+        "recadrage": [
+          0.26,
+          0.1,
+          0.69,
+          0.42
+        ],
+        "auteur": "Tin Jack",
+        "licence": "CC BY 3.0"
+      },
+      "classement": "Craven, Danie"
+    },
+    {
+      "slug": "locke",
+      "nom": "Bobby Locke",
+      "titre": "Naissance de Bobby Locke",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1917,
+      "description": "Bobby Locke (1917-1987) est un golfeur né à Germiston. Vainqueur de l'Open britannique à quatre reprises, en 1949, 1950, 1952 et 1957, il est considéré comme l'un des meilleurs putteurs de l'histoire. Sa carrière domine le golf mondial à la fin des années 1940.",
+      "wikipedia": "Bobby Locke",
+      "portrait": {
+        "fichier": "Bobby Locke 1950.jpg",
+        "legende": "Bobby Locke en 1950, photographie",
+        "recadrage": [
+          0.0,
+          0.0,
+          1.0,
+          0.72
+        ],
+        "largeur": 500,
+        "auteur": "Unknown",
+        "licence": "Domaine public"
+      },
+      "classement": "Locke, Bobby"
+    },
+    {
+      "slug": "makeba",
+      "nom": "Miriam Makeba",
+      "titre": "Naissance de Miriam Makeba",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1932,
+      "description": "Miriam Makeba (1932-2008) est une chanteuse née à Johannesbourg, surnommée « Mama Africa ». Révélée par le film antiapartheid « Come Back, Africa » (1959), elle s'exile en 1960 et connaît un succès mondial avec « Pata Pata ». Privée de son passeport sud-africain, elle vit en Guinée puis en Algérie et ne rentre qu'en 1990 ; elle meurt en Italie en 2008, après un concert.",
+      "wikipedia": "Miriam Makeba",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Miriam Makeba (1969).jpg",
+        "legende": "Miriam Makeba en 1969, photographie de Rob Mieremet",
+        "recadrage": [
+          0.5,
+          0.08,
+          0.93,
+          0.62
+        ],
+        "auteur": "Rob Mieremet (1947–2015)",
+        "licence": "Domaine public"
+      },
+      "classement": "Makeba, Miriam"
+    },
+    {
+      "slug": "masekela",
+      "nom": "Hugh Masekela",
+      "titre": "Naissance de Hugh Masekela",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1939,
+      "description": "Hugh Masekela (1939-2018) est un trompettiste et bugliste de jazz, né à Witbank. Encouragé adolescent par le père Trevor Huddleston, qui lui offre une trompette, il quitte l'Afrique du Sud en 1960 et étudie à Londres puis à New York. Il connaît un succès mondial avec « Grazing in the Grass » (1968), chante contre l'apartheid dans « Soweto Blues » et rentre au pays en 1990.",
+      "wikipedia": "Hugh Masekela",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Hugh Masekela (1390856678).jpg",
+        "legende": "Hugh Masekela, photographie",
+        "auteur": "scorpius73 from Washington, DC, USA",
+        "licence": "CC BY-SA 2.0"
+      },
+      "classement": "Masekela, Hugh"
+    },
+    {
+      "slug": "clegg",
+      "nom": "Johnny Clegg",
+      "titre": "Naissance de Johnny Clegg",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1953,
+      "description": "Johnny Clegg (1953-2019) est un chanteur et anthropologue, né à Bacup, en Angleterre, et installé enfant en Afrique du Sud. Surnommé « le Zoulou blanc », il fonde avec Sipho Mchunu le groupe mixte Juluka, puis Savuka, et mêle musique zouloue et rock. Sa chanson « Asimbonanga » (1987), dédiée à Mandela alors emprisonné, devient un hymne contre l'apartheid.",
+      "wikipedia": "Johnny Clegg",
+      "portrait": {
+        "fichier": "Johnny Clegg (cropped).jpg",
+        "legende": "Johnny Clegg, photographie",
+        "auteur": "Gorup de Besanez",
+        "licence": "CC BY-SA 3.0"
+      },
+      "classement": "Clegg, Johnny"
+    },
+    {
+      "slug": "dube",
+      "nom": "Lucky Dube",
+      "titre": "Naissance de Lucky Dube",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1964,
+      "description": "Lucky Dube (1964-2007) est un chanteur de reggae né à Ermelo. Après des débuts dans le mbaqanga, il se tourne vers le reggae en 1984 et enregistre une vingtaine d'albums, dont « Slave » (1987) et « Prisoner » (1989), qui dénoncent l'apartheid. Il est abattu lors d'une tentative de vol de sa voiture à Johannesbourg en 2007.",
+      "wikipedia": "Lucky Dube",
+      "portrait": {
+        "fichier": "Legendary Lucky Dube.jpg",
+        "legende": "Lucky Dube, photographie",
+        "auteur": "Music Updater Uganda",
+        "licence": "CC BY-SA 4.0"
+      },
+      "classement": "Dube, Lucky"
+    },
+    {
+      "slug": "barnard",
+      "nom": "Christiaan Barnard",
+      "titre": "Naissance de Christiaan Barnard",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1922,
+      "description": "Christiaan Barnard (1922-2001) est un chirurgien né à Beaufort West. Le 3 décembre 1967, à l'hôpital Groote Schuur du Cap, il réalise la première greffe cardiaque entre humains, sur Louis Washkansky, qui survit dix-huit jours. Son second patient vit près de dix-neuf mois, et Barnard devient une célébrité mondiale ; il meurt à Chypre en 2001.",
+      "wikipedia": "Christiaan Barnard",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Christiaan Barnard 1969.jpg",
+        "legende": "Christiaan Barnard en 1969",
+        "auteur": "Mario De Biasi (Mondadori Publishers)",
+        "licence": "Domaine public"
+      },
+      "classement": "Barnard, Christiaan"
+    },
+    {
+      "slug": "theiler",
+      "nom": "Max Theiler",
+      "titre": "Naissance de Max Theiler",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1899,
+      "description": "Max Theiler (1899-1972) est un microbiologiste né à Pretoria, fils du vétérinaire suisse Arnold Theiler. Établi aux États-Unis, il met au point à l'Institut Rockefeller le vaccin 17D contre la fièvre jaune, qui a protégé des centaines de millions de personnes. Il reçoit seul le prix Nobel de physiologie ou médecine en 1951.",
+      "wikipedia": "Max Theiler",
+      "portrait": {
+        "fichier": "Max Theiler nobel.jpg",
+        "legende": "Max Theiler, portrait du prix Nobel de médecine 1951",
+        "auteur": "Unknown author Unknown author",
+        "licence": "Domaine public"
+      },
+      "classement": "Theiler, Max"
+    },
+    {
+      "slug": "cormack",
+      "nom": "Allan Cormack",
+      "titre": "Naissance d'Allan Cormack",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1924,
+      "description": "Allan Cormack (1924-1998) est un physicien né à Johannesbourg. Dans les années 1960, il établit les calculs qui permettent de reconstruire l'image d'une coupe du corps à partir de mesures de rayons X, base du scanner. Devenu américain en 1966, il partage en 1979 le prix Nobel de physiologie ou médecine avec Godfrey Hounsfield.",
+      "wikipedia": "Allan McLeod Cormack",
+      "portrait": {
+        "fichier": "34. Tagung 1984 Mediziner; Verabschiedung H.-H. Kunckel, Allen Cormack - W134Nr.123006 - Willy Pragher (cropped).jpg",
+        "legende": "Allan Cormack en 1984, photographie de Willy Pragher",
+        "auteur": "Willy Pragher (1908–1992)",
+        "licence": "CC BY 3.0 DE"
+      },
+      "classement": "Cormack, Allan"
+    },
+    {
+      "slug": "brenner",
+      "nom": "Sydney Brenner",
+      "titre": "Naissance de Sydney Brenner",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1927,
+      "description": "Sydney Brenner (1927-2019) est un biologiste né à Germiston. Au laboratoire de biologie moléculaire de Cambridge, il contribue à établir l'existence de l'ARN messager et fait du ver Caenorhabditis elegans un organisme modèle de la recherche. Il partage en 2002 le prix Nobel de physiologie ou médecine avec Robert Horvitz et John Sulston, et meurt à Singapour en 2019.",
+      "wikipedia": "Sydney Brenner",
+      "portrait": {
+        "fichier": "Sydney Brenner OIST 2008 (33208371153) (cropped).jpg",
+        "legende": "Sydney Brenner en 2008",
+        "auteur": "OIST from Onna Village, Japan",
+        "licence": "CC BY 2.0"
+      },
+      "classement": "Brenner, Sydney"
+    },
+    {
+      "slug": "tobias",
+      "nom": "Phillip Tobias",
+      "titre": "Naissance de Phillip Tobias",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1925,
+      "description": "Phillip Tobias (1925-2012) est un paléoanthropologue né à Durban. Professeur d'anatomie à l'université du Witwatersrand, il décrit en 1964, avec Louis Leakey et John Napier, l'espèce Homo habilis, et dirige les fouilles de Sterkfontein, au nord de Johannesbourg. Opposé à l'apartheid, il milite pour l'accès des étudiants noirs à l'université.",
+      "wikipedia": "Phillip Tobias",
+      "portrait": {
+        "fichier": "Phillip Tobias00.jpg",
+        "legende": "Phillip Tobias, photographie",
+        "auteur": "Raasgat",
+        "licence": "Domaine public"
+      },
+      "classement": "Tobias, Phillip"
+    },
+    {
+      "slug": "vanderbijl",
+      "nom": "Hendrik van der Bijl",
+      "titre": "Naissance de Hendrik van der Bijl",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1887,
+      "description": "Hendrik van der Bijl (1887-1948) est un physicien et ingénieur né à Pretoria. Après une carrière aux États-Unis, où il travaille sur les tubes électroniques chez Western Electric, il rentre en 1920 et fonde la compagnie d'électricité Escom en 1923, puis l'aciérie Iscor en 1928. Il est l'un des bâtisseurs de l'industrie sud-africaine moderne.",
+      "wikipedia": "Hendrik van der Bijl",
+      "portrait": {
+        "fichier": "Hendrik van der Bijl.jpg",
+        "legende": "Hendrik van der Bijl, photographie",
+        "auteur": "Unknown author Unknown author",
+        "licence": "CC0 (domaine public)"
+      },
+      "classement": "Van der Bijl, Hendrik"
+    }
+  ]
+}

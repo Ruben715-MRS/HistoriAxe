@@ -11,7 +11,7 @@ ne posent pas la même question :
 | | Un thème, c'est | Une date, c'est | On le joue par |
 |---|---|---|---|
 | **Biographies** | une vie (360 thèmes, en 12 domaines) | une étape de cette vie | étape de la vie |
-| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Turquie, le Japon, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes) | la naissance d'un personnage | domaine |
+| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Turquie, le Japon, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud) | la naissance d'un personnage | domaine |
 
 Le déplacement ne coûte aucune migration : les 360 thèmes gardent leurs
 identifiants, et rien de ce que le joueur a sauvegardé (favoris, révision,
@@ -2108,6 +2108,47 @@ Croatie 25, Bulgarie 17, Albanie 11, Bosnie-Herzégovine 7, Moldavie 6, Macédoi
   taille de l'original.
 - **Géolocalisation** : seul Tesla, qui a une biographie, est placé sur l'Atlas (Smiljan, comme sa biographie).
 
+### Un pays à part : l'Afrique du Sud
+
+`pan_za`, « Grandes figures d'Afrique du Sud » (code `za`, pays ; rangé sous « Afrique du Sud », entre l'Afrique de l'Ouest et l'Allemagne) : **56 personnages**,
+de Jan van Riebeeck (1619) à Lucky Dube (1964). Par axe : 21 Guerres et résistances, 9 Chefs d'État et dirigeants, 9 Littérature et pensée, 8 Musique, spectacle et sport,
+6 Sciences, techniques et innovation, 3 Beaux-arts ; 21 ⭐ et 3 biographies liées (Mandela, Tutu, Biko). 56 portraits : 36 du domaine public, 4 CC0, 4 CC BY et 12 CC BY-SA.
+Les mots-clés du thème portent le pays et ses villes (Le Cap, Johannesburg, Pretoria, Durban, Soweto), les peuples (Zoulous, Xhosa, Afrikaners, Boers), le Grand Trek,
+l'apartheid, l'ANC, Rivonia, Sharpeville, Robben Island et la « nation arc-en-ciel ».
+
+- **Un pays, pas un bloc** : `pan_za`, et « Pendant ce temps, ailleurs… » le compte comme `thm_za` (« Histoire de l'Afrique du Sud »). Les invités d'un autre État portent leur
+  `pays` et la fiche le dit : Jan van Riebeeck (Pays-Bas) et Cecil Rhodes (Royaume-Uni). Les figures nées ailleurs mais devenues sud-africaines n'en portent pas :
+  Verwoerd (né à Amsterdam), Anton van Wouw (né aux Pays-Bas) et Johnny Clegg (né en Angleterre). Gandhi, qui y a inventé le satyagraha, est au panthéon du sous-continent
+  indien, Tolkien (né à Bloemfontein) à celui du Royaume-Uni, Pessoa (élevé à Durban) à celui du Portugal.
+- **Le XXe siècle pèse lourd, et le panthéon le dit** : 21 figures sur 56 sont rangées sous « Guerres et résistances », parce que la lutte contre l'apartheid est le fil du
+  siècle : Lutuli, Sisulu, Tambo, Mbeki, Kathrada, Sobukwe, Biko, Winnie Madikizela-Mandela, Albertina Sisulu, Ruth First, Helen Suzman, Beyers Naudé et Desmond Tutu
+  (rangé là, comme Gandhi, plutôt qu'aux « dirigeants »). Les premières résistances à la colonisation (Chaka, Cetshwayo, Sekhukhune, Nongqawuse, Saartjie Baartman)
+  y sont aussi, au même titre que la guerre des Boers (Christiaan de Wet).
+- **Les deux camps de l'histoire, sans complaisance** : Kruger, Botha, Hertzog, Smuts et Verwoerd, qui ont fait l'Afrique du Sud blanche, sont écrits avec leurs fautes —
+  Smuts « défend toutefois la ségrégation raciale », Hertzog fait voter la loi de 1936 qui retire aux Noirs du Cap leur inscription sur les listes communes, Verwoerd est
+  « le principal architecte de l'apartheid ». Rhodes et Van Riebeeck, figures très débattues, sont dits comme tels. Winnie Madikizela-Mandela est écrite avec l'affaire
+  Stompie Seipei.
+- **Les peuples d'avant la colonisation** : Chaka, Cetshwayo (zoulous), Sekhukhune (pedi), Nongqawuse (xhosa) et Saartjie Baartman (khoïkhoï) ; les dates sont « vers »
+  pour Cetshwayo (1826), Sekhukhune (1814), Nongqawuse (1841) et Lutuli (1898), approchées dans les sources, et Sontonga (1873) ; Baartman est datée de 1789 (les sources
+  disent 1788 ou 1789).
+- **Un classement à part** : en afrikaans, la particule fait partie du nom de famille. « Par nom de famille », la galerie range donc Frederik de Klerk à D (« De Klerk »),
+  Jan van Riebeeck à V, Hendrik van der Bijl à V et Alex La Guma à L — contrairement au néerlandais de Belgique et des Pays-Bas, où Van Gogh est rangé à G (exceptions dans
+  `scripts/pantheon_classement.py`).
+- **Que des morts** : Mbeki, Zuma, Coetzee, Abdullah Ibrahim, Caster Semenya ou Charlize Theron n'y sont pas. Athol Fugard, mort en mars 2025, y aurait sa place (fiche en attente).
+- **Les images** : Craven est montré par une statue et Mphahlele par un buste de bronze, et la légende le dit ; Sekoto, Laubser et le portrait peint de Van Riebeeck sont des
+  œuvres d'époque ; Mbeki est vu sur une photographie d'identité judiciaire de la police, Ruth First sur une photographie de passeport (214 × 266 px), Plaatje, Sontonga et Linda
+  sur des clichés de 200 à 250 px de large ; la gravure de Saartjie Baartman est recadrée sur le visage. Le visage de Chaka, dessiné en pied, reste petit.
+- **Seize fiches rédigées n'ont pas de portrait libre convenable**, et sont gardées dans `scripts/pantheon/za_candidats.md` (avec le nom de fichier Commons quand il y en a un) :
+  Chris Hani, Dingane, Piet Retief, Herman Charles Bosman (refusé par le garde-fou : alerte « non-free »), Alex La Guma, Athol Fugard, Bessie Head, Irma Stern, Ernest Mancoba,
+  Walter Battiss (image trouvée, mais Wikimedia refuse la miniature), David Goldblatt, Ernest Cole, Basil D'Oliveira, Joseph Shabalala, Brenda Fassie et Raymond Dart (refusé :
+  « fair use »). **Les Beaux-arts n'ont que trois figures** (Van Wouw, Laubser, Sekoto) à cause de cela : Stern, Mancoba, Battiss, Goldblatt et Cole sont à réintégrer en premier.
+- **Wikimedia limite le débit** : sur les 72 fiches écrites à l'origine, 56 ont leur portrait. Plusieurs miniatures (Kathrada, Leipoldt, Van Wouw, Cormack, Maxeke, Locke) n'ont été obtenues
+  qu'après plusieurs essais, deux d'entre elles (Leipoldt, Van Wouw) en largeur 330 seulement. Une photographie de la recherche, « David Goldblatt (14271185078).jpg », montre un autre
+  homme que le photographe : à vérifier avant de choisir une image par son nom de fichier.
+- **Statut américain des images : à relire**, comme pour l'Afrique centrale : les 36 « domaine public » sont en majorité des photographies d'auteur inconnu ; le script lit
+  la licence que Commons déclare, non le statut américain, qui n'a pas été vérifié image par image.
+- **Géolocalisation** : seules les figures qui ont leur biographie liée (Mandela, Tutu, Biko) y figurent déjà, par leur biographie.
+
 ### Un fichier source par panthéon, un script qui l'écrit dans `data/fr.json`
 
 `scripts/pantheon/<code>.json` (`fr`, `hispam`…) est **la seule source de
@@ -2450,7 +2491,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
 ### Ce qui n'est pas fait
 
 - **Les autres panthéons** : la France, l'Égypte, les États-Unis, l'Italie, le
-  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes sont écrits.
+  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud sont écrits.
   Chaque liste de personnages est validée avant la rédaction. Feuille de route, dans l'ordre
   où on les propose (un pays seul quand il a de quoi faire un thème, un bloc sinon) :
   1. **Le Machrek est écrit** (voir « Le cinquième bloc »). Il reste : le portrait des trois
@@ -2461,7 +2502,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
      règle « un personnage, un seul thème » range chacun dans son pays. Le Maghreb compte deux
      figures juives (Edmond Amran El Maleh, Habiba Msika) et en a laissé cinq de côté (Cheikh
      Raymond, Reinette l'Oranaise, Salim Halali, Albert Memmi, Abraham Serfaty).
-  2. **Pays seuls** : l'Afrique du Sud. **L'Iran** (voir « Un pays à part : l'Iran »), **le Brésil** (qui n'entre pas dans l'Amérique « hispanique » ; voir « Un pays à part : le Brésil »), **la Turquie** (voir « Un pays à part : la Turquie »), **le Japon** (voir « Un pays à part : le Japon ») et **la Russie** (voir « Un pays à part : la Russie ») et **l'Australie** (voir « Un pays à part : l'Australie ») sont écrits.
+  2. **Pays seuls** : **l'Afrique du Sud** (voir « Un pays à part : l'Afrique du Sud »), **l'Iran** (voir « Un pays à part : l'Iran »), **le Brésil** (qui n'entre pas dans l'Amérique « hispanique » ; voir « Un pays à part : le Brésil »), **la Turquie** (voir « Un pays à part : la Turquie »), **le Japon** (voir « Un pays à part : le Japon ») et **la Russie** (voir « Un pays à part : la Russie ») et **l'Australie** (voir « Un pays à part : l'Australie ») sont écrits.
   3. **Blocs** : l'Asie du Sud-Est, la Mongolie (l'Asie centrale est écrite, voir « Un bloc : l'Asie centrale et
      l'Afghanistan »), le Caucase, la Corée (`KR`/`KP`), l'Afrique de
      l'Ouest, l'Afrique de l'Est et la Corne, l'Afrique australe et l'océan

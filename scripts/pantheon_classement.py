@@ -116,6 +116,14 @@ KEEP_AS_WRITTEN = {
 
 # Écrits à la main : (nom de la source) → nom de classement.
 EXCEPTIONS = {
+    # Afrique du Sud : en afrikaans, la particule fait partie du nom de famille (« De Klerk », « Van Riebeeck »)
+    # et on range à la particule, contrairement au néerlandais de Belgique et des Pays-Bas.
+    'Frederik de Klerk': 'De Klerk, Frederik',
+    'Christiaan de Wet': 'De Wet, Christiaan',
+    'Jan van Riebeeck': 'Van Riebeeck, Jan',
+    'Anton van Wouw': 'Van Wouw, Anton',
+    'Hendrik van der Bijl': 'Van der Bijl, Hendrik',
+    'Alex La Guma': 'La Guma, Alex',
     # Portugal : noms composés (le dernier mot n'est pas toujours le nom de famille) et surnoms.
     'Henri le Navigateur': 'Henri le Navigateur',
     'Catherine de Bragance': 'Catherine de Bragance',
