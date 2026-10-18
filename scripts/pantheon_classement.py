@@ -110,6 +110,8 @@ KEEP_AS_WRITTEN = {
     'Yuhi V Musinga', 'Mwambutsa IV',
     # Pays baltes : le surnom suit un nom unique (« Vytautas le Grand »), rangé au V comme Alfred le Grand au A.
     'Vytautas le Grand',
+    # Balkans : princes rangés par leur surnom (« Étienne le Grand », « Michel le Brave »), reine rangée par son titre, nom de règne (« Stefan Dušan »).
+    'Étienne le Grand', 'Michel le Brave', 'Marie de Roumanie', 'Stefan Dušan',
 }
 
 # Écrits à la main : (nom de la source) → nom de classement.

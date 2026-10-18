@@ -450,6 +450,12 @@ test('« Grandes figures des pays baltes » : chaque ancre porte le pays de son 
     verifierPantheonDeBloc('pan_baltes', 41, 3);
 });
 
+test('« Grandes figures des Balkans » : chaque ancre porte le pays de son événement, et la session se joue', () => {
+    // Dix pays, dont plusieurs (le Monténégro, le Kosovo, la Moldavie) n'ont que quelques figures : la
+    // Roumanie (37) et la Serbie (28) ne doivent pas les faire disparaître parmi les ancres.
+    verifierPantheonDeBloc('pan_balkans', 41, 10);
+});
+
 test('« Grandes figures d’Asie centrale » : chaque ancre porte le pays de son événement, et la session se joue', () => {
     // Six pays, dont deux (le Turkménistan, le Tadjikistan) n'ont que quelques figures : le
     // Kazakhstan, l'Afghanistan et l'Ouzbékistan ne doivent pas les faire disparaître parmi les ancres.
