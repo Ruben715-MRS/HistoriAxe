@@ -15,6 +15,9 @@ test('Prix et récompenses : la note explique la règle de datation et le thème
     await page.locator('#cat-grid > div').nth(index).click();
     expect(await visibleScreen(page)).toBe('screen-subcategories');
     await expect(page.locator('#subcategories-container h4', { hasText: 'Prix et récompenses' })).toBeVisible();
+    // Sa propre image, et non celle par défaut de « Culture générale ».
+    await expect(page.locator('#subcategories-container > div > div', { has: page.locator('h4', { hasText: 'Prix et récompenses' }) })
+        .first().locator('div[style*="background-image"]').first()).toHaveAttribute('style', /sub_prix_recompenses\.webp/);
 
     await page.locator('#subcategories-container h4', { hasText: 'Prix et récompenses' }).click();
     expect(await visibleScreen(page)).toBe('screen-themes');

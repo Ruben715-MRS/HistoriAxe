@@ -321,6 +321,7 @@ function initSubcategories() {
         else if (nomLower.includes('afrique')) bgImg = 'assets/images/sub_afrique.webp';
         else if (nomLower.includes('océanie')) bgImg = 'assets/images/sub_oceanie.webp';
         else if (nomLower.includes('empires')) bgImg = 'assets/images/sub_empires.webp';
+        else if (nomLower.includes('récompenses')) bgImg = 'assets/images/sub_prix_recompenses.webp';
         else if (nomLower.includes('sciences')) bgImg = 'assets/images/sub_sciences_techniques.webp';
         else if (nomLower.includes('arts') || nomLower.includes('spectacle')) bgImg = 'assets/images/sub_arts_litterature.webp';
         else if (nomLower.includes('juda')) bgImg = 'assets/images/sub_judaisme.webp';
