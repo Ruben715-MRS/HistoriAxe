@@ -73,10 +73,10 @@ pack, dont 1 166 ajoutés par cette refonte), avec 34 à 40 incontournables ⭐ 
 - **Descriptions en trois phrases** : ce qu'est l'événement et son contexte, puis ce qui le rend déterminant pour la
   question, sans formule du type « cet événement compte pour le concours ». La longueur est contrôlée (220 à 760
   caractères).
-- **Datations ou titres corrigés au passage** : grande enquête agricole du Second Empire (1866, `camp10`), plan Freycinet
-  (1879), Pic de population rurale, Congrès panafricain de 1919 à la place d'une « Ligue pour la défense » non
-  identifiée (`cola23`), AEF 1908 (`cola7`), Grande Terreur 1937 (`aut70`), loi d'orientation de 1960 (`camp42`, qui
-  n'est pas la loi Pisani), monuments aux morts et Office du crédit agricole séparés (`camp27`, `camp57`).
+- **Datations ou titres corrigés au passage** : grande enquête agricole du Second Empire (1866, `c10`), plan Freycinet
+  (1879, `c13`), Congrès panafricain de 1919 à la place d'une « Ligue pour la défense » non
+  identifiée (`cola23`), AEF 1908 (`cola7`), Grande Terreur 1937 (`aut70`), loi d'orientation de 1960 (`c42`, qui
+  n'est pas la loi Pisani), monuments aux morts et Office du crédit agricole séparés (`c27`, `c57`).
 - **Un axe ajouté** : `thm_20s` a un axe « Crises, totalitarismes et marche à la guerre (1919-1939) », que son
   sommaire traitait sans axe de frise.
 - **Pas de point dans l'Atlas** pour les nouveaux événements, sauf lorsqu'ils sont liés à une fiche déjà localisée.
