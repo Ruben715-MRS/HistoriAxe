@@ -140,7 +140,7 @@ def check_theme(theme, events, src, other_ids):
             errors.append(f'{where} : axe inconnu « {e["axe"]} »')
         if not isinstance(e['date'], int) or isinstance(e['date'], bool):
             errors.append(f'{where} : date non entière')
-        if re.search(r'\b(1\d{3}|20\d{2}|\d{3})\b', e['titre']) and not re.search(r'(Louis|Pie|Léon|Grégoire|Innocent|Urbain|Jean|Henri|Charles|Clément|Boniface|Alexandre|Édouard|Philippe|Guillaume|Frédéric|Richard)\s+[IVX\d]+', e['titre']):
+        if re.search(r'\b(1\d{3}|20\d{2}|\d{3})\b', e['titre'].replace('Port 2000', '')) and not re.search(r'(Louis|Pie|Léon|Grégoire|Innocent|Urbain|Jean|Henri|Charles|Clément|Boniface|Alexandre|Édouard|Philippe|Guillaume|Frédéric|Richard)\s+[IVX\d]+', e['titre']):
             errors.append(f'{where} : le titre contient une date')
         n = sentence_count(e['description'])
         if n != 3:
