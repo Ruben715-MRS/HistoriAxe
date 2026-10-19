@@ -893,7 +893,7 @@ test('l’Indonésie : chacune de ses figures a son portrait, d’Airlangga à T
     await page.locator('#mode-card-discovery').click();
     await expect(page.locator('#screen-game')).toBeVisible();
     const nombre = await page.evaluate(() => getCurrentTheme().events.length);
-    expect(nombre).toBe(52);
+    expect(nombre).toBe(58);
     await expect(page.locator('#timeline .entry')).toHaveCount(nombre);
     await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
 
