@@ -2,8 +2,8 @@
   "version": "1.0.0",
   "lang": "fr",
   "name": "Français (Intégral)",
-  "totalThemes": 837,
-  "totalEvents": 24747,
+  "totalThemes": 839,
+  "totalEvents": 24825,
   "categories": [
     {
       "nom": "Culture générale",
@@ -126967,6 +126967,22 @@
                   }
                 },
                 {
+                  "id": "pan_id_pramoedya",
+                  "axe": "Littérature et pensée",
+                  "date": 1925,
+                  "titre": "Naissance de Pramoedya Ananta Toer",
+                  "description": "Pramoedya Ananta Toer (1925-2006) est le plus grand romancier indonésien, né à Blora, à Java, emprisonné sous les Néerlandais, sous Sukarno puis sous Suharto. Détenu de 1965 à 1979, dont dix ans sur l'île de Buru, il y compose oralement la tétralogie de Buru, de « Bumi Manusia » (1980) à « Rumah Kaca » (1988), qui raconte l'éveil du nationalisme indonésien. Interdits en Indonésie sous Suharto, ses livres sont traduits dans plus de trente langues, et il meurt à Jakarta en 2006.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Pramoedya_Ananta_Toer",
+                  "classement": "Pramoedya Ananta Toer",
+                  "image": {
+                    "src": "assets/portraits/pan_id_pramoedya.jpg",
+                    "legende": "Pramoedya Ananta Toer jeune, photographie",
+                    "auteur": "Auteur non identifié",
+                    "licence": "Image non libre",
+                    "source": "https://id.wikipedia.org/wiki/Berkas:Pram_muda.JPG"
+                  }
+                },
+                {
                   "id": "pan_id_alisadikin",
                   "axe": "Chefs d'État et dirigeants",
                   "date": 1926,
@@ -127161,6 +127177,7 @@
                 "pan_id_sudirman",
                 "pan_id_bungtomo",
                 "pan_id_suharto",
+                "pan_id_pramoedya",
                 "pan_id_habibie"
               ]
             },
@@ -136510,6 +136527,23 @@
                     "auteur": "Photo by Koh Sok Hiong; Book by Chor Lin Lee and May Khuen Chung",
                     "licence": "Domaine public",
                     "source": "https://commons.wikimedia.org/wiki/File:Wee_Kim_Wee,_1936_(cropped).png"
+                  }
+                },
+                {
+                  "id": "pan_malais_sylvan",
+                  "axe": "Littérature et pensée",
+                  "date": 1917,
+                  "titre": "Naissance de Fernando Sylvan",
+                  "description": "Fernando Sylvan (1917-1993) est un écrivain, poète et essayiste timorais, né à Dili et mort à Cascais, au Portugal, où il passe presque toute sa vie. Éloigné de son île, il y puise pourtant son inspiration, en écrivant en portugais sur les traditions, les légendes et le folklore du Timor. Il est l'une des grandes voix littéraires du Timor oriental.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Fernando_Sylvan",
+                  "pays": "TL",
+                  "classement": "Sylvan, Fernando",
+                  "image": {
+                    "src": "assets/portraits/pan_malais_sylvan.jpg",
+                    "legende": "Fernando Sylvan lors d’une séance de propagande électorale, en 1969 (image de film)",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Fernando_Sylvan_(sess%C3%A3o_de_propaganda_da_Comiss%C3%A3o_Eleitoral_Mon%C3%A1rquica,_1969)_02.png"
                   }
                 },
                 {
@@ -150135,6 +150169,702 @@
               ]
             },
             {
+              "id": "pan_thai",
+              "nom": "Grandes figures de Thaïlande et de Birmanie",
+              "difficulte": "Intermédiaire",
+              "motsCles": [
+                "Thaïlande",
+                "Thaïlandais",
+                "Thaï",
+                "Siam",
+                "Siamois",
+                "Bangkok",
+                "Ayutthaya",
+                "Sukhothaï",
+                "Chakri",
+                "Birmanie",
+                "Birman",
+                "Myanmar",
+                "Rangoun",
+                "Mandalay",
+                "Pagan",
+                "Konbaung",
+                "Taungû",
+                "Rattanakosin",
+                "Thonburi",
+                "Lan Na",
+                "Mons",
+                "Shan",
+                "Thakin",
+                "Aung San",
+                "Bouddhisme theravada",
+                "Luk thung",
+                "Asie du Sud-Est"
+              ],
+              "events": [
+                {
+                  "id": "pan_thai_anawrahta",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1014,
+                  "titre": "Naissance d'Anawrahta",
+                  "description": "Anawrahta (1014-1077) est le fondateur du premier empire birman, roi de Pagan de 1044 à sa mort. Il conquiert en 1057 le royaume mon de Thaton, en ramène moines et lettrés, et fait du bouddhisme theravada la religion de son royaume. Il lance la construction des temples de Pagan, et il meurt en 1077, tué par un buffle selon les chroniques.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Anawrahta",
+                  "pays": "MM",
+                  "classement": "Anawrahta",
+                  "image": {
+                    "src": "assets/portraits/pan_thai_anawrahta.jpg",
+                    "legende": "Anawrahta, statue à Pyin Oo Lwin",
+                    "auteur": "Hybernator",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Pyinoolwin_--_DSA_Anawrahta.JPG"
+                  }
+                },
+                {
+                  "id": "pan_thai_ramkhamhaeng",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1239,
+                  "titre": "Naissance de Rama Khamhaeng",
+                  "description": "Rama Khamhaeng (vers 1239-vers 1298) est le troisième roi de Sukhothaï, de 1279 à sa mort, et le souverain qui porte le royaume à son apogée. Il étend son autorité sur une grande partie de la Thaïlande actuelle, introduit le bouddhisme theravada de Ceylan, et la tradition lui attribue la création de l'écriture thaïe, dans une stèle de 1292 dont l'authenticité est discutée. Il meurt vers 1298, et son royaume se disloque après lui.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ramkhamhaeng",
+                  "pays": "TH",
+                  "classement": "Rama Khamhaeng",
+                  "image": {
+                    "src": "assets/portraits/pan_thai_ramkhamhaeng.jpg",
+                    "legende": "Rama Khamhaeng, statue",
+                    "auteur": "Ananda",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ramkhamhaeng_the_Great.jpg"
+                  }
+                },
+                {
+                  "id": "pan_thai_bayinnaung",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1516,
+                  "titre": "Naissance de Bayinnaung",
+                  "description": "Bayinnaung (1516-1581) est le roi de Birmanie de 1550 à sa mort, et le fondateur du plus vaste empire de l'histoire de l'Asie du Sud-Est. Il réunifie la Birmanie, soumet les États shan, le Lan Na et le Lan Xang, et fait tomber Ayutthaya en 1564, puis de nouveau en 1569. Il meurt en 1581, et l'empire se disloque après lui.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bayinnaung",
+                  "pays": "MM",
+                  "classement": "Bayinnaung",
+                  "image": {
+                    "src": "assets/portraits/pan_thai_bayinnaung.jpg",
+                    "legende": "Bayinnaung, statue à Pyin Oo Lwin",
+                    "auteur": "Hybernator",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Pyinoolwin_--_DSA_Bayinnaung.JPG"
+                  }
+                },
+                {
+                  "id": "pan_thai_naresuan",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1555,
+                  "titre": "Naissance de Naresuan",
+                  "description": "Naresuan (1555-1605) est le roi d'Ayutthaya de 1590 à sa mort, né à Phitsanulok, qui libère le royaume de la tutelle birmane. Il conduit la révolte de 1584 contre la Birmanie, puis bat les Birmans en 1593, lors d'un duel à dos d'éléphant avec le prince héritier Mingyi Swa. Il meurt en 1605, en campagne contre la Birmanie, et reste l'un des rois guerriers les plus vénérés de Thaïlande.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Naresuan",
+                  "pays": "TH",
+                  "classement": "Naresuan",
+                  "image": {
+                    "src": "assets/portraits/pan_thai_naresuan.jpg",
+                    "legende": "Naresuan, statue",
+                    "auteur": "Mixvasuvadh at Thai Wikipedia",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:KingNU.jpg"
+                  }
+                },
+                {
+                  "id": "pan_thai_narai",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1632,
+                  "titre": "Naissance de Narai",
+                  "description": "Narai (1632-1688) est le roi d'Ayutthaya de 1656 à sa mort, à Lopburi, qui ouvre largement son royaume aux étrangers. Il échange des ambassades avec Louis XIV, dont celle de Kosa Pan en 1686, accueille des jésuites et le Grec Constantin Phaulkon, qui devient son ministre, et fait bâtir un palais d'été à Lopburi. Mourant, il voit le général Phetracha prendre le pouvoir en 1688, et les Français sont chassés du pays.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Narai",
+                  "pays": "TH",
+                  "classement": "Narai",
+                  "image": {
+                    "src": "assets/portraits/pan_thai_narai.jpg",
+                    "legende": "Narai, gravure française du XVIIIe siècle",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:French_depiction_of_King_Narai.jpg"
+                  }
+                },
+                {
+                  "id": "pan_thai_alaungpaya",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1714,
+                  "titre": "Naissance d'Alaungpaya",
+                  "description": "Alaungpaya (1714-1760) est le fondateur de la dynastie Konbaung, roi de Birmanie de 1752 à sa mort, né à Moksobo, l'actuelle Shwebo. Chef de village, il soulève le pays contre les Mons de Pégou, qui ont pris Ava en 1752, fonde Rangoun en 1755 et prend Pégou en 1757. Il meurt en 1760, au retour d'une campagne contre le Siam.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Alaungpaya",
+                  "pays": "MM",
+                  "classement": "Alaungpaya",
+                  "image": {
+                    "src": "assets/portraits/pan_thai_alaungpaya.jpg",
+                    "legende": "Alaungpaya, statue à Pyin Oo Lwin",
+                    "auteur": "Hybernator",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Pyinoolwin_--_DSA_Alaungpaya.JPG"
+                  }
+                },
+                {
+                  "id": "pan_thai_taksin",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1734,
+                  "titre": "Naissance de Taksin",
+                  "description": "Taksin (1734-1782) est le roi de Thonburi de 1767 à 1782, né à Ayutthaya d'un père chinois, qui libère le Siam des Birmans. Après la chute d'Ayutthaya en 1767, il reconquiert le pays en quelques mois, et fonde une nouvelle capitale à Thonburi, face à l'actuelle Bangkok. Écarté par un coup d'État, il est exécuté en 1782, et son général Chakri, futur Rama Ier, lui succède.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Taksin",
+                  "pays": "TH",
+                  "classement": "Taksin",
+                  "image": {
+                    "src": "assets/portraits/pan_thai_taksin.jpg",
+                    "legende": "Taksin, portrait peint",
+                    "auteur": "Italian artist or a disciple of a Jesuit.",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:King_Taksin_of_Thonburi_Portrait_Painting.png"
+                  }
+                },
+                {
+                  "id": "pan_thai_rama1",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1737,
+                  "titre": "Naissance de Rama Ier",
+                  "description": "Rama Ier (1737-1809) est le fondateur de la dynastie Chakri, qui règne encore sur la Thaïlande, né sous le nom de Thongduang à Ayutthaya. Général de Taksin, il prend le pouvoir en 1782, fonde Bangkok comme capitale, et y fait bâtir le Grand Palais et le Wat Phra Kaew, où il installe le Bouddha d'émeraude. Il fait compiler le Tripitaka, compose une version du Ramakien et repousse les Birmans, et il meurt à Bangkok en 1809.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Rama_Ier",
+                  "pays": "TH",
+                  "classement": "Rama Ier",
+                  "image": {
+                    "src": "assets/portraits/pan_thai_rama1.jpg",
+                    "legende": "Rama Ier, portrait",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Buddha_Yodfa_Chulaloke_portrait.jpg"
+                  }
+                },
+                {
+                  "id": "pan_thai_bodawpaya",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1745,
+                  "titre": "Naissance de Bodawpaya",
+                  "description": "Bodawpaya (1745-1819) est le roi de Birmanie de 1782 à 1819, fils d'Alaungpaya, né à Moksobo. Il conquiert l'Arakan en 1784, ramène à sa capitale la grande statue du Bouddha Mahamuni, et lance à Mingun la construction d'une pagode colossale, restée inachevée. Il meurt à Amarapura en 1819, et son petit-fils Bagyidaw lui succède.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bodawpaya",
+                  "pays": "MM",
+                  "classement": "Bodawpaya",
+                  "image": {
+                    "src": "assets/portraits/pan_thai_bodawpaya.jpg",
+                    "legende": "Bodawpaya, statue",
+                    "auteur": "Kantabon",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Statute_of_king_Bodawpaya_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_thai_thaosuranari",
+                  "axe": "Guerres et résistances",
+                  "date": 1771,
+                  "titre": "Naissance de Thao Suranari",
+                  "description": "Thao Suranari (1771-1852) est une héroïne thaïlandaise, née à Nakhon Ratchasima, plus connue sous le nom de Khun Ying Mo. En 1826, épouse du gouverneur adjoint, elle fait face à l'armée du roi Anouvong de Vientiane, qui marche sur Bangkok, et use d'un stratagème qui laisse aux renforts de la capitale le temps d'arriver. Une statue lui est élevée à Nakhon Ratchasima, où des foules viennent encore prier, et elle meurt en 1852.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Thao_Suranari",
+                  "pays": "TH",
+                  "classement": "Thao Suranari",
+                  "image": {
+                    "src": "assets/portraits/pan_thai_thaosuranari.jpg",
+                    "legende": "Thao Suranari, statue à Nakhon Ratchasima",
+                    "auteur": "Thanyakij at Thai Wikipedia",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:ThaoSuranaree.jpg"
+                  }
+                },
+                {
+                  "id": "pan_thai_mahabandula",
+                  "axe": "Guerres et résistances",
+                  "date": 1782,
+                  "titre": "Naissance de Maha Bandula",
+                  "description": "Maha Bandula (1782-1825) est le général en chef de la première guerre anglo-birmane, de 1824 à 1826. Il conquiert l'Assam pour le roi de Birmanie, lance en 1824 l'offensive contre les Britanniques dans le Bengale, puis défend Rangoun et le delta de l'Irrawaddy. Il est tué par un obus au siège de Danubyu, en 1825, et reste un héros militaire birman.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Maha_Bandula",
+                  "pays": "MM",
+                  "classement": "Maha Bandula",
+                  "image": {
+                    "src": "assets/portraits/pan_thai_mahabandula.jpg",
+                    "legende": "Maha Bandula, statue",
+                    "auteur": "Kantabon",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Statute_of_Maha_Bandula.jpg"
+                  }
+                },
+                {
+                  "id": "pan_thai_rama4",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1804,
+                  "titre": "Naissance de Rama IV",
+                  "description": "Rama IV (1804-1868) est le roi du Siam de 1851 à sa mort, plus connu sous le nom de Mongkut. Moine pendant vingt-sept ans avant de monter sur le trône, il fonde le mouvement Thammayut, étudie l'anglais et l'astronomie, et signe en 1855 le traité Bowring avec le Royaume-Uni, puis des traités avec d'autres puissances, ce qui préserve l'indépendance du pays. Il meurt en 1868 du paludisme, contracté en observant l'éclipse solaire du 18 août.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Rama_IV",
+                  "pays": "TH",
+                  "classement": "Rama IV",
+                  "image": {
+                    "src": "assets/portraits/pan_thai_rama4.jpg",
+                    "legende": "Rama IV, photographie de John Thomson, 1865",
+                    "auteur": "John Thomson (1837–1921)",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:First_King_of_Siam_MET_DP-573-001_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_thai_mindon",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1808,
+                  "titre": "Naissance de Mindon Min",
+                  "description": "Mindon Min (1808-1878) est le roi de Birmanie de 1853 à sa mort, né à Amarapura, qui fonde Mandalay en 1857. Après la défaite de 1852 contre les Britanniques, il modernise l'armée et les finances, envoie des missions en Europe, réunit en 1871 le cinquième concile bouddhique et fait graver le canon pali sur 729 dalles de marbre. Il meurt à Mandalay en 1878.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mindon_Min",
+                  "pays": "MM",
+                  "classement": "Mindon Min",
+                  "image": {
+                    "src": "assets/portraits/pan_thai_mindon.jpg",
+                    "legende": "Mindon Min, portrait",
+                    "auteur": "Ekyaw",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:-Mindon_Min-2.JPG"
+                  }
+                },
+                {
+                  "id": "pan_thai_ledi",
+                  "axe": "Littérature et pensée",
+                  "date": 1846,
+                  "titre": "Naissance de Ledi Sayadaw",
+                  "description": "Ledi Sayadaw (1846-1923) est un moine bouddhiste birman, né dans le nord du pays, et l'un des plus grands maîtres de l'Abhidhamma. Il enseigne aux laïcs la méditation de la vision pénétrante, écrit en birman de nombreux ouvrages sur la doctrine et fonde des centres d'étude à travers le pays. Il meurt à Pyinmana en 1923, et son enseignement est à l'origine du renouveau de la méditation vipassana.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ledi_Sayadaw",
+                  "pays": "MM",
+                  "classement": "Ledi Sayadaw",
+                  "image": {
+                    "src": "assets/portraits/pan_thai_ledi.jpg",
+                    "legende": "Ledi Sayadaw, portrait",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ledi_Sayadaw_portrait.jpg"
+                  }
+                },
+                {
+                  "id": "pan_thai_rama5",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1853,
+                  "titre": "Naissance de Rama V",
+                  "description": "Rama V (1853-1910) est le roi du Siam de 1868 à sa mort, plus connu sous le nom de Chulalongkorn, et le grand modernisateur du pays. Il abolit l'esclavage, crée des ministères, des chemins de fer et des écoles, et, en cédant à la France et au Royaume-Uni des territoires du Laos, du Cambodge et de Malaisie, il préserve l'indépendance du royaume. Il meurt à Bangkok en 1910, après quarante-deux ans de règne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Rama_V",
+                  "pays": "TH",
+                  "classement": "Rama V",
+                  "image": {
+                    "src": "assets/portraits/pan_thai_rama5.jpg",
+                    "legende": "Rama V, photographie",
+                    "auteur": "Bain News Service, publisher.",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Chulalongkorn_LoC.jpg"
+                  }
+                },
+                {
+                  "id": "pan_thai_thibaw",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1859,
+                  "titre": "Naissance de Thibaw Min",
+                  "description": "Thibaw Min (1859-1916) est le dernier roi de Birmanie, de 1878 à 1885, né à Mandalay. Monté sur le trône à 19 ans, sous l'influence de la reine Supayalat, il est renversé en novembre 1885 par les Britanniques, lors de la troisième guerre anglo-birmane, qui met fin à la monarchie. Exilé à Ratnagiri, en Inde, il y meurt en 1916.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Thibaw_Min",
+                  "pays": "MM",
+                  "classement": "Thibaw Min",
+                  "image": {
+                    "src": "assets/portraits/pan_thai_thibaw.jpg",
+                    "legende": "Thibaw Min, photographie de 1880",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Thibaw_Min.jpg"
+                  }
+                },
+                {
+                  "id": "pan_thai_kodaw",
+                  "axe": "Littérature et pensée",
+                  "date": 1876,
+                  "titre": "Naissance de Thakin Kodaw Hmaing",
+                  "description": "Thakin Kodaw Hmaing (1876-1964) est le poète national de la Birmanie, né à Wale, près de Prome, nationaliste et dramaturge, qui inspire le mouvement des Thakins. Il écrit en langue birmane des poèmes et des pièces qui réveillent la fierté nationale pendant la domination britannique, et parraine la génération qui conduit le pays à l'indépendance, dont Aung San et U Nu. Il meurt à Rangoun en 1964, et ses funérailles réunissent des centaines de milliers de personnes.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Thakin_Kodaw_Hmaing",
+                  "pays": "MM",
+                  "classement": "Thakin Kodaw Hmaing",
+                  "image": {
+                    "src": "assets/portraits/pan_thai_kodaw.jpg",
+                    "legende": "Thakin Kodaw Hmaing, portrait",
+                    "auteur": "Wikimerge",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kodawmhine.jpg"
+                  }
+                },
+                {
+                  "id": "pan_thai_sayasan",
+                  "axe": "Guerres et résistances",
+                  "date": 1876,
+                  "titre": "Naissance de Saya San",
+                  "description": "Saya San (1876-1931) est le chef de la grande révolte paysanne de 1930-1931 contre les Britanniques en Birmanie, ancien moine et médecin traditionnel. Proclamé roi en 1930, il soulève des dizaines de milliers de paysans, que la crise économique ruine, et la révolte est écrasée par l'armée britannique après deux ans. Il est pendu à Tharrawaddy le 28 novembre 1931, et devient un héros des nationalistes birmans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Saya_San",
+                  "pays": "MM",
+                  "classement": "Saya San",
+                  "image": {
+                    "src": "assets/portraits/pan_thai_sayasan.jpg",
+                    "legende": "Saya San, portrait",
+                    "auteur": "The original uploader was Mayor mt at Burmese Wikipedia .",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Sayar_San.png"
+                  }
+                },
+                {
+                  "id": "pan_thai_rama6",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1881,
+                  "titre": "Naissance de Rama VI",
+                  "description": "Rama VI (1881-1925) est le roi du Siam de 1910 à sa mort, plus connu sous le nom de Vajiravudh, né à Bangkok et formé à Oxford. Il fonde le nationalisme thaï moderne, autour de la devise « nation, religion, roi », impose les noms de famille en 1913 et engage le Siam dans la Première Guerre mondiale aux côtés des Alliés, en 1917. Auteur de nombreuses pièces de théâtre, il meurt à Bangkok en 1925, sans héritier mâle.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Rama_VI",
+                  "pays": "TH",
+                  "classement": "Rama VI",
+                  "image": {
+                    "src": "assets/portraits/pan_thai_rama6.jpg",
+                    "legende": "Rama VI, photographie vers 1920",
+                    "auteur": "ร้านถ่ายรูปหลวงฉายานรสิงห์",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Vajiravudh_of_Siam_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_thai_rama7",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1893,
+                  "titre": "Naissance de Rama VII",
+                  "description": "Rama VII (1893-1941) est le dernier roi absolu du Siam, de 1925 à 1935, plus connu sous le nom de Prajadhipok, né à Bangkok. Frappé par la crise économique, il voit la révolution du 24 juin 1932 mettre fin à la monarchie absolue, et accepte une constitution. Il abdique en 1935, depuis l'Angleterre, et il y meurt en exil en 1941.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Rama_VII",
+                  "pays": "TH",
+                  "classement": "Rama VII",
+                  "image": {
+                    "src": "assets/portraits/pan_thai_rama7.jpg",
+                    "legende": "Rama VII, portrait photographique",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:King_Prajadhipok_portrait_photograph.jpg"
+                  }
+                },
+                {
+                  "id": "pan_thai_phibun",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1897,
+                  "titre": "Naissance de Plaek Phibunsongkhram",
+                  "description": "Plaek Phibunsongkhram (1897-1964) est le Premier ministre de Thaïlande de 1938 à 1944, puis de 1948 à 1957, né à Nonthaburi. Officier de la révolution de 1932, il instaure un nationalisme autoritaire, remplace en 1939 le nom de Siam par celui de Thaïlande, et s'allie au Japon en 1941. Chassé du pouvoir par Sarit Thanarat en 1957, il s'exile au Japon, et il meurt à Sagamihara en 1964.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Plaek_Phibunsongkhram",
+                  "pays": "TH",
+                  "classement": "Plaek Phibunsongkhram",
+                  "image": {
+                    "src": "assets/portraits/pan_thai_phibun.jpg",
+                    "legende": "Plaek Phibunsongkhram, photographie vers 1940",
+                    "auteur": "Ministry of Defence of Thailand",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Field_Marshal_Plaek_Phibunsongkhram.jpg"
+                  }
+                },
+                {
+                  "id": "pan_thai_pridi",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1900,
+                  "titre": "Naissance de Pridi Banomyong",
+                  "description": "Pridi Banomyong (1900-1983) est l'un des chefs de la révolution de 1932, qui fait du Siam une monarchie constitutionnelle, né à Ayutthaya. Juriste formé à Paris, il participe à la rédaction de la première constitution, fonde l'université de Thammasat, dirige le Seri Thai, la résistance à l'occupation japonaise, et devient Premier ministre en 1946. Accusé d'être impliqué dans la mort du roi Ananda, il s'exile en 1949, d'abord en Chine puis en France, où il meurt à Antony, près de Paris, en 1983.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Pridi_Banomyong",
+                  "pays": "TH",
+                  "classement": "Pridi Banomyong",
+                  "image": {
+                    "src": "assets/portraits/pan_thai_pridi.jpg",
+                    "legende": "Pridi Banomyong, portrait",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Pridi_Panomyong_(Scholar).jpg"
+                  }
+                },
+                {
+                  "id": "pan_thai_mahasi",
+                  "axe": "Littérature et pensée",
+                  "date": 1904,
+                  "titre": "Naissance de Mahasi Sayadaw",
+                  "description": "Mahasi Sayadaw (1904-1982) est un moine bouddhiste birman, né à Seikkhun, près de Shwebo, et le fondateur de l'une des méthodes de méditation vipassana les plus pratiquées au monde. Invité par U Nu, il ouvre à Rangoun le centre de méditation Mahasi en 1949, et il est le questionneur du sixième concile bouddhique, de 1954 à 1956. Ses disciples enseignent sa méthode en Asie et en Occident, et il meurt à Rangoun en 1982.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mahasi_Sayadaw",
+                  "pays": "MM",
+                  "classement": "Mahasi Sayadaw",
+                  "image": {
+                    "src": "assets/portraits/pan_thai_mahasi.jpg",
+                    "legende": "Mahasi Sayadaw, photographie",
+                    "auteur": "Klaus Rettich",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Der_ehrwuerdige_sayadaw.jpg"
+                  }
+                },
+                {
+                  "id": "pan_thai_kulap",
+                  "axe": "Littérature et pensée",
+                  "date": 1905,
+                  "titre": "Naissance de Kulap Saipradit",
+                  "description": "Kulap Saipradit (1905-1974) est un écrivain et journaliste thaïlandais, né à Bangkok, qui écrit sous le nom de plume de Si Burapha. Auteur de « Derrière le tableau » (1937), il est l'un des pionniers du roman moderne thaï, puis il est emprisonné de 1952 à 1957 pour ses idées de gauche. Exilé en Chine en 1958, il y meurt en 1974.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kulap_Saipradit",
+                  "pays": "TH",
+                  "classement": "Kulap Saipradit",
+                  "image": {
+                    "src": "assets/portraits/pan_thai_kulap.jpg",
+                    "legende": "Kulap Saipradit, portrait",
+                    "auteur": "Thai Journalists' Association Established",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kulap_Saipradit_(02).jpg"
+                  }
+                },
+                {
+                  "id": "pan_thai_buddhadasa",
+                  "axe": "Littérature et pensée",
+                  "date": 1906,
+                  "titre": "Naissance de Buddhadasa",
+                  "description": "Buddhadasa (1906-1993) est un moine bouddhiste thaïlandais, né à Chaiya, dans le sud du pays, et le réformateur le plus influent du bouddhisme thaï au XXe siècle. Il fonde en 1932 le monastère de Suan Mokkh, « le jardin de la libération », et y enseigne un retour aux textes du canon pali, à la méditation et à la tolérance entre les religions. Ses ouvrages sont lus bien au-delà de la Thaïlande, et il meurt en 1993.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Buddhadasa",
+                  "pays": "TH",
+                  "classement": "Buddhadasa",
+                  "image": {
+                    "src": "assets/portraits/pan_thai_buddhadasa.jpg",
+                    "legende": "Buddhadasa, photographie",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:BuddhadasaAsiti60.jpg"
+                  }
+                },
+                {
+                  "id": "pan_thai_unu",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1907,
+                  "titre": "Naissance d'U Nu",
+                  "description": "U Nu (1907-1995) est le premier Premier ministre de la Birmanie indépendante, de 1948 à 1956, de 1957 à 1958, puis de 1960 à 1962, né à Wakema. Écrivain et fervent bouddhiste, il organise le sixième concile bouddhique de 1954 à 1956 et fait du bouddhisme la religion d'État en 1961, mais ne parvient pas à apaiser les rébellions des minorités. Renversé par Ne Win en 1962, il meurt à Rangoun en 1995.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/U_Nu",
+                  "pays": "MM",
+                  "classement": "U Nu",
+                  "image": {
+                    "src": "assets/portraits/pan_thai_unu.jpg",
+                    "legende": "U Nu, photographie de 1962",
+                    "auteur": "Anefo",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Staatsgreep_in_Birma,_premier_U_nu,_Bestanddeelnr_913-5820_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_thai_sarit",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1908,
+                  "titre": "Naissance de Sarit Thanarat",
+                  "description": "Sarit Thanarat (1908-1963) est le maréchal qui gouverne la Thaïlande de 1957 à sa mort, Premier ministre de 1958 à 1963, né à Bangkok. Il renverse Phibun en 1957, suspend la constitution, interdit les partis et rend à la monarchie de Bhumibol son rôle central. Il lance le premier plan de développement économique en 1961, et il meurt à Bangkok en 1963, laissant une fortune immense.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sarit_Thanarat",
+                  "pays": "TH",
+                  "classement": "Sarit Thanarat",
+                  "image": {
+                    "src": "assets/portraits/pan_thai_sarit.jpg",
+                    "legende": "Sarit Thanarat, portrait",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Sarit_Thanarat_portrait.jpg"
+                  }
+                },
+                {
+                  "id": "pan_thai_uthant",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1909,
+                  "titre": "Naissance d'U Thant",
+                  "description": "U Thant (1909-1974) est le troisième secrétaire général de l'ONU, de 1961 à 1971, et le premier venu d'Asie, né à Pantanaw. Ancien enseignant et ami de U Nu, il joue un rôle dans la crise des missiles de Cuba en 1962, envoie des Casques bleus à Chypre, critique la guerre du Vietnam, et ne se représente pas en 1971. Il meurt à New York en 1974.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/U_Thant",
+                  "pays": "MM",
+                  "classement": "U Thant",
+                  "image": {
+                    "src": "assets/portraits/pan_thai_uthant.jpg",
+                    "legende": "U Thant, photographie de 1963",
+                    "auteur": "Jack de Nijs for Anefo / Anefo",
+                    "licence": "CC BY-SA 3.0 NL",
+                    "source": "https://commons.wikimedia.org/wiki/File:U_Thant_(1963).jpg"
+                  }
+                },
+                {
+                  "id": "pan_thai_kukrit",
+                  "axe": "Littérature et pensée",
+                  "date": 1911,
+                  "titre": "Naissance de Kukrit Pramoj",
+                  "description": "Kukrit Pramoj (1911-1995) est un écrivain, journaliste et homme d'État thaïlandais, né dans la province de Singburi, issu d'une famille princière. Fondateur du quotidien Siam Rath, il est l'auteur du roman « Quatre règnes », qui raconte l'histoire du Siam à travers quatre rois, de 1892 à 1946. Premier ministre de 1975 à 1976, il établit des relations avec la Chine, obtient le retrait des troupes américaines, et meurt à Bangkok en 1995.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Khuek-rit_Pramot",
+                  "pays": "TH",
+                  "classement": "Kukrit Pramoj",
+                  "image": {
+                    "src": "assets/portraits/pan_thai_kukrit.jpg",
+                    "legende": "Kukrit Pramoj, photographie de 1974",
+                    "auteur": "Norman Peagam",
+                    "licence": "CC BY 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kukrit_Pramoj_1974_(cropped-1).jpg"
+                  }
+                },
+                {
+                  "id": "pan_thai_newin",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1911,
+                  "titre": "Naissance de Ne Win",
+                  "description": "Ne Win (1911-2002) est le général qui dirige la Birmanie de 1962 à 1988, né à Paungdale. Il renverse U Nu en mars 1962, impose la « voie birmane vers le socialisme », nationalise l'économie et ferme le pays au monde, qui s'appauvrit. Il démissionne après les manifestations de 1988, et il meurt à Rangoun en 2002, assigné à résidence.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ne_Win",
+                  "pays": "MM",
+                  "classement": "Ne Win",
+                  "image": {
+                    "src": "assets/portraits/pan_thai_newin.jpg",
+                    "legende": "Ne Win, photographie de 1959",
+                    "auteur": "Moshe Pridan",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ne_Win_in_1959,_Jerusalem.jpg"
+                  }
+                },
+                {
+                  "id": "pan_thai_aungsan",
+                  "axe": "Guerres et résistances",
+                  "date": 1915,
+                  "titre": "Naissance d'Aung San",
+                  "description": "Aung San (1915-1947) est le père de l'indépendance de la Birmanie, né à Natmauk, et le père d'Aung San Suu Kyi. Dirigeant étudiant, fondateur de l'armée birmane, il s'allie d'abord au Japon, puis passe aux Britanniques en 1945, et obtient en janvier 1947 la promesse de l'indépendance. Il est assassiné avec six de ses ministres à Rangoun le 19 juillet 1947, à 32 ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Aung_San",
+                  "pays": "MM",
+                  "classement": "Aung San",
+                  "image": {
+                    "src": "assets/portraits/pan_thai_aungsan.jpg",
+                    "legende": "Aung San, portrait des années 1940",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Aung_San_color_portrait.jpg"
+                  }
+                },
+                {
+                  "id": "pan_thai_ludu",
+                  "axe": "Littérature et pensée",
+                  "date": 1915,
+                  "titre": "Naissance de Ludu Daw Amar",
+                  "description": "Ludu Daw Amar (1915-2008) est une écrivaine et journaliste birmane, née à Mandalay, opposante tenace aux régimes militaires. Avec son mari, elle crée le premier quotidien en langue birmane, le Ludu, et écrit sur les arts traditionnels, le théâtre, la danse et la musique de son pays. Emprisonnée à plusieurs reprises sous le régime de Ne Win, elle meurt à Mandalay en 2008.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ludu_Daw_Amar",
+                  "pays": "MM",
+                  "classement": "Ludu Daw Amar",
+                  "image": {
+                    "src": "assets/portraits/pan_thai_ludu.jpg",
+                    "legende": "Ludu Daw Amar, portrait",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ludu_Daw_Amar_portrait.jpg"
+                  }
+                },
+                {
+                  "id": "pan_thai_prem",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1920,
+                  "titre": "Naissance de Prem Tinsulanonda",
+                  "description": "Prem Tinsulanonda (1920-2019) est le Premier ministre de Thaïlande de 1980 à 1988, né à Songkhla, un général resté jusqu'à sa mort l'un des plus proches soutiens de la monarchie. Il mène la fin de la guérilla communiste, stabilise la démocratie après des années de coups d'État, et la croissance du pays devient l'une des plus rapides d'Asie. Président du conseil privé du roi à partir de 1998, il meurt à Bangkok en 2019.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Prem_Tinsulanonda",
+                  "pays": "TH",
+                  "classement": "Prem Tinsulanonda",
+                  "image": {
+                    "src": "assets/portraits/pan_thai_prem.jpg",
+                    "legende": "Prem Tinsulanonda, photographie de 1984",
+                    "auteur": "Reagan White House Photographs",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Prem_Tinsulanonda_1984.jpg"
+                  }
+                },
+                {
+                  "id": "pan_thai_rama8",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1925,
+                  "titre": "Naissance de Rama VIII",
+                  "description": "Rama VIII (1925-1946) est le roi de Thaïlande de 1935 à sa mort, plus connu sous le nom d'Ananda Mahidol, né à Heidelberg, en Allemagne. Enfant, il règne depuis la Suisse, ne rentre à Bangkok qu'en décembre 1945, et il est retrouvé mort d'une balle dans la tête le 9 juin 1946, à 20 ans, dans des circonstances jamais élucidées. Son frère Bhumibol lui succède.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Rama_VIII",
+                  "pays": "TH",
+                  "classement": "Rama VIII",
+                  "image": {
+                    "src": "assets/portraits/pan_thai_rama8.jpg",
+                    "legende": "Rama VIII, portrait photographique, 1946",
+                    "auteur": "กรมแผนที่ทหารบก (Royal Thai Army Survey Department)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:King_Ananda_Mahidol_portrait_photograph.jpg"
+                  }
+                },
+                {
+                  "id": "pan_thai_rama9",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1927,
+                  "titre": "Naissance de Rama IX",
+                  "description": "Rama IX (1927-2016) est le roi de Thaïlande de 1946 à sa mort, plus connu sous le nom de Bhumibol Adulyadej, né à Cambridge, dans le Massachusetts. Il règne soixante-dix ans, le plus long règne de l'histoire du pays, intervient dans les crises politiques de 1973 et de 1992 et soutient des milliers de projets de développement rural. Vénéré, il meurt à Bangkok en 2016, et le deuil national dure un an.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Rama_IX",
+                  "pays": "TH",
+                  "classement": "Rama IX",
+                  "image": {
+                    "src": "assets/portraits/pan_thai_rama9.jpg",
+                    "legende": "Rama IX, photographie de 1960",
+                    "auteur": "Harry Pot / Anefo",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Aankomst_Koning_Bhumibol_en_Koningin_Sirikit_te_Den_Haag,_Koning_Bhumibol,_Bestanddeelnr_911-6993_(cropped)(2).jpg"
+                  }
+                },
+                {
+                  "id": "pan_thai_chit",
+                  "axe": "Littérature et pensée",
+                  "date": 1930,
+                  "titre": "Naissance de Chit Phumisak",
+                  "description": "Chit Phumisak (1930-1966) est un historien, poète et militant thaïlandais, né dans la province de Prachinburi, auteur de « Les vrais visages des féodaux de Siam » (1957). Étudiant en philologie, il est arrêté en 1957 par le régime de Sarit, passe six ans en prison, et devient un symbole de la gauche. Il rejoint la guérilla communiste en 1965 et il est abattu par des villageois en 1966, à 35 ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Chit_Phumisak",
+                  "pays": "TH",
+                  "classement": "Chit Phumisak",
+                  "image": {
+                    "src": "assets/portraits/pan_thai_chit.jpg",
+                    "legende": "Chit Phumisak, portrait",
+                    "auteur": "The original uploader was Bact at Thai Wikipedia .",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Chit.jpg"
+                  }
+                },
+                {
+                  "id": "pan_thai_suraphol",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1930,
+                  "titre": "Naissance de Suraphol Sombatcharoen",
+                  "description": "Suraphol Sombatcharoen (1930-1968) est un chanteur et compositeur thaïlandais, né dans la province de Suphanburi, considéré comme le père du luk thung, la country thaïlandaise. Venu d'une famille modeste, il écrit et chante des centaines de chansons sur la vie des paysans et des migrants, qui rencontrent un immense succès. Il est tué par balle en 1968, à 37 ans, et le luk thung devient un genre national.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Suraphol_Sombatcharoen",
+                  "pays": "TH",
+                  "classement": "Suraphol Sombatcharoen",
+                  "image": {
+                    "src": "assets/portraits/pan_thai_suraphol.jpg",
+                    "legende": "Suraphol Sombatcharoen, photographie des années 1960",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%E0%B8%AA%E0%B8%B8%E0%B8%A3%E0%B8%9E%E0%B8%A5_%E0%B8%AA%E0%B8%A1%E0%B8%9A%E0%B8%B1%E0%B8%95%E0%B8%B4%E0%B9%80%E0%B8%88%E0%B8%A3%E0%B8%B4%E0%B8%8D.webp"
+                  }
+                },
+                {
+                  "id": "pan_thai_thawan",
+                  "axe": "Beaux-arts",
+                  "date": 1939,
+                  "titre": "Naissance de Thawan Duchanee",
+                  "description": "Thawan Duchanee (1939-2014) est un peintre et sculpteur thaïlandais, né à Chiang Rai, artiste national de Thaïlande en 2001. Formé à Bangkok puis aux Pays-Bas, il mêle les traditions bouddhistes, l'architecture des temples du Nord et un imaginaire sombre, et il construit près de Chiang Rai le Baan Dam, la « maison noire », un ensemble de pavillons de bois. Il meurt à Chiang Rai en 2014.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Thawan_Duchanee",
+                  "pays": "TH",
+                  "classement": "Thawan Duchanee",
+                  "image": {
+                    "src": "assets/portraits/pan_thai_thawan.jpg",
+                    "legende": "Thawan Duchanee, photographie",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%E0%B8%96%E0%B8%A7%E0%B8%B1%E0%B8%A5%E0%B8%A2%E0%B9%8C_%E0%B8%94%E0%B8%B1%E0%B8%8A%E0%B8%99%E0%B8%B5.png"
+                  }
+                }
+              ],
+              "axeOrder": [
+                "Chefs d'État et dirigeants",
+                "Guerres et résistances",
+                "Littérature et pensée",
+                "Beaux-arts",
+                "Musique, spectacle et sport"
+              ],
+              "essentiel": [
+                "pan_thai_bayinnaung",
+                "pan_thai_naresuan",
+                "pan_thai_rama5",
+                "pan_thai_aungsan",
+                "pan_thai_rama9"
+              ]
+            },
+            {
               "id": "pan_tr",
               "nom": "Grandes figures de Turquie",
               "difficulte": "Intermédiaire",
@@ -151327,6 +152057,715 @@
                 "pan_tr_yasarkemal",
                 "pan_tr_ozal",
                 "pan_tr_barismanco"
+              ]
+            },
+            {
+              "id": "pan_indochine",
+              "nom": "Grandes figures du Vietnam, du Cambodge et du Laos",
+              "difficulte": "Intermédiaire",
+              "motsCles": [
+                "Vietnam",
+                "Viêt Nam",
+                "Vietnamien",
+                "Vietnamienne",
+                "Cambodge",
+                "Cambodgien",
+                "Khmer",
+                "Khmers",
+                "Laos",
+                "Laotien",
+                "Lao",
+                "Indochine",
+                "Indochine française",
+                "Hanoï",
+                "Saïgon",
+                "Hô Chi Minh-Ville",
+                "Huế",
+                "Phnom Penh",
+                "Angkor",
+                "Vientiane",
+                "Luang Prabang",
+                "Annam",
+                "Tonkin",
+                "Cochinchine",
+                "Đại Việt",
+                "Empire khmer",
+                "Lan Xang",
+                "Việt Minh",
+                "Khmers rouges",
+                "Pathet Lao",
+                "Diên Biên Phu",
+                "Guerre du Vietnam",
+                "Guerre d'Indochine",
+                "Mékong",
+                "Asie du Sud-Est"
+              ],
+              "events": [
+                {
+                  "id": "pan_indochine_suryavarman2",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1094,
+                  "titre": "Naissance de Suryavarman II",
+                  "description": "Suryavarman II (vers 1094-vers 1150) est le roi khmer qui bâtit Angkor Vat, au pouvoir de 1113 à sa mort. Il réunifie l'empire par les armes, lance des campagnes contre le Champā et le Đại Việt, et consacre à Vishnou le temple d'Angkor Vat, le plus grand monument religieux du monde. Il est représenté en procession sur les bas-reliefs du temple, et il meurt vers 1150, sans doute au cours d'une campagne militaire.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Suryavarman_II",
+                  "pays": "KH",
+                  "classement": "Suryavarman II",
+                  "image": {
+                    "src": "assets/portraits/pan_indochine_suryavarman2.jpg",
+                    "legende": "Suryavarman II, bas-relief d'Angkor Vat",
+                    "auteur": "Auteur inconnu",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:SuryavarmanII01.JPG"
+                  }
+                },
+                {
+                  "id": "pan_indochine_jayavarman7",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1122,
+                  "titre": "Naissance de Jayavarman VII",
+                  "description": "Jayavarman VII (vers 1122-vers 1218) est l'un des plus grands rois de l'empire khmer, au pouvoir de 1181 à sa mort. Il chasse les Chams qui ont pillé Angkor en 1177, rebâtit la capitale à Angkor Thom autour du temple du Bayon, et fait construire des hôpitaux, des gîtes d'étape le long des routes et des temples comme le Ta Prohm. Premier grand souverain bouddhiste de l'empire, il meurt vers 1218, ses dates exactes restant incertaines.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jayavarman_VII",
+                  "pays": "KH",
+                  "classement": "Jayavarman VII",
+                  "image": {
+                    "src": "assets/portraits/pan_indochine_jayavarman7.jpg",
+                    "legende": "Jayavarman VII, statue",
+                    "auteur": "Suzan Black",
+                    "licence": "CC BY 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:JayavarmanVII.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indochine_tranhungdao",
+                  "axe": "Guerres et résistances",
+                  "date": 1228,
+                  "titre": "Naissance de Trần Hưng Đạo",
+                  "description": "Trần Hưng Đạo (1228-1300) est le prince et général qui repousse les invasions mongoles au XIIIe siècle, né dans la famille royale des Trần. Il commande les armées du Đại Việt contre les Yuan en 1285 et en 1288, et remporte la seconde fois la bataille du fleuve Bạch Đằng, en plantant des pieux dans le lit du fleuve pour piéger la flotte ennemie. Vénéré comme un saint par les Vietnamiens, il meurt en 1300.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Tr%E1%BA%A7n_H%C6%B0ng_%C4%90%E1%BA%A1o",
+                  "pays": "VN",
+                  "classement": "Trần Hưng Đạo",
+                  "image": {
+                    "src": "assets/portraits/pan_indochine_tranhungdao.jpg",
+                    "legende": "Trần Hưng Đạo, statue à Nha Trang",
+                    "auteur": "Odessey",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Tran_Hung_Dao_-_Nha_Trang_-_2.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indochine_fangum",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1316,
+                  "titre": "Naissance de Fa Ngum",
+                  "description": "Fa Ngum (1316-1374) est le fondateur du royaume de Lan Xang, le « royaume du million d'éléphants », au XIVe siècle, né dans la famille royale de Muang Sua, l'actuelle Luang Prabang. Élevé à la cour d'Angkor, il conquiert avec une armée khmère les principautés lao, fonde le royaume en 1354 et y introduit le bouddhisme theravada. Destitué par ses nobles, il est exilé à Nan, où il meurt en 1374.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Fa_Ngum",
+                  "pays": "LA",
+                  "classement": "Fa Ngum",
+                  "image": {
+                    "src": "assets/portraits/pan_indochine_fangum.jpg",
+                    "legende": "Fa Ngum, statue à Vientiane",
+                    "auteur": "en:User:Adam Carr",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Fangum.JPG"
+                  }
+                },
+                {
+                  "id": "pan_indochine_lethanhtong",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1442,
+                  "titre": "Naissance de Lê Thánh Tông",
+                  "description": "Lê Thánh Tông (1442-1497) est le quatrième empereur de la dynastie des Lê postérieurs, qui règne de 1460 à 1497, et dont le règne est regardé comme l'âge d'or du Đại Việt. Il réorganise l'administration sur le modèle confucéen, promulgue le code Hồng Đức et mène en 1471 la campagne qui anéantit le royaume du Champā. Poète lui-même, il fonde une académie de lettrés, et il meurt à Thăng Long, l'actuelle Hanoï, en 1497.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/L%C3%AA_Th%C3%A1nh_T%C3%B4ng",
+                  "pays": "VN",
+                  "classement": "Lê Thánh Tông",
+                  "image": {
+                    "src": "assets/portraits/pan_indochine_lethanhtong.jpg",
+                    "legende": "Lê Thánh Tông, statue",
+                    "auteur": "Ngoisao.vn",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:L%C3%AA_Th%C3%A1nh_T%C3%B4ng.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indochine_setthathirath",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1534,
+                  "titre": "Naissance de Setthathirath",
+                  "description": "Setthathirath (1534-1571) est le roi du Lan Xang de 1548 à 1571, fils du roi Photisarath et d'une princesse du Lan Na. Il transfère en 1560 la capitale de Luang Prabang à Vientiane, y fait bâtir le That Luang et le Wat Phra Kaew, et repousse l'armée birmane de Bayinnaung. Il disparaît en 1571 lors d'une campagne dans le sud du royaume, dans des circonstances mal connues.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Setthathirath",
+                  "pays": "LA",
+                  "classement": "Setthathirath",
+                  "image": {
+                    "src": "assets/portraits/pan_indochine_setthathirath.jpg",
+                    "legende": "Setthathirath, statue à Vientiane",
+                    "auteur": "Alcyon",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Setthathirat.JPG"
+                  }
+                },
+                {
+                  "id": "pan_indochine_nguyenhue",
+                  "axe": "Guerres et résistances",
+                  "date": 1752,
+                  "titre": "Naissance de Nguyễn Huệ",
+                  "description": "Nguyễn Huệ (1752-1792) est l'empereur Quang Trung, de 1788 à sa mort, et le chef de l'insurrection des Tây Sơn, né dans le village de Tây Sơn, dans l'actuelle province de Bình Định. Avec ses frères, il renverse les seigneurs Nguyễn et Trịnh, bat l'armée siamoise à Rạch Gầm en 1785, puis l'armée chinoise des Qing au Têt de 1789. Il meurt à Phú Xuân, l'actuelle Huế, en 1792, à 40 ans, avant d'avoir consolidé son empire.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Nguy%E1%BB%85n_Hu%E1%BB%87",
+                  "pays": "VN",
+                  "classement": "Nguyễn Huệ",
+                  "image": {
+                    "src": "assets/portraits/pan_indochine_nguyenhue.jpg",
+                    "legende": "Nguyễn Huệ, portrait peint par un artiste de la cour des Qing",
+                    "auteur": "Mou Bingtai (繆炳泰, ? - ?). Qing Court's painters in the XVIII-century",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:A_portrait_painting_depicting_Annam_King,_Ruan_Guangping.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indochine_gialong",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1762,
+                  "titre": "Naissance de Gia Long",
+                  "description": "Gia Long (1762-1820) est le fondateur de la dynastie des Nguyễn, né sous le nom de Nguyễn Phúc Ánh, et le premier empereur d'un Vietnam unifié, de 1802 à sa mort. Dernier survivant de sa famille après la révolte des Tây Sơn, il reconquiert le pays avec l'aide de conseillers français, dont l'évêque Pigneau de Behaine, et s'installe à Huế. Il y fait bâtir la citadelle impériale, adopte un code inspiré de celui des Qing, et il meurt à Huế en 1820.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Gia_Long",
+                  "pays": "VN",
+                  "classement": "Gia Long",
+                  "image": {
+                    "src": "assets/portraits/pan_indochine_gialong.jpg",
+                    "legende": "Gia Long, portrait",
+                    "auteur": "Unknown author Unknown author , restored by Nguyễn Phước Vĩnh Khánh ( )",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Emperor_Gia_Long.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indochine_nguyendu",
+                  "axe": "Littérature et pensée",
+                  "date": 1766,
+                  "titre": "Naissance de Nguyễn Du",
+                  "description": "Nguyễn Du (1766-1820) est le plus grand poète vietnamien, auteur du Kim Vân Kiều, né à Tiên Điền, dans la province de Hà Tĩnh, dans une famille de hauts mandarins. Au service des Lê puis des Nguyễn, il compose au début du XIXe siècle ce poème de 3 254 vers en langue nôm, adapté d'un roman chinois, qui raconte les malheurs de la belle Thúy Kiều. Le Kiều est appris par cœur par des générations de Vietnamiens, et son auteur meurt à Huế en 1820.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Nguy%E1%BB%85n_Du",
+                  "pays": "VN",
+                  "classement": "Nguyễn Du",
+                  "image": {
+                    "src": "assets/portraits/pan_indochine_nguyendu.jpg",
+                    "legende": "Nguyễn Du, statue",
+                    "auteur": "Vienvo03",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:T%C6%B0%E1%BB%A3ng_%C4%91%C3%A0i_c%E1%BB%A5_Nguy%E1%BB%85n_Du.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indochine_hoxuanhuong",
+                  "axe": "Littérature et pensée",
+                  "date": 1772,
+                  "titre": "Naissance de Hồ Xuân Hương",
+                  "description": "Hồ Xuân Hương (vers 1772-vers 1822) est une poétesse vietnamienne, née dans la province de Nghệ An, et l'une des grandes voix de la littérature en langue nôm. Ses poèmes, au double sens souvent audacieux, se moquent des hommes, des moines et des conventions, avec un humour qui lui vaut le surnom de « reine de la poésie nôm ». Elle mène une vie libre et meurt vers 1822, la date de sa mort étant incertaine.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/H%E1%BB%93_Xu%C3%A2n_H%C6%B0%C6%A1ng",
+                  "pays": "VN",
+                  "classement": "Hồ Xuân Hương",
+                  "image": {
+                    "src": "assets/portraits/pan_indochine_hoxuanhuong.jpg",
+                    "legende": "Hồ Xuân Hương, illustration publiée en 1916",
+                    "auteur": "Đông Châu Nguyễn Hữu Tiến (éditeur)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ho_Xuan_Huong.png",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_indochine_norodom1",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1834,
+                  "titre": "Naissance de Norodom Ier",
+                  "description": "Norodom Ier (1834-1904) est roi du Cambodge de 1860 à sa mort, couronné sous la double tutelle du Siam et de la France après son père Ang Duong. Il signe en 1863 le traité qui place son royaume sous protectorat français, puis en 1884 une convention qui livre l'administration du pays aux Français, et la révolte de son demi-frère Si Votha est écrasée. Il installe sa capitale à Phnom Penh, où il meurt en 1904, et son demi-frère Sisowath lui succède.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Norodom_Ier",
+                  "pays": "KH",
+                  "classement": "Norodom Ier",
+                  "image": {
+                    "src": "assets/portraits/pan_indochine_norodom1.jpg",
+                    "legende": "Norodom Ier, photographie de 1880",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:King_Norodom.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indochine_truongvinhky",
+                  "axe": "Littérature et pensée",
+                  "date": 1837,
+                  "titre": "Naissance de Trương Vĩnh Ký",
+                  "description": "Trương Vĩnh Ký (1837-1898) est un lettré et linguiste vietnamien, polyglotte, né à Vĩnh Long, en Cochinchine. Catholique formé au séminaire de Malacca, il enseigne à Saïgon, dirige le journal Gia Định báo, premier journal en quốc ngữ, l'écriture latine du vietnamien, et publie de nombreux textes dans cette écriture, devenue l'écriture nationale. Sa collaboration avec les Français lui vaut des jugements contraires, et il meurt à Saïgon en 1898.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Tr%C6%B0%C6%A1ng_V%C4%A9nh_K%C3%BD",
+                  "pays": "VN",
+                  "classement": "Trương Vĩnh Ký",
+                  "image": {
+                    "src": "assets/portraits/pan_indochine_truongvinhky.jpg",
+                    "legende": "Trương Vĩnh Ký, photographie de 1883",
+                    "auteur": "Unknown, was taken on 6 July 1883.",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Petrus_Truong_Vinh_Ky_1883_cropped.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indochine_sisowath",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1840,
+                  "titre": "Naissance de Sisowath",
+                  "description": "Sisowath (1840-1927) est roi du Cambodge de 1904 à sa mort, fils d'Ang Duong et demi-frère de Norodom, né à Oudong. Placé sur le trône par les Français, il règne sous un protectorat étroit, mais obtient en 1907 la restitution de provinces de l'ouest, dont Battambang et Siem Reap, cédées au Siam. Sous son règne, Angkor devient un symbole national et le ballet royal se renouvelle, et il meurt à Phnom Penh en 1927.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sisowath",
+                  "pays": "KH",
+                  "classement": "Sisowath",
+                  "image": {
+                    "src": "assets/portraits/pan_indochine_sisowath.jpg",
+                    "legende": "Sisowath, photographie de 1922",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Prince_Sisawat.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indochine_phanboichau",
+                  "axe": "Guerres et résistances",
+                  "date": 1867,
+                  "titre": "Naissance de Phan Bội Châu",
+                  "description": "Phan Bội Châu (1867-1940) est le fondateur du mouvement nationaliste Đông Du, né dans la province de Nghệ An. Lettré devenu révolutionnaire, il crée en 1904 la Société de rénovation du Vietnam, puis envoie des étudiants vietnamiens au Japon à partir de 1905. Arrêté à Shanghai en 1925 et condamné par les Français, il est assigné à résidence à Huế, où il meurt en 1940.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Phan_B%E1%BB%99i_Ch%C3%A2u",
+                  "pays": "VN",
+                  "classement": "Phan Bội Châu",
+                  "image": {
+                    "src": "assets/portraits/pan_indochine_phanboichau.jpg",
+                    "legende": "Phan Bội Châu, photographie vers 1920",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Phan_Boi_Chau.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indochine_hamnghi",
+                  "axe": "Guerres et résistances",
+                  "date": 1871,
+                  "titre": "Naissance de Hàm Nghi",
+                  "description": "Hàm Nghi (1871-1944) est un empereur du Vietnam, de 1884 à 1885, monté sur le trône à treize ans sous la tutelle des Français, né à Huế. Il quitte la citadelle de Huế avec le régent Tôn Thất Thuyết dans la nuit du 4 au 5 juillet 1885 et lance l'appel Cần Vương, un mouvement de résistance qui dure plus de dix ans. Capturé en 1888 et exilé en Algérie, il devient peintre et sculpteur, et il meurt à Alger en 1944.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/H%C3%A0m_Nghi",
+                  "pays": "VN",
+                  "classement": "Hàm Nghi",
+                  "image": {
+                    "src": "assets/portraits/pan_indochine_hamnghi.jpg",
+                    "legende": "Hàm Nghi, photographie vers 1890",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Emperor_Ham_Nghi.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indochine_sisavangvong",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1885,
+                  "titre": "Naissance de Sisavang Vong",
+                  "description": "Sisavang Vong (1885-1959) est le roi de Luang Prabang de 1904 à 1946, puis le premier roi du Laos réunifié, jusqu'à sa mort, né à Luang Prabang. Il règne sous le protectorat français, refuse en 1945 de proclamer l'indépendance sous la pression des Japonais, unifie son royaume avec le sud en 1946 et obtient l'indépendance complète en 1953. Il meurt à Luang Prabang en 1959, et son fils Savang Vatthana lui succède.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sisavang_Vong",
+                  "pays": "LA",
+                  "classement": "Sisavang Vong",
+                  "image": {
+                    "src": "assets/portraits/pan_indochine_sisavangvong.jpg",
+                    "legende": "Sisavang Vong, timbre laotien de 1951",
+                    "auteur": "Laos post office",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Sisavang_Vong_-_1951.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indochine_hochiminh",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1890,
+                  "titre": "Naissance de Hô Chi Minh",
+                  "description": "Hô Chi Minh (1890-1969) est le fondateur de la République démocratique du Vietnam et son président de 1945 à sa mort, né dans la province de Nghệ An. Parti du Vietnam en 1911 sous le nom de Nguyễn Tất Thành, il fonde le Parti communiste indochinois en 1930 et le Viêt Minh en 1941, puis proclame l'indépendance à Hanoï le 2 septembre 1945. Il conduit la guerre d'Indochine, jusqu'à la victoire de Diên Biên Phu en 1954, puis inspire celle du Vietnam, et il meurt à Hanoï en 1969, six ans avant la réunification.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/H%C3%B4_Chi_Minh",
+                  "pays": "VN",
+                  "classement": "Hô Chi Minh",
+                  "image": {
+                    "src": "assets/portraits/pan_indochine_hochiminh.jpg",
+                    "legende": "Hô Chi Minh, photographie vers 1946",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ho_Chi_Minh_1946.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indochine_phetsarath",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1890,
+                  "titre": "Naissance de Phetsarath Rattanavongsa",
+                  "description": "Phetsarath Rattanavongsa (1890-1959) est le prince et vice-roi de Luang Prabang, né dans cette ville, et le père de l'indépendance du Laos. Formé en France, il modernise l'administration, fonde l'Institut bouddhique et proclame l'indépendance en 1945 à la tête du Lao Issara. Destitué à la demande des Français, il s'exile en Thaïlande, revient en 1957 et meurt à Vientiane en 1959.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Phetsarath_Rattanavongsa",
+                  "pays": "LA",
+                  "classement": "Phetsarath Rattanavongsa",
+                  "image": {
+                    "src": "assets/portraits/pan_indochine_phetsarath.jpg",
+                    "legende": "Phetsarath Rattanavongsa, portrait vers 1940",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Prince_Phetsarath.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indochine_diem",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1901,
+                  "titre": "Naissance de Ngô Đình Diệm",
+                  "description": "Ngô Đình Diệm (1901-1963) est le premier président de la République du Vietnam, de 1955 à 1963, né à Huế dans une famille catholique de mandarins. Premier ministre de Bảo Đại en 1954, il écarte l'empereur par le référendum de 1955, refuse les élections de réunification prévues à Genève et gouverne avec son frère Ngô Đình Nhu. La crise bouddhiste de 1963 précipite sa chute : il est renversé par un coup d'État militaire le 1er novembre, et assassiné le lendemain à Saïgon.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ng%C3%B4_%C4%90%C3%ACnh_Di%E1%BB%87m",
+                  "pays": "VN",
+                  "classement": "Ngô Đình Diệm",
+                  "image": {
+                    "src": "assets/portraits/pan_indochine_diem.jpg",
+                    "legende": "Ngô Đình Diệm, affiche de 1955",
+                    "auteur": "The Embassy of (the State of )Viet-Nam, Washington, D.C., U.S.A.",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Portrait_of_premier_Ng%C3%B4_%C4%90%C3%ACnh_Di%E1%BB%87m_with_the_flag_of_the_State_of_Vietnam_behind.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indochine_souvannaphouma",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1901,
+                  "titre": "Naissance de Souvanna Phouma",
+                  "description": "Souvanna Phouma (1901-1984) est le Premier ministre neutraliste du Laos, à plusieurs reprises entre 1951 et 1975, né à Luang Prabang. Ingénieur formé à Paris, il tente de maintenir la neutralité du pays entre son demi-frère du Pathet Lao et les généraux de droite, au milieu de la guerre du Vietnam, et accepte en 1973 un gouvernement de coalition. Contraint de céder le pouvoir au Pathet Lao en 1975, il meurt à Vientiane en 1984.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Souvanna_Phouma",
+                  "pays": "LA",
+                  "classement": "Souvanna Phouma",
+                  "image": {
+                    "src": "assets/portraits/pan_indochine_souvannaphouma.jpg",
+                    "legende": "Souvanna Phouma, photographie de 1969",
+                    "auteur": "Marion S. Trikosko",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Vice_President_Spiro_Agnew_and_Prince_Souvanna_Phouma_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_indochine_leduan",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1907,
+                  "titre": "Naissance de Lê Duẩn",
+                  "description": "Lê Duẩn (1907-1986) est le chef du Parti communiste vietnamien de 1960 à sa mort, né dans la province de Quảng Trị. Détenu par les Français, puis responsable du Parti dans le Sud, il dirige de fait le pays après la mort de Hô Chi Minh, pousse à l'offensive contre le régime de Saïgon et proclame la réunification en 1976. Son règne voit aussi l'invasion du Cambodge, en 1978, et la guerre avec la Chine, en 1979, et il meurt à Hanoï en 1986.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/L%C3%AA_Du%E1%BA%A9n",
+                  "pays": "VN",
+                  "classement": "Lê Duẩn",
+                  "image": {
+                    "src": "assets/portraits/pan_indochine_leduan.jpg",
+                    "legende": "Lê Duẩn, portrait de 1978",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Le_duan.png"
+                  }
+                },
+                {
+                  "id": "pan_indochine_savangvatthana",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1907,
+                  "titre": "Naissance de Savang Vatthana",
+                  "description": "Savang Vatthana (1907-1978) est le dernier roi du Laos, de 1959 à 1975, né à Luang Prabang, fils de Sisavang Vong. Roi constitutionnel d'un pays déchiré par la guerre civile, il abdique le 2 décembre 1975 devant le Pathet Lao, devenu maître de Vientiane, et il est envoyé dans un camp de rééducation. Il y meurt sans doute en 1978, comme la reine et le prince héritier.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Savang_Vatthana",
+                  "pays": "LA",
+                  "classement": "Savang Vatthana",
+                  "image": {
+                    "src": "assets/portraits/pan_indochine_savangvatthana.jpg",
+                    "legende": "Savang Vatthana, photographie de 1959",
+                    "auteur": "Anefo",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kroonprins_Savang_,_nieuwe_Koning_van_Laos,_Bestanddeelnr_910-7908.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indochine_sonngocthanh",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1908,
+                  "titre": "Naissance de Son Ngoc Thanh",
+                  "description": "Son Ngoc Thanh (1908-1977) est un nationaliste et homme d'État cambodgien, né à Trà Vinh, dans la Cochinchine française, dans une famille khmère. Premier ministre en 1945, après l'éviction des Français par les Japonais, il est exilé en France, revient en 1951, prend le maquis contre le protectorat puis contre la monarchie, et redevient Premier ministre en 1972. Arrêté par le nouveau pouvoir communiste au Sud Vietnam, il meurt en captivité en 1977.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Son_Ngoc_Thanh",
+                  "pays": "KH",
+                  "classement": "Son Ngoc Thanh",
+                  "image": {
+                    "src": "assets/portraits/pan_indochine_sonngocthanh.jpg",
+                    "legende": "Son Ngoc Thanh, photographie de 1936",
+                    "auteur": "Sơn Ngọc Thành",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:S%C6%A1n_Ng%E1%BB%8Dc_Th%C3%A0nh_in_1936_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_indochine_giap",
+                  "axe": "Guerres et résistances",
+                  "date": 1911,
+                  "titre": "Naissance de Võ Nguyên Giáp",
+                  "description": "Võ Nguyên Giáp (1911-2013) est le général qui bat l'armée française à Diên Biên Phu, en 1954, et commande l'armée populaire du Vietnam pendant près de trente ans, né dans la province de Quảng Bình. Ancien professeur d'histoire, il crée l'armée en 1944 sur l'ordre de Hô Chi Minh, puis dirige l'offensive du Têt en 1968 et la campagne de 1975. Ministre de la Défense jusqu'en 1980, il meurt à Hanoï en 2013, à 102 ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/V%C3%B5_Nguy%C3%AAn_Gi%C3%A1p",
+                  "pays": "VN",
+                  "classement": "Võ Nguyên Giáp",
+                  "image": {
+                    "src": "assets/portraits/pan_indochine_giap.jpg",
+                    "legende": "Võ Nguyên Giáp, photographie de 1957",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mr._Vo_Nguyen_Giap.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indochine_baodai",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1913,
+                  "titre": "Naissance de Bảo Đại",
+                  "description": "Bảo Đại (1913-1997) est le dernier empereur du Vietnam, de 1926 à 1945, puis chef de l'État du Vietnam de 1949 à 1955, né à Huế, fils unique de l'empereur Khải Định. Il règne sous la tutelle française, abdique en août 1945 entre les mains du Viêt Minh, puis il est ramené au pouvoir par les Français en 1949. Renversé en 1955 par son Premier ministre Ngô Đình Diệm, il s'exile en France, et il meurt à Paris en 1997.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/B%E1%BA%A3o_%C4%90%E1%BA%A1i",
+                  "pays": "VN",
+                  "classement": "Bảo Đại",
+                  "image": {
+                    "src": "assets/portraits/pan_indochine_baodai.jpg",
+                    "legende": "Bảo Đại, photographie de 1933",
+                    "auteur": "Tang Vinh, Huê",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Emperor_B%E1%BA%A3o_%C4%90%E1%BA%A1i_in_a_European_suit.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indochine_lonnol",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1913,
+                  "titre": "Naissance de Lon Nol",
+                  "description": "Lon Nol (1913-1985) est un général et homme d'État cambodgien, président de la République khmère de 1972 à 1975, né dans la province de Prey Veng. Premier ministre de Sihanouk, il le renverse par un coup d'État le 18 mars 1970, proclame la république et engage l'armée dans la guerre contre les Khmers rouges. Vaincu en 1975, il s'exile aux États-Unis et meurt en 1985 à Fullerton, en Californie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Lon_Nol",
+                  "pays": "KH",
+                  "classement": "Lon Nol",
+                  "image": {
+                    "src": "assets/portraits/pan_indochine_lonnol.jpg",
+                    "legende": "Lon Nol, portrait",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:LonNol_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_indochine_phamduy",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1921,
+                  "titre": "Naissance de Phạm Duy",
+                  "description": "Phạm Duy (1921-2013) est un compositeur et chanteur vietnamien, né à Hanoï, l'un des musiciens les plus populaires du pays au XXe siècle. Il écrit plus d'un millier de chansons, des chants de la résistance contre les Français aux ballades d'amour et aux « chants de la vie » des années 1960, après avoir quitté le Nord en 1954. Installé aux États-Unis après 1975, il revient vivre au Vietnam en 2005, et il meurt à Hô Chi Minh-Ville en 2013.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ph%E1%BA%A1m_Duy",
+                  "pays": "VN",
+                  "classement": "Phạm Duy",
+                  "image": {
+                    "src": "assets/portraits/pan_indochine_phamduy.jpg",
+                    "legende": "Phạm Duy, photographie",
+                    "auteur": "Xiaoao",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Phamduydan.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indochine_sihanouk",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1922,
+                  "titre": "Naissance de Norodom Sihanouk",
+                  "description": "Norodom Sihanouk (1922-2012) est roi du Cambodge de 1941 à 1955, chef de l'État jusqu'en 1970, puis de nouveau roi de 1993 à 2004, né à Phnom Penh. Il obtient l'indépendance de la France en 1953, abdique pour faire de la politique, puis tente de maintenir la neutralité du pays pendant la guerre du Vietnam, avant d'être renversé en 1970. Allié des Khmers rouges en exil, puis rappelé sur le trône après les accords de Paris, il abdique en 2004 et meurt à Pékin en 2012.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Norodom_Sihanouk",
+                  "pays": "KH",
+                  "classement": "Norodom Sihanouk",
+                  "image": {
+                    "src": "assets/portraits/pan_indochine_sihanouk.jpg",
+                    "legende": "Norodom Sihanouk, photographie vers 1952",
+                    "auteur": "Norodom Sihanouk , gifted to Andre Kostelanetz",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Norodom_Sihanouk_(c._1952).jpg"
+                  }
+                },
+                {
+                  "id": "pan_indochine_vancao",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1923,
+                  "titre": "Naissance de Văn Cao",
+                  "description": "Văn Cao (1923-1995) est un compositeur, poète et peintre vietnamien, né à Hải Phòng, auteur de l'hymne national du Vietnam. Il compose en 1944 le « Tiến quân ca », la Marche des soldats, qui devient l'hymne officiel de la République démocratique du Vietnam en 1946, puis, en 1976, celui du Vietnam réunifié. Mis à l'écart dans les années 1950 après l'affaire Nhân Văn-Giai Phẩm, il vit modestement, et il meurt à Hô Chi Minh-Ville en 1995.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/V%C4%83n_Cao",
+                  "pays": "VN",
+                  "classement": "Văn Cao",
+                  "image": {
+                    "src": "assets/portraits/pan_indochine_vancao.jpg",
+                    "legende": "Văn Cao, photographie vers 1946",
+                    "auteur": "Unknown photographer",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Musician_V%C4%83n_Cao.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indochine_polpot",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1925,
+                  "titre": "Naissance de Pol Pot",
+                  "description": "Pol Pot (1925-1998) est le chef des Khmers rouges et le Premier ministre du Kampuchéa démocratique, de 1976 à 1979, né sous le nom de Saloth Sâr dans la province de Kampong Thom. Formé à Paris, il conduit le Parti communiste du Kampuchéa à la victoire, le 17 avril 1975, puis vide les villes et impose un régime qui fait près de deux millions de morts, selon les estimations. Chassé par l'invasion vietnamienne de 1979, il reprend le maquis, est jugé par ses propres hommes en 1997, et il meurt en 1998 près de la frontière thaïlandaise.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Pol_Pot",
+                  "pays": "KH",
+                  "classement": "Pol Pot",
+                  "image": {
+                    "src": "assets/portraits/pan_indochine_polpot.jpg",
+                    "legende": "Pol Pot, photographie de 1978",
+                    "auteur": "Editura Politică",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Pol_Pot_in_1978.png"
+                  }
+                },
+                {
+                  "id": "pan_indochine_thichnhathanh",
+                  "axe": "Littérature et pensée",
+                  "date": 1926,
+                  "titre": "Naissance de Thích Nhất Hạnh",
+                  "description": "Thích Nhất Hạnh (1926-2022) est un moine bouddhiste vietnamien, poète et auteur de plus de cent livres, né à Huế, et l'un des maîtres zen les plus connus en Occident. Exilé à partir de 1966 pour avoir plaidé pour la paix pendant la guerre du Vietnam, il fonde en 1982 en Dordogne le village des Pruniers, et y enseigne la pleine conscience. Revenu au temple de Từ Hiếu en 2018, il y meurt en 2022.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Th%C3%ADch_Nh%E1%BA%A5t_H%E1%BA%A1nh",
+                  "pays": "VN",
+                  "classement": "Thích Nhất Hạnh",
+                  "image": {
+                    "src": "assets/portraits/pan_indochine_thichnhathanh.jpg",
+                    "legende": "Thích Nhất Hạnh, photographie de 2006",
+                    "auteur": "Duc (pixiduc) from Paris, France.",
+                    "licence": "CC BY-SA 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Thich_Nhat_Hanh_12_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_indochine_vannmolyvann",
+                  "axe": "Beaux-arts",
+                  "date": 1926,
+                  "titre": "Naissance de Vann Molyvann",
+                  "description": "Vann Molyvann (1926-2017) est l'architecte du Cambodge moderne, né à Ream, près de Kampot, et formé à l'École des beaux-arts de Paris. Chargé par Sihanouk de bâtir le pays dans les années 1960, il crée le Stade olympique, le Monument de l'indépendance et le Théâtre national, dans un style qui mêle béton moderne et tradition khmère. Chassé par les Khmers rouges, puis revenu au pays, il meurt à Siem Reap en 2017.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Vann_Molyvann",
+                  "pays": "KH",
+                  "classement": "Vann Molyvann",
+                  "image": {
+                    "src": "assets/portraits/pan_indochine_vannmolyvann.jpg",
+                    "legende": "Vann Molyvann, photographie de 2022",
+                    "auteur": "Achariyeak",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Vann_Molyvann.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indochine_vangpao",
+                  "axe": "Guerres et résistances",
+                  "date": 1929,
+                  "titre": "Naissance de Vang Pao",
+                  "description": "Vang Pao (1929-2011) est un général laotien d'origine hmong, né à Xieng Khouang. Formé par l'armée française, il devient le premier général hmong de l'armée royale laotienne et commande l'armée secrète que la CIA arme contre le Pathet Lao et les Nord-Vietnamiens pendant la guerre du Vietnam. Exilé aux États-Unis après 1975, où il devient le chef de la communauté hmong, il meurt à Clovis, en Californie, en 2011.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Vang_Pao",
+                  "pays": "LA",
+                  "classement": "Vang Pao",
+                  "image": {
+                    "src": "assets/portraits/pan_indochine_vangpao.jpg",
+                    "legende": "Vang Pao (à droite) en 1960, à Nong Het, avec le conseiller américain Jack Mathews",
+                    "auteur": "Jack Mathews",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:LaosTraining.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indochine_sinnsisamouth",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1933,
+                  "titre": "Naissance de Sinn Sisamouth",
+                  "description": "Sinn Sisamouth (1933-1976) est le chanteur et compositeur le plus célèbre du Cambodge, né dans la province de Stung Treng et surnommé le « roi de la musique khmère ». Il mêle chants traditionnels, rock, jazz et rythmes latins, écrit et enregistre des centaines de chansons dans les années 1960, et chante en duo avec Ros Serey Sothea. Son sort sous les Khmers rouges reste mal connu : il meurt en 1976, sans doute exécuté.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sinn_Sisamouth",
+                  "pays": "KH",
+                  "classement": "Sinn Sisamouth",
+                  "image": {
+                    "src": "assets/portraits/pan_indochine_sinnsisamouth.jpg",
+                    "legende": "Sinn Sisamouth, photographie de 1965",
+                    "auteur": "United States Information Agency",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Sinn_Sisamouth_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_indochine_vothisau",
+                  "axe": "Guerres et résistances",
+                  "date": 1933,
+                  "titre": "Naissance de Võ Thị Sáu",
+                  "description": "Võ Thị Sáu (1933-1952) est une jeune résistante vietnamienne, née dans la province de Bà Rịa, entrée dans le Viêt Minh à 14 ans. Arrêtée après avoir lancé des grenades contre des soldats français et leurs partisans, elle est condamnée à mort malgré son âge et exécutée le 23 janvier 1952 sur l'île de Côn Đảo, à 19 ans. Elle est devenue une héroïne nationale, et sa tombe est un lieu de pèlerinage.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/V%C3%B5_Th%E1%BB%8B_S%C3%A1u",
+                  "pays": "VN",
+                  "classement": "Võ Thị Sáu",
+                  "image": {
+                    "src": "assets/portraits/pan_indochine_vothisau.jpg",
+                    "legende": "Võ Thị Sáu, portrait",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Portrait_of_V%C3%B5_Th%E1%BB%8B_S%C3%A1u.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indochine_haingngor",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1940,
+                  "titre": "Naissance de Haing Ngor",
+                  "description": "Haing Ngor (1940-1996) est un médecin et acteur cambodgien, né dans la province de Takéo, récompensé par l'Oscar du meilleur second rôle en 1985 pour « La Déchirure ». Rescapé des Khmers rouges, sous lesquels sa femme meurt en couches, il s'exile aux États-Unis en 1980 et incarne à l'écran Dith Pran, qu'il avait connu. Il raconte son histoire dans « Une odyssée cambodgienne », et il est assassiné à Los Angeles en 1996.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Haing_S._Ngor",
+                  "pays": "KH",
+                  "classement": "Ngor, Haing",
+                  "image": {
+                    "src": "assets/portraits/pan_indochine_haingngor.jpg",
+                    "legende": "Haing Ngor, photographie de 1986",
+                    "auteur": "Larry Bessel, Los Angeles Times",
+                    "licence": "CC BY 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Haing_S._Ngor,_1986.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indochine_dangthuytram",
+                  "axe": "Littérature et pensée",
+                  "date": 1942,
+                  "titre": "Naissance de Đặng Thùy Trâm",
+                  "description": "Đặng Thùy Trâm (1942-1970) est une jeune médecin vietnamienne, née à Huế dans une famille de médecins, et l'auteure d'un journal de guerre. Volontaire en 1966 pour servir dans un hôpital de campagne de la province de Quảng Ngãi, elle y soigne des blessés et y tient son journal, jusqu'à sa mort au combat, le 22 juin 1970, à 27 ans. Ce journal, retrouvé par un officier américain, est publié en 2005 et devient un best-seller international.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/%C4%90%E1%BA%B7ng_Th%C3%B9y_Tr%C3%A2m",
+                  "pays": "VN",
+                  "classement": "Đặng Thùy Trâm",
+                  "image": {
+                    "src": "assets/portraits/pan_indochine_dangthuytram.jpg",
+                    "legende": "Đặng Thùy Trâm, statue",
+                    "auteur": "Thái Nhi at Vietnamese Wikipedia",
+                    "licence": "CC BY 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Dang_Thuy_Tram.jpg"
+                  }
+                },
+                {
+                  "id": "pan_indochine_vannnath",
+                  "axe": "Beaux-arts",
+                  "date": 1946,
+                  "titre": "Naissance de Vann Nath",
+                  "description": "Vann Nath (1946-2011) est un peintre cambodgien, né dans la province de Battambang, rescapé de la prison de Tuol Sleng, à Phnom Penh. Détenu en 1977 parce qu'il savait peindre, il survit en réalisant des portraits de Pol Pot pour ses geôliers, et il est l'un des sept survivants de cette prison, où ont péri plus de douze mille détenus. Après 1979, il peint ses souvenirs, il témoigne au procès de Duch, et il meurt à Phnom Penh en 2011.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Vann_Nath",
+                  "pays": "KH",
+                  "classement": "Vann Nath",
+                  "image": {
+                    "src": "assets/portraits/pan_indochine_vannnath.jpg",
+                    "legende": "Vann Nath, photographie de 2010",
+                    "auteur": "Extraordinary Chambers in the Courts of Cambodia",
+                    "licence": "CC BY 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Distribution_of_the_%22Duch%22-verdict_(5).jpg"
+                  }
+                }
+              ],
+              "axeOrder": [
+                "Chefs d'État et dirigeants",
+                "Guerres et résistances",
+                "Littérature et pensée",
+                "Beaux-arts",
+                "Musique, spectacle et sport"
+              ],
+              "essentiel": [
+                "pan_indochine_suryavarman2",
+                "pan_indochine_jayavarman7",
+                "pan_indochine_tranhungdao",
+                "pan_indochine_nguyendu",
+                "pan_indochine_hochiminh",
+                "pan_indochine_giap",
+                "pan_indochine_sihanouk",
+                "pan_indochine_polpot",
+                "pan_indochine_thichnhathanh"
               ]
             }
           ]

@@ -3,6 +3,8 @@
 > **État** : le thème `pan_malais` est construit (32 figures ; voir « Un bloc : le monde malais » dans `docs/personnages-illustres.md`). Ce fichier garde la recherche préalable, qui a précédé la liste finale (`scripts/pantheon/malais.json`), et une fiche en attente de portrait. Pour chaque candidat disparu, on a cherché l'article de Wikipédia en français (lien interlangue de la page anglaise). Les portraits restent à chercher.
 > Aucun doublon avec les panthéons existants (Raffles, Tan Kah Kee, Saloma ne sont dans aucun).
 
+> **Intégré** : la fiche de Fernando Sylvan est dans `malais.json`, avec un photogramme de 1969 (voir `docs/personnages-illustres.md`).
+
 ## Avec article en français (37)
 
 | Pays | Figure | Titre fr.wikipedia |

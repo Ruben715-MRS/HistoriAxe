@@ -63,7 +63,7 @@ pantheon.themes.forEach(theme => theme.events.forEach(evt => {
 const byTitle = titre => entries.find(e => e.evt.titre === titre);
 
 test('chaque figure a un nom de classement qui commence par une lettre', () => {
-    assert.equal(entries.length, 3202);
+    assert.equal(entries.length, 3280);
     entries.forEach(e => {
         assert.ok(e.evt.classement, `${e.evt.id} : pas de nom de classement`);
         assert.notEqual(galleryInitial(e.classement), '#', `${e.evt.id} : « ${e.classement} » ne commence pas par une lettre`);
@@ -78,6 +78,7 @@ test('le tri par nom de famille range Hugo à H, de Gaulle à G, Louis XIV à L 
     assert.equal(initiale('Naissance du Caravage'), 'C');
     assert.equal(initiale('Naissance de Ludwig van Beethoven'), 'B');
     assert.equal(initiale('Naissance de Gabriel García Márquez'), 'G');
+    assert.equal(initiale('Naissance de Đặng Thùy Trâm'), 'D');   // « Đ » ne se décompose pas : galleryNormalize le replie sur « D »
     // Le tri alphabétique, lui, suit le nom tel qu'on l'écrit : Hugo à V.
     assert.equal(galleryInitial(byTitle('Naissance de Victor Hugo').sortName), 'V');
     // Une initiale accentuée se range sous sa lettre.

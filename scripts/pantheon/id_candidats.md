@@ -4,6 +4,8 @@
 > qui l'a précédé — la liste finale est `scripts/pantheon/id.json` — et, ci-dessous, la **fiche rédigée dont l'image manque**. Les tableaux plus bas sont ceux de la
 > validation : ils comptent des figures que la règle de l'article français a ensuite écartées (voir la documentation).
 
+> **Intégré** : la fiche de Pramoedya est dans `id.json` (image non libre acceptée par l'auteur du projet, voir `docs/personnages-illustres.md`).
+
 ## Fiche rédigée, portrait non téléchargé
 
 Une figure a sa fiche écrite et son fichier Commons choisi (licence relevée sur la page du fichier : domaine public), mais le téléchargement de l'image échoue : Wikimedia répond 429

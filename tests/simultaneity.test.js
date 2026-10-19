@@ -462,6 +462,17 @@ test('« Grandes figures de Malaisie, de Singapour, de Brunei et du Timor orient
     verifierPantheonDeBloc('pan_malais', 43, 4);
 });
 
+test('« Grandes figures du Vietnam, du Cambodge et du Laos » : chaque ancre porte le pays de son événement, et la session se joue', () => {
+    // Trois pays : le Laos (7 figures) et le Cambodge (12) ne doivent pas disparaître derrière le Vietnam (19)
+    // parmi les ancres.
+    verifierPantheonDeBloc('pan_indochine', 47, 3);
+});
+
+test('« Grandes figures de Thaïlande et de Birmanie » : chaque ancre porte le pays de son événement, et la session se joue', () => {
+    // Deux pays : la Birmanie (16 figures) ne doit pas disparaître derrière la Thaïlande (21) parmi les ancres.
+    verifierPantheonDeBloc('pan_thai', 53, 2);
+});
+
 test('« Grandes figures d’Asie centrale » : chaque ancre porte le pays de son événement, et la session se joue', () => {
     // Six pays, dont deux (le Turkménistan, le Tadjikistan) n'ont que quelques figures : le
     // Kazakhstan, l'Afghanistan et l'Ouzbékistan ne doivent pas les faire disparaître parmi les ancres.

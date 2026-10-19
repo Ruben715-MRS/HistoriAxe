@@ -11,7 +11,7 @@ ne posent pas la même question :
 | | Un thème, c'est | Une date, c'est | On le joue par |
 |---|---|---|---|
 | **Biographies** | une vie (360 thèmes, en 12 domaines) | une étape de cette vie | étape de la vie |
-| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Turquie, le Japon, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Indonésie, le monde malais, les Philippines) | la naissance d'un personnage | domaine |
+| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Turquie, le Japon, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Indonésie, le monde malais, les Philippines, le Vietnam-Cambodge-Laos, la Thaïlande et la Birmanie) | la naissance d'un personnage | domaine |
 
 Le déplacement ne coûte aucune migration : les 360 thèmes gardent leurs
 identifiants, et rien de ce que le joueur a sauvegardé (favoris, révision,
@@ -2121,17 +2121,16 @@ Croatie 25, Bulgarie 17, Albanie 11, Bosnie-Herzégovine 7, Moldavie 6, Macédoi
 
 ### Un pays à part : l'Indonésie
 
-`pan_id`, « Grandes figures d'Indonésie » (code `id`, pays) : **58 personnages**, d'Airlangga (vers 1002) à Munir Said Thalib (1965). Par axe : 21 Chefs d'État et
-dirigeants, 14 Littérature et pensée, 10 Guerres et résistances, 8 Musique, spectacle et sport, 3 Sciences, techniques et innovation, 2 Beaux-arts ; 10 ⭐ et
-aucune biographie liée. 58 portraits (1,5 Mo) : 44 du domaine public, 2 CC0, 1 CC BY 4.0, 5 CC BY-SA 3.0, 4 CC BY-SA 3.0 NL et 2 CC BY-SA 4.0. Sept figures sont nées avant 1800, quinze
+`pan_id`, « Grandes figures d'Indonésie » (code `id`, pays) : **59 personnages**, d'Airlangga (vers 1002) à Munir Said Thalib (1965). Par axe : 21 Chefs d'État et
+dirigeants, 15 Littérature et pensée, 10 Guerres et résistances, 8 Musique, spectacle et sport, 3 Sciences, techniques et innovation, 2 Beaux-arts ; 11 ⭐ et
+aucune biographie liée. 59 portraits : 44 du domaine public, 2 CC0, 1 CC BY 4.0, 5 CC BY-SA 3.0, 4 CC BY-SA 3.0 NL, 2 CC BY-SA 4.0 et 1 image non libre (voir plus bas). Sept figures sont nées avant 1800, quinze
 entre 1800 et 1899, trente-six depuis 1900 : le thème est celui de la naissance de la nation, des fondateurs de Budi Utomo et du Sarekat Islam aux
 ministres de la République. Les mots-clés portent le pays et ses adjectifs, les grandes îles (Java, Sumatra, Bali, Sulawesi, Bornéo), les villes
 (Jakarta, Batavia, Surabaya, Yogyakarta, Bandung), Aceh, les royaumes (Majapahit, Mataram), les Indes néerlandaises, le Pancasila et Borobudur.
 
 - **Un pays, pas un bloc.** `pan_id`, aucun champ `pays` — aucun invité d'un autre État — et « Pendant ce temps, ailleurs… » le compte comme `thm_id`,
   l'« Histoire de l'Indonésie ». Le thème se range par « Indonésie », entre la Grèce et l'Iran. Il n'est qu'un des thèmes prévus pour l'Asie du Sud-Est :
-  la Malaisie, Singapour, Brunei et le Timor oriental, puis l'Indochine, la Thaïlande et la Birmanie attendent chacun leur tour (voir « Ce qui
-  n'est pas fait »). Raffles n'est donc pas ici : il revient au futur bloc malais, comme le décide la règle « celui qui l'honore le plus ».
+  la Malaisie, Singapour, Brunei et le Timor oriental, les Philippines, le Vietnam-Cambodge-Laos puis la Thaïlande et la Birmanie ont leur propre thème (voir « Un bloc : le monde malais »). Raffles n'est donc pas ici : il revient au futur bloc malais, comme le décide la règle « celui qui l'honore le plus ».
 - **Une liste que la règle de l'article français a réduite de moitié.** 114 candidats avaient été examinés, 73 retenus après les règles sur les vivants et les
   images ; vingt et un d'entre eux n'ont **aucun article sur Wikipédia en français** et sont écartés, comme ailleurs : Raden Wijaya (le fondateur de
   Majapahit n'a qu'une entrée dans l'article « Wijaya »), Mohammad Husni Thamrin, Soepomo, Imam Bonjol, Teuku Umar, Ahmad Yani, Pangeran Antasari,
@@ -2163,10 +2162,11 @@ ministres de la République. Les mots-clés portent le pays et ses adjectifs, le
   qu'il ne vérifie pas. La plupart sont des œuvres officielles (portraits ministériels, billets, timbres) ou des photographies d'agences anciennes (IPPHOS, archives nationales), que
   Commons étiquette « US ? » : c'est le cas qui a coûté huit figures à l'Amérique hispanique. **Décision prise** : accepter les images d'origine gouvernementale ou d'avant 1946,
   en gardant la liste ici. Les « US oui » relevés sont Diponegoro, Douwes Dekker, Kartini, Hatta, Ali Sadikin, Leimena, Mochtar Kusumaatmadja, Airlangga et Sultan Agung.
-- **Une fiche rédigée en attente : Pramoedya Ananta Toer** (⭐), dans `scripts/pantheon/id_candidats.md`. Son portrait libre existe (une photographie de 1954, domaine
-  public) mais Wikimedia répond 429 à tous les téléchargements de ce fichier depuis cet environnement ; le texte de la fiche est prêt. Pour le réintégrer : recopier l'objet dans
-  `personnages` de `scripts/pantheon/id.json`, lancer `python3 scripts/fetch_portraits.py id --only pramoedya`, puis `python3 scripts/build_pantheon.py id`, `npm run build:pack`
-  et les compteurs des tests (3 131 figures, 105 portraits à nom visible) et de `js/i18n.js`.
+- **Une exception assumée : l'image non libre de Pramoedya Ananta Toer** (⭐). Son portrait libre (une photographie de 1954) existe sur Commons, mais Wikimedia répondait 429 à tout
+  téléchargement de ce fichier depuis cet environnement. Sur décision de l'auteur du projet, il a donc l'image qui laisse le plus de libertés : « Pram semasa muda », la photographie de
+  jeunesse téléversée sur la Wikipédia en indonésien (`id.wikipedia.org/wiki/Berkas:Pram_muda.JPG`) sous le modèle des images promotionnelles, source d'origine
+  `lecturer.ukdw.ac.id`. Sa licence s'écrit « Image non libre » dans les données, `image.source` renvoie à cette page, `fetch_portraits.py` l'ignore et le test de schéma accepte cette
+  exception. **À remplacer dès que le fichier libre se télécharge** (`Pramoedya Ananta Toer, Pekan Buku Indonesia 1954, p214.jpg`), ou à faire valider.
 - **Six portraits récupérés par un chemin détourné.** Suharto, Usmar Ismail, Titiek Puspa, Sumitro, Affandi et Munir ont été téléchargés par `Special:FilePath` (miniature de 330
   ou 500 pixels, ou original), faute de pouvoir passer par `fetch_portraits.py`, que Wikimedia bloquait ; la licence, l'auteur et la date ont été lus par le script sur la page de chaque fichier,
   comme d'habitude. Munir, dont la seule image trouvée d'abord était une photographie de groupe, a une photographie de jeunesse tirée de l'album familial, dont l'auteur n'est pas nommé sur Commons
@@ -2220,10 +2220,10 @@ l'apartheid, l'ANC, Rivonia, Sharpeville, Robben Island et la « nation arc-en-c
 ### Un bloc : le monde malais (Malaisie, Singapour, Brunei et Timor oriental)
 
 `pan_malais`, « Grandes figures de Malaisie, de Singapour, de Brunei et du Timor oriental » (code `malais`, bloc ; rangé sous « Malaisie, Singapour, Brunei et Timor oriental »,
-entre le Maghreb et la Nouvelle-Zélande) : **32 personnages de quatre pays** — Malaisie 13, Singapour 13, Brunei 4, Timor oriental 2 — de Thomas Stamford Raffles (1781) à Yasmin
-Ahmad (1958). Par axe : 22 Chefs d'État et dirigeants, 3 Musique, spectacle et sport, 2 Littérature et pensée, 2 Guerres et résistances, 2 Sciences, techniques et innovation,
-1 Beaux-arts ; 7 ⭐ et aucune biographie liée. 32 portraits (0,8 Mo) : 19 du domaine public, 2 CC0, 3 CC BY 2.0, 3 CC BY-SA 3.0 et 5 CC BY-SA 4.0. Une figure est née avant 1800, cinq
-entre 1800 et 1899, vingt-six depuis 1900. **C'est le plus petit et le plus politique des panthéons** : les deux tiers des figures sont des chefs d'État, rois ou chefs de gouvernement.
+entre le Maghreb et la Nouvelle-Zélande) : **33 personnages de quatre pays** — Malaisie 13, Singapour 13, Brunei 4, Timor oriental 3 — de Thomas Stamford Raffles (1781) à Yasmin
+Ahmad (1958). Par axe : 22 Chefs d'État et dirigeants, 3 Musique, spectacle et sport, 3 Littérature et pensée, 2 Guerres et résistances, 2 Sciences, techniques et innovation,
+1 Beaux-arts ; 7 ⭐ et aucune biographie liée. 33 portraits : 20 du domaine public, 2 CC0, 3 CC BY 2.0, 3 CC BY-SA 3.0 et 5 CC BY-SA 4.0. Une figure est née avant 1800, cinq
+entre 1800 et 1899, vingt-sept depuis 1900. **C'est le plus petit et le plus politique des panthéons** : les deux tiers des figures sont des chefs d'État, rois ou chefs de gouvernement.
 Les mots-clés portent les quatre pays et leurs adjectifs, les villes et États (Kuala Lumpur, Penang, Malacca, Johor, Kedah, Sabah, Sarawak, Dili, Bandar Seri Begawan), les
 Établissements des détroits, Raffles, Merdeka, le sultanat, les Peranakan.
 
@@ -2231,11 +2231,11 @@ Les mots-clés portent les quatre pays et leurs adjectifs, les villes et États 
   La liste est sortie de Wikidata, qui donne les personnes disparues de chaque pays, classées par nombre de langues, et des catégories de Wikipédia en français, et non d'une liste
   écrite de mémoire : 104 candidats ont été examinés (avec les Philippines, qui ont leur propre thème), 52 d'entre eux dans ces quatre pays. Presque tous les écrivains, artistes
   et savants malaisiens ou singapouriens n'ont **aucun article en français**, ou aucun portrait libre, et sont écartés (voir plus bas).
-- **Plus de 40 % pour deux pays.** La Malaisie et Singapour pèsent chacune 13 figures sur 32, soit 41 % : la source déclare `partMaxPays` à 0,45, un choix écrit. Le Timor oriental, avec deux
-  figures, est le plus mince ; Brunei en a quatre, tous des sultans, faute d'autres personnalités ayant à la fois un article français et une image libre.
+- **Près de 40 % pour deux pays.** La Malaisie et Singapour pèsent chacune 13 figures sur 33, soit 39 % : la source déclare `partMaxPays` à 0,45, un choix écrit avant l'arrivée de Sylvan. Le Timor oriental, avec
+  trois figures, est le plus mince ; Brunei en a quatre, tous des sultans, faute d'autres personnalités ayant à la fois un article français et une image libre.
 - **Raffles et le Timor oriental, deux choix à discuter.** Raffles, britannique né en mer au large de la Jamaïque, est ici parce que Singapour l'honore et que le panthéon du Royaume-Uni
   ne l'a pas : c'est la règle « celui qui l'honore le plus ». Le Timor oriental, lusophone et occupé par l'Indonésie de 1975 à 1999, n'a pas vraiment sa place dans un « monde malais » :
-  il y est rangé faute d'un bloc qui lui convienne mieux, avec Nicolau Lobato et Francisco Xavier do Amaral, les deux dirigeants de l'indépendance de 1975.
+  il y est rangé faute d'un bloc qui lui convienne mieux, avec Nicolau Lobato et Francisco Xavier do Amaral, les deux dirigeants de l'indépendance de 1975, et le poète Fernando Sylvan.
 - **Écartés faute d'article en français** (une quarantaine) : Goh Keng Swee, S. Rajaratnam, Lim Yew Hock, Elizabeth Choy, Lim Boon Keng, Tan Siew Sin, V. T. Sambanthan, Onn Jaafar, Ismail Abdul
   Rahman, Za'ba, Usman Awang, Sudirman Arshad, Chin Peng, Mat Salleh, Tok Janggut, Dato' Bahaman, Syed Sheikh al-Hadi, Ibrahim Hussein, Syed Ahmad Jamal, Lim Chong Eu, Dom Boaventura
   (l'article existe mais l'image n'est pas un portrait), Martinho da Costa Lopes… Leur liste est dans `scripts/pantheon/malais_candidats.md`.
@@ -2244,9 +2244,8 @@ Les mots-clés portent les quatre pays et leurs adjectifs, les villes et États 
   Shah de Perak** n'a que des photographies de cérémonie où l'on ne le distingue pas, et **Tuanku Abdul Rahman**, premier roi de Malaisie, que des clichés de groupe.
 - **Pas de vivants, pas d'entrepreneurs, peu de sportifs.** Mahathir, Anwar Ibrahim, Hassanal Bolkiah, Xanana Gusmão, José Ramos-Horta, Lee Hsien Loong sont dehors ; Mokhtar Dahari, légende du football
   malaisien, aussi (un sportif n'entre que si son nom dépasse le sport).
-- **Une fiche rédigée en attente : Fernando Sylvan** (1917-1993), poète timorais mort au Portugal, dans `scripts/pantheon/malais_candidats.md` : Wikimedia répondait 429 à tout téléchargement de son
-  portrait (une photographie de 1965). Pour le réintégrer, recopier l'objet dans `personnages`, lancer `python3 scripts/fetch_portraits.py malais --only sylvan`, puis `build_pantheon.py malais`,
-  `npm run build:pack` et les compteurs des tests (3 164 figures).
+- **Fernando Sylvan** (1917-1993), poète timorais mort au Portugal, est le dernier arrivé. Sa photographie de 1965 (244 × 340 pixels) restait introuvable, Wikimedia répondant 429 : il est
+  montré par un autre fichier de Commons, un photogramme de 1969 où il discourt lors d'une séance de propagande électorale (domaine public, recadré sur lui, la légende le dit).
 - **Dates et noms.** Les noms à initiales (P. Ramlee, S. R. Nathan, J. B. Jeyaretnam) sont écrits en toutes lettres (Puteh Ramlee, Sellapan Ramanathan, Joshua Benjamin Jeyaretnam) : le découpage en
   phrases du script prend un point suivi d'une majuscule pour une fin de phrase. Fuad Stephens redevient ministre en chef de Sabah quelques semaines avant sa mort dans l'accident du « Double Six »
   (6 juin 1976). Saloma, née à Singapour, est rangée en Malaisie, où elle a fait carrière avec P. Ramlee.
@@ -2254,8 +2253,8 @@ Les mots-clés portent les quatre pays et leurs adjectifs, les villes et États 
   Chen, la seule peintre, est aux Beaux-arts ; Lim Bo Seng (résistant) et Nicolau Lobato (chef de la résistance timoraise) sont aux Guerres et résistances ; Ungku Abdul Aziz (économiste) et Shahnon Ahmad
   sont avec la pensée et les lettres.
 - **Des portraits souvent indirects**, et les légendes le disent : un tableau (Raffles, par George Francis Joseph), un autoportrait photographié dans son cadre (Georgette Chen), un timbre du Timor
-  oriental (Lobato, `nomVisible`, le nom étant imprimé dans l'image) et une photographie de film (Puteh Ramlee). Six sont recadrés dans une image plus large : Puteh Ramlee (à gauche d'un
-  couple), Shahnon Ahmad, Ong Teng Cheong, Jeyaretnam (à la tribune), Georgette Chen (le tableau dans son cadre) et Amaral (dans une foule).
+  oriental (Lobato, `nomVisible`, le nom étant imprimé dans l'image) et une photographie de film (Puteh Ramlee). Sept sont recadrés dans une image plus large : Puteh Ramlee (à gauche d'un
+  couple), Shahnon Ahmad, Ong Teng Cheong, Jeyaretnam (à la tribune), Georgette Chen (le tableau dans son cadre), Amaral (dans une foule) et Sylvan (à la tribune).
 - **Statut américain des images : à relire.** Dix-neuf portraits sont du « domaine public », la plupart des photographies d'agence ou de presse anciennes ou des portraits officiels (Tun Abdul Razak,
   Tunku Abdul Rahman, les sultans de Brunei). Le script lit la licence que Commons déclare, non le statut américain, qui n'a pas été vérifié image par image ; comme pour l'Indonésie, la décision est
   d'accepter les images d'origine gouvernementale ou d'avant 1946, et la liste des « ? » est à relire.
@@ -2281,6 +2280,70 @@ Bonifacio et Rizal.
   une photographie de scène (Josefa Llanes Escoda, recadrée sur son visage), un portrait en plan large recadré (José Rizal, Sergio Osmeña).
 - **Statut américain des images** : même décision que pour l'Indonésie (images d'origine gouvernementale ou d'avant 1946 acceptées) ; Macapagal garde « auteur inconnu ».
 - **Géolocalisation** : aucune figure n'est placée sur l'Atlas.
+
+### Un bloc : le Vietnam, le Cambodge et le Laos (l'ancienne Indochine)
+
+`pan_indochine`, « Grandes figures du Vietnam, du Cambodge et du Laos » (code `indochine`, bloc ; rangé sous « Vietnam, Cambodge et Laos », après la Turquie, en dernier) : **38 personnages
+de trois pays** — Vietnam 19, Cambodge 12, Laos 7 — de Suryavarman II (vers 1094) à Đặng Thùy Trâm (1942). Par axe : 20 Chefs d'État et dirigeants, 7 Guerres et résistances, 5 Littérature et pensée,
+4 Musique, spectacle et sport, 2 Beaux-arts, aucune figure pour les Sciences (l'axe est absent du thème) ; 9 ⭐ — Hô Chi Minh, Võ Nguyên Giáp, Trần Hưng Đạo, Nguyễn Du, Thích Nhất Hạnh, Jayavarman VII, Suryavarman II,
+Norodom Sihanouk et Pol Pot — et aucune biographie liée. 38 portraits : 26 du domaine public, 1 CC0, 4 CC BY-SA 3.0, 2 CC BY-SA 4.0, 2 CC BY 3.0, 1 CC BY 4.0, 1 CC BY 2.0 et 1 CC BY-SA 2.0. Dix figures
+sont nées avant 1800, huit entre 1800 et 1899, vingt depuis 1900. Les mots-clés portent les trois pays et leurs adjectifs, l'Indochine française, les villes (Hanoï, Saïgon, Huế, Phnom Penh, Vientiane,
+Luang Prabang), Angkor, l'Annam, le Tonkin, la Cochinchine, le Đại Việt, le Lan Xang, le Việt Minh, les Khmers rouges, le Pathet Lao, Diên Biên Phu et la guerre du Vietnam.
+
+- **Pourquoi ce bloc.** L'Indochine est un cadre colonial, mais les trois pays y ont partagé une administration, des guerres (la guerre d'Indochine, puis celle du Vietnam) et des régimes qui se répondent
+  — Sihanouk, Hô Chi Minh et les princes lao. Le bloc se range par « Vietnam, Cambodge et Laos », les pays dans l'ordre de leur poids. Les mots-clés reprennent « Indochine » pour que la recherche trouve ce nom.
+- **Plus de la moitié au Vietnam.** Le Vietnam pèse 19 figures sur 38, soit la moitié exacte : la source déclare `partMaxPays` à 0,55, un choix écrit. Le Laos n'en a que sept, et la culture lao,
+  très peu documentée en français (aucun écrivain, aucun peintre, aucun savant lao n'a à la fois un article français et une image libre), en est absente.
+- **Les rois bâtisseurs et la mémoire des guerres.** Suryavarman II (Angkor Vat) et Jayavarman VII (le Bayon) représentent l'empire khmer ; Fa Ngum et Setthathirath le Lan Xang ; Lê Thánh Tông, Gia Long,
+  Nguyễn Huệ et Trần Hưng Đạo le Vietnam monarchique. Pol Pot, Lon Nol, Ngô Đình Diệm et Bảo Đại sont ici comme figures de l'histoire, non comme des modèles : le panthéon d'une série de jeu retient ceux
+  dont l'histoire se mesure. Les dates incertaines portent « vers » : Jayavarman VII (vers 1122-vers 1218, Wikipédia hésite entre 1122 et 1128 pour la naissance) et Suryavarman II (vers 1094-vers 1150), Hồ Xuân Hương
+  (vers 1772-vers 1822).
+- **Des dates différentes selon les sources.** Fa Ngum : naissance en 1316 d'après toutes les sources, mort en 1374 selon l'article français, en 1393 selon Wikidata (le texte suit Wikipédia en français).
+  Phetsarath est né en 1890 pour Wikidata, en 1891 pour l'article de son frère Souvanna Phouma (le texte suit Wikidata).
+- **Introuvables sous leur nom dans l'index des articles français** (titres exacts testés avec Wikidata) : Nguyễn Trãi, Bùi Xuân Phái, Nguyễn Đình Chiểu, Nam Cao, Tôn Thất Tùng, Nhất Linh, Tố Hữu, Nguyễn Tuân,
+  Tản Đà, Lê Hoàn, Đinh Tiên Hoàng, Chuon Nath, Maha Sila Viravong, Nhouy Abhay : ils n'ont pas été examinés plus avant (un article peut exister sous un autre titre). Khieu Samphan et Pung Chhiv Kek sont vivants.
+  Lý Thái Tổ a un article, mais sa seule image est sous GFDL seule.
+- **Écartés faute d'image libre convenable** : Ros Serey Sothea, Ang Duong (« No restrictions », sans licence reconnue), Souphanouvong et Kaysone Phomvihane (« Attribution » seule, photographies des archives
+  roumaines), Anouvong (une entrée de stade de 229 pixels), Trịnh Công Sơn (le seul fichier est une photographie de la chanteuse Hà Thanh Lịch ; celui qui le montre est une statue éloignée), Lê Phổ (le peintre
+  n'apparaît que minuscule dans une rue), Sisowath Monireth, Tự Đức, Nguyễn Thái Học, Phạm Văn Đồng et Hoàng Hoa Thám (écartés pour équilibrer le Vietnam, l'image existe).
+- **Des portraits souvent indirects**, et les légendes le disent : des statues (Lê Thánh Tông, Trần Hưng Đạo, Nguyễn Du, Jayavarman VII, Fa Ngum, Setthathirath, Đặng Thùy Trâm), un bas-relief (Suryavarman II),
+  une illustration de 1916 (Hồ Xuân Hương, `nomVisible` : le nom est imprimé en haut de l'image), un timbre (Sisavang Vong), une affiche (Ngô Đình Diệm, recadrée), une photographie de 1960 (Vang Pao, à droite,
+  avec un conseiller américain). Six sont recadrés : Diệm, Trần Hưng Đạo, Setthathirath, Bảo Đại, Đặng Thùy Trâm et Vang Pao.
+- **Le « Đ » du classement.** La galerie range les figures par initiale ; « Đ » (Đặng, Đại) ne se décompose pas en « D » + accent comme « É » : `galleryNormalize` le replie sur « D » à la main, comme
+  « Ø » sur « O », et un test le vérifie. Le classement des trois pays garde l'ordre d'écriture (le nom de famille d'abord : Hô Chi Minh, Norodom Sihanouk), voir `KEEP_AS_WRITTEN`.
+- **Statut américain des images : à relire.** Vingt-six portraits sont du « domaine public », dont beaucoup de photographies officielles ou anciennes que Commons étiquette « US ? » (Hô Chi Minh, Ngô Đình Diệm, Văn Cao,
+  Nguyễn An Ninh) ; la décision prise pour l'Indonésie vaut ici (images d'origine gouvernementale ou d'avant 1946). La photographie de Thích Quảng Đức s'immolant (AP, 1963) a été écartée comme portrait :
+  elle montre une mort, non un visage.
+- **Un téléchargement contraint.** Wikimedia refusait (429) la plupart des miniatures : les portraits ont été téléchargés par `Special:FilePath`, avec la licence, l'auteur et la date lus sur la page de chaque fichier.
+
+- **Géolocalisation** : aucune figure n'est placée sur l'Atlas, faute de biographie liée. Les listes de candidats sont dans `scripts/pantheon/indochine_candidats.md`.
+
+### Un bloc : la Thaïlande et la Birmanie
+
+`pan_thai`, « Grandes figures de Thaïlande et de Birmanie » (code `thai`, bloc ; rangé sous « Thaïlande et Birmanie », entre le sous-continent indien et la Turquie) : **38 personnages de deux pays** —
+Thaïlande 22, Birmanie 16 — d'Anawrahta (1014) à Thawan Duchanee (1939). Par axe : 24 Chefs d'État et dirigeants, 8 Littérature et pensée, 4 Guerres et résistances,
+1 Beaux-arts, 1 Musique, spectacle et sport (l'axe des Sciences est absent) ; 5 ⭐ — Naresuan, Rama V, Rama IX, Bayinnaung et Aung San — et aucune biographie liée. 38 portraits : 26 du domaine public, 3 CC0,
+5 CC BY-SA 3.0, 1 CC BY-SA 3.0 NL, 2 CC BY-SA 4.0 et 1 CC BY 2.0. Onze figures sont nées avant 1800, dix entre 1800 et 1899, dix-sept depuis 1900. Les mots-clés portent les deux pays et leurs adjectifs, le Siam,
+Bangkok, Ayutthaya, Sukhothaï, la dynastie Chakri, Rangoun, Mandalay, Pagan, les Konbaung, les Thakins, le bouddhisme theravada et le luk thung.
+
+- **Pourquoi ces deux pays ensemble.** Le Siam et la Birmanie ont partagé une même tradition bouddhiste theravada et une rivalité de cinq siècles (le sac d'Ayutthaya par Bayinnaung, Naresuan qui libère le Siam, Taksin) :
+  les rois des deux royaumes se répondent. Le bloc se range par « Thaïlande et Birmanie ». `partMaxPays` est déclaré à 0,6 : la Thaïlande pèse 22 figures sur 38, soit 58 %.
+- **Un thème de rois et de politiciens.** Vingt-quatre figures sur 38 sont des souverains ou des chefs de gouvernement ; la culture est maigre (un peintre, un chanteur, des moines et des écrivains), parce que les écrivains
+  et les artistes thaïlandais et birmans n'ont pour la plupart pas d'article en français ou pas de portrait libre exploitable. Le thème est tenu par le règne de Rama V (Chulalongkorn, modernisateur du Siam)
+  et par la génération de l'indépendance birmane (Aung San, U Nu, Ne Win, U Thant).
+- **Les rois thaïlandais portent leur nom dynastique** — Rama IV (Mongkut), Rama V (Chulalongkorn), Rama IX (Bhumibol Adulyadej) — comme leur article en français ; le texte donne le nom d'usage. Le classement les range
+  sous « Rama ». Les Thaïlandais se rangent par leur prénom (le nom de famille date de 1913), les Birmans n'en ont pas : `KEEP_AS_WRITTEN`.
+- **Dates incertaines.** Rama Khamhaeng (vers 1239-vers 1298) : les sources hésitent sur sa naissance (1237, 1239, 1279 pour Wikidata) ; Kulap Saipradit est né en 1905 d'après l'article français et en 1906 pour
+  Wikidata (le texte suit l'article).
+- **Examinés et laissés de côté.** Aung San Suu Kyi, Min Aung Hlaing et les autres vivants sont dehors ; Silpa Bhirasri (sculpteur italo-thaïlandais, « père de l'art moderne thaïlandais ») n'a qu'une image
+  sous licence « FAL », que le projet n'accepte pas ; Pumpuang Duangjan (« reine du luk thung ») n'a qu'une photographie de 199 pixels, rendue en dessin ; Sunthorn Phu n'a qu'une statue de cire ; Ba U n'a qu'une
+  image de 199 × 228 pixels. Mitr Chaibancha, Pone Kingpetch (premier champion du monde thaïlandais de boxe), Luang Wichitwathakan, Seni Pramoj, Ekathotsarot, Prasat Thong, Win Tin, Supayalat, Sirikit (morte en 2025)
+  et plusieurs Premiers ministres thaïlandais ou chefs de junte birmans (Thanom, Kriangsak, Chatichai, Saw Maung, San Yu…) ont des images utilisables mais n'ont pas été retenus pour ne pas alourdir
+  un thème déjà très politique ; ils peuvent entrer plus tard. Les écrivains et artistes birmans, et la plupart des artistes thaïlandais, n'ont pas d'article en français (par exemple Ma Ma Lay).
+- **Des portraits souvent indirects**, et les légendes le disent : statues (Rama Khamhaeng, Naresuan, Thao Suranari, Anawrahta, Bayinnaung, Alaungpaya, Bodawpaya, Maha Bandula), une gravure française du XVIIIe siècle
+  (Narai), des peintures (Taksin, Rama Ier) et une photographie de John Thomson pour Rama IV. Quatre sont recadrés : Rama Ier, Thao Suranari, Suraphol et Mahasi Sayadaw.
+- **Statut américain des images : à relire.** Vingt-six portraits sont du « domaine public », la plupart des photographies de cour ou d'agence anciennes ; même décision que pour l'Indonésie.
+- **Géolocalisation** : aucune figure n'est placée sur l'Atlas, faute de biographie liée. Les listes de candidats sont dans `scripts/pantheon/thai_candidats.md`.
 
 ### Un fichier source par panthéon, un script qui l'écrit dans `data/fr.json`
 
@@ -2624,7 +2687,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
 ### Ce qui n'est pas fait
 
 - **Les autres panthéons** : la France, l'Égypte, les États-Unis, l'Italie, le
-  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Indonésie, le monde malais, les Philippines sont écrits.
+  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Indonésie, le monde malais, les Philippines, le Vietnam-Cambodge-Laos, la Thaïlande et la Birmanie sont écrits.
   Chaque liste de personnages est validée avant la rédaction. Feuille de route, dans l'ordre
   où on les propose (un pays seul quand il a de quoi faire un thème, un bloc sinon) :
   1. **Le Machrek est écrit** (voir « Le cinquième bloc »). Il reste : le portrait des trois
@@ -2636,7 +2699,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
      figures juives (Edmond Amran El Maleh, Habiba Msika) et en a laissé cinq de côté (Cheikh
      Raymond, Reinette l'Oranaise, Salim Halali, Albert Memmi, Abraham Serfaty).
   2. **Pays seuls** : **l'Afrique du Sud** (voir « Un pays à part : l'Afrique du Sud »), **l'Iran** (voir « Un pays à part : l'Iran »), **le Brésil** (qui n'entre pas dans l'Amérique « hispanique » ; voir « Un pays à part : le Brésil »), **la Turquie** (voir « Un pays à part : la Turquie »), **le Japon** (voir « Un pays à part : le Japon ») et **la Russie** (voir « Un pays à part : la Russie ») et **l'Australie** (voir « Un pays à part : l'Australie ») sont écrits.
-  3. **Blocs** : l'Asie du Sud-Est (l'Indonésie est écrite, voir « Un pays à part : l'Indonésie » ; le monde malais est écrit, voir « Un bloc : le monde malais » ; les Philippines sont écrites, voir « Un pays à part : les Philippines » ; restent l'Indochine et la Thaïlande avec la Birmanie), la Mongolie (l'Asie centrale est écrite, voir « Un bloc : l'Asie centrale et
+  3. **Blocs** : l'Asie du Sud-Est (l'Indonésie est écrite, voir « Un pays à part : l'Indonésie » ; le monde malais est écrit, voir « Un bloc : le monde malais » ; les Philippines sont écrites, voir « Un pays à part : les Philippines » ; l'Indochine — Vietnam, Cambodge, Laos — est écrite, voir « Un bloc : le Vietnam, le Cambodge et le Laos » ; la Thaïlande avec la Birmanie est écrite, voir « Un bloc : la Thaïlande et la Birmanie » ; restent le Brunei déjà au bloc malais, la Papouasie-Nouvelle-Guinée et les Mélanésiens), la Mongolie (l'Asie centrale est écrite, voir « Un bloc : l'Asie centrale et
      l'Afghanistan »), le Caucase, la Corée (`KR`/`KP`), l'Afrique de
      l'Ouest, l'Afrique de l'Est et la Corne, l'Afrique australe et l'océan
      Indien (sans l'Afrique du Sud). L'Afrique centrale est écrite (voir « Un bloc : l'Afrique centrale »). « Nouvelle-Zélande et Pacifique » est écrit (voir « Un bloc : la

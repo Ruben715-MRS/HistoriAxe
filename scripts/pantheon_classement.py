@@ -124,6 +124,18 @@ KEEP_AS_WRITTEN = {
     'Yasmin Ahmad', 'Shahnon Ahmad', 'Ungku Abdul Aziz', 'Nik Abdul Aziz Nik Mat', 'Tan Cheng Lock', 'Lee Kuan Yew', 'Yusof Ishak',
     'Wee Kim Wee', 'Ong Teng Cheong', 'Lim Bo Seng', 'Lee Choo Neo', 'Omar Ali Saifuddien III', 'Muhammad Jamalul Alam II',
     'Ahmad Tajuddin', 'Hashim Jalilul Alam Aqamaddin',
+    # Vietnam, Cambodge et Laos : le nom de famille vient en premier au Vietnam, au Cambodge et au Laos (« Hô Chi Minh », « Lê Duẩn »,
+    # « Norodom Sihanouk », « Pol Pot », « Vang Pao »), souverains et prénoms de règne, noms que l'on ne scinde pas.
+    'Hô Chi Minh', 'Lê Thánh Tông', 'Gia Long', 'Ngô Đình Diệm', 'Lê Duẩn', 'Võ Nguyên Giáp', 'Trần Hưng Đạo', 'Nguyễn Huệ', 'Hàm Nghi',
+    'Phan Bội Châu', 'Võ Thị Sáu', 'Nguyễn Du', 'Hồ Xuân Hương', 'Thích Nhất Hạnh', 'Trương Vĩnh Ký', 'Văn Cao', 'Phạm Duy', 'Bảo Đại',
+    'Đặng Thùy Trâm', 'Pol Pot', 'Lon Nol', 'Norodom Sihanouk', 'Sinn Sisamouth', 'Vann Molyvann', 'Vann Nath', 'Son Ngoc Thanh',
+    'Fa Ngum', 'Souvanna Phouma', 'Sisavang Vong', 'Phetsarath Rattanavongsa', 'Savang Vatthana', 'Vang Pao',
+    # Thaïlande et Birmanie : les Thaïlandais se rangent par leur prénom (le nom de famille date de 1913), les Birmans n'ont pas de
+    # nom de famille (« Aung San », « U Nu », « Ne Win », « Mindon Min »), « Rama IV » est un nom de règne.
+    'Rama Khamhaeng', 'Pridi Banomyong', 'Plaek Phibunsongkhram', 'Sarit Thanarat', 'Prem Tinsulanonda', 'Thao Suranari', 'Kukrit Pramoj',
+    'Chit Phumisak', 'Kulap Saipradit', 'Thawan Duchanee', 'Suraphol Sombatcharoen', 'Pumpuang Duangjan', 'Mindon Min', 'Thibaw Min',
+    'Aung San', 'U Nu', 'Ne Win', 'U Thant', 'Saya San', 'Maha Bandula', 'Thakin Kodaw Hmaing', 'Ledi Sayadaw', 'Mahasi Sayadaw',
+    'Ludu Daw Amar',
 }
 
 # Écrits à la main : (nom de la source) → nom de classement.

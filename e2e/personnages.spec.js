@@ -98,7 +98,7 @@ test('Personnages illustres : deux sous-catégories, chacune avec sa note et son
             "Grandes figures d'Égypte", "Grandes figures d'Espagne", 'Grandes figures des États-Unis',
             'Grandes figures de France', 'Grandes figures de Grèce', "Grandes figures d'Indonésie", "Grandes figures d'Iran", "Grandes figures d'Israël", "Grandes figures d'Italie", 'Grandes figures du Japon',
             'Grandes figures du Machrek et de la péninsule Arabique', 'Grandes figures du Maghreb', 'Grandes figures de Malaisie, de Singapour, de Brunei et du Timor oriental', 'Grandes figures de Nouvelle-Zélande et du Pacifique', 'Grandes figures des pays baltes', 'Grandes figures des Philippines', 'Grandes figures du Portugal',
-            'Grandes figures du Royaume-Uni', 'Grandes figures de Russie', 'Grandes figures de Scandinavie', 'Grandes figures du sous-continent indien', 'Grandes figures de Turquie']);
+            'Grandes figures du Royaume-Uni', 'Grandes figures de Russie', 'Grandes figures de Scandinavie', 'Grandes figures du sous-continent indien', 'Grandes figures de Thaïlande et de Birmanie', 'Grandes figures de Turquie', 'Grandes figures du Vietnam, du Cambodge et du Laos']);
 });
 
 test('la fiche d’un personnage montre son portrait, sa légende, son crédit et sa biographie', async ({ page }) => {
@@ -893,7 +893,7 @@ test('l’Indonésie : chacune de ses figures a son portrait, d’Airlangga à T
     await page.locator('#mode-card-discovery').click();
     await expect(page.locator('#screen-game')).toBeVisible();
     const nombre = await page.evaluate(() => getCurrentTheme().events.length);
-    expect(nombre).toBe(58);
+    expect(nombre).toBe(59);
     await expect(page.locator('#timeline .entry')).toHaveCount(nombre);
     await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
 
@@ -1104,7 +1104,7 @@ test('le monde malais : chacune de ses figures a son portrait et son pays, de Ra
     await page.locator('#mode-card-discovery').click();
     await expect(page.locator('#screen-game')).toBeVisible();
     const nombre = await page.evaluate(() => getCurrentTheme().events.length);
-    expect(nombre).toBe(32);
+    expect(nombre).toBe(33);
     await expect(page.locator('#timeline .entry')).toHaveCount(nombre);
     await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
 
@@ -1137,6 +1137,86 @@ test('la recherche — « malaisie », « singapour », « brunei », « timor �
         await page.locator('#theme-search-input').fill(mot);
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: 'Grandes figures de Malaisie, de Singapour, de Brunei et du Timor oriental' });
         await expect(resultat, `« ${mot} » doit mener au panthéon du monde malais`).toHaveCount(1);
+        await expect(resultat.locator('.search-result-path')).toContainText('Personnages illustres › Panthéons');
+    }
+});
+
+test('le Vietnam, le Cambodge et le Laos : chacune de leurs figures a son portrait et son pays, de Trần Hưng Đạo à Đặng Thùy Trâm, et aucune n’a de biographie', async ({ page }) => {
+    await openThemeById(page, 'pan_indochine');
+    await page.locator('#mode-card-discovery').click();
+    await expect(page.locator('#screen-game')).toBeVisible();
+    const nombre = await page.evaluate(() => getCurrentTheme().events.length);
+    expect(nombre).toBe(38);
+    await expect(page.locator('#timeline .entry')).toHaveCount(nombre);
+    await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
+
+    // Un pays du bloc par figure : la fiche dit le pays que le bloc lui donne.
+    const figures = [
+        ['Naissance de Hô Chi Minh', '🇻🇳', /Vi[eê]t ?[Nn]am/],
+        ['Naissance de Norodom Sihanouk', '🇰🇭', /Cambodge/],
+        ['Naissance de Souvanna Phouma', '🇱🇦', /Laos/],
+    ];
+    for (const [titre, drapeau, pays] of figures) {
+        await page.locator('#timeline .entry', { hasText: titre }).click();
+        await expect(page.locator('#modal-details')).toBeVisible();
+        await expect(page.locator('#modal-pays')).toContainText(drapeau);
+        await expect(page.locator('#modal-pays')).toContainText(pays);
+        const portrait = page.locator('#modal-portrait-img');
+        await expect.poll(() => portrait.evaluate(img => img.complete ? img.naturalWidth : 0)).toBe(320);
+        await expect(page.locator('#modal-portrait-caption')).not.toBeEmpty();
+        await page.locator('#modal-details .close-btn').click();
+        await expect(page.locator('#modal-details')).toBeHidden();
+    }
+
+    const avecBiographie = await page.evaluate(() => getCurrentTheme().events.filter(e => e.biographie).length);
+    expect(avecBiographie).toBe(0);
+});
+
+test('la recherche — « vietnam », « cambodge », « laos », « angkor », « hanoi », « indochine » — mène au panthéon du Vietnam, du Cambodge et du Laos', async ({ page }) => {
+    await page.locator('#screen-home').click();
+    for (const mot of ['vietnam', 'vietnamien', 'cambodge', 'khmer', 'laos', 'laotien', 'angkor', 'hanoi', 'saigon', 'indochine', 'mekong', 'vientiane']) {
+        await page.locator('#theme-search-input').fill(mot);
+        const resultat = page.locator('#theme-search-results .search-result-item', { hasText: 'Grandes figures du Vietnam, du Cambodge et du Laos' });
+        await expect(resultat, `« ${mot} » doit mener au panthéon du Vietnam, du Cambodge et du Laos`).toHaveCount(1);
+        await expect(resultat.locator('.search-result-path')).toContainText('Personnages illustres › Panthéons');
+    }
+});
+
+test('la Thaïlande et la Birmanie : chacune de leurs figures a son portrait et son pays, de Rama Khamhaeng à Ludu Daw Amar, et aucune n’a de biographie', async ({ page }) => {
+    await openThemeById(page, 'pan_thai');
+    await page.locator('#mode-card-discovery').click();
+    await expect(page.locator('#screen-game')).toBeVisible();
+    const nombre = await page.evaluate(() => getCurrentTheme().events.length);
+    expect(nombre).toBe(38);
+    await expect(page.locator('#timeline .entry')).toHaveCount(nombre);
+    await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
+
+    const figures = [
+        ['Naissance de Naresuan', '🇹🇭', /Thaïlande/],
+        ['Naissance d\'Aung San', '🇲🇲', /Birmanie|Myanmar/],
+    ];
+    for (const [titre, drapeau, pays] of figures) {
+        await page.locator('#timeline .entry', { hasText: titre }).click();
+        await expect(page.locator('#modal-details')).toBeVisible();
+        await expect(page.locator('#modal-pays')).toContainText(drapeau);
+        await expect(page.locator('#modal-pays')).toContainText(pays);
+        const portrait = page.locator('#modal-portrait-img');
+        await expect.poll(() => portrait.evaluate(img => img.complete ? img.naturalWidth : 0)).toBe(320);
+        await expect(page.locator('#modal-portrait-caption')).not.toBeEmpty();
+        await page.locator('#modal-details .close-btn').click();
+        await expect(page.locator('#modal-details')).toBeHidden();
+    }
+
+    const avecBiographie = await page.evaluate(() => getCurrentTheme().events.filter(e => e.biographie).length);
+    expect(avecBiographie).toBe(0);
+});
+
+test('la recherche — « thaïlande », « siam », « bangkok », « birmanie », « rangoun » — mène au panthéon de la Thaïlande et de la Birmanie', async ({ page }) => {
+    await page.locator('#screen-home').click();
+    for (const mot of ['thailande', 'thailandais', 'siam', 'bangkok', 'ayutthaya', 'birmanie', 'birman', 'myanmar', 'rangoun', 'mandalay']) {
+        await page.locator('#theme-search-input').fill(mot);
+        const resultat = page.locator('#theme-search-results .search-result-item', { hasText: 'Grandes figures de Thaïlande et de Birmanie' });
+        await expect(resultat, `« ${mot} » doit mener au panthéon de la Thaïlande et de la Birmanie`).toHaveCount(1);
         await expect(resultat.locator('.search-result-path')).toContainText('Personnages illustres › Panthéons');
     }
 });
