@@ -11,7 +11,7 @@ ne posent pas la même question :
 | | Un thème, c'est | Une date, c'est | On le joue par |
 |---|---|---|---|
 | **Biographies** | une vie (360 thèmes, en 12 domaines) | une étape de cette vie | étape de la vie |
-| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Turquie, le Japon, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Indonésie, le monde malais, les Philippines, le Vietnam-Cambodge-Laos, la Thaïlande et la Birmanie, la Mongolie) | la naissance d'un personnage | domaine |
+| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Turquie, le Japon, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Indonésie, le monde malais, les Philippines, le Vietnam-Cambodge-Laos, la Thaïlande et la Birmanie, la Mongolie, la Corée) | la naissance d'un personnage | domaine |
 
 Le déplacement ne coûte aucune migration : les 360 thèmes gardent leurs
 identifiants, et rien de ce que le joueur a sauvegardé (favoris, révision,
@@ -2371,6 +2371,32 @@ Mongolie autonome, la révolution de 1921 et celle de 1990, l'Histoire secrète 
 - **Statut américain des images : à relire.** Dix-huit portraits sont du « domaine public », dont des photographies de cour ou d'agence que Commons étiquette « US ? » ; même décision que pour les autres thèmes asiatiques.
 - **Les listes de candidats** sont dans `scripts/pantheon/mn_candidats.md`.
 
+### Un bloc : la Corée (Corée du Sud et Corée du Nord)
+
+`pan_coree`, « Grandes figures de Corée » (code `coree`, bloc ; rangé sous « Corée », entre la Chine et l'Égypte) : **47 personnages de deux pays** — Corée du Sud 41, Corée du Nord 6 — de Gwanggaeto le Grand (374) à Kim Jong-il (1941).
+Par axe : 14 Chefs d'État et dirigeants, 12 Littérature et pensée, 10 Guerres et résistances, 8 Beaux-arts, 2 Musique, spectacle et sport, 1 Sciences, techniques et innovation ; 9 ⭐ — Sejong le Grand, Yi Sun-sin,
+An Jung-geun, Yu Gwan-sun, Yun Dong-ju, Syngman Rhee, Park Chung-hee, Kim Dae-jung et Kim Il-sung — et aucune biographie liée. 47 portraits : 39 du domaine public, 1 CC0, 2 CC BY-SA 3.0, 1 CC BY-SA 2.0, 1 CC BY-SA 2.0 KR,
+1 CC BY-SA 4.0 et 2 CC BY 4.0. Dix-huit figures sont nées avant 1800, douze entre 1800 et 1899, dix-sept depuis 1900. Les mots-clés portent les deux Corées et leurs adjectifs, Séoul, Pyongyang, les dynasties (Joseon, Goryeo,
+Silla, Goguryeo, Baekje), le hangeul, la guerre d'Imjin, la guerre de Corée, le 38e parallèle, le Juche, le Donghak, le Silhak, le mouvement du 1er mars et le gouvernement provisoire.
+
+- **Un bloc, parce que la Corée est une.** Jusqu'en 1945, Joseon et ses royaumes précédents n'ont qu'une histoire : Sejong, Yi Sun-sin ou An Jung-geun appartiennent aux deux États. Le bloc les traite comme les blocs des
+  autres pays divisés et attribue à chaque figure le pays qui l'honore le plus. **Les figures d'avant 1945 sont rangées en Corée du Sud**, sauf celles dont toute la carrière se joue au Nord : Kim Il-sung, Kim Jong-il, Kim Jong-suk,
+  Kim Chaek, Pak Hon-yong et Kim Won-bong, rangés en Corée du Nord. Un choix éditorial discutable, qui pèse sur Gwanggaeto (dont la capitale a été Pyongyang) et les Trois Royaumes. La source déclare `partMaxPays` à 0,9 : la
+  Corée du Nord pèse 13 % du bloc (6 figures sur 47).
+- **Une Corée du Nord mince.** Peu de figures nord-coréennes ont à la fois un article français et une image libre ; les trois dirigeants de la dynastie Kim (Kim Il-sung, Kim Jong-il, Kim Jong-suk) y sont comme figures de
+  l'histoire, non comme des modèles : le panthéon d'une série de jeu retient ceux dont l'histoire se mesure. Cho Man-sik (le « Gandhi coréen », mort probablement en 1950 à Pyongyang) a une image mais n'a pas été retenu : la date de sa mort est incertaine.
+- **Les noms.** Le nom de famille vient en premier en coréen (Park Chung-hee, Kim Il-sung) : le classement les range tels qu'écrits (`KEEP_AS_WRITTEN`), sauf Syngman Rhee et Nam June Paik, dont le nom est écrit à l'occidentale.
+  Kim Jong-il est né en 1941 pour Wikidata (officiellement en 1942) ; Heo Jun en 1537 pour l'article français (1546 pour Wikidata) ; Kim Hong-do est mort « vers 1806 » ; Kim Won-bong est daté « vers 1898-vers 1958 » ;
+  Gwanggaeto (374-413) et Wonhyo (617-686) suivent leur article français.
+- **Écartés faute d'image libre convenable** : Roh Moo-hyun (le seul portrait libre fait 155 pixels ; l'image officielle est sous licence KOGL, que le projet n'accepte pas), Isang Yun (une tombe), Yi Sang (150 pixels), Lee Jong-wook (licence « Attribution » seule), Jang Bogo, Gang Gam-chan, Seo Hui et Heo Nanseolheon (l'image de Wikidata est une photographie générique du sanctuaire de Tongiljeon),
+  Yeonsangun et Gwanghaegun n'ont pas été examinés plus avant. Les portraits officiels de Kim Dae-jung et de Kim Young-sam sont sous KOGL ; on les remplace par une photographie de 2001 (201 × 279 pixels, CC BY 3.0) et une photographie du DoD de 1996.
+- **Des portraits souvent indirects**, et les légendes le disent : des illustrations pour les rois antiques (Gwanggaeto, Munmu, Jeongjo), des peintures de cour (Taejo, Yeongjo, Heo Jun, Choe Je-u), des statues (Yi I, Yi Hwang,
+  Sin Saimdang), un portrait gravé (Yi Sun-sin, sanctuaire de Chungminsa, publié en 1929) et, pour Kim Hong-do et Jeong Seon, l'une de leurs peintures plutôt que leur visage. Deux sont recadrés : Taejo (le haut du buste) et
+  Jeon Bong-jun (porté en palanquin, sur une photographie de groupe).
+- **Un portrait royal de remplacement.** L'image de Wikidata pour Taejo (`King Taejo Yi 02.jpg`, copie de 1872) a perdu son visage ; le thème utilise `King Taejo Yi 01.jpg`, le portrait conservé à Jeonju.
+- **Statut américain des images : à relire.** Trente-neuf portraits sont du « domaine public », beaucoup de photographies officielles ou anciennes que Commons étiquette « US ? » ; même décision que pour les autres thèmes asiatiques.
+- **Les listes de candidats** sont dans `scripts/pantheon/coree_candidats.md`.
+
 ### Un fichier source par panthéon, un script qui l'écrit dans `data/fr.json`
 
 `scripts/pantheon/<code>.json` (`fr`, `hispam`…) est **la seule source de
@@ -2713,7 +2739,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
 ### Ce qui n'est pas fait
 
 - **Les autres panthéons** : la France, l'Égypte, les États-Unis, l'Italie, le
-  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Indonésie, le monde malais, les Philippines, le Vietnam-Cambodge-Laos, la Thaïlande et la Birmanie, la Mongolie sont écrits.
+  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Indonésie, le monde malais, les Philippines, le Vietnam-Cambodge-Laos, la Thaïlande et la Birmanie, la Mongolie, la Corée sont écrits.
   Chaque liste de personnages est validée avant la rédaction. Feuille de route, dans l'ordre
   où on les propose (un pays seul quand il a de quoi faire un thème, un bloc sinon) :
   1. **Le Machrek est écrit** (voir « Le cinquième bloc »). Il reste : le portrait des trois

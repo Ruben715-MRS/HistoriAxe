@@ -2,8 +2,8 @@
   "version": "1.0.0",
   "lang": "fr",
   "name": "Français (Intégral)",
-  "totalThemes": 840,
-  "totalEvents": 24851,
+  "totalThemes": 841,
+  "totalEvents": 24898,
   "categories": [
     {
       "nom": "Culture générale",
@@ -116765,6 +116765,868 @@
                 "pan_cn_yuanlongping",
                 "pan_cn_brucelee",
                 "pan_cn_teresateng"
+              ]
+            },
+            {
+              "id": "pan_coree",
+              "nom": "Grandes figures de Corée",
+              "difficulte": "Intermédiaire",
+              "motsCles": [
+                "Corée",
+                "Coréen",
+                "Coréenne",
+                "Coréens",
+                "Corée du Sud",
+                "Corée du Nord",
+                "Sud-Coréen",
+                "Nord-Coréen",
+                "Séoul",
+                "Pyongyang",
+                "Hanyang",
+                "Gyeongju",
+                "Kaesong",
+                "Busan",
+                "Jeju",
+                "Joseon",
+                "Chosŏn",
+                "Goryeo",
+                "Koryŏ",
+                "Silla",
+                "Goguryeo",
+                "Baekje",
+                "Trois Royaumes",
+                "Hangeul",
+                "Imjin",
+                "Guerre de Corée",
+                "38e parallèle",
+                "Juche",
+                "Donghak",
+                "Silhak",
+                "Mouvement du 1er mars",
+                "Gouvernement provisoire",
+                "Occupation japonaise",
+                "Confucianisme",
+                "Asie orientale"
+              ],
+              "events": [
+                {
+                  "id": "pan_coree_gwanggaeto",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 374,
+                  "titre": "Naissance de Gwanggaeto le Grand",
+                  "description": "Gwanggaeto le Grand (374-413) est le dix-neuvième roi du Goguryeo, de 391 à sa mort, le plus septentrional des Trois Royaumes de Corée. Son nom, « le grand élargisseur de territoire », est un titre posthume qui rend hommage à ses guerres : il prend les forteresses du nord, repousse les Baekje au sud et étend le royaume sur la Mandchourie. Il meurt en 413, et son fils Jangsu lui succède.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Gwanggaeto_le_Grand",
+                  "pays": "KR",
+                  "classement": "Gwanggaeto le Grand",
+                  "image": {
+                    "src": "assets/portraits/pan_coree_gwanggaeto.jpg",
+                    "legende": "Gwanggaeto le Grand, illustration",
+                    "auteur": "Reignsh",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:%EA%B3%A0%EA%B5%AC%EB%A0%A4_19_%EA%B4%91%EA%B0%9C%ED%86%A0%ED%83%9C%EC%99%95_546.jpg"
+                  }
+                },
+                {
+                  "id": "pan_coree_wonhyo",
+                  "axe": "Littérature et pensée",
+                  "date": 617,
+                  "titre": "Naissance de Wonhyo",
+                  "description": "Wonhyo (617-686) est l'un des plus grands penseurs du bouddhisme coréen, moine de Silla né sous le nom de Seol Seo-dang. Auteur de nombreux commentaires, il cherche à unifier les courants du bouddhisme et défend la philosophie de l'« harmonie des disputes », le hwajaeng. Il parcourt le royaume en chantant et en dansant pour populariser ses idées, et il meurt en 686.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Wonhyo",
+                  "pays": "KR",
+                  "classement": "Wonhyo",
+                  "image": {
+                    "src": "assets/portraits/pan_coree_wonhyo.jpg",
+                    "legende": "Wonhyo, portrait",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%EC%9B%90%ED%9A%A8%EB%8C%80%EC%82%AC_%EC%98%81%EC%A0%95.JPG"
+                  }
+                },
+                {
+                  "id": "pan_coree_munmu",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 626,
+                  "titre": "Naissance de Munmu",
+                  "description": "Munmu (626-681) est le trentième roi de Silla, de 661 à sa mort, et l'unificateur de la Corée en 668. Allié de la dynastie Tang, il détruit d'abord le royaume de Baekje, puis celui du Goguryeo, et il repousse ensuite les Tang eux-mêmes de la péninsule. Il fait construire le temple de Gameunsa, et il meurt en 681.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Munmu",
+                  "pays": "KR",
+                  "classement": "Munmu",
+                  "image": {
+                    "src": "assets/portraits/pan_coree_munmu.jpg",
+                    "legende": "Munmu, illustration de 1908",
+                    "auteur": "Original: Jeong Inho Transcription: History Net, National Institute of Korean History",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%EC%B4%88%EB%93%B1%EB%8C%80%ED%95%9C%EC%97%AD%EC%82%AC_%EC%A0%9C2%ED%8E%B8_5.jpg"
+                  }
+                },
+                {
+                  "id": "pan_coree_taejo",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1335,
+                  "titre": "Naissance de Taejo de Joseon",
+                  "description": "Taejo de Joseon (1335-1408) est le fondateur de la dynastie Joseon, né Yi Seong-gye, qui règne sur la Corée de 1392 à 1910. Général du royaume de Goryeo, il fait demi-tour à la frontière de la Chine, au lieu d'attaquer, prend le pouvoir en 1392 et baptise sa dynastie du nom d'un ancien royaume. Il déplace la capitale à Hanyang, l'actuelle Séoul, cède le pouvoir à ses fils, et il meurt en 1408.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Taejo_de_Joseon",
+                  "pays": "KR",
+                  "classement": "Taejo de Joseon",
+                  "image": {
+                    "src": "assets/portraits/pan_coree_taejo.jpg",
+                    "legende": "Taejo de Joseon, portrait royal",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:King_Taejo_Yi_01.jpg"
+                  }
+                },
+                {
+                  "id": "pan_coree_jeongmongju",
+                  "axe": "Littérature et pensée",
+                  "date": 1337,
+                  "titre": "Naissance de Jeong Mong-ju",
+                  "description": "Jeong Mong-ju (1337-1392) est un pionnier du néoconfucianisme à la fin du royaume de Goryeo, né à Yeongcheon. Reçu premier à tous les concours de la fonction publique, il enseigne à l'académie Sungkyunkwan, devient Premier ministre en 1390 et reste fidèle au royaume de Goryeo. Assassiné en 1392 par un fils de Taejo, il est devenu le symbole de la loyauté politique.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jeong_Mong-ju",
+                  "pays": "KR",
+                  "classement": "Jeong Mong-ju",
+                  "image": {
+                    "src": "assets/portraits/pan_coree_jeongmongju.jpg",
+                    "legende": "Jeong Mong-ju, portrait de 1880",
+                    "auteur": "Yi Han-cheol",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jeong_Mong-ju.jpg"
+                  }
+                },
+                {
+                  "id": "pan_coree_sejong",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1397,
+                  "titre": "Naissance de Sejong le Grand",
+                  "description": "Sejong le Grand (1397-1450) est le quatrième roi de la dynastie Joseon, de 1418 à sa mort, né à Hanyang, l'actuelle Séoul. Il fait mettre au point l'alphabet coréen, le hangeul, promulgué en 1446, et entoure de savants un règne marqué par les sciences, l'agriculture, la musique et la justice. Il meurt en 1450, et les Coréens le tiennent pour leur plus grand souverain.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sejong_le_Grand",
+                  "pays": "KR",
+                  "classement": "Sejong le Grand",
+                  "image": {
+                    "src": "assets/portraits/pan_coree_sejong.jpg",
+                    "legende": "Sejong le Grand, portrait",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Portrait_of_King_Sejong_1965.jpg"
+                  }
+                },
+                {
+                  "id": "pan_coree_yihwang",
+                  "axe": "Littérature et pensée",
+                  "date": 1501,
+                  "titre": "Naissance de Yi Hwang",
+                  "description": "Yi Hwang (1501-1570) est l'un des deux grands érudits néoconfucéens de la Corée Joseon, connu sous la plume « Toegye » et fondateur de l'école du Yeongnam. Professeur à Sungkyunkwan, il fonde en 1560 l'école de Dosan, à Andong, et se consacre à l'enseignement et à la méditation. Il meurt en 1570, et son portrait orne les billets de 1 000 wons.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Yi_Hwang",
+                  "pays": "KR",
+                  "classement": "Yi Hwang",
+                  "image": {
+                    "src": "assets/portraits/pan_coree_yihwang.jpg",
+                    "legende": "Yi Hwang, statue",
+                    "auteur": "Integral",
+                    "licence": "CC BY-SA 2.0 KR",
+                    "source": "https://commons.wikimedia.org/wiki/File:Statue_of_Yi_Hwang.jpg"
+                  }
+                },
+                {
+                  "id": "pan_coree_sinsaimdang",
+                  "axe": "Beaux-arts",
+                  "date": 1504,
+                  "titre": "Naissance de Sin Saimdang",
+                  "description": "Sin Saimdang (1504-1551) est une poétesse, peintre et calligraphe coréenne de la dynastie Joseon, née à Gangneung, dans le Gangwon. Surnommée la « Mère sage », elle est regardée comme un modèle des idéaux confucéens et la mère du savant Yi I. Ses peintures de plantes et d'insectes sont les plus célèbres de son temps, et elle meurt en 1551, à Paju.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sin_Saimdang",
+                  "pays": "KR",
+                  "classement": "Sin Saimdang",
+                  "image": {
+                    "src": "assets/portraits/pan_coree_sinsaimdang.jpg",
+                    "legende": "Sin Saimdang, statue à Ojukheon",
+                    "auteur": "Christophe95",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Statue_of_Sin_Saimdang_at_Ojukheon.jpg"
+                  }
+                },
+                {
+                  "id": "pan_coree_yii",
+                  "axe": "Littérature et pensée",
+                  "date": 1536,
+                  "titre": "Naissance de Yi I",
+                  "description": "Yi I (1536-1584) est l'autre grand érudit néoconfucéen de la Corée Joseon, plume « Yulgok », né à Gangneung, fils de Sin Saimdang. Enfant prodige, qui compose des poèmes en chinois à sept ans, il réussit à tous les concours de la fonction publique et défend des réformes de l'administration et de la défense du royaume. Il meurt en 1584, huit ans avant l'invasion japonaise qu'il avait pressentie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Yi_I",
+                  "pays": "KR",
+                  "classement": "Yi I",
+                  "image": {
+                    "src": "assets/portraits/pan_coree_yii.jpg",
+                    "legende": "Yi I, statue",
+                    "auteur": "최광모",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:20151003%EC%B5%9C%EA%B4%91%EB%AA%A8RX10DSC03013.JPG"
+                  }
+                },
+                {
+                  "id": "pan_coree_heojun",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1537,
+                  "titre": "Naissance de Heo Jun",
+                  "description": "Heo Jun (1537-1615) est un médecin coréen de la cour de Joseon, nommé médecin royal à 29 ans. Il écrit le « Dongui Bogam », le « miroir de la médecine orientale », classique de la médecine traditionnelle coréenne, achevé en 1610. L'ouvrage se répand en Chine, au Japon et au Vietnam, et il meurt en 1615.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Heo_Jun",
+                  "pays": "KR",
+                  "classement": "Heo Jun",
+                  "image": {
+                    "src": "assets/portraits/pan_coree_heojun.jpg",
+                    "legende": "Heo Jun, portrait",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Portrait_of_Heo_Jun.jpg"
+                  }
+                },
+                {
+                  "id": "pan_coree_yisunsin",
+                  "axe": "Guerres et résistances",
+                  "date": 1545,
+                  "titre": "Naissance de Yi Sun-sin",
+                  "description": "Yi Sun-sin (1545-1598) est l'amiral coréen de la guerre Imjin, né à Séoul, regardé comme un héros national, l'égal de Nelson en Grande-Bretagne. Il bat plusieurs fois la flotte japonaise, avec ses « navires-tortues » cuirassés, et remporte en 1597 la bataille de Myeongnyang, avec treize navires contre plus de cent trente. Il est tué en 1598 à la bataille de Noryang, qui conclut la guerre.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Yi_Sun-sin",
+                  "pays": "KR",
+                  "classement": "Yi Sun-sin",
+                  "image": {
+                    "src": "assets/portraits/pan_coree_yisunsin.jpg",
+                    "legende": "Yi Sun-sin, portrait du sanctuaire de Chungminsa, 1929",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Yi_Sun-sin,_Chungminsa,_The_Chosun_Ilbo_1929.jpg"
+                  }
+                },
+                {
+                  "id": "pan_coree_jeongseon",
+                  "axe": "Beaux-arts",
+                  "date": 1676,
+                  "titre": "Naissance de Jeong Seon",
+                  "description": "Jeong Seon (1676-1759) est un peintre paysagiste coréen de la dynastie Joseon, plume « Gyeomjae ». Il quitte souvent son atelier pour peindre les paysages tels qu'il les voit, et fonde le style du « vrai paysage », le jingyeong, qui rompt avec les modèles chinois. Il inspire de nombreux artistes, et il meurt en 1759.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jeong_Seon",
+                  "pays": "KR",
+                  "classement": "Jeong Seon",
+                  "image": {
+                    "src": "assets/portraits/pan_coree_jeongseon.jpg",
+                    "legende": "Jeong Seon, une de ses peintures",
+                    "auteur": "Jeong Seon (1676–1759)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jeong_Seon-Taking_a_reast_after_reading_books-1.jpg"
+                  }
+                },
+                {
+                  "id": "pan_coree_yeongjo",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1694,
+                  "titre": "Naissance de Yeongjo",
+                  "description": "Yeongjo (1694-1776) est le vingt-et-unième roi de la dynastie Joseon, né à Séoul, et celui qui a régné le plus longtemps, de 1724 à sa mort. Deuxième fils du roi Sukjong, il succède à son frère Gyeongjong, pratique la politique de l'« impartialité » pour apaiser les factions de la cour et allège les impôts des paysans. Il fait mourir son fils, le prince Sado, en 1762, et il meurt en 1776.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Yeongjo",
+                  "pays": "KR",
+                  "classement": "Yeongjo",
+                  "image": {
+                    "src": "assets/portraits/pan_coree_yeongjo.jpg",
+                    "legende": "Yeongjo, portrait de Chae Yong-sin",
+                    "auteur": "Chae Yong-sin (1848–1941)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Portrait_of_King_Yeongjo_-_Chae_Yong_Shin_(%E8%94%A1%E9%BE%8D%E8%87%A3_1850-1941)_Cho_Seok-jin_(%E8%B6%99%E9%8C%AB%E6%99%89_1853-1920)_et_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_coree_parkjiwon",
+                  "axe": "Littérature et pensée",
+                  "date": 1737,
+                  "titre": "Naissance de Park Ji-won",
+                  "description": "Park Ji-won (1737-1805) est un écrivain coréen de la dynastie Joseon, plume « Yeonam », partisan du Silhak. Il n'a commencé son éducation qu'à 16 ans, après son mariage, et se distingue par son style libre et sa critique de la société. Il est surtout connu pour le Journal de Jehol, récit d'un voyage en Chine en 1780, et il meurt en 1805.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Park_Ji-won",
+                  "pays": "KR",
+                  "classement": "Park Ji-won",
+                  "image": {
+                    "src": "assets/portraits/pan_coree_parkjiwon.jpg",
+                    "legende": "Park Ji-won, portrait",
+                    "auteur": "Park Ju-su",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Park_Jiwon.JPG"
+                  }
+                },
+                {
+                  "id": "pan_coree_kimhongdo",
+                  "axe": "Beaux-arts",
+                  "date": 1745,
+                  "titre": "Naissance de Kim Hong-do",
+                  "description": "Kim Hong-do (1745-vers 1806) est un peintre de la cour de Joseon, l'un des plus grands de l'histoire de la Corée. Il est le premier à représenter la vie quotidienne des Coréens, à la manière des estampes ukiyo-e du Japon, avec des personnages typés et expressifs. Il meurt vers 1806, la date étant incertaine.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kim_Hong-do",
+                  "pays": "KR",
+                  "classement": "Kim Hong-do",
+                  "image": {
+                    "src": "assets/portraits/pan_coree_kimhongdo.jpg",
+                    "legende": "Kim Hong-do, une de ses peintures",
+                    "auteur": "Kim Hong-do (1745–1806)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kim_Hongdo.jpg"
+                  }
+                },
+                {
+                  "id": "pan_coree_jeongjo",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1752,
+                  "titre": "Naissance de Jeongjo",
+                  "description": "Jeongjo (1752-1800) est le vingt-deuxième roi de la dynastie Joseon, de 1776 à sa mort, petit-fils de Yeongjo et fils du prince Sado. Réformateur, il fonde la bibliothèque royale Kyujanggak, s'entoure de savants du Silhak, l'apprentissage pratique, et fait bâtir la forteresse de Hwaseong, à Suwon. Il meurt en 1800, et son règne est regardé comme un second âge d'or de Joseon.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jeongjo",
+                  "pays": "KR",
+                  "classement": "Jeongjo",
+                  "image": {
+                    "src": "assets/portraits/pan_coree_jeongjo.jpg",
+                    "legende": "Jeongjo, portrait",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:King_JeongJo_of_Joseon.jpg"
+                  }
+                },
+                {
+                  "id": "pan_coree_jeongyakyong",
+                  "axe": "Littérature et pensée",
+                  "date": 1762,
+                  "titre": "Naissance de Jeong Yak-yong",
+                  "description": "Jeong Yak-yong (1762-1836) est l'un des plus grands penseurs coréens, plume « Dasan », philosophe de l'école du Silhak, l'apprentissage pratique. Haut fonctionnaire et confident du roi Jeongjo, il écrit sur la philosophie, la science et le gouvernement. Exilé pendant dix-huit ans après la mort de son protecteur, il y compose l'essentiel de son œuvre, et il meurt en 1836.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jeong_Yak-yong",
+                  "pays": "KR",
+                  "classement": "Jeong Yak-yong",
+                  "image": {
+                    "src": "assets/portraits/pan_coree_jeongyakyong.jpg",
+                    "legende": "Jeong Yak-yong, portrait",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jeong_Yak-yong.jpg"
+                  }
+                },
+                {
+                  "id": "pan_coree_kimjeonghui",
+                  "axe": "Beaux-arts",
+                  "date": 1786,
+                  "titre": "Naissance de Kim Jeong-hui",
+                  "description": "Kim Jeong-hui (1786-1856) est un calligraphe et homme politique coréen de la dynastie Joseon, né dans une famille proche du pouvoir royal. Élève des maîtres du Silhak, il se rend en Chine en 1809 et y rencontre des érudits, avant de créer son propre style de calligraphie, le « style Chusa ». Exilé à Jeju pendant neuf ans, il meurt en 1856.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kim_Jeong-hui",
+                  "pays": "KR",
+                  "classement": "Kim Jeong-hui",
+                  "image": {
+                    "src": "assets/portraits/pan_coree_kimjeonghui.jpg",
+                    "legende": "Kim Jeong-hui, portrait",
+                    "auteur": "Yi Han-cheol (circa 1812- circa 1893)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kim_Jeong-hui.jpg"
+                  }
+                },
+                {
+                  "id": "pan_coree_daewongun",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1821,
+                  "titre": "Naissance de Daewongun",
+                  "description": "Daewongun (1821-1898) est le prince régent de Corée de 1863 à 1873, né Yi Ha-eung, père du roi Gojong. Pendant sa régence, il restaure le palais de Gyeongbokgung, réduit le pouvoir des grandes familles et des académies confucéennes, et persécute les catholiques tout en refusant l'ouverture du pays aux étrangers. Écarté par sa belle-fille, la reine Min, il continue d'influencer la cour jusqu'à sa mort à Séoul en 1898.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Daewongun",
+                  "pays": "KR",
+                  "classement": "Daewongun",
+                  "image": {
+                    "src": "assets/portraits/pan_coree_daewongun.jpg",
+                    "legende": "Daewongun, photographie de 1906",
+                    "auteur": "Hulbert, Homer B.",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Heungseon_Daewongun_Portrait.jpg"
+                  }
+                },
+                {
+                  "id": "pan_coree_choejeu",
+                  "axe": "Littérature et pensée",
+                  "date": 1824,
+                  "titre": "Naissance de Choe Je-u",
+                  "description": "Choe Je-u (1824-1864) est le fondateur du Donghak, « le savoir oriental », mouvement religieux à l'origine du cheondoïsme. Critique envers les influences étrangères et le gouvernement de Joseon, il enseigne que chacun porte le divin en soi, ce qui séduit les paysans. Arrêté pour hérésie, il est exécuté en 1864.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Choe_Je-u",
+                  "pays": "KR",
+                  "classement": "Choe Je-u",
+                  "image": {
+                    "src": "assets/portraits/pan_coree_choejeu.jpg",
+                    "legende": "Choe Je-u, portrait",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Choe_Je-u.jpg"
+                  }
+                },
+                {
+                  "id": "pan_coree_jeonbongjun",
+                  "axe": "Guerres et résistances",
+                  "date": 1855,
+                  "titre": "Naissance de Jeon Bong-jun",
+                  "description": "Jeon Bong-jun (1855-1895) est le chef de la révolte paysanne du Donghak, en 1894, surnommé « le général Mungo » à cause de sa petite taille. Fils d'un maître confucéen exécuté pour avoir mené une révolte, il rejoint le Donghak vers l'âge de trente ans, fonde une école et une clinique, puis soulève les paysans contre un gouverneur corrompu. Vaincu par les armées coréenne et japonaise, il est pendu à Séoul en 1895.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jeon_Bong-jun",
+                  "pays": "KR",
+                  "classement": "Jeon Bong-jun",
+                  "image": {
+                    "src": "assets/portraits/pan_coree_jeonbongjun.jpg",
+                    "legende": "Jeon Bong-jun, photographie de 1895",
+                    "auteur": "Murakami Tenshin (村上天眞)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jeon_Bong-jun.JPG"
+                  }
+                },
+                {
+                  "id": "pan_coree_sunjong",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1874,
+                  "titre": "Naissance de Sunjong",
+                  "description": "Sunjong (1874-1926) est le dernier empereur de Corée, de 1907 à 1910, quatrième fils de Gojong. Il monte sur le trône quand les Japonais forcent son père à abdiquer, après l'imposition du protectorat, et son règne prend fin avec le traité d'annexion de 1910. Placé en résidence surveillée à Séoul, il y meurt en 1926.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sunjong",
+                  "pays": "KR",
+                  "classement": "Sunjong",
+                  "image": {
+                    "src": "assets/portraits/pan_coree_sunjong.jpg",
+                    "legende": "Sunjong, photographie vers 1910",
+                    "auteur": "Photography by 岩田鼎",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Sunjong_of_the_Korean_Empire.jpg"
+                  }
+                },
+                {
+                  "id": "pan_coree_rhee",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1875,
+                  "titre": "Naissance de Syngman Rhee",
+                  "description": "Syngman Rhee (1875-1965) est le premier président de la Corée du Sud, de 1948 à 1960, né dans le Hwanghae. Indépendantiste, il préside le gouvernement provisoire en exil à Shanghai, puis conduit la république à travers la guerre de Corée, avec un pouvoir de plus en plus autoritaire. Chassé par la révolution étudiante d'avril 1960, il s'exile à Hawaï, où il meurt en 1965.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Syngman_Rhee",
+                  "pays": "KR",
+                  "classement": "Rhee, Syngman",
+                  "image": {
+                    "src": "assets/portraits/pan_coree_rhee.jpg",
+                    "legende": "Syngman Rhee, photographie de 1948",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Rhee_Syng-Man_in_1948.jpg"
+                  }
+                },
+                {
+                  "id": "pan_coree_kimkoo",
+                  "axe": "Guerres et résistances",
+                  "date": 1876,
+                  "titre": "Naissance de Kim Koo",
+                  "description": "Kim Koo (1876-1949) est un résistant coréen à l'occupation japonaise, né à Haeju, et le dernier président du gouvernement provisoire en exil. À dix-huit ans, il est l'un des chefs de la révolte du Donghak, puis participe au soulèvement de mars 1919 et s'exile en Chine. Opposé à la division de la péninsule, il est assassiné à Séoul en 1949.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kim_Koo",
+                  "pays": "KR",
+                  "classement": "Kim Koo",
+                  "image": {
+                    "src": "assets/portraits/pan_coree_kimkoo.jpg",
+                    "legende": "Kim Koo, photographie de 1949",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kim_Gu_in_1949.jpg"
+                  }
+                },
+                {
+                  "id": "pan_coree_ahnchangho",
+                  "axe": "Guerres et résistances",
+                  "date": 1878,
+                  "titre": "Naissance d'Ahn Chang-ho",
+                  "description": "Ahn Chang-ho (1878-1938) est un militant indépendantiste coréen, plume « Dosan », né à Kangso, dans le Pyongan du Sud. Fondateur de la Sinminhoe et du gouvernement provisoire en exil, il organise la communauté coréenne des États-Unis et défend un travail d'éducation du peuple. Arrêté par les Japonais en 1937, il meurt en 1938 des suites de sa détention.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ahn_Chang-ho",
+                  "pays": "KR",
+                  "classement": "Ahn Chang-ho",
+                  "image": {
+                    "src": "assets/portraits/pan_coree_ahnchangho.jpg",
+                    "legende": "Ahn Chang-ho, photographie vers 1919",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Dosan_Ahn_Chang-ho_in_1919.jpg"
+                  }
+                },
+                {
+                  "id": "pan_coree_anjunggeun",
+                  "axe": "Guerres et résistances",
+                  "date": 1879,
+                  "titre": "Naissance d'An Jung-geun",
+                  "description": "An Jung-geun (1879-1910) est un militant indépendantiste coréen, né à Haeju, connu pour l'assassinat d'Itō Hirobumi, résident général japonais en Corée. Éducateur puis résistant, il tue Itō à la gare de Harbin, en Chine, le 26 octobre 1909, et déclare agir pour la paix en Asie orientale. Condamné à mort, il est pendu à Lüshunkou le 26 mars 1910, et il est vénéré comme un héros national.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/An_Jung-geun",
+                  "pays": "KR",
+                  "classement": "An Jung-geun",
+                  "image": {
+                    "src": "assets/portraits/pan_coree_anjunggeun.jpg",
+                    "legende": "An Jung-geun, photographie avant 1910",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:An_Jung-geun.JPG"
+                  }
+                },
+                {
+                  "id": "pan_coree_hanyongun",
+                  "axe": "Littérature et pensée",
+                  "date": 1879,
+                  "titre": "Naissance de Han Yong-un",
+                  "description": "Han Yong-un (1879-1944) est un moine bouddhiste, réformateur et poète coréen, plume « Manhae », né à Hongseong. Engagé dans la résistance à l'influence japonaise, il est l'un des 33 signataires de la déclaration d'indépendance de 1919 et passe trois ans en prison. Auteur du recueil « Le Silence de l'aimé », publié en 1926, il meurt en 1944, avant la libération.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Han_Yong-un",
+                  "pays": "KR",
+                  "classement": "Han Yong-un",
+                  "image": {
+                    "src": "assets/portraits/pan_coree_hanyongun.jpg",
+                    "legende": "Han Yong-un, photographie",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Han_Yongun.jpg"
+                  }
+                },
+                {
+                  "id": "pan_coree_shinchaeho",
+                  "axe": "Littérature et pensée",
+                  "date": 1880,
+                  "titre": "Naissance de Shin Chae-ho",
+                  "description": "Shin Chae-ho (1880-1936) est un historien coréen, né à Daejeon, figure du nationalisme et de l'anarchisme. Convaincu que la connaissance de l'histoire était essentielle au patriotisme, il écrit une histoire nationale qui fait du Goguryeo le cœur de l'identité coréenne. Exilé en Chine, il est arrêté par les Japonais en 1928 et meurt en prison à Lüshun en 1936.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Shin_Chae-ho",
+                  "pays": "KR",
+                  "classement": "Shin Chae-ho",
+                  "image": {
+                    "src": "assets/portraits/pan_coree_shinchaeho.jpg",
+                    "legende": "Shin Chae-ho, photographie avant 1938",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%EB%8B%A8%EC%9E%AC%EC%8B%A0%EC%B1%84%ED%98%B8.jpg"
+                  }
+                },
+                {
+                  "id": "pan_coree_nahyesok",
+                  "axe": "Beaux-arts",
+                  "date": 1896,
+                  "titre": "Naissance de Na Hye-sok",
+                  "description": "Na Hye-sok (1896-1948) est une peintre et écrivaine coréenne, née à Suwon dans une famille riche. Première Coréenne à peindre à l'huile dans le style occidental, elle est aussi l'une des premières féministes de son pays, et ses prises de position lui valent le rejet de la société. Ruinée et malade, elle meurt à Séoul en 1948.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Na_Hye-sok",
+                  "pays": "KR",
+                  "classement": "Na Hye-sok",
+                  "image": {
+                    "src": "assets/portraits/pan_coree_nahyesok.jpg",
+                    "legende": "Na Hye-sok, photographie",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%EB%82%98%ED%98%9C%EC%84%9D-Na_Hye-seok.jpg"
+                  }
+                },
+                {
+                  "id": "pan_coree_kimwonbong",
+                  "axe": "Guerres et résistances",
+                  "date": 1898,
+                  "titre": "Naissance de Kim Won-bong",
+                  "description": "Kim Won-bong (vers 1898-vers 1958) est un anarchiste coréen, chef du Cercle des Braves (Uiyoldan), mouvement indépendantiste qui s'attaque aux symboles de l'occupation japonaise. Il passe ensuite au gouvernement provisoire en exil, puis devient ministre du premier gouvernement de la Corée du Nord. Victime d'une purge de Kim Il-sung en 1958, il meurt probablement par suicide.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kim_Won-bong",
+                  "pays": "KP",
+                  "classement": "Kim Won-bong",
+                  "image": {
+                    "src": "assets/portraits/pan_coree_kimwonbong.jpg",
+                    "legende": "Kim Won-bong, photographie des années 1930",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kim_Won-bong_3.jpg"
+                  }
+                },
+                {
+                  "id": "pan_coree_kimdongin",
+                  "axe": "Littérature et pensée",
+                  "date": 1900,
+                  "titre": "Naissance de Kim Dong-in",
+                  "description": "Kim Dong-in (1900-1951) est un écrivain coréen, pionnier de la nouvelle moderne. En 1919, alors qu'il est étudiant au Japon, il lance avec d'autres écrivains la revue Changjo (Création), qui veut une littérature nouvelle, loin de la tradition. Il y publie ses premiers récits, dont « La Tristesse du faible », et il meurt à Séoul en 1951, pendant la guerre de Corée.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kim_Dong-in",
+                  "pays": "KR",
+                  "classement": "Kim Dong-in",
+                  "image": {
+                    "src": "assets/portraits/pan_coree_kimdongin.jpg",
+                    "legende": "Kim Dong-in, photographie de 1974",
+                    "auteur": "조선일보",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%EA%B9%80%EB%8F%99%EC%9D%B8_%EC%9E%91%EA%B0%80.jpg"
+                  }
+                },
+                {
+                  "id": "pan_coree_pakhonyong",
+                  "axe": "Guerres et résistances",
+                  "date": 1900,
+                  "titre": "Naissance de Pak Hon-yong",
+                  "description": "Pak Hon-yong (1900-1955) est un résistant et homme d'État coréen, né dans le Chungcheong du Sud, l'un des chefs du parti communiste sous l'occupation japonaise. Contraint à la clandestinité, il fonde le Parti du travail de Corée du Sud après 1945 et devient vice-Premier ministre et ministre des Affaires étrangères de la Corée du Nord. Accusé d'espionnage au profit des États-Unis, il est condamné à mort et exécuté en 1955.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Pak_Hon-yong",
+                  "pays": "KP",
+                  "classement": "Pak Hon-yong",
+                  "image": {
+                    "src": "assets/portraits/pan_coree_pakhonyong.jpg",
+                    "legende": "Pak Hon-yong, photographie de 1948",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Pak_Hon-yong_02.jpg"
+                  }
+                },
+                {
+                  "id": "pan_coree_yugwansun",
+                  "axe": "Guerres et résistances",
+                  "date": 1902,
+                  "titre": "Naissance de Yu Gwan-sun",
+                  "description": "Yu Gwan-sun (1902-1920) est une lycéenne coréenne devenue l'une des figures du mouvement d'indépendance du 1er mars 1919, née à Cheonan. Elle organise une manifestation dans son village, où ses parents sont tués par les soldats japonais, puis elle est arrêtée et torturée. Elle meurt en prison en 1920, à 17 ans, et on l'appelle la « Jeanne d'Arc de Corée ».",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Yu_Gwan-sun",
+                  "pays": "KR",
+                  "classement": "Yu Gwan-sun",
+                  "image": {
+                    "src": "assets/portraits/pan_coree_yugwansun.jpg",
+                    "legende": "Yu Gwan-sun, photographie vers 1920",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ryu_Gwan-sun.jpg"
+                  }
+                },
+                {
+                  "id": "pan_coree_kimchaek",
+                  "axe": "Guerres et résistances",
+                  "date": 1903,
+                  "titre": "Naissance de Kim Chaek",
+                  "description": "Kim Chaek (1903-1951) est un général et homme politique nord-coréen, né à Songjin. Il rejoint la guérilla contre les Japonais en 1927, combat aux côtés de Kim Il-sung en Mandchourie, puis devient l'un des dirigeants de l'armée populaire de Corée. Mort en 1951, pendant la guerre de Corée, il a donné son nom à l'université de technologie de Pyongyang.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kim_Chaek",
+                  "pays": "KP",
+                  "classement": "Kim Chaek",
+                  "image": {
+                    "src": "assets/portraits/pan_coree_kimchaek.jpg",
+                    "legende": "Kim Chaek, photographie avant 1951",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kim_Chaek.jpg"
+                  }
+                },
+                {
+                  "id": "pan_coree_kimilsung",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1912,
+                  "titre": "Naissance de Kim Il-sung",
+                  "description": "Kim Il-sung (1912-1994) est le fondateur de la Corée du Nord et son premier dirigeant, de 1948 à sa mort. Chef de guérilla contre les Japonais, il prend le pouvoir à Pyongyang avec le soutien soviétique, déclenche la guerre de Corée en 1950 et construit un régime autour de l'idéologie du Juche et d'un culte de la personnalité. Il est proclamé en 1998 « président éternel », et son fils Kim Jong-il lui succède.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kim_Il-sung",
+                  "pays": "KP",
+                  "classement": "Kim Il-sung",
+                  "image": {
+                    "src": "assets/portraits/pan_coree_kimilsung.jpg",
+                    "legende": "Kim Il-sung, photographie vers 1950",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kim_Il-sung_in_1950.jpg"
+                  }
+                },
+                {
+                  "id": "pan_coree_kimwhanki",
+                  "axe": "Beaux-arts",
+                  "date": 1913,
+                  "titre": "Naissance de Kim Whanki",
+                  "description": "Kim Whanki (1913-1974) est un peintre sud-coréen, né à Anjwado, pionnier de l'abstraction dans son pays. Installé à New York à partir de 1963, il y réalise ses grandes toiles de points bleus, qui évoquent le ciel et la nostalgie du pays natal. Il meurt à New York en 1974.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kim_Whanki",
+                  "pays": "KR",
+                  "classement": "Kim Whanki",
+                  "image": {
+                    "src": "assets/portraits/pan_coree_kimwhanki.jpg",
+                    "legende": "Kim Whanki, photographie de 1935",
+                    "auteur": "동아일보",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%EA%B9%80%ED%99%98%EA%B8%B0_%ED%99%94%EB%B0%B1.jpg"
+                  }
+                },
+                {
+                  "id": "pan_coree_parksookeun",
+                  "axe": "Beaux-arts",
+                  "date": 1914,
+                  "titre": "Naissance de Park Soo-keun",
+                  "description": "Park Soo-keun (1914-1965) est un peintre coréen, né à Yanggu. Pauvre toute sa vie, autodidacte, il peint les paysans, les femmes et les enfants dans une matière granuleuse, qui rappelle la pierre, et ses toiles sont aujourd'hui parmi les plus chères de Corée. Il meurt en 1965, à Séoul.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Park_Soo-keun",
+                  "pays": "KR",
+                  "classement": "Park Soo-keun",
+                  "image": {
+                    "src": "assets/portraits/pan_coree_parksookeun.jpg",
+                    "legende": "Park Soo-keun, photographie de 1965",
+                    "auteur": "동아일보",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%EB%B0%95%EC%88%98%EA%B7%BC_%ED%99%94%EB%B0%B1.jpg"
+                  }
+                },
+                {
+                  "id": "pan_coree_kimjongsuk",
+                  "axe": "Guerres et résistances",
+                  "date": 1917,
+                  "titre": "Naissance de Kim Jong-suk",
+                  "description": "Kim Jong-suk (1917-1949) est une militante communiste coréenne, née à Hoeryong, épouse de Kim Il-sung et mère de Kim Jong-il. Issue d'une famille de paysans pauvres qui a dû quitter la Corée pour la Mandchourie, elle rejoint la guérilla contre les Japonais, aux côtés de Kim Il-sung. Elle meurt à Pyongyang en 1949, et le régime en fait une héroïne de la révolution.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kim_Jong-suk",
+                  "pays": "KP",
+                  "classement": "Kim Jong-suk",
+                  "image": {
+                    "src": "assets/portraits/pan_coree_kimjongsuk.jpg",
+                    "legende": "Kim Jong-suk, photographie après 1938",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kim_Jeong_Suk_2.jpg"
+                  }
+                },
+                {
+                  "id": "pan_coree_park",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1917,
+                  "titre": "Naissance de Park Chung-hee",
+                  "description": "Park Chung-hee (1917-1979) est un militaire et homme d'État sud-coréen, président de la République de 1962 à 1979, né à Gumi. Parvenu au pouvoir par le putsch du 16 mai 1961, il lance l'industrialisation du pays par l'exportation, qui le fait entrer parmi les économies les plus riches, au prix d'un régime autoritaire. Il est assassiné en 1979 par le chef de ses services secrets, et il reste une figure controversée.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Park_Chung-hee",
+                  "pays": "KR",
+                  "classement": "Park Chung-hee",
+                  "image": {
+                    "src": "assets/portraits/pan_coree_park.jpg",
+                    "legende": "Park Chung-hee, portrait officiel",
+                    "auteur": "English: Korea.net / Korean Culture and Information Service 한국어: 코리아넷 / 해외문화홍보원",
+                    "licence": "CC BY-SA 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Park_Chung_Hee_(%EB%B0%95%EC%A0%95%ED%9D%AC)_Presidential_Portrait.jpg"
+                  }
+                },
+                {
+                  "id": "pan_coree_yundongju",
+                  "axe": "Littérature et pensée",
+                  "date": 1917,
+                  "titre": "Naissance de Yun Dong-ju",
+                  "description": "Yun Dong-ju (1917-1945) est un poète coréen, né à Longjing, en Mandchourie, dans une famille chrétienne. Étudiant à Séoul puis au Japon, il écrit, en coréen, des poèmes d'une grande pureté, dont « Ciel, vent, étoiles et poèmes », publié après sa mort. Arrêté en 1943 par la police japonaise pour activités indépendantistes, il meurt en prison à Fukuoka en 1945, à 27 ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Yun_Dong-ju",
+                  "pays": "KR",
+                  "classement": "Yun Dong-ju",
+                  "image": {
+                    "src": "assets/portraits/pan_coree_yundongju.jpg",
+                    "legende": "Yun Dong-ju, photographie de 1942",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Yoon_Dong-ju.jpg"
+                  }
+                },
+                {
+                  "id": "pan_coree_kimdaejung",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1924,
+                  "titre": "Naissance de Kim Dae-jung",
+                  "description": "Kim Dae-jung (1924-2009) est un homme d'État sud-coréen, président de la République de 1998 à 2003 et prix Nobel de la paix en 2000. Longtemps chef de l'opposition, il échappe à une tentative d'assassinat en 1973, organisée par les services de Park Chung-hee, et il est condamné à mort en 1980, avant d'être gracié. Élu en 1997, il mène une « politique du rayon de soleil » envers la Corée du Nord, qui aboutit au sommet de Pyongyang de juin 2000, et il meurt à Séoul en 2009.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kim_Dae-jung",
+                  "pays": "KR",
+                  "classement": "Kim Dae-jung",
+                  "image": {
+                    "src": "assets/portraits/pan_coree_kimdaejung.jpg",
+                    "legende": "Kim Dae-jung, photographie de 2001",
+                    "auteur": "Presidential Press and Information Office",
+                    "licence": "CC BY 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kim_Dae-jung_(Cropped).png"
+                  }
+                },
+                {
+                  "id": "pan_coree_choieunhee",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1926,
+                  "titre": "Naissance de Choi Eun-hee",
+                  "description": "Choi Eun-hee (1926-2018) est une actrice sud-coréenne, née à Gwangju dans le Gyeonggi, l'une des plus grandes des années 1950 et 1960. Elle tourne plus de 130 films avec son mari, le réalisateur Shin Sang-ok, puis est enlevée en 1978 à Hong Kong sur ordre de Kim Jong-il, avec lui, pour relancer le cinéma nord-coréen. Elle s'enfuit en 1986 et meurt en 2018.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Choi_Eun-hee",
+                  "pays": "KR",
+                  "classement": "Choi Eun-hee",
+                  "image": {
+                    "src": "assets/portraits/pan_coree_choieunhee.jpg",
+                    "legende": "Choi Eun-hee, photographie de 1949",
+                    "auteur": "Yun Yong-gyu (윤용규)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Choi_Eun-hee._(1949).jpg"
+                  }
+                },
+                {
+                  "id": "pan_coree_parkkyungni",
+                  "axe": "Littérature et pensée",
+                  "date": 1926,
+                  "titre": "Naissance de Park Kyung-ni",
+                  "description": "Park Kyung-ni (1926-2008) est une romancière sud-coréenne, née à Tongyeong. Son œuvre principale, « La Terre » (Toji), est une saga en cinq parties et seize volumes sur l'histoire de la Corée aux XIXe et XXe siècles, adaptée en films, en série et en opéra. Elle meurt en 2008 d'une attaque cérébrale, et un prix littéraire porte son nom.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Park_Kyung-ni",
+                  "pays": "KR",
+                  "classement": "Park Kyung-ni",
+                  "image": {
+                    "src": "assets/portraits/pan_coree_parkkyungni.jpg",
+                    "legende": "Park Kyung-ni, photographie de 2007",
+                    "auteur": "LTI Korea",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Park_Kyung-ni.jpg"
+                  }
+                },
+                {
+                  "id": "pan_coree_shinsangok",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1926,
+                  "titre": "Naissance de Shin Sang-ok",
+                  "description": "Shin Sang-ok (1926-2006) est un réalisateur et producteur sud-coréen, né à Chongjin, dans le Nord, le plus grand cinéaste du pays dans les années 1950 et 1960. Il dirige les studios Shin Films et réalise des centaines de films, avant d'être enlevé en 1978 avec Choi Eun-hee et de tourner au Nord, sous contrainte, plusieurs films pour Kim Jong-il. Réfugié aux États-Unis, il meurt en 2006.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Shin_Sang-ok",
+                  "pays": "KR",
+                  "classement": "Shin Sang-ok",
+                  "image": {
+                    "src": "assets/portraits/pan_coree_shinsangok.jpg",
+                    "legende": "Shin Sang-ok, photographie de 1966",
+                    "auteur": "中文（臺灣）： ​中央通訊社 English: Photographer Pan Yuekang of the Central News Agency",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:19660529%E7%94%B3%E7%9B%B8%E7%8E%89.jpg"
+                  }
+                },
+                {
+                  "id": "pan_coree_kimyoungsam",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1927,
+                  "titre": "Naissance de Kim Young-sam",
+                  "description": "Kim Young-sam (1927-2015) est un homme d'État sud-coréen, né à Geoje, président de la République de 1993 à 1998. Opposant de longue date à Park Chung-hee, il devient en 1993 le premier président civil depuis trois décennies et fait juger en 1996 ses prédécesseurs Chun Doo-hwan et Roh Tae-woo. Son mandat s'achève sur la crise financière asiatique de 1997, et il meurt à Séoul en 2015.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kim_Young-sam",
+                  "pays": "KR",
+                  "classement": "Kim Young-sam",
+                  "image": {
+                    "src": "assets/portraits/pan_coree_kimyoungsam.jpg",
+                    "legende": "Kim Young-sam, photographie de 1996",
+                    "auteur": "DoD",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kim_Young_Sam_1996.png"
+                  }
+                },
+                {
+                  "id": "pan_coree_paik",
+                  "axe": "Beaux-arts",
+                  "date": 1932,
+                  "titre": "Naissance de Nam June Paik",
+                  "description": "Nam June Paik (1932-2006) est un artiste américain né en Corée, à Séoul, cofondateur de l'art vidéo, associé au mouvement Fluxus. Sa pratique associe musique expérimentale, performance, sculpture et télévision, et il invente le terme d'« autoroute de l'information ». Il meurt en 2006 en Floride.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Nam_June_Paik",
+                  "pays": "KR",
+                  "classement": "Paik, Nam June",
+                  "image": {
+                    "src": "assets/portraits/pan_coree_paik.jpg",
+                    "legende": "Nam June Paik, photographie de 1959",
+                    "auteur": "김언호",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Paik_Nam_June_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_coree_kimjongil",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1941,
+                  "titre": "Naissance de Kim Jong-il",
+                  "description": "Kim Jong-il (1941-2011) est le dirigeant suprême de la Corée du Nord de 1994 à sa mort, fils de Kim Il-sung. Désigné successeur dès les années 1970, il dirige le pays pendant la grande famine des années 1990, poursuit la politique « songun », qui place l'armée au premier rang, et lance le programme nucléaire du pays. Il meurt à Pyongyang en 2011, et son fils Kim Jong-un lui succède.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kim_Jong-il",
+                  "pays": "KP",
+                  "classement": "Kim Jong-il",
+                  "image": {
+                    "src": "assets/portraits/pan_coree_kimjongil.jpg",
+                    "legende": "Kim Jong-il, photographie de 2011",
+                    "auteur": "Presidential Press and Information Office",
+                    "licence": "CC BY 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kim_Jong-il_on_August_24,_2011.jpg"
+                  }
+                }
+              ],
+              "axeOrder": [
+                "Chefs d'État et dirigeants",
+                "Guerres et résistances",
+                "Littérature et pensée",
+                "Beaux-arts",
+                "Musique, spectacle et sport",
+                "Sciences, techniques et innovation"
+              ],
+              "essentiel": [
+                "pan_coree_sejong",
+                "pan_coree_yisunsin",
+                "pan_coree_rhee",
+                "pan_coree_anjunggeun",
+                "pan_coree_yugwansun",
+                "pan_coree_kimilsung",
+                "pan_coree_park",
+                "pan_coree_yundongju",
+                "pan_coree_kimdaejung"
               ]
             },
             {

@@ -473,6 +473,11 @@ test('« Grandes figures de Thaïlande et de Birmanie » : chaque ancre porte le
     verifierPantheonDeBloc('pan_thai', 53, 2);
 });
 
+test('« Grandes figures de Corée » : chaque ancre porte le pays de son événement, et la session se joue', () => {
+    // Deux pays : la Corée du Nord (6 figures) ne doit pas disparaître derrière la Corée du Sud (41) parmi les ancres.
+    verifierPantheonDeBloc('pan_coree', 59, 2);
+});
+
 test('« Grandes figures d’Asie centrale » : chaque ancre porte le pays de son événement, et la session se joue', () => {
     // Six pays, dont deux (le Turkménistan, le Tadjikistan) n'ont que quelques figures : le
     // Kazakhstan, l'Afghanistan et l'Ouzbékistan ne doivent pas les faire disparaître parmi les ancres.

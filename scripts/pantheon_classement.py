@@ -140,7 +140,9 @@ KEEP_AS_WRITTEN = {
     # « Horloogiyn Choybalsan »), souverains et noms de règne (« Gengis Khan », « Bogdo Khan »), femmes et pères connus par leur nom seul.
     'Gengis Khan', 'Mandukhaï Khatun', 'Bogdo Khan', 'Damdin Sükhbaatar', 'Horloogiyn Choybalsan', 'Peljidiyn Genden', 'Anandyn Amar',
     'Tögs-Ochiryn Namnansüren', 'Sühbaataryn Yanjmaa', 'Yumjagiyn Tsedenbal', 'Jamsarangiyn Sambu', 'Jambyn Batmönkh', 'Sanjaasürengiin Zorig',
-    'Punsalmaagiin Ochirbat', 'Dashdorjiin Natsagdorj', 'Tsendiin Damdinsüren', 'Byambyn Rinchen', 'Rinchen Barsbold',
+    'Punsalmaagiin Ochirbat', 'Dashdorjiin Natsagdorj', 'Tsendiin Damdinsüren', 'Byambyn Rinchen', 'Rinchen Barsbold',    # Corée : le nom de famille vient en premier (« Park Chung-hee », « Kim Il-sung »), souverains rangés par leur nom de règne ou de temple
+    # (« Sejong le Grand », « Taejo de Joseon »), noms de plume ; Syngman Rhee et Nam June Paik, écrits à l'occidentale, se rangent par le dernier mot.
+    'Gwanggaeto le Grand', 'Munmu', 'Taejo de Joseon', 'Sejong le Grand', 'Yeongjo', 'Jeongjo', 'Daewongun', 'Sunjong', 'Park Chung-hee', 'Kim Il-sung', 'Kim Jong-il', 'An Jung-geun', 'Yu Gwan-sun', 'Jeon Bong-jun', 'Kim Koo', 'Ahn Chang-ho', 'Kim Jong-suk', 'Kim Chaek', 'Kim Won-bong', 'Pak Hon-yong', 'Wonhyo', 'Jeong Mong-ju', 'Yi Hwang', 'Yi I', 'Jeong Yak-yong', 'Park Ji-won', 'Han Yong-un', 'Yun Dong-ju', 'Shin Chae-ho', 'Kim Dong-in', 'Park Kyung-ni', 'Choe Je-u', 'Kim Hong-do', 'Jeong Seon', 'Kim Jeong-hui', 'Na Hye-sok', 'Kim Whanki', 'Park Soo-keun', 'Heo Jun', 'Choi Eun-hee', 'Shin Sang-ok', 'Sin Saimdang', 'Kim Dae-jung', 'Kim Young-sam', 'Yi Sun-sin',
 }
 
 # Écrits à la main : (nom de la source) → nom de classement.
