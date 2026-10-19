@@ -83,11 +83,45 @@ pack, dont 1 166 ajoutés par cette refonte), avec 34 à 40 incontournables ⭐ 
 - **Liens Wikipédia** : les nouveaux événements pointent presque tous sur une recherche (`w/index.php?search=`), qui
   mène à l'article quand le terme est exact et n'invente aucun titre d'article.
 
-### À revérifier dans la frise
+### Vérification des chiffres de la frise (octobre 2026)
 
-Écrits de mémoire, sans relecture contre une source : les chiffres de victimes et de seuils (Verdun, Somme, Srebrenica,
-Thiaroye, rue d'Isly, Oradour, Guernica), les chiffres de population des sommaires de `geopop`, le nombre d'exemplaires et
-de délégués de quelques conférences (`20s`, `colafr`), les épisodes récents de `amlat` (COP30 de Belém, accord
-Mercosur-Union européenne, port de Chancay) et les effectifs de `camp` (tracteurs, taux d'équipement en télévision,
-rappelés de 1956). Les points précis dont l'énoncé est plus fragile ont été formulés avec « environ » ou « selon les
-estimations ».
+Les chiffres des descriptions ajoutées ou réécrites ont été confrontés à des sources (Mémorial de Verdun, Insee, Ined,
+Commission européenne, ONU, FAO, HCR, ICMP, Amnesty, ZZF Potsdam, Chemins de mémoire, FranceArchives, Cedre, ministères)
+pour tous les bilans humains, les effectifs et les seuils des thèmes `geopop`, `camp` et `amlat`, et pour les autres
+nombres que contenaient les 22 sources. Corrigés :
+
+- **Bilans humains** : Pylos (plus de 500 morts et disparus, 82 corps, 104 survivants, 750 passagers estimés), Cutro (au moins
+  94), Lampedusa (plus de 360 morts, 155 survivants), Guernica (126 à 1 654, le plus probable 250-300), Annual (10 000 à 13 000),
+  rue d'Isly (une cinquantaine), Oradour (642 ou 643 selon les décomptes : « plus de 640 »), Congo-Océan (10 000 à 23 000,
+  17 000 le plus cité), Le Havre (environ 2 000 civils), Hiroshima (environ 140 000 fin 1945), Grande Terreur (680 000
+  exécutions et environ 800 000 envois au Goulag, et non « plus d'un million »), mer du Nord 1953 (1 836 aux Pays-Bas, 28 en
+  Belgique), Xynthia (47 en France, dont 29 à La Faute-sur-Mer, deux fiches mises d'accord), séisme de Mexico 1985 (5 000 à plus
+  de 10 000), mur de Berlin (au moins 140).
+- **Effectifs et seuils** : Sedan (environ 83 000 prisonniers), Exxon Valdez (environ 37 000 tonnes), Lothar et Martin (de
+  l'ordre de 140 millions de m³), incendies de Gironde 2022 (près de 30 000 hectares), Potosí (plus de 150 000 habitants vers
+  1600), Nouméa 1942 (17 000 Américains à l'arrivée), taux de croissance et fécondité mondiale en 2022 (sous 1 % ; deux humains
+  sur trois sous le seuil de renouvellement), loi SRU (1 500 habitants en Île-de-France), Larzac (60 000 à 100 000 en 1973),
+  Mexique (plus de 460 000 homicides depuis 2006, tous types confondus), Belo Monte (une des plus puissantes centrales du monde,
+  et non « troisième »), Nauru, Conservatoire du littoral, Dunkerque (part française).
+- **`camp`** : population rurale (plus de 26 millions, près des trois quarts, entre 1846 et les années 1860), pertes agricoles de
+  la Grande Guerre (500 000 à 700 000 tués sur 5,4 millions d'actifs), parc de tracteurs (120 000 en 1949, près d'un million en
+  1963), évacués d'Alsace (450 000), communes supprimées par la loi Marcellin (environ 1 100). Le taux d'équipement télévisuel,
+  que les sources donnent de 13 % à 30 % pour 1960, n'est plus chiffré.
+- **`amlat`, événements récents** : le port de Chancay a été inauguré le 14 novembre 2024 par visioconférence (et non en présence
+  de Xi Jinping) ; l'accord Mercosur-UE, conclu le 6 décembre 2024, a été signé à Asunción le 17 janvier 2026, appliqué à titre
+  provisoire depuis le 1er mai 2026, après la saisine de la Cour de justice par le Parlement européen (21 janvier) ; la COP30
+  de Belém n'a pas retenu de sortie progressive des fossiles et a créé le fonds pour les forêts tropicales (TFFF).
+- **Sommaire `geopop`** : les chiffres de la FAO (SOFI 2026 : 645 millions de personnes sous-alimentées en 2025, 7,8 %), du HCR
+  (117,8 millions de déplacés de force fin 2025), de l'ONU (304 millions de migrants en 2024) et de la Commission européenne
+  (gaz russe : 45 % en 2021, 19 % en 2024) ont été confirmés ; la PAC représente 31 % du budget de l'Union selon le Parlement
+  européen (« près d'un tiers »).
+
+Confirmés sans changement : Verdun (163 000 Français et 143 000 Allemands tués ou disparus), Somme (19 240 Britanniques tués le
+1er juillet, environ 1,06 million de pertes), Chemin des Dames (environ 30 000 tués en dix jours, selon Jagielski), Srebrenica
+(plus de 8 000), Thiaroye (35 morts selon le bilan officiel, jusqu'à 300-400 selon les travaux et le rapport sénégalais de 2025),
+Burj Khalifa, Schengen, Dublin, élargissement de 2004 (environ 75 millions d'habitants), Corée du Sud (0,72 en 2023, puis 0,75
+en 2024), World Population Prospects 2024 (10,3 milliards vers le milieu des années 2080).
+
+Pas tout vérifié : les chiffres qui ne figurent pas dans cette liste (dates, durées, effectifs de moindre portée) viennent
+des sommaires audités ou de manuels et n'ont pas été recoupés un par un. Les points les plus fragiles sont les chiffres
+de victimes anciennes (épidémies, séismes, batailles médiévales et modernes), qui restent des ordres de grandeur.
