@@ -568,11 +568,14 @@
             <h3 id="expedition-final-title"></h3>
             <p id="expedition-final-text"></p>
             <div class="expedition-final-extra hidden" id="expedition-final-extra" role="status"></div>
-            <div class="expedition-final-actions">
-                <button type="button" class="btn hidden" id="expedition-next-level" onclick="expeditionNextLevel()" data-i18n="path.next_level">Niveau suivant</button>
-                <button type="button" class="btn" id="expedition-share" onclick="expeditionShare()" data-i18n="expedition.share_btn">Partager</button>
-                <button type="button" class="btn" id="expedition-replay" onclick="expeditionReplay()">Nouvelle expédition</button>
-                <button type="button" class="btn" id="expedition-leave" onclick="expeditionQuit()">Retour</button>
+            <!-- Un seul geste mis en avant (le niveau suivant, ou rejouer s'il n'y en a pas) ; le reste, discret. -->
+            <div class="expedition-final-actions" id="expedition-final-actions">
+                <button type="button" class="btn expedition-primary hidden" id="expedition-next-level" onclick="expeditionNextLevel()" data-i18n="path.next_level">Niveau suivant</button>
+                <div class="expedition-final-links" id="expedition-final-links">
+                    <button type="button" class="final-link" id="expedition-share" onclick="expeditionShare()" data-i18n="expedition.share_btn">Partager</button>
+                    <button type="button" class="final-link" id="expedition-replay" onclick="expeditionReplay()">Nouvelle expédition</button>
+                    <button type="button" class="final-link" id="expedition-leave" onclick="expeditionQuit()">Retour</button>
+                </div>
             </div>
         </div>
     </div>

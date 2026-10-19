@@ -877,11 +877,22 @@ un dessin de Khalil Gibran en 1917 pour Ibn al-Fârid…).
 
 ### Un pays à part : les États-Unis
 
-`pan_us`, « Grandes figures des États-Unis » : **141 personnages** (131 des États-Unis continentaux, plus les dix figures d'Hawaï, voir « Un bloc : la Nouvelle-Zélande et le Pacifique »), de Pocahontas
-(vers 1596) à Steve Jobs (1955). Par axe : 25 Littérature et pensée, 24 Guerres et
+`pan_us`, « Grandes figures des États-Unis » : **142 personnages** (132 des États-Unis continentaux, plus les dix figures d'Hawaï, voir « Un bloc : la Nouvelle-Zélande et le Pacifique »), de Pocahontas
+(vers 1596) à Charlie Kirk (1993). Par axe : 26 Littérature et pensée, 24 Guerres et
 résistances, 24 Musique, spectacle et sport, 21 Chefs d'État et dirigeants, 16
 Sciences, techniques et innovation, 12 Beaux-arts, 9 Économie et entreprise ; 39 ⭐ et
-31 biographies liées. La liste a été soumise puis validée décision par décision : 85
+31 biographies liées.
+
+**Charlie Kirk** (1993-2025), militant conservateur fondateur de Turning Point USA, assassiné
+le 10 septembre 2025, est entré à la demande de l'éditeur, bien que son recul historique soit
+d'un an à peine : il passe la règle « que des morts », et c'est la seule figure du panthéon
+née après 1960. Sa fiche, rangée en « Littérature et pensée » (auteur de cinq ouvrages,
+animateur d'un podcast), s'en tient aux faits et aux dates, expose ses soutiens comme ses
+critiques (comme celles de Reagan ou de Malcolm X) et ne dit rien de la procédure judiciaire en
+cours. Portrait : Gage Skidmore, CC BY-SA 3.0 (CPAC, 2017). À relire quand le recul permettra
+de mesurer son rôle.
+
+La liste a été soumise puis validée décision par décision : 85
 figures proposées, portées à 123 (« mieux vaut plus que moins »), puis à 129 avec
 l'axe Économie et entreprise (Vanderbilt, Carnegie, Morgan, Rockefeller, Ford et
 Madam Walker, aux côtés d'Edison, de Disney et de Jobs, qui y ont été rangés).

@@ -8366,10 +8366,49 @@ input:not([type="range"]), label, select, summary, textarea {
 
 .expedition-final-actions {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    margin-top: 16px;
+}
+
+/* Le geste principal : grand, central, juste sous la série de victoires. */
+.expedition-final-actions .expedition-primary {
+    min-width: 240px;
+    padding: 16px 36px;
+    font-size: 20px;
+    box-shadow: 0 6px 16px rgba(0, 26, 75, 0.25);
+}
+
+/* Les autres : de simples liens, séparés par une barre verticale. */
+.expedition-final-links {
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
-    margin-top: 16px;
+    align-items: center;
+}
+
+.final-link {
+    position: relative;
+    padding: 10px 14px;
+    border: 0;
+    background: none;
+    color: var(--muted-text);
+    font: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.final-link:hover { color: var(--text-dark); text-decoration: underline; }
+
+.final-link:not(.hidden) ~ .final-link:not(.hidden)::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 30%;
+    height: 40%;
+    border-left: 1px solid var(--border-soft);
 }
 
 /* --- MODE CLASSE --- */

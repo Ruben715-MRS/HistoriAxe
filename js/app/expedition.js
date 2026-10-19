@@ -350,7 +350,17 @@ function renderExpedition() {
         document.getElementById('expedition-share').classList.toggle('hidden', !!plan && !expedition.finished.won);
         document.getElementById('expedition-replay').innerText = t(plan ? 'path.replay' : 'expedition.replay');
         document.getElementById('expedition-leave').innerText = t(plan ? 'path.back_to_map' : 'expedition.leave');
-        document.getElementById('expedition-share').focus();
+        // Le geste principal : « Niveau suivant » quand il existe, sinon « Rejouer » passe au premier plan.
+        const hasNext = !!(plan && expedition.finished.won && expedition.finished.nextId);
+        const replayBtn = document.getElementById('expedition-replay');
+        const actions = document.getElementById('expedition-final-actions');
+        const links = document.getElementById('expedition-final-links');
+        replayBtn.classList.toggle('expedition-primary', !hasNext);
+        replayBtn.classList.toggle('final-link', hasNext);
+        replayBtn.classList.toggle('btn', !hasNext);
+        if (hasNext) links.insertBefore(replayBtn, document.getElementById('expedition-leave'));
+        else actions.insertBefore(replayBtn, links);
+        (hasNext ? document.getElementById('expedition-next-level') : replayBtn).focus();
         if (f.rewards && typeof rewardsPlayFinal === 'function') rewardsPlayFinal(f.rewards);
         return;
     }
