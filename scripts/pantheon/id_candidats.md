@@ -1,8 +1,124 @@
-# Indonésie : candidats à valider avant rédaction
+# Indonésie : candidats, fiches en attente de portrait et écartés
 
-> **État** : liste de travail pour le thème `pan_id` (« Grandes figures de l'Indonésie », **pays seul**, donc pas de champ `pays` sur les
-> événements). Rien n'est encore écrit dans `scripts/pantheon/id.json`. La liste est à valider, puis chaque fiche est rédigée.
-> Portraits cherchés avec `scripts/search_portraits.py` (une requête toutes les 11 s ; l'API de Commons répond 429 depuis cet environnement).
+> **État** : le thème `pan_id` est construit (**52 figures** ; voir « Un pays à part : l'Indonésie » dans `docs/personnages-illustres.md`). Ce fichier garde la liste de travail
+> qui l'a précédé — la liste finale est `scripts/pantheon/id.json` — et, ci-dessous, les **sept fiches rédigées dont l'image manque**. Les tableaux plus bas sont ceux de la
+> validation : ils comptent des figures que la règle de l'article français a ensuite écartées (voir la documentation).
+
+## Fiches rédigées, portrait non téléchargé
+
+Six figures ont leur fiche écrite et leur fichier Commons choisi (licence relevée sur la page du fichier : domaine public ou CC), mais le téléchargement de l'image a échoué :
+Wikimedia répondait 429 (« Too many requests ») à presque toute requête depuis cet environnement, des heures durant (Suharto, Pramoedya Ananta Toer, Usmar Ismail, Titiek Puspa,
+Sumitro Djojohadikusumo, Affandi). Munir Said Thalib a son fichier, mais c'est une photographie de groupe (« Munir Said Thalib and Friends », 2004) où rien ne dit quel visage est le sien :
+il faut une autre image. Suharto (⭐) et Pramoedya (⭐) sont les deux manques les plus sensibles. Pour les réintégrer : recopier l'objet dans `personnages` de `scripts/pantheon/id.json`,
+lancer `python3 scripts/fetch_portraits.py id --only <slug>`, écrire `classement` (`python3 scripts/pantheon_classement.py --write id`), puis `python3 scripts/build_pantheon.py id`,
+`npm run build:pack` et les compteurs (tests de la galerie et du mode « Qui est-ce ? », `js/i18n.js`, `sw.js`). Les légendes sont à relire sur l'image obtenue.
+
+```json
+[
+ {
+  "slug": "suharto",
+  "nom": "Suharto",
+  "classement": "Suharto",
+  "titre": "Naissance de Suharto",
+  "axe": "Chefs d'État et dirigeants",
+  "naissance": 1921,
+  "description": "Suharto (1921-2008) est le deuxième président de l'Indonésie, qu'il dirige de 1967 à 1998. Général né près de Yogyakarta, il écrase la tentative de coup d'État du 30 septembre 1965, dirige la répression anticommuniste qui fait au moins 500 000 morts, puis évince Sukarno et instaure l'« Ordre nouveau », un régime autoritaire et tourné vers le développement. Accusé d'avoir amassé une fortune colossale, il doit démissionner en mai 1998, sous la pression de la crise financière asiatique et des émeutes, et meurt sans avoir été jugé.",
+  "wikipedia": "Soeharto",
+  "essentiel": true,
+  "portrait": {
+   "fichier": "Official portrait of Suharto, 1968.png",
+   "legende": "Suharto, portrait officiel de 1968"
+  }
+ },
+ {
+  "slug": "pramoedya",
+  "nom": "Pramoedya Ananta Toer",
+  "classement": "Pramoedya Ananta Toer",
+  "titre": "Naissance de Pramoedya Ananta Toer",
+  "axe": "Littérature et pensée",
+  "naissance": 1925,
+  "description": "Pramoedya Ananta Toer (1925-2006) est le plus grand romancier indonésien, né à Blora, à Java, emprisonné sous les Néerlandais, sous Sukarno puis sous Suharto. Détenu de 1965 à 1979, dont dix ans sur l'île de Buru, il y compose oralement la tétralogie de Buru, de « Bumi Manusia » (1980) à « Rumah Kaca » (1988), qui raconte l'éveil du nationalisme indonésien. Interdits en Indonésie sous Suharto, ses livres sont traduits dans plus de trente langues, et il meurt à Jakarta en 2006.",
+  "wikipedia": "Pramoedya_Ananta_Toer",
+  "essentiel": true,
+  "portrait": {
+   "fichier": "Pramoedya Ananta Toer, Pekan Buku Indonesia 1954, p214.jpg",
+   "legende": "Pramoedya Ananta Toer, photographie de 1954"
+  }
+ },
+ {
+  "slug": "usmar",
+  "nom": "Usmar Ismail",
+  "classement": "Ismail, Usmar",
+  "titre": "Naissance d'Usmar Ismail",
+  "axe": "Musique, spectacle et sport",
+  "naissance": 1921,
+  "description": "Usmar Ismail (1921-1971) est un cinéaste indonésien, né à Bukittinggi, considéré comme le père du cinéma national. Il fonde en 1950 la société de production Perfini et réalise la même année « Darah dan Doa » (« Sang et prière »), tenu pour le premier film vraiment indonésien, qui suit la longue marche d'une division de l'armée. Le premier jour de tournage, le 30 mars, est devenu la Journée du cinéma national.",
+  "wikipedia": "Usmar_Ismail",
+  "portrait": {
+   "fichier": "Usmar Ismail Perfini booklet p29-restoration.JPG",
+   "legende": "Usmar Ismail, photographie vers 1950"
+  }
+ },
+ {
+  "slug": "titiek",
+  "nom": "Titiek Puspa",
+  "classement": "Titiek Puspa",
+  "titre": "Naissance de Titiek Puspa",
+  "axe": "Musique, spectacle et sport",
+  "naissance": 1937,
+  "description": "Titiek Puspa (1937-2025) est une chanteuse, compositrice et actrice indonésienne, née Sudarwati à Tanjung, à Kalimantan Sud. Révélée dans les années 1950, elle écrit des centaines de chansons, dont « Kupu-Kupu Malam » (« Papillon de nuit »), et reste sur scène pendant plus de soixante ans. Elle meurt à Jakarta en avril 2025.",
+  "wikipedia": "Titiek_Puspa",
+  "portrait": {
+   "fichier": "Titiek Puspa posing Favorita's Magazine Vol 23 1967.png",
+   "legende": "Titiek Puspa, photographie de 1967"
+  }
+ },
+ {
+  "slug": "sumitro",
+  "nom": "Sumitro Djojohadikusumo",
+  "classement": "Sumitro Djojohadikusumo",
+  "titre": "Naissance de Sumitro Djojohadikusumo",
+  "axe": "Littérature et pensée",
+  "naissance": 1917,
+  "description": "Sumitro Djojohadikusumo (1917-2001) est un économiste et homme d'État indonésien, né à Gombong, à Java, docteur de l'école de commerce de Rotterdam. Ministre du Commerce, des Finances puis de la Recherche, doyen de la faculté d'économie de l'université d'Indonésie, il y forme les futurs « technocrates » du pays. Rallié en 1957 à la rébellion régionale, il vit dix ans en exil, puis revient en 1967 conseiller Suharto.",
+  "wikipedia": "Sumitro_Djojohadikusumo",
+  "portrait": {
+   "fichier": "Soemitro Djojohadikoesoemo, Menteri Negara Riset (1973).jpg",
+   "legende": "Sumitro Djojohadikusumo, portrait officiel de 1973"
+  }
+ },
+ {
+  "slug": "affandi",
+  "nom": "Affandi",
+  "classement": "Affandi",
+  "titre": "Naissance d'Affandi",
+  "axe": "Beaux-arts",
+  "naissance": 1907,
+  "description": "Affandi (1907-1990) est un peintre expressionniste indonésien, né à Cirebon, à Java, connu pour peindre directement avec les doigts, en pressant la couleur hors du tube. Autoportraits, scènes de marché, paysages et portraits, ses toiles aux couleurs vives lui valent une reconnaissance internationale, jusqu'à la Biennale de Venise en 1954. Il fonde à Yogyakarta un musée de ses œuvres, ouvert en 1974, et meurt en 1990.",
+  "wikipedia": "Affandi",
+  "portrait": {
+   "fichier": "Affandi 1997 Indonesia stamp.jpg",
+   "legende": "Affandi, timbre indonésien de 1997"
+  }
+ },
+ {
+  "slug": "munir",
+  "nom": "Munir Said Thalib",
+  "classement": "Munir Said Thalib",
+  "titre": "Naissance de Munir Said Thalib",
+  "axe": "Guerres et résistances",
+  "naissance": 1965,
+  "description": "Munir Said Thalib (1965-2004) est un militant indonésien des droits de l'homme, né à Malang. Fondateur de la Commission des disparus et des victimes de violences (KontraS) en 1998, il enquête sur les enlèvements d'étudiants commis par l'armée à la fin du régime de Suharto et défend paysans et ouvriers. Il meurt empoisonné à l'arsenic le 7 septembre 2004, pendant un vol de Jakarta vers Amsterdam, et les commanditaires de son assassinat n'ont jamais été condamnés.",
+  "wikipedia": "Munir_Saïd_Thalib",
+  "portrait": {
+   "fichier": "Munir Said Thalib and Friends.jpg",
+   "legende": "Munir Said Thalib, photographie de 2004",
+   "licence": "CC BY-SA 3.0",
+   "auteur": "Sutanandika"
+  }
+ }
+]
+```
 
 ## Règles appliquées
 
