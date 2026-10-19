@@ -1,6 +1,6 @@
 # Monde malais (Malaisie, Singapour, Brunei, Timor oriental) : candidats examinés
 
-> **État** : recherche préalable, rien n'est encore écrit. Pour chaque candidat disparu, on a cherché l'article de Wikipédia en français (lien interlangue de la page anglaise). Les portraits restent à chercher.
+> **État** : le thème `pan_malais` est construit (32 figures ; voir « Un bloc : le monde malais » dans `docs/personnages-illustres.md`). Ce fichier garde la recherche préalable, qui a précédé la liste finale (`scripts/pantheon/malais.json`), et une fiche en attente de portrait. Pour chaque candidat disparu, on a cherché l'article de Wikipédia en français (lien interlangue de la page anglaise). Les portraits restent à chercher.
 > Aucun doublon avec les panthéons existants (Raffles, Tan Kah Kee, Saloma ne sont dans aucun).
 
 ## Avec article en français (37)
@@ -48,3 +48,29 @@
 ## Sans article en français (écartés)
 
 Tan Siew Sin (Malaisie), V. T. Sambanthan (Malaisie), Ismail Abdul Rahman (Malaisie), Onn Jaafar (Malaisie), Mat Salleh (Malaisie), Tok Janggut (Malaisie), Dato' Bahaman (Malaisie), Abu Bakar of Johor (Malaisie), Sudirman Arshad (Malaisie), Usman Awang (Malaisie), Za'ba (Malaisie), Syed Sheikh al-Hadi (Malaisie), Ibrahim Hussein (painter) (Malaisie), Syed Ahmad Jamal (Malaisie), Lim Chong Eu (Malaisie), Lim Lian Geok (Malaisie), Ibrahim Yaacob (Malaisie), Burhanuddin al-Helmi (Malaisie), Ahmad Boestamam (Malaisie), Ishak Haji Muhammad (Malaisie), Chin Peng (Malaisie), Fadzil Noor (Malaisie), Karpal Singh (Malaisie), Mohamed Suffian Mohamed Hashim (Malaisie), Goh Keng Swee (Singapour), S. Rajaratnam (Singapour), Lim Yew Hock (Singapour), Elizabeth Choy (Singapour), Hussein Shah of Johor (Singapour), Lim Boon Keng (Singapour), Eu Tong Sen (Singapour), Tan Howe Liang (Singapour), Cheong Soo Pieng (Singapour), Tan Tock Seng (Singapour), Tan Kim Seng (Singapour), Lim Chin Siong (Singapour), Ahmad Ibrahim (politician) (Singapour), Eunos Abdullah (Singapour), Tan Jiak Kim (Singapour), Bolkiah, Sultan of Brunei (Brunei), Abdul Momin of Brunei (Brunei), Dom Boaventura (Timor oriental), Martinho da Costa Lopes (Timor oriental), Liu Kang (la page anglaise est le personnage de jeu vidéo) (Singapour), Sebastião Gomes (Timor oriental).
+
+## Fiche rédigée, portrait non téléchargé : Fernando Sylvan
+
+La fiche est écrite et le fichier Commons choisi (domaine public), mais Wikimedia répond 429 à toute requête sur ce fichier depuis cet environnement. Pour la réintégrer : recopier l'objet dans
+`personnages` de `scripts/pantheon/malais.json`, lancer `python3 scripts/fetch_portraits.py malais --only sylvan`, écrire `classement` (`python3 scripts/pantheon_classement.py --write malais`), puis
+`python3 scripts/build_pantheon.py malais`, `npm run build:pack` et les compteurs (tests de la galerie et du mode « Qui est-ce ? », `js/i18n.js`, `sw.js`).
+
+```json
+[
+ {
+  "slug": "sylvan",
+  "nom": "Fernando Sylvan",
+  "classement": "Sylvan, Fernando",
+  "titre": "Naissance de Fernando Sylvan",
+  "axe": "Littérature et pensée",
+  "naissance": 1917,
+  "pays": "TL",
+  "description": "Fernando Sylvan (1917-1993) est un écrivain, poète et essayiste timorais, né à Dili et mort à Cascais, au Portugal, où il passe presque toute sa vie. Éloigné de son île, il y puise pourtant son inspiration, en écrivant en portugais sur les traditions, les légendes et le folklore du Timor. Il est l'une des grandes voix littéraires du Timor oriental.",
+  "wikipedia": "Fernando_Sylvan",
+  "portrait": {
+   "fichier": "Fernando Sylvan (in 'Perspectiva de Nação Portuguesa', 1965).png",
+   "legende": "Fernando Sylvan, photographie de 1965"
+  }
+ }
+]
+```

@@ -2,8 +2,8 @@
   "version": "1.0.0",
   "lang": "fr",
   "name": "Français (Intégral)",
-  "totalThemes": 835,
-  "totalEvents": 24676,
+  "totalThemes": 836,
+  "totalEvents": 24708,
   "categories": [
     {
       "nom": "Culture générale",
@@ -136218,6 +136218,607 @@
                 "pan_maghreb_mernissi",
                 "pan_maghreb_kadhafi",
                 "pan_maghreb_idir"
+              ]
+            },
+            {
+              "id": "pan_malais",
+              "nom": "Grandes figures de Malaisie, de Singapour, de Brunei et du Timor oriental",
+              "difficulte": "Intermédiaire",
+              "motsCles": [
+                "Malaisie",
+                "Malaisien",
+                "Malaisienne",
+                "Malais",
+                "Malaya",
+                "Singapour",
+                "Singapourien",
+                "Singapourienne",
+                "Brunei",
+                "Bruneien",
+                "Timor oriental",
+                "Timor-Leste",
+                "Timorais",
+                "Monde malais",
+                "Asie du Sud-Est",
+                "Kuala Lumpur",
+                "Penang",
+                "Malacca",
+                "Johor",
+                "Kedah",
+                "Sabah",
+                "Sarawak",
+                "Bornéo",
+                "Dili",
+                "Bandar Seri Begawan",
+                "Établissements des détroits",
+                "Raffles",
+                "Merdeka",
+                "Sultanat",
+                "Peranakan"
+              ],
+              "events": [
+                {
+                  "id": "pan_malais_raffles",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1781,
+                  "titre": "Naissance de Thomas Stamford Raffles",
+                  "description": "Thomas Stamford Raffles (1781-1826) est un administrateur colonial britannique, né à bord d'un navire au large de la Jamaïque. Lieutenant-gouverneur de Java de 1811 à 1816, il obtient en 1819 du sultan de Johor un comptoir à Singapour, qu'il fonde comme port franc de la Compagnie britannique des Indes orientales et qu'il dote d'un plan d'urbanisme. Naturaliste passionné, cofondateur de la Société zoologique de Londres, il meurt à Londres en 1826, ruiné et épuisé.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Thomas_Stamford_Raffles",
+                  "pays": "SG",
+                  "classement": "Raffles, Thomas Stamford",
+                  "image": {
+                    "src": "assets/portraits/pan_malais_raffles.jpg",
+                    "legende": "Thomas Stamford Raffles, portrait peint par George Francis Joseph",
+                    "auteur": "George Francis Joseph (1764–1846) Alternative names George Joseph; Joseph",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:George_Francis_Joseph_-_Sir_Thomas_Stamford_Bingley_Raffles.jpg"
+                  }
+                },
+                {
+                  "id": "pan_malais_hashim",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1825,
+                  "titre": "Naissance de Hashim Jalilul Alam Aqamaddin",
+                  "description": "Hashim Jalilul Alam Aqamaddin (1825-1906) est le vingt-cinquième sultan de Brunei, de 1885 à sa mort, né à Bandar Seri Begawan. Il règne sur un sultanat réduit à quelques districts, qui perd Limbang, annexé en 1890 par le rajah blanc du Sarawak, et il place en 1888 son pays sous la protection de la Grande-Bretagne. Il meurt en 1906, après avoir accepté l'installation d'un résident britannique.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Hashim_Jalilul_Alam_Aqamaddin",
+                  "pays": "BN",
+                  "classement": "Hashim Jalilul Alam Aqamaddin",
+                  "image": {
+                    "src": "assets/portraits/pan_malais_hashim.jpg",
+                    "legende": "Hashim Jalilul Alam Aqamaddin, portrait",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Sultan_Hashim_Jalilul_Alam_Aqamaddin.jpg"
+                  }
+                },
+                {
+                  "id": "pan_malais_wulienteh",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1879,
+                  "titre": "Naissance de Wu Lien-teh",
+                  "description": "Wu Lien-teh (1879-1960) est un médecin sino-malaisien, né à Penang et premier étudiant d'origine chinoise de la faculté de médecine de Cambridge. Chargé en 1910 de combattre la peste pulmonaire de Mandchourie, qui tue environ soixante mille personnes, il impose les masques de gaze, la quarantaine et la crémation des morts, et préside en 1911 la conférence internationale de Moukden. Proposé pour le prix Nobel de médecine en 1935, il rentre en Malaisie et meurt à Penang en 1960.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Wu_Lien-teh",
+                  "pays": "MY",
+                  "classement": "Wu Lien-teh",
+                  "image": {
+                    "src": "assets/portraits/pan_malais_wulienteh.jpg",
+                    "legende": "Wu Lien-teh, photographie de 1911",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Wu_Lien-teh_1911.jpg"
+                  }
+                },
+                {
+                  "id": "pan_malais_tanchenglock",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1883,
+                  "titre": "Naissance de Tan Cheng Lock",
+                  "description": "Tan Cheng Lock (1883-1960) est un homme politique sino-malaisien, né à Malacca dans une famille peranakan. Après avoir siégé au conseil législatif des Établissements des détroits, il fonde en 1949 l'Association des Chinois de Malaisie, dont il est le premier président, et s'allie à l'UMNO pour obtenir l'indépendance par la négociation. Il meurt à Malacca en 1960, trois ans après l'indépendance qu'il avait préparée.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Tan_Cheng_Lock",
+                  "pays": "MY",
+                  "classement": "Tan Cheng Lock",
+                  "image": {
+                    "src": "assets/portraits/pan_malais_tanchenglock.jpg",
+                    "legende": "Tan Cheng Lock, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Tan_Cheng_Lock.jpg"
+                  }
+                },
+                {
+                  "id": "pan_malais_jamalul2",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1889,
+                  "titre": "Naissance de Muhammad Jamalul Alam II",
+                  "description": "Muhammad Jamalul Alam II (1889-1924) est le vingt-sixième sultan de Brunei, de 1906 à sa mort, né à Bandar Seri Begawan. Monté sur le trône à 17 ans, au moment où un résident britannique s'installe à Brunei et prend en main l'administration, il règne sous ce régime de protectorat jusqu'à sa mort prématurée, à 35 ans. Son fils Ahmad Tajuddin lui succède à 11 ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Muhammad_Jamalul_Alam_II",
+                  "pays": "BN",
+                  "classement": "Muhammad Jamalul Alam II",
+                  "image": {
+                    "src": "assets/portraits/pan_malais_jamalul2.jpg",
+                    "legende": "Muhammad Jamalul Alam II, portrait",
+                    "auteur": "Brunei History Center",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Sultan_Muhammad_Jamalul_Alam_II(Brunei).jpg"
+                  }
+                },
+                {
+                  "id": "pan_malais_leechooneo",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1895,
+                  "titre": "Naissance de Lee Choo Neo",
+                  "description": "Lee Choo Neo (1895-1947) est la première femme médecin à exercer à Singapour, où elle est née. Chirurgienne, elle dirige deux services d'hôpital puis fonde sa propre clinique. Cofondatrice de l'Association des femmes chinoises de Malaisie et membre du comité de réforme du mariage chinois, elle contribue à faire abandonner la polygamie dans sa communauté, et meurt en 1947.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Lee_Choo_Neo",
+                  "pays": "SG",
+                  "classement": "Lee Choo Neo",
+                  "image": {
+                    "src": "assets/portraits/pan_malais_leechooneo.jpg",
+                    "legende": "Lee Choo Neo, portrait",
+                    "auteur": "Song Ong Siang",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Lee_Choo_Neo.png"
+                  }
+                },
+                {
+                  "id": "pan_malais_tunku",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1903,
+                  "titre": "Naissance de Tunku Abdul Rahman",
+                  "description": "Tunku Abdul Rahman (1903-1990) est le premier Premier ministre de la Malaisie, né à Alor Setar, fils du sultan de Kedah, et le père de l'indépendance. Chef de l'UMNO et de l'Alliance, il obtient des Britanniques l'indépendance de la Malaya, proclamée le 31 août 1957 à Kuala Lumpur, puis fonde la Malaisie en 1963 avec Singapour, Sabah et Sarawak, avant de renvoyer Singapour de la fédération en 1965. Il quitte le pouvoir en 1970, après les émeutes raciales de mai 1969, et meurt à Kuala Lumpur en 1990.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Tunku_Abdul_Rahman",
+                  "pays": "MY",
+                  "classement": "Tunku Abdul Rahman",
+                  "image": {
+                    "src": "assets/portraits/pan_malais_tunku.jpg",
+                    "legende": "Tunku Abdul Rahman, portrait officiel de 1957",
+                    "auteur": "Information Department, Ministry Of Communications and Kini X",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Tunku_Abdul_Rahman_Official_Portrait.jpg"
+                  }
+                },
+                {
+                  "id": "pan_malais_georgettechen",
+                  "axe": "Beaux-arts",
+                  "date": 1906,
+                  "titre": "Naissance de Georgette Chen",
+                  "description": "Georgette Chen (1906-1993) est une peintre singapourienne, née dans une famille chinoise sous le nom de Chang Li Ying et formée à Paris et à New York. Installée à Singapour après la guerre, elle peint à l'huile, dans un style postimpressionniste, des portraits, des natures mortes et des scènes de la vie malaise, qui la rattachent à l'école de Nanyang. Première femme à enseigner à l'Académie des beaux-arts de Nanyang, à partir de 1954, elle meurt à Singapour en 1993.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Georgette_Chen",
+                  "pays": "SG",
+                  "classement": "Chen, Georgette",
+                  "image": {
+                    "src": "assets/portraits/pan_malais_georgettechen.jpg",
+                    "legende": "Georgette Chen, autoportrait",
+                    "auteur": "Mordantgrove",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Georgette_Chen,_Self_Portrait.jpg"
+                  }
+                },
+                {
+                  "id": "pan_malais_sheares",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1907,
+                  "titre": "Naissance de Benjamin Sheares",
+                  "description": "Benjamin Sheares (1907-1981) est le deuxième président de la République de Singapour, de 1971 à sa mort, né à Singapour. Obstétricien et gynécologue réputé, professeur à l'Université de Singapour, il reste longtemps à l'écart de la politique avant d'être choisi pour succéder à Yusof Ishak. Il meurt en fonction en 1981, à 73 ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Benjamin_Henry_Sheares",
+                  "pays": "SG",
+                  "classement": "Sheares, Benjamin",
+                  "image": {
+                    "src": "assets/portraits/pan_malais_sheares.jpg",
+                    "legende": "Benjamin Sheares, photographie des années 1940",
+                    "auteur": "Benjamin Henry Sheares",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Benjamin_Sheares_1940s.jpg"
+                  }
+                },
+                {
+                  "id": "pan_malais_marshall",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1908,
+                  "titre": "Naissance de David Marshall",
+                  "description": "David Marshall (1908-1995) est le premier chef du gouvernement de Singapour, de 1955 à 1956, né à Singapour dans une famille juive d'origine irakienne. Avocat célèbre, chef du Front travailliste, il dirige la colonie après les premières élections libres, mais doit démissionner quand les négociations de Londres sur l'autonomie échouent. Ambassadeur en France, en Espagne, au Portugal et en Suisse de 1978 à 1993, il meurt à Singapour en 1995.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/David_Marshall_(homme_politique_singapourien)",
+                  "pays": "SG",
+                  "classement": "Marshall, David",
+                  "image": {
+                    "src": "assets/portraits/pan_malais_marshall.jpg",
+                    "legende": "David Marshall, photographie des années 1930",
+                    "auteur": "Allen & Gledhill",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:David_Saul_Marshall,_1930s_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_malais_limboseng",
+                  "axe": "Guerres et résistances",
+                  "date": 1909,
+                  "titre": "Naissance de Lim Bo Seng",
+                  "description": "Lim Bo Seng (1909-1944) est un résistant sino-malaisien, né à Nan'an, dans le Fujian, et installé à Singapour, où il dirige une entreprise familiale. Chef de la résistance chinoise de la Malaisie britannique, il rejoint la Force 136, l'organisation de sabotage britannique en Asie, et tente de bâtir un réseau de renseignement contre les Japonais. Arrêté en mars 1944 et torturé, il meurt en prison à Ipoh le 29 juin, sans avoir livré son réseau, et Singapour lui élève un monument en 1954.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Lim_Bo_Seng",
+                  "pays": "SG",
+                  "classement": "Lim Bo Seng",
+                  "image": {
+                    "src": "assets/portraits/pan_malais_limboseng.jpg",
+                    "legende": "Lim Bo Seng, photographie des années 1930",
+                    "auteur": "Original uploader was Mr Tan at en.wikipedia .",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:LimBoSeng-1930s.jpg"
+                  }
+                },
+                {
+                  "id": "pan_malais_yusof",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1910,
+                  "titre": "Naissance de Yusof Ishak",
+                  "description": "Yusof Ishak (1910-1970) est le premier président de la République de Singapour, de 1965 à sa mort, né à Taiping, dans le Perak. Journaliste, il fonde en 1939 le quotidien malais « Utusan Melayu », puis devient en 1959 chef de l'État de la colonie autonome, sous le titre de Yang di-Pertuan Negara. Son visage figure sur les billets de Singapour, et il meurt en fonction en 1970.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Yusof_Ishak",
+                  "pays": "SG",
+                  "classement": "Yusof Ishak",
+                  "image": {
+                    "src": "assets/portraits/pan_malais_yusof.jpg",
+                    "legende": "Yusof Ishak, portrait",
+                    "auteur": "Share1477",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Yusof_Ishak.png"
+                  }
+                },
+                {
+                  "id": "pan_malais_tajuddin",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1913,
+                  "titre": "Naissance d'Ahmad Tajuddin",
+                  "description": "Ahmad Tajuddin (1913-1950) est le vingt-septième sultan de Brunei, de 1924 à sa mort, né à Bandar Seri Begawan et monté sur le trône à 11 ans. C'est sous son règne que des gisements de pétrole sont découverts à Seria, en 1929, ce qui change l'avenir économique du sultanat sous protection britannique. Il meurt à Singapour en 1950, à 37 ans, et son frère Omar Ali Saifuddien lui succède.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ahmad_Tajuddin",
+                  "pays": "BN",
+                  "classement": "Ahmad Tajuddin",
+                  "image": {
+                    "src": "assets/portraits/pan_malais_tajuddin.jpg",
+                    "legende": "Ahmad Tajuddin, portrait",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Sultan_Ahmad_Tajuddin_Akhazul_Khairi_Waddien.jpg"
+                  }
+                },
+                {
+                  "id": "pan_malais_omarali3",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1914,
+                  "titre": "Naissance d'Omar Ali Saifuddien III",
+                  "description": "Omar Ali Saifuddien III (1914-1986) est le vingt-huitième sultan de Brunei, de 1950 à 1967, né à Bandar Seri Begawan et surnommé l'architecte du Brunei moderne. Il fait adopter en 1959 la première Constitution du sultanat, refuse en 1963 d'entrer dans la fédération de Malaisie et fait construire la grande mosquée de la capitale, qui porte son nom. Il abdique en 1967 en faveur de son fils Hassanal Bolkiah, puis garde le portefeuille de la Défense jusqu'à sa mort, en 1986.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Omar_Ali_Saifuddien_III",
+                  "pays": "BN",
+                  "classement": "Omar Ali Saifuddien III",
+                  "image": {
+                    "src": "assets/portraits/pan_malais_omarali3.jpg",
+                    "legende": "Omar Ali Saifuddien III, portrait officiel",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Omar_Ali_Saifuddien_III.jpg"
+                  }
+                },
+                {
+                  "id": "pan_malais_weekimwee",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1915,
+                  "titre": "Naissance de Wee Kim Wee",
+                  "description": "Wee Kim Wee (1915-2005) est le quatrième président de la République de Singapour, de 1985 à 1993, né à Singapour. Journaliste au « Straits Times » pendant plus de trente ans, puis diplomate dans plusieurs pays d'Asie, il fait de la présidence une fonction bienveillante et proche de la population. Il meurt à Singapour en 2005.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Wee_Kim_Wee",
+                  "pays": "SG",
+                  "classement": "Wee Kim Wee",
+                  "image": {
+                    "src": "assets/portraits/pan_malais_weekimwee.jpg",
+                    "legende": "Wee Kim Wee, photographie de 1936",
+                    "auteur": "Photo by Koh Sok Hiong; Book by Chor Lin Lee and May Khuen Chung",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Wee_Kim_Wee,_1936_(cropped).png"
+                  }
+                },
+                {
+                  "id": "pan_malais_fuad",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1920,
+                  "titre": "Naissance de Fuad Stephens",
+                  "description": "Fuad Stephens (1920-1976) est le premier ministre en chef de Sabah, de 1963 à 1964, né à Kudat sous le nom de Donald Stephens, chef de la communauté kadazan. Journaliste, il négocie l'entrée de Bornéo du Nord dans la Malaisie, en 1963, et défend l'autonomie de Sabah. Converti à l'islam en 1971, il redevient ministre en chef en 1976 et meurt quelques semaines plus tard dans l'accident d'avion du « Double Six », le 6 juin 1976.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Fuad_Stephens",
+                  "pays": "MY",
+                  "classement": "Stephens, Fuad",
+                  "image": {
+                    "src": "assets/portraits/pan_malais_fuad.jpg",
+                    "legende": "Fuad Stephens, photographie",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Tun_Fuad_Stephens.jpg"
+                  }
+                },
+                {
+                  "id": "pan_malais_razak",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1922,
+                  "titre": "Naissance d'Abdul Razak Hussein",
+                  "description": "Abdul Razak Hussein (1922-1976) est le deuxième Premier ministre de la Malaisie, de 1970 à sa mort, né près de Pekan, dans le Pahang. Il lance en 1971 la Nouvelle politique économique, pour réduire les inégalités entre Malais et Chinois, fonde en 1974 la coalition du Barisan Nasional et établit la même année des relations diplomatiques avec la Chine. Surnommé « le père du développement », il meurt à Londres en 1976, d'une leucémie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Abdul_Razak",
+                  "pays": "MY",
+                  "classement": "Abdul Razak Hussein",
+                  "image": {
+                    "src": "assets/portraits/pan_malais_razak.jpg",
+                    "legende": "Abdul Razak Hussein, photographie de 1968",
+                    "auteur": "Ron Kroon / Anefo",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Tun_Abdul_Razak_1968.jpg"
+                  }
+                },
+                {
+                  "id": "pan_malais_ungku",
+                  "axe": "Littérature et pensée",
+                  "date": 1922,
+                  "titre": "Naissance d'Ungku Abdul Aziz",
+                  "description": "Ungku Abdul Aziz (1922-2020) est un économiste malaisien, né à Londres dans la famille royale du Johor, professeur royal de l'Université de Malaya. Spécialiste de la pauvreté rurale, il est l'inspirateur de la caisse du pèlerinage, le Tabung Haji, créée en 1969 pour permettre aux paysans d'épargner pour le hajj, et il dirige l'Université de Malaya de 1968 à 1988. Il meurt à Kuala Lumpur en 2020, à 98 ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ungku_Abdul_Aziz",
+                  "pays": "MY",
+                  "classement": "Ungku Abdul Aziz",
+                  "image": {
+                    "src": "assets/portraits/pan_malais_ungku.jpg",
+                    "legende": "Ungku Abdul Aziz, photographie",
+                    "auteur": "Victor pogadaev",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ungku_Abdul_Aziz.jpg"
+                  }
+                },
+                {
+                  "id": "pan_malais_devannair",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1923,
+                  "titre": "Naissance de Devan Nair",
+                  "description": "Devan Nair (1923-2005) est le troisième président de la République de Singapour, de 1981 à 1985, né à Malacca dans une famille d'origine indienne. Syndicaliste et cofondateur du Parti d'action populaire, emprisonné par les Britanniques dans les années 1950, il fonde le Congrès national des syndicats, qu'il dirige jusqu'à son élection à la présidence. Contraint de démissionner en 1985 après un conflit avec Lee Kuan Yew, qui lui reproche des problèmes d'alcool, il s'exile au Canada et meurt à Hamilton, en Ontario.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Devan_Nair",
+                  "pays": "SG",
+                  "classement": "Nair, Devan",
+                  "image": {
+                    "src": "assets/portraits/pan_malais_devannair.jpg",
+                    "legende": "Devan Nair, photographie de 1953",
+                    "auteur": "The Straits Times",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Devan_Nair,_1953_(larger_crop).png"
+                  }
+                },
+                {
+                  "id": "pan_malais_leekuanyew",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1923,
+                  "titre": "Naissance de Lee Kuan Yew",
+                  "description": "Lee Kuan Yew (1923-2015) est le premier Premier ministre de Singapour, de 1959 à 1990, né à Singapour dans une famille chinoise de langue anglaise. Avocat, cofondateur du Parti d'action populaire, il conduit la cité-État à l'autonomie, puis à la fédération malaisienne, dont elle est exclue en 1965, et la transforme en une puissance commerciale et financière, au prix d'un régime autoritaire qui encadre la presse et l'opposition. Il garde un rôle de conseiller jusqu'en 2011 et meurt en 2015, à 91 ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Lee_Kuan_Yew",
+                  "pays": "SG",
+                  "classement": "Lee Kuan Yew",
+                  "image": {
+                    "src": "assets/portraits/pan_malais_leekuanyew.jpg",
+                    "legende": "Lee Kuan Yew, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Lee_Kuan_Yew.jpg"
+                  }
+                },
+                {
+                  "id": "pan_malais_nathan",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1924,
+                  "titre": "Naissance de Sellapan Ramanathan",
+                  "description": "Sellapan Ramanathan (1924-2016) est le sixième président de la République de Singapour, de 1999 à 2011, né à Singapour. Fonctionnaire du ministère de la Défense, puis diplomate, il se fait connaître en 1974 en acceptant d'accompagner au Koweït les terroristes qui avaient pris des otages à Singapour, en échange de leur libération. Titulaire du plus long mandat de la fonction, il meurt à Singapour en 2016.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sellapan_Ramanathan",
+                  "pays": "SG",
+                  "classement": "Ramanathan, Sellapan",
+                  "image": {
+                    "src": "assets/portraits/pan_malais_nathan.jpg",
+                    "legende": "Sellapan Ramanathan, photographie officielle",
+                    "auteur": "Calvin Teo",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:President_of_Singapore_SR_Nathan.jpg"
+                  }
+                },
+                {
+                  "id": "pan_malais_jeyaretnam",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1926,
+                  "titre": "Naissance de Joshua Benjamin Jeyaretnam",
+                  "description": "Joshua Benjamin Jeyaretnam (1926-2008) est un avocat et homme politique singapourien, né au Sri Lanka. Chef du Parti des travailleurs, il crée la surprise en 1981 en remportant une élection partielle, devenant le premier député d'opposition de Singapour depuis 1966, puis voit sa carrière brisée par des condamnations et des procès en diffamation, qui le privent de son siège en 1986 et le conduisent à la faillite en 2001. Il meurt à Singapour en 2008.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/J._B._Jeyaretnam",
+                  "pays": "SG",
+                  "classement": "Jeyaretnam, Joshua Benjamin",
+                  "image": {
+                    "src": "assets/portraits/pan_malais_jeyaretnam.jpg",
+                    "legende": "Joshua Benjamin Jeyaretnam, photographie de 2005",
+                    "auteur": "Jacob George .",
+                    "licence": "CC BY 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:JoshuaBenjaminJeyaretnam-Singapore-20051107.jpg"
+                  }
+                },
+                {
+                  "id": "pan_malais_halim",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1927,
+                  "titre": "Naissance d'Abdul Halim de Kedah",
+                  "description": "Abdul Halim de Kedah (1927-2017) est le sultan de Kedah de 1958 à sa mort, né à Alor Setar, et le seul souverain à avoir été deux fois roi de Malaisie (Yang di-Pertuan Agong), de 1970 à 1975 puis de 2011 à 2016. Sacré une première fois à 43 ans, il devient à 84 ans le plus âgé à monter sur le trône fédéral. Son règne de près de soixante ans à Kedah est l'un des plus longs de l'histoire du pays.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Abdul_Halim_Muadzam_Shah",
+                  "pays": "MY",
+                  "classement": "Abdul Halim de Kedah",
+                  "image": {
+                    "src": "assets/portraits/pan_malais_halim.jpg",
+                    "legende": "Abdul Halim de Kedah, portrait officiel",
+                    "auteur": "Kepresidenan Indonesia",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Abdul_Halim_of_Kedah.jpg"
+                  }
+                },
+                {
+                  "id": "pan_malais_ramlee",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1929,
+                  "titre": "Naissance de Puteh Ramlee",
+                  "description": "Puteh Ramlee (1929-1973) est un acteur, réalisateur, chanteur et compositeur malaisien, né à Penang sous le nom de Teuku Zakaria. Il réalise pour les studios Malay Film Productions, à Singapour, des comédies et des drames devenus des classiques, comme « Penarik Becha » (1955), « Ibu Mertuaku » (1962) et « Madu Tiga » (1964), et compose plus de deux cents chansons. Tombé dans l'oubli à la fin de sa vie, il meurt à 44 ans, en 1973, et reste le plus grand artiste populaire de la Malaisie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/P._Ramlee",
+                  "pays": "MY",
+                  "classement": "Ramlee, Puteh",
+                  "image": {
+                    "src": "assets/portraits/pan_malais_ramlee.jpg",
+                    "legende": "P. Ramlee avec son violon, photographie de film des années 1950, ici recadrée sur lui",
+                    "auteur": "Uncredited",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:P_Ramlee_and_Kasma_Booty,_Peran_Pemuda_dalam_Kebangkitan_Film_Indonesia,_p114.jpg"
+                  }
+                },
+                {
+                  "id": "pan_malais_nikaziz",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1931,
+                  "titre": "Naissance de Nik Abdul Aziz Nik Mat",
+                  "description": "Nik Abdul Aziz Nik Mat (1931-2015) est un érudit musulman et homme politique malaisien, né à Kota Bharu. Chef spirituel du parti islamique PAS, il dirige l'État du Kelantan comme ministre en chef de 1990 à 2013 et y fait adopter un code pénal islamique que la Constitution fédérale empêche d'appliquer. Connu pour son mode de vie modeste, dans une maison de bois, il meurt à Kota Bharu en 2015.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Nik_Abdul_Aziz_Nik_Mat",
+                  "pays": "MY",
+                  "classement": "Nik Abdul Aziz Nik Mat",
+                  "image": {
+                    "src": "assets/portraits/pan_malais_nikaziz.jpg",
+                    "legende": "Nik Abdul Aziz Nik Mat, photographie",
+                    "auteur": "Fayez",
+                    "licence": "CC BY 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Nik_Aziz_Kelantan_(cropped_3to4_portrait).jpg"
+                  }
+                },
+                {
+                  "id": "pan_malais_shahnon",
+                  "axe": "Littérature et pensée",
+                  "date": 1933,
+                  "titre": "Naissance de Shahnon Ahmad",
+                  "description": "Shahnon Ahmad (1933-2017) est un écrivain malaisien, né à Sik, dans le Kedah, professeur à l'Université des sciences de Malaisie. Son roman « Ranjau Sepanjang Jalan » (1966), qui suit une famille de riziculteurs écrasée par la pauvreté, est un classique de la littérature malaise, et l'État lui décerne en 1982 le titre d'écrivain national. Élu député du parti islamique PAS de 1999 à 2004, il publie en 1999 une satire politique au titre provocant, « Shit », et meurt à Kajang en 2017.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Shahnon_Ahmad",
+                  "pays": "MY",
+                  "classement": "Shahnon Ahmad",
+                  "image": {
+                    "src": "assets/portraits/pan_malais_shahnon.jpg",
+                    "legende": "Shahnon Ahmad, photographie",
+                    "auteur": "В.А. Погадаев",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Shahnon_Ahmad.jpg"
+                  }
+                },
+                {
+                  "id": "pan_malais_saloma",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1935,
+                  "titre": "Naissance de Saloma",
+                  "description": "Saloma (1935-1983) est une chanteuse, actrice et danseuse malaisienne, née à Singapour sous le nom de Salmah Ismail. Épouse du cinéaste Puteh Ramlee, avec qui elle joue dans de nombreux films de l'âge d'or du cinéma malais, elle chante ses compositions et devient l'une des voix les plus aimées du pays. Honorée en 1978 du titre d'« Oiseau chanteur national » par le gouvernement malaisien, elle meurt en 1983, à 48 ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Saloma",
+                  "pays": "MY",
+                  "classement": "Saloma",
+                  "image": {
+                    "src": "assets/portraits/pan_malais_saloma.jpg",
+                    "legende": "Saloma, portrait",
+                    "auteur": "Shh zn",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Saloma-in-black.png"
+                  }
+                },
+                {
+                  "id": "pan_malais_ong",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1936,
+                  "titre": "Naissance d'Ong Teng Cheong",
+                  "description": "Ong Teng Cheong (1936-2002) est le cinquième président de la République de Singapour, de 1993 à 1999, né à Singapour, et le premier élu au suffrage universel direct. Architecte de formation, vice-Premier ministre et dirigeant du Congrès national des syndicats, il use de ses pouvoirs nouveaux de gardien des réserves de l'État et se heurte au gouvernement sur l'accès à leur inventaire. Atteint d'un lymphome, il meurt à Singapour en 2002.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ong_Teng_Cheong",
+                  "pays": "SG",
+                  "classement": "Ong Teng Cheong",
+                  "image": {
+                    "src": "assets/portraits/pan_malais_ong.jpg",
+                    "legende": "Ong Teng Cheong, photographie officielle",
+                    "auteur": "Víctor Bugge",
+                    "licence": "CC BY 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ong_Teng_Cheong.jpg"
+                  }
+                },
+                {
+                  "id": "pan_malais_amaral",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1937,
+                  "titre": "Naissance de Francisco Xavier do Amaral",
+                  "description": "Francisco Xavier do Amaral (1937-2012) est le premier président du Timor oriental, né à Turiscai. Cofondateur du Fretilin, il proclame l'indépendance le 28 novembre 1975 et devient chef de l'État, mais il est arrêté par ses camarades en 1977, accusé de trahison, puis capturé par l'armée indonésienne en 1978. Retenu à Jakarta, il rentre en 1999, siège au Parlement de 2001 à sa mort, à Dili, et les Timorais l'appellent affectueusement « grand-père Xavier ».",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Francisco_Xavier_do_Amaral",
+                  "pays": "TL",
+                  "classement": "Amaral, Francisco Xavier do",
+                  "image": {
+                    "src": "assets/portraits/pan_malais_amaral.jpg",
+                    "legende": "Francisco Xavier do Amaral, photographie",
+                    "auteur": "Auteur non identifié sur Commons",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Francisco_Xavier_do_Amaral.jpg"
+                  }
+                },
+                {
+                  "id": "pan_malais_badawi",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1939,
+                  "titre": "Naissance d'Abdullah Ahmad Badawi",
+                  "description": "Abdullah Ahmad Badawi (1939-2025) est le cinquième Premier ministre de la Malaisie, de 2003 à 2009, né à Bayan Lepas, à Penang, petit-fils d'un érudit musulman réputé. Successeur de Mahathir, il prône un « islam hadhari », un islam modéré et ouvert au développement, lance une campagne contre la corruption et remporte en 2004 la plus large victoire électorale de son parti. Affaibli par les élections de 2008, il quitte le pouvoir en 2009 et meurt à Kuala Lumpur en 2025.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Abdullah_Ahmad_Badawi",
+                  "pays": "MY",
+                  "classement": "Abdullah Ahmad Badawi",
+                  "image": {
+                    "src": "assets/portraits/pan_malais_badawi.jpg",
+                    "legende": "Abdullah Ahmad Badawi, photographie de 2004",
+                    "auteur": "White House photo by Tina Hager",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Abdullah_Badawi_2004.jpg"
+                  }
+                },
+                {
+                  "id": "pan_malais_lobato",
+                  "axe": "Guerres et résistances",
+                  "date": 1946,
+                  "titre": "Naissance de Nicolau Lobato",
+                  "description": "Nicolau Lobato (1946-1978) est le premier Premier ministre du Timor oriental, né à Soibada, alors colonie portugaise. Dirigeant du Fretilin, il proclame l'indépendance de la République démocratique du Timor oriental le 28 novembre 1975, neuf jours avant l'invasion indonésienne, puis commande la résistance armée dans les montagnes. Tué par l'armée indonésienne le 31 décembre 1978, il est aujourd'hui honoré comme héros national.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Nicolau_dos_Reis_Lobato",
+                  "pays": "TL",
+                  "classement": "Lobato, Nicolau",
+                  "image": {
+                    "src": "assets/portraits/pan_malais_lobato.jpg",
+                    "legende": "Nicolau Lobato, timbre du Timor oriental",
+                    "auteur": "República Democrática de Timor-Leste",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Stamp_of_Nicolau_dos_Reis_Lobato.jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_malais_yasmin",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1958,
+                  "titre": "Naissance de Yasmin Ahmad",
+                  "description": "Yasmin Ahmad (1958-2009) est une réalisatrice et publicitaire malaisienne, née à Muar, dans le Johor. Directrice de création d'une grande agence de publicité, elle tourne des films tendres sur l'amour entre communautés, comme « Sepet » (2004), « Gubra » (2006) et « Talentime » (2009), qui lui valent des prix à l'étranger et la colère des conservateurs. Elle meurt d'une hémorragie cérébrale en juillet 2009, à 51 ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Yasmin_Ahmad",
+                  "pays": "MY",
+                  "classement": "Yasmin Ahmad",
+                  "image": {
+                    "src": "assets/portraits/pan_malais_yasmin.jpg",
+                    "legende": "Yasmin Ahmad, photographie",
+                    "auteur": "Victor Pogadaev",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Yasmin_Ahmad.jpg"
+                  }
+                }
+              ],
+              "axeOrder": [
+                "Chefs d'État et dirigeants",
+                "Guerres et résistances",
+                "Littérature et pensée",
+                "Beaux-arts",
+                "Musique, spectacle et sport",
+                "Sciences, techniques et innovation"
+              ],
+              "essentiel": [
+                "pan_malais_raffles",
+                "pan_malais_wulienteh",
+                "pan_malais_tunku",
+                "pan_malais_omarali3",
+                "pan_malais_leekuanyew",
+                "pan_malais_ramlee",
+                "pan_malais_lobato"
               ]
             },
             {

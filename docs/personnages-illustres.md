@@ -11,7 +11,7 @@ ne posent pas la même question :
 | | Un thème, c'est | Une date, c'est | On le joue par |
 |---|---|---|---|
 | **Biographies** | une vie (360 thèmes, en 12 domaines) | une étape de cette vie | étape de la vie |
-| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Turquie, le Japon, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Indonésie) | la naissance d'un personnage | domaine |
+| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Turquie, le Japon, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Indonésie, le monde malais) | la naissance d'un personnage | domaine |
 
 Le déplacement ne coûte aucune migration : les 360 thèmes gardent leurs
 identifiants, et rien de ce que le joueur a sauvegardé (favoris, révision,
@@ -2217,6 +2217,52 @@ l'apartheid, l'ANC, Rivonia, Sharpeville, Robben Island et la « nation arc-en-c
   la licence que Commons déclare, non le statut américain, qui n'a pas été vérifié image par image.
 - **Géolocalisation** : seules les figures qui ont leur biographie liée (Mandela, Tutu, Biko) y figurent déjà, par leur biographie.
 
+### Un bloc : le monde malais (Malaisie, Singapour, Brunei et Timor oriental)
+
+`pan_malais`, « Grandes figures de Malaisie, de Singapour, de Brunei et du Timor oriental » (code `malais`, bloc ; rangé sous « Malaisie, Singapour, Brunei et Timor oriental »,
+entre le Maghreb et la Nouvelle-Zélande) : **32 personnages de quatre pays** — Malaisie 13, Singapour 13, Brunei 4, Timor oriental 2 — de Thomas Stamford Raffles (1781) à Yasmin
+Ahmad (1958). Par axe : 22 Chefs d'État et dirigeants, 3 Musique, spectacle et sport, 2 Littérature et pensée, 2 Guerres et résistances, 2 Sciences, techniques et innovation,
+1 Beaux-arts ; 7 ⭐ et aucune biographie liée. 32 portraits (0,8 Mo) : 19 du domaine public, 2 CC0, 3 CC BY 2.0, 3 CC BY-SA 3.0 et 5 CC BY-SA 4.0. Une figure est née avant 1800, cinq
+entre 1800 et 1899, vingt-six depuis 1900. **C'est le plus petit et le plus politique des panthéons** : les deux tiers des figures sont des chefs d'État, rois ou chefs de gouvernement.
+Les mots-clés portent les quatre pays et leurs adjectifs, les villes et États (Kuala Lumpur, Penang, Malacca, Johor, Kedah, Sabah, Sarawak, Dili, Bandar Seri Begawan), les
+Établissements des détroits, Raffles, Merdeka, le sultanat, les Peranakan.
+
+- **Pourquoi ce bloc, et pourquoi si petit.** Le monde malais rassemble des pays qui ont partagé la Malaya britannique, les Établissements des détroits puis la fédération de 1963-1965.
+  La liste est sortie de Wikidata, qui donne les personnes disparues de chaque pays, classées par nombre de langues, et des catégories de Wikipédia en français, et non d'une liste
+  écrite de mémoire : 104 candidats ont été examinés (avec les Philippines, qui ont leur propre thème), 52 d'entre eux dans ces quatre pays. Presque tous les écrivains, artistes
+  et savants malaisiens ou singapouriens n'ont **aucun article en français**, ou aucun portrait libre, et sont écartés (voir plus bas).
+- **Plus de 40 % pour deux pays.** La Malaisie et Singapour pèsent chacune 13 figures sur 32, soit 41 % : la source déclare `partMaxPays` à 0,45, un choix écrit. Le Timor oriental, avec deux
+  figures, est le plus mince ; Brunei en a quatre, tous des sultans, faute d'autres personnalités ayant à la fois un article français et une image libre.
+- **Raffles et le Timor oriental, deux choix à discuter.** Raffles, britannique né en mer au large de la Jamaïque, est ici parce que Singapour l'honore et que le panthéon du Royaume-Uni
+  ne l'a pas : c'est la règle « celui qui l'honore le plus ». Le Timor oriental, lusophone et occupé par l'Indonésie de 1975 à 1999, n'a pas vraiment sa place dans un « monde malais » :
+  il y est rangé faute d'un bloc qui lui convienne mieux, avec Nicolau Lobato et Francisco Xavier do Amaral, les deux dirigeants de l'indépendance de 1975.
+- **Écartés faute d'article en français** (une quarantaine) : Goh Keng Swee, S. Rajaratnam, Lim Yew Hock, Elizabeth Choy, Lim Boon Keng, Tan Siew Sin, V. T. Sambanthan, Onn Jaafar, Ismail Abdul
+  Rahman, Za'ba, Usman Awang, Sudirman Arshad, Chin Peng, Mat Salleh, Tok Janggut, Dato' Bahaman, Syed Sheikh al-Hadi, Ibrahim Hussein, Syed Ahmad Jamal, Lim Chong Eu, Dom Boaventura
+  (l'article existe mais l'image n'est pas un portrait), Martinho da Costa Lopes… Leur liste est dans `scripts/pantheon/malais_candidats.md`.
+- **Écartés faute d'image libre convenable** : Hussein Onn (seules des photographies d'une station de métro portent son nom), Munshi Abdullah (le seul fichier est une page de manuscrit), Tun Jugah,
+  Aishah Ghani, Irene Fernandez, Toh Chin Chye, Tan Kah Kee (seules des photographies de groupe), Zubir Said, Chan Choy Siong, Nino Konis Santana, Mustapha Harun (175 pixels). **Azlan
+  Shah de Perak** n'a que des photographies de cérémonie où l'on ne le distingue pas, et **Tuanku Abdul Rahman**, premier roi de Malaisie, que des clichés de groupe.
+- **Pas de vivants, pas d'entrepreneurs, peu de sportifs.** Mahathir, Anwar Ibrahim, Hassanal Bolkiah, Xanana Gusmão, José Ramos-Horta, Lee Hsien Loong sont dehors ; Mokhtar Dahari, légende du football
+  malaisien, aussi (un sportif n'entre que si son nom dépasse le sport).
+- **Une fiche rédigée en attente : Fernando Sylvan** (1917-1993), poète timorais mort au Portugal, dans `scripts/pantheon/malais_candidats.md` : Wikimedia répondait 429 à tout téléchargement de son
+  portrait (une photographie de 1965). Pour le réintégrer, recopier l'objet dans `personnages`, lancer `python3 scripts/fetch_portraits.py malais --only sylvan`, puis `build_pantheon.py malais`,
+  `npm run build:pack` et les compteurs des tests (3 164 figures).
+- **Dates et noms.** Les noms à initiales (P. Ramlee, S. R. Nathan, J. B. Jeyaretnam) sont écrits en toutes lettres (Puteh Ramlee, Sellapan Ramanathan, Joshua Benjamin Jeyaretnam) : le découpage en
+  phrases du script prend un point suivi d'une majuscule pour une fin de phrase. Fuad Stephens redevient ministre en chef de Sabah quelques semaines avant sa mort dans l'accident du « Double Six »
+  (6 juin 1976). Saloma, née à Singapour, est rangée en Malaisie, où elle a fait carrière avec P. Ramlee.
+- **Où l'on range qui.** Wu Lien-teh, médecin né à Penang et acteur de la lutte contre la peste de Mandchourie, est avec les Sciences, comme Lee Choo Neo, première femme médecin de Singapour ; Georgette
+  Chen, la seule peintre, est aux Beaux-arts ; Lim Bo Seng (résistant) et Nicolau Lobato (chef de la résistance timoraise) sont aux Guerres et résistances ; Ungku Abdul Aziz (économiste) et Shahnon Ahmad
+  sont avec la pensée et les lettres.
+- **Des portraits souvent indirects**, et les légendes le disent : un tableau (Raffles, par George Francis Joseph), un autoportrait photographié dans son cadre (Georgette Chen), un timbre du Timor
+  oriental (Lobato, `nomVisible`, le nom étant imprimé dans l'image) et une photographie de film (Puteh Ramlee). Six sont recadrés dans une image plus large : Puteh Ramlee (à gauche d'un
+  couple), Shahnon Ahmad, Ong Teng Cheong, Jeyaretnam (à la tribune), Georgette Chen (le tableau dans son cadre) et Amaral (dans une foule).
+- **Statut américain des images : à relire.** Dix-neuf portraits sont du « domaine public », la plupart des photographies d'agence ou de presse anciennes ou des portraits officiels (Tun Abdul Razak,
+  Tunku Abdul Rahman, les sultans de Brunei). Le script lit la licence que Commons déclare, non le statut américain, qui n'a pas été vérifié image par image ; comme pour l'Indonésie, la décision est
+  d'accepter les images d'origine gouvernementale ou d'avant 1946, et la liste des « ? » est à relire.
+- **Un téléchargement contraint.** Wikimedia refusait (429) la plupart des miniatures : les portraits ont été téléchargés par `Special:FilePath` (miniatures de 330, 500 ou 960 pixels, ou original), avec
+  la licence, l'auteur et la date lus sur la page de chaque fichier. Trois crédits n'ont pas d'auteur sur Commons (Tan Cheng Lock, Lee Kuan Yew, Amaral) et disent « auteur inconnu ».
+- **Géolocalisation** : aucune figure n'est placée sur l'Atlas, faute de biographie liée.
+
 ### Un fichier source par panthéon, un script qui l'écrit dans `data/fr.json`
 
 `scripts/pantheon/<code>.json` (`fr`, `hispam`…) est **la seule source de
@@ -2559,7 +2605,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
 ### Ce qui n'est pas fait
 
 - **Les autres panthéons** : la France, l'Égypte, les États-Unis, l'Italie, le
-  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Indonésie sont écrits.
+  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Indonésie, le monde malais sont écrits.
   Chaque liste de personnages est validée avant la rédaction. Feuille de route, dans l'ordre
   où on les propose (un pays seul quand il a de quoi faire un thème, un bloc sinon) :
   1. **Le Machrek est écrit** (voir « Le cinquième bloc »). Il reste : le portrait des trois
@@ -2571,8 +2617,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
      figures juives (Edmond Amran El Maleh, Habiba Msika) et en a laissé cinq de côté (Cheikh
      Raymond, Reinette l'Oranaise, Salim Halali, Albert Memmi, Abraham Serfaty).
   2. **Pays seuls** : **l'Afrique du Sud** (voir « Un pays à part : l'Afrique du Sud »), **l'Iran** (voir « Un pays à part : l'Iran »), **le Brésil** (qui n'entre pas dans l'Amérique « hispanique » ; voir « Un pays à part : le Brésil »), **la Turquie** (voir « Un pays à part : la Turquie »), **le Japon** (voir « Un pays à part : le Japon ») et **la Russie** (voir « Un pays à part : la Russie ») et **l'Australie** (voir « Un pays à part : l'Australie ») sont écrits.
-  3. **Blocs** : l'Asie du Sud-Est (l'Indonésie est écrite, voir « Un pays à part : l'Indonésie » ; restent le monde malais — Malaisie, Singapour, Brunei, Timor oriental —,
-     l'Indochine, la Thaïlande avec la Birmanie, et les Philippines), la Mongolie (l'Asie centrale est écrite, voir « Un bloc : l'Asie centrale et
+  3. **Blocs** : l'Asie du Sud-Est (l'Indonésie est écrite, voir « Un pays à part : l'Indonésie » ; le monde malais est écrit, voir « Un bloc : le monde malais » ; restent l'Indochine, la Thaïlande avec la Birmanie, et les Philippines), la Mongolie (l'Asie centrale est écrite, voir « Un bloc : l'Asie centrale et
      l'Afghanistan »), le Caucase, la Corée (`KR`/`KP`), l'Afrique de
      l'Ouest, l'Afrique de l'Est et la Corne, l'Afrique australe et l'océan
      Indien (sans l'Afrique du Sud). L'Afrique centrale est écrite (voir « Un bloc : l'Afrique centrale »). « Nouvelle-Zélande et Pacifique » est écrit (voir « Un bloc : la

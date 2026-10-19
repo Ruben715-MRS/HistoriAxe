@@ -90,14 +90,14 @@ test('Personnages illustres : deux sous-catégories, chacune avec sa note et son
     await expect(page.locator('#theme-screen-title')).toHaveText('Panthéons');
     await expect(page.locator('#theme-screen-note-text')).toContainText('né dans les frontières actuelles');
     // Panthéons de pays et de blocs se rangent par leur nom de source — « Afrique centrale », « Afrique de l'Ouest », « Afrique du Sud », « Allemagne, Autriche et Suisse »,
-    // « Amérique hispanique », « Asie centrale et Afghanistan », « Australie », « Balkans », « Benelux », « Brésil », « Canada », « Chine », « Égypte », « Espagne », « États-Unis », « France », « Grèce », « Indonésie », « Iran », « Israël », « Italie », « Japon », « Machrek et péninsule Arabique », « Maghreb », « Nouvelle-Zélande et Pacifique », « Pays baltes », « Portugal », « Royaume-Uni », « Russie », « Scandinavie », « Sous-continent indien », « Turquie » — et non par
+    // « Amérique hispanique », « Asie centrale et Afghanistan », « Australie », « Balkans », « Benelux », « Brésil », « Canada », « Chine », « Égypte », « Espagne », « États-Unis », « France », « Grèce », « Indonésie », « Iran », « Israël », « Italie », « Japon », « Machrek et péninsule Arabique », « Maghreb », « Malaisie, Singapour, Brunei et Timor oriental », « Nouvelle-Zélande et Pacifique », « Pays baltes », « Portugal », « Royaume-Uni », « Russie », « Scandinavie », « Sous-continent indien », « Turquie » — et non par
     // « Grandes figures d'… » / « … de » / « … des » / « … du ».
     await expect(page.locator('#themes-container .data-card-title'))
         .toHaveText(["Grandes figures d'Afrique centrale", "Grandes figures d'Afrique de l'Ouest", "Grandes figures d'Afrique du Sud", "Grandes figures d'Allemagne, d'Autriche et de Suisse", "Grandes figures d'Amérique hispanique",
             "Grandes figures d'Asie centrale", "Grandes figures d'Australie", 'Grandes figures des Balkans', 'Grandes figures du Benelux', 'Grandes figures du Brésil', 'Grandes figures du Canada', 'Grandes figures de Chine',
             "Grandes figures d'Égypte", "Grandes figures d'Espagne", 'Grandes figures des États-Unis',
             'Grandes figures de France', 'Grandes figures de Grèce', "Grandes figures d'Indonésie", "Grandes figures d'Iran", "Grandes figures d'Israël", "Grandes figures d'Italie", 'Grandes figures du Japon',
-            'Grandes figures du Machrek et de la péninsule Arabique', 'Grandes figures du Maghreb', 'Grandes figures de Nouvelle-Zélande et du Pacifique', 'Grandes figures des pays baltes', 'Grandes figures du Portugal',
+            'Grandes figures du Machrek et de la péninsule Arabique', 'Grandes figures du Maghreb', 'Grandes figures de Malaisie, de Singapour, de Brunei et du Timor oriental', 'Grandes figures de Nouvelle-Zélande et du Pacifique', 'Grandes figures des pays baltes', 'Grandes figures du Portugal',
             'Grandes figures du Royaume-Uni', 'Grandes figures de Russie', 'Grandes figures de Scandinavie', 'Grandes figures du sous-continent indien', 'Grandes figures de Turquie']);
 });
 
@@ -1057,6 +1057,48 @@ test('la recherche — « baltes », « estonie », « lettonie », « lituanie 
         await page.locator('#theme-search-input').fill(mot);
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: 'Grandes figures des pays baltes' });
         await expect(resultat, `« ${mot} » doit mener au panthéon des pays baltes`).toHaveCount(1);
+        await expect(resultat.locator('.search-result-path')).toContainText('Personnages illustres › Panthéons');
+    }
+});
+
+test('le monde malais : chacune de ses figures a son portrait et son pays, de Raffles à Wu Lien-teh, et aucune n’a de biographie', async ({ page }) => {
+    await openThemeById(page, 'pan_malais');
+    await page.locator('#mode-card-discovery').click();
+    await expect(page.locator('#screen-game')).toBeVisible();
+    const nombre = await page.evaluate(() => getCurrentTheme().events.length);
+    expect(nombre).toBe(32);
+    await expect(page.locator('#timeline .entry')).toHaveCount(nombre);
+    await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
+
+    // Un pays du bloc par figure : la fiche dit le pays que le bloc lui donne.
+    const figures = [
+        ['Naissance de Thomas Stamford Raffles', '🇸🇬', 'Singapour'],
+        ['Naissance de Tunku Abdul Rahman', '🇲🇾', 'Malaisie'],
+        ['Naissance d\'Omar Ali Saifuddien III', '🇧🇳', 'Brunei'],
+        ['Naissance de Francisco Xavier do Amaral', '🇹🇱', 'Timor'],
+    ];
+    for (const [titre, drapeau, pays] of figures) {
+        await page.locator('#timeline .entry', { hasText: titre }).click();
+        await expect(page.locator('#modal-details')).toBeVisible();
+        await expect(page.locator('#modal-pays')).toContainText(drapeau);
+        await expect(page.locator('#modal-pays')).toContainText(pays);
+        const portrait = page.locator('#modal-portrait-img');
+        await expect.poll(() => portrait.evaluate(img => img.complete ? img.naturalWidth : 0)).toBe(320);
+        await expect(page.locator('#modal-portrait-caption')).not.toBeEmpty();
+        await page.locator('#modal-details .close-btn').click();
+        await expect(page.locator('#modal-details')).toBeHidden();
+    }
+
+    const avecBiographie = await page.evaluate(() => getCurrentTheme().events.filter(e => e.biographie).length);
+    expect(avecBiographie).toBe(0);
+});
+
+test('la recherche — « malaisie », « singapour », « brunei », « timor », « malacca », « raffles » — mène au panthéon du monde malais', async ({ page }) => {
+    await page.locator('#screen-home').click();
+    for (const mot of ['malaisie', 'malaisien', 'singapour', 'brunei', 'timor oriental', 'kuala lumpur', 'penang', 'malacca', 'sabah', 'sarawak', 'raffles', 'merdeka']) {
+        await page.locator('#theme-search-input').fill(mot);
+        const resultat = page.locator('#theme-search-results .search-result-item', { hasText: 'Grandes figures de Malaisie, de Singapour, de Brunei et du Timor oriental' });
+        await expect(resultat, `« ${mot} » doit mener au panthéon du monde malais`).toHaveCount(1);
         await expect(resultat.locator('.search-result-path')).toContainText('Personnages illustres › Panthéons');
     }
 });
