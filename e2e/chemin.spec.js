@@ -11,6 +11,9 @@ test.beforeEach(async ({ page }) => {
     // Le récap hebdomadaire s'ouvre de lui-même 1,2 s après le chargement dès que le journal n'est plus vide :
     // un test rapide le verrait passer devant ses boutons. On le déclare déjà vu cette semaine.
     await page.evaluate(() => {
+        // La révélation d'une carte (js/app/rewards.js, testée dans recompenses.spec.js) ouvrirait une modale
+        // devant les boutons de fin de niveau : ces tests-ci portent sur le parcours, pas sur les récompenses.
+        rewardsRevealCards = () => {};
         markRecapShownThisWeek();
         localStorage.setItem('historiaxe_path_v1', JSON.stringify({ levels: {}, skipped: ['monde0'] }));
         showScreen('screen-categories');

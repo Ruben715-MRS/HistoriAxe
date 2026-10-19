@@ -232,6 +232,11 @@ function endGame(isWin) {
         }
     }
 
+    // Pièces d'une partie libre (js/app/rewards.js) : peu, plafonnées par jour, aucune sans enjeu (entraînement…).
+    const gameCoins = typeof rewardsOnGameEnd === 'function'
+        ? rewardsOnGameEnd({ mode: currentMode, isWin, score, perfect: isWin && sessionMistakes === 0 })
+        : null;
+
     // Vérification de la progression des trophées
     checkBadgeProgressOnGameEnd(isWin, sessionMistakes);
 
@@ -281,6 +286,7 @@ function endGame(isWin) {
     // montant de 0 jusqu'au gain réel plutôt que de s'afficher figé — à
     // chaque frame on rappelle t() avec la valeur intermédiaire pour rester
     // juste dans toutes les langues (voir animateCountUp()).
+    if (typeof rewardsShowEndCoins === 'function') rewardsShowEndCoins(gameCoins);
     const xpDisplay = document.getElementById('end-xp-display');
     if (xpDisplay) {
         if (awardedXpInfo && awardedXpInfo.xpAwarded > 0) {

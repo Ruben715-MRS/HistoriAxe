@@ -34,11 +34,14 @@ const WEEKLY_CHALLENGE_STREAK_KEY = 'historiaxe_weekly_challenge_streak_v1';
 // Le Chemin du Temps : étoiles et meilleur score par niveau (js/pathCore.js: normalizeProgress).
 // Synchronisé : c'est de la progression, on ne la perd pas en changeant d'appareil.
 const PATH_PROGRESS_KEY = 'historiaxe_path_v1';
+// Les récompenses : pièces, série de victoires, cartes de personnages, achats de la boutique
+// (js/rewardsCore.js: normalizeState). Synchronisé, comme le reste de la progression.
+const REWARDS_KEY = 'historiaxe_rewards_v1';
 
 // Clés dont le contenu est envoyé/reçu par la synchronisation cloud
 // (api/sync.js) — progression de jeu uniquement, jamais les préférences
 // d'affichage (SETTINGS_KEY), qui restent propres à chaque appareil.
-const SYNC_KEYS = [SRS_KEY, PROGRESS_KEY, FAVORITES_KEY, CUSTOM_THEMES_KEY, CUSTOM_EVENTS_KEY, STREAK_KEY, GAMIFICATION_KEY, WEEKLY_CHALLENGE_STREAK_KEY, PATH_PROGRESS_KEY];
+const SYNC_KEYS = [SRS_KEY, PROGRESS_KEY, FAVORITES_KEY, CUSTOM_THEMES_KEY, CUSTOM_EVENTS_KEY, STREAK_KEY, GAMIFICATION_KEY, WEEKLY_CHALLENGE_STREAK_KEY, PATH_PROGRESS_KEY, REWARDS_KEY];
 
 const DEFAULT_SETTINGS = {
     orientation: 'auto',
@@ -205,6 +208,17 @@ function srsRecord(eventId, isSuccess) {
 // getAllEventsWithLocation() pour retrouver le thème d'origine de chaque
 // événement, une info que ce module (sans dépendance au reste de l'app) n'a
 // pas.
+
+// --- RÉCOMPENSES (pièces, cartes, boutique) ---
+function rewardsLoad() {
+    var raw = null;
+    try { raw = JSON.parse(localStorage.getItem(REWARDS_KEY)); } catch (e) { raw = null; }
+    return typeof RewardsCore !== 'undefined' ? RewardsCore.normalizeState(raw) : (raw || {});
+}
+
+function rewardsSave(state) {
+    try { localStorage.setItem(REWARDS_KEY, JSON.stringify(state)); } catch (e) {}
+}
 
 // --- LE CHEMIN DU TEMPS ---
 function pathProgressLoad() {
@@ -601,6 +615,7 @@ function resetAllGameData() {
     try { localStorage.removeItem(STREAK_KEY); } catch (e) {}
     try { localStorage.removeItem(WEEKLY_CHALLENGE_STREAK_KEY); } catch (e) {}
     try { localStorage.removeItem(PATH_PROGRESS_KEY); } catch (e) {}
+    try { localStorage.removeItem(REWARDS_KEY); } catch (e) {}
     try { localStorage.removeItem(GAMIFICATION_KEY); } catch (e) {}
     try { localStorage.removeItem(LAST_THEME_KEY); } catch (e) {}
 }

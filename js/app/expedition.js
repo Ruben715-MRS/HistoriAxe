@@ -218,6 +218,7 @@ function expeditionFinish(won) {
         // L'XP est versée une fois, à la fin du parcours (les épreuves n'en versent pas : voir endGame).
         const done = expedition.stages.filter(s => s.result && s.result.ok).length;
         let xp = Math.round(expedition.total * 0.5) + done * 10 + (won ? 150 : 0);
+        if (typeof rewardsOnExpeditionFinish === 'function') expedition.finished.rewards = rewardsOnExpeditionFinish(won, done);
         if (typeof awardXP === 'function') {
             const info = awardXP(xp, 'Expédition');
             if (typeof addRecapLogEntry === 'function') addRecapLogEntry(info ? info.xpAwarded : 0, won ? 1 : 0);
@@ -314,16 +315,23 @@ function renderExpedition() {
         });
         // Étoiles, XP et déblocage d'un niveau du Chemin du Temps.
         const extra = document.getElementById('expedition-final-extra');
-        extra.classList.toggle('hidden', !plan);
+        const f = expedition.finished;
+        extra.classList.toggle('hidden', !plan && !f.rewards);
+        extra.innerHTML = '';
         if (plan) {
-            const f = expedition.finished;
             const stars = f.stars || 0;
-            extra.innerHTML = '';
             const starsEl = document.createElement('div');
             starsEl.className = 'path-final-stars';
             starsEl.setAttribute('role', 'img');
             starsEl.setAttribute('aria-label', t('path.stars_aria', { count: stars, max: 3 }));
-            starsEl.innerText = '★'.repeat(stars) + '☆'.repeat(3 - stars);
+            // Chaque étoile est un élément : celles qu'on a gagnées jaillissent l'une après l'autre (CSS).
+            for (let i = 0; i < 3; i++) {
+                const star = document.createElement('span');
+                star.className = 'path-star' + (i < stars ? ' is-earned' : '');
+                star.style.setProperty('--i', i);
+                star.innerText = i < stars ? '★' : '☆';
+                starsEl.appendChild(star);
+            }
             extra.appendChild(starsEl);
             const xpEl = document.createElement('p');
             xpEl.innerText = t('path.final_xp', { xp: f.xp || 0 })
@@ -336,11 +344,14 @@ function renderExpedition() {
                 extra.appendChild(islandEl);
             });
         }
+        // Pièces, série de victoires, cartes (js/app/rewards.js).
+        if (f.rewards && typeof rewardsRenderFinal === 'function') rewardsRenderFinal(extra, f.rewards);
         document.getElementById('expedition-next-level').classList.toggle('hidden', !(plan && expedition.finished.won && expedition.finished.nextId));
         document.getElementById('expedition-share').classList.toggle('hidden', !!plan && !expedition.finished.won);
         document.getElementById('expedition-replay').innerText = t(plan ? 'path.replay' : 'expedition.replay');
         document.getElementById('expedition-leave').innerText = t(plan ? 'path.back_to_map' : 'expedition.leave');
         document.getElementById('expedition-share').focus();
+        if (f.rewards && typeof rewardsPlayFinal === 'function') rewardsPlayFinal(f.rewards);
         return;
     }
 

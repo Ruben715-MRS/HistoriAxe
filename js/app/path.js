@@ -105,6 +105,7 @@ function pathWorldTitle(world) {
 
 // La carte posée en tête de l'écran des catégories (avant « Reprendre »).
 function renderPathCard(container) {
+    if (typeof renderRewardsBar === 'function') renderRewardsBar(container, 'screen-categories');
     const target = pathNextTarget();
     const card = document.createElement('button');
     card.type = 'button';
@@ -216,6 +217,7 @@ function renderPath() {
     const target = PathCore.nextTarget(progress);
     const currentId = target ? target.levelId : null;
     let currentNode = null;
+    if (typeof renderRewardsBar === 'function') renderRewardsBar(document.getElementById('path-rewards'), 'screen-path');
     const back = document.getElementById('path-back');
     if (back) back.setAttribute('aria-label', t(pathView ? 'path.island_back' : 'nav.back'));
 
@@ -405,6 +407,7 @@ function pathOnLevelFinish(exp, won) {
     if (!located) return;
     const before = pathProgress();
     const stars = PathCore.starsFor(won, exp.lives);
+    const prevStars = PathCore.starsOf(before, plan.levelId);
     const islandsBefore = PathCore.WORLDS.filter(w => w.island && PathCore.isWorldUnlocked(w, before)).map(w => w.id);
     const firstClear = won && PathCore.starsOf(before, plan.levelId) === 0;
     const after = PathCore.recordResult(before, plan.levelId, stars, exp.total);
@@ -420,6 +423,13 @@ function pathOnLevelFinish(exp, won) {
     if (won && typeof streakRecordToday === 'function') streakRecordToday();
     if (typeof HistoriAxeNotifications !== 'undefined') HistoriAxeNotifications.enableAndSchedule();
 
+    // Pièces, série de victoires, cartes (js/app/rewards.js) : un niveau perdu paie quand même une consolation.
+    if (typeof rewardsOnLevelFinish === 'function') {
+        exp.finished.rewards = rewardsOnLevelFinish({
+            worldId: plan.world, won, stars, prevStars, boss: !!plan.boss,
+            stagesDone: exp.stages.filter(s => s.result && s.result.ok).length
+        });
+    }
     exp.finished.stars = stars;
     exp.finished.xp = xp;
     exp.finished.firstClear = firstClear;

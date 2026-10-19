@@ -8966,3 +8966,407 @@ input:not([type="range"]), label, select, summary, textarea {
     font-weight: 700;
     color: var(--success-text);
 }
+
+/* --- RÉCOMPENSES : pièces, série, boutique de Clio, album, révélation d'une carte (js/app/rewards.js) --- */
+.rewards-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.rewards-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 12px;
+    border: 1px solid var(--border-soft);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--text-dark);
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.rewards-streak.is-hot {
+    border-color: var(--favorite-yellow);
+}
+
+.rewards-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 12px;
+    border: 1px solid var(--border-soft);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--text-dark);
+    font: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.rewards-btn small {
+    color: var(--muted-text);
+    font-weight: 700;
+}
+
+.rewards-bar .rewards-shop-btn { margin-left: auto; }
+
+.path-rewards {
+    width: 100%;
+    max-width: 420px;
+    margin-bottom: 4px;
+}
+
+.path-rewards .rewards-bar { margin-top: 0; }
+
+/* Les pièces qui s'envolent et les étoiles qui jaillissent. */
+.rewards-particle {
+    position: fixed;
+    z-index: 200;
+    pointer-events: none;
+    font-size: 22px;
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+    transition: transform 0.8s cubic-bezier(0.3, 0.8, 0.4, 1), opacity 0.8s ease-in;
+}
+
+.path-final-stars .path-star {
+    display: inline-block;
+}
+
+.path-final-stars .path-star.is-earned {
+    animation: path-star-fly 0.7s cubic-bezier(0.2, 1.4, 0.4, 1) both;
+    animation-delay: calc(var(--i) * 0.25s + 0.15s);
+}
+
+@keyframes path-star-fly {
+    0% { transform: translateY(70px) scale(0.2) rotate(-200deg); opacity: 0; }
+    70% { transform: translateY(-8px) scale(1.5) rotate(10deg); opacity: 1; }
+    100% { transform: translateY(0) scale(1) rotate(0); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .path-final-stars .path-star.is-earned { animation: none; }
+    .rewards-particle { display: none; }
+}
+
+.rewards-summary {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--border-soft);
+}
+
+.rewards-final-head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+}
+
+.rewards-final-gain {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--text-dark);
+}
+
+.rewards-parts {
+    list-style: none;
+    margin: 8px 0 0;
+    padding: 0;
+    font-size: 14px;
+    color: var(--muted-text);
+}
+
+.rewards-cap {
+    margin: 6px 0 0;
+    font-size: 13px;
+    color: var(--muted-text);
+}
+
+.rewards-streak-line {
+    margin: 8px 0 0;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.rewards-streak-line.is-hot {
+    color: var(--success-text);
+}
+
+.rewards-card-chips {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.rewards-card-chip {
+    width: 44px;
+    height: 58px;
+    border-radius: 8px;
+    border: 3px solid #b0b7c3;
+    background: var(--surface);
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.rewards-card-chip.rarity-rare { border-color: #2980b9; }
+.rewards-card-chip.rarity-legendaire { border-color: var(--favorite-yellow); }
+
+.end-coins {
+    margin-top: 8px;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.end-coins.is-capped {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted-text);
+    max-width: 320px;
+    text-align: center;
+}
+
+/* La révélation d'une carte : elle se retourne. */
+.card-reveal-content {
+    text-align: center;
+    max-width: 340px;
+}
+
+.card-reveal-kicker {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    color: var(--text-dark);
+}
+
+.card-flip {
+    perspective: 900px;
+    width: 190px;
+    height: 270px;
+    margin: 0 auto;
+}
+
+.card-flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.7s;
+    transform-style: preserve-3d;
+}
+
+.card-flip.is-flipped .card-flip-inner { transform: rotateY(180deg); }
+
+@media (prefers-reduced-motion: reduce) {
+    .card-flip-inner { transition: none; }
+}
+
+.card-face {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 14px;
+    border: 5px solid #b0b7c3;
+    background: var(--surface);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px;
+    color: var(--text-dark);
+}
+
+.card-back {
+    font-size: 64px;
+    background: linear-gradient(135deg, #6b4400, #b8892e);
+    border-color: #6b4400;
+}
+
+.card-front {
+    transform: rotateY(180deg);
+}
+
+.card-face.rarity-rare, .album-card.rarity-rare { border-color: #2980b9; }
+.card-face.rarity-legendaire, .album-card.rarity-legendaire { border-color: var(--favorite-yellow); }
+
+.card-portrait {
+    width: 120px;
+    height: 150px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-name {
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.card-date, .card-rarity {
+    font-size: 12px;
+    color: var(--muted-text);
+}
+
+.card-reveal-note {
+    margin: 12px 0 0;
+    font-size: 14px;
+    color: var(--muted-text);
+}
+
+.card-reveal-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+/* L'album : un monde par section, une grille de cartes. */
+.album-list {
+    width: 100%;
+    max-width: 640px;
+    padding-bottom: 60px;
+}
+
+.album-world-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 18px 0 8px;
+    font-size: 17px;
+    color: var(--text-dark);
+}
+
+.album-world-title { flex: 1; }
+.album-world-count { font-size: 14px; color: var(--muted-text); }
+.album-world.is-locked { opacity: 0.6; }
+
+.album-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
+    gap: 10px;
+}
+
+.album-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 6px;
+    border: 3px solid #b0b7c3;
+    border-radius: 12px;
+    background: var(--surface);
+    color: var(--text-dark);
+    font: inherit;
+    cursor: pointer;
+}
+
+.album-card.is-missing {
+    cursor: default;
+    opacity: 0.55;
+}
+
+.album-card .card-portrait {
+    width: 84px;
+    height: 104px;
+}
+
+.card-unknown {
+    font-size: 34px;
+    font-weight: 800;
+    color: var(--muted-text);
+}
+
+/* La boutique de Clio. */
+.shop-top {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.shop-clio {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.shop-clio-avatar {
+    position: relative;
+    display: inline-block;
+    font-size: 72px;
+    line-height: 1;
+}
+
+.shop-clio-costume {
+    position: absolute;
+    right: -18px;
+    bottom: -6px;
+    font-size: 36px;
+}
+
+.shop-clio p {
+    margin: 6px 0 0;
+    font-size: 14px;
+    color: var(--text-dark);
+}
+
+.shop-clio .shop-clio-soon {
+    font-size: 12px;
+    color: var(--muted-text);
+}
+
+.shop-list {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 12px;
+    width: 100%;
+    max-width: 520px;
+}
+
+.shop-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    margin-bottom: 8px;
+    border: 1px solid var(--border-soft);
+    border-radius: 14px;
+    background: var(--surface);
+    color: var(--text-dark);
+}
+
+.shop-item.is-locked { opacity: 0.6; }
+.shop-item-emoji { font-size: 30px; width: 40px; text-align: center; }
+.shop-item-text { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.shop-item-text strong { font-size: 15px; }
+.shop-item-text small { font-size: 12px; color: var(--muted-text); }
+.shop-item-btn { padding: 8px 14px; font-size: 14px; min-width: 84px; }
+.shop-item-btn:disabled { opacity: 0.5; cursor: default; }
+.shop-item-btn.is-short { background: var(--locked-bg, #b8bfc9); }
+
+.shop-decors {
+    margin: 4px 0 60px;
+    font-size: 13px;
+    color: var(--muted-text);
+    text-align: center;
+}

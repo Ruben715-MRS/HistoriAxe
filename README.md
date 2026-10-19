@@ -484,6 +484,43 @@ s'est passé dans le monde à la même époque. Avec des thèmes, les événemen
 dans le tirage (les incontournables restent prioritaires). `PathCore.sliceWindows` propose un découpage en
 niveaux d'effectifs voisins : plus le temps est dense, plus les tranches sont courtes.
 
+### Les récompenses : pièces, série de victoires, cartes, boutique
+
+La boucle qui donne envie de « jouer encore un niveau » (modèle : Royal Match). Les **règles** sont dans
+`js/rewardsCore.js` (pur, testé : `tests/rewards.test.js`), les **écrans et effets** dans `js/app/rewards.js`
+(`e2e/recompenses.spec.js`). L'état est dans `historiaxe_rewards_v1`, synchronisé dans le cloud.
+
+- **Pièces 🪙.** Un niveau réussi paie **10 / 15 / 20** pièces selon ses étoiles (**×4** pour un boss), plus une
+  **prime au premier passage** (10 ; 30 pour un boss) et une **prime de série**. Un niveau **perdu** paie quand même
+  une consolation (2 pièces par épreuve réussie, 6 au plus) : on récompense l'effort. **Rejouer sans faire
+  mieux ne paie que 40 %**, sans prime ni carte : on peut rejouer pour le plaisir, pas pour farmer.
+- **Parties libres.** Une partie hors Chemin paie peu (8 pièces à la victoire, + points, + parfait, + défi du jour,
+  2 pour une défaite) et **plafonne à 200 pièces par jour** ; aucune pièce dans les modes sans enjeu
+  (Entraînement, Découverte, Mode Classe, Mode Carte, multijoueur). L'Expédition libre paie 4 pièces par épreuve
+  réussie + 20 si elle est menée au bout. Le Chemin reste la source principale.
+- **Série de victoires ⚡.** Chaque niveau réussi d'affilée ajoute 5 pièces de plus (25 au plus) ; une défaite la
+  remet à zéro (le record reste), un abandon ne la touche pas. Des **primes de palier** tombent à 3, 5, 10 et 20
+  victoires (20, 40, 100, 200 pièces). Distincte de la série quotidienne 🔥.
+- **Cartes de personnages 🎴.** Un **album par monde** (20 mondes, 8 à 12 figures chacun) : les figures à portrait
+  du jeu, classées dans le monde où elles ont **40 ans** (la date des portraits est celle de la naissance :
+  Napoléon, né en 1769, est de la Révolution et de l'Empire), une figure dans un seul album. Une carte tombe à la
+  **première réussite** d'un niveau, une de plus par étoile gagnée en plus du meilleur résultat, **trois (dont une
+  rare au moins) pour un boss**. Les îles piochent dans l'album de leur monde d'attache. Rareté : **légendaire** si
+  la figure a une biographie dans le jeu, **rare** si elle est incontournable de son panthéon, sinon commune. Album
+  complet : +150 pièces ; carte en double : 10 / 20 / 40 pièces. Toucher une carte de l'album ouvre la fiche.
+- **Boutique de Clio 🛍️.** Un **costume par monde** (21, de 100 à 600 pièces), qui ne s'achète qu'une fois le monde
+  atteint. Clio est la future mascotte (un chat, qui changera de costume à chaque époque) : en attendant les
+  dessins, un chat et l'emoji du costume en tiennent lieu — l'écran le dit. Le catalogue a déjà un emplacement
+  « décors d'arrière-plan », vide. Un Chemin entièrement fait à trois étoiles rapporte à peu près de quoi tout
+  acheter : ce rapport est vérifié par un test.
+- **Effets.** Les étoiles jaillissent l'une après l'autre, le gain monte (`+45 🪙`) pendant que des pièces volent
+  jusqu'au porte-monnaie, la série à partir de 3 lance des confettis, puis la carte se retourne. Tout se montre
+  d'un coup avec « réduire les animations ».
+- **Pas d'argent réel dans la boucle.** Les pièces et les cartes **ne s'achètent jamais** : ce serait des
+  « loot boxes » (interdites en Belgique, surveillées en France) dans un jeu joué par des mineurs. Quand la
+  monétisation viendra : publicité, retrait de la publicité, costumes ou décors cosmétiques ; jamais de contenu
+  pédagogique bloqué, jamais de paquets de cartes payants, et le Mode Classe reste gratuit.
+
 ### Où est quoi
 
 | Fichier | Rôle |
