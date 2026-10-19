@@ -577,6 +577,34 @@
         </div>
     </div>
 
+    <!-- ÉCRAN : ÉPREUVE « LEÇON » du Chemin du Temps (questions rédigées — js/app/lesson.js, js/pathLessons.js) -->
+    <div id="screen-lesson" class="hidden">
+        <div class="game-bar">
+            <div class="bar-row">
+                <button class="quit-btn" onclick="quitGame()">‹ <span data-i18n="nav.quit">Quitter</span></button>
+                <span class="bar-fill"></span>
+                <span class="lives-row" id="lesson-hud-lives" role="img"></span>
+            </div>
+            <div class="bar-row">
+                <span class="progress-rail"><span class="progress-fill" id="lesson-progress-fill"></span></span>
+                <span class="bar-meta" id="lesson-hud-count">1 / 5</span>
+                <span class="bar-meta"><span id="lesson-hud-score">0</span> pts</span>
+            </div>
+        </div>
+        <div class="quiz-body">
+            <div class="quiz-question-card" data-focus-target>
+                <div class="quiz-kicker" id="lesson-kicker"></div>
+                <div class="quiz-prompt" id="lesson-prompt"></div>
+            </div>
+            <div class="quiz-options lesson-options" id="lesson-options"></div>
+            <div class="lesson-feedback hidden" id="lesson-feedback" role="status">
+                <strong id="lesson-feedback-title"></strong>
+                <p id="lesson-feedback-text"></p>
+                <button type="button" class="btn" id="lesson-next" onclick="lessonContinue()"></button>
+            </div>
+        </div>
+    </div>
+
     <!-- ÉCRAN : LE CHEMIN DU TEMPS (carte des niveaux — voir js/app/path.js et js/pathCore.js) -->
     <div id="screen-path" class="list-screen hidden">
         <button class="back-btn" onclick="showScreen('screen-categories', 'back')" aria-label="Retour aux catégories"
@@ -1924,6 +1952,7 @@
     <script src="js/gamification.js"></script>
     <script src="js/dailyEngine.js"></script>
     <script src="js/pathCore.js"></script>
+    <script src="js/pathLessons.js"></script>
     <script src="js/apiClient.js"></script>
     <script src="js/daily.js"></script>
     <script src="js/weekly.js"></script>
@@ -1964,6 +1993,7 @@
     <script src="js/app/modal.js"></script>
     <script src="js/app/play-mode.js"></script>
     <script src="js/app/expedition.js"></script>
+    <script src="js/app/lesson.js"></script>
     <script src="js/app/path.js"></script>
     <script src="js/classroom.js"></script>
     <script src="js/app.js"></script>

@@ -1,6 +1,9 @@
 // Le Chemin du Temps (js/app/path.js, js/pathCore.js) : la carte des niveaux, un niveau joué avec les
 // épreuves de l'Expédition, les étoiles, le déblocage. Les épreuves sont de vrais modes ; on vérifie ici le
 // parcours qui les relie, et que chaque niveau est jouable avec les modes qu'il annonce.
+//
+// Sauf mention contraire, un test part d'un joueur qui a PASSÉ le Monde 0 (l'Antiquité est ouverte) :
+// les tests du Monde 0 et des leçons repartent d'une progression vide (`progression(page, null)`).
 
 const { test, expect, visibleScreen } = require('./fixtures');
 
@@ -9,11 +12,20 @@ test.beforeEach(async ({ page }) => {
     // un test rapide le verrait passer devant ses boutons. On le déclare déjà vu cette semaine.
     await page.evaluate(() => {
         markRecapShownThisWeek();
-        localStorage.removeItem('historiaxe_path_v1');
+        localStorage.setItem('historiaxe_path_v1', JSON.stringify({ levels: {}, skipped: ['monde0'] }));
         showScreen('screen-categories');
         initCategories();
     });
 });
+
+// Remplace la progression du Chemin (null : joueur tout neuf) et redessine l'écran des catégories.
+async function progression(page, data) {
+    await page.evaluate((data) => {
+        if (data) localStorage.setItem('historiaxe_path_v1', JSON.stringify(data));
+        else localStorage.removeItem('historiaxe_path_v1');
+        initCategories();
+    }, data);
+}
 
 async function ouvrirCarte(page) {
     await page.locator('#btn-path').click();
@@ -34,15 +46,125 @@ async function jouerNiveau(page, { gagne = true, vies = 3 } = {}) {
     }
 }
 
-test('la carte du Chemin est en tête des catégories et annonce le niveau 1', async ({ page }) => {
+test('un joueur neuf commence par le Monde 0 ; l\'Antiquité, au-dessus, est fermée', async ({ page }) => {
+    await progression(page, null);
     await expect(page.locator('#btn-path')).toBeVisible();
-    await expect(page.locator('#btn-path .resume-card-title')).toContainText('Niveau 1');
+    await expect(page.locator('#btn-path .resume-card-title')).toContainText('Premiers pas sur la frise');
     await ouvrirCarte(page);
-    await expect(page.locator('.path-node')).toHaveCount(11);
-    await expect(page.locator('.path-node.is-locked')).toHaveCount(10);
-    await expect(page.locator('.path-node.is-next')).toHaveCount(1);
-    await expect(page.locator('.path-node.is-boss.is-locked')).toHaveCount(1);
-    await expect(page.locator('#path-subtitle')).toContainText('0 ★ sur 33');
+    await expect(page.locator('.path-node')).toHaveCount(19);
+    await expect(page.locator('.path-node:not(.is-locked)')).toHaveCount(1);
+    await expect(page.locator('.path-node.is-next')).toHaveAttribute('data-level', 'monde0-1');
+    await expect(page.locator('#path-subtitle')).toContainText('0 ★ sur 57');
+    await expect(page.locator('.path-world[data-world="antiquite"]')).toHaveClass(/is-locked/);
+    await expect(page.locator('.path-world[data-world="antiquite"] .path-world-note')).toContainText('Monde 0');
+    // Le Monde 0 est en bas : il vient après l'Antiquité dans la page.
+    const ordre = await page.evaluate(() => [...document.querySelectorAll('.path-world')].map(s => s.dataset.world));
+    expect(ordre).toEqual(['antiquite', 'monde0']);
+    await page.locator('.path-node[data-level="antiquite-1"]').click();
+    await expect(page.locator('#path-sheet-lock')).toContainText('boss du monde');
+    await expect(page.locator('#path-sheet-play')).toBeHidden();
+});
+
+test('« Je connais déjà » passe le Monde 0 : l\'Antiquité s\'ouvre, le Monde 0 reste jouable', async ({ page }) => {
+    await progression(page, null);
+    await ouvrirCarte(page);
+    await page.locator('.path-world[data-world="monde0"] .path-world-skip').click();
+    await page.locator('#confirm-ok-btn').click();
+    await expect(page.locator('.path-world[data-world="antiquite"]')).not.toHaveClass(/is-locked/);
+    await expect(page.locator('.path-node.is-next')).toHaveAttribute('data-level', 'antiquite-1');
+    await expect(page.locator('.path-node[data-level="monde0-1"]')).not.toHaveClass(/is-locked/);
+    await expect(page.locator('.path-world-skip')).toHaveCount(0);
+    expect(await page.evaluate(() => JSON.parse(localStorage.getItem('historiaxe_path_v1')).skipped)).toEqual(['monde0']);
+});
+
+test('Monde 0, niveau 1 : on joue tout de suite, sur 8 repères connus, sans leçon', async ({ page }) => {
+    await progression(page, null);
+    await ouvrirCarte(page);
+    await page.locator('.path-node[data-level="monde0-1"]').click();
+    await expect(page.locator('#path-sheet-range')).toBeHidden();
+    await page.locator('#path-sheet-play').click();
+    await expect(page.locator('#expedition-title')).toHaveText('Premiers pas sur la frise');
+    await expect(page.locator('#expedition-track .expedition-stage')).toHaveCount(2);
+    expect(await page.evaluate(() => revisionEvents.length)).toBe(8);
+    await jouerNiveau(page, { vies: 3 });
+    await expect(page.locator('.path-final-stars')).toHaveText('★★★');
+    await expect(page.locator('#expedition-next-level')).toBeVisible();
+});
+
+test('une leçon : l\'explication s\'affiche après chaque réponse, une erreur coûte une vie', async ({ page }) => {
+    await progression(page, { levels: { 'monde0-1': { stars: 3, best: 1, plays: 1 }, 'monde0-2': { stars: 3, best: 1, plays: 1 } } });
+    await page.evaluate(() => pathStartLevel('monde0-3'));
+    await expect(page.locator('#expedition-title')).toHaveText('Compter les années');
+    await expect(page.locator('#expedition-next-title')).toHaveText('Leçon · Compter les années : les ères');
+    await page.locator('#expedition-go').click();
+    expect(await visibleScreen(page)).toBe('screen-lesson');
+    await expect(page.locator('#lesson-options .lesson-option')).toHaveCount(4);
+    await expect(page.locator('#lesson-hud-count')).toHaveText('1 / 5');
+    // Une bonne réponse : « Juste ! », l'explication, 100 points, les vies intactes.
+    const bonne = await page.evaluate(() => lessonQuestions[0].choices.findIndex(c => c.correct));
+    await page.locator(`#lesson-options .lesson-option[data-index="${bonne}"]`).click();
+    await expect(page.locator('#lesson-feedback')).toBeVisible();
+    await expect(page.locator('#lesson-feedback-title')).toHaveText('Juste !');
+    await expect(page.locator('#lesson-feedback-text')).not.toBeEmpty();
+    await expect(page.locator('#lesson-options .lesson-option.correct')).toHaveCount(1);
+    expect(await page.evaluate(() => ({ score, lives }))).toEqual({ score: 100, lives: 3 });
+    await page.locator('#lesson-next').click();
+    // Une mauvaise : la bonne réponse est montrée, une vie est perdue.
+    const mauvaise = await page.evaluate(() => lessonQuestions[1].choices.findIndex(c => !c.correct));
+    await page.locator(`#lesson-options .lesson-option[data-index="${mauvaise}"]`).click();
+    await expect(page.locator('#lesson-feedback-title')).toHaveText('Pas tout à fait…');
+    await expect(page.locator('#lesson-options .lesson-option.wrong')).toHaveCount(1);
+    await expect(page.locator('#lesson-options .lesson-option.correct')).toHaveCount(1);
+    expect(await page.evaluate(() => lives)).toBe(2);
+    // Les trois questions suivantes, justes : l'épreuve rend la main au niveau avec ses vies.
+    for (let i = 2; i < 5; i++) {
+        await page.locator('#lesson-next').click();
+        const idx = await page.evaluate((i) => lessonQuestions[i].choices.findIndex(c => c.correct), i);
+        await page.locator(`#lesson-options .lesson-option[data-index="${idx}"]`).click();
+    }
+    await expect(page.locator('#lesson-next')).toHaveText('Terminer la leçon');
+    await page.locator('#lesson-next').click();
+    expect(await visibleScreen(page)).toBe('screen-expedition');
+    expect(await page.evaluate(() => ({ index: expedition.index, lives: expedition.lives, total: expedition.total }))).toEqual({ index: 1, lives: 2, total: 400 });
+});
+
+test('une leçon perdue (plus de vies) termine le niveau sans étoile', async ({ page }) => {
+    await progression(page, { levels: { 'monde0-1': { stars: 3, best: 1, plays: 1 } } });
+    await page.evaluate(() => pathStartLevel('monde0-2'));
+    await page.locator('#expedition-go').click();
+    for (let i = 0; i < 3; i++) {
+        const idx = await page.evaluate((i) => lessonQuestions[i].choices.findIndex(c => !c.correct), i);
+        await page.locator(`#lesson-options .lesson-option[data-index="${idx}"]`).click();
+        if (i < 2) await page.locator('#lesson-next').click();
+    }
+    await expect(page.locator('#lesson-next')).toHaveText('Plus de vies — terminer');
+    await page.locator('#lesson-next').click();
+    await expect(page.locator('#expedition-final-title')).toHaveText('Niveau raté — plus de vies');
+    await expect(page.locator('.path-final-stars')).toHaveText('☆☆☆');
+});
+
+test('quitter une leçon ramène à la carte', async ({ page }) => {
+    await progression(page, { levels: { 'monde0-1': { stars: 1, best: 1, plays: 1 } } });
+    await page.evaluate(() => pathStartLevel('monde0-2'));
+    await page.locator('#expedition-go').click();
+    await page.locator('#screen-lesson .quit-btn').click();
+    await page.locator('#confirm-ok-btn').click();
+    expect(await visibleScreen(page)).toBe('screen-path');
+    expect(await page.evaluate(() => ({ e: expedition, r: revisionMode }))).toEqual({ e: null, r: false });
+});
+
+test('le boss du Monde 0 vaincu : « Niveau suivant » mène à l\'Antiquité', async ({ page }) => {
+    const levels = {};
+    for (let n = 1; n <= 7; n++) levels['monde0-' + n] = { stars: 2, best: 100, plays: 1 };
+    await progression(page, { levels });
+    await page.evaluate(() => pathStartLevel('monde0-boss'));
+    await expect(page.locator('#expedition-track .expedition-stage')).toHaveCount(3);
+    await expect(page.locator('#expedition-next-title')).toHaveText('Leçon · Révision générale');
+    await jouerNiveau(page, { vies: 3 });
+    await expect(page.locator('#expedition-final-title')).toHaveText('Boss vaincu !');
+    await expect(page.locator('#expedition-final-extra')).toContainText("l'Antiquité vous attend");
+    await page.locator('#expedition-next-level').click();
+    await expect(page.locator('#expedition-title')).toHaveText('Les cités naissantes');
 });
 
 test('un niveau verrouillé s\'explique et ne se lance pas', async ({ page }) => {
@@ -124,7 +246,7 @@ test('perdre toutes ses vies : pas d\'étoile, le niveau suivant reste fermé', 
     await expect(page.locator('#expedition-next-level')).toBeHidden();
     await page.locator('#expedition-leave').click();
     expect(await visibleScreen(page)).toBe('screen-path');
-    await expect(page.locator('.path-node.is-locked')).toHaveCount(10);
+    await expect(page.locator('.path-world[data-world="antiquite"] .path-node.is-locked')).toHaveCount(10);
 });
 
 test('abandonner un niveau en pleine épreuve ramène à la carte', async ({ page }) => {
@@ -148,11 +270,11 @@ test('le boss : fermé sous 15 étoiles, ouvert au-delà, six épreuves et une v
     await page.evaluate(() => {
         const levels = {};
         for (let n = 1; n <= 10; n++) levels['antiquite-' + n] = { stars: 2, best: 100, plays: 1 };
-        localStorage.setItem('historiaxe_path_v1', JSON.stringify({ levels }));
+        localStorage.setItem('historiaxe_path_v1', JSON.stringify({ levels, skipped: ['monde0'] }));
         initCategories();
     });
     await ouvrirCarte(page);
-    await expect(page.locator('.path-node.is-boss.is-locked')).toHaveCount(0);
+    await expect(page.locator('.path-node[data-level="antiquite-boss"].is-locked')).toHaveCount(0);
     await page.locator('.path-node[data-level="antiquite-boss"]').click();
     await page.locator('#path-sheet-play').click();
     await expect(page.locator('#expedition-track .expedition-stage')).toHaveCount(6);
@@ -173,17 +295,21 @@ test('chaque niveau démarre avec chacune de ses épreuves, sans alerte, sur ses
         for (const world of PathCore.WORLDS) {
             for (const level of PathCore.levelsOf(world)) {
                 const events = pathLevelEvents(level.id);
-                for (const mode of level.stages) {
+                for (const spec of level.stages) {
+                    const stage = typeof spec === 'string' ? { mode: spec } : spec;
                     revisionMode = true; revisionEvents = events.slice();
-                    expedition = { plan: { boss: level.boss }, stages: [{ mode, tier: 0, result: null }], index: 0, lives: 3, total: 0, jokers: { skip: 0, life: 0 }, earned: null, running: true, finished: null };
+                    expedition = { plan: { boss: level.boss }, stages: [{ ...stage, tier: 0, result: null }], index: 0, lives: 3, total: 0, jokers: { skip: 0, life: 0 }, earned: null, running: true, finished: null };
                     let alerte = false;
                     const reel = window.alert; window.alert = () => { alerte = true; };
-                    try { EXPEDITION_STARTERS[mode](); } catch (e) { alerte = 'exception: ' + e.message; }
+                    try {
+                        if (stage.mode === 'lecon') startLessonStage(stage); else EXPEDITION_STARTERS[stage.mode]();
+                    } catch (e) { alerte = 'exception: ' + e.message; }
                     window.alert = reel;
-                    if (alerte) out.push(level.id + ' / ' + mode + ' : ' + alerte);
+                    if (alerte) out.push(level.id + ' / ' + stage.mode + ' : ' + alerte);
                     stopTimer(); resetPlacementAnimationState();
                 }
-                if (events.length < (level.boss ? 20 : 12)) out.push(level.id + ' : ' + events.length + ' événements');
+                const attendu = level.ids ? level.ids.length : (PathCore.levelNeedsEvents(level) ? (level.boss ? 20 : 12) : 0);
+                if (events.length < attendu) out.push(level.id + ' : ' + events.length + ' événements');
             }
         }
         expedition = null; revisionMode = false; revisionEvents = [];

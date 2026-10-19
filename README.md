@@ -386,9 +386,12 @@ suivante », donc pas de raison évidente de revenir demain. Le Chemin du Temps 
 monde en haut, le chemin parcouru qui se colore en vert, le reste en pointillé. Il **complète** le jeu
 libre, il ne le remplace pas (carte « Chemin du Temps » en tête de l'écran des catégories).
 
-- **Un monde = une époque** (ici l'Antiquité, -800 → 476), **un niveau = une tranche de temps** (de 100 à
-  230 ans) : 10 niveaux de 12 repères, puis un **boss** de 20 repères qui reprend 2 repères de chaque niveau
-  (la révision du monde entier).
+- **Des mondes empilés**, qu'on gravit l'un après l'autre (le premier en bas) : un monde s'ouvre quand le
+  boss du précédent est vaincu. Jouables aujourd'hui : le **Monde 0** (la périodisation, voir plus bas) et
+  **l'Antiquité** (-800 → 476). La liste des mondes à venir, mesurée sur le contenu réel, est dans
+  `docs/chemin-du-temps-mondes.md` (générée par `node scripts/path_plan.js`) : **elle attend validation**.
+- **Un niveau = une tranche de temps** (de 100 à 230 ans pour l'Antiquité) : 10 niveaux de 12 repères, puis un
+  **boss** de 20 repères qui reprend 2 repères de chaque niveau (la révision du monde entier).
 - **Un niveau = une mini-expédition** de 3 épreuves (6 pour le boss), 3 vies pour tout le niveau. Les
   épreuves sont de vrais modes (Quiz, Avant/Après, frise Classique, Périodes, Curseur, Remise en ordre) :
   la difficulté monte d'un niveau à l'autre en changeant leur mélange. Pas d'Intrus : il s'appuie sur les
@@ -409,30 +412,66 @@ libre, il ne le remplace pas (carte « Chemin du Temps » en tête de l'écran d
   ce qui en fait une mission. Un événement ajouté au pack peut entrer dans un niveau sans toucher au code.
   Le contenu du joueur et le thème exclu des défis (calendrier non grégorien) sont ignorés.
 
+### Le Monde 0 : « Le temps des historiens »
+
+Le chapitre introductif de Seconde sur la périodisation, et en même temps le **tutoriel du jeu**. Il est en
+bas de la carte, avant l'Antiquité, qu'il ouvre quand son boss est vaincu. Un joueur qui connaît déjà peut le
+**passer** (« Je connais déjà : ouvrir l'Antiquité ») : le monde suivant s'ouvre, le Monde 0 reste jouable.
+Une progression d'avant le Monde 0 (Antiquité déjà commencée) n'est jamais reverrouillée.
+
+| Niveau | Contenu |
+|---|---|
+| 1. Premiers pas sur la frise | Avant/Après + frise, sur 8 repères connus : **on joue tout de suite, sans leçon** |
+| 2. Avant et après Jésus-Christ | leçon (pas d'an 0, compter à rebours) + Avant/Après autour de l'an 1 |
+| 3. Compter les années | leçons : les ères (Hégire, calendrier hébraïque, an I) ; la réforme grégorienne |
+| 4. Calendriers et fêtes | leçons : solaire / lunaire / luni-solaire, Nouvel An ; temps cyclique et temps linéaire |
+| 5. Siècles et millénaires | leçon (les pièges : 1900, 2000, av. J.-C.) + Périodes & Ères |
+| 6. Les noms des périodes | leçons : chrononymes ; les échelles du temps (Braudel, Hobsbawm) |
+| 7. Où commence une période ? | leçon (bornes et critères : 476/496, 1453/1492, Le Goff) + frise des bornes du thème « Périodisation historique » |
+| Boss · L'épreuve du temps | révision de toutes les leçons + frise + remise en ordre |
+
+Les **leçons** sont une nouvelle sorte d'épreuve (`js/app/lesson.js`, écran `#screen-lesson`) : des questions
+**rédigées à la main** (`js/pathLessons.js` : 9 séries, 71 questions, la première réponse est la bonne et
+l'ordre est mélangé à l'affichage). Après chaque réponse, juste ou fausse, l'**explication** s'affiche ; une
+erreur coûte une vie. Le contenu reprend les trois idées du cours, avec une correction de l'idée 1 : toute
+société combine un temps cyclique (fêtes, saisons) et un temps linéaire (une ère), plutôt qu'opposer un temps
+« occidental » linéaire et un temps « juif » cyclique. **Tout ce contenu est à relire par un enseignant.**
+
+### Mondes chrono-thématiques
+
+Un niveau peut fixer ses événements à la main (`ids`, comme au Monde 0) ou les tirer dans une fenêtre de temps
+(`from`/`to`), éventuellement **restreinte à des thèmes** (`themes`) : c'est ce qui permettra des mondes « la
+Grèce », « Rome » ou « les guerres de Religion » sur le modèle des collections Belin, au lieu de tout ce qui
+s'est passé dans le monde à la même époque. Avec des thèmes, les événements non incontournables entrent aussi
+dans le tirage (les incontournables restent prioritaires). `PathCore.sliceWindows` propose un découpage en
+niveaux d'effectifs voisins : plus le temps est dense, plus les tranches sont courtes.
+
 ### Où est quoi
 
 | Fichier | Rôle |
 |---|---|
-| `js/pathCore.js` | moteur **pur**, testé hors navigateur (`tests/path.test.js`) : définition des mondes et des niveaux (`WORLDS`), composition d'un niveau, étoiles, déblocage, XP |
+| `js/pathCore.js` | moteur **pur**, testé hors navigateur (`tests/path.test.js`) : définition des mondes et des niveaux (`WORLDS`), composition d'un niveau, étoiles, déblocage des niveaux et des mondes, XP |
+| `js/pathLessons.js`, `js/app/lesson.js` | les questions des leçons (pur, testé) et l'écran qui les pose |
+| `scripts/path_plan.js` | la proposition de mondes à venir, mesurée sur `data/fr.json` → `docs/chemin-du-temps-mondes.md` |
 | `js/app/path.js` | l'écran `#screen-path` (carte SVG + pastilles, fiche d'un niveau), le lancement d'un niveau, la récompense (`pathOnLevelFinish`) |
 | `js/app/expedition.js` | réutilisé tel quel ; `startExpedition(plan)` lance un niveau (vivier imposé via `revisionMode`, comme la révision) |
 | `js/storage.js` | `PATH_PROGRESS_KEY` (`historiaxe_path_v1`), **synchronisée** dans le cloud (`SYNC_KEYS`, aucune modification de l'API) |
 | `ui/fr.json` | clés `path.*` (titres des niveaux : `path.worlds.<monde>.levels.<n>`) — **français seulement** : les autres langues retombent sur le français |
-| `e2e/chemin.spec.js` | la carte, un niveau joué, les étoiles, le déblocage, l'abandon, le boss, et que **chaque niveau démarre avec chacune de ses épreuves** sans alerte |
+| `e2e/chemin.spec.js` | la carte, le Monde 0 et ses leçons, le passage d'un monde, un niveau joué, les étoiles, le déblocage, l'abandon, le boss, et que **chaque niveau démarre avec chacune de ses épreuves** sans alerte |
 
 ### Ajouter un monde ou un niveau
 
-Ajouter une entrée à `PathCore.WORLDS` (tranches `from`/`to` qui se suivent sans trou — testé —, modes de
-chaque niveau, `bossStarsRequired`) et les titres dans `ui/fr.json` (`path.worlds.<id>`) : le test de
-contenu vérifie qu'ils existent. L'écran de la carte affiche tous les mondes de `WORLDS` à la suite ; le
-déblocage d'un monde par le précédent et le retrait du message « Le Moyen Âge arrive bientôt… » restent à
-faire (voir ci-dessous).
+Valider le monde dans `docs/chemin-du-temps-mondes.md`, puis l'ajouter à `PathCore.WORLDS` (bornes, `themes`,
+épreuves de chaque niveau, `bossStarsRequired`) et ses titres dans `ui/fr.json` (`path.worlds.<id>` : `title`,
+`boss`, `done`, `levels`) : le test de contenu vérifie qu'ils existent. La carte affiche tous les mondes de
+`WORLDS`, chacun ouvert par le boss du précédent.
 
 ### Limites assumées de ce prototype
 
-- **Un seul monde** (l'Antiquité) : il sert à juger le principe avant d'écrire les autres. Le « test de
-  passage » pour sauter un monde, les parcours nationaux et la frise personnelle qui grandit à chaque
-  niveau n'existent pas encore.
+- **Deux mondes** (Monde 0, Antiquité) : les suivants attendent la validation de la liste. L'Antiquité
+  actuelle sera remplacée par les mondes chrono-thématiques proposés (Orient, Grèce, Rome ×2). Le « test de
+  passage » est pour l'instant un simple « Je connais déjà » ; les îles bonus, les parcours nationaux et la
+  frise personnelle qui grandit à chaque niveau n'existent pas encore.
 - **Les titres des niveaux sont écrits à la main** (11 phrases) ; la composition des niveaux, elle, est
   automatique. Une relecture historique du tirage (un repère obscur peut subsister dans une tranche pauvre en
   événements connus) reste à faire.

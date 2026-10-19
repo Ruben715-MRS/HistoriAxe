@@ -8824,3 +8824,75 @@ input:not([type="range"]), label, select, summary, textarea {
     letter-spacing: 6px;
     color: var(--favorite-yellow);
 }
+
+/* Chemin du Temps : plusieurs mondes empilés, verrou et passage d'un monde. */
+.path-world + .path-world {
+    margin-top: 8px;
+}
+
+.path-world.is-locked .path-world-head {
+    opacity: 0.75;
+}
+
+.path-world-note {
+    margin: 8px 4px 0;
+    text-align: center;
+    font-size: 13px;
+    color: var(--muted-text);
+}
+
+.path-world-skip {
+    display: block;
+    margin: 10px auto 0;
+    padding: 8px 14px;
+    border: 1px dashed var(--border-soft);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--text-dark);
+    font: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* --- ÉPREUVE « LEÇON » (js/app/lesson.js) : l'écran du Quiz, plus l'explication après chaque réponse --- */
+.lesson-option:disabled {
+    cursor: default;
+    opacity: 1;
+}
+
+.lesson-feedback {
+    margin: 14px auto 0;
+    max-width: 560px;
+    padding: 16px 18px;
+    border-radius: 16px;
+    border: 1px solid var(--border-soft);
+    border-left: 5px solid var(--progress-green);
+    background: var(--surface);
+    color: var(--text-dark);
+    box-shadow: var(--card-shadow);
+}
+
+.lesson-feedback.is-wrong {
+    border-left-color: var(--danger-red);
+}
+
+.lesson-feedback strong {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.lesson-feedback.is-wrong strong {
+    color: var(--danger-red-text);
+}
+
+.lesson-feedback:not(.is-wrong) strong {
+    color: var(--success-text);
+}
+
+.lesson-feedback p {
+    margin: 0 0 12px;
+    font-size: 15px;
+    line-height: 1.45;
+}

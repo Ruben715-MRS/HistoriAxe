@@ -13,7 +13,7 @@
 // Un niveau a besoin d'au moins ce nombre d'événements dans le pack chargé (autres langues : moins de contenu).
 const PATH_MIN_EVENTS = 8;
 // Mise en page de la carte (unités du viewBox SVG : 300 de large).
-const PATH_MAP = { width: 300, step: 100, padTop: 60, padBottom: 70, amplitude: 78 };
+const PATH_MAP = { width: 300, step: 100, padTop: 100, padBottom: 70, amplitude: 78 };
 
 let pathCache = null; // { bdd, size, pools, byId }
 let pathSelectedId = null;
@@ -70,13 +70,23 @@ function openPath() {
     renderPath();
 }
 
-// Le niveau à jouer ensuite, pour la carte « Chemin du Temps » de l'écran des catégories.
+// Le niveau à jouer ensuite, tous mondes confondus (voir PathCore.nextTarget).
 function pathNextTarget() {
-    const world = PathCore.WORLDS[0];
     const progress = pathProgress();
-    const id = PathCore.currentLevelId(world, progress);
-    const located = id ? pathLocateLevel(id) : null;
-    return located ? { world, level: located.level, progress } : { world, level: null, progress };
+    const target = PathCore.nextTarget(progress);
+    const located = target ? pathLocateLevel(target.levelId) : null;
+    return located ? { world: located.world, level: located.level, progress } : { world: null, level: null, progress };
+}
+
+function pathTotalStars(progress) {
+    return PathCore.WORLDS.reduce((sum, w) => sum + PathCore.worldStars(w, progress), 0);
+}
+function pathTotalMaxStars() {
+    return PathCore.WORLDS.reduce((sum, w) => sum + PathCore.worldMaxStars(w), 0);
+}
+
+function pathWorldTitle(world) {
+    return t('path.worlds.' + world.id + '.title');
 }
 
 // La carte posée en tête de l'écran des catégories (avant « Reprendre »).
@@ -86,14 +96,16 @@ function renderPathCard(container) {
     card.type = 'button';
     card.className = 'resume-card path-card';
     card.id = 'btn-path';
-    const stars = PathCore.worldStars(target.world, target.progress);
+    const stars = pathTotalStars(target.progress);
     const sub = target.level
-        ? t('path.card_next', { n: target.level.n, title: pathLevelTitle(target.world, target.level) })
+        ? (target.level.boss
+            ? pathLevelTitle(target.world, target.level)
+            : t('path.card_next', { n: target.level.n, title: pathLevelTitle(target.world, target.level) }))
         : t('path.card_done');
     card.innerHTML = `
         <span class="resume-card-icon" aria-hidden="true">🗺️</span>
         <span class="resume-card-text">
-            <small class="resume-card-kicker">${escapeHtml(t('path.title'))} · ★ ${stars}/${PathCore.worldMaxStars(target.world)}</small>
+            <small class="resume-card-kicker">${escapeHtml(target.world ? pathWorldTitle(target.world) : t('path.title'))} · ★ ${stars}/${pathTotalMaxStars()}</small>
             <strong class="resume-card-title"></strong>
         </span>`;
     card.querySelector('.resume-card-title').textContent = sub;
@@ -113,25 +125,34 @@ function renderPath() {
     const progress = pathProgress();
     map.innerHTML = '';
 
-    const worlds = PathCore.WORLDS;
-    const first = worlds[0];
     document.getElementById('path-subtitle').innerText = t('path.subtitle', {
-        stars: PathCore.worldStars(first, progress), max: PathCore.worldMaxStars(first)
+        stars: pathTotalStars(progress), max: pathTotalMaxStars()
     });
 
+    // Un monde de plus est annoncé, tout en haut : la carte ne s'arrête pas là.
+    const soon = document.createElement('p');
+    soon.className = 'path-soon';
+    soon.innerText = t('path.coming_soon');
+    map.appendChild(soon);
+
+    // On gravit la carte : le premier monde en bas, les suivants au-dessus.
+    const target = PathCore.nextTarget(progress);
+    const currentId = target ? target.levelId : null;
     let currentNode = null;
-    worlds.forEach(world => {
+    PathCore.WORLDS.slice().reverse().forEach(world => {
         const levels = PathCore.levelsOf(world);
-        const currentId = PathCore.currentLevelId(world, progress);
+        const worldOpen = PathCore.isWorldUnlocked(world, progress);
         const section = document.createElement('section');
-        section.className = 'path-world';
+        section.className = 'path-world' + (worldOpen ? '' : ' is-locked');
+        section.dataset.world = world.id;
         const head = document.createElement('header');
         head.className = 'path-world-head';
         head.innerHTML = '<span class="path-world-icon" aria-hidden="true"></span><h3 class="path-world-title"></h3><span class="path-world-stars"></span>';
-        head.querySelector('.path-world-icon').innerText = world.icon;
-        head.querySelector('.path-world-title').innerText = t('path.worlds.' + world.id + '.title');
+        head.querySelector('.path-world-icon').innerText = worldOpen ? world.icon : '🔒';
+        head.querySelector('.path-world-title').innerText = pathWorldTitle(world);
         head.querySelector('.path-world-stars').innerText = '★ ' + PathCore.worldStars(world, progress) + ' / ' + PathCore.worldMaxStars(world);
         section.appendChild(head);
+        pathRenderWorldNote(section, world, progress, worldOpen);
 
         const count = levels.length;
         const height = PATH_MAP.padTop + PATH_MAP.padBottom + (count - 1) * PATH_MAP.step;
@@ -183,17 +204,53 @@ function renderPath() {
         map.appendChild(section);
     });
 
-    // Un monde de plus est annoncé : la carte ne s'arrête pas là.
-    const soon = document.createElement('p');
-    soon.className = 'path-soon';
-    soon.innerText = t('path.coming_soon');
-    map.appendChild(soon);
-
     pathCloseSheet();
     // La carte s'ouvre sur le niveau à jouer, pas tout en haut.
     if (currentNode && typeof currentNode.scrollIntoView === 'function') {
         requestAnimationFrame(() => currentNode.scrollIntoView({ block: 'center' }));
     }
+}
+
+// Sous l'en-tête d'un monde : pourquoi il est fermé, ou la possibilité de le passer (Monde 0).
+function pathRenderWorldNote(section, world, progress, worldOpen) {
+    const idx = PathCore.WORLDS.indexOf(world);
+    if (!worldOpen) {
+        const note = document.createElement('p');
+        note.className = 'path-world-note';
+        note.innerText = t('path.locked_world', { world: pathWorldTitle(PathCore.WORLDS[idx - 1]) });
+        section.appendChild(note);
+        return;
+    }
+    const next = PathCore.WORLDS[idx + 1];
+    if (world.skippable && next && !PathCore.isWorldUnlocked(next, progress)) {
+        const skip = document.createElement('button');
+        skip.type = 'button';
+        skip.className = 'path-world-skip';
+        skip.innerText = t('path.skip_world', { world: pathWorldTitle(next) });
+        skip.onclick = () => pathSkipWorld(world.id);
+        section.appendChild(skip);
+    }
+}
+
+// « Je connais déjà » : le monde suivant s'ouvre ; celui-ci reste jouable.
+function pathSkipWorld(worldId) {
+    const world = PathCore.findWorld(worldId);
+    const next = world && PathCore.WORLDS[PathCore.WORLDS.indexOf(world) + 1];
+    if (!world || !next) return;
+    showConfirm(t('path.skip_confirm', { world: pathWorldTitle(world), next: pathWorldTitle(next) }), () => {
+        if (typeof pathProgressSave === 'function') pathProgressSave(PathCore.skipWorld(pathProgress(), worldId));
+        renderPath();
+    });
+}
+
+// La ligne « période » de la fiche d'un niveau.
+function pathLevelRange(world, level) {
+    if (level.boss) {
+        return world.boss.ids
+            ? t('path.boss_review', { world: pathWorldTitle(world) })
+            : t('path.boss_range', { count: PathCore.BOSS_PER_LEVEL * world.levels.length, world: pathWorldTitle(world) });
+    }
+    return level.from !== undefined ? pathYearRange(level) : '';
 }
 
 // --- La fiche d'un niveau ------------------------------------------------------
@@ -211,10 +268,11 @@ function pathOpenSheet(levelId) {
     if (node) node.classList.add('is-selected');
 
     document.getElementById('path-sheet-title').innerText = (level.boss ? '👑 ' : t('path.level_n', { n: level.n }) + ' · ') + pathLevelTitle(world, level);
-    document.getElementById('path-sheet-range').innerText = level.boss
-        ? t('path.boss_range', { count: PathCore.BOSS_PER_LEVEL * world.levels.length })
-        : pathYearRange(level);
-    document.getElementById('path-sheet-stages').innerText = level.stages.map(mode => t(EXPEDITION_TITLES[mode])).join(' · ');
+    const range = document.getElementById('path-sheet-range');
+    range.innerText = pathLevelRange(world, level);
+    range.classList.toggle('hidden', !range.innerText);
+    document.getElementById('path-sheet-stages').innerText = level.stages
+        .map(spec => expeditionStageTitle(typeof spec === 'string' ? { mode: spec } : spec)).join(' · ');
 
     const best = document.getElementById('path-sheet-best');
     best.innerText = stars > 0 ? pathStarsText(stars) + (entry && entry.best ? ' · ' + t('path.best', { score: entry.best }) : '') : '';
@@ -224,9 +282,13 @@ function pathOpenSheet(levelId) {
     const play = document.getElementById('path-sheet-play');
     // Le boss demande des étoiles en plus du niveau précédent : le message dit ce qui manque vraiment.
     const needStars = level.boss && PathCore.regularStars(world, progress) < world.bossStarsRequired;
-    lock.innerText = unlocked ? '' : t(needStars ? 'path.locked_boss' : 'path.locked_level', {
-        need: world.bossStarsRequired, have: PathCore.regularStars(world, progress)
-    });
+    const worldOpen = PathCore.isWorldUnlocked(world, progress);
+    const prevWorld = PathCore.WORLDS[PathCore.WORLDS.indexOf(world) - 1];
+    lock.innerText = unlocked ? '' : (!worldOpen
+        ? t('path.locked_world', { world: prevWorld ? pathWorldTitle(prevWorld) : '' })
+        : t(needStars ? 'path.locked_boss' : 'path.locked_level', {
+            need: world.bossStarsRequired, have: PathCore.regularStars(world, progress), count: world.levels.length
+        }));
     lock.classList.toggle('hidden', unlocked);
     play.classList.toggle('hidden', !unlocked);
     play.innerText = stars > 0 ? t('path.replay') : t('path.play');
@@ -251,7 +313,8 @@ function pathStartLevel(levelId) {
     const { world, level } = located;
     if (!PathCore.isUnlocked(world, level.id, pathProgress())) return;
     const events = pathLevelEvents(level.id);
-    if (events.length < PATH_MIN_EVENTS) {
+    // Un niveau fait seulement de leçons n'a pas besoin d'événements.
+    if (PathCore.levelNeedsEvents(level) && events.length < PATH_MIN_EVENTS) {
         showConfirm(t('path.not_enough', { count: PATH_MIN_EVENTS }), null, { alertOnly: true });
         return;
     }

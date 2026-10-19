@@ -110,7 +110,11 @@ function startExpedition(plan) {
     resetSessionHistory();
     expedition = {
         plan,
-        stages: (plan ? plan.stages.map((mode, i) => ({ mode, tier: expeditionTierOf(mode) })) : planExpeditionStages())
+        // Une épreuve de plan est un nom de mode ou un objet (une leçon : { mode: 'lecon', set, take }).
+        stages: (plan ? plan.stages.map(spec => {
+            const stage = typeof spec === 'string' ? { mode: spec } : { ...spec };
+            return { ...stage, tier: stage.mode === 'lecon' ? 0 : expeditionTierOf(stage.mode) };
+        }) : planExpeditionStages())
             .map(s => ({ ...s, result: null })),
         index: 0,
         lives: EXPEDITION_MAX_LIVES,
@@ -138,7 +142,10 @@ function expeditionGo() {
     const realAlert = window.alert;
     let refused = false;
     window.alert = () => { refused = true; };
-    try { EXPEDITION_STARTERS[stage.mode](); } finally { window.alert = realAlert; }
+    try {
+        if (stage.mode === 'lecon') startLessonStage(stage);
+        else EXPEDITION_STARTERS[stage.mode]();
+    } finally { window.alert = realAlert; }
     if (refused) {
         expedition.running = false;
         stage.result = { skipped: true, unavailable: true, points: 0 };
@@ -243,6 +250,19 @@ function expeditionQuit() {
 }
 
 // --- Écran du parcours ------------------------------------------------------
+// Nom et description d'une épreuve : un mode, ou une leçon du Chemin du Temps (js/pathLessons.js).
+function expeditionStageTitle(stage) {
+    if (stage.mode === 'lecon') {
+        const title = typeof PathLessons !== 'undefined' ? PathLessons.setTitle(stage.set) : null;
+        return title ? t('lesson.stage_title', { title }) : t('lesson.review_title');
+    }
+    return t(EXPEDITION_TITLES[stage.mode]);
+}
+
+function expeditionStageDesc(stage) {
+    return stage.mode === 'lecon' ? t('lesson.stage_desc') : t(EXPEDITION_DESCS[stage.mode]);
+}
+
 function expeditionStageIcon(stage, i) {
     if (stage.result && stage.result.skipped) return '⏭';
     if (stage.result && stage.result.ok) return '✓';
@@ -268,7 +288,7 @@ function renderExpedition() {
         if (current) li.setAttribute('aria-current', 'step');
         li.innerHTML = '<span class="expedition-stage-icon" aria-hidden="true"></span><span class="expedition-stage-name"></span>';
         li.querySelector('.expedition-stage-icon').innerText = expeditionStageIcon(stage, i);
-        li.querySelector('.expedition-stage-name').innerText = t(EXPEDITION_TITLES[stage.mode]);
+        li.querySelector('.expedition-stage-name').innerText = expeditionStageTitle(stage);
         track.appendChild(li);
     });
 
@@ -307,7 +327,7 @@ function renderExpedition() {
             extra.appendChild(starsEl);
             const xpEl = document.createElement('p');
             xpEl.innerText = t('path.final_xp', { xp: f.xp || 0 })
-                + (f.worldDone ? ' ' + t('path.world_done') : (f.nextId && f.firstClear ? ' ' + t('path.unlocked_next') : ''));
+                + (f.worldDone ? ' ' + t('path.worlds.' + plan.world + '.done') : (f.nextId && f.firstClear ? ' ' + t('path.unlocked_next') : ''));
             extra.appendChild(xpEl);
         }
         document.getElementById('expedition-next-level').classList.toggle('hidden', !(plan && expedition.finished.won && expedition.finished.nextId));
@@ -320,8 +340,8 @@ function renderExpedition() {
 
     const stage = currentExpeditionStage();
     document.getElementById('expedition-next-kicker').innerText = t('expedition.stage_kicker', { n: expedition.index + 1, total });
-    document.getElementById('expedition-next-title').innerText = t(EXPEDITION_TITLES[stage.mode]);
-    document.getElementById('expedition-next-desc').innerText = t(EXPEDITION_DESCS[stage.mode]);
+    document.getElementById('expedition-next-title').innerText = expeditionStageTitle(stage);
+    document.getElementById('expedition-next-desc').innerText = expeditionStageDesc(stage);
     const go = document.getElementById('expedition-go');
     go.innerText = t('expedition.go');
 

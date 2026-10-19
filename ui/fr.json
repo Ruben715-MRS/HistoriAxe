@@ -865,13 +865,13 @@
   },
   "path": {
     "title": "Le Chemin du Temps",
-    "subtitle": "Antiquité · {stars} ★ sur {max}",
+    "subtitle": "{stars} ★ sur {max}",
     "card_next": "Niveau {n} · {title}",
-    "card_done": "Antiquité terminée — rejouez pour les 3 étoiles",
-    "coming_soon": "Le Moyen Âge arrive bientôt…",
+    "card_done": "Tout le Chemin est fait — rejouez pour les 3 étoiles",
+    "coming_soon": "La suite du Chemin arrive bientôt…",
     "level_n": "Niveau {n}",
     "range": "De {from} à {to}",
-    "boss_range": "Le boss : {count} repères de toute l'Antiquité.",
+    "boss_range": "Le boss : {count} repères de tout le monde « {world} ».",
     "best": "meilleur score {score}",
     "play": "Jouer",
     "replay": "Rejouer le niveau",
@@ -880,7 +880,7 @@
     "node_aria": "Niveau {n} : {title}, {stars} étoiles sur 3",
     "node_locked_aria": "Niveau {n} : {title}, verrouillé",
     "locked_level": "Terminez le niveau précédent pour l'ouvrir.",
-    "locked_boss": "Réunissez {need} étoiles sur les dix niveaux pour affronter le boss (vous en avez {have}).",
+    "locked_boss": "Réunissez {need} étoiles sur les {count} niveaux pour affronter le boss (vous en avez {have}).",
     "not_enough": "Ce niveau a besoin d'au moins {count} événements dans le pack chargé.",
     "level_won": "Niveau réussi !",
     "boss_won": "Boss vaincu !",
@@ -888,9 +888,22 @@
     "stars_aria": "{count} étoiles sur {max}",
     "final_xp": "+{xp} XP.",
     "unlocked_next": "Un nouveau niveau vous attend.",
-    "world_done": "L'Antiquité est à vous !",
     "share": "🗺️ HistoriAxe — Le Chemin du Temps\n{level} {stars}\n🏆 {score} points\n\nJoue sur HistoriAxe !",
     "worlds": {
+      "monde0": {
+        "title": "Monde 0 · Le temps des historiens",
+        "boss": "L'épreuve du temps",
+        "done": "Vous savez lire le temps : l'Antiquité vous attend !",
+        "levels": {
+          "1": "Premiers pas sur la frise",
+          "2": "Avant et après Jésus-Christ",
+          "3": "Compter les années",
+          "4": "Calendriers et fêtes",
+          "5": "Siècles et millénaires",
+          "6": "Les noms des périodes",
+          "7": "Où commence une période ?"
+        }
+      },
       "antiquite": {
         "title": "L'Antiquité",
         "boss": "L'épreuve de l'Antiquité",
@@ -905,9 +918,25 @@
           "8": "Auguste et la paix romaine",
           "9": "L'apogée de l'Empire",
           "10": "Crise, christianisme et chute de Rome"
-        }
+        },
+        "done": "L'Antiquité est à vous !"
       }
-    }
+    },
+    "boss_review": "Le boss : une révision de tout le monde « {world} ».",
+    "locked_world": "Battez le boss du monde « {world} » pour ouvrir celui-ci.",
+    "skip_world": "Je connais déjà : ouvrir « {world} »",
+    "skip_confirm": "Passer « {world} » ? « {next} » s'ouvre tout de suite, et vous pourrez revenir jouer ce monde quand vous voudrez."
+  },
+  "lesson": {
+    "stage_title": "Leçon · {title}",
+    "review_title": "Leçon · Révision générale",
+    "stage_desc": "Quelques questions, et l'explication après chaque réponse. Une erreur coûte une vie.",
+    "empty": "Cette leçon n'a pas de questions.",
+    "right": "Juste !",
+    "wrong": "Pas tout à fait…",
+    "next": "Question suivante",
+    "finish": "Terminer la leçon",
+    "end_lives": "Plus de vies — terminer"
   },
   "classroom": {
     "title": "Mode Classe",

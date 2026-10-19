@@ -36,8 +36,48 @@
     var STAGES_LAST = ['classic', 'periodes', 'ordre'];
     var STAGES_BOSS = ['quiz', 'avantapres', 'classic', 'periodes', 'curseur', 'ordre'];
 
+    // Une épreuve est un mode de l'Expédition (chaîne) ou une LEÇON : questions écrites à la main, tirées
+    // d'une ou plusieurs séries de js/pathLessons.js ({ mode: 'lecon', set, take }).
+    function lesson(set, take) { return take ? { mode: 'lecon', set: set, take: take } : { mode: 'lecon', set: set }; }
+    function stageMode(stage) { return typeof stage === 'string' ? stage : stage && stage.mode; }
+
+    // Événements choisis à la main pour le Monde 0 : des repères que tout le monde connaît, à des années
+    // toutes différentes. Leur seul rôle : apprendre à jouer, puis servir d'exemples.
+    var M0_TUTORIAL = ['mon27', 'rom1', 'rom73', 'fr41', 'chr75', 'exp10', 'fr132', '3e_47'];
+    var M0_AROUND_ZERO = ['sp1', 'rom1', 'b1', 'b6', 'rom73', 'rom81', 'chr6', 'rom100', 'fr41'];
+    var M0_CENTURIES = M0_TUTORIAL.concat(['b1', 'b14', 'b40', '3e_6', 'de44']);
+    // Les bornes du thème « Périodisation historique » (Programmes scolaires › Seconde).
+    var M0_BORNES = ['sp_11', 'sp_1', 'sp_8', 'sp_2', 'sp_9', 'sp_10', 'sp_3', 'sp_4', 'sp_5', 'sp_12', 'sp_6', 'sp_7'];
+
     // `to` est exclusif (`shownTo`, s'il existe, est la dernière année à afficher). Les titres sont dans ui/<lang>.json (path.worlds.<monde>.levels.<n>).
+    //
+    // Un monde se débloque quand le boss du précédent est vaincu (ou quand le joueur choisit de passer le
+    // précédent, s'il est `skippable`). Options d'un niveau (ou de tout le monde) :
+    //  - `ids` : les événements, choisis à la main (sinon : tirage dans la fenêtre `from`…`to`) ;
+    //  - `themes` : ne tirer que dans ces thèmes (mondes chrono-thématiques : « la Grèce », « Rome »…) ;
+    //  - `essentialOnly` : ne tirer que les incontournables (par défaut, oui sans `themes`, non avec).
     var WORLDS = [
+        {
+            // Monde 0 : la périodisation, chapitre introductif de Seconde — et le tutoriel du jeu.
+            id: 'monde0',
+            icon: '⏳',
+            skippable: true,
+            bossStarsRequired: 10,
+            levels: [
+                // Le premier niveau se joue tout de suite, sans leçon : apprendre en jouant.
+                { n: 1, ids: M0_TUTORIAL, stages: ['avantapres', 'classic'] },
+                { n: 2, ids: M0_AROUND_ZERO, stages: [lesson('ere'), 'avantapres'] },
+                { n: 3, stages: [lesson('eres'), lesson('gregorien')] },
+                { n: 4, stages: [lesson('calendriers'), lesson('cycles')] },
+                { n: 5, ids: M0_CENTURIES, stages: [lesson('siecles'), 'periodes'] },
+                { n: 6, stages: [lesson('chrononymes'), lesson('echelles')] },
+                { n: 7, ids: M0_BORNES, stages: [lesson('bornes'), 'classic'] }
+            ],
+            boss: {
+                ids: M0_BORNES.concat(['mon27', 'rom1', 'rom73', 'chr75', '3e_47']),
+                stages: [lesson(['ere', 'eres', 'gregorien', 'calendriers', 'cycles', 'siecles', 'chrononymes', 'echelles', 'bornes'], 8), 'classic', 'ordre']
+            }
+        },
         {
             id: 'antiquite',
             icon: '🏛️',
@@ -73,10 +113,22 @@
     // Tous les niveaux d'un monde dans l'ordre du parcours, boss compris.
     function levelsOf(world) {
         var out = world.levels.map(function (l) {
-            return { id: levelId(world, l.n), n: l.n, from: l.from, to: l.to, shownTo: l.shownTo, stages: l.stages, boss: false };
+            return {
+                id: levelId(world, l.n), n: l.n, from: l.from, to: l.to, shownTo: l.shownTo, stages: l.stages, boss: false,
+                ids: l.ids || null, themes: l.themes || world.themes || null,
+                essentialOnly: l.essentialOnly !== undefined ? l.essentialOnly : world.essentialOnly
+            };
         });
-        out.push({ id: bossId(world), n: world.levels.length + 1, from: world.from, to: world.to, stages: world.boss.stages, boss: true });
+        out.push({
+            id: bossId(world), n: world.levels.length + 1, from: world.from, to: world.to, stages: world.boss.stages, boss: true,
+            ids: world.boss.ids || null, themes: world.themes || null, essentialOnly: world.essentialOnly
+        });
         return out;
+    }
+
+    // Un niveau fait-il jouer des événements (et pas seulement des leçons) ?
+    function levelNeedsEvents(level) {
+        return (level.stages || []).some(function (s) { return stageMode(s) !== 'lecon'; });
     }
 
     // --- Contenu --------------------------------------------------------------
@@ -124,7 +176,7 @@
                 (theme.events || []).forEach(function (evt) {
                     if (!evt || typeof evt.date !== 'number' || seen[evt.id]) return;
                     seen[evt.id] = true;
-                    var item = { id: evt.id, date: evt.date, essential: !!essential[evt.id], fame: 0 };
+                    var item = { id: evt.id, date: evt.date, theme: theme.id, essential: !!essential[evt.id], fame: 0 };
                     out.push(item);
                     (byDate[evt.date] = byDate[evt.date] || []).push({ item: item, theme: theme.id, words: titleWords(evt.titre) });
                 });
@@ -149,12 +201,15 @@
         return out;
     }
 
+    // Priorité d'un événement dans un tirage : incontournable d'abord, puis connu.
+    function weight(e) { return (e.essential ? FAME_CAP + 1 : 0) + (e.fame || 0); }
+
     // `count` événements répartis sur la fenêtre : on la découpe en `count` tranches de durée égale
     // et chacune donne son événement le plus connu (puis le mieux classé au hasard stable), puis on complète. Deux événements d'un même
     // niveau n'ont jamais la même année (un placement serait alors indécidable).
     function pickSpread(candidates, count, seed) {
         var ranked = candidates.map(function (c) { return { c: c, r: rank(seed + '|' + c.id) }; })
-            .sort(function (a, b) { return (b.c.fame || 0) - (a.c.fame || 0) || a.r - b.r || (a.c.id < b.c.id ? -1 : 1); });
+            .sort(function (a, b) { return weight(b.c) - weight(a.c) || a.r - b.r || (a.c.id < b.c.id ? -1 : 1); });
         if (!ranked.length) return [];
         var min = Infinity, max = -Infinity;
         ranked.forEach(function (x) { min = Math.min(min, x.c.date); max = Math.max(max, x.c.date); });
@@ -183,18 +238,40 @@
         return chosen.sort(function (a, b) { return a.date - b.date || (a.id < b.id ? -1 : 1); });
     }
 
+    // Les candidats d'un niveau tiré au sort : la fenêtre de temps, les thèmes du monde s'il en a, et les
+    // seuls incontournables par défaut quand le monde n'a pas de thèmes (sinon tout le monde y entrerait).
+    function candidatesFor(level, events) {
+        var themes = null;
+        if (level.themes) {
+            themes = Object.create(null);
+            level.themes.forEach(function (id) { themes[id] = true; });
+        }
+        var essentialOnly = level.essentialOnly !== undefined ? level.essentialOnly : !themes;
+        return events.filter(function (e) {
+            if (e.date < level.from || e.date >= level.to) return false;
+            if (themes && !themes[e.theme]) return false;
+            return !essentialOnly || e.essential;
+        });
+    }
+
     // Les identifiants des événements de chaque niveau d'un monde : { 'antiquite-1': [...], …,
-    // 'antiquite-boss': [...] }. Le boss reprend 2 événements de chaque niveau — ce que le joueur a
-    // déjà traversé — plutôt que du neuf : c'est la révision du monde entier.
+    // 'antiquite-boss': [...] }. Sans liste fixée, le boss reprend 2 événements de chaque niveau — ce
+    // que le joueur a déjà traversé — plutôt que du neuf : c'est la révision du monde entier.
     function buildWorldPools(world, events) {
         var pools = {};
-        var essentials = events.filter(function (e) { return e.essential; });
-        world.levels.forEach(function (l) {
-            var inWindow = essentials.filter(function (e) { return e.date >= l.from && e.date < l.to; });
-            pools[levelId(world, l.n)] = pickSpread(inWindow, LEVEL_POOL_SIZE, levelId(world, l.n)).map(function (e) { return e.id; });
-        });
         var byId = Object.create(null);
         events.forEach(function (e) { byId[e.id] = e; });
+        var fixed = function (ids) { return ids.filter(function (id) { return !!byId[id]; }); };
+        levelsOf(world).forEach(function (l) {
+            if (l.boss) return;
+            if (l.ids) pools[l.id] = fixed(l.ids);
+            else if (l.from !== undefined) pools[l.id] = pickSpread(candidatesFor(l, events), LEVEL_POOL_SIZE, l.id).map(function (e) { return e.id; });
+            else pools[l.id] = [];
+        });
+        if (world.boss.ids) {
+            pools[bossId(world)] = fixed(world.boss.ids);
+            return pools;
+        }
         var boss = [];
         var usedDates = Object.create(null);
         world.levels.forEach(function (l) {
@@ -209,6 +286,23 @@
         return pools;
     }
 
+    // Découpe une fenêtre en `count` tranches qui contiennent chacune à peu près autant de candidats
+    // (bornes = années réelles d'événements). Sert à proposer le découpage d'un nouveau monde
+    // (scripts/path_plan.js) : plus le temps est dense, plus les tranches sont courtes.
+    function sliceWindows(candidates, from, to, count) {
+        var dates = candidates.map(function (e) { return e.date; }).filter(function (d) { return d >= from && d < to; })
+            .sort(function (a, b) { return a - b; });
+        var bounds = [from];
+        for (var k = 1; k < count; k++) {
+            var d = dates[Math.floor(k * dates.length / count)];
+            if (d !== undefined && d > bounds[bounds.length - 1] && d < to) bounds.push(d);
+        }
+        bounds.push(to);
+        var out = [];
+        for (var i = 0; i < bounds.length - 1; i++) out.push({ from: bounds[i], to: bounds[i + 1] });
+        return out;
+    }
+
     // --- Étoiles et progression ------------------------------------------------
 
     // Une étoile pour finir le niveau, une de plus par vie conservée au-dessus de la première :
@@ -218,9 +312,12 @@
         return Math.max(1, Math.min(MAX_STARS, Math.floor(livesLeft)));
     }
 
-    // Progression : { levels: { <id>: { stars, best, plays } } } — tolère un stockage altéré.
+    // Progression : { levels: { <id>: { stars, best, plays } }, skipped: [<monde>] } — tolère un stockage altéré.
     function normalizeProgress(raw) {
-        var out = { levels: {} };
+        var out = { levels: {}, skipped: [] };
+        if (raw && Array.isArray(raw.skipped)) {
+            out.skipped = raw.skipped.filter(function (id, i, all) { return typeof id === 'string' && all.indexOf(id) === i; });
+        }
         var src = raw && typeof raw === 'object' && raw.levels && typeof raw.levels === 'object' ? raw.levels : {};
         Object.keys(src).forEach(function (id) {
             var e = src[id];
@@ -238,6 +335,65 @@
     function starsOf(progress, id) {
         var e = progress && progress.levels && progress.levels[id];
         return e ? e.stars : 0;
+    }
+
+    // --- Mondes ------------------------------------------------------------------
+
+    function worldIndex(world) { return WORLDS.indexOf(world); }
+
+    function isWorldSkipped(world, progress) {
+        return !!(progress && progress.skipped && progress.skipped.indexOf(world.id) !== -1);
+    }
+
+    function worldTouched(world, progress) {
+        return levelsOf(world).some(function (l) { return progress && progress.levels && progress.levels[l.id]; });
+    }
+
+    // Un monde s'ouvre quand le boss du précédent est vaincu, ou quand le joueur a passé le précédent.
+    // Un monde déjà commencé reste ouvert (progression venue d'une version qui n'avait pas ce verrou).
+    function isWorldUnlocked(world, progress) {
+        var idx = worldIndex(world);
+        if (idx <= 0) return idx === 0;
+        var prev = WORLDS[idx - 1];
+        return starsOf(progress, bossId(prev)) > 0 || isWorldSkipped(prev, progress) || worldTouched(world, progress);
+    }
+
+    // « Je connais déjà » : passer un monde ouvre le suivant, sans rien effacer.
+    function skipWorld(progress, worldId) {
+        var base = normalizeProgress(progress);
+        var world = findWorld(worldId);
+        if (world && world.skippable && base.skipped.indexOf(worldId) === -1) base.skipped.push(worldId);
+        return base;
+    }
+
+    // Le niveau à proposer : dans l'ordre des mondes ouverts (en sautant ceux que le joueur a passés), le
+    // premier qu'il n'a pas encore réussi ; à défaut, le premier sans ses trois étoiles. null si tout est fait.
+    function nextTarget(progress) {
+        var open = WORLDS.filter(function (w) { return isWorldUnlocked(w, progress); });
+        var passes = [
+            function (w) { return !isWorldSkipped(w, progress); },
+            function () { return true; }
+        ];
+        for (var p = 0; p < passes.length; p++) {
+            for (var i = 0; i < open.length; i++) {
+                if (!passes[p](open[i])) continue;
+                var id = firstLevel(open[i], progress, function (stars) { return stars === 0; });
+                if (id) return { world: open[i], levelId: id };
+            }
+        }
+        for (var j = 0; j < open.length; j++) {
+            var full = firstLevel(open[j], progress, function (stars) { return stars < MAX_STARS; });
+            if (full) return { world: open[j], levelId: full };
+        }
+        return null;
+    }
+
+    function firstLevel(world, progress, test) {
+        var levels = levelsOf(world);
+        for (var i = 0; i < levels.length; i++) {
+            if (isUnlocked(world, levels[i].id, progress) && test(starsOf(progress, levels[i].id))) return levels[i].id;
+        }
+        return null;
     }
 
     // Un nouveau progrès, sans toucher à l'ancien. Les étoiles ne redescendent jamais.
@@ -265,6 +421,7 @@
 
     // Un niveau s'ouvre en finissant le précédent (une étoile suffit) ; le boss demande un total d'étoiles.
     function isUnlocked(world, id, progress) {
+        if (!isWorldUnlocked(world, progress)) return false;
         var levels = levelsOf(world);
         var idx = -1;
         levels.forEach(function (l, i) { if (l.id === id) idx = i; });
@@ -289,11 +446,16 @@
         return null;
     }
 
-    // Le niveau qui suit celui-ci s'il est ouvert, sinon null.
+    // Le niveau qui suit celui-ci s'il est ouvert, sinon null. Après le boss : le premier niveau du monde suivant.
     function nextLevelId(world, id, progress) {
         var levels = levelsOf(world);
         for (var i = 0; i < levels.length - 1; i++) {
             if (levels[i].id === id) return isUnlocked(world, levels[i + 1].id, progress) ? levels[i + 1].id : null;
+        }
+        var next = WORLDS[worldIndex(world) + 1];
+        if (next && levels[levels.length - 1].id === id) {
+            var first = levelId(next, next.levels[0].n);
+            return isUnlocked(next, first, progress) ? first : null;
         }
         return null;
     }
@@ -313,7 +475,10 @@
         WORLDS: WORLDS, LEVEL_POOL_SIZE: LEVEL_POOL_SIZE, BOSS_PER_LEVEL: BOSS_PER_LEVEL, MAX_STARS: MAX_STARS,
         EXCLUDED_THEME_IDS: EXCLUDED_THEME_IDS,
         findWorld: findWorld, levelsOf: levelsOf, levelId: levelId, bossId: bossId, isBossId: isBossId,
-        flattenEvents: flattenEvents, pickSpread: pickSpread, buildWorldPools: buildWorldPools,
+        stageMode: stageMode, levelNeedsEvents: levelNeedsEvents,
+        flattenEvents: flattenEvents, pickSpread: pickSpread, candidatesFor: candidatesFor, buildWorldPools: buildWorldPools,
+        sliceWindows: sliceWindows,
+        isWorldUnlocked: isWorldUnlocked, isWorldSkipped: isWorldSkipped, skipWorld: skipWorld, nextTarget: nextTarget,
         starsFor: starsFor, normalizeProgress: normalizeProgress, starsOf: starsOf, recordResult: recordResult,
         worldStars: worldStars, worldMaxStars: worldMaxStars, regularStars: regularStars,
         isUnlocked: isUnlocked, currentLevelId: currentLevelId, nextLevelId: nextLevelId, levelXp: levelXp
