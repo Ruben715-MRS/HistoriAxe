@@ -329,6 +329,12 @@ function renderExpedition() {
             xpEl.innerText = t('path.final_xp', { xp: f.xp || 0 })
                 + (f.worldDone ? ' ' + t('path.worlds.' + plan.world + '.done') : (f.nextId && f.firstClear ? ' ' + t('path.unlocked_next') : ''));
             extra.appendChild(xpEl);
+            (f.newIslands || []).forEach(id => {
+                const islandEl = document.createElement('p');
+                islandEl.className = 'path-final-island';
+                islandEl.innerText = '🏝️ ' + t('path.island_unlocked', { island: t('path.worlds.' + id + '.title') });
+                extra.appendChild(islandEl);
+            });
         }
         document.getElementById('expedition-next-level').classList.toggle('hidden', !(plan && expedition.finished.won && expedition.finished.nextId));
         document.getElementById('expedition-share').classList.toggle('hidden', !!plan && !expedition.finished.won);

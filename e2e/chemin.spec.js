@@ -2,7 +2,7 @@
 // épreuves de l'Expédition, les étoiles, le déblocage. Les épreuves sont de vrais modes ; on vérifie ici le
 // parcours qui les relie, et que chaque niveau est jouable avec les modes qu'il annonce.
 //
-// Sauf mention contraire, un test part d'un joueur qui a PASSÉ le Monde 0 (l'Antiquité est ouverte) :
+// Sauf mention contraire, un test part d'un joueur qui a PASSÉ le Monde 0 (la Préhistoire est ouverte) :
 // les tests du Monde 0 et des leçons repartent d'une progression vide (`progression(page, null)`).
 
 const { test, expect, visibleScreen } = require('./fixtures');
@@ -27,6 +27,22 @@ async function progression(page, data) {
     }, data);
 }
 
+// Progression d'un joueur qui a fait tous les niveaux (une étoile) des mondes qui précèdent `worldId`,
+// plus d'éventuels niveaux supplémentaires `extra` ({ id: étoiles }).
+async function arrivee(page, worldId, extra = {}) {
+    await page.evaluate(({ worldId, extra }) => {
+        const levels = {};
+        for (const w of PathCore.mainWorlds()) {
+            if (w.id === worldId) break;
+            PathCore.levelsOf(w).forEach(l => { levels[l.id] = { stars: 1, best: 1, plays: 1 }; });
+        }
+        Object.entries(extra).forEach(([id, stars]) => { levels[id] = { stars, best: 100, plays: 1 }; });
+        localStorage.setItem('historiaxe_path_v1', JSON.stringify({ levels, skipped: [] }));
+        showScreen('screen-categories');
+        initCategories();
+    }, { worldId, extra });
+}
+
 async function ouvrirCarte(page) {
     await page.locator('#btn-path').click();
     await expect(page.locator('#screen-path')).toBeVisible();
@@ -46,32 +62,38 @@ async function jouerNiveau(page, { gagne = true, vies = 3 } = {}) {
     }
 }
 
-test('un joueur neuf commence par le Monde 0 ; l\'Antiquité, au-dessus, est fermée', async ({ page }) => {
+test('un joueur neuf commence par le Monde 0 ; les mondes suivants sont fermés, et seul le prochain est dessiné', async ({ page }) => {
     await progression(page, null);
     await expect(page.locator('#btn-path')).toBeVisible();
     await expect(page.locator('#btn-path .resume-card-title')).toContainText('Premiers pas sur la frise');
     await ouvrirCarte(page);
-    await expect(page.locator('.path-node')).toHaveCount(19);
+    // Monde 0 (7 niveaux + boss) et la Préhistoire, le prochain monde (3 niveaux + boss) : 12 pastilles.
+    await expect(page.locator('.path-node')).toHaveCount(12);
     await expect(page.locator('.path-node:not(.is-locked)')).toHaveCount(1);
     await expect(page.locator('.path-node.is-next')).toHaveAttribute('data-level', 'monde0-1');
-    await expect(page.locator('#path-subtitle')).toContainText('0 ★ sur 57');
-    await expect(page.locator('.path-world[data-world="antiquite"]')).toHaveClass(/is-locked/);
-    await expect(page.locator('.path-world[data-world="antiquite"] .path-world-note')).toContainText('Monde 0');
-    // Le Monde 0 est en bas : il vient après l'Antiquité dans la page.
+    const total = await page.evaluate(() => pathTotalMaxStars());
+    await expect(page.locator('#path-subtitle')).toContainText(`0 ★ sur ${total}`);
+    // Les 20 autres mondes ne sont qu'un en-tête replié : la carte reste lisible.
+    await expect(page.locator('.path-world.is-collapsed')).toHaveCount(20);
+    await expect(page.locator('.path-world[data-world="prehistoire"]')).toHaveClass(/is-locked/);
+    await expect(page.locator('.path-world[data-world="prehistoire"] .path-world-note')).toContainText('Monde 0');
+    // On gravit la carte : la suite du Chemin en haut, le Monde 0 tout en bas.
     const ordre = await page.evaluate(() => [...document.querySelectorAll('.path-world')].map(s => s.dataset.world));
-    expect(ordre).toEqual(['antiquite', 'monde0']);
-    await page.locator('.path-node[data-level="antiquite-1"]').click();
+    expect(ordre[0]).toBe('depuis-1991');
+    expect(ordre[ordre.length - 1]).toBe('monde0');
+    expect(ordre).toHaveLength(22);
+    await page.locator('.path-node[data-level="prehistoire-1"]').click();
     await expect(page.locator('#path-sheet-lock')).toContainText('boss du monde');
     await expect(page.locator('#path-sheet-play')).toBeHidden();
 });
 
-test('« Je connais déjà » passe le Monde 0 : l\'Antiquité s\'ouvre, le Monde 0 reste jouable', async ({ page }) => {
+test('« Je connais déjà » passe le Monde 0 : la Préhistoire s\'ouvre, le Monde 0 reste jouable', async ({ page }) => {
     await progression(page, null);
     await ouvrirCarte(page);
     await page.locator('.path-world[data-world="monde0"] .path-world-skip').click();
     await page.locator('#confirm-ok-btn').click();
-    await expect(page.locator('.path-world[data-world="antiquite"]')).not.toHaveClass(/is-locked/);
-    await expect(page.locator('.path-node.is-next')).toHaveAttribute('data-level', 'antiquite-1');
+    await expect(page.locator('.path-world[data-world="prehistoire"]')).not.toHaveClass(/is-locked/);
+    await expect(page.locator('.path-node.is-next')).toHaveAttribute('data-level', 'prehistoire-1');
     await expect(page.locator('.path-node[data-level="monde0-1"]')).not.toHaveClass(/is-locked/);
     await expect(page.locator('.path-world-skip')).toHaveCount(0);
     expect(await page.evaluate(() => JSON.parse(localStorage.getItem('historiaxe_path_v1')).skipped)).toEqual(['monde0']);
@@ -153,7 +175,7 @@ test('quitter une leçon ramène à la carte', async ({ page }) => {
     expect(await page.evaluate(() => ({ e: expedition, r: revisionMode }))).toEqual({ e: null, r: false });
 });
 
-test('le boss du Monde 0 vaincu : « Niveau suivant » mène à l\'Antiquité', async ({ page }) => {
+test('le boss du Monde 0 vaincu : « Niveau suivant » mène à la Préhistoire', async ({ page }) => {
     const levels = {};
     for (let n = 1; n <= 7; n++) levels['monde0-' + n] = { stars: 2, best: 100, plays: 1 };
     await progression(page, { levels });
@@ -162,31 +184,32 @@ test('le boss du Monde 0 vaincu : « Niveau suivant » mène à l\'Antiquité', 
     await expect(page.locator('#expedition-next-title')).toHaveText('Leçon · Révision générale');
     await jouerNiveau(page, { vies: 3 });
     await expect(page.locator('#expedition-final-title')).toHaveText('Boss vaincu !');
-    await expect(page.locator('#expedition-final-extra')).toContainText("l'Antiquité vous attend");
+    await expect(page.locator('#expedition-final-extra')).toContainText('Vous savez lire le temps');
     await page.locator('#expedition-next-level').click();
-    await expect(page.locator('#expedition-title')).toHaveText('Les cités naissantes');
+    await expect(page.locator('#expedition-title')).toHaveText('Les premiers outils et le feu');
 });
 
 test('un niveau verrouillé s\'explique et ne se lance pas', async ({ page }) => {
     await ouvrirCarte(page);
-    await page.locator('.path-node[data-level="antiquite-3"]').click();
+    await page.locator('.path-node[data-level="prehistoire-3"]').click();
     await expect(page.locator('#path-sheet')).toBeVisible();
     await expect(page.locator('#path-sheet-lock')).toContainText('précédent');
     await expect(page.locator('#path-sheet-play')).toBeHidden();
-    await page.locator('.path-node[data-level="antiquite-boss"]').click();
-    await expect(page.locator('#path-sheet-lock')).toContainText('15 étoiles');
-    await page.evaluate(() => pathStartLevel('antiquite-3'));
+    await page.locator('.path-node[data-level="prehistoire-boss"]').click();
+    await expect(page.locator('#path-sheet-lock')).toContainText('5 étoiles');
+    await page.evaluate(() => pathStartLevel('prehistoire-3'));
     expect(await visibleScreen(page)).toBe('screen-path');
     expect(await page.evaluate(() => expedition)).toBeNull();
 });
 
 test('un niveau : 3 épreuves sur 12 repères de sa tranche de temps, vies du niveau', async ({ page }) => {
     await ouvrirCarte(page);
-    await page.locator('.path-node[data-level="antiquite-1"]').click();
-    await expect(page.locator('#path-sheet-title')).toContainText('Les cités naissantes');
+    await page.locator('.path-node[data-level="prehistoire-1"]').click();
+    await expect(page.locator('#path-sheet-title')).toContainText('Les premiers outils et le feu');
+    await expect(page.locator('#path-sheet-range')).toContainText('av. J.-C.');
     await page.locator('#path-sheet-play').click();
     expect(await visibleScreen(page)).toBe('screen-expedition');
-    await expect(page.locator('#expedition-title')).toHaveText('Les cités naissantes');
+    await expect(page.locator('#expedition-title')).toHaveText('Les premiers outils et le feu');
     await expect(page.locator('#expedition-track .expedition-stage')).toHaveCount(3);
     const etat = await page.evaluate(() => ({
         n: revisionEvents.length, revision: revisionMode, lives: expedition.lives,
@@ -195,50 +218,50 @@ test('un niveau : 3 épreuves sur 12 repères de sa tranche de temps, vies du ni
     expect(etat.n).toBe(12);
     expect(etat.revision).toBe(true);
     expect(etat.lives).toBe(3);
-    expect(etat.min).toBeGreaterThanOrEqual(-800);
-    expect(etat.max).toBeLessThan(-600);
+    expect(etat.min).toBeGreaterThanOrEqual(-3300000);
+    expect(etat.max).toBeLessThan(-40000);
     await page.locator('#expedition-go').click();
     expect(await visibleScreen(page)).not.toBe('screen-expedition');
 });
 
 test('trois étoiles sans erreur : progression enregistrée, XP versée, niveau suivant ouvert', async ({ page }) => {
     const xpAvant = await page.evaluate(() => gamificationLoad().xp || 0);
-    await page.evaluate(() => pathStartLevel('antiquite-1'));
+    await page.evaluate(() => pathStartLevel('prehistoire-1'));
     await jouerNiveau(page, { vies: 3 });
     await expect(page.locator('#expedition-final-title')).toHaveText('Niveau réussi !');
     await expect(page.locator('.path-final-stars')).toHaveText('★★★');
     await expect(page.locator('#expedition-next-level')).toBeVisible();
     await expect(page.locator('#expedition-leave')).toHaveText('Retour à la carte');
     const sauve = await page.evaluate(() => JSON.parse(localStorage.getItem('historiaxe_path_v1')));
-    expect(sauve.levels['antiquite-1'].stars).toBe(3);
+    expect(sauve.levels['prehistoire-1'].stars).toBe(3);
     expect(await page.evaluate(() => gamificationLoad().xp || 0)).toBeGreaterThan(xpAvant);
     // « Niveau suivant » lance le niveau 2.
     await page.locator('#expedition-next-level').click();
-    await expect(page.locator('#expedition-title')).toHaveText('Perses, sages et philosophes');
+    await expect(page.locator('#expedition-title')).toHaveText('Les premiers artistes');
     // On quitte par la flèche : retour à la carte, vivier de révision relâché.
     await page.locator('#screen-expedition .back-btn').click();
     await page.locator('#confirm-ok-btn').click();
     expect(await visibleScreen(page)).toBe('screen-path');
     expect(await page.evaluate(() => revisionMode)).toBe(false);
-    await expect(page.locator('.path-node[data-level="antiquite-1"] .path-node-stars')).toHaveText('★★★');
-    await expect(page.locator('.path-node.is-next')).toHaveAttribute('data-level', 'antiquite-2');
+    await expect(page.locator('.path-node[data-level="prehistoire-1"] .path-node-stars')).toHaveText('★★★');
+    await expect(page.locator('.path-node.is-next')).toHaveAttribute('data-level', 'prehistoire-2');
 });
 
 test('les étoiles suivent les vies gardées, et ne redescendent jamais en rejouant', async ({ page }) => {
-    await page.evaluate(() => pathStartLevel('antiquite-1'));
+    await page.evaluate(() => pathStartLevel('prehistoire-1'));
     await jouerNiveau(page, { vies: 2 });
     await expect(page.locator('.path-final-stars')).toHaveText('★★☆');
     await expect(page.locator('#expedition-final-text')).toContainText('2 vies');
     await page.locator('#expedition-replay').click();
-    await expect(page.locator('#expedition-title')).toHaveText('Les cités naissantes');
+    await expect(page.locator('#expedition-title')).toHaveText('Les premiers outils et le feu');
     await jouerNiveau(page, { vies: 1 });
     await expect(page.locator('.path-final-stars')).toHaveText('★☆☆');
-    const p = await page.evaluate(() => JSON.parse(localStorage.getItem('historiaxe_path_v1')).levels['antiquite-1']);
+    const p = await page.evaluate(() => JSON.parse(localStorage.getItem('historiaxe_path_v1')).levels['prehistoire-1']);
     expect(p).toMatchObject({ stars: 2, plays: 2 });
 });
 
 test('perdre toutes ses vies : pas d\'étoile, le niveau suivant reste fermé', async ({ page }) => {
-    await page.evaluate(() => pathStartLevel('antiquite-1'));
+    await page.evaluate(() => pathStartLevel('prehistoire-1'));
     await page.locator('#expedition-go').click();
     await finirEpreuve(page, { gagne: false, vies: 0 });
     await expect(page.locator('#expedition-final-title')).toHaveText('Niveau raté — plus de vies');
@@ -246,11 +269,11 @@ test('perdre toutes ses vies : pas d\'étoile, le niveau suivant reste fermé', 
     await expect(page.locator('#expedition-next-level')).toBeHidden();
     await page.locator('#expedition-leave').click();
     expect(await visibleScreen(page)).toBe('screen-path');
-    await expect(page.locator('.path-world[data-world="antiquite"] .path-node.is-locked')).toHaveCount(10);
+    await expect(page.locator('.path-world[data-world="prehistoire"] .path-node.is-locked')).toHaveCount(3);
 });
 
 test('abandonner un niveau en pleine épreuve ramène à la carte', async ({ page }) => {
-    await page.evaluate(() => pathStartLevel('antiquite-1'));
+    await page.evaluate(() => pathStartLevel('prehistoire-1'));
     await page.locator('#expedition-go').click();
     await page.locator('.quit-btn:visible').click();
     await page.locator('#confirm-ok-btn').click();
@@ -261,21 +284,20 @@ test('abandonner un niveau en pleine épreuve ramène à la carte', async ({ pag
 
 test('finir un niveau compte pour la série quotidienne', async ({ page }) => {
     await page.evaluate(() => localStorage.removeItem('historiaxe_streak_v1'));
-    await page.evaluate(() => pathStartLevel('antiquite-1'));
+    await page.evaluate(() => pathStartLevel('prehistoire-1'));
     await jouerNiveau(page, { vies: 3 });
     expect(await page.evaluate(() => streakLoad().currentStreak)).toBe(1);
 });
 
-test('le boss : fermé sous 15 étoiles, ouvert au-delà, six épreuves et une vie offerte à mi-parcours', async ({ page }) => {
-    await page.evaluate(() => {
-        const levels = {};
-        for (let n = 1; n <= 10; n++) levels['antiquite-' + n] = { stars: 2, best: 100, plays: 1 };
-        localStorage.setItem('historiaxe_path_v1', JSON.stringify({ levels, skipped: ['monde0'] }));
-        initCategories();
-    });
+test('le boss : fermé sous la moitié des étoiles, six épreuves et une vie offerte à mi-parcours', async ({ page }) => {
+    // La Préhistoire : 3 niveaux, donc 5 étoiles ouvrent le boss. Avec 1 étoile par niveau (3), il reste fermé.
+    await arrivee(page, 'prehistoire', { 'prehistoire-1': 1, 'prehistoire-2': 1, 'prehistoire-3': 1 });
     await ouvrirCarte(page);
-    await expect(page.locator('.path-node[data-level="antiquite-boss"].is-locked')).toHaveCount(0);
-    await page.locator('.path-node[data-level="antiquite-boss"]').click();
+    await expect(page.locator('.path-node[data-level="prehistoire-boss"]')).toHaveClass(/is-locked/);
+    await arrivee(page, 'prehistoire', { 'prehistoire-1': 2, 'prehistoire-2': 2, 'prehistoire-3': 1 });
+    await ouvrirCarte(page);
+    await expect(page.locator('.path-node[data-level="prehistoire-boss"]')).not.toHaveClass(/is-locked/);
+    await page.locator('.path-node[data-level="prehistoire-boss"]').click();
     await page.locator('#path-sheet-play').click();
     await expect(page.locator('#expedition-track .expedition-stage')).toHaveCount(6);
     expect(await page.evaluate(() => revisionEvents.length)).toBe(20);
@@ -286,10 +308,49 @@ test('le boss : fermé sous 15 étoiles, ouvert au-delà, six épreuves et une v
     await expect(page.locator('.expedition-joker[data-joker="life"]')).toBeEnabled();
     await jouerNiveau(page, { vies: 3 });
     await expect(page.locator('#expedition-final-title')).toHaveText('Boss vaincu !');
-    await expect(page.locator('#expedition-next-level')).toBeHidden();
+    // Le monde suivant s'ouvre : « Niveau suivant » y conduit.
+    await expect(page.locator('#expedition-next-level')).toBeVisible();
+    await page.locator('#expedition-next-level').click();
+    await expect(page.locator('#expedition-title')).toHaveText('Narmer et l\'invention de l\'écriture');
 });
 
-test('chaque niveau démarre avec chacune de ses épreuves, sans alerte, sur ses 12 repères', async ({ page }) => {
+test('une île bonus s\'ouvre à la moitié de son monde, se joue à part et ramène à sa carte', async ({ page }) => {
+    // La Grèce a 8 niveaux : l'île de Chine s'ouvre quand le niveau 4 est réussi.
+    await arrivee(page, 'grece', { 'grece-1': 1, 'grece-2': 1, 'grece-3': 1 });
+    await ouvrirCarte(page);
+    const carte = page.locator('.path-island-card[data-island="ile-chine"]');
+    await expect(carte).toBeVisible();
+    await expect(carte).toHaveClass(/is-locked/);
+    await carte.click();
+    await expect(page.locator('#confirm-message')).toContainText('niveau 4');
+    await page.locator('#confirm-ok-btn').click();
+    // On réussit le niveau 4 : l'île est annoncée sur l'écran de fin.
+    await page.evaluate(() => pathStartLevel('grece-4'));
+    await jouerNiveau(page, { vies: 3 });
+    await expect(page.locator('.path-final-island')).toContainText('La Chine impériale');
+    await page.locator('#expedition-leave').click();
+    await expect(page.locator('.path-island-card[data-island="ile-chine"]')).not.toHaveClass(/is-locked/);
+    // Entrer dans l'île : sa seule piste (6 niveaux + boss), et la flèche revient à la carte des mondes.
+    await page.locator('.path-island-card[data-island="ile-chine"]').click();
+    await expect(page.locator('.path-node')).toHaveCount(7);
+    await expect(page.locator('#path-subtitle')).toContainText('Île bonus');
+    await expect(page.locator('.path-node.is-next')).toHaveAttribute('data-level', 'ile-chine-1');
+    // Jouer un niveau de l'île, puis quitter : retour à la carte de l'île, pas à celle des mondes.
+    await page.evaluate(() => pathStartLevel('ile-chine-1'));
+    await expect(page.locator('#expedition-title')).toHaveText('Confucius et Lao Tseu');
+    await page.locator('#expedition-go').click();
+    await page.locator('.quit-btn:visible').click();
+    await page.locator('#confirm-ok-btn').click();
+    expect(await visibleScreen(page)).toBe('screen-path');
+    await expect(page.locator('.path-node')).toHaveCount(7);
+    await page.locator('#path-back').click();
+    await expect(page.locator('.path-world[data-world="grece"]')).toBeVisible();
+    // Le chemin principal ne propose jamais l'île d'office.
+    expect(await page.evaluate(() => PathCore.nextTarget(pathProgress()).levelId)).toBe('grece-5');
+});
+
+test('chaque niveau de chaque monde démarre avec chacune de ses épreuves, sans alerte, sur au moins 8 repères', async ({ page }) => {
+    test.setTimeout(180_000);
     const resultats = await page.evaluate(() => {
         const out = [];
         for (const world of PathCore.WORLDS) {
@@ -308,7 +369,7 @@ test('chaque niveau démarre avec chacune de ses épreuves, sans alerte, sur ses
                     if (alerte) out.push(level.id + ' / ' + stage.mode + ' : ' + alerte);
                     stopTimer(); resetPlacementAnimationState();
                 }
-                const attendu = level.ids ? level.ids.length : (PathCore.levelNeedsEvents(level) ? (level.boss ? 20 : 12) : 0);
+                const attendu = level.ids ? level.ids.length : (PathCore.levelNeedsEvents(level) ? (level.boss ? 12 : 8) : 0);
                 if (events.length < attendu) out.push(level.id + ' : ' + events.length + ' événements');
             }
         }

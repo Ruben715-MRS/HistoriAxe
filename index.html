@@ -607,7 +607,7 @@
 
     <!-- ÉCRAN : LE CHEMIN DU TEMPS (carte des niveaux — voir js/app/path.js et js/pathCore.js) -->
     <div id="screen-path" class="list-screen hidden">
-        <button class="back-btn" onclick="showScreen('screen-categories', 'back')" aria-label="Retour aux catégories"
+        <button class="back-btn" id="path-back" onclick="pathBack()" aria-label="Retour aux catégories"
             data-i18n-attr="aria-label:nav.back">‹</button>
         <h2 class="header-title" data-i18n="path.title">Le Chemin du Temps</h2>
         <p class="modes-header-subtitle" id="path-subtitle"></p>
@@ -1951,6 +1951,7 @@
     <script src="js/duels.js"></script>
     <script src="js/gamification.js"></script>
     <script src="js/dailyEngine.js"></script>
+    <script src="js/pathWorlds.js"></script>
     <script src="js/pathCore.js"></script>
     <script src="js/pathLessons.js"></script>
     <script src="js/apiClient.js"></script>

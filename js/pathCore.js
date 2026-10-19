@@ -19,10 +19,22 @@
 }(typeof self !== 'undefined' ? self : this, function () {
     'use strict';
 
-    // Événements par niveau ordinaire, et par niveau pour composer le boss (2 × 10 niveaux).
+    // Les mondes « tirés » (tous sauf le Monde 0) sont décrits dans js/pathWorlds.js : bornes des niveaux figées,
+    // thèmes, îles. Ce module en tire les niveaux, leurs épreuves et leurs événements.
+    var DEFS = (typeof require === 'function' && typeof module === 'object' && module.exports)
+        ? require('./pathWorlds.js')
+        : (typeof self !== 'undefined' ? self : this).PathWorlds;
+
+    // Événements par niveau ordinaire, et pour le boss d'un monde tiré.
     var LEVEL_POOL_SIZE = 12;
-    var BOSS_PER_LEVEL = 2;
+    var BOSS_POOL_SIZE = 20;
     var MAX_STARS = 3;
+    // Événements d'une même année dans un niveau : au plus 2. Les dates du jeu sont des ANNÉES : plusieurs
+    // événements de 1916 ne se départagent pas (les modes qui comparent des dates n'en gardent qu'un), donc un
+    // niveau a besoin de plusieurs années différentes. D'où aussi la largeur minimale d'un niveau (MIN_LEVEL_YEARS).
+    var MAX_PER_DATE = 2;
+    // Dans une période très dense, un monde peut en accepter 3 (`maxPerDate` du monde).
+    var MIN_LEVEL_YEARS = 6;
     // Plafond de la notoriété : au-delà de 3 thèmes, un événement est connu, inutile de départager.
     var FAME_CAP = 3;
     // Même exclusion que les défis (calendrier non grégorien : js/dailyEngine.js).
@@ -78,28 +90,68 @@
                 stages: [lesson(['ere', 'eres', 'gregorien', 'calendriers', 'cycles', 'siecles', 'chrononymes', 'echelles', 'bornes'], 8), 'classic', 'ordre']
             }
         },
-        {
-            id: 'antiquite',
-            icon: '🏛️',
-            from: -800,
-            to: 477,
-            // Étoiles à réunir (sur 30) pour oser le boss : de quoi rejouer un peu, sans bloquer.
-            bossStarsRequired: 15,
-            levels: [
-                { n: 1, from: -800, to: -600, stages: STAGES_EASY },
-                { n: 2, from: -600, to: -500, stages: STAGES_EASY },
-                { n: 3, from: -500, to: -400, stages: STAGES_EASY },
-                { n: 4, from: -400, to: -300, stages: STAGES_MEDIUM },
-                { n: 5, from: -300, to: -200, stages: STAGES_MEDIUM },
-                { n: 6, from: -200, to: -100, stages: STAGES_MEDIUM },
-                { n: 7, from: -100, to: -27, stages: STAGES_HARD },
-                { n: 8, from: -27, to: 100, stages: STAGES_HARD },
-                { n: 9, from: 100, to: 250, stages: STAGES_HARD },
-                { n: 10, from: 250, to: 477, shownTo: 476, stages: STAGES_LAST }
-            ],
-            boss: { stages: STAGES_BOSS }
-        }
     ];
+
+    // --- Les mondes tirés (js/pathWorlds.js) ---------------------------------------------------------
+    // Épreuves selon la difficulté : 0 facile → 3 la plus dure.
+    var STAGES_BY_TIER = [STAGES_EASY, STAGES_MEDIUM, STAGES_HARD, STAGES_LAST];
+
+    function themeIdsOf(def) {
+        var ids = [];
+        (def.themes || []).forEach(function (group) {
+            (DEFS.GROUPS[group] || []).forEach(function (id) { if (ids.indexOf(id) === -1) ids.push(id); });
+        });
+        return ids.length ? ids : null;
+    }
+
+    // Un monde du fichier de définitions → un monde du Chemin. Chaque tranche (`windows`) donne `tiers`
+    // niveaux (par défaut 1) : le premier prend les événements les plus connus de la tranche, le suivant les
+    // suivants, etc. — c'est ainsi qu'une période dense compte plus de niveaux sans tranches plus étroites que
+    // les années du jeu ne le permettent (MIN_LEVEL_YEARS). La difficulté monte avec la place du monde dans le
+    // Chemin (`rank` sur `count` mondes) puis, dans un monde, avec le niveau.
+    function buildWorld(def, rank, count) {
+        var themes = themeIdsOf(def);
+        var levels = [];
+        var tiers = def.tiers || 1;
+        def.windows.forEach(function (w) {
+            for (var t = 0; t < tiers; t++) {
+                levels.push({ n: levels.length + 1, from: w[0], to: w[1], shownTo: w[2], tier: t, window: levels.length });
+            }
+        });
+        levels.forEach(function (l, i) {
+            var g = (rank + i / levels.length) / count;
+            var base = g < 0.2 ? 0 : g < 0.5 ? 1 : g < 0.8 ? 2 : 3;
+            l.stages = STAGES_BY_TIER[Math.min(3, base + (l.tier || 0))];
+            delete l.window;
+        });
+        var world = {
+            id: def.id, icon: def.icon, themes: themes, maxPerDate: def.maxPerDate, essentialOnly: def.essentialOnly,
+            levels: levels,
+            // La moitié des étoiles des niveaux ordinaires ouvre le boss.
+            bossStarsRequired: Math.ceil(levels.length * MAX_STARS / 2),
+            boss: { stages: STAGES_BOSS },
+            from: def.windows[0][0], to: def.windows[def.windows.length - 1][1]
+        };
+        if (def.island) {
+            world.island = true;
+            world.parent = def.parent;
+            // Une île s'ouvre à la moitié de son monde d'attache : le joueur y change d'époque et de lieu.
+            world.opensAfter = def.opensAfter;
+        }
+        return world;
+    }
+
+    if (DEFS) {
+        var mains = DEFS.WORLDS.filter(function (d) { return !d.island; });
+        mains.forEach(function (d, i) { WORLDS.push(buildWorld(d, i, mains.length)); });
+        DEFS.WORLDS.filter(function (d) { return d.island; }).forEach(function (d) {
+            var parentRank = Math.max(0, mains.map(function (m) { return m.id; }).indexOf(d.parent));
+            var world = buildWorld(d, parentRank, mains.length);
+            var parent = WORLDS.filter(function (w) { return w.id === d.parent; })[0];
+            world.opensAfter = parent ? Math.max(1, Math.floor(parent.levels.length / 2)) : 1;
+            WORLDS.push(world);
+        });
+    }
 
     function levelId(world, n) { return world.id + '-' + n; }
     function bossId(world) { return world.id + '-boss'; }
@@ -115,13 +167,15 @@
         var out = world.levels.map(function (l) {
             return {
                 id: levelId(world, l.n), n: l.n, from: l.from, to: l.to, shownTo: l.shownTo, stages: l.stages, boss: false,
-                ids: l.ids || null, themes: l.themes || world.themes || null,
+                ids: l.ids || null, themes: l.themes || world.themes || null, tier: l.tier || 0,
+                maxPerDate: world.maxPerDate || MAX_PER_DATE,
                 essentialOnly: l.essentialOnly !== undefined ? l.essentialOnly : world.essentialOnly
             };
         });
         out.push({
             id: bossId(world), n: world.levels.length + 1, from: world.from, to: world.to, stages: world.boss.stages, boss: true,
-            ids: world.boss.ids || null, themes: world.themes || null, essentialOnly: world.essentialOnly
+            ids: world.boss.ids || null, themes: world.themes || null, essentialOnly: world.essentialOnly,
+            maxPerDate: world.maxPerDate || MAX_PER_DATE
         });
         return out;
     }
@@ -151,6 +205,37 @@
         return words.map(function (w, i) { return { w: w, first: i === 0 }; })
             .filter(function (x) { return x.w.length >= 4 && /^[A-ZÀ-Ö]/.test(x.w); });
     }
+    // Mots trop courants pour identifier un fait (« Guerre », « Traité »…) : deux événements de la même année qui ne
+    // partagent que ceux-là ne sont pas le même fait.
+    var GENERIC_WORDS = ['Guerre', 'Grande', 'Première', 'Seconde', 'Mondiale', 'Mondial', 'Empire', 'Royaume', 'République',
+        'Révolution', 'Traité', 'Bataille', 'Paix', 'Conférence', 'Église', 'Nations', 'États', 'Unis', 'Union', 'Europe',
+        'Européenne', 'Monde', 'France', 'Française', 'Français', 'Roi', 'Reine', 'Saint', 'Sainte', 'Premier', 'Deuxième',
+        'Troisième', 'Fondation', 'Début', 'Fin', 'Mort', 'Naissance', 'Chute', 'Indépendance', 'Création'];
+    // Les mots qui portent le sens d'un titre (minuscules, 4 lettres ou plus, sans mots-outils) : deux titres dont
+    // la moitié des mots sont communs racontent le même fait (« Procès et mort de Socrate » / « Procès et
+    // condamnation de Socrate »).
+    var TOOL_WORDS = ['dans', 'pour', 'avec', 'sous', 'leur', 'leurs', 'cette', 'ainsi', 'entre', 'après', 'avant', 'vers', 'chez', 'sont', 'plus'];
+    function significantWords(title) {
+        var out = {};
+        String(title || '').toLowerCase().split(/[^a-zà-öø-ÿ]+/).forEach(function (w) {
+            if (w.length >= 4 && TOOL_WORDS.indexOf(w) === -1) out[w] = true;
+        });
+        return out;
+    }
+    function similarTitles(a, b) {
+        var keys = Object.keys(a), common = 0;
+        keys.forEach(function (k) { if (b[k]) common++; });
+        var union = keys.length + Object.keys(b).length - common;
+        return union > 0 && common / union >= 0.5 && common >= 2;
+    }
+    function sharesFact(a, b) {
+        for (var i = 0; i < a.length; i++) {
+            for (var j = 0; j < b.length; j++) {
+                if (a[i].w === b[j].w && !(a[i].first && b[j].first) && GENERIC_WORDS.indexOf(a[i].w) === -1) return true;
+            }
+        }
+        return false;
+    }
     function sharesName(a, b) {
         for (var i = 0; i < a.length; i++) {
             for (var j = 0; j < b.length; j++) {
@@ -178,7 +263,7 @@
                     seen[evt.id] = true;
                     var item = { id: evt.id, date: evt.date, theme: theme.id, essential: !!essential[evt.id], fame: 0 };
                     out.push(item);
-                    (byDate[evt.date] = byDate[evt.date] || []).push({ item: item, theme: theme.id, words: titleWords(evt.titre) });
+                    (byDate[evt.date] = byDate[evt.date] || []).push({ item: item, theme: theme.id, words: titleWords(evt.titre), sig: significantWords(evt.titre) });
                 });
             });
             (node.subcategories || []).forEach(walk);
@@ -187,9 +272,24 @@
             if (!category || category.isCustomCategory) return;
             walk(category);
         });
+        // Un même fait raconté par plusieurs thèmes (ou deux fois dans un thème) a plusieurs identifiants :
+        // `cluster` les relie (même année, même nom propre), pour n'en tirer qu'un par niveau et par monde.
         Object.keys(byDate).forEach(function (date) {
             var group = byDate[date];
+            group.forEach(function (g) { g.item.cluster = g.item.id; });
             if (group.length < 2) return;
+            var root = {};
+            group.forEach(function (g) { root[g.item.id] = g.item.id; });
+            var find = function (id) { while (root[id] !== id) id = root[id]; return id; };
+            for (var x = 0; x < group.length; x++) {
+                for (var y = x + 1; y < group.length; y++) {
+                    if (sharesFact(group[x].words, group[y].words) || similarTitles(group[x].sig, group[y].sig)) {
+                        var rx = find(group[x].item.id), ry = find(group[y].item.id);
+                        if (rx !== ry) root[ry < rx ? rx : ry] = ry < rx ? ry : rx;
+                    }
+                }
+            }
+            group.forEach(function (g) { g.item.cluster = find(g.item.id); });
             group.forEach(function (a) {
                 var themes = Object.create(null);
                 group.forEach(function (b) {
@@ -207,18 +307,21 @@
     // `count` événements répartis sur la fenêtre : on la découpe en `count` tranches de durée égale
     // et chacune donne son événement le plus connu (puis le mieux classé au hasard stable), puis on complète. Deux événements d'un même
     // niveau n'ont jamais la même année (un placement serait alors indécidable).
-    function pickSpread(candidates, count, seed) {
+    function pickSpread(candidates, count, seed, maxPerDate) {
         var ranked = candidates.map(function (c) { return { c: c, r: rank(seed + '|' + c.id) }; })
             .sort(function (a, b) { return weight(b.c) - weight(a.c) || a.r - b.r || (a.c.id < b.c.id ? -1 : 1); });
         if (!ranked.length) return [];
         var min = Infinity, max = -Infinity;
         ranked.forEach(function (x) { min = Math.min(min, x.c.date); max = Math.max(max, x.c.date); });
         var width = Math.max(1, (max - min + 1) / count);
-        var usedDates = Object.create(null);
+        var perDate = Object.create(null);
+        var clusters = Object.create(null);
+        var cap = maxPerDate || 1;
         var chosen = [];
         var chosenIds = Object.create(null);
         function take(x) {
-            usedDates[x.c.date] = true;
+            perDate[x.c.date] = (perDate[x.c.date] || 0) + 1;
+            clusters[x.c.cluster || x.c.id] = true;
             chosenIds[x.c.id] = true;
             chosen.push(x.c);
         }
@@ -226,14 +329,14 @@
             var lo = min + s * width, hi = min + (s + 1) * width;
             for (var i = 0; i < ranked.length; i++) {
                 var x = ranked[i];
-                if (usedDates[x.c.date] || x.c.date < lo || (x.c.date >= hi && s < count - 1)) continue;
+                if ((perDate[x.c.date] || 0) >= cap || chosenIds[x.c.id] || clusters[x.c.cluster || x.c.id] || x.c.date < lo || (x.c.date >= hi && s < count - 1)) continue;
                 take(x);
                 break;
             }
         }
         for (var j = 0; j < ranked.length && chosen.length < count; j++) {
             var y = ranked[j];
-            if (!usedDates[y.c.date] && !chosenIds[y.c.id]) take(y);
+            if ((perDate[y.c.date] || 0) < cap && !chosenIds[y.c.id] && !clusters[y.c.cluster || y.c.id]) take(y);
         }
         return chosen.sort(function (a, b) { return a.date - b.date || (a.id < b.id ? -1 : 1); });
     }
@@ -254,42 +357,43 @@
         });
     }
 
-    // Les identifiants des événements de chaque niveau d'un monde : { 'antiquite-1': [...], …,
-    // 'antiquite-boss': [...] }. Sans liste fixée, le boss reprend 2 événements de chaque niveau — ce
-    // que le joueur a déjà traversé — plutôt que du neuf : c'est la révision du monde entier.
+    // Les identifiants des événements de chaque niveau d'un monde : { 'grece-1': [...], …, 'grece-boss': [...] }.
+    // Les niveaux sont tirés dans l'ordre et un événement ne sert qu'une fois dans un monde : c'est ce qui fait
+    // que le 2e niveau d'une même tranche reçoit d'autres événements que le 1er. Sans liste fixée, le boss est
+    // la révision du monde entier : BOSS_POOL_SIZE événements répartis sur tous ses niveaux.
     function buildWorldPools(world, events) {
         var pools = {};
         var byId = Object.create(null);
         events.forEach(function (e) { byId[e.id] = e; });
         var fixed = function (ids) { return ids.filter(function (id) { return !!byId[id]; }); };
+        var used = Object.create(null);
         levelsOf(world).forEach(function (l) {
             if (l.boss) return;
-            if (l.ids) pools[l.id] = fixed(l.ids);
-            else if (l.from !== undefined) pools[l.id] = pickSpread(candidatesFor(l, events), LEVEL_POOL_SIZE, l.id).map(function (e) { return e.id; });
-            else pools[l.id] = [];
+            if (l.ids) { pools[l.id] = fixed(l.ids); return; }
+            if (l.from === undefined) { pools[l.id] = []; return; }
+            var cands = candidatesFor(l, events).filter(function (e) { return !used[e.cluster || e.id]; });
+            var picked = pickSpread(cands, LEVEL_POOL_SIZE, l.id, l.maxPerDate);
+            picked.forEach(function (e) { used[e.cluster || e.id] = true; });
+            pools[l.id] = picked.map(function (e) { return e.id; });
         });
         if (world.boss.ids) {
             pools[bossId(world)] = fixed(world.boss.ids);
             return pools;
         }
-        var boss = [];
-        var usedDates = Object.create(null);
+        var all = [];
         world.levels.forEach(function (l) {
-            var own = (pools[levelId(world, l.n)] || []).map(function (id) { return byId[id]; })
-                .filter(function (e) { return e && !usedDates[e.date]; });
-            pickSpread(own, BOSS_PER_LEVEL, bossId(world)).forEach(function (e) {
-                usedDates[e.date] = true;
-                boss.push(e);
-            });
+            (pools[levelId(world, l.n)] || []).forEach(function (id) { if (byId[id]) all.push(byId[id]); });
         });
-        pools[bossId(world)] = boss.sort(function (a, b) { return a.date - b.date; }).map(function (e) { return e.id; });
+        pools[bossId(world)] = pickSpread(all, BOSS_POOL_SIZE, bossId(world), world.maxPerDate || MAX_PER_DATE).map(function (e) { return e.id; });
         return pools;
     }
 
-    // Découpe une fenêtre en `count` tranches qui contiennent chacune à peu près autant de candidats
-    // (bornes = années réelles d'événements). Sert à proposer le découpage d'un nouveau monde
-    // (scripts/path_plan.js) : plus le temps est dense, plus les tranches sont courtes.
-    function sliceWindows(candidates, from, to, count) {
+    // Découpe une fenêtre en au plus `count` tranches contenant chacune à peu près autant de candidats (bornes =
+    // années réelles d'événements) : plus le temps est dense, plus les tranches sont courtes. Aucune tranche
+    // n'est plus étroite que MIN_LEVEL_YEARS : les plus étroites sont fondues dans leur voisine. Sert à proposer
+    // le découpage d'un monde (scripts/path_plan.js) ; une fois validé, les bornes sont figées dans js/pathWorlds.js.
+    function sliceWindows(candidates, from, to, count, minWidth) {
+        var floor = minWidth === undefined ? MIN_LEVEL_YEARS : minWidth;
         var dates = candidates.map(function (e) { return e.date; }).filter(function (d) { return d >= from && d < to; })
             .sort(function (a, b) { return a - b; });
         var bounds = [from];
@@ -298,8 +402,24 @@
             if (d !== undefined && d > bounds[bounds.length - 1] && d < to) bounds.push(d);
         }
         bounds.push(to);
+        var merged = true;
+        while (merged && bounds.length > 2) {
+            merged = false;
+            var narrow = -1, narrowW = Infinity;
+            for (var i = 0; i < bounds.length - 1; i++) {
+                var w = bounds[i + 1] - bounds[i];
+                if (w < floor && w < narrowW) { narrow = i; narrowW = w; }
+            }
+            if (narrow >= 0) {
+                // On retire la borne qui sépare la tranche étroite de sa voisine la plus étroite.
+                var left = narrow > 0 ? bounds[narrow + 1] - bounds[narrow - 1] : Infinity;
+                var right = narrow < bounds.length - 2 ? bounds[narrow + 2] - bounds[narrow] : Infinity;
+                bounds.splice(left <= right ? narrow : narrow + 1, 1);
+                merged = true;
+            }
+        }
         var out = [];
-        for (var i = 0; i < bounds.length - 1; i++) out.push({ from: bounds[i], to: bounds[i + 1] });
+        for (var j = 0; j < bounds.length - 1; j++) out.push({ from: bounds[j], to: bounds[j + 1] });
         return out;
     }
 
@@ -339,7 +459,9 @@
 
     // --- Mondes ------------------------------------------------------------------
 
-    function worldIndex(world) { return WORLDS.indexOf(world); }
+    // Le chemin principal : les mondes qui ne sont pas des îles, dans l'ordre. Les îles sont facultatives.
+    function mainWorlds() { return WORLDS.filter(function (w) { return !w.island; }); }
+    function worldIndex(world) { return mainWorlds().indexOf(world); }
 
     function isWorldSkipped(world, progress) {
         return !!(progress && progress.skipped && progress.skipped.indexOf(world.id) !== -1);
@@ -351,12 +473,21 @@
 
     // Un monde s'ouvre quand le boss du précédent est vaincu, ou quand le joueur a passé le précédent.
     // Un monde déjà commencé reste ouvert (progression venue d'une version qui n'avait pas ce verrou).
+    // Une île s'ouvre à la moitié de son monde d'attache : le niveau `opensAfter` de ce monde doit être réussi.
     function isWorldUnlocked(world, progress) {
+        if (world.island) {
+            var parent = findWorld(world.parent);
+            return worldTouched(world, progress) ||
+                !!(parent && starsOf(progress, levelId(parent, world.opensAfter)) > 0);
+        }
         var idx = worldIndex(world);
         if (idx <= 0) return idx === 0;
-        var prev = WORLDS[idx - 1];
+        var prev = mainWorlds()[idx - 1];
         return starsOf(progress, bossId(prev)) > 0 || isWorldSkipped(prev, progress) || worldTouched(world, progress);
     }
+
+    // Les îles rattachées à un monde.
+    function islandsOf(world) { return WORLDS.filter(function (w) { return w.island && w.parent === world.id; }); }
 
     // « Je connais déjà » : passer un monde ouvre le suivant, sans rien effacer.
     function skipWorld(progress, worldId) {
@@ -369,7 +500,7 @@
     // Le niveau à proposer : dans l'ordre des mondes ouverts (en sautant ceux que le joueur a passés), le
     // premier qu'il n'a pas encore réussi ; à défaut, le premier sans ses trois étoiles. null si tout est fait.
     function nextTarget(progress) {
-        var open = WORLDS.filter(function (w) { return isWorldUnlocked(w, progress); });
+        var open = mainWorlds().filter(function (w) { return isWorldUnlocked(w, progress); });
         var passes = [
             function (w) { return !isWorldSkipped(w, progress); },
             function () { return true; }
@@ -452,7 +583,7 @@
         for (var i = 0; i < levels.length - 1; i++) {
             if (levels[i].id === id) return isUnlocked(world, levels[i + 1].id, progress) ? levels[i + 1].id : null;
         }
-        var next = WORLDS[worldIndex(world) + 1];
+        var next = world.island ? null : mainWorlds()[worldIndex(world) + 1];
         if (next && levels[levels.length - 1].id === id) {
             var first = levelId(next, next.levels[0].n);
             return isUnlocked(next, first, progress) ? first : null;
@@ -472,13 +603,13 @@
     }
 
     return {
-        WORLDS: WORLDS, LEVEL_POOL_SIZE: LEVEL_POOL_SIZE, BOSS_PER_LEVEL: BOSS_PER_LEVEL, MAX_STARS: MAX_STARS,
+        WORLDS: WORLDS, LEVEL_POOL_SIZE: LEVEL_POOL_SIZE, BOSS_POOL_SIZE: BOSS_POOL_SIZE, MAX_STARS: MAX_STARS,
         EXCLUDED_THEME_IDS: EXCLUDED_THEME_IDS,
         findWorld: findWorld, levelsOf: levelsOf, levelId: levelId, bossId: bossId, isBossId: isBossId,
         stageMode: stageMode, levelNeedsEvents: levelNeedsEvents,
         flattenEvents: flattenEvents, pickSpread: pickSpread, candidatesFor: candidatesFor, buildWorldPools: buildWorldPools,
-        sliceWindows: sliceWindows,
-        isWorldUnlocked: isWorldUnlocked, isWorldSkipped: isWorldSkipped, skipWorld: skipWorld, nextTarget: nextTarget,
+        sliceWindows: sliceWindows, MAX_PER_DATE: MAX_PER_DATE, MIN_LEVEL_YEARS: MIN_LEVEL_YEARS,
+        isWorldUnlocked: isWorldUnlocked, islandsOf: islandsOf, mainWorlds: mainWorlds, isWorldSkipped: isWorldSkipped, skipWorld: skipWorld, nextTarget: nextTarget,
         starsFor: starsFor, normalizeProgress: normalizeProgress, starsOf: starsOf, recordResult: recordResult,
         worldStars: worldStars, worldMaxStars: worldMaxStars, regularStars: regularStars,
         isUnlocked: isUnlocked, currentLevelId: currentLevelId, nextLevelId: nextLevelId, levelXp: levelXp

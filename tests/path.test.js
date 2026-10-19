@@ -9,45 +9,125 @@ const L = require('../js/pathLessons.js');
 const root = path.resolve(__dirname, '..');
 const fr = JSON.parse(fs.readFileSync(path.join(root, 'data', 'fr.json'), 'utf8'));
 const uiFr = JSON.parse(fs.readFileSync(path.join(root, 'ui', 'fr.json'), 'utf8'));
-const world = P.findWorld('antiquite');
+const world = P.findWorld('grece');
 const m0 = P.findWorld('monde0');
+const W = require('../js/pathWorlds.js');
 const events = P.flattenEvents(fr.categories);
-const pools = P.buildWorldPools(world, events);
 const byId = new Map(events.map((e) => [e.id, e]));
+const tiersOf = (w) => w.levels.filter((l) => l.from === w.levels[0].from).length;
+const allPools = {};
+P.WORLDS.forEach((w) => { allPools[w.id] = P.buildWorldPools(w, events); });
+const pools = allPools[world.id];
+const generated = P.WORLDS.filter((w) => w.id !== 'monde0');
+const mains = P.mainWorlds();
+
+// Un joueur arrivé au monde `worldId` : tous les niveaux des mondes précédents sont faits (une étoile), boss compris.
+function reaching(worldId) {
+    let p = P.normalizeProgress(null);
+    for (const w of mains) {
+        if (w.id === worldId) break;
+        P.levelsOf(w).forEach((l) => { p = P.recordResult(p, l.id, 1, 100); });
+    }
+    return p;
+}
 
 // --- le contenu ----------------------------------------------------------------
 
-test('chaque niveau compte 12 événements incontournables de sa tranche de temps, à des années toutes différentes', () => {
-    world.levels.forEach((l) => {
-        const ids = pools[P.levelId(world, l.n)];
-        assert.equal(ids.length, P.LEVEL_POOL_SIZE, `niveau ${l.n}`);
-        ids.forEach((id) => {
-            const e = byId.get(id);
-            assert.ok(e.essential, `${id} n'est pas incontournable`);
-            assert.ok(e.date >= l.from && e.date < l.to, `${id} (${e.date}) hors de ${l.from}…${l.to}`);
+test('le chemin principal : Monde 0, Préhistoire, Orient, Grèce, Rome ×2, puis la France de 481 à nos jours ; cinq îles', () => {
+    assert.deepEqual(mains.map((w) => w.id), ['monde0', 'prehistoire', 'orient', 'grece', 'rome1', 'rome2', 'haut-moyen-age', 'feodalites',
+        'capetiens', 'cent-ans', 'renaissances', 'religion', 'absolus', 'lumieres', 'revolution', 'revolution-inachevee', 'republique',
+        'grande-guerre', 'entre-deux-guerres', 'trente-glorieuses', 'crises', 'depuis-1991']);
+    assert.deepEqual(P.WORLDS.filter((w) => w.island).map((w) => w.id), ['ile-chine', 'ile-ameriques', 'ile-islam', 'ile-japon', 'ile-afrique']);
+    assert.ok(!P.findWorld('antiquite'), "l'ancien monde unique de l'Antiquité est remplacé");
+});
+
+test('chaque niveau tiré a de 8 à 12 événements de sa tranche, dans ses thèmes, au plus 2 (3 en période dense) par année', () => {
+    generated.forEach((w) => {
+        const themes = w.themes ? new Set(w.themes) : null;
+        const cap = w.maxPerDate || P.MAX_PER_DATE;
+        w.levels.forEach((l) => {
+            const ids = allPools[w.id][P.levelId(w, l.n)];
+            assert.ok(ids.length >= 8 && ids.length <= P.LEVEL_POOL_SIZE, `${l.n === 0 ? '' : w.id + '-' + l.n} : ${ids.length} événements`);
+            const perDate = {};
+            ids.forEach((id) => {
+                const e = byId.get(id);
+                assert.ok(e.date >= l.from && e.date < l.to, `${id} (${e.date}) hors de ${l.from}…${l.to} (${w.id}-${l.n})`);
+                if (themes) assert.ok(themes.has(e.theme), `${id} : thème ${e.theme} hors du monde ${w.id}`);
+                perDate[e.date] = (perDate[e.date] || 0) + 1;
+            });
+            Object.entries(perDate).forEach(([d, n]) => assert.ok(n <= cap, `${w.id}-${l.n} : ${n} événements en ${d}`));
         });
-        assert.equal(new Set(ids.map((id) => byId.get(id).date)).size, ids.length, `niveau ${l.n} : deux événements d'une même année`);
     });
 });
 
-test('les tranches se suivent sans trou ni recouvrement et couvrent tout le monde', () => {
-    assert.equal(world.levels[0].from, world.from);
-    assert.equal(world.levels[world.levels.length - 1].to, world.to);
-    for (let i = 1; i < world.levels.length; i++) assert.equal(world.levels[i].from, world.levels[i - 1].to);
+test('dans un monde, un événement ne sert qu\'une fois, et un même fait raconté par deux thèmes non plus', () => {
+    generated.forEach((w) => {
+        const seen = new Set();
+        w.levels.forEach((l) => {
+            allPools[w.id][P.levelId(w, l.n)].forEach((id) => {
+                const key = byId.get(id).cluster;
+                assert.ok(!seen.has(key), `${w.id}-${l.n} : ${id} répète un fait déjà vu dans le monde`);
+                seen.add(key);
+            });
+        });
+    });
+});
+
+test('les tranches de temps d\'un monde se suivent sans trou ni recouvrement ; un monde dense en répète une sur plusieurs niveaux', () => {
+    W.WORLDS.forEach((d) => {
+        for (let i = 1; i < d.windows.length; i++) assert.equal(d.windows[i][0], d.windows[i - 1][1], `${d.id} : trou ou recouvrement`);
+        d.windows.forEach((win, i) => {
+            assert.ok(win[1] > win[0], `${d.id} : tranche vide`);
+            // Les années du jeu : une tranche d'au moins 6 ans (sauf la Préhistoire, aux dates arrondies).
+            if (win[0] > -3300) assert.ok(win[1] - win[0] >= P.MIN_LEVEL_YEARS, `${d.id} : tranche ${i + 1} de moins de ${P.MIN_LEVEL_YEARS} ans`);
+        });
+        const world = P.findWorld(d.id);
+        assert.equal(world.levels.length, d.windows.length * (d.tiers || 1), `${d.id} : nombre de niveaux`);
+    });
+});
+
+test('chaque identifiant de thème des groupes existe dans le pack', () => {
+    const known = new Set(events.map((e) => e.theme));
+    Object.entries(W.GROUPS).forEach(([group, ids]) => {
+        assert.ok(ids.length > 0, `groupe ${group} vide`);
+        ids.forEach((id) => assert.ok(known.has(id), `groupe ${group} : thème ${id} introuvable`));
+    });
 });
 
 test('le contenu est déterministe : même pack, mêmes niveaux', () => {
     assert.deepEqual(P.buildWorldPools(world, P.flattenEvents(fr.categories)), pools);
 });
 
-test('le boss reprend deux repères de chaque niveau, et rien d\'ailleurs', () => {
-    const boss = pools[P.bossId(world)];
-    assert.equal(boss.length, P.BOSS_PER_LEVEL * world.levels.length);
-    world.levels.forEach((l) => {
-        const own = new Set(pools[P.levelId(world, l.n)]);
-        assert.equal(boss.filter((id) => own.has(id)).length, P.BOSS_PER_LEVEL, `niveau ${l.n}`);
+test('le boss est la révision du monde : 20 repères pris dans ses niveaux, et rien d\'ailleurs', () => {
+    generated.forEach((w) => {
+        const all = new Set();
+        w.levels.forEach((l) => allPools[w.id][P.levelId(w, l.n)].forEach((id) => all.add(id)));
+        const boss = allPools[w.id][P.bossId(w)];
+        assert.ok(boss.length >= 12 && boss.length <= P.BOSS_POOL_SIZE, `${w.id} : boss de ${boss.length}`);
+        boss.forEach((id) => assert.ok(all.has(id), `${w.id} : le boss tire ${id} hors des niveaux`));
     });
-    assert.equal(new Set(boss.map((id) => byId.get(id).date)).size, boss.length);
+    assert.equal(allPools['grece'][P.bossId(world)].length, P.BOSS_POOL_SIZE);
+});
+
+test('les niveaux d\'une période dense creusent : le 2e niveau d\'une tranche est moins célèbre que le 1er', () => {
+    const w = P.findWorld('revolution');
+    const fameOf = (id) => byId.get(id).fame + (byId.get(id).essential ? 10 : 0);
+    const avg = (n) => allPools[w.id][P.levelId(w, n)].reduce((s, id) => s + fameOf(id), 0) / allPools[w.id][P.levelId(w, n)].length;
+    assert.equal(w.levels.length, 6);
+    assert.equal(tiersOf(w), 2);
+    assert.ok(avg(1) > avg(2));
+    assert.equal(w.levels[0].from, w.levels[1].from);
+    assert.notEqual(w.levels[1].stages, w.levels[0].stages, 'la difficulté monte');
+});
+
+test('la Grande Guerre court jusqu\'en 1919 (traité de Versailles) : une tranche, trois niveaux', () => {
+    const gg = P.findWorld('grande-guerre');
+    assert.equal(gg.levels.length, 3);
+    assert.equal(gg.levels[0].from, 1914);
+    assert.equal(gg.levels[0].to, 1920);
+    assert.equal(gg.levels[0].shownTo, 1919);
+    const dates = allPools['grande-guerre'][P.bossId(gg)].map((id) => byId.get(id).date);
+    assert.ok(dates.some((d) => d === 1919), 'Versailles et 1919 font partie de la guerre');
 });
 
 test('un événement de plus d\'un thème n\'entre pas deux fois, et le contenu du joueur est ignoré', () => {
@@ -106,11 +186,13 @@ test('les épreuves d\'un niveau sont des modes de l\'Expédition adaptés à un
     });
 });
 
-test('chaque monde a son titre, celui de son boss, de ses niveaux, et sa phrase de fin dans ui/fr.json', () => {
+test('chaque monde et chaque île ont leur titre, celui de leur boss, de leurs niveaux et leur phrase de fin dans ui/fr.json', () => {
     P.WORLDS.forEach((wd) => {
         const w = uiFr.path.worlds[wd.id];
         assert.ok(w && w.title && w.boss && w.done, `${wd.id} : titres`);
         wd.levels.forEach((l) => assert.ok(w.levels[String(l.n)], `${wd.id} : titre du niveau ${l.n}`));
+        assert.equal(Object.keys(w.levels).length, wd.levels.length, `${wd.id} : titres en trop`);
+        [w.title, w.boss, ...Object.values(w.levels)].forEach((t) => assert.ok(t.length <= 46, `${wd.id} : titre trop long pour la carte « ${t} »`));
     });
 });
 
@@ -134,54 +216,53 @@ test('une progression altérée est ramenée à des valeurs saines', () => {
 
 test('les étoiles et le meilleur score ne redescendent jamais ; l\'ancienne progression n\'est pas modifiée', () => {
     const p0 = P.normalizeProgress(null);
-    const p1 = P.recordResult(p0, 'antiquite-1', 3, 500);
-    const p2 = P.recordResult(p1, 'antiquite-1', 1, 200);
-    assert.deepEqual(p2.levels['antiquite-1'], { stars: 3, best: 500, plays: 2 });
+    const p1 = P.recordResult(p0, 'grece-1', 3, 500);
+    const p2 = P.recordResult(p1, 'grece-1', 1, 200);
+    assert.deepEqual(p2.levels['grece-1'], { stars: 3, best: 500, plays: 2 });
     assert.deepEqual(p0, { levels: {}, skipped: [] });
-    assert.equal(P.recordResult(p0, 'antiquite-1', 0, 80).levels['antiquite-1'].stars, 0);
+    assert.equal(P.recordResult(p0, 'grece-1', 0, 80).levels['grece-1'].stars, 0);
 });
 
-// La plupart des tests portent sur l'Antiquité : on part d'un joueur qui a passé le Monde 0.
-const open = () => P.skipWorld(null, 'monde0');
-
-test('déblocage : le premier niveau est ouvert, chacun s\'ouvre en réussissant le précédent', () => {
-    let p = open();
-    assert.ok(P.isUnlocked(world, 'antiquite-1', p));
-    assert.ok(!P.isUnlocked(world, 'antiquite-2', p));
-    p = P.recordResult(p, 'antiquite-1', 0, 50); // perdu : rien ne s'ouvre
-    assert.ok(!P.isUnlocked(world, 'antiquite-2', p));
-    p = P.recordResult(p, 'antiquite-1', 1, 300);
-    assert.ok(P.isUnlocked(world, 'antiquite-2', p));
-    assert.ok(!P.isUnlocked(world, 'antiquite-3', p));
+test('déblocage : le premier niveau d\'un monde ouvert est libre, chacun s\'ouvre en réussissant le précédent', () => {
+    let p = reaching('grece');
+    assert.ok(P.isUnlocked(world, 'grece-1', p));
+    assert.ok(!P.isUnlocked(world, 'grece-2', p));
+    p = P.recordResult(p, 'grece-1', 0, 50); // perdu : rien ne s'ouvre
+    assert.ok(!P.isUnlocked(world, 'grece-2', p));
+    p = P.recordResult(p, 'grece-1', 1, 300);
+    assert.ok(P.isUnlocked(world, 'grece-2', p));
+    assert.ok(!P.isUnlocked(world, 'grece-3', p));
     assert.ok(!P.isUnlocked(world, 'inconnu', p));
 });
 
-test('le boss demande le dixième niveau ET assez d\'étoiles', () => {
-    let p = open();
-    for (let n = 1; n <= 10; n++) p = P.recordResult(p, P.levelId(world, n), 1, 100);
-    assert.equal(P.regularStars(world, p), 10);
-    assert.ok(!P.isUnlocked(world, P.bossId(world), p), '10 étoiles ne suffisent pas');
-    for (let n = 1; n <= 5; n++) p = P.recordResult(p, P.levelId(world, n), 2, 100);
-    assert.equal(P.regularStars(world, p), 15);
+test('le boss demande le dernier niveau ET la moitié des étoiles possibles', () => {
+    const n = world.levels.length;
+    assert.equal(world.bossStarsRequired, Math.ceil(n * 3 / 2));
+    let p = reaching('grece');
+    for (let i = 1; i <= n; i++) p = P.recordResult(p, P.levelId(world, i), 1, 100);
+    assert.equal(P.regularStars(world, p), n);
+    assert.ok(!P.isUnlocked(world, P.bossId(world), p), `${n} étoiles ne suffisent pas`);
+    for (let i = 1; i <= world.bossStarsRequired - n; i++) p = P.recordResult(p, P.levelId(world, i), 2, 100);
+    assert.equal(P.regularStars(world, p), world.bossStarsRequired);
     assert.ok(P.isUnlocked(world, P.bossId(world), p));
-    // Assez d'étoiles mais dixième niveau jamais réussi : fermé.
-    const q = { levels: {}, skipped: ['monde0'] };
-    for (let n = 1; n <= 9; n++) q.levels[P.levelId(world, n)] = { stars: 3, best: 0, plays: 1 };
-    assert.ok(!P.isUnlocked(world, P.bossId(world), P.normalizeProgress(q)));
+    // Assez d'étoiles mais dernier niveau jamais réussi : fermé.
+    let q = reaching('grece');
+    for (let i = 1; i < n; i++) q = P.recordResult(q, P.levelId(world, i), 3, 0);
+    assert.ok(!P.isUnlocked(world, P.bossId(world), q));
 });
 
 test('le niveau courant avance, puis revient aux niveaux incomplets', () => {
-    let p = open();
-    assert.equal(P.currentLevelId(world, p), 'antiquite-1');
-    p = P.recordResult(p, 'antiquite-1', 2, 100);
-    assert.equal(P.currentLevelId(world, p), 'antiquite-2');
-    assert.equal(P.nextLevelId(world, 'antiquite-1', p), 'antiquite-2');
-    assert.equal(P.nextLevelId(world, 'antiquite-2', p), null, 'le suivant est fermé');
-    // Tout fait à fond : plus de niveau courant.
-    const all = { levels: {}, skipped: ['monde0'] };
-    P.levelsOf(world).forEach((l) => { all.levels[l.id] = { stars: 3, best: 1, plays: 1 }; });
-    assert.equal(P.currentLevelId(world, P.normalizeProgress(all)), null);
-    assert.equal(P.worldStars(world, P.normalizeProgress(all)), P.worldMaxStars(world));
+    let p = reaching('grece');
+    assert.equal(P.nextTarget(p).levelId, 'grece-1');
+    p = P.recordResult(p, 'grece-1', 2, 100);
+    assert.equal(P.nextTarget(p).levelId, 'grece-2');
+    assert.equal(P.nextLevelId(world, 'grece-1', p), 'grece-2');
+    assert.equal(P.nextLevelId(world, 'grece-2', p), null, 'le suivant est fermé');
+    // Tout fait à fond, partout : plus rien à proposer.
+    let all = P.normalizeProgress(null);
+    P.WORLDS.forEach((w) => P.levelsOf(w).forEach((l) => { all = P.recordResult(all, l.id, 3, 1); }));
+    assert.equal(P.nextTarget(all), null);
+    assert.equal(P.worldStars(world, all), P.worldMaxStars(world));
 });
 
 test('XP : rien à gagner d\'un niveau perdu sauf une fraction des points ; prime au premier passage ; le boss pèse plus', () => {
@@ -195,34 +276,59 @@ test('XP : rien à gagner d\'un niveau perdu sauf une fraction des points ; prim
 
 // --- plusieurs mondes ----------------------------------------------------------------
 
-test('le Monde 0 vient en premier ; l\'Antiquité s\'ouvre en battant son boss, ou en le passant', () => {
+test('le Monde 0 vient en premier ; la Préhistoire s\'ouvre en battant son boss, ou en le passant', () => {
+    const pre = P.findWorld('prehistoire');
     assert.equal(P.WORLDS[0].id, 'monde0');
     let p = P.normalizeProgress(null);
     assert.ok(P.isWorldUnlocked(m0, p));
-    assert.ok(!P.isWorldUnlocked(world, p));
-    assert.ok(!P.isUnlocked(world, 'antiquite-1', p), 'monde fermé : son premier niveau aussi');
+    assert.ok(!P.isWorldUnlocked(pre, p));
+    assert.ok(!P.isUnlocked(pre, 'prehistoire-1', p), 'monde fermé : son premier niveau aussi');
     assert.equal(P.nextTarget(p).levelId, 'monde0-1');
-    // Passer le Monde 0 ouvre l'Antiquité, et le joueur y est conduit.
+    // Passer le Monde 0 ouvre la suite, et le joueur y est conduit.
     const skipped = P.skipWorld(p, 'monde0');
-    assert.ok(P.isWorldUnlocked(world, skipped));
-    assert.equal(P.nextTarget(skipped).levelId, 'antiquite-1');
+    assert.ok(P.isWorldUnlocked(pre, skipped));
+    assert.equal(P.nextTarget(skipped).levelId, 'prehistoire-1');
     assert.ok(P.isUnlocked(m0, 'monde0-1', skipped), 'un monde passé reste jouable');
     // Ou battre son boss.
-    const beaten = P.recordResult(p, P.bossId(m0), 1, 100);
-    assert.ok(P.isWorldUnlocked(world, beaten));
-    // Une progression d'avant le Monde 0 (Antiquité commencée) n'est pas reverrouillée.
-    const legacy = P.normalizeProgress({ levels: { 'antiquite-1': { stars: 2, best: 1, plays: 1 } } });
-    assert.ok(P.isWorldUnlocked(world, legacy));
-    assert.ok(P.isUnlocked(world, 'antiquite-2', legacy));
+    assert.ok(P.isWorldUnlocked(pre, P.recordResult(p, P.bossId(m0), 1, 100)));
+    // Une progression qui a déjà commencé un monde ne le reverrouille pas.
+    const started = P.normalizeProgress({ levels: { 'grece-1': { stars: 2, best: 1, plays: 1 } } });
+    assert.ok(P.isWorldUnlocked(world, started));
+    assert.ok(P.isUnlocked(world, 'grece-2', started));
     // Seul un monde « passable » se passe.
-    assert.deepEqual(P.skipWorld(p, 'antiquite').skipped, []);
+    assert.deepEqual(P.skipWorld(p, 'grece').skipped, []);
 });
 
-test('après le boss d\'un monde, le niveau suivant est le premier du monde suivant', () => {
+test('après le boss d\'un monde, le niveau suivant est le premier du monde suivant ; après le dernier, rien', () => {
     let p = P.normalizeProgress(null);
     p = P.recordResult(p, P.bossId(m0), 2, 100);
-    assert.equal(P.nextLevelId(m0, P.bossId(m0), p), 'antiquite-1');
-    assert.equal(P.nextLevelId(world, P.bossId(world), p), null, 'dernier monde : rien après');
+    assert.equal(P.nextLevelId(m0, P.bossId(m0), p), 'prehistoire-1');
+    const last = mains[mains.length - 1];
+    assert.equal(P.nextLevelId(last, P.bossId(last), reaching(last.id)), null);
+});
+
+test('les îles : facultatives, ouvertes à la moitié de leur monde d\'attache, jamais proposées d\'office', () => {
+    const chine = P.findWorld('ile-chine');
+    assert.equal(chine.parent, 'grece');
+    assert.equal(chine.opensAfter, Math.floor(world.levels.length / 2));
+    assert.deepEqual(P.islandsOf(world).map((w) => w.id), ['ile-chine']);
+    let p = reaching('grece');
+    assert.ok(!P.isWorldUnlocked(chine, p));
+    assert.ok(!P.isUnlocked(chine, 'ile-chine-1', p));
+    // À la moitié du monde (le niveau `opensAfter` réussi), l'île s'ouvre.
+    for (let i = 1; i < chine.opensAfter; i++) p = P.recordResult(p, P.levelId(world, i), 1, 100);
+    assert.ok(!P.isWorldUnlocked(chine, p), 'une marche avant la moitié : fermée');
+    p = P.recordResult(p, P.levelId(world, chine.opensAfter), 1, 100);
+    assert.ok(P.isWorldUnlocked(chine, p));
+    assert.ok(P.isUnlocked(chine, 'ile-chine-1', p));
+    assert.ok(!P.isUnlocked(chine, 'ile-chine-2', p), 'dans une île aussi, on avance niveau après niveau');
+    // Le chemin principal ne conduit jamais dans une île.
+    assert.ok(!P.nextTarget(p).levelId.startsWith('ile-'));
+    // Une île commencée reste ouverte ; son boss ne mène nulle part.
+    assert.ok(P.isWorldUnlocked(chine, P.normalizeProgress({ levels: { 'ile-chine-1': { stars: 1, best: 1, plays: 1 } } })));
+    assert.equal(P.nextLevelId(chine, P.bossId(chine), p), null);
+    // Les îles n'entrent pas dans l'ordre des mondes : le monde qui suit la Grèce est Rome.
+    assert.equal(P.nextLevelId(world, P.bossId(world), P.recordResult(reaching('grece'), P.bossId(world), 1, 1)), 'rome1-1');
 });
 
 test('le Monde 0 : ses niveaux à contenu fixé existent dans le pack, à des années toutes différentes', () => {
@@ -254,16 +360,32 @@ test('filtre par thèmes : un monde chrono-thématique ne tire que dans ses thè
     assert.ok(picked.filter((e) => e.essential).length >= picked.length / 2);
 });
 
-test('sliceWindows découpe une fenêtre en tranches d\'effectifs voisins, sans trou', () => {
+test('sliceWindows : tranches d\'effectifs voisins, sans trou, et jamais plus étroites que la largeur minimale', () => {
     const cands = [];
     for (let d = 1800; d < 1900; d++) cands.push({ date: d });
     for (let d = 1900; d < 1910; d++) for (let k = 0; k < 10; k++) cands.push({ date: d });
-    const w = P.sliceWindows(cands, 1800, 1910, 4);
+    const w = P.sliceWindows(cands, 1800, 1910, 6);
     assert.equal(w[0].from, 1800);
     assert.equal(w[w.length - 1].to, 1910);
     for (let i = 1; i < w.length; i++) assert.equal(w[i].from, w[i - 1].to);
-    // La décennie dense (100 événements) occupe plusieurs tranches courtes.
-    assert.ok(w.filter((x) => x.from >= 1900).length >= 2);
+    w.forEach((x) => assert.ok(x.to - x.from >= P.MIN_LEVEL_YEARS, `tranche ${x.from}-${x.to} trop étroite`));
+    // Une fenêtre dense (100 événements par année) reste en tranches larges : les années ne se coupent pas.
+    const dense = [];
+    for (let d = 1914; d < 1920; d++) for (let k = 0; k < 40; k++) dense.push({ date: d });
+    assert.equal(P.sliceWindows(dense, 1914, 1920, 6).length, 1);
+});
+
+test('deux événements de la même année qui racontent le même fait forment un « cluster » ; des faits différents non', () => {
+    const cats = [{ themes: [
+        { id: 'a', events: [{ id: 'a1', date: 1792, titre: 'Proclamation de la Première République' }, { id: 'a2', date: 1792, titre: 'Bataille de Valmy' }] },
+        { id: 'b', events: [{ id: 'b1', date: 1792, titre: 'Victoire de Valmy et proclamation de Première République' }, { id: 'b2', date: 1792, titre: 'Prise des Tuileries' }] },
+        { id: 'c', events: [{ id: 'c1', date: 1914, titre: 'Début de la Première Guerre mondiale' }, { id: 'c2', date: 1914, titre: 'Bataille de la Marne' }] }
+    ] }];
+    const c = Object.fromEntries(P.flattenEvents(cats).map((e) => [e.id, e.cluster]));
+    assert.equal(c.a1, c.b1, 'la proclamation de la République, deux fois');
+    assert.equal(c.a2, c.b1, 'Valmy est cité dans le même titre');
+    assert.notEqual(c.b2, c.a1, 'les Tuileries sont un autre fait');
+    assert.notEqual(c.c1, c.c2, 'deux événements de 1914 qui ne partagent que « Guerre » et « Première »');
 });
 
 // --- leçons --------------------------------------------------------------------------

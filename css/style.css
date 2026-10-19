@@ -8896,3 +8896,73 @@ input:not([type="range"]), label, select, summary, textarea {
     font-size: 15px;
     line-height: 1.45;
 }
+
+/* Chemin du Temps : mondes repliés (fermés), îles bonus, île ouverte à la fin d'un niveau. */
+.path-world.is-collapsed .path-world-head {
+    opacity: 0.6;
+}
+
+.path-world.is-collapsed .path-world-note {
+    margin-bottom: 6px;
+}
+
+.path-island-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px 14px;
+    border: 1px dashed var(--border-soft);
+    border-radius: 14px;
+    background: var(--surface);
+    color: var(--text-dark);
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+.path-island-card:not(.is-locked) {
+    border-style: solid;
+    border-color: var(--progress-green);
+}
+
+.path-island-card.is-locked {
+    opacity: 0.8;
+}
+
+.path-island-icon {
+    font-size: 24px;
+}
+
+.path-island-text {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.path-island-text small {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--muted-text);
+}
+
+.path-island-text strong {
+    font-size: 15px;
+}
+
+.path-island-stars {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--muted-text);
+    white-space: nowrap;
+}
+
+.path-final-island {
+    margin: 6px 0 0;
+    font-weight: 700;
+    color: var(--success-text);
+}

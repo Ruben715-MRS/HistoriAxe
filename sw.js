@@ -58,6 +58,7 @@ const APP_SHELL_FILES = [
     './js/duels.js',
     './js/gamification.js',
     './js/dailyEngine.js',
+    './js/pathWorlds.js',
     './js/pathCore.js',
     './js/pathLessons.js',
     './js/apiClient.js',

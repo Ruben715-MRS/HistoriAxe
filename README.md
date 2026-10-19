@@ -387,37 +387,75 @@ monde en haut, le chemin parcouru qui se colore en vert, le reste en pointillé.
 libre, il ne le remplace pas (carte « Chemin du Temps » en tête de l'écran des catégories).
 
 - **Des mondes empilés**, qu'on gravit l'un après l'autre (le premier en bas) : un monde s'ouvre quand le
-  boss du précédent est vaincu. Jouables aujourd'hui : le **Monde 0** (la périodisation, voir plus bas) et
-  **l'Antiquité** (-800 → 476). La liste des mondes à venir, mesurée sur le contenu réel, est dans
-  `docs/chemin-du-temps-mondes.md` (générée par `node scripts/path_plan.js`) : **elle attend validation**.
-- **Un niveau = une tranche de temps** (de 100 à 230 ans pour l'Antiquité) : 10 niveaux de 12 repères, puis un
-  **boss** de 20 repères qui reprend 2 repères de chaque niveau (la révision du monde entier).
+  boss du précédent est vaincu. **21 mondes** sur le chemin principal (le Monde 0, puis la Préhistoire, l'Égypte
+  et l'Orient ancien, la Grèce, Rome en deux mondes, et la France de 481 à nos jours sur le modèle des
+  collections Belin) et **5 îles bonus** (voir plus bas). Un monde fermé se replie en un simple en-tête : seul
+  le prochain est dessiné en entier. La liste, avec les bornes et les thèmes de chaque monde, est dans
+  `docs/chemin-du-temps-mondes.md`.
+- **Mondes chrono-thématiques** : un monde a des bornes ET des thèmes où puiser (la Grèce ne tire que dans les
+  thèmes grecs, pas dans tout ce qui s'est passé dans le monde à la même époque). La Grèce et Rome se
+  chevauchent dans le temps ; c'est voulu (idée n° 3 du Monde 0 : diviser le temps est un choix).
+- **Un niveau = une tranche de temps** : 12 repères, un par douzième de la tranche, jamais plus de 2 par année
+  (3 en période dense). Le **boss** est la révision du monde : 20 repères répartis sur tous ses niveaux.
 - **Un niveau = une mini-expédition** de 3 épreuves (6 pour le boss), 3 vies pour tout le niveau. Les
   épreuves sont de vrais modes (Quiz, Avant/Après, frise Classique, Périodes, Curseur, Remise en ordre) :
   la difficulté monte d'un niveau à l'autre en changeant leur mélange. Pas d'Intrus : il s'appuie sur les
   axes d'un seul thème.
 - **Étoiles** : ★ pour finir, ★★ avec deux vies gardées, ★★★ sans la moindre erreur. Elles ne redescendent
   jamais en rejouant. Un niveau s'ouvre en réussissant le précédent (une étoile suffit) ; le **boss**
-  demande en plus 15 étoiles sur les 30 des dix niveaux (`bossStarsRequired`) — de quoi rejouer un peu sans
-  bloquer. Le boss offre une vie à mi-parcours (joker de l'Expédition).
+  demande en plus la moitié des étoiles possibles des niveaux du monde (`bossStarsRequired`) — de quoi
+  rejouer un peu sans bloquer. Le boss offre une vie à mi-parcours (joker de l'Expédition).
 - **Récompense** : XP du niveau (`PathCore.levelXp` : fraction des points, prime de réussite et d'étoiles,
   prime au premier passage, boss plus généreux), et la réussite d'un niveau **compte pour la série
   quotidienne**.
-- **Contenu sans saisie à la main.** Les événements d'un niveau sont tirés des événements
-  « incontournables » des thèmes (`theme.essentiel`) qui tombent dans sa tranche de temps, **un par
-  tranche d'un douzième de la fenêtre** (répartition régulière), jamais deux à la même année, en préférant
-  les repères **connus** : un événement que plusieurs thèmes racontent (même année, même nom propre dans le
-  titre — `fame`) passe avant un événement cité par un seul thème. Le tirage est **déterministe** (hachage de
-  l'id de niveau et de l'id d'événement) : même niveau, mêmes repères, pour tous et à chaque visite — c'est
-  ce qui en fait une mission. Un événement ajouté au pack peut entrer dans un niveau sans toucher au code.
-  Le contenu du joueur et le thème exclu des défis (calendrier non grégorien) sont ignorés.
+- **Contenu sans saisie à la main.** Les événements d'un niveau sont tirés des thèmes de son monde, dans sa
+  tranche de temps, **un par douzième de la tranche** (répartition régulière), en préférant les
+  **incontournables** (`theme.essentiel`) puis les repères **connus** : un événement que plusieurs thèmes
+  racontent (même année, même nom propre dans le titre — `fame`) passe avant un événement cité par un seul
+  thème. Le tirage est **déterministe** (hachage de l'id de niveau et de l'id d'événement) : même niveau,
+  mêmes repères, pour tous et à chaque visite — c'est ce qui en fait une mission. Un événement ajouté au pack
+  peut entrer dans un niveau sans toucher au code. Le contenu du joueur et le thème exclu des défis (calendrier
+  non grégorien) sont ignorés.
+- **Un fait n'apparaît qu'une fois.** Un même fait existe souvent sous plusieurs identifiants (la proclamation
+  de la République dans trois thèmes) : `cluster` relie les événements de la même année qui partagent un nom
+  propre ou la moitié de leurs mots, et un monde n'en tire qu'un.
+- **Les bornes des niveaux sont figées** dans `js/pathWorlds.js` (généré par `scripts/path_plan.js --write`) :
+  l'identifiant d'un niveau (`grece-3`) et les étoiles gagnées dessus en dépendent, un ajout de contenu ne
+  doit donc pas les déplacer.
+
+### Les dates sont des années : « tiers » pour les périodes denses
+
+Les dates du jeu sont des **années**. Deux événements de 1916 ne se départagent pas, et plusieurs modes (Avant/
+Après, Remise en ordre, Écart, Fil du temps) ne gardent qu'un événement par année. Un niveau doit donc couvrir
+**au moins 6 années** : on ne peut pas faire un niveau par année de guerre. Pour qu'une période dense (le XXe
+siècle compte cinq fois plus d'événements que l'Antiquité) ait plus de niveaux, une même tranche en donne
+plusieurs (`tiers`) : le premier prend les événements les plus connus, le suivant les suivants, et ainsi de suite,
+avec des épreuves plus dures. Exemples : la Révolution et l'Empire (3 tranches × 2), la Grande Guerre (1 tranche
+de 6 ans × 3 niveaux). **La Grande Guerre court de 1914 à 1919** : le traité de Versailles en est la fin
+officielle, l'armistice de 1918 n'en est que la fin des combats.
+
+### Les îles bonus
+
+Facultatives, elles évitent la monotonie d'une époque : **une île s'ouvre quand le joueur a réussi la moitié de
+son monde d'attache** (le niveau `opensAfter`), et l'écran de fin du niveau qui l'ouvre l'annonce. Elle a sa
+propre piste (ses niveaux, son boss, ses étoiles), s'ouvre depuis une carte sous l'en-tête de son monde, et la
+flèche de retour revient à la carte des mondes. Le chemin principal ne propose jamais une île d'office, et le
+boss d'une île ne mène nulle part.
+
+| Île | Attachée à | Niveaux |
+|---|---|---|
+| 🐉 La Chine impériale | La Grèce antique | 6 + boss |
+| 🌽 Les Amériques précolombiennes | La France avant la France | 5 + boss |
+| 🕌 L'Islam et l'Empire ottoman | Féodalités | 6 + boss |
+| 🗾 Le Japon | Les Renaissances | 5 + boss |
+| 🌍 Histoires d'Afrique | La République et les empires | 5 + boss (jusqu'aux indépendances : après 1962, les thèmes africains ne racontent presque que des coups d'État) |
 
 ### Le Monde 0 : « Le temps des historiens »
 
 Le chapitre introductif de Seconde sur la périodisation, et en même temps le **tutoriel du jeu**. Il est en
-bas de la carte, avant l'Antiquité, qu'il ouvre quand son boss est vaincu. Un joueur qui connaît déjà peut le
-**passer** (« Je connais déjà : ouvrir l'Antiquité ») : le monde suivant s'ouvre, le Monde 0 reste jouable.
-Une progression d'avant le Monde 0 (Antiquité déjà commencée) n'est jamais reverrouillée.
+bas de la carte, avant la Préhistoire, qu'il ouvre quand son boss est vaincu. Un joueur qui connaît déjà peut le
+**passer** (« Je connais déjà : ouvrir « La Préhistoire » ») : le monde suivant s'ouvre, le Monde 0 reste jouable.
+Un monde déjà commencé n'est jamais reverrouillé.
 
 | Niveau | Contenu |
 |---|---|
@@ -450,36 +488,41 @@ niveaux d'effectifs voisins : plus le temps est dense, plus les tranches sont co
 
 | Fichier | Rôle |
 |---|---|
-| `js/pathCore.js` | moteur **pur**, testé hors navigateur (`tests/path.test.js`) : définition des mondes et des niveaux (`WORLDS`), composition d'un niveau, étoiles, déblocage des niveaux et des mondes, XP |
+| `js/pathWorlds.js` | **généré** (`node scripts/path_plan.js --write`) et figé : groupes de thèmes, mondes, tranches de temps |
+| `js/pathCore.js` | moteur **pur**, testé hors navigateur (`tests/path.test.js`) : construction des mondes, composition d'un niveau, doublons, étoiles, déblocage des niveaux, des mondes et des îles, XP |
 | `js/pathLessons.js`, `js/app/lesson.js` | les questions des leçons (pur, testé) et l'écran qui les pose |
-| `scripts/path_plan.js` | la proposition de mondes à venir, mesurée sur `data/fr.json` → `docs/chemin-du-temps-mondes.md` |
+| `scripts/path_plan.js` | la liste des mondes, mesurée sur `data/fr.json` → `docs/chemin-du-temps-mondes.md` ; `--write` fige les tranches dans `js/pathWorlds.js` ; `--titles` aide à écrire les titres |
 | `js/app/path.js` | l'écran `#screen-path` (carte SVG + pastilles, fiche d'un niveau), le lancement d'un niveau, la récompense (`pathOnLevelFinish`) |
 | `js/app/expedition.js` | réutilisé tel quel ; `startExpedition(plan)` lance un niveau (vivier imposé via `revisionMode`, comme la révision) |
 | `js/storage.js` | `PATH_PROGRESS_KEY` (`historiaxe_path_v1`), **synchronisée** dans le cloud (`SYNC_KEYS`, aucune modification de l'API) |
 | `ui/fr.json` | clés `path.*` (titres des niveaux : `path.worlds.<monde>.levels.<n>`) — **français seulement** : les autres langues retombent sur le français |
 | `e2e/chemin.spec.js` | la carte, le Monde 0 et ses leçons, le passage d'un monde, un niveau joué, les étoiles, le déblocage, l'abandon, le boss, et que **chaque niveau démarre avec chacune de ses épreuves** sans alerte |
 
-### Ajouter un monde ou un niveau
+### Ajouter un monde
 
-Valider le monde dans `docs/chemin-du-temps-mondes.md`, puis l'ajouter à `PathCore.WORLDS` (bornes, `themes`,
-épreuves de chaque niveau, `bossStarsRequired`) et ses titres dans `ui/fr.json` (`path.worlds.<id>` : `title`,
-`boss`, `done`, `levels`) : le test de contenu vérifie qu'ils existent. La carte affiche tous les mondes de
-`WORLDS`, chacun ouvert par le boss du précédent.
+Ajouter l'entrée au `PLAN` de `scripts/path_plan.js` (bornes, groupes de thèmes, nombre de tranches, `tiers`),
+**en gardant les mondes existants tels quels** (relancer `--write` re-découperait leurs tranches si les données
+ont changé : vérifier avec `git diff js/pathWorlds.js` que seules les nouvelles lignes bougent), puis écrire ses
+titres dans `ui/fr.json` (`path.worlds.<id>` : `title`, `boss`, `done`, `levels`, 46 caractères au plus : le
+test le vérifie). `--titles` liste, pour chaque niveau, ses repères les plus connus.
 
 ### Limites assumées de ce prototype
 
-- **Deux mondes** (Monde 0, Antiquité) : les suivants attendent la validation de la liste. L'Antiquité
-  actuelle sera remplacée par les mondes chrono-thématiques proposés (Orient, Grèce, Rome ×2). Le « test de
-  passage » est pour l'instant un simple « Je connais déjà » ; les îles bonus, les parcours nationaux et la
-  frise personnelle qui grandit à chaque niveau n'existent pas encore.
-- **Les titres des niveaux sont écrits à la main** (11 phrases) ; la composition des niveaux, elle, est
-  automatique. Une relecture historique du tirage (un repère obscur peut subsister dans une tranche pauvre en
-  événements connus) reste à faire.
+- **Franco-centré** pour le chemin principal à partir de 481 (suivre les collections Belin) ; le reste du monde
+  est dans les îles. Les parcours nationaux et la frise personnelle qui grandit à chaque niveau n'existent pas
+  encore.
+- **Les titres des niveaux sont un premier jet** (195 titres écrits à la main) ; la composition des niveaux,
+  elle, est automatique : un repère obscur peut subsister dans une tranche pauvre en événements connus, et les
+  niveaux « pointus » (2e et 3e tiers) sont par construction moins célèbres. Une relecture historique reste à
+  faire.
+- **Les modes jouent sur des années** : dans une tranche courte (6 ans), l'ordre chronologique est grossier.
 - **Français seulement** pour les textes ; sur un autre pack de langue, un niveau qui trouve moins de 8
   événements refuse de se lancer (`PATH_MIN_EVENTS`).
 - **Aucune mesure de rétention** (voir « Télémétrie » plus haut) : on ne saura pas si le parcours retient
   mieux que le jeu libre sans cela.
 - Les étoiles sont synchronisées en « dernière écriture gagne », comme le reste de la progression.
+- **Plus de 190 niveaux, jamais testés par des joueurs** : la difficulté (épreuves choisies selon la place du
+  niveau dans le Chemin) et la durée d'un niveau (3 à 5 minutes) sont des hypothèses.
 
 ## Le Mode Classe : une séance en direct pour une classe
 
