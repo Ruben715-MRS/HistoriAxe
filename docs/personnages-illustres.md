@@ -11,7 +11,7 @@ ne posent pas la même question :
 | | Un thème, c'est | Une date, c'est | On le joue par |
 |---|---|---|---|
 | **Biographies** | une vie (360 thèmes, en 12 domaines) | une étape de cette vie | étape de la vie |
-| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Turquie, le Japon, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Indonésie, le monde malais) | la naissance d'un personnage | domaine |
+| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Turquie, le Japon, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Indonésie, le monde malais, les Philippines) | la naissance d'un personnage | domaine |
 
 Le déplacement ne coûte aucune migration : les 360 thèmes gardent leurs
 identifiants, et rien de ce que le joueur a sauvegardé (favoris, révision,
@@ -2130,7 +2130,7 @@ ministres de la République. Les mots-clés portent le pays et ses adjectifs, le
 
 - **Un pays, pas un bloc.** `pan_id`, aucun champ `pays` — aucun invité d'un autre État — et « Pendant ce temps, ailleurs… » le compte comme `thm_id`,
   l'« Histoire de l'Indonésie ». Le thème se range par « Indonésie », entre la Grèce et l'Iran. Il n'est qu'un des thèmes prévus pour l'Asie du Sud-Est :
-  la Malaisie, Singapour, Brunei et le Timor oriental, puis l'Indochine, la Thaïlande et la Birmanie, puis les Philippines attendent chacun leur tour (voir « Ce qui
+  la Malaisie, Singapour, Brunei et le Timor oriental, puis l'Indochine, la Thaïlande et la Birmanie attendent chacun leur tour (voir « Ce qui
   n'est pas fait »). Raffles n'est donc pas ici : il revient au futur bloc malais, comme le décide la règle « celui qui l'honore le plus ».
 - **Une liste que la règle de l'article français a réduite de moitié.** 114 candidats avaient été examinés, 73 retenus après les règles sur les vivants et les
   images ; vingt et un d'entre eux n'ont **aucun article sur Wikipédia en français** et sont écartés, comme ailleurs : Raden Wijaya (le fondateur de
@@ -2262,6 +2262,25 @@ Les mots-clés portent les quatre pays et leurs adjectifs, les villes et États 
 - **Un téléchargement contraint.** Wikimedia refusait (429) la plupart des miniatures : les portraits ont été téléchargés par `Special:FilePath` (miniatures de 330, 500 ou 960 pixels, ou original), avec
   la licence, l'auteur et la date lus sur la page de chaque fichier. Trois crédits n'ont pas d'auteur sur Commons (Tan Cheng Lock, Lee Kuan Yew, Amaral) et disent « auteur inconnu ».
 - **Géolocalisation** : aucune figure n'est placée sur l'Atlas, faute de biographie liée.
+
+### Un pays à part : les Philippines
+
+`pan_ph`, « Grandes figures des Philippines » (code `ph`, pays) : **39 personnages**, de Gabriela Silang (1731) à Nora Aunor (1953). Par axe : 15 Chefs d'État et dirigeants,
+10 Guerres et résistances, 5 Musique, spectacle et sport, 4 Littérature et pensée, 3 Beaux-arts, 2 Sciences, techniques et innovation. Sept ⭐ : Aguinaldo, Quezon, Magsaysay, Marcos, Corazon Aquino,
+Bonifacio et Rizal.
+
+- **Pourquoi un thème à part.** Les Philippines ont une histoire propre (colonie espagnole puis américaine, révolution de 1896, occupation japonaise) et une culture que ni le monde malais ni
+  l'Indonésie ne représentent. Le thème se range par « Philippines », entre les pays baltes et le Portugal ; ses figures portent l'étiquette de « Histoire des Philippines » (`thm_ph`), sans invité.
+- **Des noms sans initiales** (le découpeur de phrases les prendrait pour des fins de phrase) : Manuel Quezon, José Laurel, Carlos García, Fidel Ramos, José Diokno, Marcelo del Pilar, Francisco Sionil José.
+  Trois noms gardent leur ordre d'écriture au classement : Poe, Fernando, Jr. ; Sionil José, Francisco ; Defensor Santiago, Miriam (voir `EXCEPTIONS`).
+- **Écartés ou en attente.** Quatre fiches sont écrites mais sans portrait libre exploitable (Commons répondait 429, ou la seule image était une statue lointaine) : Gregoria de Jesús, Marcela Agoncillo
+  (deux timbres), Edith Tiempo (un timbre) et Leona Florentino (une statue à Vigan). Elles attendent dans `scripts/pantheon/ph_candidats.md`. Pedro Paterno (dates incertaines) et Carlos Rómulo
+  (naissance 1898 ou 1899 selon les sources) ont été écartés ; Lorenzo Ruiz, Diego Silang, Teresa Magbanua, Lualhati Bautista, Zamora, Aurora Quezon et Pancho Villa n'ont pas d'article assez sûr
+  ou pas d'image libre.
+- **Des portraits souvent indirects**, et les légendes le disent : un dessin (Balagtas, illustration), des timbres philippins où le nom est imprimé (Gabriela Silang, Nicanor Abelardo : `nomVisible`),
+  une photographie de scène (Josefa Llanes Escoda, recadrée sur son visage), un portrait en plan large recadré (José Rizal, Sergio Osmeña).
+- **Statut américain des images** : même décision que pour l'Indonésie (images d'origine gouvernementale ou d'avant 1946 acceptées) ; Macapagal garde « auteur inconnu ».
+- **Géolocalisation** : aucune figure n'est placée sur l'Atlas.
 
 ### Un fichier source par panthéon, un script qui l'écrit dans `data/fr.json`
 
@@ -2605,7 +2624,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
 ### Ce qui n'est pas fait
 
 - **Les autres panthéons** : la France, l'Égypte, les États-Unis, l'Italie, le
-  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Indonésie, le monde malais sont écrits.
+  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Indonésie, le monde malais, les Philippines sont écrits.
   Chaque liste de personnages est validée avant la rédaction. Feuille de route, dans l'ordre
   où on les propose (un pays seul quand il a de quoi faire un thème, un bloc sinon) :
   1. **Le Machrek est écrit** (voir « Le cinquième bloc »). Il reste : le portrait des trois
@@ -2617,7 +2636,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
      figures juives (Edmond Amran El Maleh, Habiba Msika) et en a laissé cinq de côté (Cheikh
      Raymond, Reinette l'Oranaise, Salim Halali, Albert Memmi, Abraham Serfaty).
   2. **Pays seuls** : **l'Afrique du Sud** (voir « Un pays à part : l'Afrique du Sud »), **l'Iran** (voir « Un pays à part : l'Iran »), **le Brésil** (qui n'entre pas dans l'Amérique « hispanique » ; voir « Un pays à part : le Brésil »), **la Turquie** (voir « Un pays à part : la Turquie »), **le Japon** (voir « Un pays à part : le Japon ») et **la Russie** (voir « Un pays à part : la Russie ») et **l'Australie** (voir « Un pays à part : l'Australie ») sont écrits.
-  3. **Blocs** : l'Asie du Sud-Est (l'Indonésie est écrite, voir « Un pays à part : l'Indonésie » ; le monde malais est écrit, voir « Un bloc : le monde malais » ; restent l'Indochine, la Thaïlande avec la Birmanie, et les Philippines), la Mongolie (l'Asie centrale est écrite, voir « Un bloc : l'Asie centrale et
+  3. **Blocs** : l'Asie du Sud-Est (l'Indonésie est écrite, voir « Un pays à part : l'Indonésie » ; le monde malais est écrit, voir « Un bloc : le monde malais » ; les Philippines sont écrites, voir « Un pays à part : les Philippines » ; restent l'Indochine et la Thaïlande avec la Birmanie), la Mongolie (l'Asie centrale est écrite, voir « Un bloc : l'Asie centrale et
      l'Afghanistan »), le Caucase, la Corée (`KR`/`KP`), l'Afrique de
      l'Ouest, l'Afrique de l'Est et la Corne, l'Afrique australe et l'océan
      Indien (sans l'Afrique du Sud). L'Afrique centrale est écrite (voir « Un bloc : l'Afrique centrale »). « Nouvelle-Zélande et Pacifique » est écrit (voir « Un bloc : la

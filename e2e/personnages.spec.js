@@ -97,7 +97,7 @@ test('Personnages illustres : deux sous-catégories, chacune avec sa note et son
             "Grandes figures d'Asie centrale", "Grandes figures d'Australie", 'Grandes figures des Balkans', 'Grandes figures du Benelux', 'Grandes figures du Brésil', 'Grandes figures du Canada', 'Grandes figures de Chine',
             "Grandes figures d'Égypte", "Grandes figures d'Espagne", 'Grandes figures des États-Unis',
             'Grandes figures de France', 'Grandes figures de Grèce', "Grandes figures d'Indonésie", "Grandes figures d'Iran", "Grandes figures d'Israël", "Grandes figures d'Italie", 'Grandes figures du Japon',
-            'Grandes figures du Machrek et de la péninsule Arabique', 'Grandes figures du Maghreb', 'Grandes figures de Malaisie, de Singapour, de Brunei et du Timor oriental', 'Grandes figures de Nouvelle-Zélande et du Pacifique', 'Grandes figures des pays baltes', 'Grandes figures du Portugal',
+            'Grandes figures du Machrek et de la péninsule Arabique', 'Grandes figures du Maghreb', 'Grandes figures de Malaisie, de Singapour, de Brunei et du Timor oriental', 'Grandes figures de Nouvelle-Zélande et du Pacifique', 'Grandes figures des pays baltes', 'Grandes figures des Philippines', 'Grandes figures du Portugal',
             'Grandes figures du Royaume-Uni', 'Grandes figures de Russie', 'Grandes figures de Scandinavie', 'Grandes figures du sous-continent indien', 'Grandes figures de Turquie']);
 });
 
@@ -922,6 +922,44 @@ test('la recherche — « indonésie », « java », « sumatra », « jakarta �
         await page.locator('#theme-search-input').fill(mot);
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: "Grandes figures d'Indonésie" });
         await expect(resultat, `« ${mot} » doit mener au panthéon de l'Indonésie`).toHaveCount(1);
+        await expect(resultat.locator('.search-result-path')).toContainText('Personnages illustres › Panthéons');
+    }
+});
+
+test('les Philippines : chacune de ses figures a son portrait, de Gabriela Silang à Nora Aunor, et la fiche n’affiche aucun pays', async ({ page }) => {
+    await openThemeById(page, 'pan_ph');
+    await page.locator('#mode-card-discovery').click();
+    await expect(page.locator('#screen-game')).toBeVisible();
+    const nombre = await page.evaluate(() => getCurrentTheme().events.length);
+    expect(nombre).toBe(39);
+    await expect(page.locator('#timeline .entry')).toHaveCount(nombre);
+    await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
+
+    // Trois époques : une héroïne du XVIIIe siècle, le héros national, une actrice du XXe siècle.
+    for (const titre of ['Naissance de Gabriela Silang', 'Naissance de José Rizal', 'Naissance de Nora Aunor']) {
+        await page.locator('#timeline .entry', { hasText: titre }).click();
+        await expect(page.locator('#modal-details')).toBeVisible();
+        await expect(page.locator('#modal-pays')).toBeHidden();
+        const portrait = page.locator('#modal-portrait-img');
+        await expect.poll(() => portrait.evaluate(img => img.complete ? img.naturalWidth : 0)).toBe(320);
+        await expect(page.locator('#modal-portrait-caption')).not.toBeEmpty();
+        await page.locator('#modal-details .close-btn').click();
+        await expect(page.locator('#modal-details')).toBeHidden();
+    }
+
+    // Aucune figure n'a de biographie dans l'appli : pas de bouton « Voir sa biographie ».
+    const avecBiographie = await page.evaluate(() => getCurrentTheme().events.filter(e => e.biographie).length);
+    expect(avecBiographie).toBe(0);
+    await page.locator('#timeline .entry', { hasText: 'Naissance de José Rizal' }).click();
+    await expect(page.locator('#modal-bio-btn')).toBeHidden();
+});
+
+test('la recherche — « philippines », « manille », « luçon », « katipunan », « edsa » — mène au panthéon des Philippines', async ({ page }) => {
+    await page.locator('#screen-home').click();
+    for (const mot of ['philippines', 'philippin', 'manille', 'lucon', 'cebu', 'mindanao', 'katipunan', 'edsa']) {
+        await page.locator('#theme-search-input').fill(mot);
+        const resultat = page.locator('#theme-search-results .search-result-item', { hasText: "Grandes figures des Philippines" });
+        await expect(resultat, `« ${mot} » doit mener au panthéon des Philippines`).toHaveCount(1);
         await expect(resultat.locator('.search-result-path')).toContainText('Personnages illustres › Panthéons');
     }
 });

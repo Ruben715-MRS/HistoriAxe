@@ -1,0 +1,698 @@
+{
+  "code": "ph",
+  "nom": "Philippines",
+  "theme": {
+    "id": "pan_ph",
+    "nom": "Grandes figures des Philippines",
+    "difficulte": "Intermédiaire",
+    "motsCles": [
+      "Philippines",
+      "Philippin",
+      "Philippine",
+      "Philippins",
+      "Manille",
+      "Luçon",
+      "Visayas",
+      "Mindanao",
+      "Cebu",
+      "Vigan",
+      "Cavite",
+      "Katipunan",
+      "Rizal",
+      "Bonifacio",
+      "Aguinaldo",
+      "Commonwealth des Philippines",
+      "Révolution philippine",
+      "Guerre américano-philippine",
+      "Loi martiale",
+      "EDSA",
+      "People Power",
+      "Tagalog",
+      "Ilocano",
+      "Asie du Sud-Est",
+      "Archipel",
+      "Islas Filipinas"
+    ]
+  },
+  "axes": [
+    "Chefs d'État et dirigeants",
+    "Guerres et résistances",
+    "Littérature et pensée",
+    "Beaux-arts",
+    "Musique, spectacle et sport",
+    "Sciences, techniques et innovation"
+  ],
+  "personnages": [
+    {
+      "slug": "aguinaldo",
+      "nom": "Emilio Aguinaldo",
+      "classement": "Aguinaldo, Emilio",
+      "titre": "Naissance d'Emilio Aguinaldo",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1869,
+      "description": "Emilio Aguinaldo (1869-1964) est le premier président de la République des Philippines, de 1899 à 1901, né à Kawit, dans la province de Cavite. Chef de la révolution contre l'Espagne, il proclame l'indépendance le 12 juin 1898 à Kawit, puis dirige la guerre contre les Américains, avant d'être capturé par surprise en 1901 et de jurer fidélité aux États-Unis. Il vit jusqu'à 94 ans et meurt à Quezon City en 1964.",
+      "wikipedia": "Emilio_Aguinaldo",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Emilio Aguinaldo portrait.jpg",
+        "legende": "Emilio Aguinaldo, portrait",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
+      }
+    },
+    {
+      "slug": "quezon",
+      "nom": "Manuel Quezon",
+      "classement": "Quezon, Manuel",
+      "titre": "Naissance de Manuel Quezon",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1878,
+      "description": "Manuel Quezon (1878-1944) est le premier président du Commonwealth des Philippines, de 1935 à sa mort, né à Baler. Artisan du processus d'indépendance, il fait adopter le tagalog comme base de la langue nationale et mène une politique de « justice sociale » en faveur des paysans. Chassé par l'invasion japonaise, il dirige le gouvernement en exil aux États-Unis, où il meurt de la tuberculose en 1944.",
+      "wikipedia": "Manuel_L._Quezon",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Manuel L. Quezon portrait.jpg",
+        "legende": "Manuel Quezon, portrait",
+        "licence": "Domaine public",
+        "auteur": "Malacañang Palace"
+      }
+    },
+    {
+      "slug": "roxas",
+      "nom": "Manuel Roxas",
+      "classement": "Roxas, Manuel",
+      "titre": "Naissance de Manuel Roxas",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1892,
+      "description": "Manuel Roxas (1892-1948) est le dernier président du Commonwealth et le premier président de la République indépendante des Philippines, né à Capiz. Élu en 1946, il proclame l'indépendance le 4 juillet 1946, mais accepte des États-Unis une aide qui s'accompagne de droits économiques et de bases militaires. Il meurt d'une crise cardiaque en 1948, après un discours à la base aérienne de Clark.",
+      "wikipedia": "Manuel_Roxas",
+      "portrait": {
+        "fichier": "Manuel Roxas.jpg",
+        "legende": "Manuel Roxas, photographie",
+        "licence": "Domaine public",
+        "auteur": "Herbert A. French; 1947."
+      }
+    },
+    {
+      "slug": "osmena",
+      "nom": "Sergio Osmeña",
+      "classement": "Osmeña, Sergio",
+      "titre": "Naissance de Sergio Osmeña",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1878,
+      "description": "Sergio Osmeña (1878-1961) est le deuxième président du Commonwealth des Philippines, de 1944 à 1946, né à Cebu. Premier président de l'Assemblée philippine en 1907, il succède à Quezon à sa mort et revient aux Philippines avec MacArthur, à Leyte, en octobre 1944. Battu par Roxas à l'élection de 1946, il meurt à Quezon City en 1961.",
+      "wikipedia": "Sergio_Osme%C3%B1a",
+      "portrait": {
+        "fichier": "Sergio Osmeña 1945 Portrait.jpg",
+        "legende": "Sergio Osmeña, portrait de 1945",
+        "licence": "CC BY-SA 4.0",
+        "auteur": "Malacañang Palace",
+        "recadrage": [
+          0.1,
+          0.0,
+          0.9,
+          0.65
+        ]
+      }
+    },
+    {
+      "slug": "quirino",
+      "nom": "Elpidio Quirino",
+      "classement": "Quirino, Elpidio",
+      "titre": "Naissance d'Elpidio Quirino",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1890,
+      "description": "Elpidio Quirino (1890-1956) est le sixième président des Philippines, de 1948 à 1953, né à Vigan. Vice-président puis successeur de Roxas, il négocie les réparations de guerre avec le Japon, poursuit la lutte contre la rébellion communiste des Huks, lance la reconstruction de l'après-guerre et gracie en 1953 les criminels de guerre japonais encore détenus. Son mandat est entaché d'accusations de corruption, et il meurt à Quezon City en 1956.",
+      "wikipedia": "Elpidio_Quirino",
+      "portrait": {
+        "fichier": "Elpidio R Quirino.jpg",
+        "legende": "Elpidio Quirino, portrait",
+        "licence": "Domaine public",
+        "auteur": "Philippine Presidential Museum and Library"
+      }
+    },
+    {
+      "slug": "magsaysay",
+      "nom": "Ramon Magsaysay",
+      "classement": "Magsaysay, Ramon",
+      "titre": "Naissance de Ramon Magsaysay",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1907,
+      "description": "Ramon Magsaysay (1907-1957) est le septième président des Philippines, de 1953 à sa mort, né à Iba, dans le Zambales. Mécanicien devenu chef de guérilla contre les Japonais, il brise la rébellion des Huks en la combinant à des réformes agraires, et reste dans les mémoires comme le président du peuple. Il meurt dans un accident d'avion sur le mont Manunggal, en 1957, et un prix asiatique créé en son honneur porte son nom.",
+      "wikipedia": "Ramon_Magsaysay",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Ramon-Magsaysay-01.jpg",
+        "legende": "Ramon Magsaysay, photographie",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
+      }
+    },
+    {
+      "slug": "garcia",
+      "nom": "Carlos García",
+      "classement": "García, Carlos",
+      "titre": "Naissance de Carlos García",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1896,
+      "description": "Carlos García (1896-1971) est le huitième président des Philippines, de 1957 à 1961, né à Talibon, sur l'île de Bohol. Avocat et poète en langue visayenne, vice-président de Magsaysay, il lance la politique du « Filipino First », qui réserve aux Philippins une part de l'économie, et fait de la lutte contre le gaspillage un thème de son mandat. Battu par Macapagal en 1961, il meurt à Tagbilaran en 1971.",
+      "wikipedia": "Carlos_P._Garc%C3%ADa",
+      "portrait": {
+        "fichier": "Carlos P Garcia.jpg",
+        "legende": "Carlos García, photographie",
+        "licence": "Domaine public",
+        "auteur": "US Government"
+      }
+    },
+    {
+      "slug": "macapagal",
+      "nom": "Diosdado Macapagal",
+      "classement": "Macapagal, Diosdado",
+      "titre": "Naissance de Diosdado Macapagal",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1910,
+      "description": "Diosdado Macapagal (1910-1997) est le neuvième président des Philippines, de 1961 à 1965, né à Lubao, dans la province de Pampanga. Fils de paysans devenu avocat, il déplace en 1962 la fête de l'indépendance du 4 juillet au 12 juin, date de la proclamation de 1898, et fait voter un code de réforme agraire. Père de la présidente Gloria Macapagal-Arroyo, il meurt à Makati en 1997.",
+      "wikipedia": "Diosdado_Macapagal",
+      "portrait": {
+        "fichier": "Diosdado Macapagal photo.jpg",
+        "legende": "Diosdado Macapagal, photographie",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "marcos",
+      "nom": "Ferdinand Marcos",
+      "classement": "Marcos, Ferdinand",
+      "titre": "Naissance de Ferdinand Marcos",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1917,
+      "description": "Ferdinand Marcos (1917-1989) est le dixième président des Philippines, de 1965 à 1986, né à Sarrat, dans l'Ilocos Norte. Réélu en 1969, il proclame la loi martiale en 1972, fait emprisonner ses opposants et bâtit une dictature qui s'accompagne d'un détournement de plusieurs milliards de dollars. Chassé par le soulèvement populaire de février 1986, il s'exile à Hawaï et meurt à Honolulu en 1989.",
+      "wikipedia": "Ferdinand_Marcos",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Ferdinand Marcos' official portrait during his second term (1969) (cropped).jpg",
+        "legende": "Ferdinand Marcos, portrait officiel de 1969",
+        "licence": "Domaine public",
+        "auteur": "Malacañang Press"
+      }
+    },
+    {
+      "slug": "coryaquino",
+      "nom": "Corazon Aquino",
+      "classement": "Aquino, Corazon",
+      "titre": "Naissance de Corazon Aquino",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1933,
+      "description": "Corazon Aquino (1933-2009) est la onzième présidente des Philippines, de 1986 à 1992, née à Paniqui, dans la province de Tarlac, et la première femme à diriger le pays. Veuve de l'opposant Ninoy Aquino, assassiné en 1983, elle devient le symbole du soulèvement populaire de février 1986, qui chasse Marcos, et fait adopter en 1987 une nouvelle Constitution. Elle survit à plusieurs tentatives de coup d'État et meurt à Makati en 2009.",
+      "wikipedia": "Corazon_Aquino",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Corazon Aquino 1986.jpg",
+        "legende": "Corazon Aquino, photographie de 1986",
+        "licence": "Domaine public",
+        "auteur": "Airman Gerald B. Johnson"
+      }
+    },
+    {
+      "slug": "ramos",
+      "nom": "Fidel Ramos",
+      "classement": "Ramos, Fidel",
+      "titre": "Naissance de Fidel Ramos",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1928,
+      "description": "Fidel Ramos (1928-2022) est le douzième président des Philippines, de 1992 à 1998, né à Lingayen, dans le Pangasinan. Général formé à West Point, chef de la police, il rejoint les insurgés de février 1986 et contribue à la chute de Marcos. Président, il libéralise l'économie, signe en 1996 un accord de paix avec les rebelles musulmans du Front Moro de libération nationale, et meurt à Makati en 2022, à 94 ans.",
+      "wikipedia": "Fidel_V._Ramos",
+      "portrait": {
+        "fichier": "Fidel Valdez Ramos Official Photo as President of the Philippines (1995).jpg",
+        "legende": "Fidel Ramos, portrait officiel de 1995",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
+      }
+    },
+    {
+      "slug": "laurel",
+      "nom": "José Laurel",
+      "classement": "Laurel, José",
+      "titre": "Naissance de José Laurel",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1891,
+      "description": "José Laurel (1891-1959) est le président de la seconde République des Philippines, de 1943 à 1945, né à Tanauan, dans le Batangas. Juriste et juge à la Cour suprême, il accepte de présider sous l'occupation japonaise un régime qui reste dans l'histoire comme collaborateur, puis s'exile au Japon à la fin de la guerre. Poursuivi pour trahison puis amnistié en 1948, il redevient sénateur et meurt à Manille en 1959.",
+      "wikipedia": "Jos%C3%A9_P._Laurel",
+      "portrait": {
+        "fichier": "Jose P. Laurel.jpg",
+        "legende": "José Laurel, photographie",
+        "licence": "Domaine public",
+        "auteur": "Mainichi Newspaper Office"
+      }
+    },
+    {
+      "slug": "mabini",
+      "nom": "Apolinario Mabini",
+      "classement": "Mabini, Apolinario",
+      "titre": "Naissance d'Apolinario Mabini",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1864,
+      "description": "Apolinario Mabini (1864-1903) est le premier chef de gouvernement des Philippines, né à Tanauan, dans le Batangas. Paralysé par la polio en 1896, ce qui lui vaut le surnom de « sublime paralytique », il devient le conseiller d'Aguinaldo et, en 1899, son premier chef de gouvernement. Exilé à Guam par les Américains pour avoir refusé de leur prêter serment, il rentre en 1903 et meurt du choléra à Manille la même année.",
+      "wikipedia": "Apolinario_Mabini",
+      "portrait": {
+        "fichier": "Apolinario Mabini.jpg",
+        "legende": "Apolinario Mabini, portrait",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
+      }
+    },
+    {
+      "slug": "fagoncillo",
+      "nom": "Felipe Agoncillo",
+      "classement": "Agoncillo, Felipe",
+      "titre": "Naissance de Felipe Agoncillo",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1859,
+      "description": "Felipe Agoncillo (1859-1941) est le premier diplomate philippin de l'histoire, né à Taal, dans le Batangas. Avocat formé à Manille, il représente le gouvernement révolutionnaire d'Aguinaldo à Hong Kong, à Paris, où il tente en vain de se faire entendre pendant la négociation du traité de 1898, puis à Washington. Il meurt à Manille en 1941, à la veille de l'invasion japonaise.",
+      "wikipedia": "Felipe_Agoncillo",
+      "portrait": {
+        "fichier": "Felipe Agoncillo.jpg",
+        "legende": "Felipe Agoncillo, portrait",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
+      }
+    },
+    {
+      "slug": "santiago",
+      "nom": "Miriam Defensor Santiago",
+      "classement": "Defensor Santiago, Miriam",
+      "titre": "Naissance de Miriam Defensor Santiago",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1945,
+      "description": "Miriam Defensor Santiago (1945-2016) est une juriste et femme politique philippine, née à Iloilo. Juge, puis commissaire à l'immigration, elle reçoit en 1988 le prix Ramon Magsaysay pour sa lutte contre la corruption, et siège au Sénat de 1995 à 2001 puis de 2004 à sa mort. Elle se présente deux fois à l'élection présidentielle, en 1992 et en 2016, et meurt à Taguig en 2016.",
+      "wikipedia": "Miriam_Defensor_Santiago",
+      "portrait": {
+        "fichier": "Senator Miriam Defensor Santiago (cropped).jpg",
+        "legende": "Miriam Defensor Santiago, photographie",
+        "licence": "Domaine public",
+        "auteur": "Joseph Vidal"
+      }
+    },
+    {
+      "slug": "bonifacio",
+      "nom": "Andrés Bonifacio",
+      "classement": "Bonifacio, Andrés",
+      "titre": "Naissance d'Andrés Bonifacio",
+      "axe": "Guerres et résistances",
+      "naissance": 1863,
+      "description": "Andrés Bonifacio (1863-1897) est le fondateur du Katipunan, la société secrète qui lance la révolution contre l'Espagne, né à Tondo, à Manille. Ouvrier issu d'un milieu modeste, il crée l'association en 1892 et déclenche l'insurrection en août 1896 par le « cri de Pugad Lawin ». Rival d'Aguinaldo au sein de la révolution, il est jugé et fusillé par les siens en mai 1897, à Maragondon.",
+      "wikipedia": "Andr%C3%A9s_Bonifacio",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Andrés Bonifacio photo (cropped).jpg",
+        "legende": "Andrés Bonifacio, photographie",
+        "licence": "Domaine public",
+        "auteur": "Chofre y Cia (now Cacho Hermanos Inc.)"
+      }
+    },
+    {
+      "slug": "antonioluna",
+      "nom": "Antonio Luna",
+      "classement": "Luna, Antonio",
+      "titre": "Naissance d'Antonio Luna",
+      "axe": "Guerres et résistances",
+      "naissance": 1866,
+      "description": "Antonio Luna (1866-1899) est un général philippin, né à Manille, frère du peintre Juan Luna. Pharmacien et journaliste formé en Espagne, il organise l'armée de la première République et mène la résistance contre les Américains, mais ses méthodes sévères le brouillent avec Aguinaldo. Il est assassiné le 5 juin 1899 à Cabanatuan, par des soldats de la garde présidentielle.",
+      "wikipedia": "Antonio_Luna_(g%C3%A9n%C3%A9ral)",
+      "portrait": {
+        "fichier": "Antonio luna small.jpg",
+        "legende": "Antonio Luna, photographie",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
+      }
+    },
+    {
+      "slug": "gdelpilar",
+      "nom": "Gregorio del Pilar",
+      "classement": "Pilar, Gregorio del",
+      "titre": "Naissance de Gregorio del Pilar",
+      "axe": "Guerres et résistances",
+      "naissance": 1875,
+      "description": "Gregorio del Pilar (1875-1899) est un général philippin, né à Bulacan et surnommé le « plus jeune général » de la révolution, à 23 ans. Chargé de protéger la retraite d'Aguinaldo dans les montagnes du nord de Luçon, il tient le col de Tirad avec soixante hommes face à des centaines d'Américains. Il y est tué le 2 décembre 1899, à 24 ans.",
+      "wikipedia": "Gregorio_del_Pilar",
+      "portrait": {
+        "fichier": "General Gregorio del Pilar 1.jpg",
+        "legende": "Gregorio del Pilar, photographie",
+        "licence": "Domaine public",
+        "auteur": "David P. Barrows"
+      }
+    },
+    {
+      "slug": "gabrielasilang",
+      "nom": "Gabriela Silang",
+      "classement": "Silang, Gabriela",
+      "titre": "Naissance de Gabriela Silang",
+      "axe": "Guerres et résistances",
+      "naissance": 1731,
+      "description": "Gabriela Silang (1731-1763) est une cheffe de la révolte de l'Ilocos contre l'Espagne, née à Santa, dans l'Ilocos Sur. Veuve de Diego Silang, assassiné en mai 1763, elle reprend la direction de la rébellion et la mène pendant quatre mois, à la tête de plusieurs milliers d'hommes. Capturée, elle est pendue à Vigan en septembre 1763, première femme à diriger le mouvement ilocano pour l'indépendance.",
+      "wikipedia": "Gabriela_Silang",
+      "portrait": {
+        "fichier": "Gabriela Silang 1974 stamp of the Philippines.jpg",
+        "legende": "Gabriela Silang, timbre philippin de 1974",
+        "licence": "Domaine public",
+        "auteur": "Philippine Postal Corporation",
+        "nomVisible": true
+      }
+    },
+    {
+      "slug": "taruc",
+      "nom": "Luis Taruc",
+      "classement": "Taruc, Luis",
+      "titre": "Naissance de Luis Taruc",
+      "axe": "Guerres et résistances",
+      "naissance": 1913,
+      "description": "Luis Taruc (1913-2005) est un chef de la guérilla paysanne des Huks, né à San Luis, dans la province de Pampanga. Fondateur de l'armée populaire antijaponaise, il lutte pendant la guerre puis contre le gouvernement, au nom de la réforme agraire, et passe plus de dix ans dans le maquis. Il se rend en 1954, est emprisonné, gracié en 1968, et meurt à Quezon City en 2005.",
+      "wikipedia": "Luis_Taruc",
+      "portrait": {
+        "fichier": "Luis Taruc.jpg",
+        "legende": "Luis Taruc, photographie",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
+      }
+    },
+    {
+      "slug": "escoda",
+      "nom": "Josefa Llanes Escoda",
+      "classement": "Escoda, Josefa Llanes",
+      "titre": "Naissance de Josefa Llanes Escoda",
+      "axe": "Guerres et résistances",
+      "naissance": 1898,
+      "description": "Josefa Llanes Escoda (1898-1945) est une féministe et travailleuse sociale philippine, née à Dingras, dans l'Ilocos Norte. Elle fonde en 1940 les Girl Scouts des Philippines et mène campagne pour le droit de vote des femmes, obtenu en 1937. Arrêtée par les Japonais pour avoir aidé les prisonniers de guerre américains, elle disparaît au fort Santiago, vers 1945.",
+      "wikipedia": "Josefa_Llanes_Escoda",
+      "portrait": {
+        "fichier": "Mrs. Josefa Llanes Escoda in 1941.jpg",
+        "legende": "Josefa Llanes Escoda, photographie de 1941",
+        "licence": "Domaine public",
+        "auteur": "Philippines Magazine",
+        "recadrage": [
+          0.25,
+          0.0,
+          0.65,
+          0.5
+        ]
+      }
+    },
+    {
+      "slug": "burgos",
+      "nom": "José Burgos",
+      "classement": "Burgos, José",
+      "titre": "Naissance de José Burgos",
+      "axe": "Guerres et résistances",
+      "naissance": 1837,
+      "description": "José Burgos (1837-1872) est un prêtre philippin, né à Vigan, porte-parole du clergé séculier indigène contre la domination des ordres religieux espagnols. Accusé d'avoir inspiré la mutinerie de Cavite, il est condamné sans preuve et exécuté au garrot le 17 février 1872 à Manille, avec Mariano Gómez et Jacinto Zamora. Cette exécution marque la jeunesse de Rizal, qui dédiera son second roman aux trois prêtres.",
+      "wikipedia": "Jos%C3%A9_Burgos",
+      "portrait": {
+        "fichier": "Jose burgos PG.jpg",
+        "legende": "José Burgos, portrait",
+        "licence": "Domaine public",
+        "auteur": "Jose N. Sevilla"
+      }
+    },
+    {
+      "slug": "ninoy",
+      "nom": "Ninoy Aquino",
+      "classement": "Aquino, Ninoy",
+      "titre": "Naissance de Ninoy Aquino",
+      "axe": "Guerres et résistances",
+      "naissance": 1932,
+      "description": "Ninoy Aquino (1932-1983) est le principal opposant à Ferdinand Marcos, né à Concepción, dans la province de Tarlac, de son vrai nom Benigno Aquino. Sénateur à 34 ans, emprisonné par Marcos à partir de la loi martiale de 1972, puis exilé aux États-Unis pour se faire soigner, il rentre aux Philippines le 21 août 1983. Il est abattu à sa descente d'avion à l'aéroport de Manille, un assassinat qui déclenche le mouvement conduisant à la chute de la dictature.",
+      "wikipedia": "Benigno_Aquino_Jr.",
+      "portrait": {
+        "fichier": "Benigno Aquino Jr. 1973.jpg",
+        "legende": "Ninoy Aquino, photographie de 1973",
+        "licence": "Domaine public",
+        "auteur": "Malacañang Palace"
+      }
+    },
+    {
+      "slug": "diokno",
+      "nom": "José Diokno",
+      "classement": "Diokno, José",
+      "titre": "Naissance de José Diokno",
+      "axe": "Guerres et résistances",
+      "naissance": 1922,
+      "description": "José Diokno (1922-1987) est un avocat et homme politique philippin, surnommé Ka Pepe, né à Manille, sénateur et ministre de la Justice. Emprisonné de 1972 à 1974 par Marcos, il fonde en 1974 le Free Legal Assistance Group, premier groupe d'avocats des droits de l'homme du pays, et défend les prisonniers politiques. Il préside la Commission des droits de l'homme après la chute de la dictature et meurt d'un cancer en 1987.",
+      "wikipedia": "Jos%C3%A9_W._Diokno",
+      "portrait": {
+        "fichier": "Jose W. Diokno Photo Opportunity in the 1960s.png",
+        "legende": "José Diokno, photographie des années 1960",
+        "licence": "Domaine public",
+        "auteur": "National Library of the Philippines"
+      }
+    },
+    {
+      "slug": "sin",
+      "nom": "Jaime Sin",
+      "classement": "Sin, Jaime",
+      "titre": "Naissance de Jaime Sin",
+      "axe": "Guerres et résistances",
+      "naissance": 1928,
+      "description": "Jaime Sin (1928-2005) est un cardinal philippin, né à New Washington, dans l'Aklan, archevêque de Manille de 1974 à 2003. D'abord prudent face à Marcos, il appelle en février 1986, à la radio, les Manilais à protéger les militaires rebelles réfugiés sur l'avenue EDSA, ce qui déclenche le soulèvement populaire. Il joue un rôle semblable lors de la chute du président Estrada en 2001 et meurt à Manille en 2005.",
+      "wikipedia": "Jaime_Sin",
+      "portrait": {
+        "fichier": "Kardinal Jaime Sin, 1988.jpg",
+        "legende": "Jaime Sin, photographie de 1988",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Ernmuhl at lb.wikipedia"
+      }
+    },
+    {
+      "slug": "rizal",
+      "nom": "José Rizal",
+      "classement": "Rizal, José",
+      "titre": "Naissance de José Rizal",
+      "axe": "Littérature et pensée",
+      "naissance": 1861,
+      "description": "José Rizal (1861-1896) est le héros national des Philippines, né à Calamba, dans la province de Laguna, médecin, ophtalmologue, poète et romancier. Auteur des romans « Noli me tangere » (1887) et « El filibusterismo » (1891), qui dénoncent les abus du pouvoir colonial et des ordres religieux, il fonde en 1892 la Ligue philippine, qui réclame des réformes pacifiques. Accusé d'avoir inspiré la révolution qu'il condamnait, il est fusillé le 30 décembre 1896 à Manille, à 35 ans.",
+      "wikipedia": "Jos%C3%A9_Rizal",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Jose Rizal full.jpg",
+        "legende": "José Rizal, photographie",
+        "recadrage": [
+          0.12,
+          0.0,
+          0.88,
+          0.5
+        ],
+        "licence": "Domaine public",
+        "auteur": "unknown author"
+      }
+    },
+    {
+      "slug": "mdelpilar",
+      "nom": "Marcelo del Pilar",
+      "classement": "Pilar, Marcelo del",
+      "titre": "Naissance de Marcelo del Pilar",
+      "axe": "Littérature et pensée",
+      "naissance": 1850,
+      "description": "Marcelo del Pilar (1850-1896) est un journaliste et poète philippin, né à Bulacan, plus connu sous son nom de plume de Plaridel. Avocat, il dirige à Madrid, à partir de 1889, le journal « La Solidaridad », tribune du mouvement réformiste philippin. Épuisé par la misère et par la tuberculose, il meurt à Barcelone en juillet 1896, quelques semaines avant le début de la révolution.",
+      "wikipedia": "Marcelo_H._del_Pilar",
+      "portrait": {
+        "fichier": "M.H.delPilaryGatmaitan.jpg",
+        "legende": "Marcelo del Pilar, portrait",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
+      }
+    },
+    {
+      "slug": "balagtas",
+      "nom": "Francisco Balagtas",
+      "classement": "Balagtas, Francisco",
+      "titre": "Naissance de Francisco Balagtas",
+      "axe": "Littérature et pensée",
+      "naissance": 1788,
+      "description": "Francisco Balagtas (1788-1862) est un poète philippin, de son vrai nom Francisco Baltazar, né à Bigaa, dans la province de Bulacan, considéré comme le plus grand poète en langue tagalog. Son poème « Florante at Laura », écrit vers 1838, dans lequel on a lu une allégorie de l'oppression coloniale, est une œuvre de référence de la littérature philippine. Il meurt en 1862, et une joute poétique tagalog, le balagtasan, porte son nom.",
+      "wikipedia": "Francisco_Balagtas",
+      "portrait": {
+        "fichier": "Francisco “Balagtas” Baltazar.png",
+        "legende": "Francisco Balagtas, illustration",
+        "licence": "CC BY-SA 4.0",
+        "auteur": "Mattgarciaaa"
+      }
+    },
+    {
+      "slug": "sionil",
+      "nom": "Francisco Sionil José",
+      "classement": "Sionil José, Francisco",
+      "titre": "Naissance de Francisco Sionil José",
+      "axe": "Littérature et pensée",
+      "naissance": 1924,
+      "description": "Francisco Sionil José (1924-2022) est un romancier, poète et journaliste philippin de langue anglaise, né à Rosales, dans le Pangasinan. Son cycle de cinq romans de Rosales, de « Po-on » à « Mass », raconte l'histoire du pays depuis la colonisation, en s'attachant aux injustices sociales. Artiste national pour la littérature en 2001, fondateur de la librairie Solidaridad à Manille, il meurt en 2022, à 97 ans.",
+      "wikipedia": "Francisco_Sionil_Jos%C3%A9",
+      "portrait": {
+        "fichier": "Mr. Francisco Sionil Jose, National Artist for Literature (cropped).jpg",
+        "legende": "Francisco Sionil José, photographie",
+        "licence": "Domaine public",
+        "auteur": "National Historical Commission of the Philippines"
+      }
+    },
+    {
+      "slug": "juanluna",
+      "nom": "Juan Luna",
+      "classement": "Luna, Juan",
+      "titre": "Naissance de Juan Luna",
+      "axe": "Beaux-arts",
+      "naissance": 1857,
+      "description": "Juan Luna (1857-1899) est un peintre philippin, né à Badoc, dans l'Ilocos Norte, frère du général Antonio Luna. Formé à Madrid, à Rome et à Paris, il reçoit en 1884 la médaille d'or de l'Exposition nationale de Madrid pour « Spoliarium », immense toile sur les gladiateurs morts, où les Philippins voient une allégorie de leur sort. Il tue sa femme et sa belle-mère à Paris en 1892, est acquitté, puis meurt à Hong Kong en 1899.",
+      "wikipedia": "Juan_Luna",
+      "portrait": {
+        "fichier": "Luna 1899.png",
+        "legende": "Juan Luna, photographie de 1899",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
+      }
+    },
+    {
+      "slug": "amorsolo",
+      "nom": "Fernando Amorsolo",
+      "classement": "Amorsolo, Fernando",
+      "titre": "Naissance de Fernando Amorsolo",
+      "axe": "Beaux-arts",
+      "naissance": 1892,
+      "description": "Fernando Amorsolo (1892-1972) est un peintre philippin, né à Manille, premier artiste national du pays pour les arts visuels, en 1972. Peintre de portraits et de paysages ruraux, il est connu pour sa maîtrise de la lumière, notamment le contre-jour, et pour ses scènes de rizières, de fêtes et de travaux des champs. Il meurt à Quezon City en 1972.",
+      "wikipedia": "Fernando_Amorsolo",
+      "portrait": {
+        "fichier": "Fernando Amorsolo.png",
+        "legende": "Fernando Amorsolo, photographie",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
+      }
+    },
+    {
+      "slug": "pacitaabad",
+      "nom": "Pacita Abad",
+      "classement": "Abad, Pacita",
+      "titre": "Naissance de Pacita Abad",
+      "axe": "Beaux-arts",
+      "naissance": 1946,
+      "description": "Pacita Abad (1946-2004) est une peintre philippine, née à Basco, dans les îles Batanes. Militante contre le régime de Marcos, exilée aux États-Unis, elle voyage dans plus de cinquante pays et crée un style coloré, le « trapunto », fait de toiles cousues, rembourrées et ornées de perles, de miroirs et de tissus. Ses grandes toiles sont aujourd'hui exposées dans les musées du monde entier, et elle meurt en 2004.",
+      "wikipedia": "Pacita_Abad",
+      "portrait": {
+        "fichier": "Pacita Abad.jpg",
+        "legende": "Pacita Abad, photographie",
+        "licence": "Domaine public",
+        "auteur": "Pacitaabadart"
+      }
+    },
+    {
+      "slug": "abelardo",
+      "nom": "Nicanor Abelardo",
+      "classement": "Abelardo, Nicanor",
+      "titre": "Naissance de Nicanor Abelardo",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1893,
+      "description": "Nicanor Abelardo (1893-1934) est un compositeur philippin, né à San Miguel, dans la province de Bulacan. Professeur au conservatoire de l'Université des Philippines, il compose des œuvres symphoniques et surtout des « kundiman », mélodies d'amour tagalog, dont « Nasaan ka irog » reste l'un des airs les plus aimés du pays. Il meurt à 41 ans, en 1934, à Manille.",
+      "wikipedia": "Nicanor_Abelardo",
+      "portrait": {
+        "fichier": "Nicanor Abelardo Postage Stamp.jpg",
+        "legende": "Nicanor Abelardo, timbre philippin",
+        "licence": "Domaine public",
+        "auteur": "Philippine Postal Corporation",
+        "nomVisible": true
+      }
+    },
+    {
+      "slug": "dolphy",
+      "nom": "Dolphy",
+      "classement": "Dolphy",
+      "titre": "Naissance de Dolphy",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1928,
+      "description": "Dolphy (1928-2012) est un acteur comique philippin, de son vrai nom Rodolfo Vera Quizon, né à Manille, surnommé le « roi de la comédie ». Pendant plus de soixante ans, au cinéma et à la télévision, il incarne avec humour des gens modestes, notamment dans la série « John en Marsha », diffusée à partir de 1973. Il meurt à Makati en 2012.",
+      "wikipedia": "Dolphy",
+      "portrait": {
+        "fichier": "Dolphy.jpg",
+        "legende": "Dolphy, photographie",
+        "licence": "CC BY 3.0",
+        "auteur": "Gerry Edra"
+      }
+    },
+    {
+      "slug": "poe",
+      "nom": "Fernando Poe Jr.",
+      "classement": "Poe, Fernando, Jr.",
+      "titre": "Naissance de Fernando Poe Jr.",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1939,
+      "description": "Fernando Poe Jr. (1939-2004) est un acteur philippin, de son vrai nom Ronald Allan Kelley Poe, né à Manille, surnommé « le roi du cinéma philippin ». Il incarne pendant quarante ans des justiciers populaires dans des films d'action très suivis. Candidat à l'élection présidentielle de mai 2004, battu dans un climat de contestation, il meurt en décembre 2004, à Manille.",
+      "wikipedia": "Fernando_Poe_Jr.",
+      "portrait": {
+        "fichier": "Fernando Poe Jr.jpg",
+        "legende": "Fernando Poe Jr., photographie",
+        "licence": "Domaine public",
+        "auteur": "Philippine Postal Corporation"
+      }
+    },
+    {
+      "slug": "brocka",
+      "nom": "Lino Brocka",
+      "classement": "Brocka, Lino",
+      "titre": "Naissance de Lino Brocka",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1939,
+      "description": "Lino Brocka (1939-1991) est un réalisateur philippin, né à Pilar, dans le Sorsogon, figure majeure du cinéma d'auteur du pays. Ses films sur la pauvreté et les violences urbaines, comme « Maynila, sa mga kuko ng liwanag » (1975) et « Insiang » (1976), premier film philippin sélectionné à Cannes en 1978, déplaisent à la censure de Marcos, qu'il combat aussi comme militant. Il meurt dans un accident de voiture à Quezon City, en 1991.",
+      "wikipedia": "Lino_Brocka",
+      "portrait": {
+        "fichier": "NAAW-Lino-Brocka (cropped).jpg",
+        "legende": "Lino Brocka, photographie",
+        "licence": "Domaine public",
+        "auteur": "National Commission for Culture for Culture and the Arts"
+      }
+    },
+    {
+      "slug": "aunor",
+      "nom": "Nora Aunor",
+      "classement": "Aunor, Nora",
+      "titre": "Naissance de Nora Aunor",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1953,
+      "description": "Nora Aunor (1953-2025) est une chanteuse et actrice philippine, née à Iriga, dans la province de Camarines Sur, surnommée la « superstar » nationale. Venue d'un milieu très pauvre, elle remporte à 14 ans un concours de chant, avant de devenir la plus grande vedette du cinéma philippin, notamment grâce à « Himala » (1982), de Ishmael Bernal. Proclamée artiste nationale, elle meurt à Pasig en avril 2025.",
+      "wikipedia": "Nora_Aunor",
+      "portrait": {
+        "fichier": "Nora Aunor, 2017.jpg",
+        "legende": "Nora Aunor, photographie de 2017",
+        "licence": "CC BY 3.0",
+        "auteur": "Eat Bulaga!"
+      }
+    },
+    {
+      "slug": "fedelmundo",
+      "nom": "Fe del Mundo",
+      "classement": "Mundo, Fe del",
+      "titre": "Naissance de Fe del Mundo",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1911,
+      "description": "Fe del Mundo (1911-2011) est une pédiatre philippine, née à Manille, première femme admise comme étudiante à la faculté de médecine de Harvard, en 1936. Elle fonde en 1957 le premier hôpital pour enfants des Philippines, le Centre médical pour enfants, et consacre plus de quatre-vingts ans à la pédiatrie. Lauréate du prix Ramon Magsaysay en 1977 et scientifique nationale en 1980, elle meurt à 99 ans, en 2011.",
+      "wikipedia": "Fe_del_Mundo",
+      "portrait": {
+        "fichier": "National Scientist Dr. Fe Del Mundo.jpg",
+        "legende": "Fe del Mundo, portrait",
+        "licence": "Domaine public",
+        "auteur": "National Academy of Science and Technology"
+      }
+    },
+    {
+      "slug": "orosa",
+      "nom": "María Orosa",
+      "classement": "Orosa, María",
+      "titre": "Naissance de María Orosa",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1893,
+      "description": "María Orosa (1893-1945) est une chimiste et ingénieure alimentaire philippine, née à Taal, dans le Batangas. Elle étudie les aliments traditionnels, met au point des produits de conservation, dont la sauce de banane, et pendant la guerre invente le Soyalac, boisson nutritive à base de soja, et des biscuits de son de riz pour les prisonniers. Elle est tuée en février 1945 par un obus, pendant la bataille de Manille.",
+      "wikipedia": "Mar%C3%ADa_Orosa",
+      "portrait": {
+        "fichier": "Maria Orosa (1893-1945) sitting.png",
+        "legende": "María Orosa, photographie",
+        "licence": "Domaine public",
+        "auteur": "Anonymous Unknown author"
+      }
+    }
+  ]
+}
