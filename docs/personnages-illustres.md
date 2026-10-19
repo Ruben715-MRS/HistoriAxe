@@ -2219,7 +2219,7 @@ l'apartheid, l'ANC, Rivonia, Sharpeville, Robben Island et la « nation arc-en-c
 
 ### Un bloc : le monde malais (Malaisie, Singapour, Brunei et Timor oriental)
 
-`pan_malais`, « Grandes figures de Malaisie, de Singapour, de Brunei et du Timor oriental » (code `malais`, bloc ; rangé sous « Malaisie, Singapour, Brunei et Timor oriental »,
+`pan_malais`, « Grandes figures du monde malais » (code `malais`, bloc ; rangé sous « Monde malais »,
 entre le Maghreb et la Nouvelle-Zélande) : **33 personnages de quatre pays** — Malaisie 13, Singapour 13, Brunei 4, Timor oriental 3 — de Thomas Stamford Raffles (1781) à Yasmin
 Ahmad (1958). Par axe : 22 Chefs d'État et dirigeants, 3 Musique, spectacle et sport, 3 Littérature et pensée, 2 Guerres et résistances, 2 Sciences, techniques et innovation,
 1 Beaux-arts ; 7 ⭐ et aucune biographie liée. 33 portraits : 20 du domaine public, 2 CC0, 3 CC BY 2.0, 3 CC BY-SA 3.0 et 5 CC BY-SA 4.0. Une figure est née avant 1800, cinq
@@ -2281,9 +2281,9 @@ Bonifacio et Rizal.
 - **Statut américain des images** : même décision que pour l'Indonésie (images d'origine gouvernementale ou d'avant 1946 acceptées) ; Macapagal garde « auteur inconnu ».
 - **Géolocalisation** : aucune figure n'est placée sur l'Atlas.
 
-### Un bloc : le Vietnam, le Cambodge et le Laos (l'ancienne Indochine)
+### Un bloc : l'Indochine (Vietnam, Cambodge et Laos)
 
-`pan_indochine`, « Grandes figures du Vietnam, du Cambodge et du Laos » (code `indochine`, bloc ; rangé sous « Vietnam, Cambodge et Laos », après la Turquie, en dernier) : **38 personnages
+`pan_indochine`, « Grandes figures d'Indochine » (code `indochine`, bloc ; rangé sous « Indochine », entre la Grèce et l'Indonésie) : **38 personnages
 de trois pays** — Vietnam 19, Cambodge 12, Laos 7 — de Suryavarman II (vers 1094) à Đặng Thùy Trâm (1942). Par axe : 20 Chefs d'État et dirigeants, 7 Guerres et résistances, 5 Littérature et pensée,
 4 Musique, spectacle et sport, 2 Beaux-arts, aucune figure pour les Sciences (l'axe est absent du thème) ; 9 ⭐ — Hô Chi Minh, Võ Nguyên Giáp, Trần Hưng Đạo, Nguyễn Du, Thích Nhất Hạnh, Jayavarman VII, Suryavarman II,
 Norodom Sihanouk et Pol Pot — et aucune biographie liée. 38 portraits : 26 du domaine public, 1 CC0, 4 CC BY-SA 3.0, 2 CC BY-SA 4.0, 2 CC BY 3.0, 1 CC BY 4.0, 1 CC BY 2.0 et 1 CC BY-SA 2.0. Dix figures
@@ -2291,7 +2291,7 @@ sont nées avant 1800, huit entre 1800 et 1899, vingt depuis 1900. Les mots-clé
 Luang Prabang), Angkor, l'Annam, le Tonkin, la Cochinchine, le Đại Việt, le Lan Xang, le Việt Minh, les Khmers rouges, le Pathet Lao, Diên Biên Phu et la guerre du Vietnam.
 
 - **Pourquoi ce bloc.** L'Indochine est un cadre colonial, mais les trois pays y ont partagé une administration, des guerres (la guerre d'Indochine, puis celle du Vietnam) et des régimes qui se répondent
-  — Sihanouk, Hô Chi Minh et les princes lao. Le bloc se range par « Vietnam, Cambodge et Laos », les pays dans l'ordre de leur poids. Les mots-clés reprennent « Indochine » pour que la recherche trouve ce nom.
+  — Sihanouk, Hô Chi Minh et les princes lao. Le bloc se range par « Indochine ». Les mots-clés reprennent « Indochine » pour que la recherche trouve ce nom.
 - **Plus de la moitié au Vietnam.** Le Vietnam pèse 19 figures sur 38, soit la moitié exacte : la source déclare `partMaxPays` à 0,55, un choix écrit. Le Laos n'en a que sept, et la culture lao,
   très peu documentée en français (aucun écrivain, aucun peintre, aucun savant lao n'a à la fois un article français et une image libre), en est absente.
 - **Les rois bâtisseurs et la mémoire des guerres.** Suryavarman II (Angkor Vat) et Jayavarman VII (le Bayon) représentent l'empire khmer ; Fa Ngum et Setthathirath le Lan Xang ; Lê Thánh Tông, Gia Long,
@@ -2699,7 +2699,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
      figures juives (Edmond Amran El Maleh, Habiba Msika) et en a laissé cinq de côté (Cheikh
      Raymond, Reinette l'Oranaise, Salim Halali, Albert Memmi, Abraham Serfaty).
   2. **Pays seuls** : **l'Afrique du Sud** (voir « Un pays à part : l'Afrique du Sud »), **l'Iran** (voir « Un pays à part : l'Iran »), **le Brésil** (qui n'entre pas dans l'Amérique « hispanique » ; voir « Un pays à part : le Brésil »), **la Turquie** (voir « Un pays à part : la Turquie »), **le Japon** (voir « Un pays à part : le Japon ») et **la Russie** (voir « Un pays à part : la Russie ») et **l'Australie** (voir « Un pays à part : l'Australie ») sont écrits.
-  3. **Blocs** : l'Asie du Sud-Est (l'Indonésie est écrite, voir « Un pays à part : l'Indonésie » ; le monde malais est écrit, voir « Un bloc : le monde malais » ; les Philippines sont écrites, voir « Un pays à part : les Philippines » ; l'Indochine — Vietnam, Cambodge, Laos — est écrite, voir « Un bloc : le Vietnam, le Cambodge et le Laos » ; la Thaïlande avec la Birmanie est écrite, voir « Un bloc : la Thaïlande et la Birmanie » ; restent le Brunei déjà au bloc malais, la Papouasie-Nouvelle-Guinée et les Mélanésiens), la Mongolie (l'Asie centrale est écrite, voir « Un bloc : l'Asie centrale et
+  3. **Blocs** : l'Asie du Sud-Est (l'Indonésie est écrite, voir « Un pays à part : l'Indonésie » ; le monde malais est écrit, voir « Un bloc : le monde malais » ; les Philippines sont écrites, voir « Un pays à part : les Philippines » ; l'Indochine — Vietnam, Cambodge, Laos — est écrite, voir « Un bloc : l'Indochine » ; la Thaïlande avec la Birmanie est écrite, voir « Un bloc : la Thaïlande et la Birmanie » ; restent le Brunei déjà au bloc malais, la Papouasie-Nouvelle-Guinée et les Mélanésiens), la Mongolie (l'Asie centrale est écrite, voir « Un bloc : l'Asie centrale et
      l'Afghanistan »), le Caucase, la Corée (`KR`/`KP`), l'Afrique de
      l'Ouest, l'Afrique de l'Est et la Corne, l'Afrique australe et l'océan
      Indien (sans l'Afrique du Sud). L'Afrique centrale est écrite (voir « Un bloc : l'Afrique centrale »). « Nouvelle-Zélande et Pacifique » est écrit (voir « Un bloc : la

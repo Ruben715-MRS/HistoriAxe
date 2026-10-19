@@ -96,9 +96,9 @@ test('Personnages illustres : deux sous-catégories, chacune avec sa note et son
         .toHaveText(["Grandes figures d'Afrique centrale", "Grandes figures d'Afrique de l'Ouest", "Grandes figures d'Afrique du Sud", "Grandes figures d'Allemagne, d'Autriche et de Suisse", "Grandes figures d'Amérique hispanique",
             "Grandes figures d'Asie centrale", "Grandes figures d'Australie", 'Grandes figures des Balkans', 'Grandes figures du Benelux', 'Grandes figures du Brésil', 'Grandes figures du Canada', 'Grandes figures de Chine',
             "Grandes figures d'Égypte", "Grandes figures d'Espagne", 'Grandes figures des États-Unis',
-            'Grandes figures de France', 'Grandes figures de Grèce', "Grandes figures d'Indonésie", "Grandes figures d'Iran", "Grandes figures d'Israël", "Grandes figures d'Italie", 'Grandes figures du Japon',
-            'Grandes figures du Machrek et de la péninsule Arabique', 'Grandes figures du Maghreb', 'Grandes figures de Malaisie, de Singapour, de Brunei et du Timor oriental', 'Grandes figures de Nouvelle-Zélande et du Pacifique', 'Grandes figures des pays baltes', 'Grandes figures des Philippines', 'Grandes figures du Portugal',
-            'Grandes figures du Royaume-Uni', 'Grandes figures de Russie', 'Grandes figures de Scandinavie', 'Grandes figures du sous-continent indien', 'Grandes figures de Thaïlande et de Birmanie', 'Grandes figures de Turquie', 'Grandes figures du Vietnam, du Cambodge et du Laos']);
+            'Grandes figures de France', 'Grandes figures de Grèce', "Grandes figures d'Indochine", "Grandes figures d'Indonésie", "Grandes figures d'Iran", "Grandes figures d'Israël", "Grandes figures d'Italie", 'Grandes figures du Japon',
+            'Grandes figures du Machrek et de la péninsule Arabique', 'Grandes figures du Maghreb', 'Grandes figures du monde malais', 'Grandes figures de Nouvelle-Zélande et du Pacifique', 'Grandes figures des pays baltes', 'Grandes figures des Philippines', 'Grandes figures du Portugal',
+            'Grandes figures du Royaume-Uni', 'Grandes figures de Russie', 'Grandes figures de Scandinavie', 'Grandes figures du sous-continent indien', 'Grandes figures de Thaïlande et de Birmanie', 'Grandes figures de Turquie']);
 });
 
 test('la fiche d’un personnage montre son portrait, sa légende, son crédit et sa biographie', async ({ page }) => {
@@ -1135,7 +1135,7 @@ test('la recherche — « malaisie », « singapour », « brunei », « timor �
     await page.locator('#screen-home').click();
     for (const mot of ['malaisie', 'malaisien', 'singapour', 'brunei', 'timor oriental', 'kuala lumpur', 'penang', 'malacca', 'sabah', 'sarawak', 'raffles', 'merdeka']) {
         await page.locator('#theme-search-input').fill(mot);
-        const resultat = page.locator('#theme-search-results .search-result-item', { hasText: 'Grandes figures de Malaisie, de Singapour, de Brunei et du Timor oriental' });
+        const resultat = page.locator('#theme-search-results .search-result-item', { hasText: 'Grandes figures du monde malais' });
         await expect(resultat, `« ${mot} » doit mener au panthéon du monde malais`).toHaveCount(1);
         await expect(resultat.locator('.search-result-path')).toContainText('Personnages illustres › Panthéons');
     }
@@ -1172,12 +1172,12 @@ test('le Vietnam, le Cambodge et le Laos : chacune de leurs figures a son portra
     expect(avecBiographie).toBe(0);
 });
 
-test('la recherche — « vietnam », « cambodge », « laos », « angkor », « hanoi », « indochine » — mène au panthéon du Vietnam, du Cambodge et du Laos', async ({ page }) => {
+test('la recherche — « vietnam », « cambodge », « laos », « angkor », « hanoi », « indochine » — mène au panthéon de l’Indochine', async ({ page }) => {
     await page.locator('#screen-home').click();
     for (const mot of ['vietnam', 'vietnamien', 'cambodge', 'khmer', 'laos', 'laotien', 'angkor', 'hanoi', 'saigon', 'indochine', 'mekong', 'vientiane']) {
         await page.locator('#theme-search-input').fill(mot);
-        const resultat = page.locator('#theme-search-results .search-result-item', { hasText: 'Grandes figures du Vietnam, du Cambodge et du Laos' });
-        await expect(resultat, `« ${mot} » doit mener au panthéon du Vietnam, du Cambodge et du Laos`).toHaveCount(1);
+        const resultat = page.locator('#theme-search-results .search-result-item', { hasText: "Grandes figures d'Indochine" });
+        await expect(resultat, `« ${mot} » doit mener au panthéon de l'Indochine`).toHaveCount(1);
         await expect(resultat.locator('.search-result-path')).toContainText('Personnages illustres › Panthéons');
     }
 });

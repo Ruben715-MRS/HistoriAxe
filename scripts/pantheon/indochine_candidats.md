@@ -1,4 +1,4 @@
-# Vietnam, Cambodge et Laos — candidats examinés
+# Indochine (Vietnam, Cambodge et Laos) — candidats examinés
 
 Liste sortie de Wikidata (personnes disparues de chaque pays, classées par nombre de langues) et d'une vérification des titres exacts de fr.wikipedia ; les portraits viennent du Wikidata `P18` (image principale)
 puis de la page de fichier de Commons (licence lue par `fetch_portraits.py`).

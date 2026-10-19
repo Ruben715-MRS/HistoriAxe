@@ -456,13 +456,13 @@ test('« Grandes figures des Balkans » : chaque ancre porte le pays de son év�
     verifierPantheonDeBloc('pan_balkans', 41, 10);
 });
 
-test('« Grandes figures de Malaisie, de Singapour, de Brunei et du Timor oriental » : chaque ancre porte le pays de son événement, et la session se joue', () => {
+test('« Grandes figures du monde malais » : chaque ancre porte le pays de son événement, et la session se joue', () => {
     // Quatre pays, dont le Timor oriental (2 figures) et Brunei (4) : aucun ne doit manquer parmi les
     // ancres, et la Malaisie et Singapour (13 chacune) ne doivent pas les faire disparaître.
     verifierPantheonDeBloc('pan_malais', 43, 4);
 });
 
-test('« Grandes figures du Vietnam, du Cambodge et du Laos » : chaque ancre porte le pays de son événement, et la session se joue', () => {
+test('« Grandes figures d’Indochine » : chaque ancre porte le pays de son événement, et la session se joue', () => {
     // Trois pays : le Laos (7 figures) et le Cambodge (12) ne doivent pas disparaître derrière le Vietnam (19)
     // parmi les ancres.
     verifierPantheonDeBloc('pan_indochine', 47, 3);
