@@ -118,6 +118,12 @@ KEEP_AS_WRITTEN = {
     'Gajah Mada', 'Iskandar Muda', 'Sultan Agung', 'Tan Malaka', 'Cut Nyak Dhien', 'Untung Surapati', 'Arung Palakka', 'Bung Tomo',
     'Munir Said Thalib', 'Pramoedya Ananta Toer', 'Sapardi Djoko Damono', 'Rasuna Said', 'Raden Saleh', 'Titiek Puspa', 'Ruhana Kuddus',
     'Teguh Karya', 'Sumitro Djojohadikusumo',
+    # Monde malais : noms malais à patronyme (« Abdul Razak Hussein », « Yusof Ishak »), souverains rangés par leur nom de règne, noms chinois qui
+    # commencent par le nom de famille (« Lee Kuan Yew », « Wee Kim Wee »).
+    'Tunku Abdul Rahman', 'Abdullah Ahmad Badawi', 'Abdul Razak Hussein', 'Abdul Halim de Kedah', 'Azlan Shah de Perak', 'Wu Lien-teh',
+    'Yasmin Ahmad', 'Shahnon Ahmad', 'Ungku Abdul Aziz', 'Nik Abdul Aziz Nik Mat', 'Tan Cheng Lock', 'Lee Kuan Yew', 'Yusof Ishak',
+    'Wee Kim Wee', 'Ong Teng Cheong', 'Lim Bo Seng', 'Lee Choo Neo', 'Omar Ali Saifuddien III', 'Muhammad Jamalul Alam II',
+    'Ahmad Tajuddin', 'Hashim Jalilul Alam Aqamaddin',
 }
 
 # Écrits à la main : (nom de la source) → nom de classement.
@@ -219,6 +225,10 @@ EXCEPTIONS = {
     # Indonésie : un nom néerlandais à particule, un titre balinais devant le nom.
     'Ernest Douwes Dekker': 'Douwes Dekker, Ernest',
     'I Gusti Ngurah Rai': 'Ngurah Rai, I Gusti',
+    # Philippines : noms composés qui se rangent sous leur dernier élément.
+    'Fernando Poe Jr.': 'Poe, Fernando, Jr.',
+    'Francisco Sionil José': 'Sionil José, Francisco',
+    'Miriam Defensor Santiago': 'Defensor Santiago, Miriam',
     'Allal El Fassi': 'El Fassi, Allal',
     'Moktar Ould Daddah': 'Ould Daddah, Moktar',
     'Abou el Kacem Chebbi': 'Chebbi, Abou el Kacem',
