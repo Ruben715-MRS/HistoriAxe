@@ -57,7 +57,7 @@
       "wikipedia": "Airlangga",
       "portrait": {
         "fichier": "Airlangga.jpg",
-        "legende": "Airlangga représenté en Vishnu monté sur Garuda, statue de Belahan (Xe-XIe siècle) : l'effigie sculptée d'un roi divinisé, sans portrait contemporain",
+        "legende": "Airlangga représenté en Vishnu monté sur Garuda, statue de Belahan conservée au musée de Trowulan : l'effigie sculptée d'un roi divinisé, sans portrait contemporain",
         "licence": "CC BY-SA 3.0",
         "auteur": "Gunawan Kartapranata"
       }
@@ -155,24 +155,15 @@
       "wikipedia": "Sutan_Sjahrir",
       "portrait": {
         "fichier": "Sutan Sjahrir sidang pleno 1947.jpg",
-        "legende": "Sutan Sjahrir, photographie de 1947",
+        "legende": "Sutan Sjahrir à la tribune, photographie de 1947",
         "licence": "Domaine public",
-        "auteur": "Indonesian Press Photo Service"
-      }
-    },
-    {
-      "slug": "suharto",
-      "nom": "Suharto",
-      "classement": "Suharto",
-      "titre": "Naissance de Suharto",
-      "axe": "Chefs d'État et dirigeants",
-      "naissance": 1921,
-      "description": "Suharto (1921-2008) est le deuxième président de l'Indonésie, qu'il dirige de 1967 à 1998. Général né près de Yogyakarta, il écrase la tentative de coup d'État du 30 septembre 1965, dirige la répression anticommuniste qui fait au moins 500 000 morts, puis évince Sukarno et instaure l'« Ordre nouveau », un régime autoritaire et tourné vers le développement. Accusé d'avoir amassé une fortune colossale, il doit démissionner en mai 1998, sous la pression de la crise financière asiatique et des émeutes, et meurt sans avoir été jugé.",
-      "wikipedia": "Soeharto",
-      "essentiel": true,
-      "portrait": {
-        "fichier": "Official portrait of Suharto, 1968.png",
-        "legende": "Suharto, portrait officiel de 1968"
+        "auteur": "Indonesian Press Photo Service",
+        "recadrage": [
+          0.0,
+          0.055,
+          0.48,
+          0.875
+        ]
       }
     },
     {
@@ -266,7 +257,7 @@
       "wikipedia": "Tan_Malaka",
       "portrait": {
         "fichier": "TanMalaka DariPendjara ed3.jpg",
-        "legende": "Tan Malaka, photographie reproduite en 1947",
+        "legende": "Tan Malaka, photographie",
         "licence": "Domaine public",
         "auteur": "National Library of the Republic of Indonesia"
       }
@@ -282,7 +273,7 @@
       "wikipedia": "Agus_Salim",
       "portrait": {
         "fichier": "Hadji Agus Salim, 10 Orang Indonesia Terbesar Sekarang (1952), p118.jpg",
-        "legende": "Agus Salim, photographie des années 1950",
+        "legende": "Agus Salim, photographie vers 1952",
         "licence": "Domaine public",
         "auteur": "Written by St. Rais Alamsjah, published by Mutiara"
       }
@@ -298,7 +289,7 @@
       "wikipedia": "Oemar_Said_Tjokroaminoto",
       "portrait": {
         "fichier": "HOS Tjokroaminoto, 20 Mei Pelopor 17 Agustus, p43.jpg",
-        "legende": "Tjokroaminoto, photographie de 1950",
+        "legende": "Tjokroaminoto, portrait photographique",
         "licence": "Domaine public",
         "auteur": "Uncredited."
       }
@@ -395,7 +386,7 @@
       "essentiel": true,
       "portrait": {
         "fichier": "Portret van Diponegoro, Adrianus Johannes Bik, 1830.jpg",
-        "legende": "Diponegoro, portrait dessiné par Adrianus Johannes Bik en 1830",
+        "legende": "Diponegoro, dessin d'Adrianus Johannes Bik, 1830, fait de son vivant",
         "licence": "CC0 (domaine public)",
         "auteur": "Rijksmuseum"
       }
@@ -411,9 +402,10 @@
       "wikipedia": "Cut_Nyak_Dhien",
       "portrait": {
         "fichier": "Cut Nyak Dhien portrait.jpg",
-        "legende": "Cut Nyak Dhien, portrait du billet de 10 000 roupies de 1998",
+        "legende": "Cut Nyak Dhien, portrait imprimé sur un billet de la Banque d'Indonésie : une représentation posthume",
         "licence": "Domaine public",
-        "auteur": "Bank of Indonesia"
+        "auteur": "Bank of Indonesia",
+        "nomVisible": true
       }
     },
     {
@@ -443,9 +435,15 @@
       "wikipedia": "Arung_Palakka",
       "portrait": {
         "fichier": "Potret Arung Palakka di Museum La Galigo, Makassar.jpg",
-        "legende": "Arung Palakka, portrait peint conservé au musée La Galigo de Makassar",
+        "legende": "Arung Palakka, portrait peint posthume, conservé au musée La Galigo de Makassar",
         "licence": "CC BY-SA 4.0",
-        "auteur": "Wadaihangit"
+        "auteur": "Wadaihangit",
+        "recadrage": [
+          0.05,
+          0.14,
+          0.99,
+          0.927
+        ]
       }
     },
     {
@@ -493,7 +491,7 @@
       "essentiel": true,
       "portrait": {
         "fichier": "Bung Tomo.jpg",
-        "legende": "Bung Tomo, photographie d'Alex Mendur",
+        "legende": "Bung Tomo haranguant la foule, photographie de 1945",
         "licence": "Domaine public",
         "auteur": "Alex Mendur (also Alex Mendoer) Uploaded by fr:Utilisateur:Inconnu"
       }
@@ -509,7 +507,7 @@
       "wikipedia": "I_Gusti_Ngurah_Rai",
       "portrait": {
         "fichier": "Gusti ngurah rai.jpg",
-        "legende": "I Gusti Ngurah Rai, portrait",
+        "legende": "I Gusti Ngurah Rai, portrait peint posthume",
         "licence": "Domaine public",
         "auteur": "Direktorat K2KRS Kepahlawanan, Keperintisan, Kesetiakawanan dan Restorasi Sosial"
       }
@@ -528,22 +526,6 @@
         "legende": "Oerip Soemohardjo, photographie de 1947",
         "licence": "Domaine public",
         "auteur": "Uncredited, possibly IPPHOS (Indonesia Press Photo Service)"
-      }
-    },
-    {
-      "slug": "munir",
-      "nom": "Munir Said Thalib",
-      "classement": "Munir Said Thalib",
-      "titre": "Naissance de Munir Said Thalib",
-      "axe": "Guerres et résistances",
-      "naissance": 1965,
-      "description": "Munir Said Thalib (1965-2004) est un militant indonésien des droits de l'homme, né à Malang. Fondateur de la Commission des disparus et des victimes de violences (KontraS) en 1998, il enquête sur les enlèvements d'étudiants commis par l'armée à la fin du régime de Suharto et défend paysans et ouvriers. Il meurt empoisonné à l'arsenic le 7 septembre 2004, pendant un vol de Jakarta vers Amsterdam, et les commanditaires de son assassinat n'ont jamais été condamnés.",
-      "wikipedia": "Munir_Saïd_Thalib",
-      "portrait": {
-        "fichier": "Munir Said Thalib and Friends.jpg",
-        "legende": "Munir Said Thalib, photographie de 2004",
-        "licence": "CC BY-SA 3.0",
-        "auteur": "Sutanandika"
       }
     },
     {
@@ -574,7 +556,7 @@
       "wikipedia": "Dewi_Sartika",
       "portrait": {
         "fichier": "Dewi Sartika.jpg",
-        "legende": "Dewi Sartika, photographie vers 1900",
+        "legende": "Dewi Sartika, photographie du début du XXe siècle",
         "licence": "Domaine public",
         "auteur": "Unknown author Unknown author"
       }
@@ -606,24 +588,9 @@
       "wikipedia": "Chairil_Anwar",
       "portrait": {
         "fichier": "Chairil Anwar.jpg",
-        "legende": "Chairil Anwar, photographie vers 1949",
+        "legende": "Chairil Anwar, photographie d'avant 1949",
         "licence": "Domaine public",
         "auteur": "Ministry of Information, Republic of Indonesia"
-      }
-    },
-    {
-      "slug": "pramoedya",
-      "nom": "Pramoedya Ananta Toer",
-      "classement": "Pramoedya Ananta Toer",
-      "titre": "Naissance de Pramoedya Ananta Toer",
-      "axe": "Littérature et pensée",
-      "naissance": 1925,
-      "description": "Pramoedya Ananta Toer (1925-2006) est le plus grand romancier indonésien, né à Blora, à Java, emprisonné sous les Néerlandais, sous Sukarno puis sous Suharto. Détenu de 1965 à 1979, dont dix ans sur l'île de Buru, il y compose oralement la tétralogie de Buru, de « Bumi Manusia » (1980) à « Rumah Kaca » (1988), qui raconte l'éveil du nationalisme indonésien. Interdits en Indonésie sous Suharto, ses livres sont traduits dans plus de trente langues, et il meurt à Jakarta en 2006.",
-      "wikipedia": "Pramoedya_Ananta_Toer",
-      "essentiel": true,
-      "portrait": {
-        "fichier": "Pramoedya Ananta Toer, Pekan Buku Indonesia 1954, p214.jpg",
-        "legende": "Pramoedya Ananta Toer, photographie de 1954"
       }
     },
     {
@@ -701,7 +668,7 @@
       "wikipedia": "Rasuna_Said",
       "portrait": {
         "fichier": "Rasuna Said.jpg",
-        "legende": "Rasuna Said, photographie vers 1950",
+        "legende": "Rasuna Said, portrait vers 1950",
         "licence": "Domaine public",
         "auteur": "Unknown author Unknown author"
       }
@@ -719,7 +686,8 @@
         "fichier": "Maria Walanda Maramis 1999 Indonesia stamp.jpg",
         "legende": "Maria Walanda Maramis, timbre indonésien de 1999",
         "licence": "Domaine public",
-        "auteur": "Unknown author Unknown author"
+        "auteur": "Unknown author Unknown author",
+        "nomVisible": true
       }
     },
     {
@@ -767,23 +735,15 @@
       "wikipedia": "Ismail_Marzuki",
       "portrait": {
         "fichier": "Ismail Marzuki.jpg",
-        "legende": "Ismail Marzuki, photographie d'avant 1958",
+        "legende": "Ismail Marzuki au piano, photographie d'avant 1958",
         "licence": "Domaine public",
-        "auteur": "Unknown author Unknown author"
-      }
-    },
-    {
-      "slug": "usmar",
-      "nom": "Usmar Ismail",
-      "classement": "Ismail, Usmar",
-      "titre": "Naissance d'Usmar Ismail",
-      "axe": "Musique, spectacle et sport",
-      "naissance": 1921,
-      "description": "Usmar Ismail (1921-1971) est un cinéaste indonésien, né à Bukittinggi, considéré comme le père du cinéma national. Il fonde en 1950 la société de production Perfini et réalise la même année « Darah dan Doa » (« Sang et prière »), tenu pour le premier film vraiment indonésien, qui suit la longue marche d'une division de l'armée. Le premier jour de tournage, le 30 mars, est devenu la Journée du cinéma national.",
-      "wikipedia": "Usmar_Ismail",
-      "portrait": {
-        "fichier": "Usmar Ismail Perfini booklet p29-restoration.JPG",
-        "legende": "Usmar Ismail, photographie vers 1950"
+        "auteur": "Unknown author Unknown author",
+        "recadrage": [
+          0.56,
+          0.0,
+          0.96,
+          0.71
+        ]
       }
     },
     {
@@ -829,23 +789,9 @@
       "wikipedia": "Chrisye",
       "portrait": {
         "fichier": "Chrisye, Jakarta Govt website.jpg",
-        "legende": "Chrisye, photographie",
+        "legende": "Chrisye, portrait",
         "licence": "Domaine public",
         "auteur": "Unknown author Unknown author"
-      }
-    },
-    {
-      "slug": "titiek",
-      "nom": "Titiek Puspa",
-      "classement": "Titiek Puspa",
-      "titre": "Naissance de Titiek Puspa",
-      "axe": "Musique, spectacle et sport",
-      "naissance": 1937,
-      "description": "Titiek Puspa (1937-2025) est une chanteuse, compositrice et actrice indonésienne, née Sudarwati à Tanjung, à Kalimantan Sud. Révélée dans les années 1950, elle écrit des centaines de chansons, dont « Kupu-Kupu Malam » (« Papillon de nuit »), et reste sur scène pendant plus de soixante ans. Elle meurt à Jakarta en avril 2025.",
-      "wikipedia": "Titiek_Puspa",
-      "portrait": {
-        "fichier": "Titiek Puspa posing Favorita's Magazine Vol 23 1967.png",
-        "legende": "Titiek Puspa, photographie de 1967"
       }
     },
     {
@@ -943,34 +889,6 @@
         "legende": "Ruhana Kuddus, photographie vers 1900",
         "licence": "Domaine public",
         "auteur": "Unknown author Unknown author"
-      }
-    },
-    {
-      "slug": "sumitro",
-      "nom": "Sumitro Djojohadikusumo",
-      "classement": "Sumitro Djojohadikusumo",
-      "titre": "Naissance de Sumitro Djojohadikusumo",
-      "axe": "Littérature et pensée",
-      "naissance": 1917,
-      "description": "Sumitro Djojohadikusumo (1917-2001) est un économiste et homme d'État indonésien, né à Gombong, à Java, docteur de l'école de commerce de Rotterdam. Ministre du Commerce, des Finances puis de la Recherche, doyen de la faculté d'économie de l'université d'Indonésie, il y forme les futurs « technocrates » du pays. Rallié en 1957 à la rébellion régionale, il vit dix ans en exil, puis revient en 1967 conseiller Suharto.",
-      "wikipedia": "Sumitro_Djojohadikusumo",
-      "portrait": {
-        "fichier": "Soemitro Djojohadikoesoemo, Menteri Negara Riset (1973).jpg",
-        "legende": "Sumitro Djojohadikusumo, portrait officiel de 1973"
-      }
-    },
-    {
-      "slug": "affandi",
-      "nom": "Affandi",
-      "classement": "Affandi",
-      "titre": "Naissance d'Affandi",
-      "axe": "Beaux-arts",
-      "naissance": 1907,
-      "description": "Affandi (1907-1990) est un peintre expressionniste indonésien, né à Cirebon, à Java, connu pour peindre directement avec les doigts, en pressant la couleur hors du tube. Autoportraits, scènes de marché, paysages et portraits, ses toiles aux couleurs vives lui valent une reconnaissance internationale, jusqu'à la Biennale de Venise en 1954. Il fonde à Yogyakarta un musée de ses œuvres, ouvert en 1974, et meurt en 1990.",
-      "wikipedia": "Affandi",
-      "portrait": {
-        "fichier": "Affandi 1997 Indonesia stamp.jpg",
-        "legende": "Affandi, timbre indonésien de 1997"
       }
     },
     {

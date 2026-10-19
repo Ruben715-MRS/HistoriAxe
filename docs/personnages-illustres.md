@@ -11,7 +11,7 @@ ne posent pas la même question :
 | | Un thème, c'est | Une date, c'est | On le joue par |
 |---|---|---|---|
 | **Biographies** | une vie (360 thèmes, en 12 domaines) | une étape de cette vie | étape de la vie |
-| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Turquie, le Japon, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes) | la naissance d'un personnage | domaine |
+| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Turquie, le Japon, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Indonésie) | la naissance d'un personnage | domaine |
 
 Le déplacement ne coûte aucune migration : les 360 thèmes gardent leurs
 identifiants, et rien de ce que le joueur a sauvegardé (favoris, révision,
@@ -2108,6 +2108,60 @@ Croatie 25, Bulgarie 17, Albanie 11, Bosnie-Herzégovine 7, Moldavie 6, Macédoi
   taille de l'original.
 - **Géolocalisation** : seul Tesla, qui a une biographie, est placé sur l'Atlas (Smiljan, comme sa biographie).
 
+### Un pays à part : l'Indonésie
+
+`pan_id`, « Grandes figures d'Indonésie » (code `id`, pays) : **52 personnages**, d'Airlangga (vers 1002) à Chrisye (1949). Par axe : 20 Chefs d'État et
+dirigeants, 13 Littérature et pensée, 9 Guerres et résistances, 6 Musique, spectacle et sport, 3 Sciences, techniques et innovation, 1 Beaux-arts ; 9 ⭐ et
+aucune biographie liée. 52 portraits (1,3 Mo) : 39 du domaine public, 2 CC0, 1 CC BY 4.0, 5 CC BY-SA 3.0, 4 CC BY-SA 3.0 NL et 1 CC BY-SA 4.0. Sept figures sont nées avant 1800, quinze
+entre 1800 et 1899, trente depuis 1900 : le thème est celui de la naissance de la nation, des fondateurs de Budi Utomo et du Sarekat Islam aux
+ministres de la République. Les mots-clés portent le pays et ses adjectifs, les grandes îles (Java, Sumatra, Bali, Sulawesi, Bornéo), les villes
+(Jakarta, Batavia, Surabaya, Yogyakarta, Bandung), Aceh, les royaumes (Majapahit, Mataram), les Indes néerlandaises, le Pancasila et Borobudur.
+
+- **Un pays, pas un bloc.** `pan_id`, aucun champ `pays` — aucun invité d'un autre État — et « Pendant ce temps, ailleurs… » le compte comme `thm_id`,
+  l'« Histoire de l'Indonésie ». Le thème se range par « Indonésie », entre la Grèce et l'Iran. Il n'est qu'un des thèmes prévus pour l'Asie du Sud-Est :
+  la Malaisie, Singapour, Brunei et le Timor oriental, puis l'Indochine, la Thaïlande et la Birmanie, puis les Philippines attendent chacun leur tour (voir « Ce qui
+  n'est pas fait »). Raffles n'est donc pas ici : il revient au futur bloc malais, comme le décide la règle « celui qui l'honore le plus ».
+- **Une liste que la règle de l'article français a réduite de moitié.** 114 candidats avaient été examinés, 73 retenus après les règles sur les vivants et les
+  images ; vingt et un d'entre eux n'ont **aucun article sur Wikipédia en français** et sont écartés, comme ailleurs : Raden Wijaya (le fondateur de
+  Majapahit n'a qu'une entrée dans l'article « Wijaya »), Mohammad Husni Thamrin, Soepomo, Imam Bonjol, Teuku Umar, Ahmad Yani, Pangeran Antasari,
+  Hamengkubuwono Ier, Didi Kempot, W. S. Rendra, Sutan Takdir Alisjahbana, Ranggawarsita, Marah Rusli, S. Sudjojono, Basuki Abdullah, Friedrich
+  Silaban, Ki Nartosabdho, Sardjito, Herman Johannes, Marie Thomas et Soedjatmoko. Les Beaux-arts et les Sciences en sortent les plus
+  maigres : un seul peintre (Raden Saleh), trois savants. C'est un manque de l'encyclopédie plus que de l'histoire, et la liste se rouvrira si des articles
+  paraissent.
+- **Pas de vivants, pas d'entrepreneurs, pas de sportifs de palmarès.** Joko Widodo, Megawati, Susilo Bambang Yudhoyono, Prabowo Subianto, Anggun,
+  Rhoma Irama, Iwan Fals, Christine Hakim, Iko Uwais, les badistes (Rudy Hartono, Liem Swie King, Susy Susanti, Taufik Hidayat…) et les boxeurs (Ellyas Pical,
+  Chris John) sont dehors ; les fortunes (Liem Sioe Liong, Oei Tiong Ham) aussi. Aucun sportif indonésien n'entre : les records restent aux Biographies.
+- **Dates retenues quand les sources divergent.** Airlangga est daté de « vers 1002 », comme Wikipédia en anglais (d'autres sources donnent 991), et son règne de
+  1019 à 1045 ; Gajah Mada de « vers 1290-vers 1364 », comme le dit l'article français ; Iskandar Muda de « vers 1583 », Cut Nyak Dhien de « vers 1848 », Untung
+  Surapati de « vers 1660 », Raden Saleh de « vers 1811 ». Tan Malaka est de 1897 (l'état civil, que l'article français donne ; on lit parfois 1894). Pangeran Antasari,
+  né en 1797 ou en 1809 selon les sources, aurait été daté de « vers 1809 », mais il n'a pas d'article français. Sultan Agung est mort en 1645 pour la plupart des sources,
+  en 1646 pour l'infobox de l'article français : 1645 est retenu. Hasyim Asy'ari est né en 1871 (1875 pour d'autres sources).
+- **Où l'on range qui.** Habibie, ingénieur aéronautique avant d'être le troisième président, est avec les Sciences, comme le juriste Mochtar Kusumaatmadja (l'État
+  archipélagique, la Convention de 1982) et le médecin Johannes Leimena ; l'économiste Sumitro Djojohadikusumo, avec la pensée, comme Adam Smith ; Hasyim Asy'ari et Hamka
+  avec la pensée aussi ; Sudirman, Nasution, Bung Tomo et Ngurah Rai avec les Guerres et résistances ; Sukarno, Hatta, Sjahrir, Natsir, Amir Sjarifuddin
+  avec les dirigeants, comme les nationalistes d'avant 1945 (Tjokroaminoto, Soetomo, Ki Hajar Dewantara, Douwes Dekker, Ratulangi). Trois chefs de
+  guerre du XIXe siècle que la liste prévoyait (Imam Bonjol, Teuku Umar, Antasari) sont absents faute d'article ; Diponegoro et Cut Nyak Dhien tiennent seuls ce siècle.
+- **Six femmes** : Kartini, Dewi Sartika, Maria Walanda Maramis et Ruhana Kuddus pour l'éducation et la presse des femmes, Rasuna Said pour la politique, Cut Nyak Dhien pour la
+  guerre d'Aceh.
+- **Des portraits souvent indirects**, et les légendes le disent : deux œuvres sculptées (Airlangga en Vishnu à Belahan, la statue moderne de Gajah Mada), cinq tableaux
+  (Iskandar Muda, Sultan Agung, Surapati, Arung Palakka, Ngurah Rai), un dessin fait de son vivant (Diponegoro, par A. J. Bik en 1830, Rijksmuseum, CC0), un autoportrait
+  (Raden Saleh), un billet de la Banque d'Indonésie (Cut Nyak Dhien) et un timbre de 1999 (Maria Walanda Maramis) — tous deux `nomVisible`, le nom étant imprimé dans l'image.
+  Trois sont recadrés dans une image plus large : Sjahrir (à la tribune, visage au bord gauche), Arung Palakka (le tableau, dans son cadre) et Ismaïl Marzuki (au piano, visage à
+  droite) ; ce dernier a été recadré **à la main**, depuis la miniature de 500 pixels que Commons avait fournie, faute de pouvoir la retélécharger.
+- **Statut américain des images : à relire.** Quarante et un portraits sont du « domaine public » ou CC0, et le script a lu la licence déclarée par Commons, non le statut américain,
+  qu'il ne vérifie pas. La plupart sont des œuvres officielles (portraits ministériels, billets, timbres) ou des photographies d'agences anciennes (IPPHOS, archives nationales), que
+  Commons étiquette « US ? » : c'est le cas qui a coûté huit figures à l'Amérique hispanique. **Décision prise** : accepter les images d'origine gouvernementale ou d'avant 1946,
+  en gardant la liste ici. Les « US oui » relevés sont Diponegoro, Douwes Dekker, Kartini, Hatta, Ali Sadikin, Leimena, Mochtar Kusumaatmadja, Airlangga et Sultan Agung.
+- **Sept fiches rédigées en attente**, dans `scripts/pantheon/id_candidats.md` : Suharto, Pramoedya Ananta Toer, Usmar Ismail, Titiek Puspa, Sumitro Djojohadikusumo et Affandi, dont
+  l'image n'a pas pu être téléchargée (Wikimedia répondait 429 à presque toutes les requêtes), et Munir Said Thalib, dont la seule photographie libre est un cliché de groupe où l'on ne
+  sait pas qui il est. **Suharto et Pramoedya, deux ⭐ et deux des figures les plus sensibles du thème, en sont**. Le texte de chaque fiche est prêt : pour les réintégrer, recopier
+  l'objet dans `personnages` de `scripts/pantheon/id.json`, lancer `python3 scripts/fetch_portraits.py id --only <slug>`, puis `python3 scripts/pantheon_classement.py --write id`,
+  `python3 scripts/build_pantheon.py id`, les compteurs des tests (3 068 figures, 104 portraits à nom visible) et ceux de `js/i18n.js`.
+- **Les écartés fragiles** : Pattimura, Martha Christina Tiahahu, Kartosuwiryo, Frans Kaisiepo, Cut Meutia, Hasanuddin, Sisingamangaraja XII, Nuku de Tidore, Trunajaya, Ahmad Dahlan,
+  Djuanda, Sjafruddin Prawiranegara, Soebardjo, Roosseno, Sutami, Bing Slamet ne sont gardés par aucune image convenable (timbres et billets seuls, ou images minuscules) : ils
+  reviendront si un meilleur portrait apparaît.
+- **Géolocalisation** : aucune figure n'est placée sur l'Atlas, faute de biographie liée (le test des faits liés ne l'exige pas).
+
 ### Un fichier source par panthéon, un script qui l'écrit dans `data/fr.json`
 
 `scripts/pantheon/<code>.json` (`fr`, `hispam`…) est **la seule source de
@@ -2450,7 +2504,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
 ### Ce qui n'est pas fait
 
 - **Les autres panthéons** : la France, l'Égypte, les États-Unis, l'Italie, le
-  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes sont écrits.
+  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Indonésie sont écrits.
   Chaque liste de personnages est validée avant la rédaction. Feuille de route, dans l'ordre
   où on les propose (un pays seul quand il a de quoi faire un thème, un bloc sinon) :
   1. **Le Machrek est écrit** (voir « Le cinquième bloc »). Il reste : le portrait des trois
@@ -2462,7 +2516,8 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
      figures juives (Edmond Amran El Maleh, Habiba Msika) et en a laissé cinq de côté (Cheikh
      Raymond, Reinette l'Oranaise, Salim Halali, Albert Memmi, Abraham Serfaty).
   2. **Pays seuls** : l'Afrique du Sud. **L'Iran** (voir « Un pays à part : l'Iran »), **le Brésil** (qui n'entre pas dans l'Amérique « hispanique » ; voir « Un pays à part : le Brésil »), **la Turquie** (voir « Un pays à part : la Turquie »), **le Japon** (voir « Un pays à part : le Japon ») et **la Russie** (voir « Un pays à part : la Russie ») et **l'Australie** (voir « Un pays à part : l'Australie ») sont écrits.
-  3. **Blocs** : l'Asie du Sud-Est, la Mongolie (l'Asie centrale est écrite, voir « Un bloc : l'Asie centrale et
+  3. **Blocs** : l'Asie du Sud-Est (l'Indonésie est écrite, voir « Un pays à part : l'Indonésie » ; restent le monde malais — Malaisie, Singapour, Brunei, Timor oriental —,
+     l'Indochine, la Thaïlande avec la Birmanie, et les Philippines), la Mongolie (l'Asie centrale est écrite, voir « Un bloc : l'Asie centrale et
      l'Afghanistan »), le Caucase, la Corée (`KR`/`KP`), l'Afrique de
      l'Ouest, l'Afrique de l'Est et la Corne, l'Afrique australe et l'océan
      Indien (sans l'Afrique du Sud). L'Afrique centrale est écrite (voir « Un bloc : l'Afrique centrale »). « Nouvelle-Zélande et Pacifique » est écrit (voir « Un bloc : la
