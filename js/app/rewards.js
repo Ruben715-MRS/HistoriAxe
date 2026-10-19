@@ -196,12 +196,6 @@ function rewardsRenderFinal(extra, r) {
         box.appendChild(cap);
     }
 
-    if (r.streak) {
-        const s = document.createElement('p');
-        s.className = 'rewards-streak-line' + (r.streak.current >= 2 ? ' is-hot' : '');
-        s.innerText = r.streak.broken ? t('rewards.streak_broken', { best: r.streak.best }) : t('rewards.streak_line', { n: r.streak.current });
-        box.appendChild(s);
-    }
     if (r.cards && r.cards.length) {
         const cards = document.createElement('div');
         cards.className = 'rewards-card-chips';
@@ -215,6 +209,12 @@ function rewardsRenderFinal(extra, r) {
             cards.appendChild(chip);
         });
         box.appendChild(cards);
+    }
+    if (r.streak) {
+        const s = document.createElement('p');
+        s.className = 'rewards-streak-line' + (r.streak.current >= 2 ? ' is-hot' : '');
+        s.innerText = r.streak.broken ? t('rewards.streak_broken', { best: r.streak.best }) : t('rewards.streak_line', { n: r.streak.current });
+        box.appendChild(s);
     }
     extra.appendChild(box);
 }
