@@ -863,6 +863,491 @@
     "leave": "Retour",
     "share": "🧭 HistoriAxe — Expédition · {theme}\n{row}\n🏆 {score} points · ❤️ {lives}\n\nJoue sur HistoriAxe !"
   },
+  "path": {
+    "title": "Le Chemin du Temps",
+    "subtitle": "{stars} ★ sur {max}",
+    "card_next": "Niveau {n} · {title}",
+    "card_done": "Tout le Chemin est fait — rejouez pour les 3 étoiles",
+    "coming_soon": "Le Chemin continue : de nouveaux mondes arrivent.",
+    "level_n": "Niveau {n}",
+    "range": "De {from} à {to}",
+    "boss_range": "Le boss : {count} repères de tout le monde « {world} ».",
+    "best": "meilleur score {score}",
+    "play": "Jouer",
+    "replay": "Rejouer le niveau",
+    "next_level": "Niveau suivant",
+    "back_to_map": "Retour à la carte",
+    "node_aria": "Niveau {n} : {title}, {stars} étoiles sur 3",
+    "node_locked_aria": "Niveau {n} : {title}, verrouillé",
+    "locked_level": "Terminez le niveau précédent pour l'ouvrir.",
+    "locked_boss": "Réunissez {need} étoiles sur les {count} niveaux pour affronter le boss (vous en avez {have}).",
+    "not_enough": "Ce niveau a besoin d'au moins {count} événements dans le pack chargé.",
+    "level_won": "Niveau réussi !",
+    "boss_won": "Boss vaincu !",
+    "level_lost": "Niveau raté — plus de vies",
+    "stars_aria": "{count} étoiles sur {max}",
+    "final_xp": "+{xp} XP.",
+    "unlocked_next": "Un nouveau niveau vous attend.",
+    "share": "🗺️ HistoriAxe — Le Chemin du Temps\n{level} {stars}\n🏆 {score} points\n\nJoue sur HistoriAxe !",
+    "worlds": {
+      "monde0": {
+        "title": "Monde 0 · Le temps des historiens",
+        "boss": "L'épreuve du temps",
+        "done": "Vous savez lire le temps : l'Antiquité vous attend !",
+        "levels": {
+          "1": "Premiers pas sur la frise",
+          "2": "Avant et après Jésus-Christ",
+          "3": "Compter les années",
+          "4": "Calendriers et fêtes",
+          "5": "Siècles et millénaires",
+          "6": "Les noms des périodes",
+          "7": "Où commence une période ?"
+        }
+      },
+      "prehistoire": {
+        "title": "La Préhistoire",
+        "boss": "Le gardien des cavernes",
+        "done": "La Préhistoire n'a plus de secrets pour vous !",
+        "levels": {
+          "1": "Les premiers outils et le feu",
+          "2": "Les premiers artistes",
+          "3": "Le temps des villages"
+        }
+      },
+      "orient": {
+        "title": "L'Égypte et l'Orient ancien",
+        "boss": "La pesée des âmes",
+        "done": "Vous avez traversé trois mille ans d'Orient ancien !",
+        "levels": {
+          "1": "Narmer et l'invention de l'écriture",
+          "2": "L'âge des pyramides",
+          "3": "Hammurabi et Gilgamesh",
+          "4": "Akhenaton et Toutânkhamon",
+          "5": "Ramsès II et le temps des Juges",
+          "6": "David, Salomon et Carthage"
+        }
+      },
+      "grece": {
+        "title": "La Grèce antique",
+        "boss": "L'oracle de Delphes",
+        "done": "La Grèce n'a plus de secrets pour vous !",
+        "levels": {
+          "1": "Olympie et les colonies grecques",
+          "2": "Solon et Clisthène",
+          "3": "Les guerres médiques",
+          "4": "Périclès et le Parthénon",
+          "5": "La peste et la guerre du Péloponnèse",
+          "6": "La défaite d'Athènes",
+          "7": "Socrate, Platon et leurs écoles",
+          "8": "Philippe, Aristote et Alexandre"
+        }
+      },
+      "rome1": {
+        "title": "Rome, naissance d'un empire",
+        "boss": "Le triomphe romain",
+        "done": "Rome est devenue maîtresse de la Méditerranée !",
+        "levels": {
+          "1": "Romulus et les rois de Rome",
+          "2": "La République naît",
+          "3": "Le sac de Rome et la conquête de l'Italie",
+          "4": "Hannibal contre Rome",
+          "5": "Carthage détruite, les Gracques",
+          "6": "Sylla, César et la Gaule",
+          "7": "Des Ides de mars à Auguste"
+        }
+      },
+      "rome2": {
+        "title": "Rome, la fin d'un empire",
+        "boss": "Le dernier empereur",
+        "done": "Vous avez suivi Rome jusqu'à sa chute !",
+        "levels": {
+          "1": "Auguste et les premiers empereurs",
+          "2": "Néron, Titus et Pompéi",
+          "3": "Hadrien et Marc Aurèle",
+          "4": "Caracalla et l'anarchie militaire",
+          "5": "Dioclétien et Constantin",
+          "6": "Nicée et Constantinople",
+          "7": "Théodose et le partage de l'Empire",
+          "8": "Le sac de Rome et la chute"
+        }
+      },
+      "haut-moyen-age": {
+        "title": "La France avant la France",
+        "boss": "Le défi de Charlemagne",
+        "done": "Le haut Moyen Âge est derrière vous !",
+        "levels": {
+          "1": "Clovis et Justinien",
+          "2": "Sainte-Sophie et les Lombards",
+          "3": "L'Hégire et les conquêtes arabes",
+          "4": "L'Islam atteint l'Espagne",
+          "5": "Charles Martel et Pépin le Bref",
+          "6": "Bagdad, Lindisfarne et Roncevaux",
+          "7": "Charlemagne empereur",
+          "8": "Cyrille et Méthode chez les Slaves"
+        }
+      },
+      "feodalites": {
+        "title": "Féodalités",
+        "boss": "Le tournoi des seigneurs",
+        "done": "Vous maîtrisez l'ordre féodal !",
+        "levels": {
+          "1": "Cluny et les Normands",
+          "2": "Otton, Hugues Capet et Vladimir",
+          "3": "L'an mille",
+          "4": "Le schisme de 1054",
+          "5": "Hastings et Tolède",
+          "6": "L'appel à la croisade",
+          "7": "L'Église réforme l'Europe",
+          "8": "Barberousse et Thomas Becket"
+        }
+      },
+      "capetiens": {
+        "title": "L'âge d'or capétien",
+        "boss": "L'épreuve des cathédrales",
+        "done": "L'âge d'or capétien n'a plus de secrets pour vous !",
+        "levels": {
+          "1": "Philippe Auguste et Saladin",
+          "2": "La quatrième croisade",
+          "3": "Bouvines et Chartres",
+          "4": "Saint Louis et la Sorbonne",
+          "5": "Marco Polo et Thomas d'Aquin",
+          "6": "Dante, Avignon et le Jubilé"
+        }
+      },
+      "cent-ans": {
+        "title": "Le temps de la guerre de Cent Ans",
+        "boss": "Le siège d'Orléans",
+        "done": "La guerre de Cent Ans est gagnée !",
+        "levels": {
+          "1": "Les Valois et Crécy",
+          "2": "La Peste noire",
+          "3": "Le Grand Schisme",
+          "4": "Les Ottomans avancent",
+          "5": "Azincourt et Grunwald",
+          "6": "Jeanne d'Arc",
+          "7": "L'aube de la Renaissance"
+        }
+      },
+      "renaissances": {
+        "title": "Les Renaissances",
+        "boss": "Le défi de Léonard",
+        "done": "Vous voilà maître des Renaissances !",
+        "levels": {
+          "1": "Constantinople et Gutenberg",
+          "2": "Colomb et Grenade",
+          "3": "Le partage du monde",
+          "4": "Marignan et les 95 thèses",
+          "5": "Cortés et la guerre des Paysans",
+          "6": "Cartier et l'affaire des Placards",
+          "7": "Calvin et François Xavier",
+          "8": "La paix d'Augsbourg"
+        }
+      },
+      "religion": {
+        "title": "Les guerres de Religion",
+        "boss": "L'édit de Nantes",
+        "done": "La paix religieuse est signée !",
+        "levels": {
+          "1": "Wassy, le début des guerres",
+          "2": "Lépante et la Saint-Barthélemy",
+          "3": "Montaigne et l'Union ibérique",
+          "4": "L'Armada et l'édit de Nantes",
+          "5": "Cervantes, Bruno et les Compagnies des Indes",
+          "6": "Jamestown et Québec",
+          "7": "La guerre de Trente Ans commence"
+        }
+      },
+      "absolus": {
+        "title": "Les rois absolus",
+        "boss": "Le défi du Roi-Soleil",
+        "done": "Le Grand Siècle vous appartient !",
+        "levels": {
+          "1": "Galilée et les premières colonies",
+          "2": "Les traités de Westphalie",
+          "3": "Cromwell et les Actes de Navigation",
+          "4": "Louis XIV prend le pouvoir",
+          "5": "Pascal, Spinoza et la paix de Nimègue",
+          "6": "Versailles, Vienne et le Code noir",
+          "7": "Locke, Ryswick et Karlowitz",
+          "8": "Saint-Pétersbourg et Utrecht"
+        }
+      },
+      "lumieres": {
+        "title": "La monarchie des Lumières",
+        "boss": "Le salon des philosophes",
+        "done": "Les Lumières n'ont plus de secrets pour vous !",
+        "levels": {
+          "1": "La mort de Louis XIV",
+          "2": "Les Grands Réveils",
+          "3": "L'Encyclopédie",
+          "4": "Lisbonne et la guerre de Sept Ans",
+          "5": "Le traité de Paris et Cook",
+          "6": "La Déclaration d'indépendance",
+          "7": "La veille de la Révolution"
+        }
+      },
+      "revolution": {
+        "title": "Révolution, Consulat, Empire",
+        "boss": "Le défi de Bonaparte",
+        "done": "La Révolution et l'Empire sont derrière vous !",
+        "levels": {
+          "1": "De la Bastille à la République",
+          "2": "Le procès du roi et les droits de la femme",
+          "3": "Bonaparte conquiert l'Italie",
+          "4": "Le Concordat et la paix d'Amiens",
+          "5": "Le sacre de Napoléon",
+          "6": "Austerlitz et l'Espagne"
+        }
+      },
+      "revolution-inachevee": {
+        "title": "La Révolution inachevée",
+        "boss": "Les barricades",
+        "done": "Vous avez traversé la Révolution inachevée !",
+        "levels": {
+          "1": "L'Amérique latine s'émancipe",
+          "2": "Beethoven et la Restauration",
+          "3": "Alger, Hugo et la guerre de l'Opium",
+          "4": "La Belgique naît, l'esclavage aboli",
+          "5": "Le Printemps des peuples",
+          "6": "Les lendemains de 1848",
+          "7": "Le Second Empire",
+          "8": "Louis-Napoléon prend le pouvoir",
+          "9": "Solférino, Gettysburg et Suez",
+          "10": "Darwin, la Croix-Rouge et Marx"
+        }
+      },
+      "republique": {
+        "title": "La République et les empires",
+        "boss": "L'Exposition universelle",
+        "done": "La Belle Époque n'a plus de secrets pour vous !",
+        "levels": {
+          "1": "Sedan et la Commune",
+          "2": "Après la défaite : les lois Ferry",
+          "3": "Berlin, Pasteur et la tour Eiffel",
+          "4": "Le partage de l'Afrique",
+          "5": "L'affaire Dreyfus et Fachoda",
+          "6": "Les premiers Nobel et le cinéma",
+          "7": "La séparation des Églises et de l'État",
+          "8": "Les trônes vacillent"
+        }
+      },
+      "grande-guerre": {
+        "title": "La Grande Guerre",
+        "boss": "L'épreuve du feu",
+        "done": "La Grande Guerre est terminée, traité de Versailles compris !",
+        "levels": {
+          "1": "Sarajevo, Verdun et l'entrée des États-Unis",
+          "2": "De la Marne aux nouvelles frontières",
+          "3": "Mobilisation, Somme et Dardanelles"
+        }
+      },
+      "entre-deux-guerres": {
+        "title": "De l'entre-deux-guerres à 1945",
+        "boss": "Le défi de 1945",
+        "done": "Vous avez traversé la tourmente de 1920 à 1945 !",
+        "levels": {
+          "1": "Le krach de 1929 et la crise",
+          "2": "Les années folles et les régimes autoritaires",
+          "3": "Front populaire, Guernica, Munich",
+          "4": "Les années trente, côté ombre et lumière",
+          "5": "La Seconde Guerre mondiale",
+          "6": "Du Jour J à la Charte de l'ONU"
+        }
+      },
+      "trente-glorieuses": {
+        "title": "Guerre froide et Trente Glorieuses",
+        "boss": "La course à l'espace",
+        "done": "La guerre froide n'a plus de secrets pour vous !",
+        "levels": {
+          "1": "Partition de l'Inde et blocus de Berlin",
+          "2": "L'OTAN, la CECA et Diên Biên Phu",
+          "3": "Suez, Spoutnik et le traité de Rome",
+          "4": "Rosa Parks et les indépendances",
+          "5": "L'homme sur la Lune",
+          "6": "Woodstock et les années 1960"
+        }
+      },
+      "crises": {
+        "title": "Crises et fin de la guerre froide",
+        "boss": "Le mur de Berlin",
+        "done": "Vous avez vu tomber le mur de Berlin !",
+        "levels": {
+          "1": "Les Œillets et la chute de Saïgon",
+          "2": "La loi Veil et la révolution iranienne",
+          "3": "Gorbatchev, Tchernobyl et le Mur",
+          "4": "Du Macintosh au Titanic retrouvé"
+        }
+      },
+      "depuis-1991": {
+        "title": "Le monde depuis 1991",
+        "boss": "Le défi du présent",
+        "done": "Vous êtes à jour de l'actualité du monde !",
+        "levels": {
+          "1": "Maastricht et le Vendredi saint",
+          "2": "Mandela et la guerre de Bosnie",
+          "3": "Les réseaux sociaux naissent",
+          "4": "L'Europe s'élargit",
+          "5": "L'accord de Paris et le Burj Khalifa",
+          "6": "Ben Laden et Snowden",
+          "7": "La pandémie de Covid-19",
+          "8": "L'ère de l'intelligence artificielle"
+        }
+      },
+      "ile-chine": {
+        "title": "La Chine impériale",
+        "boss": "La Grande Muraille",
+        "done": "Vous avez traversé deux mille ans de Chine impériale !",
+        "levels": {
+          "1": "Confucius et Lao Tseu",
+          "2": "Qin Shi Huang et les Han",
+          "3": "Les Sui et les Tang",
+          "4": "Les Song et l'imprimerie",
+          "5": "Les Yuan et les Ming",
+          "6": "Les Qing et la guerre de l'Opium"
+        }
+      },
+      "ile-ameriques": {
+        "title": "Les Amériques précolombiennes",
+        "boss": "Le temple du Soleil",
+        "done": "Les Amériques précolombiennes n'ont plus de secrets pour vous !",
+        "levels": {
+          "1": "Les cités mayas",
+          "2": "Tenochtitlan et Chichén Itzá",
+          "3": "Machu Picchu et les Incas",
+          "4": "Cortés et Moctezuma",
+          "5": "Pizarro et la chute des Incas"
+        }
+      },
+      "ile-islam": {
+        "title": "L'Islam et l'Empire ottoman",
+        "boss": "Les mille et une nuits",
+        "done": "Vous avez parcouru treize siècles d'histoire musulmane !",
+        "levels": {
+          "1": "Muhammad et l'Hégire",
+          "2": "Omeyyades et Abbassides",
+          "3": "Fatimides, Saladin et croisades",
+          "4": "Les Ottomans montent",
+          "5": "Vienne, Lépante et Karlowitz",
+          "6": "Le Tanzimat et la fin de l'Empire"
+        }
+      },
+      "ile-japon": {
+        "title": "Le Japon",
+        "boss": "Le sabre du shogun",
+        "done": "Le Japon n'a plus de secrets pour vous !",
+        "levels": {
+          "1": "Aux origines du Japon",
+          "2": "Du Genji aux shoguns",
+          "3": "Tokugawa et la Grande Vague",
+          "4": "Meiji et l'expansion",
+          "5": "Le Japon contemporain"
+        }
+      },
+      "ile-afrique": {
+        "title": "Histoires d'Afrique",
+        "boss": "L'arbre à palabres",
+        "done": "Vous avez traversé l'Afrique, des royaumes aux indépendances !",
+        "levels": {
+          "1": "Carthage et le Maghreb antique",
+          "2": "Alger, Tombouctou et les Trois Rois",
+          "3": "Livingstone et la conquête coloniale",
+          "4": "Les Boers, Blum-Viollette et le Néo-Destour",
+          "5": "Sétif et les indépendances"
+        }
+      }
+    },
+    "boss_review": "Le boss : une révision de tout le monde « {world} ».",
+    "locked_world": "Battez le boss du monde « {world} » pour ouvrir celui-ci.",
+    "skip_world": "Je connais déjà : ouvrir « {world} »",
+    "skip_confirm": "Passer « {world} » ? « {next} » s'ouvre tout de suite, et vous pourrez revenir jouer ce monde quand vous voudrez.",
+    "island": "Île bonus",
+    "island_open": "Île bonus : {island}",
+    "island_locked": "Île bonus : {island} — s'ouvre au niveau {n} de « {world} »",
+    "island_card_stars": "★ {stars}/{max}",
+    "island_unlocked": "Une île bonus s'ouvre : {island} !",
+    "island_back": "Retour au Chemin",
+    "locked_island": "Réussissez le niveau {n} de « {world} » pour ouvrir cette île.",
+    "locked_world_compact": "À venir",
+    "boss_range_island": "Le boss : une révision de toute l'île.",
+    "island_locked_short": "Niveau {n}"
+  },
+  "rewards": {
+    "coins_aria": "{count} pièces",
+    "streak_aria": "Série de {count} victoires d'affilée",
+    "shop": "Boutique",
+    "album": "Album",
+    "cap_reached": "Plafond de pièces des parties libres atteint pour aujourd'hui : les niveaux du Chemin en rapportent toujours.",
+    "end_coins": "+{n} 🪙 (total : {balance})",
+    "part_level": "Niveau réussi",
+    "part_consolation": "Consolation",
+    "part_first": "Premier passage",
+    "part_streak": "Série de {n} victoires",
+    "part_milestone": "Palier : {n} victoires d'affilée !",
+    "part_duplicate": "Carte en double",
+    "part_album": "Album complet !",
+    "streak_line": "⚡ Série de victoires : {n}",
+    "streak_broken": "La série est brisée (record : {best}). Une nouvelle commence au prochain niveau.",
+    "card_chip_aria": "Carte {rarity} : la révéler",
+    "rarity": {
+      "commune": "Commune",
+      "rare": "Rare",
+      "legendaire": "Légendaire"
+    },
+    "card_new": "Nouvelle carte !",
+    "card_duplicate": "Déjà dans votre album : +{coins} 🪙",
+    "card_progress": "{world} : {have}/{total} cartes",
+    "card_next": "Carte suivante",
+    "card_done": "Continuer",
+    "card_album": "Voir l'album",
+    "album_title": "Album des personnages",
+    "album_subtitle": "Cartes trouvées : {have} sur {total}",
+    "card_missing_aria": "Carte {rarity} pas encore trouvée",
+    "shop_title": "Boutique de Clio",
+    "clio_soon": "Clio sera dessinée bientôt : ces costumes sont des aperçus.",
+    "clio_wears": "Clio porte : {name}",
+    "clio_bare": "Clio n'a encore aucun costume.",
+    "shop_decors": "Les décors d'arrière-plan arrivent plus tard.",
+    "shop_locked": "Atteignez « {world} » pour l'acheter",
+    "shop_wear": "Porter",
+    "shop_worn": "Porté",
+    "shop_short": "Pas assez de pièces : jouez encore un niveau !",
+    "shop_cannot": "Cet achat n'est pas possible pour l'instant.",
+    "shop_bought": "Nouveau costume : {name} !",
+    "costumes": {
+      "prehistoire": "Peau de mammouth",
+      "orient": "Collier du chat sacré",
+      "grece": "Couronne de lauriers",
+      "rome1": "Armure de légionnaire",
+      "rome2": "Toge d'empereur",
+      "haut-moyen-age": "Manteau mérovingien",
+      "feodalites": "Cotte de mailles",
+      "capetiens": "Cape fleurdelisée",
+      "cent-ans": "Armure de Jeanne",
+      "renaissances": "Pourpoint de Léonard",
+      "religion": "Fraise et pourpoint",
+      "absolus": "Perruque du Roi-Soleil",
+      "lumieres": "Habit de philosophe",
+      "revolution": "Bonnet phrygien",
+      "revolution-inachevee": "Haut-de-forme",
+      "republique": "Costume Belle Époque",
+      "grande-guerre": "Casque Adrian",
+      "entre-deux-guerres": "Tenue des années folles",
+      "trente-glorieuses": "Combinaison spatiale",
+      "crises": "Perfecto des années 80",
+      "depuis-1991": "Tenue connectée"
+    }
+  },
+  "lesson": {
+    "stage_title": "Leçon · {title}",
+    "review_title": "Leçon · Révision générale",
+    "stage_desc": "Quelques questions, et l'explication après chaque réponse. Une erreur coûte une vie.",
+    "empty": "Cette leçon n'a pas de questions.",
+    "right": "Juste !",
+    "wrong": "Pas tout à fait…",
+    "next": "Question suivante",
+    "finish": "Terminer la leçon",
+    "end_lives": "Plus de vies — terminer"
+  },
   "classroom": {
     "title": "Mode Classe",
     "desc": "Enseignant : ouvrez une séance, les élèves placent les mêmes cartes en même temps sur leur téléphone.",

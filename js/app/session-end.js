@@ -232,6 +232,11 @@ function endGame(isWin) {
         }
     }
 
+    // Pièces d'une partie libre (js/app/rewards.js) : peu, plafonnées par jour, aucune sans enjeu (entraînement…).
+    const gameCoins = typeof rewardsOnGameEnd === 'function'
+        ? rewardsOnGameEnd({ mode: currentMode, isWin, score, perfect: isWin && sessionMistakes === 0 })
+        : null;
+
     // Vérification de la progression des trophées
     checkBadgeProgressOnGameEnd(isWin, sessionMistakes);
 
@@ -281,6 +286,7 @@ function endGame(isWin) {
     // montant de 0 jusqu'au gain réel plutôt que de s'afficher figé — à
     // chaque frame on rappelle t() avec la valeur intermédiaire pour rester
     // juste dans toutes les langues (voir animateCountUp()).
+    if (typeof rewardsShowEndCoins === 'function') rewardsShowEndCoins(gameCoins);
     const xpDisplay = document.getElementById('end-xp-display');
     if (xpDisplay) {
         if (awardedXpInfo && awardedXpInfo.xpAwarded > 0) {
@@ -397,7 +403,12 @@ function quitGame() {
         stopTimer();
         multiGameActive = false;
         // Quitter une épreuve d'Expédition abandonne tout le parcours et ramène à l'écran des modes.
-        if (typeof expeditionAbort === 'function' && expeditionAbort()) { showScreen('screen-modes', 'back'); return; }
+        const expeditionExit = typeof expeditionAbort === 'function' ? expeditionAbort() : null;
+        if (expeditionExit) {
+            showScreen(expeditionExit, 'back');
+            if (expeditionExit === 'screen-path' && typeof renderPath === 'function') renderPath();
+            return;
+        }
         // Quitter la manche d'une séance de classe : on sort de la séance (l'enseignant voit l'élève s'arrêter).
         if (currentMode === 'class' && typeof classLeave === 'function') { classLeave(); return; }
         showScreen(screenAfterGame());

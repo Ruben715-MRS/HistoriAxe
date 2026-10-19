@@ -337,6 +337,8 @@ function initModesGroups() {
 
 // « Reprendre » : un tap pour retrouver le dernier thème ouvert, au lieu de refaire six écrans.
 function renderResumeCard(container) {
+    // Le Chemin du Temps passe avant « Reprendre » : c'est le parcours proposé à tous.
+    if (typeof renderPathCard === 'function' && typeof PathCore !== 'undefined') renderPathCard(container);
     const last = lastThemeLoad();
     if (!last || !last.themeId) return;
     const found = getAllThemesWithPath().find(item => item.theme.id === last.themeId);

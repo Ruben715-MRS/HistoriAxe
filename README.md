@@ -382,6 +382,202 @@ siècle » et « changer la carte » imaginés au départ ne sont pas faits : ch
 un branchement par mode. Quitter en pleine épreuve abandonne le parcours. Le partage donne
 une ligne de carrés (🟩 réussie, ⏭ passée, 🟥 échouée, ⬜ non atteinte).
 
+## Le Chemin du Temps : un parcours commun, niveau après niveau (prototype)
+
+Le jeu libre laisse tout choisir (834 thèmes, une vingtaine de modes) : il n'y a pas d'« étape
+suivante », donc pas de raison évidente de revenir demain. Le Chemin du Temps ajoute le contraire :
+**une carte unique, la même pour tous, qu'on gravit niveau après niveau** — le premier en bas, le boss du
+monde en haut, le chemin parcouru qui se colore en vert, le reste en pointillé. Il **complète** le jeu
+libre, il ne le remplace pas (carte « Chemin du Temps » en tête de l'écran des catégories).
+
+- **Des mondes empilés**, qu'on gravit l'un après l'autre (le premier en bas) : un monde s'ouvre quand le
+  boss du précédent est vaincu. **21 mondes** sur le chemin principal (le Monde 0, puis la Préhistoire, l'Égypte
+  et l'Orient ancien, la Grèce, Rome en deux mondes, et la France de 481 à nos jours sur le modèle des
+  collections Belin) et **5 îles bonus** (voir plus bas). Un monde fermé se replie en un simple en-tête : seul
+  le prochain est dessiné en entier. La liste, avec les bornes et les thèmes de chaque monde, est dans
+  `docs/chemin-du-temps-mondes.md`.
+- **Mondes chrono-thématiques** : un monde a des bornes ET des thèmes où puiser (la Grèce ne tire que dans les
+  thèmes grecs, pas dans tout ce qui s'est passé dans le monde à la même époque). La Grèce et Rome se
+  chevauchent dans le temps ; c'est voulu (idée n° 3 du Monde 0 : diviser le temps est un choix).
+- **Un niveau = une tranche de temps** : 12 repères, un par douzième de la tranche, jamais plus de 2 par année
+  (3 en période dense). Le **boss** est la révision du monde : 20 repères répartis sur tous ses niveaux.
+- **Un niveau = une mini-expédition** de 3 épreuves (6 pour le boss), 3 vies pour tout le niveau. Les
+  épreuves sont de vrais modes (Quiz, Avant/Après, frise Classique, Périodes, Curseur, Remise en ordre) :
+  la difficulté monte d'un niveau à l'autre en changeant leur mélange. Pas d'Intrus : il s'appuie sur les
+  axes d'un seul thème.
+- **Étoiles** : ★ pour finir, ★★ avec deux vies gardées, ★★★ sans la moindre erreur. Elles ne redescendent
+  jamais en rejouant. Un niveau s'ouvre en réussissant le précédent (une étoile suffit) ; le **boss**
+  demande en plus la moitié des étoiles possibles des niveaux du monde (`bossStarsRequired`) — de quoi
+  rejouer un peu sans bloquer. Le boss offre une vie à mi-parcours (joker de l'Expédition).
+- **Récompense** : XP du niveau (`PathCore.levelXp` : fraction des points, prime de réussite et d'étoiles,
+  prime au premier passage, boss plus généreux), et la réussite d'un niveau **compte pour la série
+  quotidienne**.
+- **Contenu sans saisie à la main.** Les événements d'un niveau sont tirés des thèmes de son monde, dans sa
+  tranche de temps, **un par douzième de la tranche** (répartition régulière), en préférant les
+  **incontournables** (`theme.essentiel`) puis les repères **connus** : un événement que plusieurs thèmes
+  racontent (même année, même nom propre dans le titre — `fame`) passe avant un événement cité par un seul
+  thème. Le tirage est **déterministe** (hachage de l'id de niveau et de l'id d'événement) : même niveau,
+  mêmes repères, pour tous et à chaque visite — c'est ce qui en fait une mission. Un événement ajouté au pack
+  peut entrer dans un niveau sans toucher au code. Le contenu du joueur et le thème exclu des défis (calendrier
+  non grégorien) sont ignorés.
+- **Un fait n'apparaît qu'une fois.** Un même fait existe souvent sous plusieurs identifiants (la proclamation
+  de la République dans trois thèmes) : `cluster` relie les événements de la même année qui partagent un nom
+  propre ou la moitié de leurs mots, et un monde n'en tire qu'un.
+- **Les bornes des niveaux sont figées** dans `js/pathWorlds.js` (généré par `scripts/path_plan.js --write`) :
+  l'identifiant d'un niveau (`grece-3`) et les étoiles gagnées dessus en dépendent, un ajout de contenu ne
+  doit donc pas les déplacer.
+
+### Les dates sont des années : « tiers » pour les périodes denses
+
+Les dates du jeu sont des **années**. Deux événements de 1916 ne se départagent pas, et plusieurs modes (Avant/
+Après, Remise en ordre, Écart, Fil du temps) ne gardent qu'un événement par année. Un niveau doit donc couvrir
+**au moins 6 années** : on ne peut pas faire un niveau par année de guerre. Pour qu'une période dense (le XXe
+siècle compte cinq fois plus d'événements que l'Antiquité) ait plus de niveaux, une même tranche en donne
+plusieurs (`tiers`) : le premier prend les événements les plus connus, le suivant les suivants, et ainsi de suite,
+avec des épreuves plus dures. Exemples : la Révolution et l'Empire (3 tranches × 2), la Grande Guerre (1 tranche
+de 6 ans × 3 niveaux). **La Grande Guerre court de 1914 à 1919** : le traité de Versailles en est la fin
+officielle, l'armistice de 1918 n'en est que la fin des combats.
+
+### Les îles bonus
+
+Facultatives, elles évitent la monotonie d'une époque : **une île s'ouvre quand le joueur a réussi la moitié de
+son monde d'attache** (le niveau `opensAfter`), et l'écran de fin du niveau qui l'ouvre l'annonce. Elle a sa
+propre piste (ses niveaux, son boss, ses étoiles), s'ouvre depuis une carte sous l'en-tête de son monde, et la
+flèche de retour revient à la carte des mondes. Le chemin principal ne propose jamais une île d'office, et le
+boss d'une île ne mène nulle part.
+
+| Île | Attachée à | Niveaux |
+|---|---|---|
+| 🐉 La Chine impériale | La Grèce antique | 6 + boss |
+| 🌽 Les Amériques précolombiennes | La France avant la France | 5 + boss |
+| 🕌 L'Islam et l'Empire ottoman | Féodalités | 6 + boss |
+| 🗾 Le Japon | Les Renaissances | 5 + boss |
+| 🌍 Histoires d'Afrique | La République et les empires | 5 + boss (jusqu'aux indépendances : après 1962, les thèmes africains ne racontent presque que des coups d'État) |
+
+### Le Monde 0 : « Le temps des historiens »
+
+Le chapitre introductif de Seconde sur la périodisation, et en même temps le **tutoriel du jeu**. Il est en
+bas de la carte, avant la Préhistoire, qu'il ouvre quand son boss est vaincu. Un joueur qui connaît déjà peut le
+**passer** (« Je connais déjà : ouvrir « La Préhistoire » ») : le monde suivant s'ouvre, le Monde 0 reste jouable.
+Un monde déjà commencé n'est jamais reverrouillé.
+
+| Niveau | Contenu |
+|---|---|
+| 1. Premiers pas sur la frise | Avant/Après + frise, sur 8 repères connus : **on joue tout de suite, sans leçon** |
+| 2. Avant et après Jésus-Christ | leçon (pas d'an 0, compter à rebours) + Avant/Après autour de l'an 1 |
+| 3. Compter les années | leçons : les ères (Hégire, calendrier hébraïque, an I) ; la réforme grégorienne |
+| 4. Calendriers et fêtes | leçons : solaire / lunaire / luni-solaire, Nouvel An ; temps cyclique et temps linéaire |
+| 5. Siècles et millénaires | leçon (les pièges : 1900, 2000, av. J.-C.) + Périodes & Ères |
+| 6. Les noms des périodes | leçons : chrononymes ; les échelles du temps (Braudel, Hobsbawm) |
+| 7. Où commence une période ? | leçon (bornes et critères : 476/496, 1453/1492, Le Goff) + frise des bornes du thème « Périodisation historique » |
+| Boss · L'épreuve du temps | révision de toutes les leçons + frise + remise en ordre |
+
+Les **leçons** sont une nouvelle sorte d'épreuve (`js/app/lesson.js`, écran `#screen-lesson`) : des questions
+**rédigées à la main** (`js/pathLessons.js` : 9 séries, 71 questions, la première réponse est la bonne et
+l'ordre est mélangé à l'affichage). Après chaque réponse, juste ou fausse, l'**explication** s'affiche ; une
+erreur coûte une vie. Le contenu reprend les trois idées du cours, avec une correction de l'idée 1 : toute
+société combine un temps cyclique (fêtes, saisons) et un temps linéaire (une ère), plutôt qu'opposer un temps
+« occidental » linéaire et un temps « juif » cyclique. **Tout ce contenu est à relire par un enseignant.**
+
+### Mondes chrono-thématiques
+
+Un niveau peut fixer ses événements à la main (`ids`, comme au Monde 0) ou les tirer dans une fenêtre de temps
+(`from`/`to`), éventuellement **restreinte à des thèmes** (`themes`) : c'est ce qui permettra des mondes « la
+Grèce », « Rome » ou « les guerres de Religion » sur le modèle des collections Belin, au lieu de tout ce qui
+s'est passé dans le monde à la même époque. Avec des thèmes, les événements non incontournables entrent aussi
+dans le tirage (les incontournables restent prioritaires). `PathCore.sliceWindows` propose un découpage en
+niveaux d'effectifs voisins : plus le temps est dense, plus les tranches sont courtes.
+
+### Les récompenses : pièces, série de victoires, cartes, boutique
+
+La boucle qui donne envie de « jouer encore un niveau » (modèle : Royal Match). Les **règles** sont dans
+`js/rewardsCore.js` (pur, testé : `tests/rewards.test.js`), les **écrans et effets** dans `js/app/rewards.js`
+(`e2e/recompenses.spec.js`). L'état est dans `historiaxe_rewards_v1`, synchronisé dans le cloud.
+
+- **Pièces 🪙.** Un niveau réussi paie **10 / 15 / 20** pièces selon ses étoiles (**×4** pour un boss), plus une
+  **prime au premier passage** (10 ; 30 pour un boss) et une **prime de série**. Un niveau **perdu** paie quand même
+  une consolation (2 pièces par épreuve réussie, 6 au plus) : on récompense l'effort. **Rejouer sans faire
+  mieux ne paie que 40 %**, sans prime ni carte : on peut rejouer pour le plaisir, pas pour farmer.
+- **Parties libres.** Une partie hors Chemin paie peu (8 pièces à la victoire, + points, + parfait, + défi du jour,
+  2 pour une défaite) et **plafonne à 200 pièces par jour** ; aucune pièce dans les modes sans enjeu
+  (Entraînement, Découverte, Mode Classe, Mode Carte, multijoueur). L'Expédition libre paie 4 pièces par épreuve
+  réussie + 20 si elle est menée au bout. Le Chemin reste la source principale.
+- **Série de victoires ⚡.** Chaque niveau réussi d'affilée ajoute 5 pièces de plus (25 au plus) ; une défaite la
+  remet à zéro (le record reste), un abandon ne la touche pas. Des **primes de palier** tombent à 3, 5, 10 et 20
+  victoires (20, 40, 100, 200 pièces). Distincte de la série quotidienne 🔥.
+- **Cartes de personnages 🎴.** Un **album par monde** (20 mondes, 8 à 12 figures chacun) : les figures à portrait
+  du jeu, classées dans le monde où elles ont **40 ans** (la date des portraits est celle de la naissance :
+  Napoléon, né en 1769, est de la Révolution et de l'Empire), une figure dans un seul album. Une carte tombe à la
+  **première réussite** d'un niveau, une de plus par étoile gagnée en plus du meilleur résultat, **trois (dont une
+  rare au moins) pour un boss**. Les îles piochent dans l'album de leur monde d'attache. Rareté : **légendaire** si
+  la figure a une biographie dans le jeu, **rare** si elle est incontournable de son panthéon, sinon commune. Album
+  complet : +150 pièces ; carte en double : 10 / 20 / 40 pièces. Toucher une carte de l'album ouvre la fiche.
+- **Boutique de Clio 🛍️.** Un **costume par monde** (21, de 100 à 600 pièces), qui ne s'achète qu'une fois le monde
+  atteint. Clio est la future mascotte (un chat, qui changera de costume à chaque époque) : en attendant les
+  dessins, un chat et l'emoji du costume en tiennent lieu — l'écran le dit. Le catalogue a déjà un emplacement
+  « décors d'arrière-plan », vide. Un Chemin entièrement fait à trois étoiles rapporte à peu près de quoi tout
+  acheter : ce rapport est vérifié par un test.
+- **Effets.** Les étoiles jaillissent l'une après l'autre, le gain monte (`+45 🪙`) pendant que des pièces volent
+  jusqu'au porte-monnaie, la série à partir de 3 lance des confettis, puis la carte se retourne. Tout se montre
+  d'un coup avec « réduire les animations ».
+- **Pas d'argent réel dans la boucle.** Les pièces et les cartes **ne s'achètent jamais** : ce serait des
+  « loot boxes » (interdites en Belgique, surveillées en France) dans un jeu joué par des mineurs. Quand la
+  monétisation viendra : publicité, retrait de la publicité, costumes ou décors cosmétiques ; jamais de contenu
+  pédagogique bloqué, jamais de paquets de cartes payants pour des mineurs, et le Mode Classe reste gratuit (voir « Décisions produit »
+  plus bas pour une éventuelle offre réservée aux adultes).
+
+### Décisions produit à garder en tête (non codées)
+
+- **Cartes payantes pour adultes** : écartées pour l'instant, mais envisageables plus tard pour un public adulte
+  seulement (vérification d'âge, jamais d'accès aux mineurs). À étudier pays par pays avant toute décision : la
+  Belgique interdit les « loot boxes » pour tous, pas seulement pour les mineurs ; une alternative sans hasard
+  (acheter une carte précise, pas un paquet tiré au sort) évite le problème.
+- **Équipes** (à concevoir, nécessitent un serveur) : deux familles. **Équipe de classe** : l'enseignant en crée une
+  depuis le Mode Classe, les étoiles de tous remplissent un coffre commun. **Équipes libres**, façon Clash of
+  Clans, que tout joueur peut créer ou rejoindre (jeu tout public). Garde-fous prévus dès la conception : aucun
+  texte libre entre joueurs (messages et emojis prédéfinis seulement), pseudos modérés, consentement parental sous
+  15 ans (RGPD), signalement, et pas de classement public des mineurs avec leur vrai nom.
+
+### Où est quoi
+
+| Fichier | Rôle |
+|---|---|
+| `js/pathWorlds.js` | **généré** (`node scripts/path_plan.js --write`) et figé : groupes de thèmes, mondes, tranches de temps |
+| `js/pathCore.js` | moteur **pur**, testé hors navigateur (`tests/path.test.js`) : construction des mondes, composition d'un niveau, doublons, étoiles, déblocage des niveaux, des mondes et des îles, XP |
+| `js/pathLessons.js`, `js/app/lesson.js` | les questions des leçons (pur, testé) et l'écran qui les pose |
+| `scripts/path_plan.js` | la liste des mondes, mesurée sur `data/fr.json` → `docs/chemin-du-temps-mondes.md` ; `--write` fige les tranches dans `js/pathWorlds.js` ; `--titles` aide à écrire les titres |
+| `js/app/path.js` | l'écran `#screen-path` (carte SVG + pastilles, fiche d'un niveau), le lancement d'un niveau, la récompense (`pathOnLevelFinish`) |
+| `js/app/expedition.js` | réutilisé tel quel ; `startExpedition(plan)` lance un niveau (vivier imposé via `revisionMode`, comme la révision) |
+| `js/storage.js` | `PATH_PROGRESS_KEY` (`historiaxe_path_v1`), **synchronisée** dans le cloud (`SYNC_KEYS`, aucune modification de l'API) |
+| `ui/fr.json` | clés `path.*` (titres des niveaux : `path.worlds.<monde>.levels.<n>`) — **français seulement** : les autres langues retombent sur le français |
+| `e2e/chemin.spec.js` | la carte, le Monde 0 et ses leçons, le passage d'un monde, un niveau joué, les étoiles, le déblocage, l'abandon, le boss, et que **chaque niveau démarre avec chacune de ses épreuves** sans alerte |
+
+### Ajouter un monde
+
+Ajouter l'entrée au `PLAN` de `scripts/path_plan.js` (bornes, groupes de thèmes, nombre de tranches, `tiers`),
+**en gardant les mondes existants tels quels** (relancer `--write` re-découperait leurs tranches si les données
+ont changé : vérifier avec `git diff js/pathWorlds.js` que seules les nouvelles lignes bougent), puis écrire ses
+titres dans `ui/fr.json` (`path.worlds.<id>` : `title`, `boss`, `done`, `levels`, 46 caractères au plus : le
+test le vérifie). `--titles` liste, pour chaque niveau, ses repères les plus connus.
+
+### Limites assumées de ce prototype
+
+- **Franco-centré** pour le chemin principal à partir de 481 (suivre les collections Belin) ; le reste du monde
+  est dans les îles. Les parcours nationaux et la frise personnelle qui grandit à chaque niveau n'existent pas
+  encore.
+- **Les titres des niveaux sont un premier jet** (195 titres écrits à la main) ; la composition des niveaux,
+  elle, est automatique : un repère obscur peut subsister dans une tranche pauvre en événements connus, et les
+  niveaux « pointus » (2e et 3e tiers) sont par construction moins célèbres. Une relecture historique reste à
+  faire.
+- **Les modes jouent sur des années** : dans une tranche courte (6 ans), l'ordre chronologique est grossier.
+- **Français seulement** pour les textes ; sur un autre pack de langue, un niveau qui trouve moins de 8
+  événements refuse de se lancer (`PATH_MIN_EVENTS`).
+- **Aucune mesure de rétention** (voir « Télémétrie » plus haut) : on ne saura pas si le parcours retient
+  mieux que le jeu libre sans cela.
+- Les étoiles sont synchronisées en « dernière écriture gagne », comme le reste de la progression.
+- **Plus de 190 niveaux, jamais testés par des joueurs** : la difficulté (épreuves choisies selon la place du
+  niveau dans le Chemin) et la durée d'un niveau (3 à 5 minutes) sont des hypothèses.
+
 ## Le Mode Classe : une séance en direct pour une classe
 
 L'enseignant choisit un thème (carte « Mode Classe » dans le groupe Outils de l'écran des

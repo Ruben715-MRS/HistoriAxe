@@ -546,7 +546,7 @@
     <div id="screen-expedition" class="list-screen hidden">
         <button class="back-btn" onclick="expeditionQuit()" aria-label="Quitter l'expédition"
             data-i18n-attr="aria-label:expedition.quit_aria">‹</button>
-        <h2 class="header-title" data-i18n="expedition.title">Expédition</h2>
+        <h2 class="header-title" id="expedition-title" data-i18n="expedition.title">Expédition</h2>
         <p class="modes-header-subtitle" id="expedition-subtitle"></p>
 
         <ol class="expedition-track" id="expedition-track"></ol>
@@ -567,11 +567,103 @@
         <div class="expedition-final hidden" id="expedition-final">
             <h3 id="expedition-final-title"></h3>
             <p id="expedition-final-text"></p>
+            <div class="expedition-final-extra hidden" id="expedition-final-extra" role="status"></div>
             <div class="expedition-final-actions">
+                <button type="button" class="btn hidden" id="expedition-next-level" onclick="expeditionNextLevel()" data-i18n="path.next_level">Niveau suivant</button>
                 <button type="button" class="btn" id="expedition-share" onclick="expeditionShare()" data-i18n="expedition.share_btn">Partager</button>
-                <button type="button" class="btn" onclick="startExpedition()" data-i18n="expedition.replay">Nouvelle expédition</button>
-                <button type="button" class="btn" onclick="expeditionQuit()" data-i18n="expedition.leave">Retour</button>
+                <button type="button" class="btn" id="expedition-replay" onclick="expeditionReplay()">Nouvelle expédition</button>
+                <button type="button" class="btn" id="expedition-leave" onclick="expeditionQuit()">Retour</button>
             </div>
+        </div>
+    </div>
+
+    <!-- ÉCRAN : ÉPREUVE « LEÇON » du Chemin du Temps (questions rédigées — js/app/lesson.js, js/pathLessons.js) -->
+    <div id="screen-lesson" class="hidden">
+        <div class="game-bar">
+            <div class="bar-row">
+                <button class="quit-btn" onclick="quitGame()">‹ <span data-i18n="nav.quit">Quitter</span></button>
+                <span class="bar-fill"></span>
+                <span class="lives-row" id="lesson-hud-lives" role="img"></span>
+            </div>
+            <div class="bar-row">
+                <span class="progress-rail"><span class="progress-fill" id="lesson-progress-fill"></span></span>
+                <span class="bar-meta" id="lesson-hud-count">1 / 5</span>
+                <span class="bar-meta"><span id="lesson-hud-score">0</span> pts</span>
+            </div>
+        </div>
+        <div class="quiz-body">
+            <div class="quiz-question-card" data-focus-target>
+                <div class="quiz-kicker" id="lesson-kicker"></div>
+                <div class="quiz-prompt" id="lesson-prompt"></div>
+            </div>
+            <div class="quiz-options lesson-options" id="lesson-options"></div>
+            <div class="lesson-feedback hidden" id="lesson-feedback" role="status">
+                <strong id="lesson-feedback-title"></strong>
+                <p id="lesson-feedback-text"></p>
+                <button type="button" class="btn" id="lesson-next" onclick="lessonContinue()"></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ÉCRAN : BOUTIQUE DE CLIO (costumes de la mascotte, achetés avec les pièces — js/app/rewards.js) -->
+    <div id="screen-shop" class="list-screen hidden">
+        <button class="back-btn" onclick="rewardsBack()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" data-i18n="rewards.shop_title">Boutique de Clio</h2>
+        <div class="shop-top">
+            <span class="rewards-chip shop-wallet" role="img"><span aria-hidden="true">🪙</span> <b id="shop-coins">0</b></span>
+        </div>
+        <div class="shop-clio">
+            <div class="shop-clio-avatar" aria-hidden="true"><span class="shop-clio-cat">🐱</span><span class="shop-clio-costume" id="shop-clio-costume"></span></div>
+            <p id="shop-clio-caption"></p>
+            <p class="shop-clio-soon" data-i18n="rewards.clio_soon">Clio sera dessinée bientôt : ces costumes sont des aperçus.</p>
+        </div>
+        <ul class="shop-list" id="shop-list"></ul>
+        <p class="shop-decors" data-i18n="rewards.shop_decors">Les décors d'arrière-plan arrivent plus tard.</p>
+    </div>
+
+    <!-- ÉCRAN : ALBUM DES PERSONNAGES (cartes à collectionner, un album par monde — js/app/rewards.js) -->
+    <div id="screen-album" class="list-screen hidden">
+        <button class="back-btn" onclick="rewardsBack()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" data-i18n="rewards.album_title">Album des personnages</h2>
+        <p class="modes-header-subtitle" id="album-subtitle"></p>
+        <div class="album-list" id="album-list"></div>
+    </div>
+
+    <!-- MODALE : RÉVÉLATION D'UNE CARTE -->
+    <div id="modal-card-reveal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="card-reveal-kicker">
+        <div class="modal-content card-reveal-content">
+            <div class="card-reveal-kicker" id="card-reveal-kicker"></div>
+            <div class="card-flip" id="card-flip">
+                <div class="card-flip-inner">
+                    <div class="card-face card-back" aria-hidden="true">🎴</div>
+                    <div class="card-face card-front" id="card-front"></div>
+                </div>
+            </div>
+            <p class="card-reveal-note" id="card-reveal-note"></p>
+            <div class="card-reveal-actions">
+                <button type="button" class="btn" id="card-reveal-next" onclick="rewardsRevealNext()"></button>
+                <button type="button" class="btn card-reveal-album" onclick="rewardsRevealToAlbum()" data-i18n="rewards.card_album">Voir l'album</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ÉCRAN : LE CHEMIN DU TEMPS (carte des niveaux — voir js/app/path.js et js/pathCore.js) -->
+    <div id="screen-path" class="list-screen hidden">
+        <button class="back-btn" id="path-back" onclick="pathBack()" aria-label="Retour aux catégories"
+            data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" data-i18n="path.title">Le Chemin du Temps</h2>
+        <p class="modes-header-subtitle" id="path-subtitle"></p>
+        <div class="path-rewards" id="path-rewards"></div>
+        <div class="path-map" id="path-map"></div>
+        <div class="path-sheet hidden" id="path-sheet" role="region" aria-labelledby="path-sheet-title">
+            <button type="button" class="path-sheet-close" id="path-sheet-close" onclick="pathCloseSheet()"
+                aria-label="Fermer" data-i18n-attr="aria-label:nav.close">✕</button>
+            <h3 class="path-sheet-title" id="path-sheet-title"></h3>
+            <p class="path-sheet-range" id="path-sheet-range"></p>
+            <p class="path-sheet-stages" id="path-sheet-stages"></p>
+            <p class="path-sheet-best hidden" id="path-sheet-best"></p>
+            <p class="path-sheet-lock hidden" id="path-sheet-lock"></p>
+            <button type="button" class="btn path-sheet-play" id="path-sheet-play"></button>
         </div>
     </div>
 
@@ -1313,6 +1405,7 @@
             <div class="end-score"><span data-i18n="end.score_label_prefix">Score : </span><strong
                     id="end-score-val">0</strong><span data-i18n="end.score_label_suffix"> points</span></div>
             <div id="end-xp-display" class="end-xp hidden"></div>
+            <div id="end-coins" class="end-coins hidden" role="status"></div>
             <div id="end-time-display" class="end-time hidden">Durée : 0,0 s</div>
             <div id="end-streak-display" class="end-streak-banner hidden"></div>
             <div style="display:flex; gap:15px; margin-top: 20px;">
@@ -1902,6 +1995,10 @@
     <script src="js/duels.js"></script>
     <script src="js/gamification.js"></script>
     <script src="js/dailyEngine.js"></script>
+    <script src="js/pathWorlds.js"></script>
+    <script src="js/pathCore.js"></script>
+    <script src="js/pathLessons.js"></script>
+    <script src="js/rewardsCore.js"></script>
     <script src="js/apiClient.js"></script>
     <script src="js/daily.js"></script>
     <script src="js/weekly.js"></script>
@@ -1942,6 +2039,9 @@
     <script src="js/app/modal.js"></script>
     <script src="js/app/play-mode.js"></script>
     <script src="js/app/expedition.js"></script>
+    <script src="js/app/lesson.js"></script>
+    <script src="js/app/path.js"></script>
+    <script src="js/app/rewards.js"></script>
     <script src="js/classroom.js"></script>
     <script src="js/app.js"></script>
 
