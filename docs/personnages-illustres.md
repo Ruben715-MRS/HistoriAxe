@@ -2110,10 +2110,10 @@ Croatie 25, Bulgarie 17, Albanie 11, Bosnie-Herzégovine 7, Moldavie 6, Macédoi
 
 ### Un pays à part : l'Indonésie
 
-`pan_id`, « Grandes figures d'Indonésie » (code `id`, pays) : **52 personnages**, d'Airlangga (vers 1002) à Chrisye (1949). Par axe : 20 Chefs d'État et
-dirigeants, 13 Littérature et pensée, 9 Guerres et résistances, 6 Musique, spectacle et sport, 3 Sciences, techniques et innovation, 1 Beaux-arts ; 9 ⭐ et
-aucune biographie liée. 52 portraits (1,3 Mo) : 39 du domaine public, 2 CC0, 1 CC BY 4.0, 5 CC BY-SA 3.0, 4 CC BY-SA 3.0 NL et 1 CC BY-SA 4.0. Sept figures sont nées avant 1800, quinze
-entre 1800 et 1899, trente depuis 1900 : le thème est celui de la naissance de la nation, des fondateurs de Budi Utomo et du Sarekat Islam aux
+`pan_id`, « Grandes figures d'Indonésie » (code `id`, pays) : **58 personnages**, d'Airlangga (vers 1002) à Munir Said Thalib (1965). Par axe : 21 Chefs d'État et
+dirigeants, 14 Littérature et pensée, 10 Guerres et résistances, 8 Musique, spectacle et sport, 3 Sciences, techniques et innovation, 2 Beaux-arts ; 10 ⭐ et
+aucune biographie liée. 58 portraits (1,5 Mo) : 44 du domaine public, 2 CC0, 1 CC BY 4.0, 5 CC BY-SA 3.0, 4 CC BY-SA 3.0 NL et 2 CC BY-SA 4.0. Sept figures sont nées avant 1800, quinze
+entre 1800 et 1899, trente-six depuis 1900 : le thème est celui de la naissance de la nation, des fondateurs de Budi Utomo et du Sarekat Islam aux
 ministres de la République. Les mots-clés portent le pays et ses adjectifs, les grandes îles (Java, Sumatra, Bali, Sulawesi, Bornéo), les villes
 (Jakarta, Batavia, Surabaya, Yogyakarta, Bandung), Aceh, les royaumes (Majapahit, Mataram), les Indes néerlandaises, le Pancasila et Borobudur.
 
@@ -2126,7 +2126,7 @@ ministres de la République. Les mots-clés portent le pays et ses adjectifs, le
   Majapahit n'a qu'une entrée dans l'article « Wijaya »), Mohammad Husni Thamrin, Soepomo, Imam Bonjol, Teuku Umar, Ahmad Yani, Pangeran Antasari,
   Hamengkubuwono Ier, Didi Kempot, W. S. Rendra, Sutan Takdir Alisjahbana, Ranggawarsita, Marah Rusli, S. Sudjojono, Basuki Abdullah, Friedrich
   Silaban, Ki Nartosabdho, Sardjito, Herman Johannes, Marie Thomas et Soedjatmoko. Les Beaux-arts et les Sciences en sortent les plus
-  maigres : un seul peintre (Raden Saleh), trois savants. C'est un manque de l'encyclopédie plus que de l'histoire, et la liste se rouvrira si des articles
+  maigres : deux peintres (Raden Saleh, Affandi), trois savants. C'est un manque de l'encyclopédie plus que de l'histoire, et la liste se rouvrira si des articles
   paraissent.
 - **Pas de vivants, pas d'entrepreneurs, pas de sportifs de palmarès.** Joko Widodo, Megawati, Susilo Bambang Yudhoyono, Prabowo Subianto, Anggun,
   Rhoma Irama, Iwan Fals, Christine Hakim, Iko Uwais, les badistes (Rudy Hartono, Liem Swie King, Susy Susanti, Taufik Hidayat…) et les boxeurs (Ellyas Pical,
@@ -2145,18 +2145,21 @@ ministres de la République. Les mots-clés portent le pays et ses adjectifs, le
   guerre d'Aceh.
 - **Des portraits souvent indirects**, et les légendes le disent : deux œuvres sculptées (Airlangga en Vishnu à Belahan, la statue moderne de Gajah Mada), cinq tableaux
   (Iskandar Muda, Sultan Agung, Surapati, Arung Palakka, Ngurah Rai), un dessin fait de son vivant (Diponegoro, par A. J. Bik en 1830, Rijksmuseum, CC0), un autoportrait
-  (Raden Saleh), un billet de la Banque d'Indonésie (Cut Nyak Dhien) et un timbre de 1999 (Maria Walanda Maramis) — tous deux `nomVisible`, le nom étant imprimé dans l'image.
+  (Raden Saleh), un billet de la Banque d'Indonésie (Cut Nyak Dhien) et deux timbres, de 1999 (Maria Walanda Maramis) et de 1997 (Affandi, un portrait peint) — tous trois `nomVisible`, le nom étant imprimé dans l'image.
   Trois sont recadrés dans une image plus large : Sjahrir (à la tribune, visage au bord gauche), Arung Palakka (le tableau, dans son cadre) et Ismaïl Marzuki (au piano, visage à
   droite) ; ce dernier a été recadré **à la main**, depuis la miniature de 500 pixels que Commons avait fournie, faute de pouvoir la retélécharger.
-- **Statut américain des images : à relire.** Quarante et un portraits sont du « domaine public » ou CC0, et le script a lu la licence déclarée par Commons, non le statut américain,
+- **Statut américain des images : à relire.** Quarante-six portraits sont du « domaine public » ou CC0, et le script a lu la licence déclarée par Commons, non le statut américain,
   qu'il ne vérifie pas. La plupart sont des œuvres officielles (portraits ministériels, billets, timbres) ou des photographies d'agences anciennes (IPPHOS, archives nationales), que
   Commons étiquette « US ? » : c'est le cas qui a coûté huit figures à l'Amérique hispanique. **Décision prise** : accepter les images d'origine gouvernementale ou d'avant 1946,
   en gardant la liste ici. Les « US oui » relevés sont Diponegoro, Douwes Dekker, Kartini, Hatta, Ali Sadikin, Leimena, Mochtar Kusumaatmadja, Airlangga et Sultan Agung.
-- **Sept fiches rédigées en attente**, dans `scripts/pantheon/id_candidats.md` : Suharto, Pramoedya Ananta Toer, Usmar Ismail, Titiek Puspa, Sumitro Djojohadikusumo et Affandi, dont
-  l'image n'a pas pu être téléchargée (Wikimedia répondait 429 à presque toutes les requêtes), et Munir Said Thalib, dont la seule photographie libre est un cliché de groupe où l'on ne
-  sait pas qui il est. **Suharto et Pramoedya, deux ⭐ et deux des figures les plus sensibles du thème, en sont**. Le texte de chaque fiche est prêt : pour les réintégrer, recopier
-  l'objet dans `personnages` de `scripts/pantheon/id.json`, lancer `python3 scripts/fetch_portraits.py id --only <slug>`, puis `python3 scripts/pantheon_classement.py --write id`,
-  `python3 scripts/build_pantheon.py id`, les compteurs des tests (3 068 figures, 104 portraits à nom visible) et ceux de `js/i18n.js`.
+- **Une fiche rédigée en attente : Pramoedya Ananta Toer** (⭐), dans `scripts/pantheon/id_candidats.md`. Son portrait libre existe (une photographie de 1954, domaine
+  public) mais Wikimedia répond 429 à tous les téléchargements de ce fichier depuis cet environnement ; le texte de la fiche est prêt. Pour le réintégrer : recopier l'objet dans
+  `personnages` de `scripts/pantheon/id.json`, lancer `python3 scripts/fetch_portraits.py id --only pramoedya`, puis `python3 scripts/build_pantheon.py id`, `npm run build:pack`
+  et les compteurs des tests (3 131 figures, 105 portraits à nom visible) et de `js/i18n.js`.
+- **Six portraits récupérés par un chemin détourné.** Suharto, Usmar Ismail, Titiek Puspa, Sumitro, Affandi et Munir ont été téléchargés par `Special:FilePath` (miniature de 330
+  ou 500 pixels, ou original), faute de pouvoir passer par `fetch_portraits.py`, que Wikimedia bloquait ; la licence, l'auteur et la date ont été lus par le script sur la page de chaque fichier,
+  comme d'habitude. Munir, dont la seule image trouvée d'abord était une photographie de groupe, a une photographie de jeunesse tirée de l'album familial, dont l'auteur n'est pas nommé sur Commons
+  (« TBD ») : le crédit dit « Famille de Munir (album personnel) ». Aucune image non libre n'a été nécessaire.
 - **Les écartés fragiles** : Pattimura, Martha Christina Tiahahu, Kartosuwiryo, Frans Kaisiepo, Cut Meutia, Hasanuddin, Sisingamangaraja XII, Nuku de Tidore, Trunajaya, Ahmad Dahlan,
   Djuanda, Sjafruddin Prawiranegara, Soebardjo, Roosseno, Sutami, Bing Slamet ne sont gardés par aucune image convenable (timbres et billets seuls, ou images minuscules) : ils
   reviendront si un meilleur portrait apparaît.
