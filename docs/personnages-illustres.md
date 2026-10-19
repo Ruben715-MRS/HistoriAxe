@@ -890,7 +890,9 @@ née après 1960. Sa fiche, rangée en « Littérature et pensée » (auteur de 
 animateur d'un podcast), s'en tient aux faits et aux dates, expose ses soutiens comme ses
 critiques (comme celles de Reagan ou de Malcolm X) et ne dit rien de la procédure judiciaire en
 cours. Portrait : Gage Skidmore, CC BY-SA 3.0 (CPAC, 2017). À relire quand le recul permettra
-de mesurer son rôle. La liste a été soumise puis validée décision par décision : 85
+de mesurer son rôle.
+
+La liste a été soumise puis validée décision par décision : 85
 figures proposées, portées à 123 (« mieux vaut plus que moins »), puis à 129 avec
 l'axe Économie et entreprise (Vanderbilt, Carnegie, Morgan, Rockefeller, Ford et
 Madam Walker, aux côtés d'Edison, de Disney et de Jobs, qui y ont été rangés).
