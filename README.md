@@ -519,7 +519,20 @@ La boucle qui donne envie de « jouer encore un niveau » (modèle : Royal Match
 - **Pas d'argent réel dans la boucle.** Les pièces et les cartes **ne s'achètent jamais** : ce serait des
   « loot boxes » (interdites en Belgique, surveillées en France) dans un jeu joué par des mineurs. Quand la
   monétisation viendra : publicité, retrait de la publicité, costumes ou décors cosmétiques ; jamais de contenu
-  pédagogique bloqué, jamais de paquets de cartes payants, et le Mode Classe reste gratuit.
+  pédagogique bloqué, jamais de paquets de cartes payants pour des mineurs, et le Mode Classe reste gratuit (voir « Décisions produit »
+  plus bas pour une éventuelle offre réservée aux adultes).
+
+### Décisions produit à garder en tête (non codées)
+
+- **Cartes payantes pour adultes** : écartées pour l'instant, mais envisageables plus tard pour un public adulte
+  seulement (vérification d'âge, jamais d'accès aux mineurs). À étudier pays par pays avant toute décision : la
+  Belgique interdit les « loot boxes » pour tous, pas seulement pour les mineurs ; une alternative sans hasard
+  (acheter une carte précise, pas un paquet tiré au sort) évite le problème.
+- **Équipes** (à concevoir, nécessitent un serveur) : deux familles. **Équipe de classe** : l'enseignant en crée une
+  depuis le Mode Classe, les étoiles de tous remplissent un coffre commun. **Équipes libres**, façon Clash of
+  Clans, que tout joueur peut créer ou rejoindre (jeu tout public). Garde-fous prévus dès la conception : aucun
+  texte libre entre joueurs (messages et emojis prédéfinis seulement), pseudos modérés, consentement parental sous
+  15 ans (RGPD), signalement, et pas de classement public des mineurs avec leur vrai nom.
 
 ### Où est quoi
 
