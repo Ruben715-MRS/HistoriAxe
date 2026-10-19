@@ -1,0 +1,481 @@
+{
+  "code": "mn",
+  "nom": "Mongolie",
+  "theme": {
+    "id": "pan_mn",
+    "nom": "Grandes figures de Mongolie",
+    "difficulte": "Intermédiaire",
+    "motsCles": [
+      "Mongolie",
+      "Mongol",
+      "Mongole",
+      "Mongols",
+      "Oulan-Bator",
+      "Ourga",
+      "Karakorum",
+      "Gobi",
+      "Khalkha",
+      "Naadam",
+      "Empire mongol",
+      "Gengis Khan",
+      "Khagan",
+      "Horde",
+      "Yuan du Nord",
+      "Khoural",
+      "Bogdo Khan",
+      "Mongolie-Extérieure",
+      "Mongolie autonome",
+      "République populaire mongole",
+      "Révolution mongole",
+      "Parti révolutionnaire du peuple mongol",
+      "Révolution démocratique",
+      "Histoire secrète des Mongols",
+      "Bouddhisme tibétain",
+      "Steppe",
+      "Asie centrale"
+    ]
+  },
+  "axes": [
+    "Chefs d'État et dirigeants",
+    "Guerres et résistances",
+    "Littérature et pensée",
+    "Beaux-arts",
+    "Sciences, techniques et innovation"
+  ],
+  "personnages": [
+    {
+      "slug": "gengis",
+      "nom": "Gengis Khan",
+      "classement": "Gengis Khan",
+      "titre": "Naissance de Gengis Khan",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1162,
+      "description": "Gengis Khan (vers 1162-1227) est le fondateur de l'Empire mongol, né sous le nom de Temüjin dans le Khamag Mongol, l'actuelle province de Khentii. Abandonné avec sa famille par sa tribu après la mort de son père, il réunifie les tribus des steppes et reçoit en 1206 le titre de Gengis Khan, le « souverain universel ». Il lance les conquêtes contre les Xia, les Jin et l'empire khwarezmien, bâtit le plus vaste empire continu de l'histoire, et meurt en 1227 pendant une campagne contre les Xia.",
+      "wikipedia": "Gengis_Khan",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "YuanEmperorAlbumGenghisPortrait.jpg",
+        "legende": "Gengis Khan, portrait de l'album des empereurs de la dynastie Yuan",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
+      },
+      "biographie": "bio_genghiskhan"
+    },
+    {
+      "slug": "ogodei",
+      "nom": "Ögedeï",
+      "classement": "Ögedeï",
+      "titre": "Naissance d'Ögedeï",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1186,
+      "description": "Ögedeï (vers 1186-1241) est le troisième fils de Gengis Khan et son successeur comme grand khan, de 1229 à sa mort. Il achève la conquête de la Chine des Jin, fonde en 1235 la capitale Karakorum, et lance les invasions de la Russie et de l'Europe centrale, conduites par Batu et Subötaï. Il meurt en 1241, ce qui provoque, selon la tradition, le retrait de l'armée mongole d'Europe.",
+      "wikipedia": "Ögedeï",
+      "portrait": {
+        "fichier": "YuanEmperorAlbumOgedeiPortrait.jpg",
+        "legende": "Ögedeï, portrait de l'album des empereurs de la dynastie Yuan",
+        "licence": "Domaine public",
+        "auteur": "Anonymous Unknown author"
+      }
+    },
+    {
+      "slug": "guyuk",
+      "nom": "Güyük",
+      "classement": "Güyük",
+      "titre": "Naissance de Güyük",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1206,
+      "description": "Güyük (1206-1248) est le troisième grand khan des Mongols, de 1246 à sa mort, fils d'Ögedeï et petit-fils de Gengis Khan. Il commande des armées contre les Xia orientaux et contre les Coumans et les Russes, puis il est élu en 1246 à un kurultai auquel assiste le moine franciscain Jean de Plan Carpin. Il répond par une lettre hautaine au pape Innocent IV, qui l'invitait à se convertir, et il meurt en 1248, en marche vers l'ouest.",
+      "wikipedia": "Güyük",
+      "portrait": {
+        "fichier": "Guyuk khan from Persian miniature.jpg",
+        "legende": "Güyük, miniature persane",
+        "licence": "Domaine public",
+        "auteur": "Abdullâh Sultân (atelier). Shîrâz"
+      }
+    },
+    {
+      "slug": "mongke",
+      "nom": "Möngke",
+      "classement": "Möngke",
+      "titre": "Naissance de Möngke",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1209,
+      "description": "Möngke (1209-1259) est le quatrième grand khan des Mongols, de 1251 à sa mort, petit-fils de Gengis Khan, fils de Tolui et de Sorgaqtani. Élu après l'écartement de la branche d'Ögedeï, il fait recenser l'empire et confie à ses frères les grandes campagnes : Kubilai en Chine du Sud, Hülegü en Perse, où Bagdad tombe en 1258. Il meurt en 1259, lors du siège de Diaoyu, en Chine, et sa mort ouvre la guerre entre ses frères Kubilai et Ariq Böke.",
+      "wikipedia": "Möngke",
+      "portrait": {
+        "fichier": "Möngke Khan.jpg",
+        "legende": "Möngke, miniature persane",
+        "licence": "CC0 (domaine public)",
+        "auteur": "Abdullâh Sultân (atelier). Shîrâz"
+      }
+    },
+    {
+      "slug": "mandukhai",
+      "nom": "Mandukhaï Khatun",
+      "classement": "Mandukhaï Khatun",
+      "titre": "Naissance de Mandukhaï Khatun",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1449,
+      "description": "Mandukhaï Khatun (vers 1449-1510) est une reine mongole de la dynastie des Yuan du Nord, appelée la Sage, fille d'un conseiller du peuple Ongüt. Veuve du khan Manduul, elle élève en secret Batu-Möngke, le dernier descendant de Gengis Khan, le proclame khan sous le nom de Dayan Khan et l'épouse. Elle réunit les Mongols avec son mari, dirige elle-même des armées, et meurt en 1510.",
+      "wikipedia": "Mandukhaï_Khatun",
+      "portrait": {
+        "fichier": "Stèle pour Mandukhaï Khatun.png",
+        "legende": "Mandukhaï Khatun, stèle",
+        "licence": "CC BY-SA 4.0",
+        "auteur": "Panoramix"
+      }
+    },
+    {
+      "slug": "bogd",
+      "nom": "Bogdo Khan",
+      "classement": "Bogdo Khan",
+      "titre": "Naissance de Bogdo Khan",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1869,
+      "description": "Bogdo Khan (1869-1924) est le chef spirituel du bouddhisme tibétain en Mongolie, huitième Jebtsundamba Khutughtu, et le souverain de la Mongolie autonome. Reconnu comme réincarnation en 1874, il est intronisé khagan en décembre 1911, après la déclaration d'indépendance qui suit la chute des Qing. Souverain à la fois religieux et politique, il subit l'occupation chinoise de 1919 à 1921, puis il meurt en 1924, et la République populaire mongole est proclamée après sa mort.",
+      "wikipedia": "Bogdo_Khan",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Sharav bogd khan.jpg",
+        "legende": "Bogdo Khan, tableau de Marzan Sharav",
+        "licence": "Domaine public",
+        "auteur": "Marzan Sharav (1869–1939)"
+      }
+    },
+    {
+      "slug": "sukhbaatar",
+      "nom": "Damdin Sükhbaatar",
+      "classement": "Damdin Sükhbaatar",
+      "titre": "Naissance de Damdin Sükhbaatar",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1893,
+      "description": "Damdin Sükhbaatar (1893-1923) est l'un des chefs de la révolution mongole de 1921, surnommé le « Lénine mongol », né à Ourga, l'actuelle Oulan-Bator. Typographe devenu révolutionnaire, il fonde en 1920 le Parti du peuple mongol, puis commande l'armée populaire qui chasse les troupes chinoises de Maimaicheng en 1921. Ministre de la Guerre du nouveau gouvernement, il meurt en 1923, à 30 ans, et la place centrale de la capitale porte son nom.",
+      "wikipedia": "Damdin_Sükhbaatar",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Sukhbaatar.jpg",
+        "legende": "Damdin Sükhbaatar, photographie de 1921",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
+      }
+    },
+    {
+      "slug": "choibalsan",
+      "nom": "Horloogiyn Choybalsan",
+      "classement": "Horloogiyn Choybalsan",
+      "titre": "Naissance de Horloogiyn Choybalsan",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1895,
+      "description": "Horloogiyn Choybalsan (1895-1952) est le dirigeant de la République populaire mongole de 1936 à sa mort, maréchal, né sous le nom de Dugar dans l'est du pays. Révolutionnaire de 1921, il s'impose sous l'impulsion de Staline, mène une répression féroce qui détruit presque tous les monastères bouddhistes, et obtient la reconnaissance internationale de l'indépendance de la Mongolie. Il meurt à Moscou en 1952.",
+      "wikipedia": "Horloogiyn_Choybalsan",
+      "portrait": {
+        "fichier": "Horloogiyn Choybalsan.jpg",
+        "legende": "Horloogiyn Choybalsan, portrait",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "genden",
+      "nom": "Peljidiyn Genden",
+      "classement": "Peljidiyn Genden",
+      "titre": "Naissance de Peljidiyn Genden",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1892,
+      "description": "Peljidiyn Genden (1892-1937) est le Premier ministre de la République populaire mongole de 1932 à 1936. Il s'oppose à Staline en dénonçant l'« impérialisme rouge » de l'Union soviétique, refuse l'exécution des moines bouddhistes et le stationnement de troupes soviétiques, et il est destitué en 1936. Arrêté et conduit en Union soviétique, il est fusillé à Moscou en novembre 1937.",
+      "wikipedia": "Peljidiyn_Genden",
+      "portrait": {
+        "fichier": "Genden.jpg",
+        "legende": "Peljidiyn Genden, portrait",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
+      }
+    },
+    {
+      "slug": "amar",
+      "nom": "Anandyn Amar",
+      "classement": "Anandyn Amar",
+      "titre": "Naissance d'Anandyn Amar",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1886,
+      "description": "Anandyn Amar (1886-1941) est un Premier ministre et chef de l'État de la République populaire mongole, né dans la province de Bulgan, fils d'un noble. Après avoir servi dans l'administration du Khaganat du Bogdo, il rejoint le parti du peuple en 1923, dirige le gouvernement à plusieurs reprises et préside l'État de 1932 à 1936. Arrêté pendant les grandes purges, il est fusillé le 10 juillet 1941 à Kommounarka, près de Moscou.",
+      "wikipedia": "Anandyn_Amar",
+      "portrait": {
+        "fichier": "AnandynAmar.jpg",
+        "legende": "Anandyn Amar, portrait",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
+      }
+    },
+    {
+      "slug": "namnansuren",
+      "nom": "Tögs-Ochiryn Namnansüren",
+      "classement": "Tögs-Ochiryn Namnansüren",
+      "titre": "Naissance de Tögs-Ochiryn Namnansüren",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1878,
+      "description": "Tögs-Ochiryn Namnansüren (1878-1919) est le Premier ministre de la Mongolie autonome de 1912 à sa mort, né à Uyanga, dans l'Övörkhangaï. Prince khalkha, il fait partie de la délégation envoyée en 1911 à Saint-Pétersbourg pour demander l'appui de la Russie à l'indépendance, puis dirige le gouvernement de Bogdo Khan. Il meurt en 1919, au moment où la Chine reprend le contrôle du pays.",
+      "wikipedia": "Tögs-Ochiryn_Namnansüren",
+      "portrait": {
+        "fichier": "Namnansuren2.jpg",
+        "legende": "Tögs-Ochiryn Namnansüren, portrait",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
+      }
+    },
+    {
+      "slug": "yanjmaa",
+      "nom": "Sühbaataryn Yanjmaa",
+      "classement": "Sühbaataryn Yanjmaa",
+      "titre": "Naissance de Sühbaataryn Yanjmaa",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1893,
+      "description": "Sühbaataryn Yanjmaa (1893-1962) est la première femme chef d'État de Mongolie, la veuve du héros Damdin Sükhbaatar, dont elle prend le nom. Membre du Politburo de 1940 à 1954 et secrétaire du comité central de 1941 à 1947, elle est chef d'État honorifique par intérim, comme présidente du présidium du Grand Khoural, de 1953 à 1954. Elle meurt en 1962, à 69 ans.",
+      "wikipedia": "Sühbaataryn_Yanjmaa",
+      "portrait": {
+        "fichier": "YanjmaaSükhbaataryn.jpg",
+        "legende": "Sühbaataryn Yanjmaa, photographie des années 1950",
+        "licence": "Domaine public",
+        "auteur": "Unknown author"
+      }
+    },
+    {
+      "slug": "tsedenbal",
+      "nom": "Yumjagiyn Tsedenbal",
+      "classement": "Yumjagiyn Tsedenbal",
+      "titre": "Naissance de Yumjagiyn Tsedenbal",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1916,
+      "description": "Yumjagiyn Tsedenbal (1916-1991) est le dirigeant de la Mongolie communiste de 1952 à 1984, né à Davst. Secrétaire général du parti pendant quarante ans, Premier ministre de 1952 à 1974 puis chef de l'État de 1974 à 1984, il aligne le pays sur l'Union soviétique. Écarté pour maladie en 1984, pendant un séjour à Moscou, il y meurt en 1991.",
+      "wikipedia": "Yumjagiyn_Tsedenbal",
+      "portrait": {
+        "fichier": "Tsedenbal BundesArchiv.jpg",
+        "legende": "Yumjagiyn Tsedenbal, photographie de 1963",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Helmut Schaar Description German photojournalist"
+      }
+    },
+    {
+      "slug": "sambuu",
+      "nom": "Jamsarangiyn Sambu",
+      "classement": "Jamsarangiyn Sambu",
+      "titre": "Naissance de Jamsarangiyn Sambu",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1895,
+      "description": "Jamsarangiyn Sambu (1895-1972) est le chef de l'État de la République populaire mongole de 1954 à sa mort, comme président du présidium du Grand Khoural, né dans l'actuelle province de Töv, fils d'un berger. Employé local à seize ans, il entre au parti après la révolution de 1921, devient diplomate et soutient les purges des années 1920 et 1930. Sous sa présidence, la Mongolie entre à l'ONU en 1961, et il meurt en fonction en 1972.",
+      "wikipedia": "Jamsarangiyn_Sambu",
+      "portrait": {
+        "fichier": "JamsrangiinSambuu.png",
+        "legende": "Jamsarangiyn Sambu, statue",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Chinneeb",
+        "recadrage": [
+          0.3,
+          0.05,
+          0.8,
+          0.55
+        ]
+      }
+    },
+    {
+      "slug": "batmonkh",
+      "nom": "Jambyn Batmönkh",
+      "classement": "Jambyn Batmönkh",
+      "titre": "Naissance de Jambyn Batmönkh",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1926,
+      "description": "Jambyn Batmönkh (1926-1997) est le dernier dirigeant communiste de la Mongolie, secrétaire général du parti de 1984 à 1990 et chef de l'État de 1989 à 1990, né à Khyargas. Premier ministre de 1974 à 1984, il succède à Tsedenbal, malade, et engage des réformes. Face aux manifestations pacifiques de mars 1990, il démissionne avec le bureau politique, ouvrant la voie au multipartisme, et il meurt à Oulan-Bator en 1997.",
+      "wikipedia": "Jambyn_Batmönkh",
+      "portrait": {
+        "fichier": "Jambyn Batmönkh.jpg",
+        "legende": "Jambyn Batmönkh, photographie de 2014",
+        "licence": "CC BY-SA 4.0",
+        "auteur": "Б.Наранхүү"
+      }
+    },
+    {
+      "slug": "zorig",
+      "nom": "Sanjaasürengiin Zorig",
+      "classement": "Sanjaasürengiin Zorig",
+      "titre": "Naissance de Sanjaasürengiin Zorig",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1962,
+      "description": "Sanjaasürengiin Zorig (1962-1998) est l'un des chefs de la révolution démocratique de 1990, né à Oulan-Bator, fils d'un vice-ministre de l'Éducation. Enseignant de « communisme scientifique » devenu militant, il organise les manifestations pacifiques de l'hiver 1989-1990, qui obtiennent la fin du parti unique, et devient ministre en 1996. Désigné en 1998 pour le poste de Premier ministre, il est assassiné chez lui, à Oulan-Bator, le 2 octobre, un crime qui n'a jamais été élucidé.",
+      "wikipedia": "Sanjaasürengiyn_Zorig",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Zorig memorial.jpg",
+        "legende": "Sanjaasürengiin Zorig, statue",
+        "licence": "CC BY 3.0",
+        "auteur": "Uugii",
+        "recadrage": [
+          0.25,
+          0.15,
+          0.75,
+          0.65
+        ]
+      }
+    },
+    {
+      "slug": "ochirbat",
+      "nom": "Punsalmaagiin Ochirbat",
+      "classement": "Punsalmaagiin Ochirbat",
+      "titre": "Naissance de Punsalmaagiin Ochirbat",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1942,
+      "description": "Punsalmaagiin Ochirbat (1942-2025) est le premier président de la Mongolie démocratique, de 1990 à 1997, né dans la province de Zavkhan. Ingénieur des mines formé à Leningrad, il entre au parti en 1965, puis conduit le pays après la révolution de 1990 et devient en 1993 le premier président élu au suffrage universel direct. Il mène la transition vers l'économie de marché, et il meurt à Oulan-Bator en janvier 2025.",
+      "wikipedia": "Punsalmaagiin_Ochirbat",
+      "portrait": {
+        "fichier": "Punsalmaagiyn Ochirbat 1995.png",
+        "legende": "Punsalmaagiin Ochirbat, photographie de 1995",
+        "licence": "CC BY 4.0",
+        "auteur": "European Communities"
+      }
+    },
+    {
+      "slug": "subotai",
+      "nom": "Subötaï",
+      "classement": "Subötaï",
+      "titre": "Naissance de Subötaï",
+      "axe": "Guerres et résistances",
+      "naissance": 1176,
+      "description": "Subötaï (vers 1176-1248) est le plus grand général de Gengis Khan, né chez les Uriankhai, un peuple de Sibérie. Entré au service de Temüjin à 14 ans, il mène la chevauchée de reconnaissance de 1221 à 1223 à travers le Caucase et la Crimée, bat les Russes à la Kalka, puis conduit l'invasion de l'Europe centrale en 1241, avec la victoire de la rivière Sajó. Il meurt en 1248, en Mongolie.",
+      "wikipedia": "Subötaï",
+      "portrait": {
+        "fichier": "Subudei.jpg",
+        "legende": "Subötaï, dessin",
+        "licence": "Domaine public",
+        "auteur": "неизвестен/unknown"
+      },
+      "biographie": "bio_soubotai"
+    },
+    {
+      "slug": "yesugei",
+      "nom": "Yesügei",
+      "classement": "Yesügei",
+      "titre": "Naissance de Yesügei",
+      "axe": "Guerres et résistances",
+      "naissance": 1134,
+      "description": "Yesügei (1134-1171) est le père de Gengis Khan, chef du clan Borjigin et petit-fils de Khabul Khan. Il enlève Hö'elün à son premier mari, se bat contre les Tatars et donne à son fils aîné le nom d'un chef tatar qu'il vient de tuer, Temüjin. Empoisonné par des Tatars en 1171, au retour d'un voyage où il a fiancé son fils, il meurt, et sa tribu abandonne sa famille.",
+      "wikipedia": "Yesügei",
+      "portrait": {
+        "fichier": "Yesugeï enthroned (Bibliothèque nationale de France, Supplément Persan 1113 f.36v).jpg",
+        "legende": "Yesügei, miniature persane du XVe siècle",
+        "licence": "Domaine public",
+        "auteur": "Jami al-Tawarikh artist, 1420-1430 artist"
+      }
+    },
+    {
+      "slug": "hoelun",
+      "nom": "Hö'elün",
+      "classement": "Hö'elün",
+      "titre": "Naissance de Hö'elün",
+      "axe": "Guerres et résistances",
+      "naissance": 1140,
+      "description": "Hö'elün (vers 1140-vers 1210) est la mère de Gengis Khan, noble femme de la tribu Onggirat. Enlevée à son premier mari par Yesügei, elle conduit seule ses cinq enfants à travers la pauvreté, après la mort de celui-ci, et leur transmet le sens de l'union qui fonde le pouvoir de Temüjin. L'Histoire secrète des Mongols la montre énergique, conseillère de son fils, et elle meurt vers 1210.",
+      "wikipedia": "Hö'elün",
+      "portrait": {
+        "fichier": "Hö'elün, wife of Yesugei (Bibliothèque nationale de France, Supplément Persan 1113 f.36v).jpg",
+        "legende": "Hö'elün, miniature persane du XVe siècle",
+        "licence": "Domaine public",
+        "auteur": "1420-1430 artist, Herat"
+      }
+    },
+    {
+      "slug": "khutulun",
+      "nom": "Khutulun",
+      "classement": "Khutulun",
+      "titre": "Naissance de Khutulun",
+      "axe": "Guerres et résistances",
+      "naissance": 1260,
+      "description": "Khutulun (vers 1260-vers 1306) est une princesse mongole, fille du khan Qaïdu et nièce de Kubilai Khan. Guerrière et lutteuse, elle accompagne son père dans ses campagnes contre la dynastie des Yuan, et Marco Polo la décrit fondant sur les ennemis comme un faucon. La tradition dit qu'elle ne voulait épouser que l'homme qui la vaincrait à la lutte, et qu'elle a refusé de nombreux prétendants.",
+      "wikipedia": "Khutulun",
+      "portrait": {
+        "fichier": "Qutulun daughter of Qaidu.jpeg",
+        "legende": "Khutulun à la lutte, miniature du XVe siècle",
+        "licence": "Domaine public",
+        "auteur": "Maître de la Mazarine"
+      }
+    },
+    {
+      "slug": "natsagdorj",
+      "nom": "Dashdorjiin Natsagdorj",
+      "classement": "Dashdorjiin Natsagdorj",
+      "titre": "Naissance de Dashdorjiin Natsagdorj",
+      "axe": "Littérature et pensée",
+      "naissance": 1906,
+      "description": "Dashdorjiin Natsagdorj (1906-1937) est un poète et dramaturge mongol, fondateur de la littérature mongole moderne, né dans la famille d'un noble sans titre. Cofondateur de l'Union des écrivains, il séjourne en Allemagne et en France de 1926 à 1929, puis critique les idéologies de gauche de son pays. Arrêté pendant la terreur stalinienne, il meurt en 1937, à 30 ans.",
+      "wikipedia": "Dashdorjiin_Natsagdorj",
+      "portrait": {
+        "fichier": "Natsagdorj.jpg",
+        "legende": "Dashdorjiin Natsagdorj, portrait des années 1930",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
+      }
+    },
+    {
+      "slug": "damdinsuren",
+      "nom": "Tsendiin Damdinsüren",
+      "classement": "Tsendiin Damdinsüren",
+      "titre": "Naissance de Tsendiin Damdinsüren",
+      "axe": "Littérature et pensée",
+      "naissance": 1908,
+      "description": "Tsendiin Damdinsüren (1908-1986) est un écrivain et linguiste mongol, né dans l'actuelle province de Dornod, dans une famille d'éleveurs nomades. Scribe à treize ans, soldat, il écrit des poèmes et fixe la langue littéraire moderne, compose les paroles de l'hymne national et transcrit en mongol moderne l'Histoire secrète des Mongols. Il meurt à Oulan-Bator en 1986.",
+      "wikipedia": "Tsendiin_Damdinsüren",
+      "portrait": {
+        "fichier": "TsendiinDamdinsuren.jpg",
+        "legende": "Tsendiin Damdinsüren, photographie de 1969",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
+      }
+    },
+    {
+      "slug": "rinchen",
+      "nom": "Byambyn Rinchen",
+      "classement": "Byambyn Rinchen",
+      "titre": "Naissance de Byambyn Rinchen",
+      "axe": "Littérature et pensée",
+      "naissance": 1905,
+      "description": "Byambyn Rinchen (1905-1977) est un écrivain, traducteur et savant mongol, né à Altanboulag, dans la province de Selenge. Il écrit des romans comme « Aube » et « La grande migration », traduit Gorki, Maïakovski, Maupassant et Nazım Hikmet, et étudie la linguistique de son pays. Il parle six langues, dont l'espéranto, et il meurt à Oulan-Bator en 1977.",
+      "wikipedia": "Byambyn_Rinchen",
+      "portrait": {
+        "fichier": "Bjambyn Rintschen.jpg",
+        "legende": "Byambyn Rinchen, statue",
+        "licence": "Domaine public",
+        "auteur": "Brücke-Osteuropa"
+      }
+    },
+    {
+      "slug": "zanabazar",
+      "nom": "Zanabazar",
+      "classement": "Zanabazar",
+      "titre": "Naissance de Zanabazar",
+      "axe": "Beaux-arts",
+      "naissance": 1635,
+      "description": "Zanabazar (1635-1723) est le premier Jebtsundamba Khutughtu, chef spirituel du bouddhisme tibétain des Khalkhas, et le plus grand sculpteur mongol, né dans la famille du khan Tüsheet, descendant de Gengis Khan. Reconnu comme réincarnation en 1640, il crée en 1686 l'écriture soyombo et réalise des statues de bronze, dont celles de la déesse Tara, d'une grâce célèbre. Il meurt à Pékin en 1723.",
+      "wikipedia": "Zanabazar",
+      "portrait": {
+        "fichier": "YesheDorje.jpg",
+        "legende": "Zanabazar, peinture bouddhique (thangka)",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "barsbold",
+      "nom": "Rinchen Barsbold",
+      "classement": "Rinchen Barsbold",
+      "titre": "Naissance de Rinchen Barsbold",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1935,
+      "description": "Rinchen Barsbold (1935-2025) est un paléontologue et géologue mongol, né à Oulan-Bator, grand spécialiste des dinosaures du désert de Gobi. À l'Institut de géologie d'Oulan-Bator, il joue un rôle majeur dans la découverte de l'une des plus grandes collections de dinosaures du monde. Il note dès 1983 que les théropodes ont de nombreux points communs avec les oiseaux, ce que confirment les dinosaures à plumes découverts dans les années 1990, et il meurt en 2025.",
+      "wikipedia": "Rinchen_Barsbold",
+      "portrait": {
+        "fichier": "Rinchen Barsbold.jpg",
+        "legende": "Rinchen Barsbold, photographie de 1989",
+        "licence": "CC0 (domaine public)",
+        "auteur": "BatboldDorjgurkhem"
+      }
+    }
+  ]
+}

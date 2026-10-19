@@ -97,7 +97,7 @@ test('Personnages illustres : deux sous-catégories, chacune avec sa note et son
             "Grandes figures d'Asie centrale", "Grandes figures d'Australie", 'Grandes figures des Balkans', 'Grandes figures du Benelux', 'Grandes figures du Brésil', 'Grandes figures du Canada', 'Grandes figures de Chine',
             "Grandes figures d'Égypte", "Grandes figures d'Espagne", 'Grandes figures des États-Unis',
             'Grandes figures de France', 'Grandes figures de Grèce', "Grandes figures d'Indochine", "Grandes figures d'Indonésie", "Grandes figures d'Iran", "Grandes figures d'Israël", "Grandes figures d'Italie", 'Grandes figures du Japon',
-            'Grandes figures du Machrek et de la péninsule Arabique', 'Grandes figures du Maghreb', 'Grandes figures du monde malais', 'Grandes figures de Nouvelle-Zélande et du Pacifique', 'Grandes figures des pays baltes', 'Grandes figures des Philippines', 'Grandes figures du Portugal',
+            'Grandes figures du Machrek et de la péninsule Arabique', 'Grandes figures du Maghreb', 'Grandes figures du monde malais', 'Grandes figures de Mongolie', 'Grandes figures de Nouvelle-Zélande et du Pacifique', 'Grandes figures des pays baltes', 'Grandes figures des Philippines', 'Grandes figures du Portugal',
             'Grandes figures du Royaume-Uni', 'Grandes figures de Russie', 'Grandes figures de Scandinavie', 'Grandes figures du sous-continent indien', 'Grandes figures de Thaïlande et de Birmanie', 'Grandes figures de Turquie']);
 });
 
@@ -1217,6 +1217,46 @@ test('la recherche — « thaïlande », « siam », « bangkok », « birmanie 
         await page.locator('#theme-search-input').fill(mot);
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: 'Grandes figures de Thaïlande et de Birmanie' });
         await expect(resultat, `« ${mot} » doit mener au panthéon de la Thaïlande et de la Birmanie`).toHaveCount(1);
+        await expect(resultat.locator('.search-result-path')).toContainText('Personnages illustres › Panthéons');
+    }
+});
+
+test('la Mongolie : chacune de ses figures a son portrait, de Gengis Khan à Rinchen Barsbold, et seuls Gengis Khan et Subötaï ouvrent leur biographie', async ({ page }) => {
+    await openThemeById(page, 'pan_mn');
+    await page.locator('#mode-card-discovery').click();
+    await expect(page.locator('#screen-game')).toBeVisible();
+    const nombre = await page.evaluate(() => getCurrentTheme().events.length);
+    expect(nombre).toBe(26);
+    await expect(page.locator('#timeline .entry')).toHaveCount(nombre);
+    await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
+
+    for (const titre of ['Naissance de Gengis Khan', 'Naissance de Damdin Sükhbaatar', 'Naissance de Rinchen Barsbold']) {
+        await page.locator('#timeline .entry', { hasText: titre }).click();
+        await expect(page.locator('#modal-details')).toBeVisible();
+        await expect(page.locator('#modal-pays')).toBeHidden();
+        const portrait = page.locator('#modal-portrait-img');
+        await expect.poll(() => portrait.evaluate(img => img.complete ? img.naturalWidth : 0)).toBe(320);
+        await expect(page.locator('#modal-portrait-caption')).not.toBeEmpty();
+        await page.locator('#modal-details .close-btn').click();
+        await expect(page.locator('#modal-details')).toBeHidden();
+    }
+
+    // Deux figures ont leur biographie (Gengis Khan, Subötaï) : le bouton n'apparaît que sur elles.
+    const avecBiographie = await page.evaluate(() => getCurrentTheme().events.filter(e => e.biographie).length);
+    expect(avecBiographie).toBe(2);
+    await page.locator('#timeline .entry', { hasText: 'Naissance de Gengis Khan' }).click();
+    await expect(page.locator('#modal-bio-btn')).toBeVisible();
+    await page.locator('#modal-details .close-btn').click();
+    await page.locator('#timeline .entry', { hasText: 'Naissance de Damdin Sükhbaatar' }).click();
+    await expect(page.locator('#modal-bio-btn')).toBeHidden();
+});
+
+test('la recherche — « mongolie », « mongol », « oulan-bator », « gobi », « karakorum », « naadam » — mène au panthéon de la Mongolie', async ({ page }) => {
+    await page.locator('#screen-home').click();
+    for (const mot of ['mongolie', 'mongol', 'oulan-bator', 'gobi', 'karakorum', 'khoural', 'khalkha', 'naadam']) {
+        await page.locator('#theme-search-input').fill(mot);
+        const resultat = page.locator('#theme-search-results .search-result-item', { hasText: 'Grandes figures de Mongolie' });
+        await expect(resultat, `« ${mot} » doit mener au panthéon de la Mongolie`).toHaveCount(1);
         await expect(resultat.locator('.search-result-path')).toContainText('Personnages illustres › Panthéons');
     }
 });

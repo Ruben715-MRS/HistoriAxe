@@ -136,6 +136,11 @@ KEEP_AS_WRITTEN = {
     'Chit Phumisak', 'Kulap Saipradit', 'Thawan Duchanee', 'Suraphol Sombatcharoen', 'Pumpuang Duangjan', 'Mindon Min', 'Thibaw Min',
     'Aung San', 'U Nu', 'Ne Win', 'U Thant', 'Saya San', 'Maha Bandula', 'Thakin Kodaw Hmaing', 'Ledi Sayadaw', 'Mahasi Sayadaw',
     'Ludu Daw Amar',
+    # Mongolie : les Mongols n'ont pas de nom de famille d'usage (le premier mot est le patronyme, le second le nom propre : « Damdin Sükhbaatar »,
+    # « Horloogiyn Choybalsan »), souverains et noms de règne (« Gengis Khan », « Bogdo Khan »), femmes et pères connus par leur nom seul.
+    'Gengis Khan', 'Mandukhaï Khatun', 'Bogdo Khan', 'Damdin Sükhbaatar', 'Horloogiyn Choybalsan', 'Peljidiyn Genden', 'Anandyn Amar',
+    'Tögs-Ochiryn Namnansüren', 'Sühbaataryn Yanjmaa', 'Yumjagiyn Tsedenbal', 'Jamsarangiyn Sambu', 'Jambyn Batmönkh', 'Sanjaasürengiin Zorig',
+    'Punsalmaagiin Ochirbat', 'Dashdorjiin Natsagdorj', 'Tsendiin Damdinsüren', 'Byambyn Rinchen', 'Rinchen Barsbold',
 }
 
 # Écrits à la main : (nom de la source) → nom de classement.

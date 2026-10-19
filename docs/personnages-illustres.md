@@ -11,7 +11,7 @@ ne posent pas la même question :
 | | Un thème, c'est | Une date, c'est | On le joue par |
 |---|---|---|---|
 | **Biographies** | une vie (360 thèmes, en 12 domaines) | une étape de cette vie | étape de la vie |
-| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Turquie, le Japon, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Indonésie, le monde malais, les Philippines, le Vietnam-Cambodge-Laos, la Thaïlande et la Birmanie) | la naissance d'un personnage | domaine |
+| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Turquie, le Japon, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Indonésie, le monde malais, les Philippines, le Vietnam-Cambodge-Laos, la Thaïlande et la Birmanie, la Mongolie) | la naissance d'un personnage | domaine |
 
 Le déplacement ne coûte aucune migration : les 360 thèmes gardent leurs
 identifiants, et rien de ce que le joueur a sauvegardé (favoris, révision,
@@ -2345,6 +2345,32 @@ Bangkok, Ayutthaya, Sukhothaï, la dynastie Chakri, Rangoun, Mandalay, Pagan, le
 - **Statut américain des images : à relire.** Vingt-six portraits sont du « domaine public », la plupart des photographies de cour ou d'agence anciennes ; même décision que pour l'Indonésie.
 - **Géolocalisation** : aucune figure n'est placée sur l'Atlas, faute de biographie liée. Les listes de candidats sont dans `scripts/pantheon/thai_candidats.md`.
 
+### Un pays à part : la Mongolie
+
+`pan_mn`, « Grandes figures de Mongolie » (code `mn`, pays ; rangé sous « Mongolie », entre le monde malais et la Nouvelle-Zélande) : **26 personnages**, de Gengis Khan (vers 1162) à Rinchen Barsbold (1935). Par axe :
+17 Chefs d'État et dirigeants, 4 Guerres et résistances, 3 Littérature et pensée, 1 Beaux-arts, 1 Sciences, techniques et innovation (l'axe Musique, spectacle et sport est absent) ; 4 ⭐ — Gengis Khan, Bogdo Khan,
+Damdin Sükhbaatar et Sanjaasürengiin Zorig — et **deux biographies liées** (Gengis Khan, Subötaï). 26 portraits : 18 du domaine public, 2 CC0, 2 CC BY-SA 3.0, 2 CC BY-SA 4.0, 1 CC BY 3.0 et 1 CC BY 4.0. Dix figures
+sont nées avant 1800, huit entre 1800 et 1899, huit depuis 1900. Les mots-clés portent le pays et ses adjectifs, Oulan-Bator, Ourga, Karakorum, le Gobi, les Khalkhas, le naadam, l'Empire mongol, le khagan, le Khoural, la
+Mongolie autonome, la révolution de 1921 et celle de 1990, l'Histoire secrète des Mongols et le bouddhisme tibétain.
+
+- **Un pays, pas un bloc.** `pan_mn`, aucun champ `pays` — pas d'invité — et « Pendant ce temps, ailleurs… » le compte comme `thm_mn`, l'« Histoire de la Mongolie ». Il se tient avec les « Histoire de l'Empire mongol » (`thm_mgl`),
+  qui couvrent l'empire et ses quatre khanats.
+- **Une liste courte, de l'empire à la démocratie.** Dix figures seulement sont d'avant 1800 : les autres sont les chefs de la Mongolie du XXe siècle (Bogdo Khan, les révolutionnaires de 1921, les
+  dirigeants de la République populaire, ceux de 1990). Les écrivains, artistes et savants mongols modernes sont rares en français (aucun peintre n'a à la fois un article et un portrait, aucun musicien non plus).
+- **Qui est dans le thème, qui est ailleurs.** Kubilai Khan est au panthéon de la Chine (« celui qui l'honore le plus » : fondateur de la dynastie Yuan) ; Tamerlan est à l'Asie centrale ; Hülegü, Ghazan et Batu relèvent de
+  l'Iran et de la Russie (ils n'ont pas été examinés). Gengis Khan et Subötaï, qui ont chacun leur biographie, sont ici reliés à elle : « une même personne, une même date » (1162 et 1176), et le point de naissance de Gengis Khan
+  (Khentii) est repris de sa biographie dans `assets/geo/events-geo.json` : le test des faits liés exige que les deux fiches soient localisées ensemble ou pas du tout.
+- **Dates incertaines.** Gengis Khan : vers 1162, l'article français hésite avec 1155 ; Ögedeï, Subötaï, Hö'elün, Khutulun et Mandukhaï Khatun portent « vers ». Sühbaataryn Yanjmaa est née en 1893 d'après l'article français et en
+  1894 selon Wikidata (le texte suit l'article).
+- **Écartés faute d'image convenable** : Altan Khan (150 pixels), Dayan Khan (aucune image libre), Tolui, Djötchi (dates incertaines), Muqali (une statue), Töregene (une pièce de monnaie), Börte, Djebé, Norovbanzad,
+  Byambasuren Sharav, Gonchigiyn Bumatsende, Khatanbaatar Magsarjav (naissance 1877 ou 1878, article vide). Le portrait de Tsedenbal vient des archives fédérales allemandes (1963). Les sportifs (lutteurs, judokas) ne
+  sont pas retenus : aucun n'a marqué l'histoire du pays au sens du projet.
+- **Des portraits souvent indirects**, et les légendes le disent : des miniatures persanes et des portraits de l'album des empereurs Yuan pour l'époque mongole, un dessin (Subötaï), une stèle (Mandukhaï Khatun), trois statues
+  (Sambuu, Zorig, Rinchen), une peinture bouddhique (Zanabazar) et un tableau de Marzan Sharav (Bogdo Khan). Deux sont recadrés : Sambuu et Zorig (leur statue).
+- **Les noms mongols** n'ont pas de nom de famille d'usage : « Damdin Sükhbaatar » est le patronyme suivi du nom propre. Ils se rangent donc tels qu'on les écrit (`KEEP_AS_WRITTEN`).
+- **Statut américain des images : à relire.** Dix-huit portraits sont du « domaine public », dont des photographies de cour ou d'agence que Commons étiquette « US ? » ; même décision que pour les autres thèmes asiatiques.
+- **Les listes de candidats** sont dans `scripts/pantheon/mn_candidats.md`.
+
 ### Un fichier source par panthéon, un script qui l'écrit dans `data/fr.json`
 
 `scripts/pantheon/<code>.json` (`fr`, `hispam`…) est **la seule source de
@@ -2687,7 +2713,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
 ### Ce qui n'est pas fait
 
 - **Les autres panthéons** : la France, l'Égypte, les États-Unis, l'Italie, le
-  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Indonésie, le monde malais, les Philippines, le Vietnam-Cambodge-Laos, la Thaïlande et la Birmanie sont écrits.
+  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Indonésie, le monde malais, les Philippines, le Vietnam-Cambodge-Laos, la Thaïlande et la Birmanie, la Mongolie sont écrits.
   Chaque liste de personnages est validée avant la rédaction. Feuille de route, dans l'ordre
   où on les propose (un pays seul quand il a de quoi faire un thème, un bloc sinon) :
   1. **Le Machrek est écrit** (voir « Le cinquième bloc »). Il reste : le portrait des trois
