@@ -114,7 +114,10 @@
       "pays": "KE",
       "portrait": {
         "fichier": "Mwai Kibaki (cropped).jpg",
-        "legende": "À écrire"
+        "legende": "À écrire",
+        "licence": "Image non libre",
+        "auteur": "Foreign and Commonwealth Office",
+        "source": "https://commons.wikimedia.org/wiki/File:Mwai_Kibaki_(cropped).jpg"
       }
     },
     {
@@ -130,8 +133,13 @@
       "portrait": {
         "fichier": "Tom Mboya Aharon Becker 1962.jpg",
         "legende": "À écrire",
-        "licence": "Domaine public",
-        "auteur": "Israeli GPO photographer"
+        "auteur": "Israeli GPO photographer",
+        "recadrage": [
+          0.0,
+          0.02,
+          0.5,
+          0.55
+        ]
       }
     },
     {
@@ -181,8 +189,13 @@
       "portrait": {
         "fichier": "Harry-Thuku-banner.jpg",
         "legende": "À écrire",
-        "licence": "CC BY-SA 4.0",
-        "auteur": "Editor"
+        "auteur": "Editor",
+        "recadrage": [
+          0.0,
+          0.0,
+          0.45,
+          1.0
+        ]
       }
     },
     {
@@ -317,8 +330,13 @@
       "portrait": {
         "fichier": "Statue of Dedan Kimathi Nairobi, Kenya.jpg",
         "legende": "À écrire",
-        "licence": "Domaine public",
-        "auteur": "Murungaru at English Wikipedia"
+        "auteur": "Murungaru at English Wikipedia",
+        "recadrage": [
+          0.3,
+          0.02,
+          0.7,
+          0.5
+        ]
       }
     },
     {
@@ -350,7 +368,16 @@
       "pays": "KE",
       "portrait": {
         "fichier": "(left to right) Mary Douglas Nicol Leakey (1913-1996) and her husband Louis Seymour Bazett Leakey (1903-1972).jpg",
-        "legende": "À écrire"
+        "legende": "À écrire",
+        "recadrage": [
+          0.45,
+          0.0,
+          1.0,
+          0.85
+        ],
+        "licence": "Image non libre",
+        "auteur": "Smithsonian Institution",
+        "source": "https://commons.wikimedia.org/wiki/File:(left_to_right)_Mary_Douglas_Nicol_Leakey_(1913-1996)_and_her_husband_Louis_Seymour_Bazett_Leakey_(1903-1972).jpg"
       }
     },
     {
@@ -451,7 +478,9 @@
       "pays": "TZ",
       "portrait": {
         "fichier": "Barghash.jpg",
-        "legende": "À écrire"
+        "legende": "À écrire",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
       }
     },
     {
@@ -467,8 +496,13 @@
       "portrait": {
         "fichier": "Tipoo tib NNP.jpg",
         "legende": "À écrire",
-        "licence": "Domaine public",
-        "auteur": "Unknown"
+        "auteur": "Unknown",
+        "recadrage": [
+          0.15,
+          0.15,
+          0.85,
+          0.6
+        ]
       }
     },
     {
@@ -484,7 +518,10 @@
       "essentiel": true,
       "portrait": {
         "fichier": "The National Archives UK - CO 1069-159-87 (cropped).jpg",
-        "legende": "À écrire"
+        "legende": "À écrire",
+        "licence": "Image non libre",
+        "auteur": "The National Archives (Royaume-Uni)",
+        "source": "https://commons.wikimedia.org/wiki/File:The_National_Archives_UK_-_CO_1069-159-87_(cropped).jpg"
       }
     },
     {
@@ -500,8 +537,13 @@
       "portrait": {
         "fichier": "Mirambo.jpg",
         "legende": "À écrire",
-        "licence": "Domaine public",
-        "auteur": "James William Buels"
+        "auteur": "James William Buels",
+        "recadrage": [
+          0.1,
+          0.05,
+          0.9,
+          0.5
+        ]
       }
     },
     {
@@ -531,7 +573,9 @@
       "pays": "TZ",
       "portrait": {
         "fichier": "Bibi Titi 1969 Mohamed (facecrop).jpg",
-        "legende": "À écrire"
+        "legende": "À écrire",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
       }
     },
     {
@@ -633,8 +677,13 @@
       "portrait": {
         "fichier": "Daudi Cwa of Buganda.jpg",
         "legende": "À écrire",
-        "licence": "Domaine public",
-        "auteur": "John Roscoe"
+        "auteur": "John Roscoe",
+        "recadrage": [
+          0.2,
+          0.0,
+          0.8,
+          0.45
+        ]
       }
     },
     {
@@ -681,7 +730,10 @@
       "pays": "UG",
       "portrait": {
         "fichier": "Karoli Lwanga and his followers.jpg",
-        "legende": "À écrire"
+        "legende": "À écrire",
+        "licence": "Image non libre",
+        "auteur": "Albert Wider",
+        "source": "https://commons.wikimedia.org/wiki/File:Karoli_Lwanga_and_his_followers.jpg"
       }
     },
     {
@@ -713,10 +765,8 @@
       "pays": "SO",
       "essentiel": true,
       "portrait": {
-        "fichier": "Sayyid Mohammed Abdullah Hassan.jpeg",
-        "legende": "À écrire",
-        "licence": "Domaine public",
-        "auteur": "Somali government"
+        "fichier": "Muhammad abdullah hassan.jpg",
+        "legende": "À écrire"
       }
     },
     {
@@ -920,23 +970,6 @@
       }
     },
     {
-      "slug": "alidinar",
-      "nom": "Ali Dinar",
-      "classement": "Ali Dinar",
-      "titre": "Naissance d'Ali Dinar",
-      "axe": "Guerres et résistances",
-      "naissance": 1856,
-      "description": "Ali Dinar (vers 1856-1916) est le dernier sultan du Darfour indépendant, de 1898 à 1916. Il rétablit le sultanat après la chute de l'État mahdiste, mais se rallie aux Ottomans en 1914, ce qui incite les Britanniques à l'attaquer. Il est tué à Jebel Juba en novembre 1916, et le Darfour est rattaché au Soudan anglo-égyptien.",
-      "wikipedia": "Ali Dinar",
-      "pays": "SD",
-      "portrait": {
-        "fichier": "Ali Dinar.jpg",
-        "legende": "À écrire",
-        "licence": "Domaine public",
-        "auteur": "British military photographer"
-      }
-    },
-    {
       "slug": "abdelrahman",
       "nom": "Abd al-Rahman al-Mahdi",
       "classement": "Abd al-Rahman al-Mahdi",
@@ -965,7 +998,9 @@
       "pays": "SD",
       "portrait": {
         "fichier": "Ismail al-Azhari.jpg",
-        "legende": "À écrire"
+        "legende": "À écrire",
+        "licence": "Domaine public",
+        "auteur": "Sudanese Government photographer"
       }
     },
     {
@@ -1065,7 +1100,9 @@
       "pays": "SD",
       "portrait": {
         "fichier": "Tayeb saleh.jpg",
-        "legende": "À écrire"
+        "legende": "À écrire",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Engfrompalestine"
       }
     },
     {
@@ -1163,7 +1200,9 @@
       "pays": "ER",
       "portrait": {
         "fichier": "Zerai Deres.jpg",
-        "legende": "À écrire"
+        "legende": "À écrire",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
       }
     }
   ]
