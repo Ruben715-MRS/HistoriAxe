@@ -2298,7 +2298,7 @@ noms (Rhodésie, Nyassaland, Sud-Ouest africain, Bechuanaland, Basutoland, Swazi
   (l'article dit aussi 1858), John Chilembwe de « vers 1871 ». Les autres dates viennent de l'article français ou de Wikidata, non recoupées une à une.
 - **Des portraits souvent indirects**, et les légendes le disent : Eduardo Mondlane et Josina Machel sont montrés par leur effigie sur un tissu imprimé (capulana), Rose Chibambo par son portrait sur un billet de banque,
   Lobengula par un portrait de Ralph Peacock d'après un croquis, Jonker Afrikaner et Moshoeshoe Ier par des gravures, Orlando Mendes et Thomas Mofolo par des dessins. Marcelino dos Santos, Mário Coluna et Moshoeshoe II
-  sont vus sur des photographies de groupe, recadrées sur eux. Sept portraits (Nkomo, Lobengula, Samuel Maharero, Jonker Afrikaner, Witbooi, Labotsibeni) ont été **recadrés localement** sur le visage, à partir de
+  sont vus sur des photographies de groupe, recadrées sur eux. Six portraits (Nkomo, Lobengula, Samuel Maharero, Jonker Afrikaner, Witbooi, Labotsibeni) ont été **recadrés localement** sur le visage, à partir de
   l'image déjà téléchargée, et non via `recadrage` : un nouveau téléchargement les rendrait à leur cadrage de base.
 - **Trois images non libres, exception assumée** : Chenjerai Hove (licence GFDL), Theo-Ben Gurirab (licence « GODL-India », du secrétariat du vice-président de l'Inde) et Sobhuza II (« Open Government Licence », Archives
   nationales du Royaume-Uni) ont une image que `fetch_portraits.py` refuse (licence hors liste). Elles sont téléchargées depuis Commons, leur licence s'écrit « Image non libre » dans les données, `image.source` renvoie à
