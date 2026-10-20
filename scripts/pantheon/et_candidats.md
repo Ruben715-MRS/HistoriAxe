@@ -1,7 +1,8 @@
 # Éthiopie — candidats examinés
 
-**Verdict : l'Éthiopie tient comme pays seul.** 56 figures remplissent les trois conditions (naissance datée, décès, portrait libre trouvé), pour un seuil fixé à environ 45.
-Le repli sur un bloc « Corne » n'est pas nécessaire. Reste la validation de la liste par l'éditeur, avant toute rédaction.
+**État : le panthéon est construit** (`pan_et`, 43 figures ; voir « Un pays à part : l'Éthiopie » dans `docs/personnages-illustres.md`). La liste ci-dessous est celle examinée avant l'écriture : 56 figures
+remplissaient les trois conditions (naissance datée, décès, portrait libre déclaré sur Commons), pour un seuil fixé à environ 45. Après examen des images, cinq figures sans article en français, Kebede Mikael
+(date incertaine) et sept dont l'image ne convenait pas ou n'a pas pu être téléchargée, 43 sont dans le panthéon ; la fin du fichier garde les fiches en attente.
 
 Méthode : titres des articles français puis anglais de Wikipédia → identifiant Wikidata (lu dans le HTML de l'article, `api.php` répondant 429) → naissance, décès et `P18` (`Special:EntityData`) →
 page de fichier de Commons (licence, taille, alertes) ; pour une quinzaine de figures sans `P18`, recherche `Special:Search` avec `scripts/search_portraits.py`. Un portrait n'est pas encore téléchargé ni jugé à l'œil :
@@ -67,3 +68,82 @@ Sciences, techniques et innovation (2) : Aklilu Lemma (1934), Catherine Hamlin (
   Une exception à discuter : accepter « vers 450 » pour Kaleb et « vers 1162 » pour Lalibela, comme Mansa Moussa « vers 1280 » à l'Afrique de l'Ouest.
 - **Un seul invité** : Catherine Hamlin (Australie). L'Érythrée n'est pas dans le périmètre : elle ira au bloc Afrique de l'Est et Corne (Isaias Afwerki vit encore). Les figures du Tigré, Alula et Yohannes IV, sont éthiopiennes.
 - **Les musulmans, les Oromo, les femmes** : les Oromo ont quatre figures (Abba Jifar II, Onesimos Nesib, Hachalu Hundessa, Gobana Dacche), les musulmans deux (Gragn, Abba Jifar II) ; cinq femmes (Taytu, Mentewab, Menen, Zewditu, Hamlin) sur 56.
+
+
+## Fiches rédigées, portrait absent
+
+> **État** : le thème `pan_et` est construit (43 figures ; voir « Un pays à part : l'Éthiopie » dans `docs/personnages-illustres.md`).
+
+Quatre figures ont leur fiche écrite et leur image choisie sur Commons, mais Wikimedia a répondu 429 à tout téléchargement de ces images (page de fichier lue, miniature et fichier
+original refusés, sur une heure d'essais) : **Alula Engeda** (« Alula Engida2.JPG », 500 × 608, domaine public), **Gobena Dacche** (« Ras Gobana.jpg », 315 × 402, A. Cecchi, 1886),
+**Balcha Safo** (« Balcha Aba Nefso.JPG », 444 × 611) et **Mikael du Wollo** (« Ras Mikel Wello.jpg », 321 × 425). Alula, ⭐ du panthéon, est la plus sensible. Pour les réintégrer :
+recopier leur objet dans `personnages` de `scripts/pantheon/et.json`, lancer `python3 scripts/fetch_portraits.py et --only alula,gobena,balcha,mikaelwollo` (avec `"largeur": 0` dans leur
+`portrait` si l'image est plus étroite que 330 px), puis `python3 scripts/build_pantheon.py et`, `npm run build:pack`, et mettre à jour les compteurs (`js/i18n.js`, `tests/gallery.test.js`,
+`tests/gameModes.test.js`, `e2e/personnages.spec.js`) et `sw.js`. L'auteur de Balcha et de Mikael est à écrire à la main (« Auteur inconnu »).
+
+Trois autres fiches ont été retirées pour leur image : **Ahmed Gragn** (⭐ ; la seule image est une statue), **Susenyos Ier** (un dessin de cavalier au visage minuscule) et
+**Miruts Yifter** (photographie de course où l'on ne distingue pas lequel est lui). Leurs fiches sont dans le fichier `scripts/pantheon/et.json` de l'historique git (commit « Panthéon de
+l'Éthiopie : 47 figures »).
+
+```json
+[
+ {
+  "slug": "mikaelwollo",
+  "nom": "Mikael du Wollo",
+  "classement": "Mikael du Wollo",
+  "titre": "Naissance de Mikael du Wollo",
+  "axe": "Chefs d'État et dirigeants",
+  "naissance": 1850,
+  "description": "Mikael du Wollo (1850-1918) est un ras puis un négus du Wollo, province musulmane dont il fait un bastion chrétien. Né Mohammed Ali, il se convertit à l'orthodoxie en 1878 et combat à Adoua en 1896. Père d'Iyasu V, il est vaincu à Segale en 1916 en voulant le rétablir sur le trône et meurt en captivité.",
+  "wikipedia": "Mikaél du Wello",
+  "portrait": {
+   "fichier": "Ras Mikel Wello.jpg",
+   "legende": "Mikael du Wollo, photographie ancienne"
+  }
+ },
+ {
+  "slug": "gobena",
+  "nom": "Gobena Dacche",
+  "classement": "Gobena Dacche",
+  "titre": "Naissance de Gobena Dacche",
+  "axe": "Guerres et résistances",
+  "naissance": 1821,
+  "description": "Gobena Dacche (1821-1889) est un général éthiopien d'origine oromo, au service du Choa. Il commande l'armée de Menelik pendant les conquêtes vers le sud et l'ouest des années 1870 et 1880. Ras du Choa, il est l'un des piliers militaires de Menelik avant l'accession de celui-ci à l'empire en 1889.",
+  "wikipedia": "Gobena Dachi",
+  "portrait": {
+   "fichier": "Ras Gobana.jpg",
+   "legende": "Gobena Dacche, photographie de 1886",
+   "auteur": "Antonio Cecchi"
+  }
+ },
+ {
+  "slug": "alula",
+  "nom": "Alula Engeda",
+  "classement": "Alula Engeda",
+  "titre": "Naissance d'Alula Engeda",
+  "axe": "Guerres et résistances",
+  "naissance": 1827,
+  "description": "Alula Engeda (1827-1897) est un général tigréen, surnommé Abba Nega. Gouverneur de la région de l'Érythrée actuelle, il bat les Égyptiens à Gundet et à Gura en 1875-1876, puis les Italiens à Dogali en 1887. Il meurt au combat en 1897, un an après la victoire d'Adoua.",
+  "wikipedia": "Alula Engeda",
+  "essentiel": true,
+  "portrait": {
+   "fichier": "Alula Engida2.JPG",
+   "legende": "Alula Engeda, photographie du XIXᵉ siècle"
+  }
+ },
+ {
+  "slug": "balcha",
+  "nom": "Balcha Safo",
+  "classement": "Balcha Safo",
+  "titre": "Naissance de Balcha Safo",
+  "axe": "Guerres et résistances",
+  "naissance": 1862,
+  "description": "Balcha Safo (1862-1936) est un dejazmach, chef militaire et gouverneur du Sidamo, connu sous son nom de cavalier Abba Nefso. Il se distingue à Adoua en 1896 puis administre sa province pendant des décennies. Il meurt en 1936 en pleine résistance à l'occupation italienne.",
+  "wikipedia": "Balcha Safo",
+  "portrait": {
+   "fichier": "Balcha Aba Nefso.JPG",
+   "legende": "Balcha Safo, photographie"
+  }
+ }
+]
+```

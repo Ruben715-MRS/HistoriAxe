@@ -2,8 +2,8 @@
   "version": "1.0.0",
   "lang": "fr",
   "name": "Français (Intégral)",
-  "totalThemes": 843,
-  "totalEvents": 25129,
+  "totalThemes": 844,
+  "totalEvents": 25172,
   "categories": [
     {
       "nom": "Culture générale",
@@ -123099,6 +123099,743 @@
                 "pan_us_jobs",
                 "pan_us_mjackson",
                 "pan_us_iz"
+              ]
+            },
+            {
+              "id": "pan_et",
+              "nom": "Grandes figures d'Éthiopie",
+              "difficulte": "Intermédiaire",
+              "motsCles": [
+                "Éthiopien",
+                "Éthiopienne",
+                "Éthiopie",
+                "Abyssinie",
+                "Abyssin",
+                "Addis-Abeba",
+                "Adoua",
+                "Gondar",
+                "Harar",
+                "Axoum",
+                "Lalibela",
+                "Choa",
+                "Tigré",
+                "Oromo",
+                "Amhara",
+                "Négus",
+                "Empereur d'Éthiopie",
+                "Salomonides",
+                "Derg",
+                "Rastafari",
+                "Magdala",
+                "Ahmed Gragn"
+              ],
+              "events": [
+                {
+                  "id": "pan_et_zarayaqob",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1399,
+                  "titre": "Naissance de Zara Yaqob",
+                  "description": "Zara Yaqob (1399-1468) est empereur d'Éthiopie de 1434 à 1468, sous le nom de règne de Constantin Ier. Il réorganise l'Église, réunit le concile de Debre Mitmaq en 1450 et fonde Debre Berhan, qui devient l'une de ses résidences. Son règne reste dans la mémoire éthiopienne celui d'un État chrétien fortement centralisé.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Zara%20Yaqob",
+                  "classement": "Zara Yaqob",
+                  "image": {
+                    "src": "assets/portraits/pan_et_zarayaqob.jpg",
+                    "legende": "Zara Yaqob intronisé, peinture éthiopienne du XVIIᵉ siècle",
+                    "auteur": "Peintre inconnu (XVIIᵉ siècle)",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Zara_Yacob.png"
+                  }
+                },
+                {
+                  "id": "pan_et_lebnadengel",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1496,
+                  "titre": "Naissance de Lebna Dengel",
+                  "description": "Lebna Dengel (1496-1540) est empereur d'Éthiopie de 1508 à 1540, connu aussi sous le nom de David II. Il monte sur le trône enfant, sous la régence de sa grand-mère Eléni, et appelle les Portugais à l'aide contre le sultanat d'Adal. Battu par Ahmed Gragn à Shimbra Kouré en 1529, il meurt en fugitif sur le plateau de Debre Damo.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/David%20II%20d%27%C3%89thiopie",
+                  "classement": "Lebna Dengel",
+                  "image": {
+                    "src": "assets/portraits/pan_et_lebnadengel.jpg",
+                    "legende": "Lebna Dengel, portrait posthume de Cristofano dell'Altissimo, vers 1552-1568",
+                    "auteur": "Cristofano dell'Altissimo",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Cristofano_dell%E2%80%99Altissimo,_Portrait_of_Lebn%C3%A4-Dengel._c._1552-1568.jpg"
+                  }
+                },
+                {
+                  "id": "pan_et_gelawdewos",
+                  "axe": "Guerres et résistances",
+                  "date": 1522,
+                  "titre": "Naissance de Gelawdewos",
+                  "description": "Gelawdewos (1522-1559) est empereur d'Éthiopie de 1540 à 1559, fils de Lebna Dengel. Aidé par un corps de Portugais, il bat Ahmed Gragn à Wayna Daga en 1543 et reconstruit l'empire. Il est tué en 1559 en combattant l'émir de Harar Nur ibn Mujahid.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Gelawd%C3%A9wos%20d%27%C3%89thiopie",
+                  "classement": "Gelawdewos",
+                  "image": {
+                    "src": "assets/portraits/pan_et_gelawdewos.jpg",
+                    "legende": "Gelawdewos terrassant ses ennemis, triptyque éthiopien du XVIIIᵉ siècle",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:GelawdewosEthiopia.jpg"
+                  }
+                },
+                {
+                  "id": "pan_et_iyasu1",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1654,
+                  "titre": "Naissance d'Iyasu Ier",
+                  "description": "Iyasu Ier (1654-1706) est empereur d'Éthiopie de 1682 à 1706, surnommé « le Grand ». Il combat les Oromo, rétablit l'autorité impériale et fait construire à Gondar l'église de Debre Berhan Selassié. Déposé par son fils en 1706, il est assassiné peu après.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Iyasou%20Ier%20d%27%C3%89thiopie",
+                  "classement": "Iyasu Ier",
+                  "image": {
+                    "src": "assets/portraits/pan_et_iyasu1.jpg",
+                    "legende": "Iyasu Ier et sa cour, enluminure d'un manuscrit éthiopien du XIXᵉ siècle",
+                    "auteur": "Bibliothèque nationale de France, Département des Manuscrits, Division orientale",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Iyasu_I_of_Ethiopia.jpg"
+                  }
+                },
+                {
+                  "id": "pan_et_mentewab",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1706,
+                  "titre": "Naissance de Mentewab",
+                  "description": "Mentewab (vers 1706-1773) est impératrice d'Éthiopie, épouse de Bakaffa et mère d'Iyasu II. Régente pour son fils dès 1730, elle domine la cour de Gondar et fait construire le palais de Kuskuam. Elle meurt en 1773, alors que l'empire entre dans l'ère des Juges, où les ras font et défont les empereurs.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mentewab",
+                  "classement": "Mentewab",
+                  "image": {
+                    "src": "assets/portraits/pan_et_mentewab.jpg",
+                    "legende": "Mentewab, icône de l'église de Narga Selassié, île de Dek, fin du XVIIIᵉ siècle",
+                    "auteur": "A. Davey from Where I Live Now: Pacific Northwest",
+                    "licence": "CC BY 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:The_Empress_Mentewab_(2380768777).jpg"
+                  }
+                },
+                {
+                  "id": "pan_et_sahleselassie",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1795,
+                  "titre": "Naissance de Sahle Selassie",
+                  "description": "Sahle Selassie (vers 1795-1847) est roi du Choa de 1813 à sa mort. Il étend son royaume vers le sud, fonde la capitale d'Angolala et reçoit en 1841 la mission britannique de Cornwallis Harris. Grand-père de Menelik II, il pose les bases du royaume dont naîtra l'Éthiopie moderne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sahle%20Selassi%C3%A9",
+                  "classement": "Sahle Selassie",
+                  "image": {
+                    "src": "assets/portraits/pan_et_sahleselassie.jpg",
+                    "legende": "Sahle Selassie, roi du Choa, image du XIXᵉ siècle",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:King_Sahla_Sellase_colour.jpg"
+                  }
+                },
+                {
+                  "id": "pan_et_tewodros",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1818,
+                  "titre": "Naissance de Tewodros II",
+                  "description": "Tewodros II (1818-1868) est empereur d'Éthiopie de 1855 à 1868. Ancien chef de bande, il met fin à l'ère des Juges, réunifie l'empire et tente de le moderniser, avec l'aide de missionnaires européens qui fabriquent ses canons. Assiégé à Magdala par une expédition britannique en 1868, il se donne la mort plutôt que de se rendre.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/T%C3%A9wodros%20II",
+                  "classement": "Tewodros II",
+                  "image": {
+                    "src": "assets/portraits/pan_et_tewodros.jpg",
+                    "legende": "Tewodros II, image des années 1860 attribuée à Étienne Neurdein",
+                    "auteur": "Étienne Neurdein",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Tewodros_II_of_Ethiopia_in_the_1860s.jpg"
+                  }
+                },
+                {
+                  "id": "pan_et_yohannes4",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1837,
+                  "titre": "Naissance de Yohannes IV",
+                  "description": "Yohannes IV (1837-1889) est empereur d'Éthiopie de 1872 à 1889. Originaire du Tigré, il bat les troupes égyptiennes à Gundet et à Gura en 1875-1876 et défend les frontières contre les Mahdistes. Il est tué à Métemma en 1889, en combattant ces derniers.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Yohannes%20IV",
+                  "classement": "Yohannes IV",
+                  "image": {
+                    "src": "assets/portraits/pan_et_yohannes4.jpg",
+                    "legende": "Yohannes IV, image du XIXᵉ siècle",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Yohannes_IV_-_3.jpg"
+                  }
+                },
+                {
+                  "id": "pan_et_menelik2",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1844,
+                  "titre": "Naissance de Menelik II",
+                  "description": "Menelik II (1844-1913) est empereur d'Éthiopie de 1889 à 1913. Il étend l'empire vers le sud, fonde Addis-Abeba et bat les Italiens à Adoua le 1er mars 1896. Cette victoire fait de l'Éthiopie l'un des rares États africains à conserver son indépendance face à la colonisation.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Menelik%20II",
+                  "classement": "Menelik II",
+                  "image": {
+                    "src": "assets/portraits/pan_et_menelik2.jpg",
+                    "legende": "Menelik II en habit de couronnement, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Menelik_II_in_coronation_garb,_Emperor_of_Ethiopia.jpg"
+                  }
+                },
+                {
+                  "id": "pan_et_teklehaymanot",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1847,
+                  "titre": "Naissance de Tekle Haymanot du Godjam",
+                  "description": "Tekle Haymanot du Godjam (1847-1901) est roi du Godjam de 1881 à 1901, avec le titre de négus. Allié de Menelik II, il combat à ses côtés à Adoua en 1896. Son fils Hailu lui succède à la tête de la province.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Tekle%20Haymanot%20Tessemma",
+                  "classement": "Tekle Haymanot du Godjam",
+                  "image": {
+                    "src": "assets/portraits/pan_et_teklehaymanot.jpg",
+                    "legende": "Tekle Haymanot du Godjam, photographie ancienne",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Tekle_Haymanot_of_Gojjam.png"
+                  }
+                },
+                {
+                  "id": "pan_et_habtegiyorgis",
+                  "axe": "Guerres et résistances",
+                  "date": 1851,
+                  "titre": "Naissance de Habte Giyorgis Dinagde",
+                  "description": "Habte Giyorgis Dinagde (1851-1926) est un fitawrari oromo, ministre de la Guerre de Menelik II puis de Zewditu. Il participe à la conquête du sud et à la victoire d'Adoua. Jusqu'à sa mort, il reste le principal soutien de l'impératrice face à Ras Tafari.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Habte%20Giyorgis%20Dinegd%C3%A9",
+                  "classement": "Habte Giyorgis Dinagde",
+                  "image": {
+                    "src": "assets/portraits/pan_et_habtegiyorgis.jpg",
+                    "legende": "Habte Giyorgis Dinagde, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Fitawrari_Habte_Giyorgis.JPG"
+                  }
+                },
+                {
+                  "id": "pan_et_taytu",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1851,
+                  "titre": "Naissance de Taytu Betul",
+                  "description": "Taytu Betul (vers 1851-1918) est impératrice d'Éthiopie, épouse de Menelik II depuis 1883. Conseillère écoutée, elle refuse la lecture italienne du traité de Wuchale et prend part avec ses troupes à la campagne d'Adoua en 1896. Elle choisit le site d'Addis-Abeba, mais est écartée du pouvoir après la maladie de Menelik et meurt à Entoto.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Taytu%20Betul",
+                  "classement": "Taytu Betul",
+                  "image": {
+                    "src": "assets/portraits/pan_et_taytu.jpg",
+                    "legende": "Taytu Betul, en couverture du Petit Journal illustré",
+                    "auteur": "Le Petit Journal - H. Meyer",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Taytu_Betul.jpg"
+                  }
+                },
+                {
+                  "id": "pan_et_makonnen",
+                  "axe": "Guerres et résistances",
+                  "date": 1852,
+                  "titre": "Naissance de Ras Makonnen",
+                  "description": "Ras Makonnen (1852-1906) est gouverneur du Harar et père de Haïlé Sélassié Ier. Cousin de Menelik II, il commande l'avant-garde éthiopienne à Adoua en 1896. Il représente l'empereur au couronnement d'Édouard VII en 1902 et meurt à Kulubi en 1906.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mekonnen%20Welde%20Mika%C3%A9l",
+                  "classement": "Ras Makonnen",
+                  "image": {
+                    "src": "assets/portraits/pan_et_makonnen.jpg",
+                    "legende": "Ras Makonnen à Londres en 1902, photographie de Lafayette",
+                    "auteur": "Lafayette Ltd., Londres",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ras_M%C3%A4konnen_(W%C3%A4ld%C3%A4-Mika%27%C3%A9l)_(1852-1906).jpg"
+                  }
+                },
+                {
+                  "id": "pan_et_abbajifar",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1861,
+                  "titre": "Naissance d'Abba Jifar II",
+                  "description": "Abba Jifar II (1861-1932) est roi de Jimma, État oromo du sud-ouest de l'Éthiopie, de 1878 à sa mort. Il se soumet à Menelik II en 1882 tout en gardant son autonomie, et fait de son royaume un grand centre du commerce du café. Jimma perd son autonomie à sa mort, en 1932.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Abba%20Jifar%20II",
+                  "classement": "Abba Jifar II",
+                  "image": {
+                    "src": "assets/portraits/pan_et_abbajifar.jpg",
+                    "legende": "Abba Jifar II de Jimma, photographie ancienne",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Abba_Jifar_II.jpg"
+                  }
+                },
+                {
+                  "id": "pan_et_afework",
+                  "axe": "Littérature et pensée",
+                  "date": 1868,
+                  "titre": "Naissance d'Afework Gebre Yesus",
+                  "description": "Afework Gebre Yesus (1868-1947) est un écrivain, peintre et diplomate éthiopien. Son roman Libb Wallad Tarik, publié en 1908, est considéré comme le premier roman éthiopien. Il écrit aussi une biographie de Menelik II et sert comme diplomate en Italie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Afeworq%20Gebre%20Eyesus",
+                  "classement": "Afework Gebre Yesus",
+                  "image": {
+                    "src": "assets/portraits/pan_et_afework.jpg",
+                    "legende": "Afework Gebre Yesus, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Afevork_Ghevre_Jesus.jpeg"
+                  }
+                },
+                {
+                  "id": "pan_et_zewditu",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1876,
+                  "titre": "Naissance de Zewditu",
+                  "description": "Zewditu (1876-1930) est impératrice d'Éthiopie de 1916 à 1930, fille de Menelik II. Elle règne en partageant le pouvoir avec le régent Ras Tafari, futur Haïlé Sélassié, qui fait entrer l'Éthiopie à la Société des Nations en 1923. Elle meurt en 1930, quelques jours après la défaite de la révolte du ras Gugsa Wolie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Zewditou",
+                  "classement": "Zewditu",
+                  "image": {
+                    "src": "assets/portraits/pan_et_zewditu.jpg",
+                    "legende": "Zewditu, impératrice d'Éthiopie, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Zewditu_Empress.PNG"
+                  }
+                },
+                {
+                  "id": "pan_et_heruy",
+                  "axe": "Littérature et pensée",
+                  "date": 1878,
+                  "titre": "Naissance de Heruy Wolde Selassie",
+                  "description": "Heruy Wolde Selassie (1878-1938) est un écrivain et ministre des Affaires étrangères éthiopien, l'un des principaux auteurs de la littérature amharique du début du XXᵉ siècle. Il écrit des romans, des essais et des récits de voyage, et dirige la diplomatie de l'empire de 1930 à 1936. Il suit Haïlé Sélassié en exil à Bath, où il meurt en 1938.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Heruy%20Welde%20Selassie",
+                  "classement": "Heruy Wolde Selassie",
+                  "image": {
+                    "src": "assets/portraits/pan_et_heruy.jpg",
+                    "legende": "Heruy Wolde Selassie (au centre) lors de sa visite au Japon, 1931",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Heruyjapan2.jpg"
+                  }
+                },
+                {
+                  "id": "pan_et_kassa",
+                  "axe": "Guerres et résistances",
+                  "date": 1881,
+                  "titre": "Naissance de Kassa Haile Darge",
+                  "description": "Kassa Haile Darge (1881-1956) est un ras issu d'une branche cadette de la dynastie salomonide. Gouverneur du Salale, il commande l'une des armées éthiopiennes lors de la guerre contre l'Italie de 1935-1936. Après la libération, il reste l'un des plus hauts dignitaires de l'empire jusqu'à sa mort en 1956.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kassa%20Haile%20Darge",
+                  "classement": "Kassa Haile Darge",
+                  "image": {
+                    "src": "assets/portraits/pan_et_kassa.jpg",
+                    "legende": "Ras Kassa Haile Darge, photographie de l'American Colony",
+                    "auteur": "American Colony Photo Department (ou Matson Photo Service)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ras_Kassa.png"
+                  }
+                },
+                {
+                  "id": "pan_et_menenasfaw",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1891,
+                  "titre": "Naissance de Menen Asfaw",
+                  "description": "Menen Asfaw (1891-1962) est impératrice d'Éthiopie, épouse de Haïlé Sélassié Ier. Couronnée à ses côtés en 1930, elle soutient la création d'écoles de filles, dont l'école qui porte son nom à Addis-Abeba. Elle partage l'exil de l'empereur à Bath, en Angleterre, pendant l'occupation italienne de 1936 à 1941.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Menen%20Asfaw",
+                  "classement": "Menen Asfaw",
+                  "image": {
+                    "src": "assets/portraits/pan_et_menenasfaw.jpg",
+                    "legende": "Menen Asfaw couronnée, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Empress_Menen_Asfaw_with_Crown.jpg"
+                  }
+                },
+                {
+                  "id": "pan_et_desta",
+                  "axe": "Guerres et résistances",
+                  "date": 1892,
+                  "titre": "Naissance de Desta Damtew",
+                  "description": "Desta Damtew (vers 1892-1937) est un ras éthiopien, gendre de Haïlé Sélassié. Commandant du front sud pendant la guerre de 1935-1936, il livre bataille à Genale Doria contre les troupes de Graziani. Il poursuit la résistance dans le Sud après la chute d'Addis-Abeba, avant d'être capturé et fusillé en février 1937.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Desta%20Damtew",
+                  "classement": "Desta Damtew",
+                  "image": {
+                    "src": "assets/portraits/pan_et_desta.jpg",
+                    "legende": "Ras Desta Damtew, photographie de 1937",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Damtou,_Desta.jpg"
+                  }
+                },
+                {
+                  "id": "pan_et_hailesselassie",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1892,
+                  "titre": "Naissance de Haïlé Sélassié Ier",
+                  "description": "Haïlé Sélassié Ier (1892-1975) est empereur d'Éthiopie de 1930 à 1974, après avoir été régent de 1916 à 1930. Chassé par l'invasion italienne en 1936, il plaide en vain la cause de son pays devant la Société des Nations et revient sur le trône en 1941. Renversé par le Derg en septembre 1974, il meurt en détention l'année suivante, et les rastafaris voient en lui un messie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ha%C3%AFl%C3%A9%20S%C3%A9lassi%C3%A9%20Ier",
+                  "classement": "Haïlé Sélassié Ier",
+                  "image": {
+                    "src": "assets/portraits/pan_et_hailesselassie.jpg",
+                    "legende": "Haïlé Sélassié Ier en uniforme de gala, portrait officiel vers 1970",
+                    "auteur": "Auteur inconnu (portrait officiel du gouvernement éthiopien)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Haile_Selassie_in_full_dress.jpg"
+                  }
+                },
+                {
+                  "id": "pan_et_petros",
+                  "axe": "Guerres et résistances",
+                  "date": 1892,
+                  "titre": "Naissance d'Abune Petros",
+                  "description": "Abune Petros (1892-1936) est un évêque éthiopien, évêque de Dessie. Il appelle à la résistance contre l'occupant italien et le dit publiquement à Addis-Abeba. Arrêté, il est fusillé le 29 juillet 1936 par les troupes d'occupation.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Aboune%20P%C3%A9tros",
+                  "classement": "Abune Petros",
+                  "image": {
+                    "src": "assets/portraits/pan_et_petros.jpg",
+                    "legende": "Abune Petros, photographie",
+                    "auteur": "Abelhilemichael",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Abune_Petros.jpg"
+                  }
+                },
+                {
+                  "id": "pan_et_iyasu5",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1897,
+                  "titre": "Naissance d'Iyasu V",
+                  "description": "Iyasu V (1897-1935) est le successeur désigné de Menelik II, jamais couronné, de 1913 à 1916. Ses sympathies pour les musulmans et son rapprochement avec les puissances centrales inquiètent l'Église et la noblesse, qui le déposent en septembre 1916. Capturé en 1921 après plusieurs années de fuite, il meurt en détention en 1935.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Lidj%20Iyassou",
+                  "classement": "Iyasu V",
+                  "image": {
+                    "src": "assets/portraits/pan_et_iyasu5.jpg",
+                    "legende": "Iyasu V, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Lidj_Iyasu.jpg"
+                  }
+                },
+                {
+                  "id": "pan_et_aregai",
+                  "axe": "Guerres et résistances",
+                  "date": 1903,
+                  "titre": "Naissance d'Abebe Aregai",
+                  "description": "Abebe Aregai (1903-1960) est un résistant éthiopien, Premier ministre de 1957 à 1960. Chef de la guérilla patriote dans le Choa pendant l'occupation italienne, il devient l'une des principales figures militaires de l'empire après 1941. Il est tué le 17 décembre 1960, lors de la tentative de coup d'État de la garde impériale.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Abebe%20Aregai",
+                  "classement": "Abebe Aregai",
+                  "image": {
+                    "src": "assets/portraits/pan_et_aregai.jpg",
+                    "legende": "Abebe Aregai, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Abebe-Aregai.jpg"
+                  }
+                },
+                {
+                  "id": "pan_et_haddis",
+                  "axe": "Littérature et pensée",
+                  "date": 1910,
+                  "titre": "Naissance de Haddis Alemayehu",
+                  "description": "Haddis Alemayehu (1910-2003) est un écrivain et homme politique éthiopien. Son roman Fiqir Iske Meqabir, publié en 1966, est un classique de la littérature amharique, étudié dans les écoles du pays. Il y dénonce l'ordre social de l'Éthiopie impériale.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Haddis%20Alemayehu",
+                  "classement": "Haddis Alemayehu",
+                  "image": {
+                    "src": "assets/portraits/pan_et_haddis.jpg",
+                    "legende": "Haddis Alemayehu en 1961, photographie de Keystone",
+                    "auteur": "Keystone Press",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Haddis_Alemayehu_in_1961.jpg"
+                  }
+                },
+                {
+                  "id": "pan_et_aklilu",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1912,
+                  "titre": "Naissance d'Aklilu Habte-Wold",
+                  "description": "Aklilu Habte-Wold (1912-1974) est Premier ministre d'Éthiopie de 1961 à 1974. Diplomate et proche conseiller de Haïlé Sélassié, il joue un rôle majeur dans la création de l'Organisation de l'unité africaine à Addis-Abeba en 1963. Arrêté par le Derg, il est exécuté le 23 novembre 1974 avec une soixantaine d'autres dignitaires.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Aklilu%20Habte-Wold",
+                  "classement": "Aklilu Habte-Wold",
+                  "image": {
+                    "src": "assets/portraits/pan_et_aklilu.jpg",
+                    "legende": "Aklilu Habte-Wold, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:PMofEthiopia.jpg"
+                  }
+                },
+                {
+                  "id": "pan_et_belay",
+                  "axe": "Guerres et résistances",
+                  "date": 1912,
+                  "titre": "Naissance de Belay Zeleke",
+                  "description": "Belay Zeleke (1912-1945) est un chef patriote du Godjam. Il combat l'occupation italienne, puis se révolte contre le retour de l'autorité impériale dans sa province. Capturé, il est pendu en 1945 et reste dans la mémoire populaire un héros de la résistance.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Belay%20Zeleke",
+                  "classement": "Belay Zeleke",
+                  "image": {
+                    "src": "assets/portraits/pan_et_belay.jpg",
+                    "legende": "Belay Zeleke, photographie de 1940",
+                    "auteur": "Archivah",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Belay_Zeleke.jpg"
+                  }
+                },
+                {
+                  "id": "pan_et_amha",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1916,
+                  "titre": "Naissance d'Amha Selassie",
+                  "description": "Amha Selassie (1916-1997) est le dernier empereur d'Éthiopie, de manière nominale, longtemps connu comme le prince héritier Asfa Wossen. Proclamé empereur par le Derg en septembre 1974 alors qu'il se soigne en Suisse, il ne rentre jamais et la monarchie est abolie en mars 1975. Il vit ensuite en exil, où il meurt en 1997.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Amha%20S%C3%A9lassi%C3%A9",
+                  "classement": "Amha Selassie",
+                  "image": {
+                    "src": "assets/portraits/pan_et_amha.jpg",
+                    "legende": "Asfa Wossen, futur Amha Selassie, photographie de Bassano, 1932",
+                    "auteur": "Bassano",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Crown_Prince_Asfaw_Wossen.jpg"
+                  }
+                },
+                {
+                  "id": "pan_et_aman",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1924,
+                  "titre": "Naissance d'Aman Andom",
+                  "description": "Aman Andom (1924-1974) est un général éthiopien d'origine érythréenne, premier chef de l'État du Derg après la chute de Haïlé Sélassié. Il prône une solution négociée pour l'Érythrée, ce qui le met en conflit avec la ligne dure du Derg. Il est tué le 23 novembre 1974, le jour où le Derg fait exécuter soixante dignitaires de l'ancien régime.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Aman%20Andom",
+                  "classement": "Aman Andom",
+                  "image": {
+                    "src": "assets/portraits/pan_et_aman.jpg",
+                    "legende": "Aman Andom, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Aman_andom.png"
+                  }
+                },
+                {
+                  "id": "pan_et_girma",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1924,
+                  "titre": "Naissance de Girma Wolde-Giorgis",
+                  "description": "Girma Wolde-Giorgis (1924-2018) est président de la République d'Éthiopie de 2001 à 2013, une fonction surtout honorifique. Oromo né à Addis-Abeba, il a siégé au Parlement sous l'empire et préside, de 1995 à 2001, la Chambre des représentants du peuple. Il quitte la présidence à la fin de son second mandat, à près de quatre-vingt-neuf ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Girma%20Wolde-Giorgis",
+                  "classement": "Girma Wolde-Giorgis",
+                  "image": {
+                    "src": "assets/portraits/pan_et_girma.jpg",
+                    "legende": "Girma Wolde-Giorgis, portrait officiel",
+                    "auteur": "Gouvernement éthiopien",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Girma-Wolde-Giorgis_official_portrait.png"
+                  }
+                },
+                {
+                  "id": "pan_et_hamlin",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1924,
+                  "titre": "Naissance de Catherine Hamlin",
+                  "description": "Catherine Hamlin (1924-2020) est une gynécologue australienne, installée en Éthiopie en 1959 avec son mari Reginald. Ils y fondent en 1974 l'hôpital des fistules d'Addis-Abeba, où des milliers de femmes sont opérées gratuitement. Elle meurt à Addis-Abeba en 2020.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Catherine%20Hamlin",
+                  "pays": "AU",
+                  "classement": "Hamlin, Catherine",
+                  "image": {
+                    "src": "assets/portraits/pan_et_hamlin.jpg",
+                    "legende": "Catherine Hamlin, photographie",
+                    "auteur": "Lucy Horodny/AusAID",
+                    "licence": "CC BY 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Dr_Catherine_Hamlin_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_et_bikila",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1932,
+                  "titre": "Naissance d'Abebe Bikila",
+                  "description": "Abebe Bikila (1932-1973) est un athlète éthiopien, premier Africain noir champion olympique. Il remporte le marathon de Rome en 1960, pieds nus, puis celui de Tokyo en 1964, quelques semaines après une opération de l'appendicite. Paralysé à la suite d'un accident de voiture en 1969, il meurt en 1973.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Abebe%20Bikila",
+                  "classement": "Abebe Bikila",
+                  "image": {
+                    "src": "assets/portraits/pan_et_bikila.jpg",
+                    "legende": "Abebe Bikila en 1968, photographie de Jack de Nijs",
+                    "auteur": "Jack de Nijs for Anefo",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Abebe_Bikila_1968c.jpg"
+                  }
+                },
+                {
+                  "id": "pan_et_mamowolde",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1932,
+                  "titre": "Naissance de Mamo Wolde",
+                  "description": "Mamo Wolde (1932-2002) est un athlète éthiopien, champion olympique du marathon à Mexico en 1968. Il y gagne aussi la médaille d'argent du 10 000 mètres, puis celle de bronze au marathon des Jeux de Munich en 1972. Il meurt en 2002 à Addis-Abeba, resté un héros national.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mamo%20Wolde",
+                  "classement": "Mamo Wolde",
+                  "image": {
+                    "src": "assets/portraits/pan_et_mamowolde.jpg",
+                    "legende": "Mamo Wolde au cross d'Elgoibar, photographie",
+                    "auteur": "Paco Marí (–1972) Alternative names Francisco María Blanco",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:El_etiope_Mamo_Wolde_%27Gacela_Negra%27_en_el_cross_de_Elgoibar_-_Fondo_Mar%C3%ADn-Kutxa_Fototeka.jpg"
+                  }
+                },
+                {
+                  "id": "pan_et_lemma",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1934,
+                  "titre": "Naissance d'Aklilu Lemma",
+                  "description": "Aklilu Lemma (1934-1997) est un médecin et scientifique éthiopien. En 1964, il découvre que les baies de l'endod, une plante locale, tuent les escargots qui transmettent la bilharziose. Cette découverte lui vaut le Right Livelihood Award en 1989 et fait de lui un pionnier de la lutte contre cette maladie dans les pays pauvres.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Aklilu%20Lemma",
+                  "classement": "Aklilu Lemma",
+                  "image": {
+                    "src": "assets/portraits/pan_et_lemma.jpg",
+                    "legende": "Aklilu Lemma, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Portrait-aklilu-lemma-11.jpg"
+                  }
+                },
+                {
+                  "id": "pan_et_getatchew",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1935,
+                  "titre": "Naissance de Getatchew Mekurya",
+                  "description": "Getatchew Mekurya (1935-2016) est un saxophoniste et compositeur éthiopien, né à Yifat dans le Choa. Pionnier de l'éthio-jazz, il enregistre dès les années 1960 et se fait connaître hors d'Éthiopie par la collection Éthiopiques. À partir de 2006, il joue avec le groupe néerlandais The Ex.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Getatchew%20Mekurya",
+                  "classement": "Getatchew Mekurya",
+                  "image": {
+                    "src": "assets/portraits/pan_et_getatchew.jpg",
+                    "legende": "Getatchew Mekurya au saxophone, photographie",
+                    "auteur": "Tom Beetz @ http://home.hetnet.nl/~tbeetz/index.html",
+                    "licence": "CC BY 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Getatchew_Mekuria.jpg"
+                  }
+                },
+                {
+                  "id": "pan_et_paulos",
+                  "axe": "Littérature et pensée",
+                  "date": 1935,
+                  "titre": "Naissance d'Abune Paulos",
+                  "description": "Abune Paulos (1935-2012) est patriarche de l'Église orthodoxe éthiopienne de 1992 à sa mort. Emprisonné par le Derg, il s'exile ensuite aux États-Unis, revient en Éthiopie et est élu patriarche après la chute du régime. Il siège parmi les présidents du Conseil œcuménique des Églises à partir de 2006.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Paulos%20Gebre%20Yohannes",
+                  "classement": "Abune Paulos",
+                  "image": {
+                    "src": "assets/portraits/pan_et_paulos.jpg",
+                    "legende": "Abune Paulos en habits liturgiques, photographie",
+                    "auteur": "Jhaustein",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:AbunaPaulos.jpg"
+                  }
+                },
+                {
+                  "id": "pan_et_sebhat",
+                  "axe": "Littérature et pensée",
+                  "date": 1936,
+                  "titre": "Naissance de Sebhat Gebre-Egziabher",
+                  "description": "Sebhat Gebre-Egziabher (1936-2012) est un écrivain et intellectuel éthiopien, né à Adoua dans le Tigré. Son livre Les Nuits d'Addis-Abeba, qui raconte la vie nocturne de la capitale, est le premier roman traduit de l'amharique en français. Il meurt à Addis-Abeba en 2012.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sebhat%20Gebre%20Egziabh%C3%A9r",
+                  "classement": "Sebhat Gebre-Egziabher",
+                  "image": {
+                    "src": "assets/portraits/pan_et_sebhat.jpg",
+                    "legende": "Sebhat Gebre-Egziabher, photographie",
+                    "auteur": "bawza.com",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Sebhat_Gebre-Egziabher.jpg"
+                  }
+                },
+                {
+                  "id": "pan_et_tsegaye",
+                  "axe": "Littérature et pensée",
+                  "date": 1936,
+                  "titre": "Naissance de Tsegaye Gabre-Medhin",
+                  "description": "Tsegaye Gabre-Medhin (1936-2006) est un poète, dramaturge et directeur artistique éthiopien, directeur du Théâtre national d'Éthiopie. Il écrit en amharique et en anglais, et passe pour le poète lauréat du pays. Il meurt à New York en 2006.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Tsegaye%20Gabre-Medhin",
+                  "classement": "Tsegaye Gabre-Medhin",
+                  "image": {
+                    "src": "assets/portraits/pan_et_tsegaye.jpg",
+                    "legende": "Tsegaye Gabre-Medhin, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Tsegaye_Gabre-Medhin.jpg"
+                  }
+                },
+                {
+                  "id": "pan_et_skunder",
+                  "axe": "Beaux-arts",
+                  "date": 1937,
+                  "titre": "Naissance de Skunder Boghossian",
+                  "description": "Skunder Boghossian (1937-2003) est un peintre éthiopien, pionnier de l'art moderne en Éthiopie. Né à Addis-Abeba, il étudie à Londres et à Paris, où il fréquente les milieux surréalistes. Il enseigne à l'université Howard de Washington à partir de 1972 et meurt dans cette ville en 2003.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Alexander%20Boghossian",
+                  "classement": "Boghossian, Skunder",
+                  "image": {
+                    "src": "assets/portraits/pan_et_skunder.jpg",
+                    "legende": "Autoportrait de Skunder Boghossian, aquarelle de 1961",
+                    "auteur": "Skunder Boghossian (1937–2003)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%22Self-Portrait%22,_1961_-_NARA_-_558827.jpg"
+                  }
+                },
+                {
+                  "id": "pan_et_tilahun",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1940,
+                  "titre": "Naissance de Tilahun Gessesse",
+                  "description": "Tilahun Gessesse (1940-2009) est un chanteur éthiopien, l'une des voix les plus aimées de la chanson populaire du pays. Membre de l'orchestre de la Garde impériale, il enregistre à partir des années 1960 des chansons d'amour et de patriotisme. Ses funérailles à Addis-Abeba, en 2009, rassemblent une foule considérable.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Tlahoun%20G%C3%A8ss%C3%A8ss%C3%A8",
+                  "classement": "Tilahun Gessesse",
+                  "image": {
+                    "src": "assets/portraits/pan_et_tilahun.jpg",
+                    "legende": "Tilahun Gessesse, photographie",
+                    "auteur": "Wurzel, Steffen",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Tilahun.jpg"
+                  }
+                },
+                {
+                  "id": "pan_et_alemayehu",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1941,
+                  "titre": "Naissance d'Alemayehu Eshete",
+                  "description": "Alemayehu Eshete (1941-2021) est un chanteur éthiopien, surnommé l'« Elvis abyssin ». Figure du rock et de la soul éthiopiens des années 1960 et 1970, il se produit dans les clubs d'Addis-Abeba. Son répertoire est révélé hors d'Éthiopie par la collection de disques Éthiopiques.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Al%C3%A8may%C3%A8hu%20Esh%C3%A8t%C3%A9",
+                  "classement": "Alemayehu Eshete",
+                  "image": {
+                    "src": "assets/portraits/pan_et_alemayehu.jpg",
+                    "legende": "Alemayehu Eshete en concert, photographie",
+                    "auteur": "ComputerHotline",
+                    "licence": "CC BY 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Eurock2010-31.jpg"
+                  }
+                },
+                {
+                  "id": "pan_et_meles",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1955,
+                  "titre": "Naissance de Meles Zenawi",
+                  "description": "Meles Zenawi (1955-2012) est Premier ministre d'Éthiopie de 1995 à 2012, après avoir dirigé le gouvernement de transition de 1991 à 1995. Chef du Front de libération du peuple du Tigré, il renverse le Derg en 1991 et fait de l'Éthiopie un État fédéral fondé sur les nationalités. Son régime connaît une forte croissance économique mais reste critiqué pour son autoritarisme ; il meurt en fonctions à Bruxelles en 2012.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Meles%20Zenawi",
+                  "classement": "Meles Zenawi",
+                  "image": {
+                    "src": "assets/portraits/pan_et_meles.jpg",
+                    "legende": "Meles Zenawi au Forum économique mondial de 2012",
+                    "auteur": "World Economic Forum",
+                    "licence": "CC BY-SA 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Meles_Zenawi_-_World_Economic_Forum_Annual_Meeting_2012.jpg"
+                  }
+                },
+                {
+                  "id": "pan_et_hachalu",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1986,
+                  "titre": "Naissance de Hachalu Hundessa",
+                  "description": "Hachalu Hundessa (1986-2020) est un chanteur oromo, dont les chansons deviennent l'hymne des manifestations oromo de 2015-2018. Né à Ambo, il a été emprisonné dans sa jeunesse pour ses engagements politiques. Il est assassiné par balles à Addis-Abeba le 29 juin 2020, et sa mort provoque des émeutes qui font plus de cent morts.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Hachalu%20Hundessa",
+                  "classement": "Hachalu Hundessa",
+                  "image": {
+                    "src": "assets/portraits/pan_et_hachalu.jpg",
+                    "legende": "Hachalu Hundessa, photographie de 2019",
+                    "auteur": "Oromo Media Network (OMN)",
+                    "licence": "CC BY 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Hachalu_Hundessa_2019.jpg"
+                  }
+                }
+              ],
+              "axeOrder": [
+                "Chefs d'État et dirigeants",
+                "Guerres et résistances",
+                "Littérature et pensée",
+                "Beaux-arts",
+                "Musique, spectacle et sport",
+                "Sciences, techniques et innovation"
+              ],
+              "essentiel": [
+                "pan_et_zarayaqob",
+                "pan_et_tewodros",
+                "pan_et_menelik2",
+                "pan_et_taytu",
+                "pan_et_hailesselassie",
+                "pan_et_haddis",
+                "pan_et_bikila"
               ]
             },
             {

@@ -1266,7 +1266,7 @@ test('la Corée : chacune de ses figures a son portrait et son pays, de Gwanggae
     await page.locator('#mode-card-discovery').click();
     await expect(page.locator('#screen-game')).toBeVisible();
     const nombre = await page.evaluate(() => getCurrentTheme().events.length);
-    expect(nombre).toBe(47);
+    expect(nombre).toBe(43);
     await expect(page.locator('#timeline .entry')).toHaveCount(nombre);
     await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
 
@@ -1386,7 +1386,7 @@ test('l’Éthiopie : chacune de ses figures a son portrait, de Zara Yaqob à Ha
     await page.locator('#mode-card-discovery').click();
     await expect(page.locator('#screen-game')).toBeVisible();
     const nombre = await page.evaluate(() => getCurrentTheme().events.length);
-    expect(nombre).toBe(47);
+    expect(nombre).toBe(43);
     await expect(page.locator('#timeline .entry')).toHaveCount(nombre);
     await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
 

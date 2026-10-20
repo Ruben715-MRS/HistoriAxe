@@ -11,7 +11,7 @@ ne posent pas la même question :
 | | Un thème, c'est | Une date, c'est | On le joue par |
 |---|---|---|---|
 | **Biographies** | une vie (360 thèmes, en 12 domaines) | une étape de cette vie | étape de la vie |
-| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Turquie, le Japon, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Indonésie, le monde malais, les Philippines, le Vietnam-Cambodge-Laos, la Thaïlande et la Birmanie, la Mongolie, la Corée, la Pologne, l'Europe centrale) | la naissance d'un personnage | domaine |
+| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Turquie, le Japon, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Éthiopie, l'Indonésie, le monde malais, les Philippines, le Vietnam-Cambodge-Laos, la Thaïlande et la Birmanie, la Mongolie, la Corée, la Pologne, l'Europe centrale) | la naissance d'un personnage | domaine |
 
 Le déplacement ne coûte aucune migration : les 360 thèmes gardent leurs
 identifiants, et rien de ce que le joueur a sauvegardé (favoris, révision,
@@ -2217,6 +2217,37 @@ l'apartheid, l'ANC, Rivonia, Sharpeville, Robben Island et la « nation arc-en-c
   la licence que Commons déclare, non le statut américain, qui n'a pas été vérifié image par image.
 - **Géolocalisation** : seules les figures qui ont leur biographie liée (Mandela, Tutu, Biko) y figurent déjà, par leur biographie.
 
+### Un pays à part : l'Éthiopie
+
+`pan_et`, « Grandes figures d'Éthiopie » (code `et`, pays ; rangé sous « Éthiopie », entre les États-Unis et l'Europe centrale) : **43 personnages**, de Zara Yaqob (1399) à Hachalu Hundessa (1986).
+Par axe : 20 Chefs d'État et dirigeants, 8 Guerres et résistances, 6 Littérature et pensée, 6 Musique, spectacle et sport, 2 Sciences, techniques et innovation, 1 Beaux-arts ; 7 ⭐ et aucune biographie
+liée. 43 portraits : 30 du domaine public, 2 CC0, 3 CC BY 2.0, 2 CC BY 3.0, 1 CC BY-SA 2.0, 3 CC BY-SA 3.0 et 2 CC BY-SA 4.0. Six figures sont nées avant 1800, dix-sept entre 1800 et 1899, vingt depuis 1900.
+Les mots-clés du thème portent le pays et l'Abyssinie, ses villes (Addis-Abeba, Adoua, Gondar, Harar, Axoum, Lalibela), ses peuples (Oromo, Amhara, Tigré, Choa), le négus, les Salomonides, le Derg, le
+rastafarisme et Magdala.
+
+- **Un pays, pas un bloc** : l'Éthiopie a une continuité d'État de plus de deux mille ans, une langue, une écriture et une Église propres. C'est la condition posée avant d'écrire : **assez de figures
+  avec un portrait libre** (environ 45 ; on en a trouvé 56 avant de retirer celles dont l'image ne convient pas, voir plus bas), faute de quoi le pays aurait rejoint un bloc de la Corne. `pan_et`
+  compte comme `thm_et` (« Histoire de l'Éthiopie ») dans « Pendant ce temps, ailleurs… ». **L'Érythrée n'y est pas** : elle ira au bloc Afrique de l'Est et Corne ; Aman Andom, né dans l'Érythrée
+  italienne, y est en revanche, parce qu'il préside le Derg éthiopien. Seule invitée d'un autre État : **Catherine Hamlin** (`pays` : AU), gynécologue australienne qui a fondé l'hôpital des fistules
+  d'Addis-Abeba, rangée là où on l'honore le plus. Livingstone, Eusébio et Rhodes, qui touchent à la région, sont ailleurs.
+- **Que des morts** : Mengistu Haile Mariam, Haile Gebrselassie, Kenenisa Bekele, Tirunesh Dibaba, Derartu Tulu, Mahmoud Ahmed, Mulatu Astatke ou Gebisa Ejeta n'y sont pas. Meles Zenawi, mort en 2012, y est.
+- **Rien avant 1399** : Ézana, Kaleb, Lalibela et Yared, figures du royaume d'Aksoum et des Zagwé, n'ont pas de date de naissance dans Wikidata ou une date au siècle près. **À rediscuter** : un « vers 450 »
+  pour Kaleb et un « vers 1162 » pour Lalibela, comme Mansa Moussa « vers 1280 » à l'Afrique de l'Ouest. Les Beaux-arts n'ont qu'**une figure** (Skunder Boghossian) et les Sciences deux (Aklilu Lemma et
+  Catherine Hamlin), faute de portraits libres : comme pour l'Afrique du Sud, on ne force pas.
+- **Dates retenues quand les sources divergent** : Iyasu V est daté de 1897 (l'article français ; Wikidata dit 1895) ; sont « vers » Mentewab (1706), Sahle Selassie (1795), Taytu Betul (1851) et Desta Damtew
+  (1892). Kebede Mikael est écarté : son année de naissance est 1914 ou 1916 selon les sources. Les dates de Wikidata ont été recoupées avec l'article français quand celui-ci en donne.
+- **Un classement à part** : un Éthiopien n'a pas de nom de famille, seulement son prénom suivi de celui de son père. « Par nom de famille », la galerie les range donc par leur prénom (Haïlé Sélassié Ier à H,
+  Menelik II à M, Abebe Bikila à A), sauf Skunder Boghossian (« Boghossian, Skunder ») et Catherine Hamlin, qui ont un nom de famille (exceptions dans `scripts/pantheon_classement.py`).
+- **Les images** : Zara Yaqob est vu sur une peinture du XVIIᵉ siècle, Gelawdewos sur un triptyque, Iyasu Ier sur une enluminure de manuscrit (recadrée sur lui), Mentewab sur une icône de l'église de Narga
+  Selassié, Lebna Dengel sur un portrait posthume de Cristofano dell'Altissimo ; Skunder Boghossian est vu par son propre autoportrait à l'aquarelle ; Heruy et Desta sont recadrés sur le visage. Sahle Selassie, Tewodros II
+  et Yohannes IV sont montrés par des images du XIXᵉ siècle dont l'auteur est inconnu ou incertain. Zara Yaqob : la peinture porte « Zara Yacob » sans plus de précision, elle montre un intronisé.
+- **Sept figures n'ont pas leur image** (trois retirées, quatre en attente) : voir `scripts/pantheon/et_candidats.md`. **Ahmed Gragn** (⭐, la seule image est une statue), **Susenyos Ier** (un dessin
+  de cavalier au visage minuscule) et **Miruts Yifter** (photographie de course où l'on ne distingue pas lequel est lui) ont leur fiche dans l'historique git ; **Alula Engeda** (⭐), **Gobena Dacche**, **Balcha
+  Safo** et **Mikael du Wollo** ont leur fiche et leur fichier Commons dans `et_candidats.md` : Wikimedia a répondu 429 à tout téléchargement de ces images, pendant plus d'une heure. Cinq figures n'ont pas
+  d'article en français et ne sont pas écrites (Tekle Hawariat, Onesimos Nesib, Abune Tewophilos, Bealu Girma, Afewerk Tekle).
+- **Statut américain des images : à relire**, comme pour l'Afrique centrale et l'Afrique du Sud : 30 des 43 images sont « domaine public », en majorité des photographies d'auteur inconnu ; le script lit la
+  licence que Commons déclare, non le statut américain.
+
 ### Un bloc : le monde malais (Malaisie, Singapour, Brunei et Timor oriental)
 
 `pan_malais`, « Grandes figures du monde malais » (code `malais`, bloc ; rangé sous « Monde malais »,
@@ -2812,7 +2843,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
 ### Ce qui n'est pas fait
 
 - **Les autres panthéons** : la France, l'Égypte, les États-Unis, l'Italie, le
-  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Indonésie, le monde malais, les Philippines, le Vietnam-Cambodge-Laos, la Thaïlande et la Birmanie, la Mongolie, la Corée, la Pologne, l'Europe centrale sont écrits.
+  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Éthiopie, l'Indonésie, le monde malais, les Philippines, le Vietnam-Cambodge-Laos, la Thaïlande et la Birmanie, la Mongolie, la Corée, la Pologne, l'Europe centrale sont écrits.
   Chaque liste de personnages est validée avant la rédaction. Feuille de route, dans l'ordre
   où on les propose (un pays seul quand il a de quoi faire un thème, un bloc sinon) :
   1. **Le Machrek est écrit** (voir « Le cinquième bloc »). Il reste : le portrait des trois
@@ -2826,8 +2857,12 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
   2. **Pays seuls** : **l'Afrique du Sud** (voir « Un pays à part : l'Afrique du Sud »), **l'Iran** (voir « Un pays à part : l'Iran »), **le Brésil** (qui n'entre pas dans l'Amérique « hispanique » ; voir « Un pays à part : le Brésil »), **la Turquie** (voir « Un pays à part : la Turquie »), **le Japon** (voir « Un pays à part : le Japon ») et **la Russie** (voir « Un pays à part : la Russie ») et **l'Australie** (voir « Un pays à part : l'Australie ») sont écrits.
   3. **Blocs** : l'Asie du Sud-Est (l'Indonésie est écrite, voir « Un pays à part : l'Indonésie » ; le monde malais est écrit, voir « Un bloc : le monde malais » ; les Philippines sont écrites, voir « Un pays à part : les Philippines » ; l'Indochine — Vietnam, Cambodge, Laos — est écrite, voir « Un bloc : l'Indochine » ; la Thaïlande avec la Birmanie est écrite, voir « Un bloc : la Thaïlande et la Birmanie » ; restent le Brunei déjà au bloc malais, la Papouasie-Nouvelle-Guinée et les Mélanésiens), la Mongolie (l'Asie centrale est écrite, voir « Un bloc : l'Asie centrale et
      l'Afghanistan »), le Caucase, la Corée (`KR`/`KP`), l'Afrique de
-     l'Ouest, l'Afrique de l'Est et la Corne, l'Afrique australe et l'océan
-     Indien (sans l'Afrique du Sud). L'Afrique centrale est écrite (voir « Un bloc : l'Afrique centrale »). « Nouvelle-Zélande et Pacifique » est écrit (voir « Un bloc : la
+     l'Ouest, puis les trois derniers morceaux de l'Afrique de l'Est et australe, décidés ainsi : **l'Éthiopie est écrite**, pays seul (voir « Un pays à part :
+     l'Éthiopie ») ; un bloc **Afrique de l'Est et Corne** (Kenya, Tanzanie, Ouganda, Somalie, Érythrée, Djibouti, Soudan et Soudan du Sud, sans l'Éthiopie) ; un bloc
+     **Afrique australe** (Angola, Mozambique, Zimbabwe, Zambie, Malawi, Namibie, Botswana, Lesotho et Eswatini, sans l'Afrique du Sud — l'Angola, aujourd'hui dans le bloc
+     de l'Afrique centrale, y sera déplacé) ; un bloc **océan Indien occidental** (Madagascar, Comores, Maurice et Seychelles, avec un `partMaxPays` relevé vers 0,55 : Madagascar
+     en pèsera la moitié). **La Réunion et Mayotte n'y sont pas** : départements français, leurs figures vont au panthéon de la France, comme celles d'Hawaï à celui des
+     États-Unis. L'Afrique centrale est écrite (voir « Un bloc : l'Afrique centrale »). « Nouvelle-Zélande et Pacifique » est écrit (voir « Un bloc : la
      Nouvelle-Zélande et le Pacifique »). Les pays baltes sont écrits (voir « Un bloc : les pays baltes »).
   4. **L'Europe et les Amériques qui manquent** : **le Portugal est écrit** (voir « Un pays à part : le Portugal »,
      qui a repris Magellan et Viriathe), Byzance (au-delà des cinq figures déjà au panthéon de la Grèce),
