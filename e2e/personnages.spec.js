@@ -93,7 +93,7 @@ test('Personnages illustres : deux sous-catégories, chacune avec sa note et son
     // « Amérique hispanique », « Asie centrale et Afghanistan », « Australie », « Balkans », « Benelux », « Brésil », « Canada », « Chine », « Égypte », « Espagne », « États-Unis », « Éthiopie », « Europe centrale », « France », « Grèce », « Indonésie », « Iran », « Israël », « Italie », « Japon », « Machrek et péninsule Arabique », « Maghreb », « Malaisie, Singapour, Brunei et Timor oriental », « Nouvelle-Zélande et Pacifique », « Pays baltes », « Portugal », « Royaume-Uni », « Russie », « Scandinavie », « Sous-continent indien », « Turquie » — et non par
     // « Grandes figures d'… » / « … de » / « … des » / « … du ».
     await expect(page.locator('#themes-container .data-card-title'))
-        .toHaveText(["Grandes figures d'Afrique centrale", "Grandes figures d'Afrique de l'Ouest", "Grandes figures d'Afrique du Sud", "Grandes figures d'Allemagne, d'Autriche et de Suisse", "Grandes figures d'Amérique hispanique",
+        .toHaveText(["Grandes figures d'Afrique centrale", "Grandes figures d'Afrique de l'Est et de la Corne", "Grandes figures d'Afrique de l'Ouest", "Grandes figures d'Afrique du Sud", "Grandes figures d'Allemagne, d'Autriche et de Suisse", "Grandes figures d'Amérique hispanique",
             "Grandes figures d'Asie centrale", "Grandes figures d'Australie", 'Grandes figures des Balkans', 'Grandes figures du Benelux', 'Grandes figures du Brésil', 'Grandes figures du Canada', 'Grandes figures de Chine', 'Grandes figures de Corée',
             "Grandes figures d'Égypte", "Grandes figures d'Espagne", 'Grandes figures des États-Unis', "Grandes figures d'Éthiopie", "Grandes figures d'Europe centrale",
             'Grandes figures de France', 'Grandes figures de Grèce', "Grandes figures d'Indochine", "Grandes figures d'Indonésie", "Grandes figures d'Iran", "Grandes figures d'Israël", "Grandes figures d'Italie", 'Grandes figures du Japon',
@@ -960,6 +960,47 @@ test('la recherche — « philippines », « manille », « luçon », « katipu
         await page.locator('#theme-search-input').fill(mot);
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: "Grandes figures des Philippines" });
         await expect(resultat, `« ${mot} » doit mener au panthéon des Philippines`).toHaveCount(1);
+        await expect(resultat.locator('.search-result-path')).toContainText('Personnages illustres › Panthéons');
+    }
+});
+
+test('l’Afrique de l’Est et la Corne : chacune de ses figures a son portrait et son pays, de Mwanga II à Zerai Deres, et aucune n’a de biographie', async ({ page }) => {
+    await openThemeById(page, 'pan_afriqueest');
+    await page.locator('#mode-card-discovery').click();
+    await expect(page.locator('#screen-game')).toBeVisible();
+    const nombre = await page.evaluate(() => getCurrentTheme().events.length);
+    expect(nombre).toBe(64);
+    await expect(page.locator('#timeline .entry')).toHaveCount(nombre);
+    await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
+
+    // Trois pays du bloc, chacun par une de ses figures : la fiche dit le pays que le bloc lui donne.
+    const figures = [
+        ['Naissance de Jomo Kenyatta', '🇰🇪', 'Kenya'],
+        ['Naissance de Julius Nyerere', '🇹🇿', 'Tanzanie'],
+        ['Naissance de Zerai Deres', '🇪🇷', 'Érythrée'],
+    ];
+    for (const [titre, drapeau, pays] of figures) {
+        await page.locator('#timeline .entry', { hasText: titre }).click();
+        await expect(page.locator('#modal-details')).toBeVisible();
+        await expect(page.locator('#modal-pays')).toContainText(drapeau);
+        await expect(page.locator('#modal-pays')).toContainText(pays);
+        const portrait = page.locator('#modal-portrait-img');
+        await expect.poll(() => portrait.evaluate(img => img.complete ? img.naturalWidth : 0)).toBe(320);
+        await expect(page.locator('#modal-portrait-caption')).not.toBeEmpty();
+        await page.locator('#modal-details .close-btn').click();
+        await expect(page.locator('#modal-details')).toBeHidden();
+    }
+
+    const avecBiographie = await page.evaluate(() => getCurrentTheme().events.filter(e => e.biographie).length);
+    expect(avecBiographie).toBe(0);
+});
+
+test('la recherche — « kenya », « tanzanie », « ouganda », « somalie », « soudan », « djibouti », « mau mau » — mène au panthéon de l’Afrique de l’Est et de la Corne', async ({ page }) => {
+    await page.locator('#screen-home').click();
+    for (const mot of ['kenya', 'tanzanie', 'zanzibar', 'ouganda', 'somalie', 'soudan', 'soudan du sud', 'djibouti', 'erythree', 'corne de l\'afrique', 'mau mau', 'mahdi']) {
+        await page.locator('#theme-search-input').fill(mot);
+        const resultat = page.locator('#theme-search-results .search-result-item', { hasText: "Grandes figures d'Afrique de l'Est et de la Corne" });
+        await expect(resultat, `« ${mot} » doit mener au panthéon de l'Afrique de l'Est et de la Corne`).toHaveCount(1);
         await expect(resultat.locator('.search-result-path')).toContainText('Personnages illustres › Panthéons');
     }
 });
