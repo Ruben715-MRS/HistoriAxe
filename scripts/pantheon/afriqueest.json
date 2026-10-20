@@ -1,0 +1,1069 @@
+{
+  "code": "afriqueest",
+  "nom": "Afrique de l'Est et Corne",
+  "pays": [
+    "KE",
+    "TZ",
+    "UG",
+    "SO",
+    "SD",
+    "SS",
+    "DJ",
+    "ER"
+  ],
+  "theme": {
+    "id": "pan_afriqueest",
+    "nom": "Grandes figures d'Afrique de l'Est et de la Corne",
+    "difficulte": "Intermédiaire",
+    "motsCles": [
+      "Kenya",
+      "Kényan",
+      "Kényane",
+      "Tanzanie",
+      "Tanzanien",
+      "Tanzanienne",
+      "Zanzibar",
+      "Ouganda",
+      "Ougandais",
+      "Ougandaise",
+      "Buganda",
+      "Somalie",
+      "Somalien",
+      "Somalienne",
+      "Somali",
+      "Somaliland",
+      "Djibouti",
+      "Djiboutien",
+      "Soudan",
+      "Soudanais",
+      "Soudanaise",
+      "Soudan du Sud",
+      "Érythrée",
+      "Érythréen",
+      "Érythréenne",
+      "Corne de l'Afrique",
+      "Afrique de l'Est",
+      "Afrique orientale",
+      "Nairobi",
+      "Dar es Salaam",
+      "Kampala",
+      "Khartoum",
+      "Mogadiscio",
+      "Mau Mau",
+      "Mahdi",
+      "Mahdiste",
+      "Swahili",
+      "Kikuyu",
+      "Luo",
+      "Maji Maji",
+      "Darfour"
+    ]
+  },
+  "axes": [
+    "Chefs d'État et dirigeants",
+    "Guerres et résistances",
+    "Littérature et pensée",
+    "Musique, spectacle et sport",
+    "Sciences, techniques et innovation"
+  ],
+  "personnages": [
+    {
+      "slug": "kenyatta",
+      "nom": "Jomo Kenyatta",
+      "classement": "Kenyatta, Jomo",
+      "titre": "Naissance de Jomo Kenyatta",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1894,
+      "description": "Jomo Kenyatta (1894-1978) est le premier Premier ministre puis le premier président du Kenya indépendant. Chef de l'Union africaine du Kenya, il est condamné en 1953 pour son rôle supposé dans la révolte des Mau Mau et reste près de dix ans en prison et en résidence surveillée. Il dirige le pays de l'indépendance, en 1963, à sa mort en 1978.",
+      "wikipedia": "Jomo Kenyatta",
+      "pays": "KE",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Jomo Kenyatta (cropped) in June 15th, 1966.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "moi",
+      "nom": "Daniel arap Moi",
+      "classement": "Moi, Daniel arap",
+      "titre": "Naissance de Daniel arap Moi",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1924,
+      "description": "Daniel arap Moi (1924-2020) est président du Kenya de 1978 à 2002, successeur de Jomo Kenyatta. Il instaure le parti unique en 1982, après une tentative de coup d'État de l'armée de l'air, et gouverne de manière autoritaire. Sous la pression des bailleurs de fonds, il rétablit le multipartisme en 1991 et quitte le pouvoir à la fin de son dernier mandat.",
+      "wikipedia": "Daniel arap Moi",
+      "pays": "KE",
+      "portrait": {
+        "fichier": "Daniel arap Moi 1979b.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "kibaki",
+      "nom": "Mwai Kibaki",
+      "classement": "Kibaki, Mwai",
+      "titre": "Naissance de Mwai Kibaki",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1931,
+      "description": "Mwai Kibaki (1931-2022) est président du Kenya de 2002 à 2013. Élu à la tête d'une coalition d'opposition qui met fin au long règne de Daniel arap Moi, il relance l'économie et rend l'école primaire gratuite. Sa réélection contestée de 2007 provoque des violences qui font plus d'un millier de morts, et un gouvernement de coalition avec Raila Odinga y met fin.",
+      "wikipedia": "Mwai Kibaki",
+      "pays": "KE",
+      "portrait": {
+        "fichier": "Mwai Kibaki (cropped).jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "mboya",
+      "nom": "Tom Mboya",
+      "classement": "Mboya, Tom",
+      "titre": "Naissance de Tom Mboya",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1930,
+      "description": "Tom Mboya (1930-1969) est un syndicaliste et homme politique kényan, d'origine luo. Secrétaire général de la Fédération kényane du travail, il est l'un des artisans de l'indépendance, puis ministre de la Justice et de la Planification économique. Il est assassiné à Nairobi le 5 juillet 1969.",
+      "wikipedia": "Tom Mboya",
+      "pays": "KE",
+      "portrait": {
+        "fichier": "Tom Mboya Aharon Becker 1962.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "raila",
+      "nom": "Raila Odinga",
+      "classement": "Odinga, Raila",
+      "titre": "Naissance de Raila Odinga",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1945,
+      "description": "Raila Odinga (1945-2025) est un homme politique kényan, fils d'Oginga Odinga. Détenu sans jugement après la tentative de coup d'État de 1982, il devient l'une des principales figures de l'opposition. Premier ministre de 2008 à 2013 dans le gouvernement d'union qui met fin aux violences postélectorales, il se présente cinq fois à la présidentielle sans l'emporter.",
+      "wikipedia": "Raila Odinga",
+      "pays": "KE",
+      "portrait": {
+        "fichier": "Raila Amolo Odinga 2009 (cropped).jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "pinto",
+      "nom": "Pio Gama Pinto",
+      "classement": "Pinto, Pio Gama",
+      "titre": "Naissance de Pio Gama Pinto",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1927,
+      "description": "Pio Gama Pinto (1927-1965) est un journaliste et homme politique kényan, d'origine goanaise. Militant de l'indépendance, emprisonné par les Britanniques de 1954 à 1959, il devient député et proche d'Oginga Odinga. Il est assassiné à Nairobi le 24 février 1965.",
+      "wikipedia": "Pio Gama Pinto",
+      "pays": "KE",
+      "portrait": {
+        "fichier": "Pio Gama Pinto.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "thuku",
+      "nom": "Harry Thuku",
+      "classement": "Thuku, Harry",
+      "titre": "Naissance de Harry Thuku",
+      "axe": "Guerres et résistances",
+      "naissance": 1895,
+      "description": "Harry Thuku (1895-1970) est un dirigeant nationaliste kikuyu. Fondateur de l'Association de l'Afrique de l'Est, il proteste contre l'impôt et le travail forcé, et il est arrêté en mars 1922, ce qui provoque à Nairobi une manifestation réprimée dans le sang. Exilé à Kismayu pendant près de dix ans, il revient en 1931 et se range ensuite du côté de la modération.",
+      "wikipedia": "Harry Thuku",
+      "pays": "KE",
+      "portrait": {
+        "fichier": "Harry-Thuku-banner.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "ngugi",
+      "nom": "Ngũgĩ wa Thiong'o",
+      "classement": "Thiong'o, Ngũgĩ wa",
+      "titre": "Naissance de Ngũgĩ wa Thiong'o",
+      "axe": "Littérature et pensée",
+      "naissance": 1938,
+      "description": "Ngũgĩ wa Thiong'o (1938-2025) est un romancier, dramaturge et essayiste kényan, auteur de Pétales de sang. Emprisonné sans jugement à la fin de 1977, après sa pièce Ngaahika Ndeenda, il renonce à écrire en anglais pour le kikuyu, puis s'exile en 1982. Il enseigne ensuite aux États-Unis et plaide pour la littérature dans les langues africaines.",
+      "wikipedia": "Ngugi wa Thiong'o",
+      "pays": "KE",
+      "portrait": {
+        "fichier": "Ngũgĩ wa Thiong'o 2019 (48139052733).jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "binyavanga",
+      "nom": "Binyavanga Wainaina",
+      "classement": "Wainaina, Binyavanga",
+      "titre": "Naissance de Binyavanga Wainaina",
+      "axe": "Littérature et pensée",
+      "naissance": 1971,
+      "description": "Binyavanga Wainaina (1971-2019) est un écrivain et journaliste kényan. Lauréat du prix Caine en 2002, il fonde en 2003 la revue littéraire Kwani?, puis publie en 2005 l'essai satirique « Comment écrire sur l'Afrique ». Il se déclare homosexuel en 2014, pour protester contre les lois anti-homosexuels du continent.",
+      "wikipedia": "Binyavanga Wainaina",
+      "pays": "KE",
+      "portrait": {
+        "fichier": "9.13.09BinyavangaWainainaByLuigiNovi1.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "wangari",
+      "nom": "Wangari Maathai",
+      "classement": "Maathai, Wangari",
+      "titre": "Naissance de Wangari Maathai",
+      "axe": "Guerres et résistances",
+      "naissance": 1940,
+      "description": "Wangari Maathai (1940-2011) est une biologiste et militante écologiste kényane. Elle fonde en 1977 le Mouvement de la ceinture verte, qui fait planter des dizaines de millions d'arbres, et défend la démocratie et les droits des femmes face au régime de Moi. Elle reçoit le prix Nobel de la paix en 2004, première Africaine à l'obtenir.",
+      "wikipedia": "Wangari Muta Maathai",
+      "pays": "KE",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Wangari Matthai 2001 (cropped).jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "wanjiru",
+      "nom": "Samuel Wanjiru",
+      "classement": "Wanjiru, Samuel",
+      "titre": "Naissance de Samuel Wanjiru",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1986,
+      "description": "Samuel Wanjiru (1986-2011) est un athlète kényan, spécialiste du marathon. Il est champion olympique à Pékin en 2008, avec un record olympique de 2 h 6 min 32 s, et vainqueur à Londres et à Chicago. Il meurt en 2011 d'une chute du balcon de sa maison, dans des circonstances mal élucidées.",
+      "wikipedia": "Samuel Wanjiru",
+      "pays": "KE",
+      "portrait": {
+        "fichier": "Samuel Wanjiru2008 Summer Olympics2.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "kiprugut",
+      "nom": "Wilson Kiprugut",
+      "classement": "Kiprugut, Wilson",
+      "titre": "Naissance de Wilson Kiprugut",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1938,
+      "description": "Wilson Kiprugut (1938-2022) est un athlète kényan, spécialiste du 800 mètres. Il remporte la médaille de bronze aux Jeux de Tokyo en 1964, la première médaille olympique du Kenya, puis celle d'argent à Mexico en 1968. Il ouvre la voie aux grands coureurs de demi-fond et de fond du pays.",
+      "wikipedia": "Wilson Kiprugut",
+      "pays": "KE",
+      "portrait": {
+        "fichier": "Wilson Kiprugut 1968.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "temu",
+      "nom": "Naftali Temu",
+      "classement": "Temu, Naftali",
+      "titre": "Naissance de Naftali Temu",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1945,
+      "description": "Naftali Temu (1945-2003) est un athlète kényan, spécialiste du 10 000 mètres. Il remporte à Mexico, en 1968, la première médaille d'or olympique de l'histoire du Kenya, devant l'Éthiopien Mamo Wolde. Quelques jours plus tard, Kipchoge Keino gagne le 1 500 mètres.",
+      "wikipedia": "Naftali Temu",
+      "pays": "KE",
+      "portrait": {
+        "fichier": "Naftali Temu Mexico City 1968.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "odinga",
+      "nom": "Oginga Odinga",
+      "classement": "Odinga, Oginga",
+      "titre": "Naissance d'Oginga Odinga",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1911,
+      "description": "Oginga Odinga (1911-1994) est un homme politique kényan, d'origine luo, père de Raila Odinga. Premier vice-président du Kenya à l'indépendance, il rompt avec Jomo Kenyatta en 1966, fonde l'Union populaire du Kenya, et il est emprisonné de 1969 à 1971. Il reste une figure de l'opposition jusqu'à sa mort.",
+      "wikipedia": "Oginga Odinga",
+      "pays": "KE",
+      "portrait": {
+        "fichier": "Jaramogi Oginga Odinga (cropped).jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "kimathi",
+      "nom": "Dedan Kimathi",
+      "classement": "Kimathi, Dedan",
+      "titre": "Naissance de Dedan Kimathi",
+      "axe": "Guerres et résistances",
+      "naissance": 1920,
+      "description": "Dedan Kimathi (1920-1957) est le principal chef de la révolte des Mau Mau contre l'autorité britannique, au Kenya. Il commande à partir de 1953 les combattants retranchés dans les forêts des monts Aberdare et du mont Kenya. Capturé en 1956, il est pendu en février 1957 à Nairobi.",
+      "wikipedia": "Dedan Kimathi",
+      "pays": "KE",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Statue of Dedan Kimathi Nairobi, Kenya.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "richardleakey",
+      "nom": "Richard Leakey",
+      "classement": "Leakey, Richard",
+      "titre": "Naissance de Richard Leakey",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1944,
+      "description": "Richard Leakey (1944-2022) est un paléoanthropologue et défenseur de la nature kényan, fils de Louis et de Mary Leakey. Directeur des Musées nationaux du Kenya, il dirige les fouilles qui découvrent en 1984 le « garçon de Turkana », squelette presque complet d'un Homo erectus. À la tête du Service de la faune sauvage à partir de 1989, il mène une campagne contre le braconnage des éléphants.",
+      "wikipedia": "Richard Leakey",
+      "pays": "KE",
+      "portrait": {
+        "fichier": "Richard Leakey (1986).jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "louisleakey",
+      "nom": "Louis Leakey",
+      "classement": "Leakey, Louis",
+      "titre": "Naissance de Louis Leakey",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1903,
+      "description": "Louis Leakey (1903-1972) est un paléoanthropologue britannique né au Kenya, de parents missionnaires. Il explore avec sa femme Mary les gorges d'Olduvai, en Tanzanie, où le couple découvre en 1959 un crâne de Zinjanthropus, puis Homo habilis. Ses travaux font de l'Afrique de l'Est le berceau supposé de l'humanité, et il encourage les carrières de Jane Goodall et de Dian Fossey.",
+      "wikipedia": "Louis Leakey",
+      "pays": "KE",
+      "portrait": {
+        "fichier": "(left to right) Mary Douglas Nicol Leakey (1913-1996) and her husband Louis Seymour Bazett Leakey (1903-1972).jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "nyerere",
+      "nom": "Julius Nyerere",
+      "classement": "Nyerere, Julius",
+      "titre": "Naissance de Julius Nyerere",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1922,
+      "description": "Julius Nyerere (1922-1999) est le premier président de la Tanzanie, de 1964 à 1985, surnommé Mwalimu, « le professeur ». Il conduit le Tanganyika à l'indépendance en 1961, l'unit à Zanzibar en 1964 et adopte la politique socialiste des villages ujamaa, qui échoue économiquement mais préserve l'unité du pays. Il quitte volontairement le pouvoir en 1985.",
+      "wikipedia": "Julius Nyerere",
+      "pays": "TZ",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "President Nyerere van Tanzania, koppen, Bestanddeelnr 928-2879 (cropped).jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "karume",
+      "nom": "Abeid Karume",
+      "classement": "Karume, Abeid",
+      "titre": "Naissance d'Abeid Karume",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1905,
+      "description": "Abeid Karume (1905-1972) est le premier président de Zanzibar, de 1964 à 1972, et vice-président de la Tanzanie. Ancien marin, chef du Parti afro-shirazi, il prend la tête de la révolution de janvier 1964, qui renverse le sultan. Il est assassiné à Zanzibar en 1972.",
+      "wikipedia": "Abeid Karume",
+      "pays": "TZ",
+      "portrait": {
+        "fichier": "Abeid Karume 1964.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "mkapa",
+      "nom": "Benjamin Mkapa",
+      "classement": "Mkapa, Benjamin",
+      "titre": "Naissance de Benjamin Mkapa",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1938,
+      "description": "Benjamin Mkapa (1938-2020) est président de la Tanzanie de 1995 à 2005. Ancien journaliste et ministre des Affaires étrangères, il libéralise l'économie, privatise des entreprises d'État et obtient un allègement de la dette du pays. Il quitte le pouvoir après deux mandats, comme le prévoit la Constitution.",
+      "wikipedia": "Benjamin Mkapa",
+      "pays": "TZ",
+      "portrait": {
+        "fichier": "Benjamin Mkapa 2010-05-07.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "mwinyi",
+      "nom": "Ali Hassan Mwinyi",
+      "classement": "Mwinyi, Ali Hassan",
+      "titre": "Naissance d'Ali Hassan Mwinyi",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1925,
+      "description": "Ali Hassan Mwinyi (1925-2024) est président de la Tanzanie de 1985 à 1995. Né à Zanzibar, il succède à Julius Nyerere, qui lui laisse la présidence du pays. Il libéralise l'économie, ouvre le pays au commerce privé et instaure le multipartisme en 1992.",
+      "wikipedia": "Ali Hassan Mwinyi",
+      "pays": "TZ",
+      "portrait": {
+        "fichier": "Ali Hassan Mwinyi 2.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "magufuli",
+      "nom": "John Magufuli",
+      "classement": "Magufuli, John",
+      "titre": "Naissance de John Magufuli",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1959,
+      "description": "John Magufuli (1959-2021) est président de la Tanzanie de 2015 à sa mort. Surnommé « le Bulldozer » pour ses chantiers d'infrastructures, il fait de la lutte contre la corruption sa marque. Il minimise la gravité de la pandémie de Covid-19 et meurt en mars 2021, officiellement d'une maladie cardiaque.",
+      "wikipedia": "John Magufuli",
+      "pays": "TZ",
+      "portrait": {
+        "fichier": "John Magufuli 2015.png",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "barghash",
+      "nom": "Barghash ben Saïd",
+      "classement": "Barghash ben Saïd",
+      "titre": "Naissance de Barghash ben Saïd",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1837,
+      "description": "Barghash ben Saïd (vers 1837-1888) est sultan de Zanzibar de 1870 à 1888. Il modernise sa capitale, avec des palais, l'eau courante et l'éclairage, et ferme en 1873 le marché aux esclaves de Zanzibar sous la pression des Britanniques. Il doit composer avec les ambitions de l'Allemagne et de la Grande-Bretagne, qui se partagent bientôt ses possessions du continent.",
+      "wikipedia": "Barghach ben Saïd",
+      "pays": "TZ",
+      "portrait": {
+        "fichier": "Barghash.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "tippotip",
+      "nom": "Tippo Tip",
+      "classement": "Tippo Tip",
+      "titre": "Naissance de Tippo Tip",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1837,
+      "description": "Tippo Tip (vers 1837-1905) est un marchand d'ivoire et d'esclaves swahili-arabe, né à Zanzibar. Il fonde dans l'est du Congo un État commercial et esclavagiste, et il guide les explorateurs Livingstone, Cameron et Stanley. Nommé gouverneur des Stanley Falls par l'État indépendant du Congo en 1887, il est évincé par les Belges et se retire à Zanzibar.",
+      "wikipedia": "Tippo Tip",
+      "pays": "TZ",
+      "portrait": {
+        "fichier": "Tipoo tib NNP.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "mkwawa",
+      "nom": "Mkwawa",
+      "classement": "Mkwawa",
+      "titre": "Naissance de Mkwawa",
+      "axe": "Guerres et résistances",
+      "naissance": 1855,
+      "description": "Mkwawa (1855-1898) est le chef des Hehe, dans le sud de l'actuelle Tanzanie, de 1879 à 1898. Il bat une colonne allemande à Lugalo en 1891, puis résiste pendant sept ans à la conquête de l'Afrique orientale allemande. Poursuivi, il se donne la mort en 1898 pour ne pas être pris.",
+      "wikipedia": "Mkwawa",
+      "pays": "TZ",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "The National Archives UK - CO 1069-159-87 (cropped).jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "mirambo",
+      "nom": "Mirambo",
+      "classement": "Mirambo",
+      "titre": "Naissance de Mirambo",
+      "axe": "Guerres et résistances",
+      "naissance": 1840,
+      "description": "Mirambo (vers 1840-1884) est un chef de guerre nyamwezi, dans le centre de l'actuelle Tanzanie. Il fonde dans les années 1860 un royaume militaire autour d'Urambo et contrôle les routes caravanières entre le lac Tanganyika et la côte. On l'a surnommé le « Napoléon de l'Afrique orientale ».",
+      "wikipedia": "Mirambo",
+      "pays": "TZ",
+      "portrait": {
+        "fichier": "Mirambo.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "bikidude",
+      "nom": "Bi Kidude",
+      "classement": "Bi Kidude",
+      "titre": "Naissance de Bi Kidude",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1910,
+      "description": "Bi Kidude (vers 1910-2013) est une chanteuse tanzanienne de Zanzibar, née Fatuma binti Baraka. Elle chante le taarab et la musique des rites d'initiation des jeunes filles, l'unyago, qu'elle dirige elle-même. Elle reçoit le prix WOMEX en 2005 et chante presque jusqu'à sa mort.",
+      "wikipedia": "Bi Kidude",
+      "pays": "TZ",
+      "portrait": {
+        "fichier": "Bi Kidude.png",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "bibititi",
+      "nom": "Bibi Titi Mohammed",
+      "classement": "Bibi Titi Mohammed",
+      "titre": "Naissance de Bibi Titi Mohammed",
+      "axe": "Guerres et résistances",
+      "naissance": 1926,
+      "description": "Bibi Titi Mohammed (1926-2000) est une militante nationaliste tanzanienne, l'une des figures féminines de la lutte pour l'indépendance du Tanganyika. Elle mobilise des milliers de femmes pour la TANU, dont elle dirige l'union des femmes, et devient ministre. Accusée de complot en 1969, elle est condamnée à la prison à vie, puis graciée en 1972.",
+      "wikipedia": "Bibi Titi Mohammed",
+      "pays": "TZ",
+      "portrait": {
+        "fichier": "Bibi Titi 1969 Mohamed (facecrop).jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "mwanga2",
+      "nom": "Mwanga II",
+      "classement": "Mwanga II",
+      "titre": "Naissance de Mwanga II",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1868,
+      "description": "Mwanga II (1868-1903) est le kabaka du Buganda de 1884 à 1897, avec une interruption de quelques mois. Il fait exécuter l'évêque anglican James Hannington en 1885 et, en 1886, plusieurs jeunes pages chrétiens, les martyrs de l'Ouganda. Chassé par les Britanniques, il meurt en exil aux Seychelles.",
+      "wikipedia": "Mwanga II",
+      "pays": "UG",
+      "portrait": {
+        "fichier": "King Mwanga II Buganda.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "mutesa2",
+      "nom": "Muteesa II",
+      "classement": "Muteesa II",
+      "titre": "Naissance de Muteesa II",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1924,
+      "description": "Muteesa II (1924-1969) est le kabaka du Buganda de 1939 à 1966 et le premier président de l'Ouganda, de 1963 à 1966. Déporté par les Britanniques en 1953 puis rappelé, il est chassé du pouvoir en 1966 par son Premier ministre Milton Obote, qui fait attaquer son palais. Il meurt en exil à Londres en 1969.",
+      "wikipedia": "Muteesa II",
+      "pays": "UG",
+      "portrait": {
+        "fichier": "Sir. Edward Fredrick Mutesa, The President of Uganda.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "mutesa1",
+      "nom": "Muteesa Ier",
+      "classement": "Muteesa Ier",
+      "titre": "Naissance de Muteesa Ier",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1837,
+      "description": "Muteesa Ier (vers 1837-1884) est le kabaka du Buganda de 1856 à 1884. Il reçoit les explorateurs Speke, puis Stanley, ouvre son royaume au christianisme et à l'islam, et laisse ses sujets s'y diviser. Il règne sur l'un des royaumes les plus puissants de la région des Grands Lacs.",
+      "wikipedia": "Muteesa Ier",
+      "pays": "UG",
+      "portrait": {
+        "fichier": "Mutesa I.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "amin",
+      "nom": "Idi Amin Dada",
+      "classement": "Amin Dada, Idi",
+      "titre": "Naissance d'Idi Amin Dada",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1925,
+      "description": "Idi Amin Dada (vers 1925-2003) est président de l'Ouganda de 1971 à 1979. Il s'empare du pouvoir par un coup d'État et gouverne par la terreur, qui fait entre cent mille et cinq cent mille morts selon les estimations, et il expulse en 1972 les Asiatiques d'Ouganda. Renversé par une invasion tanzanienne en 1979, il meurt en exil en Arabie saoudite.",
+      "wikipedia": "Idi Amin Dada",
+      "pays": "UG",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Idi Amin at UN (United Nations, New York) gtfy.00132 (cropped).jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "obote",
+      "nom": "Milton Obote",
+      "classement": "Obote, Milton",
+      "titre": "Naissance de Milton Obote",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1925,
+      "description": "Milton Obote (1925-2005) est Premier ministre de l'Ouganda à l'indépendance, en 1962, puis président de 1966 à 1971 et de 1980 à 1985. Il abolit les royaumes traditionnels en 1967 et exerce un pouvoir de plus en plus personnel. Renversé deux fois par des coups d'État, il meurt en exil à Johannesburg.",
+      "wikipedia": "Milton Obote",
+      "pays": "UG",
+      "portrait": {
+        "fichier": "Obote cropped.png",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "chwa2",
+      "nom": "Daudi Chwa II",
+      "classement": "Daudi Chwa II",
+      "titre": "Naissance de Daudi Chwa II",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1896,
+      "description": "Daudi Chwa II (1896-1939) est le kabaka du Buganda de 1897 à 1939, couronné enfant. Sa minorité se passe sous la tutelle de régents, puis il règne comme monarque constitutionnel sous le protectorat britannique. Il est le père de Muteesa II.",
+      "wikipedia": "Daudi Chwa II",
+      "pays": "UG",
+      "portrait": {
+        "fichier": "Daudi Cwa of Buganda.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "kiwanuka",
+      "nom": "Benedicto Kiwanuka",
+      "classement": "Kiwanuka, Benedicto",
+      "titre": "Naissance de Benedicto Kiwanuka",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1922,
+      "description": "Benedicto Kiwanuka (1922-1972) est le premier Premier ministre de l'Ouganda, en 1961-1962. Catholique, fondateur du Parti démocrate, il devient chef de la justice du pays en 1971. Arrêté par les hommes d'Idi Amin en 1972, il est assassiné peu après.",
+      "wikipedia": "Benedicto Kiwanuka",
+      "pays": "UG",
+      "portrait": {
+        "fichier": "Benedicto Kiwanuka, 1961 (cropped).jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "luwum",
+      "nom": "Janani Luwum",
+      "classement": "Luwum, Janani",
+      "titre": "Naissance de Janani Luwum",
+      "axe": "Guerres et résistances",
+      "naissance": 1922,
+      "description": "Janani Luwum (1922-1977) est archevêque anglican de l'Ouganda, du Rwanda, du Burundi et du Boga-Zaïre à partir de 1974. Il dénonce publiquement les exécutions et les disparitions du régime d'Idi Amin. Arrêté le 16 février 1977, il est tué le lendemain, officiellement dans un accident de voiture, et il est honoré comme martyr.",
+      "wikipedia": "Janani Luwum",
+      "pays": "UG",
+      "portrait": {
+        "fichier": "London UK Sculptures-at-Westminster-Abbey-Westgate-01 (Luwum).jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "lwanga",
+      "nom": "Charles Lwanga",
+      "classement": "Lwanga, Charles",
+      "titre": "Naissance de Charles Lwanga",
+      "axe": "Guerres et résistances",
+      "naissance": 1865,
+      "description": "Charles Lwanga (vers 1865-1886) est un page de la cour du Buganda, chef des pages chrétiens, devenu saint. Il refuse de renier sa foi devant le kabaka Mwanga II et il est brûlé vif à Namugongo, le 3 juin 1886, avec d'autres jeunes chrétiens. Canonisé en 1964, il est le saint patron de la jeunesse africaine.",
+      "wikipedia": "Charles Lwanga",
+      "pays": "UG",
+      "portrait": {
+        "fichier": "Karoli Lwanga and his followers.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "akiibua",
+      "nom": "John Akii-Bua",
+      "classement": "Akii-Bua, John",
+      "titre": "Naissance de John Akii-Bua",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1949,
+      "description": "John Akii-Bua (1949-1997) est un athlète ougandais, spécialiste du 400 mètres haies. Il remporte l'or aux Jeux de Munich en 1972, avec un record du monde de 47 s 82, et devient le premier champion olympique de l'Ouganda. Il quitte son pays sous Idi Amin et meurt en 1997 à Kampala.",
+      "wikipedia": "John Akii-Bua",
+      "pays": "UG",
+      "portrait": {
+        "fichier": "Akii-Bua 1972.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "mah",
+      "nom": "Mohammed Abdullah Hassan",
+      "classement": "Mohammed Abdullah Hassan",
+      "titre": "Naissance de Mohammed Abdullah Hassan",
+      "axe": "Guerres et résistances",
+      "naissance": 1856,
+      "description": "Mohammed Abdullah Hassan (1856-1920) est un chef religieux et poète somali, que les Britanniques appelaient le « Mad Mullah ». À la tête des derviches, il mène de 1899 à 1920 une guerre contre les Britanniques, les Italiens et les Éthiopiens. Il meurt de la grippe en 1920, quelques mois après la défaite de son mouvement, et il est considéré comme un héros de l'indépendance somalienne.",
+      "wikipedia": "Mohammed Abdullah Hassan",
+      "pays": "SO",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Sayyid Mohammed Abdullah Hassan.jpeg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "barre",
+      "nom": "Mohamed Siad Barre",
+      "classement": "Barre, Mohamed Siad",
+      "titre": "Naissance de Mohamed Siad Barre",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1919,
+      "description": "Mohamed Siad Barre (1919-1995) est président de la Somalie de 1969 à 1991. Arrivé au pouvoir par un coup d'État militaire, il adopte le « socialisme scientifique », fait adopter l'écriture latine du somali en 1972, puis perd la guerre de l'Ogaden contre l'Éthiopie en 1978. Renversé en 1991 par des mouvements d'opposition, il meurt en exil au Nigeria, alors que le pays sombre dans la guerre civile.",
+      "wikipedia": "Mohamed Siad Barre",
+      "pays": "SO",
+      "portrait": {
+        "fichier": "Siad Barre.png",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "egal",
+      "nom": "Mohamed Ibrahim Egal",
+      "classement": "Egal, Mohamed Ibrahim",
+      "titre": "Naissance de Mohamed Ibrahim Egal",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1928,
+      "description": "Mohamed Ibrahim Egal (1928-2002) est un homme politique somalien, Premier ministre de la Somalie de 1967 à 1969, puis président du Somaliland de 1993 à 2002. Arrêté lors du coup d'État de Siad Barre en 1969, il revient en politique après la chute du régime. Il dirige le Somaliland autoproclamé jusqu'à sa mort.",
+      "wikipedia": "Mohamed Ibrahim Egal",
+      "pays": "SO",
+      "portrait": {
+        "fichier": "Muhammad Haji Ibrahim Egal 1968.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "yusuf",
+      "nom": "Abdullahi Yusuf Ahmed",
+      "classement": "Abdullahi Yusuf Ahmed",
+      "titre": "Naissance d'Abdullahi Yusuf Ahmed",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1934,
+      "description": "Abdullahi Yusuf Ahmed (1934-2012) est président de la Somalie de 2004 à 2008. Ancien colonel et ancien président du Puntland, il est élu par le Parlement de transition réuni au Kenya, mais ne parvient pas à rétablir l'autorité du gouvernement dans le pays. Il démissionne en 2008 et meurt à Abou Dhabi en 2012.",
+      "wikipedia": "Abdullahi Yusuf Ahmed",
+      "pays": "SO",
+      "portrait": {
+        "fichier": "Abdullahi Yusuf Ahmed (28-03-2006).jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "aidid",
+      "nom": "Mohamed Farrah Aidid",
+      "classement": "Aidid, Mohamed Farrah",
+      "titre": "Naissance de Mohamed Farrah Aidid",
+      "axe": "Guerres et résistances",
+      "naissance": 1934,
+      "description": "Mohamed Farrah Aidid (1934-1996) est un général et chef de guerre somali. Un des chefs de l'opposition qui renverse Siad Barre en 1991, il contrôle une partie de Mogadiscio et devient la cible de l'opération des Nations unies de 1993. Ses miliciens tuent des soldats pakistanais puis américains, lors de la bataille de Mogadiscio d'octobre 1993.",
+      "wikipedia": "Mohamed Farrah Aidid",
+      "pays": "SO",
+      "portrait": {
+        "fichier": "Мохамед Фарах Айдид.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "alimahdi",
+      "nom": "Ali Mahdi Mohamed",
+      "classement": "Ali Mahdi Mohamed",
+      "titre": "Naissance d'Ali Mahdi Mohamed",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1939,
+      "description": "Ali Mahdi Mohamed (1939-2021) est un homme d'affaires et homme politique somalien. Il se proclame président de la Somalie en janvier 1991, après la fuite de Siad Barre, et entre en conflit avec le général Aidid, ce qui divise Mogadiscio en deux. Il meurt en 2021.",
+      "wikipedia": "Ali Mahdi Mohamed",
+      "pays": "SO",
+      "portrait": {
+        "fichier": "Али Махди Мохамед 08 (2020).png",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "hadrawi",
+      "nom": "Hadrawi",
+      "classement": "Hadrawi",
+      "titre": "Naissance de Hadrawi",
+      "axe": "Littérature et pensée",
+      "naissance": 1943,
+      "description": "Hadrawi (1943-2022) est un poète somalien, de son vrai nom Mohamed Ibrahim Warsame, l'un des plus célèbres de son pays. Emprisonné de 1973 à 1978 par le régime de Siad Barre pour ses poèmes critiques, il est parfois appelé le « Shakespeare de la Somalie ». Il se fait aussi le promoteur de la paix entre les clans.",
+      "wikipedia": "Hadrawi",
+      "pays": "SO",
+      "portrait": {
+        "fichier": "Hadrawi.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "abdirizak",
+      "nom": "Abdirizak Haji Hussein",
+      "classement": "Abdirizak Haji Hussein",
+      "titre": "Naissance d'Abdirizak Haji Hussein",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1924,
+      "description": "Abdirizak Haji Hussein (1924-2014) est un homme d'État somalien, Premier ministre de 1964 à 1967. Il dirige un gouvernement civil que le coup d'État de 1969 écarte du pouvoir. Il vit ensuite longtemps loin de son pays, et il meurt en 2014.",
+      "wikipedia": "Abdirizak Haji Hussein",
+      "pays": "SO",
+      "portrait": {
+        "fichier": "Husein.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "aden",
+      "nom": "Aden Abdullah Osman Daar",
+      "classement": "Aden Abdullah Osman Daar",
+      "titre": "Naissance d'Aden Abdullah Osman Daar",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1908,
+      "description": "Aden Abdullah Osman Daar (1908-2007) est le premier président de la République somalienne, de 1960 à 1967. Il quitte le pouvoir après avoir perdu l'élection de 1967 face à Abdirashid Ali Shermarke, une alternance pacifique rare en Afrique. Il est aussi le dernier survivant des pères de l'indépendance.",
+      "wikipedia": "Aden Abdullah Osman Daar",
+      "pays": "SO",
+      "portrait": {
+        "fichier": "Aden Abdullah Osman Daar.JPG",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "shermarke",
+      "nom": "Abdirashid Ali Shermarke",
+      "classement": "Shermarke, Abdirashid Ali",
+      "titre": "Naissance d'Abdirashid Ali Shermarke",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1919,
+      "description": "Abdirashid Ali Shermarke (1919-1969) est Premier ministre de la Somalie de 1960 à 1964, puis président de 1967 à 1969. Il est assassiné par l'un de ses gardes le 15 octobre 1969, à Las Anod. Le coup d'État de Siad Barre suit six jours plus tard.",
+      "wikipedia": "Abdirashid Ali Shermarke",
+      "pays": "SO",
+      "portrait": {
+        "fichier": "1963-10 1963年 索马里总理阿卜迪拉希德·阿里·舍马克 Abdirashid Ali Shermarke.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "mahdi",
+      "nom": "Muhammad Ahmad al-Mahdi",
+      "classement": "Muhammad Ahmad al-Mahdi",
+      "titre": "Naissance de Muhammad Ahmad al-Mahdi",
+      "axe": "Guerres et résistances",
+      "naissance": 1844,
+      "description": "Muhammad Ahmad al-Mahdi (1844-1885) est un chef religieux soudanais qui se proclame le Mahdi, le guide attendu, en 1881. Il soulève le pays contre l'administration turco-égyptienne, bat une armée commandée par le Britannique Hicks en 1883 et prend Khartoum en janvier 1885, où le général Gordon est tué. Il meurt de maladie en juin 1885, après avoir fondé l'État mahdiste.",
+      "wikipedia": "Muhammad Ahmad ibn Abd Allah Al-Mahdi",
+      "pays": "SD",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Muhammad Ahmad al-Mahdi.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "khalife",
+      "nom": "Abdallahi ibn Muhammad",
+      "classement": "Abdallahi ibn Muhammad",
+      "titre": "Naissance d'Abdallahi ibn Muhammad",
+      "axe": "Guerres et résistances",
+      "naissance": 1846,
+      "description": "Abdallahi ibn Muhammad (1846-1899) est le Khalife, successeur du Mahdi à la tête de l'État mahdiste de 1885 à 1899. Il fait d'Omdourman sa capitale et mène des guerres contre l'Éthiopie et l'Égypte. Vaincu à Omdourman en 1898 par Kitchener, il est tué à Oum Debrikat, en novembre 1899.",
+      "wikipedia": "Abdallahi ibn Muhammad",
+      "pays": "SD",
+      "portrait": {
+        "fichier": "Abdallahi ibn Muhammad, 1846-1899.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "digna",
+      "nom": "Osman Digna",
+      "classement": "Digna, Osman",
+      "titre": "Naissance d'Osman Digna",
+      "axe": "Guerres et résistances",
+      "naissance": 1836,
+      "description": "Osman Digna (vers 1836-1926) est un chef militaire soudanais, commandant des mahdistes dans l'est du pays. Il bat des troupes britanniques et égyptiennes en 1884, et ses guerriers hadendoa sont appelés « Fuzzy-Wuzzies » par Kipling. Capturé en 1900, il meurt en prison à Wadi Halfa en 1926.",
+      "wikipedia": "Osman Digma",
+      "pays": "SD",
+      "portrait": {
+        "fichier": "عثمان دقنة.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "alidinar",
+      "nom": "Ali Dinar",
+      "classement": "Ali Dinar",
+      "titre": "Naissance d'Ali Dinar",
+      "axe": "Guerres et résistances",
+      "naissance": 1856,
+      "description": "Ali Dinar (vers 1856-1916) est le dernier sultan du Darfour indépendant, de 1898 à 1916. Il rétablit le sultanat après la chute de l'État mahdiste, mais se rallie aux Ottomans en 1914, ce qui incite les Britanniques à l'attaquer. Il est tué à Jebel Juba en novembre 1916, et le Darfour est rattaché au Soudan anglo-égyptien.",
+      "wikipedia": "Ali Dinar",
+      "pays": "SD",
+      "portrait": {
+        "fichier": "Ali Dinar.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "abdelrahman",
+      "nom": "Abd al-Rahman al-Mahdi",
+      "classement": "Abd al-Rahman al-Mahdi",
+      "titre": "Naissance d'Abd al-Rahman al-Mahdi",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1885,
+      "description": "Abd al-Rahman al-Mahdi (1885-1959) est le fils posthume du Mahdi, chef de la confrérie des ansar et du parti Oumma. Il soutient un Soudan indépendant, sans union avec l'Égypte, face à son rival Ali al-Mirghani. Il est l'une des figures les plus puissantes du Soudan de la fin de la période coloniale.",
+      "wikipedia": "Abdel Rahman al-Mahdi",
+      "pays": "SD",
+      "portrait": {
+        "fichier": "Abd al-Rahman al-Mahdi Seated.png",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "azhari",
+      "nom": "Ismail al-Azhari",
+      "classement": "Ismail al-Azhari",
+      "titre": "Naissance d'Ismail al-Azhari",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1900,
+      "description": "Ismail al-Azhari (1900-1969) est le premier Premier ministre du Soudan, de 1954 à 1956. Partisan de l'union avec l'Égypte, il fait finalement proclamer l'indépendance par le Parlement en décembre 1955, pour le 1er janvier 1956. Il préside le Conseil de souveraineté de 1965 à 1969.",
+      "wikipedia": "Ismail al-Azhari",
+      "pays": "SD",
+      "portrait": {
+        "fichier": "Ismail al-Azhari.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "abboud",
+      "nom": "Ibrahim Abboud",
+      "classement": "Abboud, Ibrahim",
+      "titre": "Naissance d'Ibrahim Abboud",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1900,
+      "description": "Ibrahim Abboud (1900-1983) est un général soudanais, chef de l'État de 1958 à 1964. Il prend le pouvoir par un coup d'État en novembre 1958 et mène une politique d'arabisation et d'islamisation du Sud. Il est renversé en 1964 par la révolution d'octobre.",
+      "wikipedia": "Ibrahim Abboud",
+      "pays": "SD",
+      "portrait": {
+        "fichier": "Ibrahim Abboud2.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "nimeiry",
+      "nom": "Gaafar Nimeiry",
+      "classement": "Nimeiry, Gaafar",
+      "titre": "Naissance de Gaafar Nimeiry",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1930,
+      "description": "Gaafar Nimeiry (1930-2009) est président du Soudan de 1969 à 1985. Arrivé au pouvoir par un coup d'État, il met fin à la première guerre civile avec l'accord d'Addis-Abeba en 1972, puis applique la charia en 1983, ce qui relance la guerre au Sud. Renversé en 1985 par un soulèvement populaire, il part en exil en Égypte.",
+      "wikipedia": "Gaafar Nimeiry",
+      "pays": "SD",
+      "portrait": {
+        "fichier": "Gaafar Nimeiry in 1974.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "turabi",
+      "nom": "Hassan al-Tourabi",
+      "classement": "Hassan al-Tourabi",
+      "titre": "Naissance de Hassan al-Tourabi",
+      "axe": "Littérature et pensée",
+      "naissance": 1932,
+      "description": "Hassan al-Tourabi (1932-2016) est un théoricien islamiste et homme politique soudanais. Chef du Front islamique national, il est l'inspirateur du coup d'État de 1989 d'Omar el-Béchir, puis son rival et son prisonnier. Il meurt à Khartoum en 2016.",
+      "wikipedia": "Hassan al-Tourabi",
+      "pays": "SD",
+      "portrait": {
+        "fichier": "HassanAlTurabi Feb2015 RomanDeckert.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "sadiq",
+      "nom": "Sadeq al-Mahdi",
+      "classement": "Sadeq al-Mahdi",
+      "titre": "Naissance de Sadeq al-Mahdi",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1935,
+      "description": "Sadeq al-Mahdi (1935-2020) est un homme politique soudanais, arrière-petit-fils du Mahdi et chef du parti Oumma. Il est Premier ministre de 1966 à 1967, puis de 1986 à 1989. Il est renversé en juin 1989 par le coup d'État d'Omar el-Béchir.",
+      "wikipedia": "Sadeq al-Mahdi",
+      "pays": "SD",
+      "portrait": {
+        "fichier": "Sadiq AlMahdi 12-06-2015.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "swar",
+      "nom": "Abdel Rahman Swar al-Dahab",
+      "classement": "Abdel Rahman Swar al-Dahab",
+      "titre": "Naissance d'Abdel Rahman Swar al-Dahab",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1934,
+      "description": "Abdel Rahman Swar al-Dahab (1934-2018) est un maréchal soudanais, chef de l'État de 1985 à 1986. Ministre de la Défense, il écarte Nimeiry lors du soulèvement populaire d'avril 1985 et dirige une transition d'un an. Il remet ensuite le pouvoir à un gouvernement élu, ce qui est rare en Afrique.",
+      "wikipedia": "Abdel Rahman Swar al-Dahab",
+      "pays": "SD",
+      "portrait": {
+        "fichier": "Abdel Rahman Swar al-Dahab.png",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "tayeb",
+      "nom": "Tayeb Salih",
+      "classement": "Salih, Tayeb",
+      "titre": "Naissance de Tayeb Salih",
+      "axe": "Littérature et pensée",
+      "naissance": 1929,
+      "description": "Tayeb Salih (1929-2009) est un écrivain soudanais, auteur de Saison de la migration vers le Nord, roman publié en 1966 et considéré comme l'un des plus importants de la littérature arabe moderne. Né près de Merowe, il travaille longtemps à la BBC, à Londres, puis à l'Unesco, à Paris. Il meurt à Londres en 2009.",
+      "wikipedia": "Tayeb Salih",
+      "pays": "SD",
+      "portrait": {
+        "fichier": "Tayeb saleh.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "garang",
+      "nom": "John Garang",
+      "classement": "Garang, John",
+      "titre": "Naissance de John Garang",
+      "axe": "Guerres et résistances",
+      "naissance": 1945,
+      "description": "John Garang (1945-2005) est le chef du Mouvement de libération du peuple soudanais, qui mène la guerre du Sud contre Khartoum de 1983 à 2005. Il signe en janvier 2005 l'accord de paix de Naivasha, qui prévoit un référendum d'autodétermination, et devient premier vice-président du Soudan. Il meurt le 30 juillet 2005, trois semaines plus tard, dans un accident d'hélicoptère.",
+      "wikipedia": "John Garang",
+      "pays": "SS",
+      "portrait": {
+        "fichier": "John Garang of Sudan.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "manutebol",
+      "nom": "Manute Bol",
+      "classement": "Bol, Manute",
+      "titre": "Naissance de Manute Bol",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1962,
+      "description": "Manute Bol (1962-2010) est un basketteur soudanais d'origine dinka, né dans l'actuel Soudan du Sud. Avec 2,31 m, il est l'un des plus grands joueurs de l'histoire de la NBA, où il joue dix saisons, surtout comme contreur. Il consacre une grande partie de sa fortune à des projets humanitaires pour son pays et meurt en 2010.",
+      "wikipedia": "Manute Bol",
+      "pays": "SS",
+      "portrait": {
+        "fichier": "Manute Bol at Bridgeport Knights 1984.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "harbi",
+      "nom": "Mahmoud Harbi",
+      "classement": "Harbi, Mahmoud",
+      "titre": "Naissance de Mahmoud Harbi",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1921,
+      "description": "Mahmoud Harbi (1921-1960) est un homme politique de la Côte française des Somalis, partisan de l'indépendance. Vice-président du Conseil de gouvernement en 1958, il fait campagne pour le « non » au référendum de septembre 1958 sur la Communauté française. Contraint à l'exil, il meurt en 1960 dans un accident d'avion, dont les circonstances restent discutées.",
+      "wikipedia": "Mahmoud Harbi",
+      "pays": "DJ",
+      "portrait": {
+        "fichier": "Mahmood harbi.png",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "dini",
+      "nom": "Ahmed Dini Ahmed",
+      "classement": "Dini, Ahmed",
+      "titre": "Naissance d'Ahmed Dini Ahmed",
+      "axe": "Guerres et résistances",
+      "naissance": 1932,
+      "description": "Ahmed Dini Ahmed (1932-2004) est un homme politique djiboutien, le premier Premier ministre du pays indépendant, en 1977-1978. Il rompt avec le président Hassan Gouled Aptidon et passe dans l'opposition. Il est l'un des chefs du Front pour la restauration de l'unité et de la démocratie, la rébellion afar des années 1990.",
+      "wikipedia": "Ahmed Dini",
+      "pays": "DJ",
+      "portrait": {
+        "fichier": "Dini.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "gouled",
+      "nom": "Hassan Gouled Aptidon",
+      "classement": "Gouled Aptidon, Hassan",
+      "titre": "Naissance de Hassan Gouled Aptidon",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1916,
+      "description": "Hassan Gouled Aptidon (1916-2006) est le premier président de Djibouti, de 1977 à 1999. Chef de la Ligue populaire africaine pour l'indépendance, il conduit le territoire à l'indépendance, le 27 juin 1977. Il instaure un régime de parti unique en 1981 et se retire en 1999, en laissant la place à son neveu Ismaïl Omar Guelleh.",
+      "wikipedia": "Hassan Gouled Aptidon",
+      "pays": "DJ",
+      "portrait": {
+        "fichier": "Hassan Gouled Aptidon.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "zerai",
+      "nom": "Zerai Deres",
+      "classement": "Zerai Deres",
+      "titre": "Naissance de Zerai Deres",
+      "axe": "Guerres et résistances",
+      "naissance": 1915,
+      "description": "Zerai Deres (1915-1945) est un traducteur érythréen, devenu un symbole de l'anticolonialisme et de l'antifascisme. En juin 1938, il blesse plusieurs personnes à Rome, devant le Lion de Juda pillé à Addis-Abeba. Interné dans un asile psychiatrique, il y meurt en 1945, et l'Éthiopie comme l'Érythrée le revendiquent aujourd'hui comme un héros national.",
+      "wikipedia": "Zerai Deres",
+      "pays": "ER",
+      "portrait": {
+        "fichier": "Zerai Deres.jpg",
+        "legende": "À écrire"
+      }
+    }
+  ]
+}

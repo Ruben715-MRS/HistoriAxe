@@ -145,10 +145,17 @@ KEEP_AS_WRITTEN = {
     'Gwanggaeto le Grand', 'Munmu', 'Taejo de Joseon', 'Sejong le Grand', 'Yeongjo', 'Jeongjo', 'Daewongun', 'Sunjong', 'Park Chung-hee', 'Kim Il-sung', 'Kim Jong-il', 'An Jung-geun', 'Yu Gwan-sun', 'Jeon Bong-jun', 'Kim Koo', 'Ahn Chang-ho', 'Kim Jong-suk', 'Kim Chaek', 'Kim Won-bong', 'Pak Hon-yong', 'Wonhyo', 'Jeong Mong-ju', 'Yi Hwang', 'Yi I', 'Jeong Yak-yong', 'Park Ji-won', 'Han Yong-un', 'Yun Dong-ju', 'Shin Chae-ho', 'Kim Dong-in', 'Park Kyung-ni', 'Choe Je-u', 'Kim Hong-do', 'Jeong Seon', 'Kim Jeong-hui', 'Na Hye-sok', 'Kim Whanki', 'Park Soo-keun', 'Heo Jun', 'Choi Eun-hee', 'Shin Sang-ok', 'Sin Saimdang', 'Kim Dae-jung', 'Kim Young-sam', 'Yi Sun-sin',
     # Éthiopie : un Éthiopien n'a pas de nom de famille, seulement son prénom suivi de celui de son père ; on le range par son prénom.
     'Zara Yaqob', 'Lebna Dengel', 'Susenyos Ier', 'Iyasu Ier', 'Mentewab', 'Sahle Selassie', 'Tewodros II', 'Yohannes IV', 'Menelik II', 'Tekle Haymanot du Godjam', 'Mikael du Wollo', 'Taytu Betul', 'Abba Jifar II', 'Zewditu', 'Menen Asfaw', 'Haïlé Sélassié Ier', 'Iyasu V', 'Aklilu Habte-Wold', 'Amha Selassie', 'Aman Andom', 'Girma Wolde-Giorgis', 'Meles Zenawi', 'Ahmed Gragn', 'Gelawdewos', 'Gobena Dacche', 'Alula Engeda', 'Habte Giyorgis Dinagde', 'Ras Makonnen', 'Balcha Safo', 'Kassa Haile Darge', 'Abune Petros', 'Desta Damtew', 'Abebe Aregai', 'Belay Zeleke', 'Afework Gebre Yesus', 'Heruy Wolde Selassie', 'Haddis Alemayehu', 'Abune Paulos', 'Tsegaye Gabre-Medhin', 'Sebhat Gebre-Egziabher', 'Abebe Bikila', 'Mamo Wolde', 'Tilahun Gessesse', 'Alemayehu Eshete', 'Miruts Yifter', 'Getatchew Mekurya', 'Hachalu Hundessa', 'Aklilu Lemma',
+    # Afrique de l'Est et Corne : noms somalis, swahilis et arabes sans nom de famille (prénom, puis noms du père et du grand-père), titres et surnoms,
+    # noms à « al- » rangés par leur prénom comme ceux du Machrek, souverains rangés par leur nom de règne.
+    'Barghash ben Saïd', 'Tippo Tip', 'Bi Kidude', 'Bibi Titi Mohammed', 'Mohammed Abdullah Hassan', 'Abdullahi Yusuf Ahmed', 'Ali Mahdi Mohamed',
+    'Abdirizak Haji Hussein', 'Aden Abdullah Osman Daar', 'Ali Dinar', 'Abdallahi ibn Muhammad', 'Abd al-Rahman al-Mahdi', 'Ismail al-Azhari',
+    'Hassan al-Tourabi', 'Sadeq al-Mahdi', 'Abdel Rahman Swar al-Dahab', 'Muhammad Ahmad al-Mahdi', 'Zerai Deres',
 }
 
 # Écrits à la main : (nom de la source) → nom de classement.
 EXCEPTIONS = {
+    # Afrique de l'Est et Corne : le nom d'usage est le dernier mot du nom dit (Amin Dada) ou le nom de famille d'un nom composé.
+    'Idi Amin Dada': 'Amin Dada, Idi', 'Ahmed Dini Ahmed': 'Dini, Ahmed', 'Hassan Gouled Aptidon': 'Gouled Aptidon, Hassan',
     # Europe centrale : un prince de Transylvanie, non un roi, se range par son nom de famille malgré son numéro.
     'François II Rákóczi': 'Rákóczi, François II',
     # Portugal : noms composés (le dernier mot n'est pas toujours le nom de famille) et surnoms.
