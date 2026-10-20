@@ -97,7 +97,7 @@ test('Personnages illustres : deux sous-catégories, chacune avec sa note et son
             "Grandes figures d'Asie centrale", "Grandes figures d'Australie", 'Grandes figures des Balkans', 'Grandes figures du Benelux', 'Grandes figures du Brésil', 'Grandes figures du Canada', 'Grandes figures de Chine', 'Grandes figures de Corée',
             "Grandes figures d'Égypte", "Grandes figures d'Espagne", 'Grandes figures des États-Unis', "Grandes figures d'Éthiopie", "Grandes figures d'Europe centrale",
             'Grandes figures de France', 'Grandes figures de Grèce', "Grandes figures d'Indochine", "Grandes figures d'Indonésie", "Grandes figures d'Iran", "Grandes figures d'Israël", "Grandes figures d'Italie", 'Grandes figures du Japon',
-            'Grandes figures du Machrek et de la péninsule Arabique', 'Grandes figures du Maghreb', 'Grandes figures du monde malais', 'Grandes figures de Mongolie', 'Grandes figures de Nouvelle-Zélande et du Pacifique', 'Grandes figures des pays baltes', 'Grandes figures des Philippines', 'Grandes figures de Pologne', 'Grandes figures du Portugal',
+            'Grandes figures du Machrek et de la péninsule Arabique', 'Grandes figures du Maghreb', 'Grandes figures du monde malais', 'Grandes figures de Mongolie', 'Grandes figures de Nouvelle-Zélande et du Pacifique', "Grandes figures de l'océan Indien occidental", 'Grandes figures des pays baltes', 'Grandes figures des Philippines', 'Grandes figures de Pologne', 'Grandes figures du Portugal',
             'Grandes figures du Royaume-Uni', 'Grandes figures de Russie', 'Grandes figures de Scandinavie', 'Grandes figures du sous-continent indien', 'Grandes figures de Thaïlande et de Birmanie', 'Grandes figures de Turquie']);
 });
 
@@ -1001,6 +1001,47 @@ test('la recherche — « kenya », « tanzanie », « ouganda », « somalie »
         await page.locator('#theme-search-input').fill(mot);
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: "Grandes figures d'Afrique de l'Est et de la Corne" });
         await expect(resultat, `« ${mot} » doit mener au panthéon de l'Afrique de l'Est et de la Corne`).toHaveCount(1);
+        await expect(resultat.locator('.search-result-path')).toContainText('Personnages illustres › Panthéons');
+    }
+});
+
+test('l’océan Indien occidental : chacune de ses figures a son portrait et son pays, d’Adrien d’Épinay à Didier Ratsiraka, et aucune n’a de biographie', async ({ page }) => {
+    await openThemeById(page, 'pan_oceanindien');
+    await page.locator('#mode-card-discovery').click();
+    await expect(page.locator('#screen-game')).toBeVisible();
+    const nombre = await page.evaluate(() => getCurrentTheme().events.length);
+    expect(nombre).toBe(32);
+    await expect(page.locator('#timeline .entry')).toHaveCount(nombre);
+    await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
+
+    // Trois pays du bloc, chacun par une de ses figures : la fiche dit le pays que le bloc lui donne.
+    const figures = [
+        ['Naissance de Radama Ier', '🇲🇬', 'Madagascar'],
+        ['Naissance de Seewoosagur Ramgoolam', '🇲🇺', 'Maurice'],
+        ['Naissance de France-Albert René', '🇸🇨', 'Seychelles'],
+    ];
+    for (const [titre, drapeau, pays] of figures) {
+        await page.locator('#timeline .entry', { hasText: titre }).click();
+        await expect(page.locator('#modal-details')).toBeVisible();
+        await expect(page.locator('#modal-pays')).toContainText(drapeau);
+        await expect(page.locator('#modal-pays')).toContainText(pays);
+        const portrait = page.locator('#modal-portrait-img');
+        await expect.poll(() => portrait.evaluate(img => img.complete ? img.naturalWidth : 0)).toBe(320);
+        await expect(page.locator('#modal-portrait-caption')).not.toBeEmpty();
+        await page.locator('#modal-details .close-btn').click();
+        await expect(page.locator('#modal-details')).toBeHidden();
+    }
+
+    const avecBiographie = await page.evaluate(() => getCurrentTheme().events.filter(e => e.biographie).length);
+    expect(avecBiographie).toBe(0);
+});
+
+test('la recherche — « madagascar », « tananarive », « comores », « maurice », « seychelles », « mascareignes » — mène au panthéon de l’océan Indien occidental', async ({ page }) => {
+    await page.locator('#screen-home').click();
+    for (const mot of ['madagascar', 'malgache', 'tananarive', 'comores', 'anjouan', 'maurice', 'port-louis', 'seychelles', 'ocean indien', 'mascareignes', 'hira gasy']) {
+        await page.locator('#theme-search-input').fill(mot);
+        const resultat = page.locator('#theme-search-results .search-result-item', { hasText: "Grandes figures de l'océan Indien occidental" });
+        await expect(resultat, `« ${mot} » doit mener au panthéon de l'océan Indien occidental`).toHaveCount(1);
         await expect(resultat.locator('.search-result-path')).toContainText('Personnages illustres › Panthéons');
     }
 });
