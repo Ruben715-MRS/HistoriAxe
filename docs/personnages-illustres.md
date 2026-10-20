@@ -11,7 +11,7 @@ ne posent pas la même question :
 | | Un thème, c'est | Une date, c'est | On le joue par |
 |---|---|---|---|
 | **Biographies** | une vie (360 thèmes, en 12 domaines) | une étape de cette vie | étape de la vie |
-| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Turquie, le Japon, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Indonésie, le monde malais, les Philippines, le Vietnam-Cambodge-Laos, la Thaïlande et la Birmanie, la Mongolie, la Corée) | la naissance d'un personnage | domaine |
+| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Turquie, le Japon, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Indonésie, le monde malais, les Philippines, le Vietnam-Cambodge-Laos, la Thaïlande et la Birmanie, la Mongolie, la Corée, la Pologne) | la naissance d'un personnage | domaine |
 
 Le déplacement ne coûte aucune migration : les 360 thèmes gardent leurs
 identifiants, et rien de ce que le joueur a sauvegardé (favoris, révision,
@@ -2397,6 +2397,37 @@ Silla, Goguryeo, Baekje), le hangeul, la guerre d'Imjin, la guerre de Corée, le
 - **Statut américain des images : à relire.** Trente-neuf portraits sont du « domaine public », beaucoup de photographies officielles ou anciennes que Commons étiquette « US ? » ; même décision que pour les autres thèmes asiatiques.
 - **Les listes de candidats** sont dans `scripts/pantheon/coree_candidats.md`.
 
+### Un pays à part : la Pologne
+
+`pan_pl`, « Grandes figures de Pologne » (code `pl`, pays ; rangé sous « Pologne », entre les Philippines et le Portugal) : **105 personnages**, de Mieszko Ier (vers 935) à Jerzy Kukuczka (1948). Par axe :
+27 Littérature et pensée, 18 Guerres et résistances, 18 Musique, spectacle et sport, 16 Chefs d'État et dirigeants, 16 Sciences, techniques et innovation, 10 Beaux-arts ; 18 ⭐ — Mieszko Ier, Casimir III le Grand,
+Jean III Sobieski, Józef Piłsudski, Jean-Paul II, Tadeusz Kościuszko, Maximilien Kolbe, Witold Pilecki, Jan Kochanowski, Adam Mickiewicz, Henryk Sienkiewicz, Czesław Miłosz, Wisława Szymborska, Jan Matejko, Frédéric Chopin,
+Andrzej Wajda, Nicolas Copernic et Marian Rejewski — et **aucune biographie liée**. 105 portraits : 86 du domaine public, 2 CC0, 11 CC BY-SA et 6 CC BY. Cinq figures sont nées avant 1500, vingt et une de 1500 à 1799,
+soixante-dix-neuf depuis 1800. Les mots-clés portent le pays et ses adjectifs, ses grandes villes (Varsovie, Cracovie, Gdańsk, Poznań, Wrocław), la Silésie, la Poméranie, la Galicie, les Piast et les Jagellon, l'union de Lublin,
+la République des Deux Nations, les partages, les insurrections de 1830, 1863 et 1944, l'Armia Krajowa, Solidarność, Katyń, le ghetto de Varsovie, Grunwald, la loi martiale et la Table ronde.
+
+- **Un pays, pas un bloc.** `pan_pl`, aucun champ `pays` — pas d'invité — et « Pendant ce temps, ailleurs… » le compte comme `thm_pl`, l'« Histoire de la Pologne ». Un test le vérifie (`tests/simultaneity.test.js`).
+- **Le pays qui honore, pas l'état civil.** Mickiewicz (né près de Nowogródek), Miłosz (né en Lituanie), Piłsudski (né près de Vilnius), Kościuszko (né dans l'actuelle Biélorussie), Moniuszko, Emilia Plater, Zamenhof (Białystok),
+  Lem et Herbert (Lwów) ou Kapuściński (Pińsk) sont ici, la fiche disant le lieu : ce sont les Polonais qui les honorent d'abord. **Marie Curie reste au panthéon de la France**, qui l'avait déjà ;
+  Joseph Conrad (Berdytchiv) est écarté pour le Royaume-Uni, Rosa Luxemburg et Édith Stein pour l'Allemagne, Isaac Bashevis Singer pour les États-Unis. Bronisław Malinowski, Józef Rotblat, Stanisław Ulam, Benoît Mandelbrot et Tamara
+  de Lempicka, que ni la Grande-Bretagne, ni les États-Unis, ni la France n'ont à leur panthéon, sont laissés de côté : les pays où ils ont travaillé les honorent davantage.
+- **Les vivants restent dehors** : Lech Wałęsa (il a sa biographie), Roman Polański, Robert Lewandowski, Olga Tokarczuk, Andrzej Sapkowski.
+- **Dates incertaines.** Hedwige d'Anjou (1370 à 1374 selon les sources), Ladislas II Jagellon (1351 pour l'article français, 1362 pour Wikidata), Zawisza Czarny (naissance inconnue) et Marek Edelman (1919 ou 1922) sont écartés ;
+  Mieszko Ier (« vers 935 »), Boym (« vers 1612 », Wikidata dit aussi 1614) et Chełmoński (1849, Wikidata hésite entre 1847 et 1850) portent la date de l'article français. Szymanowski est né en 1882 (Wikidata dit aussi 1883).
+- **Écartés faute d'image libre convenable** : Bruno Schulz (toutes ses images sont « Not-PD-US-URAA »), Lech Kaczyński (une licence GFDL seule, ou le droit d'auteur du Parlement européen), Krzysztof Komeda (licence « Attribution »
+  seule) et Tadeusz Sendzimir (la seule image libre est une fresque murale qui porte son nom, que « Qui est-ce ? » montrerait). Pulaski, Anders, Landowska, Lutosławski, Hirszfeld, Kieślowski, Tarski et Mazowiecki ont d'abord été refusés
+  (images de 220 à 300 pixels, ou GFDL seule), puis remplacés après une recherche sur Commons : une gravure de Lossing pour Pulaski, une photographie de 1946 pour Lutosławski, la photographie des Archives numériques nationales pour
+  Hirszfeld, un cliché de George Bergman (1968) pour Tarski, une photographie de 2013 pour Mazowiecki. Kieślowski (288 pixels de large) et Anders (299) sont agrandis de 7 à 11 %.
+- **Des portraits souvent indirects**, et les légendes le disent : trois portraits imaginaires de Jan Matejko pour les premiers Piast (Mieszko, Boleslas, Casimir III), des portraits de Bacciarelli pour les derniers rois, cinq
+  autoportraits (Matejko, Chełmoński, Malczewski, Boznańska, Witkacy) et deux gravures (Boym, Pulaski). Dix sont recadrés (Matejko, Siemiradzki, Boznańska, Landowska, Niemen, Hevelius, Boym, Czochralski, Kołakowski, Orzeszkowa) : le
+  visage était petit dans une image en pied.
+- **Les noms.** Les souverains se rangent par leur prénom (« Jean III Sobieski », « Stanislas II Auguste Poniatowski »), comme Louis XIV ; les autres par leur nom de famille. Les prénoms français de l'usage (Frédéric Chopin, Nicolas
+  Copernic, Maximilien Kolbe, Jean-Paul II) l'emportent sur l'orthographe polonaise. **Une lettre de plus à la galerie** : « Ł » (Łukasiewicz) ne se décompose pas en « L » et un accent, comme « Đ » ; `galleryNormalize` la replie
+  désormais sur « L », faute de quoi Łukasiewicz se rangeait sous « # » ; la recherche de thèmes (`normalizeSearchText`) fait de même, pour qu'on trouve « Wrocław » en tapant « wroclaw ».
+- **Statut américain des images : à relire.** Quatre-vingt-six portraits sont du « domaine public », dont beaucoup de photographies polonaises (modèle « PD-Poland » / « PD-1996 ») que Commons étiquette « US ? » ; même décision que pour
+  les autres thèmes : le script lit la licence déclarée, non le statut américain.
+- **Les listes de candidats** sont dans `scripts/pantheon/pl_candidats.md`.
+
 ### Un fichier source par panthéon, un script qui l'écrit dans `data/fr.json`
 
 `scripts/pantheon/<code>.json` (`fr`, `hispam`…) est **la seule source de
@@ -2739,7 +2770,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
 ### Ce qui n'est pas fait
 
 - **Les autres panthéons** : la France, l'Égypte, les États-Unis, l'Italie, le
-  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Indonésie, le monde malais, les Philippines, le Vietnam-Cambodge-Laos, la Thaïlande et la Birmanie, la Mongolie, la Corée sont écrits.
+  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Indonésie, le monde malais, les Philippines, le Vietnam-Cambodge-Laos, la Thaïlande et la Birmanie, la Mongolie, la Corée, la Pologne sont écrits.
   Chaque liste de personnages est validée avant la rédaction. Feuille de route, dans l'ordre
   où on les propose (un pays seul quand il a de quoi faire un thème, un bloc sinon) :
   1. **Le Machrek est écrit** (voir « Le cinquième bloc »). Il reste : le portrait des trois
@@ -2758,7 +2789,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
      Nouvelle-Zélande et le Pacifique »). Les pays baltes sont écrits (voir « Un bloc : les pays baltes »).
   4. **L'Europe et les Amériques qui manquent** : **le Portugal est écrit** (voir « Un pays à part : le Portugal »,
      qui a repris Magellan et Viriathe), Byzance (au-delà des cinq figures déjà au panthéon de la Grèce),
-     la Pologne, l'Europe centrale, la Slovénie (hors du bloc des Balkans, voir « Un bloc : les Balkans »), les Caraïbes non
+     l'Europe centrale (la Pologne est écrite, voir « Un pays à part : la Pologne »), la Slovénie (hors du bloc des Balkans, voir « Un bloc : les Balkans »), les Caraïbes non
      hispaniques.
 
   Les images décideront de la taille de chacun : pour l'Afrique subsaharienne et l'Asie du

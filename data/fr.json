@@ -2,8 +2,8 @@
   "version": "1.0.0",
   "lang": "fr",
   "name": "Français (Intégral)",
-  "totalThemes": 841,
-  "totalEvents": 24898,
+  "totalThemes": 842,
+  "totalEvents": 25003,
   "categories": [
     {
       "nom": "Culture générale",
@@ -142340,6 +142340,1763 @@
                 "pan_ph_magsaysay",
                 "pan_ph_marcos",
                 "pan_ph_coryaquino"
+              ]
+            },
+            {
+              "id": "pan_pl",
+              "nom": "Grandes figures de Pologne",
+              "difficulte": "Intermédiaire",
+              "motsCles": [
+                "Pologne",
+                "Polonais",
+                "Polonaise",
+                "Varsovie",
+                "Cracovie",
+                "Gdańsk",
+                "Dantzig",
+                "Poznań",
+                "Wrocław",
+                "Silésie",
+                "Poméranie",
+                "Galicie",
+                "Mazovie",
+                "Grande-Pologne",
+                "Piast",
+                "Piasts",
+                "Jagellon",
+                "Jagellons",
+                "Union de Lublin",
+                "République des Deux Nations",
+                "Pologne-Lituanie",
+                "Partages de la Pologne",
+                "Insurrection de Novembre",
+                "Insurrection de Janvier",
+                "Insurrection de Varsovie",
+                "Armia Krajowa",
+                "Armée de l'intérieur",
+                "Solidarność",
+                "Solidarité",
+                "Katyń",
+                "Ghetto de Varsovie",
+                "Grunwald",
+                "Szlachta",
+                "Wawel",
+                "Pacte de Varsovie",
+                "Loi martiale",
+                "Table ronde",
+                "Grande Émigration",
+                "Jeune Pologne",
+                "Pan Tadeusz"
+              ],
+              "events": [
+                {
+                  "id": "pan_pl_mieszko",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 935,
+                  "titre": "Naissance de Mieszko Ier",
+                  "description": "Mieszko Ier (vers 935-992) est le premier souverain de Pologne attesté par les sources, duc des Polanes et fondateur de la dynastie des Piast. Il se fait baptiser en 966 après son mariage avec la princesse tchèque Dobrawa, ce qui fait entrer ses terres dans la chrétienté latine. Il étend son domaine vers la Poméranie et la Silésie, et le laisse à son fils Boleslas.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mieszko_Ier_de_Pologne",
+                  "classement": "Mieszko Ier",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_mieszko.jpg",
+                    "legende": "Mieszko Ier, portrait imaginaire par Jan Matejko (vers 1893)",
+                    "auteur": "Jan Matejko",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mieszko_I_(274939)_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_boleslas",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 967,
+                  "titre": "Naissance de Boleslas Ier le Vaillant",
+                  "description": "Boleslas Ier le Vaillant (967-1025) est le fils de Mieszko Ier et le premier roi couronné de Pologne. Il reçoit l'empereur Otton III à Gniezno en l'an 1000, rencontre qui fait de la ville le siège d'un archevêché et affirme l'indépendance de l'Église polonaise. Il lutte contre l'Empire, pousse jusqu'à Kiev en 1018 et se fait couronner roi peu avant sa mort.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Boleslas_Ier_de_Pologne",
+                  "classement": "Boleslas Ier le Vaillant",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_boleslas.jpg",
+                    "legende": "Boleslas Ier le Vaillant, portrait imaginaire par Jan Matejko (vers 1893)",
+                    "auteur": "Jan Matejko",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Boleslaw_I_Chrobry_(274954).jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_casimir3",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1310,
+                  "titre": "Naissance de Casimir III le Grand",
+                  "description": "Casimir III le Grand (1310-1370) est le dernier roi de la dynastie des Piast, qui règne sur la Pologne de 1333 à sa mort. Il réorganise la justice par les statuts de Wiślica, étend le royaume vers la Rus' de Halicz et fonde en 1364 l'université de Cracovie. La tradition dit qu'il trouva une Pologne de bois et la laissa de pierre, par ses châteaux et ses villes fortifiées.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Casimir_III_de_Pologne",
+                  "classement": "Casimir III le Grand",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_casimir3.jpg",
+                    "legende": "Casimir III le Grand, portrait imaginaire par Jan Matejko (vers 1893)",
+                    "auteur": "Jan Matejko",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kazimierz_III_Wielki_(275138).jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_dlugosz",
+                  "axe": "Littérature et pensée",
+                  "date": 1415,
+                  "titre": "Naissance de Jan Długosz",
+                  "description": "Jan Długosz (1415-1480) est un chroniqueur et un prélat polonais, chanoine de Cracovie. Précepteur des fils du roi Casimir IV Jagellon, il rédige l'Histoire de la Pologne, première grande synthèse de l'histoire du pays, en latin. Il y décrit la bataille de Grunwald et conserve ainsi une grande partie de la mémoire médiévale de la Pologne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jan_D%C5%82ugosz",
+                  "classement": "Długosz, Jan",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_dlugosz.jpg",
+                    "legende": "Jan Długosz, portrait de Walery Eljasz Radzikowski (1904)",
+                    "auteur": "Walery Eljasz Radzikowski",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jan_Dlugosz_(92089616).jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_copernic",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1473,
+                  "titre": "Naissance de Nicolas Copernic",
+                  "description": "Nicolas Copernic (1473-1543) est un astronome et un chanoine polonais, né à Toruń. Il propose dans De revolutionibus orbium coelestium, publié l'année de sa mort, un modèle du monde dans lequel la Terre tourne autour du Soleil. Cette idée, qui s'impose lentement, bouleverse l'astronomie et la vision de l'homme dans l'univers.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Nicolas_Copernic",
+                  "classement": "Copernic, Nicolas",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_copernic.jpg",
+                    "legende": "Nicolas Copernic, portrait du XVIe siècle (vers 1580)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Nikolaus_Kopernikus_MOT.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_modrzewski",
+                  "axe": "Littérature et pensée",
+                  "date": 1503,
+                  "titre": "Naissance d'Andrzej Frycz Modrzewski",
+                  "description": "Andrzej Frycz Modrzewski (1503-1572) est un penseur polonais, secrétaire du roi Sigismond Ier. Dans son traité De la réforme de la République, publié en 1551, il demande l'égalité de tous devant la loi, quelle que soit la condition sociale. Il compte parmi les premiers auteurs européens de la pensée politique moderne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Andrzej_Frycz_Modrzewski",
+                  "classement": "Modrzewski, Andrzej Frycz",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_modrzewski.jpg",
+                    "legende": "Andrzej Frycz Modrzewski, portrait peint par Jan Matejko (1869)",
+                    "auteur": "Jan Matejko",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Andrzej_Frycz_Modrzewski.JPG"
+                  }
+                },
+                {
+                  "id": "pan_pl_sigismond",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1520,
+                  "titre": "Naissance de Sigismond II Auguste",
+                  "description": "Sigismond II Auguste (1520-1572) est le dernier roi de la dynastie des Jagellon, qui règne sur la Pologne et la Lituanie de 1548 à sa mort. Il fait conclure en 1569 l'union de Lublin, qui fond les deux États en une seule République des Deux Nations. Mort sans héritier, il laisse le trône à des rois élus par la noblesse.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sigismond_II_Auguste",
+                  "classement": "Sigismond II Auguste",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_sigismond.jpg",
+                    "legende": "Sigismond II Auguste, portrait peint par Lucas Cranach le Jeune (vers 1553)",
+                    "auteur": "Lucas Cranach the Younger",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Cranach_the_Younger_Sigismund_II_Augustus.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_kochanowski",
+                  "axe": "Littérature et pensée",
+                  "date": 1530,
+                  "titre": "Naissance de Jan Kochanowski",
+                  "description": "Jan Kochanowski (1530-1584) est un poète polonais de la Renaissance, formé à Padoue et à Paris. Il écrit en polonais plutôt qu'en latin, fait de cette langue une langue littéraire, et compose les Thrènes, nés de la mort de sa fille Urszula. Il passe pour le fondateur de la poésie polonaise.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jan_Kochanowski",
+                  "classement": "Kochanowski, Jan",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_kochanowski.jpg",
+                    "legende": "Jan Kochanowski, dessin de Józef Buchbinder (1884)",
+                    "auteur": "Józef Buchbinder",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jan_Kochanowski.png"
+                  }
+                },
+                {
+                  "id": "pan_pl_bathory",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1533,
+                  "titre": "Naissance d'Étienne Báthory",
+                  "description": "Étienne Báthory (1533-1586) est un prince de Transylvanie, élu roi de Pologne en 1575 et marié à la reine Anne Jagellon. Il repousse les armées du tsar Ivan IV en Livonie et signe en 1582 la paix de Jam Zapolski, qui rend à la Pologne ses territoires. Il soutient la fondation de l'université de Vilnius et meurt en 1586 sans laisser de fils.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89tienne_B%C3%A1thory",
+                  "classement": "Báthory, Étienne",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_bathory.jpg",
+                    "legende": "Étienne Báthory, portrait peint par Martin Kober (1583)",
+                    "auteur": "Martin Kober",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:King_Stefan_Batory_by_Marcin_Kober.JPG"
+                  }
+                },
+                {
+                  "id": "pan_pl_skarga",
+                  "axe": "Littérature et pensée",
+                  "date": 1536,
+                  "titre": "Naissance de Piotr Skarga",
+                  "description": "Piotr Skarga (1536-1612) est un jésuite polonais, prédicateur du roi Sigismond III Vasa. Ses Sermons à la Diète, publiés en 1597, réclament des réformes politiques et dénoncent l'égoïsme de la noblesse. Auteur de la Vie des saints, il compte parmi les grands prosateurs polonais de la Contre-Réforme.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Piotr_Skarga",
+                  "classement": "Skarga, Piotr",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_skarga.jpg",
+                    "legende": "Piotr Skarga, portrait anonyme du XVIIe siècle",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Piotr_Skarga_1.PNG"
+                  }
+                },
+                {
+                  "id": "pan_pl_zamoyski",
+                  "axe": "Guerres et résistances",
+                  "date": 1542,
+                  "titre": "Naissance de Jan Zamoyski",
+                  "description": "Jan Zamoyski (1542-1605) est un chancelier et grand hetman de la Couronne polonaise, formé à Padoue. Il soutient l'élection d'Étienne Báthory, dirige ses armées et fait élire Sigismond III Vasa. Il fonde en 1580 la ville idéale de Zamość, avec son académie, bijou de la Renaissance en Pologne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jan_Zamoyski",
+                  "classement": "Zamoyski, Jan",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_zamoyski.jpg",
+                    "legende": "Jan Zamoyski, portrait d'avant 1602",
+                    "auteur": "Jan Szwankowski",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jan_Zamoyski.PNG"
+                  }
+                },
+                {
+                  "id": "pan_pl_zolkiewski",
+                  "axe": "Guerres et résistances",
+                  "date": 1547,
+                  "titre": "Naissance de Stanisław Żółkiewski",
+                  "description": "Stanisław Żółkiewski (1547-1620) est un grand hetman de la Couronne polonaise. En 1610 il écrase à Kloushino une armée russo-suédoise bien supérieure en nombre, puis occupe Moscou pendant le Temps des troubles. Il meurt en 1620 à la bataille de Cecora, contre les Ottomans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Stanis%C5%82aw_%C5%BB%C3%B3%C5%82kiewski",
+                  "classement": "Żółkiewski, Stanisław",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_zolkiewski.jpg",
+                    "legende": "Stanisław Żółkiewski, portrait anonyme du XVIIe siècle",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Stanis%C5%82aw_%C5%BB%C3%B3%C5%82kiewski_11.PNG"
+                  }
+                },
+                {
+                  "id": "pan_pl_czarniecki",
+                  "axe": "Guerres et résistances",
+                  "date": 1599,
+                  "titre": "Naissance de Stefan Czarniecki",
+                  "description": "Stefan Czarniecki (vers 1599-1665) est un hetman polonais, figure de la résistance pendant le Déluge suédois de 1655-1660. Il harcèle les troupes de Charles X Gustave et contribue à la reconquête du pays, avant de combattre les Moscovites et les Cosaques. Sa mémoire est assez forte pour qu'un hymne national polonais le cite, dans le Mazurek de Dąbrowski.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Stefan_Czarniecki",
+                  "classement": "Czarniecki, Stefan",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_czarniecki.jpg",
+                    "legende": "Stefan Czarniecki, portrait peint par Brodero Matthisen (1659)",
+                    "auteur": "Brodero Matthisen",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Matthisen_Stefan_Czarniecki_01.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_heweliusz",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1611,
+                  "titre": "Naissance de Johannes Hevelius",
+                  "description": "Johannes Hevelius (1611-1687) est un astronome né à Gdańsk, connu en polonais sous le nom de Jan Heweliusz, brasseur et magistrat de la ville. Il construit un observatoire sur les toits de sa maison, observe les taches solaires et dresse la première carte détaillée de la Lune, dans la Selenographia de 1647. Son observatoire brûle en 1679, et il meurt à Gdańsk.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Johannes_Hevelius",
+                  "classement": "Hevelius, Johannes",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_heweliusz.jpg",
+                    "legende": "Johannes Hevelius, portrait de Daniel Schultz (1677)",
+                    "auteur": "Daniel Schultz",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Johannes_Hevelius.PNG"
+                  }
+                },
+                {
+                  "id": "pan_pl_boym",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1612,
+                  "titre": "Naissance de Michał Boym",
+                  "description": "Michał Boym (vers 1612-1659) est un jésuite polonais, missionnaire en Chine à la cour des derniers Ming. Il publie à Vienne en 1656 la Flora Sinensis, premier ouvrage européen sur la flore chinoise, et envoie en Europe des cartes et des textes. Il meurt à la frontière du Vietnam, en 1659, en cherchant à rentrer en Chine.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Micha%C5%82_Boym",
+                  "classement": "Boym, Michał",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_boym.jpg",
+                    "legende": "Michał Boym, gravure tirée de la Chine illustrée d'Athanasius Kircher (1667)",
+                    "auteur": "Athanasiusa Kirchera",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Boym.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_sobieski",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1629,
+                  "titre": "Naissance de Jean III Sobieski",
+                  "description": "Jean III Sobieski (1629-1696) est un chef de guerre devenu roi de Pologne et grand-duc de Lituanie en 1674. Il remporte sur les Ottomans la victoire de Chocim en 1673, puis délivre Vienne assiégée à la tête de la cavalerie polonaise, le 12 septembre 1683. Le pays qu'il laisse, épuisé par les guerres, entre ensuite dans un long déclin.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jean_III_Sobieski",
+                  "classement": "Jean III Sobieski",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_sobieski.jpg",
+                    "legende": "Jean III Sobieski, portrait peint par Marcello Bacciarelli (vers 1770)",
+                    "auteur": "Marcello Bacciarelli",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:John_III_Sobieski_of_Poland.PNG"
+                  }
+                },
+                {
+                  "id": "pan_pl_poniatowski",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1732,
+                  "titre": "Naissance de Stanislas II Auguste Poniatowski",
+                  "description": "Stanislas II Auguste Poniatowski (1732-1798) est le dernier roi de Pologne, élu en 1764 avec l'appui de la tsarine Catherine II. Éclairé et mécène, il fonde l'École des cadets et le Théâtre national, et fait adopter la Constitution du 3 mai 1791, l'une des premières d'Europe. Les trois partages de 1772, 1793 et 1795 effacent pourtant son royaume de la carte, et il abdique à Grodno pour mourir à Saint-Pétersbourg.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Stanislas_II_Auguste_Poniatowski",
+                  "classement": "Stanislas II Auguste Poniatowski",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_poniatowski.jpg",
+                    "legende": "Stanislas II Auguste Poniatowski, portrait peint par Marcello Bacciarelli (vers 1790)",
+                    "auteur": "Marcello Bacciarelli",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Marcello_Bacciarelli_-_Portrait_of_Stanislaus_Augustus_Poniatowski_in_Coronation_Robes_-_MNK_II-a-362_-_National_Museum_Krak%C3%B3w.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_krasicki",
+                  "axe": "Littérature et pensée",
+                  "date": 1735,
+                  "titre": "Naissance d'Ignacy Krasicki",
+                  "description": "Ignacy Krasicki (1735-1801) est un prélat et un écrivain polonais, prince-évêque de Varmie et ami du roi Stanislas Auguste. Poète des Lumières, il publie des Fables célèbres et des satires, et écrit le premier roman polonais, Les Aventures de Nicolas Doświadczyński, en 1776. Archevêque de Gniezno à la fin de sa vie, il meurt à Berlin.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ignacy_Krasicki",
+                  "classement": "Krasicki, Ignacy",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_krasicki.jpg",
+                    "legende": "Ignacy Krasicki, portrait peint par Per Krafft l'Ancien (vers 1767)",
+                    "auteur": "Per Krafft the Elder",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Krafft_the_Elder_Ignacy_Krasicki.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_pulaski",
+                  "axe": "Guerres et résistances",
+                  "date": 1745,
+                  "titre": "Naissance de Casimir Pulaski",
+                  "description": "Casimir Pulaski (1745-1779) est un noble polonais, héros de la confédération de Bar contre les Russes. Exilé après la défaite, il gagne l'Amérique et se bat auprès de George Washington à Brandywine et à Germantown, où le Congrès le nomme général de brigade. Il est mortellement blessé en 1779, lors du siège de Savannah.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Casimir_Pulaski",
+                  "classement": "Pulaski, Casimir",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_pulaski.jpg",
+                    "legende": "Casimir Pulaski, gravure de Benson Lossing (1859)",
+                    "auteur": "Benson J. Lossing",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Pulaski.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_kosciuszko",
+                  "axe": "Guerres et résistances",
+                  "date": 1746,
+                  "titre": "Naissance de Tadeusz Kościuszko",
+                  "description": "Tadeusz Kościuszko (1746-1817) est un officier polonais, né dans l'actuelle Biélorussie, ingénieur militaire de l'armée américaine pendant la guerre d'Indépendance. Chef de l'insurrection de 1794 contre la Russie et la Prusse, il bat les Russes à Racławice avant d'être écrasé et capturé à Maciejowice. Exilé, il meurt en 1817 en Suisse, pour avoir toujours refusé de servir un pouvoir sans l'indépendance de son pays.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Tadeusz_Ko%C5%9Bciuszko",
+                  "classement": "Kościuszko, Tadeusz",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_kosciuszko.jpg",
+                    "legende": "Tadeusz Kościuszko, portrait peint par Josef Grassi (vers 1792)",
+                    "auteur": "Josef Grassi",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Tadevu%C5%A1_Ka%C5%9Bciu%C5%A1ka._%D0%A2%D0%B0%D0%B4%D1%8D%D0%B2%D1%83%D1%88_%D0%9A%D0%B0%D1%81%D1%8C%D1%86%D1%8E%D1%88%D0%BA%D0%B0_(J._Grassi,_1792).jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_dabrowski",
+                  "axe": "Guerres et résistances",
+                  "date": 1755,
+                  "titre": "Naissance de Jan Henryk Dąbrowski",
+                  "description": "Jan Henryk Dąbrowski (1755-1818) est un général polonais, qui lève en 1797 les légions polonaises au sein de l'armée française en Italie. Elles combattent aux côtés de Bonaparte en espérant libérer la Pologne par la France. Leur chant, le Mazurek de Dąbrowski, devient l'hymne national de la Pologne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jan_Henryk_D%C4%85browski",
+                  "classement": "Dąbrowski, Jan Henryk",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_dabrowski.jpg",
+                    "legende": "Jan Henryk Dąbrowski, portrait peint du XIXe siècle",
+                    "auteur": "Peintre inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jan_Henryk_D%C4%85browski_1.PNG"
+                  }
+                },
+                {
+                  "id": "pan_pl_staszic",
+                  "axe": "Littérature et pensée",
+                  "date": 1755,
+                  "titre": "Naissance de Stanisław Staszic",
+                  "description": "Stanisław Staszic (1755-1826) est un prêtre, un géologue et un penseur polonais des Lumières. Auteur en 1790 des Avertissements à la Pologne, il y demande des réformes en faveur des bourgeois et des paysans. Il fonde la Société des amis des sciences de Varsovie et soutient l'industrie minière.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Stanis%C5%82aw_Staszic",
+                  "classement": "Staszic, Stanisław",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_staszic.jpg",
+                    "legende": "Stanisław Staszic, portrait de Franciszek Sobolewski (1826)",
+                    "auteur": "Franciszek Sobolewski",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Stanis%C5%82aw_Staszic.PNG"
+                  }
+                },
+                {
+                  "id": "pan_pl_potocki",
+                  "axe": "Littérature et pensée",
+                  "date": 1761,
+                  "titre": "Naissance de Jan Potocki",
+                  "description": "Jan Potocki (1761-1815) est un aristocrate polonais, voyageur et écrivain d'expression française. Ethnologue, aéronaute et explorateur du Caucase et de l'Orient, il laisse un roman fantastique, Manuscrit trouvé à Saragosse, publié en partie en 1805. Il se suicide en 1815 dans son château d'Uładówka.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jan_Potocki",
+                  "classement": "Potocki, Jan",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_potocki.jpg",
+                    "legende": "Jan Potocki, portrait (après 1810)",
+                    "auteur": "d'après Alexandre Varnek",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jan_Potocki.PNG"
+                  }
+                },
+                {
+                  "id": "pan_pl_jponiatowski",
+                  "axe": "Guerres et résistances",
+                  "date": 1763,
+                  "titre": "Naissance de Józef Poniatowski",
+                  "description": "Józef Poniatowski (1763-1813) est un prince et un général polonais, neveu du roi Stanislas Auguste. Ministre de la Guerre du duché de Varsovie, il rallie l'armée polonaise à Napoléon et la conduit en Russie en 1812. Fait maréchal d'Empire à Leipzig, il se noie dans l'Elster en couvrant la retraite, le 19 octobre 1813.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/J%C3%B3zef_Poniatowski",
+                  "classement": "Poniatowski, Józef",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_jponiatowski.jpg",
+                    "legende": "Józef Poniatowski, portrait peint par Josef Grassi (après 1810)",
+                    "auteur": "Josef Grassi",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Prince_Jozef_Poniatowski,_by_Josef_Grassi.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_strzelecki",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1797,
+                  "titre": "Naissance de Paweł Edmund Strzelecki",
+                  "description": "Paweł Edmund Strzelecki (1797-1873) est un explorateur et un géologue polonais. Il parcourt l'Australie dans les années 1840, gravit en 1840 le plus haut sommet du pays, qu'il baptise du nom de Kościuszko, et décrit la géologie de la Tasmanie. Naturalisé britannique, il meurt à Londres en 1873.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Pawe%C5%82_Edmund_Strzelecki",
+                  "classement": "Strzelecki, Paweł Edmund",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_strzelecki.jpg",
+                    "legende": "Paweł Edmund Strzelecki, portrait (vers 1845)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Pawe%C5%82_Edmund_Strzelecki_1.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_mickiewicz",
+                  "axe": "Littérature et pensée",
+                  "date": 1798,
+                  "titre": "Naissance d'Adam Mickiewicz",
+                  "description": "Adam Mickiewicz (1798-1855) est le grand poète romantique polonais, né près de Nowogródek, dans l'actuelle Biélorussie. Auteur des Aïeux et de Pan Tadeusz, achevé en 1834, il donne à une nation sans État un langage et un récit. Exilé en France, professeur au Collège de France, il meurt à Constantinople en 1855 en organisant une légion polonaise.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Adam_Mickiewicz",
+                  "classement": "Mickiewicz, Adam",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_mickiewicz.jpg",
+                    "legende": "Adam Mickiewicz, daguerréotype pris à Paris (vers 1842)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Adam_Mickiewicz_wed%C5%82ug_dagerotypu_paryskiego_z_1842_roku.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_plater",
+                  "axe": "Guerres et résistances",
+                  "date": 1806,
+                  "titre": "Naissance d'Emilia Plater",
+                  "description": "Emilia Plater (1806-1831) est une jeune aristocrate née à Vilnius, devenue officier pendant l'insurrection polonaise de novembre 1830. Elle lève un détachement de partisans en Lituanie et reçoit le grade de capitaine. Épuisée après la défaite, elle meurt à vingt-cinq ans, en décembre 1831, et devient un symbole romantique de la résistance.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Emilia_Plater",
+                  "classement": "Plater, Emilia",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_plater.jpg",
+                    "legende": "Emilia Plater, portrait de Józef Straszewicz (entre 1832 et 1837)",
+                    "auteur": "Józef Straszewicz",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Emilia_Plater_(284384).jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_slowacki",
+                  "axe": "Littérature et pensée",
+                  "date": 1809,
+                  "titre": "Naissance de Juliusz Słowacki",
+                  "description": "Juliusz Słowacki (1809-1849) est un poète et un dramaturge romantique polonais, né à Krzemieniec. Après l'insurrection de 1830, il s'installe en France et écrit Kordian, Balladyna et l'épopée mystique Le Roi-Esprit. Mort à Paris à quarante ans, il repose depuis 1927 à la cathédrale du Wawel.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Juliusz_S%C5%82owacki",
+                  "classement": "Słowacki, Juliusz",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_slowacki.jpg",
+                    "legende": "Juliusz Słowacki, portrait de James Hopwood le Jeune (avant 1849)",
+                    "auteur": "James Hopwood le Jeune",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Juliusz_S%C5%82owacki_1.PNG"
+                  }
+                },
+                {
+                  "id": "pan_pl_chopin",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1810,
+                  "titre": "Naissance de Frédéric Chopin",
+                  "description": "Frédéric Chopin (1810-1849) est un compositeur et pianiste polonais, né à Żelazowa Wola, près de Varsovie. Il quitte son pays en 1830, s'installe à Paris, et fait du piano l'instrument de ses nocturnes, de ses mazurkas et de ses polonaises. Atteint de tuberculose, il meurt à Paris à trente-neuf ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Fr%C3%A9d%C3%A9ric_Chopin",
+                  "classement": "Chopin, Frédéric",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_chopin.jpg",
+                    "legende": "Frédéric Chopin, daguerréotype de Louis-Auguste Bisson (1849)",
+                    "auteur": "Louis-Auguste Bisson",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Frederic_Chopin_photo.jpeg"
+                  }
+                },
+                {
+                  "id": "pan_pl_moniuszko",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1819,
+                  "titre": "Naissance de Stanisław Moniuszko",
+                  "description": "Stanisław Moniuszko (1819-1872) est un compositeur polonais, né près de Minsk. Son opéra Halka, créé à Vilnius en 1848 puis à Varsovie en 1858, fonde l'opéra national polonais. Il dirige l'Opéra de Varsovie et enseigne au conservatoire.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Stanis%C5%82aw_Moniuszko",
+                  "classement": "Moniuszko, Stanisław",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_moniuszko.jpg",
+                    "legende": "Stanisław Moniuszko, photographie de Tytus Maleszewski (1865)",
+                    "auteur": "Tytus Maleszewski",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Stanis%C5%82a%C5%AD_Maniu%C5%A1ka._%D0%A1%D1%82%D0%B0%D0%BD%D1%96%D1%81%D0%BB%D0%B0%D1%9E_%D0%9C%D0%B0%D0%BD%D1%8E%D1%88%D0%BA%D0%B0_(T._Maleszewski,_1865).jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_norwid",
+                  "axe": "Littérature et pensée",
+                  "date": 1821,
+                  "titre": "Naissance de Cyprian Norwid",
+                  "description": "Cyprian Norwid (1821-1883) est un poète, un dramaturge et un peintre polonais, né près de Varsovie. Il vit en exil, à Paris et à New York, dans la pauvreté et l'incompréhension de ses contemporains, et se heurte à Mickiewicz et à Słowacki. Il meurt dans un hospice parisien, et sa poésie, d'une grande modernité, n'est reconnue qu'au XXe siècle.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Cyprian_Norwid",
+                  "classement": "Norwid, Cyprian",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_norwid.jpg",
+                    "legende": "Cyprian Norwid, photographie de Michał Szweycer (1871)",
+                    "auteur": "Michał Szweycer",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Cyprian_Kamil_Norwid_foto.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_lukasiewicz",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1822,
+                  "titre": "Naissance d'Ignacy Łukasiewicz",
+                  "description": "Ignacy Łukasiewicz (1822-1882) est un pharmacien et un inventeur polonais, né près de Rzeszów. Il met au point à Lviv en 1853 la lampe à pétrole, qui éclaire pour la première fois une salle d'opération, puis creuse l'un des premiers puits de pétrole d'Europe. Il fonde une raffinerie et reste un bienfaiteur de sa région.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ignacy_%C5%81ukasiewicz",
+                  "classement": "Łukasiewicz, Ignacy",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_lukasiewicz.jpg",
+                    "legende": "Ignacy Łukasiewicz, portrait d'Andrzej Grabowski (1884)",
+                    "auteur": "Andrzej Grabowski",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ignacy_Lukasiewicz.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_traugutt",
+                  "axe": "Guerres et résistances",
+                  "date": 1826,
+                  "titre": "Naissance de Romuald Traugutt",
+                  "description": "Romuald Traugutt (1826-1864) est un officier de l'armée impériale russe d'origine polonaise, qui rejoint la cause de l'indépendance. Il prend en octobre 1863 la direction de l'insurrection de Janvier, avec le titre de dictateur, et réorganise un mouvement déjà en difficulté. Arrêté au printemps suivant, il est pendu à Varsovie en août 1864.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Romuald_Traugutt",
+                  "classement": "Traugutt, Romuald",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_traugutt.jpg",
+                    "legende": "Romuald Traugutt en uniforme de l'armée russe, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Romuald_traugutt_in_russian_uniform.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_wieniawski",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1835,
+                  "titre": "Naissance d'Henryk Wieniawski",
+                  "description": "Henryk Wieniawski (1835-1880) est un violoniste et compositeur polonais, né à Lublin. Prodige formé au Conservatoire de Paris, il multiplie les tournées européennes et américaines, et écrit deux concertos pour violon. Il enseigne au conservatoire de Saint-Pétersbourg, puis à Bruxelles.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Henryk_Wieniawski",
+                  "classement": "Wieniawski, Henryk",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_wieniawski.jpg",
+                    "legende": "Henryk Wieniawski, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Henryk_Wieniawski_three_quarters_length_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_matejko",
+                  "axe": "Beaux-arts",
+                  "date": 1838,
+                  "titre": "Naissance de Jan Matejko",
+                  "description": "Jan Matejko (1838-1893) est un peintre polonais, né à Cracovie, maître de la peinture d'histoire. Ses grandes toiles, comme La Bataille de Grunwald, en 1878, et Le Serment de Kościuszko, donnent un visage à l'histoire d'une nation sans État. Directeur de l'École des beaux-arts de Cracovie, il y forme la génération suivante.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jan_Matejko",
+                  "classement": "Matejko, Jan",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_matejko.jpg",
+                    "legende": "Jan Matejko, autoportrait (1892)",
+                    "auteur": "Jan Matejko",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Matejko_Self-portrait.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_modrzejewska",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1840,
+                  "titre": "Naissance d'Helena Modrzejewska",
+                  "description": "Helena Modrzejewska (1840-1909) est une actrice polonaise, née à Cracovie et connue aux États-Unis sous le nom de Modjeska. Star du théâtre polonais, elle s'installe en Californie en 1876 et triomphe à Broadway dans Shakespeare. Elle joue en anglais, mais reste toute sa vie attachée à son pays.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Helena_Modrzejewska",
+                  "classement": "Modrzejewska, Helena",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_modrzejewska.jpg",
+                    "legende": "Helena Modrzejewska, photographie de Józef Eder (vers 1873)",
+                    "auteur": "Józef Eder",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Portret_Heleny_Modrzejewskiej_ca_1873_(337979)_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_orzeszkowa",
+                  "axe": "Littérature et pensée",
+                  "date": 1841,
+                  "titre": "Naissance d'Eliza Orzeszkowa",
+                  "description": "Eliza Orzeszkowa (1841-1910) est une romancière polonaise, née près de Grodno, figure du positivisme. Elle défend l'instruction, l'émancipation des femmes et l'assimilation des Juifs, notamment dans Meir Ezofowicz, en 1878. Son chef-d'œuvre, Sur le Niémen, publié en 1888, peint la noblesse de Lituanie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Eliza_Orzeszkowa",
+                  "classement": "Orzeszkowa, Eliza",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_orzeszkowa.jpg",
+                    "legende": "Eliza Orzeszkowa, photographie (après 1905)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Orzeszkowa._od_1905_(75708992)_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_konopnicka",
+                  "axe": "Littérature et pensée",
+                  "date": 1842,
+                  "titre": "Naissance de Maria Konopnicka",
+                  "description": "Maria Konopnicka (1842-1910) est une poétesse et une romancière polonaise. Elle publie des poèmes et des nouvelles sur la condition des paysans et des pauvres, ainsi que des contes pour enfants, comme Les Nains et la petite orpheline Marie. Elle écrit le poème patriotique Rota, qui sert d'hymne informel pendant l'occupation.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Maria_Konopnicka",
+                  "classement": "Konopnicka, Maria",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_konopnicka.jpg",
+                    "legende": "Maria Konopnicka, photographie d'Aleksander Regulski (1883)",
+                    "auteur": "Aleksander Regulski",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Marya_Konopnicka_1883_(29339332)_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_siemiradzki",
+                  "axe": "Beaux-arts",
+                  "date": 1843,
+                  "titre": "Naissance d'Henryk Siemiradzki",
+                  "description": "Henryk Siemiradzki (1843-1902) est un peintre polonais de l'art académique, né près de Kharkiv. Installé à Rome, il peint de grandes scènes de l'Antiquité, comme Les Torches de Néron, en 1876. Il réalise aussi le rideau de scène de l'opéra de Lviv.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Henryk_Siemiradzki",
+                  "classement": "Siemiradzki, Henryk",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_siemiradzki.jpg",
+                    "legende": "Henryk Siemiradzki, photographie de 1899",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%D0%A4%D0%BE%D1%82%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%8F_%D0%A1%D0%B5%D0%BC%D0%B8%D1%80%D0%B0%D0%B4%D1%81%D0%BA%D0%BE%D0%B3%D0%BE.JPG"
+                  }
+                },
+                {
+                  "id": "pan_pl_wroblewski",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1845,
+                  "titre": "Naissance de Zygmunt Wróblewski",
+                  "description": "Zygmunt Wróblewski (1845-1888) est un physicien polonais, né à Grodno. Professeur à l'université Jagellonne de Cracovie, il liquéfie l'oxygène en 1883, avec Karol Olszewski, puis l'azote. Il meurt à quarante-trois ans, brûlé dans un accident de laboratoire.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Zygmunt_Wr%C3%B3blewski",
+                  "classement": "Wróblewski, Zygmunt",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_wroblewski.jpg",
+                    "legende": "Zygmunt Wróblewski, portrait de Władysław Podkowiński",
+                    "auteur": "Władysław Podkowiński",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Zygmunt_Wr%C3%B3blewski.PNG"
+                  }
+                },
+                {
+                  "id": "pan_pl_olszewski",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1846,
+                  "titre": "Naissance de Karol Olszewski",
+                  "description": "Karol Olszewski (1846-1915) est un chimiste polonais, né à Broniszów. Avec Zygmunt Wróblewski, il liquéfie l'oxygène à Cracovie en 1883, puis l'azote, et il approche en 1884 la liquéfaction de l'hydrogène. Son travail ouvre la voie à la physique des basses températures.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Karol_Olszewski",
+                  "classement": "Olszewski, Karol",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_olszewski.jpg",
+                    "legende": "Karol Olszewski, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Karol_Olszewski.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_sienkiewicz",
+                  "axe": "Littérature et pensée",
+                  "date": 1846,
+                  "titre": "Naissance d'Henryk Sienkiewicz",
+                  "description": "Henryk Sienkiewicz (1846-1916) est un romancier polonais, né à Wola Okrzejska. Sa Trilogie, qui raconte la Pologne du XVIIe siècle, fait vivre l'histoire nationale à des générations de lecteurs, et Quo vadis, paru en 1896, connaît un succès mondial. Il reçoit le prix Nobel de littérature en 1905.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Henryk_Sienkiewicz",
+                  "classement": "Sienkiewicz, Henryk",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_sienkiewicz.jpg",
+                    "legende": "Henryk Sienkiewicz, photographie (vers 1885)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Henryk_Sienkiewicz_ca_1885_(45871548)_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_prus",
+                  "axe": "Littérature et pensée",
+                  "date": 1847,
+                  "titre": "Naissance de Bolesław Prus",
+                  "description": "Bolesław Prus (1847-1912) est un romancier polonais, de son vrai nom Aleksander Głowacki, figure du positivisme. Journaliste à Varsovie, il écrit La Poupée en 1890, grand roman de la société polonaise du XIXe siècle, et Pharaon, roman historique sur l'Égypte ancienne. Il aime à mêler satire sociale, analyse du pouvoir et compassion.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Boles%C5%82aw_Prus",
+                  "classement": "Prus, Bolesław",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_prus.jpg",
+                    "legende": "Bolesław Prus, photographie (vers 1895)",
+                    "auteur": "Wilhelm Feldman",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Boles%C5%82aw_Prus_(ca._1905).jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_chelmonski",
+                  "axe": "Beaux-arts",
+                  "date": 1849,
+                  "titre": "Naissance de Józef Chełmoński",
+                  "description": "Józef Chełmoński (1849-1914) est un peintre polonais de la campagne, né près de Łowicz. Formé à Varsovie et à Munich, il fait la célébrité de ses paysages de plaines, de troïkas et de perdrix dans la neige. Il mène une vie retirée, au contact des paysans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/J%C3%B3zef_Che%C5%82mo%C5%84ski",
+                  "classement": "Chełmoński, Józef",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_chelmonski.jpg",
+                    "legende": "Józef Chełmoński, autoportrait (1902)",
+                    "auteur": "Józef Chełmoński",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:J%C3%B3zef_Che%C5%82mo%C5%84ski_-_Self-portrait_-_MP_1386_MNW_-_National_Museum_in_Warsaw.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_malczewski",
+                  "axe": "Beaux-arts",
+                  "date": 1854,
+                  "titre": "Naissance de Jacek Malczewski",
+                  "description": "Jacek Malczewski (1854-1929) est un peintre polonais symboliste, né à Radom. Ses toiles, comme Mélancolie, mêlent figures mythologiques, allégories de la Pologne asservie et autoportraits. Professeur à l'Académie de Cracovie, il est l'un des grands noms de la Jeune Pologne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jacek_Malczewski",
+                  "classement": "Malczewski, Jacek",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_malczewski.jpg",
+                    "legende": "Jacek Malczewski, autoportrait (1908)",
+                    "auteur": "Jacek Malczewski",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jacek_Malczewski_-_Autoportret_1908.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_zamenhof",
+                  "axe": "Littérature et pensée",
+                  "date": 1859,
+                  "titre": "Naissance de Ludwik Lejzer Zamenhof",
+                  "description": "Ludwik Lejzer Zamenhof (1859-1917) est un médecin ophtalmologue polonais, né à Białystok dans une famille juive. Il est le créateur de l'espéranto, présenté en 1887 sous le pseudonyme de Docteur Espéranto, pour que les peuples puissent se comprendre sans que l'un domine l'autre. Il meurt à Varsovie en 1917, et sa langue compte aujourd'hui des millions de locuteurs.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ludwik_Lejzer_Zamenhof",
+                  "classement": "Zamenhof, Ludwik Lejzer",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_zamenhof.jpg",
+                    "legende": "Ludwik Zamenhof, photographie (vers 1895)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Zamenhof_portreto.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_paderewski",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1860,
+                  "titre": "Naissance d'Ignacy Jan Paderewski",
+                  "description": "Ignacy Jan Paderewski (1860-1941) est un pianiste, un compositeur et un homme d'État polonais, né à Kuryłówka. Virtuose célèbre, il met sa fortune et sa renommée au service de l'indépendance, devient Premier ministre en 1919 et signe le traité de Versailles. Il meurt en exil à New York.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ignacy_Jan_Paderewski",
+                  "classement": "Paderewski, Ignacy Jan",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_paderewski.jpg",
+                    "legende": "Ignacy Jan Paderewski, portrait d'avant 1936",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ignacy_Jan_Paderewski.PNG"
+                  }
+                },
+                {
+                  "id": "pan_pl_dmowski",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1864,
+                  "titre": "Naissance de Roman Dmowski",
+                  "description": "Roman Dmowski (1864-1939) est un homme politique polonais, le principal théoricien du courant national-démocrate. Président du Comité national polonais à Paris pendant la Première Guerre mondiale, il plaide la cause de l'indépendance auprès des Alliés et signe le traité de Versailles. Son nationalisme ethnique et son antisémitisme pèsent durablement sur la vie politique de la Pologne de l'entre-deux-guerres.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Roman_Dmowski",
+                  "classement": "Dmowski, Roman",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_dmowski.jpg",
+                    "legende": "Roman Dmowski, photographie de Harris & Ewing (vers 1919)",
+                    "auteur": "Harris & Ewing",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Roman_Dmowski_LOC_3c35372u.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_zeromski",
+                  "axe": "Littérature et pensée",
+                  "date": 1864,
+                  "titre": "Naissance de Stefan Żeromski",
+                  "description": "Stefan Żeromski (1864-1925) est un romancier polonais, souvent appelé « la conscience de la littérature polonaise ». Il écrit Les Cendres, grande fresque des guerres napoléoniennes, et Les Sans-Abri, roman social qui décrit la misère de la Pologne sous la domination russe. Son dernier roman, Avant-printemps, publié en 1924, s'interroge sur la jeune Pologne indépendante.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Stefan_%C5%BBeromski",
+                  "classement": "Żeromski, Stefan",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_zeromski.jpg",
+                    "legende": "Stefan Żeromski, photographie de 1915",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Portret_Stefana_%C5%BBeromskiego.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_boznanska",
+                  "axe": "Beaux-arts",
+                  "date": 1865,
+                  "titre": "Naissance d'Olga Boznańska",
+                  "description": "Olga Boznańska (1865-1940) est une peintre polonaise, née à Cracovie, l'une des grandes portraitistes de son époque. Installée à Paris à partir de 1898, elle y expose au Salon et portraiture écrivains et artistes. Elle y meurt en 1940.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Olga_Bozna%C5%84ska",
+                  "classement": "Boznańska, Olga",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_boznanska.jpg",
+                    "legende": "Olga Boznańska, autoportrait (1898)",
+                    "auteur": "Olga Boznańska",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Olga_Bozna%C5%84ska_-_Autoportret_1898.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_moscicki",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1867,
+                  "titre": "Naissance d'Ignacy Mościcki",
+                  "description": "Ignacy Mościcki (1867-1946) est un chimiste devenu président de la République de Pologne, de 1926 à 1939. Porté à la présidence par le coup d'État de Piłsudski, il gouverne dans son ombre avant d'exercer lui-même le pouvoir après 1935. Après l'invasion allemande de septembre 1939, il quitte le pays, puis meurt en exil en Suisse.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ignacy_Mo%C5%9Bcicki",
+                  "classement": "Mościcki, Ignacy",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_moscicki.jpg",
+                    "legende": "Ignacy Mościcki, photographie d'avant 1931",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ignacy_Mo%C5%9Bcicki_(-1934).jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_pilsudski",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1867,
+                  "titre": "Naissance de Józef Piłsudski",
+                  "description": "Józef Piłsudski (1867-1935) est un homme d'État polonais, né près de Vilnius, qui consacre sa jeunesse à la lutte pour l'indépendance. Chef de l'État dès novembre 1918, il vainc l'Armée rouge à Varsovie en août 1920, puis reprend le pouvoir par le coup d'État de mai 1926. Il dirige le pays de fait, sans fonction officielle élevée, jusqu'à sa mort en 1935.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/J%C3%B3zef_Pi%C5%82sudski",
+                  "classement": "Piłsudski, Józef",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_pilsudski.jpg",
+                    "legende": "Józef Piłsudski, photographie d'avant 1935",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:J%C3%B3zef_Pi%C5%82sudski_(22-1-4)_cropped.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_reymont",
+                  "axe": "Littérature et pensée",
+                  "date": 1867,
+                  "titre": "Naissance de Władysław Reymont",
+                  "description": "Władysław Reymont (1867-1925) est un romancier polonais, né dans une famille modeste de la région de Łódź. Son œuvre maîtresse, Les Paysans, publiée entre 1904 et 1909, raconte le cycle des saisons dans un village polonais. Elle lui vaut le prix Nobel de littérature en 1924.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/W%C5%82adys%C5%82aw_Reymont",
+                  "classement": "Reymont, Władysław",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_reymont.jpg",
+                    "legende": "Władysław Reymont, photographie de 1897",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Wladyslaw_Reymont_1897_(71364799)_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_wyspianski",
+                  "axe": "Beaux-arts",
+                  "date": 1869,
+                  "titre": "Naissance de Stanisław Wyspiański",
+                  "description": "Stanisław Wyspiański (1869-1907) est un artiste polonais, né à Cracovie, à la fois peintre, dramaturge et architecte. Son drame Les Noces, créé en 1901, met en scène la société polonaise de l'époque. Il dessine aussi les vitraux de l'église des Franciscains de Cracovie, chefs-d'œuvre de l'Art nouveau.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Stanis%C5%82aw_Wyspia%C5%84ski",
+                  "classement": "Wyspiański, Stanisław",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_wyspianski.jpg",
+                    "legende": "Stanisław Wyspiański, photographie",
+                    "auteur": "Koncern Ilustrowany Kurier Codzienny",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Stanis%C5%82aw_Wyspia%C5%84ski3.png"
+                  }
+                },
+                {
+                  "id": "pan_pl_smoluchowski",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1872,
+                  "titre": "Naissance de Marian Smoluchowski",
+                  "description": "Marian Smoluchowski (1872-1917) est un physicien polonais, né près de Vienne. Il élabore, indépendamment d'Einstein, la théorie du mouvement brownien, et décrit les fluctuations de densité qui expliquent la couleur bleue du ciel. Professeur à Lviv puis à Cracovie, il meurt de la dysenterie à quarante-cinq ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Marian_Smoluchowski",
+                  "classement": "Smoluchowski, Marian",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_smoluchowski.jpg",
+                    "legende": "Marian Smoluchowski, photographie de 1924",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Marian_Smoluchowski_(106197299)_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_korczak",
+                  "axe": "Littérature et pensée",
+                  "date": 1878,
+                  "titre": "Naissance de Janusz Korczak",
+                  "description": "Janusz Korczak (1878-1942) est un médecin, un pédagogue et un écrivain polonais d'origine juive, de son vrai nom Henryk Goldszmit. Directeur d'un orphelinat à Varsovie, il y met en pratique une éducation fondée sur le respect de l'enfant et ses droits. En août 1942, il refuse de quitter les enfants du ghetto et il est déporté avec eux à Treblinka.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Janusz_Korczak",
+                  "classement": "Korczak, Janusz",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_korczak.jpg",
+                    "legende": "Janusz Korczak, photographie de 1933",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Janusz_Korczak_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_landowska",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1879,
+                  "titre": "Naissance de Wanda Landowska",
+                  "description": "Wanda Landowska (1879-1959) est une claveciniste polonaise, née à Varsovie. Elle fait renaître le clavecin au XXe siècle, par ses concerts, ses enregistrements et son école de Saint-Leu-la-Forêt, près de Paris. Réfugiée aux États-Unis en 1941, elle y meurt en 1959.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Wanda_Landowska",
+                  "classement": "Landowska, Wanda",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_landowska.jpg",
+                    "legende": "Wanda Landowska, photographie de Bain News Service",
+                    "auteur": "Bain News Service",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Wanda_Landowska_2.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_sikorski",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1881,
+                  "titre": "Naissance de Władysław Sikorski",
+                  "description": "Władysław Sikorski (1881-1943) est un général et un homme d'État polonais, Premier ministre en 1922-1923. Après la défaite de 1939, il devient chef du gouvernement polonais en exil et commandant en chef des forces polonaises, en France puis à Londres. Il signe en 1941 un accord avec Moscou, puis meurt en juillet 1943 dans l'accident de son avion au départ de Gibraltar.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/W%C5%82adys%C5%82aw_Sikorski",
+                  "classement": "Sikorski, Władysław",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_sikorski.jpg",
+                    "legende": "Władysław Sikorski, photographie (vers 1942)",
+                    "auteur": "Office of War Information",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Wladyslaw_Sikorski_2.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_sierpinski",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1882,
+                  "titre": "Naissance de Wacław Sierpiński",
+                  "description": "Wacław Sierpiński (1882-1969) est un mathématicien polonais, né à Varsovie. Spécialiste de la théorie des ensembles et de la topologie, il donne son nom à des figures fractales, comme le triangle de Sierpiński. Il fonde avec ses élèves l'école de mathématiques de Varsovie, et il publie plus de sept cents articles.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Wac%C5%82aw_Sierpi%C5%84ski",
+                  "classement": "Sierpiński, Wacław",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_sierpinski.jpg",
+                    "legende": "Wacław Sierpiński, photographie de 1928",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Wac%C5%82aw_Sierpi%C5%84ski.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_szymanowski",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1882,
+                  "titre": "Naissance de Karol Szymanowski",
+                  "description": "Karol Szymanowski (1882-1937) est un compositeur polonais, né à Tymoszówka, en Ukraine actuelle. Son langage, entre impressionnisme et folklore des Tatras, s'exprime dans l'opéra Le Roi Roger, créé en 1926, et dans le Stabat Mater. Directeur du conservatoire de Varsovie, il meurt de la tuberculose en Suisse.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Karol_Szymanowski",
+                  "classement": "Szymanowski, Karol",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_szymanowski.jpg",
+                    "legende": "Karol Szymanowski, photographie de 1922",
+                    "auteur": "Bain News Service",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Karol_Szymanowski.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_weigl",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1883,
+                  "titre": "Naissance de Rudolf Weigl",
+                  "description": "Rudolf Weigl (1883-1957) est un biologiste polonais, né dans l'actuelle Tchéquie. Il met au point à Lviv, dans les années 1930, le premier vaccin efficace contre le typhus exanthématique. Pendant l'occupation, son institut emploie des Juifs et des résistants qu'il protège, et il est reconnu Juste parmi les nations.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Rudolf_Weigl",
+                  "classement": "Weigl, Rudolf",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_weigl.jpg",
+                    "legende": "Rudolf Weigl, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Rudolf_Weigl_2.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_funk",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1884,
+                  "titre": "Naissance de Casimir Funk",
+                  "description": "Casimir Funk (1884-1967) est un biochimiste polonais, né à Varsovie. Étudiant les maladies de carence, il propose en 1912 le mot « vitamine », pour désigner les substances qui préviennent le béribéri ou le scorbut. Il travaille à Berne, Londres, Paris puis aux États-Unis, où il meurt.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Casimir_Funk",
+                  "classement": "Funk, Casimir",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_funk.jpg",
+                    "legende": "Casimir Funk, photographie de 1964",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Casimir_Funk_01.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_hirszfeld",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1884,
+                  "titre": "Naissance de Ludwik Hirszfeld",
+                  "description": "Ludwik Hirszfeld (1884-1954) est un médecin et un immunologiste polonais, né à Varsovie. Avec Emil von Dungern, il établit en 1910 l'hérédité des groupes sanguins, et il montre leur répartition différente selon les peuples. Pendant la guerre, il est enfermé dans le ghetto de Varsovie, puis il enseigne à Wrocław.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ludwik_Hirszfeld",
+                  "classement": "Hirszfeld, Ludwik",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_hirszfeld.jpg",
+                    "legende": "Ludwik Hirszfeld, photographie conservée aux Archives numériques nationales",
+                    "auteur": "Auteur inconnu",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ludwik-Hirszfeld-Narodowe-Archiwum-Cyfrowe.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_czochralski",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1885,
+                  "titre": "Naissance de Jan Czochralski",
+                  "description": "Jan Czochralski (1885-1953) est un chimiste polonais, né à Kcynia. Il découvre en 1916 un procédé de croissance des monocristaux, qui permet de fabriquer le silicium des composants électroniques modernes. Accusé de collaboration après la guerre, il est finalement réhabilité à titre posthume.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jan_Czochralski",
+                  "classement": "Czochralski, Jan",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_czochralski.jpg",
+                    "legende": "Jan Czochralski, photographie (vers 1910)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:J._Czochralski_ca_1910.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_witkacy",
+                  "axe": "Beaux-arts",
+                  "date": 1885,
+                  "titre": "Naissance de Stanisław Ignacy Witkiewicz",
+                  "description": "Stanisław Ignacy Witkiewicz (1885-1939) est un peintre, un dramaturge et un philosophe polonais, dit Witkacy, né à Varsovie. Ses pièces et ses romans, comme L'Inassouvissement, annoncent le théâtre de l'absurde, et il invente une théorie de la « Forme pure ». Il se suicide le 18 septembre 1939, à l'annonce de l'invasion soviétique.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Stanis%C5%82aw_Ignacy_Witkiewicz",
+                  "classement": "Witkiewicz, Stanisław Ignacy",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_witkacy.jpg",
+                    "legende": "Stanisław Ignacy Witkiewicz, autoportrait (1924)",
+                    "auteur": "Stanisław Ignacy Witkiewicz",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Witkacy_Autoportret_1924.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_rubinstein",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1887,
+                  "titre": "Naissance d'Arthur Rubinstein",
+                  "description": "Arthur Rubinstein (1887-1982) est un pianiste polonais, né à Łódź. Interprète de Chopin célèbre dans le monde entier, il donne des concerts pendant près de huit décennies. Refusant de rejouer en Allemagne après la guerre, il devient citoyen américain et meurt à Genève.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Arthur_Rubinstein",
+                  "classement": "Rubinstein, Arthur",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_rubinstein.jpg",
+                    "legende": "Arthur Rubinstein, photographie de Carl Van Vechten",
+                    "auteur": "Carl Van Vechten",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Arthur_Rubinstein.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_anders",
+                  "axe": "Guerres et résistances",
+                  "date": 1892,
+                  "titre": "Naissance de Władysław Anders",
+                  "description": "Władysław Anders (1892-1970) est un général polonais, prisonnier des Soviétiques après 1939. Libéré en 1941, il dirige l'armée formée en URSS qu'il emmène vers l'Iran en 1942, puis commande le IIe corps polonais en Italie. Ses hommes emportent l'abbaye du Mont-Cassin en mai 1944, et il reste en exil à Londres jusqu'à sa mort.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/W%C5%82adys%C5%82aw_Anders",
+                  "classement": "Anders, Władysław",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_anders.jpg",
+                    "legende": "Władysław Anders, photographie d'avant 1939",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Wladyslaw_Anders.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_banach",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1892,
+                  "titre": "Naissance de Stefan Banach",
+                  "description": "Stefan Banach (1892-1945) est un mathématicien polonais, né à Cracovie. Fondateur de l'analyse fonctionnelle moderne, il donne son nom aux espaces de Banach et publie en 1932 sa Théorie des opérations linéaires. Il dirige à Lviv, avec ses collègues, la célèbre école mathématique réunie au Café écossais, et meurt d'un cancer en 1945.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Stefan_Banach",
+                  "classement": "Banach, Stefan",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_banach.jpg",
+                    "legende": "Stefan Banach, photographie (1945 ou avant)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Stefana_Banach_-_%D8%B3%D8%AA%D9%8A%D9%81%D8%A7%D9%86_%D8%A8%D9%86%D8%A7%D8%AE.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_bierut",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1892,
+                  "titre": "Naissance de Bolesław Bierut",
+                  "description": "Bolesław Bierut (1892-1956) est un dirigeant communiste polonais, formé à Moscou. Président de la République en 1947, puis chef du gouvernement de 1952 à 1954, il dirige le parti et impose à la Pologne le modèle stalinien. Il meurt à Moscou en mars 1956, peu après le XXe congrès du Parti communiste de l'URSS.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Boles%C5%82aw_Bierut",
+                  "classement": "Bierut, Bolesław",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_bierut.jpg",
+                    "legende": "Bolesław Bierut, photographie de Roman Burzyński (vers 1950)",
+                    "auteur": "Burzyński Roman",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:PL_Boles%C5%82aw_Bierut_(1892-1956).jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_maczek",
+                  "axe": "Guerres et résistances",
+                  "date": 1892,
+                  "titre": "Naissance de Stanisław Maczek",
+                  "description": "Stanisław Maczek (1892-1994) est un général polonais, qui commande en 1939 la première brigade motorisée de l'armée polonaise. Chef de la 1re division blindée polonaise en 1944, il est l'un des vainqueurs de la poche de Falaise, puis libère Breda aux Pays-Bas. Privé de sa nationalité par le pouvoir communiste, il vit en exil à Édimbourg et meurt à cent-deux ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Stanis%C5%82aw_Maczek",
+                  "classement": "Maczek, Stanisław",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_maczek.jpg",
+                    "legende": "Stanisław Maczek, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Stanislaw_Maczek_2.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_kolbe",
+                  "axe": "Guerres et résistances",
+                  "date": 1894,
+                  "titre": "Naissance de Maximilien Kolbe",
+                  "description": "Maximilien Kolbe (1894-1941) est un prêtre franciscain polonais, fondateur du couvent-presse de Niepokalanów et missionnaire au Japon. Arrêté par les nazis, il est déporté à Auschwitz en 1941. Il y prend la place d'un prisonnier condamné à mourir de faim, meurt à son tour par injection, et est canonisé en 1982.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Maximilien_Kolbe",
+                  "classement": "Kolbe, Maximilien",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_kolbe.jpg",
+                    "legende": "Maximilien Kolbe, photographie de 1936",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Fr.Maximilian_Kolbe_in_1936.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_rowecki",
+                  "axe": "Guerres et résistances",
+                  "date": 1895,
+                  "titre": "Naissance de Stefan Rowecki",
+                  "description": "Stefan Rowecki (1895-1944) est un général polonais, dit « Grot », premier commandant de l'Armia Krajowa. Il dirige de 1940 à 1943 la plus grande armée clandestine d'Europe occupée, dont il prépare le soulèvement national. Arrêté par la Gestapo en juin 1943, il est assassiné au camp de Sachsenhausen en août 1944.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Stefan_Rowecki",
+                  "classement": "Rowecki, Stefan",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_rowecki.jpg",
+                    "legende": "Stefan Rowecki, photographie d'avant 1934",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Stefan_Rowecki_(-1934).jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_negri",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1897,
+                  "titre": "Naissance de Pola Negri",
+                  "description": "Pola Negri (1897-1987) est une actrice polonaise du cinéma muet, née Apolonia Chałupiec à Lipno. Elle devient une vedette à Berlin chez Ernst Lubitsch, puis à Hollywood, où elle incarne la femme fatale. Elle quitte l'écran avec l'arrivée du parlant, et finit sa vie aux États-Unis.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Pola_Negri",
+                  "classement": "Negri, Pola",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_negri.jpg",
+                    "legende": "Pola Negri, photographie de 1927",
+                    "auteur": "Bain News Service",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:PolaNegri(closeup).jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_pilecki",
+                  "axe": "Guerres et résistances",
+                  "date": 1901,
+                  "titre": "Naissance de Witold Pilecki",
+                  "description": "Witold Pilecki (1901-1948) est un officier polonais, fondateur de l'Armée secrète clandestine. Il se fait arrêter volontairement en 1940 pour entrer à Auschwitz, y organise la résistance et rédige l'un des premiers rapports sur le camp. Arrêté par la police communiste en 1947, il est condamné et fusillé à Varsovie en 1948, et sa mémoire n'est réhabilitée qu'après 1989.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Witold_Pilecki",
+                  "classement": "Pilecki, Witold",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_pilecki.jpg",
+                    "legende": "Witold Pilecki, photographie d'avant 1939",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Witold_Pilecki_ppor.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_tarski",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1901,
+                  "titre": "Naissance d'Alfred Tarski",
+                  "description": "Alfred Tarski (1901-1983) est un logicien et un mathématicien polonais, né Teitelbaum à Varsovie. Il donne en 1933 la première définition rigoureuse de la vérité dans les langages formalisés, et influence la logique, l'algèbre et la théorie des modèles. Surpris par la guerre aux États-Unis, il y enseigne à Berkeley jusqu'à sa mort.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Alfred_Tarski",
+                  "classement": "Tarski, Alfred",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_tarski.jpg",
+                    "legende": "Alfred Tarski, photographie de George Bergman (1968)",
+                    "auteur": "George Bergman",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Alfred_Tarski_1968_(as-is,_cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_wyszynski",
+                  "axe": "Guerres et résistances",
+                  "date": 1901,
+                  "titre": "Naissance de Stefan Wyszyński",
+                  "description": "Stefan Wyszyński (1901-1981) est un cardinal polonais, primat de Pologne de 1948 à sa mort. Il défend l'Église face au régime communiste, ce qui lui vaut d'être emprisonné de 1953 à 1956. Surnommé « Primat du millénaire », il aide à la formation d'une opposition catholique, et il est béatifié en 2021.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Stefan_Wyszy%C5%84ski",
+                  "classement": "Wyszyński, Stefan",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_wyszynski.jpg",
+                    "legende": "Stefan Wyszyński, photographie de Janusz Trocha (années 1970)",
+                    "auteur": "Janusz Trocha",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Stefan_Wyszy%C5%84ski.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_gombrowicz",
+                  "axe": "Littérature et pensée",
+                  "date": 1904,
+                  "titre": "Naissance de Witold Gombrowicz",
+                  "description": "Witold Gombrowicz (1904-1969) est un écrivain polonais, né près de Małoszyce. Son roman Ferdydurke, publié en 1937, se moque de la forme, de l'immaturité et des conventions sociales. Surpris par la guerre en Argentine, il y vit vingt-quatre ans, puis revient en Europe et meurt à Vence en 1969.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Witold_Gombrowicz",
+                  "classement": "Gombrowicz, Witold",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_gombrowicz.jpg",
+                    "legende": "Witold Gombrowicz, photographie de Bohdan Paczowski",
+                    "auteur": "Bohdan Paczowski",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Witold_Gombrowicz_by_Bohdan_Paczowski_-_detail.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_gomulka",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1905,
+                  "titre": "Naissance de Władysław Gomułka",
+                  "description": "Władysław Gomułka (1905-1982) est un dirigeant communiste polonais, premier secrétaire du Parti ouvrier unifié de 1956 à 1970. Écarté puis emprisonné sous Staline, il revient au pouvoir pendant l'« Octobre polonais » de 1956, qui desserre l'emprise soviétique. Il perd le pouvoir après les émeutes sanglantes de décembre 1970 sur la côte baltique.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/W%C5%82adys%C5%82aw_Gomu%C5%82ka",
+                  "classement": "Gomułka, Władysław",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_gomulka.jpg",
+                    "legende": "Władysław Gomułka, photographie de 1960",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:W%C5%82adys%C5%82aw_Gomu%C5%82ka_1960.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_kowalska",
+                  "axe": "Littérature et pensée",
+                  "date": 1905,
+                  "titre": "Naissance de Faustine Kowalska",
+                  "description": "Faustine Kowalska (1905-1938) est une religieuse polonaise, née Helena Kowalska, de la congrégation de Notre-Dame de la Miséricorde. Elle raconte dans son Petit Journal les apparitions du Christ qui lui demandent de diffuser le culte de la Miséricorde divine. Morte de la tuberculose à Cracovie, elle est canonisée par Jean-Paul II en 2000.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Faustine_Kowalska",
+                  "classement": "Kowalska, Faustine",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_kowalska.jpg",
+                    "legende": "Faustine Kowalska, photographie de 1931",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Saint_Faustyna_Kowalska_portrait_(1931).jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_rejewski",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1905,
+                  "titre": "Naissance de Marian Rejewski",
+                  "description": "Marian Rejewski (1905-1980) est un mathématicien et un cryptologue polonais, né à Bydgoszcz. Il reconstitue en 1932 le câblage de la machine Enigma allemande, avec Henryk Zygalski et Jerzy Różycki, et conçoit les machines qui permettent de lire ses messages. En juillet 1939, la Pologne transmet ces résultats à la France et au Royaume-Uni.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Marian_Rejewski",
+                  "classement": "Rejewski, Marian",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_rejewski.jpg",
+                    "legende": "Marian Rejewski, photographie (1943-1944)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Marian_Rejewski.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_sendler",
+                  "axe": "Guerres et résistances",
+                  "date": 1910,
+                  "titre": "Naissance d'Irena Sendler",
+                  "description": "Irena Sendler (1910-2008) est une assistante sociale polonaise, née Krzyżanowska, qui s'engage dans la résistance à Varsovie. Elle fait sortir du ghetto, avec ses collaboratrices, environ deux mille cinq cents enfants juifs, placés dans des familles ou des couvents. Arrêtée et torturée en 1943, elle ne livre aucun nom, et elle est reconnue Juste parmi les nations en 1965.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Irena_Sendlerowa",
+                  "classement": "Sendler, Irena",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_sendler.jpg",
+                    "legende": "Irena Sendler, photographie de 1942",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Irena_Sendlerowa_1942.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_milosz",
+                  "axe": "Littérature et pensée",
+                  "date": 1911,
+                  "titre": "Naissance de Czesław Miłosz",
+                  "description": "Czesław Miłosz (1911-2004) est un poète et un essayiste polonais, né à Šeteniai, en Lituanie. Il rompt avec le régime communiste en 1951 et publie en 1953 La Pensée captive, analyse de l'attrait de l'idéologie sur les intellectuels. Installé en Californie, il reçoit le prix Nobel de littérature en 1980 et revient finir sa vie à Cracovie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Czes%C5%82aw_Mi%C5%82osz",
+                  "classement": "Miłosz, Czesław",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_milosz.jpg",
+                    "legende": "Czesław Miłosz, photographie d'Artur Pawłowski (1999)",
+                    "auteur": "Artur Pawłowski",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Czeslaw_Milosz_3_ap.tif"
+                  }
+                },
+                {
+                  "id": "pan_pl_lutoslawski",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1913,
+                  "titre": "Naissance de Witold Lutosławski",
+                  "description": "Witold Lutosławski (1913-1994) est un compositeur polonais, né à Varsovie. Son Concerto pour orchestre, achevé en 1954, puise dans le folklore polonais, et sa technique du « hasard contrôlé » renouvelle la musique après 1960. Il compose jusqu'à la fin de sa vie, et il est l'un des grands noms de la musique du XXe siècle.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Witold_Lutos%C5%82awski",
+                  "classement": "Lutosławski, Witold",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_lutoslawski.jpg",
+                    "legende": "Witold Lutosławski, photographie du 16 août 1946",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Witold_Lutos%C5%82awski_-_Film_nr_02_-_1946-08-16.JPG"
+                  }
+                },
+                {
+                  "id": "pan_pl_karski",
+                  "axe": "Guerres et résistances",
+                  "date": 1914,
+                  "titre": "Naissance de Jan Karski",
+                  "description": "Jan Karski (1914-2000) est un officier et un diplomate polonais, de son vrai nom Jan Kozielewski, émissaire de la Résistance. En 1942, il visite clandestinement le ghetto de Varsovie, puis informe à Londres et à Washington les Alliés de l'extermination des Juifs. Longtemps resté dans l'ombre, il reçoit à titre posthume la Médaille présidentielle de la Liberté en 2012.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jan_Karski",
+                  "classement": "Karski, Jan",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_karski.jpg",
+                    "legende": "Jan Karski, photographie",
+                    "auteur": "Lilly M",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jan_Karski_-_Instytut_w_Rudzie_%C5%9Al%C4%85skiej.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_kantor",
+                  "axe": "Beaux-arts",
+                  "date": 1915,
+                  "titre": "Naissance de Tadeusz Kantor",
+                  "description": "Tadeusz Kantor (1915-1990) est un peintre et un metteur en scène polonais, né à Wielopole Skrzyńskie. Il fonde à Cracovie le théâtre Cricot 2, qui présente en 1975 La Classe morte, spectacle bouleversant, nourri de la mémoire de l'enfance et de la guerre. Il est l'une des grandes figures du théâtre d'avant-garde de la seconde moitié du XXe siècle.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Tadeusz_Kantor",
+                  "classement": "Kantor, Tadeusz",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_kantor.jpg",
+                    "legende": "Tadeusz Kantor, photographie de Fernand Michaud (1986)",
+                    "auteur": "Fernand Michaud",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Tadeusz_Kantor_-_portrait_de_Fernand_Michaud_-_btv1b10329590t.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_jeanpaul2",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1920,
+                  "titre": "Naissance de Jean-Paul II",
+                  "description": "Jean-Paul II (1920-2005) est un pape polonais, né Karol Wojtyła à Wadowice et élu en 1978, le premier non italien depuis 1523. Son pèlerinage de juin 1979 en Pologne rassemble des foules immenses et nourrit l'espoir qui conduit à la naissance de Solidarność. Pape pendant plus de vingt-six ans, il voyage dans le monde entier, joue un rôle dans la chute du communisme, et est canonisé en 2014.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jean-Paul_II",
+                  "classement": "Jean-Paul II",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_jeanpaul2.jpg",
+                    "legende": "Jean-Paul II, photographie d'octobre 1980",
+                    "auteur": "Auteur inconnu",
+                    "licence": "CC BY 3.0 PL",
+                    "source": "https://commons.wikimedia.org/wiki/File:Pope_John_Paul_II_smile.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_lem",
+                  "axe": "Littérature et pensée",
+                  "date": 1921,
+                  "titre": "Naissance de Stanisław Lem",
+                  "description": "Stanisław Lem (1921-2006) est un écrivain polonais, né à Lwów, aujourd'hui Lviv en Ukraine. Auteur de Solaris, en 1961, il fait de la science-fiction un lieu de réflexion philosophique sur la connaissance, la technique et les limites de la communication. Il est l'un des auteurs polonais les plus traduits dans le monde.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Stanis%C5%82aw_Lem",
+                  "classement": "Lem, Stanisław",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_lem.jpg",
+                    "legende": "Stanisław Lem, photographie de 1966",
+                    "auteur": "Wojciech Zemek",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:St_Lem_resize.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_jaruzelski",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1923,
+                  "titre": "Naissance de Wojciech Jaruzelski",
+                  "description": "Wojciech Jaruzelski (1923-2014) est un général polonais, ministre de la Défense puis chef du Parti communiste en 1981. Il instaure l'état de guerre le 13 décembre 1981 pour écraser le syndicat Solidarność, puis négocie avec lui à la Table ronde de 1989. Président de la République jusqu'en 1990, il reste un personnage disputé, que certains jugent sauveur du pays et d'autres complice de la répression.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Wojciech_Jaruzelski",
+                  "classement": "Jaruzelski, Wojciech",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_jaruzelski.jpg",
+                    "legende": "Wojciech Jaruzelski, photographie de 2006",
+                    "auteur": "Chepry (Andrzej Barabasz)",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Wojciech_jaruzelski_2006.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_szymborska",
+                  "axe": "Littérature et pensée",
+                  "date": 1923,
+                  "titre": "Naissance de Wisława Szymborska",
+                  "description": "Wisława Szymborska (1923-2012) est une poétesse polonaise, née près de Poznań et installée à Cracovie. Ses poèmes courts, ironiques et limpides, réunis notamment dans Vue avec un grain de sable, interrogent l'existence quotidienne et l'histoire. Elle reçoit le prix Nobel de littérature en 1996.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Wis%C5%82awa_Szymborska",
+                  "classement": "Szymborska, Wisława",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_szymborska.jpg",
+                    "legende": "Wisława Szymborska, photographie de Mariusz Kubik (octobre 2009)",
+                    "auteur": "Mariusz Kubik",
+                    "licence": "CC BY 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Wis%C5%82awa_Szymborska_2009.10.23_(1).jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_herbert",
+                  "axe": "Littérature et pensée",
+                  "date": 1924,
+                  "titre": "Naissance de Zbigniew Herbert",
+                  "description": "Zbigniew Herbert (1924-1998) est un poète et un essayiste polonais, né à Lwów. Il invente dans ses poèmes le personnage de Monsieur Cogito, intellectuel lucide face aux totalitarismes, et incarne la résistance morale à l'oppression. Il publie en dehors de la censure dans les années 1970 et reste une référence pour l'opposition polonaise.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Zbigniew_Herbert",
+                  "classement": "Herbert, Zbigniew",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_herbert.jpg",
+                    "legende": "Zbigniew Herbert, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Zbigniew_Herbert.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_wajda",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1926,
+                  "titre": "Naissance d'Andrzej Wajda",
+                  "description": "Andrzej Wajda (1926-2016) est un cinéaste polonais, né à Suwałki. Il fait de son cinéma le miroir de l'histoire nationale, de Cendres et diamant à L'Homme de fer, Palme d'or à Cannes en 1981. Il reçoit un Oscar d'honneur en 2000 et revient en 2007 sur le massacre de Katyń.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Andrzej_Wajda",
+                  "classement": "Wajda, Andrzej",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_wajda.jpg",
+                    "legende": "Andrzej Wajda, photographie de Piotr Drabik (2012)",
+                    "auteur": "Piotr Drabik Derivative work: TharonXX",
+                    "licence": "CC BY 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Andrzej_Wajda_OFF_Plus_Camera_2012_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_kolakowski",
+                  "axe": "Littérature et pensée",
+                  "date": 1927,
+                  "titre": "Naissance de Leszek Kołakowski",
+                  "description": "Leszek Kołakowski (1927-2009) est un philosophe polonais, d'abord marxiste puis critique du système soviétique. Chassé de l'université de Varsovie en 1968, il s'exile et enseigne à Oxford, où il écrit Les Principaux Courants du marxisme. Il y défend l'idée que le marxisme, tel qu'appliqué, débouche sur la tyrannie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Leszek_Ko%C5%82akowski",
+                  "classement": "Kołakowski, Leszek",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_kolakowski.jpg",
+                    "legende": "Leszek Kołakowski, photographie d'Anefo",
+                    "auteur": "Auteur inconnu",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Leszek_Ko%C5%82akowski_Anefo.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_mazowiecki",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1927,
+                  "titre": "Naissance de Tadeusz Mazowiecki",
+                  "description": "Tadeusz Mazowiecki (1927-2013) est un journaliste catholique, conseiller de Solidarność, qui devient en août 1989 le premier chef de gouvernement non communiste d'Europe de l'Est depuis 1945. Il engage avec son ministre Leszek Balcerowicz les réformes de marché de la « thérapie de choc ». Battu à la présidentielle de 1990 par Lech Wałęsa, il se consacre ensuite à la mission de l'ONU pour l'ex-Yougoslavie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Tadeusz_Mazowiecki",
+                  "classement": "Mazowiecki, Tadeusz",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_mazowiecki.jpg",
+                    "legende": "Tadeusz Mazowiecki, photographie de 2013",
+                    "auteur": "Neil Bates",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Tadeusz_Mazowiecki_-_Europeana_1989_-_TV_Interview.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_beksinski",
+                  "axe": "Beaux-arts",
+                  "date": 1929,
+                  "titre": "Naissance de Zdzisław Beksiński",
+                  "description": "Zdzisław Beksiński (1929-2005) est un peintre et un photographe polonais, né à Sanok. Ses toiles, peuplées de paysages désolés et de figures spectrales, reçoivent le nom de « fantastique dystopique ». Retiré à Varsovie, il y est assassiné chez lui en 2005.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Zdzis%C5%82aw_Beksi%C5%84ski",
+                  "classement": "Beksiński, Zdzisław",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_beksinski.jpg",
+                    "legende": "Zdzisław Beksiński, photographie de Piotr Dmochowski (2003)",
+                    "auteur": "Piotr Dmochowski",
+                    "licence": "CC BY 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Zdzis%C5%82aw_Beksi%C5%84ski_i_Piotr_Dmochowski_(28.06.2003)_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_abakanowicz",
+                  "axe": "Beaux-arts",
+                  "date": 1930,
+                  "titre": "Naissance de Magdalena Abakanowicz",
+                  "description": "Magdalena Abakanowicz (1930-2017) est une sculptrice polonaise, née près de Varsovie. Elle crée à partir de 1960 les « abakans », grandes formes de fibres tissées, puis des groupes de figures sans tête en toile de jute, comme Dos, en 1976-1982. Elle expose dans le monde entier et meurt à Varsovie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Magdalena_Abakanowicz",
+                  "classement": "Abakanowicz, Magdalena",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_abakanowicz.jpg",
+                    "legende": "Magdalena Abakanowicz, photographie (2010)",
+                    "auteur": "Kontrola",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Magdalena_Abakanowicz_crop_3x4.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_mrozek",
+                  "axe": "Littérature et pensée",
+                  "date": 1930,
+                  "titre": "Naissance de Sławomir Mrożek",
+                  "description": "Sławomir Mrożek (1930-2013) est un dramaturge et un écrivain polonais, né près de Cracovie. Ses pièces, comme Les Policiers ou Tango, en 1964, appartiennent au théâtre de l'absurde et dénoncent la bêtise des régimes autoritaires. Il vit en exil à Paris puis au Mexique, avant de revenir en Pologne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/S%C5%82awomir_Mro%C5%BCek",
+                  "classement": "Mrożek, Sławomir",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_mrozek.jpg",
+                    "legende": "Sławomir Mrożek, photographie de Mariusz Kubik",
+                    "auteur": "Mariusz Kubik",
+                    "licence": "CC BY 2.5",
+                    "source": "https://commons.wikimedia.org/wiki/File:Slawomir_Mrozek.JPG"
+                  }
+                },
+                {
+                  "id": "pan_pl_kapuscinski",
+                  "axe": "Littérature et pensée",
+                  "date": 1932,
+                  "titre": "Naissance de Ryszard Kapuściński",
+                  "description": "Ryszard Kapuściński (1932-2007) est un journaliste et un écrivain polonais, né à Pińsk, aujourd'hui en Biélorussie. Reporter de l'agence de presse polonaise dans les pays du Sud, il tire de ses voyages Le Shah, L'Empereur et Ebène. Son œuvre mêle reportage et littérature, et provoque de vifs débats sur la part d'invention.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ryszard_Kapu%C5%9Bci%C5%84ski",
+                  "classement": "Kapuściński, Ryszard",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_kapuscinski.jpg",
+                    "legende": "Ryszard Kapuściński, photographie de Bernard Gotfryd (1986)",
+                    "auteur": "Bernard Gotfryd",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ryszard_Kapuscinski,_author-writer,_at_PEN_Congress.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_gorecki",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1933,
+                  "titre": "Naissance d'Henryk Górecki",
+                  "description": "Henryk Górecki (1933-2010) est un compositeur polonais, né à Czernica. Sa Symphonie n° 3, dite des chants plaintifs, composée en 1976, devient un succès mondial en 1992 grâce à un enregistrement très diffusé. Il vit à Katowice, loin des modes, et son œuvre est nourrie de foi catholique.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Henryk_G%C3%B3recki",
+                  "classement": "Górecki, Henryk",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_gorecki.jpg",
+                    "legende": "Henryk Górecki, photographie (1993)",
+                    "auteur": "Lech Kowalski & Włodzimierz Pniewski",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Henryk_Miko%C5%82aj_G%C3%B3recki_Polish_composer.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_penderecki",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1933,
+                  "titre": "Naissance de Krzysztof Penderecki",
+                  "description": "Krzysztof Penderecki (1933-2020) est un compositeur polonais, né à Dębica. Son Thrène à la mémoire des victimes d'Hiroshima, créé en 1961, fait de lui une figure de l'avant-garde, et sa Passion selon saint Luc, en 1966, marque un retour vers la tradition. Il dirige aussi des orchestres, et sa musique est utilisée au cinéma, de L'Exorciste à Shining.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Krzysztof_Penderecki",
+                  "classement": "Penderecki, Krzysztof",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_penderecki.jpg",
+                    "legende": "Krzysztof Penderecki, photographie d'Adam Kumiszczo (2008)",
+                    "auteur": "Adam Kumiszcza",
+                    "licence": "CC BY 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Krzysztof_Penderecki_20080706.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_niemen",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1939,
+                  "titre": "Naissance de Czesław Niemen",
+                  "description": "Czesław Niemen (1939-2004) est un chanteur et un compositeur polonais, né près de Baranavitchy, dans l'actuelle Biélorussie. Il impose à partir de 1967, avec le titre Dziwny jest ten świat, un rock aux accents soul et poétique. Il compte parmi les voix les plus aimées de la Pologne populaire.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Czes%C5%82aw_Niemen",
+                  "classement": "Niemen, Czesław",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_niemen.jpg",
+                    "legende": "Czesław Niemen, photographie de Grażyna Rutowska (1975)",
+                    "auteur": "Grażyna Rutowska",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Czes%C5%82aw_Niemen.png"
+                  }
+                },
+                {
+                  "id": "pan_pl_kieslowski",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1941,
+                  "titre": "Naissance de Krzysztof Kieślowski",
+                  "description": "Krzysztof Kieślowski (1941-1996) est un cinéaste polonais, né à Varsovie. Il réalise Le Décalogue pour la télévision en 1988, puis La Double Vie de Véronique et la trilogie Trois couleurs, en 1993-1994. Il meurt à cinquante-quatre ans, pendant une opération du cœur.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Krzysztof_Kie%C5%9Blowski",
+                  "classement": "Kieślowski, Krzysztof",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_kieslowski.jpg",
+                    "legende": "Krzysztof Kieślowski, photographie d'Alberto Terrile (1994)",
+                    "auteur": "Alberto Terrile",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Krzysztof_Kie%C5%9Blowski_Portrait_1994.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_szewinska",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1946,
+                  "titre": "Naissance d'Irena Szewińska",
+                  "description": "Irena Szewińska (1946-2018) est une athlète polonaise, née Kirszenstein à Leningrad, l'une des plus grandes sprinteuses de l'histoire. Elle remporte sept médailles olympiques, dont trois d'or, de 1964 à 1976, et devient en 1974 la première femme à courir le 400 mètres en moins de cinquante secondes. Elle préside plus tard le comité olympique de Pologne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Irena_Szewi%C5%84ska",
+                  "classement": "Szewińska, Irena",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_szewinska.jpg",
+                    "legende": "Irena Szewińska, photographie de 2012",
+                    "auteur": "Ja Fryta from Strzegom",
+                    "licence": "CC BY-SA 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Irena_Szewinska_2012.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_deyna",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1947,
+                  "titre": "Naissance de Kazimierz Deyna",
+                  "description": "Kazimierz Deyna (1947-1989) est un footballeur polonais, né à Starogard Gdański. Capitaine de l'équipe de Pologne, il remporte l'or olympique en 1972 et le bronze à la Coupe du monde de 1974. Il joue à Manchester City puis aux États-Unis, où il meurt dans un accident de la route à San Diego.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kazimierz_Deyna",
+                  "classement": "Deyna, Kazimierz",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_deyna.jpg",
+                    "legende": "Kazimierz Deyna, photographie d'Eric Koch (1970)",
+                    "auteur": "Eric Koch (Anefo)",
+                    "licence": "CC BY-SA 3.0 NL",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kazimierz_Deyna.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_popieluszko",
+                  "axe": "Guerres et résistances",
+                  "date": 1947,
+                  "titre": "Naissance de Jerzy Popiełuszko",
+                  "description": "Jerzy Popiełuszko (1947-1984) est un prêtre polonais, aumônier du syndicat Solidarność et de la sidérurgie de Varsovie. Ses messes pour la patrie, suivies par des milliers de fidèles, font de lui une cible du régime communiste. Enlevé et tué par des agents de la police politique en octobre 1984, il est béatifié en 2010.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jerzy_Popie%C5%82uszko",
+                  "classement": "Popiełuszko, Jerzy",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_popieluszko.jpg",
+                    "legende": "Jerzy Popiełuszko, photographie d'avant 1984",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jerzy_Popieluszko.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_kukuczka",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1948,
+                  "titre": "Naissance de Jerzy Kukuczka",
+                  "description": "Jerzy Kukuczka (1948-1989) est un alpiniste polonais, né à Katowice. Il gravit en 1987 les quatorze sommets de plus de huit mille mètres, deuxième homme après Reinhold Messner et le premier à y parvenir par des voies nouvelles, souvent en hiver. Il meurt en 1989 en tentant la face sud du Lhotse.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jerzy_Kukuczka",
+                  "classement": "Kukuczka, Jerzy",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_kukuczka.jpg",
+                    "legende": "Jerzy Kukuczka, photographie d'Andrzej Heinrich (1980)",
+                    "auteur": "Andrzej Heinrich",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jerzy_Kukuczka_Mount_Everest_1980.jpg"
+                  }
+                }
+              ],
+              "axeOrder": [
+                "Chefs d'État et dirigeants",
+                "Guerres et résistances",
+                "Littérature et pensée",
+                "Beaux-arts",
+                "Musique, spectacle et sport",
+                "Sciences, techniques et innovation"
+              ],
+              "essentiel": [
+                "pan_pl_mieszko",
+                "pan_pl_casimir3",
+                "pan_pl_copernic",
+                "pan_pl_kochanowski",
+                "pan_pl_sobieski",
+                "pan_pl_kosciuszko",
+                "pan_pl_mickiewicz",
+                "pan_pl_chopin",
+                "pan_pl_matejko",
+                "pan_pl_sienkiewicz",
+                "pan_pl_pilsudski",
+                "pan_pl_kolbe",
+                "pan_pl_pilecki",
+                "pan_pl_rejewski",
+                "pan_pl_milosz",
+                "pan_pl_jeanpaul2",
+                "pan_pl_szymborska",
+                "pan_pl_wajda"
               ]
             },
             {

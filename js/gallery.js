@@ -70,12 +70,12 @@ function galleryCountryOf(evt, theme) {
 // normalisation que la recherche de thèmes ; dupliquée ici pour que ce fichier
 // se teste sans le reste de l'application.
 function galleryNormalize(str) {
-    return (str || '').toString().normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/đ/g, 'd').trim();
+    return (str || '').toString().normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/đ/g, 'd').replace(/ł/g, 'l').trim();
 }
 
 // L'initiale d'un intertitre : la première lettre sans accent, ou « # ».
 function galleryInitial(text) {
-    // « Ø » (Ørsted) ne se décompose pas en « O » + accent : on le range à la main avec les O ; « Đ » (Đặng) est replié sur « D » par galleryNormalize.
+    // « Ø » (Ørsted) ne se décompose pas en « O » + accent : on le range à la main avec les O ; « Đ » (Đặng) et « Ł » (Łukasiewicz) sont repliés sur « D » et « L » par galleryNormalize.
     const first = galleryNormalize(text).replace(/^ø/, 'o').charAt(0).toUpperCase();
     return /[A-Z]/.test(first) ? first : '#';
 }

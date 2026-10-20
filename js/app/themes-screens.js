@@ -25,7 +25,7 @@ function getAllThemesWithPath() {
 // Normalise pour une comparaison insensible aux accents et à la casse
 // (« général » doit matcher « general », dès la première lettre tapée).
 function normalizeSearchText(str) {
-    return (str || '').toString().normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+    return (str || '').toString().normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/ł/g, 'l').trim();
 }
 
 function onThemeSearchInput(rawValue) {
