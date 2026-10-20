@@ -147,6 +147,8 @@ KEEP_AS_WRITTEN = {
 
 # Écrits à la main : (nom de la source) → nom de classement.
 EXCEPTIONS = {
+    # Europe centrale : un prince de Transylvanie, non un roi, se range par son nom de famille malgré son numéro.
+    'François II Rákóczi': 'Rákóczi, François II',
     # Portugal : noms composés (le dernier mot n'est pas toujours le nom de famille) et surnoms.
     'Henri le Navigateur': 'Henri le Navigateur',
     'Catherine de Bragance': 'Catherine de Bragance',

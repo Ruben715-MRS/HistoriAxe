@@ -2,8 +2,8 @@
   "version": "1.0.0",
   "lang": "fr",
   "name": "Français (Intégral)",
-  "totalThemes": 842,
-  "totalEvents": 25003,
+  "totalThemes": 843,
+  "totalEvents": 25124,
   "categories": [
     {
       "nom": "Culture générale",
@@ -123099,6 +123099,2168 @@
                 "pan_us_jobs",
                 "pan_us_mjackson",
                 "pan_us_iz"
+              ]
+            },
+            {
+              "id": "pan_europecentrale",
+              "nom": "Grandes figures d'Europe centrale",
+              "difficulte": "Intermédiaire",
+              "motsCles": [
+                "Europe centrale",
+                "Mitteleuropa",
+                "Hongrie",
+                "Hongrois",
+                "Hongroise",
+                "Tchéquie",
+                "République tchèque",
+                "Tchèque",
+                "Tchécoslovaquie",
+                "Tchécoslovaque",
+                "Bohême",
+                "Moravie",
+                "Slovaquie",
+                "Slovaque",
+                "Slovénie",
+                "Slovène",
+                "Budapest",
+                "Prague",
+                "Bratislava",
+                "Presbourg",
+                "Ljubljana",
+                "Brno",
+                "Transylvanie",
+                "Carniole",
+                "Habsbourg",
+                "Habsbourgs",
+                "Autriche-Hongrie",
+                "Double monarchie",
+                "Compromis de 1867",
+                "Royaume de Hongrie",
+                "Árpád",
+                "Saint-Étienne",
+                "Přemyslides",
+                "Hussites",
+                "Guerres hussites",
+                "Grande-Moravie",
+                "Révolution hongroise de 1848",
+                "Révolution de 1956",
+                "Insurrection de Budapest",
+                "Printemps de Prague",
+                "Révolution de velours",
+                "Charte 77",
+                "Munich",
+                "Trianon",
+                "Yougoslavie",
+                "Illyrie",
+                "Provinces illyriennes"
+              ],
+              "events": [
+                {
+                  "id": "pan_europecentrale_arpad",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 845,
+                  "titre": "Naissance d'Árpád",
+                  "description": "Árpád (vers 845-907) est le chef des tribus magyares qui s'installent dans le bassin des Carpates à la fin du IXe siècle. Les traditions hongroises en font le fondateur de la nation, après la conquête de la plaine du Danube en 895-896. Sa dynastie, les Árpád, règne sur la Hongrie jusqu'en 1301.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/%C3%81rp%C3%A1d",
+                  "pays": "HU",
+                  "classement": "Árpád",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_arpad.jpg",
+                    "legende": "Árpád, miniature de la Chronique de Thuróczy (1488)",
+                    "auteur": "Johannes de Thurocz",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Thur%C3%B3czy_kr%C3%B3nika_-_%C3%81rp%C3%A1d.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_adalbert",
+                  "axe": "Littérature et pensée",
+                  "date": 956,
+                  "titre": "Naissance d'Adalbert de Prague",
+                  "description": "Adalbert de Prague (vers 956-997) est un évêque de Prague, issu de la famille princière des Slavnikides. Missionnaire en Pologne, en Hongrie et chez les Prussiens, il est tué par ces derniers, alors païens, en 997. Canonisé deux ans plus tard, il est le saint patron de la Bohême.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Adalbert_de_Prague",
+                  "pays": "CZ",
+                  "classement": "Prague, Adalbert de",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_adalbert.jpg",
+                    "legende": "Adalbert de Prague, statue à Prague",
+                    "auteur": "Arkadiy Etumyan",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Adalbert_of_Prague.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_istvan",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 975,
+                  "titre": "Naissance d'Étienne Ier de Hongrie",
+                  "description": "Étienne Ier de Hongrie (vers 975-1038) est le premier roi chrétien de Hongrie, couronné à Noël de l'an 1000 ou le 1er janvier 1001. Fils du prince Géza, il impose le christianisme, organise le royaume en comtés et fonde des évêchés avec l'appui de l'Église. Canonisé en 1083, il devient saint Étienne, patron du pays, et sa couronne reste le symbole de l'État hongrois.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89tienne_Ier_de_Hongrie",
+                  "pays": "HU",
+                  "classement": "Étienne Ier de Hongrie",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_istvan.jpg",
+                    "legende": "Étienne Ier de Hongrie, représenté en saint (image d'avant 1930)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:StefanIHongarije.jpeg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_bela4",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1206,
+                  "titre": "Naissance de Béla IV",
+                  "description": "Béla IV (1206-1270) est roi de Hongrie de 1235 à sa mort. Son royaume est ravagé par l'invasion mongole de 1241, qui tue une grande partie de la population et le force à fuir jusqu'en Dalmatie. Il reconstruit le pays et fait bâtir des forteresses de pierre, ce qui lui vaut d'être appelé le « second fondateur de l'État ».",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/B%C3%A9la_IV_de_Hongrie",
+                  "pays": "HU",
+                  "classement": "Béla IV",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_bela4.jpg",
+                    "legende": "Béla IV, miniature de la Chronique de Thuróczy (1488)",
+                    "auteur": "Johannes de Thurocz",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:B%C3%A9la_IV_(Chronica_Hungarorum).jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_charles4",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1316,
+                  "titre": "Naissance de Charles IV",
+                  "description": "Charles IV (1316-1378) est roi de Bohême et empereur du Saint-Empire de 1355 à sa mort, né à Prague. Il fait de Prague la capitale de l'Empire, fonde en 1348 la première université d'Europe centrale, bâtit le pont Charles et la cathédrale Saint-Guy, et publie en 1356 la Bulle d'or, qui règle l'élection impériale. Les Tchèques le surnomment « père de la patrie ».",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Charles_IV_(empereur_du_Saint-Empire)",
+                  "pays": "CZ",
+                  "classement": "Charles IV",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_charles4.jpg",
+                    "legende": "Charles IV, détail du tableau votif de Jan Očko de Vlašim (avant 1371)",
+                    "auteur": "Cercle de Théodoric de Prague",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Charles_IV-John_Ocko_votive_picture-fragment.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_louis1",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1326,
+                  "titre": "Naissance de Louis Ier le Grand",
+                  "description": "Louis Ier le Grand (1326-1382) est roi de Hongrie à partir de 1342 et roi de Pologne à partir de 1370, de la dynastie angevine. Il mène des campagnes en Italie du Sud, contre Venise et dans les Balkans, et porte le royaume à sa plus grande extension. Sa fille Hedwige lui succède sur le trône de Pologne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Louis_Ier_de_Hongrie",
+                  "pays": "HU",
+                  "classement": "Louis Ier le Grand",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_louis1.jpg",
+                    "legende": "Louis Ier le Grand, miniature de la Chronique de Thuróczy (1488)",
+                    "auteur": "János Thuróczy",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Louis_I_(Chronica_Hungarorum).jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_zizka",
+                  "axe": "Guerres et résistances",
+                  "date": 1360,
+                  "titre": "Naissance de Jan Žižka",
+                  "description": "Jan Žižka (vers 1360-1424) est un chef de guerre tchèque, borgne puis aveugle, qui commande les armées hussites. Il invente la tactique du Wagenburg, forteresse de chariots de combat, et remporte la bataille de Vítkov, en 1420, sur les troupes de l'empereur Sigismond. Il meurt de la peste en 1424, au cours d'une campagne, sans avoir jamais été vaincu.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jan_%C5%BDi%C5%BEka",
+                  "pays": "CZ",
+                  "classement": "Žižka, Jan",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_zizka.jpg",
+                    "legende": "Jan Žižka, dessin de Mikoláš Aleš (1908)",
+                    "auteur": "Mikoláš Aleš",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mikol%C3%A1%C5%A1_Ale%C5%A1_%E2%80%93_Jan_%C5%BDi%C5%BEka_%E2%80%93_1908.jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_hus",
+                  "axe": "Littérature et pensée",
+                  "date": 1372,
+                  "titre": "Naissance de Jan Hus",
+                  "description": "Jan Hus (vers 1372-1415) est un prêtre, un théologien et un réformateur tchèque, recteur de l'université de Prague. Il prêche en tchèque, critique la richesse du clergé et défend les idées de Wyclif. Appelé au concile de Constance, il y est condamné et brûlé vif le 6 juillet 1415, ce qui déclenche les guerres hussites.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jan_Hus",
+                  "pays": "CZ",
+                  "classement": "Hus, Jan",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_hus.jpg",
+                    "legende": "Jan Hus, gravure ancienne",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jan_hus_1.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_hunyadi",
+                  "axe": "Guerres et résistances",
+                  "date": 1406,
+                  "titre": "Naissance de Jean Hunyadi",
+                  "description": "Jean Hunyadi (vers 1406-1456) est un chef de guerre et un régent de Hongrie, issu de la petite noblesse de Transylvanie. Il combat les Ottomans pendant plus de vingt ans, et en 1456 défend Belgrade contre le sultan Mehmed II, victoire qui arrête leur avance pendant plusieurs décennies. Il meurt de la peste peu après, et son fils Mathias devient roi de Hongrie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jean_Hunyadi",
+                  "pays": "HU",
+                  "classement": "Hunyadi, Jean",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_hunyadi.jpg",
+                    "legende": "Jean Hunyadi, portrait peint de la seconde moitié du XVIIe siècle",
+                    "auteur": "Peintre inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Hunyadi_J%C3%A1nos_-_Nemzeti_M%C3%BAzeum.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_podebrady",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1420,
+                  "titre": "Naissance de Georges de Poděbrady",
+                  "description": "Georges de Poděbrady (1420-1471) est roi de Bohême de 1458 à sa mort, le seul roi de Bohême de confession hussite. Il tente de réunir les princes chrétiens contre les Ottomans, projet parfois vu comme une préfiguration d'une organisation européenne. Excommunié par le pape, il meurt en 1471 en guerre contre le roi de Hongrie Mathias Corvin.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Georges_de_Pod%C4%9Bbrady",
+                  "pays": "CZ",
+                  "classement": "Poděbrady, Georges de",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_podebrady.jpg",
+                    "legende": "Georges de Poděbrady, gravure de Martin Kuthen (1539)",
+                    "auteur": "Martin Kuthen ze Šprinsberku",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Martin_Kuthen-George_of_Podebrady.jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_matyas",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1443,
+                  "titre": "Naissance de Mathias Corvin",
+                  "description": "Mathias Corvin (1443-1490) est roi de Hongrie de 1458 à sa mort, fils de Jean Hunyadi. Souverain de la Renaissance, il lève une armée permanente, l'« Armée noire », réforme la justice et attire à Buda savants et artistes italiens, avec sa bibliothèque Corviniana. Il prend Vienne en 1485, mais son empire ne lui survit pas.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mathias_Corvin",
+                  "pays": "HU",
+                  "classement": "Corvin, Mathias",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_matyas.jpg",
+                    "legende": "Mathias Corvin, portrait d'avant 1526",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:M%C3%A1ty%C3%A1s_Kir%C3%A1ly_arcm%C3%A1sa.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_trubar",
+                  "axe": "Littérature et pensée",
+                  "date": 1508,
+                  "titre": "Naissance de Primož Trubar",
+                  "description": "Primož Trubar (1508-1586) est un prêtre et un réformateur slovène, né à Rašica. Passé à la Réforme, il publie en 1550 les deux premiers livres imprimés en slovène, un abécédaire et un catéchisme. Il traduit ensuite le Nouveau Testament et fonde ainsi la langue littéraire slovène, puis meurt en exil en Allemagne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Primo%C5%BE_Trubar",
+                  "pays": "SI",
+                  "classement": "Trubar, Primož",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_trubar.jpg",
+                    "legende": "Primož Trubar, gravure du XIXe siècle",
+                    "auteur": "Auteur inconnu",
+                    "licence": "CC BY-SA 3.0 DE",
+                    "source": "https://commons.wikimedia.org/wiki/File:Primo%C5%BE_Trubar_(woodcut).jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_gallus",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1550,
+                  "titre": "Naissance de Jacobus Gallus",
+                  "description": "Jacobus Gallus (1550-1591) est un compositeur de la Renaissance, né en Carniole, dans l'actuelle Slovénie. Moine cistercien, il sert à Olomouc puis à Prague, et publie l'Opus musicum, recueil de motets polychoraux. Il reste l'un des plus grands compositeurs slovènes.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jacobus_Gallus",
+                  "pays": "SI",
+                  "classement": "Gallus, Jacobus",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_gallus.jpg",
+                    "legende": "Jacobus Gallus, gravure de 1590",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jakob_Petelin_Gallus_1590_(cropped).jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_wallenstein",
+                  "axe": "Guerres et résistances",
+                  "date": 1583,
+                  "titre": "Naissance d'Albrecht von Wallenstein",
+                  "description": "Albrecht von Wallenstein (1583-1634) est un chef de guerre de Bohême, généralissime de l'empereur Ferdinand II pendant la guerre de Trente Ans. Il lève à ses frais une immense armée, qu'il fait vivre sur le pays, et s'enrichit au point de devenir duc de Friedland. Soupçonné de trahison, il est assassiné à Eger, aujourd'hui Cheb, en 1634.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Albrecht_von_Wallenstein",
+                  "pays": "CZ",
+                  "classement": "Wallenstein, Albrecht von",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_wallenstein.jpg",
+                    "legende": "Albrecht von Wallenstein, portrait peint de Julius Schnorr von Carolsfeld",
+                    "auteur": "Julius Schnorr von Carolsfeld",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Albrecht_von_Wallenstein.jpeg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_comenius",
+                  "axe": "Littérature et pensée",
+                  "date": 1592,
+                  "titre": "Naissance de Jan Amos Comenius",
+                  "description": "Jan Amos Comenius (1592-1670) est un pédagogue, un théologien et un penseur tchèque, évêque des Frères moraves. Chassé de Bohême par la guerre de Trente Ans, il vit en exil en Pologne, en Suède, en Hongrie et aux Pays-Bas. Auteur de la Grande Didactique, il défend une éducation pour tous, illustrée dans l'Orbis pictus, premier livre d'images pour enfants, en 1658.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jan_Amos_Komensk%C3%BD",
+                  "pays": "CZ",
+                  "classement": "Comenius, Jan Amos",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_comenius.jpg",
+                    "legende": "Jan Amos Comenius, portrait peint par Jürgen Ovens (entre 1650 et 1670)",
+                    "auteur": "Jürgen Ovens",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jan_Amos_Comenius_(Komensky)_(1592-1670)._Tsjechisch_humanist_en_pedagoog._Als_voorganger_van_de_Moravische_of_Boheemse_Broedergemeente_verdreven_en_sedert_1656_gevestigd_te_Amsterdam_Rijksmuseum_SK-A-2161.jpeg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_valvasor",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1641,
+                  "titre": "Naissance de Janez Vajkard Valvasor",
+                  "description": "Janez Vajkard Valvasor (1641-1693) est un noble et un savant de Carniole, né à Ljubljana. Il publie en 1689 La Gloire du duché de Carniole, vaste encyclopédie en quatre volumes, illustrée de plus de cinq cents gravures. Membre de la Royal Society de Londres, il est l'un des fondateurs de la spéléologie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Janez_Vajkard_Valvasor",
+                  "pays": "SI",
+                  "classement": "Valvasor, Janez Vajkard",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_valvasor.jpg",
+                    "legende": "Janez Vajkard Valvasor, portrait gravé (vers 1689)",
+                    "auteur": "Johann Weikhard von Valvasor",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Janez_Vajkard_Valvasor_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_rakoczi",
+                  "axe": "Guerres et résistances",
+                  "date": 1676,
+                  "titre": "Naissance de François II Rákóczi",
+                  "description": "François II Rákóczi (1676-1735) est un prince de Transylvanie, qui conduit de 1703 à 1711 la guerre d'indépendance hongroise contre les Habsbourg. Soutenu par la France de Louis XIV, il lève des milliers de combattants, les kuruc, mais doit s'incliner devant la paix de Szatmár. Exilé en France puis en Turquie, il meurt à Rodosto, et reste le symbole de la lutte contre les Habsbourg.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Fran%C3%A7ois_II_R%C3%A1k%C3%B3czi",
+                  "pays": "HU",
+                  "classement": "Rákóczi, François II",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_rakoczi.jpg",
+                    "legende": "François II Rákóczi, portrait peint par Ádám Mányoki (1712)",
+                    "auteur": "Ádám Mányoki",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:II._R%C3%A1k%C3%B3czi_Ferenc_M%C3%A1nyoki.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_janosik",
+                  "axe": "Guerres et résistances",
+                  "date": 1688,
+                  "titre": "Naissance de Juraj Jánošík",
+                  "description": "Juraj Jánošík (1688-1713) est un brigand légendaire des montagnes slovaques, né à Terchová. Capitaine d'une bande de brigands dans les Tatras, il est arrêté et exécuté à Liptovský Mikuláš en 1713. La tradition populaire en fait un justicier qui prend aux riches pour donner aux pauvres.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Juraj_J%C3%A1no%C5%A1%C3%ADk",
+                  "pays": "SK",
+                  "classement": "Jánošík, Juraj",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_janosik.jpg",
+                    "legende": "Juraj Jánošík, vitrail",
+                    "auteur": "Janko Alexy (vitrail) ; photographie de Peter Zelizňák",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Bratislava_PKO_Janosik.jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_divis",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1698,
+                  "titre": "Naissance de Prokop Diviš",
+                  "description": "Prokop Diviš (1698-1765) est un prêtre prémontré et un inventeur tchèque, né à Helvíkovice. Il érige en 1754 un paratonnerre sur son presbytère de Přímětice, indépendamment de Benjamin Franklin. Il construit aussi un instrument de musique électrique.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/V%C3%A1clav_Prokop_Divi%C5%A1",
+                  "pays": "CZ",
+                  "classement": "Diviš, Prokop",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_divis.jpg",
+                    "legende": "Prokop Diviš, portrait gravé de Jan Vilímek (vers 1890)",
+                    "auteur": "Jan Vilímek",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Prokop_Divi%C5%A1_%E2%80%93_Jan_Vil%C3%ADmek_%E2%80%93_%C4%8Cesk%C3%A9_album_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_kempelen",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1734,
+                  "titre": "Naissance de Wolfgang von Kempelen",
+                  "description": "Wolfgang von Kempelen (1734-1804) est un inventeur né à Presbourg, aujourd'hui Bratislava, au service des Habsbourg. Il construit en 1769 le Turc mécanique, faux automate joueur d'échecs, qui trompe l'Europe pendant des décennies, ainsi qu'une machine parlante. Ses études sur la voix humaine font de lui un pionnier de la phonétique.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Wolfgang_von_Kempelen",
+                  "pays": "SK",
+                  "classement": "Kempelen, Wolfgang von",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_kempelen.jpg",
+                    "legende": "Wolfgang von Kempelen, dessin au fusain",
+                    "auteur": "Wolfgang von Kempelen",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kempelen-charcoal.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_vega",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1754,
+                  "titre": "Naissance de Jurij Vega",
+                  "description": "Jurij Vega (1754-1802) est un mathématicien et un officier slovène, né à Zagorica. Il publie des tables de logarithmes d'une grande précision, utilisées pendant plus d'un siècle, et établit en 1789 un record de décimales de π. Officier d'artillerie, il disparaît dans le Danube près de Vienne en 1802.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jurij_Vega",
+                  "pays": "SI",
+                  "classement": "Vega, Jurij",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_vega.jpg",
+                    "legende": "Jurij Vega, portrait gravé",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Georg_Vega.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_vodnik",
+                  "axe": "Littérature et pensée",
+                  "date": 1758,
+                  "titre": "Naissance de Valentin Vodnik",
+                  "description": "Valentin Vodnik (1758-1819) est un poète et un prêtre slovène, né à Šiška, près de Ljubljana. Il publie en 1797 le premier journal en slovène, les Lublanske novice, et un recueil de poèmes populaires. Sous l'occupation française, il célèbre les Provinces illyriennes dans le poème Ilirija oživljena.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Valentin_Vodnik",
+                  "pays": "SI",
+                  "classement": "Vodnik, Valentin",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_vodnik.jpg",
+                    "legende": "Valentin Vodnik, portrait de Franz Kurz zum Thurn und Goldenstein",
+                    "auteur": "Franz von Kurz zum Thurn und Goldenstein",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Franz_Kurz_zum_Thurn_und_Goldenstein_-_Valentin_Vodnik_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_bernolak",
+                  "axe": "Littérature et pensée",
+                  "date": 1762,
+                  "titre": "Naissance d'Anton Bernolák",
+                  "description": "Anton Bernolák (1762-1813) est un prêtre et un linguiste slovaque, né à Slanica. Il publie en 1787 la première codification de la langue slovaque littéraire, fondée sur le dialecte occidental, puis un dictionnaire. Son œuvre pose la première pierre de la langue slovaque moderne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Anton_Bernol%C3%A1k",
+                  "pays": "SK",
+                  "classement": "Bernolák, Anton",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_bernolak.jpg",
+                    "legende": "Anton Bernolák, dessin",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Bernolak_Anton.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_purkyne",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1787,
+                  "titre": "Naissance de Jan Evangelista Purkyně",
+                  "description": "Jan Evangelista Purkyně (1787-1869) est un physiologiste tchèque, né à Libochovice. Professeur à Breslau puis à Prague, il découvre les cellules du cervelet et les fibres du cœur qui portent son nom, étudie les empreintes digitales et perfectionne le microscope. Il est aussi poète et traducteur, et défend l'usage du tchèque dans la science.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jan_Evangelista_Purkyn%C4%9B",
+                  "pays": "CZ",
+                  "classement": "Purkyně, Jan Evangelista",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_purkyne.jpg",
+                    "legende": "Jan Evangelista Purkyně, portrait gravé de Jan Vilímek",
+                    "auteur": "Jan Vilímek",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jan_Vil%C3%ADmek_-_Jan_Evangelista_Purkyn%C4%9B.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_szechenyi",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1791,
+                  "titre": "Naissance d'István Széchenyi",
+                  "description": "István Széchenyi (1791-1860) est un aristocrate et un homme politique hongrois, que l'on surnomme « le plus grand des Hongrois ». Il offre un an de revenus à la fondation de l'Académie hongroise des sciences et fait construire le pont des Chaînes de Budapest. Ministre en 1848, il sombre dans la dépression après l'écrasement de la révolution et se suicide en 1860.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Istv%C3%A1n_Sz%C3%A9chenyi",
+                  "pays": "HU",
+                  "classement": "Széchenyi, István",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_szechenyi.jpg",
+                    "legende": "István Széchenyi, portrait peint par Friedrich von Amerling",
+                    "auteur": "Friedrich von Amerling",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Istv%C3%A1n_Sz%C3%A9chenyi.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_kollar",
+                  "axe": "Littérature et pensée",
+                  "date": 1793,
+                  "titre": "Naissance de Ján Kollár",
+                  "description": "Ján Kollár (1793-1852) est un poète et un pasteur slovaque, né à Mošovce. Auteur du recueil de sonnets La Fille de Sláva, en 1824, il est l'un des théoriciens du panslavisme. Pasteur à Pest puis professeur à Vienne, il écrit en tchèque.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/J%C3%A1n_Koll%C3%A1r",
+                  "pays": "SK",
+                  "classement": "Kollár, Ján",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_kollar.jpg",
+                    "legende": "Ján Kollár, portrait gravé de Jan Vilímek",
+                    "auteur": "Jan Vilímek",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jan_Vil%C3%ADmek_-_Jan_Koll%C3%A1r.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_ressel",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1793,
+                  "titre": "Naissance de Josef Ressel",
+                  "description": "Josef Ressel (1793-1857) est un inventeur tchèque, né à Chrudim. Forestier de métier, il dépose en 1827 le brevet de l'hélice à vis pour navire, essayée sur le bateau Civetta à Trieste en 1829. Son invention lui vaut une reconnaissance tardive, et il meurt à Ljubljana.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Joseph_Ressel",
+                  "pays": "CZ",
+                  "classement": "Ressel, Josef",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_ressel.jpg",
+                    "legende": "Josef Ressel, portrait gravé",
+                    "auteur": "R. R. Marina",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Josef_Ressel.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_preseren",
+                  "axe": "Littérature et pensée",
+                  "date": 1800,
+                  "titre": "Naissance de France Prešeren",
+                  "description": "France Prešeren (1800-1849) est le plus grand poète slovène, né à Vrba. Avocat à Kranj, il écrit Le Baptême sur la Savica et La Couronne de sonnets, qui élèvent le slovène au rang de langue de culture. Un extrait de son poème Zdravljica, écrit en 1844, est devenu l'hymne national slovène.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/France_Pre%C5%A1eren",
+                  "pays": "SI",
+                  "classement": "Prešeren, France",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_preseren.jpg",
+                    "legende": "France Prešeren, portrait de Franz Kurz zum Thurn und Goldenstein (1850)",
+                    "auteur": "Franz von Kurz zum Thurn und Goldenstein",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Pre%C5%A1ern-Goldenstein.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_bolyai",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1802,
+                  "titre": "Naissance de János Bolyai",
+                  "description": "János Bolyai (1802-1860) est un mathématicien hongrois, né à Kolozsvár, aujourd'hui Cluj-Napoca en Roumanie. En 1823, il découvre une géométrie non euclidienne, publiée en 1832 en appendice d'un ouvrage de son père Farkas. Il vit dans l'isolement, et son œuvre n'est reconnue qu'après sa mort.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/J%C3%A1nos_Bolyai",
+                  "pays": "HU",
+                  "classement": "Bolyai, János",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_bolyai.jpg",
+                    "legende": "János Bolyai, portrait peint par Ferenc Márkos",
+                    "auteur": "Ferenc Márkos",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Bolyai_J%C3%A1nos_(M%C3%A1rkos_Ferenc_festm%C3%A9nye).jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_kossuth",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1802,
+                  "titre": "Naissance de Lajos Kossuth",
+                  "description": "Lajos Kossuth (1802-1894) est l'homme d'État qui dirige la révolution hongroise de 1848-1849 et devient gouverneur-président de la Hongrie. Brillant orateur et journaliste, il fait proclamer en avril 1849 la déchéance des Habsbourg, avant la défaite devant l'armée russe. Exilé en Turquie, en Angleterre, aux États-Unis puis en Italie, il meurt à Turin, et sa dépouille est ramenée à Budapest.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Lajos_Kossuth",
+                  "pays": "HU",
+                  "classement": "Kossuth, Lajos",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_kossuth.jpg",
+                    "legende": "Lajos Kossuth, daguerréotype de Southworth & Hawes (1852)",
+                    "auteur": "Southworth & Hawes",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Portrait_of_Lajos_Kossuth,_1852.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_deak",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1803,
+                  "titre": "Naissance de Ferenc Deák",
+                  "description": "Ferenc Deák (1803-1876) est un juriste et un homme politique hongrois, que l'on surnomme « le sage de la patrie ». Après la défaite de la révolution, il pratique la résistance passive, puis négocie avec François-Joseph le Compromis austro-hongrois de 1867. Cet accord crée la double monarchie d'Autriche-Hongrie, où la Hongrie retrouve sa constitution.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ferenc_De%C3%A1k",
+                  "pays": "HU",
+                  "classement": "Deák, Ferenc",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_deak.jpg",
+                    "legende": "Ferenc Deák, photographie d'Ede Ellinger (vers 1870)",
+                    "auteur": "Ellinger Ede, kir. udvari fényképész",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Portrait_of_Ferenc_De%C3%A1k.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_petzval",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1807,
+                  "titre": "Naissance de Jozef Maximilián Petzval",
+                  "description": "Jozef Maximilián Petzval (1807-1891) est un mathématicien et un inventeur né à Spišská Belá, en Slovaquie actuelle. Professeur à Vienne, il calcule en 1840 le premier objectif photographique moderne, bien plus lumineux que les précédents. Il meurt à Vienne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Joseph_Petzval",
+                  "pays": "SK",
+                  "classement": "Petzval, Jozef Maximilián",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_petzval.jpg",
+                    "legende": "Jozef Maximilián Petzval, photographie de Fritz Luckhardt (vers 1865)",
+                    "auteur": "Fritz Luckhardt",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Luckhardt,_Fritz_-_Dr._Josef_Petzval_(Zeno_Fotografie).jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_macha",
+                  "axe": "Littérature et pensée",
+                  "date": 1810,
+                  "titre": "Naissance de Karel Hynek Mácha",
+                  "description": "Karel Hynek Mácha (1810-1836) est un poète tchèque, né à Prague. Son poème Mai, publié en 1836, est le chef-d'œuvre du romantisme tchèque, entre amour, désespoir et nature. Il meurt à vingt-cinq ans, et sa dépouille repose aujourd'hui au cimetière de Vyšehrad.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Karel_Hynek_M%C3%A1cha",
+                  "pays": "CZ",
+                  "classement": "Mácha, Karel Hynek",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_macha.jpg",
+                    "legende": "Karel Hynek Mácha, portrait gravé de Jan Vilímek (1890-1891)",
+                    "auteur": "Jan Vilímek",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Karel_Hynek_M%C3%A1cha_%E2%80%93_Jan_Vil%C3%ADmek_%E2%80%93_%C4%8Cesk%C3%A9_album.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_liszt",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1811,
+                  "titre": "Naissance de Franz Liszt",
+                  "description": "Franz Liszt (1811-1886) est un compositeur et un pianiste hongrois, né à Raiding, village de langue allemande aujourd'hui en Autriche. Virtuose adulé dans toute l'Europe, il invente le poème symphonique et ouvre l'harmonie à la modernité. Fondateur de l'Académie de musique de Budapest, il reste attaché à la Hongrie, bien qu'il en parle à peine la langue, et il meurt à Bayreuth.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Franz_Liszt",
+                  "pays": "HU",
+                  "classement": "Liszt, Franz",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_liszt.jpg",
+                    "legende": "Franz Liszt, photographie de Franz Hanfstaengl (1858)",
+                    "auteur": "Franz Hanfstaengl",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:FLisztFXD.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_ybl",
+                  "axe": "Beaux-arts",
+                  "date": 1814,
+                  "titre": "Naissance de Miklós Ybl",
+                  "description": "Miklós Ybl (1814-1891) est un architecte hongrois, né à Székesfehérvár. Il dessine l'Opéra de Budapest, inauguré en 1884, et reconstruit le palais royal du château de Buda, grands exemples du style néo-Renaissance. Architecte de la capitale en plein essor, il façonne en grande partie le visage de Budapest.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mikl%C3%B3s_Ybl",
+                  "pays": "HU",
+                  "classement": "Ybl, Miklós",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_ybl.jpg",
+                    "legende": "Miklós Ybl, portrait de József Marastoni (1866)",
+                    "auteur": "József Marastoni",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Marastoni_Portrait_of_Mikl%C3%B3s_Ybl_1866.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_stur",
+                  "axe": "Littérature et pensée",
+                  "date": 1815,
+                  "titre": "Naissance de Ľudovít Štúr",
+                  "description": "Ľudovít Štúr (1815-1856) est un écrivain et un homme politique slovaque, né à Uhrovec. Il fixe en 1843 la langue littéraire slovaque sur le dialecte du centre du pays et dirige le soulèvement slovaque de 1848. Il meurt en 1856 dans un accident de chasse.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/%C4%BDudov%C3%ADt_%C5%A0t%C3%BAr",
+                  "pays": "SK",
+                  "classement": "Štúr, Ľudovít",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_stur.jpg",
+                    "legende": "Ľudovít Štúr, portrait de Jozef Božetech Klemens (1873)",
+                    "auteur": "Jozef Božetech Klemens",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ludovit_Stur.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_arany",
+                  "axe": "Littérature et pensée",
+                  "date": 1817,
+                  "titre": "Naissance de János Arany",
+                  "description": "János Arany (1817-1882) est un poète hongrois, né à Nagyszalonta. Auteur de la trilogie épique de Toldi et de ballades comme La Mort de Buda, il porte la poésie narrative hongroise à sa perfection. Secrétaire puis directeur de l'Académie hongroise des sciences, il est l'un des fondateurs de la littérature nationale.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/J%C3%A1nos_Arany",
+                  "pays": "HU",
+                  "classement": "Arany, János",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_arany.jpg",
+                    "legende": "János Arany, portrait peint par Miklós Barabás (1884)",
+                    "auteur": "Miklós Barabás",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Barabas-arany.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_hurban",
+                  "axe": "Littérature et pensée",
+                  "date": 1817,
+                  "titre": "Naissance de Jozef Miloslav Hurban",
+                  "description": "Jozef Miloslav Hurban (1817-1888) est un pasteur et un écrivain slovaque, né à Beckov. Compagnon de Štúr, il proclame le soulèvement slovaque de 1848 et dirige le Conseil national slovaque. Il fonde aussi la revue Slovenské pohľady, en 1846.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jozef_Miloslav_Hurban",
+                  "pays": "SK",
+                  "classement": "Hurban, Jozef Miloslav",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_hurban.jpg",
+                    "legende": "Jozef Miloslav Hurban, portrait d'Anastas Jovanović (1849)",
+                    "auteur": "Anastas Jovanović",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Hurban_cropped.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_gorgey",
+                  "axe": "Guerres et résistances",
+                  "date": 1818,
+                  "titre": "Naissance d'Artúr Görgei",
+                  "description": "Artúr Görgei (1818-1916) est un officier hongrois, commandant en chef de l'armée de la révolution de 1848-1849. Il remporte plusieurs victoires au printemps 1849, puis capitule devant les Russes à Világos, le 13 août 1849, ce qui lui vaut d'être accusé de trahison par Kossuth. Réhabilité par les historiens, il meurt à Budapest à presque cent ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Art%C3%BAr_G%C3%B6rgey",
+                  "pays": "HU",
+                  "classement": "Görgei, Artúr",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_gorgey.jpg",
+                    "legende": "Artúr Görgei, portrait peint par Miklós Barabás",
+                    "auteur": "Miklós Barabás",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:G%C3%B6rgei_Art%C3%BAr_by_Mikl%C3%B3s_Barab%C3%A1s.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_semmelweis",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1818,
+                  "titre": "Naissance d'Ignace Semmelweis",
+                  "description": "Ignace Semmelweis (1818-1865) est un médecin hongrois, né à Buda. Dans une maternité de Vienne, il découvre en 1847 que la fièvre puerpérale est transmise par les mains des médecins, et impose le lavage à l'eau chlorée. Rejeté par ses confrères, il meurt à quarante-sept ans dans un asile de Vienne, et sa théorie triomphe après les travaux de Pasteur et de Lister.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ignace_Philippe_Semmelweis",
+                  "pays": "HU",
+                  "classement": "Semmelweis, Ignace",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_semmelweis.jpg",
+                    "legende": "Ignace Semmelweis, portrait de József Borsos (1860)",
+                    "auteur": "József Borsos",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Borsos_%26_Doctor_Semmelweis_Ign%C3%A1c_cropped.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_nemcova",
+                  "axe": "Littérature et pensée",
+                  "date": 1820,
+                  "titre": "Naissance de Božena Němcová",
+                  "description": "Božena Němcová (1820-1862) est une écrivaine tchèque, née à Vienne. Auteure du roman La Grand-mère, publié en 1855, qui décrit la vie d'une vallée de Bohême, elle recueille aussi des contes populaires. Elle vit dans la pauvreté et meurt à quarante et un ans, mais elle est l'une des grandes figures féminines de la littérature tchèque.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bo%C5%BEena_N%C4%9Bmcov%C3%A1",
+                  "pays": "CZ",
+                  "classement": "Němcová, Božena",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_nemcova.jpg",
+                    "legende": "Božena Němcová, portrait ancien",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Bozena_Nemcova.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_andrassy",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1823,
+                  "titre": "Naissance de Gyula Andrássy",
+                  "description": "Gyula Andrássy (1823-1890) est un homme d'État hongrois, premier chef du gouvernement hongrois après le Compromis de 1867. Condamné à mort par contumace et pendu en effigie en 1851 pour avoir pris part à la révolution, il est gracié, puis devient ministre des Affaires étrangères d'Autriche-Hongrie de 1871 à 1879. Il représente son pays au congrès de Berlin et obtient l'occupation de la Bosnie-Herzégovine en 1878.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Gyula_Andr%C3%A1ssy",
+                  "pays": "HU",
+                  "classement": "Andrássy, Gyula",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_andrassy.jpg",
+                    "legende": "Gyula Andrássy, photographie de Schrecker (1855)",
+                    "auteur": "Schrecker",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Andr%C3%A1ssy_Gyula_foto.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_madach",
+                  "axe": "Littérature et pensée",
+                  "date": 1823,
+                  "titre": "Naissance d'Imre Madách",
+                  "description": "Imre Madách (1823-1864) est un dramaturge et un poète hongrois, né à Alsósztregova, aujourd'hui en Slovaquie. Son poème dramatique La Tragédie de l'homme, publié en 1861, suit Adam et Ève à travers l'histoire du monde dans une vision pessimiste. Cette œuvre est la plus jouée du théâtre hongrois.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Imre_Mad%C3%A1ch",
+                  "pays": "HU",
+                  "classement": "Madách, Imre",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_madach.jpg",
+                    "legende": "Imre Madách, gravure",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Madach_Morelli_(127620886).jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_petofi",
+                  "axe": "Littérature et pensée",
+                  "date": 1823,
+                  "titre": "Naissance de Sándor Petőfi",
+                  "description": "Sándor Petőfi (1823-1849) est le poète national de la Hongrie, né à Kiskőrös. Chantre de la liberté, il écrit la Chanson nationale, lue le 15 mars 1848 et devenue le signal de la révolution. Il s'engage dans l'armée du général Bem et disparaît à vingt-six ans, à la bataille de Segesvár, en juillet 1849.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/S%C3%A1ndor_Pet%C5%91fi",
+                  "pays": "HU",
+                  "classement": "Petőfi, Sándor",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_petofi.jpg",
+                    "legende": "Sándor Petőfi, portrait peint par Soma Orlai Petrich (années 1840)",
+                    "auteur": "Soma Orlai Petrich",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Orlai-petofi1.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_smetana",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1824,
+                  "titre": "Naissance de Bedřich Smetana",
+                  "description": "Bedřich Smetana (1824-1884) est un compositeur tchèque, né à Litomyšl. Il fonde l'opéra national tchèque avec La Fiancée vendue, en 1866, et compose le cycle symphonique Ma patrie, dont fait partie La Moldau. Devenu sourd en 1874, il continue de composer jusqu'à ses derniers jours.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bed%C5%99ich_Smetana",
+                  "pays": "CZ",
+                  "classement": "Smetana, Bedřich",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_smetana.jpg",
+                    "legende": "Bedřich Smetana, photographie d'avant 1880",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:FriedrichSmetana.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_stefan",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1835,
+                  "titre": "Naissance de Josef Stefan",
+                  "description": "Josef Stefan (1835-1893) est un physicien et un mathématicien slovène, né près de Klagenfurt, en Carinthie. Il énonce en 1879 la loi qui relie la puissance rayonnée par un corps noir à la puissance quatrième de sa température, que son élève Boltzmann démontre ensuite. Professeur à l'université de Vienne, il y dirige l'institut de physique.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Josef_Stefan",
+                  "pays": "SI",
+                  "classement": "Stefan, Josef",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_stefan.jpg",
+                    "legende": "Josef Stefan, photographie de K. Schönbauer (avant 1893)",
+                    "auteur": "K. Schönbauer",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jozef_Stefan.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_skoda",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1839,
+                  "titre": "Naissance d'Emil Škoda",
+                  "description": "Emil Škoda (1839-1900) est un ingénieur et un industriel tchèque, né à Plzeň. Il rachète en 1869 une usine de construction mécanique de sa ville, et la transforme en l'un des plus grands groupes d'armement et de machines d'Europe centrale. L'entreprise Škoda, aujourd'hui célèbre pour ses automobiles, tire de lui son nom.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Emil_%C5%A0koda",
+                  "pays": "CZ",
+                  "classement": "Škoda, Emil",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_skoda.jpg",
+                    "legende": "Emil Škoda, portrait gravé",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Emil_Skoda.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_dvorak",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1841,
+                  "titre": "Naissance d'Antonín Dvořák",
+                  "description": "Antonín Dvořák (1841-1904) est un compositeur tchèque, né à Nelahozeves. Il mêle la musique populaire de Bohême à la tradition classique dans ses Danses slaves et dans sa Symphonie du Nouveau Monde, écrite à New York en 1893. Directeur du conservatoire de Prague à partir de 1901, il meurt en 1904.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Anton%C3%ADn_Dvo%C5%99%C3%A1k",
+                  "pays": "CZ",
+                  "classement": "Dvořák, Antonín",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_dvorak.jpg",
+                    "legende": "Antonín Dvořák, photographie de 1882",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Dvorak.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_munkacsy",
+                  "axe": "Beaux-arts",
+                  "date": 1844,
+                  "titre": "Naissance de Mihály Munkácsy",
+                  "description": "Mihály Munkácsy (1844-1900) est un peintre hongrois, né à Munkács, aujourd'hui Moukatchevo en Ukraine. Installé à Paris, il connaît un grand succès avec Le Christ devant Pilate, en 1881, et avec des scènes réalistes de la vie populaire. Reconnu dans toute l'Europe, il meurt à Endenich, près de Bonn.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mih%C3%A1ly_Munk%C3%A1csy",
+                  "pays": "HU",
+                  "classement": "Munkácsy, Mihály",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_munkacsy.jpg",
+                    "legende": "Mihály Munkácsy, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Munk%C3%A1csy_Mih%C3%A1ly.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_krizik",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1847,
+                  "titre": "Naissance de František Křižík",
+                  "description": "František Křižík (1847-1941) est un ingénieur et un inventeur tchèque, né à Plánice. Il met au point une lampe à arc à régulateur, primée à l'Exposition de Paris en 1881, et construit le premier tramway électrique de Bohême, en 1891. Il électrifie des villes entières, dont Prague, et reste actif jusqu'à plus de quatre-vingt-dix ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Franti%C5%A1ek_K%C5%99i%C5%BE%C3%ADk",
+                  "pays": "CZ",
+                  "classement": "Křižík, František",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_krizik.jpg",
+                    "legende": "František Křižík, photographie d'Ignác Šechtl (1902)",
+                    "auteur": "Ignác Šechtl",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Krizik.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_eotvos",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1848,
+                  "titre": "Naissance de Loránd Eötvös",
+                  "description": "Loránd Eötvös (1848-1919) est un physicien hongrois, né à Buda. Il construit la balance de torsion qui porte son nom et établit avec une grande précision l'égalité de la masse inerte et de la masse pesante, fondement de la relativité générale. Ministre de l'Instruction publique en 1894-1895, il voit l'université de Budapest prendre son nom.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Lor%C3%A1nd_E%C3%B6tv%C3%B6s",
+                  "pays": "HU",
+                  "classement": "Eötvös, Loránd",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_eotvos.jpg",
+                    "legende": "Loránd Eötvös, photographie d'Aladár Székely (1918)",
+                    "auteur": "Aladár Székely",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:E%C3%B6tv%C3%B6s_Lor%C3%A1nd.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_hviezdoslav",
+                  "axe": "Littérature et pensée",
+                  "date": 1849,
+                  "titre": "Naissance de Pavol Országh Hviezdoslav",
+                  "description": "Pavol Országh Hviezdoslav (1849-1921) est un poète slovaque, né à Vyšný Kubín. Juriste, il écrit des poèmes lyriques et épiques, comme Les Sonnets sanglants, en 1914, protestation contre la guerre. Il est considéré comme le plus grand poète de la langue slovaque.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Pavol_Orsz%C3%A1gh_Hviezdoslav",
+                  "pays": "SK",
+                  "classement": "Hviezdoslav, Pavol Országh",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_hviezdoslav.jpg",
+                    "legende": "Pavol Országh Hviezdoslav, photographie de 1927",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Pavol_Orsz%C3%A1gh_Hviezdoslav,_portrait.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_masaryk",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1850,
+                  "titre": "Naissance de Tomáš Masaryk",
+                  "description": "Tomáš Masaryk (1850-1937) est le fondateur et le premier président de la Tchécoslovaquie, né à Hodonín. Philosophe et professeur, il milite en exil pendant la Première Guerre mondiale pour un État commun des Tchèques et des Slovaques, proclamé en octobre 1918. Élu président quatre fois, il dirige jusqu'en 1935 une démocratie stable, et on l'appelle « Tatíček », « le petit père ».",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Tom%C3%A1%C5%A1_Garrigue_Masaryk",
+                  "pays": "CZ",
+                  "classement": "Masaryk, Tomáš",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_masaryk.jpg",
+                    "legende": "Tomáš Masaryk, photographie de 1918",
+                    "auteur": "Štencův grafický ústav",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:MasarykFotoPrvniPoselstviTGM.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_janacek",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1854,
+                  "titre": "Naissance de Leoš Janáček",
+                  "description": "Leoš Janáček (1854-1928) est un compositeur tchèque, né à Hukvaldy, en Moravie. Il étudie le folklore moravien et le rythme de la langue parlée, qui nourrissent ses opéras Jenůfa, La Petite Renarde rusée et L'Affaire Makropoulos. Reconnu tardivement, il compose ses chefs-d'œuvre après soixante ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Leo%C5%A1_Jan%C3%A1%C4%8Dek",
+                  "pays": "CZ",
+                  "classement": "Janáček, Leoš",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_janacek.jpg",
+                    "legende": "Leoš Janáček, photographie de 1899",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Leo%C5%A1_Jan%C3%A1%C4%8Dek.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_stodola",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1859,
+                  "titre": "Naissance d'Aurel Stodola",
+                  "description": "Aurel Stodola (1859-1942) est un ingénieur slovaque, né à Liptovský Mikuláš. Professeur à l'École polytechnique de Zurich, il fonde la théorie moderne des turbines à vapeur et à gaz. Son traité, publié en 1903, sert de référence pendant des décennies.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Aurel_Stodola",
+                  "pays": "SK",
+                  "classement": "Stodola, Aurel",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_stodola.jpg",
+                    "legende": "Aurel Stodola, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Auguste_Stodola.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_mucha",
+                  "axe": "Beaux-arts",
+                  "date": 1860,
+                  "titre": "Naissance d'Alfons Mucha",
+                  "description": "Alfons Mucha (1860-1939) est un peintre et un affichiste tchèque, né à Ivančice. Installé à Paris, il devient en 1894 le maître de l'Art nouveau grâce à ses affiches pour Sarah Bernhardt. De retour à Prague, il consacre seize ans à l'Épopée slave, vingt grandes toiles sur l'histoire des peuples slaves, et il meurt peu après un interrogatoire de la Gestapo.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Alfons_Mucha",
+                  "pays": "CZ",
+                  "classement": "Mucha, Alfons",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_mucha.jpg",
+                    "legende": "Alfons Mucha, photographie de 1906",
+                    "auteur": "George R. Lawrence Co., Chicago",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Alfons_Mucha_LOC_3c05828u_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_hlinka",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1864,
+                  "titre": "Naissance d'Andrej Hlinka",
+                  "description": "Andrej Hlinka (1864-1938) est un prêtre et un homme politique slovaque, né à Černová. Chef du Parti populaire slovaque, il réclame l'autonomie de la Slovaquie au sein de la Tchécoslovaquie. Il meurt en 1938, et son parti, devenu autonomiste, fait proclamer l'État slovaque l'année suivante.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Andrej_Hlinka",
+                  "pays": "SK",
+                  "classement": "Hlinka, Andrej",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_hlinka.jpg",
+                    "legende": "Andrej Hlinka, photographie de 1937",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Andrej_Hlinka_1937.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_murgas",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1864,
+                  "titre": "Naissance de Jozef Murgaš",
+                  "description": "Jozef Murgaš (1864-1929) est un prêtre, un inventeur et un peintre slovaque, né à Tajov. Émigré aux États-Unis, il met au point la radiotélégraphie et réalise en 1905 l'une des premières transmissions de la voix sans fil. Il meurt à Wilkes-Barre, en Pennsylvanie, en 1929.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jozef_Murga%C5%A1",
+                  "pays": "SK",
+                  "classement": "Murgaš, Jozef",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_murgas.jpg",
+                    "legende": "Jozef Murgaš, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Murgas2.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_horthy",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1868,
+                  "titre": "Naissance de Miklós Horthy",
+                  "description": "Miklós Horthy (1868-1957) est un amiral et un homme d'État hongrois, régent du royaume de Hongrie de 1920 à 1944. Son régime autoritaire s'allie à l'Allemagne nazie pour récupérer les territoires perdus au traité de Trianon, et adopte des lois antijuives. Contraint de partir en octobre 1944 après avoir tenté de sortir de la guerre, il meurt en exil au Portugal.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mikl%C3%B3s_Horthy",
+                  "pays": "HU",
+                  "classement": "Horthy, Miklós",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_horthy.jpg",
+                    "legende": "Miklós Horthy, photographie d'Adolf Szenes (1930)",
+                    "auteur": "Adolf Szenes",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Horthy_Mikl%C3%B3s_1930.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_kupka",
+                  "axe": "Beaux-arts",
+                  "date": 1871,
+                  "titre": "Naissance de František Kupka",
+                  "description": "František Kupka (1871-1957) est un peintre tchèque, né à Opočno. Installé à Paris en 1896, il compte parmi les pionniers de l'art abstrait, avec des toiles comme Amorpha, fugue à deux couleurs, en 1912. Il meurt à Puteaux, près de Paris.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Franti%C5%A1ek_Kupka",
+                  "pays": "CZ",
+                  "classement": "Kupka, František",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_kupka.jpg",
+                    "legende": "František Kupka, photographie de 1928",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Frantisek_Kupka_1928.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_plecnik",
+                  "axe": "Beaux-arts",
+                  "date": 1872,
+                  "titre": "Naissance de Jože Plečnik",
+                  "description": "Jože Plečnik (1872-1957) est un architecte slovène, né à Ljubljana. Formé à Vienne, il réaménage le château de Prague pour Masaryk, puis donne à sa ville natale son visage moderne, du Triple Pont à la Bibliothèque nationale. Son œuvre à Ljubljana est inscrite au patrimoine mondial de l'UNESCO.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jo%C5%BEe_Ple%C4%8Dnik",
+                  "pays": "SI",
+                  "classement": "Plečnik, Jože",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_plecnik.jpg",
+                    "legende": "Jože Plečnik à sa table de travail, image de 1943",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jo%C5%BEe_Ple%C4%8Dnik_(1943),_Zbirka_upodobitev_znanih_Slovencev_NUK.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_maister",
+                  "axe": "Guerres et résistances",
+                  "date": 1874,
+                  "titre": "Naissance de Rudolf Maister",
+                  "description": "Rudolf Maister (1874-1934) est un général et un poète slovène, né à Kamnik. En novembre 1918, il rassemble des volontaires et prend le contrôle de Maribor et de la Styrie du Sud, qu'il défend contre les Autrichiens. Son action permet à la Slovénie de conserver ces territoires dans le royaume des Serbes, Croates et Slovènes.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Rudolf_Maister",
+                  "pays": "SI",
+                  "classement": "Maister, Rudolf",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_maister.jpg",
+                    "legende": "Rudolf Maister, photographie de Fran Vesel (années 1910)",
+                    "auteur": "Fran Vesel",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Rudolf_Maister_1910s_(2).jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_karolyi",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1875,
+                  "titre": "Naissance de Mihály Károlyi",
+                  "description": "Mihály Károlyi (1875-1955) est un aristocrate et un homme d'État hongrois. Il dirige la révolution des Asters en octobre 1918 et proclame la République de Hongrie, mais la perte des territoires exigée par les Alliés précipite sa chute en mars 1919. Il vit ensuite en exil et meurt en 1955 à Vence.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mih%C3%A1ly_K%C3%A1rolyi",
+                  "pays": "HU",
+                  "classement": "Károlyi, Mihály",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_karolyi.jpg",
+                    "legende": "Mihály Károlyi, photographie de Révész et Bíró (1919)",
+                    "auteur": "Révész és Bíró",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:K%C3%A1rolyi_Mih%C3%A1ly_k%C3%B6zt%C3%A1rsas%C3%A1gi_eln%C3%B6k.png"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_bata",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1876,
+                  "titre": "Naissance de Tomáš Baťa",
+                  "description": "Tomáš Baťa (1876-1932) est un entrepreneur tchèque, né à Zlín. Fondateur de l'entreprise de chaussures qui porte son nom, il applique la production en série et construit à Zlín une ville ouvrière. Il meurt dans un accident d'avion en 1932.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Tom%C3%A1%C5%A1_Ba%C5%A5a",
+                  "pays": "CZ",
+                  "classement": "Baťa, Tomáš",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_bata.jpg",
+                    "legende": "Tomáš Baťa, photographie des années 1920",
+                    "auteur": "bata shoe company",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Tomas_Bata.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_cankar",
+                  "axe": "Littérature et pensée",
+                  "date": 1876,
+                  "titre": "Naissance d'Ivan Cankar",
+                  "description": "Ivan Cankar (1876-1918) est un écrivain slovène, né à Vrhnika. Romancier, dramaturge et essayiste, il décrit la misère des paysans et des ouvriers, notamment dans Le Valet Jernej et son droit. Il défend l'union des Slaves du Sud, et meurt à Ljubljana en décembre 1918.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ivan_Cankar",
+                  "pays": "SI",
+                  "classement": "Cankar, Ivan",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_cankar.jpg",
+                    "legende": "Ivan Cankar, photographie d'Avgust Berthold (1911)",
+                    "auteur": "Avgust Berthold",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ivan_Cankar_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_ady",
+                  "axe": "Littérature et pensée",
+                  "date": 1877,
+                  "titre": "Naissance d'Endre Ady",
+                  "description": "Endre Ady (1877-1919) est un poète hongrois, né à Érmindszent, aujourd'hui en Roumanie. Journaliste à Paris, il renouvelle la poésie hongroise avec le recueil Poèmes nouveaux, en 1906, et devient la voix de la modernité du groupe Nyugat. Il meurt à Budapest en 1919, à quarante et un ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Endre_Ady",
+                  "pays": "HU",
+                  "classement": "Ady, Endre",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_ady.jpg",
+                    "legende": "Endre Ady, photographie d'Aladár Székely (1908)",
+                    "auteur": "Aladár Székely",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ady_Endre_portr%C3%A9ja_(Sz%C3%A9kely_Alad%C3%A1r_felv%C3%A9tele).jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_molnar",
+                  "axe": "Littérature et pensée",
+                  "date": 1878,
+                  "titre": "Naissance de Ferenc Molnár",
+                  "description": "Ferenc Molnár (1878-1952) est un dramaturge et un romancier hongrois, né à Budapest. Son roman Les Garçons de la rue Pál, en 1907, et sa pièce Liliom, créée en 1909, le font connaître dans le monde entier. Exilé aux États-Unis en 1940, il y meurt en 1952.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ferenc_Moln%C3%A1r",
+                  "pays": "HU",
+                  "classement": "Molnár, Ferenc",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_molnar.jpg",
+                    "legende": "Ferenc Molnár, photographie de Carl Van Vechten (1941)",
+                    "auteur": "Carl Van Vechten",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ferenc_Moln%C3%A1r_1941.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_stefanik",
+                  "axe": "Guerres et résistances",
+                  "date": 1880,
+                  "titre": "Naissance de Milan Rastislav Štefánik",
+                  "description": "Milan Rastislav Štefánik (1880-1919) est un astronome, un général et un homme politique slovaque, né à Košariská. Aux côtés de Masaryk et de Beneš, il œuvre à Paris pour la création de la Tchécoslovaquie et organise les légions tchécoslovaques. Il meurt en mai 1919 dans l'accident de son avion, près de Bratislava.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Milan_Rastislav_%C5%A0tef%C3%A1nik",
+                  "pays": "SK",
+                  "classement": "Štefánik, Milan Rastislav",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_stefanik.jpg",
+                    "legende": "Milan Rastislav Štefánik, photographie d'avant 1919",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Milan_Rastislav_%C5%A0tef%C3%A1nik.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_bartok",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1881,
+                  "titre": "Naissance de Béla Bartók",
+                  "description": "Béla Bartók (1881-1945) est un compositeur et un pianiste hongrois, né à Nagyszentmiklós, aujourd'hui Sânnicolau Mare en Roumanie. Avec Kodály, il recueille des milliers de chansons populaires de Hongrie et des pays voisins, et en tire un langage moderne, du Château de Barbe-Bleue à la Musique pour cordes, percussion et célesta. Il quitte son pays devant le nazisme, vit pauvrement à New York et y meurt en 1945.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/B%C3%A9la_Bart%C3%B3k",
+                  "pays": "HU",
+                  "classement": "Bartók, Béla",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_bartok.jpg",
+                    "legende": "Béla Bartók, photographie de 1943",
+                    "auteur": "RIA Novosti",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:B%C3%A9la_Bart%C3%B3k_1943.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_kodaly",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1882,
+                  "titre": "Naissance de Zoltán Kodály",
+                  "description": "Zoltán Kodály (1882-1967) est un compositeur, un ethnomusicologue et un pédagogue hongrois, né à Kecskemét. Il recueille avec Bartók le répertoire des chansons populaires et compose Háry János ainsi que le Psalmus hungaricus. Sa méthode d'enseignement de la musique, fondée sur le chant, est suivie dans le monde entier.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Zolt%C3%A1n_Kod%C3%A1ly",
+                  "pays": "HU",
+                  "classement": "Kodály, Zoltán",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_kodaly.jpg",
+                    "legende": "Zoltán Kodály, photographie de Pál M. Vajda (1928)",
+                    "auteur": "Pál M. Vajda",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Zolt%C3%A1n_Kod%C3%A1ly_(1928,_P%C3%A1l_M._Vajda).jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_hasek",
+                  "axe": "Littérature et pensée",
+                  "date": 1883,
+                  "titre": "Naissance de Jaroslav Hašek",
+                  "description": "Jaroslav Hašek (1883-1923) est un écrivain tchèque, né à Prague. Humoriste, anarchiste et bohème, il laisse inachevé Les Aventures du brave soldat Chvéïk, roman satirique de la Première Guerre mondiale, publié à partir de 1921. Il meurt de maladie à quarante ans, et son personnage est l'un des plus connus de la littérature tchèque.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jaroslav_Ha%C5%A1ek",
+                  "pays": "CZ",
+                  "classement": "Hašek, Jaroslav",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_hasek.jpg",
+                    "legende": "Jaroslav Hašek, photographie de 1902",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%D0%AF%D1%80%D0%BE%D1%81%D0%BB%D0%B0%D0%B2_%D0%93%D0%B0%D1%88%D0%B5%D0%BA.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_benes",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1884,
+                  "titre": "Naissance d'Edvard Beneš",
+                  "description": "Edvard Beneš (1884-1948) est un homme d'État tchécoslovaque, ministre des Affaires étrangères de 1918 à 1935, puis président de la République. Il subit l'abandon des accords de Munich en 1938, dirige le gouvernement en exil à Londres et rentre à Prague en 1945. Après le coup de Prague de février 1948, il renonce à la présidence en juin, puis meurt en septembre.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Edvard_Bene%C5%A1",
+                  "pays": "CZ",
+                  "classement": "Beneš, Edvard",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_benes.jpg",
+                    "legende": "Edvard Beneš, photographie (vers 1942)",
+                    "auteur": "Auteur inconnu (Office of War Information)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Edvard_Bene%C5%A1.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_lukacs",
+                  "axe": "Littérature et pensée",
+                  "date": 1885,
+                  "titre": "Naissance de György Lukács",
+                  "description": "György Lukács (1885-1971) est un philosophe et un critique littéraire hongrois, né à Budapest. Marxiste, auteur d'Histoire et conscience de classe, publié en 1923, il influence profondément la pensée du XXe siècle. Ministre de la Culture d'Imre Nagy en 1956, il est brièvement déporté en Roumanie après l'échec de la révolution.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Gy%C3%B6rgy_Luk%C3%A1cs",
+                  "pays": "HU",
+                  "classement": "Lukács, György",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_lukacs.jpg",
+                    "legende": "György Lukács, photographie de Horst Sturm (1952)",
+                    "auteur": "Horst Sturm",
+                    "licence": "CC BY-SA 3.0 DE",
+                    "source": "https://commons.wikimedia.org/wiki/File:Luk%C3%A1cs_Gy%C3%B6rgy.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_jmasaryk",
+                  "axe": "Guerres et résistances",
+                  "date": 1886,
+                  "titre": "Naissance de Jan Masaryk",
+                  "description": "Jan Masaryk (1886-1948) est un diplomate tchécoslovaque, fils du président Tomáš Masaryk, né à Prague. Ambassadeur à Londres puis ministre des Affaires étrangères du gouvernement en exil, il reste en poste après le coup de Prague de 1948. Il est retrouvé mort dans la cour du palais Czernin, en mars 1948, dans des circonstances jamais élucidées.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jan_Masaryk",
+                  "pays": "CZ",
+                  "classement": "Masaryk, Jan",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_jmasaryk.jpg",
+                    "legende": "Jan Masaryk, photographie d'avant 1948",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jan_Masaryk_.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_kun",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1886,
+                  "titre": "Naissance de Béla Kun",
+                  "description": "Béla Kun (1886-1938) est un révolutionnaire hongrois, né en Transylvanie. Chef du Parti communiste de Hongrie, il instaure en mars 1919 la République des conseils, qui dure cent trente-trois jours avant de tomber devant l'armée roumaine. Réfugié à Moscou, il est arrêté et exécuté pendant les purges de 1938.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/B%C3%A9la_Kun",
+                  "pays": "HU",
+                  "classement": "Kun, Béla",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_kun.jpg",
+                    "legende": "Béla Kun, photographie de Gyula Jelfy (1919)",
+                    "auteur": "Gyula Jelfy",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Bela-kun--outlawsdiary00tormuoft.png"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_tiso",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1887,
+                  "titre": "Naissance de Jozef Tiso",
+                  "description": "Jozef Tiso (1887-1947) est un prêtre et un homme politique slovaque, né à Bytča. Président de l'État slovaque, satellite de l'Allemagne nazie, de 1939 à 1945, il collabore avec Hitler et laisse déporter près de soixante mille Juifs. Condamné à mort pour trahison et crimes contre l'humanité, il est pendu à Bratislava en 1947.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jozef_Tiso",
+                  "pays": "SK",
+                  "classement": "Tiso, Jozef",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_tiso.jpg",
+                    "legende": "Jozef Tiso, photographie des archives fédérales allemandes (vers 1936)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "CC BY-SA 3.0 DE",
+                    "source": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_146-2010-0049,_Josef_Tiso.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_capek",
+                  "axe": "Littérature et pensée",
+                  "date": 1890,
+                  "titre": "Naissance de Karel Čapek",
+                  "description": "Karel Čapek (1890-1938) est un écrivain tchèque, né à Malé Svatoňovice. Dans sa pièce R.U.R., en 1920, il invente le mot « robot », et il écrit aussi La Guerre des salamandres et des romans contre le fascisme. Proche de Masaryk, il meurt de pneumonie en décembre 1938, peu après les accords de Munich.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Karel_%C4%8Capek",
+                  "pays": "CZ",
+                  "classement": "Čapek, Karel",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_capek.jpg",
+                    "legende": "Karel Čapek, photographie d'avant 1938",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Karel_%C4%8Capek.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_heyrovsky",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1890,
+                  "titre": "Naissance de Jaroslav Heyrovský",
+                  "description": "Jaroslav Heyrovský (1890-1967) est un chimiste tchèque, né à Prague. Il invente en 1922 la polarographie, une méthode d'analyse électrochimique, qui lui vaut le prix Nobel de chimie en 1959. Il fonde l'institut de polarographie de Prague.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jaroslav_Heyrovsk%C3%BD",
+                  "pays": "CZ",
+                  "classement": "Heyrovský, Jaroslav",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_heyrovsky.jpg",
+                    "legende": "Jaroslav Heyrovský, photographie",
+                    "auteur": "Archives de l'Institut Heyrovský",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Heyrovsky_Jaroslav.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_martinu",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1890,
+                  "titre": "Naissance de Bohuslav Martinů",
+                  "description": "Bohuslav Martinů (1890-1959) est un compositeur tchèque, né à Polička. Il vit à Paris de 1923 à 1940, où il étudie auprès d'Albert Roussel, puis aux États-Unis, et laisse six symphonies et de nombreux opéras. Exilé, il ne revient jamais en Tchécoslovaquie et meurt en Suisse.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bohuslav_Martin%C5%AF",
+                  "pays": "CZ",
+                  "classement": "Martinů, Bohuslav",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_martinu.jpg",
+                    "legende": "Bohuslav Martinů, photographie de 1945",
+                    "auteur": "Auteur inconnu",
+                    "licence": "CC BY-SA 3.0 CZ",
+                    "source": "https://commons.wikimedia.org/wiki/File:Martinu_1945.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_potocnik",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1892,
+                  "titre": "Naissance d'Herman Potočnik",
+                  "description": "Herman Potočnik (1892-1929) est un ingénieur d'origine slovène, né à Pula, en Istrie. Sous le nom de Hermann Noordung, il publie en 1929 Le Problème de la locomotion spatiale, qui décrit la station spatiale en rotation. Il meurt de la tuberculose à Vienne la même année.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Herman_Poto%C4%8Dnik",
+                  "pays": "SI",
+                  "classement": "Potočnik, Herman",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_potocnik.jpg",
+                    "legende": "Herman Potočnik, photographie d'avant 1929",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Herman_Potocnik_Noordung.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_hudec",
+                  "axe": "Beaux-arts",
+                  "date": 1893,
+                  "titre": "Naissance de Ladislav Hudec",
+                  "description": "Ladislav Hudec (1893-1958) est un architecte slovaque, né à Banská Bystrica. Installé à Shanghai en 1918, il y construit une quarantaine de bâtiments, dont le Park Hotel, plus haut gratte-ciel d'Asie en 1934. Il quitte la Chine en 1947 et meurt en Californie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ladislav_Hudec",
+                  "pays": "SK",
+                  "classement": "Hudec, Ladislav",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_hudec.jpg",
+                    "legende": "Ladislav Hudec, photographie (vers 1921)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Hugyecz_L%C3%A1szl%C3%B3.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_szentgyorgyi",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1893,
+                  "titre": "Naissance d'Albert Szent-Györgyi",
+                  "description": "Albert Szent-Györgyi (1893-1986) est un biochimiste hongrois, né à Budapest. Professeur à Szeged, il isole la vitamine C et reçoit le prix Nobel de physiologie ou médecine en 1937. Opposant au nazisme, il émigre aux États-Unis en 1947 et poursuit ses recherches sur la contraction musculaire.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Albert_Szent-Gy%C3%B6rgyi",
+                  "pays": "HU",
+                  "classement": "Szent-Györgyi, Albert",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_szentgyorgyi.jpg",
+                    "legende": "Albert Szent-Györgyi, photographie de J. W. McGuire (vers 1948)",
+                    "auteur": "J.W. McGuire",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Albert_Szent-Gy%C3%B6rgyi.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_akertesz",
+                  "axe": "Beaux-arts",
+                  "date": 1894,
+                  "titre": "Naissance d'André Kertész",
+                  "description": "André Kertész (1894-1985) est un photographe hongrois, né à Budapest. Installé à Paris en 1925, il invente un regard poétique sur la rue, ses ombres et ses cadrages inattendus, qui marque Henri Cartier-Bresson. Émigré à New York en 1936, il y poursuit sa carrière et y meurt en 1985.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Andr%C3%A9_Kert%C3%A9sz",
+                  "pays": "HU",
+                  "classement": "Kertész, André",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_akertesz.jpg",
+                    "legende": "André Kertész, photographie de 1982",
+                    "auteur": "Arpadi",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kertesz.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_moholy",
+                  "axe": "Beaux-arts",
+                  "date": 1895,
+                  "titre": "Naissance de László Moholy-Nagy",
+                  "description": "László Moholy-Nagy (1895-1946) est un artiste et un théoricien hongrois, né à Bácsborsód. Professeur au Bauhaus de 1923 à 1928, il explore la photographie, le cinéma et la sculpture cinétique. Émigré aux États-Unis en 1937, il fonde le New Bauhaus de Chicago et y meurt en 1946.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Moholy-Nagy",
+                  "pays": "HU",
+                  "classement": "Moholy-Nagy, László",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_moholy.jpg",
+                    "legende": "László Moholy-Nagy, photographie de Hugo Erfurth (vers 1930)",
+                    "auteur": "Hugo Erfurth",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:L%C3%A1szl%C3%B3_Moholy-Nagy_by_Hugo_Erfurth,_c._1930_.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_svoboda",
+                  "axe": "Guerres et résistances",
+                  "date": 1895,
+                  "titre": "Naissance de Ludvík Svoboda",
+                  "description": "Ludvík Svoboda (1895-1979) est un général et un homme d'État tchécoslovaque, né à Hroznatín. Il commande le corps d'armée tchécoslovaque qui combat aux côtés des Soviétiques, puis est élu président en 1968. Il soutient Dubček pendant le Printemps de Prague, mais accepte la « normalisation » imposée après l'intervention soviétique d'août 1968.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ludv%C3%ADk_Svoboda",
+                  "pays": "CZ",
+                  "classement": "Svoboda, Ludvík",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_svoboda.jpg",
+                    "legende": "Ludvík Svoboda, photographie de 1948",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ludv%C3%ADk_Svoboda_(Prvn%C3%AD_vl%C3%A1da_%C3%BAstavy_dev%C3%A1t%C3%A9ho_kv%C4%9Btna).jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_gottwald",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1896,
+                  "titre": "Naissance de Klement Gottwald",
+                  "description": "Klement Gottwald (1896-1953) est un dirigeant communiste tchécoslovaque, né à Dědice. Chef du Parti communiste, il devient Premier ministre en 1946, puis prend le pouvoir par le coup de Prague de février 1948. Président de la République de 1948 à sa mort, il impose le modèle stalinien et laisse derrière lui des procès politiques et des milliers de condamnés.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Klement_Gottwald",
+                  "pays": "CZ",
+                  "classement": "Gottwald, Klement",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_gottwald.jpg",
+                    "legende": "Klement Gottwald, photographie de 1946",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Klement-Gottwald-01210627.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_nagy",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1896,
+                  "titre": "Naissance d'Imre Nagy",
+                  "description": "Imre Nagy (1896-1958) est un homme d'État communiste hongrois, deux fois président du Conseil des ministres. Appelé à la tête du gouvernement lors de la révolution d'octobre 1956, il annonce la sortie de la Hongrie du pacte de Varsovie et la neutralité du pays. Arrêté après l'intervention soviétique, il est jugé en secret et pendu en juin 1958 ; ses funérailles solennelles ont lieu en 1989.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Imre_Nagy",
+                  "pays": "HU",
+                  "classement": "Nagy, Imre",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_nagy.jpg",
+                    "legende": "Imre Nagy, photographie d'identité (1945)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Nagy_Imre_igazolv%C3%A1nyk%C3%A9p.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_stukelj",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1898,
+                  "titre": "Naissance de Leon Štukelj",
+                  "description": "Leon Štukelj (1898-1999) est un gymnaste slovène, né à Novo Mesto. Il remporte six médailles olympiques entre 1924 et 1936, dont trois d'or. Il meurt en 1999 à cent ans, doyen des champions olympiques.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Leon_%C5%A0tukelj",
+                  "pays": "SI",
+                  "classement": "Štukelj, Leon",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_stukelj.jpg",
+                    "legende": "Leon Štukelj, photographie de 1958",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Leon_%C5%A0tukelj_1958.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_szilard",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1898,
+                  "titre": "Naissance de Leó Szilárd",
+                  "description": "Leó Szilárd (1898-1964) est un physicien hongrois, né à Budapest. Il conçoit en 1933 la réaction nucléaire en chaîne, puis inspire avec Einstein la lettre de 1939 qui alerte le président Roosevelt sur la bombe atomique. Après Hiroshima, il milite contre les armes nucléaires.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Le%C3%B3_Szil%C3%A1rd",
+                  "pays": "HU",
+                  "classement": "Szilárd, Leó",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_szilard.jpg",
+                    "legende": "Leó Szilárd, photographie du Département américain de l'Énergie",
+                    "auteur": "U.S. Department of Energy",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Leo_Szilard.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_biro",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1899,
+                  "titre": "Naissance de László Bíró",
+                  "description": "László Bíró (1899-1985) est un journaliste et un inventeur hongrois, né à Budapest. Il met au point à la fin des années 1930 le stylo à bille, qui emploie une encre épaisse qui sèche vite, et le brevète en 1938. Émigré en Argentine en 1940, il y fonde l'entreprise qui lance son stylo, et meurt à Buenos Aires.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/L%C3%A1szl%C3%B3_B%C3%ADr%C3%B3",
+                  "pays": "HU",
+                  "classement": "Bíró, László",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_biro.jpg",
+                    "legende": "László Bíró, photographie des années 1950",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Laszlo_biro_inventor.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_marai",
+                  "axe": "Littérature et pensée",
+                  "date": 1900,
+                  "titre": "Naissance de Sándor Márai",
+                  "description": "Sándor Márai (1900-1989) est un écrivain hongrois, né à Kassa, aujourd'hui Košice en Slovaquie. Auteur des Braises, publié en 1942, et de nombreux romans de la bourgeoisie hongroise, il quitte son pays en 1948 devant le régime communiste. Exilé en Italie puis aux États-Unis, il se suicide à San Diego et connaît un succès mondial après 1990.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/S%C3%A1ndor_M%C3%A1rai",
+                  "pays": "HU",
+                  "classement": "Márai, Sándor",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_marai.jpg",
+                    "legende": "Sándor Márai, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:S%C3%A1ndor_M%C3%A1rai.png"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_horakova",
+                  "axe": "Guerres et résistances",
+                  "date": 1901,
+                  "titre": "Naissance de Milada Horáková",
+                  "description": "Milada Horáková (1901-1950) est une juriste et une femme politique tchécoslovaque, née à Prague. Résistante, emprisonnée par les nazis à Terezín, elle devient députée après la guerre et s'oppose à la prise du pouvoir communiste. Condamnée à mort lors d'un procès-spectacle, malgré les appels internationaux, elle est pendue en juin 1950.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Milada_Hor%C3%A1kov%C3%A1",
+                  "pays": "CZ",
+                  "classement": "Horáková, Milada",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_horakova.jpg",
+                    "legende": "Milada Horáková, photographie d'identité (1949)",
+                    "auteur": "ABS",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Milada_Hor%C3%A1kov%C3%A1_(identifika%C4%8Dn%C3%AD_fotografie).jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_seifert",
+                  "axe": "Littérature et pensée",
+                  "date": 1901,
+                  "titre": "Naissance de Jaroslav Seifert",
+                  "description": "Jaroslav Seifert (1901-1986) est un poète tchèque, né à Žižkov, un quartier de Prague. Fondateur du groupe d'avant-garde Devětsil, il évolue vers une poésie plus simple, consacrée à Prague, à l'amour et à la mémoire. Signataire de la Charte 77, il reçoit le prix Nobel de littérature en 1984.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jaroslav_Seifert",
+                  "pays": "CZ",
+                  "classement": "Seifert, Jaroslav",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_seifert.jpg",
+                    "legende": "Jaroslav Seifert, photographie de Hana Hamplová (1981)",
+                    "auteur": "Hana Hamplová",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jaroslav_Seifert_1981_foto_Hana_Hamplov%C3%A1.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_breuer",
+                  "axe": "Beaux-arts",
+                  "date": 1902,
+                  "titre": "Naissance de Marcel Breuer",
+                  "description": "Marcel Breuer (1902-1981) est un architecte et un designer hongrois, né à Pécs. Formé au Bauhaus, il invente en 1925 la chaise Wassily, premier fauteuil en tube d'acier. Installé aux États-Unis, il enseigne à Harvard et conçoit le musée Whitney de New York ainsi que le siège de l'UNESCO à Paris.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Marcel_Breuer",
+                  "pays": "HU",
+                  "classement": "Breuer, Marcel",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_breuer.jpg",
+                    "legende": "Marcel Breuer, photographie d'Anefo (1957)",
+                    "auteur": "Herbert Behrens / Anefo",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Marcel_Breuer_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_wigner",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1902,
+                  "titre": "Naissance d'Eugene Wigner",
+                  "description": "Eugene Wigner (1902-1995) est un physicien hongrois, né à Budapest. Il applique la théorie des groupes à la mécanique quantique, collabore au projet Manhattan et reçoit le prix Nobel de physique en 1963. Installé à Princeton, il meurt aux États-Unis.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Eugene_Wigner",
+                  "pays": "HU",
+                  "classement": "Wigner, Eugene",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_wigner.jpg",
+                    "legende": "Eugene Wigner, photographie de la fondation Nobel (1963)",
+                    "auteur": "Nobel foundation",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Wigner.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_neumann",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1903,
+                  "titre": "Naissance de John von Neumann",
+                  "description": "John von Neumann (1903-1957) est un mathématicien et un physicien hongrois, né à Budapest. Génie précoce, il fonde la théorie des jeux, fixe l'architecture des ordinateurs encore utilisée aujourd'hui et participe au projet Manhattan. Installé aux États-Unis, il meurt d'un cancer à cinquante-trois ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/John_von_Neumann",
+                  "pays": "HU",
+                  "classement": "Neumann, John von",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_neumann.jpg",
+                    "legende": "John von Neumann, photographie",
+                    "auteur": "wikispaces",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:John_von_Neumann.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_kosovel",
+                  "axe": "Littérature et pensée",
+                  "date": 1904,
+                  "titre": "Naissance de Srečko Kosovel",
+                  "description": "Srečko Kosovel (1904-1926) est un poète slovène, né à Sežana. Mort à vingt-deux ans, il laisse des vers d'avant-garde, ses « Constructions », découverts après sa mort. Longtemps méconnu, il est considéré comme l'un des grands poètes slovènes du XXe siècle.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sre%C4%8Dko_Kosovel",
+                  "pays": "SI",
+                  "classement": "Kosovel, Srečko",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_kosovel.jpg",
+                    "legende": "Srečko Kosovel, photographie des années 1920",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Sre%C4%8Dko_Kosovel_1920s.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_jozsef",
+                  "axe": "Littérature et pensée",
+                  "date": 1905,
+                  "titre": "Naissance d'Attila József",
+                  "description": "Attila József (1905-1937) est un poète hongrois, né à Budapest dans une famille pauvre. Il publie des recueils comme Pas de père, pas de mère, en 1929, où la misère sociale et la solitude s'expriment dans une grande rigueur formelle. Il se jette sous un train à vingt-neuf ans, et la date de sa naissance, le 11 avril, est célébrée comme Journée de la poésie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Attila_J%C3%B3zsef",
+                  "pays": "HU",
+                  "classement": "József, Attila",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_jozsef.jpg",
+                    "legende": "Attila József, photographie de Nándor Homonnai",
+                    "auteur": "Nándor Homonnai",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Homonnai_J%C3%B3zsef_Attila.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_teller",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1908,
+                  "titre": "Naissance d'Edward Teller",
+                  "description": "Edward Teller (1908-2003) est un physicien hongrois, né à Budapest. Émigré aux États-Unis, il participe au projet Manhattan puis dirige les recherches sur la bombe à hydrogène, dont on le surnomme le père. Il témoigne en 1954 contre Robert Oppenheimer, ce qui lui vaut l'hostilité de beaucoup de ses collègues.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Edward_Teller",
+                  "pays": "HU",
+                  "classement": "Teller, Edward",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_teller.jpg",
+                    "legende": "Edward Teller, photographie de 1958",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:EdwardTeller1958.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_kardelj",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1910,
+                  "titre": "Naissance d'Edvard Kardelj",
+                  "description": "Edvard Kardelj (1910-1979) est un dirigeant communiste yougoslave, né à Ljubljana. Compagnon de Tito, il est l'idéologue du régime et l'architecte de l'autogestion et de la Constitution de 1974. Il est le plus important dirigeant slovène de la Yougoslavie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Edvard_Kardelj",
+                  "pays": "SI",
+                  "classement": "Kardelj, Edvard",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_kardelj.jpg",
+                    "legende": "Edvard Kardelj, photographie de 1959",
+                    "auteur": "Photographe inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Edvard_Kardelj_in_1959.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_gabcik",
+                  "axe": "Guerres et résistances",
+                  "date": 1912,
+                  "titre": "Naissance de Jozef Gabčík",
+                  "description": "Jozef Gabčík (1912-1942) est un soldat tchécoslovaque, né à Poluvsie. Parachuté en 1941, il tente avec Jan Kubiš d'assassiner le Reichsprotektor Heydrich, le 27 mai 1942. Réfugié dans la crypte de l'église Saints-Cyrille-et-Méthode à Prague, il y meurt en juin 1942 avec ses camarades.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jozef_Gab%C4%8D%C3%ADk",
+                  "pays": "SK",
+                  "classement": "Gabčík, Jozef",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_gabcik.jpg",
+                    "legende": "Jozef Gabčík, photographie de 1941",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jozef_Gab%C4%8D%C3%ADk.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_kadar",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1912,
+                  "titre": "Naissance de János Kádár",
+                  "description": "János Kádár (1912-1989) est un dirigeant communiste hongrois, premier secrétaire du Parti de 1956 à 1988. Installé au pouvoir par les chars soviétiques après l'écrasement de la révolution de 1956, il réprime d'abord durement l'opposition, puis adopte un « communisme du goulasch », plus souple et plus prospère. Écarté de la direction en 1988, il meurt l'année suivante.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/J%C3%A1nos_K%C3%A1d%C3%A1r",
+                  "pays": "HU",
+                  "classement": "Kádár, János",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_kadar.jpg",
+                    "legende": "János Kádár, photographie de 1962",
+                    "auteur": "Auteur inconnu",
+                    "licence": "CC BY-SA 3.0 NL",
+                    "source": "https://commons.wikimedia.org/wiki/File:J%C3%A1nos_K%C3%A1d%C3%A1r_1962.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_capa",
+                  "axe": "Beaux-arts",
+                  "date": 1913,
+                  "titre": "Naissance de Robert Capa",
+                  "description": "Robert Capa (1913-1954) est un photographe de guerre hongrois, né Endre Friedmann à Budapest. Il couvre la guerre civile espagnole, puis le débarquement de Normandie en 1944, et fonde l'agence Magnum Photos en 1947. Il meurt en 1954 en Indochine, en marchant sur une mine.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Robert_Capa",
+                  "pays": "HU",
+                  "classement": "Capa, Robert",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_capa.jpg",
+                    "legende": "Robert Capa, photographie de 1938 conservée au Rijksmuseum",
+                    "auteur": "Rijksmuseum",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:War_photographer_Robert_Capa_during_the_Chinese-Japanese_war,_RP-F-2012-140_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_erdos",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1913,
+                  "titre": "Naissance de Paul Erdős",
+                  "description": "Paul Erdős (1913-1996) est un mathématicien hongrois, né à Budapest. Voyageur sans domicile fixe, il publie environ mille cinq cents articles avec plus de cinq cents coauteurs, en combinatoire, en théorie des nombres et en théorie des graphes. Il meurt à Varsovie en 1996, lors d'un congrès.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Paul_Erd%C5%91s",
+                  "pays": "HU",
+                  "classement": "Erdős, Paul",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_erdos.jpg",
+                    "legende": "Paul Erdős, photographie de 1992",
+                    "auteur": "Kmhkmh",
+                    "licence": "CC BY 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Erdos_budapest_fall_1992.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_kubis",
+                  "axe": "Guerres et résistances",
+                  "date": 1913,
+                  "titre": "Naissance de Jan Kubiš",
+                  "description": "Jan Kubiš (1913-1942) est un soldat tchécoslovaque, né à Dolní Vilémovice. Parachuté de Grande-Bretagne en 1941 avec Jozef Gabčík, il lance la grenade qui blesse mortellement le Reichsprotektor Reinhard Heydrich à Prague, le 27 mai 1942. Il meurt avec ses camarades dans l'église Saints-Cyrille-et-Méthode, assiégée par la SS.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jan_Kubi%C5%A1",
+                  "pays": "CZ",
+                  "classement": "Kubiš, Jan",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_kubis.jpg",
+                    "legende": "Jan Kubiš, photographie de 1941",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jan_Kubi%C5%A1.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_pahor",
+                  "axe": "Littérature et pensée",
+                  "date": 1913,
+                  "titre": "Naissance de Boris Pahor",
+                  "description": "Boris Pahor (1913-2022) est un écrivain slovène d'Italie, né à Trieste. Déporté à Dachau, au Struthof et à Bergen-Belsen, il raconte son expérience dans Pèlerin parmi les ombres, publié en 1967 et connu en français sous le titre Nécropolis. Il dénonce aussi l'italianisation forcée de la minorité slovène sous le fascisme.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Boris_Pahor",
+                  "pays": "SI",
+                  "classement": "Pahor, Boris",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_pahor.jpg",
+                    "legende": "Boris Pahor, photographie de Claude Truong-Ngoc (2015)",
+                    "auteur": "Photo Claude TRUONG-NGOC",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Boris_Pahor_par_Claude_Truong-Ngoc_juin_2015.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_wichterle",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1913,
+                  "titre": "Naissance d'Otto Wichterle",
+                  "description": "Otto Wichterle (1913-1998) est un chimiste tchèque, né à Prostějov. Il met au point en 1959 un hydrogel transparent, avec lequel il fabrique les premières lentilles de contact souples. Chassé de son institut en 1970, il est réhabilité après 1989.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Otto_Wichterle",
+                  "pays": "CZ",
+                  "classement": "Wichterle, Otto",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_wichterle.jpg",
+                    "legende": "Otto Wichterle, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "CC BY-SA 3.0 CZ",
+                    "source": "https://commons.wikimedia.org/wiki/File:Prof._Ing._RTDr._Otto_Wichterle.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_hrabal",
+                  "axe": "Littérature et pensée",
+                  "date": 1914,
+                  "titre": "Naissance de Bohumil Hrabal",
+                  "description": "Bohumil Hrabal (1914-1997) est un écrivain tchèque, né à Brno. Auteur de Trains étroitement surveillés et de Moi qui ai servi le roi d'Angleterre, il tire la matière de son œuvre des conversations d'auberge et de la vie ordinaire. Interdit sous le régime communiste, il meurt à Prague en tombant d'une fenêtre d'hôpital.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bohumil_Hrabal",
+                  "pays": "CZ",
+                  "classement": "Hrabal, Bohumil",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_hrabal.jpg",
+                    "legende": "Bohumil Hrabal, photographie de Hana Hamplová (1985)",
+                    "auteur": "Hana Hamplova",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Bohumil_Hrabal_1985_%C4%8Desk%C3%BD_spisovatel_foto_Hana_Hamplov%C3%A1.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_maleter",
+                  "axe": "Guerres et résistances",
+                  "date": 1917,
+                  "titre": "Naissance de Pál Maléter",
+                  "description": "Pál Maléter (1917-1958) est un officier hongrois, ministre de la Défense du gouvernement d'Imre Nagy en 1956. Envoyé combattre les insurgés, il passe de leur côté et prend la tête de la résistance armée de Budapest. Arrêté lors de négociations avec les Soviétiques, il est exécuté en juin 1958 avec Imre Nagy.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/P%C3%A1l_Mal%C3%A9ter",
+                  "pays": "HU",
+                  "classement": "Maléter, Pál",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_maleter.jpg",
+                    "legende": "Pál Maléter, photographie de 1956",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mal%C3%A9ter_P%C3%A1l_portr%C3%A9.png"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_dubcek",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1921,
+                  "titre": "Naissance d'Alexander Dubček",
+                  "description": "Alexander Dubček (1921-1992) est un homme d'État tchécoslovaque, né à Uhrovec en Slovaquie. Premier secrétaire du Parti communiste en janvier 1968, il engage le Printemps de Prague, un « socialisme à visage humain ». L'intervention soviétique d'août 1968 l'écarte du pouvoir, et il revient en 1989 comme président du Parlement.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Alexander_Dub%C4%8Dek",
+                  "pays": "SK",
+                  "classement": "Dubček, Alexander",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_dubcek.jpg",
+                    "legende": "Alexander Dubček, photographie de Fortepan (1990)",
+                    "auteur": "Fortepan/Szalay Zoltán",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Dub%C4%8Dek_in_1990_(Fortepan_138485).jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_zatopek",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1922,
+                  "titre": "Naissance d'Emil Zátopek",
+                  "description": "Emil Zátopek (1922-2000) est un athlète tchécoslovaque, né à Kopřivnice. Il remporte en 1952, aux Jeux d'Helsinki, les médailles d'or du 5 000 mètres, du 10 000 mètres et du marathon, exploit encore inégalé. Soutien du Printemps de Prague, il est exclu de l'armée et travaille comme manœuvre sous le régime de la « normalisation ».",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Emil_Z%C3%A1topek",
+                  "pays": "CZ",
+                  "classement": "Zátopek, Emil",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_zatopek.jpg",
+                    "legende": "Emil Zátopek, photographie de la Fotothek allemande",
+                    "auteur": "Roger Rössing (Deutsche Fotothek)",
+                    "licence": "CC BY-SA 3.0 DE",
+                    "source": "https://commons.wikimedia.org/wiki/File:Fotothek_df_roe-neg_0006305_003_Emil_Z%C3%A1topek-2.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_ligeti",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1923,
+                  "titre": "Naissance de György Ligeti",
+                  "description": "György Ligeti (1923-2006) est un compositeur hongrois, né à Dicsőszentmárton, aujourd'hui Târnăveni en Roumanie. Il quitte la Hongrie en 1956 et crée à Vienne et à Hambourg une musique de masses sonores, comme Atmosphères, qu'utilise Stanley Kubrick dans 2001, l'odyssée de l'espace. Naturalisé autrichien, il reste l'un des compositeurs les plus influents de l'après-guerre.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Gy%C3%B6rgy_Ligeti",
+                  "pays": "HU",
+                  "classement": "Ligeti, György",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_ligeti.jpg",
+                    "legende": "György Ligeti, photographie de Marcel Antonisse (1984)",
+                    "auteur": "Marcel Antonisse / Anefo",
+                    "licence": "CC BY-SA 3.0 NL",
+                    "source": "https://commons.wikimedia.org/wiki/File:Gy%C3%B6rgy_Ligeti_(1984).jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_puskas",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1927,
+                  "titre": "Naissance de Ferenc Puskás",
+                  "description": "Ferenc Puskás (1927-2006) est un footballeur hongrois, né à Budapest. Capitaine de l'équipe de Hongrie qui bat l'Angleterre 6-3 à Wembley en 1953 et perd la finale de la Coupe du monde 1954, il devient ensuite l'un des grands joueurs du Real Madrid. Le prix de la FIFA du plus beau but de l'année porte son nom.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ferenc_Pusk%C3%A1s",
+                  "pays": "HU",
+                  "classement": "Puskás, Ferenc",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_puskas.jpg",
+                    "legende": "Ferenc Puskás, photographie de 1971",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Puskas_(1971).tif"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_kertesz",
+                  "axe": "Littérature et pensée",
+                  "date": 1929,
+                  "titre": "Naissance d'Imre Kertész",
+                  "description": "Imre Kertész (1929-2016) est un écrivain hongrois, né à Budapest dans une famille juive. Déporté à Auschwitz puis à Buchenwald à quinze ans, il tire de cette expérience le roman Être sans destin, publié en 1975. Il reçoit le prix Nobel de littérature en 2002.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Imre_Kert%C3%A9sz",
+                  "pays": "HU",
+                  "classement": "Kertész, Imre",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_kertesz.jpg",
+                    "legende": "Imre Kertész, photographie d'Aliona Frankl",
+                    "auteur": "Aliona Frankl",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kert%C3%A9sz_Imre_(Frankl_Aliona).jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_kundera",
+                  "axe": "Littérature et pensée",
+                  "date": 1929,
+                  "titre": "Naissance de Milan Kundera",
+                  "description": "Milan Kundera (1929-2023) est un écrivain tchèque, né à Brno. Après La Plaisanterie, en 1967, et l'écrasement du Printemps de Prague, il s'installe en France en 1975, où il écrit L'Insoutenable Légèreté de l'être, en 1984. Devenu citoyen français en 1981, il retrouve sa nationalité tchèque en 2019 et meurt à Paris.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Milan_Kundera",
+                  "pays": "CZ",
+                  "classement": "Kundera, Milan",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_kundera.jpg",
+                    "legende": "Milan Kundera, photographie d'Elisa Cabot (2013)",
+                    "auteur": "Elisa Cabot",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Milan_Kundera_redux.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_forman",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1932,
+                  "titre": "Naissance de Miloš Forman",
+                  "description": "Miloš Forman (1932-2018) est un cinéaste tchèque, né à Čáslav. Figure de la Nouvelle Vague tchèque, il tourne Les Amours d'une blonde, puis s'exile aux États-Unis après 1968. Il y réalise Vol au-dessus d'un nid de coucou et Amadeus, qui lui valent deux Oscars de la mise en scène.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Milo%C5%A1_Forman",
+                  "pays": "CZ",
+                  "classement": "Forman, Miloš",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_forman.jpg",
+                    "legende": "Miloš Forman, photographie de 2009",
+                    "auteur": "Petr Novák",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Milos_Forman.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_havel",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1936,
+                  "titre": "Naissance de Václav Havel",
+                  "description": "Václav Havel (1936-2011) est un dramaturge et un homme d'État tchèque, né à Prague. Signataire de la Charte 77, il passe plusieurs années en prison, puis dirige la révolution de velours de 1989. Dernier président de la Tchécoslovaquie, puis premier président de la République tchèque, il fait de la morale le cœur de la politique.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/V%C3%A1clav_Havel",
+                  "pays": "CZ",
+                  "classement": "Havel, Václav",
+                  "biographie": "bio_havel",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_havel.jpg",
+                    "legende": "Václav Havel, photographie de Lenke Szilágyi",
+                    "auteur": "Lenke Szilágyi",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:V%C3%A1clav_Havel-Szil%C3%A1gyi.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_gott",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1939,
+                  "titre": "Naissance de Karel Gott",
+                  "description": "Karel Gott (1939-2019) est un chanteur tchèque, né à Plzeň. Surnommé le « Rossignol d'or de Prague », il est pendant plus de cinquante ans la voix la plus populaire de Tchécoslovaquie. Il enregistre aussi en allemand et chante le générique de L'Abeille Maya.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Karel_Gott",
+                  "pays": "CZ",
+                  "classement": "Gott, Karel",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_gott.jpg",
+                    "legende": "Karel Gott, photographie de David Sedlecký (2016)",
+                    "auteur": "David Sedlecký",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:K_GOTT_PRAHA_2016.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_caslavska",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1942,
+                  "titre": "Naissance de Věra Čáslavská",
+                  "description": "Věra Čáslavská (1942-2016) est une gymnaste tchécoslovaque, née à Prague. Elle remporte sept médailles d'or olympiques entre 1964 et 1968 et domine la gymnastique mondiale. Signataire du manifeste des Deux mille mots en 1968, elle est privée de travail pendant les années de normalisation.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/V%C4%9Bra_%C4%8C%C3%A1slavsk%C3%A1",
+                  "pays": "CZ",
+                  "classement": "Čáslavská, Věra",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_caslavska.jpg",
+                    "legende": "Věra Čáslavská, photographie d'Anefo (1967)",
+                    "auteur": "Nizozemský archiv",
+                    "licence": "CC BY-SA 3.0 NL",
+                    "source": "https://commons.wikimedia.org/wiki/File:Vera_Caslavska.JPG"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_palach",
+                  "axe": "Guerres et résistances",
+                  "date": 1948,
+                  "titre": "Naissance de Jan Palach",
+                  "description": "Jan Palach (1948-1969) est un étudiant tchécoslovaque, né à Všetaty. Pour protester contre l'écrasement du Printemps de Prague et la résignation de ses compatriotes, il s'immole par le feu sur la place Venceslas, à Prague, le 16 janvier 1969. Il meurt trois jours plus tard, et ses obsèques rassemblent des centaines de milliers de personnes.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jan_Palach",
+                  "pays": "CZ",
+                  "classement": "Palach, Jan",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_palach.jpg",
+                    "legende": "Jan Palach, buste de Vlasta Prachatická (1998)",
+                    "auteur": "Vlasta Prachatická",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Vlasta_Prachatick%C3%A1,_Portr%C3%A9t_Jana_Palacha,_1998.jpg"
+                  }
+                },
+                {
+                  "id": "pan_europecentrale_drnovsek",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1950,
+                  "titre": "Naissance de Janez Drnovšek",
+                  "description": "Janez Drnovšek (1950-2008) est un homme d'État slovène, né à Celje. Premier ministre à plusieurs reprises dès 1992, il conduit la Slovénie dans l'Union européenne et l'OTAN, en 2004. Président de la République de 2002 à 2007, il consacre ses dernières années à l'action humanitaire, malgré un cancer.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Janez_Drnov%C5%A1ek",
+                  "pays": "SI",
+                  "classement": "Drnovšek, Janez",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_drnovsek.jpg",
+                    "legende": "Janez Drnovšek, photographie du Forum économique mondial (2004)",
+                    "auteur": "Forum économique mondial",
+                    "licence": "CC BY-SA 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Janez_Drnovsek.jpg"
+                  }
+                }
+              ],
+              "axeOrder": [
+                "Chefs d'État et dirigeants",
+                "Guerres et résistances",
+                "Littérature et pensée",
+                "Beaux-arts",
+                "Musique, spectacle et sport",
+                "Sciences, techniques et innovation"
+              ],
+              "essentiel": [
+                "pan_europecentrale_arpad",
+                "pan_europecentrale_istvan",
+                "pan_europecentrale_charles4",
+                "pan_europecentrale_hus",
+                "pan_europecentrale_matyas",
+                "pan_europecentrale_trubar",
+                "pan_europecentrale_comenius",
+                "pan_europecentrale_rakoczi",
+                "pan_europecentrale_janosik",
+                "pan_europecentrale_preseren",
+                "pan_europecentrale_kossuth",
+                "pan_europecentrale_liszt",
+                "pan_europecentrale_stur",
+                "pan_europecentrale_semmelweis",
+                "pan_europecentrale_petofi",
+                "pan_europecentrale_smetana",
+                "pan_europecentrale_dvorak",
+                "pan_europecentrale_masaryk",
+                "pan_europecentrale_mucha",
+                "pan_europecentrale_plecnik",
+                "pan_europecentrale_maister",
+                "pan_europecentrale_cankar",
+                "pan_europecentrale_stefanik",
+                "pan_europecentrale_bartok",
+                "pan_europecentrale_hasek",
+                "pan_europecentrale_capek",
+                "pan_europecentrale_nagy",
+                "pan_europecentrale_horakova",
+                "pan_europecentrale_neumann",
+                "pan_europecentrale_dubcek",
+                "pan_europecentrale_zatopek",
+                "pan_europecentrale_puskas",
+                "pan_europecentrale_havel",
+                "pan_europecentrale_palach"
               ]
             },
             {

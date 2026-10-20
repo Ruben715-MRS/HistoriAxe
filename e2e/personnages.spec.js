@@ -95,7 +95,7 @@ test('Personnages illustres : deux sous-catégories, chacune avec sa note et son
     await expect(page.locator('#themes-container .data-card-title'))
         .toHaveText(["Grandes figures d'Afrique centrale", "Grandes figures d'Afrique de l'Ouest", "Grandes figures d'Afrique du Sud", "Grandes figures d'Allemagne, d'Autriche et de Suisse", "Grandes figures d'Amérique hispanique",
             "Grandes figures d'Asie centrale", "Grandes figures d'Australie", 'Grandes figures des Balkans', 'Grandes figures du Benelux', 'Grandes figures du Brésil', 'Grandes figures du Canada', 'Grandes figures de Chine', 'Grandes figures de Corée',
-            "Grandes figures d'Égypte", "Grandes figures d'Espagne", 'Grandes figures des États-Unis',
+            "Grandes figures d'Égypte", "Grandes figures d'Espagne", 'Grandes figures des États-Unis', "Grandes figures d'Europe centrale",
             'Grandes figures de France', 'Grandes figures de Grèce', "Grandes figures d'Indochine", "Grandes figures d'Indonésie", "Grandes figures d'Iran", "Grandes figures d'Israël", "Grandes figures d'Italie", 'Grandes figures du Japon',
             'Grandes figures du Machrek et de la péninsule Arabique', 'Grandes figures du Maghreb', 'Grandes figures du monde malais', 'Grandes figures de Mongolie', 'Grandes figures de Nouvelle-Zélande et du Pacifique', 'Grandes figures des pays baltes', 'Grandes figures des Philippines', 'Grandes figures de Pologne', 'Grandes figures du Portugal',
             'Grandes figures du Royaume-Uni', 'Grandes figures de Russie', 'Grandes figures de Scandinavie', 'Grandes figures du sous-continent indien', 'Grandes figures de Thaïlande et de Birmanie', 'Grandes figures de Turquie']);
@@ -1330,6 +1330,53 @@ test('la recherche — « pologne », « polonais », « varsovie », « cracovi
         await page.locator('#theme-search-input').fill(mot);
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: 'Grandes figures de Pologne' });
         await expect(resultat, `« ${mot} » doit mener au panthéon de la Pologne`).toHaveCount(1);
+        await expect(resultat.locator('.search-result-path')).toContainText('Personnages illustres › Panthéons');
+    }
+});
+
+test('l’Europe centrale : chacune de ses figures a son portrait et son pays, d’Árpád à Janez Drnovšek, et seul Václav Havel ouvre sa biographie', async ({ page }) => {
+    await openThemeById(page, 'pan_europecentrale');
+    await page.locator('#mode-card-discovery').click();
+    await expect(page.locator('#screen-game')).toBeVisible();
+    const nombre = await page.evaluate(() => getCurrentTheme().events.length);
+    expect(nombre).toBe(121);
+    await expect(page.locator('#timeline .entry')).toHaveCount(nombre);
+    await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
+
+    const figures = [
+        ['Naissance d\'Étienne Ier de Hongrie', '🇭🇺', /Hongrie/],
+        ['Naissance de Charles IV', '🇨🇿', /Tchéquie/],
+        ['Naissance de Ľudovít Štúr', '🇸🇰', /Slovaquie/],
+        ['Naissance de France Prešeren', '🇸🇮', /Slovénie/],
+    ];
+    for (const [titre, drapeau, pays] of figures) {
+        await page.locator('#timeline .entry', { hasText: titre }).click();
+        await expect(page.locator('#modal-details')).toBeVisible();
+        await expect(page.locator('#modal-pays')).toContainText(drapeau);
+        await expect(page.locator('#modal-pays')).toContainText(pays);
+        const portrait = page.locator('#modal-portrait-img');
+        await expect.poll(() => portrait.evaluate(img => img.complete ? img.naturalWidth : 0)).toBe(320);
+        await expect(page.locator('#modal-portrait-caption')).not.toBeEmpty();
+        await page.locator('#modal-details .close-btn').click();
+        await expect(page.locator('#modal-details')).toBeHidden();
+    }
+
+    // Une seule figure a sa biographie (Václav Havel) : le bouton n'apparaît que sur elle.
+    const avecBiographie = await page.evaluate(() => getCurrentTheme().events.filter(e => e.biographie).length);
+    expect(avecBiographie).toBe(1);
+    await page.locator('#timeline .entry', { hasText: 'Naissance de Václav Havel' }).click();
+    await expect(page.locator('#modal-bio-btn')).toBeVisible();
+    await page.locator('#modal-details .close-btn').click();
+    await page.locator('#timeline .entry', { hasText: 'Naissance de Charles IV' }).click();
+    await expect(page.locator('#modal-bio-btn')).toBeHidden();
+});
+
+test('la recherche — « europe centrale », « hongrie », « tchéquie », « slovaquie », « slovénie », « budapest », « prague », « habsbourg » — mène au panthéon de l’Europe centrale', async ({ page }) => {
+    await page.locator('#screen-home').click();
+    for (const mot of ['europe centrale', 'hongrie', 'hongrois', 'tchequie', 'tcheque', 'slovaquie', 'slovenie', 'budapest', 'prague', 'bratislava', 'ljubljana', 'habsbourg', 'boheme', 'moravie', 'printemps de prague', 'revolution de velours']) {
+        await page.locator('#theme-search-input').fill(mot);
+        const resultat = page.locator('#theme-search-results .search-result-item', { hasText: "Grandes figures d'Europe centrale" });
+        await expect(resultat, `« ${mot} » doit mener au panthéon de l’Europe centrale`).toHaveCount(1);
         await expect(resultat.locator('.search-result-path')).toContainText('Personnages illustres › Panthéons');
     }
 });

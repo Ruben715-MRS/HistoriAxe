@@ -478,6 +478,11 @@ test('« Grandes figures de Corée » : chaque ancre porte le pays de son évén
     verifierPantheonDeBloc('pan_coree', 59, 2);
 });
 
+test('« Grandes figures d’Europe centrale » : chaque ancre porte le pays de son événement, et la session se joue', () => {
+    // Quatre pays : la Slovaquie et la Slovénie (16 figures chacune) ne doivent pas disparaître derrière la Hongrie (48) parmi les ancres.
+    verifierPantheonDeBloc('pan_europecentrale', 61, 4);
+});
+
 test('« Grandes figures d’Asie centrale » : chaque ancre porte le pays de son événement, et la session se joue', () => {
     // Six pays, dont deux (le Turkménistan, le Tadjikistan) n'ont que quelques figures : le
     // Kazakhstan, l'Afghanistan et l'Ouzbékistan ne doivent pas les faire disparaître parmi les ancres.

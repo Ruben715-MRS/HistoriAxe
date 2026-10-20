@@ -11,7 +11,7 @@ ne posent pas la même question :
 | | Un thème, c'est | Une date, c'est | On le joue par |
 |---|---|---|---|
 | **Biographies** | une vie (360 thèmes, en 12 domaines) | une étape de cette vie | étape de la vie |
-| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Turquie, le Japon, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Indonésie, le monde malais, les Philippines, le Vietnam-Cambodge-Laos, la Thaïlande et la Birmanie, la Mongolie, la Corée, la Pologne) | la naissance d'un personnage | domaine |
+| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Turquie, le Japon, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Indonésie, le monde malais, les Philippines, le Vietnam-Cambodge-Laos, la Thaïlande et la Birmanie, la Mongolie, la Corée, la Pologne, l'Europe centrale) | la naissance d'un personnage | domaine |
 
 Le déplacement ne coûte aucune migration : les 360 thèmes gardent leurs
 identifiants, et rien de ce que le joueur a sauvegardé (favoris, révision,
@@ -2087,7 +2087,7 @@ Croatie 25, Bulgarie 17, Albanie 11, Bosnie-Herzégovine 7, Moldavie 6, Macédoi
 
 - **Le périmètre est celui des pays colorés sur la carte de départ** : la Roumanie, la Moldavie, la Bulgarie, la Serbie, la Croatie,
   la Bosnie-Herzégovine, le Monténégro, le Kosovo, l'Albanie et la Macédoine du Nord. **La Slovénie, grisée sur cette carte, n'y est pas** (elle
-  relèverait plutôt d'un bloc d'Europe centrale), ni la Grèce, qui a son panthéon. Le Kosovo porte le code `XK`, l'usage de l'Union
+  relève du bloc d'Europe centrale), ni la Grèce, qui a son panthéon. Le Kosovo porte le code `XK`, l'usage de l'Union
   européenne : `Intl.DisplayNames` le nomme « Kosovo » et le drapeau 🇽🇰 s'affiche.
 - **Aucun pays ne dépasse 40 %** : la Roumanie en pèse 25 %. Le Monténégro, le Kosovo et la Moldavie tiennent par cinq ou six figures.
 - **Un personnage, un seul thème, et celui qui l'honore le plus.** Nikola Tesla, né en Croatie de parents serbes, est serbe (son urne est à
@@ -2427,6 +2427,45 @@ la République des Deux Nations, les partages, les insurrections de 1830, 1863 e
 - **Statut américain des images : à relire.** Quatre-vingt-six portraits sont du « domaine public », dont beaucoup de photographies polonaises (modèle « PD-Poland » / « PD-1996 ») que Commons étiquette « US ? » ; même décision que pour
   les autres thèmes : le script lit la licence déclarée, non le statut américain.
 - **Les listes de candidats** sont dans `scripts/pantheon/pl_candidats.md`.
+
+### Un bloc : l'Europe centrale (Hongrie, Tchéquie, Slovaquie et Slovénie)
+
+`pan_europecentrale`, « Grandes figures d'Europe centrale » (code `europecentrale`, bloc ; rangé sous « Europe centrale », entre les États-Unis et la France) : **121 personnages de quatre pays** — Hongrie 48, Tchéquie 41, Slovaquie 16,
+Slovénie 16 — d'Árpád (vers 845) à Janez Drnovšek (1950). Par axe : 30 Littérature et pensée, 26 Sciences, techniques et innovation, 25 Chefs d'État et dirigeants, 15 Guerres et résistances, 15 Musique, spectacle et sport,
+10 Beaux-arts ; 34 ⭐ et **une biographie liée** (Václav Havel). 121 portraits : 91 du domaine public, 2 CC0, 1 CC BY et 27 CC BY-SA. Onze figures sont nées avant 1500, seize de 1500 à 1799, quatre-vingt-quatorze depuis 1800.
+Les mots-clés portent les quatre pays et leurs adjectifs, Budapest, Prague, Bratislava, Presbourg, Ljubljana, Brno, la Bohême, la Moravie, la Transylvanie, la Carniole, les Habsbourg, l'Autriche-Hongrie et le Compromis de 1867,
+Árpád, les Přemyslides, les hussites, la Grande-Moravie, les révolutions de 1848 et de 1956, le Printemps de Prague, la révolution de velours, la Charte 77, Munich, Trianon, la Yougoslavie et les Provinces illyriennes.
+
+- **Un bloc de quatre, une Pologne à part.** La Pologne (105 figures) a son propre panthéon, et la Hongrie, la Tchéquie, la Slovaquie et la Slovénie, qui partagent l'histoire des Habsbourg puis, pour les trois premières, celle du
+  XXe siècle communiste, forment ce bloc. Le choix de la Slovénie est celui du bloc des Balkans, qui l'avait laissée de côté (« elle relèverait plutôt d'un bloc d'Europe centrale »). **Ne sont pas ici** : l'Autriche et le Liechtenstein
+  (panthéon de l'Allemagne, de l'Autriche et de la Suisse), la Croatie (Balkans), les pays baltes, l'Ukraine et la Biélorussie, qui attendent leur thème.
+- **Un équilibre juste sous le seuil.** La Hongrie pèse 48 figures sur 121, soit 39,7 %, sous les 40 % du constructeur ; la Slovaquie et la Slovénie (13 % chacune) tiennent par seize figures, et les quatre pays sont tous représentés
+  parmi les ancres de « Pendant ce temps, ailleurs… » (un test le vérifie). Pour rester sous le seuil, plusieurs Hongrois ont été écartés après examen : Mór Jókai, Ferenc Erkel, Mihály Vörösmarty, Ányos Jedlik, Ödön Lechner, Zsigmond Móricz,
+  Mihály Babits, Kálmán Kandó, Tivadar Puskás, George de Hevesy, Alfréd Hajós et Tivadar Csontváry Kosztka.
+- **Le pays qui honore, pas l'état civil.** Les figures nées hors des frontières actuelles vont en Hongrie quand c'est elle qui les honore, et la fiche dit le lieu : Bartók (Nagyszentmiklós, aujourd'hui en Roumanie), Ligeti
+  (Târnăveni), Bolyai (Cluj), Ady (Érmindszent), Madách et Márai (Slovaquie), Munkácsy (Moukatchevo, Ukraine), Kun (Transylvanie) et Liszt, né à Raiding, village de langue allemande aujourd'hui en Autriche. Wolfgang von Kempelen
+  (Presbourg) et Jozef Maximilián Petzval (Spišská Belá), dont la carrière se fait à Vienne, sont rangés en Slovaquie. **La Tchécoslovaquie** se partage selon le pays qui honore : Masaryk et Havel en Tchéquie, Dubček et Štefánik en
+  Slovaquie ; l'attentat contre Heydrich réunit Jan Kubiš (Tchéquie) et Jozef Gabčík (Slovaquie). Les germanophones de Bohême et de Moravie (Kafka, Freud, Mahler, Mendel, Gödel, Rilke, Suttner) restent dans le bloc Allemagne-Autriche-Suisse.
+  Les Hongrois d'Amérique (John von Neumann, Leó Szilárd, Eugene Wigner, Edward Teller, Albert Szent-Györgyi, André Kertész, Robert Capa, Marcel Breuer, László Moholy-Nagy) sont ici : aucun autre panthéon ne les a, et la Hongrie les honore.
+- **Les vivants restent dehors** : George Soros, Ernő Rubik, Katalin Karikó, Slavoj Žižek, Luka Dončić, Martina Navrátilová. Joseph Pulitzer, Arthur Koestler, Harry Houdini, Béla Lugosi, Michael Curtiz, Georg Solti, Theodore von Kármán et Dennis Gabor,
+  honorés surtout aux États-Unis ou au Royaume-Uni, ne sont pas retenus ; Joseph Joachim (carrière allemande), Ernő Dohnányi et Karl Polanyi (né à Vienne) non plus.
+- **Dates incertaines.** Árpád (« vers 845 »), Étienne Ier (« vers 975 » ; Wikidata dit aussi 969), Jean Hunyadi (« vers 1406 » ; 1407 pour Wikidata), Jan Žižka (« vers 1360 » ; 1376 pour Wikidata) et Jan Hus (« vers 1372 » ; 1369 à 1371
+  pour Wikidata) suivent l'article français. Széchenyi (1791), Kossuth (1802), Petőfi (1823), Madách (1823), Munkácsy (1844), Němcová (1820) et Diviš (1698) portent la date de l'article ; Wikidata en donne une autre en plus.
+- **Écartés faute d'image convenable** : Přemysl Ottokar II (la seule image est son sceau), Svätopluk Ier (une statue de fontaine), Gustáv Husák (la photographie vient de deux sites de presse), Venceslas Ier (aucune image), et trois noms que
+  Wikipédia français ne trouve pas sous la graphie cherchée (János Irinyi, Ľudovít Fulla, Anton Martin Slomšek). Des images refusées ont été remplacées après une recherche sur Commons : Václav Havel (294 pixels) par une photographie de
+  Lenke Szilágyi, Karel Čapek (« Not-PD-US-URAA ») par une photographie d'avant 1938, János Kádár (licence « Attribution », photographie roumaine) par un cliché d'Anefo de 1962, John von Neumann (« Attribution ») par une photographie
+  CC BY-SA 3.0, Karel Gott (« Copyrighted free use ») par une photographie de 2016, Klement Gottwald et Robert Capa (« Not-PD-US-URAA ») par des clichés de 1946 et de 1938 (Rijksmuseum, CC0), Paul Erdős (308 pixels) par une photographie de
+  1992 recadrée sur le visage, et Jan Palach (une carte d'identité qui écrit son nom) par un buste de Vlasta Prachatická (1998, CC BY-SA 4.0).
+- **Des portraits souvent indirects** : miniatures de la Chronique de Thuróczy (1488) pour Árpád, Béla IV et Louis Ier, un détail du tableau votif de Jan Očko de Vlašim pour Charles IV, des gravures (Poděbrady, Ressel, Škoda, Vega, Valvasor,
+  Gallus, Trubar), un vitrail (Jánošík), un dessin au fusain (Kempelen) et plusieurs portraits peints (Rákóczi par Mányoki, Széchenyi par Amerling, Comenius par Ovens, Prešeren par Goldenstein). **Quatre images écrivent le nom** et sont
+  marquées `nomVisible` : l'inscription gravée de Poděbrady, la légende du dessin de Žižka, le nom sur le vitrail de Jánošík et le cadre gravé de Gallus ; « Qui est-ce ? » les écarte, la galerie les garde. Six sont recadrées : Árpád
+  (le texte de la chronique), Madách (la signature), Janáček (la légende imprimée), Purkyně (la légende), Széchenyi (le visage dans une image en pied) et Erdős.
+- **Une biographie liée** : Václav Havel est relié à `bio_havel` (« une même personne, une même date » : 1936), et son point de naissance (Prague) est repris de la biographie dans `assets/geo/events-geo.json`.
+- **Le rangement.** Les souverains se rangent par leur prénom (« Étienne Ier de Hongrie », « Louis Ier le Grand », « Charles IV »), les autres par leur nom de famille ; François II Rákóczi, prince de Transylvanie et non roi, se range à « Rákóczi »
+  (`EXCEPTIONS`).
+- **Statut américain des images : à relire.** Quatre-vingt-onze portraits sont du « domaine public », dont beaucoup de photographies d'agence ou d'État que Commons étiquette « US ? » (modèles « PD-anon-70-EU », « PD-CzechGov », « PD-UKGov ») ;
+  même décision que pour les autres thèmes : le script lit la licence déclarée, non le statut américain.
+- **Les listes de candidats** sont dans `scripts/pantheon/europecentrale_candidats.md`.
 
 ### Un fichier source par panthéon, un script qui l'écrit dans `data/fr.json`
 
@@ -2770,7 +2809,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
 ### Ce qui n'est pas fait
 
 - **Les autres panthéons** : la France, l'Égypte, les États-Unis, l'Italie, le
-  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Indonésie, le monde malais, les Philippines, le Vietnam-Cambodge-Laos, la Thaïlande et la Birmanie, la Mongolie, la Corée, la Pologne sont écrits.
+  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Indonésie, le monde malais, les Philippines, le Vietnam-Cambodge-Laos, la Thaïlande et la Birmanie, la Mongolie, la Corée, la Pologne, l'Europe centrale sont écrits.
   Chaque liste de personnages est validée avant la rédaction. Feuille de route, dans l'ordre
   où on les propose (un pays seul quand il a de quoi faire un thème, un bloc sinon) :
   1. **Le Machrek est écrit** (voir « Le cinquième bloc »). Il reste : le portrait des trois
@@ -2789,7 +2828,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
      Nouvelle-Zélande et le Pacifique »). Les pays baltes sont écrits (voir « Un bloc : les pays baltes »).
   4. **L'Europe et les Amériques qui manquent** : **le Portugal est écrit** (voir « Un pays à part : le Portugal »,
      qui a repris Magellan et Viriathe), Byzance (au-delà des cinq figures déjà au panthéon de la Grèce),
-     l'Europe centrale (la Pologne est écrite, voir « Un pays à part : la Pologne »), la Slovénie (hors du bloc des Balkans, voir « Un bloc : les Balkans »), les Caraïbes non
+     la Pologne et l'Europe centrale (écrites : voir « Un pays à part : la Pologne » et « Un bloc : l'Europe centrale »), la Slovénie (dans le bloc d'Europe centrale), l'Ukraine et la Biélorussie, les Caraïbes non
      hispaniques.
 
   Les images décideront de la taille de chacun : pour l'Afrique subsaharienne et l'Asie du
