@@ -2,8 +2,8 @@
   "version": "1.0.0",
   "lang": "fr",
   "name": "Français (Intégral)",
-  "totalThemes": 845,
-  "totalEvents": 25225,
+  "totalThemes": 846,
+  "totalEvents": 25289,
   "categories": [
     {
       "nom": "Culture générale",
@@ -96053,6 +96053,1172 @@
           "nom": "Panthéons",
           "note": "Un thème par pays, ou par grande région lorsque plusieurs pays partagent une même histoire (l'Amérique hispanique, par exemple) : les figures qu'il honore, rangées par date de naissance. Un personnage ne figure que dans un seul thème, et seules y entrent des personnalités disparues, dont les dates de naissance et de décès sont avérées (ou communément admises par des sources solides), et pour lesquelles on dispose d'une illustration. « Illustre » ne veut pas dire « né dans les frontières actuelles » : Marie Curie, née à Varsovie, et Jean-Jacques Rousseau, né à Genève, appartiennent au panthéon de la France qui les a adoptés. Chaque personnage est classé dans son domaine dominant, comme dans les Biographies, et renvoie à sa biographie quand elle existe ; dans un thème de région, la fiche indique son pays. Les portraits viennent de Wikimedia Commons, sous licence libre, et leur auteur est crédité sous l'image ; quand aucun portrait authentique n'existe (l'Antiquité, le haut Moyen Âge, les civilisations précolombiennes), l'image est une représentation posthume, et la légende le dit.",
           "themes": [
+            {
+              "id": "pan_afriqueaustrale",
+              "nom": "Grandes figures d'Afrique australe",
+              "difficulte": "Intermédiaire",
+              "motsCles": [
+                "Angola",
+                "Angolais",
+                "Angolaise",
+                "Mozambique",
+                "Mozambicain",
+                "Mozambicaine",
+                "Zimbabwe",
+                "Zimbabwéen",
+                "Zimbabwéenne",
+                "Rhodésie",
+                "Zambie",
+                "Zambien",
+                "Zambienne",
+                "Malawi",
+                "Malawien",
+                "Nyassaland",
+                "Namibie",
+                "Namibien",
+                "Sud-Ouest africain",
+                "Botswana",
+                "Botswanais",
+                "Bechuanaland",
+                "Lesotho",
+                "Basutoland",
+                "Basotho",
+                "Eswatini",
+                "Swaziland",
+                "Swazi",
+                "Afrique australe",
+                "SADC",
+                "Luanda",
+                "Maputo",
+                "Harare",
+                "Lusaka",
+                "Lilongwe",
+                "Windhoek",
+                "Gaborone",
+                "Maseru",
+                "Mbabane",
+                "Kongo",
+                "Ndongo",
+                "Frelimo",
+                "MPLA",
+                "SWAPO",
+                "ZANU",
+                "Ndébélé",
+                "Chimurenga",
+                "Héréros"
+              ],
+              "events": [
+                {
+                  "id": "pan_afriqueaustrale_afonso",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1457,
+                  "titre": "Naissance d'Alphonse Ier du Kongo",
+                  "description": "Alphonse Ier du Kongo (vers 1457-1543) est le roi du Kongo de 1509 à sa mort, né Nzinga Mvemba, et le deuxième souverain chrétien du royaume. Il fait du Kongo un partenaire du Portugal, envoie des jeunes en Europe, dont son fils Henrique, devenu évêque, et adopte l'écriture et la religion des Européens. En 1526, il écrit au roi João III pour dénoncer les marchands portugais qui vident son royaume de ses habitants par la traite des esclaves.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Alphonse_Ier_(manikongo)",
+                  "pays": "AO",
+                  "classement": "Alphonse Ier du Kongo",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_afonso.jpg",
+                    "legende": "Un manikongo, roi du Kongo, illustration coloriée ; ce n'est pas un portrait d'Alphonse Ier",
+                    "auteur": "Affricoll9",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Manikongo.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_njinga",
+                  "axe": "Guerres et résistances",
+                  "date": 1583,
+                  "titre": "Naissance de Njinga Mbande",
+                  "description": "Njinga Mbande (vers 1583-1663) est une reine du Ndongo puis du Matamba, dans l'actuel Angola, baptisée Ana de Sousa. Diplomate de son frère auprès du gouverneur portugais de Luanda en 1622, elle mène ensuite pendant plus de trente ans une guerre contre les Portugais, notamment en s'alliant aux Hollandais lorsqu'ils prennent Luanda en 1641. Elle signe la paix en 1656 et meurt en 1663, devenue le symbole de la résistance africaine à la colonisation et à la traite négrière.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Njinga_du_Ndongo_et_du_Matamba",
+                  "pays": "AO",
+                  "classement": "Njinga Mbande",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_njinga.jpg",
+                    "legende": "Njinga, reine d'Angola, gravure coloriée d'Achille Devéria (années 1830) ; représentation imaginaire, faite deux siècles après sa mort",
+                    "auteur": "Achille Devéria (1800–1857)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ann_Zingha.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_kimpavita",
+                  "axe": "Guerres et résistances",
+                  "date": 1684,
+                  "titre": "Naissance de Kimpa Vita",
+                  "description": "Kimpa Vita (1684-1706) est une prophétesse du royaume du Kongo, baptisée Dona Béatrice, née à Mbanza-Kongo, dans l'actuel Angola. Se disant possédée par l'esprit de saint Antoine, elle prêche la réconciliation du royaume divisé par des guerres civiles et dénonce l'emprise des missionnaires européens, ce qui lui vaut des milliers de disciples. Capturée sur ordre du roi Pedro IV, elle est brûlée comme hérétique en 1706 et reste un symbole de la résistance culturelle du Kongo.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kimpa_Vita",
+                  "pays": "AO",
+                  "classement": "Kimpa Vita",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_kimpavita.jpg",
+                    "legende": "Statue de Kimpa Vita, en Angola, photographie de Somebody040404 (2020) ; aucun portrait d'elle ne nous est parvenu",
+                    "auteur": "Somebody040404",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kimpa_Vita_%C2%B4s_statue_in_Angola.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_jonker",
+                  "axe": "Guerres et résistances",
+                  "date": 1785,
+                  "titre": "Naissance de Jonker Afrikaner",
+                  "description": "Jonker Afrikaner (vers 1785-1861) est un chef de guerre oorlam, né dans la colonie du Cap. Il conduit son peuple dans le centre de l'actuelle Namibie, où il s'allie ou s'oppose aux Héréros et aux Namas et fonde sa capitale à Windhoek. Il règne de 1823 à 1861 et joue un rôle central dans l'histoire du pays avant la colonisation allemande.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jonker%20Afrikaner",
+                  "pays": "NA",
+                  "classement": "Afrikaner, Jonker",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_jonker.jpg",
+                    "legende": "Jonker Afrikaner, gravure du XIXᵉ siècle",
+                    "auteur": "Charles John Andersson",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Lake_Ngami-p232.png"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_moshoeshoe1",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1786,
+                  "titre": "Naissance de Moshoeshoe Ier",
+                  "description": "Moshoeshoe Ier (1786-1870) est le fondateur du royaume des Basotho, l'actuel Lesotho. À la tête de réfugiés des guerres zouloues, il réunit des clans dans la forteresse de Thaba Bosiu, résiste aux Boers et aux Britanniques, et obtient en 1868 que son pays devienne un protectorat britannique, ce qui le préserve de l'annexion par l'État libre d'Orange. Il est considéré comme le père de la nation basotho.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Moshoeshoe%20Ier",
+                  "pays": "LS",
+                  "classement": "Moshoeshoe Ier",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_moshoeshoe1.jpg",
+                    "legende": "Moshoeshoe Ier, gravure du XIXᵉ siècle",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Moshoeshoe.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_maharero",
+                  "axe": "Guerres et résistances",
+                  "date": 1820,
+                  "titre": "Naissance de Maharero",
+                  "description": "Maharero (vers 1820-1890) est le chef des Héréros de 1861 à 1890, père de Samuel Maharero. Il s'impose comme chef suprême de son peuple, établi à Okahandja, et fait face aux Oorlams et aux Namas. Il signe en 1885 un traité de protection avec l'Empire allemand, avant de mourir à Okahandja en 1890.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Maharero",
+                  "pays": "NA",
+                  "classement": "Maharero",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_maharero.jpg",
+                    "legende": "Maharero, photographie ancienne",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Opperhoofman_Maharero.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_witbooi",
+                  "axe": "Guerres et résistances",
+                  "date": 1830,
+                  "titre": "Naissance de Hendrik Witbooi",
+                  "description": "Hendrik Witbooi (vers 1830-1905) est le chef des Namas Witbooi, appelé le « Kaptein ». Il résiste aux Allemands de 1893 à 1894, puis signe un traité de protection et combat à leurs côtés, avant de se retourner contre eux à l'automne 1904, à plus de soixante-dix ans. Il est tué au combat en octobre 1905, et il est aujourd'hui l'un des héros nationaux de la Namibie, dont le visage figure sur ses billets.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Hendrik%20Witbooi",
+                  "pays": "NA",
+                  "classement": "Witbooi, Hendrik",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_witbooi.jpg",
+                    "legende": "Hendrik Witbooi, photographie ancienne",
+                    "auteur": "Regierung von DSWA",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Witbooi_Hendrik.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_khama3",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1837,
+                  "titre": "Naissance de Khama III",
+                  "description": "Khama III (1837-1923) est le roi des Bamangwato, dans l'actuel Botswana, de 1875 à 1923. Converti au christianisme, il interdit l'alcool dans son royaume et obtient en 1885 que son pays devienne un protectorat britannique, pour éviter la domination des Boers et de Cecil Rhodes. Il est le grand-père de Seretse Khama.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Khama%20III",
+                  "pays": "BW",
+                  "classement": "Khama III",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_khama3.jpg",
+                    "legende": "Khama III, photographie",
+                    "auteur": "Photograph by S.B. Bernard, Cape Town",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Chief-khama-III.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_lewanika",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1842,
+                  "titre": "Naissance de Lewanika",
+                  "description": "Lewanika (1842-1916) est le roi des Lozi, dans l'ouest de l'actuelle Zambie, de 1878 à 1916. Pour protéger son royaume contre les Ndébélé et les Boers, il signe en 1890 avec la British South Africa Company une concession qui fait du Barotseland un protectorat britannique. Il se rend à Londres en 1902, pour le couronnement d'Édouard VII.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Lewanika",
+                  "pays": "ZM",
+                  "classement": "Lewanika",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_lewanika.jpg",
+                    "legende": "Lewanika à Édimbourg, photographie",
+                    "auteur": "G.H. Tod",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Lewanika_in_Edinburgh.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_lobengula",
+                  "axe": "Guerres et résistances",
+                  "date": 1845,
+                  "titre": "Naissance de Lobengula",
+                  "description": "Lobengula (vers 1845-1894) est le dernier roi des Ndébélé, de 1870 à 1894. Il accorde en 1888 la concession Rudd à Cecil Rhodes, dont il conteste le sens, ce qui ouvre la voie à la colonisation. Vaincu pendant la guerre contre la British South Africa Company en 1893, il fuit et meurt, probablement de maladie, au début de 1894.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Lobengula",
+                  "pays": "ZW",
+                  "classement": "Lobengula",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_lobengula.jpg",
+                    "legende": "Lobengula, portrait de Ralph Peacock d'après un croquis d'E. A. Maund",
+                    "auteur": "The original uploader was Humansdorpie at English Wikipedia .",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Lobengula-image.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_samuelmaharero",
+                  "axe": "Guerres et résistances",
+                  "date": 1856,
+                  "titre": "Naissance de Samuel Maharero",
+                  "description": "Samuel Maharero (1856-1923) est le chef suprême des Héréros, de 1890 à 1904. Il perd une partie des terres de son peuple en les vendant aux colons allemands, puis lance en janvier 1904 le soulèvement des Héréros contre les Allemands. Vaincu à la bataille du Waterberg, il s'enfuit au Botswana, tandis que le génocide des Héréros fait des dizaines de milliers de morts.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Samuel%20Maharero",
+                  "pays": "NA",
+                  "classement": "Maharero, Samuel",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_samuelmaharero.jpg",
+                    "legende": "Samuel Maharero, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:SamuelMaharero.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_labotsibeni",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1859,
+                  "titre": "Naissance de Labotsibeni",
+                  "description": "Labotsibeni (vers 1859-1925) est la reine mère et la régente du Swaziland de 1899 à 1921, mère du roi Bhunu et grand-mère de Sobhuza II. Elle gouverne le royaume pendant la minorité de son petit-fils et défend les terres des Swazis face aux colons et à la Grande-Bretagne. Elle fonde en 1906 l'école nationale de Zombodze, et soutient le Congrès national africain naissant.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Labotsibeni%20Mdluli",
+                  "pays": "SZ",
+                  "classement": "Labotsibeni",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_labotsibeni.jpg",
+                    "legende": "Labotsibeni vers 1910, photographie",
+                    "auteur": "N.N./National Archives",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Labotsibeni.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_nehanda",
+                  "axe": "Guerres et résistances",
+                  "date": 1862,
+                  "titre": "Naissance de Nehanda Nyakasikana",
+                  "description": "Nehanda Nyakasikana (vers 1862-1898) est une médium spirite shona, en qui l'on voit l'esprit ancestral Nehanda. Elle est l'une des chefs de l'insurrection des Shona et des Ndébélé contre la British South Africa Company, en 1896-1897. Capturée, elle est pendue à Salisbury en 1898, et reste l'un des symboles de la première Chimurenga.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Nehanda%20Nyakasikana",
+                  "pays": "ZW",
+                  "classement": "Nehanda Nyakasikana",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_nehanda.jpg",
+                    "legende": "Nehanda Nyakasikana, photographie qui lui est attribuée",
+                    "auteur": "Crop of File:Nehanda Nyakasikana et Sekuru Kaguvi.jpg",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Nehanda_Nyakasikana.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_chilembwe",
+                  "axe": "Guerres et résistances",
+                  "date": 1871,
+                  "titre": "Naissance de John Chilembwe",
+                  "description": "John Chilembwe (vers 1871-1915) est un pasteur baptiste malawien, chef de la première grande révolte contre la domination coloniale au Nyassaland. Éduqué aux États-Unis, il fonde des écoles et dénonce le travail forcé des plantations et l'enrôlement des Africains dans la guerre. Il lance l'insurrection de janvier 1915, écrasée en quelques jours, et il est tué le 3 février 1915.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/John%20Chilembwe",
+                  "pays": "MW",
+                  "classement": "Chilembwe, John",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_chilembwe.jpg",
+                    "legende": "John Chilembwe, photographie",
+                    "auteur": "National Archives of Malawi",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Chilembwe_and_family_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_morenga",
+                  "axe": "Guerres et résistances",
+                  "date": 1875,
+                  "titre": "Naissance de Jacob Morenga",
+                  "description": "Jacob Morenga (1875-1907) est un chef de guerre nama, d'un père herero et d'une mère nama. Il dirige la guérilla contre les troupes coloniales allemandes dans le sud de la Namibie, en 1904-1907, et les Allemands le tiennent pour leur adversaire le plus redoutable. Il est tué par une patrouille britannique en septembre 1907.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jacob%20Morenga",
+                  "pays": "NA",
+                  "classement": "Morenga, Jacob",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_morenga.jpg",
+                    "legende": "Jacob Morenga, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jakob_Morenga.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_mofolo",
+                  "axe": "Littérature et pensée",
+                  "date": 1876,
+                  "titre": "Naissance de Thomas Mofolo",
+                  "description": "Thomas Mofolo (1876-1948) est un écrivain lesothan, auteur du roman Chaka, publié en sesotho en 1925. Chaka retrace la vie du roi zoulou, et passe pour l'une des premières grandes œuvres de la littérature africaine moderne. Mofolo est aussi l'auteur d'un récit de pèlerin, Moeti oa bochabela, publié en 1907.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Thomas%20Mofolo",
+                  "pays": "LS",
+                  "classement": "Mofolo, Thomas",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_mofolo.jpg",
+                    "legende": "Thomas Mofolo, dessin de Frédéric Christol",
+                    "auteur": "Frédéric Christol",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Sketch_of_Thomas_Mofolo_by_Fr%C3%A9d%C3%A9ric_Christol_1911.png"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_mandume",
+                  "axe": "Guerres et résistances",
+                  "date": 1894,
+                  "titre": "Naissance de Mandume ya Ndemufayo",
+                  "description": "Mandume ya Ndemufayo (1894-1917) est le dernier roi des Kwanyama, peuple ovambo du sud de l'Angola et du nord de la Namibie. Monté sur le trône vers 1911, il refuse de se soumettre aux Portugais comme aux Sud-Africains, qui se disputent son territoire. Il est tué en février 1917 dans un affrontement avec des troupes sud-africaines, à vingt-deux ans environ.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mandume_ya_Ndemufayo",
+                  "pays": "AO",
+                  "classement": "Mandume ya Ndemufayo",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_mandume.jpg",
+                    "legende": "Mandume ya Ndemufayo, photographie d'auteur inconnu (avant 1916)",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mandume_ya_Ndemufayo_(before_1916).png"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_kamuzubanda",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1898,
+                  "titre": "Naissance de Hastings Kamuzu Banda",
+                  "description": "Hastings Kamuzu Banda (vers 1898-1997) est le premier président du Malawi, de 1964 à 1994. Médecin formé aux États-Unis et en Écosse, il conduit le Nyassaland à l'indépendance, puis instaure un régime autoritaire à parti unique et se proclame président à vie en 1971. Il accepte le multipartisme après un référendum en 1993, et perd l'élection de 1994.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Hastings%20Kamuzu%20Banda",
+                  "pays": "MW",
+                  "classement": "Banda, Hastings Kamuzu",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_kamuzubanda.jpg",
+                    "legende": "Hastings Kamuzu Banda, photographie officielle",
+                    "auteur": "National Archives of Malawi",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Dr_HK_Banda,_first_president_of_Malawi.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_sobhuza2",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1899,
+                  "titre": "Naissance de Sobhuza II",
+                  "description": "Sobhuza II (1899-1982) est le roi du Swaziland de 1921 à sa mort, après l'un des plus longs règnes de l'histoire. Il conduit son pays à l'indépendance, en 1968, puis abroge la Constitution en 1973 et gouverne par décret. Il meurt en août 1982, après plus de quatre-vingts ans de règne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sobhuza%20II",
+                  "pays": "SZ",
+                  "classement": "Sobhuza II",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_sobhuza2.jpg",
+                    "legende": "Sobhuza II en 1945, photographie",
+                    "auteur": "The National Archives (Royaume-Uni)",
+                    "licence": "Image non libre",
+                    "source": "https://commons.wikimedia.org/wiki/File:King_Sobhuza_II,_1945_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_todd",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1908,
+                  "titre": "Naissance de Garfield Todd",
+                  "description": "Garfield Todd (1908-2002) est Premier ministre de la Rhodésie du Sud de 1953 à 1958. Missionnaire né en Nouvelle-Zélande, il tente de réformer le système en élargissant l'éducation des Noirs, et est renversé par son propre parti. Il s'oppose ensuite à Ian Smith, est emprisonné, et reste un partisan de la majorité noire.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Garfield%20Todd",
+                  "pays": "ZW",
+                  "classement": "Todd, Garfield",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_todd.jpg",
+                    "legende": "Garfield Todd, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Garfield_todd.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_jonathan",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1914,
+                  "titre": "Naissance de Leabua Jonathan",
+                  "description": "Leabua Jonathan (1914-1987) est Premier ministre du Lesotho de 1965 à 1986. Chef du Parti national du Basotho, il remporte l'élection de 1965, annule en 1970 celle qu'il a perdue, et gouverne par la force. Un conflit avec l'Afrique du Sud, qui l'accuse d'abriter l'ANC, aboutit à un coup d'État militaire en janvier 1986.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Joseph%20Leabua%20Jonathan",
+                  "pays": "LS",
+                  "classement": "Jonathan, Leabua",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_jonathan.jpg",
+                    "legende": "Leabua Jonathan, photographie",
+                    "auteur": "Joost Evers / Anefo",
+                    "licence": "CC BY-SA 3.0 NL",
+                    "source": "https://commons.wikimedia.org/wiki/File:Minister-president_Jonathan_van_Lesotho_(1970).jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_mendes",
+                  "axe": "Littérature et pensée",
+                  "date": 1916,
+                  "titre": "Naissance d'Orlando Mendes",
+                  "description": "Orlando Mendes (1916-1990) est un poète, romancier et essayiste mozambicain, né à l'île de Mozambique. Il publie des recueils de poèmes, dont Clima en 1959, et le roman Portagem en 1965. Il est l'un des écrivains qui ont donné une voix à la littérature mozambicaine sous la domination portugaise.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Orlando%20Mendes",
+                  "pays": "MZ",
+                  "classement": "Mendes, Orlando",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_mendes.jpg",
+                    "legende": "Orlando Mendes, dessin",
+                    "auteur": "VladHor57",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Orlando_Mendes_1916.png"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_nkomo",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1917,
+                  "titre": "Naissance de Joshua Nkomo",
+                  "description": "Joshua Nkomo (1917-1999) est le chef de la ZAPU, l'un des pères de l'indépendance du Zimbabwe. Syndicaliste, il lutte contre le régime blanc de Rhodésie et passe dix ans en détention, de 1964 à 1974. Écarté par Robert Mugabe après l'indépendance, il signe en 1987 l'accord d'unité entre leurs deux partis, et devient vice-président du pays en 1990.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Joshua%20Nkomo",
+                  "pays": "ZW",
+                  "classement": "Nkomo, Joshua",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_nkomo.jpg",
+                    "legende": "Joshua Nkomo, photographie",
+                    "auteur": "Robin Wright",
+                    "licence": "CC BY 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jnkomo.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_mokhehle",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1918,
+                  "titre": "Naissance de Ntsu Mokhehle",
+                  "description": "Ntsu Mokhehle (1918-1999) est le chef de l'opposition du Lesotho pendant plus de trente ans, puis Premier ministre de 1993 à 1998. Fondateur du Congrès du Basutoland en 1952, il est exilé puis emprisonné sous Leabua Jonathan. Il remporte l'élection de 1993, la première depuis 1970, et il meurt en 1999.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ntsu%20Mokhehle",
+                  "pays": "LS",
+                  "classement": "Mokhehle, Ntsu",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_mokhehle.jpg",
+                    "legende": "Ntsu Mokhehle, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ntsu_Mokhehle.png"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_smith",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1919,
+                  "titre": "Naissance d'Ian Smith",
+                  "description": "Ian Smith (1919-2007) est le dernier Premier ministre de la Rhodésie du Sud, de 1964 à 1979. Chef du Front rhodésien, il proclame unilatéralement l'indépendance en 1965, pour préserver le pouvoir de la minorité blanche, ce qui lui vaut des sanctions des Nations unies. Il doit accepter en 1979 le passage du pouvoir à la majorité noire.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ian%20Smith",
+                  "pays": "ZW",
+                  "classement": "Smith, Ian",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_smith.jpg",
+                    "legende": "Ian Smith en 1975, photographie",
+                    "auteur": "Colin Weyer, photographer",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ian_Smith_1975.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_mondlane",
+                  "axe": "Guerres et résistances",
+                  "date": 1920,
+                  "titre": "Naissance d'Eduardo Mondlane",
+                  "description": "Eduardo Mondlane (1920-1969) est le fondateur et le premier président du Front de libération du Mozambique, le Frelimo, créé en 1962. Docteur en anthropologie et ancien fonctionnaire des Nations unies, il unit les mouvements nationalistes et prépare la lutte armée contre le Portugal. Il est tué à Dar es Salaam, le 3 février 1969, par un colis piégé.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Eduardo%20Mondlane",
+                  "pays": "MZ",
+                  "classement": "Mondlane, Eduardo",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_mondlane.jpg",
+                    "legende": "Eduardo Mondlane, portrait imprimé sur un tissu (capulana)",
+                    "auteur": "Auteur inconnu",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Eduardo_Mondlane.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_seretse",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1921,
+                  "titre": "Naissance de Seretse Khama",
+                  "description": "Seretse Khama (1921-1980) est le premier président du Botswana, de 1966 à sa mort. Héritier du royaume des Bamangwato, il épouse en 1948 une Anglaise, Ruth Williams, ce qui provoque un scandale en Grande-Bretagne et en Afrique du Sud, et lui vaut six ans d'exil. Il conduit le Botswana à l'indépendance en 1966 et en fait une démocratie stable, enrichie par les diamants.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Seretse%20Khama",
+                  "pays": "BW",
+                  "classement": "Khama, Seretse",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_seretse.jpg",
+                    "legende": "Seretse Khama en 1977, photographie de Louis Joos (Communautés européennes)",
+                    "auteur": "European Communities / Louis C. D. Joos",
+                    "licence": "CC BY 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Seretse_Khama_1977.png"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_chiepe",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1922,
+                  "titre": "Naissance de Gaositwe Chiepe",
+                  "description": "Gaositwe Chiepe (1922-2025) est une femme politique botswanaise, ancienne enseignante, et la première femme ministre de son pays. Elle est ministre du Commerce et de l'Industrie, puis des Ressources minérales. Elle dirige la diplomatie du Botswana de 1984 à 1994.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Gaositwe%20K.T.%20Chiepe",
+                  "pays": "BW",
+                  "classement": "Chiepe, Gaositwe",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_chiepe.jpg",
+                    "legende": "Gaositwe Chiepe en 1985, photographie",
+                    "auteur": "Sjakkelien Vollebregt Description photographer",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Gaositwe_Chiepe_1985_portrait.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_neto",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1922,
+                  "titre": "Naissance d'Agostinho Neto",
+                  "description": "Agostinho Neto (1922-1979) est un médecin, poète et homme d'État angolais, président du Mouvement populaire de libération de l'Angola et premier président de la République populaire d'Angola en 1975. Auteur du recueil Sagrada Esperança, publié en 1974, il est emprisonné à plusieurs reprises par la police portugaise avant d'entrer dans la lutte armée. Soutenu par Cuba et l'Union soviétique pendant la guerre civile qui suit l'indépendance, il meurt à Moscou en 1979.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Agostinho_Neto",
+                  "pays": "AO",
+                  "classement": "Neto, Agostinho",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_neto.jpg",
+                    "legende": "Agostinho Neto, photographie de Rob Mieremet pour l'agence Anefo (avril 1975)",
+                    "auteur": "Rob Mieremet / Anefo",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:President_MPLA,_heer_Neto_door_Den_Uyl_ontvangen_premier_Den_Uyl_en_A_Neto_(r),_Bestanddeelnr_927-8518_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_roberto",
+                  "axe": "Guerres et résistances",
+                  "date": 1923,
+                  "titre": "Naissance d'Holden Roberto",
+                  "description": "Holden Roberto (1923-2007) est un homme politique angolais, l'un des pères de l'indépendance de l'Angola. Né à Mbanza-Kongo, il fonde dans les années 1950 un mouvement nationaliste bakongo qui devient en 1961 le Front national de libération de l'Angola, dont il est le chef. Écarté en 1975 par le MPLA d'Agostinho Neto, il vit en exil pendant seize ans, avant de revenir à Luanda en 1991 et de mourir en 2007.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Holden_Roberto",
+                  "pays": "AO",
+                  "classement": "Roberto, Holden",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_roberto.jpg",
+                    "legende": "Holden Roberto, photographie de Rob Mieremet pour l'agence Anefo (octobre 1973)",
+                    "auteur": "Mieremet, Rob / Anefo",
+                    "licence": "CC BY-SA 3.0 NL",
+                    "source": "https://commons.wikimedia.org/wiki/File:Holden_Roberto.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_ruthkhama",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1923,
+                  "titre": "Naissance de Ruth Williams Khama",
+                  "description": "Ruth Williams Khama (1923-2002) est une Britannique devenue première dame du Botswana. Elle épouse en 1948 Seretse Khama, malgré l'opposition des familles et des gouvernements britannique et sud-africain, ce qui provoque une crise diplomatique. Elle partage son exil, puis soutient son action de président, et elle est connue au Botswana sous le nom de « Lady Khama ».",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ruth%20Williams%20Khama",
+                  "pays": "BW",
+                  "classement": "Khama, Ruth Williams",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_ruthkhama.jpg",
+                    "legende": "Ruth Williams Khama en 1964, photographie de l'Associated Press",
+                    "auteur": "Associated Press",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ruth_Khama_(1964)_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_kaunda",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1924,
+                  "titre": "Naissance de Kenneth Kaunda",
+                  "description": "Kenneth Kaunda (1924-2021) est le premier président de la Zambie, de 1964 à 1991. Instituteur devenu chef du nationalisme zambien, il conduit le pays à l'indépendance, puis en fait un État à parti unique en 1972, avec une doctrine appelée « humanisme zambien ». Il accepte le multipartisme en 1990, perd l'élection de 1991 et quitte le pouvoir pacifiquement.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kenneth%20Kaunda",
+                  "pays": "ZM",
+                  "classement": "Kaunda, Kenneth",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_kaunda.jpg",
+                    "legende": "Kenneth Kaunda, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kenneth_David_Kaunda.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_mugabe",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1924,
+                  "titre": "Naissance de Robert Mugabe",
+                  "description": "Robert Mugabe (1924-2019) est Premier ministre puis président du Zimbabwe de 1980 à 2017. Ancien instituteur et prisonnier politique, chef de la ZANU, il remporte les élections de l'indépendance en 1980. Il dirige le pays pendant trente-sept ans, de plus en plus autoritaire après la réforme agraire de 2000 et la crise économique, jusqu'à sa destitution par l'armée en novembre 2017.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Robert%20Mugabe",
+                  "pays": "ZW",
+                  "classement": "Mugabe, Robert",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_mugabe.jpg",
+                    "legende": "Robert Mugabe en 2015, photographie",
+                    "auteur": "Русский: Пресс-служба Президента России English: Press Service of the President of Russia",
+                    "licence": "CC BY 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Robert_Mugabe_May_2015_(cropped_3x4).jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_toivo",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1924,
+                  "titre": "Naissance d'Andimba Toivo ya Toivo",
+                  "description": "Andimba Toivo ya Toivo (1924-2017) est l'un des fondateurs de la SWAPO. Condamné à vingt ans de prison en 1968 par un tribunal de Pretoria, il en passe seize à Robben Island, où il côtoie Nelson Mandela. Libéré en 1984, il est secrétaire général de la SWAPO, puis ministre dans le premier gouvernement de la Namibie indépendante.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Andimba%20Toivo%20ya%20Toivo",
+                  "pays": "NA",
+                  "classement": "Toivo ya Toivo, Andimba",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_toivo.jpg",
+                    "legende": "Andimba Toivo ya Toivo, photographie",
+                    "auteur": "Namibia Media Initiative",
+                    "licence": "CC BY 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Andimba_Toivo_ya_Toivo_profile.jpeg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_masire",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1925,
+                  "titre": "Naissance de Ketumile Masire",
+                  "description": "Ketumile Masire (1925-2017) est le deuxième président du Botswana, de 1980 à 1998. Journaliste et agriculteur, compagnon de Seretse Khama, il lui succède et poursuit une politique de démocratie multipartite et de stabilité. Après son départ, il préside plusieurs médiations africaines, dont celle du dialogue intercongolais.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ketumile%20Masire",
+                  "pays": "BW",
+                  "classement": "Masire, Ketumile",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_masire.jpg",
+                    "legende": "Ketumile Masire, photographie de 1980",
+                    "auteur": "European Communities / Jean-Louis Debaize",
+                    "licence": "CC BY 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Masire_1980_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_chibambo",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1928,
+                  "titre": "Naissance de Rose Chibambo",
+                  "description": "Rose Chibambo (1928-2016) est une militante nationaliste malawienne, l'une des premières femmes parlementaires du pays. Dirigeante de la Ligue des femmes du Congrès du Malawi, elle est emprisonnée sous le régime colonial britannique. Après la crise de 1964, elle quitte le pays avec les opposants à Hastings Banda et vit en exil pendant près de trente ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Rose%20Chibambo",
+                  "pays": "MW",
+                  "classement": "Chibambo, Rose",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_chibambo.jpg",
+                    "legende": "Rose Chibambo, portrait sur un billet de banque malawien",
+                    "auteur": "Ahandrich",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Rose_Chibambo.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_pintodeandrade",
+                  "axe": "Littérature et pensée",
+                  "date": 1928,
+                  "titre": "Naissance de Mário Pinto de Andrade",
+                  "description": "Mário Pinto de Andrade (1928-1990) est un poète et homme politique angolais, l'un des fondateurs du Mouvement populaire de libération de l'Angola et son premier président, de 1960 à 1962. Étudiant à Lisbonne, où il fréquente Amílcar Cabral, puis à Paris, où il participe à Présence africaine, il publie en 1958 une anthologie de la poésie noire d'expression portugaise. Opposé à la direction d'Agostinho Neto, il quitte le mouvement en 1974 et meurt à Londres en 1990.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/M%C3%A1rio_Pinto_de_Andrade",
+                  "pays": "AO",
+                  "classement": "Pinto de Andrade, Mário",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_pintodeandrade.jpg",
+                    "legende": "Mário Pinto de Andrade, photographie mise en ligne en 2018",
+                    "auteur": "Auteur non renseigné",
+                    "licence": "CC BY-SA 2.5",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mariopandrade.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_marcelinodossantos",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1929,
+                  "titre": "Naissance de Marcelino dos Santos",
+                  "description": "Marcelino dos Santos (1929-2020) est un poète et un homme politique mozambicain, qui écrit sous le nom de Kalungano. Cofondateur du Frelimo en 1962, il en est le vice-président pendant la lutte de libération. Il préside l'Assemblée populaire du Mozambique de 1977 à 1986, et meurt à Maputo en 2020.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Marcelino%20dos%20Santos",
+                  "pays": "MZ",
+                  "classement": "Santos, Marcelino dos",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_marcelinodossantos.jpg",
+                    "legende": "Marcelino dos Santos à Schiphol, 1975, photographie de Rob Bogaerts (Anefo)",
+                    "auteur": "Rob Bogaerts (Anefo)",
+                    "licence": "CC BY-SA 3.0 NL",
+                    "source": "https://commons.wikimedia.org/wiki/File:Marcelino_dos_Santos_1975.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_nujoma",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1929,
+                  "titre": "Naissance de Sam Nujoma",
+                  "description": "Sam Nujoma (1929-2025) est le premier président de la Namibie indépendante, de 1990 à 2005. Fondateur de la SWAPO en 1960, il dirige depuis l'exil la lutte pour l'indépendance du Sud-Ouest africain contre l'Afrique du Sud, et lance la lutte armée en 1966. Élu trois fois, il quitte le pouvoir en 2005 et meurt en février 2025.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sam%20Nujoma",
+                  "pays": "NA",
+                  "classement": "Nujoma, Sam",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_nujoma.jpg",
+                    "legende": "Sam Nujoma en 2004, photographie",
+                    "auteur": "Ana Nascimento/ABr",
+                    "licence": "CC BY 3.0 BR",
+                    "source": "https://commons.wikimedia.org/wiki/File:Sam_Nujoma_(2004)_cropped.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_sallymugabe",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1931,
+                  "titre": "Naissance de Sally Mugabe",
+                  "description": "Sally Mugabe (1931-1992) est une militante nationaliste, née Sarah Hayfron à Accra, et la première épouse de Robert Mugabe. Elle soutient la lutte des nationalistes pendant la détention de son mari, puis elle est première dame du Zimbabwe de 1980 à sa mort. Elle meurt en 1992 d'une insuffisance rénale et est inhumée au Mémorial des Héros de Harare.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sally%20Hayfron",
+                  "pays": "ZW",
+                  "classement": "Mugabe, Sally",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_sallymugabe.jpg",
+                    "legende": "Sally Mugabe, photographie",
+                    "auteur": "TSGT James F. Clawson",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Sally_Hayfron.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_mungunda",
+                  "axe": "Guerres et résistances",
+                  "date": 1932,
+                  "titre": "Naissance d'Anna Mungunda",
+                  "description": "Anna Mungunda (1932-1959) est une militante namibienne de Windhoek. Elle prend la tête des habitantes qui protestent contre le transfert forcé des Noirs du Vieux Quartier vers Katutura. Elle est tuée par la police le 10 décembre 1959, lors d'une répression qui fait au moins onze morts, et elle est célébrée comme une héroïne de l'indépendance.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Anna%20Mungunda",
+                  "pays": "NA",
+                  "classement": "Mungunda, Anna",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_mungunda.jpg",
+                    "legende": "Anna Mungunda, photographie",
+                    "auteur": "Bärbel Miemietz (1954–)",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:2026-08-16_Infotafel_Anna_Mungunda_10-20-46-471.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_machel",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1933,
+                  "titre": "Naissance de Samora Machel",
+                  "description": "Samora Machel (1933-1986) est le premier président du Mozambique indépendant, de 1975 à sa mort. Chef du Frelimo à partir de 1970, après l'assassinat d'Eduardo Mondlane, il mène la lutte armée contre le Portugal puis instaure un régime marxiste-léniniste à parti unique. Il meurt dans l'accident de son avion, près de la frontière sud-africaine, le 19 octobre 1986, dans des circonstances qui restent discutées.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Samora%20Machel",
+                  "pays": "MZ",
+                  "classement": "Machel, Samora",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_machel.jpg",
+                    "legende": "Samora Machel, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Samora_Moises_Machel_detail_DF-SC-88-01383.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_mutharika",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1934,
+                  "titre": "Naissance de Bingu wa Mutharika",
+                  "description": "Bingu wa Mutharika (1934-2012) est président du Malawi de 2004 à sa mort. Économiste, il relance l'agriculture par des subventions d'engrais, ce qui rend le pays exportateur de maïs. Son second mandat est marqué par un durcissement autoritaire et une crise économique, et il meurt d'une crise cardiaque en avril 2012.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bingu%20wa%20Mutharika",
+                  "pays": "MW",
+                  "classement": "Mutharika, Bingu wa",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_mutharika.jpg",
+                    "legende": "Bingu wa Mutharika au Forum économique mondial, photographie",
+                    "auteur": "World Economic Forum",
+                    "licence": "CC BY-SA 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Bingu_Wa_Mutharika_-_World_Economic_Forum_on_Africa_2008.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_savimbi",
+                  "axe": "Guerres et résistances",
+                  "date": 1934,
+                  "titre": "Naissance de Jonas Savimbi",
+                  "description": "Jonas Savimbi (1934-2002) est un chef rebelle angolais, fondateur de l'Union nationale pour l'indépendance totale de l'Angola en 1966. Après avoir combattu les Portugais, il mène contre le gouvernement du MPLA une guerre civile de vingt-sept ans, soutenue tour à tour par l'Afrique du Sud et les États-Unis, qui ravage le pays. Il est tué au combat en février 2002, ce qui permet la signature de la paix.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jonas_Savimbi",
+                  "pays": "AO",
+                  "classement": "Savimbi, Jonas",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_savimbi.jpg",
+                    "legende": "Jonas Savimbi, photographie d'Ernmuhl (1989)",
+                    "auteur": "Ernmuhl",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jonas_Savimbi.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_coluna",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1935,
+                  "titre": "Naissance de Mário Coluna",
+                  "description": "Mário Coluna (1935-2014) est un footballeur mozambicain, milieu de terrain du Benfica Lisbonne et de l'équipe du Portugal. Capitaine du grand Benfica des années 1960, il gagne la Coupe d'Europe des clubs champions en 1961 et 1962, et la médaille de bronze à la Coupe du monde 1966 avec Eusébio. Il est surnommé « le Monstre sacré ».",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/M%C3%A1rio%20Coluna",
+                  "pays": "MZ",
+                  "classement": "Coluna, Mário",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_coluna.jpg",
+                    "legende": "Mário Coluna à Schiphol, 1969, photographie des Archives nationales néerlandaises",
+                    "auteur": "Nationaal Archief (Anefo)",
+                    "licence": "CC BY-SA 3.0 NL",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mario_Coluna_(1969).jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_malangatana",
+                  "axe": "Beaux-arts",
+                  "date": 1936,
+                  "titre": "Naissance de Malangatana Ngwenya",
+                  "description": "Malangatana Ngwenya (1936-2011) est un peintre, sculpteur et poète mozambicain, le plus célèbre artiste de son pays. Marqué par les rites de son enfance rurale et par les violences de la colonisation, il peint des scènes très peuplées de figures étranges. Emprisonné par la police politique portugaise en 1965 en raison de ses liens avec le Frelimo, il devient ensuite un symbole culturel du Mozambique indépendant.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Malangatana%20Ngwenya",
+                  "pays": "MZ",
+                  "classement": "Ngwenya, Malangatana",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_malangatana.jpg",
+                    "legende": "Malangatana Ngwenya, photographie",
+                    "auteur": "Bunks",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Malangatana_Ngwenya.JPG"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_rupiahbanda",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1937,
+                  "titre": "Naissance de Rupiah Banda",
+                  "description": "Rupiah Banda (1937-2022) est président de la Zambie de 2008 à 2011. Diplomate, puis vice-président, il succède à Levy Mwanawasa, et il accepte sa défaite face à Michael Sata en 2011. Poursuivi après son départ pour des affaires de corruption, il meurt en 2022.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Rupiah%20Banda",
+                  "pays": "ZM",
+                  "classement": "Banda, Rupiah",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_rupiahbanda.jpg",
+                    "legende": "Rupiah Banda, photographie",
+                    "auteur": "Antonio Cruz/ABr",
+                    "licence": "CC BY-SA 2.5",
+                    "source": "https://commons.wikimedia.org/wiki/File:Rupiah_Banda.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_sata",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1937,
+                  "titre": "Naissance de Michael Sata",
+                  "description": "Michael Sata (1937-2014) est président de la Zambie de 2011 à sa mort. Surnommé « le Roi cobra » pour ses propos incisifs, il est ministre de Frederick Chiluba puis longtemps dans l'opposition, et gagne l'élection de 2011. Il meurt à Londres en octobre 2014, au cours de son mandat.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Michael%20Sata",
+                  "pays": "ZM",
+                  "classement": "Sata, Michael",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_sata.jpg",
+                    "legende": "Michael Sata en 2014, photographie",
+                    "auteur": "European Communities, 2014 / EC - Audiovisual Service",
+                    "licence": "CC BY 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Michael_Chilufya_Sata_on_April_2,_2014_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_gurirab",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1938,
+                  "titre": "Naissance de Theo-Ben Gurirab",
+                  "description": "Theo-Ben Gurirab (1938-2018) est un diplomate et homme politique namibien. Représentant de la SWAPO aux Nations unies pendant la lutte pour l'indépendance, il est ministre des Affaires étrangères de 1990 à 2002, puis Premier ministre de 2002 à 2005. Il préside aussi l'Assemblée générale des Nations unies en 1999-2000.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Theo-Ben%20Gurirab",
+                  "pays": "NA",
+                  "classement": "Gurirab, Theo-Ben",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_gurirab.jpg",
+                    "legende": "Theo-Ben Gurirab, photographie",
+                    "auteur": "Secrétariat du vice-président de l'Inde",
+                    "licence": "Image non libre",
+                    "source": "https://commons.wikimedia.org/wiki/File:Theo-Ben_Gurirab_(cropped)_02.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_moshoeshoe2",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1938,
+                  "titre": "Naissance de Moshoeshoe II",
+                  "description": "Moshoeshoe II (1938-1996) est le roi du Lesotho de 1966 à 1990, puis de 1995 à sa mort. Formé à Oxford, il est un roi constitutionnel qui s'oppose aux régimes militaires, ce qui lui vaut deux exils. Il retrouve le trône en 1995 et meurt en janvier 1996 dans un accident de voiture.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Moshoeshoe%20II",
+                  "pays": "LS",
+                  "classement": "Moshoeshoe II",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_moshoeshoe2.jpg",
+                    "legende": "Moshoeshoe II (au centre) à l'université nationale du Lesotho, 1988",
+                    "auteur": "Vanellus Foto",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Moshoeshoe_II.,_Lekhanya.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_geingob",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1941,
+                  "titre": "Naissance de Hage Geingob",
+                  "description": "Hage Geingob (1941-2024) est le premier Premier ministre de la Namibie, de 1990 à 2002, puis président de la République de 2015 à sa mort. Compagnon de Sam Nujoma au sein de la SWAPO, il préside l'assemblée qui rédige la Constitution en 1989-1990. Il meurt en février 2024, au cours de son second mandat.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Hage%20Geingob",
+                  "pays": "NA",
+                  "classement": "Geingob, Hage",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_geingob.jpg",
+                    "legende": "Hage Geingob en 2023, photographie",
+                    "auteur": "Brussels - EC/Berlaymont",
+                    "licence": "CC BY 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Hage_Geingob_(cropped)_(2023).jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_dossantos",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1942,
+                  "titre": "Naissance de José Eduardo dos Santos",
+                  "description": "José Eduardo dos Santos (1942-2022) est un homme d'État angolais, président de la République de 1979 à 2017. Successeur d'Agostinho Neto, il gouverne pendant la guerre civile, puis dirige la reconstruction du pays après la paix de 2002, grâce à la rente pétrolière. Son long règne est marqué par un fort autoritarisme et par l'enrichissement de son entourage, et il meurt à Barcelone en 2022.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jos%C3%A9_Eduardo_dos_Santos",
+                  "pays": "AO",
+                  "classement": "Santos, José Eduardo dos",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_dossantos.jpg",
+                    "legende": "José Eduardo dos Santos, photographie de Fabio Rodrigues Pozzebom pour l'Agência Brasil (juin 2014)",
+                    "auteur": "Fabio Rodrigues Pozzebom/Agência Brasil",
+                    "licence": "CC BY 3.0 BR",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jos%C3%A9_Eduardo_dos_Santos-16062014-edit.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_chiluba",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1943,
+                  "titre": "Naissance de Frederick Chiluba",
+                  "description": "Frederick Chiluba (1943-2011) est président de la Zambie de 1991 à 2002. Syndicaliste, il bat Kenneth Kaunda lors des premières élections pluralistes et libéralise l'économie. Poursuivi pour détournement après son départ, il est acquitté en Zambie en 2009, mais jugé responsable par un tribunal britannique.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Frederick%20Chiluba",
+                  "pays": "ZM",
+                  "classement": "Chiluba, Frederick",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_chiluba.jpg",
+                    "legende": "Frederick Chiluba en 1994, photographie",
+                    "auteur": "European Communities, 1994 / EC - Audiovisual Service",
+                    "licence": "CC BY 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Frederick_Chiluba_on_February_3,_1994_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_josina",
+                  "axe": "Guerres et résistances",
+                  "date": 1945,
+                  "titre": "Naissance de Josina Machel",
+                  "description": "Josina Machel (1945-1971) est une militante mozambicaine du Frelimo et la première épouse de Samora Machel. Elle crée le détachement féminin de l'armée du Frelimo, forme des combattantes et s'occupe des orphelins de guerre. Elle meurt de maladie à Dar es Salaam en avril 1971, à vingt-cinq ans, et reste un symbole de l'émancipation des femmes du pays.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Josina%20Machel",
+                  "pays": "MZ",
+                  "classement": "Machel, Josina",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_josina.jpg",
+                    "legende": "Josina Machel, portrait imprimé sur un tissu (capulana)",
+                    "auteur": "Afgebeelde persoon / depicted constituent: Josina Machel (1945 - 1971)",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:COLLECTIE_TROPENMUSEUM_Doek_met_afbeelding_van_Josina_Machel_TMnr_6369-11.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_chiweshe",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1946,
+                  "titre": "Naissance de Stella Chiweshe",
+                  "description": "Stella Chiweshe (1946-2023) est une musicienne zimbabwéenne, joueuse de mbira, instrument traditionnel que les femmes ne jouaient guère. Elle devient, à partir des années 1960, « la reine de la mbira », et ses tournées en Europe et en Amérique la font connaître. Elle meurt en 2023.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Stella%20Chiweshe",
+                  "pays": "ZW",
+                  "classement": "Chiweshe, Stella",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_chiweshe.jpg",
+                    "legende": "Stella Chiweshe en 2012, photographie",
+                    "auteur": "ATV News",
+                    "licence": "CC BY 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:StellaChiweshe2012.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_mungoshi",
+                  "axe": "Littérature et pensée",
+                  "date": 1947,
+                  "titre": "Naissance de Charles Mungoshi",
+                  "description": "Charles Mungoshi (1947-2019) est un écrivain zimbabwéen d'expression shona et anglaise. Il publie en 1975 le roman shona Ndiko Kupindana Kwamazuva et le roman anglais Waiting for the Rain, qui le font reconnaître comme l'un des meilleurs auteurs du pays. Il écrit aussi des contes pour enfants et des poèmes, et meurt à Harare en 2019.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Charles%20Mungoshi",
+                  "pays": "ZW",
+                  "classement": "Mungoshi, Charles",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_mungoshi.jpg",
+                    "legende": "Charles Mungoshi, photographie",
+                    "auteur": "Barbara Niggl Radloff (1936–2010)",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:FM-2019-1-6-10-31_Niggl-Radloff-B-Charles-Mungoshi-ONLINE.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_mwanawasa",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1948,
+                  "titre": "Naissance de Levy Mwanawasa",
+                  "description": "Levy Mwanawasa (1948-2008) est président de la Zambie de 2002 à sa mort. Avocat, il lance une campagne contre la corruption, qui touche son prédécesseur Frederick Chiluba, et obtient un allègement de la dette du pays. Réélu en 2006, il meurt à Paris en août 2008, des suites d'un accident vasculaire cérébral.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Levy%20Mwanawasa",
+                  "pays": "ZM",
+                  "classement": "Mwanawasa, Levy",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_mwanawasa.jpg",
+                    "legende": "Levy Mwanawasa, photographie",
+                    "auteur": "International Monetary Fund",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Levy_Mwanawasa.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_mtukudzi",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1952,
+                  "titre": "Naissance d'Oliver Mtukudzi",
+                  "description": "Oliver Mtukudzi (1952-2019) est un chanteur et guitariste zimbabwéen, dit Tuku, l'un des artistes les plus connus d'Afrique australe. Il chante en shona, en ndébélé et en anglais, avec un style personnel, et enregistre plus de soixante albums, dont plusieurs sur le sida et la pauvreté. Ambassadeur de bonne volonté de l'Unicef pour l'Afrique de l'Est et australe, il meurt à Harare en janvier 2019.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Oliver%20Mtukudzi",
+                  "pays": "ZW",
+                  "classement": "Mtukudzi, Oliver",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_mtukudzi.jpg",
+                    "legende": "Oliver Mtukudzi en concert, photographie",
+                    "auteur": "Jshecket",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Oliver_Mtukudzi.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_tsvangirai",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1952,
+                  "titre": "Naissance de Morgan Tsvangirai",
+                  "description": "Morgan Tsvangirai (1952-2018) est le chef de l'opposition zimbabwéenne et le fondateur du Mouvement pour le changement démocratique. Ancien syndicaliste, il est arrêté et agressé à plusieurs reprises, puis arrive en tête au premier tour de l'élection de 2008, avant de se retirer face aux violences. Il est Premier ministre du gouvernement d'union de 2009 à 2013.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Morgan%20Tsvangirai",
+                  "pays": "ZW",
+                  "classement": "Tsvangirai, Morgan",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_tsvangirai.jpg",
+                    "legende": "Morgan Tsvangirai à Oslo, 2009, photographie",
+                    "auteur": "Copyright © Harry Wad",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Morgan_Tsvangirai_Oslo_2009_A.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_dhlakama",
+                  "axe": "Guerres et résistances",
+                  "date": 1953,
+                  "titre": "Naissance d'Afonso Dhlakama",
+                  "description": "Afonso Dhlakama (1953-2018) est le chef de la Renamo, mouvement de guérilla puis parti d'opposition du Mozambique. Il dirige à partir de 1979 les combattants qui affrontent le gouvernement du Frelimo pendant la guerre civile de 1977-1992, soutenus d'abord par la Rhodésie, puis par l'Afrique du Sud. Candidat à toutes les présidentielles depuis 1994, il reprend les armes à plusieurs reprises, et meurt en 2018 dans le maquis de Gorongosa.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Afonso%20Dhlakama",
+                  "pays": "MZ",
+                  "classement": "Dhlakama, Afonso",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_dhlakama.jpg",
+                    "legende": "Afonso Dhlakama, photographie",
+                    "auteur": "Adrien Barbier",
+                    "licence": "CC BY-SA 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Afonso_Dhlakama.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_bastos",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1954,
+                  "titre": "Naissance de Waldemar Bastos",
+                  "description": "Waldemar Bastos (1954-2020) est un chanteur et musicien angolais, né à Mbanza-Kongo, qui mêle les rythmes de l'Angola, le jazz et la musique brésilienne. Contraint de quitter son pays dans les années 1980, il s'installe au Portugal et connaît un succès international avec l'album Pretaluz en 1998. Il reste une voix de l'exil et de la nostalgie angolaise, jusqu'à sa mort à Lisbonne en 2020.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Waldemar_Bastos",
+                  "pays": "AO",
+                  "classement": "Bastos, Waldemar",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_bastos.jpg",
+                    "legende": "Waldemar Bastos, image fournie par l'artiste (2018)",
+                    "auteur": "Waldemar Bastos. (Courtesy image: Waldemar Bastos/Facebook)",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Waldemar_Bastos.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_hove",
+                  "axe": "Littérature et pensée",
+                  "date": 1956,
+                  "titre": "Naissance de Chenjerai Hove",
+                  "description": "Chenjerai Hove (1956-2015) est un écrivain zimbabwéen, auteur de romans, de poèmes et d'essais. Son roman Bones, en 1988, raconte la guerre de libération du point de vue d'une paysanne, et reçoit le prix Noma en 1989. Opposant à Robert Mugabe, il s'exile en 2001 et meurt à Stavanger, en Norvège, en 2015.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Chenjerai%20Hove",
+                  "pays": "ZW",
+                  "classement": "Hove, Chenjerai",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_hove.jpg",
+                    "legende": "Chenjerai Hove en 2007, photographie",
+                    "auteur": "Perijove",
+                    "licence": "Image non libre",
+                    "source": "https://commons.wikimedia.org/wiki/File:ChenjeraiHove2007.jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_lungu",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1956,
+                  "titre": "Naissance d'Edgar Lungu",
+                  "description": "Edgar Lungu (1956-2025) est président de la Zambie de 2015 à 2021. Avocat, il est élu lors d'une élection anticipée après la mort de Michael Sata, puis réélu en 2016 dans un climat de tensions. Il perd l'élection de 2021 face à Hakainde Hichilema, et meurt en 2025.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Edgar%20Lungu",
+                  "pays": "ZM",
+                  "classement": "Lungu, Edgar",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_lungu.jpg",
+                    "legende": "Edgar Lungu au TICAD VII, photographie",
+                    "auteur": "日本語: 内閣官房内閣広報室 English: Cabinet Public Relations Office of the Cabinet Secretariat",
+                    "licence": "CC BY 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Edgar_Lungu_in_TICAD_VII_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_afriqueaustrale_vera",
+                  "axe": "Littérature et pensée",
+                  "date": 1964,
+                  "titre": "Naissance de Yvonne Vera",
+                  "description": "Yvonne Vera (1964-2005) est une romancière zimbabwéenne, née à Bulawayo. Elle écrit sur les violences faites aux femmes dans les romans Under the Tongue, en 1996, et Butterfly Burning, en 1998. Directrice de la Galerie nationale de Bulawayo, elle meurt à Toronto en 2005, à quarante ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Yvonne%20Vera",
+                  "pays": "ZW",
+                  "classement": "Vera, Yvonne",
+                  "image": {
+                    "src": "assets/portraits/pan_afriqueaustrale_vera.jpg",
+                    "legende": "Yvonne Vera, photographie",
+                    "auteur": "Eric Beauchemin",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Yvonne_Vera,_Zimbabwean_author.jpg"
+                  }
+                }
+              ],
+              "axeOrder": [
+                "Chefs d'État et dirigeants",
+                "Guerres et résistances",
+                "Littérature et pensée",
+                "Beaux-arts",
+                "Musique, spectacle et sport"
+              ],
+              "essentiel": [
+                "pan_afriqueaustrale_njinga",
+                "pan_afriqueaustrale_kimpavita",
+                "pan_afriqueaustrale_moshoeshoe1",
+                "pan_afriqueaustrale_witbooi",
+                "pan_afriqueaustrale_lobengula",
+                "pan_afriqueaustrale_chilembwe",
+                "pan_afriqueaustrale_seretse",
+                "pan_afriqueaustrale_neto",
+                "pan_afriqueaustrale_kaunda",
+                "pan_afriqueaustrale_mugabe",
+                "pan_afriqueaustrale_nujoma",
+                "pan_afriqueaustrale_machel"
+              ]
+            },
             {
               "id": "pan_afriquecentrale",
               "nom": "Grandes figures d'Afrique centrale",

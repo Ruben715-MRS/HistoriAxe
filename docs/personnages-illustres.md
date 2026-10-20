@@ -11,7 +11,7 @@ ne posent pas la même question :
 | | Un thème, c'est | Une date, c'est | On le joue par |
 |---|---|---|---|
 | **Biographies** | une vie (360 thèmes, en 12 domaines) | une étape de cette vie | étape de la vie |
-| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Turquie, le Japon, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Éthiopie, l'Afrique de l'Est et la Corne, l'Indonésie, le monde malais, les Philippines, le Vietnam-Cambodge-Laos, la Thaïlande et la Birmanie, la Mongolie, la Corée, la Pologne, l'Europe centrale) | la naissance d'un personnage | domaine |
+| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Turquie, le Japon, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Éthiopie, l'Afrique de l'Est et la Corne, l'Afrique australe, l'Indonésie, le monde malais, les Philippines, le Vietnam-Cambodge-Laos, la Thaïlande et la Birmanie, la Mongolie, la Corée, la Pologne, l'Europe centrale) | la naissance d'un personnage | domaine |
 
 Le déplacement ne coûte aucune migration : les 360 thèmes gardent leurs
 identifiants, et rien de ce que le joueur a sauvegardé (favoris, révision,
@@ -2278,6 +2278,37 @@ la Corne de l'Afrique, les capitales (Nairobi, Kampala, Khartoum, Mogadiscio, Da
 - **Statut américain des images : à relire**, comme pour l'Éthiopie ; **le téléchargement a demandé des détours** : Wikimedia a limité le débit pendant des heures, et `fetch_portraits.py` a dû être doublé d'un
   téléchargement direct des miniatures sur `upload.wikimedia.org` (tailles standard seulement) pour les dernières images.
 
+### Un bloc : l'Afrique australe
+
+`pan_afriqueaustrale`, « Grandes figures d'Afrique australe » (code `afriqueaustrale`, bloc ; rangé sous « Afrique australe », avant l'Afrique centrale) : **64 personnages de neuf pays** — Zimbabwe 13, Angola 10, Namibie 10,
+Mozambique 8, Zambie 7, Botswana 5, Lesotho 5, Malawi 4, Eswatini 2 — d'Alphonse Ier du Kongo (vers 1457) à Yvonne Vera (1964). Par axe : 36 Chefs d'État et dirigeants, 17 Guerres et résistances, 6 Littérature et pensée,
+4 Musique, spectacle et sport, 1 Beaux-arts ; 12 ⭐ et aucune biographie liée. **Cinq axes, pas six** : aucune figure Sciences, techniques et innovation n'a à la fois un article en français et un portrait libre.
+64 portraits : 21 du domaine public, 3 CC0, 3 CC BY 3.0, 2 CC BY 3.0 BR, 7 CC BY 4.0, 2 CC BY-SA 2.0, 2 CC BY-SA 2.5, 9 CC BY-SA 3.0, 4 CC BY-SA 3.0 NL, 8 CC BY-SA 4.0 et **3 images non libres** (voir plus bas).
+Cinq figures sont nées avant 1800 (Alphonse Ier, Njinga, Kimpa Vita, Jonker Afrikaner, Moshoeshoe Ier), quatorze entre 1800 et 1899, quarante-cinq depuis 1900. Les mots-clés du thème portent les neuf pays et leurs anciens
+noms (Rhodésie, Nyassaland, Sud-Ouest africain, Bechuanaland, Basutoland, Swaziland), les capitales, la SADC, le Kongo et le Ndongo, le Frelimo, le MPLA, la SWAPO, la ZANU, les Ndébélé, les Héréros et la Chimurenga.
+
+- **Le périmètre** : Angola, Mozambique, Zimbabwe, Zambie, Malawi, Namibie, Botswana, Lesotho et Eswatini — **sans l'Afrique du Sud**, qui a son panthéon. Les **dix figures de l'Angola** viennent du bloc de l'Afrique centrale,
+  qu'elles ont quitté à la demande de l'éditeur : leurs fiches, leurs portraits et leurs ⭐ (Njinga, Kimpa Vita, Neto) sont repris tels quels, les portraits renommés (`pan_afriqueaustrale_*`). L'Angola pèse 16 %,
+  le Zimbabwe 20 % : aucun pays n'approche 40 %. Livingstone, Eusébio et Rhodes, qui touchent à la région, sont au Royaume-Uni, au Portugal et à l'Afrique du Sud.
+- **L'Eswatini (2 figures) et le Malawi (4) sont maigres** : les rois du Swaziland (Sobhuza Ier, Mswati II, Mbandzeni) n'ont pas d'image libre, et Chipembere, Chiume et Chirwa n'ont pas d'article en français.
+- **Le Zimbabwe et ses deux camps** : Mugabe, Nkomo, Tsvangirai, mais aussi les Blancs de Rhodésie Ian Smith et Garfield Todd (ce dernier né en Nouvelle-Zélande). Smith, qui proclame l'indépendance de 1965 pour préserver
+  le pouvoir de la minorité blanche, est écrit avec ses fautes, comme Idi Amin et Siad Barre à l'Afrique de l'Est. Mugabe n'est pas épargné : « de plus en plus autoritaire ».
+- **Dates retenues quand les sources divergent** : Nehanda est datée de « vers 1862 » (l'article français dit 1840 ou 1862 ; 1862 est la date la plus citée, mais c'est un choix éditorial), Hastings Banda de « vers 1898 »
+  (aucun registre de naissance), Lobengula de « vers 1845 » (l'infobox donne aussi 1833), Hendrik Witbooi de « vers 1830 », Maharero de « vers 1820 », Jonker Afrikaner de « vers 1785 », Labotsibeni de « vers 1859 »
+  (l'article dit aussi 1858), John Chilembwe de « vers 1871 ». Les autres dates viennent de l'article français ou de Wikidata, non recoupées une à une.
+- **Des portraits souvent indirects**, et les légendes le disent : Eduardo Mondlane et Josina Machel sont montrés par leur effigie sur un tissu imprimé (capulana), Rose Chibambo par son portrait sur un billet de banque,
+  Lobengula par un portrait de Ralph Peacock d'après un croquis, Jonker Afrikaner et Moshoeshoe Ier par des gravures, Orlando Mendes et Thomas Mofolo par des dessins. Marcelino dos Santos, Mário Coluna et Moshoeshoe II
+  sont vus sur des photographies de groupe, recadrées sur eux. Sept portraits (Nkomo, Lobengula, Samuel Maharero, Jonker Afrikaner, Witbooi, Labotsibeni) ont été **recadrés localement** sur le visage, à partir de
+  l'image déjà téléchargée, et non via `recadrage` : un nouveau téléchargement les rendrait à leur cadrage de base.
+- **Trois images non libres, exception assumée** : Chenjerai Hove (licence GFDL), Theo-Ben Gurirab (licence « GODL-India », du secrétariat du vice-président de l'Inde) et Sobhuza II (« Open Government Licence », Archives
+  nationales du Royaume-Uni) ont une image que `fetch_portraits.py` refuse (licence hors liste). Elles sont téléchargées depuis Commons, leur licence s'écrit « Image non libre » dans les données, `image.source` renvoie à
+  la page du fichier. **À remplacer dès qu'une image libre existe, ou à faire valider**, comme pour la Pologne et l'Afrique de l'Est.
+- **Écartés ou en attente**, voir `scripts/pantheon/afriqueaustrale_candidats.md` : Mzilikazi (la seule image est un dessin de 1836 qui montre des guerriers, sans visage lisible), Deolinda Rodrigues (année de décès 1967 ou
+  1968), Craveirinha, Chitepo, Tongogara, Marechera, Kutako (aucun portrait libre), et plusieurs dizaines de figures sans article en français. Les images de Seretse Khama et de Ruth Williams Khama ont dû être
+  remplacées : les fichiers de Wikidata étaient proposés à la suppression sur Commons (« speedy deletion »).
+- **Statut américain des images : à relire**, comme pour l'Éthiopie et l'Afrique de l'Est. Le téléchargement a de nouveau exigé le détour par les miniatures directes de `upload.wikimedia.org`, Wikimedia limitant le débit pendant
+  des heures.
+
 ### Un bloc : le monde malais (Malaisie, Singapour, Brunei et Timor oriental)
 
 `pan_malais`, « Grandes figures du monde malais » (code `malais`, bloc ; rangé sous « Monde malais »,
@@ -2873,7 +2904,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
 ### Ce qui n'est pas fait
 
 - **Les autres panthéons** : la France, l'Égypte, les États-Unis, l'Italie, le
-  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Éthiopie, l'Afrique de l'Est et la Corne, l'Indonésie, le monde malais, les Philippines, le Vietnam-Cambodge-Laos, la Thaïlande et la Birmanie, la Mongolie, la Corée, la Pologne, l'Europe centrale sont écrits.
+  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Éthiopie, l'Afrique de l'Est et la Corne, l'Afrique australe, l'Indonésie, le monde malais, les Philippines, le Vietnam-Cambodge-Laos, la Thaïlande et la Birmanie, la Mongolie, la Corée, la Pologne, l'Europe centrale sont écrits.
   Chaque liste de personnages est validée avant la rédaction. Feuille de route, dans l'ordre
   où on les propose (un pays seul quand il a de quoi faire un thème, un bloc sinon) :
   1. **Le Machrek est écrit** (voir « Le cinquième bloc »). Il reste : le portrait des trois
@@ -2888,9 +2919,9 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
   3. **Blocs** : l'Asie du Sud-Est (l'Indonésie est écrite, voir « Un pays à part : l'Indonésie » ; le monde malais est écrit, voir « Un bloc : le monde malais » ; les Philippines sont écrites, voir « Un pays à part : les Philippines » ; l'Indochine — Vietnam, Cambodge, Laos — est écrite, voir « Un bloc : l'Indochine » ; la Thaïlande avec la Birmanie est écrite, voir « Un bloc : la Thaïlande et la Birmanie » ; restent le Brunei déjà au bloc malais, la Papouasie-Nouvelle-Guinée et les Mélanésiens), la Mongolie (l'Asie centrale est écrite, voir « Un bloc : l'Asie centrale et
      l'Afghanistan »), le Caucase, la Corée (`KR`/`KP`), l'Afrique de
      l'Ouest, puis les trois derniers morceaux de l'Afrique de l'Est et australe, décidés ainsi : **l'Éthiopie est écrite**, pays seul (voir « Un pays à part :
-     l'Éthiopie ») ; le bloc **Afrique de l'Est et Corne** (Kenya, Tanzanie, Ouganda, Somalie, Érythrée, Djibouti, Soudan et Soudan du Sud, sans l'Éthiopie) **est écrit** (voir « Un bloc : l'Afrique de l'Est et la Corne ») ; il reste un bloc
-     **Afrique australe** (Angola, Mozambique, Zimbabwe, Zambie, Malawi, Namibie, Botswana, Lesotho et Eswatini, sans l'Afrique du Sud — l'Angola, aujourd'hui dans le bloc
-     de l'Afrique centrale, y sera déplacé) ; un bloc **océan Indien occidental** (Madagascar, Comores, Maurice et Seychelles, avec un `partMaxPays` relevé vers 0,55 : Madagascar
+     l'Éthiopie ») ; le bloc **Afrique de l'Est et Corne** (Kenya, Tanzanie, Ouganda, Somalie, Érythrée, Djibouti, Soudan et Soudan du Sud, sans l'Éthiopie) **est écrit** (voir « Un bloc : l'Afrique de l'Est et la Corne ») ; le bloc
+     **Afrique australe** (Angola, Mozambique, Zimbabwe, Zambie, Malawi, Namibie, Botswana, Lesotho et Eswatini, sans l'Afrique du Sud) **est écrit** (voir « Un bloc : l'Afrique australe » ; l'Angola y a été déplacé
+     depuis l'Afrique centrale) ; il reste un bloc **océan Indien occidental** (Madagascar, Comores, Maurice et Seychelles, avec un `partMaxPays` relevé vers 0,55 : Madagascar
      en pèsera la moitié). **La Réunion et Mayotte n'y sont pas** : départements français, leurs figures vont au panthéon de la France, comme celles d'Hawaï à celui des
      États-Unis. L'Afrique centrale est écrite (voir « Un bloc : l'Afrique centrale »). « Nouvelle-Zélande et Pacifique » est écrit (voir « Un bloc : la
      Nouvelle-Zélande et le Pacifique »). Les pays baltes sont écrits (voir « Un bloc : les pays baltes »).

@@ -1,5 +1,7 @@
 # Afrique australe (hors Afrique du Sud) — candidats examinés
 
+> **État** : le bloc `pan_afriqueaustrale` est construit (64 figures, neuf pays ; voir « Un bloc : l'Afrique australe » dans `docs/personnages-illustres.md`). Ce qui suit est la liste examinée avant l'écriture. Retirés depuis : **Mzilikazi** (image sans visage lisible) et **Deolinda Rodrigues** (année de décès incertaine). Les images de Seretse Khama et de Ruth Williams Khama ont été remplacées.
+
 **Verdict : le bloc tient avec environ 66 figures de neuf pays**, sans difficulté de masse (le Zimbabwe en pèse 21 %), mais avec un Eswatini et un Malawi maigres, et **cinq axes** (pas de Sciences). Les dix figures
 de l'Angola, aujourd'hui dans le bloc de l'Afrique centrale, sont déjà écrites et ont leur portrait : elles passeraient telles quelles (voir plus bas).
 

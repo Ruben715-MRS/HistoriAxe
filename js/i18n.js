@@ -9,7 +9,7 @@
 // pack de langue explicitement téléchargé avant une mise à jour de
 // ui/<lang>.json resterait bloqué sur son ancien contenu indéfiniment (ce
 // cache n'est jamais revalidé contre le réseau une fois rempli).
-const I18N_DATA_CACHE = 'historiaxe-data-v1.0.86';
+const I18N_DATA_CACHE = 'historiaxe-data-v1.0.87';
 
 // Le nom de chaque langue reste dans sa propre langue (autonyme) — convention
 // standard des sélecteurs de langue, ne dépend jamais de la langue active.
@@ -18,7 +18,7 @@ const I18N_DATA_CACHE = 'historiaxe-data-v1.0.86';
 // themeCount/eventCount reflètent data/<lang>.json: totalThemes/totalEvents —
 // à mettre à jour si le contenu d'une langue est enrichi (voir tests/data-schema.test.js).
 const AVAILABLE_LANGUAGES = [
-    { code: 'fr', name: 'Français', flag: '🇫🇷', version: '1.0.0', sizeVal: '18.8', sizeUnit: 'mb', isDemo: false, isDefault: true, themeCount: 845, eventCount: 25235 },
+    { code: 'fr', name: 'Français', flag: '🇫🇷', version: '1.0.0', sizeVal: '18.8', sizeUnit: 'mb', isDemo: false, isDefault: true, themeCount: 846, eventCount: 25289 },
     { code: 'en', name: 'English', flag: '🇬🇧', version: '1.0.0', sizeVal: '9.3', sizeUnit: 'kb', isDemo: true, isDefault: false, themeCount: 2, eventCount: 20 },
     { code: 'es', name: 'Español', flag: '🇪🇸', version: '1.0.0', sizeVal: '5.1', sizeUnit: 'kb', isDemo: true, isDefault: false, themeCount: 2, eventCount: 10 },
     { code: 'de', name: 'Deutsch', flag: '🇩🇪', version: '1.0.0', sizeVal: '6.6', sizeUnit: 'kb', isDemo: true, isDefault: false, themeCount: 2, eventCount: 14 },
