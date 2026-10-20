@@ -1,5 +1,7 @@
 # Afrique de l'Est et Corne (hors Éthiopie) — candidats examinés
 
+> **État** : le bloc `pan_afriqueest` est construit (63 figures, huit pays ; voir « Un bloc : l'Afrique de l'Est et la Corne » dans `docs/personnages-illustres.md`). Ce qui suit est la liste examinée avant l'écriture ; ses chiffres (53 retenues) ne sont plus ceux du bloc. Retirées depuis : **Samuel Wanjiru** (⭐ ; sa seule image montre la foule d'un stade et non son visage), **Charles Lwanga** (icône à plusieurs figures), **Ali Dinar** (photographie de son cadavre), **Apollo Kaggwa** (photographie de deux hommes), **Ali Aref Bourhan** (fiche non rédigée). Ajoutées : les images petites, **Zerai Deres** (Érythrée) et les quatre images non libres.
+
 **Verdict : le bloc tient avec environ 53 figures, mais sans l'Érythrée et sans Beaux-arts.** Huit pays étaient prévus : Kenya, Tanzanie, Ouganda, Somalie, Érythrée, Djibouti, Soudan et
 Soudan du Sud. L'Érythrée n'a **aucune** figure avec portrait libre (voir plus bas) : elle ne peut pas être déclarée dans le bloc tant qu'elle n'en a pas une.
 

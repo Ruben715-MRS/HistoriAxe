@@ -11,7 +11,7 @@ ne posent pas la même question :
 | | Un thème, c'est | Une date, c'est | On le joue par |
 |---|---|---|---|
 | **Biographies** | une vie (360 thèmes, en 12 domaines) | une étape de cette vie | étape de la vie |
-| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Turquie, le Japon, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Éthiopie, l'Indonésie, le monde malais, les Philippines, le Vietnam-Cambodge-Laos, la Thaïlande et la Birmanie, la Mongolie, la Corée, la Pologne, l'Europe centrale) | la naissance d'un personnage | domaine |
+| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Turquie, le Japon, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Éthiopie, l'Afrique de l'Est et la Corne, l'Indonésie, le monde malais, les Philippines, le Vietnam-Cambodge-Laos, la Thaïlande et la Birmanie, la Mongolie, la Corée, la Pologne, l'Europe centrale) | la naissance d'un personnage | domaine |
 
 Le déplacement ne coûte aucune migration : les 360 thèmes gardent leurs
 identifiants, et rien de ce que le joueur a sauvegardé (favoris, révision,
@@ -2248,6 +2248,39 @@ rastafarisme et Magdala.
 - **Statut américain des images : à relire**, comme pour l'Afrique centrale et l'Afrique du Sud : 30 des 43 images sont « domaine public », en majorité des photographies d'auteur inconnu ; le script lit la
   licence que Commons déclare, non le statut américain.
 
+### Un bloc : l'Afrique de l'Est et la Corne
+
+`pan_afriqueest`, « Grandes figures d'Afrique de l'Est et de la Corne » (code `afriqueest`, bloc ; rangé sous « Afrique de l'Est et Corne », entre l'Afrique centrale et l'Afrique de l'Ouest) : **63 personnages de huit pays**
+— Kenya 16, Soudan 11, Tanzanie 11, Somalie 10, Ouganda 9, Djibouti 3, Soudan du Sud 2, Érythrée 1 — d'Osman Digna (vers 1836) à Binyavanga Wainaina (1971). Par axe : 36 Chefs d'État et dirigeants,
+15 Guerres et résistances, 5 Littérature et pensée, 5 Musique, spectacle et sport, 2 Sciences, techniques et innovation ; 8 ⭐ et aucune biographie liée. **Cinq axes, pas six** : aucune figure des Beaux-arts n'a
+à la fois un article en français et un portrait libre (Tingatinga, Elimo Njau, Gregory Maloba n'ont pas d'article français ; Kamala Ibrahim Ishaq n'a pas d'image). 63 portraits : 36 du domaine public, 2 CC0,
+2 CC BY 2.0, 1 CC BY 3.0, 2 CC BY 4.0, 4 CC BY-SA 2.0, 4 CC BY-SA 3.0, 2 CC BY-SA 3.0 NL, 1 CC BY-SA 3.0 DE, 5 CC BY-SA 4.0 et **4 images non libres** (voir plus bas). Quatorze figures sont nées entre 1800 et 1899, quarante-neuf
+depuis 1900, aucune avant : l'Afrique de l'Est précoloniale (Aksoum, la côte swahilie, les Grands Lacs) est absente faute de dates de naissance. Les mots-clés du thème portent les huit pays, Zanzibar, le Buganda,
+la Corne de l'Afrique, les capitales (Nairobi, Kampala, Khartoum, Mogadiscio, Dar es Salaam), les Mau Mau, le Mahdi, les Kikuyu et les Luo.
+
+- **Le périmètre** : Kenya, Tanzanie, Ouganda, Somalie, Érythrée, Djibouti, Soudan et Soudan du Sud — **sans l'Éthiopie**, qui a son panthéon. Le Rwanda et le Burundi restent dans le bloc de l'Afrique centrale.
+  Le Soudan (11 figures) est ici faute de bloc plus naturel : ni l'Égypte, ni le Maghreb, ni le Machrek ne le traitent. **Aucun pays au-delà de 40 %** : le Kenya pèse 16 sur 63 (25 %).
+- **L'Érythrée n'a qu'une figure, Zerai Deres** (1915-1945), traducteur devenu héros de l'anticolonialisme (l'Éthiopie et l'Érythrée le revendiquent). Aucun autre Érythréen n'a à la fois un article français, une date de
+  naissance, un décès et un portrait : Woldeab Woldemariam, Hamid Idris Awate et Tsehaytu Beraki n'ont pas d'image (celle qu'on prête à Awate est contestée), Osman Saleh Sabbe n'a pas d'article français.
+  **À enrichir** si une image paraît.
+- **Les images petites ont été gardées** : une douzaine de portraits ont de 150 à 300 px de large (Muteesa Ier, Gouled, Kiwanuka, Obote, Aden Adde, Bibi Titi, Oginga Odinga, Temu, Bi Kidude, Mirambo…). Ils sont agrandis,
+  donc flous, mais le visage est reconnaissable.
+- **Des représentations indirectes, que les légendes disent** : Dedan Kimathi est montré par sa statue de Nairobi (recadrée sur la tête), Janani Luwum par sa sculpture de l'abbaye de Westminster ; Wilson Kiprugut par une figurine de
+  la série « Campioni dello Sport » (1968) ; le Mahdi, le Khalife, Mohammed Abdullah Hassan et Mirambo par des gravures d'époque.
+- **Quatre images non libres, exception assumée** : Mwai Kibaki et Mkwawa (licence « Open Government Licence » du Royaume-Uni), Louis Leakey (« No restrictions », Smithsonian) et Aden Abdullah Osman Daar (« Attribution »)
+  ont une image que `fetch_portraits.py` refuse (licence hors liste). Elles sont téléchargées depuis Commons, leur licence s'écrit « Image non libre » dans les données (`image.licence`), `image.source` renvoie à la page du
+  fichier. **À remplacer dès qu'une image libre existe, ou à faire valider**, comme pour la Pologne.
+- **Dates retenues quand les sources divergent** : Jomo Kenyatta est daté de 1894 (l'article français ; Wikidata dit 1893) ; sont « vers » Osman Digna (1836), Tippo Tip et Barghash ben Saïd (1837), Muteesa Ier (1837, l'article dit
+  aussi 1827), Mirambo (1840), Idi Amin (1925, entre 1923 et 1928), Bi Kidude (1910). Mohamed Siad Barre est daté de 1919 (certaines sources donnent 1910).
+- **Les noms, et le classement** : Kényans, Ougandais et Tanzaniens se rangent par leur nom (Kenyatta, Nyerere) ; Somalis, Arabes et Swahilis, qui n'ont pas de nom de famille, par leur prénom (Abdullahi Yusuf Ahmed à A, Hassan
+  al-Tourabi à H, Abd al-Rahman al-Mahdi à A), de même que les souverains (Mwanga II, Muteesa II). Idi Amin Dada se range à « Amin Dada », Ahmed Dini Ahmed à « Dini » (exceptions dans `scripts/pantheon_classement.py`).
+- **Les deux tiers sont des chefs d'État** : trente-six figures sur soixante-trois, dont Idi Amin, Siad Barre et Nimeiry, écrits avec leurs fautes. Wangari Maathai est rangée aux « Guerres et résistances », comme
+  Tutu en Afrique du Sud. Louis Leakey, britannique né au Kenya, est ici faute de panthéon britannique qui l'ait.
+- **Écartés ou en attente**, voir `scripts/pantheon/afriqueest_candidats.md` : Samuel Wanjiru (champion olympique du marathon : la seule image montre la foule d'un stade, pas son visage), Charles Lwanga (la seule image est une icône à plusieurs figures), Ali Dinar
+  (la seule image est la photographie de son cadavre, prise par les Britanniques en 1916), Apollo Kaggwa (la photographie réunit deux hommes), Ali Aref Bourhan ; plusieurs dizaines de figures sans article en français et une vingtaine sans portrait libre.
+- **Statut américain des images : à relire**, comme pour l'Éthiopie ; **le téléchargement a demandé des détours** : Wikimedia a limité le débit pendant des heures, et `fetch_portraits.py` a dû être doublé d'un
+  téléchargement direct des miniatures sur `upload.wikimedia.org` (tailles standard seulement) pour les dernières images.
+
 ### Un bloc : le monde malais (Malaisie, Singapour, Brunei et Timor oriental)
 
 `pan_malais`, « Grandes figures du monde malais » (code `malais`, bloc ; rangé sous « Monde malais »,
@@ -2843,7 +2876,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
 ### Ce qui n'est pas fait
 
 - **Les autres panthéons** : la France, l'Égypte, les États-Unis, l'Italie, le
-  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Éthiopie, l'Indonésie, le monde malais, les Philippines, le Vietnam-Cambodge-Laos, la Thaïlande et la Birmanie, la Mongolie, la Corée, la Pologne, l'Europe centrale sont écrits.
+  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Éthiopie, l'Afrique de l'Est et la Corne, l'Indonésie, le monde malais, les Philippines, le Vietnam-Cambodge-Laos, la Thaïlande et la Birmanie, la Mongolie, la Corée, la Pologne, l'Europe centrale sont écrits.
   Chaque liste de personnages est validée avant la rédaction. Feuille de route, dans l'ordre
   où on les propose (un pays seul quand il a de quoi faire un thème, un bloc sinon) :
   1. **Le Machrek est écrit** (voir « Le cinquième bloc »). Il reste : le portrait des trois
@@ -2858,7 +2891,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
   3. **Blocs** : l'Asie du Sud-Est (l'Indonésie est écrite, voir « Un pays à part : l'Indonésie » ; le monde malais est écrit, voir « Un bloc : le monde malais » ; les Philippines sont écrites, voir « Un pays à part : les Philippines » ; l'Indochine — Vietnam, Cambodge, Laos — est écrite, voir « Un bloc : l'Indochine » ; la Thaïlande avec la Birmanie est écrite, voir « Un bloc : la Thaïlande et la Birmanie » ; restent le Brunei déjà au bloc malais, la Papouasie-Nouvelle-Guinée et les Mélanésiens), la Mongolie (l'Asie centrale est écrite, voir « Un bloc : l'Asie centrale et
      l'Afghanistan »), le Caucase, la Corée (`KR`/`KP`), l'Afrique de
      l'Ouest, puis les trois derniers morceaux de l'Afrique de l'Est et australe, décidés ainsi : **l'Éthiopie est écrite**, pays seul (voir « Un pays à part :
-     l'Éthiopie ») ; un bloc **Afrique de l'Est et Corne** (Kenya, Tanzanie, Ouganda, Somalie, Érythrée, Djibouti, Soudan et Soudan du Sud, sans l'Éthiopie) ; un bloc
+     l'Éthiopie ») ; le bloc **Afrique de l'Est et Corne** (Kenya, Tanzanie, Ouganda, Somalie, Érythrée, Djibouti, Soudan et Soudan du Sud, sans l'Éthiopie) **est écrit** (voir « Un bloc : l'Afrique de l'Est et la Corne ») ; il reste un bloc
      **Afrique australe** (Angola, Mozambique, Zimbabwe, Zambie, Malawi, Namibie, Botswana, Lesotho et Eswatini, sans l'Afrique du Sud — l'Angola, aujourd'hui dans le bloc
      de l'Afrique centrale, y sera déplacé) ; un bloc **océan Indien occidental** (Madagascar, Comores, Maurice et Seychelles, avec un `partMaxPays` relevé vers 0,55 : Madagascar
      en pèsera la moitié). **La Réunion et Mayotte n'y sont pas** : départements français, leurs figures vont au panthéon de la France, comme celles d'Hawaï à celui des
