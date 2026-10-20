@@ -90,12 +90,12 @@ test('Personnages illustres : deux sous-catégories, chacune avec sa note et son
     await expect(page.locator('#theme-screen-title')).toHaveText('Panthéons');
     await expect(page.locator('#theme-screen-note-text')).toContainText('né dans les frontières actuelles');
     // Panthéons de pays et de blocs se rangent par leur nom de source — « Afrique centrale », « Afrique de l'Ouest », « Afrique du Sud », « Allemagne, Autriche et Suisse »,
-    // « Amérique hispanique », « Asie centrale et Afghanistan », « Australie », « Balkans », « Benelux », « Brésil », « Canada », « Chine », « Égypte », « Espagne », « États-Unis », « France », « Grèce », « Indonésie », « Iran », « Israël », « Italie », « Japon », « Machrek et péninsule Arabique », « Maghreb », « Malaisie, Singapour, Brunei et Timor oriental », « Nouvelle-Zélande et Pacifique », « Pays baltes », « Portugal », « Royaume-Uni », « Russie », « Scandinavie », « Sous-continent indien », « Turquie » — et non par
+    // « Amérique hispanique », « Asie centrale et Afghanistan », « Australie », « Balkans », « Benelux », « Brésil », « Canada », « Chine », « Égypte », « Espagne », « États-Unis », « Éthiopie », « Europe centrale », « France », « Grèce », « Indonésie », « Iran », « Israël », « Italie », « Japon », « Machrek et péninsule Arabique », « Maghreb », « Malaisie, Singapour, Brunei et Timor oriental », « Nouvelle-Zélande et Pacifique », « Pays baltes », « Portugal », « Royaume-Uni », « Russie », « Scandinavie », « Sous-continent indien », « Turquie » — et non par
     // « Grandes figures d'… » / « … de » / « … des » / « … du ».
     await expect(page.locator('#themes-container .data-card-title'))
         .toHaveText(["Grandes figures d'Afrique centrale", "Grandes figures d'Afrique de l'Ouest", "Grandes figures d'Afrique du Sud", "Grandes figures d'Allemagne, d'Autriche et de Suisse", "Grandes figures d'Amérique hispanique",
             "Grandes figures d'Asie centrale", "Grandes figures d'Australie", 'Grandes figures des Balkans', 'Grandes figures du Benelux', 'Grandes figures du Brésil', 'Grandes figures du Canada', 'Grandes figures de Chine', 'Grandes figures de Corée',
-            "Grandes figures d'Égypte", "Grandes figures d'Espagne", 'Grandes figures des États-Unis', "Grandes figures d'Europe centrale",
+            "Grandes figures d'Égypte", "Grandes figures d'Espagne", 'Grandes figures des États-Unis', "Grandes figures d'Éthiopie", "Grandes figures d'Europe centrale",
             'Grandes figures de France', 'Grandes figures de Grèce', "Grandes figures d'Indochine", "Grandes figures d'Indonésie", "Grandes figures d'Iran", "Grandes figures d'Israël", "Grandes figures d'Italie", 'Grandes figures du Japon',
             'Grandes figures du Machrek et de la péninsule Arabique', 'Grandes figures du Maghreb', 'Grandes figures du monde malais', 'Grandes figures de Mongolie', 'Grandes figures de Nouvelle-Zélande et du Pacifique', 'Grandes figures des pays baltes', 'Grandes figures des Philippines', 'Grandes figures de Pologne', 'Grandes figures du Portugal',
             'Grandes figures du Royaume-Uni', 'Grandes figures de Russie', 'Grandes figures de Scandinavie', 'Grandes figures du sous-continent indien', 'Grandes figures de Thaïlande et de Birmanie', 'Grandes figures de Turquie']);
@@ -1377,6 +1377,47 @@ test('la recherche — « europe centrale », « hongrie », « tchéquie », «
         await page.locator('#theme-search-input').fill(mot);
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: "Grandes figures d'Europe centrale" });
         await expect(resultat, `« ${mot} » doit mener au panthéon de l’Europe centrale`).toHaveCount(1);
+        await expect(resultat.locator('.search-result-path')).toContainText('Personnages illustres › Panthéons');
+    }
+});
+
+test('l’Éthiopie : chacune de ses figures a son portrait, de Zara Yaqob à Hachalu Hundessa, et l’invitée dit son pays', async ({ page }) => {
+    await openThemeById(page, 'pan_et');
+    await page.locator('#mode-card-discovery').click();
+    await expect(page.locator('#screen-game')).toBeVisible();
+    const nombre = await page.evaluate(() => getCurrentTheme().events.length);
+    expect(nombre).toBe(47);
+    await expect(page.locator('#timeline .entry')).toHaveCount(nombre);
+    await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
+
+    // Un empereur, une impératrice, un marathonien : la fiche n'affiche aucun pays.
+    for (const titre of ['Naissance de Zara Yaqob', 'Naissance de Taytu Betul', 'Naissance d\'Abebe Bikila']) {
+        await page.locator('#timeline .entry', { hasText: titre }).click();
+        await expect(page.locator('#modal-details')).toBeVisible();
+        await expect(page.locator('#modal-pays')).toBeHidden();
+        const portrait = page.locator('#modal-portrait-img');
+        await expect.poll(() => portrait.evaluate(img => img.complete ? img.naturalWidth : 0)).toBe(320);
+        await expect(page.locator('#modal-portrait-caption')).not.toBeEmpty();
+        await page.locator('#modal-details .close-btn').click();
+        await expect(page.locator('#modal-details')).toBeHidden();
+    }
+
+    // Une invitée d'un autre État, rangée là où on l'honore le plus : Catherine Hamlin, gynécologue australienne d'Addis-Abeba.
+    await page.locator('#timeline .entry', { hasText: 'Naissance de Catherine Hamlin' }).click();
+    await expect(page.locator('#modal-details')).toBeVisible();
+    await expect(page.locator('#modal-pays')).toBeVisible();
+    await page.locator('#modal-details .close-btn').click();
+
+    const avecBiographie = await page.evaluate(() => getCurrentTheme().events.filter(e => e.biographie).length);
+    expect(avecBiographie).toBe(0);
+});
+
+test('la recherche — « éthiopie », « éthiopien », « addis-abeba », « adoua », « négus », « derg » — mène au panthéon de l’Éthiopie', async ({ page }) => {
+    await page.locator('#screen-home').click();
+    for (const mot of ['ethiopie', 'ethiopien', 'addis-abeba', 'adoua', 'negus', 'derg', 'abyssinie', 'oromo']) {
+        await page.locator('#theme-search-input').fill(mot);
+        const resultat = page.locator('#theme-search-results .search-result-item', { hasText: "Grandes figures d'Éthiopie" });
+        await expect(resultat, `« ${mot} » doit mener au panthéon de l'Éthiopie`).toHaveCount(1);
         await expect(resultat.locator('.search-result-path')).toContainText('Personnages illustres › Panthéons');
     }
 });
