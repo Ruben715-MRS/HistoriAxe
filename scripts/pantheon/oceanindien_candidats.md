@@ -1,5 +1,7 @@
 # Océan Indien occidental — candidats examinés
 
+> **État** : le bloc `pan_oceanindien` est construit (32 figures, quatre pays ; voir « Un bloc : l'océan Indien occidental » dans `docs/personnages-illustres.md`). Ce qui suit est la liste examinée avant l'écriture ; les 32 retenus y sont tous.
+
 **Verdict : le bloc tient, mais petit : environ 32 figures de quatre pays, dont plus de la moitié à Madagascar.** Madagascar y pèsera environ 56 %, soit un peu plus que le seuil de 0,55 prévu ;
 l'éditeur a décidé que ce n'est pas grave : `partMaxPays` sera fixé à 0,6, et le script n'écrit qu'un avertissement au-delà. **La Réunion et Mayotte sont exclues** (départements français ; leurs figures vont
 au panthéon de la France, comme celles d'Hawaï à celui des États-Unis) : c'est pour cela que le roi Andriantsoly, qui a cédé Mayotte à la France en 1841, n'est pas retenu.

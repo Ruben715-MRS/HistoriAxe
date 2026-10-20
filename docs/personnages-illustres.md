@@ -11,7 +11,7 @@ ne posent pas la même question :
 | | Un thème, c'est | Une date, c'est | On le joue par |
 |---|---|---|---|
 | **Biographies** | une vie (360 thèmes, en 12 domaines) | une étape de cette vie | étape de la vie |
-| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Turquie, le Japon, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Éthiopie, l'Afrique de l'Est et la Corne, l'Afrique australe, l'Indonésie, le monde malais, les Philippines, le Vietnam-Cambodge-Laos, la Thaïlande et la Birmanie, la Mongolie, la Corée, la Pologne, l'Europe centrale) | la naissance d'un personnage | domaine |
+| **Panthéons** | un pays, ou une région qui en rassemble plusieurs (la France, la Chine, l'Égypte, l'Espagne, les États-Unis, l'Italie, le Royaume-Uni, l'Amérique hispanique, le Maghreb, le Machrek et la péninsule Arabique, l'Allemagne, l'Autriche et la Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Turquie, le Japon, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Éthiopie, l'Afrique de l'Est et la Corne, l'Afrique australe, l'océan Indien occidental, l'Indonésie, le monde malais, les Philippines, le Vietnam-Cambodge-Laos, la Thaïlande et la Birmanie, la Mongolie, la Corée, la Pologne, l'Europe centrale) | la naissance d'un personnage | domaine |
 
 Le déplacement ne coûte aucune migration : les 360 thèmes gardent leurs
 identifiants, et rien de ce que le joueur a sauvegardé (favoris, révision,
@@ -2032,6 +2032,36 @@ la CEEAC, les villes (Kinshasa, Brazzaville, Léopoldville), le Kongo, les Grand
   demandé en 250 px, Musinga en 330 px, Goumba à la taille de l'original.
 - **Géolocalisation** : aucune figure n'est encore placée sur l'Atlas, faute de biographie liée.
 
+### Un bloc : l'océan Indien occidental
+
+`pan_oceanindien`, « Grandes figures de l'océan Indien occidental » (code `oceanindien`, bloc ; rangé sous « Océan Indien occidental », entre la Nouvelle-Zélande et les pays baltes) : **32 personnages de quatre pays** —
+Madagascar 18, Maurice 8, Comores 4, Seychelles 2 — d'Andrianampoinimerina (vers 1745) à James Mancham (1939). Par axe : 24 Chefs d'État et dirigeants, 4 Guerres et résistances, 2 Littérature et pensée, 1 Musique,
+spectacle et sport, 1 Sciences, techniques et innovation ; 5 ⭐ (Andrianampoinimerina, Radama Ier, Ranavalona Ire, Rabearivelo, Ramgoolam) et aucune biographie liée. **Cinq axes, pas six** : aucune figure des Beaux-arts n'a à la
+fois un article en français et un portrait libre. 32 portraits : 17 du domaine public, 4 CC BY 4.0, 4 CC BY-SA 4.0, 2 CC BY-SA 3.0, 2 CC BY-SA 3.0 DE et **3 images non libres** (voir plus bas). Quatre figures sont nées avant 1800
+(Andrianampoinimerina, Radama Ier, Ranavalona Ire, Adrien d'Épinay), neuf entre 1800 et 1899, dix-neuf depuis 1900 : l'histoire des royaumes de Madagascar (la dynastie merina) puis celle des indépendances. Les mots-clés du thème portent
+les quatre pays, leurs capitales et îles (Antananarivo, Moroni, Port-Louis, Victoria, Anjouan, Mohéli), les Mascareignes, le hainteny, le hira gasy et les Menalamba.
+
+- **Un petit bloc, dominé par Madagascar** : l'île pèse 18 figures sur 32, soit 56 %, au-dessus du seuil par défaut de 40 %. Le bloc déclare donc `partMaxPays` à 0,6, un choix écrit de l'éditeur (« ce n'est pas grave si
+  Madagascar dépasse »). Les Comores (4) et les Seychelles (2) tiennent par peu de figures ; Maurice (8) par ses premiers ministres, ses poètes et un saint.
+- **La Réunion et Mayotte ne sont pas dans le bloc** : ce sont des départements français, et leurs figures vont au panthéon de la France, comme celles d'Hawaï à celui des États-Unis. C'est aussi pour cela qu'**Andriantsoly**,
+  roi de Mayotte qui l'a cédée à la France en 1841, n'est pas retenu.
+- **Un invité** : **Jacques-Désiré Laval** (1803-1864), prêtre français mort à Maurice, rangé là où on l'honore (sa fiche dit qu'il est français). Les gouverneurs français de l'Isle de France et des Seychelles (La Bourdonnais,
+  Poivre, Quéau de Quincy) relèvent de la France et ne sont pas retenus. Laval est rangé aux « Guerres et résistances », comme Kolbe en Pologne.
+- **Les rois et reines de Madagascar sont presque tous au panthéon** (Andrianampoinimerina, Radama Ier et II, Rasoherina, Ranavalona Ire, II et III, le Premier ministre Rainilaiarivony), parce que leurs portraits sont du
+  domaine public. Ranavalona III est aussi la dernière reine, exilée à Alger ; Rainandriamampandry, pasteur, général et ministre de l'Intérieur, est fusillé par la France en 1896.
+- **Dates retenues** : « vers » devant Andrianampoinimerina (1745, l'infobox dit 1740), Radama Ier (1793), Ranavalona Ire (1788, l'article dit entre 1788 et 1790) ; Ali Soilih est daté de 1937 (les catégories de l'article disent 1932).
+  Les autres dates viennent de l'article français ou de Wikidata, non recoupées une à une.
+- **Des portraits souvent indirects**, et les légendes le disent : quatre rois et reines (Andrianampoinimerina, Radama Ier, Ranavalona Ire et II) sont vus sur des portraits posthumes de Philippe-Auguste Ramanankirahina, peints
+  d'après des images anciennes ; Ralaimongo par un buste de son monument ; Rakoto Frah par un dessin ; Ahmed Abdallah et Ali Soilih par des illustrations de la Voix de l'Amérique ; Duval par une image tirée d'une vidéo ;
+  Adrien d'Épinay par un portrait peint. Huit portraits sont **recadrés localement** sur le visage, à partir de l'image déjà téléchargée : les quatre portraits posthumes précédents, Radama II, Tsiranana (photographié
+  avec Willy Brandt), Ramanantsoa (photographié avec un Allemand) et Bissoondoyal. Le recadrage n'est pas dans `recadrage` : un nouveau téléchargement les rendrait à leur cadrage de base.
+- **Trois images non libres, exception assumée** : Rasoherina (licence introuvable sur la page du fichier), Anerood Jugnauth (photographie du secrétariat de la présidence de Maurice) et Veerasamy Ringadoo (photographie de la
+  bibliothèque de la LSE) ont une image que `fetch_portraits.py` refuse (licence absente ou hors liste). Elles sont téléchargées depuis Commons, leur licence s'écrit « Image non libre » dans les données,
+  `image.source` renvoie à la page du fichier. **À remplacer dès qu'une image libre existe, ou à faire valider**, comme pour la Pologne, l'Afrique de l'Est et l'Afrique australe.
+- **Écartés ou en attente**, voir `scripts/pantheon/oceanindien_candidats.md` : une vingtaine de figures sans portrait libre (Rabemananjara, Raseta, Ranaivo, Malcolm de Chazal, Édouard Maunick, Antoine Abel, Anquetil, Rozemont,
+  Saïd Mohamed Cheikh, fondateur de l'État comorien…) et quelques figures sans article français (Rémy Ollier, Raman Osman). Les Beaux-arts sont vides.
+- **Statut américain des images : à relire**, comme pour les blocs précédents. Le téléchargement a demandé le même détour par les miniatures directes de `upload.wikimedia.org`, Wikimedia limitant le débit pendant des heures.
+
 ### Un bloc : les pays baltes
 
 `pan_baltes`, « Grandes figures des pays baltes » (code `baltes`, bloc ; rangé sous « Pays baltes », entre la Nouvelle-Zélande et le Portugal) :
@@ -2904,7 +2934,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
 ### Ce qui n'est pas fait
 
 - **Les autres panthéons** : la France, l'Égypte, les États-Unis, l'Italie, le
-  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Éthiopie, l'Afrique de l'Est et la Corne, l'Afrique australe, l'Indonésie, le monde malais, les Philippines, le Vietnam-Cambodge-Laos, la Thaïlande et la Birmanie, la Mongolie, la Corée, la Pologne, l'Europe centrale sont écrits.
+  Royaume-Uni, l'Espagne, l'Amérique hispanique, le Maghreb, le Machrek, l'Allemagne-Autriche-Suisse, la Scandinavie, l'Afrique de l'Ouest, l'Afrique centrale, le sous-continent indien, Israël, la Chine, la Turquie, le Japon, la Grèce, la Russie, l'Australie, le Canada, le Benelux, le Portugal, l'Asie centrale et l'Afghanistan, la Nouvelle-Zélande et le Pacifique, le Brésil, l'Iran, les Balkans, les pays baltes, l'Afrique du Sud, l'Éthiopie, l'Afrique de l'Est et la Corne, l'Afrique australe, l'océan Indien occidental, l'Indonésie, le monde malais, les Philippines, le Vietnam-Cambodge-Laos, la Thaïlande et la Birmanie, la Mongolie, la Corée, la Pologne, l'Europe centrale sont écrits.
   Chaque liste de personnages est validée avant la rédaction. Feuille de route, dans l'ordre
   où on les propose (un pays seul quand il a de quoi faire un thème, un bloc sinon) :
   1. **Le Machrek est écrit** (voir « Le cinquième bloc »). Il reste : le portrait des trois
@@ -2921,9 +2951,9 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
      l'Ouest, puis les trois derniers morceaux de l'Afrique de l'Est et australe, décidés ainsi : **l'Éthiopie est écrite**, pays seul (voir « Un pays à part :
      l'Éthiopie ») ; le bloc **Afrique de l'Est et Corne** (Kenya, Tanzanie, Ouganda, Somalie, Érythrée, Djibouti, Soudan et Soudan du Sud, sans l'Éthiopie) **est écrit** (voir « Un bloc : l'Afrique de l'Est et la Corne ») ; le bloc
      **Afrique australe** (Angola, Mozambique, Zimbabwe, Zambie, Malawi, Namibie, Botswana, Lesotho et Eswatini, sans l'Afrique du Sud) **est écrit** (voir « Un bloc : l'Afrique australe » ; l'Angola y a été déplacé
-     depuis l'Afrique centrale) ; il reste un bloc **océan Indien occidental** (Madagascar, Comores, Maurice et Seychelles, avec un `partMaxPays` relevé vers 0,55 : Madagascar
-     en pèsera la moitié). **La Réunion et Mayotte n'y sont pas** : départements français, leurs figures vont au panthéon de la France, comme celles d'Hawaï à celui des
-     États-Unis. L'Afrique centrale est écrite (voir « Un bloc : l'Afrique centrale »). « Nouvelle-Zélande et Pacifique » est écrit (voir « Un bloc : la
+     depuis l'Afrique centrale) ; le bloc **océan Indien occidental** (Madagascar, Comores, Maurice et Seychelles) **est écrit** (voir « Un bloc : l'océan Indien occidental »),
+     avec un `partMaxPays` de 0,6 : Madagascar en pèse 56 %. **La Réunion et Mayotte n'y sont pas** : départements français, leurs figures vont au panthéon de la France, comme celles d'Hawaï à celui des
+     États-Unis. **Le plan de l'Afrique de l'Est et australe est donc terminé.** L'Afrique centrale est écrite (voir « Un bloc : l'Afrique centrale »). « Nouvelle-Zélande et Pacifique » est écrit (voir « Un bloc : la
      Nouvelle-Zélande et le Pacifique »). Les pays baltes sont écrits (voir « Un bloc : les pays baltes »).
   4. **L'Europe et les Amériques qui manquent** : **le Portugal est écrit** (voir « Un pays à part : le Portugal »,
      qui a repris Magellan et Viriathe), Byzance (au-delà des cinq figures déjà au panthéon de la Grèce),
