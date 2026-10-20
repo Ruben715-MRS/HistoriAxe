@@ -93,7 +93,7 @@ test('Personnages illustres : deux sous-catégories, chacune avec sa note et son
     // « Amérique hispanique », « Asie centrale et Afghanistan », « Australie », « Balkans », « Benelux », « Brésil », « Canada », « Chine », « Égypte », « Espagne », « États-Unis », « Éthiopie », « Europe centrale », « France », « Grèce », « Indonésie », « Iran », « Israël », « Italie », « Japon », « Machrek et péninsule Arabique », « Maghreb », « Malaisie, Singapour, Brunei et Timor oriental », « Nouvelle-Zélande et Pacifique », « Pays baltes », « Portugal », « Royaume-Uni », « Russie », « Scandinavie », « Sous-continent indien », « Turquie » — et non par
     // « Grandes figures d'… » / « … de » / « … des » / « … du ».
     await expect(page.locator('#themes-container .data-card-title'))
-        .toHaveText(["Grandes figures d'Afrique centrale", "Grandes figures d'Afrique de l'Est et de la Corne", "Grandes figures d'Afrique de l'Ouest", "Grandes figures d'Afrique du Sud", "Grandes figures d'Allemagne, d'Autriche et de Suisse", "Grandes figures d'Amérique hispanique",
+        .toHaveText(["Grandes figures d'Afrique australe", "Grandes figures d'Afrique centrale", "Grandes figures d'Afrique de l'Est et de la Corne", "Grandes figures d'Afrique de l'Ouest", "Grandes figures d'Afrique du Sud", "Grandes figures d'Allemagne, d'Autriche et de Suisse", "Grandes figures d'Amérique hispanique",
             "Grandes figures d'Asie centrale", "Grandes figures d'Australie", 'Grandes figures des Balkans', 'Grandes figures du Benelux', 'Grandes figures du Brésil', 'Grandes figures du Canada', 'Grandes figures de Chine', 'Grandes figures de Corée',
             "Grandes figures d'Égypte", "Grandes figures d'Espagne", 'Grandes figures des États-Unis', "Grandes figures d'Éthiopie", "Grandes figures d'Europe centrale",
             'Grandes figures de France', 'Grandes figures de Grèce', "Grandes figures d'Indochine", "Grandes figures d'Indonésie", "Grandes figures d'Iran", "Grandes figures d'Israël", "Grandes figures d'Italie", 'Grandes figures du Japon',
@@ -694,7 +694,7 @@ test('le Portugal : chacune de ses figures a son portrait, d\'Alphonse Ier à Ma
     await page.locator('#mode-card-discovery').click();
     await expect(page.locator('#screen-game')).toBeVisible();
     const nombre = await page.evaluate(() => getCurrentTheme().events.length);
-    expect(nombre).toBe(77);
+    expect(nombre).toBe(67);
     await expect(page.locator('#timeline .entry')).toHaveCount(nombre);
     await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
 
@@ -1005,7 +1005,48 @@ test('la recherche — « kenya », « tanzanie », « ouganda », « somalie »
     }
 });
 
-test('l’Afrique centrale : chacune de ses figures a son portrait et son pays, de Njinga à Papa Wemba, et aucune n’a de biographie', async ({ page }) => {
+test('l’Afrique australe : chacune de ses figures a son portrait et son pays, d’Alphonse Ier à Sam Nujoma, et aucune n’a de biographie', async ({ page }) => {
+    await openThemeById(page, 'pan_afriqueaustrale');
+    await page.locator('#mode-card-discovery').click();
+    await expect(page.locator('#screen-game')).toBeVisible();
+    const nombre = await page.evaluate(() => getCurrentTheme().events.length);
+    expect(nombre).toBe(65);
+    await expect(page.locator('#timeline .entry')).toHaveCount(nombre);
+    await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
+
+    // Trois pays du bloc, chacun par une de ses figures : la fiche dit le pays que le bloc lui donne.
+    const figures = [
+        ['Naissance de Njinga Mbande', '🇦🇴', 'Angola'],
+        ['Naissance de Samora Machel', '🇲🇿', 'Mozambique'],
+        ['Naissance de Hendrik Witbooi', '🇳🇦', 'Namibie'],
+    ];
+    for (const [titre, drapeau, pays] of figures) {
+        await page.locator('#timeline .entry', { hasText: titre }).click();
+        await expect(page.locator('#modal-details')).toBeVisible();
+        await expect(page.locator('#modal-pays')).toContainText(drapeau);
+        await expect(page.locator('#modal-pays')).toContainText(pays);
+        const portrait = page.locator('#modal-portrait-img');
+        await expect.poll(() => portrait.evaluate(img => img.complete ? img.naturalWidth : 0)).toBe(320);
+        await expect(page.locator('#modal-portrait-caption')).not.toBeEmpty();
+        await page.locator('#modal-details .close-btn').click();
+        await expect(page.locator('#modal-details')).toBeHidden();
+    }
+
+    const avecBiographie = await page.evaluate(() => getCurrentTheme().events.filter(e => e.biographie).length);
+    expect(avecBiographie).toBe(0);
+});
+
+test('la recherche — « angola », « mozambique », « zimbabwe », « zambie », « namibie », « botswana », « lesotho », « eswatini » — mène au panthéon de l’Afrique australe', async ({ page }) => {
+    await page.locator('#screen-home').click();
+    for (const mot of ['angola', 'mozambique', 'zimbabwe', 'rhodesie', 'zambie', 'malawi', 'nyassaland', 'namibie', 'botswana', 'lesotho', 'eswatini', 'swaziland', 'afrique australe', 'frelimo', 'swapo']) {
+        await page.locator('#theme-search-input').fill(mot);
+        const resultat = page.locator('#theme-search-results .search-result-item', { hasText: "Grandes figures d'Afrique australe" });
+        await expect(resultat, `« ${mot} » doit mener au panthéon de l'Afrique australe`).toHaveCount(1);
+        await expect(resultat.locator('.search-result-path')).toContainText('Personnages illustres › Panthéons');
+    }
+});
+
+test('l’Afrique centrale : chacune de ses figures a son portrait et son pays, de Douala Manga Bell à Papa Wemba, et aucune n’a de biographie', async ({ page }) => {
     await openThemeById(page, 'pan_afriquecentrale');
     await page.locator('#mode-card-discovery').click();
     await expect(page.locator('#screen-game')).toBeVisible();
@@ -1015,10 +1056,9 @@ test('l’Afrique centrale : chacune de ses figures a son portrait et son pays, 
     await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
 
     // Trois pays du bloc, chacun par une de ses figures : la fiche dit le pays que le bloc lui donne.
-    // Njinga est née dans l'Angola actuel, Kimpa Vita aussi, bien que le royaume du Kongo les déborde.
     const figures = [
         ['Naissance de Patrice Lumumba', '🇨🇩', ''],
-        ['Naissance de Njinga Mbande', '🇦🇴', 'Angola'],
+        ['Naissance de Louis Rwagasore', '🇧🇮', 'Burundi'],
         ['Naissance de Mongo Beti', '🇨🇲', 'Cameroun'],
     ];
     for (const [titre, drapeau, pays] of figures) {
@@ -1040,9 +1080,9 @@ test('l’Afrique centrale : chacune de ses figures a son portrait et son pays, 
     await expect(page.locator('#modal-bio-btn')).toBeHidden();
 });
 
-test('la recherche — « afrique centrale », « rdc », « zaire », « cameroun », « angola », « rwanda » — mène au panthéon de l’Afrique centrale', async ({ page }) => {
+test('la recherche — « afrique centrale », « rdc », « zaire », « cameroun », « rwanda » — mène au panthéon de l’Afrique centrale', async ({ page }) => {
     await page.locator('#screen-home').click();
-    for (const mot of ['afrique centrale', 'ceeac', 'rdc', 'zaire', 'brazzaville', 'cameroun', 'gabon', 'centrafrique', 'tchad', 'angola', 'guinee equatoriale', 'sao tome', 'rwanda', 'burundi']) {
+    for (const mot of ['afrique centrale', 'ceeac', 'rdc', 'zaire', 'brazzaville', 'cameroun', 'gabon', 'centrafrique', 'tchad', 'guinee equatoriale', 'sao tome', 'rwanda', 'burundi']) {
         await page.locator('#theme-search-input').fill(mot);
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: "Grandes figures d'Afrique centrale" });
         await expect(resultat, `« ${mot} » doit mener au panthéon de l'Afrique centrale`).toHaveCount(1);

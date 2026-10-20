@@ -443,10 +443,15 @@ test('« Grandes figures d’Afrique de l’Ouest » : chaque ancre porte le pay
     verifierPantheonDeBloc('pan_afriqueouest', 23, 15);
 });
 
+test('« Grandes figures d’Afrique australe » : chaque ancre porte le pays de son événement, et la session se joue', () => {
+    // Neuf pays, dont plusieurs (l'Eswatini, le Malawi) n'ont que deux ou quatre figures : aucun ne doit manquer parmi les ancres.
+    verifierPantheonDeBloc('pan_afriqueaustrale', 71, 9);
+});
+
 test('« Grandes figures d’Afrique centrale » : chaque ancre porte le pays de son événement, et la session se joue', () => {
-    // Onze pays, dont plusieurs (São Tomé-et-Príncipe, la Guinée équatoriale, le Tchad) n'ont que quelques
+    // Dix pays, dont plusieurs (São Tomé-et-Príncipe, la Guinée équatoriale, le Tchad) n'ont que quelques
     // figures : la RDC (20) et le Cameroun (11) ne doivent pas les faire disparaître parmi les ancres.
-    verifierPantheonDeBloc('pan_afriquecentrale', 29, 11);
+    verifierPantheonDeBloc('pan_afriquecentrale', 29, 10);
 });
 
 test('« Grandes figures des pays baltes » : chaque ancre porte le pays de son événement, et la session se joue', () => {
