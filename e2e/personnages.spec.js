@@ -1305,7 +1305,7 @@ test('la Pologne : chacune de ses figures a son portrait, de Mieszko Ier à Jerz
     await page.locator('#mode-card-discovery').click();
     await expect(page.locator('#screen-game')).toBeVisible();
     const nombre = await page.evaluate(() => getCurrentTheme().events.length);
-    expect(nombre).toBe(105);
+    expect(nombre).toBe(108);
     await expect(page.locator('#timeline .entry')).toHaveCount(nombre);
     await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
 
@@ -1339,7 +1339,7 @@ test('l’Europe centrale : chacune de ses figures a son portrait et son pays, d
     await page.locator('#mode-card-discovery').click();
     await expect(page.locator('#screen-game')).toBeVisible();
     const nombre = await page.evaluate(() => getCurrentTheme().events.length);
-    expect(nombre).toBe(121);
+    expect(nombre).toBe(123);
     await expect(page.locator('#timeline .entry')).toHaveCount(nombre);
     await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
 

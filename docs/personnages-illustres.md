@@ -2399,11 +2399,11 @@ Silla, Goguryeo, Baekje), le hangeul, la guerre d'Imjin, la guerre de Corée, le
 
 ### Un pays à part : la Pologne
 
-`pan_pl`, « Grandes figures de Pologne » (code `pl`, pays ; rangé sous « Pologne », entre les Philippines et le Portugal) : **105 personnages**, de Mieszko Ier (vers 935) à Jerzy Kukuczka (1948). Par axe :
-27 Littérature et pensée, 18 Guerres et résistances, 18 Musique, spectacle et sport, 16 Chefs d'État et dirigeants, 16 Sciences, techniques et innovation, 10 Beaux-arts ; 18 ⭐ — Mieszko Ier, Casimir III le Grand,
+`pan_pl`, « Grandes figures de Pologne » (code `pl`, pays ; rangé sous « Pologne », entre les Philippines et le Portugal) : **108 personnages**, de Mieszko Ier (vers 935) à Jerzy Kukuczka (1948). Par axe :
+28 Littérature et pensée, 19 Musique, spectacle et sport, 18 Guerres et résistances, 17 Chefs d'État et dirigeants, 16 Sciences, techniques et innovation, 10 Beaux-arts ; 18 ⭐ — Mieszko Ier, Casimir III le Grand,
 Jean III Sobieski, Józef Piłsudski, Jean-Paul II, Tadeusz Kościuszko, Maximilien Kolbe, Witold Pilecki, Jan Kochanowski, Adam Mickiewicz, Henryk Sienkiewicz, Czesław Miłosz, Wisława Szymborska, Jan Matejko, Frédéric Chopin,
-Andrzej Wajda, Nicolas Copernic et Marian Rejewski — et **aucune biographie liée**. 105 portraits : 86 du domaine public, 2 CC0, 11 CC BY-SA et 6 CC BY. Cinq figures sont nées avant 1500, vingt et une de 1500 à 1799,
-soixante-dix-neuf depuis 1800. Les mots-clés portent le pays et ses adjectifs, ses grandes villes (Varsovie, Cracovie, Gdańsk, Poznań, Wrocław), la Silésie, la Poméranie, la Galicie, les Piast et les Jagellon, l'union de Lublin,
+Andrzej Wajda, Nicolas Copernic et Marian Rejewski — et **aucune biographie liée**. 108 portraits : 86 du domaine public, 2 CC0, 11 CC BY-SA, 6 CC BY et **3 images non libres** (voir plus bas). Cinq figures sont nées avant 1500, vingt et une de 1500 à 1799,
+quatre-vingt-deux depuis 1800. Les mots-clés portent le pays et ses adjectifs, ses grandes villes (Varsovie, Cracovie, Gdańsk, Poznań, Wrocław), la Silésie, la Poméranie, la Galicie, les Piast et les Jagellon, l'union de Lublin,
 la République des Deux Nations, les partages, les insurrections de 1830, 1863 et 1944, l'Armia Krajowa, Solidarność, Katyń, le ghetto de Varsovie, Grunwald, la loi martiale et la Table ronde.
 
 - **Un pays, pas un bloc.** `pan_pl`, aucun champ `pays` — pas d'invité — et « Pendant ce temps, ailleurs… » le compte comme `thm_pl`, l'« Histoire de la Pologne ». Un test le vérifie (`tests/simultaneity.test.js`).
@@ -2414,8 +2414,11 @@ la République des Deux Nations, les partages, les insurrections de 1830, 1863 e
 - **Les vivants restent dehors** : Lech Wałęsa (il a sa biographie), Roman Polański, Robert Lewandowski, Olga Tokarczuk, Andrzej Sapkowski.
 - **Dates incertaines.** Hedwige d'Anjou (1370 à 1374 selon les sources), Ladislas II Jagellon (1351 pour l'article français, 1362 pour Wikidata), Zawisza Czarny (naissance inconnue) et Marek Edelman (1919 ou 1922) sont écartés ;
   Mieszko Ier (« vers 935 »), Boym (« vers 1612 », Wikidata dit aussi 1614) et Chełmoński (1849, Wikidata hésite entre 1847 et 1850) portent la date de l'article français. Szymanowski est né en 1882 (Wikidata dit aussi 1883).
-- **Écartés faute d'image libre convenable** : Bruno Schulz (toutes ses images sont « Not-PD-US-URAA »), Lech Kaczyński (une licence GFDL seule, ou le droit d'auteur du Parlement européen), Krzysztof Komeda (licence « Attribution »
-  seule) et Tadeusz Sendzimir (la seule image libre est une fresque murale qui porte son nom, que « Qui est-ce ? » montrerait). Pulaski, Anders, Landowska, Lutosławski, Hirszfeld, Kieślowski, Tarski et Mazowiecki ont d'abord été refusés
+- **Une exception assumée : trois images non libres.** Bruno Schulz, Lech Kaczyński et Krzysztof Komeda n'avaient aucune image acceptée par le script : toutes les images de Schulz sont libres en Pologne mais « Not-PD-US-URAA »
+  (donc protégées aux États-Unis) ; celle de Kaczyński, la photographie officielle de la Chancellerie (2006), n'est publiée que sous GFDL 1.2 ; celle de Komeda, un portrait à l'encre de Zbigniew Kresowaty, que sous la licence
+  « Attribution ». Ils ont chacun la meilleure image disponible, téléchargée depuis Commons, et leur licence s'écrit « Image non libre » dans les données (`image.licence`) ; `image.source` renvoie à la page du fichier,
+  `fetch_portraits.py` les ignore et le test de schéma accepte cette exception. Ces droits ne sont pas ceux de l'App Store : **à remplacer dès qu'une image libre existe, ou à faire valider.**
+- **Écartés faute d'image convenable** : Tadeusz Sendzimir (la seule image libre est une fresque murale qui porte son nom, que « Qui est-ce ? » montrerait). Pulaski, Anders, Landowska, Lutosławski, Hirszfeld, Kieślowski, Tarski et Mazowiecki ont d'abord été refusés
   (images de 220 à 300 pixels, ou GFDL seule), puis remplacés après une recherche sur Commons : une gravure de Lossing pour Pulaski, une photographie de 1946 pour Lutosławski, la photographie des Archives numériques nationales pour
   Hirszfeld, un cliché de George Bergman (1968) pour Tarski, une photographie de 2013 pour Mazowiecki. Kieślowski (288 pixels de large) et Anders (299) sont agrandis de 7 à 11 %.
 - **Des portraits souvent indirects**, et les légendes le disent : trois portraits imaginaires de Jan Matejko pour les premiers Piast (Mieszko, Boleslas, Casimir III), des portraits de Bacciarelli pour les derniers rois, cinq
@@ -2424,22 +2427,22 @@ la République des Deux Nations, les partages, les insurrections de 1830, 1863 e
 - **Les noms.** Les souverains se rangent par leur prénom (« Jean III Sobieski », « Stanislas II Auguste Poniatowski »), comme Louis XIV ; les autres par leur nom de famille. Les prénoms français de l'usage (Frédéric Chopin, Nicolas
   Copernic, Maximilien Kolbe, Jean-Paul II) l'emportent sur l'orthographe polonaise. **Une lettre de plus à la galerie** : « Ł » (Łukasiewicz) ne se décompose pas en « L » et un accent, comme « Đ » ; `galleryNormalize` la replie
   désormais sur « L », faute de quoi Łukasiewicz se rangeait sous « # » ; la recherche de thèmes (`normalizeSearchText`) fait de même, pour qu'on trouve « Wrocław » en tapant « wroclaw ».
-- **Statut américain des images : à relire.** Quatre-vingt-six portraits sont du « domaine public », dont beaucoup de photographies polonaises (modèle « PD-Poland » / « PD-1996 ») que Commons étiquette « US ? » ; même décision que pour
+- **Statut américain des images : à relire.** Quatre-vingt-six portraits sont du « domaine public » (et trois sont non libres), dont beaucoup de photographies polonaises (modèle « PD-Poland » / « PD-1996 ») que Commons étiquette « US ? » ; même décision que pour
   les autres thèmes : le script lit la licence déclarée, non le statut américain.
 - **Les listes de candidats** sont dans `scripts/pantheon/pl_candidats.md`.
 
 ### Un bloc : l'Europe centrale (Hongrie, Tchéquie, Slovaquie et Slovénie)
 
-`pan_europecentrale`, « Grandes figures d'Europe centrale » (code `europecentrale`, bloc ; rangé sous « Europe centrale », entre les États-Unis et la France) : **121 personnages de quatre pays** — Hongrie 48, Tchéquie 41, Slovaquie 16,
-Slovénie 16 — d'Árpád (vers 845) à Janez Drnovšek (1950). Par axe : 30 Littérature et pensée, 26 Sciences, techniques et innovation, 25 Chefs d'État et dirigeants, 15 Guerres et résistances, 15 Musique, spectacle et sport,
-10 Beaux-arts ; 34 ⭐ et **une biographie liée** (Václav Havel). 121 portraits : 91 du domaine public, 2 CC0, 1 CC BY et 27 CC BY-SA. Onze figures sont nées avant 1500, seize de 1500 à 1799, quatre-vingt-quatorze depuis 1800.
+`pan_europecentrale`, « Grandes figures d'Europe centrale » (code `europecentrale`, bloc ; rangé sous « Europe centrale », entre les États-Unis et la France) : **123 personnages de quatre pays** — Hongrie 48, Tchéquie 42, Slovaquie 17,
+Slovénie 16 — d'Árpád (vers 845) à Janez Drnovšek (1950). Par axe : 30 Littérature et pensée, 27 Chefs d'État et dirigeants, 26 Sciences, techniques et innovation, 15 Guerres et résistances, 15 Musique, spectacle et sport,
+10 Beaux-arts ; 34 ⭐ et **une biographie liée** (Václav Havel). 123 portraits : 92 du domaine public, 2 CC0, 1 CC BY et 28 CC BY-SA. Douze figures sont nées avant 1500, seize de 1500 à 1799, quatre-vingt-quinze depuis 1800.
 Les mots-clés portent les quatre pays et leurs adjectifs, Budapest, Prague, Bratislava, Presbourg, Ljubljana, Brno, la Bohême, la Moravie, la Transylvanie, la Carniole, les Habsbourg, l'Autriche-Hongrie et le Compromis de 1867,
 Árpád, les Přemyslides, les hussites, la Grande-Moravie, les révolutions de 1848 et de 1956, le Printemps de Prague, la révolution de velours, la Charte 77, Munich, Trianon, la Yougoslavie et les Provinces illyriennes.
 
 - **Un bloc de quatre, une Pologne à part.** La Pologne (105 figures) a son propre panthéon, et la Hongrie, la Tchéquie, la Slovaquie et la Slovénie, qui partagent l'histoire des Habsbourg puis, pour les trois premières, celle du
   XXe siècle communiste, forment ce bloc. Le choix de la Slovénie est celui du bloc des Balkans, qui l'avait laissée de côté (« elle relèverait plutôt d'un bloc d'Europe centrale »). **Ne sont pas ici** : l'Autriche et le Liechtenstein
   (panthéon de l'Allemagne, de l'Autriche et de la Suisse), la Croatie (Balkans), les pays baltes, l'Ukraine et la Biélorussie, qui attendent leur thème.
-- **Un équilibre juste sous le seuil.** La Hongrie pèse 48 figures sur 121, soit 39,7 %, sous les 40 % du constructeur ; la Slovaquie et la Slovénie (13 % chacune) tiennent par seize figures, et les quatre pays sont tous représentés
+- **Un équilibre juste sous le seuil.** La Hongrie pèse 48 figures sur 123, soit 39 %, sous les 40 % du constructeur ; la Slovaquie et la Slovénie (14 et 13 %) tiennent par dix-sept et seize figures, et les quatre pays sont tous représentés
   parmi les ancres de « Pendant ce temps, ailleurs… » (un test le vérifie). Pour rester sous le seuil, plusieurs Hongrois ont été écartés après examen : Mór Jókai, Ferenc Erkel, Mihály Vörösmarty, Ányos Jedlik, Ödön Lechner, Zsigmond Móricz,
   Mihály Babits, Kálmán Kandó, Tivadar Puskás, George de Hevesy, Alfréd Hajós et Tivadar Csontváry Kosztka.
 - **Le pays qui honore, pas l'état civil.** Les figures nées hors des frontières actuelles vont en Hongrie quand c'est elle qui les honore, et la fiche dit le lieu : Bartók (Nagyszentmiklós, aujourd'hui en Roumanie), Ligeti
@@ -2451,19 +2454,19 @@ Les mots-clés portent les quatre pays et leurs adjectifs, Budapest, Prague, Bra
   honorés surtout aux États-Unis ou au Royaume-Uni, ne sont pas retenus ; Joseph Joachim (carrière allemande), Ernő Dohnányi et Karl Polanyi (né à Vienne) non plus.
 - **Dates incertaines.** Árpád (« vers 845 »), Étienne Ier (« vers 975 » ; Wikidata dit aussi 969), Jean Hunyadi (« vers 1406 » ; 1407 pour Wikidata), Jan Žižka (« vers 1360 » ; 1376 pour Wikidata) et Jan Hus (« vers 1372 » ; 1369 à 1371
   pour Wikidata) suivent l'article français. Széchenyi (1791), Kossuth (1802), Petőfi (1823), Madách (1823), Munkácsy (1844), Němcová (1820) et Diviš (1698) portent la date de l'article ; Wikidata en donne une autre en plus.
-- **Écartés faute d'image convenable** : Přemysl Ottokar II (la seule image est son sceau), Svätopluk Ier (une statue de fontaine), Gustáv Husák (la photographie vient de deux sites de presse), Venceslas Ier (aucune image), et trois noms que
-  Wikipédia français ne trouve pas sous la graphie cherchée (János Irinyi, Ľudovít Fulla, Anton Martin Slomšek). Des images refusées ont été remplacées après une recherche sur Commons : Václav Havel (294 pixels) par une photographie de
+- **Écartés faute d'image convenable** : Přemysl Ottokar II (la seule image est son sceau) et Svätopluk Ier (une statue de fontaine, des cartes), et trois noms que
+  Wikipédia français ne trouve pas sous la graphie cherchée (János Irinyi, Ľudovít Fulla, Anton Martin Slomšek). Des images refusées ont été remplacées après une recherche sur Commons (qui a aussi permis de réintégrer Venceslas Ier, par une icône bohémienne du XIVe siècle, et Gustáv Husák, par une photographie de la Matica slovenská du 21 février 1969, CC BY-SA 4.0, recadrée sur le visage) : Václav Havel (294 pixels) par une photographie de
   Lenke Szilágyi, Karel Čapek (« Not-PD-US-URAA ») par une photographie d'avant 1938, János Kádár (licence « Attribution », photographie roumaine) par un cliché d'Anefo de 1962, John von Neumann (« Attribution ») par une photographie
   CC BY-SA 3.0, Karel Gott (« Copyrighted free use ») par une photographie de 2016, Klement Gottwald et Robert Capa (« Not-PD-US-URAA ») par des clichés de 1946 et de 1938 (Rijksmuseum, CC0), Paul Erdős (308 pixels) par une photographie de
   1992 recadrée sur le visage, et Jan Palach (une carte d'identité qui écrit son nom) par un buste de Vlasta Prachatická (1998, CC BY-SA 4.0).
 - **Des portraits souvent indirects** : miniatures de la Chronique de Thuróczy (1488) pour Árpád, Béla IV et Louis Ier, un détail du tableau votif de Jan Očko de Vlašim pour Charles IV, des gravures (Poděbrady, Ressel, Škoda, Vega, Valvasor,
-  Gallus, Trubar), un vitrail (Jánošík), un dessin au fusain (Kempelen) et plusieurs portraits peints (Rákóczi par Mányoki, Széchenyi par Amerling, Comenius par Ovens, Prešeren par Goldenstein). **Quatre images écrivent le nom** et sont
-  marquées `nomVisible` : l'inscription gravée de Poděbrady, la légende du dessin de Žižka, le nom sur le vitrail de Jánošík et le cadre gravé de Gallus ; « Qui est-ce ? » les écarte, la galerie les garde. Six sont recadrées : Árpád
+  Gallus, Trubar), un vitrail (Jánošík), un dessin au fusain (Kempelen) et plusieurs portraits peints (Rákóczi par Mányoki, Széchenyi par Amerling, Comenius par Ovens, Prešeren par Goldenstein). **Cinq images écrivent le nom** et sont
+  marquées `nomVisible` : l'inscription gravée de Poděbrady, la légende du dessin de Žižka, le nom sur le vitrail de Jánošík, le cadre gravé de Gallus et l'inscription cyrillique de l'icône de Venceslas ; « Qui est-ce ? » les écarte, la galerie les garde. Sept sont recadrées : Husák (le visage dans une photographie de groupe), Árpád
   (le texte de la chronique), Madách (la signature), Janáček (la légende imprimée), Purkyně (la légende), Széchenyi (le visage dans une image en pied) et Erdős.
 - **Une biographie liée** : Václav Havel est relié à `bio_havel` (« une même personne, une même date » : 1936), et son point de naissance (Prague) est repris de la biographie dans `assets/geo/events-geo.json`.
 - **Le rangement.** Les souverains se rangent par leur prénom (« Étienne Ier de Hongrie », « Louis Ier le Grand », « Charles IV »), les autres par leur nom de famille ; François II Rákóczi, prince de Transylvanie et non roi, se range à « Rákóczi »
   (`EXCEPTIONS`).
-- **Statut américain des images : à relire.** Quatre-vingt-onze portraits sont du « domaine public », dont beaucoup de photographies d'agence ou d'État que Commons étiquette « US ? » (modèles « PD-anon-70-EU », « PD-CzechGov », « PD-UKGov ») ;
+- **Statut américain des images : à relire.** Quatre-vingt-douze portraits sont du « domaine public », dont beaucoup de photographies d'agence ou d'État que Commons étiquette « US ? » (modèles « PD-anon-70-EU », « PD-CzechGov », « PD-UKGov ») ;
   même décision que pour les autres thèmes : le script lit la licence déclarée, non le statut américain.
 - **Les listes de candidats** sont dans `scripts/pantheon/europecentrale_candidats.md`.
 

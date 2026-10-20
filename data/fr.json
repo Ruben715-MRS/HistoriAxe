@@ -3,7 +3,7 @@
   "lang": "fr",
   "name": "Français (Intégral)",
   "totalThemes": 843,
-  "totalEvents": 25124,
+  "totalEvents": 25129,
   "categories": [
     {
       "nom": "Culture générale",
@@ -123173,6 +123173,24 @@
                   }
                 },
                 {
+                  "id": "pan_europecentrale_venceslas",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 907,
+                  "titre": "Naissance de Venceslas Ier",
+                  "description": "Venceslas Ier (vers 907-935) est un duc de Bohême, de la dynastie des Přemyslides. Chrétien, il organise le duché et reconnaît la suzeraineté du roi de Germanie, avant d'être assassiné par son frère Boleslav à Stará Boleslav. Canonisé, saint Venceslas devient le patron de la Bohême.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Venceslas_Ier_de_Boh%C3%AAme",
+                  "pays": "CZ",
+                  "classement": "Venceslas Ier",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_venceslas.jpg",
+                    "legende": "Venceslas Ier, icône bohémienne du XIVe siècle",
+                    "auteur": "Medival bohemian icon creator",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Svat%C3%BD_V%C3%A1clav_%C4%8Cesky.jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
                   "id": "pan_europecentrale_adalbert",
                   "axe": "Littérature et pensée",
                   "date": 956,
@@ -124928,6 +124946,23 @@
                   }
                 },
                 {
+                  "id": "pan_europecentrale_husak",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1913,
+                  "titre": "Naissance de Gustáv Husák",
+                  "description": "Gustáv Husák (1913-1991) est un homme d'État communiste slovaque, né à Bratislava. Emprisonné de 1951 à 1960 par le pouvoir communiste, il revient en 1968 et remplace Dubček à la tête du Parti en 1969. Président de 1975 à 1989, il dirige la « normalisation » jusqu'à la révolution de velours.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Gust%C3%A1v_Hus%C3%A1k",
+                  "pays": "SK",
+                  "classement": "Husák, Gustáv",
+                  "image": {
+                    "src": "assets/portraits/pan_europecentrale_husak.jpg",
+                    "legende": "Gustáv Husák, photographie",
+                    "auteur": "Matica slovenská",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Gust%C3%A1v_Hus%C3%A1k_v_Matici_slovenskej_21._2._1969.jpg"
+                  }
+                },
+                {
                   "id": "pan_europecentrale_kubis",
                   "axe": "Guerres et résistances",
                   "date": 1913,
@@ -125228,6 +125263,7 @@
               ],
               "essentiel": [
                 "pan_europecentrale_arpad",
+                "pan_europecentrale_venceslas",
                 "pan_europecentrale_istvan",
                 "pan_europecentrale_charles4",
                 "pan_europecentrale_hus",
@@ -145672,6 +145708,22 @@
                   }
                 },
                 {
+                  "id": "pan_pl_schulz",
+                  "axe": "Littérature et pensée",
+                  "date": 1892,
+                  "titre": "Naissance de Bruno Schulz",
+                  "description": "Bruno Schulz (1892-1942) est un écrivain et un peintre polonais d'origine juive, né à Drohobytch, aujourd'hui en Ukraine. Ses recueils Les Boutiques de cannelle, en 1934, et Le Sanatorium au croque-mort, en 1937, transforment sa ville natale en un monde d'imagination. Il est abattu dans la rue par un officier de la Gestapo en novembre 1942.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bruno_Schulz",
+                  "classement": "Schulz, Bruno",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_schulz.jpg",
+                    "legende": "Bruno Schulz, photographie d'avant 1942",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Image non libre",
+                    "source": "https://commons.wikimedia.org/wiki/File:Bruno_Schulz,_portrait.jpg"
+                  }
+                },
+                {
                   "id": "pan_pl_kolbe",
                   "axe": "Guerres et résistances",
                   "date": 1894,
@@ -146088,6 +146140,22 @@
                   }
                 },
                 {
+                  "id": "pan_pl_komeda",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1931,
+                  "titre": "Naissance de Krzysztof Komeda",
+                  "description": "Krzysztof Komeda (1931-1969) est un pianiste de jazz et un compositeur polonais, né à Poznań. Il écrit la musique des premiers films de Roman Polanski, dont Le Couteau dans l'eau, Le Bal des vampires et Rosemary's Baby. Blessé à la tête en décembre 1968 à Los Angeles, il meurt quatre mois plus tard.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Krzysztof_Komeda",
+                  "classement": "Komeda, Krzysztof",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_komeda.jpg",
+                    "legende": "Krzysztof Komeda, portrait à l'encre de Zbigniew Kresowaty",
+                    "auteur": "Zbigniew Kresowaty",
+                    "licence": "Image non libre",
+                    "source": "https://commons.wikimedia.org/wiki/File:Krzysztof_Komeda_by_Zbigniew_Kresowaty_2.jpg"
+                  }
+                },
+                {
                   "id": "pan_pl_kapuscinski",
                   "axe": "Littérature et pensée",
                   "date": 1932,
@@ -146229,6 +146297,22 @@
                     "auteur": "Andrzej Heinrich",
                     "licence": "Domaine public",
                     "source": "https://commons.wikimedia.org/wiki/File:Jerzy_Kukuczka_Mount_Everest_1980.jpg"
+                  }
+                },
+                {
+                  "id": "pan_pl_kaczynski",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1949,
+                  "titre": "Naissance de Lech Kaczyński",
+                  "description": "Lech Kaczyński (1949-2010) est un homme d'État polonais, maire de Varsovie de 2002 à 2005, puis président de la République de 2005 à sa mort. Ancien conseiller de Solidarność, il défend une politique conservatrice et un souverainisme assumé au sein de l'Union européenne. Il meurt le 10 avril 2010 dans l'accident de l'avion qui l'emmenait aux cérémonies de Katyń, près de Smolensk.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Lech_Kaczy%C5%84ski",
+                  "classement": "Kaczyński, Lech",
+                  "image": {
+                    "src": "assets/portraits/pan_pl_kaczynski.jpg",
+                    "legende": "Lech Kaczyński, photographie officielle de la Chancellerie du Président (2006)",
+                    "auteur": "Chancellerie du Président de la République de Pologne",
+                    "licence": "Image non libre",
+                    "source": "https://commons.wikimedia.org/wiki/File:Lech_Kaczy%C5%84ski.jpg"
                   }
                 }
               ],

@@ -357,7 +357,7 @@ test('Qui est-ce ? : le nom se tire du titre comme dans la galerie', () => {
     assert.equal(G.whoNameOf({ titre: "Naissance d'Édith Piaf" }), 'Édith Piaf');
     assert.equal(G.whoNameOf({ titre: 'Naissance du Caravage' }), 'le Caravage');
     assert.equal(G.whoNameOf({ titre: 'Autre chose' }), 'Autre chose');
-    // Même découpage que js/gallery.js, sur les 3579 titres réels : deux copies d'une règle ne
+    // Même découpage que js/gallery.js, sur les 3584 titres réels : deux copies d'une règle ne
     // doivent pas s'écarter sans qu'un test le dise.
     const { galleryNameOf } = require('../js/gallery.js');
     const fr = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data', 'fr.json'), 'utf8'));
@@ -368,7 +368,7 @@ test('Qui est-ce ? : le nom se tire du titre comme dans la galerie', () => {
         assert.equal(G.whoNameOf(e), galleryNameOf(e).name, e.titre);
         n++;
     }));
-    assert.equal(n, 3579);
+    assert.equal(n, 3584);
 });
 
 test('Qui est-ce ? : sur le vrai pack, chaque panthéon donne dix questions bien formées', () => {
@@ -470,7 +470,7 @@ test('Qui est-ce ? : sur le vrai pack, les portraits dont l’image écrit le no
     const panth = fr.categories.find(c => c.nom === 'Personnages illustres').subcategories.find(s => s.nom === 'Panthéons');
     const tous = panth.themes.flatMap(t => t.events);
     const marques = tous.filter(e => e.image.nomVisible);
-    assert.equal(marques.length, 113);
+    assert.equal(marques.length, 114);
     // Des cas connus : l'inscription peinte, la légende gravée, la monnaie à son nom.
     ['Naissance de Pic de la Mirandole', 'Naissance de Charlemagne', 'Naissance de Johannes Kepler',
         'Naissance de Vercingétorix', 'Naissance de William Harvey', 'Naissance de Neil Armstrong',
@@ -480,8 +480,8 @@ test('Qui est-ce ? : sur le vrai pack, les portraits dont l’image écrit le no
         const e = tous.find(x => x.titre === titre);
         assert.ok(e && e.image.nomVisible, `${titre} devrait être marqué nomVisible`);
     });
-    // Europe centrale : l'inscription de la gravure (Poděbrady), la légende du dessin (Žižka), le nom au vitrail (Jánošík), le cadre gravé (Gallus).
-    ['Naissance de Georges de Poděbrady', 'Naissance de Jan Žižka', 'Naissance de Juraj Jánošík', 'Naissance de Jacobus Gallus'].forEach(titre => {
+    // Europe centrale : l'inscription de la gravure (Poděbrady), la légende du dessin (Žižka), le nom au vitrail (Jánošík), le cadre gravé (Gallus), l'inscription cyrillique de l'icône (Venceslas).
+    ['Naissance de Georges de Poděbrady', 'Naissance de Jan Žižka', 'Naissance de Juraj Jánošík', 'Naissance de Jacobus Gallus', 'Naissance de Venceslas Ier'].forEach(titre => {
         const e = tous.find(x => x.titre === titre);
         assert.ok(e && e.image.nomVisible, `${titre} devrait être marqué nomVisible`);
     });
