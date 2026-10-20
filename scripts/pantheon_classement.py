@@ -152,6 +152,9 @@ KEEP_AS_WRITTEN = {
     'Hassan al-Tourabi', 'Sadeq al-Mahdi', 'Abdel Rahman Swar al-Dahab', 'Muhammad Ahmad al-Mahdi', 'Zerai Deres',
     # Afrique australe : nom de médium, nom unique d'une reine mère.
     'Nehanda Nyakasikana', 'Labotsibeni',
+    # Caucase : reines et religieux du Moyen Âge rangés par leur prénom, suivi de leur titre ou de leur lieu (« Tamar de Géorgie »,
+    # « Grégoire de Narek »), « Machtots » étant un surnom.
+    'Tamar de Géorgie', 'Kétévan la Martyre', 'Grégoire de Narek', 'Mékhitar de Sébaste', 'Mesrop Machtots',
 }
 
 # Écrits à la main : (nom de la source) → nom de classement.

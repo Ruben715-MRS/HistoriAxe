@@ -2,8 +2,8 @@
   "version": "1.0.0",
   "lang": "fr",
   "name": "Français (Intégral)",
-  "totalThemes": 846,
-  "totalEvents": 25289,
+  "totalThemes": 847,
+  "totalEvents": 25361,
   "categories": [
     {
       "nom": "Culture générale",
@@ -116838,6 +116838,1321 @@
                 "pan_ca_gould",
                 "pan_ca_cohen",
                 "pan_ca_fox"
+              ]
+            },
+            {
+              "id": "pan_caucase",
+              "nom": "Grandes figures du Caucase",
+              "difficulte": "Intermédiaire",
+              "motsCles": [
+                "Caucase",
+                "Transcaucasie",
+                "Caucase du Sud",
+                "Géorgie",
+                "Arménie",
+                "Azerbaïdjan",
+                "Géorgien",
+                "Arménien",
+                "Azerbaïdjanais",
+                "Azéri",
+                "Tbilissi",
+                "Tiflis",
+                "Erevan",
+                "Bakou",
+                "Koutaïssi",
+                "Gandja",
+                "Gyumri",
+                "Etchmiadzine",
+                "Chamakhi",
+                "Choucha",
+                "Ararat",
+                "Haut-Karabagh",
+                "Karabagh",
+                "Artsakh",
+                "Nakhitchevan",
+                "Kakhétie",
+                "Kartlie",
+                "Iméréthie",
+                "Colchide",
+                "Ibérie",
+                "Royaume de Géorgie",
+                "Royaume d'Arménie",
+                "Arménie historique",
+                "Alphabet arménien",
+                "Alphabet géorgien",
+                "Génocide arménien",
+                "République démocratique de Géorgie",
+                "République démocratique d'Azerbaïdjan",
+                "Révolution des Roses",
+                "Mugham",
+                "Troubadours",
+                "Achough",
+                "Safavides",
+                "Seldjoukides",
+                "Empire russe",
+                "Union soviétique",
+                "URSS"
+              ],
+              "events": [
+                {
+                  "id": "pan_caucase_tigrane",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": -140,
+                  "titre": "Naissance de Tigrane II le Grand",
+                  "description": "Tigrane II le Grand (vers 140-55 av. J.-C.) est un roi d'Arménie, qui règne de 95 à 55 av. J.-C. et porte son royaume à sa plus grande extension. Allié de Mithridate VI du Pont, dont il épouse la fille, il conquiert la Syrie séleucide et prend le titre de « roi des rois ». Vaincu par les Romains à Tigranocerte en 69 av. J.-C., il se soumet à Pompée en 66 et garde son trône, réduit à l'Arménie.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Tigrane_II_d%27Arm%C3%A9nie",
+                  "pays": "AM",
+                  "classement": "Tigrane II le Grand",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_tigrane.jpg",
+                    "legende": "Tigrane II le Grand, effigie sur une monnaie de son règne",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Tigran_Mets.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_mesrop",
+                  "axe": "Littérature et pensée",
+                  "date": 362,
+                  "titre": "Naissance de Mesrop Machtots",
+                  "description": "Mesrop Machtots (362-440) est un moine, linguiste et missionnaire arménien, né à Hatsekats, dans le Taron. Il crée en 405 l'alphabet arménien, avec l'appui du catholicos Sahak et du roi Vramchapouh, puis dirige la traduction de la Bible et fonde des écoles dans tout le pays. Vénéré comme saint par l'Église apostolique arménienne, il meurt à Vagharchapat.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mesrop_Machtots",
+                  "pays": "AM",
+                  "classement": "Mesrop Machtots",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_mesrop.jpg",
+                    "legende": "Mesrop Machtots, peinture de Francesco Maggiotto (XVIIIe siècle)",
+                    "auteur": "Francesco Maggiotto (1750-1805) Francesco Maggiotto (1738–1805)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mesrop_Mashtots_by_Francesco_Maggiotto.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_narek",
+                  "axe": "Littérature et pensée",
+                  "date": 951,
+                  "titre": "Naissance de Grégoire de Narek",
+                  "description": "Grégoire de Narek (vers 951-1003) est un moine, poète et mystique arménien, né dans le Vaspourakan et mort au monastère de Narek, près du lac de Van. Son Livre de lamentations, long recueil de prières en vers, est l'un des textes les plus lus de la tradition arménienne. Le pape François l'a proclamé docteur de l'Église en 2015.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Gr%C3%A9goire_de_Narek",
+                  "pays": "AM",
+                  "classement": "Grégoire de Narek",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_narek.jpg",
+                    "legende": "Grégoire de Narek, miniature arménienne",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Narekatsi_portret.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_davidiv",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1073,
+                  "titre": "Naissance de David IV le Bâtisseur",
+                  "description": "David IV le Bâtisseur (vers 1073-1125) est un roi de Géorgie, qui règne de 1089 à sa mort et rétablit l'unité et la puissance du royaume. Vainqueur des Seldjoukides à la bataille de Didgori en 1121, il reprend Tbilissi l'année suivante et en fait sa capitale. Fondateur de l'académie de Gelati, il est canonisé par l'Église orthodoxe géorgienne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/David_IV_de_G%C3%A9orgie",
+                  "pays": "GE",
+                  "classement": "David IV le Bâtisseur",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_davidiv.jpg",
+                    "legende": "David IV le Bâtisseur, détail d'une icône du XIIe siècle au monastère Sainte-Catherine du Sinaï",
+                    "auteur": "Public domain Public domain false false",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:David_IV,_detail_from_icon,_St._Catherine_Monastery.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_chnorhali",
+                  "axe": "Littérature et pensée",
+                  "date": 1102,
+                  "titre": "Naissance de Nersès IV Chnorhali",
+                  "description": "Nersès IV Chnorhali (1102-1173) est un catholicos de l'Église apostolique arménienne, de 1166 à sa mort. Poète et théologien, il compose des hymnes, dont « Je confesse avec foi », et une complainte sur la prise d'Édesse en 1144, et il négocie l'union des Églises arménienne et byzantine. Son surnom, Chnorhali, signifie « le Gracieux ».",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ners%C3%A8s_IV_Chnorhali",
+                  "pays": "AM",
+                  "classement": "Nersès IV Chnorhali",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_chnorhali.jpg",
+                    "legende": "Nersès IV Chnorhali, miniature arménienne de 1628",
+                    "auteur": "Unknown author Unknown author icon painter from monastery",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Nerses_Gracious.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_nizami",
+                  "axe": "Littérature et pensée",
+                  "date": 1141,
+                  "titre": "Naissance de Nizami",
+                  "description": "Nizami (vers 1141-vers 1209) est un poète né à Gandja, dans l'actuel Azerbaïdjan. Son Khamsé, cinq longs poèmes en persan dont Khosrow et Chirine, Leyli et Majnun et le Livre d'Alexandre, fait de lui le maître du roman en vers de l'Orient. Il écrit en persan, et l'Azerbaïdjan comme l'Iran le revendiquent chacun comme un poète national.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Nizami",
+                  "pays": "AZ",
+                  "classement": "Nizami",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_nizami.jpg",
+                    "legende": "Nizami s'adressant à son fils, miniature attribuée à Behzad (1482)",
+                    "auteur": "Attributed to Behzad, 1482",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Nezami_(detail)_Addressing_his_Son_Mohammad._Attributed_to_Behzad,_Leyli_and_Majnun_(Nizami_Ganjavi)_1482.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_tamar",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1160,
+                  "titre": "Naissance de Tamar de Géorgie",
+                  "description": "Tamar de Géorgie (vers 1160-1213) est la reine qui règne de 1184 à sa mort, à l'apogée du royaume de Géorgie. Elle repousse les Seldjoukides, étend son influence sur le nord de l'Arménie et aide ses protégés Comnène à prendre Trébizonde en 1204. Son règne, âge d'or de la littérature géorgienne, voit naître Le Chevalier à la peau de panthère, et l'Église orthodoxe géorgienne l'a canonisée.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Tamar_de_G%C3%A9orgie",
+                  "pays": "GE",
+                  "classement": "Tamar de Géorgie",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_tamar.jpg",
+                    "legende": "Tamar de Géorgie, fresque de Vardzia (XIIe siècle)",
+                    "auteur": "Public domain Public domain false false",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Tamar,_fresco_of_Vardzia.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_rustaveli",
+                  "axe": "Littérature et pensée",
+                  "date": 1172,
+                  "titre": "Naissance de Chota Roustavéli",
+                  "description": "Chota Roustavéli (vers 1172-vers 1216) est un poète géorgien du temps de la reine Tamar, dont on connaît à peine la vie. Il écrit Le Chevalier à la peau de panthère, épopée de la chevalerie, de l'amitié et de l'amour courtois, que les Géorgiens tiennent pour leur œuvre nationale. Une fresque du monastère de la Croix, à Jérusalem, où il aurait fini ses jours selon la tradition, passe pour le représenter.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Chota_Roustav%C3%A9li",
+                  "pays": "GE",
+                  "classement": "Roustavéli, Chota",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_rustaveli.jpg",
+                    "legende": "Chota Roustavéli, fresque du monastère de la Croix, à Jérusalem (détail)",
+                    "auteur": "Bukvoed",
+                    "licence": "CC BY 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jerusalem-Monastery-of-the-Cross-689.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_nassimi",
+                  "axe": "Littérature et pensée",
+                  "date": 1369,
+                  "titre": "Naissance d'Imadeddine Nassimi",
+                  "description": "Imadeddine Nassimi (vers 1369-1417) est un poète azerbaïdjanais, né à Chamakhi. Adepte du mouvement mystique des hourouf, il compose en azéri, en persan et en arabe des vers qui comptent parmi les premiers chefs-d'œuvre de la poésie turcique. Condamné pour hérésie, il est exécuté à Alep en 1417, écorché vif selon la tradition.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Imadeddine_Nassimi",
+                  "pays": "AZ",
+                  "classement": "Nassimi, Imadeddine",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_nassimi.jpg",
+                    "legende": "Imadeddine Nassimi, portrait imaginaire",
+                    "auteur": "Processed by Andrei Sdobnikov",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Portrait_of_Nasimi.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_ketevan",
+                  "axe": "Guerres et résistances",
+                  "date": 1565,
+                  "titre": "Naissance de Kétévan la Martyre",
+                  "description": "Kétévan la Martyre (vers 1565-1624) est une reine de Kakhétie, épouse du roi David Ier et régente au nom de son fils Teimouraz Ier de 1605 à 1614. Emmenée en captivité en Iran après l'invasion du chah Abbas Ier, elle refuse d'abjurer sa foi chrétienne. Torturée à mort à Chiraz en 1624, elle est honorée comme sainte par l'Église orthodoxe géorgienne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ketevan_le_Martyr",
+                  "pays": "GE",
+                  "classement": "Kétévan la Martyre",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_ketevan.jpg",
+                    "legende": "Kétévan la Martyre, panneau d'azulejos conservé à Lisbonne",
+                    "auteur": "Public domain Public domain false false",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Queen_Ketevan,_Lisbon_fresco_(2).jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_orbeliani",
+                  "axe": "Littérature et pensée",
+                  "date": 1658,
+                  "titre": "Naissance de Sulkhan-Saba Orbéliani",
+                  "description": "Sulkhan-Saba Orbéliani (1658-1725) est un écrivain, lexicographe et moine géorgien, né à Tandzia. Auteur du recueil de fables La Sagesse du mensonge et d'un dictionnaire de la langue géorgienne, il part en 1713 comme émissaire du roi Vakhtang VI et est reçu par Louis XIV à Versailles. Rallié au catholicisme, il meurt à Moscou.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Saba_Soulkhan_Orb%C3%A9liani",
+                  "pays": "GE",
+                  "classement": "Orbéliani, Sulkhan-Saba",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_orbeliani.jpg",
+                    "legende": "Sulkhan-Saba Orbéliani, miniature du XVIIIe siècle",
+                    "auteur": "Public domain Public domain false false",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Sulkhan_Saba,_1700s_miniature.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_vakhtang6",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1675,
+                  "titre": "Naissance de Vakhtang VI",
+                  "description": "Vakhtang VI (1675-1737) est un roi de Kartlie, régent dès 1703 puis souverain de 1719 à 1724. Législateur, il fait rédiger un code de lois et installe à Tbilissi, en 1709, la première imprimerie du pays. Chassé par l'invasion ottomane, il s'exile en Russie en 1724 avec une partie de sa cour et meurt à Astrakhan.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Vakhtang_VI",
+                  "pays": "GE",
+                  "classement": "Vakhtang VI",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_vakhtang6.jpg",
+                    "legende": "Vakhtang VI, portrait de 1709",
+                    "auteur": "Public domain Public domain false false",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Vakhtang_VI,_1709.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_mekhitar",
+                  "axe": "Littérature et pensée",
+                  "date": 1676,
+                  "titre": "Naissance de Mékhitar de Sébaste",
+                  "description": "Mékhitar de Sébaste (1676-1749) est un moine arménien catholique, né à Sébaste. Il fonde en 1701 à Constantinople la congrégation des mékhitaristes, qui s'établit en 1717 à Venise, sur l'île de Saint-Lazare. Ses moines, grammairiens, historiens et éditeurs, préservent et diffusent la langue et la culture arméniennes ; il meurt à Venise.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/M%C3%A9khitar_de_S%C3%A9baste",
+                  "pays": "AM",
+                  "classement": "Mékhitar de Sébaste",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_mekhitar.jpg",
+                    "legende": "Mékhitar de Sébaste, portrait conservé à Saint-Lazare des Arméniens, à Venise",
+                    "auteur": "dalbera from Paris, France",
+                    "licence": "CC BY 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Portrait_de_Pierre_M%C3%A9khitar_(Saint_Lazare_des_Arm%C3%A9niens,_Venise)_(5182840694)(crop).jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_erekle2",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1720,
+                  "titre": "Naissance de Héraclius II",
+                  "description": "Héraclius II (1720-1798) est un roi de Kakhétie, puis de Kartlie et de Kakhétie réunies, qui dirige la Géorgie orientale de 1744 à sa mort. Pour échapper aux Perses et aux Ottomans, il signe en 1783 le traité de Georgievsk, qui place son royaume sous la protection de la Russie. Cette protection n'empêche pas Agha Mohammad Khan de saccager Tbilissi en 1795, et la Russie annexe le royaume en 1801, trois ans après la mort d'Héraclius à Telavi.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/H%C3%A9raclius_II_de_G%C3%A9orgie",
+                  "pays": "GE",
+                  "classement": "Héraclius II",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_erekle2.jpg",
+                    "legende": "Héraclius II, portrait du XVIIIe siècle",
+                    "auteur": "Unknown Unknown derivative work: Carnby",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Heraclius_II_of_Eastern_Georgia_crop.png"
+                  }
+                },
+                {
+                  "id": "pan_caucase_abovian",
+                  "axe": "Littérature et pensée",
+                  "date": 1809,
+                  "titre": "Naissance de Khatchatour Abovian",
+                  "description": "Khatchatour Abovian (1809-1848) est un écrivain et pédagogue arménien, né à Kanaker, près d'Erevan. Considéré comme le père de la littérature arménienne moderne, il écrit en 1841 Les Blessures de l'Arménie, publié en 1858, premier roman en arménien moderne, fondé sur le dialecte d'Erevan. Il disparaît sans laisser de trace en avril 1848.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Khatchatour_Abovian",
+                  "pays": "AM",
+                  "classement": "Abovian, Khatchatour",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_abovian.jpg",
+                    "legende": "Khatchatour Abovian, portrait de Ludwig von Maydell (vers 1831)",
+                    "auteur": "Ludwig von Maydell (1795-1846) ?",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Abovianportrait.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_akhundov",
+                  "axe": "Littérature et pensée",
+                  "date": 1812,
+                  "titre": "Naissance de Mirza Fatali Akhundov",
+                  "description": "Mirza Fatali Akhundov (1812-1878) est un dramaturge et philosophe azerbaïdjanais, né à Nukha, l'actuelle Chéki. Ses comédies, écrites en azéri entre 1850 et 1856, fondent le théâtre moderne de langue azérie ; il critique aussi le fanatisme religieux et plaide pour une réforme de l'alphabet arabe. Fonctionnaire de l'Empire russe, interprète au service du vice-roi du Caucase, il meurt à Tbilissi.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mirza_Fatali_Akhundov",
+                  "pays": "AZ",
+                  "classement": "Akhundov, Mirza Fatali",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_akhundov.jpg",
+                    "legende": "Mirza Fatali Akhundov, portrait du XIXe siècle",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mirz%C9%99_F%C9%99t%C9%99li_Axundov_2.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_baratachvili",
+                  "axe": "Littérature et pensée",
+                  "date": 1817,
+                  "titre": "Naissance de Nikoloz Baratachvili",
+                  "description": "Nikoloz Baratachvili (1817-1844) est un poète géorgien, né à Tbilissi et mort à vingt-six ans à Gandja. Son œuvre tient en une quarantaine de poèmes, dont Merani, qui disent sous une forme romantique la douleur d'un pays perdu. Elle fait de lui le sommet du romantisme géorgien.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Nikoloz_Baratachvili",
+                  "pays": "GE",
+                  "classement": "Baratachvili, Nikoloz",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_baratachvili.jpg",
+                    "legende": "Nikoloz Baratachvili, portrait du XIXe siècle",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Nikolozbaratashvili_new.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_nalbandian",
+                  "axe": "Littérature et pensée",
+                  "date": 1829,
+                  "titre": "Naissance de Mikaël Nalbandian",
+                  "description": "Mikaël Nalbandian (1829-1866) est un poète, penseur et publiciste arménien, né à Nor-Nakhitchevan, près de Rostov-sur-le-Don. Son poème patriotique « Chant d'une jeune Italienne » (1858) fournit les paroles de l'hymne national actuel de l'Arménie, Mer Hayrenik. Arrêté en 1862 pour ses liens avec Herzen, il est exilé à Kamychine, où il meurt de tuberculose quatre ans plus tard.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Michael_Nalbandian",
+                  "pays": "AM",
+                  "classement": "Nalbandian, Mikaël",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_nalbandian.jpg",
+                    "legende": "Mikaël Nalbandian, portrait du XIXe siècle",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mikael_Nalbandian2.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_natavan",
+                  "axe": "Littérature et pensée",
+                  "date": 1832,
+                  "titre": "Naissance de Khourchidbanou Natavan",
+                  "description": "Khourchidbanou Natavan (1832-1897) est une poétesse azerbaïdjanaise, née et morte à Choucha, fille du dernier khan du Karabagh, Mehdigulu Khan. Ses ghazals, en azéri et en persan, font d'elle l'une des meilleures poétesses lyriques de l'Azerbaïdjan. Mécène, elle réunit un cercle littéraire à Choucha et finance les travaux d'adduction d'eau de la ville.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Khurchidbanu_Natavan",
+                  "pays": "AZ",
+                  "classement": "Natavan, Khourchidbanou",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_natavan.jpg",
+                    "legende": "Khourchidbanou Natavan, portrait d'avant 1897",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Natavan.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_raffi",
+                  "axe": "Littérature et pensée",
+                  "date": 1835,
+                  "titre": "Naissance de Raffi",
+                  "description": "Raffi (1835-1888) est un romancier arménien de Perse, de son vrai nom Hakob Mélik-Hakobian, né à Payadjouk, près d'Ourmia, et mort à Tiflis. Ses romans historiques, dont Jalaleddin, David Bek et Samuel, nourrissent le sentiment national arménien par le récit des combats du passé. Il est l'un des écrivains arméniens les plus lus du XIXe siècle.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Raffi",
+                  "pays": "AM",
+                  "classement": "Raffi",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_raffi.jpg",
+                    "legende": "Raffi, photographie d'avant 1888",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Raffi.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_ilia",
+                  "axe": "Littérature et pensée",
+                  "date": 1837,
+                  "titre": "Naissance d'Ilia Tchavtchavadzé",
+                  "description": "Ilia Tchavtchavadzé (1837-1907) est un écrivain, juriste et homme public géorgien, né à Kvareli, en Kakhétie. Il anime le réveil national de la seconde moitié du XIXe siècle par ses poèmes, ses romans, le journal Iveria et la Société pour la diffusion de l'alphabétisation parmi les Géorgiens. Assassiné en 1907 près de Tbilissi, il est canonisé par l'Église orthodoxe géorgienne sous le nom d'Élie le Juste.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ilia_Tchavtchavadz%C3%A9",
+                  "pays": "GE",
+                  "classement": "Tchavtchavadzé, Ilia",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_ilia.jpg",
+                    "legende": "Ilia Tchavtchavadzé, photographie d'Alexandre Roïnachvili (entre 1865 et 1898)",
+                    "auteur": "Alexander Roinashvili (1846–1898)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Portrait_of_Ilia_Chavchavadze.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_akaki",
+                  "axe": "Littérature et pensée",
+                  "date": 1840,
+                  "titre": "Naissance d'Akaki Tsereteli",
+                  "description": "Akaki Tsereteli (1840-1915) est un poète géorgien, issu d'une famille princière d'Iméréthie, et l'une des figures du mouvement de libération nationale. Auteur d'odes patriotiques et du poème Souliko (1895), repris en chanson dans toute la Géorgie, il parcourt le pays pour lire ses vers au peuple. Il meurt en janvier 1915, et sa maison natale de Skhvitori est devenue un musée.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Akaki_Tsereteli",
+                  "pays": "GE",
+                  "classement": "Tsereteli, Akaki",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_akaki.jpg",
+                    "legende": "Akaki Tsereteli, photographie des années 1900",
+                    "auteur": "Unknown",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Akaki_Tsereteli_in_1900s.png"
+                  }
+                },
+                {
+                  "id": "pan_caucase_kazbegi",
+                  "axe": "Littérature et pensée",
+                  "date": 1848,
+                  "titre": "Naissance d'Alexandre Kazbegi",
+                  "description": "Alexandre Kazbegi (1848-1893) est un écrivain et journaliste géorgien, de son vrai nom Alexandre Chopikachvili, né à Stepantsminda, au pied du mont Kazbek. Ses récits de la vie des montagnards, dont Le Parricide et Élisso, en font l'un des fondateurs du réalisme géorgien. Il meurt à Tbilissi en 1893, et Élisso inspire en 1928 le film de Nikoloz Chenguelaïa.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Alexandre_Kazbegi",
+                  "pays": "GE",
+                  "classement": "Kazbegi, Alexandre",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_kazbegi.jpg",
+                    "legende": "Alexandre Kazbegi, photographie d'Alexandre Roïnachvili (1893)",
+                    "auteur": "Alexander Roinashvili (1846–1898)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kasbeg.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_vaja",
+                  "axe": "Littérature et pensée",
+                  "date": 1861,
+                  "titre": "Naissance de Vaja-Pchavéla",
+                  "description": "Vaja-Pchavéla (1861-1915) est un poète, nouvelliste et dramaturge géorgien, de son vrai nom Louka Razikachvili, né à Tchargali, en Pchavie. Il puise dans la vie et les légendes des montagnards du Caucase les sujets de ses poèmes épiques, dont Aluda Kételaouri et Hôte et Invité. Il meurt à Tbilissi en juillet 1915.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Vaja-Pchavela",
+                  "pays": "GE",
+                  "classement": "Vaja-Pchavéla",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_vaja.jpg",
+                    "legende": "Vaja-Pchavéla, photographie d'Alexandre Roïnachvili",
+                    "auteur": "Alexander Roinashvili (1846–1898)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Vazha-Pshavela_(1861-1915),_photo_by_Alexandre_Roinashvili.png"
+                  }
+                },
+                {
+                  "id": "pan_caucase_pirosmani",
+                  "axe": "Beaux-arts",
+                  "date": 1862,
+                  "titre": "Naissance de Niko Pirosmani",
+                  "description": "Niko Pirosmani (1862-1918) est un peintre autodidacte géorgien, né à Mirzaani, en Kakhétie. Ancien cheminot puis petit commerçant, il peint sur toile cirée, pour les tavernes de Tbilissi, des fêtes, des animaux et des portraits d'une naïveté raffinée. Révélé en 1912 aux avant-gardes russes, il meurt dans la misère en 1918, avant d'être reconnu comme l'un des grands peintres naïfs du XXe siècle.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Niko_Pirosmani",
+                  "pays": "GE",
+                  "classement": "Pirosmani, Niko",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_pirosmani.jpg",
+                    "legende": "Niko Pirosmani, photographie d'Eduard Klar (1916)",
+                    "auteur": "Eduard Klar, 1861-1922 first upload in de wikipedia on 13:22, 14. Sep 2005 by ChrisM",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Niko_Pirosmani_1916.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_sabir",
+                  "axe": "Littérature et pensée",
+                  "date": 1862,
+                  "titre": "Naissance de Mirza Alakbar Sabir",
+                  "description": "Mirza Alakbar Sabir (1862-1911) est un poète satirique azerbaïdjanais, né et mort à Chamakhi. Collaborateur de la revue Molla Nasreddin, il y raille l'obscurantisme, l'hypocrisie des notables et la misère du peuple dans une langue proche du parler courant, rassemblée dans Hophopname (1909). Il meurt pauvre et malade à Chamakhi.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mirza_Alakbar_Sabir",
+                  "pays": "AZ",
+                  "classement": "Sabir, Mirza Alakbar",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_sabir.jpg",
+                    "legende": "Mirza Alakbar Sabir, photographie d'avant 1911",
+                    "auteur": "Naməlum",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mirz%C9%99_%C6%8Fl%C9%99kb%C9%99r_Sabir.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_toptchoubachov",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1862,
+                  "titre": "Naissance d'Alimerdan bey Toptchoubachov",
+                  "description": "Alimerdan bey Toptchoubachov (1862-1934) est un juriste et homme politique azerbaïdjanais, né à Tbilissi. Député à la première Douma de l'Empire russe, il préside le Parlement de la République démocratique d'Azerbaïdjan, puis sa délégation à la conférence de la paix de Paris en 1919. Exilé en France après l'arrivée de l'Armée rouge, il y meurt en 1934.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Alimerdan_Bey_Toptchoubachov",
+                  "pays": "AZ",
+                  "classement": "Toptchoubachov, Alimerdan bey",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_toptchoubachov.jpg",
+                    "legende": "Alimerdan bey Toptchoubachov, photographie de 1906",
+                    "auteur": "Фотография ателье Буллы",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Alimerdan_bey_Topchubashov.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_andranik",
+                  "axe": "Guerres et résistances",
+                  "date": 1865,
+                  "titre": "Naissance d'Andranik Ozanian",
+                  "description": "Andranik Ozanian (1865-1927) est un chef militaire arménien, né à Chabin-Karahissar, dans l'Empire ottoman. Chef de fedayin, il combat l'armée ottomane, commande des volontaires arméniens dans la première guerre des Balkans en 1912 puis dans l'armée russe, et défend le Zanguezour en 1918-1919. Exilé aux États-Unis, il meurt en Californie en 1927 ; ses restes sont transférés à Erevan en 2000.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Andranik_Ozanian",
+                  "pays": "AM",
+                  "classement": "Ozanian, Andranik",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_andranik.jpg",
+                    "legende": "Andranik Ozanian, photographie de 1921",
+                    "auteur": "Photographe inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:AndranikOzanian.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_jordania",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1868,
+                  "titre": "Naissance de Noé Jordania",
+                  "description": "Noé Jordania (1868-1953) est un homme politique géorgien, né à Lantchkhouti. Chef de file des sociaux-démocrates mencheviks, il dirige de 1918 à 1921 le gouvernement de la République démocratique de Géorgie, première indépendance du pays après la domination russe. Quand l'Armée rouge entre à Tbilissi en février 1921, il part en exil en France, où il meurt.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/No%C3%A9_Jordania",
+                  "pays": "GE",
+                  "classement": "Jordania, Noé",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_jordania.jpg",
+                    "legende": "Noé Jordania, photographie de 1920",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%E1%83%9C._%E1%83%9F%E1%83%9D%E1%83%A0%E1%83%93%E1%83%90%E1%83%9C%E1%83%98%E1%83%90.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_komitas",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1869,
+                  "titre": "Naissance de Komitas",
+                  "description": "Komitas (1869-1935) est un prêtre, compositeur et ethnomusicologue arménien, né Soghomon Soghomonian à Kütahya, dans l'Empire ottoman. Formé à Berlin, il collecte et transcrit plus de trois mille chants populaires arméniens et fonde la tradition de la musique savante nationale. Arrêté lors de la rafle du 24 avril 1915 puis libéré, il sombre dans la folie et meurt à Villejuif, près de Paris, après vingt ans d'hôpital psychiatrique.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Komitas",
+                  "pays": "AM",
+                  "classement": "Komitas",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_komitas.jpg",
+                    "legende": "Komitas, photographie d'avant 1935",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Komitas.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_toumanian",
+                  "axe": "Littérature et pensée",
+                  "date": 1869,
+                  "titre": "Naissance d'Hovhannès Toumanian",
+                  "description": "Hovhannès Toumanian (1869-1923) est un poète et conteur arménien, né à Dsegh, dans la région de Lori. Considéré comme le poète national de l'Arménie, il est l'auteur de poèmes, de quatrains et de contes restés très populaires. Pendant la Première Guerre mondiale, il s'occupe des réfugiés du génocide, puis meurt à Moscou en 1923.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Hovhann%C3%A8s_Toumanian",
+                  "pays": "AM",
+                  "classement": "Toumanian, Hovhannès",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_toumanian.jpg",
+                    "legende": "Hovhannès Toumanian, photographie des années 1910",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Tumanyan_(2).jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_paliachvili",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1871,
+                  "titre": "Naissance de Zakaria Paliachvili",
+                  "description": "Zakaria Paliachvili (1871-1933) est un compositeur géorgien, né à Koutaïssi, souvent considéré comme le fondateur de la musique classique en Géorgie. Ses opéras Abesalom et Eteri (1919) et Daïssi (1923), nourris de chants populaires, fournissent la musique de l'hymne national actuel. Il meurt à Tbilissi en 1933.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Zakaria_Paliachvili",
+                  "pays": "GE",
+                  "classement": "Paliachvili, Zakaria",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_paliachvili.jpg",
+                    "legende": "Zakaria Paliachvili, photographie des années 1900",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Georgian_classical_composer_Zacharia_Paliashvili_in_the_early_1900s_-_crop.png"
+                  }
+                },
+                {
+                  "id": "pan_caucase_khoyski",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1875,
+                  "titre": "Naissance de Fatali Khan Khoyski",
+                  "description": "Fatali Khan Khoyski (1875-1920) est un avocat et homme politique azerbaïdjanais, né à Nukha, l'actuelle Chéki. Député à la Douma de l'Empire russe, il devient en 1918 le premier chef du gouvernement de la République démocratique d'Azerbaïdjan. Il est assassiné à Tbilissi en juin 1920, quelques semaines après l'entrée de l'Armée rouge à Bakou.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Fatali_Khan_Khoyski",
+                  "pays": "AZ",
+                  "classement": "Khoyski, Fatali Khan",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_khoyski.jpg",
+                    "legende": "Fatali Khan Khoyski, photographie de 1906",
+                    "auteur": "Ателье Буллы",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Fatali_Khan_Khoyski.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_djavakhichvili",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1876,
+                  "titre": "Naissance d'Ivané Djavakhichvili",
+                  "description": "Ivané Djavakhichvili (1876-1940) est un historien géorgien, né et mort à Tbilissi. Il compte parmi les fondateurs de l'université d'État de Tbilissi, en 1918, dont il est le recteur de 1919 à 1926. Son Histoire de la nation géorgienne, en plusieurs volumes, a profondément marqué l'étude de l'histoire et de la culture du pays.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ivane_Djavakhichvili",
+                  "pays": "GE",
+                  "classement": "Djavakhichvili, Ivané",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_djavakhichvili.jpg",
+                    "legende": "Ivané Djavakhichvili, photographie d'avant 1940",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ivane_Javakhishvili.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_kurghinian",
+                  "axe": "Littérature et pensée",
+                  "date": 1876,
+                  "titre": "Naissance de Shushanik Kurghinian",
+                  "description": "Shushanik Kurghinian (1876-1927) est une poétesse arménienne, née Popoljian à Alexandropol, l'actuelle Gyumri. Poétesse socialiste et féministe, elle donne à ses vers la voix des ouvriers et des femmes, ce qui la distingue de la poésie arménienne de son temps. Elle meurt à Erevan en 1927 et repose au Panthéon Komitas.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Shushanik_Kurghinian",
+                  "pays": "AM",
+                  "classement": "Kurghinian, Shushanik",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_kurghinian.jpg",
+                    "legende": "Shushanik Kurghinian, portrait publié en 1912",
+                    "auteur": "Teodik's Amenuyn Daretsuyts (1910)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Shushanik_Kurghinian.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_manoukian",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1879,
+                  "titre": "Naissance d'Aram Manoukian",
+                  "description": "Aram Manoukian (1879-1919) est un révolutionnaire et homme d'État arménien, connu sous le nom d'Aram de Van. Organisateur de la défense de Van contre les forces ottomanes au printemps 1915, il est l'un des fondateurs de la première République d'Arménie, proclamée en mai 1918, dont il est ministre de l'Intérieur. Il meurt du typhus à Erevan en janvier 1919, à trente-neuf ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Aram_Manoukian",
+                  "pays": "AM",
+                  "classement": "Manoukian, Aram",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_manoukian.jpg",
+                    "legende": "Aram Manoukian, photographie des années 1910",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Aram_Manukian.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_azimzade",
+                  "axe": "Beaux-arts",
+                  "date": 1880,
+                  "titre": "Naissance d'Azim Azimzadé",
+                  "description": "Azim Azimzadé (1880-1943) est un peintre et caricaturiste azerbaïdjanais, né à Novkhani, près de Bakou, et mort à Bakou. Dessinateur de la revue satirique Molla Nasreddin, il y raille l'obscurantisme, l'injustice et la domination des notables. Il reçoit en 1927 le titre d'artiste du peuple de la RSS d'Azerbaïdjan.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Azim_Azimzade",
+                  "pays": "AZ",
+                  "classement": "Azimzadé, Azim",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_azimzade.jpg",
+                    "legende": "Azim Azimzadé, photographie d'avant 1943",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Azim_Azimzade_2.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_sarian",
+                  "axe": "Beaux-arts",
+                  "date": 1880,
+                  "titre": "Naissance de Martiros Sarian",
+                  "description": "Martiros Sarian (1880-1972) est un peintre arménien, né à Nor-Nakhitchevan, près de Rostov-sur-le-Don. Voyageur en Turquie, en Égypte et en Perse, il y puise des couleurs vives et des lumières méridionales qui font de lui le père de la peinture arménienne moderne. Installé à Erevan en 1921, il y meurt en 1972, et sa maison y est devenue un musée.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Martiros_Sarian",
+                  "pays": "AM",
+                  "classement": "Sarian, Martiros",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_sarian.jpg",
+                    "legende": "Martiros Sarian, photographie des années 1920",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Martiros_Saryan.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_javid",
+                  "axe": "Littérature et pensée",
+                  "date": 1882,
+                  "titre": "Naissance de Huseyn Javid",
+                  "description": "Huseyn Javid (1882-1941) est un poète et dramaturge azerbaïdjanais, né à Nakhitchevan. Chef de file du romantisme azerbaïdjanais, il écrit des drames en vers inspirés de l'histoire et de la mystique orientales. Arrêté en 1937 pendant les purges staliniennes, il est déporté en Sibérie, où il meurt en 1941.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Huseyn_Djavid",
+                  "pays": "AZ",
+                  "classement": "Javid, Huseyn",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_javid.jpg",
+                    "legende": "Huseyn Javid, photographie d'avant 1924",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Huseyn_Javid.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_rassoulzade",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1884,
+                  "titre": "Naissance de Mammad Amin Rassoulzadé",
+                  "description": "Mammad Amin Rassoulzadé (1884-1955) est un journaliste et homme politique azerbaïdjanais, né à Novkhani, près de Bakou. Président du Conseil national, il proclame le 28 mai 1918 la République démocratique d'Azerbaïdjan, première république démocratique du monde musulman. Exilé dès 1920, il tente durant la Seconde Guerre mondiale de s'appuyer sur l'Allemagne nazie pour libérer son pays, avant de mourir à Ankara en 1955.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mohammed_%C3%89min_R%C3%A9sulzad%C3%A9",
+                  "pays": "AZ",
+                  "classement": "Rassoulzadé, Mammad Amin",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_rassoulzade.jpg",
+                    "legende": "Mammad Amin Rassoulzadé, photographie d'environ 1918",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mahammad_Amin_Rasulzade_3.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_varoujan",
+                  "axe": "Littérature et pensée",
+                  "date": 1884,
+                  "titre": "Naissance de Daniel Varoujan",
+                  "description": "Daniel Varoujan (1884-1915) est un poète arménien, né Daniel Tchébouguiarian à Perknig, près de Sivas, dans l'Empire ottoman. Formé à Venise puis à Gand, il célèbre dans Les Chants païens (1912) la vigueur de la terre arménienne et du travail paysan. Arrêté en avril 1915 avec l'élite arménienne de Constantinople, il est assassiné en août près de Çankırı, pendant le génocide.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Daniel_Varoujan",
+                  "pays": "AM",
+                  "classement": "Varoujan, Daniel",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_varoujan.jpg",
+                    "legende": "Daniel Varoujan, photographie d'avant 1915",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Daniel_Varuzhan.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_hajibeyov",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1885,
+                  "titre": "Naissance d'Uzeyir Hajibeyov",
+                  "description": "Uzeyir Hajibeyov (1885-1948) est un compositeur, chef d'orchestre et pédagogue azerbaïdjanais, considéré comme le père de la musique classique de son pays. Son Leyli et Majnun (1908) est le premier opéra du monde musulman, et son opérette Arshin Mal Alan (1913) triomphe bien au-delà de l'Azerbaïdjan. Il signe aussi la musique de l'hymne de 1918, repris par l'Azerbaïdjan indépendant, et meurt à Bakou en 1948.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Uzeyir_Hajibeyov",
+                  "pays": "AZ",
+                  "classement": "Hajibeyov, Uzeyir",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_hajibeyov.jpg",
+                    "legende": "Uzeyir Hajibeyov, photographie des années 1940",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Uzeyir_Hajibeyov.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_terian",
+                  "axe": "Littérature et pensée",
+                  "date": 1885,
+                  "titre": "Naissance de Vahan Térian",
+                  "description": "Vahan Térian (1885-1920) est un poète arménien, de son vrai nom Vahan Ter-Grigorian, né à Gandza, dans l'actuelle Géorgie. Chef de file du symbolisme arménien, il publie en 1908 le recueil Rêves du crépuscule, d'une mélancolie qui marque la poésie de son temps. Engagé dans la révolution de 1917, il meurt de la tuberculose à Orenbourg, en Russie, à trente-quatre ans.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Vahan_Terian",
+                  "pays": "AM",
+                  "classement": "Térian, Vahan",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_terian.jpg",
+                    "legende": "Vahan Térian, photographie des années 1910",
+                    "auteur": "Book \"Vahan Teryan. Non-Printed and Unknown Pages\"",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Vahan_Teryan_portrait.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_tcholokhachvili",
+                  "axe": "Guerres et résistances",
+                  "date": 1888,
+                  "titre": "Naissance de Kakoutsa Tcholokhachvili",
+                  "description": "Kakoutsa Tcholokhachvili (1888-1930) est un officier géorgien, ancien officier de l'armée impériale russe puis de l'armée de la République démocratique de Géorgie. Après l'invasion soviétique de 1921, il prend le maquis et commande un mouvement de guérilla contre le nouveau régime. Tué en 1930, il est regardé en Géorgie comme un héros national.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kakoutsa_Tcholokhachvili",
+                  "pays": "GE",
+                  "classement": "Tcholokhachvili, Kakoutsa",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_tcholokhachvili.jpg",
+                    "legende": "Kakoutsa Tcholokhachvili, photographie de la fin des années 1920",
+                    "auteur": "Unknown",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kakutsa_Cholokashvili,_national_hero_of_Georgia.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_galaktion",
+                  "axe": "Littérature et pensée",
+                  "date": 1891,
+                  "titre": "Naissance de Galaktion Tabidzé",
+                  "description": "Galaktion Tabidzé (1891-1959) est un poète géorgien, né à Tchkvichi, en Iméréthie. Chef de file du symbolisme géorgien, il renouvelle le vers par sa musicalité et passe pour le plus grand poète lyrique du pays. Cousin de Titsian Tabidzé, fusillé en 1937, il traverse la Terreur stalinienne sans cesser d'écrire et meurt à Tbilissi.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Galaktion_Tabidze",
+                  "pays": "GE",
+                  "classement": "Tabidzé, Galaktion",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_galaktion.jpg",
+                    "legende": "Galaktion Tabidzé, photographie du début des années 1920",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Georgian_poet_Galaktion_Tabidze.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_mikoyan",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1895,
+                  "titre": "Naissance d'Anastase Mikoïan",
+                  "description": "Anastase Mikoïan (1895-1978) est un homme d'État soviétique d'origine arménienne, né à Sanahin. Membre du Politburo à partir de 1935, il traverse les règnes de Staline, de Khrouchtchev et de Brejnev, négocie avec Fidel Castro après la crise des missiles de 1962 et préside l'État soviétique en 1964-1965. Son rôle sous Staline, notamment pendant la Grande Terreur, reste débattu, et il meurt à Moscou en 1978.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Anastase_Miko%C3%AFan",
+                  "pays": "AM",
+                  "classement": "Mikoïan, Anastase",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_mikoyan.jpg",
+                    "legende": "Anastase Mikoïan, photographie de l'agence TASS (1950)",
+                    "auteur": "G. Weil for TASS",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:A.I._Mikoyan_TASS_Portrait_Trim_Edit.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_bagramian",
+                  "axe": "Guerres et résistances",
+                  "date": 1897,
+                  "titre": "Naissance d'Hovhannès Bagramian",
+                  "description": "Hovhannès Bagramian (1897-1982) est un maréchal de l'Union soviétique d'origine arménienne, connu en russe sous le nom d'Ivan Bagramian. Commandant du 1er front balte, il dirige en 1944 les offensives qui chassent les Allemands des pays baltes. Il devient maréchal en 1955 et meurt à Moscou.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Hovhannes_Bagramian",
+                  "pays": "AM",
+                  "classement": "Bagramian, Hovhannès",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_bagramian.jpg",
+                    "legende": "Hovhannès Bagramian, photographie en uniforme de maréchal",
+                    "auteur": "Unknown photographer",
+                    "licence": "CC BY 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:%D0%91%D0%B0%D0%B3%D1%80%D0%B0%D0%BC%D1%8F%D0%BD_%D0%98%D0%B2%D0%B0%D0%BD_%D0%A5%D1%80%D0%B8%D1%81%D1%82%D0%BE%D1%84%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D1%87.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_bulbul",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1897,
+                  "titre": "Naissance de Bul-Bul",
+                  "description": "Bul-Bul (1897-1961) est un ténor azerbaïdjanais, de son vrai nom Mourtouza Mammadov, né à Khanbagi, près de Choucha. Chanteur d'opéra et interprète de mugham, il est l'un des fondateurs du théâtre musical national et reçoit en 1938 le titre d'artiste du peuple de l'URSS. Père de l'acteur et diplomate Polad Bülbüloğlu, il meurt à Bakou.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bul-Bul",
+                  "pays": "AZ",
+                  "classement": "Bul-Bul",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_bulbul.jpg",
+                    "legende": "Bul-Bul, photographie d'avant 1945",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Bulbul_Mammadov.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_mammadova",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1897,
+                  "titre": "Naissance de Cheuvkat Mammadova",
+                  "description": "Cheuvkat Mammadova (1897-1981) est une cantatrice azerbaïdjanaise, soprano colorature. Elle chante à l'opéra de Bakou et reçoit en 1938 le titre d'artiste du peuple de l'URSS, en même temps que Bul-Bul. Professeur de chant, elle forme aussi plusieurs générations de chanteurs.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Cheuvkat_Mammadova",
+                  "pays": "AZ",
+                  "classement": "Mammadova, Cheuvkat",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_mammadova.jpg",
+                    "legende": "Cheuvkat Mammadova, photographie d'avant 1945",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Shovket_Mammadova.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_tcharents",
+                  "axe": "Littérature et pensée",
+                  "date": 1897,
+                  "titre": "Naissance d'Yéghiché Tcharents",
+                  "description": "Yéghiché Tcharents (1897-1937) est un poète arménien, né Soghomonian à Kars. Poète de la révolution puis de la nostalgie d'une Arménie perdue, il publie notamment Le Livre du chemin en 1933. Arrêté pendant les purges staliniennes, il meurt en prison à Erevan en novembre 1937.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Y%C3%A9ghich%C3%A9_Tcharents",
+                  "pays": "AM",
+                  "classement": "Tcharents, Yéghiché",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_tcharents.jpg",
+                    "legende": "Yéghiché Tcharents, photographie d'avant 1937",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Yeghishe_Charents_Armenian_poet.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_kochar",
+                  "axe": "Beaux-arts",
+                  "date": 1899,
+                  "titre": "Naissance d'Ervand Kotchar",
+                  "description": "Ervand Kotchar (1899-1979) est un sculpteur et peintre arménien, né à Tiflis. Installé un temps à Paris dans les années 1920, il fonde un art qu'il nomme « peinture dans l'espace » et signe à Erevan la statue équestre de David de Sassoun, en 1959. Il meurt à Erevan, où un musée présente son œuvre.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Yervand_Kochar",
+                  "pays": "AM",
+                  "classement": "Kotchar, Ervand",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_kochar.jpg",
+                    "legende": "Ervand Kotchar, photographie de 1974",
+                    "auteur": "GAK wiki",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kochar_Igityan_Cropped.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_akhvlediani",
+                  "axe": "Beaux-arts",
+                  "date": 1901,
+                  "titre": "Naissance d'Hélène Akhvlédiani",
+                  "description": "Hélène Akhvlédiani (1901-1975) est une peintre géorgienne, née à Telavi. Elle est célèbre pour ses paysages urbains de Tbilissi et pour ses illustrations des œuvres d'Ilia Tchavtchavadzé. Elle meurt à Tbilissi en 1975.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/H%C3%A9l%C3%A8ne_Akhvl%C3%A9diani",
+                  "pays": "GE",
+                  "classement": "Akhvlédiani, Hélène",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_akhvlediani.jpg",
+                    "legende": "Hélène Akhvlédiani, à Paris en 1925, avec le peintre Lado Goudiachvili",
+                    "auteur": "Ketevan Magalashvili",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%E1%83%94%E1%83%9A%E1%83%94%E1%83%9C%E1%83%94_%E1%83%90%E1%83%AE%E1%83%95%E1%83%9A%E1%83%94%E1%83%93%E1%83%98%E1%83%90%E1%83%9C%E1%83%98_%E1%83%93%E1%83%90_%E1%83%9A%E1%83%90%E1%83%93%E1%83%9D_%E1%83%92%E1%83%A3%E1%83%93%E1%83%98%E1%83%90%E1%83%A8%E1%83%95%E1%83%98%E1%83%9A%E1%83%98._%E1%83%9E%E1%83%90%E1%83%A0%E1%83%98%E1%83%96%E1%83%98._1925_%E1%83%AC..JPG"
+                  }
+                },
+                {
+                  "id": "pan_caucase_khatchatourian",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1903,
+                  "titre": "Naissance d'Aram Khatchatourian",
+                  "description": "Aram Khatchatourian (1903-1978) est un compositeur soviétique d'origine arménienne, né à Tiflis. Son concerto pour violon (1940), le ballet Gayaneh (1942), dont la Danse du sabre est célèbre dans le monde entier, et le ballet Spartacus (1954) font de lui l'un des grands compositeurs soviétiques. Il meurt à Moscou, et l'Arménie l'honore comme l'un de ses plus grands musiciens.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Aram_Khatchatourian",
+                  "pays": "AM",
+                  "classement": "Khatchatourian, Aram",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_khatchatourian.jpg",
+                    "legende": "Aram Khatchatourian, photographie de Roger Pic (années 1960)",
+                    "auteur": "Roger Pic (1920–2001) Alternative names Birth name: Roger Lucien Pinard; Roger Pinard",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Aram_Khachaturian,_Pic,_17.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_vatchnadze",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1904,
+                  "titre": "Naissance de Nato Vatchnadzé",
+                  "description": "Nato Vatchnadzé (1904-1953) est une actrice géorgienne, née princesse Natalia Andronikachvili à Varsovie. Vedette du cinéma muet géorgien, elle tient le rôle principal d'Élisso (1928), film de Nikoloz Chenguelaïa tiré d'un récit d'Alexandre Kazbegi. Elle meurt à Zougdidi en 1953.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Nato_Vatchnadze",
+                  "pays": "GE",
+                  "classement": "Vatchnadzé, Nato",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_vatchnadze.jpg",
+                    "legende": "Nato Vatchnadzé, photographie de 1927",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Nata_Vachnadze.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_vurgun",
+                  "axe": "Littérature et pensée",
+                  "date": 1906,
+                  "titre": "Naissance de Samed Vurgun",
+                  "description": "Samed Vurgun (1906-1956) est un poète et dramaturge azerbaïdjanais soviétique, né à Gazakh et mort à Bakou. Auteur de poèmes lyriques et de drames en vers, dont Vagif (1937), il est le premier artiste du peuple de la RSS d'Azerbaïdjan, en 1943. Lauréat de deux prix Staline, en 1941 et en 1942, il est à la fois l'un des poètes les plus aimés de son pays et l'un des poètes officiels du régime.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Samed_Vurgun",
+                  "pays": "AZ",
+                  "classement": "Vurgun, Samed",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_vurgun.jpg",
+                    "legende": "Samed Vurgun, photographie de 1947",
+                    "auteur": "Владимир Савостьянов",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:S%C9%99m%C9%99d_Vur%C4%9Fun_(1947).jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_ambartsoumian",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1908,
+                  "titre": "Naissance de Viktor Ambartsoumian",
+                  "description": "Viktor Ambartsoumian (1908-1996) est un astrophysicien soviétique et arménien, né à Tbilissi. Il fonde en 1946 l'observatoire de Byurakan, sur les pentes du mont Aragats, et montre en 1947 que les étoiles naissent en groupes, les « associations stellaires ». Président de l'Union astronomique internationale de 1961 à 1964, il meurt à Byurakan.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Viktor_Ambartsoumian",
+                  "pays": "AM",
+                  "classement": "Ambartsoumian, Viktor",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_ambartsoumian.jpg",
+                    "legende": "Viktor Ambartsoumian, photographie publiée en 1968",
+                    "auteur": "Auteur inconnu",
+                    "licence": "CC BY 2.5",
+                    "source": "https://commons.wikimedia.org/wiki/File:Viktor_Ambartsumian_(published_1968).png"
+                  }
+                },
+                {
+                  "id": "pan_caucase_aslanov",
+                  "axe": "Guerres et résistances",
+                  "date": 1910,
+                  "titre": "Naissance de Hazi Aslanov",
+                  "description": "Hazi Aslanov (1910-1945) est un général azerbaïdjanais de l'Armée rouge, commandant de blindés pendant la Seconde Guerre mondiale. Il est deux fois Héros de l'Union soviétique, la seconde distinction lui étant décernée à titre posthume en 1991. Il est tué au front en janvier 1945.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/H%C9%99zi_Aslanov",
+                  "pays": "AZ",
+                  "classement": "Aslanov, Hazi",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_aslanov.jpg",
+                    "legende": "Hazi Aslanov, photographie de 1942",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Hazi_Aslanov.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_behboudov",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1915,
+                  "titre": "Naissance de Rachid Behboudov",
+                  "description": "Rachid Behboudov (1915-1989) est un chanteur et acteur azerbaïdjanais soviétique, surnommé la « voix d'or de l'Azerbaïdjan ». Il chante en azéri, en russe, en persan, en turc, en arménien, en hindi, en ourdou et en bengali, et joue dans le film musical Arshin Mal Alan (1945). Un théâtre de la chanson de Bakou porte son nom.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Rachid_Behboudov",
+                  "pays": "AZ",
+                  "classement": "Behboudov, Rachid",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_behboudov.jpg",
+                    "legende": "Rachid Behboudov, photographie de 1956",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Reshid_Behbudov.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_kerimov",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1917,
+                  "titre": "Naissance de Kerim Kerimov",
+                  "description": "Kerim Kerimov (1917-2003) est un ingénieur et général soviétique d'origine azerbaïdjanaise, né à Bakou. Président de la Commission d'État pour les essais en vol des vaisseaux spatiaux de 1966 à 1991, il est l'une des figures centrales du programme spatial soviétique. Il meurt à Moscou en 2003.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kerim_Kerimov",
+                  "pays": "AZ",
+                  "classement": "Kerimov, Kerim",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_kerimov.jpg",
+                    "legende": "Kerim Kerimov, sur un timbre azerbaïdjanais de 2007",
+                    "auteur": "Post of Azerbaijan",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Stamps_of_Azerbaijan,_2007-813.jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_caucase_garayev",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1918,
+                  "titre": "Naissance de Gara Garayev",
+                  "description": "Gara Garayev (1918-1982) est un compositeur azerbaïdjanais soviétique, né à Bakou, élève de Dmitri Chostakovitch. Auteur d'environ cent dix œuvres, dont les ballets Les Sept Beautés et Le Sentier du tonnerre, il s'impose dans toute l'Union soviétique et au-delà. Il meurt en 1982.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Gara_Garayev",
+                  "pays": "AZ",
+                  "classement": "Garayev, Gara",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_garayev.jpg",
+                    "legende": "Gara Garayev, photographie d'avant 1965",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Kara_Karaev.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_huseynzade",
+                  "axe": "Guerres et résistances",
+                  "date": 1918,
+                  "titre": "Naissance de Mehdi Huseynzadé",
+                  "description": "Mehdi Huseynzadé (1918-1944) est un résistant azerbaïdjanais, né à Novkhani, près de Bakou. Étudiant à Léningrad, soldat de l'Armée rouge, prisonnier des Allemands, il s'évade et combat avec les partisans en Italie puis en Slovénie. Tué en novembre 1944 à Vitovlje, il est fait Héros de l'Union soviétique à titre posthume en 1957.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mehdi_Huseynzad%C3%A9",
+                  "pays": "AZ",
+                  "classement": "Huseynzadé, Mehdi",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_huseynzade.jpg",
+                    "legende": "Mehdi Huseynzadé, étudiant à l'université de Léningrad, photographie de 1936",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Student_of_Leningrad_University_Mehdi_Huseynzade.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_zadeh",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1921,
+                  "titre": "Naissance de Lotfi Zadeh",
+                  "description": "Lotfi Zadeh (1921-2017) est un mathématicien et informaticien américain, né à Bakou dans une famille azerbaïdjanaise. Élevé à Téhéran puis formé aux États-Unis, il enseigne à Berkeley et crée en 1965 la théorie des ensembles flous, qui fonde la logique floue. Partagé entre l'Azerbaïdjan, l'Iran et les États-Unis, il est rangé ici avec l'Azerbaïdjan, où il est né.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Lotfi_Zadeh",
+                  "pays": "AZ",
+                  "classement": "Zadeh, Lotfi",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_zadeh.jpg",
+                    "legende": "Lotfi Zadeh, photographie de 2005",
+                    "auteur": "BBR100",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Zadeh,_L.A._2005.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_aliyev",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1923,
+                  "titre": "Naissance de Heydar Aliyev",
+                  "description": "Heydar Aliyev (1923-2003) est un homme d'État azerbaïdjanais, né à Nakhitchevan. Officier du KGB puis premier secrétaire du Parti communiste d'Azerbaïdjan de 1969 à 1982 et vice-Premier ministre de l'URSS, il revient au pouvoir en 1993 et préside l'Azerbaïdjan indépendant jusqu'en 2003. Il stabilise le pays après la guerre du Haut-Karabagh et ouvre ses hydrocarbures aux compagnies étrangères, mais son régime est accusé d'autoritarisme, et son fils Ilham lui succède.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Heydar_Aliyev",
+                  "pays": "AZ",
+                  "classement": "Aliyev, Heydar",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_aliyev.jpg",
+                    "legende": "Heydar Aliyev, photographie d'avant 2003",
+                    "auteur": "Auteur non indiqué",
+                    "licence": "CC BY 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Heydar_Aliyev_(crop).jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_paradjanov",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1924,
+                  "titre": "Naissance de Sergueï Paradjanov",
+                  "description": "Sergueï Paradjanov (1924-1990) est un cinéaste soviétique d'origine arménienne, né à Tbilissi. Auteur des Chevaux de feu (1965) et de La Couleur de la grenade (1969), film consacré au poète Sayat-Nova, il invente un cinéma de tableaux, de rites et de couleurs que le pouvoir soviétique juge hérétique. Emprisonné de 1973 à 1977, il meurt à Erevan, où un musée porte son nom.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sergue%C3%AF_Paradjanov",
+                  "pays": "AM",
+                  "classement": "Paradjanov, Sergueï",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_paradjanov.jpg",
+                    "legende": "Sergueï Paradjanov, photographie",
+                    "auteur": "Vahan Kochar",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:%D5%8D%D5%A5%D6%80%D5%A3%D5%A5%D5%B5_%D5%93%D5%A1%D6%80%D5%A1%D5%BB%D5%A1%D5%B6%D5%B8%D5%BE.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_vahabzade",
+                  "axe": "Littérature et pensée",
+                  "date": 1925,
+                  "titre": "Naissance de Bakhtiyar Vahabzadeh",
+                  "description": "Bakhtiyar Vahabzadeh (1925-2009) est un poète et dramaturge azerbaïdjanais, né à Chéki. Son poème Gülüstan (1959), évocation du traité de 1813 qui partage l'Azerbaïdjan entre la Russie et l'Iran, devient un texte emblématique du sentiment national à l'époque soviétique. Il meurt à Bakou en 2009, honoré du titre de poète du peuple.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Bakhtiyar_Vahabzadeh",
+                  "pays": "AZ",
+                  "classement": "Vahabzadeh, Bakhtiyar",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_vahabzade.jpg",
+                    "legende": "Bakhtiyar Vahabzadeh, photographie de 2005",
+                    "auteur": "Dilaver Najafov (1973–)",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Bakhtiyar_Vahabzade.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_chevardnadze",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1928,
+                  "titre": "Naissance d'Édouard Chevardnadze",
+                  "description": "Édouard Chevardnadze (1928-2014) est un homme d'État soviétique puis géorgien, né à Mamati. Ministre soviétique des Affaires étrangères de 1985 à 1990, il accompagne Mikhaïl Gorbatchev dans la fin de la guerre froide et la réunification allemande, puis dirige la Géorgie de 1992 à 2003. Son pouvoir, marqué par la perte de l'Abkhazie et par la corruption, tombe en novembre 2003 avec la révolution des Roses.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89douard_Chevardnadze",
+                  "pays": "GE",
+                  "classement": "Chevardnadze, Édouard",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_chevardnadze.jpg",
+                    "legende": "Édouard Chevardnadze, photographie de 1997",
+                    "auteur": "Robert D. Ward",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Eduard_shevardnadze_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_mkrtchian",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1930,
+                  "titre": "Naissance de Frounzik Mkrtchian",
+                  "description": "Frounzik Mkrtchian (1930-1993) est un acteur et metteur en scène arménien, né Mher Mkrtchian à Leninakan, l'actuelle Gyumri. Il devient une vedette de toute l'Union soviétique grâce à Mimino (1977), comédie où il partage l'affiche avec le Géorgien Vakhtang Kikabidzé, et reçoit en 1984 le titre d'artiste du peuple de l'URSS. Il meurt à Erevan en 1993, et l'Arménie le compte parmi ses plus grands acteurs.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Frounzik_Mkrtchian",
+                  "pays": "AM",
+                  "classement": "Mkrtchian, Frounzik",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_mkrtchian.jpg",
+                    "legende": "Frounzik Mkrtchian, sur une carte postale de 2006",
+                    "auteur": "Post Office of Armenia",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Mher_Mkrtchyan_2006_post_card_cropped.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_iosseliani",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1934,
+                  "titre": "Naissance d'Otar Iosseliani",
+                  "description": "Otar Iosseliani (1934-2023) est un cinéaste géorgien, né à Tbilissi, naturalisé français et installé en France depuis 1982. Son premier long métrage, Il était une fois un merle chanteur (1970), chronique douce-amère de Tbilissi, annonce un cinéma de la lenteur et de l'humour, que prolongent en France Les Favoris de la lune, Lion d'argent à Venise en 1984, et Adieu, plancher des vaches ! (1999). Il meurt à Tbilissi en 2023.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Otar_Iosseliani",
+                  "pays": "GE",
+                  "classement": "Iosseliani, Otar",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_iosseliani.jpg",
+                    "legende": "Otar Iosseliani, photographie de 2013",
+                    "auteur": "Valerios Theofanidis",
+                    "licence": "CC BY-SA 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Otar_Ioseliani_(3).jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_gamsakhourdia",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1939,
+                  "titre": "Naissance de Zviad Gamsakhourdia",
+                  "description": "Zviad Gamsakhourdia (1939-1993) est un dissident et homme d'État géorgien, né à Tbilissi, fils de l'écrivain Konstantine Gamsakhourdia. Persécuté sous le régime soviétique pour son militantisme, il est élu en mai 1991 premier président de la Géorgie indépendante ; son autoritarisme et sa politique nationaliste provoquent un soulèvement qui le chasse en janvier 1992. Il meurt en décembre 1993 dans l'ouest du pays, dans des circonstances qui restent disputées.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Zviad_Gamsakhourdia",
+                  "pays": "GE",
+                  "classement": "Gamsakhourdia, Zviad",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_gamsakhourdia.jpg",
+                    "legende": "Zviad Gamsakhourdia, photographie de 1988",
+                    "auteur": "George barateli by George Barateli in 1989",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Zviad_Gamsakhurdia,_Tbilisi,_1988.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_mustafazade",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1940,
+                  "titre": "Naissance de Vagif Mustafazadeh",
+                  "description": "Vagif Mustafazadeh (1940-1979) est un pianiste et compositeur de jazz azerbaïdjanais soviétique, né à Bakou. Il fusionne le jazz et le mugham, la musique traditionnelle de son pays, dans un style que de grands jazzmen saluent et qui fait de lui l'un des pionniers du jazz azerbaïdjanais. Il meurt prématurément en décembre 1979 ; sa fille Aziza est devenue pianiste de jazz à son tour.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Vagif_Mustafazadeh",
+                  "pays": "AZ",
+                  "classement": "Mustafazadeh, Vagif",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_mustafazade.jpg",
+                    "legende": "Vagif Mustafazadeh, photographie de la fin des années 1970",
+                    "auteur": "Eldar Mansurov (1952–)",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Vaqif_Mustafazad%C9%99.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_magomayev",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1942,
+                  "titre": "Naissance de Muslim Magomayev",
+                  "description": "Muslim Magomayev (1942-2008) est un baryton et chanteur azerbaïdjanais, né à Bakou, petit-fils du compositeur du même nom. Chanteur d'opéra devenu l'idole de la variété soviétique des années 1960 et 1970, il mêle airs italiens, chansons russes et mélodies d'Azerbaïdjan. Il meurt à Moscou en 2008.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Muslim_Magomayev",
+                  "pays": "AZ",
+                  "classement": "Magomayev, Muslim",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_magomayev.jpg",
+                    "legende": "Muslim Magomayev, sur un timbre azerbaïdjanais de 2012",
+                    "auteur": "Post of Azerbaijan/Azermarka",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Muslim_Magomayev,_Azerbaijani_singer.jpg"
+                  }
+                },
+                {
+                  "id": "pan_caucase_sargsian",
+                  "axe": "Guerres et résistances",
+                  "date": 1959,
+                  "titre": "Naissance de Vazgen Sargsian",
+                  "description": "Vazgen Sargsian (1959-1999) est un chef militaire et homme d'État arménien, né à Ararat. Premier titulaire du ministère de la Défense de l'Arménie indépendante en 1991-1992, puis de nouveau de 1995 à 1999, il organise l'armée durant la guerre du Haut-Karabagh avant de devenir Premier ministre en juin 1999. Il est assassiné le 27 octobre 1999 lors de l'attaque du Parlement d'Erevan.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Vazgen_Sargsian",
+                  "pays": "AM",
+                  "classement": "Sargsian, Vazgen",
+                  "image": {
+                    "src": "assets/portraits/pan_caucase_sargsian.jpg",
+                    "legende": "Vazgen Sargsian, photographie de 1999",
+                    "auteur": "Aravot Daily",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Vazgen_Sargsyan_1999_(cropped).png"
+                  }
+                }
+              ],
+              "axeOrder": [
+                "Chefs d'État et dirigeants",
+                "Guerres et résistances",
+                "Littérature et pensée",
+                "Beaux-arts",
+                "Musique, spectacle et sport",
+                "Sciences, techniques et innovation"
+              ],
+              "essentiel": [
+                "pan_caucase_tigrane",
+                "pan_caucase_mesrop",
+                "pan_caucase_davidiv",
+                "pan_caucase_nizami",
+                "pan_caucase_tamar",
+                "pan_caucase_rustaveli",
+                "pan_caucase_erekle2",
+                "pan_caucase_abovian",
+                "pan_caucase_akhundov",
+                "pan_caucase_ilia",
+                "pan_caucase_pirosmani",
+                "pan_caucase_andranik",
+                "pan_caucase_jordania",
+                "pan_caucase_komitas",
+                "pan_caucase_toumanian",
+                "pan_caucase_sarian",
+                "pan_caucase_rassoulzade",
+                "pan_caucase_hajibeyov",
+                "pan_caucase_tcharents",
+                "pan_caucase_khatchatourian",
+                "pan_caucase_ambartsoumian",
+                "pan_caucase_aliyev",
+                "pan_caucase_paradjanov",
+                "pan_caucase_chevardnadze"
               ]
             },
             {
