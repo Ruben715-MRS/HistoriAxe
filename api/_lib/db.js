@@ -58,6 +58,9 @@ async function ensureSchema() {
                 last_seen_at  timestamptz not null default now()
             );
         `);
+        // Comptes (voir api/account.js) : identifiant Supabase Auth du joueur connecté. Nul pour
+        // un joueur sans compte ; un même compte partage un seul joueur sur tous ses appareils.
+        await query(`alter table players add column if not exists auth_user_id uuid unique;`);
         await query(`
             create table if not exists daily_scores (
                 id             bigserial primary key,

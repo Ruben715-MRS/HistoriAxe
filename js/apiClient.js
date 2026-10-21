@@ -41,12 +41,15 @@ var HistoriAxeAPI = (function () {
         });
     }
 
-    function request(method, path, body) {
+    // accessToken (facultatif) : jeton Supabase du joueur connecté, seulement
+    // pour /api/account (voir js/auth.js) — les autres routes s'en passent.
+    function request(method, path, body, accessToken) {
         if (!API_BASE) {
             return Promise.resolve({ ok: false, offline: true, error: 'Backend non configuré.' });
         }
         var url = API_BASE + path;
         var opts = { method: method, headers: {} };
+        if (accessToken) opts.headers['Authorization'] = 'Bearer ' + accessToken;
         if (body !== undefined) {
             opts.headers['Content-Type'] = 'application/json';
             opts.body = JSON.stringify(body);
@@ -140,6 +143,12 @@ var HistoriAxeAPI = (function () {
         },
         getClassroom: function (code, deviceId) {
             return request('GET', '/api/classroom' + qs({ code: code, deviceId: deviceId }));
+        },
+        linkAccount: function (accessToken, deviceId, pseudo) {
+            return request('POST', '/api/account', { deviceId: deviceId, pseudo: pseudo }, accessToken);
+        },
+        deleteAccount: function (accessToken) {
+            return request('DELETE', '/api/account', undefined, accessToken);
         },
         isConfigured: function () { return !!API_BASE; }
     };

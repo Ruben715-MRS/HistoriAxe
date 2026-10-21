@@ -17,6 +17,9 @@ create table if not exists players (
     last_seen_at  timestamptz not null default now()
 );
 
+-- Comptes (voir api/account.js) : identifiant Supabase Auth du joueur connecté.
+alter table players add column if not exists auth_user_id uuid unique;
+
 create table if not exists daily_scores (
     id             bigserial primary key,
     player_id      uuid not null references players(id) on delete cascade,

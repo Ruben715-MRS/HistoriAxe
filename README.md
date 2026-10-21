@@ -52,6 +52,24 @@ dans `api/_lib/schema.sql` si vous préférez l'exécuter vous-même.
 Redéployez (ou déclenchez un nouveau déploiement) après avoir ajouté la
 variable.
 
+### Comptes joueurs (Supabase Auth)
+
+Connexion facultative par e-mail + mot de passe, lien magique par e-mail ou
+Google (Apple : à configurer avec le compte Apple Developer). Le client
+(`js/auth.js`) parle directement à Supabase Auth ; le serveur
+(`api/account.js`) vérifie le jeton, puis rattache l'appareil au joueur du
+compte : tous les appareils connectés partagent alors le même `device_id`,
+donc les mêmes scores, classements et sauvegarde. La progression des
+appareils est fusionnée (`js/storage.js: mergeSyncableStates`).
+
+Variable Vercel supplémentaire, **secrète**, nécessaire à la suppression de
+compte : `SUPABASE_SECRET_KEY` (Supabase → Project Settings → API Keys →
+Secret keys). L'URL du projet et la clé « publishable », publiques, sont
+dans `js/auth.js` et `api/_lib/auth.js`.
+
+Côté Supabase : Authentication → URL Configuration → Site URL
+`https://histori-axe.vercel.app`, Redirect URLs `https://histori-axe.vercel.app/**`.
+
 ### 3. App native iOS (Capacitor)
 
 La PWA web fonctionne sans réglage supplémentaire (elle appelle `/api/...`

@@ -583,7 +583,7 @@ function pseudoSave(pseudo) {
 // (voir SYNC_KEYS) pour l'envoyer à / recevoir de api/sync.js. Best-effort :
 // la progression locale reste toujours la source de vérité immédiate, le
 // cloud n'est qu'une sauvegarde de secours (changement d'appareil,
-// réinstallation) — voir syncPushProgress/syncPullProgress dans daily.js.
+// réinstallation, ou appareils d'un même compte) — voir syncProgress dans js/app.js.
 function exportSyncableState() {
     var out = {};
     SYNC_KEYS.forEach(function (key) {
@@ -602,6 +602,101 @@ function importSyncableState(data) {
             try { localStorage.setItem(key, JSON.stringify(data[key])); } catch (e) {}
         }
     });
+}
+
+// Date (updatedAt renvoyé par api/sync.js) de la dernière sauvegarde cloud que
+// cet appareil a lue ou écrite. Si le cloud porte encore cette date, personne
+// d'autre ne l'a modifiée depuis : la progression locale peut l'écraser sans
+// fusion. Propre à l'appareil, hors de SYNC_KEYS.
+const SYNC_META_KEY = 'historiaxe_sync_meta_v1';
+
+function syncMetaLoad() {
+    try { return localStorage.getItem(SYNC_META_KEY) || null; } catch (e) { return null; }
+}
+
+function syncMetaSave(updatedAt) {
+    try {
+        if (updatedAt) localStorage.setItem(SYNC_META_KEY, String(updatedAt));
+        else localStorage.removeItem(SYNC_META_KEY);
+    } catch (e) {}
+}
+
+// Change l'identité de l'appareil auprès du backend : à la connexion, le
+// device_id du compte (api/account.js) ; à la déconnexion, un nouvel
+// identifiant anonyme (newId vide).
+function setDeviceId(newId) {
+    try {
+        if (newId) localStorage.setItem(DEVICE_ID_KEY, newId);
+        else localStorage.removeItem(DEVICE_ID_KEY);
+    } catch (e) {}
+    syncMetaSave(null);
+    return getOrCreateDeviceId();
+}
+
+// --- FUSION DE DEUX PROGRESSIONS (deux appareils sur un même compte) ---
+// Fonctions pures. Règle générale : on ne perd rien. Nombres → le plus grand
+// (XP, pièces, étoiles, meilleurs scores) ; listes → union ; objets → fusion
+// clé par clé ; une entrée datée (lastReviewed du SRS, updatedAt…) → la plus
+// récente entière, pour ne pas mélanger deux états incompatibles.
+const MERGE_DATE_FIELDS = ['lastReviewed', 'updatedAt', 'at', 'date'];
+
+function isPlainObject(v) {
+    return v !== null && typeof v === 'object' && !Array.isArray(v);
+}
+
+function datedEntryStamp(o) {
+    for (const f of MERGE_DATE_FIELDS) {
+        if (typeof o[f] === 'number' || (typeof o[f] === 'string' && o[f])) return o[f];
+    }
+    return null;
+}
+
+function mergeValues(a, b) {
+    if (a === undefined || a === null) return b;
+    if (b === undefined || b === null) return a;
+    if (typeof a === 'number' && typeof b === 'number') return Math.max(a, b);
+    if (typeof a === 'boolean' && typeof b === 'boolean') return a || b;
+    if (Array.isArray(a) && Array.isArray(b)) {
+        const seen = new Set(a.map(x => JSON.stringify(x)));
+        const out = a.slice();
+        b.forEach(x => { const k = JSON.stringify(x); if (!seen.has(k)) { seen.add(k); out.push(x); } });
+        return out;
+    }
+    if (isPlainObject(a) && isPlainObject(b)) {
+        const sa = datedEntryStamp(a), sb = datedEntryStamp(b);
+        if (sa !== null && sb !== null && typeof sa === typeof sb && sa !== sb) return sb > sa ? b : a;
+        const out = {};
+        new Set([...Object.keys(a), ...Object.keys(b)]).forEach(k => { out[k] = mergeValues(a[k], b[k]); });
+        return out;
+    }
+    return a; // types différents ou chaînes : la valeur locale prime
+}
+
+// Série (quotidienne : lastPlayedDate ; hebdomadaire : lastPlayedWeek) : la
+// série en cours est celle de l'appareil qui a joué le plus récemment, le
+// record est le meilleur des deux.
+function mergeStreaks(a, b, dateField) {
+    if (!isPlainObject(a)) return b;
+    if (!isPlainObject(b)) return a;
+    const da = a[dateField] || '', db = b[dateField] || '';
+    const latest = da === db
+        ? ((a.currentStreak || 0) >= (b.currentStreak || 0) ? a : b)
+        : (da > db ? a : b);
+    const out = Object.assign({}, b, a, latest);
+    out.maxStreak = Math.max(a.maxStreak || 0, b.maxStreak || 0, latest.currentStreak || 0);
+    return out;
+}
+
+function mergeSyncableStates(local, cloud) {
+    local = isPlainObject(local) ? local : {};
+    cloud = isPlainObject(cloud) ? cloud : {};
+    const out = {};
+    new Set([...Object.keys(local), ...Object.keys(cloud)]).forEach(key => {
+        if (key === STREAK_KEY) out[key] = mergeStreaks(local[key], cloud[key], 'lastPlayedDate');
+        else if (key === WEEKLY_CHALLENGE_STREAK_KEY) out[key] = mergeStreaks(local[key], cloud[key], 'lastPlayedWeek');
+        else out[key] = mergeValues(local[key], cloud[key]);
+    });
+    return out;
 }
 
 // --- RÉINITIALISATION GLOBALE ---
@@ -628,6 +723,7 @@ if (typeof module === 'object' && typeof module.exports === 'object') {
     module.exports = {
         getIsoWeekString, getLocalDateString, getDaysDifference, getTodayStringUTC,
         DEFAULT_SETTINGS, ROUND_LENGTH_CHOICES, resolveRoundLength, roundLengthChoicesFor,
-        activeRoundLengthChoice
+        activeRoundLengthChoice, mergeSyncableStates, mergeValues, mergeStreaks,
+        STREAK_KEY, WEEKLY_CHALLENGE_STREAK_KEY
     };
 }
