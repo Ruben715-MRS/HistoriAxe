@@ -19,6 +19,8 @@ const WHEEL_DRAG_DEG_PER_PX = 0.6;
 const WHEEL_DRAG_THRESHOLD_PX = 6;
 
 let wheelCalendarId = 'chretien';
+// La famille dont la liste est ouverte (null : fermée).
+let wheelOpenKind = null;
 // Une partie par calendrier, gardée tant que l'appli reste ouverte : changer d'onglet ne fait rien perdre.
 const wheelGames = {};
 let wheelSelectedId = null;
@@ -61,6 +63,7 @@ let wheelReturn = 'screen-path';
 
 function openWheel(fromScreen) {
     wheelReturn = fromScreen || 'screen-path';
+    wheelOpenKind = null;
     showScreen('screen-wheel', 'forward');
     wheelRenderAll();
 }
@@ -74,6 +77,7 @@ function wheelBack() {
 function wheelSelectCalendar(id) {
     if (!CalendarWheel.find(id)) return;
     wheelCalendarId = id;
+    wheelOpenKind = null;
     wheelSelectedId = null;
     wheelHideFeedback();
     wheelRenderAll();
@@ -87,8 +91,9 @@ function wheelRestart() {
     wheelRenderAll();
 }
 
+// Le calendrier suivant de la même famille, dans l'ordre alphabétique (on reboucle à la fin).
 function wheelNextCalendar() {
-    const list = CalendarWheel.CALENDARS;
+    const list = CalendarWheel.byKind(CalendarWheel.find(wheelCalendarId).kind);
     const i = list.findIndex(c => c.id === wheelCalendarId);
     wheelSelectCalendar(list[(i + 1) % list.length].id);
 }
@@ -116,7 +121,7 @@ function wheelWedge(r, a0, a1, rInner) {
 }
 
 function wheelRenderAll() {
-    wheelRenderTabs();
+    wheelRenderKinds();
     wheelRenderHeader();
     wheelRenderWheel();
     wheelRenderCurrent();
@@ -124,32 +129,54 @@ function wheelRenderAll() {
     wheelRenderDone();
 }
 
-function wheelRenderTabs() {
-    const box = document.getElementById('wheel-tabs');
+// Deux boutons, « Religieux » et « Civil » : chacun ouvre la liste de ses calendriers (par ordre alphabétique) ;
+// choisir un calendrier referme la liste. Le bouton de la famille du calendrier en cours reste marqué.
+function wheelRenderKinds() {
     const progress = wheelProgress();
-    box.innerHTML = '';
-    CalendarWheel.CALENDARS.forEach(c => {
-        const btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'wheel-tab' + (c.id === wheelCalendarId ? ' is-active' : '');
-        btn.setAttribute('role', 'tab');
-        btn.setAttribute('aria-selected', c.id === wheelCalendarId ? 'true' : 'false');
-        const done = progress[c.id];
-        const icon = document.createElement('span');
-        icon.setAttribute('aria-hidden', 'true');
-        icon.textContent = c.icon;
-        btn.appendChild(icon);
-        btn.appendChild(document.createTextNode(' ' + c.short));
-        if (done) {
-            const stars = document.createElement('span');
-            stars.className = 'wheel-tab-stars';
-            stars.setAttribute('aria-label', t('wheel.tab_stars', { count: done.stars }));
-            stars.textContent = ' ' + '★'.repeat(done.stars);
-            btn.appendChild(stars);
-        }
-        btn.onclick = () => wheelSelectCalendar(c.id);
-        box.appendChild(btn);
+    const current = CalendarWheel.find(wheelCalendarId);
+    CalendarWheel.KINDS.forEach(kind => {
+        const btn = document.getElementById('wheel-kind-' + kind);
+        btn.classList.toggle('is-active', current.kind === kind);
+        btn.classList.toggle('is-open', wheelOpenKind === kind);
+        btn.setAttribute('aria-expanded', wheelOpenKind === kind ? 'true' : 'false');
     });
+    const box = document.getElementById('wheel-choices');
+    box.innerHTML = '';
+    box.classList.toggle('hidden', !wheelOpenKind);
+    if (wheelOpenKind) {
+        box.setAttribute('aria-label', t('wheel.choices_' + wheelOpenKind));
+        CalendarWheel.byKind(wheelOpenKind).forEach(c => {
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'wheel-choice' + (c.id === wheelCalendarId ? ' is-active' : '');
+            btn.setAttribute('aria-pressed', c.id === wheelCalendarId ? 'true' : 'false');
+            const icon = document.createElement('span');
+            icon.setAttribute('aria-hidden', 'true');
+            icon.textContent = c.icon;
+            btn.appendChild(icon);
+            btn.appendChild(document.createTextNode(' ' + c.short));
+            const done = progress[c.id];
+            if (done) {
+                const stars = document.createElement('span');
+                stars.className = 'wheel-tab-stars';
+                stars.setAttribute('aria-label', t('wheel.tab_stars', { count: done.stars }));
+                stars.textContent = ' ' + '★'.repeat(done.stars);
+                btn.appendChild(stars);
+            }
+            btn.onclick = () => wheelSelectCalendar(c.id);
+            box.appendChild(btn);
+        });
+    }
+    // Le calendrier en cours, nommé sous les boutons (la liste est le plus souvent fermée).
+    const label = document.getElementById('wheel-cal');
+    label.textContent = t('wheel.current', { name: current.icon + ' ' + current.title });
+    const done = progress[current.id];
+    if (done) label.textContent += ' · ' + '★'.repeat(done.stars);
+}
+
+function wheelToggleKind(kind) {
+    wheelOpenKind = wheelOpenKind === kind ? null : kind;
+    wheelRenderKinds();
 }
 
 function wheelRenderHeader() {

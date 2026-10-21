@@ -8,22 +8,44 @@ const W = require('../js/calendarWheel.js');
 const root = path.resolve(__dirname, '..');
 const uiFr = JSON.parse(fs.readFileSync(path.join(root, 'ui', 'fr.json'), 'utf8'));
 
-test('dix calendriers : chrétien, juif, musulman et les civils de sept pays', () => {
-    assert.deepEqual(W.CALENDARS.map((c) => c.id),
-        ['chretien', 'juif', 'musulman', 'france', 'royaumeuni', 'etatsunis', 'allemagne', 'espagne', 'italie', 'japon']);
+const RELIGIEUX = ['bouddhisme', 'chretien', 'hindouisme', 'juif', 'musulman', 'zoroastrisme'];
+const CIVILS = ['afriquedusud', 'allemagne', 'argentine', 'australie', 'autriche', 'bresil', 'canada', 'chine', 'colombie', 'rdc', 'egypte',
+    'espagne', 'etatsunis', 'france', 'inde', 'indonesie', 'italie', 'japon', 'mexique', 'nigeria', 'royaumeuni', 'russie', 'suisse',
+    'turquie', 'vietnam'];
+
+test('trente et un calendriers : six religieux et vingt-cinq civils', () => {
+    assert.equal(W.CALENDARS.length, 31);
+    assert.deepEqual(W.CALENDARS.filter((c) => c.kind === 'religieux').map((c) => c.id).sort(), RELIGIEUX.slice().sort());
+    assert.deepEqual(W.CALENDARS.filter((c) => c.kind === 'civil').map((c) => c.id).sort(), CIVILS.slice().sort());
+    assert.deepEqual(W.KINDS, ['religieux', 'civil']);
+    assert.ok(W.CALENDARS.every((c) => W.KINDS.includes(c.kind)));
+    assert.equal(new Set(W.CALENDARS.map((c) => c.id)).size, 31);
+});
+
+test('byKind : chaque famille est rangée par ordre alphabétique (les accents ne comptent pas : Égypte à E)', () => {
+    const rel = W.byKind('religieux').map((c) => c.short);
+    assert.deepEqual(rel, ['Bouddhisme', 'Christianisme', 'Hindouisme', 'Islam', 'Judaïsme', 'Zoroastrisme']);
+    const civ = W.byKind('civil').map((c) => c.short);
+    assert.equal(civ.length, 25);
+    assert.deepEqual(civ, civ.slice().sort((a, b) => a.localeCompare(b, 'fr')));
+    assert.equal(civ[0], 'Afrique du Sud');
+    assert.ok(civ.indexOf('Égypte') > civ.indexOf('Congo (RDC)') && civ.indexOf('Égypte') < civ.indexOf('Espagne'), civ.join(', '));
+    assert.ok(civ.indexOf('États-Unis') > civ.indexOf('Espagne') && civ.indexOf('États-Unis') < civ.indexOf('France'));
+    assert.deepEqual(W.byKind('inconnue'), []);
 });
 
 test('chaque calendrier a douze mois distincts, un titre et une introduction', () => {
     W.CALENDARS.forEach((c) => {
         assert.equal(c.months.length, 12, c.id);
         assert.equal(new Set(c.months).size, 12, c.id);
-        assert.ok(c.title && c.short && c.icon && c.intro, c.id);
+        assert.ok(c.title && c.short && c.icon && c.intro && c.kind, c.id);
     });
 });
 
 test('les fêtes sont complètes, leurs identifiants et leurs emojis uniques dans le calendrier', () => {
     W.CALENDARS.forEach((c) => {
         assert.ok(c.events.length >= 10, `${c.id} : au moins dix fêtes`);
+        assert.ok(c.events.every((e) => e.explain.length > 25), `${c.id} : chaque fête est expliquée`);
         assert.equal(new Set(c.events.map((e) => e.id)).size, c.events.length, `${c.id} : identifiants`);
         // L'emoji est tout ce qu'on voit d'une fête posée dans sa part : deux fêtes identiques s'y confondraient.
         assert.equal(new Set(c.events.map((e) => e.icon)).size, c.events.length, `${c.id} : emojis`);
@@ -108,7 +130,7 @@ test('la progression garde le meilleur résultat et ignore ce qui est abîmé', 
 });
 
 test('l\'interface de la roue a tous ses textes dans ui/fr.json', () => {
-    ['entry', 'title', 'tabs_aria', 'tab_stars', 'aria', 'slice_aria', 'progress', 'pick', 'place', 'pick_first', 'wrong',
+    ['entry', 'title', 'kinds_aria', 'kind_religieux', 'kind_civil', 'choices_religieux', 'choices_civil', 'current', 'tab_stars', 'aria', 'slice_aria', 'progress', 'pick', 'place', 'pick_first', 'wrong',
         'wrong_hint', 'tray_label', 'spin_left', 'spin_right', 'reset', 'hint', 'done', 'next', 'replay']
         .forEach((k) => assert.ok(uiFr.wheel && uiFr.wheel[k], 'wheel.' + k));
 });

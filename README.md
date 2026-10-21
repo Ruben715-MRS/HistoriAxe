@@ -495,9 +495,16 @@ Un monde déjà commencé n'est jamais reverrouillé.
 **à côté** du niveau : il ne donne pas d'étoiles au Chemin et ne bloque rien. Un cercle de douze parts (les douze
 mois d'un calendrier, écrits à plat sur la jante) et, dessous, les fêtes dans le désordre : on touche une fête, puis le
 mois où elle tombe. On tourne la roue en la glissant horizontalement, avec les boutons ↺ ↻ ou les flèches du clavier.
-Dix roues : calendriers chrétien, juif (mois de Tichri à Elloul) et musulman (mois de l'Hégire), puis les fêtes et
-jours fériés de la France, du Royaume-Uni, des États-Unis, de l'Allemagne, de l'Espagne, de l'Italie et du Japon. Une **fête mobile** (Pâques,
-Pentecôte, Rosenmontag…) accepte deux mois consécutifs, la date changeant chaque année. Après deux erreurs sur la
+Trente et une roues, en deux familles choisies par deux boutons, **Religieux** et **Civil** : chacun ouvre la liste de ses calendriers,
+par ordre alphabétique (choisir un calendrier referme la liste).
+
+- **Religieux (6)** : bouddhisme, christianisme, hindouisme, islam (mois de l'Hégire), judaïsme (mois de Tichri à Elloul),
+  zoroastrisme (mois persans). Le calendrier bouddhiste est rangé dans les mois grégoriens : chaque pays suit ses propres mois lunaires.
+- **Civil (25)** : Afrique du Sud, Allemagne, Argentine, Australie, Autriche, Brésil, Canada, Chine, Colombie, Congo (RDC), Égypte,
+  Espagne, États-Unis, France, Inde, Indonésie, Italie, Japon, Mexique, Nigéria, Royaume-Uni, Russie, Suisse, Turquie, Vietnam. Les
+  fêtes musulmanes (Aïd…), qui parcourent toute l'année, n'y figurent pas : elles sont dans la roue de l'Islam.
+
+Une **fête mobile** (Pâques, Pentecôte, Nouvel An lunaire…) accepte deux mois consécutifs, la date changeant chaque année. Après deux erreurs sur la
 même fête, le jeu en donne la date. 3 étoiles jusqu'à 1 erreur, 2 jusqu'à 4, 1 ensuite ; le meilleur résultat de chaque roue
 est gardé sur l'appareil (`historiaxe_wheel_v1`, hors synchronisation). Pour ajouter un calendrier ou une fête : le
 tableau `CALENDARS` de `js/calendarWheel.js` (douze mois, un emoji unique par fête : `tests/calendarWheel.test.js`

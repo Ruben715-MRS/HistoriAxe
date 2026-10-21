@@ -14,6 +14,12 @@ test.beforeEach(async ({ page }) => {
     });
 });
 
+// Ouvre la liste d'une famille et y choisit un calendrier par son nom.
+async function choisir(page, famille, nom) {
+    await page.locator('#wheel-kind-' + famille).click();
+    await page.locator('#wheel-choices .wheel-choice', { hasText: nom }).click();
+}
+
 async function ouvrirRoue(page) {
     await page.locator('#btn-path').click();
     await expect(page.locator('#screen-path')).toBeVisible();
@@ -32,17 +38,32 @@ test('le bouton du mini-jeu n\'apparaît que sur le niveau 4 du Monde 0', async 
     await expect(page.locator('#path-sheet-wheel')).toBeVisible();
 });
 
-test('la roue : douze mois sur la jante, dix calendriers, fêtes dans le désordre', async ({ page }) => {
+test('la roue : douze mois sur la jante, deux familles, fêtes dans le désordre', async ({ page }) => {
     await ouvrirRoue(page);
     expect(await visibleScreen(page)).toBe('screen-wheel');
     await expect(page.locator('#wheel-svg .wheel-month')).toHaveCount(12);
-    await expect(page.locator('#wheel-tabs .wheel-tab')).toHaveCount(10);
+    // Deux boutons ; la liste est fermée tant qu'on n'en touche aucun.
+    await expect(page.locator('#wheel-kinds .wheel-kind')).toHaveText(['Religieux', 'Civil']);
+    await expect(page.locator('#wheel-choices')).toBeHidden();
+    await page.locator('#wheel-kind-religieux').click();
+    await expect(page.locator('#wheel-choices .wheel-choice')).toHaveCount(6);
+    const religieux = await page.locator('#wheel-choices .wheel-choice').allTextContents();
+    expect(religieux.map(t => t.trim().replace(/^\S+\s/, ''))).toEqual(['Bouddhisme', 'Christianisme', 'Hindouisme', 'Islam', 'Judaïsme', 'Zoroastrisme']);
+    await page.locator('#wheel-kind-civil').click();
+    await expect(page.locator('#wheel-choices .wheel-choice')).toHaveCount(25);
+    const civils = (await page.locator('#wheel-choices .wheel-choice').allTextContents()).map(t => t.trim().replace(/^\S+\s/, ''));
+    expect(civils).toEqual([...civils].sort((a, b) => a.localeCompare(b, 'fr')));
+    // Toucher de nouveau le bouton referme la liste.
+    await page.locator('#wheel-kind-civil').click();
+    await expect(page.locator('#wheel-choices')).toBeHidden();
     const total = await page.evaluate(() => CalendarWheel.find('chretien').events.length);
     await expect(page.locator('#wheel-tray .wheel-chip')).toHaveCount(total);
     const mois = await page.locator('#wheel-svg .wheel-month').allTextContents();
     expect(mois[0]).toBe('Janvier');
     expect(mois[11]).toBe('Décembre');
-    await page.locator('#wheel-tabs .wheel-tab', { hasText: 'Juif' }).click();
+    await choisir(page, 'religieux', 'Judaïsme');
+    await expect(page.locator('#wheel-choices')).toBeHidden();
+    await expect(page.locator('#wheel-cal')).toContainText('Calendrier juif');
     const juifs = await page.locator('#wheel-svg .wheel-month').allTextContents();
     expect(juifs).toEqual(['Tichri', 'Hechvan', 'Kislev', 'Tevet', 'Chevat', 'Adar', 'Nissan', 'Iyar', 'Sivan', 'Tamouz', 'Av', 'Elloul']);
 });
@@ -101,7 +122,7 @@ test('tourner la roue : les boutons, le glissement, et les pastilles restent dro
 
 test('terminer une roue : étoiles enregistrées, écran de fin, calendrier suivant', async ({ page }) => {
     await ouvrirRoue(page);
-    await page.locator('#wheel-tabs .wheel-tab', { hasText: 'Musulman' }).click();
+    await choisir(page, 'religieux', 'Islam');
     // Toutes les fêtes dans le bon mois, par le vrai chemin du clic.
     const plan = await page.evaluate(() => CalendarWheel.find('musulman').events.map(e => [e.id, e.months[0]]));
     for (const [id, mois] of plan) {
@@ -112,9 +133,21 @@ test('terminer une roue : étoiles enregistrées, écran de fin, calendrier suiv
     await expect(page.locator('#wheel-done')).toBeVisible();
     await expect(page.locator('#wheel-done-stars')).toHaveText('★★★');
     expect(await page.evaluate(() => JSON.parse(localStorage.getItem('historiaxe_wheel_v1')).musulman)).toEqual({ stars: 3, errors: 0 });
-    await expect(page.locator('#wheel-tabs .wheel-tab.is-active .wheel-tab-stars')).toBeVisible();
+    await expect(page.locator('#wheel-cal')).toContainText('★★★');
     await page.locator('#wheel-done .btn').click();
-    await expect(page.locator('#wheel-tabs .wheel-tab.is-active')).toContainText('France');
+    // Le calendrier suivant de la même famille (alphabétique) : après l'Islam, le Judaïsme.
+    await expect(page.locator('#wheel-cal')).toContainText('Calendrier juif');
     await page.locator('#screen-wheel .back-btn').click();
     await expect(page.locator('#screen-path')).toBeVisible();
+});
+
+test('un calendrier civil récent : Égypte, avec ses douze mois et ses fêtes', async ({ page }) => {
+    await ouvrirRoue(page);
+    await choisir(page, 'civil', 'Égypte');
+    await expect(page.locator('#wheel-cal')).toContainText('Égypte');
+    await expect(page.locator('#wheel-svg .wheel-month')).toHaveCount(12);
+    const total = await page.evaluate(() => CalendarWheel.find('egypte').events.length);
+    await expect(page.locator('#wheel-tray .wheel-chip')).toHaveCount(total);
+    await choisir(page, 'religieux', 'Hindouisme');
+    expect(await page.locator('#wheel-svg .wheel-month').allTextContents()).toContain('Phalguna');
 });

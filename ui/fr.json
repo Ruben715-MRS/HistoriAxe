@@ -1435,7 +1435,12 @@
   "wheel": {
     "entry": "🎡 Mini-jeu : la roue des fêtes",
     "title": "La roue des fêtes",
-    "tabs_aria": "Calendriers",
+    "kinds_aria": "Famille de calendriers",
+    "kind_religieux": "Religieux",
+    "kind_civil": "Civil",
+    "choices_religieux": "Calendriers religieux",
+    "choices_civil": "Calendriers civils",
+    "current": "Calendrier : {name}",
     "tab_stars": "{count} étoiles",
     "aria": "Roue des mois du {calendar}",
     "slice_aria": "Mois de {month} : poser ici la fête choisie",

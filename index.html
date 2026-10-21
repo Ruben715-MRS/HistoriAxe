@@ -687,7 +687,12 @@
         <button class="back-btn" onclick="wheelBack()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
         <h2 class="header-title" data-i18n="wheel.title">La roue des fêtes</h2>
         <p class="modes-header-subtitle" id="wheel-subtitle"></p>
-        <div class="wheel-tabs" id="wheel-tabs" role="tablist" aria-label="Calendriers" data-i18n-attr="aria-label:wheel.tabs_aria"></div>
+        <div class="wheel-kinds" id="wheel-kinds" role="group" aria-label="Famille de calendriers" data-i18n-attr="aria-label:wheel.kinds_aria">
+            <button type="button" class="wheel-kind" id="wheel-kind-religieux" aria-expanded="false" aria-controls="wheel-choices" onclick="wheelToggleKind('religieux')" data-i18n="wheel.kind_religieux">Religieux</button>
+            <button type="button" class="wheel-kind" id="wheel-kind-civil" aria-expanded="false" aria-controls="wheel-choices" onclick="wheelToggleKind('civil')" data-i18n="wheel.kind_civil">Civil</button>
+        </div>
+        <div class="wheel-choices hidden" id="wheel-choices" role="group"></div>
+        <p class="wheel-cal" id="wheel-cal"></p>
         <p class="wheel-current" id="wheel-current" role="status"></p>
         <div class="wheel-stage" id="wheel-stage">
             <svg id="wheel-svg" class="wheel-svg" viewBox="-200 -200 400 400" role="group"></svg>
