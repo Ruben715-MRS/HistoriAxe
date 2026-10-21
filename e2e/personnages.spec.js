@@ -173,6 +173,28 @@ test('l\'outre-mer est au panthéon de la France : la fiche dit le territoire, l
     }
 });
 
+test('à l\'ouverture de « Grandes figures de France », une note renvoie vers le Pacifique ; les autres panthéons n\'en ont pas', async ({ page }) => {
+    // Les collectivités du Pacifique (Polynésie française, Nouvelle-Calédonie, Wallis-et-Futuna) ont leur
+    // identité et leur statut : leurs figures sont dans le panthéon du Pacifique, et la note le dit.
+    await page.waitForFunction(() => window.bdd && getAllThemesWithPath().some(x => x.theme.id === 'pan_fr'), null, { timeout: 45_000 });
+    await page.evaluate(() => {
+        const t = getAllThemesWithPath().find(x => x.theme.id === 'pan_fr');
+        openThemeAt(t.ci, t.si, t.ti);
+    });
+    await expect(page.locator('#screen-axes')).toBeVisible();
+    const note = page.locator('#axes-theme-note');
+    await expect(note).toBeVisible();
+    await expect(note).toContainText('Polynésie française');
+    await expect(note).toContainText('Grandes figures de Nouvelle-Zélande et du Pacifique');
+    // Un autre panthéon n'affiche pas de note.
+    await page.evaluate(() => {
+        const t = getAllThemesWithPath().find(x => x.theme.id === 'pan_it');
+        openThemeAt(t.ci, t.si, t.ti);
+    });
+    await expect(page.locator('#screen-axes')).toBeVisible();
+    await expect(page.locator('#axes-theme-note')).toBeHidden();
+});
+
 test('la galerie propose chaque territoire d\'outre-mer à part', async ({ page }) => {
     await ouvrirLaGalerie(page);
     const pays = page.locator('#gallery-filter-country');

@@ -1335,6 +1335,13 @@ liées (Sartre, Gainsbourg et Alexandra David-Néel s'ajoutent aux 26 d'avant).
   Andriantsoly (naissance inconnue), dont l'année manque ; Mayotte n'a donc qu'une figure, à étoffer.
   Le portrait de Delgrès est un buste (faute de portrait d'époque), celui d'Edmond Albius un dessin
   retouché ; Saint-George est montré par une gravure de 1788.
+- **Les collectivités du Pacifique ne sont pas ici.** La Polynésie française, la Nouvelle-Calédonie et
+  Wallis-et-Futuna ont une identité locale très liée à l'Océanie, leur propre statut et le franc Pacifique
+  plutôt que l'euro, à la différence des départements d'outre-mer, très intégrés : leurs figures sont dans
+  « Grandes figures de Nouvelle-Zélande et du Pacifique ». Une **note de thème** (champ `theme.note` de
+  `scripts/pantheon/fr.json`, reporté sur le thème par `build_pantheon.py`) le dit à l'ouverture de
+  « Grandes figures de France », sur l'écran des axes, avec le même encadré que les notes de
+  sous-catégorie. Tout thème peut en porter une.
   Dans la galerie, la France se lit « France métropolitaine (143) » (clé `gallery.country_fr`, traduite
   dans les six langues) : elle ne contient pas l'outre-mer, qui a ses entrées (Martinique, Guadeloupe,
   Guyane, La Réunion, Mayotte) triées à leur place alphabétique.

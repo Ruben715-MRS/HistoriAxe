@@ -363,6 +363,12 @@
             aria-label="Retour aux thèmes" data-i18n-attr="aria-label:nav.back">‹</button>
         <h2 class="header-title" data-i18n="axes.title">Filtrer par axe thématique</h2>
         <div id="essentiel-zone"></div>
+        <!-- Note facultative du thème (champ `note`), par exemple un renvoi vers un autre panthéon :
+             remplie par renderAxesScreen (js/app/axes-rounds.js). -->
+        <div id="axes-theme-note" class="subcategory-note hidden">
+            <div class="subcategory-note-title" data-i18n="subcategories.note_title">Note importante</div>
+            <p id="axes-theme-note-text"></p>
+        </div>
         <p id="axes-subtitle" style="font-size:14px; color:var(--muted-text); margin-bottom:20px;"></p>
         <div class="grid-cards" id="axes-container"></div>
         <div style="margin-top: 30px; margin-bottom: 50px; display:flex; gap:15px; justify-content:center;">

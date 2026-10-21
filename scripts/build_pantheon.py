@@ -138,6 +138,9 @@ def validate(src, code, bio_themes, other_pantheons, errors, warnings):
             countries = []
     elif 'pays' in src:
         errors.append('« pays » est réservé aux blocs : un pays (code à deux lettres) n\'en déclare pas')
+    note = src['theme'].get('note')
+    if note is not None and (not isinstance(note, str) or not note.strip()):
+        errors.append('theme.note doit être un texte non vide')
     mots = src['theme'].get('motsCles')
     if mots is not None and (not isinstance(mots, list) or not mots
                              or any(not isinstance(m, str) or not m.strip() for m in mots)):
@@ -312,6 +315,9 @@ def build_theme(src, code, warnings):
     }
     if src['theme'].get('motsCles'):
         theme['motsCles'] = list(src['theme']['motsCles'])
+    # Note facultative, affichée à l'ouverture du thème (écran des axes) : un renvoi vers un autre panthéon.
+    if src['theme'].get('note'):
+        theme['note'] = src['theme']['note']
     theme['events'] = events
     theme['axeOrder'] = list(src['axes'])
     if essentials:
@@ -367,7 +373,7 @@ def main():
             for e in theme['events']:
                 if before.get(e['id']) != e:
                     print(f"  événement différent : {e['id']}")
-            for key in ('nom', 'difficulte', 'motsCles', 'axeOrder', 'essentiel'):
+            for key in ('nom', 'difficulte', 'motsCles', 'note', 'axeOrder', 'essentiel'):
                 if existing.get(key) != theme.get(key):
                     print(f'  champ différent : {key}')
         sys.exit(1)
