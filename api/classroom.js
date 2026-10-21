@@ -23,6 +23,7 @@ const { SUPPORTED_LANGS, loadLangEvents } = require('./_lib/dataset');
 const DailyEngine = require('../js/dailyEngine.js');
 const { handlePreflight, readJsonBody, sendError } = require('./_lib/http');
 const C = require('./_lib/classroom');
+const { creditTeam } = require('./_lib/teamStore');
 
 const MAX_CREATE_RETRIES = 6;
 const RETENTION_SQL = "now() - interval '2 days'";
@@ -41,7 +42,7 @@ function httpError(status, message) {
 
 async function loadSession(code) {
     const { rows } = await query(
-        'select code, teacher_id, lang, theme_name, event_ids, status from class_sessions where code = $1', [code]
+        'select code, teacher_id, lang, theme_name, event_ids, status, team_code from class_sessions where code = $1', [code]
     );
     if (!rows[0]) throw httpError(404, 'Séance introuvable : vérifiez le code.');
     return rows[0];
@@ -62,15 +63,22 @@ async function createSession(body) {
     if (problem) throw httpError(400, problem);
 
     const teacher = await upsertPlayer(deviceId, pseudo);
+    // Séance liée à une équipe de classe de cet enseignant : les bonnes réponses nourriront son coffre.
+    let teamCode = null;
+    if (body.teamCode) {
+        teamCode = C.normalizeCode(body.teamCode);
+        const owned = teamCode && await query('select 1 from class_teams where code = $1 and teacher_id = $2', [teamCode, teacher.id]);
+        if (!owned || !owned.rows[0]) throw httpError(400, 'Équipe introuvable : vérifiez le code.');
+    }
     // Ménage opportuniste : pas de tâche planifiée, les séances de plus de deux jours disparaissent ici.
     await query(`delete from class_sessions where created_at < ${RETENTION_SQL}`);
     for (let i = 0; i < MAX_CREATE_RETRIES; i++) {
         const code = C.generateCode();
         try {
             await query(
-                `insert into class_sessions (code, teacher_id, lang, theme_name, event_ids, status, created_at)
-                 values ($1, $2, $3, $4, $5::jsonb, 'lobby', now())`,
-                [code, teacher.id, lang, name, JSON.stringify(eventIds)]
+                `insert into class_sessions (code, teacher_id, lang, theme_name, event_ids, status, created_at, team_code)
+                 values ($1, $2, $3, $4, $5::jsonb, 'lobby', now(), $6)`,
+                [code, teacher.id, lang, name, JSON.stringify(eventIds), teamCode]
             );
             return { code };
         } catch (err) {
@@ -126,9 +134,10 @@ async function submitProgress(body) {
     if (session.status !== 'running') throw httpError(409, session.status === 'ended' ? 'Cette séance est terminée.' : 'La séance n\'a pas encore commencé.');
     const me = await playerOf(body.deviceId);
     if (!me) throw httpError(404, 'Rejoignez d\'abord la séance.');
-    const joined = await query('select answered from class_players where code = $1 and player_id = $2', [code, me.id]);
+    const joined = await query('select answered, credited from class_players where code = $1 and player_id = $2', [code, me.id]);
     if (!joined.rows[0]) throw httpError(404, 'Rejoignez d\'abord la séance.');
 
+    const previouslyCredited = joined.rows[0].credited;
     const total = session.event_ids.length - 1; // manches : l'ancre n'est pas jouée
     const rounds = (Array.isArray(body.rounds) ? body.rounds : []).slice(0, total).map((r) => ({
         slotIndex: r && typeof r === 'object' ? r.slotIndex : undefined,
@@ -145,8 +154,19 @@ async function submitProgress(body) {
           where code = $1 and player_id = $2 and answered <= $4`,
         [code, me.id, replay.score, replay.roundsPlayed, correct, finished, JSON.stringify(results)]
     );
+    // Séance liée à une équipe : chaque bonne réponse verse un point au coffre, une seule fois (on ne verse que
+    // ce qui dépasse les points déjà crédités — le journal est cumulatif et renvoyé à chaque carte).
+    let team = null;
+    if (session.team_code && correct > previouslyCredited) {
+        const claimed = await query(
+            'update class_players set credited = $3 where code = $1 and player_id = $2 and credited = $4 returning 1',
+            [code, me.id, correct, previouslyCredited]
+        );
+        // Deux envois simultanés : un seul gagne la mise à jour, l'autre ne verse rien.
+        if (claimed.rows[0]) team = await creditTeam(session.team_code, me.id, correct - previouslyCredited, 'class');
+    }
     const state = await buildState(code, body.deviceId);
-    return { score: replay.score, answered: replay.roundsPlayed, finished, rank: state.me ? state.me.rank : null };
+    return { score: replay.score, answered: replay.roundsPlayed, finished, rank: state.me ? state.me.rank : null, team };
 }
 
 async function buildState(code, deviceId) {

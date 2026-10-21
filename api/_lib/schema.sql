@@ -136,3 +136,32 @@ create table if not exists class_players (
     updated_at  timestamptz not null default now(),
     primary key (code, player_id)
 );
+
+-- Équipe de classe (voir api/team.js) : coffre commun, membres, points cumulés des joueurs avec compte.
+alter table players add column if not exists team_points integer not null default 0;
+
+create table if not exists class_teams (
+    code             text primary key,
+    teacher_id       uuid not null references players(id) on delete cascade,
+    name             text not null,
+    progress         integer not null default 0,
+    chest_index      integer not null default 0,
+    cards            integer not null default 0,
+    created_at       timestamptz not null default now(),
+    last_activity_at timestamptz not null default now()
+);
+
+create table if not exists team_members (
+    code        text not null references class_teams(code) on delete cascade,
+    player_id   uuid not null references players(id) on delete cascade,
+    name        text not null,
+    points      integer not null default 0,
+    day         text not null default '',
+    day_points  integer not null default 0,
+    claimed     integer not null default 0,
+    joined_at   timestamptz not null default now(),
+    primary key (code, player_id)
+);
+
+alter table class_sessions add column if not exists team_code text;
+alter table class_players add column if not exists credited smallint not null default 0;

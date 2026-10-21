@@ -79,6 +79,11 @@ function openClassSetup() {
     document.getElementById('class-title').innerText = t('classroom.title');
     document.getElementById('class-subtitle').innerText = t('classroom.setup_subtitle', { theme: theme ? theme.nom : '' });
     classRenderSizes(pool.length);
+    // Un enseignant qui a une équipe peut y verser les bonnes réponses de la séance.
+    const team = typeof teamLoad === 'function' ? teamLoad() : null;
+    const linkable = !!team && team.role === 'teacher';
+    document.getElementById('class-team-link').classList.toggle('hidden', !linkable);
+    if (linkable) document.getElementById('class-team-link-label').innerText = t('team.link_session', { name: team.name });
     classSetError('class-setup-error', '');
     classShowPanel('setup');
     showScreen('screen-class', 'forward');
@@ -124,7 +129,8 @@ function classCreate() {
         pseudo: (typeof pseudoLoad === 'function' ? pseudoLoad() : '') || null,
         lang: i18n.currentLang,
         themeName: theme ? theme.nom : t('classroom.title'),
-        eventIds: deck.map(e => e.id)
+        eventIds: deck.map(e => e.id),
+        teamCode: classTeamCodeToLink()
     }).then(res => {
         btn.disabled = false;
         if (!res.ok) { classSetError('class-setup-error', res.status === 400 && res.error ? res.error : t('classroom.error')); return; }
@@ -136,6 +142,13 @@ function classCreate() {
         classShowPanel('lobby');
         classStartPolling();
     });
+}
+
+// Le code de l'équipe à nourrir, si l'enseignant en a une et laisse la case cochée.
+function classTeamCodeToLink() {
+    const team = typeof teamLoad === 'function' ? teamLoad() : null;
+    const box = document.getElementById('class-team-link-input');
+    return team && team.role === 'teacher' && box && box.checked ? team.code : undefined;
 }
 
 function classStart() {

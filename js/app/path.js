@@ -430,6 +430,8 @@ function pathOnLevelFinish(exp, won) {
             stagesDone: exp.stages.filter(s => s.result && s.result.ok).length
         });
     }
+    // Équipe de classe : une étoile gagnée de plus qu'avant = un point pour le coffre commun.
+    if (typeof teamOnStars === 'function') teamOnStars(Math.max(0, stars - prevStars));
     exp.finished.stars = stars;
     exp.finished.xp = xp;
     exp.finished.firstClear = firstClear;
