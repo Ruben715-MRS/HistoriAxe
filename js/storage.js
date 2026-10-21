@@ -40,6 +40,9 @@ const REWARDS_KEY = 'historiaxe_rewards_v1';
 // L'équipe de classe rejointe ou créée ({ code, role: 'member' | 'teacher', name }) : synchronisée, pour qu'un élève
 // connecté à un compte retrouve son équipe sur tous ses appareils.
 const TEAM_KEY = 'historiaxe_team_v1';
+// Ce que Clio sait du joueur ({ greetedDate, introSeen, last: { <événement>: <dernière phrase> } }) : propre à l'appareil,
+// hors de SYNC_KEYS — une salutation par jour et par appareil, pas par compte.
+const CLIO_KEY = 'historiaxe_clio_v1';
 
 // Clés dont le contenu est envoyé/reçu par la synchronisation cloud
 // (api/sync.js) — progression de jeu uniquement, jamais les préférences
@@ -221,6 +224,24 @@ function rewardsLoad() {
 
 function rewardsSave(state) {
     try { localStorage.setItem(REWARDS_KEY, JSON.stringify(state)); } catch (e) {}
+}
+
+// --- CLIO (mascotte) ---
+function clioLoad() {
+    try {
+        var raw = JSON.parse(localStorage.getItem(CLIO_KEY)) || {};
+        return {
+            greetedDate: typeof raw.greetedDate === 'string' ? raw.greetedDate : null,
+            introSeen: !!raw.introSeen,
+            last: raw.last && typeof raw.last === 'object' ? raw.last : {}
+        };
+    } catch (e) {
+        return { greetedDate: null, introSeen: false, last: {} };
+    }
+}
+
+function clioSave(state) {
+    try { localStorage.setItem(CLIO_KEY, JSON.stringify(state)); } catch (e) {}
 }
 
 // --- ÉQUIPE DE CLASSE ---
@@ -737,6 +758,7 @@ function resetAllGameData() {
     try { localStorage.removeItem(PATH_PROGRESS_KEY); } catch (e) {}
     try { localStorage.removeItem(REWARDS_KEY); } catch (e) {}
     try { localStorage.removeItem(TEAM_KEY); } catch (e) {}
+    try { localStorage.removeItem(CLIO_KEY); } catch (e) {}
     try { localStorage.removeItem(GAMIFICATION_KEY); } catch (e) {}
     try { localStorage.removeItem(LAST_THEME_KEY); } catch (e) {}
 }

@@ -520,6 +520,30 @@ choisit le thème de chaque monde et place les décors de façon déterministe, 
 (`tests/path.test.js` le vérifie, et que tout dessin cité existe). Pour changer le décor d'un monde, ou en ajouter,
 c'est le tableau `THEMES` de `pathScenery.js` ; pour un nouveau dessin, une entrée dans `pathSprites.js`.
 
+### Clio, la mascotte : où elle apparaît
+
+En attendant ses dessins (`docs/direction-artistique.md`), Clio est un chat en emoji qui porte le costume du moment.
+Toutes ses apparitions passent par `clioAvatar` (`js/app/clio.js`) : quand les vrais visuels arriveront, c'est le seul
+endroit à changer.
+
+- **Sur le Chemin** : debout près du niveau à jouer, du côté opposé à son titre ; elle **marche jusqu'au niveau suivant**
+  après une première victoire (immobile si « réduire les animations » est demandé). On peut la toucher : elle encourage.
+  À la toute première visite, elle se présente.
+- **À la fin d'un niveau** : réaction à la mesure du résultat — contente (1-2 étoiles), ravie (3), douce après une
+  défaite, ravie pour un boss.
+- **Boss d'un monde vaincu** : elle propose le **costume du monde** (avec un bouton vers la boutique) ou dit ce qu'il manque
+  en pièces.
+- **À l'accueil, une fois par jour** : bonjour, un mot sur la série quotidienne, ou — si celle-ci s'éteint ce soir — elle dort
+  et le dit. Fermable d'un tap.
+
+**Le système de réactions** (`js/clioCore.js`, testé sans navigateur) : un événement donne une humeur (`repos`, `content`,
+`ravi`, `triste`, `reflechit`, `salue`, `dort` — les poses d'animation prévues pour l'illustrateur) et une phrase tirée d'une
+banque fixe et traduite (`clio.line.<événement>.<n>` dans `ui/fr.json`), jamais deux fois la même d'affilée. Aucun texte
+libre ni généré. **Elle n'apparaît jamais pendant une partie chronométrée.** Pour ajouter une réaction : un événement dans
+`EVENTS` (humeur + nombre de variantes), ses phrases dans `fr.json`, et un appel à `clioReaction(événement, paramètres)`.
+Elle se souvient, sur l'appareil seulement (`historiaxe_clio_v1`, hors synchronisation), de la dernière salutation et des
+dernières phrases. Tests : `tests/clio.test.js`, `e2e/clio.spec.js`.
+
 ### Les récompenses : pièces, série de victoires, cartes, boutique
 
 La boucle qui donne envie de « jouer encore un niveau » (modèle : Royal Match). Les **règles** sont dans

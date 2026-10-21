@@ -107,6 +107,8 @@ function pathWorldTitle(world) {
 // La carte posée en tête de l'écran des catégories (avant « Reprendre »).
 function renderPathCard(container) {
     if (typeof renderRewardsBar === 'function') renderRewardsBar(container, 'screen-categories');
+    const greeting = typeof clioHomeGreeting === 'function' ? clioHomeGreeting() : null;
+    if (greeting) container.appendChild(greeting);
     const target = pathNextTarget();
     const card = document.createElement('button');
     card.type = 'button';
@@ -252,7 +254,11 @@ function pathRenderWorld(container, world, progress, currentId, collapsed) {
         label.classList.add(pos[i].x < PATH_MAP.width / 2 ? 'to-right' : 'to-left');
         node.onclick = () => pathOpenSheet(level.id);
         track.appendChild(node);
-        if (level.id === currentId) currentNode = node;
+        if (level.id === currentId) {
+            currentNode = node;
+            // Clio se tient près du niveau à jouer, du côté opposé à son titre.
+            if (typeof clioPathMarker === 'function') clioPathMarker(track, node, pos[i].x < PATH_MAP.width / 2);
+        }
     });
     section.appendChild(track);
     return currentNode;
@@ -302,6 +308,7 @@ function renderPath() {
     }
 
     pathCloseSheet();
+    if (typeof clioAfterPathRender === 'function') clioAfterPathRender(map);
     // La carte s'ouvre sur le niveau à jouer, pas tout en haut.
     if (currentNode && typeof currentNode.scrollIntoView === 'function') {
         requestAnimationFrame(() => currentNode.scrollIntoView({ block: 'center' }));
@@ -482,6 +489,8 @@ function pathOnLevelFinish(exp, won) {
     }
     // Équipe de classe : une étoile gagnée de plus qu'avant = un point pour le coffre commun.
     if (typeof teamOnStars === 'function') teamOnStars(Math.max(0, stars - prevStars));
+    // Clio était sur ce niveau : si le suivant s'ouvre, elle marchera jusqu'à lui à l'affichage de la carte.
+    if (won && firstClear && typeof clioWalkFrom !== 'undefined') clioWalkFrom = plan.levelId;
     exp.finished.stars = stars;
     exp.finished.xp = xp;
     exp.finished.firstClear = firstClear;

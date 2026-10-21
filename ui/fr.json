@@ -1463,5 +1463,75 @@
     "confirm_leave": "Quitter l'équipe ? Les points déjà apportés restent dans le coffre.",
     "confirm_forget": "Ne plus afficher cette équipe sur cet appareil ? Elle reste ouverte pour les élèves.",
     "confirm_delete": "Supprimer l'équipe pour toute la classe ? Le coffre et les points seront perdus."
+  },
+  "clio": {
+    "name": "Clio",
+    "aria": "Clio, la mascotte",
+    "dismiss": "Fermer",
+    "see_shop": "Voir la boutique",
+    "line": {
+      "win1": {
+        "0": "Bien joué, on avance !",
+        "1": "Un niveau de plus dans la poche.",
+        "2": "Doucement mais sûrement.",
+        "3": "Tu peux viser plus haut au prochain essai."
+      },
+      "win2": {
+        "0": "Très bien ! Presque parfait.",
+        "1": "Deux étoiles, quel beau parcours !",
+        "2": "Encore un peu et c'est la perfection.",
+        "3": "Bravo, tu maîtrises ça."
+      },
+      "win3": {
+        "0": "Trois étoiles ! Je suis ravie !",
+        "1": "Parfait ! Pas une erreur de trop.",
+        "2": "Quelle mémoire, bravo !",
+        "3": "Les trois étoiles, rien que ça !"
+      },
+      "lose": {
+        "0": "Pas grave, on réessaie ensemble ?",
+        "1": "On apprend à chaque essai.",
+        "2": "Respire, tu y es presque.",
+        "3": "Une nouvelle tentative, et ça passe !"
+      },
+      "boss": {
+        "0": "Le gardien est vaincu ! Quelle victoire !",
+        "1": "Tu as battu le boss, bravo !",
+        "2": "Voilà un monde conquis !",
+        "3": "Le monument est à toi !"
+      },
+      "greet": {
+        "0": "Bonjour ! On avance sur le Chemin ?",
+        "1": "Contente de te revoir !",
+        "2": "Prêt·e pour un nouveau voyage dans le temps ?",
+        "3": "Salut ! Un petit niveau pour commencer ?"
+      },
+      "greetStreak": {
+        "0": "Série de {n} jours : continue comme ça !",
+        "1": "{n} jours de suite, bravo !",
+        "2": "Ta série de {n} jours me fait ronronner."
+      },
+      "streakRisk": {
+        "0": "Zzz… Ta série de {n} jours est en danger. Un petit niveau suffit !",
+        "1": "Ne laisse pas ta série de {n} jours s'endormir !",
+        "2": "Joue aujourd'hui pour garder ta série de {n} jours."
+      },
+      "tap": {
+        "0": "Touche un niveau pour jouer !",
+        "1": "Je te suis, vas-y !",
+        "2": "Miaou ! On y va ?",
+        "3": "Chaque étoile compte."
+      },
+      "first": {
+        "0": "Bienvenue ! Je suis Clio. Touche le niveau vert pour commencer."
+      },
+      "costume": {
+        "0": "Le costume « {name} » t'attend à la boutique ({price} 🪙).",
+        "1": "Pour fêter ça : « {name} », {price} 🪙 à la boutique !"
+      },
+      "costumeShort": {
+        "0": "Il te manque {missing} 🪙 pour le costume « {name} »."
+      }
+    }
   }
 }

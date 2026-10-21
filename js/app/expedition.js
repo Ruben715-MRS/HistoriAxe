@@ -337,6 +337,8 @@ function renderExpedition() {
             xpEl.innerText = t('path.final_xp', { xp: f.xp || 0 })
                 + (f.worldDone ? ' ' + t('path.worlds.' + plan.world + '.done') : (f.nextId && f.firstClear ? ' ' + t('path.unlocked_next') : ''));
             extra.appendChild(xpEl);
+            // Clio réagit au résultat (et, au boss d'un monde, propose le costume du monde).
+            if (typeof clioRenderFinal === 'function') clioRenderFinal(extra, f, plan);
             (f.newIslands || []).forEach(id => {
                 const islandEl = document.createElement('p');
                 islandEl.className = 'path-final-island';
