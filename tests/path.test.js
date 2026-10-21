@@ -417,3 +417,44 @@ test('un tirage de leçon : le bon nombre de questions, une seule bonne réponse
     assert.ok(places.size >= 3);
     assert.equal(L.draw('inconnue', 5).length, 0);
 });
+
+// --- Le paysage des mondes (js/pathSprites.js, js/pathScenery.js) ------------------------------------------
+
+test('chaque monde a son thème, et chaque dessin cité existe', () => {
+    const Sprites = require('../js/pathSprites.js');
+    const Scenery = require('../js/pathScenery.js');
+    const PathCore = require('../js/pathCore.js');
+    for (const world of PathCore.WORLDS) {
+        assert.ok(Scenery.THEMES[world.id], `${world.id} a un thème explicite`);
+        const theme = Scenery.themeFor(world.id);
+        assert.ok(Sprites.landmarks[theme.landmark], `${world.id} : monument « ${theme.landmark} » inconnu`);
+        assert.ok(Scenery.GROUNDS[Scenery.THEMES[world.id].ground], `${world.id} : sol inconnu`);
+        for (const [name] of theme.decor) assert.ok(Sprites.decor[name], `${world.id} : décor « ${name} » inconnu`);
+    }
+    // Les monuments sont tous distincts d'un monde à l'autre : un château n'est pas deux fois le « boss final ».
+    const used = PathCore.WORLDS.map(w => Scenery.themeFor(w.id).landmark);
+    assert.equal(new Set(used).size, used.length);
+});
+
+test('le paysage est stable et ne pose jamais un décor sur la route', () => {
+    const Scenery = require('../js/pathScenery.js');
+    const count = 9, step = 100, padTop = 250, amplitude = 78;
+    const positions = [];
+    for (let i = 0; i < count; i++) {
+        positions.push({ x: i === count - 1 ? 150 : 150 + amplitude * Math.sin(i * 0.95 + 0.4), y: padTop + (count - 1 - i) * step });
+    }
+    const height = padTop + 70 + (count - 1) * step;
+    const opts = { height, padTop, positions, width: 300, pixelWidth: 340 };
+    for (const id of ['grece', 'grande-guerre', 'depuis-1991', 'ile-japon']) {
+        const a = Scenery.layout(id, opts);
+        assert.deepEqual(a, Scenery.layout(id, opts), 'déterministe');
+        assert.ok(a.decor.length >= 15, `${id} est peuplé`);
+        for (const item of a.decor) {
+            assert.ok(Math.abs(item.x - Scenery.roadX(positions, item.y)) >= Scenery.MIN_GAP - 1, `${id} : décor sur la route à y=${item.y}`);
+            assert.ok(item.x > 0 && item.x < 300 && item.y > 0 && item.y < height);
+        }
+        assert.equal(a.landmark.sprite, Scenery.themeFor(id).landmark);
+        assert.ok(a.landmark.y < padTop, 'le monument est au-dessus de la pastille du boss');
+    }
+    assert.notDeepEqual(Scenery.layout('grece', opts).decor, Scenery.layout('rome1', opts).decor, 'chaque monde a son paysage');
+});

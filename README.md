@@ -506,6 +506,20 @@ s'est passé dans le monde à la même époque. Avec des thèmes, les événemen
 dans le tirage (les incontournables restent prioritaires). `PathCore.sliceWindows` propose un découpage en
 niveaux d'effectifs voisins : plus le temps est dense, plus les tranches sont courtes.
 
+### Le paysage des mondes
+
+Chaque monde est un petit paysage, façon Castle Crumble : un pré (teinte propre au monde), la route qui serpente, des
+décors de l'époque de part et d'autre (oliviers et colonnes en Grèce, tentes et bannières pendant la guerre de Cent Ans,
+cratères et barbelés en 14-18, éoliennes et antennes aujourd'hui…) et, au bout du chemin, **le monument que garde le
+boss** : grotte ornée, ziggurat, Parthénon, Colisée, château fort, cathédrale, Versailles, Bastille, tour Eiffel,
+fort ruiné, tours de bureaux… un monument différent par monde, îles comprises. Le monument s'illumine d'or quand le
+boss est vaincu ; un monde pas encore atteint reste en grisaille.
+
+Les dessins sont des SVG à plat (`js/pathSprites.js`, aucune image à charger, pas de dégradé) ; `js/pathScenery.js`
+choisit le thème de chaque monde et place les décors de façon déterministe, sans jamais en poser sur la route
+(`tests/path.test.js` le vérifie, et que tout dessin cité existe). Pour changer le décor d'un monde, ou en ajouter,
+c'est le tableau `THEMES` de `pathScenery.js` ; pour un nouveau dessin, une entrée dans `pathSprites.js`.
+
 ### Les récompenses : pièces, série de victoires, cartes, boutique
 
 La boucle qui donne envie de « jouer encore un niveau » (modèle : Royal Match). Les **règles** sont dans
