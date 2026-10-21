@@ -211,6 +211,13 @@ test('la galerie filtre Monaco et le Liechtenstein à part, et la France garde s
     await expect(pays.locator('option', { hasText: 'France' })).toHaveText(/🇫🇷 France métropolitaine \(143\)/);
 });
 
+test('la galerie filtre Andorre (invitée de l’Espagne) et Saint-Marin (invité de l’Italie) à part', async ({ page }) => {
+    await ouvrirLaGalerie(page);
+    const pays = page.locator('#gallery-filter-country');
+    await expect(pays.locator('option', { hasText: 'Andorre' })).toHaveText(/Andorre \(2\)/);
+    await expect(pays.locator('option', { hasText: 'Saint-Marin' })).toHaveText(/Saint-Marin \(3\)/);
+});
+
 test('Joséphine Baker, née aux États-Unis et devenue française, est au panthéon de la France avec son portrait et sa biographie', async ({ page }) => {
     // Le pays d'un panthéon est celui qui honore, pas celui de l'état civil : Baker est au Panthéon
     // de Paris depuis 2021. Elle n'est donc pas dans « Grandes figures des États-Unis ».

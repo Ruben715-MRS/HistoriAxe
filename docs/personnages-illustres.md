@@ -967,7 +967,7 @@ photographies de presse ou de studio.
 
 ### Un pays à part : l'Italie
 
-`pan_it`, « Grandes figures d'Italie » : **128 personnages**, d'Archimède (vers 287
+`pan_it`, « Grandes figures d'Italie » : **131 personnages** (dont trois invités de Saint-Marin), d'Archimède (vers 287
 av. J.-C.) à Paolo Borsellino (1940). Par axe : 31 Littérature et pensée, 24
 Beaux-arts, 25 Musique, spectacle et sport, 19 Sciences, techniques et innovation, 18 Chefs d'État et
 dirigeants, 11 Guerres et résistances ; 42 ⭐ et 13 biographies liées (Scipion,
@@ -1176,7 +1176,7 @@ demandé à Commons en 330 px de large (`largeur`).
 
 ### Un pays à part : l'Espagne
 
-`pan_es`, « Grandes figures d'Espagne » : **132 personnages**, de Trajan (53) à Margarita
+`pan_es`, « Grandes figures d'Espagne » : **134 personnages** (dont deux invités d'Andorre), de Trajan (53) à Margarita
 Salas (1938). Par axe : 44 Littérature et pensée, 20 Chefs d'État et dirigeants, 18
 Beaux-arts, 17 Musique, spectacle et sport, 17 Sciences, techniques et innovation, 16 Guerres
 et résistances ; 36 ⭐ et 11 biographies liées (Isabelle Ire de Castille, le Cid, Ibárruri,
@@ -1397,11 +1397,15 @@ pays que son hôte.
   honore, il n'est pas leur lieu de naissance. Alois II et François Ier, sans fiche solide, sont restés
   dehors. Le thème garde son titre « Allemagne, Autriche et Suisse » ; la recherche « liechtenstein »
   ou « vaduz » y mène par ses `motsCles`.
-- **En attente : Saint-Marin et Andorre**, faute de portrait libre. Pour Saint-Marin : Bartolomeo
-  Borghesi (1781, numismate, né en Italie), Giovanni Battista Belluzzi (1506, architecte, sans portrait
-  sur Commons) ; saint Marin, légendaire, n'a pas de date de naissance fiable. Pour Andorre : Guillem
-  d'Areny-Plandolit (1822) et Francesc Cairat (1880), sans portrait libre vérifié. Ils rejoindraient
-  `pan_it` et `pan_es`.
+- **Saint-Marin (3)**, dans `pan_it` : saint Marin (vers 275, fondateur légendaire, tailleur de pierre venu de Dalmatie ; sa date de
+  naissance est une tradition), Giovanni Battista Belluzzi (1506, architecte militaire, montré par la page de titre de son traité de 1598,
+  `nomVisible`) et Bartolomeo Borghesi (1781, numismate né à Savignano, installé sur le mont Titano à partir de 1821). Les capitaines-régents
+  de l'article français sont presque tous des vivants ou des contemporains : aucun n'a été retenu.
+- **Andorre (2)**, dans `pan_es` : Boris Skossyreff (1896), aventurier russe qui se proclame « roi d'Andorre » en 1934 (une curiosité,
+  pas un dirigeant), et Juan Benlloch y Vivó (1864), évêque d'Urgell, cardinal et coprince de 1907 à 1919, né à Valence : un Espagnol que
+  l'Andorre honore (statue et place d'Andorre-la-Vieille). **Liste très mince** : Guillem d'Areny-Plandolit et Francesc Cairat n'ont pas
+  d'article français ; Antoni Fiter i Rossell (le « Manual Digest », 1748) en a un, mais aucun portrait ni image convenable ; Joan Martí
+  Alanis (1928-2009), évêque-coprince, n'a pas d'image. À étoffer si un article ou une image apparaît.
 - **Vatican : aucune figure propre.** Les papes sont déjà rangés par leur nationalité (Jean XXIII
   dans `pan_it`, François dans `pan_hispam`), et un pape italien n'est pas né au Vatican.
 
@@ -3139,8 +3143,7 @@ resterait servi) — un portrait remplacé reçoit un nouveau nom.
   Sud-Est, on vérifiera les portraits sur Commons **avant** de valider la liste. Les figures
   disputées entre deux thèmes (Avicenne et al-Biruni, Rûmî, Babur, Kubilai Khan, Bruce Lee,
   Eusébio) se règlent par la règle « celui qui l'honore le plus ».
-- **Pays encore sans figure dans aucun panthéon** (193 États de l'ONU, plus le Vatican et la Palestine) : **Andorre** et **Saint-Marin** (en attente de portraits, voir « Les micro-États »),
-  **le Vatican** (aucune figure propre, par choix), **Kiribati** et **le Vanuatu** (aucune image libre ; la règle des images non libres permet désormais de les ajouter au panthéon du Pacifique). Ce sont les seuls pays à n'avoir encore aucune figure.
+- **Pays encore sans figure dans aucun panthéon** (193 États de l'ONU, plus le Vatican et la Palestine) : **le Vatican** (aucune figure propre, par choix), **Kiribati** et **le Vanuatu** (aucune image libre ; la règle des images non libres permet désormais de les ajouter au panthéon du Pacifique). Ce sont les seuls pays à n'avoir encore aucune figure.
 - **Des figures de l'Allemagne, de l'Autriche et de la Suisse à améliorer ou à rediscuter** :
   les vingt et un candidats écartés (voir « Ce que les images ont changé en Allemagne, en
   Autriche et en Suisse ») ; les images d'Hitler, de Marlene Dietrich, d'Hedy Lamarr et de
