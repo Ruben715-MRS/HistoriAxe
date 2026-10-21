@@ -470,7 +470,7 @@ test('Qui est-ce ? : sur le vrai pack, les portraits dont l’image écrit le no
     const panth = fr.categories.find(c => c.nom === 'Personnages illustres').subcategories.find(s => s.nom === 'Panthéons');
     const tous = panth.themes.flatMap(t => t.events);
     const marques = tous.filter(e => e.image.nomVisible);
-    assert.equal(marques.length, 126);
+    assert.equal(marques.length, 127);
     // Des cas connus : l'inscription peinte, la légende gravée, la monnaie à son nom.
     ['Naissance de Pic de la Mirandole', 'Naissance de Charlemagne', 'Naissance de Johannes Kepler',
         'Naissance de Vercingétorix', 'Naissance de William Harvey', 'Naissance de Neil Armstrong',
