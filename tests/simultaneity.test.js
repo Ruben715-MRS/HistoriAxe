@@ -443,6 +443,11 @@ test('« Grandes figures d’Afrique de l’Ouest » : chaque ancre porte le pay
     verifierPantheonDeBloc('pan_afriqueouest', 23, 15);
 });
 
+test('« Grandes figures de l’océan Indien occidental » : chaque ancre porte le pays de son événement, et la session se joue', () => {
+    // Quatre pays, dont deux (les Comores, les Seychelles) n'ont que quatre ou deux figures face à Madagascar (18) : aucun ne doit manquer parmi les ancres.
+    verifierPantheonDeBloc('pan_oceanindien', 73, 4);
+});
+
 test('« Grandes figures d’Afrique australe » : chaque ancre porte le pays de son événement, et la session se joue', () => {
     // Neuf pays, dont plusieurs (l'Eswatini, le Malawi) n'ont que deux ou quatre figures : aucun ne doit manquer parmi les ancres.
     verifierPantheonDeBloc('pan_afriqueaustrale', 71, 9);

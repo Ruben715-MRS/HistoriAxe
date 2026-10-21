@@ -1,0 +1,609 @@
+{
+ "code": "oceanindien",
+ "nom": "Océan Indien occidental",
+ "pays": [
+  "MG",
+  "KM",
+  "MU",
+  "SC"
+ ],
+ "partMaxPays": 0.6,
+ "theme": {
+  "id": "pan_oceanindien",
+  "nom": "Grandes figures de l'océan Indien occidental",
+  "difficulte": "Intermédiaire",
+  "motsCles": [
+   "Madagascar",
+   "Malgache",
+   "Merina",
+   "Imerina",
+   "Antananarivo",
+   "Tananarive",
+   "Comores",
+   "Comorien",
+   "Comorienne",
+   "Moroni",
+   "Anjouan",
+   "Mohéli",
+   "Grande Comore",
+   "Maurice",
+   "Mauricien",
+   "Mauricienne",
+   "Île Maurice",
+   "Île de France",
+   "Port-Louis",
+   "Seychelles",
+   "Seychellois",
+   "Seychelloise",
+   "Victoria",
+   "Océan Indien",
+   "Océan Indien occidental",
+   "Mascareignes",
+   "Hainteny",
+   "Hira gasy",
+   "Créole",
+   "Menalamba"
+  ]
+ },
+ "axes": [
+  "Chefs d'État et dirigeants",
+  "Guerres et résistances",
+  "Littérature et pensée",
+  "Musique, spectacle et sport",
+  "Sciences, techniques et innovation"
+ ],
+ "personnages": [
+  {
+   "slug": "andrianampoinimerina",
+   "nom": "Andrianampoinimerina",
+   "classement": "Andrianampoinimerina",
+   "titre": "Naissance d'Andrianampoinimerina",
+   "axe": "Chefs d'État et dirigeants",
+   "naissance": 1745,
+   "description": "Andrianampoinimerina (vers 1745-1810) est le roi de l'Imerina de 1787 à 1810, et le véritable unificateur de Madagascar central. Il fait d'Antananarivo sa capitale, développe l'irrigation des rizières et les marchés, et lance l'unification de l'île sous l'autorité merina. Son fils Radama Ier poursuit son œuvre.",
+   "wikipedia": "Andrianampoinimerina",
+   "pays": "MG",
+   "essentiel": true,
+   "portrait": {
+    "fichier": "Andrianampoinimerina HQ.jpg",
+    "legende": "Andrianampoinimerina, portrait posthume de Philippe-Auguste Ramanankirahina",
+    "licence": "Domaine public",
+    "auteur": "Philippe-Auguste Ramanankirahina"
+   }
+  },
+  {
+   "slug": "radama1",
+   "nom": "Radama Ier",
+   "classement": "Radama Ier",
+   "titre": "Naissance de Radama Ier",
+   "axe": "Chefs d'État et dirigeants",
+   "naissance": 1793,
+   "description": "Radama Ier (vers 1793-1828) est le roi de Madagascar de 1810 à 1828. Allié du gouverneur britannique de l'île Maurice, il est reconnu roi de Madagascar par le traité de 1817, qui abolit la traite des esclaves hors de l'île, et il forme une armée moderne et ouvre des écoles avec l'aide de missionnaires protestants. Il étend son pouvoir sur la plus grande partie de l'île et meurt à trente-cinq ans.",
+   "wikipedia": "Radama Ier",
+   "pays": "MG",
+   "essentiel": true,
+   "portrait": {
+    "fichier": "Radama I, portrait by Ramanankirahina.jpg",
+    "legende": "Radama Ier, portrait posthume de Philippe-Auguste Ramanankirahina",
+    "licence": "Domaine public",
+    "auteur": "Philippe-Auguste Ramanankirahina"
+   }
+  },
+  {
+   "slug": "ranavalona1",
+   "nom": "Ranavalona Ire",
+   "classement": "Ranavalona Ire",
+   "titre": "Naissance de Ranavalona Ire",
+   "axe": "Chefs d'État et dirigeants",
+   "naissance": 1788,
+   "description": "Ranavalona Ire (vers 1788-1861) est reine de Madagascar de 1828 à 1861. Hostile à l'influence européenne, elle expulse les missionnaires en 1835, interdit le christianisme et fait persécuter les chrétiens, et repousse une attaque franco-britannique à Tamatave en 1845. Son règne de trente-trois ans préserve l'indépendance de l'île, au prix du travail forcé de la population et de nombreuses victimes.",
+   "wikipedia": "Ranavalona Ire",
+   "pays": "MG",
+   "essentiel": true,
+   "portrait": {
+    "fichier": "Ranavalona I.jpg",
+    "legende": "Ranavalona Ire, portrait posthume de Philippe-Auguste Ramanankirahina",
+    "licence": "Domaine public",
+    "auteur": "Philippe-Auguste Ramanankirahina"
+   }
+  },
+  {
+   "slug": "radama2",
+   "nom": "Radama II",
+   "classement": "Radama II",
+   "titre": "Naissance de Radama II",
+   "axe": "Chefs d'État et dirigeants",
+   "naissance": 1829,
+   "description": "Radama II (1829-1863) est roi de Madagascar de 1861 à 1863, fils de Ranavalona Ire. Il rappelle les missionnaires, libère les prisonniers, ouvre l'île aux étrangers et signe un traité avec la France. Ces mesures dressent contre lui les conservateurs, et il meurt en mai 1863, lors d'un coup d'État.",
+   "wikipedia": "Radama II",
+   "pays": "MG",
+   "portrait": {
+    "fichier": "Radama II with crown.jpg",
+    "legende": "Radama II, image du XIXᵉ siècle",
+    "licence": "Domaine public",
+    "auteur": "William Ellis"
+   }
+  },
+  {
+   "slug": "rasoherina",
+   "nom": "Rasoherina",
+   "classement": "Rasoherina",
+   "titre": "Naissance de Rasoherina",
+   "axe": "Chefs d'État et dirigeants",
+   "naissance": 1814,
+   "description": "Rasoherina (1814-1868) est reine de Madagascar de 1863 à 1868, veuve de Radama II. Elle signe des traités avec la Grande-Bretagne, la France et les États-Unis, et elle confirme la liberté de religion. Elle règne sous l'influence de Rainilaiarivony, Premier ministre dès 1864, qu'elle épouse.",
+   "wikipedia": "Rasoherina",
+   "pays": "MG",
+   "portrait": {
+    "fichier": "Rasoherina.jpg",
+    "legende": "Rasoherina, image du XIXᵉ siècle",
+    "licence": "Image non libre",
+    "auteur": "Auteur inconnu",
+    "source": "https://commons.wikimedia.org/wiki/File:Rasoherina.jpg"
+   }
+  },
+  {
+   "slug": "ranavalona2",
+   "nom": "Ranavalona II",
+   "classement": "Ranavalona II",
+   "titre": "Naissance de Ranavalona II",
+   "axe": "Chefs d'État et dirigeants",
+   "naissance": 1829,
+   "description": "Ranavalona II (1829-1883) est reine de Madagascar de 1868 à 1883. Elle se convertit au protestantisme en 1869, avec toute la cour, et fait brûler les idoles royales, les sampy. Elle meurt en 1883, au moment où commence la première guerre franco-malgache.",
+   "wikipedia": "Ranavalona II",
+   "pays": "MG",
+   "portrait": {
+    "fichier": "Ranavalona II.jpg",
+    "legende": "Ranavalona II, portrait posthume de Philippe-Auguste Ramanankirahina",
+    "licence": "Domaine public",
+    "auteur": "Philippe-Auguste Ramanankirahina"
+   }
+  },
+  {
+   "slug": "ranavalona3",
+   "nom": "Ranavalona III",
+   "classement": "Ranavalona III",
+   "titre": "Naissance de Ranavalona III",
+   "axe": "Chefs d'État et dirigeants",
+   "naissance": 1861,
+   "description": "Ranavalona III (1861-1917) est la dernière reine de Madagascar, de 1883 à 1897. Elle règne sous l'autorité de son Premier ministre et époux, Rainilaiarivony, pendant que la France impose son protectorat, puis conquiert l'île en 1895. Déposée en 1897, elle est exilée à la Réunion, puis à Alger, où elle meurt en 1917.",
+   "wikipedia": "Ranavalona III",
+   "pays": "MG",
+   "portrait": {
+    "fichier": "Ranavalona.jpg",
+    "legende": "Ranavalona III en exil à Alger, photographie de J. Geiser",
+    "licence": "Domaine public",
+    "auteur": "J. Geiser (Alger)"
+   }
+  },
+  {
+   "slug": "rainilaiarivony",
+   "nom": "Rainilaiarivony",
+   "classement": "Rainilaiarivony",
+   "titre": "Naissance de Rainilaiarivony",
+   "axe": "Chefs d'État et dirigeants",
+   "naissance": 1828,
+   "description": "Rainilaiarivony (1828-1896) est le Premier ministre de Madagascar de 1864 à 1895, et l'époux de trois reines successives. Il modernise l'État, fait rédiger un code de 305 articles en 1881 et dirige la résistance à la France, jusqu'à la prise d'Antananarivo en 1895. Exilé à Alger, il y meurt en 1896.",
+   "wikipedia": "Rainilaiarivony",
+   "pays": "MG",
+   "portrait": {
+    "fichier": "Rainilaiarivony.jpg",
+    "legende": "Rainilaiarivony, photographie du XIXᵉ siècle",
+    "licence": "Domaine public",
+    "auteur": "Auteur inconnu"
+   }
+  },
+  {
+   "slug": "rainandriamampandry",
+   "nom": "Rainandriamampandry",
+   "classement": "Rainandriamampandry",
+   "titre": "Naissance de Rainandriamampandry",
+   "axe": "Guerres et résistances",
+   "naissance": 1836,
+   "description": "Rainandriamampandry (1836-1896) est un pasteur et général malgache, gouverneur de Toamasina, puis ministre de l'Intérieur en 1895. Après la prise d'Antananarivo par la France, il est accusé d'avoir soutenu l'insurrection des Menalamba. Il est fusillé par les autorités coloniales le 15 octobre 1896, avec le prince Ratsimamanga, oncle de la reine.",
+   "wikipedia": "Rabezandrina Rainandriamampandry",
+   "pays": "MG",
+   "portrait": {
+    "fichier": "Rainandriamampandry, ca. 1894.jpg",
+    "legende": "Rainandriamampandry vers 1894, photographie",
+    "licence": "Domaine public",
+    "auteur": "Auteur inconnu"
+   }
+  },
+  {
+   "slug": "tsiranana",
+   "nom": "Philibert Tsiranana",
+   "classement": "Tsiranana, Philibert",
+   "titre": "Naissance de Philibert Tsiranana",
+   "axe": "Chefs d'État et dirigeants",
+   "naissance": 1912,
+   "description": "Philibert Tsiranana (1912-1978) est le premier président de la République malgache, de 1959 à 1972. Instituteur, fondateur du Parti social-démocrate, il conduit Madagascar à l'indépendance, le 26 juin 1960, tout en restant proche de la France. Il est renversé par la révolte étudiante de 1972 et remet le pouvoir au général Ramanantsoa.",
+   "wikipedia": "Philibert Tsiranana",
+   "pays": "MG",
+   "portrait": {
+    "fichier": "Philibert Tsiranana 1962.jpg",
+    "legende": "Philibert Tsiranana à Berlin, 1962, photographie des Archives fédérales allemandes",
+    "licence": "CC BY-SA 3.0 DE",
+    "auteur": "Bundesarchiv"
+   }
+  },
+  {
+   "slug": "ratsiraka",
+   "nom": "Didier Ratsiraka",
+   "classement": "Ratsiraka, Didier",
+   "titre": "Naissance de Didier Ratsiraka",
+   "axe": "Chefs d'État et dirigeants",
+   "naissance": 1936,
+   "description": "Didier Ratsiraka (1936-2021) est président de Madagascar de 1975 à 1993, puis de 1997 à 2002. Officier de marine, il instaure une « révolution socialiste » et un régime dominé par son parti, puis perd le pouvoir face à Albert Zafy en 1993 et le retrouve en 1996. Contesté en 2002 par Marc Ravalomanana, il s'exile en France.",
+   "wikipedia": "Didier Ratsiraka",
+   "pays": "MG",
+   "portrait": {
+    "fichier": "Didier Ratsiraka 1997.jpg",
+    "legende": "Didier Ratsiraka en 1997, photographie de Benoît Bourgeois (Commission européenne)",
+    "licence": "CC BY 4.0",
+    "auteur": "Benoît Bourgeois / European Commission"
+   }
+  },
+  {
+   "slug": "zafy",
+   "nom": "Albert Zafy",
+   "classement": "Zafy, Albert",
+   "titre": "Naissance d'Albert Zafy",
+   "axe": "Chefs d'État et dirigeants",
+   "naissance": 1927,
+   "description": "Albert Zafy (1927-2017) est président de Madagascar de 1993 à 1996. Médecin et professeur, il dirige le mouvement populaire qui met fin au régime de Didier Ratsiraka, et il est élu en 1993. Destitué par l'Assemblée en 1996 pour avoir violé la Constitution, il se présente ensuite plusieurs fois sans succès.",
+   "wikipedia": "Albert Zafy",
+   "pays": "MG",
+   "portrait": {
+    "fichier": "President Albert Zafy.jpg",
+    "legende": "Albert Zafy, photographie",
+    "licence": "CC BY-SA 3.0",
+    "auteur": "Yvannoé"
+   }
+  },
+  {
+   "slug": "ramanantsoa",
+   "nom": "Gabriel Ramanantsoa",
+   "classement": "Ramanantsoa, Gabriel",
+   "titre": "Naissance de Gabriel Ramanantsoa",
+   "axe": "Chefs d'État et dirigeants",
+   "naissance": 1906,
+   "description": "Gabriel Ramanantsoa (1906-1979) est un général malgache, chef de l'État de 1972 à 1975. Appelé au pouvoir par le président Tsiranana, après la révolte étudiante de 1972, il rompt avec la politique de coopération avec la France. Il remet le pouvoir en 1975 au colonel Richard Ratsimandrava.",
+   "wikipedia": "Gabriel Ramanantsoa",
+   "pays": "MG",
+   "portrait": {
+    "fichier": "Bundesarchiv B 145 Bild-F011092-0001, BPA, Generalstabschef aus Madagaskar.jpg",
+    "legende": "Gabriel Ramanantsoa en 1961, photographie de Renate Patzek",
+    "licence": "CC BY-SA 3.0 DE",
+    "auteur": "Renate Patzek (Bundesarchiv)"
+   }
+  },
+  {
+   "slug": "ralaimongo",
+   "nom": "Jean Ralaimongo",
+   "classement": "Ralaimongo, Jean",
+   "titre": "Naissance de Jean Ralaimongo",
+   "axe": "Guerres et résistances",
+   "naissance": 1884,
+   "description": "Jean Ralaimongo (1884-1943) est un militant nationaliste malgache, né à Ikalamavony. En 1920, il contribue à fonder la Ligue pour l'accession des indigènes de Madagascar aux droits des citoyens français, qu'il préside. De 1920 à 1939, il dirige le journal L'Opinion, où il dénonce les abus de la colonisation, et il meurt en 1943 à Madagascar.",
+   "wikipedia": "Jean Ralaimongo",
+   "pays": "MG",
+   "portrait": {
+    "fichier": "Jean Ralaimongo.jpg",
+    "legende": "Jean Ralaimongo, buste de son monument",
+    "licence": "CC BY-SA 3.0",
+    "auteur": "Auteur inconnu"
+   }
+  },
+  {
+   "slug": "monja",
+   "nom": "Monja Jaona",
+   "classement": "Jaona, Monja",
+   "titre": "Naissance de Monja Jaona",
+   "axe": "Guerres et résistances",
+   "naissance": 1910,
+   "description": "Monja Jaona (1910-1994) est un homme politique malgache, fondateur du Mouvement national pour l'indépendance de Madagascar, le MONIMA, en 1958. En 1971, il dirige par ce parti le mouvement paysan de la province de Toliara, ce qui lui vaut d'être emprisonné de 1971 à 1972. Il meurt à Antananarivo le 3 septembre 1994.",
+   "wikipedia": "Jaona Monja",
+   "pays": "MG",
+   "portrait": {
+    "fichier": "Monja Jaona in 1945, aged 35.jpg",
+    "legende": "Monja Jaona en 1945, photographie",
+    "licence": "Domaine public",
+    "auteur": "Auteur inconnu"
+   }
+  },
+  {
+   "slug": "rabearivelo",
+   "nom": "Jean-Joseph Rabearivelo",
+   "classement": "Rabearivelo, Jean-Joseph",
+   "titre": "Naissance de Jean-Joseph Rabearivelo",
+   "axe": "Littérature et pensée",
+   "naissance": 1901,
+   "description": "Jean-Joseph Rabearivelo (1901-1937) est un poète malgache d'expression française, souvent tenu pour le père de la poésie moderne de Madagascar. Autodidacte, il publie des recueils comme Presque-Songes en 1934 et Traduit de la nuit en 1935, qui mêlent la langue française à la tradition malgache du hainteny. Accablé par les dettes, il se suicide en 1937.",
+   "wikipedia": "Jean-Joseph Rabearivelo",
+   "pays": "MG",
+   "essentiel": true,
+   "portrait": {
+    "fichier": "Jean-Joseph Rabearivelo.jpg",
+    "legende": "Jean-Joseph Rabearivelo, photographie",
+    "licence": "Domaine public",
+    "auteur": "Auteur inconnu"
+   }
+  },
+  {
+   "slug": "ratsimamanga",
+   "nom": "Albert Rakoto Ratsimamanga",
+   "classement": "Ratsimamanga, Albert Rakoto",
+   "titre": "Naissance d'Albert Rakoto Ratsimamanga",
+   "axe": "Sciences, techniques et innovation",
+   "naissance": 1907,
+   "description": "Albert Rakoto Ratsimamanga (1907-2001) est un scientifique malgache, docteur en sciences et en médecine formé à Paris. Avec son épouse Suzanne, il cofonde l'Institut malgache de recherches appliquées, financé par les revenus du Madécassol, un médicament cicatrisant tiré de la plante Centella asiatica. Il est aussi ambassadeur de Madagascar en France de 1960 à 1972, et il meurt à Antananarivo en 2001.",
+   "wikipedia": "Albert Rakoto Ratsimamanga",
+   "pays": "MG",
+   "portrait": {
+    "fichier": "Ratsimamanga in China in 1972.jpg",
+    "legende": "Albert Rakoto Ratsimamanga en Chine, 1972, photographie",
+    "licence": "Domaine public",
+    "auteur": "Auteur inconnu"
+   }
+  },
+  {
+   "slug": "rakotofrah",
+   "nom": "Rakoto Frah",
+   "classement": "Rakoto Frah",
+   "titre": "Naissance de Rakoto Frah",
+   "axe": "Musique, spectacle et sport",
+   "naissance": 1923,
+   "description": "Rakoto Frah (1923-2001) est un flûtiste et compositeur malgache, joueur de sodina, la flûte traditionnelle de Madagascar. Il est l'un des plus célèbres ambassadeurs du hira gasy, le spectacle traditionnel des hautes terres, et il se produit en Europe et en Asie. Il meurt à Antananarivo en 2001.",
+   "wikipedia": "Rakoto Frah",
+   "pays": "MG",
+   "portrait": {
+    "fichier": "Rakoto Frah.jpg",
+    "legende": "Rakoto Frah, dessin",
+    "licence": "CC BY-SA 4.0",
+    "auteur": "Fiderana116"
+   }
+  },
+  {
+   "slug": "ahmedabdallah",
+   "nom": "Ahmed Abdallah",
+   "classement": "Abdallah, Ahmed",
+   "titre": "Naissance d'Ahmed Abdallah",
+   "axe": "Chefs d'État et dirigeants",
+   "naissance": 1919,
+   "description": "Ahmed Abdallah (1919-1989) est le premier président des Comores indépendantes, de 1975 à 1978, puis de 1978 à 1989. Il proclame l'indépendance de l'archipel le 6 juillet 1975, est renversé quelques semaines plus tard par Ali Soilih et revient au pouvoir en 1978 avec l'aide de mercenaires. Il est tué le 26 novembre 1989, dans des circonstances discutées.",
+   "wikipedia": "Ahmed Abdallah Abderamane",
+   "pays": "KM",
+   "portrait": {
+    "fichier": "Ahmed Abdallah illustration.png",
+    "legende": "Ahmed Abdallah, illustration de la Voix de l'Amérique",
+    "licence": "Domaine public",
+    "auteur": "Voice of America"
+   }
+  },
+  {
+   "slug": "alisoilih",
+   "nom": "Ali Soilih",
+   "classement": "Soilih, Ali",
+   "titre": "Naissance d'Ali Soilih",
+   "axe": "Chefs d'État et dirigeants",
+   "naissance": 1937,
+   "description": "Ali Soilih (1937-1978) est président des Comores de 1975 à 1978. Il prend le pouvoir par un coup d'État en août 1975 et mène une « révolution » radicale, qui supprime les privilèges, bouscule les notables et mobilise les jeunes. Renversé en mai 1978 par des mercenaires de Bob Denard, il est tué peu après.",
+   "wikipedia": "Ali Soilih",
+   "pays": "KM",
+   "portrait": {
+    "fichier": "Ali Soilih illustration.png",
+    "legende": "Ali Soilih, illustration de la Voix de l'Amérique",
+    "licence": "Domaine public",
+    "auteur": "Voice of America"
+   }
+  },
+  {
+   "slug": "taki",
+   "nom": "Mohamed Taki Abdoulkarim",
+   "classement": "Abdoulkarim, Mohamed Taki",
+   "titre": "Naissance de Mohamed Taki Abdoulkarim",
+   "axe": "Chefs d'État et dirigeants",
+   "naissance": 1936,
+   "description": "Mohamed Taki Abdoulkarim (1936-1998) est président des Comores de 1996 à sa mort. Élu en 1996, il fait face en 1997 à la sécession des îles d'Anjouan et de Mohéli, qui menace l'unité du pays. Il meurt le 6 novembre 1998, d'une crise cardiaque.",
+   "wikipedia": "Mohamed Taki Abdoulkarim",
+   "pays": "KM",
+   "portrait": {
+    "fichier": "Président TAKI.jpg",
+    "legende": "Mohamed Taki Abdoulkarim, photographie",
+    "licence": "CC BY-SA 4.0",
+    "auteur": "WADAANE"
+   }
+  },
+  {
+   "slug": "djohar",
+   "nom": "Saïd Mohamed Djohar",
+   "classement": "Djohar, Saïd Mohamed",
+   "titre": "Naissance de Saïd Mohamed Djohar",
+   "axe": "Chefs d'État et dirigeants",
+   "naissance": 1918,
+   "description": "Saïd Mohamed Djohar (1918-2006) est président des Comores de 1989 à 1996. Président de la Cour suprême, il assure l'intérim après l'assassinat d'Ahmed Abdallah, puis il est élu en 1990, et rétablit le multipartisme. Renversé en septembre 1995 par Bob Denard, il est évacué à la Réunion par les troupes françaises, et il se retire en 1996.",
+   "wikipedia": "Saïd Mohamed Djohar",
+   "pays": "KM",
+   "portrait": {
+    "fichier": "Said Mohamed Djohar - 1991.jpg",
+    "legende": "Saïd Mohamed Djohar en 1991, photographie des Communautés européennes",
+    "licence": "CC BY 4.0",
+    "auteur": "Communautés européennes"
+   }
+  },
+  {
+   "slug": "ramgoolam",
+   "nom": "Seewoosagur Ramgoolam",
+   "classement": "Ramgoolam, Seewoosagur",
+   "titre": "Naissance de Seewoosagur Ramgoolam",
+   "axe": "Chefs d'État et dirigeants",
+   "naissance": 1900,
+   "description": "Seewoosagur Ramgoolam (1900-1985) est le premier Premier ministre de Maurice indépendante, de 1968 à 1982. Médecin formé en Grande-Bretagne, il dirige le Parti travailliste et conduit l'île à l'indépendance, le 12 mars 1968. Il est surnommé « le père de la nation », et il est ensuite gouverneur général jusqu'à sa mort.",
+   "wikipedia": "Seewoosagur Ramgoolam",
+   "pays": "MU",
+   "essentiel": true,
+   "portrait": {
+    "fichier": "Seewoosagur Ramgoolam.jpg",
+    "legende": "Seewoosagur Ramgoolam, photographie",
+    "licence": "Domaine public",
+    "auteur": "Government Press Office"
+   }
+  },
+  {
+   "slug": "duval",
+   "nom": "Gaëtan Duval",
+   "classement": "Duval, Gaëtan",
+   "titre": "Naissance de Gaëtan Duval",
+   "axe": "Chefs d'État et dirigeants",
+   "naissance": 1930,
+   "description": "Gaëtan Duval (1930-1996) est un homme politique mauricien, chef du Parti mauricien social démocrate de 1967 à sa mort. Chef de l'opposition parlementaire de 1967 à 1969, il est vice-Premier ministre de 1983 à 1988. Sa popularité auprès des Créoles lui vaut le surnom de « roi des Créoles ».",
+   "wikipedia": "Gaëtan Duval",
+   "pays": "MU",
+   "portrait": {
+    "fichier": "Gaëtan Duval dans les années 80.png",
+    "legende": "Gaëtan Duval dans les années 1980, image d'une vidéo",
+    "licence": "CC BY-SA 4.0",
+    "auteur": "Whitepolo"
+   }
+  },
+  {
+   "slug": "bissoondoyal",
+   "nom": "Basdeo Bissoondoyal",
+   "classement": "Bissoondoyal, Basdeo",
+   "titre": "Naissance de Basdeo Bissoondoyal",
+   "axe": "Chefs d'État et dirigeants",
+   "naissance": 1906,
+   "description": "Basdeo Bissoondoyal (1906-1991) est un pandit, enseignant et homme politique mauricien, né à Rivière-des-Anguilles. Il contribue à fonder le parti Jana Andolan et il écrit sur l'histoire de Maurice. Une statue monumentale à son effigie se dresse sur l'esplanade du Caudan Waterfront, à Port-Louis.",
+   "wikipedia": "Basdeo Bissoondoyal",
+   "pays": "MU",
+   "portrait": {
+    "fichier": "B Bissondoyal.jpg",
+    "legende": "Basdeo Bissoondoyal, photographie ancienne",
+    "licence": "Domaine public",
+    "auteur": "Auteur inconnu"
+   }
+  },
+  {
+   "slug": "depinay",
+   "nom": "Adrien d'Épinay",
+   "classement": "d'Épinay, Adrien",
+   "titre": "Naissance d'Adrien d'Épinay",
+   "axe": "Chefs d'État et dirigeants",
+   "naissance": 1794,
+   "description": "Adrien d'Épinay (1794-1839) est un avocat, journaliste et homme politique mauricien. Il dirige les planteurs de la colonie lors des négociations sur l'abolition de l'esclavage. Il meurt en 1839, à quarante-cinq ans.",
+   "wikipedia": "Adrien d'Épinay",
+   "pays": "MU",
+   "portrait": {
+    "fichier": "Adrien d'Epinay1.jpg",
+    "legende": "Adrien d'Épinay, portrait peint",
+    "licence": "CC BY-SA 4.0",
+    "auteur": "Denis PIAT"
+   }
+  },
+  {
+   "slug": "lhomme",
+   "nom": "Léoville L'Homme",
+   "classement": "L'Homme, Léoville",
+   "titre": "Naissance de Léoville L'Homme",
+   "axe": "Littérature et pensée",
+   "naissance": 1857,
+   "description": "Léoville L'Homme (1857-1928) est un poète mauricien, né et mort à Port-Louis. Il est considéré comme l'un des principaux inspirateurs de la poésie mauricienne. Plusieurs poètes de l'île qui lui ont succédé l'ont salué.",
+   "wikipedia": "Léoville L'Homme",
+   "pays": "MU",
+   "portrait": {
+    "fichier": "Mauritian poet Léoville L'Homme (1857–1928) at age 22.jpg",
+    "legende": "Léoville L'Homme, photographie",
+    "licence": "Domaine public",
+    "auteur": "Photographe inconnu"
+   }
+  },
+  {
+   "slug": "laval",
+   "nom": "Jacques-Désiré Laval",
+   "classement": "Laval, Jacques-Désiré",
+   "titre": "Naissance de Jacques-Désiré Laval",
+   "axe": "Guerres et résistances",
+   "naissance": 1803,
+   "description": "Jacques-Désiré Laval (1803-1864) est un prêtre et missionnaire français, du Saint-Esprit, mort à Maurice. Il y travaille pendant vingt-trois ans, à partir de 1841, auprès des esclaves libérés, dont il s'occupe de l'éducation et des soins, et il fait construire des chapelles et de petites écoles. Béatifié par Jean-Paul II le 29 avril 1979, il est un saint populaire de l'île.",
+   "wikipedia": "Jacques-Désiré Laval",
+   "pays": "MU",
+   "portrait": {
+    "fichier": "Jacques Laval.jpg",
+    "legende": "Jacques-Désiré Laval, photographie de MM. Chambay et Lecorgne",
+    "licence": "Domaine public",
+    "auteur": "MM. Chambay et Lecorgne"
+   }
+  },
+  {
+   "slug": "jugnauth",
+   "nom": "Anerood Jugnauth",
+   "classement": "Jugnauth, Anerood",
+   "titre": "Naissance d'Anerood Jugnauth",
+   "axe": "Chefs d'État et dirigeants",
+   "naissance": 1930,
+   "description": "Anerood Jugnauth (1930-2021) est Premier ministre de Maurice à trois reprises, de 1982 à 1995, de 2000 à 2003 et de 2014 à 2017, puis président de la République de 2003 à 2012. Il fonde le Mouvement socialiste militant après la scission de 1983. Il meurt à Curepipe le 3 juin 2021.",
+   "wikipedia": "Anerood Jugnauth",
+   "pays": "MU",
+   "portrait": {
+    "fichier": "President of Mauritius Rt.Hon Sir Anerood Jugnauth (cropped).jpg",
+    "legende": "Anerood Jugnauth, photographie du secrétariat de la présidence de Maurice",
+    "licence": "Image non libre",
+    "auteur": "Secrétariat de la présidence de Maurice",
+    "source": "https://commons.wikimedia.org/wiki/File:President_of_Mauritius_Rt.Hon_Sir_Anerood_Jugnauth_(cropped).jpg"
+   }
+  },
+  {
+   "slug": "ringadoo",
+   "nom": "Veerasamy Ringadoo",
+   "classement": "Ringadoo, Veerasamy",
+   "titre": "Naissance de Veerasamy Ringadoo",
+   "axe": "Chefs d'État et dirigeants",
+   "naissance": 1920,
+   "description": "Veerasamy Ringadoo (1920-2000) est gouverneur général de Maurice de 1986 à 1992, puis le premier président de la République de Maurice, de mars à juin 1992. Membre du Parti travailliste, il a été l'un des ministres de Seewoosagur Ramgoolam. Il meurt à Port-Louis en 2000.",
+   "wikipedia": "Veerasamy Ringadoo",
+   "pays": "MU",
+   "portrait": {
+    "fichier": "Veerasamy Ringadoo.jpg",
+    "legende": "Veerasamy Ringadoo, photographie de la bibliothèque de la London School of Economics",
+    "licence": "Image non libre",
+    "auteur": "Bibliothèque de la London School of Economics",
+    "source": "https://commons.wikimedia.org/wiki/File:Veerasamy_Ringadoo.jpg"
+   }
+  },
+  {
+   "slug": "mancham",
+   "nom": "James Mancham",
+   "classement": "Mancham, James",
+   "titre": "Naissance de James Mancham",
+   "axe": "Chefs d'État et dirigeants",
+   "naissance": 1939,
+   "description": "James Mancham (1939-2017) est Premier ministre des Seychelles de 1970 à 1976, puis le premier président de la République des Seychelles, de 1976 à 1977. Pendant une visite à Londres en 1977, il est renversé par son Premier ministre, France-Albert René, et reste en exil au Royaume-Uni. Il meurt à Glacis en 2017.",
+   "wikipedia": "James Mancham",
+   "pays": "SC",
+   "portrait": {
+    "fichier": "James Mancham 2014.jpg",
+    "legende": "James Mancham en 2014, photographie de l'agence de presse des Seychelles",
+    "licence": "CC BY 4.0",
+    "auteur": "Seychelles News Agency"
+   }
+  },
+  {
+   "slug": "rene",
+   "nom": "France-Albert René",
+   "classement": "René, France-Albert",
+   "titre": "Naissance de France-Albert René",
+   "axe": "Chefs d'État et dirigeants",
+   "naissance": 1935,
+   "description": "France-Albert René (1935-2019) est Premier ministre des Seychelles en 1976-1977, puis président de la République de 1977 à 2004. Il prend le pouvoir le 5 juin 1977, lors d'un coup d'État sans violence, alors que le président James Mancham est à Londres. Il démissionne en 2004 au profit de son vice-président James Michel, et meurt à Victoria le 27 février 2019.",
+   "wikipedia": "France-Albert René",
+   "pays": "SC",
+   "portrait": {
+    "fichier": "France-Albert René, June 2014.jpg",
+    "legende": "France-Albert René en 2014, photographie",
+    "licence": "CC BY 4.0",
+    "auteur": "Joe Laurence / Seychelles News Agency"
+   }
+  }
+ ]
+}

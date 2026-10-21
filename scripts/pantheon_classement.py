@@ -155,6 +155,8 @@ KEEP_AS_WRITTEN = {
     # Caucase : reines et religieux du Moyen Âge rangés par leur prénom, suivi de leur titre ou de leur lieu (« Tamar de Géorgie »,
     # « Grégoire de Narek »), « Machtots » étant un surnom.
     'Tamar de Géorgie', 'Kétévan la Martyre', 'Grégoire de Narek', 'Mékhitar de Sébaste', 'Mesrop Machtots',
+    # Océan Indien occidental : noms malgaches d'un seul mot ou d'artiste, rangés tels qu'écrits.
+    'Rakoto Frah',
 }
 
 # Écrits à la main : (nom de la source) → nom de classement.
@@ -163,6 +165,8 @@ EXCEPTIONS = {
     'Idi Amin Dada': 'Amin Dada, Idi', 'Ahmed Dini Ahmed': 'Dini, Ahmed', 'Hassan Gouled Aptidon': 'Gouled Aptidon, Hassan',
     # Afrique australe : « ya Toivo » est un nom de famille.
     'Andimba Toivo ya Toivo': 'Toivo ya Toivo, Andimba',
+    # Océan Indien occidental : « L'Homme » est le nom de famille, rangé à L.
+    "Léoville L'Homme": "L'Homme, Léoville",
     # Europe centrale : un prince de Transylvanie, non un roi, se range par son nom de famille malgré son numéro.
     'François II Rákóczi': 'Rákóczi, François II',
     # Portugal : noms composés (le dernier mot n'est pas toujours le nom de famille) et surnoms.
