@@ -10171,3 +10171,14 @@ input:not([type="range"]), label, select, summary, textarea {
 #eras-feedback p {
     margin: 0 0 10px;
 }
+
+.arcade-message {
+    flex: 0 0 auto;
+    width: min(100%, 360px);
+    min-height: 0;
+    font-size: 13px;
+}
+
+.arcade-message.hidden {
+    display: none;
+}

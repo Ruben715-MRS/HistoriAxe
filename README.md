@@ -515,11 +515,18 @@ le vérifie). **Tout ce contenu est à relire par un enseignant.**
   bloc reste. Une ligne de cinq blocs verts disparaît. Les années proches de 476 et de 1453-1492 sont exclues (bornes discutées).
 
 **La salle d'arcade** (`js/app/arcade.js`, `js/arcadeCore.js`, écran `#screen-arcade`) : une carte sous « Le Chemin du Temps » sur
-l'écran des catégories. Deux jeux d'adresse sur les événements connus du pack chargé (incontournables, un seul par fait) :
+l'écran des catégories. Quatre jeux d'adresse sur les événements connus du pack chargé (incontournables, un seul par fait) :
 
 - **Snake chronologique** : quatre pastilles lettrées (couleur *et* lettre) et leur légende ; il faut les manger du plus ancien
   au plus récent. Une erreur, un mur ou sa queue : une vie en moins (3). Flèches, boutons ou glisser du doigt.
 - **Tetris des siècles** (ci-dessus).
+- **Pac-Man de la frise** : un labyrinthe (même grille pour toutes les manches), cinq pastilles qui portent des années, une consigne
+  qui nomme un événement. Il faut manger la pastille de SA date ; une autre année coûte une vie et dit de quel événement elle est.
+  Les fantômes (un de plus à chaque manche, jusqu'à trois) avancent un pas sur deux et poursuivent Pac-Man, avec une part de hasard.
+- **Space Invaders des anachronismes** : sous l'intitulé d'une période, des cartes-événements descendent sur trois voies. On place le
+  vaisseau sur une voie et on tire sur la carte la plus basse ; il faut abattre les événements HORS de la période et laisser passer
+  les autres (tirer sur un événement de la période, ou en laisser passer un hors période, coûte une vie). Chaque tir ou carte
+  passée est expliqué en une phrase. Le temps est un flottant (secondes) : `invStep(état, dt)` est pur et testé avec des `dt` simulés.
 
 Les règles sont pures (`ArcadeCore`, testées sans minuteur) ; l'écran ne fait que cadencer et dessiner. Meilleurs scores sur l'appareil
 (`historiaxe_arcade_v1`, hors synchronisation). Pas de `touch-action: none` (interdit par `tests/a11y.test.js`) : le glisser du

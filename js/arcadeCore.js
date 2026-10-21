@@ -1,7 +1,7 @@
 // =========================================================================
 // === LA SALLE D'ARCADE — RÈGLES DU SNAKE CHRONOLOGIQUE ET DU TETRIS DES SIÈCLES ===
 // =========================================================================
-// Deux jeux d'adresse qui portent sur les événements du jeu. Ici, seulement les règles (états purs, sans DOM
+// Quatre jeux d'adresse qui portent sur les événements du jeu. Ici, seulement les règles (états purs, sans DOM
 // ni minuteur : l'écran, js/app/arcade.js, appelle `step`/`tick` à chaque pas de temps) ; testé dans
 // tests/arcadeCore.test.js.
 //
@@ -12,6 +12,10 @@
 //  - TETRIS : un événement tombe dans une des cinq colonnes (Antiquité, Moyen Âge, Temps modernes, 1789-1914,
 //    depuis 1914) ; on choisit la colonne. Un bloc bien rangé est vert, un autre est rouge et reste là. Une ligne
 //    de cinq blocs verts disparaît.
+//  - PAC-MAN : dans un labyrinthe, cinq pastilles portent des années ; la consigne nomme un événement, il faut manger
+//    la pastille de sa date. Une autre année, ou un fantôme : une vie en moins.
+//  - SPACE INVADERS : des cartes-événements descendent sur trois voies, sous l'intitulé d'une période. On tire sur
+//    celles qui n'en font PAS partie (les anachronismes) et on laisse passer les autres.
 
 (function (root, factory) {
     if (typeof module === 'object' && module.exports) module.exports = factory();
@@ -331,11 +335,302 @@
     // Millisecondes entre deux pas de gravité : 700 au départ, 250 au mieux.
     function tetrisInterval(state) { return Math.max(250, 700 - (tetrisLevel(state) - 1) * 60); }
 
+
+    // --- PAC-MAN ---------------------------------------------------------------------------------------
+    // Le labyrinthe : '#' mur, ' ' couloir. Symétrique, sans impasse, de quoi fuir un fantôme.
+    var PAC_MAZE = [
+        '###########',
+        '#         #',
+        '# ## # ## #',
+        '#         #',
+        '# ## # ## #',
+        '#    #    #',
+        '# ## # ## #',
+        '#         #',
+        '# ## # ## #',
+        '#         #',
+        '###########'
+    ];
+    var PAC_SIZE = PAC_MAZE.length;
+    var PAC_START = { x: 5, y: 9 };
+    var PAC_GHOST_STARTS = [{ x: 1, y: 1 }, { x: 9, y: 1 }, { x: 1, y: 5 }];
+    var PAC_PELLETS = 5;
+    var PAC_LIVES = 3;
+
+    function pacOpen(x, y) {
+        return x >= 0 && y >= 0 && x < PAC_SIZE && y < PAC_SIZE && PAC_MAZE[y].charAt(x) === ' ';
+    }
+
+    // Distance (en pas) de chaque case à `from`, par parcours en largeur ; -1 si inaccessible.
+    function pacDistances(from) {
+        var dist = [];
+        for (var y = 0; y < PAC_SIZE; y++) { dist.push([]); for (var x = 0; x < PAC_SIZE; x++) dist[y].push(-1); }
+        var queue = [{ x: from.x, y: from.y }];
+        dist[from.y][from.x] = 0;
+        while (queue.length) {
+            var cur = queue.shift();
+            ['up', 'down', 'left', 'right'].forEach(function (name) {
+                var nx = cur.x + DIRS[name].x, ny = cur.y + DIRS[name].y;
+                if (pacOpen(nx, ny) && dist[ny][nx] < 0) { dist[ny][nx] = dist[cur.y][cur.x] + 1; queue.push({ x: nx, y: ny }); }
+            });
+        }
+        return dist;
+    }
+
+    function pacResetPositions(state) {
+        state.player = { x: PAC_START.x, y: PAC_START.y };
+        state.dir = DIRS.left;
+        state.nextDir = DIRS.left;
+        var count = Math.min(PAC_GHOST_STARTS.length, 1 + state.rounds);
+        state.ghosts = [];
+        for (var i = 0; i < count; i++) state.ghosts.push({ x: PAC_GHOST_STARTS[i].x, y: PAC_GHOST_STARTS[i].y, last: null });
+    }
+
+    // Une manche : cinq événements aux années différentes, posés loin du départ ; la consigne les prend dans le désordre.
+    function pacNewRound(state) {
+        var events = pickDistinct(state.pool, state.rng, PAC_PELLETS);
+        var dist = pacDistances(PAC_START);
+        var cells = [];
+        for (var y = 0; y < PAC_SIZE; y++) {
+            for (var x = 0; x < PAC_SIZE; x++) {
+                var ghostStart = PAC_GHOST_STARTS.some(function (g) { return g.x === x && g.y === y; });
+                if (dist[y][x] >= 3 && !ghostStart) cells.push({ x: x, y: y });
+            }
+        }
+        cells = shuffle(cells, state.rng);
+        state.pellets = events.map(function (event, i) { return { x: cells[i].x, y: cells[i].y, event: event }; });
+        state.targets = shuffle(events, state.rng);
+        state.targetIndex = 0;
+    }
+
+    function createPac(pool, rng) {
+        var state = {
+            pool: playable(pool), rng: rng || Math.random, size: PAC_SIZE, maze: PAC_MAZE,
+            player: null, dir: DIRS.left, nextDir: DIRS.left, ghosts: [], pellets: [], targets: [], targetIndex: 0,
+            lives: PAC_LIVES, score: 0, rounds: 0, tick: 0, over: false, mistakes: []
+        };
+        if (pickDistinct(state.pool, state.rng, PAC_PELLETS).length < PAC_PELLETS) { state.over = true; state.empty = true; return state; }
+        pacResetPositions(state);
+        pacNewRound(state);
+        return state;
+    }
+
+    function pacTurn(state, name) {
+        if (DIRS[name] && !state.over) state.nextDir = DIRS[name];
+    }
+
+    function pacTarget(state) {
+        return state.targets[state.targetIndex] || null;
+    }
+
+    function pacLoseLife(state, why, events) {
+        state.lives -= 1;
+        events.push(why);
+        if (state.lives <= 0) { state.over = true; events.push('over'); }
+    }
+
+    function pacCaught(state) {
+        return state.ghosts.some(function (g) { return g.x === state.player.x && g.y === state.player.y; });
+    }
+
+    function pacMoveGhost(state, ghost, dist) {
+        var options = [];
+        ['up', 'down', 'left', 'right'].forEach(function (name) {
+            var nx = ghost.x + DIRS[name].x, ny = ghost.y + DIRS[name].y;
+            if (pacOpen(nx, ny)) options.push({ x: nx, y: ny });
+        });
+        // Pas de demi-tour, sauf s'il n'y a pas d'autre chemin.
+        var ahead = options.filter(function (o) { return !(ghost.last && o.x === ghost.last.x && o.y === ghost.last.y); });
+        if (ahead.length) options = ahead;
+        var pick;
+        if (state.rng() < 0.75) {
+            pick = options.slice().sort(function (a, b) { return dist[a.y][a.x] - dist[b.y][b.x]; })[0];
+        } else {
+            pick = options[Math.floor(state.rng() * options.length)];
+        }
+        ghost.last = { x: ghost.x, y: ghost.y };
+        ghost.x = pick.x;
+        ghost.y = pick.y;
+    }
+
+    // Un pas de temps. Renvoie : 'ok', 'wrong', 'caught', 'round', 'over'. Les fantômes avancent un pas sur deux.
+    function pacStep(state) {
+        var events = [];
+        if (state.over) return events;
+        state.tick += 1;
+        var p = state.player;
+        if (pacOpen(p.x + state.nextDir.x, p.y + state.nextDir.y)) state.dir = state.nextDir;
+        if (pacOpen(p.x + state.dir.x, p.y + state.dir.y)) { p.x += state.dir.x; p.y += state.dir.y; }
+
+        var pellet = null;
+        state.pellets.forEach(function (it) { if (it.x === p.x && it.y === p.y) pellet = it; });
+        if (pellet) {
+            var target = pacTarget(state);
+            if (pellet.event === target) {
+                state.pellets.splice(state.pellets.indexOf(pellet), 1);
+                state.targetIndex += 1;
+                state.score += 10;
+                events.push('ok');
+                if (state.targetIndex >= state.targets.length) {
+                    state.rounds += 1;
+                    state.score += 100;
+                    events.push('round');
+                    pacResetPositions(state);
+                    pacNewRound(state);
+                }
+            } else {
+                state.mistakes.push({ ate: pellet.event, wanted: target });
+                pacLoseLife(state, 'wrong', events);
+                if (state.over) return events;
+                // Une pastille ratée reste en place : on s'en écarte d'un pas pour ne pas la remanger aussitôt.
+                state.nextDir = DIRS[Object.keys(DIRS).filter(function (k) { return pacOpen(p.x + DIRS[k].x, p.y + DIRS[k].y); })[0]];
+            }
+        }
+        if (pacCaught(state)) {
+            pacLoseLife(state, 'caught', events);
+            if (!state.over) pacResetPositions(state);
+            return events;
+        }
+        if (state.tick % 2 === 0) {
+            var dist = pacDistances(state.player);
+            state.ghosts.forEach(function (g) { pacMoveGhost(state, g, dist); });
+            if (pacCaught(state)) {
+                pacLoseLife(state, 'caught', events);
+                if (!state.over) pacResetPositions(state);
+            }
+        }
+        return events;
+    }
+
+    // Millisecondes entre deux pas : 200 au départ, 120 au mieux.
+    function pacInterval(state) { return Math.max(120, 200 - state.rounds * 12); }
+
+    // --- SPACE INVADERS ----------------------------------------------------------------------------------
+    var INV_LANES = 3;
+    var INV_LIVES = 3;
+    var INV_PER_ROUND = 8;   // quatre cartes de la période, quatre anachronismes
+    var INV_BREACH = 0.88;   // hauteur (0 = haut, 1 = bas) où une carte atteint le sol
+    var INV_COOLDOWN = 0.3;  // secondes entre deux tirs
+
+    function invSpeed(state) { return Math.min(0.22, 0.10 + 0.012 * state.rounds); }
+    function invSpawnEvery(state) { return Math.max(1.2, 2.4 - 0.2 * state.rounds); }
+
+    function invNewRound(state) {
+        var candidates = [];
+        for (var p = 0; p < PERIODS.length; p++) if (p !== state.period) candidates.push(p);
+        var period = candidates[Math.floor(state.rng() * candidates.length)];
+        var inside = state.byPeriod[period];
+        var outside = state.pool.filter(function (e) { return periodOf(e.date) !== period; });
+        var good = pickDistinct(inside, state.rng, INV_PER_ROUND / 2);
+        var used = {};
+        good.forEach(function (e) { used[e.date] = true; });
+        var bad = pickDistinct(outside.filter(function (e) { return !used[e.date]; }), state.rng, INV_PER_ROUND / 2);
+        state.period = period;
+        state.queue = shuffle(good.map(function (e) { return { event: e, good: true }; })
+            .concat(bad.map(function (e) { return { event: e, good: false }; })), state.rng);
+        state.spawnIn = 1;
+    }
+
+    function createInvaders(pool, rng) {
+        var state = {
+            pool: playable(pool), rng: rng || Math.random, lane: 1, cards: [], queue: [], period: -1, byPeriod: [],
+            spawnIn: 1, cooldown: 0, lives: INV_LIVES, score: 0, rounds: 0, over: false, shot: 0, saved: 0, mistakes: []
+        };
+        for (var p = 0; p < PERIODS.length; p++) state.byPeriod.push([]);
+        state.pool.forEach(function (e) { state.byPeriod[periodOf(e.date)].push(e); });
+        // Chaque période doit pouvoir fournir ses quatre cartes, avec de quoi faire les anachronismes.
+        if (state.byPeriod.some(function (list) { return pickDistinct(list, state.rng, INV_PER_ROUND / 2).length < INV_PER_ROUND / 2; })) {
+            state.over = true; state.empty = true; return state;
+        }
+        invNewRound(state);
+        return state;
+    }
+
+    function invMove(state, dx) {
+        if (state.over) return;
+        state.lane = Math.max(0, Math.min(INV_LANES - 1, state.lane + dx));
+    }
+
+    function invMoveTo(state, lane) {
+        if (!state.over) state.lane = Math.max(0, Math.min(INV_LANES - 1, lane));
+    }
+
+    function invLoseLife(state, out) {
+        state.lives -= 1;
+        if (state.lives <= 0) { state.over = true; out.push({ type: 'over' }); }
+    }
+
+    // Tire sur la carte la plus basse de la voie. Renvoie : 'hit' (anachronisme abattu), 'friendly' (carte de la période : une
+    // vie en moins), 'miss' (voie vide). Chaque événement porte la carte touchée.
+    function invFire(state) {
+        var out = [];
+        if (state.over || state.cooldown > 0) return out;
+        state.cooldown = INV_COOLDOWN;
+        var target = null;
+        state.cards.forEach(function (c) { if (c.lane === state.lane && (!target || c.y > target.y)) target = c; });
+        if (!target) { out.push({ type: 'miss' }); return out; }
+        state.cards.splice(state.cards.indexOf(target), 1);
+        if (target.good) {
+            state.mistakes.push(target);
+            out.push({ type: 'friendly', card: target });
+            invLoseLife(state, out);
+        } else {
+            state.score += 10;
+            state.shot += 1;
+            out.push({ type: 'hit', card: target });
+        }
+        return out;
+    }
+
+    // Avance de `dt` secondes : les cartes descendent, de nouvelles arrivent. Renvoie : 'saved' (une carte de la période
+    // atteint le sol : tant mieux), 'breach' (un anachronisme y parvient : une vie en moins), 'round', 'over'.
+    function invStep(state, dt) {
+        var out = [];
+        if (state.over) return out;
+        state.cooldown = Math.max(0, state.cooldown - dt);
+        state.spawnIn -= dt;
+        if (state.spawnIn <= 0 && state.queue.length) {
+            var free = [];
+            for (var l = 0; l < INV_LANES; l++) {
+                if (!state.cards.some(function (c) { return c.lane === l && c.y < 0.3; })) free.push(l);
+            }
+            if (free.length) {
+                var next = state.queue.shift();
+                state.cards.push({ event: next.event, good: next.good, lane: free[Math.floor(state.rng() * free.length)], y: 0.05 });
+                state.spawnIn = invSpawnEvery(state);
+            } else {
+                state.spawnIn = 0.2;
+            }
+        }
+        var speed = invSpeed(state);
+        state.cards.slice().forEach(function (c) {
+            c.y += speed * dt;
+            if (c.y < INV_BREACH) return;
+            state.cards.splice(state.cards.indexOf(c), 1);
+            if (c.good) {
+                state.saved += 1;
+                state.score += 5;
+                out.push({ type: 'saved', card: c });
+            } else {
+                state.mistakes.push(c);
+                out.push({ type: 'breach', card: c });
+                if (!state.over) invLoseLife(state, out);
+            }
+        });
+        if (!state.over && !state.queue.length && !state.cards.length) {
+            state.rounds += 1;
+            state.score += 50;
+            out.push({ type: 'round' });
+            invNewRound(state);
+        }
+        return out;
+    }
+
     // --- Meilleurs scores (propres à l'appareil) --------------------------------------------------------
     function normalizeBest(raw) {
-        var out = { snake: 0, tetris: 0 };
+        var out = { snake: 0, tetris: 0, pacman: 0, invaders: 0 };
         if (raw && typeof raw === 'object') {
-            ['snake', 'tetris'].forEach(function (k) {
+            ['snake', 'tetris', 'pacman', 'invaders'].forEach(function (k) {
                 if (raw[k] > 0) out[k] = Math.floor(raw[k]);
             });
         }
@@ -355,6 +650,10 @@
         createSnake: createSnake, snakeTurn: snakeTurn, snakeStep: snakeStep, snakeInterval: snakeInterval,
         createTetris: createTetris, tetrisMove: tetrisMove, tetrisMoveTo: tetrisMoveTo, tetrisTick: tetrisTick,
         tetrisDrop: tetrisDrop, tetrisLevel: tetrisLevel, tetrisInterval: tetrisInterval,
+        PAC_SIZE: PAC_SIZE, PAC_MAZE: PAC_MAZE, PAC_START: PAC_START, PAC_LIVES: PAC_LIVES, INV_LANES: INV_LANES, INV_BREACH: INV_BREACH,
+        pacOpen: pacOpen, pacDistances: pacDistances, createPac: createPac, pacTurn: pacTurn, pacStep: pacStep, pacTarget: pacTarget,
+        pacInterval: pacInterval,
+        createInvaders: createInvaders, invMove: invMove, invMoveTo: invMoveTo, invFire: invFire, invStep: invStep, invSpeed: invSpeed,
         normalizeBest: normalizeBest, recordBest: recordBest
     };
 }));

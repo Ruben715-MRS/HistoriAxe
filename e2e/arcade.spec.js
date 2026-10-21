@@ -38,7 +38,7 @@ test('Snake : quatre pastilles lettrées, un serpent qui avance, une fin de part
     const x0 = await page.evaluate(() => snakeGame.snake[0].x);
     await expect.poll(() => page.evaluate(() => snakeGame.snake[0].x)).toBeGreaterThan(x0);
     // Tourner : la direction suivante est prise en compte.
-    await page.locator('.arcade-key-down').click();
+    await page.locator('#screen-snake .arcade-key-down').click();
     expect(await page.evaluate(() => snakeGame.nextDir.y)).toBe(1);
     // Fin : on mange dans le désordre jusqu'à la dernière vie.
     await page.evaluate(() => {
@@ -62,7 +62,7 @@ test('Tetris : un bloc bien rangé rapporte 10 points, un mauvais est rouge ; la
     await page.locator('#tetris-start').click();
     await expect(page.locator('#tetris-banner')).toContainText('Dans quelle période');
     await page.evaluate(() => { ArcadeCore.tetrisMoveTo(tetrisGame, ArcadeCore.periodOf(tetrisGame.piece.event.date)); });
-    await page.locator('.arcade-controls .arcade-key-wide').click();
+    await page.locator('#screen-tetris .arcade-key-wide').click();
     await expect(page.locator('#tetris-status')).toContainText('10 pts');
     // Le bouton d'une période y envoie le bloc.
     await page.locator('#tetris-heads .tetris-head').nth(4).click();
@@ -111,4 +111,80 @@ test('Le Tetris est aussi proposé dans la fiche du niveau 5, et aucun mini-jeu 
     await expect(page.locator('#screen-path')).toBeVisible();
     await page.evaluate(() => pathOpenSheet('monde0-2'));
     await expect(page.locator('#path-sheet-game')).toBeHidden();
+});
+
+test('Pac-Man : un labyrinthe, une consigne, un bon et un mauvais bonbon, une partie qui se termine', async ({ page }) => {
+    await page.locator('#btn-arcade').click();
+    await page.locator('.arcade-card', { hasText: 'Pac-Man' }).click();
+    expect(await visibleScreen(page)).toBe('screen-pacman');
+    await page.locator('#pacman-start').click();
+    await expect(page.locator('#pacman-banner')).toContainText('Où est la date de');
+    await expect(page.locator('#pacman-status')).toContainText('♥♥♥');
+    // Pac-Man avance tout seul.
+    const before = await page.evaluate(() => JSON.stringify(pacGame.player));
+    await expect.poll(() => page.evaluate(() => JSON.stringify(pacGame.player))).not.toBe(before);
+    // La bonne pastille : on le place à côté et on le laisse avancer.
+    await page.evaluate(() => {
+        pacmanStop();
+        const g = pacGame;
+        g.ghosts = [];
+        const p = g.pellets.find(it => it.event === ArcadeCore.pacTarget(g));
+        g.player = { x: p.x - 1, y: p.y };
+        if (!ArcadeCore.pacOpen(g.player.x, g.player.y)) g.player = { x: p.x + 1, y: p.y };
+        g.dir = g.nextDir = g.player.x < p.x ? ArcadeCore.DIRS.right : ArcadeCore.DIRS.left;
+        pacmanLoop();
+        pacmanStop();
+    });
+    await expect(page.locator('#pacman-message')).toContainText('Bien vu');
+    // Une mauvaise : un message qui dit de quel événement il s'agit.
+    await page.evaluate(() => {
+        const g = pacGame;
+        const p = g.pellets.find(it => it.event !== ArcadeCore.pacTarget(g));
+        g.ghosts = [];
+        g.player = { x: p.x - 1, y: p.y };
+        if (!ArcadeCore.pacOpen(g.player.x, g.player.y)) g.player = { x: p.x + 1, y: p.y };
+        g.dir = g.nextDir = g.player.x < p.x ? ArcadeCore.DIRS.right : ArcadeCore.DIRS.left;
+        pacmanLoop();
+        pacmanStop();
+    });
+    await expect(page.locator('#pacman-message')).toContainText('Pas celle-là');
+    await page.evaluate(() => { pacGame.lives = 0; pacGame.over = true; pacmanFinish(); });
+    await expect(page.locator('#pacman-over')).toBeVisible();
+    await expect(page.locator('#pacman-over-list li').first()).toContainText('au lieu de');
+});
+
+test('Space Invaders : une période, des cartes qui descendent, un tir sur un anachronisme', async ({ page }) => {
+    await page.locator('#btn-arcade').click();
+    await page.locator('.arcade-card', { hasText: 'Space Invaders' }).click();
+    expect(await visibleScreen(page)).toBe('screen-invaders');
+    await page.locator('#invaders-start').click();
+    await expect(page.locator('#invaders-banner')).toContainText('Période');
+    // Les cartes arrivent d\'elles-mêmes.
+    await expect.poll(() => page.evaluate(() => invGame.cards.length), { timeout: 8000 }).toBeGreaterThan(0);
+    // Un anachronisme dans la voie du vaisseau : le tir le touche et dit pourquoi.
+    await page.evaluate(() => {
+        invadersStop();
+        const g = invGame;
+        const bad = g.queue.find(c => !c.good) || g.cards.find(c => !c.good);
+        g.cards = [{ event: bad.event, good: false, lane: g.lane, y: 0.4 }];
+        g.cooldown = 0;
+    });
+    await page.locator('#screen-invaders .arcade-key-wide').click();
+    await expect(page.locator('#invaders-message')).toContainText('Bien vu');
+    expect(await page.evaluate(() => invGame.score)).toBe(10);
+    // Une carte de la période : un tir de trop coûte une vie.
+    await page.evaluate(() => {
+        const g = invGame;
+        const good = g.queue.find(c => c.good) || { event: g.pool.find(e => ArcadeCore.periodOf(e.date) === g.period) };
+        g.cards = [{ event: good.event, good: true, lane: g.lane, y: 0.4 }];
+        g.cooldown = 0;
+    });
+    await page.locator('#screen-invaders .arcade-key-wide').click();
+    await expect(page.locator('#invaders-message')).toContainText('Raté');
+    expect(await page.evaluate(() => invGame.lives)).toBe(2);
+    // Les boutons ◀ ▶ changent de voie.
+    await page.locator('#screen-invaders .arcade-controls .arcade-key').first().click();
+    expect(await page.evaluate(() => invGame.lane)).toBe(0);
+    await page.evaluate(() => { invGame.lives = 0; invGame.over = true; invadersFinish(); });
+    await expect(page.locator('#invaders-over')).toBeVisible();
 });

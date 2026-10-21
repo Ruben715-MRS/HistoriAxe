@@ -734,6 +734,22 @@
                     <small class="arcade-best" id="arcade-best-tetris"></small>
                 </span>
             </button>
+            <button type="button" class="arcade-card" onclick="openPacman('screen-arcade')">
+                <span class="arcade-card-icon" aria-hidden="true">🟡</span>
+                <span class="arcade-card-text">
+                    <strong data-i18n="pacman.title">Pac-Man de la frise</strong>
+                    <small data-i18n="pacman.desc">Mangez la date de l'événement demandé, fuyez les fantômes.</small>
+                    <small class="arcade-best" id="arcade-best-pacman"></small>
+                </span>
+            </button>
+            <button type="button" class="arcade-card" onclick="openInvaders('screen-arcade')">
+                <span class="arcade-card-icon" aria-hidden="true">👾</span>
+                <span class="arcade-card-text">
+                    <strong data-i18n="invaders.title">Space Invaders des anachronismes</strong>
+                    <small data-i18n="invaders.desc">Abattez les événements qui n'appartiennent pas à la période.</small>
+                    <small class="arcade-best" id="arcade-best-invaders"></small>
+                </span>
+            </button>
         </div>
     </div>
 
@@ -784,6 +800,56 @@
             <p id="tetris-over-text"></p>
             <ul class="arcade-mistakes" id="tetris-over-list"></ul>
             <button type="button" class="btn" onclick="tetrisStart()" data-i18n="arcade.replay">Rejouer</button>
+        </div>
+    </div>
+
+    <!-- ÉCRAN : PAC-MAN DE LA FRISE (js/app/arcade.js) -->
+    <div id="screen-pacman" class="list-screen hidden">
+        <button class="back-btn" onclick="pacmanBack()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" data-i18n="pacman.title">Pac-Man de la frise</h2>
+        <p class="modes-header-subtitle" id="pacman-status" role="status"></p>
+        <p class="tetris-banner" id="pacman-banner" role="status"></p>
+        <div class="arcade-board" id="pacman-board">
+            <canvas id="pacman-canvas" class="arcade-canvas" role="img" aria-label="Labyrinthe du Pac-Man" data-i18n-attr="aria-label:pacman.board_aria"></canvas>
+            <button type="button" class="btn arcade-start" id="pacman-start" onclick="pacmanStart()" data-i18n="arcade.play">Jouer</button>
+        </div>
+        <p class="wheel-feedback hidden arcade-message" id="pacman-message" role="status"></p>
+        <div class="arcade-dpad" role="group" aria-label="Directions" data-i18n-attr="aria-label:snake.dpad_aria">
+            <button type="button" class="arcade-key arcade-key-up" onclick="pacmanTurnTo('up')" aria-label="Haut" data-i18n-attr="aria-label:snake.up">▲</button>
+            <button type="button" class="arcade-key arcade-key-left" onclick="pacmanTurnTo('left')" aria-label="Gauche" data-i18n-attr="aria-label:snake.left">◀</button>
+            <button type="button" class="arcade-key arcade-key-down" onclick="pacmanTurnTo('down')" aria-label="Bas" data-i18n-attr="aria-label:snake.down">▼</button>
+            <button type="button" class="arcade-key arcade-key-right" onclick="pacmanTurnTo('right')" aria-label="Droite" data-i18n-attr="aria-label:snake.right">▶</button>
+        </div>
+        <div class="arcade-over hidden" id="pacman-over">
+            <h3 data-i18n="arcade.over">Partie terminée</h3>
+            <p id="pacman-over-text"></p>
+            <ul class="arcade-mistakes" id="pacman-over-list"></ul>
+            <button type="button" class="btn" onclick="pacmanStart()" data-i18n="arcade.replay">Rejouer</button>
+        </div>
+    </div>
+
+    <!-- ÉCRAN : SPACE INVADERS DES ANACHRONISMES (js/app/arcade.js) -->
+    <div id="screen-invaders" class="list-screen hidden">
+        <button class="back-btn" onclick="invadersBack()" aria-label="Retour" data-i18n-attr="aria-label:nav.back">‹</button>
+        <h2 class="header-title" data-i18n="invaders.title">Space Invaders des anachronismes</h2>
+        <p class="modes-header-subtitle" id="invaders-status" role="status"></p>
+        <p class="tetris-banner" id="invaders-banner" role="status"></p>
+        <div class="arcade-board" id="invaders-board">
+            <canvas id="invaders-canvas" class="arcade-canvas" role="img" aria-label="Plateau des Invaders" data-i18n-attr="aria-label:invaders.board_aria"></canvas>
+            <button type="button" class="btn arcade-start" id="invaders-start" onclick="invadersStart()" data-i18n="arcade.play">Jouer</button>
+        </div>
+        <p class="wheel-feedback hidden arcade-message" id="invaders-message" role="status"></p>
+        <div class="arcade-controls">
+            <button type="button" class="arcade-key" onclick="invadersShift(-1)" aria-label="Voie de gauche" data-i18n-attr="aria-label:invaders.left">◀</button>
+            <button type="button" class="arcade-key arcade-key-wide" onclick="invadersFire()" data-i18n="invaders.fire">💥 Tirer</button>
+            <button type="button" class="arcade-key" onclick="invadersShift(1)" aria-label="Voie de droite" data-i18n-attr="aria-label:invaders.right">▶</button>
+        </div>
+        <p class="wheel-hint" data-i18n="invaders.hint">Touchez une voie pour y placer le vaisseau. Tirez sur les événements HORS de la période ; laissez passer les autres.</p>
+        <div class="arcade-over hidden" id="invaders-over">
+            <h3 data-i18n="arcade.over">Partie terminée</h3>
+            <p id="invaders-over-text"></p>
+            <ul class="arcade-mistakes" id="invaders-over-list"></ul>
+            <button type="button" class="btn" onclick="invadersStart()" data-i18n="arcade.replay">Rejouer</button>
         </div>
     </div>
 

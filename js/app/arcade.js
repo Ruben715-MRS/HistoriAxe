@@ -3,8 +3,9 @@
 // =========================================================================
 // Les règles sont dans js/arcadeCore.js (pur, testé) ; ici, le vivier d'événements tiré du pack chargé, les
 // minuteurs, le dessin sur canvas, les commandes (boutons, clavier, glisser du doigt) et les écrans de fin.
-// Le menu (`#screen-arcade`) s'ouvre depuis l'écran des catégories ; le Tetris est aussi proposé dans la fiche
-// du niveau 5 du Monde 0. Un jeu rend la main à l'écran d'où on l'a ouvert (`snakeReturn`, `tetrisReturn`).
+// Quatre jeux : Snake, Tetris, Pac-Man, Space Invaders. Le menu (`#screen-arcade`) s'ouvre depuis l'écran des
+// catégories ; le Tetris est aussi proposé dans la fiche du niveau 5 du Monde 0. Un jeu rend la main à l'écran
+// d'où on l'a ouvert (`snakeReturn`, `tetrisReturn`…).
 
 const ARCADE_KEY = 'historiaxe_arcade_v1';
 // Les pastilles du Snake : une couleur ET une lettre (on ne se fie jamais à la seule couleur).
@@ -51,11 +52,32 @@ function arcadeShortYear(year) {
     return year < 0 ? '−' + Math.abs(year) : String(year);
 }
 
+// Le glisser du doigt sur un plateau : appelle `onDir('up'|'down'|'left'|'right')`. Le CSS ne pose pas
+// `touch-action: none` (une règle de tests/a11y.test.js l'interdit : il empêcherait aussi le pincement) : on
+// retient le défilement de la page seulement pendant un glissement sur le plateau, par écouteur non passif.
+function arcadeBindSwipe(el, onDir) {
+    let start = null;
+    el.addEventListener('touchstart', e => {
+        const t0 = e.changedTouches[0];
+        start = { x: t0.clientX, y: t0.clientY };
+    }, { passive: true });
+    el.addEventListener('touchmove', e => {
+        if (!start) return;
+        e.preventDefault();
+        const t0 = e.changedTouches[0];
+        const dx = t0.clientX - start.x, dy = t0.clientY - start.y;
+        if (Math.max(Math.abs(dx), Math.abs(dy)) < 24) return;
+        onDir(Math.abs(dx) > Math.abs(dy) ? (dx > 0 ? 'right' : 'left') : (dy > 0 ? 'down' : 'up'));
+        start = { x: t0.clientX, y: t0.clientY };
+    }, { passive: false });
+    el.addEventListener('touchend', () => { start = null; }, { passive: true });
+}
+
 // --- Le menu ------------------------------------------------------------------------------------------
 function openArcade() {
     showScreen('screen-arcade', 'forward');
     const best = arcadeBest();
-    ['snake', 'tetris'].forEach(game => {
+    ['snake', 'tetris', 'pacman', 'invaders'].forEach(game => {
         document.getElementById('arcade-best-' + game).textContent = best[game] > 0
             ? t('arcade.best', { score: best[game] }) : t('arcade.no_best');
     });
@@ -98,7 +120,6 @@ function arcadeSound(kind) {
 let snakeGame = null;
 let snakeTimer = 0;
 let snakeReturn = 'screen-arcade';
-let snakeTouch = null;
 
 function openSnake(fromScreen) {
     snakeReturn = fromScreen || 'screen-arcade';
@@ -239,9 +260,7 @@ function snakeFinish() {
     document.getElementById('snake-start').classList.add('hidden');
 }
 
-// Les commandes : flèches (et WASD) au clavier, glisser du doigt sur le plateau. Le CSS ne pose pas
-// `touch-action: none` (une règle de tests/a11y.test.js l'interdit : il empêcherait aussi le pincement) : on
-// retient le défilement de la page seulement pendant un glissement sur le plateau, par écouteur non passif.
+// Les commandes : flèches (et WASD) au clavier, glisser du doigt sur le plateau (arcadeBindSwipe).
 let snakeInputBound = false;
 function snakeBindInput() {
     if (snakeInputBound) return;
@@ -254,21 +273,7 @@ function snakeBindInput() {
         e.preventDefault();
         snakeTurnTo(dir);
     });
-    const board = document.getElementById('snake-canvas');
-    board.addEventListener('touchstart', e => {
-        const t0 = e.changedTouches[0];
-        snakeTouch = { x: t0.clientX, y: t0.clientY };
-    }, { passive: true });
-    board.addEventListener('touchmove', e => {
-        if (!snakeTouch || !snakeGame) return;
-        e.preventDefault();
-        const t0 = e.changedTouches[0];
-        const dx = t0.clientX - snakeTouch.x, dy = t0.clientY - snakeTouch.y;
-        if (Math.max(Math.abs(dx), Math.abs(dy)) < 24) return;
-        snakeTurnTo(Math.abs(dx) > Math.abs(dy) ? (dx > 0 ? 'right' : 'left') : (dy > 0 ? 'down' : 'up'));
-        snakeTouch = { x: t0.clientX, y: t0.clientY };
-    }, { passive: false });
-    board.addEventListener('touchend', () => { snakeTouch = null; }, { passive: true });
+    arcadeBindSwipe(document.getElementById('snake-canvas'), snakeTurnTo);
 }
 
 // =====================================================================================================
@@ -440,5 +445,375 @@ function tetrisBindInput() {
     document.getElementById('tetris-canvas').addEventListener('click', e => {
         const rect = e.currentTarget.getBoundingClientRect();
         tetrisGoTo(Math.max(0, Math.min(ArcadeCore.TETRIS_COLS - 1, Math.floor((e.clientX - rect.left) / rect.width * ArcadeCore.TETRIS_COLS))));
+    });
+}
+
+// =====================================================================================================
+// === PAC-MAN DE LA FRISE ===
+// =====================================================================================================
+const PAC_GHOST_COLORS = ['#ef4444', '#f472b6', '#22d3ee'];
+let pacGame = null;
+let pacTimer = 0;
+let pacReturn = 'screen-arcade';
+let pacInputBound = false;
+
+function arcadeMessage(id, text, wrong) {
+    const box = document.getElementById(id);
+    box.textContent = text;
+    box.classList.toggle('is-wrong', !!wrong);
+    box.classList.toggle('hidden', !text);
+}
+
+function openPacman(fromScreen) {
+    pacReturn = fromScreen || 'screen-arcade';
+    pacmanStop();
+    pacGame = null;
+    showScreen('screen-pacman', 'forward');
+    document.getElementById('pacman-over').classList.add('hidden');
+    document.getElementById('pacman-start').classList.remove('hidden');
+    document.getElementById('pacman-banner').textContent = '';
+    document.getElementById('pacman-status').textContent = '';
+    arcadeMessage('pacman-message', '');
+    pacmanBindInput();
+    pacmanDraw();
+}
+
+function pacmanBack() {
+    pacmanStop();
+    showScreen(pacReturn, 'back');
+    if (pacReturn === 'screen-arcade') openArcade();
+}
+
+function pacmanStop() {
+    clearTimeout(pacTimer);
+    pacTimer = 0;
+}
+
+function pacmanStart() {
+    const game = ArcadeCore.createPac(arcadePool());
+    if (game.empty) { alert(t('arcade.empty')); return; }
+    pacmanStop();
+    pacGame = game;
+    document.getElementById('pacman-start').classList.add('hidden');
+    document.getElementById('pacman-over').classList.add('hidden');
+    arcadeMessage('pacman-message', '');
+    pacmanRender();
+    pacTimer = setTimeout(pacmanLoop, ArcadeCore.pacInterval(game));
+}
+
+function pacmanLoop() {
+    pacTimer = 0;
+    if (!pacGame || !arcadeScreenVisible('screen-pacman')) return;
+    if (!document.hidden) {
+        const target = ArcadeCore.pacTarget(pacGame);
+        const events = ArcadeCore.pacStep(pacGame);
+        if (events.includes('ok')) {
+            arcadeSound('good');
+            arcadeMessage('pacman-message', t('pacman.ok', { year: formatYear(target.date), title: target.title }), false);
+        }
+        if (events.includes('wrong')) {
+            const m = pacGame.mistakes[pacGame.mistakes.length - 1];
+            arcadeSound('bad');
+            arcadeMessage('pacman-message', t('pacman.wrong', { year: formatYear(m.ate.date), title: m.ate.title, wanted: m.wanted.title }), true);
+        }
+        if (events.includes('caught')) {
+            arcadeSound('bad');
+            arcadeMessage('pacman-message', t('pacman.caught'), true);
+        }
+        pacmanRender();
+        if (pacGame.over) { pacmanFinish(); return; }
+    }
+    pacTimer = setTimeout(pacmanLoop, ArcadeCore.pacInterval(pacGame));
+}
+
+function pacmanTurnTo(name) {
+    if (pacGame) ArcadeCore.pacTurn(pacGame, name);
+}
+
+function pacmanRender() {
+    const g = pacGame;
+    document.getElementById('pacman-status').textContent = t('pacman.status', {
+        round: g.rounds + 1, lives: '♥'.repeat(Math.max(0, g.lives)), score: g.score
+    });
+    const target = ArcadeCore.pacTarget(g);
+    document.getElementById('pacman-banner').textContent = target ? t('pacman.banner', { title: target.title }) : '';
+    pacmanDraw();
+}
+
+function pacmanDraw() {
+    const canvas = document.getElementById('pacman-canvas');
+    const n = ArcadeCore.PAC_SIZE;
+    const { ctx, width, cellW } = arcadeFitCanvas(canvas, n, n, 1);
+    ctx.fillStyle = ARCADE_BOARD_BG;
+    ctx.fillRect(0, 0, width, width);
+    ctx.fillStyle = '#1e3a8a';
+    for (let y = 0; y < n; y++) {
+        for (let x = 0; x < n; x++) {
+            if (!ArcadeCore.pacOpen(x, y)) ctx.fillRect(x * cellW + 1, y * cellW + 1, cellW - 2, cellW - 2);
+        }
+    }
+    const g = pacGame;
+    if (!g) return;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    g.pellets.forEach(p => {
+        const cx = (p.x + 0.5) * cellW, cy = (p.y + 0.5) * cellW;
+        ctx.fillStyle = '#fbbf24';
+        ctx.beginPath(); ctx.arc(cx, cy, cellW * 0.47, 0, Math.PI * 2); ctx.fill();
+        ctx.fillStyle = '#1f2937';
+        const year = arcadeShortYear(p.event.date);
+        ctx.font = '700 ' + Math.round(cellW * (year.length > 4 ? 0.27 : 0.32)) + 'px sans-serif';
+        ctx.fillText(year, cx, cy + 1);
+    });
+    // Pac-Man : un disque jaune, la bouche tournée vers sa direction et qui s'ouvre un pas sur deux.
+    const px = (g.player.x + 0.5) * cellW, py = (g.player.y + 0.5) * cellW;
+    const facing = Math.atan2(g.dir.y, g.dir.x);
+    const mouth = g.tick % 2 ? 0.1 : 0.45;
+    ctx.fillStyle = '#facc15';
+    ctx.beginPath();
+    ctx.moveTo(px, py);
+    ctx.arc(px, py, cellW * 0.42, facing + mouth, facing + Math.PI * 2 - mouth);
+    ctx.closePath();
+    ctx.fill();
+    g.ghosts.forEach((ghost, i) => {
+        const gx = (ghost.x + 0.5) * cellW, gy = (ghost.y + 0.5) * cellW, r = cellW * 0.4;
+        ctx.fillStyle = PAC_GHOST_COLORS[i % PAC_GHOST_COLORS.length];
+        ctx.beginPath();
+        ctx.arc(gx, gy - r * 0.1, r, Math.PI, 0);
+        ctx.lineTo(gx + r, gy + r);
+        ctx.lineTo(gx - r, gy + r);
+        ctx.closePath();
+        ctx.fill();
+        ctx.fillStyle = '#fff';
+        ctx.beginPath(); ctx.arc(gx - r * 0.35, gy - r * 0.2, r * 0.22, 0, Math.PI * 2); ctx.arc(gx + r * 0.35, gy - r * 0.2, r * 0.22, 0, Math.PI * 2); ctx.fill();
+    });
+}
+
+function pacmanFinish() {
+    pacmanStop();
+    const g = pacGame;
+    const best = arcadeRecord('pacman', g.score);
+    document.getElementById('pacman-over-text').textContent =
+        t('pacman.over_text', { rounds: g.rounds, score: g.score }) + ' ' + t('arcade.best', { score: best.pacman });
+    const list = document.getElementById('pacman-over-list');
+    list.innerHTML = '';
+    g.mistakes.slice(0, 5).forEach(m => {
+        const li = document.createElement('li');
+        li.textContent = t('pacman.mistake', {
+            year: formatYear(m.ate.date), ate: m.ate.title, wanted: m.wanted.title, wanted_year: formatYear(m.wanted.date)
+        });
+        list.appendChild(li);
+    });
+    document.getElementById('pacman-over').classList.remove('hidden');
+    document.getElementById('pacman-start').classList.add('hidden');
+}
+
+function pacmanBindInput() {
+    if (pacInputBound) return;
+    pacInputBound = true;
+    const KEYS = { ArrowUp: 'up', ArrowDown: 'down', ArrowLeft: 'left', ArrowRight: 'right', w: 'up', s: 'down', a: 'left', d: 'right' };
+    document.addEventListener('keydown', e => {
+        if (!arcadeScreenVisible('screen-pacman') || !pacGame || pacGame.over) return;
+        const dir = KEYS[e.key];
+        if (!dir) return;
+        e.preventDefault();
+        pacmanTurnTo(dir);
+    });
+    arcadeBindSwipe(document.getElementById('pacman-canvas'), pacmanTurnTo);
+}
+
+// =====================================================================================================
+// === SPACE INVADERS DES ANACHRONISMES ===
+// =====================================================================================================
+const INVADERS_TICK_MS = 50;
+const INVADERS_CARD_H = 0.13;
+let invGame = null;
+let invTimer = 0;
+let invLast = 0;
+let invReturn = 'screen-arcade';
+let invInputBound = false;
+let invFx = null; // { lane, until } : le trait du tir
+
+function openInvaders(fromScreen) {
+    invReturn = fromScreen || 'screen-arcade';
+    invadersStop();
+    invGame = null;
+    showScreen('screen-invaders', 'forward');
+    document.getElementById('invaders-over').classList.add('hidden');
+    document.getElementById('invaders-start').classList.remove('hidden');
+    document.getElementById('invaders-banner').textContent = '';
+    document.getElementById('invaders-status').textContent = '';
+    arcadeMessage('invaders-message', '');
+    invadersBindInput();
+    invadersDraw();
+}
+
+function invadersBack() {
+    invadersStop();
+    showScreen(invReturn, 'back');
+    if (invReturn === 'screen-arcade') openArcade();
+}
+
+function invadersStop() {
+    clearTimeout(invTimer);
+    invTimer = 0;
+}
+
+function invadersStart() {
+    const game = ArcadeCore.createInvaders(arcadePool());
+    if (game.empty) { alert(t('arcade.empty')); return; }
+    invadersStop();
+    invGame = game;
+    invFx = null;
+    document.getElementById('invaders-start').classList.add('hidden');
+    document.getElementById('invaders-over').classList.add('hidden');
+    arcadeMessage('invaders-message', '');
+    invadersRender();
+    invLast = performance.now();
+    invTimer = setTimeout(invadersLoop, INVADERS_TICK_MS);
+}
+
+function invadersLoop() {
+    invTimer = 0;
+    if (!invGame || !arcadeScreenVisible('screen-invaders')) return;
+    const now = performance.now();
+    // Un onglet resté caché ne doit pas faire tomber les cartes d'un coup au retour : on borne le pas de temps.
+    const dt = document.hidden ? 0 : Math.min(0.1, (now - invLast) / 1000);
+    invLast = now;
+    if (dt > 0) invadersAfter(ArcadeCore.invStep(invGame, dt));
+    else invadersDraw();
+    if (invGame.over) return;
+    invTimer = setTimeout(invadersLoop, INVADERS_TICK_MS);
+}
+
+function invadersPeriodName(event) {
+    return ArcadeCore.PERIODS[ArcadeCore.periodOf(event.date)].name;
+}
+
+// Ce qui vient d'arriver, dit en une phrase : on apprend de chaque tir comme de chaque carte laissée.
+function invadersAfter(events) {
+    events.forEach(ev => {
+        const c = ev.card;
+        const base = c ? { title: c.event.title, year: formatYear(c.event.date), actual: invadersPeriodName(c.event), period: ArcadeCore.PERIODS[invGame.period].name } : null;
+        if (ev.type === 'hit') { arcadeSound('good'); arcadeMessage('invaders-message', t('invaders.hit', base), false); }
+        else if (ev.type === 'saved') arcadeMessage('invaders-message', t('invaders.saved', base), false);
+        else if (ev.type === 'friendly') { arcadeSound('bad'); arcadeMessage('invaders-message', t('invaders.friendly', base), true); }
+        else if (ev.type === 'breach') { arcadeSound('bad'); arcadeMessage('invaders-message', t('invaders.breach', base), true); }
+        else if (ev.type === 'round') { arcadeSound('good'); arcadeMessage('invaders-message', t('invaders.round'), false); }
+    });
+    invadersRender();
+    if (invGame.over) invadersFinish();
+}
+
+function invadersFire() {
+    if (!invGame || invGame.over) return;
+    const lane = invGame.lane;
+    const events = ArcadeCore.invFire(invGame);
+    if (events.length) invFx = { lane, until: performance.now() + 120 };
+    invadersAfter(events);
+}
+
+function invadersShift(dx) {
+    if (invGame && !invGame.over) { ArcadeCore.invMove(invGame, dx); invadersDraw(); }
+}
+
+function invadersRender() {
+    const g = invGame;
+    document.getElementById('invaders-status').textContent = t('invaders.status', {
+        round: g.rounds + 1, lives: '♥'.repeat(Math.max(0, g.lives)), score: g.score
+    });
+    const period = ArcadeCore.PERIODS[g.period];
+    // Le nom de la période, avec ses bornes sauf quand le nom les donne déjà (« 1789-1914 »).
+    const label = /\d/.test(period.name) ? period.name : period.name + ' (' + period.range + ')';
+    document.getElementById('invaders-banner').textContent = t('invaders.banner', { period: label });
+    invadersDraw();
+}
+
+// Le titre d'une carte, coupé en lignes qui tiennent dans `maxWidth` (trois au plus, avec « … »).
+function invadersWrap(ctx, text, maxWidth) {
+    const lines = [];
+    let line = '';
+    text.split(' ').forEach(word => {
+        const test = line ? line + ' ' + word : word;
+        if (ctx.measureText(test).width <= maxWidth || !line) line = test;
+        else { lines.push(line); line = word; }
+    });
+    if (line) lines.push(line);
+    if (lines.length > 3) { lines.length = 3; lines[2] = lines[2].replace(/\s*\S*$/, '') + '…'; }
+    return lines;
+}
+
+function invadersDraw() {
+    const canvas = document.getElementById('invaders-canvas');
+    const lanes = ArcadeCore.INV_LANES;
+    const { ctx, width, height, cellW } = arcadeFitCanvas(canvas, lanes, 1, 1.25 * lanes);
+    ctx.fillStyle = ARCADE_BOARD_BG;
+    ctx.fillRect(0, 0, width, height);
+    ctx.strokeStyle = 'rgba(255,255,255,0.08)';
+    ctx.lineWidth = 1;
+    for (let l = 1; l < lanes; l++) { ctx.beginPath(); ctx.moveTo(l * cellW, 0); ctx.lineTo(l * cellW, height); ctx.stroke(); }
+    // La ligne à ne pas laisser franchir.
+    ctx.strokeStyle = 'rgba(239,68,68,0.7)';
+    ctx.setLineDash([6, 6]);
+    ctx.beginPath(); ctx.moveTo(0, ArcadeCore.INV_BREACH * height); ctx.lineTo(width, ArcadeCore.INV_BREACH * height); ctx.stroke();
+    ctx.setLineDash([]);
+    const g = invGame;
+    if (!g) return;
+    const h = INVADERS_CARD_H * height;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.font = '600 11px sans-serif';
+    g.cards.forEach(c => {
+        const x = c.lane * cellW + 6, w = cellW - 12, top = c.y * height - h / 2;
+        ctx.fillStyle = '#1d4ed8';
+        if (ctx.roundRect) { ctx.beginPath(); ctx.roundRect(x, top, w, h, 8); ctx.fill(); } else ctx.fillRect(x, top, w, h);
+        ctx.fillStyle = '#fff';
+        const lines = invadersWrap(ctx, c.event.title, w - 10);
+        lines.forEach((line, i) => ctx.fillText(line, x + w / 2, top + h / 2 + (i - (lines.length - 1) / 2) * 13));
+    });
+    // Le trait du tir, puis le vaisseau.
+    if (invFx && performance.now() < invFx.until) {
+        ctx.strokeStyle = '#fde047';
+        ctx.lineWidth = 3;
+        ctx.beginPath(); ctx.moveTo((invFx.lane + 0.5) * cellW, height - 24); ctx.lineTo((invFx.lane + 0.5) * cellW, 0); ctx.stroke();
+    }
+    const sx = (g.lane + 0.5) * cellW, sy = height - 8;
+    ctx.fillStyle = '#fbbf24';
+    ctx.beginPath(); ctx.moveTo(sx, sy - 22); ctx.lineTo(sx + 18, sy); ctx.lineTo(sx - 18, sy); ctx.closePath(); ctx.fill();
+}
+
+function invadersFinish() {
+    invadersStop();
+    const g = invGame;
+    const best = arcadeRecord('invaders', g.score);
+    document.getElementById('invaders-over-text').textContent =
+        t('invaders.over_text', { shot: g.shot, rounds: g.rounds, score: g.score }) + ' ' + t('arcade.best', { score: best.invaders });
+    const list = document.getElementById('invaders-over-list');
+    list.innerHTML = '';
+    g.mistakes.slice(0, 5).forEach(c => {
+        const li = document.createElement('li');
+        li.textContent = t('invaders.mistake', { title: c.event.title, year: formatYear(c.event.date), actual: invadersPeriodName(c.event) });
+        list.appendChild(li);
+    });
+    document.getElementById('invaders-over').classList.remove('hidden');
+    document.getElementById('invaders-start').classList.add('hidden');
+    invadersDraw();
+}
+
+function invadersBindInput() {
+    if (invInputBound) return;
+    invInputBound = true;
+    document.addEventListener('keydown', e => {
+        if (!arcadeScreenVisible('screen-invaders') || !invGame || invGame.over) return;
+        if (e.key === 'ArrowLeft') { e.preventDefault(); invadersShift(-1); }
+        else if (e.key === 'ArrowRight') { e.preventDefault(); invadersShift(1); }
+        else if (e.key === ' ' || e.key === 'ArrowUp') { e.preventDefault(); invadersFire(); }
+    });
+    // Un tap sur une voie y place le vaisseau.
+    document.getElementById('invaders-canvas').addEventListener('click', e => {
+        if (!invGame || invGame.over) return;
+        const rect = e.currentTarget.getBoundingClientRect();
+        ArcadeCore.invMoveTo(invGame, Math.floor((e.clientX - rect.left) / rect.width * ArcadeCore.INV_LANES));
+        invadersDraw();
     });
 }

@@ -88,6 +88,8 @@ test('l\'interface des trois jeux a ses textes dans ui/fr.json', () => {
         arcade: ['title', 'subtitle', 'card_kicker', 'best', 'no_best', 'play', 'replay', 'over', 'empty'],
         snake: ['title', 'desc', 'entry', 'rule', 'status', 'over_text', 'mistake'],
         tetris: ['title', 'desc', 'entry', 'status', 'banner', 'over_text', 'mistake'],
+        pacman: ['title', 'desc', 'status', 'banner', 'wrong', 'ok', 'caught', 'over_text', 'mistake'],
+        invaders: ['title', 'desc', 'fire', 'hint', 'status', 'banner', 'hit', 'friendly', 'breach', 'saved', 'round', 'over_text', 'mistake'],
         eras: ['title', 'entry', 'status', 'question', 'right', 'wrong', 'answer_right', 'answer_wrong', 'next', 'finish', 'done']
     };
     Object.keys(need).forEach((group) => need[group].forEach((k) => assert.ok(uiFr[group] && uiFr[group][k], `${group}.${k}`)));
@@ -100,5 +102,5 @@ test('les jeux sont branchés : scripts dans index.html et dans le service worke
         assert.ok(html.includes(`<script src="${f}">`), f + ' dans index.html');
         assert.ok(sw.includes(`'./${f}'`), f + ' dans sw.js');
     });
-    ['screen-arcade', 'screen-snake', 'screen-tetris', 'screen-eras', 'path-sheet-game'].forEach((id) => assert.ok(html.includes(`id="${id}"`), id));
+    ['screen-arcade', 'screen-snake', 'screen-tetris', 'screen-pacman', 'screen-invaders', 'screen-eras', 'path-sheet-game'].forEach((id) => assert.ok(html.includes(`id="${id}"`), id));
 });
