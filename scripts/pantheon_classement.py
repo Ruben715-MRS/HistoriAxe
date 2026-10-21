@@ -157,6 +157,8 @@ KEEP_AS_WRITTEN = {
     'Tamar de Géorgie', 'Kétévan la Martyre', 'Grégoire de Narek', 'Mékhitar de Sébaste', 'Mesrop Machtots',
     # Océan Indien occidental : noms malgaches d'un seul mot ou d'artiste, rangés tels qu'écrits.
     'Rakoto Frah',
+    # Caraïbe non hispanique : une héroïne marronne connue par son prénom, un nom de scène.
+    'Nanny des Marrons', 'Mighty Sparrow',
 }
 
 # Écrits à la main : (nom de la source) → nom de classement.

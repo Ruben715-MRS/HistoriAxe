@@ -1,0 +1,1278 @@
+{
+  "code": "caraibes",
+  "nom": "Caraïbe non hispanique",
+  "pays": [
+    "HT",
+    "JM",
+    "TT",
+    "BB",
+    "BS",
+    "AG",
+    "DM",
+    "LC",
+    "VC",
+    "GD",
+    "BZ",
+    "GY",
+    "SR"
+  ],
+  "theme": {
+    "id": "pan_caraibes",
+    "nom": "Grandes figures de la Caraïbe non hispanique",
+    "difficulte": "Intermédiaire",
+    "motsCles": [
+      "Caraïbe",
+      "Caraïbes",
+      "Antilles",
+      "Antilles britanniques",
+      "Indes occidentales",
+      "West Indies",
+      "Caribéen",
+      "CARICOM",
+      "Fédération des Indes occidentales",
+      "Haïti",
+      "Haïtien",
+      "Saint-Domingue",
+      "Révolution haïtienne",
+      "Jamaïque",
+      "Jamaïcain",
+      "Marrons",
+      "Rastafari",
+      "Reggae",
+      "Calypso",
+      "Trinité-et-Tobago",
+      "Trinidad",
+      "Barbade",
+      "Bahamas",
+      "Antigua-et-Barbuda",
+      "Dominique",
+      "Sainte-Lucie",
+      "Saint-Vincent-et-les-Grenadines",
+      "Garifuna",
+      "Grenade",
+      "Belize",
+      "Honduras britannique",
+      "Guyana",
+      "Guyane britannique",
+      "Suriname",
+      "Surinam",
+      "Kingston",
+      "Port-au-Prince",
+      "Port-d'Espagne",
+      "Bridgetown",
+      "Nassau",
+      "Georgetown",
+      "Paramaribo",
+      "Créole",
+      "Plantation",
+      "Esclavage",
+      "Indépendance"
+    ]
+  },
+  "axes": [
+    "Chefs d'État et dirigeants",
+    "Guerres et résistances",
+    "Littérature et pensée",
+    "Beaux-arts",
+    "Musique, spectacle et sport",
+    "Sciences, techniques et innovation"
+  ],
+  "personnages": [
+    {
+      "slug": "toussaint",
+      "nom": "Toussaint Louverture",
+      "classement": "Louverture, Toussaint",
+      "titre": "Naissance de Toussaint Louverture",
+      "axe": "Guerres et résistances",
+      "naissance": 1743,
+      "description": "Toussaint Louverture (vers 1743-1803) est un ancien esclave affranchi devenu général et chef de la révolution haïtienne, né près du Cap-Français, à Saint-Domingue. Il prend la tête des insurgés, chasse Espagnols et Britanniques, rétablit l'ordre dans la colonie et promulgue en 1801 une constitution qui le fait gouverneur à vie. Arrêté par l'expédition que Bonaparte envoie rétablir l'esclavage, il meurt en captivité au fort de Joux, dans le Doubs, en avril 1803.",
+      "wikipedia": "Toussaint Louverture",
+      "pays": "HT",
+      "essentiel": true,
+      "biographie": "bio_toussaint",
+      "portrait": {
+        "fichier": "Général Toussaint Louverture.jpg",
+        "legende": "À écrire",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
+      }
+    },
+    {
+      "slug": "dessalines",
+      "nom": "Jean-Jacques Dessalines",
+      "classement": "Dessalines, Jean-Jacques",
+      "titre": "Naissance de Jean-Jacques Dessalines",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1758,
+      "description": "Jean-Jacques Dessalines (1758-1806) est un ancien esclave devenu général et premier chef de l'État haïtien, né sur une habitation de Grande-Rivière-du-Nord, à Saint-Domingue. Lieutenant de Toussaint Louverture, il se retourne contre l'expédition Leclerc, mène l'armée indigène à la victoire de Vertières en 1803 et proclame l'indépendance d'Haïti le 1er janvier 1804. Empereur sous le nom de Jacques Ier à partir d'octobre 1804, il est assassiné à Pont-Rouge le 17 octobre 1806.",
+      "wikipedia": "Jean-Jacques Dessalines",
+      "pays": "HT",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Jean Jacques Dessalines.jpg",
+        "legende": "À écrire",
+        "licence": "Domaine public",
+        "auteur": "Louis Rigaud"
+      }
+    },
+    {
+      "slug": "christophe",
+      "nom": "Henri Christophe",
+      "classement": "Christophe, Henri",
+      "titre": "Naissance d'Henri Christophe",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1767,
+      "description": "Henri Christophe (1767-1820) est un général de la révolution haïtienne, né dans l'île de Grenade, devenu en 1811 roi d'Haïti sous le nom d'Henri Ier. Maître du nord du pays après la mort de Dessalines, il y fait bâtir le palais de Sans-Souci et la citadelle Laferrière, et y organise une noblesse et des écoles. Frappé de paralysie et abandonné par ses troupes, il se donne la mort à Cap-Haïtien le 8 octobre 1820.",
+      "wikipedia": "Henri Christophe",
+      "pays": "HT",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Henri Christophe.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "petion",
+      "nom": "Alexandre Pétion",
+      "classement": "Pétion, Alexandre",
+      "titre": "Naissance d'Alexandre Pétion",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1770,
+      "description": "Alexandre Pétion (1770-1818) est un général de la révolution haïtienne, né à Port-au-Prince d'un riche colon français et d'une mère mulâtresse, et premier président de la République d'Haïti à partir de 1807. Maître du sud du pays face au royaume de Christophe, il distribue des terres à ses soldats et à de petits paysans. Il accueille Simón Bolívar en exil en 1815 et l'aide à reprendre la lutte pour l'indépendance de l'Amérique du Sud, à condition qu'il abolisse l'esclavage.",
+      "wikipedia": "Alexandre Pétion",
+      "pays": "HT",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Portrait du président Alexandre Pétion.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "boyer",
+      "nom": "Jean-Pierre Boyer",
+      "classement": "Boyer, Jean-Pierre",
+      "titre": "Naissance de Jean-Pierre Boyer",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1776,
+      "description": "Jean-Pierre Boyer (1776-1850) est un général né à Port-au-Prince, successeur de Pétion à la présidence de la République d'Haïti de 1818 à 1843. Il réunit en 1820 le nord et le sud du pays, puis occupe en 1822 la partie orientale de l'île, qui reste haïtienne jusqu'en 1844. Il accepte en 1825 de payer à la France une indemnité de cent cinquante millions de francs en échange de la reconnaissance de l'indépendance, dette qui pèsera sur Haïti pendant plus d'un siècle.",
+      "wikipedia": "Jean-Pierre Boyer",
+      "pays": "HT",
+      "portrait": {
+        "fichier": "President Jean-Pierre Boyer of Haiti (Hispaniola Unification Regime) Portrait.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "soulouque",
+      "nom": "Faustin Soulouque",
+      "classement": "Soulouque, Faustin",
+      "titre": "Naissance de Faustin Soulouque",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1782,
+      "description": "Faustin Soulouque (1782-1867) est un général haïtien, né à Petit-Goâve, élu président à vie en 1847 puis proclamé empereur sous le nom de Faustin Ier en 1849. Il écarte l'élite mulâtre de l'armée, institue une noblesse et échoue à reconquérir la partie orientale de l'île, devenue la République dominicaine. Renversé en 1859, il meurt dans sa ville natale en 1867.",
+      "wikipedia": "Faustin Soulouque",
+      "pays": "HT",
+      "portrait": {
+        "fichier": "Faustin Soulouque.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "capois",
+      "nom": "François Capois",
+      "classement": "Capois, François",
+      "titre": "Naissance de François Capois",
+      "axe": "Guerres et résistances",
+      "naissance": 1766,
+      "description": "François Capois (1766-1806) est un officier de l'armée indigène haïtienne, surnommé Capois-la-Mort, fils d'esclave, né à Chansolme, près de Port-de-Paix. Rallié en 1793 à la résistance contre l'esclavage, il s'illustre à la bataille de Vertières, le 18 novembre 1803, où sa charge sous le feu des canons français devient légendaire. Il est assassiné près de Limonade en octobre 1806, sur l'ordre d'Henri Christophe.",
+      "wikipedia": "François Capois",
+      "pays": "HT",
+      "portrait": {
+        "fichier": "François Capois dit Capois-la-Mort.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "peralte",
+      "nom": "Charlemagne Péralte",
+      "classement": "Péralte, Charlemagne",
+      "titre": "Naissance de Charlemagne Péralte",
+      "axe": "Guerres et résistances",
+      "naissance": 1885,
+      "description": "Charlemagne Péralte (1885-1919) est un officier haïtien, né à Hinche dans une famille aisée, devenu chef des Cacos qui combattent l'occupation américaine d'Haïti, commencée en 1915. Après avoir refusé de déposer les armes et le drapeau à Léogâne, il perd sa charge et lève un maquis dans le nord et le centre du pays. Il est capturé et exécuté par l'armée américaine près de Grande-Rivière-du-Nord en 1919.",
+      "wikipedia": "Charlemagne Péralte",
+      "pays": "HT",
+      "portrait": {
+        "fichier": "Charlemagne Péralte.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "firmin",
+      "nom": "Anténor Firmin",
+      "classement": "Firmin, Anténor",
+      "titre": "Naissance d'Anténor Firmin",
+      "axe": "Littérature et pensée",
+      "naissance": 1850,
+      "description": "Anténor Firmin (1850-1911) est un anthropologue et homme politique haïtien, né au Cap-Haïtien. Dans « De l'égalité des races humaines » (1885), il réfute les thèses racistes d'Arthur de Gobineau, ce qui fait de lui un précurseur de l'anthropologie moderne. Opposé à l'impérialisme américain, il meurt en exil à Saint-Thomas.",
+      "wikipedia": "Joseph Anténor Firmin",
+      "pays": "HT",
+      "portrait": {
+        "fichier": "Antenor Firmin.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "pricemars",
+      "nom": "Jean Price-Mars",
+      "classement": "Price-Mars, Jean",
+      "titre": "Naissance de Jean Price-Mars",
+      "axe": "Littérature et pensée",
+      "naissance": 1876,
+      "description": "Jean Price-Mars (1876-1969) est un médecin, ethnologue et homme d'État haïtien, né à Grande-Rivière-du-Nord. Son livre « Ainsi parla l'oncle » (1928), qui réhabilite le folklore et les croyances du peuple haïtien, lance le mouvement indigéniste. Diplomate et professeur, il meurt à Pétion-Ville en 1969.",
+      "wikipedia": "Jean Price Mars",
+      "pays": "HT",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Jean Price-Mars.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "roumain",
+      "nom": "Jacques Roumain",
+      "classement": "Roumain, Jacques",
+      "titre": "Naissance de Jacques Roumain",
+      "axe": "Littérature et pensée",
+      "naissance": 1907,
+      "description": "Jacques Roumain (1907-1944) est un écrivain et ethnologue haïtien, né à Port-au-Prince dans une famille bourgeoise, fondateur du Parti communiste haïtien. Son roman « Gouverneurs de la rosée », publié après sa mort, raconte le retour d'un paysan qui veut réconcilier son village divisé et y ramener l'eau. Il meurt à Port-au-Prince à trente-sept ans.",
+      "wikipedia": "Jacques Roumain",
+      "pays": "HT",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Jacques Roumain.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "alexis",
+      "nom": "Jacques Stephen Alexis",
+      "classement": "Alexis, Jacques Stephen",
+      "titre": "Naissance de Jacques Stephen Alexis",
+      "axe": "Littérature et pensée",
+      "naissance": 1922,
+      "description": "Jacques Stephen Alexis (1922-1961) est un écrivain, médecin et militant haïtien, né aux Gonaïves, fils du romancier Stéphen Alexis. Auteur de « Compère Général Soleil » (1955), il définit le « réalisme merveilleux » propre à la littérature de la Caraïbe et s'oppose à la dictature de François Duvalier. Il disparaît dans le nord d'Haïti en avril 1961.",
+      "wikipedia": "Jacques Stephen Alexis",
+      "pays": "HT",
+      "portrait": {
+        "fichier": "Portrait de Jacques Stéphen Alexis dans le hall de l'Hôtel Moskva le 24 mai 1959.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "durand",
+      "nom": "Oswald Durand",
+      "classement": "Durand, Oswald",
+      "titre": "Naissance d'Oswald Durand",
+      "axe": "Littérature et pensée",
+      "naissance": 1840,
+      "description": "Oswald Durand (1840-1906) est un poète haïtien d'expression française et créole, né au Cap-Haïtien, considéré comme le poète national d'Haïti. Il écrit « Choucoune », poème en créole devenu chanson célèbre, ainsi que les paroles de « Quand nos aïeux brisèrent leurs entraves », hymne national de 1893 à 1904. Il meurt à Port-au-Prince en 1906.",
+      "wikipedia": "Oswald Durand",
+      "pays": "HT",
+      "portrait": {
+        "fichier": "O. Durand.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "janvier",
+      "nom": "Louis-Joseph Janvier",
+      "classement": "Janvier, Louis-Joseph",
+      "titre": "Naissance de Louis-Joseph Janvier",
+      "axe": "Littérature et pensée",
+      "naissance": 1855,
+      "description": "Louis-Joseph Janvier (1855-1911) est un journaliste, historien, romancier et diplomate haïtien, né à Port-au-Prince, docteur en médecine de l'université de Paris. Il réunit en recueils ses articles sur l'histoire d'Haïti, dont « La République d'Haïti et ses visiteurs » (1882), et y donne une autre version des faits que celle des Européens. Il meurt à Saint-Mandé en 1911.",
+      "wikipedia": "Louis-Joseph Janvier",
+      "pays": "HT",
+      "portrait": {
+        "fichier": "Louis-Joseph Janvier.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "franketienne",
+      "nom": "Frankétienne",
+      "classement": "Frankétienne",
+      "titre": "Naissance de Frankétienne",
+      "axe": "Littérature et pensée",
+      "naissance": 1936,
+      "description": "Frankétienne (1936-2025) est un poète, dramaturge, peintre et musicien haïtien, né à Ravine Sèche, près de Saint-Marc. Fondateur du mouvement spiraliste, il écrit en créole et en français, et son « Dézafi » (1975) est tenu pour le premier roman en créole haïtien. Il meurt à Delmas le 20 février 2025.",
+      "wikipedia": "Frankétienne",
+      "pays": "HT",
+      "portrait": {
+        "fichier": "Jean-Pierre Basilic Dantor Franck Étienne d'Argent.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "hyppolite",
+      "nom": "Hector Hyppolite",
+      "classement": "Hyppolite, Hector",
+      "titre": "Naissance d'Hector Hyppolite",
+      "axe": "Beaux-arts",
+      "naissance": 1894,
+      "description": "Hector Hyppolite (1894-1948) est un peintre haïtien, né à Saint-Marc, qui commence à peindre en 1945. Découvert par Dewitt Peters, fondateur du Centre d'art de Port-au-Prince, il peint en trois ans plus de deux cents tableaux, que André Breton et Wifredo Lam achètent lors de leur passage en décembre 1945. Sa peinture, peuplée d'esprits du vaudou, diffuse dans le monde l'art populaire haïtien.",
+      "wikipedia": "Hector Hyppolite",
+      "pays": "HT",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Hector Hyppolite.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "obin",
+      "nom": "Philomé Obin",
+      "classement": "Obin, Philomé",
+      "titre": "Naissance de Philomé Obin",
+      "axe": "Beaux-arts",
+      "naissance": 1892,
+      "description": "Philomé Obin (1892-1986) est un peintre haïtien, né au Limbé et installé au Cap-Haïtien. Ses tableaux, d'une précision presque géométrique, montrent des scènes de la vie quotidienne et de l'histoire d'Haïti, et son atelier forme une école de peintres dont fait partie une grande partie de sa famille. En 1950, il compte parmi les artistes qui décorent la cathédrale Sainte-Trinité de Port-au-Prince.",
+      "wikipedia": "Philomé Obin",
+      "pays": "HT",
+      "portrait": {
+        "fichier": "Philomé Obin.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "duvalier",
+      "nom": "François Duvalier",
+      "classement": "Duvalier, François",
+      "titre": "Naissance de François Duvalier",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1907,
+      "description": "François Duvalier (1907-1971) est un médecin et homme d'État haïtien, surnommé « Papa Doc », né à Port-au-Prince, élu président de la République en 1957 puis président à vie de 1964 à sa mort. Il s'appuie sur la milice des Tontons Macoutes pour instaurer une dictature marquée par la corruption, les arrestations et les exécutions. Son fils Jean-Claude lui succède à la présidence en 1971.",
+      "wikipedia": "François Duvalier",
+      "pays": "HT",
+      "portrait": {
+        "fichier": "François Duvalier (cropped).jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "boisrond",
+      "nom": "Louis Boisrond-Tonnerre",
+      "classement": "Boisrond-Tonnerre, Louis",
+      "titre": "Naissance de Louis Boisrond-Tonnerre",
+      "axe": "Littérature et pensée",
+      "naissance": 1776,
+      "description": "Louis Boisrond-Tonnerre (1776-1806) est un écrivain et historien haïtien, né à Torbeck, secrétaire du général Jean-Jacques Dessalines. Il rédige l'Acte de l'Indépendance de la République d'Haïti, proclamé aux Gonaïves le 1er janvier 1804. Il est exécuté en octobre 1806, quelques jours après la mort de Dessalines.",
+      "wikipedia": "Louis Boisrond-Tonnerre",
+      "pays": "HT",
+      "portrait": {
+        "fichier": "Louis Boisrond-Tonnerre.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "bellegarde",
+      "nom": "Dantès Bellegarde",
+      "classement": "Bellegarde, Dantès",
+      "titre": "Naissance de Dantès Bellegarde",
+      "axe": "Littérature et pensée",
+      "naissance": 1877,
+      "description": "Dantès Bellegarde (1877-1966) est un historien, diplomate et homme politique haïtien, né à Port-au-Prince. Secrétaire d'État de l'Instruction publique en 1918, il représente Haïti à la Société des Nations et s'oppose à l'occupation américaine du pays. Il publie en 1938 « La Nation haïtienne » et meurt à Port-au-Prince en 1966.",
+      "wikipedia": "Dantès Louis Bellegarde",
+      "pays": "HT",
+      "portrait": {
+        "fichier": "Dantès Bellegarde.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "garvey",
+      "nom": "Marcus Garvey",
+      "classement": "Garvey, Marcus",
+      "titre": "Naissance de Marcus Garvey",
+      "axe": "Guerres et résistances",
+      "naissance": 1887,
+      "description": "Marcus Garvey (1887-1940) est un militant noir jamaïcain, né à Saint Ann's Bay, fondateur de l'Universal Negro Improvement Association et du journal « The Negro World ». Installé à Harlem, il prêche la fierté noire et le retour des descendants d'esclaves en Afrique, et lance la compagnie maritime Black Star Line. Condamné aux États-Unis pour fraude postale puis expulsé vers la Jamaïque en 1927, il meurt à Londres en 1940, et les rastafaris voient en lui un prophète.",
+      "wikipedia": "Marcus Garvey",
+      "pays": "JM",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Marcus Garvey 1924-08-05.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "marley",
+      "nom": "Bob Marley",
+      "classement": "Marley, Bob",
+      "titre": "Naissance de Bob Marley",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1945,
+      "description": "Bob Marley (1945-1981) est un chanteur et musicien jamaïcain, né à Nine Miles, qui fait connaître le reggae et la foi rastafari dans le monde entier. Avec Bunny Wailer et Peter Tosh, il forme les Wailers dès 1963, et des albums comme « Catch a Fire » (1973) et « Exodus » (1977) font de lui la figure du reggae. Atteint d'un mélanome, il meurt à Miami le 11 mai 1981, à trente-six ans.",
+      "wikipedia": "Bob Marley",
+      "pays": "JM",
+      "essentiel": true,
+      "biographie": "bio_bobmarley",
+      "portrait": {
+        "fichier": "Bob Marley 1976 press photo.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "nanny",
+      "nom": "Nanny des Marrons",
+      "classement": "Nanny des Marrons",
+      "titre": "Naissance de Nanny des Marrons",
+      "axe": "Guerres et résistances",
+      "naissance": 1685,
+      "description": "Nanny des Marrons (vers 1685-vers 1755) est une cheffe marronne jamaïcaine, héroïne nationale de la Jamaïque. Elle dirige une communauté d'esclaves en fuite dans les montagnes Bleues et s'oppose aux troupes anglaises pendant la première guerre des Marrons, dans les années 1730. Les sources écrites sont rares et son souvenir vient surtout de la tradition orale, qui fait d'elle l'une des plus grandes figures de la résistance des Marrons.",
+      "wikipedia": "Nanny (Jamaïque)",
+      "pays": "JM",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Nanny of the Maroons.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "bogle",
+      "nom": "Paul Bogle",
+      "classement": "Bogle, Paul",
+      "titre": "Naissance de Paul Bogle",
+      "axe": "Guerres et résistances",
+      "naissance": 1822,
+      "description": "Paul Bogle (1822-1865) est un petit propriétaire et diacre baptiste jamaïcain, né à Stony Gut, dans la paroisse de Saint Thomas. Il conduit en octobre 1865 la révolte de Morant Bay, où des paysans noirs protestent contre la misère et l'injustice des tribunaux, et sa répression par le gouverneur Edward Eyre fait plus de quatre cents morts. Pendu à Morant Bay, il est proclamé héros national de la Jamaïque.",
+      "wikipedia": "Paul Bogle",
+      "pays": "JM",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "PaulBogle-MorantBay.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "gordon",
+      "nom": "George William Gordon",
+      "classement": "Gordon, George William",
+      "titre": "Naissance de George William Gordon",
+      "axe": "Guerres et résistances",
+      "naissance": 1820,
+      "description": "George William Gordon (vers 1820-1865) est un commerçant et député jamaïcain, né d'un planteur blanc et d'une femme esclave, affranchi avant de faire fortune. Défenseur des paysans noirs et des Native Baptists, il s'oppose au gouverneur Edward Eyre. Accusé d'avoir fomenté la révolte de Morant Bay, il est jugé par un conseil de guerre et pendu le 23 octobre 1865.",
+      "wikipedia": "George William Gordon",
+      "pays": "JM",
+      "portrait": {
+        "fichier": "George William Gordon.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "sharpe",
+      "nom": "Samuel Sharpe",
+      "classement": "Sharpe, Samuel",
+      "titre": "Naissance de Samuel Sharpe",
+      "axe": "Guerres et résistances",
+      "naissance": 1801,
+      "description": "Samuel Sharpe (1801-1832) est un esclave et diacre baptiste jamaïcain, né près de Montego Bay. Il organise fin 1831 la « guerre baptiste », grève générale des esclaves qui tourne à l'insurrection et touche tout l'ouest de l'île. Pendu à Montego Bay le 23 mai 1832, il est devenu héros national, et le soulèvement a hâté l'abolition de l'esclavage dans l'Empire britannique, en 1833.",
+      "wikipedia": "Samuel Sharpe",
+      "pays": "JM",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Samuel Sharpe by Matilda Sharpe.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "bustamante",
+      "nom": "Alexander Bustamante",
+      "classement": "Bustamante, Alexander",
+      "titre": "Naissance d'Alexander Bustamante",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1884,
+      "description": "Alexander Bustamante (1884-1977) est un syndicaliste et homme d'État jamaïcain, né à Blenheim, dans la paroisse de Hanover, sous le nom d'Alexander Clarke. Il fonde en 1938 le syndicat qui porte son nom puis, en 1943, le Jamaica Labour Party. Premier chef de gouvernement de la Jamaïque indépendante, de 1962 à 1967, il meurt à Kingston en 1977.",
+      "wikipedia": "Alexander Bustamante",
+      "pays": "JM",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "President John F. Kennedy with Prime Minister of Jamaica, Sir Alexander Bustamante (02).jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "nmanley",
+      "nom": "Norman Manley",
+      "classement": "Manley, Norman",
+      "titre": "Naissance de Norman Manley",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1893,
+      "description": "Norman Manley (1893-1969) est un avocat et homme d'État jamaïcain, né à Roxborough, boursier Rhodes à Oxford. Fondateur du People's National Party en 1938, il dirige le gouvernement de 1955 à 1962 et retire la Jamaïque de la Fédération des Indes occidentales par le référendum de 1961, ce qui prépare l'indépendance. Héros national, il meurt à Kingston en 1969.",
+      "wikipedia": "Norman Manley",
+      "pays": "JM",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Norman Manley, The Miami Herald 1955 08 04 (cropped).jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "mmanley",
+      "nom": "Michael Manley",
+      "classement": "Manley, Michael",
+      "titre": "Naissance de Michael Manley",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1924,
+      "description": "Michael Manley (1924-1997) est un homme d'État jamaïcain, né à Kingston, fils de Norman et d'Edna Manley, ancien syndicaliste. Premier ministre de 1972 à 1980 puis de 1989 à 1992, il mène d'abord une politique sociale et tiers-mondiste, proche de Cuba, dans une décennie de crise économique et de violence politique. Revenu au pouvoir en 1989, il adopte une politique plus libérale.",
+      "wikipedia": "Michael Manley",
+      "pays": "JM",
+      "portrait": {
+        "fichier": "Michael Manley 1977 cropped.png",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "seaga",
+      "nom": "Edward Seaga",
+      "classement": "Seaga, Edward",
+      "titre": "Naissance d'Edward Seaga",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1930,
+      "description": "Edward Seaga (1930-2019) est un homme d'État jamaïcain, né à Boston dans une famille d'origine libanaise par son père, ancien étudiant de Harvard. Chef du Jamaica Labour Party de 1974 à 2005, il est Premier ministre de 1980 à 1989, rapproche la Jamaïque des États-Unis et mène une politique libérale. Il meurt à Miami en 2019.",
+      "wikipedia": "Edward Seaga",
+      "pays": "JM",
+      "portrait": {
+        "fichier": "Seaga at AFB Andrews (cropped).jpeg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "mckay",
+      "nom": "Claude McKay",
+      "classement": "McKay, Claude",
+      "titre": "Naissance de Claude McKay",
+      "axe": "Littérature et pensée",
+      "naissance": 1889,
+      "description": "Claude McKay (1889-1948) est un poète et romancier jamaïcain, naturalisé américain à la fin de sa vie, figure majeure de la Renaissance de Harlem. Son poème « If We Must Die » (1919) et son recueil « Harlem Shadows » (1922) disent la colère des Noirs américains. Son roman « Retour à Harlem » (1928) est l'un des premiers best-sellers d'un auteur noir.",
+      "wikipedia": "Claude McKay",
+      "pays": "JM",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Claude McKay 1920.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "marson",
+      "nom": "Una Marson",
+      "classement": "Marson, Una",
+      "titre": "Naissance d'Una Marson",
+      "axe": "Littérature et pensée",
+      "naissance": 1905,
+      "description": "Una Marson (1905-1965) est une poétesse, dramaturge et féministe jamaïcaine, née à Sharon, dans la paroisse de Saint Elizabeth. Installée à Londres, elle travaille pour la BBC et produit à partir de 1942 l'émission « Calling the West Indies », devenue « Caribbean Voices », forum majeur de la littérature antillaise. Elle meurt à Kingston en 1965.",
+      "wikipedia": "Una Marson",
+      "pays": "JM",
+      "portrait": {
+        "fichier": "Una Marson - BBC - WWII.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "seacole",
+      "nom": "Mary Seacole",
+      "classement": "Seacole, Mary",
+      "titre": "Naissance de Mary Seacole",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1805,
+      "description": "Mary Seacole (1805-1881) est une infirmière et femme d'affaires jamaïcaine, née à Kingston d'une guérisseuse créole et d'un officier écossais. Refusée par l'administration britannique pour partir en Crimée, elle y va à ses frais, ouvre près de Balaklava un « British Hotel » et soigne les soldats jusque sur le champ de bataille. Ruinée à son retour, elle publie en 1857 ses mémoires et meurt à Londres en 1881.",
+      "wikipedia": "Mary Seacole",
+      "pays": "JM",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Seacole - Challen.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "tosh",
+      "nom": "Peter Tosh",
+      "classement": "Tosh, Peter",
+      "titre": "Naissance de Peter Tosh",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1944,
+      "description": "Peter Tosh (1944-1987) est un chanteur, guitariste et compositeur jamaïcain de reggae, né à Church Lincoln, dans le Westmoreland. Membre fondateur des Wailers avec Bob Marley et Bunny Wailer, il poursuit après 1974 une carrière en solo marquée par la défense de la cause rasta et des droits des Noirs, avec « Legalize It » (1976) et « Equal Rights » (1977). Il est assassiné à son domicile de Kingston le 11 septembre 1987.",
+      "wikipedia": "Peter Tosh",
+      "pays": "JM",
+      "portrait": {
+        "fichier": "PeterToshWithRobbieShakespeare1978.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "cliff",
+      "nom": "Jimmy Cliff",
+      "classement": "Cliff, Jimmy",
+      "titre": "Naissance de Jimmy Cliff",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1944,
+      "description": "Jimmy Cliff (1944-2025) est un chanteur, compositeur et acteur jamaïcain de reggae, né à Somerton, dans la paroisse de Saint James. Vedette du film « The Harder They Come » (1972), dont il chante la bande originale, il fait connaître le reggae au public international avec « Many Rivers to Cross ». Il meurt à Kingston le 24 novembre 2025.",
+      "wikipedia": "Jimmy Cliff",
+      "pays": "JM",
+      "portrait": {
+        "fichier": "Jimmy Cliff - Festival du Bout du Monde 2012 - 022.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "hibbert",
+      "nom": "Toots Hibbert",
+      "classement": "Hibbert, Toots",
+      "titre": "Naissance de Toots Hibbert",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1942,
+      "description": "Toots Hibbert (1942-2020) est un chanteur jamaïcain, né à May Pen, dans la paroisse de Clarendon, formé au gospel dans une chorale baptiste. Chef du groupe Toots and the Maytals, il enregistre « Do the Reggay », dont le titre donne son nom au reggae. Voix soul du ska, du rocksteady et du reggae, il meurt à Kingston le 11 septembre 2020.",
+      "wikipedia": "Toots Hibbert",
+      "pays": "JM",
+      "portrait": {
+        "fichier": "Toots-Hibbert (cropped).jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "perry",
+      "nom": "Lee Perry",
+      "classement": "Perry, Lee",
+      "titre": "Naissance de Lee Perry",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1936,
+      "description": "Lee Perry (1936-2021) est un producteur et musicien jamaïcain surnommé Scratch, né à Kendal, dans la paroisse de Hanover. Précurseur du dub, il bouleverse la production en multipliant le remixage et les effets de studio, et son studio Black Ark enregistre notamment les Congos et Junior Murvin. Il meurt à Lucea le 29 août 2021.",
+      "wikipedia": "Lee Scratch Perry",
+      "pays": "JM",
+      "portrait": {
+        "fichier": "Lee scratch perry 2009.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "headley",
+      "nom": "George Headley",
+      "classement": "Headley, George",
+      "titre": "Naissance de George Headley",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1909,
+      "description": "George Headley (1909-1983) est un joueur de cricket jamaïcain, né à Colón, au Panama, surnommé « le Bradman noir ». Seul batteur régulièrement performant de l'équipe des Indes occidentales dans les années 1930, il en devient en 1948 le premier capitaine noir. Sa moyenne de 60,83 au Test cricket est la troisième de l'histoire, après celles de Donald Bradman et de Graeme Pollock.",
+      "wikipedia": "George Headley",
+      "pays": "JM",
+      "portrait": {
+        "fichier": "George Headley photo.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "wint",
+      "nom": "Arthur Wint",
+      "classement": "Wint, Arthur",
+      "titre": "Naissance d'Arthur Wint",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1920,
+      "description": "Arthur Wint (1920-1992) est un athlète jamaïcain, né à Plowden, dans la paroisse de Manchester, spécialiste du 400 et du 800 mètres. Il est le premier champion olympique des Caraïbes, en remportant le 400 mètres aux Jeux de Londres en 1948. Il est ensuite haut-commissaire de la Jamaïque au Royaume-Uni, puis ambassadeur en Suède et au Danemark.",
+      "wikipedia": "Arthur Wint",
+      "pays": "JM",
+      "portrait": {
+        "fichier": "Arthur Wint 1948.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "emanley",
+      "nom": "Edna Manley",
+      "classement": "Manley, Edna",
+      "titre": "Naissance d'Edna Manley",
+      "axe": "Beaux-arts",
+      "naissance": 1900,
+      "description": "Edna Manley (1900-1987) est une sculptrice et peintre jamaïcaine, née en Angleterre d'un père anglais et d'une mère jamaïcaine, épouse de Norman Manley et mère de Michael. Installée en Jamaïque en 1922, elle donne à l'art jamaïcain moderne sa première grande œuvre avec « Negro Aroused » (1935). Elle forme et soutient plusieurs générations d'artistes, et une école d'art de Kingston porte son nom.",
+      "wikipedia": "Edna Manley",
+      "pays": "JM",
+      "portrait": {
+        "fichier": "Edna Manley 1955 press photo (cropped).jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "williams",
+      "nom": "Eric Williams",
+      "classement": "Williams, Eric",
+      "titre": "Naissance d'Eric Williams",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1911,
+      "description": "Eric Williams (1911-1981) est un historien et homme d'État trinidadien, né à Port-d'Espagne, docteur d'Oxford. Auteur de « Capitalism and Slavery » (1944), qui lie l'essor industriel britannique à l'économie esclavagiste, il fonde en 1956 le People's National Movement. Il conduit Trinité-et-Tobago à l'indépendance en 1962 et reste Premier ministre jusqu'à sa mort en 1981.",
+      "wikipedia": "Eric Williams",
+      "pays": "TT",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Eric Williams (cropped).jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "naipaul",
+      "nom": "Vidiadhar Surajprasad Naipaul",
+      "classement": "Naipaul, Vidiadhar Surajprasad",
+      "titre": "Naissance de V. S. Naipaul",
+      "axe": "Littérature et pensée",
+      "naissance": 1932,
+      "description": "Vidiadhar Surajprasad Naipaul (1932-2018) est un écrivain britannique, né à Chaguanas, à Trinité, dans une famille indo-caribéenne dont les ancêtres venaient de l'Uttar Pradesh. Auteur d'« Une maison pour monsieur Biswas » (1961) et d'« À la courbe du fleuve » (1979), il écrit aussi sur l'Inde, l'Afrique et le monde islamique, et reçoit le prix Booker en 1971. Prix Nobel de littérature en 2001, il meurt à Londres en 2018.",
+      "wikipedia": "V. S. Naipaul",
+      "pays": "TT",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "V.S. Naipaul (cropped).jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "cljames",
+      "nom": "Cyril Lionel Robert James",
+      "classement": "James, Cyril Lionel Robert",
+      "titre": "Naissance de C. L. R. James",
+      "axe": "Littérature et pensée",
+      "naissance": 1901,
+      "description": "Cyril Lionel Robert James (1901-1989) est un historien, théoricien marxiste et militant trinidadien, né à Tunapuna, défenseur de l'indépendance des Antilles britanniques et d'une fédération de leurs îles. Son livre « Les Jacobins noirs » (1938) raconte la révolution haïtienne autour de Toussaint Louverture, et « Beyond a Boundary » (1963) relie le cricket à la société coloniale. Militant panafricaniste, il vit à Londres, aux États-Unis puis de nouveau à Londres, où il meurt en 1989.",
+      "wikipedia": "Cyril Lionel Robert James",
+      "pays": "TT",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "CLR James, 1938.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "constantine",
+      "nom": "Learie Constantine",
+      "classement": "Constantine, Learie",
+      "titre": "Naissance de Learie Constantine",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1901,
+      "description": "Learie Constantine (1901-1971) est un joueur de cricket, avocat et homme politique trinidadien, né à Diego Martin, dans l'île de Trinité. Joueur de l'équipe des Indes occidentales, il gagne en 1944 un procès contre un hôtel londonien qui avait refusé de l'héberger parce qu'il était noir. Il devient ministre à Trinité, haut-commissaire à Londres, puis pair du Royaume-Uni en 1969, et meurt en 1971.",
+      "wikipedia": "Learie Constantine",
+      "pays": "TT",
+      "portrait": {
+        "fichier": "Learie Constantine in Australia.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "mannette",
+      "nom": "Ellie Mannette",
+      "classement": "Mannette, Ellie",
+      "titre": "Naissance d'Ellie Mannette",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1927,
+      "description": "Ellie Mannette (1927-2018) est un musicien et facteur d'instruments trinidadien, né à Sans Souci, pionnier du steel pan, instrument né à Trinité à partir de bidons de pétrole. Particulièrement influent, il est à l'origine de nombreuses innovations dans la façon de creuser et d'accorder les fûts. Il se fixe aux États-Unis, où il enseigne et fabrique des pans jusqu'à sa mort en 2018.",
+      "wikipedia": "Ellie Mannette",
+      "pays": "TT",
+      "portrait": {
+        "fichier": "Ellie Mannette.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "sparrow",
+      "nom": "Mighty Sparrow",
+      "classement": "Mighty Sparrow",
+      "titre": "Naissance de Mighty Sparrow",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1935,
+      "description": "Mighty Sparrow (1935-2026) est un chanteur de calypso trinidadien, de son vrai nom Slinger Francisco, né à Grand Roy, dans l'île de la Grenade, et arrivé enfant à Trinité. Surnommé « le roi mondial du calypso », il compose des chansons moqueuses sur la politique et la société, dont « Jean et Dinah », en 1956. Installé à New York, il meurt le 27 septembre 2026.",
+      "wikipedia": "Mighty Sparrow",
+      "pays": "TT",
+      "portrait": {
+        "fichier": "Mighty Sparrow 2015 (profile).jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "gomes",
+      "nom": "Albert Gomes",
+      "classement": "Gomes, Albert",
+      "titre": "Naissance d'Albert Gomes",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1911,
+      "description": "Albert Gomes (1911-1978) est un syndicaliste, journaliste et homme politique trinidadien, né à Port-d'Espagne d'une famille venue de Madère. Il est le premier ministre en chef de Trinité-et-Tobago, de 1950 à 1956. Battu en 1956 par Eric Williams, il s'installe à Londres, où il meurt en 1978.",
+      "wikipedia": "Albert Gomes",
+      "pays": "TT",
+      "portrait": {
+        "fichier": "Albert Gomes.png",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "barrow",
+      "nom": "Errol Barrow",
+      "classement": "Barrow, Errol",
+      "titre": "Naissance d'Errol Barrow",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1920,
+      "description": "Errol Barrow (1920-1987) est un avocat et homme d'État barbadien, né à Saint Lucy, fils d'un pasteur anglican. Fondateur du Democratic Labour Party en 1955, il dirige le gouvernement de 1961 à 1976 et mène la Barbade à l'indépendance, le 30 novembre 1966. Revenu au pouvoir en 1986, il meurt en fonction en 1987, et il est aujourd'hui l'un des héros nationaux du pays.",
+      "wikipedia": "Errol Barrow",
+      "pays": "BB",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Errol Barrow 1968.png",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "adams",
+      "nom": "Grantley Adams",
+      "classement": "Adams, Grantley",
+      "titre": "Naissance de Grantley Adams",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1898,
+      "description": "Grantley Adams (1898-1971) est un avocat et homme d'État barbadien, né à Saint Michael. Fondateur du Parti travailliste de la Barbade, il dirige le gouvernement de l'île de 1953 à 1958. Il est ensuite le seul Premier ministre de la Fédération des Indes occidentales, de 1958 à 1962.",
+      "wikipedia": "Grantley Herbert Adams",
+      "pays": "BB",
+      "portrait": {
+        "fichier": "Grantley Herbert Adams 1951.png",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "worrell",
+      "nom": "Frank Worrell",
+      "classement": "Worrell, Frank",
+      "titre": "Naissance de Frank Worrell",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1924,
+      "description": "Frank Worrell (1924-1967) est un joueur de cricket barbadien, né à Saint Michael, l'un des « trois W » avec Everton Weekes et Clyde Walcott. Capitaine des Indes occidentales en 1960-1961, il soude une équipe réunissant des joueurs de plusieurs îles, et sa tournée en Australie s'achève par un adieu triomphal à Melbourne. Sénateur de Jamaïque, il meurt d'une leucémie à Kingston en 1967.",
+      "wikipedia": "Frank Worrell",
+      "pays": "BB",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Frank Worrell.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "weekes",
+      "nom": "Everton Weekes",
+      "classement": "Weekes, Everton",
+      "titre": "Naissance d'Everton Weekes",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1925,
+      "description": "Everton Weekes (1925-2020) est un joueur de cricket barbadien, né à Saint Michael, l'un des « trois W » avec Frank Worrell et Clyde Walcott. Batteur de l'équipe des Indes occidentales dès 1948, il signe cinq centuries consécutifs en Test cricket, un record resté longtemps inégalé. Il devient aussi dirigeant sportif et meurt le 1er juillet 2020.",
+      "wikipedia": "Everton Weekes",
+      "pays": "BB",
+      "portrait": {
+        "fichier": "Everton Weekes, 1956.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "prescod",
+      "nom": "Samuel Jackman Prescod",
+      "classement": "Prescod, Samuel Jackman",
+      "titre": "Naissance de Samuel Jackman Prescod",
+      "axe": "Guerres et résistances",
+      "naissance": 1806,
+      "description": "Samuel Jackman Prescod (1806-1871) est un journaliste, juge et homme politique barbadien, fils d'une affranchie métisse et d'un riche Blanc. Exclu par la loi de la vie politique de l'île, il se bat pour étendre le droit de vote. En 1843, il devient le premier descendant d'Africains élu au Parlement de la Barbade, dont il est aujourd'hui l'un des héros nationaux.",
+      "wikipedia": "Samuel Jackman Prescod",
+      "pays": "BB",
+      "portrait": {
+        "fichier": "SamuelJackmanPrescod.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "lamming",
+      "nom": "George Lamming",
+      "classement": "Lamming, George",
+      "titre": "Naissance de George Lamming",
+      "axe": "Littérature et pensée",
+      "naissance": 1927,
+      "description": "George Lamming (1927-2022) est un romancier et poète barbadien, né à Carrington Village, près de Bridgetown. Installé à Londres en 1950, il publie « In the Castle of My Skin » (1953), roman d'une enfance dans un village de la Barbade coloniale, puis l'essai « The Pleasures of Exile » (1960). Figure de la littérature caribéenne, il enseigne aussi aux États-Unis et meurt à Bridgetown en 2022.",
+      "wikipedia": "George Lamming",
+      "pays": "BB",
+      "portrait": {
+        "fichier": "George Lamming 1988 (cropped).jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "pindling",
+      "nom": "Lynden Pindling",
+      "classement": "Pindling, Lynden",
+      "titre": "Naissance de Lynden Pindling",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1930,
+      "description": "Lynden Pindling (1930-2000) est un avocat et homme d'État bahaméen, né à Nassau, généralement considéré comme le « Père de la Nation ». Chef du Parti libéral progressiste de 1965 à 1997, il dirige le gouvernement de 1967 à 1992 et mène les Bahamas à l'indépendance en 1973. Son long pouvoir est assombri par des accusations répétées de corruption.",
+      "wikipedia": "Lynden Pindling",
+      "pays": "BS",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Lynden Pindling headshot 1971.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "poitier",
+      "nom": "Sidney Poitier",
+      "classement": "Poitier, Sidney",
+      "titre": "Naissance de Sidney Poitier",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1927,
+      "description": "Sidney Poitier (1927-2022) est un acteur, réalisateur et diplomate américano-bahaméen, né à Miami et élevé aux Bahamas. En 1964, il est le premier acteur noir et le premier Bahaméen à recevoir l'Oscar du meilleur acteur, pour « Le Lys des champs ». Ambassadeur des Bahamas au Japon, il meurt à Los Angeles en 2022.",
+      "wikipedia": "Sidney Poitier",
+      "pays": "BS",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Sidney Poitier 1968.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "bird",
+      "nom": "Vere Bird",
+      "classement": "Bird, Vere",
+      "titre": "Naissance de Vere Bird",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1910,
+      "description": "Vere Bird (1910-1999) est un syndicaliste et homme d'État antiguais, né à Saint John's. Dirigeant syndical puis chef du gouvernement, il est Premier ministre d'Antigua, puis d'Antigua-et-Barbuda, de 1960 à 1971 et de 1976 à 1994, et conduit le pays à l'indépendance en 1981. Déclaré héros national en 1994, il meurt à Saint John's en 1999.",
+      "wikipedia": "Vere Bird",
+      "pays": "AG",
+      "portrait": {
+        "fichier": "Vere Bird 1986 (cropped).jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "charles",
+      "nom": "Eugenia Charles",
+      "classement": "Charles, Eugenia",
+      "titre": "Naissance d'Eugenia Charles",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1919,
+      "description": "Eugenia Charles (1919-2005) est une avocate et femme d'État dominiquaise, née à Pointe-Michel, fille d'un planteur d'agrumes. Première femme à diriger un gouvernement dans la Caraïbe, elle est Première ministre de 1980 à 1995, et soutient l'intervention américaine à la Grenade en 1983. Elle meurt à Saint-Pierre, en Martinique, en 2005.",
+      "wikipedia": "Eugenia Charles",
+      "pays": "DM",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Eugenia Charles.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "rhys",
+      "nom": "Jean Rhys",
+      "classement": "Rhys, Jean",
+      "titre": "Naissance de Jean Rhys",
+      "axe": "Littérature et pensée",
+      "naissance": 1890,
+      "description": "Jean Rhys (1890-1979) est une romancière britannique, née à Roseau, en Dominique, fille d'un médecin gallois et d'une créole blanche. Installée en Angleterre à seize ans, elle écrit des romans sur des femmes solitaires, comme « Voyage dans les ténèbres » (1934). Son chef-d'œuvre, « La Prisonnière des Sargasses » (1966), raconte l'histoire de la première épouse de Rochester, personnage de « Jane Eyre », et elle meurt à Exeter en 1979.",
+      "wikipedia": "Jean Rhys",
+      "pays": "DM",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Jean Rhys (left, in hat) with Mollie Stoner, Velthams, 1970s B (cropped).jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "walcott",
+      "nom": "Derek Walcott",
+      "classement": "Walcott, Derek",
+      "titre": "Naissance de Derek Walcott",
+      "axe": "Littérature et pensée",
+      "naissance": 1930,
+      "description": "Derek Walcott (1930-2017) est un poète et dramaturge saint-lucien de langue anglaise, né à Castries. Son poème épique « Omeros » (1990), inspiré de l'Iliade et transposé dans les Antilles, est son œuvre majeure, et il fonde en 1959 le Trinidad Theatre Workshop. Prix Nobel de littérature en 1992, il meurt à Cap Estate, à Sainte-Lucie, en 2017.",
+      "wikipedia": "Derek Walcott",
+      "pays": "LC",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Derek Walcott Festival de Poesía Granada.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "compton",
+      "nom": "John Compton",
+      "classement": "Compton, John",
+      "titre": "Naissance de John Compton",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1925,
+      "description": "John Compton (1925-2007) est un homme d'État saint-lucien, né à Canouan, dans les Grenadines. Chef du Parti uni des travailleurs, il dirige le gouvernement de 1964 à 1979, de 1982 à 1996 et de 2006 à sa mort, et négocie l'indépendance de Sainte-Lucie, obtenue du Royaume-Uni en 1979. Il meurt à Castries en septembre 2007.",
+      "wikipedia": "John Compton",
+      "pays": "LC",
+      "portrait": {
+        "fichier": "John Compton 1986.png",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "chatoyer",
+      "nom": "Joseph Chatoyer",
+      "classement": "Chatoyer, Joseph",
+      "titre": "Naissance de Joseph Chatoyer",
+      "axe": "Guerres et résistances",
+      "naissance": 1750,
+      "description": "Joseph Chatoyer (vers 1750-1795) est un chef garifuna de Saint-Vincent, héros national de Saint-Vincent-et-les-Grenadines. Il mène en 1772 une révolte contre le gouvernement colonial britannique, puis se soulève de nouveau en 1795, avec l'appui de la France révolutionnaire. Tué au combat par le général Alexander Leith le 14 mars 1795, il laisse un peuple que les Britanniques déportent ensuite vers la côte d'Amérique centrale.",
+      "wikipedia": "Joseph Chatoyer",
+      "pays": "VC",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Satuye(Chatoyer)-with his wives by Agostion Brunias ca.1765-68.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "joshua",
+      "nom": "Ebenezer Joshua",
+      "classement": "Joshua, Ebenezer",
+      "titre": "Naissance d'Ebenezer Joshua",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1908,
+      "description": "Ebenezer Joshua (1908-1991) est un enseignant et homme politique vincentais, né à Kingstown. Premier ministre en chef de Saint-Vincent de 1956 à 1967, il est le principal dirigeant de l'île à l'époque de la Fédération des Indes occidentales. Il meurt en 1991.",
+      "wikipedia": "Ebenezer Joshua",
+      "pays": "VC",
+      "portrait": {
+        "fichier": "Ebenezer Joshua 1952.png",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "gairy",
+      "nom": "Eric Gairy",
+      "classement": "Gairy, Eric",
+      "titre": "Naissance d'Eric Gairy",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1922,
+      "description": "Eric Gairy (1922-1997) est un syndicaliste et homme d'État grenadin, né à Dunfermline, dans la paroisse de Saint John. Chef du gouvernement de 1961 à 1962 puis de 1967 à 1979, il mène la Grenade à l'indépendance, en 1974. Renversé par le coup d'État de Maurice Bishop en mars 1979, il meurt à Grand Anse en 1997.",
+      "wikipedia": "Eric Gairy",
+      "pays": "GD",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Eric Gairy Profile.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "bishop",
+      "nom": "Maurice Bishop",
+      "classement": "Bishop, Maurice",
+      "titre": "Naissance de Maurice Bishop",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1944,
+      "description": "Maurice Bishop (1944-1983) est un avocat et révolutionnaire grenadin, né à Aruba de parents grenadiens. Chef du New Jewel Movement, il prend le pouvoir par un coup d'État en mars 1979 et dirige jusqu'en 1983 un gouvernement révolutionnaire proche de Cuba. Arrêté par une faction rivale de son parti, il est exécuté avec plusieurs ministres le 19 octobre 1983, six jours avant l'invasion américaine.",
+      "wikipedia": "Maurice Bishop",
+      "pays": "GD",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Maurice Bishop 1982-06-11.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "blaize",
+      "nom": "Herbert Blaize",
+      "classement": "Blaize, Herbert",
+      "titre": "Naissance d'Herbert Blaize",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1918,
+      "description": "Herbert Blaize (1918-1989) est un homme d'État grenadin, né à Carriacou. Fonctionnaire puis employé à Aruba, il est ministre en chef de la Grenade de 1960 à 1961 et de 1962 à 1967. Après l'invasion américaine de 1983, il devient Premier ministre en 1984 et le reste jusqu'à sa mort en 1989.",
+      "wikipedia": "Herbert Blaize",
+      "pays": "GD",
+      "portrait": {
+        "fichier": "Herbert Blaize 1986 (cropped).jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "price",
+      "nom": "George Cadle Price",
+      "classement": "Price, George Cadle",
+      "titre": "Naissance de George Cadle Price",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1919,
+      "description": "George Cadle Price (1919-2011) est un homme d'État bélizien, né à Belize City, considéré comme le « Père de la Nation ». Chef du People's United Party, il dirige le gouvernement de 1961 à 1984 puis de 1989 à 1993, et mène le pays, ancien Honduras britannique, à l'indépendance en 1981. Il meurt à Belize City en 2011.",
+      "wikipedia": "George Cadle Price",
+      "pays": "BZ",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "George C. Price Cropped.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "palacio",
+      "nom": "Andy Palacio",
+      "classement": "Palacio, Andy",
+      "titre": "Naissance d'Andy Palacio",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1960,
+      "description": "Andy Palacio (1960-2008) est un musicien bélizien, né à Barranco, village garifuna de la côte. Il fait connaître le punta rock, puis la musique de ses ancêtres garifunas avec son album « Watina » (2007), salué dans le monde entier. Il meurt à quarante-sept ans, en janvier 2008.",
+      "wikipedia": "Andy Palacio",
+      "pays": "BZ",
+      "portrait": {
+        "fichier": "Andy Palacio.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "jagan",
+      "nom": "Cheddi Jagan",
+      "classement": "Jagan, Cheddi",
+      "titre": "Naissance de Cheddi Jagan",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1918,
+      "description": "Cheddi Jagan (1918-1997) est un dentiste et homme d'État guyanien, né à Port Mourant, en Guyane britannique, dans une famille d'origine indienne. Cofondateur du Parti progressiste populaire, il est élu ministre en chef en 1953 et dirige le gouvernement de 1957 à 1964, dans la lutte anticoloniale qui mène le pays à l'indépendance en 1966. Cinquième président du Guyana de 1992 à sa mort, il meurt à Georgetown en 1997.",
+      "wikipedia": "Cheddi Jagan",
+      "pays": "GY",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Cheddi Jagan Anefo.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "burnham",
+      "nom": "Forbes Burnham",
+      "classement": "Burnham, Forbes",
+      "titre": "Naissance de Forbes Burnham",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1923,
+      "description": "Forbes Burnham (1923-1985) est un avocat et homme d'État guyanien, né à Georgetown, fondateur du Congrès national du peuple. Vainqueur de l'élection de 1964, il négocie à Londres l'indépendance du pays, obtenue en 1966, puis proclame la République coopérative en 1970. Président à partir de 1980, il exerce un pouvoir autoritaire jusqu'à sa mort en 1985.",
+      "wikipedia": "Forbes Burnham",
+      "pays": "GY",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Forbes Burnham (1966).jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "rodney",
+      "nom": "Walter Rodney",
+      "classement": "Rodney, Walter",
+      "titre": "Naissance de Walter Rodney",
+      "axe": "Littérature et pensée",
+      "naissance": 1942,
+      "description": "Walter Rodney (1942-1980) est un historien et militant guyanien, né à Georgetown, intellectuel panafricaniste. Son livre « Comment l'Europe a sous-développé l'Afrique » (1972) en fait un classique de l'histoire économique de l'Afrique. Revenu au Guyana, où il dirige la Working People's Alliance, il est assassiné par une bombe à Georgetown le 13 juin 1980.",
+      "wikipedia": "Walter Rodney",
+      "pays": "GY",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Walter Rodney ZOMACHI.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "hoyte",
+      "nom": "Desmond Hoyte",
+      "classement": "Hoyte, Desmond",
+      "titre": "Naissance de Desmond Hoyte",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1929,
+      "description": "Desmond Hoyte (1929-2002) est un avocat et homme d'État guyanien, né à Georgetown. Ministre de Forbes Burnham, il lui succède à la présidence de la République coopérative du Guyana, de 1985 à 1992. Il libéralise l'économie et organise en 1992 les élections qui portent Cheddi Jagan au pouvoir.",
+      "wikipedia": "Desmond Hoyte",
+      "pays": "GY",
+      "portrait": {
+        "fichier": "Desmond Hoyte.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "dekom",
+      "nom": "Anton de Kom",
+      "classement": "Kom, Anton de",
+      "titre": "Naissance d'Anton de Kom",
+      "axe": "Guerres et résistances",
+      "naissance": 1898,
+      "description": "Anton de Kom (1898-1945) est un écrivain et résistant surinamien, né à Paramaribo, fils d'un ancien esclave. Installé aux Pays-Bas, il publie en 1934 « Nous, esclaves du Suriname », réquisitoire contre le colonialisme néerlandais, après avoir été arrêté puis expulsé du Suriname en 1933. Résistant sous l'occupation allemande, il est arrêté en 1944 et meurt au camp de Sandbostel en avril 1945.",
+      "wikipedia": "Anton de Kom",
+      "pays": "SR",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Anton de Kom (cropped).jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "pengel",
+      "nom": "Johan Adolf Pengel",
+      "classement": "Pengel, Johan Adolf",
+      "titre": "Naissance de Johan Adolf Pengel",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1916,
+      "description": "Johan Adolf Pengel (1916-1970) est un syndicaliste et homme d'État surinamais, né à Paramaribo. Dirigeant du Parti national du Suriname, il est Premier ministre de 1963 à 1969, à la tête d'une coalition avec le parti hindou de Jagernath Lachmon. Il meurt en 1970.",
+      "wikipedia": "Johan Adolf Pengel",
+      "pays": "SR",
+      "portrait": {
+        "fichier": "Johan Adolf Pengel 1963.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "arron",
+      "nom": "Henck Arron",
+      "classement": "Arron, Henck",
+      "titre": "Naissance d'Henck Arron",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1936,
+      "description": "Henck Arron (1936-2000) est un homme d'État surinamais, né à Paramaribo. Vainqueur des élections de 1973, il mène le Suriname à l'indépendance, le 25 novembre 1975, et dirige le gouvernement jusqu'en 1980, quand il est renversé par le « coup d'État des sergents » de Desi Bouterse. Il meurt à Alphen-sur-le-Rhin, aux Pays-Bas, en 2000.",
+      "wikipedia": "Henck Arron",
+      "pays": "SR",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Henck Arron Schiphol persconferentie 1988 (cropped).jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "bouterse",
+      "nom": "Desi Bouterse",
+      "classement": "Bouterse, Desi",
+      "titre": "Naissance de Desi Bouterse",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1945,
+      "description": "Desi Bouterse (1945-2024) est un militaire et homme d'État surinamais, né à Domburg, colonel qui prend le pouvoir par le « coup d'État des sergents » de 1980 et dirige de fait le pays pendant la dictature militaire. Président de la République de 2010 à 2020, il est condamné aux Pays-Bas pour trafic de cocaïne en 1999, puis au Suriname en 2019 à vingt ans de prison pour les assassinats de décembre 1982. Il meurt le 23 décembre 2024.",
+      "wikipedia": "Desi Bouterse",
+      "pays": "SR",
+      "portrait": {
+        "fichier": "Desi Bouterse (cropped).jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "trefossa",
+      "nom": "Trefossa",
+      "classement": "Trefossa",
+      "titre": "Naissance de Trefossa",
+      "axe": "Littérature et pensée",
+      "naissance": 1916,
+      "description": "Trefossa (1916-1975) est le pseudonyme d'Henri Frans de Ziel, poète surinamais, né à Paramaribo, qui écrit en néerlandais et en sranan tongo. Son recueil « Trotji » (1957) fait de lui le grand poète de la langue créole du pays. Il joue un rôle important dans l'affirmation d'une identité nationale avant l'indépendance et meurt à Haarlem en 1975.",
+      "wikipedia": "Henri Frans de Ziel",
+      "pays": "SR",
+      "portrait": {
+        "fichier": "Trefossa.jpg",
+        "legende": "À écrire"
+      }
+    },
+    {
+      "slug": "helman",
+      "nom": "Albert Helman",
+      "classement": "Helman, Albert",
+      "titre": "Naissance d'Albert Helman",
+      "axe": "Littérature et pensée",
+      "naissance": 1903,
+      "description": "Albert Helman (1903-1996) est le pseudonyme de Lodewijk Alphonsus Maria Lichtveld, écrivain et poète surinamien, né à Paramaribo. Son recueil « De glorende dag » (1923), puis le roman « Zuid-Zuid-West » (1926), le font connaître dans la littérature néerlandaise. Il vit surtout en Europe et meurt à Amsterdam en 1996.",
+      "wikipedia": "Albert Helman",
+      "pays": "SR",
+      "portrait": {
+        "fichier": "Albert Helman (Lou Lichtveld).jpg",
+        "legende": "À écrire"
+      }
+    }
+  ]
+}
