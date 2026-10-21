@@ -1,0 +1,663 @@
+{
+  "code": "mt",
+  "nom": "Malte",
+  "theme": {
+    "id": "pan_mt",
+    "nom": "Grandes figures de Malte",
+    "difficulte": "Intermédiaire",
+    "motsCles": [
+      "Malte",
+      "Maltais",
+      "Maltaise",
+      "La Valette",
+      "Mdina",
+      "Gozo",
+      "Comino",
+      "Birgu",
+      "Vittoriosa",
+      "Senglea",
+      "Floriana",
+      "Ordre de Malte",
+      "Hospitaliers",
+      "Chevaliers de Malte",
+      "Grand maître",
+      "Grand Siège de Malte",
+      "Siège de 1565",
+      "Soliman le Magnifique",
+      "Bonaparte à Malte",
+      "Insurrection maltaise",
+      "Maltais (langue)",
+      "Cantilena",
+      "Punique",
+      "Phéniciens",
+      "Temples mégalithiques",
+      "Hypogée de Hal Saflieni",
+      "Saint Paul à Malte",
+      "Naufrage de saint Paul",
+      "Caravage à Malte",
+      "George Cross",
+      "Croix de Georges",
+      "Seconde Guerre mondiale à Malte",
+      "Indépendance de Malte",
+      "République de Malte",
+      "Parti nationaliste",
+      "Parti travailliste maltais",
+      "Commonwealth",
+      "Union européenne",
+      "Méditerranée centrale",
+      "Sicile",
+      "Baroque maltais"
+    ]
+  },
+  "axes": [
+    "Chefs d'État et dirigeants",
+    "Guerres et résistances",
+    "Littérature et pensée",
+    "Beaux-arts",
+    "Musique, spectacle et sport",
+    "Sciences, techniques et innovation"
+  ],
+  "personnages": [
+    {
+      "slug": "caxaro",
+      "nom": "Pietru Caxaro",
+      "classement": "Caxaro, Pietru",
+      "titre": "Naissance de Pietru Caxaro",
+      "axe": "Littérature et pensée",
+      "naissance": 1400,
+      "description": "Pietru Caxaro (vers 1400-vers 1485) est un poète et notaire maltais, issu d'une famille noble de Mdina. Il est l'auteur du « Cantilena », poème de la fin du XVe siècle qui constitue le plus ancien texte écrit connu en langue maltaise. Étudiant en droit à Palerme, puis juge à la cour de Gozo, il laisse une œuvre brève mais fondatrice pour la littérature de l'archipel.",
+      "wikipedia": "Pietru Caxaro",
+      "portrait": {
+        "fichier": "Peter_Caxaro_-_Cantilena.jpg",
+        "legende": "Le « Cantilena » de Pietru Caxaro, manuscrit du XVe siècle",
+        "licence": "Domaine public",
+        "auteur": "Peter Caxaro"
+      }
+    },
+    {
+      "slug": "cassar",
+      "nom": "Girolamo Cassar",
+      "classement": "Cassar, Girolamo",
+      "titre": "Naissance de Girolamo Cassar",
+      "axe": "Beaux-arts",
+      "naissance": 1520,
+      "description": "Girolamo Cassar (vers 1520-vers 1590) est un architecte et ingénieur militaire maltais, appelé Ġlormu Cassar en maltais et issu d'une famille d'origine sicilienne. Après le Grand Siège de 1565, il devient l'assistant de l'Italien Francesco Laparelli, puis lui succède à la direction du chantier de La Valette. Il y construit la co-cathédrale Saint-Jean, le palais du Grand Maître et plusieurs auberges de l'ordre, qui donnent à la ville son visage de la fin de la Renaissance.",
+      "wikipedia": "Ġlormu Cassar",
+      "portrait": {
+        "fichier": "Girolamo_Cassar.jpg",
+        "legende": "Girolamo Cassar, dessin",
+        "licence": "CC BY 4.0",
+        "auteur": "Unknown author Unknown author"
+      }
+    },
+    {
+      "slug": "valette",
+      "nom": "Jean de Valette",
+      "classement": "Valette, Jean de",
+      "titre": "Naissance de Jean de Valette",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1494,
+      "description": "Jean de Valette (1494-1568) est le 49e grand maître de l'ordre des Hospitaliers de Saint-Jean de Jérusalem, né à Parisot, dans l'actuel Tarn-et-Garonne. Il dirige en 1565 la défense de Malte lors du Grand Siège, où la garnison de l'ordre et les Maltais résistent victorieusement à l'armée ottomane de Soliman le Magnifique. Il fonde ensuite, sur le mont Sciberras, la ville qui porte son nom, La Valette, devenue la capitale de l'île.",
+      "wikipedia": "Jean de Valette",
+      "essentiel": true,
+      "pays": "FR",
+      "portrait": {
+        "fichier": "Jean-parisot-de-la-valette.jpg",
+        "legende": "Jean de Valette, portrait peint",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author",
+        "nomVisible": true
+      }
+    },
+    {
+      "slug": "villiers",
+      "nom": "Philippe de Villiers de L'Isle-Adam",
+      "classement": "L'Isle-Adam, Philippe de Villiers de",
+      "titre": "Naissance de Philippe de Villiers de L'Isle-Adam",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1464,
+      "description": "Philippe de Villiers de L'Isle-Adam (1464-1534) est le 44e grand maître de l'ordre des Hospitaliers de Saint-Jean de Jérusalem, né à Beauvais. Il défend l'île de Rhodes contre Soliman le Magnifique en 1522, puis négocie la capitulation et conduit l'ordre dans un long exil. En 1530, il obtient de Charles Quint l'archipel maltais, que l'ordre gouverne ensuite pendant près de trois siècles.",
+      "wikipedia": "Philippe de Villiers de L'Isle-Adam",
+      "pays": "FR",
+      "portrait": {
+        "fichier": "Villiers_de_l_Isle-Adam.jpg",
+        "legende": "Philippe de Villiers de L'Isle-Adam, portrait peint",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
+      }
+    },
+    {
+      "slug": "wignacourt",
+      "nom": "Alof de Wignacourt",
+      "classement": "Wignacourt, Alof de",
+      "titre": "Naissance d'Alof de Wignacourt",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1547,
+      "description": "Alof de Wignacourt (1547-1622) est le 54e grand maître de l'ordre de Malte, issu d'une famille noble du nord de la France. De 1601 à 1622, il fait bâtir l'aqueduc qui amène l'eau à La Valette et élever des tours de guet le long des côtes pour se prémunir des raids barbaresques. Il accueille à Malte le peintre Caravage, qui réalise son portrait et que l'ordre reçoit comme chevalier en 1608.",
+      "wikipedia": "Alof de Wignacourt",
+      "pays": "FR",
+      "portrait": {
+        "fichier": "Alof_de_Wignancourt_official_portrait.jpg",
+        "legende": "Alof de Wignacourt, portrait peint",
+        "licence": "CC BY-SA 3.0",
+        "recadrage": [
+          0.2,
+          0.0,
+          0.8,
+          0.4
+        ],
+        "largeur": 330,
+        "auteur": "Peintre inconnu"
+      }
+    },
+    {
+      "slug": "vilhena",
+      "nom": "António Manoel de Vilhena",
+      "classement": "Vilhena, António Manoel de",
+      "titre": "Naissance d'António Manoel de Vilhena",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1663,
+      "description": "António Manoel de Vilhena (1663-1736) est le 66e grand maître de l'ordre de Malte, né à Lisbonne. De 1722 à 1736, il fait construire le fort Manoel, qui garde l'entrée du port de Marsamxett, ainsi que le théâtre Manoel, ouvert à La Valette en 1732. Il fait aussi rebâtir à Mdina le palais qui porte son nom et lance, près de La Valette, la construction de la ville de Floriana.",
+      "wikipedia": "António Manoel de Vilhena",
+      "pays": "PT",
+      "portrait": {
+        "fichier": "Antoine_Manoel_de_Vilhena.jpg",
+        "legende": "António Manoel de Vilhena, gravure",
+        "licence": "Domaine public",
+        "auteur": "René-Aubert Vertot (1655–1735)",
+        "nomVisible": true
+      }
+    },
+    {
+      "slug": "pinto",
+      "nom": "Manoel Pinto da Fonseca",
+      "classement": "Fonseca, Manoel Pinto da",
+      "titre": "Naissance de Manoel Pinto da Fonseca",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1681,
+      "description": "Manoel Pinto da Fonseca (1681-1773) est le 68e grand maître de l'ordre de Malte, né à Lamego, au Portugal. Il gouverne l'île de 1741 à 1773, soit trente-deux ans, et la dirige en prince absolu. Il fonde l'université de Malte en 1769 et fait reconstruire l'auberge de Castille, aujourd'hui siège du Premier ministre.",
+      "wikipedia": "Manoel Pinto da Fonseca",
+      "pays": "PT",
+      "portrait": {
+        "fichier": "Emmanuel_Pinto_de_Fonseca.jpg",
+        "legende": "Manoel Pinto da Fonseca, portrait peint",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Pierre Bernard (1704–1777) Alternative names Pierre I Bernard"
+      }
+    },
+    {
+      "slug": "hompesch",
+      "nom": "Ferdinand von Hompesch",
+      "classement": "Hompesch, Ferdinand von",
+      "titre": "Naissance de Ferdinand von Hompesch",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1744,
+      "description": "Ferdinand von Hompesch (1744-1805) est le 71e et dernier grand maître de l'ordre de Malte, né dans le Saint-Empire, en Rhénanie. Élu en 1797, il ne résiste pas au débarquement des troupes de Bonaparte en juin 1798 et capitule en quelques jours. Sa reddition met fin à plus de deux siècles et demi de règne de l'ordre sur l'archipel ; il meurt en exil à Montpellier.",
+      "wikipedia": "Ferdinand von Hompesch zu Bolheim",
+      "pays": "DE",
+      "portrait": {
+        "fichier": "Ferdinando_Hompesch.jpg",
+        "legende": "Ferdinand von Hompesch, gravure",
+        "licence": "Domaine public",
+        "auteur": "Julia Toffolo",
+        "nomVisible": true
+      }
+    },
+    {
+      "slug": "lgafa",
+      "nom": "Lorenzo Gafà",
+      "classement": "Gafà, Lorenzo",
+      "titre": "Naissance de Lorenzo Gafà",
+      "axe": "Beaux-arts",
+      "naissance": 1638,
+      "description": "Lorenzo Gafà (1638-1703) est un architecte baroque maltais, né à Birgu et frère du sculpteur Melchiorre Gafà. Il bâtit la cathédrale Saint-Paul de Mdina, reconstruite après le séisme de 1693, ainsi que de nombreuses églises paroissiales de l'île. Il est considéré comme le plus grand architecte maltais de l'époque baroque.",
+      "wikipedia": "Lorenzo Gafa",
+      "portrait": {
+        "fichier": "Lorenzo_Gafa.jpg",
+        "legende": "Lorenzo Gafà, buste en bronze",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "mgafa",
+      "nom": "Melchiorre Gafà",
+      "classement": "Gafà, Melchiorre",
+      "titre": "Naissance de Melchiorre Gafà",
+      "axe": "Beaux-arts",
+      "naissance": 1636,
+      "description": "Melchiorre Gafà (1636-1667) est un sculpteur baroque maltais, né à Birgu et frère de l'architecte Lorenzo Gafà. Installé à Rome, où il est l'élève d'Ercole Ferrata, il y réalise des sculptures dans l'esprit du Bernin et travaille notamment pour le pape Alexandre VII. Il meurt à trente et un ans, victime d'un accident de fonderie, laissant inachevées plusieurs commandes.",
+      "wikipedia": "Melchiorre Gafa",
+      "portrait": {
+        "fichier": "Melchiorre_Cafà_-_Self-portrait_-_NMH_604-1863_-_Nationalmuseum.jpg",
+        "legende": "Melchiorre Gafà, portrait dessiné",
+        "licence": "Domaine public",
+        "auteur": "Torvindus",
+        "nomVisible": true
+      }
+    },
+    {
+      "slug": "soldanis",
+      "nom": "Gian Pietro Agius de Soldanis",
+      "classement": "Soldanis, Gian Pietro Agius de",
+      "titre": "Naissance de Gian Pietro Agius de Soldanis",
+      "axe": "Littérature et pensée",
+      "naissance": 1712,
+      "description": "Gian Pietro Agius de Soldanis (1712-1770) est un chanoine et linguiste maltais, né à Gozo. Il est le premier à vouloir faire du maltais, langue seulement parlée, une langue écrite capable de porter la littérature. Dans un ouvrage de 1750, il décrit la langue, qu'il croit issue du punique, et propose une grammaire et un alphabet spécifiques.",
+      "wikipedia": "Gian Pietro Francesco Agius de Soldanis",
+      "portrait": {
+        "fichier": "Bust_of_Giovanni_Pietro_Francesco_Agius_de_Soldanis.jpeg",
+        "legende": "Gian Pietro Agius de Soldanis, buste",
+        "licence": "CC BY-SA 4.0",
+        "auteur": "Continentaleurope"
+      }
+    },
+    {
+      "slug": "vassalli",
+      "nom": "Mikiel Anton Vassalli",
+      "classement": "Vassalli, Mikiel Anton",
+      "titre": "Naissance de Mikiel Anton Vassalli",
+      "axe": "Littérature et pensée",
+      "naissance": 1764,
+      "description": "Mikiel Anton Vassalli (1764-1829) est un linguiste, écrivain et patriote maltais, né à Żebbuġ. Il publie un dictionnaire et une grammaire de la langue maltaise, dont il fixe l'orthographe et qu'il défend comme langue nationale, ce qui lui vaut d'être appelé le père de la langue maltaise. Compromis dans un complot contre l'ordre de Malte en 1797, il passe une partie de sa vie en exil.",
+      "wikipedia": "Mikiel Anton Vassalli",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Vassalli_-Zebbug.jpg",
+        "legende": "Mikiel Anton Vassalli, monument de Żebbuġ",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Hamelin de Guettelet",
+        "recadrage": [
+          0.25,
+          0.05,
+          0.8,
+          0.6
+        ]
+      }
+    },
+    {
+      "slug": "caruana",
+      "nom": "Francesco Saverio Caruana",
+      "classement": "Caruana, Francesco Saverio",
+      "titre": "Naissance de Francesco Saverio Caruana",
+      "axe": "Guerres et résistances",
+      "naissance": 1759,
+      "description": "Francesco Saverio Caruana (1759-1847) est un prêtre, chef militaire et évêque maltais, né à Żebbuġ. Il est l'un des meneurs de l'insurrection de 1798 contre l'occupation française, qui chasse les troupes de Bonaparte des villages et les enferme dans La Valette. Il devient évêque de Malte en 1831 et le reste jusqu'à sa mort.",
+      "wikipedia": "Francesco Saverio Caruana",
+      "portrait": {
+        "fichier": "Francesco_Saverio_Caruana.jpg",
+        "legende": "Francesco Saverio Caruana, portrait peint",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "NickGeorge1993"
+      }
+    },
+    {
+      "slug": "azopardo",
+      "nom": "Juan Bautista Azopardo",
+      "classement": "Azopardo, Juan Bautista",
+      "titre": "Naissance de Juan Bautista Azopardo",
+      "axe": "Guerres et résistances",
+      "naissance": 1772,
+      "description": "Juan Bautista Azopardo (1772-1847) est un marin et corsaire maltais, né à Senglea, formé à la construction navale à l'arsenal de Toulon. Établi au Río de la Plata au début du XIXe siècle, il se met au service de la révolution de Mai et commande en 1811 la petite flotte de la jeune Argentine lors du combat naval de San Nicolás. Il est l'un des fondateurs de la marine argentine et meurt à Buenos Aires.",
+      "wikipedia": "Juan Bautista Azopardo",
+      "portrait": {
+        "fichier": "Juan_Bautista_Azopardo.jpg",
+        "legende": "Juan Bautista Azopardo, portrait",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
+      }
+    },
+    {
+      "slug": "isouard",
+      "nom": "Nicolò Isouard",
+      "classement": "Isouard, Nicolò",
+      "titre": "Naissance de Nicolò Isouard",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1773,
+      "description": "Nicolò Isouard (1773-1818) est un compositeur maltais, né à Żebbuġ et mort à Paris, issu d'une famille d'origine marseillaise. Formé à Palerme et à Naples, puis maître de chapelle de l'ordre à La Valette, il compose un opéra d'après « Le Barbier de Séville » avant de s'installer à Paris en 1799. Il y devient l'un des maîtres de l'opéra-comique, avec « Cendrillon » (1810) et « Joconde » (1814).",
+      "wikipedia": "Nicolas Isouard",
+      "portrait": {
+        "fichier": "Nicolas_Isouard_par_Ducarme.jpg",
+        "legende": "Nicolò Isouard, lithographie",
+        "licence": "Domaine public",
+        "auteur": "Ducarme ( fl. 1830) Alternative names Pierre François Ducarme"
+      }
+    },
+    {
+      "slug": "pisani",
+      "nom": "Maria Adeodata Pisani",
+      "classement": "Pisani, Maria Adeodata",
+      "titre": "Naissance de Maria Adeodata Pisani",
+      "axe": "Littérature et pensée",
+      "naissance": 1806,
+      "description": "Maria Adeodata Pisani (1806-1855) est une religieuse bénédictine maltaise, abbesse du monastère Saint-Pierre de Mdina. Sa vie mystique et son exemplarité lui valent d'être reconnue bienheureuse par l'Église catholique. Elle est béatifiée en 2001 par Jean-Paul II, lors de sa visite à Malte.",
+      "wikipedia": "Maria Adeodata Pisani",
+      "portrait": {
+        "fichier": "Adeodata_Pisani.jpg",
+        "legende": "Maria Adeodata Pisani, portrait peint",
+        "licence": "Domaine public",
+        "auteur": "the roof of this court is too high to be yours ( talk )"
+      }
+    },
+    {
+      "slug": "karm",
+      "nom": "Dun Karm Psaila",
+      "classement": "Psaila, Dun Karm",
+      "titre": "Naissance de Dun Karm Psaila",
+      "axe": "Littérature et pensée",
+      "naissance": 1871,
+      "description": "Dun Karm Psaila (1871-1961) est un prêtre et poète maltais, de son vrai nom Carmelo Psaila. Il écrit d'abord en italien, puis presque exclusivement en maltais, dont il fait une langue de poésie moderne. Auteur des paroles de l'hymne national, « L-Innu Malti », adopté en 1945, il est tenu pour le poète national de Malte.",
+      "wikipedia": "Dun Karm Psaila",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Malta_-_Floriana_-_Triq_Sant'_Anna_-_Dun_Karm_Psaila_monument_02_ies.jpg",
+        "legende": "Dun Karm Psaila, monument de Floriana",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Frank Vincentz",
+        "recadrage": [
+          0.3,
+          0.0,
+          0.7,
+          0.5
+        ]
+      }
+    },
+    {
+      "slug": "sciortino",
+      "nom": "Antonio Sciortino",
+      "classement": "Sciortino, Antonio",
+      "titre": "Naissance d'Antonio Sciortino",
+      "axe": "Beaux-arts",
+      "naissance": 1879,
+      "description": "Antonio Sciortino (1879-1947) est un sculpteur maltais, né à Żebbuġ, dont l'œuvre va du réalisme au futurisme et porte l'influence de Rodin. Établi à Rome, il y dirige la British Academy of Arts de 1911 à 1936, puis il rentre à Malte comme conservateur du Musée national des beaux-arts. Son monument aux victimes du Grand Siège, à La Valette, et « Les Gavroches », inspirés de Victor Hugo, comptent parmi ses œuvres majeures.",
+      "wikipedia": "Antonio Sciortino",
+      "portrait": {
+        "fichier": "Antonio_Sciortino,_aged_30,_in_his_studio_in_Rome.jpg",
+        "legende": "Antonio Sciortino à trente ans, photographie vers 1910",
+        "largeur": 330,
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author ; Gerald Bugeja collection"
+      }
+    },
+    {
+      "slug": "cremona",
+      "nom": "Ninu Cremona",
+      "classement": "Cremona, Ninu",
+      "titre": "Naissance de Ninu Cremona",
+      "axe": "Littérature et pensée",
+      "naissance": 1880,
+      "description": "Ninu Cremona (1880-1972) est un écrivain et grammairien maltais, né à Gozo sous le nom d'Anthony Cremona. Fonctionnaire de l'administration, il écrit de nombreuses pièces de théâtre et des ouvrages littéraires. Il est surtout connu pour avoir précisé l'orthographe de la langue maltaise.",
+      "wikipedia": "Ninu Cremona",
+      "portrait": {
+        "fichier": "Ninu_Cremona.JPG",
+        "legende": "Ninu Cremona, monument",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Wusel007",
+        "recadrage": [
+          0.3,
+          0.0,
+          0.7,
+          0.4
+        ]
+      }
+    },
+    {
+      "slug": "preca",
+      "nom": "Georges Preca",
+      "classement": "Preca, Georges",
+      "titre": "Naissance de Georges Preca",
+      "axe": "Littérature et pensée",
+      "naissance": 1880,
+      "description": "Georges Preca (1880-1962) est un prêtre catholique maltais, né à La Valette et familièrement appelé Dun Ġorġ. Il fonde en 1907 la Société de la doctrine chrétienne, le MUSEUM, qui enseigne le catéchisme aux enfants et aux adultes à travers toute l'île. Béatifié en 2001, il est canonisé par Benoît XVI en 2007, et devient le deuxième saint maltais, après saint Publius.",
+      "wikipedia": "Georges Preca",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Statue_of_Saint_George_Preca_at_Montekristo_Estates,_Hal_Farrug,_Luqa_(cropped).jpeg",
+        "legende": "Georges Preca, statue",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Continentaleurope"
+      }
+    },
+    {
+      "slug": "zammit",
+      "nom": "Temi Zammit",
+      "classement": "Zammit, Temi",
+      "titre": "Naissance de Temi Zammit",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1864,
+      "description": "Temi Zammit (1864-1935) est un médecin, archéologue et historien maltais, né à La Valette et connu aussi sous le nom de Themistocles Zammit. Chargé de recherches bactériologiques, il montre en 1905 que la fièvre de Malte, la brucellose, se transmet aux humains par le lait de chèvre, ce qui permet de l'enrayer. Il dirige ensuite le musée de La Valette et ses fouilles, notamment au temple préhistorique de Tarxien, le font considérer comme le père de l'archéologie maltaise.",
+      "wikipedia": "Themistocles Zammit",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Zammit.JPG",
+        "legende": "Temi Zammit, buste",
+        "licence": "CC0 (domaine public)",
+        "auteur": "Stefan Bellini",
+        "recadrage": [
+          0.15,
+          0.0,
+          0.85,
+          0.55
+        ]
+      }
+    },
+    {
+      "slug": "mizzi",
+      "nom": "Enrico Mizzi",
+      "classement": "Mizzi, Enrico",
+      "titre": "Naissance d'Enrico Mizzi",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1885,
+      "description": "Enrico Mizzi (1885-1950) est un homme politique maltais, né à La Valette et chef du Parti nationaliste. Défenseur de la langue et de la culture italiennes de l'île, il est interné par les Britanniques en 1940 et déporté en Ouganda pendant la guerre. Devenu Premier ministre en septembre 1950, il meurt en fonctions trois mois plus tard, seul chef du gouvernement maltais dans ce cas.",
+      "wikipedia": "Enrico Mizzi",
+      "portrait": {
+        "fichier": "Enrico_Mizzi.JPG",
+        "legende": "Enrico Mizzi, buste",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Philip Serracino Inglott ( Inkwina ( talk · contribs ))"
+      }
+    },
+    {
+      "slug": "strickland",
+      "nom": "Gerald Strickland",
+      "classement": "Strickland, Gerald",
+      "titre": "Naissance de Gerald Strickland",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1861,
+      "description": "Gerald Strickland (1861-1940) est un homme politique maltais et britannique, né à La Valette. Il est gouverneur des îles Sous-le-Vent, puis de Tasmanie, d'Australie-Occidentale et de Nouvelle-Galles du Sud, avant de revenir à Malte. Fondateur du Parti constitutionnel, il y est Premier ministre de 1927 à 1932, à l'époque du régime d'autonomie interne.",
+      "wikipedia": "Gerald Strickland",
+      "portrait": {
+        "fichier": "Gerald_Strickland_1930s.jpg",
+        "legende": "Gerald Strickland, photographie vers 1930",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
+      }
+    },
+    {
+      "slug": "borgolivier",
+      "nom": "Giorgio Borg Olivier",
+      "classement": "Olivier, Giorgio Borg",
+      "titre": "Naissance de Giorgio Borg Olivier",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1911,
+      "description": "Giorgio Borg Olivier (1911-1980) est un homme politique maltais, chef du Parti nationaliste et Premier ministre de 1950 à 1955, puis de 1962 à 1971. Il négocie avec le Royaume-Uni l'accès de Malte à l'indépendance, proclamée le 21 septembre 1964. Il dirige le pays comme monarchie du Commonwealth pendant les sept premières années de l'indépendance.",
+      "wikipedia": "Giorgio Borg Olivier",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Giorgio_Borg_Olivier.jpg",
+        "legende": "Giorgio Borg Olivier, photographie de 1963",
+        "largeur": 330,
+        "licence": "Domaine public",
+        "auteur": "Abbie Rowe, Maison-Blanche"
+      }
+    },
+    {
+      "slug": "buttigieg",
+      "nom": "Anton Buttigieg",
+      "classement": "Buttigieg, Anton",
+      "titre": "Naissance d'Anton Buttigieg",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1912,
+      "description": "Anton Buttigieg (1912-1983) est un poète et homme d'État maltais, né à Qala, à Gozo. Homme de loi, il est aussi poète et écrivain en langue maltaise. Il est le deuxième président de la République de Malte, de 1976 à 1981.",
+      "wikipedia": "Anton Buttigieg",
+      "portrait": {
+        "fichier": "Dr._Anton_Buttigieg.jpg",
+        "legende": "Anton Buttigieg, photographie",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Department of Information, Malta"
+      }
+    },
+    {
+      "slug": "mintoff",
+      "nom": "Dom Mintoff",
+      "classement": "Mintoff, Dom",
+      "titre": "Naissance de Dom Mintoff",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1916,
+      "description": "Dom Mintoff (1916-2012) est un homme d'État maltais, né Duminku Mintoff à Cospicua et mort à Tarxien. Chef du Parti travailliste, il est Premier ministre de 1955 à 1958, puis de 1971 à 1984, et se fait d'abord le partisan de l'intégration à la Grande-Bretagne, avant de se prononcer pour l'indépendance. Il proclame la République en 1974 et obtient le départ des bases britanniques le 31 mars 1979, date devenue fête nationale.",
+      "wikipedia": "Dom Mintoff",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Dom_Mintoff_(1974).jpg",
+        "legende": "Dom Mintoff, photographie de 1974",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "W. Punt for Anefo"
+      }
+    },
+    {
+      "slug": "barbara",
+      "nom": "Agatha Barbara",
+      "classement": "Barbara, Agatha",
+      "titre": "Naissance d'Agatha Barbara",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1923,
+      "description": "Agatha Barbara (1923-2002) est une femme politique maltaise, née à Żabbar. Ministre de l'Éducation dans le gouvernement travailliste de Dom Mintoff de 1955 à 1958, puis ministre du Travail et de la Culture, elle est la première femme ministre de Malte. Élue présidente de la République en 1982, elle exerce cette fonction jusqu'en 1987.",
+      "wikipedia": "Agatha Barbara",
+      "portrait": {
+        "fichier": "Ms_Agatha_Barbara.jpg",
+        "legende": "Agatha Barbara, photographie",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Department of Information, Malta",
+        "recadrage": [
+          0.05,
+          0.08,
+          0.6,
+          0.6
+        ]
+      }
+    },
+    {
+      "slug": "demarco",
+      "nom": "Guido de Marco",
+      "classement": "Marco, Guido de",
+      "titre": "Naissance de Guido de Marco",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1931,
+      "description": "Guido de Marco (1931-2010) est un avocat et homme politique maltais, né à La Valette. Ministre de l'Intérieur, de la Justice et des Affaires étrangères, il est élu en 1990 président de l'Assemblée générale des Nations unies. Président de la République de 1999 à 2004, il contribue à l'adhésion de Malte à l'Union européenne.",
+      "wikipedia": "Guido de Marco",
+      "portrait": {
+        "fichier": "Guido_de_Marco_2003_crop.jpg",
+        "legende": "Guido de Marco, photographie de 2003",
+        "licence": "Domaine public",
+        "auteur": "United States Navy, Photographer’s Mate 2nd Class Todd Reeves"
+      }
+    },
+    {
+      "slug": "grech",
+      "nom": "Prosper Grech",
+      "classement": "Grech, Prosper",
+      "titre": "Naissance de Prosper Grech",
+      "axe": "Littérature et pensée",
+      "naissance": 1925,
+      "description": "Prosper Grech (1925-2019) est un prêtre augustin et théologien maltais, né à Birgu. Professeur de théologie biblique dans plusieurs universités pontificales de Rome, il est consulteur de la Congrégation pour la doctrine de la foi. Créé cardinal en 2012 par Benoît XVI, à plus de quatre-vingt-six ans, il meurt à Rome en 2019.",
+      "wikipedia": "Prosper Grech",
+      "portrait": {
+        "fichier": "Cardinal_Grech_2014.jpg",
+        "legende": "Prosper Grech, photographie de 2014",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Spongie555"
+      }
+    },
+    {
+      "slug": "calleia",
+      "nom": "Joseph Calleia",
+      "classement": "Calleia, Joseph",
+      "titre": "Naissance de Joseph Calleia",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1897,
+      "description": "Joseph Calleia (1897-1975) est un acteur maltais, né Giuseppe Maria Spurrin-Calleja à Rabat. Chanteur itinérant en Europe, puis acteur à Broadway, il rejoint en 1931 la Metro-Goldwyn-Mayer et joue pendant plus de trente ans dans des films hollywoodiens. Il tient notamment un rôle dans « La Soif du mal » d'Orson Welles, en 1958, avant de se retirer à Malte.",
+      "wikipedia": "Joseph Calleia",
+      "portrait": {
+        "fichier": "Joseph-Calleia-1942.jpg",
+        "legende": "Joseph Calleia, photographie de 1942",
+        "licence": "Domaine public",
+        "auteur": "Chalmers Publishing Company; Paramount Pictures"
+      }
+    },
+    {
+      "slug": "ebejer",
+      "nom": "Francis Ebejer",
+      "classement": "Ebejer, Francis",
+      "titre": "Naissance de Francis Ebejer",
+      "axe": "Littérature et pensée",
+      "naissance": 1925,
+      "description": "Francis Ebejer (1925-1993) est un romancier et dramaturge maltais, né à Dingli, qui écrit en anglais et en maltais. Directeur d'école pendant près de trente ans, il écrit pour la radio, la télévision et le théâtre, et publie des romans et des nouvelles dont certains sont traduits en italien. Il est l'un des principaux auteurs maltais du XXe siècle.",
+      "wikipedia": "Francis Ebejer",
+      "portrait": {
+        "fichier": "Francis_Ebejer.jpg",
+        "legende": "Francis Ebejer, photographie",
+        "largeur": 330,
+        "licence": "CC0 (domaine public)",
+        "auteur": "Malta Theatre Archivist"
+      }
+    },
+    {
+      "slug": "debono",
+      "nom": "Edward de Bono",
+      "classement": "Bono, Edward de",
+      "titre": "Naissance d'Edward de Bono",
+      "axe": "Sciences, techniques et innovation",
+      "naissance": 1933,
+      "description": "Edward de Bono (1933-2021) est un psychologue, médecin et spécialiste maltais des sciences cognitives, né à Malte. Docteur en médecine de l'université de Malte, boursier Rhodes à Oxford, il enseigne à Oxford, à Cambridge et à Harvard. Il est surtout connu pour avoir inventé la notion de pensée latérale, exposée dans de nombreux ouvrages.",
+      "wikipedia": "Edward de Bono",
+      "portrait": {
+        "fichier": "Edward_de_Bono_-_The_Hub_Kings_Cross_2009_13.jpg",
+        "legende": "Edward de Bono, photographie de 2009",
+        "licence": "CC BY-SA 2.0",
+        "auteur": "Impact Hub"
+      }
+    },
+    {
+      "slug": "sammut",
+      "nom": "Frans Sammut",
+      "classement": "Sammut, Frans",
+      "titre": "Naissance de Frans Sammut",
+      "axe": "Littérature et pensée",
+      "naissance": 1945,
+      "description": "Frans Sammut (1945-2011) est un romancier et essayiste maltais, né à Żebbuġ. Il fait toute sa carrière dans l'enseignement, qu'il termine comme directeur d'école. Conseiller pour la culture du Premier ministre Alfred Sant de 1996 à 1998, il écrit en maltais des romans de référence, dont « Il-Gaġġa » (La Cage).",
+      "wikipedia": "Frans Sammut",
+      "portrait": {
+        "fichier": "Frans_Sammut_(1).jpg",
+        "legende": "Frans Sammut, photographie",
+        "licence": "CC BY-SA 4.0",
+        "auteur": "Maltisafi"
+      }
+    },
+    {
+      "slug": "friggieri",
+      "nom": "Oliver Friggieri",
+      "classement": "Friggieri, Oliver",
+      "titre": "Naissance d'Oliver Friggieri",
+      "axe": "Littérature et pensée",
+      "naissance": 1947,
+      "description": "Oliver Friggieri (1947-2020) est un poète, romancier et critique littéraire maltais, né à Floriana. Docteur en littérature maltaise de l'université catholique de Milan, il enseigne le maltais à l'université de Malte, dont il dirige le département dès 1988. Spécialiste de Dun Karm Psaila, il écrit aussi sur Pietru Caxaro et Mikiel Anton Vassalli.",
+      "wikipedia": "Oliver Friggieri",
+      "portrait": {
+        "fichier": "Oliver_Friggieri.jpg",
+        "legende": "Oliver Friggieri, photographie de 2020",
+        "licence": "CC BY-SA 4.0",
+        "auteur": "George Scintilla"
+      }
+    }
+  ]
+}

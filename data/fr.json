@@ -2,8 +2,8 @@
   "version": "1.0.0",
   "lang": "fr",
   "name": "Français (Intégral)",
-  "totalThemes": 851,
-  "totalEvents": 25729,
+  "totalThemes": 853,
+  "totalEvents": 25785,
   "categories": [
     {
       "nom": "Culture générale",
@@ -121632,6 +121632,410 @@
               ]
             },
             {
+              "id": "pan_cy",
+              "nom": "Grandes figures de Chypre",
+              "difficulte": "Intermédiaire",
+              "motsCles": [
+                "Chypre",
+                "Chypriote",
+                "Chypriotes",
+                "Nicosie",
+                "Famagouste",
+                "Larnaca",
+                "Limassol",
+                "Paphos",
+                "Kyrenia",
+                "Salamine",
+                "Kition",
+                "Amathonte",
+                "Royaume de Chypre",
+                "Lusignan",
+                "Vénitiens à Chypre",
+                "Chypre ottomane",
+                "Chypre britannique",
+                "EOKA",
+                "Enosis",
+                "Taksim",
+                "Ligne verte",
+                "Invasion turque de 1974",
+                "Plan Annan",
+                "République turque de Chypre du Nord",
+                "Chypriotes grecs",
+                "Chypriotes turcs",
+                "Aphrodite",
+                "Église de Chypre",
+                "AKEL",
+                "Union européenne"
+              ],
+              "events": [
+                {
+                  "id": "pan_cy_spyridon",
+                  "axe": "Littérature et pensée",
+                  "date": 270,
+                  "titre": "Naissance de Spyridon de Trimythonte",
+                  "description": "Spyridon de Trimythonte (270-348) est un évêque chypriote du IVe siècle, né dans le village d'Assia, où il est d'abord berger. Évêque de Trimythonte, il passe pour avoir participé au concile de Nicée en 325 et reste un saint très populaire de l'Église orthodoxe. Ses reliques, conservées à Corfou, font de lui le saint patron de l'île.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Spyridon%20de%20Trimythonte",
+                  "classement": "Trimythonte, Spyridon de",
+                  "image": {
+                    "src": "assets/portraits/pan_cy_spyridon.jpg",
+                    "legende": "Spyridon de Trimythonte, icône de Theodoros Poulakis",
+                    "auteur": "Poulakis Theodoros (1620 - 1692) Details on Google Art Project",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Poulakis_Theodoros_-_St_Spyridon_and_scenes_from_his_life_-_Google_Art_Project.jpg"
+                  }
+                },
+                {
+                  "id": "pan_cy_epiphane",
+                  "axe": "Littérature et pensée",
+                  "date": 315,
+                  "titre": "Naissance d'Épiphane de Salamine",
+                  "description": "Épiphane de Salamine (vers 315-403) est un évêque et théologien chrétien du IVe siècle, né en Palestine et évêque de Salamine, à Chypre, à partir de 367. Défenseur de l'orthodoxie nicéenne, il rédige le « Panarion », vaste catalogue des hérésies de son temps, et combat l'origénisme. Il meurt en mer en 403, lors d'un voyage de retour de Constantinople, et il est vénéré comme Père de l'Église.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89piphane%20de%20Salamine",
+                  "classement": "Salamine, Épiphane de",
+                  "image": {
+                    "src": "assets/portraits/pan_cy_epiphane.jpg",
+                    "legende": "Épiphane de Salamine, fresque médiévale",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Epiphanius-Kosovo.jpg"
+                  }
+                },
+                {
+                  "id": "pan_cy_jeanaumonier",
+                  "axe": "Littérature et pensée",
+                  "date": 550,
+                  "titre": "Naissance de Jean l'Aumônier",
+                  "description": "Jean l'Aumônier (vers 550-vers 619) est un patriarche d'Alexandrie, aussi appelé Jean de Chypre, né près de Limassol d'un père préfet de l'île. Veuf, il se consacre aux pauvres et devient patriarche d'Alexandrie en 610, puis il utilise les ressources de l'Église pour secourir les réfugiés qui fuient l'invasion perse. Il meurt à Chypre, et il est fêté en janvier par les Églises catholique et orthodoxe.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jean%20l%27Aum%C3%B4nier",
+                  "classement": "l'Aumônier, Jean",
+                  "image": {
+                    "src": "assets/portraits/pan_cy_jeanaumonier.jpg",
+                    "legende": "Jean l'Aumônier, peinture",
+                    "auteur": "Titian (1490–1576)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Saintjohnthealmoner.jpg"
+                  }
+                },
+                {
+                  "id": "pan_cy_neophyte",
+                  "axe": "Littérature et pensée",
+                  "date": 1134,
+                  "titre": "Naissance de Néophyte le Reclus",
+                  "description": "Néophyte le Reclus (1134-1219) est un moine, prêtre et ermite chypriote, né à Lefkara. Il creuse son ermitage dans une falaise près de Paphos, et y fonde un monastère qui porte son nom. Autodidacte, il laisse des écrits qui conservent le récit de la conquête de l'île par Richard Cœur de Lion en 1191.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/N%C3%A9ophyte%20de%20Chypre",
+                  "classement": "Reclus, Néophyte le",
+                  "image": {
+                    "src": "assets/portraits/pan_cy_neophyte.jpg",
+                    "legende": "Néophyte le Reclus, icône",
+                    "auteur": "Krzysztof Belczyński",
+                    "licence": "CC BY-SA 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ikone-Agios_Neofytos.jpg"
+                  }
+                },
+                {
+                  "id": "pan_cy_guylusignan",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1150,
+                  "titre": "Naissance de Guy de Lusignan",
+                  "description": "Guy de Lusignan (vers 1150-1194) est un noble poitevin qui devient roi de Jérusalem en 1186 par son mariage avec la princesse Sibylle. Vaincu et capturé par Saladin à la bataille de Hattin en 1187, il est libéré et conduit ensuite le siège de Saint-Jean-d'Acre. Il achète en 1192 l'île de Chypre aux Templiers, et fonde la dynastie des Lusignan, qui y règne près de trois siècles.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Guy%20de%20Lusignan%20(roi%20de%20J%C3%A9rusalem)",
+                  "pays": "FR",
+                  "classement": "Lusignan, Guy de",
+                  "image": {
+                    "src": "assets/portraits/pan_cy_guylusignan.jpg",
+                    "legende": "Guy de Lusignan, portrait peint",
+                    "auteur": "François-Édouard Picot (1786–1868)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Guido_di_Lusignano.jpg"
+                  }
+                },
+                {
+                  "id": "pan_cy_pierre1",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1328,
+                  "titre": "Naissance de Pierre Ier de Lusignan",
+                  "description": "Pierre Ier de Lusignan (1328-1369) est roi de Chypre de 1358 à 1369, né et mort à Nicosie. Il parcourt l'Europe pour réunir une croisade et prend Alexandrie en 1365, qu'il abandonne après quelques jours de pillage. Impopulaire auprès de sa noblesse, il est assassiné par des chevaliers de son entourage en 1369.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Pierre%20Ier%20(roi%20de%20Chypre)",
+                  "classement": "Pierre Ier de Lusignan",
+                  "image": {
+                    "src": "assets/portraits/pan_cy_pierre1.jpg",
+                    "legende": "Pierre Ier de Lusignan, peinture",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Pierre_1er_de_Lusignan.jpg"
+                  }
+                },
+                {
+                  "id": "pan_cy_cornaro",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1454,
+                  "titre": "Naissance de Catherine Cornaro",
+                  "description": "Catherine Cornaro (1454-1510) est la dernière reine de Chypre, née à Venise dans une famille de patriciens. Épouse du roi Jacques II de Lusignan, elle gouverne l'île après sa mort en 1473 et au nom de son fils, de 1474 à 1489. Poussée à abdiquer par Venise, qui annexe l'île, elle se retire à Asolo, où elle tient une cour d'humanistes et d'artistes.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Catherine%20Cornaro",
+                  "pays": "IT",
+                  "classement": "Cornaro, Catherine",
+                  "image": {
+                    "src": "assets/portraits/pan_cy_cornaro.jpg",
+                    "legende": "Catherine Cornaro, portrait attribué à Gentile Bellini",
+                    "auteur": "Gentile Bellini (1429–1507)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Caterina_Cornaro_by_Gentile_Bellini.jpg"
+                  }
+                },
+                {
+                  "id": "pan_cy_bragadin",
+                  "axe": "Guerres et résistances",
+                  "date": 1523,
+                  "titre": "Naissance de Marcantonio Bragadin",
+                  "description": "Marcantonio Bragadin (1523-1571) est un officier vénitien, né à Venise et gouverneur de Famagouste, à Chypre. Il y soutient pendant onze mois, en 1570 et 1571, le siège de l'armée ottomane de Lala Mustafa Pacha. Après la capitulation, il est mis à mort par les vainqueurs en août 1571, écorché vif, ce qui en fait un héros de la résistance vénitienne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Marcantonio%20Bragadin",
+                  "pays": "IT",
+                  "classement": "Bragadin, Marcantonio",
+                  "image": {
+                    "src": "assets/portraits/pan_cy_bragadin.jpg",
+                    "legende": "Marcantonio Bragadin, buste de Tiziano Aspetti, vers 1571",
+                    "auteur": "Sailko",
+                    "licence": "CC BY 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Tiziano_aspetti,_busto_di_marcantonio_bragadin,_1571_ca..JPG"
+                  }
+                },
+                {
+                  "id": "pan_cy_kyrillos2",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1845,
+                  "titre": "Naissance de Kyrillos II",
+                  "description": "Kyrillos II (1845-1916) est un archevêque de Chypre, né Kyrillos Papadopoulos au village de Prodromos, près de Limassol, sous la domination ottomane. Évêque de Larnaca, puis archevêque de 1909 à 1916, il dirige l'Église orthodoxe de l'île à l'époque de l'administration britannique. Il y défend l'identité grecque de l'île et sa réunion avec la Grèce, l'« enosis ».",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Kyrillos%20II",
+                  "classement": "Kyrillos II",
+                  "image": {
+                    "src": "assets/portraits/pan_cy_kyrillos2.jpg",
+                    "legende": "Kyrillos II, photographie",
+                    "auteur": "не указно",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:%D0%90%D1%80%D1%85%D0%B8%D0%B5%D0%BF%D0%B8%D1%81%D0%BA%D0%BE%D0%BF_%D0%9A%D0%B8%D0%BF%D1%80%D1%81%D0%BA%D0%B8%D0%B9_%D0%9A%D0%B8%D1%80%D0%B8%D0%BB%D0%BB_II.PNG"
+                  }
+                },
+                {
+                  "id": "pan_cy_grivas",
+                  "axe": "Guerres et résistances",
+                  "date": 1897,
+                  "titre": "Naissance de Georgios Grivas",
+                  "description": "Georgios Grivas (1897-1974) est un général chypriote de l'armée grecque, né à Trikomo, qui prend le nom de guerre de Digenis. Il dirige de 1955 à 1959 l'EOKA, l'organisation armée qui se bat contre la domination britannique pour l'union de Chypre à la Grèce. Revenu clandestinement dans l'île en 1971, il y fonde l'EOKA-B et meurt à Limassol en janvier 1974.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ge%C3%B3rgios%20Gr%C3%ADvas",
+                  "classement": "Grivas, Georgios",
+                  "image": {
+                    "src": "assets/portraits/pan_cy_grivas.jpg",
+                    "legende": "Georgios Grivas, photographie de 1967",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Georgios_Grivas_1967.jpg"
+                  }
+                },
+                {
+                  "id": "pan_cy_kucuk",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1906,
+                  "titre": "Naissance de Fazıl Küçük",
+                  "description": "Fazıl Küçük (1906-1984) est un médecin et homme politique chypriote turc, né à Nicosie, qui défend les droits de la minorité turque de l'île. Il fonde le parti Kıbrıs Türktür et s'oppose à l'union de Chypre à la Grèce, réclamant plutôt la partition. Il est le premier vice-président de la république de Chypre, de 1960 à 1973.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Faz%C4%B1l%20K%C3%BC%C3%A7%C3%BCk",
+                  "classement": "Küçük, Fazıl",
+                  "image": {
+                    "src": "assets/portraits/pan_cy_kucuk.jpg",
+                    "legende": "Fazıl Küçük, photographie",
+                    "auteur": "Ludwig Wegmann Description German photographer",
+                    "licence": "CC BY-SA 3.0 DE",
+                    "source": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_B_145_Bild-F014934-0068,_Fazil_Kutschuk.jpg"
+                  }
+                },
+                {
+                  "id": "pan_cy_ezekias",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1908,
+                  "titre": "Naissance d'Ezekias Papaioannou",
+                  "description": "Ezekias Papaioannou (1908-1988) est un homme politique communiste chypriote, né dans le village de Kelaki, près de Limassol. Mineur puis ouvrier, il s'engage en 1936 dans les Brigades internationales aux côtés des républicains espagnols. Secrétaire général de l'AKEL pendant près de quarante ans, il fait du Parti progressiste des travailleurs la première force de gauche de l'île.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ezek%C3%ADas%20Papaio%C3%A1nnou",
+                  "classement": "Papaioannou, Ezekias",
+                  "image": {
+                    "src": "assets/portraits/pan_cy_ezekias.jpg",
+                    "legende": "Ezekias Papaioannou, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Image non libre",
+                    "source": "https://en.wikipedia.org/wiki/File:Ezekias.jpg"
+                  }
+                },
+                {
+                  "id": "pan_cy_makarios3",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1913,
+                  "titre": "Naissance de Makarios III",
+                  "description": "Makarios III (1913-1977) est un archevêque et homme d'État chypriote, né Mikhaïl Moúskos près de Paphos. Primat de l'Église de Chypre en 1950, il est exilé aux Seychelles par les Britanniques en 1956 et devient en 1960 le premier président de la république de Chypre indépendante. Renversé par un coup d'État soutenu par la junte grecque en juillet 1974, il rentre à Chypre à la fin de l'année et reste au pouvoir jusqu'à sa mort.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mak%C3%A1rios%20III",
+                  "classement": "Makarios III",
+                  "image": {
+                    "src": "assets/portraits/pan_cy_makarios3.jpg",
+                    "legende": "Makarios III, photographie",
+                    "auteur": "Photographe du New York World-Telegram and the Sun",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Makarios_III_and_Robert_F._Wagner_NYWTS_cropped.jpg"
+                  }
+                },
+                {
+                  "id": "pan_cy_clerides",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1919,
+                  "titre": "Naissance de Glafcos Clerides",
+                  "description": "Glafcos Clerides (1919-2013) est un avocat et homme politique chypriote, né à Nicosie. Pilote de la Royal Air Force pendant la Seconde Guerre mondiale, il préside la Chambre des représentants de 1960 à 1976 et assure l'intérim de la présidence en 1974. Président de la République de 1993 à 2003, il mène les négociations qui préparent l'adhésion de Chypre à l'Union européenne, en 2004.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Gl%C3%A1fkos%20Klir%C3%ADdis",
+                  "classement": "Clerides, Glafcos",
+                  "image": {
+                    "src": "assets/portraits/pan_cy_clerides.jpg",
+                    "legende": "Glafcos Clerides, photographie de 1993",
+                    "auteur": "European Commission",
+                    "licence": "CC BY 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Glafcos_Clerides,_1993.jpg"
+                  }
+                },
+                {
+                  "id": "pan_cy_lyssaridis",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1920,
+                  "titre": "Naissance de Vassos Lyssaridis",
+                  "description": "Vassos Lyssaridis (1920-2021) est un médecin et homme politique chypriote, né le 13 mai 1920. Quittant le parti communiste en 1955, il rejoint l'EOKA dans la lutte armée contre les Britanniques, puis il devient le médecin et le proche de Makarios III. Il fonde en 1969 le parti socialiste EDEK, et préside la Chambre des représentants de 1985 à 1991.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Vassos%20Lyssaridis",
+                  "classement": "Lyssaridis, Vassos",
+                  "image": {
+                    "src": "assets/portraits/pan_cy_lyssaridis.jpg",
+                    "legende": "Vassos Lyssaridis, photographie",
+                    "auteur": "Υπουργείο Εξωτερικών",
+                    "licence": "CC BY-SA 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Vassos_Lyssarides.jpg"
+                  }
+                },
+                {
+                  "id": "pan_cy_cacoyannis",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1921,
+                  "titre": "Naissance de Michael Cacoyannis",
+                  "description": "Michael Cacoyannis (1921-2011) est un réalisateur et metteur en scène grec, né à Limassol, à Chypre, et mort à Athènes. Il adapte à l'écran les tragédies antiques avec « Électre » en 1962 et « Les Troyennes » en 1971. Son film « Zorba le Grec », sorti en 1964 et tiré du roman de Níkos Kazantzákis, lui apporte une renommée mondiale.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Michel%20Cacoyannis",
+                  "classement": "Cacoyannis, Michael",
+                  "image": {
+                    "src": "assets/portraits/pan_cy_cacoyannis.jpg",
+                    "legende": "Michael Cacoyannis, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Image non libre",
+                    "source": "https://en.wikipedia.org/wiki/File:Michael_Cacoyannis.jpeg"
+                  }
+                },
+                {
+                  "id": "pan_cy_denktas",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1924,
+                  "titre": "Naissance de Rauf Denktaş",
+                  "description": "Rauf Denktaş (1924-2012) est un homme d'État chypriote turc, né à Paphos et avocat de formation. Proche de Fazıl Küçük, il dirige la communauté chypriote turque après 1973, et proclame en 1983 la république turque de Chypre du Nord, que seule la Turquie reconnaît. Il en reste le président jusqu'en 2005, et participe pendant trente ans aux négociations sur l'avenir de l'île.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Rauf%20Denkta%C5%9F",
+                  "classement": "Denktaş, Rauf",
+                  "image": {
+                    "src": "assets/portraits/pan_cy_denktas.jpg",
+                    "legende": "Rauf Denktaş, photographie",
+                    "auteur": "Auteur inconnu",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Rauf_Denktash.jpg"
+                  }
+                },
+                {
+                  "id": "pan_cy_afxentiou",
+                  "axe": "Guerres et résistances",
+                  "date": 1928,
+                  "titre": "Naissance de Grigóris Afxentíou",
+                  "description": "Grigóris Afxentíou (1928-1957) est un combattant chypriote de l'EOKA, né dans le village de Lysi, près de Famagouste. Il devient le bras droit de Georgios Grivas dans la lutte armée contre l'administration britannique. Encerclé en mars 1957 dans sa cachette, près du monastère de Machairas, il refuse de se rendre et y meurt, devenant l'un des martyrs de la lutte pour l'indépendance.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Grig%C3%B3ris%20Afxent%C3%ADou",
+                  "classement": "Afxentíou, Grigóris",
+                  "image": {
+                    "src": "assets/portraits/pan_cy_afxentiou.jpg",
+                    "legende": "Grigóris Afxentíou, monument près du monastère de Machairas",
+                    "auteur": "dimitrisvetsikas1969",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:%D0%9F%D0%B0%D0%BC%D1%8F%D1%82%D0%BD%D0%B8%D0%BA_%D0%93%D1%80%D0%B8%D0%B3%D0%BE%D1%80%D0%B8%D1%81%D1%83_%D0%90%D1%84%D0%BA%D1%81%D0%B5%D0%BD%D1%82%D0%B8%D1%83_%D0%B2_%D0%9C%D0%BE%D0%BD%D0%B0%D1%81%D1%82%D1%8B%D1%80%D0%B5_%D0%9C%D0%B0%D1%85%D0%B5%D1%80%D0%B0_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_cy_kyprianou",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1932,
+                  "titre": "Naissance de Spyros Kyprianou",
+                  "description": "Spyros Kyprianou (1932-2002) est un avocat et homme d'État chypriote, né à Limassol. Secrétaire de Makarios III à Londres, puis ministre des Affaires étrangères de 1960 à 1972, il porte à l'étranger la cause de l'île après l'invasion turque de 1974. Il est le deuxième président de la république de Chypre, de 1977 à 1988.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Sp%C3%BDros%20Kypriano%C3%BA",
+                  "classement": "Kyprianou, Spyros",
+                  "image": {
+                    "src": "assets/portraits/pan_cy_kyprianou.jpg",
+                    "legende": "Spyros Kyprianou, photographie",
+                    "auteur": "Bernard Gotfryd",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Spyros_Kyprianou_UN_(cropped).jpg"
+                  }
+                },
+                {
+                  "id": "pan_cy_papadopoulos",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1934,
+                  "titre": "Naissance de Tassos Papadopoulos",
+                  "description": "Tassos Papadopoulos (1934-2008) est un avocat et homme politique chypriote, né à Nicosie, qui étudie le droit à Londres. Ancien combattant de l'EOKA, il est plusieurs fois ministre, avant de devenir président de la République, de 2003 à 2008. Il appelle les Chypriotes grecs à rejeter le plan Annan en 2004, et l'île, divisée, entre dans l'Union européenne la même année.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/T%C3%A1ssos%20Papad%C3%B3poulos",
+                  "classement": "Papadopoulos, Tassos",
+                  "image": {
+                    "src": "assets/portraits/pan_cy_papadopoulos.jpg",
+                    "legende": "Tassos Papadopoulos, photographie",
+                    "auteur": "Danny Gys",
+                    "licence": "CC BY 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Visit_of_Tassos_Papadopoulos,_President_of_Cyprus,_to_the_EC_(P-011163_00-02).jpg"
+                  }
+                },
+                {
+                  "id": "pan_cy_christofias",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1946,
+                  "titre": "Naissance de Dimitris Christofias",
+                  "description": "Dimitris Christofias (1946-2019) est un homme politique chypriote, né à Dikomo et formé en Union soviétique. Secrétaire général de l'AKEL de 1988 à 2009, il préside la Chambre des représentants de 2001 à 2008. Élu président de la République en 2008 jusqu'en 2013, il est le premier dirigeant communiste d'un État de l'Union européenne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Dim%C3%ADtris%20Khrist%C3%B3fias",
+                  "classement": "Christofias, Dimitris",
+                  "image": {
+                    "src": "assets/portraits/pan_cy_christofias.jpg",
+                    "legende": "Dimitris Christofias, photographie de 2011",
+                    "auteur": "Υπουργείο Εξωτερικών",
+                    "licence": "CC BY-SA 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Demetris_Christofias_in_February_2011.jpg"
+                  }
+                },
+                {
+                  "id": "pan_cy_tokas",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1954,
+                  "titre": "Naissance de Mários Tókas",
+                  "description": "Mários Tókas (1954-2008) est un compositeur chypriote, né à Limassol et mort à Athènes. Il combat dans l'armée chypriote lors de l'invasion turque de 1974, puis s'installe à Athènes en 1975 pour étudier la philosophie et la musique. Il compose des chansons, des musiques de théâtre et de film, et reste l'une des voix de la jeunesse chypriote de l'après-1974.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/M%C3%A1rios%20T%C3%B3kas",
+                  "classement": "Tókas, Mários",
+                  "image": {
+                    "src": "assets/portraits/pan_cy_tokas.jpg",
+                    "legende": "Mários Tókas, photographie",
+                    "auteur": "Costas tokas",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Marios_Tokas.jpg"
+                  }
+                }
+              ],
+              "axeOrder": [
+                "Chefs d'État et dirigeants",
+                "Guerres et résistances",
+                "Littérature et pensée",
+                "Musique, spectacle et sport"
+              ],
+              "essentiel": [
+                "pan_cy_guylusignan",
+                "pan_cy_makarios3"
+              ]
+            },
+            {
               "id": "pan_coree",
               "nom": "Grandes figures de Corée",
               "difficulte": "Intermédiaire",
@@ -147808,6 +148212,627 @@
                 "pan_maghreb_mernissi",
                 "pan_maghreb_kadhafi",
                 "pan_maghreb_idir"
+              ]
+            },
+            {
+              "id": "pan_mt",
+              "nom": "Grandes figures de Malte",
+              "difficulte": "Intermédiaire",
+              "motsCles": [
+                "Malte",
+                "Maltais",
+                "Maltaise",
+                "La Valette",
+                "Mdina",
+                "Gozo",
+                "Comino",
+                "Birgu",
+                "Vittoriosa",
+                "Senglea",
+                "Floriana",
+                "Ordre de Malte",
+                "Hospitaliers",
+                "Chevaliers de Malte",
+                "Grand maître",
+                "Grand Siège de Malte",
+                "Siège de 1565",
+                "Soliman le Magnifique",
+                "Bonaparte à Malte",
+                "Insurrection maltaise",
+                "Maltais (langue)",
+                "Cantilena",
+                "Punique",
+                "Phéniciens",
+                "Temples mégalithiques",
+                "Hypogée de Hal Saflieni",
+                "Saint Paul à Malte",
+                "Naufrage de saint Paul",
+                "Caravage à Malte",
+                "George Cross",
+                "Croix de Georges",
+                "Seconde Guerre mondiale à Malte",
+                "Indépendance de Malte",
+                "République de Malte",
+                "Parti nationaliste",
+                "Parti travailliste maltais",
+                "Commonwealth",
+                "Union européenne",
+                "Méditerranée centrale",
+                "Sicile",
+                "Baroque maltais"
+              ],
+              "events": [
+                {
+                  "id": "pan_mt_caxaro",
+                  "axe": "Littérature et pensée",
+                  "date": 1400,
+                  "titre": "Naissance de Pietru Caxaro",
+                  "description": "Pietru Caxaro (vers 1400-vers 1485) est un poète et notaire maltais, issu d'une famille noble de Mdina. Il est l'auteur du « Cantilena », poème de la fin du XVe siècle qui constitue le plus ancien texte écrit connu en langue maltaise. Étudiant en droit à Palerme, puis juge à la cour de Gozo, il laisse une œuvre brève mais fondatrice pour la littérature de l'archipel.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Pietru%20Caxaro",
+                  "classement": "Caxaro, Pietru",
+                  "image": {
+                    "src": "assets/portraits/pan_mt_caxaro.jpg",
+                    "legende": "Le « Cantilena » de Pietru Caxaro, manuscrit du XVe siècle",
+                    "auteur": "Peter Caxaro",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Peter_Caxaro_-_Cantilena.jpg"
+                  }
+                },
+                {
+                  "id": "pan_mt_villiers",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1464,
+                  "titre": "Naissance de Philippe de Villiers de L'Isle-Adam",
+                  "description": "Philippe de Villiers de L'Isle-Adam (1464-1534) est le 44e grand maître de l'ordre des Hospitaliers de Saint-Jean de Jérusalem, né à Beauvais. Il défend l'île de Rhodes contre Soliman le Magnifique en 1522, puis négocie la capitulation et conduit l'ordre dans un long exil. En 1530, il obtient de Charles Quint l'archipel maltais, que l'ordre gouverne ensuite pendant près de trois siècles.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Philippe%20de%20Villiers%20de%20L%27Isle-Adam",
+                  "pays": "FR",
+                  "classement": "L'Isle-Adam, Philippe de Villiers de",
+                  "image": {
+                    "src": "assets/portraits/pan_mt_villiers.jpg",
+                    "legende": "Philippe de Villiers de L'Isle-Adam, portrait peint",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Villiers_de_l_Isle-Adam.jpg"
+                  }
+                },
+                {
+                  "id": "pan_mt_valette",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1494,
+                  "titre": "Naissance de Jean de Valette",
+                  "description": "Jean de Valette (1494-1568) est le 49e grand maître de l'ordre des Hospitaliers de Saint-Jean de Jérusalem, né à Parisot, dans l'actuel Tarn-et-Garonne. Il dirige en 1565 la défense de Malte lors du Grand Siège, où la garnison de l'ordre et les Maltais résistent victorieusement à l'armée ottomane de Soliman le Magnifique. Il fonde ensuite, sur le mont Sciberras, la ville qui porte son nom, La Valette, devenue la capitale de l'île.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Jean%20de%20Valette",
+                  "pays": "FR",
+                  "classement": "Valette, Jean de",
+                  "image": {
+                    "src": "assets/portraits/pan_mt_valette.jpg",
+                    "legende": "Jean de Valette, portrait peint",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Jean-parisot-de-la-valette.jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_mt_cassar",
+                  "axe": "Beaux-arts",
+                  "date": 1520,
+                  "titre": "Naissance de Girolamo Cassar",
+                  "description": "Girolamo Cassar (vers 1520-vers 1590) est un architecte et ingénieur militaire maltais, appelé Ġlormu Cassar en maltais et issu d'une famille d'origine sicilienne. Après le Grand Siège de 1565, il devient l'assistant de l'Italien Francesco Laparelli, puis lui succède à la direction du chantier de La Valette. Il y construit la co-cathédrale Saint-Jean, le palais du Grand Maître et plusieurs auberges de l'ordre, qui donnent à la ville son visage de la fin de la Renaissance.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/%C4%A0lormu%20Cassar",
+                  "classement": "Cassar, Girolamo",
+                  "image": {
+                    "src": "assets/portraits/pan_mt_cassar.jpg",
+                    "legende": "Girolamo Cassar, dessin",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "CC BY 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Girolamo_Cassar.jpg"
+                  }
+                },
+                {
+                  "id": "pan_mt_wignacourt",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1547,
+                  "titre": "Naissance d'Alof de Wignacourt",
+                  "description": "Alof de Wignacourt (1547-1622) est le 54e grand maître de l'ordre de Malte, issu d'une famille noble du nord de la France. De 1601 à 1622, il fait bâtir l'aqueduc qui amène l'eau à La Valette et élever des tours de guet le long des côtes pour se prémunir des raids barbaresques. Il accueille à Malte le peintre Caravage, qui réalise son portrait et que l'ordre reçoit comme chevalier en 1608.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Alof%20de%20Wignacourt",
+                  "pays": "FR",
+                  "classement": "Wignacourt, Alof de",
+                  "image": {
+                    "src": "assets/portraits/pan_mt_wignacourt.jpg",
+                    "legende": "Alof de Wignacourt, portrait peint",
+                    "auteur": "Peintre inconnu",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Alof_de_Wignancourt_official_portrait.jpg"
+                  }
+                },
+                {
+                  "id": "pan_mt_mgafa",
+                  "axe": "Beaux-arts",
+                  "date": 1636,
+                  "titre": "Naissance de Melchiorre Gafà",
+                  "description": "Melchiorre Gafà (1636-1667) est un sculpteur baroque maltais, né à Birgu et frère de l'architecte Lorenzo Gafà. Installé à Rome, où il est l'élève d'Ercole Ferrata, il y réalise des sculptures dans l'esprit du Bernin et travaille notamment pour le pape Alexandre VII. Il meurt à trente et un ans, victime d'un accident de fonderie, laissant inachevées plusieurs commandes.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Melchiorre%20Gafa",
+                  "classement": "Gafà, Melchiorre",
+                  "image": {
+                    "src": "assets/portraits/pan_mt_mgafa.jpg",
+                    "legende": "Melchiorre Gafà, portrait dessiné",
+                    "auteur": "Torvindus",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Melchiorre_Caf%C3%A0_-_Self-portrait_-_NMH_604-1863_-_Nationalmuseum.jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_mt_lgafa",
+                  "axe": "Beaux-arts",
+                  "date": 1638,
+                  "titre": "Naissance de Lorenzo Gafà",
+                  "description": "Lorenzo Gafà (1638-1703) est un architecte baroque maltais, né à Birgu et frère du sculpteur Melchiorre Gafà. Il bâtit la cathédrale Saint-Paul de Mdina, reconstruite après le séisme de 1693, ainsi que de nombreuses églises paroissiales de l'île. Il est considéré comme le plus grand architecte maltais de l'époque baroque.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Lorenzo%20Gafa",
+                  "classement": "Gafà, Lorenzo",
+                  "image": {
+                    "src": "assets/portraits/pan_mt_lgafa.jpg",
+                    "legende": "Lorenzo Gafà, buste en bronze",
+                    "auteur": "Auteur inconnu",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Lorenzo_Gafa.jpg"
+                  }
+                },
+                {
+                  "id": "pan_mt_vilhena",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1663,
+                  "titre": "Naissance d'António Manoel de Vilhena",
+                  "description": "António Manoel de Vilhena (1663-1736) est le 66e grand maître de l'ordre de Malte, né à Lisbonne. De 1722 à 1736, il fait construire le fort Manoel, qui garde l'entrée du port de Marsamxett, ainsi que le théâtre Manoel, ouvert à La Valette en 1732. Il fait aussi rebâtir à Mdina le palais qui porte son nom et lance, près de La Valette, la construction de la ville de Floriana.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ant%C3%B3nio%20Manoel%20de%20Vilhena",
+                  "pays": "PT",
+                  "classement": "Vilhena, António Manoel de",
+                  "image": {
+                    "src": "assets/portraits/pan_mt_vilhena.jpg",
+                    "legende": "António Manoel de Vilhena, gravure",
+                    "auteur": "René-Aubert Vertot (1655–1735)",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Antoine_Manoel_de_Vilhena.jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_mt_pinto",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1681,
+                  "titre": "Naissance de Manoel Pinto da Fonseca",
+                  "description": "Manoel Pinto da Fonseca (1681-1773) est le 68e grand maître de l'ordre de Malte, né à Lamego, au Portugal. Il gouverne l'île de 1741 à 1773, soit trente-deux ans, et la dirige en prince absolu. Il fonde l'université de Malte en 1769 et fait reconstruire l'auberge de Castille, aujourd'hui siège du Premier ministre.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Manoel%20Pinto%20da%20Fonseca",
+                  "pays": "PT",
+                  "classement": "Fonseca, Manoel Pinto da",
+                  "image": {
+                    "src": "assets/portraits/pan_mt_pinto.jpg",
+                    "legende": "Manoel Pinto da Fonseca, portrait peint",
+                    "auteur": "Pierre Bernard (1704–1777) Alternative names Pierre I Bernard",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Emmanuel_Pinto_de_Fonseca.jpg"
+                  }
+                },
+                {
+                  "id": "pan_mt_soldanis",
+                  "axe": "Littérature et pensée",
+                  "date": 1712,
+                  "titre": "Naissance de Gian Pietro Agius de Soldanis",
+                  "description": "Gian Pietro Agius de Soldanis (1712-1770) est un chanoine et linguiste maltais, né à Gozo. Il est le premier à vouloir faire du maltais, langue seulement parlée, une langue écrite capable de porter la littérature. Dans un ouvrage de 1750, il décrit la langue, qu'il croit issue du punique, et propose une grammaire et un alphabet spécifiques.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Gian%20Pietro%20Francesco%20Agius%20de%20Soldanis",
+                  "classement": "Soldanis, Gian Pietro Agius de",
+                  "image": {
+                    "src": "assets/portraits/pan_mt_soldanis.jpg",
+                    "legende": "Gian Pietro Agius de Soldanis, buste",
+                    "auteur": "Continentaleurope",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Bust_of_Giovanni_Pietro_Francesco_Agius_de_Soldanis.jpeg"
+                  }
+                },
+                {
+                  "id": "pan_mt_hompesch",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1744,
+                  "titre": "Naissance de Ferdinand von Hompesch",
+                  "description": "Ferdinand von Hompesch (1744-1805) est le 71e et dernier grand maître de l'ordre de Malte, né dans le Saint-Empire, en Rhénanie. Élu en 1797, il ne résiste pas au débarquement des troupes de Bonaparte en juin 1798 et capitule en quelques jours. Sa reddition met fin à plus de deux siècles et demi de règne de l'ordre sur l'archipel ; il meurt en exil à Montpellier.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ferdinand%20von%20Hompesch%20zu%20Bolheim",
+                  "pays": "DE",
+                  "classement": "Hompesch, Ferdinand von",
+                  "image": {
+                    "src": "assets/portraits/pan_mt_hompesch.jpg",
+                    "legende": "Ferdinand von Hompesch, gravure",
+                    "auteur": "Julia Toffolo",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ferdinando_Hompesch.jpg",
+                    "nomVisible": true
+                  }
+                },
+                {
+                  "id": "pan_mt_caruana",
+                  "axe": "Guerres et résistances",
+                  "date": 1759,
+                  "titre": "Naissance de Francesco Saverio Caruana",
+                  "description": "Francesco Saverio Caruana (1759-1847) est un prêtre, chef militaire et évêque maltais, né à Żebbuġ. Il est l'un des meneurs de l'insurrection de 1798 contre l'occupation française, qui chasse les troupes de Bonaparte des villages et les enferme dans La Valette. Il devient évêque de Malte en 1831 et le reste jusqu'à sa mort.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Francesco%20Saverio%20Caruana",
+                  "classement": "Caruana, Francesco Saverio",
+                  "image": {
+                    "src": "assets/portraits/pan_mt_caruana.jpg",
+                    "legende": "Francesco Saverio Caruana, portrait peint",
+                    "auteur": "NickGeorge1993",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Francesco_Saverio_Caruana.jpg"
+                  }
+                },
+                {
+                  "id": "pan_mt_vassalli",
+                  "axe": "Littérature et pensée",
+                  "date": 1764,
+                  "titre": "Naissance de Mikiel Anton Vassalli",
+                  "description": "Mikiel Anton Vassalli (1764-1829) est un linguiste, écrivain et patriote maltais, né à Żebbuġ. Il publie un dictionnaire et une grammaire de la langue maltaise, dont il fixe l'orthographe et qu'il défend comme langue nationale, ce qui lui vaut d'être appelé le père de la langue maltaise. Compromis dans un complot contre l'ordre de Malte en 1797, il passe une partie de sa vie en exil.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Mikiel%20Anton%20Vassalli",
+                  "classement": "Vassalli, Mikiel Anton",
+                  "image": {
+                    "src": "assets/portraits/pan_mt_vassalli.jpg",
+                    "legende": "Mikiel Anton Vassalli, monument de Żebbuġ",
+                    "auteur": "Hamelin de Guettelet",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Vassalli_-Zebbug.jpg"
+                  }
+                },
+                {
+                  "id": "pan_mt_azopardo",
+                  "axe": "Guerres et résistances",
+                  "date": 1772,
+                  "titre": "Naissance de Juan Bautista Azopardo",
+                  "description": "Juan Bautista Azopardo (1772-1847) est un marin et corsaire maltais, né à Senglea, formé à la construction navale à l'arsenal de Toulon. Établi au Río de la Plata au début du XIXe siècle, il se met au service de la révolution de Mai et commande en 1811 la petite flotte de la jeune Argentine lors du combat naval de San Nicolás. Il est l'un des fondateurs de la marine argentine et meurt à Buenos Aires.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Juan%20Bautista%20Azopardo",
+                  "classement": "Azopardo, Juan Bautista",
+                  "image": {
+                    "src": "assets/portraits/pan_mt_azopardo.jpg",
+                    "legende": "Juan Bautista Azopardo, portrait",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Juan_Bautista_Azopardo.jpg"
+                  }
+                },
+                {
+                  "id": "pan_mt_isouard",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1773,
+                  "titre": "Naissance de Nicolò Isouard",
+                  "description": "Nicolò Isouard (1773-1818) est un compositeur maltais, né à Żebbuġ et mort à Paris, issu d'une famille d'origine marseillaise. Formé à Palerme et à Naples, puis maître de chapelle de l'ordre à La Valette, il compose un opéra d'après « Le Barbier de Séville » avant de s'installer à Paris en 1799. Il y devient l'un des maîtres de l'opéra-comique, avec « Cendrillon » (1810) et « Joconde » (1814).",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Nicolas%20Isouard",
+                  "classement": "Isouard, Nicolò",
+                  "image": {
+                    "src": "assets/portraits/pan_mt_isouard.jpg",
+                    "legende": "Nicolò Isouard, lithographie",
+                    "auteur": "Ducarme ( fl. 1830) Alternative names Pierre François Ducarme",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Nicolas_Isouard_par_Ducarme.jpg"
+                  }
+                },
+                {
+                  "id": "pan_mt_pisani",
+                  "axe": "Littérature et pensée",
+                  "date": 1806,
+                  "titre": "Naissance de Maria Adeodata Pisani",
+                  "description": "Maria Adeodata Pisani (1806-1855) est une religieuse bénédictine maltaise, abbesse du monastère Saint-Pierre de Mdina. Sa vie mystique et son exemplarité lui valent d'être reconnue bienheureuse par l'Église catholique. Elle est béatifiée en 2001 par Jean-Paul II, lors de sa visite à Malte.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Maria%20Adeodata%20Pisani",
+                  "classement": "Pisani, Maria Adeodata",
+                  "image": {
+                    "src": "assets/portraits/pan_mt_pisani.jpg",
+                    "legende": "Maria Adeodata Pisani, portrait peint",
+                    "auteur": "the roof of this court is too high to be yours ( talk )",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Adeodata_Pisani.jpg"
+                  }
+                },
+                {
+                  "id": "pan_mt_strickland",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1861,
+                  "titre": "Naissance de Gerald Strickland",
+                  "description": "Gerald Strickland (1861-1940) est un homme politique maltais et britannique, né à La Valette. Il est gouverneur des îles Sous-le-Vent, puis de Tasmanie, d'Australie-Occidentale et de Nouvelle-Galles du Sud, avant de revenir à Malte. Fondateur du Parti constitutionnel, il y est Premier ministre de 1927 à 1932, à l'époque du régime d'autonomie interne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Gerald%20Strickland",
+                  "classement": "Strickland, Gerald",
+                  "image": {
+                    "src": "assets/portraits/pan_mt_strickland.jpg",
+                    "legende": "Gerald Strickland, photographie vers 1930",
+                    "auteur": "Unknown author Unknown author",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Gerald_Strickland_1930s.jpg"
+                  }
+                },
+                {
+                  "id": "pan_mt_zammit",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1864,
+                  "titre": "Naissance de Temi Zammit",
+                  "description": "Temi Zammit (1864-1935) est un médecin, archéologue et historien maltais, né à La Valette et connu aussi sous le nom de Themistocles Zammit. Chargé de recherches bactériologiques, il montre en 1905 que la fièvre de Malte, la brucellose, se transmet aux humains par le lait de chèvre, ce qui permet de l'enrayer. Il dirige ensuite le musée de La Valette et ses fouilles, notamment au temple préhistorique de Tarxien, le font considérer comme le père de l'archéologie maltaise.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Themistocles%20Zammit",
+                  "classement": "Zammit, Temi",
+                  "image": {
+                    "src": "assets/portraits/pan_mt_zammit.jpg",
+                    "legende": "Temi Zammit, buste",
+                    "auteur": "Stefan Bellini",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Zammit.JPG"
+                  }
+                },
+                {
+                  "id": "pan_mt_karm",
+                  "axe": "Littérature et pensée",
+                  "date": 1871,
+                  "titre": "Naissance de Dun Karm Psaila",
+                  "description": "Dun Karm Psaila (1871-1961) est un prêtre et poète maltais, de son vrai nom Carmelo Psaila. Il écrit d'abord en italien, puis presque exclusivement en maltais, dont il fait une langue de poésie moderne. Auteur des paroles de l'hymne national, « L-Innu Malti », adopté en 1945, il est tenu pour le poète national de Malte.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Dun%20Karm%20Psaila",
+                  "classement": "Psaila, Dun Karm",
+                  "image": {
+                    "src": "assets/portraits/pan_mt_karm.jpg",
+                    "legende": "Dun Karm Psaila, monument de Floriana",
+                    "auteur": "Frank Vincentz",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Malta_-_Floriana_-_Triq_Sant%27_Anna_-_Dun_Karm_Psaila_monument_02_ies.jpg"
+                  }
+                },
+                {
+                  "id": "pan_mt_sciortino",
+                  "axe": "Beaux-arts",
+                  "date": 1879,
+                  "titre": "Naissance d'Antonio Sciortino",
+                  "description": "Antonio Sciortino (1879-1947) est un sculpteur maltais, né à Żebbuġ, dont l'œuvre va du réalisme au futurisme et porte l'influence de Rodin. Établi à Rome, il y dirige la British Academy of Arts de 1911 à 1936, puis il rentre à Malte comme conservateur du Musée national des beaux-arts. Son monument aux victimes du Grand Siège, à La Valette, et « Les Gavroches », inspirés de Victor Hugo, comptent parmi ses œuvres majeures.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Antonio%20Sciortino",
+                  "classement": "Sciortino, Antonio",
+                  "image": {
+                    "src": "assets/portraits/pan_mt_sciortino.jpg",
+                    "legende": "Antonio Sciortino à trente ans, photographie vers 1910",
+                    "auteur": "Unknown author Unknown author ; Gerald Bugeja collection",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Antonio_Sciortino,_aged_30,_in_his_studio_in_Rome.jpg"
+                  }
+                },
+                {
+                  "id": "pan_mt_cremona",
+                  "axe": "Littérature et pensée",
+                  "date": 1880,
+                  "titre": "Naissance de Ninu Cremona",
+                  "description": "Ninu Cremona (1880-1972) est un écrivain et grammairien maltais, né à Gozo sous le nom d'Anthony Cremona. Fonctionnaire de l'administration, il écrit de nombreuses pièces de théâtre et des ouvrages littéraires. Il est surtout connu pour avoir précisé l'orthographe de la langue maltaise.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Ninu%20Cremona",
+                  "classement": "Cremona, Ninu",
+                  "image": {
+                    "src": "assets/portraits/pan_mt_cremona.jpg",
+                    "legende": "Ninu Cremona, monument",
+                    "auteur": "Wusel007",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ninu_Cremona.JPG"
+                  }
+                },
+                {
+                  "id": "pan_mt_preca",
+                  "axe": "Littérature et pensée",
+                  "date": 1880,
+                  "titre": "Naissance de Georges Preca",
+                  "description": "Georges Preca (1880-1962) est un prêtre catholique maltais, né à La Valette et familièrement appelé Dun Ġorġ. Il fonde en 1907 la Société de la doctrine chrétienne, le MUSEUM, qui enseigne le catéchisme aux enfants et aux adultes à travers toute l'île. Béatifié en 2001, il est canonisé par Benoît XVI en 2007, et devient le deuxième saint maltais, après saint Publius.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Georges%20Preca",
+                  "classement": "Preca, Georges",
+                  "image": {
+                    "src": "assets/portraits/pan_mt_preca.jpg",
+                    "legende": "Georges Preca, statue",
+                    "auteur": "Continentaleurope",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Statue_of_Saint_George_Preca_at_Montekristo_Estates,_Hal_Farrug,_Luqa_(cropped).jpeg"
+                  }
+                },
+                {
+                  "id": "pan_mt_mizzi",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1885,
+                  "titre": "Naissance d'Enrico Mizzi",
+                  "description": "Enrico Mizzi (1885-1950) est un homme politique maltais, né à La Valette et chef du Parti nationaliste. Défenseur de la langue et de la culture italiennes de l'île, il est interné par les Britanniques en 1940 et déporté en Ouganda pendant la guerre. Devenu Premier ministre en septembre 1950, il meurt en fonctions trois mois plus tard, seul chef du gouvernement maltais dans ce cas.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Enrico%20Mizzi",
+                  "classement": "Mizzi, Enrico",
+                  "image": {
+                    "src": "assets/portraits/pan_mt_mizzi.jpg",
+                    "legende": "Enrico Mizzi, buste",
+                    "auteur": "Philip Serracino Inglott ( Inkwina ( talk · contribs ))",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Enrico_Mizzi.JPG"
+                  }
+                },
+                {
+                  "id": "pan_mt_calleia",
+                  "axe": "Musique, spectacle et sport",
+                  "date": 1897,
+                  "titre": "Naissance de Joseph Calleia",
+                  "description": "Joseph Calleia (1897-1975) est un acteur maltais, né Giuseppe Maria Spurrin-Calleja à Rabat. Chanteur itinérant en Europe, puis acteur à Broadway, il rejoint en 1931 la Metro-Goldwyn-Mayer et joue pendant plus de trente ans dans des films hollywoodiens. Il tient notamment un rôle dans « La Soif du mal » d'Orson Welles, en 1958, avant de se retirer à Malte.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Joseph%20Calleia",
+                  "classement": "Calleia, Joseph",
+                  "image": {
+                    "src": "assets/portraits/pan_mt_calleia.jpg",
+                    "legende": "Joseph Calleia, photographie de 1942",
+                    "auteur": "Chalmers Publishing Company; Paramount Pictures",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Joseph-Calleia-1942.jpg"
+                  }
+                },
+                {
+                  "id": "pan_mt_borgolivier",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1911,
+                  "titre": "Naissance de Giorgio Borg Olivier",
+                  "description": "Giorgio Borg Olivier (1911-1980) est un homme politique maltais, chef du Parti nationaliste et Premier ministre de 1950 à 1955, puis de 1962 à 1971. Il négocie avec le Royaume-Uni l'accès de Malte à l'indépendance, proclamée le 21 septembre 1964. Il dirige le pays comme monarchie du Commonwealth pendant les sept premières années de l'indépendance.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Giorgio%20Borg%20Olivier",
+                  "classement": "Olivier, Giorgio Borg",
+                  "image": {
+                    "src": "assets/portraits/pan_mt_borgolivier.jpg",
+                    "legende": "Giorgio Borg Olivier, photographie de 1963",
+                    "auteur": "Abbie Rowe, Maison-Blanche",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Giorgio_Borg_Olivier.jpg"
+                  }
+                },
+                {
+                  "id": "pan_mt_buttigieg",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1912,
+                  "titre": "Naissance d'Anton Buttigieg",
+                  "description": "Anton Buttigieg (1912-1983) est un poète et homme d'État maltais, né à Qala, à Gozo. Homme de loi, il est aussi poète et écrivain en langue maltaise. Il est le deuxième président de la République de Malte, de 1976 à 1981.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Anton%20Buttigieg",
+                  "classement": "Buttigieg, Anton",
+                  "image": {
+                    "src": "assets/portraits/pan_mt_buttigieg.jpg",
+                    "legende": "Anton Buttigieg, photographie",
+                    "auteur": "Department of Information, Malta",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Dr._Anton_Buttigieg.jpg"
+                  }
+                },
+                {
+                  "id": "pan_mt_mintoff",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1916,
+                  "titre": "Naissance de Dom Mintoff",
+                  "description": "Dom Mintoff (1916-2012) est un homme d'État maltais, né Duminku Mintoff à Cospicua et mort à Tarxien. Chef du Parti travailliste, il est Premier ministre de 1955 à 1958, puis de 1971 à 1984, et se fait d'abord le partisan de l'intégration à la Grande-Bretagne, avant de se prononcer pour l'indépendance. Il proclame la République en 1974 et obtient le départ des bases britanniques le 31 mars 1979, date devenue fête nationale.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Dom%20Mintoff",
+                  "classement": "Mintoff, Dom",
+                  "image": {
+                    "src": "assets/portraits/pan_mt_mintoff.jpg",
+                    "legende": "Dom Mintoff, photographie de 1974",
+                    "auteur": "W. Punt for Anefo",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Dom_Mintoff_(1974).jpg"
+                  }
+                },
+                {
+                  "id": "pan_mt_barbara",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1923,
+                  "titre": "Naissance d'Agatha Barbara",
+                  "description": "Agatha Barbara (1923-2002) est une femme politique maltaise, née à Żabbar. Ministre de l'Éducation dans le gouvernement travailliste de Dom Mintoff de 1955 à 1958, puis ministre du Travail et de la Culture, elle est la première femme ministre de Malte. Élue présidente de la République en 1982, elle exerce cette fonction jusqu'en 1987.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Agatha%20Barbara",
+                  "classement": "Barbara, Agatha",
+                  "image": {
+                    "src": "assets/portraits/pan_mt_barbara.jpg",
+                    "legende": "Agatha Barbara, photographie",
+                    "auteur": "Department of Information, Malta",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Ms_Agatha_Barbara.jpg"
+                  }
+                },
+                {
+                  "id": "pan_mt_ebejer",
+                  "axe": "Littérature et pensée",
+                  "date": 1925,
+                  "titre": "Naissance de Francis Ebejer",
+                  "description": "Francis Ebejer (1925-1993) est un romancier et dramaturge maltais, né à Dingli, qui écrit en anglais et en maltais. Directeur d'école pendant près de trente ans, il écrit pour la radio, la télévision et le théâtre, et publie des romans et des nouvelles dont certains sont traduits en italien. Il est l'un des principaux auteurs maltais du XXe siècle.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Francis%20Ebejer",
+                  "classement": "Ebejer, Francis",
+                  "image": {
+                    "src": "assets/portraits/pan_mt_ebejer.jpg",
+                    "legende": "Francis Ebejer, photographie",
+                    "auteur": "Malta Theatre Archivist",
+                    "licence": "CC0 (domaine public)",
+                    "source": "https://commons.wikimedia.org/wiki/File:Francis_Ebejer.jpg"
+                  }
+                },
+                {
+                  "id": "pan_mt_grech",
+                  "axe": "Littérature et pensée",
+                  "date": 1925,
+                  "titre": "Naissance de Prosper Grech",
+                  "description": "Prosper Grech (1925-2019) est un prêtre augustin et théologien maltais, né à Birgu. Professeur de théologie biblique dans plusieurs universités pontificales de Rome, il est consulteur de la Congrégation pour la doctrine de la foi. Créé cardinal en 2012 par Benoît XVI, à plus de quatre-vingt-six ans, il meurt à Rome en 2019.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Prosper%20Grech",
+                  "classement": "Grech, Prosper",
+                  "image": {
+                    "src": "assets/portraits/pan_mt_grech.jpg",
+                    "legende": "Prosper Grech, photographie de 2014",
+                    "auteur": "Spongie555",
+                    "licence": "CC BY-SA 3.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Cardinal_Grech_2014.jpg"
+                  }
+                },
+                {
+                  "id": "pan_mt_demarco",
+                  "axe": "Chefs d'État et dirigeants",
+                  "date": 1931,
+                  "titre": "Naissance de Guido de Marco",
+                  "description": "Guido de Marco (1931-2010) est un avocat et homme politique maltais, né à La Valette. Ministre de l'Intérieur, de la Justice et des Affaires étrangères, il est élu en 1990 président de l'Assemblée générale des Nations unies. Président de la République de 1999 à 2004, il contribue à l'adhésion de Malte à l'Union européenne.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Guido%20de%20Marco",
+                  "classement": "Marco, Guido de",
+                  "image": {
+                    "src": "assets/portraits/pan_mt_demarco.jpg",
+                    "legende": "Guido de Marco, photographie de 2003",
+                    "auteur": "United States Navy, Photographer’s Mate 2nd Class Todd Reeves",
+                    "licence": "Domaine public",
+                    "source": "https://commons.wikimedia.org/wiki/File:Guido_de_Marco_2003_crop.jpg"
+                  }
+                },
+                {
+                  "id": "pan_mt_debono",
+                  "axe": "Sciences, techniques et innovation",
+                  "date": 1933,
+                  "titre": "Naissance d'Edward de Bono",
+                  "description": "Edward de Bono (1933-2021) est un psychologue, médecin et spécialiste maltais des sciences cognitives, né à Malte. Docteur en médecine de l'université de Malte, boursier Rhodes à Oxford, il enseigne à Oxford, à Cambridge et à Harvard. Il est surtout connu pour avoir inventé la notion de pensée latérale, exposée dans de nombreux ouvrages.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Edward%20de%20Bono",
+                  "classement": "Bono, Edward de",
+                  "image": {
+                    "src": "assets/portraits/pan_mt_debono.jpg",
+                    "legende": "Edward de Bono, photographie de 2009",
+                    "auteur": "Impact Hub",
+                    "licence": "CC BY-SA 2.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Edward_de_Bono_-_The_Hub_Kings_Cross_2009_13.jpg"
+                  }
+                },
+                {
+                  "id": "pan_mt_sammut",
+                  "axe": "Littérature et pensée",
+                  "date": 1945,
+                  "titre": "Naissance de Frans Sammut",
+                  "description": "Frans Sammut (1945-2011) est un romancier et essayiste maltais, né à Żebbuġ. Il fait toute sa carrière dans l'enseignement, qu'il termine comme directeur d'école. Conseiller pour la culture du Premier ministre Alfred Sant de 1996 à 1998, il écrit en maltais des romans de référence, dont « Il-Gaġġa » (La Cage).",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Frans%20Sammut",
+                  "classement": "Sammut, Frans",
+                  "image": {
+                    "src": "assets/portraits/pan_mt_sammut.jpg",
+                    "legende": "Frans Sammut, photographie",
+                    "auteur": "Maltisafi",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Frans_Sammut_(1).jpg"
+                  }
+                },
+                {
+                  "id": "pan_mt_friggieri",
+                  "axe": "Littérature et pensée",
+                  "date": 1947,
+                  "titre": "Naissance d'Oliver Friggieri",
+                  "description": "Oliver Friggieri (1947-2020) est un poète, romancier et critique littéraire maltais, né à Floriana. Docteur en littérature maltaise de l'université catholique de Milan, il enseigne le maltais à l'université de Malte, dont il dirige le département dès 1988. Spécialiste de Dun Karm Psaila, il écrit aussi sur Pietru Caxaro et Mikiel Anton Vassalli.",
+                  "wikipedia": "https://fr.wikipedia.org/wiki/Oliver%20Friggieri",
+                  "classement": "Friggieri, Oliver",
+                  "image": {
+                    "src": "assets/portraits/pan_mt_friggieri.jpg",
+                    "legende": "Oliver Friggieri, photographie de 2020",
+                    "auteur": "George Scintilla",
+                    "licence": "CC BY-SA 4.0",
+                    "source": "https://commons.wikimedia.org/wiki/File:Oliver_Friggieri.jpg"
+                  }
+                }
+              ],
+              "axeOrder": [
+                "Chefs d'État et dirigeants",
+                "Guerres et résistances",
+                "Littérature et pensée",
+                "Beaux-arts",
+                "Musique, spectacle et sport",
+                "Sciences, techniques et innovation"
+              ],
+              "essentiel": [
+                "pan_mt_valette",
+                "pan_mt_vassalli",
+                "pan_mt_zammit",
+                "pan_mt_karm",
+                "pan_mt_preca",
+                "pan_mt_borgolivier",
+                "pan_mt_mintoff"
               ]
             },
             {

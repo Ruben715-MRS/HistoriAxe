@@ -810,6 +810,44 @@ test('« Grandes figures d’Irlande » : les ancres sont l’Irlande, comme « 
     });
 });
 
+test('« Grandes figures de Malte » : les ancres sont Malte, comme « Histoire de Malte », et la session se joue', () => {
+    // `pan_mt` est le panthéon d'un PAYS : ses figures portent l'étiquette de « Histoire de Malte » (`thm_mt`) ;
+    // les grands maîtres venus de France, du Portugal et d'Allemagne sont des invités et portent le pays de leur naissance.
+    const theme = allThemes().find(t => t.id === 'pan_mt');
+    assert.ok(theme, 'thème pan_mt absent du pack français');
+    const index = S.buildTagIndex(frData.categories, { countryByTheme: geoMap });
+    theme.events.forEach(e => assert.equal(index[e.id], e.pays ? 'pays:' + e.pays : 'pays:MT', `étiquette de ${e.id}`));
+    const histoire = allThemes().find(t => t.id === 'thm_mt');
+    assert.equal(index[histoire.events[0].id], 'pays:MT', 'pan_mt doit être le même pays que thm_mt');
+    const anchors = theme.events.map(e => Object.assign({}, e, { tag: index[e.id], themeName: theme.nom }));
+    const session = S.buildSession(anchors, realPool, { rng: seededRng(11), count: S.SESSION_ROUNDS });
+    assert.equal(session.length, S.SESSION_ROUNDS);
+    session.forEach(q => {
+        assert.ok(!/^pan_/.test(q.correct.themeId), 'la bonne réponse ne peut pas venir d’un panthéon');
+        assert.notEqual(q.correct.tag, q.anchor.tag,
+            `« ${q.correct.titre} » a la même étiquette que « ${q.anchor.titre} » : ce n’est pas un « ailleurs »`);
+    });
+});
+
+test('« Grandes figures de Chypre » : les ancres sont Chypre, comme « Histoire de Chypre », et la session se joue', () => {
+    // `pan_cy` est le panthéon d'un PAYS : ses figures portent l'étiquette de « Histoire de Chypre » (`thm_cy`) ;
+    // Catherine Cornaro, Marcantonio Bragadin (Venise) et Guy de Lusignan (Poitou) sont des invités et portent le pays de leur naissance.
+    const theme = allThemes().find(t => t.id === 'pan_cy');
+    assert.ok(theme, 'thème pan_cy absent du pack français');
+    const index = S.buildTagIndex(frData.categories, { countryByTheme: geoMap });
+    theme.events.forEach(e => assert.equal(index[e.id], e.pays ? 'pays:' + e.pays : 'pays:CY', `étiquette de ${e.id}`));
+    const histoire = allThemes().find(t => t.id === 'thm_cy');
+    assert.equal(index[histoire.events[0].id], 'pays:CY', 'pan_cy doit être le même pays que thm_cy');
+    const anchors = theme.events.map(e => Object.assign({}, e, { tag: index[e.id], themeName: theme.nom }));
+    const session = S.buildSession(anchors, realPool, { rng: seededRng(13), count: S.SESSION_ROUNDS });
+    assert.equal(session.length, S.SESSION_ROUNDS);
+    session.forEach(q => {
+        assert.ok(!/^pan_/.test(q.correct.themeId), 'la bonne réponse ne peut pas venir d’un panthéon');
+        assert.notEqual(q.correct.tag, q.anchor.tag,
+            `« ${q.correct.titre} » a la même étiquette que « ${q.anchor.titre} » : ce n’est pas un « ailleurs »`);
+    });
+});
+
 test('« Grandes figures d’Ukraine » : les ancres sont l’Ukraine, comme « Histoire de l’Ukraine », et la session se joue', () => {
     // `pan_ua` est le panthéon d'un PAYS : ses figures portent l'étiquette de « Histoire de l'Ukraine » (`thm_ua`) ;
     // aucune n'est un invité d'un autre État.

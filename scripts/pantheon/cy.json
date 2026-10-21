@@ -1,0 +1,427 @@
+{
+  "code": "cy",
+  "nom": "Chypre",
+  "theme": {
+    "id": "pan_cy",
+    "nom": "Grandes figures de Chypre",
+    "difficulte": "Intermédiaire",
+    "motsCles": [
+      "Chypre",
+      "Chypriote",
+      "Chypriotes",
+      "Nicosie",
+      "Famagouste",
+      "Larnaca",
+      "Limassol",
+      "Paphos",
+      "Kyrenia",
+      "Salamine",
+      "Kition",
+      "Amathonte",
+      "Royaume de Chypre",
+      "Lusignan",
+      "Vénitiens à Chypre",
+      "Chypre ottomane",
+      "Chypre britannique",
+      "EOKA",
+      "Enosis",
+      "Taksim",
+      "Ligne verte",
+      "Invasion turque de 1974",
+      "Plan Annan",
+      "République turque de Chypre du Nord",
+      "Chypriotes grecs",
+      "Chypriotes turcs",
+      "Aphrodite",
+      "Église de Chypre",
+      "AKEL",
+      "Union européenne"
+    ]
+  },
+  "axes": [
+    "Chefs d'État et dirigeants",
+    "Guerres et résistances",
+    "Littérature et pensée",
+    "Musique, spectacle et sport"
+  ],
+  "personnages": [
+    {
+      "slug": "epiphane",
+      "nom": "Épiphane de Salamine",
+      "classement": "Salamine, Épiphane de",
+      "titre": "Naissance d'Épiphane de Salamine",
+      "axe": "Littérature et pensée",
+      "naissance": 315,
+      "description": "Épiphane de Salamine (vers 315-403) est un évêque et théologien chrétien du IVe siècle, né en Palestine et évêque de Salamine, à Chypre, à partir de 367. Défenseur de l'orthodoxie nicéenne, il rédige le « Panarion », vaste catalogue des hérésies de son temps, et combat l'origénisme. Il meurt en mer en 403, lors d'un voyage de retour de Constantinople, et il est vénéré comme Père de l'Église.",
+      "wikipedia": "Épiphane de Salamine",
+      "portrait": {
+        "fichier": "Epiphanius-Kosovo.jpg",
+        "legende": "Épiphane de Salamine, fresque médiévale",
+        "licence": "Domaine public",
+        "auteur": "Unknown author Unknown author"
+      }
+    },
+    {
+      "slug": "spyridon",
+      "nom": "Spyridon de Trimythonte",
+      "classement": "Trimythonte, Spyridon de",
+      "titre": "Naissance de Spyridon de Trimythonte",
+      "axe": "Littérature et pensée",
+      "naissance": 270,
+      "description": "Spyridon de Trimythonte (270-348) est un évêque chypriote du IVe siècle, né dans le village d'Assia, où il est d'abord berger. Évêque de Trimythonte, il passe pour avoir participé au concile de Nicée en 325 et reste un saint très populaire de l'Église orthodoxe. Ses reliques, conservées à Corfou, font de lui le saint patron de l'île.",
+      "wikipedia": "Spyridon de Trimythonte",
+      "portrait": {
+        "fichier": "Poulakis_Theodoros_-_St_Spyridon_and_scenes_from_his_life_-_Google_Art_Project.jpg",
+        "legende": "Spyridon de Trimythonte, icône de Theodoros Poulakis",
+        "licence": "Domaine public",
+        "auteur": "Poulakis Theodoros (1620 - 1692) Details on Google Art Project",
+        "recadrage": [
+          0.2,
+          0.4,
+          0.8,
+          0.9
+        ]
+      }
+    },
+    {
+      "slug": "jeanaumonier",
+      "nom": "Jean l'Aumônier",
+      "classement": "l'Aumônier, Jean",
+      "titre": "Naissance de Jean l'Aumônier",
+      "axe": "Littérature et pensée",
+      "naissance": 550,
+      "description": "Jean l'Aumônier (vers 550-vers 619) est un patriarche d'Alexandrie, aussi appelé Jean de Chypre, né près de Limassol d'un père préfet de l'île. Veuf, il se consacre aux pauvres et devient patriarche d'Alexandrie en 610, puis il utilise les ressources de l'Église pour secourir les réfugiés qui fuient l'invasion perse. Il meurt à Chypre, et il est fêté en janvier par les Églises catholique et orthodoxe.",
+      "wikipedia": "Jean l'Aumônier",
+      "portrait": {
+        "fichier": "Saintjohnthealmoner.jpg",
+        "legende": "Jean l'Aumônier, peinture",
+        "licence": "Domaine public",
+        "auteur": "Titian (1490–1576)"
+      }
+    },
+    {
+      "slug": "neophyte",
+      "nom": "Néophyte le Reclus",
+      "classement": "Reclus, Néophyte le",
+      "titre": "Naissance de Néophyte le Reclus",
+      "axe": "Littérature et pensée",
+      "naissance": 1134,
+      "description": "Néophyte le Reclus (1134-1219) est un moine, prêtre et ermite chypriote, né à Lefkara. Il creuse son ermitage dans une falaise près de Paphos, et y fonde un monastère qui porte son nom. Autodidacte, il laisse des écrits qui conservent le récit de la conquête de l'île par Richard Cœur de Lion en 1191.",
+      "wikipedia": "Néophyte de Chypre",
+      "portrait": {
+        "fichier": "Ikone-Agios_Neofytos.jpg",
+        "legende": "Néophyte le Reclus, icône",
+        "licence": "CC BY-SA 2.0",
+        "auteur": "Krzysztof Belczyński"
+      }
+    },
+    {
+      "slug": "guylusignan",
+      "nom": "Guy de Lusignan",
+      "classement": "Lusignan, Guy de",
+      "titre": "Naissance de Guy de Lusignan",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1150,
+      "description": "Guy de Lusignan (vers 1150-1194) est un noble poitevin qui devient roi de Jérusalem en 1186 par son mariage avec la princesse Sibylle. Vaincu et capturé par Saladin à la bataille de Hattin en 1187, il est libéré et conduit ensuite le siège de Saint-Jean-d'Acre. Il achète en 1192 l'île de Chypre aux Templiers, et fonde la dynastie des Lusignan, qui y règne près de trois siècles.",
+      "wikipedia": "Guy de Lusignan (roi de Jérusalem)",
+      "essentiel": true,
+      "pays": "FR",
+      "portrait": {
+        "fichier": "Guido_di_Lusignano.jpg",
+        "legende": "Guy de Lusignan, portrait peint",
+        "licence": "Domaine public",
+        "auteur": "François-Édouard Picot (1786–1868)"
+      }
+    },
+    {
+      "slug": "pierre1",
+      "nom": "Pierre Ier de Lusignan",
+      "classement": "Pierre Ier de Lusignan",
+      "titre": "Naissance de Pierre Ier de Lusignan",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1328,
+      "description": "Pierre Ier de Lusignan (1328-1369) est roi de Chypre de 1358 à 1369, né et mort à Nicosie. Il parcourt l'Europe pour réunir une croisade et prend Alexandrie en 1365, qu'il abandonne après quelques jours de pillage. Impopulaire auprès de sa noblesse, il est assassiné par des chevaliers de son entourage en 1369.",
+      "wikipedia": "Pierre Ier (roi de Chypre)",
+      "portrait": {
+        "fichier": "Pierre_1er_de_Lusignan.jpg",
+        "legende": "Pierre Ier de Lusignan, peinture",
+        "licence": "Domaine public",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "cornaro",
+      "nom": "Catherine Cornaro",
+      "classement": "Cornaro, Catherine",
+      "titre": "Naissance de Catherine Cornaro",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1454,
+      "description": "Catherine Cornaro (1454-1510) est la dernière reine de Chypre, née à Venise dans une famille de patriciens. Épouse du roi Jacques II de Lusignan, elle gouverne l'île après sa mort en 1473 et au nom de son fils, de 1474 à 1489. Poussée à abdiquer par Venise, qui annexe l'île, elle se retire à Asolo, où elle tient une cour d'humanistes et d'artistes.",
+      "wikipedia": "Catherine Cornaro",
+      "pays": "IT",
+      "portrait": {
+        "fichier": "Caterina_Cornaro_by_Gentile_Bellini.jpg",
+        "legende": "Catherine Cornaro, portrait attribué à Gentile Bellini",
+        "licence": "Domaine public",
+        "auteur": "Gentile Bellini (1429–1507)"
+      }
+    },
+    {
+      "slug": "bragadin",
+      "nom": "Marcantonio Bragadin",
+      "classement": "Bragadin, Marcantonio",
+      "titre": "Naissance de Marcantonio Bragadin",
+      "axe": "Guerres et résistances",
+      "naissance": 1523,
+      "description": "Marcantonio Bragadin (1523-1571) est un officier vénitien, né à Venise et gouverneur de Famagouste, à Chypre. Il y soutient pendant onze mois, en 1570 et 1571, le siège de l'armée ottomane de Lala Mustafa Pacha. Après la capitulation, il est mis à mort par les vainqueurs en août 1571, écorché vif, ce qui en fait un héros de la résistance vénitienne.",
+      "wikipedia": "Marcantonio Bragadin",
+      "pays": "IT",
+      "portrait": {
+        "fichier": "Tiziano_aspetti,_busto_di_marcantonio_bragadin,_1571_ca..JPG",
+        "legende": "Marcantonio Bragadin, buste de Tiziano Aspetti, vers 1571",
+        "licence": "CC BY 3.0",
+        "auteur": "Sailko"
+      }
+    },
+    {
+      "slug": "kyrillos2",
+      "nom": "Kyrillos II",
+      "classement": "Kyrillos II",
+      "titre": "Naissance de Kyrillos II",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1845,
+      "description": "Kyrillos II (1845-1916) est un archevêque de Chypre, né Kyrillos Papadopoulos au village de Prodromos, près de Limassol, sous la domination ottomane. Évêque de Larnaca, puis archevêque de 1909 à 1916, il dirige l'Église orthodoxe de l'île à l'époque de l'administration britannique. Il y défend l'identité grecque de l'île et sa réunion avec la Grèce, l'« enosis ».",
+      "wikipedia": "Kyrillos II",
+      "portrait": {
+        "fichier": "Архиепископ_Кипрский_Кирилл_II.PNG",
+        "legende": "Kyrillos II, photographie",
+        "largeur": 330,
+        "licence": "Domaine public",
+        "auteur": "не указно"
+      }
+    },
+    {
+      "slug": "makarios3",
+      "nom": "Makarios III",
+      "classement": "Makarios III",
+      "titre": "Naissance de Makarios III",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1913,
+      "description": "Makarios III (1913-1977) est un archevêque et homme d'État chypriote, né Mikhaïl Moúskos près de Paphos. Primat de l'Église de Chypre en 1950, il est exilé aux Seychelles par les Britanniques en 1956 et devient en 1960 le premier président de la république de Chypre indépendante. Renversé par un coup d'État soutenu par la junte grecque en juillet 1974, il rentre à Chypre à la fin de l'année et reste au pouvoir jusqu'à sa mort.",
+      "wikipedia": "Makários III",
+      "essentiel": true,
+      "portrait": {
+        "fichier": "Makarios_III_and_Robert_F._Wagner_NYWTS_cropped.jpg",
+        "legende": "Makarios III, photographie",
+        "licence": "Domaine public",
+        "recadrage": [
+          0.05,
+          0.0,
+          0.7,
+          0.7
+        ],
+        "auteur": "Photographe du New York World-Telegram and the Sun"
+      }
+    },
+    {
+      "slug": "grivas",
+      "nom": "Georgios Grivas",
+      "classement": "Grivas, Georgios",
+      "titre": "Naissance de Georgios Grivas",
+      "axe": "Guerres et résistances",
+      "naissance": 1897,
+      "description": "Georgios Grivas (1897-1974) est un général chypriote de l'armée grecque, né à Trikomo, qui prend le nom de guerre de Digenis. Il dirige de 1955 à 1959 l'EOKA, l'organisation armée qui se bat contre la domination britannique pour l'union de Chypre à la Grèce. Revenu clandestinement dans l'île en 1971, il y fonde l'EOKA-B et meurt à Limassol en janvier 1974.",
+      "wikipedia": "Geórgios Grívas",
+      "portrait": {
+        "fichier": "Georgios_Grivas_1967.jpg",
+        "legende": "Georgios Grivas, photographie de 1967",
+        "licence": "CC0 (domaine public)",
+        "auteur": "Unknown author Unknown author"
+      }
+    },
+    {
+      "slug": "afxentiou",
+      "nom": "Grigóris Afxentíou",
+      "classement": "Afxentíou, Grigóris",
+      "titre": "Naissance de Grigóris Afxentíou",
+      "axe": "Guerres et résistances",
+      "naissance": 1928,
+      "description": "Grigóris Afxentíou (1928-1957) est un combattant chypriote de l'EOKA, né dans le village de Lysi, près de Famagouste. Il devient le bras droit de Georgios Grivas dans la lutte armée contre l'administration britannique. Encerclé en mars 1957 dans sa cachette, près du monastère de Machairas, il refuse de se rendre et y meurt, devenant l'un des martyrs de la lutte pour l'indépendance.",
+      "wikipedia": "Grigóris Afxentíou",
+      "portrait": {
+        "fichier": "Памятник_Григорису_Афксентиу_в_Монастыре_Махера_(cropped).jpg",
+        "legende": "Grigóris Afxentíou, monument près du monastère de Machairas",
+        "licence": "CC0 (domaine public)",
+        "auteur": "dimitrisvetsikas1969",
+        "recadrage": [
+          0.25,
+          0.15,
+          0.8,
+          0.7
+        ]
+      }
+    },
+    {
+      "slug": "kucuk",
+      "nom": "Fazıl Küçük",
+      "classement": "Küçük, Fazıl",
+      "titre": "Naissance de Fazıl Küçük",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1906,
+      "description": "Fazıl Küçük (1906-1984) est un médecin et homme politique chypriote turc, né à Nicosie, qui défend les droits de la minorité turque de l'île. Il fonde le parti Kıbrıs Türktür et s'oppose à l'union de Chypre à la Grèce, réclamant plutôt la partition. Il est le premier vice-président de la république de Chypre, de 1960 à 1973.",
+      "wikipedia": "Fazıl Küçük",
+      "portrait": {
+        "fichier": "Bundesarchiv_B_145_Bild-F014934-0068,_Fazil_Kutschuk.jpg",
+        "legende": "Fazıl Küçük, photographie",
+        "licence": "CC BY-SA 3.0 DE",
+        "auteur": "Ludwig Wegmann Description German photographer"
+      }
+    },
+    {
+      "slug": "denktas",
+      "nom": "Rauf Denktaş",
+      "classement": "Denktaş, Rauf",
+      "titre": "Naissance de Rauf Denktaş",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1924,
+      "description": "Rauf Denktaş (1924-2012) est un homme d'État chypriote turc, né à Paphos et avocat de formation. Proche de Fazıl Küçük, il dirige la communauté chypriote turque après 1973, et proclame en 1983 la république turque de Chypre du Nord, que seule la Turquie reconnaît. Il en reste le président jusqu'en 2005, et participe pendant trente ans aux négociations sur l'avenir de l'île.",
+      "wikipedia": "Rauf Denktaş",
+      "portrait": {
+        "fichier": "Rauf_Denktash.jpg",
+        "legende": "Rauf Denktaş, photographie",
+        "licence": "CC BY-SA 3.0",
+        "auteur": "Auteur inconnu"
+      }
+    },
+    {
+      "slug": "kyprianou",
+      "nom": "Spyros Kyprianou",
+      "classement": "Kyprianou, Spyros",
+      "titre": "Naissance de Spyros Kyprianou",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1932,
+      "description": "Spyros Kyprianou (1932-2002) est un avocat et homme d'État chypriote, né à Limassol. Secrétaire de Makarios III à Londres, puis ministre des Affaires étrangères de 1960 à 1972, il porte à l'étranger la cause de l'île après l'invasion turque de 1974. Il est le deuxième président de la république de Chypre, de 1977 à 1988.",
+      "wikipedia": "Spýros Kyprianoú",
+      "portrait": {
+        "fichier": "Spyros_Kyprianou_UN_(cropped).jpg",
+        "legende": "Spyros Kyprianou, photographie",
+        "licence": "Domaine public",
+        "auteur": "Bernard Gotfryd"
+      }
+    },
+    {
+      "slug": "clerides",
+      "nom": "Glafcos Clerides",
+      "classement": "Clerides, Glafcos",
+      "titre": "Naissance de Glafcos Clerides",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1919,
+      "description": "Glafcos Clerides (1919-2013) est un avocat et homme politique chypriote, né à Nicosie. Pilote de la Royal Air Force pendant la Seconde Guerre mondiale, il préside la Chambre des représentants de 1960 à 1976 et assure l'intérim de la présidence en 1974. Président de la République de 1993 à 2003, il mène les négociations qui préparent l'adhésion de Chypre à l'Union européenne, en 2004.",
+      "wikipedia": "Gláfkos Klirídis",
+      "portrait": {
+        "fichier": "Glafcos_Clerides,_1993.jpg",
+        "legende": "Glafcos Clerides, photographie de 1993",
+        "licence": "CC BY 4.0",
+        "auteur": "European Commission"
+      }
+    },
+    {
+      "slug": "papadopoulos",
+      "nom": "Tassos Papadopoulos",
+      "classement": "Papadopoulos, Tassos",
+      "titre": "Naissance de Tassos Papadopoulos",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1934,
+      "description": "Tassos Papadopoulos (1934-2008) est un avocat et homme politique chypriote, né à Nicosie, qui étudie le droit à Londres. Ancien combattant de l'EOKA, il est plusieurs fois ministre, avant de devenir président de la République, de 2003 à 2008. Il appelle les Chypriotes grecs à rejeter le plan Annan en 2004, et l'île, divisée, entre dans l'Union européenne la même année.",
+      "wikipedia": "Tássos Papadópoulos",
+      "portrait": {
+        "fichier": "Visit_of_Tassos_Papadopoulos,_President_of_Cyprus,_to_the_EC_(P-011163_00-02).jpg",
+        "legende": "Tassos Papadopoulos, photographie",
+        "licence": "CC BY 4.0",
+        "auteur": "Danny Gys"
+      }
+    },
+    {
+      "slug": "ezekias",
+      "nom": "Ezekias Papaioannou",
+      "classement": "Papaioannou, Ezekias",
+      "titre": "Naissance d'Ezekias Papaioannou",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1908,
+      "description": "Ezekias Papaioannou (1908-1988) est un homme politique communiste chypriote, né dans le village de Kelaki, près de Limassol. Mineur puis ouvrier, il s'engage en 1936 dans les Brigades internationales aux côtés des républicains espagnols. Secrétaire général de l'AKEL pendant près de quarante ans, il fait du Parti progressiste des travailleurs la première force de gauche de l'île.",
+      "wikipedia": "Ezekías Papaioánnou",
+      "portrait": {
+        "fichier": "Ezekias.jpg",
+        "legende": "Ezekias Papaioannou, photographie",
+        "licence": "Image non libre",
+        "auteur": "Auteur inconnu",
+        "source": "https://en.wikipedia.org/wiki/File:Ezekias.jpg"
+      }
+    },
+    {
+      "slug": "lyssaridis",
+      "nom": "Vassos Lyssaridis",
+      "classement": "Lyssaridis, Vassos",
+      "titre": "Naissance de Vassos Lyssaridis",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1920,
+      "description": "Vassos Lyssaridis (1920-2021) est un médecin et homme politique chypriote, né le 13 mai 1920. Quittant le parti communiste en 1955, il rejoint l'EOKA dans la lutte armée contre les Britanniques, puis il devient le médecin et le proche de Makarios III. Il fonde en 1969 le parti socialiste EDEK, et préside la Chambre des représentants de 1985 à 1991.",
+      "wikipedia": "Vassos Lyssaridis",
+      "portrait": {
+        "fichier": "Vassos_Lyssarides.jpg",
+        "legende": "Vassos Lyssaridis, photographie",
+        "licence": "CC BY-SA 2.0",
+        "auteur": "Υπουργείο Εξωτερικών"
+      }
+    },
+    {
+      "slug": "christofias",
+      "nom": "Dimitris Christofias",
+      "classement": "Christofias, Dimitris",
+      "titre": "Naissance de Dimitris Christofias",
+      "axe": "Chefs d'État et dirigeants",
+      "naissance": 1946,
+      "description": "Dimitris Christofias (1946-2019) est un homme politique chypriote, né à Dikomo et formé en Union soviétique. Secrétaire général de l'AKEL de 1988 à 2009, il préside la Chambre des représentants de 2001 à 2008. Élu président de la République en 2008 jusqu'en 2013, il est le premier dirigeant communiste d'un État de l'Union européenne.",
+      "wikipedia": "Dimítris Khristófias",
+      "portrait": {
+        "fichier": "Demetris_Christofias_in_February_2011.jpg",
+        "legende": "Dimitris Christofias, photographie de 2011",
+        "licence": "CC BY-SA 2.0",
+        "auteur": "Υπουργείο Εξωτερικών"
+      }
+    },
+    {
+      "slug": "cacoyannis",
+      "nom": "Michael Cacoyannis",
+      "classement": "Cacoyannis, Michael",
+      "titre": "Naissance de Michael Cacoyannis",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1921,
+      "description": "Michael Cacoyannis (1921-2011) est un réalisateur et metteur en scène grec, né à Limassol, à Chypre, et mort à Athènes. Il adapte à l'écran les tragédies antiques avec « Électre » en 1962 et « Les Troyennes » en 1971. Son film « Zorba le Grec », sorti en 1964 et tiré du roman de Níkos Kazantzákis, lui apporte une renommée mondiale.",
+      "wikipedia": "Michel Cacoyannis",
+      "portrait": {
+        "fichier": "Michael_Cacoyannis.jpeg",
+        "legende": "Michael Cacoyannis, photographie",
+        "licence": "Image non libre",
+        "auteur": "Auteur inconnu",
+        "source": "https://en.wikipedia.org/wiki/File:Michael_Cacoyannis.jpeg"
+      }
+    },
+    {
+      "slug": "tokas",
+      "nom": "Mários Tókas",
+      "classement": "Tókas, Mários",
+      "titre": "Naissance de Mários Tókas",
+      "axe": "Musique, spectacle et sport",
+      "naissance": 1954,
+      "description": "Mários Tókas (1954-2008) est un compositeur chypriote, né à Limassol et mort à Athènes. Il combat dans l'armée chypriote lors de l'invasion turque de 1974, puis s'installe à Athènes en 1975 pour étudier la philosophie et la musique. Il compose des chansons, des musiques de théâtre et de film, et reste l'une des voix de la jeunesse chypriote de l'après-1974.",
+      "wikipedia": "Mários Tókas",
+      "portrait": {
+        "fichier": "Marios_Tokas.jpg",
+        "legende": "Mários Tókas, photographie",
+        "licence": "CC BY-SA 4.0",
+        "auteur": "Costas tokas"
+      }
+    }
+  ]
+}

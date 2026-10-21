@@ -90,14 +90,14 @@ test('Personnages illustres : deux sous-catégories, chacune avec sa note et son
     await expect(page.locator('#theme-screen-title')).toHaveText('Panthéons');
     await expect(page.locator('#theme-screen-note-text')).toContainText('né dans les frontières actuelles');
     // Panthéons de pays et de blocs se rangent par leur nom de source — « Afrique centrale », « Afrique de l'Ouest », « Afrique du Sud », « Allemagne, Autriche et Suisse »,
-    // « Amérique hispanique », « Asie centrale et Afghanistan », « Australie », « Balkans », « Benelux », « Brésil », « Canada », « Caraïbe non hispanique », « Caucase », « Chine », « Égypte », « Espagne », « États-Unis », « Éthiopie », « Europe centrale », « France », « Grèce », « Indonésie », « Iran », « Irlande », « Israël », « Italie », « Japon », « Machrek et péninsule Arabique », « Maghreb », « Malaisie, Singapour, Brunei et Timor oriental », « Nouvelle-Zélande et Pacifique », « Pays baltes », « Portugal », « Royaume-Uni », « Russie », « Scandinavie », « Sous-continent indien », « Turquie », « Ukraine » — et non par
+    // « Amérique hispanique », « Asie centrale et Afghanistan », « Australie », « Balkans », « Benelux », « Brésil », « Canada », « Caraïbe non hispanique », « Caucase », « Chine », « Chypre », « Égypte », « Espagne », « États-Unis », « Éthiopie », « Europe centrale », « France », « Grèce », « Indonésie », « Iran », « Irlande », « Israël », « Italie », « Japon », « Machrek et péninsule Arabique », « Maghreb », « Malte », « Malaisie, Singapour, Brunei et Timor oriental », « Nouvelle-Zélande et Pacifique », « Pays baltes », « Portugal », « Royaume-Uni », « Russie », « Scandinavie », « Sous-continent indien », « Turquie », « Ukraine » — et non par
     // « Grandes figures d'… » / « … de » / « … des » / « … du ».
     await expect(page.locator('#themes-container .data-card-title'))
         .toHaveText(["Grandes figures d'Afrique australe", "Grandes figures d'Afrique centrale", "Grandes figures d'Afrique de l'Est et de la Corne", "Grandes figures d'Afrique de l'Ouest", "Grandes figures d'Afrique du Sud", "Grandes figures d'Allemagne, d'Autriche et de Suisse", "Grandes figures d'Amérique hispanique",
-            "Grandes figures d'Asie centrale", "Grandes figures d'Australie", 'Grandes figures des Balkans', 'Grandes figures du Benelux', 'Grandes figures du Brésil', 'Grandes figures du Canada', 'Grandes figures de la Caraïbe non hispanique', 'Grandes figures du Caucase', 'Grandes figures de Chine', 'Grandes figures de Corée',
+            "Grandes figures d'Asie centrale", "Grandes figures d'Australie", 'Grandes figures des Balkans', 'Grandes figures du Benelux', 'Grandes figures du Brésil', 'Grandes figures du Canada', 'Grandes figures de la Caraïbe non hispanique', 'Grandes figures du Caucase', 'Grandes figures de Chine', 'Grandes figures de Chypre', 'Grandes figures de Corée',
             "Grandes figures d'Égypte", "Grandes figures d'Espagne", 'Grandes figures des États-Unis', "Grandes figures d'Éthiopie", "Grandes figures d'Europe centrale",
             'Grandes figures de France', 'Grandes figures de Grèce', "Grandes figures d'Indochine", "Grandes figures d'Indonésie", "Grandes figures d'Iran", "Grandes figures d'Irlande", "Grandes figures d'Israël", "Grandes figures d'Italie", 'Grandes figures du Japon',
-            'Grandes figures du Machrek et de la péninsule Arabique', 'Grandes figures du Maghreb', 'Grandes figures du monde malais', 'Grandes figures de Mongolie', 'Grandes figures de Nouvelle-Zélande et du Pacifique', "Grandes figures de l'océan Indien occidental", 'Grandes figures des pays baltes', 'Grandes figures des Philippines', 'Grandes figures de Pologne', 'Grandes figures du Portugal',
+            'Grandes figures du Machrek et de la péninsule Arabique', 'Grandes figures du Maghreb', 'Grandes figures de Malte', 'Grandes figures du monde malais', 'Grandes figures de Mongolie', 'Grandes figures de Nouvelle-Zélande et du Pacifique', "Grandes figures de l'océan Indien occidental", 'Grandes figures des pays baltes', 'Grandes figures des Philippines', 'Grandes figures de Pologne', 'Grandes figures du Portugal',
             'Grandes figures du Royaume-Uni', 'Grandes figures de Russie', 'Grandes figures de Scandinavie', 'Grandes figures du sous-continent indien', 'Grandes figures de Thaïlande et de Birmanie', 'Grandes figures de Turquie', "Grandes figures d'Ukraine"]);
 });
 
@@ -2761,6 +2761,79 @@ test('la recherche — « irlande », « irlandais », « dublin », « ulster �
         await page.locator('#theme-search-input').fill(mot);
         const resultat = page.locator('#theme-search-results .search-result-item', { hasText: "Grandes figures d'Irlande" });
         await expect(resultat, `« ${mot} » doit mener au panthéon de l'Irlande`).toHaveCount(1);
+        await expect(resultat.locator('.search-result-path')).toContainText('Personnages illustres › Panthéons');
+    }
+});
+
+test('Malte : chacune de ses figures a son portrait, de Pietru Caxaro à Oliver Friggieri, et les grands maîtres venus d’ailleurs sont des invités', async ({ page }) => {
+    await openThemeById(page, 'pan_mt');
+    await page.locator('#mode-card-discovery').click();
+    await expect(page.locator('#screen-game')).toBeVisible();
+    const nombre = await page.evaluate(() => getCurrentTheme().events.length);
+    expect(nombre).toBe(34);
+    await expect(page.locator('#timeline .entry')).toHaveCount(nombre);
+    await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
+
+    // Un poète, un linguiste, un homme d'État maltais : pas de pays affiché.
+    for (const titre of ['Naissance de Pietru Caxaro', 'Naissance de Mikiel Anton Vassalli', 'Naissance de Dom Mintoff']) {
+        await page.locator('#timeline .entry', { hasText: titre }).click();
+        await expect(page.locator('#modal-details')).toBeVisible();
+        await expect(page.locator('#modal-pays')).toBeHidden();
+        const portrait = page.locator('#modal-portrait-img');
+        await expect.poll(() => portrait.evaluate(img => img.complete ? img.naturalWidth : 0)).toBe(320);
+        await expect(page.locator('#modal-portrait-caption')).not.toBeEmpty();
+        await page.locator('#modal-details .close-btn').click();
+        await expect(page.locator('#modal-details')).toBeHidden();
+    }
+    // Jean de Valette, grand maître français : un invité de la France.
+    await page.locator('#timeline .entry', { hasText: 'Naissance de Jean de Valette' }).click();
+    await expect(page.locator('#modal-details')).toBeVisible();
+    await expect(page.locator('#modal-pays')).toBeVisible();
+    await page.locator('#modal-details .close-btn').click();
+    const invites = await page.evaluate(() => getCurrentTheme().events.filter(e => e.pays).length);
+    expect(invites).toBe(6);
+});
+
+test('Chypre : chacune de ses figures a son portrait, d’Épiphane de Salamine à Dimitris Christofias', async ({ page }) => {
+    await openThemeById(page, 'pan_cy');
+    await page.locator('#mode-card-discovery').click();
+    await expect(page.locator('#screen-game')).toBeVisible();
+    const nombre = await page.evaluate(() => getCurrentTheme().events.length);
+    expect(nombre).toBe(22);
+    await expect(page.locator('#timeline .entry')).toHaveCount(nombre);
+    await expect(page.locator('#timeline .entry .entry-portrait')).toHaveCount(nombre);
+
+    // Un évêque du IVe siècle, un archevêque-président, un dirigeant chypriote turc.
+    for (const titre of ['Naissance d\'Épiphane de Salamine', 'Naissance de Makarios III', 'Naissance de Rauf Denktaş']) {
+        await page.locator('#timeline .entry', { hasText: titre }).click();
+        await expect(page.locator('#modal-details')).toBeVisible();
+        await expect(page.locator('#modal-pays')).toBeHidden();
+        const portrait = page.locator('#modal-portrait-img');
+        await expect.poll(() => portrait.evaluate(img => img.complete ? img.naturalWidth : 0)).toBe(320);
+        await expect(page.locator('#modal-portrait-caption')).not.toBeEmpty();
+        await page.locator('#modal-details .close-btn').click();
+        await expect(page.locator('#modal-details')).toBeHidden();
+    }
+    const invites = await page.evaluate(() => getCurrentTheme().events.filter(e => e.pays).length);
+    expect(invites).toBe(3);
+});
+
+test('la recherche — « malte », « maltais », « la valette », « grand siège », « gozo » — mène au panthéon de Malte', async ({ page }) => {
+    await page.locator('#screen-home').click();
+    for (const mot of ['malte', 'maltais', 'la valette', 'grand siege', 'gozo', 'hospitaliers']) {
+        await page.locator('#theme-search-input').fill(mot);
+        const resultat = page.locator('#theme-search-results .search-result-item', { hasText: 'Grandes figures de Malte' });
+        await expect(resultat, `« ${mot} » doit mener au panthéon de Malte`).toHaveCount(1);
+        await expect(resultat.locator('.search-result-path')).toContainText('Personnages illustres › Panthéons');
+    }
+});
+
+test('la recherche — « chypre », « chypriote », « nicosie », « eoka », « lusignan » — mène au panthéon de Chypre', async ({ page }) => {
+    await page.locator('#screen-home').click();
+    for (const mot of ['chypre', 'chypriote', 'nicosie', 'eoka', 'lusignan', 'famagouste']) {
+        await page.locator('#theme-search-input').fill(mot);
+        const resultat = page.locator('#theme-search-results .search-result-item', { hasText: 'Grandes figures de Chypre' });
+        await expect(resultat, `« ${mot} » doit mener au panthéon de Chypre`).toHaveCount(1);
         await expect(resultat.locator('.search-result-path')).toContainText('Personnages illustres › Panthéons');
     }
 });
