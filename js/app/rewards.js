@@ -64,7 +64,8 @@ function renderRewardsBar(container, returnScreen) {
         <span class="rewards-chip rewards-coins" role="img"><span aria-hidden="true">🪙</span> <b class="rewards-coins-n"></b></span>
         <span class="rewards-chip rewards-streak" role="img"><span aria-hidden="true">⚡</span> <b class="rewards-streak-n"></b></span>
         <button type="button" class="rewards-btn rewards-shop-btn"><span aria-hidden="true">🛍️</span> <span class="rewards-btn-label"></span></button>
-        <button type="button" class="rewards-btn rewards-album-btn"><span aria-hidden="true">🎴</span> <span class="rewards-btn-label"></span> <small></small></button>`;
+        <button type="button" class="rewards-btn rewards-album-btn"><span aria-hidden="true">🎴</span> <span class="rewards-btn-label"></span> <small></small></button>
+        <button type="button" class="rewards-btn rewards-team-btn"><span aria-hidden="true">👥</span> <span class="rewards-btn-label"></span> <small></small></button>`;
     bar.querySelector('.rewards-coins-n').innerText = state.coins;
     bar.querySelector('.rewards-coins').setAttribute('aria-label', t('rewards.coins_aria', { count: state.coins }));
     bar.querySelector('.rewards-streak-n').innerText = state.streak.current;
@@ -73,6 +74,9 @@ function renderRewardsBar(container, returnScreen) {
     bar.querySelector('.rewards-shop-btn .rewards-btn-label').innerText = t('rewards.shop');
     bar.querySelector('.rewards-album-btn .rewards-btn-label').innerText = t('rewards.album');
     bar.querySelector('.rewards-album-btn small').innerText = totals.have + '/' + totals.total;
+    bar.querySelector('.rewards-team-btn .rewards-btn-label').innerText = t('team.short');
+    bar.querySelector('.rewards-team-btn small').innerText = typeof teamChipText === 'function' ? teamChipText() : '';
+    bar.querySelector('.rewards-team-btn').onclick = () => openTeam(returnScreen);
     bar.querySelector('.rewards-shop-btn').onclick = () => openShop(returnScreen);
     bar.querySelector('.rewards-album-btn').onclick = () => openAlbum(returnScreen);
     container.insertBefore(bar, container.firstChild);

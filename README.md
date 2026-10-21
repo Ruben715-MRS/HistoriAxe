@@ -506,6 +506,20 @@ s'est passé dans le monde à la même époque. Avec des thèmes, les événemen
 dans le tirage (les incontournables restent prioritaires). `PathCore.sliceWindows` propose un découpage en
 niveaux d'effectifs voisins : plus le temps est dense, plus les tranches sont courtes.
 
+### Le paysage des mondes
+
+Chaque monde est un petit paysage, façon Castle Crumble : un pré (teinte propre au monde), la route qui serpente, des
+décors de l'époque de part et d'autre (oliviers et colonnes en Grèce, tentes et bannières pendant la guerre de Cent Ans,
+cratères et barbelés en 14-18, éoliennes et antennes aujourd'hui…) et, au bout du chemin, **le monument que garde le
+boss** : grotte ornée, ziggurat, Parthénon, Colisée, château fort, cathédrale, Versailles, Bastille, tour Eiffel,
+fort ruiné, tours de bureaux… un monument différent par monde, îles comprises. Le monument s'illumine d'or quand le
+boss est vaincu ; un monde pas encore atteint reste en grisaille.
+
+Les dessins sont des SVG à plat (`js/pathSprites.js`, aucune image à charger, pas de dégradé) ; `js/pathScenery.js`
+choisit le thème de chaque monde et place les décors de façon déterministe, sans jamais en poser sur la route
+(`tests/path.test.js` le vérifie, et que tout dessin cité existe). Pour changer le décor d'un monde, ou en ajouter,
+c'est le tableau `THEMES` de `pathScenery.js` ; pour un nouveau dessin, une entrée dans `pathSprites.js`.
+
 ### Les récompenses : pièces, série de victoires, cartes, boutique
 
 La boucle qui donne envie de « jouer encore un niveau » (modèle : Royal Match). Les **règles** sont dans
@@ -550,8 +564,8 @@ La boucle qui donne envie de « jouer encore un niveau » (modèle : Royal Match
   seulement (vérification d'âge, jamais d'accès aux mineurs). À étudier pays par pays avant toute décision : la
   Belgique interdit les « loot boxes » pour tous, pas seulement pour les mineurs ; une alternative sans hasard
   (acheter une carte précise, pas un paquet tiré au sort) évite le problème.
-- **Équipes** (à concevoir, nécessitent un serveur) : deux familles. **Équipe de classe** : l'enseignant en crée une
-  depuis le Mode Classe, les étoiles de tous remplissent un coffre commun. **Équipes libres**, façon Clash of
+- **Équipes** : deux familles. **Équipe de classe** : codée (voir « L'équipe de classe » plus bas). **Équipes libres**
+  (à concevoir), façon Clash of
   Clans, que tout joueur peut créer ou rejoindre (jeu tout public). Garde-fous prévus dès la conception : aucun
   texte libre entre joueurs (messages et emojis prédéfinis seulement), pseudos modérés, consentement parental sous
   15 ans (RGPD), signalement, et pas de classement public des mineurs avec leur vrai nom.
@@ -629,6 +643,39 @@ plus ratées** de la classe — ce que l'enseignant va reprendre en cours.
   faux serveur de séance.
 - **Pas fait** : pas d'export du bilan, pas de reprise d'une séance par un autre appareil de
   l'enseignant, pas de mode « cours » avec correction projetée carte par carte.
+
+## L'équipe de classe : un coffre commun
+
+L'enseignant crée une équipe (écran **Équipe**, bouton 👥 de la barre de récompenses du Chemin) : un nom, un
+**code de 6 caractères** comme le Mode Classe. Les élèves la rejoignent avec ce code et leur prénom. Tout ce qu'ils
+gagnent remplit un **coffre commun** :
+
+- chaque **étoile gagnée de plus** sur un niveau du Chemin = 1 point (rejouer un niveau sans progresser ne verse rien) ;
+- chaque **bonne réponse** d'une séance de Mode Classe que l'enseignant a **liée à l'équipe** (case « Compter pour
+  l'équipe », cochée par défaut) = 1 point, versé une seule fois par carte (le serveur rejoue le journal des
+  placements, comme pour le classement).
+
+La cible du coffre grandit avec la classe : 12 points par élève, au moins 60. Coffre plein, **chaque membre touche
+des pièces** (40, 50… 80 au plus) et **un coffre sur trois contient une carte rare pour chacun** (tirée dans l'album
+du monde le plus avancé du joueur ; pièces à la place tant qu'il n'a aucun album ouvert) — le compteur de cartes
+rares offertes est le trophée de la classe. Un élève qui arrive après l'ouverture d'un coffre ne le touche pas.
+Les coffres se réclament automatiquement et ne paient qu'une fois, même depuis deux appareils.
+
+**Compte personnel.** Un élève connecté (e-mail ou Google, voir `api/account.js`) garde ses points d'équipe : le
+serveur les cumule sur son joueur (`players.team_points`, qui suit le compte d'un appareil à l'autre) et il touche
+**une pièce de plus par point apporté**. Sans compte, les points servent le coffre mais ne restent à personne ; l'écran
+l'écrit en clair pour inciter à se connecter, sans rien promettre de plus.
+
+**Garde-fous.** Aucun texte libre entre élèves, aucun classement public : l'équipe n'est visible que de ses membres.
+Les prénoms ne sont affichés qu'à l'intérieur de l'équipe. L'enseignant voit un bouton pour retirer un membre, peut
+supprimer l'équipe ; un élève peut la quitter. Les étoiles du Chemin sont déclarées par l'appareil (les niveaux se
+jouent hors ligne), donc **plafonnées** : 6 points par envoi et 30 par jour et par élève ; hors ligne, elles sont
+gardées (60 au plus) et versées au prochain envoi réussi. Le coffre ne donne que du plaisir de jeu — jamais d'avantage
+payant ni durable. Les équipes inactives depuis un an sont supprimées.
+
+Fichiers : `api/team.js` (endpoint), `api/_lib/team.js` (règles pures), `api/_lib/teamStore.js` (versement,
+transactionnel), `js/app/team.js` (écran), tables `class_teams` / `team_members` (+ `players.team_points`,
+`class_sessions.team_code`, `class_players.credited`). Tests : `tests/team.test.js`, `e2e/equipe.spec.js`.
 
 ## Longueur de la manche
 

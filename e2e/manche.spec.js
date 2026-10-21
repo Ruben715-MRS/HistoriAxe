@@ -12,9 +12,14 @@
 
 const { test, expect, openThemeCard, openThemeModes } = require('./fixtures');
 
-// 72 événements : assez pour que les quatre longueurs (10/20/50/Tout) aient
+// Plus de 50 événements : assez pour que les quatre longueurs (10/20/50/Tout) aient
 // toutes un sens.
 const THEME_FOURNI = 'thm_aut';
+
+// Taille réelle du thème, lue dans l'app : elle bouge à chaque ajout de contenu.
+async function tailleTheme(page) {
+    return page.evaluate(() => getCurrentTheme().events.length);
+}
 // Exactement 50 événements, rattaché directement à sa catégorie : le cas
 // limite où « 50 » est proposé (le seuil se lit « au moins 50 ») alors qu'il
 // joue très exactement la même partie que « Tout (50) ».
@@ -31,10 +36,10 @@ test('le sélecteur propose les longueurs utiles et marque celle en cours', asyn
     await openThemeModes(page, THEME_FOURNI);
     await expect(page.locator(picker)).toBeVisible();
 
-    // 10, 20, 50 et « Tout (72) » : les quatre changent quelque chose sur ce thème.
+    // 10, 20, 50 et « Tout (N) » : les quatre changent quelque chose sur ce thème.
     await expect(page.locator(boutons)).toHaveCount(4);
     await expect(page.locator(boutons).nth(2)).toHaveText('50');
-    await expect(page.locator(boutons).last()).toContainText('72');
+    await expect(page.locator(boutons).last()).toContainText('Tout');
     // 20 par défaut : c'est ce qui borne les gros thèmes sans toucher aux petits.
     await expect(page.locator(`${boutons}.active`)).toHaveText('20');
     await expect(page.locator(picker)).toContainText('20');
@@ -83,7 +88,7 @@ test('à 50 pile, choisir 50 joue bien les 50 événements', async ({ page }) =>
     expect(await page.evaluate(() => totalEvents)).toBe(50);
 });
 
-test('choisir 50 lance bien une partie de 50, pas de 72', async ({ page }) => {
+test('choisir 50 lance bien une partie de 50, pas du thème entier', async ({ page }) => {
     await openThemeModes(page, THEME_FOURNI);
     await choisir(page, '50');
     await page.locator('#mode-card-classic').click();
@@ -93,7 +98,7 @@ test('choisir 50 lance bien une partie de 50, pas de 72', async ({ page }) => {
     expect(await page.evaluate(() => totalEvents)).toBe(50);
 });
 
-test('choisir 10 lance bien une partie de 10, pas de 72', async ({ page }) => {
+test('choisir 10 lance bien une partie de 10, pas du thème entier', async ({ page }) => {
     await openThemeModes(page, THEME_FOURNI);
     await choisir(page, '10');
     await page.locator('#mode-card-classic').click();
@@ -112,8 +117,9 @@ test('« Tout » rend le thème entier', async ({ page }) => {
     await page.locator('#mode-card-classic').click();
     await page.waitForSelector('#screen-game:not(.hidden)');
 
-    await expect(page.locator('#hud-count')).toHaveText('1 / 72');
-    expect(await page.evaluate(() => totalEvents)).toBe(72);
+    const taille = await tailleTheme(page);
+    await expect(page.locator('#hud-count')).toHaveText(`1 / ${taille}`);
+    expect(await page.evaluate(() => totalEvents)).toBe(taille);
 });
 
 test('le choix est retenu d’un thème à l’autre', async ({ page }) => {
@@ -138,7 +144,7 @@ test('la Découverte garde le thème entier malgré la manche', async ({ page })
     await page.waitForSelector('#screen-game:not(.hidden)');
 
     const affiches = await page.evaluate(() => placedEvents.length);
-    expect(affiches).toBe(72);
+    expect(affiches).toBe(await tailleTheme(page));
 });
 
 test('un vivier trop court n’affiche pas de sélecteur', async ({ page }) => {
@@ -150,7 +156,20 @@ test('un vivier trop court n’affiche pas de sélecteur', async ({ page }) => {
     // rattaché directement à une catégorie dans le pack français, alors qu'un
     // axe étroit, lui, est à deux taps. Ce parcours vérifie du même coup que
     // le sélecteur suit le vivier filtré et non la taille du thème.
-    await openThemeCard(page, THEME_FOURNI);
+    // On cherche, dans le pack, un thème dont l'axe le plus étroit tient en
+    // 10 événements ou moins : la taille des axes bouge avec le contenu.
+    await page.waitForFunction(() => window.bdd && getAllThemesWithPath().length > 20, null, { timeout: 45_000 });
+    const themeEtroit = await page.evaluate(() => {
+        for (const { theme } of getAllThemesWithPath()) {
+            const compte = {};
+            (theme.events || []).forEach(e => { if (e.axe) compte[e.axe] = (compte[e.axe] || 0) + 1; });
+            const tailles = Object.values(compte);
+            if (tailles.length >= 2 && Math.min(...tailles) <= 10 && Math.min(...tailles) >= 3) return theme.id;
+        }
+        return null;
+    });
+    expect(themeEtroit).not.toBeNull();
+    await openThemeCard(page, themeEtroit);
     await expect(page.locator('#screen-axes')).toBeVisible();
 
     // Ne garder que l'axe le plus étroit (10 événements) : on décoche tout,

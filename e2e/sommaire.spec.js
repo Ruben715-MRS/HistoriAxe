@@ -142,7 +142,8 @@ test('une pastille « Réviser cet axe » prépare la révision de ce seul axe',
     await expect(page.locator('#screen-game')).toBeVisible();
     const attendus = await page.evaluate(sel => getCurrentTheme().events.filter(e => e.axe === sel).length,
         etat.selection[0]);
-    expect(await page.evaluate(() => totalEvents)).toBe(attendus);
+    // La manche retient 20 événements par défaut : un axe plus riche est borné.
+    expect(await page.evaluate(() => totalEvents)).toBe(Math.min(attendus, 20));
 });
 
 test('les mots-étiquettes d’une sous-branche sont rendus en pastilles', async ({ page }) => {

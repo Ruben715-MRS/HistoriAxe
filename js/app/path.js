@@ -13,7 +13,8 @@
 // Un niveau a besoin d'au moins ce nombre d'événements dans le pack chargé (autres langues : moins de contenu).
 const PATH_MIN_EVENTS = 8;
 // Mise en page de la carte (unités du viewBox SVG : 300 de large).
-const PATH_MAP = { width: 300, step: 100, padTop: 100, padBottom: 70, amplitude: 78 };
+// padTop laisse la place du monument qui garde la fin du monde (voir js/pathScenery.js) au-dessus de la pastille du boss.
+const PATH_MAP = { width: 300, step: 100, padTop: 250, padBottom: 70, amplitude: 78 };
 
 let pathCache = null; // { bdd, size, pools, byId }
 let pathSelectedId = null;
@@ -128,6 +129,49 @@ function renderPathCard(container) {
     container.appendChild(card);
 }
 
+// --- Le paysage ------------------------------------------------------------------
+// Les dessins (js/pathSprites.js) sont posés une fois dans la page, sous forme de <symbol>, puis réutilisés par <use>.
+function pathEnsureSprites() {
+    if (document.getElementById('path-sprites') || typeof PathSprites === 'undefined') return;
+    let symbols = '';
+    Object.keys(PathSprites.decor).forEach(name => {
+        symbols += `<symbol id="sp-${name}" viewBox="${PathSprites.DECOR_VIEWBOX}" overflow="visible">${PathSprites.decor[name]}</symbol>`;
+    });
+    Object.keys(PathSprites.landmarks).forEach(name => {
+        symbols += `<symbol id="sp-${name}" viewBox="${PathSprites.LANDMARK_VIEWBOX}" overflow="visible">${PathSprites.landmarks[name]}</symbol>`;
+    });
+    const holder = document.createElement('div');
+    holder.id = 'path-sprites';
+    holder.setAttribute('aria-hidden', 'true');
+    holder.style.cssText = 'position:absolute;width:0;height:0;overflow:hidden';
+    holder.innerHTML = `<svg width="0" height="0" focusable="false"><defs>${symbols}</defs></svg>`;
+    document.body.appendChild(holder);
+}
+
+// Le paysage d'un monde : sol et route (variables CSS posées sur la piste), décors de part et d'autre du chemin,
+// monument au bout. Renvoie l'élément à insérer sous les pastilles.
+function pathBuildScenery(track, world, positions, height) {
+    if (typeof PathScenery === 'undefined') return null;
+    pathEnsureSprites();
+    const pixelWidth = Math.min(420, document.getElementById('path-map').clientWidth || 340) - 16;
+    const scene = PathScenery.layout(world.id, { height, padTop: PATH_MAP.padTop, positions, width: PATH_MAP.width, pixelWidth });
+    track.style.setProperty('--sc-ground-a', scene.theme.ground[0]);
+    track.style.setProperty('--sc-ground-b', scene.theme.ground[1]);
+    track.style.setProperty('--sc-road', scene.theme.road);
+    const layer = document.createElement('div');
+    layer.className = 'path-scenery';
+    layer.setAttribute('aria-hidden', 'true');
+    const unit = 100 / PATH_MAP.width;
+    const lm = scene.landmark;
+    // viewBox du monument : 128 × 114
+    let html = `<svg class="sc sc-landmark" style="left:${(lm.x * unit).toFixed(2)}%;top:${lm.y}px;width:${lm.size}px;height:${Math.round(lm.size * 114 / 128)}px" viewBox="${PathSprites.LANDMARK_VIEWBOX}" focusable="false"><use href="#sp-${lm.sprite}"/></svg>`;
+    scene.decor.forEach(item => {
+        html += `<svg class="sc${item.flip ? ' flip' : ''}" style="left:${(item.x * unit).toFixed(2)}%;top:${item.y}px;width:${item.size}px;height:${item.size}px" viewBox="${PathSprites.DECOR_VIEWBOX}" focusable="false"><use href="#sp-${item.sprite}"/></svg>`;
+    });
+    layer.innerHTML = html;
+    return layer;
+}
+
 // --- La carte -------------------------------------------------------------------
 function pathNodeX(index, boss) {
     if (boss) return PATH_MAP.width / 2;
@@ -140,7 +184,8 @@ function pathRenderWorld(container, world, progress, currentId, collapsed) {
     const levels = PathCore.levelsOf(world);
     const worldOpen = PathCore.isWorldUnlocked(world, progress);
     const section = document.createElement('section');
-    section.className = 'path-world' + (worldOpen ? '' : ' is-locked') + (collapsed ? ' is-collapsed' : '') + (world.island ? ' is-island' : '');
+    const bossCleared = !!levels.length && PathCore.starsOf(progress, levels[levels.length - 1].id) > 0;
+    section.className = 'path-world' + (bossCleared ? ' is-complete' : '') + (worldOpen ? '' : ' is-locked') + (collapsed ? ' is-collapsed' : '') + (world.island ? ' is-island' : '');
     section.dataset.world = world.id;
     const head = document.createElement('header');
     head.className = 'path-world-head';
@@ -174,7 +219,12 @@ function pathRenderWorld(container, world, progress, currentId, collapsed) {
         const seg = `M${a.x.toFixed(1)} ${a.y} C${a.x.toFixed(1)} ${mid} ${b.x.toFixed(1)} ${mid} ${b.x.toFixed(1)} ${b.y} `;
         if (PathCore.starsOf(progress, levels[i].id) > 0) doneD += seg; else todoD += seg;
     }
+    const scenery = pathBuildScenery(track, world, pos, height);
+    if (scenery) track.appendChild(scenery);
+    const roadD = doneD + todoD;
     const svg = `<svg class="path-lines" viewBox="0 0 ${PATH_MAP.width} ${height}" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <path class="path-road-edge" d="${roadD}" vector-effect="non-scaling-stroke"/>
+        <path class="path-road" d="${roadD}" vector-effect="non-scaling-stroke"/>
         <path class="path-line-todo" d="${todoD}" vector-effect="non-scaling-stroke"/>
         <path class="path-line-done" d="${doneD}" vector-effect="non-scaling-stroke"/></svg>`;
     track.insertAdjacentHTML('beforeend', svg);
@@ -430,6 +480,8 @@ function pathOnLevelFinish(exp, won) {
             stagesDone: exp.stages.filter(s => s.result && s.result.ok).length
         });
     }
+    // Équipe de classe : une étoile gagnée de plus qu'avant = un point pour le coffre commun.
+    if (typeof teamOnStars === 'function') teamOnStars(Math.max(0, stars - prevStars));
     exp.finished.stars = stars;
     exp.finished.xp = xp;
     exp.finished.firstClear = firstClear;

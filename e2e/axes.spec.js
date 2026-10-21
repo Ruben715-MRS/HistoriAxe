@@ -40,7 +40,8 @@ test('changer de thème repart de tous les axes sélectionnés', async ({ page }
 
     await expect(axes(page)).toHaveCount(5);
     await expect(axesCoches(page)).toHaveCount(5);
-    await expect(page.locator('#axes-subtitle')).toContainText('50');
+    const taille = await page.evaluate(() => getCurrentTheme().events.length);
+    await expect(page.locator('#axes-subtitle')).toContainText(String(taille));
 
     // Et le thème est réellement jouable : c'est le symptôme qui rendait
     // le bug visible pour un joueur.
@@ -49,7 +50,7 @@ test('changer de thème repart de tous les axes sélectionnés', async ({ page }
     // Ce thème propose un sommaire : « Découverte » déplie alors le choix.
     await page.locator('#discovery-picker .mode-picker-btn').first().click();
     await expect(page.locator('#screen-game')).toBeVisible();
-    await expect(page.locator('#timeline .entry')).toHaveCount(50);
+    await expect(page.locator('#timeline .entry')).toHaveCount(taille);
 });
 
 test('revenir sur le même thème conserve la sélection en cours', async ({ page }) => {

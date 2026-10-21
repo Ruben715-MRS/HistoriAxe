@@ -60,6 +60,17 @@ async function mergePlayerInto(client, fromId, toId) {
            and not exists (select 1 from class_players c where c.code = class_players.code and c.player_id = $1)`,
         [toId, fromId]
     );
+    // Équipe de classe : ses équipes, ses places de membre (une seule par équipe) et ses points cumulés suivent le compte.
+    await client.query('update class_teams set teacher_id = $1 where teacher_id = $2', [toId, fromId]);
+    await client.query(
+        `update team_members set player_id = $1 where player_id = $2
+           and not exists (select 1 from team_members m where m.code = team_members.code and m.player_id = $1)`,
+        [toId, fromId]
+    );
+    await client.query(
+        'update players set team_points = team_points + (select team_points from players where id = $2) where id = $1',
+        [toId, fromId]
+    );
     // La progression (player_progress) n'est pas fusionnée ici : le client
     // fusionne la sienne avec celle du compte juste après (js/app.js: syncProgress).
     await client.query('delete from players where id = $1', [fromId]);

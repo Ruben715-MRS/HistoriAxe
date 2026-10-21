@@ -37,11 +37,14 @@ const PATH_PROGRESS_KEY = 'historiaxe_path_v1';
 // Les récompenses : pièces, série de victoires, cartes de personnages, achats de la boutique
 // (js/rewardsCore.js: normalizeState). Synchronisé, comme le reste de la progression.
 const REWARDS_KEY = 'historiaxe_rewards_v1';
+// L'équipe de classe rejointe ou créée ({ code, role: 'member' | 'teacher', name }) : synchronisée, pour qu'un élève
+// connecté à un compte retrouve son équipe sur tous ses appareils.
+const TEAM_KEY = 'historiaxe_team_v1';
 
 // Clés dont le contenu est envoyé/reçu par la synchronisation cloud
 // (api/sync.js) — progression de jeu uniquement, jamais les préférences
 // d'affichage (SETTINGS_KEY), qui restent propres à chaque appareil.
-const SYNC_KEYS = [SRS_KEY, PROGRESS_KEY, FAVORITES_KEY, CUSTOM_THEMES_KEY, CUSTOM_EVENTS_KEY, STREAK_KEY, GAMIFICATION_KEY, WEEKLY_CHALLENGE_STREAK_KEY, PATH_PROGRESS_KEY, REWARDS_KEY];
+const SYNC_KEYS = [SRS_KEY, PROGRESS_KEY, FAVORITES_KEY, CUSTOM_THEMES_KEY, CUSTOM_EVENTS_KEY, STREAK_KEY, GAMIFICATION_KEY, WEEKLY_CHALLENGE_STREAK_KEY, PATH_PROGRESS_KEY, REWARDS_KEY, TEAM_KEY];
 
 const DEFAULT_SETTINGS = {
     orientation: 'auto',
@@ -218,6 +221,28 @@ function rewardsLoad() {
 
 function rewardsSave(state) {
     try { localStorage.setItem(REWARDS_KEY, JSON.stringify(state)); } catch (e) {}
+}
+
+// --- ÉQUIPE DE CLASSE ---
+function teamLoad() {
+    try {
+        var raw = JSON.parse(localStorage.getItem(TEAM_KEY));
+        if (raw && typeof raw.code === 'string' && /^[A-Z0-9]{6}$/.test(raw.code)) {
+            return {
+                code: raw.code, role: raw.role === 'teacher' ? 'teacher' : 'member', name: String(raw.name || '').slice(0, 40),
+                // Étoiles gagnées hors ligne, à verser au coffre au prochain envoi réussi.
+                pending: Math.max(0, Math.min(60, parseInt(raw.pending, 10) || 0))
+            };
+        }
+    } catch (e) {}
+    return null;
+}
+
+function teamSave(team) {
+    try {
+        if (team) localStorage.setItem(TEAM_KEY, JSON.stringify(team));
+        else localStorage.removeItem(TEAM_KEY);
+    } catch (e) {}
 }
 
 // --- LE CHEMIN DU TEMPS ---
@@ -711,6 +736,7 @@ function resetAllGameData() {
     try { localStorage.removeItem(WEEKLY_CHALLENGE_STREAK_KEY); } catch (e) {}
     try { localStorage.removeItem(PATH_PROGRESS_KEY); } catch (e) {}
     try { localStorage.removeItem(REWARDS_KEY); } catch (e) {}
+    try { localStorage.removeItem(TEAM_KEY); } catch (e) {}
     try { localStorage.removeItem(GAMIFICATION_KEY); } catch (e) {}
     try { localStorage.removeItem(LAST_THEME_KEY); } catch (e) {}
 }
