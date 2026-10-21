@@ -203,12 +203,12 @@ test('la galerie propose chaque territoire d\'outre-mer à part', async ({ page 
     }
 });
 
-test('la galerie filtre Monaco et le Liechtenstein à part, et la France garde ses 143 figures (dont Montcalm, invité du Canada)', async ({ page }) => {
+test('la galerie filtre Monaco et le Liechtenstein à part, et la France garde ses 147 figures (dont Montcalm, invité du Canada)', async ({ page }) => {
     await ouvrirLaGalerie(page);
     const pays = page.locator('#gallery-filter-country');
     await expect(pays.locator('option', { hasText: 'Monaco' })).toHaveText(/🇲🇨 Monaco \(10\)/);
     await expect(pays.locator('option', { hasText: 'Liechtenstein' })).toHaveText(/🇱🇮 Liechtenstein \(4\)/);
-    await expect(pays.locator('option', { hasText: 'France' })).toHaveText(/🇫🇷 France métropolitaine \(143\)/);
+    await expect(pays.locator('option', { hasText: 'France' })).toHaveText(/🇫🇷 France métropolitaine \(147\)/);
 });
 
 test('Joséphine Baker, née aux États-Unis et devenue française, est au panthéon de la France avec son portrait et sa biographie', async ({ page }) => {
@@ -2034,12 +2034,12 @@ test('les filtres pays et domaine se combinent, et chaque option annonce son eff
     // Sept domaines communs à tous les panthéons, plus « Guerres, résistances et exploration » (la Scandinavie) ;
     // chaque pays d'un bloc a son entrée.
     await expect(domaine.locator('option')).toHaveCount(9);
-    await expect(pays.locator('option', { hasText: 'France' })).toHaveText(/🇫🇷 France métropolitaine \(143\)/);
+    await expect(pays.locator('option', { hasText: 'France' })).toHaveText(/🇫🇷 France métropolitaine \(147\)/);
     await expect(pays.locator('option', { hasText: 'Venezuela' })).toHaveCount(1);
 
-    await pays.selectOption({ label: '🇫🇷 France métropolitaine (143)' });
-    await expect(page.locator('#gallery-container .gallery-card')).toHaveCount(143);
-    await expect(page.locator('#gallery-subtitle')).toHaveText(`143 portraits sur ${total}`);
+    await pays.selectOption({ label: '🇫🇷 France métropolitaine (147)' });
+    await expect(page.locator('#gallery-container .gallery-card')).toHaveCount(147);
+    await expect(page.locator('#gallery-subtitle')).toHaveText(`147 portraits sur ${total}`);
 
     // L'effectif de l'option change à chaque nouveau panthéon : on la choisit par son nom.
     const sciences = domaine.locator('option', { hasText: 'Sciences, techniques et innovation' });
